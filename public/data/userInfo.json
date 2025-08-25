@@ -1,0 +1,27 @@
+{
+  "credits": {
+    "paidCredits": 120,
+    "freeCredits": 10,
+    "plan": "Free Tier"
+  },
+  "projects": [
+    {
+      "id": "a1b2c3d4",
+      "title": "Product Intro (EN → FR)",
+      "thumbnail": "/preview1.mp4",
+      "status": "completed"
+    },
+    {
+      "id": "e5f6g7h8",
+      "title": "Tutorial (EN → ZH)",
+      "thumbnail": "/preview2.mp4",
+      "status": "processing"
+    },
+    {
+      "id": "i9j0k1l2",
+      "title": "Demo Pitch (EN → ES)",
+      "thumbnail": "/preview3.mp4",
+      "status": "queued"
+    }
+  ]
+}
