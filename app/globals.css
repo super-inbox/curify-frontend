@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* c: color */
+  --c1: #08172d;
+  --c1-rgb: 8, 23, 45;
+  --c2: #333333;
+  --c3: #666666;
+  --c4: #cccccc;
+  --c4-rgb: 204, 204, 204;
+
+  /* p: primary */
+  --p-blue: #004fff;
+  --p-blue-rgb: 0, 79, 255;
+  --p-blue-hover: #307efc;
+  --p-blue-hover-rgb: 48, 126, 252;
+  --p-purple: #5700ff;
+  --p-purple-rgb: 87, 0, 255;
+  --p-red: #ff0068;
+  --p-green: #00d0c8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--c3);
+}
+
+/* 滚动条 */
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--p-blue-rgb), 0.2) transparent;
+  }
+}
+
+/* Chrome、Safari */
+@supports selector(::-webkit-scrollbar) {
+  *::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    background-color: white;
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: white;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--p-blue-rgb), 0.1);
+    border-radius: 9999px;
+    border: 3px solid white; /* 保留空间/视觉 padding */
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(var(--p-blue-rgb), 0.2);
+  }
+}
