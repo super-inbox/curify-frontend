@@ -54,7 +54,7 @@ export default function HomeClient() {
               <video
                 className="rounded-xl w-full lg:w-1/2 shadow-xl"
                 controls
-                src="/demo/demo.mp4"
+                src="/video/training_en.mp4"
                 muted
                 loop
               />
@@ -66,7 +66,6 @@ export default function HomeClient() {
           ))}
         </section>
       </div>
-
       <SignDrawer />
       <EmailDrawer />
     </>

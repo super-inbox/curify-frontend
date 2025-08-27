@@ -19,7 +19,7 @@ export default function middleware(req: NextRequest) {
     const isContact = pathname === `/${locale}/contact`;
     const isAbout = pathname === `/${locale}/about`;
     const isPricing = pathname === `/${locale}/pricing`;
-    const isProfile = pathname === `/${locale}/profile`;
+    const isProfile = pathname === `/${locale}/workspace`;
     const isProjectDetail = pathname.startsWith(`/${locale}/project/`);
 
     const isPublicPage =

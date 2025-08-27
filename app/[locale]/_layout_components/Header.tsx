@@ -32,7 +32,7 @@ export default function Header() {
   const currentLanguage = languages.find((lang) => lang.locale === locale);
 
   return (
-    <header className="flex px-8 py-3 fixed z-50 top-0 w-full bg-white shadow-md">
+    <header className="flex px-8 py-3 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
       <div className="flex items-center justify-between w-full">
         {/* Left Section: Logo + Nav */}
         <div className="flex items-center space-x-8">
@@ -49,11 +49,11 @@ export default function Header() {
 
           {headerState === "out" || headerState === "in" ? (
             <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
-              <Link href={`/${locale}/about`} className="hover:opacity-80">
-                About
-              </Link>
               <Link href={`/${locale}/pricing`} className="hover:opacity-80">
                 Pricing
+              </Link>
+              <Link href={`/${locale}/about`} className="hover:opacity-80">
+                About
               </Link>
             </nav>
           ) : null}
@@ -63,12 +63,14 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           {/* Language Dropdown */}
           <div className="relative">
-            <details className="dropdown dropdown-end">
-              <summary className="m-1 btn btn-ghost text-[var(--c1)] text-sm min-h-0 h-auto px-2 py-1">
+            <details className="dropdown">
+              <summary
+                className="m-1 btn btn-ghost text-[var(--c1)] text-sm min-h-0 h-auto px-2 py-1"
+              >
                 <span className="mr-2">{currentLanguage?.flag}</span>
                 {currentLanguage?.name}
               </summary>
-              <ul className="absolute right-0 mt-2 p-2 shadow menu bg-base-100 rounded-box w-32 z-50">
+              <ul className="absolute right-0 mt-2 p-2 shadow menu bg-white rounded-box w-32 z-50">
                 {languages.map((lang) => (
                   <li key={lang.locale}>
                     <Link href={`/${lang.locale}`} className="text-sm">
@@ -82,7 +84,7 @@ export default function Header() {
 
           {headerState === "out" ? (
             <>
-              <Link href={`/${locale}/profile`}>
+              <Link href={`/${locale}/workspace`}>
                 <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
                   Sign in
                 </BtnN>
@@ -90,12 +92,11 @@ export default function Header() {
               <BtnN onClick={() => setDrawerState("signup")}>
                 Sign Up for Free
               </BtnN>
-              <BtnN
-                whiteConfig={["no-bg", "no-border", "no-hover"]}
-                onClick={() => setDrawerState("emailout")}
-              >
-                Customization
-              </BtnN>
+              <Link href={`/${locale}/contact`}>
+                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
+                  Contact us
+                </BtnN>
+              </Link>
             </>
           ) : (
             <>
