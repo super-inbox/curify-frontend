@@ -1,13 +1,10 @@
-import type { NextConfig } from "next";
+// next.config.js
 import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig: NextConfig = {
-  // 换成真实的后记得删掉
+const withNextIntl = createNextIntlPlugin("./next-intl.config.js");
+
+export default withNextIntl({
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
-};
-
-const withNextIntl = createNextIntlPlugin();
-export default withNextIntl(nextConfig);
-
+});

@@ -1,30 +1,19 @@
 import type { Metadata } from "next";
 
-import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./authProvider";
+import "../globals.css";
 
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
-
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 import Script from "next/script";
-
-import { AuthProvider } from "./authProvider";
 import "../globals.css";
 import Header from "./_layout_components/Header";
 import Footer from "./_layout_components/Footer";
-import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import AppWrapper from "./_layout_components/AppWrapper";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { Toaster } from "react-hot-toast";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -38,13 +27,16 @@ interface Props {
 
 export default async function LocaleLayout(props: Props) {
   const { children, params } = props;
-
-  const session = await getServerSession(authOptions); // 服务端获取用户信息
-
   const { locale } = await params;
+
+  const session = await getServerSession(authOptions);
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  // 👇 Load messages from /i18n/en.json or /i18n/zh.json
+  const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (
     <html lang={locale}>
@@ -54,7 +46,7 @@ export default async function LocaleLayout(props: Props) {
           strategy="beforeInteractive"
         />
         <AuthProvider>
-          <NextIntlClientProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <AppWrapper user={session?.user || null}>
               <Header />
               {children}
