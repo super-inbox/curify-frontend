@@ -1,31 +1,13 @@
-"use client";
+// app/page.tsx
+import type { Metadata } from "next";
+import HomeClient from "./_componentForPage/HomeClient";
 
-import Buttons from "./_componentForPage/Buttons";
-import Videos from "./_componentForPage/videos/Videos";
-import BgParticle from "./_componentForPage/BgParticle";
-import SignDrawer from "./_componentForPage/drawer/SignDrawer";
-import EmailDrawer from "./_componentForPage/drawer/EmailDrawer";
+export const metadata: Metadata = {
+  title: "Curify | Power Content Creation with AI",
+  description:
+    "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale. One-click video translation, emotional voice, lip syncing, and subtitle tools.",
+};
 
-export default function Home() {
-  return (
-    <>
-      <div className="flex flex-col items-center mt-48 mb-18 mx-auto px-15 max-w-[1280px]">
-        <BgParticle />
-        <h1 className="text-8xl font-bold text-center text-[var(--c1)] mb-10">
-          High-Quality
-          <br />
-          AI Video Generation
-          <br />
-          Editing & Localization
-        </h1>
-        <p className="text-4xl mb-16">
-          AI-powered video generation, editing and localization
-        </p>
-        <Buttons />
-        <Videos />
-      </div>
-      <SignDrawer />
-      <EmailDrawer />
-    </>
-  );
+export default function HomePage() {
+  return <HomeClient />;
 }

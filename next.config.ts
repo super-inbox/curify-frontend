@@ -1,12 +1,18 @@
-import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
+// next.config.js
 
-const nextConfig: NextConfig = {
-  // 换成真实的后记得删掉
-  images: {
-    domains: ["lh3.googleusercontent.com"],
+const withNextIntl = require('next-intl/plugin')(
+  // This is the default pathname of your `next-intl.config.js`
+  './next-intl.config.js'
+);
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Your existing Next.js config options
+  experimental: {
+    // Enable if you're using app directory
+    appDir: true
   },
+  // Add any other config you need
 };
 
-const withNextIntl = createNextIntlPlugin();
-export default withNextIntl(nextConfig);
+module.exports = withNextIntl(nextConfig);

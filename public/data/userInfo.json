@@ -1,27 +1,37 @@
 {
-  "credits": {
-    "paidCredits": 120,
-    "freeCredits": 10,
-    "plan": "Free Tier"
-  },
+  "user_id": 420,
+  "email": "test_user_cbe2fe82@example.com",
+  "username": null,
+  "plan_name": "FREE",
+  "non_expiring_credits": 0.0,
+  "expiring_credits": 100.0,
+  "subtitle_minutes_used": 0,
+  "current_cycle_start": "2025-08-27T00:00:00",
+  "current_cycle_end": "2025-09-26T23:59:59",
+  "created_at": "2025-08-27T05:42:14.293243",
+  "updated_at": "2025-08-27T05:42:14.293243",
+  "subscription": null,
   "projects": [
     {
-      "id": "a1b2c3d4",
-      "title": "Product Intro (EN → FR)",
-      "thumbnail": "/preview1.mp4",
-      "status": "completed"
-    },
-    {
-      "id": "e5f6g7h8",
-      "title": "Tutorial (EN → ZH)",
-      "thumbnail": "/preview2.mp4",
-      "status": "processing"
-    },
-    {
-      "id": "i9j0k1l2",
-      "title": "Demo Pitch (EN → ES)",
-      "thumbnail": "/preview3.mp4",
-      "status": "queued"
+      "project_id": "420_420_33d6865a_0abf5ad2",
+      "project_name": "Test Project cbe2fe82",
+      "status": "COMPLETED",
+      "created_at": "2025-08-27T05:42:53.359671",
+      "job_settings": {
+        "erase_original_subtitles": false,
+        "subtitles_enabled": "target",
+        "audio_option": "dubbed",
+        "allow_lip_syncing": false,
+        "speaker_count": null,
+        "source_language": "en",
+        "target_language": "en"
+      },
+      "project_duration_minutes": 1.1621806166666666,
+      "video_duration_seconds": 9.466667,
+      "final_video_signed_url": "https://videotranslatetest.blob.core.windows.net/processed-videos/projects/420/420_420_33d6865a_0abf5ad2/final_muxed_video.mp4?se=2025-08-27T11%3A44%3A20Z&sp=r&sv=2025-05-05&sr=b&sig=96R4ZtHEtWaOAeyOdjQGiGEkHpUdTHd5jBBgq1Kw/84%3D",
+      "final_video_signed_url_withwatermark": "https://videotranslatetest.blob.core.windows.net/processed-videos/projects/420/420_420_33d6865a_0abf5ad2/final_muxed_video_watermark.mp4?se=2025-08-27T11%3A44%3A20Z&sp=r&sv=2025-05-05&sr=b&sig=stkCnSb3HBPjy5tGSpyriO1GvJpZ0k36AFJ1HG7%2Bh7w%3D",
+      "thumbnail_signed_url": "https://videotranslatetest.blob.core.windows.net/processed-videos/videos/420/420_33d6865a/thumbnail.jpg?se=2025-08-27T11%3A44%3A20Z&sp=r&sv=2025-05-05&sr=b&sig=TVtIE1gUVyBc5xL/X2NVlL8Xwum9/Ddb%2BCQ4C5%2B3Cjs%3D",
+      "srt_signed_url": "https://videotranslatetest.blob.core.windows.net/processed-videos/projects/420/420_420_33d6865a_0abf5ad2/subs.srt?se=2025-08-27T11%3A44%3A20Z&sp=r&sv=2025-05-05&sr=b&sig=JSY3/dEDcfkKZbuX1NhYf1YB8672SVPTXIC3VbIRH1Q%3D"
     }
   ]
 }

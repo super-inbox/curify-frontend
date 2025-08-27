@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "scripts/nextauth-secret.js"
-  ],
+, "next-intl.config.js"  ],
   "exclude": ["node_modules"]
 }

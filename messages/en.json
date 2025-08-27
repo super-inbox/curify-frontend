@@ -1,6 +1,25 @@
 {
-  "main": {
-    "page_side_translation": "Video Translation"
+  "export": {
+    "title": "Export",
+    "export": "Export",
+    "downloading": "Downloading..."
   },
-  "confirm": "confirm"
+  "delete": {
+    "title": "Double Confirm",
+    "message": "Are you sure you want to delete this project",
+    "warning": "This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting..."
+  },
+  "userMenu": {
+    "topUpCredits": "Top Up Credits",
+    "remaining": "Remaining",
+    "planRemaining": "Plan Remaining", 
+    "validUntil": "Valid until",
+    "creditsHistory": "C Credits History",
+    "subscribePlan": "Subscribe Plan",
+    "supportTicket": "Support Ticket",
+    "signOut": "Sign Out"
+  }
 }

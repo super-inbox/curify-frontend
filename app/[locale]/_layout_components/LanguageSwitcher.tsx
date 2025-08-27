@@ -18,7 +18,6 @@ export default function LanguageSwitcher() {
     const query = searchParams.toString();
     const fullPath = query ? `${newPath}?${query}` : newPath;
 
-    // 👇 彻底替换页面，避免写入 history
     window.location.replace(fullPath);
   };
 
