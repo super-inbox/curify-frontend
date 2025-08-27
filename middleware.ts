@@ -1,3 +1,4 @@
+// middleware.ts
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextResponse, type NextRequest } from "next/server";
@@ -14,21 +15,22 @@ export default function middleware(req: NextRequest) {
   if (locale) {
     const token = req.cookies.get("next-auth.session-token")?.value;
 
-    const isRoot = pathname.endsWith(`/${locale}`);
-    const isLogin = pathname.endsWith(`/${locale}/login`);
-    const isContact = pathname.endsWith(`/${locale}/contact`);
+    const isRoot = pathname === `/${locale}`;
+    const isLogin = pathname === `/${locale}/login`;
+    const isContact = pathname === `/${locale}/contact`;
+    const isAbout = pathname === `/${locale}/about`;
+    const isPricing = pathname === `/${locale}/pricing`;
 
-    // 处理页面重定向
-    if (token) {
-      // 登录状态，禁止访问 / 和 /login
-      if (isRoot || isLogin) {
-        return NextResponse.redirect(new URL(`/${locale}/main`, req.url));
-      }
-    } else {
-      // 未登录状态，仅允许访问 /、/login、/contact
-      if (!isRoot && !isLogin && !isContact) {
-        return NextResponse.redirect(new URL(`/${locale}`, req.url));
-      }
+    const isPublicPage = isRoot || isLogin || isContact || isAbout || isPricing;
+
+    // Redirect unauthenticated users if they try to access private routes
+    if (!token && !isPublicPage) {
+      return NextResponse.redirect(new URL(`/${locale}`, req.url));
+    }
+
+    // Redirect logged-in users away from public-only pages
+    if (token && (isRoot || isLogin)) {
+      return NextResponse.redirect(new URL(`/${locale}/main`, req.url));
     }
   }
 
@@ -36,8 +38,8 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
+  // Match all pathnames except for:
+  // - those starting with `/api`, `/trpc`, `/_next`, or `/_vercel`
+  // - those containing a dot (e.g., `favicon.ico`)
   matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 };

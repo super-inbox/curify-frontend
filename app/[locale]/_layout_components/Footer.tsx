@@ -17,7 +17,7 @@ export default function Footer() {
         <p>
           <Link href={""}>Privacy Policy</Link>｜
           <Link href={""}>Terms of Service</Link>｜
-          <Link href={""}>info@curify.ai</Link>
+          <Link href={""}>team@curify-ai.com</Link>
         </p>
       </footer>
     )
