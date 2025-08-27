@@ -1,4 +1,3 @@
-// middleware.ts
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextResponse, type NextRequest } from "next/server";
@@ -20,8 +19,11 @@ export default function middleware(req: NextRequest) {
     const isContact = pathname === `/${locale}/contact`;
     const isAbout = pathname === `/${locale}/about`;
     const isPricing = pathname === `/${locale}/pricing`;
+    const isProfile = pathname === `/${locale}/profile`;
+    const isProjectDetail = pathname.startsWith(`/${locale}/project/`);
 
-    const isPublicPage = isRoot || isLogin || isContact || isAbout || isPricing;
+    const isPublicPage =
+      isRoot || isLogin || isContact || isAbout || isPricing || isProfile || isProjectDetail;
 
     // Redirect unauthenticated users if they try to access private routes
     if (!token && !isPublicPage) {
@@ -38,8 +40,5 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // Match all pathnames except for:
-  // - those starting with `/api`, `/trpc`, `/_next`, or `/_vercel`
-  // - those containing a dot (e.g., `favicon.ico`)
   matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 };

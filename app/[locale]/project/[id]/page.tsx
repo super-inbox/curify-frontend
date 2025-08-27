@@ -6,6 +6,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
+import { useParams } from "next/navigation";
+import ExportDialog from "../../_componentForPage/ExportDialog";
 
 interface Segment {
   line_number: number;
@@ -17,6 +19,8 @@ interface Segment {
 
 export default function ProjectDetailsPage() {
   const [segments, setSegments] = useState<Segment[]>([]);
+  const [isExportDialogOpen, setIsExportDialogOpen] = useState(false); // 👈 New state for the dialog
+  const { locale } = useParams();
 
   useEffect(() => {
     fetch("/data/project_segments.json")
@@ -29,13 +33,18 @@ export default function ProjectDetailsPage() {
       <Head>
         <title>Project Details | Curify Studio</title>
       </Head>
-      <div className="min-h-screen bg-white p-6">
+      <div className="min-h-screen bg-white p-6 pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left: Segment Table */}
           <div className="flex flex-col">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold">Segment Viewer</h2>
-              <div className="space-x-2">
+              <Link
+                href={`/${locale}/profile`}
+                className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors"
+              >
+                Return to Profile
+              </Link>
+              <div className="space-x-2 ml-auto">
                 <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
                 <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Regenerate</button>
               </div>
@@ -66,7 +75,12 @@ export default function ProjectDetailsPage() {
               <h2 className="text-2xl font-bold">Video Preview</h2>
               <div className="space-x-2">
                 <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">▶ Play</button>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">⬇ Export</button>
+                <button
+                  onClick={() => setIsExportDialogOpen(true)} // 👈 Open the dialog on click
+                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                >
+                  ⬇ Export
+                </button>
               </div>
             </div>
 
@@ -103,6 +117,8 @@ export default function ProjectDetailsPage() {
           </div>
         </div>
       </div>
+      {/* 👈 Conditionally render the dialog */}
+      {isExportDialogOpen && <ExportDialog onClose={() => setIsExportDialogOpen(false)} />}
     </>
   );
 }

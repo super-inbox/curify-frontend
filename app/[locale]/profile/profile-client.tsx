@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { format } from "date-fns";
 
@@ -15,8 +16,9 @@ type Project = {
   };
 };
 
-export default function ClientProfilePage() {
+export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -55,7 +57,7 @@ export default function ClientProfilePage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
+    <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
       {/* Top Tool Buttons */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {tools.map((tool) => (
@@ -85,11 +87,12 @@ export default function ClientProfilePage() {
           return (
             <div
               key={project.project_id}
-              className="border border-gray-200 rounded-lg overflow-hidden shadow-sm bg-white"
+              onClick={() => router.push(`/project/${project.project_id}`)}
+              className="border border-gray-200 rounded-lg overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition"
             >
               <div className="relative">
                 <Image
-                  src={project.thumbnail_signed_url}
+                  src="/images/mock-thumbnail.jpg"
                   alt={project.project_name}
                   width={640}
                   height={360}

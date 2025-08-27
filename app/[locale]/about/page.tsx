@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="relative mx-auto max-w-[1280px] px-6 sm:px-10 py-16 space-y-20">
+    <main className="relative mx-auto max-w-[1280px] px-6 pt-20 sm:px-10 py-16 space-y-20">
       {/* Header */}
       <div className="w-full flex items-center justify-between">
         <h1 className="text-3xl sm:text-4xl font-bold text-[var(--c1)]">
