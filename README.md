@@ -1,70 +1,70 @@
 # Curify Studio MVP
 
-Curify Studio MVP 是一个基于 [Next.js](https://nextjs.org) 的项目，旨在提供视频翻译和管理的解决方案。该项目使用现代前端技术构建，支持多语言翻译和用户友好的界面。
+Curify Studio MVP is a project based on [Next.js](https://nextjs.org) that aims to provide video translation and management solutions. The project is built using modern frontend technologies, supporting multilingual translation and a user-friendly interface.
 
-## 功能特性
+## Features
 
-- **视频翻译**：支持多语言字幕生成和翻译。
-- **项目管理**：管理用户的翻译项目，包括状态跟踪（处理中、已完成等）。
-- **用户认证**：支持 Google 登录和邮箱登录。
-- **积分系统**：显示用户的免费和付费积分余额。
+- **Video Translation**: Supports multilingual subtitle generation and translation.
+- **Project Management**: Manages users' translation projects, including status tracking (processing, completed, etc.).
+- **User Authentication**: Supports Google login and email login.
+- **Credit System**: Displays users' free and paid credit balance.
 
-## 技术栈
+## Tech Stack
 
-- **前端框架**：Next.js
-- **样式**：Tailwind CSS
-- **认证**：NextAuth.js
-- **API 调用**：基于 `fetch` 的数据交互
-- **多语言支持**：`next-intl` 实现国际化
+- **Frontend Framework**: Next.js
+- **Styling**: Tailwind CSS
+- **Authentication**: NextAuth.js
+- **API Calls**: Data interaction based on `fetch`
+- **Multi-language Support**: `next-intl` for internationalization
 
-## 快速开始
+## Quick Start
 
-### 环境要求
+### Requirements
 
-- Node.js 版本 >= 16
-- npm 或 yarn 包管理工具
+- Node.js version >= 16
+- npm or yarn package manager
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 npm install
-# 或者使用 yarn
+# or use yarn
 yarn install
 ```
 
-### 启动开发服务器
+### Start Development Server
 
-运行以下命令启动本地开发服务器：
+Run the following command to start the local development server:
 
 ```bash
 npm run dev
-# 或
+# or
 yarn dev
 ```
 
-打开浏览器访问 [http://localhost:3000](http://localhost:3000) 查看项目。
+Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the project.
 
-### 构建生产环境
+### Build for Production
 
-运行以下命令构建生产环境：
+Run the following command to build for production:
 
 ```bash
 npm run build
-# 或
+# or
 yarn build
 ```
 
-构建完成后，运行以下命令启动生产服务器：
+After building, run the following command to start the production server:
 
 ```bash
 npm start
-# 或
+# or
 yarn start
 ```
 
-### 环境变量
+### Environment Variables
 
-在项目根目录下创建 `.env.local` 文件，并添加以下环境变量：
+Create a `.env.local` file in the project root directory and add the following environment variables:
 
 ```env
 NEXTAUTH_SECRET=your_secret_key
@@ -74,21 +74,21 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 STRIPE_SECRET_KEY=your_stripe_secret_key
 ```
 
-## 文件结构
+## File Structure
 
 ```
 curify_studio_mvp/
-├── app/                              # Next.js 应用目录
-│   ├── [locale]/                     # 动态路由，支持多语言
-│   │   ├── _components.tsx           # 通用组建
-│   │   ├── _layout_components.tsx    # 布局相关组件
-│   │   ├── [pages]                   # 各页面文件夹
-│   │   │   ├── page.tsx              # 页面组件
-│   │   ├── layout.tsx                # 布局组件
-│   │   ├── page.tsx                  # 首页组件
-│   ├── api/                          # API 路由
-├── public/                           # 静态资源
-├── README.md                         # 项目说明文件
+├── app/                              # Next.js application directory
+│   ├── [locale]/                     # Dynamic routing, supports multi-language
+│   │   ├── _components.tsx           # Common components
+│   │   ├── _layout_components.tsx    # Layout-related components
+│   │   ├── [pages]                   # Page folders
+│   │   │   ├── page.tsx              # Page component
+│   │   ├── layout.tsx                # Layout component
+│   │   ├── page.tsx                  # Home page component
+│   ├── api/                          # API routes
+├── public/                           # Static assets
+├── README.md                         # Project documentation
 ```
 
 ## 📄 Pages

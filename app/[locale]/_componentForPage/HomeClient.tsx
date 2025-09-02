@@ -1,71 +1,233 @@
 // app/_componentForPage/HomeClient.tsx
-
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Buttons from "./Buttons";
 import BgParticle from "./BgParticle";
 import SignDrawer from "./drawer/SignDrawer";
 import EmailDrawer from "./drawer/EmailDrawer";
 
 export default function HomeClient() {
+  const [activeLanguage, setActiveLanguage] = useState<'en' | 'zh' | 'es'>('en');
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const languages = {
+    en: { flag: '🇺🇸', video: '/video/training_en.mp4', label: 'English' },
+    zh: { flag: '🇨🇳', video: '/video/training_zh.mp4', label: 'Chinese' },
+    es: { flag: '🇪🇸', video: '/video/training_es.mp4', label: 'Spanish' }
+  };
+
+  const handleLanguageSwitch = (lang: 'en' | 'zh' | 'es') => {
+    if (videoRef.current) {
+      setCurrentTime(videoRef.current.currentTime);
+    }
+    setActiveLanguage(lang);
+  };
+
+  useEffect(() => {
+    if (videoRef.current && currentTime > 0) {
+      videoRef.current.currentTime = currentTime;
+    }
+  }, [activeLanguage, currentTime]);
+
+  const coreFeatures = [
+    {
+      title: "One-Shot Translation",
+      desc: "Complete video translation with voice-over, subtitles, and lip sync in a single process.",
+      icon: "🎯"
+    },
+    {
+      title: "Tone Color Preservation",
+      desc: "Maintains the original speaker's unique voice characteristics and tonal qualities.",
+      icon: "🎨"
+    },
+    {
+      title: "Emotional Speech",
+      desc: "AI reproduces emotional nuances, ensuring authentic expression across languages.",
+      icon: "❤️"
+    },
+    {
+      title: "Lip Sync Technology",
+      desc: "Advanced lip synchronization that perfectly matches mouth movements to translated audio.",
+      icon: "👄"
+    },
+    {
+      title: "Subtitle Captioner",
+      desc: "Intelligent subtitle generation with precise timing and natural language flow.",
+      icon: "📝"
+    },
+    {
+      title: "170+ Languages",
+      desc: "Translate your content into over 170 languages with native-level accuracy.",
+      icon: "🌍"
+    }
+  ];
+
+  const upcomingProducts = [
+    {
+      title: "Subtitle Removal",
+      desc: "AI-powered subtitle removal that cleanly erases existing text while preserving video quality.",
+      icon: "🧹",
+      status: "Coming Q3 2025"
+    },
+    {
+      title: "Manga Translation", 
+      desc: "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
+      icon: "📚",
+      status: "Coming Q3 2025"
+    },
+    {
+      title: "Templated Video Generation",
+      desc: "Create professional videos from templates with AI-generated content and custom branding.",
+      icon: "🎬",
+      status: "Coming Q4 2025"
+    }
+  ];
+
   return (
     <>
-      <div className="relative flex flex-col items-center mt-32 lg:mt-40 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
-        <BgParticle />
+<div className="relative flex flex-col items-center mt-32 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+  <BgParticle />
+  
+  {/* Hero Section */}
+  <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
+    Power Content Creation with AI
+  </h1>
 
-        {/* Hero Section */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
-          Power Content Creation with AI
-        </h1>
-        <p className="text-lg sm:text-2xl lg:text-3xl text-center text-[var(--c2,#95a3b3)] mb-10 max-w-4xl">
-          AI-native platform that helps creators, educators, and media teams produce and localize videos, manga, and professional presentations at scale.
-        </p>
+  {/* Business Description Section */}
+  
+    <div className="text-center max-w-3xl mx-auto">
+      <p className="text-lg sm:text-xl text-[var(--c2)] leading-relaxed">
+        Curify Studio is building an AI-native content creation platform that empowers creators and organizations to
+        overcome language and format barriers. We solve the challenge of scaling content across global audiences,
+        enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection
+        of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly
+        globalizing industry.
+      </p>
+    </div>
+  <br></br>
+  <Buttons />
 
-        <Buttons />
+{/* Demo Video Section */}
+<section className="w-full mt-10 mb-20">
+  <div className="text-center mb-8">
+    <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
+      Watch the same video translated across different languages with preserved emotion and lip sync
+    </p>
+  </div>
 
-        {/* Feature Section with Demo Video */}
-        <section className="w-full mt-24 space-y-20">
-          {[
-            {
-              title: "One-click Video Translation",
-              desc: "With just a click, your video can be translated into another language. The original voice tone is cloned and maintained for maximum fidelity, preserving the feel of your original content.",
-              reverse: false,
-            },
-            {
-              title: "Emotional Reproduction",
-              desc: "Unlike traditional dubbing, we match the emotional tone of the speaker using prosody-aware generation, bringing videos to life in every language.",
-              reverse: true,
-            },
-            {
-              title: "Lip Sync",
-              desc: "We go beyond speech generation. Our lip sync engine ensures character mouths match audio perfectly — enhancing realism in every frame.",
-              reverse: false,
-            },
-            {
-              title: "Subtitle Tool",
-              desc: "Automatically generate, remove, or fine-tune subtitles for global accessibility. Add bilingual or monolingual tracks in seconds.",
-              reverse: true,
-            },
-          ].map(({ title, desc, reverse }, i) => (
-            <div
-              key={i}
-              className={`flex flex-col lg:flex-row ${reverse ? "lg:flex-row-reverse" : ""} items-center gap-10`}
-            >
-              <video
-                className="rounded-xl w-full lg:w-1/2 shadow-xl"
-                controls
-                src="/video/training_en.mp4"
-                muted
-                loop
-              />
-              <div className="lg:w-1/2 space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-[var(--c1)]">{title}</h3>
-                <p className="text-md text-white/80 leading-relaxed">{desc}</p>
+  {/* Demo Video */}
+  <div className="flex flex-col items-center">
+    <div className="w-full max-w-2xl">
+      <video
+        ref={videoRef}
+        key={activeLanguage}
+        className="rounded-xl w-full shadow-2xl"
+        controls
+        src={languages[activeLanguage].video}
+        muted
+        loop
+      />
+      <p className="text-center mt-4 text-[var(--c2)] font-medium">
+        Currently playing: {languages[activeLanguage].label} version
+      </p>
+    </div>
+
+    {/* Language Selection Buttons (moved here) */}
+    <div className="flex justify-center gap-4 mt-6">
+      {Object.entries(languages).map(([code, lang]) => (
+        <button
+          key={code}
+          onClick={() => handleLanguageSwitch(code as 'en' | 'zh' | 'es')}
+          className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+            activeLanguage === code
+              ? 'bg-blue-600 text-white shadow-lg scale-105'
+              : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+          }`}
+        >
+          <span className="text-2xl">{lang.flag}</span>
+          <span>{lang.label}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+        {/* Products & Services Section */}
+        <section className="w-full mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Products & Services</h2>
+            <p className="text-base sm:text-lg text-[var(--c2)]">
+              Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{feature.title}</h3>
+                <p className="text-sm text-[var(--c2)] leading-relaxed">{feature.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
+
+        {/* Target Audience Section */}
+        <section className="w-full mb-20">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Our Target Audience</h2>
+            <ul className="text-base sm:text-lg text-[var(--c2)] leading-relaxed list-disc list-inside space-y-2 text-left">
+              <li>🎥 Video creators and YouTubers expanding to global markets</li>
+              <li>📖 Educators and knowledge platforms converting books to lectures</li>
+              <li>🎶 Media and entertainment companies localizing content across languages</li>
+              <li>📚 Manga publishers and fan translators automating translation and typesetting</li>
+            </ul>
+          </div>
+        </section>
+{/* Upcoming Products Section */}
+<section className="w-full mb-20">
+  <div className="text-center mb-12">
+    <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
+      Coming Soon
+    </h2>
+    <p className="text-base sm:text-lg text-[var(--c2)]">
+      Next-generation features in development
+    </p>
+  </div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {upcomingProducts.map((product, index) => (
+      <div
+        key={index}
+        className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
+      >
+        <div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
+          {product.status}
+        </div>
+        <div className="text-4xl mb-4">{product.icon}</div>
+        <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{product.title}</h3>
+        <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{product.desc}</p>
+
+        {/* Demo Video */}
+        <video
+          className="rounded-lg shadow-md w-full mt-auto"
+          controls
+          muted
+          loop
+          src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
+        />
       </div>
+    ))}
+  </div>
+</section>
+
+      </div>
+      
       <SignDrawer />
       <EmailDrawer />
     </>

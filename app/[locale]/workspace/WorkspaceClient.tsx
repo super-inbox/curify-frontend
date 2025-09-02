@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { format } from "date-fns";
+import { useAtom } from "jotai";
+import { modalAtom } from "@/app/atoms/atoms";
 
 type Project = {
   project_id: string;
@@ -18,6 +20,7 @@ type Project = {
 
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [, setModalState] = useAtom(modalAtom);
   const router = useRouter();
 
   useEffect(() => {
@@ -31,13 +34,13 @@ export default function ProfileClientPage() {
 
   const tools = [
     {
-      title: "Language Translation",
+      title: "Video Translation",
       desc: "Translate your video into any language with accurate localization and voice sync",
       status: "create",
-      onClick: () => alert("Launch language translation flow"),
+      onClick: () => setModalState("add"),
     },
     {
-      title: "Lip Sync",
+      title: "Lip Syncing",
       desc: "Match lips to speech perfectly with AI-powered lip sync",
       status: "coming_soon",
       onClick: () => alert("Launch lip sync flow"),
@@ -46,7 +49,7 @@ export default function ProfileClientPage() {
       title: "Add Subtitles",
       desc: "Auto-generate multilingual subtitles to enhance clarity and accessibility",
       status: "create",
-      onClick: () => alert("Launch subtitle creation flow"),
+      onClick: () => setModalState("add"),
     },
     {
       title: "Remove Original Subtitles",

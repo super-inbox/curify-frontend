@@ -7,9 +7,9 @@ export default function Contact() {
         <title>Contact Us | Curify Studio</title>
       </Head>
 
-      <div className="h-full p-6 py-18 bg-gray-50 absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center overflow-auto">
-        <div className="max-w-6xl w-full flex flex-col h-full">
-          <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">
+      <div className="min-h-screen p-6 py-20 bg-gray-50 flex flex-col items-center">
+        <div className="max-w-4xl w-full flex flex-col">
+          <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
             Contact the Curify Team
           </h1>
 
@@ -21,14 +21,17 @@ export default function Contact() {
           </div>
 
           {/* 2-column layout: Email Form and Calendly */}
-          <div className="flex flex-col md:flex-row gap-6 w-full">
+          <div className="flex flex-col md:flex-row gap-16 w-full">
             {/* Email Form */}
             <form
               action="/api/send-email"
               method="POST"
-              className="bg-white p-6 rounded shadow flex flex-col flex-1"
+              className="bg-white p-5 rounded-lg shadow-md flex flex-col flex-1"
             >
-              <h2 className="text-lg font-semibold mb-4">📧 Submit a Request</h2>
+              <h2 className="text-lg font-semibold mb-2">📧 Submit a Request</h2>
+              <p className="text-sm text-gray-600 mb-3">
+                Use this form for general inquiries, technical support, or product feedback. Be sure to include relevant details so we can assist you faster.
+              </p>
 
               <input
                 name="email"
@@ -42,43 +45,41 @@ export default function Contact() {
                 name="subject"
                 type="text"
                 required
-                placeholder="Subject (e.g. Trial Request, Feedback, Support, Bug Report)"
+                placeholder="Subject (e.g. Trial Request, Bug Report)"
                 className="w-full border rounded px-3 py-2 mb-3"
               />
 
               <textarea
                 name="text"
-                rows={3}
+                rows={8} // Changed from 4 to 8
                 required
-                placeholder={`Please describe your request in detail. Examples:
-
-1. Trial Access:
-Let us know what you'd like to try, such as video dubbing, lip syncing, or subtitle removal. Include your video type, duration, and goals.
-
-2. Account/Payment Issue:
-Describe the issue you encountered, like credits not updating, failed uploads, or errors.
-
-We'll respond to your request within 2 business days.`}
-                className="w-full border rounded px-3 py-2 mb-3 flex-1"
+                placeholder="Please describe your request in detail..."
+                className="w-full border rounded px-3 py-2 mb-3"
               />
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Send Message
               </button>
             </form>
 
             {/* Calendly Embed */}
-            <div className="bg-white p-6 rounded shadow flex-1">
-              <h2 className="text-lg font-semibold mb-4">📅 Schedule a Call</h2>
+            <div className="bg-white p-5 rounded-lg shadow-md flex-1 flex flex-col">
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold mb-2">📅 Schedule a Call</h2>
+                <p className="text-sm text-gray-600 mb-3">
+                  Ideal for partnership, sales, or technical discussions. Book a 15-minute meeting at your convenience—we'll come prepared.
+                </p>
+              </div>
+
               <iframe
                 src="https://calendly.com/qqwjq9916/15-minute-meeting"
                 width="100%"
-                height="600"
+                height="650"
                 frameBorder="0"
-                className="rounded"
+                className="rounded-lg"
                 title="Schedule a call with Curify"
               ></iframe>
             </div>

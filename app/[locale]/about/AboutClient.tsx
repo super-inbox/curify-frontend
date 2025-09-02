@@ -9,7 +9,7 @@ const technologies = [
     key: "multimodal",
     title: "Multi-modal Recognition",
     desc: "We combine speech and subtitle signals to achieve more accurate and robust transcription. This dual-channel recognition reduces errors and ensures better alignment with the original content, especially in noisy or complex audio scenes.",
-    image: "/images/multimodal.gif",
+    image: "/images/multimodal.png",
   },
   {
     key: "emotional",
@@ -21,7 +21,7 @@ const technologies = [
     key: "lengthaware",
     title: "Length-aware Translation and Customization",
     desc: "We optimize translations not just for accuracy, but also for timing and pacing—crucial for video and voice alignment. Users can further customize tone, length, and phrasing to suit different content needs or audience preferences.",
-    image: "/images/length-aware.gif",
+    image: "/images/length-aware.jpg",
   },
   {
     key: "controlled",
@@ -43,8 +43,8 @@ export default function AboutClient() {
           Our mission is to leverage AI technology to make video internationalization efficient, expressive, and
           effortless—empowering anyone, anywhere, to share their voice across languages and cultures.
         </p>
-        <div className="bg-blue-50 border border-blue-200 text-blue-800 italic px-6 py-4 rounded-xl shadow-md inline-block mt-4">
-          “Empowering every voice to be heard, across every language.”
+        <div className="bg-blue-50 border border-blue-200 text-blue-800 italic px-6 py-4 rounded-xl shadow-md inline-block mt-4 text-2xl">
+        “Empowering every voice to be heard, across every language.”
         </div>
       </section>
 
@@ -79,66 +79,72 @@ export default function AboutClient() {
           </div>
         </div>
       </section>
-
-      {/* Section 3: Meet the Team */}
-      <section>
-        <h2 className="text-3xl font-bold mb-6 text-center">Meet the Team</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-          {[
-            {
-              name: "Jay Wang",
-              role: "Founder & CEO",
-              image: "/team/jay.png",
-              desc: "Ph.D., Twitter, Kuaishou, 19+ years in ML. Author, builder, visionary.",
-              linkedin: "https://www.linkedin.com/in/jay-jianqiang-wang-78a6726/",
-              github: "https://github.com/qqwjq1981",
-            },
-            {
-              name: "Ting Zhang",
-              role: "GTM & Partnerships",
-              image: "/team/ting.png",
-              desc: "Biz dev strategist focused on media & IP licensing verticals.",
-              linkedin: "https://www.linkedin.com/in/ting-zhang-91043811",
-            },
-            {
-              name: "Rafi Ahmed Patel",
-              role: "Founding ML Engineer",
-              image: "/team/ting.png",
-              desc: "MSc UCL. Specializes in TTS, CV, and translation systems.",
-              linkedin: "https://www.linkedin.com/in/raafi-patel-bb2954202/",
-              github: "https://github.com/rafipatel",
-            },
-          ].map((member, idx) => (
-            <div
-              key={idx}
-              className="rounded-xl border border-gray-200 bg-white p-4 text-center hover:shadow-md transition-shadow"
-            >
-              <Image
-                src={member.image}
-                alt={member.name}
-                width={120}
-                height={120}
-                className="mx-auto mb-3 rounded-full object-cover"
-              />
-              <h3 className="text-base font-semibold">{member.name}</h3>
-              <p className="text-gray-600 text-sm mb-1">{member.role}</p>
-              <p className="text-gray-700 text-sm mb-3">{member.desc}</p>
-              <div className="flex justify-center gap-4 text-gray-700 text-2xl">
-                {member.linkedin && (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin />
-                  </a>
-                )}
-                {member.github && (
-                  <a href={member.github} target="_blank" rel="noopener noreferrer">
-                    <FaGithub />
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+{/* Section 3: Meet the Team */}
+<section>
+  <h2 className="text-3xl font-bold mb-6 text-center">Meet the Team</h2>
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+    {[
+      {
+        name: "Jay Wang",
+        role: "Founder & CEO",
+        image: "/team/jay.png",
+        desc: "Ph.D., Twitter, Kuaishou, 19+ years in ML. Author, builder, visionary.",
+        linkedin: "https://www.linkedin.com/in/jay-jianqiang-wang-78a6726/",
+        github: "https://github.com/qqwjq1981",
+      },
+      {
+        name: "Shengli Li",
+        role: "Founding Architect",
+        image: "/team/shengli.png",
+        desc: "20+ years in distributed systems, search & recommendation engine architecture.",
+      },
+      {
+        name: "Ting Zhang",
+        role: "GTM & Partnerships",
+        image: "/team/ting.png",
+        desc: "Biz dev strategist focused on media & IP licensing verticals.",
+        linkedin: "https://www.linkedin.com/in/ting-zhang-91043811",
+      },
+      {
+        name: "Rafi Ahmed Patel",
+        role: "Founding ML Engineer",
+        image: "/team/rafi.png",
+        desc: "MSc UCL. Specializes in TTS, CV, and translation systems.",
+        linkedin: "https://www.linkedin.com/in/raafi-patel-bb2954202/",
+        github: "https://github.com/rafipatel",
+      },
+    ].map((member, idx) => (
+      <div
+        key={idx}
+        className="rounded-xl border border-gray-200 bg-white p-4 text-center hover:shadow-md transition-shadow"
+      >
+        <Image
+          src={member.image}
+          alt={member.name}
+          width={120}
+          height={120}
+          className="mx-auto mb-3 rounded-full object-cover"
+        />
+        <h3 className="text-base font-semibold">{member.name}</h3>
+        <p className="text-gray-600 text-sm mb-1">{member.role}</p>
+        <p className="text-gray-700 text-base mb-3">{member.desc}</p>
+        <div className="flex justify-center gap-4 text-gray-700 text-3xl">
+          {member.linkedin && (
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+          )}
+          {member.github && (
+            <a href={member.github} target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+          )}
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
     </main>
   );
 }
