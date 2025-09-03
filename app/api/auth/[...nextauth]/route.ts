@@ -1,3 +1,4 @@
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -74,3 +75,9 @@ export const authOptions = {
     },
   },
 };
+
+// NextAuth returns the necessary GET and POST handlers for the App Router
+const handler = NextAuth(authOptions);
+
+// Export the handlers
+export { handler as GET, handler as POST };

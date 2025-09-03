@@ -12,9 +12,9 @@ export default function HomeClient() {
   const [currentTime, setCurrentTime] = useState(0);
 
   const languages = {
-    en: { flag: '🇺🇸', video: '/video/training_en.mp4', label: 'English' },
-    zh: { flag: '🇨🇳', video: '/video/training_zh.mp4', label: 'Chinese' },
-    es: { flag: '🇪🇸', video: '/video/training_es.mp4', label: 'Spanish' }
+    en: { flag: '🇺🇸', video: '/video/training_en.mp4', label: 'EN' },
+    zh: { flag: '🇨🇳', video: '/video/training_zh.mp4', label: 'ZH' },
+    es: { flag: '🇪🇸', video: '/video/training_es.mp4', label: 'ES' }
   };
 
   const handleLanguageSwitch = (lang: 'en' | 'zh' | 'es') => {
@@ -25,10 +25,15 @@ export default function HomeClient() {
   };
 
   useEffect(() => {
-    if (videoRef.current && currentTime > 0) {
-      videoRef.current.currentTime = currentTime;
+    if (videoRef.current) {
+      videoRef.current.src = languages[activeLanguage].video;
+      videoRef.current.load();
+      videoRef.current.onloadeddata = () => {
+        videoRef.current!.currentTime = currentTime;
+        videoRef.current!.play();
+      };
     }
-  }, [activeLanguage, currentTime]);
+  }, [activeLanguage]);
 
   const coreFeatures = [
     {
@@ -71,7 +76,7 @@ export default function HomeClient() {
       status: "Coming Q3 2025"
     },
     {
-      title: "Manga Translation", 
+      title: "Manga Translation",
       desc: "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
       icon: "📚",
       status: "Coming Q3 2025"
@@ -86,73 +91,69 @@ export default function HomeClient() {
 
   return (
     <>
-<div className="relative flex flex-col items-center mt-32 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
-  <BgParticle />
-  
-  {/* Hero Section */}
-  <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
-    Power Content Creation with AI
-  </h1>
+      <div className="relative flex flex-col items-center mt-32 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+        <BgParticle />
 
-  {/* Business Description Section */}
-  
-    <div className="text-center max-w-3xl mx-auto">
-      <p className="text-lg sm:text-xl text-[var(--c2)] leading-relaxed">
-        Curify Studio is building an AI-native content creation platform that empowers creators and organizations to
-        overcome language and format barriers. We solve the challenge of scaling content across global audiences,
-        enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection
-        of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly
-        globalizing industry.
-      </p>
-    </div>
-  <br></br>
-  <Buttons />
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
+          Power Content Creation with AI
+        </h1>
 
-{/* Demo Video Section */}
-<section className="w-full mt-10 mb-20">
-  <div className="text-center mb-8">
-    <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
-      Watch the same video translated across different languages with preserved emotion and lip sync
-    </p>
-  </div>
+        <div className="text-center max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-[var(--c2)] leading-relaxed">
+            Curify Studio is building an AI-native content creation platform that empowers creators and organizations to
+            overcome language and format barriers. We solve the challenge of scaling content across global audiences,
+            enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection
+            of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly
+            globalizing industry.
+          </p>
+        </div>
 
-  {/* Demo Video */}
-  <div className="flex flex-col items-center">
-    <div className="w-full max-w-2xl">
-      <video
-        ref={videoRef}
-        key={activeLanguage}
-        className="rounded-xl w-full shadow-2xl"
-        controls
-        src={languages[activeLanguage].video}
-        loop
-      />
-      <p className="text-center mt-4 text-[var(--c2)] font-medium">
-        Currently playing: {languages[activeLanguage].label} version
-      </p>
-    </div>
+        <br />
+        <Buttons />
 
-    {/* Language Selection Buttons (moved here) */}
-    <div className="flex justify-center gap-4 mt-6">
-      {Object.entries(languages).map(([code, lang]) => (
-        <button
-          key={code}
-          onClick={() => handleLanguageSwitch(code as 'en' | 'zh' | 'es')}
-          className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-            activeLanguage === code
-              ? 'bg-blue-600 text-white shadow-lg scale-105'
-              : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-          }`}
-        >
-          <span className="text-2xl">{lang.flag}</span>
-          <span>{lang.label}</span>
-        </button>
-      ))}
-    </div>
-  </div>
-</section>
+        {/* Demo Video Section */}
+        <section className="w-full mt-10 mb-20">
+          <div className="text-center mb-8">
+            <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
+              Watch the same video translated across different languages with preserved emotion and lip sync
+            </p>
+          </div>
 
-        {/* Products & Services Section */}
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-2xl relative">
+              <video
+                ref={videoRef}
+                className="rounded-xl w-full shadow-2xl"
+                controls
+                loop
+                preload="metadata"
+              />
+
+              {/* Language Switch Buttons - Overlayed */}
+              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
+                {Object.entries(languages).map(([code, lang]) => (
+                  <button
+                    key={code}
+                    onClick={() => handleLanguageSwitch(code as 'en' | 'zh' | 'es')}
+                    className={`px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm transition-all duration-300 ${
+                      activeLanguage === code
+                        ? 'bg-blue-600 text-white shadow-md scale-105'
+                        : 'bg-white/80 text-gray-800 hover:bg-gray-100 border border-gray-300'
+                    }`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+
+              <p className="text-center mt-4 text-[var(--c2)] font-medium">
+                Currently playing: {languages[activeLanguage].label} version
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Products & Services */}
         <section className="w-full mb-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Products & Services</h2>
@@ -160,7 +161,7 @@ export default function HomeClient() {
               Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreFeatures.map((feature, index) => (
               <div
@@ -175,7 +176,7 @@ export default function HomeClient() {
           </div>
         </section>
 
-        {/* Target Audience Section */}
+        {/* Target Audience */}
         <section className="w-full mb-20">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Our Target Audience</h2>
@@ -187,44 +188,40 @@ export default function HomeClient() {
             </ul>
           </div>
         </section>
-{/* Upcoming Products Section */}
-<section className="w-full mb-20">
-  <div className="text-center mb-12">
-    <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
-      Coming Soon
-    </h2>
-    <p className="text-base sm:text-lg text-[var(--c2)]">
-      Next-generation features in development
-    </p>
-  </div>
-  
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {upcomingProducts.map((product, index) => (
-      <div
-        key={index}
-        className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
-      >
-        <div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
-          {product.status}
-        </div>
-        <div className="text-4xl mb-4">{product.icon}</div>
-        <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{product.title}</h3>
-        <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{product.desc}</p>
 
-        {/* Demo Video */}
-        <video
-          className="rounded-lg shadow-md w-full mt-auto"
-          controls
-          loop
-          src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
-        />
-      </div>
-    ))}
-  </div>
-</section>
+        {/* Upcoming Products */}
+        <section className="w-full mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Coming Soon</h2>
+            <p className="text-base sm:text-lg text-[var(--c2)]">
+              Next-generation features in development
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {upcomingProducts.map((product, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
+              >
+                <div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
+                  {product.status}
+                </div>
+                <div className="text-4xl mb-4">{product.icon}</div>
+                <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{product.title}</h3>
+                <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{product.desc}</p>
+                <video
+                  className="rounded-lg shadow-md w-full mt-auto"
+                  controls
+                  loop
+                  src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
-      
+
       <SignDrawer />
       <EmailDrawer />
     </>

@@ -9,6 +9,7 @@ import Avatar from "../_components/Avatar";
 import { useRouter } from "@/i18n/navigation";
 import Icon from "../_components/Icon";
 import { useParams } from "next/navigation";
+import UserDropdownMenu from "../_componentForPage/UserDropdownMenu";
 
 export default function Header() {
   const router = useRouter();
@@ -61,45 +62,41 @@ export default function Header() {
 
         {/* Right Section: Language & Buttons */}
         <div className="flex items-center space-x-4">
-          {/* Language Dropdown */}
-          <div className="relative">
-            <details className="dropdown">
-              <summary
-                className="m-1 btn btn-ghost text-[var(--c1)] text-sm min-h-0 h-auto px-2 py-1"
-              >
-                <span className="mr-2">{currentLanguage?.flag}</span>
-                {currentLanguage?.name}
-              </summary>
-              <ul className="absolute right-0 mt-2 p-2 shadow menu bg-white rounded-box w-32 z-50">
-                {languages.map((lang) => (
-                  <li key={lang.locale}>
-                    <Link href={`/${lang.locale}`} className="text-sm">
-                      {lang.flag} {lang.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </div>
-
           {headerState === "out" ? (
             <>
-              <Link href={`/${locale}/workspace`}>
-                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
-                  Sign in
-                </BtnN>
-              </Link>
-              <BtnN onClick={() => setDrawerState("signup")}>
-                Sign Up for Free
-              </BtnN>
-              <Link href={`/${locale}/contact`}>
-                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
-                  Contact us
-                </BtnN>
-              </Link>
+             <Link href={`/${locale}/contact`}>
+  <BtnN>
+    Book a demo
+  </BtnN>
+</Link>
+<Link href={`/${locale}/contact`}>
+  <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
+    Contact us
+  </BtnN>
+</Link>
             </>
           ) : (
             <>
+              {/* Language Dropdown */}
+              <div className="relative">
+                <details className="dropdown">
+                  <summary
+                    className="m-1 btn btn-ghost text-[var(--c1)] text-sm min-h-0 h-auto px-2 py-1"
+                  >
+                    <span className="mr-2">{currentLanguage?.flag}</span>
+                    {currentLanguage?.name}
+                  </summary>
+                  <ul className="absolute right-0 mt-2 p-2 shadow menu bg-white rounded-box w-32 z-50">
+                    {languages.map((lang) => (
+                      <li key={lang.locale}>
+                        <Link href={`/${lang.locale}`} className="text-sm">
+                          {lang.flag} {lang.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </div>
               <p className="text-sm text-right mr-3">
                 <span className="text-[var(--p-blue)] font-bold">3000</span>
                 <span className="text-[var(--c1)] mx-1 font-bold">C</span>left
@@ -107,7 +104,7 @@ export default function Header() {
               <BtnN onClick={() => setDrawerState("signup")}>
                 Top Up Credits
               </BtnN>
-              <Avatar user={user} />
+              <UserDropdownMenu user={user} />
             </>
           )}
         </div>
