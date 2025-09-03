@@ -1,4 +1,3 @@
-// app/_componentForPage/HomeClient.tsx
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -126,7 +125,6 @@ export default function HomeClient() {
         className="rounded-xl w-full shadow-2xl"
         controls
         src={languages[activeLanguage].video}
-        muted
         loop
       />
       <p className="text-center mt-4 text-[var(--c2)] font-medium">
@@ -217,7 +215,6 @@ export default function HomeClient() {
         <video
           className="rounded-lg shadow-md w-full mt-auto"
           controls
-          muted
           loop
           src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
         />

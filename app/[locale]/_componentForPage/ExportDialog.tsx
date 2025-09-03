@@ -1,138 +1,101 @@
-// app/[locale]/project/[id]/page.tsx
 "use client";
 
-import { useEffect, useState } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import { Tab } from "@headlessui/react";
-import clsx from "clsx";
-import { useParams } from "next/navigation";
-import ExportDialog from "./ExportDialog"; // Assuming ExportDialog is in the same directory
+import { Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { XMarkIcon, ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
-interface Segment {
-  line_number: number;
-  original: string;
-  translated: string;
-  start: number;
-  end: number;
+// Define the types for the props and file objects
+interface File {
+  name: string;
+  type: string;
+  size: string;
+  downloadUrl: string;
 }
 
-export default function ProjectDetailsPage() {
-  const [segments, setSegments] = useState<Segment[]>([]);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { locale } = useParams();
+interface ExportDialogProps {
+  isOpen: boolean;
+  onClose: () => void;
+  files: File[];
+}
 
-  // Mock files to pass to the ExportDialog
-  const mockFiles = [
-    { name: "My Project_EN.mp4", type: "MP4", size: "25.4 MB", downloadUrl: "/demo.mp4" },
-    { name: "My Project_EN.srt", type: "SRT", size: "12 KB", downloadUrl: "/subtitles.srt" },
-  ];
-
-  useEffect(() => {
-    fetch("/data/project_segments.json")
-      .then((res) => res.json())
-      .then((data) => setSegments(data));
-  }, []);
-
-  const handleOpenDialog = () => {
-    setIsDialogOpen(true);
-  };
-
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
-  };
-
+export default function ExportDialog({ isOpen, onClose, files }: ExportDialogProps) {
   return (
-    <>
-      <Head>
-        <title>Project Details | Curify Studio</title>
-      </Head>
-      <div className="min-h-screen bg-white p-6 pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left: Segment Table */}
-          <div className="flex flex-col">
-            <div className="flex justify-between items-center mb-4">
-              <Link
-                href={`/${locale}/profile`}
-                className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors"
-              >
-                Return to Profile
-              </Link>
-              <div className="space-x-2 ml-auto">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-                <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Regenerate</button>
-              </div>
-            </div>
-            <table className="w-full text-sm border">
-              <thead>
-                <tr className="bg-gray-100 text-left">
-                  <th className="p-2 border">#</th>
-                  <th className="p-2 border">Original</th>
-                  <th className="p-2 border">Translated</th>
-                </tr>
-              </thead>
-              <tbody>
-                {segments.map((seg) => (
-                  <tr key={seg.line_number} className="border-t">
-                    <td className="p-2 border align-top text-gray-500">{seg.line_number}</td>
-                    <td className="p-2 border align-top">{seg.original}</td>
-                    <td className="p-2 border align-top text-blue-900">{seg.translated}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog as="div" className="relative z-10" onClose={onClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-25" />
+        </Transition.Child>
 
-          {/* Right: Video Viewer */}
-          <div className="flex flex-col">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold">Video Preview</h2>
-              <div className="space-x-2">
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">▶ Play</button>
-                <button onClick={handleOpenDialog} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">⬇ Export</button>
-              </div>
-            </div>
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <div className="flex justify-between items-center">
+                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    Export Files
+                  </Dialog.Title>
+                  <button
+                    type="button"
+                    className="p-1 rounded-md text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+                    onClick={onClose}
+                  >
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                </div>
+                <div className="mt-4">
+                  <p className="text-sm text-gray-500 mb-4">
+                    Select the files you want to export.
+                  </p>
+                  <ul className="space-y-2">
+                    {files.map((file) => (
+                      <li key={file.name} className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm font-medium text-gray-700">{file.name}</span>
+                          <span className="text-xs text-gray-400">({file.size}, {file.type})</span>
+                        </div>
+                        <a
+                          href={file.downloadUrl}
+                          download
+                          className="text-blue-600 hover:text-blue-800 transition-colors"
+                          title="Download"
+                        >
+                          <ArrowDownTrayIcon className="h-5 w-5" />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            <Tab.Group>
-              <Tab.List className="flex space-x-1 rounded-xl bg-gray-200 p-1">
-                <Tab
-                  className={({ selected }) =>
-                    clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
-                      "bg-white shadow": selected,
-                    })
-                  }
-                >
-                  Original Video
-                </Tab>
-                <Tab
-                  className={({ selected }) =>
-                    clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
-                      "bg-white shadow": selected,
-                    })
-                  }
-                >
-                  Translated Video
-                </Tab>
-              </Tab.List>
-              <Tab.Panels className="mt-4">
-                <Tab.Panel className="relative aspect-video bg-black flex items-center justify-center">
-                  <video src="/demo.mp4" controls className="w-full h-full object-contain" />
-                </Tab.Panel>
-                <Tab.Panel className="relative aspect-video bg-black flex items-center justify-center">
-                  <video src="/demo.mp4" controls className="w-full h-full object-contain" />
-                </Tab.Panel>
-              </Tab.Panels>
-            </Tab.Group>
+                <div className="mt-6 flex justify-end">
+                  <button
+                    type="button"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    onClick={onClose}
+                  >
+                    Done
+                  </button>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
         </div>
-      </div>
-      
-      {/* Export Dialog */}
-      <ExportDialog
-        isOpen={isDialogOpen}
-        onClose={handleCloseDialog}
-        files={mockFiles}
-      />
-    </>
+      </Dialog>
+    </Transition>
   );
 }

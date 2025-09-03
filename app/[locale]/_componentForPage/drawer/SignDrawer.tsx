@@ -83,7 +83,7 @@ export default function SignDrawer() {
           </BtnN>
           <div className="flex items-center">
             <p className="mr-3">or</p>
-            <BtnN whiteConfig={["no-highlight", "custom"]} onClick={() => {}}>
+            <BtnN whiteConfig={["no-highlight"]} onClick={() => {}}>
               <div className="p-3">
                 <Icon size={5} name="google" />
               </div>

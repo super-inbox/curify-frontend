@@ -85,7 +85,7 @@ export default function Header() {
           {headerState === "out" ? (
             <>
               <Link href={`/${locale}/workspace`}>
-                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
+                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
                   Sign in
                 </BtnN>
               </Link>
@@ -93,7 +93,7 @@ export default function Header() {
                 Sign Up for Free
               </BtnN>
               <Link href={`/${locale}/contact`}>
-                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
+                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
                   Contact us
                 </BtnN>
               </Link>
