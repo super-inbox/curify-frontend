@@ -5,19 +5,29 @@ import Icon from "../_components/Icon";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/app/atoms/atoms";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 export default function Buttons() {
   const [open, setOpen] = useAtom(drawerAtom);
 
   return (
     <div className="flex">
-      <BtnP onClick={() => setOpen("signin")}>Try Free</BtnP>
+      {/* Book a Demo CTA */}
+      <Link href="/contact">
+        <BtnP onClick={() => {}}>
+          Book a Demo
+        </BtnP>
+      </Link>
+
       <div className="w-9" />
+
+      {/* Google Auth (temporarily disabled) */}
+      {/*
       <BtnP
         type="white"
         onClick={() =>
           signIn("google", { redirect: false }).then((result) => {
-            console.log(result); // 查看结果
+            console.log(result);
             if (result?.error) {
               console.error("Login failed:", result.error);
             }
@@ -25,8 +35,9 @@ export default function Buttons() {
         }
       >
         <Icon name="google" size={6} />
-        <span className="ml-2.5">Sign in with Google</span>
+        <span className="ml-2.5">Continue with Google</span>
       </BtnP>
+      */}
     </div>
   );
 }

@@ -2,8 +2,15 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
+// Define the correct type for the credits object
+interface CreditsInfo {
+  paidCredits: number;
+  freeCredits: number;
+  plan: string;
+}
+
 export default function Dashboard() {
-  const [credits, setCredits] = useState<User.Info['credits'] | null>(null);
+  const [credits, setCredits] = useState<CreditsInfo | null>(null);
 
   useEffect(() => {
     fetch("/data/userInfo.json")
@@ -29,11 +36,12 @@ export default function Dashboard() {
       if (data.url) {
         window.location.href = data.url;
       } else {
-        alert("Failed to start checkout");
+        // Use a custom message box instead of alert()
+        console.error("Failed to start checkout");
       }
     } catch (err) {
       console.error("Checkout error:", err);
-      alert("Error starting checkout");
+      // Use a custom message box instead of alert()
     }
   };
 

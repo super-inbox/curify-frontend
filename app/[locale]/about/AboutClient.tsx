@@ -15,7 +15,7 @@ const technologies = [
     key: "emotional",
     title: "Emotional Speech",
     desc: "Our voice synthesis models generate expressive, emotionally rich speech that enhances storytelling and viewer engagement. By capturing tone, rhythm, and nuance, we make AI voices feel more human and relatable.",
-    image: "/images/emotional.gif",
+    image: "/images/emotional-speech.png",
   },
   {
     key: "lengthaware",
