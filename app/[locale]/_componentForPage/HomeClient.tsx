@@ -36,57 +36,18 @@ export default function HomeClient() {
   }, [activeLanguage]);
 
   const coreFeatures = [
-    {
-      title: "One-Shot Translation",
-      desc: "Complete video translation with voice-over, subtitles, and lip sync in a single process.",
-      icon: "🎯"
-    },
-    {
-      title: "Tone Color Preservation",
-      desc: "Maintains the original speaker's unique voice characteristics and tonal qualities.",
-      icon: "🎨"
-    },
-    {
-      title: "Emotional Speech",
-      desc: "AI reproduces emotional nuances, ensuring authentic expression across languages.",
-      icon: "❤️"
-    },
-    {
-      title: "Lip Sync Technology",
-      desc: "Advanced lip synchronization that perfectly matches mouth movements to translated audio.",
-      icon: "👄"
-    },
-    {
-      title: "Subtitle Captioner",
-      desc: "Intelligent subtitle generation with precise timing and natural language flow.",
-      icon: "📝"
-    },
-    {
-      title: "170+ Languages",
-      desc: "Translate your content into over 170 languages with native-level accuracy.",
-      icon: "🌍"
-    }
+    { title: "One-Shot Translation", desc: "Complete video translation with voice-over, subtitles, and lip sync in a single process.", icon: "🎯" },
+    { title: "Tone Color Preservation", desc: "Maintains the original speaker's unique voice characteristics and tonal qualities.", icon: "🎨" },
+    { title: "Emotional Speech", desc: "AI reproduces emotional nuances, ensuring authentic expression across languages.", icon: "❤️" },
+    { title: "Lip Sync Technology", desc: "Advanced lip synchronization that perfectly matches mouth movements to translated audio.", icon: "👄" },
+    { title: "Subtitle Captioner", desc: "Intelligent subtitle generation with precise timing and natural language flow.", icon: "📝" },
+    { title: "170+ Languages", desc: "Translate your content into over 170 languages with native-level accuracy.", icon: "🌍" }
   ];
 
   const upcomingProducts = [
-    {
-      title: "Subtitle Removal",
-      desc: "AI-powered subtitle removal that cleanly erases existing text while preserving video quality.",
-      icon: "🧹",
-      status: "Coming Q3 2025"
-    },
-    {
-      title: "Manga Translation",
-      desc: "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
-      icon: "📚",
-      status: "Coming Q3 2025"
-    },
-    {
-      title: "Templated Video Generation",
-      desc: "Create professional videos from templates with AI-generated content and custom branding.",
-      icon: "🎬",
-      status: "Coming Q4 2025"
-    }
+    { title: "Subtitle Removal", desc: "AI-powered subtitle removal that cleanly erases existing text while preserving video quality.", icon: "🧹", status: "Coming Q3 2025" },
+    { title: "Manga Translation", desc: "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.", icon: "📚", status: "Coming Q3 2025" },
+    { title: "Templated Video Generation", desc: "Create professional videos from templates with AI-generated content and custom branding.", icon: "🎬", status: "Coming Q4 2025" }
   ];
 
   return (
@@ -129,19 +90,20 @@ export default function HomeClient() {
                 preload="metadata"
               />
 
-              {/* Language Switch Buttons - Overlayed */}
+              {/* Capsule Language Buttons with Flag + Abbreviation */}
               <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
                 {Object.entries(languages).map(([code, lang]) => (
                   <button
                     key={code}
                     onClick={() => handleLanguageSwitch(code as 'en' | 'zh' | 'es')}
-                    className={`px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm transition-all duration-300 ${
+                    className={`px-5 py-2 rounded-full flex items-center gap-2 text-sm font-semibold backdrop-blur-sm transition-all duration-300 ${
                       activeLanguage === code
-                        ? 'bg-blue-600 text-white shadow-md scale-105'
+                        ? 'bg-blue-600 text-white shadow-md scale-110'
                         : 'bg-white/80 text-gray-800 hover:bg-gray-100 border border-gray-300'
                     }`}
                   >
-                    {lang.label}
+                    <span className="text-lg">{lang.flag}</span>
+                    <span>{lang.label}</span>
                   </button>
                 ))}
               </div>

@@ -14,7 +14,7 @@ export default function Buttons() {
     <div className="flex">
       {/* Book a Demo CTA */}
       <Link href="/contact">
-        <BtnP>
+        <BtnP onClick={() => {}}>
           Book a Demo
         </BtnP>
       </Link>
