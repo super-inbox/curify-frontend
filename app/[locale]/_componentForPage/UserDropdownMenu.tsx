@@ -9,22 +9,13 @@ import {
   HelpCircle, 
   LogOut, 
   ChevronRight,
-  User
+  User as UserIcon
 } from 'lucide-react';
 
-interface UserInfo {
-  email: string;
-  avatar?: string;
-  credits: {
-    non_expiring_credits: number;
-    expiring_credits: number;
-    planRemaining: number;
-    validUntil: string;
-  };
-}
+import type { User } from '@/types/auth';
 
 interface UserDropdownMenuProps {
-  user: UserInfo;
+  user: User;
   isOpen: boolean;
   onClose: () => void;
   onLanguageSelect?: (locale: string) => void;
@@ -51,7 +42,7 @@ export default function UserDropdownMenu({
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
 
-  const totalCredits = (user.credits.expiring_credits ?? 0) + (user.credits.non_expiring_credits ?? 0);
+  const totalCredits = (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -99,7 +90,7 @@ export default function UserDropdownMenu({
             {user.avatar ? (
               <img src={user.avatar} alt="User" className="w-8 h-8 rounded-full object-cover" />
             ) : (
-              <User size={16} className="text-gray-600" />
+              <UserIcon size={16} className="text-gray-600" />
             )}
           </div>
         </div>
