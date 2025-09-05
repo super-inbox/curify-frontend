@@ -8,7 +8,6 @@ import { notFound } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
 import Script from "next/script";
-import "../globals.css";
 import Header from "./_layout_components/Header";
 import Footer from "./_layout_components/Footer";
 import AppWrapper from "./_layout_components/AppWrapper";
@@ -40,11 +39,21 @@ export default async function LocaleLayout(props: Props) {
 
   return (
     <html lang={locale}>
+      <head>
+        {/* Google Identity Services Script */}
+        <script 
+          src="https://accounts.google.com/gsi/client" 
+          async 
+          defer
+        />
+      </head>
       <body>
+        {/* Your existing font script */}
         <Script
           src="//at.alicdn.com/t/c/font_4910365_wqytpll6n9g.js"
           strategy="beforeInteractive"
         />
+        
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <AppWrapper user={session?.user || null}>

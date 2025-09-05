@@ -52,8 +52,9 @@ export default function HomeClient() {
 
   return (
     <>
+    <BgParticle />
       <div className="relative flex flex-col items-center mt-32 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
-        <BgParticle />
+        
 
         <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
           Power Content Creation with AI
