@@ -13,22 +13,28 @@ class ApiClient {
   }
 
   async request<T>(
-    endpoint: string, 
+    endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
     const url = `${this.baseURL}${endpoint}`;
-    
+    const isFormData = options.body instanceof FormData;
+
+    const headers: HeadersInit = isFormData
+      ? { ...options.headers } // don't set content-type, browser will handle it
+      : {
+          'Content-Type': 'application/json',
+          ...options.headers,
+        };
+
     const response = await fetch(url, {
       ...options,
-      credentials: 'include', // Important for cookie-based auth
-      headers: {
-        'Content-Type': 'application/json',
-        ...options.headers,
-      },
+      credentials: 'include',
+      headers,
     });
 
     if (!response.ok) {
-      throw new Error(`API Error: ${response.status}`);
+      const text = await response.text();
+      throw new Error(`API Error ${response.status}: ${text}`);
     }
 
     return response.json();

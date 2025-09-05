@@ -6,17 +6,8 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
 import { modalAtom } from "@/app/atoms/atoms";
-
-type Project = {
-  project_id: string;
-  project_name: string;
-  created_at: string;
-  video_duration_seconds: number;
-  thumbnail_signed_url: string;
-  job_settings: {
-    target_language: string;
-  };
-};
+import CreateNewModal from "./CreateNewModal";  // 👈 import modal
+import { Project } from '@/types/projects';
 
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -37,7 +28,7 @@ export default function ProfileClientPage() {
       title: "Video Translation",
       desc: "Translate your video into any language with accurate localization and voice sync",
       status: "create",
-      onClick: () => setModalState("add"),
+      onClick: () => setModalState("add"),   // 👈 opens CreateNewModal
     },
     {
       title: "Lip Syncing",
@@ -61,6 +52,9 @@ export default function ProfileClientPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
+      {/* 🔹 Mount modal here */}
+      <CreateNewModal />
+
       {/* Top Tool Buttons */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {tools.map((tool) => (
@@ -74,9 +68,7 @@ export default function ProfileClientPage() {
               <h3 className="text-lg font-bold text-gray-900 mb-2">
                 {tool.title}
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                {tool.desc}
-              </p>
+              <p className="text-sm text-gray-600 mb-4">{tool.desc}</p>
             </div>
             {tool.status === "create" ? (
               <button

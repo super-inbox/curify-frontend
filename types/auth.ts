@@ -1,11 +1,25 @@
+
+
 export interface User {
-  id: string;
+  user_id: string;
   email: string;
-  name: string;
-  plan: 'free' | 'paid';
-  credits: number;
-  subscription_status?: 'active' | 'canceled' | 'past_due';
-  created_at: string;
+  plan_name: string; // e.g., "free", "basic", "premium"
+  non_expiring_credits: number;
+  expiring_credits: number;
+  subtitle_minutes_used: number;
+  current_cycle_start: string; // ISO date string
+  current_cycle_end: string; // ISO date string
+  created_at: string; // ISO date string
+  updated_at: string; // ISO date string
+  projects?: Project[]; // Optional array of user projects
+}
+
+// Helper type for computed values
+export interface UserComputedData {
+  totalCredits: number;
+  isPaidPlan: boolean;
+  cycleProgress: number; // 0-100 percentage
+  daysUntilCycleEnd: number;
 }
 
 export interface LoginCredentials {
@@ -22,5 +36,10 @@ export interface RegisterData {
 export interface AuthResponse {
   success: boolean;
   message: string;
-  user?: User;
+  data: {
+    user: User;
+    access_token: string;
+    refresh_token: string;
+    token_type: string;
+  };
 }

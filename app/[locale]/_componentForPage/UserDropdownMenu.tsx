@@ -1,4 +1,3 @@
-// app/[locale]/_componentForPage/UserDropdownMenu.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -17,7 +16,8 @@ interface UserInfo {
   email: string;
   avatar?: string;
   credits: {
-    remaining: number;
+    non_expiring_credits: number;
+    expiring_credits: number;
     planRemaining: number;
     validUntil: string;
   };
@@ -50,6 +50,8 @@ export default function UserDropdownMenu({
   const t = useTranslations('userMenu');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
+
+  const totalCredits = (user.credits.expiring_credits ?? 0) + (user.credits.non_expiring_credits ?? 0);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -93,9 +95,9 @@ export default function UserDropdownMenu({
           <h3 className="text-lg font-semibold text-blue-600">
             {t('topUpCredits', { defaultValue: 'Top Up Credits' })}
           </h3>
-          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
             {user.avatar ? (
-              <img src={user.avatar} alt="User" className="w-8 h-8 rounded-full" />
+              <img src={user.avatar} alt="User" className="w-8 h-8 rounded-full object-cover" />
             ) : (
               <User size={16} className="text-gray-600" />
             )}
@@ -111,7 +113,7 @@ export default function UserDropdownMenu({
             {t('remaining', { defaultValue: 'Remaining' })}
           </span>
           <span className="text-lg font-semibold text-purple-600">
-            {user.credits.remaining} C
+            {totalCredits} 🐚
           </span>
         </div>
         <div className="flex justify-between items-center mb-2">
@@ -119,7 +121,7 @@ export default function UserDropdownMenu({
             {t('planRemaining', { defaultValue: 'Plan Remaining' })}
           </span>
           <span className="text-lg font-semibold text-purple-600">
-            {user.credits.planRemaining} C
+            {user.credits.planRemaining} 🐚
           </span>
         </div>
         <div className="flex justify-between items-center">

@@ -2,22 +2,31 @@ import { useAtom } from 'jotai';
 import { useRouter } from 'next/navigation';
 import { userAtom, authLoadingAtom } from '@/app/atoms/atoms';
 import { authService } from '@/services/auth';
-import { User } from '@/types/auth';
+import { User, LoginCredentials } from '@/types/auth';
 
 export function useAuth() {
   const [user, setUser] = useAtom(userAtom);
   const [loading, setLoading] = useAtom(authLoadingAtom);
+  const [computedData] = useAtom(userComputedAtom);
   const router = useRouter();
+
+  const login = async (credentials: LoginCredentials) => {
+    setLoading(true);
+    try {
+      const response = await authService.login(credentials);
+      setUser(response.data.user);
+      router.push('/workspace');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const loginWithGoogle = async (credential: string) => {
     setLoading(true);
     try {
       const response = await authService.googleLogin(credential);
       setUser(response.data.user);
-      
-      // Redirect to workspace after successful login
       router.push('/workspace');
-      
       return response.data.user;
     } catch (error) {
       console.error('Google login failed:', error);
@@ -29,10 +38,10 @@ export function useAuth() {
 
   const logout = async () => {
     setUser(null);
-    router.push('/');
+    await authService.logout();
   };
 
-  const refreshUserProfile = async () => {
+  const refreshUser = async () => {
     try {
       const profile = await authService.getProfile();
       setUser(profile);
@@ -47,9 +56,16 @@ export function useAuth() {
   return {
     user,
     loading,
+    computedData, // Access to totalCredits, isPaidPlan, etc.
+    login,
     loginWithGoogle,
     logout,
-    refreshUserProfile,
+    refreshUser,
     isAuthenticated: !!user,
+    // Convenience getters
+    totalCredits: computedData.totalCredits,
+    isPaidPlan: computedData.isPaidPlan,
+    planName: user?.plan_name || 'free',
+    minutesUsed: user?.subtitle_minutes_used || 0,
   };
 }

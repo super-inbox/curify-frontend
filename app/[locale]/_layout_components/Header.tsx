@@ -4,26 +4,18 @@ import Image from "next/image";
 import BtnN from "../_components/button/ButtonNormal";
 import Link from "next/link";
 import { useAtom } from "jotai";
-import { drawerAtom, headerAtom } from "@/app/atoms/atoms";
+import { drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
-
-interface UserInfo {
-  email: string;
-  avatar?: string;
-  credits: {
-    remaining: number;
-    planRemaining: number;
-    validUntil: string;
-  };
-}
-
+import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
+import { useState } from 'react';
 export default function Header() {
   const router = useRouter();
   const { locale } = useParams();
 
   const [, setDrawerState] = useAtom(drawerAtom);
   const [headerState] = useAtom(headerAtom);
+  const [user] = useAtom(userAtom);
 
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
@@ -37,19 +29,11 @@ export default function Header() {
   ];
 
   const currentLanguage = languages.find((lang) => lang.locale === locale);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // ✅ Mock user fallback
-  const mockUser: UserInfo = {
-    email: "demo@curify-ai.com",
-    avatar: "/default-avatar.png",
-    credits: {
-      remaining: 3000,
-      planRemaining: 5000,
-      validUntil: "2025-12-31",
-    },
-  };
-
-  const user: UserInfo = mockUser;
+  const remainingCredits =
+    (user?.non_expiring_credits || 0) +
+    (user?.expiring_credits || 0);
 
   return (
     <header className="flex px-8 py-3 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
@@ -84,9 +68,7 @@ export default function Header() {
           {headerState === "out" ? (
             <>
               <Link href={`/${locale}/contact`}>
-                <BtnN onClick={() => {}}>
-                  Book a demo
-                </BtnN>
+                <BtnN onClick={() => {}}>Book a demo</BtnN>
               </Link>
               <Link href={`/${locale}/contact`}>
                 <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
@@ -114,13 +96,42 @@ export default function Header() {
                   </ul>
                 </details>
               </div>
-              <p className="text-sm text-right mr-3">
-                <span className="text-[var(--p-blue)] font-bold">{user.credits.remaining}</span>
-                <span className="text-[var(--c1)] mx-1 font-bold">C</span>left
+
+              {/* Shell Credit Display */}
+              <p className="text-sm text-right mr-3 flex items-center gap-1">
+                <span className="text-[var(--p-blue)] font-bold">
+                  {remainingCredits}
+                </span>
+                <span className="text-xl">🐚</span>
               </p>
-              <BtnN onClick={() => setDrawerState("signup")}>
-                Top Up Credits
-              </BtnN>
+
+              {/* Top Up + Avatar */}
+              {/* Avatar + Dropdown */}
+<div
+  className="relative"
+  onMouseEnter={() => setDropdownOpen(true)}
+  onMouseLeave={() => setDropdownOpen(false)}
+>
+  <Image
+    src="/images/default-avatar.png"
+    alt="User Avatar"
+    width={32}
+    height={32}
+    className="rounded-full border border-gray-300 cursor-pointer"
+  />
+  <UserDropdownMenu
+    user={user}
+    isOpen={dropdownOpen}
+    onClose={() => setDropdownOpen(false)}
+    onLanguageSelect={(lang) => router.push(`/${lang}`)}
+    onSignOut={() => {
+      console.log("Sign out clicked");
+      // TODO: clear userAtom and redirect to login if needed
+    }}
+    currentLocale={locale}
+  />
+</div>
+
             </>
           )}
         </div>

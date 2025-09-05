@@ -1,69 +1,41 @@
-interface LoginCredentials {
-  email: string;
-  password: string;
-}
-
-interface RegisterData {
-  email: string;
-  password: string;
-  name: string;
-}
-
-interface GoogleLoginResponse {
-  data: {
-    user: User;
-    access_token: string;
-    refresh_token: string;
-    token_type: string;
-  };
-  message: string;
-  status_code: number;
-}
-
-interface UserProfile {
-  id: string;
-  email: string;
-  name: string;
-  plan: 'free' | 'paid';
-  credits: number;
-  subscription_status?: string;
-}
+import { apiClient } from './api';
+import { User, AuthResponse, LoginCredentials, RegisterData } from '@/types/auth';
 
 export const authService = {
-  async login(credentials: LoginCredentials) {
-    return apiClient.request('/auth_cookie/login', {
+  async login(credentials: LoginCredentials): Promise<AuthResponse> {
+    return apiClient.request<AuthResponse>('/auth/login', {
       method: 'POST',
       body: JSON.stringify(credentials),
     });
   },
 
-  async register(data: RegisterData) {
-    return apiClient.request('/auth_cookie/register', {
+  async register(data: RegisterData): Promise<AuthResponse> {
+    return apiClient.request<AuthResponse>('/auth/register', {
       method: 'POST',
       body: JSON.stringify(data),
     });
   },
 
-  async googleLogin(token: string) {
-    return apiClient.request('/auth_cookie/google-login', {
+  async googleLogin(credential: string): Promise<AuthResponse> {
+    return apiClient.request<AuthResponse>('/auth/google-login', {
       method: 'POST',
-      body: JSON.stringify({ token }),
+      headers: { 'Content-Type': 'application/json' },  // 👈 force this
+      body: JSON.stringify({ token: credential }),
     });
   },
 
-  async refreshToken() {
-    return apiClient.request('/auth_cookie/refresh', {
+  async refreshToken(): Promise<AuthResponse> {
+    return apiClient.request<AuthResponse>('/auth/refresh', {
       method: 'POST',
     });
   },
 
-  async getProfile(): Promise<UserProfile> {
-    return apiClient.request('/user/profile');
+  async getProfile(): Promise<User> {
+    return apiClient.request<User>('/user/profile');
   },
 
   async logout() {
-    // Clear client-side state
-    // Cookies will be handled by server
+    // Clear client-side state - cookies handled by server
     window.location.href = '/';
   },
 };
