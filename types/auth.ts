@@ -1,17 +1,16 @@
 
-
 export interface User {
   user_id: string;
   email: string;
-  plan_name: string; // e.g., "free", "basic", "premium"
+  plan_name: string;
   non_expiring_credits: number;
   expiring_credits: number;
   subtitle_minutes_used: number;
-  current_cycle_start: string; // ISO date string
-  current_cycle_end: string; // ISO date string
-  created_at: string; // ISO date string
-  updated_at: string; // ISO date string
-  projects?: Project[]; // Optional array of user projects
+  current_cycle_start: string;
+  current_cycle_end: string;
+  created_at: string;
+  updated_at: string;
+  projects: Project[];
 }
 
 // Helper type for computed values

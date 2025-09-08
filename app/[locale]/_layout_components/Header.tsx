@@ -1,14 +1,16 @@
-"use client";
+'use client';
 
 import Image from "next/image";
 import BtnN from "../_components/button/ButtonNormal";
 import Link from "next/link";
 import { useAtom } from "jotai";
+import { modalAtom } from "@/app/atoms/atoms";
 import { drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
 import { useState } from 'react';
+
 export default function Header() {
   const router = useRouter();
   const { locale } = useParams();
@@ -16,7 +18,8 @@ export default function Header() {
   const [, setDrawerState] = useAtom(drawerAtom);
   const [headerState] = useAtom(headerAtom);
   const [user] = useAtom(userAtom);
-
+  const [, setModal] = useAtom(modalAtom);
+  
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
     { locale: "zh", name: "中文", flag: "🇨🇳" },
@@ -35,10 +38,26 @@ export default function Header() {
     (user?.non_expiring_credits || 0) +
     (user?.expiring_credits || 0);
 
+  let closeTimeout: NodeJS.Timeout | null = null;
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = null;
+    }
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeout = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 150);
+  };
+
   return (
-    <header className="flex px-8 py-3 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
+    <header className="flex px-8 py-2 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
       <div className="flex items-center justify-between w-full">
-        {/* Left Section: Logo + Nav */}
+        {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
           <div className="relative w-40 aspect-[160/38.597]">
             <Link href={`/${locale}`}>
@@ -51,7 +70,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {headerState === "out" || headerState === "in" ? (
+          {(headerState === "out" || headerState === "in") && (
             <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
               <Link href={`/${locale}/pricing`} className="hover:opacity-80">
                 Pricing
@@ -60,21 +79,23 @@ export default function Header() {
                 About
               </Link>
             </nav>
-          ) : null}
+          )}
         </div>
 
-        {/* Right Section: Language & Buttons */}
+        {/* Right: Language, Credits, Actions */}
         <div className="flex items-center space-x-4">
           {headerState === "out" ? (
             <>
+              {/* Contact us */}
               <Link href={`/${locale}/contact`}>
-                <BtnN onClick={() => {}}>Book a demo</BtnN>
-              </Link>
-              <Link href={`/${locale}/contact`}>
-                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
+                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
                   Contact us
                 </BtnN>
               </Link>
+              {/* Log in button */}
+              <BtnN onClick={() => setDrawerState("sign")}>
+                Log in
+              </BtnN>
             </>
           ) : (
             <>
@@ -98,40 +119,53 @@ export default function Header() {
               </div>
 
               {/* Shell Credit Display */}
-              <p className="text-sm text-right mr-3 flex items-center gap-1">
+              <p className="text-sm text-right mr-2 flex items-center gap-1">
                 <span className="text-[var(--p-blue)] font-bold">
                   {remainingCredits}
                 </span>
                 <span className="text-xl">🐚</span>
               </p>
 
-              {/* Top Up + Avatar */}
-              {/* Avatar + Dropdown */}
-<div
-  className="relative"
-  onMouseEnter={() => setDropdownOpen(true)}
-  onMouseLeave={() => setDropdownOpen(false)}
->
-  <Image
-    src="/images/default-avatar.png"
-    alt="User Avatar"
-    width={32}
-    height={32}
-    className="rounded-full border border-gray-300 cursor-pointer"
-  />
-  <UserDropdownMenu
-    user={user}
-    isOpen={dropdownOpen}
-    onClose={() => setDropdownOpen(false)}
-    onLanguageSelect={(lang) => router.push(`/${lang}`)}
-    onSignOut={() => {
-      console.log("Sign out clicked");
-      // TODO: clear userAtom and redirect to login if needed
-    }}
-    currentLocale={locale}
-  />
-</div>
+              {/* Top Up Credits Button */}
+              <BtnN
+                onClick={() => setModal('topup')}
+                className="text-sm px-4 py-2"
+              >
+                Top up Credits
+              </BtnN>
 
+              {/* Avatar + Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link href={`/${locale}/workspace`}>
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-300 cursor-pointer z-50">
+                    {/* Replace the default avatar with dynamic one */}
+<Image
+  src={user?.avatar_url || "/images/default-avatar.jpg"}
+  alt="User Avatar"
+  width={32}
+  height={32}
+  className="relative z-50 rounded-full border border-gray-300 cursor-pointer object-cover"
+/>
+                  </div>
+                </Link>
+
+                <div className="absolute right-0 top-full -mt-1 z-40">
+                  <UserDropdownMenu
+                    user={user}
+                    isOpen={dropdownOpen}
+                    onClose={() => setDropdownOpen(false)}
+                    onLanguageSelect={(lang) => router.push(`/${lang}`)}
+                    onSignOut={() => {
+                      console.log("Sign out clicked");
+                    }}
+                    currentLocale={locale}
+                  />
+                </div>
+              </div>
             </>
           )}
         </div>

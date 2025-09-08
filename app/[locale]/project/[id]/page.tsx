@@ -53,9 +53,10 @@ export default function ProjectDetailsPage() {
         <div className="mb-4">
           <Link
             href={`/${locale}/workspace`}
-            className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors"
+            className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors"
           >
-            ← Return to Workspace
+            <img src="/icons/arrow_left.svg" alt="Back" className="w-4 h-4" />
+            Return to Workspace
           </Link>
         </div>
 
@@ -78,12 +79,19 @@ export default function ProjectDetailsPage() {
               <div className="grid grid-cols-2 gap-y-2 bg-white text-sm">
                 {segments.map((seg, i) => (
                   <React.Fragment key={seg.line_number}>
-                    <div className="px-4 py-1.5 whitespace-pre-line">{seg.original}</div>
+                    <div className="px-4 py-1.5 whitespace-pre-line">
+                      {seg.original}
+                    </div>
                     <div
                       className="px-4 py-1.5 text-gray-800 whitespace-pre-line border border-transparent hover:border-gray-300 rounded-md focus:outline-none"
                       contentEditable
                       suppressContentEditableWarning
-                      onBlur={(e) => updateTranslation(i, e.currentTarget.textContent || "")}
+                      onBlur={(e) =>
+                        updateTranslation(
+                          i,
+                          e.currentTarget.textContent || ""
+                        )
+                      }
                     >
                       {seg.translated}
                     </div>
@@ -94,8 +102,12 @@ export default function ProjectDetailsPage() {
 
             {/* Bottom Left Panel Buttons */}
             <div className="flex justify-center gap-4 mt-8">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-              <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Regenerate</button>
+              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Save
+              </button>
+              <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">
+                Regenerate
+              </button>
             </div>
           </div>
 
@@ -104,48 +116,38 @@ export default function ProjectDetailsPage() {
             <div>
               <h2 className="text-2xl font-bold mb-4">Video Preview</h2>
 
-              {/* 🆕 Movie Preview (poster or looping muted snippet) */}
-              <div className="rounded-xl overflow-hidden mb-4 aspect-w-16 aspect-h-9 relative shadow">
-                <video
-                  src="/video/training_zh.mp4"
-                  className="absolute w-full h-full object-cover"
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                />
-              </div>
-
               <Tab.Group>
                 <Tab.List className="flex space-x-1 rounded-xl bg-gray-200 p-1">
                   <Tab
                     className={({ selected }) =>
-                      clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
-                        "bg-white shadow": selected,
-                      })
+                      clsx(
+                        "w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg",
+                        { "bg-white shadow": selected }
+                      )
                     }
                   >
                     Original Video
                   </Tab>
                   <Tab
                     className={({ selected }) =>
-                      clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
-                        "bg-white shadow": selected,
-                      })
+                      clsx(
+                        "w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg",
+                        { "bg-white shadow": selected }
+                      )
                     }
                   >
                     Translated Video
                   </Tab>
                 </Tab.List>
                 <Tab.Panels className="mt-4">
-                  <Tab.Panel className="aspect-w-16 aspect-h-9 relative bg-black rounded-xl overflow-hidden">
+                  <Tab.Panel className="aspect-[16/9] relative bg-black rounded-xl overflow-hidden">
                     <video
                       src="/video/training_en.mp4"
                       controls
                       className="absolute w-full h-full object-contain"
                     />
                   </Tab.Panel>
-                  <Tab.Panel className="aspect-w-16 aspect-h-9 relative bg-black rounded-xl overflow-hidden">
+                  <Tab.Panel className="aspect-[16/9] relative bg-black rounded-xl overflow-hidden">
                     <video
                       src="/video/training_zh.mp4"
                       controls
@@ -158,12 +160,12 @@ export default function ProjectDetailsPage() {
 
             {/* Bottom Right Panel Buttons */}
             <div className="flex justify-center gap-4 mt-8">
-              <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">▶ Play</button>
               <button
                 onClick={() => setIsExportDialogOpen(true)}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-flex items-center gap-2"
               >
-                ⬇ Export
+                <img src="/icons/output.svg" alt="Export" className="w-4 h-4" />
+                Export
               </button>
             </div>
           </div>

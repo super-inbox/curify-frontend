@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { 
   Clock, 
   Globe, 
@@ -9,7 +9,6 @@ import {
   HelpCircle, 
   LogOut, 
   ChevronRight,
-  User as UserIcon,
   Zap
 } from 'lucide-react';
 
@@ -39,6 +38,7 @@ export default function UserDropdownMenu({
   onSignOut,
   currentLocale = 'en'
 }: UserDropdownMenuProps) {
+  const router = useRouter();
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
@@ -88,13 +88,13 @@ export default function UserDropdownMenu({
 
   const handleRoute = (path: string) => {
     onClose();
-    window.location.href = path;
+    router.push(path);
   };
 
   const handleSignOut = () => {
-    localStorage.removeItem("curifyUser"); // ✅ clear on logout
+    localStorage.removeItem("curifyUser"); // clear on logout
     onClose();
-    onSignOut();  // optional, for Jotai atom
+    onSignOut();
     window.location.href = "/"; // back to logged-out home
   };
   
@@ -103,21 +103,21 @@ export default function UserDropdownMenu({
   return (
     <div
       ref={dropdownRef}
-      className="absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+      className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
     >
       {/* Header */}
       <div className="p-4 border-b border-gray-100">
-        <h3 className="text-base font-semibold text-blue-600">
+        <h3 className="text-base font-semibold text-blue-600 text-[15px]">
           {user.name || 'User'}
         </h3>
-        <p className="text-sm text-gray-600 truncate">{user.email}</p>
+        <p className="text-sm text-gray-600 truncate text-[14px]">{user.email}</p>
       </div>
 
       {/* Credits Info */}
       <div className="p-4 border-b border-gray-100">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm text-gray-600">Remaining</span>
-          <span className="text-lg font-semibold text-purple-600">
+          <span className="text-sm text-gray-600 text-[14px]">Remaining</span>
+          <span className="text-lg font-semibold text-purple-600 text-[16px]">
             {totalCredits} 🐚
           </span>
         </div>
@@ -127,9 +127,9 @@ export default function UserDropdownMenu({
             <div className="flex justify-between items-center mb-1">
               <div className="flex items-center">
                 <Zap size={16} className="text-orange-500 mr-1" />
-                <span className="text-sm text-gray-600">Plan Remaining</span>
+                <span className="text-sm text-gray-600 text-[14px]">Plan Remaining</span>
               </div>
-              <span className="text-md font-semibold text-orange-600">
+              <span className="text-md font-semibold text-orange-600 text-[14px]">
                 {expiringCredits} 🐚
               </span>
             </div>
@@ -142,16 +142,16 @@ export default function UserDropdownMenu({
       </div>
 
       {/* Menu Items */}
-      <div className="py-2">
-        <button className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors">
+      <div className="py-2 text-[15px]">
+        <button className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer">
           <Clock size={18} className="mr-3 text-gray-500" />
-          <span className="text-gray-700">C Credits History</span>
+          <span className="text-gray-700">Credits History</span>
         </button>
 
         <div className="relative">
           <button 
             onClick={handleLanguageClick}
-            className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <div className="flex items-center">
               <Globe size={18} className="mr-3 text-gray-500" />
@@ -166,12 +166,12 @@ export default function UserDropdownMenu({
           </button>
 
           {showLanguageSubmenu && (
-            <div className="absolute left-0 top-0 w-full bg-white border-l-2 border-blue-500">
+            <div className="absolute right-full top-0 w-72 -mr-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageSelect(lang.code)}
-                  className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors ${
+                  className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors cursor-pointer ${
                     lang.code === currentLocale ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
                   }`}
                 >
@@ -184,16 +184,20 @@ export default function UserDropdownMenu({
         </div>
 
         <button
-          onClick={() => handleRoute('/pricing/page')}
-          className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors ${pathname === '/pricing/page' ? 'text-blue-600 font-semibold' : ''}`}
+          onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+          className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
+            pathname === `/${currentLocale}/pricing` ? 'text-blue-600 font-semibold' : ''
+          }`}
         >
           <CreditCard size={18} className="mr-3 text-gray-500" />
           <span className="text-gray-700">Subscribe Plan</span>
         </button>
 
         <button
-          onClick={() => handleRoute('/contact/page')}
-          className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors ${pathname === '/contact/page' ? 'text-blue-600 font-semibold' : ''}`}
+          onClick={() => handleRoute(`/${currentLocale}/contact`)}
+          className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
+            pathname === `/${currentLocale}/contact` ? 'text-blue-600 font-semibold' : ''
+          }`}
         >
           <HelpCircle size={18} className="mr-3 text-gray-500" />
           <span className="text-gray-700">Support Ticket</span>
@@ -201,7 +205,7 @@ export default function UserDropdownMenu({
 
         <button 
           onClick={handleSignOut}
-          className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors border-t border-gray-100 mt-2"
+          className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
         >
           <LogOut size={18} className="mr-3 text-gray-500" />
           <span className="text-gray-700">Sign Out</span>
