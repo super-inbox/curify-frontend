@@ -25,6 +25,7 @@ export default function Buttons() {
 
   const handleMockLogin = () => {
     if (mockUser) {
+      localStorage.setItem("curifyUser", JSON.stringify(mockUser)); // ✅ persist
       setUser(mockUser);
       setHeaderState("in");
       router.push("/workspace");
@@ -32,7 +33,7 @@ export default function Buttons() {
       alert("Mock user data not loaded yet.");
     }
   };
-
+  
   return (
     <div className="flex">
       {/* Book a Demo CTA */}

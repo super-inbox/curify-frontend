@@ -1,12 +1,10 @@
-// app/[locale]/project/[id]/page.tsx
 "use client";
 
-import { useEffect, useState } from "react";
-import Head from "next/head";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
-import { useParams } from "next/navigation";
 import ExportDialog from "../../_componentForPage/ExportDialog";
 
 interface Segment {
@@ -17,108 +15,169 @@ interface Segment {
   end: number;
 }
 
+interface File {
+  name: string;
+  type: string;
+  size: string;
+  downloadUrl: string;
+}
+
 export default function ProjectDetailsPage() {
   const [segments, setSegments] = useState<Segment[]>([]);
-  const [isExportDialogOpen, setIsExportDialogOpen] = useState(false); // 👈 New state for the dialog
+  const [exportFiles, setExportFiles] = useState<File[]>([]);
+  const [isExportDialogOpen, setIsExportDialogOpen] = useState(false);
   const { locale } = useParams();
 
   useEffect(() => {
     fetch("/data/project_segments.json")
       .then((res) => res.json())
       .then((data) => setSegments(data));
+
+    fetch("/data/export_files.json")
+      .then((res) => res.json())
+      .then((data) => setExportFiles(data));
   }, []);
+
+  const updateTranslation = (index: number, newText: string) => {
+    setSegments((prev) => {
+      const updated = [...prev];
+      updated[index].translated = newText;
+      return updated;
+    });
+  };
 
   return (
     <>
-      <Head>
-        <title>Project Details | Curify Studio</title>
-      </Head>
-      <div className="min-h-screen bg-white p-6 pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left: Segment Table */}
-          <div className="flex flex-col">
-            <div className="flex justify-between items-center mb-4">
-              <Link
-                href={`/${locale}/profile`}
-                className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors"
-              >
-                Return to Profile
-              </Link>
-              <div className="space-x-2 ml-auto">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
-                <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Regenerate</button>
+      <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
+        {/* Top Left Return Button */}
+        <div className="mb-4">
+          <Link
+            href={`/${locale}/workspace`}
+            className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors"
+          >
+            ← Return to Workspace
+          </Link>
+        </div>
+
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row gap-6 flex-grow">
+          {/* Left Side: Segments */}
+          <div className="lg:w-2/3 w-full flex flex-col justify-between">
+            <div>
+              {/* Language Headers */}
+              <div className="grid grid-cols-2 mb-2">
+                <div className="bg-[#ede9fe] text-purple-800 font-semibold px-4 py-2 rounded-t-lg">
+                  Auto Detect
+                </div>
+                <div className="bg-[#e0f2fe] text-sky-800 font-semibold px-4 py-2 rounded-t-lg">
+                  Chinese
+                </div>
+              </div>
+
+              {/* Segment Texts */}
+              <div className="grid grid-cols-2 gap-y-2 bg-white text-sm">
+                {segments.map((seg, i) => (
+                  <React.Fragment key={seg.line_number}>
+                    <div className="px-4 py-1.5 whitespace-pre-line">{seg.original}</div>
+                    <div
+                      className="px-4 py-1.5 text-gray-800 whitespace-pre-line border border-transparent hover:border-gray-300 rounded-md focus:outline-none"
+                      contentEditable
+                      suppressContentEditableWarning
+                      onBlur={(e) => updateTranslation(i, e.currentTarget.textContent || "")}
+                    >
+                      {seg.translated}
+                    </div>
+                  </React.Fragment>
+                ))}
               </div>
             </div>
-            <table className="w-full text-sm border">
-              <thead>
-                <tr className="bg-gray-100 text-left">
-                  <th className="p-2 border">#</th>
-                  <th className="p-2 border">Original</th>
-                  <th className="p-2 border">Translated</th>
-                </tr>
-              </thead>
-              <tbody>
-                {segments.map((seg) => (
-                  <tr key={seg.line_number} className="border-t">
-                    <td className="p-2 border align-top text-gray-500">{seg.line_number}</td>
-                    <td className="p-2 border align-top">{seg.original}</td>
-                    <td className="p-2 border align-top text-blue-900">{seg.translated}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+            {/* Bottom Left Panel Buttons */}
+            <div className="flex justify-center gap-4 mt-8">
+              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
+              <button className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300">Regenerate</button>
+            </div>
           </div>
 
-          {/* Right: Video Viewer */}
-          <div className="flex flex-col">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold">Video Preview</h2>
-              <div className="space-x-2">
-                <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">▶ Play</button>
-                <button
-                  onClick={() => setIsExportDialogOpen(true)} // 👈 Open the dialog on click
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                >
-                  ⬇ Export
-                </button>
+          {/* Right Side: Video Preview */}
+          <div className="lg:w-1/3 w-full flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Video Preview</h2>
+
+              {/* 🆕 Movie Preview (poster or looping muted snippet) */}
+              <div className="rounded-xl overflow-hidden mb-4 aspect-w-16 aspect-h-9 relative shadow">
+                <video
+                  src="/video/training_zh.mp4"
+                  className="absolute w-full h-full object-cover"
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                />
               </div>
+
+              <Tab.Group>
+                <Tab.List className="flex space-x-1 rounded-xl bg-gray-200 p-1">
+                  <Tab
+                    className={({ selected }) =>
+                      clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
+                        "bg-white shadow": selected,
+                      })
+                    }
+                  >
+                    Original Video
+                  </Tab>
+                  <Tab
+                    className={({ selected }) =>
+                      clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
+                        "bg-white shadow": selected,
+                      })
+                    }
+                  >
+                    Translated Video
+                  </Tab>
+                </Tab.List>
+                <Tab.Panels className="mt-4">
+                  <Tab.Panel className="aspect-w-16 aspect-h-9 relative bg-black rounded-xl overflow-hidden">
+                    <video
+                      src="/video/training_en.mp4"
+                      controls
+                      className="absolute w-full h-full object-contain"
+                    />
+                  </Tab.Panel>
+                  <Tab.Panel className="aspect-w-16 aspect-h-9 relative bg-black rounded-xl overflow-hidden">
+                    <video
+                      src="/video/training_zh.mp4"
+                      controls
+                      className="absolute w-full h-full object-contain"
+                    />
+                  </Tab.Panel>
+                </Tab.Panels>
+              </Tab.Group>
             </div>
 
-            <Tab.Group>
-              <Tab.List className="flex space-x-1 rounded-xl bg-gray-200 p-1">
-                <Tab
-                  className={({ selected }) =>
-                    clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
-                      "bg-white shadow": selected,
-                    })
-                  }
-                >
-                  Original Video
-                </Tab>
-                <Tab
-                  className={({ selected }) =>
-                    clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
-                      "bg-white shadow": selected,
-                    })
-                  }
-                >
-                  Translated Video
-                </Tab>
-              </Tab.List>
-              <Tab.Panels className="mt-4">
-                <Tab.Panel className="relative aspect-video bg-black flex items-center justify-center">
-                  <video src="/demo.mp4" controls className="w-full h-full object-contain" />
-                </Tab.Panel>
-                <Tab.Panel className="relative aspect-video bg-black flex items-center justify-center">
-                  <video src="/demo.mp4" controls className="w-full h-full object-contain" />
-                </Tab.Panel>
-              </Tab.Panels>
-            </Tab.Group>
+            {/* Bottom Right Panel Buttons */}
+            <div className="flex justify-center gap-4 mt-8">
+              <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">▶ Play</button>
+              <button
+                onClick={() => setIsExportDialogOpen(true)}
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
+                ⬇ Export
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      {/* 👈 Conditionally render the dialog */}
-      {/* {isExportDialogOpen && <ExportDialog onClose={() => setIsExportDialogOpen(false)} />} */}
+
+      {/* Export Dialog */}
+      {isExportDialogOpen && (
+        <ExportDialog
+          isOpen={isExportDialogOpen}
+          onClose={() => setIsExportDialogOpen(false)}
+          files={exportFiles}
+        />
+      )}
     </>
   );
 }

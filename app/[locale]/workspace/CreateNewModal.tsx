@@ -156,7 +156,9 @@ export default function CreateNewModal() {
           <BtnP
             onClick={() => {
               setModalState(null);
-              router.replace("/magic/a1b2c3d4");
+              const projectId = "a1b2c3d4";
+              router.replace(`/project/${projectId}`);          
+              // router.replace("/magic/a1b2c3d4");
             }}
           >
             Start
