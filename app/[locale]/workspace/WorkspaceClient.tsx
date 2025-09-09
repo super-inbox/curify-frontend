@@ -64,28 +64,30 @@ export default function ProfileClientPage() {
 
   const handleConfirmDelete = async () => {
     if (!projectToDelete) return;
-
+  
     try {
       await projectService.deleteProject(projectToDelete.project_id);
-
+  
+      // ✅ Update frontend state
       const updatedProjects = projects.filter(
         (p) => p.project_id !== projectToDelete.project_id
       );
       setProjects(updatedProjects);
-
+  
+      // ✅ Update localStorage
       const savedUser = localStorage.getItem("curifyUser");
       if (savedUser) {
         const parsed = JSON.parse(savedUser);
         parsed.projects = updatedProjects;
         localStorage.setItem("curifyUser", JSON.stringify(parsed));
       }
-
+  
       closeDeleteDialog();
     } catch (error) {
       console.error("❌ Error deleting project:", error);
       alert("Failed to delete project. Please try again.");
     }
-  };
+  };  
 
   const handleMenuClick = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -150,13 +152,6 @@ export default function ProfileClientPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
       <CreateNewModal />
-
-      <button
-        onClick={() => router.push(`/${locale}/profile`)}
-        className="mb-6 px-4 py-2 border border-blue-500 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors duration-200 cursor-pointer"
-      >
-        ← Return to Profile
-      </button>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {tools.map((tool) => (
@@ -225,7 +220,7 @@ export default function ProfileClientPage() {
                 </div>
                 <button
                   onClick={(e) => handleMenuClick(e, project.project_id)}
-                  className="text-gray-400 hover:text-gray-600 p-1 cursor-pointer"
+                  className="text-gray-400 hover:text-gray-600 p-1"
                 >
                   <EllipsisHorizontalIcon className="w-5 h-5" />
                 </button>
@@ -246,7 +241,7 @@ export default function ProfileClientPage() {
               const project = projects.find((p) => p.project_id === openMenuId);
               if (project) openDeleteDialog(project);
             }}
-            className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 cursor-pointer"
+            className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
           >
             Delete Project
           </button>
