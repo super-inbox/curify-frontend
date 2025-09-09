@@ -1,5 +1,11 @@
 import { apiClient } from './api';
-import { Project, CreateProjectRequest, ProjectStatusUpdate } from '@/types/projects';
+import {
+  Project,
+  CreateProjectRequest,
+  ProjectStatusUpdate,
+  JobSettings
+} from '@/types/projects';
+import { ProjectDetails } from '@/types/segments'; // ✅ Import correct response type
 
 export const projectService = {
   // Get user's projects
@@ -11,15 +17,15 @@ export const projectService = {
   async createProject(data: CreateProjectRequest): Promise<Project> {
     const formData = new FormData();
     formData.append('video_file', data.video_file);
-    
+
     if (data.project_name) {
       formData.append('project_name', data.project_name);
     }
-    
+
     // Append job settings
     formData.append('source_language', data.job_settings.source_language);
     formData.append('target_language', data.job_settings.target_language);
-    
+
     if (data.job_settings.voice_settings) {
       Object.entries(data.job_settings.voice_settings).forEach(([key, value]) => {
         if (value !== undefined) {
@@ -31,13 +37,14 @@ export const projectService = {
     return apiClient.request<Project>('/projects/translate', {
       method: 'POST',
       body: formData,
-      headers: {}, // Remove Content-Type to let browser set it for FormData
+      headers: {}, // Don't set Content-Type manually for FormData
     });
   },
 
-  // Get single project details
-  async getProject(projectId: string): Promise<Project> {
-    return apiClient.request<Project>(`/projects/${projectId}`);
+  // ✅ Get single project details (unwrapping the .data field)
+  async getProject(projectId: string): Promise<ProjectDetails> {
+    const response = await apiClient.request<{ data: ProjectDetails }>(`/projects/${projectId}`);
+    return response.data;
   },
 
   // Get project status
@@ -54,19 +61,25 @@ export const projectService = {
 
   // Download video
   async downloadVideo(projectId: string): Promise<Blob> {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/videos/${projectId}/download`, {
-      credentials: 'include',
-    });
-    
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/videos/${projectId}/download`,
+      {
+        credentials: 'include',
+      }
+    );
+
     if (!response.ok) {
       throw new Error('Download failed');
     }
-    
+
     return response.blob();
   },
 
   // Reprocess project
-  async reprocessProject(projectId: string, newSettings: Partial<JobSettings>): Promise<Project> {
+  async reprocessProject(
+    projectId: string,
+    newSettings: Partial<JobSettings>
+  ): Promise<Project> {
     return apiClient.request<Project>('/projects/reprocess', {
       method: 'POST',
       body: JSON.stringify({

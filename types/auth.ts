@@ -1,3 +1,4 @@
+import { Project } from './projects';
 
 export interface User {
   user_id: string;
