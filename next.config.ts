@@ -1,18 +1,36 @@
 // next.config.js
 
 const withNextIntl = require('next-intl/plugin')(
-  // This is the default pathname of your `next-intl.config.js`
   './next-intl.config.js'
 );
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your existing Next.js config options
+  reactStrictMode: true,
+
+  // ✅ Remove experimental.appDir (deprecated)
   experimental: {
-    // Enable if you're using app directory
-    appDir: true
+    // You can keep other experimental flags if needed, but NOT appDir
   },
-  // Add any other config you need
+
+  // ✅ Add security headers to control COOP/COEP
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups', // safer for postMessage/popups
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'unsafe-none',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);

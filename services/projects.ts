@@ -5,87 +5,100 @@ import {
   ProjectStatusUpdate,
   JobSettings
 } from '@/types/projects';
-import { ProjectDetails } from '@/types/segments'; // ✅ Import correct response type
+import { ProjectDetails } from '@/types/segments';
+
+// ✅ Interfaces must be top-level
+export interface ProjectCreateResponse {
+  project_id: string;
+}
 
 export const projectService = {
-  // Get user's projects
+  // ✅ Get all projects for current user
   async getUserProjects(): Promise<Project[]> {
     return apiClient.request<Project[]>('/user/projects');
   },
 
-  // Create new translation project
-  async createProject(data: CreateProjectRequest): Promise<Project> {
-    const formData = new FormData();
-    formData.append('video_file', data.video_file);
+  // ✅ Create new project
+  async createProject(data: CreateProjectRequest): Promise<ProjectCreateResponse> {
+    const payload = {
+      name: data.project_name,
+      description: data.description ?? "",
+      job_settings: data.job_settings,
+      runtime_params: data.runtime_params ?? {},
+      is_production: data.is_production ?? true,
+      video_id: data.video_id,
+    };
 
-    if (data.project_name) {
-      formData.append('project_name', data.project_name);
-    }
+    const response = await apiClient.request<{ data: ProjectCreateResponse }>(
+      "/projects/translate",
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-    // Append job settings
-    formData.append('source_language', data.job_settings.source_language);
-    formData.append('target_language', data.job_settings.target_language);
-
-    if (data.job_settings.voice_settings) {
-      Object.entries(data.job_settings.voice_settings).forEach(([key, value]) => {
-        if (value !== undefined) {
-          formData.append(`voice_${key}`, value.toString());
-        }
-      });
-    }
-
-    return apiClient.request<Project>('/projects/translate', {
-      method: 'POST',
-      body: formData,
-      headers: {}, // Don't set Content-Type manually for FormData
-    });
+    return response.data; // ✅ unwrap
   },
 
-  // ✅ Get single project details (unwrapping the .data field)
+  // ✅ Get detailed project info (includes segments, settings, etc.)
   async getProject(projectId: string): Promise<ProjectDetails> {
-    const response = await apiClient.request<{ data: ProjectDetails }>(`/projects/${projectId}`);
+    const response = await apiClient.request<{ data: ProjectDetails }>(
+      `/projects/${projectId}`
+    );
     return response.data;
   },
 
-  // Get project status
+  // ✅ Get live project status
   async getProjectStatus(projectId: string): Promise<ProjectStatusUpdate> {
-    return apiClient.request<ProjectStatusUpdate>(`/projects/${projectId}/status`);
+    return apiClient.request<ProjectStatusUpdate>(
+      `/projects/${projectId}/status`
+    );
   },
 
-  // Delete project
+  // ✅ Delete a project
   async deleteProject(projectId: string): Promise<void> {
     return apiClient.request<void>(`/projects/${projectId}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
   },
 
-  // Download video
+  // ✅ Download final translated video
   async downloadVideo(projectId: string): Promise<Blob> {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/videos/${projectId}/download`,
       {
-        credentials: 'include',
+        credentials: "include",
       }
     );
 
     if (!response.ok) {
-      throw new Error('Download failed');
+      throw new Error("Download failed");
     }
 
     return response.blob();
   },
 
-  // Reprocess project
-  async reprocessProject(
+  async reprocessProjectWithSegments(
     projectId: string,
-    newSettings: Partial<JobSettings>
-  ): Promise<Project> {
-    return apiClient.request<Project>('/projects/reprocess', {
-      method: 'POST',
+    updatedSegments: Array<{
+      segment_id?: number;
+      line_number: number;
+      original_updated?: string | null;
+      translated_updated?: string | null;
+    }>
+  ): Promise<{ project_id: string }> {
+    return apiClient.request<{ project_id: string }>("/projects/reprocess", {
+      method: "POST",
       body: JSON.stringify({
         project_id: projectId,
-        job_settings: newSettings,
+        updated_segments: updatedSegments,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-  },
+  }, 
 };

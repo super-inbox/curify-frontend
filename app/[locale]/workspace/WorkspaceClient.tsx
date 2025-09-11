@@ -151,8 +151,6 @@ export default function ProfileClientPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
-      <CreateNewModal />
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {tools.map((tool) => (
           <div
@@ -276,6 +274,9 @@ export default function ProfileClientPage() {
         onConfirm={handleConfirmDelete}
         projectName={projectToDelete?.project_name || ''}
       />
+
+      {/* ✅ Render modal at bottom so it's always above */}
+      <CreateNewModal />
     </div>
   );
 }

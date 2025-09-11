@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 import type { User } from '@/types/auth';
-import { languages } from '@/lib/language_constants';
+import { languages } from '@/lib/language_utils';
 import TransactionHistoryDialog from './TransactionHistoryDialog';
 
 interface UserDropdownMenuProps {
