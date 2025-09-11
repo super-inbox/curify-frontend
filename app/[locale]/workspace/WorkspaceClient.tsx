@@ -104,24 +104,38 @@ export default function ProfileClientPage() {
     }
   };
 
-  const handleProjectClick = async (projectId: string) => {
+  const handleProjectClick = async (project: Project) => {
+    const processingStates = [
+      "QUEUED",
+      "STARTED",
+      "PREPROCESSING",
+      "TRANSCRIBING",
+      "TRANSLATING",
+      "DUBBING"
+    ];
+  
     try {
-      const data = await projectService.getProject(projectId);
-
+      if (processingStates.includes(project.status)) {
+        router.push(`/${locale}/magic/${project.project_id}`);
+        return;
+      }
+  
+      const data = await projectService.getProject(project.project_id);
+  
       if (!data) {
         throw new Error("Project not found.");
       }
-
+  
       console.log("📦 Project Details API Response:", data);
-
+  
       localStorage.setItem("selectedProjectDetails", JSON.stringify(data));
-      router.push(`/${locale}/project_details/${projectId}`);
+      router.push(`/${locale}/project_details/${project.project_id}`);
     } catch (err) {
-      console.error("❌ Error loading project details:", err);
-      alert("Unable to load project details. Please try again.");
+      console.error("❌ Error loading project:", err);
+      alert("Unable to load project. Please try again.");
     }
   };
-
+  
   const tools = [
     {
       title: "Video Translation",
@@ -195,11 +209,7 @@ export default function ProfileClientPage() {
               className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition relative"
             >
               <div
-                  onClick={() =>
-                    project.status === "processing"
-                      ? router.push(`/${locale}/magic/${project.project_id}`)
-                      : handleProjectClick(project.project_id)
-                  }
+                  onClick={() => handleProjectClick(project)}
                 className="relative aspect-[4/3] w-full"
               >
                 <Image

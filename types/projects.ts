@@ -2,6 +2,22 @@
 export type SubtitleFormat = 'none' | 'source' | 'target' | 'bilingual';
 export type AudioOption = 'original' | 'dubbed' | 'premium';
 
+export type ProjectStatus =
+  | "QUEUED"
+  | "STARTED"
+  | "PREPROCESSING"
+  | "TRANSCRIBING"
+  | "TRANSLATING"
+  | "DUBBING"
+  | "COMPLETED"
+  | "FAILED";
+
+export interface ProjectStatusUpdate {
+  project_id: string;
+  status: ProjectStatus;
+  updated_at: string;
+}
+
 // Job settings interface aligned with backend
 export interface JobSettings {
   erase_original_subtitles: boolean;
@@ -13,12 +29,11 @@ export interface JobSettings {
   target_language?: string;
 }
 
-// Main project interface matching backend response
 export interface Project {
   project_id: string;
   project_name: string;
-  status: 'processing' | 'completed' | 'failed' | 'queued' | 'pending';
-  created_at: string; // ISO date string
+  status: ProjectStatus;
+  created_at: string; // ISO string
   job_settings: JobSettings;
   project_duration_minutes: number;
   video_duration_seconds: number;
