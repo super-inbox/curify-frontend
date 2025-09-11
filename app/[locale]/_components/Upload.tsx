@@ -1,5 +1,8 @@
+"use client";
+
 import { useRef, useState } from "react";
 import Icon from "./Icon";
+import { videoService } from "@/services/video";
 
 const ACCEPTED_TYPES = [
   "video/mp4",
@@ -10,26 +13,31 @@ const ACCEPTED_TYPES = [
 ];
 
 interface Props {
-  onFileSelect: (file: File | null) => void;
+  onUploaded: (
+    videoId: string,
+    blobUrl: string,
+    thumbnailUrl?: string
+  ) => void;
+  onPreviewReady?: (localPreviewUrl: string, file: File) => void;
 }
 
-export default function Upload(props: Props) {
-  const { onFileSelect } = props;
-
+export default function Upload({ onUploaded, onPreviewReady }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
-
   const [isDragging, setIsDragging] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleFile = (fileList: FileList | null) => {
-    if (!fileList || fileList.length === 0) return onFileSelect(null);
+    if (!fileList || fileList.length === 0) return;
 
     const file = fileList[0];
-    if (ACCEPTED_TYPES.includes(file.type)) {
-      onFileSelect(file);
-    } else {
+    if (!ACCEPTED_TYPES.includes(file.type)) {
       alert("只支持 .mp4, .mov, .webm, .avi, .wmv 文件");
-      onFileSelect(null);
+      return;
     }
+
+    const localUrl = URL.createObjectURL(file);
+    onPreviewReady?.(localUrl, file); // 🔥 show preview immediately
+
   };
 
   return (
@@ -57,7 +65,7 @@ export default function Upload(props: Props) {
     >
       <Icon name="add" size={8} />
       <p className="text-[var(--c2)] text-base font-bold mt-4.5 mb-1.5">
-        Drag & Drop or Click to Upload
+        {isUploading ? "Uploading..." : "Drag & Drop or Click to Upload"}
       </p>
       <div className="flex items-center mb-[-0.625rem]">
         <p>.mp4/.mov/.webm/.avi/.wmv</p>
@@ -70,7 +78,7 @@ export default function Upload(props: Props) {
       <input
         ref={inputRef}
         type="file"
-        accept={".mp4,.mov,.webm,.avi,.wmv"}
+        accept=".mp4,.mov,.webm,.avi,.wmv"
         hidden
         onChange={(e) => handleFile(e.target.files)}
       />

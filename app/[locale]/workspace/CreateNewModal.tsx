@@ -11,8 +11,8 @@ import Dropdown from "../_components/Selector";
 import Icon from "../_components/Icon";
 import BtnP from "../_components/button/ButtonPrimary";
 import { useRouter } from "@/i18n/navigation";
+import { videoService } from "@/services/video";
 
-// Define available languages
 const languages = [
   "English (en)",
   "Spanish (es)",
@@ -35,12 +35,14 @@ const languages = [
 
 export default function CreateNewModal() {
   const router = useRouter();
-
   const [modalState, setModalState] = useAtom(modalAtom);
   const [, setHeaderState] = useAtom(headerAtom);
 
-  const [video, setVideo] = useState<File | null>(null);
-  const [url, setUrl] = useState("");
+  const [videoId, setVideoId] = useState<string | null>(null);
+  const [videoBlobUrl, setVideoBlobUrl] = useState<string>("");
+  const [thumbnail, setThumbnail] = useState<string>("");
+  const [localPreviewUrl, setLocalPreviewUrl] = useState<string | null>(null);
+
   const [duration, setDuration] = useState("");
   const [cost, setCost] = useState(0);
 
@@ -49,52 +51,75 @@ export default function CreateNewModal() {
   const defaultTrans = "Select Language";
   const [transto, setTransto] = useState(defaultTrans);
 
-  // ✅ Voiceover Y/N
   const [voiceover, setVoiceover] = useState<"Yes" | "No">("Yes");
-
-  // ✅ Subtitle options
   const [subtitle, setSubtitle] = useState<"None" | "Source" | "Target" | "Bilingual">("None");
-
-  useEffect(() => {
-    if (!video) {
-      setUrl("");
-      return;
-    }
-
-    const url = URL.createObjectURL(video);
-    setUrl(url);
-    setModalState("setting");
-
-    return () => {
-      URL.revokeObjectURL(url);
-    };
-  }, [setModalState, video]);
 
   const getDuration = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const seconds = e.currentTarget.duration;
     const minutes = Math.floor(seconds / 60);
     setCost(Math.ceil((seconds / 60) * 10));
     const secs = Math.floor(seconds % 60);
-    setDuration(
-      `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`
-    );
+    setDuration(`${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`);
   };
+
+  // Clean up preview blob URL
+  useEffect(() => {
+    return () => {
+      if (localPreviewUrl) {
+        URL.revokeObjectURL(localPreviewUrl);
+      }
+    };
+  }, [localPreviewUrl]);
 
   return (
     <>
+      {/* Upload Modal */}
       <Modal title="Generate Translated Video" open={modalState === "add"}>
-        <Upload onFileSelect={setVideo} />
+      <Upload
+  onPreviewReady={(localUrl, file) => {
+    setLocalPreviewUrl(localUrl);
+    setModalState("setting");
+
+    // Background upload
+    videoService.uploadVideo(file).then((data) => {
+      setVideoId(data.video_id);
+      // (optional) show thumbnail: setThumbnail(data.thumbnail_signed_url)
+    }).catch((err) => {
+      alert("Upload failed.");
+      console.error(err);
+    });
+  }}
+/>
       </Modal>
+
+      {/* Settings Modal */}
       <Modal title="Generate Translated Video" open={modalState === "setting"}>
         <div className="flex flex-col items-center">
-          {/* video preview */}
+          {/* Video or Thumbnail Preview */}
           <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
-            {url && (
+            {videoBlobUrl ? (
               <video
-                src={url}
+                src={videoBlobUrl}
                 className="w-full h-full object-contain"
                 onLoadedMetadata={getDuration}
+                controls
               />
+            ) : localPreviewUrl ? (
+              <video
+                src={localPreviewUrl}
+                className="w-full h-full object-contain"
+                controls
+              />
+            ) : thumbnail ? (
+              <img
+                src={thumbnail}
+                className="w-full h-full object-cover"
+                alt="Video thumbnail"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-sm text-gray-400">
+                Uploading...
+              </div>
             )}
             <div
               className={`
@@ -107,7 +132,7 @@ export default function CreateNewModal() {
             </div>
           </div>
 
-          {/* operation board */}
+          {/* Language + Voice + Subtitle Settings */}
           <div className="flex flex-col items-center gap-4.5">
             <div className="flex gap-3">
               <div className="flex-1">
@@ -128,7 +153,6 @@ export default function CreateNewModal() {
               </div>
             </div>
 
-            {/* ✅ Voiceover radio Y/N */}
             <Options
               label="Voiceover"
               options={["Yes", "No"]}
@@ -136,7 +160,6 @@ export default function CreateNewModal() {
               onChange={setVoiceover}
             />
 
-            {/* ✅ Subtitles with 4 options */}
             <Options
               label="Subtitles"
               options={["None", "Source", "Target", "Bilingual"]}
@@ -145,6 +168,7 @@ export default function CreateNewModal() {
             />
           </div>
 
+          {/* Credits & Start */}
           <p className="flex items-center mt-6.5 mb-2">
             Credits Required:
             <span className="text-[var(--p-blue)] ml-1">{cost}</span>
@@ -155,10 +179,9 @@ export default function CreateNewModal() {
 
           <BtnP
             onClick={() => {
+              if (!videoId) return;
               setModalState(null);
-              const projectId = "a1b2c3d4";
-              router.replace(`/project/${projectId}`);          
-              // router.replace("/magic/a1b2c3d4");
+              router.replace(`/project/${videoId}`);
             }}
           >
             Start

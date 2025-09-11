@@ -1,3 +1,4 @@
+// services/video.ts
 import { apiClient } from './api';
 
 export interface VideoUploadResponse {
@@ -13,11 +14,13 @@ export const videoService = {
     formData.append("is_youtube_upload", "false");
     formData.append("video_file", file);
 
-    return apiClient.request<VideoUploadResponse>('/upload', {
+    const res = await apiClient.request<{ data: VideoUploadResponse }>('/videos/upload', {
       method: 'POST',
       body: formData,
       isFormData: true,
     });
+
+    return res.data;
   },
 
   async uploadYoutubeVideo(youtubeUrl: string): Promise<VideoUploadResponse> {
@@ -25,10 +28,12 @@ export const videoService = {
     formData.append("is_youtube_upload", "true");
     formData.append("youtube_url", youtubeUrl);
 
-    return apiClient.request<VideoUploadResponse>('/upload', {
+    const res = await apiClient.request<{ data: VideoUploadResponse }>('/videos/upload', {
       method: 'POST',
       body: formData,
       isFormData: true,
     });
+
+    return res.data;
   }
 };
