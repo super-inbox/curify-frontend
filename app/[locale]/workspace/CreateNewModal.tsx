@@ -62,22 +62,22 @@ export default function CreateNewModal() {
   }, [localPreviewUrl]);
 
   const handleStart = async () => {
-    if (!uploadedFile || transto === "Select Language") return;
-    
+    if (!uploadedFile || !videoId || transto === "Select Language") return;
+
     try {
       const newProject = await projectService.createProject({
-        video_file: uploadedFile,
+        video_id: videoId, // ✅ use video_id from upload
         job_settings: {
           source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
           target_language: getLangCode(transto),
           subtitles_enabled: subtitle.toLowerCase(),
-          audio_option: voiceover === "Yes" ? "dubbing" : "original",
+          audio_option: voiceover === "Yes" ? "dubbed" : "original", // ✅ fix enum
         },
         project_name: uploadedFile.name,
       });
-      
+
       setModalState(null);
-      router.replace(`/magic/${newProject.project_id}/Loading`);
+      router.replace(`/magic/${newProject.project_id}`);
     } catch (error) {
       alert("Failed to create project.");
       console.error(error);
@@ -86,16 +86,23 @@ export default function CreateNewModal() {
 
   return (
     <>
+      {/* Step 1: Upload */}
       <Modal title="Generate Translated Video" open={modalState === "add"}>
         <Upload
           onPreviewReady={(localUrl, file) => {
             setLocalPreviewUrl(localUrl);
             setUploadedFile(file);
+          }}
+          onUploaded={(id, blobUrl, thumbnailUrl) => {
+            setVideoId(id);
+            setVideoBlobUrl(blobUrl);
+            // once upload is complete, open settings modal
             setModalState("setting");
           }}
         />
       </Modal>
 
+      {/* Step 2: Settings */}
       <Modal title="Generate Translated Video" open={modalState === "setting"}>
         <div className="flex flex-col items-center">
           <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
@@ -118,6 +125,7 @@ export default function CreateNewModal() {
 
           <div className="flex flex-col items-center gap-4.5 w-full">
             <div className="flex gap-3 w-full">
+              {/* Source Selector */}
               <div className="flex-1 relative" ref={sourceRef}>
                 <div
                   className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
@@ -153,6 +161,7 @@ export default function CreateNewModal() {
                 )}
               </div>
 
+              {/* Target Selector */}
               <div className="flex-1 relative" ref={targetRef}>
                 <div
                   className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
@@ -180,10 +189,12 @@ export default function CreateNewModal() {
               </div>
             </div>
 
+            {/* Options */}
             <Options label="Voiceover" options={["Yes", "No"]} value={voiceover} onChange={setVoiceover} />
             <Options label="Subtitles" options={["None", "Source", "Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
           </div>
 
+          {/* Cost */}
           <p className="flex items-center mt-6.5 mb-2">
             Credits Required:
             <span className="text-[var(--p-blue)] ml-1">{cost}</span>

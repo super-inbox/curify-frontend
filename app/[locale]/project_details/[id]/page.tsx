@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
 import ExportDialog from "../../_componentForPage/ExportDialog";
@@ -11,10 +11,12 @@ import { projectService } from "@/services/projects";
 
 export default function ProjectDetailsPage() {
   const { locale } = useParams();
+  const router = useRouter(); 
   const [projectDetails, setProjectDetails] = useState<ProjectDetails | null>(null);
   const [isExportDialogOpen, setIsExportDialogOpen] = useState(false);
   const [exportFiles, setExportFiles] = useState<File[]>([]);
   const [modifiedSegments, setModifiedSegments] = useState<Record<number, string>>({});
+  const [statusMessage, setStatusMessage] = useState<string>("");
 
   useEffect(() => {
     const cached = localStorage.getItem("selectedProjectDetails");
@@ -70,14 +72,14 @@ export default function ProjectDetailsPage() {
     updatedSegments[index].translated = newText;
     setProjectDetails({ ...projectDetails, segments: updatedSegments });
 
-    // track modified
     setModifiedSegments((prev) => ({ ...prev, [index]: newText }));
   };
 
   const handleSave = () => {
     if (!projectDetails) return;
     localStorage.setItem("selectedProjectDetails", JSON.stringify(projectDetails));
-    alert("Changes saved locally!");
+
+    setStatusMessage("Change Saved");
   };
 
   const handleReprocess = async () => {
@@ -100,8 +102,11 @@ export default function ProjectDetailsPage() {
         projectDetails.project_id,
         updatedSegments
       );
-      alert(`Reprocess (Regenerate) submitted for project ${res.project_id}`);
+      const projectId = "data" in res ? res.data.project_id : (res as any).project_id;
+
       setModifiedSegments({});
+      router.push(`/${locale}/magic/${projectId}/`);
+
     } catch (err) {
       console.error("Failed to send reprocess request:", err);
       alert("Error submitting reprocess request.");
@@ -111,8 +116,9 @@ export default function ProjectDetailsPage() {
   return (
     <>
       <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
-        {/* Top Bar: Left Return + Right Export */}
+        {/* Top Bar */}
         <div className="flex justify-between items-center mb-6">
+          {/* Left: Return */}
           <Link
             href={`/${locale}/workspace`}
             className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors cursor-pointer"
@@ -121,21 +127,10 @@ export default function ProjectDetailsPage() {
             Return to Workspace
           </Link>
 
-          <button
-            onClick={() => setIsExportDialogOpen(true)}
-            className="bg-white text-blue-600 px-4 py-2 rounded-lg text-base border border-blue-600 hover:bg-blue-50 inline-flex items-center gap-2 cursor-pointer"
-          >
-            <img
-              src="/icons/output.svg"
-              alt="Export"
-              className="w-4 h-4"
-              style={{
-                filter:
-                  "invert(34%) sepia(85%) saturate(3029%) hue-rotate(204deg) brightness(92%) contrast(92%)",
-              }}
-            />
-            Export
-          </button>
+          {/* Right: Title */}
+          <div className="flex items-center">
+            <h2 className="text-2xl font-bold">Video Preview</h2>
+          </div>
         </div>
 
         {/* Split Layout */}
@@ -179,26 +174,35 @@ export default function ProjectDetailsPage() {
               </div>
             </div>
 
-            {/* Buttons */}
-            <div className="flex justify-center gap-4 mt-8">
-              <button
-                onClick={handleSave}
-                className="bg-gray-600 text-white px-4 py-2 rounded-lg text-base hover:bg-gray-700 cursor-pointer"
-              >
-                Save
-              </button>
-              <button
-                onClick={handleReprocess}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-base hover:bg-blue-700 cursor-pointer"
-              >
-                Regenerate
-              </button>
+            {/* Buttons + Status */}
+            <div className="flex flex-col items-center gap-2 mt-8">
+              <div className="flex gap-4">
+                <button
+                  onClick={handleSave}
+                  className="bg-white text-blue-600 px-4 py-2 rounded-lg text-base border border-blue-600 hover:bg-blue-50 cursor-pointer"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={handleReprocess}
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-base hover:bg-blue-700 cursor-pointer"
+                >
+                  Regenerate
+                </button>
+              </div>
+              <div className="text-sm text-gray-600 mt-1">
+                {Object.keys(modifiedSegments).length > 0
+                  ? `${Object.keys(modifiedSegments).length} line(s) updated`
+                  : "No changes yet"}
+                {statusMessage && (
+                  <span className="ml-2 text-green-600 font-medium">{statusMessage}</span>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Right: Video Preview */}
-          <div className="lg:w-1/3 w-full">
-            <h2 className="text-2xl font-bold mb-4">Video Preview</h2>
+          <div className="lg:w-1/3 w-full flex flex-col justify-between">
             <Tab.Group>
               <Tab.List className="flex space-x-1 rounded-xl bg-gray-200 p-1">
                 <Tab
@@ -253,6 +257,25 @@ export default function ProjectDetailsPage() {
                 </Tab.Panel>
               </Tab.Panels>
             </Tab.Group>
+
+            {/* Export under video */}
+            <div className="flex justify-center mt-6">
+              <button
+                onClick={() => setIsExportDialogOpen(true)}
+                className="bg-white text-blue-600 px-4 py-2 rounded-lg text-base border border-blue-600 hover:bg-blue-50 inline-flex items-center gap-2 cursor-pointer"
+              >
+                <img
+                  src="/icons/output.svg"
+                  alt="Export"
+                  className="w-4 h-4"
+                  style={{
+                    filter:
+                      "invert(34%) sepia(85%) saturate(3029%) hue-rotate(204deg) brightness(92%) contrast(92%)",
+                  }}
+                />
+                Export
+              </button>
+            </div>
           </div>
         </div>
       </div>

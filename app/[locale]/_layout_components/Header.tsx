@@ -9,7 +9,7 @@ import { drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Header() {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function Header() {
   const [headerState] = useAtom(headerAtom);
   const [user] = useAtom(userAtom);
   const [, setModal] = useAtom(modalAtom);
-  
+
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
     { locale: "zh", name: "中文", flag: "🇨🇳" },
@@ -33,10 +33,10 @@ export default function Header() {
 
   const currentLanguage = languages.find((lang) => lang.locale === locale);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isHistoryDialogOpen, setIsHistoryDialogOpen] = useState(false);
 
   const remainingCredits =
-    (user?.non_expiring_credits || 0) +
-    (user?.expiring_credits || 0);
+    (user?.non_expiring_credits || 0) + (user?.expiring_credits || 0);
 
   let closeTimeout: NodeJS.Timeout | null = null;
 
@@ -50,8 +50,13 @@ export default function Header() {
 
   const handleMouseLeave = () => {
     closeTimeout = setTimeout(() => {
-      setDropdownOpen(false);
+      handleCloseDropdown();
     }, 150);
+  };
+
+  const handleCloseDropdown = () => {
+    setDropdownOpen(false);
+    setIsHistoryDialogOpen(false); // ✅ close transaction history when dropdown closes
   };
 
   return (
@@ -59,14 +64,9 @@ export default function Header() {
       <div className="flex items-center justify-between w-full">
         {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
-          <div className="relative w-40 aspect-[160/38.597]">
-            <Link href={`/${locale}`}>
-              <Image
-                src="/logo.svg"
-                alt="logo"
-                fill
-                className="object-contain"
-              />
+          <div className="relative w-40 aspect-[160/38.597] cursor-pointer">
+            <Link href={user ? `/${locale}/workspace` : `/${locale}`}>
+              <Image src="/logo.svg" alt="logo" fill className="object-contain" />
             </Link>
           </div>
 
@@ -86,16 +86,12 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           {headerState === "out" ? (
             <>
-              {/* Contact us */}
               <Link href={`/${locale}/contact`}>
                 <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
                   Contact us
                 </BtnN>
               </Link>
-              {/* Log in button */}
-              <BtnN onClick={() => setDrawerState("sign")}>
-                Log in
-              </BtnN>
+              <BtnN onClick={() => setDrawerState("sign")}>Log in</BtnN>
             </>
           ) : (
             <>
@@ -120,15 +116,12 @@ export default function Header() {
 
               {/* Shell Credit Display */}
               <p className="text-sm text-right mr-2 flex items-center gap-1">
-                <span className="text-[var(--p-blue)] font-bold">
-                  {remainingCredits}
-                </span>
+                <span className="text-[var(--p-blue)] font-bold">{remainingCredits}</span>
                 <span className="text-xl">🐚</span>
               </p>
 
-              {/* Top Up Credits Button */}
               <BtnN
-                onClick={() => setModal('topup')}
+                onClick={() => setModal("topup")}
                 className="text-sm px-4 py-2"
               >
                 Top up Credits
@@ -142,14 +135,13 @@ export default function Header() {
               >
                 <Link href={`/${locale}/workspace`}>
                   <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-300 cursor-pointer z-50">
-                    {/* Replace the default avatar with dynamic one */}
-<Image
-  src={user?.avatar_url || "/images/default-avatar.jpg"}
-  alt="User Avatar"
-  width={32}
-  height={32}
-  className="relative z-50 rounded-full border border-gray-300 cursor-pointer object-cover"
-/>
+                    <Image
+                      src={user?.avatar_url || "/images/default-avatar.jpg"}
+                      alt="User Avatar"
+                      width={32}
+                      height={32}
+                      className="relative z-50 rounded-full border border-gray-300 cursor-pointer object-cover"
+                    />
                   </div>
                 </Link>
 
@@ -157,12 +149,12 @@ export default function Header() {
                   <UserDropdownMenu
                     user={user}
                     isOpen={dropdownOpen}
-                    onClose={() => setDropdownOpen(false)}
+                    onClose={handleCloseDropdown}
                     onLanguageSelect={(lang) => router.push(`/${lang}`)}
-                    onSignOut={() => {
-                      console.log("Sign out clicked");
-                    }}
+                    onSignOut={() => console.log("Sign out clicked")}
                     currentLocale={locale}
+                    isHistoryDialogOpen={isHistoryDialogOpen}
+                    setIsHistoryDialogOpen={setIsHistoryDialogOpen} // ✅ pass control down
                   />
                 </div>
               </div>

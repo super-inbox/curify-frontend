@@ -82,32 +82,30 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
 // Handle Google credential
 const handleCredentialResponse = async (response: { credential: string }) => {
   try {
-    setIsGoogleLoading(true);
-    setAuthLoading(true);
-
+    console.log("Processing Google credential...");
+    
     const result = await authService.googleLogin(response.credential);
-  // Save tokens
-  localStorage.setItem("access_token", result.data.access_token);
-  localStorage.setItem("refresh_token", result.data.refresh_token);
+    
+    // Save tokens
+    localStorage.setItem("access_token", result.data.access_token);
+    localStorage.setItem("refresh_token", result.data.refresh_token);
 
     // Save user in localStorage for hydration later
     localStorage.setItem("curifyUser", JSON.stringify(result.data.user));
 
-    // 👇 Redirect to callbackUrl if present, else fallback to /workspace
-    const params = new URLSearchParams(window.location.search);
-    const callbackUrl = params.get("callbackUrl") || "/workspace";
-
-    router.push(callbackUrl);
+    // Set user state
+    setUser(result.data.user);
+    
+    console.log("Google login successful, user authenticated");
 
   } catch (error) {
     console.error("Google login failed:", error);
-    alert("Login failed. Please try again.");
+    // Redirect back to home with error
+    router.push("/?error=login_failed");
   } finally {
-    setIsGoogleLoading(false);
     setAuthLoading(false);
   }
 };
-
 
   const handleGoogleLogin = async () => {
     if (isGoogleLoading || !googleLoaded) {
@@ -117,6 +115,14 @@ const handleCredentialResponse = async (response: { credential: string }) => {
 
     console.log("Starting Google login process...");
     setIsGoogleLoading(true);
+    setAuthLoading(true);
+
+    // Get callback URL from current page params or use default
+    const params = new URLSearchParams(window.location.search);
+    const finalCallbackUrl = params.get("callbackUrl") || callbackUrl;
+
+    // Immediately redirect to workspace/loading page
+    router.push(finalCallbackUrl);
 
     try {
       const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
@@ -166,7 +172,8 @@ const handleCredentialResponse = async (response: { credential: string }) => {
             console.log("Google prompt result:", notification);
             if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
               console.log("Google prompt was not displayed or skipped");
-              alert("Please allow popups for this site to use Google login.");
+              // Redirect back to home with error message
+              router.push("/?error=popup_blocked");
             }
           });
         }
@@ -176,13 +183,14 @@ const handleCredentialResponse = async (response: { credential: string }) => {
           if (document.body.contains(tempButtonContainer)) {
             document.body.removeChild(tempButtonContainer);
           }
-          setIsGoogleLoading(false);
         }, 1000);
       }, 100);
 
     } catch (error) {
       console.error("Google login initialization failed:", error);
-      alert("Failed to initialize Google login. Please try again.");
+      // Redirect back to home with error
+      router.push("/?error=init_failed");
+    } finally {
       setIsGoogleLoading(false);
     }
   };

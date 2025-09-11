@@ -15,6 +15,7 @@ import {
 
 import type { User } from '@/types/auth';
 import { languages } from '@/lib/language_utils';
+import { transactionService, type Transaction } from '@/services/transactions';
 import TransactionHistoryDialog from './TransactionHistoryDialog';
 
 interface UserDropdownMenuProps {
@@ -23,6 +24,8 @@ interface UserDropdownMenuProps {
   onClose: () => void;
   onSignOut: () => void;
   currentLocale?: string;
+  isHistoryDialogOpen: boolean; // ✅ now passed from parent
+  setIsHistoryDialogOpen: (open: boolean) => void; // ✅ passed from parent
 }
 
 export default function UserDropdownMenu({
@@ -31,19 +34,23 @@ export default function UserDropdownMenu({
   onClose,
   onSignOut,
   currentLocale = 'en',
+  isHistoryDialogOpen,
+  setIsHistoryDialogOpen,
 }: UserDropdownMenuProps) {
   const router = useRouter();
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
-  const [isHistoryDialogOpen, setIsHistoryDialogOpen] = useState(false);
-  const [transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const totalCredits = (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
+  const totalCredits =
+    (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
   const expiringCredits = user.expiring_credits ?? 0;
 
-  const expirationDate = user.current_cycle_end ? new Date(user.current_cycle_end) : null;
+  const expirationDate = user.current_cycle_end
+    ? new Date(user.current_cycle_end)
+    : null;
   const formattedExpirationDate = expirationDate
     ? expirationDate.toLocaleDateString(currentLocale, {
         year: 'numeric',
@@ -56,7 +63,10 @@ export default function UserDropdownMenu({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         onClose();
         setShowLanguageSubmenu(false);
       }
@@ -90,33 +100,22 @@ export default function UserDropdownMenu({
   };
 
   const handleShowHistory = async () => {
-    onClose(); // Close the dropdown menu
-    setIsHistoryDialogOpen(true); // Open the history dialog
+    setIsHistoryDialogOpen(true); // ✅ controlled by parent
     setIsLoading(true);
 
     try {
-      const token = localStorage.getItem("accessToken"); // Assuming you store your access token
-      const response = await fetch('/transactions', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch transactions');
-      }
-
-      const data = await response.json();
-      setTransactions(data.data);
+      const response = await transactionService.getTransactions();
+      setTransactions(response.data);
     } catch (error) {
       console.error('Error fetching transactions:', error);
-      setTransactions([]); // Clear transactions on error
+      setTransactions([]);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const currentLanguage = languages.find((lang) => lang.code === currentLocale) || languages[0];
+  const currentLanguage =
+    languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   return (
     <>
@@ -129,7 +128,9 @@ export default function UserDropdownMenu({
           <h3 className="text-base font-semibold text-blue-600 text-[15px]">
             {user.name || 'User'}
           </h3>
-          <p className="text-sm text-gray-600 truncate text-[14px]">{user.email}</p>
+          <p className="text-sm text-gray-600 truncate text-[14px]">
+            {user.email}
+          </p>
         </div>
 
         {/* Credits Info */}
@@ -146,7 +147,9 @@ export default function UserDropdownMenu({
               <div className="flex justify-between items-center mb-1">
                 <div className="flex items-center">
                   <Zap size={16} className="text-orange-500 mr-1" />
-                  <span className="text-sm text-gray-600 text-[14px]">Plan Remaining</span>
+                  <span className="text-sm text-gray-600 text-[14px]">
+                    Plan Remaining
+                  </span>
                 </div>
                 <span className="text-md font-semibold text-orange-600 text-[14px]">
                   {expiringCredits} 🐚
@@ -154,7 +157,9 @@ export default function UserDropdownMenu({
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-gray-400">Valid until</span>
-                <span className="text-xs text-gray-400">{formattedExpirationDate}</span>
+                <span className="text-xs text-gray-400">
+                  {formattedExpirationDate}
+                </span>
               </div>
             </>
           )}
@@ -197,7 +202,9 @@ export default function UserDropdownMenu({
                       segments[0] = lang.code;
                       const newPath = '/' + segments.join('/');
 
-                      const query = new URLSearchParams(window.location.search).toString();
+                      const query = new URLSearchParams(
+                        window.location.search
+                      ).toString();
                       const fullPath = query ? `${newPath}?${query}` : newPath;
 
                       window.location.replace(fullPath);
@@ -206,7 +213,9 @@ export default function UserDropdownMenu({
                       onClose();
                     }}
                     className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors cursor-pointer ${
-                      lang.code === currentLocale ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                      lang.code === currentLocale
+                        ? 'bg-blue-50 text-blue-600'
+                        : 'text-gray-700'
                     }`}
                   >
                     <span className="mr-2">{lang.flag}</span>
@@ -220,7 +229,9 @@ export default function UserDropdownMenu({
           <button
             onClick={() => handleRoute(`/${currentLocale}/pricing`)}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === `/${currentLocale}/pricing` ? 'text-blue-600 font-semibold' : ''
+              pathname === `/${currentLocale}/pricing`
+                ? 'text-blue-600 font-semibold'
+                : ''
             }`}
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
@@ -230,7 +241,9 @@ export default function UserDropdownMenu({
           <button
             onClick={() => handleRoute(`/${currentLocale}/contact`)}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === `/${currentLocale}/contact` ? 'text-blue-600 font-semibold' : ''
+              pathname === `/${currentLocale}/contact`
+                ? 'text-blue-600 font-semibold'
+                : ''
             }`}
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />
@@ -246,13 +259,15 @@ export default function UserDropdownMenu({
           </button>
         </div>
       </div>
-      
-      <TransactionHistoryDialog
-        isOpen={isHistoryDialogOpen}
-        onClose={() => setIsHistoryDialogOpen(false)}
-        transactions={transactions}
-        isLoading={isLoading}
-      />
+
+      {isHistoryDialogOpen && (
+        <TransactionHistoryDialog
+          isOpen={isHistoryDialogOpen}
+          onClose={() => setIsHistoryDialogOpen(false)} // ✅ controlled by parent
+          transactions={transactions}
+          isLoading={isLoading}
+        />
+      )}
     </>
   );
 }

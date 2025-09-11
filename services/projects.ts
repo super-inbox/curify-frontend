@@ -89,8 +89,8 @@ export const projectService = {
       original_updated?: string | null;
       translated_updated?: string | null;
     }>
-  ): Promise<{ project_id: string }> {
-    return apiClient.request<{ project_id: string }>("/projects/reprocess", {
+  ): Promise<{ data: { project_id: string } } | { project_id: string }> {
+    return apiClient.request("/projects/reprocess", {
       method: "POST",
       body: JSON.stringify({
         project_id: projectId,
@@ -100,5 +100,5 @@ export const projectService = {
         "Content-Type": "application/json",
       },
     });
-  }, 
+  },
 };

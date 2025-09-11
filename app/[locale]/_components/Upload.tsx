@@ -26,7 +26,7 @@ export default function Upload({ onUploaded, onPreviewReady }: Props) {
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
 
-  const handleFile = (fileList: FileList | null) => {
+  const handleFile = async (fileList: FileList | null) => {
     if (!fileList || fileList.length === 0) return;
 
     const file = fileList[0];
@@ -35,9 +35,21 @@ export default function Upload({ onUploaded, onPreviewReady }: Props) {
       return;
     }
 
+    // Show local preview immediately
     const localUrl = URL.createObjectURL(file);
-    onPreviewReady?.(localUrl, file); // 🔥 show preview immediately
+    onPreviewReady?.(localUrl, file);
 
+    // Upload in the background
+    try {
+      setIsUploading(true);
+      const res = await videoService.uploadVideo(file);
+      onUploaded(res.video_id, res.blob_url, res.thumbnail_signed_url);
+    } catch (err) {
+      console.error("❌ Upload failed:", err);
+      alert("Upload failed, please try again.");
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   return (

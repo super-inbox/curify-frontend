@@ -195,7 +195,11 @@ export default function ProfileClientPage() {
               className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition relative"
             >
               <div
-                onClick={() => handleProjectClick(project.project_id)}
+                  onClick={() =>
+                    project.status === "processing"
+                      ? router.push(`/${locale}/magic/${project.project_id}`)
+                      : handleProjectClick(project.project_id)
+                  }
                 className="relative aspect-[4/3] w-full"
               >
                 <Image
@@ -205,7 +209,8 @@ export default function ProfileClientPage() {
                   className="object-cover"
                 />
                 <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
-                  {project.job_settings.target_language.toUpperCase()} · Translated
+                  {project.job_settings.target_language.toUpperCase()} ·{" "}
+                  {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
                 </div>
                 <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
                   {duration}
