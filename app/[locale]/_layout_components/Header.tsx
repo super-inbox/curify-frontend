@@ -9,16 +9,22 @@ import { drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const router = useRouter();
   const { locale } = useParams();
 
-  const [, setDrawerState] = useAtom(drawerAtom);
+  const [drawerState, setDrawerState] = useAtom(drawerAtom);
   const [headerState] = useAtom(headerAtom);
   const [user] = useAtom(userAtom);
   const [, setModal] = useAtom(modalAtom);
+
+  // useEffect(() => {
+  //   if (user && drawerState === "signin") {
+  //     setDrawerState(null);
+  //   }
+  // }, [user, drawerState, setDrawerState]);
 
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
@@ -56,17 +62,34 @@ export default function Header() {
 
   const handleCloseDropdown = () => {
     setDropdownOpen(false);
-    setIsHistoryDialogOpen(false); // ✅ close transaction history when dropdown closes
+    setIsHistoryDialogOpen(false);
   };
 
+  const handleLoginClick = () => {
+    if (drawerState === "signin") {
+      setDrawerState(null);
+    } else {
+      setDrawerState("signin");
+    }
+  };
+  
   return (
     <header className="flex px-8 py-2 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
       <div className="flex items-center justify-between w-full">
         {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
           <div className="relative w-40 aspect-[160/38.597] cursor-pointer">
-            <Link href={user ? `/${locale}/workspace` : `/${locale}`}>
-              <Image src="/logo.svg" alt="logo" fill className="object-contain" />
+            <Link
+              href={user && user.id ? `/${locale}/workspace` : `/${locale}`}
+              aria-label="Curify Home"
+            >
+              <Image
+                src="/logo.svg"
+                alt="Curify Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </Link>
           </div>
 
@@ -91,7 +114,8 @@ export default function Header() {
                   Contact us
                 </BtnN>
               </Link>
-              <BtnN onClick={() => setDrawerState("sign")}>Log in</BtnN>
+              {/* ✅ Log in button now always toggles drawer */}
+              <BtnN onClick={handleLoginClick}>Log in</BtnN>
             </>
           ) : (
             <>
@@ -116,7 +140,9 @@ export default function Header() {
 
               {/* Shell Credit Display */}
               <p className="text-sm text-right mr-2 flex items-center gap-1">
-                <span className="text-[var(--p-blue)] font-bold">{remainingCredits}</span>
+                <span className="text-[var(--p-blue)] font-bold">
+                  {remainingCredits}
+                </span>
                 <span className="text-xl">🐚</span>
               </p>
 
@@ -154,7 +180,7 @@ export default function Header() {
                     onSignOut={() => console.log("Sign out clicked")}
                     currentLocale={locale}
                     isHistoryDialogOpen={isHistoryDialogOpen}
-                    setIsHistoryDialogOpen={setIsHistoryDialogOpen} // ✅ pass control down
+                    setIsHistoryDialogOpen={setIsHistoryDialogOpen}
                   />
                 </div>
               </div>

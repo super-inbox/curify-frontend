@@ -1,8 +1,9 @@
 // components/TransactionHistoryDialog.tsx
 'use client';
 
-import { X, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import type { Transaction } from '@/services/transactions';
+import DialogCloseButton from "../_components/button/DialogCloseButton";
 
 interface TransactionHistoryDialogProps {
   isOpen: boolean;
@@ -20,31 +21,25 @@ export default function TransactionHistoryDialog({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] flex items-start justify-center mt-12">
       {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/40"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/40" onClick={onClose} />
 
       {/* Dialog */}
-      <div className="relative w-full max-w-md bg-white rounded-lg shadow-lg m-4">
+      <div className="relative w-full max-w-2xl bg-white rounded-xl shadow-2xl border border-gray-200 m-4">
+        {/* Close button (top-right) */}
+        <DialogCloseButton onClick={onClose} />
+
         {/* Header */}
-        <div className="flex items-center justify-between p-3 border-b">
-          <h2 className="flex items-center text-base font-semibold text-gray-800">
+        <div className="flex items-center justify-between p-4 border-b bg-gray-50 rounded-t-xl">
+          <h2 className="flex items-center text-lg font-semibold text-gray-800">
             <Clock size={18} className="mr-2 text-gray-500" />
             Credits History
           </h2>
-          <button
-            onClick={onClose}
-            className="p-1 rounded hover:bg-gray-100"
-          >
-            <X size={18} className="text-gray-500" />
-          </button>
         </div>
 
         {/* Content */}
-        <div className="p-3 overflow-y-auto max-h-[60vh]">
+        <div className="p-4 overflow-y-auto max-h-[60vh]">
           {isLoading ? (
             <div className="flex items-center justify-center py-6 text-gray-600">
               <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mr-2"></div>
@@ -56,41 +51,81 @@ export default function TransactionHistoryDialog({
               No transactions found
             </div>
           ) : (
-            <div className="space-y-2">
-              {transactions.map((tx, index) => (
-                <div
-                  key={tx.id ?? `tx-${index}`}
-                  className="p-2 bg-gray-50 rounded border text-sm"
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium text-gray-800">
-                      {tx.description}
-                    </span>
-                    <span
-                      className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                        tx.type === 'credit'
-                          ? 'bg-green-100 text-green-700'
-                          : 'bg-red-100 text-red-700'
-                      }`}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                <thead className="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th className="px-3 py-2 border-b">ID</th>
+                    <th className="px-3 py-2 border-b w-32 whitespace-nowrap">
+                      Type
+                    </th>
+                    <th className="px-3 py-2 border-b text-right">Credits</th>
+                    <th className="px-3 py-2 border-b w-24 text-right">
+                      Amount
+                    </th>
+                    <th className="px-3 py-2 border-b">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {transactions.map((tx) => (
+                    <tr
+                      key={tx.transaction_id}
+                      className="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition"
                     >
-                      {tx.type === 'credit' ? '+' : '-'}
-                      {tx.amount} 🐚
-                    </span>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-1">
-                    {new Date(tx.created_at).toLocaleString()}
-                  </p>
-                </div>
-              ))}
+                      {/* ID */}
+                      <td className="px-3 py-2 border-b text-gray-600 text-xs">
+                        {tx.transaction_id ?? "-"}
+                      </td>
+
+                      {/* Type */}
+                      <td className="px-3 py-2 border-b text-gray-800 text-sm w-32 whitespace-nowrap">
+                        {tx.transaction_type ?? "-"}
+                      </td>
+
+                      {/* Credits */}
+                      <td className="px-3 py-2 border-b text-right font-medium">
+                        {tx.credits != null ? (
+                          <span
+                            className={
+                              tx.transaction_type?.toLowerCase().includes("credit")
+                                ? "text-green-600"
+                                : "text-red-600"
+                            }
+                          >
+                            {tx.transaction_type?.toLowerCase().includes("credit")
+                              ? "+"
+                              : "-"}
+                            {tx.credits} 🐚
+                          </span>
+                        ) : (
+                          "-"
+                        )}
+                      </td>
+
+                      {/* Amount */}
+                      <td className="px-3 py-2 border-b text-right text-gray-700 w-24 whitespace-nowrap">
+                        {tx.amount != null ? `$${tx.amount}` : "-"}
+                      </td>
+
+                      {/* Date */}
+                      <td className="px-3 py-2 border-b text-gray-500 text-xs">
+                        {tx.created_at
+                          ? new Date(tx.created_at).toLocaleDateString()
+                          : "-"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
 
         {/* Footer */}
-        <div className="p-3 border-t">
+        <div className="p-4 border-t bg-gray-50 rounded-b-xl">
           <button
             onClick={onClose}
-            className="w-full px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm font-medium"
+            className="w-full px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium transition"
           >
             Close
           </button>

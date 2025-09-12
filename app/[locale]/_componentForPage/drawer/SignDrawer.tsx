@@ -62,9 +62,8 @@ export default function SignDrawer() {
   return (
     <Drawer 
       size="medium"
-      open={!!state?.includes("sign")}
-    >
-      <div className="relative">
+      open={state === "signin" || state === "signup"} // ✅ fix
+    >    <div className="relative">
         {step === 2 && (
           <button onClick={resetFlow} className="absolute left-0 top-0 p-1 text-gray-500 hover:text-gray-700">
             <ChevronLeftIcon className="h-6 w-6" />
@@ -99,12 +98,15 @@ export default function SignDrawer() {
                   errorMsg: "Please enter a valid email address.",
                 },
               ]}
+              // Disable the email input
+              disabled={true} 
             />
             {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
 
             <BtnN
               className="w-full py-3 text-base"
-              disabled={!emailValid}
+              // Disable the button
+              disabled={true} 
               onClick={handleEmailSubmit}
             >
               {content.button}
@@ -121,16 +123,19 @@ export default function SignDrawer() {
               onChange={setOtp}
               setValid={setOtpValid}
               rules={[]} 
+              // Disable the OTP input
+              disabled={true} 
             />
             {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
             <BtnN
               className="w-full py-3 text-base"
-              disabled={!otpValid}
+              // Disable the button
+              disabled={true}
               onClick={handleOtpSubmit}
             >
               Verify Code
             </BtnN>
-            <button className="text-xs text-blue-600 hover:underline mt-2">
+            <button className="text-xs text-blue-600 hover:underline mt-2 cursor-not-allowed opacity-50" disabled>
               Resend Code
             </button>
           </>

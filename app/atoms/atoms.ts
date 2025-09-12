@@ -61,7 +61,7 @@ export const userAtom = atom<User | null>(null);
 export const modalOpenAtom = atom(false);
 
 export type DrawerType = "signin" | "signup" | "emailout" | "emailin" | null;
-export const drawerAtom = atom<DrawerType>(null);
+export const drawerAtom = atom<string | null>(null);
 
 export type ModalType = "add" | "setting" | "charge" | null;
 export const modalAtom = atom<ModalType>(null);

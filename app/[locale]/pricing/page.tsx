@@ -1,13 +1,30 @@
-import type { Metadata } from "next";
+// app/[locale]/pricing/page.tsx
+
+'use client';
+
 import Link from "next/link";
 import React from 'react';
+import { useSetAtom } from "jotai";
+import { drawerAtom } from "@/app/atoms/atoms"; 
 
-export const metadata: Metadata = {
-  title: "Pricing | Curify Studio",
-  description: "Choose the right plan for your subtitle and video needs.",
+// This file is a Client Component and should NOT export metadata.
+
+// This is a placeholder for the user's current plan.
+const currentUser = {
+  plan: null 
 };
 
 export default function PricingPage() {
+  const setDrawerState = useSetAtom(drawerAtom);
+
+  const isLoggedIn = !!currentUser.plan;
+  const isFreePlan = currentUser.plan === 'free';
+  const isCreatorPlan = currentUser.plan === 'creator';
+
+  const handleSignUpClick = () => {
+    setDrawerState("signup");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 pt-20 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -33,9 +50,19 @@ export default function PricingPage() {
               <span className="text-3xl font-bold text-gray-900">$0</span>
               <span className="text-gray-600 ml-1 text-base">/ Month</span>
             </div>
-            <button className="w-full bg-blue-600 text-white rounded-lg py-2.5 px-4 font-semibold hover:bg-blue-700 transition-colors mb-3 text-sm">
-              Renew Plan
+            
+            <button
+              className={`w-full text-white rounded-lg py-2.5 px-4 font-semibold transition-colors mb-3 text-sm cursor-pointer ${
+                isLoggedIn && isFreePlan
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-blue-600 hover:bg-blue-700'
+              }`}
+              onClick={!isLoggedIn ? handleSignUpClick : undefined}
+              disabled={isLoggedIn && isFreePlan}
+            >
+              {isLoggedIn ? (isFreePlan ? 'Current Plan' : 'Renew Plan') : 'Sign up'}
             </button>
+
             <p className="text-sm text-gray-600 mb-4 text-center">
               Receive <strong>100 C</strong>/Month
             </p>
@@ -65,9 +92,16 @@ export default function PricingPage() {
               <span className="text-3xl font-bold text-gray-900">$10</span>
               <span className="text-gray-600 ml-1 text-base">/ Month</span>
             </div>
-            <button className="w-full bg-blue-600 text-white rounded-lg py-2.5 px-4 font-semibold hover:bg-blue-700 transition-colors mb-3 text-sm">
-              Subscribe Plan
+            
+            <button
+              className={`w-full text-white rounded-lg py-2.5 px-4 font-semibold transition-colors mb-3 text-sm cursor-pointer ${
+                isCreatorPlan ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+              }`}
+              disabled={isCreatorPlan}
+            >
+              {isCreatorPlan ? 'Current Plan' : 'Subscribe Plan'}
             </button>
+            
             <p className="text-sm text-gray-600 mb-4 text-center">
               Receive <strong>1000 C</strong>/Month
             </p>
@@ -142,8 +176,8 @@ export default function PricingPage() {
               <span className="text-3xl font-bold text-gray-900">Custom</span>
               <span className="text-gray-600 ml-1 text-base">Pricing</span>
             </div>
-            <Link href="/contact">
-              <button className="w-full bg-purple-600 text-white rounded-lg py-2.5 px-4 font-semibold hover:bg-purple-700 transition-colors mb-3 text-sm">
+            <Link href="/contact" passHref>
+              <button className="w-full bg-purple-600 text-white rounded-lg py-2.5 px-4 font-semibold hover:bg-purple-700 transition-colors mb-3 text-sm cursor-pointer">
                 Contact Sales
               </button>
             </Link>
@@ -244,7 +278,7 @@ export default function PricingPage() {
                     <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-800 rounded-full text-sm font-bold">✓</span>
                   </td>
                   <td className="px-6 py-4 text-center">
-                    <span className="inline-flex items-center justify-center w-6 h-6 bg-green-100 text-green-800 rounded-full text-sm font-bold">✓</span>
+                    <span className="inline-flex items-center justify-6 h-6 bg-green-100 text-green-800 rounded-full text-sm font-bold">✓</span>
                   </td>
                   <td className="px-6 py-4 text-center">
                     <span className="inline-flex items-center justify-center w-6 h-6 bg-gray-100 text-gray-400 rounded-full text-sm font-bold">✓</span>

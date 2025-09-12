@@ -18,14 +18,18 @@ import { languages } from '@/lib/language_utils';
 import { transactionService, type Transaction } from '@/services/transactions';
 import TransactionHistoryDialog from './TransactionHistoryDialog';
 
+// ✅ Jotai drawerAtom import
+import { useSetAtom } from 'jotai';
+import { drawerAtom } from '@/app/atoms/atoms';
+
 interface UserDropdownMenuProps {
   user: User;
   isOpen: boolean;
   onClose: () => void;
   onSignOut: () => void;
   currentLocale?: string;
-  isHistoryDialogOpen: boolean; // ✅ now passed from parent
-  setIsHistoryDialogOpen: (open: boolean) => void; // ✅ passed from parent
+  isHistoryDialogOpen: boolean;
+  setIsHistoryDialogOpen: (open: boolean) => void;
 }
 
 export default function UserDropdownMenu({
@@ -43,6 +47,9 @@ export default function UserDropdownMenu({
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  // ✅ allow resetting drawer state on sign out
+  const setDrawerState = useSetAtom(drawerAtom);
 
   const totalCredits =
     (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
@@ -94,13 +101,14 @@ export default function UserDropdownMenu({
 
   const handleSignOut = () => {
     localStorage.removeItem('curifyUser');
+    setDrawerState(null); // ✅ reset drawerAtom on sign out
     onClose();
     onSignOut();
     window.location.href = '/';
   };
 
   const handleShowHistory = async () => {
-    setIsHistoryDialogOpen(true); // ✅ controlled by parent
+    setIsHistoryDialogOpen(true);
     setIsLoading(true);
 
     try {
@@ -263,7 +271,7 @@ export default function UserDropdownMenu({
       {isHistoryDialogOpen && (
         <TransactionHistoryDialog
           isOpen={isHistoryDialogOpen}
-          onClose={() => setIsHistoryDialogOpen(false)} // ✅ controlled by parent
+          onClose={() => setIsHistoryDialogOpen(false)}
           transactions={transactions}
           isLoading={isLoading}
         />

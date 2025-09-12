@@ -78,7 +78,7 @@ export default function HomeClient() {
 <div className="flex flex-col sm:flex-row gap-8 items-center justify-center mb-8">
   {/* Book a Demo CTA */}
   <Link href="/contact">
-    <button className="h-14 px-7 rounded-xl text-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition">
+    <button className="h-14 px-7 rounded-xl text-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition cursor-pointer">
       Book a Demo
     </button>
   </Link>
@@ -199,8 +199,6 @@ export default function HomeClient() {
         </section>
       </div>
 
-      <SignDrawer />
-      <EmailDrawer />
     </>
   );
 }

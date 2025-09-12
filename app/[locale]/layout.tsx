@@ -11,6 +11,7 @@ import Script from "next/script";
 import Header from "./_layout_components/Header";
 import Footer from "./_layout_components/Footer";
 import TopUpModal from "./_componentForPage/TopUpModal";
+import SignDrawer from "./_componentForPage/drawer/SignDrawer";
 import AppWrapper from "./_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
@@ -41,10 +42,10 @@ export default async function LocaleLayout(props: Props) {
     <html lang={locale}>
       <head>
         {/* Google Identity Services Script */}
-        <script 
-          src="https://accounts.google.com/gsi/client" 
-          async 
-          defer 
+        <script
+          src="https://accounts.google.com/gsi/client"
+          async
+          defer
         />
       </head>
       <body>
@@ -58,7 +59,8 @@ export default async function LocaleLayout(props: Props) {
           <NextIntlClientProvider locale={locale} messages={messages}>
             <AppWrapper user={session?.user || null}>
               <Header />
-              <TopUpModal /> {/* ✅ Inject modal here globally */}
+              <TopUpModal /> 
+              <SignDrawer /> {/* ✅ Drawer mounted globally */}
               {children}
               <Toaster />
               <Footer />

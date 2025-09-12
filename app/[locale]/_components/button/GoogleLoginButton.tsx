@@ -196,7 +196,7 @@ const handleCredentialResponse = async (response: { credential: string }) => {
   };
 
   const sharedClasses =
-    "flex items-center justify-center border border-gray-300 bg-white hover:bg-gray-50 transition disabled:opacity-50 disabled:cursor-not-allowed";
+    "flex items-center justify-center border border-gray-300 bg-white hover:bg-gray-50 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variantClasses =
     variant === "home"
