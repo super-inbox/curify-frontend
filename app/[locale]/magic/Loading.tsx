@@ -1,30 +1,57 @@
 "use client";
 
 import Process from "./Process";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
-const steps = ["Preprocess", "Transcribing", "Translating", "Dubbing"];
+const steps = ["Queueing", "Preprocess", "Transcribing", "Translating", "Dubbing"];
 
 export default function Loading() {
+  const { locale } = useParams();
+
+  // Right now you're hardcoding step 1 (Queueing).
+  // Later you could drive this dynamically from props/state.
+  const currentStepIndex = 0;
+
   return (
     <>
       <div className="relative">
         <div className="absolute h-full w-full flex flex-col items-center justify-center">
-          <p className="text-4xl font-bold text-[var(--c1)] mb-3.5">{`Preprocess`}</p>
+          {/* Current step label */}
+          <p className="text-4xl font-bold text-[var(--c1)] mb-3.5">
+            {steps[currentStepIndex]}
+          </p>
+
+          {/* Progress dots */}
           <div className="flex">
-            <Process process={100} active={true} />
-            <Process process={0} active={false} />
-            <Process process={0} active={false} />
-            <Process process={0} active={false} />
+            {steps.map((_, idx) => (
+              <Process
+                key={idx}
+                process={idx === currentStepIndex ? 100 : 0}
+                active={idx === currentStepIndex}
+              />
+            ))}
           </div>
-          <p className="pt-1.5 mt-7.5 border-t border-t-[var(--c2)] text-[var(--c2)] font-bold">{`Step ${1}/4`}</p>
+
+          {/* Step info */}
+          <p className="pt-1.5 mt-7.5 border-t border-t-[var(--c2)] text-[var(--c2)] font-bold">
+            {`Step ${currentStepIndex + 1}/${steps.length}`}
+          </p>
           <p className="mb-3">{`Estimated: ${1}–${3} Minutes`}</p>
           <p>You can leave this page at any time</p>
           <p>
             It will appear in your{" "}
-            <span className="text-[var(--p-blue)]">Library</span> once finished{" "}
+            <Link
+              href={`/${locale}/workspace`}
+              className="text-[var(--p-blue)] underline hover:opacity-80"
+            >
+              Workspace
+            </Link>{" "}
+            once finished{" "}
           </p>
         </div>
 
+        {/* svg spinner unchanged */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 105 105"
@@ -116,32 +143,6 @@ export default function Loading() {
           </g>
         </svg>
       </div>
-
-      <style jsx global>{`
-        @keyframes glow-bounce {
-          0% {
-            transform: scale(1);
-            box-shadow: inset 0 0 0 1px var(--p-purple),
-              0 0 0 0 rgba(var(--p-purple-rgb), 1),
-              0 1px 2px 0 rgba(var(--p-purple-rgb), 0.5);
-          }
-          40% {
-            transform: scale(1.15);
-            box-shadow: inset 0 0 0 1px var(--p-purple),
-              0 0 4px 0 rgba(var(--p-purple-rgb), 0.5),
-              0 0 2px 0 rgba(var(--p-purple-rgb), 0.5);
-          }
-          100% {
-            transform: scale(1);
-            box-shadow: inset 0 0 0 1px var(--p-purple),
-              0 1px 2px 0 rgba(var(--p-purple-rgb), 0.5);
-          }
-        }
-
-        .glow-bounce {
-          animation: glow-bounce 0.4s ease-out;
-        }
-      `}</style>
     </>
   );
 }

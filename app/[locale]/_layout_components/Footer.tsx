@@ -1,17 +1,12 @@
-// app/[locale]/_componentForPage/Footer.tsx
-
 'use client';
 
 import { DiscordLogo, XLogo } from "@phosphor-icons/react";
 import Link from "next/link";
-// Remove the footerAtom import and useAtom hook
-// import { footerAtom } from "@/app/atoms/atoms";
-// import { useAtom } from "jotai";
+import { useParams } from "next/navigation";
 
 export default function Footer() {
-  // Remove the state hook
-  // const [state] = useAtom(footerAtom);
-  
+  const { locale } = useParams();  // 'en', 'zh', etc.
+
   return (
     <footer className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-6 w-full text-sm text-gray-500">
       {/* Left: Social Media Icons and Copyright */}
@@ -29,9 +24,9 @@ export default function Footer() {
 
       {/* Center: Privacy and Terms */}
       <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-        <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+        <Link href={`/${locale}/privacy`} className="hover:underline">Privacy Policy</Link>
         <span className="text-gray-400">|</span>
-        <Link href="/terms" className="hover:underline">Terms of Service</Link>
+        <Link href={`/${locale}/agreement`} className="hover:underline">Terms of Service</Link>
       </div>
 
       {/* Right: Company Email */}

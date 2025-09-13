@@ -7,6 +7,8 @@ import { useAtom } from "jotai";
 import { userAtom, authLoadingAtom, headerAtom } from "@/app/atoms/atoms";
 import Icon from "../Icon";
 import { authService } from "@/services/auth";
+import { useSetAtom } from 'jotai';
+import { drawerAtom } from '@/app/atoms/atoms';
 
 declare global {
   interface Window {
@@ -23,6 +25,7 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
   const [, setUser] = useAtom(userAtom);
   const [, setAuthLoading] = useAtom(authLoadingAtom);
   const [, setHeaderState] = useAtom(headerAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [googleLoaded, setGoogleLoaded] = useState(false);
   const router = useRouter();
@@ -95,7 +98,8 @@ const handleCredentialResponse = async (response: { credential: string }) => {
 
     // Set user state
     setUser(result.data.user);
-    
+    setDrawerState(null); // Close the drawer
+
     console.log("Google login successful, user authenticated");
 
   } catch (error) {

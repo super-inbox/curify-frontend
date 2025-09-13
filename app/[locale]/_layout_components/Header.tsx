@@ -26,6 +26,13 @@ export default function Header() {
   //   }
   // }, [user, drawerState, setDrawerState]);
 
+  useEffect(() => {
+    // Close drawer when user successfully logs in
+    if (user && (drawerState === "signin" || drawerState === "signup")) {
+      setDrawerState(null);
+    }
+  }, [user]); // Only depend on user, not drawerState to avoid unnecessary runs
+
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
     { locale: "zh", name: "中文", flag: "🇨🇳" },
@@ -80,7 +87,7 @@ export default function Header() {
         <div className="flex items-center space-x-8">
           <div className="relative w-40 aspect-[160/38.597] cursor-pointer">
             <Link
-              href={user && user.id ? `/${locale}/workspace` : `/${locale}`}
+              href={user && user.user_id ? `/${locale}/workspace` : `/${locale}`}
               aria-label="Curify Home"
             >
               <Image

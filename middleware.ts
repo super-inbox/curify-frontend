@@ -20,11 +20,13 @@ export default function middleware(req: NextRequest) {
     const isAbout = pathname === `/${locale}/about`;
     const isPricing = pathname === `/${locale}/pricing`;
     const isWorkspace = pathname === `/${locale}/workspace`;
+    const isPrivacy = pathname === `/${locale}/privacy`;
+    const isAgreement = pathname === `/${locale}/agreement`;
     const isProjectDetail = pathname.startsWith(`/${locale}/project_details/`);
     const isMagic = pathname.startsWith(`/${locale}/magic/`);
 
     const isPublicPage =
-      isRoot || isLogin || isContact || isAbout || isPricing || isWorkspace || isProjectDetail || isMagic;
+      isRoot || isLogin || isContact || isAbout || isPricing || isWorkspace || isProjectDetail || isMagic || isPrivacy || isAgreement;
 
     // Redirect unauthenticated users if they try to access private routes
     if (!token && !isPublicPage) {

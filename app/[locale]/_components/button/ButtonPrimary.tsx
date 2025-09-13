@@ -5,6 +5,7 @@ interface Props {
   disabled?: boolean;
   onClick: () => void;
   children: React.ReactNode;
+  className?: string;
 }
 
 export default function BtnP(props: Props) {

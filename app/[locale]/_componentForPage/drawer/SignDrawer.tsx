@@ -10,10 +10,12 @@ import BtnN from "../../_components/button/ButtonNormal";
 import Link from "next/link";
 import GoogleLoginButton from "../../_components/button/GoogleLoginButton";
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
+import { useParams } from "next/navigation";
 
 export default function SignDrawer() {
   const [state] = useAtom(drawerAtom);
   const safeState = state || "signup";
+  const { locale } = useParams();
 
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(false);
@@ -62,8 +64,9 @@ export default function SignDrawer() {
   return (
     <Drawer 
       size="medium"
-      open={state === "signin" || state === "signup"} // ✅ fix
-    >    <div className="relative">
+      open={state === "signin" || state === "signup"}
+    >    
+      <div className="relative">
         {step === 2 && (
           <button onClick={resetFlow} className="absolute left-0 top-0 p-1 text-gray-500 hover:text-gray-700">
             <ChevronLeftIcon className="h-6 w-6" />
@@ -98,15 +101,13 @@ export default function SignDrawer() {
                   errorMsg: "Please enter a valid email address.",
                 },
               ]}
-              // Disable the email input
-              disabled={true} 
+              disabled={true}
             />
             {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
 
             <BtnN
               className="w-full py-3 text-base"
-              // Disable the button
-              disabled={true} 
+              disabled={true}
               onClick={handleEmailSubmit}
             >
               {content.button}
@@ -123,13 +124,11 @@ export default function SignDrawer() {
               onChange={setOtp}
               setValid={setOtpValid}
               rules={[]} 
-              // Disable the OTP input
               disabled={true} 
             />
             {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
             <BtnN
               className="w-full py-3 text-base"
-              // Disable the button
               disabled={true}
               onClick={handleOtpSubmit}
             >
@@ -145,11 +144,11 @@ export default function SignDrawer() {
       <p className="text-[var(--c4)] text-center mt-10 text-xs">
         By using Curify, you agree to our
         <br />
-        <Link className="underline" href={""}>
+        <Link className="underline" href={`/${locale}/agreement`}>
           Terms of Service
         </Link>{" "}
         and{" "}
-        <Link className="underline" href={""}>
+        <Link className="underline" href={`/${locale}/privacy`}>
           Privacy Policy
         </Link>
       </p>
