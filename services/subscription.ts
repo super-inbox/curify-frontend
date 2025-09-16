@@ -1,7 +1,28 @@
-import { createNavigation } from "next-intl/navigation";
-import { routing } from "./routing";
+// services/subscribe.ts
 
-// Lightweight wrappers around Next.js' navigation
-// APIs that consider the routing configuration
-export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createNavigation(routing);
+import { apiClient } from './api';
+
+interface SubscriptionResponse {
+  stripe_subscription_id?: string;
+  client_secret?: string;
+}
+
+export const subscribeService = {
+  async subscribeToPlan(planName: string): Promise<SubscriptionResponse> {
+    const res = await apiClient.request<{ data: SubscriptionResponse }>('/user/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ plan_name: planName }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    return res.data;
+  },
+
+  async cancelSubscription(): Promise<void> {
+    await apiClient.request('/user/cancel', {
+      method: 'POST',
+    });
+  },
+};

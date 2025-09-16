@@ -81,7 +81,7 @@ export default function Header() {
   };
   
   return (
-    <header className="flex px-8 py-2 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
+    <header className="flex px-8 py-1.5 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
       <div className="flex items-center justify-between w-full">
         {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
