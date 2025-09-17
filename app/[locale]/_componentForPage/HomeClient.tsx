@@ -84,8 +84,8 @@ export default function HomeClient() {
   </Link>
 
   {/* Google Button */}
-  <GoogleLoginButton callbackUrl="/workspace" variant="home" />
-</div>
+  <GoogleLoginButton callbackUrl="/workspace?fromLocalStorage=true" variant="home" />
+  </div>
 
         {/* Demo Video Section */}
         <section className="w-full mt-10 mb-20">

@@ -1,40 +1,85 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
-import { modalAtom } from "@/app/atoms/atoms";
+import { modalAtom, modalModeAtom } from "@/app/atoms/atoms";
 import CreateNewModal from "./CreateNewModal";
-import { Project } from '@/types/projects';
-import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
+import { Project } from "@/types/projects";
+import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import DeleteConfirmationDialog from "../_componentForPage/DeleteConfirmationDialog";
 import { formatDuration } from "@/lib/format_utils";
 import { projectService } from "@/services/projects";
+import { authService } from "@/services/auth";
 
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [, setModalState] = useAtom(modalAtom);
+  const [, setModalMode] = useAtom(modalModeAtom);
   const router = useRouter();
   const { locale } = useParams();
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [projectToDelete, setProjectToDelete] = useState<Project | null>(null);
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
   const [menuPosition, setMenuPosition] = useState<{ x: number; y: number } | null>(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
-  useEffect(() => {
-    const savedUser = localStorage.getItem("curifyUser");
-
-    if (savedUser) {
-      try {
-        const user = JSON.parse(savedUser) as { projects: Project[] };
-        setProjects(user.projects || []);
-      } catch (err) {
-        console.error("Failed to parse saved user:", err);
+  const refreshUser = useCallback(async () => {
+    try {
+      setIsRefreshing(true);
+      const profile = await authService.getProfile();
+      // console.log("🔁 Refreshed user profile:", profile);
+  
+      if (Array.isArray(profile.data?.projects)) {
+        setProjects(profile.data.projects);
+        localStorage.setItem("curifyUser", JSON.stringify(profile.data)); // ✅ Save flattened user profile
+      } else {
+        setProjects([]); // fallback
       }
+    } catch (err) {
+      console.error("⚠️ Failed to refresh user profile:", err);
+    } finally {
+      setIsRefreshing(false);
     }
   }, []);
+  
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const fromAuth = searchParams.get("fromLocalStorage") === "true";
+  
+    if (fromAuth) {
+      // ✅ Use cached data from localStorage
+      const savedUser = localStorage.getItem("curifyUser");
+      if (savedUser) {
+        try {
+          const parsed = JSON.parse(savedUser);
+          if (Array.isArray(parsed.projects)) {
+            setProjects(parsed.projects);
+          }
+        } catch (err) {
+          console.error("❌ Failed to parse cached user:", err);
+        }
+      }
+    } else {
+      // ✅ Otherwise, pull fresh data
+      refreshUser();
+    }
+  }, [refreshUser]);
+
+  useEffect(() => {
+    const hasOngoing = projects.some(
+      (p) => p.status !== "COMPLETED" && p.status !== "FAILED"
+    );
+    if (!hasOngoing) return;
+
+    const interval = setInterval(() => {
+      refreshUser();
+    }, 20000);
+
+    return () => clearInterval(interval);
+  }, [projects, refreshUser]);
 
   useEffect(() => {
     const handleClickOutside = () => {
@@ -64,37 +109,34 @@ export default function ProfileClientPage() {
 
   const handleConfirmDelete = async () => {
     if (!projectToDelete) return;
-  
+
     try {
       await projectService.deleteProject(projectToDelete.project_id);
-  
-      // ✅ Update frontend state
+
       const updatedProjects = projects.filter(
         (p) => p.project_id !== projectToDelete.project_id
       );
       setProjects(updatedProjects);
-  
-      // ✅ Update localStorage
-      const savedUser = localStorage.getItem("curifyUser");
-      if (savedUser) {
-        const parsed = JSON.parse(savedUser);
+
+      const cachedUser = localStorage.getItem("curifyUser");
+      if (cachedUser) {
+        const parsed = JSON.parse(cachedUser);
         parsed.projects = updatedProjects;
         localStorage.setItem("curifyUser", JSON.stringify(parsed));
       }
-  
+
       closeDeleteDialog();
     } catch (error) {
       console.error("❌ Error deleting project:", error);
       alert("Failed to delete project. Please try again.");
     }
-  };  
+  };
 
   const handleMenuClick = (
     e: React.MouseEvent<HTMLButtonElement>,
     projectId: string
   ) => {
     e.stopPropagation();
-
     if (openMenuId === projectId) {
       setOpenMenuId(null);
       setMenuPosition(null);
@@ -113,21 +155,19 @@ export default function ProfileClientPage() {
       "TRANSLATING",
       "DUBBING"
     ];
-  
+
     try {
       if (processingStates.includes(project.status)) {
         router.push(`/${locale}/magic/${project.project_id}`);
         return;
       }
-  
+
       const data = await projectService.getProject(project.project_id);
-  
+      
       if (!data) {
         throw new Error("Project not found.");
       }
-  
-      console.log("📦 Project Details API Response:", data);
-  
+
       localStorage.setItem("selectedProjectDetails", JSON.stringify(data));
       router.push(`/${locale}/project_details/${project.project_id}`);
     } catch (err) {
@@ -135,13 +175,18 @@ export default function ProfileClientPage() {
       alert("Unable to load project. Please try again.");
     }
   };
-  
+
+  const openModal = (mode: 'translation' | 'subtitles') => {
+    setModalMode(mode);
+    setModalState("add");
+  };
+
   const tools = [
     {
       title: "Video Translation",
       desc: "Translate your video into any language with accurate localization and voice sync",
       status: "create",
-      onClick: () => setModalState("add"),
+      onClick: () => openModal('translation'),
     },
     {
       title: "Lip Syncing",
@@ -153,7 +198,7 @@ export default function ProfileClientPage() {
       title: "Add Subtitles",
       desc: "Auto-generate multilingual subtitles to enhance clarity and accessibility",
       status: "create",
-      onClick: () => setModalState("add"),
+      onClick: () => openModal('subtitles'),
     },
     {
       title: "Remove Original Subtitles",
@@ -198,6 +243,33 @@ export default function ProfileClientPage() {
       </div>
 
       <h2 className="text-2xl font-bold mb-4">My Projects</h2>
+
+      {isRefreshing && (
+        <div className="flex items-center text-sm text-gray-500 mb-2">
+          <svg
+            className="animate-spin h-4 w-4 mr-2 text-blue-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4l3-3-3-3v4a12 12 0 00-12 12h4z"
+            ></path>
+          </svg>
+          Refreshing projects…
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
         {projects.map((project) => {
           const duration = formatDuration(project.video_duration_seconds);
@@ -209,7 +281,7 @@ export default function ProfileClientPage() {
               className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition relative"
             >
               <div
-                  onClick={() => handleProjectClick(project)}
+                onClick={() => handleProjectClick(project)}
                 className="relative aspect-[4/3] w-full"
               >
                 <Image
@@ -290,7 +362,6 @@ export default function ProfileClientPage() {
         projectName={projectToDelete?.project_name || ''}
       />
 
-      {/* ✅ Render modal at bottom so it's always above */}
       <CreateNewModal />
     </div>
   );

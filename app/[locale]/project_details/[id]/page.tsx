@@ -24,6 +24,8 @@ export default function ProjectDetailsPage() {
 
     try {
       const data = JSON.parse(cached) as ProjectDetails;
+      console.log("📦 Loaded cached project details:", data);
+
       setProjectDetails(data);
 
       const extractFileName = (url: string) => {

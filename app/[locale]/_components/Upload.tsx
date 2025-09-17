@@ -19,19 +19,27 @@ interface Props {
     thumbnailUrl?: string
   ) => void;
   onPreviewReady?: (localPreviewUrl: string, file: File) => void;
+  onUploadStart?: () => void;
+  onUploadError?: (error: string) => void;
 }
 
-export default function Upload({ onUploaded, onPreviewReady }: Props) {
+export default function Upload({ 
+  onUploaded, 
+  onPreviewReady, 
+  onUploadStart, 
+  onUploadError 
+}: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [isUploading, setIsUploading] = useState(false);
 
   const handleFile = async (fileList: FileList | null) => {
     if (!fileList || fileList.length === 0) return;
 
     const file = fileList[0];
     if (!ACCEPTED_TYPES.includes(file.type)) {
-      alert("只支持 .mp4, .mov, .webm, .avi, .wmv 文件");
+      const errorMsg = "Only .mp4, .mov, .webm, .avi, .wmv files are supported";
+      alert(errorMsg);
+      onUploadError?.(errorMsg);
       return;
     }
 
@@ -39,16 +47,18 @@ export default function Upload({ onUploaded, onPreviewReady }: Props) {
     const localUrl = URL.createObjectURL(file);
     onPreviewReady?.(localUrl, file);
 
+    // Notify parent that upload is starting
+    onUploadStart?.();
+
     // Upload in the background
     try {
-      setIsUploading(true);
       const res = await videoService.uploadVideo(file);
       onUploaded(res.video_id, res.blob_url, res.thumbnail_signed_url);
     } catch (err) {
       console.error("❌ Upload failed:", err);
-      alert("Upload failed, please try again.");
-    } finally {
-      setIsUploading(false);
+      const errorMsg = "Upload failed, please try again.";
+      alert(errorMsg);
+      onUploadError?.(errorMsg);
     }
   };
 
@@ -77,7 +87,7 @@ export default function Upload({ onUploaded, onPreviewReady }: Props) {
     >
       <Icon name="add" size={8} />
       <p className="text-[var(--c2)] text-base font-bold mt-4.5 mb-1.5">
-        {isUploading ? "Uploading..." : "Drag & Drop or Click to Upload"}
+        Drag & Drop or Click to Upload
       </p>
       <div className="flex items-center mb-[-0.625rem]">
         <p>.mp4/.mov/.webm/.avi/.wmv</p>

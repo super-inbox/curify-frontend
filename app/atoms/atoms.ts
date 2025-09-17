@@ -71,3 +71,5 @@ export const headerAtom = atom<HeaderType>("out");
 
 export type FooterType = "out" | "in";
 export const footerAtom = atom<FooterType>("out");
+
+export const modalModeAtom = atom<'translation' | 'subtitles'>('translation');
