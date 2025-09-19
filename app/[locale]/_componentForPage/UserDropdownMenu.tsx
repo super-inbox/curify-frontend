@@ -134,7 +134,7 @@ export default function UserDropdownMenu({
         {/* Header */}
         <div className="p-4 border-b border-gray-100">
           <h3 className="text-base font-semibold text-blue-600 text-[15px]">
-            {user.name || 'User'}
+            {user.username || 'User'}
           </h3>
           <p className="text-sm text-gray-600 truncate text-[14px]">
             {user.email}

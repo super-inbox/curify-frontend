@@ -21,7 +21,7 @@ export default function PaymentProcessingModal({ isOpen, onClose }: Props) {
     const pollCredits = async () => {
       try {
         const response = await authService.getProfile();
-        const user = response?.data;
+        const user = response;
 
         if (user?.non_expiring_credits > 0 || user?.expiring_credits > 0) {
           // ✅ Save updated profile to localStorage

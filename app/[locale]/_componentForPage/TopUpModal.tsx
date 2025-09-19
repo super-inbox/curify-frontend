@@ -59,7 +59,12 @@ export default function TopUpModal() {
 
   return (
     <>
-      {showProcessing && <PaymentProcessingModal />}
+      {showProcessing && (
+  <PaymentProcessingModal
+    isOpen={showProcessing}
+    onClose={() => setShowProcessing(false)}
+  />
+)}
 
       <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center px-4">
         <div className="bg-white rounded-xl w-full max-w-md p-6 shadow-2xl border border-gray-200 relative">

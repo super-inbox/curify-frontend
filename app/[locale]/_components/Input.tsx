@@ -9,6 +9,7 @@ interface Props {
   setValid: (valid: boolean) => void;
   center?: boolean;
   cantEmpty?: boolean;
+  disabled?: boolean;
   rules?: {
     pattern: RegExp;
     errorMsg: string;

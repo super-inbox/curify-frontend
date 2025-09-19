@@ -2,16 +2,34 @@
 
 import Process from "./Process";
 import Link from "next/link";
+import { useAtomValue } from "jotai";
 import { useParams } from "next/navigation";
+import { jobTypeAtom } from "@/app/atoms/atoms";
+import { ProjectStatus } from "@/types/projects";
 
-const steps = ["Queueing", "Preprocess", "Transcribing", "Translating", "Dubbing"];
+interface LoadingProps {
+  currentStatus?: ProjectStatus; // optional, maps to active step
+}
 
-export default function Loading() {
+const stepMap: Record<"translation" | "subtitles" | "reprocessing", string[]> = {
+  translation: ["Queueing", "Preprocess", "Transcribing", "Translating", "Dubbing", "Finalizing"],
+  subtitles: ["Queueing", "Transcribing", "Finalizing"],
+  reprocessing: ["Queueing", "Dubbing", "Finalizing"],
+};
+
+export default function Loading({ currentStatus }: LoadingProps) {
   const { locale } = useParams();
+  const jobType = useAtomValue(jobTypeAtom);
+  const steps = stepMap[jobType] || [];
 
-  // Right now you're hardcoding step 1 (Queueing).
-  // Later you could drive this dynamically from props/state.
-  const currentStepIndex = 0;
+  const statusToStepIndex = (status?: ProjectStatus): number => {
+    if (!status) return 0;
+    const normalized = status.toLowerCase();
+    const match = steps.findIndex((step) => normalized.includes(step.toLowerCase()));
+    return match >= 0 ? match : 0;
+  };
+
+  const currentStepIndex = statusToStepIndex(currentStatus);
 
   return (
     <>
@@ -37,7 +55,7 @@ export default function Loading() {
           <p className="pt-1.5 mt-7.5 border-t border-t-[var(--c2)] text-[var(--c2)] font-bold">
             {`Step ${currentStepIndex + 1}/${steps.length}`}
           </p>
-          <p className="mb-3">{`Estimated: ${1}–${3} Minutes`}</p>
+          <p className="mb-3"> </p>
           <p>You can leave this page at any time</p>
           <p>
             It will appear in your{" "}

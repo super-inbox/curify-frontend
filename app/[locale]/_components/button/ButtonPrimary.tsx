@@ -3,7 +3,7 @@
 interface Props {
   type?: "normal" | "white";
   disabled?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   className?: string;
 }

@@ -1,10 +1,10 @@
 import { apiClient } from './api';
 
 export interface Transaction {
-  id: string; // transaction_id from backend
+  transaction_id: string; // transaction_id from backend
   credits: number; // credit change (positive or negative)
   amount: number; // monetary amount in USD
-  type: 'credit' | 'debit'; // simplified mapping of TransactionType enum
+  transaction_type: 'credit' | 'debit';
   created_at: string; // timestamp
 }
 

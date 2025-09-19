@@ -3,6 +3,7 @@ import { Project } from './projects';
 export interface User {
   user_id: string;
   email: string;
+  username: string;
   plan_name: string;
   non_expiring_credits: number;
   expiring_credits: number;

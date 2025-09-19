@@ -4,10 +4,11 @@ import { useEffect } from "react";
 import { useAtom } from "jotai";
 import { footerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { usePathname } from "next/navigation";
+import { User } from "@/types/auth";
 
 interface Props {
   children: React.ReactNode;
-  user: User.Info | null;
+  user: User | null;
 }
 
 export default function AppWrapper(props: Props) {

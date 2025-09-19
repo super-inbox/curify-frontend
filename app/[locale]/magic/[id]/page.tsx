@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Loading from "../Loading";
 import { projectService } from "@/services/projects";
@@ -8,7 +8,8 @@ import { ProjectStatusUpdate, ProjectStatus } from "@/types/projects";
 import { ProjectDetails } from "@/types/segments";
 
 export default function Magic() {
-  const { id } = useParams();
+  const router = useRouter();
+  const { id, locale } = useParams();
   const projectId = id as string;
 
   const [status, setStatus] = useState<ProjectStatus>("QUEUED");
@@ -30,16 +31,22 @@ export default function Magic() {
 
         if (statusRes.status === "COMPLETED") {
           const fullProject = await projectService.getProject(projectId);
-          setProjectDetails(fullProject);
+          if (!isCancelled) {
+            // ✅ Save project details to localStorage
+            localStorage.setItem("selectedProjectDetails", JSON.stringify(fullProject));
+
+            // ✅ Redirect to project details page
+            router.push(`/${locale}/project_details/${projectId}`);
+          }
         } else if (statusRes.status === "FAILED") {
           setError("Translation failed. Please try again.");
         } else {
-          setTimeout(pollStatus, 3000); // keep polling
+          setTimeout(pollStatus, 3000); // Continue polling
         }
       } catch (err) {
         console.error("Polling error:", err);
         if (!isCancelled) {
-          setTimeout(pollStatus, 5000); // backoff retry
+          setTimeout(pollStatus, 5000); // Backoff retry
         }
       }
     };
@@ -49,7 +56,7 @@ export default function Magic() {
     return () => {
       isCancelled = true;
     };
-  }, [projectId]);
+  }, [projectId, locale, router]);
 
   if (error) {
     return (
@@ -64,12 +71,12 @@ export default function Magic() {
       <div className="w-full h-screen flex flex-col items-center justify-center text-center">
         <Loading />
         <p className="mt-4 text-sm text-gray-600">
-  {status ? `Processing: ${status.replace("_", " ").toLowerCase()}...` : "Processing..."}
-</p>
+          {status ? `Processing: ${status.replace("_", " ").toLowerCase()}...` : "Processing..."}
+        </p>
       </div>
     );
   }
-
+  // This block is optional and should never render because we redirect on completion
   return (
     <div className="w-full h-screen p-10">
       <h2 className="text-xl font-semibold text-center mb-4">✅ Translation Complete</h2>

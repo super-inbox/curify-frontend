@@ -1,7 +1,7 @@
 "use client";
 
 import { useAtom } from "jotai";
-import { headerAtom, modalAtom, modalModeAtom } from "@/app/atoms/atoms";
+import { headerAtom, modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
 import Modal from "../_components/Modal";
 import Upload from "../_components/Upload";
 import { useEffect, useRef, useState } from "react";
@@ -12,13 +12,11 @@ import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
 import { getLangCode, languages } from "@/lib/language_utils";
 
-interface CreateNewModalProps {}
-
-export default function CreateNewModal({}: CreateNewModalProps) {
+export default function CreateNewModal() {
   const router = useRouter();
   const [modalState, setModalState] = useAtom(modalAtom);
   const [, setHeaderState] = useAtom(headerAtom);
-  const [mode] = useAtom(modalModeAtom);
+  const [jobType] = useAtom(jobTypeAtom);
 
   const [videoId, setVideoId] = useState<string | null>(null);
   const [videoBlobUrl, setVideoBlobUrl] = useState<string>("");
@@ -34,11 +32,12 @@ export default function CreateNewModal({}: CreateNewModalProps) {
   const sourceRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
 
-  const [voiceover, setVoiceover] = useState<"Yes" | "No">(mode === 'subtitles' ? "No" : "Yes");
+  const [voiceover, setVoiceover] = useState<"Yes" | "No">(jobType === 'subtitles' ? "No" : "Yes");
   const [subtitle, setSubtitle] = useState<"None" | "Source" | "Target" | "Bilingual">(
-    mode === 'subtitles' ? "Target" : "None"
+    jobType === 'subtitles' ? "Target" : "None"
   );
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const [showMissingTargetWarning, setShowMissingTargetWarning] = useState(false);
 
   const getDuration = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const seconds = e.currentTarget.duration;
@@ -68,16 +67,21 @@ export default function CreateNewModal({}: CreateNewModalProps) {
   }, [localPreviewUrl]);
 
   const handleStart = async () => {
-    if (!uploadedFile || !videoId || transto === "Select Language") return;
+    if (!uploadedFile || !videoId) return;
+
+    if (transto === "Select Language") {
+      setShowMissingTargetWarning(true);
+      return;
+    }
 
     try {
       const newProject = await projectService.createProject({
-        video_id: videoId, // ✅ use video_id from upload
+        video_id: videoId,
         job_settings: {
           source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
           target_language: getLangCode(transto),
           subtitles_enabled: subtitle.toLowerCase(),
-          audio_option: mode === 'subtitles' ? "original" : (voiceover === "Yes" ? "dubbed" : "original"),
+          audio_option: jobType === 'subtitles' ? "original" : (voiceover === "Yes" ? "dubbed" : "original"),
         },
         project_name: uploadedFile.name,
       });
@@ -90,10 +94,11 @@ export default function CreateNewModal({}: CreateNewModalProps) {
     }
   };
 
+  const title = jobType === 'subtitles' ? "Add Subtitles" : "Generate Translated Video";
+
   return (
     <>
-      {/* Step 1: Upload */}
-      <Modal title={mode === 'subtitles' ? "Add Subtitles" : "Generate Translated Video"} open={modalState === "add"}>
+      <Modal title={title} open={modalState === "add"}>
         {!localPreviewUrl ? (
           <Upload
             onPreviewReady={(localUrl, file) => {
@@ -101,17 +106,15 @@ export default function CreateNewModal({}: CreateNewModalProps) {
               setUploadedFile(file);
               setIsUploading(true);
             }}
-            onUploaded={(id, blobUrl, thumbnailUrl) => {
+            onUploaded={(id, blobUrl) => {
               setVideoId(id);
               setVideoBlobUrl(blobUrl);
               setIsUploading(false);
-              // Auto-advance to settings once upload completes
               setModalState("setting");
             }}
           />
         ) : (
           <div className="flex flex-col items-center">
-            {/* Show local preview immediately while uploading */}
             <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
               <video
                 src={localPreviewUrl}
@@ -123,8 +126,7 @@ export default function CreateNewModal({}: CreateNewModalProps) {
                 {duration}
               </div>
             </div>
-            
-            {/* Upload status */}
+
             <div className="text-center">
               {isUploading ? (
                 <div className="flex flex-col items-center gap-2">
@@ -143,8 +145,7 @@ export default function CreateNewModal({}: CreateNewModalProps) {
         )}
       </Modal>
 
-      {/* Step 2: Settings */}
-      <Modal title={mode === 'subtitles' ? "Add Subtitles" : "Generate Translated Video"} open={modalState === "setting"}>
+      <Modal title={title} open={modalState === "setting"}>
         <div className="flex flex-col items-center">
           <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
             {localPreviewUrl ? (
@@ -166,7 +167,6 @@ export default function CreateNewModal({}: CreateNewModalProps) {
 
           <div className="flex flex-col items-center gap-4.5 w-full">
             <div className="flex gap-3 w-full">
-              {/* Source Selector */}
               <div className="flex-1 relative" ref={sourceRef}>
                 <div
                   className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
@@ -202,7 +202,6 @@ export default function CreateNewModal({}: CreateNewModalProps) {
                 )}
               </div>
 
-              {/* Target Selector */}
               <div className="flex-1 relative" ref={targetRef}>
                 <div
                   className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
@@ -219,6 +218,7 @@ export default function CreateNewModal({}: CreateNewModalProps) {
                         className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
                         onClick={() => {
                           setTransto(lang.name);
+                          setShowMissingTargetWarning(false);
                           setIsTargetOpen(false);
                         }}
                       >
@@ -230,40 +230,22 @@ export default function CreateNewModal({}: CreateNewModalProps) {
               </div>
             </div>
 
-            {/* Options - Different based on mode */}
-            {mode === 'translation' ? (
+            {showMissingTargetWarning && (
+              <p className="text-red-500 text-sm mt-1 -mb-3">
+                Please select a target language before proceeding.
+              </p>
+            )}
+
+            {jobType === "translation" ? (
               <>
                 <Options label="Voiceover" options={["Yes", "No"]} value={voiceover} onChange={setVoiceover} />
                 <Options label="Subtitles" options={["None", "Source", "Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
               </>
             ) : (
-              <>
-                {/* Subtitle-only mode - no voiceover option, different subtitle options */}
-                <div className="w-full">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Subtitle Type</label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {["Source", "Target", "Bilingual"].map((option) => (
-                      <button
-                        key={option}
-                        onClick={() => setSubtitle(option as "Source" | "Target" | "Bilingual")}
-                        className={`px-4 py-2 text-sm rounded-md border transition-colors ${
-                          subtitle === option
-                            ? "bg-[var(--p-blue)] text-white border-[var(--p-blue)]"
-                            : "bg-white text-gray-700 border-gray-300 hover:border-blue-400"
-                        }`}
-                      >
-                        {option === "Source" && "Original Language"}
-                        {option === "Target" && "Translated Language"}
-                        {option === "Bilingual" && "Both Languages"}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </>
+              <Options label="Subtitle Type" options={["Source", "Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
             )}
           </div>
 
-          {/* Cost */}
           <p className="flex items-center mt-6.5 mb-2">
             Credits Required:
             <span className="text-[var(--p-blue)] ml-1">{cost}</span>
@@ -273,7 +255,7 @@ export default function CreateNewModal({}: CreateNewModalProps) {
           </p>
 
           <BtnP onClick={handleStart}>
-            {mode === 'subtitles' ? 'Add Subtitles' : 'Start Translation'}
+            {jobType === "subtitles" ? "Add Subtitles" : "Start Translation"}
           </BtnP>
         </div>
       </Modal>

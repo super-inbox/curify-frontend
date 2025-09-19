@@ -63,7 +63,7 @@ export const modalOpenAtom = atom(false);
 export type DrawerType = "signin" | "signup" | "emailout" | "emailin" | null;
 export const drawerAtom = atom<string | null>(null);
 
-export type ModalType = "add" | "setting" | "charge" | null;
+export type ModalType = "add" | "setting" | "charge" | "topup" | null;
 export const modalAtom = atom<ModalType>(null);
 
 export type HeaderType = "out" | "in" | string;
@@ -72,4 +72,4 @@ export const headerAtom = atom<HeaderType>("out");
 export type FooterType = "out" | "in";
 export const footerAtom = atom<FooterType>("out");
 
-export const modalModeAtom = atom<'translation' | 'subtitles'>('translation');
+export const jobTypeAtom = atom<'translation' | 'subtitles' | 'reprocessing'>('translation');

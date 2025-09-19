@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -8,6 +8,8 @@ import clsx from "clsx";
 import ExportDialog from "../../_componentForPage/ExportDialog";
 import { ProjectDetails } from "@/types/segments";
 import { projectService } from "@/services/projects";
+import { useSetAtom } from "jotai";
+import { jobTypeAtom } from "@/app/atoms/atoms";
 
 export default function ProjectDetailsPage() {
   const { locale } = useParams();
@@ -17,6 +19,8 @@ export default function ProjectDetailsPage() {
   const [exportFiles, setExportFiles] = useState<File[]>([]);
   const [modifiedSegments, setModifiedSegments] = useState<Record<number, string>>({});
   const [statusMessage, setStatusMessage] = useState<string>("");
+
+  const setJobType = useSetAtom(jobTypeAtom);
 
   useEffect(() => {
     const cached = localStorage.getItem("selectedProjectDetails");
@@ -80,7 +84,6 @@ export default function ProjectDetailsPage() {
   const handleSave = () => {
     if (!projectDetails) return;
     localStorage.setItem("selectedProjectDetails", JSON.stringify(projectDetails));
-
     setStatusMessage("Change Saved");
   };
 
@@ -107,6 +110,7 @@ export default function ProjectDetailsPage() {
       const projectId = "data" in res ? res.data.project_id : (res as any).project_id;
 
       setModifiedSegments({});
+      setJobType("reprocessing"); // ✅ Set job type here
       router.push(`/${locale}/magic/${projectId}/`);
 
     } catch (err) {
@@ -120,7 +124,6 @@ export default function ProjectDetailsPage() {
       <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
         {/* Top Bar */}
         <div className="flex justify-between items-center mb-6">
-          {/* Left: Return */}
           <Link
             href={`/${locale}/workspace`}
             className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors cursor-pointer"
@@ -129,7 +132,6 @@ export default function ProjectDetailsPage() {
             Return to Workspace
           </Link>
 
-          {/* Right: Title */}
           <div className="flex items-center">
             <h2 className="text-2xl font-bold">Video Preview</h2>
           </div>
@@ -140,7 +142,6 @@ export default function ProjectDetailsPage() {
           {/* Left: Segments */}
           <div className="lg:w-2/3 w-full flex flex-col justify-between">
             <div>
-              {/* Headers */}
               <div className="grid grid-cols-2 mb-2">
                 <div className="bg-[#ede9fe] text-purple-800 font-semibold px-4 py-2 rounded-t-lg">
                   Auto Detect
@@ -150,7 +151,6 @@ export default function ProjectDetailsPage() {
                 </div>
               </div>
 
-              {/* Segments */}
               <div className="grid grid-cols-2 gap-y-2 bg-white text-sm">
                 {projectDetails?.segments.map((seg, i) => {
                   const modified = modifiedSegments[i] !== undefined;
@@ -176,7 +176,6 @@ export default function ProjectDetailsPage() {
               </div>
             </div>
 
-            {/* Buttons + Status */}
             <div className="flex flex-col items-center gap-2 mt-8">
               <div className="flex gap-4">
                 <button
@@ -260,7 +259,6 @@ export default function ProjectDetailsPage() {
               </Tab.Panels>
             </Tab.Group>
 
-            {/* Export under video */}
             <div className="flex justify-center mt-6">
               <button
                 onClick={() => setIsExportDialogOpen(true)}
@@ -282,7 +280,6 @@ export default function ProjectDetailsPage() {
         </div>
       </div>
 
-      {/* Export Dialog */}
       {isExportDialogOpen && (
         <ExportDialog
           isOpen={isExportDialogOpen}

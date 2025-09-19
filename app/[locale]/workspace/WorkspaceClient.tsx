@@ -5,7 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
-import { modalAtom, modalModeAtom } from "@/app/atoms/atoms";
+import { modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
 import CreateNewModal from "./CreateNewModal";
 import { Project } from "@/types/projects";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
@@ -17,7 +17,7 @@ import { authService } from "@/services/auth";
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [, setModalState] = useAtom(modalAtom);
-  const [, setModalMode] = useAtom(modalModeAtom);
+  const [, setJobType] = useAtom(jobTypeAtom);
   const router = useRouter();
   const { locale } = useParams();
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
@@ -30,13 +30,11 @@ export default function ProfileClientPage() {
     try {
       setIsRefreshing(true);
       const profile = await authService.getProfile();
-      // console.log("🔁 Refreshed user profile:", profile);
-  
       if (Array.isArray(profile.data?.projects)) {
         setProjects(profile.data.projects);
-        localStorage.setItem("curifyUser", JSON.stringify(profile.data)); // ✅ Save flattened user profile
+        localStorage.setItem("curifyUser", JSON.stringify(profile.data));
       } else {
-        setProjects([]); // fallback
+        setProjects([]);
       }
     } catch (err) {
       console.error("⚠️ Failed to refresh user profile:", err);
@@ -44,13 +42,16 @@ export default function ProfileClientPage() {
       setIsRefreshing(false);
     }
   }, []);
-  
+
+  // useEffect(() => {
+  //   refreshUser();
+  // }, [refreshUser]);
+
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const fromAuth = searchParams.get("fromLocalStorage") === "true";
-  
+
     if (fromAuth) {
-      // ✅ Use cached data from localStorage
       const savedUser = localStorage.getItem("curifyUser");
       if (savedUser) {
         try {
@@ -63,121 +64,12 @@ export default function ProfileClientPage() {
         }
       }
     } else {
-      // ✅ Otherwise, pull fresh data
       refreshUser();
     }
   }, [refreshUser]);
 
-  useEffect(() => {
-    const hasOngoing = projects.some(
-      (p) => p.status !== "COMPLETED" && p.status !== "FAILED"
-    );
-    if (!hasOngoing) return;
-
-    const interval = setInterval(() => {
-      refreshUser();
-    }, 20000);
-
-    return () => clearInterval(interval);
-  }, [projects, refreshUser]);
-
-  useEffect(() => {
-    const handleClickOutside = () => {
-      setOpenMenuId(null);
-      setMenuPosition(null);
-    };
-
-    if (openMenuId) {
-      document.addEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [openMenuId]);
-
-  const openDeleteDialog = (project: Project) => {
-    setProjectToDelete(project);
-    setIsDeleteDialogOpen(true);
-    setOpenMenuId(null);
-  };
-
-  const closeDeleteDialog = () => {
-    setProjectToDelete(null);
-    setIsDeleteDialogOpen(false);
-  };
-
-  const handleConfirmDelete = async () => {
-    if (!projectToDelete) return;
-
-    try {
-      await projectService.deleteProject(projectToDelete.project_id);
-
-      const updatedProjects = projects.filter(
-        (p) => p.project_id !== projectToDelete.project_id
-      );
-      setProjects(updatedProjects);
-
-      const cachedUser = localStorage.getItem("curifyUser");
-      if (cachedUser) {
-        const parsed = JSON.parse(cachedUser);
-        parsed.projects = updatedProjects;
-        localStorage.setItem("curifyUser", JSON.stringify(parsed));
-      }
-
-      closeDeleteDialog();
-    } catch (error) {
-      console.error("❌ Error deleting project:", error);
-      alert("Failed to delete project. Please try again.");
-    }
-  };
-
-  const handleMenuClick = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    projectId: string
-  ) => {
-    e.stopPropagation();
-    if (openMenuId === projectId) {
-      setOpenMenuId(null);
-      setMenuPosition(null);
-    } else {
-      setOpenMenuId(projectId);
-      setMenuPosition({ x: e.clientX, y: e.clientY });
-    }
-  };
-
-  const handleProjectClick = async (project: Project) => {
-    const processingStates = [
-      "QUEUED",
-      "STARTED",
-      "PREPROCESSING",
-      "TRANSCRIBING",
-      "TRANSLATING",
-      "DUBBING"
-    ];
-
-    try {
-      if (processingStates.includes(project.status)) {
-        router.push(`/${locale}/magic/${project.project_id}`);
-        return;
-      }
-
-      const data = await projectService.getProject(project.project_id);
-      
-      if (!data) {
-        throw new Error("Project not found.");
-      }
-
-      localStorage.setItem("selectedProjectDetails", JSON.stringify(data));
-      router.push(`/${locale}/project_details/${project.project_id}`);
-    } catch (err) {
-      console.error("❌ Error loading project:", err);
-      alert("Unable to load project. Please try again.");
-    }
-  };
-
   const openModal = (mode: 'translation' | 'subtitles') => {
-    setModalMode(mode);
+    setJobType(mode);
     setModalState("add");
   };
 
@@ -210,142 +102,102 @@ export default function ProfileClientPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-        {tools.map((tool) => (
-          <div
-            key={tool.title}
-            className="rounded-2xl shadow-lg p-5 flex flex-col justify-between
-            bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)]
-            border border-gray-100"
-          >
-            <div className="flex-grow">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                {tool.title}
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">{tool.desc}</p>
-            </div>
-            {tool.status === "create" ? (
-              <button
-                onClick={tool.onClick}
-                className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold
-                bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300
-                shadow-lg cursor-pointer"
-              >
-                Create
-              </button>
-            ) : (
-              <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
-                Coming Soon
-              </p>
-            )}
-          </div>
-        ))}
+{/* Top Tool Buttons */}
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+  {tools.map((tool) => (
+    <div
+      key={tool.title}
+      className="rounded-2xl shadow-lg p-5 flex flex-col justify-between
+      bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)]
+      border border-gray-100"
+      // ✨ Removed cursor-pointer from the card
+    >
+      <div className="flex-grow">
+        <h3 className="text-lg font-bold text-gray-900 mb-2">
+          {tool.title}
+        </h3>
+        <p className="text-sm text-gray-600 mb-4">
+          {tool.desc}
+        </p>
       </div>
-
-      <h2 className="text-2xl font-bold mb-4">My Projects</h2>
-
-      {isRefreshing && (
-        <div className="flex items-center text-sm text-gray-500 mb-2">
-          <svg
-            className="animate-spin h-4 w-4 mr-2 text-blue-500"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v4l3-3-3-3v4a12 12 0 00-12 12h4z"
-            ></path>
-          </svg>
-          Refreshing projects…
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-        {projects.map((project) => {
-          const duration = formatDuration(project.video_duration_seconds);
-          const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
-
-          return (
-            <div
-              key={project.project_id}
-              className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition relative"
-            >
-              <div
-                onClick={() => handleProjectClick(project)}
-                className="relative aspect-[4/3] w-full"
-              >
-                <Image
-                  src="/images/mock-thumbnail.jpg"
-                  alt={project.project_name}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
-                  {project.job_settings.target_language.toUpperCase()} ·{" "}
-                  {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
-                </div>
-                <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
-                  {duration}
-                </div>
-              </div>
-              <div className="p-2 flex justify-between items-center">
-                <div>
-                  <p className="font-semibold text-sm truncate">{project.project_name}</p>
-                  <p className="text-xs text-gray-500">{createdAt}</p>
-                </div>
-                <button
-                  onClick={(e) => handleMenuClick(e, project.project_id)}
-                  className="text-gray-400 hover:text-gray-600 p-1"
-                >
-                  <EllipsisHorizontalIcon className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {openMenuId && menuPosition && (
-        <div
-          className="absolute z-50 bg-white rounded-md shadow-lg border border-gray-200 py-1 w-40"
-          style={{ top: menuPosition.y + 8, left: menuPosition.x }}
+      {tool.status === "create" ? (
+        <button
+          onClick={tool.onClick}
+          className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold
+          bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300
+          shadow-lg cursor-pointer"
         >
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              const project = projects.find((p) => p.project_id === openMenuId);
-              if (project) openDeleteDialog(project);
-            }}
-            className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-          >
-            Delete Project
-          </button>
-        </div>
+          Create
+        </button>
+      ) : (
+        <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
+          Coming Soon
+        </p>
       )}
+    </div>
+  ))}
+</div>
 
+
+{/* My Projects History */}
+<h2 className="text-2xl font-bold mb-4">My Projects</h2>
+
+{isRefreshing && (
+  <div className="mb-4 inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full shadow-sm">
+    🔄 Refreshing...
+  </div>
+)}
+
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+  {projects.map((project) => {
+    const duration = formatDuration(project.video_duration_seconds);
+    const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
+
+    return (
+      <div
+        key={project.project_id}
+        onClick={() => router.push(`/project/${project.project_id}`)}
+        className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition"
+      >
+        <div className="relative">
+          <Image
+            src="/images/mock-thumbnail.jpg"
+            alt={project.project_name}
+            width={640}
+            height={360}
+            className="w-full h-auto object-cover"
+          />
+          <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
+            {project.job_settings.target_language.toUpperCase()} · Translated
+          </div>
+          <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
+            {duration}
+          </div>
+        </div>
+        <div className="p-2">
+          <p className="font-semibold text-sm truncate">{project.project_name}</p>
+          <p className="text-xs text-gray-500">{createdAt}</p>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+      {/* Gallery Section */}
       <h2 className="text-2xl font-bold mt-12 mb-4">Gallery</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {projects.map((project) => (
           <div
             key={`gallery-${project.project_id}`}
             className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white"
           >
-            <div className="relative aspect-[4/3] w-full">
+            <div className="relative">
               <Image
                 src="/images/mock-thumbnail.jpg"
                 alt={project.project_name}
-                fill
-                className="object-cover"
+                width={640}
+                height={360}
+                className="w-full h-auto object-cover"
               />
             </div>
             <div className="p-2">
@@ -355,14 +207,14 @@ export default function ProfileClientPage() {
         ))}
       </div>
 
+      <CreateNewModal />
+
       <DeleteConfirmationDialog 
         isOpen={isDeleteDialogOpen}
-        onClose={closeDeleteDialog}
-        onConfirm={handleConfirmDelete}
+        onClose={() => setIsDeleteDialogOpen(false)}
+        onConfirm={() => {}} // Add actual logic here if needed
         projectName={projectToDelete?.project_name || ''}
       />
-
-      <CreateNewModal />
     </div>
   );
 }
