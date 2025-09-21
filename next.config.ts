@@ -4,6 +4,12 @@ const withNextIntl = require('next-intl/plugin')('./next-intl.config.js');
 const nextConfig = {
   reactStrictMode: true,
 
+  images: {
+    domains: ["lh3.googleusercontent.com",
+      "videotranslatetest.blob.core.windows.net"
+    ],
+  },
+
   async headers() {
     return [
       {
