@@ -152,34 +152,45 @@ export default function ProfileClientPage() {
   {projects.map((project) => {
     const duration = formatDuration(project.video_duration_seconds);
     const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
-
     return (
+
       <div
-        key={project.project_id}
-        onClick={() => router.push(`/project/${project.project_id}`)}
-        className="border border-gray-200 rounded-md overflow-hidden shadow-sm bg-white cursor-pointer hover:shadow-md transition"
-      >
-        <div className="relative">
-          <Image
-            src="/images/mock-thumbnail.jpg"
-            alt={project.project_name}
-            width={640}
-            height={360}
-            className="w-full h-auto object-cover"
-          />
-          <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
-            {project.job_settings.target_language?.toUpperCase() ?? ""} · Translated
-          </div>
-          <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
-            {duration}
-          </div>
-        </div>
-        <div className="p-2">
-          <p className="font-semibold text-sm truncate">{project.project_name}</p>
-          <p className="text-xs text-gray-500">{createdAt}</p>
-        </div>
-      </div>
-    );
+  key={project.project_id}
+  onClick={() =>
+    router.push(
+      project.status === "COMPLETED"
+        ? `/${locale}/project_details/${project.project_id}`
+        : `/${locale}/magic/${project.project_id}`
+    )
+  }
+  className="border border-gray-200 rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-lg transition transform hover:scale-[1.02]"
+>
+  {/* Thumbnail with fixed 16:9 aspect ratio */}
+  <div className="relative w-full aspect-video bg-gray-100">
+    <Image
+      src={project.thumbnail_signed_url || "/images/mock-thumbnail.jpg"}
+      alt={project.project_name}
+      fill
+      className="object-cover"
+    />
+    <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
+      {project.job_settings.target_language?.toUpperCase() ?? ""} · Translated
+    </div>
+    <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
+      {duration}
+    </div>
+  </div>
+
+  {/* Text content */}
+  <div className="p-3">
+    <p className="font-semibold text-[15px] truncate">{project.project_name}</p>
+    <p className="text-sm text-gray-500">{createdAt}</p>
+  </div>
+</div>
+
+
+    );    
+
   })}
 </div>
 
