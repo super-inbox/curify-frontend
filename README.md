@@ -1,115 +1,143 @@
-# Curify Studio MVP
+# Curify Frontend
 
-Curify Studio MVP is a project based on [Next.js](https://nextjs.org) that aims to provide video translation and management solutions. The project is built using modern frontend technologies, supporting multilingual translation and a user-friendly interface.
+Curify Studio's frontend is a modern, scalable Next.js 13+ application designed for AI-powered video translation, dubbing, subtitle editing, and project management.
 
-## Features
+---
 
-- **Video Translation**: Supports multilingual subtitle generation and translation.
-- **Project Management**: Manages users' translation projects, including status tracking (processing, completed, etc.).
-- **User Authentication**: Supports Google login and email login.
-- **Credit System**: Displays users' free and paid credit balance.
+## 🚀 Tech Stack
 
-## Tech Stack
-
-- **Frontend Framework**: Next.js
+- **Framework**: Next.js (App Router)
 - **Styling**: Tailwind CSS
-- **Authentication**: NextAuth.js
-- **API Calls**: Data interaction based on `fetch`
-- **Multi-language Support**: `next-intl` for internationalization
+- **Auth**: NextAuth.js + Google OAuth
+- **State**: Jotai atoms
+- **i18n**: `next-intl` + JSON messages (EN/ZH)
+- **API Services**: Modular REST clients with error handling
+- **Types**: TypeScript-first design
 
-## Quick Start
+---
 
-### Requirements
+## 📁 File Structure Overview
 
-- Node.js version >= 16
-- npm or yarn package manager
+```
+CURIFY-FRONTEND/
+├── app/                     # Next.js App Router & pages
+│   ├── [locale]/            # Localized routes
+│   │   ├── _componentForPage/
+│   │   ├── _components/
+│   │   ├── _layout_components/
+│   │   ├── about/
+│   │   ├── auth/
+│   │   ├── charge/
+│   │   ├── contact/
+│   │   ├── magic/
+│   │   ├── pricing/
+│   │   ├── project/
+│   │   ├── subscription/
+│   │   ├── workspace/
+│   │   ├── authProvider.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── api/
+│   ├── globals.css
+│   └── favicon.ico
+│
+├── atoms/                  # Jotai atoms (auth, UI, project)
+├── components/             # UI components by domain (auth, ui, layout, etc.)
+├── hooks/                  # Custom React hooks (useAuth, useUpload, etc.)
+├── services/               # API interaction layer (auth, projects, etc.)
+├── lib/                    # Utility functions & constants
+├── types/                  # TypeScript type definitions
+├── http/                   # HTTP wrapper (request.ts)
+├── i18n/                   # Locale config and routing
+├── messages/               # EN/ZH translation messages
+├── public/                 # Static assets (images, videos)
+├── styles/                 # Extra CSS files
+├── __tests__/              # Test files
+│
+├── .env.local              # Runtime environment variables
+├── .env.example            # Sample env config
+├── next.config.js          # Next.js config
+├── tailwind.config.js      # Tailwind CSS config
+├── tsconfig.json           # TypeScript config
+├── package.json
+├── types.d.ts              # Global TS declarations
+└── README.md
+```
 
-### Install Dependencies
+---
+
+## 🔍 Directory Highlights
+
+### `app/` — Pages & Layout
+- Fully localized routes (`[locale]/`)
+- Includes pages for auth, project editor, subscription checkout, workspace, etc.
+
+### `components/` — Reusable UI
+- Split into: `auth/`, `ui/`, `layout/`, `project/`, and `subscription/`
+- Atomic design principles (forms, buttons, modals, etc.)
+
+### `hooks/` — Custom Hooks
+- Abstracted business logic (e.g. `useCredits`, `useAuth`)
+- Paired with atoms and service APIs
+
+### `services/` — API Wrappers
+- Organized by domain (auth, upload, analytics)
+- Typed responses, central error handling
+
+### `lib/` — Utility Logic
+- Stateless functions: formatters, validators, error handlers
+
+### `types/` — TypeScript Interfaces
+- Auth, project, subscription, UI, and global API response types
+
+### `atoms/` — Jotai State
+- App-wide state (login, modals, credit balance)
+
+### `i18n/` — Internationalization
+- Routing + middleware
+- EN/CH translations in `messages/`
+
+---
+
+## 🧪 Development & Testing
+
+### Dev Setup
 
 ```bash
 npm install
-# or use yarn
-yarn install
-```
-
-### Start Development Server
-
-Run the following command to start the local development server:
-
-```bash
 npm run dev
-# or
-yarn dev
+# Visit http://localhost:3000
 ```
 
-Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the project.
-
-### Build for Production
-
-Run the following command to build for production:
+### Env Variables
 
 ```bash
-npm run build
-# or
-yarn build
+cp .env.example .env.local
 ```
-
-After building, run the following command to start the production server:
-
-```bash
-npm start
-# or
-yarn start
-```
-
-### Environment Variables
-
-Create a `.env.local` file in the project root directory and add the following environment variables:
-
+Then edit:
 ```env
-NEXTAUTH_SECRET=your_secret_key
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXTAUTH_SECRET=...
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=...
+STRIPE_SECRET_KEY=...
 ```
 
-## File Structure
+### Testing Notes
 
-```
-curify_studio_mvp/
-├── app/                              # Next.js application directory
-│   ├── [locale]/                     # Dynamic routing, supports multi-language
-│   │   ├── _components.tsx           # Common components
-│   │   ├── _layout_components.tsx    # Layout-related components
-│   │   ├── [pages]                   # Page folders
-│   │   │   ├── page.tsx              # Page component
-│   │   ├── layout.tsx                # Layout component
-│   │   ├── page.tsx                  # Home page component
-│   ├── api/                          # API routes
-├── public/                           # Static assets
-├── README.md                         # Project documentation
-```
+- Sample videos in `/public/videos`
+- Stripe sandbox for credit flow testing
+- CORS handled via backend proxy/API gateway
 
-## 📄 Pages
-- **LandingPage**: Hero section with CTAs: "Book a demo", "Try it free", "Login".
-- **LoginPage**: Gmail login with account info pulled from backend.
-- **ContactPage**: User dashboard showing current balance, monthly free credits, and projects.
-- **MainPage**: Upload videos, specify language, project name (optional), and view credit consumption.
-- **MagicPage**: Preview original/translated videos, editable translation table with timestamps.
-- **ChargePage**: Purchase credits (Stripe integration placeholder).
+---
 
-## 📦 Notes
+## ✅ Benefits
 
-- Login and payments require backend integration.
-- Video preview and subtitle editing are mocked.
-- You can add Firebase/GCP/AWS backend or Supabase for auth and DB.
-
-## 🧪 Testing Tips
-
-- Use sample `.mp4` files under 20MB for uploads.
-- Mock stripe responses with test keys.
-- Ensure CORS headers are set for cloud APIs.
+- ✅ **Scalable** module structure
+- ✅ **Fully typed** with TypeScript
+- ✅ **i18n-ready** for global deployment
+- ✅ **Production-grade** API/services separation
+- ✅ **Modern UX** with Tailwind, blur/glass UI, and animation support
 
 ---
 

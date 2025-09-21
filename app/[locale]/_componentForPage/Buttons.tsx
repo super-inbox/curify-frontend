@@ -1,43 +1,50 @@
 "use client";
+import React from "react";
 
-import BtnP from "../_components/button/ButtonPrimary";
-import Icon from "../_components/Icon";
-import { useAtom } from "jotai";
-import { drawerAtom } from "@/app/atoms/atoms";
-import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAtom } from "jotai";
+import { userAtom, headerAtom } from "@/app/atoms/atoms";
+import BtnP from "../_components/button/ButtonPrimary";
+import GoogleLoginButton from "../_components/button/GoogleLoginButton";
+import { useEffect, useState } from "react";
 
 export default function Buttons() {
-  const [open, setOpen] = useAtom(drawerAtom);
+  const router = useRouter();
+
+  const [, setUser] = useAtom(userAtom);
+  const [, setHeaderState] = useAtom(headerAtom);
+  const [mockUser, setMockUser] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/data/userInfo.json")
+      .then((res) => res.json())
+      .then((data) => setMockUser(data))
+      .catch((err) => console.error("Failed to load mock user:", err));
+  }, []);
+
+  const handleMockLogin = () => {
+    if (mockUser) {
+      localStorage.setItem("curifyUser", JSON.stringify(mockUser));
+      setUser(mockUser);
+      setHeaderState("in");
+      router.push("/workspace");
+    } else {
+      alert("Mock user data not loaded yet.");
+    }
+  };
 
   return (
-    <div className="flex">
+    <div className="flex gap-4">
       {/* Book a Demo CTA */}
       <Link href="/contact">
-        <BtnP onClick={() => {}}>
+        <BtnP className="h-12 px-6 rounded-lg text-base">
           Book a Demo
         </BtnP>
       </Link>
 
-      <div className="w-9" />
-
-      {/* Google Auth (temporarily disabled) */}
-      {/*
-      <BtnP
-        type="white"
-        onClick={() =>
-          signIn("google", { redirect: false }).then((result) => {
-            console.log(result);
-            if (result?.error) {
-              console.error("Login failed:", result.error);
-            }
-          })
-        }
-      >
-        <Icon name="google" size={6} />
-        <span className="ml-2.5">Continue with Google</span>
-      </BtnP>
-      */}
+      {/* Google Button (styled same height/shape) */}
+      <GoogleLoginButton variant="home" />
     </div>
   );
 }

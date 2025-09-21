@@ -5,6 +5,8 @@ import Buttons from "./Buttons";
 import BgParticle from "./BgParticle";
 import SignDrawer from "./drawer/SignDrawer";
 import EmailDrawer from "./drawer/EmailDrawer";
+import GoogleLoginButton from "../_components/button/GoogleLoginButton";
+import Link from 'next/link';
 
 export default function HomeClient() {
   const [activeLanguage, setActiveLanguage] = useState<'en' | 'zh' | 'es'>('en');
@@ -52,8 +54,9 @@ export default function HomeClient() {
 
   return (
     <>
-      <div className="relative flex flex-col items-center mt-32 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
-        <BgParticle />
+    <BgParticle />
+      <div className="relative flex flex-col items-center mt-24 lg:mt-28 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+        
 
         <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
           Power Content Creation with AI
@@ -70,7 +73,19 @@ export default function HomeClient() {
         </div>
 
         <br />
-        <Buttons />
+        
+        {/* Auth Buttons Section */}
+<div className="flex flex-col sm:flex-row gap-8 items-center justify-center mb-8">
+  {/* Book a Demo CTA */}
+  <Link href="/contact">
+    <button className="h-14 px-7 rounded-xl text-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition cursor-pointer">
+      Book a Demo
+    </button>
+  </Link>
+
+  {/* Google Button */}
+  <GoogleLoginButton callbackUrl="/workspace?fromLocalStorage=true" variant="home" />
+  </div>
 
         {/* Demo Video Section */}
         <section className="w-full mt-10 mb-20">
@@ -184,8 +199,6 @@ export default function HomeClient() {
         </section>
       </div>
 
-      <SignDrawer />
-      <EmailDrawer />
     </>
   );
 }

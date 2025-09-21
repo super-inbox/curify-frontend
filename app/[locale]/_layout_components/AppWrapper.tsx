@@ -4,10 +4,11 @@ import { useEffect } from "react";
 import { useAtom } from "jotai";
 import { footerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { usePathname } from "next/navigation";
+import { User } from "@/types/auth";
 
 interface Props {
   children: React.ReactNode;
-  user: User.Info | null;
+  user: User | null;
 }
 
 export default function AppWrapper(props: Props) {
@@ -20,8 +21,19 @@ export default function AppWrapper(props: Props) {
   const pathname = usePathname();
 
   useEffect(() => {
-    setUser(user); // 注入一次
-    setHeaderState(user ? "in" : "out");
+    if (user) {
+      setUser(user);
+      setHeaderState("in");
+    } else {
+      const mockUser = localStorage.getItem("curifyUser");
+      if (mockUser) {
+        const parsedUser = JSON.parse(mockUser);
+        setUser(parsedUser);
+        setHeaderState("in");
+      } else {
+        setHeaderState("out");
+      }
+    }
   }, [user, setUser, setHeaderState]);
 
   useEffect(() => {

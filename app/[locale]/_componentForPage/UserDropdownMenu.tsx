@@ -1,59 +1,80 @@
-// app/[locale]/_componentForPage/UserDropdownMenu.tsx
+// File: components/UserDropdownMenu.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { 
-  Clock, 
-  Globe, 
-  CreditCard, 
-  HelpCircle, 
-  LogOut, 
+import { useRouter, usePathname } from 'next/navigation';
+import {
+  Clock,
+  Globe,
+  CreditCard,
+  HelpCircle,
+  LogOut,
   ChevronRight,
-  User
+  Zap,
 } from 'lucide-react';
 
-interface UserInfo {
-  email: string;
-  avatar?: string;
-  credits: {
-    remaining: number;
-    planRemaining: number;
-    validUntil: string;
-  };
-}
+import type { User } from '@/types/auth';
+import { languages } from '@/lib/language_utils';
+import { transactionService, type Transaction } from '@/services/transactions';
+import TransactionHistoryDialog from './TransactionHistoryDialog';
+
+// ✅ Jotai drawerAtom import
+import { useSetAtom } from 'jotai';
+import { drawerAtom } from '@/app/atoms/atoms';
 
 interface UserDropdownMenuProps {
-  user: UserInfo;
+  user: User;
   isOpen: boolean;
   onClose: () => void;
-  onLanguageSelect?: (locale: string) => void;
   onSignOut: () => void;
   currentLocale?: string;
+  onLanguageSelect?: (lang: string) => void;
+  isHistoryDialogOpen: boolean;
+  setIsHistoryDialogOpen: (open: boolean) => void;
 }
 
-const languages = [
-  { code: 'en', name: 'English (EN)', flag: '🇺🇸' },
-  { code: 'zh', name: '中文 (CN)', flag: '🇨🇳' },
-  { code: 'es', name: 'Español (ES)', flag: '🇪🇸' },
-  { code: 'fr', name: 'Français (FR)', flag: '🇫🇷' },
-];
-
-export default function UserDropdownMenu({ 
-  user, 
-  isOpen, 
-  onClose, 
-  onLanguageSelect,
+export default function UserDropdownMenu({
+  user,
+  isOpen,
+  onClose,
   onSignOut,
-  currentLocale = 'en'
+  currentLocale = 'en',
+  isHistoryDialogOpen,
+  setIsHistoryDialogOpen,
 }: UserDropdownMenuProps) {
-  const t = useTranslations('userMenu');
+  const router = useRouter();
+  const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // ✅ allow resetting drawer state on sign out
+  const setDrawerState = useSetAtom(drawerAtom);
+
+  const totalCredits =
+    (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
+  const expiringCredits = user.expiring_credits ?? 0;
+
+  const expirationDate = user.current_cycle_end
+    ? new Date(user.current_cycle_end)
+    : null;
+  const formattedExpirationDate = expirationDate
+    ? expirationDate.toLocaleDateString(currentLocale, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      })
+    : 'N/A';
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         onClose();
         setShowLanguageSubmenu(false);
       }
@@ -74,135 +95,188 @@ export default function UserDropdownMenu({
     setShowLanguageSubmenu(!showLanguageSubmenu);
   };
 
-  const handleLanguageSelect = (langCode: string) => {
-    onLanguageSelect?.(langCode);
-    setShowLanguageSubmenu(false);
+  const handleRoute = (path: string) => {
     onClose();
+    router.push(path);
   };
 
-  const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0];
+  const handleSignOut = () => {
+    localStorage.removeItem('curifyUser');
+    setDrawerState(null); // ✅ reset drawerAtom on sign out
+    onClose();
+    onSignOut();
+    window.location.href = '/';
+  };
+
+  const handleShowHistory = async () => {
+    setIsHistoryDialogOpen(true);
+    setIsLoading(true);
+
+    try {
+      const response = await transactionService.getTransactions();
+      setTransactions(response.data);
+    } catch (error) {
+      console.error('Error fetching transactions:', error);
+      setTransactions([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const currentLanguage =
+    languages.find((lang) => lang.code === currentLocale) || languages[0];
 
   return (
-    <div 
-      ref={dropdownRef}
-      className="absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
-    >
-      {/* Header */}
-      <div className="p-4 border-b border-gray-100">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-lg font-semibold text-blue-600">
-            {t('topUpCredits', { defaultValue: 'Top Up Credits' })}
+    <>
+      <div
+        ref={dropdownRef}
+        className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+      >
+        {/* Header */}
+        <div className="p-4 border-b border-gray-100">
+          <h3 className="text-base font-semibold text-blue-600 text-[15px]">
+            {user.username || 'User'}
           </h3>
-          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-            {user.avatar ? (
-              <img src={user.avatar} alt="User" className="w-8 h-8 rounded-full" />
-            ) : (
-              <User size={16} className="text-gray-600" />
-            )}
+          <p className="text-sm text-gray-600 truncate text-[14px]">
+            {user.email}
+          </p>
+        </div>
+
+        {/* Credits Info */}
+        <div className="p-4 border-b border-gray-100">
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-sm text-gray-600 text-[14px]">Remaining</span>
+            <span className="text-lg font-semibold text-purple-600 text-[16px]">
+              {totalCredits} 🐚
+            </span>
           </div>
-        </div>
-        <p className="text-sm text-gray-600 truncate">{user.email}</p>
-      </div>
 
-      {/* Credits Info */}
-      <div className="p-4 border-b border-gray-100">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sm text-gray-600">
-            {t('remaining', { defaultValue: 'Remaining' })}
-          </span>
-          <span className="text-lg font-semibold text-purple-600">
-            {user.credits.remaining} C
-          </span>
-        </div>
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sm text-gray-600">
-            {t('planRemaining', { defaultValue: 'Plan Remaining' })}
-          </span>
-          <span className="text-lg font-semibold text-purple-600">
-            {user.credits.planRemaining} C
-          </span>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="text-xs text-gray-400">
-            {t('validUntil', { defaultValue: 'Valid until' })}
-          </span>
-          <span className="text-xs text-gray-400">
-            {user.credits.validUntil}
-          </span>
-        </div>
-      </div>
-
-      {/* Menu Items */}
-      <div className="py-2">
-        <button className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors">
-          <Clock size={18} className="mr-3 text-gray-500" />
-          <span className="text-gray-700">
-            {t('creditsHistory', { defaultValue: 'Credits History' })}
-          </span>
-        </button>
-
-        <div className="relative">
-          <button 
-            onClick={handleLanguageClick}
-            className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-          >
-            <div className="flex items-center">
-              <Globe size={18} className="mr-3 text-gray-500" />
-              <span className="text-gray-700">
-                {currentLanguage.name}
-              </span>
-            </div>
-            <ChevronRight 
-              size={16} 
-              className={`text-gray-400 transition-transform ${
-                showLanguageSubmenu ? 'rotate-90' : ''
-              }`} 
-            />
-          </button>
-
-          {/* Language Submenu */}
-          {showLanguageSubmenu && (
-            <div className="absolute left-0 top-0 w-full bg-white border-l-2 border-blue-500">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => handleLanguageSelect(lang.code)}
-                  className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors ${
-                    lang.code === currentLocale ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
-                  }`}
-                >
-                  <span className="mr-2">{lang.flag}</span>
-                  {lang.name}
-                </button>
-              ))}
-            </div>
+          {expiringCredits > 0 && (
+            <>
+              <div className="flex justify-between items-center mb-1">
+                <div className="flex items-center">
+                  <Zap size={16} className="text-orange-500 mr-1" />
+                  <span className="text-sm text-gray-600 text-[14px]">
+                    Plan Remaining
+                  </span>
+                </div>
+                <span className="text-md font-semibold text-orange-600 text-[14px]">
+                  {expiringCredits} 🐚
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs text-gray-400">Valid until</span>
+                <span className="text-xs text-gray-400">
+                  {formattedExpirationDate}
+                </span>
+              </div>
+            </>
           )}
         </div>
 
-        <button className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors">
-          <CreditCard size={18} className="mr-3 text-gray-500" />
-          <span className="text-gray-700">
-            {t('subscribePlan', { defaultValue: 'Subscribe Plan' })}
-          </span>
-        </button>
+        {/* Menu Items */}
+        <div className="py-2 text-[15px]">
+          <button
+            onClick={handleShowHistory}
+            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+          >
+            <Clock size={18} className="mr-3 text-gray-500" />
+            <span className="text-gray-700">Credits History</span>
+          </button>
 
-        <button className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors">
-          <HelpCircle size={18} className="mr-3 text-gray-500" />
-          <span className="text-gray-700">
-            {t('supportTicket', { defaultValue: 'Support Ticket' })}
-          </span>
-        </button>
+          <div className="relative">
+            <button
+              onClick={handleLanguageClick}
+              className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
+            >
+              <div className="flex items-center">
+                <Globe size={18} className="mr-3 text-gray-500" />
+                <span className="text-gray-700">{currentLanguage.name}</span>
+              </div>
+              <ChevronRight
+                size={16}
+                className={`text-gray-400 transition-transform ${
+                  showLanguageSubmenu ? 'rotate-90' : ''
+                }`}
+              />
+            </button>
 
-        <button 
-          onClick={onSignOut}
-          className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors border-t border-gray-100 mt-2"
-        >
-          <LogOut size={18} className="mr-3 text-gray-500" />
-          <span className="text-gray-700">
-            {t('signOut', { defaultValue: 'Sign Out' })}
-          </span>
-        </button>
+            {showLanguageSubmenu && (
+              <div className="absolute right-full top-0 w-72 -mr-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      const segments = pathname.split('/').filter(Boolean);
+                      segments[0] = lang.code;
+                      const newPath = '/' + segments.join('/');
+
+                      const query = new URLSearchParams(
+                        window.location.search
+                      ).toString();
+                      const fullPath = query ? `${newPath}?${query}` : newPath;
+
+                      window.location.replace(fullPath);
+
+                      setShowLanguageSubmenu(false);
+                      onClose();
+                    }}
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors cursor-pointer ${
+                      lang.code === currentLocale
+                        ? 'bg-blue-50 text-blue-600'
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    <span className="mr-2">{lang.flag}</span>
+                    {lang.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+            className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
+              pathname === `/${currentLocale}/pricing`
+                ? 'text-blue-600 font-semibold'
+                : ''
+            }`}
+          >
+            <CreditCard size={18} className="mr-3 text-gray-500" />
+            <span className="text-gray-700">Subscribe Plan</span>
+          </button>
+
+          <button
+            onClick={() => handleRoute(`/${currentLocale}/contact`)}
+            className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
+              pathname === `/${currentLocale}/contact`
+                ? 'text-blue-600 font-semibold'
+                : ''
+            }`}
+          >
+            <HelpCircle size={18} className="mr-3 text-gray-500" />
+            <span className="text-gray-700">Support Ticket</span>
+          </button>
+
+          <button
+            onClick={handleSignOut}
+            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
+          >
+            <LogOut size={18} className="mr-3 text-gray-500" />
+            <span className="text-gray-700">Sign Out</span>
+          </button>
+        </div>
       </div>
-    </div>
+
+      {isHistoryDialogOpen && (
+        <TransactionHistoryDialog
+          isOpen={isHistoryDialogOpen}
+          onClose={() => setIsHistoryDialogOpen(false)}
+          transactions={transactions}
+          isLoading={isLoading}
+        />
+      )}
+    </>
   );
 }

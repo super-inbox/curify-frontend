@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { drawerAtom } from "@/app/atoms/atoms";
 
 interface Props {
-  size?: "large" | "small";
+  size?: "large" | "small" | "medium";
   direction?: "left" | "right";
   open: boolean;
   children: React.ReactNode;

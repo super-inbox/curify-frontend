@@ -1,5 +1,8 @@
+"use client";
+
 import { useRef, useState } from "react";
 import Icon from "./Icon";
+import { videoService } from "@/services/video";
 
 const ACCEPTED_TYPES = [
   "video/mp4",
@@ -10,25 +13,52 @@ const ACCEPTED_TYPES = [
 ];
 
 interface Props {
-  onFileSelect: (file: File | null) => void;
+  onUploaded: (
+    videoId: string,
+    blobUrl: string,
+    thumbnailUrl?: string
+  ) => void;
+  onPreviewReady?: (localPreviewUrl: string, file: File) => void;
+  onUploadStart?: () => void;
+  onUploadError?: (error: string) => void;
 }
 
-export default function Upload(props: Props) {
-  const { onFileSelect } = props;
-
+export default function Upload({ 
+  onUploaded, 
+  onPreviewReady, 
+  onUploadStart, 
+  onUploadError 
+}: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
-
   const [isDragging, setIsDragging] = useState(false);
 
-  const handleFile = (fileList: FileList | null) => {
-    if (!fileList || fileList.length === 0) return onFileSelect(null);
+  const handleFile = async (fileList: FileList | null) => {
+    if (!fileList || fileList.length === 0) return;
 
     const file = fileList[0];
-    if (ACCEPTED_TYPES.includes(file.type)) {
-      onFileSelect(file);
-    } else {
-      alert("只支持 .mp4, .mov, .webm, .avi, .wmv 文件");
-      onFileSelect(null);
+    if (!ACCEPTED_TYPES.includes(file.type)) {
+      const errorMsg = "Only .mp4, .mov, .webm, .avi, .wmv files are supported";
+      alert(errorMsg);
+      onUploadError?.(errorMsg);
+      return;
+    }
+
+    // Show local preview immediately
+    const localUrl = URL.createObjectURL(file);
+    onPreviewReady?.(localUrl, file);
+
+    // Notify parent that upload is starting
+    onUploadStart?.();
+
+    // Upload in the background
+    try {
+      const res = await videoService.uploadVideo(file);
+      onUploaded(res.video_id, res.blob_url, res.thumbnail_signed_url);
+    } catch (err) {
+      console.error("❌ Upload failed:", err);
+      const errorMsg = "Upload failed, please try again.";
+      alert(errorMsg);
+      onUploadError?.(errorMsg);
     }
   };
 
@@ -70,7 +100,7 @@ export default function Upload(props: Props) {
       <input
         ref={inputRef}
         type="file"
-        accept={".mp4,.mov,.webm,.avi,.wmv"}
+        accept=".mp4,.mov,.webm,.avi,.wmv"
         hidden
         onChange={(e) => handleFile(e.target.files)}
       />

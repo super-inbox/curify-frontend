@@ -23,6 +23,7 @@
     }
   },
   "include": [
+    "lib/constants.ts", "app/**/*.ts", "app/**/*.tsx",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

@@ -1,17 +1,13 @@
+// FILEPATH: ./app/api/auth/[...nextauth]/authOptions.ts
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-import type { Account, User, SessionStrategy, Session } from "next-auth";
+import type { AuthOptions } from "next-auth";
+import type { Account, Profile } from "next-auth";
 import type { AdapterUser } from "next-auth/adapters";
 import type { JWT } from "next-auth/jwt";
+import type { User as CustomUser } from "@/types/auth";
 
-type JWTProps = {
-  token: JWT;
-  user: User | AdapterUser;
-  account: Account | null;
-};
-type SessionProps = { session: Session; token: JWT };
-
-export const authOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -34,33 +30,48 @@ export const authOptions = {
         });
 
         if (!res.ok) throw new Error("Authentication failed");
-        const user: User = await res.json();
-        if (user && user.email) return user;
+
+        const user: CustomUser = await res.json();
+
+        if (user && user.email) {
+          // Return as AdapterUser with required emailVerified property
+          return {
+            id: user.user_id,
+            emailVerified: null,
+            ...user,
+          } as AdapterUser;
+        }
 
         return null;
       },
     }),
   ],
+
   secret: process.env.NEXTAUTH_SECRET,
-  pages: { signIn: "/login" },
-  session: { strategy: "jwt" as SessionStrategy },
+  pages: { 
+    signIn: "/login" 
+  },
+  session: { 
+    strategy: "jwt" 
+  },
+
   callbacks: {
-    async jwt({ token, user }: JWTProps) {
+    async jwt({ token, user }) {
       if (user) {
-        token.name = user.name;
-        token.email = user.email;
+        token.user = user;
       }
       return token;
     },
-    async session({ session, token }: SessionProps) {
-      if (session.user) {
-        session.user.name = token.name || "";
-        session.user.email = token.email;
+  
+    async session({ session, token }) {
+      if (token.user) {
+        session.user = token.user as CustomUser;
       }
       return session;
     },
-    async redirect(res: { url: string; baseUrl: string }) {
-      return `${res.baseUrl}/main`;
+  
+    async redirect({ url, baseUrl }) {
+      return `${baseUrl}/main`;
     },
   },
 };

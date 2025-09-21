@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
 import Image from "next/image";
 import BtnN from "../_components/button/ButtonNormal";
 import Link from "next/link";
 import { useAtom } from "jotai";
-import { drawerAtom, headerAtom } from "@/app/atoms/atoms";
+import { modalAtom, drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
-
-interface UserInfo {
-  email: string;
-  avatar?: string;
-  credits: {
-    remaining: number;
-    planRemaining: number;
-    validUntil: string;
-  };
-}
+import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const router = useRouter();
-  const { locale } = useParams();
+  const { locale } = useParams() as { locale: string };
 
-  const [, setDrawerState] = useAtom(drawerAtom);
+  const [drawerState, setDrawerState] = useAtom(drawerAtom);
   const [headerState] = useAtom(headerAtom);
+  const [user] = useAtom(userAtom);
+  const [, setModal] = useAtom(modalAtom);
+
+  useEffect(() => {
+    if (user && (drawerState === "signin" || drawerState === "signup")) {
+      setDrawerState(null);
+    }
+  }, [user]);
 
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
@@ -37,37 +37,58 @@ export default function Header() {
   ];
 
   const currentLanguage = languages.find((lang) => lang.locale === locale);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isHistoryDialogOpen, setIsHistoryDialogOpen] = useState(false);
 
-  // ✅ Mock user fallback
-  const mockUser: UserInfo = {
-    email: "demo@curify-ai.com",
-    avatar: "/default-avatar.png",
-    credits: {
-      remaining: 3000,
-      planRemaining: 5000,
-      validUntil: "2025-12-31",
-    },
+  const remainingCredits =
+    (user?.non_expiring_credits || 0) + (user?.expiring_credits || 0);
+
+  let closeTimeout: NodeJS.Timeout | null = null;
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = null;
+    }
+    setDropdownOpen(true);
   };
 
-  const user: UserInfo = mockUser;
+  const handleMouseLeave = () => {
+    closeTimeout = setTimeout(() => {
+      handleCloseDropdown();
+    }, 150);
+  };
+
+  const handleCloseDropdown = () => {
+    setDropdownOpen(false);
+    setIsHistoryDialogOpen(false);
+  };
+
+  const handleLoginClick = () => {
+    setDrawerState(drawerState === "signin" ? null : "signin");
+  };
 
   return (
-    <header className="flex px-8 py-3 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
+    <header className="flex px-8 py-1.5 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
       <div className="flex items-center justify-between w-full">
-        {/* Left Section: Logo + Nav */}
+        {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
-          <div className="relative w-40 aspect-[160/38.597]">
-            <Link href={`/${locale}`}>
+          <div className="relative w-40 aspect-[160/38.597] cursor-pointer">
+            <Link
+              href={user?.user_id ? `/${locale}/workspace` : `/${locale}`}
+              aria-label="Curify Home"
+            >
               <Image
                 src="/logo.svg"
-                alt="logo"
+                alt="Curify Logo"
                 fill
                 className="object-contain"
+                priority
               />
             </Link>
           </div>
 
-          {headerState === "out" || headerState === "in" ? (
+          {(headerState === "out" || headerState === "in") && (
             <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
               <Link href={`/${locale}/pricing`} className="hover:opacity-80">
                 Pricing
@@ -76,23 +97,19 @@ export default function Header() {
                 About
               </Link>
             </nav>
-          ) : null}
+          )}
         </div>
 
-        {/* Right Section: Language & Buttons */}
+        {/* Right: Language, Credits, Actions */}
         <div className="flex items-center space-x-4">
           {headerState === "out" ? (
             <>
               <Link href={`/${locale}/contact`}>
-                <BtnN onClick={() => {}}>
-                  Book a demo
-                </BtnN>
-              </Link>
-              <Link href={`/${locale}/contact`}>
-                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]} onClick={() => {}}>
+                <BtnN whiteConfig={["no-bg", "no-border", "no-hover"]}>
                   Contact us
                 </BtnN>
               </Link>
+              <BtnN onClick={handleLoginClick}>Log in</BtnN>
             </>
           ) : (
             <>
@@ -114,13 +131,56 @@ export default function Header() {
                   </ul>
                 </details>
               </div>
-              <p className="text-sm text-right mr-3">
-                <span className="text-[var(--p-blue)] font-bold">{user.credits.remaining}</span>
-                <span className="text-[var(--c1)] mx-1 font-bold">C</span>left
+
+              {/* Shell Credit Display */}
+              <p className="text-sm text-right mr-2 flex items-center gap-1">
+                <span className="text-[var(--p-blue)] font-bold">
+                  {remainingCredits}
+                </span>
+                <span className="text-xl">🐚</span>
               </p>
-              <BtnN onClick={() => setDrawerState("signup")}>
-                Top Up Credits
+
+              <BtnN
+                onClick={() => setModal("topup")}
+                className="text-sm px-4 py-2"
+              >
+                Top up Credits
               </BtnN>
+
+              {/* Avatar + Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link href={`/${locale}/workspace`}>
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-300 cursor-pointer z-50">
+                    <Image
+                      src={user?.avatar_url || "/images/default-avatar.jpg"}
+                      alt="User Avatar"
+                      width={32}
+                      height={32}
+                      className="relative z-50 rounded-full border border-gray-300 cursor-pointer object-cover"
+                    />
+                  </div>
+                </Link>
+
+                {user && (
+  <div className="absolute right-0 top-full -mt-1 z-40">
+    <UserDropdownMenu
+      user={user}
+      isOpen={dropdownOpen}
+      onClose={handleCloseDropdown}
+      onLanguageSelect={(lang: string) => router.push(`/${lang}`)}
+      onSignOut={() => console.log("Sign out clicked")}
+      currentLocale={locale}
+      isHistoryDialogOpen={isHistoryDialogOpen}
+      setIsHistoryDialogOpen={setIsHistoryDialogOpen}
+    />
+  </div>
+)}
+
+              </div>
             </>
           )}
         </div>

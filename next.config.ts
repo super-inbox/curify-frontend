@@ -1,18 +1,55 @@
-// next.config.js
-
-const withNextIntl = require('next-intl/plugin')(
-  // This is the default pathname of your `next-intl.config.js`
-  './next-intl.config.js'
-);
+const withNextIntl = require('next-intl/plugin')('./next-intl.config.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your existing Next.js config options
-  experimental: {
-    // Enable if you're using app directory
-    appDir: true
+  reactStrictMode: true,
+
+  async headers() {
+    return [
+      {
+        // All routes
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups',
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'unsafe-none',
+          },
+        ],
+      },
+      {
+        // Next.js assets
+        source: '/_next/:path*',
+        headers: [
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups',
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'unsafe-none',
+          },
+        ],
+      },
+      {
+        // API routes
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups',
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'unsafe-none',
+          },
+        ],
+      },
+    ];
   },
-  // Add any other config you need
 };
 
 module.exports = withNextIntl(nextConfig);

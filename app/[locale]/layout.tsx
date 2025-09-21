@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import { AuthProvider } from "./authProvider";
 import "../globals.css";
 
@@ -7,10 +6,12 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
+
 import Script from "next/script";
-import "../globals.css";
 import Header from "./_layout_components/Header";
 import Footer from "./_layout_components/Footer";
+import TopUpModal from "./_componentForPage/TopUpModal";
+import SignDrawer from "./_componentForPage/drawer/SignDrawer";
 import AppWrapper from "./_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
@@ -35,20 +36,31 @@ export default async function LocaleLayout(props: Props) {
     notFound();
   }
 
-  // 👇 Load messages from /i18n/en.json or /i18n/zh.json
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (
     <html lang={locale}>
+      <head>
+        {/* Google Identity Services Script */}
+        <script
+          src="https://accounts.google.com/gsi/client"
+          async
+          defer
+        />
+      </head>
       <body>
+        {/* Icon font for icons */}
         <Script
           src="//at.alicdn.com/t/c/font_4910365_wqytpll6n9g.js"
           strategy="beforeInteractive"
         />
+
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <AppWrapper user={session?.user || null}>
+            <AppWrapper user={null}>
               <Header />
+              <TopUpModal /> 
+              <SignDrawer /> {/* ✅ Drawer mounted globally */}
               {children}
               <Toaster />
               <Footer />
