@@ -8,7 +8,7 @@ interface Props {
     | "no-padding"
   )[];
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 

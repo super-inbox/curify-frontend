@@ -17,7 +17,6 @@ export const videoService = {
     const res = await apiClient.request<{ data: VideoUploadResponse }>('/videos/upload', {
       method: 'POST',
       body: formData,
-      isFormData: true,
     });
 
     return res.data;
@@ -31,9 +30,9 @@ export const videoService = {
     const res = await apiClient.request<{ data: VideoUploadResponse }>('/videos/upload', {
       method: 'POST',
       body: formData,
-      isFormData: true,
     });
 
     return res.data;
   }
 };
+

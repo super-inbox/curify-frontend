@@ -1,4 +1,3 @@
-// components/button/GoogleLoginButton.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -9,6 +8,7 @@ import Icon from "../Icon";
 import { authService } from "@/services/auth";
 import { useSetAtom } from 'jotai';
 import { drawerAtom } from '@/app/atoms/atoms';
+import { jwtDecode } from "jwt-decode";
 
 declare global {
   interface Window {
@@ -30,7 +30,7 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
   const [googleLoaded, setGoogleLoaded] = useState(false);
   const router = useRouter();
 
-  // Load Google Identity Services script on mount
+  // Load Google Identity Services script
   useEffect(() => {
     const loadGoogleScript = (): Promise<void> => {
       return new Promise((resolve, reject) => {
@@ -82,34 +82,42 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
     });
   }, []);
 
-// Handle Google credential
-const handleCredentialResponse = async (response: { credential: string }) => {
-  try {
-    console.log("Processing Google credential...");
-    
-    const result = await authService.googleLogin(response.credential);
-    
-    // Save tokens
-    localStorage.setItem("access_token", result.data.access_token);
-    localStorage.setItem("refresh_token", result.data.refresh_token);
+  // ✅ Handle Google credential (decode and attach avatar_url)
+  const handleCredentialResponse = async (response: { credential: string }) => {
+    try {
+      console.log("Processing Google credential...");
 
-    // Save user in localStorage for hydration later
-    localStorage.setItem("curifyUser", JSON.stringify(result.data.user));
+      // Decode ID token (JWT) to extract profile
+      const decoded: {
+        name: string;
+        email: string;
+        picture: string;
+        sub: string;
+      } = jwtDecode(response.credential);
 
-    // Set user state
-    setUser(result.data.user);
-    setDrawerState(null); // Close the drawer
+      const result = await authService.googleLogin(response.credential);
 
-    console.log("Google login successful, user authenticated");
+      const userWithAvatar = {
+        ...result.data.user,
+        avatar_url: decoded.picture,
+      };
 
-  } catch (error) {
-    console.error("Google login failed:", error);
-    // Redirect back to home with error
-    router.push("/?error=login_failed");
-  } finally {
-    setAuthLoading(false);
-  }
-};
+      // Save tokens and user
+      localStorage.setItem("access_token", result.data.access_token);
+      localStorage.setItem("refresh_token", result.data.refresh_token);
+      localStorage.setItem("curifyUser", JSON.stringify(userWithAvatar));
+
+      setUser(userWithAvatar);
+      setDrawerState(null);
+
+      console.log("Google login successful, user authenticated");
+    } catch (error) {
+      console.error("Google login failed:", error);
+      router.push("/?error=login_failed");
+    } finally {
+      setAuthLoading(false);
+    }
+  };
 
   const handleGoogleLogin = async () => {
     if (isGoogleLoading || !googleLoaded) {
@@ -121,22 +129,18 @@ const handleCredentialResponse = async (response: { credential: string }) => {
     setIsGoogleLoading(true);
     setAuthLoading(true);
 
-    // Get callback URL from current page params or use default
     const params = new URLSearchParams(window.location.search);
     const finalCallbackUrl = params.get("callbackUrl") || callbackUrl;
 
-    // Immediately redirect to workspace/loading page
+    // Redirect to loading page
     router.push(finalCallbackUrl);
 
     try {
       const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
-      if (!clientId) {
-        throw new Error("Google Client ID not found");
-      }
+      if (!clientId) throw new Error("Google Client ID not found");
 
       console.log("Using Google Client ID:", clientId);
 
-      // Initialize Google Identity Services
       window.google.accounts.id.initialize({
         client_id: clientId,
         callback: handleCredentialResponse,
@@ -145,14 +149,12 @@ const handleCredentialResponse = async (response: { credential: string }) => {
         context: "signin",
       });
 
-      // Create a temporary button element for Google to render into
       const tempButtonContainer = document.createElement('div');
       tempButtonContainer.style.position = 'absolute';
       tempButtonContainer.style.top = '-9999px';
       tempButtonContainer.style.left = '-9999px';
       document.body.appendChild(tempButtonContainer);
 
-      // Render the Google button
       window.google.accounts.id.renderButton(tempButtonContainer, {
         theme: 'outline',
         size: 'large',
@@ -163,7 +165,6 @@ const handleCredentialResponse = async (response: { credential: string }) => {
         width: 250
       });
 
-      // Programmatically click the Google button
       setTimeout(() => {
         const googleButton = tempButtonContainer.querySelector('[role="button"]') as HTMLElement;
         if (googleButton) {
@@ -171,18 +172,14 @@ const handleCredentialResponse = async (response: { credential: string }) => {
           googleButton.click();
         } else {
           console.error("Google button not found");
-          // Fallback: try the prompt method
           window.google.accounts.id.prompt((notification: any) => {
             console.log("Google prompt result:", notification);
             if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-              console.log("Google prompt was not displayed or skipped");
-              // Redirect back to home with error message
               router.push("/?error=popup_blocked");
             }
           });
         }
-        
-        // Clean up the temporary button
+
         setTimeout(() => {
           if (document.body.contains(tempButtonContainer)) {
             document.body.removeChild(tempButtonContainer);
@@ -192,7 +189,6 @@ const handleCredentialResponse = async (response: { credential: string }) => {
 
     } catch (error) {
       console.error("Google login initialization failed:", error);
-      // Redirect back to home with error
       router.push("/?error=init_failed");
     } finally {
       setIsGoogleLoading(false);
@@ -204,9 +200,9 @@ const handleCredentialResponse = async (response: { credential: string }) => {
 
   const variantClasses =
     variant === "home"
-      ? "h-14 px-7 rounded-xl text-lg font-normal"   // larger for home page
-      : "h-10 px-4 rounded-md text-sm font-normal w-full";  // drawer smaller
-  
+      ? "h-14 px-7 rounded-xl text-lg font-normal"
+      : "h-10 px-4 rounded-md text-sm font-normal w-full";
+
   return (
     <button
       onClick={handleGoogleLogin}
@@ -215,12 +211,11 @@ const handleCredentialResponse = async (response: { credential: string }) => {
     >
       <Icon name="google" size={variant === "home" ? 6 : 5} />
       <span className="ml-2.5 font-normal">
-        {!googleLoaded 
-          ? "Loading..." 
-          : isGoogleLoading 
-            ? "Signing in..." 
-            : "Continue with Google"
-        }
+        {!googleLoaded
+          ? "Loading..."
+          : isGoogleLoading
+          ? "Signing in..."
+          : "Continue with Google"}
       </span>
     </button>
   );

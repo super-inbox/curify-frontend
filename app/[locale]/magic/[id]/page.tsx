@@ -76,15 +76,10 @@ export default function Magic() {
       </div>
     );
   }
-  // This block is optional and should never render because we redirect on completion
-  return (
-    <div className="w-full h-screen p-10">
-      <h2 className="text-xl font-semibold text-center mb-4">✅ Translation Complete</h2>
-      <video
-        src={projectDetails.translated_video_signed_url}
-        controls
-        className="mx-auto mt-6 max-w-xl rounded-xl shadow"
-      />
-    </div>
-  );
+// ✅ Should never render unless redirect fails
+return (
+  <div className="w-full h-screen flex items-center justify-center text-gray-500 text-sm">
+    Translation complete. Redirecting...
+  </div>
+);
 }

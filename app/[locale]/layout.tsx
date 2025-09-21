@@ -57,7 +57,7 @@ export default async function LocaleLayout(props: Props) {
 
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <AppWrapper user={session?.user || null}>
+            <AppWrapper user={null}>
               <Header />
               <TopUpModal /> 
               <SignDrawer /> {/* ✅ Drawer mounted globally */}

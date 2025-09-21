@@ -4,6 +4,7 @@ export interface User {
   user_id: string;
   email: string;
   username: string;
+  avatar_url?: string;
   plan_name: string;
   non_expiring_credits: number;
   expiring_credits: number;
@@ -12,7 +13,8 @@ export interface User {
   current_cycle_end: string;
   created_at: string;
   updated_at: string;
-  projects: Project[];
+  projects: Project[];  
+  emailVerified?: Date | null;
 }
 
 // Helper type for computed values

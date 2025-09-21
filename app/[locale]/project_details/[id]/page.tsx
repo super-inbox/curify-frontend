@@ -10,6 +10,7 @@ import { ProjectDetails } from "@/types/segments";
 import { projectService } from "@/services/projects";
 import { useSetAtom } from "jotai";
 import { jobTypeAtom } from "@/app/atoms/atoms";
+import { File } from "@/types/projects";
 
 export default function ProjectDetailsPage() {
   const { locale } = useParams();
@@ -44,24 +45,21 @@ export default function ProjectDetailsPage() {
       if (data.final_video_signed_url) {
         files.push({
           name: extractFileName(data.final_video_signed_url),
-          type: "MP4",
-          size: "",
+          type: "MP4",          
           downloadUrl: data.final_video_signed_url,
         });
       }
       if (data.final_video_signed_url_withwatermark) {
         files.push({
           name: extractFileName(data.final_video_signed_url_withwatermark),
-          type: "MP4",
-          size: "",
+          type: "MP4",          
           downloadUrl: data.final_video_signed_url_withwatermark,
         });
       }
       if (data.srt_signed_url) {
         files.push({
           name: extractFileName(data.srt_signed_url),
-          type: "SRT",
-          size: "",
+          type: "SRT",          
           downloadUrl: data.srt_signed_url,
         });
       }

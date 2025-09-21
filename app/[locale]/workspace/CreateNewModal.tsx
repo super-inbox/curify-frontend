@@ -11,6 +11,7 @@ import BtnP from "../_components/button/ButtonPrimary";
 import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
 import { getLangCode, languages } from "@/lib/language_utils";
+import { SubtitleFormat, JobSettings } from "@/types/projects";
 
 export default function CreateNewModal() {
   const router = useRouter();
@@ -80,8 +81,10 @@ export default function CreateNewModal() {
         job_settings: {
           source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
           target_language: getLangCode(transto),
-          subtitles_enabled: subtitle.toLowerCase(),
+          subtitles_enabled: subtitle.toLowerCase() as SubtitleFormat,
           audio_option: jobType === 'subtitles' ? "original" : (voiceover === "Yes" ? "dubbed" : "original"),
+          erase_original_subtitles: false,
+          allow_lip_syncing: false,
         },
         project_name: uploadedFile.name,
       });

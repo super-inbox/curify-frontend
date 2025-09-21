@@ -30,9 +30,9 @@ export default function ProfileClientPage() {
     try {
       setIsRefreshing(true);
       const profile = await authService.getProfile();
-      if (Array.isArray(profile.data?.projects)) {
-        setProjects(profile.data.projects);
-        localStorage.setItem("curifyUser", JSON.stringify(profile.data));
+      if (Array.isArray(profile?.projects)) {
+        setProjects(profile.projects);
+        localStorage.setItem("curifyUser", JSON.stringify(profile));
       } else {
         setProjects([]);
       }
@@ -168,7 +168,7 @@ export default function ProfileClientPage() {
             className="w-full h-auto object-cover"
           />
           <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
-            {project.job_settings.target_language.toUpperCase()} · Translated
+            {project.job_settings.target_language?.toUpperCase() ?? ""} · Translated
           </div>
           <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] px-1 py-0.5 rounded">
             {duration}

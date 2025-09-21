@@ -60,3 +60,10 @@ export interface ProjectStatusUpdate {
   progress?: number;
   message?: string;
 }
+
+export interface File {
+  name: string;
+  type: string;
+  downloadUrl: string;
+  cost?: number;
+}

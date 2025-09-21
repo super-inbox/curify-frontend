@@ -28,6 +28,7 @@ interface UserDropdownMenuProps {
   onClose: () => void;
   onSignOut: () => void;
   currentLocale?: string;
+  onLanguageSelect?: (lang: string) => void;
   isHistoryDialogOpen: boolean;
   setIsHistoryDialogOpen: (open: boolean) => void;
 }

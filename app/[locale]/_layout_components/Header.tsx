@@ -4,8 +4,7 @@ import Image from "next/image";
 import BtnN from "../_components/button/ButtonNormal";
 import Link from "next/link";
 import { useAtom } from "jotai";
-import { modalAtom } from "@/app/atoms/atoms";
-import { drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
+import { modalAtom, drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
@@ -13,25 +12,18 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const router = useRouter();
-  const { locale } = useParams();
+  const { locale } = useParams() as { locale: string };
 
   const [drawerState, setDrawerState] = useAtom(drawerAtom);
   const [headerState] = useAtom(headerAtom);
   const [user] = useAtom(userAtom);
   const [, setModal] = useAtom(modalAtom);
 
-  // useEffect(() => {
-  //   if (user && drawerState === "signin") {
-  //     setDrawerState(null);
-  //   }
-  // }, [user, drawerState, setDrawerState]);
-
   useEffect(() => {
-    // Close drawer when user successfully logs in
     if (user && (drawerState === "signin" || drawerState === "signup")) {
       setDrawerState(null);
     }
-  }, [user]); // Only depend on user, not drawerState to avoid unnecessary runs
+  }, [user]);
 
   const languages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
@@ -73,13 +65,9 @@ export default function Header() {
   };
 
   const handleLoginClick = () => {
-    if (drawerState === "signin") {
-      setDrawerState(null);
-    } else {
-      setDrawerState("signin");
-    }
+    setDrawerState(drawerState === "signin" ? null : "signin");
   };
-  
+
   return (
     <header className="flex px-8 py-1.5 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
       <div className="flex items-center justify-between w-full">
@@ -87,7 +75,7 @@ export default function Header() {
         <div className="flex items-center space-x-8">
           <div className="relative w-40 aspect-[160/38.597] cursor-pointer">
             <Link
-              href={user && user.user_id ? `/${locale}/workspace` : `/${locale}`}
+              href={user?.user_id ? `/${locale}/workspace` : `/${locale}`}
               aria-label="Curify Home"
             >
               <Image
@@ -121,7 +109,6 @@ export default function Header() {
                   Contact us
                 </BtnN>
               </Link>
-              {/* ✅ Log in button now always toggles drawer */}
               <BtnN onClick={handleLoginClick}>Log in</BtnN>
             </>
           ) : (
@@ -178,18 +165,21 @@ export default function Header() {
                   </div>
                 </Link>
 
-                <div className="absolute right-0 top-full -mt-1 z-40">
-                  <UserDropdownMenu
-                    user={user}
-                    isOpen={dropdownOpen}
-                    onClose={handleCloseDropdown}
-                    onLanguageSelect={(lang) => router.push(`/${lang}`)}
-                    onSignOut={() => console.log("Sign out clicked")}
-                    currentLocale={locale}
-                    isHistoryDialogOpen={isHistoryDialogOpen}
-                    setIsHistoryDialogOpen={setIsHistoryDialogOpen}
-                  />
-                </div>
+                {user && (
+  <div className="absolute right-0 top-full -mt-1 z-40">
+    <UserDropdownMenu
+      user={user}
+      isOpen={dropdownOpen}
+      onClose={handleCloseDropdown}
+      onLanguageSelect={(lang: string) => router.push(`/${lang}`)}
+      onSignOut={() => console.log("Sign out clicked")}
+      currentLocale={locale}
+      isHistoryDialogOpen={isHistoryDialogOpen}
+      setIsHistoryDialogOpen={setIsHistoryDialogOpen}
+    />
+  </div>
+)}
+
               </div>
             </>
           )}

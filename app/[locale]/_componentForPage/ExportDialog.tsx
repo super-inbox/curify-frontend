@@ -5,14 +5,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Image from "next/image";
-
-interface File {
-  name: string;
-  type: string;
-  size: string;
-  downloadUrl: string;
-  cost?: number;
-}
+import { File } from "@/types/projects";
 
 interface ExportDialogProps {
   isOpen: boolean;
