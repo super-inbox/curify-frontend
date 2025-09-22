@@ -15,6 +15,7 @@ export default function TopUpModal() {
   const { locale } = useParams();
   const [customCredits, setCustomCredits] = useState<number | "">("");
   const [showProcessing, setShowProcessing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const userPlan = "Free"; // TODO: fetch from user profile
   const isOpen = modal === "topup";
 
@@ -33,6 +34,14 @@ export default function TopUpModal() {
   const handleTopUp = async (credits: number) => {
     try {
       const amount = creditsToDollars(credits, userPlan);
+
+      // ✅ Validation: must be >= $0.50
+      if (amount < 0.5) {
+        setError("Minimum top-up is $0.50.");
+        return;
+      }
+
+      setError(null);
       setShowProcessing(true);
 
       const res = await apiClient.request<{ data: { id: string } }>(
@@ -60,11 +69,11 @@ export default function TopUpModal() {
   return (
     <>
       {showProcessing && (
-  <PaymentProcessingModal
-    isOpen={showProcessing}
-    onClose={() => setShowProcessing(false)}
-  />
-)}
+        <PaymentProcessingModal
+          isOpen={showProcessing}
+          onClose={() => setShowProcessing(false)}
+        />
+      )}
 
       <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center px-4">
         <div className="bg-white rounded-xl w-full max-w-md p-6 shadow-2xl border border-gray-200 relative">
@@ -79,6 +88,11 @@ export default function TopUpModal() {
             1 credit ≈ ${creditsToDollars(1, userPlan).toFixed(2)} (Plan:{" "}
             {userPlan})
           </p>
+
+          {/* Error Message */}
+          {error && (
+            <p className="text-red-500 text-center text-sm mb-4">{error}</p>
+          )}
 
           {/* Preset Options */}
           <div className="grid grid-cols-2 gap-4">

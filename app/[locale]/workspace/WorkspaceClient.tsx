@@ -154,17 +154,24 @@ export default function ProfileClientPage() {
     const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
     return (
 
-      <div
+<div
   key={project.project_id}
-  onClick={() =>
-    router.push(
-      project.status === "COMPLETED"
-        ? `/${locale}/project_details/${project.project_id}`
-        : `/${locale}/magic/${project.project_id}`
-    )
-  }
+  onClick={async () => {
+    if (project.status === "COMPLETED") {
+      try {
+        const fullProject = await projectService.getProject(project.project_id);
+        localStorage.setItem("selectedProjectDetails", JSON.stringify(fullProject));
+        router.push(`/${locale}/project_details/${project.project_id}`);
+      } catch (err) {
+        console.error("❌ Failed to fetch full project:", err);
+      }
+    } else {
+      router.push(`/${locale}/magic/${project.project_id}`);
+    }
+  }}
   className="border border-gray-200 rounded-lg overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-lg transition transform hover:scale-[1.02]"
 >
+
   {/* Thumbnail with fixed 16:9 aspect ratio */}
   <div className="relative w-full aspect-video bg-gray-100">
     <Image
@@ -174,7 +181,7 @@ export default function ProfileClientPage() {
       className="object-cover"
     />
     <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
-      {project.job_settings.target_language?.toUpperCase() ?? ""} · Translated
+      {project.job_settings.target_language?.toUpperCase() ?? ""} · {formatStatus(project.status)}
     </div>
     <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
       {duration}
@@ -228,4 +235,12 @@ export default function ProfileClientPage() {
       />
     </div>
   );
+}
+
+function formatStatus(status: string): string {
+  // Convert SNAKE_CASE to Capitalized Words
+  return status
+    .toLowerCase()
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 }
