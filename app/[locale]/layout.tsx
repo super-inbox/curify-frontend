@@ -62,7 +62,7 @@ export default async function LocaleLayout(props: Props) {
             <UserHydrator>
               <Header />
               <TopUpModal /> 
-              <SignDrawer /> {/* ✅ Drawer mounted globally */}
+              <SignDrawer />
               {children}
               <Toaster />
               <Footer />
