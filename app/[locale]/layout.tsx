@@ -15,6 +15,7 @@ import SignDrawer from "./_componentForPage/drawer/SignDrawer";
 import AppWrapper from "./_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
+import UserHydrator from "./UserHydrator";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -58,12 +59,14 @@ export default async function LocaleLayout(props: Props) {
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <AppWrapper user={null}>
+            <UserHydrator>
               <Header />
               <TopUpModal /> 
               <SignDrawer /> {/* ✅ Drawer mounted globally */}
               {children}
               <Toaster />
               <Footer />
+              </UserHydrator>
             </AppWrapper>
           </NextIntlClientProvider>
         </AuthProvider>
