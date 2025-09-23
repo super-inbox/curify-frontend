@@ -100,18 +100,26 @@ export default function CreateNewModal() {
     }
 
     try {
-      const newProject = await projectService.createProject({
-        video_id: videoId,
-        job_settings: {
-          source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
-          target_language: jobType === "translation" ? getLangCode(transto) : "auto",
-          subtitles_enabled: subtitle.toLowerCase() as SubtitleFormat,
-          audio_option: jobType === "subtitles" ? "original" : voiceover === "Yes" ? "dubbed" : "original",
-          erase_original_subtitles: false,
-          allow_lip_syncing: false,
-        },
-        project_name: uploadedFile.name,
-      });
+      const isSubtitleOnly = jobType === "subtitles";
+const isRemoveSubtitle = subtitle === "Source" && jobType === "subtitles";
+
+const newProject = await projectService.createProject({
+  video_id: videoId,
+  job_settings: {
+    source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
+    target_language: jobType === "translation" ? getLangCode(transto) : null, // must be null for subtitle-only
+    subtitles_enabled: subtitle.toLowerCase() as SubtitleFormat,              // "source" for subtitle-only
+    audio_option:
+      jobType === "subtitles"
+        ? "original"
+        : voiceover === "Yes"
+        ? "dubbed"
+        : "original",
+    erase_original_subtitles: isRemoveSubtitle,  // ✅ only true if subtitle = "Source" and jobType = "subtitles"
+    allow_lip_syncing: false,                     // optional, false by default
+  },
+  project_name: uploadedFile.name,
+});
 
       setModalState(null);
       router.replace(`/magic/${newProject.project_id}`);
