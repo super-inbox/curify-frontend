@@ -107,7 +107,7 @@ const newProject = await projectService.createProject({
   video_id: videoId,
   job_settings: {
     source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
-    target_language: jobType === "translation" ? getLangCode(transto) : null, // must be null for subtitle-only
+    target_language: jobType === "translation" ? getLangCode(transto) : undefined, // must be null for subtitle-only
     subtitles_enabled: subtitle.toLowerCase() as SubtitleFormat,              // "source" for subtitle-only
     audio_option:
       jobType === "subtitles"
