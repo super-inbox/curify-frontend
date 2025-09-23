@@ -112,7 +112,7 @@ export default function PricingPage() {
     <p className="text-sm text-gray-600 mb-4 text-center">Receive <strong>50 credits</strong>/Month</p>
     <ul className="space-y-2 text-sm text-gray-700">
       <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> Download videos without watermark</li>
-      <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> 10 hours free subtitle processing</li>
+      <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> 1 hour free subtitle processing</li>
       <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> Export SRT files</li>
     </ul>
   </div>
@@ -132,7 +132,7 @@ export default function PricingPage() {
       <ul className="space-y-2 text-sm text-gray-700">
         <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> Lip Syncing</li>
         <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> Batch processing</li>
-        <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> 50 hours free subtitle processing</li>
+        <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> 5 hours free subtitle processing</li>
         <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> Up to 30 minutes per task</li>
       </ul>
     </div>
@@ -246,8 +246,8 @@ export default function PricingPage() {
         </tr>
         <tr className="bg-gray-50">
           <td className="px-6 py-4 font-medium text-gray-900 text-base">Subtitle Tools (add/remove, no translation)</td>
-          <td className="px-6 py-4 text-center text-base">10 hrs/month</td>
-          <td className="px-6 py-4 text-center text-base">50 hrs/month</td>
+          <td className="px-6 py-4 text-center text-base">1 hrs/month</td>
+          <td className="px-6 py-4 text-center text-base">5 hrs/month</td>
           <td className="px-6 py-4 text-center text-base text-gray-400">Unlimited</td>
           <td className="px-6 py-4 text-center text-base">Unlimited</td>
         </tr>
