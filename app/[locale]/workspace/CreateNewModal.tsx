@@ -271,7 +271,7 @@ const newProject = await projectService.createProject({
   options={["Add Subtitles", "Remove Subtitles"]}
   value={"Add Subtitles"}        // default selection
   onChange={() => {}}
-  disabled
+  disabled={true}  // disable interaction
 />
             )}
           </div>

@@ -7,6 +7,7 @@ interface Props<T> {
   options: T[];
   value: T;
   onChange: (val: T) => void;
+  disabled?: boolean;
 }
 
 export default function Options<T extends string>(props: Props<T>) {
