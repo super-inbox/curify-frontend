@@ -19,13 +19,13 @@ export const subscribeService = {
   async subscribeToPlan(
     planName: string,
     testMode: boolean = false
-  ): Promise<SubscriptionResponse> {
+  ): Promise<{ session_id: string }> {
     const payload: SubscriptionEnrollRequest = {
       plan_name: planName,
       test_mode: testMode,
     };
 
-    const res = await apiClient.request<APIResponse<SubscriptionResponse>>(
+    const res = await apiClient.request<APIResponse<{ session_id: string }>>(
       '/user/subscribe',
       {
         method: 'POST',
