@@ -5,6 +5,9 @@ import React from 'react';
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { subscribeService } from '@/services/subscription';
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const mockPlan: 'FREE' | 'CREATOR' | 'PRO' | 'ENTERPRISE' | null = null;
 
@@ -21,8 +24,15 @@ export default function PricingPage() {
 
   const handleSubscribe = async (planName: string) => {
     try {
-      await subscribeService.subscribeToPlan(planName);
-      window.location.reload();
+      const { session_id } = await subscribeService.subscribeToPlan(planName);
+  
+      const stripe = await stripePromise;
+      if (!stripe) throw new Error("Stripe failed to load");
+  
+      const { error } = await stripe.redirectToCheckout({ sessionId: session_id });
+      if (error) {
+        console.error("Stripe checkout failed:", error.message);
+      }
     } catch (err) {
       console.error("❌ Subscription failed", err);
     }
