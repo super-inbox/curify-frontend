@@ -132,7 +132,7 @@ export default function ProfileClientPage() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
         {projects.map((project) => {
           const duration = formatDuration(project.video_duration_seconds);
           const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
@@ -171,9 +171,9 @@ export default function ProfileClientPage() {
                   {duration}
                 </div>
               </div>
-              <div className="p-3 flex justify-between items-start relative z-10">
+              <div className="p-3 flex-1 min-w-0 justify-between items-start relative z-10">
                 <div>
-                  <p className="font-semibold text-[15px] truncate">{project.project_name}</p>
+                  <p className="font-semibold text-[15px] truncate block w-full">{project.project_name}</p>
                   <p className="text-sm text-gray-500">{createdAt}</p>
                 </div>
                 <div
@@ -181,8 +181,8 @@ export default function ProfileClientPage() {
                     e.stopPropagation();
                     setOpenMenuId(openMenuId === project.project_id ? null : project.project_id);
                   }}
-                  className="relative z-50"
-                >
+                  className="absolute bottom-2 right-2 z-50"
+                  >
                   <EllipsisHorizontalIcon className="h-5 w-5 text-gray-500 hover:text-gray-700 cursor-pointer" />
                   {openMenuId === project.project_id && (
                     <div className="absolute right-0 mt-2 bg-white border rounded-md shadow-md z-[9999] text-sm">
