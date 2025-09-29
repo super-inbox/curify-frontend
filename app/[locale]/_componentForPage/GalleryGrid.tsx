@@ -37,8 +37,8 @@ fill
 className="object-cover"
 />
 </div>
-<div className="p-2">
-<p className="font-semibold text-sm truncate">{item.title}</p>
+<div className="p-2 flex-1 min-w-0">
+<p className="font-semibold text-sm truncate ">{item.title}</p>
 </div>
 </div>
 ))}
