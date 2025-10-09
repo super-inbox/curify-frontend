@@ -15,8 +15,7 @@ export default function SubscriptionSuccessPage() {
       try {
         const profile = await authService.getProfile();
         setUser(profile);
-
-        // Optional: delay a bit for UI effect, then redirect
+        
         setTimeout(() => {
           router.push('/dashboard'); // or your main page
         }, 1000);

@@ -11,6 +11,7 @@ import {
   LogOut,
   ChevronRight,
   Zap,
+  Infinity,
 } from 'lucide-react';
 
 import type { User } from '@/types/auth';
@@ -55,6 +56,7 @@ export default function UserDropdownMenu({
   const totalCredits =
     (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
   const expiringCredits = user.expiring_credits ?? 0;
+  const nonExpiringCredits = user.non_expiring_credits ?? 0;
 
   const expirationDate = user.current_cycle_end
     ? new Date(user.current_cycle_end)
@@ -64,8 +66,6 @@ export default function UserDropdownMenu({
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
       })
     : 'N/A';
 
@@ -143,34 +143,38 @@ export default function UserDropdownMenu({
         </div>
 
         {/* Credits Info */}
-        <div className="p-4 border-b border-gray-100">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm text-gray-600 text-[14px]">Remaining</span>
+        <div className="p-4 border-b border-gray-100 space-y-3">
+          {/* Total Credits */}
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-gray-600 text-[14px] font-medium">
+              Total Credits
+            </span>
             <span className="text-lg font-semibold text-purple-600 text-[16px]">
-              {totalCredits} 🐚
+              {totalCredits.toFixed(2)} 🐚
             </span>
           </div>
 
+          {/* Expiring Credits with expiration date */}
           {expiringCredits > 0 && (
-            <>
-              <div className="flex justify-between items-center mb-1">
-                <div className="flex items-center">
-                  <Zap size={16} className="text-orange-500 mr-1" />
-                  <span className="text-sm text-gray-600 text-[14px]">
-                    Plan Remaining
+            <div className="bg-orange-50 rounded-lg p-3 space-y-2">
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-1.5">
+                  <Zap size={16} className="text-orange-500" />
+                  <span className="text-sm text-gray-700 text-[13px] font-medium">
+                    Plan Credits
                   </span>
                 </div>
                 <span className="text-md font-semibold text-orange-600 text-[14px]">
-                  {expiringCredits} 🐚
+                  {expiringCredits.toFixed(2)} 🐚
                 </span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-xs text-gray-400">Valid until</span>
-                <span className="text-xs text-gray-400">
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-gray-500">Expires on</span>
+                <span className="text-xs text-gray-600 font-medium">
                   {formattedExpirationDate}
                 </span>
               </div>
-            </>
+            </div>
           )}
         </div>
 
