@@ -119,7 +119,7 @@ export default function PricingPage() {
       <span className="text-gray-600 ml-1 text-base">/ Month</span>
     </div>
     {renderButton('FREE')}
-    <p className="text-sm text-gray-600 mb-4 text-center">Receive <strong>50 credits</strong>/Month</p>
+    <p className="text-sm text-gray-600 mb-4 text-center">Receive <strong>50 🐚</strong>/Month</p>
     <ul className="space-y-2 text-sm text-gray-700">
       <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> Download videos without watermark</li>
       <li className="flex items-center"><span className="text-green-600 mr-3">✓</span> 1 hour free subtitle processing</li>
@@ -136,7 +136,7 @@ export default function PricingPage() {
       <span className="text-gray-600 ml-1 text-base">/ Month</span>
     </div>
     {renderButton('CREATOR')}
-    <p className="text-sm text-gray-600 mb-4 text-center">Receive <strong>500 credits</strong>/Month</p>
+    <p className="text-sm text-gray-600 mb-4 text-center">Receive <strong>500 🐚</strong>/Month</p>
     <div className="mb-4">
       <p className="font-semibold text-gray-800 mb-2 text-sm">Everything in <em>Free</em>, plus:</p>
       <ul className="space-y-2 text-sm text-gray-700">
@@ -157,7 +157,7 @@ export default function PricingPage() {
       <span className="text-gray-500 ml-1 text-base">/ Month</span>
     </div>
     {renderButton('PRO')}
-    <p className="text-sm text-gray-500 mb-4 text-center">Receive <strong>5,000 credits</strong>/Month</p>
+    <p className="text-sm text-gray-500 mb-4 text-center">Receive <strong>5,000 🐚</strong>/Month</p>
     <div className="mb-4">
       <p className="font-semibold text-gray-600 mb-2 text-sm">Everything in <em>Creator</em>, plus:</p>
       <ul className="space-y-2 text-sm text-gray-600">
@@ -180,7 +180,7 @@ export default function PricingPage() {
     <Link href="/contact" passHref>
       <button className="w-full bg-purple-600 text-white rounded-lg py-2.5 px-4 font-semibold hover:bg-purple-700 transition-colors mb-3 text-sm cursor-pointer">📞 Contact Sales</button>
     </Link>
-    <p className="text-sm text-gray-600 mb-4 text-center"><strong>Unlimited credits</strong> & tailored support</p>
+    <p className="text-sm text-gray-600 mb-4 text-center"><strong>Unlimited 🐚</strong> & tailored support</p>
     <div className="mb-4">
       <p className="font-semibold text-gray-800 mb-2 text-sm">Everything in <em>Pro</em>, plus:</p>
       <ul className="space-y-2 text-sm text-gray-700">
@@ -278,9 +278,9 @@ export default function PricingPage() {
         </tr>
         <tr>
           <td className="px-6 py-4 font-medium text-gray-900 text-base">Monthly Free Credits</td>
-          <td className="px-6 py-4 text-center text-base">50</td>
-          <td className="px-6 py-4 text-center text-base">500</td>
-          <td className="px-6 py-4 text-center text-base text-gray-400">5,000</td>
+          <td className="px-6 py-4 text-center text-base">50 🐚</td>
+          <td className="px-6 py-4 text-center text-base">500 🐚</td>
+          <td className="px-6 py-4 text-center text-base text-gray-400">5,000 🐚 </td>
           <td className="px-6 py-4 text-center text-base">Custom</td>
         </tr>
         <tr className="bg-gray-50">

@@ -150,7 +150,7 @@ export default function UserDropdownMenu({
               Total Credits
             </span>
             <span className="text-lg font-semibold text-purple-600 text-[16px]">
-              {totalCredits.toFixed(2)} 🐚
+              {totalCredits} 🐚
             </span>
           </div>
 
@@ -165,7 +165,7 @@ export default function UserDropdownMenu({
                   </span>
                 </div>
                 <span className="text-md font-semibold text-orange-600 text-[14px]">
-                  {expiringCredits.toFixed(2)} 🐚
+                  {expiringCredits} 🐚
                 </span>
               </div>
               <div className="flex items-center justify-between">
