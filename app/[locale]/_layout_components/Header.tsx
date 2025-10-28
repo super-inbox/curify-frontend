@@ -89,15 +89,19 @@ export default function Header() {
           </div>
 
           {(headerState === "out" || headerState === "in") && (
-            <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
-              <Link href={`/${locale}/pricing`} className="hover:opacity-80">
-                Pricing
-              </Link>
-              <Link href={`/${locale}/about`} className="hover:opacity-80">
-                About
-              </Link>
-            </nav>
-          )}
+  <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
+    <Link href={`/${locale}/pricing`} className="hover:opacity-80">
+      Pricing
+    </Link>
+    <Link href={`/${locale}/blog`} className="hover:opacity-80">
+      Blog
+    </Link>
+    <Link href={`/${locale}/about`} className="hover:opacity-80">
+      About
+    </Link>
+  </nav>
+)}
+
         </div>
 
         {/* Right: Language, Credits, Actions */}
