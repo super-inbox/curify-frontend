@@ -145,7 +145,7 @@ export default function ProjectDetailsPage() {
                   Auto Detect
                 </div>
                 <div className="bg-[#e0f2fe] text-sky-800 font-semibold px-4 py-2 rounded-t-lg">
-                  Chinese
+                  Translated
                 </div>
               </div>
 
