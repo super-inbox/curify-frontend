@@ -38,6 +38,7 @@ export default function CreateNewModal() {
   const [subtitle, setSubtitle] = useState<"None" | "Source" | "Target" | "Bilingual">(
     jobType === "subtitles" ? "Target" : "None"
   );
+  const [requireTranslation, setRequireTranslation] = useState<"Yes" | "No">("No");
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [showMissingTargetWarning, setShowMissingTargetWarning] = useState(false);
 
@@ -59,7 +60,7 @@ export default function CreateNewModal() {
   const getDuration = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const seconds = e.currentTarget.duration;
     const minutes = seconds / 60;
-    const rate = jobType === "translation" ? 5 : 1;
+    const rate = jobType === "translation" ? 5 : 0; // Subtitles job type costs 0 credits
     const billableMinutes = Math.max(minutes, 1);
     setCost(Math.ceil(billableMinutes * rate));
     const mins = Math.floor(seconds / 60);
@@ -89,7 +90,14 @@ export default function CreateNewModal() {
   const handleStart = async () => {
     if (!uploadedFile || !videoId) return;
 
+    // Validation for translation job type
     if (jobType === "translation" && transto === "Select Language") {
+      setShowMissingTargetWarning(true);
+      return;
+    }
+
+    // Validation for subtitles job type with translation
+    if (jobType === "subtitles" && requireTranslation === "Yes" && transto === "Select Language") {
       setShowMissingTargetWarning(true);
       return;
     }
@@ -101,25 +109,41 @@ export default function CreateNewModal() {
 
     try {
       const isSubtitleOnly = jobType === "subtitles";
-const isRemoveSubtitle = subtitle === "Source" && jobType === "subtitles";
+      const isRemoveSubtitle = subtitle === "Source" && jobType === "subtitles";
 
-const newProject = await projectService.createProject({
-  video_id: videoId,
-  job_settings: {
-    source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
-    target_language: jobType === "translation" ? getLangCode(transto) : undefined, // must be null for subtitle-only
-    subtitles_enabled: subtitle.toLowerCase() as SubtitleFormat,              // "source" for subtitle-only
-    audio_option:
-      jobType === "subtitles"
-        ? "original"
-        : voiceover === "Yes"
-        ? "dubbed"
-        : "original",
-    erase_original_subtitles: isRemoveSubtitle,  // ✅ only true if subtitle = "Source" and jobType = "subtitles"
-    allow_lip_syncing: false,                     // optional, false by default
-  },
-  project_name: uploadedFile.name,
-});
+      // Determine the correct subtitle value based on job type and user selections
+      let subtitleValue: string;
+      if (jobType === "translation") {
+        // For translation job: use the selected subtitle option
+        subtitleValue = subtitle.toLowerCase();
+      } else {
+        // For subtitles job: depends on requireTranslation
+        if (requireTranslation === "Yes") {
+          // If translation is required, use the selected subtitle option
+          subtitleValue = subtitle.toLowerCase();
+        } else {
+          // If no translation required, default to "source" (add subtitles in source language)
+          subtitleValue = "source";
+        }
+      }
+
+      const newProject = await projectService.createProject({
+        video_id: videoId,
+        job_settings: {
+          source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
+          target_language: jobType === "translation" ? getLangCode(transto) : (requireTranslation === "Yes" ? getLangCode(transto) : undefined),
+          subtitles_enabled: subtitleValue as SubtitleFormat,
+          audio_option:
+            jobType === "subtitles"
+              ? "original"
+              : voiceover === "Yes"
+              ? "dubbed"
+              : "original",
+          erase_original_subtitles: isRemoveSubtitle,
+          allow_lip_syncing: false,
+        },
+        project_name: uploadedFile.name,
+      });
 
       setModalState(null);
       router.replace(`/magic/${newProject.project_id}`);
@@ -190,7 +214,7 @@ const newProject = await projectService.createProject({
           <div className="flex flex-col items-center gap-4.5 w-full">
             {jobType === "translation" ? (
               <>
-                {/* Language selectors */}
+                {/* Language selectors for translation */}
                 <div className="flex gap-3 w-full">
                   <div className="flex-1 relative" ref={sourceRef}>
                     <div
@@ -265,14 +289,98 @@ const newProject = await projectService.createProject({
                 <Options label="Subtitles" options={["None", "Source", "Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
               </>
             ) : (
-              // Subtitles job type: fixed radio, no language choices
-              <Options
-  label="Subtitle Action"
-  options={["Add Subtitles", "Remove Subtitles"]}
-  value={"Add Subtitles"}        // default selection
-  onChange={() => {}}
-  disabled={true}  // disable interaction
-/>
+              <>
+                {/* Subtitles job type */}
+                <Options 
+                  label="Require Translation" 
+                  options={["Yes", "No"]} 
+                  value={requireTranslation} 
+                  onChange={(value) => {
+                    setRequireTranslation(value as "Yes" | "No");
+                    if (value === "No") {
+                      setShowMissingTargetWarning(false);
+                    }
+                  }} 
+                />
+
+                {requireTranslation === "Yes" && (
+                  <>
+                    <div className="flex gap-3 w-full">
+                      <div className="flex-1 relative" ref={sourceRef}>
+                        <div
+                          className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
+                          onClick={() => setIsSourceOpen(!isSourceOpen)}
+                        >
+                          <label className="block text-xs text-gray-500 mb-1">Source Language</label>
+                          <p>{source}</p>
+                        </div>
+                        {isSourceOpen && (
+                          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
+                            <div
+                              className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                              onClick={() => {
+                                setSource("Auto Detect");
+                                setIsSourceOpen(false);
+                              }}
+                            >
+                              Auto Detect
+                            </div>
+                            {languages.map((lang) => (
+                              <div
+                                key={lang.code}
+                                className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                                onClick={() => {
+                                  setSource(lang.name);
+                                  setIsSourceOpen(false);
+                                }}
+                              >
+                                {lang.name}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="flex-1 relative" ref={targetRef}>
+                        <div
+                          className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
+                          onClick={() => setIsTargetOpen(!isTargetOpen)}
+                        >
+                          <label className="block text-xs text-gray-500 mb-1">Translate To</label>
+                          <p>{transto}</p>
+                        </div>
+                        {isTargetOpen && (
+                          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
+                            {languages.map((lang) => (
+                              <div
+                                key={lang.code}
+                                className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                                onClick={() => {
+                                  setTransto(lang.name);
+                                  setShowMissingTargetWarning(false);
+                                  setIsTargetOpen(false);
+                                }}
+                              >
+                                {lang.name}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {showMissingTargetWarning && (
+                      <p className="text-red-500 text-sm mt-1 -mb-3">
+                        Please select a target language before proceeding.
+                      </p>
+                    )}
+                  </>
+                )}
+
+                {requireTranslation === "Yes" && (
+                  <Options label="Subtitles" options={["Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
+                )}
+              </>
             )}
           </div>
 

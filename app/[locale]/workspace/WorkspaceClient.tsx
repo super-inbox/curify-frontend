@@ -71,10 +71,20 @@ export default function ProfileClientPage() {
 
   const tools = [
     {
-      title: "Video Translation",
+      title: "Video Dubbing",
       desc: "Translate your video into any language with accurate localization and voice sync",
       status: "create",
       onClick: () => openModal('translation'),
+    },
+    {
+      title: (
+        <span>
+          Subtitle Captioner <span style={{ color: 'red', fontWeight: 'bold' }}>for FREE</span>
+        </span>
+      ),
+      desc: "Auto-generate multilingual subtitles to enhance clarity and accessibility",
+      status: "create",
+      onClick: () => openModal('subtitles'),
     },
     {
       title: "Lip Syncing",
@@ -83,18 +93,13 @@ export default function ProfileClientPage() {
       onClick: () => alert("Launch lip sync flow"),
     },
     {
-      title: "Add Subtitles",
-      desc: "Auto-generate multilingual subtitles to enhance clarity and accessibility",
-      status: "create",
-      onClick: () => openModal('subtitles'),
-    },
-    {
-      title: "Remove Original Subtitles",
-      desc: "Remove existing subtitles to make room for translation and custom captions",
+      title: "Style Transfer",
+      desc: "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon",
       status: "coming_soon",
-      onClick: () => alert("Launch subtitle removal flow"),
+      onClick: () => alert("Style transfer feature coming soon"),
     },
   ];
+  
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
