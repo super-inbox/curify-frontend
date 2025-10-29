@@ -71,12 +71,14 @@ export default function ProfileClientPage() {
 
   const tools = [
     {
+      id: 'video-dubbing',
       title: "Video Dubbing",
       desc: "Translate your video into any language with accurate localization and voice sync",
       status: "create",
       onClick: () => openModal('translation'),
     },
     {
+      id: 'subtitle-captioner',
       title: (
         <span>
           Subtitle Captioner <span style={{ color: 'red', fontWeight: 'bold' }}>for FREE</span>
@@ -87,12 +89,14 @@ export default function ProfileClientPage() {
       onClick: () => openModal('subtitles'),
     },
     {
+      id: 'lip-syncing',
       title: "Lip Syncing",
       desc: "Match lips to speech perfectly with AI-powered lip sync",
       status: "coming_soon",
       onClick: () => alert("Launch lip sync flow"),
     },
     {
+      id: 'style-transfer',
       title: "Style Transfer",
       desc: "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon",
       status: "coming_soon",
@@ -106,7 +110,7 @@ export default function ProfileClientPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {tools.map((tool) => (
           <div
-            key={tool.title}
+            key={tool.id}
             className="rounded-2xl shadow-lg p-5 flex flex-col justify-between bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] border border-gray-100"
           >
             <div className="flex-grow">
