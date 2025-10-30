@@ -10,6 +10,7 @@ import Icon from "../_components/Icon";
 import BtnP from "../_components/button/ButtonPrimary";
 import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
+import { videoService } from "@/services/video";
 import { getLangCode, languages } from "@/lib/language_utils";
 import { SubtitleFormat, JobSettings } from "@/types/projects";
 import { userAtom } from "@/app/atoms/atoms";
@@ -41,6 +42,8 @@ export default function CreateNewModal() {
   const [requireTranslation, setRequireTranslation] = useState<"Yes" | "No">("No");
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [showMissingTargetWarning, setShowMissingTargetWarning] = useState(false);
+  const [youtubeUrl, setYoutubeUrl] = useState<string>("");
+  const [isYoutubeUpload, setIsYoutubeUpload] = useState<boolean>(false);
 
   const [remainingCredits, setRemainingCredits] = useState<number>(0);
 
@@ -160,37 +163,102 @@ export default function CreateNewModal() {
       {/* Upload Modal */}
       <Modal title={title} open={modalState === "add"}>
         {!localPreviewUrl ? (
-          <Upload
-            onPreviewReady={(localUrl, file) => {
-              setLocalPreviewUrl(localUrl);
-              setUploadedFile(file);
-              setIsUploading(true);
-            }}
-            onUploaded={(id, blobUrl) => {
-              setVideoId(id);
-              setVideoBlobUrl(blobUrl);
-              setIsUploading(false);
-              setModalState("setting");
-            }}
-          />
-        ) : (
+          <div className="flex flex-col items-center w-full">
+            <Upload
+              onPreviewReady={(localUrl, file) => {
+                setLocalPreviewUrl(localUrl);
+                setUploadedFile(file);
+                setIsUploading(true);
+                setIsYoutubeUpload(false);
+              }}
+              onUploaded={(id, blobUrl) => {
+                setVideoId(id);
+                setVideoBlobUrl(blobUrl);
+                setIsUploading(false);
+                setModalState("setting");
+              }}
+            />
+            
+            {/* OR Divider */}
+            <div className="flex items-center gap-3 w-full max-w-md my-6">
+              <div className="flex-1 h-px bg-gray-300"></div>
+              <span className="text-gray-500 text-sm font-medium">OR</span>
+              <div className="flex-1 h-px bg-gray-300"></div>
+            </div>
+
+            {/* YouTube URL Input */}
+            <div className="w-full max-w-md">
+              <input
+                type="text"
+                placeholder="https://www.youtube.com/shorts/t84v79KXbFY"
+                value={youtubeUrl}
+                onChange={(e) => setYoutubeUrl(e.target.value)}
+                onKeyDown={async (e) => {
+                  if (e.key === 'Enter' && youtubeUrl.trim() && !isUploading) {
+                    e.preventDefault();
+                    
+                    setIsUploading(true);
+                    setIsYoutubeUpload(true);
+                    
+                    try {
+                      // Use the videoService API
+                      const result = await videoService.uploadYoutubeVideo(youtubeUrl);
+                      
+                      if (!result || !result.video_id) {
+                        throw new Error('Invalid response from server');
+                      }
+                      
+                      setVideoId(result.video_id);
+                      setVideoBlobUrl(result.blob_url);
+                      setLocalPreviewUrl(result.blob_url); // Use blob URL for preview
+                      setUploadedFile(new File([], `youtube_${result.video_id}.mp4`)); // Create dummy file for project creation
+                      setIsUploading(false);
+                      setModalState("setting");
+                    } catch (error) {
+                      console.error('YouTube upload failed:', error);
+                      alert('Failed to upload YouTube video. Please check the URL and try again.');
+                      setIsUploading(false);
+                      setIsYoutubeUpload(false);
+                    }
+                  }
+                }}
+                disabled={isUploading}
+                className="w-full px-4 py-3 border-2 border-blue-400 rounded-lg text-sm focus:outline-none focus:border-blue-600 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+              />
+            </div>
+          </div>
+        ) : isUploading ? (
+          // Upload Progress View
           <div className="flex flex-col items-center">
             <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
               <video
                 src={localPreviewUrl}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain opacity-50"
                 onLoadedMetadata={getDuration}
-                controls
               />
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+                <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-3"></div>
+                <p className="text-white font-medium text-sm">
+                  {isYoutubeUpload ? 'Downloading from YouTube...' : 'Uploading video...'}
+                </p>
+                <p className="text-white/70 text-xs mt-1">Please wait while we process your file</p>
+              </div>
               <div className="absolute w-full h-9 bottom-0 z-1 flex items-center justify-end pr-3 bg-[linear-gradient(0deg,rgba(var(--c1-rgb),0.3),rgba(var(--c1-rgb),0))] text-white">
                 {duration}
               </div>
             </div>
+            
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <svg className="w-4 h-4 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+              <span>Processing options will appear after upload completes</span>
+            </div>
           </div>
-        )}
+        ) : null}
       </Modal>
 
-      {/* Settings Modal */}
+      {/* Settings Modal - Only shows after upload completes */}
       <Modal title={title} open={modalState === "setting"}>
         <div className="flex flex-col items-center">
           <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
