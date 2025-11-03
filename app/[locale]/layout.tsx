@@ -17,40 +17,6 @@ import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
 import UserHydrator from "./UserHydrator";
 
-export const metadata: Metadata = {
-  title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
-  description:
-    "Curify is an AI-native content creation platform offering voiceover, dubbing, subtitles, and lip sync in 170+ languages. Translate and localize your videos instantly.",
-  keywords: [
-    "AI video translation",
-    "video dubbing",
-    "bilingual subtitles",
-    "voice cloning",
-    "AI lip sync",
-    "Curify Studio",
-    "automated content localization"
-  ],
-  openGraph: {
-    title: "Curify Studio | AI Video Translation & Dubbing",
-    description:
-      "AI-powered voiceover, dubbing, and subtitles in 170+ languages with emotional tone and lip sync.",
-    url: "https://curify-ai.com",
-    siteName: "Curify Studio",
-    images: [
-      {
-        url: "https://curify-ai.com/og-banner.png",
-        width: 1200,
-        height: 630,
-        alt: "Curify Studio AI platform",
-      },
-    ],
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://curify-ai.com",
-  },
-};
-
 interface Props {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -59,7 +25,6 @@ interface Props {
 export default async function LocaleLayout(props: Props) {
   const { children, params } = props;
   const { locale } = await params;
-
   const session = await getServerSession(authOptions);
 
   if (!hasLocale(routing.locales, locale)) {
@@ -68,9 +33,63 @@ export default async function LocaleLayout(props: Props) {
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
+  const localizedMeta = {
+    en: {
+      title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
+      description:
+        "Curify is an AI-native content creation platform offering voiceover, dubbing, subtitles, and lip sync in 170+ languages.",
+    },
+    zh: {
+      title: "Curify Studio | 视频翻译与配音 AI 平台",
+      description: "Curify 是一个 AI 内容创作平台，支持 170+ 语言的视频翻译、配音与字幕生成。",
+    },
+    es: {
+      title: "Curify Studio | Plataforma de Doblaje y Subtítulos con IA",
+      description:
+        "Curify es una plataforma de creación de contenido potenciada por IA para traducción y localización de videos en más de 170 idiomas.",
+    },
+    fr: {
+      title: "Curify Studio | Traduction et doublage vidéo IA",
+      description:
+        "Curify est une plateforme de création de contenu IA offrant traduction, doublage et sous-titrage vidéo en 170+ langues.",
+    },
+    de: {
+      title: "Curify Studio | KI-gestützte Videountertitelung & Übersetzung",
+      description:
+        "Curify ist eine KI-gestützte Plattform zur Videolokalisierung mit Übersetzung, Untertiteln und Lippensynchronisation.",
+    },
+    hi: {
+      title: "Curify Studio | एआई वीडियो अनुवाद और डबिंग प्लेटफॉर्म",
+      description:
+        "Curify एक एआई-संचालित वीडियो अनुवाद और डबिंग प्लेटफॉर्म है जो 170+ भाषाओं में काम करता है।",
+    },
+  };
+
   return (
     <html lang={locale}>
       <head>
+        <title>{localizedMeta[locale]?.title}</title>
+        <meta name="description" content={localizedMeta[locale]?.description} />
+        <meta property="og:title" content={localizedMeta[locale]?.title} />
+        <meta property="og:description" content={localizedMeta[locale]?.description} />
+        <meta property="og:url" content={`https://curify-ai.com/${locale}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://curify-ai.com/og-banner.png" />
+        <meta property="og:image:alt" content="Curify Studio AI platform" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* rel=alternate for multilingual SEO */}
+        {routing.locales.map((loc) => (
+          <link
+            key={loc}
+            rel="alternate"
+            hrefLang={loc}
+            href={`https://curify-ai.com/${loc}`}
+          />
+        ))}
+        <link rel="alternate" hrefLang="x-default" href="https://curify-ai.com" />
+
         {/* Google Identity Services */}
         <script src="https://accounts.google.com/gsi/client" async defer />
 
@@ -84,7 +103,8 @@ export default async function LocaleLayout(props: Props) {
             applicationCategory: "MultimediaApplication",
             url: "https://curify-ai.com",
             description:
-              "AI-powered voiceover, dubbing, and subtitles in 170+ languages. Preserve emotion and lip sync in your localized content.",
+              localizedMeta[locale]?.description ??
+              "AI-powered voiceover, dubbing, and subtitles in 170+ languages.",
             offers: {
               "@type": "Offer",
               price: "0.00",
@@ -108,7 +128,7 @@ export default async function LocaleLayout(props: Props) {
       <body>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <AppWrapper user={null}>
+            <AppWrapper user={session?.user ?? null}>
               <UserHydrator>
                 <Header />
                 <TopUpModal />

@@ -1,4 +1,5 @@
-const withNextIntl = require('next-intl/plugin')('./next-intl.config.js');
+const { routing } = require('./i18n/routing');
+const withNextIntl = require('next-intl/plugin')(routing);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

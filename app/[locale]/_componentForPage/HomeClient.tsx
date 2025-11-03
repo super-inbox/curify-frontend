@@ -7,6 +7,7 @@ import SignDrawer from "./drawer/SignDrawer";
 import EmailDrawer from "./drawer/EmailDrawer";
 import GoogleLoginButton from "../_components/button/GoogleLoginButton";
 import { useParams } from 'next/navigation';
+import { useTranslations } from "next-intl";
 
 export default function HomeClient() {
   const [activeLanguage, setActiveLanguage] = useState<'en' | 'zh' | 'es'>('en');
@@ -38,15 +39,41 @@ export default function HomeClient() {
     }
   }, [activeLanguage]);
 
-  const coreFeatures = [
-    { title: "One-Shot Translation", desc: "Complete video translation with voice-over, subtitles, and lip sync in a single process.", icon: "🎯" },
-    { title: "Tone Color Preservation", desc: "Maintains the original speaker's unique voice characteristics and tonal qualities.", icon: "🎨" },
-    { title: "Emotional Speech", desc: "AI reproduces emotional nuances, ensuring authentic expression across languages.", icon: "❤️" },
-    { title: "Lip Sync Technology", desc: "Advanced lip synchronization that perfectly matches mouth movements to translated audio.", icon: "👄" },
-    { title: "Subtitle Captioner", desc: "Intelligent subtitle generation with precise timing and natural language flow.", icon: "📝" },
-    { title: "170+ Languages", desc: "Translate your content into over 170 languages with native-level accuracy.", icon: "🌍" }
-  ];
+  const t = useTranslations();
 
+  const coreFeatures = [
+    {
+      title: t("coreFeatures.oneShot.title"),
+      desc: t("coreFeatures.oneShot.desc"),
+      icon: "🎯",
+    },
+    {
+      title: t("coreFeatures.toneColor.title"),
+      desc: t("coreFeatures.toneColor.desc"),
+      icon: "🎨",
+    },
+    {
+      title: t("coreFeatures.emotional.title"),
+      desc: t("coreFeatures.emotional.desc"),
+      icon: "❤️",
+    },
+    {
+      title: t("coreFeatures.lipSync.title"),
+      desc: t("coreFeatures.lipSync.desc"),
+      icon: "👄",
+    },
+    {
+      title: t("coreFeatures.subtitle.title"),
+      desc: t("coreFeatures.subtitle.desc"),
+      icon: "📝",
+    },
+    {
+      title: t("coreFeatures.languages.title"),
+      desc: t("coreFeatures.languages.desc"),
+      icon: "🌍",
+    },
+  ];
+   
   const upcomingProducts = [
     {
       title: "Style Transfer",
@@ -71,7 +98,7 @@ export default function HomeClient() {
   return (
     <>
       <BgParticle />
-      <div className="relative flex flex-col items-center mt-24 lg:mt-28 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+      <div className="relative flex flex-col items-center mt-36 lg:mt-40 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
           Power Content Creation with AI
         </h1>
@@ -88,7 +115,6 @@ export default function HomeClient() {
 
         <br />
 
-        {/* Auth Buttons Section */}
         <div className="flex flex-col sm:flex-row gap-8 items-center justify-center mb-8">
           <a href={`/${locale}/contact`}>
             <button className="h-14 px-7 rounded-xl text-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition cursor-pointer">
@@ -99,7 +125,6 @@ export default function HomeClient() {
           <GoogleLoginButton callbackUrl="/workspace?fromLocalStorage=true" variant="home" />
         </div>
 
-        {/* Demo Video Section */}
         <section className="w-full mt-10 mb-20">
           <div className="text-center mb-8">
             <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
@@ -144,27 +169,50 @@ export default function HomeClient() {
         </section>
 
         {/* Products & Services */}
-        <section className="w-full mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Products & Services</h2>
-            <p className="text-base sm:text-lg text-[var(--c2)]">
-              Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
-            </p>
-          </div>
+<section className="w-full mb-20">
+  <div className="text-center mb-12">
+    <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Products & Services</h2>
+    <p className="text-base sm:text-lg text-[var(--c2)]">
+      Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
+    </p>
+  </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105"
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{feature.title}</h3>
-                <p className="text-sm text-[var(--c2)] leading-relaxed">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {coreFeatures.map((feature, index) => {
+      const isSubtitle = feature.title.toLowerCase().includes("subtitle");
+      const isDubbing = feature.title.toLowerCase().includes("translation");
+
+      const card = (
+        <div
+          className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105"
+        >
+          <div className="text-4xl mb-4">{feature.icon}</div>
+          <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{feature.title}</h3>
+          <p className="text-sm text-[var(--c2)] leading-relaxed">{feature.desc}</p>
+        </div>
+      );
+
+      if (isSubtitle) {
+        return (
+          <a key={index} href="/bilingual-subtitles" className="block hover:no-underline">
+            {card}
+          </a>
+        );
+      }
+
+      if (isDubbing) {
+        return (
+          <a key={index} href="/video-dubbing" className="block hover:no-underline">
+            {card}
+          </a>
+        );
+      }
+
+      return <div key={index}>{card}</div>;
+    })}
+  </div>
+</section>
+
 
         {/* Target Audience */}
         <section className="w-full mb-20">
@@ -179,55 +227,52 @@ export default function HomeClient() {
           </div>
         </section>
 
-{/* Upcoming Products */}
-<section className="w-full mb-20">
-<div className="text-center mb-12">
-<h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Coming Soon</h2>
-<p className="text-base sm:text-lg text-[var(--c2)]">
-Next-generation features in development
-</p>
-</div>
+        {/* Upcoming Products */}
+        <section className="w-full mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Coming Soon</h2>
+            <p className="text-base sm:text-lg text-[var(--c2)]">
+              Next-generation features in development
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {upcomingProducts.map((product, index) => {
+              let transcript = "This demo showcases an upcoming feature.";
+              if (product.title === "Style Transfer") {
+                transcript = "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer.";
+              } else if (product.title === "Manga Translation") {
+                transcript = "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing.";
+              } else if (product.title === "Templated Video Generation") {
+                transcript = "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals.";
+              }
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-{upcomingProducts.map((product, index) => {
-let transcript = "This demo showcases an upcoming feature.";
-if (product.title === "Style Transfer") {
-transcript = "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer.";
-} else if (product.title === "Manga Translation") {
-transcript = "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing.";
-} else if (product.title === "Templated Video Generation") {
-transcript = "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals.";
-}
-
-
-return (
-<div
-key={index}
-className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
->
-<div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
-{product.status}
-</div>
-<div className="text-4xl mb-4">{product.icon}</div>
-<h3 className="text-xl font-bold text-[var(--c1)] mb-3">{product.title}</h3>
-<p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{product.desc}</p>
-<video
-className="rounded-lg shadow-md w-full mt-auto"
-controls
-loop
-src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
-aria-label={`Demo video for ${product.title}`}
-/>
-<p className="text-xs text-gray-400 mt-2">
-Transcript: {transcript}
-</p>
-</div>
-);
-})}
-</div>
-</section>
-
+              return (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
+                >
+                  <div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
+                    {product.status}
+                  </div>
+                  <div className="text-4xl mb-4">{product.icon}</div>
+                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{product.title}</h3>
+                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{product.desc}</p>
+                  <video
+                    className="rounded-lg shadow-md w-full mt-auto"
+                    controls
+                    loop
+                    src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
+                    aria-label={`Demo video for ${product.title}`}
+                  />
+                  <p className="text-xs text-gray-400 mt-2">
+                    Transcript: {transcript}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </div>
     </>
   );
