@@ -26,6 +26,14 @@ const blogPosts = [
     tag: 'Tools & Pipeline',
     image: '/images/ae-vs-comfyui.jpg',
   },
+  {
+    slug: 'ai-comic-animation-demo',
+    title: 'Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide',
+    date: 'November 3, 2025',
+    readTime: '6 min read',
+    tag: 'AI + Storytelling',
+    image: '/images/midnight-train-prompt.jpg', // ⬅️ replace with your actual image path
+  },
 ];
 
 export default function BlogListPage() {
