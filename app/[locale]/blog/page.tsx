@@ -4,7 +4,7 @@ import Link from 'next/link';
 const blogPosts = [
   {
     slug: 'storyboard-to-pipeline',
-    title: 'Part 1: From Storyboards to AI Pipelines',
+    title: 'Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide',
     date: 'October 28, 2025',
     readTime: '5 min read',
     tag: 'Animation',
