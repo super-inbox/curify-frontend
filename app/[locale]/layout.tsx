@@ -33,7 +33,7 @@ export default async function LocaleLayout(props: Props) {
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
-  const localizedMeta = {
+  const localizedMeta: Record<string, { title: string; description: string }> = {
     en: {
       title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
       description:
@@ -63,15 +63,32 @@ export default async function LocaleLayout(props: Props) {
       description:
         "Curify एक एआई-संचालित वीडियो अनुवाद और डबिंग प्लेटफॉर्म है जो 170+ भाषाओं में काम करता है।",
     },
+    ru: {
+      title: "Curify Studio | Платформа для перевода и дубляжа видео с ИИ",
+      description:
+        "Curify — это платформа на базе ИИ для перевода, дубляжа и субтитров на 170+ языках.",
+    },
+    ja: {
+      title: "Curify Studio | AI動画翻訳・吹き替えプラットフォーム",
+      description:
+        "CurifyはAIを活用した動画翻訳・吹き替え・字幕生成プラットフォームです（170以上の言語対応）。",
+    },
+    ko: {
+      title: "Curify Studio | AI 영상 번역 및 더빙 플랫폼",
+      description:
+        "Curify는 170개 이상의 언어로 영상 번역, 더빙 및 자막 생성을 지원하는 AI 콘텐츠 플랫폼입니다.",
+    },
   };
+
+  const meta = localizedMeta[locale];
 
   return (
     <html lang={locale}>
       <head>
-        <title>{localizedMeta[locale]?.title}</title>
-        <meta name="description" content={localizedMeta[locale]?.description} />
-        <meta property="og:title" content={localizedMeta[locale]?.title} />
-        <meta property="og:description" content={localizedMeta[locale]?.description} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:url" content={`https://curify-ai.com/${locale}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://curify-ai.com/og-banner.png" />
@@ -103,7 +120,7 @@ export default async function LocaleLayout(props: Props) {
             applicationCategory: "MultimediaApplication",
             url: "https://curify-ai.com",
             description:
-              localizedMeta[locale]?.description ??
+              meta.description ??
               "AI-powered voiceover, dubbing, and subtitles in 170+ languages.",
             offers: {
               "@type": "Offer",
@@ -128,7 +145,7 @@ export default async function LocaleLayout(props: Props) {
       <body>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <AppWrapper user={session?.user ?? null}>
+          <AppWrapper user={null}>
               <UserHydrator>
                 <Header />
                 <TopUpModal />
