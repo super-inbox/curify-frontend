@@ -47,9 +47,123 @@ export default function StoryboardToPipelinePost() {
         <li>Temporal & multimodal control: image + voice + scene coherence</li>
       </ul>
 
-      <p>
+      <p className="mb-12">
         Animation today is both an art and a structured orchestration challenge. We
         think like directors, but build like engineers.
+      </p>
+
+      <h2 className="text-3xl font-semibold mb-6">
+        🧪 Tutorial: Turn Your Prompt into an AI-Powered Animation
+      </h2>
+
+      <p className="mb-4">
+        Let’s walk through a simple example to show how AI pipelines work in
+        practice.
+      </p>
+
+      <h3 className="text-2xl font-semibold mt-6 mb-2">
+        📝 Step 1: Start with a Basic Prompt
+      </h3>
+      <blockquote className="italic bg-gray-100 px-4 py-2 rounded border-l-4 border-blue-400 mb-4">
+        A girl stands at a midnight train station, wind blowing her hair.
+      </blockquote>
+
+      <p className="mb-4">With the help of GPT, we expand it into a richer visual prompt:</p>
+
+      <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto mb-6">
+A young woman standing alone on a midnight train platform, dim lights reflecting off the wet ground, wind blowing her hair, cinematic lighting, anime art style, 4K</pre>
+
+      <h3 className="text-2xl font-semibold mt-10 mb-4">🎬 Step 2: Convert Prompt to a Storyboard Table</h3>
+
+      <table className="table-auto border mt-4 mb-8 w-full text-sm">
+        <thead>
+          <tr className="bg-gray-50">
+            <th className="border px-4 py-2 text-left">Scene</th>
+            <th className="border px-4 py-2 text-left">Shot</th>
+            <th className="border px-4 py-2 text-left">Camera</th>
+            <th className="border px-4 py-2 text-left">Visual</th>
+            <th className="border px-4 py-2 text-left">Dialogue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border px-4 py-2">1</td>
+            <td className="border px-4 py-2">Wide</td>
+            <td className="border px-4 py-2">Sway</td>
+            <td className="border px-4 py-2">
+              The girl waits alone at the platform. Wet pavement reflects dim station lights. Wind gently lifts her hair.
+            </td>
+            <td className="border px-4 py-2">(No dialogue – ambient station sounds)</td>
+          </tr>
+          <tr>
+            <td className="border px-4 py-2">2</td>
+            <td className="border px-4 py-2">Medium</td>
+            <td className="border px-4 py-2">Push</td>
+            <td className="border px-4 py-2">
+              The camera slowly zooms in on her eyes. A distant light appears — a train approaches.
+            </td>
+            <td className="border px-4 py-2">She whispers, “It’s time.”</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 className="text-2xl font-semibold mt-10 mb-4">🛠️ Step 3: Generate Visuals</h3>
+      <ul className="list-disc list-inside mb-6">
+        <li>
+          🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each scene description into a high-res image.
+        </li>
+        <li>
+          Keep the style consistent by using the same LoRA model, art style, and seed.
+        </li>
+      </ul>
+
+      <h3 className="text-2xl font-semibold mt-10 mb-4">🎬 Step 4: Add Motion and Atmosphere in After Effects</h3>
+      <ul className="list-disc list-inside mb-6">
+        <li>
+          Import images into <strong>Adobe After Effects</strong>
+        </li>
+        <li>
+          Apply keyframe animations: pan, zoom, fog overlays, glow effects
+        </li>
+        <li>
+          Add ambient sound or cinematic transitions
+        </li>
+      </ul>
+
+      <h3 className="text-2xl font-semibold mt-10 mb-4">🎧 Step 5: Add Voice and Subtitles</h3>
+      <ul className="list-disc list-inside mb-6">
+        <li>
+          Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers
+        </li>
+        <li>
+          For acronyms (like API, NBA), generate English snippets separately and merge in post
+        </li>
+        <li>
+          Add subtitles using `.srt` or `.json` files synced to voice
+        </li>
+      </ul>
+
+      <h3 className="text-2xl font-semibold mt-10 mb-4">📦 Step 6: Final Composition with FFMPEG</h3>
+      <p className="mb-2">Use FFMPEG to combine all pieces into one video:</p>
+      <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto mb-6">
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output_temp.mp4
+ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex \"[0:a][1:a]amix=inputs=2\" output_final.mp4
+      </pre>
+
+      <h3 className="text-2xl font-semibold mt-10 mb-4">📁 What You'll Need</h3>
+      <ul className="list-disc list-inside mb-6">
+        <li><code>storyboard.json</code> – short scene descriptions</li>
+        <li><code>prompts.json</code> – GPT-expanded prompts</li>
+        <li><code>scene1.png</code>, <code>scene2.png</code> – image outputs</li>
+        <li><code>scene1.wav</code> – voice narration per scene</li>
+        <li><code>build_project.jsx</code> – AE import + animation script</li>
+        <li><code>combine_video.sh</code> – FFMPEG merge script</li>
+      </ul>
+
+      <p className="mt-10 text-lg">
+        🚀 Ready to bring your storyboard to life with AI?
+        <br />
+        <strong>We can provide a full starter kit</strong> with examples, templates, and tools to help you get started.
       </p>
     </article>
   );
