@@ -4,7 +4,7 @@ import Link from 'next/link';
 const blogPosts = [
   {
     slug: 'storyboard-to-pipeline',
-    title: 'Part 1: From Storyboards to AI Pipelines',
+    title: 'Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide',
     date: 'October 28, 2025',
     readTime: '5 min read',
     tag: 'Animation',
@@ -25,14 +25,6 @@ const blogPosts = [
     readTime: '7 min read',
     tag: 'Tools & Pipeline',
     image: '/images/ae-vs-comfyui.jpg',
-  },
-  {
-    slug: 'ai-comic-animation-demo',
-    title: 'Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide',
-    date: 'November 3, 2025',
-    readTime: '6 min read',
-    tag: 'AI + Storytelling',
-    image: '/images/midnight-train-prompt.jpg', // ⬅️ replace with your actual image path
   },
 ];
 

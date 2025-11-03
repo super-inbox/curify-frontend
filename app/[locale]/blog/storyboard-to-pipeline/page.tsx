@@ -11,7 +11,7 @@ export default function StoryboardToPipelinePost() {
   return (
     <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
       <h1 className="text-4xl font-bold mb-8">
-        🎬 From Storyboards to AI Pipelines
+      Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide
       </h1>
 
       <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
@@ -36,6 +36,11 @@ export default function StoryboardToPipelinePost() {
         that level of precision.
       </p>
 
+      <p className="mb-4">
+        Animation today is both an art and a structured orchestration challenge. We
+        think like directors, but build like engineers.
+      </p>
+
       <p className="mb-4 clear-left">
         That’s why we build <strong>Controlled Generation Pipelines</strong> instead
         of one-shot generation. These pipelines combine structure and creativity:
@@ -46,18 +51,8 @@ export default function StoryboardToPipelinePost() {
         <li>ComfyUI-based workflows: modular, reproducible, composable</li>
         <li>Temporal & multimodal control: image + voice + scene coherence</li>
       </ul>
-
-      <p className="mb-12">
-        Animation today is both an art and a structured orchestration challenge. We
-        think like directors, but build like engineers.
-      </p>
-
-      <h2 className="text-3xl font-semibold mb-6">
-        🧪 Tutorial: Turn Your Prompt into an AI-Powered Animation
-      </h2>
-
       <p className="mb-4">
-        Let’s walk through a simple example to show how AI pipelines work in
+        Now, let’s walk through a simple example to show how AI pipelines work in
         practice.
       </p>
 
