@@ -25,6 +25,31 @@
     "desc": "Translate your content into over 170 languages with native-level accuracy."
   }
 },
+  "coming": {
+    "title": "Coming Soon",
+    "subtitle": "Next-generation features in development",
+    "styleTransfer": {
+      "title": "Style Transfer",
+      "desc": "Apply cinematic or brand-specific styles to your videos with AI-powered visual transformation.",
+      "icon": "🎨",
+      "status": "Coming Q3 2025",
+      "transcript": "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer."
+    },
+    "mangaTranslation": {
+      "title": "Manga Translation",
+      "desc": "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
+      "icon": "📚",
+      "status": "Coming Q3 2025",
+      "transcript": "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing."
+    },
+    "templatedVideo": {
+      "title": "Templated Video Generation",
+      "desc": "Create professional videos from templates with AI-generated content and custom branding.",
+      "icon": "🎬",
+      "status": "Coming Q4 2025",
+      "transcript": "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals."
+    }
+  },
   "export": {
     "title": "Export",
     "export": "Export",

@@ -76,23 +76,23 @@ export default function HomeClient() {
    
   const upcomingProducts = [
     {
-      title: "Style Transfer",
-      desc: "Apply cinematic or brand-specific styles to your videos with AI-powered visual transformation.",
+      title: t("upcoming.styleTransfer.title"),
+      desc: t("upcoming.styleTransfer.desc"),
       icon: "🎨",
-      status: "Coming Q3 2025"
+      status: t("upcoming.statusQ3")
     },
     {
-      title: "Manga Translation",
-      desc: "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
+      title: t("upcoming.mangaTranslation.title"),
+      desc: t("upcoming.mangaTranslation.desc"),
       icon: "📚",
-      status: "Coming Q3 2025"
+      status: t("upcoming.statusQ3")
     },
     {
-      title: "Templated Video Generation",
-      desc: "Create professional videos from templates with AI-generated content and custom branding.",
+      title: t("upcoming.templatedVideo.title"),
+      desc: t("upcoming.templatedVideo.desc"),
       icon: "🎬",
-      status: "Coming Q4 2025"
-    }
+      status: t("upcoming.statusQ4")
+    },
   ];
 
   return (
@@ -143,7 +143,7 @@ export default function HomeClient() {
                 aria-label="AI-translated multilingual demo video with emotion and lip sync"
               />
               <p className="text-sm text-gray-500 mt-4">
-                Transcript: “Welcome to Curify Studio. In this video, we showcase how AI translates and dubs content across languages...”
+                Transcript: "Welcome to Curify Studio. In this video, we showcase how AI translates and dubs content across languages..."
               </p>
               <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
                 {Object.entries(languages).map(([code, lang]) => (
@@ -169,50 +169,49 @@ export default function HomeClient() {
         </section>
 
         {/* Products & Services */}
-<section className="w-full mb-20">
-  <div className="text-center mb-12">
-    <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Products & Services</h2>
-    <p className="text-base sm:text-lg text-[var(--c2)]">
-      Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
-    </p>
-  </div>
+        <section className="w-full mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Products & Services</h2>
+            <p className="text-base sm:text-lg text-[var(--c2)]">
+              Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
+            </p>
+          </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {coreFeatures.map((feature, index) => {
-      const isSubtitle = feature.title.toLowerCase().includes("subtitle");
-      const isDubbing = feature.title.toLowerCase().includes("translation");
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreFeatures.map((feature, index) => {
+              const isSubtitle = feature.title.toLowerCase().includes("subtitle");
+              const isDubbing = feature.title.toLowerCase().includes("translation");
 
-      const card = (
-        <div
-          className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105"
-        >
-          <div className="text-4xl mb-4">{feature.icon}</div>
-          <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{feature.title}</h3>
-          <p className="text-sm text-[var(--c2)] leading-relaxed">{feature.desc}</p>
-        </div>
-      );
+              const card = (
+                <div
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105"
+                >
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{feature.title}</h3>
+                  <p className="text-sm text-[var(--c2)] leading-relaxed">{feature.desc}</p>
+                </div>
+              );
 
-      if (isSubtitle) {
-        return (
-          <a key={index} href="/bilingual-subtitles" className="block hover:no-underline">
-            {card}
-          </a>
-        );
-      }
+              if (isSubtitle) {
+                return (
+                  <a key={index} href="/bilingual-subtitles" className="block hover:no-underline">
+                    {card}
+                  </a>
+                );
+              }
 
-      if (isDubbing) {
-        return (
-          <a key={index} href="/video-dubbing" className="block hover:no-underline">
-            {card}
-          </a>
-        );
-      }
+              if (isDubbing) {
+                return (
+                  <a key={index} href="/video-dubbing" className="block hover:no-underline">
+                    {card}
+                  </a>
+                );
+              }
 
-      return <div key={index}>{card}</div>;
-    })}
-  </div>
-</section>
-
+              return <div key={index}>{card}</div>;
+            })}
+          </div>
+        </section>
 
         {/* Target Audience */}
         <section className="w-full mb-20">
@@ -230,43 +229,35 @@ export default function HomeClient() {
         {/* Upcoming Products */}
         <section className="w-full mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">Coming Soon</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">{t("coming.title")}</h2>
             <p className="text-base sm:text-lg text-[var(--c2)]">
-              Next-generation features in development
+              {t("coming.subtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {upcomingProducts.map((product, index) => {
-              let transcript = "This demo showcases an upcoming feature.";
-              if (product.title === "Style Transfer") {
-                transcript = "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer.";
-              } else if (product.title === "Manga Translation") {
-                transcript = "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing.";
-              } else if (product.title === "Templated Video Generation") {
-                transcript = "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals.";
-              }
-
+            {["styleTransfer", "mangaTranslation", "templatedVideo"].map((key, index) => {
+              const transcriptKey = `coming.${key}.transcript`;
               return (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
                 >
                   <div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
-                    {product.status}
+                    {t(`coming.${key}.status`)}
                   </div>
-                  <div className="text-4xl mb-4">{product.icon}</div>
-                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{product.title}</h3>
-                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{product.desc}</p>
+                  <div className="text-4xl mb-4">{t(`coming.${key}.icon`)}</div>
+                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{t(`coming.${key}.title`)}</h3>
+                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{t(`coming.${key}.desc`)}</p>
                   <video
                     className="rounded-lg shadow-md w-full mt-auto"
                     controls
                     loop
-                    src={`/video/demo_${product.title.toLowerCase().replace(/\s+/g, "_")}.mp4`}
-                    aria-label={`Demo video for ${product.title}`}
+                    src={`/video/demo_${key}.mp4`}
+                    aria-label={`Demo video for ${t(`coming.${key}.title`)}`}
                   />
                   <p className="text-xs text-gray-400 mt-2">
-                    Transcript: {transcript}
+                    Transcript: {t(transcriptKey)}
                   </p>
                 </div>
               );
