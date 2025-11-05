@@ -11,16 +11,17 @@ const config = {
     { href: "https://curify-ai.com/en", hreflang: "en" },
     { href: "https://curify-ai.com/zh", hreflang: "zh" },
     { href: "https://curify-ai.com/es", hreflang: "es" },
+    { href: "https://curify-ai.com/de", hreflang: "de" },
   ],
 
   i18n: {
-    locales: ["en", "zh", "es"],
+    locales: ["en", "zh", "es", "de"],
     defaultLocale: "en",
   },
 
   // ✅ Add explicit paths for your main public pages
   additionalPaths: async (config) => {
-    const locales = ["en", "zh", "es"];
+    const locales = ["en", "zh", "es", "de"];
     const basePaths = [
       "",
       "/contact",
