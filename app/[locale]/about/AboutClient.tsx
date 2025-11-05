@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function AboutClient() {
 
   
-  const t = useTranslations('About');
+  const t = useTranslations();
   const technologies = [
     {
       key: "multimodal",

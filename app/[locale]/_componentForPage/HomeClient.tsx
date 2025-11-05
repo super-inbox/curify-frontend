@@ -229,39 +229,37 @@ export default function HomeClient() {
         {/* Upcoming Products */}
         <section className="w-full mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">{t("coming.title")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">{t("upcoming.title")}</h2>
             <p className="text-base sm:text-lg text-[var(--c2)]">
-              {t("coming.subtitle")}
+              {t("upcoming.subtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {["styleTransfer", "mangaTranslation", "templatedVideo"].map((key, index) => {
-              const transcriptKey = `coming.${key}.transcript`;
+              const transcriptKey = `upcoming.${key}.transcript`;
               return (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105 relative overflow-hidden flex flex-col"
-                >
-                  <div className="absolute top-2 right-2 bg-purple-600/20 text-purple-300 text-xs px-2 py-1 rounded-full font-medium">
-                    {t(`coming.${key}.status`)}
-                  </div>
-                  <div className="text-4xl mb-4">{t(`coming.${key}.icon`)}</div>
-                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{t(`coming.${key}.title`)}</h3>
-                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{t(`coming.${key}.desc`)}</p>
+                >                                    
+                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{t(`upcoming.${key}.title`)}</h3>
+                  <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{t(`upcoming.${key}.desc`)}</p>
                   <video
                     className="rounded-lg shadow-md w-full mt-auto"
                     controls
                     loop
                     src={`/video/demo_${key}.mp4`}
-                    aria-label={`Demo video for ${t(`coming.${key}.title`)}`}
+                    aria-label={`Demo video for ${t(`upcoming.${key}.title`)}`}
                   />
                   <p className="text-xs text-gray-400 mt-2">
-                    Transcript: {t(transcriptKey)}
+                    Transcript: {transcriptKey}
                   </p>
                 </div>
               );
             })}
+
+
           </div>
         </section>
       </div>
