@@ -72,5 +72,23 @@
     "subscribePlan": "Subscribe Plan",
     "supportTicket": "Support Ticket",
     "signOut": "Sign Out"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Multi-modal Recognition",
+      "desc": "We combine speech and subtitle signals to achieve more accurate and robust transcription. This dual-channel recognition reduces errors and ensures better alignment with the original content, especially in noisy or complex audio scenes."
+    },
+    "emotional": {
+      "title": "Emotional Speech",
+      "desc": "Our voice synthesis models generate expressive, emotionally rich speech that enhances storytelling and viewer engagement. By capturing tone, rhythm, and nuance, we make AI voices feel more human and relatable."
+    },
+    "lengthaware": {
+      "title": "Length-aware Translation and Customization",
+      "desc": "We optimize translations not just for accuracy, but also for timing and pacing—crucial for video and voice alignment. Users can further customize tone, length, and phrasing to suit different content needs or audience preferences."
+    },
+    "controlled": {
+      "title": "Controlled Video Generation",
+      "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
+    }
   }
 }
