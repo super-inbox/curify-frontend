@@ -1,5 +1,4 @@
 // File: lib/language_utils.js
-
 export const languages = [
   { code: "en", name: "English (EN)", flag: "🇺🇸" },
   { code: "zh-cn", name: "Chinese (ZH)", flag: "🇨🇳" },
@@ -18,6 +17,7 @@ export const languages = [
   { code: "hu", name: "Hungarian (HU)", flag: "🇭🇺" },
   { code: "ko", name: "Korean (KO)", flag: "🇰🇷" },
   { code: "hi", name: "Hindi (HI)", flag: "🇮🇳" },
+  { code: "th", name: "Thai (TH)", flag: "🇹🇭" }
 ];
 
 // Lookup functions
