@@ -92,5 +92,25 @@
       "title": "Controlled Video Generation",
       "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
     }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Video Dubbing",
+      "desc": "Translate your video into any language with accurate localization and voice sync"
+    },
+    "subtitle_captioner": {
+      "title": "Subtitle Captioner",
+      "desc": "Auto-generate multilingual subtitles to enhance clarity and accessibility"
+    },
+    "lip_syncing": {
+      "title": "Lip Syncing",
+      "desc": "Match lips to speech perfectly with AI-powered lip sync"
+    },
+    "style_transfer": {
+      "title": "Style Transfer",
+      "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
+    },
+    "coming_soon": "Coming Soon",
+    "create": "Create"
   }
 }
