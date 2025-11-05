@@ -3,36 +3,40 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-
-const technologies = [
-  {
-    key: "multimodal",
-    title: "Multi-modal Recognition",
-    desc: "We combine speech and subtitle signals to achieve more accurate and robust transcription. This dual-channel recognition reduces errors and ensures better alignment with the original content, especially in noisy or complex audio scenes.",
-    image: "/images/multimodal.png",
-  },
-  {
-    key: "emotional",
-    title: "Emotional Speech",
-    desc: "Our voice synthesis models generate expressive, emotionally rich speech that enhances storytelling and viewer engagement. By capturing tone, rhythm, and nuance, we make AI voices feel more human and relatable.",
-    image: "/images/emotional-speech.png",
-  },
-  {
-    key: "lengthaware",
-    title: "Length-aware Translation and Customization",
-    desc: "We optimize translations not just for accuracy, but also for timing and pacing—crucial for video and voice alignment. Users can further customize tone, length, and phrasing to suit different content needs or audience preferences.",
-    image: "/images/length-aware.jpg",
-  },
-  {
-    key: "controlled",
-    title: "Controlled Video Generation",
-    desc: "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output.",
-    image: "/images/controlled-video.gif",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function AboutClient() {
-  const [selectedTech, setSelectedTech] = useState(technologies[0]);
+
+  
+  const t = useTranslations();
+  const technologies = [
+    {
+      key: "multimodal",
+      title: t("technology.multimodal.title"),
+      desc: t("technology.multimodal.desc"),
+      image: "/images/multimodal.png",
+    },
+    {
+      key: "emotional",
+      title: t("technology.emotional.title"),
+      desc: t("technology.emotional.desc"),
+      image: "/images/emotional-speech.png",
+    },
+    {
+      key: "lengthaware",
+      title: t("technology.lengthaware.title"),
+      desc: t("technology.lengthaware.desc"),
+      image: "/images/length-aware.jpg",
+    },
+    {
+      key: "controlled",
+      title: t("technology.controlled.title"),
+      desc: t("technology.controlled.desc"),
+      image: "/images/controlled-video.gif",
+    },
+  ];
+
+const [selectedTech, setSelectedTech] = useState(technologies[0]);
 
   return (
     <main className="relative mx-auto max-w-[1280px] px-6 pt-20 sm:px-10 py-16 space-y-20 bg-white text-gray-800">

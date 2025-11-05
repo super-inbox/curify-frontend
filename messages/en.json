@@ -25,6 +25,33 @@
     "desc": "Translate your content into over 170 languages with native-level accuracy."
   }
 },
+  "upcoming": {
+    "title": "Coming Soon",
+    "subtitle": "Next-generation features in development",
+    "styleTransfer": {
+      "title": "Style Transfer",
+      "desc": "Apply cinematic or brand-specific styles to your videos with AI-powered visual transformation.",
+      "icon": "🎨",
+      "status": "Coming Q3 2025",
+      "transcript": "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer."
+    },
+    "mangaTranslation": {
+      "title": "Manga Translation",
+      "desc": "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
+      "icon": "📚",
+      "status": "Coming Q3 2025",
+      "transcript": "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing."
+    },
+    "templatedVideo": {
+      "title": "Templated Video Generation",
+      "desc": "Create professional videos from templates with AI-generated content and custom branding.",
+      "icon": "🎬",
+      "status": "Coming Q4 2025",
+      "transcript": "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals."
+    },
+    "statusQ3": "Coming in Q3 2025",
+    "statusQ4": "Coming in Q4 2025"
+  },
   "export": {
     "title": "Export",
     "export": "Export",
@@ -47,5 +74,23 @@
     "subscribePlan": "Subscribe Plan",
     "supportTicket": "Support Ticket",
     "signOut": "Sign Out"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Multi-modal Recognition",
+      "desc": "We combine speech and subtitle signals to achieve more accurate and robust transcription. This dual-channel recognition reduces errors and ensures better alignment with the original content, especially in noisy or complex audio scenes."
+    },
+    "emotional": {
+      "title": "Emotional Speech",
+      "desc": "Our voice synthesis models generate expressive, emotionally rich speech that enhances storytelling and viewer engagement. By capturing tone, rhythm, and nuance, we make AI voices feel more human and relatable."
+    },
+    "lengthaware": {
+      "title": "Length-aware Translation and Customization",
+      "desc": "We optimize translations not just for accuracy, but also for timing and pacing—crucial for video and voice alignment. Users can further customize tone, length, and phrasing to suit different content needs or audience preferences."
+    },
+    "controlled": {
+      "title": "Controlled Video Generation",
+      "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
+    }
   }
 }

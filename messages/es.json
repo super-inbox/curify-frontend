@@ -25,6 +25,24 @@
     "desc": "Traduce tu contenido a más de 170 idiomas con precisión a nivel nativo."
   }
 },
+  "upcoming": {
+    "title": "Próximamente",
+    "subtitle": "Funciones de próxima generación en desarrollo",
+    "styleTransfer": {
+      "title": "Transferencia de Estilo",
+      "desc": "Aplica estilos cinematográficos o de marca a tus videos con transformación visual impulsada por IA."
+    },
+    "mangaTranslation": {
+      "title": "Traducción de Manga",
+      "desc": "Traducción automática de manga y cómics con detección de texto, edición de burbujas y adaptación cultural."
+    },
+    "templatedVideo": {
+      "title": "Generación de Videos con Plantillas",
+      "desc": "Crea videos profesionales a partir de plantillas con contenido y marca generados por IA."
+    },
+    "statusQ3": "Disponible Q3 2025",
+    "statusQ4": "Disponible Q4 2025"
+  },
   "export": {
     "title": "Exportieren",
     "export": "Exportieren",
@@ -47,5 +65,23 @@
     "subscribePlan": "Abo abschließen",
     "supportTicket": "Support-Ticket",
     "signOut": "Abmelden"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Reconocimiento Multimodal",
+      "desc": "Combinamos señales de voz y subtítulos para lograr transcripciones más precisas y robustas. Este reconocimiento de doble canal reduce errores y mejora la alineación con el contenido original, especialmente en escenas de audio ruidosas o complejas."
+    },
+    "emotional": {
+      "title": "Voz Emocional",
+      "desc": "Nuestros modelos de síntesis de voz generan habla expresiva y rica en emociones, lo que mejora la narración y el compromiso del espectador. Capturamos el tono, el ritmo y los matices para que las voces de IA suenen más humanas."
+    },
+    "lengthaware": {
+      "title": "Traducción y Personalización Sensible a la Duración",
+      "desc": "Optimizamos las traducciones no solo por su precisión, sino también por su ritmo y duración, cruciales para la sincronización de video y voz. Los usuarios pueden personalizar el tono, la longitud y el estilo según el tipo de contenido o audiencia."
+    },
+    "controlled": {
+      "title": "Generación de Video Controlada",
+      "desc": "Habilitamos la generación de video estructurada y basada en plantillas, con elementos visuales y transiciones controlables. Esto brinda a los creadores libertad creativa con consistencia de producción, reduciendo el trabajo manual y asegurando resultados de alta calidad."
+    }
   }
 }
