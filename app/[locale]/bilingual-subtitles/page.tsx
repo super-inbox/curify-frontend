@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import BilingualSubtitlesClient from "./BilingualSubtitlesClient";
 
+const siteUrl = process.env.SITE_URL || "http://localhost:3000";
+
 // ✅ Define SEO metadata here (server-side)
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = params;
+
   const metaByLocale: Record<string, { title: string; description: string }> = {
     en: {
       title: "Free Bilingual Subtitles Generator | Curify AI",
@@ -26,7 +34,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     },
   };
 
-  const meta = metaByLocale[params.locale] || metaByLocale.en;
+  const meta = metaByLocale[locale] || metaByLocale.en;
 
   return {
     title: meta.title,
@@ -34,11 +42,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     openGraph: {
       title: meta.title,
       description: meta.description,
-      url: `https://curify-ai.com/${params.locale}/bilingual-subtitles`,
+      url: `${siteUrl}/${locale}/bilingual-subtitles`,
       type: "website",
       images: [
         {
-          url: "https://curify-ai.com/og-bilingual-subtitles.png",
+          url: `${siteUrl}/og-bilingual-subtitles.png`,
           width: 1200,
           height: 630,
           alt: "Curify Bilingual Subtitles",
@@ -48,6 +56,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function BilingualSubtitlesPage() {
-  return <BilingualSubtitlesClient />;
+export default function BilingualSubtitlesPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  // Pass the server-side locale down to the client component
+  return <BilingualSubtitlesClient locale={params.locale} />;
 }
