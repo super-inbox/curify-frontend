@@ -24,8 +24,8 @@ export default function middleware(req: NextRequest) {
     const isAgreement = pathname === `/${locale}/agreement`;
     const isProjectDetail = pathname.startsWith(`/${locale}/project_details/`);
     const isMagic = pathname.startsWith(`/${locale}/magic/`);
-    const isBilingual = pathname.startsWith(`/${locale}/bilingual-subtitles`);
-    const isDubbing = pathname.startsWith(`/${locale}/video-dubbing`);
+    const isBilingual = pathname === `/${locale}/bilingual-subtitles`;
+    const isDubbing =  pathname === `/${locale}/video-dubbing`;
     const isCreator = pathname.startsWith(`/${locale}/creator`);
     const isBlog = pathname === `/${locale}/blog` || pathname.startsWith(`/${locale}/blog/`);
 
