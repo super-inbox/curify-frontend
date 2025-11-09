@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Loading from "../Loading";
 import { projectService } from "@/services/projects";
 import { ProjectStatusUpdate, ProjectStatus } from "@/types/projects";
@@ -16,15 +16,20 @@ export default function Magic() {
   const [projectDetails, setProjectDetails] = useState<ProjectDetails | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     if (!projectId) return;
 
     let isCancelled = false;
+    let attempts = 0;
+    const maxAttempts = 100;
 
     const pollStatus = async () => {
+      if (isCancelled) return;
+
       try {
         const statusRes: ProjectStatusUpdate = await projectService.getProjectStatus(projectId);
-
         if (isCancelled) return;
 
         setStatus(statusRes.status);
@@ -32,21 +37,31 @@ export default function Magic() {
         if (statusRes.status === "COMPLETED") {
           const fullProject = await projectService.getProject(projectId);
           if (!isCancelled) {
-            // ✅ Save project details to localStorage
+            setProjectDetails(fullProject);
             localStorage.setItem("selectedProjectDetails", JSON.stringify(fullProject));
-
-            // ✅ Redirect to project details page
+            isCancelled = true;
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
             router.push(`/${locale}/project_details/${projectId}`);
           }
         } else if (statusRes.status === "FAILED") {
+          isCancelled = true;
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
           setError("Translation failed. Please try again.");
         } else {
-          setTimeout(pollStatus, 3000); // Continue polling
+          if (attempts++ < maxAttempts) {
+            timeoutRef.current = setTimeout(pollStatus, 3000);
+          } else {
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+            setError("Timeout. Please try again later.");
+          }
         }
       } catch (err) {
         console.error("Polling error:", err);
-        if (!isCancelled) {
-          setTimeout(pollStatus, 5000); // Backoff retry
+        if (!isCancelled && attempts++ < maxAttempts) {
+          timeoutRef.current = setTimeout(pollStatus, 5000); // Backoff
+        } else if (!isCancelled) {
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
+          setError("Timeout. Please try again later.");
         }
       }
     };
@@ -55,6 +70,7 @@ export default function Magic() {
 
     return () => {
       isCancelled = true;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [projectId, locale, router]);
 
@@ -76,10 +92,10 @@ export default function Magic() {
       </div>
     );
   }
-// ✅ Should never render unless redirect fails
-return (
-  <div className="w-full h-screen flex items-center justify-center text-gray-500 text-sm">
-    Translation complete. Redirecting...
-  </div>
-);
+
+  return (
+    <div className="w-full h-screen flex items-center justify-center text-gray-500 text-sm">
+      Translation complete. Redirecting...
+    </div>
+  );
 }
