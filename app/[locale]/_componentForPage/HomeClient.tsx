@@ -100,16 +100,12 @@ export default function HomeClient() {
       <BgParticle />
       <div className="relative flex flex-col items-center mt-36 lg:mt-40 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center text-[var(--c1)] mb-6 leading-tight">
-          Power Content Creation with AI
+          {t("home.hero.title")}
         </h1>
 
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-lg sm:text-xl text-[var(--c2)] leading-relaxed">
-            Curify Studio is building an AI-native content creation platform that empowers creators and organizations to
-            overcome language and format barriers. We solve the challenge of scaling content across global audiences,
-            enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection
-            of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly
-            globalizing industry.
+            {t("home.hero.description")}
           </p>
         </div>
 

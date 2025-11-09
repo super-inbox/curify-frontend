@@ -21,7 +21,8 @@ import TransactionHistoryDialog from './TransactionHistoryDialog';
 
 // ✅ Jotai drawerAtom import
 import { useSetAtom } from 'jotai';
-import { drawerAtom } from '@/app/atoms/atoms';
+import { drawerAtom, userAtom } from '@/app/atoms/atoms';
+import { authService } from '@/services/auth'; // 1. Import your authService
 
 interface UserDropdownMenuProps {
   user: User;
@@ -51,6 +52,7 @@ export default function UserDropdownMenu({
   const [isLoading, setIsLoading] = useState(false);
 
   // ✅ allow resetting drawer state on sign out
+  const setUser = useSetAtom(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
 
   const totalCredits =
@@ -100,12 +102,22 @@ export default function UserDropdownMenu({
     router.push(path);
   };
 
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
+
+  try {
+    await authService.logout(); // optional, if backend logout needed
+  } catch (err) {
+    console.error("Server logout failed:", err);
+  }
+  
+    sessionStorage.setItem('justSignedOut', 'true');
+    setUser(null);
+    console.log("Signing out: user atom set to null.");
     localStorage.removeItem('curifyUser');
-    setDrawerState(null); // ✅ reset drawerAtom on sign out
+    setDrawerState(null);
     onClose();
     onSignOut();
-    window.location.href = '/';
+    router.push('/');
   };
 
   const handleShowHistory = async () => {

@@ -73,10 +73,11 @@ export default function Header() {
       <div className="flex items-center justify-between w-full">
         {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
-          <div className="relative w-40 aspect-[160/38.597] cursor-pointer">
+          
             <Link
               href={user?.user_id ? `/${locale}/workspace` : `/${locale}`}
               aria-label="Curify Home"
+              className="relative w-40 aspect-[160/38.597] cursor-pointer"
             >
               <Image
                 src="/logo.svg"
@@ -86,7 +87,7 @@ export default function Header() {
                 priority
               />
             </Link>
-          </div>
+          
 
           {(headerState === "out" || headerState === "in") && (
   <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">

@@ -19,12 +19,12 @@ import UserHydrator from "./UserHydrator";
 
 interface Props {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 export default async function LocaleLayout(props: Props) {
   const { children, params } = props;
-  const { locale } = await params;
+  const { locale } = params;
   const session = await getServerSession(authOptions);
 
   if (!hasLocale(routing.locales, locale)) {

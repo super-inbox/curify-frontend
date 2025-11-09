@@ -1,4 +1,10 @@
 {
+    "home": {
+    "hero": {
+      "title": "Power Content Creation with AI",
+      "description": "Curify Studio is building an AI-native content creation platform that empowers creators and organizations to overcome language and format barriers. We solve the challenge of scaling content across global audiences, enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly globalizing industry."
+    }
+  },
   "coreFeatures": {
   "oneShot": {
     "title": "One-Shot Translation",
@@ -92,5 +98,45 @@
       "title": "Controlled Video Generation",
       "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
     }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Video Dubbing",
+      "desc": "Translate your video into any language with accurate localization and voice sync"
+    },
+    "subtitle_captioner": {
+      "title": "Subtitle Captioner",
+      "desc": "Auto-generate multilingual subtitles to enhance clarity and accessibility"
+    },
+    "lip_syncing": {
+      "title": "Lip Syncing",
+      "desc": "Match lips to speech perfectly with AI-powered lip sync"
+    },
+    "style_transfer": {
+      "title": "Style Transfer",
+      "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
+    },
+    "coming_soon": "Coming Soon",
+    "create": "Create"
+  },
+  "bilingual": {
+  "title": "Bilingual Subtitles Made Easy",
+  "intro": "Automatically generate subtitles in two languages using Curify’s AI subtitle engine. Ideal for creators, educators, and global businesses.",
+  "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto‑generated.",
+  "cta": "Try It Free",
+  "why": {
+    "title": "Why Choose Curify for Bilingual Subtitles?",
+    "point1": "Supports over 170 languages with accurate translation.",
+    "point2": "Preserves emotional tone and timing.",
+    "point3": "Perfect for YouTube, TikTok, and educational videos.",
+    "point4": "Export ready‑to‑publish subtitle files or embedded videos."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "Is it really free?",
+    "a1": "Yes, Curify offers a free plan with limited subtitle minutes per month.",
+    "q2": "Can I edit subtitles after generation?",
+    "a2": "Absolutely. You can adjust timing, translation, and style before exporting."
   }
+}
 }

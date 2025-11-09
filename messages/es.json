@@ -1,4 +1,9 @@
-{
+{  "home": {
+    "hero": {
+      "title": "Impulsa la creación de contenido con IA",
+      "description": "Curify Studio está construyendo una plataforma de creación de contenido nativa de IA que permite a creadores y organizaciones superar barreras de idioma y formato. Abordamos el desafío de escalar contenido para audiencias globales, logrando traducciones auténticas que conservan el tono, estilo y profundidad emocional. En la intersección entre medios, educación y entretenimiento, ofrecemos herramientas para que los creadores adapten su contenido sin fricciones en un mundo cada vez más globalizado."
+    }
+  },
   "coreFeatures": {
   "oneShot": {
     "title": "Traducción Instantánea",
@@ -83,5 +88,46 @@
       "title": "Generación de Video Controlada",
       "desc": "Habilitamos la generación de video estructurada y basada en plantillas, con elementos visuales y transiciones controlables. Esto brinda a los creadores libertad creativa con consistencia de producción, reduciendo el trabajo manual y asegurando resultados de alta calidad."
     }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Doblaje de Video",
+      "desc": "Traduce tu video a cualquier idioma con localización precisa y sincronización de voz"
+    },
+    "subtitle_captioner": {
+      "title": "Generador de Subtítulos",
+      "desc": "Genera automáticamente subtítulos multilingües para mejorar la claridad y accesibilidad"
+    },
+    "lip_syncing": {
+      "title": "Sincronización Labial",
+      "desc": "Sincroniza perfectamente los labios con el habla usando IA"
+    },
+    "style_transfer": {
+      "title": "Transferencia de Estilo",
+      "desc": "Transforma tu video en estilos artísticos como Pixar o Ghibli — próximamente"
+    },
+    "coming_soon": "Próximamente",
+    "create": "Crear"
+  },
+  "bilingual": {
+  "title": "Subtítulos Bilingües Fácilmente",
+  "intro": "Genera automáticamente subtítulos en dos idiomas con el motor de subtítulos de IA de Curify. Ideal para creadores, educadores y empresas globales.",
+  "example": "Ejemplo: Jensen Huang explicando la estrategia de IA — subtítulos automáticos en inglés y chino.",
+  "cta": "Pruébalo Gratis",
+  "why": {
+    "title": "¿Por qué elegir Curify para subtítulos bilingües?",
+    "point1": "Compatible con más de 170 idiomas con traducción precisa.",
+    "point2": "Preserva el tono emocional y el tiempo original.",
+    "point3": "Perfecto para videos de YouTube, TikTok y educación.",
+    "point4": "Exporta archivos de subtítulos listos para publicar o videos integrados."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "q1": "¿Es realmente gratis?",
+    "a1": "Sí, Curify ofrece un plan gratuito con minutos limitados de subtitulado por mes.",
+    "q2": "¿Puedo editar los subtítulos después?",
+    "a2": "Por supuesto. Puedes ajustar el tiempo, la traducción y el estilo antes de exportar."
   }
+}
+
 }

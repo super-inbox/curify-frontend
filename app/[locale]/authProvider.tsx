@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
-import { footerAtom, headerAtom, userAtom, authLoadingAtom } from "@/app/atoms/atoms";
-
+import { userAtom, authLoadingAtom } from "@/app/atoms/atoms";
 import { authService } from '@/services/auth';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -17,6 +16,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const initializeAuth = async () => {
+    // 🧩 Detect if the user just signed out
+    const justSignedOut = sessionStorage.getItem('justSignedOut');
+
+    if (justSignedOut) {
+      console.log("Skipping auth rehydration — just signed out.");
+      setUser(null);
+      setAuthLoading(false);
+      sessionStorage.removeItem('justSignedOut'); // Clean up flag
+      return;
+    }
+
+    // ✅ Normal initialization
     setAuthLoading(true);
     try {
       const profile = await authService.getProfile();
@@ -29,7 +40,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Don't render children until auth is initialized
   if (!mounted || authLoading) {
     return <div>Loading...</div>;
   }

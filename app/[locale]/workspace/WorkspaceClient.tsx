@@ -14,6 +14,7 @@ import { formatDuration } from "@/lib/format_utils";
 import { projectService } from "@/services/projects";
 import { authService } from "@/services/auth";
 import GalleryGrid from "../_componentForPage/GalleryGrid";
+import { useTranslations } from "next-intl";
 
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -69,11 +70,13 @@ export default function ProfileClientPage() {
     setModalState("add");
   };
 
+  const t = useTranslations();
+
   const tools = [
     {
       id: 'video-dubbing',
-      title: "Video Dubbing",
-      desc: "Translate your video into any language with accurate localization and voice sync",
+      title: t("tools.video_dubbing.title"),
+      desc: t("tools.video_dubbing.desc"),
       status: "create",
       onClick: () => openModal('translation'),
     },
@@ -81,32 +84,35 @@ export default function ProfileClientPage() {
       id: 'subtitle-captioner',
       title: (
         <span>
-          Subtitle Captioner <span style={{ color: 'red', fontWeight: 'bold' }}>for FREE</span>
+          {t("tools.subtitle_captioner.title")}{" "}
+          <span style={{ color: 'red', fontWeight: 'bold' }}>for FREE</span>
         </span>
       ),
-      desc: "Auto-generate multilingual subtitles to enhance clarity and accessibility",
+      desc: t("tools.subtitle_captioner.desc"),
       status: "create",
       onClick: () => openModal('subtitles'),
     },
     {
       id: 'lip-syncing',
-      title: "Lip Syncing",
-      desc: "Match lips to speech perfectly with AI-powered lip sync",
+      title: t("tools.lip_syncing.title"),
+      desc: t("tools.lip_syncing.desc"),
       status: "coming_soon",
       onClick: () => alert("Launch lip sync flow"),
     },
     {
       id: 'style-transfer',
-      title: "Style Transfer",
-      desc: "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon",
+      title: t("tools.style_transfer.title"),
+      desc: t("tools.style_transfer.desc"),
       status: "coming_soon",
       onClick: () => alert("Style transfer feature coming soon"),
     },
   ];
-  
 
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
+    
+      <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
+
+<div className="max-w-7xl mx-auto px-6 pt-20 py-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {tools.map((tool) => (
           <div
@@ -122,16 +128,17 @@ export default function ProfileClientPage() {
                 onClick={tool.onClick}
                 className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer"
               >
-                Create
+                {t("tools.create")}
               </button>
             ) : (
               <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
-                Coming Soon
+                {t("tools.coming_soon")}
               </p>
             )}
           </div>
         ))}
       </div>
+    </div>
 
       <h2 className="text-2xl font-bold mb-4">My Projects</h2>
 
