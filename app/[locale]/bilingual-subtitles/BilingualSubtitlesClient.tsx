@@ -4,11 +4,7 @@ import { useTranslations } from "next-intl";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import { userAtom, drawerAtom, modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
 
-export default function BilingualSubtitlesClient({
-  locale,
-}: {
-  locale: string;
-}) {
+export default function BilingualSubtitlesClient() {
   const t = useTranslations("bilingual");
   const user = useAtomValue(userAtom);
   const setDrawer = useSetAtom(drawerAtom);
