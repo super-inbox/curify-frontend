@@ -23,7 +23,7 @@ export default function Magic() {
 
     let isCancelled = false;
     let attempts = 0;
-    const maxAttempts = 100;
+    const maxAttempts = 60;
 
     const pollStatus = async () => {
       if (isCancelled) return;
@@ -49,7 +49,7 @@ export default function Magic() {
           setError("Translation failed. Please try again.");
         } else {
           if (attempts++ < maxAttempts) {
-            timeoutRef.current = setTimeout(pollStatus, 3000);
+            timeoutRef.current = setTimeout(pollStatus, 6000);
           } else {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
             setError("Timeout. Please try again later.");
@@ -58,7 +58,7 @@ export default function Magic() {
       } catch (err) {
         console.error("Polling error:", err);
         if (!isCancelled && attempts++ < maxAttempts) {
-          timeoutRef.current = setTimeout(pollStatus, 5000); // Backoff
+          timeoutRef.current = setTimeout(pollStatus, 10000); // Backoff
         } else if (!isCancelled) {
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
           setError("Timeout. Please try again later.");
