@@ -142,5 +142,100 @@
 "videoDubbing": {
   "title": "AI Video Dubbing with Natural Voice",
   "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands."
+},
+"pricing": {
+  "header": {
+    "title": "Getting started with a plan",
+    "subtitle": "Choose a plan that fits your needs."
+  },
+  "common": {
+    "month": "Month",
+    "pricing": "Pricing",
+    "receive": "Receive"
+  },
+  "buttons": {
+    "signUp": "Sign up",
+    "subscribePlan": "Subscribe Plan",
+    "currentPlan": "Current Plan",
+    "comingSoon": "Coming Soon",
+    "downgradeToFree": "Downgrade to Free",
+    "downgradeToCreator": "Downgrade to Creator",
+    "contactSales": "Contact Sales"
+  },
+  "plans": {
+    "free": {
+      "name": "Free",
+      "description": "Great for testing tools and light work",
+      "features": [
+        "Download videos without watermark",
+        "1 hour free subtitle processing",
+        "Export SRT files"
+      ]
+    },
+    "creator": {
+      "name": "Creator",
+      "description": "Ideal for small creators doing regular subtitling and light dubbing",
+      "plusTitle": "Everything in Free, plus:",
+      "features": [
+        "Lip Syncing",
+        "Batch processing",
+        "5 hours free subtitle processing",
+        "Up to 30 minutes per task"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Coming Soon — Designed for high-volume creators",
+      "plusTitle": "Everything in Creator, plus:",
+      "features": [
+        "Voice beautification & noise removal",
+        "Priority queue",
+        "Up to 60 min per task",
+        "Unlimited subtitle minutes"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "For teams, studios, and enterprise workflows",
+      "customPricing": "Custom",
+      "unlimited": "Unlimited 🐚",
+      "tailoredSupport": "& tailored support",
+      "plusTitle": "Everything in Pro, plus:",
+      "features": [
+        "Dedicated account manager",
+        "On-premise deployment options",
+        "API access & usage analytics",
+        "Custom integrations & SLA",
+        "Unlimited processing hours"
+      ]
+    }
+  },
+  "table": {
+    "header": {
+      "feature": "Feature / Limit"
+    },
+    "rows": {
+      "videoDownloadWithWatermark": "Video Download with Watermark",
+      "videoDownloadWithoutWatermark": "Video Download without Watermark",
+      "downloadSrt": "Download SRT File",
+      "voiceBeautification": "Voice Beautification & Noise Removal",
+      "lipSync": "Lip Sync",
+      "subtitleTools": "Subtitle Tools (add/remove, no translation)",
+      "batchProcessing": "Batch Processing",
+      "maxVideoLength": "Max Video Length per Task",
+      "monthlyCredits": "Monthly Free Credits",
+      "priorityQueue": "Priority Queue / Faster Processing",
+      "creditTopUp": "Credit Top-up"
+    },
+    "values": {
+      "free": "Free",
+      "unlimited": "Unlimited",
+      "oneHourPerMonth": "1 hrs/month",
+      "fiveHoursPerMonth": "5 hrs/month",
+      "fiveMinutes": "5 min",
+      "thirtyMinutes": "30 min",
+      "sixtyMinutes": "60 min"
+    }
+  }
 }
 }
