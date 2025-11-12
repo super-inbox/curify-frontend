@@ -18,61 +18,55 @@ export default function Magic() {
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    if (!projectId) return;
+ useEffect(() => {
+  if (!projectId) return;
+  let isCancelled = false;
+  const startTime = Date.now();
+  const maxDuration = 4 * 60 * 60 * 1000; // 4 hours in milliseconds
 
-    let isCancelled = false;
-    let attempts = 0;
-    const maxAttempts = 60;
+  const pollStatus = async () => {
+    if (isCancelled) return;
+    
+    // Stop polling after 4 hours (silently)
+    if (Date.now() - startTime > maxDuration) {
+      return;
+    }
 
-    const pollStatus = async () => {
+    try {
+      const statusRes: ProjectStatusUpdate = await projectService.getProjectStatus(projectId);
       if (isCancelled) return;
-
-      try {
-        const statusRes: ProjectStatusUpdate = await projectService.getProjectStatus(projectId);
-        if (isCancelled) return;
-
-        setStatus(statusRes.status);
-
-        if (statusRes.status === "COMPLETED") {
-          const fullProject = await projectService.getProject(projectId);
-          if (!isCancelled) {
-            setProjectDetails(fullProject);
-            localStorage.setItem("selectedProjectDetails", JSON.stringify(fullProject));
-            isCancelled = true;
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
-            router.push(`/${locale}/project_details/${projectId}`);
-          }
-        } else if (statusRes.status === "FAILED") {
-          isCancelled = true;
-          if (timeoutRef.current) clearTimeout(timeoutRef.current);
-          setError("Translation failed. Please try again.");
-        } else {
-          if (attempts++ < maxAttempts) {
-            timeoutRef.current = setTimeout(pollStatus, 6000);
-          } else {
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
-            setError("Timeout. Please try again later.");
-          }
+      
+      setStatus(statusRes.status);
+      
+      if (statusRes.status === "COMPLETED") {
+        const fullProject = await projectService.getProject(projectId);
+        if (!isCancelled) {
+          setProjectDetails(fullProject);
+          localStorage.setItem("selectedProjectDetails", JSON.stringify(fullProject));
+          router.push(`/${locale}/project_details/${projectId}`);
         }
-      } catch (err) {
-        console.error("Polling error:", err);
-        if (!isCancelled && attempts++ < maxAttempts) {
-          timeoutRef.current = setTimeout(pollStatus, 10000); // Backoff
-        } else if (!isCancelled) {
-          if (timeoutRef.current) clearTimeout(timeoutRef.current);
-          setError("Timeout. Please try again later.");
-        }
+      } else if (statusRes.status === "FAILED") {
+        setError("Translation failed. Please try again.");
+      } else {
+        // Continue polling every 20 seconds
+        timeoutRef.current = setTimeout(pollStatus, 20000);
       }
-    };
+    } catch (err) {
+      console.error("Polling error:", err);
+      if (!isCancelled) {
+        // Continue polling even on error
+        timeoutRef.current = setTimeout(pollStatus, 20000);
+      }
+    }
+  };
 
-    pollStatus();
+  pollStatus();
 
-    return () => {
-      isCancelled = true;
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [projectId, locale, router]);
+  return () => {
+    isCancelled = true;
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+}, [projectId, locale, router]);
 
   if (error) {
     return (
