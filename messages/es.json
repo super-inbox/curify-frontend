@@ -227,5 +227,22 @@
       "sixtyMinutes": "60 min"
     }
   }
+},
+"aeVsComfyUi": {
+  "title": "AE vs ComfyUI – Redefiniendo la animación (Parte 3)",
+  "heading": "🎨 AE vs ComfyUI",
+  "intro1": "A menudo nos preguntan: ¿por qué no usar solo After Effects (AE)? ¿O por qué usar ComfyUI? Ambos son esenciales: uno ofrece control preciso, el otro creatividad generativa.",
+  "intro2": "AE ofrece precisión en la línea de tiempo y control sobre transiciones, iluminación y efectos. ComfyUI aporta flujos de trabajo nativos de IA, combinando difusión, texto y orquestación multimodal.",
+  "table": {
+    "colAE": "AE",
+    "colComfy": "ComfyUI",
+    "row1a": "Control preciso de VFX y movimiento",
+    "row1b": "Generación de video nativa de IA",
+    "row2a": "Edición basada en línea de tiempo",
+    "row2b": "Renderizado basado en nodos / workflows",
+    "row3a": "Flujo de trabajo manual o basado en plugins",
+    "row3b": "Difusión + LLM + orquestación multimodal"
+  },
+  "outro": "En nuestro flujo de trabajo, ComfyUI maneja la generación e iteración por IA, mientras que AE refina el aspecto final: transiciones, superposiciones y composición."
 }
 }
