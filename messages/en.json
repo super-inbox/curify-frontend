@@ -237,5 +237,22 @@
       "sixtyMinutes": "60 min"
     }
   }
+},
+"aeVsComfyUi": {
+  "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
+  "heading": "🎨 AE vs ComfyUI",
+  "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
+  "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
+  "table": {
+    "colAE": "AE",
+    "colComfy": "ComfyUI",
+    "row1a": "Precise VFX and motion control",
+    "row1b": "AI-native generation of videos",
+    "row2a": "Timeline-based editing",
+    "row2b": "Workflow/node-based rendering",
+    "row3a": "Manual / plugin-driven workflow",
+    "row3b": "Diffusion + LLM + multimodal orchestration"
+  },
+  "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
 }
 }

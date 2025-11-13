@@ -229,5 +229,22 @@
       "sixtyMinutes": "60分钟"
     }
   }
+},
+"aeVsComfyUi": {
+  "title": "AE vs ComfyUI —— 重塑动画创作（Part 3）",
+  "heading": "🎨 AE vs ComfyUI",
+  "intro1": "我们经常会被问：为什么不用 After Effects（AE）？或者为什么要用 ComfyUI？两者都很重要 —— 一个提供精细可控的时间线，另一个带来生成式的创造力。",
+  "intro2": "AE 具备时间线级的精确控制，包括转场、灯光和特效；而 ComfyUI 则提供 AI 原生的工作流，整合了扩散模型、文本与多模态编排能力。",
+  "table": {
+    "colAE": "AE",
+    "colComfy": "ComfyUI",
+    "row1a": "精确的特效与运动控制",
+    "row1b": "AI 原生的视频生成",
+    "row2a": "基于时间线的编辑",
+    "row2b": "基于节点/工作流渲染",
+    "row3a": "手动或插件驱动的流程",
+    "row3b": "扩散模型 + LLM + 多模态编排"
+  },
+  "outro": "在我们的工作流中，ComfyUI 负责 AI 生成与迭代，而 AE 用于最终的修饰 —— 转场、叠加和合成。"
 }
 }
