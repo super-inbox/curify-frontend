@@ -244,5 +244,29 @@
     "row3b": "Difusión + LLM + orquestación multimodal"
   },
   "outro": "En nuestro flujo de trabajo, ComfyUI maneja la generación e iteración por IA, mientras que AE refina el aspecto final: transiciones, superposiciones y composición."
+},
+"video_translation_eval": {
+  "title": "Evaluación de Calidad en Traducción de Videos con IA",
+  "subtitle": "Métricas clave",
+  "intro": "Traducir videos entre idiomas no es tarea fácil: requiere transcripción, traducción, doblaje, sincronización y más. En Curify, hemos construido una evaluación integral para garantizar estándares de calidad.",
+  "section1_title": "1. Calidad de Transcripción",
+  "section1_engine": "Motor: WhisperX",
+  "section1_metrics": ["Tasa de Error de Palabra (WER)", "Puntuación F1 de puntuación (expresividad y legibilidad)"],
+  "section2_title": "2. Calidad de Traducción",
+  "section2_engine": "Motores: Helsinki, MarianMT",
+  "section2_metrics": ["BLEU (métrica estándar)", "COMET / chrF++ (similitud semántica)", "Evaluación humana: fluidez + adecuación"],
+  "section3_title": "3. Calidad del Doblaje",
+  "section3_engine": "Motores: XTTS / YourTTS",
+  "section3_metrics": ["MOS: naturalidad, similitud, expresividad", "Precisión en verificación de locutor"],
+  "section4_title": "4. Alineación y Sincronización Labial",
+  "section4_metrics": ["Desajuste en duración de segmento", "Confianza de sincronización (Wav2Lip)", "Análisis de desfase temporal"],
+  "section5_title": "5. Preservación Semántica",
+  "section5_method": "Utilizamos LLMs (como GPT-4) para verificar si el contenido traducido conserva el significado, tono y emoción. Prompt de ejemplo:",
+  "section5_prompt": "Compara este guion en chino con la voz en inglés. ¿Coinciden el tono, intención y contenido? Califica del 1 al 5 y explica.",
+  "section6_title": "6. Feedback de Usuarios y Validación Comercial",
+  "section6_metrics": ["Calidad vocal adecuada al tipo de producto", "Mejora en retención de video", "Interés de adopción por parte de usuarios o vendedores"],
+  "closing": "En Curify, no solo traducimos. Preservamos emociones, intención y claridad. ¿Listo para globalizar tu voz? Contáctanos.",
+  "available_locales": "Disponible en: [EN] [ZH] [ES] [DE]"
 }
+
 }

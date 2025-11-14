@@ -254,5 +254,29 @@
     "row3b": "Diffusion + LLM + multimodal orchestration"
   },
   "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
+},
+"video_translation_eval":{
+  "title": "Evaluating AI Video Translation Quality",
+  "subtitle": "Metrics that Matter",
+  "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we’ve built a robust evaluation pipeline to ensure each piece meets industry standards.",
+  "section1_title": "1. Transcription Quality",
+  "section1_engine": "Engine: WhisperX",
+  "section1_metrics": ["WER (Word Error Rate)", "Punctuation F1 (for expressiveness and readability)"],
+  "section2_title": "2. Translation Quality",
+  "section2_engine": "Engines: Helsinki, MarianMT",
+  "section2_metrics": ["BLEU (standard metric)", "COMET / chrF++ (semantic similarity)", "Human review: fluency + adequacy"],
+  "section3_title": "3. Voice Synthesis Quality",
+  "section3_engine": "Engines: XTTS / YourTTS",
+  "section3_metrics": ["MOS (Naturalness, similarity, expressiveness)", "Speaker verification accuracy"],
+  "section4_title": "4. Alignment & Lip Sync",
+  "section4_metrics": ["Segment duration mismatch", "Wav2Lip sync confidence", "Temporal drift analysis"],
+  "section5_title": "5. Semantic Preservation",
+  "section5_method": "We use LLMs (like GPT-4) to judge whether the translated speech preserves the original meaning, tone, and emotion. Example prompt:",
+  "section5_prompt": "Compare this Mandarin transcript to the English voiceover. Does the tone, intent, and content match? Rate 1–5 and explain.",
+  "section6_title": "6. User Feedback & GTM Validation",
+  "section6_metrics": ["Voice quality fit for product category", "Viewer retention improvement", "Adoption willingness from early users (e.g., 1688 sellers)"],
+  "closing": "At Curify, we don’t just translate — we preserve storytelling, emotion, and clarity across languages. If you’re ready to scale your voice globally, get in touch.",
+  "available_locales": "Post available in: [EN] [ZH] [ES] [DE]"
 }
+
 }
