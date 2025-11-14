@@ -3,6 +3,14 @@ import Link from 'next/link';
 
 const blogPosts = [
   {
+    slug: 'video-evaluation',
+    title: 'Evaluating AI Video Translation: Metrics that Actually Matter',
+    date: 'November 14, 2025',
+    readTime: '6 min read',
+    tag: 'Localization',
+    image: '/images/video-translation-eval.jpg',
+  },
+  {
     slug: 'storyboard-to-pipeline',
     title: 'Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide',
     date: 'October 28, 2025',
