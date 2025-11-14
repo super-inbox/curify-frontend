@@ -246,5 +246,29 @@
     "row3b": "扩散模型 + LLM + 多模态编排"
   },
   "outro": "在我们的工作流中，ComfyUI 负责 AI 生成与迭代，而 AE 用于最终的修饰 —— 转场、叠加和合成。"
+},
+"video_translation_eval":{
+  "title": "视频翻译质量评估指南",
+  "subtitle": "这些指标最重要",
+  "intro": "视频跨语言翻译并不简单，它涉及转录、翻译、配音、对齐等多个环节。Curify 建立了一套系统的评估流程，确保每一环都符合专业标准。",
+  "section1_title": "1. 转录质量",
+  "section1_engine": "引擎：WhisperX",
+  "section1_metrics": ["字错误率（WER）", "标点 F1 分数（提升表达和可读性）"],
+  "section2_title": "2. 翻译质量",
+  "section2_engine": "引擎：Helsinki、MarianMT",
+  "section2_metrics": ["BLEU 分数（传统指标）", "COMET / chrF++（语义相似度）", "人工评估：流畅度与准确性"],
+  "section3_title": "3. 配音质量",
+  "section3_engine": "引擎：XTTS / YourTTS",
+  "section3_metrics": ["主观评分（MOS）：自然度、音色相似度、情绪表现", "说话人验证准确率"],
+  "section4_title": "4. 对齐与口型同步",
+  "section4_metrics": ["音频时长偏差", "Wav2Lip 口型匹配分", "时间漂移分析"],
+  "section5_title": "5. 语义保持",
+  "section5_method": "我们使用大语言模型（如 GPT-4）来评估翻译内容是否保留原意、情绪和语气。示例 Prompt：",
+  "section5_prompt": "请比较这段中文原文和英文配音，判断语气、意图、内容是否一致？请打分并说明理由。",
+  "section6_title": "6. 用户反馈与市场验证",
+  "section6_metrics": ["配音风格是否符合产品", "本地视频观看时长是否提升", "用户/商家是否愿意采用"],
+  "closing": "在 Curify，我们不仅翻译语言，更传达情感与故事。如果你想让内容走向全球，欢迎联系我们。",
+  "available_locales": "可切换语言：[英文] [中文] [西语] [德语]"
 }
+
 }

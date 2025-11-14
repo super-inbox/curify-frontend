@@ -245,5 +245,29 @@
     "row3b": "Diffusion + LLM + multimodale Orchestrierung"
   },
   "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing."
+},
+"video_translation_eval": {
+  "title": "Bewertung von KI-gestützter Videoübersetzung",
+  "subtitle": "Relevante Qualitätsmetriken",
+  "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
+  "section1_title": "1. Transkriptionsqualität",
+  "section1_engine": "Engine: WhisperX",
+  "section1_metrics": ["Wortfehlerrate (WER)", "Interpunktions-F1 (für Lesbarkeit und Ausdruck)"],
+  "section2_title": "2. Übersetzungsqualität",
+  "section2_engine": "Engines: Helsinki, MarianMT",
+  "section2_metrics": ["BLEU (Standard-Metrik)", "COMET / chrF++ (semantische Ähnlichkeit)", "Manuelle Bewertung: Lesbarkeit & Genauigkeit"],
+  "section3_title": "3. Sprachsynthesequalität",
+  "section3_engine": "Engines: XTTS / YourTTS",
+  "section3_metrics": ["MOS-Bewertung: Natürlichkeit, Ähnlichkeit, Ausdruck", "Genauigkeit der Sprechererkennung"],
+  "section4_title": "4. Timing & Lippensynchronisation",
+  "section4_metrics": ["Unterschiede in Segmentdauer", "Wav2Lip-Synchronwert", "Zeitliche Abweichung"],
+  "section5_title": "5. Semantische Erhaltung",
+  "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
+  "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
+  "section6_title": "6. Nutzerfeedback & GTM-Validierung",
+  "section6_metrics": ["Stimmqualität passend zum Produkttyp", "Erhöhte Zuschauerbindung bei lokalisierten Videos", "Nutzerbereitschaft zur Tool-Nutzung"],
+  "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
+  "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
 }
+
 }
