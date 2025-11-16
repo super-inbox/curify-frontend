@@ -27,10 +27,11 @@ export default function middleware(req: NextRequest) {
     const isBilingual = pathname === `/${locale}/bilingual-subtitles`;
     const isDubbing =  pathname === `/${locale}/video-dubbing`;
     const isCreator = pathname.startsWith(`/${locale}/creator`);
+    const isLipSync = pathname.startsWith(`/${locale}/lip-sync`);
     const isBlog = pathname === `/${locale}/blog` || pathname.startsWith(`/${locale}/blog/`);
 
     const isPublicPage =
-      isRoot || isLogin || isContact || isAbout || isPricing || isWorkspace || isProjectDetail || isMagic || isPrivacy || isAgreement || isBilingual || isDubbing || isBlog || isCreator;
+      isRoot || isLogin || isContact || isAbout || isPricing || isWorkspace || isProjectDetail || isMagic || isPrivacy || isAgreement || isBilingual || isDubbing || isBlog || isCreator || isLipSync;
 
     // Redirect unauthenticated users if they try to access private routes
     if (!token && !isPublicPage) {
