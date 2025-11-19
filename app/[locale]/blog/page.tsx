@@ -8,7 +8,7 @@ const blogPosts = [
     date: 'November 18, 2025',
     readTime: '7 min read',
     tag: 'Video Enhancement',
-    image: '/images/video-enhancement-cover.jpg',
+    image: '/images/video-enhancement-pipeline.png',
   },
   {
     slug: 'video-evaluation',
