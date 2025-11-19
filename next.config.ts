@@ -7,6 +7,7 @@ const nextConfig = {
 
   images: {
     domains: ["lh3.googleusercontent.com",
+      "cdn.curify-ai.com",
       "videotranslatetest.blob.core.windows.net"
     ],
   },
