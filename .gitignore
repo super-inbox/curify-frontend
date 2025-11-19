@@ -1,4 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Ignore heavy static folders
+scripts/sync_large_assets.sh
+
+public/video/
+public/images/
+public/audio/
 
 # dependencies
 /node_modules

@@ -161,7 +161,7 @@ export default function Header() {
                 <Link href={`/${locale}/workspace`}>
                   <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-300 cursor-pointer z-50">
                     <Image
-                      src={user?.avatar_url || "/images/default-avatar.jpg"}
+                      src={user?.avatar_url || "/default-avatar.jpg"}
                       alt="User Avatar"
                       width={32}
                       height={32}

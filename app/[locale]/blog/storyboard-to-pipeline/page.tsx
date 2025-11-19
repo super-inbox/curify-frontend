@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import CdnImage from "../../_components/CdnImage";
 
 export const metadata: Metadata = {
   title: "From Storyboards to AI Pipelines – Redefining Animation (Part 1)",
@@ -15,7 +16,7 @@ export default function StoryboardToPipelinePost() {
       </h1>
 
       <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
-        <Image
+        <CdnImage
           src="/images/ai-animation-pipeline.jpg"
           alt="AI storyboard-to-video pipeline"
           width={400}

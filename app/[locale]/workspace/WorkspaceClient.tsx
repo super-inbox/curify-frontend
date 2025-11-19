@@ -175,7 +175,7 @@ export default function ProfileClientPage() {
             >
               <div className="relative w-full aspect-video bg-gray-100">
                 <Image
-                  src={project.thumbnail_signed_url || "/images/mock-thumbnail.jpg"}
+                  src={project.thumbnail_signed_url || "/mock-thumbnail.jpg"}
                   alt={project.project_name}
                   fill
                   className="object-cover"

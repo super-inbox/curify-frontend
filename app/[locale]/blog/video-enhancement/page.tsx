@@ -2,7 +2,10 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 // Import storyboard JSON directly
-import storyboard from "@/public/video-enhancement/storyboard.json";
+import storyboard from "@/public/data/storyboard.json";
+import CdnImage from "../../_components/CdnImage";
+import CdnVideo from "../../_components/CdnVideo";
+import CdnAudio from "../../_components/CdnAudio";
 
 export const metadata: Metadata = {
   title: "AI Video Enhancement: Storyboards, Meme Captions & SFX Automation – Curify AI",
@@ -60,7 +63,7 @@ export default function VideoEnhancementPost() {
 
           {/* RIGHT: Pipeline Image */}
           <div className="flex justify-center">
-            <Image
+            <CdnImage
               src="/images/video-enhancement-pipeline.png"
               alt="AI Video Enhancement Pipeline"
               width={270}
@@ -89,20 +92,20 @@ export default function VideoEnhancementPost() {
     {/* ORIGINAL VIDEO (Adjusted for ~30% smaller size) */}
     <div className="max-w-[70%] mx-auto origin-top">
       <h3 className="font-semibold mb-2 text-center">Original</h3>
-      <video
+      <CdnVideo
         controls
         className="w-full rounded-lg shadow"
-        src="/video-enhancement/oil_crisis_original.mp4"
+        src="/video/oil_crisis_original.mp4"
       />
     </div>
 
     {/* ENHANCED VIDEO (Adjusted for ~30% smaller size) */}
     <div className="max-w-[70%] mx-auto origin-top">
       <h3 className="font-semibold mb-2 text-center">Enhanced</h3>
-      <video
+      <CdnVideo
         controls
         className="w-full rounded-lg shadow"
-        src="/video-enhancement/oil_crisis_enhanced.mp4"
+        src="/video/oil_crisis_enhanced.mp4"
       />
     </div>
   </div>
@@ -218,9 +221,9 @@ export default function VideoEnhancementPost() {
         className="p-4 bg-gray-50 rounded-lg border shadow-sm text-center"
       >
         <p className="font-semibold capitalize mb-2 text-sm">{key}</p>
-        <audio
+        <CdnAudio
           controls
-          src={`/video-enhancement/sfx/${key}.mp3`}
+          src={`/audio/${key}.mp3`}
           className="w-full"
         />
       </div>

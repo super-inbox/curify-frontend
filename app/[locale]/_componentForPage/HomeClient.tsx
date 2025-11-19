@@ -8,6 +8,7 @@ import EmailDrawer from "./drawer/EmailDrawer";
 import GoogleLoginButton from "../_components/button/GoogleLoginButton";
 import { useParams } from 'next/navigation';
 import { useTranslations } from "next-intl";
+import CdnVideo from "../_components/CdnVideo";
 
 export default function HomeClient() {
   const [activeLanguage, setActiveLanguage] = useState<'en' | 'zh' | 'es'>('en');
@@ -130,7 +131,7 @@ export default function HomeClient() {
 
           <div className="flex flex-col items-center">
             <div className="w-full max-w-2xl relative">
-              <video
+              <CdnVideo
                 ref={videoRef}
                 className="rounded-xl w-full shadow-2xl"
                 controls
@@ -241,7 +242,7 @@ export default function HomeClient() {
                 >                                    
                   <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{t(`upcoming.${key}.title`)}</h3>
                   <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">{t(`upcoming.${key}.desc`)}</p>
-                  <video
+                  <CdnVideo
                     className="rounded-lg shadow-md w-full mt-auto"
                     controls
                     loop

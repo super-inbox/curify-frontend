@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import { userAtom, drawerAtom, modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
+import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 
 export default function BilingualSubtitlesClient() {
   const t = useTranslations("bilingual");
@@ -34,7 +35,7 @@ const handleTryItClick = () => {
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("intro")}</p>
 
-      <video
+      <CdnVideo
         className="w-full rounded-xl shadow mb-4"
         controls
         poster="/thumbnails/jensen_ai_strategy.jpg"

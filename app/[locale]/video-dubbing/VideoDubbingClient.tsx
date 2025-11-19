@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
 import { userAtom, drawerAtom, modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
+import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 
 export default function VideoDubbingClient() {
   const t = useTranslations("videoDubbing");
@@ -66,7 +67,7 @@ export default function VideoDubbingClient() {
       <section className="w-full mb-12">
         <div className="flex flex-col items-center">
           <div className="w-full max-w-2xl relative">
-            <video
+            <CdnVideo
               ref={videoRef}
               className="rounded-xl w-full shadow-2xl"
               controls

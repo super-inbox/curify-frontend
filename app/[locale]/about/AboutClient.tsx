@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useTranslations } from 'next-intl';
+import CdnImage from "../_components/CdnImage";
 
 export default function AboutClient() {
 
@@ -57,7 +58,7 @@ const [selectedTech, setSelectedTech] = useState(technologies[0]);
         <h2 className="text-3xl font-bold mb-6 text-center">Technology Spotlight</h2>
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1">
-            <Image
+            <CdnImage
               src={selectedTech.image}
               alt={selectedTech.title}
               width={480}
@@ -92,7 +93,7 @@ const [selectedTech, setSelectedTech] = useState(technologies[0]);
             {
               name: "Jay Wang",
               role: "Founder & CEO",
-              image: "/team/jay.png",
+              image: "/images/team/jay.png",
               desc: "Ph.D., Twitter, Kuaishou, 19+ years in ML. Author, builder, visionary.",
               linkedin: "https://www.linkedin.com/in/jay-jianqiang-wang-78a6726/",
               github: "https://github.com/qqwjq1981",
@@ -100,20 +101,20 @@ const [selectedTech, setSelectedTech] = useState(technologies[0]);
             {
               name: "Shengli Li",
               role: "Founding Architect",
-              image: "/team/shengli.png",
+              image: "/images/team/shengli.png",
               desc: "20+ years in distributed systems, search & recommendation engine architecture.",
             },
             {
               name: "Ting Zhang",
               role: "GTM & Partnerships",
-              image: "/team/ting.png",
+              image: "/images/team/ting.png",
               desc: "Biz dev strategist on B2B partnerships across entertainment, education, and media industries.",
               linkedin: "https://www.linkedin.com/in/ting-zhang-91043811",
             },
             {
               name: "Rafi Ahmed Patel",
               role: "Founding ML Engineer",
-              image: "/team/rafi.png",
+              image: "/images/team/rafi.png",
               desc: "MSc UCL. Specializes in TTS, CV, and translation systems.",
               linkedin: "https://www.linkedin.com/in/raafi-patel-bb2954202/",
               github: "https://github.com/rafipatel",
@@ -121,7 +122,7 @@ const [selectedTech, setSelectedTech] = useState(technologies[0]);
             {
               name: "Ronel Solomon",
               role: "Founding ML Engineer",
-              image: "/team/ronel.png",
+              image: "/images/team/ronel.png",
               desc: "MS Data Science, Expert in Generative AI - Video/Animation",
               linkedin: "https://www.linkedin.com/in/ronel-solomon/",
               github: "https://github.com/ronelsolomon",
@@ -131,7 +132,7 @@ const [selectedTech, setSelectedTech] = useState(technologies[0]);
               key={idx}
               className="rounded-xl border border-gray-200 bg-white p-4 text-center hover:shadow-md transition-shadow"
             >
-              <Image
+              <CdnImage
                 src={member.image}
                 alt={member.name}
                 width={120}

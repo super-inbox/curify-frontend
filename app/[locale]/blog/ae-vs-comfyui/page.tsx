@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import CdnImage from "../../_components/CdnImage";
 
 export const metadata: Metadata = {
   title: "AE vs ComfyUI – Redefining Animation (Part 3)",
@@ -16,7 +17,7 @@ export default function AeVsComfyUiPost() {
       <h1 className="text-4xl font-bold mb-8">{t("heading")}</h1>
 
       <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
-        <Image
+        <CdnImage
           src="/images/ae-vs-comfyui.jpg"
           alt="AE vs ComfyUI comparison"
           width={400}
