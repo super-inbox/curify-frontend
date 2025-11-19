@@ -3,6 +3,14 @@ import Link from 'next/link';
 
 const blogPosts = [
   {
+    slug: 'video-enhancement',
+    title: 'AI Video Enhancement: Storyboards, Meme Captions & SFX Automation',
+    date: 'November 18, 2025',
+    readTime: '7 min read',
+    tag: 'Video Enhancement',
+    image: '/images/video-enhancement-cover.jpg',
+  },
+  {
     slug: 'video-evaluation',
     title: 'Evaluating AI Video Translation: Metrics that Actually Matter',
     date: 'November 14, 2025',
@@ -40,6 +48,7 @@ export default function BlogListPage() {
   return (
     <div className="max-w-screen-xl mx-auto px-6 pt-24 pb-16">
       <h1 className="text-4xl font-bold mb-10">Latest Articles</h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {blogPosts.map((post) => (
           <Link
@@ -55,13 +64,16 @@ export default function BlogListPage() {
                 className="object-cover"
               />
             </div>
+
             <div className="p-5">
               <div className="text-xs uppercase text-red-600 font-semibold mb-2">
                 {post.tag}
               </div>
+
               <div className="text-sm text-gray-500 mb-2">
                 {post.date} &nbsp; / &nbsp; {post.readTime}
               </div>
+
               <h2 className="text-lg font-semibold group-hover:text-blue-600 transition">
                 {post.title}
               </h2>

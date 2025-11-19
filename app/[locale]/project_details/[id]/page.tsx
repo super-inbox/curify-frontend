@@ -89,16 +89,17 @@ export default function ProjectDetailsPage() {
     if (!projectDetails) return;
 
     const updatedSegments = Object.entries(modifiedSegments).map(
-      ([index, translated_updated]) => {
+      ([index, translatedUpdated]) => {
         const seg = projectDetails.segments[Number(index)];
+    
         return {
           segment_id: seg.segment_id,
           line_number: seg.line_number,
-          original_updated: seg.original,
-          translated_updated,
+          translated_updated: translatedUpdated,
+          original_updated: null        // do NOT send unchanged original
         };
       }
-    );
+    );   
 
     try {
       const res = await projectService.reprocessProjectWithSegments(
