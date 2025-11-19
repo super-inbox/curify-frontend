@@ -10,7 +10,8 @@ export const routing = defineRouting({
     'ja',    // 🇯🇵 日本語
     'ko',    // 🇰🇷 한국어
     'ru',    // 🇷🇺 Русский
-    'hi'     // 🇮🇳 Hindi
+    'hi',    // 🇮🇳 हिंदी
+    'tr'     // 🇹🇷 Türkçe
   ],
   defaultLocale: 'en'
 });

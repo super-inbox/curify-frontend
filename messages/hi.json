@@ -1,0 +1,273 @@
+{
+    "home": {
+    "hero": {
+      "title": "KI-gestützte Content-Erstellung der nächsten Stufe",
+      "description": "Curify Studio entwickelt eine KI-native Plattform für Content-Erstellung, die Kreative und Organisationen dabei unterstützt, Sprach- und Formatbarrieren zu überwinden. Wir ermöglichen authentische Übersetzungen, die Ton, Stil und emotionale Tiefe bewahren – und helfen so, Inhalte effektiv für ein globales Publikum zu skalieren. An der Schnittstelle von Medien, Bildung und Unterhaltung bieten wir Werkzeuge, um Inhalte nahtlos an internationale Märkte anzupassen."
+    }
+  },
+  "coreFeatures": {
+  "oneShot": {
+    "title": "Ein-Klick-Übersetzung",
+    "desc": "Komplette Videoübersetzung mit Voice-over, Untertiteln und Lippen-Synchronisation in einem Schritt."
+  },
+  "toneColor": {
+    "title": "Stimmfarbenerhaltung",
+    "desc": "Erhält die einzigartigen Stimmmerkmale und Tonqualitäten des ursprünglichen Sprechers."
+  },
+  "emotional": {
+    "title": "Emotionale Sprache",
+    "desc": "KI reproduziert emotionale Nuancen und sorgt für authentischen Ausdruck über Sprachgrenzen hinweg."
+  },
+  "lipSync": {
+    "title": "Lippen-Synchronisation",
+    "desc": "Fortschrittliche Lippen-Synchronisierung, die Mundbewegungen perfekt mit der übersetzten Tonspur abgleicht."
+  },
+  "subtitle": {
+    "title": "Untertitelgenerator",
+    "desc": "Intelligente Untertitelerstellung mit präzisem Timing und natürlichem Sprachfluss."
+  },
+  "languages": {
+    "title": "170+ Sprachen",
+    "desc": "Übersetzen Sie Ihre Inhalte in über 170 Sprachen mit nahezu muttersprachlicher Genauigkeit."
+  }
+},
+ "upcoming": {
+    "title": "Demnächst verfügbar",
+    "subtitle": "Nächste Generation von Funktionen in Entwicklung",
+    "styleTransfer": {
+      "title": "Stilübertragung",
+      "desc": "Wende filmische oder markenspezifische Stile auf deine Videos an – mit KI-gestützter visueller Transformation."
+    },
+    "mangaTranslation": {
+      "title": "Manga-Übersetzung",
+      "desc": "Automatische Übersetzung von Manga und Comics mit Texterkennung, Blasenbearbeitung und kultureller Anpassung."
+    },
+    "templatedVideo": {
+      "title": "Vorlagenbasierte Videogenerierung",
+      "desc": "Erstelle professionelle Videos aus Vorlagen mit KI-generierten Inhalten und Markenanpassung."
+    },
+    "statusQ3": "Kommt im Q3 2025",
+    "statusQ4": "Kommt im Q4 2025"
+  },
+  "export": {
+    "title": "Export",
+    "export": "Export",
+    "downloading": "Downloading..."
+  },
+  "delete": {
+    "title": "Double Confirm",
+    "message": "Are you sure you want to delete this project",
+    "warning": "This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting..."
+  },
+  "userMenu": {
+    "topUpCredits": "Top Up Credits",
+    "remaining": "Remaining",
+    "planRemaining": "Plan Remaining", 
+    "validUntil": "Valid until",
+    "creditsHistory": "Credits History",
+    "subscribePlan": "Subscribe Plan",
+    "supportTicket": "Support Ticket",
+    "signOut": "Sign Out"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Multimodale Erkennung",
+      "desc": "Wir kombinieren Sprach- und Untertitelsignale, um genauere und robustere Transkriptionen zu erzielen. Diese Zwei-Kanal-Erkennung reduziert Fehler und sorgt für bessere Übereinstimmung mit dem Originalinhalt – insbesondere in lauten oder komplexen Audioszenen."
+    },
+    "emotional": {
+      "title": "Emotionale Sprachsynthese",
+      "desc": "Unsere Sprachsynthese-Modelle erzeugen ausdrucksstarke, emotional nuancierte Sprache, die das Storytelling verbessert und das Publikum stärker einbindet. Durch die Erfassung von Tonfall, Rhythmus und Nuancen wirken AI-Stimmen menschlicher."
+    },
+    "lengthaware": {
+      "title": "Längenbewusste Übersetzung und Anpassung",
+      "desc": "Wir optimieren Übersetzungen nicht nur auf Genauigkeit, sondern auch auf Timing und Tempo – entscheidend für die Synchronisation von Video und Sprache. Nutzer können Tonfall, Länge und Formulierungen an unterschiedliche Inhalte und Zielgruppen anpassen."
+    },
+    "controlled": {
+      "title": "Kontrollierte Videogenerierung",
+      "desc": "Wir ermöglichen strukturierte, vorlagenbasierte Videogenerierung mit steuerbaren visuellen Elementen und Übergängen. So erhalten Kreative kreative Freiheit und gleichzeitige Produktionskonsistenz – mit weniger manueller Arbeit und hoher Qualität."
+    }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Video-Synchronisation",
+      "desc": "Übersetze dein Video in jede Sprache mit präziser Lokalisierung und Sprachsynchronisation"
+    },
+    "subtitle_captioner": {
+      "title": "Untertitel-Generator",
+      "desc": "Erstelle automatisch mehrsprachige Untertitel zur Verbesserung von Klarheit und Zugänglichkeit"
+    },
+    "lip_syncing": {
+      "title": "Lippensynchronisation",
+      "desc": "Perfekte Lippensynchronität dank KI-gestützter Technik"
+    },
+    "style_transfer": {
+      "title": "Stilübertragung",
+      "desc": "Verwandle dein Video in Pixar-, Ghibli- oder andere künstlerische Stile – bald verfügbar"
+    },
+    "coming_soon": "Bald verfügbar",
+    "create": "Erstellen"
+  },
+  "bilingual": {
+  "title": "Zweisprachige Untertitel leicht gemacht",
+  "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
+  "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
+  "cta": "Jetzt kostenlos ausprobieren",
+  "why": {
+    "title": "Warum Curify für zweisprachige Untertitel?",
+    "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
+    "point2": "Bewahrt Emotion, Ton und Timing.",
+    "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
+    "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "q1": "Ist es wirklich kostenlos?",
+    "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
+    "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
+    "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
+  }
+},
+"videoDubbing": {
+  "title": "KI-Video-Synchronisation mit natürlicher Stimme",
+  "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
+},
+"pricing": {
+  "header": {
+    "title": "Erste Schritte mit einem Plan",
+    "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."
+  },
+  "common": {
+    "month": "Monat",
+    "pricing": "Preisgestaltung",
+    "receive": "Erhalten"
+  },
+  "buttons": {
+    "signUp": "Registrieren",
+    "subscribePlan": "Plan abonnieren",
+    "currentPlan": "Aktueller Plan",
+    "comingSoon": "Demnächst verfügbar",
+    "downgradeToFree": "Auf Kostenlos herabstufen",
+    "downgradeToCreator": "Auf Creator herabstufen",
+    "contactSales": "Vertrieb kontaktieren"
+  },
+  "plans": {
+    "free": {
+      "name": "Kostenlos",
+      "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
+      "features": [
+        "Videos ohne Wasserzeichen herunterladen",
+        "1 Stunde kostenlose Untertitelverarbeitung",
+        "SRT-Dateien exportieren"
+      ]
+    },
+    "creator": {
+      "name": "Creator",
+      "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
+      "plusTitle": "Alles in Kostenlos, plus:",
+      "features": [
+        "Lippensynchronisation",
+        "Stapelverarbeitung",
+        "5 Stunden kostenlose Untertitelverarbeitung",
+        "Bis zu 30 Minuten pro Aufgabe"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
+      "plusTitle": "Alles in Creator, plus:",
+      "features": [
+        "Stimmverschönerung & Rauschunterdrückung",
+        "Prioritätswarteschlange",
+        "Bis zu 60 Min. pro Aufgabe",
+        "Unbegrenzte Untertitelminuten"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "Für Teams, Studios und Unternehmens-Workflows",
+      "customPricing": "Individuell",
+      "unlimited": "Unbegrenzt 🐚",
+      "tailoredSupport": "& maßgeschneiderter Support",
+      "plusTitle": "Alles in Pro, plus:",
+      "features": [
+        "Dedizierter Account-Manager",
+        "On-Premise-Bereitstellungsoptionen",
+        "API-Zugriff & Nutzungsanalyse",
+        "Individuelle Integrationen & SLA",
+        "Unbegrenzte Verarbeitungsstunden"
+      ]
+    }
+  },
+  "table": {
+    "header": {
+      "feature": "Funktion / Limit"
+    },
+    "rows": {
+      "videoDownloadWithWatermark": "Video-Download mit Wasserzeichen",
+      "videoDownloadWithoutWatermark": "Video-Download ohne Wasserzeichen",
+      "downloadSrt": "SRT-Datei herunterladen",
+      "voiceBeautification": "Stimmverschönerung & Rauschunterdrückung",
+      "lipSync": "Lippensynchronisation",
+      "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
+      "batchProcessing": "Stapelverarbeitung",
+      "maxVideoLength": "Max. Videolänge pro Aufgabe",
+      "monthlyCredits": "Monatliche kostenlose Credits",
+      "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
+      "creditTopUp": "Credit-Aufladung"
+    },
+    "values": {
+      "free": "Kostenlos",
+      "unlimited": "Unbegrenzt",
+      "oneHourPerMonth": "1 Std./Monat",
+      "fiveHoursPerMonth": "5 Std./Monat",
+      "fiveMinutes": "5 Min.",
+      "thirtyMinutes": "30 Min.",
+      "sixtyMinutes": "60 Min."
+    }
+  }
+},
+"aeVsComfyUi": {
+  "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
+  "heading": "🎨 AE vs ComfyUI",
+  "intro1": "Wir werden oft gefragt: Warum nicht einfach After Effects (AE) verwenden? Oder warum ComfyUI? Beide sind wichtig — AE bietet präzise Kontrolle, ComfyUI ermöglicht generative Kreativität.",
+  "intro2": "AE bietet zeitbasierte Präzision sowie Kontrolle über Übergänge, Licht und Effekte. ComfyUI bringt AI-native Workflows, die Diffusion, Text und multimodale Orchestrierung kombinieren.",
+  "table": {
+    "colAE": "AE",
+    "colComfy": "ComfyUI",
+    "row1a": "Präzise VFX- und Bewegungssteuerung",
+    "row1b": "AI-native Videogenerierung",
+    "row2a": "Timeline-basiertes Editing",
+    "row2b": "Workflow-/Node-basiertes Rendering",
+    "row3a": "Manueller oder pluginbasierter Workflow",
+    "row3b": "Diffusion + LLM + multimodale Orchestrierung"
+  },
+  "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing."
+},
+"video_translation_eval": {
+  "title": "Bewertung von KI-gestützter Videoübersetzung",
+  "subtitle": "Relevante Qualitätsmetriken",
+  "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
+  "section1_title": "1. Transkriptionsqualität",
+  "section1_engine": "Engine: WhisperX",
+  "section1_metrics": ["Wortfehlerrate (WER)", "Interpunktions-F1 (für Lesbarkeit und Ausdruck)"],
+  "section2_title": "2. Übersetzungsqualität",
+  "section2_engine": "Engines: Helsinki, MarianMT",
+  "section2_metrics": ["BLEU (Standard-Metrik)", "COMET / chrF++ (semantische Ähnlichkeit)", "Manuelle Bewertung: Lesbarkeit & Genauigkeit"],
+  "section3_title": "3. Sprachsynthesequalität",
+  "section3_engine": "Engines: XTTS / YourTTS",
+  "section3_metrics": ["MOS-Bewertung: Natürlichkeit, Ähnlichkeit, Ausdruck", "Genauigkeit der Sprechererkennung"],
+  "section4_title": "4. Timing & Lippensynchronisation",
+  "section4_metrics": ["Unterschiede in Segmentdauer", "Wav2Lip-Synchronwert", "Zeitliche Abweichung"],
+  "section5_title": "5. Semantische Erhaltung",
+  "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
+  "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
+  "section6_title": "6. Nutzerfeedback & GTM-Validierung",
+  "section6_metrics": ["Stimmqualität passend zum Produkttyp", "Erhöhte Zuschauerbindung bei lokalisierten Videos", "Nutzerbereitschaft zur Tool-Nutzung"],
+  "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
+  "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
+}
+
+}
