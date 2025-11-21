@@ -2,19 +2,19 @@
   "name": "curify_studio_mvp",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
- "scripts": {
-  "predev": "node scripts/nextauth-secret.js",
-  "dev": "next dev --turbopack",
-  "prebuild": "npm run sync:cdn",
-  "sync:cdn": "bash scripts/sync_large_assets.sh",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
-  "storybook": "storybook dev -p 6006",
-  "build-storybook": "storybook build",
-  "postbuild": "next-sitemap"
-},
+  "type": "module",  
+    "scripts": {
+      "predev": "node scripts/nextauth-secret.js",
+      "sync:cdn": "if [ \"$NEXT_PUBLIC_ENV\" = \"local\" ]; then bash scripts/sync_large_assets.sh; else echo 'Skipping CDN sync (not local dev)'; fi",
+      "prebuild": "npm run sync:cdn",
+      "dev": "next dev --turbopack",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "storybook": "storybook dev -p 6006",
+      "build-storybook": "storybook build",
+      "postbuild": "next-sitemap"    
+  },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
