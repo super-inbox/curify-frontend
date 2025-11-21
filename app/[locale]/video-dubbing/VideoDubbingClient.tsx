@@ -24,7 +24,8 @@ export default function VideoDubbingClient() {
     es: { flag: '🇪🇸', video: '/video/training_es.mp4', label: 'ES' }
   };
 
-
+  const videoSrc = languages[activeLanguage].video;
+  
   const handleLanguageSwitch = (lang: 'en' | 'zh' | 'es') => {
     if (videoRef.current) {
       setCurrentTime(videoRef.current.currentTime);
@@ -69,6 +70,7 @@ export default function VideoDubbingClient() {
           <div className="w-full max-w-2xl relative">
             <CdnVideo
               ref={videoRef}
+              src={videoSrc}
               className="rounded-xl w-full shadow-2xl"
               controls
               loop

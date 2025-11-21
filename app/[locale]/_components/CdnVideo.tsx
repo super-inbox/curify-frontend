@@ -2,6 +2,8 @@
 
 import React, { forwardRef } from "react";
 import { cdn } from "@/lib/cdn";
+import { Dispatch, SetStateAction } from "react";
+
 
 export interface CdnVideoProps
   extends React.VideoHTMLAttributes<HTMLVideoElement> {
@@ -19,7 +21,9 @@ export interface CdnVideoProps
   /**
    * Setter to notify parent which video just started playing
    */
-  setWhoPlaying?: (side: string) => void;
+  setWhoPlaying?: 
+  | Dispatch<SetStateAction<"" | "left" | "right">>
+  | ((side: "" | "left" | "right") => void);
 
   /**
    * src must always be a string (we rewrite for CDN)
@@ -32,17 +36,15 @@ const CdnVideo = forwardRef<HTMLVideoElement, CdnVideoProps>(
     // Auto-rewrite static CDN assets (no rewrite for external URLs)
     const finalSrc = cdn(src);
 
-    const handlePlay = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-      // If parent wants to track which video is playing
-      if (setWhoPlaying && side) {
-        setWhoPlaying(side);
+    const handlePlay = () => {
+      if (!setWhoPlaying) return;
+    
+      const value = side ?? "";
+    
+      if (typeof setWhoPlaying === "function") {
+        setWhoPlaying(value as any);
       }
-
-      // Preserve developer-defined onPlay handlers
-      if (onPlay) {
-        onPlay(e);
-      }
-    };
+    };    
 
     return (
       <video
