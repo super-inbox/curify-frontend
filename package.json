@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "predev": "node scripts/nextauth-secret.js",
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "postbuild": "next-sitemap"
-  },
+ "scripts": {
+  "predev": "node scripts/nextauth-secret.js",
+  "dev": "next dev --turbopack",
+  "prebuild": "npm run sync:cdn",
+  "sync:cdn": "bash scripts/sync_large_assets.sh",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "storybook": "storybook dev -p 6006",
+  "build-storybook": "storybook build",
+  "postbuild": "next-sitemap"
+},
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import CdnImage from "../../_components/CdnImage";
 
 export const metadata: Metadata = {
   title: "Evaluating AI Video Translation Quality – Curify AI",
@@ -38,7 +39,7 @@ export default function VideoTranslationEvaluationPost() {
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <Image
+          <CdnImage
             src="/images/video-translation-eval.jpg"
             alt={t("title")}
             width={600}

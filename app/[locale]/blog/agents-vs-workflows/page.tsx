@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-
+import CdnImage from "../../_components/CdnImage";
 export const metadata: Metadata = {
   title: "Agents vs Workflows – Redefining Animation (Part 2)",
   description:
@@ -13,7 +13,7 @@ export default function AgentsVsWorkflowsPost() {
       <h1 className="text-4xl font-bold mb-8">🤖 Agents vs Workflows</h1>
 
       <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
-        <Image
+        <CdnImage
           src="/images/agents-vs-workflows.jpg"
           alt="Agents vs workflows"
           width={400}

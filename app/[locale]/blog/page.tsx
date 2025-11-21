@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import CdnImage from '../_components/CdnImage';
+
 
 const blogPosts = [
   {
@@ -57,7 +59,7 @@ export default function BlogListPage() {
             className="group border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
           >
             <div className="relative h-52 w-full">
-              <Image
+              <CdnImage
                 src={post.image}
                 alt={post.title}
                 fill
