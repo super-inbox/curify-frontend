@@ -86,7 +86,7 @@ export default async function LocaleLayout(props: Props) {
   const meta = localizedMeta[locale];
 
   // 👇 Read pathname from middleware (critical for canonical correctness)
-  const rawHeaders = headers();
+  const rawHeaders = await headers();
   const pathname = rawHeaders.get("x-pathname") || "";
   const normalizedPath =
     pathname === `/${locale}` ? "" : pathname.replace(`/${locale}`, "");
