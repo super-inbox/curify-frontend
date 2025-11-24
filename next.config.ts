@@ -5,8 +5,21 @@ const withNextIntl = require('next-intl/plugin')(routing);
 const nextConfig = {
   reactStrictMode: true,
 
+  // 👇 Prevent /en/ → /en or /en → /en/ redirects
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
+
+  // 👇 Make sure Next.js does NOT auto-rewrite locale roots
+  // (required for Google to index stable URL versions)
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['*'],
+    },
+  },
+
   images: {
-    domains: ["lh3.googleusercontent.com",
+    domains: [
+      "lh3.googleusercontent.com",
       "cdn.curify-ai.com",
       "videotranslatetest.blob.core.windows.net"
     ],
@@ -15,7 +28,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // All routes
         source: '/:path*',
         headers: [
           {
@@ -29,7 +41,6 @@ const nextConfig = {
         ],
       },
       {
-        // Next.js assets
         source: '/_next/:path*',
         headers: [
           {
@@ -43,7 +54,6 @@ const nextConfig = {
         ],
       },
       {
-        // API routes
         source: '/api/:path*',
         headers: [
           {
