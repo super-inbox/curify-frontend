@@ -6,6 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
+import { headers } from "next/headers";
 
 import Script from "next/script";
 import Header from "./_layout_components/Header";
@@ -31,8 +32,10 @@ export default async function LocaleLayout(props: Props) {
     notFound();
   }
 
+  // Import locale messages
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
+  // Map localized meta tags
   const localizedMeta: Record<string, { title: string; description: string }> = {
     en: {
       title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
@@ -76,11 +79,17 @@ export default async function LocaleLayout(props: Props) {
     ko: {
       title: "Curify Studio | AI 영상 번역 및 더빙 플랫폼",
       description:
-        "Curify는 170개 이상의 언어로 영상 번역, 더빙 및 자막 생성을 지원하는 AI 콘텐츠 플랫폼입니다.",
+        "Curify는 170개 이상의 언어로 영상 번역, 더빙 및 자막 생성을 지원하는 AI 콘텐츠 플랫폼입니다。",
     },
   };
 
   const meta = localizedMeta[locale];
+
+  // 👇 Read pathname from middleware (critical for canonical correctness)
+  const rawHeaders = headers();
+  const pathname = rawHeaders.get("x-pathname") || "";
+  const normalizedPath =
+    pathname === `/${locale}` ? "" : pathname.replace(`/${locale}`, "");
 
   return (
     <html lang={locale}>
@@ -89,28 +98,44 @@ export default async function LocaleLayout(props: Props) {
         <meta name="description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:url" content={`https://curify-ai.com/${locale}`} />
+        <meta property="og:url" content={`https://curify-ai.com/${locale}${normalizedPath}`} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://curify-ai.com/og-banner.png" />
         <meta property="og:image:alt" content="Curify Studio AI platform" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
-        {/* rel=alternate for multilingual SEO */}
+        {/* ---------------------------------------------- */}
+        {/*               CANONICAL SEO FIX                */}
+        {/* ---------------------------------------------- */}
+
+        {/* Canonical: always point to EN as primary */}
+        <link
+          rel="canonical"
+          href={`https://curify-ai.com/en${normalizedPath}`}
+        />
+
+        {/* Hreflang alternates for each locale */}
         {routing.locales.map((loc) => (
           <link
             key={loc}
             rel="alternate"
             hrefLang={loc}
-            href={`https://curify-ai.com/${loc}`}
+            href={`https://curify-ai.com/${loc}${normalizedPath}`}
           />
         ))}
-        <link rel="alternate" hrefLang="x-default" href="https://curify-ai.com" />
+
+        {/* Fallback */}
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`https://curify-ai.com/en${normalizedPath}`}
+        />
 
         {/* Google Identity Services */}
         <script src="https://accounts.google.com/gsi/client" async defer />
 
-        {/* Structured Data: JSON-LD */}
+        {/* Structured Data */}
         <Script id="json-ld" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -142,10 +167,11 @@ export default async function LocaleLayout(props: Props) {
           strategy="beforeInteractive"
         />
       </head>
+
       <body>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-          <AppWrapper user={null}>
+            <AppWrapper user={null}>
               <UserHydrator>
                 <Header />
                 <TopUpModal />

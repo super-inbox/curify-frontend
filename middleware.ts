@@ -5,7 +5,11 @@ import { NextResponse, type NextRequest } from "next/server";
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(req: NextRequest) {
+  // Run next-intl middleware first
   const res = intlMiddleware(req);
+
+  // 🔥 Send pathname to layout.tsx
+  res.headers.set("x-pathname", req.nextUrl.pathname);
 
   const pathname = req.nextUrl.pathname;
   const matched = pathname.match(/^\/([a-zA-Z]{2})(\/|$)/);
@@ -14,6 +18,7 @@ export default function middleware(req: NextRequest) {
   if (locale) {
     const token = req.cookies.get("next-auth.session-token")?.value;
 
+    // ----- Public routes -----
     const isRoot = pathname === `/${locale}`;
     const isLogin = pathname === `/${locale}/login`;
     const isContact = pathname === `/${locale}/contact`;
@@ -22,25 +27,35 @@ export default function middleware(req: NextRequest) {
     const isWorkspace = pathname === `/${locale}/workspace`;
     const isPrivacy = pathname === `/${locale}/privacy`;
     const isAgreement = pathname === `/${locale}/agreement`;
+    const isBlog = pathname === `/${locale}/blog` || pathname.startsWith(`/${locale}/blog/`);
     const isProjectDetail = pathname.startsWith(`/${locale}/project_details/`);
     const isMagic = pathname.startsWith(`/${locale}/magic/`);
     const isBilingual = pathname === `/${locale}/bilingual-subtitles`;
-    const isDubbing =  pathname === `/${locale}/video-dubbing`;
+    const isDubbing = pathname === `/${locale}/video-dubbing`;
     const isCreator = pathname.startsWith(`/${locale}/creator`);
     const isLipSync = pathname.startsWith(`/${locale}/lip-sync`);
-    const isBlog = pathname === `/${locale}/blog` || pathname.startsWith(`/${locale}/blog/`);
 
     const isPublicPage =
-      isRoot || isLogin || isContact || isAbout || isPricing || isWorkspace || isProjectDetail || isMagic || isPrivacy || isAgreement || isBilingual || isDubbing || isBlog || isCreator || isLipSync;
+      isRoot || isLogin || isContact || isAbout || isPricing ||
+      isWorkspace || isPrivacy || isAgreement || isBlog ||
+      isProjectDetail || isMagic || isBilingual || isDubbing ||
+      isCreator || isLipSync;
 
-    // Redirect unauthenticated users if they try to access private routes
-    if (!token && !isPublicPage) {
-      return NextResponse.redirect(new URL(`/${locale}`, req.url));
-    }
+    // ----- Bot detection (Googlebot, Bing, etc.) -----
+    const userAgent = req.headers.get("user-agent") || "";
+    const isBot = /googlebot|bingbot|slurp|duckduckbot|baiduspider/i.test(userAgent);
 
-    // Redirect logged-in users away from public-only pages
-    if (token && (isRoot || isLogin)) {
-      return NextResponse.redirect(new URL(`/${locale}/main`, req.url));
+    // 🔥 Never redirect bots — they must see real HTML pages
+    if (!isBot) {
+      // Redirect unauthenticated users away from private pages
+      if (!token && !isPublicPage) {
+        return NextResponse.redirect(new URL(`/${locale}`, req.url));
+      }
+
+      // Redirect logged-in users away from login/root pages
+      if (token && (isRoot || isLogin)) {
+        return NextResponse.redirect(new URL(`/${locale}/main`, req.url));
+      }
     }
   }
 

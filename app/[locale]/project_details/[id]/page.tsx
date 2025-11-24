@@ -151,7 +151,9 @@ export default function ProjectDetailsPage() {
               </div>
 
               <div className="grid grid-cols-2 gap-y-2 bg-white text-sm">
-                {projectDetails?.segments.map((seg, i) => {
+                {projectDetails?.segments
+                .sort((a, b) => a.segment_id - b.segment_id)
+                .map((seg, i) => {
                   const modified = modifiedSegments[i] !== undefined;
                   return (
                     <React.Fragment key={seg.line_number}>
@@ -173,6 +175,7 @@ export default function ProjectDetailsPage() {
                   );
                 })}
               </div>
+
             </div>
 
             <div className="flex flex-col items-center gap-2 mt-8">
