@@ -268,6 +268,169 @@
   "section6_metrics": ["Stimmqualität passend zum Produkttyp", "Erhöhte Zuschauerbindung bei lokalisierten Videos", "Nutzerbereitschaft zur Tool-Nutzung"],
   "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
   "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
-}
+},
+  "storyboardToPipeline": {
+    "title": "Storyboard'dan İş Akışına: Animasyonu Yeniden Tanımlamak",
+    "intro": {
+      "p1": "Çoğu insan yapay zeka videonun 'metin gir, klip al' anlamına geldiğini düşünüyor. Ama sinematik, yönetmen düzeyinde kontrol istiyorsanız, bu tamamen farklı bir oyundur.",
+      "p2": "Geleneksel animasyonda her detay önemlidir - karakter tasarımı, hareket akışı, zamanlama ve sahne geçişleri. Amacımız, yapay zekanın bu hassasiyet seviyesine ulaşmasını sağlamak.",
+      "p3": "Günümüz animasyonu hem sanat hem de yapılandırılmış bir orkestrasyon mücadelesidir. Yönetmen gibi düşünüyor, mühendis gibi inşa ediyoruz.",
+      "p4": "Bu yüzden tek aşamalı üretim yerine <strong>Kontrollü Üretim İş Akışları</strong> oluşturuyoruz. Bu iş akışları hem yapıyı hem de yaratıcılığı birleştirir:",
+      "pipelineItems": [
+        "Storyboard'dan Videoya: JSON tabanlı görsel özellikler, ID'ler, zaman damgaları ve kamera meta verileriyle",
+        "ComfyUI Tabanlı İş Akışı: Versiyonlanmış kontrol noktaları, LoRA yığınları ve tohumlarla DAG grafiği",
+        "Zamansal ve Çoklu Ortam Kontrolü: Görüntü, hareket, ses ve altyazılarda paylaşılan görsel ID'ler"
+      ],
+      "p5": "Şimdi, yapay zeka iş akışlarının pratikte nasıl çalıştığını göstermek için basit bir örnek inceleyelim.",
+      "technicalNotes": [
+        "Tüm adımlar yazılı eserleri okur/yazar (JSON/CSV, PNG dizileri, WAV/MP3, MP4, .aep)",
+        "İş akışları Python/CLI ile yönetilir (örn. ComfyUI API, ffmpeg, TTS API'ları)",
+        "Her çalıştırma, kaydedilmiş yapılandırmalar aracılığıyla tekrarlanabilir (model, örnekleyici, tohum, komut, süre)"
+      ]
+    },
+    "pipeline": {
+      "title": "Yapay Zeka Video Oluşturma İş Akışı",
+      "description": "Yapay zeka video oluşturma iş akışı, metin komutlarını net girdiler, çıktılar ve yapılandırmalarla yapılandırılmış adımlar aracılığıyla bitmiş bir videoya dönüştürür.",
+      "prompt": "1. Komut (ham fikir → yapılandırılmış JSON özellikleri)",
+      "storyboard": "2. Storyboard (zaman, kamera ve açıklamalarla sahnelerin/çekimlerin tablosu)",
+      "images": "3. Görseller (Stable Diffusion/ComfyUI aracılığıyla çekim başına oluşturulan ana kareler)",
+      "animation": "4. Animasyon (görüntü dizileri → hareket, paralaks ve efektler)",
+      "voiceOver": "5. Seslendirme (TTS + senkronizasyon verisi)",
+      "finalVideo": "6. Son Video (ffmpeg birleştirme: video + ses + altyazılar)",
+      "features": [
+        "JSON-Öncelikli Tasarım: Her sahne adreslenebilir ve programlanabilir (scene_id, shot_id)",
+        "ComfyUI Tabanlı İş Akışı: Görüntü/video oluşturma için modüler, tekrarlanabilir, birleştirilebilir DAG'ler",
+        "Zamansal ve Çoklu Ortam Kontrolü: Tüm modalitelerde tohumlar, karakter gömüleri ve tutarlı zamanlama"
+      ],
+      "exampleIntro": "Şimdi, yapay zeka iş akışlarının pratikte nasıl çalıştığını göstermek için basit bir örnek inceleyelim.",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/final_voiceover.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
+    "steps": {
+      "step1": {
+        "title": "Adım 1: Basit Bir Komutla Başlayın",
+        "example": "Bir kız gece yarısı tren istasyonunda duruyor, rüzgar saçlarını savuruyor.",
+        "expandedPrompt": "GPT veya yerel bir LLM yardımıyla, bunu küresel stil, karakter tanımlamaları ve sahne bazlı bölümlemelerle zenginleştirilmiş yapılandırılmış bir JSON nesnesine dönüştürüyoruz.",
+        "technicalDetails": {
+          "llmFields": [
+            "küresel_stil: sanatsal stil, kamera dili, renk paleti",
+            "karakterler: isim, yaş, görünüm, kıyafet, duygusal durum",
+            "sahneler: [{ scene_id, shot_id, açıklama, kamera_türü, süre_saniye }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "OpenAI/LLM API'sini çağıran ve JSON'u diske yazan Python betiği"
+        }
+      },
+      "step2": {
+        "title": "Adım 2: Komutu Bir Storyboard Tablosuna Dönüştürün",
+        "description": "JSON özellikleri, hem insanların hem de iş akışlarının okuyabileceği bir storyboard tablosuna (CSV veya Notion) düzleştirilir.",
+        "technicalDetails": {
+          "sütunlar": [
+            "sahne_id", "çekim_id", "başlangıç_zamanı", "bitiş_zamanı", "süre_saniye",
+            "kamera_türü", "görsel_açıklama", "karakter_durumu", "hareket_notları"
+          ],
+          "depolama": "storyboard_v1.csv (sonraki adımlar için tek gerçek kaynak olarak kullanılır)",
+          "otomasyon": "prompt_run_001.json → storyboard_v1.csv dönüşümünü yapan Python/Node.js betiği"
+        }
+      },
+      "step3": {
+        "title": "Adım 3: Görselleri Oluşturun",
+        "points": [
+          "🎨 `storyboard_v1.csv` dosyasındaki her satırı yüksek çözünürlüklü ana karelere dönüştürmek için <strong>Stable Diffusion</strong> veya <strong>ComfyUI</strong> kullanın.",
+          "Aynı temel kontrol noktası, LoRA yığını, örnekleyici ve tohum politikasını kullanarak tüm çekimlerde tutarlı bir stil koruyun."
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "tutarlılık": {
+            "tohumStratejisi": "sahne_bazlı_sabit",
+            "tohumÖrneği": "tohum = hash(sahne_id + karakter_ismi)",
+            "isimlendirmeKuralı": "renders/sahne_{sahne_id}/cekım_{cekım_id}/kf_0001.png"
+          }
+        }
+      },
+      "step4": {
+        "title": "Adım 4: After Effects'te Hareket ve Atmosfer Ekleyin",
+        "points": [
+          "Görsel dizileri veya ana kareleri <strong>Adobe After Effects</strong>'te katmanlı kompozisyonlar olarak içe aktarın.",
+          "Ana kare animasyonlarını uygulayın: kaydırma, yakınlaştırma, paralaks katmanları, sis, ışık titremesi.",
+          "Ortam ses efektleri ve sahneler arasında sinematik geçişler ekleyin."
+        ],
+        "technicalDetails": {
+          "girdi": "renders/sahne_{sahne_id}/cekım_{cekım_id}/kf_0001.png (isteğe bağlı derinlik haritaları/alfa kanallarıyla)",
+          "projeDosyası": "ae/storyboard_v1.aep",
+          "otomasyon": [
+            "Sahneleri scene_id'ye göre otomatik oluşturmak için AE ExtendScript/JSX kullanın.",
+            "storyboard_v1.csv'den süre_saniye → kompozisyon süresini eşleştirin.",
+            "Gerekirse, AE eklentileri veya video-duyarlı difüzyon araçlarıyla ara kareler oluşturun."
+          ],
+          "çıktı": "ae_renders/sahne_{sahne_id}_cekım_{cekım_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "Adım 5: Seslendirme ve Altyazı Ekleyin",
+        "points": [
+          "Doğal seslendirmeler oluşturmak için <strong>XTTS</strong> veya <strong>ElevenLabs</strong> kullanın, tutarlı bir ses profili kullanarak.",
+          "Kısaltmalar (API, NBA gibi) için İngilizce klipleri ayrı oluşturup sonradan birleştirerek temiz telaffuz sağlayın.",
+          "Seslendirmeyle senkronize `.srt` veya zaman çizelgesi `.json` dosyaları kullanarak altyazı ekleyin."
+        ],
+        "technicalDetails": {
+          "betikKaynağı": "Diyaloglar ve anlatı prompt_run_001.json + storyboard_v1.csv'den çıkarıldı",
+          "ttsYapılandırması": {
+            "motor": "XTTS veya ElevenLabs",
+            "sesId": "sinematik_kadin_tr",
+            "örneklemeHızı": 44100,
+            "biçim": "wav"
+          },
+          "çıktılar": {
+            "sesDosyası": "audio/storyboard_v1_ses.wav",
+            "altyazıDosyası": "subtitles/storyboard_v1.srt"
+          },
+          "senkronizasyonStratejisi": "storyboard_v1.csv'den `başlangıç_zamanı`/`bitiş_zamanı`nı altyazı kuyruklarıyla eşleştirin; toplam ses süresinin ≈ son zaman çizelgesi süresiyle eşleştiğinden emin olun"
+        }
+      },
+      "step6": {
+        "title": "Adım 6: FFMPEG ile Son Birleştirme",
+        "description": "Tüm parçaları tek bir video dosyasında birleştirmek için FFMPEG kullanın.",
+        "technicalDetails": {
+          "girdiler": {
+            "video": "ae_renders/storyboard_v1_zaman_cizelgesi.mp4",
+            "ses": "audio/storyboard_v1_ses.wav",
+            "altyazılar": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegOrnegi": "ffmpeg -i storyboard_v1_zaman_cizelgesi.mp4 -i storyboard_v1_ses.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "çıktı": "exports/storyboard_v1_final.mp4 (H.264, 24 kare/sn, AAC ses)"
+        }
+      }
+    },
+    "whatYouNeed": "📁 İhtiyacınız Olacaklar",
+    "whatYouNeedTechnical": [
+      "Stable Diffusion / ComfyUI için en az 12GB VRAM'li GPU",
+      "JSON/CSV dönüşümleri ve otomasyon betikleri için Python ortamı",
+      "Gerekli özel düğümler ve iş akışlarıyla yapılandırılmış ComfyUI kurulumu",
+      "Hareket ve efektler için Adobe After Effects veya benzeri bir kompozisyon yazılımı",
+      "Ses sentezi için XTTS / ElevenLabs API erişimi",
+      "Komut satırında kurulu ve erişilebilir ffmpeg"
+    ],
+    "cta": "🚀 Storyboard'unuzu yapay zeka ile hayata geçirmeye hazır mısınız? <strong>Size başlamanız için JSON örnekleri, ComfyUI iş akışları ve ffmpeg/AE şablonları içeren kapsamlı bir başlangıç seti sunabiliriz.</strong>"
+  }
+
+
 
 }

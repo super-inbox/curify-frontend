@@ -83,7 +83,8 @@ export default async function LocaleLayout(props: Props) {
     },
   };
 
-  const meta = localizedMeta[locale];
+  // Fallback to English if locale not found
+  const meta = localizedMeta[locale] || localizedMeta['en'];
 
   // 👇 Read pathname from middleware (critical for canonical correctness)
   const rawHeaders = await headers();
