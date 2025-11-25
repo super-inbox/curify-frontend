@@ -272,74 +272,166 @@
 },
 
 "storyboardToPipeline": {
-  "title": "从故事板到AI流水线——重新定义动画（第一部分）",
+  "title": "从故事板到AI流水线：重新定义动画制作",
   "intro": {
     "p1": "大多数人认为AI视频就是\"输入文字，输出片段\"。但如果你追求的是<strong>电影级、导演级别的控制</strong>，那完全是另一回事。",
     "p2": "在传统动画中，每个细节都很重要——角色设计、动作连续性、时间安排和场景转换。我们的目标是让AI达到这种精确度。",
     "p3": "如今的动画既是一门艺术，也是一项结构化编排的挑战。我们像导演一样思考，但像工程师一样构建。",
     "p4": "这就是为什么我们构建<strong>受控生成流水线</strong>，而不是一次性生成。这些流水线结合了结构和创造力：",
     "pipelineItems": [
-      "从故事板到视频：确保视觉与叙事的一致性",
-      "基于ComfyUI的工作流：模块化、可重现、可组合",
-      "时序和多模态控制：图像+语音+场景的连贯性"
+      "故事板到视频：基于JSON的视觉规范，包含ID、时间戳和摄像机元数据",
+      "基于ComfyUI的工作流：带有版本控制检查点、LoRA堆叠和种子的DAG图",
+      "时序和多模态控制：在图像、动作、音频和字幕中共享场景ID"
     ],
-    "p5": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。"
+    "p5": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
+    "technicalNotes": [
+      "所有步骤都读取/写入类型化工件（JSON/CSV、PNG序列、WAV/MP3、MP4、.aep）",
+      "流水线通过Python/CLI编排（如ComfyUI API、ffmpeg、TTS API）",
+      "每次运行都可通过保存的配置重现（模型、采样器、种子、提示词、时长）"
+    ]
   },
   "pipeline": {
-    "description": "AI视频生成流水线通过结构化阶段将文本提示转化为精美的视频。",
+    "title": "AI视频生成流水线",
+    "description": "AI视频生成流水线通过明确输入、输出和配置的结构化阶段，将文本提示转化为精美的视频。",
+    "prompt": "1. 提示词（原始想法 → 结构化JSON规范）",
+    "storyboard": "2. 故事板（带时间、镜头和描述的场次/镜头表格）",
+    "images": "3. 图像（通过Stable Diffusion/ComfyUI为每个镜头生成的关键帧）",
+    "animation": "4. 动画（图像序列 → 运动、视差和效果）",
+    "voiceOver": "5. 旁白（TTS + 同步数据）",
+    "finalVideo": "6. 最终视频（ffmpeg合成：视频 + 音频 + 字幕）",
     "features": [
-      "从故事板到视频：确保视觉与叙事的一致性",
-      "基于ComfyUI的工作流：模块化、可重现、可组合",
-      "时序和多模态控制：图像+语音+场景的连贯性"
+      "JSON优先设计：每个场景都可寻址和可编程（scene_id, shot_id）",
+      "基于ComfyUI的工作流：用于图像/视频生成的模块化、可重现、可组合的DAG图",
+      "时序和多模态控制：在所有模态中保持一致的种子、角色嵌入和时间安排"
     ],
     "exampleIntro": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
-    "prompt": "提示词",
-    "storyboard": "故事板",
-    "images": "图像",
-    "animation": "动画",
-    "voiceOver": "旁白",
-    "finalVideo": "最终视频"
+    "artifacts": {
+      "promptSpec": "prompt_run_001.json",
+      "storyboardTable": "storyboard_v1.csv",
+      "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+      "audioOutput": "audio/final_voiceover.wav",
+      "subtitleFile": "subtitles/storyboard_v1.srt",
+      "finalVideoFile": "exports/storyboard_v1_final.mp4"
+    }
   },
   "steps": {
     "step1": {
       "title": "第一步：从基础提示词开始",
       "example": "一个女孩站在午夜的车站，风吹动她的头发。",
-      "expandedPrompt": "在GPT的帮助下，我们将其扩展为更丰富的视觉提示："
+      "expandedPrompt": "在GPT或本地LLM的帮助下，我们将其扩展为包含全局风格、角色定义和分场信息的结构化JSON对象。",
+      "technicalDetails": {
+        "llmFields": [
+          "global_style: 艺术风格、镜头语言、调色板",
+          "characters: 姓名、年龄、外貌、服装、情感状态",
+          "scenes: [{ scene_id, shot_id, 描述, camera_type, duration_seconds }]"
+        ],
+        "outputFile": "prompt_run_001.json",
+        "exampleStack": "调用OpenAI/LLM API并将JSON写入磁盘的Python脚本"
+      }
     },
     "step2": {
-      "title": "第二步：将提示词转换为故事板表格"
+      "title": "第二步：将提示词转换为故事板表格",
+      "description": "将JSON规范扁平化为人类和流水线都能读取的故事板表格（CSV或Notion）。",
+      "technicalDetails": {
+        "columns": [
+          "scene_id", "shot_id", "start_time", "end_time", "duration_seconds",
+          "camera_type", "visual_description", "character_state", "movement_notes"
+        ],
+        "storage": "storyboard_v1.csv（作为后续步骤的单一事实来源）",
+        "automation": "执行prompt_run_001.json → storyboard_v1.csv转换的Python/Node.js脚本"
+      }
     },
     "step3": {
       "title": "第三步：生成视觉效果",
       "points": [
-        "🎨 使用<strong>Stable Diffusion</strong>或<strong>ComfyUI</strong>将每个场景描述转换为高分辨率图像。",
-        "通过使用相同的LoRA模型、艺术风格和种子值来保持风格一致。"
-      ]
+        "🎨 使用<strong>Stable Diffusion</strong>或<strong>ComfyUI</strong>将`storyboard_v1.csv`中的每一行转换为高分辨率关键帧。",
+        "通过使用相同的基础检查点、LoRA堆叠、采样器和种子策略，保持所有镜头风格一致。"
+      ],
+      "technicalDetails": {
+        "modelConfig": {
+          "checkpoint": "sd_xl_base_1.0.safetensors",
+          "vae": "sdxl_vae.safetensors",
+          "sampler": "euler_a",
+          "steps": 25,
+          "cfgScale": 6.5,
+          "resolution": "1024x576",
+          "loraStack": [
+            "character_girl_v2.safetensors",
+            "style_cinematic_blue_hour.safetensors"
+          ]
+        },
+        "consistency": {
+          "seedStrategy": "per_scene_consistent",
+          "seedExample": "seed = hash(scene_id + character_name)",
+          "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+        }
+      }
     },
     "step4": {
       "title": "第四步：在After Effects中添加动效和氛围",
       "points": [
-        "将图像导入<strong>Adobe After Effects</strong>",
-        "应用关键帧动画：平移、缩放、雾化叠加、发光效果",
-        "添加环境音效或电影转场"
-      ]
+        "将图像序列或关键帧作为分层合成导入<strong>Adobe After Effects</strong>。",
+        "应用关键帧动画：平移、缩放、视差层、雾气、光线闪烁。",
+        "添加环境音效和场景间的电影转场。"
+      ],
+      "technicalDetails": {
+        "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png（带可选的深度图/Alpha通道）",
+        "projectFile": "ae/storyboard_v1.aep",
+        "automation": [
+          "使用AE ExtendScript/JSX自动按scene_id创建合成",
+          "从storyboard_v1.csv映射duration_seconds → 合成时长",
+          "如果需要，使用AE插件或视频感知扩散工具生成中间帧"
+        ],
+        "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+      }
     },
     "step5": {
       "title": "第五步：添加语音和字幕",
       "points": [
-        "使用<strong>XTTS</strong>或<strong>ElevenLabs</strong>生成自然的语音旁白",
-        "对于缩写词（如API、NBA），单独生成英文片段并在后期合并",
-        "使用与语音同步的`.srt`或`.json`文件添加字幕"
-      ]
+        "使用<strong>XTTS</strong>或<strong>ElevenLabs</strong>从脚本生成自然语音，保持一致的语音配置文件。",
+        "对于缩写（如API、NBA），单独生成英文片段并在后期合并，确保清晰发音。",
+        "添加与旁白同步的`.srt`或时间轴`.json`文件作为字幕。"
+      ],
+      "technicalDetails": {
+        "scriptSource": "从prompt_run_001.json + storyboard_v1.csv中提取的对话和旁白",
+        "ttsConfig": {
+          "engine": "XTTS或ElevenLabs",
+          "voiceId": "cinematic_female_zh",
+          "sampleRate": 44100,
+          "format": "wav"
+        },
+        "outputs": {
+          "audioFile": "audio/storyboard_v1_voice.wav",
+          "subtitleFile": "subtitles/storyboard_v1.srt"
+        },
+        "syncStrategy": "将storyboard_v1.csv中的`start_time`/`end_time`与字幕提示对齐；确保总音频时长≈最终时间轴时长"
+      }
     },
     "step6": {
       "title": "第六步：使用FFMPEG进行最终合成",
-      "description": "使用FFMPEG将所有片段合并为一个视频："
+      "description": "使用FFMPEG将所有部分合并为单个视频文件。",
+      "technicalDetails": {
+        "inputs": {
+          "video": "ae_renders/storyboard_v1_timeline.mp4",
+          "audio": "audio/storyboard_v1_voice.wav",
+          "subtitles": "subtitles/storyboard_v1.srt"
+        },
+        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voice.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+        "output": "exports/storyboard_v1_final.mp4 (H.264, 24fps, AAC音频)"
+      }
     }
   },
   "whatYouNeed": "📁 您需要准备什么",
-  "cta": "🚀 准备好用AI将您的故事板变为现实了吗？<br /><strong>我们可以提供完整的入门套件</strong>，包含示例、模板和工具，帮助您快速上手。"
+  "whatYouNeedTechnical": [
+    "支持Stable Diffusion / ComfyUI的GPU（至少12GB显存）",
+    "用于JSON/CSV转换和自动化脚本的Python环境",
+    "配置了必要自定义节点和工作流的ComfyUI安装",
+    "用于添加动效和特效的Adobe After Effects或类似合成软件",
+    "用于语音合成的XTTS / ElevenLabs API访问权限",
+    "已安装并可从命令行访问的ffmpeg"
+  ],
+  "cta": "🚀 准备好用AI将您的故事板变为现实了吗？<br /><strong>我们可以提供包含JSON示例、ComfyUI工作流和ffmpeg/AE模板的完整入门套件</strong>，帮助您快速上手。"
 }
 
 
-}
+} 

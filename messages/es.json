@@ -267,6 +267,168 @@
   "section6_metrics": ["Calidad vocal adecuada al tipo de producto", "Mejora en retención de video", "Interés de adopción por parte de usuarios o vendedores"],
   "closing": "En Curify, no solo traducimos. Preservamos emociones, intención y claridad. ¿Listo para globalizar tu voz? Contáctanos.",
   "available_locales": "Disponible en: [EN] [ZH] [ES] [DE]"
+},
+  "storyboardToPipeline": {
+  "title": "De Storyboards a Pipelines de IA: Redefiniendo la Animación",
+  "intro": {
+    "p1": "La mayoría de la gente piensa que el video con IA significa 'texto de entrada, clip de salida'. Pero si buscas un nivel cinematográfico, con control de director, eso es otra historia.",
+    "p2": "En la animación tradicional, cada detalle importa: el diseño de personajes, la continuidad del movimiento, el ritmo y las transiciones entre escenas. Nuestro objetivo es que la IA alcance ese nivel de precisión.",
+    "p3": "Hoy en día, la animación es tanto un arte como un desafío de orquestación estructurada. Pensamos como directores, pero construimos como ingenieros.",
+    "p4": "Por eso construimos 'Pipelines de Generación Controlada' en lugar de generación de un solo paso. Estos pipelines combinan estructura y creatividad:",
+    "pipelineItems": [
+      "Storyboard a Video: especificaciones de escena basadas en JSON con IDs, tiempos y metadatos de cámara",
+      "Flujos de trabajo basados en ComfyUI: grafos DAG con checkpoints versionados, stacks LoRA y semillas",
+      "Control temporal y multimodal: IDs de escena compartidas a través de imágenes, movimiento, audio y subtítulos"
+    ],
+    "p5": "Ahora, veamos un ejemplo sencillo para mostrar cómo funcionan los pipelines de IA en la práctica.",
+    "technicalNotes": [
+      "Todas las etapas leen/escriben artefactos tipados (JSON/CSV, secuencias PNG, WAV/MP3, MP4, .aep)",
+      "Los pipelines se orquestan mediante Python/CLI (ej. API de ComfyUI, ffmpeg, APIs TTS)",
+      "Cada ejecución es reproducible a través de configuraciones guardadas (modelo, muestreador, semilla, prompts, duración)"
+    ]
+  },
+  "pipeline": {
+    "title": "Pipeline de Generación de Videos con IA",
+    "description": "El pipeline de generación de videos con IA transforma indicaciones de texto en videos terminados a través de etapas estructuradas, con entradas, salidas y configuraciones explícitas.",
+    "prompt": "1. Indicación (idea en bruto → especificación JSON estructurada)",
+    "storyboard": "2. Storyboard (tabla de escenas/tomas con tiempos, cámara y descripción)",
+    "images": "3. Imágenes (fotogramas clave generados por toma vía Stable Diffusion/ComfyUI)",
+    "animation": "4. Animación (secuencias de imágenes → movimiento, paralaje y efectos)",
+    "voiceOver": "5. Voz en off (TTS + datos de sincronización)",
+    "finalVideo": "6. Video final (composición ffmpeg: video + audio + subtítulos)",
+    "features": [
+      "Diseño primero en JSON: cada escena es direccionable y programable (scene_id, shot_id)",
+      "Flujos de trabajo basados en ComfyUI: DAGs modulares, reproducibles y componibles para generación de imágenes/video",
+      "Control temporal y multimodal: semillas, incrustaciones de personajes y tiempos consistentes en todas las modalidades"
+    ],
+    "exampleIntro": "Ahora, veamos un ejemplo sencillo para mostrar cómo funcionan los pipelines de IA en la práctica.",
+    "artifacts": {
+      "promptSpec": "prompt_run_001.json",
+      "storyboardTable": "storyboard_v1.csv",
+      "imageOutputDir": "renders/escena_{scene_id}/toma_{shot_id}/fotograma_####.png",
+      "audioOutput": "audio/voz_final.wav",
+      "subtitleFile": "subtitulos/storyboard_v1.srt",
+      "finalVideoFile": "exports/storyboard_v1_final.mp4"
+    }
+  },
+  "steps": {
+    "step1": {
+      "title": "Paso 1: Comienza con un Prompt Sencillo",
+      "example": "Una chica espera en una estación de tren a medianoche, el viento mueve su cabello.",
+      "expandedPrompt": "Con la ayuda de GPT o un LLM local, expandimos esto a un objeto JSON estructurado con estilo global, definiciones de personajes y desglose por escenas.",
+      "technicalDetails": {
+        "llmFields": [
+          "estilo_global: estilo artístico, lenguaje de cámara, paleta de colores",
+          "personajes: nombre, edad, apariencia, vestuario, estado emocional",
+          "escenas: [{ scene_id, shot_id, descripción, tipo_cámara, duración_segundos }]"
+        ],
+        "outputFile": "prompt_run_001.json",
+        "exampleStack": "Script de Python que llama a la API de OpenAI/LLM y escribe JSON en disco"
+      }
+    },
+    "step2": {
+      "title": "Paso 2: Convierte el Prompt en una Tabla de Storyboard",
+      "description": "La especificación JSON se aplana en una tabla de storyboard (CSV o Notion) que tanto humanos como el pipeline pueden leer.",
+      "technicalDetails": {
+        "columns": [
+          "scene_id", "shot_id", "hora_inicio", "hora_fin", "duracion_segundos",
+          "tipo_camara", "descripcion_visual", "estado_personaje", "notas_movimiento"
+        ],
+        "storage": "storyboard_v1.csv (se utiliza como fuente única de verdad para los pasos siguientes)",
+        "automation": "Script de Python/Node.js que transforma prompt_run_001.json → storyboard_v1.csv"
+      }
+    },
+    "step3": {
+      "title": "Paso 3: Genera las Imágenes",
+      "points": [
+        "🎨 Usa <strong>Stable Diffusion</strong> o <strong>ComfyUI</strong> para convertir cada fila en `storyboard_v1.csv` en un fotograma clave de alta resolución.",
+        "Mantén el estilo consistente usando el mismo checkpoint base, pila LoRA, muestreador y política de semillas en todas las tomas."
+      ],
+      "technicalDetails": {
+        "modelConfig": {
+          "checkpoint": "sd_xl_base_1.0.safetensors",
+          "vae": "sdxl_vae.safetensors",
+          "sampler": "euler_a",
+          "steps": 25,
+          "cfgScale": 6.5,
+          "resolution": "1024x576",
+          "loraStack": [
+            "character_girl_v2.safetensors",
+            "style_cinematic_blue_hour.safetensors"
+          ]
+        },
+        "consistency": {
+          "seedStrategy": "fija_por_escena",
+          "seedExample": "seed = hash(scene_id + nombre_personaje)",
+          "namingConvention": "renders/escena_{scene_id}/toma_{shot_id}/kf_0001.png"
+        }
+      }
+    },
+    "step4": {
+      "title": "Paso 4: Añade Movimiento y Ambiente en After Effects",
+      "points": [
+        "Importa secuencias de imágenes o fotogramas clave en <strong>Adobe After Effects</strong> como composiciones en capas.",
+        "Aplica animaciones con fotogramas clave: paneos, zoom, capas de paralaje, niebla y parpadeos de luz.",
+        "Añade pistas de sonido ambiental y transiciones cinematográficas entre escenas."
+      ],
+      "technicalDetails": {
+        "input": "renders/escena_{scene_id}/toma_{shot_id}/kf_0001.png (más mapas de profundidad/canales alfa opcionales)",
+        "projectFile": "ae/storyboard_v1.aep",
+        "automation": [
+          "Usa scripts/ExtendScript de AE o JSX para crear automáticamente composiciones por scene_id.",
+          "Mapea `duracion_segundos` de storyboard_v1.csv → duración de la composición.",
+          "Genera fotogramas intermedios mediante plugins de AE o herramientas de difusión conscientes del video si es necesario."
+        ],
+        "output": "ae_renders/escena_{scene_id}_toma_{shot_id}_anim.mp4"
+      }
+    },
+    "step5": {
+      "title": "Paso 5: Añade Voz y Subtítulos",
+      "points": [
+        "Usa <strong>XTTS</strong> o <strong>ElevenLabs</strong> para generar voces en off naturales a partir del guión, utilizando un perfil de voz consistente.",
+        "Para acrónimos (como API, NBA), genera fragmentos en inglés por separado y combínalos después para mantener una pronunciación limpia.",
+        "Añade subtítulos usando archivos `.srt` o `.json` de línea de tiempo sincronizados con la voz en off."
+      ],
+      "technicalDetails": {
+        "scriptSource": "diálogo y narración extraídos de prompt_run_001.json + storyboard_v1.csv",
+        "ttsConfig": {
+          "motor": "XTTS o ElevenLabs",
+          "vozId": "cinematic_female_es",
+          "tasaMuestreo": 44100,
+          "formato": "wav"
+        },
+        "outputs": {
+          "archivoVoz": "audio/storyboard_v1_voz.wav",
+          "archivoSubtitulos": "subtitulos/storyboard_v1.srt"
+        },
+        "syncStrategy": "alinea `hora_inicio`/`hora_fin` de storyboard_v1.csv con las señales de subtítulos; asegura que la duración total de audio ≈ duración de la línea de tiempo final"
+      }
+    },
+    "step6": {
+      "title": "Paso 6: Composición Final con FFMPEG",
+      "description": "Usa FFMPEG para combinar todas las piezas en un solo archivo de video con audio y subtítulos.",
+      "technicalDetails": {
+        "inputs": {
+          "video": "ae_renders/storyboard_v1_timeline.mp4",
+          "audio": "audio/storyboard_v1_voz.wav",
+          "subtitulos": "subtitulos/storyboard_v1.srt"
+        },
+        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voz.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitulos/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+        "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, audio AAC)"
+      }
+    }
+  },
+  "whatYouNeed": "📁 Lo que Necesitarás",
+  "whatYouNeedTechnical": [
+    "GPU con al menos 12 GB de VRAM para Stable Diffusion / ComfyUI",
+    "Entorno Python para transformaciones JSON/CSV y scripts de automatización",
+    "ComfyUI instalado con los nodos y flujos de trabajo personalizados necesarios",
+    "Adobe After Effects o un compositor similar para movimiento y efectos",
+    "Acceso a la API de XTTS / ElevenLabs para síntesis de voz",
+    "ffmpeg instalado y disponible en la línea de comandos"
+  ],
+  "cta": "🚀 ¿Listo para dar vida a tu storyboard con IA?<br /><strong>Podemos proporcionarte un kit de inicio completo</strong> con ejemplos de JSONs, flujos de trabajo de ComfyUI y plantillas de ffmpeg/AE para ayudarte a comenzar."
 }
+
 
 }
