@@ -72,8 +72,8 @@ export default function StoryboardToPipelinePost() {
   };
 
   return (
-    <article className="max-w-4xl mx-auto px-6 py-12 prose prose-lg">
-      <h1 className="text-4xl font-bold mb-6">{t("title")}</h1>
+    <article className="max-w-4xl mx-auto px-6 py-12 prose prose-base md:prose-lg">
+      <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>
       
       {/* Featured image with floating layout */}
       <div className="float-right ml-6 mb-4 w-1/2">
@@ -86,22 +86,22 @@ export default function StoryboardToPipelinePost() {
         />
       </div>
 
-      <p className="text-xl text-gray-600 mb-8">
+      <p className="text-gray-700 mb-6">
         {t.rich('intro.p1', {
           strong: (chunks) => <strong>{chunks}</strong>
         })}
       </p>
-      <p>
+      <p className="text-gray-700 mb-6">
         {t.rich('intro.p2', {
           strong: (chunks) => <strong>{chunks}</strong>
         })}
       </p>
-      <p>
+      <p className="text-gray-700 mb-6">
         {t.rich('intro.p3', {
           strong: (chunks) => <strong>{chunks}</strong>
         })}
       </p>
-      <p>
+      <p className="text-gray-700 mb-6">
         {t.rich('intro.p4', {
           strong: (chunks) => <strong>{chunks}</strong>
         })}
@@ -109,7 +109,7 @@ export default function StoryboardToPipelinePost() {
 
       {/* Visual pipeline representation */}
       <div className="my-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg clear-both">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           {t("pipeline.title")}
         </h2>
         
@@ -125,7 +125,7 @@ export default function StoryboardToPipelinePost() {
             'finalVideo'
           ].map((step, index) => (
             <div key={step} className="flex items-center">
-              <div className="bg-white px-4 py-2 rounded-lg shadow-md text-center min-w-[120px]">
+              <div className="bg-white px-4 py-2 rounded-lg shadow-md text-center min-w-[120px] text-sm">
                 {t(`pipeline.${step}`)}
               </div>
               {index < 5 && (
@@ -135,12 +135,12 @@ export default function StoryboardToPipelinePost() {
           ))}
         </div>
 
-        <p className="mt-6 text-gray-700">{t('pipeline.description')}</p>
+        <p className="mt-6 text-sm sm:text-base">{t('pipeline.description')}</p>
         
         <ul className="mt-4 list-disc list-inside space-y-2">
           {Array.isArray(t.raw('pipeline.features')) && 
            (t.raw('pipeline.features') as unknown[]).map((feature, index) => (
-             <li key={index} className="text-gray-700">{String(feature)}</li>
+             <li key={index} className="text-sm sm:text-base">{String(feature)}</li>
            ))}
         </ul>
 
@@ -148,13 +148,13 @@ export default function StoryboardToPipelinePost() {
       </div>
 
       <div className="my-8 p-6 bg-blue-50 rounded-lg">
-        <h3 className="text-xl font-bold mb-4">
-          📝 {t('steps.step1.title')}
+        <h3 className="text-xl font-bold mb-4 text-gray-800">
+          {t('steps.step1.title')}
         </h3>
-        <p className="mb-4">{t('steps.step1.example')}</p>
-        <p className="mb-4">{t('steps.step1.expandedPrompt')}</p>
+        <p className="mb-4 text-sm sm:text-base">{t('steps.step1.example')}</p>
+        <p className="mb-4 text-sm sm:text-base">{t('steps.step1.expandedPrompt')}</p>
 
-        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm sm:text-base">
           <code>
             A young woman standing alone on a midnight train platform, dim lights reflecting off the wet ground, wind blowing her hair, cinematic lighting, anime art style, 4K
           </code>
@@ -162,13 +162,13 @@ export default function StoryboardToPipelinePost() {
       </div>
 
       <div className="my-8 p-6 bg-purple-50 rounded-lg">
-        <h3 className="text-xl font-bold mb-4">
-          🎬 {t('steps.step2.title')}
+        <h3 className="text-xl font-bold mb-4 text-gray-800">
+          {t('steps.step2.title')}
         </h3>
         
         {/* Storyboard table showing scene breakdown */}
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300">
+          <table className="w-full border-collapse border border-gray-300 text-sm sm:text-base">
             <thead>
               <tr className="bg-gray-100">
                 <th className="border border-gray-300 p-2">Scene</th>
@@ -251,13 +251,13 @@ export default function StoryboardToPipelinePost() {
       <h3 className="text-xl font-bold mb-4">
         {stepNum === 3 ? '🛠️ ' : stepNum === 4 ? '🎬 ' : '🎧 '}{title}
       </h3>
-      {description && <p className="mb-4">{description}</p>}
+      {description && <p className="mb-4 text-sm sm:text-base">{description}</p>}
       {Array.isArray(points) && points.length > 0 && (
         <ul className="list-disc pl-5 space-y-2">
           {points.map((point: string, index: number) => (
             <li 
               key={index} 
-              className="text-gray-700"
+              className="text-sm sm:text-base"
               dangerouslySetInnerHTML={{ __html: point.replace(/\{strong\}(.*?)\{\/strong\}/g, '<strong>$1</strong>') }}
             />
           ))}
@@ -269,10 +269,10 @@ export default function StoryboardToPipelinePost() {
 ```__
 
       <div className="my-8 p-6 bg-orange-50 rounded-lg">
-        <h3 className="text-xl font-bold mb-4">
+        <h3 className="text-xl font-bold mb-4 text-gray-800">
           📦 {t('steps.step6.title')}
         </h3>
-        <p className="mb-4">{t('steps.step6.description')}</p>
+        <p className="mb-4 text-sm sm:text-base">{t('steps.step6.description')}</p>
 
         <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto mb-4">
           <code>{`ffmpeg -f concat -safe 0 -i mylist.txt -c copy output_temp.mp4
@@ -285,10 +285,10 @@ ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex "[0:a][1:a]amix=inputs=2"
       </div>
 
       <div className="my-8 p-6 bg-gray-50 rounded-lg">
-        <h3 className="text-xl font-bold mb-4">{t('whatYouNeed')}</h3>
+        <h3 className="text-xl font-bold mb-4 text-gray-800">{t('whatYouNeed')}</h3>
         
         <ul className="space-y-6">
-          <li>
+          <li className="text-sm sm:text-base">
             <strong>storyboard.json</strong> – short scene descriptions
             <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto mt-2">
               <code>{`{
@@ -320,7 +320,7 @@ ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex "[0:a][1:a]amix=inputs=2"
             </pre>
           </li>
 
-          <li>
+          <li className="text-sm sm:text-base">
             <strong>prompts.json</strong> – GPT-expanded prompts
             <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto mt-2">
               <code>{`{
@@ -346,10 +346,10 @@ ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex "[0:a][1:a]amix=inputs=2"
             </pre>
           </li>
 
-          <li><strong>scene1.png</strong>, <strong>scene2.png</strong> – image outputs</li>
-          <li><strong>scene1.wav</strong> – voice narration per scene</li>
-          <li><strong>build_project.jsx</strong> – AE import + animation script</li>
-          <li><strong>combine_video.sh</strong> – FFMPEG merge script</li>
+          <li className="text-sm sm:text-base"><strong>scene1.png</strong>, <strong>scene2.png</strong> – image outputs</li>
+          <li className="text-sm sm:text-base"><strong>scene1.wav</strong> – voice narration per scene</li>
+          <li className="text-sm sm:text-base"><strong>build_project.jsx</strong> – AE import + animation script</li>
+          <li className="text-sm sm:text-base"><strong>combine_video.sh</strong> – FFMPEG merge script</li>
         </ul>
       </div>
 
