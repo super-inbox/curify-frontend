@@ -6,7 +6,6 @@ const BASE_URL = "https://curify-ai.com";
 
 const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru"];
 
-// Static public routes (for every locale)
 const STATIC_ROUTES = [
   "",
   "/contact",
@@ -21,26 +20,29 @@ const STATIC_ROUTES = [
   "/blog",
 ];
 
-function getEnglishBlogSlugs(): string[] {
-  const blogDir = path.join(process.cwd(), "app", "en", "blog");
+// Detect blog slugs from ANY locale (first existing folder)
+function getBlogSlugs(): string[] {
+  for (const locale of LOCALES) {
+    const blogDir = path.join(process.cwd(), "app", locale, "blog");
 
-  if (!fs.existsSync(blogDir)) return [];
+    if (fs.existsSync(blogDir)) {
+      return fs
+        .readdirSync(blogDir)
+        .filter((name) => {
+          const full = path.join(blogDir, name);
+          return (
+            fs.statSync(full).isDirectory() &&
+            (fs.existsSync(path.join(full, "page.tsx")) ||
+              fs.existsSync(path.join(full, "page.jsx")))
+          );
+        })
+        .map((slug) => `/blog/${slug}`);
+    }
+  }
 
-  return fs
-    .readdirSync(blogDir)
-    .filter((name) => {
-      const full = path.join(blogDir, name);
-      // include only slug folders that contain page.tsx or page.jsx
-      return (
-        fs.statSync(full).isDirectory() &&
-        (fs.existsSync(path.join(full, "page.tsx")) ||
-          fs.existsSync(path.join(full, "page.jsx")))
-      );
-    })
-    .map((slug) => `/blog/${slug}`);
+  return [];
 }
 
-// Generate hreflang block
 function generateHreflangLinks(route: string) {
   const links = LOCALES.map(
     (lng) =>
@@ -53,7 +55,6 @@ function generateHreflangLinks(route: string) {
   );
 }
 
-// Generate full <url> entry
 function generateUrlEntry(route: string) {
   const loc = `${BASE_URL}/en${route}`; // canonical EN version
   const lastmod = new Date().toISOString();
@@ -71,7 +72,7 @@ function generateUrlEntry(route: string) {
 }
 
 export async function GET() {
-  const blogRoutes = getEnglishBlogSlugs();
+  const blogRoutes = getBlogSlugs();
 
   let urls = "";
 
