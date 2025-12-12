@@ -15,13 +15,13 @@ const config = {
   ],
 
   i18n: {
-    locales: ["en", "zh", "es", "de"],
+    locales: ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"],
     defaultLocale: "en",
   },
 
   // ✅ Add explicit paths for your main public pages
   additionalPaths: async (config) => {
-    const locales = ["en", "zh", "es", "de"];
+    const locales = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"];
     const basePaths = [
       "",
       "/contact",
