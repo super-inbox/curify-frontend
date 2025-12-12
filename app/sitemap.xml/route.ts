@@ -4,7 +4,7 @@ import blogs from "@/content/blogs.json"; // <--- ADD THIS FILE
 const BASE_URL = "https://curify-ai.com";
 
 // All languages you support
-const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru"];
+const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"];
 
 // Static pages (shared across locales)
 const STATIC_ROUTES = [
