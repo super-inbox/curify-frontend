@@ -5,6 +5,14 @@ import CdnImage from '../_components/CdnImage';
 
 const blogPosts = [
   {
+    slug: 'scene-detection',
+    title: 'From Raw Footage to Storyboards: AI-Powered Video Analysis',
+    date: 'December 11, 2025',
+    readTime: '10 min read',
+    tag: 'Video Analysis',
+    image: '/images/lion-scene.jpg',
+  },
+  {
     slug: 'video-enhancement',
     title: 'AI Video Enhancement: Storyboards, Meme Captions & SFX Automation',
     date: 'November 18, 2025',

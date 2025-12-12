@@ -457,6 +457,262 @@
     "ffmpeg installed and available on the command line"
   ],
   "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started."
-}
+},
+
+  "SceneDetection": {
+    "header": {
+      "title": "From Raw Footage to Storyboards",
+      "author": "Curify AI Team",
+      "role": "AI Research Team",
+      "imageAlt": "AI analyzing video scenes and generating storyboards",
+      "imageCaption": "AI-powered scene detection in action, identifying key moments in video content",
+      "subtitle": "AI-Powered Video Analysis",
+      "date": "December 11, 2025",
+      "readingTime": "8 min read"
+    },
+    "intro": {
+      "p1": "In today's fast-paced content creation landscape, <strong>efficient video analysis</strong> is no longer a luxury—it's a necessity. Our AI-powered scene detection technology transforms hours of raw footage into structured, searchable content in minutes, not days.",
+      "p2": "Whether you're a filmmaker, content creator, or media professional, understanding the power of automated scene detection can revolutionize your workflow and unlock new creative possibilities."
+    },
+    "proTip": "For best results, ensure your source video has clear audio and visual separation between scenes. Well-lit environments and minimal background noise significantly improve detection accuracy.",
+    "process": {
+      "title": "How Our Scene Detection Works",
+      "steps": {
+        "step1": {
+          "title": "1. Video Analysis",
+          "description": "Our AI scans your video frame by frame, analyzing visual and audio cues to identify potential scene boundaries.",
+          "details": [
+            "Analyzes color histograms and motion vectors",
+            "Detects audio level changes and silences",
+            "Identifies shot boundaries and transitions"
+          ]
+        },
+        "step2": {
+          "title": "2. Scene Segmentation",
+          "description": "The system groups related shots into coherent scenes based on visual and temporal relationships.",
+          "details": [
+            "Uses machine learning to understand scene context",
+            "Considers shot duration and transition types",
+            "Merges related shots into logical scenes"
+          ]
+        },
+        "step3": {
+          "title": "3. Content Classification",
+          "description": "Each detected scene is analyzed and categorized based on its visual and audio content.",
+          "details": [
+            "Identifies key visual elements and objects",
+            "Classifies scene type (e.g., interview, action, landscape)",
+            "Analyzes audio for speech, music, and effects"
+          ]
+        },
+        "step4": {
+          "title": "4. Metadata Generation",
+          "description": "Comprehensive metadata is generated for each scene, enabling powerful search and organization.",
+          "details": [
+            "Creates timestamps and duration information",
+            "Generates representative thumbnails",
+            "Extracts key dialogue and audio cues"
+          ]
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "Why Our Scene Detection Works So Well",
+      "points": "<li>Our AI analyzes both <strong>visual and audio cues</strong> to identify scene boundaries with over 95% accuracy.</li><li>Advanced <strong>machine learning models</strong> understand context, not just visual changes, for more natural scene detection.</li><li>Real-time processing allows for <strong>immediate feedback</strong> and adjustments during filming or editing.</li>"
+    },
+    "recommendedStyle": {
+      "title": "Recommended Style for Best Results",
+      "description": "To get the most accurate scene detection, we recommend the following style guidelines:",
+      "points": [
+        "Maintain consistent lighting within each scene",
+        "Use clear audio markers or clapperboards between takes",
+        "Keep camera movements smooth and intentional",
+        "Maintain consistent audio levels within scenes"
+      ]
+    },
+    "title": "From Raw Footage to Storyboards: AI-Powered Video Analysis",
+    "description": "Discover how AI transforms raw video into structured storyboards with automated scene detection and analysis.",
+    "timeline": {
+      "title": "Scene Timeline",
+      "viewScene": "View Scene {1}"
+    },
+    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started.",
+    "sceneBreakdown": {
+      "title": "Understanding Scene Detection Output",
+      "introduction": "Let's break down a typical scene detection output to understand how our AI analyzes and structures video content. Below each explanation, you'll find the corresponding JSON structure that powers these insights.",
+      "scenes": [
+        {
+          "title": "1. Scene Identification",
+          "content": "Each scene is assigned a unique identifier and timestamp range, allowing for precise navigation through the video content. This forms the foundation of our analysis.",
+          "example": "Scene 1 (00:00:02.50 - 00:00:05.20)",
+          "jsonExample": {
+            "scene_id": "scene_001",
+            "start_time": 2.5,
+            "end_time": 5.2,
+            "duration": 2.7,
+            "keyframe_index": 5,
+            "keyframe_time": 3.8
+          },
+          "jsonDescription": "This JSON structure shows the basic identification data for a scene, including its unique ID, timing information, and the index/time of its representative keyframe."
+        },
+        {
+          "title": "2. Visual Analysis",
+          "content": "Our AI examines keyframes to understand the visual composition of each scene, including dominant colors, lighting conditions, and visual elements.",
+          "example": "Keyframe analysis: Outdoor, daylight, multiple subjects",
+          "jsonExample": {
+            "visual_analysis": {
+              "brightness": 0.78,
+              "contrast": 0.65,
+              "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+              "dominant_colors": [
+                {"color": "#3A5FCD", "percentage": 0.45},
+                {"color": "#87CEEB", "percentage": 0.35},
+                {"color": "#F5F5DC", "percentage": 0.20}
+              ],
+              "lighting_condition": "daylight",
+              "environment": "outdoor",
+              "detected_objects": [
+                {"label": "person", "confidence": 0.97, "count": 2},
+                {"label": "sky", "confidence": 0.99, "count": 1}
+              ]
+            }
+          },
+          "jsonDescription": "This JSON shows the visual analysis data, including color information, lighting conditions, and detected objects with confidence scores."
+        },
+        {
+          "title": "3. Shot Composition",
+          "content": "Within each scene, we identify individual shots and their transitions, helping understand the visual flow and pacing of the content.",
+          "example": "3 shots detected with smooth cuts and one cross-fade",
+          "jsonExample": {
+            "shots": [
+              {
+                "shot_id": "shot_001",
+                "start_time": 2.5,
+                "end_time": 3.1,
+                "transition": {
+                  "type": "cut",
+                  "confidence": 0.98
+                },
+                "camera_motion": {
+                  "type": "static",
+                  "confidence": 0.92
+                }
+              },
+              {
+                "shot_id": "shot_002",
+                "start_time": 3.1,
+                "end_time": 4.3,
+                "transition": {
+                  "type": "fade",
+                  "duration": 0.3,
+                  "confidence": 0.95
+                },
+                "camera_motion": {
+                  "type": "pan_left",
+                  "confidence": 0.88
+                }
+              }
+            ]
+          },
+          "jsonDescription": "This JSON structure details the shot composition within a scene, including timing, transition types, and camera motion analysis."
+        },
+        {
+          "title": "4. Content Classification",
+          "content": "Scenes are automatically categorized based on their content, making it easy to find specific types of footage later.",
+          "example": "Category: Interview, Setting: Studio, Subjects: 2",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "interview",
+              "secondary_categories": ["conversation", "talking_head"],
+              "setting": {
+                "type": "studio",
+                "confidence": 0.94
+              },
+              "subjects": [
+                {
+                  "type": "person",
+                  "count": 2,
+                  "positions": ["left_frame", "right_frame"],
+                  "engagement": 0.87
+                }
+              ],
+              "sentiment": {
+                "overall": "neutral_positive",
+                "confidence": 0.82
+              },
+              "topics": ["technology", "artificial_intelligence"]
+            }
+          },
+          "jsonDescription": "This JSON shows how content is classified, including categories, settings, subject information, and even sentiment analysis."
+        }
+      ],
+      "analysisTitle": "Putting It All Together",
+      "analysisContent": "By combining these elements, our system creates a comprehensive map of your video content. This structured data powers features like intelligent search, automated editing, and content analysis.",
+      "fullExampleTitle": "Complete Scene Data Example",
+      "fullExampleDescription": "Here's how all the pieces come together in a complete scene analysis:",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": 2.5,
+        "end_time": 5.2,
+        "duration": 2.7,
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": 30
+        },
+        "visual_analysis": {
+          "brightness": 0.78,
+          "contrast": 0.65,
+          "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+          "lighting_condition": "daylight",
+          "environment": "studio"
+        },
+        "audio_analysis": {
+          "has_speech": true,
+          "speech_confidence": 0.92,
+          "background_noise_level": 0.15,
+          "speaker_gender": ["male", "female"],
+          "speech_text": "Let's discuss how AI is transforming video production..."
+        },
+        "content_analysis": {
+          "primary_category": "interview",
+          "setting": "studio",
+          "subjects": ["host", "guest"],
+          "sentiment": "neutral_positive"
+        },
+        "shots": [
+          {
+            "shot_id": "shot_001",
+            "start_time": 2.5,
+            "end_time": 3.1,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+            "transition": {"type": "cut", "confidence": 0.98}
+          },
+          {
+            "shot_id": "shot_002",
+            "start_time": 3.1,
+            "end_time": 5.2,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+            "transition": {"type": "fade", "confidence": 0.95}
+          }
+        ]
+      },
+      "benefitsTitle": "Key Benefits",
+      "benefits": [
+        "<strong>Efficient Editing:</strong> Jump directly to any scene or shot without scrubbing through hours of footage",
+        "<strong>Smart Search:</strong> Find content based on visual elements, not just metadata",
+        "<strong>Consistent Quality:</strong> Identify and maintain visual consistency across your project",
+        "<strong>Data-Driven Decisions:</strong> Get insights into your content structure and pacing"
+      ]
+    },
+    "conclusion": {
+      "title": "Transforming Video Production with AI",
+      "p1": "AI-powered scene detection is revolutionizing how we approach video production. By automating the tedious process of scene identification and organization, creators can focus on what truly matters – telling compelling stories. Our technology bridges the gap between raw footage and polished content, making professional-grade video analysis accessible to everyone.",
+      "p2": "As we continue to refine our algorithms and expand our capabilities, we're excited to see how filmmakers, educators, and content creators will leverage these tools to push the boundaries of visual storytelling. The future of video production is here, and it's more efficient and creative than ever before."
+    }
+  }
+   
+
 
 }

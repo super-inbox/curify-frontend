@@ -23,8 +23,13 @@ interface Props {
   params: { locale: string };
 }
 
-export default async function LocaleLayout(props: Props) {
-  const { children, params } = props;
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
   const { locale } = params;
   const session = await getServerSession(authOptions);
 
