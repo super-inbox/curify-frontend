@@ -429,8 +429,23 @@
     "ffmpeg installiert und über die Kommandozeile verfügbar"
   ],
   "cta": "🚀 Bereit, dein Storyboard mit KI zum Leben zu erwecken?<br /><strong>Wir stellen dir ein umfassendes Starter-Kit</strong> mit Beispielen, Vorlagen und Tools zur Verfügung, um direkt loszulegen."
+},
+
+"SceneDetection": {
+  "tags": {
+    "computerVision": "Computer Vision",
+    "deepLearning": "Deep Learning",
+    "realTimeAnalysis": "Echtzeit-Analyse"
+  },
+  "hero": {
+    "title": "Videos in Storyboards mit KI umwandeln",
+    "subtitle": "Wie wir eine fortschrittliche Pipeline entwickelt haben, die stundenlanges Filmmaterial in Minuten in strukturierte, durchsuchbare Storyboards verwandelt."
+  },
+  "introduction": {
+    "paragraph1": "Stell dir vor, du lädst stundenlanges Rohmaterial hoch und erhältst innerhalb von Minuten eine <strong>detaillierte, szene-für-Szene-Aufschlüsselung</strong> deines gesamten Videos. Genau das bietet unser KI-gestütztes Szenenerkennungssystem.",
+    "paragraph2": "Diese mit modernsten Python-Bibliotheken und Deep-Learning-Modellen erstellte Pipeline erkennt nicht nur Szenenwechsel – sie versteht den Inhalt, identifiziert Schlüsselelemente und strukturiert alles zu einem umfassenden Storyboard."
+  },
+  "imageAlt": "Die Szenenerkennungs-Pipeline in Aktion, die Schlüsselmomente identifiziert und strukturierte Storyboards erzeugt",
+  "protip": "Für optimale Ergebnisse sollte dein Video klare visuelle Trennungen zwischen den Szenen aufweisen. Das System funktioniert am besten mit gut ausgeleuchteten Aufnahmen und minimaler Bewegungsunschärfe. Erwäge, in deinem Videoschnittprogramm Kapitelmarken oder Szenenwechsel hinzuzufügen, um die Erkennungsgenauigkeit zu verbessern."
 }
-
-
-
 }

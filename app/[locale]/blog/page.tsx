@@ -5,7 +5,7 @@ import CdnImage from '../_components/CdnImage';
 
 const blogPosts = [
   {
-    slug: 'scene-detection',
+    slug: 'storyboard-labeling',
     title: 'From Raw Footage to Storyboards: AI-Powered Video Analysis',
     date: 'December 11, 2025',
     readTime: '10 min read',

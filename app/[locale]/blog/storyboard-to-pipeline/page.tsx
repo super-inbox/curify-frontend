@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import CdnImage from "../../_components/CdnImage";
+
 import dynamic from 'next/dynamic';
 
 // Define types for our translations

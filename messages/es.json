@@ -427,8 +427,24 @@
     "Acceso a la API de XTTS / ElevenLabs para síntesis de voz",
     "ffmpeg instalado y disponible en la línea de comandos"
   ],
-  "cta": "🚀 ¿Listo para dar vida a tu storyboard con IA?<br /><strong>Podemos proporcionarte un kit de inicio completo</strong> con ejemplos de JSONs, flujos de trabajo de ComfyUI y plantillas de ffmpeg/AE para ayudarte a comenzar."
-}
+  "cta": "🚀 ¿Listo para dar vida a tu storyboard con IA? <strong>Podemos proporcionarte un kit de inicio completo</strong> con ejemplos de JSONs, flujos de trabajo de ComfyUI y plantillas de ffmpeg/AE para ayudarte a comenzar."
+},
 
-
+"SceneDetection": {
+    "tags": {
+      "computerVision": "Visión por Computadora",
+      "deepLearning": "Aprendizaje Profundo",
+      "realTimeAnalysis": "Análisis en Tiempo Real"
+    },
+    "hero": {
+      "title": "Transforma Video en Guiones Gráficos con IA",
+      "subtitle": "Cómo construimos una canalización avanzada que convierte horas de metraje en guiones gráficos estructurados y buscables en minutos."
+    },
+    "introduction": {
+      "paragraph1": "Imagina poder cargar horas de metraje en bruto y en minutos obtener un <strong>desglose detallado, escena por escena</strong> de todo tu video. Eso es exactamente lo que ofrece nuestro sistema de detección de escenas impulsado por IA.",
+      "paragraph2": "Construido con bibliotecas de Python de vanguardia y modelos de aprendizaje profundo, esta canalización no solo detecta cambios de escena, sino que también comprende el contenido, identifica elementos clave y estructura todo en un guión gráfico completo."
+    },
+    "imageAlt": "La canalización de detección de escenas en acción, identificando momentos clave y generando guiones gráficos estructurados",
+    "protip": "Para obtener resultados óptimos, asegúrate de que tu video tenga una separación visual clara entre escenas. El sistema funciona mejor con metraje bien iluminado y con poco desenfoque de movimiento. Considera agregar marcadores de capítulos o cortes de escena en tu editor de video para mejorar la precisión de la detección."
+  }
 }

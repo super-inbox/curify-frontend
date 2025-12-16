@@ -429,8 +429,23 @@
       "Komut satırında kurulu ve erişilebilir ffmpeg"
     ],
     "cta": "🚀 Storyboard'unuzu yapay zeka ile hayata geçirmeye hazır mısınız? <strong>Size başlamanız için JSON örnekleri, ComfyUI iş akışları ve ffmpeg/AE şablonları içeren kapsamlı bir başlangıç seti sunabiliriz.</strong>"
+  },
+
+  "SceneDetection": {
+    "tags": {
+      "computerVision": "Bilgisayarlı Görü",
+      "deepLearning": "Derin Öğrenme",
+      "realTimeAnalysis": "Gerçek Zamanlı Analiz"
+    },
+    "hero": {
+      "title": "Videoları Yapay Zeka ile Storyboard'a Dönüştürün",
+      "subtitle": "Saatlerce çekimi dakikalar içinde yapılandırılmış, aranabilir storyboard'lara dönüştüren gelişmiş bir iş akışı oluşturduk."
+    },
+    "introduction": {
+      "paragraph1": "Saatlerce ham çekim yükleyip, tüm videonuzun <strong>detaylı, sahne sahne analizini</strong> dakikalar içinde alabileceğinizi hayal edin. İşte yapay zeka destekli sahne tespit sistemimiz tam olarak bunu sunuyor.",
+      "paragraph2": "En son Python kütüphaneleri ve derin öğrenme modelleriyle oluşturulan bu iş akışı, sadece sahne geçişlerini tespit etmekle kalmıyor - içeriği anlıyor, önemli öğeleri belirliyor ve her şeyi kapsamlı bir storyboard'da yapılandırıyor."
+    },
+    "imageAlt": "Sahne tespit iş akışı, anahtar anları belirliyor ve yapılandırılmış storyboard'lar oluşturuyor",
+    "protip": "En iyi sonuçlar için videonuzun sahneler arasında net görsel ayrımlara sahip olduğundan emin olun. Sistem en iyi şekilde iyi aydınlatılmış çekimler ve minimum hareket bulanıklığı ile çalışır. Tespit doğruluğunu artırmak için video düzenleme yazılımınızda bölüm işaretleri veya sahne geçişleri eklemeyi düşünün."
   }
-
-
-
 }

@@ -1,0 +1,36 @@
+{
+  "scenes": [
+    {
+      "scene_id": 1,
+      "start_time": 0.0,
+      "end_time": 2.75275,
+      "transition_in": {
+        "type": "cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in with a wide shot showing the industrial setting."
+      },
+      "transition_out": {
+        "type": "cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to another scene within the factory."
+      },
+      "scene_metadata": {
+        "duration": 2.75,
+        "description": "A man is surrounded by machinery and smoke, suggesting a tense situation in an industrial setting.",
+        "key_objects": [],
+        "time_of_day": "Unknown",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 2.86,
+        "color_palette": ["#0c0f0d", "#6e7468", "#242824", "#bcc5b5", "#3c423e"]
+      }
+    }
+  ],
+  "metadata": {
+    "video_path": "titanic.mp4",
+    "duration": 71.32,
+    "resolution": "1920x1080",
+    "fps": 23.98,
+    "frame_count": 1710
+  }
+}

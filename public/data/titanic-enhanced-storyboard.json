@@ -1,0 +1,1982 @@
+{
+  "scenes": [
+    {
+      "scene_id": 1,
+      "start_time": 0.0,
+      "end_time": 2.75275,
+      "transition_in": {
+        "type": "cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in with a wide shot showing the industrial setting."
+      },
+      "transition_out": {
+        "type": "cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to another scene within the factory."
+      },
+      "scene_metadata": {
+        "duration": 2.75,
+        "description": "A man is surrounded by machinery and smoke, suggesting a tense situation in an industrial setting.",
+        "key_objects": [],
+        "time_of_day": "Unknown",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 2.8632655143737793,
+        "color_palette": [
+          "#0c0f0d",
+          "#6e7468",
+          "#242824",
+          "#bcc5b5",
+          "#3c423e"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "OTS",
+          "stability": 0.8568367242813111
+        },
+        "ai_description": "A man is surrounded by machinery and smoke, suggesting a tense situation in an industrial setting.",
+        "key_subjects": [
+          "man"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "OTS",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "man",
+            "notes": "The use of depth layers creates a sense of tension and isolation for the subject. The lighting emphasizes the harsh environment with dramatic shadows.",
+            "duration_seconds": 2.75275
+          },
+          "start_time": 0.0,
+          "end_time": 2.75275
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "start_time": 2.75275,
+      "end_time": 7.007,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot showing an empty room."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a wide shot of the room with the subject leaving it."
+      },
+      "scene_metadata": {
+        "duration": 4.25,
+        "description": "A person standing in a dark room with machinery and objects around them, looking at something out of frame.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 1.5631195306777954,
+        "color_palette": [
+          "#070c0c",
+          "#273235",
+          "#141c1b",
+          "#4e5c5d",
+          "#a9b9b7"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "Mediium",
+          "stability": 0.9218440234661103
+        },
+        "ai_description": "A person standing in a dark room with machinery and objects around them, looking at something out of frame.",
+        "key_subjects": [
+          "Main subject"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "Mediium",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Main subject",
+            "notes": "The lighting is moody and focused on the subject, creating a sense of tension. The depth of field is shallow, drawing attention to the main subject while blurring the background elements.",
+            "duration_seconds": 4.25425
+          },
+          "start_time": 2.75275,
+          "end_time": 7.007
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "start_time": 7.007,
+      "end_time": 8.5085,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "Fade in from black to show the explosion"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "Fade out to a different scene or location"
+      },
+      "scene_metadata": {
+        "duration": 1.5,
+        "description": "An explosion scene with a focus on the center of the frame",
+        "key_objects": [],
+        "time_of_day": "Unknown",
+        "environment": "Indoor",
+        "mood": "Energetic",
+        "motion_intensity": 3.6216886043548584,
+        "color_palette": [
+          "#2c5473",
+          "#dcf6e7",
+          "#80aab9",
+          "#537c96",
+          "#b5dcd6"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.8189155697822571
+        },
+        "ai_description": "An explosion scene with a focus on the center of the frame",
+        "key_subjects": [
+          "Explosion"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Explosion",
+            "notes": "High dynamic range lighting, shallow depth of field to emphasize the explosion in the center",
+            "duration_seconds": 1.5015
+          },
+          "start_time": 7.007,
+          "end_time": 8.5085
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "start_time": 8.5085,
+      "end_time": 9.759749999999999,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The previous scene was a close-up of a person on the ship"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The next scene will show the aftermath of the sinking ship"
+      },
+      "scene_metadata": {
+        "duration": 1.25,
+        "description": "A sinking ship scene from a movie",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 2.003845453262329,
+        "color_palette": [
+          "#07151d",
+          "#6f695e",
+          "#1c3749",
+          "#cdbd99",
+          "#01080b"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.8998077273368835
+        },
+        "ai_description": "A sinking ship scene from a movie",
+        "key_subjects": [
+          "Titanic"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Titanic",
+            "notes": "The lighting is dim with blue tones, creating an eerie atmosphere. The depth of field is shallow, drawing focus to the ship in the foreground while keeping the background out of focus.",
+            "duration_seconds": 1.2512499999999989
+          },
+          "start_time": 8.5085,
+          "end_time": 9.759749999999999
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "start_time": 9.759749999999999,
+      "end_time": 12.762749999999999,
+      "transition_in": {
+        "type": "cut",
+        "from_scene_id": -1,
+        "description": "Fade from a previous scene showing the crew onboard"
+      },
+      "transition_out": {
+        "type": "cut",
+        "to_scene_id": -1,
+        "description": "Cut to a shot of the ship's crew members in distress"
+      },
+      "scene_metadata": {
+        "duration": 3.0,
+        "description": "A sinking ship scene",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Melancholic",
+        "motion_intensity": 0.2672327160835266,
+        "color_palette": [
+          "#01090b",
+          "#06131d",
+          "#152e44",
+          "#0b1a29",
+          "#030e12"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "WIDE",
+          "stability": 0.9866383641958236
+        },
+        "ai_description": "A sinking ship scene",
+        "key_subjects": [
+          "ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "ship",
+            "notes": "High contrast lighting on the ship, shallow depth of field with focus on the ship and a blurred background",
+            "duration_seconds": 3.003
+          },
+          "start_time": 9.759749999999999,
+          "end_time": 12.762749999999999
+        }
+      ]
+    },
+    {
+      "scene_id": 6,
+      "start_time": 12.762749999999999,
+      "end_time": 16.26625,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions from a previous shot showing passengers on the deck of the Titanic."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions to a shot of rescue boats approaching the sinking ship."
+      },
+      "scene_metadata": {
+        "duration": 3.5,
+        "description": "The Titanic is sinking in the ocean at night.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Melancholic",
+        "motion_intensity": 0.8320696949958801,
+        "color_palette": [
+          "#01131e",
+          "#043349",
+          "#000a10",
+          "#032538",
+          "#0d6170"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.958396515250206
+        },
+        "ai_description": "The Titanic is sinking in the ocean at night.",
+        "key_subjects": [
+          "Titanic"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Titanic",
+            "notes": "The lighting emphasizes the darkness of the sea and the silhouette of the ship. The composition creates a sense of depth with the ship in the background, midground with water around it, and foreground with the dark sky. The color grading adds to the melancholic mood by using cool tones.",
+            "duration_seconds": 3.5035000000000007
+          },
+          "start_time": 12.762749999999999,
+          "end_time": 16.26625
+        }
+      ]
+    },
+    {
+      "scene_id": 7,
+      "start_time": 16.26625,
+      "end_time": 19.894875,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions from a previous shot showing the group on the boat."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions to a shot of the individual in distress, possibly indicating their escape attempt or further action."
+      },
+      "scene_metadata": {
+        "duration": 3.63,
+        "description": "A group of people are on a boat in the middle of the ocean at night. They appear to be in distress.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 2.0474369525909424,
+        "color_palette": [
+          "#0a202d",
+          "#020609",
+          "#0b5878",
+          "#0a3146",
+          "#07131a"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.8976281523704529
+        },
+        "ai_description": "A group of people are on a boat in the middle of the ocean at night. They appear to be in distress.",
+        "key_subjects": [
+          "People"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "People",
+            "notes": "The lighting is dim and moody, with a focus on the central group of people. The background is darker than the foreground, creating a sense of depth and tension.",
+            "duration_seconds": 3.6286249999999995
+          },
+          "start_time": 16.26625,
+          "end_time": 19.894875
+        }
+      ]
+    },
+    {
+      "scene_id": 8,
+      "start_time": 19.894875,
+      "end_time": 21.5215,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The previous scene ended with a wide shot of the room, and this shot transitions into a close-up of the man crouching down."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The next scene will likely be a close-up shot of the object the man is looking at, continuing the narrative and providing more context about what he is examining."
+      },
+      "scene_metadata": {
+        "duration": 1.63,
+        "description": "A man is crouching down and looking at a small object on the floor in a dark room. He appears to be focused intently on it.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 0.3617464303970337,
+        "color_palette": [
+          "#00060c",
+          "#042432",
+          "#103543",
+          "#041b24",
+          "#0a5f70"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Right",
+          "shot_type": "WIDE",
+          "stability": 0.9819126784801483
+        },
+        "ai_description": "A man is crouching down and looking at a small object on the floor in a dark room. He appears to be focused intently on it.",
+        "key_subjects": [
+          "Man"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Right",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Man",
+            "notes": "The lighting in this scene is dim, creating a moody atmosphere. The depth of field is shallow, with the main subject in focus and the background blurred out, drawing attention to the man's actions. The color grading is muted, adding to the mysterious tone of the scene.",
+            "duration_seconds": 1.6266250000000007
+          },
+          "start_time": 19.894875,
+          "end_time": 21.5215
+        }
+      ]
+    },
+    {
+      "scene_id": 9,
+      "start_time": 21.5215,
+      "end_time": 22.897875,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene cuts from a previous shot to this one without any visible transition."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out by cutting to the next shot in the sequence."
+      },
+      "scene_metadata": {
+        "duration": 1.38,
+        "description": "The man is looking at something with a serious expression, possibly reacting to an event or situation.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 0.24265384674072266,
+        "color_palette": [
+          "#030507",
+          "#042736",
+          "#07161e",
+          "#074352",
+          "#202b37"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "OTS",
+          "stability": 0.9878673076629638
+        },
+        "ai_description": "The man is looking at something with a serious expression, possibly reacting to an event or situation.",
+        "key_subjects": [
+          "Man"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "OTS",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Man",
+            "notes": "The lighting focuses on the man's face, creating a dramatic effect. The depth of field is shallow, drawing attention to the man in the foreground while keeping the background slightly blurred.",
+            "duration_seconds": 1.3763749999999995
+          },
+          "start_time": 21.5215,
+          "end_time": 22.897875
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "start_time": 22.897875,
+      "end_time": 23.898874999999997,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "Fade to black and then cut to this close-up shot"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "Cut to a wider shot showing the person's actions or surroundings after their contemplative moment"
+      },
+      "scene_metadata": {
+        "duration": 1.0,
+        "description": "Close-up of a person in a room at night, looking out the window",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 1.0794960260391235,
+        "color_palette": [
+          "#021620",
+          "#0f708d",
+          "#032336",
+          "#020b0e",
+          "#073e5c"
+        ],
+        "camera_analysis": {
+          "movement": "Pull",
+          "shot_type": "BIRDS EYE",
+          "stability": 0.9460251986980438
+        },
+        "ai_description": "Close-up of a person in a room at night, looking out the window",
+        "key_subjects": [
+          "Main subject"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "BIRDS EYE",
+            "camera_move": "Pull",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Main subject",
+            "notes": "Low light conditions with selective focus on the main subject's face and hands, creating an intimate and dramatic atmosphere.",
+            "duration_seconds": 1.0009999999999977
+          },
+          "start_time": 22.897875,
+          "end_time": 23.898874999999997
+        }
+      ]
+    },
+    {
+      "scene_id": 11,
+      "start_time": 23.898874999999997,
+      "end_time": 28.653624999999998,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "Fade in from black to reveal the scene"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "Fade out to a black screen, indicating the end of this scene"
+      },
+      "scene_metadata": {
+        "duration": 4.75,
+        "description": "Character standing in a cluttered room with multiple objects scattered around, possibly indicating a chaotic or disorganized state of mind.",
+        "key_objects": [],
+        "time_of_day": "Unknown",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 2.096602201461792,
+        "color_palette": [
+          "#11222a",
+          "#2c545d",
+          "#5b979d",
+          "#061218",
+          "#1d3944"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.8951698899269104
+        },
+        "ai_description": "Character standing in a cluttered room with multiple objects scattered around, possibly indicating a chaotic or disorganized state of mind.",
+        "key_subjects": [
+          "Main character"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Main character",
+            "notes": "The lighting is dim and moody, creating an atmosphere of suspense. The depth of field is shallow, drawing the viewer's attention to the central figure while blurring the background objects.",
+            "duration_seconds": 4.754750000000001
+          },
+          "start_time": 23.898874999999997,
+          "end_time": 28.653624999999998
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "start_time": 28.653624999999998,
+      "end_time": 30.905874999999998,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "A quick cut to this wide shot of the sinking Titanic"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "A quick cut from this wide shot of the sinking Titanic to a close-up shot of a person on the deck of the ship"
+      },
+      "scene_metadata": {
+        "duration": 2.25,
+        "description": "A large sinking ship in the ocean at night",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Melancholic",
+        "motion_intensity": 1.2898448705673218,
+        "color_palette": [
+          "#05111f",
+          "#276073",
+          "#0f2333",
+          "#000411",
+          "#194a5c"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "WIDE",
+          "stability": 0.9355077564716339
+        },
+        "ai_description": "A large sinking ship in the ocean at night",
+        "key_subjects": [
+          "Titanic ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Titanic ship",
+            "notes": "Low light conditions, dramatic color grading to emphasize the darkness and danger of the scene",
+            "duration_seconds": 2.25225
+          },
+          "start_time": 28.653624999999998,
+          "end_time": 30.905874999999998
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "start_time": 30.905874999999998,
+      "end_time": 32.907875,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "No transition visible in this image."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "No transition visible in this image."
+      },
+      "scene_metadata": {
+        "duration": 2.0,
+        "description": "A man in a room with a dramatic expression, possibly reacting to something off-camera.",
+        "key_objects": [],
+        "time_of_day": "Unknown",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 0.10859474539756775,
+        "color_palette": [
+          "#1c4053",
+          "#669293",
+          "#0b2331",
+          "#47777f",
+          "#2b5b69"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "WIDE",
+          "stability": 0.9945702627301216
+        },
+        "ai_description": "A man in a room with a dramatic expression, possibly reacting to something off-camera.",
+        "key_subjects": [
+          "Man"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Man",
+            "notes": "The lighting is moody and focused on the subject, with a shallow depth of field that blurs the background slightly. The color grading adds to the tension of the scene.",
+            "duration_seconds": 2.001999999999999
+          },
+          "start_time": 30.905874999999998,
+          "end_time": 32.907875
+        }
+      ]
+    },
+    {
+      "scene_id": 14,
+      "start_time": 32.907875,
+      "end_time": 34.909875,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot showing the aftermath of an explosion."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a wider shot showing the extent of the destruction and chaos in the background."
+      },
+      "scene_metadata": {
+        "duration": 2.0,
+        "description": "A scene from a video showing destruction and chaos, with the main subject in the center of the frame looking out over the destruction.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 2.437148332595825,
+        "color_palette": [
+          "#00050c",
+          "#124c67",
+          "#061d2c",
+          "#0d3349",
+          "#226b88"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.8781425833702088
+        },
+        "ai_description": "A scene from a video showing destruction and chaos, with the main subject in the center of the frame looking out over the destruction.",
+        "key_subjects": [
+          "Main subject"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Main subject",
+            "notes": "The lighting is dramatic with blue tones dominating the color palette. The depth of field is shallow, focusing on the main subject while blurring the background to emphasize the chaos and destruction.",
+            "duration_seconds": 2.0020000000000024
+          },
+          "start_time": 32.907875,
+          "end_time": 34.909875
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
+      "start_time": 34.909875,
+      "end_time": 36.661625,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot of the ship's control room with a focus on the radar screen, indicating that they are approaching a stormy area."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a shot of the ship's crew members discussing their next course of action in the control room."
+      },
+      "scene_metadata": {
+        "duration": 1.75,
+        "description": "This is a scene from a video showing a ship in the ocean at night. The camera pans left to reveal a large ship with lights on, surrounded by darkness.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Ambiguous",
+        "mood": "Mysterious",
+        "motion_intensity": 0.3633357584476471,
+        "color_palette": [
+          "#031019",
+          "#0d3951",
+          "#102a3d",
+          "#0d1720",
+          "#00040f"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.9818332120776176
+        },
+        "ai_description": "This is a scene from a video showing a ship in the ocean at night. The camera pans left to reveal a large ship with lights on, surrounded by darkness.",
+        "key_subjects": [
+          "Ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Ship",
+            "notes": "The lighting is dramatic and moody, with the ship's lights contrasting against the dark background. The depth of field is shallow, focusing on the ship while the ocean in the foreground and background are blurred. The color grading emphasizes blues and blacks to create a sense of mystery.",
+            "duration_seconds": 1.7517500000000013
+          },
+          "start_time": 34.909875,
+          "end_time": 36.661625
+        }
+      ]
+    },
+    {
+      "scene_id": 16,
+      "start_time": 36.661625,
+      "end_time": 38.163124999999994,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot showing the explosion."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a different location or time, possibly showing the aftermath of the explosion."
+      },
+      "scene_metadata": {
+        "duration": 1.5,
+        "description": "A ship is seen in the background after an explosion, debris flying around it.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 1.638444185256958,
+        "color_palette": [
+          "#22748b",
+          "#042e41",
+          "#0a5069",
+          "#59a6ab",
+          "#000c1d"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.9180777907371521
+        },
+        "ai_description": "A ship is seen in the background after an explosion, debris flying around it.",
+        "key_subjects": [
+          "Ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Ship",
+            "notes": "The lighting is dim and moody, with a focus on the destruction of the ship. The color grading emphasizes the darkness and chaos of the scene.",
+            "duration_seconds": 1.501499999999993
+          },
+          "start_time": 36.661625,
+          "end_time": 38.163124999999994
+        }
+      ]
+    },
+    {
+      "scene_id": 17,
+      "start_time": 38.163124999999994,
+      "end_time": 39.289249999999996,
+      "transition_in": {
+        "type": "cut",
+        "from_scene_id": -1,
+        "description": "Fade in from black to reveal the scene"
+      },
+      "transition_out": {
+        "type": "cut",
+        "to_scene_id": -1,
+        "description": "Cut to a different angle or shot of the same scene"
+      },
+      "scene_metadata": {
+        "duration": 1.13,
+        "description": "Group of people in a room, one person is being held by another person, the atmosphere appears to be tense and dramatic.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 0.9351515173912048,
+        "color_palette": [
+          "#00060a",
+          "#102b3d",
+          "#217f98",
+          "#0c1b21",
+          "#12435b"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.9532424241304398
+        },
+        "ai_description": "Group of people in a room, one person is being held by another person, the atmosphere appears to be tense and dramatic.",
+        "key_subjects": [
+          "list",
+          "of",
+          "main",
+          "subjects",
+          "or",
+          "objects"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "list, of, main",
+            "notes": "Low key lighting with shadows emphasizing the tension, shallow depth of field focusing on main subject",
+            "duration_seconds": 1.1261250000000018
+          },
+          "start_time": 38.163124999999994,
+          "end_time": 39.289249999999996
+        }
+      ]
+    },
+    {
+      "scene_id": 18,
+      "start_time": 39.289249999999996,
+      "end_time": 41.166124999999994,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions from a previous shot showing the Titanic's crew trying to save passengers."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions to a shot of the rescue effort by other ships in the area."
+      },
+      "scene_metadata": {
+        "duration": 1.88,
+        "description": "The Titanic is sinking in the ocean at night.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Melancholic",
+        "motion_intensity": 1.5586994886398315,
+        "color_palette": [
+          "#010406",
+          "#0a3246",
+          "#091e2a",
+          "#2a6274",
+          "#020d14"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Right",
+          "shot_type": "WIDE",
+          "stability": 0.9220650255680084
+        },
+        "ai_description": "The Titanic is sinking in the ocean at night.",
+        "key_subjects": [
+          "Titanic"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Right",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Titanic",
+            "notes": "Low key lighting to emphasize the darkness and despair of the scene. Wide depth of field to capture both the sinking ship and the surrounding water. Blue color grading to create a somber atmosphere.",
+            "duration_seconds": 1.8768749999999983
+          },
+          "start_time": 39.289249999999996,
+          "end_time": 41.166124999999994
+        }
+      ]
+    },
+    {
+      "scene_id": 19,
+      "start_time": 41.166124999999994,
+      "end_time": 42.917874999999995,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions from a previous shot of the ocean with waves crashing against the ship."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions to a shot of the rescue team arriving at the location of the wreckage."
+      },
+      "scene_metadata": {
+        "duration": 1.75,
+        "description": "A scene of a shipwreck in the middle of the ocean at night.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 2.3067519664764404,
+        "color_palette": [
+          "#0a181f",
+          "#26738c",
+          "#01070a",
+          "#13303e",
+          "#205060"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.8846624016761779
+        },
+        "ai_description": "A scene of a shipwreck in the middle of the ocean at night.",
+        "key_subjects": [
+          "Shipwreck"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Subject: Rule of Thirds ((640.0, 720.0)), Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Rule of Thirds ((640.0, 720.0))",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Rule of Thirds ((640.0, 720.0)), Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Shipwreck",
+            "notes": "The image is well-lit, with a focus on the shipwreck. The use of shadows and highlights creates a dramatic effect. The color grading emphasizes the darkness of the water and the metallic sheen of the wreckage.",
+            "duration_seconds": 1.7517500000000013
+          },
+          "start_time": 41.166124999999994,
+          "end_time": 42.917874999999995
+        }
+      ]
+    },
+    {
+      "scene_id": 20,
+      "start_time": 42.917874999999995,
+      "end_time": 44.419374999999995,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot of an empty room."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a shot of the main subject leaving the room."
+      },
+      "scene_metadata": {
+        "duration": 1.5,
+        "description": "A group of people in a room, with one person being the focus.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 1.5663193464279175,
+        "color_palette": [
+          "#020c0e",
+          "#1a4354",
+          "#152a34",
+          "#20677b",
+          "#0c1b1f"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "WIDE",
+          "stability": 0.9216840326786041
+        },
+        "ai_description": "A group of people in a room, with one person being the focus.",
+        "key_subjects": [
+          "Crowd"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Crowd",
+            "notes": "The lighting is dim and moody, with the main subjects in sharp contrast to the background. The color grading adds to the mysterious atmosphere.",
+            "duration_seconds": 1.5015
+          },
+          "start_time": 42.917874999999995,
+          "end_time": 44.419374999999995
+        }
+      ]
+    },
+    {
+      "scene_id": 21,
+      "start_time": 44.419374999999995,
+      "end_time": 46.671625,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "Fade in from black"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "Fade out to black"
+      },
+      "scene_metadata": {
+        "duration": 2.25,
+        "description": "A rocky cliff at night with a mysterious atmosphere",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Mysterious",
+        "motion_intensity": 0.49767112731933594,
+        "color_palette": [
+          "#050f14",
+          "#02050a",
+          "#0b495b",
+          "#062739",
+          "#0a161d"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.9751164436340332
+        },
+        "ai_description": "A rocky cliff at night with a mysterious atmosphere",
+        "key_subjects": [
+          "Rocky cliff"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Rocky cliff",
+            "notes": "The scene is well lit, with the use of natural light from the moon and stars creating a dramatic effect on the rocky surface. The camera angle provides a sense of scale and depth, emphasizing the height of the cliff.",
+            "duration_seconds": 2.2522500000000036
+          },
+          "start_time": 44.419374999999995,
+          "end_time": 46.671625
+        }
+      ]
+    },
+    {
+      "scene_id": 22,
+      "start_time": 46.671625,
+      "end_time": 50.675625,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot showing the ocean surface."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a shot of the submarine submerging back into the water."
+      },
+      "scene_metadata": {
+        "duration": 4.0,
+        "description": "A submarine is seen emerging from the water in a dramatic scene.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Tense",
+        "motion_intensity": 1.5234123468399048,
+        "color_palette": [
+          "#0b4867",
+          "#061c29",
+          "#040c12",
+          "#137899",
+          "#0b2e44"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.9238293826580047
+        },
+        "ai_description": "A submarine is seen emerging from the water in a dramatic scene.",
+        "key_subjects": [
+          "Submarine"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Submarine",
+            "notes": "The lighting is dim and moody, with a blue-green color grade to enhance the tension and mystery of the scene. The depth of field is shallow, drawing focus to the submarine while slightly blurring the background elements.",
+            "duration_seconds": 4.003999999999998
+          },
+          "start_time": 46.671625,
+          "end_time": 50.675625
+        }
+      ]
+    },
+    {
+      "scene_id": 23,
+      "start_time": 50.675625,
+      "end_time": 52.052,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a long shot of the boat from the outside."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a close-up shot of one of the passengers as they struggle to stay afloat."
+      },
+      "scene_metadata": {
+        "duration": 1.38,
+        "description": "A group of people are on a boat that is sinking. They appear to be in distress.",
+        "key_objects": [],
+        "time_of_day": "Unknown",
+        "environment": "Outdoor",
+        "mood": "Melancholic",
+        "motion_intensity": 5.324437618255615,
+        "color_palette": [
+          "#102638",
+          "#030508",
+          "#174258",
+          "#27718d",
+          "#0f181f"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.7337781190872192
+        },
+        "ai_description": "A group of people are on a boat that is sinking. They appear to be in distress.",
+        "key_subjects": [
+          "People on a boat"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "People on a boat",
+            "notes": "The lighting is dim, creating a sense of foreboding. The color grading is muted, emphasizing the somber mood. The focus is shallow, with the people in the background slightly out of focus.",
+            "duration_seconds": 1.376375000000003
+          },
+          "start_time": 50.675625,
+          "end_time": 52.052
+        }
+      ]
+    },
+    {
+      "scene_id": 24,
+      "start_time": 52.052,
+      "end_time": 54.5545,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a wide shot of the ocean to focus on the sinking ship."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a close-up of the captain's face as he realizes the ship is sinking."
+      },
+      "scene_metadata": {
+        "duration": 2.5,
+        "description": "A sinking ship in the ocean at night",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Dramatic",
+        "motion_intensity": 2.337648630142212,
+        "color_palette": [
+          "#0b1a25",
+          "#1e4a6b",
+          "#010305",
+          "#153249",
+          "#275d7e"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.8831175684928894
+        },
+        "ai_description": "A sinking ship in the ocean at night",
+        "key_subjects": [
+          "Ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Ship",
+            "notes": "The scene is shot with a wide-angle lens, capturing the full view of the sinking ship. The lighting is dim and moody, emphasizing the dramatic nature of the event. The colors are cooler tones, creating a sense of tension and danger.",
+            "duration_seconds": 2.5024999999999977
+          },
+          "start_time": 52.052,
+          "end_time": 54.5545
+        }
+      ]
+    },
+    {
+      "scene_id": 25,
+      "start_time": 54.5545,
+      "end_time": 55.93087499999999,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "A quick cut from a previous scene to establish context"
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "A quick cut to the next scene in the storyline"
+      },
+      "scene_metadata": {
+        "duration": 1.38,
+        "description": "A tense moment between two people in a dark room",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Melancholic",
+        "motion_intensity": 0.09904763847589493,
+        "color_palette": [
+          "#010508",
+          "#264453",
+          "#0f2e40",
+          "#06161f",
+          "#09546c"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.9950476180762052
+        },
+        "ai_description": "A tense moment between two people in a dark room",
+        "key_subjects": [
+          "Two main characters"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.0,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.0,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": []
+              }
+            },
+            "visual_focus": "Two main characters",
+            "notes": "Low key lighting with dramatic shadows, shallow depth of field on the subjects, blue-green color grade to create an eerie atmosphere",
+            "duration_seconds": 1.376374999999996
+          },
+          "start_time": 54.5545,
+          "end_time": 55.93087499999999
+        }
+      ]
+    },
+    {
+      "scene_id": 26,
+      "start_time": 55.93087499999999,
+      "end_time": 59.809749999999994,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a previous shot of the ship's deck, showing the captain or first mate giving orders to the crew."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out by cutting to a shot of the ship's deck, showing the aftermath of the storm and the crew's efforts to repair damages."
+      },
+      "scene_metadata": {
+        "duration": 3.88,
+        "description": "A large ship in the ocean at night, with a sense of mystery and intrigue.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Mysterious",
+        "motion_intensity": 7.240497589111328,
+        "color_palette": [
+          "#0a2a3d",
+          "#0f7195",
+          "#01070c",
+          "#194959",
+          "#041421"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.6379751205444336
+        },
+        "ai_description": "A large ship in the ocean at night, with a sense of mystery and intrigue.",
+        "key_subjects": [
+          "Ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "Ship",
+            "notes": "The lighting is moody and atmospheric, with blue tones dominating the color palette. The depth of field is shallow, focusing on the ship while the background elements are out of focus.",
+            "duration_seconds": 3.8788750000000007
+          },
+          "start_time": 55.93087499999999,
+          "end_time": 59.809749999999994
+        }
+      ]
+    },
+    {
+      "scene_id": 27,
+      "start_time": 59.809749999999994,
+      "end_time": 64.439375,
+      "transition_in": {
+        "type": "cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in from a wider shot showing the aftermath of the explosion"
+      },
+      "transition_out": {
+        "type": "cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a wider shot showing the aftermath of the explosion"
+      },
+      "scene_metadata": {
+        "duration": 4.63,
+        "description": "A scene of destruction with a focus on the debris field in the middle of the frame",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Mysterious",
+        "motion_intensity": 1.6447193622589111,
+        "color_palette": [
+          "#052d45",
+          "#010408",
+          "#09516d",
+          "#031b30",
+          "#020c17"
+        ],
+        "camera_analysis": {
+          "movement": "Push",
+          "shot_type": "OTS",
+          "stability": 0.9177640318870545
+        },
+        "ai_description": "A scene of destruction with a focus on the debris field in the middle of the frame",
+        "key_subjects": [
+          "debris"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "OTS",
+            "camera_move": "Push",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "debris",
+            "notes": "The lighting is moody and subdued, with a blue tint to emphasize the darkness and chaos. The depth of field is shallow, drawing attention to the debris field while keeping the background slightly blurred.",
+            "duration_seconds": 4.629625000000004
+          },
+          "start_time": 59.809749999999994,
+          "end_time": 64.439375
+        }
+      ]
+    },
+    {
+      "scene_id": 28,
+      "start_time": 64.439375,
+      "end_time": 70.19512499999999,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene is transitioned into from a previous shot showing the ship in distress."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out to a shot of the coastline or rescue team preparing for action."
+      },
+      "scene_metadata": {
+        "duration": 5.76,
+        "description": "A large ship is sinking into the water at night.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Outdoor",
+        "mood": "Melancholic",
+        "motion_intensity": 1.9778578281402588,
+        "color_palette": [
+          "#06090f",
+          "#0c3e59",
+          "#09131e",
+          "#07253b",
+          "#167492"
+        ],
+        "camera_analysis": {
+          "movement": "Pan Left",
+          "shot_type": "WIDE",
+          "stability": 0.901107108592987
+        },
+        "ai_description": "A large ship is sinking into the water at night.",
+        "key_subjects": [
+          "Ship"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Pan Left",
+            "framing": {
+              "description": "Standard framing",
+              "confidence": 0.6,
+              "details": {
+                "subject_positioning": "N/A",
+                "shot_balance": "N/A",
+                "depth_layers": "N/A",
+                "leading_lines": "None",
+                "confidence": 0.6,
+                "description": "Standard framing",
+                "type": "unknown",
+                "composition_techniques": [
+                  "leading_lines"
+                ]
+              }
+            },
+            "visual_focus": "Ship",
+            "notes": "The scene is lit with artificial light, creating a dramatic and moody atmosphere. The ship's hull is partially submerged, emphasizing its distress. The camera pans left to follow the ship as it sinks.",
+            "duration_seconds": 5.755749999999992
+          },
+          "start_time": 64.439375,
+          "end_time": 70.19512499999999
+        }
+      ]
+    },
+    {
+      "scene_id": 29,
+      "start_time": 70.19512499999999,
+      "end_time": 71.32124999999999,
+      "transition_in": {
+        "type": "Cut",
+        "from_scene_id": -1,
+        "description": "The scene transitions in with a wide shot, capturing the full context of the room and the couple's positioning."
+      },
+      "transition_out": {
+        "type": "Cut",
+        "to_scene_id": -1,
+        "description": "The scene transitions out with a close-up shot, focusing on one person's reaction to the intimate moment."
+      },
+      "scene_metadata": {
+        "duration": 1.13,
+        "description": "A romantic scene with a couple embracing each other in an intimate moment.",
+        "key_objects": [],
+        "time_of_day": "Night",
+        "environment": "Indoor",
+        "mood": "Melancholic",
+        "motion_intensity": 0.09202525019645691,
+        "color_palette": [
+          "#142b3a",
+          "#09151c",
+          "#105b70",
+          "#020508",
+          "#184356"
+        ],
+        "camera_analysis": {
+          "movement": "Still",
+          "shot_type": "WIDE",
+          "stability": 0.9953987374901772
+        },
+        "ai_description": "A romantic scene with a couple embracing each other in an intimate moment.",
+        "key_subjects": [
+          "Two people"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": "WIDE",
+            "camera_move": "Still",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+                "type": "unknown",
+                "composition_techniques": []
+              }
+            },
+            "visual_focus": "Two people",
+            "notes": "The lighting is soft and moody, creating a sense of intimacy. The focus is on the couple's faces, with the background slightly blurred to keep them as the main subjects.",
+            "duration_seconds": 1.1261250000000018
+          },
+          "start_time": 70.19512499999999,
+          "end_time": 71.32124999999999
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "video_path": "titan.mp4",
+    "duration": 71.32124999999999,
+    "resolution": "1920x1080",
+    "fps": 23.976023976023978,
+    "frame_count": 1710
+  }
+}

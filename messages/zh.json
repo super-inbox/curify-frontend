@@ -425,13 +425,29 @@
   "whatYouNeedTechnical": [
     "支持Stable Diffusion / ComfyUI的GPU（至少12GB显存）",
     "用于JSON/CSV转换和自动化脚本的Python环境",
-    "配置了必要自定义节点和工作流的ComfyUI安装",
-    "用于添加动效和特效的Adobe After Effects或类似合成软件",
-    "用于语音合成的XTTS / ElevenLabs API访问权限",
+    "配置了必要自定义节点和工作流的ComfyUI",
+    "用于运动效果制作的Adobe After Effects或类似合成软件",
+    "用于文本转语音的XTTS / ElevenLabs API访问权限",
     "已安装并可从命令行访问的ffmpeg"
   ],
-  "cta": "🚀 准备好用AI将您的故事板变为现实了吗？<br /><strong>我们可以提供包含JSON示例、ComfyUI工作流和ffmpeg/AE模板的完整入门套件</strong>，帮助您快速上手。"
+  "cta": "🚀 准备好用AI为您的故事板注入生命了吗？<strong>我们可以提供完整入门套件</strong>，包含示例JSON、ComfyUI工作流和ffmpeg/AE模板，助您快速上手。"
+},
+
+"SceneDetection": {
+  "tags": {
+    "computerVision": "计算机视觉",
+    "deepLearning": "深度学习",
+    "realTimeAnalysis": "实时分析"
+  },
+  "hero": {
+    "title": "用AI将视频转化为故事板",
+    "subtitle": "我们构建了一个高级流程，可将数小时的素材在几分钟内转化为结构化的、可搜索的故事板。"
+  },
+  "introduction": {
+    "paragraph1": "想象一下，您上传数小时的原始素材，几分钟内就能获得整个视频的<strong>详细分镜分析</strong>。这正是我们基于AI的场景检测系统所提供的功能。",
+    "paragraph2": "这个由前沿Python库和深度学习模型构建的流程，不仅能检测场景转换，还能理解内容、识别关键元素，并将一切组织成完整的故事板。"
+  },
+  "imageAlt": "场景检测流程正在运行，识别关键时刻并生成结构化故事板",
+  "protip": "为获得最佳效果，请确保您的视频在场景之间有明显的视觉分隔。系统在光线良好、运动模糊最少的素材上表现最佳。考虑在视频编辑软件中添加章节标记或场景切割，以提高检测准确性。"
 }
-
-
-} 
+}
