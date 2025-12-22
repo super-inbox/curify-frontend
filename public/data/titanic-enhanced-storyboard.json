@@ -6,21 +6,21 @@
       "end_time": 2.75275,
       "transition_in": {
         "type": "cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in with a wide shot showing the industrial setting."
+        "description": "Standard cut"
       },
       "transition_out": {
-        "type": "cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to another scene within the factory."
+        "type": "fade",
+        "description": "The transition between the two frames appears to be a fade, as there is a gradual decrease in brightness and contrast from Frame 1 to Frame 2, which creates a smooth and seamless visual effect. This type of transition suggests a change in time or setting without disruption to the narrative flow.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 2.75,
-        "description": "A man is surrounded by machinery and smoke, suggesting a tense situation in an industrial setting.",
-        "key_objects": [],
-        "time_of_day": "Unknown",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 66,
+        "start_frame": 0,
+        "end_frame": 0,
+        "time_of_day": "unknown",
+        "environment": "indoor",
+        "mood": "neutral",
         "motion_intensity": 2.8632655143737793,
         "color_palette": [
           "#0c0f0d",
@@ -30,63 +30,61 @@
           "#3c423e"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "OTS",
-          "stability": 0.8568367242813111
-        },
-        "ai_description": "A man is surrounded by machinery and smoke, suggesting a tense situation in an industrial setting.",
-        "key_subjects": [
-          "man"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "OTS",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "man",
-            "notes": "The use of depth layers creates a sense of tension and isolation for the subject. The lighting emphasizes the harsh environment with dramatic shadows.",
-            "duration_seconds": 2.75275
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "EYE_LEVEL",
+            "composition": "GROUP_SHOT"
           },
-          "start_time": 0.0,
-          "end_time": 2.75275
-        }
-      ]
+          "stability": 0.8568367242813111,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "Compositional balance achieved through placing subjects in the center of the frame, with equal emphasis on foreground and background elements."
+          },
+          "visual_focus": "Central figures of a group within the composition, drawing attention due to their positioning.",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Group of people in a room with machinery",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of an evenly lit environment suggests a practical and straightforward approach to lighting, emphasizing functionality over artistic expression.",
+          "Shallow depth of field places emphasis on the central figures in the room while maintaining visibility of their immediate surroundings."
+        ],
+        "transition_notes": "In: Standard cut\nOut: The image is a still from a film or television show featuring two people in an interior setting with a focus on their expressions and the ambiance of the room. There are no strong compositional elements that suggest a clear transition point between scenes, such as symmetry or visual contrast. The lighting and composition do not provide a clear link to the following scene, which may need additional context or more subtle visual cues to maintain narrative continuity. In terms of technical considerations, the focus on the characters in the foreground creates a sense of depth, but without more information about the story and the intended tone for the next scene, it is difficult to determine if this moment would be appropriate as a transition point. The abrupt nature of the cut may lead to a jarring experience for the viewer if not properly contextualized with the following scene."
+      }
     },
     {
       "scene_id": 2,
       "start_time": 2.75275,
       "end_time": 7.007,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot showing an empty room."
+        "type": "fade",
+        "description": "The transition between the two frames appears to be a fade, as there is a gradual decrease in brightness and contrast from Frame 1 to Frame 2, which creates a smooth and seamless visual effect. This type of transition suggests a change in time or setting without disruption to the narrative flow.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a wide shot of the room with the subject leaving it."
+        "type": "cut",
+        "description": "The transition between frame 1 and frame 2 is a cut with a noticeable jump in quality due to the change in lighting and composition from indoor to outdoor scenes.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 4.25,
-        "description": "A person standing in a dark room with machinery and objects around them, looking at something out of frame.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 102,
+        "start_frame": 66,
+        "end_frame": 66,
+        "time_of_day": "unknown",
+        "environment": "indoor",
+        "mood": "dramatic",
         "motion_intensity": 1.5631195306777954,
         "color_palette": [
           "#070c0c",
@@ -96,67 +94,70 @@
           "#a9b9b7"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "Mediium",
-          "stability": 0.9218440234661103
-        },
-        "ai_description": "A person standing in a dark room with machinery and objects around them, looking at something out of frame.",
-        "key_subjects": [
-          "Main subject"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "Mediium",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Main subject",
-            "notes": "The lighting is moody and focused on the subject, creating a sense of tension. The depth of field is shallow, drawing attention to the main subject while blurring the background elements.",
-            "duration_seconds": 4.25425
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 2.75275,
-          "end_time": 7.007
-        }
-      ]
+          "stability": 0.9218440234661103,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "A person is shown looking through a scope or viewer, with the focus on their face and expression."
+          },
+          "visual_focus": "The subject's face in the scope or viewer.",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "contrast": 0.11637144367902677
+          },
+          "key_subjects": [
+            {
+              "name": "A person looking through a scope or viewer, their face is the main focus of the shot.",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of a shallow depth of field draws attention to the subject's face, with the out-of-focus background emphasizing the dramatic nature of the scene. The color grading likely contributes to this by creating contrast and highlighting the texture of the subject's skin.",
+          "The lighting in this shot is quite dramatic, with shadows cast across the face, which adds intensity to the moment captured."
+        ],
+        "transition_notes": "In: The transition between the two frames appears to be a fade, as there is a gradual decrease in brightness and contrast from Frame 1 to Frame 2, which creates a smooth and seamless visual effect. This type of transition suggests a change in time or setting without disruption to the narrative flow.\nOut: This frame appears to be a still image captured from a video with motion blur in some areas. The content is somewhat abstract and indistinct, which might suggest a scene change. There is no strong composition or visual contrast that directly indicates a transition point. Narratively, the cut seems abrupt, as there are no clear indicators of continuity or timing with potential adjacent scenes."
+      }
     },
     {
       "scene_id": 3,
       "start_time": 7.007,
       "end_time": 8.5085,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "Fade in from black to show the explosion"
+        "type": "cut",
+        "description": "The transition between frame 1 and frame 2 is a cut with a noticeable jump in quality due to the change in lighting and composition from indoor to outdoor scenes.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "Fade out to a different scene or location"
+        "type": "fade",
+        "description": "Fade transitions are evident between frames 3 and 4, with the lighting gradually decreasing in brightness and a smoother transition between the two images. There is no sudden change in color or tone that suggests a dissolve or match type. The jump type could be considered due to the discontinuity of objects between the two scenes, but it does not provide enough visual information to make this a definitive conclusion.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.5,
-        "description": "An explosion scene with a focus on the center of the frame",
-        "key_objects": [],
-        "time_of_day": "Unknown",
-        "environment": "Indoor",
-        "mood": "Energetic",
+        "frame_count": 36,
+        "start_frame": 168,
+        "end_frame": 168,
+        "time_of_day": "unknown",
+        "environment": "urban",
+        "mood": "energetic",
         "motion_intensity": 3.6216886043548584,
         "color_palette": [
           "#2c5473",
@@ -166,63 +167,60 @@
           "#b5dcd6"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.8189155697822571
-        },
-        "ai_description": "An explosion scene with a focus on the center of the frame",
-        "key_subjects": [
-          "Explosion"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Explosion",
-            "notes": "High dynamic range lighting, shallow depth of field to emphasize the explosion in the center",
-            "duration_seconds": 1.5015
+          "movement": "DOLLY_OUT",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "HIGH_ANGLE",
+            "composition": "unknown"
           },
-          "start_time": 7.007,
-          "end_time": 8.5085
-        }
-      ]
+          "stability": 0.8189155697822571,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "High angle shot of a cityscape with a focus on the explosions in the foreground."
+          },
+          "visual_focus": "explosions in the foreground",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Destruction and chaos of an explosion",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "High contrast between the bright explosions and the darker background. Use of shallow depth of field focusing on the explosions in the foreground to emphasize their impact.",
+          "The use of high angle shot creates a sense of disorientation and scale, highlighting the devastating effect of the explosion."
+        ],
+        "transition_notes": "In: The transition between frame 1 and frame 2 is a cut with a noticeable jump in quality due to the change in lighting and composition from indoor to outdoor scenes.\nOut: This is a cut to black frame, which can be used for a direct transition between scenes or as an effect to indicate a pause in action. The sudden change from the lit cityscape to darkness creates a strong visual contrast, making it an effective choice for a scene change."
+      }
     },
     {
       "scene_id": 4,
       "start_time": 8.5085,
       "end_time": 9.759749999999999,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The previous scene was a close-up of a person on the ship"
+        "type": "fade",
+        "description": "Fade transitions are evident between frames 3 and 4, with the lighting gradually decreasing in brightness and a smoother transition between the two images. There is no sudden change in color or tone that suggests a dissolve or match type. The jump type could be considered due to the discontinuity of objects between the two scenes, but it does not provide enough visual information to make this a definitive conclusion.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The next scene will show the aftermath of the sinking ship"
+        "type": "fade",
+        "description": "The transition between frame 1 and frame 2 appears to be a fade due to the gradual disappearance of the illuminated Titanic as it sinks into the water, with the scene fading from brightly lit to darker, indicating the sinking of the ship and the beginning of the next scene. The visual continuity is maintained through the ship's position relative to the horizon line, which aligns with the change in lighting. Additionally, the timing of the transition suggests a narrative progression from an event at night on the illuminated ship to a different moment, possibly capturing the aftermath or investigation that follows the sinking.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.25,
-        "description": "A sinking ship scene from a movie",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Mysterious",
+        "frame_count": 29,
+        "start_frame": 204,
+        "end_frame": 204,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "dramatic",
         "motion_intensity": 2.003845453262329,
         "color_palette": [
           "#07151d",
@@ -232,63 +230,61 @@
           "#01080b"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.8998077273368835
-        },
-        "ai_description": "A sinking ship scene from a movie",
-        "key_subjects": [
-          "Titanic"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Titanic",
-            "notes": "The lighting is dim with blue tones, creating an eerie atmosphere. The depth of field is shallow, drawing focus to the ship in the foreground while keeping the background out of focus.",
-            "duration_seconds": 1.2512499999999989
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 8.5085,
-          "end_time": 9.759749999999999
-        }
-      ]
+          "stability": 0.8998077273368835,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The Titanic ship is in the foreground, sinking with water around it, emphasizing the dramatic nature of the scene."
+          },
+          "visual_focus": "The sinking Titanic",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Titanic ship",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of a long lens allows for a clear view of the ship, and the dark night sky creates a moody atmosphere. The focus on the sinking ship against the water brings attention to the drama unfolding."
+        ],
+        "transition_notes": "In: Fade transitions are evident between frames 3 and 4, with the lighting gradually decreasing in brightness and a smoother transition between the two images. There is no sudden change in color or tone that suggests a dissolve or match type. The jump type could be considered due to the discontinuity of objects between the two scenes, but it does not provide enough visual information to make this a definitive conclusion.\nOut: This frame depicts a dramatic scene with a ship sinking into water at night. The image captures the contrast between the submerged ship and the dark water, creating a strong visual element that suggests a scene change. The narrative flow and timing from the previous scene would likely lead to this moment as a climactic or resolution point. Visually, there is continuity with potential adjacent scenes, which could include rescue efforts, investigation into the cause of the sinking, or the aftermath for those on board."
+      }
     },
     {
       "scene_id": 5,
       "start_time": 9.759749999999999,
       "end_time": 12.762749999999999,
       "transition_in": {
-        "type": "cut",
-        "from_scene_id": -1,
-        "description": "Fade from a previous scene showing the crew onboard"
+        "type": "fade",
+        "description": "The transition between frame 1 and frame 2 appears to be a fade due to the gradual disappearance of the illuminated Titanic as it sinks into the water, with the scene fading from brightly lit to darker, indicating the sinking of the ship and the beginning of the next scene. The visual continuity is maintained through the ship's position relative to the horizon line, which aligns with the change in lighting. Additionally, the timing of the transition suggests a narrative progression from an event at night on the illuminated ship to a different moment, possibly capturing the aftermath or investigation that follows the sinking.",
+        "confidence": 0.8
       },
       "transition_out": {
         "type": "cut",
-        "to_scene_id": -1,
-        "description": "Cut to a shot of the ship's crew members in distress"
+        "description": "The transition is a 'cut' where there is a sudden change from one scene to another with a clear separation between them, maintaining visual continuity but with the abruptness of a cut.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 3.0,
-        "description": "A sinking ship scene",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Melancholic",
+        "frame_count": 72,
+        "start_frame": 233,
+        "end_frame": 233,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "dramatic",
         "motion_intensity": 0.2672327160835266,
         "color_palette": [
           "#01090b",
@@ -298,63 +294,61 @@
           "#030e12"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "WIDE",
-          "stability": 0.9866383641958236
-        },
-        "ai_description": "A sinking ship scene",
-        "key_subjects": [
-          "ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "ship",
-            "notes": "High contrast lighting on the ship, shallow depth of field with focus on the ship and a blurred background",
-            "duration_seconds": 3.003
+          "movement": "DOLLY_IN",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "TWO_SHOT"
           },
-          "start_time": 9.759749999999999,
-          "end_time": 12.762749999999999
-        }
-      ]
+          "stability": 0.9866383641958236,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground"
+            ],
+            "leading_lines": "horizontal",
+            "description": "The scene captures the dramatic moment of a shipwreck at sea, with the camera moving in to a tight shot."
+          },
+          "visual_focus": "ship wreckage",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "sinking ship",
+              "position": "right"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of low light levels creates a sense of mystery and tension, while the dolly-in shot adds to the dramatic effect.",
+          "The depth of field is shallow, keeping the ship wreckage in sharp focus while blurring the background, further emphasizing the drama of the scene."
+        ],
+        "transition_notes": "In: The transition between frame 1 and frame 2 appears to be a fade due to the gradual disappearance of the illuminated Titanic as it sinks into the water, with the scene fading from brightly lit to darker, indicating the sinking of the ship and the beginning of the next scene. The visual continuity is maintained through the ship's position relative to the horizon line, which aligns with the change in lighting. Additionally, the timing of the transition suggests a narrative progression from an event at night on the illuminated ship to a different moment, possibly capturing the aftermath or investigation that follows the sinking.\nOut: The image is a static graphic that captures the Titanic sinking, displaying the ship breaking apart and partially submerged in dark water. This frame represents the moment of impact when the massive ship collapses, implying a shift from one scene to another that may cover the aftermath of the collision or a new narrative element. The visual contrast between the dark exterior and interior decks suggests a dramatic change in perspective as well as location within the ship. The technical notes for this transition would include the need for a sharp cut to quickly break away from the catastrophic event and move onto the next part of the story, which should be less intense and possibly more reflective or investigative in nature."
+      }
     },
     {
       "scene_id": 6,
       "start_time": 12.762749999999999,
       "end_time": 16.26625,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions from a previous shot showing passengers on the deck of the Titanic."
+        "type": "cut",
+        "description": "The transition is a 'cut' where there is a sudden change from one scene to another with a clear separation between them, maintaining visual continuity but with the abruptness of a cut.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions to a shot of rescue boats approaching the sinking ship."
+        "type": "fade",
+        "description": "There is a visual fade between the two frames, as suggested by the gradual change in brightness and color saturation from the light of the night sky to the darkness of the interior scene with the shipwreck. This creates a smooth transition that preserves narrative continuity and suggests the passage of time.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 3.5,
-        "description": "The Titanic is sinking in the ocean at night.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Melancholic",
+        "frame_count": 84,
+        "start_frame": 306,
+        "end_frame": 306,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "dramatic",
         "motion_intensity": 0.8320696949958801,
         "color_palette": [
           "#01131e",
@@ -364,63 +358,60 @@
           "#0d6170"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.958396515250206
-        },
-        "ai_description": "The Titanic is sinking in the ocean at night.",
-        "key_subjects": [
-          "Titanic"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Titanic",
-            "notes": "The lighting emphasizes the darkness of the sea and the silhouette of the ship. The composition creates a sense of depth with the ship in the background, midground with water around it, and foreground with the dark sky. The color grading adds to the melancholic mood by using cool tones.",
-            "duration_seconds": 3.5035000000000007
+          "movement": "DOLLY_IN",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "LOW_ANGLE",
+            "composition": "SPLIT_SCREEN"
           },
-          "start_time": 12.762749999999999,
-          "end_time": 16.26625
-        }
-      ]
+          "stability": 0.958396515250206,
+          "framing": {
+            "subject_position": "center",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "background"
+            ],
+            "leading_lines": "horizontal",
+            "description": "Tilted shot with a large ship and people in the background"
+          },
+          "visual_focus": "ship",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Ship",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is low, highlighting the dark environment and creating a dramatic atmosphere. The colors are muted, contributing to the melancholic mood of the scene.",
+          "A shallow depth of field puts the focus on the ship in the background while the foreground appears blurred."
+        ],
+        "transition_notes": "In: The transition is a 'cut' where there is a sudden change from one scene to another with a clear separation between them, maintaining visual continuity but with the abruptness of a cut.\nOut: Failed to parse response"
+      }
     },
     {
       "scene_id": 7,
       "start_time": 16.26625,
       "end_time": 19.894875,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions from a previous shot showing the group on the boat."
+        "type": "fade",
+        "description": "There is a visual fade between the two frames, as suggested by the gradual change in brightness and color saturation from the light of the night sky to the darkness of the interior scene with the shipwreck. This creates a smooth transition that preserves narrative continuity and suggests the passage of time.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions to a shot of the individual in distress, possibly indicating their escape attempt or further action."
+        "type": "none",
+        "description": "There is a sudden cut between scene 7 and 8 with no visible visual or narrative continuity. The image quality appears to be pixelated, which might suggest an abrupt end of the current scene and a start of a new one. The technical notes are that the image quality in both scenes is poor, with distorted colors, making it challenging to determine if there should be any transition between them.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 3.63,
-        "description": "A group of people are on a boat in the middle of the ocean at night. They appear to be in distress.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 87,
+        "start_frame": 390,
+        "end_frame": 390,
+        "time_of_day": "night",
+        "environment": "indoor",
+        "mood": "dramatic",
         "motion_intensity": 2.0474369525909424,
         "color_palette": [
           "#0a202d",
@@ -430,67 +421,71 @@
           "#07131a"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.8976281523704529
-        },
-        "ai_description": "A group of people are on a boat in the middle of the ocean at night. They appear to be in distress.",
-        "key_subjects": [
-          "People"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "People",
-            "notes": "The lighting is dim and moody, with a focus on the central group of people. The background is darker than the foreground, creating a sense of depth and tension.",
-            "duration_seconds": 3.6286249999999995
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "GROUP_SHOT"
           },
-          "start_time": 16.26625,
-          "end_time": 19.894875
-        }
-      ]
+          "stability": 0.8976281523704529,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The image shows a wide shot with multiple characters in the foreground, midground, and background. The camera is positioned at eye level, providing an immersive perspective."
+          },
+          "visual_focus": "Center",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "contrast": 0.14164352132109928
+          },
+          "key_subjects": [
+            {
+              "name": "Several characters in a dramatic situation.",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is dramatic, creating a tense atmosphere.",
+          "There's a shallow depth of field, focusing on the characters in the foreground while keeping the background slightly blurred to emphasize the characters."
+        ],
+        "transition_notes": "In: There is a visual fade between the two frames, as suggested by the gradual change in brightness and color saturation from the light of the night sky to the darkness of the interior scene with the shipwreck. This creates a smooth transition that preserves narrative continuity and suggests the passage of time.\nOut: The image features a clear, decisive cut with visual elements that strongly suggest a scene change. The frame is dominated by dark colors and jagged lines, which could symbolize a dramatic event or emotional shift leading up to the next scene. The narrative flow would require careful consideration to ensure it does not interrupt the pacing of the story. Visually, there is a strong contrast between this frame and what may follow, as indicated by the darkness and fragmented nature of the image. The transition should be smooth to avoid jarring the audience, but it could also benefit from being bold to match the intense atmosphere depicted in this frame."
+      }
     },
     {
       "scene_id": 8,
       "start_time": 19.894875,
       "end_time": 21.5215,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The previous scene ended with a wide shot of the room, and this shot transitions into a close-up of the man crouching down."
+        "type": "none",
+        "description": "There is a sudden cut between scene 7 and 8 with no visible visual or narrative continuity. The image quality appears to be pixelated, which might suggest an abrupt end of the current scene and a start of a new one. The technical notes are that the image quality in both scenes is poor, with distorted colors, making it challenging to determine if there should be any transition between them.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The next scene will likely be a close-up shot of the object the man is looking at, continuing the narrative and providing more context about what he is examining."
+        "type": "none",
+        "description": "The transition between frame 1 and frame 2 is seamless without any noticeable visual cues indicating a change in scene or time. It appears to be a direct cut without a specific transition effect.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.63,
-        "description": "A man is crouching down and looking at a small object on the floor in a dark room. He appears to be focused intently on it.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Mysterious",
+        "frame_count": 39,
+        "start_frame": 477,
+        "end_frame": 477,
+        "time_of_day": "night",
+        "environment": "indoor",
+        "mood": "calm",
         "motion_intensity": 0.3617464303970337,
         "color_palette": [
           "#00060c",
@@ -500,63 +495,60 @@
           "#0a5f70"
         ],
         "camera_analysis": {
-          "movement": "Pan Right",
-          "shot_type": "WIDE",
-          "stability": 0.9819126784801483
-        },
-        "ai_description": "A man is crouching down and looking at a small object on the floor in a dark room. He appears to be focused intently on it.",
-        "key_subjects": [
-          "Man"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Right",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Man",
-            "notes": "The lighting in this scene is dim, creating a moody atmosphere. The depth of field is shallow, with the main subject in focus and the background blurred out, drawing attention to the man's actions. The color grading is muted, adding to the mysterious tone of the scene.",
-            "duration_seconds": 1.6266250000000007
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 19.894875,
-          "end_time": 21.5215
-        }
-      ]
+          "stability": 0.9819126784801483,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground"
+            ],
+            "leading_lines": "none",
+            "description": "A man is standing on a board in the foreground. He appears to be observing or waiting for something."
+          },
+          "visual_focus": "The man in the foreground is the focal point of the image.",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "A man standing on a board in the foreground.",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of subdued lighting creates an intimate and quiet atmosphere. The composition is balanced with the subject centered, drawing the viewer's attention to the man on the board."
+        ],
+        "transition_notes": "In: There is a sudden cut between scene 7 and 8 with no visible visual or narrative continuity. The image quality appears to be pixelated, which might suggest an abrupt end of the current scene and a start of a new one. The technical notes are that the image quality in both scenes is poor, with distorted colors, making it challenging to determine if there should be any transition between them.\nOut: This is a still image from a movie or TV show, capturing a dramatic moment featuring a man in distress, with visible blood on his face and shirt. The scene suggests that the character has been injured or is experiencing some form of emotional pain. The transition from this frame to the next scene should take into consideration the narrative continuity, the visual elements that suggest a change in scene, and the technical requirements for a smooth transition.  In terms of narrative flow, this image captures a strong emotional moment, which could potentially lead to an immediate cut to a different scene where the character's fate is further developed or resolved. The contrast between the dark background and the bright red blood on the man's clothes draws attention to the severity of his condition and emphasizes the dramatic nature of this moment.  From a technical standpoint, a simple cut would likely be used here, as there are no visual elements that require any form of wipe or dissolve. Additionally, given the action-packed nature of the scene, a fade or match transition might disrupt the narrative flow and visual continuity with potential adjacent scenes. The image itself is a standard 1:6 aspect ratio, which is common for cinema and television.  Overall, given the dramatic nature of the scene and the need to maintain visual continuity while managing the narrative flow, a cut is the most appropriate choice for transitioning from this frame to the next scene."
+      }
     },
     {
       "scene_id": 9,
       "start_time": 21.5215,
       "end_time": 22.897875,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene cuts from a previous shot to this one without any visible transition."
+        "type": "none",
+        "description": "The transition between frame 1 and frame 2 is seamless without any noticeable visual cues indicating a change in scene or time. It appears to be a direct cut without a specific transition effect.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out by cutting to the next shot in the sequence."
+        "type": "fade",
+        "description": "The transition between the two frames is a smooth fade, creating a gradual change from one scene to the next with a focus on maintaining visual continuity and suggesting motion within the composition. The color shift is consistent and allows for clear differentiation of the scene's atmosphere.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.38,
-        "description": "The man is looking at something with a serious expression, possibly reacting to an event or situation.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 32,
+        "start_frame": 516,
+        "end_frame": 516,
+        "time_of_day": "night",
+        "environment": "indoor",
+        "mood": "dramatic",
         "motion_intensity": 0.24265384674072266,
         "color_palette": [
           "#030507",
@@ -566,63 +558,62 @@
           "#202b37"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "OTS",
-          "stability": 0.9878673076629638
-        },
-        "ai_description": "The man is looking at something with a serious expression, possibly reacting to an event or situation.",
-        "key_subjects": [
-          "Man"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "OTS",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Man",
-            "notes": "The lighting focuses on the man's face, creating a dramatic effect. The depth of field is shallow, drawing attention to the man in the foreground while keeping the background slightly blurred.",
-            "duration_seconds": 1.3763749999999995
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 21.5215,
-          "end_time": 22.897875
-        }
-      ]
+          "stability": 0.9878673076629638,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "Actor in center of shot"
+          },
+          "visual_focus": "Actor",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Bloodied man with gun in hand",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting creates an intense atmosphere",
+          "The shallow depth of field emphasizes the actor's expression and emotion",
+          "Color grading enhances the mood and tone of the scene"
+        ],
+        "transition_notes": "In: The transition between frame 1 and frame 2 is seamless without any noticeable visual cues indicating a change in scene or time. It appears to be a direct cut without a specific transition effect.\nOut: The frame is a close-up shot of a dark room with a water puddle on the floor and a distorted reflection. The image does not suggest any particular narrative connection to the next scene, as there is no clear visual continuity or contrast between this frame and the potential adjacent scenes. The focus on the puddle creates a sense of isolation or transition, but it lacks the clarity required for effective visual continuity. Additionally, the dark environment may cause difficulty in distinguishing details that could suggest narrative connections to subsequent scenes."
+      }
     },
     {
       "scene_id": 10,
       "start_time": 22.897875,
       "end_time": 23.898874999999997,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "Fade to black and then cut to this close-up shot"
+        "type": "fade",
+        "description": "The transition between the two frames is a smooth fade, creating a gradual change from one scene to the next with a focus on maintaining visual continuity and suggesting motion within the composition. The color shift is consistent and allows for clear differentiation of the scene's atmosphere.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "Cut to a wider shot showing the person's actions or surroundings after their contemplative moment"
+        "type": "none",
+        "description": "In this case, no transition is evident between frames 10 and 11 as the visual continuity and flow are maintained with a clear progression of the scene's environment. The frame on the right follows directly from the frame on the left without any distinct break in continuity or motion. There are no visual elements that suggest a specific transition type, such as dissolve, wipe, or fade. The narrative context also supports this decision as there is no need for a transition to convey a shift in time or location.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.0,
-        "description": "Close-up of a person in a room at night, looking out the window",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Mysterious",
+        "frame_count": 23,
+        "start_frame": 549,
+        "end_frame": 549,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "tense",
         "motion_intensity": 1.0794960260391235,
         "color_palette": [
           "#021620",
@@ -632,63 +623,61 @@
           "#073e5c"
         ],
         "camera_analysis": {
-          "movement": "Pull",
-          "shot_type": "BIRDS EYE",
-          "stability": 0.9460251986980438
-        },
-        "ai_description": "Close-up of a person in a room at night, looking out the window",
-        "key_subjects": [
-          "Main subject"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "BIRDS EYE",
-            "camera_move": "Pull",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Main subject",
-            "notes": "Low light conditions with selective focus on the main subject's face and hands, creating an intimate and dramatic atmosphere.",
-            "duration_seconds": 1.0009999999999977
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 22.897875,
-          "end_time": 23.898874999999997
-        }
-      ]
+          "stability": 0.9460251986980438,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "horizontal",
+            "description": "A person standing in the foreground with a large, ominous ship in the background, creating a sense of tension and isolation."
+          },
+          "visual_focus": "The person in the foreground",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Person standing in front of a ship",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of a wide shot places the viewer's focus on both the person and the ship, emphasizing the isolation of the subject.",
+          "The lighting creates a dramatic effect with shadows and highlights highlighting the tension of the scene."
+        ],
+        "transition_notes": "In: The transition between the two frames is a smooth fade, creating a gradual change from one scene to the next with a focus on maintaining visual continuity and suggesting motion within the composition. The color shift is consistent and allows for clear differentiation of the scene's atmosphere.\nOut: The image provided is a still from a video, specifically an interior space, possibly a room with chandeliers and decorative elements. The frame captures the ceiling area and appears to be taken from a low angle looking up towards the center of the room. There's no clear evidence of transition elements like black or white borders, fade effects, or contrasting visual elements that suggest a scene change. The lighting is subdued and the room looks dark with a hint of blueish tint, which might create an abrupt transition if adjacent scenes are brightly lit or vice versa. However, without more context on what comes before and after this frame, it's difficult to make accurate technical observations regarding continuity."
+      }
     },
     {
       "scene_id": 11,
       "start_time": 23.898874999999997,
       "end_time": 28.653624999999998,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "Fade in from black to reveal the scene"
+        "type": "none",
+        "description": "In this case, no transition is evident between frames 10 and 11 as the visual continuity and flow are maintained with a clear progression of the scene's environment. The frame on the right follows directly from the frame on the left without any distinct break in continuity or motion. There are no visual elements that suggest a specific transition type, such as dissolve, wipe, or fade. The narrative context also supports this decision as there is no need for a transition to convey a shift in time or location.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "Fade out to a black screen, indicating the end of this scene"
+        "type": "none",
+        "description": "There is no clear transition between these two frames. The image jumps from one scene to another with no indication of a change in continuity or narrative context.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 4.75,
-        "description": "Character standing in a cluttered room with multiple objects scattered around, possibly indicating a chaotic or disorganized state of mind.",
-        "key_objects": [],
-        "time_of_day": "Unknown",
-        "environment": "Indoor",
-        "mood": "Mysterious",
+        "frame_count": 114,
+        "start_frame": 573,
+        "end_frame": 573,
+        "time_of_day": "unknown",
+        "environment": "indoor",
+        "mood": "calm",
         "motion_intensity": 2.096602201461792,
         "color_palette": [
           "#11222a",
@@ -698,63 +687,66 @@
           "#1d3944"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.8951698899269104
-        },
-        "ai_description": "Character standing in a cluttered room with multiple objects scattered around, possibly indicating a chaotic or disorganized state of mind.",
-        "key_subjects": [
-          "Main character"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Main character",
-            "notes": "The lighting is dim and moody, creating an atmosphere of suspense. The depth of field is shallow, drawing the viewer's attention to the central figure while blurring the background objects.",
-            "duration_seconds": 4.754750000000001
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "EYE_LEVEL",
+            "composition": "TWO_SHOT"
           },
-          "start_time": 23.898874999999997,
-          "end_time": 28.653624999999998
-        }
-      ]
+          "stability": 0.8951698899269104,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The image captures a scene with two people in the foreground and another person slightly out of focus in the background, giving depth to the shot."
+          },
+          "visual_focus": "A man is seated on a bench, looking directly at the camera.",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Man sitting on bench",
+              "position": "center"
+            },
+            {
+              "name": "Second person in background",
+              "position": "background"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The shot is well-lit with soft lighting that creates a calm and serene atmosphere.",
+          "There's a shallow depth of field used to focus on the main subject, while slightly blurring the background to draw attention."
+        ],
+        "transition_notes": "In: In this case, no transition is evident between frames 10 and 11 as the visual continuity and flow are maintained with a clear progression of the scene's environment. The frame on the right follows directly from the frame on the left without any distinct break in continuity or motion. There are no visual elements that suggest a specific transition type, such as dissolve, wipe, or fade. The narrative context also supports this decision as there is no need for a transition to convey a shift in time or location.\nOut: The frame shows a scene where the character is lying on his back. The focus is on him, with the background being dark and out of focus. A strong composition is created by the lighting highlighting the subject, contrasting with the surrounding darkness. The visual flow suggests a narrative break as the character seems to be reacting to something off-camera. There's a clear visual contrast between the well-lit foreground and the dark background. Visually, this frame doesn't provide continuity for adjacent scenes, so it may not be the best transition point without additional context or a clear indication of the next scene."
+      }
     },
     {
       "scene_id": 12,
       "start_time": 28.653624999999998,
       "end_time": 30.905874999999998,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "A quick cut to this wide shot of the sinking Titanic"
+        "type": "none",
+        "description": "There is no clear transition between these two frames. The image jumps from one scene to another with no indication of a change in continuity or narrative context.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "A quick cut from this wide shot of the sinking Titanic to a close-up shot of a person on the deck of the ship"
+        "type": "fade",
+        "description": "The transition between the two frames is a fade, which effectively indicates that there is a shift in time or scene. The visual elements suggest a change in setting or action, and the fading effect helps to create a smooth transition between the end of the current scene (frame 1) and the start of the next scene (frame 2). This creates a sense of continuity and allows for the narrative context to be maintained while also signaling the change in content.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 2.25,
-        "description": "A large sinking ship in the ocean at night",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Melancholic",
+        "frame_count": 54,
+        "start_frame": 687,
+        "end_frame": 687,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "dramatic",
         "motion_intensity": 1.2898448705673218,
         "color_palette": [
           "#05111f",
@@ -764,67 +756,72 @@
           "#194a5c"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "WIDE",
-          "stability": 0.9355077564716339
-        },
-        "ai_description": "A large sinking ship in the ocean at night",
-        "key_subjects": [
-          "Titanic ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Titanic ship",
-            "notes": "Low light conditions, dramatic color grading to emphasize the darkness and danger of the scene",
-            "duration_seconds": 2.25225
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "SINGLE"
           },
-          "start_time": 28.653624999999998,
-          "end_time": 30.905874999999998
-        }
-      ]
+          "stability": 0.9355077564716339,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "Sinking ship in the ocean with visible details such as people and debris in the water, with a focus on the bow of the ship."
+          },
+          "visual_focus": "Bow of sinking ship",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "cool",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.19729160380373453
+          },
+          "key_subjects": [
+            {
+              "name": "Ship",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is moody and dramatic, highlighting the destruction and turmoil of the sinking ship. The depth of field is shallow, with the bow of the ship in focus and the surrounding environment blurred. Color grading has been used to emphasize the darkness and chaos of the scene."
+        ],
+        "transition_notes": "In: There is no clear transition between these two frames. The image jumps from one scene to another with no indication of a change in continuity or narrative context.\nOut: The image is a still from a movie or TV show, featuring a man in a dark setting with smoke or steam effects, leaning against what looks like a broken door frame with an intense expression. The scene has a strong contrast in lighting and darkness, which suggests a sudden shift in tone and atmosphere. The duration of 2.3 seconds is quick and unexpected, aligning with the dramatic nature of the man's pose and expression. This transition could work well for a high-energy or action-packed scene that immediately follows this frame."
+      }
     },
     {
       "scene_id": 13,
       "start_time": 30.905874999999998,
       "end_time": 32.907875,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "No transition visible in this image."
+        "type": "fade",
+        "description": "The transition between the two frames is a fade, which effectively indicates that there is a shift in time or scene. The visual elements suggest a change in setting or action, and the fading effect helps to create a smooth transition between the end of the current scene (frame 1) and the start of the next scene (frame 2). This creates a sense of continuity and allows for the narrative context to be maintained while also signaling the change in content.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "No transition visible in this image."
+        "type": "fade",
+        "description": "The image is split into two frames, one showing a person in distress amidst destruction with dark tones and the other frame is a lighter scene with another character looking on. The transition appears to be a fade from the darker frame to the lighter frame, which creates a smooth shift in both visual elements and narrative context.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 2.0,
-        "description": "A man in a room with a dramatic expression, possibly reacting to something off-camera.",
-        "key_objects": [],
-        "time_of_day": "Unknown",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 47,
+        "start_frame": 741,
+        "end_frame": 741,
+        "time_of_day": "unknown",
+        "environment": "indoor",
+        "mood": "neutral",
         "motion_intensity": 0.10859474539756775,
         "color_palette": [
           "#1c4053",
@@ -834,63 +831,60 @@
           "#2b5b69"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "WIDE",
-          "stability": 0.9945702627301216
-        },
-        "ai_description": "A man in a room with a dramatic expression, possibly reacting to something off-camera.",
-        "key_subjects": [
-          "Man"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Man",
-            "notes": "The lighting is moody and focused on the subject, with a shallow depth of field that blurs the background slightly. The color grading adds to the tension of the scene.",
-            "duration_seconds": 2.001999999999999
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 30.905874999999998,
-          "end_time": 32.907875
-        }
-      ]
+          "stability": 0.9945702627301216,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground"
+            ],
+            "leading_lines": "none",
+            "description": "The shot is framed with a central composition, focusing on the subject in both the foreground and midground."
+          },
+          "visual_focus": "The man in the center of the image is the main focus.",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Man leaning on wall",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting in the image suggests an indoor setting with artificial light sources. Depth of field is shallow, with the subject in focus while the background is slightly blurred."
+        ],
+        "transition_notes": "In: The transition between the two frames is a fade, which effectively indicates that there is a shift in time or scene. The visual elements suggest a change in setting or action, and the fading effect helps to create a smooth transition between the end of the current scene (frame 1) and the start of the next scene (frame 2). This creates a sense of continuity and allows for the narrative context to be maintained while also signaling the change in content.\nOut: The transition between this frame and the next appears abrupt due to the sudden change from a detailed scene with multiple characters to a close-up shot of a single character, which can create a jarring experience for the viewer. This could potentially impact the narrative flow as it breaks the visual continuity established in the previous scene."
+      }
     },
     {
       "scene_id": 14,
       "start_time": 32.907875,
       "end_time": 34.909875,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot showing the aftermath of an explosion."
+        "type": "fade",
+        "description": "The image is split into two frames, one showing a person in distress amidst destruction with dark tones and the other frame is a lighter scene with another character looking on. The transition appears to be a fade from the darker frame to the lighter frame, which creates a smooth shift in both visual elements and narrative context.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a wider shot showing the extent of the destruction and chaos in the background."
+        "type": "cut",
+        "description": "The image shows a clear cut between the two frames with no visual continuity or flow evident. The narrative context suggests that there is a change in time or location without any specific indication of a particular transition effect. There are no visual elements, such as motion blur, wipes, or dissolves, which would indicate a gradual change from one scene to another. Compositionally, the two frames appear unrelated, with no direct connection between the elements within each frame. There is no match in the sense of continuity between the scenes and no visual cues for a jump effect.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 2.0,
-        "description": "A scene from a video showing destruction and chaos, with the main subject in the center of the frame looking out over the destruction.",
-        "key_objects": [],
-        "time_of_day": "Night",
+        "frame_count": 48,
+        "start_frame": 789,
+        "end_frame": 789,
+        "time_of_day": "Unknown",
         "environment": "Indoor",
-        "mood": "Tense",
+        "mood": "Calm",
         "motion_intensity": 2.437148332595825,
         "color_palette": [
           "#00050c",
@@ -900,67 +894,70 @@
           "#226b88"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.8781425833702088
-        },
-        "ai_description": "A scene from a video showing destruction and chaos, with the main subject in the center of the frame looking out over the destruction.",
-        "key_subjects": [
-          "Main subject"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Main subject",
-            "notes": "The lighting is dramatic with blue tones dominating the color palette. The depth of field is shallow, focusing on the main subject while blurring the background to emphasize the chaos and destruction.",
-            "duration_seconds": 2.0020000000000024
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM_CLOSE_UP",
+            "angle": "EYE_LEVEL",
+            "composition": "POINT_OF_VIEW"
           },
-          "start_time": 32.907875,
-          "end_time": 34.909875
-        }
-      ]
+          "stability": 0.8781425833702088,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground"
+            ],
+            "leading_lines": "none",
+            "description": "The camera captures the viewpoint of a character, with debris in the foreground and a person in the background."
+          },
+          "visual_focus": "Debris",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.21119158184488324
+          },
+          "key_subjects": [
+            {
+              "name": "Person",
+              "position": "right"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is low, creating a somber atmosphere. The depth of field is shallow, drawing focus to the foreground debris while keeping the person in the background slightly blurred."
+        ],
+        "transition_notes": "In: The image is split into two frames, one showing a person in distress amidst destruction with dark tones and the other frame is a lighter scene with another character looking on. The transition appears to be a fade from the darker frame to the lighter frame, which creates a smooth shift in both visual elements and narrative context.\nOut: The current frame appears to be a cut transition. The visual elements suggest abrupt change with no clear visual continuity or narrative flow. The image is a low-resolution photograph of a large, illuminated structure with geometric shapes and a stark contrast between dark and bright areas."
+      }
     },
     {
       "scene_id": 15,
       "start_time": 34.909875,
       "end_time": 36.661625,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot of the ship's control room with a focus on the radar screen, indicating that they are approaching a stormy area."
+        "type": "cut",
+        "description": "The image shows a clear cut between the two frames with no visual continuity or flow evident. The narrative context suggests that there is a change in time or location without any specific indication of a particular transition effect. There are no visual elements, such as motion blur, wipes, or dissolves, which would indicate a gradual change from one scene to another. Compositionally, the two frames appear unrelated, with no direct connection between the elements within each frame. There is no match in the sense of continuity between the scenes and no visual cues for a jump effect.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a shot of the ship's crew members discussing their next course of action in the control room."
+        "type": "cut",
+        "description": "This is a simple cut transition with no visible dissolve or wipe effects between the two frames. It abruptly ends the previous scene and immediately starts the next scene without any visual effect connecting them.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.75,
-        "description": "This is a scene from a video showing a ship in the ocean at night. The camera pans left to reveal a large ship with lights on, surrounded by darkness.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Ambiguous",
-        "mood": "Mysterious",
+        "frame_count": 42,
+        "start_frame": 837,
+        "end_frame": 837,
+        "time_of_day": "night",
+        "environment": "outdoor",
+        "mood": "melancholic",
         "motion_intensity": 0.3633357584476471,
         "color_palette": [
           "#031019",
@@ -970,63 +967,59 @@
           "#00040f"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.9818332120776176
-        },
-        "ai_description": "This is a scene from a video showing a ship in the ocean at night. The camera pans left to reveal a large ship with lights on, surrounded by darkness.",
-        "key_subjects": [
-          "Ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Ship",
-            "notes": "The lighting is dramatic and moody, with the ship's lights contrasting against the dark background. The depth of field is shallow, focusing on the ship while the ocean in the foreground and background are blurred. The color grading emphasizes blues and blacks to create a sense of mystery.",
-            "duration_seconds": 1.7517500000000013
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM_WIDE",
+            "angle": "LOW_ANGLE",
+            "composition": "MEDIUM"
           },
-          "start_time": 34.909875,
-          "end_time": 36.661625
-        }
-      ]
+          "stability": 0.9818332120776176,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The frame centers on the shipwreck, with a sense of being underwater."
+          },
+          "visual_focus": "shipwreck",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "A broken shipwreck",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is dim and moody, emphasizing the grim situation. The use of shadows and highlights creates a sense of depth and decay. The blue tint adds to the overall melancholic atmosphere. The camera position and composition contribute to an immersive experience for the viewer, drawing them into the scene and allowing them to appreciate the scale and destruction caused by the shipwreck."
+        ],
+        "transition_notes": "In: The image shows a clear cut between the two frames with no visual continuity or flow evident. The narrative context suggests that there is a change in time or location without any specific indication of a particular transition effect. There are no visual elements, such as motion blur, wipes, or dissolves, which would indicate a gradual change from one scene to another. Compositionally, the two frames appear unrelated, with no direct connection between the elements within each frame. There is no match in the sense of continuity between the scenes and no visual cues for a jump effect.\nOut: The image shows a scene with a person seemingly falling or descending from what appears to be a high vantage point, as indicated by the blue color tone and the debris surrounding them. The perspective is such that we are looking down upon the individual. This frame captures a moment of intense action or crisis. In terms of visual elements suggesting a scene change, there is a strong contrast between the blue tones of this scene and any adjacent scenes, which might not have a similar color palette. Additionally, the composition is dynamic, with the person positioned in the center and the debris framing them from both sides. This suggests that the viewer's attention is drawn to the action at hand. However, the narrative flow and timing of this frame are not clear as it does not provide enough context for understanding the significance or impact of this scene on the overall story. Therefore, while the visual elements suggest a dramatic transition point, more information would be needed to make a definitive assessment."
+      }
     },
     {
       "scene_id": 16,
       "start_time": 36.661625,
       "end_time": 38.163124999999994,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot showing the explosion."
+        "type": "cut",
+        "description": "This is a simple cut transition with no visible dissolve or wipe effects between the two frames. It abruptly ends the previous scene and immediately starts the next scene without any visual effect connecting them.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a different location or time, possibly showing the aftermath of the explosion."
+        "type": "cut",
+        "description": "The transition between frames 16 and 17 appears to be a simple cut with no visual elements that suggest a specific type of transition (fade, dissolve, wipe, match). The change in lighting and the fact that the two scenes have different backgrounds (indoor vs. outdoor) and subjects (characters) also suggest a discontinuity between them.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.5,
-        "description": "A ship is seen in the background after an explosion, debris flying around it.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 35,
+        "start_frame": 879,
+        "end_frame": 879,
+        "time_of_day": "night",
+        "environment": "indoor",
+        "mood": "dramatic",
         "motion_intensity": 1.638444185256958,
         "color_palette": [
           "#22748b",
@@ -1036,45 +1029,48 @@
           "#000c1d"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.9180777907371521
-        },
-        "ai_description": "A ship is seen in the background after an explosion, debris flying around it.",
-        "key_subjects": [
-          "Ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Ship",
-            "notes": "The lighting is dim and moody, with a focus on the destruction of the ship. The color grading emphasizes the darkness and chaos of the scene.",
-            "duration_seconds": 1.501499999999993
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "LOW_ANGLE",
+            "composition": "unknown"
           },
-          "start_time": 36.661625,
-          "end_time": 38.163124999999994
-        }
-      ]
+          "stability": 0.9180777907371521,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground"
+            ],
+            "leading_lines": "none",
+            "description": "The camera is positioned low to the ground, looking up at the subject matter. The framing is centered and balanced, with the foreground as the main focus."
+          },
+          "visual_focus": "The destruction of the room captures the viewer's attention.",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.26850202322591943
+          },
+          "key_subjects": [
+            {
+              "name": "Brief narrative description of the subject (1 sentence)",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting in the room creates an atmosphere of darkness and tension.",
+          "The depth of field is shallow, drawing attention to the destruction in the center of the frame. The background is out of focus, further emphasizing the central subject."
+        ],
+        "transition_notes": "In: This is a simple cut transition with no visible dissolve or wipe effects between the two frames. It abruptly ends the previous scene and immediately starts the next scene without any visual effect connecting them.\nOut: Failed to parse response"
+      }
     },
     {
       "scene_id": 17,
@@ -1082,21 +1078,22 @@
       "end_time": 39.289249999999996,
       "transition_in": {
         "type": "cut",
-        "from_scene_id": -1,
-        "description": "Fade in from black to reveal the scene"
+        "description": "The transition between frames 16 and 17 appears to be a simple cut with no visual elements that suggest a specific type of transition (fade, dissolve, wipe, match). The change in lighting and the fact that the two scenes have different backgrounds (indoor vs. outdoor) and subjects (characters) also suggest a discontinuity between them.",
+        "confidence": 0.8
       },
       "transition_out": {
         "type": "cut",
-        "to_scene_id": -1,
-        "description": "Cut to a different angle or shot of the same scene"
+        "description": "The transition between frame 17 and 18 is a hard cut with no visible visual continuity in terms of motion or composition. The abrupt change in scene suggests an intention to abruptly switch from one narrative element to another without any indication of time passage or effect on the subjects' actions. There is no wipe, fade, or dissolve that can be observed. The jump cut nature of the transition indicates a sudden change of context, possibly signifying a significant event or action causing the interruption in the narrative flow.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.13,
-        "description": "Group of people in a room, one person is being held by another person, the atmosphere appears to be tense and dramatic.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 27,
+        "start_frame": 914,
+        "end_frame": 914,
+        "time_of_day": "unknown",
+        "environment": "indoor",
+        "mood": "dramatic",
         "motion_intensity": 0.9351515173912048,
         "color_palette": [
           "#00060a",
@@ -1106,72 +1103,73 @@
           "#12435b"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.9532424241304398
-        },
-        "ai_description": "Group of people in a room, one person is being held by another person, the atmosphere appears to be tense and dramatic.",
-        "key_subjects": [
-          "list",
-          "of",
-          "main",
-          "subjects",
-          "or",
-          "objects"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "list, of, main",
-            "notes": "Low key lighting with shadows emphasizing the tension, shallow depth of field focusing on main subject",
-            "duration_seconds": 1.1261250000000018
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 38.163124999999994,
-          "end_time": 39.289249999999996
-        }
-      ]
+          "stability": 0.9532424241304398,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "In the image, a man is being lifted by several people in a room that has a mysterious atmosphere. The camera's focus on the man suggests he is the key subject."
+          },
+          "visual_focus": "man",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.1749864854222607
+          },
+          "key_subjects": [
+            {
+              "name": "man being lifted by people",
+              "position": "centered"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is dim, creating a sense of mystery and tension. The use of shadows adds to the dramatic effect.",
+          "The depth of field is shallow, with the subject clearly in focus while the background is blurred, emphasizing the importance of the man being lifted."
+        ],
+        "transition_notes": "In: The transition between frames 16 and 17 appears to be a simple cut with no visual elements that suggest a specific type of transition (fade, dissolve, wipe, match). The change in lighting and the fact that the two scenes have different backgrounds (indoor vs. outdoor) and subjects (characters) also suggest a discontinuity between them.\nOut: Failed to parse response"
+      }
     },
     {
       "scene_id": 18,
       "start_time": 39.289249999999996,
       "end_time": 41.166124999999994,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions from a previous shot showing the Titanic's crew trying to save passengers."
+        "type": "cut",
+        "description": "The transition between frame 17 and 18 is a hard cut with no visible visual continuity in terms of motion or composition. The abrupt change in scene suggests an intention to abruptly switch from one narrative element to another without any indication of time passage or effect on the subjects' actions. There is no wipe, fade, or dissolve that can be observed. The jump cut nature of the transition indicates a sudden change of context, possibly signifying a significant event or action causing the interruption in the narrative flow.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions to a shot of the rescue effort by other ships in the area."
+        "type": "fade",
+        "description": "The transition from frame 1 to frame 2 involves a gradual decrease in brightness, which creates a fade effect. The visual elements suggest a smooth and seamless connection between the scenes. The narrative context appears consistent as there is no abrupt change in motion or composition that would indicate another type of transition. Additionally, this type of transition is commonly used to signal a shift in time or location.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.88,
-        "description": "The Titanic is sinking in the ocean at night.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Melancholic",
+        "frame_count": 44,
+        "start_frame": 942,
+        "end_frame": 942,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "dramatic",
         "motion_intensity": 1.5586994886398315,
         "color_palette": [
           "#010406",
@@ -1181,63 +1179,61 @@
           "#020d14"
         ],
         "camera_analysis": {
-          "movement": "Pan Right",
-          "shot_type": "WIDE",
-          "stability": 0.9220650255680084
-        },
-        "ai_description": "The Titanic is sinking in the ocean at night.",
-        "key_subjects": [
-          "Titanic"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Right",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Titanic",
-            "notes": "Low key lighting to emphasize the darkness and despair of the scene. Wide depth of field to capture both the sinking ship and the surrounding water. Blue color grading to create a somber atmosphere.",
-            "duration_seconds": 1.8768749999999983
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "SINGLE"
           },
-          "start_time": 39.289249999999996,
-          "end_time": 41.166124999999994
-        }
-      ]
+          "stability": 0.9220650255680084,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The camera captures the sinking ship with an eye-level shot, focusing on the sinking Titanic in the foreground."
+          },
+          "visual_focus": "Titanic",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Titanic sinking into the water",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting suggests a nighttime setting, highlighting the dramatic event of the Titanic sinking into the water. The depth of field is shallow, placing the sinking ship as the main subject in the foreground."
+        ],
+        "transition_notes": "In: The transition between frame 17 and 18 is a hard cut with no visible visual continuity in terms of motion or composition. The abrupt change in scene suggests an intention to abruptly switch from one narrative element to another without any indication of time passage or effect on the subjects' actions. There is no wipe, fade, or dissolve that can be observed. The jump cut nature of the transition indicates a sudden change of context, possibly signifying a significant event or action causing the interruption in the narrative flow.\nOut: The frame at the out of the scene has a strong composition with a central focus on the spaceship in distress and clear visual contrast between the space environment and the interior of the ship. The visual elements suggest a sense of urgency and danger, which may not be appropriate for a gentle transition like a fade or dissolve to the next scene. A cut could work well as it would maintain the tension and create a clear separation between the two scenes."
+      }
     },
     {
       "scene_id": 19,
       "start_time": 41.166124999999994,
       "end_time": 42.917874999999995,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions from a previous shot of the ocean with waves crashing against the ship."
+        "type": "fade",
+        "description": "The transition from frame 1 to frame 2 involves a gradual decrease in brightness, which creates a fade effect. The visual elements suggest a smooth and seamless connection between the scenes. The narrative context appears consistent as there is no abrupt change in motion or composition that would indicate another type of transition. Additionally, this type of transition is commonly used to signal a shift in time or location.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions to a shot of the rescue team arriving at the location of the wreckage."
+        "type": "cut",
+        "description": "The transition between Frame 1 and Frame 2 appears to be a clean cut, with no visible effects that indicate a gradual change from one scene to the next. This type of transition is commonly used in film editing when there is a significant shift in time or narrative context. It provides a clear separation between the two scenes without distracting the viewer.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.75,
-        "description": "A scene of a shipwreck in the middle of the ocean at night.",
-        "key_objects": [],
-        "time_of_day": "Night",
+        "frame_count": 42,
+        "start_frame": 986,
+        "end_frame": 986,
+        "time_of_day": "unknown",
         "environment": "Indoor",
-        "mood": "Mysterious",
+        "mood": "tense",
         "motion_intensity": 2.3067519664764404,
         "color_palette": [
           "#0a181f",
@@ -1247,67 +1243,72 @@
           "#205060"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.8846624016761779
-        },
-        "ai_description": "A scene of a shipwreck in the middle of the ocean at night.",
-        "key_subjects": [
-          "Shipwreck"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Subject: Rule of Thirds ((640.0, 720.0)), Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Rule of Thirds ((640.0, 720.0))",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Rule of Thirds ((640.0, 720.0)), Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Shipwreck",
-            "notes": "The image is well-lit, with a focus on the shipwreck. The use of shadows and highlights creates a dramatic effect. The color grading emphasizes the darkness of the water and the metallic sheen of the wreckage.",
-            "duration_seconds": 1.7517500000000013
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "SPLIT_SCREEN"
           },
-          "start_time": 41.166124999999994,
-          "end_time": 42.917874999999995
-        }
-      ]
+          "stability": 0.8846624016761779,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The scene is a split-screen view showing two different events. The foreground shows destruction on one side and the aftermath of an event on the other."
+          },
+          "visual_focus": "Destruction in the foreground",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.17832716263662188
+          },
+          "key_subjects": [
+            {
+              "name": "Two different scenes occurring simultaneously within the split screen",
+              "position": "foreground"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting in the foreground is darker than the background to emphasize the destruction. There is a noticeable color grading that highlights the chaos in the foreground scene while maintaining a muted tone in the background."
+        ],
+        "transition_notes": "In: The transition from frame 1 to frame 2 involves a gradual decrease in brightness, which creates a fade effect. The visual elements suggest a smooth and seamless connection between the scenes. The narrative context appears consistent as there is no abrupt change in motion or composition that would indicate another type of transition. Additionally, this type of transition is commonly used to signal a shift in time or location.\nOut: The image shows a frame with two individuals who appear to be engaged in an action or confrontation, which could indicate a scene change. The visual continuity would be maintained as the characters are shown from this frame to the next, maintaining focus on their actions. The lack of clear visual contrast or narrative flow elements within this frame makes it difficult to determine if it would make for a good transition point. There is no technical note that can be made regarding the current frame."
+      }
     },
     {
       "scene_id": 20,
       "start_time": 42.917874999999995,
       "end_time": 44.419374999999995,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot of an empty room."
+        "type": "cut",
+        "description": "The transition between Frame 1 and Frame 2 appears to be a clean cut, with no visible effects that indicate a gradual change from one scene to the next. This type of transition is commonly used in film editing when there is a significant shift in time or narrative context. It provides a clear separation between the two scenes without distracting the viewer.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a shot of the main subject leaving the room."
+        "type": "fade",
+        "description": "In Frame 1, there is a soft fade from a brightly lit scene to a darker, more dimly lit scene in Frame 2. The transition is smooth and helps establish a change in setting or time of day. This type of transition is often used in films to indicate a passage of time or the switch between different scenes with contrasting lighting conditions.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.5,
-        "description": "A group of people in a room, with one person being the focus.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Mysterious",
+        "frame_count": 36,
+        "start_frame": 1029,
+        "end_frame": 1029,
+        "time_of_day": "unknown",
+        "environment": "indoor",
+        "mood": "energetic",
         "motion_intensity": 1.5663193464279175,
         "color_palette": [
           "#020c0e",
@@ -1317,67 +1318,72 @@
           "#0c1b1f"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "WIDE",
-          "stability": 0.9216840326786041
-        },
-        "ai_description": "A group of people in a room, with one person being the focus.",
-        "key_subjects": [
-          "Crowd"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Crowd",
-            "notes": "The lighting is dim and moody, with the main subjects in sharp contrast to the background. The color grading adds to the mysterious atmosphere.",
-            "duration_seconds": 1.5015
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "GROUP_SHOT"
           },
-          "start_time": 42.917874999999995,
-          "end_time": 44.419374999999995
-        }
-      ]
+          "stability": 0.9216840326786041,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "Brief description of the framing composition (1 sentence)"
+          },
+          "visual_focus": "A group of people in a theater",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.15481850433192465
+          },
+          "key_subjects": [
+            {
+              "name": "A group of theatrical performers on stage",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "Lighting focused on the performers, creating dramatic contrast between the illuminated subjects and the darker surroundings. The use of shadows and highlights adds depth and texture to the image, highlighting the intensity and emotion of the performance."
+        ],
+        "transition_notes": "In: The transition between Frame 1 and Frame 2 appears to be a clean cut, with no visible effects that indicate a gradual change from one scene to the next. This type of transition is commonly used in film editing when there is a significant shift in time or narrative context. It provides a clear separation between the two scenes without distracting the viewer.\nOut: The image shows a nighttime scene with a dark sky and a tree in the foreground. There are four distinct visual elements in the composition: the starry sky, the silhouette of the tree, a small wooden structure, and some indistinct objects resembling fish or animals in a water-like environment. This frame is a strong candidate for transitioning to the next scene because it provides a clear boundary between scenes with its distinct visual elements. The silhouette of the tree and the wooden structure offer a strong visual contrast that could help break up the narrative flow and signal a change of scenery. However, from a technical perspective, there may be some challenges in maintaining continuity with potential adjacent scenes due to the stark contrast between the darkness of the night sky and the lighter tones of any following scene."
+      }
     },
     {
       "scene_id": 21,
       "start_time": 44.419374999999995,
       "end_time": 46.671625,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "Fade in from black"
+        "type": "fade",
+        "description": "In Frame 1, there is a soft fade from a brightly lit scene to a darker, more dimly lit scene in Frame 2. The transition is smooth and helps establish a change in setting or time of day. This type of transition is often used in films to indicate a passage of time or the switch between different scenes with contrasting lighting conditions.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "Fade out to black"
+        "type": "cut",
+        "description": "The transition is a simple cut without any visual effects, directly moving from one scene to the next with a clear break. There's minimal overlap or continuity as the scenes are distinct and the image quality is consistent.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 2.25,
-        "description": "A rocky cliff at night with a mysterious atmosphere",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Mysterious",
+        "frame_count": 54,
+        "start_frame": 1065,
+        "end_frame": 1065,
+        "time_of_day": "night",
+        "environment": "outdoor",
+        "mood": "calm",
         "motion_intensity": 0.49767112731933594,
         "color_palette": [
           "#050f14",
@@ -1387,63 +1393,61 @@
           "#0a161d"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.9751164436340332
-        },
-        "ai_description": "A rocky cliff at night with a mysterious atmosphere",
-        "key_subjects": [
-          "Rocky cliff"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Rocky cliff",
-            "notes": "The scene is well lit, with the use of natural light from the moon and stars creating a dramatic effect on the rocky surface. The camera angle provides a sense of scale and depth, emphasizing the height of the cliff.",
-            "duration_seconds": 2.2522500000000036
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 44.419374999999995,
-          "end_time": 46.671625
-        }
-      ]
+          "stability": 0.9751164436340332,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "An epic shot of a rocky mountain and the sky above."
+          },
+          "visual_focus": "Mountain in foreground",
+          "composition": null,
+          "key_subjects": [
+            {
+              "name": "Rocky mountain",
+              "position": "bottom"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is dramatic with long shadows cast by the mountain peaks.",
+          "There's a shallow depth of field with the mountain in focus and the background slightly blurred, adding to the depth and grandeur of the scene."
+        ],
+        "transition_notes": "In: In Frame 1, there is a soft fade from a brightly lit scene to a darker, more dimly lit scene in Frame 2. The transition is smooth and helps establish a change in setting or time of day. This type of transition is often used in films to indicate a passage of time or the switch between different scenes with contrasting lighting conditions.\nOut: The image shows a dramatic transition point with a boat tipping over into darkness. This could be used to signal a significant change in the narrative or setting. The visual contrast between the brightly lit ship and the dark sea serves as an effective visual cue for a scene cut. The narrative flow appears to be consistent with this sudden change, suggesting that the following scene might involve action, danger, or movement into a new environment."
+      }
     },
     {
       "scene_id": 22,
       "start_time": 46.671625,
       "end_time": 50.675625,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot showing the ocean surface."
+        "type": "cut",
+        "description": "The transition is a simple cut without any visual effects, directly moving from one scene to the next with a clear break. There's minimal overlap or continuity as the scenes are distinct and the image quality is consistent.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a shot of the submarine submerging back into the water."
+        "type": "match",
+        "description": "The transition between frames 1 and 2 maintains visual continuity as it seems to be a direct cut with no visible change in scene elements or camera angles. The narrative context suggests that the scene is likely changing without a break or pause, as the characters are already gathered on the ship at night, and there is no indication of time passing or significant changes in lighting or composition. Technical observations include the consistent representation of the characters and the environment, with no abrupt changes in focus or exposure.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 4.0,
-        "description": "A submarine is seen emerging from the water in a dramatic scene.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Tense",
+        "frame_count": 95,
+        "start_frame": 1119,
+        "end_frame": 1119,
+        "time_of_day": "NIGHT",
+        "environment": "EXTREME_WIDE",
+        "mood": "TENSE",
         "motion_intensity": 1.5234123468399048,
         "color_palette": [
           "#0b4867",
@@ -1453,67 +1457,71 @@
           "#0b2e44"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.9238293826580047
-        },
-        "ai_description": "A submarine is seen emerging from the water in a dramatic scene.",
-        "key_subjects": [
-          "Submarine"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Submarine",
-            "notes": "The lighting is dim and moody, with a blue-green color grade to enhance the tension and mystery of the scene. The depth of field is shallow, drawing focus to the submarine while slightly blurring the background elements.",
-            "duration_seconds": 4.003999999999998
+          "movement": "DOLLY_IN",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "HIGH_ANGLE",
+            "composition": "SPLIT_SCREEN"
           },
-          "start_time": 46.671625,
-          "end_time": 50.675625
-        }
-      ]
+          "stability": 0.9238293826580047,
+          "framing": {
+            "subject_position": "CENTERED",
+            "shot_balance": "BALANCED",
+            "depth_layers": [
+              "FOREGROUND"
+            ],
+            "leading_lines": "DIAGONAL",
+            "description": "The shot is split-screen, with the foreground showing a turbine and the background depicting a stormy sea with waves crashing against the camera."
+          },
+          "visual_focus": "FOREGROUND",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.20599771386362525
+          },
+          "key_subjects": [
+            {
+              "name": "A turbine and the waves crashing against it in the foreground.",
+              "position": "CENTER"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting is moody, with dark tones dominating the scene. The contrast between the darkness of the foreground and the lighter background helps to draw attention to the turbine. The depth of field is shallow, with the camera zooming in on the turbine, creating a dramatic effect.",
+          "There is no noticeable depth grading or color grading in this shot."
+        ],
+        "transition_notes": "In: The transition is a simple cut without any visual effects, directly moving from one scene to the next with a clear break. There's minimal overlap or continuity as the scenes are distinct and the image quality is consistent.\nOut: The transition seems to be a fade to black (FTB). This technique is often used in video editing to denote a scene change or a dissolution from one scene to another. The current image shows a blue misty background with a dark, mysterious quality that could suggest a sudden realization or an unexpected event leading into the next scene. The use of the color blue might create a calming or somber atmosphere, which could transition well into scenes with different moods or tones."
+      }
     },
     {
       "scene_id": 23,
       "start_time": 50.675625,
       "end_time": 52.052,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a long shot of the boat from the outside."
+        "type": "match",
+        "description": "The transition between frames 1 and 2 maintains visual continuity as it seems to be a direct cut with no visible change in scene elements or camera angles. The narrative context suggests that the scene is likely changing without a break or pause, as the characters are already gathered on the ship at night, and there is no indication of time passing or significant changes in lighting or composition. Technical observations include the consistent representation of the characters and the environment, with no abrupt changes in focus or exposure.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a close-up shot of one of the passengers as they struggle to stay afloat."
+        "type": "none",
+        "description": "The image is a collage of two separate pictures with no transition between them, as it appears to be a screenshot of a video editing software or a split-screen display.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.38,
-        "description": "A group of people are on a boat that is sinking. They appear to be in distress.",
-        "key_objects": [],
-        "time_of_day": "Unknown",
-        "environment": "Outdoor",
-        "mood": "Melancholic",
+        "frame_count": 33,
+        "start_frame": 1215,
+        "end_frame": 1215,
+        "time_of_day": "unknown",
+        "environment": "unknown",
+        "mood": "neutral",
         "motion_intensity": 5.324437618255615,
         "color_palette": [
           "#102638",
@@ -1523,63 +1531,54 @@
           "#0f181f"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.7337781190872192
-        },
-        "ai_description": "A group of people are on a boat that is sinking. They appear to be in distress.",
-        "key_subjects": [
-          "People on a boat"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "People on a boat",
-            "notes": "The lighting is dim, creating a sense of foreboding. The color grading is muted, emphasizing the somber mood. The focus is shallow, with the people in the background slightly out of focus.",
-            "duration_seconds": 1.376375000000003
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "Wide",
+            "angle": "Eye Level",
+            "composition": "Single"
           },
-          "start_time": 50.675625,
-          "end_time": 52.052
-        }
-      ]
+          "stability": 0.7337781190872192,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "midground"
+            ],
+            "leading_lines": "none",
+            "description": ""
+          },
+          "visual_focus": "the scene",
+          "composition": null,
+          "key_subjects": []
+        },
+        "cinematography_notes": [
+          "Basic analysis - AI not available"
+        ],
+        "transition_notes": "In: The transition between frames 1 and 2 maintains visual continuity as it seems to be a direct cut with no visible change in scene elements or camera angles. The narrative context suggests that the scene is likely changing without a break or pause, as the characters are already gathered on the ship at night, and there is no indication of time passing or significant changes in lighting or composition. Technical observations include the consistent representation of the characters and the environment, with no abrupt changes in focus or exposure.\nOut: The transition out from scene 23 is not ideal for a cut or wipe due to the image content and timing. The current frame shows a ship sailing away with waves splashing around it, which creates a strong visual contrast with most other potential scenes. However, the narrative flow suggests that this might be the end of an event or journey, making the fade transition more suitable to indicate the scene change. From a technical standpoint, the existing composition and visual elements such as the ship and waves do not lend themselves well to abrupt cuts or wipes, which would disrupt continuity with potential adjacent scenes. The duration is 1.4 seconds long, allowing for a smooth fade transition."
+      }
     },
     {
       "scene_id": 24,
       "start_time": 52.052,
       "end_time": 54.5545,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a wide shot of the ocean to focus on the sinking ship."
+        "type": "none",
+        "description": "The image is a collage of two separate pictures with no transition between them, as it appears to be a screenshot of a video editing software or a split-screen display.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a close-up of the captain's face as he realizes the ship is sinking."
+        "type": "cut",
+        "description": "The transition appears to be a simple cut or jump cut between frames 1 and 2 with minimal visual continuity or flow. There is no noticeable effect that suggests a wipe, dissolve, or match. The composition of the images in both frames doesn't provide any clear indication of motion, and there are no visible technical observations that support a particular type of transition.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 2.5,
-        "description": "A sinking ship in the ocean at night",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Dramatic",
+        "frame_count": 59,
+        "start_frame": 1248,
+        "end_frame": 1248,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "dramatic",
         "motion_intensity": 2.337648630142212,
         "color_palette": [
           "#0b1a25",
@@ -1589,67 +1588,73 @@
           "#275d7e"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.8831175684928894
-        },
-        "ai_description": "A sinking ship in the ocean at night",
-        "key_subjects": [
-          "Ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Ship",
-            "notes": "The scene is shot with a wide-angle lens, capturing the full view of the sinking ship. The lighting is dim and moody, emphasizing the dramatic nature of the event. The colors are cooler tones, creating a sense of tension and danger.",
-            "duration_seconds": 2.5024999999999977
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 52.052,
-          "end_time": 54.5545
-        }
-      ]
+          "stability": 0.8831175684928894,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The ship is moving through rough waters, emphasizing the drama and movement."
+          },
+          "visual_focus": "The ship in the center of the frame",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.2173723681937217
+          },
+          "key_subjects": [
+            {
+              "name": "A ship with waves crashing around it",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting appears to be dark, creating an atmosphere of danger and mystery.",
+          "The depth of field is shallow, with the front of the ship in focus and the background slightly blurred, emphasizing the action.",
+          "The color grading emphasizes the contrast between the warm interior lights of the ship and the cold blues of the ocean."
+        ],
+        "transition_notes": "In: The image is a collage of two separate pictures with no transition between them, as it appears to be a screenshot of a video editing software or a split-screen display.\nOut: The transition from scene 24 to the next can be smooth due to the visual continuity created by the ocean waves and the dark sky in both scenes, which maintain the same color palette and lighting conditions. The use of the same colors and tones, along with the subject matter (the sinking ship), allows for a seamless transition between the two scenes without jarring the viewer. The waves provide a clear visual indicator that this is indeed a transition and not just a continuation of the previous scene."
+      }
     },
     {
       "scene_id": 25,
       "start_time": 54.5545,
       "end_time": 55.93087499999999,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "A quick cut from a previous scene to establish context"
+        "type": "cut",
+        "description": "The transition appears to be a simple cut or jump cut between frames 1 and 2 with minimal visual continuity or flow. There is no noticeable effect that suggests a wipe, dissolve, or match. The composition of the images in both frames doesn't provide any clear indication of motion, and there are no visible technical observations that support a particular type of transition.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "A quick cut to the next scene in the storyline"
+        "type": "fade",
+        "description": "The transition between frames 25 and 26 is a fade to black. The blackness is smooth and gradual, indicating a change of scene or time period, without disruption to the narrative continuity. The visual elements suggest a change in light conditions within the same scene, as evidenced by the difference in brightness and contrast between the two frames. This transition type creates a strong visual impact while preserving the integrity of the story.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.38,
-        "description": "A tense moment between two people in a dark room",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Melancholic",
+        "frame_count": 32,
+        "start_frame": 1308,
+        "end_frame": 1308,
+        "time_of_day": "night",
+        "environment": "indoor",
+        "mood": "dramatic",
         "motion_intensity": 0.09904763847589493,
         "color_palette": [
           "#010508",
@@ -1659,65 +1664,75 @@
           "#09546c"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.9950476180762052
-        },
-        "ai_description": "A tense moment between two people in a dark room",
-        "key_subjects": [
-          "Two main characters"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.0,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.0,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": []
-              }
-            },
-            "visual_focus": "Two main characters",
-            "notes": "Low key lighting with dramatic shadows, shallow depth of field on the subjects, blue-green color grade to create an eerie atmosphere",
-            "duration_seconds": 1.376374999999996
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM_CLOSE",
+            "angle": "EYE_LEVEL",
+            "composition": "SINGLE"
           },
-          "start_time": 54.5545,
-          "end_time": 55.93087499999999
-        }
-      ]
+          "stability": 0.9950476180762052,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground"
+            ],
+            "leading_lines": "none",
+            "description": "Two characters in the foreground with a soft focus background that draws attention to their expressions."
+          },
+          "visual_focus": "expression on man's face",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": false,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.17831316862826924
+          },
+          "key_subjects": [
+            {
+              "name": "man looking intense",
+              "position": "center"
+            },
+            {
+              "name": "woman looking concerned with a hand on her face",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The lighting creates a stark contrast between the two subjects, emphasizing their expressions and the gravity of the situation.",
+          "There is a shallow depth of field with the focus on the man's face to convey his intense emotion."
+        ],
+        "transition_notes": "In: The transition appears to be a simple cut or jump cut between frames 1 and 2 with minimal visual continuity or flow. There is no noticeable effect that suggests a wipe, dissolve, or match. The composition of the images in both frames doesn't provide any clear indication of motion, and there are no visible technical observations that support a particular type of transition.\nOut: The image does not present a clear transition out of this scene as it is the last frame in the sequence. The visual elements do not suggest a change of scene; there are no strong compositional contrasts or visual clues for a smooth transition. Narratively, there is no indication of an upcoming change in the storyline or setting. Visually, the image features a sinking ship with water and smoke, suggesting continuity within the current scene."
+      }
     },
     {
       "scene_id": 26,
       "start_time": 55.93087499999999,
       "end_time": 59.809749999999994,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a previous shot of the ship's deck, showing the captain or first mate giving orders to the crew."
+        "type": "fade",
+        "description": "The transition between frames 25 and 26 is a fade to black. The blackness is smooth and gradual, indicating a change of scene or time period, without disruption to the narrative continuity. The visual elements suggest a change in light conditions within the same scene, as evidenced by the difference in brightness and contrast between the two frames. This transition type creates a strong visual impact while preserving the integrity of the story.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out by cutting to a shot of the ship's deck, showing the aftermath of the storm and the crew's efforts to repair damages."
+        "type": "fade",
+        "description": "The transition is a fade between scene 26 and 27. It is a gradual blending of the image's brightness from fully visible to darker, creating a visual continuity that suggests the passage of time or change in setting. The color saturation also changes slightly, which adds to the narrative context of a possible shift in tone or atmosphere between scenes. Additionally, the use of lighting effects and motion blur in both frames indicates the possibility of movement in the scene.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 3.88,
-        "description": "A large ship in the ocean at night, with a sense of mystery and intrigue.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Mysterious",
+        "frame_count": 93,
+        "start_frame": 1341,
+        "end_frame": 1341,
+        "time_of_day": "unknown",
+        "environment": "unknown",
+        "mood": "neutral",
         "motion_intensity": 7.240497589111328,
         "color_palette": [
           "#0a2a3d",
@@ -1727,60 +1742,51 @@
           "#041421"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.6379751205444336
-        },
-        "ai_description": "A large ship in the ocean at night, with a sense of mystery and intrigue.",
-        "key_subjects": [
-          "Ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
-              }
-            },
-            "visual_focus": "Ship",
-            "notes": "The lighting is moody and atmospheric, with blue tones dominating the color palette. The depth of field is shallow, focusing on the ship while the background elements are out of focus.",
-            "duration_seconds": 3.8788750000000007
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "Wide",
+            "angle": "Eye Level",
+            "composition": "Single"
           },
-          "start_time": 55.93087499999999,
-          "end_time": 59.809749999999994
-        }
-      ]
+          "stability": 0.6379751205444336,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "midground"
+            ],
+            "leading_lines": "none",
+            "description": ""
+          },
+          "visual_focus": "the scene",
+          "composition": null,
+          "key_subjects": []
+        },
+        "cinematography_notes": [
+          "Basic analysis - AI not available"
+        ],
+        "transition_notes": "In: The transition between frames 25 and 26 is a fade to black. The blackness is smooth and gradual, indicating a change of scene or time period, without disruption to the narrative continuity. The visual elements suggest a change in light conditions within the same scene, as evidenced by the difference in brightness and contrast between the two frames. This transition type creates a strong visual impact while preserving the integrity of the story.\nOut: The image shows a sinking ship in rough seas with visible turbulence and water spraying up around it. The frame is at the end of the scene with the ship partially submerged, suggesting immediate danger or peril. This could be a natural transition point between scenes as the visual content provides a clear demarcation of time and events."
+      }
     },
     {
       "scene_id": 27,
       "start_time": 59.809749999999994,
       "end_time": 64.439375,
       "transition_in": {
-        "type": "cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in from a wider shot showing the aftermath of the explosion"
+        "type": "fade",
+        "description": "The transition is a fade between scene 26 and 27. It is a gradual blending of the image's brightness from fully visible to darker, creating a visual continuity that suggests the passage of time or change in setting. The color saturation also changes slightly, which adds to the narrative context of a possible shift in tone or atmosphere between scenes. Additionally, the use of lighting effects and motion blur in both frames indicates the possibility of movement in the scene.",
+        "confidence": 0.8
       },
       "transition_out": {
         "type": "cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a wider shot showing the aftermath of the explosion"
+        "description": "The transition is a simple cut with no overt visual or narrative elements suggesting a particular type of transition (fade, dissolve, wipe, match, jump). It is a clean and direct cut from the last frame of one scene to the first frame of another. The scene ends abruptly without any softening or smoothing effect, which aligns with a typical hard cut. No technical observations are evident from this perspective.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 4.63,
-        "description": "A scene of destruction with a focus on the debris field in the middle of the frame",
-        "key_objects": [],
+        "frame_count": 111,
+        "start_frame": 1434,
+        "end_frame": 1434,
         "time_of_day": "Night",
         "environment": "Indoor",
         "mood": "Mysterious",
@@ -1793,67 +1799,71 @@
           "#020c17"
         ],
         "camera_analysis": {
-          "movement": "Push",
-          "shot_type": "OTS",
-          "stability": 0.9177640318870545
-        },
-        "ai_description": "A scene of destruction with a focus on the debris field in the middle of the frame",
-        "key_subjects": [
-          "debris"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "OTS",
-            "camera_move": "Push",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "debris",
-            "notes": "The lighting is moody and subdued, with a blue tint to emphasize the darkness and chaos. The depth of field is shallow, drawing attention to the debris field while keeping the background slightly blurred.",
-            "duration_seconds": 4.629625000000004
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "SINGLE"
           },
-          "start_time": 59.809749999999994,
-          "end_time": 64.439375
-        }
-      ]
+          "stability": 0.9177640318870545,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "Centered composition of a large room with an intricate sculpture."
+          },
+          "visual_focus": "Centrally located sculpture",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "neutral",
+            "high_saturation": true,
+            "saturation_level": 1.0,
+            "contrast": 0.11421414436334361
+          },
+          "key_subjects": [
+            {
+              "name": "Intricate sculpture in the foreground",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "Use of low lighting to create an atmosphere of mystery and focus on the sculpture. The color grading emphasizes cool tones, enhancing the sense of mystery and solitude."
+        ],
+        "transition_notes": "In: The transition is a fade between scene 26 and 27. It is a gradual blending of the image's brightness from fully visible to darker, creating a visual continuity that suggests the passage of time or change in setting. The color saturation also changes slightly, which adds to the narrative context of a possible shift in tone or atmosphere between scenes. Additionally, the use of lighting effects and motion blur in both frames indicates the possibility of movement in the scene.\nOut: The image appears to show a transition out from scene 27. There is a clear visual contrast and narrative break as this image captures the aftermath of an explosion on a shipwreck, with debris scattered around and no visible signs of human presence. The next scene might be focused on rescuing efforts or damage assessment. Visually, there's a strong composition that suggests a sudden change in context, which would support a clean cut transition."
+      }
     },
     {
       "scene_id": 28,
       "start_time": 64.439375,
       "end_time": 70.19512499999999,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene is transitioned into from a previous shot showing the ship in distress."
+        "type": "cut",
+        "description": "The transition is a simple cut with no overt visual or narrative elements suggesting a particular type of transition (fade, dissolve, wipe, match, jump). It is a clean and direct cut from the last frame of one scene to the first frame of another. The scene ends abruptly without any softening or smoothing effect, which aligns with a typical hard cut. No technical observations are evident from this perspective.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out to a shot of the coastline or rescue team preparing for action."
+        "type": "none",
+        "description": "The image provided appears to be a screenshot from a movie and does not show an obvious visual transition such as cut, fade, dissolve, wipe, match or jump. There are no clear indicators of motion or composition that suggest a specific type of transition. The image is static and does not provide any information about the narrative context between scene 28 and 29.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 5.76,
-        "description": "A large ship is sinking into the water at night.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Outdoor",
-        "mood": "Melancholic",
+        "frame_count": 137,
+        "start_frame": 1545,
+        "end_frame": 1545,
+        "time_of_day": "night",
+        "environment": "maritime",
+        "mood": "melancholic",
         "motion_intensity": 1.9778578281402588,
         "color_palette": [
           "#06090f",
@@ -1863,67 +1873,68 @@
           "#167492"
         ],
         "camera_analysis": {
-          "movement": "Pan Left",
-          "shot_type": "WIDE",
-          "stability": 0.901107108592987
-        },
-        "ai_description": "A large ship is sinking into the water at night.",
-        "key_subjects": [
-          "Ship"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Pan Left",
-            "framing": {
-              "description": "Standard framing",
-              "confidence": 0.6,
-              "details": {
-                "subject_positioning": "N/A",
-                "shot_balance": "N/A",
-                "depth_layers": "N/A",
-                "leading_lines": "None",
-                "confidence": 0.6,
-                "description": "Standard framing",
-                "type": "unknown",
-                "composition_techniques": [
-                  "leading_lines"
-                ]
-              }
-            },
-            "visual_focus": "Ship",
-            "notes": "The scene is lit with artificial light, creating a dramatic and moody atmosphere. The ship's hull is partially submerged, emphasizing its distress. The camera pans left to follow the ship as it sinks.",
-            "duration_seconds": 5.755749999999992
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "EXTREME_WIDE",
+            "angle": "EYE_LEVEL",
+            "composition": "unknown"
           },
-          "start_time": 64.439375,
-          "end_time": 70.19512499999999
-        }
-      ]
+          "stability": 0.901107108592987,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The image shows a sinking ship at night."
+          },
+          "visual_focus": "the ship",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": true,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "cool",
+            "contrast": 0.09919450812347161
+          },
+          "key_subjects": [
+            {
+              "name": "Sinking Ship",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [],
+        "transition_notes": "In: The transition is a simple cut with no overt visual or narrative elements suggesting a particular type of transition (fade, dissolve, wipe, match, jump). It is a clean and direct cut from the last frame of one scene to the first frame of another. The scene ends abruptly without any softening or smoothing effect, which aligns with a typical hard cut. No technical observations are evident from this perspective.\nOut: The frame shows a romantic or intimate moment between two characters with an atmospheric and dramatic backdrop. The lighting is soft and warm, creating a sense of intimacy. There is a strong contrast in the lighting, with the characters in focus against the darker background, which helps draw attention to their interaction. The image quality appears consistent, indicating that it may blend smoothly into the next scene."
+      }
     },
     {
       "scene_id": 29,
       "start_time": 70.19512499999999,
       "end_time": 71.32124999999999,
       "transition_in": {
-        "type": "Cut",
-        "from_scene_id": -1,
-        "description": "The scene transitions in with a wide shot, capturing the full context of the room and the couple's positioning."
+        "type": "none",
+        "description": "The image provided appears to be a screenshot from a movie and does not show an obvious visual transition such as cut, fade, dissolve, wipe, match or jump. There are no clear indicators of motion or composition that suggest a specific type of transition. The image is static and does not provide any information about the narrative context between scene 28 and 29.",
+        "confidence": 0.8
       },
       "transition_out": {
-        "type": "Cut",
-        "to_scene_id": -1,
-        "description": "The scene transitions out with a close-up shot, focusing on one person's reaction to the intimate moment."
+        "type": "cut",
+        "description": "The image captures a close-up shot of two individuals, presumably from a romantic or dramatic scene given their expressions and body language. The characters are in focus with good lighting. There is no visual cue that immediately suggests a transition to the next scene. However, considering the narrative flow, it might be a good place to cut as it seems to end a moment of emotional connection between the characters. A simple fade-out or cut would work well here.",
+        "confidence": 0.8
       },
       "scene_metadata": {
         "duration": 1.13,
-        "description": "A romantic scene with a couple embracing each other in an intimate moment.",
-        "key_objects": [],
-        "time_of_day": "Night",
-        "environment": "Indoor",
-        "mood": "Melancholic",
+        "frame_count": 27,
+        "start_frame": 1682,
+        "end_frame": 1682,
+        "time_of_day": "night",
+        "environment": "indoor",
+        "mood": "romantic",
         "motion_intensity": 0.09202525019645691,
         "color_palette": [
           "#142b3a",
@@ -1933,43 +1944,48 @@
           "#184356"
         ],
         "camera_analysis": {
-          "movement": "Still",
-          "shot_type": "WIDE",
-          "stability": 0.9953987374901772
-        },
-        "ai_description": "A romantic scene with a couple embracing each other in an intimate moment.",
-        "key_subjects": [
-          "Two people"
-        ]
-      },
-      "shots": [
-        {
-          "shot": {
-            "shot_id": 1,
-            "shot_type": "WIDE",
-            "camera_move": "Still",
-            "framing": {
-              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-              "confidence": 0.85,
-              "details": {
-                "subject_positioning": "Centered",
-                "shot_balance": "Symmetrical",
-                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
-                "leading_lines": "None",
-                "confidence": 0.85,
-                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
-                "type": "unknown",
-                "composition_techniques": []
-              }
-            },
-            "visual_focus": "Two people",
-            "notes": "The lighting is soft and moody, creating a sense of intimacy. The focus is on the couple's faces, with the background slightly blurred to keep them as the main subjects.",
-            "duration_seconds": 1.1261250000000018
+          "movement": "STATIC",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "EYE_LEVEL",
+            "composition": "TWO_SHOT"
           },
-          "start_time": 70.19512499999999,
-          "end_time": 71.32124999999999
-        }
-      ]
+          "stability": 0.9953987374901772,
+          "framing": {
+            "subject_position": "centered",
+            "shot_balance": "balanced",
+            "depth_layers": [
+              "foreground",
+              "midground",
+              "background"
+            ],
+            "leading_lines": "none",
+            "description": "The two subjects are positioned in the center of the frame, emphasizing their connection and the dramatic nature of the scene."
+          },
+          "visual_focus": "The romantic couple is the focal point of the image.",
+          "composition": {
+            "rule_of_thirds": {},
+            "balance": 0.0,
+            "depth_layers": 1,
+            "leading_lines": false,
+            "symmetry": 0.0,
+            "mood": "dramatic",
+            "color_temperature": "cool",
+            "contrast": 0.1818136643930037
+          },
+          "key_subjects": [
+            {
+              "name": "A man and a woman in a romantic embrace",
+              "position": "center"
+            }
+          ]
+        },
+        "cinematography_notes": [
+          "The use of soft, warm lighting adds to the intimate mood of the scene.",
+          "The depth of field is shallow, keeping both subjects in sharp focus while softly blurring the background."
+        ],
+        "transition_notes": "In: The image provided appears to be a screenshot from a movie and does not show an obvious visual transition such as cut, fade, dissolve, wipe, match or jump. There are no clear indicators of motion or composition that suggest a specific type of transition. The image is static and does not provide any information about the narrative context between scene 28 and 29.\nOut: The image captures a close-up shot of two individuals, presumably from a romantic or dramatic scene given their expressions and body language. The characters are in focus with good lighting. There is no visual cue that immediately suggests a transition to the next scene. However, considering the narrative flow, it might be a good place to cut as it seems to end a moment of emotional connection between the characters. A simple fade-out or cut would work well here."
+      }
     }
   ],
   "metadata": {

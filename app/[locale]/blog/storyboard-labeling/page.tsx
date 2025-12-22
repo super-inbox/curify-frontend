@@ -701,72 +701,7 @@ export default function SceneDetectionPage() {
         </div>
       </section>
 
-      {/* Human Evaluation Section */}
-      <section className="prose prose-lg max-w-none mt-16">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          {t('humanEvaluation.title')}
-        </h2>
-        
-        <p className="text-gray-600 mb-6">
-          {t('humanEvaluation.introduction')}
-        </p>
-
-        <div className="bg-blue-50 p-6 rounded-xl mb-8">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Key Evaluation Areas
-          </h3>
-          <ul className="space-y-3">
-            {(t.raw('humanEvaluation.evaluationAreas') as string[]).map((item, index) => (
-              <li key={index} className="flex items-start" dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
-          </ul>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <div className="bg-white p-6 rounded-xl border border-gray-200">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              {t('humanEvaluation.workflow.title')}
-            </h3>
-            <ol className="space-y-3 list-decimal list-inside">
-              {(t.raw('humanEvaluation.workflow.steps') as string[]).map((step, index) => (
-                <li key={index} className="text-gray-700">{step}</li>
-              ))}
-            </ol>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl border border-gray-200">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              {t('humanEvaluation.benefits.title')}
-            </h3>
-            <ul className="space-y-3">
-              {(t.raw('humanEvaluation.benefits.items') as string[]).map((benefit, index) => (
-                <li key={index} className="text-gray-700" dangerouslySetInnerHTML={{ __html: benefit }} />
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-gray-50 p-6 rounded-xl">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            {t('humanEvaluation.tools.title')}
-          </h3>
-          <p className="text-gray-700 mb-4">
-            {t('humanEvaluation.tools.description')}
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {(t.raw('humanEvaluation.tools.features') as string[]).map((feature, index) => (
-              <li key={index} className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-gray-700">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Conclusion Section */}
+{/* Conclusion Section */}
       <section className="prose prose-lg max-w-none mt-16">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {t('conclusion.title')}
