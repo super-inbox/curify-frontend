@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import blogs from "@/content/blogs.json"; // <--- ADD THIS FILE
 
 const BASE_URL = "https://curify-ai.com";
 
-const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru"];
+// All languages you support
+const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"];
 
-// Static public routes (for every locale)
+// Static pages (shared across locales)
 const STATIC_ROUTES = [
   "",
   "/contact",
@@ -21,41 +21,27 @@ const STATIC_ROUTES = [
   "/blog",
 ];
 
-function getEnglishBlogSlugs(): string[] {
-  const blogDir = path.join(process.cwd(), "app", "en", "blog");
-
-  if (!fs.existsSync(blogDir)) return [];
-
-  return fs
-    .readdirSync(blogDir)
-    .filter((name) => {
-      const full = path.join(blogDir, name);
-      // include only slug folders that contain page.tsx or page.jsx
-      return (
-        fs.statSync(full).isDirectory() &&
-        (fs.existsSync(path.join(full, "page.tsx")) ||
-          fs.existsSync(path.join(full, "page.jsx")))
-      );
-    })
-    .map((slug) => `/blog/${slug}`);
+// Blog routes come from blogs.json
+function getBlogRoutes() {
+  return blogs.map((slug: string) => `/blog/${slug}`);
 }
 
-// Generate hreflang block
+// Build hreflang block for a route
 function generateHreflangLinks(route: string) {
-  const links = LOCALES.map(
+  const alternates = LOCALES.map(
     (lng) =>
       `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}/${lng}${route}" />`
   ).join("");
 
   return (
-    links +
+    alternates +
     `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${route}" />`
   );
 }
 
-// Generate full <url> entry
+// Build <url> entry for a route
 function generateUrlEntry(route: string) {
-  const loc = `${BASE_URL}/en${route}`; // canonical EN version
+  const loc = `${BASE_URL}/en${route}`; // canonical = English
   const lastmod = new Date().toISOString();
   const priority = route === "" ? "1.0" : "0.8";
 
@@ -71,29 +57,28 @@ function generateUrlEntry(route: string) {
 }
 
 export async function GET() {
-  const blogRoutes = getEnglishBlogSlugs();
+  const blogRoutes = getBlogRoutes();
 
   let urls = "";
 
-  // Static routes
+  // Add static routes
   STATIC_ROUTES.forEach((route) => {
     urls += generateUrlEntry(route);
   });
 
-  // Blog routes
+  // Add blog routes
   blogRoutes.forEach((route) => {
     urls += generateUrlEntry(route);
   });
 
   const xml = `
-    <?xml version="1.0" encoding="UTF-8"?>
-    <urlset 
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    >
-      ${urls}
-    </urlset>
-  `.trim();
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+${urls}
+</urlset>`.trim();
 
   return new NextResponse(xml, {
     headers: {
