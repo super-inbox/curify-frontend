@@ -448,6 +448,169 @@
     "paragraph2": "这个由前沿Python库和深度学习模型构建的流程，不仅能检测场景转换，还能理解内容、识别关键元素，并将一切组织成完整的故事板。"
   },
   "imageAlt": "场景检测流程正在运行，识别关键时刻并生成结构化故事板",
-  "protip": "为获得最佳效果，请确保您的视频在场景之间有明显的视觉分隔。系统在光线良好、运动模糊最少的素材上表现最佳。考虑在视频编辑软件中添加章节标记或场景切割，以提高检测准确性。"
+  "features1": "实时场景检测",
+  "features1Text": "自动检测场景变化并标记以进行进一步处理",
+  "features2": "自动场景描述",
+  "features2Text": "为每个检测到的场景生成详细描述",
+  "features3": "结构化JSON输出",
+  "features3Text": "以结构化格式导出分析结果以便后续处理",
+  "features4": "高级AI分析",
+  "features4Text": "使用高级AI模型进行准确的场景分析",
+  "features5": "用户友好界面",
+  "features5Text": "直观设计，快速轻松使用",
+  "protip": "使用自动场景检测作为起点，并手动调整结果以获得最佳准确性。",
+  "protip2": "为获得最佳效果，请确保您的视频在场景之间有清晰的视觉分隔。系统在光线良好、运动模糊最少的素材上表现最佳。考虑在视频编辑软件中添加章节标记或场景切割，以提高检测准确性。",
+  "Technical": {
+    "steps": {
+      "step1": "技术实现",
+      "step2": "视频分析流程",
+      "step2Text": "我们的系统实时处理视频，检测场景变化并提取关键帧以进行进一步分析"
+    }
+  },
+  "titanicExample": {
+    "title": "泰坦尼克号示例",
+    "description": "使用我们的AI场景检测分析标志性电影场景。",
+    "analysis": "分析：",
+    "analysisText": "系统成功识别了关键情感时刻、角色互动和场景转换。"
+  },
+  "sceneBreakdown": {
+    "title": "理解场景检测输出",
+    "introduction": "让我们拆解一个典型的场景检测输出，来了解我们的 AI 是如何分析并结构化视频内容的。在每段说明下方，你都可以看到支撑这些洞察的对应 JSON 结构。",
+    "scenes": [
+      {
+        "title": "1. 场景识别",
+        "content": "每个场景都会被分配一个唯一的标识符和时间范围，从而实现对视频内容的精确定位。这构成了整个分析流程的基础。",
+        "example": "场景 1（00:00:02.50 - 00:00:05.20）",
+        "jsonExample": {
+          "scene_id": "scene_001",
+          "start_time": 2.5,
+          "end_time": 5.2,
+          "duration": 2.7,
+          "keyframe_index": 5,
+          "keyframe_time": 3.8
+        },
+        "jsonDescription": "该 JSON 结构展示了场景的基础识别数据，包括唯一 ID、时间信息，以及代表性关键帧的索引和时间点。"
+      },
+      {
+        "title": "2. 视觉分析",
+        "content": "我们的 AI 会分析关键帧，以理解每个场景的视觉构成，包括主色调、光照条件以及主要视觉元素。",
+        "example": "关键帧分析：户外、白天、多人物",
+        "jsonExample": {
+          "visual_analysis": {
+            "brightness": 0.78,
+            "contrast": 0.65,
+            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+            "dominant_colors": [
+              { "color": "#3A5FCD", "percentage": 0.45 },
+              { "color": "#87CEEB", "percentage": 0.35 },
+              { "color": "#F5F5DC", "percentage": 0.20 }
+            ],
+            "lighting_condition": "daylight",
+            "environment": "outdoor",
+            "detected_objects": [
+              { "label": "person", "confidence": 0.97, "count": 2 },
+              { "label": "sky", "confidence": 0.99, "count": 1 }
+            ]
+          }
+        },
+        "jsonDescription": "该 JSON 展示了视觉分析数据，包括颜色信息、光照条件，以及带有置信度的目标检测结果。"
+      },
+      {
+        "title": "3. 镜头构成",
+        "content": "在每个场景内部，我们会识别独立的镜头及其转场方式，以帮助理解画面节奏和视觉流动。",
+        "example": "检测到 3 个镜头，包含平滑切换和一次交叉淡入淡出",
+        "jsonExample": {
+          "shots": [
+            {
+              "shot_id": "shot_001",
+              "start_time": 2.5,
+              "end_time": 3.1,
+              "transition": {
+                "type": "cut",
+                "confidence": 0.98
+              },
+              "camera_motion": {
+                "type": "static",
+                "confidence": 0.92
+              }
+            },
+            {
+              "shot_id": "shot_002",
+              "start_time": 3.1,
+              "end_time": 4.3,
+              "transition": {
+                "type": "fade",
+                "duration": 0.3,
+                "confidence": 0.95
+              },
+              "camera_motion": {
+                "type": "pan_left",
+                "confidence": 0.88
+              }
+            }
+          ]
+        },
+        "jsonDescription": "该 JSON 结构详细描述了场景内的镜头构成，包括时间范围、转场类型以及镜头运动分析。"
+      },
+      {
+        "title": "4. 内容分类",
+        "content": "系统会根据内容自动对场景进行分类，方便你日后快速查找特定类型的素材。",
+        "example": "类别：剧情片，场景：船甲板，人物：主要角色",
+        "jsonExample": {
+          "content_analysis": {
+            "primary_category": "剧情",
+            "secondary_categories": ["爱情", "灾难"],
+            "setting": {
+              "type": "船甲板",
+              "time_of_day": "夜晚",
+              "confidence": 0.92
+            },
+            "subjects": [
+              {
+                "type": "主要角色",
+                "name": "Jack",
+                "position": "画面中央",
+                "emotion": "坚定",
+                "confidence": 0.89
+              },
+              {
+                "type": "主要角色",
+                "name": "Rose",
+                "position": "画面中央",
+                "emotion": "恐惧",
+                "confidence": 0.91
+              }
+            ],
+            "sentiment": {
+              "overall": "紧张戏剧性",
+              "confidence": 0.88,
+              "emotions": ["恐惧", "决心", "紧迫感"]
+            },
+            "key_elements": ["救生艇", "海洋", "月光"],
+            "narrative_importance": 0.95,
+            "action_required": true
+          }
+        },
+        "jsonDescription": "该 JSON 展示了 AI 如何分析和分类电影场景，包括角色情绪、场景设定以及叙事重要性（以《泰坦尼克号》的救生艇场景为例）。"
+      }
+    ],
+    "analysisTitle": "整合分析",
+    "analysisContent": "通过整合以上所有元素，系统可以生成一份完整的视频内容结构图。这些结构化数据为智能搜索、自动剪辑和内容分析等功能提供了基础支持。",
+    "fullExampleTitle": "完整场景数据示例",
+    "fullExampleDescription": "以下是一个完整的场景分析示例，展示了所有模块如何协同工作：",
+    "benefitsTitle": "核心优势",
+    "benefits": [
+      "<strong>高效剪辑：</strong> 无需反复拖动时间轴，即可快速跳转到任意场景或镜头",
+      "<strong>智能搜索：</strong> 不仅基于元数据，还能基于视觉内容查找素材",
+      "<strong>一致性保障：</strong> 识别并保持项目整体视觉风格的一致性",
+      "<strong>数据驱动决策：</strong> 深入理解内容结构和节奏分布"
+    ]
+  },
+  "conclusion": {
+    "title": "AI 正在重塑视频制作流程",
+    "p1": "AI 场景检测正在彻底改变视频制作方式。通过自动化完成繁琐的场景识别与整理工作，创作者可以将精力集中在真正重要的事情上——讲好故事。我们的技术打通了原始素材与成片之间的鸿沟，让专业级视频分析变得人人可用。",
+    "p2": "随着算法的不断优化和能力的持续扩展，我们期待看到电影人、教育工作者和内容创作者利用这些工具不断突破视觉叙事的边界。视频制作的未来已经到来，而且更加高效、更具创造力。"
+  }
 }
 }
+

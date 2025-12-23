@@ -427,12 +427,254 @@
     "Acceso a la API de XTTS / ElevenLabs para síntesis de voz",
     "ffmpeg instalado y disponible en la línea de comandos"
   ],
-  "cta": "🚀 ¿Listo para dar vida a tu storyboard con IA? <strong>Podemos proporcionarte un kit de inicio completo</strong> con ejemplos de JSONs, flujos de trabajo de ComfyUI y plantillas de ffmpeg/AE para ayudarte a comenzar."
+  "cta": "🚀 ¿Listo para dar vida a tu storyboard con IA? <strong>Podemos proporcionarte un kit de inicio completo</strong> con ejemplos de JSONs, flujos de trabajo de ComfyUI y plantillas de ffmpeg/AE para ayudarte a comenzar.",
+  "features": {
+    "modularArchitecture": {
+      "title": "Arquitectura Modular",
+      "description": "El sistema está construido con componentes separados para análisis de video, procesamiento de IA y generación de salida, lo que facilita su extensión y mantenimiento."
+    }
+  }
 },
-
 "SceneDetection": {
-    "tags": {
-      "computerVision": "Visión por Computadora",
+  "sceneBreakdown": {
+    "title": "Entendiendo la Salida de la Detección de Escenas",
+    "introduction": "Vamos a desglosar una salida típica de detección de escenas para entender cómo nuestra IA analiza y estructura el contenido de video. Debajo de cada explicación, encontrarás la estructura JSON correspondiente que genera estas ideas.",
+    "scenes": [
+      {
+        "title": "1. Identificación de Escena",
+        "content": "A cada escena se le asigna un identificador único y un rango de tiempo, lo que permite una navegación precisa a través del contenido del video. Esto forma la base de nuestro análisis.",
+        "example": "Escena 1 (00:00:02.50 - 00:00:05.20)",
+        "jsonDescription": "Esta estructura JSON muestra los datos básicos de identificación de una escena, incluyendo su ID único, información de tiempo y el índice/tiempo de su fotograma clave representativo."
+      },
+      {
+        "title": "2. Análisis Visual",
+        "content": "Nuestra IA examina los fotogramas clave para comprender la composición visual de cada escena, incluyendo colores dominantes, condiciones de iluminación y elementos visuales.",
+        "example": "Análisis de fotograma clave: Exterior, luz del día, múltiples sujetos",
+        "jsonDescription": "Este JSON muestra los datos de análisis visual, incluyendo información de color, condiciones de iluminación y objetos detectados con puntuaciones de confianza."
+      },
+      {
+        "title": "3. Composición de Toma",
+        "content": "Dentro de cada escena, identificamos tomas individuales y sus transiciones, lo que ayuda a comprender el flujo visual y el ritmo del contenido.",
+        "example": "3 tomas detectadas con cortes suaves y un fundido cruzado",
+        "jsonDescription": "Esta estructura JSON detalla la composición de tomas dentro de una escena, incluyendo tiempos, tipos de transición y análisis de movimiento de cámara."
+      },
+      {
+        "title": "4. Clasificación de Contenido",
+        "content": "Las escenas se clasifican automáticamente según su contenido, lo que facilita encontrar tipos específicos de metraje más adelante.",
+        "example": "Categoría: Drama, Escenario: Cubierta del Barco, Sujetos: Personajes Principales",
+        "jsonDescription": "Este JSON muestra cómo se clasifica el contenido de la escena, incluyendo categorías, configuración y análisis de sujetos."
+      }
+    ],
+    "analysisTitle": "Reuniendo Todo",
+    "analysisContent": "Al combinar estos elementos, nuestro sistema crea un mapa completo de tu contenido de video. Estos datos estructurados impulsan funciones como búsqueda inteligente, edición automatizada y análisis de contenido.",
+    "fullExampleTitle": "Ejemplo Completo de Datos de Escena",
+    "fullExampleDescription": "Así es como se unen todas las piezas en un análisis de escena completo:"
+  },
+  "features": {
+    "modularArchitecture": {
+      "title": "Arquitectura Modular",
+      "description": "El sistema está construido con componentes separados para análisis de video, procesamiento de IA y generación de salida, lo que facilita su extensión y mantenimiento."
+    },
+    "performance": {
+      "title": "Rendimiento Optimizado",
+      "description": "Procesamiento eficiente de fotogramas y paralelización que garantiza un análisis rápido incluso en videos largos."
+    },
+    "aiEnhanced": {
+      "title": "Análisis Mejorado con IA",
+      "description": "Componentes opcionales de IA proporcionan una comprensión más profunda de las escenas y un etiquetado más preciso."
+    }
+  },
+  "features10": {
+    "export": {
+      "title": "Exportar"
+    }
+  },
+  "advancedUsage": {
+    "title": "Uso Avanzado y Personalización",
+    "description": "El sistema de detección de escenas es altamente personalizable para adaptarse a diferentes casos de uso. Aquí hay algunas características avanzadas y opciones de personalización:",
+    "features": {
+      "thresholds": {
+        "title": "Umbrales Personalizados de Detección de Escenas",
+        "description": "Ajusta la sensibilidad de la detección de escenas modificando el parámetro de umbral. Valores más bajos hacen que la detección sea más sensible a los cambios."
+      },
+      "aiAnalysis": {
+        "title": "Análisis Mejorado con IA",
+        "description": "Habilita el análisis de IA para una comprensión y etiquetado más detallados de las escenas. Esto requiere configuración adicional con el servidor Ollama."
+      },
+      "outputCustomization": {
+        "title": "Personalización de Salida",
+        "description": "Personaliza el formato de salida e incluye metadatos adicionales en el guión gráfico generado."
+      }
+    },
+    "integration": {
+      "title": "Integración con Otras Herramientas",
+      "description": "La salida del guión gráfico se puede integrar fácilmente con otras herramientas y flujos de trabajo. Aquí hay algunos ejemplos:",
+      "tools": {
+        "editingSoftware": {
+          "title": "Software de Edición de Video",
+          "description": "Importa la salida JSON a editores de video que admitan edición basada en guiones"
+        },
+        "cms": {
+          "title": "Sistemas de Gestión de Contenidos",
+          "description": "Genera automáticamente metadatos para recursos de video"
+        },
+        "aiTraining": {
+          "title": "Datos de Entrenamiento para IA",
+          "description": "Utiliza la salida estructurada como datos de entrenamiento para modelos de aprendizaje automático"
+        },
+        "videoEditing": "Editores de video",
+        "projectManagement": "Herramientas de gestión de proyectos",
+        "aiTools": "Plataformas de IA para análisis adicional"
+      }
+    }
+  },
+  "benefits": {
+    "subtitle": "¿POR QUÉ ELEGIR NUESTRA SOLUCIÓN?",
+    "title": "El Poder del Análisis de Escenas con IA"
+  },
+  "integration": {
+    "title": "Integración Sencilla",
+    "description": "La salida estructurada en JSON facilita la integración con otras herramientas y flujos de trabajo:",
+    "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
+  },
+  "featuresTitle": "Funciones poderosas al alcance de tu mano",
+  "performance": {
+    "title": "Rendimiento Optimizado",
+    "description": "El procesamiento eficiente de fotogramas y la paralelización garantizan un análisis rápido incluso para videos largos.",
+    "features": {
+      "speed": "5-10 veces más rápido que en tiempo real",
+      "memory": "Bajo consumo de memoria",
+      "parallel": "Procesamiento en paralelo"
+    }
+  },
+  "hero": {
+    "title": "Conversión de videos a guiones gráficos con IA",
+    "subtitle": "Cómo hemos desarrollado una canalización avanzada que convierte horas de metraje en guiones gráficos estructurados y buscables en minutos."
+  },
+  "introduction": {
+    "paragraph1": "Imagina subir horas de metraje en bruto y obtener en minutos un <strong>desglose detallado, escena por escena</strong> de todo tu video. Eso es exactamente lo que ofrece nuestro sistema de detección de escenas impulsado por IA.",
+    "paragraph2": "Creada con bibliotecas de Python de vanguardia y modelos de aprendizaje profundo, esta canalización no solo detecta cambios de escena: comprende el contenido, identifica elementos clave y lo estructura todo en un guión gráfico completo."
+  },
+  "imageAlt": "La canalización de detección de escenas en acción, identificando momentos clave y generando guiones gráficos estructurados",
+  "features1": "Detección de escenas en tiempo real",
+  "features1Text": "Reconoce automáticamente los cambios de escena y los marca para su posterior procesamiento",
+  "richStructuredOutput": "Salida Estructurada Enriquecida",
+  "richStructuredOutputText": "Nuestro sistema genera datos de guión gráfico completos con metadatos detallados para cada escena, dándote control total sobre tu contenido de video.",
+  "features2": "Descripción automática de escenas",
+  "features2Text": "Genera descripciones detalladas para cada escena detectada",
+  "features3": "Salida JSON estructurada",
+  "features3Text": "Exporta los resultados del análisis en un formato estructurado para su posterior procesamiento",
+  "features4": "Análisis avanzado con IA",
+  "features4Text": "Utiliza modelos de IA avanzados para un análisis preciso de escenas",
+  "features5": "Interfaz fácil de usar",
+  "features5Text": "Diseño intuitivo para un uso rápido y sencillo",
+  "protip": "Usa la detección automática de escenas como punto de partida y refina los resultados manualmente para obtener la máxima precisión.",
+  "protip2": "Para obtener los mejores resultados, tu video debe tener transiciones claras entre escenas. El sistema funciona mejor con imágenes bien iluminadas y con un desenfoque de movimiento mínimo. Considera añadir marcadores de capítulo o transiciones en tu software de edición para mejorar la precisión del reconocimiento.",
+  "humanEvaluation": {
+    "title": "Evaluación Humana de la Salida de IA",
+    "introduction": "Aunque nuestra canalización de IA es altamente precisa, la evaluación humana sigue siendo un componente crítico de nuestro proceso de garantía de calidad. Así es como aseguramos la más alta calidad de salida:",
+    "evaluationAreas": [
+      "<strong>Precisión de Límites de Escena</strong> - Revisión y ajuste de puntos de transición de escena",
+      "<strong>Validación de Metadatos</strong> - Verificación de descripciones, etiquetas y etiquetas generadas por IA",
+      "<strong>Verificación de Consistencia</strong> - Asegurar un estilo y formato uniformes en todas las escenas",
+      "<strong>Precisión del Contenido</strong> - Validar que la IA identificó correctamente los elementos clave en cada escena"
+    ],
+    "workflow": {
+      "title": "Flujo de Trabajo con Intervención Humana",
+      "steps": [
+        "La IA procesa el video y genera un guión gráfico inicial",
+        "Los revisores humanos evalúan la salida de IA utilizando nuestras herramientas especializadas",
+        "Los revisores proporcionan comentarios y realizan los ajustes necesarios",
+        "El sistema aprende de las correcciones humanas para mejorar las salidas futuras",
+        "Verificación final de calidad antes de la entrega"
+      ]
+    },
+    "benefits": {
+      "title": "Beneficios de la Evaluación Humana",
+      "items": [
+        "<strong>Mayor Precisión</strong> - Los revisores humanos captan matices sutiles que la IA podría pasar por alto",
+        "<strong>Comprensión Contextual</strong> - Mejor interpretación del contexto cultural y situacional",
+        "<strong>Garantía de Calidad</strong> - Capa adicional de validación para casos de uso profesional",
+        "<strong>Mejora Continua</strong> - Los comentarios humanos ayudan a entrenar y refinar los modelos de IA"
+      ]
+    },
+    "tools": {
+      "title": "Herramientas de Evaluación",
+      "description": "Nuestra plataforma incluye herramientas especializadas para asistir a los revisores humanos:",
+      "features": [
+        "Comparación lado a lado de video y guión gráfico",
+        "Interfaz fácil de usar para ajustar los límites de las escenas",
+        "Edición por lotes de metadatos y etiquetas",
+        "Funciones de colaboración para revisión en equipo",
+        "Historial de versiones y seguimiento de cambios"
+      ]
+    }
+  },
+  "header": {
+    "title": "De Metraje en Bruto a Guiones Gráficos",
+    "author": "Equipo de IA de Curify",
+    "role": "Equipo de Investigación en IA",
+    "imageAlt": "IA analizando escenas de video y generando guiones gráficos",
+    "imageCaption": "Detección de escenas impulsada por IA en acción, identificando momentos clave en el contenido de video",
+    "subtitle": "Análisis de Video con IA",
+    "date": "11 de Diciembre de 2025",
+    "readingTime": "8 min de lectura"
+  },
+  "titanicExample": {
+    "title": "Ejemplo del Mundo Real: Análisis de Escena de Titanic",
+    "description": "Observa cómo nuestro sistema analiza una escena de Titanic, detectando cambios de toma y generando metadatos detallados de la escena:",
+    "analysis": "Análisis:",
+    "analysisText": "Detección de escenas y extracción de metadatos en tiempo real"
+  },
+  "inceptionExample": {
+    "title": "Análisis de Niveles de Sueño: Desglose de Escena de Inception",
+    "description": "Explora cómo nuestra IA analiza las complejas capas de sueño y efectos visuales en Inception:",
+    "analysis": "Análisis",
+    "analysisText": "Detección de capas de sueño y desglose de efectos visuales",
+    "breakdownTitle": "Desglose del Análisis de Escena",
+    "showFullAnalysis": "Mostrar Análisis Completo de la Escena",
+    "hideFullAnalysis": "Ocultar Análisis Completo de la Escena",
+    "fullSceneAnalysis": "Análisis Completo de la Escena",
+    "sceneCard": {
+      "mood": "Estado de Ánimo",
+      "environment": "Ambiente",
+      "shotNotes": "Notas de Toma"
+    }
+  },
+  "Scene": "Escena",
+  "process": {
+    "title": "Cómo Funciona Nuestra Detección de Escenas",
+    "steps": {
+      "step1": {
+        "title": "1. Análisis de Video",
+        "description": "Nuestra IA escanea tu video fotograma por fotograma, analizando señales visuales y de audio para identificar posibles límites de escena.",
+        "details": [
+          "Analiza histogramas de color y vectores de movimiento",
+          "Detecta cambios en los niveles de audio y silencios",
+          "Identifica límites de toma y transiciones"
+        ]
+      },
+      "step2": {
+        "title": "2. Segmentación de Escenas",
+        "description": "El sistema agrupa tomas relacionadas en escenas coherentes basándose en relaciones visuales y temporales.",
+        "details": [
+          "Agrupa tomas con iluminación y paleta de colores similares",
+          "Identifica cambios significativos en la composición visual",
+          "Considera la continuidad de personajes y elementos de la escena"
+        ]
+      }
+    }
+  },
+  "proTip": "Para obtener los mejores resultados, asegúrate de que tu video tenga una separación visual clara entre escenas. Los entornos bien iluminados y con ruido de fondo mínimo mejoran significativamente la precisión de la detección.",
+  "Technical": {
+    "steps": {
+      "step1": "Implementación técnica",
+      "step2": "Canalización de análisis de video",
+      "step2Text": "Nuestro sistema procesa videos en tiempo real, detecta cambios de escena y extrae fotogramas clave para su posterior análisis."
+    }
+  },
+  "tags": {
+    "computerVision": "Visión por Computadora",
       "deepLearning": "Aprendizaje Profundo",
       "realTimeAnalysis": "Análisis en Tiempo Real"
     },
@@ -446,5 +688,485 @@
     },
     "imageAlt": "La canalización de detección de escenas en acción, identificando momentos clave y generando guiones gráficos estructurados",
     "protip": "Para obtener resultados óptimos, asegúrate de que tu video tenga una separación visual clara entre escenas. El sistema funciona mejor con metraje bien iluminado y con poco desenfoque de movimiento. Considera agregar marcadores de capítulos o cortes de escena en tu editor de video para mejorar la precisión de la detección."
+  },
+  "SceneDetection": {
+  "tags": {
+    "computerVision": "Visión por Computador",
+    "deepLearning": "Aprendizaje Profundo",
+    "realTimeAnalysis": "Análisis en Tiempo Real"
+  },
+  "hero": {
+    "title": "Transforma Vídeos en Storyboards con IA",
+    "subtitle": "Cómo construimos un pipeline avanzado que convierte horas de metraje en storyboards estructurados y buscables en minutos."
+  },
+  "introduction": {
+    "paragraph1": "Imagina poder subir horas de metraje sin editar y, en cuestión de minutos, obtener un <strong>desglose detallado escena por escena</strong> de todo tu video. Eso es exactamente lo que ofrece nuestro sistema de detección de escenas impulsado por IA.",
+    "paragraph2": "Construido con bibliotecas de Python de vanguardia y modelos de aprendizaje profundo, este pipeline no solo detecta cambios de escena: entiende el contenido, identifica elementos clave y estructura todo en un storyboard completo."
+  },
+  "imageAlt": "El pipeline de detección de escenas en acción, identificando momentos clave y generando storyboards estructurados",
+  "protip": "Para obtener resultados óptimos, asegúrate de que tu video tenga una separación visual clara entre escenas. El sistema funciona mejor con metraje bien iluminado y con un desenfoque de movimiento mínimo. Considera añadir marcadores de capítulo o cortes de escena en tu editor de video para mejorar la precisión de la detección.",
+  "humanEvaluation": {
+    "title": "Evaluación Humana del Resultado de la IA",
+    "introduction": "Aunque nuestro pipeline de IA es altamente preciso, la evaluación humana sigue siendo un componente fundamental de nuestro proceso de garantía de calidad. Así es como aseguramos el máximo nivel de calidad:",
+    "evaluationAreas": [
+      "<strong>Precisión de los Límites de Escena</strong> - Revisión y ajuste de los puntos de transición entre escenas",
+      "<strong>Validación de Metadatos</strong> - Verificación de descripciones, etiquetas y rótulos generados por la IA",
+      "<strong>Verificación de Consistencia</strong> - Garantizar un estilo y formato uniformes en todas las escenas",
+      "<strong>Precisión del Contenido</strong> - Validar que la IA haya identificado correctamente los elementos clave en cada escena"
+    ],
+    "workflow": {
+      "title": "Flujo de Trabajo con Humano en el Bucle",
+      "steps": [
+        "La IA procesa el video y genera el storyboard inicial",
+        "Los revisores humanos evalúan el resultado de la IA utilizando nuestras herramientas especializadas",
+        "Los revisores proporcionan comentarios y realizan los ajustes necesarios",
+        "El sistema aprende de las correcciones humanas para mejorar resultados futuros",
+        "Revisión final de calidad antes de la entrega"
+      ]
+    },
+    "benefits": {
+      "title": "Beneficios de la Evaluación Humana",
+      "items": [
+        "<strong>Mayor Precisión</strong> - Los revisores humanos detectan matices sutiles que la IA podría pasar por alto",
+        "<strong>Comprensión Contextual</strong> - Mejor interpretación del contexto cultural y situacional",
+        "<strong>Garantía de Calidad</strong> - Capa adicional de validación para casos de uso profesionales",
+        "<strong>Mejora Continua</strong> - La retroalimentación humana ayuda a entrenar y perfeccionar los modelos de IA"
+      ]
+    },
+    "tools": {
+      "title": "Herramientas de Evaluación",
+      "description": "Nuestra plataforma incluye herramientas especializadas para ayudar a los revisores humanos:",
+      "features": [
+        "Comparación lado a lado de video y storyboard",
+        "Interfaz fácil de usar para ajustar los límites de escena",
+        "Edición masiva de metadatos y etiquetas",
+        "Funciones de colaboración para revisión en equipo",
+        "Historial de versiones y seguimiento de cambios"
+      ]
+    }
+  },
+  "header": {
+    "title": "Del Metraje Bruto a los Storyboards",
+    "author": "Equipo Curify AI",
+    "role": "Equipo de Investigación en IA",
+    "imageAlt": "IA analizando escenas de video y generando storyboards",
+    "imageCaption": "Detección de escenas impulsada por IA en acción, identificando momentos clave en el contenido de video",
+    "subtitle": "Análisis de Video Impulsado por IA",
+    "date": "11 de diciembre de 2025",
+    "readingTime": "8 min de lectura"
+  },
+  "Technical": {
+    "title": "EXPLORACIÓN TÉCNICA EN PROFUNDIDAD",
+    "steps": {
+      "step1": "Cómo Funciona: Bajo el Capó",
+      "videoProcessingPipeline": "Nuestro sistema procesa los videos a través de un sofisticado pipeline de múltiples etapas que garantiza una detección y análisis precisos de las escenas:",
+      "step2": "Pipeline de Procesamiento de Video",
+      "step2Text": "Nuestro sistema procesa los videos a través de un sofisticado pipeline de múltiples etapas que garantiza una detección y análisis precisos de las escenas:",
+      "step3": "Detección de Escenas y Extracción de Metadatos",
+      "step3Text": "Muestreo de fotogramas con OpenCV a intervalos óptimos",
+      "step4": "Análisis de Tomas y Mejora de Metadatos",
+      "step4Text": "Umbralización adaptativa para una detección precisa de los límites de escena",
+      "step5": "Etiquetado de Escenas y Organización de Metadatos",
+      "step5Text": "Modelos de aprendizaje profundo para una comprensión completa de las escenas",
+      "step6": "Exportación e Integración de Metadatos",
+      "step6Text": "Exporta metadatos a formato JSON para integrarlos con otras herramientas"
+    }
+  },
+  "featuresTitle": "Potentes Funciones a tu Alcance",
+  "features1": "Integración Fluida de Video",
+  "features1Text": "Procesa archivos locales, enlaces de YouTube o almacenamiento en la nube con nuestra interfaz unificada.",
+  "features": "Potentes Funciones a tu Alcance",
+  "features2": "Integración Fluida de Video",
+  "features2Text": "Procesa archivos locales, enlaces de YouTube o almacenamiento en la nube con nuestra interfaz unificada.",
+  "features3": "Análisis Impulsado por IA",
+  "features3Text": "Mejora la comprensión de las escenas con nuestro módulo opcional de análisis de IA.",
+  "features4": "Detección de Movimiento de Cámara",
+  "features4Text": "Identifica automáticamente paneos, zooms y otros movimientos de cámara.",
+  "features5": "Salida Personalizable",
+  "features5Text": "Exporta metadatos a formato JSON para integrarlos con otras herramientas.",
+  "intro": {
+    "p1": "En el entorno actual de creación de contenido, el <strong>análisis eficiente de video</strong> ya no es un lujo: es una necesidad. Nuestra tecnología de detección de escenas impulsada por IA transforma horas de metraje bruto en contenido estructurado y buscable en minutos, no días.",
+    "p2": "Ya seas cineasta, creador de contenido o profesional de los medios, comprender el poder de la detección automática de escenas puede revolucionar tu flujo de trabajo y desbloquear nuevas posibilidades creativas."
+  },
+  "proTip": "Para obtener los mejores resultados, asegúrate de que tu video de origen tenga una clara separación de audio y elementos visuales entre escenas. Los entornos bien iluminados y con poco ruido de fondo mejoran significativamente la precisión de la detección.",
+  "titanicExample": {
+    "title": "Ejemplo del Mundo Real: Análisis de una Escena de Titanic",
+    "description": "Mira cómo nuestro sistema analiza una escena de Titanic, detectando cambios de toma y generando metadatos de escena detallados:",
+    "analysis": "Análisis:",
+    "analysisText": "Detección de escenas y extracción de metadatos en tiempo real"
+  },
+  "inceptionExample": {
+    "title": "Análisis de Niveles de Sueño: Desglose de una Escena de Inception",
+    "description": "Explora cómo nuestra IA analiza las complejas capas de sueño y los efectos visuales en Inception:",
+    "analysis": "Análisis",
+    "analysisText": "Detección de niveles de sueño y desglose de efectos visuales",
+    "breakdownTitle": "Desglose del Análisis de Escena",
+    "showFullAnalysis": "Mostrar Análisis Completo de la Escena",
+    "hideFullAnalysis": "Ocultar Análisis Completo de la Escena",
+    "fullSceneAnalysis": "Análisis Completo de la Escena",
+    "sceneCard": {
+      "mood": "Estado de Ánimo",
+      "environment": "Entorno",
+      "shotNotes": "Notas de la Toma"
+    }
+  },
+  "Scene": "Escena",
+  "process": {
+    "title": "Cómo Funciona Nuestra Detección de Escenas",
+    "steps": {
+      "step1": {
+        "title": "1. Análisis de Video",
+        "description": "Nuestra IA escanea tu video fotograma a fotograma, analizando señales visuales y de audio para identificar posibles límites de escena.",
+        "details": [
+          "Analiza histogramas de color y vectores de movimiento",
+          "Detecta cambios en los niveles de audio y silencios",
+          "Identifica límites de toma y transiciones"
+        ]
+      },
+      "step2": {
+        "title": "2. Segmentación de Escenas",
+        "description": "El sistema agrupa tomas relacionadas en escenas coherentes basadas en relaciones visuales y temporales.",
+        "details": [
+          "Utiliza aprendizaje automático para comprender el contexto de la escena",
+          "Tiene en cuenta la duración de las tomas y los tipos de transición",
+          "Fusiona tomas relacionadas en escenas lógicas"
+        ]
+      },
+      "step3": {
+        "title": "3. Clasificación de Contenido",
+        "description": "Cada escena detectada se analiza y clasifica según su contenido visual y de audio.",
+        "details": [
+          "Identifica elementos y objetos visuales clave",
+          "Clasifica el tipo de escena (por ejemplo, entrevista, acción, paisaje)",
+          "Analiza el audio para detectar voz, música y efectos"
+        ]
+      },
+      "step4": {
+        "title": "4. Generación de Metadatos",
+        "description": "Se generan metadatos completos para cada escena, lo que permite una búsqueda y organización avanzadas.",
+        "details": [
+          "Crea información de marcas de tiempo y duración",
+          "Genera miniaturas representativas",
+          "Extrae diálogos clave y pistas de audio"
+        ]
+      }
+    }
+  },
+  "whyItWorks": {
+    "title": "Por Qué Nuestra Detección de Escenas Funciona Tan Bien",
+    "points": "<li>Nuestra IA analiza tanto <strong>señales visuales como de audio</strong> para identificar límites de escena con más del 95% de precisión.</li><li>Modelos avanzados de <strong>aprendizaje automático</strong> comprenden el contexto, no solo los cambios visuales, para una detección de escenas más natural.</li><li>El procesamiento en tiempo real permite <strong>retroalimentación inmediata</strong> y ajustes durante el rodaje o la edición.</li>"
+  },
+  "recommendedStyle": {
+    "title": "Estilo Recomendado para Mejores Resultados",
+    "description": "Para obtener la detección de escenas más precisa, recomendamos las siguientes pautas de estilo:",
+    "points": [
+      "Mantener una iluminación consistente dentro de cada escena",
+      "Utilizar marcadores de audio claros o claquetas entre tomas",
+      "Mantener los movimientos de cámara suaves e intencionales",
+      "Mantener niveles de audio consistentes dentro de las escenas"
+    ]
+  },
+  "title": "Del Metraje Bruto a los Storyboards: Análisis de Video Impulsado por IA",
+  "description": "Descubre cómo la IA transforma metraje en bruto en storyboards estructurados con detección y análisis automáticos de escenas.",
+  "timeline": {
+    "title": "Línea de Tiempo de Escenas",
+    "viewScene": "Ver Escena {1}"
+  },
+  "cta": "🚀 ¿Listo para dar vida a tu storyboard con IA? <strong>Podemos proporcionarte un kit inicial completo</strong> con JSONs de ejemplo, workflows de ComfyUI y plantillas de ffmpeg/AE para ayudarte a empezar.",
+  "sceneBreakdown": {
+    "title": "Entendiendo la Salida de Detección de Escenas",
+    "introduction": "Desglosemos una salida típica de detección de escenas para entender cómo nuestra IA analiza y estructura el contenido de video. Debajo de cada explicación encontrarás la estructura JSON correspondiente que impulsa estos insights.",
+    "scenes": [
+      {
+        "title": "1. Identificación de Escena",
+        "content": "A cada escena se le asigna un identificador único y un rango de tiempo, lo que permite una navegación precisa por el contenido del video. Esto constituye la base de nuestro análisis.",
+        "example": "Escena 1 (00:00:02.50 - 00:00:05.20)",
+        "jsonExample": {
+          "scene_id": "scene_001",
+          "start_time": 2.5,
+          "end_time": 5.2,
+          "duration": 2.7,
+          "keyframe_index": 5,
+          "keyframe_time": 3.8
+        },
+        "jsonDescription": "Esta estructura JSON muestra los datos básicos de identificación de una escena, incluido su ID único, información de tiempo y el índice/tiempo de su fotograma clave representativo."
+      },
+      {
+        "title": "2. Análisis Visual",
+        "content": "Nuestra IA examina fotogramas clave para entender la composición visual de cada escena, incluyendo colores dominantes, condiciones de iluminación y elementos visuales.",
+        "example": "Análisis de fotograma clave: Exterior, luz de día, múltiples sujetos",
+        "jsonExample": {
+          "visual_analysis": {
+            "brightness": 0.78,
+            "contrast": 0.65,
+            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+            "dominant_colors": [
+              { "color": "#3A5FCD", "percentage": 0.45 },
+              { "color": "#87CEEB", "percentage": 0.35 },
+              { "color": "#F5F5DC", "percentage": 0.20 }
+            ],
+            "lighting_condition": "daylight",
+            "environment": "outdoor",
+            "detected_objects": [
+              { "label": "person", "confidence": 0.97, "count": 2 },
+              { "label": "sky", "confidence": 0.99, "count": 1 }
+            ]
+          }
+        },
+        "jsonDescription": "Este JSON muestra los datos de análisis visual, incluyendo información de color, condiciones de iluminación y objetos detectados con sus puntuaciones de confianza."
+      },
+      {
+        "title": "3. Composición de Toma",
+        "content": "Dentro de cada escena, identificamos tomas individuales y sus transiciones, lo que ayuda a comprender el flujo visual y el ritmo del contenido.",
+        "example": "3 tomas detectadas con cortes suaves y un fundido cruzado",
+        "jsonExample": {
+          "shots": [
+            {
+              "shot_id": "shot_001",
+              "start_time": 2.5,
+              "end_time": 3.1,
+              "transition": {
+                "type": "cut",
+                "confidence": 0.98
+              },
+              "camera_motion": {
+                "type": "static",
+                "confidence": 0.92
+              }
+            },
+            {
+              "shot_id": "shot_002",
+              "start_time": 3.1,
+              "end_time": 4.3,
+              "transition": {
+                "type": "fade",
+                "duration": 0.3,
+                "confidence": 0.95
+              },
+              "camera_motion": {
+                "type": "pan_left",
+                "confidence": 0.88
+              }
+            }
+          ]
+        },
+        "jsonDescription": "Esta estructura JSON detalla la composición de tomas dentro de una escena, incluyendo tiempos, tipos de transición y análisis de movimiento de cámara."
+      },
+      {
+        "title": "4. Clasificación de Contenido",
+        "content": "Las escenas se categorizan automáticamente según su contenido, lo que facilita la búsqueda posterior de tipos específicos de metraje.",
+        "example": "Categoría: Drama, Escenario: Cubierta del Barco, Sujetos: Personajes Principales",
+        "jsonExample": {
+          "content_analysis": {
+            "primary_category": "drama",
+            "secondary_categories": ["romance", "disaster"],
+            "setting": {
+              "type": "ship_deck",
+              "time_of_day": "night",
+              "confidence": 0.92
+            },
+            "subjects": [
+              {
+                "type": "main_character",
+                "name": "Jack",
+                "position": "center_frame",
+                "emotion": "determined",
+                "confidence": 0.89
+              },
+              {
+                "type": "main_character",
+                "name": "Rose",
+                "position": "center_frame",
+                "emotion": "fearful",
+                "confidence": 0.91
+              }
+            ],
+            "sentiment": {
+              "overall": "intense_dramatic",
+              "confidence": 0.88,
+              "emotions": ["fear", "determination", "urgency"]
+            },
+            "key_elements": ["lifeboat", "ocean", "moonlight"],
+            "narrative_importance": 0.95,
+            "action_required": true
+          }
+        },
+        "jsonDescription": "Este JSON muestra cómo la IA analiza y clasifica escenas de películas, incluyendo emociones de los personajes, detalles del escenario e importancia narrativa, usando como ejemplo la dramática escena de los botes salvavidas en Titanic."
+      }
+    ],
+    "analysisTitle": "Uniendo Todas las Piezas",
+    "analysisContent": "Al combinar estos elementos, nuestro sistema crea un mapa completo de tu contenido de video. Estos datos estructurados impulsan funciones como búsqueda inteligente, edición automatizada y análisis de contenido.",
+    "fullExampleTitle": "Ejemplo Completo de Datos de Escena",
+    "fullExampleDescription": "Así es como todas las piezas se integran en un análisis de escena completo:",
+    "fullExample": {
+      "scene_id": "scene_001",
+      "start_time": 2.5,
+      "end_time": 5.2,
+      "duration": 2.7,
+      "metadata": {
+        "created_at": "2025-12-11T14:25:30Z",
+        "video_source": "interview_001.mp4",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      "visual_analysis": {
+        "brightness": 0.78,
+        "contrast": 0.65,
+        "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+        "lighting_condition": "daylight",
+        "environment": "studio"
+      },
+      "audio_analysis": {
+        "has_speech": true,
+        "speech_confidence": 0.92,
+        "background_noise_level": 0.15,
+        "speaker_gender": ["male", "female"],
+        "speech_text": "Hablemos de cómo la IA está transformando la producción de video..."
+      },
+      "content_analysis": {
+        "primary_category": "interview",
+        "setting": "studio",
+        "subjects": ["host", "guest"],
+        "sentiment": "neutral_positive"
+      },
+      "shots": [
+        {
+          "shot_id": "shot_001",
+          "start_time": 2.5,
+          "end_time": 3.1,
+          "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+          "transition": { "type": "cut", "confidence": 0.98 }
+        },
+        {
+          "shot_id": "shot_002",
+          "start_time": 3.1,
+          "end_time": 5.2,
+          "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+          "transition": { "type": "fade", "confidence": 0.95 }
+        }
+      ]
+    },
+    "benefitsTitle": "Beneficios Clave",
+    "benefits": [
+      "<strong>Edición Eficiente:</strong> Salta directamente a cualquier escena o toma sin tener que recorrer horas de metraje",
+      "<strong>Búsqueda Inteligente:</strong> Encuentra contenido en función de elementos visuales, no solo de metadatos",
+      "<strong>Calidad Consistente:</strong> Identifica y mantiene la consistencia visual en todo tu proyecto",
+      "<strong>Decisiones Basadas en Datos:</strong> Obtén información sobre la estructura y el ritmo de tu contenido"
+    ]
+  },
+  "conclusion": {
+    "title": "Transformando la Producción de Video con IA",
+    "p1": "La detección de escenas impulsada por IA está revolucionando la forma en que abordamos la producción de video. Al automatizar el tedioso proceso de identificación y organización de escenas, los creadores pueden centrarse en lo que realmente importa: contar historias cautivadoras. Nuestra tecnología conecta el metraje bruto con el contenido pulido, haciendo que el análisis profesional de video sea accesible para todos.",
+    "p2": "A medida que seguimos perfeccionando nuestros algoritmos y ampliando nuestras capacidades, nos entusiasma ver cómo cineastas, educadores y creadores de contenido aprovecharán estas herramientas para llevar la narración visual a un nuevo nivel. El futuro de la producción de video ya está aquí, y es más eficiente y creativo que nunca."
+  },
+  "richStructuredOutput": "Salida Rica y Estructurada",
+  "richStructuredOutputText": "Nuestro sistema genera datos de storyboard completos con metadatos detallados para cada escena, dándote control total sobre tu contenido de video.",
+  "advancedUsage": {
+    "title": "Uso Avanzado y Personalización",
+    "description": "El sistema de detección de escenas es altamente personalizable para adaptarse a diferentes casos de uso. Aquí tienes algunas funciones avanzadas y opciones de personalización:",
+    "features": {
+      "thresholds": {
+        "title": "Umbrales Personalizados de Detección de Escenas",
+        "description": "Ajusta la sensibilidad de la detección de escenas modificando el parámetro de umbral. Valores más bajos hacen que la detección sea más sensible a los cambios."
+      },
+      "aiAnalysis": {
+        "title": "Análisis Potenciado por IA",
+        "description": "Activa el análisis con IA para una comprensión y etiquetado más detallados de las escenas. Esto requiere una configuración adicional con el servidor de Ollama."
+      },
+      "outputCustomization": {
+        "title": "Personalización de la Salida",
+        "description": "Personaliza el formato de salida e incluye metadatos adicionales en el storyboard generado."
+      }
+    },
+    "integration": {
+      "title": "Integración con Otras Herramientas",
+      "description": "La salida de storyboard puede integrarse fácilmente con otras herramientas y flujos de trabajo. Aquí algunos ejemplos:",
+      "tools": {
+        "editingSoftware": {
+          "title": "Software de Edición de Video",
+          "description": "Importa la salida JSON en editores de video que admitan edición basada en guion"
+        },
+        "cms": {
+          "title": "Sistemas de Gestión de Contenidos",
+          "description": "Genera metadatos automáticamente para recursos de video"
+        },
+        "aiTraining": {
+          "title": "Datos de Entrenamiento para IA",
+          "description": "Utiliza la salida estructurada como datos de entrenamiento para modelos de aprendizaje automático"
+        }
+      }
+    }
+  },
+  "features": {
+    "modularArchitecture": {
+      "title": "Arquitectura Modular",
+      "description": "El sistema está construido con componentes separados para análisis de video, procesamiento con IA y generación de salida, lo que facilita su extensión y mantenimiento."
+    },
+    "performance": {
+      "title": "Rendimiento Optimizado",
+      "description": "El procesamiento eficiente de fotogramas y la paralelización garantizan un análisis rápido incluso para videos largos."
+    },
+    "aiEnhanced": {
+      "title": "Análisis Potenciado por IA",
+      "description": "Componentes opcionales de IA proporcionan una comprensión más profunda de las escenas y un etiquetado más preciso."
+    }
+  },
+  "Benefitss": {
+    "title": "Beneficios",
+    "description": "Los beneficios de usar nuestro sistema de detección de escenas impulsado por IA incluyen:",
+    "tags": {
+      "computerVision": "Visión por Computador",
+      "deepLearning": "Aprendizaje Profundo",
+      "realTimeAnalysis": "Análisis en Tiempo Real"
+    },
+    "features": {
+      "modularArchitecture": {
+        "title": "Arquitectura Modular",
+        "description": "El sistema está construido con componentes separados para análisis de video, procesamiento con IA y generación de salida, lo que facilita su extensión y mantenimiento."
+      },
+      "performance": {
+        "title": "Rendimiento Optimizado",
+        "description": "El procesamiento eficiente de fotogramas y la paralelización garantizan un análisis rápido incluso para videos largos."
+      },
+      "aiEnhanced": {
+        "title": "Análisis Potenciado por IA",
+        "description": "Componentes opcionales de IA proporcionan una comprensión más profunda de las escenas y un etiquetado más preciso."
+      }
+    }
+  },
+  "benefits": {
+    "subtitle": "POR QUÉ ELEGIR NUESTRA SOLUCIÓN",
+    "title": "El Poder del Análisis de Escenas Impulsado por IA"
+  },
+  "integration": {
+    "title": "Integración Sencilla",
+    "description": "La salida JSON estructurada facilita la integración con otras herramientas y flujos de trabajo:",
+    "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
+  },
+  "features10": {
+    "comprehensiveData": {
+      "title": "Datos de Escena Integrales",
+      "items": [
+        "Información de tiempo precisa para cada escena",
+        "Fotogramas clave para referencia visual",
+        "Resultados de detección de objetos",
+        "Análisis de movimiento de cámara"
+      ]
+    },
+    "export": {
+      "title": "Opción de Exportación",
+      "formats": {
+        "json": "JSON"
+      }
+    }
+  },
+  "performance": {
+    "title": "Rendimiento Optimizado",
+    "features": {
+      "speed": "5-10x más rápido que en tiempo real",
+      "memory": "Bajo consumo de memoria",
+      "parallel": "Procesamiento en paralelo"
+    }
   }
+}
 }
