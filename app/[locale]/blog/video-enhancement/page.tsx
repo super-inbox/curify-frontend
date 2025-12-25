@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 // Import storyboard JSON directly
-import storyboard from "@/public/data/storyboard.json";
+import storyboard from "../../../../public/data/storyboard.json";
 import CdnImage from "../../_components/CdnImage";
 import CdnVideo from "../../_components/CdnVideo";
 import CdnAudio from "../../_components/CdnAudio";

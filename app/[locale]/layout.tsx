@@ -23,8 +23,13 @@ interface Props {
   params: { locale: string };
 }
 
-export default async function LocaleLayout(props: Props) {
-  const { children, params } = props;
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
   const { locale } = params;
   const session = await getServerSession(authOptions);
 
@@ -83,7 +88,8 @@ export default async function LocaleLayout(props: Props) {
     },
   };
 
-  const meta = localizedMeta[locale];
+  // Fallback to English if locale not found
+  const meta = localizedMeta[locale] || localizedMeta['en'];
 
   // 👇 Read pathname from middleware (critical for canonical correctness)
   const rawHeaders = await headers();

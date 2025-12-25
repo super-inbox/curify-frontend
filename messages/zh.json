@@ -269,6 +269,348 @@
   "section6_metrics": ["配音风格是否符合产品", "本地视频观看时长是否提升", "用户/商家是否愿意采用"],
   "closing": "在 Curify，我们不仅翻译语言，更传达情感与故事。如果你想让内容走向全球，欢迎联系我们。",
   "available_locales": "可切换语言：[英文] [中文] [西语] [德语]"
+},
+
+"storyboardToPipeline": {
+  "title": "从故事板到AI流水线：重新定义动画制作",
+  "intro": {
+    "p1": "大多数人认为AI视频就是\"输入文字，输出片段\"。但如果你追求的是<strong>电影级、导演级别的控制</strong>，那完全是另一回事。",
+    "p2": "在传统动画中，每个细节都很重要——角色设计、动作连续性、时间安排和场景转换。我们的目标是让AI达到这种精确度。",
+    "p3": "如今的动画既是一门艺术，也是一项结构化编排的挑战。我们像导演一样思考，但像工程师一样构建。",
+    "p4": "这就是为什么我们构建<strong>受控生成流水线</strong>，而不是一次性生成。这些流水线结合了结构和创造力：",
+    "pipelineItems": [
+      "故事板到视频：基于JSON的视觉规范，包含ID、时间戳和摄像机元数据",
+      "基于ComfyUI的工作流：带有版本控制检查点、LoRA堆叠和种子的DAG图",
+      "时序和多模态控制：在图像、动作、音频和字幕中共享场景ID"
+    ],
+    "p5": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
+    "technicalNotes": [
+      "所有步骤都读取/写入类型化工件（JSON/CSV、PNG序列、WAV/MP3、MP4、.aep）",
+      "流水线通过Python/CLI编排（如ComfyUI API、ffmpeg、TTS API）",
+      "每次运行都可通过保存的配置重现（模型、采样器、种子、提示词、时长）"
+    ]
+  },
+  "pipeline": {
+    "title": "AI视频生成流水线",
+    "description": "AI视频生成流水线通过明确输入、输出和配置的结构化阶段，将文本提示转化为精美的视频。",
+    "prompt": "1. 提示词（原始想法 → 结构化JSON规范）",
+    "storyboard": "2. 故事板（带时间、镜头和描述的场次/镜头表格）",
+    "images": "3. 图像（通过Stable Diffusion/ComfyUI为每个镜头生成的关键帧）",
+    "animation": "4. 动画（图像序列 → 运动、视差和效果）",
+    "voiceOver": "5. 旁白（TTS + 同步数据）",
+    "finalVideo": "6. 最终视频（ffmpeg合成：视频 + 音频 + 字幕）",
+    "features": [
+      "JSON优先设计：每个场景都可寻址和可编程（scene_id, shot_id）",
+      "基于ComfyUI的工作流：用于图像/视频生成的模块化、可重现、可组合的DAG图",
+      "时序和多模态控制：在所有模态中保持一致的种子、角色嵌入和时间安排"
+    ],
+    "exampleIntro": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
+    "artifacts": {
+      "promptSpec": "prompt_run_001.json",
+      "storyboardTable": "storyboard_v1.csv",
+      "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+      "audioOutput": "audio/final_voiceover.wav",
+      "subtitleFile": "subtitles/storyboard_v1.srt",
+      "finalVideoFile": "exports/storyboard_v1_final.mp4"
+    }
+  },
+  "steps": {
+    "step1": {
+      "title": "第一步：从基础提示词开始",
+      "example": "一个女孩站在午夜的车站，风吹动她的头发。",
+      "expandedPrompt": "在GPT或本地LLM的帮助下，我们将其扩展为包含全局风格、角色定义和分场信息的结构化JSON对象。",
+      "technicalDetails": {
+        "llmFields": [
+          "global_style: 艺术风格、镜头语言、调色板",
+          "characters: 姓名、年龄、外貌、服装、情感状态",
+          "scenes: [{ scene_id, shot_id, 描述, camera_type, duration_seconds }]"
+        ],
+        "outputFile": "prompt_run_001.json",
+        "exampleStack": "调用OpenAI/LLM API并将JSON写入磁盘的Python脚本"
+      }
+    },
+    "step2": {
+      "title": "第二步：将提示词转换为故事板表格",
+      "description": "将JSON规范扁平化为人类和流水线都能读取的故事板表格（CSV或Notion）。",
+      "technicalDetails": {
+        "columns": [
+          "scene_id", "shot_id", "start_time", "end_time", "duration_seconds",
+          "camera_type", "visual_description", "character_state", "movement_notes"
+        ],
+        "storage": "storyboard_v1.csv（作为后续步骤的单一事实来源）",
+        "automation": "执行prompt_run_001.json → storyboard_v1.csv转换的Python/Node.js脚本"
+      }
+    },
+    "step3": {
+      "title": "第三步：生成视觉效果",
+      "points": [
+        "🎨 使用<strong>Stable Diffusion</strong>或<strong>ComfyUI</strong>将`storyboard_v1.csv`中的每一行转换为高分辨率关键帧。",
+        "通过使用相同的基础检查点、LoRA堆叠、采样器和种子策略，保持所有镜头风格一致。"
+      ],
+      "technicalDetails": {
+        "modelConfig": {
+          "checkpoint": "sd_xl_base_1.0.safetensors",
+          "vae": "sdxl_vae.safetensors",
+          "sampler": "euler_a",
+          "steps": 25,
+          "cfgScale": 6.5,
+          "resolution": "1024x576",
+          "loraStack": [
+            "character_girl_v2.safetensors",
+            "style_cinematic_blue_hour.safetensors"
+          ]
+        },
+        "consistency": {
+          "seedStrategy": "per_scene_consistent",
+          "seedExample": "seed = hash(scene_id + character_name)",
+          "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+        }
+      }
+    },
+    "step4": {
+      "title": "第四步：在After Effects中添加动效和氛围",
+      "points": [
+        "将图像序列或关键帧作为分层合成导入<strong>Adobe After Effects</strong>。",
+        "应用关键帧动画：平移、缩放、视差层、雾气、光线闪烁。",
+        "添加环境音效和场景间的电影转场。"
+      ],
+      "technicalDetails": {
+        "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png（带可选的深度图/Alpha通道）",
+        "projectFile": "ae/storyboard_v1.aep",
+        "automation": [
+          "使用AE ExtendScript/JSX自动按scene_id创建合成",
+          "从storyboard_v1.csv映射duration_seconds → 合成时长",
+          "如果需要，使用AE插件或视频感知扩散工具生成中间帧"
+        ],
+        "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+      }
+    },
+    "step5": {
+      "title": "第五步：添加语音和字幕",
+      "points": [
+        "使用<strong>XTTS</strong>或<strong>ElevenLabs</strong>从脚本生成自然语音，保持一致的语音配置文件。",
+        "对于缩写（如API、NBA），单独生成英文片段并在后期合并，确保清晰发音。",
+        "添加与旁白同步的`.srt`或时间轴`.json`文件作为字幕。"
+      ],
+      "technicalDetails": {
+        "scriptSource": "从prompt_run_001.json + storyboard_v1.csv中提取的对话和旁白",
+        "ttsConfig": {
+          "engine": "XTTS或ElevenLabs",
+          "voiceId": "cinematic_female_zh",
+          "sampleRate": 44100,
+          "format": "wav"
+        },
+        "outputs": {
+          "audioFile": "audio/storyboard_v1_voice.wav",
+          "subtitleFile": "subtitles/storyboard_v1.srt"
+        },
+        "syncStrategy": "将storyboard_v1.csv中的`start_time`/`end_time`与字幕提示对齐；确保总音频时长≈最终时间轴时长"
+      }
+    },
+    "step6": {
+      "title": "第六步：使用FFMPEG进行最终合成",
+      "description": "使用FFMPEG将所有部分合并为单个视频文件。",
+      "technicalDetails": {
+        "inputs": {
+          "video": "ae_renders/storyboard_v1_timeline.mp4",
+          "audio": "audio/storyboard_v1_voice.wav",
+          "subtitles": "subtitles/storyboard_v1.srt"
+        },
+        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voice.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+        "output": "exports/storyboard_v1_final.mp4 (H.264, 24fps, AAC音频)"
+      }
+    }
+  },
+  "whatYouNeed": "📁 您需要准备什么",
+  "whatYouNeedTechnical": [
+    "支持Stable Diffusion / ComfyUI的GPU（至少12GB显存）",
+    "用于JSON/CSV转换和自动化脚本的Python环境",
+    "配置了必要自定义节点和工作流的ComfyUI",
+    "用于运动效果制作的Adobe After Effects或类似合成软件",
+    "用于文本转语音的XTTS / ElevenLabs API访问权限",
+    "已安装并可从命令行访问的ffmpeg"
+  ],
+  "cta": "🚀 准备好用AI为您的故事板注入生命了吗？<strong>我们可以提供完整入门套件</strong>，包含示例JSON、ComfyUI工作流和ffmpeg/AE模板，助您快速上手。"
+},
+
+"SceneDetection": {
+  "tags": {
+    "computerVision": "计算机视觉",
+    "deepLearning": "深度学习",
+    "realTimeAnalysis": "实时分析"
+  },
+  "hero": {
+    "title": "用AI将视频转化为故事板",
+    "subtitle": "我们构建了一个高级流程，可将数小时的素材在几分钟内转化为结构化的、可搜索的故事板。"
+  },
+  "introduction": {
+    "paragraph1": "想象一下，您上传数小时的原始素材，几分钟内就能获得整个视频的<strong>详细分镜分析</strong>。这正是我们基于AI的场景检测系统所提供的功能。",
+    "paragraph2": "这个由前沿Python库和深度学习模型构建的流程，不仅能检测场景转换，还能理解内容、识别关键元素，并将一切组织成完整的故事板。"
+  },
+  "imageAlt": "场景检测流程正在运行，识别关键时刻并生成结构化故事板",
+  "features1": "实时场景检测",
+  "features1Text": "自动检测场景变化并标记以进行进一步处理",
+  "features2": "自动场景描述",
+  "features2Text": "为每个检测到的场景生成详细描述",
+  "features3": "结构化JSON输出",
+  "features3Text": "以结构化格式导出分析结果以便后续处理",
+  "features4": "高级AI分析",
+  "features4Text": "使用高级AI模型进行准确的场景分析",
+  "features5": "用户友好界面",
+  "features5Text": "直观设计，快速轻松使用",
+  "protip": "使用自动场景检测作为起点，并手动调整结果以获得最佳准确性。",
+  "protip2": "为获得最佳效果，请确保您的视频在场景之间有清晰的视觉分隔。系统在光线良好、运动模糊最少的素材上表现最佳。考虑在视频编辑软件中添加章节标记或场景切割，以提高检测准确性。",
+  "Technical": {
+    "steps": {
+      "step1": "技术实现",
+      "step2": "视频分析流程",
+      "step2Text": "我们的系统实时处理视频，检测场景变化并提取关键帧以进行进一步分析"
+    }
+  },
+  "titanicExample": {
+    "title": "泰坦尼克号示例",
+    "description": "使用我们的AI场景检测分析标志性电影场景。",
+    "analysis": "分析：",
+    "analysisText": "系统成功识别了关键情感时刻、角色互动和场景转换。"
+  },
+  "sceneBreakdown": {
+    "title": "理解场景检测输出",
+    "introduction": "让我们拆解一个典型的场景检测输出，来了解我们的 AI 是如何分析并结构化视频内容的。在每段说明下方，你都可以看到支撑这些洞察的对应 JSON 结构。",
+    "scenes": [
+      {
+        "title": "1. 场景识别",
+        "content": "每个场景都会被分配一个唯一的标识符和时间范围，从而实现对视频内容的精确定位。这构成了整个分析流程的基础。",
+        "example": "场景 1（00:00:02.50 - 00:00:05.20）",
+        "jsonExample": {
+          "scene_id": "scene_001",
+          "start_time": 2.5,
+          "end_time": 5.2,
+          "duration": 2.7,
+          "keyframe_index": 5,
+          "keyframe_time": 3.8
+        },
+        "jsonDescription": "该 JSON 结构展示了场景的基础识别数据，包括唯一 ID、时间信息，以及代表性关键帧的索引和时间点。"
+      },
+      {
+        "title": "2. 视觉分析",
+        "content": "我们的 AI 会分析关键帧，以理解每个场景的视觉构成，包括主色调、光照条件以及主要视觉元素。",
+        "example": "关键帧分析：户外、白天、多人物",
+        "jsonExample": {
+          "visual_analysis": {
+            "brightness": 0.78,
+            "contrast": 0.65,
+            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+            "dominant_colors": [
+              { "color": "#3A5FCD", "percentage": 0.45 },
+              { "color": "#87CEEB", "percentage": 0.35 },
+              { "color": "#F5F5DC", "percentage": 0.20 }
+            ],
+            "lighting_condition": "daylight",
+            "environment": "outdoor",
+            "detected_objects": [
+              { "label": "person", "confidence": 0.97, "count": 2 },
+              { "label": "sky", "confidence": 0.99, "count": 1 }
+            ]
+          }
+        },
+        "jsonDescription": "该 JSON 展示了视觉分析数据，包括颜色信息、光照条件，以及带有置信度的目标检测结果。"
+      },
+      {
+        "title": "3. 镜头构成",
+        "content": "在每个场景内部，我们会识别独立的镜头及其转场方式，以帮助理解画面节奏和视觉流动。",
+        "example": "检测到 3 个镜头，包含平滑切换和一次交叉淡入淡出",
+        "jsonExample": {
+          "shots": [
+            {
+              "shot_id": "shot_001",
+              "start_time": 2.5,
+              "end_time": 3.1,
+              "transition": {
+                "type": "cut",
+                "confidence": 0.98
+              },
+              "camera_motion": {
+                "type": "static",
+                "confidence": 0.92
+              }
+            },
+            {
+              "shot_id": "shot_002",
+              "start_time": 3.1,
+              "end_time": 4.3,
+              "transition": {
+                "type": "fade",
+                "duration": 0.3,
+                "confidence": 0.95
+              },
+              "camera_motion": {
+                "type": "pan_left",
+                "confidence": 0.88
+              }
+            }
+          ]
+        },
+        "jsonDescription": "该 JSON 结构详细描述了场景内的镜头构成，包括时间范围、转场类型以及镜头运动分析。"
+      },
+      {
+        "title": "4. 内容分类",
+        "content": "系统会根据内容自动对场景进行分类，方便你日后快速查找特定类型的素材。",
+        "example": "类别：剧情片，场景：船甲板，人物：主要角色",
+        "jsonExample": {
+          "content_analysis": {
+            "primary_category": "剧情",
+            "secondary_categories": ["爱情", "灾难"],
+            "setting": {
+              "type": "船甲板",
+              "time_of_day": "夜晚",
+              "confidence": 0.92
+            },
+            "subjects": [
+              {
+                "type": "主要角色",
+                "name": "Jack",
+                "position": "画面中央",
+                "emotion": "坚定",
+                "confidence": 0.89
+              },
+              {
+                "type": "主要角色",
+                "name": "Rose",
+                "position": "画面中央",
+                "emotion": "恐惧",
+                "confidence": 0.91
+              }
+            ],
+            "sentiment": {
+              "overall": "紧张戏剧性",
+              "confidence": 0.88,
+              "emotions": ["恐惧", "决心", "紧迫感"]
+            },
+            "key_elements": ["救生艇", "海洋", "月光"],
+            "narrative_importance": 0.95,
+            "action_required": true
+          }
+        },
+        "jsonDescription": "该 JSON 展示了 AI 如何分析和分类电影场景，包括角色情绪、场景设定以及叙事重要性（以《泰坦尼克号》的救生艇场景为例）。"
+      }
+    ],
+    "analysisTitle": "整合分析",
+    "analysisContent": "通过整合以上所有元素，系统可以生成一份完整的视频内容结构图。这些结构化数据为智能搜索、自动剪辑和内容分析等功能提供了基础支持。",
+    "fullExampleTitle": "完整场景数据示例",
+    "fullExampleDescription": "以下是一个完整的场景分析示例，展示了所有模块如何协同工作：",
+    "benefitsTitle": "核心优势",
+    "benefits": [
+      "<strong>高效剪辑：</strong> 无需反复拖动时间轴，即可快速跳转到任意场景或镜头",
+      "<strong>智能搜索：</strong> 不仅基于元数据，还能基于视觉内容查找素材",
+      "<strong>一致性保障：</strong> 识别并保持项目整体视觉风格的一致性",
+      "<strong>数据驱动决策：</strong> 深入理解内容结构和节奏分布"
+    ]
+  },
+  "conclusion": {
+    "title": "AI 正在重塑视频制作流程",
+    "p1": "AI 场景检测正在彻底改变视频制作方式。通过自动化完成繁琐的场景识别与整理工作，创作者可以将精力集中在真正重要的事情上——讲好故事。我们的技术打通了原始素材与成片之间的鸿沟，让专业级视频分析变得人人可用。",
+    "p2": "随着算法的不断优化和能力的持续扩展，我们期待看到电影人、教育工作者和内容创作者利用这些工具不断突破视觉叙事的边界。视频制作的未来已经到来，而且更加高效、更具创造力。"
+  }
+}
 }
 
-}

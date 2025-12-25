@@ -1,0 +1,85 @@
+{
+  "scenes": [
+    {
+      "scene_id": 1,
+      "start_time": 0.0,
+      "end_time": 1.5014999999999998,
+      "transition_in": {
+        "type": "CUT",
+        "from_scene_id": -1,
+        "description": "The scene fades in from black."
+      },
+      "transition_out": {
+        "type": "CUT",
+        "to_scene_id": -1,
+        "description": "The scene fades out to black."
+      },
+      "scene_metadata": {
+        "duration": 1.5,
+        "description": "A woman stands on a sidewalk, looking to the side. A man stands behind her.",
+        "key_objects": [],
+        "time_of_day": "DAY",
+        "environment": "OUTDOOR",
+        "mood": "NEUTRAL",
+        "motion_intensity": 1.5350184440612793,
+        "color_palette": [
+          "#544e52",
+          "#d1cdb9",
+          "#070404",
+          "#7b7777",
+          "#2a252d"
+        ],
+        "camera_analysis": {
+          "movement": "unknown",
+          "shot_type": {
+            "size": "MEDIUM",
+            "angle": "EYE_LEVEL",
+            "composition": "SINGLE"
+          },
+          "stability": 0.923249077796936
+        },
+        "ai_description": "A woman stands on a sidewalk, looking to the side. A man stands behind her.",
+        "key_subjects": [
+          "WOMAN"
+        ]
+      },
+      "shots": [
+        {
+          "shot": {
+            "shot_id": 1,
+            "shot_type": {
+              "size": "MEDIUM",
+              "angle": "EYE_LEVEL",
+              "composition": "SINGLE"
+            },
+            "camera_move": "unknown",
+            "framing": {
+              "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)",
+              "confidence": 0.85,
+              "details": {
+                "subject_positioning": "Centered",
+                "shot_balance": "Symmetrical",
+                "depth_layers": "3 (foreground: sun, midground: trees, background: mountains)",
+                "leading_lines": "None",
+                "confidence": 0.85,
+                "description": "Subject: Centered, Symmetrical composition, 3 (foreground: sun, midground: trees, background: mountains)"
+              }
+            },
+            "visual_focus": "WOMAN",
+            "notes": "The lighting is natural and even, with no harsh shadows. The depth of field is shallow, keeping the subject in focus while softly blurring the background. The color grading is neutral, emphasizing the colors of the scene without any particular mood enhancement.",
+            "duration_seconds": 1.5014999999999998
+          },
+          "start_time": 0.0,
+          "end_time": 1.5014999999999998
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "video_path": "dream.mp4",
+    "duration": 163.95545833333333,
+    "resolution": "1920x1080",
+    "fps": 23.976023976023978,
+    "frame_count": 3931
+  }
+}
