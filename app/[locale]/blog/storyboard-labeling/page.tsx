@@ -58,7 +58,7 @@ export default function SceneDetectionPage() {
   const t = useTranslations('SceneDetection');
   
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
+    <div className="max-w-4xl mx-auto px-6 py-12 pt-20">
       <article className="prose prose-base md:prose-lg">
         <div className="relative mb-8">
           <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20"></div>
@@ -622,7 +622,7 @@ export default function SceneDetectionPage() {
   </p>
   <div className="rounded-xl overflow-hidden border border-gray-200">
     <CdnVideo
-      src="https://cdn.curify-ai.com/video/titan.mp4"
+      src="/videos/titan.mp4"
       controls
       className="w-full"
     />
