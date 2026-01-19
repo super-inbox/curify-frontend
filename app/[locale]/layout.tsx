@@ -30,7 +30,8 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const { locale } = params;
+  // Ensure params is properly awaited before destructuring
+  const { locale } = await params;
   const session = await getServerSession(authOptions);
 
   if (!hasLocale(routing.locales, locale)) {
@@ -98,7 +99,7 @@ export default async function LocaleLayout({
     pathname === `/${locale}` ? "" : pathname.replace(`/${locale}`, "");
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />

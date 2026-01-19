@@ -34,12 +34,15 @@ export default function middleware(req: NextRequest) {
     const isDubbing = pathname === `/${locale}/video-dubbing`;
     const isCreator = pathname.startsWith(`/${locale}/creator`);
     const isLipSync = pathname.startsWith(`/${locale}/lip-sync`);
+    const isNanoBananaProPrompts = 
+      pathname === `/${locale}/nano-banana-pro-prompts` || 
+      pathname.startsWith(`/${locale}/nano-banana-pro-prompts/`);
 
     const isPublicPage =
       isRoot || isLogin || isContact || isAbout || isPricing ||
       isWorkspace || isPrivacy || isAgreement || isBlog ||
       isProjectDetail || isMagic || isBilingual || isDubbing ||
-      isCreator || isLipSync;
+      isCreator || isLipSync || isNanoBananaProPrompts;
 
     // ----- Bot detection (Googlebot, Bing, etc.) -----
     const userAgent = req.headers.get("user-agent") || "";
