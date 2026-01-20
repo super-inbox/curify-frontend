@@ -21,7 +21,8 @@ const nextConfig = {
     domains: [
       "lh3.googleusercontent.com",
       "cdn.curify-ai.com",
-      "videotranslatetest.blob.core.windows.net"
+      "videotranslatetest.blob.core.windows.net",
+      "pbs.twimg.com"
     ],
   },
 

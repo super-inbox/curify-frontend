@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker News Gallery</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f6f6ef;
+            color: #333;
+        }
+        h1 {
+            color: #ff6600;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+        }
+        .stories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .story-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .story-title {
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+        .story-title a {
+            color: #333;
+            text-decoration: none;
+        }
+        .story-title a:hover {
+            color: #ff6600;
+            text-decoration: underline;
+        }
+        .story-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .story-source {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        .refresh-btn {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .refresh-btn:hover {
+            background: #e65c00;
+        }
+        .last-updated {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .stories-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest Hacker News Stories</h1>
+    <div class="last-updated">Last updated: <span id="last-updated">Just now</span></div>
+    <button class="refresh-btn" onclick="loadStories()">🔄 Refresh Stories</button>
+    
+    <div class="stories-container" id="stories-container">
+        <!-- Stories will be loaded here by JavaScript -->
+        <div class="loading">Loading stories...</div>
+    </div>
+
+    <script>
+        // Function to format date
+        function formatDate(date) {
+            return new Date(date).toLocaleString();
+        }
+
+        // Function to load stories from the server
+        async function loadStories() {
+            const container = document.getElementById('stories-container');
+            container.innerHTML = '<div class="loading">Loading stories...</div>';
+            
+            try {
+                // In a real app, you would fetch from your API endpoint
+                // For now, we'll use the data from the database
+                const response = await fetch('/api/stories?source=hackernews&limit=10');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch stories');
+                }
+                const stories = await response.json();
+                
+                if (stories.length === 0) {
+                    container.innerHTML = '<div>No stories found. Try running the collector first.</div>';
+                    return;
+                }
+                
+                let html = '';
+                stories.forEach(story => {
+                    html += `
+                        <div class="story-card">
+                            <h3 class="story-title">
+                                <a href="${story.source_url || '#'}" target="_blank">${story.title}</a>
+                            </h3>
+                            ${story.description ? `<p>${story.description.substring(0, 150)}...</p>` : ''}
+                            <div class="story-meta">
+                                ${story.author ? `<div>👤 ${story.author}</div>` : ''}
+                                ${story.date ? `<div>📅 ${new Date(story.date).toLocaleDateString()}</div>` : ''}
+                                <div class="story-source">Hacker News</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                document.getElementById('last-updated').textContent = formatDate(new Date());
+                
+            } catch (error) {
+                console.error('Error loading stories:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        <p>Error loading stories. Make sure the server is running and try again.</p>
+                        <p><small>${error.message}</small></p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load stories when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // In a real app, you would call loadStories() here
+            // For now, we'll simulate loading some data
+            setTimeout(() => {
+                // This is just for demonstration - in a real app, you would fetch from your API
+                const stories = [
+                    {
+                        title: "Terminal UI for AWS",
+                        description: "A beautiful terminal UI for managing AWS resources",
+                        author: "huseyinbabal",
+                        date: new Date().toISOString(),
+                        source_url: "https://github.com/huseyinbabal/taws"
+                    },
+                    {
+                        title: "Lessons from 14 years at Google",
+                        description: "Key insights and learnings from over a decade at Google",
+                        author: "addyosmani",
+                        date: new Date().toISOString(),
+                        source_url: "https://addyosmani.com/blog/21-lessons/"
+                    },
+                    {
+                        title: "Logos Language Guide: Compile English to Rust",
+                        description: "A guide to the Logos language that compiles to Rust",
+                        author: "logicaffeine",
+                        date: new Date().toISOString(),
+                        source_url: "https://logicaffeine.com/guide"
+                    }
+                ];
+                
+                const container = document.getElementById('stories-container');
+                let html = '';
+                stories.forEach(story => {
+                    html += `
+                        <div class="story-card">
+                            <h3 class="story-title">
+                                <a href="${story.source_url}" target="_blank">${story.title}</a>
+                            </h3>
+                            ${story.description ? `<p>${story.description}...</p>` : ''}
+                            <div class="story-meta">
+                                ${story.author ? `<div>👤 ${story.author}</div>` : ''}
+                                <div>📅 ${new Date(story.date).toLocaleDateString()}</div>
+                                <div class="story-source">Hacker News</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                document.getElementById('last-updated').textContent = formatDate(new Date());
+            }, 500);
+        });
+    </script>
+</body>
+</html>
