@@ -10,5 +10,9 @@ export default function NanoBananaProPromptsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className="pt-16 min-h-screen bg-white">
+      {children}
+    </div>
+  );
 }
