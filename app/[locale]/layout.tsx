@@ -175,7 +175,7 @@ export default async function LocaleLayout({
         />
       </head>
 
-      <body>
+      <body suppressHydrationWarning>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <AppWrapper user={null}>
