@@ -18,6 +18,8 @@ type Prompt = {
   authorHandle: string | null;
   likes: number;
   retweets: number;
+  layoutCategory?: string | null;
+  domainCategory?: string | null;
 };
 
 type Pagination = {
@@ -29,26 +31,15 @@ type Pagination = {
   hasPrevPage: boolean;
 };
 
-type PaginatedResponse = {
-  data: Prompt[];
-  pagination: Pagination;
-};
-
-type LayoutCategory = {
-  layout_category: string;
+interface LayoutCategory {
+  category: string;
   count: number;
-};
+}
 
-type DomainCategory = {
-  layout_category: string;
+interface DomainCategory {
+  category: string;
   count: number;
-};
-
-type MetadataResponse = {
-  sources: string[];
-  layoutCategories: LayoutCategory[];
-  domainCategories: DomainCategory[];
-};
+}
 
 const formatDate = (dateString: string) => {
   const options: Intl.DateTimeFormatOptions = { 
@@ -141,9 +132,9 @@ function PromptImage({ imageUrl, title }: { imageUrl: string | null; title: stri
 }
 
 const NanoBananaProPromptsPage = () => {
+  const [allPrompts, setAllPrompts] = useState<Prompt[]>([]);
   const [prompts, setPrompts] = useState<Prompt[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [copiedId, setCopiedId] = useState<number | null>(null);
   const [sourceFilter, setSourceFilter] = useState<string>('all');
@@ -160,6 +151,7 @@ const NanoBananaProPromptsPage = () => {
     hasNextPage: false,
     hasPrevPage: false
   });
+  const [displayedCount, setDisplayedCount] = useState(20);
 
   const copyToClipboard = (text: string, id: number) => {
     navigator.clipboard.writeText(text);
@@ -167,75 +159,137 @@ const NanoBananaProPromptsPage = () => {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const fetchPrompts = useCallback(async (page: number = 1, append: boolean = false) => {
-    try {
-      if (page === 1) {
-        setIsLoading(true);
-      } else {
-        setIsLoadingMore(true);
-      }
-      
-      const params = new URLSearchParams({
-        page: page.toString(),
-        limit: '20',
-      });
-
-      // Add search and filter parameters
-      if (searchTerm) params.append('search', searchTerm);
-      if (sourceFilter !== 'all') params.append('source', sourceFilter);
-      if (domainFilter !== 'all') params.append('domain_category', domainFilter);
-      if (layoutFilter !== 'all') params.append('layout_category', layoutFilter);
-
-      const response = await fetch(`/api/prompts?${params}`);
-      const data: PaginatedResponse = await response.json();
-      
-      if (response.ok) {
-        setPrompts(prev => append ? [...prev, ...data.data] : data.data);
-        setPagination(data.pagination);
-      } else {
-        console.error('Failed to fetch prompts:', data);
-      }
-    } catch (error) {
-      console.error('Error fetching prompts:', error);
-    } finally {
-      setIsLoading(false);
-      setIsLoadingMore(false);
-    }
-  }, [searchTerm, sourceFilter, domainFilter, layoutFilter]);
-
-  // Fetch metadata (sources and layout categories) on mount
+  // Load JSON data on mount
   useEffect(() => {
-    const fetchMetadata = async () => {
+    const loadData = async () => {
       try {
-        const response = await fetch('/api/prompts?metadata=true');
-        const data: MetadataResponse = await response.json();
+        setIsLoading(true);
+        const response = await fetch('/data/nanobanana.json');
         
-        if (response.ok) {
-          setSources(['all', ...data.sources]);
-          setLayoutCategories(data.layoutCategories || []);
-          setDomainCategories(data.domainCategories || []);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
+        const responseData = await response.json();
+        
+        // Extract the prompts array from the response
+        const promptsData = responseData?.prompts;
+        
+        // Ensure promptsData is an array
+        if (!Array.isArray(promptsData)) {
+          throw new Error('Expected a "prompts" array in the response but received a different data type');
+        }
+        
+        // Ensure each item has required fields
+        const validPrompts = promptsData.filter((item): item is Prompt => 
+          item && 
+          typeof item.id === 'number' && 
+          typeof item.title === 'string' &&
+          typeof item.promptText === 'string'
+        );
+        
+        if (validPrompts.length === 0) {
+          console.warn('No valid prompts found in the data');
+        }
+        
+        setAllPrompts(validPrompts);
+        
+        // Extract unique sources
+        const uniqueSources = Array.from(
+          new Set(validPrompts.map(p => p.sourceType).filter(Boolean))
+        ) as string[];
+        setSources(['all', ...uniqueSources]);
+        
+        // Calculate layout categories
+        const layoutCounts: Record<string, number> = {};
+        validPrompts.forEach(p => {
+          if (p.layoutCategory) {
+            layoutCounts[p.layoutCategory] = (layoutCounts[p.layoutCategory] || 0) + 1;
+          }
+        });
+        const layoutCats = Object.entries(layoutCounts).map(([category, count]) => ({ category, count }));
+        setLayoutCategories(layoutCats);
+        
+        // Calculate domain categories
+        const domainCounts: Record<string, number> = {};
+        validPrompts.forEach(p => {
+          if (p.domainCategory) {
+            domainCounts[p.domainCategory] = (domainCounts[p.domainCategory] || 0) + 1;
+          }
+        });
+        const domainCats = Object.entries(domainCounts).map(([category, count]) => ({ category, count }));
+        setDomainCategories(domainCats);
+        
       } catch (error) {
-        console.error('Error fetching metadata:', error);
+        console.error('Error loading prompts:', error);
+        // You might want to set some error state here to show to the user
+      } finally {
+        setIsLoading(false);
       }
     };
     
-    fetchMetadata();
+    loadData();
   }, []);
 
-  // Debounced search effect
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      fetchPrompts(1);
-    }, 500); // Wait 500ms after user stops typing
-
-    return () => clearTimeout(timeoutId);
-  }, [searchTerm, sourceFilter, domainFilter, layoutFilter, fetchPrompts]);
-  
-  const loadMore = () => {
-    if (pagination.hasNextPage && !isLoadingMore) {
-      fetchPrompts(pagination.page + 1, true);
+  // Filter and paginate prompts
+  const filterPrompts = useCallback(() => {
+    let filtered = [...allPrompts];
+    
+    // Apply search filter
+    if (searchTerm) {
+      const search = searchTerm.toLowerCase();
+      filtered = filtered.filter(p => 
+        p.title?.toLowerCase().includes(search) ||
+        p.description?.toLowerCase().includes(search) ||
+        p.promptText?.toLowerCase().includes(search) ||
+        p.author?.toLowerCase().includes(search)
+      );
     }
+    
+    // Apply source filter
+    if (sourceFilter !== 'all') {
+      filtered = filtered.filter(p => p.sourceType === sourceFilter);
+    }
+    
+    // Apply domain filter
+    if (domainFilter !== 'all') {
+      filtered = filtered.filter(p => p.domainCategory === domainFilter);
+    }
+    
+    // Apply layout filter
+    if (layoutFilter !== 'all') {
+      filtered = filtered.filter(p => p.layoutCategory === layoutFilter);
+    }
+    
+    // Update pagination
+    const total = filtered.length;
+    const totalPages = Math.ceil(total / 20);
+    const displayed = Math.min(displayedCount, total);
+    
+    setPagination({
+      page: Math.ceil(displayed / 20),
+      limit: 20,
+      total,
+      totalPages,
+      hasNextPage: displayed < total,
+      hasPrevPage: false
+    });
+    
+    // Return paginated results
+    return filtered.slice(0, displayedCount);
+  }, [allPrompts, searchTerm, sourceFilter, domainFilter, layoutFilter, displayedCount]);
+
+  // Update prompts when filters change
+  useEffect(() => {
+    setDisplayedCount(20); // Reset to first page
+  }, [searchTerm, sourceFilter, domainFilter, layoutFilter]);
+
+  useEffect(() => {
+    setPrompts(filterPrompts());
+  }, [filterPrompts]);
+
+  const loadMore = () => {
+    setDisplayedCount(prev => prev + 20);
   };
 
   if (isLoading) {
@@ -277,17 +331,17 @@ const NanoBananaProPromptsPage = () => {
           <div className="mb-8">
             <h2 className="text-lg font-medium text-gray-900 mb-4">Domain Categories</h2>
             <div className="flex flex-wrap gap-3">
-              {domainCategories.map(({ layout_category, count }) => (
+              {domainCategories.map(({ category, count }) => (
                 <div 
-                  key={layout_category}
+                  key={category}
                   className={`flex items-center px-3 py-2 rounded-lg shadow-sm border ${
-                    domainFilter === layout_category 
+                    domainFilter === category 
                       ? 'bg-indigo-100 border-indigo-300' 
                       : 'bg-white border-gray-200 hover:bg-indigo-50'
                   } cursor-pointer transition-colors`}
-                  onClick={() => setDomainFilter(prev => prev === layout_category ? 'all' : layout_category)}
+                  onClick={() => setDomainFilter(prev => prev === category ? 'all' : category)}
                 >
-                  <span className="font-medium text-gray-900">{layout_category}</span>
+                  <span className="font-medium text-gray-900">{category}</span>
                   <span className="ml-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-0.5 rounded-full">
                     {count}
                   </span>
@@ -302,17 +356,17 @@ const NanoBananaProPromptsPage = () => {
           <div className="mb-4">
             <h2 className="text-lg font-medium text-gray-900 mb-4">Layout Categories</h2>
             <div className="flex flex-wrap gap-3">
-              {layoutCategories.map(({ layout_category, count }) => (
+              {layoutCategories.map(({ category, count }) => (
                 <div 
-                  key={layout_category}
+                  key={category}
                   className={`flex items-center px-3 py-2 rounded-lg shadow-sm border ${
-                    layoutFilter === layout_category 
+                    layoutFilter === category 
                       ? 'bg-indigo-100 border-indigo-300' 
                       : 'bg-white border-gray-200 hover:bg-indigo-50'
                   } cursor-pointer transition-colors`}
-                  onClick={() => setLayoutFilter(prev => prev === layout_category ? 'all' : layout_category)}
+                  onClick={() => setLayoutFilter(prev => prev === category ? 'all' : category)}
                 >
-                  <span className="font-medium text-gray-900">{layout_category}</span>
+                  <span className="font-medium text-gray-900">{category}</span>
                   <span className="ml-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-0.5 rounded-full">
                     {count}
                   </span>
@@ -541,20 +595,9 @@ const NanoBananaProPromptsPage = () => {
               <div className="mt-8 text-center">
                 <button
                   onClick={loadMore}
-                  disabled={isLoadingMore}
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  {isLoadingMore ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Loading...
-                    </>
-                  ) : (
-                    `Load More (${prompts.length} of ${pagination.total})`
-                  )}
+                  Load More ({prompts.length} of {pagination.total})
                 </button>
               </div>
             )}
