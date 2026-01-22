@@ -42,10 +42,10 @@ interface DomainCategory {
 }
 
 const formatDate = (dateString: string) => {
-  const options: Intl.DateTimeFormatOptions = { 
-    year: 'numeric', 
-    month: 'short', 
-    day: 'numeric' 
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
   };
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
@@ -61,72 +61,60 @@ const getSourceBadgeClass = (sourceType: string) => {
 
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 
-function PromptImage({ imageUrl, title }: { imageUrl: string | null; title: string }) {
-  const [imgSrc, setImgSrc] = useState(imageUrl || '');
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-  const placeholderImage = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1064&auto=format&fit=crop';
-
-  useEffect(() => {
-    if (!imageUrl) {
-      setHasError(true);
-      setIsLoading(false);
-      return;
-    }
-
-    const correctedImageUrl = imageUrl.replace('/static/images/', '/images/');
-
-    const img = new Image();
-    img.src = correctedImageUrl;
-    
-    img.onload = () => {
-      setImgSrc(correctedImageUrl);
-      setIsLoading(false);
-      setHasError(false);
-    };
-    
-    img.onerror = () => {
-      setImgSrc(placeholderImage);
-      setIsLoading(false);
-      setHasError(true);
-    };
-
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
-  }, [imageUrl]);
-
-  if (isLoading) {
-    return (
-      <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
-        <svg className="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      </div>
-    );
+const normalizeCdnImageUrl = (imageUrl: string | null): string => {
+  if (!imageUrl) {
+    return '/images/default-prompt-image.jpg';
   }
 
+  // Replace legacy path segment if present
+  if (imageUrl.includes('static/images/')) {
+    return imageUrl.replace('/static/images/', '/images/');
+  }
+
+  // If it's a full URL (http/https), return as is
+  if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    return imageUrl;
+  }
+
+  // If it already has /images/ path, return as is
+  if (imageUrl.startsWith('/images/')) {
+    return imageUrl;
+  }
+
+  // If it's just a filename or relative path without /images/
+  // prepend /images/
+  if (!imageUrl.startsWith('/')) {
+    return `/images/${imageUrl}`;
+  }
+
+  // If it starts with / but doesn't have /images/
+  if (!imageUrl.includes('/images/')) {
+    return imageUrl.replace('/', '/images/');
+  }
+
+  return imageUrl;
+};
+
+function PromptImage({ imageUrl, title }: { imageUrl: string | null; title: string }) {
+  const placeholderImage =
+    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1064&auto=format&fit=crop';
+
+  const normalizedUrl = normalizeCdnImageUrl(imageUrl);
+  const [hasError, setHasError] = useState(false);
+
+  // Don't preload - let CdnImage handle everything including CDN routing
   return (
     <div className="relative w-full h-full overflow-hidden">
       <CdnImage
-        src={hasError ? placeholderImage : imgSrc}
+        src={hasError ? placeholderImage : normalizedUrl}
         alt={title}
         fill
         className="object-cover hover:scale-105 transition-transform duration-300"
-        onLoadingComplete={() => setIsLoading(false)}
         onError={() => {
+          console.error('CdnImage failed to load:', normalizedUrl);
           setHasError(true);
-          setImgSrc(placeholderImage);
         }}
       />
-      {isLoading && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-          <svg className="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-        </div>
-      )}
     </div>
   );
 }
@@ -165,41 +153,41 @@ const NanoBananaProPromptsPage = () => {
       try {
         setIsLoading(true);
         const response = await fetch('/data/nanobanana.json');
-        
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const responseData = await response.json();
-        
+
         // Extract the prompts array from the response
         const promptsData = responseData?.prompts;
-        
+
         // Ensure promptsData is an array
         if (!Array.isArray(promptsData)) {
           throw new Error('Expected a "prompts" array in the response but received a different data type');
         }
-        
+
         // Ensure each item has required fields
-        const validPrompts = promptsData.filter((item): item is Prompt => 
-          item && 
-          typeof item.id === 'number' && 
+        const validPrompts = promptsData.filter((item): item is Prompt =>
+          item &&
+          typeof item.id === 'number' &&
           typeof item.title === 'string' &&
           typeof item.promptText === 'string'
         );
-        
+
         if (validPrompts.length === 0) {
           console.warn('No valid prompts found in the data');
         }
-        
+
         setAllPrompts(validPrompts);
-        
+
         // Extract unique sources
         const uniqueSources = Array.from(
           new Set(validPrompts.map(p => p.sourceType).filter(Boolean))
         ) as string[];
         setSources(['all', ...uniqueSources]);
-        
+
         // Calculate layout categories
         const layoutCounts: Record<string, number> = {};
         validPrompts.forEach(p => {
@@ -209,7 +197,7 @@ const NanoBananaProPromptsPage = () => {
         });
         const layoutCats = Object.entries(layoutCounts).map(([category, count]) => ({ category, count }));
         setLayoutCategories(layoutCats);
-        
+
         // Calculate domain categories
         const domainCounts: Record<string, number> = {};
         validPrompts.forEach(p => {
@@ -219,53 +207,52 @@ const NanoBananaProPromptsPage = () => {
         });
         const domainCats = Object.entries(domainCounts).map(([category, count]) => ({ category, count }));
         setDomainCategories(domainCats);
-        
+
       } catch (error) {
         console.error('Error loading prompts:', error);
-        // You might want to set some error state here to show to the user
       } finally {
         setIsLoading(false);
       }
     };
-    
+
     loadData();
   }, []);
 
   // Filter and paginate prompts
   const filterPrompts = useCallback(() => {
     let filtered = [...allPrompts];
-    
+
     // Apply search filter
     if (searchTerm) {
       const search = searchTerm.toLowerCase();
-      filtered = filtered.filter(p => 
+      filtered = filtered.filter(p =>
         p.title?.toLowerCase().includes(search) ||
         p.description?.toLowerCase().includes(search) ||
         p.promptText?.toLowerCase().includes(search) ||
         p.author?.toLowerCase().includes(search)
       );
     }
-    
+
     // Apply source filter
     if (sourceFilter !== 'all') {
       filtered = filtered.filter(p => p.sourceType === sourceFilter);
     }
-    
+
     // Apply domain filter
     if (domainFilter !== 'all') {
       filtered = filtered.filter(p => p.domainCategory === domainFilter);
     }
-    
+
     // Apply layout filter
     if (layoutFilter !== 'all') {
       filtered = filtered.filter(p => p.layoutCategory === layoutFilter);
     }
-    
+
     // Update pagination
     const total = filtered.length;
     const totalPages = Math.ceil(total / 20);
     const displayed = Math.min(displayedCount, total);
-    
+
     setPagination({
       page: Math.ceil(displayed / 20),
       limit: 20,
@@ -274,7 +261,7 @@ const NanoBananaProPromptsPage = () => {
       hasNextPage: displayed < total,
       hasPrevPage: false
     });
-    
+
     // Return paginated results
     return filtered.slice(0, displayedCount);
   }, [allPrompts, searchTerm, sourceFilter, domainFilter, layoutFilter, displayedCount]);
@@ -311,7 +298,7 @@ const NanoBananaProPromptsPage = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Nano Banana Pro Prompts</h1>
           <p className="text-lg text-gray-600">Discover and explore creative prompts for your next project</p>
         </div>
-        
+
         {/* Stats */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 mb-8">
           <div className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
@@ -332,14 +319,14 @@ const NanoBananaProPromptsPage = () => {
             <h2 className="text-lg font-medium text-gray-900 mb-4">Domain Categories</h2>
             <div className="flex flex-wrap gap-3">
               {domainCategories.map(({ category, count }) => (
-                <div 
+                <div
                   key={category}
                   className={`flex items-center px-3 py-2 rounded-lg shadow-sm border ${
-                    domainFilter === category 
-                      ? 'bg-indigo-100 border-indigo-300' 
+                    domainFilter === category
+                      ? 'bg-indigo-100 border-indigo-300'
                       : 'bg-white border-gray-200 hover:bg-indigo-50'
                   } cursor-pointer transition-colors`}
-                  onClick={() => setDomainFilter(prev => prev === category ? 'all' : category)}
+                  onClick={() => setDomainFilter(prev => (prev === category ? 'all' : category))}
                 >
                   <span className="font-medium text-gray-900">{category}</span>
                   <span className="ml-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-0.5 rounded-full">
@@ -350,21 +337,21 @@ const NanoBananaProPromptsPage = () => {
             </div>
           </div>
         )}
-        
+
         {/* Layout Categories */}
         {layoutCategories.length > 0 && (
           <div className="mb-4">
             <h2 className="text-lg font-medium text-gray-900 mb-4">Layout Categories</h2>
             <div className="flex flex-wrap gap-3">
               {layoutCategories.map(({ category, count }) => (
-                <div 
+                <div
                   key={category}
                   className={`flex items-center px-3 py-2 rounded-lg shadow-sm border ${
-                    layoutFilter === category 
-                      ? 'bg-indigo-100 border-indigo-300' 
+                    layoutFilter === category
+                      ? 'bg-indigo-100 border-indigo-300'
                       : 'bg-white border-gray-200 hover:bg-indigo-50'
                   } cursor-pointer transition-colors`}
-                  onClick={() => setLayoutFilter(prev => prev === category ? 'all' : category)}
+                  onClick={() => setLayoutFilter(prev => (prev === category ? 'all' : category))}
                 >
                   <span className="font-medium text-gray-900">{category}</span>
                   <span className="ml-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-0.5 rounded-full">
@@ -375,7 +362,7 @@ const NanoBananaProPromptsPage = () => {
             </div>
           </div>
         )}
-        
+
         {/* Filters */}
         <div className="bg-white shadow rounded-lg p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -395,7 +382,7 @@ const NanoBananaProPromptsPage = () => {
                 />
               </div>
             </div>
-            
+
             <div>
               <label htmlFor="source" className="block text-sm font-medium text-gray-700 mb-1">Source</label>
               <select
@@ -411,15 +398,15 @@ const NanoBananaProPromptsPage = () => {
                 ))}
               </select>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Active Filters</label>
               <div className="flex items-center space-x-2">
                 {domainFilter !== 'all' && (
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
                     Domain: {domainFilter}
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       className="ml-1.5 inline-flex items-center justify-center h-4 w-4 rounded-full text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-indigo-500 focus:text-white"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -436,8 +423,8 @@ const NanoBananaProPromptsPage = () => {
                 {layoutFilter !== 'all' && (
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
                     Layout: {layoutFilter}
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       className="ml-1.5 inline-flex items-center justify-center h-4 w-4 rounded-full text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-indigo-500 focus:text-white"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -455,7 +442,7 @@ const NanoBananaProPromptsPage = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Prompts Grid */}
         {prompts.length === 0 ? (
           <div className="text-center py-12 bg-white rounded-lg shadow">
@@ -498,7 +485,7 @@ const NanoBananaProPromptsPage = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
@@ -511,12 +498,12 @@ const NanoBananaProPromptsPage = () => {
                           {prompt.date ? formatDate(prompt.date) : 'Unknown date'}
                         </span>
                       </div>
-                      
+
                       <h3 className="text-lg font-medium text-gray-900 mb-2">{prompt.title}</h3>
                       <p className="text-sm text-gray-600 line-clamp-3 mb-4">
                         {prompt.description || 'No description available'}
                       </p>
-                      
+
                       {prompt.promptText && (
                         <div className="mt-4">
                           <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200">
@@ -545,7 +532,7 @@ const NanoBananaProPromptsPage = () => {
                           </div>
                         </div>
                       )}
-                      
+
                       {prompt.category && prompt.category !== 'NANO BANANA PRO' && (
                         <div className="mt-3">
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
@@ -554,7 +541,7 @@ const NanoBananaProPromptsPage = () => {
                         </div>
                       )}
                     </div>
-                    
+
                     <div className="mt-4 pt-4 border-t border-gray-200">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
@@ -567,9 +554,9 @@ const NanoBananaProPromptsPage = () => {
                         </div>
                         <div className="flex space-x-2">
                           {prompt.sourceUrl && (
-                            <a 
-                              href={prompt.sourceUrl} 
-                              target="_blank" 
+                            <a
+                              href={prompt.sourceUrl}
+                              target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
@@ -589,7 +576,7 @@ const NanoBananaProPromptsPage = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Load More Button */}
             {pagination.hasNextPage && (
               <div className="mt-8 text-center">
