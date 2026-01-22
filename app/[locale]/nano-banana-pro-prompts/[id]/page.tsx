@@ -2,28 +2,35 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import path from 'path';
-import Database from 'better-sqlite3';
+import fs from 'fs';
 import CopyButton from './CopyButton';
 import CdnImage from '../../_components/CdnImage';
 
-interface DatabasePrompt {
+interface JsonPrompt {
   id: number;
-  source_type: string;
-  source_id: string;
   title: string | null;
   description: string | null;
-  prompt_text: string | null;
+  promptText: string;
   author: string | null;
-  author_handle: string | null;
+  authorHandle: string | null;
   date: string | null;
   category: string | null;
-  featured: number;
-  original: number;
-  image_url: string | null;
-  source_url: string | null;
+  sourceUrl: string | null;
+  sourceType: string | null;
+  imageUrl: string | null;
   likes: number | null;
   retweets: number | null;
-  created_at: string;
+}
+
+interface JsonData {
+  prompts: JsonPrompt[];
+  metadata: {
+    sources: string[];
+    layoutCategories: Array<{ category: string; count: number }>;
+    domainCategories: Array<{ category: string; count: number }>;
+    total: number;
+    lastUpdated: string;
+  };
 }
 
 type Prompt = {
@@ -38,19 +45,17 @@ type Prompt = {
   source_type: string;
   image_url: string;
   author_handle?: string;
-  likes?: number;
-  retweets?: number;
+  likes: number;
+  retweets: number;
 };
 
 const fetchPrompt = async (id: string): Promise<Prompt | null> => {
-  let db: Database.Database | null = null;
-  
   try {
-    const dbPath = path.join(process.cwd(), 'app', '[locale]', 'nano-banana-pro-prompts', 'nano_banana.db');
-    db = new Database(dbPath, { readonly: true });
+    const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
+    const fileContent = fs.readFileSync(jsonPath, 'utf-8');
+    const data: JsonData = JSON.parse(fileContent);
     
-    const stmt = db.prepare<[number], DatabasePrompt>('SELECT * FROM prompts WHERE id = ?');
-    const prompt = stmt.get(parseInt(id));
+    const prompt = data.prompts.find(p => p.id.toString() === id);
     
     if (!prompt) return null;
     
@@ -58,32 +63,26 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
       id: prompt.id.toString(),
       title: prompt.title || 'Untitled Prompt',
       description: prompt.description || '',
-      prompt_text: prompt.prompt_text || '',
+      prompt_text: prompt.promptText || '',
       author: prompt.author || 'Anonymous',
-      author_handle: prompt.author_handle || undefined,
+      author_handle: prompt.authorHandle || undefined,
       date: prompt.date || new Date().toISOString().split('T')[0],
       category: prompt.category || 'Uncategorized',
-      source_url: prompt.source_url || '#',
-      source_type: prompt.source_type || 'unknown',
-      image_url: prompt.image_url 
-        ? prompt.image_url.includes('static/images/')
-          ? prompt.image_url.replace('/static/images/', '/images/')
-          : prompt.image_url.startsWith('/')
-            ? prompt.image_url
-            : `/${prompt.image_url}`
+      source_url: prompt.sourceUrl || '#',
+      source_type: prompt.sourceType || 'unknown',
+      image_url: prompt.imageUrl 
+        ? prompt.imageUrl.includes('static/images/')
+          ? prompt.imageUrl.replace('/static/images/', '/images/')
+          : prompt.imageUrl.startsWith('/')
+            ? prompt.imageUrl
+            : `/${prompt.imageUrl}`
         : '/images/default-prompt-image.jpg',
-      likes: prompt.likes || 0,
-      retweets: prompt.retweets || 0
+      likes: prompt.likes ?? 0,
+      retweets: prompt.retweets ?? 0
     };
   } catch (error) {
     console.error('Error fetching prompt:', error instanceof Error ? error.message : 'Unknown error');
     return null;
-  } finally {
-    try {
-      db?.close();
-    } catch (e) {
-      console.error('Error closing database:', e);
-    }
   }
 };
 
