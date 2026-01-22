@@ -1,23 +1,64 @@
 import { Metadata } from 'next';
 import NanoBananaProPromptsClient from './NanoBananaProPromptsClient';
+import fs from 'fs';
+import path from 'path';
+
+export const runtime = 'nodejs'; // required for fs
+
+type JsonData = {
+  prompts?: any[];
+};
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://curify-ai.com';
+const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE || 'https://cdn.curify-ai.com';
+
+function readNanoBananaJson(): JsonData {
+  const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
+  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
+  return JSON.parse(fileContent);
+}
+
+function normalizeCdnImageUrl(imageUrl: string | null | undefined): string {
+  if (!imageUrl) return `${CDN_BASE}/images/default-prompt-image.jpg`;
+
+  let url = String(imageUrl).trim();
+
+  // Already absolute
+  if (/^https?:\/\//i.test(url)) return url;
+
+  // Legacy path segment
+  if (url.includes('static/images/')) {
+    // Ensure it becomes absolute on CDN
+    const replaced = url.replace('/static/images/', '/images/');
+    return replaced.startsWith('/')
+      ? `${CDN_BASE}${replaced}`
+      : `${CDN_BASE}/${replaced}`;
+  }
+
+  // If it's "/images/xxx.jpg" or "images/xxx.jpg" or just "xxx.jpg"
+  url = url.replace(/^\/+/, ''); // remove leading slashes
+
+  if (url.startsWith('images/')) {
+    return `${CDN_BASE}/${url}`;
+  }
+
+  return `${CDN_BASE}/images/${url}`;
+}
 
 // Generate metadata for SEO
 export async function generateMetadata(): Promise<Metadata> {
-  // Fetch prompt count for dynamic metadata
   let totalPrompts = 0;
+
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/data/nanobanana.json`, {
-      cache: 'no-store'
-    });
-    const data = await response.json();
-    totalPrompts = data?.prompts?.length || 0;
+    const data = readNanoBananaJson();
+    totalPrompts = Array.isArray(data?.prompts) ? data!.prompts!.length : 0;
   } catch (error) {
-    console.error('Error fetching prompts for metadata:', error);
+    console.error('Error reading prompts for metadata:', error);
   }
 
   const title = 'Nano Banana Pro Prompts - Discover Creative AI Prompts';
   const description = `Explore ${totalPrompts}+ curated AI prompts from top creators. Find inspiration for your next project with prompts for image generation, text creation, and more.`;
-  const url = `${process.env.NEXT_PUBLIC_SITE_URL}/nano-banana-pro-prompts`;
+  const url = `${SITE_URL}/nano-banana-pro-prompts`;
 
   return {
     title,
@@ -32,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'midjourney prompts',
       'prompt library',
       'AI tools',
-      'creative AI'
+      'creative AI',
     ],
     authors: [{ name: 'Nano Banana' }],
     creator: 'Nano Banana',
@@ -45,7 +86,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: 'Nano Banana Pro Prompts',
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-prompts.jpg`,
+          url: `${SITE_URL}/images/og-prompts.jpg`,
           width: 1200,
           height: 630,
           alt: 'Nano Banana Pro Prompts - AI Prompt Library',
@@ -56,7 +97,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title,
       description,
-      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/images/og-prompts.jpg`],
+      images: [`${SITE_URL}/images/og-prompts.jpg`],
       creator: '@nanobanana',
     },
     robots: {
@@ -76,22 +117,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-// Server component that fetches initial data
+// Server component that fetches initial data (from filesystem, not HTTP)
 export default async function NanoBananaProPromptsPage() {
-  let initialData = null;
-  let error = null;
+  let initialData: any[] = [];
+  let error: string | null = null;
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/data/nanobanana.json`, {
-      cache: 'no-store', // Use 'force-cache' if data doesn't change often
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const responseData = await response.json();
-    initialData = responseData?.prompts || [];
+    const data = readNanoBananaJson();
+    initialData = Array.isArray(data?.prompts) ? data.prompts! : [];
   } catch (err) {
     console.error('Error loading initial prompts:', err);
     error = err instanceof Error ? err.message : 'Failed to load prompts';
@@ -103,31 +136,32 @@ export default async function NanoBananaProPromptsPage() {
     '@type': 'CollectionPage',
     name: 'Nano Banana Pro Prompts',
     description: 'A curated collection of creative AI prompts for image generation, text creation, and more',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/nano-banana-pro-prompts`,
+    url: `${SITE_URL}/nano-banana-pro-prompts`,
     publisher: {
       '@type': 'Organization',
       name: 'Nano Banana',
       logo: {
         '@type': 'ImageObject',
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/logo.png`,
+        url: `${SITE_URL}/images/logo.png`,
       },
     },
-    numberOfItems: initialData?.length || 0,
-    itemListElement: initialData?.slice(0, 10).map((prompt: any, index: number) => ({
+    numberOfItems: initialData.length,
+    itemListElement: initialData.slice(0, 10).map((prompt: any, index: number) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
         '@type': 'CreativeWork',
-        name: prompt.title,
-        description: prompt.description || 'AI creative prompt',
+        name: prompt?.title || 'Untitled Prompt',
+        description: prompt?.description || 'AI creative prompt',
         author: {
           '@type': 'Person',
-          name: prompt.author || 'Unknown',
+          name: prompt?.author || 'Unknown',
         },
-        datePublished: prompt.date,
-        image: prompt.imageUrl ? `${process.env.NEXT_PUBLIC_SITE_URL}${prompt.imageUrl}` : undefined,
+        datePublished: prompt?.date || undefined,
+        // Use absolute, valid image URL for SEO
+        image: normalizeCdnImageUrl(prompt?.imageUrl),
       },
-    })) || [],
+    })),
   };
 
   return (
@@ -137,7 +171,7 @@ export default async function NanoBananaProPromptsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
+
       {/* Client component with initial data */}
       <NanoBananaProPromptsClient initialData={initialData} error={error} />
     </>
