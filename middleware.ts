@@ -38,11 +38,15 @@ export default function middleware(req: NextRequest) {
       pathname === `/${locale}/nano-banana-pro-prompts` || 
       pathname.startsWith(`/${locale}/nano-banana-pro-prompts/`);
 
+    const isInspirationHub =
+    pathname === `/${locale}/inspiration-hub` || 
+    pathname.startsWith(`/${locale}/inspiration-hub/`);
+
     const isPublicPage =
       isRoot || isLogin || isContact || isAbout || isPricing ||
       isWorkspace || isPrivacy || isAgreement || isBlog ||
       isProjectDetail || isMagic || isBilingual || isDubbing ||
-      isCreator || isLipSync || isNanoBananaProPrompts;
+      isCreator || isLipSync || isNanoBananaProPrompts || isInspirationHub;
 
     // ----- Bot detection (Googlebot, Bing, etc.) -----
     const userAgent = req.headers.get("user-agent") || "";
