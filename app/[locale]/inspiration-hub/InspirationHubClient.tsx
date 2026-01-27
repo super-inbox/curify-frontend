@@ -125,21 +125,39 @@ function CardBody({ card }: { card: Card }) {
           {card?.signal?.summary}
         </p>
 
-        {card?.signal?.sources?.length ? (
-          <div className="mt-2 flex flex-wrap gap-2">
-            {card.signal.sources.slice(0, 3).map((s: any, idx: number) => (
-              <a
-                key={`${s.url}-${idx}`}
-                href={s.url}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600 hover:bg-neutral-100"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
-        ) : null}
+        // inside CardBody, replace the sources render block with:
+
+{card?.signal?.sources?.length ? (
+  <div className="mt-2 flex flex-wrap gap-2">
+    {card.signal.sources.slice(0, 4).map((s: any, idx: number) => {
+      const key = `${s.label}-${idx}`;
+      if (s.url) {
+        return (
+          <a
+            key={key}
+            href={s.url}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600 hover:bg-neutral-100"
+          >
+            {s.label}
+          </a>
+        );
+      }
+      return (
+        <span
+          key={key}
+          className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600"
+        >
+          {s.label}
+        </span>
+      );
+    })}
+  </div>
+) : null}
+
+
+        
       </div>
 
       {/* Creator Lens */}

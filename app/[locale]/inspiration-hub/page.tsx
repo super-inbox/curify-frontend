@@ -1,61 +1,55 @@
+// app/[locale]/inspiration-hub/page.tsx
 import type { Metadata } from "next";
 import InspirationHubClient from "./InspirationHubClient";
-import fs from "node:fs/promises";
-import path from "node:path";
-
-type Feed = { items: any[] };
+import { inspirationService } from "@/services/inspiration";
+import { mapDTOToUICard } from "@/services/inspirationMapper";
 
 export const metadata: Metadata = {
   title: "Daily Inspiration Hub | Curify",
   description:
     "A curated feed of signals → creator angles → hooks → production notes. Discover ready-to-use inspiration cards for short-form content.",
-  alternates: {
-    canonical: "/inspiration-hub"
-  },
+  alternates: { canonical: "/inspiration-hub" },
   openGraph: {
     title: "Daily Inspiration Hub | Curify",
     description:
       "Curated inspiration cards: signal, creator lens, hook, and production notes.",
     url: "/inspiration-hub",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Daily Inspiration Hub | Curify",
     description:
-      "Curated inspiration cards for creators: signal → angle → hook → production."
-  }
+      "Curated inspiration cards for creators: signal → angle → hook → production.",
+  },
 };
 
-async function loadFeed(): Promise<Feed> {
-  const filePath = path.join(process.cwd(), "public", "data", "inspiration.json");
-  const raw = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(raw) as Feed;
-}
-
 export default async function Page() {
-  const feed = await loadFeed();
-  const cards = (feed.items || [])
-    .filter((x) => x.status === "PUBLISHED" && x.featured)
-    .sort((a, b) => (a.rank ?? 9999) - (b.rank ?? 9999));
+  // 1) Fetch DTOs from backend
+  const rows = await inspirationService.getCards();
 
-  // Minimal JSON-LD: ItemList of CreativeWork
+  // 2) Filter for public display (MVP: only PUBLISHED)
+  const cards = rows
+    .filter((r) => r.status === "PUBLISHED")
+    .map(mapDTOToUICard);
+
+  // JSON-LD: ItemList of CreativeWork
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Daily Inspiration Hub",
-    itemListElement: cards.map((c: any, idx: number) => ({
+    itemListElement: cards.slice(0, 50).map((c, idx) => ({
       "@type": "ListItem",
       position: idx + 1,
       item: {
         "@type": "CreativeWork",
-        name: c?.hook?.text?.replaceAll("“", "").replaceAll("”", "") || c.title || c.id,
+        name: (c?.hook?.text || c.id).replaceAll("“", "").replaceAll("”", ""),
         inLanguage: c.lang || "zh",
         description: c?.signal?.summary || c?.translation?.tag || "",
         url: `/inspiration-hub#${c.id}`,
-        image: (c?.visual?.images || []).map((img: any) => img.url)
-      }
-    }))
+        // Images intentionally omitted for now (per your request)
+      },
+    })),
   };
 
   return (
@@ -65,8 +59,7 @@ export default async function Page() {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      <main className="mx-auto max-w-6xl px-4 py-16">
+      <main className="mx-auto max-w-6xl px-4 pt-20 pb-10">
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
             Daily Inspiration Hub
