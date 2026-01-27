@@ -1,0 +1,178 @@
+{
+  "items": [
+    {
+      "id": "card_metaverse_social",
+      "lang": "zh",
+      "status": "PUBLISHED",
+      "featured": true,
+      "rank": 1,
+      "createdAt": "2026-01-26T09:00:00Z",
+      "signal": {
+        "title": "信号源 (The Signal)",
+        "summary": "年轻人厌倦现实社交的繁琐与疏离，沉迷元宇宙社交，虚拟陪伴成为日常情感寄托的新方式。",
+        "sources": [
+          { "label": "小红书 #元宇宙社交", "url": "https://example.com" },
+          { "label": "抖音 #虚拟陪伴", "url": "https://example.com" },
+          { "label": "知乎 当代社交新形态", "url": "https://example.com" }
+        ]
+      },
+      "visual": {
+        "title": "配图区：Nano Banana 视觉",
+        "prompts": [
+          {
+            "type": "image_prompt",
+            "text": "画面：高饱和撞色，荒诞复古质感，戴着赛博眼镜的年轻手握虚拟手柄，屏幕炸开霓虹星光..."
+          },
+          {
+            "type": "image_prompt",
+            "text": "画面：赛博朋克电影感，一群年轻人戴着虚拟头显在元宇宙社交，背景紫蓝渐变..."
+          }
+        ],
+        "images": [
+          { "url": "/inspiration/metaverse-1.jpg", "alt": "metaverse visual 1" },
+          { "url": "/inspiration/metaverse-2.jpg", "alt": "metaverse visual 2" }
+        ]
+      },
+      "translation": {
+        "title": "灵感转化 (The Translation)",
+        "tag": "新生代社交革命",
+        "angles": ["虚拟情感寄托", "现实社交疲惫", "赛博陪伴与孤独"]
+      },
+      "hook": {
+        "title": "选题一句话",
+        "text": "“现实社恐蔓延，元宇宙里却满是热闹社交局”"
+      },
+      "production": {
+        "title": "拍摄建议",
+        "format": "现实与虚拟分屏对比",
+        "beats": [
+          "现实独处：冷清画面 + 低饱和",
+          "一键切换：元宇宙热闹社交局",
+          "反差瞬间拉满：情绪爆点"
+        ],
+        "durationSec": 30,
+        "platformHints": ["TikTok", "Reels", "Shorts"]
+      },
+      "actions": {
+        "copy": {
+          "label": "复制灵感",
+          "payload": "【信号源】年轻人厌倦现实社交的繁琐与疏离...\n【创作视角】虚拟情感寄托/现实社交疲惫/赛博陪伴与孤独\n【选题一句话】现实社恐蔓延，元宇宙里却满是热闹社交局\n【拍摄建议】现实与虚拟分屏对比：现实独处→切换元宇宙→反差爆点"
+        },
+        "share": { "label": "分享" }
+      }
+    },
+    {
+      "id": "card_mixue_global",
+      "lang": "zh",
+      "status": "PUBLISHED",
+      "featured": true,
+      "rank": 2,
+      "createdAt": "2026-01-26T09:05:00Z",
+      "signal": {
+        "title": "信号源 (The Signal)",
+        "summary": "蜜雪冰城登陆好莱坞，低价茶饮引爆海外讨论，“中式平价消费”开始被全球市场看见。",
+        "sources": [
+          { "label": "TikTok/《时代》周刊", "url": "https://example.com" },
+          { "label": "蜜雪冰城官方公告", "url": "https://example.com" }
+        ]
+      },
+      "visual": {
+        "title": "配图区：Nano Banana 视觉",
+        "prompts": [
+          {
+            "type": "image_prompt",
+            "text": "画面：扁平 2D 插画，复古红白配色，蜜雪冰城好莱坞开业门店，排队人群..."
+          },
+          {
+            "type": "image_prompt",
+            "text": "画面：雪王举杯站在好莱坞星光大道，奶茶爆炸成星光，脚下踩着美元符号..."
+          }
+        ],
+        "images": [
+          { "url": "/inspiration/mixue-1.jpg", "alt": "mixue visual 1" },
+          { "url": "/inspiration/mixue-2.jpg", "alt": "mixue visual 2" }
+        ]
+      },
+      "translation": {
+        "title": "灵感转化 (The Translation)",
+        "tag": "平价品牌的全球胜利",
+        "angles": ["中式茶饮出海", "性价比叙事", "文化符号碰撞"]
+      },
+      "hook": {
+        "title": "选题一句话",
+        "text": "“从郑州街边小摊到好莱坞地标：蜜雪冰城用一杯奶茶讲透中国平价消费的世界语言”"
+      },
+      "production": {
+        "title": "拍摄建议",
+        "format": "时空跨越对比（郑州街边 vs 好莱坞排队）",
+        "beats": [
+          "郑州街边小摊：朴素日常",
+          "切到好莱坞门店：排队+围观",
+          "反差总结：平价=全球通行证"
+        ],
+        "durationSec": 35,
+        "platformHints": ["TikTok", "Reels"]
+      },
+      "actions": {
+        "copy": {
+          "label": "复制灵感",
+          "payload": "【信号源】蜜雪冰城登陆好莱坞...\n【创作视角】性价比叙事/文化符号碰撞\n【选题一句话】从郑州街边小摊到好莱坞地标...\n【拍摄建议】郑州→好莱坞排队→反差总结"
+        },
+        "share": { "label": "分享" }
+      }
+    },
+    {
+      "id": "card_micro_adventure",
+      "lang": "zh",
+      "status": "PUBLISHED",
+      "featured": true,
+      "rank": 3,
+      "createdAt": "2026-01-26T09:10:00Z",
+      "signal": {
+        "title": "信号源 (The Signal)",
+        "summary": "都市人厌倦钢筋森林的刻板日常，“城起周末微探险”兴起：短途轻量出行，解锁城市周边山野。",
+        "sources": [
+          { "label": "小红书 #周末微探险", "url": "https://example.com" },
+          { "label": "抖音 #逃离钢筋森林", "url": "https://example.com" }
+        ]
+      },
+      "visual": {
+        "title": "配图区：Nano Banana 视觉",
+        "prompts": [
+          {
+            "type": "image_prompt",
+            "text": "画面：荒诞复古风格，高饱和撞色，年轻女子背包奔跑，背景城市与山野融合..."
+          }
+        ],
+        "images": [{ "url": "/inspiration/microadventure-1.jpg", "alt": "microadventure visual 1" }]
+      },
+      "translation": {
+        "title": "灵感转化 (The Translation)",
+        "tag": "城市周边治愈系出行",
+        "angles": ["周末逃离", "轻量旅行", "城市与自然反差"]
+      },
+      "hook": {
+        "title": "选题一句话",
+        "text": "“工作日困在钢筋森林，周末化身微探险家：解锁城市周边的山野浪漫”"
+      },
+      "production": {
+        "title": "AI 生成建议",
+        "format": "9:16 竖屏短视频（配图 3:4/9:16）",
+        "beats": [
+          "静态都市通勤镜头 → 动态切换山野画面",
+          "城市噪音 → 自然风声",
+          "一句话收尾：微探险不等于远方"
+        ],
+        "durationSec": 25,
+        "platformHints": ["Reels", "Shorts"]
+      },
+      "actions": {
+        "copy": {
+          "label": "复制灵感",
+          "payload": "【信号源】周末微探险兴起...\n【创作视角】周末逃离/轻量旅行/城市与自然反差\n【选题一句话】工作日困在钢筋森林...\n【拍摄建议】通勤→山野→一句话收尾"
+        },
+        "share": { "label": "分享" }
+      }
+    }
+  ]
+}
