@@ -55,8 +55,7 @@ export default async function Page() {
   return (
     <>
       <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
+        type="application/ld+json"        
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main className="mx-auto max-w-6xl px-4 pt-20 pb-10">

@@ -227,7 +227,7 @@ function CardFooter({ card }: { card: Card }) {
 
       // Web Share API if available
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const nav: any = navigator;
+      const nav = navigator as Navigator & { share?: (data: any) => Promise<void> };
       if (nav?.share) {
         await nav.share({ title, text, url: shareUrl });
       } else {
