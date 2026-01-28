@@ -22,7 +22,9 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "cdn.curify-ai.com",
       "videotranslatetest.blob.core.windows.net",
-      "pbs.twimg.com"
+      "pbs.twimg.com",
+      "storage.googleapis.com",
+      "images.unsplash.com"
     ],
   },
 
