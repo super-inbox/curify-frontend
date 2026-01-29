@@ -71,9 +71,11 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
       source_url: prompt.sourceUrl || '#',
       source_type: prompt.sourceType || 'unknown',
       image_url: prompt.imageUrl 
-        ? prompt.imageUrl.startsWith('http')
-          ? prompt.imageUrl // Keep full URLs as is
-          : `/images/${prompt.imageUrl.replace(/^\/+/, '')}`
+        ? prompt.imageUrl.includes('static/images/')
+          ? prompt.imageUrl.replace('/static/images/', '/images/')
+          : prompt.imageUrl.startsWith('/')
+            ? prompt.imageUrl
+            : `/${prompt.imageUrl}`
         : '/images/default-prompt-image.jpg',
       likes: prompt.likes ?? 0,
       retweets: prompt.retweets ?? 0
