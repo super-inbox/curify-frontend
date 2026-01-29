@@ -30,6 +30,12 @@ export interface InspirationCardUI {
     durationSec?: number;
   };
 
+  // NEW: Quality rating from AI
+  rating?: {
+    score: number;  // 0-5
+    reason: string;
+  };
+
   actions: {
     copy: {
       label: string;
@@ -47,39 +53,122 @@ export interface InspirationCardUI {
   };
 }
 
-function parseBeats(output?: string | null): string[] {
-  if (!output) return [];
+/**
+ * Parse beats/script suggestions from script_body
+ * Updated to handle new Coze JSON output structure
+ */
+function parseBeats(scriptBody?: string | null): string[] {
+  if (!scriptBody) return [];
 
-  return output
-    .split("\n")
-    .map((l) => l.trim())
-    .filter((l) => l.startsWith("•"))
-    .map((l) => l.replace(/^•\s*/, ""))
-    .slice(0, 6);
+  // Try to extract beats from structured script
+  const beats: string[] = [];
+  
+  // Look for bullet points or numbered items
+  const lines = scriptBody.split("\n").map((l) => l.trim());
+  
+  for (const line of lines) {
+    // Match bullets (•, -, *) or numbered items
+    if (line.match(/^[•\-*]\s+/) || line.match(/^镜头\s*\d+/)) {
+      beats.push(line.replace(/^[•\-*]\s+/, "").replace(/^镜头\s*\d+[：:（(]\s*/, ""));
+    }
+  }
+  
+  // If no structured beats found, try to split by key sections
+  if (beats.length === 0) {
+    const sections = scriptBody.split(/\n\n+/);
+    return sections
+      .filter(s => s.trim().length > 0)
+      .map(s => s.trim())
+      .slice(0, 6);
+  }
+  
+  return beats.slice(0, 6);
 }
 
+/**
+ * Build comprehensive copy payload for users
+ * Updated to use new field structure: signal_source, script_body
+ */
 function buildCopyPayload(row: InspirationCardDTO): string {
-  return [
-    row.source_text && `【信号源】${row.source_text}`,
-    row.subtitle && `【主题】${row.subtitle}`,
-    row.output_title && `【选题】${row.output_title}`,
-    row.inspiration_tags?.length &&
-      `【创作视角】${row.inspiration_tags.join(" / ")}`,
-    row.video_format && `【形式】${row.video_format}`,
-    row.video_duration_sec && `【时长】${row.video_duration_sec}s`,
-    row.output && `【拍摄建议】\n${parseBeats(row.output).join("\n")}`
-  ]
-    .filter(Boolean)
-    .join("\n\n");
+  const sections: string[] = [];
+  
+  // Signal Source (NEW: dedicated field)
+  if (row.signal_source) {
+    sections.push(`【信号源】\n${row.signal_source}`);
+  } else if (row.source_text) {
+    sections.push(`【信号源】\n${row.source_text}`);
+  }
+  
+  // Source Platforms
+  if (row.source_platforms?.length) {
+    sections.push(`【来源平台】\n${row.source_platforms.join(" / ")}`);
+  }
+  
+  // Hook/Title
+  if (row.output_title) {
+    sections.push(`【选题】\n"${row.output_title}"`);
+  }
+  
+  // Creative Angles
+  if (row.inspiration_tags?.length) {
+    sections.push(`【创作视角】\n${row.inspiration_tags.join(" / ")}`);
+  }
+  
+  // Video Format
+  if (row.video_format) {
+    sections.push(`【形式】\n${row.video_format}`);
+  }
+  
+  // Duration
+  if (row.video_duration_sec) {
+    sections.push(`【时长】\n${row.video_duration_sec}秒`);
+  }
+  
+  // Target Audience
+  if (row.audiences?.length) {
+    sections.push(`【受众群体】\n${row.audiences.join("、")}`);
+  }
+  
+  // Image Prompt (if available)
+  if (row.prompt) {
+    sections.push(`【配图建议】\n${row.prompt}`);
+  }
+  
+  // Script/Production Beats (output = script_body from Coze)
+  if (row.output) {
+    const beats = parseBeats(row.output);
+    if (beats.length > 0) {
+      sections.push(`【拍摄建议】\n${beats.join("\n")}`);
+    } else {
+      sections.push(`【拍摄建议】\n${row.output}`);
+    }
+  }
+  
+  // Feedback
+  if (row.feedback) {
+    sections.push(`【自我反馈】\n${row.feedback}`);
+  }
+  
+  // Star Rating (NEW)
+  if (row.star_rating) {
+    sections.push(`【AI评分】\n${"⭐".repeat(Math.round(row.star_rating))} ${row.star_rating}/5.0`);
+  }
+  
+  return sections.join("\n\n");
 }
 
+/**
+ * Map backend DTO to UI-friendly card structure
+ * Updated for new schema: signal_source, star_rating, review_status
+ */
 export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
   return {
     id: row.id,
     lang: row.lang || "zh",
 
     signal: {
-      summary: row.source_text || row.source_title || "",
+      // Use dedicated signal_source field (NEW), fallback to source_text
+      summary: row.signal_source || row.source_text || row.source_title || "",
       sources: (row.source_platforms || []).map((p) => ({ label: p }))
     },
 
@@ -95,9 +184,15 @@ export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
     production: {
       title: "拍摄建议",
       format: row.video_format || undefined,
-      beats: parseBeats(row.output),
+      beats: parseBeats(row.output),  // output = script_body from Coze
       durationSec: row.video_duration_sec || undefined
     },
+
+    // NEW: Include star rating if available
+    rating: row.star_rating ? {
+      score: row.star_rating,
+      reason: row.scoring_reason || ""
+    } : undefined,
 
     actions: {
       copy: {
