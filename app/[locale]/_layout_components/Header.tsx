@@ -103,6 +103,9 @@ export default function Header() {
     <Link href={`/${locale}/nano-banana-pro-prompts`} className="hover:opacity-80">
       Nano Banana Gallery
     </Link>
+    <Link href={`/${locale}/inspiration-hub`} className="hover:opacity-80">
+      Inspiration Hub
+    </Link>
   </nav>
 )}
 
