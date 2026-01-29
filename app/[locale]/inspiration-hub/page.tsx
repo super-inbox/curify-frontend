@@ -26,12 +26,15 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   // 1) Fetch DTOs from backend
-  const rows = await inspirationService.getCards();
+  // UPDATED: Filter by review_status instead of status
+  // Only show APPROVED cards to public (was PUBLISHED before)
+  const rows = await inspirationService.getCards({
+    review_status: "APPROVED",  // CHANGED: was status === "PUBLISHED"
+    limit: 100
+  });
 
-  // 2) Filter for public display (MVP: only PUBLISHED)
-  const cards = rows
-    .filter((r) => r.status === "PUBLISHED")
-    .map(mapDTOToUICard);
+  // 2) Map to UI cards
+  const cards = rows.map(mapDTOToUICard);
 
   // JSON-LD: ItemList of CreativeWork
   const jsonLd = {
@@ -43,11 +46,20 @@ export default async function Page() {
       position: idx + 1,
       item: {
         "@type": "CreativeWork",
-        name: (c?.hook?.text || c.id).replaceAll("“", "").replaceAll("”", ""),
+        name: (c?.hook?.text || c.id).replaceAll('"', "").replaceAll('"', ""),
         inLanguage: c.lang || "zh",
         description: c?.signal?.summary || c?.translation?.tag || "",
         url: `/inspiration-hub#${c.id}`,
-        // Images intentionally omitted for now (per your request)
+        // Rating included if available (NEW)
+        ...(c.rating?.score && {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: c.rating.score,
+            bestRating: 5,
+            worstRating: 0,
+            ratingCount: 1
+          }
+        })
       },
     })),
   };
@@ -65,7 +77,7 @@ export default async function Page() {
           </h1>
           <p className="mt-2 max-w-3xl text-sm text-neutral-600">
             Curated cards that translate real-world signals into creator-ready
-            hooks and production beats.
+            hooks and production beats. AI-rated for quality.
           </p>
         </header>
 

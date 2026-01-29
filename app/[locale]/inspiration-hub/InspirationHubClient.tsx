@@ -21,6 +21,7 @@ type Card = {
   translation?: { tag?: string; angles?: string[] };
   production?: { title?: string; format?: string; durationSec?: number; beats?: string[] };
   visual?: { images?: CardImage[] };
+  rating?: { score: number; reason: string };  // NEW: AI rating
   actions?: {
     copy?: { label?: string; payload?: string };
     share?: { label?: string; url?: string };
@@ -38,48 +39,88 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 }
 
 function stripQuotes(s: string) {
-  return (s || "").replaceAll("“", "").replaceAll("”", "").trim();
+  return (s || "").replaceAll('"', "").replaceAll('"', "").trim();
 }
 
 export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   const [query, setQuery] = useState("");
+  const [minRating, setMinRating] = useState<number | null>(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return cards;
+    
+    let result = cards;
+    
+    // Text search
+    if (q) {
+      result = result.filter((c) => {
+        const hay = [
+          c?.signal?.summary,
+          c?.translation?.tag,
+          ...(c?.translation?.angles || []),
+          c?.hook?.text,
+          c?.production?.format,
+          ...(c?.production?.beats || []),
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
 
-    return cards.filter((c) => {
-      const hay = [
-        c?.signal?.summary,
-        c?.translation?.tag,
-        ...(c?.translation?.angles || []),
-        c?.hook?.text,
-        c?.production?.format,
-        ...(c?.production?.beats || []),
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+        return hay.includes(q);
+      });
+    }
+    
+    // Rating filter
+    if (minRating !== null) {
+      result = result.filter((c) => {
+        return c.rating && c.rating.score >= minRating;
+      });
+    }
 
-      return hay.includes(q);
-    });
-  }, [cards, query]);
+    return result;
+  }, [cards, query, minRating]);
 
   return (
     <section>
-      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex-1">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search signals, angles, hooks..."
-            className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
-          />
+      <div className="mb-6 flex flex-col gap-3">
+        {/* Search and Filters */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex-1">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search signals, angles, hooks..."
+              className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
+            />
+          </div>
+          
+          {/* NEW: Rating Filter */}
+          <select
+            value={minRating?.toString() || ""}
+            onChange={(e) => setMinRating(e.target.value ? parseFloat(e.target.value) : null)}
+            className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
+          >
+            <option value="">All Ratings</option>
+            <option value="4.5">4.5+ ⭐</option>
+            <option value="4.0">4.0+ ⭐</option>
+            <option value="3.5">3.5+ ⭐</option>
+          </select>
         </div>
-        <div className="text-xs text-neutral-500">
-          Showing{" "}
-          <span className="font-medium text-neutral-700">{filtered.length}</span>{" "}
-          cards
+        
+        <div className="flex items-center justify-between text-xs text-neutral-500">
+          <span>
+            Showing{" "}
+            <span className="font-medium text-neutral-700">{filtered.length}</span>{" "}
+            of {cards.length} cards
+          </span>
+          {minRating && (
+            <button
+              onClick={() => setMinRating(null)}
+              className="text-blue-600 hover:text-blue-700"
+            >
+              Clear filters
+            </button>
+          )}
         </div>
       </div>
 
@@ -97,6 +138,20 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
           </div>
         ))}
       </div>
+      
+      {filtered.length === 0 && (
+        <div className="py-16 text-center text-neutral-500">
+          <p>No cards found matching your criteria.</p>
+          {minRating && (
+            <button
+              onClick={() => setMinRating(null)}
+              className="mt-2 text-blue-600 hover:text-blue-700"
+            >
+              Clear rating filter
+            </button>
+          )}
+        </div>
+      )}
     </section>
   );
 }
@@ -108,9 +163,21 @@ function CardHeader({ card }: { card: Card }) {
   return (
     <div className="px-4 pt-4">
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <div className="text-xs text-neutral-500">
-            {card?.lang?.toUpperCase?.() || "ZH"}
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2">
+            <div className="text-xs text-neutral-500">
+              {card?.lang?.toUpperCase?.() || "ZH"}
+            </div>
+            {/* NEW: Display star rating badge */}
+            {card?.rating && (
+              <div 
+                className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700"
+                title={card.rating.reason}
+              >
+                <span>⭐</span>
+                <span>{card.rating.score.toFixed(1)}</span>
+              </div>
+            )}
           </div>
           <h2 className="mt-1 line-clamp-2 text-base font-semibold leading-snug">
             {hook || "Inspiration"}
@@ -228,6 +295,18 @@ function CardBody({ card }: { card: Card }) {
           </ul>
         ) : null}
       </div>
+      
+      {/* NEW: Display scoring reason if available */}
+      {card?.rating?.reason && (
+        <details className="mt-4">
+          <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">
+            AI评分详情
+          </summary>
+          <p className="mt-2 text-xs leading-relaxed text-neutral-600">
+            {card.rating.reason}
+          </p>
+        </details>
+      )}
     </div>
   );
 }
