@@ -73,8 +73,8 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
       image_url: prompt.imageUrl 
         ? prompt.imageUrl.startsWith('http')
           ? prompt.imageUrl // Keep full URLs as is
-          : `https://storage.googleapis.com/curify-static/images/${prompt.imageUrl.replace(/^\/+/, '')}`
-        : 'https://storage.googleapis.com/curify-static/images/default-prompt-image.jpg',
+          : `/images/${prompt.imageUrl.replace(/^\/+/, '')}`
+        : '/images/default-prompt-image.jpg',
       likes: prompt.likes ?? 0,
       retweets: prompt.retweets ?? 0
     };
