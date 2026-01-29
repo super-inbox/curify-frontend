@@ -5,7 +5,7 @@ import "../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/authOptions";
+import { authOptions } from "@/services/authOptions";
 import { headers } from "next/headers";
 
 import Script from "next/script";

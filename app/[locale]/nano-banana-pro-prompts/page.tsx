@@ -18,33 +18,6 @@ function readNanoBananaJson(): JsonData {
   return JSON.parse(fileContent);
 }
 
-function normalizeCdnImageUrl(imageUrl: string | null | undefined): string {
-  if (!imageUrl) return `${CDN_BASE}/images/default-prompt-image.jpg`;
-
-  let url = String(imageUrl).trim();
-
-  // Already absolute
-  if (/^https?:\/\//i.test(url)) return url;
-
-  // Legacy path segment
-  if (url.includes('static/images/')) {
-    // Ensure it becomes absolute on CDN
-    const replaced = url.replace('/static/images/', '/images/');
-    return replaced.startsWith('/')
-      ? `${CDN_BASE}${replaced}`
-      : `${CDN_BASE}/${replaced}`;
-  }
-
-  // If it's "/images/xxx.jpg" or "images/xxx.jpg" or just "xxx.jpg"
-  url = url.replace(/^\/+/, ''); // remove leading slashes
-
-  if (url.startsWith('images/')) {
-    return `${CDN_BASE}/${url}`;
-  }
-
-  return `${CDN_BASE}/images/${url}`;
-}
-
 // Generate metadata for SEO
 export async function generateMetadata(): Promise<Metadata> {
   let totalPrompts = 0;
@@ -159,7 +132,7 @@ export default async function NanoBananaProPromptsPage() {
         },
         datePublished: prompt?.date || undefined,
         // Use absolute, valid image URL for SEO
-        image: normalizeCdnImageUrl(prompt?.imageUrl),
+        image: prompt?.imageUrl,
       },
     })),
   };
