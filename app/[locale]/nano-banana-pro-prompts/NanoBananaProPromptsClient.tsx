@@ -349,32 +349,6 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
           </section>
         )}
 
-        {/* Layout Categories */}
-        {layoutCategories.length > 0 && (
-          <section className="mb-4" aria-label="Layout Categories">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">Layout Categories</h2>
-            <nav className="flex flex-wrap gap-3" aria-label="Filter by layout">
-              {layoutCategories.map(({ category, count }) => (
-                <button
-                  key={category}
-                  className={`flex items-center px-3 py-2 rounded-lg shadow-sm border ${
-                    layoutFilter === category
-                      ? 'bg-indigo-100 border-indigo-300'
-                      : 'bg-white border-gray-200 hover:bg-indigo-50'
-                  } cursor-pointer transition-colors`}
-                  onClick={() => setLayoutFilter(prev => (prev === category ? 'all' : category))}
-                  aria-pressed={layoutFilter === category}
-                  aria-label={`Filter by ${category} layout (${count} prompts)`}
-                >
-                  <span className="font-medium text-gray-900">{category}</span>
-                  <span className="ml-2 bg-indigo-100 text-indigo-800 text-xs font-medium px-2 py-0.5 rounded-full">
-                    {count}
-                  </span>
-                </button>
-              ))}
-            </nav>
-          </section>
-        )}
 
         {/* Filters with semantic HTML and ARIA labels */}
         <section className="bg-white shadow rounded-lg p-6 mb-8" aria-label="Search and filter prompts">

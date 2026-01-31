@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import blogs from "@/content/blogs.json";
-import fs from "fs";
-import path from "path";
 
-export const runtime = "nodejs"; // required for fs
+export const runtime = "nodejs";
 
 const BASE_URL = "https://curify-ai.com";
 
@@ -23,46 +21,13 @@ const STATIC_ROUTES = [
   "/privacy",
   "/agreement",
   "/blog",
-  // (optional) add your list page if it exists:
   "/nano-banana-pro-prompts",
+  "/inspiration-hub",
 ];
 
 // Blog routes come from blogs.json
 function getBlogRoutes() {
   return blogs.map((slug: string) => `/blog/${slug}`);
-}
-
-/**
- * Prompt routes come from public/data/nanobanana.json
- * Expected shape: { prompts: [{ id: number|string, date?: string|null, ...}] }
- */
-function getPromptRoutes(): Array<{ route: string; lastmod?: string }> {
-  try {
-    const jsonPath = path.join(process.cwd(), "public", "data", "nanobanana.json");
-    const fileContent = fs.readFileSync(jsonPath, "utf-8");
-    const data = JSON.parse(fileContent);
-
-    const prompts = Array.isArray(data?.prompts) ? data.prompts : [];
-    return prompts
-      .filter((p: any) => p && (typeof p.id === "number" || typeof p.id === "string"))
-      .map((p: any) => {
-        const id = String(p.id);
-        // Use prompt.date if valid, else omit and fall back to "now"
-        const lastmod =
-          typeof p.date === "string" && !Number.isNaN(Date.parse(p.date))
-            ? new Date(p.date).toISOString()
-            : undefined;
-
-        return {
-          route: `/nano-banana-pro-prompts/${id}`,
-          lastmod,
-        };
-      });
-  } catch (e) {
-    // Don’t break sitemap if JSON missing / parse fails
-    console.error("Failed to load nanobanana prompts for sitemap:", e);
-    return [];
-  }
 }
 
 // Build hreflang block for a route
@@ -79,7 +44,10 @@ function generateHreflangLinks(route: string) {
 }
 
 // Build <url> entry for a route
-function generateUrlEntry(route: string, opts?: { lastmod?: string; changefreq?: string; priority?: string }) {
+function generateUrlEntry(
+  route: string,
+  opts?: { lastmod?: string; changefreq?: string; priority?: string }
+) {
   const loc = `${BASE_URL}/en${route}`; // canonical = English
   const lastmod = opts?.lastmod ?? new Date().toISOString();
   const changefreq = opts?.changefreq ?? "daily";
@@ -98,7 +66,6 @@ function generateUrlEntry(route: string, opts?: { lastmod?: string; changefreq?:
 
 export async function GET() {
   const blogRoutes = getBlogRoutes();
-  const promptRoutes = getPromptRoutes();
 
   let urls = "";
 
@@ -118,14 +85,7 @@ export async function GET() {
     });
   });
 
-  // Add prompt detail routes (thousands OK)
-  promptRoutes.forEach(({ route, lastmod }) => {
-    urls += generateUrlEntry(route, {
-      lastmod,
-      changefreq: "monthly",
-      priority: "0.6",
-    });
-  });
+  // ✅ Removed prompt-wise SEO: no prompt detail routes in sitemap
 
   const xml = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -139,7 +99,6 @@ ${urls}
   return new NextResponse(xml, {
     headers: {
       "Content-Type": "application/xml",
-      // Optional: allow caching (tune if needed)
       "Cache-Control": "public, max-age=3600",
     },
   });
