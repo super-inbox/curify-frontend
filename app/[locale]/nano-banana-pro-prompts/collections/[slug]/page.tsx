@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
-import NanoBananaProPromptsClient from "../../NanoBananaProPromptsClient"; // 你按实际路径改
+import NanoBananaProPromptsClient from "../../NanoBananaProPromptsClient";
 
 type Prompt = any;
 
-// 这里把 slug 映射到你数据里的 domainCategory 或 layoutCategory（按你的数据字段来）
+/**
+ * slug → collection config
+ * 注意：domainCategory / layoutCategory 的值
+ * 要与你 nanobanana.json 里的真实字段值一致
+ */
 const COLLECTIONS: Record<
   string,
   {
     title: string;
     description: string;
-    // choose ONE of them (or both)
     domainCategory?: string;
     layoutCategory?: string;
   }
@@ -20,13 +23,13 @@ const COLLECTIONS: Record<
     title: "Product Photography Prompts",
     description:
       "Curated Nano Banana prompts for studio lighting, ecommerce product shots, and clean commercial visuals.",
-    domainCategory: "Product", // 这里要改成你数据里真实的 domainCategory 值
+    domainCategory: "Product",
   },
   "cinematic-scenes": {
     title: "Cinematic Scene Prompts",
     description:
       "Film-grade composition, dramatic lighting, and storytelling frames. Hand-picked for cinematic outputs.",
-    layoutCategory: "Cinematic", // 改成你 layoutCategory 的真实值
+    layoutCategory: "Cinematic",
   },
   "character-illustration": {
     title: "Character Illustration Prompts",
@@ -54,20 +57,41 @@ const COLLECTIONS: Record<
   },
 };
 
+/**
+ * Static params for SSG
+ */
 export async function generateStaticParams() {
   return Object.keys(COLLECTIONS).map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const cfg = COLLECTIONS[params.slug];
-  if (!cfg) return { robots: { index: false, follow: false } };
+/**
+ * ✅ FIXED: params is Promise
+ */
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+/**
+ * Metadata (SEO only for curated collections)
+ */
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
+  const { slug } = await params;
+  const cfg = COLLECTIONS[slug];
+
+  if (!cfg) {
+    return {
+      robots: { index: false, follow: false },
+    };
+  }
 
   return {
     title: cfg.title,
     description: cfg.description,
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `/nano-banana-pro-prompts/collections/${params.slug}`,
+      canonical: `/nano-banana-pro-prompts/collections/${slug}`,
     },
   };
 }
@@ -79,28 +103,33 @@ function loadPrompts(): Prompt[] {
   return Array.isArray(data?.prompts) ? data.prompts : [];
 }
 
-export default function CollectionPage({ params }: { params: { slug: string } }) {
-  const cfg = COLLECTIONS[params.slug];
+/**
+ * ✅ FIXED: params is Promise and awaited
+ */
+export default async function CollectionPage({ params }: PageProps) {
+  const { slug } = await params;
+  const cfg = COLLECTIONS[slug];
+
   if (!cfg) {
-    // 404 也行，这里简化
     return <div className="p-8">Collection not found.</div>;
   }
 
   const prompts = loadPrompts();
 
-  // 传给 client 组件，让它自动套 preset filter
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-gray-900">{cfg.title}</h1>
-        <p className="mt-2 text-gray-600 max-w-3xl">{cfg.description}</p>
+        <h1 className="text-3xl font-bold text-gray-900">
+          {cfg.title}
+        </h1>
+        <p className="mt-2 text-gray-600 max-w-3xl">
+          {cfg.description}
+        </p>
 
         <div className="mt-8">
           <NanoBananaProPromptsClient
             initialData={prompts}
-            error={null}
-            initialDomainFilter={cfg.domainCategory}
-            showCategoryFilters={false}
+            error={null}            
           />
         </div>
       </div>
