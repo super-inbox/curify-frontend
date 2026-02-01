@@ -77,11 +77,9 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const { locale } = await params;
-  
-  // Fallback to English if locale not found
-  const meta = localizedMeta[locale] || localizedMeta['en'];
 
-  // Read pathname from middleware
+  const meta = localizedMeta[locale] || localizedMeta["en"];
+
   const rawHeaders = await headers();
   const pathname = rawHeaders.get("x-pathname") || "";
   const normalizedPath =
@@ -125,7 +123,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Ensure params is properly awaited before destructuring
   const { locale } = await params;
   const session = await getServerSession(authOptions);
 
@@ -133,15 +130,28 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Import locale messages
   const messages = (await import(`../../messages/${locale}.json`)).default;
-
-  // Fallback to English if locale not found
-  const meta = localizedMeta[locale] || localizedMeta['en'];
+  const meta = localizedMeta[locale] || localizedMeta["en"];
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-23QXSJ8HS7', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+
         {/* Google Identity Services */}
         <script src="https://accounts.google.com/gsi/client" async defer />
 
