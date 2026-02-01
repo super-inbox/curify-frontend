@@ -23,6 +23,101 @@ interface Props {
   params: { locale: string };
 }
 
+// Map localized meta tags
+const localizedMeta: Record<string, { title: string; description: string }> = {
+  en: {
+    title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
+    description:
+      "Curify is an AI-native content creation platform offering voiceover, dubbing, subtitles, and lip sync in 170+ languages.",
+  },
+  zh: {
+    title: "Curify Studio | 视频翻译与配音 AI 平台",
+    description: "Curify 是一个 AI 内容创作平台，支持 170+ 语言的视频翻译、配音与字幕生成。",
+  },
+  es: {
+    title: "Curify Studio | Plataforma de Doblaje y Subtítulos con IA",
+    description:
+      "Curify es una plataforma de creación de contenido potenciada por IA para traducción y localización de videos en más de 170 idiomas.",
+  },
+  fr: {
+    title: "Curify Studio | Traduction et doublage vidéo IA",
+    description:
+      "Curify est une plateforme de création de contenu IA offrant traduction, doublage et sous-titrage vidéo en 170+ langues.",
+  },
+  de: {
+    title: "Curify Studio | KI-gestützte Videountertitelung & Übersetzung",
+    description:
+      "Curify ist eine KI-gestützte Plattform zur Videolokalisierung mit Übersetzung, Untertiteln und Lippensynchronisation.",
+  },
+  hi: {
+    title: "Curify Studio | एआई वीडियो अनुवाद और डबिंग प्लेटफॉर्म",
+    description:
+      "Curify एक एआई-संचालित वीडियो अनुवाद और डबिंग प्लेटफॉर्म है जो 170+ भाषाओं में काम करता है।",
+  },
+  ru: {
+    title: "Curify Studio | Платформа для перевода и дубляжа видео с ИИ",
+    description:
+      "Curify — это платформа на базе ИИ для перевода, дубляжа и субтитров на 170+ языках.",
+  },
+  ja: {
+    title: "Curify Studio | AI動画翻訳・吹き替えプラットフォーム",
+    description:
+      "CurifyはAIを活用した動画翻訳・吹き替え・字幕生成プラットフォームです（170以上の言語対応）。",
+  },
+  ko: {
+    title: "Curify Studio | AI 영상 번역 및 더빙 플랫폼",
+    description:
+      "Curify는 170개 이상의 언어로 영상 번역, 더빙 및 자막 생성을 지원하는 AI 콘텐츠 플랫폼입니다。",
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  // Fallback to English if locale not found
+  const meta = localizedMeta[locale] || localizedMeta['en'];
+
+  // Read pathname from middleware
+  const rawHeaders = await headers();
+  const pathname = rawHeaders.get("x-pathname") || "";
+  const normalizedPath =
+    pathname === `/${locale}` ? "" : pathname.replace(`/${locale}`, "");
+
+  return {
+    metadataBase: new URL("https://www.curify-ai.com"),
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: `/${locale}${normalizedPath}`,
+      type: "website",
+      images: [
+        {
+          url: "/og-banner.png",
+          width: 1200,
+          height: 630,
+          alt: "Curify Studio AI platform",
+        },
+      ],
+    },
+    alternates: {
+      canonical: `/en${normalizedPath}`,
+      languages: {
+        ...routing.locales.reduce((acc, loc) => {
+          acc[loc] = `/${loc}${normalizedPath}`;
+          return acc;
+        }, {} as Record<string, string>),
+        "x-default": `/en${normalizedPath}`,
+      },
+    },
+  };
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -41,104 +136,12 @@ export default async function LocaleLayout({
   // Import locale messages
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
-  // Map localized meta tags
-  const localizedMeta: Record<string, { title: string; description: string }> = {
-    en: {
-      title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
-      description:
-        "Curify is an AI-native content creation platform offering voiceover, dubbing, subtitles, and lip sync in 170+ languages.",
-    },
-    zh: {
-      title: "Curify Studio | 视频翻译与配音 AI 平台",
-      description: "Curify 是一个 AI 内容创作平台，支持 170+ 语言的视频翻译、配音与字幕生成。",
-    },
-    es: {
-      title: "Curify Studio | Plataforma de Doblaje y Subtítulos con IA",
-      description:
-        "Curify es una plataforma de creación de contenido potenciada por IA para traducción y localización de videos en más de 170 idiomas.",
-    },
-    fr: {
-      title: "Curify Studio | Traduction et doublage vidéo IA",
-      description:
-        "Curify est une plateforme de création de contenu IA offrant traduction, doublage et sous-titrage vidéo en 170+ langues.",
-    },
-    de: {
-      title: "Curify Studio | KI-gestützte Videountertitelung & Übersetzung",
-      description:
-        "Curify ist eine KI-gestützte Plattform zur Videolokalisierung mit Übersetzung, Untertiteln und Lippensynchronisation.",
-    },
-    hi: {
-      title: "Curify Studio | एआई वीडियो अनुवाद और डबिंग प्लेटफॉर्म",
-      description:
-        "Curify एक एआई-संचालित वीडियो अनुवाद और डबिंग प्लेटफॉर्म है जो 170+ भाषाओं में काम करता है।",
-    },
-    ru: {
-      title: "Curify Studio | Платформа для перевода и дубляжа видео с ИИ",
-      description:
-        "Curify — это платформа на базе ИИ для перевода, дубляжа и субтитров на 170+ языках.",
-    },
-    ja: {
-      title: "Curify Studio | AI動画翻訳・吹き替えプラットフォーム",
-      description:
-        "CurifyはAIを活用した動画翻訳・吹き替え・字幕生成プラットフォームです（170以上の言語対応）。",
-    },
-    ko: {
-      title: "Curify Studio | AI 영상 번역 및 더빙 플랫폼",
-      description:
-        "Curify는 170개 이상의 언어로 영상 번역, 더빙 및 자막 생성을 지원하는 AI 콘텐츠 플랫폼입니다。",
-    },
-  };
-
   // Fallback to English if locale not found
   const meta = localizedMeta[locale] || localizedMeta['en'];
-
-  // 👇 Read pathname from middleware (critical for canonical correctness)
-  const rawHeaders = await headers();
-  const pathname = rawHeaders.get("x-pathname") || "";
-  const normalizedPath =
-    pathname === `/${locale}` ? "" : pathname.replace(`/${locale}`, "");
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:url" content={`https://curify-ai.com/${locale}${normalizedPath}`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://curify-ai.com/og-banner.png" />
-        <meta property="og:image:alt" content="Curify Studio AI platform" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* ---------------------------------------------- */}
-        {/*               CANONICAL SEO FIX                */}
-        {/* ---------------------------------------------- */}
-
-        {/* Canonical: always point to EN as primary */}
-        <link
-          rel="canonical"
-          href={`https://curify-ai.com/en${normalizedPath}`}
-        />
-
-        {/* Hreflang alternates for each locale */}
-        {routing.locales.map((loc) => (
-          <link
-            key={loc}
-            rel="alternate"
-            hrefLang={loc}
-            href={`https://curify-ai.com/${loc}${normalizedPath}`}
-          />
-        ))}
-
-        {/* Fallback */}
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href={`https://curify-ai.com/en${normalizedPath}`}
-        />
-
         {/* Google Identity Services */}
         <script src="https://accounts.google.com/gsi/client" async defer />
 
@@ -150,7 +153,7 @@ export default async function LocaleLayout({
             name: "Curify Studio",
             operatingSystem: "Web",
             applicationCategory: "MultimediaApplication",
-            url: "https://curify-ai.com",
+            url: "https://www.curify-ai.com",
             description:
               meta.description ??
               "AI-powered voiceover, dubbing, and subtitles in 170+ languages.",
@@ -163,7 +166,7 @@ export default async function LocaleLayout({
             creator: {
               "@type": "Organization",
               name: "Curify AI",
-              url: "https://curify-ai.com",
+              url: "https://www.curify-ai.com",
             },
           })}
         </Script>

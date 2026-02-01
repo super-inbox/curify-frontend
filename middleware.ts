@@ -5,6 +5,14 @@ import { NextResponse, type NextRequest } from "next/server";
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(req: NextRequest) {
+  // 1. Force www redirect (308 Permanent)
+  const host = req.headers.get("host");
+  if (host === "curify-ai.com") {
+    const url = new URL(req.url);
+    url.host = "www.curify-ai.com";
+    return NextResponse.redirect(url, { status: 308 });
+  }
+
   // Run next-intl middleware first
   const res = intlMiddleware(req);
 
