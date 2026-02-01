@@ -56,6 +56,36 @@ function stripQuotes(s: string) {
   return (s || "").replaceAll('"', "").replaceAll('"', "").trim();
 }
 
+/**
+ * ✅ Normalize to a FULL, ABSOLUTE URL so we can debug deterministically.
+ * - If src is already absolute (http/https) -> keep it
+ * - Else ensure it becomes `${CDN_BASE}/images/...`
+ *
+ * NOTE:
+ * - set NEXT_PUBLIC_CDN_BASE to your real CDN, e.g. https://cdn.curify-ai.com
+ * - If you actually host in a subfolder like /images/nano_inspiration/, change IMAGES_PREFIX below.
+ */
+const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE || "https://cdn.curify-ai.com";
+const IMAGES_PREFIX = "/images"; // change to "/images/nano_inspiration" if that’s where files really are
+
+function toAbsoluteCdnImageUrl(src?: string | null) {
+  if (!src) return "";
+
+  // already absolute
+  if (src.startsWith("http://") || src.startsWith("https://")) return src;
+
+  // ensure leading slash
+  const s = src.startsWith("/") ? src : `/${src}`;
+
+  // ensure /images prefix
+  const withImagesPrefix = s.startsWith(`${IMAGES_PREFIX}/`)
+    ? s
+    : `${IMAGES_PREFIX}${s}`; // "/images" + "/foo.png" => "/images/foo.png"
+
+  // full absolute
+  return `${CDN_BASE}${withImagesPrefix}`;
+}
+
 export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   const [query, setQuery] = useState("");
   const [minRating, setMinRating] = useState<number | null>(null);
@@ -64,17 +94,17 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 
   useEffect(() => {
     // Load nano banana cards
-    fetch('/data/nano_inspiration.json')
-      .then(res => res.json())
-      .then(data => setNanoCards(data))
-      .catch(err => console.error('Failed to load nano cards:', err));
+    fetch("/data/nano_inspiration.json")
+      .then((res) => res.json())
+      .then((data) => setNanoCards(data))
+      .catch((err) => console.error("Failed to load nano cards:", err));
   }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    
+
     let result = cards;
-    
+
     // Text search
     if (q) {
       result = result.filter((c) => {
@@ -93,7 +123,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
         return hay.includes(q);
       });
     }
-    
+
     // Rating filter
     if (minRating !== null) {
       result = result.filter((c) => {
@@ -117,7 +147,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
               className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
             />
           </div>
-          
+
           {/* Rating Filter */}
           <select
             value={minRating?.toString() || ""}
@@ -156,7 +186,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
             </button>
           </div>
         </div>
-        
+
         <div className="flex items-center justify-between text-xs text-neutral-500">
           <span>
             Showing{" "}
@@ -164,10 +194,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
             of {cards.length} cards
           </span>
           {minRating && (
-            <button
-              onClick={() => setMinRating(null)}
-              className="text-blue-600 hover:text-blue-700"
-            >
+            <button onClick={() => setMinRating(null)} className="text-blue-600 hover:text-blue-700">
               Clear filters
             </button>
           )}
@@ -175,20 +202,13 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
       </div>
 
       {/* Conditional Rendering Based on View Mode */}
-      {viewMode === "cards" ? (
-        <CardsView filtered={filtered} />
-      ) : (
-        <ListView filtered={filtered} nanoCards={nanoCards} />
-      )}
-      
+      {viewMode === "cards" ? <CardsView filtered={filtered} /> : <ListView filtered={filtered} nanoCards={nanoCards} />}
+
       {filtered.length === 0 && (
         <div className="py-16 text-center text-neutral-500">
           <p>No cards found matching your criteria.</p>
           {minRating && (
-            <button
-              onClick={() => setMinRating(null)}
-              className="mt-2 text-blue-600 hover:text-blue-700"
-            >
+            <button onClick={() => setMinRating(null)} className="mt-2 text-blue-600 hover:text-blue-700">
               Clear rating filter
             </button>
           )}
@@ -220,18 +240,20 @@ function CardsView({ filtered }: { filtered: Card[] }) {
 // List View with Nano Banana Cards Interleaved
 function ListView({ filtered, nanoCards }: { filtered: Card[]; nanoCards: NanoBananaCard[] }) {
   // Interleave content: every 3-4 inspiration cards, insert a row of nano cards
-  const interleavedContent: Array<{ type: 'inspiration'; card: Card } | { type: 'nano'; cards: NanoBananaCard[] }> = [];
-  
+  const interleavedContent: Array<
+    { type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }
+  > = [];
+
   filtered.forEach((card, index) => {
-    interleavedContent.push({ type: 'inspiration', card });
-    
+    interleavedContent.push({ type: "inspiration", card });
+
     // Every 3-4 cards, insert a nano row (adjust frequency as desired)
     if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
       // Pick 3-4 random nano cards for this row
       const startIdx = ((index / 4) * 3) % nanoCards.length;
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
       if (rowCards.length > 0) {
-        interleavedContent.push({ type: 'nano', cards: rowCards });
+        interleavedContent.push({ type: "nano", cards: rowCards });
       }
     }
   });
@@ -239,7 +261,7 @@ function ListView({ filtered, nanoCards }: { filtered: Card[]; nanoCards: NanoBa
   return (
     <div className="space-y-4">
       {interleavedContent.map((item, index) => {
-        if (item.type === 'inspiration') {
+        if (item.type === "inspiration") {
           return <InspirationListItem key={`insp-${item.card.id}`} card={item.card} />;
         } else {
           return <NanoBananaRow key={`nano-${index}`} cards={item.cards} />;
@@ -270,7 +292,12 @@ function InspirationListItem({ card }: { card: Card }) {
           ) : (
             <div className="flex h-full w-full items-center justify-center text-neutral-300">
               <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
             </div>
           )}
@@ -286,7 +313,7 @@ function InspirationListItem({ card }: { card: Card }) {
               {stripQuotes(card?.hook?.text || "") || card?.signal?.summary || "Inspiration"}
             </h3>
             {card?.rating && (
-              <div 
+              <div
                 className="flex-shrink-0 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700"
                 title={card.rating.reason}
               >
@@ -295,12 +322,10 @@ function InspirationListItem({ card }: { card: Card }) {
               </div>
             )}
           </div>
-          
+
           {/* Summary if different from title */}
           {card?.signal?.summary && card.signal.summary !== card?.hook?.text && (
-            <p className="mt-1 line-clamp-2 text-sm text-neutral-600">
-              {card.signal.summary}
-            </p>
+            <p className="mt-1 line-clamp-2 text-sm text-neutral-600">{card.signal.summary}</p>
           )}
         </div>
 
@@ -312,10 +337,7 @@ function InspirationListItem({ card }: { card: Card }) {
             </span>
           )}
           {card?.translation?.angles?.slice(0, 3).map((angle) => (
-            <span
-              key={angle}
-              className="inline-flex rounded-full bg-blue-50 px-2.5 py-1 text-xs text-blue-700"
-            >
+            <span key={angle} className="inline-flex rounded-full bg-blue-50 px-2.5 py-1 text-xs text-blue-700">
               {angle}
             </span>
           ))}
@@ -339,19 +361,30 @@ function NanoBananaRow({ cards }: { cards: NanoBananaCard[] }) {
 // Single Nano Banana Card with Flippable Images
 function NanoBananaCard({ card }: { card: NanoBananaCard }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % card.images.length);
   };
-  
+
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + card.images.length) % card.images.length);
   };
-  
+
   // Abbreviate prompt to ~80 characters
-  const abbreviatedPrompt = card.prompt.zh.length > 80 
-    ? card.prompt.zh.substring(0, 80) + "..." 
-    : card.prompt.zh;
+  const abbreviatedPrompt =
+    card.prompt.zh.length > 80 ? card.prompt.zh.substring(0, 80) + "..." : card.prompt.zh;
+
+  const rawSrc = card.images[currentImageIndex]; // e.g. "species_science_1.png"
+  const fullSrc = toAbsoluteCdnImageUrl(rawSrc); // e.g. "https://cdn.curify-ai.com/images/species_science_1.png"
+
+  console.log("[CDN IMAGE DEBUG]", {
+    index: currentImageIndex,
+    rawSrc,
+    fullSrc,
+    CDN_BASE,
+    IMAGES_PREFIX,
+    allImages: card.images,
+  });
 
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-4 shadow-sm hover:shadow-md transition-shadow">
@@ -361,17 +394,20 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
           🍌 {card.category_zh}
         </span>
       </div>
-      
+
       {/* Image Carousel */}
       <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl bg-white">
         <CdnImage
-          src={card.images[currentImageIndex]}
+          src={fullSrc}
           alt={`${card.category_zh} example ${currentImageIndex + 1}`}
           fill
           className="object-cover"
           unoptimized
+          onError={() => {
+            console.error("[CDN IMAGE ERROR]", { fullSrc, rawSrc, CDN_BASE, IMAGES_PREFIX });
+          }}
         />
-        
+
         {/* Navigation Arrows */}
         {card.images.length > 1 && (
           <>
@@ -379,6 +415,7 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
               onClick={prevImage}
               className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 transition-opacity hover:bg-black/70 group-hover:opacity-100"
               aria-label="Previous image"
+              type="button"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -388,12 +425,13 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
               onClick={nextImage}
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 transition-opacity hover:bg-black/70 group-hover:opacity-100"
               aria-label="Next image"
+              type="button"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
-            
+
             {/* Image Indicators */}
             <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1">
               {card.images.map((_, idx) => (
@@ -409,15 +447,13 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
           </>
         )}
       </div>
-      
+
       {/* Prompt Preview */}
-      <p className="text-xs leading-relaxed text-neutral-700">
-        {abbreviatedPrompt}
-      </p>
-      
+      <p className="text-xs leading-relaxed text-neutral-700">{abbreviatedPrompt}</p>
+
       {/* Image Counter */}
       <div className="mt-2 text-xs text-neutral-500">
-        {card.images.length} {card.images.length === 1 ? 'example' : 'examples'}
+        {card.images.length} {card.images.length === 1 ? "example" : "examples"}
       </div>
     </div>
   );
@@ -432,11 +468,9 @@ function CardHeader({ card }: { card: Card }) {
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <div className="text-xs text-neutral-500">
-              {card?.lang?.toUpperCase?.() || "ZH"}
-            </div>
+            <div className="text-xs text-neutral-500">{card?.lang?.toUpperCase?.() || "ZH"}</div>
             {card?.rating && (
-              <div 
+              <div
                 className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700"
                 title={card.rating.reason}
               >
@@ -445,9 +479,7 @@ function CardHeader({ card }: { card: Card }) {
               </div>
             )}
           </div>
-          <h2 className="mt-1 line-clamp-2 text-base font-semibold leading-snug">
-            {hook || "Inspiration"}
-          </h2>
+          <h2 className="mt-1 line-clamp-2 text-base font-semibold leading-snug">{hook || "Inspiration"}</h2>
           {tag ? (
             <div className="mt-2 inline-flex rounded-full bg-neutral-100 px-2.5 py-1 text-xs text-neutral-700">
               {tag}
@@ -469,24 +501,10 @@ function CardBody({ card }: { card: Card }) {
     <div className="px-4 pb-4">
       {/* Visual */}
       {images.length ? (
-        <div
-          className={classNames(
-            "mt-4 grid gap-2",
-            images.length > 1 ? "grid-cols-2" : "grid-cols-1"
-          )}
-        >
+        <div className={classNames("mt-4 grid gap-2", images.length > 1 ? "grid-cols-2" : "grid-cols-1")}>
           {images.slice(0, 2).map((img) => (
-            <div
-              key={img.url}
-              className="relative overflow-hidden rounded-xl border border-neutral-100"
-            >
-              <Image
-                src={img.url}
-                alt={img.alt || "preview"}
-                width={900}
-                height={1200}
-                className="h-auto w-full object-cover"
-              />
+            <div key={img.url} className="relative overflow-hidden rounded-xl border border-neutral-100">
+              <Image src={img.url} alt={img.alt || "preview"} width={900} height={1200} className="h-auto w-full object-cover" />
             </div>
           ))}
         </div>
@@ -495,9 +513,7 @@ function CardBody({ card }: { card: Card }) {
       {/* Signal */}
       <div className="mt-4">
         <div className="text-xs font-medium text-neutral-800">信号源</div>
-        <p className="mt-1 text-sm leading-relaxed text-neutral-700">
-          {card?.signal?.summary}
-        </p>
+        <p className="mt-1 text-sm leading-relaxed text-neutral-700">{card?.signal?.summary}</p>
 
         {/* Sources */}
         {sources.length ? (
@@ -515,10 +531,7 @@ function CardBody({ card }: { card: Card }) {
                   {s.label}
                 </a>
               ) : (
-                <span
-                  key={key}
-                  className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600"
-                >
+                <span key={key} className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600">
                   {s.label}
                 </span>
               );
@@ -533,10 +546,7 @@ function CardBody({ card }: { card: Card }) {
         {angles.length ? (
           <div className="mt-2 flex flex-wrap gap-2">
             {angles.map((a) => (
-              <span
-                key={a}
-                className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs text-neutral-700"
-              >
+              <span key={a} className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs text-neutral-700">
                 {a}
               </span>
             ))}
@@ -546,9 +556,7 @@ function CardBody({ card }: { card: Card }) {
 
       {/* Production */}
       <div className="mt-4">
-        <div className="text-xs font-medium text-neutral-800">
-          {card?.production?.title || "制作建议"}
-        </div>
+        <div className="text-xs font-medium text-neutral-800">{card?.production?.title || "制作建议"}</div>
         <div className="mt-1 text-xs text-neutral-600">
           形式：{card?.production?.format || "-"}{" "}
           {card?.production?.durationSec ? `· ${card.production.durationSec}s` : ""}
@@ -561,16 +569,14 @@ function CardBody({ card }: { card: Card }) {
           </ul>
         ) : null}
       </div>
-      
+
       {/* AI Rating Details */}
       {card?.rating?.reason && (
         <details className="mt-4">
           <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">
             AI评分详情
           </summary>
-          <p className="mt-2 text-xs leading-relaxed text-neutral-600">
-            {card.rating.reason}
-          </p>
+          <p className="mt-2 text-xs leading-relaxed text-neutral-600">{card.rating.reason}</p>
         </details>
       )}
     </div>
@@ -625,6 +631,7 @@ function CardFooter({ card }: { card: Card }) {
       <button
         onClick={onCopy}
         className="inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-3 py-2 text-xs font-medium text-white hover:bg-neutral-800"
+        type="button"
       >
         <span>📋</span>
         <span>{copied ? "已复制" : card?.actions?.copy?.label || "复制"}</span>
@@ -633,6 +640,7 @@ function CardFooter({ card }: { card: Card }) {
       <button
         onClick={onShare}
         className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-xs font-medium text-neutral-800 hover:bg-neutral-50"
+        type="button"
       >
         <span>↗</span>
         <span>{shared ? "已分享/已复制链接" : card?.actions?.share?.label || "分享"}</span>
