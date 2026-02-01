@@ -46,7 +46,7 @@ type ShareData = {
   url?: string;
 };
 
-type ViewMode = "cards" | "list";
+type ViewMode =   "list" | "cards";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
@@ -89,7 +89,7 @@ function toAbsoluteCdnImageUrl(src?: string | null) {
 export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   const [query, setQuery] = useState("");
   const [minRating, setMinRating] = useState<number | null>(null);
-  const [viewMode, setViewMode] = useState<ViewMode>("cards");
+  const [viewMode, setViewMode] = useState<ViewMode>("list");
   const [nanoCards, setNanoCards] = useState<NanoBananaCard[]>([]);
 
   useEffect(() => {
