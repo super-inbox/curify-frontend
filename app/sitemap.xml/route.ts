@@ -3,7 +3,7 @@ import blogs from "@/content/blogs.json";
 
 export const runtime = "nodejs";
 
-const BASE_URL = "https://curify-ai.com";
+const BASE_URL = "https://www.curify-ai.com";
 
 // All languages you support
 const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"];
