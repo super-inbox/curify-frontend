@@ -3,7 +3,7 @@
     "id": 1,
     "category_zh": "中草药类",
     "category_en": "Herbal Medicine Exploded Diagram",
-    "images": ["herbal_medicine_1.png", "herbal_medicine_2.png"],
+    "images": ["herbal_medicine_1.jpg", "herbal_medicine_2.jpg"],
     "prompt": {
       "zh": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把“单味药材”画成全景式知识分解图。根据用户指定的【中药材名称】，生成一张“单味药材全景分解图（Herb Exploded Sheet）”：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【 】。",
       "en": "(Medica Concept Artist) You are a top-tier herbal concept illustrator who turns a single traditional herb into a panoramic, encyclopedia-style exploded knowledge sheet. Create a “Herb Exploded Sheet” for the specified herb: place a high-detail illustration of the sliced/dried herbal material at the center; surround it with evenly arranged modules showing the source plant (full form), key plant parts (root/bark/fruit) with callouts, cross-sections and texture zoom-ins, TCM property tags (four natures, five flavors, meridian entry) as sticker-like labels, icon-based functions and daily usage scenes (e.g., herbal tea, decoction pot), modern forms (powder/granules/capsules/decoction), and 1–2 material texture magnifiers. Connect all modules with fine lines/arrows/frames to form a poster-like science infographic. Style: high-quality 2D illustration with clean linework and soft coloring on a beige/parchment/light-gray research-poster background; handwritten-style Chinese notes with small English counterparts. Output: single-page vertical 4K poster with clear whitespace and structured sections; educational only, no medical claims. Render directly for herb: [ ]."
@@ -13,7 +13,7 @@
     "id": 2,
     "category_zh": "发展纪年类",
     "category_en": "Evolution Timeline Visualization",
-    "images": ["evolution_timeline_1.png", "evolution_timeline_2.png"],
+    "images": ["evolution_timeline_1.jpg", "evolution_timeline_2.jpg"],
     "prompt": {
       "zh": "核心提示词：nano banana分析图配套图文创作，生成超高细节等距像素艺术时间线插画，比例3:4，分辨率4K，整体风格兼具繁复细节、象征意义与隐喻性。构建“【主题】演进博物馆/陈列馆”的等距像素场景，以不同展区对应不同历史阶段（起源奠基期/发展兴盛期/变革转型期/当代及未来期），形成“空间递进=时间演进”。标准等距透视（2:1），层次丰富、衔接流畅；每阶段搭配3-5个强关联象征元素；用阶段差异化配色实现“色彩递进=时间流转”。融入双语像素字体标题：中文“【主题】演进史”，英文“EVOLUTION OF [THEME]”；副标题“从[起始节点]到[未来展望] / From [Start] to [Future]”，并加入关键节点时间标记。整体兼顾专业性与观赏性，预留解读空间，适配学术解析与可视化对比展示。",
       "en": "Create an ultra-high-detail isometric pixel-art timeline illustration (3:4, 4K) for nano-banana-style analytical content, combining dense detail with symbolism and metaphor. Build an isometric “EVOLUTION MUSEUM OF [THEME]” where each gallery zone represents a stage: Origin/Foundation, Growth/Prosperity, Transformation/Disruption, and Present/Future—so spatial progression equals temporal evolution. Use standard isometric perspective (2:1), rich layered depth, and smooth transitions via corridors/light gradients. Assign 3–5 strongly theme-linked symbolic elements per stage. Use stage-differentiated color palettes to suggest time flow (earthy vintage → balanced classic → bold experimental → futuristic neon/clean tones). Add bilingual pixel-font titles integrated into the scene: Chinese “【主题】演进史” and English “EVOLUTION OF [THEME]”, plus subtitles “从[起始节点]到[未来展望] / From [Start] to [Future]” and key timeline markers. Keep it professional yet visually engaging with interpretive space; suitable for academic analysis and comparative visualization."
@@ -23,7 +23,7 @@
     "id": 3,
     "category_zh": "旅游规划图",
     "category_en": "Travel Planning Illustrated Map",
-    "images": ["travel_planning_1.png", "travel_planning_2.png"],
+    "images": ["travel_planning_1.jpg", "travel_planning_2.jpg"],
     "prompt": {
       "zh": "角色：可爱手绘风旅行插画师，把行程转化为色彩明快、细节满满的卡通地图。要求：1）手绘可爱风，景点/美食/住宿/交通全部设计成萌系图案；2）全程用简体中文精准标注地点与行程；3）清晰标出地点间移动路线，按日期分块展示每日重点活动；4）画幅4:3，解析度为基础两倍。可替换：目的地、行程时段（如1/19-1/25、1/26-1/30）、重点景点、美食、季节元素、地图精准度需求（如更准确海岸线/地形）。",
       "en": "Role: a cute hand-drawn travel illustrator who converts itineraries into bright, detail-rich cartoon maps. Requirements: (1) adorable hand-drawn style—turn landmarks, food, lodging, and transport into cute icons; (2) label everything accurately in Simplified Chinese; (3) clearly draw travel routes between locations and group the plan by dates, highlighting key daily activities; (4) fixed 4:3 aspect ratio with 2× base resolution. Replaceable fields: destination, date ranges, key attractions, local foods, seasonal elements, and map-accuracy needs (e.g., more accurate coastline/terrain)."
@@ -33,7 +33,7 @@
     "id": 4,
     "category_zh": "建筑分析图",
     "category_en": "Architectural Analysis Infographic",
-    "images": ["architecture_analysis_1.png", "architecture_analysis_2.png"],
+    "images": ["architecture_analysis_1.jpg", "architecture_analysis_2.jpg"],
     "prompt": {
       "zh": "制作一张【Xxx地标】的信息图：结合地标真实照片与白色技术注释/图解叠加，在角落手绘方框中写建筑名称。叠加复杂白色技术标注，展示关键结构数据、重要测量、材料数量、细部做法，并包含剖面图、平面图以及显著建筑/工程特征。风格：HUD平视显示、信息图表美学、细致清晰白线、技术/建筑注释风格、教育信息图感；注释后能看到真实环境；竖向构图。",
       "en": "Create an infographic for [Landmark] by combining a real photo with complex white technical overlays and diagrams. Write the building name inside a hand-drawn box in a corner. Add dense white line annotations showing key structural data, measurements, material quantities, detail construction methods, plus section and plan diagrams and notable architectural/engineering features. Style: HUD heads-up-display infographic aesthetic with crisp white linework; the real environment remains visible beneath the annotations. Vertical composition."
@@ -53,7 +53,7 @@
     "id": 6,
     "category_zh": "人物像素拆解",
     "category_en": "Character Pixel Deconstruction",
-    "images": ["character_deconstruction_1.png", "character_deconstruction_2.png"],
+    "images": ["character_deconstruction_1.jpg", "character_deconstruction_2.jpg"],
     "prompt": {
       "zh": "你是顶尖游戏与动漫概念美术设计师，擅长制作详尽角色设定图，具备“像素级拆解”能力：透视穿着层级、捕捉微表情，并还原相关物品。根据主体形象生成“全景式角色深度概念分解图”：中心为人物全身立绘/主要动态姿势；四周有序展示服装分层（含脱下外套后的内层）、新增私密内着拆解、3-4个不同情绪的头部表情特写、1-2个关键部位材质特写、物品质感特写、关联道具与“生活切片”（通勤包及打开后的内容物、美妆护理、私密日记本/药物补剂盒/电子烟等）。用手绘箭头/引导线连接对应部位；米黄/羊皮纸/浅灰纹理背景；中文手写注释。示例：生成《名侦探柯南》柯南角色设定图，比例3:4。",
       "en": "You are a top game/anime concept artist who creates detailed character design sheets with pixel-level deconstruction: clothing layers, micro-expressions, and concretely rendered related items. Generate a “panoramic deep character breakdown sheet” with a full-body central illustration/pose. Around it, neatly place: outfit layers (including inner layers after removing outerwear), an added intimate underlayer breakdown, 3–4 head close-ups with distinct emotions, 1–2 material zoom-ins of key parts, extra small-object texture close-ups, and lifestyle slices (commute bag shown opened with contents scattered, cosmetics & care kit, private diary/medicine supplements/e-cigarette, etc., depending on personality). Use hand-drawn arrows/leader lines to connect parts to the character. Background: beige/parchment/light gray texture. Annotations: handwritten Chinese. Example subject: Conan from Detective Conan. Aspect ratio 3:4."
