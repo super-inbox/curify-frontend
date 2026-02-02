@@ -4,7 +4,11 @@ import Image from "next/image";
 import { useMemo, useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import { useViewTracking, useCopyTracking, useShareTracking, useClickTracking } from '@/lib/useTracking';
+import { useViewTracking, useCopyTracking, useShareTracking, useClickTracking } from "@/lib/useTracking";
+
+// ✅ auth gate (same pattern as PricingPage)
+import { useAtomValue, useSetAtom } from "jotai";
+import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 
 type Source = {
   label: string;
@@ -142,13 +146,23 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 
     // 3) Rating filter
     if (minRating !== null) {
-      result = result.filter((c) => {
-        return c.rating && c.rating.score >= minRating;
-      });
+      result = result.filter((c) => c.rating && c.rating.score >= minRating);
     }
 
     return result;
   }, [cards, query, minRating, activeLang]);
+
+  // ✅ Auth gate function to pass down (no auth required to view the page)
+  const user = useAtomValue(userAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const requireAuth = useMemo(() => {
+    return (reason?: string) => {
+      if (user) return true;
+      // match PricingPage behavior
+      setDrawerState("signup"); // or "signin" if you prefer
+      return false;
+    };
+  }, [user, setDrawerState]);
 
   return (
     <section>
@@ -239,9 +253,9 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 
       {/* Conditional Rendering Based on View Mode */}
       {viewMode === "cards" ? (
-        <CardsView filtered={filtered} viewMode={viewMode} />
+        <CardsView filtered={filtered} viewMode={viewMode} requireAuth={requireAuth} />
       ) : (
-        <ListView filtered={filtered} nanoCards={nanoCardsForLang} viewMode={viewMode} />
+        <ListView filtered={filtered} nanoCards={nanoCardsForLang} viewMode={viewMode} requireAuth={requireAuth} />
       )}
 
       {filtered.length === 0 && (
@@ -263,39 +277,64 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 }
 
 // Cards View with Tracking
-function CardsView({ filtered, viewMode }: { filtered: Card[]; viewMode: ViewMode }) {
+function CardsView({
+  filtered,
+  viewMode,
+  requireAuth,
+}: {
+  filtered: Card[];
+  viewMode: ViewMode;
+  requireAuth: (reason?: string) => boolean;
+}) {
   return (
     <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
       {filtered.map((card) => (
-        <InspirationCardWrapper key={card.id} card={card} viewMode={viewMode} />
+        <InspirationCardWrapper key={card.id} card={card} viewMode={viewMode} requireAuth={requireAuth} />
       ))}
     </div>
   );
 }
 
 // Card wrapper with view tracking
-function InspirationCardWrapper({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
-  const viewRef = useViewTracking(card.id, 'inspiration', viewMode, {
-    threshold: 0.5,
-    once: true
-  });
-  
+function InspirationCardWrapper({
+  card,
+  viewMode,
+  requireAuth,
+}: {
+  card: Card;
+  viewMode: ViewMode;
+  requireAuth: (reason?: string) => boolean;
+}) {
+  const viewRef = useViewTracking(card.id, "inspiration", viewMode, { threshold: 0.5, once: true });
+
   return (
     <div
-      ref={viewRef}
+      ref={viewRef as React.Ref<HTMLDivElement>}
       id={card.id}
       className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm"
     >
       <CardHeader card={card} />
       <CardBody card={card} />
-      <CardFooter card={card} viewMode={viewMode} />
+      <CardFooter card={card} viewMode={viewMode} requireAuth={requireAuth} />
     </div>
   );
 }
 
 // List View with Nano Banana Cards Interleaved
-function ListView({ filtered, nanoCards, viewMode }: { filtered: Card[]; nanoCards: NanoBananaCard[]; viewMode: ViewMode }) {
-  const interleavedContent: Array<{ type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }> = [];
+function ListView({
+  filtered,
+  nanoCards,
+  viewMode,
+  requireAuth,
+}: {
+  filtered: Card[];
+  nanoCards: NanoBananaCard[];
+  viewMode: ViewMode;
+  requireAuth: (reason?: string) => boolean;
+}) {
+  const interleavedContent: Array<
+    { type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }
+  > = [];
 
   filtered.forEach((card, index) => {
     interleavedContent.push({ type: "inspiration", card });
@@ -305,9 +344,7 @@ function ListView({ filtered, nanoCards, viewMode }: { filtered: Card[]; nanoCar
       const block = Math.floor(index / 4);
       const startIdx = (block * 3) % nanoCards.length;
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
-      if (rowCards.length > 0) {
-        interleavedContent.push({ type: "nano", cards: rowCards });
-      }
+      if (rowCards.length > 0) interleavedContent.push({ type: "nano", cards: rowCards });
     }
   });
 
@@ -315,25 +352,36 @@ function ListView({ filtered, nanoCards, viewMode }: { filtered: Card[]; nanoCar
     <div className="space-y-4">
       {interleavedContent.map((item, index) => {
         if (item.type === "inspiration") {
-          return <InspirationListItem key={`insp-${item.card.id}`} card={item.card} viewMode={viewMode} />;
-        } else {
-          return <NanoBananaRow key={`nano-${index}`} cards={item.cards} />;
+          return (
+            <InspirationListItem
+              key={`insp-${item.card.id}`}
+              card={item.card}
+              viewMode={viewMode}
+              requireAuth={requireAuth}
+            />
+          );
         }
+        return <NanoBananaRow key={`nano-${index}`} cards={item.cards} requireAuth={requireAuth} />;
       })}
     </div>
   );
 }
 
 // Single Inspiration Item with tracking
-function InspirationListItem({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
-  const viewRef = useViewTracking(card.id, 'inspiration', viewMode, {
-    threshold: 0.5,
-    once: true
-  });
-  
+function InspirationListItem({
+  card,
+  viewMode,
+  requireAuth,
+}: {
+  card: Card;
+  viewMode: ViewMode;
+  requireAuth: (reason?: string) => boolean;
+}) {
+  const viewRef = useViewTracking(card.id, "inspiration", viewMode, { threshold: 0.5, once: true });
+
   return (
     <div
-      ref={viewRef}
+      ref={viewRef as React.Ref<HTMLDivElement>}
       id={card.id}
       className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
     >
@@ -405,29 +453,36 @@ function InspirationListItem({ card, viewMode }: { card: Card; viewMode: ViewMod
 }
 
 // Nano Banana Cards Row
-function NanoBananaRow({ cards }: { cards: NanoBananaCard[] }) {
+function NanoBananaRow({
+  cards,
+  requireAuth,
+}: {
+  cards: NanoBananaCard[];
+  requireAuth: (reason?: string) => boolean;
+}) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {cards.map((nanoCard) => (
-        <NanoBananaCardView key={nanoCard.id} card={nanoCard} />
+        <NanoBananaCardView key={nanoCard.id} card={nanoCard} requireAuth={requireAuth} />
       ))}
     </div>
   );
 }
 
 // Single Nano Banana Card with tracking
-function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
+function NanoBananaCardView({
+  card,
+  requireAuth,
+}: {
+  card: NanoBananaCard;
+  requireAuth: (reason?: string) => boolean;
+}) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  const viewRef = useViewTracking(
-    card.id,
-    'nano_inspiration',
-    'list',
-    { threshold: 0.5, once: true }
-  );
-  
-  const trackClick = useClickTracking(card.id, 'nano_inspiration', 'list');
-  const trackCopy = useCopyTracking(card.id, 'nano_inspiration', 'list');
+
+  const viewRef = useViewTracking(card.id, "nano_inspiration", "list", { threshold: 0.5, once: true });
+
+  const trackClick = useClickTracking(card.id, "nano_inspiration", "list");
+  const trackCopy = useCopyTracking(card.id, "nano_inspiration", "list");
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % card.images.length);
@@ -436,13 +491,19 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + card.images.length) % card.images.length);
   };
-  
+
+  const onCardClick = () => {
+    if (!requireAuth("click_nano_inspiration")) return;
+    trackClick();
+  };
+
   const copyPrompt = async () => {
+    if (!requireAuth("copy_nano_prompt")) return;
     try {
       await navigator.clipboard.writeText(card.prompt);
       trackCopy();
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
@@ -452,8 +513,8 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
 
   return (
     <div
-      ref={viewRef}
-      onClick={trackClick}
+      ref={viewRef as React.Ref<HTMLDivElement>}
+      onClick={onCardClick}
       className="group relative overflow-hidden rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
     >
       {/* Category Badge */}
@@ -521,7 +582,7 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
 
       {/* Prompt Preview */}
       <p className="text-xs leading-relaxed text-neutral-700 mb-2">{abbreviatedPrompt}</p>
-      
+
       {/* Copy Button */}
       <button
         onClick={(e) => {
@@ -671,20 +732,27 @@ function CardBody({ card }: { card: Card }) {
   );
 }
 
-function CardFooter({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
+function CardFooter({
+  card,
+  viewMode,
+  requireAuth,
+}: {
+  card: Card;
+  viewMode: ViewMode;
+  requireAuth: (reason?: string) => boolean;
+}) {
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
-  
-  const trackCopy = useCopyTracking(card.id, 'inspiration', viewMode);
-  const trackShare = useShareTracking(card.id, 'inspiration', viewMode);
+
+  const trackCopy = useCopyTracking(card.id, "inspiration", viewMode);
+  const trackShare = useShareTracking(card.id, "inspiration", viewMode);
 
   const shareUrl =
     card?.actions?.share?.url ||
-    (typeof window !== "undefined"
-      ? `${window.location.origin}/inspiration-hub#${card.id}`
-      : `/inspiration-hub#${card.id}`);
+    (typeof window !== "undefined" ? `${window.location.origin}/inspiration-hub#${card.id}` : `/inspiration-hub#${card.id}`);
 
   async function onCopy() {
+    if (!requireAuth("copy_inspiration")) return;
     try {
       const payload = card?.actions?.copy?.payload || stripQuotes(card?.hook?.text || "");
       await navigator.clipboard.writeText(payload);
@@ -697,20 +765,19 @@ function CardFooter({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
   }
 
   async function onShare() {
+    if (!requireAuth("share_inspiration")) return;
     try {
       const title = stripQuotes(card?.hook?.text || "Inspiration");
       const text = card?.signal?.summary || "";
 
-      const nav = navigator as Navigator & {
-        share?: (data: ShareData) => Promise<void>;
-      };
+      const nav = navigator as Navigator & { share?: (data: ShareData) => Promise<void> };
 
       if (nav?.share) {
         await nav.share({ title, text, url: shareUrl });
       } else {
         await navigator.clipboard.writeText(shareUrl);
       }
-      
+
       trackShare();
       setShared(true);
       setTimeout(() => setShared(false), 900);
