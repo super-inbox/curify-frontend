@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 
 type Source = {
@@ -30,14 +31,11 @@ type Card = {
 };
 
 type NanoBananaCard = {
-  id: number;
-  category_zh: string;
-  category_en: string;
+  id: string; // e.g. "1-zh", "1-en"
+  language: "zh" | "en";
+  category: string;
   images: string[];
-  prompt: {
-    zh: string;
-    en: string;
-  };
+  prompt: string;
 };
 
 type ShareData = {
@@ -46,7 +44,7 @@ type ShareData = {
   url?: string;
 };
 
-type ViewMode =   "list" | "cards";
+type ViewMode = "list" | "cards";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
@@ -78,9 +76,7 @@ function toAbsoluteCdnImageUrl(src?: string | null) {
   const s = src.startsWith("/") ? src : `/${src}`;
 
   // ensure /images prefix
-  const withImagesPrefix = s.startsWith(`${IMAGES_PREFIX}/`)
-    ? s
-    : `${IMAGES_PREFIX}${s}`; // "/images" + "/foo.png" => "/images/foo.png"
+  const withImagesPrefix = s.startsWith(`${IMAGES_PREFIX}/`) ? s : `${IMAGES_PREFIX}${s}`;
 
   // full absolute
   return `${CDN_BASE}${withImagesPrefix}`;
@@ -92,20 +88,57 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   const [viewMode, setViewMode] = useState<ViewMode>("list");
   const [nanoCards, setNanoCards] = useState<NanoBananaCard[]>([]);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Determine default language from URL locale prefix.
+  // If user is on /en/... -> EN, else ZH.
+  const urlLang: "en" | "zh" = useMemo(() => {
+    if (pathname?.startsWith("/en")) return "en";
+    return "zh";
+  }, [pathname]);
+
+  const [activeLang, setActiveLang] = useState<"en" | "zh">(urlLang);
+
+  // Keep activeLang in sync if user navigates across locales.
   useEffect(() => {
-    // Load nano banana cards
+    setActiveLang(urlLang);
+  }, [urlLang]);
+
+  function switchLang(nextLang: "en" | "zh") {
+    setActiveLang(nextLang);
+
+    // Update URL locale segment: /en/... or /zh/...
+    const parts = (pathname || "").split("/").filter(Boolean);
+    if (parts.length === 0) return;
+
+    // replace first segment (locale)
+    parts[0] = nextLang;
+    router.push("/" + parts.join("/"));
+  }
+
+  useEffect(() => {
+    // Load nano banana cards (new JSON format)
     fetch("/data/nano_inspiration.json")
       .then((res) => res.json())
       .then((data) => setNanoCards(data))
       .catch((err) => console.error("Failed to load nano cards:", err));
   }, []);
 
+  const nanoCardsForLang = useMemo(() => {
+    return (nanoCards || []).filter((n) => n.language === activeLang);
+  }, [nanoCards, activeLang]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
 
-    let result = cards;
+    // 1) language filter first
+    let result = (cards || []).filter((c) => {
+      const l = (c.lang || "zh").toLowerCase();
+      return activeLang === "en" ? l.startsWith("en") : l.startsWith("zh");
+    });
 
-    // Text search
+    // 2) Text search
     if (q) {
       result = result.filter((c) => {
         const hay = [
@@ -124,7 +157,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
       });
     }
 
-    // Rating filter
+    // 3) Rating filter
     if (minRating !== null) {
       result = result.filter((c) => {
         return c.rating && c.rating.score >= minRating;
@@ -132,7 +165,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
     }
 
     return result;
-  }, [cards, query, minRating]);
+  }, [cards, query, minRating, activeLang]);
 
   return (
     <section>
@@ -160,16 +193,39 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
             <option value="3.5">3.5+ ⭐</option>
           </select>
 
+          {/* Language Toggle */}
+          <div className="flex gap-1 rounded-xl border border-neutral-200 bg-white p-1">
+            <button
+              onClick={() => switchLang("zh")}
+              className={classNames(
+                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
+                activeLang === "zh" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
+              )}
+              type="button"
+            >
+              中文
+            </button>
+            <button
+              onClick={() => switchLang("en")}
+              className={classNames(
+                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
+                activeLang === "en" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
+              )}
+              type="button"
+            >
+              EN
+            </button>
+          </div>
+
           {/* View Mode Toggle */}
           <div className="flex gap-1 rounded-xl border border-neutral-200 bg-white p-1">
             <button
               onClick={() => setViewMode("cards")}
               className={classNames(
                 "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                viewMode === "cards"
-                  ? "bg-neutral-900 text-white"
-                  : "text-neutral-600 hover:text-neutral-900"
+                viewMode === "cards" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
               )}
+              type="button"
             >
               ⊞ Cards
             </button>
@@ -177,10 +233,9 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
               onClick={() => setViewMode("list")}
               className={classNames(
                 "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                viewMode === "list"
-                  ? "bg-neutral-900 text-white"
-                  : "text-neutral-600 hover:text-neutral-900"
+                viewMode === "list" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
               )}
+              type="button"
             >
               ☰ List
             </button>
@@ -189,12 +244,10 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 
         <div className="flex items-center justify-between text-xs text-neutral-500">
           <span>
-            Showing{" "}
-            <span className="font-medium text-neutral-700">{filtered.length}</span>{" "}
-            of {cards.length} cards
+            Showing <span className="font-medium text-neutral-700">{filtered.length}</span> of {cards.length} cards
           </span>
           {minRating && (
-            <button onClick={() => setMinRating(null)} className="text-blue-600 hover:text-blue-700">
+            <button onClick={() => setMinRating(null)} className="text-blue-600 hover:text-blue-700" type="button">
               Clear filters
             </button>
           )}
@@ -202,13 +255,21 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
       </div>
 
       {/* Conditional Rendering Based on View Mode */}
-      {viewMode === "cards" ? <CardsView filtered={filtered} /> : <ListView filtered={filtered} nanoCards={nanoCards} />}
+      {viewMode === "cards" ? (
+        <CardsView filtered={filtered} />
+      ) : (
+        <ListView filtered={filtered} nanoCards={nanoCardsForLang} />
+      )}
 
       {filtered.length === 0 && (
         <div className="py-16 text-center text-neutral-500">
           <p>No cards found matching your criteria.</p>
           {minRating && (
-            <button onClick={() => setMinRating(null)} className="mt-2 text-blue-600 hover:text-blue-700">
+            <button
+              onClick={() => setMinRating(null)}
+              className="mt-2 text-blue-600 hover:text-blue-700"
+              type="button"
+            >
               Clear rating filter
             </button>
           )}
@@ -223,11 +284,7 @@ function CardsView({ filtered }: { filtered: Card[] }) {
   return (
     <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
       {filtered.map((card) => (
-        <div
-          key={card.id}
-          id={card.id}
-          className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm"
-        >
+        <div key={card.id} id={card.id} className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm">
           <CardHeader card={card} />
           <CardBody card={card} />
           <CardFooter card={card} />
@@ -240,17 +297,16 @@ function CardsView({ filtered }: { filtered: Card[] }) {
 // List View with Nano Banana Cards Interleaved
 function ListView({ filtered, nanoCards }: { filtered: Card[]; nanoCards: NanoBananaCard[] }) {
   // Interleave content: every 3-4 inspiration cards, insert a row of nano cards
-  const interleavedContent: Array<
-    { type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }
-  > = [];
+  const interleavedContent: Array<{ type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }> =
+    [];
 
   filtered.forEach((card, index) => {
     interleavedContent.push({ type: "inspiration", card });
 
-    // Every 3-4 cards, insert a nano row (adjust frequency as desired)
+    // Every 4 cards, insert a nano row
     if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
-      // Pick 3-4 random nano cards for this row
-      const startIdx = ((index / 4) * 3) % nanoCards.length;
+      const block = Math.floor(index / 4);
+      const startIdx = (block * 3) % nanoCards.length;
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
       if (rowCards.length > 0) {
         interleavedContent.push({ type: "nano", cards: rowCards });
@@ -352,14 +408,14 @@ function NanoBananaRow({ cards }: { cards: NanoBananaCard[] }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {cards.map((nanoCard) => (
-        <NanoBananaCard key={nanoCard.id} card={nanoCard} />
+        <NanoBananaCardView key={nanoCard.id} card={nanoCard} />
       ))}
     </div>
   );
 }
 
 // Single Nano Banana Card with Flippable Images
-function NanoBananaCard({ card }: { card: NanoBananaCard }) {
+function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -371,8 +427,7 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
   };
 
   // Abbreviate prompt to ~80 characters
-  const abbreviatedPrompt =
-    card.prompt.zh.length > 80 ? card.prompt.zh.substring(0, 80) + "..." : card.prompt.zh;
+  const abbreviatedPrompt = card.prompt.length > 80 ? card.prompt.substring(0, 80) + "..." : card.prompt;
 
   const rawSrc = card.images[currentImageIndex]; // e.g. "species_science_1.png"
   const fullSrc = toAbsoluteCdnImageUrl(rawSrc); // e.g. "https://cdn.curify-ai.com/images/species_science_1.png"
@@ -391,7 +446,7 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
       {/* Category Badge */}
       <div className="mb-3">
         <span className="inline-flex rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">
-          🍌 {card.category_zh}
+          🍌 {card.category}
         </span>
       </div>
 
@@ -399,7 +454,7 @@ function NanoBananaCard({ card }: { card: NanoBananaCard }) {
       <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded-xl bg-white">
         <CdnImage
           src={fullSrc}
-          alt={`${card.category_zh} example ${currentImageIndex + 1}`}
+          alt={`${card.category} example ${currentImageIndex + 1}`}
           fill
           className="object-cover"
           unoptimized
@@ -504,7 +559,13 @@ function CardBody({ card }: { card: Card }) {
         <div className={classNames("mt-4 grid gap-2", images.length > 1 ? "grid-cols-2" : "grid-cols-1")}>
           {images.slice(0, 2).map((img) => (
             <div key={img.url} className="relative overflow-hidden rounded-xl border border-neutral-100">
-              <Image src={img.url} alt={img.alt || "preview"} width={900} height={1200} className="h-auto w-full object-cover" />
+              <Image
+                src={img.url}
+                alt={img.alt || "preview"}
+                width={900}
+                height={1200}
+                className="h-auto w-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -558,8 +619,7 @@ function CardBody({ card }: { card: Card }) {
       <div className="mt-4">
         <div className="text-xs font-medium text-neutral-800">{card?.production?.title || "制作建议"}</div>
         <div className="mt-1 text-xs text-neutral-600">
-          形式：{card?.production?.format || "-"}{" "}
-          {card?.production?.durationSec ? `· ${card.production.durationSec}s` : ""}
+          形式：{card?.production?.format || "-"} {card?.production?.durationSec ? `· ${card.production.durationSec}s` : ""}
         </div>
         {beats.length ? (
           <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-neutral-700">
@@ -573,9 +633,7 @@ function CardBody({ card }: { card: Card }) {
       {/* AI Rating Details */}
       {card?.rating?.reason && (
         <details className="mt-4">
-          <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">
-            AI评分详情
-          </summary>
+          <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">AI评分详情</summary>
           <p className="mt-2 text-xs leading-relaxed text-neutral-600">{card.rating.reason}</p>
         </details>
       )}
