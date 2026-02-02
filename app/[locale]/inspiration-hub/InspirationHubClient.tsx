@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMemo, useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import { useViewTracking, useCopyTracking, useShareTracking, useClickTracking } from '@/lib/useTracking';
 
 type Source = {
   label: string;
@@ -54,31 +55,14 @@ function stripQuotes(s: string) {
   return (s || "").replaceAll('"', "").replaceAll('"', "").trim();
 }
 
-/**
- * ✅ Normalize to a FULL, ABSOLUTE URL so we can debug deterministically.
- * - If src is already absolute (http/https) -> keep it
- * - Else ensure it becomes `${CDN_BASE}/images/...`
- *
- * NOTE:
- * - set NEXT_PUBLIC_CDN_BASE to your real CDN, e.g. https://cdn.curify-ai.com
- * - If you actually host in a subfolder like /images/nano_inspiration/, change IMAGES_PREFIX below.
- */
 const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE || "https://cdn.curify-ai.com";
-const IMAGES_PREFIX = "/images"; // change to "/images/nano_inspiration" if that’s where files really are
+const IMAGES_PREFIX = "/images";
 
 function toAbsoluteCdnImageUrl(src?: string | null) {
   if (!src) return "";
-
-  // already absolute
   if (src.startsWith("http://") || src.startsWith("https://")) return src;
-
-  // ensure leading slash
   const s = src.startsWith("/") ? src : `/${src}`;
-
-  // ensure /images prefix
   const withImagesPrefix = s.startsWith(`${IMAGES_PREFIX}/`) ? s : `${IMAGES_PREFIX}${s}`;
-
-  // full absolute
   return `${CDN_BASE}${withImagesPrefix}`;
 }
 
@@ -91,8 +75,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Determine default language from URL locale prefix.
-  // If user is on /en/... -> EN, else ZH.
+  // Determine default language from URL locale prefix
   const urlLang: "en" | "zh" = useMemo(() => {
     if (pathname?.startsWith("/en")) return "en";
     return "zh";
@@ -100,7 +83,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 
   const [activeLang, setActiveLang] = useState<"en" | "zh">(urlLang);
 
-  // Keep activeLang in sync if user navigates across locales.
+  // Keep activeLang in sync if user navigates across locales
   useEffect(() => {
     setActiveLang(urlLang);
   }, [urlLang]);
@@ -132,7 +115,7 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
 
-    // 1) language filter first
+    // 1) Language filter first
     let result = (cards || []).filter((c) => {
       const l = (c.lang || "zh").toLowerCase();
       return activeLang === "en" ? l.startsWith("en") : l.startsWith("zh");
@@ -256,9 +239,9 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
 
       {/* Conditional Rendering Based on View Mode */}
       {viewMode === "cards" ? (
-        <CardsView filtered={filtered} />
+        <CardsView filtered={filtered} viewMode={viewMode} />
       ) : (
-        <ListView filtered={filtered} nanoCards={nanoCardsForLang} />
+        <ListView filtered={filtered} nanoCards={nanoCardsForLang} viewMode={viewMode} />
       )}
 
       {filtered.length === 0 && (
@@ -279,26 +262,40 @@ export default function InspirationHubClient({ cards }: { cards: Card[] }) {
   );
 }
 
-// Cards View (Original Waterfall Layout)
-function CardsView({ filtered }: { filtered: Card[] }) {
+// Cards View with Tracking
+function CardsView({ filtered, viewMode }: { filtered: Card[]; viewMode: ViewMode }) {
   return (
     <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
       {filtered.map((card) => (
-        <div key={card.id} id={card.id} className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm">
-          <CardHeader card={card} />
-          <CardBody card={card} />
-          <CardFooter card={card} />
-        </div>
+        <InspirationCardWrapper key={card.id} card={card} viewMode={viewMode} />
       ))}
     </div>
   );
 }
 
+// Card wrapper with view tracking
+function InspirationCardWrapper({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
+  const viewRef = useViewTracking(card.id, 'inspiration', viewMode, {
+    threshold: 0.5,
+    once: true
+  });
+  
+  return (
+    <div
+      ref={viewRef}
+      id={card.id}
+      className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm"
+    >
+      <CardHeader card={card} />
+      <CardBody card={card} />
+      <CardFooter card={card} viewMode={viewMode} />
+    </div>
+  );
+}
+
 // List View with Nano Banana Cards Interleaved
-function ListView({ filtered, nanoCards }: { filtered: Card[]; nanoCards: NanoBananaCard[] }) {
-  // Interleave content: every 3-4 inspiration cards, insert a row of nano cards
-  const interleavedContent: Array<{ type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }> =
-    [];
+function ListView({ filtered, nanoCards, viewMode }: { filtered: Card[]; nanoCards: NanoBananaCard[]; viewMode: ViewMode }) {
+  const interleavedContent: Array<{ type: "inspiration"; card: Card } | { type: "nano"; cards: NanoBananaCard[] }> = [];
 
   filtered.forEach((card, index) => {
     interleavedContent.push({ type: "inspiration", card });
@@ -318,7 +315,7 @@ function ListView({ filtered, nanoCards }: { filtered: Card[]; nanoCards: NanoBa
     <div className="space-y-4">
       {interleavedContent.map((item, index) => {
         if (item.type === "inspiration") {
-          return <InspirationListItem key={`insp-${item.card.id}`} card={item.card} />;
+          return <InspirationListItem key={`insp-${item.card.id}`} card={item.card} viewMode={viewMode} />;
         } else {
           return <NanoBananaRow key={`nano-${index}`} cards={item.cards} />;
         }
@@ -327,10 +324,16 @@ function ListView({ filtered, nanoCards }: { filtered: Card[]; nanoCards: NanoBa
   );
 }
 
-// Single Inspiration Item in List View
-function InspirationListItem({ card }: { card: Card }) {
+// Single Inspiration Item with tracking
+function InspirationListItem({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
+  const viewRef = useViewTracking(card.id, 'inspiration', viewMode, {
+    threshold: 0.5,
+    once: true
+  });
+  
   return (
     <div
+      ref={viewRef}
       id={card.id}
       className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
     >
@@ -363,7 +366,6 @@ function InspirationListItem({ card }: { card: Card }) {
       {/* Content */}
       <div className="flex min-w-0 flex-1 flex-col justify-between">
         <div>
-          {/* Title / Summary */}
           <div className="flex items-start gap-2">
             <h3 className="flex-1 text-base font-semibold leading-snug text-neutral-900">
               {stripQuotes(card?.hook?.text || "") || card?.signal?.summary || "Inspiration"}
@@ -379,7 +381,6 @@ function InspirationListItem({ card }: { card: Card }) {
             )}
           </div>
 
-          {/* Summary if different from title */}
           {card?.signal?.summary && card.signal.summary !== card?.hook?.text && (
             <p className="mt-1 line-clamp-2 text-sm text-neutral-600">{card.signal.summary}</p>
           )}
@@ -414,9 +415,19 @@ function NanoBananaRow({ cards }: { cards: NanoBananaCard[] }) {
   );
 }
 
-// Single Nano Banana Card with Flippable Images
+// Single Nano Banana Card with tracking
 function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const viewRef = useViewTracking(
+    card.id,
+    'nano_inspiration',
+    'list',
+    { threshold: 0.5, once: true }
+  );
+  
+  const trackClick = useClickTracking(card.id, 'nano_inspiration', 'list');
+  const trackCopy = useCopyTracking(card.id, 'nano_inspiration', 'list');
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % card.images.length);
@@ -425,24 +436,26 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + card.images.length) % card.images.length);
   };
+  
+  const copyPrompt = async () => {
+    try {
+      await navigator.clipboard.writeText(card.prompt);
+      trackCopy();
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
-  // Abbreviate prompt to ~80 characters
   const abbreviatedPrompt = card.prompt.length > 80 ? card.prompt.substring(0, 80) + "..." : card.prompt;
-
-  const rawSrc = card.images[currentImageIndex]; // e.g. "species_science_1.png"
-  const fullSrc = toAbsoluteCdnImageUrl(rawSrc); // e.g. "https://cdn.curify-ai.com/images/species_science_1.png"
-
-  console.log("[CDN IMAGE DEBUG]", {
-    index: currentImageIndex,
-    rawSrc,
-    fullSrc,
-    CDN_BASE,
-    IMAGES_PREFIX,
-    allImages: card.images,
-  });
+  const rawSrc = card.images[currentImageIndex];
+  const fullSrc = toAbsoluteCdnImageUrl(rawSrc);
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-4 shadow-sm hover:shadow-md transition-shadow">
+    <div
+      ref={viewRef}
+      onClick={trackClick}
+      className="group relative overflow-hidden rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+    >
       {/* Category Badge */}
       <div className="mb-3">
         <span className="inline-flex rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">
@@ -458,16 +471,16 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
           fill
           className="object-cover"
           unoptimized
-          onError={() => {
-            console.error("[CDN IMAGE ERROR]", { fullSrc, rawSrc, CDN_BASE, IMAGES_PREFIX });
-          }}
         />
 
         {/* Navigation Arrows */}
         {card.images.length > 1 && (
           <>
             <button
-              onClick={prevImage}
+              onClick={(e) => {
+                e.stopPropagation();
+                prevImage();
+              }}
               className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 transition-opacity hover:bg-black/70 group-hover:opacity-100"
               aria-label="Previous image"
               type="button"
@@ -477,7 +490,10 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
               </svg>
             </button>
             <button
-              onClick={nextImage}
+              onClick={(e) => {
+                e.stopPropagation();
+                nextImage();
+              }}
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white opacity-0 transition-opacity hover:bg-black/70 group-hover:opacity-100"
               aria-label="Next image"
               type="button"
@@ -504,7 +520,19 @@ function NanoBananaCardView({ card }: { card: NanoBananaCard }) {
       </div>
 
       {/* Prompt Preview */}
-      <p className="text-xs leading-relaxed text-neutral-700">{abbreviatedPrompt}</p>
+      <p className="text-xs leading-relaxed text-neutral-700 mb-2">{abbreviatedPrompt}</p>
+      
+      {/* Copy Button */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          copyPrompt();
+        }}
+        className="w-full mt-2 px-3 py-1.5 bg-purple-600 text-white rounded-lg text-xs font-medium hover:bg-purple-700 transition-colors"
+        type="button"
+      >
+        📋 Copy Prompt
+      </button>
 
       {/* Image Counter */}
       <div className="mt-2 text-xs text-neutral-500">
@@ -633,7 +661,9 @@ function CardBody({ card }: { card: Card }) {
       {/* AI Rating Details */}
       {card?.rating?.reason && (
         <details className="mt-4">
-          <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">AI评分详情</summary>
+          <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">
+            AI评分详情
+          </summary>
           <p className="mt-2 text-xs leading-relaxed text-neutral-600">{card.rating.reason}</p>
         </details>
       )}
@@ -641,9 +671,12 @@ function CardBody({ card }: { card: Card }) {
   );
 }
 
-function CardFooter({ card }: { card: Card }) {
+function CardFooter({ card, viewMode }: { card: Card; viewMode: ViewMode }) {
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
+  
+  const trackCopy = useCopyTracking(card.id, 'inspiration', viewMode);
+  const trackShare = useShareTracking(card.id, 'inspiration', viewMode);
 
   const shareUrl =
     card?.actions?.share?.url ||
@@ -655,6 +688,7 @@ function CardFooter({ card }: { card: Card }) {
     try {
       const payload = card?.actions?.copy?.payload || stripQuotes(card?.hook?.text || "");
       await navigator.clipboard.writeText(payload);
+      trackCopy();
       setCopied(true);
       setTimeout(() => setCopied(false), 900);
     } catch {
@@ -676,7 +710,8 @@ function CardFooter({ card }: { card: Card }) {
       } else {
         await navigator.clipboard.writeText(shareUrl);
       }
-
+      
+      trackShare();
       setShared(true);
       setTimeout(() => setShared(false), 900);
     } catch {
