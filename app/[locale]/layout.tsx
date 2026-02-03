@@ -77,7 +77,6 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }> | { locale: string };
 }): Promise<Metadata> {
-  // ✅ Next may provide params as async; always await safely
   const { locale } = await params;
   const meta = localizedMeta[locale] || localizedMeta["en"];
 
@@ -127,7 +126,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }> | { locale: string };
 }) {
-  // ✅ Next may provide params as async; always await safely
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -149,21 +147,23 @@ export default async function LocaleLayout({
     (p) => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")
   );
 
-  /**
-   * Hydration strategy:
-   * - Logged-in users: ALWAYS hydrate
-   * - Logged-out users:
-   *   - Protected pages: hydrate (safety net)
-   *   - Public pages: skip hydration (performance)
-   */
-  const shouldEnableUserHydration = !!session || isProtectedPage;
+  // ✅ ONLY enable UserHydrator (which fetches API) on protected pages.
+  // Public pages will rely entirely on the 'user' object below derived from Session.
+  const shouldEnableUserHydration = isProtectedPage;
 
+  // ✅ Extract Credits & Extended Info from Session
+  // Since we modified authOptions, session.user now contains these fields.
   const user = session?.user
     ? {
+        id: (session.user as any).id,
         name: session.user.name ?? null,
         email: session.user.email ?? null,
-        image: (session.user as any).image ?? null,
-        id: (session.user as any).id ?? null,
+        // Fallback to avatar_url if image is missing
+        image: session.user.image ?? (session.user as any).avatar_url ?? null,
+        // Pass credits to client so Header works without API fetch
+        non_expiring_credits: (session.user as any).non_expiring_credits ?? 0,
+        expiring_credits: (session.user as any).expiring_credits ?? 0,
+        plan_name: (session.user as any).plan_name ?? null,
       }
     : null;
 
@@ -173,7 +173,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        {/* GA4 – fire-and-forget */}
+        {/* GA4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
           strategy="lazyOnload"
@@ -224,6 +224,7 @@ export default async function LocaleLayout({
       <body suppressHydrationWarning>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
+            {/* User object now includes credits! */}
             <AppWrapper user={user}>
               {shouldEnableUserHydration ? (
                 <UserHydrator>
