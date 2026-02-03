@@ -1167,6 +1167,139 @@
       "memory": "Bajo consumo de memoria",
       "parallel": "Procesamiento en paralelo"
     }
+  },
+  "ageAi": {
+    "heading": "Ciencia de Datos en la Era de la IA: ¿Sigue siendo el 'Trabajo más Atractivo'?",
+    "intro1": "'Era el mejor de los tiempos, era el peor de los tiempos'.",
+    "intro2": "Hace una década, Harvard Business Review calificó al Científico de Datos como 'el trabajo más atractivo del siglo XXI'. Hoy, el panorama está cambiando radicalmente. Aunque la demanda de talento en datos sigue siendo alta, el auge de la IA generativa está transformando lo que significa ser un 'Científico de Datos'.",
+    "realityCheck": {
+      "title": "La Realidad",
+      "content": "Los dominios tradicionales como Búsqueda, Publicidad y Recomendaciones (SAR) están madurando, y la industria está cambiando su enfoque hacia la ingeniería robusta y la arquitectura de IA. Estamos presenciando una extraña paradoja.",
+      "lowBarTrap": {
+        "title": "La Trampa del 'Umbral Bajo'",
+        "content": "Los estudiantes de maestría ahora pueden usar GPT-4 para realizar limpieza de datos, análisis exploratorio y visualización en segundos. Sin embargo, sin una base sólida, a menudo carecen del criterio para reconocer cuándo la IA está 'alucinando' o proporcionando resultados estadísticamente cuestionables."
+      },
+      "stakeholderShift": {
+        "title": "El Cambio en las Partes Interesadas",
+        "content": "Cuando los socios comerciales pueden escribir sus propios prompts para obtener información básica, muchos profesionales de datos se sienten 'subestimulados', atrapados en reuniones interminables y en una ingeniería de prompts repetitiva."
+      }
+    },
+    "strategicPillars": {
+      "title": "Cómo Sigue Siendo Indispensable: Dos Pilares Estratégicos",
+      "intro": "Para prosperar en esta era, debemos evolucionar de 'constructores de modelos' a 'arquitectos de valor'. Veo que esto ocurre en dos dimensiones:",
+      "buildingTools": {
+        "title": "Construyendo las Herramientas (Mentalidad de Ingeniero/Arquitecto)",
+        "subtitle": "No solo uses la IA, mejórala.",
+        "points": [
+          {
+            "title": "Evaluación y Gobernanza de Modelos",
+            "content": "A medida que los resultados de IA se convierten en una mercancía, la persona que puede definir qué es un resultado 'bueno' se convierte en la más valiosa. Enfócate en marcos de evaluación especializados (como la ponderación de riesgos en Finanzas)."
+          },
+          {
+            "title": "Afinamiento por Dominio",
+            "content": "Domina técnicas como LoRA o RAG para inyectar conocimiento empresarial específico en los LLM."
+          },
+          {
+            "title": "Automatización",
+            "content": "Lidera iniciativas internas como 'Analistas Virtuales' o pipelines de experimentación automatizada."
+          }
+        ]
+      },
+      "leveragingTools": {
+        "title": "Aprovechando las Herramientas (Mentalidad Estratégica)",
+        "subtitle": "Usa la IA para multiplicar tu productividad por diez y enfócate en lo que los humanos hacen mejor.",
+        "points": [
+          {
+            "title": "Experticia en el Dominio",
+            "content": "La IA sabe el 'cómo', pero tú sabes el 'por qué'. La comprensión profunda del negocio te permite proporcionar el contexto que a la IA le falta."
+          },
+          {
+            "title": "Pensamiento Crítico y Experimentación",
+            "content": "Aunque la IA puede generar código, las habilidades humanas en ciencia de datos siguen siendo fundamentales para probar hipótesis, inferencia causal e interpretar datos del 'mundo real'."
+          },
+          {
+            "title": "Comunicación e Influencia",
+            "content": "La capacidad de traducir datos complejos en una historia empresarial y generar confianza entre las partes interesadas es una 'habilidad blanda' que se ha convertido en un 'requisito duro'."
+          }
+        ]
+      }
+    },
+    "bottomLine": {
+      "title": "En Conclusión",
+      "content1": "La IA no ha matado la Ciencia de Datos; ha elevado el listón. Si tu valor estaba puramente en escribir SQL o ajustar hiperparámetros, el 'atractivo' está desapareciendo. Pero si puedes cerrar la brecha entre los problemas empresariales y las soluciones de IA, tu valor nunca ha sido mayor.",
+      "content2": "Tu experiencia personal es tu ventaja. Un LLM puede imitar la lógica, pero no tiene los años de 'cicatrices de batalla' de implementaciones fallidas ni la intuición desarrollada al navegar por organizaciones complejas."
+    },
+    "discussion": {
+      "title": "Hablemos:",
+      "prompt": "¿Te sientes más 'eficiente' o 'reemplazado' en tu rol actual? ¿Cómo estás evolucionando tu conjunto de herramientas este año?"
+    },
+    "hashtags": ["#CienciaDeDatos", "#IA", "#AprendizajeAutomático", "#IAGenerativa", "#DesarrolloProfesional", "#TendenciasTecnológicas"]
+  },
+  "qaBotToTaskAgent": {
+    "heading": "🏗️ De Bot de Preguntas a Agente de Tareas: Una Guía de Arquitectura",
+    "description": "Aprende a construir agentes de tareas confiables que van más allá de simples respuestas a preguntas",
+    "tldr": "TL;DR: Deja de construir chatbots que solo responden preguntas. Empieza a construir Agentes de Tareas que realmente hagan el trabajo.",
+    "intro": "Esta guía explica el cambio arquitectónico de los bots de preguntas y respuestas monolíticos a los Agentes de Tareas utilizando Reglas Estáticas, Habilidades Dinámicas y Hooks Deterministas, con ejemplos de código concretos y referencias de código abierto.",
+    "coreShift": {
+      "title": "1. El Cambio Fundamental: De Bot de Preguntas a Agente de Tareas",
+      "content": [
+        "La mayoría de los sistemas de IA actuales siguen siendo bots de preguntas y respuestas sobrecargados de contexto:",
+        "• Responden bien a preguntas",
+        "• Alucinan bajo presión",
+        "• Carecen de garantías en cuanto a ejecución, seguridad y consistencia"
+      ],
+      "keyInsight": "La idea clave: No escales el contexto. Estructúralo."
+    },
+    "threeLayerArch": {
+      "title": "2. La Arquitectura de Tres Capas",
+      "layers": [
+        {
+          "title": "🧱 1. Contexto Estático — Reglas (Siempre Activo)",
+          "points": [
+            "Modelo mental: Manual del empleado",
+            "Siempre cargado",
+            "Define identidad, estándares de código, restricciones de comportamiento",
+            "Previene alucinaciones y desviaciones de estilo",
+            "Pequeño, estable, editable por humanos"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Contexto Dinámico — Habilidades (Bajo Demanda)",
+          "points": [
+            "Modelo mental: Caja de herramientas",
+            "Se carga solo cuando es necesario",
+            "Cada habilidad es una capacidad autocontenida",
+            "Mantiene limpia la ventana de contexto"
+          ]
+        },
+        {
+          "title": "⚓ 3. Hooks Deterministas — Barreras de Seguridad",
+          "points": [
+            "Modelo mental: Capa de Seguridad y Cumplimiento",
+            "No es probabilístico",
+            "Se ejecuta antes/después del razonamiento del LLM",
+            "Aplica reglas que NUNCA deben fallar"
+          ]
+        }
+      ]
+    },
+    "projectStructure": {
+      "title": "3. Estructura de Proyecto Recomendada",
+      "structure": "mi-agente-tareas/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+    },
+    "staticContextExample": {
+      "title": "4. Ejemplo de Contexto Estático: .cursorrules",
+      "content": "# ROL\nEres un Ingeniero Senior de Python enfocado en sistemas de grado de producción.\n\n# REGLAS\n- NUNCA uses print() para depurar\n- SIEMPRE añade tipos a las funciones\n- Propón un plan si tocas más de 3 archivos\n\n# COMPORTAMIENTO\n- Sé conciso\n- Haz preguntas aclaratorias si es necesario\n\nReferencia: https://github.com/PatrickJS/awesome-cursorrules"
+    },
+    "dynamicSkillExample": {
+      "title": "5. Ejemplo de Habilidad Dinámica (MCP)",
+      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Creado ticket {ticket_id} con prioridad={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferencia: https://github.com/modelcontextprotocol/python-sdk"
+    },
+    "deterministicHookExample": {
+      "title": "6. Ejemplo de Hook Determinista",
+      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"contraseña\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Violación de seguridad detectada\"}\n    return agent_node(state)\n\nReferencia: https://langchain-ai.github.io/langgraph/"
+    },
+    "finalThought": "Si tu agente solo responde preguntas, es un chatbot. Si ejecuta trabajo de manera confiable, es un Agente de Tareas."
   }
 }
 }
