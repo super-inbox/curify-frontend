@@ -10,6 +10,10 @@ function normalizeImageSrc(src?: string | null) {
   return src.startsWith("/") ? src : `/${src}`;
 }
 
+function classNames(...xs: Array<string | false | undefined | null>) {
+  return xs.filter(Boolean).join(" ");
+}
+
 interface CardViewModalProps {
   card: InspirationCardType | NanoInspirationCardType | null;
   isOpen: boolean;
@@ -85,9 +89,9 @@ export function CardViewModal({ card, isOpen, onClose, cardType }: CardViewModal
         {/* Content */}
         <div className="p-6">
           {cardType === "inspiration" ? (
-            <InspirationCardContent card={card as InspirationCardType} />
+            <InspirationCardDetailView card={card as InspirationCardType} />
           ) : (
-            <NanoBananaCardContent card={card as NanoInspirationCardType} />
+            <NanoBananaCardDetailView card={card as NanoInspirationCardType} />
           )}
 
           {/* Canonical URL */}
@@ -117,100 +121,156 @@ export function CardViewModal({ card, isOpen, onClose, cardType }: CardViewModal
   );
 }
 
-function InspirationCardContent({ card }: { card: InspirationCardType }) {
+// Inspiration Card Detail View (like the card view)
+function InspirationCardDetailView({ card }: { card: InspirationCardType }) {
+  const hook = card.hook?.text?.replaceAll('"', "").replaceAll('"', "").trim() || "";
+  const tag = card.translation?.tag;
+  const images = card?.visual?.images || [];
+  const angles = card?.translation?.angles || [];
+  const beats = card?.production?.beats || [];
+  const sources = card?.signal?.sources || [];
+
   return (
     <div className="space-y-4">
-      {/* Hook/Title */}
-      {card.hook?.text && (
-        <div>
-          <h3 className="text-xl font-bold text-neutral-900">{card.hook.text}</h3>
+      {/* Header */}
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <div className="text-xs text-neutral-500">{card?.lang?.toUpperCase?.() || "ZH"}</div>
+          {card?.rating && (
+            <div
+              className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700"
+              title={card.rating.reason}
+            >
+              <span>⭐</span>
+              <span>{card.rating.score.toFixed(1)}</span>
+            </div>
+          )}
         </div>
-      )}
-
-      {/* Rating */}
-      {card.rating && (
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-neutral-600">Rating:</span>
-          <div className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700">
-            <span>⭐</span>
-            <span>{card.rating.score.toFixed(1)}</span>
+        <h2 className="text-xl font-bold leading-snug text-neutral-900">{hook || "Inspiration"}</h2>
+        {tag && (
+          <div className="mt-2 inline-flex rounded-full bg-neutral-100 px-2.5 py-1 text-xs text-neutral-700">
+            {tag}
           </div>
-          {card.rating.reason && <span className="text-sm text-neutral-500">— {card.rating.reason}</span>}
+        )}
+      </div>
+
+      {/* Visual */}
+      {images.length > 0 && (
+        <div className={classNames("grid gap-2", images.length > 1 ? "grid-cols-2" : "grid-cols-1")}>
+          {images.slice(0, 2).map((img) => (
+            <div key={img.url} className="relative overflow-hidden rounded-xl border border-neutral-100">
+              <img
+                src={normalizeImageSrc(img.url)}
+                alt={img.alt || "preview"}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       )}
 
       {/* Signal */}
-      {card.signal?.summary && (
-        <div>
-          <h4 className="mb-2 text-sm font-semibold text-neutral-800">Signal Source</h4>
-          <p className="text-sm leading-relaxed text-neutral-700">{card.signal.summary}</p>
-        </div>
-      )}
+      <div>
+        <div className="text-xs font-medium text-neutral-800">信号源</div>
+        <p className="mt-1 text-sm leading-relaxed text-neutral-700">{card?.signal?.summary}</p>
 
-      {/* Sources */}
-      {card.signal?.sources && card.signal.sources.length > 0 && (
-        <div>
-          <h4 className="mb-2 text-sm font-semibold text-neutral-800">Sources</h4>
-          <div className="flex flex-wrap gap-2">
-            {card.signal.sources.map((source, idx) => (
-              <a
-                key={idx}
-                href={source.url}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-neutral-100 px-3 py-1.5 text-sm text-neutral-700 hover:bg-neutral-200 transition-colors"
-              >
-                {source.label}
-              </a>
-            ))}
+        {/* Sources */}
+        {sources.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-2">
+            {sources.slice(0, 4).map((s, idx) => {
+              const key = `${s.label}-${idx}`;
+              return s.url ? (
+                <a
+                  key={key}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600 hover:bg-neutral-100"
+                >
+                  {s.label}
+                </a>
+              ) : (
+                <span key={key} className="rounded-full bg-neutral-50 px-2.5 py-1 text-xs text-neutral-600">
+                  {s.label}
+                </span>
+              );
+            })}
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
-      {/* Translation Angles */}
-      {card.translation?.angles && card.translation.angles.length > 0 && (
-        <div>
-          <h4 className="mb-2 text-sm font-semibold text-neutral-800">Creative Angles</h4>
-          <div className="flex flex-wrap gap-2">
-            {card.translation.angles.map((angle, idx) => (
-              <span key={idx} className="rounded-full bg-blue-50 px-3 py-1.5 text-sm text-blue-700">
-                {angle}
+      {/* Creator Lens */}
+      <div>
+        <div className="text-xs font-medium text-neutral-800">灵感转化</div>
+        {angles.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-2">
+            {angles.map((a) => (
+              <span key={a} className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs text-neutral-700">
+                {a}
               </span>
             ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Production */}
-      {card.production && (
-        <div>
-          <h4 className="mb-2 text-sm font-semibold text-neutral-800">
-            {card.production.title || "Production Suggestions"}
-          </h4>
-          <p className="text-sm text-neutral-600">
-            Format: {card.production.format || "N/A"}
-            {card.production.durationSec && ` · ${card.production.durationSec}s`}
-          </p>
-          {card.production.beats && card.production.beats.length > 0 && (
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-neutral-700">
-              {card.production.beats.map((beat, idx) => (
-                <li key={idx}>{beat}</li>
-              ))}
-            </ul>
-          )}
+      <div>
+        <div className="text-xs font-medium text-neutral-800">{card?.production?.title || "制作建议"}</div>
+        <div className="mt-1 text-xs text-neutral-600">
+          形式：{card?.production?.format || "-"}{" "}
+          {card?.production?.durationSec ? `· ${card.production.durationSec}s` : ""}
         </div>
+        {beats.length > 0 && (
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-neutral-700">
+            {beats.slice(0, 4).map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* AI Rating Details */}
+      {card?.rating?.reason && (
+        <details className="mt-4">
+          <summary className="cursor-pointer text-xs font-medium text-neutral-800 hover:text-neutral-900">
+            AI评分详情
+          </summary>
+          <p className="mt-2 text-xs leading-relaxed text-neutral-600">{card.rating.reason}</p>
+        </details>
       )}
+    </div>
+  );
+}
+
+// Nano Banana Card Detail View
+function NanoBananaCardDetailView({ card }: { card: NanoInspirationCardType }) {
+  const normalized = card.image_urls?.map(normalizeImageSrc) || [];
+
+  return (
+    <div className="space-y-4">
+      {/* Category */}
+      <div className="inline-flex rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-700">
+        💡 {card.category}
+      </div>
+
+      {/* Prompt */}
+      <div>
+        <h4 className="mb-2 text-sm font-semibold text-neutral-800">Prompt</h4>
+        <p className="rounded-lg bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-700">{card.prompt}</p>
+      </div>
 
       {/* Images */}
-      {card.visual?.images && card.visual.images.length > 0 && (
+      {normalized.length > 0 && (
         <div>
-          <h4 className="mb-2 text-sm font-semibold text-neutral-800">Visual Assets</h4>
+          <h4 className="mb-2 text-sm font-semibold text-neutral-800">
+            Example Images ({normalized.length})
+          </h4>
           <div className="grid grid-cols-2 gap-4">
-            {card.visual.images.map((img, idx) => (
+            {normalized.map((fullUrl, idx) => (
               <img
                 key={idx}
-                src={normalizeImageSrc(img.url)}
-                alt={img.alt || `Visual ${idx + 1}`}
+                src={fullUrl}
+                alt={`${card.category} example ${idx + 1}`}
                 className="rounded-lg"
               />
             ))}
@@ -221,41 +281,4 @@ function InspirationCardContent({ card }: { card: InspirationCardType }) {
   );
 }
 
-function NanoBananaCardContent({ card }: { card: NanoInspirationCardType }) {
-  return (
-    <div className="space-y-4">
-      {/* Category */}
-      <div className="inline-flex rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-700">
-        🍌 {card.category}
-      </div>
 
-      {/* Prompt */}
-      <div>
-        <h4 className="mb-2 text-sm font-semibold text-neutral-800">Prompt</h4>
-        <p className="rounded-lg bg-neutral-50 p-4 text-sm leading-relaxed text-neutral-700">{card.prompt}</p>
-      </div>
-
-      {/* Images */}
-      {card.images && card.images.length > 0 && (
-        <div>
-          <h4 className="mb-2 text-sm font-semibold text-neutral-800">
-            Example Images ({card.images.length})
-          </h4>
-          <div className="grid grid-cols-2 gap-4">
-            {card.images.map((imgPath, idx) => {
-              const fullUrl = normalizeImageSrc(imgPath);
-              return (
-                <img
-                  key={idx}
-                  src={fullUrl}
-                  alt={`${card.category} example ${idx + 1}`}
-                  className="rounded-lg"
-                />
-              );
-            })}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}

@@ -3,153 +3,292 @@
     "id": "1-zh",
     "language": "zh",
     "category": "中草药类",
-    "images": ["herbal_medicine_1.jpg", "herbal_medicine_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/herbal_medicine_1.jpg",
+      "/images/nano_insp/herbal_medicine_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/herbal_medicine_1_prev.jpg",
+      "/images/nano_insp_preview/herbal_medicine_2_prev.jpg"
+    ],
     "prompt": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把“单味药材”画成全景式知识分解图。根据用户指定的【中药材名称】，生成一张“单味药材全景分解图（Herb Exploded Sheet）”：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【 】。"
   },
   {
     "id": "1-en",
     "language": "en",
     "category": "Herbal Medicine Exploded Diagram",
-    "images": ["herbal_medicine_1.jpg", "herbal_medicine_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/herbal_medicine_1.jpg",
+      "/images/nano_insp/herbal_medicine_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/herbal_medicine_1_prev.jpg",
+      "/images/nano_insp_preview/herbal_medicine_2_prev.jpg"
+    ],
     "prompt": "(Medica Concept Artist) You are a top-tier herbal concept illustrator who turns a single traditional herb into a panoramic, encyclopedia-style exploded knowledge sheet. Create a “Herb Exploded Sheet” for the specified herb: place a high-detail illustration of the sliced/dried herbal material at the center; surround it with evenly arranged modules showing the source plant (full form), key plant parts (root/bark/fruit) with callouts, cross-sections and texture zoom-ins, TCM property tags (four natures, five flavors, meridian entry) as sticker-like labels, icon-based functions and daily usage scenes (e.g., herbal tea, decoction pot), modern forms (powder/granules/capsules/decoction), and 1–2 material texture magnifiers. Connect all modules with fine lines/arrows/frames to form a poster-like science infographic. Style: high-quality 2D illustration with clean linework and soft coloring on a beige/parchment/light-gray research-poster background; handwritten-style Chinese notes with small English counterparts. Output: single-page vertical 4K poster with clear whitespace and structured sections; educational only, no medical claims. Render directly for herb: [ ]."
   },
-
   {
     "id": "2-zh",
     "language": "zh",
     "category": "发展纪年类",
-    "images": ["evolution_timeline_1.jpg", "evolution_timeline_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/evolution_timeline_1.jpg",
+      "/images/nano_insp/evolution_timeline_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/evolution_timeline_1_prev.jpg",
+      "/images/nano_insp_preview/evolution_timeline_2_prev.jpg"
+    ],
     "prompt": "核心提示词：nano banana分析图配套图文创作，生成超高细节等距像素艺术时间线插画，比例3:4，分辨率4K，整体风格兼具繁复细节、象征意义与隐喻性。构建“【主题】演进博物馆/陈列馆”的等距像素场景，以不同展区对应不同历史阶段（起源奠基期/发展兴盛期/变革转型期/当代及未来期），形成“空间递进=时间演进”。标准等距透视（2:1），层次丰富、衔接流畅；每阶段搭配3-5个强关联象征元素；用阶段差异化配色实现“色彩递进=时间流转”。融入双语像素字体标题：中文“【主题】演进史”，英文“EVOLUTION OF [THEME]”；副标题“从[起始节点]到[未来展望] / From [Start] to [Future]”，并加入关键节点时间标记。整体兼顾专业性与观赏性，预留解读空间，适配学术解析与可视化对比展示。"
   },
   {
     "id": "2-en",
     "language": "en",
     "category": "Evolution Timeline Visualization",
-    "images": ["evolution_timeline_1.jpg", "evolution_timeline_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/evolution_timeline_1.jpg",
+      "/images/nano_insp/evolution_timeline_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/evolution_timeline_1_prev.jpg",
+      "/images/nano_insp_preview/evolution_timeline_2_prev.jpg"
+    ],
     "prompt": "Create an ultra-high-detail isometric pixel-art timeline illustration (3:4, 4K) for nano-banana-style analytical content, combining dense detail with symbolism and metaphor. Build an isometric “EVOLUTION MUSEUM OF [THEME]” where each gallery zone represents a stage: Origin/Foundation, Growth/Prosperity, Transformation/Disruption, and Present/Future—so spatial progression equals temporal evolution. Use standard isometric perspective (2:1), rich layered depth, and smooth transitions via corridors/light gradients. Assign 3–5 strongly theme-linked symbolic elements per stage. Use stage-differentiated color palettes to suggest time flow (earthy vintage → balanced classic → bold experimental → futuristic neon/clean tones). Add bilingual pixel-font titles integrated into the scene: Chinese “【主题】演进史” and English “EVOLUTION OF [THEME]”, plus subtitles “从[起始节点]到[未来展望] / From [Start] to [Future]” and key timeline markers. Keep it professional yet visually engaging with interpretive space; suitable for academic analysis and comparative visualization."
   },
-
   {
     "id": "3-zh",
     "language": "zh",
     "category": "旅游规划图",
-    "images": ["travel_planning_1.jpg", "travel_planning_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/travel_planning_1.jpg",
+      "/images/nano_insp/travel_planning_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/travel_planning_1_prev.jpg",
+      "/images/nano_insp_preview/travel_planning_2_prev.jpg"
+    ],
     "prompt": "角色：可爱手绘风旅行插画师，把行程转化为色彩明快、细节满满的卡通地图。要求：1）手绘可爱风，景点/美食/住宿/交通全部设计成萌系图案；2）全程用简体中文精准标注地点与行程；3）清晰标出地点间移动路线，按日期分块展示每日重点活动；4）画幅4:3，解析度为基础两倍。可替换：目的地、行程时段（如1/19-1/25、1/26-1/30）、重点景点、美食、季节元素、地图精准度需求（如更准确海岸线/地形）。"
   },
-
   {
     "id": "4-zh",
     "language": "zh",
     "category": "建筑分析图",
-    "images": ["architecture_analysis_1.jpg", "architecture_analysis_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/architecture_analysis_1.jpg",
+      "/images/nano_insp/architecture_analysis_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/architecture_analysis_1_prev.jpg",
+      "/images/nano_insp_preview/architecture_analysis_2_prev.jpg"
+    ],
     "prompt": "制作一张【Xxx地标】的信息图：结合地标真实照片与白色技术注释/图解叠加，在角落手绘方框中写建筑名称。叠加复杂白色技术标注，展示关键结构数据、重要测量、材料数量、细部做法，并包含剖面图、平面图以及显著建筑/工程特征。风格：HUD平视显示、信息图表美学、细致清晰白线、技术/建筑注释风格、教育信息图感；注释后能看到真实环境；竖向构图。"
   },
   {
     "id": "4-en",
     "language": "en",
     "category": "Architectural Analysis Infographic",
-    "images": ["architecture_analysis_1.jpg", "architecture_analysis_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/architecture_analysis_1.jpg",
+      "/images/nano_insp/architecture_analysis_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/architecture_analysis_1_prev.jpg",
+      "/images/nano_insp_preview/architecture_analysis_2_prev.jpg"
+    ],
     "prompt": "Create an infographic for [Landmark] by combining a real photo with complex white technical overlays and diagrams. Write the building name inside a hand-drawn box in a corner. Add dense white line annotations showing key structural data, measurements, material quantities, detail construction methods, plus section and plan diagrams and notable architectural/engineering features. Style: HUD heads-up-display infographic aesthetic with crisp white linework; the real environment remains visible beneath the annotations. Vertical composition."
   },
-
   {
     "id": "5-zh",
     "language": "zh",
     "category": "动植物保护",
-    "images": ["endangered_species_1.png", "endangered_species_2.png"],
+    "image_urls": [
+      "/images/nano_insp/endangered_species_1.jpg",
+      "/images/nano_insp/endangered_species_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/endangered_species_1_prev.jpg",
+      "/images/nano_insp_preview/endangered_species_2_prev.jpg"
+    ],
     "prompt": "生成一张3:4竖版的濒危物种综合性知识图谱信息卡片：赛博朋克科技美学，背景深海黑或森林墨绿；半透明青绿色/冰蓝/珊瑚粉荧光霓虹线条勾勒模块边框和数据可视化；分层UI界面、柔和发光效果；写实动物插画+简洁矢量图标。必须包含6个模块且中英双语标注：1生物学本体（分类层级+形态参数+局部特写）；2生态与栖息地（分布图+环境指标+栖息地分层）；3行为与社会结构（行为占比饼图+社会结构图+声波可视化）；4生命周期与种群动态（时间轴+30年趋势折线+保护等级）；5威胁机制与风险结构（雷达图+威胁图标注解）；6保护/文化/人类关系（行动循环流程+政策节点+文化象征）。中央放大写实插画并有柔光晕，文字干净科技感，结尾加“Nano, banana.”"
   },
   {
     "id": "5-en",
     "language": "en",
     "category": "Endangered Species Protection Card",
-    "images": ["endangered_species_1.png", "endangered_species_2.png", "endangered_species_3.png"],
+    "image_urls": [
+      "/images/nano_insp/endangered_species_1.jpg",
+      "/images/nano_insp/endangered_species_2.jpg",
+      "/images/nano_insp/endangered_species_3.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/endangered_species_1_prev.jpg",
+      "/images/nano_insp_preview/endangered_species_2_prev.jpg",
+      "/images/nano_insp_preview/endangered_species_3_prev.jpg"
+    ],
     "prompt": "Generate a 3:4 vertical endangered-species knowledge UI card in a cyberpunk tech aesthetic. Background: deep ocean black or forest ink green. Use semi-transparent neon lines (teal, icy blue, coral pink) for module frames and data-viz graphics, with layered UI design and soft glow. Combine a realistic animal illustration with clean vector icons. Include 6 required modules with bilingual Chinese/English labels: (1) Biology identity: taxonomy hierarchy + morphology stats + close-up features; (2) Ecology & habitat: glowing distribution map + environmental indicators + habitat stratification; (3) Behavior & social structure: behavior pie chart + social graph + soundwave visualization; (4) Lifecycle & population dynamics: lifecycle timeline + 30-year trend line chart + conservation status; (5) Threat mechanisms & risk structure: radar chart + threat icons with explanations; (6) Conservation, culture & human relationship: action loop flowchart + policy/action nodes + cultural symbolism. Place a large central realistic illustration with halo glow; keep typography clean and futuristic. End with “Nano, banana.”"
   },
-
   {
     "id": "6-zh",
     "language": "zh",
     "category": "人物像素拆解",
-    "images": ["character_deconstruction_1.jpg", "character_deconstruction_2.jpg"],
+    "image_urls": [
+      "/images/nano_insp/character_deconstruction_1.jpg",
+      "/images/nano_insp/character_deconstruction_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/character_deconstruction_1_prev.jpg",
+      "/images/nano_insp_preview/character_deconstruction_2_prev.jpg"
+    ],
     "prompt": "你是顶尖游戏与动漫概念美术设计师，擅长制作详尽角色设定图，具备“像素级拆解”能力：透视穿着层级、捕捉微表情，并还原相关物品。根据主体形象生成“全景式角色深度概念分解图”：中心为人物全身立绘/主要动态姿势；四周有序展示服装分层（含脱下外套后的内层）、新增私密内着拆解、3-4个不同情绪的头部表情特写、1-2个关键部位材质特写、物品质感特写、关联道具与“生活切片”（通勤包及打开后的内容物、美妆护理、私密日记本/药物补剂盒/电子烟等）。用手绘箭头/引导线连接对应部位；米黄/羊皮纸/浅灰纹理背景；中文手写注释。示例：生成《名侦探柯南》柯南角色设定图，比例3:4。"
   },
-
   {
     "id": "7-zh",
     "language": "zh",
     "category": "英文单词场景卡",
-    "images": ["english_vocab_1.png", "english_vocab_2.png", "english_vocab_3.png"],
+    "image_urls": [
+      "/images/nano_insp/english_vocab_1.jpg",
+      "/images/nano_insp/english_vocab_2.jpg",
+      "/images/nano_insp/english_vocab_3.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/english_vocab_1_prev.jpg",
+      "/images/nano_insp_preview/english_vocab_2_prev.jpg",
+      "/images/nano_insp_preview/english_vocab_3_prev.jpg"
+    ],
     "prompt": "设计一张（chiikawa/吉伊卡哇）为角色的单词图：描述一个详细的（教室/游乐场/自选场景）并标注所有物体的英语单词。标注格式：第一行英文单词；第二行音标（IPA）；第三行中文翻译。另：生成适合手机展示的竖屏吉伊卡哇风格单词卡，包含【知识点/单元词汇】，整体融入一个场景，单词配图符合含义且中英文对应。"
   },
-
   {
     "id": "8-zh",
     "language": "zh",
     "category": "食谱",
-    "images": ["visual_recipe_1.png", "visual_recipe_2.png"],
+    "image_urls": [
+      "/images/nano_insp/visual_recipe_1.jpg",
+      "/images/nano_insp/visual_recipe_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/visual_recipe_1_prev.jpg",
+      "/images/nano_insp_preview/visual_recipe_2_prev.jpg"
+    ],
     "prompt": "Role：世界级视觉菜谱设计师，把复杂烹饪过程转化为直观、美观且逻辑严密的“全景烹饪施工图”。画风融合春节温馨氛围、吉卜力美食质感与达芬奇手稿严谨结构。Task：根据年夜饭菜品【经典红烧肉】，生成“年夜饭视觉烹饪指南海报”。布局：顶部喜庆标题区【鸿运当头（经典红烧肉）】（烫金/剪纸/书法）；中心成品定妆照（热气、色泽、酱汁光泽、丰盛团圆感）；背景为暖色复古纸张+传统窗花/祥云元素，可有淡网格或刻度但融入年节。模块：左上食材陈列（平铺+比例+小福字/元宝装饰）；底部/右侧3-4关键步骤流（箭头顺序）；右上推荐搭配/寓意（黄酒/茶饮、年年有余等）；左下小贴士/秘籍（卷轴/折扇承载）。用灯笼/鞭炮/铜钱等虚线与手写注释串联“食材→步骤→成品”。比例3:4，主体食物诱人，背景低饱和暖色，中文标注清晰有设计感。"
   },
   {
     "id": "8-en",
     "language": "en",
     "category": "Visual Recipe Blueprint",
-    "images": ["visual_recipe_1.png", "visual_recipe_2.png"],
+    "image_urls": [
+      "/images/nano_insp/visual_recipe_1.jpg",
+      "/images/nano_insp/visual_recipe_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/visual_recipe_1_prev.jpg",
+      "/images/nano_insp_preview/visual_recipe_2_prev.jpg"
+    ],
     "prompt": "Role: a world-class visual recipe designer who turns complex cooking into a clear, beautiful “panoramic cooking blueprint,” blending warm Spring Festival vibes, Ghibli-like food texture, and Da Vinci sketch rigor. Task: create a “New Year’s Eve Dinner Visual Cooking Guide Poster” for the dish [Classic Braised Pork]. Layout: festive title area at top with the dish name (gold foil/paper-cut/calligraphy feel); center hero shot of the finished dish with steam, glossy sauce, and abundant reunion atmosphere. Background: warm vintage paper with subtle traditional patterns (window flowers/cloud motifs), optional faint grid/measure marks integrated into the festive style. Modules: top-left ingredient flat-lay with proportions + small festive decorations; bottom/right 3–4 key step illustrations with arrows; top-right pairing/reunion meaning (e.g., rice wine/tea, auspicious symbolism); bottom-left tips/secrets on scroll/fan shapes. Connect ingredients → steps → final dish using festive dotted lines and handwritten callouts (lantern/firecrackers/coins motifs). Aspect 3:4; food vivid, background low-saturation warm tones; clear Chinese labels with good typography."
   },
-
   {
     "id": "9-zh",
     "language": "zh",
     "category": "动植物科普",
-    "images": ["species_science_1.png", "species_science_2.png"],
+    "image_urls": [
+      "/images/nano_insp/species_science_1.jpg",
+      "/images/nano_insp/species_science_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/species_science_1_prev.jpg",
+      "/images/nano_insp_preview/species_science_2_prev.jpg"
+    ],
     "prompt": "生成一张信息图表风格插画：中心为【东北虎】大图，四周以卡片式信息框排列特征、功能、寿命、结构、生物细节等模块。整体参考科学图鉴/科普书籍插图，摄影级细节，文字用中文。风格现代科学图鉴，严谨且美观。比例3:4。"
   },
-
   {
     "id": "10-zh",
     "language": "zh",
     "category": "人物分析图",
-    "images": ["character_analysis_1.png", "character_analysis_2.png"],
+    "image_urls": [
+      "/images/nano_insp/character_analysis_1.jpg",
+      "/images/nano_insp/character_analysis_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/character_analysis_1_prev.jpg",
+      "/images/nano_insp_preview/character_analysis_2_prev.jpg"
+    ],
     "prompt": "生成一张【角色名】详细信息图，采用【具体艺术风格】美学。中间为角色经典半身/全身画像（服装/动作/表情），置于指定材质/形状相框中。顶行：一排头像设定稿展示3-4种情绪变化。左列：标有【个人档案/通缉令/属性面板】等区域，含3-4条官方设定信息（姓名、出生地、性格、必杀技等）与指定字体风格。右列：标有【人际关系/宿敌/羁绊】区域，以拍立得/悬赏令/宝石投影等形式展示关键人物A/B/C及特征。底部：拆解关键物品/装备，以游戏道具图鉴/博物馆展品风展示。整体色调、线条与材质质感按输入设定，完成统一的角色档案信息图。"
   },
-
   {
     "id": "11-zh",
     "language": "zh",
     "category": "热点事件分析",
-    "images": ["hot_event_1.png", "hot_event_2.png"],
+    "image_urls": [
+      "/images/nano_insp/hot_event_1.jpg",
+      "/images/nano_insp/hot_event_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/hot_event_1_prev.jpg",
+      "/images/nano_insp_preview/hot_event_2_prev.jpg"
+    ],
     "prompt": "生成可视化热点事件信息图：竖版3:4；文字用中文且单独图层清晰可读；白色系背景。标题示例：用AI进行多维可视化分析——美国“斩杀线”（深层挖掘）。内容结构建议：1）现象-本质分层图：自上而下“表面现象层→直接成因层→深层本质层”，用箭头标注传导关系；2）底层逻辑拆解示意图：流程链条“资本主导→政策适配→个体承压→系统淘汰”，标注主体、行为与结果；3）长效影响辐射图：以事件为原点向社会/政治/国际三方向辐射，标注影响内容与周期（短/中/长），用颜色区分影响程度（红高/黄中/蓝低）。"
   },
-
   {
     "id": "12-zh",
     "language": "zh",
     "category": "非遗工艺",
-    "images": ["intangible_heritage_1.png", "intangible_heritage_2.png"],
+    "image_urls": [
+      "/images/nano_insp/intangible_heritage_1.jpg",
+      "/images/nano_insp/intangible_heritage_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/intangible_heritage_1_prev.jpg",
+      "/images/nano_insp_preview/intangible_heritage_2_prev.jpg"
+    ],
     "prompt": "中国传统皮影戏艺术信息可视化流程图（A3展板排版）：包含1历史发展与文化背景（起源与流变、宫廷到民间、民俗教化功能）；2艺术特征与制作工艺（驴皮处理、阳刻/阴刻、彩绘、影人关节结构）；3整体艺术体系（地域流派：陕西/唐山/四川，唱腔与造型与题材差异；与祭祀/庙会共生关系；民间叙事地位）；4传统纹样与文化符号（祥云纹/回纹/脸谱/神话人物等忠孝节义符号）；5制作工艺与传承现状（选皮—制皮—画稿—雕刻—敷彩—缀结全流程、数字化记录与文旅融合）；6周围标注核心组件细节插图（工具材料演变、十三关节操控示意、镂空雕刻烫色细节与老艺人场景、纹样伦理寓意、演出生态：影窗灯源乐队与观众互动）。风格复古精致高信息密度，专业中文知识解析；配色偏传统建筑彩画/古籍色谱。"
   },
-
   {
     "id": "13-zh",
     "language": "zh",
     "category": "微缩城市天气预报",
-    "images": ["mini_city_weather_1.png", "mini_city_weather_2.png"],
+    "image_urls": [
+      "/images/nano_insp/mini_city_weather_1.jpg",
+      "/images/nano_insp/mini_city_weather_2.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/mini_city_weather_1_prev.jpg",
+      "/images/nano_insp_preview/mini_city_weather_2_prev.jpg"
+    ],
     "prompt": "生成1:1等距微缩3D卡通城市天气场景：45°俯视顶视角，地标居中，模型精致，PBR材质与柔和真实光影。将天气元素与城市建筑创意融合，形成城市景观与气象条件的动态互动。背景极简、柔和纯色以突出主体。顶部居中排版：大标题“[城市名]”，下方天气图标，再下方日期（小字）与温度（中等字）。文字匹配城市母语。渲染前请先检索该城市当前天气。城市：[Los Angeles]。"
   },
-
   {
     "id": "14-zh",
     "language": "zh",
     "category": "学科知识卡片",
-    "images": ["education_card_1.png", "education_card_2.png", "education_card_3.png", "education_card_4.png"],
+    "image_urls": [
+      "/images/nano_insp/education_card_1.jpg",
+      "/images/nano_insp/education_card_2.jpg",
+      "/images/nano_insp/education_card_3.jpg",
+      "/images/nano_insp/education_card_4.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/education_card_1_prev.jpg",
+      "/images/nano_insp_preview/education_card_2_prev.jpg",
+      "/images/nano_insp_preview/education_card_3_prev.jpg",
+      "/images/nano_insp_preview/education_card_4_prev.jpg"
+    ],
     "prompt": "根据输入内容提取核心主题与要点，生成信息图（两种风格任选其一）：A）可爱数字卡通风：横版3:4，背景纯白/极浅纯色，马卡龙配色（浅绿为主，搭配天蓝/米黄/淡橙/淡粉），线条圆润亲和；用圆角矩形、流程图、箭头组织信息；加入少量拟人化可爱图标（太阳/云朵/化学分子等）；文字为圆润无衬线卡通风，突出关键词，多留白。B）手绘黑板报/科学手稿粉笔草图风：竖版3:4，深灰近黑板纹理背景；主体白色粉笔线条+交叉排线阴影；用少量高饱和点缀色（柠檬黄/青色/品红/亮绿）强调关键图形与注释；整体像灵感迸发的草稿页，元素密集但核心清晰，文字为不规则手写粉笔字体。默认语言随输入内容语言一致。"
   },
   {
     "id": "14-en",
     "language": "en",
     "category": "Educational Knowledge Card",
-    "images": ["education_card_1.png", "education_card_2.png", "education_card_3.png", "education_card_4.png"],
+    "image_urls": [
+      "/images/nano_insp/education_card_1.jpg",
+      "/images/nano_insp/education_card_2.jpg",
+      "/images/nano_insp/education_card_3.jpg",
+      "/images/nano_insp/education_card_4.jpg"
+    ],
+    "preview_image_urls": [
+      "/images/nano_insp_preview/education_card_1_prev.jpg",
+      "/images/nano_insp_preview/education_card_2_prev.jpg",
+      "/images/nano_insp_preview/education_card_3_prev.jpg",
+      "/images/nano_insp_preview/education_card_4_prev.jpg"
+    ],
     "prompt": "Extract the core theme and key points from the input and generate an educational infographic in one of two styles: (A) Cute digital cartoon style: horizontal 3:4, pure white or very light background, pastel macaron palette (light green primary with sky blue/beige/light orange/light pink accents), soft rounded lines; organize info with rounded rectangles, flowcharts, and arrows; add a few personified cute icons (sun/cloud/molecule, etc.); use clear rounded sans-serif cartoon typography; highlight keywords and keep generous whitespace. (B) Chalkboard scientific sketch style: vertical 3:4, dark gray/near-black textured chalkboard background; main elements in white/gray chalk strokes with visible brush texture and cross-hatching for shading; use small amounts of vivid accent colors (lemon yellow/cyan/magenta/bright green) to highlight key graphics/notes; layout feels like an energetic idea-filled draft page—dense but clearly guided; text in irregular hand-drawn chalk lettering. Default language follows the input language."
   }
 ]

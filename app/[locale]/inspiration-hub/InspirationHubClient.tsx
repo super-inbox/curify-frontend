@@ -25,7 +25,6 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 export default function InspirationHubClient({ cards }: { cards: InspirationCardType[] }) {
   const [query, setQuery] = useState("");
   const [minRating, setMinRating] = useState<number | null>(null);
-  const [viewMode, setViewMode] = useState<ViewMode>("list");
   const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
   
   // Modal state
@@ -189,30 +188,6 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
               EN
             </button>
           </div>
-
-          {/* View Mode Toggle */}
-          <div className="flex gap-1 rounded-xl border border-neutral-200 bg-white p-1">
-            <button
-              onClick={() => setViewMode("cards")}
-              className={classNames(
-                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                viewMode === "cards" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
-              )}
-              type="button"
-            >
-              ⊞ Cards
-            </button>
-            <button
-              onClick={() => setViewMode("list")}
-              className={classNames(
-                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                viewMode === "list" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
-              )}
-              type="button"
-            >
-              ☰ List
-            </button>
-          </div>
         </div>
 
         <div className="flex items-center justify-between text-xs text-neutral-500">
@@ -227,24 +202,14 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
         </div>
       </div>
 
-      {/* Conditional Rendering Based on View Mode */}
-      {viewMode === "cards" ? (
-        <CardsView 
-          filtered={filtered} 
-          viewMode={viewMode} 
-          requireAuth={requireAuth} 
-          onViewClick={handleOpenInspirationModal}
-        />
-      ) : (
-        <ListView 
-          filtered={filtered} 
-          nanoCards={nanoCardsForLang} 
-          viewMode={viewMode} 
-          requireAuth={requireAuth}
-          onViewInspirationClick={handleOpenInspirationModal}
-          onViewNanoClick={handleOpenNanoModal}
-        />
-      )}
+      {/* List View */}
+      <ListView 
+        filtered={filtered} 
+        nanoCards={nanoCardsForLang} 
+        requireAuth={requireAuth}
+        onViewInspirationClick={handleOpenInspirationModal}
+        onViewNanoClick={handleOpenNanoModal}
+      />
 
       {filtered.length === 0 && (
         <div className="py-16 text-center text-neutral-500">
@@ -272,45 +237,16 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
   );
 }
 
-// Cards View (Masonry Layout)
-function CardsView({
-  filtered,
-  viewMode,
-  requireAuth,
-  onViewClick,
-}: {
-  filtered: InspirationCardType[];
-  viewMode: ViewMode;
-  requireAuth: (reason?: string) => boolean;
-  onViewClick: (card: InspirationCardType) => void;
-}) {
-  return (
-    <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
-      {filtered.map((card) => (
-        <InspirationCard 
-          key={card.id} 
-          card={card} 
-          viewMode={viewMode} 
-          requireAuth={requireAuth}
-          onViewClick={() => onViewClick(card)}
-        />
-      ))}
-    </div>
-  );
-}
-
 // List View with Nano Banana Cards Interleaved
 function ListView({
   filtered,
   nanoCards,
-  viewMode,
   requireAuth,
   onViewInspirationClick,
   onViewNanoClick,
 }: {
   filtered: InspirationCardType[];
   nanoCards: NanoInspirationCardType[];
-  viewMode: ViewMode;
   requireAuth: (reason?: string) => boolean;
   onViewInspirationClick: (card: InspirationCardType) => void;
   onViewNanoClick: (card: NanoInspirationCardType) => void;
@@ -339,7 +275,7 @@ function ListView({
             <InspirationListItem
               key={`insp-${item.card.id}`}
               card={item.card}
-              viewMode={viewMode}
+              viewMode="list"
               requireAuth={requireAuth}
               onViewClick={() => onViewInspirationClick(item.card)}
             />

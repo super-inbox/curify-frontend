@@ -143,7 +143,7 @@ export function InspirationListItem({ card, viewMode, requireAuth, onViewClick }
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-3 pt-3 border-t border-neutral-100">
+        <div className="mt-3">
           <ListItemActions card={card} viewMode={viewMode} requireAuth={requireAuth} onViewClick={onViewClick} />
         </div>
       </div>
@@ -177,7 +177,6 @@ function ListItemActions({
     (typeof window !== "undefined" ? `${window.location.origin}/inspiration-hub#${card.id}` : `/inspiration-hub#${card.id}`);
 
   async function handleView() {
-    if (!requireAuth("view_inspiration")) return;
     trackView();
     onViewClick?.();
   }
@@ -186,12 +185,11 @@ function ListItemActions({
     if (!requireAuth("save_inspiration")) return;
     trackSave();
     setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+    setTimeout(() => setSaved(false), 1500);
     alert("Save functionality coming soon!");
   }
 
   async function handleCopy() {
-    if (!requireAuth("copy_inspiration")) return;
     try {
       const payload = card?.actions?.copy?.payload || stripQuotes(card?.hook?.text || "");
       await navigator.clipboard.writeText(payload);
@@ -204,7 +202,6 @@ function ListItemActions({
   }
 
   async function handleShare() {
-    if (!requireAuth("share_inspiration")) return;
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       trackShare();
@@ -411,7 +408,6 @@ function CardFooter({
     (typeof window !== "undefined" ? `${window.location.origin}/inspiration-hub#${card.id}` : `/inspiration-hub#${card.id}`);
 
   async function handleView() {
-    if (!requireAuth("view_inspiration")) return;
     trackView();
     onViewClick?.();
   }
@@ -419,14 +415,12 @@ function CardFooter({
   async function handleSave() {
     if (!requireAuth("save_inspiration")) return;
     trackSave();
-    // TODO: Implement save functionality
     setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+    setTimeout(() => setSaved(false), 1500);
     alert("Save functionality coming soon!");
   }
 
   async function handleCopy() {
-    if (!requireAuth("copy_inspiration")) return;
     try {
       const payload = card?.actions?.copy?.payload || stripQuotes(card?.hook?.text || "");
       await navigator.clipboard.writeText(payload);
@@ -439,7 +433,6 @@ function CardFooter({
   }
 
   async function handleShare() {
-    if (!requireAuth("share_inspiration")) return;
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       trackShare();
