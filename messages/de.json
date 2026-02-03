@@ -915,7 +915,149 @@
       "parallel": "Parallelle verwerking"
     }
   }
+},
+"nanoBananaProPrompts": {
+    "title": "Nano Banana Pro Prompts",
+    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "prompts": {
+      "title": "Popular Nano Banana Pro Prompts",
+      "prompt1": "Create a short story about a futuristic city where emotions are currency",
+      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
+      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+    }
+  },
+  "ageAi": {
+    "heading": "Data Science im Zeitalter der KI: Ist der \"Traumjob\" noch attraktiv?",
+    "intro1": "\"Es war die beste aller Zeiten, es war die schlechteste aller Zeiten.\"",
+    "intro2": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein.",
+    "realityCheck": {
+      "title": "Die Realität",
+      "content": "Traditionelle Bereiche wie Suche, Werbung und Empfehlungssysteme (SAR) reifen, und die Branche verlagert ihren Fokus auf leistungsstarke Technik und KI-Architektur. Wir beobachten ein seltsames Paradox.",
+      "lowBarTrap": {
+        "title": "Die \"Niedrige-Hürde\"-Falle",
+        "content": "Master-Studenten können heute GPT-4 nutzen, um in Sekundenschnelle Datenbereinigung, explorative Datenanalyse und Visualisierung durchzuführen. Ohne solide Grundlagen fehlt ihnen jedoch oft das Urteilsvermögen zu erkennen, wann die KI \"halluziniert\" oder statistisch fragwürdige Ergebnisse liefert."
+      },
+      "stakeholderShift": {
+        "title": "Der Wandel der Stakeholder",
+        "content": "Wenn Geschäftspartner ihre eigenen Eingabeaufforderungen schreiben können, um grundlegende Erkenntnisse zu erhalten, fühlen sich viele Data Scientists \"unterfordert\", gefangen in endlosen Besprechungen und sich wiederholendem Prompt-Engineering."
+      }
+    },
+    "strategicPillars": {
+      "title": "Wie Sie unverzichtbar bleiben: Zwei strategische Säulen",
+      "intro": "Um in dieser Ära erfolgreich zu sein, müssen wir uns von 'Modellbauern' zu 'Architekten des Mehrwerts' entwickeln. Dies geschieht meiner Ansicht nach in zwei Dimensionen:",
+      "buildingTools": {
+        "title": "Die Werkzeuge bauen (Die Ingenieur-/Architekten-Mentalität)",
+        "subtitle": "Nutzen Sie die KI nicht nur, verbessern Sie sie.",
+        "points": [
+          {
+            "title": "Modellbewertung und -steuerung",
+            "content": "Da KI-Ergebnisse zur Handelsware werden, ist die Person am wertvollsten, die definieren kann, wie ein 'gutes' Ergebnis aussieht. Konzentrieren Sie sich auf spezialisierte Bewertungsrahmen (wie Risikogewichtung im Finanzwesen)."
+          },
+          {
+            "title": "Domänenspezifische Feinabstimmung",
+            "content": "Beherrschen Sie Techniken wie LoRA oder RAG, um spezifisches Geschäftswissen in LLMs einzubringen."
+          },
+          {
+            "title": "Automatisierung",
+            "content": "Leiten Sie interne Initiativen wie 'Virtuelle Analysten' oder automatisierte Experimentierpipelines."
+          }
+        ]
+      },
+      "leveragingTools": {
+        "title": "Die Werkzeuge nutzen (Die Strategen-Mentalität)",
+        "subtitle": "Nutzen Sie die KI, um Ihre Produktivität zu verzehnfachen und sich auf das zu konzentrieren, was Menschen am besten können.",
+        "points": [
+          {
+            "title": "Fachwissen",
+            "content": "Die KI kennt das 'Wie', aber Sie kennen das 'Warum'. Tiefgreifendes Geschäftsverständnis ermöglicht es Ihnen, den Kontext zu liefern, der der KI fehlt."
+          },
+          {
+            "title": "Kritisches Denken und Experimentieren",
+            "content": "Während KI Code generieren kann, bleiben menschliche Fähigkeiten im Bereich Data Science entscheidend für Hypothesentests, Kausalanalyse und die Interpretation 'unordentlicher' realer Daten."
+          },
+          {
+            "title": "Kommunikation und Einflussnahme",
+            "content": "Die Fähigkeit, komplexe Daten in eine Geschäftsgeschichte zu übersetzen und das Vertrauen der Stakeholder zu gewinnen, ist eine 'weiche' Fähigkeit, die zu einer 'harten' Anforderung geworden ist."
+          }
+        ]
+      }
+    },
+    "bottomLine": {
+      "title": "Das Fazit",
+      "content1": "KI hat Data Science nicht getötet, sondern die Messlatte höher gelegt. Wenn Ihr Wert ausschließlich im Schreiben von SQL oder im Optimieren von Hyperparametern lag, verblasst die 'Attraktivität'. Aber wenn Sie die Lücke zwischen Geschäftsproblemen und KI-Lösungen schließen können, war Ihr Wert noch nie höher.",
+      "content2": "Ihre persönliche Erfahrung ist Ihr Vorteil. Ein Sprachmodell kann Logik nachahmen, aber es hat nicht die jahrelangen 'Kampfnarben' von gescheiterten Implementierungen oder die Intuition, die aus der Navigation in komplexen Organisationen entsteht."
+    },
+    "discussion": {
+      "title": "Lassen Sie uns diskutieren:",
+      "prompt": "Fühlen Sie sich in Ihrer aktuellen Rolle eher 'effizienter' oder 'ersetzbar'? Wie entwickeln Sie Ihr Werkzeugset in diesem Jahr weiter?"
+    },
+    "hashtags": ["#DataScience", "#KI", "#MaschinellesLernen", "#GenerativeKI", "#Karriereentwicklung", "#TechTrends"]
+  },
+  "qaBotToTaskAgent": {
+    "heading": "🏗️ Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
+    "description": "Erfahren Sie, wie Sie zuverlässige Task-Agenten erstellen, die über einfache Frage-Antwort-Funktionen hinausgehen",
+    "tldr": "TL;DR: Hören Sie auf, Chatbots zu bauen, die nur Fragen beantworten. Beginnen Sie mit der Entwicklung von Task-Agenten, die tatsächlich Arbeit verrichten.",
+    "intro": "Dieser Leitfaden erklärt den architektonischen Wandel von monolithischen QA-Bots zu Task-Agenten mit statischen Regeln, dynamischen Fähigkeiten und deterministischen Hooks – mit konkreten Codebeispielen und Open-Source-Referenzen.",
+    "coreShift": {
+      "title": "1. Die grundlegende Veränderung: Vom QA-Bot zum Task-Agenten",
+      "content": [
+        "Die meisten KI-Systeme sind heute immer noch kontextüberladene QA-Bots:",
+        "• Sie beantworten Fragen gut",
+        "• Sie halluzinieren unter Druck",
+        "• Sie bieten keine Garantien für Ausführung, Sicherheit und Konsistenz"
+      ],
+      "keyInsight": "Die zentrale Erkenntnis: Skalieren Sie nicht den Kontext. Strukturieren Sie ihn."
+    },
+    "threeLayerArch": {
+      "title": "2. Die Drei-Schichten-Architektur",
+      "layers": [
+        {
+          "title": "🧱 1. Statischer Kontext — Regeln (Immer aktiv)",
+          "points": [
+            "Mentales Modell: Mitarbeiterhandbuch",
+            "Immer geladen",
+            "Definiert Identität, Codierungsstandards, Verhaltensrichtlinien",
+            "Verhindert Halluzinationen und Stilabweichungen",
+            "Klein, stabil, von Menschen bearbeitbar"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Dynamischer Kontext — Fähigkeiten (Bei Bedarf)",
+          "points": [
+            "Mentales Modell: Werkzeugkasten",
+            "Wird nur bei Bedarf geladen",
+            "Jede Fähigkeit ist eine eigenständige Funktion",
+            "Hält das Kontextfenster sauber"
+          ]
+        },
+        {
+          "title": "⚓ 3. Deterministische Hooks — Leitplanken",
+          "points": [
+            "Mentales Modell: Sicherheits- und Compliance-Schicht",
+            "Nicht probabilistisch",
+            "Läuft vor/nach der LLM-Verarbeitung",
+            "Erzwingt Regeln, die niemals fehlschlagen dürfen"
+          ]
+        }
+      ]
+    },
+    "projectStructure": {
+      "title": "3. Empfohlene Projektstruktur",
+      "structure": "mein-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+    },
+    "staticContextExample": {
+      "title": "4. Beispiel für statischen Kontext: .cursorrules",
+      "content": "# ROLLE\nSie sind ein erfahrener Python-Entwickler mit Fokus auf produktionsreife Systeme.\n\n# REGELN\n- NIEMALS print() zum Debuggen verwenden\n- Funktionen IMMER typisieren\n- Bei Änderungen an >3 Dateien einen Plan vorschlagen\n\n# VERHALTEN\n- Seien Sie prägnant\n- Stellen Sie bei Bedarf klärende Fragen\n\nReferenz: https://github.com/PatrickJS/awesome-cursorrules"
+    },
+    "dynamicSkillExample": {
+      "title": "5. Beispiel für eine dynamische Fähigkeit (MCP)",
+      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Erstellt Ticket {ticket_id} mit Priorität={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferenz: https://github.com/modelcontextprotocol/python-sdk"
+    },
+    "deterministicHookExample": {
+      "title": "6. Beispiel für einen deterministischen Hook",
+      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"passwort\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Sicherheitsverletzung erkannt\"}\n    return agent_node(state)\n\nReferenz: https://langchain-ai.github.io/langgraph/"
+    },
+    "finalThought": "Wenn Ihr Agent nur Fragen beantwortet, ist es ein Chatbot. Wenn er zuverlässig Arbeit ausführt, ist es ein Task-Agent."
+  }
 }
 
-
-}

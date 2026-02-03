@@ -858,5 +858,149 @@
       "parallel": "Paralel işleme"
     }
   }
+  },
+  "nanoBananaProPrompts": {
+    "title": "Nano Banana Pro Prompts",
+    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "prompts": {
+      "title": "Popular Nano Banana Pro Prompts",
+      "prompt1": "Create a short story about a futuristic city where emotions are currency",
+      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
+      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+    }
+  },
+  "ageAi": {
+    "heading": "Yapay Zeka Çağında Veri Bilimi: Hala 'En Seksi İş' mi?",
+    "intro1": "Bu en iyi zamandı, bu en kötü zamandı.",
+    "intro2": "On yıl önce, Harvard Business Review veri bilimcileri '21. yüzyılın en seksi işi' olarak nitelendirmişti. Bugün, manzara çarpıcı biçimde değişiyor. Veri yeteneklerine olan talep yüksek kalmaya devam ederken, üretken yapay zekanın yükselişi 'veri bilimcisi' olmanın ne anlama geldiğini temelden dönüştürüyor.",
+    "realityCheck": {
+      "title": "Gerçeklik Kontrolü",
+      "content": "Arama, reklam ve öneri (SAR) gibi geleneksel alanlar olgunlaşıyor ve sektör sağlam mühendisliğe ve yapay zeka mimarisine yöneliyor. İlginç bir paradoksla karşı karşıyayız.",
+      "lowBarTrap": {
+        "title": "Düşük Çıta Tuzağı",
+        "content": "Yüksek lisans öğrencileri artık veri temizleme, keşifsel veri analizi ve görselleştirme için GPT-4'ü saniyeler içinde kullanabilir. Ancak sağlam bir temel olmadan, genellikle yapay zekanın ne zaman 'halüsinasyon gördüğünü' veya istatistiksel olarak şüpheli sonuçlar ürettiğini anlamak için gerekli muhakeme yeteneğinden yoksun kalıyorlar."
+      },
+      "stakeholderShift": {
+        "title": "Paydaşlardaki Değişim",
+        "content": "İş ortakları temel içgörüler için kendi istemlerini yazabildiğinde, birçok veri bilimci profesyoneli 'yetersiz uyarılmış' hissediyor, sonu gelmeyen toplantılara ve tekrarlayan istem mühendisliğine hapsoluyor."
+      }
+    },
+    "strategicPillars": {
+      "title": "Nasıl Vazgeçilmez Kalınır: İki Stratejik Sütun",
+      "intro": "Bu çağda başarılı olmak için 'model oluşturuculardan' 'değer mimarlarına' evrilmeliyiz. Bunun iki boyutta gerçekleştiğini görüyorum:",
+      "buildingTools": {
+        "title": "Araçlar İnşa Etmek (Mühendis/Mimar Zihniyeti)",
+        "subtitle": "Sadece yapay zekayı kullanmayın, onu daha iyi hale getirin.",
+        "points": [
+          {
+            "title": "Model Değerlendirme ve Yönetişim",
+            "content": "Yapay zeka çıktıları bir meta haline geldikçe, 'iyi' sonucun neye benzediğini tanımlayabilen kişi en değerli varlık haline geliyor. Finansta risk ağırlıklandırması gibi özel değerlendirme çerçevelerine odaklanın."
+          },
+          {
+            "title": "Alan Özelleştirmesi",
+            "content": "LLM'lere özel iş bilgisi enjekte etmek için LoRA veya RAG gibi tekniklerde uzmanlaşın."
+          },
+          {
+            "title": "Otomasyon",
+            "content": "'Sanal Analistler' veya otomatik deney boru hatları gibi dahili girişimlere öncülük edin."
+          }
+        ]
+      },
+      "leveragingTools": {
+        "title": "Araçlardan Yararlanmak (Stratejist Zihniyeti)",
+        "subtitle": "Yapay zekayı çıktınızı 10 kat artırmak ve insanların en iyi yaptıklarına odaklanmak için kullanın.",
+        "points": [
+          {
+            "title": "Alan Uzmanlığı",
+            "content": "Yapay zeka 'nasıl'ı bilir, siz 'neden'i bilirsiniz. Derin iş anlayışı, yapay zekanın sahip olmadığı bağlamı sağlar."
+          },
+          {
+            "title": "Eleştirel Düşünme ve Deney",
+            "content": "Yapay zeka kod üretebilir, ancak hipotez testi, nedensel çıkarım ve 'gerçek dünya' verilerini yorumlama konusunda insan veri bilimi becerileri hala temeldir."
+          },
+          {
+            "title": "İletişim ve Etki",
+            "content": "Karmaşık verileri iş hikayelerine dönüştürme ve paydaşlardan güven kazanma yeteneği, 'yumuşak' bir beceriden 'sert' bir gerekliliğe dönüştü."
+          }
+        ]
+      }
+    },
+    "bottomLine": {
+      "title": "Sonuç",
+      "content1": "Yapay zeka veri bilimini öldürmedi, sadece çıtayı yükseltti. Değeriniz sadece SQL yazmak veya hiperparametre ayarlamaksa, 'seksi' olan kısmı azalıyor. Ama iş zorlukları ile yapay zeka çözümleri arasında köprü kurabiliyorsanız, değeriniz her zamankinden daha yüksek.",
+      "content2": "Kişisel deneyiminiz sizin avantajınızdır. Bir LLM mantığı taklit edebilir, ancak başarısız dağıtımların 'savaş yaralarına' veya karmaşık organizasyonlarda gezinirken geliştirdiğiniz sezgiye sahip değildir."
+    },
+    "discussion": {
+      "title": "Tartışalım:",
+      "prompt": "Mevcut rolünüzde kendinizi daha 'verimli' mi yoksa 'değiştirilmiş' mi hissediyorsunuz? Bu yıl araç setinizi nasıl geliştiriyorsunuz?"
+    },
+    "hashtags": ["#VeriBilimi", "#YapayZeka", "#MakineÖğrenmesi", "#ÜretkenYapayZeka", "#KariyerGelişimi", "#TeknolojiTrendleri"]
+  },
+  "qaBotToTaskAgent": {
+    "heading": "🏗️ Sohbet Botundan Görev Ajanına: Bir Mimarı Rehber",
+    "description": "Sadece soru-cevap yapmanın ötesine geçen güvenilir görev ajanları oluşturmayı öğrenin",
+    "tldr": "TL;DR: Sadece soru yanıtlayan sohbet botları yapmayı bırakın. Gerçekten iş yapan görev ajanları oluşturmaya başlayın.",
+    "intro": "Bu rehber, statik kuralları, dinamik becerileri ve deterministik kancaları kullanarak tek parça sohbet botlarından görev ajanlarına mimari bir geçişi açıklıyor - somut kod örnekleri ve açık kaynak referanslarla birlikte.",
+    "coreShift": {
+      "title": "1. Temel Kayma: Sohbet Botu → Görev Ajanı",
+      "content": [
+        "Bugün çoğu AI sistemi hala bağlam yüklü sohbet botlarıdır:",
+        "• Sorulara iyi yanıt verirler",
+        "• Baskı altında halüsinasyon yaparlar",
+        "• Yürütme, güvenlik veya tutarlılık garantisi vermezler"
+      ],
+      "keyInsight": "Temel İçgörü: Bağlamı ölçeklendirmeyin. Yapılandırın."
+    },
+    "threeLayerArch": {
+      "title": "2. Üç Katmanlı Mimari",
+      "layers": [
+        {
+          "title": "🧱 1. Statik Bağlam — Kurallar (Her Zaman Açık)",
+          "points": [
+            "Zihinsel Model: Çalışan El Kitabı",
+            "Her zaman yüklü",
+            "Kimliği, kodlama standartlarını, davranış kısıtlamalarını tanımlar",
+            "Halüsinasyon ve stil sürüklenmesini önler",
+            "Küçük, kararlı ve insan tarafından düzenlenebilir"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Dinamik Bağlam — Beceriler (İsteğe Bağlı)",
+          "points": [
+            "Zihinsel Model: Araç Kutusu",
+            "Sadece ihtiyaç duyulduğunda yüklenir",
+            "Her beceri kendi kendini kapsayan bir fonksiyondur",
+            "Bağlam penceresini temiz tutar"
+          ]
+        },
+        {
+          "title": "⚓ 3. Deterministik Kancalar — Korkuluklar",
+          "points": [
+            "Zihinsel Model: Güvenlik + Uyumluluk Katmanı",
+            "Olasılıksal değildir",
+            "LLM akıl yürütmesinden önce/sonra çalışır",
+            "Asla başarısız olmaması gereken kuralları zorlar"
+          ]
+        }
+      ]
+    },
+    "projectStructure": {
+      "title": "3. Önerilen Proje Yapısı",
+      "structure": "benim-gorev-ajanim/\n├── .cursorrules\n├── main.py\n├── araclar/\n│   └── linear_mcp.py\n└── BENIOKU.md"
+    },
+    "staticContextExample": {
+      "title": "4. Statik Bağlam Örneği: .cursorrules",
+      "content": "# Rol\nÜretim seviyesi sistemlere odaklanmış kıdemli bir Python mühendisisiniz.\n\n# Kurallar\n- Hata ayıklama için print() kullanmayın\n- Tüm fonksiyonlara tip ipuçları ekleyin\n- 3'ten fazla dosyayı değiştirmeniz gerekiyorsa plan önerin\n\n# Davranış\n- Öz olun\n- Gerekirse netleştirme isteyin\n\nReferans: https://github.com/PatrickJS/awesome-cursorrules"
+    },
+    "dynamicSkillExample": {
+      "title": "5. Dinamik Beceri Örneği (MCP)",
+      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"GelistirmeAraclari\")\n\n@mcp.tool()\nasync def lineer_bilet_olustur(baslik: str, oncelik: str = \"dusuk\") -> str:\n    bilet_id = f\"LIN-{hash(baslik) % 10000}\"\n    return f\"{oncelik} öncelikli {bilet_id} bilet oluşturuldu\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferans: https://github.com/modelcontextprotocol/python-sdk"
+    },
+    "deterministicHookExample": {
+      "title": "6. Deterministik Kanca Örneği",
+      "content": "def uyumluluk_kontrolu(state):\n    kullanici_girdisi = state[\"mesajlar\"][-1].content.lower()\n    if \"şifre\" in kullanici_girdisi or \"api_anahtari\" in kullanici_girdisi:\n        return {\"hata\": \"Güvenlik ihlali tespit edildi\"}\n    return ajan_dugumu(state)\n\nReferans: https://langchain-ai.github.io/langgraph/"
+    },
+    "finalThought": "Eğer ajanınız sadece soruları yanıtlıyorsa, bu bir sohbet botudur. Eğer güvenilir bir şekilde iş yapıyorsa, bu bir görev ajanıdır."
+  }
 }
-}
+
