@@ -124,11 +124,25 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   const { locale } = await params;
-  const session = await getServerSession(authOptions);
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  const session = await getServerSession(authOptions);
+
+  // ✅ Pass a lightweight user object to avoid client-side /profile fetches
+  // Keep this shape aligned with what AppWrapper expects.
+  const user =
+    session?.user
+      ? {
+          name: session.user.name ?? null,
+          email: session.user.email ?? null,
+          image: (session.user as any).image ?? null,
+          // If you store id in session, keep it; otherwise null.
+          id: (session.user as any).id ?? null,
+        }
+      : null;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
   const meta = localizedMeta[locale] || localizedMeta["en"];
@@ -136,12 +150,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        {/* Google Analytics 4 */}
+        {/* Google Analytics 4 - defer to reduce load contention */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -191,7 +205,8 @@ export default async function LocaleLayout({
       <body suppressHydrationWarning>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <AppWrapper user={null}>
+            {/* ✅ user now hydrated from server */}
+            <AppWrapper user={user}>
               <UserHydrator>
                 <Header />
                 <TopUpModal />

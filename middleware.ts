@@ -40,8 +40,7 @@ export default function middleware(req: NextRequest) {
     const isMagic = pathname.startsWith(`/${locale}/magic/`);
     const isBilingual = pathname === `/${locale}/bilingual-subtitles`;
     const isDubbing = pathname === `/${locale}/video-dubbing`;
-    const isCreator = pathname.startsWith(`/${locale}/creator`);
-    const isLipSync = pathname.startsWith(`/${locale}/lip-sync`);
+    const isTools = pathname.startsWith(`/${locale}/tools`);    
     const isNanoBananaProPrompts = 
       pathname === `/${locale}/nano-banana-pro-prompts` || 
       pathname.startsWith(`/${locale}/nano-banana-pro-prompts/`);
@@ -54,7 +53,7 @@ export default function middleware(req: NextRequest) {
       isRoot || isLogin || isContact || isAbout || isPricing ||
       isWorkspace || isPrivacy || isAgreement || isBlog ||
       isProjectDetail || isMagic || isBilingual || isDubbing ||
-      isCreator || isLipSync || isNanoBananaProPrompts || isInspirationHub;
+      isNanoBananaProPrompts || isInspirationHub || isTools;
 
     // ----- Bot detection (Googlebot, Bing, etc.) -----
     const userAgent = req.headers.get("user-agent") || "";

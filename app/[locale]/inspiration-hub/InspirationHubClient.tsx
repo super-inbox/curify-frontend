@@ -16,66 +16,74 @@ import {
 } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
+// --- Types ---
 type ViewMode = "list" | "cards";
+type InterleavedItem = 
+  | { type: "inspiration"; card: InspirationCardType } 
+  | { type: "nano"; cards: NanoInspirationCardType[] };
 
+type Lang = "en" | "zh";
+
+// --- Helpers ---
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-export default function InspirationHubClient({ cards }: { cards: InspirationCardType[] }) {
-  const [query, setQuery] = useState("");
-  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
-  
-  // Modal state
-  const [modalCard, setModalCard] = useState<InspirationCardType | NanoInspirationCardType | null>(null);
-  const [modalCardType, setModalCardType] = useState<"inspiration" | "nano">("inspiration");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+/** * Pure function to weave Nano cards into Inspiration cards.
+ * Inserts a row of 3 Nano cards after every 4 Inspiration cards.
+ */
+function getInterleavedData(
+  mainCards: InspirationCardType[], 
+  nanoCards: NanoInspirationCardType[]
+): InterleavedItem[] {
+  const result: InterleavedItem[] = [];
 
-  const router = useRouter();
-  const pathname = usePathname();
+  mainCards.forEach((card, index) => {
+    // 1. Add the main card
+    result.push({ type: "inspiration", card });
 
-  // Determine default language from URL locale prefix
-  const urlLang: "en" | "zh" = useMemo(() => {
-    if (pathname?.startsWith("/en")) return "en";
-    return "zh";
-  }, [pathname]);
+    // 2. Check if we need to insert a Nano row (Every 4th item)
+    if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
+      // Calculate which "block" of nano cards to show
+      const blockIndex = Math.floor(index / 4);
+      // Use modulo to cycle through nano cards if we run out
+      const startIdx = (blockIndex * 3) % nanoCards.length;
+      const rowCards = nanoCards.slice(startIdx, startIdx + 3);
+      
+      if (rowCards.length > 0) {
+        result.push({ type: "nano", cards: rowCards });
+      }
+    }
+  });
 
-  const [activeLang, setActiveLang] = useState<"en" | "zh">(urlLang);
+  return result;
+}
 
-  // Keep activeLang in sync if user navigates across locales
+// --- Custom Hooks ---
+
+/** Handles fetching and language filtering for Nano cards */
+function useNanoCards(activeLang: Lang) {
+  const [allNanoCards, setAllNanoCards] = useState<NanoInspirationCardType[]>([]);
+
   useEffect(() => {
-    setActiveLang(urlLang);
-  }, [urlLang]);
-
-  function switchLang(nextLang: "en" | "zh") {
-    setActiveLang(nextLang);
-
-    // Update URL locale segment: /en/... or /zh/...
-    const parts = (pathname || "").split("/").filter(Boolean);
-    if (parts.length === 0) return;
-
-    // replace first segment (locale)
-    parts[0] = nextLang;
-    router.push("/" + parts.join("/"));
-  }
-
-  useEffect(() => {
-    // Load nano banana cards (new JSON format)
     fetch("/data/nano_inspiration.json")
       .then((res) => res.json())
-      .then((data) => setNanoCards(data))
+      .then((data) => setAllNanoCards(data))
       .catch((err) => console.error("Failed to load nano cards:", err));
   }, []);
 
-  const nanoCardsForLang = useMemo(() => {
-    return (nanoCards || []).filter((n) => n.language === activeLang);
-  }, [nanoCards, activeLang]);
+  return useMemo(() => {
+    return allNanoCards.filter((n) => n.language === activeLang);
+  }, [allNanoCards, activeLang]);
+}
 
-  const filtered = useMemo(() => {
+/** Handles Search and Language filtering for Main cards */
+function useFilteredInspiration(cards: InspirationCardType[], activeLang: Lang, query: string) {
+  return useMemo(() => {
     const q = query.trim().toLowerCase();
 
-    // 1) Language filter first
-    let result = (cards || []).filter((c) => {
+    // 1) Language filter
+    let result = cards.filter((c) => {
       const l = (c.lang || "zh").toLowerCase();
       return activeLang === "en" ? l.startsWith("en") : l.startsWith("zh");
     });
@@ -83,7 +91,7 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
     // 2) Text search
     if (q) {
       result = result.filter((c) => {
-        const hay = [
+        const searchableText = [
           c?.signal?.summary,
           c?.translation?.tag,
           ...(c?.translation?.angles || []),
@@ -95,100 +103,107 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
           .join(" ")
           .toLowerCase();
 
-        return hay.includes(q);
+        return searchableText.includes(q);
       });
     }
 
     return result;
   }, [cards, query, activeLang]);
+}
 
-  // ✅ Auth gate function to pass down
+/** Handles URL and State synchronization for Language */
+function useLanguageSync() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const urlLang: Lang = useMemo(() => {
+    return pathname?.startsWith("/en") ? "en" : "zh";
+  }, [pathname]);
+
+  const [activeLang, setActiveLang] = useState<Lang>(urlLang);
+
+  useEffect(() => {
+    setActiveLang(urlLang);
+  }, [urlLang]);
+
+  const switchLang = (nextLang: Lang) => {
+    setActiveLang(nextLang);
+    const parts = (pathname || "").split("/").filter(Boolean);
+    if (parts.length > 0) {
+      parts[0] = nextLang;
+      router.push("/" + parts.join("/"));
+    }
+  };
+
+  return { activeLang, switchLang };
+}
+
+// --- Main Component ---
+
+export default function InspirationHubClient({ cards }: { cards: InspirationCardType[] }) {
+  const [query, setQuery] = useState("");
+  
+  // Custom Hooks for Data Logic
+  const { activeLang, switchLang } = useLanguageSync();
+  const nanoCards = useNanoCards(activeLang);
+  const filteredCards = useFilteredInspiration(cards, activeLang, query);
+
+  // Modal State
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    card: InspirationCardType | NanoInspirationCardType | null;
+    type: "inspiration" | "nano";
+  }>({
+    isOpen: false,
+    card: null,
+    type: "inspiration",
+  });
+
+  // Auth Logic
   const user = useAtomValue(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
-  const requireAuth = useMemo(() => {
-    return (reason?: string) => {
-      if (user) return true;
-      setDrawerState("signup");
-      return false;
-    };
+  
+  const requireAuth = useCallback(() => {
+    if (user) return true;
+    setDrawerState("signup");
+    return false;
   }, [user, setDrawerState]);
 
-  // Modal handlers
-  const handleOpenInspirationModal = useCallback((card: InspirationCardType) => {
-    setModalCard(card);
-    setModalCardType("inspiration");
-    setIsModalOpen(true);
-  }, []);
-
-  const handleOpenNanoModal = useCallback((card: NanoInspirationCardType) => {
-    setModalCard(card);
-    setModalCardType("nano");
-    setIsModalOpen(true);
+  // Handlers
+  const handleOpenModal = useCallback((card: any, type: "inspiration" | "nano") => {
+    setModalState({ isOpen: true, card, type });
   }, []);
 
   const handleCloseModal = useCallback(() => {
-    setIsModalOpen(false);
+    setModalState(prev => ({ ...prev, isOpen: false }));
     setTimeout(() => {
-      setModalCard(null);
+      setModalState(prev => ({ ...prev, card: null }));
     }, 200);
   }, []);
 
   return (
     <section>
       <div className="mb-6 flex flex-col gap-3">
-        {/* Search and Filters */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <div className="flex-1">
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search signals, angles, hooks..."
-              className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
-            />
-          </div>
-
-          {/* Language Toggle */}
-          <div className="flex gap-1 rounded-xl border border-neutral-200 bg-white p-1">
-            <button
-              onClick={() => switchLang("zh")}
-              className={classNames(
-                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                activeLang === "zh" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
-              )}
-              type="button"
-            >
-              中文
-            </button>
-            <button
-              onClick={() => switchLang("en")}
-              className={classNames(
-                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                activeLang === "en" ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
-              )}
-              type="button"
-            >
-              EN
-            </button>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between text-xs text-neutral-500">
-          <span>
-            Showing <span className="font-medium text-neutral-700">{filtered.length}</span> of {cards.length} cards
-          </span>
-        </div>
+        {/* Filters UI */}
+        <Filters 
+          query={query} 
+          setQuery={setQuery} 
+          activeLang={activeLang} 
+          onSwitchLang={switchLang} 
+          count={filteredCards.length}
+          total={cards.length}
+        />
       </div>
 
       {/* List View */}
       <ListView 
-        filtered={filtered} 
-        nanoCards={nanoCardsForLang} 
+        filteredMainCards={filteredCards} 
+        nanoCards={nanoCards} 
         requireAuth={requireAuth}
-        onViewInspirationClick={handleOpenInspirationModal}
-        onViewNanoClick={handleOpenNanoModal}
+        onOpenModal={handleOpenModal}
       />
 
-      {filtered.length === 0 && (
+      {filteredCards.length === 0 && (
         <div className="py-16 text-center text-neutral-500">
           <p>No cards found matching your criteria.</p>
         </div>
@@ -196,48 +211,74 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
 
       {/* Card View Modal */}
       <CardViewModal
-        card={modalCard}
-        isOpen={isModalOpen}
+        card={modalState.card}
+        isOpen={modalState.isOpen}
         onClose={handleCloseModal}
-        cardType={modalCardType}
+        cardType={modalState.type}
       />
     </section>
   );
 }
 
-// List View with Nano Banana Cards Interleaved
+// --- Sub Components ---
+
+function Filters({ query, setQuery, activeLang, onSwitchLang, count, total }: any) {
+  return (
+    <>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex-1">
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search signals, angles, hooks..."
+            className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
+          />
+        </div>
+
+        <div className="flex gap-1 rounded-xl border border-neutral-200 bg-white p-1">
+          {(["zh", "en"] as const).map((lang) => (
+            <button
+              key={lang}
+              onClick={() => onSwitchLang(lang)}
+              className={classNames(
+                "rounded-lg px-3 py-1.5 text-xs font-medium transition-colors uppercase",
+                activeLang === lang ? "bg-neutral-900 text-white" : "text-neutral-600 hover:text-neutral-900"
+              )}
+              type="button"
+            >
+              {lang === "zh" ? "中文" : "EN"}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-between text-xs text-neutral-500">
+        <span>
+          Showing <span className="font-medium text-neutral-700">{count}</span> of {total} cards
+        </span>
+      </div>
+    </>
+  );
+}
+
 function ListView({
-  filtered,
+  filteredMainCards,
   nanoCards,
   requireAuth,
-  onViewInspirationClick,
-  onViewNanoClick,
+  onOpenModal,
 }: {
-  filtered: InspirationCardType[];
+  filteredMainCards: InspirationCardType[];
   nanoCards: NanoInspirationCardType[];
-  requireAuth: (reason?: string) => boolean;
-  onViewInspirationClick: (card: InspirationCardType) => void;
-  onViewNanoClick: (card: NanoInspirationCardType) => void;
+  requireAuth: () => boolean;
+  onOpenModal: (card: any, type: "inspiration" | "nano") => void;
 }) {
-  const interleavedContent: Array<
-    { type: "inspiration"; card: InspirationCardType } | { type: "nano"; cards: NanoInspirationCardType[] }
-  > = [];
-
-  filtered.forEach((card, index) => {
-    interleavedContent.push({ type: "inspiration", card });
-
-    // Every 4 cards, insert a nano row
-    if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
-      const block = Math.floor(index / 4);
-      const startIdx = (block * 3) % nanoCards.length;
-      const rowCards = nanoCards.slice(startIdx, startIdx + 3);
-      if (rowCards.length > 0) interleavedContent.push({ type: "nano", cards: rowCards });
-    }
-  });
+  // Use the helper to generate the mixed list
+  const data = useMemo(() => 
+    getInterleavedData(filteredMainCards, nanoCards), 
+  [filteredMainCards, nanoCards]);
 
   return (
     <div className="space-y-4">
-      {interleavedContent.map((item, index) => {
+      {data.map((item, index) => {
         if (item.type === "inspiration") {
           return (
             <InspirationListItem
@@ -245,16 +286,16 @@ function ListView({
               card={item.card}
               viewMode="list"
               requireAuth={requireAuth}
-              onViewClick={() => onViewInspirationClick(item.card)}
+              onViewClick={() => onOpenModal(item.card, "inspiration")}
             />
           );
         }
         return (
           <NanoInspirationRow 
-            key={`nano-${index}`} 
+            key={`nano-row-${index}`} 
             cards={item.cards} 
             requireAuth={requireAuth}
-            onViewClick={onViewNanoClick}
+            onViewClick={(c) => onOpenModal(c, "nano")}
           />
         );
       })}

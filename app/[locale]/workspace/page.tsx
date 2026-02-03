@@ -1,5 +1,12 @@
-import ProfileClientPage from "./WorkspaceClient";
+// app/[locale]/workspace/page.tsx
+import ProfileClientPage from "./ProfileClientPage";
 
-export default function ProfilePage() {
-  return <ProfileClientPage />;
+export const dynamic = "force-dynamic";
+
+export default function Page() {
+  return (
+    <main className="min-h-screen">
+      <ProfileClientPage />
+    </main>
+  );
 }

@@ -51,13 +51,14 @@ export function CardViewModal({ card, isOpen, onClose, cardType }: CardViewModal
 
   if (!isOpen || !card) return null;
 
-  // Extract locale from current URL path
+  // Extract locale from current URL path and create permalink
   const getCanonicalUrl = () => {
-    if (typeof window === "undefined") return `/inspiration-hub#${card.id}`;
-    
-    const pathname = window.location.pathname;
+    const pathname = typeof window !== "undefined" ? window.location.pathname : "";
     const locale = pathname.startsWith("/en") ? "en" : "zh";
-    return `${window.location.origin}/${locale}/inspiration-hub#${card.id}`;
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : process.env.NEXT_PUBLIC_BASE_URL || "";
+    
+    const prefix = cardType === "inspiration" ? "i" : "n";
+    return `${baseUrl}/${locale}/${prefix}/${card.id}`;
   };
 
   const canonicalUrl = getCanonicalUrl();
