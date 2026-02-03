@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { useViewTracking, useCopyTracking, useShareTracking, useClickTracking } from "@/lib/useTracking";
+import { useViewTracking, useCopyTracking, useShareTracking, useClickTracking } from "@/services/useTracking";
 
 type Source = {
   label: string;
