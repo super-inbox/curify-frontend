@@ -7,7 +7,7 @@ import {
   useCopyTracking,
   useClickTracking,
   useShareTracking,
-} from "@/lib/useTracking";
+} from "@/services/useTracking";
 
 export type NanoInspirationCardType = {
   id: string; // e.g. "1-zh", "1-en"
