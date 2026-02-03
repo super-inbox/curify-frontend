@@ -24,7 +24,6 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 
 export default function InspirationHubClient({ cards }: { cards: InspirationCardType[] }) {
   const [query, setQuery] = useState("");
-  const [minRating, setMinRating] = useState<number | null>(null);
   const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
   
   // Modal state
@@ -100,13 +99,8 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
       });
     }
 
-    // 3) Rating filter
-    if (minRating !== null) {
-      result = result.filter((c) => c.rating && c.rating.score >= minRating);
-    }
-
     return result;
-  }, [cards, query, minRating, activeLang]);
+  }, [cards, query, activeLang]);
 
   // ✅ Auth gate function to pass down
   const user = useAtomValue(userAtom);
@@ -153,18 +147,6 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
             />
           </div>
 
-          {/* Rating Filter */}
-          <select
-            value={minRating?.toString() || ""}
-            onChange={(e) => setMinRating(e.target.value ? parseFloat(e.target.value) : null)}
-            className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
-          >
-            <option value="">All Ratings</option>
-            <option value="4.5">4.5+ ⭐</option>
-            <option value="4.0">4.0+ ⭐</option>
-            <option value="3.5">3.5+ ⭐</option>
-          </select>
-
           {/* Language Toggle */}
           <div className="flex gap-1 rounded-xl border border-neutral-200 bg-white p-1">
             <button
@@ -194,11 +176,6 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
           <span>
             Showing <span className="font-medium text-neutral-700">{filtered.length}</span> of {cards.length} cards
           </span>
-          {minRating && (
-            <button onClick={() => setMinRating(null)} className="text-blue-600 hover:text-blue-700" type="button">
-              Clear filters
-            </button>
-          )}
         </div>
       </div>
 
@@ -214,15 +191,6 @@ export default function InspirationHubClient({ cards }: { cards: InspirationCard
       {filtered.length === 0 && (
         <div className="py-16 text-center text-neutral-500">
           <p>No cards found matching your criteria.</p>
-          {minRating && (
-            <button
-              onClick={() => setMinRating(null)}
-              className="mt-2 text-blue-600 hover:text-blue-700"
-              type="button"
-            >
-              Clear rating filter
-            </button>
-          )}
         </div>
       )}
 

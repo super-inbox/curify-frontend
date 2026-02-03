@@ -78,9 +78,15 @@ interface NanoInspirationCardProps {
 
 export function NanoInspirationCard({ card, requireAuth, onViewClick }: NanoInspirationCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
-  const [saved, setSaved] = useState(false);
+  
+  // Mock engagement numbers (random but stable per card)
+  const seedNum = parseInt(card.id.split('-').pop() || '0', 10) || Math.floor(Math.random() * 1000);
+  const [saveCount, setSaveCount] = useState(seedNum % 100 + 50); // 50-150
+  const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100); // 100-250
+  const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20); // 20-70
 
   const viewRef = useViewTracking(card.id, "nano_inspiration", "list", {
     threshold: 0.5,
@@ -92,10 +98,15 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick }: NanoInsp
   const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
   const trackSave = useClickTracking(card.id, "nano_inspiration", "list");
 
-  const canonicalUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/inspiration-hub#${card.id}`
-      : `/inspiration-hub#${card.id}`;
+  const getCanonicalUrl = () => {
+    if (typeof window === "undefined") return `/inspiration-hub#${card.id}`;
+    
+    const pathname = window.location.pathname;
+    const locale = pathname.startsWith("/en") ? "en" : "zh";
+    return `${window.location.origin}/${locale}/inspiration-hub#${card.id}`;
+  };
+
+  const canonicalUrl = getCanonicalUrl();
 
   // Normalize / derive URLs once
   const normalized = useMemo(() => {
@@ -128,40 +139,56 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick }: NanoInsp
     setCurrentImageIndex((prev) => (prev - 1 + totalImages) % totalImages);
   };
 
-  // View does NOT require auth
-  const handleView = () => {
+  // Card click opens modal
+  const handleCardClick = () => {
     trackClick();
     onViewClick?.(card);
   };
 
-  // Save DOES require auth
-  const handleSave = () => {
+  // Save DOES require auth - toggles on/off
+  const handleSave = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (!requireAuth("save_nano_inspiration")) return;
     trackSave();
-    setSaved(true);
-    setTimeout(() => setSaved(false), 1500);
-    alert("Save functionality coming soon!");
+    
+    if (saved) {
+      setSaved(false);
+      setSaveCount(prev => prev - 1);
+    } else {
+      setSaved(true);
+      setSaveCount(prev => prev + 1);
+    }
   };
 
   // Copy does NOT require auth
-  const handleCopy = async () => {
+  const handleCopy = async (e: React.MouseEvent) => {
+    e.stopPropagation();
     try {
       await navigator.clipboard.writeText(card.prompt);
       trackCopy();
-      setCopied(true);
-      setTimeout(() => setCopied(false), 900);
+      
+      if (!copied) {
+        setCopied(true);
+        setCopyCount(prev => prev + 1);
+        setTimeout(() => setCopied(false), 1500);
+      }
     } catch (err) {
       console.error("Failed to copy:", err);
     }
   };
 
   // Share does NOT require auth - directly copy URL
-  const handleShare = async () => {
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       trackShare();
-      setShared(true);
-      setTimeout(() => setShared(false), 1500);
+      
+      if (!shared) {
+        setShared(true);
+        setShareCount(prev => prev + 1);
+        setTimeout(() => setShared(false), 1500);
+      }
     } catch (err) {
       console.error("Failed to share:", err);
     }
@@ -180,7 +207,8 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick }: NanoInsp
   return (
     <div
       ref={viewRef as React.Ref<HTMLDivElement>}
-      className="group relative overflow-hidden rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-4 shadow-sm hover:shadow-md transition-shadow"
+      onClick={handleCardClick}
+      className="group relative overflow-hidden rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
     >
       {/* Category */}
       <div className="mb-3 flex items-center justify-between gap-2">
@@ -248,62 +276,41 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick }: NanoInsp
       {/* Prompt */}
       <p className="text-xs leading-relaxed text-neutral-700 mb-3">{abbreviatedPrompt}</p>
 
-      {/* Actions - Single Row with unified design */}
-      <div className="flex items-center gap-2">
-        {/* View (no auth) */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            handleView();
-          }}
-          className={classNames(btnBase, "flex-1 border border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50")}
-          type="button"
-          title="View details"
-        >
-          <span>👁️</span>
-          <span>View</span>
-        </button>
-
+      {/* Actions - 3 buttons with engagement counts */}
+      <div className="flex items-center gap-3">
         {/* Save (requires auth) */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            handleSave();
-          }}
-          className={classNames(btnBase, "flex-1 border border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50")}
+          onClick={handleSave}
+          className={classNames(
+            "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer",
+            saved 
+              ? "bg-amber-50 text-amber-700 hover:bg-amber-100" 
+              : "text-neutral-600 hover:text-neutral-900"
+          )}
           type="button"
-          title="Save for later"
         >
-          <span>{saved ? "✓" : "🔖"}</span>
-          <span>{saved ? "Saved" : "Save"}</span>
+          <span>{saved ? "🔖" : "🤍"}</span>
+          <span>{saveCount}</span>
         </button>
 
         {/* Copy (no auth) */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            handleCopy();
-          }}
-          className={classNames(btnBase, "flex-1 border border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50")}
+          onClick={handleCopy}
+          className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
           type="button"
-          title="Copy prompt"
         >
           <span>📋</span>
-          <span>{copied ? "Copied" : "Copy"}</span>
+          <span>{copyCount}</span>
         </button>
 
         {/* Share (no auth) */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            handleShare();
-          }}
-          className={classNames(btnBase, "flex-1 border border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50")}
+          onClick={handleShare}
+          className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
           type="button"
-          title="Share link"
         >
           <span>↗</span>
-          <span>{shared ? "Shared" : "Share"}</span>
+          <span>{shareCount}</span>
         </button>
       </div>
     </div>

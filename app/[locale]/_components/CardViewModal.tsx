@@ -51,15 +51,21 @@ export function CardViewModal({ card, isOpen, onClose, cardType }: CardViewModal
 
   if (!isOpen || !card) return null;
 
-  const canonicalUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/inspiration-hub#${card.id}`
-      : `/inspiration-hub#${card.id}`;
+  // Extract locale from current URL path
+  const getCanonicalUrl = () => {
+    if (typeof window === "undefined") return `/inspiration-hub#${card.id}`;
+    
+    const pathname = window.location.pathname;
+    const locale = pathname.startsWith("/en") ? "en" : "zh";
+    return `${window.location.origin}/${locale}/inspiration-hub#${card.id}`;
+  };
+
+  const canonicalUrl = getCanonicalUrl();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer" onClick={onClose} />
 
       {/* Modal */}
       <div className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-auto m-4 bg-white rounded-2xl shadow-2xl">
@@ -76,7 +82,7 @@ export function CardViewModal({ card, isOpen, onClose, cardType }: CardViewModal
 
           <button
             onClick={onClose}
-            className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-900 transition-colors"
+            className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-900 transition-colors cursor-pointer"
             type="button"
             aria-label="Close modal"
           >
@@ -108,7 +114,7 @@ export function CardViewModal({ card, isOpen, onClose, cardType }: CardViewModal
                 onClick={() => {
                   navigator.clipboard.writeText(canonicalUrl);
                 }}
-                className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition-colors"
+                className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition-colors cursor-pointer"
                 type="button"
               >
                 Copy

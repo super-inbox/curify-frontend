@@ -60,7 +60,8 @@ export function InspirationCard({ card, viewMode, requireAuth, onViewClick }: In
     <div
       ref={viewRef as React.Ref<HTMLDivElement>}
       id={card.id}
-      className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm"
+      onClick={() => onViewClick?.()}
+      className="mb-5 break-inside-avoid rounded-2xl border border-neutral-200 bg-white shadow-sm cursor-pointer hover:shadow-md transition-shadow"
     >
       <CardHeader card={card} />
       <CardBody card={card} />
@@ -77,7 +78,8 @@ export function InspirationListItem({ card, viewMode, requireAuth, onViewClick }
     <div
       ref={viewRef as React.Ref<HTMLDivElement>}
       id={card.id}
-      className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
+      onClick={() => onViewClick?.()}
+      className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
     >
       {/* Thumbnail Image */}
       <div className="flex-shrink-0">
@@ -163,91 +165,113 @@ function ListItemActions({
   requireAuth: (reason?: string) => boolean;
   onViewClick?: () => void;
 }) {
+  const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
-  const [saved, setSaved] = useState(false);
+  
+  // Mock engagement numbers (random but stable per card)
+  const seedNum = parseInt(card.id.split('-').pop() || '0', 10) || Math.floor(Math.random() * 1000);
+  const [saveCount, setSaveCount] = useState(seedNum % 100 + 50); // 50-150
+  const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100); // 100-250
+  const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20); // 20-70
 
   const trackCopy = useCopyTracking(card.id, "inspiration", viewMode);
   const trackShare = useShareTracking(card.id, "inspiration", viewMode);
-  const trackView = useClickTracking(card.id, "inspiration", viewMode);
   const trackSave = useClickTracking(card.id, "inspiration", viewMode);
 
-  const canonicalUrl =
-    card?.actions?.share?.url ||
-    (typeof window !== "undefined" ? `${window.location.origin}/inspiration-hub#${card.id}` : `/inspiration-hub#${card.id}`);
+  const getCanonicalUrl = () => {
+    if (card?.actions?.share?.url) return card.actions.share.url;
+    if (typeof window === "undefined") return `/inspiration-hub#${card.id}`;
+    
+    const pathname = window.location.pathname;
+    const locale = pathname.startsWith("/en") ? "en" : "zh";
+    return `${window.location.origin}/${locale}/inspiration-hub#${card.id}`;
+  };
 
-  async function handleView() {
-    trackView();
-    onViewClick?.();
-  }
+  const canonicalUrl = getCanonicalUrl();
 
-  async function handleSave() {
+  async function handleSave(e: React.MouseEvent) {
+    e.stopPropagation();
     if (!requireAuth("save_inspiration")) return;
     trackSave();
-    setSaved(true);
-    setTimeout(() => setSaved(false), 1500);
-    alert("Save functionality coming soon!");
+    
+    if (saved) {
+      setSaved(false);
+      setSaveCount(prev => prev - 1);
+    } else {
+      setSaved(true);
+      setSaveCount(prev => prev + 1);
+    }
   }
 
-  async function handleCopy() {
+  async function handleCopy(e: React.MouseEvent) {
+    e.stopPropagation();
     try {
       const payload = card?.actions?.copy?.payload || stripQuotes(card?.hook?.text || "");
       await navigator.clipboard.writeText(payload);
       trackCopy();
-      setCopied(true);
-      setTimeout(() => setCopied(false), 900);
+      
+      if (!copied) {
+        setCopied(true);
+        setCopyCount(prev => prev + 1);
+        setTimeout(() => setCopied(false), 1500);
+      }
     } catch {
       // ignore
     }
   }
 
-  async function handleShare() {
+  async function handleShare(e: React.MouseEvent) {
+    e.stopPropagation();
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       trackShare();
-      setShared(true);
-      setTimeout(() => setShared(false), 900);
+      
+      if (!shared) {
+        setShared(true);
+        setShareCount(prev => prev + 1);
+        setTimeout(() => setShared(false), 1500);
+      }
     } catch {
       // ignore
     }
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      <button
-        onClick={handleView}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
-        type="button"
-      >
-        <span>👁️</span>
-        <span>View</span>
-      </button>
-
+    <div className="flex items-center gap-3">
+      {/* Save */}
       <button
         onClick={handleSave}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+        className={classNames(
+          "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer",
+          saved 
+            ? "bg-amber-50 text-amber-700 hover:bg-amber-100" 
+            : "text-neutral-600 hover:text-neutral-900"
+        )}
         type="button"
       >
-        <span>{saved ? "✓" : "🔖"}</span>
-        <span>{saved ? "Saved!" : "Save"}</span>
+        <span>{saved ? "🔖" : "🤍"}</span>
+        <span>{saveCount}</span>
       </button>
 
+      {/* Copy */}
       <button
         onClick={handleCopy}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+        className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
         type="button"
       >
         <span>📋</span>
-        <span>{copied ? "Copied!" : "Copy"}</span>
+        <span>{copyCount}</span>
       </button>
 
+      {/* Share */}
       <button
         onClick={handleShare}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+        className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
         type="button"
       >
         <span>↗</span>
-        <span>{shared ? "Link Copied!" : "Share"}</span>
+        <span>{shareCount}</span>
       </button>
     </div>
   );
@@ -394,50 +418,73 @@ function CardFooter({
   requireAuth: (reason?: string) => boolean;
   onViewClick?: () => void;
 }) {
+  const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
-  const [saved, setSaved] = useState(false);
+  
+  // Mock engagement numbers (random but stable per card)
+  const seedNum = parseInt(card.id.split('-').pop() || '0', 10) || Math.floor(Math.random() * 1000);
+  const [saveCount, setSaveCount] = useState(seedNum % 100 + 50); // 50-150
+  const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100); // 100-250
+  const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20); // 20-70
 
   const trackCopy = useCopyTracking(card.id, "inspiration", viewMode);
   const trackShare = useShareTracking(card.id, "inspiration", viewMode);
-  const trackView = useClickTracking(card.id, "inspiration", viewMode);
   const trackSave = useClickTracking(card.id, "inspiration", viewMode);
 
-  const canonicalUrl =
-    card?.actions?.share?.url ||
-    (typeof window !== "undefined" ? `${window.location.origin}/inspiration-hub#${card.id}` : `/inspiration-hub#${card.id}`);
+  const getCanonicalUrl = () => {
+    if (card?.actions?.share?.url) return card.actions.share.url;
+    if (typeof window === "undefined") return `/inspiration-hub#${card.id}`;
+    
+    const pathname = window.location.pathname;
+    const locale = pathname.startsWith("/en") ? "en" : "zh";
+    return `${window.location.origin}/${locale}/inspiration-hub#${card.id}`;
+  };
 
-  async function handleView() {
-    trackView();
-    onViewClick?.();
-  }
+  const canonicalUrl = getCanonicalUrl();
 
-  async function handleSave() {
+  async function handleSave(e: React.MouseEvent) {
+    e.stopPropagation();
     if (!requireAuth("save_inspiration")) return;
     trackSave();
-    setSaved(true);
-    setTimeout(() => setSaved(false), 1500);
-    alert("Save functionality coming soon!");
+    
+    if (saved) {
+      setSaved(false);
+      setSaveCount(prev => prev - 1);
+    } else {
+      setSaved(true);
+      setSaveCount(prev => prev + 1);
+    }
   }
 
-  async function handleCopy() {
+  async function handleCopy(e: React.MouseEvent) {
+    e.stopPropagation();
     try {
       const payload = card?.actions?.copy?.payload || stripQuotes(card?.hook?.text || "");
       await navigator.clipboard.writeText(payload);
       trackCopy();
-      setCopied(true);
-      setTimeout(() => setCopied(false), 900);
+      
+      if (!copied) {
+        setCopied(true);
+        setCopyCount(prev => prev + 1);
+        setTimeout(() => setCopied(false), 1500);
+      }
     } catch {
       // ignore
     }
   }
 
-  async function handleShare() {
+  async function handleShare(e: React.MouseEvent) {
+    e.stopPropagation();
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       trackShare();
-      setShared(true);
-      setTimeout(() => setShared(false), 900);
+      
+      if (!shared) {
+        setShared(true);
+        setShareCount(prev => prev + 1);
+        setTimeout(() => setShared(false), 1500);
+      }
     } catch {
       // ignore
     }
@@ -445,45 +492,40 @@ function CardFooter({
 
   return (
     <div className="border-t border-neutral-100 px-4 py-3">
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          onClick={handleView}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
-          type="button"
-          title="View details"
-        >
-          <span>👁️</span>
-          <span>View</span>
-        </button>
-
+      <div className="flex items-center gap-3">
+        {/* Save */}
         <button
           onClick={handleSave}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+          className={classNames(
+            "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer",
+            saved 
+              ? "bg-amber-50 text-amber-700 hover:bg-amber-100" 
+              : "text-neutral-600 hover:text-neutral-900"
+          )}
           type="button"
-          title="Save for later"
         >
-          <span>{saved ? "✓" : "🔖"}</span>
-          <span>{saved ? "Saved!" : "Save"}</span>
+          <span>{saved ? "🔖" : "🤍"}</span>
+          <span>{saveCount}</span>
         </button>
 
+        {/* Copy */}
         <button
           onClick={handleCopy}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
           type="button"
-          title="Copy content"
         >
           <span>📋</span>
-          <span>{copied ? "Copied!" : "Copy"}</span>
+          <span>{copyCount}</span>
         </button>
 
+        {/* Share */}
         <button
           onClick={handleShare}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
           type="button"
-          title="Share link"
         >
           <span>↗</span>
-          <span>{shared ? "Link Copied!" : "Share"}</span>
+          <span>{shareCount}</span>
         </button>
       </div>
     </div>
