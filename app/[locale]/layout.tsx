@@ -18,12 +18,9 @@ import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
 import UserHydrator from "./UserHydrator";
 
-interface Props {
-  children: React.ReactNode;
-  params: { locale: string };
-}
-
-// Map localized meta tags
+/* -------------------------
+ * Localized SEO Metadata
+ * ------------------------- */
 const localizedMeta: Record<string, { title: string; description: string }> = {
   en: {
     title: "Curify Studio | AI Video Translation, Dubbing & Subtitles",
@@ -32,7 +29,8 @@ const localizedMeta: Record<string, { title: string; description: string }> = {
   },
   zh: {
     title: "Curify Studio | 视频翻译与配音 AI 平台",
-    description: "Curify 是一个 AI 内容创作平台，支持 170+ 语言的视频翻译、配音与字幕生成。",
+    description:
+      "Curify 是一个 AI 内容创作平台，支持 170+ 语言的视频翻译、配音与字幕生成。",
   },
   es: {
     title: "Curify Studio | Plataforma de Doblaje y Subtítulos con IA",
@@ -71,13 +69,16 @@ const localizedMeta: Record<string, { title: string; description: string }> = {
   },
 };
 
+/* -------------------------
+ * Metadata generator
+ * ------------------------- */
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }> | { locale: string };
 }): Promise<Metadata> {
+  // ✅ Next may provide params as async; always await safely
   const { locale } = await params;
-
   const meta = localizedMeta[locale] || localizedMeta["en"];
 
   const rawHeaders = await headers();
@@ -116,13 +117,17 @@ export async function generateMetadata({
   };
 }
 
+/* -------------------------
+ * Locale Layout
+ * ------------------------- */
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }> | { locale: string };
 }) {
+  // ✅ Next may provide params as async; always await safely
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -131,18 +136,36 @@ export default async function LocaleLayout({
 
   const session = await getServerSession(authOptions);
 
-  // ✅ Pass a lightweight user object to avoid client-side /profile fetches
-  // Keep this shape aligned with what AppWrapper expects.
-  const user =
-    session?.user
-      ? {
-          name: session.user.name ?? null,
-          email: session.user.email ?? null,
-          image: (session.user as any).image ?? null,
-          // If you store id in session, keep it; otherwise null.
-          id: (session.user as any).id ?? null,
-        }
-      : null;
+  /* -------------------------
+   * Path + Protection Logic
+   * ------------------------- */
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || "";
+
+  const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
+  const protectedPrefixes = ["/workspace", "/magic", "/project_details"];
+
+  const isProtectedPage = protectedPrefixes.some(
+    (p) => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")
+  );
+
+  /**
+   * Hydration strategy:
+   * - Logged-in users: ALWAYS hydrate
+   * - Logged-out users:
+   *   - Protected pages: hydrate (safety net)
+   *   - Public pages: skip hydration (performance)
+   */
+  const shouldEnableUserHydration = !!session || isProtectedPage;
+
+  const user = session?.user
+    ? {
+        name: session.user.name ?? null,
+        email: session.user.email ?? null,
+        image: (session.user as any).image ?? null,
+        id: (session.user as any).id ?? null,
+      }
+    : null;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
   const meta = localizedMeta[locale] || localizedMeta["en"];
@@ -150,7 +173,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        {/* Google Analytics 4 - defer to reduce load contention */}
+        {/* GA4 – fire-and-forget */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
           strategy="lazyOnload"
@@ -160,13 +183,11 @@ export default async function LocaleLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-23QXSJ8HS7', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', 'G-23QXSJ8HS7', { page_path: window.location.pathname });
           `}
         </Script>
 
-        {/* Google Identity Services */}
+        {/* Google Sign-In */}
         <script src="https://accounts.google.com/gsi/client" async defer />
 
         {/* Structured Data */}
@@ -178,9 +199,7 @@ export default async function LocaleLayout({
             operatingSystem: "Web",
             applicationCategory: "MultimediaApplication",
             url: "https://www.curify-ai.com",
-            description:
-              meta.description ??
-              "AI-powered voiceover, dubbing, and subtitles in 170+ languages.",
+            description: meta.description,
             offers: {
               "@type": "Offer",
               price: "0.00",
@@ -195,7 +214,7 @@ export default async function LocaleLayout({
           })}
         </Script>
 
-        {/* Icon font */}
+        {/* Icon Font */}
         <Script
           src="//at.alicdn.com/t/c/font_4910365_wqytpll6n9g.js"
           strategy="beforeInteractive"
@@ -205,16 +224,26 @@ export default async function LocaleLayout({
       <body suppressHydrationWarning>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            {/* ✅ user now hydrated from server */}
             <AppWrapper user={user}>
-              <UserHydrator>
-                <Header />
-                <TopUpModal />
-                <SignDrawer />
-                {children}
-                <Toaster />
-                <Footer />
-              </UserHydrator>
+              {shouldEnableUserHydration ? (
+                <UserHydrator>
+                  <Header />
+                  <TopUpModal />
+                  <SignDrawer />
+                  {children}
+                  <Toaster />
+                  <Footer />
+                </UserHydrator>
+              ) : (
+                <>
+                  <Header />
+                  <TopUpModal />
+                  <SignDrawer />
+                  {children}
+                  <Toaster />
+                  <Footer />
+                </>
+              )}
             </AppWrapper>
           </NextIntlClientProvider>
         </AuthProvider>

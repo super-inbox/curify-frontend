@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { inspirationService } from "@/services/inspiration";
-import { normalizeNanoImageUrl } from "../_components/NanoInspirationCard";
+import { normalizeNanoImageUrl } from "../../_components/NanoInspirationCard";
 
 // --- Metadata Logic ---
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {

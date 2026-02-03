@@ -22,11 +22,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Center: Privacy and Terms */}
+      {/* Center: Privacy, Terms, About */}
       <div className="flex items-center space-x-4 mb-4 sm:mb-0">
         <Link href={`/${locale}/privacy`} className="hover:underline">Privacy Policy</Link>
         <span className="text-gray-400">|</span>
         <Link href={`/${locale}/agreement`} className="hover:underline">Terms of Service</Link>
+        <span className="text-gray-400">|</span>
+        <Link href={`/${locale}/about`} className="hover:underline">About us</Link>
       </div>
 
       {/* Right: Company Email */}

@@ -4,8 +4,18 @@ import { NextResponse, type NextRequest } from "next/server";
 
 const intlMiddleware = createMiddleware(routing);
 
+// 🛡️ Define Protected Routes (Pages that MUST have login)
+// Only these paths will trigger a redirect if the user is not logged in.
+// All other paths (Root, About, Blog, etc.) are implicitly Public.
+const protectedRoutes = [
+  "/workspace",
+  "/magic",
+  "/project_details",
+  // Add other private paths here if needed
+];
+
 export default function middleware(req: NextRequest) {
-  // 1. Force www redirect (308 Permanent)
+  // --- 1. Force www redirect (SEO) ---
   const host = req.headers.get("host");
   if (host === "curify-ai.com") {
     const url = new URL(req.url);
@@ -13,64 +23,36 @@ export default function middleware(req: NextRequest) {
     return NextResponse.redirect(url, { status: 308 });
   }
 
-  // Run next-intl middleware first
+  // --- 2. Run i18n middleware first ---
   const res = intlMiddleware(req);
 
-  // 🔥 Send pathname to layout.tsx
+  // --- 3. Pass pathname to layout ---
   res.headers.set("x-pathname", req.nextUrl.pathname);
 
+  // --- 4. Authentication Logic ---
   const pathname = req.nextUrl.pathname;
   const matched = pathname.match(/^\/([a-zA-Z]{2})(\/|$)/);
   const locale = matched?.[1];
 
   if (locale) {
     const token = req.cookies.get("next-auth.session-token")?.value;
+    
+    // Get "clean" path (e.g., "/en/workspace" -> "/workspace", "/en" -> "/")
+    const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "/";
 
-    // ----- Public routes -----
-    const isRoot = pathname === `/${locale}`;
-    const isLogin = pathname === `/${locale}/login`;
-    const isContact = pathname === `/${locale}/contact`;
-    const isAbout = pathname === `/${locale}/about`;
-    const isPricing = pathname === `/${locale}/pricing`;
-    const isWorkspace = pathname === `/${locale}/workspace`;
-    const isPrivacy = pathname === `/${locale}/privacy`;
-    const isAgreement = pathname === `/${locale}/agreement`;
-    const isBlog = pathname === `/${locale}/blog` || pathname.startsWith(`/${locale}/blog/`);
-    const isProjectDetail = pathname.startsWith(`/${locale}/project_details/`);
-    const isMagic = pathname.startsWith(`/${locale}/magic/`);
-    const isBilingual = pathname === `/${locale}/bilingual-subtitles`;
-    const isDubbing = pathname === `/${locale}/video-dubbing`;
-    const isTools = pathname.startsWith(`/${locale}/tools`);    
-    const isNanoBananaProPrompts = 
-      pathname === `/${locale}/nano-banana-pro-prompts` || 
-      pathname.startsWith(`/${locale}/nano-banana-pro-prompts/`);
+    // Helper: Check if current path is in the protected list
+    const isProtected = protectedRoutes.some(route => 
+      pathWithoutLocale === route || pathWithoutLocale.startsWith(`${route}/`)
+    );
 
-    const isInspirationHub =
-    pathname === `/${locale}/inspiration-hub` || 
-    pathname.startsWith(`/${locale}/inspiration-hub/`);
-
-    const isPublicPage =
-      isRoot || isLogin || isContact || isAbout || isPricing ||
-      isWorkspace || isPrivacy || isAgreement || isBlog ||
-      isProjectDetail || isMagic || isBilingual || isDubbing ||
-      isNanoBananaProPrompts || isInspirationHub || isTools;
-
-    // ----- Bot detection (Googlebot, Bing, etc.) -----
-    const userAgent = req.headers.get("user-agent") || "";
-    const isBot = /googlebot|bingbot|slurp|duckduckbot|baiduspider/i.test(userAgent);
-
-    // 🔥 Never redirect bots — they must see real HTML pages
-    if (!isBot) {
-      // Redirect unauthenticated users away from private pages
-      if (!token && !isPublicPage) {
-        return NextResponse.redirect(new URL(`/${locale}`, req.url));
-      }
-
-      // Redirect logged-in users away from login/root pages
-      if (token && (isRoot || isLogin)) {
-        return NextResponse.redirect(new URL(`/${locale}/main`, req.url));
-      }
+    // 🔒 If it's a Protected Route AND user is NOT logged in -> Redirect
+    if (isProtected && !token) {
+      return NextResponse.redirect(new URL(`/${locale}`, req.url));
     }
+
+    // ✅ Explicitly Public:
+    // Root ("/"), Contact, About, etc. fall through here automatically.
+    // They will NOT be redirected.
   }
 
   return res;

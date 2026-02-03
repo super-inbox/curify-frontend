@@ -73,42 +73,42 @@ export default function Header() {
       <div className="flex items-center justify-between w-full">
         {/* Left: Logo + Nav */}
         <div className="flex items-center space-x-8">
-          
-            <Link
-              href={user?.user_id ? `/${locale}/workspace` : `/${locale}`}
-              aria-label="Curify Home"
-              className="relative w-40 aspect-[160/38.597] cursor-pointer"
-            >
-              <Image
-                src="/logo.svg"
-                alt="Curify Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </Link>
-          
+          <Link
+            href={`/${locale}`}
+            aria-label="Curify Home"
+            className="relative w-40 aspect-[160/38.597] cursor-pointer"
+          >
+            <Image
+              src="/logo.svg"
+              alt="Curify Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </Link>
 
           {(headerState === "out" || headerState === "in") && (
-  <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
-    <Link href={`/${locale}/pricing`} className="hover:opacity-80">
-      Pricing
-    </Link>
-    <Link href={`/${locale}/blog`} className="hover:opacity-80">
-      Blog
-    </Link>
-    <Link href={`/${locale}/about`} className="hover:opacity-80">
-      About
-    </Link>
-    <Link href={`/${locale}/nano-banana-pro-prompts`} className="hover:opacity-80">
-      Nano Banana Gallery
-    </Link>
-    <Link href={`/${locale}/inspiration-hub`} className="hover:opacity-80">
-      Inspiration Hub
-    </Link>
-  </nav>
-)}
-
+            <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
+              <Link href={`/${locale}/inspiration-hub`} className="hover:opacity-80">
+                Discover
+              </Link>
+              <Link href={`/${locale}/nano-banana-pro-prompts`} className="hover:opacity-80">
+                Gallery
+              </Link>
+              <Link href={`/${locale}/tools`} className="hover:opacity-80">
+                Tools
+              </Link>
+              <Link href={`/${locale}/blog`} className="hover:opacity-80">
+                Blogs
+              </Link>
+              <Link href={`/${locale}/pricing`} className="hover:opacity-80">
+                Pricing
+              </Link>
+              <Link href={`/${locale}/workspace`} className="hover:opacity-80">
+                Workspace
+              </Link>              
+            </nav>
+          )}
         </div>
 
         {/* Right: Language, Credits, Actions */}
@@ -177,20 +177,19 @@ export default function Header() {
                 </Link>
 
                 {user && (
-  <div className="absolute right-0 top-full -mt-1 z-40">
-    <UserDropdownMenu
-      user={user}
-      isOpen={dropdownOpen}
-      onClose={handleCloseDropdown}
-      onLanguageSelect={(lang: string) => router.push(`/${lang}`)}
-      onSignOut={() => console.log("Sign out clicked")}
-      currentLocale={locale}
-      isHistoryDialogOpen={isHistoryDialogOpen}
-      setIsHistoryDialogOpen={setIsHistoryDialogOpen}
-    />
-  </div>
-)}
-
+                  <div className="absolute right-0 top-full -mt-1 z-40">
+                    <UserDropdownMenu
+                      user={user}
+                      isOpen={dropdownOpen}
+                      onClose={handleCloseDropdown}
+                      onLanguageSelect={(lang: string) => router.push(`/${lang}`)}
+                      onSignOut={() => console.log("Sign out clicked")}
+                      currentLocale={locale}
+                      isHistoryDialogOpen={isHistoryDialogOpen}
+                      setIsHistoryDialogOpen={setIsHistoryDialogOpen}
+                    />
+                  </div>
+                )}
               </div>
             </>
           )}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import InspirationHubClient from "./InspirationHubClient";
 import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
-import { InspirationCardUI } from "@/lib/types/inspiration";
+import { InspirationCardUI } from "@/types/inspiration";
 
 export const metadata: Metadata = {
   title: "Daily Inspiration Hub | Curify",
