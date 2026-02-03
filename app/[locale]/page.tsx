@@ -1,6 +1,6 @@
 // app/page.tsx
 import type { Metadata } from "next";
-import HomeClient from "./_componentForPage/HomeClient";
+import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
   title: "Curify | Power Content Creation with AI",
