@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import CdnImage from "../../_components/CdnImage";
 
 export const metadata: Metadata = {
@@ -122,6 +123,63 @@ export default function AgeAiPost() {
         <p className="mt-4 text-gray-700">
           {t("bottomLine.content2")}
         </p>
+      </div>
+
+      <p className="mt-8 text-gray-600">
+        {t("conclusion")}
+      </p>
+
+      {/* Related Articles Section */}
+      <div className="mt-16 pt-8 border-t border-gray-200">
+        <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link
+            href="/blog/QA_Bot_to_Task"
+            className="group block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-500 transition-colors"
+          >
+            <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600">
+              From QA Bot to Task Agent: An Architecture Guide
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Learn how to evolve simple QA systems into autonomous task agents
+              with our comprehensive architecture guide.
+            </p>
+            <span className="text-blue-600 text-sm font-medium">Read more →</span>
+          </Link>
+
+          <Link
+            href="/blog/agents-vs-workflows"
+            className="group block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-500 transition-colors"
+          >
+            <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600">
+              Agents vs Workflows – From Control to Intelligence
+            </h3>
+            <p className="text-gray-600 mb-3">
+              Explore the shift from rigid workflows to intelligent agents in
+              modern AI systems.
+            </p>
+            <span className="text-blue-600 text-sm font-medium">Read more →</span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Next Article */}
+      <div className="mt-12 pt-6 border-t border-gray-200">
+        <p className="text-sm text-gray-500 mb-2">Next Article</p>
+        <Link
+          href="/blog/QA_Bot_to_Task"
+          className="group flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          <div>
+            <h3 className="text-lg font-semibold group-hover:text-blue-600">
+              From QA Bot to Task Agent: An Architecture Guide
+            </h3>
+            <p className="text-sm text-gray-500 mt-1">
+              Learn how to build more capable AI agents
+            </p>
+          </div>
+          <span className="text-blue-600">→</span>
+        </Link>
       </div>
 
       <div className="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200">
