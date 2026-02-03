@@ -34,7 +34,7 @@ export default function QABotToTaskAgent() {
           {t("coreShift.title")}
         </h2>
         <div className="space-y-4 mb-6">
-          {(t.raw("coreShift.content") as string[]).map((item: string, index: number) => (
+          {t.raw("coreShift.content")?.map((item: string, index: number) => (
             <p key={index} className="text-gray-700">{item}</p>
           ))}
         </div>

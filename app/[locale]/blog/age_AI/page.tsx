@@ -76,13 +76,13 @@ export default function AgeAiPost() {
           </p>
           <ul className="space-y-3">
             {[
-              t.raw("strategicPillars.buildingTools.points.0"),
-              t.raw("strategicPillars.buildingTools.points.1"),
-              t.raw("strategicPillars.buildingTools.points.2")
+              t("strategicPillars.buildingTools.points.0"),
+              t("strategicPillars.buildingTools.points.1"),
+              t("strategicPillars.buildingTools.points.2")
             ].map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
-                <span><strong>{point.title}:</strong> {point.content}</span>
+                <span>{point}</span>
               </li>
             ))}
           </ul>
@@ -98,13 +98,13 @@ export default function AgeAiPost() {
           </p>
           <ul className="space-y-3">
             {[
-              t.raw("strategicPillars.leveragingTools.points.0"),
-              t.raw("strategicPillars.leveragingTools.points.1"),
-              t.raw("strategicPillars.leveragingTools.points.2")
+              t("strategicPillars.leveragingTools.points.0"),
+              t("strategicPillars.leveragingTools.points.1"),
+              t("strategicPillars.leveragingTools.points.2")
             ].map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-green-500 mr-2">•</span>
-                <span><strong>{point.title}:</strong> {point.content}</span>
+                <span>{point}</span>
               </li>
             ))}
           </ul>

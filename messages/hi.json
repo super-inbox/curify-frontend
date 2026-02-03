@@ -908,8 +908,20 @@
       "memory": "कम मेमोरी फ़ुटप्रिंट",
       "parallel": "पैरलल प्रोसेसिंग"
     }
-  },
+  }
+},
+
+"nanoBananaProPrompts": {
+    "title": "Nano Banana Pro Prompts",
+    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "prompts": {
+      "title": "Popular Nano Banana Pro Prompts",
+      "prompt1": "Create a short story about a futuristic city where emotions are currency",
+      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
+      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+    }
   
+  },
   "ageAi": {
     "heading": "AI के युग में डेटा साइंस: क्या 'सबसे आकर्षक नौकरी' अब भी आकर्षक है?",
     "intro1": "'यह सर्वोत्तम समय था, यह सबसे बुरा समय था'",
@@ -1042,6 +1054,6 @@
       "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"पासवर्ड\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"सुरक्षा उल्लंघन का पता चला\"}\n    return agent_node(state)\n\nसंदर्भ: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "यदि आपका एजेंट केवल सवालों के जवाब देता है, तो यह एक चैटबॉट है। यदि यह विश्वसनीय रूप से काम करता है, तो यह एक टास्क एजेंट है।"
-  }
-}
+  } 
+
 }
