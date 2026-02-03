@@ -102,7 +102,6 @@ function useFilteredInspiration(
 }
 
 function useLanguageSync() {
-  const router = useRouter();
   const pathname = usePathname();
 
   // Robustly determine current lang from URL
@@ -114,27 +113,7 @@ function useLanguageSync() {
 
   useEffect(() => setActiveLang(urlLang), [urlLang]);
 
-  const switchLang = (nextLang: Lang) => {
-    // 1. Optimization: Prevent reload if already on the requested language
-    if (nextLang === activeLang) return;
-
-    // 2. Optimistic UI update
-    setActiveLang(nextLang);
-
-    // 3. Robust URL Replacement
-    // Replaces the leading /en or /zh with the new language
-    // e.g., "/en/tools" -> "/zh/tools"
-    let newPath = pathname;
-    if (pathname.startsWith("/en") || pathname.startsWith("/zh")) {
-      newPath = pathname.replace(/^\/(en|zh)/, `/${nextLang}`);
-    } else {
-      // Edge case: if pathname is just "/" (via rewrites), prepend locale
-      newPath = `/${nextLang}${pathname === "/" ? "" : pathname}`;
-    }
-
-    router.push(newPath);
-  };
-  return { activeLang, switchLang };
+  return { activeLang };
 }
 
 // --- Sidebar Sub-components ---
@@ -190,7 +169,7 @@ export default function HomeClient({
 }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
-  const { activeLang, switchLang } = useLanguageSync();
+  const { activeLang } = useLanguageSync();
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
@@ -248,48 +227,16 @@ export default function HomeClient({
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Left: Feed */}
           <div className="lg:col-span-8">
-            {/* Search */}
+            {/* Search - Language toggle removed */}
             <div className="sticky top-24 z-10 mb-6 rounded-2xl border border-neutral-200 bg-white/95 p-2 shadow-sm backdrop-blur">
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex flex-1 items-center gap-2 px-2">
-                  <Search className="h-5 w-5 text-neutral-400" />
-                  <input
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search for inspiration..."
-                    className="w-full bg-transparent text-sm outline-none placeholder:text-neutral-400"
-                  />
-                </div>
-
-                <div className="flex items-center gap-3 border-l border-neutral-100 pl-3 pr-1">
-                  <div className="flex gap-1">
-                    <button
-                      onClick={() => switchLang("en")}
-                      className={classNames(
-                        "rounded-lg px-2.5 py-1 text-xs font-semibold transition-colors",
-                        activeLang === "en"
-                          ? "bg-neutral-100 text-neutral-900"
-                          : "text-neutral-400 hover:text-neutral-600"
-                      )}
-                    >
-                      English
-                    </button>
-                    <span className="select-none text-xs text-neutral-300">
-                      |
-                    </span>
-                    <button
-                      onClick={() => switchLang("zh")}
-                      className={classNames(
-                        "rounded-lg px-2.5 py-1 text-xs font-semibold transition-colors",
-                        activeLang === "zh"
-                          ? "bg-neutral-100 text-neutral-900"
-                          : "text-neutral-400 hover:text-neutral-600"
-                      )}
-                    >
-                      中文
-                    </button>
-                  </div>
-                </div>
+              <div className="flex items-center gap-2 px-2">
+                <Search className="h-5 w-5 text-neutral-400" />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search for inspiration..."
+                  className="w-full bg-transparent text-sm outline-none placeholder:text-neutral-400"
+                />
               </div>
             </div>
 

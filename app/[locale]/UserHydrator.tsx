@@ -5,37 +5,62 @@ import { usePathname } from "next/navigation";
 import { useSetAtom } from "jotai";
 import { userAtom } from "@/app/atoms/atoms";
 
-// 只在这些页面需要强制刷新最新数据 (例如支付回调后，或者极高频操作页)
-// 如果你对 Session 的实时性要求不高 (比如 top-up 完你会手动 update session)，
-// 这里甚至可以留空。
-const FORCE_FETCH_ROUTES = ["/workspace", "/magic"]; 
+// Pages that need fresh profile data (e.g., after payment callbacks)
+const FORCE_FETCH_ROUTES = ["/workspace", "/magic", "/project_details"];
 
-export default function UserHydrator({ children }: { children: React.ReactNode }) {
+export default function UserHydrator({ 
+  children,
+  initialUser 
+}: { 
+  children: React.ReactNode;
+  initialUser: any;
+}) {
   const setUser = useSetAtom(userAtom);
   const pathname = usePathname();
   const mounted = useRef(false);
+  const lastFetchPath = useRef<string>("");
+  const hasFetchedOnce = useRef(false);
 
   useEffect(() => {
     mounted.current = true;
     
+    // Always set initial user from session on mount
+    if (initialUser && !hasFetchedOnce.current) {
+      setUser(initialUser);
+    }
+
+    // Extract path without locale
     const pathWithoutLocale = pathname.replace(/^\/[a-zA-Z]{2}(\/|$)/, "/") || "/";
 
-    
+    // Check if current page requires fresh data
     const shouldRefetch = FORCE_FETCH_ROUTES.some(prefix => 
-       pathWithoutLocale === prefix || pathWithoutLocale.startsWith(prefix + "/")
+      pathWithoutLocale === prefix || pathWithoutLocale.startsWith(prefix + "/")
     );
 
-    if (!shouldRefetch) {
-      return; 
+    // Skip if:
+    // 1. Not a protected page
+    // 2. Already fetched for this exact path
+    // 3. No initial user (not logged in)
+    if (!shouldRefetch || lastFetchPath.current === pathWithoutLocale || !initialUser) {
+      return;
     }
-    
+
     const fetchProfile = async () => {
       try {
-        const res = await fetch("/api/user/profile"); 
+        const res = await fetch("/api/user/profile", {
+          // Prevent caching to ensure fresh data
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+          },
+        });
+        
         if (res.ok) {
           const data = await res.json();
           if (mounted.current) {
-            setUser(data);             
+            setUser(data);
+            lastFetchPath.current = pathWithoutLocale;
+            hasFetchedOnce.current = true;
           }
         }
       } catch (error) {
@@ -48,7 +73,7 @@ export default function UserHydrator({ children }: { children: React.ReactNode }
     return () => {
       mounted.current = false;
     };
-  }, [pathname, setUser]);
+  }, [pathname, setUser, initialUser]);
 
   return <>{children}</>;
 }

@@ -147,20 +147,15 @@ export default async function LocaleLayout({
     (p) => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")
   );
 
-  // ✅ ONLY enable UserHydrator (which fetches API) on protected pages.
-  // Public pages will rely entirely on the 'user' object below derived from Session.
-  const shouldEnableUserHydration = isProtectedPage;
-
   // ✅ Extract Credits & Extended Info from Session
-  // Since we modified authOptions, session.user now contains these fields.
   const user = session?.user
     ? {
         id: (session.user as any).id,
         name: session.user.name ?? null,
         email: session.user.email ?? null,
-        // Fallback to avatar_url if image is missing
         image: session.user.image ?? (session.user as any).avatar_url ?? null,
-        // Pass credits to client so Header works without API fetch
+        avatar_url: (session.user as any).avatar_url ?? session.user.image ?? null,
+        user_id: (session.user as any).user_id ?? null,
         non_expiring_credits: (session.user as any).non_expiring_credits ?? 0,
         expiring_credits: (session.user as any).expiring_credits ?? 0,
         plan_name: (session.user as any).plan_name ?? null,
@@ -224,10 +219,16 @@ export default async function LocaleLayout({
       <body suppressHydrationWarning>
         <AuthProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
-            {/* User object now includes credits! */}
+            {/* 
+              ✅ OPTIMIZATION:
+              - AppWrapper gets user from session (includes credits)
+              - UserHydrator only wraps protected pages
+              - UserHydrator receives initialUser to set atom immediately
+              - API fetch only happens on protected pages when needed
+            */}
             <AppWrapper user={user}>
-              {shouldEnableUserHydration ? (
-                <UserHydrator>
+              {isProtectedPage ? (
+                <UserHydrator initialUser={user}>
                   <Header />
                   <TopUpModal />
                   <SignDrawer />

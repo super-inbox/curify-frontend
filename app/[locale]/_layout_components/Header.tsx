@@ -8,7 +8,8 @@ import { modalAtom, drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function Header() {
   const router = useRouter();
@@ -25,9 +26,14 @@ export default function Header() {
     }
   }, [user]);
 
-  const languages = [
+  // Primary languages shown directly
+  const primaryLanguages = [
     { locale: "en", name: "English", flag: "🇬🇧" },
     { locale: "zh", name: "中文", flag: "🇨🇳" },
+  ];
+
+  // Additional languages in dropdown
+  const moreLanguages = [
     { locale: "es", name: "Español", flag: "🇪🇸" },
     { locale: "fr", name: "Français", flag: "🇫🇷" },
     { locale: "de", name: "Deutsch", flag: "🇩🇪" },
@@ -36,9 +42,10 @@ export default function Header() {
     { locale: "ru", name: "Русский", flag: "🇷🇺" },
   ];
 
-  const currentLanguage = languages.find((lang) => lang.locale === locale);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isHistoryDialogOpen, setIsHistoryDialogOpen] = useState(false);
+  const [moreLanguagesOpen, setMoreLanguagesOpen] = useState(false);
+  const moreDropdownRef = useRef<HTMLDivElement>(null);
 
   const remainingCredits =
     (user?.non_expiring_credits || 0) + (user?.expiring_credits || 0);
@@ -67,6 +74,23 @@ export default function Header() {
   const handleLoginClick = () => {
     setDrawerState(drawerState === "signin" ? null : "signin");
   };
+
+  // Close more languages dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+        setMoreLanguagesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Check if current locale is in "more" languages
+  const currentLanguage = [...primaryLanguages, ...moreLanguages].find(
+    (lang) => lang.locale === locale
+  );
+  const isMoreLanguage = moreLanguages.some((lang) => lang.locale === locale);
 
   return (
     <header className="flex px-8 py-1.5 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
@@ -113,6 +137,68 @@ export default function Header() {
 
         {/* Right: Language, Credits, Actions */}
         <div className="flex items-center space-x-4">
+          {/* Language Selector - Always visible */}
+          <div className="flex items-center gap-1 border-r border-gray-200 pr-4">
+            {/* English */}
+            <Link href="/en">
+              <button
+                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                  locale === "en"
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                English
+              </button>
+            </Link>
+
+            {/* Chinese */}
+            <Link href="/zh">
+              <button
+                className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                  locale === "zh"
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                中文
+              </button>
+            </Link>
+
+            {/* More dropdown */}
+            <div className="relative" ref={moreDropdownRef}>
+              <button
+                onClick={() => setMoreLanguagesOpen(!moreLanguagesOpen)}
+                className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                  isMoreLanguage
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                {isMoreLanguage ? currentLanguage?.flag : "More"}
+                <ChevronDown className="h-3 w-3" />
+              </button>
+
+              {moreLanguagesOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  {moreLanguages.map((lang) => (
+                    <Link key={lang.locale} href={`/${lang.locale}`}>
+                      <button
+                        onClick={() => setMoreLanguagesOpen(false)}
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
+                          locale === lang.locale ? "bg-blue-50 text-blue-600" : "text-gray-700"
+                        }`}
+                      >
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </button>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
           {headerState === "out" ? (
             <>
               <Link href={`/${locale}/contact`}>
@@ -124,25 +210,6 @@ export default function Header() {
             </>
           ) : (
             <>
-              {/* Language Dropdown */}
-              <div className="relative">
-                <details className="dropdown">
-                  <summary className="m-1 btn btn-ghost text-[var(--c1)] text-sm min-h-0 h-auto px-2 py-1">
-                    <span className="mr-2">{currentLanguage?.flag}</span>
-                    {currentLanguage?.name}
-                  </summary>
-                  <ul className="absolute right-0 mt-2 p-2 shadow menu bg-white rounded-box w-32 z-50">
-                    {languages.map((lang) => (
-                      <li key={lang.locale}>
-                        <Link href={`/${lang.locale}`} className="text-sm">
-                          {lang.flag} {lang.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </div>
-
               {/* Shell Credit Display */}
               <p className="text-sm text-right mr-2 flex items-center gap-1">
                 <span className="text-[var(--p-blue)] font-bold">
