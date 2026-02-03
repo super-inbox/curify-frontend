@@ -1,16 +1,31 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import CdnImage from '../_components/CdnImage';
 
 
 const blogPosts = [
   {
+    slug: 'QA_Bot_to_Task',
+    title: 'From QA Bot to Task Agent: An Architecture Guide',
+    date: 'January 30, 2026',
+    readTime: '6 min read',
+    tag: 'AI Architecture',
+    image: 'https://storage.googleapis.com/curify-static/qa-bot-architecture.jpg',
+  },
+  {
+    slug: 'age_AI',
+    title: 'Data Science in the Age of AI: Is the "Sexiest Job" Still Sexy?',
+    date: 'January 30, 2026',
+    readTime: '8 min read',
+    tag: 'AI Industry',
+    image: 'https://storage.googleapis.com/curify-static/1_ef4wcJrfRHv5laz-yVmYMA.webp',
+  },
+  {
     slug: 'storyboard-labeling',
     title: 'From Raw Footage to Storyboards: AI-Powered Video Analysis',
     date: 'December 11, 2025',
     readTime: '10 min read',
     tag: 'Video Analysis',
-    image: '/images/lion-scene.jpg',
+    image: 'https://storage.googleapis.com/curify-static/lion-scene.jpg',
   },
   {
     slug: 'video-enhancement',
@@ -18,7 +33,7 @@ const blogPosts = [
     date: 'November 18, 2025',
     readTime: '7 min read',
     tag: 'Video Enhancement',
-    image: '/images/video-enhancement-pipeline.png',
+    image: 'https://storage.googleapis.com/curify-static/video-enhancement-pipeline.png',
   },
   {
     slug: 'video-evaluation',
@@ -26,7 +41,7 @@ const blogPosts = [
     date: 'November 14, 2025',
     readTime: '6 min read',
     tag: 'Localization',
-    image: '/images/video-translation-eval.jpg',
+    image: 'https://storage.googleapis.com/curify-static/video-translation-eval.jpg',
   },
   {
     slug: 'storyboard-to-pipeline',
@@ -34,7 +49,7 @@ const blogPosts = [
     date: 'October 28, 2025',
     readTime: '5 min read',
     tag: 'Animation',
-    image: '/images/ai-animation-pipeline.jpg',
+    image: 'https://storage.googleapis.com/curify-static/ai-animation-pipeline.jpg',
   },
   {
     slug: 'agents-vs-workflows',
@@ -42,7 +57,7 @@ const blogPosts = [
     date: 'October 28, 2025',
     readTime: '6 min read',
     tag: 'Generative Tools',
-    image: '/images/agents-vs-workflows.jpg',
+    image: 'https://storage.googleapis.com/curify-static/agents-vs-workflows.jpg',
   },
   {
     slug: 'ae-vs-comfyui',
@@ -50,7 +65,7 @@ const blogPosts = [
     date: 'October 28, 2025',
     readTime: '7 min read',
     tag: 'Tools & Pipeline',
-    image: '/images/ae-vs-comfyui.jpg',
+    image: 'https://storage.googleapis.com/curify-static/ae-vs-comfyui.jpg',
   },
 ];
 
