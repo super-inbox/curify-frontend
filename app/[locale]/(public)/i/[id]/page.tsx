@@ -1,23 +1,34 @@
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 
+type PageParams = { locale: string; id: string };
+
 // --- Metadata Logic ---
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const dto = await inspirationService.getCardById(params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { id, locale } = await params;
 
-  if (!dto) {
-    return { title: "Inspiration Not Found" };
-  }
+  const dto = await inspirationService.getCardById(id);
+  if (!dto) return { title: "Inspiration Not Found" };
 
-  // Map to UI Card to access consistent properties
   const card = mapDTOToUICard(dto);
-  
+
   const title = card.hook?.text || card.signal?.summary || "Curify Inspiration";
-  const description = card.signal?.summary || card.translation?.tag || "Discover creative inspiration";
-  const imageUrl = card.visual?.images?.[0]?.preview_image_url || "/og-default.png";
-  
+  const description =
+    card.signal?.summary ||
+    card.translation?.tag ||
+    "Discover creative inspiration";
+
+  const imageUrl =
+    card.visual?.images?.[0]?.preview_image_url || "/og-default.png";
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.curify-ai.com";
+
   return {
     title,
     description,
@@ -25,7 +36,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       title,
       description,
       images: [imageUrl],
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/en/i/${params.id}`,
+      url: `${baseUrl}/${locale}/i/${id}`,
       type: "article",
     },
     twitter: {
@@ -38,29 +49,28 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 // --- Page Component ---
-export default async function InspirationPermalinkPage({ params }: { params: { id: string } }) {
-  const dto = await inspirationService.getCardById(params.id);
+export default async function InspirationPermalinkPage({
+  params,
+}: {
+  params: Promise<PageParams>;
+}) {
+  const { id, locale } = await params;
 
-  if (!dto) {
-    notFound();
-  }
+  const dto = await inspirationService.getCardById(id);
+  if (!dto) notFound();
 
-  // Convert DTO to UI-friendly structure
   const card = mapDTOToUICard(dto);
-  
-  // Extract images safely
   const images = card.visual?.images || [];
 
   return (
     <main className="min-h-screen bg-neutral-50 py-12">
       <div className="container mx-auto max-w-4xl px-4">
         <article className="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-          
           {/* Header */}
           <header className="mb-6 space-y-3">
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold text-neutral-400">
-                {card.lang.toUpperCase()}
+                {(card.lang || locale).toUpperCase()}
               </span>
               {card.rating && (
                 <div className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">
@@ -69,11 +79,11 @@ export default async function InspirationPermalinkPage({ params }: { params: { i
                 </div>
               )}
             </div>
-            
+
             <h1 className="text-3xl font-bold leading-tight text-neutral-900">
               {card.hook?.text || "Inspiration"}
             </h1>
-            
+
             {card.translation?.tag && (
               <div className="inline-block rounded-full bg-neutral-100 px-3 py-1 text-sm text-neutral-700">
                 {card.translation.tag}
@@ -90,7 +100,7 @@ export default async function InspirationPermalinkPage({ params }: { params: { i
                   key={idx}
                   src={img.url}
                   alt={img.alt || `Visual ${idx + 1}`}
-                  className="rounded-xl object-cover w-full h-auto"
+                  className="w-full h-auto rounded-xl object-cover"
                 />
               ))}
             </div>
@@ -102,7 +112,7 @@ export default async function InspirationPermalinkPage({ params }: { params: { i
               <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-400">
                 Signal Source
               </h2>
-              <p className="leading-relaxed text-neutral-800 text-lg">
+              <p className="text-lg leading-relaxed text-neutral-800">
                 {card.signal.summary}
               </p>
             </section>
@@ -116,7 +126,10 @@ export default async function InspirationPermalinkPage({ params }: { params: { i
               </h2>
               <div className="flex flex-wrap gap-2">
                 {card.translation.angles.map((angle: string, idx: number) => (
-                  <span key={idx} className="rounded-lg bg-indigo-50 px-3 py-1.5 text-sm font-medium text-indigo-700">
+                  <span
+                    key={idx}
+                    className="rounded-lg bg-indigo-50 px-3 py-1.5 text-sm font-medium text-indigo-700"
+                  >
                     {angle}
                   </span>
                 ))}
@@ -130,9 +143,10 @@ export default async function InspirationPermalinkPage({ params }: { params: { i
               <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-800">
                 {card.production.title || "Production Guide"}
               </h2>
-              
+
               <div className="mb-4 text-sm text-neutral-600">
-                <span className="font-medium text-neutral-900">Format:</span> {card.production.format || "N/A"}
+                <span className="font-medium text-neutral-900">Format:</span>{" "}
+                {card.production.format || "N/A"}
                 {card.production.durationSec && (
                   <span className="ml-3 border-l border-neutral-300 pl-3">
                     {card.production.durationSec}s
@@ -156,7 +170,7 @@ export default async function InspirationPermalinkPage({ params }: { params: { i
           {/* CTA */}
           <footer className="mt-10 border-t border-neutral-100 pt-8">
             <a
-              href="/en/inspiration-hub"
+              href={`/${locale}/inspiration-hub`}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-neutral-900 px-6 py-4 text-base font-medium text-white transition-all hover:bg-neutral-800 hover:shadow-lg sm:w-auto"
             >
               <span>Explore More Inspirations</span>

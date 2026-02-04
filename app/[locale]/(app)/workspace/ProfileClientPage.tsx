@@ -79,8 +79,6 @@ export default function ProfileClientPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
-      {/* Tools section extracted */}
-      <ToolsClient />
 
       <h2 className="text-2xl font-bold mb-4">My Projects</h2>
 

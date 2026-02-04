@@ -1,20 +1,30 @@
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { inspirationService } from "@/services/inspiration";
 import { normalizeNanoImageUrl } from "../../../_components/NanoInspirationCard";
 
+type PageParams = { locale: string; id: string };
+
 // --- Metadata Logic ---
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const card = await inspirationService.getNanoCardById(params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { id, locale } = await params;
+
+  const card = await inspirationService.getNanoCardById(id);
 
   if (!card) {
     return { title: "Nano Inspiration Not Found" };
   }
 
   const title = `${card.category} - Curify Nano Inspiration`;
-  const description = card.prompt.slice(0, 160);
+  const description = (card.prompt || "").slice(0, 160);
   const imageUrl = normalizeNanoImageUrl(card.image_urls?.[0] || "");
-  
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.curify-ai.com";
+
   return {
     title,
     description,
@@ -22,7 +32,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       title,
       description,
       images: [imageUrl],
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/en/n/${params.id}`,
+      url: `${baseUrl}/${locale}/n/${id}`,
       type: "article",
     },
     twitter: {
@@ -35,8 +45,14 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 // --- Page Component ---
-export default async function NanoPermalinkPage({ params }: { params: { id: string } }) {
-  const card = await inspirationService.getNanoCardById(params.id);
+export default async function NanoPermalinkPage({
+  params,
+}: {
+  params: Promise<PageParams>;
+}) {
+  const { id, locale } = await params;
+
+  const card = await inspirationService.getNanoCardById(id);
 
   if (!card) {
     notFound();
@@ -46,7 +62,6 @@ export default async function NanoPermalinkPage({ params }: { params: { id: stri
     <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 py-12">
       <div className="container mx-auto max-w-4xl px-4">
         <article className="rounded-2xl border border-purple-100 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
-          
           {/* Header */}
           <header className="mb-8">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-sm font-semibold text-purple-700">
@@ -76,7 +91,10 @@ export default async function NanoPermalinkPage({ params }: { params: { id: stri
               </h2>
               <div className="grid gap-4 md:grid-cols-2">
                 {card.image_urls.map((imgUrl, idx) => (
-                  <div key={idx} className="group relative overflow-hidden rounded-xl bg-neutral-100">
+                  <div
+                    key={idx}
+                    className="group relative overflow-hidden rounded-xl bg-neutral-100"
+                  >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={normalizeNanoImageUrl(imgUrl)}
@@ -92,14 +110,13 @@ export default async function NanoPermalinkPage({ params }: { params: { id: stri
           {/* CTA */}
           <footer className="mt-10 border-t border-purple-100 pt-8">
             <a
-              href="/en/inspiration-hub"
+              href={`/${locale}/inspiration-hub`}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600 px-6 py-4 text-base font-medium text-white shadow-lg shadow-purple-200 transition-all hover:bg-purple-700 hover:shadow-purple-300 sm:w-auto"
             >
               <span>Explore More Inspirations</span>
               <span>→</span>
             </a>
           </footer>
-          
         </article>
       </div>
     </main>

@@ -49,6 +49,11 @@ function buildCopyPayload(row: InspirationCardDTO): string {
 export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
   const img = row.image_url?.trim();
   const preview = row.preview_image_url?.trim();
+  const copyPayload = buildCopyPayload(row);
+
+  // ✅ choose one canonical share url (permalink best)
+  // If you have /[locale]/i/[id], use that. Otherwise fallback to hash.
+  const shareUrl = `/i/${row.id}`;
 
   return {
     id: row.id,
@@ -89,10 +94,12 @@ export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
       reason: row.scoring_reason || "",
     } : undefined,
 
+    copyPayload,
+    shareUrl,
     // ✅ Add actions so existing components work
     actions: {
-      copy: { payload: buildCopyPayload(row) },
-      share: { url: `/inspiration-hub#${row.id}` },
+      copy: { payload: copyPayload },
+      share: { url: shareUrl },
     },
   };
 }

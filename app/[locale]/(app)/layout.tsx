@@ -20,9 +20,10 @@ export default async function AppLocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }> | { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const session = await getServerSession(authOptions);
@@ -30,10 +31,11 @@ export default async function AppLocaleLayout({
   const user = session?.user
     ? {
         id: (session.user as any).id,
-        name: session.user.name ?? null,
+        name: session.user.username ?? null,
         email: session.user.email ?? null,
-        image: session.user.image ?? (session.user as any).avatar_url ?? null,
-        avatar_url: (session.user as any).avatar_url ?? session.user.image ?? null,
+        image: session.user.username ?? (session.user as any).avatar_url ?? null,
+        avatar_url:
+          (session.user as any).avatar_url ?? null,
         user_id: (session.user as any).user_id ?? null,
         non_expiring_credits: (session.user as any).non_expiring_credits ?? 0,
         expiring_credits: (session.user as any).expiring_credits ?? 0,
@@ -46,7 +48,6 @@ export default async function AppLocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        {/* 同你的 head 可复用 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
           strategy="lazyOnload"
@@ -59,6 +60,8 @@ export default async function AppLocaleLayout({
             gtag('config', 'G-23QXSJ8HS7', { page_path: window.location.pathname });
           `}
         </Script>
+
+        <script src="https://accounts.google.com/gsi/client" async defer />
       </head>
 
       <body suppressHydrationWarning>
