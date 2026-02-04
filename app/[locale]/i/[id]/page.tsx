@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   
   const title = card.hook?.text || card.signal?.summary || "Curify Inspiration";
   const description = card.signal?.summary || card.translation?.tag || "Discover creative inspiration";
-  const imageUrl = card.visual?.images?.[0]?.url || "/og-default.png";
+  const imageUrl = card.visual?.images?.[0]?.preview_image_url || "/og-default.png";
   
   return {
     title,
