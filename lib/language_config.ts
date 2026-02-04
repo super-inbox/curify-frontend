@@ -19,8 +19,8 @@ export const moreLanguages: LanguageConfig[] = [
   { locale: "fr", name: "Français", flag: "🇫🇷", code: "fr" },
   { locale: "de", name: "Deutsch", flag: "🇩🇪", code: "de" },
   { locale: "ja", name: "日本語", flag: "🇯🇵", code: "ja" },
-  { locale: "ko", name: "한국어", flag: "🇰🇷", code: "ko" },
-  { locale: "ru", name: "Русский", flag: "🇷🇺", code: "ru" },
+  { locale: "hi", name: "हिंदी", flag: "🇮🇳", code: "hi" },
+  { locale: "tr", name: "Türkçe", flag: "🇹🇷", code: "tr" },
 ];
 
 // All languages combined
