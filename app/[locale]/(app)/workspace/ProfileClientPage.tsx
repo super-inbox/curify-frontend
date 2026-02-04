@@ -6,14 +6,14 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
 import { modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
-import CreateNewModal from "../(public)/tools/CreateNewModal";
+import CreateNewModal from "../..//(public)/tools/CreateNewModal";
 import { Project } from "@/types/projects";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
-import DeleteConfirmationDialog from "../_componentForPage/DeleteConfirmationDialog";
+import DeleteConfirmationDialog from "../../_componentForPage/DeleteConfirmationDialog";
 import { formatDuration } from "@/lib/format_utils";
 import { projectService } from "@/services/projects";
 import { authService } from "@/services/auth";
-import GalleryGrid from "../_componentForPage/GalleryGrid";
+import GalleryGrid from "../../_componentForPage/GalleryGrid";
 
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);

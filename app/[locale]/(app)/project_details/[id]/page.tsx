@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
-import ExportDialog from "../../../../_componentForPage/ExportDialog";
+import ExportDialog from "../../../_componentForPage/ExportDialog";
 import { ProjectDetails } from "@/types/segments";
 import { projectService } from "@/services/projects";
 import { useSetAtom } from "jotai";

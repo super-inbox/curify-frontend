@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useTranslations } from 'next-intl';
-import CdnImage from "../_components/CdnImage";
+import CdnImage from "../../_components/CdnImage";
 
 export default function AboutClient() {
 
