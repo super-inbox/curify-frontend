@@ -46,10 +46,10 @@ export default function CdnImage(props: ImageProps) {
   const finalSrc = toCdnUrl(src);
 
   // Debug: prints the final URL that Next/Image will request
-  if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
-    console.log("[CdnImage]", { rawSrc: src, finalSrc, CDN_BASE });
-  }
+  // if (process.env.NODE_ENV !== "production") {
+  //   // eslint-disable-next-line no-console
+  //   console.log("[CdnImage]", { rawSrc: src, finalSrc, CDN_BASE });
+  // }
 
   return <Image src={finalSrc} {...rest} />;
 }

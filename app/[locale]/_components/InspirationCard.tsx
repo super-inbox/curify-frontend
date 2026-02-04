@@ -68,22 +68,22 @@ export function InspirationCard({ card, viewMode, requireAuth, onViewClick }: In
 // List View
 export function InspirationListItem({ card, viewMode, requireAuth, onViewClick }: InspirationCardProps) {
   
-  console.log("[InspirationListItem render]", card.id);
+  // console.log("[InspirationListItem render]", card.id);
 
   const trackView = useClickTracking(card.id, "inspiration", viewMode);
 
   const img0 = card?.visual?.images?.[0];
   const thumbSrc = getImgSrc(img0);
 
-  useEffect(() => {
-    // prints whenever the thumbnail src changes
-    console.log("[InspirationListItem] thumb", {
-      id: card.id,
-      viewMode,
-      thumbSrc,
-      raw: img0,
-    });
-  }, [card.id, viewMode, thumbSrc]); // keep deps small
+  // useEffect(() => {
+  //   // prints whenever the thumbnail src changes
+  //   console.log("[InspirationListItem] thumb", {
+  //     id: card.id,
+  //     viewMode,
+  //     thumbSrc,
+  //     raw: img0,
+  //   });
+  // }, [card.id, viewMode, thumbSrc]); // keep deps small
 
   const handleClick = () => {
     trackView(); // Track "View"

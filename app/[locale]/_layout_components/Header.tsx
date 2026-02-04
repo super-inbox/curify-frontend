@@ -41,10 +41,16 @@ export default function Header() {
   // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+      if (
+        moreDropdownRef.current &&
+        !moreDropdownRef.current.contains(event.target as Node)
+      ) {
         setMoreLanguagesOpen(false);
       }
-      if (menuDropdownRef.current && !menuDropdownRef.current.contains(event.target as Node)) {
+      if (
+        menuDropdownRef.current &&
+        !menuDropdownRef.current.contains(event.target as Node)
+      ) {
         setMenuOpen(false);
       }
     }
@@ -83,10 +89,21 @@ export default function Header() {
           {/* Navigation Tabs */}
           {(headerState === "out" || headerState === "in") && (
             <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
-              <Link href={`/${locale}/inspiration-hub`} className="hover:opacity-80">
+              {/* ✅ NEW: Home */}
+              <Link href={`/${locale}`} className="hover:opacity-80">
+                Home
+              </Link>
+
+              <Link
+                href={`/${locale}/inspiration-hub`}
+                className="hover:opacity-80"
+              >
                 Discover
               </Link>
-              <Link href={`/${locale}/nano-banana-pro-prompts`} className="hover:opacity-80">
+              <Link
+                href={`/${locale}/nano-banana-pro-prompts`}
+                className="hover:opacity-80"
+              >
                 Gallery
               </Link>
               <Link href={`/${locale}/tools`} className="hover:opacity-80">
@@ -131,7 +148,9 @@ export default function Header() {
                     : "text-gray-600 hover:bg-gray-50"
                 }`}
               >
-                {isCurrentMoreLang && currentLanguage ? currentLanguage.flag : "More"}
+                {isCurrentMoreLang && currentLanguage
+                  ? currentLanguage.flag
+                  : "More"}
                 <ChevronDown className="h-3 w-3" />
               </button>
 
@@ -142,7 +161,9 @@ export default function Header() {
                       <button
                         onClick={() => setMoreLanguagesOpen(false)}
                         className={`cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
-                          locale === lang.locale ? "bg-blue-50 text-blue-600" : "text-gray-700"
+                          locale === lang.locale
+                            ? "bg-blue-50 text-blue-600"
+                            : "text-gray-700"
                         }`}
                       >
                         <span>{lang.flag}</span>

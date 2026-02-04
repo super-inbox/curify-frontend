@@ -24,7 +24,7 @@ export default function AppWrapper({ children, user }: Props) {
 
   useEffect(() => {
     // Build stable user identifier
-    const currentUserId = user?.user_id || user?.id || user?.email || null;
+    const currentUserId = user?.user_id || user?.email || null;
     
     // ✅ CRITICAL: Only update if user actually changed
     // This prevents re-initialization when language changes

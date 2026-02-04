@@ -77,6 +77,9 @@ export default function UserHydrator({
       }
     };
 
+    console.log("[UserHydrator] shouldRefetch", shouldRefetch, "path=", pathWithoutLocale);
+    console.log("[UserHydrator] fetching /api/user/profile");
+    
     fetchProfile();
 
     return () => {
