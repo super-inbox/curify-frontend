@@ -1,0 +1,438 @@
+{
+  "templates": [
+    {
+      "id": "template-herbal-zh",
+      "category": "中草药类",
+      "language": "zh",
+      "base_prompt": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把"单味药材"画成全景式知识分解图。根据用户指定的【{herb_name}】，生成一张"单味药材全景分解图（Herb Exploded Sheet）"：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【{herb_name}】。",
+      "parameters": [
+        {
+          "name": "herb_name",
+          "label": "中药材名称",
+          "type": "text",
+          "placeholder": "例如：人参、当归、黄芪"
+        }
+      ],
+      "candidates": [
+        { "herb_name": "人参" },
+        { "herb_name": "当归" },
+        { "herb_name": "黄芪" },
+        { "herb_name": "枸杞" },
+        { "herb_name": "甘草" },
+        { "herb_name": "金银花" },
+        { "herb_name": "菊花" },
+        { "herb_name": "陈皮" },
+        { "herb_name": "红枣" },
+        { "herb_name": "三七" }
+      ]
+    },
+    {
+      "id": "template-evolution-zh",
+      "category": "发展纪年类",
+      "language": "zh",
+      "base_prompt": "生成超高细节等距像素艺术时间线插画，比例3:4，分辨率4K，整体风格兼具繁复细节、象征意义与隐喻性。构建"{theme}演进博物馆"的等距像素场景，以不同展区对应不同历史阶段（{start_period}到{end_period}），形成"空间递进=时间演进"。标准等距透视（2:1），层次丰富、衔接流畅；每阶段搭配3-5个强关联象征元素；用阶段差异化配色实现"色彩递进=时间流转"。融入双语像素字体标题：中文"{theme}演进史"，英文"EVOLUTION OF {theme_en}"；副标题"从{start_period}到{end_period}"，并加入关键节点时间标记。整体兼顾专业性与观赏性，预留解读空间，适配学术解析与可视化对比展示。",
+      "parameters": [
+        {
+          "name": "theme",
+          "label": "主题",
+          "type": "text",
+          "placeholder": "例如：中国社会变迁、互联网技术"
+        },
+        {
+          "name": "theme_en",
+          "label": "主题（英文）",
+          "type": "text",
+          "placeholder": "例如：Chinese Social Changes, Internet Technology"
+        },
+        {
+          "name": "start_period",
+          "label": "起始节点",
+          "type": "text",
+          "placeholder": "例如：原始社会、1990年代"
+        },
+        {
+          "name": "end_period",
+          "label": "结束节点",
+          "type": "text",
+          "placeholder": "例如：新时代、当代"
+        }
+      ],
+      "candidates": [
+        {
+          "theme": "中国社会变迁",
+          "theme_en": "Chinese Social Changes",
+          "start_period": "原始社会",
+          "end_period": "新时代"
+        },
+        {
+          "theme": "互联网技术",
+          "theme_en": "Internet Technology",
+          "start_period": "1990年代",
+          "end_period": "AI时代"
+        },
+        {
+          "theme": "交通工具",
+          "theme_en": "Transportation",
+          "start_period": "马车时代",
+          "end_period": "新能源汽车"
+        },
+        {
+          "theme": "通讯方式",
+          "theme_en": "Communication",
+          "start_period": "飞鸽传书",
+          "end_period": "5G网络"
+        },
+        {
+          "theme": "建筑风格",
+          "theme_en": "Architecture",
+          "start_period": "古典建筑",
+          "end_period": "摩天大楼"
+        },
+        {
+          "theme": "教育体系",
+          "theme_en": "Education System",
+          "start_period": "私塾教育",
+          "end_period": "在线教育"
+        },
+        {
+          "theme": "医疗技术",
+          "theme_en": "Medical Technology",
+          "start_period": "传统医学",
+          "end_period": "精准医疗"
+        },
+        {
+          "theme": "能源利用",
+          "theme_en": "Energy Usage",
+          "start_period": "薪柴时代",
+          "end_period": "清洁能源"
+        },
+        {
+          "theme": "货币形态",
+          "theme_en": "Currency Forms",
+          "start_period": "贝壳货币",
+          "end_period": "数字货币"
+        },
+        {
+          "theme": "娱乐方式",
+          "theme_en": "Entertainment",
+          "start_period": "戏曲表演",
+          "end_period": "虚拟现实"
+        }
+      ]
+    },
+    {
+      "id": "template-travel-zh",
+      "category": "旅游规划图",
+      "language": "zh",
+      "base_prompt": "你是擅长可爱手绘风格的旅行插画师，生成一张【{destination}】的手绘旅行地图，贴合【{date_range}】的季节与时间特点。整体为可爱手绘风，将该目的地的核心景点、当地特色美食、住宿、交通方式均设计成Q版萌系图案，线条圆润、色彩明快清新。全程用简体中文标注，精准标注目的地、景点、美食、住宿及行程内容，字体为可爱卡通字体，清晰可读。清晰标出各地点间的移动路线（用萌系线条/小脚印等元素呈现），按【{date_range}】分块展示每日重点活动，区块划分清晰。固定为4:3画幅，分辨率为基础的两倍，精准还原目的地基础地形轮廓（贴合当地地形/海岸线特点），融入对应季节代表性元素，贴合目的地地域特色，画面细节满满、治愈活泼，兼顾萌系视觉感与行程实用性，适配打印、电子展示等场景。",
+      "parameters": [
+        {
+          "name": "destination",
+          "label": "旅行目的地",
+          "type": "text",
+          "placeholder": "例如：北京、大理、东京"
+        },
+        {
+          "name": "date_range",
+          "label": "行程时段",
+          "type": "text",
+          "placeholder": "例如：1/19-1/25、7/1-7/5"
+        }
+      ],
+      "candidates": [
+        { "destination": "北京", "date_range": "1/19-1/25" },
+        { "destination": "大理", "date_range": "7/1-7/5" },
+        { "destination": "成都", "date_range": "10/1-10/7" },
+        { "destination": "厦门", "date_range": "4/15-4/20" },
+        { "destination": "西安", "date_range": "5/1-5/5" },
+        { "destination": "杭州", "date_range": "3/10-3/15" },
+        { "destination": "青岛", "date_range": "8/5-8/10" },
+        { "destination": "丽江", "date_range": "11/20-11/25" },
+        { "destination": "三亚", "date_range": "12/15-12/20" },
+        { "destination": "桂林", "date_range": "9/10-9/15" }
+      ]
+    },
+    {
+      "id": "template-architecture-zh",
+      "category": "建筑分析图",
+      "language": "zh",
+      "base_prompt": "制作一张【{landmark}】的信息图：结合地标真实照片与白色技术注释/图解叠加，在角落手绘方框中写建筑名称。叠加复杂白色技术标注，展示关键结构数据、重要测量、材料数量、细部做法，并包含剖面图、平面图以及显著建筑/工程特征。风格：HUD平视显示、信息图表美学、细致清晰白线、技术/建筑注释风格、教育信息图感；注释后能看到真实环境；竖向构图。",
+      "parameters": [
+        {
+          "name": "landmark",
+          "label": "地标建筑",
+          "type": "text",
+          "placeholder": "例如：东方明珠、鸟巢体育场"
+        }
+      ],
+      "candidates": [
+        { "landmark": "东方明珠广播电视塔" },
+        { "landmark": "国家体育场（鸟巢）" },
+        { "landmark": "上海中心大厦" },
+        { "landmark": "广州塔" },
+        { "landmark": "港珠澳大桥" },
+        { "landmark": "国家大剧院" },
+        { "landmark": "央视总部大楼" },
+        { "landmark": "深圳平安金融中心" },
+        { "landmark": "台北101大楼" },
+        { "landmark": "西安大雁塔" }
+      ]
+    },
+    {
+      "id": "template-species-zh",
+      "category": "动植物保护",
+      "language": "zh",
+      "base_prompt": "生成一张3:4竖版的濒危物种【{species_name}】综合性知识图谱信息卡片，采用赛博朋克科技美学风格，背景为深邃的深海黑或森林墨绿，用半透明的青绿色、冰蓝色、珊瑚粉荧光霓虹线条勾勒模块边框和数据可视化图形，整体呈现未来感UI界面，采用分层设计，添加柔和的发光效果，结合写实动物插画与简洁矢量图标。卡片必须包含以下6个核心模块，每个模块均配有中英双语标注：1生物学本体（分类层级+形态参数+局部特写）；2生态与栖息地（分布图+环境指标+栖息地分层）；3行为与社会结构（行为占比饼图+社会结构图+声波可视化）；4生命周期与种群动态（时间轴+30年趋势折线+保护等级）；5威胁机制与风险结构（雷达图+威胁图标注解）；6保护/文化/人类关系（行动循环流程+政策节点+文化象征）。中央放大写实插画并有柔光晕，文字干净科技感。",
+      "parameters": [
+        {
+          "name": "species_name",
+          "label": "物种名称",
+          "type": "text",
+          "placeholder": "例如：东北虎、大熊猫"
+        }
+      ],
+      "candidates": [
+        { "species_name": "大熊猫" },
+        { "species_name": "东北虎" },
+        { "species_name": "白鳍豚" },
+        { "species_name": "中华鲟" },
+        { "species_name": "藏羚羊" },
+        { "species_name": "金丝猴" },
+        { "species_name": "扬子鳄" },
+        { "species_name": "朱鹮" },
+        { "species_name": "雪豹" },
+        { "species_name": "黑颈鹤" }
+      ]
+    },
+    {
+      "id": "template-character-zh",
+      "category": "人物像素拆解",
+      "language": "zh",
+      "base_prompt": "你是一位顶尖的游戏与动漫概念美术设计大师，擅长制作详尽的角色设定图。你具备"像素级拆解"的能力，能够透视角色的穿着层级、捕捉微表情变化，并将与其相关的物品进行具象化还原。根据【{character_source}中{character_name}】，生成一张"全景式角色深度概念分解图"，图片比例3:4。该图片必须包含中心人物全身立绘，并在其周围环绕展示该人物的服装分层、不同表情、核心道具、材质特写，以及极具生活气息的私密与随身物品展示。包含：服装分层（多层穿搭+私密内着拆解）、表情集（3-4个头部特写展示不同情绪）、材质特写、关联物品（随身包袋与内容物、美妆与护理、私密生活物件）。画风: 保持高质量的2D插画风格或概念设计草图风格，线条干净利落。背景: 使用米黄色、羊皮纸或浅灰色纹理背景。文字说明: 在每个拆解元素旁模拟手写注释，简要说明材质或品牌/型号暗示，使用中文。",
+      "parameters": [
+        {
+          "name": "character_source",
+          "label": "人物出处",
+          "type": "text",
+          "placeholder": "例如：蜡笔小新、名侦探柯南"
+        },
+        {
+          "name": "character_name",
+          "label": "角色名称",
+          "type": "text",
+          "placeholder": "例如：野原新之助、工藤新一"
+        }
+      ],
+      "candidates": [
+        { "character_source": "蜡笔小新", "character_name": "野原新之助" },
+        { "character_source": "名侦探柯南", "character_name": "工藤新一" },
+        { "character_source": "火影忍者", "character_name": "漩涡鸣人" },
+        { "character_source": "海贼王", "character_name": "路飞" },
+        { "character_source": "进击的巨人", "character_name": "艾伦" },
+        { "character_source": "龙猫", "character_name": "草壁小月" },
+        { "character_source": "千与千寻", "character_name": "千寻" },
+        { "character_source": "宝可梦", "character_name": "小智" },
+        { "character_source": "灌篮高手", "character_name": "樱木花道" },
+        { "character_source": "哆啦A梦", "character_name": "哆啦A梦" }
+      ]
+    },
+    {
+      "id": "template-recipe-zh",
+      "category": "食谱",
+      "language": "zh",
+      "base_prompt": "你是世界级视觉菜谱设计师，生成一张【{dish_name}】的年夜饭视觉烹饪指南海报，画风融合传统春节温馨氛围、吉卜力美食诱人质感与达芬奇手稿严谨结构。画面顶部设计喜庆标题区域，呈现菜品名称及年夜饭吉祥别称，文字用烫金/剪纸/书法风格，凸显年节感；中心放置菜品完美成品定妆照，突出热气、色泽与摆盘美学，彰显年夜饭丰盛团圆感。背景采用暖色调复古纸张或春节传统图案（窗花、祥云等），色调柔和温馨。围绕中心成品模块化布局：左上角整齐陈列全部食材并标注用量，融入春节小装饰；底部/右侧呈现3-4个核心烹饪步骤动态插图，用箭头指示顺序，融入国风元素；右上角展示适配饮品与年夜饭寓意；左下角用卷轴/折扇呈现烹饪小贴士。用春节元素虚线、手写注释、箭头串联食材-步骤-成品，形成清晰视觉路径。固定3:4比例，菜品色彩鲜艳诱人，背景低饱和暖色调，所有标注用简体中文，兼顾喜庆感、质感与烹饪严谨性，适配年夜饭场景展示与烹饪参考。",
+      "parameters": [
+        {
+          "name": "dish_name",
+          "label": "菜品名称",
+          "type": "text",
+          "placeholder": "例如：经典红烧肉、清蒸鱼"
+        }
+      ],
+      "candidates": [
+        { "dish_name": "经典红烧肉" },
+        { "dish_name": "清蒸鲈鱼" },
+        { "dish_name": "四喜丸子" },
+        { "dish_name": "佛跳墙" },
+        { "dish_name": "糖醋排骨" },
+        { "dish_name": "宫保鸡丁" },
+        { "dish_name": "麻婆豆腐" },
+        { "dish_name": "东坡肉" },
+        { "dish_name": "狮子头" },
+        { "dish_name": "水煮鱼" }
+      ]
+    },
+    {
+      "id": "template-species-science-zh",
+      "category": "动植物科普",
+      "language": "zh",
+      "base_prompt": "生成一张信息图表风格插画：中心为【{species_name}】大图，四周以卡片式信息框排列特征、功能、寿命、结构、生物细节等模块。整体参考科学图鉴/科普书籍插图，摄影级细节，文字用中文。风格现代科学图鉴，严谨且美观。比例3:4。",
+      "parameters": [
+        {
+          "name": "species_name",
+          "label": "物种名称",
+          "type": "text",
+          "placeholder": "例如：金丝猴、大熊猫"
+        }
+      ],
+      "candidates": [
+        { "species_name": "金丝猴" },
+        { "species_name": "大熊猫" },
+        { "species_name": "中华鲟" },
+        { "species_name": "白鹭" },
+        { "species_name": "银杏树" },
+        { "species_name": "水杉" },
+        { "species_name": "珙桐" },
+        { "species_name": "穿山甲" },
+        { "species_name": "丹顶鹤" },
+        { "species_name": "娃娃鱼" }
+      ]
+    },
+    {
+      "id": "template-character-analysis-zh",
+      "category": "人物分析图",
+      "language": "zh",
+      "base_prompt": "生成一张【{character_name}】详细信息图，采用【{art_style}】美学。中间为角色经典半身/全身画像（服装/动作/表情），置于指定材质/形状相框中。顶行：一排头像设定稿展示3-4种情绪变化。左列：标有【{left_section_title}】等区域，含3-4条官方设定信息（姓名、出生地、性格、必杀技等）与指定字体风格。右列：标有【{right_section_title}】区域，以拍立得/悬赏令/宝石投影等形式展示关键人物A/B/C及特征。底部：拆解关键物品/装备，以游戏道具图鉴/博物馆展品风展示。整体色调、线条与材质质感按输入设定，完成统一的角色档案信息图。",
+      "parameters": [
+        {
+          "name": "character_name",
+          "label": "角色名称",
+          "type": "text",
+          "placeholder": "例如：孙悟空、哪吒"
+        },
+        {
+          "name": "art_style",
+          "label": "艺术风格",
+          "type": "text",
+          "placeholder": "例如：赛博朋克、水墨工笔"
+        },
+        {
+          "name": "left_section_title",
+          "label": "左侧标题",
+          "type": "text",
+          "placeholder": "例如：个人档案、属性面板"
+        },
+        {
+          "name": "right_section_title",
+          "label": "右侧标题",
+          "type": "text",
+          "placeholder": "例如：羁绊关系、人际网络"
+        }
+      ],
+      "candidates": [
+        {
+          "character_name": "孙悟空",
+          "art_style": "水墨工笔风",
+          "left_section_title": "个人档案",
+          "right_section_title": "羁绊关系"
+        },
+        {
+          "character_name": "哪吒",
+          "art_style": "国潮赛博朋克",
+          "left_section_title": "属性面板",
+          "right_section_title": "人际网络"
+        },
+        {
+          "character_name": "白素贞",
+          "art_style": "古风仙侠",
+          "left_section_title": "仙籍档案",
+          "right_section_title": "情缘羁绊"
+        },
+        {
+          "character_name": "花木兰",
+          "art_style": "军事写实",
+          "left_section_title": "军籍档案",
+          "right_section_title": "战友情谊"
+        },
+        {
+          "character_name": "包青天",
+          "art_style": "复古海报",
+          "left_section_title": "官员档案",
+          "right_section_title": "案件关联"
+        },
+        {
+          "character_name": "钟馗",
+          "art_style": "暗黑哥特",
+          "left_section_title": "神职档案",
+          "right_section_title": "阴阳关系"
+        },
+        {
+          "character_name": "嫦娥",
+          "art_style": "梦幻唯美",
+          "left_section_title": "仙界档案",
+          "right_section_title": "月宫往来"
+        },
+        {
+          "character_name": "关羽",
+          "art_style": "三国志实录",
+          "left_section_title": "武将档案",
+          "right_section_title": "结义兄弟"
+        },
+        {
+          "character_name": "林黛玉",
+          "art_style": "红楼工笔",
+          "left_section_title": "人物小传",
+          "right_section_title": "情感纠葛"
+        },
+        {
+          "character_name": "济公",
+          "art_style": "禅意漫画",
+          "left_section_title": "僧人档案",
+          "right_section_title": "度化众生"
+        }
+      ]
+    },
+    {
+      "id": "template-weather-zh",
+      "category": "微缩城市天气预报",
+      "language": "zh",
+      "base_prompt": "生成1:1等距微缩3D卡通城市天气场景：45°俯视顶视角，地标居中，模型精致，PBR材质与柔和真实光影。将天气元素与城市建筑创意融合，形成城市景观与气象条件的动态互动。背景极简、柔和纯色以突出主体。顶部居中排版：大标题"【{city_name}】"，下方天气图标，再下方日期（小字）与温度（中等字）。文字匹配城市母语。渲染前请先检索该城市当前天气。",
+      "parameters": [
+        {
+          "name": "city_name",
+          "label": "城市名称",
+          "type": "text",
+          "placeholder": "例如：北京、上海"
+        }
+      ],
+      "candidates": [
+        { "city_name": "北京" },
+        { "city_name": "上海" },
+        { "city_name": "广州" },
+        { "city_name": "深圳" },
+        { "city_name": "成都" },
+        { "city_name": "杭州" },
+        { "city_name": "西安" },
+        { "city_name": "重庆" },
+        { "city_name": "南京" },
+        { "city_name": "武汉" }
+      ]
+    },
+    {
+      "id": "template-education-zh",
+      "category": "学科知识卡片",
+      "language": "zh",
+      "base_prompt": "根据输入内容【{topic}】提取核心主题与要点，生成信息图（两种风格任选其一）：A）可爱数字卡通风：横版3:4，背景纯白/极浅纯色，马卡龙配色（浅绿为主，搭配天蓝/米黄/淡橙/淡粉），线条圆润亲和；用圆角矩形、流程图、箭头组织信息；加入少量拟人化可爱图标（太阳/云朵/化学分子等）；文字为圆润无衬线卡通风，突出关键词，多留白。B）手绘黑板报/科学手稿粉笔草图风：竖版3:4，深灰近黑板纹理背景；主体白色粉笔线条+交叉排线阴影；用少量高饱和点缀色（柠檬黄/青色/品红/亮绿）强调关键图形与注释；整体像灵感迸发的草稿页，元素密集但核心清晰，文字为不规则手写粉笔字体。默认语言随输入内容语言一致。",
+      "parameters": [
+        {
+          "name": "topic",
+          "label": "知识点主题",
+          "type": "text",
+          "placeholder": "例如：光合作用、勾股定理"
+        }
+      ],
+      "candidates": [
+        { "topic": "光合作用原理" },
+        { "topic": "勾股定理证明" },
+        { "topic": "元素周期表规律" },
+        { "topic": "牛顿三大定律" },
+        { "topic": "DNA双螺旋结构" },
+        { "topic": "水循环过程" },
+        { "topic": "细胞分裂过程" },
+        { "topic": "电磁感应原理" },
+        { "topic": "板块构造学说" },
+        { "topic": "能量守恒定律" }
+      ]
+    }
+  ]
+}
