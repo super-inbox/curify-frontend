@@ -25,6 +25,7 @@
   "include": [
     "lib/constants.ts", "app/**/*.ts", "app/**/*.tsx",
     "next-env.d.ts",
+    "types/next-auth.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",

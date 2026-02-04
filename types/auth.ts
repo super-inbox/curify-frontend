@@ -3,9 +3,9 @@ import { Project } from './projects';
 export interface User {
   user_id: string;
   email: string;
-  username: string;
+  username?: string;
   avatar_url?: string;
-  plan_name: string;
+  plan_name?: string;
   non_expiring_credits: number;
   expiring_credits: number;
   subtitle_minutes_used: number;
@@ -46,3 +46,13 @@ export interface AuthResponse {
     token_type: string;
   };
 }
+
+export type UserSession = {
+  user_id: string;                 // 你后端的 user_id
+  email: string;                   // session 必须保证有 email
+  username?: string;               // 可以后端补齐
+  avatar_url?: string;
+  plan_name?: string;
+  non_expiring_credits?: number;
+  expiring_credits?: number;
+};

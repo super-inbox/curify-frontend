@@ -1,48 +1,88 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAtom } from 'jotai';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { userAtom, authLoadingAtom } from "@/app/atoms/atoms";
 import { authService } from '@/services/auth';
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useAtom(userAtom);
-  const [authLoading, setAuthLoading] = useAtom(authLoadingAtom);
+const PROTECTED_PREFIXES = ["/workspace", "/magic", "/project_details"];
+
+function stripLocale(pathname: string) {
+  return pathname.replace(/^\/[a-zA-Z]{2}(\/|$)/, "/") || "/";
+}
+
+export function AuthProvider({
+  children,
+  initialUser,
+}: {
+  children: React.ReactNode;
+  initialUser: any;
+}) {
+  const [, setUser] = useAtom(userAtom);
+  const [, setAuthLoading] = useAtom(authLoadingAtom);
   const [mounted, setMounted] = useState(false);
+
+ // 你自己的 loading UI 逻辑也可以保留
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const pathWithoutLocale = useMemo(() => stripLocale(pathname), [pathname]);
+
+  const isProtected = useMemo(
+    () => PROTECTED_PREFIXES.some(p => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")),
+    [pathWithoutLocale]
+  );
+
+  const refresh = searchParams.get("refresh") === "1"; // 可选：支付/订阅回调专用
 
   useEffect(() => {
     setMounted(true);
-    initializeAuth();
   }, []);
 
-  const initializeAuth = async () => {
-    // 🧩 Detect if the user just signed out
-    const justSignedOut = sessionStorage.getItem('justSignedOut');
-
-    if (justSignedOut) {
-      console.log("Skipping auth rehydration — just signed out.");
-      setUser(null);
+  useEffect(() => {
+    // 1) 有 initialUser：直接注水，不请求
+    if (initialUser) {
+      setUser(initialUser);
       setAuthLoading(false);
-      sessionStorage.removeItem('justSignedOut'); // Clean up flag
       return;
     }
 
-    // ✅ Normal initialization
-    setAuthLoading(true);
-    try {
-      const profile = await authService.getProfile();
-      setUser(profile);
-    } catch (error) {
-      // User not authenticated
+    // 2) public 页：不要拉 profile（避免 locale 切换重复请求）
+    if (!isProtected && !refresh) {
       setUser(null);
-    } finally {
       setAuthLoading(false);
+      return;
     }
-  };
 
-  if (!mounted || authLoading) {
-    return <div>Loading...</div>;
-  }
+    // 3) protected 或 refresh 才尝试拉 profile
+    const justSignedOut = sessionStorage.getItem('justSignedOut');
+    if (justSignedOut) {
+      setUser(null);
+      setAuthLoading(false);
+      sessionStorage.removeItem('justSignedOut');
+      return;
+    }
 
+    let cancelled = false;
+
+    (async () => {
+      setAuthLoading(true);
+      try {
+        const profile = await authService.getProfile();
+        if (!cancelled) setUser(profile);
+      } catch {
+        if (!cancelled) setUser(null);
+      } finally {
+        if (!cancelled) setAuthLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [initialUser, isProtected, refresh, setUser, setAuthLoading]);
+
+  if (!mounted) return null;
   return <>{children}</>;
 }

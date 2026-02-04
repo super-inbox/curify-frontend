@@ -1,6 +1,7 @@
 import { atom } from 'jotai';
 import { User } from '@/types/auth';
 import { Project } from '@/types/projects';
+import type { UserSession } from "@/types/auth";
 
 // Projects atoms
 export const projectsAtom = atom<Project[]>([]);
@@ -16,7 +17,8 @@ export const processingProjectsAtom = atom((get) =>
 );
 // UI state atoms
 export const authLoadingAtom = atom(false);
-export const userAtom = atom<User | null>(null);
+export const userAtom = atom<(User | UserSession) | null>(null);
+
 export const modalOpenAtom = atom(false);
 
 export type DrawerType = "signin" | "signup" | "emailout" | "emailin" | null;

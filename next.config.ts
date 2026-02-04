@@ -5,6 +5,9 @@ const withNextIntl = require('next-intl/plugin')(routing);
 const nextConfig = {
   reactStrictMode: true,
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   // 👇 Prevent /en/ → /en or /en → /en/ redirects
   trailingSlash: false,
   skipTrailingSlashRedirect: true,

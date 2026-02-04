@@ -1,133 +1,91 @@
-// api/inspiration.ts
-import { apiClient } from "./api";
+import { apiClient } from "./api"; 
+import { InspirationCardDTO } from "@/types/inspiration";
 
-/**
- * Updated DTO matching the new backend schema with:
- * - Removed 'status' field (now only review_status)
- * - Added signal_source, star_rating, scoring_reason
- * - review_status values: DRAFT | APPROVED | REJECTED
- */
-export interface InspirationCardDTO {
-  id: string;
-  group_id: string;
-  variant_rank: number | null;
+import { NanoInspirationCardType } from "@/app/[locale]/_components/NanoInspirationCard";
+import { cache } from "react"; // 1. Import React Cache
 
-  // Source information
-  source_type: "TEXT" | "URL";
-  source_url: string | null;
-  source_text: string | null;
-  source_title: string | null;
-  source_domain: string | null;
-  source_published_at: string | null;
-
-  lang: string;
-
-  // Content metadata
-  creator_style: string | null;
-  content_type: string | null;
-
-  // Generated content
-  prompt: string | null;  // Maps to image_prompt from Coze
-  output: string | null;  // Maps to script_body from Coze
-  output_title: string | null;
-
-  preview_image_url: string | null;
-  preview_images: string[];
-
-  subtitle: string | null;
-
-  // Rich metadata
-  source_platforms: string[];
-  inspiration_tags: string[];
-
-  video_format: string | null;
-  video_duration_sec: number | null;
-
-  // NEW: Signal source from Coze
-  signal_source: string | null;
-
-  // Audience and feedback
-  audiences: string[];
-  feedback: string | null;
-
-  // Quality metrics
-  quality_score: number | null;  // Legacy field
-  star_rating: number | null;  // NEW: AI-generated rating (0-5)
-  scoring_reason: string | null;  // NEW: Rating explanation
-
-  // Review status (SIMPLIFIED - no more 'status' field)
-  review_status: "DRAFT" | "APPROVED" | "REJECTED";
-
-  // Curation metadata
-  curated_by: string | null;
-  curated_at: string | null;
-  curation_note: string | null;
-
-  // Usage tracking
-  copy_text: string | null;
-  copy_count: number;
-  view_count: number;
-
-  // Generation metadata
-  generated_by: string | null;
-  generator: string | null;
-  gen_version: string | null;
-
-  // Timestamps
-  created_at: string;
-  updated_at: string;
+// Define fetch options type
+interface GetCardsOptions {
+  review_status?: "DRAFT" | "APPROVED" | "REJECTED";
+  lang?: string;
+  min_rating?: number;
+  limit?: number;
+  offset?: number;
 }
+
+// ------------------------------------------------------------------
+// Internal Implementation (Uncached Logic)
+// ------------------------------------------------------------------
+
+async function _getCards(params: GetCardsOptions = {}): Promise<InspirationCardDTO[]> {
+  const queryParams = new URLSearchParams();
+  
+  if (params.review_status) queryParams.append("review_status", params.review_status);
+  if (params.lang) queryParams.append("lang", params.lang);
+  if (params.min_rating) queryParams.append("min_rating", params.min_rating.toString());
+  if (params.limit) queryParams.append("limit", params.limit.toString());
+  if (params.offset) queryParams.append("offset", params.offset.toString());
+
+  try {
+    return await apiClient.request<InspirationCardDTO[]>(`/inspiration/cards?${queryParams.toString()}`, {
+      method: "GET",
+    });
+  } catch (error) {
+    console.error("Failed to fetch inspiration list:", error);
+    return [];
+  }
+}
+
+async function _getCardById(id: string): Promise<InspirationCardDTO | null> {
+  try {
+    return await apiClient.request<InspirationCardDTO>(`/api/inspiration/${id}`, {
+      method: "GET",
+    });
+  } catch (error) {
+    return null;
+  }
+}
+
+async function _getNanoCardById(id: string): Promise<NanoInspirationCardType | null> {
+  try {
+    return await apiClient.request<NanoInspirationCardType>(`/api/nano-inspiration/${id}`, {
+      method: "GET",
+    });
+  } catch (error) {
+    return null;
+  }
+}
+
+async function _getStats() {
+  return apiClient.request("/inspiration/stats", { method: "GET" });
+}
+
+// ------------------------------------------------------------------
+// Public API (Memoized with React Cache)
+// ------------------------------------------------------------------
 
 export const inspirationService = {
   /**
-   * Fetch inspiration cards
-   * @param params.review_status - Filter by DRAFT | APPROVED | REJECTED
-   * @param params.lang - Filter by language
-   * @param params.min_rating - Filter by minimum star rating (0-5)
+   * Fetch a list of inspiration cards (Hub View)
+   * Request Memoized: Deduplicates calls within the same render pass.
    */
-  async getCards(params?: {
-    review_status?: "DRAFT" | "APPROVED" | "REJECTED";
-    lang?: string;
-    min_rating?: number;
-    limit?: number;
-    offset?: number;
-  }): Promise<InspirationCardDTO[]> {
-    const queryParams = new URLSearchParams();
-    
-    if (params?.review_status) {
-      queryParams.append("review_status", params.review_status);
-    }
-    if (params?.lang) {
-      queryParams.append("lang", params.lang);
-    }
-    if (params?.min_rating !== undefined) {
-      queryParams.append("min_rating", params.min_rating.toString());
-    }
-    if (params?.limit) {
-      queryParams.append("limit", params.limit.toString());
-    }
-    if (params?.offset) {
-      queryParams.append("offset", params.offset.toString());
-    }
-
-    const url = `/inspiration/cards${queryParams.toString() ? `?${queryParams.toString()}` : ""}`;
-    
-    return apiClient.request<InspirationCardDTO[]>(url, {
-      method: "GET",
-    });
-  },
+  getCards: cache(_getCards),
 
   /**
-   * Get statistics
+   * Fetch a single Inspiration card by ID (Permalink)
+   * Request Memoized
    */
-  async getStats(): Promise<{
-    total: number;
-    draft: number;
-    approved: number;
-    avg_rating?: number;
-  }> {
-    return apiClient.request("/inspiration/stats", {
-      method: "GET",
-    });
-  },
+  getCardById: cache(_getCardById),
+
+  /**
+   * Fetch a single Nano card by ID (Permalink)
+   * Request Memoized
+   */
+  getNanoCardById: cache(_getNanoCardById),
+
+  /**
+   * Get system statistics
+   * Request Memoized
+   */
+  getStats: cache(_getStats),
 };

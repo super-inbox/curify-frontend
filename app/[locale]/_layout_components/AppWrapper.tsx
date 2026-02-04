@@ -1,38 +1,47 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useAtom } from "jotai";
 import { footerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { usePathname } from "next/navigation";
-import { User } from "@/types/auth";
+import type { User, UserSession } from "@/types/auth";
+
+type AnyUser = User | UserSession;
 
 interface Props {
   children: React.ReactNode;
-  user: User | null;
+  user: AnyUser | null;
 }
 
-export default function AppWrapper(props: Props) {
-  const { children, user } = props;
-
+export default function AppWrapper({ children, user }: Props) {
   const [, setUser] = useAtom(userAtom);
   const [, setHeaderState] = useAtom(headerAtom);
   const [, setFooterState] = useAtom(footerAtom);
 
   const pathname = usePathname();
 
+  // ✅ Track user by stable ID to prevent duplicate updates
+  const lastUserIdRef = useRef<string | null>(null);
+  const hasInitialized = useRef(false);
+
   useEffect(() => {
+    // Build stable user identifier
+    const currentUserId = user?.user_id || user?.email || null;
+
+    // ✅ Only update if user actually changed
+    if (lastUserIdRef.current === currentUserId && hasInitialized.current) {
+      return;
+    }
+
+    lastUserIdRef.current = currentUserId;
+    hasInitialized.current = true;
+
     if (user) {
-      setUser(user);
+      setUser(user);          // ✅ userAtom 现在允许 AnyUser
       setHeaderState("in");
     } else {
-      const mockUser = localStorage.getItem("curifyUser");
-      if (mockUser) {
-        const parsedUser = JSON.parse(mockUser);
-        setUser(parsedUser);
-        setHeaderState("in");
-      } else {
-        setHeaderState("out");
-      }
+      setUser(null);
+      setHeaderState("out");
     }
   }, [user, setUser, setHeaderState]);
 
