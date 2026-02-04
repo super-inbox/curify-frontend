@@ -11,21 +11,22 @@ import {
   LogOut,
   ChevronRight,
   Zap,
-  Infinity,
+  User as UserIcon,
+  LogIn,
 } from 'lucide-react';
 
 import type { User } from '@/types/auth';
-import { languages } from '@/lib/language_utils';
+import { allLanguages, getLanguageByCode } from '@/lib/language_config';
 import { transactionService, type Transaction } from '@/services/transactions';
 import TransactionHistoryDialog from './TransactionHistoryDialog';
 
 // ✅ Jotai drawerAtom import
 import { useSetAtom } from 'jotai';
 import { drawerAtom, userAtom } from '@/app/atoms/atoms';
-import { authService } from '@/services/auth'; // 1. Import your authService
+import { authService } from '@/services/auth';
 
 interface UserDropdownMenuProps {
-  user: User;
+  user: User | null;
   isOpen: boolean;
   onClose: () => void;
   onSignOut: () => void;
@@ -51,16 +52,17 @@ export default function UserDropdownMenu({
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // ✅ allow resetting drawer state on sign out
   const setUser = useSetAtom(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
 
-  const totalCredits =
-    (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0);
-  const expiringCredits = user.expiring_credits ?? 0;
-  const nonExpiringCredits = user.non_expiring_credits ?? 0;
+  // ✅ Safely calculate credits with null checks
+  const totalCredits = user
+    ? (user.expiring_credits ?? 0) + (user.non_expiring_credits ?? 0)
+    : 0;
+  const expiringCredits = user?.expiring_credits ?? 0;
+  const nonExpiringCredits = user?.non_expiring_credits ?? 0;
 
-  const expirationDate = user.current_cycle_end
+  const expirationDate = user?.current_cycle_end
     ? new Date(user.current_cycle_end)
     : null;
   const formattedExpirationDate = expirationDate
@@ -103,13 +105,12 @@ export default function UserDropdownMenu({
   };
 
   const handleSignOut = async () => {
-
-  try {
-    await authService.logout(); // optional, if backend logout needed
-  } catch (err) {
-    console.error("Server logout failed:", err);
-  }
-  
+    try {
+      await authService.logout();
+    } catch (err) {
+      console.error("Server logout failed:", err);
+    }
+    
     sessionStorage.setItem('justSignedOut', 'true');
     setUser(null);
     console.log("Signing out: user atom set to null.");
@@ -135,9 +136,118 @@ export default function UserDropdownMenu({
     }
   };
 
-  const currentLanguage =
-    languages.find((lang) => lang.code === currentLocale) || languages[0];
+  const handleLogin = () => {
+    setDrawerState('signin');
+    onClose();
+  };
 
+  // ✅ Use shared language config
+  const currentLanguage = getLanguageByCode(currentLocale);
+
+  // ✅ Logged-out state
+  if (!user) {
+    return (
+      <div
+        ref={dropdownRef}
+        className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+      >
+        {/* Header - Guest */}
+        <div className="p-4 border-b border-gray-100">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+              <UserIcon className="text-gray-400" size={20} />
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-700">Guest</h3>
+              <p className="text-sm text-gray-500">Not signed in</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Menu Items - Guest */}
+        <div className="py-2 text-[15px]">
+          <div className="relative">
+            <button
+              onClick={handleLanguageClick}
+              className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
+            >
+              <div className="flex items-center">
+                <Globe size={18} className="mr-3 text-gray-500" />
+                <span className="text-gray-700">
+                  {currentLanguage?.name || 'English'}
+                </span>
+              </div>
+              <ChevronRight
+                size={16}
+                className={`text-gray-400 transition-transform ${
+                  showLanguageSubmenu ? 'rotate-90' : ''
+                }`}
+              />
+            </button>
+
+            {showLanguageSubmenu && (
+              <div className="absolute right-full top-0 w-72 -mr-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
+                {allLanguages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      const segments = pathname.split('/').filter(Boolean);
+                      segments[0] = lang.code;
+                      const newPath = '/' + segments.join('/');
+
+                      const query = new URLSearchParams(
+                        window.location.search
+                      ).toString();
+                      const fullPath = query ? `${newPath}?${query}` : newPath;
+
+                      window.location.replace(fullPath);
+
+                      setShowLanguageSubmenu(false);
+                      onClose();
+                    }}
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors cursor-pointer ${
+                      lang.code === currentLocale
+                        ? 'bg-blue-50 text-blue-600'
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    <span className="mr-2">{lang.flag}</span>
+                    {lang.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+          >
+            <CreditCard size={18} className="mr-3 text-gray-500" />
+            <span className="text-gray-700">View Pricing</span>
+          </button>
+
+          <button
+            onClick={() => handleRoute(`/${currentLocale}/contact`)}
+            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+          >
+            <HelpCircle size={18} className="mr-3 text-gray-500" />
+            <span className="text-gray-700">Contact Us</span>
+          </button>
+
+          <button
+            onClick={handleLogin}
+            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
+          >
+            <LogIn size={18} className="mr-3 text-blue-500" />
+            <span className="text-blue-600 font-medium">Sign In</span>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ✅ Logged-in state
   return (
     <>
       <div
@@ -207,7 +317,9 @@ export default function UserDropdownMenu({
             >
               <div className="flex items-center">
                 <Globe size={18} className="mr-3 text-gray-500" />
-                <span className="text-gray-700">{currentLanguage.name}</span>
+                <span className="text-gray-700">
+                  {currentLanguage?.name || 'English'}
+                </span>
               </div>
               <ChevronRight
                 size={16}
@@ -219,7 +331,7 @@ export default function UserDropdownMenu({
 
             {showLanguageSubmenu && (
               <div className="absolute right-full top-0 w-72 -mr-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
-                {languages.map((lang) => (
+                {allLanguages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => {

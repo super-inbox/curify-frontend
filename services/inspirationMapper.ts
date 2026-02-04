@@ -1,4 +1,4 @@
-import { InspirationCardDTO, InspirationCardUI } from "@/lib/types/inspiration";
+import { InspirationCardDTO, InspirationCardUI } from "@/types/inspiration";
 
 /**
  * Extracts bullet points from Coze script bodies
@@ -47,9 +47,23 @@ function buildCopyPayload(row: InspirationCardDTO): string {
 }
 
 export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
+  const img = row.image_url?.trim();
+  const preview = row.preview_image_url?.trim();
+
   return {
     id: row.id,
     lang: row.lang || "zh",
+
+    // ✅ add visual.images
+    visual: img || preview ? {
+      images: [
+        {
+          image_url: img || preview || "",
+          preview_image_url: preview || undefined,
+          alt: row.output_title || "preview",
+        },
+      ],
+    } : undefined,
 
     signal: {
       summary: row.signal_source || row.source_text || row.source_title || "",
@@ -61,9 +75,7 @@ export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
       angles: row.inspiration_tags || [],
     },
 
-    hook: {
-      text: row.output_title || "",
-    },
+    hook: { text: row.output_title || "" },
 
     production: {
       title: "拍摄建议",
@@ -77,8 +89,10 @@ export function mapDTOToUICard(row: InspirationCardDTO): InspirationCardUI {
       reason: row.scoring_reason || "",
     } : undefined,
 
-    // Flattened actions for simpler consumption
-    copyPayload: buildCopyPayload(row),
-    shareUrl: `/inspiration-hub#${row.id}`,
+    // ✅ Add actions so existing components work
+    actions: {
+      copy: { payload: buildCopyPayload(row) },
+      share: { url: `/inspiration-hub#${row.id}` },
+    },
   };
 }

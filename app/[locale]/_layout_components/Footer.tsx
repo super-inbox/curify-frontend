@@ -22,18 +22,30 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Center: Privacy, Terms, About */}
+      {/* Center: Privacy, Terms, About, Contact */}
       <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-        <Link href={`/${locale}/privacy`} className="hover:underline">Privacy Policy</Link>
+        <Link href={`/${locale}/privacy`} className="hover:underline">
+          Privacy Policy
+        </Link>
         <span className="text-gray-400">|</span>
-        <Link href={`/${locale}/agreement`} className="hover:underline">Terms of Service</Link>
+        <Link href={`/${locale}/agreement`} className="hover:underline">
+          Terms of Service
+        </Link>
         <span className="text-gray-400">|</span>
-        <Link href={`/${locale}/about`} className="hover:underline">About us</Link>
+        <Link href={`/${locale}/about`} className="hover:underline">
+          About Us
+        </Link>
+        <span className="text-gray-400">|</span>
+        <Link href={`/${locale}/contact`} className="hover:underline">
+          Contact Us
+        </Link>
       </div>
 
       {/* Right: Company Email */}
       <div>
-        <a href="mailto:team@curify-ai.com" className="hover:underline">team@curify-ai.com</a>
+        <a href="mailto:team@curify-ai.com" className="hover:underline">
+          team@curify-ai.com
+        </a>
       </div>
     </footer>
   );

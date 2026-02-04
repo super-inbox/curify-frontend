@@ -18,23 +18,22 @@ export default function AppWrapper({ children, user }: Props) {
 
   const pathname = usePathname();
 
-  // ✅ Prevent re-initialization on language changes
-  const initializedRef = useRef(false);
-  const lastUserKeyRef = useRef<string>("");
+  // ✅ Critical: Track user by stable ID to prevent duplicate updates
+  const lastUserIdRef = useRef<string | null>(null);
+  const hasInitialized = useRef(false);
 
   useEffect(() => {
-    // Build a stable key for dedupe
-    const key = user?.id
-      ? `id:${user.id}`
-      : user?.email
-        ? `email:${user.email}`
-        : user
-          ? "anon-user"
-          : "null";
+    // Build stable user identifier
+    const currentUserId = user?.user_id || user?.id || user?.email || null;
+    
+    // ✅ CRITICAL: Only update if user actually changed
+    // This prevents re-initialization when language changes
+    if (lastUserIdRef.current === currentUserId && hasInitialized.current) {
+      return; // Skip - same user
+    }
 
-    // Skip if same user (prevents unnecessary atom updates)
-    if (lastUserKeyRef.current === key) return;
-    lastUserKeyRef.current = key;
+    lastUserIdRef.current = currentUserId;
+    hasInitialized.current = true;
 
     // Set user and header state
     if (user) {
@@ -44,8 +43,6 @@ export default function AppWrapper({ children, user }: Props) {
       setUser(null);
       setHeaderState("out");
     }
-
-    initializedRef.current = true;
   }, [user, setUser, setHeaderState]);
 
   useEffect(() => {

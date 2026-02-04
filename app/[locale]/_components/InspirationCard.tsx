@@ -1,12 +1,13 @@
 "use client";
 
+import { useEffect } from "react"; // add this import
 import { useState } from "react";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { useCopyTracking, useShareTracking, useClickTracking } from "@/services/useTracking";
 
 // ... [Keep Type Definitions and Helper Functions as is] ...
 type Source = { label: string; url?: string; };
-type CardImage = { url: string; preview_url?: string; alt?: string; };
+type CardImage = { image_url: string; preview_image_url?: string; alt?: string; };
 export type InspirationCardType = {
   id: string;
   lang?: string;
@@ -27,6 +28,11 @@ function stripQuotes(s: string) {
   return (s || "").replaceAll('"', "").replaceAll('"', "").trim();
 }
 
+function getImgSrc(img?: { image_url?: string; preview_image_url?: string } | null) {
+  if (!img) return "";
+  return img.preview_image_url || img.image_url || "";
+}
+
 interface InspirationCardProps {
   card: InspirationCardType;
   viewMode: ViewMode;
@@ -36,6 +42,8 @@ interface InspirationCardProps {
 
 // Card View (Masonry Layout)
 export function InspirationCard({ card, viewMode, requireAuth, onViewClick }: InspirationCardProps) {
+  // console.log("[InspirationCard render]", card.id, viewMode);
+
   // TRACKING: Use click tracking for "View", removed useViewTracking
   const trackView = useClickTracking(card.id, "inspiration", viewMode);
 
@@ -59,8 +67,23 @@ export function InspirationCard({ card, viewMode, requireAuth, onViewClick }: In
 
 // List View
 export function InspirationListItem({ card, viewMode, requireAuth, onViewClick }: InspirationCardProps) {
-  // TRACKING: Use click tracking for "View", removed useViewTracking
+  
+  console.log("[InspirationListItem render]", card.id);
+
   const trackView = useClickTracking(card.id, "inspiration", viewMode);
+
+  const img0 = card?.visual?.images?.[0];
+  const thumbSrc = getImgSrc(img0);
+
+  useEffect(() => {
+    // prints whenever the thumbnail src changes
+    console.log("[InspirationListItem] thumb", {
+      id: card.id,
+      viewMode,
+      thumbSrc,
+      raw: img0,
+    });
+  }, [card.id, viewMode, thumbSrc]); // keep deps small
 
   const handleClick = () => {
     trackView(); // Track "View"
@@ -74,14 +97,15 @@ export function InspirationListItem({ card, viewMode, requireAuth, onViewClick }
       className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm hover:shadow-lg hover:border-neutral-300 transition-all cursor-pointer"
     >
       {/* Thumbnail */}
-      <div className="flex-shrink-0">
-        <div className="h-24 w-24 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50">
+      <div className="flex-shrink-0 mt-0.5">
+        <div className="h-28 w-28 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50">
           {card?.visual?.images?.[0] ? (
             <CdnImage
-              src={card.visual.images[0].preview_url || card.visual.images[0].url}
+              src={thumbSrc}
+
               alt={card.visual.images[0].alt || "preview"}
-              width={96}
-              height={96}
+              width={112}
+              height={112}
               className="h-full w-full object-cover"
             />
           ) : (
@@ -236,8 +260,8 @@ function CardBody({ card }: { card: InspirationCardType }) {
       {images.length ? (
         <div className={classNames("mt-4 grid gap-2", images.length > 1 ? "grid-cols-2" : "grid-cols-1")}>
           {images.slice(0, 2).map((img) => (
-            <div key={img.url} className="relative overflow-hidden rounded-xl border border-neutral-100">
-              <CdnImage src={img.url} alt={img.alt || "preview"} width={900} height={1200} className="h-auto w-full object-cover" />
+            <div key={img.image_url} className="relative overflow-hidden rounded-xl border border-neutral-100">
+              <CdnImage src={img.image_url} alt={img.alt || "preview"} width={900} height={1200} className="h-auto w-full object-cover" />
             </div>
           ))}
         </div>

@@ -165,9 +165,9 @@ function InspirationCardDetailView({ card }: { card: InspirationCardType }) {
       {images.length > 0 && (
         <div className={classNames("grid gap-2", images.length > 1 ? "grid-cols-2" : "grid-cols-1")}>
           {images.slice(0, 2).map((img) => (
-            <div key={img.url} className="relative overflow-hidden rounded-xl border border-neutral-100">
+            <div key={img.image_url} className="relative overflow-hidden rounded-xl border border-neutral-100">
               <img
-                src={normalizeImageSrc(img.url)}
+                src={normalizeImageSrc(img.image_url)}
                 alt={img.alt || "preview"}
                 className="h-auto w-full object-cover"
               />

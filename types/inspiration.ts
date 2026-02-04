@@ -27,6 +27,10 @@ export interface InspirationCardDTO {
   star_rating: number | null;
   scoring_reason: string | null;
   review_status: "DRAFT" | "APPROVED" | "REJECTED";
+
+  image_url?: string | null;
+  preview_image_url?: string | null; // optional if you have it
+
 }
 
 // The Clean UI Object
@@ -63,4 +67,12 @@ export interface InspirationCardUI {
   // Pre-calculated clipboard text
   copyPayload: string; 
   shareUrl: string;
+
+  visual?: {
+    images?: { image_url: string; preview_image_url?: string; alt?: string }[];
+  };
+  actions?: {
+    copy?: { payload?: string };
+    share?: { url?: string };
+  };
 }

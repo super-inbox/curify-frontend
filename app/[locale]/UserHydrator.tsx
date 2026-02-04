@@ -20,13 +20,15 @@ export default function UserHydrator({
   const mounted = useRef(false);
   const lastFetchPath = useRef<string>("");
   const hasFetchedOnce = useRef(false);
+  const isInitialized = useRef(false);
 
   useEffect(() => {
     mounted.current = true;
     
-    // Always set initial user from session on mount
-    if (initialUser && !hasFetchedOnce.current) {
+    // ✅ CRITICAL: Only set initial user ONCE on first mount
+    if (initialUser && !isInitialized.current) {
       setUser(initialUser);
+      isInitialized.current = true;
     }
 
     // Extract path without locale
@@ -37,18 +39,25 @@ export default function UserHydrator({
       pathWithoutLocale === prefix || pathWithoutLocale.startsWith(prefix + "/")
     );
 
-    // Skip if:
+    // ✅ CRITICAL: Skip fetch if:
     // 1. Not a protected page
-    // 2. Already fetched for this exact path
+    // 2. Already fetched for this exact path (language-independent)
     // 3. No initial user (not logged in)
     if (!shouldRefetch || lastFetchPath.current === pathWithoutLocale || !initialUser) {
+      return;
+    }
+
+    // ✅ Additional safety: Don't fetch if we just set the initial user
+    if (!hasFetchedOnce.current && isInitialized.current) {
+      // Mark as fetched without actually fetching (we just used session data)
+      lastFetchPath.current = pathWithoutLocale;
+      hasFetchedOnce.current = true;
       return;
     }
 
     const fetchProfile = async () => {
       try {
         const res = await fetch("/api/user/profile", {
-          // Prevent caching to ensure fresh data
           cache: "no-store",
           headers: {
             "Cache-Control": "no-cache",
