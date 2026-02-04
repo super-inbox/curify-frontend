@@ -859,6 +859,103 @@
     }
   }
   },
+  "aiPlatform": {
+    "title": "Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
+    "subtitle": "Bütçeyi Zorlamadan Ölçeklenebilir Bir Yapay Zeka Platformu Nasıl Kurulur?",
+    "intro": "Herkes yapay zeka ile bir şeyler yapmak istiyor - ancak çoğu şirket bir doktora ordusuna veya OpenAI büyüklüğünde bir bütçeye sahip değil. İyi haber: Buna ihtiyacınız yok.",
+    "imageAlt": "Yapay Zeka Platformu Mimarisi Şeması",
+    "heading": "🏗️ Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
+    
+    "intro": {
+      "p1": "Küçük ve orta ölçekli teknoloji şirketlerinde asıl avantaj, büyük modeller eğitmek değil, herkesin akıllı özellikler geliştirebildiği bir yapay zeka platformu inşa etmektir. İşte çevikliği etkiye dönüştürme yönteminiz.",
+      "p2": "İşte finans, hukuk, müşteri hizmetleri ve mühendislik alanlarında yapay zekayı güçlendirmek için kullandığımız, bütçeyi zorlamadan veya 50 ML uzmanı işe almadan uygulanabilir, üretim hazırı bir plan."
+    },
+
+    "mindsetShift": {
+      "title": "1. Zihniyet Değişimi: Merkezileştirmeyin, Demokratikleştirin",
+      "content": "Eğer yapay zeka ekibiniz bir darboğam haline geldiyse, zaten kaybettiniz demektir. Bunun yerine, ürün mühendislerinin ihtiyaç duyduklarını inşa edebilecekleri kendi kendine yeten bir yapay zeka altyapısı oluşturun.",
+      "goal": "Amaç: Alan uzmanlarının (finans, hukuk, destek mühendisleri) minimum ML bilgisiyle yapay zeka çözümleri oluşturabilmesini sağlayın.",
+      "reality": "Gerçek: Yapay zeka ekibi otoyolu inşa eder; iş ekipleri arabaları kullanır.",
+      "supportModel": {
+        "title": "Destek modeli:",
+        "l1": "Seviye 1 — Self Servis: Geliştiriciler kendi özelliklerini oluşturmak için platform araçlarını kullanır.",
+        "l2": "Seviye 2 — Danışmanlık & Danışmanlık: Yapay zeka ekibi, istem tasarımı, değerlendirme ve mimari konularında yardımcı olur.",
+        "l3": "Seviye 3 — Birlikte Geliştirme: Karmaşık, yüksek etkili MVP'leri birlikte oluşturun."
+      },
+      "conclusion": "Bu, yapay zekayı bir araştırma projesinden iş çarpanına dönüştürür."
+    },
+
+    "stack": {
+      "title": "2. Teknoloji Yığını: Basit ve Açık Kayırlı Tutun",
+      "intro": "Aşırı mühendislik hızınızı keser. Sizi kilitlemeden karmaşıklığı soyutlayan üç katmanlı bir platform oluşturduk.",
+      "gateway": {
+        "title": "A. Birleşik Model Ağ Geçidi",
+        "content": "Tek bir satıcıya bağlı kalmayın. İstekleri sorunsuz bir şekilde yönlendirin:",
+        "points": [
+          "Ticari Büyük Dil Modelleri (GPT-4, Claude vb.) — üst düzey akıl yürütme için.",
+          "Özel Modeller (Llama, Qwen) — hassas veriler ve maliyet kontrolü için.",
+          "Uzman Modeller — kodlama, görüntü işleme veya düşük gecikme süreli görevler için."
+        ],
+        "conclusion": "Ağ geçidi, yeniden denemeleri, yedeklemeleri, maliyet takibini ve hız sınırlarını yönetir — böylece geliştiriciler sadece `platform.generate()` çağrısı yapar."
+      },
+      "knowledge": {
+        "title": "B. Hizmet Olarak Bilgi (RAG Basitleştirildi)",
+        "content": "Bilgiyle Güçlendirilmiş Üretim, iş değerinin büyük kısmını oluşturur. Ancak mühendisler vektör veritabanlarını yönetmemelidir.",
+        "solution": "'Bırak ve sohbet et' arayüzü oluşturun: bir wiki'yi, PDF'leri veya veritabanını işaretleyin ve platform otomatik olarak içe aktarır, böler, gömüler ve indeksler. Artık her ekibin güncel, özel bir bilgi tabanı var."
+      },
+      "orchestration": {
+        "title": "C. Orkestrasyon Katmanı",
+        "content": "Kod-öncelikli yapay zeka güçlüdür; ancak iş akışı-öncelikli yapay zeka daha hızlıdır.",
+        "example": "Adımları zincirlemek için düşük kodlu araçlar (Dify, coze, n8n gibi) kullanıyoruz:",
+        "workflow": [
+          "Kullanıcı sorusu",
+          "Belgeleri getir",
+          "Araç çağır (API, SQL)",
+          "Akıl yürüt",
+          "Çıktı"
+        ],
+        "conclusion": "Bu, ürün ekiplerinin haftalar değil, saatler içinde ajan prototipleri oluşturmasını sağlar."
+      }
+    },
+
+    "fineTuning": {
+      "title": "3. İnce Ayardan Kaçının (Çoğu Zaman)",
+      "content": "İşte sır: **büyük olasılıkla bir büyük dil modelini ince ayarlamanıza gerek yok.**",
+      "strategies": [
+        "Daha iyi istemler: sistematik mühendislik rastgele ayarlamaları yener.",
+        "Yüksek kaliteli RAG: temiz, yapılandırılmış bilgi, daha akıllı bir modelden daha iyidir.",
+        "Çoklu model füzyonu: akıl yürütme için GPT-4, çıkarma için yerel bir model, yaratıcı görevler için Claude kullanın.",
+        "Hakem olarak LLM: daha güçlü bir modeli, daha ucuz modellerin çıktılarını değerlendirmek için kullanın."
+      ],
+      "conclusion": "Yalnızca dar, yüksek hacimli görevler için küçük modelleri ince ayarlıyoruz ve bu da yüksek kaliteli, alana özgü veri toplama ve temizleme sürecinden sonra geliyor. Geri kalan her şey 'eğitim yerine mühendislik' ile çözülüyor."
+    },
+
+    "essentialWork": {
+      "title": "5. Az İlgi Çeken, Ancak Temel İşler",
+      "content": "En iyi platformlar sadece modellere dayanmaz. Sıkıcı, zor problemleri çözmeye dayanır:",
+      "points": [
+        {
+          "title": "Veri Çarkı",
+          "content": "Üretim kullanımından öğrenip kaydedemezseniz, modelleriniz gelişmez. Uyumlu, anonimleştirilmiş veri boru hatlarını etkinleştirmek için güvenlik ekibiyle erken çalışın."
+        },
+        {
+          "title": "Hissiyat Değil, Değerlendirme",
+          "content": "İş sahiplerinden 'altın veri setleri' talep edin — gerçek soru-cevap çiftleri — böylece sadece 'iyi görünüyor' demek yerine hassasiyet/duyarlılık ölçebilirsiniz."
+        },
+        {
+          "title": "Hesaplama Kaynakları",
+          "content": "Çıkarım, CPU çalıştırmak gibi değildir. Bellek taşması hatalarını önlemek ve kullanımı optimize etmek için özel izleme gerekir."
+        }
+      ]
+    },
+
+    "conclusion": {
+      "title": "Sonuç",
+      "content": "Orta ölçekli teknoloji şirketleri için yapay zekada kazanmak, daha iyi bir büyük dil modeli oluşturmak anlamına gelmez. Yapay zekayı tekrarlanabilir, ölçeklenebilir bir iş sürecine dönüştüren bir platform inşa etmek anlamına gelir.",
+      "finalThoughts": "Altyapıyla başlayın, veriyi güvenceye alın ve ekiplerinizin inşa etmesine izin verin. Gelecek, hepsine hükmeden tek bir model değil, her biri gerçek bir iş problemini çözen, hepsi de bunu basitleştiren bir platform tarafından desteklenen uzmanlaşmış ajanlar filosudur.",
+      "callToAction": "İnşa etmeye hazır mısınız? Basit ve açık kaynaklı tutun ve başkalarını güçlendirmeye odaklanın."
+    }
+  },
   "nanoBananaProPrompts": {
     "title": "Nano Banana Pro Prompts",
     "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",

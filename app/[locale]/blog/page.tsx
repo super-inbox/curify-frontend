@@ -4,12 +4,20 @@ import CdnImage from '../_components/CdnImage';
 
 const blogPosts = [
   {
+    slug: 'aiPlatform',
+    title: 'The Pragmatic AI Platform: How Mid‑Sized Tech Companies Win with AI',
+    date: 'January 30, 2026',
+    readTime: '9 min read',
+    tag: 'AI Platform',
+    image: 'https://storage.googleapis.com/curify-static/platformai.webp',
+  },
+  {
     slug: 'QA_Bot_to_Task',
     title: 'From QA Bot to Task Agent: An Architecture Guide',
     date: 'January 30, 2026',
     readTime: '6 min read',
     tag: 'AI Architecture',
-    image: 'https://storage.googleapis.com/curify-static/qa-bot-architecture.jpg',
+    image: 'https://storage.googleapis.com/curify-static/taskAgent.jpg',
   },
   {
     slug: 'age_AI',
