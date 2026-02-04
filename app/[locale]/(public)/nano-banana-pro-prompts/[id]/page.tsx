@@ -4,7 +4,7 @@ import Link from 'next/link';
 import path from 'path';
 import fs from 'fs';
 import CopyButton from './CopyButton';
-import CdnImage from '../../_components/CdnImage';
+import CdnImage from '../../../_components/CdnImage';
 
 interface JsonPrompt {
   id: number;
