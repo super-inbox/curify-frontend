@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 const BASE_URL = "https://www.curify-ai.com";
 
 // All supported locales
-const LOCALES = ["en", "zh", "es", "de", "ja", "tr", "hi"];
+const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"];
 
 // Static pages (shared across locales)
 const STATIC_ROUTES = [

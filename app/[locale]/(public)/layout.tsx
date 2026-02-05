@@ -3,6 +3,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { routing } from "@/i18n/routing";
+import { headers } from "next/headers";
+import type { Metadata } from "next";
 
 import Header from "../_layout_components/Header";
 import Footer from "../_layout_components/Footer";
@@ -10,6 +12,38 @@ import TopUpModal from "../_componentForPage/TopUpModal";
 import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const headerList = await headers();
+  const pathname = headerList.get("x-pathname") || "";
+  
+  // Remove locale prefix from pathname to get the canonical path
+  // e.g. /zh/pricing -> /pricing
+  const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "";
+  
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
+  
+  // Construct languages map for all supported locales
+  const languages: Record<string, string> = {};
+  routing.locales.forEach((lang) => {
+    languages[lang] = `${siteUrl}/${lang}${pathWithoutLocale}`;
+  });
+
+  return {
+    alternates: {
+      canonical: `${siteUrl}/${locale}${pathWithoutLocale}`,
+      languages: {
+        ...languages,
+        "x-default": `${siteUrl}/en${pathWithoutLocale}`,
+      },
+    },
+  };
+}
 
 export default async function PublicLocaleLayout({
   children,
