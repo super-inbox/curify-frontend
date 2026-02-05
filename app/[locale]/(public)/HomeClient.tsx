@@ -57,6 +57,7 @@ function getInterleavedData(mainCards: InspirationCardType[], nanoCards: NanoIns
 
   return result;
 }
+
 function useNanoCards(activeLang: Lang) {
   const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
 
@@ -77,27 +78,31 @@ function useNanoCards(activeLang: Lang) {
         const raw = await res.json();
 
         // ---- RAW SHAPE DEBUG ----
-        console.log("[nano] raw type:", Array.isArray(raw) ? "array" : typeof raw);
+        console.log(
+          "[nano] raw type:",
+          Array.isArray(raw) ? "array" : typeof raw
+        );
         console.log("[nano] raw length:", Array.isArray(raw) ? raw.length : "N/A");
         console.log("[nano] raw sample:", Array.isArray(raw) ? raw.slice(0, 5) : raw);
 
         if (!Array.isArray(raw)) {
           console.error("[nano] ❌ nano_inspiration.json is NOT an array");
-          setNanoCards([]);
+          if (!cancelled) setNanoCards([]);
           return;
         }
 
         // ---- FIELD SANITY CHECK ----
         const sample = raw[0];
         console.log("[nano] sample keys:", sample ? Object.keys(sample) : "NO SAMPLE");
+        console.log("[nano] sample locales:", sample?.locales);
 
         // ---- FILTER + GROUP DEBUG COUNTERS ----
         let total = 0;
-        let langMismatch = 0;
         let noTemplateId = 0;
+        let missingLocale = 0;
         let accepted = 0;
 
-        const byTemplate = new Map<string, typeof raw>();
+        const byTemplate = new Map<string, any[]>();
 
         for (const r of raw) {
           total++;
@@ -107,14 +112,14 @@ function useNanoCards(activeLang: Lang) {
             continue;
           }
 
-          const recordLang = String(r.language || "").toLowerCase();
-          const okLang =
-            activeLang === "en"
-              ? recordLang.startsWith("en")
-              : recordLang.startsWith("zh");
-          
-          if (!okLang) {
-            langMismatch++;
+          // ✅ NEW: locale-aware acceptance
+          // If record has locales, require that active locale exists.
+          // If record has no locales at all (legacy), accept.
+          const hasLocales = r?.locales && typeof r.locales === "object";
+          const hasActiveLocale = !!r?.locales?.[activeLang];
+
+          if (hasLocales && !hasActiveLocale) {
+            missingLocale++;
             continue;
           }
 
@@ -127,29 +132,41 @@ function useNanoCards(activeLang: Lang) {
 
         console.log("[nano] total records:", total);
         console.log("[nano] accepted:", accepted);
-        console.log("[nano] langMismatch:", langMismatch);
         console.log("[nano] noTemplateId:", noTemplateId);
+        console.log("[nano] missingLocale:", missingLocale);
         console.log("[nano] template groups:", Array.from(byTemplate.keys()));
 
         // ---- BUILD UI CARDS ----
         const grouped: NanoInspirationCardType[] = [];
 
         for (const [templateId, records] of byTemplate.entries()) {
-          const image_urls = records
-            .map((r) => r.image_url)
-            .filter(Boolean);
+          // pick locale-specific metadata from first record that has it
+          const firstWithLocale =
+            records.find((r) => r?.locales?.[activeLang]) ?? records[0];
+
+          const localeMeta = firstWithLocale?.locales?.[activeLang] ?? {};
+
+          const image_urls = records.map((r) => r.image_url).filter(Boolean);
 
           const preview_image_urls = records
             .map((r) => r.preview_image_url || r.image_url)
             .filter(Boolean);
 
+          // optional: show a sample param preview
+          const sample_parameters =
+            records.find((r) => r?.parameters)?.parameters ?? undefined;
+
           grouped.push({
-            id: templateId,                // IMPORTANT: template-level id
+            id: templateId, // template-level id
             template_id: templateId,
-            language: activeLang,
-            category: records[0]?.category ?? "Template",
+            language: activeLang, // keep this for UI consistency
+            category:
+              localeMeta?.category ??
+              records[0]?.category ??
+              "Template",
             image_urls,
-            preview_image_urls            
+            preview_image_urls,
+            sample_parameters,
           });
         }
 
@@ -171,7 +188,6 @@ function useNanoCards(activeLang: Lang) {
 
   return nanoCards;
 }
-
 
 function useFilteredInspiration(
   cards: InspirationCardType[],

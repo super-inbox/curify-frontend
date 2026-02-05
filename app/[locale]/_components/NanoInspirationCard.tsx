@@ -1,3 +1,4 @@
+// app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
 
 import React, { useMemo, useState } from "react";
@@ -10,87 +11,24 @@ import {
 } from "@/services/useTracking";
 import { stableHashToInt } from "@/lib/hash_utils";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
-
-export type TemplateParameter = {
-  name: string;
-  label: string;
-  type: "text" | "textarea" | "select";
-  placeholder?: string;
-  options?: string[];
-};
-
-export type NanoTemplate = {
-  id: string; // e.g. "template-herbal-zh"
-  description: string;
-  category: string;
-  language: "zh" | "en";
-  base_prompt: string;
-  parameters: TemplateParameter[];
-  cards: Array<{ image_id: string; [key: string]: any }>; // curated param presets
-};
-
-export type NanoTemplateCardRecord = {
-  image_id: string;
-  template_id: string;
-  language: "zh" | "en";
-  category: string;
-  parameters: Record<string, any>;
-  image_url: string;
-  preview_image_url?: string;
-};
-
-export type NanoInspirationCardType = {
-  // In grouped mode, id === template_id
-  id: string;
-  template_id: string;
-  language: "zh" | "en";
-  category: string;
-
-  // carousel images derived from multiple TemplateCardRecords
-  image_urls: string[];
-  preview_image_urls: string[];
-
-  // template metadata (optional but recommended)
-  description?: string;
-  base_prompt?: string;
-  template_parameters?: TemplateParameter[];
-
-  // show a short param preview (e.g. herb_name: 人参)
-  sample_parameters?: Record<string, any>;
-};
+import {
+  type Locale,
+  type NanoInspirationCardVM,
+  buildParamSummary,
+  fillPrompt,
+  getLocaleFromPath,
+  makeNanoTemplateUrl,
+  normalizeCarouselUrls,
+} from "@/lib/nano_utils";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-function buildParamSummary(params?: Record<string, any>, maxPairs = 2) {
-  if (!params) return "";
-  const entries = Object.entries(params).filter(
-    ([_, v]) => v !== undefined && v !== null && `${v}`.trim() !== ""
-  );
-  if (entries.length === 0) return "";
-  return entries
-    .slice(0, maxPairs)
-    .map(([k, v]) => `${k}: ${String(v)}`)
-    .join(" · ");
-}
-
-// Optional: generate actual prompt by filling template.base_prompt with sample_parameters
-function fillPrompt(basePrompt?: string, params?: Record<string, any>) {
-  if (!basePrompt) return "";
-  let p = basePrompt;
-  if (!params) return p;
-  for (const [k, v] of Object.entries(params)) {
-    const regex = new RegExp(`\\{${k}\\}`, "g");
-    p = p.replace(regex, String(v));
-  }
-  return p;
-}
-
 interface NanoInspirationCardProps {
-  card: NanoInspirationCardType;
+  card: NanoInspirationCardVM;
   requireAuth: (reason?: string) => boolean;
-  onViewClick?: (card: NanoInspirationCardType) => void;
+  onViewClick?: (card: NanoInspirationCardVM) => void;
 }
 
 export function NanoInspirationCard({
@@ -119,38 +57,14 @@ export function NanoInspirationCard({
   const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
   const trackSave = useClickTracking(card.id, "nano_inspiration", "list");
 
-  const getLocaleFromPath = () => {
-    const pathname =
-      typeof window !== "undefined" ? window.location.pathname : "";
-    return pathname.startsWith("/en") ? "en" : "zh";
-  };
-
-  const getCanonicalUrl = () => {
-    const pathname =
-      typeof window !== "undefined" ? window.location.pathname : "";
-    const baseUrl =
-      typeof window !== "undefined"
-        ? window.location.origin
-        : process.env.NEXT_PUBLIC_BASE_URL || "";
-    const locale = pathname.startsWith("/en") ? "en" : "zh";
-    const slug = card.template_id.replace(/^template-/, "");
-    return `${baseUrl}/${locale}/nano-template/${slug}`;
-  };
-
-  const canonicalUrl = getCanonicalUrl();
+  const localeFromPath = getLocaleFromPath() as Locale;
+  const canonicalUrl = makeNanoTemplateUrl(card.template_id, localeFromPath);
 
   const normalized = useMemo(() => {
-    const imageUrls = card.image_urls || [];
-    const previewUrls = card.preview_image_urls || [];
-
-    // If preview missing, fallback to imageUrl
-    const fixedPreview = previewUrls.length ? previewUrls : imageUrls;
-
-    return { imageUrls, previewUrls: fixedPreview };
+    return normalizeCarouselUrls(card.image_urls, card.preview_image_urls);
   }, [card.image_urls, card.preview_image_urls]);
 
-  const totalImages =
-    normalized.previewUrls.length || normalized.imageUrls.length || 0;
+  const totalImages = normalized.previewUrls.length || normalized.imageUrls.length || 0;
 
   const nextImage = () => {
     if (!totalImages) return;
@@ -166,9 +80,7 @@ export function NanoInspirationCard({
     trackCardClick();
 
     if (card.template_id) {
-      const locale = getLocaleFromPath();
-      const slug = card.template_id.replace(/^template-/, "");
-      router.push(`/${locale}/nano-template/${slug}`);
+      router.push(makeNanoTemplateUrl(card.template_id, localeFromPath));
       return;
     }
 
@@ -178,6 +90,7 @@ export function NanoInspirationCard({
   const handleSave = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!requireAuth("save_nano_inspiration")) return;
+
     trackSave();
 
     if (saved) {
@@ -193,6 +106,7 @@ export function NanoInspirationCard({
     e.stopPropagation();
     try {
       const filled = fillPrompt(card.base_prompt, card.sample_parameters);
+
       const payload =
         filled?.trim() ||
         buildParamSummary(card.sample_parameters, 4) ||
@@ -371,9 +285,9 @@ export function NanoInspirationCard({
 }
 
 interface NanoInspirationRowProps {
-  cards: NanoInspirationCardType[];
+  cards: NanoInspirationCardVM[];
   requireAuth: (reason?: string) => boolean;
-  onViewClick?: (card: NanoInspirationCardType) => void;
+  onViewClick?: (card: NanoInspirationCardVM) => void;
 }
 
 export function NanoInspirationRow({

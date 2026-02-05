@@ -1,4 +1,8 @@
+// app/[locale]/(public)/nano-template/[slug]/page.tsx
+
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
 import {
   TemplateDetailPage,
   Template,
@@ -8,27 +12,32 @@ import {
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoCards from "@/public/data/nano_inspiration.json";
 
+type RouteParams = {
+  locale: string;
+  slug: string;
+};
+
 interface PageProps {
-  params: {
-    locale: string;
-    slug: string; // folder is [slug]
-  };
+  // ✅ Next.js sync-dynamic-apis: params must be awaited
+  params: Promise<RouteParams>;
 }
 
 function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
 }
 
-export default function TemplatePage({ params }: PageProps) {
-  const { locale, slug } = params;
+export default async function TemplatePage({ params }: PageProps) {
+  const { locale, slug } = await params;
+
   const templateId = slugToTemplateId(slug);
 
-  // nanoTemplates is Template[] now
-  const template = (nanoTemplates as Template[]).find((t) => t.id === templateId);
+  const templates = nanoTemplates as Template[];
+  const template = templates.find((t) => t.id === templateId);
   if (!template) notFound();
 
-  // nanoCards is TemplateCardWithImages[] now
-  const templateCards: TemplateCardWithImages[] = (nanoCards as TemplateCardWithImages[])
+  const cards = nanoCards as TemplateCardWithImages[];
+
+  const templateCards: TemplateCardWithImages[] = cards
     .filter((card) => card.template_id === templateId)
     .map((card) => ({
       ...card,
@@ -45,7 +54,7 @@ export default function TemplatePage({ params }: PageProps) {
     <TemplateDetailPage
       template={template}
       templateCards={templateCards}
-      allTemplates={nanoTemplates as Template[]}
+      allTemplates={templates}
       locale={locale}
     />
   );
@@ -58,7 +67,6 @@ export async function generateStaticParams() {
   const params: Array<{ locale: string; slug: string }> = [];
   for (const locale of locales) {
     for (const t of templates) {
-      // generate slug from template id
       const slug = t.id.replace(/^template-/, "");
       params.push({ locale, slug });
     }
@@ -66,8 +74,10 @@ export async function generateStaticParams() {
   return params;
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const templateId = slugToTemplateId(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const templateId = slugToTemplateId(slug);
   const template = (nanoTemplates as Template[]).find((t) => t.id === templateId);
 
   if (!template) return { title: "Template Not Found" };
