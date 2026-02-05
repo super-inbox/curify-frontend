@@ -1,5 +1,4 @@
-{
-  "templates": [
+[
     {
       "id": "template-herbal-zh",
       "description": "Generate a 4K vertical “Herb Exploded Sheet” infographic poster for a single Chinese herb with labeled parts, properties, and modern forms.",
@@ -14,17 +13,17 @@
           "placeholder": "例如：人参、当归、黄芪"
         }
       ],
-      "cards": [
-        { "card_id": "template-herbal-zh-ginseng", "herb_name": "人参" },
-        { "card_id": "template-herbal-zh-angelica", "herb_name": "当归" },
-        { "card_id": "template-herbal-zh-astragalus", "herb_name": "黄芪" },
-        { "card_id": "template-herbal-zh-goji-berry", "herb_name": "枸杞" },
-        { "card_id": "template-herbal-zh-licorice", "herb_name": "甘草" },
-        { "card_id": "template-herbal-zh-honeysuckle", "herb_name": "金银花" },
-        { "card_id": "template-herbal-zh-chrysanthemum", "herb_name": "菊花" },
-        { "card_id": "template-herbal-zh-dried-tangerine-peel", "herb_name": "陈皮" },
-        { "card_id": "template-herbal-zh-red-date", "herb_name": "红枣" },
-        { "card_id": "template-herbal-zh-notoginseng", "herb_name": "三七" }
+      "images": [
+        { "image_id": "template-herbal-zh-ginseng", "herb_name": "人参" },
+        { "image_id": "template-herbal-zh-angelica", "herb_name": "当归" },
+        { "image_id": "template-herbal-zh-astragalus", "herb_name": "黄芪" },
+        { "image_id": "template-herbal-zh-goji-berry", "herb_name": "枸杞" },
+        { "image_id": "template-herbal-zh-licorice", "herb_name": "甘草" },
+        { "image_id": "template-herbal-zh-honeysuckle", "herb_name": "金银花" },
+        { "image_id": "template-herbal-zh-chrysanthemum", "herb_name": "菊花" },
+        { "image_id": "template-herbal-zh-dried-tangerine-peel", "herb_name": "陈皮" },
+        { "image_id": "template-herbal-zh-red-date", "herb_name": "红枣" },
+        { "image_id": "template-herbal-zh-notoginseng", "herb_name": "三七" }
       ]
     },
     {
@@ -39,72 +38,72 @@
         { "name": "start_period", "label": "起始节点", "type": "text", "placeholder": "例如：原始社会、1990年代" },
         { "name": "end_period", "label": "结束节点", "type": "text", "placeholder": "例如：新时代、当代" }
       ],
-      "cards": [
+      "images": [
         {
-          "card_id": "template-evolution-zh-chinese-social-changes",
+          "image_id": "template-evolution-zh-chinese-social-changes",
           "theme": "中国社会变迁",
           "theme_en": "Chinese Social Changes",
           "start_period": "原始社会",
           "end_period": "新时代"
         },
         {
-          "card_id": "template-evolution-zh-internet-technology",
+          "image_id": "template-evolution-zh-internet-technology",
           "theme": "互联网技术",
           "theme_en": "Internet Technology",
           "start_period": "1990年代",
           "end_period": "AI时代"
         },
         {
-          "card_id": "template-evolution-zh-transportation",
+          "image_id": "template-evolution-zh-transportation",
           "theme": "交通工具",
           "theme_en": "Transportation",
           "start_period": "马车时代",
           "end_period": "新能源汽车"
         },
         {
-          "card_id": "template-evolution-zh-communication",
+          "image_id": "template-evolution-zh-communication",
           "theme": "通讯方式",
           "theme_en": "Communication",
           "start_period": "飞鸽传书",
           "end_period": "5G网络"
         },
         {
-          "card_id": "template-evolution-zh-architecture",
+          "image_id": "template-evolution-zh-architecture",
           "theme": "建筑风格",
           "theme_en": "Architecture",
           "start_period": "古典建筑",
           "end_period": "摩天大楼"
         },
         {
-          "card_id": "template-evolution-zh-education-system",
+          "image_id": "template-evolution-zh-education-system",
           "theme": "教育体系",
           "theme_en": "Education System",
           "start_period": "私塾教育",
           "end_period": "在线教育"
         },
         {
-          "card_id": "template-evolution-zh-medical-technology",
+          "image_id": "template-evolution-zh-medical-technology",
           "theme": "医疗技术",
           "theme_en": "Medical Technology",
           "start_period": "传统医学",
           "end_period": "精准医疗"
         },
         {
-          "card_id": "template-evolution-zh-energy-usage",
+          "image_id": "template-evolution-zh-energy-usage",
           "theme": "能源利用",
           "theme_en": "Energy Usage",
           "start_period": "薪柴时代",
           "end_period": "清洁能源"
         },
         {
-          "card_id": "template-evolution-zh-currency-forms",
+          "image_id": "template-evolution-zh-currency-forms",
           "theme": "货币形态",
           "theme_en": "Currency Forms",
           "start_period": "贝壳货币",
           "end_period": "数字货币"
         },
         {
-          "card_id": "template-evolution-zh-entertainment",
+          "image_id": "template-evolution-zh-entertainment",
           "theme": "娱乐方式",
           "theme_en": "Entertainment",
           "start_period": "戏曲表演",
@@ -122,17 +121,17 @@
         { "name": "destination", "label": "旅行目的地", "type": "text", "placeholder": "例如：北京、大理、东京" },
         { "name": "date_range", "label": "行程时段", "type": "text", "placeholder": "例如：1/19-1/25、7/1-7/5" }
       ],
-      "cards": [
-        { "card_id": "template-travel-zh-beijing", "destination": "北京", "date_range": "1/19-1/25" },
-        { "card_id": "template-travel-zh-dali", "destination": "大理", "date_range": "7/1-7/5" },
-        { "card_id": "template-travel-zh-chengdu", "destination": "成都", "date_range": "10/1-10/7" },
-        { "card_id": "template-travel-zh-xiamen", "destination": "厦门", "date_range": "4/15-4/20" },
-        { "card_id": "template-travel-zh-xian", "destination": "西安", "date_range": "5/1-5/5" },
-        { "card_id": "template-travel-zh-hangzhou", "destination": "杭州", "date_range": "3/10-3/15" },
-        { "card_id": "template-travel-zh-qingdao", "destination": "青岛", "date_range": "8/5-8/10" },
-        { "card_id": "template-travel-zh-lijiang", "destination": "丽江", "date_range": "11/20-11/25" },
-        { "card_id": "template-travel-zh-sanya", "destination": "三亚", "date_range": "12/15-12/20" },
-        { "card_id": "template-travel-zh-guilin", "destination": "桂林", "date_range": "9/10-9/15" }
+      "images": [
+        { "image_id": "template-travel-zh-beijing", "destination": "北京", "date_range": "1/19-1/25" },
+        { "image_id": "template-travel-zh-dali", "destination": "大理", "date_range": "7/1-7/5" },
+        { "image_id": "template-travel-zh-chengdu", "destination": "成都", "date_range": "10/1-10/7" },
+        { "image_id": "template-travel-zh-xiamen", "destination": "厦门", "date_range": "4/15-4/20" },
+        { "image_id": "template-travel-zh-xian", "destination": "西安", "date_range": "5/1-5/5" },
+        { "image_id": "template-travel-zh-hangzhou", "destination": "杭州", "date_range": "3/10-3/15" },
+        { "image_id": "template-travel-zh-qingdao", "destination": "青岛", "date_range": "8/5-8/10" },
+        { "image_id": "template-travel-zh-lijiang", "destination": "丽江", "date_range": "11/20-11/25" },
+        { "image_id": "template-travel-zh-sanya", "destination": "三亚", "date_range": "12/15-12/20" },
+        { "image_id": "template-travel-zh-guilin", "destination": "桂林", "date_range": "9/10-9/15" }
       ]
     },
     {
@@ -144,17 +143,17 @@
       "parameters": [
         { "name": "landmark", "label": "地标建筑", "type": "text", "placeholder": "例如：东方明珠、鸟巢体育场" }
       ],
-      "cards": [
-        { "card_id": "template-architecture-zh-oriental-pearl-tower", "landmark": "东方明珠广播电视塔" },
-        { "card_id": "template-architecture-zh-national-stadium-bird-nest", "landmark": "国家体育场（鸟巢）" },
-        { "card_id": "template-architecture-zh-shanghai-tower", "landmark": "上海中心大厦" },
-        { "card_id": "template-architecture-zh-canton-tower", "landmark": "广州塔" },
-        { "card_id": "template-architecture-zh-hong-kong-zhuhai-macao-bridge", "landmark": "港珠澳大桥" },
-        { "card_id": "template-architecture-zh-national-centre-for-the-performing-arts", "landmark": "国家大剧院" },
-        { "card_id": "template-architecture-zh-cctv-headquarters", "landmark": "央视总部大楼" },
-        { "card_id": "template-architecture-zh-ping-an-finance-centre", "landmark": "深圳平安金融中心" },
-        { "card_id": "template-architecture-zh-taipei-101", "landmark": "台北101大楼" },
-        { "card_id": "template-architecture-zh-giant-wild-goose-pagoda", "landmark": "西安大雁塔" }
+      "images": [
+        { "image_id": "template-architecture-zh-oriental-pearl-tower", "landmark": "东方明珠广播电视塔" },
+        { "image_id": "template-architecture-zh-national-stadium-bird-nest", "landmark": "国家体育场（鸟巢）" },
+        { "image_id": "template-architecture-zh-shanghai-tower", "landmark": "上海中心大厦" },
+        { "image_id": "template-architecture-zh-canton-tower", "landmark": "广州塔" },
+        { "image_id": "template-architecture-zh-hong-kong-zhuhai-macao-bridge", "landmark": "港珠澳大桥" },
+        { "image_id": "template-architecture-zh-national-centre-for-the-performing-arts", "landmark": "国家大剧院" },
+        { "image_id": "template-architecture-zh-cctv-headquarters", "landmark": "央视总部大楼" },
+        { "image_id": "template-architecture-zh-ping-an-finance-centre", "landmark": "深圳平安金融中心" },
+        { "image_id": "template-architecture-zh-taipei-101", "landmark": "台北101大楼" },
+        { "image_id": "template-architecture-zh-giant-wild-goose-pagoda", "landmark": "西安大雁塔" }
       ]
     },
     {
@@ -166,17 +165,17 @@
       "parameters": [
         { "name": "species_name", "label": "物种名称", "type": "text", "placeholder": "例如：东北虎、大熊猫" }
       ],
-      "cards": [
-        { "card_id": "template-species-zh-giant-panda", "species_name": "大熊猫" },
-        { "card_id": "template-species-zh-siberian-tiger", "species_name": "东北虎" },
-        { "card_id": "template-species-zh-baiji", "species_name": "白鳍豚" },
-        { "card_id": "template-species-zh-chinese-sturgeon", "species_name": "中华鲟" },
-        { "card_id": "template-species-zh-tibetan-antelope", "species_name": "藏羚羊" },
-        { "card_id": "template-species-zh-golden-snub-nosed-monkey", "species_name": "金丝猴" },
-        { "card_id": "template-species-zh-chinese-alligator", "species_name": "扬子鳄" },
-        { "card_id": "template-species-zh-crested-ibis", "species_name": "朱鹮" },
-        { "card_id": "template-species-zh-snow-leopard", "species_name": "雪豹" },
-        { "card_id": "template-species-zh-black-necked-crane", "species_name": "黑颈鹤" }
+      "images": [
+        { "image_id": "template-species-zh-giant-panda", "species_name": "大熊猫" },
+        { "image_id": "template-species-zh-siberian-tiger", "species_name": "东北虎" },
+        { "image_id": "template-species-zh-baiji", "species_name": "白鳍豚" },
+        { "image_id": "template-species-zh-chinese-sturgeon", "species_name": "中华鲟" },
+        { "image_id": "template-species-zh-tibetan-antelope", "species_name": "藏羚羊" },
+        { "image_id": "template-species-zh-golden-snub-nosed-monkey", "species_name": "金丝猴" },
+        { "image_id": "template-species-zh-chinese-alligator", "species_name": "扬子鳄" },
+        { "image_id": "template-species-zh-crested-ibis", "species_name": "朱鹮" },
+        { "image_id": "template-species-zh-snow-leopard", "species_name": "雪豹" },
+        { "image_id": "template-species-zh-black-necked-crane", "species_name": "黑颈鹤" }
       ]
     },
     {
@@ -189,17 +188,17 @@
         { "name": "character_source", "label": "人物出处", "type": "text", "placeholder": "例如：蜡笔小新、名侦探柯南" },
         { "name": "character_name", "label": "角色名称", "type": "text", "placeholder": "例如：野原新之助、工藤新一" }
       ],
-      "cards": [
-        { "card_id": "template-character-zh-crayon-shinchan-shinnosuke-nohara", "character_source": "蜡笔小新", "character_name": "野原新之助" },
-        { "card_id": "template-character-zh-detective-conan-shinichi-kudo", "character_source": "名侦探柯南", "character_name": "工藤新一" },
-        { "card_id": "template-character-zh-naruto-naruto-uzumaki", "character_source": "火影忍者", "character_name": "漩涡鸣人" },
-        { "card_id": "template-character-zh-one-piece-luffy", "character_source": "海贼王", "character_name": "路飞" },
-        { "card_id": "template-character-zh-attack-on-titan-eren-yeager", "character_source": "进击的巨人", "character_name": "艾伦" },
-        { "card_id": "template-character-zh-my-neighbor-totoro-satsuki-kusakabe", "character_source": "龙猫", "character_name": "草壁小月" },
-        { "card_id": "template-character-zh-spirited-away-chihiro", "character_source": "千与千寻", "character_name": "千寻" },
-        { "card_id": "template-character-zh-pokemon-ash-ketchum", "character_source": "宝可梦", "character_name": "小智" },
-        { "card_id": "template-character-zh-slam-dunk-hanamichi-sakuragi", "character_source": "灌篮高手", "character_name": "樱木花道" },
-        { "card_id": "template-character-zh-doraemon-doraemon", "character_source": "哆啦A梦", "character_name": "哆啦A梦" }
+      "images": [
+        { "image_id": "template-character-zh-crayon-shinchan-shinnosuke-nohara", "character_source": "蜡笔小新", "character_name": "野原新之助" },
+        { "image_id": "template-character-zh-detective-conan-shinichi-kudo", "character_source": "名侦探柯南", "character_name": "工藤新一" },
+        { "image_id": "template-character-zh-naruto-naruto-uzumaki", "character_source": "火影忍者", "character_name": "漩涡鸣人" },
+        { "image_id": "template-character-zh-one-piece-luffy", "character_source": "海贼王", "character_name": "路飞" },
+        { "image_id": "template-character-zh-attack-on-titan-eren-yeager", "character_source": "进击的巨人", "character_name": "艾伦" },
+        { "image_id": "template-character-zh-my-neighbor-totoro-satsuki-kusakabe", "character_source": "龙猫", "character_name": "草壁小月" },
+        { "image_id": "template-character-zh-spirited-away-chihiro", "character_source": "千与千寻", "character_name": "千寻" },
+        { "image_id": "template-character-zh-pokemon-ash-ketchum", "character_source": "宝可梦", "character_name": "小智" },
+        { "image_id": "template-character-zh-slam-dunk-hanamichi-sakuragi", "character_source": "灌篮高手", "character_name": "樱木花道" },
+        { "image_id": "template-character-zh-doraemon-doraemon", "character_source": "哆啦A梦", "character_name": "哆啦A梦" }
       ]
     },
     {
@@ -211,17 +210,17 @@
       "parameters": [
         { "name": "dish_name", "label": "菜品名称", "type": "text", "placeholder": "例如：经典红烧肉、清蒸鱼" }
       ],
-      "cards": [
-        { "card_id": "template-recipe-zh-braised-pork-belly", "dish_name": "经典红烧肉" },
-        { "card_id": "template-recipe-zh-steamed-perch", "dish_name": "清蒸鲈鱼" },
-        { "card_id": "template-recipe-zh-four-joy-meatballs", "dish_name": "四喜丸子" },
-        { "card_id": "template-recipe-zh-buddha-jumps-over-the-wall", "dish_name": "佛跳墙" },
-        { "card_id": "template-recipe-zh-sweet-and-sour-ribs", "dish_name": "糖醋排骨" },
-        { "card_id": "template-recipe-zh-kung-pao-chicken", "dish_name": "宫保鸡丁" },
-        { "card_id": "template-recipe-zh-mapo-tofu", "dish_name": "麻婆豆腐" },
-        { "card_id": "template-recipe-zh-dongpo-pork", "dish_name": "东坡肉" },
-        { "card_id": "template-recipe-zh-lion-head-meatballs", "dish_name": "狮子头" },
-        { "card_id": "template-recipe-zh-boiled-fish-in-chili-oil", "dish_name": "水煮鱼" }
+      "images": [
+        { "image_id": "template-recipe-zh-braised-pork-belly", "dish_name": "经典红烧肉" },
+        { "image_id": "template-recipe-zh-steamed-perch", "dish_name": "清蒸鲈鱼" },
+        { "image_id": "template-recipe-zh-four-joy-meatballs", "dish_name": "四喜丸子" },
+        { "image_id": "template-recipe-zh-buddha-jumps-over-the-wall", "dish_name": "佛跳墙" },
+        { "image_id": "template-recipe-zh-sweet-and-sour-ribs", "dish_name": "糖醋排骨" },
+        { "image_id": "template-recipe-zh-kung-pao-chicken", "dish_name": "宫保鸡丁" },
+        { "image_id": "template-recipe-zh-mapo-tofu", "dish_name": "麻婆豆腐" },
+        { "image_id": "template-recipe-zh-dongpo-pork", "dish_name": "东坡肉" },
+        { "image_id": "template-recipe-zh-lion-head-meatballs", "dish_name": "狮子头" },
+        { "image_id": "template-recipe-zh-boiled-fish-in-chili-oil", "dish_name": "水煮鱼" }
       ]
     },
     {
@@ -233,17 +232,17 @@
       "parameters": [
         { "name": "species_name", "label": "物种名称", "type": "text", "placeholder": "例如：金丝猴、大熊猫" }
       ],
-      "cards": [
-        { "card_id": "template-species-science-zh-golden-snub-nosed-monkey", "species_name": "金丝猴" },
-        { "card_id": "template-species-science-zh-giant-panda", "species_name": "大熊猫" },
-        { "card_id": "template-species-science-zh-chinese-sturgeon", "species_name": "中华鲟" },
-        { "card_id": "template-species-science-zh-egret", "species_name": "白鹭" },
-        { "card_id": "template-species-science-zh-ginkgo-tree", "species_name": "银杏树" },
-        { "card_id": "template-species-science-zh-dawn-redwood", "species_name": "水杉" },
-        { "card_id": "template-species-science-zh-dove-tree", "species_name": "珙桐" },
-        { "card_id": "template-species-science-zh-pangolin", "species_name": "穿山甲" },
-        { "card_id": "template-species-science-zh-red-crowned-crane", "species_name": "丹顶鹤" },
-        { "card_id": "template-species-science-zh-chinese-giant-salamander", "species_name": "娃娃鱼" }
+      "images": [
+        { "image_id": "template-species-science-zh-golden-snub-nosed-monkey", "species_name": "金丝猴" },
+        { "image_id": "template-species-science-zh-giant-panda", "species_name": "大熊猫" },
+        { "image_id": "template-species-science-zh-chinese-sturgeon", "species_name": "中华鲟" },
+        { "image_id": "template-species-science-zh-egret", "species_name": "白鹭" },
+        { "image_id": "template-species-science-zh-ginkgo-tree", "species_name": "银杏树" },
+        { "image_id": "template-species-science-zh-dawn-redwood", "species_name": "水杉" },
+        { "image_id": "template-species-science-zh-dove-tree", "species_name": "珙桐" },
+        { "image_id": "template-species-science-zh-pangolin", "species_name": "穿山甲" },
+        { "image_id": "template-species-science-zh-red-crowned-crane", "species_name": "丹顶鹤" },
+        { "image_id": "template-species-science-zh-chinese-giant-salamander", "species_name": "娃娃鱼" }
       ]
     },
     {
@@ -258,72 +257,72 @@
         { "name": "left_section_title", "label": "左侧标题", "type": "text", "placeholder": "例如：个人档案、属性面板" },
         { "name": "right_section_title", "label": "右侧标题", "type": "text", "placeholder": "例如：羁绊关系、人际网络" }
       ],
-      "cards": [
+      "images": [
         {
-          "card_id": "template-character-analysis-zh-sun-wukong",
+          "image_id": "template-character-analysis-zh-sun-wukong",
           "character_name": "孙悟空",
           "art_style": "水墨工笔风",
           "left_section_title": "个人档案",
           "right_section_title": "羁绊关系"
         },
         {
-          "card_id": "template-character-analysis-zh-nezha",
+          "image_id": "template-character-analysis-zh-nezha",
           "character_name": "哪吒",
           "art_style": "国潮赛博朋克",
           "left_section_title": "属性面板",
           "right_section_title": "人际网络"
         },
         {
-          "card_id": "template-character-analysis-zh-bai-suzhen",
+          "image_id": "template-character-analysis-zh-bai-suzhen",
           "character_name": "白素贞",
           "art_style": "古风仙侠",
           "left_section_title": "仙籍档案",
           "right_section_title": "情缘羁绊"
         },
         {
-          "card_id": "template-character-analysis-zh-hua-mulan",
+          "image_id": "template-character-analysis-zh-hua-mulan",
           "character_name": "花木兰",
           "art_style": "军事写实",
           "left_section_title": "军籍档案",
           "right_section_title": "战友情谊"
         },
         {
-          "card_id": "template-character-analysis-zh-bao-qingtian",
+          "image_id": "template-character-analysis-zh-bao-qingtian",
           "character_name": "包青天",
           "art_style": "复古海报",
           "left_section_title": "官员档案",
           "right_section_title": "案件关联"
         },
         {
-          "card_id": "template-character-analysis-zh-zhong-kui",
+          "image_id": "template-character-analysis-zh-zhong-kui",
           "character_name": "钟馗",
           "art_style": "暗黑哥特",
           "left_section_title": "神职档案",
           "right_section_title": "阴阳关系"
         },
         {
-          "card_id": "template-character-analysis-zh-chang-e",
+          "image_id": "template-character-analysis-zh-chang-e",
           "character_name": "嫦娥",
           "art_style": "梦幻唯美",
           "left_section_title": "仙界档案",
           "right_section_title": "月宫往来"
         },
         {
-          "card_id": "template-character-analysis-zh-guan-yu",
+          "image_id": "template-character-analysis-zh-guan-yu",
           "character_name": "关羽",
           "art_style": "三国志实录",
           "left_section_title": "武将档案",
           "right_section_title": "结义兄弟"
         },
         {
-          "card_id": "template-character-analysis-zh-lin-daiyu",
+          "image_id": "template-character-analysis-zh-lin-daiyu",
           "character_name": "林黛玉",
           "art_style": "红楼工笔",
           "left_section_title": "人物小传",
           "right_section_title": "情感纠葛"
         },
         {
-          "card_id": "template-character-analysis-zh-ji-gong",
+          "image_id": "template-character-analysis-zh-ji-gong",
           "character_name": "济公",
           "art_style": "禅意漫画",
           "left_section_title": "僧人档案",
@@ -340,17 +339,17 @@
       "parameters": [
         { "name": "city_name", "label": "城市名称", "type": "text", "placeholder": "例如：北京、上海" }
       ],
-      "cards": [
-        { "card_id": "template-weather-zh-beijing", "city_name": "北京" },
-        { "card_id": "template-weather-zh-shanghai", "city_name": "上海" },
-        { "card_id": "template-weather-zh-guangzhou", "city_name": "广州" },
-        { "card_id": "template-weather-zh-shenzhen", "city_name": "深圳" },
-        { "card_id": "template-weather-zh-chengdu", "city_name": "成都" },
-        { "card_id": "template-weather-zh-hangzhou", "city_name": "杭州" },
-        { "card_id": "template-weather-zh-xian", "city_name": "西安" },
-        { "card_id": "template-weather-zh-chongqing", "city_name": "重庆" },
-        { "card_id": "template-weather-zh-nanjing", "city_name": "南京" },
-        { "card_id": "template-weather-zh-wuhan", "city_name": "武汉" }
+      "images": [
+        { "image_id": "template-weather-zh-beijing", "city_name": "北京" },
+        { "image_id": "template-weather-zh-shanghai", "city_name": "上海" },
+        { "image_id": "template-weather-zh-guangzhou", "city_name": "广州" },
+        { "image_id": "template-weather-zh-shenzhen", "city_name": "深圳" },
+        { "image_id": "template-weather-zh-chengdu", "city_name": "成都" },
+        { "image_id": "template-weather-zh-hangzhou", "city_name": "杭州" },
+        { "image_id": "template-weather-zh-xian", "city_name": "西安" },
+        { "image_id": "template-weather-zh-chongqing", "city_name": "重庆" },
+        { "image_id": "template-weather-zh-nanjing", "city_name": "南京" },
+        { "image_id": "template-weather-zh-wuhan", "city_name": "武汉" }
       ]
     },
     {
@@ -362,17 +361,17 @@
       "parameters": [
         { "name": "topic", "label": "知识点主题", "type": "text", "placeholder": "例如：光合作用、勾股定理" }
       ],
-      "cards": [
-        { "card_id": "template-education-zh-photosynthesis", "topic": "光合作用原理" },
-        { "card_id": "template-education-zh-pythagorean-theorem", "topic": "勾股定理证明" },
-        { "card_id": "template-education-zh-periodic-table", "topic": "元素周期表规律" },
-        { "card_id": "template-education-zh-newtons-laws", "topic": "牛顿三大定律" },
-        { "card_id": "template-education-zh-dna-double-helix", "topic": "DNA双螺旋结构" },
-        { "card_id": "template-education-zh-water-cycle", "topic": "水循环过程" },
-        { "card_id": "template-education-zh-cell-division", "topic": "细胞分裂过程" },
-        { "card_id": "template-education-zh-electromagnetic-induction", "topic": "电磁感应原理" },
-        { "card_id": "template-education-zh-plate-tectonics", "topic": "板块构造学说" },
-        { "card_id": "template-education-zh-conservation-of-energy", "topic": "能量守恒定律" }
+      "images": [
+        { "image_id": "template-education-zh-photosynthesis", "topic": "光合作用原理" },
+        { "image_id": "template-education-zh-pythagorean-theorem", "topic": "勾股定理证明" },
+        { "image_id": "template-education-zh-periodic-table", "topic": "元素周期表规律" },
+        { "image_id": "template-education-zh-newtons-laws", "topic": "牛顿三大定律" },
+        { "image_id": "template-education-zh-dna-double-helix", "topic": "DNA双螺旋结构" },
+        { "image_id": "template-education-zh-water-cycle", "topic": "水循环过程" },
+        { "image_id": "template-education-zh-cell-division", "topic": "细胞分裂过程" },
+        { "image_id": "template-education-zh-electromagnetic-induction", "topic": "电磁感应原理" },
+        { "image_id": "template-education-zh-plate-tectonics", "topic": "板块构造学说" },
+        { "image_id": "template-education-zh-conservation-of-energy", "topic": "能量守恒定律" }
       ]
     },
       {
@@ -389,9 +388,9 @@
             "placeholder": "e.g., Ginseng, Astragalus, Licorice"
           }
         ],
-        "cards": [
-          { "card_id": "template-herbal-en-ginseng", "herb_name": "Ginseng" },
-          { "card_id": "template-herbal-en-astragalus", "herb_name": "Astragalus" }
+        "images": [
+          { "image_id": "template-herbal-en-ginseng", "herb_name": "Ginseng" },
+          { "image_id": "template-herbal-en-astragalus", "herb_name": "Astragalus" }
         ]
       },
       {
@@ -438,9 +437,9 @@
             "placeholder": "e.g., AI Era"
           }
         ],
-        "cards": [
+        "images": [
           {
-            "card_id": "template-evolution-en-internet-technology",
+            "image_id": "template-evolution-en-internet-technology",
             "theme": "Internet Technology",
             "theme_zh": "互联网技术",
             "start_stage": "Origin/Foundation",
@@ -464,9 +463,9 @@
             "placeholder": "e.g., Eiffel Tower, Burj Khalifa, Sydney Opera House"
           }
         ],
-        "cards": [
-          { "card_id": "template-architecture-en-eiffel-tower", "landmark": "Eiffel Tower" },
-          { "card_id": "template-architecture-en-burj-khalifa", "landmark": "Burj Khalifa" }
+        "images": [
+          { "image_id": "template-architecture-en-eiffel-tower", "landmark": "Eiffel Tower" },
+          { "image_id": "template-architecture-en-burj-khalifa", "landmark": "Burj Khalifa" }
         ]
       },
       {
@@ -489,9 +488,9 @@
             "placeholder": "例如：雪豹、大熊猫"
           }
         ],
-        "cards": [
+        "images": [
           {
-            "card_id": "template-endangered-species-en-snow-leopard",
+            "image_id": "template-endangered-species-en-snow-leopard",
             "species_name": "Snow Leopard",
             "species_name_zh": "雪豹"
           }
@@ -511,9 +510,9 @@
             "placeholder": "例如：经典红烧肉、清蒸鱼"
           }
         ],
-        "cards": [
-          { "card_id": "template-recipe-en-braised-pork-belly", "dish_name": "经典红烧肉" },
-          { "card_id": "template-recipe-en-steamed-fish", "dish_name": "清蒸鱼" }
+        "images": [
+          { "image_id": "template-recipe-en-braised-pork-belly", "dish_name": "经典红烧肉" },
+          { "image_id": "template-recipe-en-steamed-fish", "dish_name": "清蒸鱼" }
         ]
       },
       {
@@ -542,9 +541,9 @@
             "placeholder": "例如：社会/政治/国际"
           }
         ],
-        "cards": [
+        "images": [
           {
-            "card_id": "template-hot-event-analysis-zh-sample",
+            "image_id": "template-hot-event-analysis-zh-sample",
             "event_title": "美国“斩杀线”",
             "logic_chain": "资本主导→政策适配→个体承压→系统淘汰",
             "impact_axes": "社会/政治/国际"
@@ -565,8 +564,8 @@
             "placeholder": "例如：皮影戏、苏绣、景泰蓝、木版年画"
           }
         ],
-        "cards": [
-          { "card_id": "template-intangible-heritage-zh-shadow-puppetry", "craft_name": "皮影戏" }
+        "images": [
+          { "image_id": "template-intangible-heritage-zh-shadow-puppetry", "craft_name": "皮影戏" }
         ]
       },
       {
@@ -583,8 +582,8 @@
             "placeholder": "例如：光合作用原理、勾股定理证明"
           }
         ],
-        "cards": [
-          { "card_id": "template-education-card-zh-photosynthesis", "topic": "光合作用原理" }
+        "images": [
+          { "image_id": "template-education-card-zh-photosynthesis", "topic": "光合作用原理" }
         ]
       },
       {
@@ -601,9 +600,8 @@
             "placeholder": "e.g., Photosynthesis, Pythagorean Theorem"
           }
         ],
-        "cards": [
-          { "card_id": "template-education-card-en-photosynthesis", "topic": "Photosynthesis" }
+        "images": [
+          { "image_id": "template-education-card-en-photosynthesis", "topic": "Photosynthesis" }
         ]
-      }    
+      }
   ]
-}

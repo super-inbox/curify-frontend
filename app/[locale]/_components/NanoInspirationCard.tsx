@@ -1,88 +1,155 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import { useCopyTracking, useClickTracking, useShareTracking } from "@/services/useTracking";
+import {
+  useCopyTracking,
+  useClickTracking,
+  useShareTracking,
+} from "@/services/useTracking";
+import { stableHashToInt } from "@/lib/hash_utils";
 
-export type NanoInspirationCardType = {
-  id: string;
-  language: "zh" | "en";
-  category: string;
-  image_urls: string[];
-  preview_image_urls?: string[];
-  prompt: string;
-  template_id?: string; // Link to template for reproducible generation
+export type TemplateParameter = {
+  name: string;
+  label: string;
+  type: "text" | "textarea" | "select";
+  placeholder?: string;
+  options?: string[];
 };
 
-export function normalizeNanoImageUrl(src?: string | null) {
-  if (!src) return "";
-  if (src.startsWith("http://") || src.startsWith("https://")) return src;
-  if (src.startsWith("/")) return src;
-  return `/images/nano_insp/${src}`;
-}
+export type NanoTemplate = {
+  id: string; // e.g. "template-herbal-zh"
+  description: string;
+  category: string;
+  language: "zh" | "en";
+  base_prompt: string;
+  parameters: TemplateParameter[];
+  cards: Array<{ image_id: string; [key: string]: any }>; // curated param presets
+};
 
-function derivePreviewUrlFromImageUrl(imageUrl: string) {
-  if (!imageUrl) return "";
-  const asPath = imageUrl.startsWith("http") ? (() => { try { return new URL(imageUrl).pathname; } catch { return imageUrl; } })() : imageUrl;
-  const filename = asPath.split("/").pop() || imageUrl;
-  const dot = filename.lastIndexOf(".");
-  const base = dot >= 0 ? filename.slice(0, dot) : filename;
-  const ext = dot >= 0 ? filename.slice(dot) : "";
-  return `/images/nano_insp_preview/${base}_prev${ext}`;
-}
+export type NanoTemplateCardRecord = {
+  image_id: string;
+  template_id: string;
+  language: "zh" | "en";
+  category: string;
+  parameters: Record<string, any>;
+  image_url: string;
+  preview_image_url?: string;
+};
+
+export type NanoInspirationCardType = {
+  // In grouped mode, id === template_id
+  id: string;
+  template_id: string;
+  language: "zh" | "en";
+  category: string;
+
+  // carousel images derived from multiple TemplateCardRecords
+  image_urls: string[];
+  preview_image_urls: string[];
+
+  // template metadata (optional but recommended)
+  description?: string;
+  base_prompt?: string;
+  template_parameters?: TemplateParameter[];
+
+  // show a short param preview (e.g. herb_name: 人参)
+  sample_parameters?: Record<string, any>;
+};
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
+}
+
+function buildParamSummary(params?: Record<string, any>, maxPairs = 2) {
+  if (!params) return "";
+  const entries = Object.entries(params).filter(([_, v]) => v !== undefined && v !== null && `${v}`.trim() !== "");
+  if (entries.length === 0) return "";
+  return entries
+    .slice(0, maxPairs)
+    .map(([k, v]) => `${k}: ${String(v)}`)
+    .join(" · ");
+}
+
+// Optional: generate actual prompt by filling template.base_prompt with sample_parameters
+function fillPrompt(basePrompt?: string, params?: Record<string, any>) {
+  if (!basePrompt) return "";
+  let p = basePrompt;
+  if (!params) return p;
+  for (const [k, v] of Object.entries(params)) {
+    const regex = new RegExp(`\\{${k}\\}`, "g");
+    p = p.replace(regex, String(v));
+  }
+  return p;
 }
 
 interface NanoInspirationCardProps {
   card: NanoInspirationCardType;
   requireAuth: (reason?: string) => boolean;
   onViewClick?: (card: NanoInspirationCardType) => void;
-  onGenerateClick?: (card: NanoInspirationCardType) => void; // New: trigger template-based generation
 }
 
-export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerateClick }: NanoInspirationCardProps) {
+export function NanoInspirationCard({
+  card,
+  requireAuth,
+  onViewClick,
+}: NanoInspirationCardProps) {
+  const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
 
-  const seedNum = parseInt(card.id.split("-").pop() || "0", 10) || Math.floor(Math.random() * 1000);
+  const seedNum = useMemo(() => stableHashToInt(card.id), [card.id]);
+
   const [saveCount, setSaveCount] = useState(seedNum % 100 + 50);
-  const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100);
-  const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20);
+  const [copyCount, setCopyCount] = useState(
+    Math.floor(seedNum * 1.3) % 150 + 100
+  );
+  const [shareCount, setShareCount] = useState(
+    Math.floor(seedNum * 0.7) % 50 + 20
+  );
 
   const trackCardClick = useClickTracking(card.id, "nano_inspiration", "list");
   const trackCopy = useCopyTracking(card.id, "nano_inspiration", "list");
   const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
   const trackSave = useClickTracking(card.id, "nano_inspiration", "list");
-  const trackGenerate = useClickTracking(card.id, "nano_inspiration", "list"); // Track generation
+
+  const getLocaleFromPath = () => {
+    const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+    return pathname.startsWith("/en") ? "en" : "zh";
+  };
 
   const getCanonicalUrl = () => {
     const pathname = typeof window !== "undefined" ? window.location.pathname : "";
-    const baseUrl = typeof window !== "undefined" ? window.location.origin : process.env.NEXT_PUBLIC_BASE_URL || "";
+    const baseUrl =
+      typeof window !== "undefined"
+        ? window.location.origin
+        : process.env.NEXT_PUBLIC_BASE_URL || "";
     const locale = pathname.startsWith("/en") ? "en" : "zh";
-    return `${baseUrl}/${locale}/n/${card.id}`;
+    // template page canonical
+    const slug = card.template_id.replace(/^template-/, "");
+    return `${baseUrl}/${locale}/nano-template/${slug}`;
   };
 
   const canonicalUrl = getCanonicalUrl();
 
   const normalized = useMemo(() => {
-    const imageUrls = (card.image_urls || []).map(normalizeNanoImageUrl);
-    const previewUrls =
-      card.preview_image_urls && card.preview_image_urls.length > 0
-        ? card.preview_image_urls.map((u) => {
-            if (!u) return "";
-            if (u.startsWith("http://") || u.startsWith("https://")) return u;
-            if (u.startsWith("/")) return u;
-            return `/images/nano_insp_preview/${u}`;
-          })
-        : imageUrls.map((u) => derivePreviewUrlFromImageUrl(u));
-    return { imageUrls, previewUrls };
+    
+    const imageUrls = card.image_urls || [];
+    const previewUrls = card.preview_image_urls || [];
+
+    // If preview missing, fallback to imageUrl
+    const fixedPreview = previewUrls.length
+      ? previewUrls
+      : imageUrls;
+
+    return { imageUrls, previewUrls: fixedPreview };
   }, [card.image_urls, card.preview_image_urls]);
 
-  const totalImages = normalized.previewUrls.length || normalized.imageUrls.length || 0;
+  const totalImages =
+    normalized.previewUrls.length || normalized.imageUrls.length || 0;
 
   const nextImage = () => {
     if (!totalImages) return;
@@ -96,6 +163,14 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
 
   const handleCardClick = () => {
     trackCardClick();
+
+    if (card.template_id) {
+      const locale = getLocaleFromPath();
+      const slug = card.template_id.replace(/^template-/, "");
+      router.push(`/${locale}/nano-template/${slug}`);
+      return;
+    }
+
     onViewClick?.(card);
   };
 
@@ -116,8 +191,16 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
   const handleCopy = async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
-      await navigator.clipboard.writeText(card.prompt);
+      // Prefer copying a filled prompt if available; else copy param summary; else copy url
+      const filled = fillPrompt(card.base_prompt, card.sample_parameters);
+      const payload =
+        filled?.trim() ||
+        buildParamSummary(card.sample_parameters, 4) ||
+        canonicalUrl;
+
+      await navigator.clipboard.writeText(payload);
       trackCopy();
+
       if (!copied) {
         setCopied(true);
         setCopyCount((prev) => prev + 1);
@@ -133,6 +216,7 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       trackShare();
+
       if (!shared) {
         setShared(true);
         setShareCount((prev) => prev + 1);
@@ -143,26 +227,28 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
     }
   };
 
-  const handleGenerate = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    trackGenerate();
-    onGenerateClick?.(card);
-  };
+  const displaySrc =
+    normalized.previewUrls[currentImageIndex] ||
+    normalized.imageUrls[currentImageIndex] ||
+    "";
 
-  const abbreviatedPrompt = card.prompt.length > 120 ? card.prompt.slice(0, 120) + "..." : card.prompt;
-  const displaySrc = normalized.previewUrls[currentImageIndex] || normalized.imageUrls[currentImageIndex] || "";
+  const paramSummary = useMemo(
+    () => buildParamSummary(card.sample_parameters, 2),
+    [card.sample_parameters]
+  );
 
   return (
     <div
       onClick={handleCardClick}
       className="group relative overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md hover:shadow-2xl hover:border-purple-300 transition-all duration-300 cursor-pointer"
     >
-      {/* Category Badge - Enhanced */}
+      {/* Category Badge */}
       <div className="mb-4 flex items-center justify-between gap-2">
         <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 border border-purple-200 shadow-sm">
           <span className="text-base">💡</span>
           {card.category}
         </span>
+
         {card.template_id && (
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-purple-600 border border-purple-200">
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
@@ -171,15 +257,31 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
         )}
       </div>
 
-      {/* Image Carousel - Enhanced */}
+      {/* Image Carousel */}
       <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-inner border-2 border-purple-100">
         {displaySrc ? (
-          <CdnImage src={displaySrc} alt={`${card.category} preview ${currentImageIndex + 1}`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" unoptimized />
+          <CdnImage
+            src={displaySrc}
+            alt={`${card.category} preview ${currentImageIndex + 1}`}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            unoptimized
+          />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-neutral-400">
             <div className="text-center">
-              <svg className="mx-auto h-12 w-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <svg
+                className="mx-auto h-12 w-12 mb-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
               <span className="text-xs">No image</span>
             </div>
@@ -199,6 +301,7 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
             >
               ‹
             </button>
+
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -210,11 +313,17 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
             >
               ›
             </button>
+
             <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1.5">
               {Array.from({ length: totalImages }).map((_, idx) => (
                 <div
                   key={idx}
-                  className={classNames("h-2 rounded-full transition-all", idx === currentImageIndex ? "w-6 bg-white" : "w-2 bg-white/60 hover:bg-white/80")}
+                  className={classNames(
+                    "h-2 rounded-full transition-all",
+                    idx === currentImageIndex
+                      ? "w-6 bg-white"
+                      : "w-2 bg-white/60 hover:bg-white/80"
+                  )}
                 />
               ))}
             </div>
@@ -222,12 +331,30 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
         )}
       </div>
 
-      {/* Prompt - Enhanced */}
+      {/* Description / Param summary */}
       <div className="mb-4 p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-purple-100">
-        <p className="text-sm leading-relaxed text-neutral-700 font-medium">{abbreviatedPrompt}</p>
+        {card.description ? (
+          <p className="text-sm leading-relaxed text-neutral-700 font-medium">
+            {card.description}
+          </p>
+        ) : paramSummary ? (
+          <p className="text-sm leading-relaxed text-neutral-700 font-medium">
+            {paramSummary}
+          </p>
+        ) : (
+          <p className="text-sm leading-relaxed text-neutral-700 font-medium">
+            Click to create with this template
+          </p>
+        )}
+
+        {paramSummary && (
+          <p className="mt-2 text-xs text-neutral-500">
+            Example: {paramSummary}
+          </p>
+        )}
       </div>
 
-      {/* Actions - Enhanced */}
+      {/* Actions */}
       <div className="flex flex-wrap items-center gap-2">
         <button
           onClick={handleSave}
@@ -261,15 +388,18 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
           <span>{shareCount}</span>
         </button>
 
-        {/* Generate Button - NEW */}
-        {card.template_id && onGenerateClick && (
+        {/* Create Button */}
+        {card.template_id && (
           <button
-            onClick={handleGenerate}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleCardClick();
+            }}
             className="ml-auto inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-white border-2 border-purple-400 hover:from-purple-600 hover:to-pink-600 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
             type="button"
           >
             <span className="text-base">✨</span>
-            <span>生成</span>
+            <span>创作</span>
           </button>
         )}
       </div>
@@ -277,11 +407,20 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick, onGenerate
   );
 }
 
-export function NanoInspirationRow({ cards, requireAuth, onViewClick, onGenerateClick }: NanoInspirationRowProps) {
+export function NanoInspirationRow({
+  cards,
+  requireAuth,
+  onViewClick,
+}: NanoInspirationRowProps) {
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {cards.map((c) => (
-        <NanoInspirationCard key={c.id} card={c} requireAuth={requireAuth} onViewClick={onViewClick} onGenerateClick={onGenerateClick} />
+        <NanoInspirationCard
+          key={c.id}
+          card={c}
+          requireAuth={requireAuth}
+          onViewClick={onViewClick}
+        />
       ))}
     </div>
   );
@@ -291,5 +430,4 @@ interface NanoInspirationRowProps {
   cards: NanoInspirationCardType[];
   requireAuth: (reason?: string) => boolean;
   onViewClick?: (card: NanoInspirationCardType) => void;
-  onGenerateClick?: (card: NanoInspirationCardType) => void;
 }

@@ -34,11 +34,10 @@ function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-function getInterleavedData(
-  mainCards: InspirationCardType[],
-  nanoCards: NanoInspirationCardType[]
-): InterleavedItem[] {
+function getInterleavedData(mainCards: InspirationCardType[], nanoCards: NanoInspirationCardType[]): InterleavedItem[] {
   const result: InterleavedItem[] = [];
+  let inserted = false;
+
   mainCards.forEach((card, index) => {
     result.push({ type: "inspiration", card });
     if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
@@ -47,28 +46,132 @@ function getInterleavedData(
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
       if (rowCards.length > 0) {
         result.push({ type: "nano", cards: rowCards });
+        inserted = true;
       }
     }
   });
+
+  if (!inserted && nanoCards.length > 0) {
+    result.push({ type: "nano", cards: nanoCards.slice(0, 3) });
+  }
+
   return result;
 }
-
-// --- Custom Hooks ---
 function useNanoCards(activeLang: Lang) {
-  const [allNanoCards, setAllNanoCards] = useState<NanoInspirationCardType[]>(
-    []
-  );
+  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
+
   useEffect(() => {
-    fetch("/data/nano_inspiration.json")
-      .then((res) => res.json())
-      .then((data) => setAllNanoCards(data))
-      .catch((err) => console.error("Failed to load nano cards:", err));
-  }, []);
-  return useMemo(
-    () => allNanoCards.filter((n) => n.language === activeLang),
-    [allNanoCards, activeLang]
-  );
+    let cancelled = false;
+
+    async function load() {
+      try {
+        console.log("[nano] loading nano cards, activeLang =", activeLang);
+
+        const res = await fetch("/data/nano_inspiration.json");
+        console.log(
+          "[nano] fetch status:",
+          res.status,
+          res.headers.get("content-type")
+        );
+
+        const raw = await res.json();
+
+        // ---- RAW SHAPE DEBUG ----
+        console.log("[nano] raw type:", Array.isArray(raw) ? "array" : typeof raw);
+        console.log("[nano] raw length:", Array.isArray(raw) ? raw.length : "N/A");
+        console.log("[nano] raw sample:", Array.isArray(raw) ? raw.slice(0, 5) : raw);
+
+        if (!Array.isArray(raw)) {
+          console.error("[nano] ❌ nano_inspiration.json is NOT an array");
+          setNanoCards([]);
+          return;
+        }
+
+        // ---- FIELD SANITY CHECK ----
+        const sample = raw[0];
+        console.log("[nano] sample keys:", sample ? Object.keys(sample) : "NO SAMPLE");
+
+        // ---- FILTER + GROUP DEBUG COUNTERS ----
+        let total = 0;
+        let langMismatch = 0;
+        let noTemplateId = 0;
+        let accepted = 0;
+
+        const byTemplate = new Map<string, typeof raw>();
+
+        for (const r of raw) {
+          total++;
+
+          if (!r?.template_id) {
+            noTemplateId++;
+            continue;
+          }
+
+          const recordLang = String(r.language || "").toLowerCase();
+          const okLang =
+            activeLang === "en"
+              ? recordLang.startsWith("en")
+              : recordLang.startsWith("zh");
+          
+          if (!okLang) {
+            langMismatch++;
+            continue;
+          }
+
+          accepted++;
+
+          const arr = byTemplate.get(r.template_id) ?? [];
+          arr.push(r);
+          byTemplate.set(r.template_id, arr);
+        }
+
+        console.log("[nano] total records:", total);
+        console.log("[nano] accepted:", accepted);
+        console.log("[nano] langMismatch:", langMismatch);
+        console.log("[nano] noTemplateId:", noTemplateId);
+        console.log("[nano] template groups:", Array.from(byTemplate.keys()));
+
+        // ---- BUILD UI CARDS ----
+        const grouped: NanoInspirationCardType[] = [];
+
+        for (const [templateId, records] of byTemplate.entries()) {
+          const image_urls = records
+            .map((r) => r.image_url)
+            .filter(Boolean);
+
+          const preview_image_urls = records
+            .map((r) => r.preview_image_url || r.image_url)
+            .filter(Boolean);
+
+          grouped.push({
+            id: templateId,                // IMPORTANT: template-level id
+            template_id: templateId,
+            language: activeLang,
+            category: records[0]?.category ?? "Template",
+            image_urls,
+            preview_image_urls            
+          });
+        }
+
+        console.log("[nano] FINAL grouped cards len:", grouped.length);
+        console.log("[nano] FINAL grouped sample:", grouped[0]);
+
+        if (!cancelled) setNanoCards(grouped);
+      } catch (err) {
+        console.error("[nano] ❌ failed to load nano cards:", err);
+        if (!cancelled) setNanoCards([]);
+      }
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeLang]);
+
+  return nanoCards;
 }
+
 
 function useFilteredInspiration(
   cards: InspirationCardType[],
@@ -186,6 +289,12 @@ export default function HomeClient({
   const { activeLang } = useLanguageSync();
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
+
+  useEffect(() => {
+    console.log("[home] activeLang:", activeLang);
+    console.log("[home] nanoCards len:", nanoCards.length);
+    if (nanoCards.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
+  }, [activeLang, nanoCards]);
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;

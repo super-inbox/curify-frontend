@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { useCopyTracking, useShareTracking, useClickTracking } from "@/services/useTracking";
+import { stableHashToInt } from "@/lib/hash_utils";
 
 type Source = { label: string; url?: string };
 type CardImage = { image_url: string; preview_image_url?: string; alt?: string };
@@ -143,12 +144,13 @@ export function InspirationListItem({ card, viewMode, requireAuth, onViewClick }
   );
 }
 
+
 function ListItemActions({ card, viewMode, requireAuth }: { card: InspirationCardType; viewMode: ViewMode; requireAuth: (reason?: string) => boolean; onViewClick?: () => void }) {
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
 
-  const seedNum = parseInt(card.id.split("-").pop() || "0", 10) || Math.floor(Math.random() * 1000);
+  const seedNum = stableHashToInt(card.id);
   const [saveCount, setSaveCount] = useState(seedNum % 100 + 50);
   const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100);
   const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20);
