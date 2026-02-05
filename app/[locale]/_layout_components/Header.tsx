@@ -5,7 +5,7 @@ import BtnN from "../_components/button/ButtonNormal";
 import Link from "next/link";
 import { useAtom } from "jotai";
 import { modalAtom, drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
-import { useRouter } from "@/i18n/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
 import { useEffect, useState, useRef } from "react";
@@ -19,6 +19,7 @@ import {
 
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const { locale } = useParams() as { locale: string };
 
   const [drawerState, setDrawerState] = useAtom(drawerAtom);
@@ -125,7 +126,7 @@ export default function Header() {
           <div className="flex items-center gap-1 border-r border-gray-200 pr-4">
             {/* Primary Languages */}
             {primaryLanguages.map((lang) => (
-              <Link key={lang.locale} href={`/${lang.locale}`}>
+              <Link key={lang.locale} href={pathname} locale={lang.locale}>
                 <button
                   className={`cursor-pointer px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
                     locale === lang.locale
@@ -157,7 +158,7 @@ export default function Header() {
               {moreLanguagesOpen && (
                 <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                   {moreLanguages.map((lang) => (
-                    <Link key={lang.locale} href={`/${lang.locale}`}>
+                    <Link key={lang.locale} href={pathname} locale={lang.locale}>
                       <button
                         onClick={() => setMoreLanguagesOpen(false)}
                         className={`cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
