@@ -1,32 +1,39 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import VideoDubbingClient from "./VideoDubbingClient";
 
-const siteUrl = process.env.SITE_URL || "https://curify-ai.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
-const meta = {
-  title: "AI Video Dubbing Tool | Curify AI",
-  description:
-    "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "videoDubbing.metadata" });
 
-export const metadata: Metadata = {
-  title: meta.title,
-  description: meta.description,
-  openGraph: {
-    title: meta.title,
-    description: meta.description,
-    url: `${siteUrl}/video-dubbing`,
-    type: "website",
-    images: [
-      {
-        url: `${siteUrl}/og-video-dubbing.png`,
-        width: 1200,
-        height: 630,
-        alt: "Curify AI Video Dubbing",
-      },
-    ],
-  },
-};
+  const title = t("title");
+  const description = t("description");
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/${locale}/video-dubbing`,
+      type: "website",
+      images: [
+        {
+          url: `${siteUrl}/og-video-dubbing.png`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+  };
+}
 
 export default function VideoDubbingPage() {
   return <VideoDubbingClient />;
