@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
@@ -9,6 +9,7 @@ import {
   useShareTracking,
 } from "@/services/useTracking";
 import { stableHashToInt } from "@/lib/hash_utils";
+import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
 
 export type TemplateParameter = {
   name: string;
@@ -64,7 +65,9 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 
 function buildParamSummary(params?: Record<string, any>, maxPairs = 2) {
   if (!params) return "";
-  const entries = Object.entries(params).filter(([_, v]) => v !== undefined && v !== null && `${v}`.trim() !== "");
+  const entries = Object.entries(params).filter(
+    ([_, v]) => v !== undefined && v !== null && `${v}`.trim() !== ""
+  );
   if (entries.length === 0) return "";
   return entries
     .slice(0, maxPairs)
@@ -117,18 +120,19 @@ export function NanoInspirationCard({
   const trackSave = useClickTracking(card.id, "nano_inspiration", "list");
 
   const getLocaleFromPath = () => {
-    const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+    const pathname =
+      typeof window !== "undefined" ? window.location.pathname : "";
     return pathname.startsWith("/en") ? "en" : "zh";
   };
 
   const getCanonicalUrl = () => {
-    const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+    const pathname =
+      typeof window !== "undefined" ? window.location.pathname : "";
     const baseUrl =
       typeof window !== "undefined"
         ? window.location.origin
         : process.env.NEXT_PUBLIC_BASE_URL || "";
     const locale = pathname.startsWith("/en") ? "en" : "zh";
-    // template page canonical
     const slug = card.template_id.replace(/^template-/, "");
     return `${baseUrl}/${locale}/nano-template/${slug}`;
   };
@@ -136,14 +140,11 @@ export function NanoInspirationCard({
   const canonicalUrl = getCanonicalUrl();
 
   const normalized = useMemo(() => {
-    
     const imageUrls = card.image_urls || [];
     const previewUrls = card.preview_image_urls || [];
 
     // If preview missing, fallback to imageUrl
-    const fixedPreview = previewUrls.length
-      ? previewUrls
-      : imageUrls;
+    const fixedPreview = previewUrls.length ? previewUrls : imageUrls;
 
     return { imageUrls, previewUrls: fixedPreview };
   }, [card.image_urls, card.preview_image_urls]);
@@ -191,7 +192,6 @@ export function NanoInspirationCard({
   const handleCopy = async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
-      // Prefer copying a filled prompt if available; else copy param summary; else copy url
       const filled = fillPrompt(card.base_prompt, card.sample_parameters);
       const payload =
         filled?.trim() ||
@@ -348,63 +348,32 @@ export function NanoInspirationCard({
         )}
 
         {paramSummary && (
-          <p className="mt-2 text-xs text-neutral-500">
-            Example: {paramSummary}
-          </p>
+          <p className="mt-2 text-xs text-neutral-500">Example: {paramSummary}</p>
         )}
       </div>
 
       {/* Actions */}
-      <div className="flex flex-wrap items-center gap-2">
-        <button
-          onClick={handleSave}
-          className={classNames(
-            "inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-sm",
-            saved
-              ? "bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 border-2 border-amber-300"
-              : "bg-white text-neutral-600 border-2 border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300"
-          )}
-          type="button"
-        >
-          <span className="text-base">{saved ? "🔖" : "🤔"}</span>
-          <span>{saveCount}</span>
-        </button>
-
-        <button
-          onClick={handleCopy}
-          className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold bg-white text-neutral-600 border-2 border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-sm"
-          type="button"
-        >
-          <span className="text-base">📋</span>
-          <span>{copyCount}</span>
-        </button>
-
-        <button
-          onClick={handleShare}
-          className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold bg-white text-neutral-600 border-2 border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-sm"
-          type="button"
-        >
-          <span className="text-base">↗</span>
-          <span>{shareCount}</span>
-        </button>
-
-        {/* Create Button */}
-        {card.template_id && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleCardClick();
-            }}
-            className="ml-auto inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-white border-2 border-purple-400 hover:from-purple-600 hover:to-pink-600 transition-all cursor-pointer hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
-            type="button"
-          >
-            <span className="text-base">✨</span>
-            <span>创作</span>
-          </button>
-        )}
+      <div className="flex items-center">
+        <ActionButtons
+          saved={saved}
+          copied={copied}
+          shared={shared}
+          saveCount={saveCount}
+          copyCount={copyCount}
+          shareCount={shareCount}
+          onSave={handleSave}
+          onCopy={handleCopy}
+          onShare={handleShare}
+        />
       </div>
     </div>
   );
+}
+
+interface NanoInspirationRowProps {
+  cards: NanoInspirationCardType[];
+  requireAuth: (reason?: string) => boolean;
+  onViewClick?: (card: NanoInspirationCardType) => void;
 }
 
 export function NanoInspirationRow({
@@ -424,10 +393,4 @@ export function NanoInspirationRow({
       ))}
     </div>
   );
-}
-
-interface NanoInspirationRowProps {
-  cards: NanoInspirationCardType[];
-  requireAuth: (reason?: string) => boolean;
-  onViewClick?: (card: NanoInspirationCardType) => void;
 }

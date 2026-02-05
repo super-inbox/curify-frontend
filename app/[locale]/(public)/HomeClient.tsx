@@ -327,10 +327,10 @@ export default function HomeClient({
     <main
       className={classNames(
         inter.className,
-        "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-8"
+        "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6"
       )}
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1400px]">
         {/* Headline */}
         <div className="mb-8">
           <h1 className="text-[26px] font-semibold tracking-tight text-neutral-900 md:text-3xl">
@@ -347,7 +347,7 @@ export default function HomeClient({
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Left: Feed */}
           <div className="lg:col-span-8">
             {/* Search */}
