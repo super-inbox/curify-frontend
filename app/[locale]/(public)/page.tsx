@@ -31,5 +31,25 @@ export default async function HomePage() {
   const cards = rawData.map(mapDTOToUICard);
 
   // 4. Pass 'cards' prop to the Client Component
-  return <HomeClient cards={cards} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Curify Studio",
+            "url": "https://www.curify-ai.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.curify-ai.com/inspiration-hub?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
+      <HomeClient cards={cards} />
+    </>
+  );
 }

@@ -155,10 +155,32 @@
       "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
     },
     "title": "AI Video Dubbing with Natural Voice",
-  "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands."
-},
-"pricing": {
-  "header": {
+    "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands."
+  },
+  "about": {
+    "metadata": {
+      "title": "About Curify | Vision, Technology & Team",
+      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contact Us | Curify Studio",
+      "description": "Get in touch with the Curify team for support, sales, or partnerships. We are here to help you scale your content globally."
+    }
+  },
+  "blog": {
+    "metadata": {
+      "title": "Curify Blog | AI Content Creation Insights",
+      "description": "Read the latest articles on AI video generation, dubbing, style transfer, and the future of content creation."
+    }
+  },
+  "pricing": {
+    "metadata": {
+      "title": "Pricing Plans | Curify Studio",
+      "description": "Choose the right plan for your content creation needs. From free tools to enterprise-grade AI dubbing and localization."
+    },
+    "header": {
     "title": "Getting started with a plan",
     "subtitle": "Choose a plan that fits your needs."
   },
@@ -479,7 +501,7 @@
     },
     "hero": {
       "title": "Transform Video into Storyboards with AI",
-      "subtitle": "How we built an advanced pipeline that turns hours of raw footage into structured, searchable storyboards in minutes."
+      "subtitle": "How we built an advanced pipeline that turns hours of footage into structured, searchable storyboards in minutes."
     },
     "introduction": {
       "paragraph1": "Imagine being able to upload hours of raw footage and within minutes get a <strong>detailed, scene-by-scene breakdown</strong> of your entire video. That's exactly what our AI-powered scene detection system delivers.",
@@ -832,7 +854,7 @@
       "benefitsTitle": "Key Benefits",
       "benefits": [
         "<strong>Efficient Editing:</strong> Jump directly to any scene or shot without scrubbing through hours of footage",
-        "<strong>Smart Search:</strong> Find content based on visual elements, not just visual changes",
+        "<strong>Smart Search:</strong> Find content based on visual elements, not just metadata",
         "<strong>Consistent Quality:</strong> Identify and maintain visual consistency across your project",
         "<strong>Data-Driven Decisions:</strong> Get insights into your content structure and pacing"
       ]
