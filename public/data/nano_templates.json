@@ -2,9 +2,10 @@
   "templates": [
     {
       "id": "template-herbal-zh",
+      "description": "Generate a 4K vertical “Herb Exploded Sheet” infographic poster for a single Chinese herb with labeled parts, properties, and modern forms.",
       "category": "中草药类",
       "language": "zh",
-      "base_prompt": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把"单味药材"画成全景式知识分解图。根据用户指定的【{herb_name}】，生成一张"单味药材全景分解图（Herb Exploded Sheet）"：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【{herb_name}】。",
+      "base_prompt": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把\"单味药材\"画成全景式知识分解图。根据用户指定的【{herb_name}】，生成一张\"单味药材全景分解图（Herb Exploded Sheet）\"：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【{herb_name}】。",
       "parameters": [
         {
           "name": "herb_name",
@@ -13,106 +14,97 @@
           "placeholder": "例如：人参、当归、黄芪"
         }
       ],
-      "candidates": [
-        { "herb_name": "人参" },
-        { "herb_name": "当归" },
-        { "herb_name": "黄芪" },
-        { "herb_name": "枸杞" },
-        { "herb_name": "甘草" },
-        { "herb_name": "金银花" },
-        { "herb_name": "菊花" },
-        { "herb_name": "陈皮" },
-        { "herb_name": "红枣" },
-        { "herb_name": "三七" }
+      "cards": [
+        { "card_id": "template-herbal-zh-ginseng", "herb_name": "人参" },
+        { "card_id": "template-herbal-zh-angelica", "herb_name": "当归" },
+        { "card_id": "template-herbal-zh-astragalus", "herb_name": "黄芪" },
+        { "card_id": "template-herbal-zh-goji-berry", "herb_name": "枸杞" },
+        { "card_id": "template-herbal-zh-licorice", "herb_name": "甘草" },
+        { "card_id": "template-herbal-zh-honeysuckle", "herb_name": "金银花" },
+        { "card_id": "template-herbal-zh-chrysanthemum", "herb_name": "菊花" },
+        { "card_id": "template-herbal-zh-dried-tangerine-peel", "herb_name": "陈皮" },
+        { "card_id": "template-herbal-zh-red-date", "herb_name": "红枣" },
+        { "card_id": "template-herbal-zh-notoginseng", "herb_name": "三七" }
       ]
     },
     {
       "id": "template-evolution-zh",
+      "description": "Create an isometric pixel-art “evolution museum” timeline scene that maps time progression to spatial progression with bilingual titles.",
       "category": "发展纪年类",
       "language": "zh",
-      "base_prompt": "生成超高细节等距像素艺术时间线插画，比例3:4，分辨率4K，整体风格兼具繁复细节、象征意义与隐喻性。构建"{theme}演进博物馆"的等距像素场景，以不同展区对应不同历史阶段（{start_period}到{end_period}），形成"空间递进=时间演进"。标准等距透视（2:1），层次丰富、衔接流畅；每阶段搭配3-5个强关联象征元素；用阶段差异化配色实现"色彩递进=时间流转"。融入双语像素字体标题：中文"{theme}演进史"，英文"EVOLUTION OF {theme_en}"；副标题"从{start_period}到{end_period}"，并加入关键节点时间标记。整体兼顾专业性与观赏性，预留解读空间，适配学术解析与可视化对比展示。",
+      "base_prompt": "生成超高细节等距像素艺术时间线插画，比例3:4，分辨率4K，整体风格兼具繁复细节、象征意义与隐喻性。构建\"{theme}演进博物馆\"的等距像素场景，以不同展区对应不同历史阶段（{start_period}到{end_period}），形成\"空间递进=时间演进\"。标准等距透视（2:1），层次丰富、衔接流畅；每阶段搭配3-5个强关联象征元素；用阶段差异化配色实现\"色彩递进=时间流转\"。融入双语像素字体标题：中文\"{theme}演进史\"，英文\"EVOLUTION OF {theme_en}\"；副标题\"从{start_period}到{end_period}\"，并加入关键节点时间标记。整体兼顾专业性与观赏性，预留解读空间，适配学术解析与可视化对比展示。",
       "parameters": [
-        {
-          "name": "theme",
-          "label": "主题",
-          "type": "text",
-          "placeholder": "例如：中国社会变迁、互联网技术"
-        },
-        {
-          "name": "theme_en",
-          "label": "主题（英文）",
-          "type": "text",
-          "placeholder": "例如：Chinese Social Changes, Internet Technology"
-        },
-        {
-          "name": "start_period",
-          "label": "起始节点",
-          "type": "text",
-          "placeholder": "例如：原始社会、1990年代"
-        },
-        {
-          "name": "end_period",
-          "label": "结束节点",
-          "type": "text",
-          "placeholder": "例如：新时代、当代"
-        }
+        { "name": "theme", "label": "主题", "type": "text", "placeholder": "例如：中国社会变迁、互联网技术" },
+        { "name": "theme_en", "label": "主题（英文）", "type": "text", "placeholder": "例如：Chinese Social Changes, Internet Technology" },
+        { "name": "start_period", "label": "起始节点", "type": "text", "placeholder": "例如：原始社会、1990年代" },
+        { "name": "end_period", "label": "结束节点", "type": "text", "placeholder": "例如：新时代、当代" }
       ],
-      "candidates": [
+      "cards": [
         {
+          "card_id": "template-evolution-zh-chinese-social-changes",
           "theme": "中国社会变迁",
           "theme_en": "Chinese Social Changes",
           "start_period": "原始社会",
           "end_period": "新时代"
         },
         {
+          "card_id": "template-evolution-zh-internet-technology",
           "theme": "互联网技术",
           "theme_en": "Internet Technology",
           "start_period": "1990年代",
           "end_period": "AI时代"
         },
         {
+          "card_id": "template-evolution-zh-transportation",
           "theme": "交通工具",
           "theme_en": "Transportation",
           "start_period": "马车时代",
           "end_period": "新能源汽车"
         },
         {
+          "card_id": "template-evolution-zh-communication",
           "theme": "通讯方式",
           "theme_en": "Communication",
           "start_period": "飞鸽传书",
           "end_period": "5G网络"
         },
         {
+          "card_id": "template-evolution-zh-architecture",
           "theme": "建筑风格",
           "theme_en": "Architecture",
           "start_period": "古典建筑",
           "end_period": "摩天大楼"
         },
         {
+          "card_id": "template-evolution-zh-education-system",
           "theme": "教育体系",
           "theme_en": "Education System",
           "start_period": "私塾教育",
           "end_period": "在线教育"
         },
         {
+          "card_id": "template-evolution-zh-medical-technology",
           "theme": "医疗技术",
           "theme_en": "Medical Technology",
           "start_period": "传统医学",
           "end_period": "精准医疗"
         },
         {
+          "card_id": "template-evolution-zh-energy-usage",
           "theme": "能源利用",
           "theme_en": "Energy Usage",
           "start_period": "薪柴时代",
           "end_period": "清洁能源"
         },
         {
+          "card_id": "template-evolution-zh-currency-forms",
           "theme": "货币形态",
           "theme_en": "Currency Forms",
           "start_period": "贝壳货币",
           "end_period": "数字货币"
         },
         {
+          "card_id": "template-evolution-zh-entertainment",
           "theme": "娱乐方式",
           "theme_en": "Entertainment",
           "start_period": "戏曲表演",
@@ -122,259 +114,216 @@
     },
     {
       "id": "template-travel-zh",
+      "description": "Draw a cute hand-drawn travel map with daily route blocks, landmarks, food, lodging, and transport labeled in Simplified Chinese.",
       "category": "旅游规划图",
       "language": "zh",
       "base_prompt": "你是擅长可爱手绘风格的旅行插画师，生成一张【{destination}】的手绘旅行地图，贴合【{date_range}】的季节与时间特点。整体为可爱手绘风，将该目的地的核心景点、当地特色美食、住宿、交通方式均设计成Q版萌系图案，线条圆润、色彩明快清新。全程用简体中文标注，精准标注目的地、景点、美食、住宿及行程内容，字体为可爱卡通字体，清晰可读。清晰标出各地点间的移动路线（用萌系线条/小脚印等元素呈现），按【{date_range}】分块展示每日重点活动，区块划分清晰。固定为4:3画幅，分辨率为基础的两倍，精准还原目的地基础地形轮廓（贴合当地地形/海岸线特点），融入对应季节代表性元素，贴合目的地地域特色，画面细节满满、治愈活泼，兼顾萌系视觉感与行程实用性，适配打印、电子展示等场景。",
       "parameters": [
-        {
-          "name": "destination",
-          "label": "旅行目的地",
-          "type": "text",
-          "placeholder": "例如：北京、大理、东京"
-        },
-        {
-          "name": "date_range",
-          "label": "行程时段",
-          "type": "text",
-          "placeholder": "例如：1/19-1/25、7/1-7/5"
-        }
+        { "name": "destination", "label": "旅行目的地", "type": "text", "placeholder": "例如：北京、大理、东京" },
+        { "name": "date_range", "label": "行程时段", "type": "text", "placeholder": "例如：1/19-1/25、7/1-7/5" }
       ],
-      "candidates": [
-        { "destination": "北京", "date_range": "1/19-1/25" },
-        { "destination": "大理", "date_range": "7/1-7/5" },
-        { "destination": "成都", "date_range": "10/1-10/7" },
-        { "destination": "厦门", "date_range": "4/15-4/20" },
-        { "destination": "西安", "date_range": "5/1-5/5" },
-        { "destination": "杭州", "date_range": "3/10-3/15" },
-        { "destination": "青岛", "date_range": "8/5-8/10" },
-        { "destination": "丽江", "date_range": "11/20-11/25" },
-        { "destination": "三亚", "date_range": "12/15-12/20" },
-        { "destination": "桂林", "date_range": "9/10-9/15" }
+      "cards": [
+        { "card_id": "template-travel-zh-beijing", "destination": "北京", "date_range": "1/19-1/25" },
+        { "card_id": "template-travel-zh-dali", "destination": "大理", "date_range": "7/1-7/5" },
+        { "card_id": "template-travel-zh-chengdu", "destination": "成都", "date_range": "10/1-10/7" },
+        { "card_id": "template-travel-zh-xiamen", "destination": "厦门", "date_range": "4/15-4/20" },
+        { "card_id": "template-travel-zh-xian", "destination": "西安", "date_range": "5/1-5/5" },
+        { "card_id": "template-travel-zh-hangzhou", "destination": "杭州", "date_range": "3/10-3/15" },
+        { "card_id": "template-travel-zh-qingdao", "destination": "青岛", "date_range": "8/5-8/10" },
+        { "card_id": "template-travel-zh-lijiang", "destination": "丽江", "date_range": "11/20-11/25" },
+        { "card_id": "template-travel-zh-sanya", "destination": "三亚", "date_range": "12/15-12/20" },
+        { "card_id": "template-travel-zh-guilin", "destination": "桂林", "date_range": "9/10-9/15" }
       ]
     },
     {
       "id": "template-architecture-zh",
+      "description": "Produce a landmark architecture HUD-style infographic overlay with measurements, materials, plans/sections, and technical annotations.",
       "category": "建筑分析图",
       "language": "zh",
       "base_prompt": "制作一张【{landmark}】的信息图：结合地标真实照片与白色技术注释/图解叠加，在角落手绘方框中写建筑名称。叠加复杂白色技术标注，展示关键结构数据、重要测量、材料数量、细部做法，并包含剖面图、平面图以及显著建筑/工程特征。风格：HUD平视显示、信息图表美学、细致清晰白线、技术/建筑注释风格、教育信息图感；注释后能看到真实环境；竖向构图。",
       "parameters": [
-        {
-          "name": "landmark",
-          "label": "地标建筑",
-          "type": "text",
-          "placeholder": "例如：东方明珠、鸟巢体育场"
-        }
+        { "name": "landmark", "label": "地标建筑", "type": "text", "placeholder": "例如：东方明珠、鸟巢体育场" }
       ],
-      "candidates": [
-        { "landmark": "东方明珠广播电视塔" },
-        { "landmark": "国家体育场（鸟巢）" },
-        { "landmark": "上海中心大厦" },
-        { "landmark": "广州塔" },
-        { "landmark": "港珠澳大桥" },
-        { "landmark": "国家大剧院" },
-        { "landmark": "央视总部大楼" },
-        { "landmark": "深圳平安金融中心" },
-        { "landmark": "台北101大楼" },
-        { "landmark": "西安大雁塔" }
+      "cards": [
+        { "card_id": "template-architecture-zh-oriental-pearl-tower", "landmark": "东方明珠广播电视塔" },
+        { "card_id": "template-architecture-zh-national-stadium-bird-nest", "landmark": "国家体育场（鸟巢）" },
+        { "card_id": "template-architecture-zh-shanghai-tower", "landmark": "上海中心大厦" },
+        { "card_id": "template-architecture-zh-canton-tower", "landmark": "广州塔" },
+        { "card_id": "template-architecture-zh-hong-kong-zhuhai-macao-bridge", "landmark": "港珠澳大桥" },
+        { "card_id": "template-architecture-zh-national-centre-for-the-performing-arts", "landmark": "国家大剧院" },
+        { "card_id": "template-architecture-zh-cctv-headquarters", "landmark": "央视总部大楼" },
+        { "card_id": "template-architecture-zh-ping-an-finance-centre", "landmark": "深圳平安金融中心" },
+        { "card_id": "template-architecture-zh-taipei-101", "landmark": "台北101大楼" },
+        { "card_id": "template-architecture-zh-giant-wild-goose-pagoda", "landmark": "西安大雁塔" }
       ]
     },
     {
       "id": "template-species-zh",
+      "description": "Create a cyberpunk-style endangered species knowledge card with six bilingual modules, charts, and a central realistic illustration.",
       "category": "动植物保护",
       "language": "zh",
       "base_prompt": "生成一张3:4竖版的濒危物种【{species_name}】综合性知识图谱信息卡片，采用赛博朋克科技美学风格，背景为深邃的深海黑或森林墨绿，用半透明的青绿色、冰蓝色、珊瑚粉荧光霓虹线条勾勒模块边框和数据可视化图形，整体呈现未来感UI界面，采用分层设计，添加柔和的发光效果，结合写实动物插画与简洁矢量图标。卡片必须包含以下6个核心模块，每个模块均配有中英双语标注：1生物学本体（分类层级+形态参数+局部特写）；2生态与栖息地（分布图+环境指标+栖息地分层）；3行为与社会结构（行为占比饼图+社会结构图+声波可视化）；4生命周期与种群动态（时间轴+30年趋势折线+保护等级）；5威胁机制与风险结构（雷达图+威胁图标注解）；6保护/文化/人类关系（行动循环流程+政策节点+文化象征）。中央放大写实插画并有柔光晕，文字干净科技感。",
       "parameters": [
-        {
-          "name": "species_name",
-          "label": "物种名称",
-          "type": "text",
-          "placeholder": "例如：东北虎、大熊猫"
-        }
+        { "name": "species_name", "label": "物种名称", "type": "text", "placeholder": "例如：东北虎、大熊猫" }
       ],
-      "candidates": [
-        { "species_name": "大熊猫" },
-        { "species_name": "东北虎" },
-        { "species_name": "白鳍豚" },
-        { "species_name": "中华鲟" },
-        { "species_name": "藏羚羊" },
-        { "species_name": "金丝猴" },
-        { "species_name": "扬子鳄" },
-        { "species_name": "朱鹮" },
-        { "species_name": "雪豹" },
-        { "species_name": "黑颈鹤" }
+      "cards": [
+        { "card_id": "template-species-zh-giant-panda", "species_name": "大熊猫" },
+        { "card_id": "template-species-zh-siberian-tiger", "species_name": "东北虎" },
+        { "card_id": "template-species-zh-baiji", "species_name": "白鳍豚" },
+        { "card_id": "template-species-zh-chinese-sturgeon", "species_name": "中华鲟" },
+        { "card_id": "template-species-zh-tibetan-antelope", "species_name": "藏羚羊" },
+        { "card_id": "template-species-zh-golden-snub-nosed-monkey", "species_name": "金丝猴" },
+        { "card_id": "template-species-zh-chinese-alligator", "species_name": "扬子鳄" },
+        { "card_id": "template-species-zh-crested-ibis", "species_name": "朱鹮" },
+        { "card_id": "template-species-zh-snow-leopard", "species_name": "雪豹" },
+        { "card_id": "template-species-zh-black-necked-crane", "species_name": "黑颈鹤" }
       ]
     },
     {
       "id": "template-character-zh",
+      "description": "Generate a detailed character concept breakdown board with outfit layers, expressions, props, and handwritten Chinese annotations.",
       "category": "人物像素拆解",
       "language": "zh",
-      "base_prompt": "你是一位顶尖的游戏与动漫概念美术设计大师，擅长制作详尽的角色设定图。你具备"像素级拆解"的能力，能够透视角色的穿着层级、捕捉微表情变化，并将与其相关的物品进行具象化还原。根据【{character_source}中{character_name}】，生成一张"全景式角色深度概念分解图"，图片比例3:4。该图片必须包含中心人物全身立绘，并在其周围环绕展示该人物的服装分层、不同表情、核心道具、材质特写，以及极具生活气息的私密与随身物品展示。包含：服装分层（多层穿搭+私密内着拆解）、表情集（3-4个头部特写展示不同情绪）、材质特写、关联物品（随身包袋与内容物、美妆与护理、私密生活物件）。画风: 保持高质量的2D插画风格或概念设计草图风格，线条干净利落。背景: 使用米黄色、羊皮纸或浅灰色纹理背景。文字说明: 在每个拆解元素旁模拟手写注释，简要说明材质或品牌/型号暗示，使用中文。",
+      "base_prompt": "你是一位顶尖的游戏与动漫概念美术设计大师，擅长制作详尽的角色设定图。你具备\"像素级拆解\"的能力，能够透视角色的穿着层级、捕捉微表情变化，并将与其相关的物品进行具象化还原。根据【{character_source}中{character_name}】，生成一张\"全景式角色深度概念分解图\"，图片比例3:4。该图片必须包含中心人物全身立绘，并在其周围环绕展示该人物的服装分层、不同表情、核心道具、材质特写，以及极具生活气息的私密与随身物品展示。包含：服装分层（多层穿搭+私密内着拆解）、表情集（3-4个头部特写展示不同情绪）、材质特写、关联物品（随身包袋与内容物、美妆与护理、私密生活物件）。画风: 保持高质量的2D插画风格或概念设计草图风格，线条干净利落。背景: 使用米黄色、羊皮纸或浅灰色纹理背景。文字说明: 在每个拆解元素旁模拟手写注释，简要说明材质或品牌/型号暗示，使用中文。",
       "parameters": [
-        {
-          "name": "character_source",
-          "label": "人物出处",
-          "type": "text",
-          "placeholder": "例如：蜡笔小新、名侦探柯南"
-        },
-        {
-          "name": "character_name",
-          "label": "角色名称",
-          "type": "text",
-          "placeholder": "例如：野原新之助、工藤新一"
-        }
+        { "name": "character_source", "label": "人物出处", "type": "text", "placeholder": "例如：蜡笔小新、名侦探柯南" },
+        { "name": "character_name", "label": "角色名称", "type": "text", "placeholder": "例如：野原新之助、工藤新一" }
       ],
-      "candidates": [
-        { "character_source": "蜡笔小新", "character_name": "野原新之助" },
-        { "character_source": "名侦探柯南", "character_name": "工藤新一" },
-        { "character_source": "火影忍者", "character_name": "漩涡鸣人" },
-        { "character_source": "海贼王", "character_name": "路飞" },
-        { "character_source": "进击的巨人", "character_name": "艾伦" },
-        { "character_source": "龙猫", "character_name": "草壁小月" },
-        { "character_source": "千与千寻", "character_name": "千寻" },
-        { "character_source": "宝可梦", "character_name": "小智" },
-        { "character_source": "灌篮高手", "character_name": "樱木花道" },
-        { "character_source": "哆啦A梦", "character_name": "哆啦A梦" }
+      "cards": [
+        { "card_id": "template-character-zh-crayon-shinchan-shinnosuke-nohara", "character_source": "蜡笔小新", "character_name": "野原新之助" },
+        { "card_id": "template-character-zh-detective-conan-shinichi-kudo", "character_source": "名侦探柯南", "character_name": "工藤新一" },
+        { "card_id": "template-character-zh-naruto-naruto-uzumaki", "character_source": "火影忍者", "character_name": "漩涡鸣人" },
+        { "card_id": "template-character-zh-one-piece-luffy", "character_source": "海贼王", "character_name": "路飞" },
+        { "card_id": "template-character-zh-attack-on-titan-eren-yeager", "character_source": "进击的巨人", "character_name": "艾伦" },
+        { "card_id": "template-character-zh-my-neighbor-totoro-satsuki-kusakabe", "character_source": "龙猫", "character_name": "草壁小月" },
+        { "card_id": "template-character-zh-spirited-away-chihiro", "character_source": "千与千寻", "character_name": "千寻" },
+        { "card_id": "template-character-zh-pokemon-ash-ketchum", "character_source": "宝可梦", "character_name": "小智" },
+        { "card_id": "template-character-zh-slam-dunk-hanamichi-sakuragi", "character_source": "灌篮高手", "character_name": "樱木花道" },
+        { "card_id": "template-character-zh-doraemon-doraemon", "character_source": "哆啦A梦", "character_name": "哆啦A梦" }
       ]
     },
     {
       "id": "template-recipe-zh",
+      "description": "Design a festive Chinese New Year recipe poster with ingredients, step-by-step visuals, symbolism, and handwritten Chinese notes.",
       "category": "食谱",
       "language": "zh",
       "base_prompt": "你是世界级视觉菜谱设计师，生成一张【{dish_name}】的年夜饭视觉烹饪指南海报，画风融合传统春节温馨氛围、吉卜力美食诱人质感与达芬奇手稿严谨结构。画面顶部设计喜庆标题区域，呈现菜品名称及年夜饭吉祥别称，文字用烫金/剪纸/书法风格，凸显年节感；中心放置菜品完美成品定妆照，突出热气、色泽与摆盘美学，彰显年夜饭丰盛团圆感。背景采用暖色调复古纸张或春节传统图案（窗花、祥云等），色调柔和温馨。围绕中心成品模块化布局：左上角整齐陈列全部食材并标注用量，融入春节小装饰；底部/右侧呈现3-4个核心烹饪步骤动态插图，用箭头指示顺序，融入国风元素；右上角展示适配饮品与年夜饭寓意；左下角用卷轴/折扇呈现烹饪小贴士。用春节元素虚线、手写注释、箭头串联食材-步骤-成品，形成清晰视觉路径。固定3:4比例，菜品色彩鲜艳诱人，背景低饱和暖色调，所有标注用简体中文，兼顾喜庆感、质感与烹饪严谨性，适配年夜饭场景展示与烹饪参考。",
       "parameters": [
-        {
-          "name": "dish_name",
-          "label": "菜品名称",
-          "type": "text",
-          "placeholder": "例如：经典红烧肉、清蒸鱼"
-        }
+        { "name": "dish_name", "label": "菜品名称", "type": "text", "placeholder": "例如：经典红烧肉、清蒸鱼" }
       ],
-      "candidates": [
-        { "dish_name": "经典红烧肉" },
-        { "dish_name": "清蒸鲈鱼" },
-        { "dish_name": "四喜丸子" },
-        { "dish_name": "佛跳墙" },
-        { "dish_name": "糖醋排骨" },
-        { "dish_name": "宫保鸡丁" },
-        { "dish_name": "麻婆豆腐" },
-        { "dish_name": "东坡肉" },
-        { "dish_name": "狮子头" },
-        { "dish_name": "水煮鱼" }
+      "cards": [
+        { "card_id": "template-recipe-zh-braised-pork-belly", "dish_name": "经典红烧肉" },
+        { "card_id": "template-recipe-zh-steamed-perch", "dish_name": "清蒸鲈鱼" },
+        { "card_id": "template-recipe-zh-four-joy-meatballs", "dish_name": "四喜丸子" },
+        { "card_id": "template-recipe-zh-buddha-jumps-over-the-wall", "dish_name": "佛跳墙" },
+        { "card_id": "template-recipe-zh-sweet-and-sour-ribs", "dish_name": "糖醋排骨" },
+        { "card_id": "template-recipe-zh-kung-pao-chicken", "dish_name": "宫保鸡丁" },
+        { "card_id": "template-recipe-zh-mapo-tofu", "dish_name": "麻婆豆腐" },
+        { "card_id": "template-recipe-zh-dongpo-pork", "dish_name": "东坡肉" },
+        { "card_id": "template-recipe-zh-lion-head-meatballs", "dish_name": "狮子头" },
+        { "card_id": "template-recipe-zh-boiled-fish-in-chili-oil", "dish_name": "水煮鱼" }
       ]
     },
     {
       "id": "template-species-science-zh",
+      "description": "Generate a modern scientific field-guide style infographic with a central species illustration and surrounding labeled fact modules.",
       "category": "动植物科普",
       "language": "zh",
       "base_prompt": "生成一张信息图表风格插画：中心为【{species_name}】大图，四周以卡片式信息框排列特征、功能、寿命、结构、生物细节等模块。整体参考科学图鉴/科普书籍插图，摄影级细节，文字用中文。风格现代科学图鉴，严谨且美观。比例3:4。",
       "parameters": [
-        {
-          "name": "species_name",
-          "label": "物种名称",
-          "type": "text",
-          "placeholder": "例如：金丝猴、大熊猫"
-        }
+        { "name": "species_name", "label": "物种名称", "type": "text", "placeholder": "例如：金丝猴、大熊猫" }
       ],
-      "candidates": [
-        { "species_name": "金丝猴" },
-        { "species_name": "大熊猫" },
-        { "species_name": "中华鲟" },
-        { "species_name": "白鹭" },
-        { "species_name": "银杏树" },
-        { "species_name": "水杉" },
-        { "species_name": "珙桐" },
-        { "species_name": "穿山甲" },
-        { "species_name": "丹顶鹤" },
-        { "species_name": "娃娃鱼" }
+      "cards": [
+        { "card_id": "template-species-science-zh-golden-snub-nosed-monkey", "species_name": "金丝猴" },
+        { "card_id": "template-species-science-zh-giant-panda", "species_name": "大熊猫" },
+        { "card_id": "template-species-science-zh-chinese-sturgeon", "species_name": "中华鲟" },
+        { "card_id": "template-species-science-zh-egret", "species_name": "白鹭" },
+        { "card_id": "template-species-science-zh-ginkgo-tree", "species_name": "银杏树" },
+        { "card_id": "template-species-science-zh-dawn-redwood", "species_name": "水杉" },
+        { "card_id": "template-species-science-zh-dove-tree", "species_name": "珙桐" },
+        { "card_id": "template-species-science-zh-pangolin", "species_name": "穿山甲" },
+        { "card_id": "template-species-science-zh-red-crowned-crane", "species_name": "丹顶鹤" },
+        { "card_id": "template-species-science-zh-chinese-giant-salamander", "species_name": "娃娃鱼" }
       ]
     },
     {
       "id": "template-character-analysis-zh",
+      "description": "Build a character dossier infographic with configurable art style, sections, relationships, and key items laid out as a unified profile.",
       "category": "人物分析图",
       "language": "zh",
       "base_prompt": "生成一张【{character_name}】详细信息图，采用【{art_style}】美学。中间为角色经典半身/全身画像（服装/动作/表情），置于指定材质/形状相框中。顶行：一排头像设定稿展示3-4种情绪变化。左列：标有【{left_section_title}】等区域，含3-4条官方设定信息（姓名、出生地、性格、必杀技等）与指定字体风格。右列：标有【{right_section_title}】区域，以拍立得/悬赏令/宝石投影等形式展示关键人物A/B/C及特征。底部：拆解关键物品/装备，以游戏道具图鉴/博物馆展品风展示。整体色调、线条与材质质感按输入设定，完成统一的角色档案信息图。",
       "parameters": [
-        {
-          "name": "character_name",
-          "label": "角色名称",
-          "type": "text",
-          "placeholder": "例如：孙悟空、哪吒"
-        },
-        {
-          "name": "art_style",
-          "label": "艺术风格",
-          "type": "text",
-          "placeholder": "例如：赛博朋克、水墨工笔"
-        },
-        {
-          "name": "left_section_title",
-          "label": "左侧标题",
-          "type": "text",
-          "placeholder": "例如：个人档案、属性面板"
-        },
-        {
-          "name": "right_section_title",
-          "label": "右侧标题",
-          "type": "text",
-          "placeholder": "例如：羁绊关系、人际网络"
-        }
+        { "name": "character_name", "label": "角色名称", "type": "text", "placeholder": "例如：孙悟空、哪吒" },
+        { "name": "art_style", "label": "艺术风格", "type": "text", "placeholder": "例如：赛博朋克、水墨工笔" },
+        { "name": "left_section_title", "label": "左侧标题", "type": "text", "placeholder": "例如：个人档案、属性面板" },
+        { "name": "right_section_title", "label": "右侧标题", "type": "text", "placeholder": "例如：羁绊关系、人际网络" }
       ],
-      "candidates": [
+      "cards": [
         {
+          "card_id": "template-character-analysis-zh-sun-wukong",
           "character_name": "孙悟空",
           "art_style": "水墨工笔风",
           "left_section_title": "个人档案",
           "right_section_title": "羁绊关系"
         },
         {
+          "card_id": "template-character-analysis-zh-nezha",
           "character_name": "哪吒",
           "art_style": "国潮赛博朋克",
           "left_section_title": "属性面板",
           "right_section_title": "人际网络"
         },
         {
+          "card_id": "template-character-analysis-zh-bai-suzhen",
           "character_name": "白素贞",
           "art_style": "古风仙侠",
           "left_section_title": "仙籍档案",
           "right_section_title": "情缘羁绊"
         },
         {
+          "card_id": "template-character-analysis-zh-hua-mulan",
           "character_name": "花木兰",
           "art_style": "军事写实",
           "left_section_title": "军籍档案",
           "right_section_title": "战友情谊"
         },
         {
+          "card_id": "template-character-analysis-zh-bao-qingtian",
           "character_name": "包青天",
           "art_style": "复古海报",
           "left_section_title": "官员档案",
           "right_section_title": "案件关联"
         },
         {
+          "card_id": "template-character-analysis-zh-zhong-kui",
           "character_name": "钟馗",
           "art_style": "暗黑哥特",
           "left_section_title": "神职档案",
           "right_section_title": "阴阳关系"
         },
         {
+          "card_id": "template-character-analysis-zh-chang-e",
           "character_name": "嫦娥",
           "art_style": "梦幻唯美",
           "left_section_title": "仙界档案",
           "right_section_title": "月宫往来"
         },
         {
+          "card_id": "template-character-analysis-zh-guan-yu",
           "character_name": "关羽",
           "art_style": "三国志实录",
           "left_section_title": "武将档案",
           "right_section_title": "结义兄弟"
         },
         {
+          "card_id": "template-character-analysis-zh-lin-daiyu",
           "character_name": "林黛玉",
           "art_style": "红楼工笔",
           "left_section_title": "人物小传",
           "right_section_title": "情感纠葛"
         },
         {
+          "card_id": "template-character-analysis-zh-ji-gong",
           "character_name": "济公",
           "art_style": "禅意漫画",
           "left_section_title": "僧人档案",
@@ -384,55 +333,277 @@
     },
     {
       "id": "template-weather-zh",
+      "description": "Render a mini isometric 3D city weather scene with a central landmark and overlaid weather/date/temperature typography in the city’s language.",
       "category": "微缩城市天气预报",
       "language": "zh",
-      "base_prompt": "生成1:1等距微缩3D卡通城市天气场景：45°俯视顶视角，地标居中，模型精致，PBR材质与柔和真实光影。将天气元素与城市建筑创意融合，形成城市景观与气象条件的动态互动。背景极简、柔和纯色以突出主体。顶部居中排版：大标题"【{city_name}】"，下方天气图标，再下方日期（小字）与温度（中等字）。文字匹配城市母语。渲染前请先检索该城市当前天气。",
+      "base_prompt": "生成1:1等距微缩3D卡通城市天气场景：45°俯视顶视角，地标居中，模型精致，PBR材质与柔和真实光影。将天气元素与城市建筑创意融合，形成城市景观与气象条件的动态互动。背景极简、柔和纯色以突出主体。顶部居中排版：大标题\"【{city_name}】\"，下方天气图标，再下方日期（小字）与温度（中等字）。文字匹配城市母语。渲染前请先检索该城市当前天气。",
       "parameters": [
-        {
-          "name": "city_name",
-          "label": "城市名称",
-          "type": "text",
-          "placeholder": "例如：北京、上海"
-        }
+        { "name": "city_name", "label": "城市名称", "type": "text", "placeholder": "例如：北京、上海" }
       ],
-      "candidates": [
-        { "city_name": "北京" },
-        { "city_name": "上海" },
-        { "city_name": "广州" },
-        { "city_name": "深圳" },
-        { "city_name": "成都" },
-        { "city_name": "杭州" },
-        { "city_name": "西安" },
-        { "city_name": "重庆" },
-        { "city_name": "南京" },
-        { "city_name": "武汉" }
+      "cards": [
+        { "card_id": "template-weather-zh-beijing", "city_name": "北京" },
+        { "card_id": "template-weather-zh-shanghai", "city_name": "上海" },
+        { "card_id": "template-weather-zh-guangzhou", "city_name": "广州" },
+        { "card_id": "template-weather-zh-shenzhen", "city_name": "深圳" },
+        { "card_id": "template-weather-zh-chengdu", "city_name": "成都" },
+        { "card_id": "template-weather-zh-hangzhou", "city_name": "杭州" },
+        { "card_id": "template-weather-zh-xian", "city_name": "西安" },
+        { "card_id": "template-weather-zh-chongqing", "city_name": "重庆" },
+        { "card_id": "template-weather-zh-nanjing", "city_name": "南京" },
+        { "card_id": "template-weather-zh-wuhan", "city_name": "武汉" }
       ]
     },
     {
       "id": "template-education-zh",
+      "description": "Turn a topic into an infographic in either cute cartoon-card style or chalkboard sketch style, matching the input language by default.",
       "category": "学科知识卡片",
       "language": "zh",
       "base_prompt": "根据输入内容【{topic}】提取核心主题与要点，生成信息图（两种风格任选其一）：A）可爱数字卡通风：横版3:4，背景纯白/极浅纯色，马卡龙配色（浅绿为主，搭配天蓝/米黄/淡橙/淡粉），线条圆润亲和；用圆角矩形、流程图、箭头组织信息；加入少量拟人化可爱图标（太阳/云朵/化学分子等）；文字为圆润无衬线卡通风，突出关键词，多留白。B）手绘黑板报/科学手稿粉笔草图风：竖版3:4，深灰近黑板纹理背景；主体白色粉笔线条+交叉排线阴影；用少量高饱和点缀色（柠檬黄/青色/品红/亮绿）强调关键图形与注释；整体像灵感迸发的草稿页，元素密集但核心清晰，文字为不规则手写粉笔字体。默认语言随输入内容语言一致。",
       "parameters": [
-        {
-          "name": "topic",
-          "label": "知识点主题",
-          "type": "text",
-          "placeholder": "例如：光合作用、勾股定理"
-        }
+        { "name": "topic", "label": "知识点主题", "type": "text", "placeholder": "例如：光合作用、勾股定理" }
       ],
-      "candidates": [
-        { "topic": "光合作用原理" },
-        { "topic": "勾股定理证明" },
-        { "topic": "元素周期表规律" },
-        { "topic": "牛顿三大定律" },
-        { "topic": "DNA双螺旋结构" },
-        { "topic": "水循环过程" },
-        { "topic": "细胞分裂过程" },
-        { "topic": "电磁感应原理" },
-        { "topic": "板块构造学说" },
-        { "topic": "能量守恒定律" }
+      "cards": [
+        { "card_id": "template-education-zh-photosynthesis", "topic": "光合作用原理" },
+        { "card_id": "template-education-zh-pythagorean-theorem", "topic": "勾股定理证明" },
+        { "card_id": "template-education-zh-periodic-table", "topic": "元素周期表规律" },
+        { "card_id": "template-education-zh-newtons-laws", "topic": "牛顿三大定律" },
+        { "card_id": "template-education-zh-dna-double-helix", "topic": "DNA双螺旋结构" },
+        { "card_id": "template-education-zh-water-cycle", "topic": "水循环过程" },
+        { "card_id": "template-education-zh-cell-division", "topic": "细胞分裂过程" },
+        { "card_id": "template-education-zh-electromagnetic-induction", "topic": "电磁感应原理" },
+        { "card_id": "template-education-zh-plate-tectonics", "topic": "板块构造学说" },
+        { "card_id": "template-education-zh-conservation-of-energy", "topic": "能量守恒定律" }
       ]
-    }
+    },
+      {
+        "id": "template-herbal-en",
+        "description": "Generate a 4K vertical “Herb Exploded Sheet” infographic poster for a single herb with labeled parts, properties, and modern forms.",
+        "category": "Herbal Medicine Exploded Diagram",
+        "language": "en",
+        "base_prompt": "(Medica Concept Artist) You are a top-tier herbal concept illustrator who turns a single traditional herb into a panoramic, encyclopedia-style exploded knowledge sheet. Create a “Herb Exploded Sheet” for the specified herb: place a high-detail illustration of the sliced/dried herbal material at the center; surround it with evenly arranged modules showing the source plant (full form), key plant parts (root/bark/fruit) with callouts, cross-sections and texture zoom-ins, property tags as sticker-like labels, icon-based functions and daily usage scenes (e.g., herbal tea, decoction pot), modern forms (powder/granules/capsules/decoction), and 1–2 material texture magnifiers. Connect all modules with fine lines/arrows/frames to form a poster-like science infographic. Style: high-quality 2D illustration with clean linework and soft coloring on a beige/parchment/light-gray research-poster background; handwritten-style Chinese notes with small English counterparts. Output: single-page vertical 4K poster with clear whitespace and structured sections; educational only, no medical claims. Render directly for herb: 【{herb_name}】.",
+        "parameters": [
+          {
+            "name": "herb_name",
+            "label": "Herb name",
+            "type": "text",
+            "placeholder": "e.g., Ginseng, Astragalus, Licorice"
+          }
+        ],
+        "cards": [
+          { "card_id": "template-herbal-en-ginseng", "herb_name": "Ginseng" },
+          { "card_id": "template-herbal-en-astragalus", "herb_name": "Astragalus" }
+        ]
+      },
+      {
+        "id": "template-evolution-en",
+        "description": "Create a 4K isometric pixel-art “Evolution Museum” timeline where spatial progression represents historical stages of a theme.",
+        "category": "Evolution Timeline Visualization",
+        "language": "en",
+        "base_prompt": "Create an ultra-high-detail isometric pixel-art timeline illustration (3:4, 4K), combining dense detail with symbolism and metaphor. Build an isometric “EVOLUTION MUSEUM OF {theme}” where each gallery zone represents a stage from {start_stage} to {end_stage}—so spatial progression equals temporal evolution. Use standard isometric perspective (2:1), rich layered depth, and smooth transitions. Assign 3–5 strongly theme-linked symbolic elements per stage. Use stage-differentiated color palettes to suggest time flow. Add bilingual pixel-font titles integrated into the scene: Chinese “{theme_zh}演进史” and English “EVOLUTION OF {theme}”, plus subtitles “从{start_label}到{end_label} / From {start_label} to {end_label}” and key timeline markers. Keep it professional yet visually engaging with interpretive space; suitable for academic analysis and comparative visualization.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Theme (English)",
+            "type": "text",
+            "placeholder": "e.g., Internet Technology, Transportation"
+          },
+          {
+            "name": "theme_zh",
+            "label": "Theme (Chinese, for bilingual title)",
+            "type": "text",
+            "placeholder": "例如：互联网技术、交通工具"
+          },
+          {
+            "name": "start_stage",
+            "label": "Start stage name (scene zone)",
+            "type": "text",
+            "placeholder": "e.g., Origin/Foundation"
+          },
+          {
+            "name": "end_stage",
+            "label": "End stage name (scene zone)",
+            "type": "text",
+            "placeholder": "e.g., Present/Future"
+          },
+          {
+            "name": "start_label",
+            "label": "Start label (timeline caption)",
+            "type": "text",
+            "placeholder": "e.g., 1990s"
+          },
+          {
+            "name": "end_label",
+            "label": "End label (timeline caption)",
+            "type": "text",
+            "placeholder": "e.g., AI Era"
+          }
+        ],
+        "cards": [
+          {
+            "card_id": "template-evolution-en-internet-technology",
+            "theme": "Internet Technology",
+            "theme_zh": "互联网技术",
+            "start_stage": "Origin/Foundation",
+            "end_stage": "Present/Future",
+            "start_label": "1990s",
+            "end_label": "AI Era"
+          }
+        ]
+      },
+      {
+        "id": "template-architecture-en",
+        "description": "Generate a photo-based architectural infographic with dense HUD-style white technical annotations for a specified landmark.",
+        "category": "Architectural Analysis Infographic",
+        "language": "en",
+        "base_prompt": "Create an infographic for 【{landmark}】 by combining a real photo with complex white technical overlays and diagrams. Write the building name inside a hand-drawn box in a corner. Add dense white line annotations showing key structural data, measurements, material quantities, detail construction methods, plus section and plan diagrams and notable architectural/engineering features. Style: HUD heads-up-display infographic aesthetic with crisp white linework; the real environment remains visible beneath the annotations. Vertical composition.",
+        "parameters": [
+          {
+            "name": "landmark",
+            "label": "Landmark / building name",
+            "type": "text",
+            "placeholder": "e.g., Eiffel Tower, Burj Khalifa, Sydney Opera House"
+          }
+        ],
+        "cards": [
+          { "card_id": "template-architecture-en-eiffel-tower", "landmark": "Eiffel Tower" },
+          { "card_id": "template-architecture-en-burj-khalifa", "landmark": "Burj Khalifa" }
+        ]
+      },
+      {
+        "id": "template-endangered-species-en",
+        "description": "Create a cyberpunk-style endangered species knowledge UI card with 6 modules, bilingual labels, and data visualizations.",
+        "category": "Endangered Species Protection Card",
+        "language": "en",
+        "base_prompt": "Generate a 3:4 vertical endangered-species knowledge UI card in a cyberpunk tech aesthetic. Background: deep ocean black or forest ink green. Use semi-transparent neon lines (teal, icy blue, coral pink) for module frames and data-viz graphics, with layered UI design and soft glow. Combine a realistic animal illustration with clean vector icons. Include 6 required modules with bilingual Chinese/English labels: (1) Biology identity: taxonomy hierarchy + morphology stats + close-up features; (2) Ecology & habitat: glowing distribution map + environmental indicators + habitat stratification; (3) Behavior & social structure: behavior pie chart + social graph + soundwave visualization; (4) Lifecycle & population dynamics: lifecycle timeline + 30-year trend line chart + conservation status; (5) Threat mechanisms & risk structure: radar chart + threat icons with explanations; (6) Conservation, culture & human relationship: action loop flowchart + policy/action nodes + cultural symbolism. Place a large central realistic illustration with halo glow; keep typography clean and futuristic. Species: 【{species_name}】 (English) / 【{species_name_zh}】 (Chinese).",
+        "parameters": [
+          {
+            "name": "species_name",
+            "label": "Species name (English)",
+            "type": "text",
+            "placeholder": "e.g., Snow Leopard, Giant Panda"
+          },
+          {
+            "name": "species_name_zh",
+            "label": "Species name (Chinese, for bilingual label)",
+            "type": "text",
+            "placeholder": "例如：雪豹、大熊猫"
+          }
+        ],
+        "cards": [
+          {
+            "card_id": "template-endangered-species-en-snow-leopard",
+            "species_name": "Snow Leopard",
+            "species_name_zh": "雪豹"
+          }
+        ]
+      },
+      {
+        "id": "template-recipe-en",
+        "description": "Generate a 3:4 New Year’s Eve dinner visual cooking guide poster with ingredient layout, step illustrations, and festive design.",
+        "category": "Visual Recipe Blueprint",
+        "language": "en",
+        "base_prompt": "Role: a world-class visual recipe designer who turns complex cooking into a clear, beautiful “panoramic cooking blueprint,” blending warm Spring Festival vibes, Ghibli-like food texture, and Da Vinci sketch rigor. Task: create a “New Year’s Eve Dinner Visual Cooking Guide Poster” for the dish 【{dish_name}】. Layout: festive title area at top with the dish name (gold foil/paper-cut/calligraphy feel); center hero shot of the finished dish with steam, glossy sauce, and abundant reunion atmosphere. Background: warm vintage paper with subtle traditional patterns. Modules: top-left ingredient flat-lay with proportions; bottom/right 3–4 key step illustrations with arrows; top-right pairing/reunion meaning; bottom-left tips/secrets on scroll/fan shapes. Connect ingredients → steps → final dish using festive dotted lines and handwritten callouts. Aspect 3:4; food vivid, background low-saturation warm tones; clear Chinese labels with good typography.",
+        "parameters": [
+          {
+            "name": "dish_name",
+            "label": "Dish name",
+            "type": "text",
+            "placeholder": "例如：经典红烧肉、清蒸鱼"
+          }
+        ],
+        "cards": [
+          { "card_id": "template-recipe-en-braised-pork-belly", "dish_name": "经典红烧肉" },
+          { "card_id": "template-recipe-en-steamed-fish", "dish_name": "清蒸鱼" }
+        ]
+      },
+      {
+        "id": "template-hot-event-analysis-zh",
+        "description": "Generate a 3:4 Chinese hot-event analysis infographic with layered causality, mechanism chain, and impact radar maps.",
+        "category": "热点事件分析",
+        "language": "zh",
+        "base_prompt": "生成可视化热点事件信息图：竖版3:4；文字用中文且单独图层清晰可读；白色系背景。标题：用AI进行多维可视化分析——【{event_title}】（深层挖掘）。内容结构：1）现象-本质分层图：自上而下“表面现象层→直接成因层→深层本质层”，用箭头标注传导关系；2）底层逻辑拆解示意图：流程链条“{logic_chain}”，标注主体、行为与结果；3）长效影响辐射图：以事件为原点向{impact_axes}方向辐射，标注影响内容与周期（短/中/长），用颜色区分影响程度（红高/黄中/蓝低）。",
+        "parameters": [
+          {
+            "name": "event_title",
+            "label": "事件标题（用于主标题）",
+            "type": "text",
+            "placeholder": "例如：美国“斩杀线”、某公司裁员潮、某政策变动"
+          },
+          {
+            "name": "logic_chain",
+            "label": "底层逻辑链条（用→连接）",
+            "type": "text",
+            "placeholder": "例如：资本主导→政策适配→个体承压→系统淘汰"
+          },
+          {
+            "name": "impact_axes",
+            "label": "影响辐射方向",
+            "type": "text",
+            "placeholder": "例如：社会/政治/国际"
+          }
+        ],
+        "cards": [
+          {
+            "card_id": "template-hot-event-analysis-zh-sample",
+            "event_title": "美国“斩杀线”",
+            "logic_chain": "资本主导→政策适配→个体承压→系统淘汰",
+            "impact_axes": "社会/政治/国际"
+          }
+        ]
+      },
+      {
+        "id": "template-intangible-heritage-zh",
+        "description": "Create a high-density A3-style infographic board explaining a Chinese intangible cultural heritage craft, with history, process, motifs, and modern preservation.",
+        "category": "非遗工艺",
+        "language": "zh",
+        "base_prompt": "中国传统非遗工艺信息可视化流程图（A3展板排版）：主题为【{craft_name}】。必须包含：1历史发展与文化背景；2艺术特征与制作工艺；3整体艺术体系（地域流派/唱腔/造型/题材差异等）；4传统纹样与文化符号；5制作工艺与传承现状（含数字化与文旅融合）；6周围标注核心组件细节插图（工具材料演变、结构操控示意、细节工艺与老艺人场景、演出/使用生态等）。风格复古精致高信息密度，专业中文知识解析；配色偏传统建筑彩画/古籍色谱。",
+        "parameters": [
+          {
+            "name": "craft_name",
+            "label": "非遗工艺名称",
+            "type": "text",
+            "placeholder": "例如：皮影戏、苏绣、景泰蓝、木版年画"
+          }
+        ],
+        "cards": [
+          { "card_id": "template-intangible-heritage-zh-shadow-puppetry", "craft_name": "皮影戏" }
+        ]
+      },
+      {
+        "id": "template-education-card-zh",
+        "description": "Turn an input topic into a Chinese educational infographic in either cute cartoon style or chalkboard scientific sketch style (3:4).",
+        "category": "学科知识卡片",
+        "language": "zh",
+        "base_prompt": "根据输入内容【{topic}】提取核心主题与要点，生成信息图（两种风格任选其一）：A）可爱数字卡通风：横版3:4，背景纯白/极浅纯色，马卡龙配色，线条圆润；用圆角矩形、流程图、箭头组织信息；加入少量拟人化可爱图标；文字为圆润无衬线卡通风，突出关键词，多留白。B）手绘黑板报/科学手稿粉笔草图风：竖版3:4，深灰近黑板纹理背景；主体白色粉笔线条+交叉排线阴影；用少量高饱和点缀色强调关键图形与注释；整体像灵感迸发的草稿页，元素密集但核心清晰。默认语言随输入内容语言一致。",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "知识点主题",
+            "type": "text",
+            "placeholder": "例如：光合作用原理、勾股定理证明"
+          }
+        ],
+        "cards": [
+          { "card_id": "template-education-card-zh-photosynthesis", "topic": "光合作用原理" }
+        ]
+      },
+      {
+        "id": "template-education-card-en",
+        "description": "Turn an input topic into an educational infographic in either cute pastel cartoon style or chalkboard scientific sketch style (3:4).",
+        "category": "Educational Knowledge Card",
+        "language": "en",
+        "base_prompt": "Extract the core theme and key points from the input 【{topic}】 and generate an educational infographic in one of two styles: (A) Cute digital cartoon style: horizontal 3:4, pure white or very light background, pastel macaron palette, soft rounded lines; organize info with rounded rectangles, flowcharts, and arrows; add a few personified cute icons; clear rounded sans-serif cartoon typography; highlight keywords with generous whitespace. (B) Chalkboard scientific sketch style: vertical 3:4, dark gray/near-black textured chalkboard background; main elements in white/gray chalk strokes with cross-hatching; small vivid accent colors to highlight key graphics/notes; dense but clearly guided; text in irregular hand-drawn chalk lettering. Default language follows the input language.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Topic",
+            "type": "text",
+            "placeholder": "e.g., Photosynthesis, Pythagorean Theorem"
+          }
+        ],
+        "cards": [
+          { "card_id": "template-education-card-en-photosynthesis", "topic": "Photosynthesis" }
+        ]
+      }    
   ]
 }

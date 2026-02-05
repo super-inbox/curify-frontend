@@ -1,186 +1,1104 @@
-[
-  {
-    "id": "1-zh",
-    "language": "zh",
-    "category": "中草药类",
-    "template_id": "template-herbal-zh",
-    "image_urls": [
-      "/images/nano_insp/herbal_medicine_1.jpg",
-      "/images/nano_insp/herbal_medicine_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/herbal_medicine_1_prev.jpg",
-      "/images/nano_insp_preview/herbal_medicine_2_prev.jpg"
-    ],
-    "prompt": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把\"单味药材\"画成全景式知识分解图。根据用户指定的【中药材名称】，生成一张\"单味药材全景分解图（Herb Exploded Sheet）\"：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【 】。"
-  },
-  {
-    "id": "1-en",
-    "language": "en",
-    "category": "Herbal Medicine Exploded Diagram",
-    "template_id": "template-herbal-en",
-    "image_urls": [
-      "/images/nano_insp/herbal_medicine_1.jpg",
-      "/images/nano_insp/herbal_medicine_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/herbal_medicine_1_prev.jpg",
-      "/images/nano_insp_preview/herbal_medicine_2_prev.jpg"
-    ],
-    "prompt": "(Medica Concept Artist) You are a top-tier herbal concept illustrator who turns a single traditional herb into a panoramic, encyclopedia-style exploded knowledge sheet. Create a \"Herb Exploded Sheet\" for the specified herb: place a high-detail illustration of the sliced/dried herbal material at the center; surround it with evenly arranged modules showing the source plant (full form), key plant parts (root/bark/fruit) with callouts, cross-sections and texture zoom-ins, TCM property tags (four natures, five flavors, meridian entry) as sticker-like labels, icon-based functions and daily usage scenes (e.g., herbal tea, decoction pot), modern forms (powder/granules/capsules/decoction), and 1–2 material texture magnifiers. Connect all modules with fine lines/arrows/frames to form a poster-like science infographic. Style: high-quality 2D illustration with clean linework and soft coloring on a beige/parchment/light-gray research-poster background; handwritten-style Chinese notes with small English counterparts. Output: single-page vertical 4K poster with clear whitespace and structured sections; educational only, no medical claims. Render directly for herb: [ ]."
-  },
-  {
-    "id": "2-zh",
-    "language": "zh",
-    "category": "发展纪年类",
-    "template_id": "template-evolution-zh",
-    "image_urls": [
-      "/images/nano_insp/evolution_timeline_1.jpg",
-      "/images/nano_insp/evolution_timeline_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/evolution_timeline_1_prev.jpg",
-      "/images/nano_insp_preview/evolution_timeline_2_prev.jpg"
-    ],
-    "prompt": "核心提示词：nano banana分析图配套图文创作，生成超高细节等距像素艺术时间线插画，比例3:4，分辨率4K，整体风格兼具繁复细节、象征意义与隐喻性。构建\"【主题】演进博物馆/陈列馆\"的等距像素场景，以不同展区对应不同历史阶段（起源奠基期/发展兴盛期/变革转型期/当代及未来期），形成\"空间递进=时间演进\"。标准等距透视（2:1），层次丰富、衔接流畅；每阶段搭配3-5个强关联象征元素；用阶段差异化配色实现\"色彩递进=时间流转\"。融入双语像素字体标题：中文\"【主题】演进史\"，英文\"EVOLUTION OF [THEME]\"；副标题\"从[起始节点]到[未来展望] / From [Start] to [Future]\"，并加入关键节点时间标记。整体兼顾专业性与观赏性，预留解读空间，适配学术解析与可视化对比展示。"
-  },
-  {
-    "id": "3-zh",
-    "language": "zh",
-    "category": "旅游规划图",
-    "template_id": "template-travel-zh",
-    "image_urls": [
-      "/images/nano_insp/travel_planning_1.jpg",
-      "/images/nano_insp/travel_planning_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/travel_planning_1_prev.jpg",
-      "/images/nano_insp_preview/travel_planning_2_prev.jpg"
-    ],
-    "prompt": "角色：可爱手绘风旅行插画师，把行程转化为色彩明快、细节满满的卡通地图。要求：1）手绘可爱风，景点/美食/住宿/交通全部设计成萌系图案；2）全程用简体中文精准标注地点与行程；3）清晰标出地点间移动路线，按日期分块展示每日重点活动；4）画幅4:3，解析度为基础两倍。可替换：目的地、行程时段（如1/19-1/25、1/26-1/30）、重点景点、美食、季节元素、地图精准度需求（如更准确海岸线/地形）。"
-  },
-  {
-    "id": "4-zh",
-    "language": "zh",
-    "category": "建筑分析图",
-    "template_id": "template-architecture-zh",
-    "image_urls": [
-      "/images/nano_insp/architecture_analysis_1.jpg",
-      "/images/nano_insp/architecture_analysis_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/architecture_analysis_1_prev.jpg",
-      "/images/nano_insp_preview/architecture_analysis_2_prev.jpg"
-    ],
-    "prompt": "制作一张【Xxx地标】的信息图：结合地标真实照片与白色技术注释/图解叠加，在角落手绘方框中写建筑名称。叠加复杂白色技术标注，展示关键结构数据、重要测量、材料数量、细部做法，并包含剖面图、平面图以及显著建筑/工程特征。风格：HUD平视显示、信息图表美学、细致清晰白线、技术/建筑注释风格、教育信息图感；注释后能看到真实环境；竖向构图。"
-  },
-  {
-    "id": "5-zh",
-    "language": "zh",
-    "category": "动植物保护",
-    "template_id": "template-species-zh",
-    "image_urls": [
-      "/images/nano_insp/endangered_species_1.jpg",
-      "/images/nano_insp/endangered_species_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/endangered_species_1_prev.jpg",
-      "/images/nano_insp_preview/endangered_species_2_prev.jpg"
-    ],
-    "prompt": "生成一张3:4竖版的濒危物种【输入物种名称】综合性知识图谱信息卡片，采用赛博朋克科技美学风格，背景为深邃的深海黑或森林墨绿，用半透明的青绿色、冰蓝色、珊瑚粉荧光霓虹线条勾勒模块边框和数据可视化图形，整体呈现未来感UI界面，采用分层设计，添加柔和的发光效果，结合写实动物插画与简洁矢量图标。卡片必须包含以下6个核心模块，每个模块均配有中英双语标注：1生物学本体（分类层级+形态参数+局部特写）；2生态与栖息地（分布图+环境指标+栖息地分层）；3行为与社会结构（行为占比饼图+社会结构图+声波可视化）；4生命周期与种群动态（时间轴+30年趋势折线+保护等级）；5威胁机制与风险结构（雷达图+威胁图标注解）；6保护/文化/人类关系（行动循环流程+政策节点+文化象征）。中央放大写实插画并有柔光晕，文字干净科技感，结尾加\"Nano, banana.\""
-  },
-  {
-    "id": "6-zh",
-    "language": "zh",
-    "category": "人物像素拆解",
-    "template_id": "template-character-zh",
-    "image_urls": [
-      "/images/nano_insp/character_breakdown_1.jpg",
-      "/images/nano_insp/character_breakdown_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/character_breakdown_1_prev.jpg",
-      "/images/nano_insp_preview/character_breakdown_2_prev.jpg"
-    ],
-    "prompt": "你是一位顶尖的游戏与动漫概念美术设计大师，擅长制作详尽的角色设定图。你具备\"像素级拆解\"的能力，能够透视角色的穿着层级、捕捉微表情变化，并将与其相关的物品进行具象化还原。根据【输入所需拆解的人物出处与被拆解对象名称】，生成一张\"全景式角色深度概念分解图\"，图片比例3:4。"
-  },
-  {
-    "id": "8-zh",
-    "language": "zh",
-    "category": "食谱",
-    "template_id": "template-recipe-zh",
-    "image_urls": [
-      "/images/nano_insp/visual_recipe_1.jpg",
-      "/images/nano_insp/visual_recipe_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/visual_recipe_1_prev.jpg",
-      "/images/nano_insp_preview/visual_recipe_2_prev.jpg"
-    ],
-    "prompt": "Role：世界级视觉菜谱设计师，把复杂烹饪过程转化为直观、美观且逻辑严密的\"全景烹饪施工图\"。画风融合春节温馨氛围、吉卜力美食质感与达芬奇手稿严谨结构。"
-  },
-  {
-    "id": "9-zh",
-    "language": "zh",
-    "category": "动植物科普",
-    "template_id": "template-species-science-zh",
-    "image_urls": [
-      "/images/nano_insp/species_science_1.jpg",
-      "/images/nano_insp/species_science_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/species_science_1_prev.jpg",
-      "/images/nano_insp_preview/species_science_2_prev.jpg"
-    ],
-    "prompt": "生成一张信息图表风格插画：中心为【东北虎】大图，四周以卡片式信息框排列特征、功能、寿命、结构、生物细节等模块。整体参考科学图鉴/科普书籍插图，摄影级细节，文字用中文。风格现代科学图鉴，严谨且美观。比例3:4。"
-  },
-  {
-    "id": "10-zh",
-    "language": "zh",
-    "category": "人物分析图",
-    "template_id": "template-character-analysis-zh",
-    "image_urls": [
-      "/images/nano_insp/character_analysis_1.jpg",
-      "/images/nano_insp/character_analysis_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/character_analysis_1_prev.jpg",
-      "/images/nano_insp_preview/character_analysis_2_prev.jpg"
-    ],
-    "prompt": "生成一张【角色名】详细信息图，采用【具体艺术风格】美学。中间为角色经典半身/全身画像（服装/动作/表情），置于指定材质/形状相框中。"
-  },
-  {
-    "id": "13-zh",
-    "language": "zh",
-    "category": "微缩城市天气预报",
-    "template_id": "template-weather-zh",
-    "image_urls": [
-      "/images/nano_insp/mini_city_weather_1.jpg",
-      "/images/nano_insp/mini_city_weather_2.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/mini_city_weather_1_prev.jpg",
-      "/images/nano_insp_preview/mini_city_weather_2_prev.jpg"
-    ],
-    "prompt": "生成1:1等距微缩3D卡通城市天气场景：45°俯视顶视角，地标居中，模型精致，PBR材质与柔和真实光影。"
-  },
-  {
-    "id": "14-zh",
-    "language": "zh",
-    "category": "学科知识卡片",
-    "template_id": "template-education-zh",
-    "image_urls": [
-      "/images/nano_insp/education_card_1.jpg",
-      "/images/nano_insp/education_card_2.jpg",
-      "/images/nano_insp/education_card_3.jpg",
-      "/images/nano_insp/education_card_4.jpg"
-    ],
-    "preview_image_urls": [
-      "/images/nano_insp_preview/education_card_1_prev.jpg",
-      "/images/nano_insp_preview/education_card_2_prev.jpg",
-      "/images/nano_insp_preview/education_card_3_prev.jpg",
-      "/images/nano_insp_preview/education_card_4_prev.jpg"
-    ],
-    "prompt": "根据输入内容提取核心主题与要点，生成信息图（两种风格任选其一）：A）可爱数字卡通风：横版3:4，背景纯白/极浅纯色，马卡龙配色。"
-  }
-]
+{
+  "cards": [
+    {
+      "card_id": "template-herbal-zh-ginseng",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "人参" },
+      "image_url": "/images/template_cards/template-herbal-zh-ginseng.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-ginseng-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-angelica",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "当归" },
+      "image_url": "/images/template_cards/template-herbal-zh-angelica.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-angelica-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-astragalus",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "黄芪" },
+      "image_url": "/images/template_cards/template-herbal-zh-astragalus.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-astragalus-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-goji-berry",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "枸杞" },
+      "image_url": "/images/template_cards/template-herbal-zh-goji-berry.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-goji-berry-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-licorice",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "甘草" },
+      "image_url": "/images/template_cards/template-herbal-zh-licorice.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-licorice-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-honeysuckle",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "金银花" },
+      "image_url": "/images/template_cards/template-herbal-zh-honeysuckle.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-honeysuckle-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-chrysanthemum",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "菊花" },
+      "image_url": "/images/template_cards/template-herbal-zh-chrysanthemum.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-chrysanthemum-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-dried-tangerine-peel",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "陈皮" },
+      "image_url": "/images/template_cards/template-herbal-zh-dried-tangerine-peel.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-dried-tangerine-peel-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-red-date",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "红枣" },
+      "image_url": "/images/template_cards/template-herbal-zh-red-date.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-red-date-prev.png"
+    },
+    {
+      "card_id": "template-herbal-zh-notoginseng",
+      "template_id": "template-herbal-zh",
+      "language": "zh",
+      "category": "中草药类",
+      "parameters": { "herb_name": "三七" },
+      "image_url": "/images/template_cards/template-herbal-zh-notoginseng.png",
+      "preview_image_url": "/images/template_cards/template-herbal-zh-notoginseng-prev.png"
+    },
+
+    {
+      "card_id": "template-evolution-zh-chinese-social-changes",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "中国社会变迁",
+        "theme_en": "Chinese Social Changes",
+        "start_period": "原始社会",
+        "end_period": "新时代"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-chinese-social-changes.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-chinese-social-changes-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-internet-technology",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "互联网技术",
+        "theme_en": "Internet Technology",
+        "start_period": "1990年代",
+        "end_period": "AI时代"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-internet-technology.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-internet-technology-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-transportation",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "交通工具",
+        "theme_en": "Transportation",
+        "start_period": "马车时代",
+        "end_period": "新能源汽车"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-transportation.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-transportation-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-communication",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "通讯方式",
+        "theme_en": "Communication",
+        "start_period": "飞鸽传书",
+        "end_period": "5G网络"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-communication.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-communication-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-architecture",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "建筑风格",
+        "theme_en": "Architecture",
+        "start_period": "古典建筑",
+        "end_period": "摩天大楼"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-architecture.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-architecture-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-education-system",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "教育体系",
+        "theme_en": "Education System",
+        "start_period": "私塾教育",
+        "end_period": "在线教育"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-education-system.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-education-system-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-medical-technology",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "医疗技术",
+        "theme_en": "Medical Technology",
+        "start_period": "传统医学",
+        "end_period": "精准医疗"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-medical-technology.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-medical-technology-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-energy-usage",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "能源利用",
+        "theme_en": "Energy Usage",
+        "start_period": "薪柴时代",
+        "end_period": "清洁能源"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-energy-usage.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-energy-usage-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-currency-forms",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "货币形态",
+        "theme_en": "Currency Forms",
+        "start_period": "贝壳货币",
+        "end_period": "数字货币"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-currency-forms.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-currency-forms-prev.png"
+    },
+    {
+      "card_id": "template-evolution-zh-entertainment",
+      "template_id": "template-evolution-zh",
+      "language": "zh",
+      "category": "发展纪年类",
+      "parameters": {
+        "theme": "娱乐方式",
+        "theme_en": "Entertainment",
+        "start_period": "戏曲表演",
+        "end_period": "虚拟现实"
+      },
+      "image_url": "/images/template_cards/template-evolution-zh-entertainment.png",
+      "preview_image_url": "/images/template_cards/template-evolution-zh-entertainment-prev.png"
+    },
+
+    {
+      "card_id": "template-travel-zh-beijing",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "北京", "date_range": "1/19-1/25" },
+      "image_url": "/images/template_cards/template-travel-zh-beijing.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-beijing-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-dali",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "大理", "date_range": "7/1-7/5" },
+      "image_url": "/images/template_cards/template-travel-zh-dali.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-dali-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-chengdu",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "成都", "date_range": "10/1-10/7" },
+      "image_url": "/images/template_cards/template-travel-zh-chengdu.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-chengdu-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-xiamen",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "厦门", "date_range": "4/15-4/20" },
+      "image_url": "/images/template_cards/template-travel-zh-xiamen.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-xiamen-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-xian",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "西安", "date_range": "5/1-5/5" },
+      "image_url": "/images/template_cards/template-travel-zh-xian.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-xian-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-hangzhou",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "杭州", "date_range": "3/10-3/15" },
+      "image_url": "/images/template_cards/template-travel-zh-hangzhou.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-hangzhou-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-qingdao",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "青岛", "date_range": "8/5-8/10" },
+      "image_url": "/images/template_cards/template-travel-zh-qingdao.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-qingdao-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-lijiang",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "丽江", "date_range": "11/20-11/25" },
+      "image_url": "/images/template_cards/template-travel-zh-lijiang.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-lijiang-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-sanya",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "三亚", "date_range": "12/15-12/20" },
+      "image_url": "/images/template_cards/template-travel-zh-sanya.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-sanya-prev.png"
+    },
+    {
+      "card_id": "template-travel-zh-guilin",
+      "template_id": "template-travel-zh",
+      "language": "zh",
+      "category": "旅游规划图",
+      "parameters": { "destination": "桂林", "date_range": "9/10-9/15" },
+      "image_url": "/images/template_cards/template-travel-zh-guilin.png",
+      "preview_image_url": "/images/template_cards/template-travel-zh-guilin-prev.png"
+    },
+
+    {
+      "card_id": "template-architecture-zh-oriental-pearl-tower",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "东方明珠广播电视塔" },
+      "image_url": "/images/template_cards/template-architecture-zh-oriental-pearl-tower.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-oriental-pearl-tower-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-national-stadium-bird-nest",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "国家体育场（鸟巢）" },
+      "image_url": "/images/template_cards/template-architecture-zh-national-stadium-bird-nest.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-national-stadium-bird-nest-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-shanghai-tower",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "上海中心大厦" },
+      "image_url": "/images/template_cards/template-architecture-zh-shanghai-tower.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-shanghai-tower-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-canton-tower",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "广州塔" },
+      "image_url": "/images/template_cards/template-architecture-zh-canton-tower.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-canton-tower-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-hong-kong-zhuhai-macao-bridge",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "港珠澳大桥" },
+      "image_url": "/images/template_cards/template-architecture-zh-hong-kong-zhuhai-macao-bridge.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-hong-kong-zhuhai-macao-bridge-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-national-centre-for-the-performing-arts",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "国家大剧院" },
+      "image_url": "/images/template_cards/template-architecture-zh-national-centre-for-the-performing-arts.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-national-centre-for-the-performing-arts-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-cctv-headquarters",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "央视总部大楼" },
+      "image_url": "/images/template_cards/template-architecture-zh-cctv-headquarters.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-cctv-headquarters-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-ping-an-finance-centre",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "深圳平安金融中心" },
+      "image_url": "/images/template_cards/template-architecture-zh-ping-an-finance-centre.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-ping-an-finance-centre-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-taipei-101",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "台北101大楼" },
+      "image_url": "/images/template_cards/template-architecture-zh-taipei-101.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-taipei-101-prev.png"
+    },
+    {
+      "card_id": "template-architecture-zh-giant-wild-goose-pagoda",
+      "template_id": "template-architecture-zh",
+      "language": "zh",
+      "category": "建筑分析图",
+      "parameters": { "landmark": "西安大雁塔" },
+      "image_url": "/images/template_cards/template-architecture-zh-giant-wild-goose-pagoda.png",
+      "preview_image_url": "/images/template_cards/template-architecture-zh-giant-wild-goose-pagoda-prev.png"
+    },
+
+    {
+      "card_id": "template-species-zh-giant-panda",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "大熊猫" },
+      "image_url": "/images/template_cards/template-species-zh-giant-panda.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-giant-panda-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-siberian-tiger",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "东北虎" },
+      "image_url": "/images/template_cards/template-species-zh-siberian-tiger.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-siberian-tiger-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-baiji",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "白鳍豚" },
+      "image_url": "/images/template_cards/template-species-zh-baiji.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-baiji-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-chinese-sturgeon",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "中华鲟" },
+      "image_url": "/images/template_cards/template-species-zh-chinese-sturgeon.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-chinese-sturgeon-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-tibetan-antelope",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "藏羚羊" },
+      "image_url": "/images/template_cards/template-species-zh-tibetan-antelope.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-tibetan-antelope-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-golden-snub-nosed-monkey",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "金丝猴" },
+      "image_url": "/images/template_cards/template-species-zh-golden-snub-nosed-monkey.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-golden-snub-nosed-monkey-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-chinese-alligator",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "扬子鳄" },
+      "image_url": "/images/template_cards/template-species-zh-chinese-alligator.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-chinese-alligator-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-crested-ibis",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "朱鹮" },
+      "image_url": "/images/template_cards/template-species-zh-crested-ibis.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-crested-ibis-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-snow-leopard",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "雪豹" },
+      "image_url": "/images/template_cards/template-species-zh-snow-leopard.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-snow-leopard-prev.png"
+    },
+    {
+      "card_id": "template-species-zh-black-necked-crane",
+      "template_id": "template-species-zh",
+      "language": "zh",
+      "category": "动植物保护",
+      "parameters": { "species_name": "黑颈鹤" },
+      "image_url": "/images/template_cards/template-species-zh-black-necked-crane.png",
+      "preview_image_url": "/images/template_cards/template-species-zh-black-necked-crane-prev.png"
+    },
+
+    {
+      "card_id": "template-character-zh-crayon-shinchan-shinnosuke-nohara",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "蜡笔小新", "character_name": "野原新之助" },
+      "image_url": "/images/template_cards/template-character-zh-crayon-shinchan-shinnosuke-nohara.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-crayon-shinchan-shinnosuke-nohara-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-detective-conan-shinichi-kudo",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "名侦探柯南", "character_name": "工藤新一" },
+      "image_url": "/images/template_cards/template-character-zh-detective-conan-shinichi-kudo.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-detective-conan-shinichi-kudo-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-naruto-naruto-uzumaki",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "火影忍者", "character_name": "漩涡鸣人" },
+      "image_url": "/images/template_cards/template-character-zh-naruto-naruto-uzumaki.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-naruto-naruto-uzumaki-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-one-piece-luffy",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "海贼王", "character_name": "路飞" },
+      "image_url": "/images/template_cards/template-character-zh-one-piece-luffy.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-one-piece-luffy-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-attack-on-titan-eren-yeager",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "进击的巨人", "character_name": "艾伦" },
+      "image_url": "/images/template_cards/template-character-zh-attack-on-titan-eren-yeager.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-attack-on-titan-eren-yeager-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-my-neighbor-totoro-satsuki-kusakabe",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "龙猫", "character_name": "草壁小月" },
+      "image_url": "/images/template_cards/template-character-zh-my-neighbor-totoro-satsuki-kusakabe.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-my-neighbor-totoro-satsuki-kusakabe-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-spirited-away-chihiro",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "千与千寻", "character_name": "千寻" },
+      "image_url": "/images/template_cards/template-character-zh-spirited-away-chihiro.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-spirited-away-chihiro-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-pokemon-ash-ketchum",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "宝可梦", "character_name": "小智" },
+      "image_url": "/images/template_cards/template-character-zh-pokemon-ash-ketchum.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-pokemon-ash-ketchum-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-slam-dunk-hanamichi-sakuragi",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "灌篮高手", "character_name": "樱木花道" },
+      "image_url": "/images/template_cards/template-character-zh-slam-dunk-hanamichi-sakuragi.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-slam-dunk-hanamichi-sakuragi-prev.png"
+    },
+    {
+      "card_id": "template-character-zh-doraemon-doraemon",
+      "template_id": "template-character-zh",
+      "language": "zh",
+      "category": "人物像素拆解",
+      "parameters": { "character_source": "哆啦A梦", "character_name": "哆啦A梦" },
+      "image_url": "/images/template_cards/template-character-zh-doraemon-doraemon.png",
+      "preview_image_url": "/images/template_cards/template-character-zh-doraemon-doraemon-prev.png"
+    },
+
+    {
+      "card_id": "template-recipe-zh-braised-pork-belly",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "经典红烧肉" },
+      "image_url": "/images/template_cards/template-recipe-zh-braised-pork-belly.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-braised-pork-belly-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-steamed-perch",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "清蒸鲈鱼" },
+      "image_url": "/images/template_cards/template-recipe-zh-steamed-perch.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-steamed-perch-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-four-joy-meatballs",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "四喜丸子" },
+      "image_url": "/images/template_cards/template-recipe-zh-four-joy-meatballs.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-four-joy-meatballs-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-buddha-jumps-over-the-wall",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "佛跳墙" },
+      "image_url": "/images/template_cards/template-recipe-zh-buddha-jumps-over-the-wall.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-buddha-jumps-over-the-wall-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-sweet-and-sour-ribs",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "糖醋排骨" },
+      "image_url": "/images/template_cards/template-recipe-zh-sweet-and-sour-ribs.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-sweet-and-sour-ribs-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-kung-pao-chicken",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "宫保鸡丁" },
+      "image_url": "/images/template_cards/template-recipe-zh-kung-pao-chicken.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-kung-pao-chicken-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-mapo-tofu",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "麻婆豆腐" },
+      "image_url": "/images/template_cards/template-recipe-zh-mapo-tofu.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-mapo-tofu-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-dongpo-pork",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "东坡肉" },
+      "image_url": "/images/template_cards/template-recipe-zh-dongpo-pork.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-dongpo-pork-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-lion-head-meatballs",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "狮子头" },
+      "image_url": "/images/template_cards/template-recipe-zh-lion-head-meatballs.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-lion-head-meatballs-prev.png"
+    },
+    {
+      "card_id": "template-recipe-zh-boiled-fish-in-chili-oil",
+      "template_id": "template-recipe-zh",
+      "language": "zh",
+      "category": "食谱",
+      "parameters": { "dish_name": "水煮鱼" },
+      "image_url": "/images/template_cards/template-recipe-zh-boiled-fish-in-chili-oil.png",
+      "preview_image_url": "/images/template_cards/template-recipe-zh-boiled-fish-in-chili-oil-prev.png"
+    },
+
+    {
+      "card_id": "template-species-science-zh-golden-snub-nosed-monkey",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "金丝猴" },
+      "image_url": "/images/template_cards/template-species-science-zh-golden-snub-nosed-monkey.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-golden-snub-nosed-monkey-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-giant-panda",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "大熊猫" },
+      "image_url": "/images/template_cards/template-species-science-zh-giant-panda.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-giant-panda-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-chinese-sturgeon",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "中华鲟" },
+      "image_url": "/images/template_cards/template-species-science-zh-chinese-sturgeon.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-chinese-sturgeon-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-egret",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "白鹭" },
+      "image_url": "/images/template_cards/template-species-science-zh-egret.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-egret-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-ginkgo-tree",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "银杏树" },
+      "image_url": "/images/template_cards/template-species-science-zh-ginkgo-tree.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-ginkgo-tree-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-dawn-redwood",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "水杉" },
+      "image_url": "/images/template_cards/template-species-science-zh-dawn-redwood.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-dawn-redwood-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-dove-tree",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "珙桐" },
+      "image_url": "/images/template_cards/template-species-science-zh-dove-tree.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-dove-tree-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-pangolin",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "穿山甲" },
+      "image_url": "/images/template_cards/template-species-science-zh-pangolin.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-pangolin-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-red-crowned-crane",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "丹顶鹤" },
+      "image_url": "/images/template_cards/template-species-science-zh-red-crowned-crane.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-red-crowned-crane-prev.png"
+    },
+    {
+      "card_id": "template-species-science-zh-chinese-giant-salamander",
+      "template_id": "template-species-science-zh",
+      "language": "zh",
+      "category": "动植物科普",
+      "parameters": { "species_name": "娃娃鱼" },
+      "image_url": "/images/template_cards/template-species-science-zh-chinese-giant-salamander.png",
+      "preview_image_url": "/images/template_cards/template-species-science-zh-chinese-giant-salamander-prev.png"
+    },
+
+    {
+      "card_id": "template-character-analysis-zh-sun-wukong",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "孙悟空",
+        "art_style": "水墨工笔风",
+        "left_section_title": "个人档案",
+        "right_section_title": "羁绊关系"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-sun-wukong.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-sun-wukong-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-nezha",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "哪吒",
+        "art_style": "国潮赛博朋克",
+        "left_section_title": "属性面板",
+        "right_section_title": "人际网络"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-nezha.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-nezha-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-bai-suzhen",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "白素贞",
+        "art_style": "古风仙侠",
+        "left_section_title": "仙籍档案",
+        "right_section_title": "情缘羁绊"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-bai-suzhen.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-bai-suzhen-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-hua-mulan",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "花木兰",
+        "art_style": "军事写实",
+        "left_section_title": "军籍档案",
+        "right_section_title": "战友情谊"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-hua-mulan.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-hua-mulan-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-bao-qingtian",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "包青天",
+        "art_style": "复古海报",
+        "left_section_title": "官员档案",
+        "right_section_title": "案件关联"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-bao-qingtian.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-bao-qingtian-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-zhong-kui",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "钟馗",
+        "art_style": "暗黑哥特",
+        "left_section_title": "神职档案",
+        "right_section_title": "阴阳关系"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-zhong-kui.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-zhong-kui-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-chang-e",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "嫦娥",
+        "art_style": "梦幻唯美",
+        "left_section_title": "仙界档案",
+        "right_section_title": "月宫往来"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-chang-e.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-chang-e-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-guan-yu",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "关羽",
+        "art_style": "三国志实录",
+        "left_section_title": "武将档案",
+        "right_section_title": "结义兄弟"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-guan-yu.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-guan-yu-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-lin-daiyu",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "林黛玉",
+        "art_style": "红楼工笔",
+        "left_section_title": "人物小传",
+        "right_section_title": "情感纠葛"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-lin-daiyu.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-lin-daiyu-prev.png"
+    },
+    {
+      "card_id": "template-character-analysis-zh-ji-gong",
+      "template_id": "template-character-analysis-zh",
+      "language": "zh",
+      "category": "人物分析图",
+      "parameters": {
+        "character_name": "济公",
+        "art_style": "禅意漫画",
+        "left_section_title": "僧人档案",
+        "right_section_title": "度化众生"
+      },
+      "image_url": "/images/template_cards/template-character-analysis-zh-ji-gong.png",
+      "preview_image_url": "/images/template_cards/template-character-analysis-zh-ji-gong-prev.png"
+    },
+
+    {
+      "card_id": "template-weather-zh-beijing",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "北京" },
+      "image_url": "/images/template_cards/template-weather-zh-beijing.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-beijing-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-shanghai",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "上海" },
+      "image_url": "/images/template_cards/template-weather-zh-shanghai.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-shanghai-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-guangzhou",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "广州" },
+      "image_url": "/images/template_cards/template-weather-zh-guangzhou.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-guangzhou-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-shenzhen",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "深圳" },
+      "image_url": "/images/template_cards/template-weather-zh-shenzhen.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-shenzhen-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-chengdu",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "成都" },
+      "image_url": "/images/template_cards/template-weather-zh-chengdu.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-chengdu-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-hangzhou",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "杭州" },
+      "image_url": "/images/template_cards/template-weather-zh-hangzhou.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-hangzhou-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-xian",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "西安" },
+      "image_url": "/images/template_cards/template-weather-zh-xian.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-xian-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-chongqing",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "重庆" },
+      "image_url": "/images/template_cards/template-weather-zh-chongqing.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-chongqing-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-nanjing",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "南京" },
+      "image_url": "/images/template_cards/template-weather-zh-nanjing.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-nanjing-prev.png"
+    },
+    {
+      "card_id": "template-weather-zh-wuhan",
+      "template_id": "template-weather-zh",
+      "language": "zh",
+      "category": "微缩城市天气预报",
+      "parameters": { "city_name": "武汉" },
+      "image_url": "/images/template_cards/template-weather-zh-wuhan.png",
+      "preview_image_url": "/images/template_cards/template-weather-zh-wuhan-prev.png"
+    },
+
+    {
+      "card_id": "template-education-zh-photosynthesis",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "光合作用原理" },
+      "image_url": "/images/template_cards/template-education-zh-photosynthesis.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-photosynthesis-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-pythagorean-theorem",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "勾股定理证明" },
+      "image_url": "/images/template_cards/template-education-zh-pythagorean-theorem.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-pythagorean-theorem-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-periodic-table",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "元素周期表规律" },
+      "image_url": "/images/template_cards/template-education-zh-periodic-table.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-periodic-table-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-newtons-laws",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "牛顿三大定律" },
+      "image_url": "/images/template_cards/template-education-zh-newtons-laws.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-newtons-laws-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-dna-double-helix",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "DNA双螺旋结构" },
+      "image_url": "/images/template_cards/template-education-zh-dna-double-helix.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-dna-double-helix-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-water-cycle",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "水循环过程" },
+      "image_url": "/images/template_cards/template-education-zh-water-cycle.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-water-cycle-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-cell-division",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "细胞分裂过程" },
+      "image_url": "/images/template_cards/template-education-zh-cell-division.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-cell-division-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-electromagnetic-induction",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "电磁感应原理" },
+      "image_url": "/images/template_cards/template-education-zh-electromagnetic-induction.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-electromagnetic-induction-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-plate-tectonics",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "板块构造学说" },
+      "image_url": "/images/template_cards/template-education-zh-plate-tectonics.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-plate-tectonics-prev.png"
+    },
+    {
+      "card_id": "template-education-zh-conservation-of-energy",
+      "template_id": "template-education-zh",
+      "language": "zh",
+      "category": "学科知识卡片",
+      "parameters": { "topic": "能量守恒定律" },
+      "image_url": "/images/template_cards/template-education-zh-conservation-of-energy.png",
+      "preview_image_url": "/images/template_cards/template-education-zh-conservation-of-energy-prev.png"
+    }
+  ]
+}
