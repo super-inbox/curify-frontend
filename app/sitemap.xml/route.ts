@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import blogs from "@/content/blogs.json";
 
+// ✅ Add nano templates
+import nanoTemplates from "@/public/data/nano_templates.json";
+
 export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
@@ -28,6 +31,22 @@ const STATIC_ROUTES = [
 // Blog routes
 function getBlogRoutes() {
   return blogs.map((slug: string) => `/blog/${slug}`);
+}
+
+// ✅ Nano template routes
+function getNanoTemplateRoutes() {
+  // Your page accepts both "template-xxx" and "xxx", but we pick a single canonical slug.
+  // Safer default: use the existing template_id if present.
+  const raws = nanoTemplates as unknown as Array<any>;
+
+  const slugs = raws
+    .map((t) => t?.id ?? t?.template_id ?? t?.templateId ?? null)
+    .filter((v): v is string => typeof v === "string" && v.trim().length > 0)
+    .map((s) => s.trim());
+
+  const unique = Array.from(new Set(slugs));
+
+  return unique.map((slug) => `/nano-template/${encodeURIComponent(slug)}`);
 }
 
 // hreflang block
@@ -68,6 +87,8 @@ function generateUrlEntry(
 
 export async function GET() {
   const blogRoutes = getBlogRoutes();
+  const nanoTemplateRoutes = getNanoTemplateRoutes();
+
   let urls = "";
 
   // Static routes × locales
@@ -86,6 +107,16 @@ export async function GET() {
       urls += generateUrlEntry(locale, route, {
         changefreq: "weekly",
         priority: "0.7",
+      });
+    });
+  });
+
+  // ✅ Nano template routes × locales
+  nanoTemplateRoutes.forEach((route) => {
+    LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        changefreq: "weekly",
+        priority: "0.6",
       });
     });
   });

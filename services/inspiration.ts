@@ -1,7 +1,7 @@
 import { apiClient } from "./api"; 
 import { InspirationCardDTO } from "@/types/inspiration";
 
-import { NanoInspirationCardType } from "@/app/[locale]/_components/NanoInspirationCard";
+import { NanoInspirationCardType } from "@/lib/nano_utils";
 import { cache } from "react"; // 1. Import React Cache
 
 // Define fetch options type

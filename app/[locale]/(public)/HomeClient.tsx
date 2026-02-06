@@ -12,10 +12,19 @@ import {
   type InspirationCardType,
 } from "@/app/[locale]/_components/InspirationCard";
 import {
-  NanoInspirationRow,
-  type NanoInspirationCardType,
+  NanoInspirationRow,  
 } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
+
+import { NanoInspirationCardType } from "@/lib/nano_utils";
+
+import {
+  buildNanoRegistry,
+  buildNanoFeedCards,
+  normalizeLocale,
+  type RawTemplate,
+  type RawNanoImageRecord,
+} from "@/lib/nano_utils";
 
 // --- Font (modern SaaS look) ---
 const inter = Inter({
@@ -34,11 +43,10 @@ function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-function getInterleavedData(
-  mainCards: InspirationCardType[],
-  nanoCards: NanoInspirationCardType[]
-): InterleavedItem[] {
+function getInterleavedData(mainCards: InspirationCardType[], nanoCards: NanoInspirationCardType[]): InterleavedItem[] {
   const result: InterleavedItem[] = [];
+  let inserted = false;
+
   mainCards.forEach((card, index) => {
     result.push({ type: "inspiration", card });
     if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
@@ -47,27 +55,71 @@ function getInterleavedData(
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
       if (rowCards.length > 0) {
         result.push({ type: "nano", cards: rowCards });
+        inserted = true;
       }
     }
   });
+
+  if (!inserted && nanoCards.length > 0) {
+    result.push({ type: "nano", cards: nanoCards.slice(0, 3) });
+  }
+
   return result;
 }
 
-// --- Custom Hooks ---
+
 function useNanoCards(activeLang: Lang) {
-  const [allNanoCards, setAllNanoCards] = useState<NanoInspirationCardType[]>(
-    []
-  );
+  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
+
   useEffect(() => {
-    fetch("/data/nano_inspiration.json")
-      .then((res) => res.json())
-      .then((data) => setAllNanoCards(data))
-      .catch((err) => console.error("Failed to load nano cards:", err));
-  }, []);
-  return useMemo(
-    () => allNanoCards.filter((n) => n.language === activeLang),
-    [allNanoCards, activeLang]
-  );
+    let cancelled = false;
+
+    async function load() {
+      try {
+        console.log("[nano] loading nano cards, activeLang =", activeLang);
+
+        // Fetch both template metadata + image-level records
+        const [tplRes, imgRes] = await Promise.all([
+          fetch("/data/nano_templates.json"),
+          fetch("/data/nano_inspiration.json"),
+        ]);
+
+        const templatesRaw = (await tplRes.json()) as RawTemplate[];
+        const imagesRaw = (await imgRes.json()) as RawNanoImageRecord[];
+
+        const reg = buildNanoRegistry(templatesRaw, imagesRaw);
+
+        const locale = normalizeLocale(activeLang);
+
+        // Build 1 card per template (same shape home timeline consumes)
+        // Preload 1-2 images per card for carousel
+        const cards = buildNanoFeedCards(reg, locale, {
+          perTemplateMaxImages: 2,
+          strictLocale: false,
+        });
+
+        // One-line sanity log
+        console.log(
+          "[nano] built feed cards:",
+          cards.length,
+          "sample=",
+          cards[0]
+        );
+
+        if (!cancelled) setNanoCards(cards as any);
+      } catch (err) {
+        console.error("[nano] ❌ failed to load nano cards:", err);
+        if (!cancelled) setNanoCards([]);
+      }
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeLang]);
+
+  return nanoCards;
 }
 
 function useFilteredInspiration(
@@ -187,6 +239,12 @@ export default function HomeClient({
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
+  useEffect(() => {
+    console.log("[home] activeLang:", activeLang);
+    console.log("[home] nanoCards len:", nanoCards.length);
+    if (nanoCards.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
+  }, [activeLang, nanoCards]);
+
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     card: InspirationCardType | NanoInspirationCardType | null;
@@ -218,10 +276,10 @@ export default function HomeClient({
     <main
       className={classNames(
         inter.className,
-        "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-8"
+        "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6"
       )}
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1400px]">
         {/* Headline */}
         <div className="mb-8">
           <h1 className="text-[26px] font-semibold tracking-tight text-neutral-900 md:text-3xl">
@@ -238,7 +296,7 @@ export default function HomeClient({
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Left: Feed */}
           <div className="lg:col-span-8">
             {/* Search */}

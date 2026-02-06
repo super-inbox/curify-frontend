@@ -11,15 +11,13 @@ export interface TrackingOptions {
   contentType: ContentType;
   actionType: ActionType;
   viewMode?: "list" | "cards";
-  metadata?: Record<string, any>;
 }
 
 const TRACK_ENDPOINT = "/interactions/track";
 
 // NOTE: apiClient keeps baseURL private, so for sendBeacon we use the same env var.
 // Keep this consistent with services/api.ts.
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 /**
  * Generate a session ID that persists during the browser session.
@@ -30,9 +28,7 @@ function getSessionId(): string {
 
   let sessionId = sessionStorage.getItem(SESSION_KEY);
   if (!sessionId) {
-    sessionId = `session_${Date.now()}_${Math.random()
-      .toString(36)
-      .slice(2)}`;
+    sessionId = `session_${Date.now()}_${Math.random().toString(36).slice(2)}`;
     sessionStorage.setItem(SESSION_KEY, sessionId);
   }
   return sessionId;
@@ -48,23 +44,21 @@ function getUserId(): string | null {
 }
 
 /**
- * Build tracking payload.
+ * Build tracking payload (MUST match FastAPI TrackInteractionRequest).
  */
 function buildPayload(options: TrackingOptions) {
   const sessionId = getSessionId();
   const userId = getUserId();
-  const referrer =
-    typeof window !== "undefined" ? document.referrer : undefined;
+  const referrer = typeof window !== "undefined" ? document.referrer : undefined;
 
   return {
     content_id: options.contentId,
     content_type: options.contentType,
     action_type: options.actionType,
-    user_id: userId,
-    session_id: sessionId,
+    user_id: userId ?? undefined,
+    session_id: sessionId || undefined,
     view_mode: options.viewMode,
     referrer,
-    metadata: options.metadata ? JSON.stringify(options.metadata) : undefined,
   };
 }
 
@@ -74,18 +68,13 @@ function buildPayload(options: TrackingOptions) {
  */
 async function trackViaApiClient(payload: any) {
   try {
-    // apiClient.request expects JSON response; your backend can return {}
     await apiClient.request<any>(TRACK_ENDPOINT, {
       method: "POST",
       body: JSON.stringify(payload),
-      // keepalive helps in some browsers on unload, but not all
-      // (still keep sendBeacon option for unload).
       keepalive: true as any,
     });
-  } catch (err) {
-    // Silent fail: tracking should never disrupt UX
-    // (Optional: console.warn in dev)
-    // console.warn("Tracking failed:", err);
+  } catch {
+    // tracking must never break UX
   }
 }
 
@@ -97,14 +86,11 @@ function trackWithBeaconOrApi(payload: any) {
   if (typeof window === "undefined") return;
 
   try {
-    // If sendBeacon exists, prefer it. It won't be cancelled on unload.
     if (navigator.sendBeacon) {
       const url = `${API_BASE}${TRACK_ENDPOINT}`;
-
       const blob = new Blob([JSON.stringify(payload)], {
         type: "application/json",
       });
-
       navigator.sendBeacon(url, blob);
       return;
     }
@@ -112,17 +98,14 @@ function trackWithBeaconOrApi(payload: any) {
     // ignore and fall back
   }
 
-  // fallback
   void trackViaApiClient(payload);
 }
 
 /**
  * Track an interaction (normal path).
- * Uses apiClient so it respects baseURL + auth token headers.
  */
 async function trackInteraction(options: TrackingOptions): Promise<void> {
   if (typeof window === "undefined") return;
-
   const payload = buildPayload(options);
   await trackViaApiClient(payload);
 }
@@ -132,14 +115,9 @@ async function trackInteraction(options: TrackingOptions): Promise<void> {
  */
 export function useTracking() {
   const track = useCallback((options: TrackingOptions) => {
-    // Fire and forget
     void trackInteraction(options);
   }, []);
 
-  /**
-   * Optional helper for unload-safe tracking
-   * (use if you ever track inside beforeunload/pagehide).
-   */
   const trackOnUnload = useCallback((options: TrackingOptions) => {
     const payload = buildPayload(options);
     trackWithBeaconOrApi(payload);
@@ -194,16 +172,8 @@ export function useViewTracking(
     );
 
     observer.observe(element);
-
     return () => observer.disconnect();
-  }, [
-    contentId,
-    contentType,
-    viewMode,
-    track,
-    options?.once,
-    options?.threshold,
-  ]);
+  }, [contentId, contentType, viewMode, track, options?.once, options?.threshold]);
 
   return elementRef;
 }
