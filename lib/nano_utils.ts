@@ -226,13 +226,13 @@ export function getImageViewsForTemplate(
     const imageUrl = img.asset.image_url;
     const previewUrl = img.asset.preview_image_url ?? img.asset.image_url;
 
-    // 🔍 DEBUG: verify preview image path
-    console.log("[nano_utils] preview check", {
-      templateId,
-      imageId: img.id,
-      image_url: img.asset.image_url,
-      preview_image_url: img.asset.preview_image_url      
-    });
+    // // 🔍 DEBUG: verify preview image path
+    // console.log("[nano_utils] preview check", {
+    //   templateId,
+    //   imageId: img.id,
+    //   image_url: img.asset.image_url,
+    //   preview_image_url: img.asset.preview_image_url      
+    // });
 
     return {
       id: img.id,
