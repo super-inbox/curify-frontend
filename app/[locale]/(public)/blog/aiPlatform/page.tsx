@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import CdnImage from '../../_components/CdnImage';
+import CdnImage from '../../../_components/CdnImage';
 import { FaLightbulb, FaCheck, FaLayerGroup, FaCogs, FaChartLine, FaTools, FaRocket } from 'react-icons/fa';
 import Link from 'next/link';
 
