@@ -265,8 +265,7 @@ export function TemplateDetailPage({ template, templateCards, allTemplates, loca
                       <p className="text-sm text-neutral-600 line-clamp-2">{t.description}</p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between text-sm text-neutral-500">
-                    <span>{t.images.length} 个示例</span>
+                  <div className="flex items-center justify-between text-sm text-neutral-500">                    
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

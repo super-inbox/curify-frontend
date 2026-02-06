@@ -1,5 +1,6 @@
 // app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
+import { Layers } from "lucide-react";
 
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -156,6 +157,7 @@ export function NanoInspirationCard({
       onClick={handleCardClick}
       className="group relative overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md hover:shadow-2xl hover:border-purple-300 transition-all duration-300 cursor-pointer"
     >
+
       {/* Category Badge */}
       <div className="mb-4 flex items-center justify-between gap-2">
         <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 border border-purple-200 shadow-sm">
@@ -164,10 +166,9 @@ export function NanoInspirationCard({
         </span>
 
         {card.template_id && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-purple-600 border border-purple-200">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-            Template
-          </span>
+          <span className="inline-flex items-center gap-1 text-gray-600">
+          <Layers className="w-4 h-4" />          
+        </span>
         )}
       </div>
 
