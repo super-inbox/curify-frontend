@@ -176,6 +176,8 @@ export function buildNanoRegistry(
   }
 
   for (const img of images) {
+    console.log("[nano][image]", img.id, "→", img.template_id);
+
     imageById.set(img.id, img);
     const arr = imagesByTemplateId.get(img.template_id) ?? [];
     arr.push(img);

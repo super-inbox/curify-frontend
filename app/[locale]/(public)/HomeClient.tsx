@@ -18,6 +18,14 @@ import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
 
+import {
+  buildNanoRegistry,
+  buildNanoFeedCards,
+  normalizeLocale,
+  type RawTemplate,
+  type RawNanoImageRecord,
+} from "@/lib/nano_utils";
+
 // --- Font (modern SaaS look) ---
 const inter = Inter({
   subsets: ["latin"],
@@ -59,6 +67,7 @@ function getInterleavedData(mainCards: InspirationCardType[], nanoCards: NanoIns
   return result;
 }
 
+
 function useNanoCards(activeLang: Lang) {
   const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
 
@@ -69,112 +78,35 @@ function useNanoCards(activeLang: Lang) {
       try {
         console.log("[nano] loading nano cards, activeLang =", activeLang);
 
-        const res = await fetch("/data/nano_inspiration.json");
+        // Fetch both template metadata + image-level records
+        const [tplRes, imgRes] = await Promise.all([
+          fetch("/data/nano_templates.json"),
+          fetch("/data/nano_inspiration.json"),
+        ]);
+
+        const templatesRaw = (await tplRes.json()) as RawTemplate[];
+        const imagesRaw = (await imgRes.json()) as RawNanoImageRecord[];
+
+        const reg = buildNanoRegistry(templatesRaw, imagesRaw);
+
+        const locale = normalizeLocale(activeLang);
+
+        // Build 1 card per template (same shape home timeline consumes)
+        // Preload 1-2 images per card for carousel
+        const cards = buildNanoFeedCards(reg, locale, {
+          perTemplateMaxImages: 2,
+          strictLocale: false,
+        });
+
+        // One-line sanity log
         console.log(
-          "[nano] fetch status:",
-          res.status,
-          res.headers.get("content-type")
+          "[nano] built feed cards:",
+          cards.length,
+          "sample=",
+          cards[0]
         );
 
-        const raw = await res.json();
-
-        // ---- RAW SHAPE DEBUG ----
-        console.log(
-          "[nano] raw type:",
-          Array.isArray(raw) ? "array" : typeof raw
-        );
-        console.log("[nano] raw length:", Array.isArray(raw) ? raw.length : "N/A");
-        console.log("[nano] raw sample:", Array.isArray(raw) ? raw.slice(0, 5) : raw);
-
-        if (!Array.isArray(raw)) {
-          console.error("[nano] ❌ nano_inspiration.json is NOT an array");
-          if (!cancelled) setNanoCards([]);
-          return;
-        }
-
-        // ---- FIELD SANITY CHECK ----
-        const sample = raw[0];
-        console.log("[nano] sample keys:", sample ? Object.keys(sample) : "NO SAMPLE");
-        console.log("[nano] sample locales:", sample?.locales);
-
-        // ---- FILTER + GROUP DEBUG COUNTERS ----
-        let total = 0;
-        let noTemplateId = 0;
-        let missingLocale = 0;
-        let accepted = 0;
-
-        const byTemplate = new Map<string, any[]>();
-
-        for (const r of raw) {
-          total++;
-
-          if (!r?.template_id) {
-            noTemplateId++;
-            continue;
-          }
-
-          // ✅ NEW: locale-aware acceptance
-          // If record has locales, require that active locale exists.
-          // If record has no locales at all (legacy), accept.
-          const hasLocales = r?.locales && typeof r.locales === "object";
-          const hasActiveLocale = !!r?.locales?.[activeLang];
-
-          if (hasLocales && !hasActiveLocale) {
-            missingLocale++;
-            continue;
-          }
-
-          accepted++;
-
-          const arr = byTemplate.get(r.template_id) ?? [];
-          arr.push(r);
-          byTemplate.set(r.template_id, arr);
-        }
-
-        console.log("[nano] total records:", total);
-        console.log("[nano] accepted:", accepted);
-        console.log("[nano] noTemplateId:", noTemplateId);
-        console.log("[nano] missingLocale:", missingLocale);
-        console.log("[nano] template groups:", Array.from(byTemplate.keys()));
-
-        // ---- BUILD UI CARDS ----
-        const grouped: NanoInspirationCardType[] = [];
-
-        for (const [templateId, records] of byTemplate.entries()) {
-          // pick locale-specific metadata from first record that has it
-          const firstWithLocale =
-            records.find((r) => r?.locales?.[activeLang]) ?? records[0];
-
-          const localeMeta = firstWithLocale?.locales?.[activeLang] ?? {};
-
-          const image_urls = records.map((r) => r.image_url).filter(Boolean);
-
-          const preview_image_urls = records
-            .map((r) => r.preview_image_url || r.image_url)
-            .filter(Boolean);
-
-          // optional: show a sample param preview
-          const sample_parameters =
-            records.find((r) => r?.parameters)?.parameters ?? undefined;
-
-          grouped.push({
-            id: templateId, // template-level id
-            template_id: templateId,
-            language: activeLang, // keep this for UI consistency
-            category:
-              localeMeta?.category ??
-              records[0]?.category ??
-              "Template",
-            image_urls,
-            preview_image_urls,
-            sample_parameters,
-          });
-        }
-
-        console.log("[nano] FINAL grouped cards len:", grouped.length);
-        console.log("[nano] FINAL grouped sample:", grouped[0]);
-
-        if (!cancelled) setNanoCards(grouped);
+        if (!cancelled) setNanoCards(cards as any);
       } catch (err) {
         console.error("[nano] ❌ failed to load nano cards:", err);
         if (!cancelled) setNanoCards([]);

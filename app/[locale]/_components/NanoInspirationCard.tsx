@@ -1,9 +1,10 @@
 // app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
-import { Layers } from "lucide-react";
 
+import { Layers } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   useCopyTracking,
@@ -13,7 +14,7 @@ import {
 import { stableHashToInt } from "@/lib/hash_utils";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
 import {
-  type Locale,  
+  type Locale,
   buildParamSummary,
   fillPrompt,
   getLocaleFromPath,
@@ -66,7 +67,8 @@ export function NanoInspirationCard({
     return normalizeCarouselUrls(card.image_urls, card.preview_image_urls);
   }, [card.image_urls, card.preview_image_urls]);
 
-  const totalImages = normalized.previewUrls.length || normalized.imageUrls.length || 0;
+  const totalImages =
+    normalized.previewUrls.length || normalized.imageUrls.length || 0;
 
   const nextImage = () => {
     if (!totalImages) return;
@@ -156,9 +158,9 @@ export function NanoInspirationCard({
   return (
     <div
       onClick={handleCardClick}
-      className="group relative overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md hover:shadow-2xl hover:border-purple-300 transition-all duration-300 cursor-pointer"
+      // ✅ make card a flex column so actions can be pinned to bottom (vertical alignment across cards)
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md hover:shadow-2xl hover:border-purple-300 transition-all duration-300 cursor-pointer"
     >
-
       {/* Category Badge */}
       <div className="mb-4 flex items-center justify-between gap-2">
         <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 border border-purple-200 shadow-sm">
@@ -168,8 +170,8 @@ export function NanoInspirationCard({
 
         {card.template_id && (
           <span className="inline-flex items-center gap-1 text-gray-600">
-          <Layers className="w-4 h-4" />          
-        </span>
+            <Layers className="h-4 w-4" />
+          </span>
         )}
       </div>
 
@@ -211,7 +213,7 @@ export function NanoInspirationCard({
                 e.stopPropagation();
                 prevImage();
               }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 backdrop-blur-sm px-3 py-2 text-white opacity-0 transition-all hover:bg-black/75 group-hover:opacity-100 shadow-lg"
+              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 backdrop-blur-sm px-3 py-2 text-white opacity-0 transition-all hover:bg-black/75 group-hover:opacity-100 shadow-lg cursor-pointer"
               type="button"
               aria-label="Previous image"
             >
@@ -223,7 +225,7 @@ export function NanoInspirationCard({
                 e.stopPropagation();
                 nextImage();
               }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 backdrop-blur-sm px-3 py-2 text-white opacity-0 transition-all hover:bg-black/75 group-hover:opacity-100 shadow-lg"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 backdrop-blur-sm px-3 py-2 text-white opacity-0 transition-all hover:bg-black/75 group-hover:opacity-100 shadow-lg cursor-pointer"
               type="button"
               aria-label="Next image"
             >
@@ -248,29 +250,34 @@ export function NanoInspirationCard({
       </div>
 
       {/* Description / Param summary */}
-      <div className="mb-4 p-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-purple-100">
+      <div className="mb-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-purple-100 p-4">
         {card.description ? (
-          <p className="text-sm leading-relaxed text-neutral-700 font-medium">
+          <p className="text-[15px] leading-snug text-neutral-800 font-medium line-clamp-2">
             {card.description}
           </p>
         ) : paramSummary ? (
-          <p className="text-sm leading-relaxed text-neutral-700 font-medium">
+          <p className="text-[15px] leading-snug text-neutral-800 font-medium line-clamp-2">
             {paramSummary}
           </p>
         ) : (
-          <p className="text-sm leading-relaxed text-neutral-700 font-medium">
+          <p className="text-[15px] leading-snug text-neutral-700 font-medium line-clamp-2">
             Click to create with this template
           </p>
         )}
 
         {paramSummary && (
-          <p className="mt-2 text-xs text-neutral-500">Example: {paramSummary}</p>
+          <p className="mt-1 text-[13px] text-neutral-500 line-clamp-1">
+            {paramSummary}
+          </p>
         )}
       </div>
 
       {/* Actions */}
-      <div className="flex items-center">
+      {/* ✅ mt-auto pins this to the bottom so buttons align vertically across cards */}
+      <div className="mt-auto flex items-center">
         <ActionButtons
+          // ✅ request smaller icons + numbers
+          size="sm"
           saved={saved}
           copied={copied}
           shared={shared}
