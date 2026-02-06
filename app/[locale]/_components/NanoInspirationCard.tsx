@@ -276,8 +276,7 @@ export function NanoInspirationCard({
       {/* ✅ mt-auto pins this to the bottom so buttons align vertically across cards */}
       <div className="mt-auto flex items-center">
         <ActionButtons
-          // ✅ request smaller icons + numbers
-          size="sm"
+          // ✅ request smaller icons + numbers          
           saved={saved}
           copied={copied}
           shared={shared}
