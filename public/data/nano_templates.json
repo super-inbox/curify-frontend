@@ -215,5 +215,80 @@
         "base_prompt": "Extract the core theme and key points from the input 【{topic}】 and generate an educational infographic in one of two styles: (A) Cute digital cartoon style: horizontal 3:4, pure white or very light background, pastel macaron palette, soft rounded lines; organize info with rounded rectangles, flowcharts, and arrows; add a few personified cute icons; clear rounded sans-serif cartoon typography; highlight keywords with generous whitespace. (B) Chalkboard scientific sketch style: vertical 3:4, dark gray/near-black textured chalkboard background; main elements in white/gray chalk strokes with cross-hatching; small vivid accent colors to highlight key graphics/notes; dense but clearly guided; text in irregular hand-drawn chalk lettering. Default language follows the input language."
       }
     }
-  }
+  },    
+      {
+        "id": "template-costume-zh",
+        "parameters": [
+          {
+            "name": "costume_style",
+            "label": "国风服饰形制",
+            "type": "text",
+            "placeholder": "例如：唐制齐胸襦裙、宋制褙子、明制袄裙"
+          }
+        ],
+        "locales": {
+          "zh": {
+            "category": "国风服饰类",
+            "description": "生成4K竖版国风服饰专业科普插画（3:4），以黄金构图呈现指定服饰形制，细节还原与视觉美感兼具，适合科普传播与文创设计素材。",
+            "base_prompt": "（Chinese Style Costume Illustration Artist）你是一位顶尖国风服饰专业科普插画师，擅长还原各朝代服饰形制并打造细节拉满的科普插画。根据用户指定的【{costume_style}】，生成一张3:4竖版黄金构图的国风服饰专业科普插画：核心聚焦【{costume_style}】，中央主体完整呈现服饰全貌，针脚、纹样、配饰等工艺细节精准复刻；采用模块化布局，融合主视觉展示+多维度细节拆解特写+纹样寓意注解+小型穿戴场景插画，信息层次分明。以中式工笔重彩为核心技法，线条细腻流畅、勾勒利落，配色典雅温润不艳俗，严格遵循对应朝代服饰规制与色彩体系；背景铺陈浅米仿古宣纸质感，点缀中式回纹边框增添古韵，文字注解选用瘦金体或宋体，字体清晰易读、排版规整。整体高还原服饰结构层次、纹样寓意、配饰细节，背景干净无杂乱元素，色彩和谐统一，兼具科普专业性与视觉美感，适配科普内容传播、文创设计素材等多元场景。直接出图，服饰形制为【{costume_style}】。"
+          },
+          "en": {
+            "category": "Chinese Costume Infographic",
+            "description": "Generate a 4K vertical (3:4) Chinese costume popular-science infographic with golden composition, featuring complete garment structure, craftsmanship details, and annotated breakdowns for cultural education and creative design use.",
+            "base_prompt": "(Chinese Costume Illustration Artist) You are a top-tier Chinese costume popular-science illustrator specializing in accurate reconstruction of dynasty-specific garment structures. Based on the user input 【{costume_style}】, generate a vertical 3:4 infographic with a golden composition: the central subject fully presents the complete outfit; precisely render stitching, patterns, trims, accessories, and material texture. Use a modular layout combining (1) main hero view, (2) multi-angle detail close-ups, (3) pattern symbolism notes, and (4) a small wearing/scene vignette. Style: refined Chinese gongbi linework with rich but elegant colors (avoid gaudy tones), strictly aligned with the dynasty’s attire rules and color system. Background: light rice-tone antique xuan-paper texture with subtle Chinese geometric borders. Annotations should be clean, readable, and well-aligned. Keep the background uncluttered; ensure the piece is both educational and visually premium. Output directly. The costume form must be 【{costume_style}】."
+          }
+        }
+      },
+      {
+        "id": "template-book-series",
+        "parameters": [
+          {
+            "name": "book_name",
+            "label": "书籍名称",
+            "type": "text",
+            "placeholder": "例如：百年孤独、穷查理宝典、人类简史"
+          }
+        ],
+        "locales": {
+          "zh": {
+            "category": "书籍解读系列图文",
+            "description": "为小红书生成6张竖版（3:4）书籍推广图文：封面标题、核心主题、经典语录、核心观点、人物/维度关系、脉络梳理；全套风格统一，适配不同书籍类型。",
+            "base_prompt": "（Book Visual Designer）你是专注小红书书籍解读图文的视觉设计师，擅长适配不同书籍调性生成风格统一的竖版图文。根据用户指定的【{book_name}】，按以下要求生成6张独立3:4竖版图文（全系列风格统一，贴合书籍调性，文字为短句/短语，适配nano banana生成逻辑）：\n1. 通用规则：《{book_name}》加粗放大置于每图顶端，作为视觉核心；全系列色调、字体、插画/图解风格一致，适配小红书传播节奏，文字简洁易收藏转发。\n2. 分图要求：\n【图文1：{book_name}_封面书名】：置顶《{book_name}》+1句极简核心标语（贴合书籍主旨）；配图为书籍核心场景/主题插画，简约大气。\n【图文2：{book_name}_模块1_核心主题】：4个核心关键词+每词1句极简释义（贴合书籍核心主线）；配图为贴合核心主旨的抽象/具象图。\n【图文3：{book_name}_模块2_经典语录】：3句书中金句+每句1句极简短解读；配图为金句排版图（字体适配调性，背景简约）。\n【图文4：{book_name}_模块3_核心观点】：6个核心观点（每点1-2句）；配图为观点可视化图解（短句卡片/极简思维导图）。\n【图文5：{book_name}_模块4_人物关系/核心维度】：有人物书籍：3-5位核心人物+“驭/衡/争/伴”等动词标注关系；无人物书籍：核心维度·关联逻辑梳理；配图为人物关系图/维度关联图解（简洁清晰）。\n【图文6：{book_name}_模块5_脉络梳理】：5个关键节点（文学/历史类按时间线，社科/经管类按逻辑线）；配图为竖版线性脉络图（标注明确，呈现起承转合）。\n直接生成6张独立图文，风格贴合《{book_name}》调性，可灵活适配文学/社科/经管/历史/哲学等类型书籍，模块按需微调。"
+          },
+          "en": {
+            "category": "Book Summary Carousel",
+            "description": "Generate a 6-image vertical (3:4) social carousel for book promotion: cover hook, core themes, key quotes, core viewpoints, character/dimension relations, and a structured outline—consistent style across all images.",
+            "base_prompt": "(Book Visual Designer) You design book-summary carousels for social media (vertical 3:4). Based on the input book 【{book_name}】, generate 6 standalone 3:4 images with a consistent visual system (colors, typography, illustration/diagram style) that matches the book’s tone. Text should be short phrases/sentences optimized for saving/sharing.\nGeneral rule: Put “{book_name}” bold and large at the top of every image.\nImage 1 (Cover Hook): {book_name} + one minimal tagline; a clean thematic illustration.\nImage 2 (Core Themes): 4 keywords + 1 short explanation each; simple abstract/figurative visual.\nImage 3 (Quotes): 3 memorable quotes + 1 short interpretation each; typographic layout.\nImage 4 (Key Ideas): 6 key takeaways (1–2 short lines each); visualize as mini cards or a minimal mind map.\nImage 5 (Relations): If character-driven: 3–5 key characters with action verbs describing relationships; otherwise: 4–6 conceptual dimensions and their links; show a clean relation diagram.\nImage 6 (Structure): 5 key milestones—timeline for literature/history, logic chain for business/social science; show a vertical structured flow.\nOutput 6 independent images directly; adapt modules as needed for different book genres."
+          }
+        }
+      },
+      {
+        "id": "template-word-scene",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "角色类型/名称",
+            "type": "text",
+            "placeholder": "例如：小学生、圣诞老人、宇航员、老师"
+          },
+          {
+            "name": "scene_type",
+            "label": "场景类型",
+            "type": "text",
+            "placeholder": "例如：教室、春节、太空、公园、超市"
+          }
+        ],
+        "locales": {
+          "zh": {
+            "category": "场景单词学习图",
+            "description": "生成细节丰富的场景插画，并为所有物体标注英文单词 + IPA + 中文翻译，适合英语学习可视化。",
+            "base_prompt": "（English Scene Word Illustrator）你是专业英语场景单词插画师，根据用户指定的角色【{character_name}】，绘制细节丰富的【{scene_type}】场景插画，完整呈现场景内所有物体。为画面中每个物体标注对应英语单词，标注格式严格统一：第一行：英文单词 第二行：国际音标(IPA格式) 第三行：中文翻译。整体画面清晰美观，物体标注位置合理不遮挡主体，单词排版规整易认读，适配英语学习科普场景，直接出图，角色为【{character_name}】，场景为【{scene_type}】。"
+          },
+          "en": {
+            "category": "Vocabulary Scene Map",
+            "description": "Create a richly detailed scene illustration and label every object with English word + IPA + Chinese translation for visual vocabulary learning.",
+            "base_prompt": "(English Vocabulary Scene Illustrator) Draw a richly detailed illustration of the scene 【{scene_type}】 featuring the character 【{character_name}】, showing all common objects clearly. Label every object with a consistent 3-line format:\nLine 1: English word\nLine 2: IPA phonetic transcription\nLine 3: Chinese translation\nEnsure labels are readable, neatly aligned, and placed without covering the main subject. The overall composition should be clear, attractive, and educational. Output directly. Character: 【{character_name}】. Scene: 【{scene_type}】."
+          }
+        }
+      }
 ]
