@@ -1313,5 +1313,102 @@
       "prompt": "¿Te sientes más 'eficiente' o 'reemplazado' en tu rol actual? ¿Cómo estás evolucionando tu conjunto de herramientas este año?"
     },
     "hashtags": ["#CienciaDeDatos", "#IA", "#AprendizajeAutomático", "#IAGenerativa", "#DesarrolloProfesional", "#TendenciasTecnológicas"]
+  },
+  "aiPlatform": {
+    "title": "La Guía de Éxito en IA para Empresas Medianas",
+    "subtitle": "Cómo Construir una Plataforma de IA que Escale sin Arruinarte",
+    "intro": "Todos quieren construir con IA, pero la mayoría de las empresas no pueden permitirse un ejército de doctores ni un presupuesto como el de OpenAI. La buena noticia: no lo necesitas.",
+    "imageAlt": "Diagrama de Arquitectura de Plataforma de IA",
+    "heading": "🏗️ La Guía de Éxito en IA para Empresas Medianas",
+    
+    "intro": {
+      "p1": "En las empresas tecnológicas pequeñas y medianas, la verdadera ventaja no está en entrenar modelos masivos, sino en construir una plataforma de IA que permita a todos implementar funciones inteligentes. Así es como conviertes la agilidad en impacto.",
+      "p2": "Aquí tienes un plan pragmático y listo para producción que hemos utilizado para impulsar la IA en finanzas, derecho, atención al cliente e ingeniería, sin gastar fortunas ni contratar a 50 expertos en ML."
+    },
+
+    "mindsetShift": {
+      "title": "1. El Cambio de Mentalidad: Democratiza, No Centralices",
+      "content": "Si tu equipo de IA es un cuello de botella, ya has perdido. En su lugar, construye una infraestructura de autoservicio que empodere a los ingenieros de producto para construir lo que necesiten.",
+      "goal": "Objetivo: Permitir que los expertos en el dominio (finanzas, legal, ingenieros de soporte) construyan soluciones de IA con conocimientos mínimos de ML.",
+      "reality": "Realidad: El equipo de IA construye la autopista; los equipos de negocio conducen los coches.",
+      "supportModel": {
+        "title": "Modelo de soporte:",
+        "l1": "N1 - Autoservicio: Los desarrolladores usan herramientas de la plataforma para construir sus propias funciones.",
+        "l2": "N2 - Consultoría y Asesoría: El equipo de IA ayuda con el diseño de prompts, evaluación y arquitectura.",
+        "l3": "N3 - Codesarrollo: Construcción conjunta de MVPs complejos y de alto impacto."
+      },
+      "conclusion": "Esto convierte la IA de un proyecto de investigación en un multiplicador de negocio."
+    },
+
+    "stack": {
+      "title": "2. La Pila: Mantenla Ligera, Mantenla Abierta",
+      "intro": "El sobrediseño mata la velocidad. Construimos una plataforma de tres capas que abstrae la complejidad sin encerrarte.",
+      "gateway": {
+        "title": "A. La Pasarela Unificada de Modelos",
+        "content": "No te cases con un solo proveedor. Enruta solicitudes sin problemas entre:",
+        "points": [
+          "Modelos comerciales (GPT-4, Claude, etc.) - para razonamiento de primer nivel.",
+          "Modelos privados (Llama, Qwen) - para datos sensibles y control de costos.",
+          "Modelos especializados - para codificación, visión o tareas de baja latencia."
+        ],
+        "conclusion": "La pasarela maneja reintentos, respaldos, seguimiento de costos y límites de tasa, por lo que los desarrolladores solo necesitan llamar a `platform.generate()`."
+      },
+      "knowledge": {
+        "title": "B. Conocimiento como Servicio (RAG Simplificado)",
+        "content": "La Generación Aumentada por Recuperación es donde reside la mayor parte del valor comercial. Pero los ingenieros no deberían gestionar bases de datos vectoriales.",
+        "solution": "Construye una interfaz 'apunta y chatea': apunta a un wiki, PDFs o base de datos, y la plataforma ingiere, fragmenta, incrusta e indexa automáticamente. Ahora cada equipo tiene una base de conocimiento privada y actualizada."
+      },
+      "orchestration": {
+        "title": "C. La Capa de Orquestación",
+        "content": "La IA 'code-first' es poderosa; la IA 'workflow-first' es más rápida.",
+        "example": "Usamos herramientas de bajo código (como Dify, coze, n8n, etc.) para encadenar pasos:",
+        "workflow": [
+          "Consulta del usuario",
+          "Recuperar documentos",
+          "Llamar a herramienta (API, SQL)",
+          "Razonar",
+          "Salida"
+        ],
+        "conclusion": "Esto permite a los equipos de producto prototipar agentes en horas, no en semanas."
+      }
+    },
+
+    "fineTuning": {
+      "title": "3. Omite el Ajuste Fino (La Mayoría de las Veces)",
+      "content": "Aquí está el secreto: **probablemente no necesitas ajustar un LLM.**",
+      "strategies": [
+        "Mejores prompts: la ingeniería sistemática supera los ajustes aleatorios.",
+        "RAG de alta calidad: el conocimiento limpio y estructurado supera a un modelo más inteligente.",
+        "Fusión multi-modelo: usa GPT-4 para razonamiento, un modelo local para extracción, Claude para tareas creativas.",
+        "LLM como juez: usa un modelo fuerte para evaluar las salidas de otros más económicos."
+      ],
+      "conclusion": "Solo ajustamos modelos pequeños para tareas específicas de alto volumen, después de un largo proceso de recopilación y limpieza de datos de dominio de alta calidad. Todo lo demás es 'ingeniería sobre entrenamiento'."
+    },
+
+    "essentialWork": {
+      "title": "5. El Trabajo Esencial Poco Atractivo",
+      "content": "Las plataformas de última generación no se construyen solo con modelos. Se construyen resolviendo problemas aburridos y difíciles:",
+      "points": [
+        {
+          "title": "La Rueda de Datos",
+          "content": "Si no puedes registrar y aprender del uso en producción, tus modelos no mejorarán. Trabaja con seguridad desde el principio para habilitar canalizaciones de datos anónimos y compatibles."
+        },
+        {
+          "title": "Evaluación, No Corazonadas",
+          "content": "Exige 'conjuntos de datos dorados' a los dueños del negocio — pares reales de preguntas y respuestas — para que puedas medir precisión/exhaustividad, no solo que 'se vea bien'."
+        },
+        {
+          "title": "Recursos de Computación",
+          "content": "La inferencia no es como ejecutar CPUs. Necesitas monitoreo dedicado para evitar fallos por falta de memoria y optimizar la utilización."
+        }
+      ]
+    },
+
+    "conclusion": {
+      "title": "Conclusión",
+      "content": "Para las empresas tecnológicas medianas, ganar en IA no significa construir un mejor LLM. Significa construir una plataforma que convierta la IA en un proceso empresarial repetible y escalable.",
+      "finalThoughts": "Comienza con la infraestructura, asegura los datos y deja que tus equipos construyan. El futuro no es un modelo para gobernarlos a todos, es una flota de agentes especializados, cada uno resolviendo un problema empresarial real, todos impulsados por una plataforma que lo hace simple.",
+      "callToAction": "¿Listo para construir? Mantenlo simple, mantenlo abierto y enfócate en habilitar a los demás."
+    }
   }
 }

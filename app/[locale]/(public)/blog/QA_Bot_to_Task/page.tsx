@@ -57,7 +57,7 @@ export default function QABotToTaskAgent() {
           {t("heading")}
         </h1>
 
-      <p className="mb-6 font-semibold text-gray-700">
+        <p className="mb-6 font-semibold text-gray-700">
         {t("tldr")}
       </p>
 
