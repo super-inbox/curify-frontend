@@ -15,6 +15,7 @@ import {
 } from "@/lib/nano_utils";
 
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -133,7 +134,7 @@ export default async function NanoTemplatePage({ params }: Props) {
               key={it.id}
               className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow"
             >
-              <img
+              <CdnImage
                 src={it.preview}
                 alt={it.title || it.id}
                 className="w-full aspect-[4/3] object-cover"
