@@ -13,8 +13,7 @@ import {
 import { stableHashToInt } from "@/lib/hash_utils";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
 import {
-  type Locale,
-  type NanoInspirationCardVM,
+  type Locale,  
   buildParamSummary,
   fillPrompt,
   getLocaleFromPath,
@@ -22,14 +21,16 @@ import {
   normalizeCarouselUrls,
 } from "@/lib/nano_utils";
 
+import { NanoInspirationCardType } from "@/lib/nano_utils";
+
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
 interface NanoInspirationCardProps {
-  card: NanoInspirationCardVM;
+  card: NanoInspirationCardType;
   requireAuth: (reason?: string) => boolean;
-  onViewClick?: (card: NanoInspirationCardVM) => void;
+  onViewClick?: (card: NanoInspirationCardType) => void;
 }
 
 export function NanoInspirationCard({
@@ -286,9 +287,9 @@ export function NanoInspirationCard({
 }
 
 interface NanoInspirationRowProps {
-  cards: NanoInspirationCardVM[];
+  cards: NanoInspirationCardType[];
   requireAuth: (reason?: string) => boolean;
-  onViewClick?: (card: NanoInspirationCardVM) => void;
+  onViewClick?: (card: NanoInspirationCardType) => void;
 }
 
 export function NanoInspirationRow({

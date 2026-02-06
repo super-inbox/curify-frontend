@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { inspirationService } from "@/services/inspiration";
-import { normalizeNanoImageUrl } from "../../../_components/NanoInspirationCard";
 
 type PageParams = { locale: string; id: string };
 
@@ -20,8 +19,8 @@ export async function generateMetadata({
   }
 
   const title = `${card.category} - Curify Nano Inspiration`;
-  const description = (card.prompt || "").slice(0, 160);
-  const imageUrl = normalizeNanoImageUrl(card.image_urls?.[0] || "");
+  const description = (card.base_prompt || "").slice(0, 160);
+  const imageUrl = "";
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.curify-ai.com";
 
@@ -79,7 +78,7 @@ export default async function NanoPermalinkPage({
               Image Generation Prompt
             </h2>
             <p className="font-mono text-lg leading-relaxed text-neutral-800">
-              {card.prompt}
+              {card.base_prompt}
             </p>
           </section>
 
@@ -97,7 +96,7 @@ export default async function NanoPermalinkPage({
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={normalizeNanoImageUrl(imgUrl)}
+                      src={imgUrl}
                       alt={`${card.category} example ${idx + 1}`}
                       className="h-auto w-full transform transition-transform duration-500 group-hover:scale-105"
                     />

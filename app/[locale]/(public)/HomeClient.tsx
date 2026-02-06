@@ -12,10 +12,11 @@ import {
   type InspirationCardType,
 } from "@/app/[locale]/_components/InspirationCard";
 import {
-  NanoInspirationRow,
-  type NanoInspirationCardType,
+  NanoInspirationRow,  
 } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
+
+import { NanoInspirationCardType } from "@/lib/nano_utils";
 
 // --- Font (modern SaaS look) ---
 const inter = Inter({
