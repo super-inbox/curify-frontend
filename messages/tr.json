@@ -1,5 +1,9 @@
 {
     "home": {
+    "metadata": {
+      "title": "Curify | Power Content Creation with AI",
+      "description": "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale."
+    },
     "hero": {
       "title": "Yapay Zeka ile Bir Sonraki Seviye İçerik Oluşturma",
       "description": "Curify Studio, dil ve format engellerini aşmak için içerik oluşturucuları ve kuruluşları güçlendiren yapay zeka tabanlı bir platform geliştiriyor. Ton, stil ve duygusal derinliği koruyan otantik çeviriler sağlayarak içeriklerin küresel bir izleyici kitlesine ulaşmasını sağlıyoruz. Medya, eğitim ve eğlence kesişiminde, hızla küreselleşen bir endüstride içeriklerin sorunsuz bir şekilde uyarlanması için araçlar sunuyoruz."
@@ -111,7 +115,11 @@
     "create": "Erstellen"
   },
   "bilingual": {
-  "title": "Zweisprachige Untertitel leicht gemacht",
+    "metadata": {
+      "title": "Free Bilingual Subtitles Generator | Curify AI",
+      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+    },
+    "title": "Zweisprachige Untertitel leicht gemacht",
   "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
   "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
   "cta": "Jetzt kostenlos ausprobieren",
@@ -130,11 +138,21 @@
     "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
   }
 },
-"videoDubbing": {
-  "title": "KI-Video-Synchronisation mit natürlicher Stimme",
+  "videoDubbing": {
+    "metadata": {
+      "title": "AI Video Dubbing Tool | Curify AI",
+      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+    },
+    "title": "KI-Video-Synchronisation mit natürlicher Stimme",
   "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
-},
-"pricing": {
+  },
+  "about": {
+    "metadata": {
+      "title": "About Curify | Vision, Technology & Team",
+      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+    }
+  },
+  "pricing": {
   "header": {
     "title": "Erste Schritte mit einem Plan",
     "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."

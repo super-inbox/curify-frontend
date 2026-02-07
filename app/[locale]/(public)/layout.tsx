@@ -42,6 +42,13 @@ export async function generateMetadata({
         "x-default": `${siteUrl}/en${pathWithoutLocale}`,
       },
     },
+    // Add default title template
+    title: {
+      template: '%s | Curify Studio',
+      default: 'Curify Studio'
+    },
+    // Fallback description if not provided by page
+    description: 'Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale.'
   };
 }
 
