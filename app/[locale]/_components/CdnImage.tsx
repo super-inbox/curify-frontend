@@ -40,6 +40,15 @@ export default function CdnImage(props: ImageProps) {
 
   // If StaticImageData, just pass through (Next handles it)
   if (typeof src !== "string") {
+    // If caller forgot sizes AND not using fill, provide safe defaults
+    const hasFill = (rest as any).fill === true;
+    const hasWH =
+      typeof (rest as any).width !== "undefined" &&
+      typeof (rest as any).height !== "undefined";
+
+    if (!hasFill && !hasWH) {
+      return <Image src={src} width={512} height={512} {...rest} />;
+    }
     return <Image src={src} {...rest} />;
   }
 
@@ -49,6 +58,19 @@ export default function CdnImage(props: ImageProps) {
   if (process.env.NODE_ENV !== "production") {
     // eslint-disable-next-line no-console
     console.log("[CdnImage]", { rawSrc: src, finalSrc, CDN_BASE });
+  }
+
+  // Next/Image requires either:
+  // 1) width + height, OR
+  // 2) fill={true}
+  const hasFill = (rest as any).fill === true;
+  const hasWH =
+    typeof (rest as any).width !== "undefined" &&
+    typeof (rest as any).height !== "undefined";
+
+  if (!hasFill && !hasWH) {
+    // Safe defaults for your inspiration/nano preview images
+    return <Image src={finalSrc} width={512} height={512} {...rest} />;
   }
 
   return <Image src={finalSrc} {...rest} />;
