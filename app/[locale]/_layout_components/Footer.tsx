@@ -1,7 +1,7 @@
 'use client';
 
 import { DiscordLogo, XLogo } from "@phosphor-icons/react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 
 export default function Footer() {
@@ -24,19 +24,19 @@ export default function Footer() {
 
       {/* Center: Privacy, Terms, About, Contact */}
       <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-        <Link href={`/${locale}/privacy`} className="hover:underline">
+        <Link href="/privacy" className="hover:underline">
           Privacy Policy
         </Link>
         <span className="text-gray-400">|</span>
-        <Link href={`/${locale}/agreement`} className="hover:underline">
+        <Link href="/agreement" className="hover:underline">
           Terms of Service
         </Link>
         <span className="text-gray-400">|</span>
-        <Link href={`/${locale}/about`} className="hover:underline">
+        <Link href="/about" className="hover:underline">
           About Us
         </Link>
         <span className="text-gray-400">|</span>
-        <Link href={`/${locale}/contact`} className="hover:underline">
+        <Link href="/contact" className="hover:underline">
           Contact Us
         </Link>
       </div>

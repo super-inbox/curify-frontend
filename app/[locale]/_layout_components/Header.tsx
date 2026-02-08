@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import BtnN from "../_components/button/ButtonNormal";
-import Link from "next/link";
 import { useAtom } from "jotai";
 import { modalAtom, drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { usePathname, useRouter, Link } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
 import { useEffect, useState, useRef } from "react";
@@ -74,7 +73,7 @@ export default function Header() {
         <div className="flex items-center space-x-8">
           {/* Logo - Always redirects to root */}
           <Link
-            href={`/${locale}`}
+            href="/"
             aria-label="Curify Home"
             className="relative w-40 aspect-[160/38.597] cursor-pointer"
           >
@@ -91,29 +90,29 @@ export default function Header() {
           {(headerState === "out" || headerState === "in") && (
             <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
               {/* ✅ NEW: Home */}
-              <Link href={`/${locale}`} className="hover:opacity-80">
+              <Link href="/" className="hover:opacity-80">
                 Home
               </Link>
 
               <Link
-                href={`/${locale}/inspiration-hub`}
+                href="/inspiration-hub"
                 className="hover:opacity-80"
               >
                 Discover
               </Link>
               <Link
-                href={`/${locale}/nano-banana-pro-prompts`}
+                href="/nano-banana-pro-prompts"
                 className="hover:opacity-80"
               >
                 Gallery
               </Link>
-              <Link href={`/${locale}/tools`} className="hover:opacity-80">
+              <Link href="/tools" className="hover:opacity-80">
                 Tools
               </Link>
-              <Link href={`/${locale}/blog`} className="hover:opacity-80">
+              <Link href="/blog" className="hover:opacity-80">
                 Blogs
               </Link>
-              <Link href={`/${locale}/workspace`} className="hover:opacity-80">
+              <Link href="/workspace" className="hover:opacity-80">
                 Workspace
               </Link>
             </nav>

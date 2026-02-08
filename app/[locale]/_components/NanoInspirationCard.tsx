@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { stableHashToInt } from "@/lib/hash_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   useCopyTracking,
@@ -53,8 +54,8 @@ export function NanoInspirationCard({ card, requireAuth, onViewClick }: NanoInsp
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
   
-  // Mock engagement numbers
-  const seedNum = parseInt(card.id.split('-').pop() || '0', 10) || Math.floor(Math.random() * 1000);
+  // Mock engagement numbers (Deterministic)
+  const seedNum = stableHashToInt(card.id);
   const [saveCount, setSaveCount] = useState(seedNum % 100 + 50); 
   const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100); 
   const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20); 

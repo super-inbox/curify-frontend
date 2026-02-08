@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import {
   Clock,
   Globe,
@@ -205,17 +205,8 @@ export default function UserDropdownMenu({
                   <button
                     key={lang.code}
                     onClick={() => {
-                      const segments = pathname.split("/").filter(Boolean);
-                      segments[0] = lang.code;
-                      const newPath = "/" + segments.join("/");
-
-                      const query = new URLSearchParams(
-                        window.location.search
-                      ).toString();
-                      const fullPath = query ? `${newPath}?${query}` : newPath;
-
-                      window.location.replace(fullPath);
-
+                      const newPathname = pathname;
+                      router.replace(newPathname, { locale: lang.code });
                       setShowLanguageSubmenu(false);
                       onClose();
                     }}
@@ -349,17 +340,8 @@ export default function UserDropdownMenu({
                   <button
                     key={lang.code}
                     onClick={() => {
-                      const segments = pathname.split("/").filter(Boolean);
-                      segments[0] = lang.code;
-                      const newPath = "/" + segments.join("/");
-
-                      const query = new URLSearchParams(
-                        window.location.search
-                      ).toString();
-                      const fullPath = query ? `${newPath}?${query}` : newPath;
-
-                      window.location.replace(fullPath);
-
+                      const newPathname = pathname;
+                      router.replace(newPathname, { locale: lang.code });
                       setShowLanguageSubmenu(false);
                       onClose();
                     }}
