@@ -6,6 +6,7 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { Search, Type, Building2, Sparkles } from "lucide-react";
 import { Inter } from "next/font/google";
+import ContentCreationToolsSidebar from "@/app/[locale]/_components/ContentCreationToolsSidebar";
 
 import {
   InspirationListItem,
@@ -95,7 +96,7 @@ function useNanoCards(activeLang: Lang) {
         // Preload 1-2 images per card for carousel
         const cards = buildNanoFeedCards(reg, locale, {
           perTemplateMaxImages: 2,
-          strictLocale: false,
+          strictLocale: true,
         });
 
         // One-line sanity log
@@ -328,81 +329,11 @@ export default function HomeClient({
             )}
           </div>
 
-          {/* Right: Sidebar */}
           <aside className="lg:col-span-4 lg:border-l lg:border-neutral-200/70 lg:pl-8">
-            <div className="space-y-6 lg:sticky lg:top-24">
-              {/* Tools */}
-              <div className="rounded-2xl border border-neutral-100 bg-white p-5 shadow-sm">
-                <h3 className="mb-4 text-lg font-semibold tracking-tight text-neutral-900">
-                  Content Creation Tools
-                </h3>
-
-                <div className="space-y-3">
-                  <SidebarToolItem
-                    icon={
-                      <img
-                        src="/icons/translation-icon.png"
-                        alt="Translation"
-                        className="h-6 w-6"
-                      />
-                    }
-                    colorClass="bg-blue-600"
-                    title="Video Translator"
-                    desc="Translate YouTube & MP4 videos"
-                    onClick={() => router.push(`/${activeLang}/video-dubbing`)}
-                  />
-
-                  <SidebarToolItem
-                    icon={
-                      <img
-                        src="/icons/subtitle-icon.png"
-                        alt="Subtitle"
-                        className="h-6 w-6"
-                      />
-                    }
-                    colorClass="bg-green-500"
-                    title="Subtitle Generator"
-                    desc="Create accurate subtitles instantly"
-                    onClick={() =>
-                      router.push(`/${activeLang}/bilingual-subtitles`)
-                    }
-                  />
-
-                  <SidebarToolItem
-                    icon={<Type className="h-5 w-5" />}
-                    colorClass="bg-purple-500"
-                    title="Word Cards"
-                    desc="Build vocabulary visually"
-                    badge={<NanoBadge />}
-                    // optional: could route to /nano-banana-pro-prompts or /n
-                    onClick={() =>
-                      router.push(`/${activeLang}/nano-banana-pro-prompts`)
-                    }
-                  />
-
-                  <SidebarToolItem
-                    icon={<Building2 className="h-5 w-5" />}
-                    colorClass="bg-sky-500"
-                    title="City Visual Packs"
-                    desc="Visual packs for global landmarks"
-                    badge={<NanoBadge />}
-                    onClick={() => router.push(`/${activeLang}/inspiration-hub`)}
-                  />
-                </div>
-
-                <div className="mt-6 border-t border-neutral-100 pt-4">
-                  <button
-                    onClick={() => router.push(`/${activeLang}/tools`)}
-                    className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-lg"
-                    type="button"
-                  >
-                    <Sparkles className="h-4 w-4" />
-                    Create New Content
-                  </button>
-                </div>
-              </div>
-            </div>
-          </aside>
+  <div className="space-y-6 lg:sticky lg:top-24">
+    <ContentCreationToolsSidebar activeLang={activeLang} />
+  </div>
+</aside>
         </div>
       </div>
 
