@@ -233,32 +233,6 @@ export default async function AIPlatform() {
       {/* Sidebar */}
       <aside className="lg:w-80 flex-shrink-0">
         <div className="sticky top-24 space-y-6">
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <h3 className="font-bold text-lg mb-4 flex items-center">
-              <FaTools className="mr-2 text-blue-600" />
-              Tools & Resources
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/nano-banana-pro-prompts" 
-                  className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  <FaLightbulb className="mr-2 text-yellow-500" />
-                  Nano Banana Pro
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/inspiration-hub" 
-                  className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  <FaRocket className="mr-2 text-purple-500" />
-                  Inspiration Hub
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </aside>
     </div>
