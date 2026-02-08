@@ -1,4 +1,8 @@
 {  "home": {
+    "metadata": {
+      "title": "Curify | Power Content Creation with AI",
+      "description": "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale."
+    },
     "hero": {
       "title": "Impulsa la creación de contenido con IA",
       "description": "Curify Studio está construyendo una plataforma de creación de contenido nativa de IA que permite a creadores y organizaciones superar barreras de idioma y formato. Abordamos el desafío de escalar contenido para audiencias globales, logrando traducciones auténticas que conservan el tono, estilo y profundidad emocional. En la intersección entre medios, educación y entretenimiento, ofrecemos herramientas para que los creadores adapten su contenido sin fricciones en un mundo cada vez más globalizado."
@@ -111,7 +115,11 @@
     "create": "Crear"
   },
   "bilingual": {
-  "title": "Subtítulos Bilingües Fácilmente",
+    "metadata": {
+      "title": "Free Bilingual Subtitles Generator | Curify AI",
+      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+    },
+    "title": "Subtítulos Bilingües Fácilmente",
   "intro": "Genera automáticamente subtítulos en dos idiomas con el motor de subtítulos de IA de Curify. Ideal para creadores, educadores y empresas globales.",
   "example": "Ejemplo: Jensen Huang explicando la estrategia de IA — subtítulos automáticos en inglés y chino.",
   "cta": "Pruébalo Gratis",
@@ -129,13 +137,22 @@
     "q2": "¿Puedo editar los subtítulos después?",
     "a2": "Por supuesto. Puedes ajustar el tiempo, la traducción y el estilo antes de exportar."
   },
-"videoDubbing": {
-  "title": "Doblaje de Video con IA y Voz Natural",
+  "videoDubbing": {
+    "metadata": {
+      "title": "AI Video Dubbing Tool | Curify AI",
+      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+    },
+    "title": "Doblaje de Video con IA y Voz Natural",
   "description": "Traduce y dobla tu contenido de video a más de 170 idiomas con voz de IA realista y sincronización labial. Perfecto para creadores y marcas internacionales."
-}
-},
-"pricing": {
-  "header": {
+  },
+  "about": {
+    "metadata": {
+      "title": "About Curify | Vision, Technology & Team",
+      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+    }
+  },
+  "pricing": {
+    "header": {
     "title": "Comenzar con un plan",
     "subtitle": "Elige un plan que se adapte a tus necesidades."
   },
@@ -1301,6 +1318,7 @@
             "content": "La capacidad de traducir datos complejos en una historia empresarial y generar confianza entre las partes interesadas es una 'habilidad blanda' que se ha convertido en un 'requisito duro'."
           }
         ]
+      }
       }
     },
     "bottomLine": {

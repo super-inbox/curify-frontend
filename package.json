@@ -11,6 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "i18n:check": "node scripts/check_i18n.cjs",
+    "i18n:verify": "node scripts/verify_consistency.cjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
