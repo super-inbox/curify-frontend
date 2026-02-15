@@ -284,5 +284,845 @@
         ]
       }
     }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic",
+    "locales": {
+      "zh": {
+        "category": "历史文物类",
+        "description": "生成3:4中国风复古信息图海报：以文物手绘插画为中心，四象限科普其历史地位、考古价值、艺术成就与当代影响，并含“延伸知识”板块。",
+        "base_prompt": "（Chinese Style Infographic Designer）你是一位顶尖中国风复古信息图设计师，擅长融合传统纹样与科普内容，打造典雅兼具传播性的海报。根据用户指定的【{cultural_relic}】，生成一张3:4比例中国风复古信息图海报，标题为《文化价值与历史意义：中华文明的璀璨明珠》：画面中心是该文物的手绘插画，置于带有龙纹与云纹的传统边框中；整体布局分为四个象限板块，左上为历史地位、右上为考古价值、左下为艺术成就、右下为当代影响，每个板块都配有项目符号列表和小图标；底部区域为“延伸知识”板块。整体色调柔和沉稳，以米黄、赭石、朱红与墨黑为主，营造出中国古纸与墨书的质感；背景装饰有云纹、龙纹、回纹等中国传统纹样，文字采用书法风格的中文字体，整体风格典雅、兼具科普性，适合在社交平台分享（全程客观科普，不添加主观评价）。直接出图，文物为【{cultural_relic}】。",
+        "parameters": [
+          {
+            "name": "cultural_relic",
+            "label": "文物名称",
+            "type": "text",
+            "placeholder": [
+              "越王勾践剑",
+              "曾侯乙编钟",
+              "司母戊鼎",
+              "玉琮",
+              "青铜爵",
+              "马王堆帛书",
+              "兵马俑",
+              "青花瓷",
+              "青铜镜",
+              "玉玺"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Chinese Cultural Relic Infographic",
+        "description": "Create a 3:4 Chinese retro-style infographic poster: a hand-painted relic illustration in the center, four quadrants explaining historical status, archaeological value, artistic achievement, and modern influence, plus an “Extra Facts” section.",
+        "base_prompt": "(Chinese Retro Infographic Designer) You are a top-tier Chinese retro infographic designer who blends traditional patterns with educational content to create an elegant, shareable poster. Based on the user-specified cultural relic 【{cultural_relic}】, generate a 3:4 Chinese retro infographic poster titled \"Cultural Value & Historical Significance: A Brilliant Gem of Chinese Civilization\". Center: a hand-painted illustration of the relic framed by traditional motifs (dragon and cloud patterns). Layout: four clear quadrants—Top-left: Historical Status; Top-right: Archaeological Value; Bottom-left: Artistic Achievement; Bottom-right: Modern Influence. Each quadrant includes bullet points and small icons. Bottom area: an \"Extra Facts\" section. Use a calm, vintage palette (beige, ochre, vermilion, ink black) to evoke ancient paper and ink texture; decorate the background with classic Chinese patterns (cloud, dragon, key-fret, etc.). Typography: Chinese calligraphy-style headings and clean readable body text. Keep the tone strictly objective and educational (no subjective evaluation). Output directly. Relic: 【{cultural_relic}】.",
+        "parameters": [
+          {
+            "name": "cultural_relic",
+            "label": "Cultural Relic",
+            "type": "text",
+            "placeholder": [
+              "Sword of King Goujian",
+              "Zenghouyi Chime Bells",
+              "Simuwu Ding (Bronze Tripod)",
+              "Jade Cong",
+              "Bronze Jue (Wine Vessel)",
+              "Mawangdui Silk Manuscripts",
+              "Terracotta Army",
+              "Blue-and-White Porcelain",
+              "Bronze Mirror",
+              "Imperial Jade Seal"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-dog-breed-retro-infographic",
+    "locales": {
+      "zh": {
+        "category": "犬种科普类",
+        "description": "生成9:16复古科学犬种信息图：中心为带解剖标注的精细手绘犬种插画，并包含结构/适应性、行为/可训练性、被毛/护理、个性总结等板块。",
+        "base_prompt": "（Retro Science Illustrator）你是一位顶尖复古科学插画师，擅长融合旧纸张质感与精准科普内容，打造兼具观赏性与知识性的犬种信息图。根据用户指定的【{dog_breed}】和【{dog_breed_english}】，生成一张9:16比例复古风格信息图海报，标题为「{dog_breed} - {dog_breed_english}」：画面核心是该犬种的精细手绘插画，带有解剖标注，指向被毛、体型、足爪等关键特征。整体布局分为多个清晰的板块：左上为解剖结构与适应性，包含骨骼示意、肌肉层示意、足爪结构和健康注意事项子板块，每个子板块配有小图标和项目符号；右上为行为特征与可训练性，包含行为流程图、能量专注曲线、可训练性条形图，以及互动场景连环画；左下为被毛系统与护理，包含皮肤横截面示意图、被毛放大图和护理要点清单；右下为个性总结，包含图标化的性格特质标签和一句总结性文案。整体色调柔和沉稳，以米黄、深褐和浅棕为主，营造出旧纸张与科学插画的质感；背景点缀着该犬种原生环境（农场、山林、家居等）的简约线稿；英文文字采用清晰的衬线字体，中文采用简洁的无衬线字体，标注文字使用手写风格；整体风格兼具科普性与复古感，适合在社交平台分享（全程客观科普，不添加主观评价）。直接出图，犬种为【{dog_breed}】，犬种英文名称为【{dog_breed_english}】。",
+        "parameters": [
+          {
+            "name": "dog_breed",
+            "label": "犬种名称（中文）",
+            "type": "text",
+            "placeholder": [
+              "金毛寻回犬",
+              "柯基犬",
+              "哈士奇",
+              "贵宾犬",
+              "比格犬",
+              "德国牧羊犬",
+              "柴犬",
+              "斗牛犬",
+              "萨摩耶犬",
+              "吉娃娃"
+            ]
+          },
+          {
+            "name": "dog_breed_english",
+            "label": "犬种名称（英文）",
+            "type": "text",
+            "placeholder": [
+              "Golden Retriever",
+              "Corgi",
+              "Siberian Husky",
+              "Poodle",
+              "Beagle",
+              "German Shepherd",
+              "Shiba Inu",
+              "Bulldog",
+              "Samoyed",
+              "Chihuahua"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Dog Breed Retro Infographic",
+        "description": "Generate a 9:16 retro scientific infographic for a dog breed: a detailed hand-drawn dog illustration with anatomical annotations and structured educational sections.",
+        "base_prompt": "(Retro Science Illustrator) You are a top-tier retro scientific illustrator who combines vintage paper texture with precise educational content to create a beautiful, knowledge-rich dog breed infographic. Based on the user-specified breed name 【{dog_breed}】 and its English name 【{dog_breed_english}】, generate a 9:16 retro infographic poster titled \"{dog_breed} - {dog_breed_english}\". Core: a finely detailed hand-drawn illustration of the breed with anatomical annotations pointing to coat, body build, paws, and other key traits. Layout includes multiple clear sections: Top-left: Anatomy & Adaptation (skeletal sketch, muscle layer sketch, paw structure, and health notes) with small icons and bullet points; Top-right: Behavior & Trainability (behavior flow diagram, energy/focus curve, trainability bar chart, and a mini comic of interaction scenarios); Bottom-left: Coat System & Care (skin cross-section, coat close-up, and a care checklist); Bottom-right: Personality Summary (icon-based trait tags + one concise summary line). Use a calm vintage palette (beige, dark brown, light tan) with old-paper + scientific illustration texture; background includes simple line art of the breed’s typical environment (farm/forest/home, etc.). Typography: clear serif for English, clean sans-serif for Chinese (if present), and handwritten style for annotations. Keep the tone strictly objective and educational (no subjective evaluation). Output directly. Breed: 【{dog_breed}】. English name: 【{dog_breed_english}】.",
+        "parameters": [
+          {
+            "name": "dog_breed",
+            "label": "Breed (Chinese)",
+            "type": "text",
+            "placeholder": [
+              "金毛寻回犬",
+              "柯基犬",
+              "哈士奇",
+              "贵宾犬",
+              "比格犬",
+              "德国牧羊犬",
+              "柴犬",
+              "斗牛犬",
+              "萨摩耶犬",
+              "吉娃娃"
+            ]
+          },
+          {
+            "name": "dog_breed_english",
+            "label": "Breed (English)",
+            "type": "text",
+            "placeholder": [
+              "Golden Retriever",
+              "Corgi",
+              "Siberian Husky",
+              "Poodle",
+              "Beagle",
+              "German Shepherd",
+              "Shiba Inu",
+              "Bulldog",
+              "Samoyed",
+              "Chihuahua"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-food",
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "description": "生成4K竖版3:4美食科普信息图海报：水彩手绘主视觉 + 标题 + 制作步骤 + 核心食材 + 区域文化 + 地方记忆。",
+        "base_prompt": "（Food Illustration Designer）你是一位顶尖美食手绘插画设计师，擅长制作「美食全景科普信息图」。根据用户指定的【{food_name}】，生成一张竖版3:4高清美食科普海报：整体为清新简约手绘水彩质感，色彩协调，兼顾视觉美感与信息实用性。模块布局规范：①页面顶部为标题区（主标题+副标题{food_feature}）；②画面居中40%为主视觉：{food_name}手绘特写，鲜艳水彩突出色泽质感，加蒸汽/酱汁动态元素，搭配适配餐具、桌布、核心食材；③页面左侧竖排制作流程图解（标题+备料→烹饪→调拌/炖煮→点缀四步，图标+简短文字）；④页面右侧竖排核心食材模块（标题+分类色彩食材图标）；⑤页面底部左侧为区域文化模块（历史溯源时间轴+手绘插图、{food_region}地域标识地标/简化地图、食用建议）；⑥页面底部右侧为地方记忆模块（{food_region}特色场景插画、温馨柔和底色、装饰性特色口号{food_slogan}）。全程细线分区、留白清晰、信息层次明确，科普表达无过度承诺，纵向4K单页海报，直接出图，美食为【{food_name}】。",
+        "parameters": [
+          {
+            "name": "food_name",
+            "label": "美食名称",
+            "type": "text",
+            "placeholder": [
+              "白葡萄酒青口贝",
+              "冬阴功汤",
+              "意大利面",
+              "肉骨茶",
+              "泰式打抛饭",
+              "越南春卷",
+              "朝鲜冷面",
+              "寿喜锅",
+              "墨西哥卷饼",
+              "日本寿司"
+            ]
+          },
+          {
+            "name": "food_feature",
+            "label": "美食核心特色",
+            "type": "text",
+            "placeholder": [
+              "酒香浓郁、鲜嫩多汁，口感清甜不腻",
+              "酸辣开胃、鲜香浓郁，层次丰富",
+              "筋道爽滑、酱汁醇厚，风味多样",
+              "汤色清亮、肉香浓郁，温润滋补",
+              "香辣入味、咸香适中，一口上头",
+              "清爽低脂、脆嫩爽口，鲜而不腻",
+              "冰凉爽滑、酸甜开胃，解腻爽口",
+              "鲜甜醇厚、肉质软嫩，暖心暖胃",
+              "香辣过瘾、口感丰富，风味独特",
+              "新鲜软糯、清爽不腻，精致可口"
+            ]
+          },
+          {
+            "name": "food_region",
+            "label": "发源地/地域",
+            "type": "text",
+            "placeholder": [
+              "法国/比利时",
+              "泰国",
+              "意大利",
+              "马来西亚/新加坡",
+              "越南",
+              "朝鲜/韩国",
+              "日本",
+              "墨西哥"
+            ]
+          },
+          {
+            "name": "food_slogan",
+            "label": "地方特色口号",
+            "type": "text",
+            "placeholder": [
+              "法式浪漫，一口鲜醇入魂",
+              "泰式酸辣，唤醒沉睡味蕾",
+              "意式风情，一根解锁舌尖浪漫",
+              "南洋暖味，一碗治愈人心",
+              "泰式烟火，一勺解锁鲜香",
+              "越式清新，一口解锁脆嫩鲜甜",
+              "韩式冰爽，一口驱散燥热",
+              "日式温情，一锅炖煮鲜甜",
+              "墨式热辣，一卷解锁异域风情",
+              "日式精致，一口解锁海之鲜甜"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Food Science Infographic",
+        "description": "Generate a 4K vertical 3:4 food science infographic poster with hand-drawn watercolor style: main visual, title, steps, core ingredients, regional culture, and local memory.",
+        "base_prompt": "(Food Illustration Designer) You are a top-tier hand-drawn food illustration designer specializing in panoramic food science infographic posters. Based on the user-specified dish 【{food_name}】, generate a vertical 3:4 high-resolution (4K) food infographic poster with a clean watercolor hand-drawn look and balanced colors. Layout: (1) Top title area (main title + subtitle {food_feature}); (2) Center ~40% main visual: a vivid watercolor close-up of {food_name} with steam/sauce motion elements, paired with appropriate tableware, cloth, and key ingredients; (3) Left vertical production steps (Prep → Cook → Mix/Stew → Garnish) using icons + short labels; (4) Right vertical core ingredients section with categorized ingredient icons; (5) Bottom-left regional culture module: origin timeline + small illustration, {food_region} landmarks or simplified map, plus serving tips; (6) Bottom-right local memory module: a warm scene illustration from {food_region} with a decorative slogan {food_slogan}. Use thin dividers, clear whitespace, and a strong information hierarchy. Keep claims educational and non-exaggerated. Output directly. Dish: 【{food_name}】.",
+        "parameters": [
+          {
+            "name": "food_name",
+            "label": "Dish Name",
+            "type": "text",
+            "placeholder": [
+              "Moules Marinières (White Wine Mussels)",
+              "Tom Yum Goong",
+              "Italian Pasta",
+              "Bak Kut Teh",
+              "Thai Basil Chicken Rice",
+              "Vietnamese Spring Rolls",
+              "Korean Naengmyeon (Cold Noodles)",
+              "Sukiyaki",
+              "Mexican Tacos",
+              "Japanese Sushi"
+            ]
+          },
+          {
+            "name": "food_feature",
+            "label": "Key Feature",
+            "type": "text",
+            "placeholder": [
+              "wine-aromatic, tender and juicy, clean sweetness",
+              "hot-and-sour, fragrant and layered",
+              "springy bite, rich sauce, versatile styles",
+              "clear broth, deep aroma, comforting warmth",
+              "savory-spicy, addictive and punchy",
+              "fresh, light, crisp, not greasy",
+              "icy-smooth, tangy-sweet, refreshing",
+              "sweet-savory, tender slices, heartwarming",
+              "bold and spicy, rich textures, distinctive flavor",
+              "fresh, delicate, clean and balanced"
+            ]
+          },
+          {
+            "name": "food_region",
+            "label": "Region of Origin",
+            "type": "text",
+            "placeholder": [
+              "France/Belgium",
+              "Thailand",
+              "Italy",
+              "Malaysia/Singapore",
+              "Vietnam",
+              "Korea",
+              "Japan",
+              "Mexico"
+            ]
+          },
+          {
+            "name": "food_slogan",
+            "label": "Local Slogan",
+            "type": "text",
+            "placeholder": [
+              "French romance in a bite",
+              "Thai heat that wakes the palate",
+              "One strand, a taste of Italy",
+              "A warm bowl of Nanyang comfort",
+              "Street-fire flavor in every spoon",
+              "A crisp, fresh Vietnamese bite",
+              "Icy refreshment to beat the heat",
+              "A gentle Japanese hotpot hug",
+              "A spicy wrap of Mexico",
+              "A refined bite of ocean freshness"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-solar-term",
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "description": "生成A3竖版高信息密度节气知识图解海报：中央复古插画，四周环绕文化内涵、交节时间/太阳黄经、三候物候、习俗与农事/养生标签。",
+        "base_prompt": "（Chinese Traditional Culture Designer）你是一位顶尖传统节气视觉设计师，擅长把\"单个节气\"做成复古国风高信息密度图解式展板。根据用户指定的【{solar_term}】，生成一张\"A3竖版节气全景知识图解海报\"：中央放置该节气核心视觉元素的高清复古插画；四周均匀环绕历史文化内涵、太阳黄经/交节时间、三候物候细节、传统习俗场景、农事活动/养生智慧小标签，并用国风纹样线条/箭头建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰复古线稿+节气专属传统色调上色，米色/仿古宣纸风背景；注释为方正字迹-行书（标题）+微软雅黑（正文），字号适配A3尺寸，留白清晰，信息分区明确（全程科普表达，贴合节气文化内核）。直接出图，节气为【{solar_term}】。",
+        "parameters": [
+          {
+            "name": "solar_term",
+            "label": "节气名称",
+            "type": "text",
+            "placeholder": [
+              "立春",
+              "雨水",
+              "惊蛰",
+              "春分",
+              "清明",
+              "谷雨",
+              "立夏",
+              "小满",
+              "芒种",
+              "夏至",
+              "小暑",
+              "大暑",
+              "立秋",
+              "处暑",
+              "白露",
+              "秋分",
+              "寒露",
+              "霜降",
+              "立冬",
+              "小雪",
+              "大雪",
+              "冬至",
+              "小寒",
+              "大寒"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Chinese Solar Term Infographic",
+        "description": "Generate an A3 vertical, high-density retro Chinese infographic poster for one solar term: central illustration with surrounding cultural meaning, timing, phenology (three phases), customs, and farming/health tips.",
+        "base_prompt": "(Chinese Traditional Culture Designer) You are a top-tier designer of traditional Chinese solar-term visuals, turning a single solar term into a retro, information-dense encyclopedia-style infographic board. Based on the user-specified solar term 【{solar_term}】, generate an A3 vertical \"Solar Term Panorama Knowledge Infographic\". Center: a high-quality retro illustration of the term’s signature visual elements. Surrounding modules evenly distributed: cultural connotation/history, solar longitude & transition timing, detailed \"three phenological phases\" (三候), traditional customs scenes, and small tags for farming activities / seasonal wellness tips. Connect modules with traditional-pattern lines/arrows to form a cohesive infographic. Style: high-quality 2D illustration with clean vintage line art + a term-specific traditional color palette; beige rice-paper background. Typography: calligraphy-style for titles and clean readable body text; clear whitespace and distinct sections. Keep the tone strictly educational and faithful to solar-term culture (no exaggerated claims). Output directly. Solar term: 【{solar_term}】.",
+        "parameters": [
+          {
+            "name": "solar_term",
+            "label": "Solar Term",
+            "type": "text",
+            "placeholder": [
+              "Lichun (Start of Spring)",
+              "Yushui (Rain Water)",
+              "Jingzhe (Awakening of Insects)",
+              "Chunfen (Spring Equinox)",
+              "Qingming (Pure Brightness)",
+              "Guyu (Grain Rain)",
+              "Lixia (Start of Summer)",
+              "Xiaoman (Grain Full)",
+              "Mangzhong (Grain in Ear)",
+              "Xiazhi (Summer Solstice)",
+              "Xiaoshu (Minor Heat)",
+              "Dashu (Major Heat)",
+              "Liqiu (Start of Autumn)",
+              "Chushu (End of Heat)",
+              "Bailu (White Dew)",
+              "Qiufen (Autumn Equinox)",
+              "Hanlu (Cold Dew)",
+              "Shuangjiang (Frost Descent)",
+              "Lidong (Start of Winter)",
+              "Xiaoxue (Minor Snow)",
+              "Daxue (Major Snow)",
+              "Dongzhi (Winter Solstice)",
+              "Xiaohan (Minor Cold)",
+              "Dahan (Major Cold)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-fruit",
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "description": "Generate a 3:4 vertical ultra-high-definition 8K fruit infographic poster with labeled structure, nutrition, origin, growth process, health benefits, and historical development in professional commercial quality.",
+        "base_prompt": "3:4 vertical composition, ultra-high definition, 8K resolution, sharp details, professional commercial quality, clean and exquisite food infographic design. Style: unified vibrant watercolor hand-drawn aesthetic, bright and gentle color palette, balanced layout, clean readable typography, all text strictly in English, no Chinese characters.\n\nMain Visual (centered, occupies ~40% of the frame): Hand-drawn close-up of 【{fruit_name}】 in vibrant watercolor style, highlighting rich color and texture; dynamic elements such as rising water vapor, flowing juice, and clear pulp texture. Background decorated with tableware, tablecloth, seeds, leaves, branches, and soil textures to avoid empty space, creating a fresh and lively atmosphere.\n\nTitle Section (top of the page): Main title in modern minimalist font (dark gray or black) decorated with small icons (flowers, spoon, fork). Subtitle in smaller font listing core features of 【{fruit_name}】, using weight contrast and small icons for hierarchy.\nExample:\nMain title: 【{fruit_name}】: A 【CRISP / JUICY / SWEET】 DELIGHT\nSubtitle: 【KEY FEATURE 1】 | 【KEY FEATURE 2】 | 【KEY FEATURE 3】\n\nBasic Information Area (top right): English name, scientific name, family & genus, core characteristics (color, taste, flavor), appearance, seed details, aroma compounds.\n\nInternal Structure Area (left/middle): Hand-drawn cross-section illustration with clear English labels:\n- Pulp: juicy and soft, water content about X%\n- Vitamin Zone: rich in vitamin C, K, etc.\n- Mineral Zone: contains manganese, copper, iron, etc.\n- Fiber Layer: promotes digestion\n- Pigment Layer: contains anthocyanins and other antioxidants\nInclude detailed peel, pulp, seed, and vascular tissue annotations.\n\nGrowth Process Area (right side): Vertical illustrated timeline:\n- Sowing / Propagation\n- Vegetative Growth\n- Flowering & Pollination\n- Fruit Setting & Ripening\n\nOrigin & Geography Area (bottom left): Simplified world map marking main producing regions, paired with small local architecture icons; short English description of climate and soil conditions highlighting origin advantages.\n\nNutrition Facts Area: Clear list of key nutrition data (calories, moisture, carbohydrates, dietary fiber, vitamins, minerals, antioxidants) with matching icons.\n\nHealth Benefits Area (bottom right): Icons + short English phrases:\nBoost Immunity, Brain Health, Heart Health, Promote Digestion, Anti-Aging & Skin Health.\n\nHistory & Development Area (bottom): Timeline design:\nWild Ingredients → Early Cultivation → Variety Improvement → Global Planting.\nDecorated with sapphire blue and subtle gold accents to enhance cultural depth.\n\nOverall style: harmonious composition, fresh and premium, high commercial value, suitable for social media and brand promotion. Output directly. Fruit: 【{fruit_name}】.",
+        "parameters": [
+          {
+            "name": "fruit_name",
+            "label": "Fruit Name",
+            "type": "text",
+            "placeholder": [
+              "Durian",
+              "Rambutan",
+              "Avocado",
+              "Blueberry",
+              "Raspberry",
+              "Chilean Cherries",
+              "Salak",
+              "Cacao Fruit",
+              "Dragon Fruit",
+              "Mangosteen"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history",
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "description": "生成4K竖版3:4复古历史假设信息图海报《What if · 历史逆转计划》：水彩+墨线手绘，暖色旧纸质感，包含完整结构化板块。",
+        "base_prompt": "Create a full 4K vertical 3:4 historical hypothesis infographic poster titled 'What if · 历史逆转计划'.\n- Background: [Background Description, e.g., Aged, textured kraft paper (light brown, slightly yellowed, with subtle creases and stains for a vintage, historical feel)]\n- Art Style: [Art Style Description, e.g., All illustrations and icons are in a soft, watercolor and ink hand-drawn style, with delicate lines and muted, earthy tones. Avoid any digital or 3D effects]\n- Color Palette: [Color Palette Description, e.g., Dominated by warm, earthy tones (beige, terracotta, burnt sienna, deep indigo) to match the background. Avoid bright, saturated colors to keep the mood warm and nostalgic, not oppressive]\n- Layout: [Layout Description, e.g., Clean, block-based layout, with clear visual separation between sections]\n\n### Content & Structure (Top to Bottom):\n1. Header Section (Full Width):\n- Main Title: 'What if · 历史逆转计划' (in a [font style 1], centered).\n- Subtitle: '[Subtitle Theme, e.g., 中外历史碰撞 | {title}]' (in a smaller, [font style 2], centered below the title).\n- Corner Accent: A small, hand-drawn silhouette of [left corner element, e.g., a Chinese treasure ship] on the left, and a stylized [right corner element, e.g., compass] on the right, both in [accent art style, e.g., a faded, ink-wash style].\n\n2. Core Character Profile (Full Width):\n- [{title}]\n- Header: A [shape]-shaped, hand-drawn [decorative element] with a tiny emblem hinting the theme.\n- Title: '[事件相关荣誉称号/标识]' ([事件官方/通用英文表述]).\n- Content:\n  - Basic Info: [事件相关主体/年代] ([发生年代区间]), [基本属性].\n  - Core Traits: [事件核心特征].\n  - Key Experiences: [事件关键过程].\n  - Legacy: [事件潜在影响/意义].\n- Visuals: A hand-drawn scene of the core moment with small hand-drawn icons next to each bullet.\n\n3. The Turning Point (Full Width):\n- Title: '[转折点标题]' ([转折点英文标题]).\n- Content:\n  - Trigger: [触发事件].\n  - Key Event: [关键事件].\n  - Outcome: [转折点结果].\n- Visuals: A wide hand-drawn ocean/landscape scene that shows the pivotal action.\n\n4. Core Duel Section (Full Width):\n- Title: '[对比主题标题]' ([对比主题英文标题]).\n- Content: A 2x2 comparison grid with icons:\n  - [对比类别1]: A vs B\n  - [对比类别2]: A vs B\n  - [对比类别3]: A vs B\n  - [对比类别4]: A vs B\n- Visuals: A hand-drawn 'VS' made from crossed symbols representing the two sides.\n\n5. What If Scenario (Full Width):\n- Title: 'WHAT IF · [{title}]'.\n- Content: 3 short evocative scenarios:\n  - [场景1标题]: [场景1描述]\n  - [场景2标题]: [场景2描述]\n  - [场景3标题]: [场景3描述]\n- Visuals: A small atmospheric sketch for each scenario.\n\n6. Footer (Full Width):\n- Text: '[页脚主文本, e.g., 历史没有如果，但每一次假设，都是对文明走向的深度思考.]'\n- Subtext: 'What if · Historical Reversal Plan | Next episode: [下一集主题]'.\n- Visuals: A faint hand-drawn old map + route line as subtle background.\n\n### Final Notes:\n- The entire infographic should feel like a sealed historical hypothesis manuscript, imaginative but thoughtful.\n- All text is clear and legible, slightly handwritten texture.\n- Mood: reflective and curious about civilization exchange; avoid heavy, oppressive, or one-sided interpretations.\n\nVertical 4K poster, direct output without extra explanation.",
+        "parameters": [
+          {
+            "name": "title",
+            "label": "假设主题标题",
+            "type": "text",
+            "placeholder": [
+              "古埃及船队抵达美洲",
+              "明朝遇见文艺复兴",
+              "秦始皇与亚历山大对决",
+              "怛罗斯之战唐朝逆转",
+              "拜占庭与大唐结盟",
+              "郑和船队发现美洲",
+              "宋朝提前进入工业时代",
+              "罗马帝国与汉朝建交",
+              "玛雅文明未中断延续至今",
+              "唐朝主导世界秩序"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "What-If History Infographic",
+        "description": "Create a 4K vertical 3:4 retro historical hypothesis infographic poster titled \"What if · Historical Reversal Plan\" with watercolor + ink hand-drawn style, warm earthy tones, and fully structured sections.",
+        "base_prompt": "Create a full 4K vertical 3:4 historical hypothesis infographic poster titled 'What if · Historical Reversal Plan'.\n- Background: aged textured kraft paper (light brown, slightly yellowed, subtle creases/stains).\n- Art Style: soft watercolor + ink hand-drawn illustrations and icons, delicate lines, muted earthy tones; no digital/3D effects.\n- Color Palette: warm earthy tones (beige, terracotta, burnt sienna, deep indigo); avoid bright saturation.\n- Layout: clean block-based layout with clear separation between sections.\n\n### Content & Structure (Top to Bottom):\n1) Header (Full Width)\n- Main title: 'What if · Historical Reversal Plan'\n- Subtitle: 'Cross-Civilization Collisions | {title}'\n- Corner accents: small hand-drawn silhouette elements (e.g., treasure ship / compass) in faded ink-wash.\n\n2) Core Profile (Full Width)\n- Main event headline: {title}\n- Badge-like decorative header icon.\n- Title line: an honorific/label + an English conventional phrasing.\n- Body: Basic Info / Core Traits / Key Experiences / Legacy, each with small icons.\n- Visual: a hand-drawn scene of the core moment.\n\n3) The Turning Point (Full Width)\n- Title (CN+EN style acceptable, but keep text consistent per poster language choice).\n- Trigger / Key Event / Outcome with a wide scene illustration.\n\n4) Core Duel (Full Width)\n- A 2x2 comparison grid with icons: Motive / Technology / Civilizational Impact / Historical Legacy.\n- Hand-drawn VS symbol using crossed thematic objects.\n\n5) What-If Scenarios (Full Width)\n- Title: 'WHAT IF · {title}'\n- Three short evocative scenarios, each with a small atmospheric sketch.\n\n6) Footer (Full Width)\n- Closing line about counterfactual thinking.\n- Next episode teaser.\n- Faint old-map background with route line.\n\nFinal: The infographic should feel like a sealed historical hypothesis manuscript—imaginative, reflective, and balanced. Vertical 4K poster, output directly without extra explanation.",
+        "parameters": [
+          {
+            "name": "title",
+            "label": "Scenario Title",
+            "type": "text",
+            "placeholder": [
+              "Ancient Egyptian Fleet Reaches the Americas",
+              "Ming China Meets the Renaissance",
+              "Qin Shi Huang vs Alexander the Great",
+              "The Battle of Talas Reversed",
+              "Byzantium Allies with Tang China",
+              "Zheng He Discovers the Americas",
+              "Song Dynasty Enters an Early Industrial Age",
+              "Roman Empire Establishes Ties with Han China",
+              "The Maya Civilization Continues Unbroken",
+              "Tang Dynasty Shapes the World Order"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-character-comparison",
+    "locales": {
+      "zh": {
+        "category": "古今对比人物档案类",
+        "description": "生成3:4竖版高清人物档案卡：左右分栏古今对比，中间干净分割线，低饱和高级排版，细腻立绘与信息模块齐全，适合人物图鉴/收藏卡。",
+        "base_prompt": "（Character Illustration Designer）你是一位顶尖人物插画设计师，擅长制作「古今对比人物档案卡片」。根据用户指定的【{character_name}】，生成一张3:4竖版高清人物档案卡片：整体版式工整高级，采用柔和低饱和配色，文字排版精致，人物立绘细腻、五官清晰、光影柔和，左右分栏古今对比构图，中间设置干净分割线，故事感强，适合人物图鉴与创意收藏卡。模块布局规范：① 顶部居中：姓名+简约装饰边框；② 左侧现代区：现代校园青年形象（清爽干净、简约穿搭），背景为教室/图书馆/校园（现代明亮氛围），标注现代职业/身份，搭配现代代表物品（耳机、笔记本、书包等）；③ 右侧古代区：经典古风人物形象（传统服饰精致），背景为古风书房/庭院（典雅氛围感），标注古代职业/身份，搭配古代代表物品（书卷、武器、乐器等）；④ 卡片下方：依次呈现古今职业对比、古今关键词标签、核心特质、经典能力、代表物品对照、反差萌点，文字排版精致，与整体风格统一。全程科普式呈现人物特质，立绘贴合人物气质，直接出图，人物为【{character_name}】。",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "人物姓名",
+            "type": "text",
+            "placeholder": [
+              "诸葛亮",
+              "苏轼",
+              "李白",
+              "武则天",
+              "狄仁杰",
+              "卫青",
+              "李清照",
+              "岳飞",
+              "陶渊明",
+              "上官婉儿"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Ancient vs Modern Character Profile",
+        "description": "Generate a 3:4 vertical HD character profile card with a left-right ancient/modern split, clean center divider, premium low-saturation palette, delicate character illustration, and structured comparison modules.",
+        "base_prompt": "(Character Illustration Designer) Create a 3:4 vertical high-definition character profile card in a premium, neat layout with a soft low-saturation palette. Use a left-right split composition with a clean dividing line: left is a modern version of the character in a campus setting; right is an ancient version in a classical study/courtyard setting. Top center: name with a minimal decorative frame. Left (Modern): clean youthful outfit, bright modern background (classroom/library/campus), label modern role/identity, add modern representative items (headphones, laptop, backpack, etc.). Right (Ancient): refined traditional attire/armor, elegant ancient background, label ancient role/identity, add ancient representative items (scrolls, weapons, instruments, etc.). Bottom modules in order: occupation comparison, keyword tags (ancient vs modern), core traits, classic abilities, representative items comparison, and one \"cute contrast\" highlight. Illustration should be delicate with clear facial features and soft lighting/shadows; text typesetting should be refined and consistent. Keep it descriptive (no exaggerated claims). Output directly. Character: 【{character_name}】.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Character",
+            "type": "text",
+            "placeholder": [
+              "Zhuge Liang",
+              "Su Shi",
+              "Li Bai",
+              "Wu Zetian",
+              "Di Renjie",
+              "Wei Qing",
+              "Li Qingzhao",
+              "Yue Fei",
+              "Tao Yuanming",
+              "Shangguan Wan'er"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-mbti-animal",
+    "locales": {
+      "zh": {
+        "category": "MBTI动物拟人插画类",
+        "description": "创作治愈系群像插画：16种MBTI人格拟人动物在指定场景中的日常互动，细节丰富、温暖有趣，并清晰标注MBTI代码。",
+        "base_prompt": "（插画师）你是一位擅长治愈系群像插画的设计师。创作一幅细节丰富、温暖有趣的横版/竖版高清插画，描绘16种MBTI人格类型在【{scene}】中的日常情景。每种MBTI类型均拟人化为一种习性与其人格特质完美匹配的动物，每只动物旁清晰标注大写4字母MBTI代码（如INTJ、ENFP）。整体画面温暖治愈、光影柔和、色彩舒适、故事感强、细节饱满，角色互动自然有趣，直接出图，场景为【{scene}】。",
+        "parameters": [
+          {
+            "name": "scene",
+            "label": "插画场景",
+            "type": "text",
+            "placeholder": [
+              "现代办公室",
+              "热闹的动物园",
+              "繁华的购物中心",
+              "家庭年夜饭",
+              "春日露营",
+              "健身房",
+              "文艺咖啡馆",
+              "安静图书馆",
+              "朋友聚会派对",
+              "城市公园午后"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "MBTI Animal Anthropomorphic Illustration",
+        "description": "Create a warm, detailed ensemble illustration of 16 MBTI personality types as anthropomorphic animals interacting in a chosen scene, with clear MBTI labels.",
+        "base_prompt": "(Illustrator) You are a designer specializing in warm, healing ensemble illustrations. Create a detailed, cozy, and fun high-resolution illustration (horizontal or vertical) showing the 16 MBTI personality types in the scene 【{scene}】. Each MBTI type is represented as an anthropomorphic animal whose habits match the personality traits. Place a clear 4-letter uppercase MBTI code (e.g., INTJ, ENFP) next to each character. The overall image should be warm and comforting with soft lighting, pleasant colors, rich details, and natural, humorous interactions. Output directly. Scene: 【{scene}】.",
+        "parameters": [
+          {
+            "name": "scene",
+            "label": "Scene",
+            "type": "text",
+            "placeholder": [
+              "Modern Office",
+              "Busy Zoo",
+              "Shopping Mall",
+              "Family New Year Dinner",
+              "Spring Camping",
+              "Gym",
+              "Art Café",
+              "Quiet Library",
+              "Friends Party",
+              "Afternoon in a City Park"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-battle-card",
+    "locales": {
+      "zh": {
+        "category": "古风对决角色档案类",
+        "description": "生成竖版国风工笔对决角色档案图卡：左右分屏人物A/B，顶部头像与左右档案信息，底部标志性物品，整体张力拉满。",
+        "base_prompt": "（Character Battle Designer）你是一位专业古风角色对决插画师，绘制一张竖版古风对决角色档案图卡，主题为「{battle_theme}：{character_A} vs {character_B}」。画面中央左右分屏构图：左侧{character_A}，身着{style_A}的{identity_A}服饰铠甲，手持{item_A}，神情{expression_A}，{action_A}，仿佛{scene_A}；右侧{character_B}，身着{style_B}的{identity_B}服饰铠甲，手持{item_B}，神情{expression_B}，{action_B}，仿佛{scene_B}。背景为{battle_scene}水墨山水，左侧{element_A}，右侧{element_B}，前景{foreground_effect}，中间用{divider}分割强化对决感。图卡模块：1.顶部四个小头像，左右各二，显示双方关键标签神态；2.左侧角色A档案：姓名、出处、性格、核心能力；3.右侧角色B档案：姓名、出处、性格、核心能力；4.底部左右各两件标志性物品。整体为国风工笔，线条细腻，色彩典雅，带有{style_tone}，画面张力拉满，直接出图。",
+        "parameters": [
+          {
+            "name": "battle_theme",
+            "label": "对决主题",
+            "type": "text",
+            "placeholder": [
+              "兵家巅峰对决",
+              "兵圣对决",
+              "三国谋士对决",
+              "楚汉争霸",
+              "宋金名将对决",
+              "大汉双雄对决",
+              "神探名相对决",
+              "诗仙诗圣对决",
+              "女皇女相对决",
+              "三国霸主对决"
+            ]
+          },
+          {
+            "name": "character_A",
+            "label": "角色A",
+            "type": "text",
+            "placeholder": [
+              "韩信",
+              "孙武",
+              "诸葛亮",
+              "刘邦",
+              "岳飞",
+              "卫青",
+              "狄仁杰",
+              "李白",
+              "武则天",
+              "孙权"
+            ]
+          },
+          {
+            "name": "character_B",
+            "label": "角色B",
+            "type": "text",
+            "placeholder": [
+              "白起",
+              "吴起",
+              "司马懿",
+              "项羽",
+              "金兀术",
+              "霍去病",
+              "包拯",
+              "杜甫",
+              "太平公主",
+              "曹操"
+            ]
+          },
+          {
+            "name": "style_A",
+            "label": "A方服饰风格",
+            "type": "text",
+            "placeholder": [
+              "汉代战甲",
+              "唐风武服",
+              "宋代文士袍",
+              "明制甲胄",
+              "战国铠甲"
+            ]
+          },
+          {
+            "name": "identity_A",
+            "label": "A方身份设定",
+            "type": "text",
+            "placeholder": [
+              "名将",
+              "兵法家",
+              "谋士",
+              "帝王",
+              "侠客"
+            ]
+          },
+          {
+            "name": "item_A",
+            "label": "A方武器/道具",
+            "type": "text",
+            "placeholder": [
+              "长枪",
+              "佩剑",
+              "羽扇",
+              "兵书",
+              "玉玺"
+            ]
+          },
+          {
+            "name": "expression_A",
+            "label": "A方表情",
+            "type": "text",
+            "placeholder": [
+              "冷静",
+              "凌厉",
+              "从容",
+              "坚毅",
+              "傲然"
+            ]
+          },
+          {
+            "name": "action_A",
+            "label": "A方动作",
+            "type": "text",
+            "placeholder": [
+              "策马前冲",
+              "横枪立阵",
+              "挥扇布阵",
+              "拔剑出鞘",
+              "凝神观敌"
+            ]
+          },
+          {
+            "name": "scene_A",
+            "label": "A方氛围描述",
+            "type": "text",
+            "placeholder": [
+              "风起旌旗猎猎",
+              "沙场杀气弥漫",
+              "军帐谋略暗涌",
+              "雷雨将至",
+              "雪夜孤军对峙"
+            ]
+          },
+          {
+            "name": "style_B",
+            "label": "B方服饰风格",
+            "type": "text",
+            "placeholder": [
+              "秦制铁甲",
+              "魏晋玄甲",
+              "金国战袍",
+              "战国戎装",
+              "唐制铠甲"
+            ]
+          },
+          {
+            "name": "identity_B",
+            "label": "B方身份设定",
+            "type": "text",
+            "placeholder": [
+              "名将",
+              "权臣",
+              "帝王",
+              "统帅",
+              "刺客"
+            ]
+          },
+          {
+            "name": "item_B",
+            "label": "B方武器/道具",
+            "type": "text",
+            "placeholder": [
+              "方天画戟",
+              "长刀",
+              "战斧",
+              "弓箭",
+              "短刃"
+            ]
+          },
+          {
+            "name": "expression_B",
+            "label": "B方表情",
+            "type": "text",
+            "placeholder": [
+              "狠厉",
+              "阴沉",
+              "冷笑",
+              "威严",
+              "狡黠"
+            ]
+          },
+          {
+            "name": "action_B",
+            "label": "B方动作",
+            "type": "text",
+            "placeholder": [
+              "提戟逼近",
+              "挥刀破风",
+              "策马迂回",
+              "张弓待发",
+              "踏碎落叶"
+            ]
+          },
+          {
+            "name": "scene_B",
+            "label": "B方氛围描述",
+            "type": "text",
+            "placeholder": [
+              "乌云压境",
+              "烈火映天",
+              "月下寒光",
+              "古道荒烟",
+              "城阙残影"
+            ]
+          },
+          {
+            "name": "battle_scene",
+            "label": "对决场景",
+            "type": "text",
+            "placeholder": [
+              "水墨山水战场",
+              "古城门前",
+              "旷野沙场",
+              "江畔夜战",
+              "雪山关隘"
+            ]
+          },
+          {
+            "name": "element_A",
+            "label": "左侧环境元素",
+            "type": "text",
+            "placeholder": [
+              "旌旗",
+              "松林",
+              "军帐",
+              "残阳",
+              "江雾"
+            ]
+          },
+          {
+            "name": "element_B",
+            "label": "右侧环境元素",
+            "type": "text",
+            "placeholder": [
+              "烽火",
+              "断墙",
+              "寒月",
+              "飞雪",
+              "乌鸦"
+            ]
+          },
+          {
+            "name": "foreground_effect",
+            "label": "前景氛围特效",
+            "type": "text",
+            "placeholder": [
+              "尘土飞扬",
+              "墨点飞溅",
+              "落叶旋转",
+              "雨丝斜落",
+              "火星四散"
+            ]
+          },
+          {
+            "name": "divider",
+            "label": "中间分割元素",
+            "type": "text",
+            "placeholder": [
+              "裂纹墨线",
+              "交叉兵刃剪影",
+              "阴阳太极纹",
+              "雷电光痕",
+              "书法“战”字"
+            ]
+          },
+          {
+            "name": "style_tone",
+            "label": "整体风格基调",
+            "type": "text",
+            "placeholder": [
+              "肃杀",
+              "苍凉",
+              "豪迈",
+              "史诗感",
+              "悲壮"
+            ]
+          }
+        ]
+      }
+    }
   }
+    
 ]
