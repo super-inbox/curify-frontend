@@ -1,8 +1,8 @@
 {
   "home": {
     "metadata": {
-      "title": "Curify | Power Content Creation with AI",
-      "description": "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale."
+      "title": "Curify | AIでコンテンツ制作を加速",
+      "description": "Curifyは、クリエイター・教育者・メディアチームが、動画、マンガ、プレゼン資料を大規模に制作・ローカライズできるAIネイティブプラットフォームです。"
     },
     "hero": {
       "title": "AIを活用した次世代コンテンツ制作",
@@ -125,8 +125,8 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "Free Bilingual Subtitles Generator | Curify AI",
-      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+      "title": "無料バイリンガル字幕ジェネレーター | Curify AI",
+      "description": "Curifyの無料AIツールで、動画にバイリンガル字幕を簡単作成。YouTube、TikTok、教育用途、グローバル展開に最適です。"
     },
     "title": "バイリンガル字幕を簡単に作成",
     "intro": "CurifyのAI字幕エンジンで、2言語の字幕を自動生成。クリエイター、教育者、企業に最適。",
@@ -149,34 +149,34 @@
   },
   "videoDubbing": {
     "metadata": {
-      "title": "AI Video Dubbing Tool | Curify AI",
-      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+      "title": "AI動画吹き替えツール | Curify AI",
+      "description": "AI音声クローン、感情保持、リップシンクで動画を170以上の言語に吹き替え。CurifyのAI吹き替えを無料で試せます。"
     },
     "title": "自然な声でのAI動画吹き替え",
     "description": "170以上の言語で動画を翻訳・同期し、自然なAI音声とリップシンクを提供します。国際展開するクリエイターやブランドに最適です。"
   },
   "about": {
     "metadata": {
-      "title": "About Curify | Vision, Technology & Team",
-      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+      "title": "Curifyについて | ビジョン・技術・チーム",
+      "description": "AIでコンテンツ制作を民主化するCurifyのビジョンを紹介します。私たちはメディアローカライゼーションの未来をつくるエンジニアとクリエイターのチームです。"
     }
   },
   "contact": {
     "metadata": {
-      "title": "Contact Us | Curify Studio",
-      "description": "Get in touch with the Curify team for support, sales, or partnerships. We are here to help you scale your content globally."
+      "title": "お問い合わせ | Curify Studio",
+      "description": "サポート、営業、提携についてはCurifyチームまでご連絡ください。コンテンツのグローバル展開を支援します。"
     }
   },
   "blog": {
     "metadata": {
-      "title": "Curify Blog | AI Content Creation Insights",
-      "description": "Read the latest articles on AI video generation, dubbing, style transfer, and the future of content creation."
+      "title": "Curifyブログ | AIコンテンツ制作インサイト",
+      "description": "AI動画生成、吹き替え、スタイル転写、コンテンツ制作の未来に関する最新記事をお届けします。"
     }
   },
   "pricing": {
     "metadata": {
-      "title": "Pricing Plans | Curify Studio",
-      "description": "Choose the right plan for your content creation needs. From free tools to enterprise-grade AI dubbing and localization."
+      "title": "料金プラン | Curify Studio",
+      "description": "無料ツールからエンタープライズ向けAI吹き替え・ローカライズまで、用途に合うプランを選べます。"
     },
     "header": {
       "title": "プランを選択",
@@ -273,76 +273,76 @@
     }
   },
   "aeVsComfyUi": {
-    "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
+    "title": "AE vs ComfyUI - アニメーション再定義（Part 3）",
     "heading": "🎨 AE vs ComfyUI",
-    "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
-    "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
+    "intro1": "よく質問されるのは、After Effects（AE）だけで十分ではないか、あるいはなぜComfyUIかという点です。両方とも重要で、AEは精密な制御を、ComfyUIは生成系の創造性を担います。",
+    "intro2": "AEはタイムライン精度と、トランジション・ライティング・エフェクトの制御に強みがあります。ComfyUIは、拡散モデル、テキスト、多モーダル連携を統合したAIネイティブなワークフローを提供します。",
     "table": {
       "colAE": "AE",
       "colComfy": "ComfyUI",
-      "row1a": "Precise VFX and motion control",
-      "row1b": "AI-native generation of videos",
-      "row2a": "Timeline-based editing",
-      "row2b": "Workflow/node-based rendering",
-      "row3a": "Manual / plugin-driven workflow",
-      "row3b": "Diffusion + LLM + multimodal orchestration"
+      "row1a": "高精度なVFXとモーション制御",
+      "row1b": "AIネイティブな動画生成",
+      "row2a": "タイムラインベース編集",
+      "row2b": "ワークフロー/ノードベースレンダリング",
+      "row3a": "手動/プラグイン中心のワークフロー",
+      "row3b": "拡散 + LLM + 多モーダルオーケストレーション"
     },
-    "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
+    "outro": "私たちのワークフローでは、ComfyUIがAI生成と反復を担い、AEがトランジション、オーバーレイ、合成処理など最終表現を仕上げます。"
   },
   "video_translation_eval": {
-    "title": "Evaluating AI Video Translation Quality",
-    "subtitle": "Metrics that Matter",
-    "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we’ve built a robust evaluation pipeline to ensure each piece meets industry standards.",
-    "section1_title": "1. Transcription Quality",
-    "section1_engine": "Engine: WhisperX",
+    "title": "AI動画翻訳品質の評価",
+    "subtitle": "本当に重要な指標",
+    "intro": "動画を多言語に翻訳するには、文字起こし、翻訳、音声合成、タイミング調整など、多くの工程が必要です。Curifyでは、各工程が業界水準を満たすよう、堅牢な評価パイプラインを構築しています。",
+    "section1_title": "1. 文字起こし品質",
+    "section1_engine": "エンジン: WhisperX",
     "section1_metrics": [
-      "WER (Word Error Rate)",
-      "Punctuation F1 (for expressiveness and readability)"
+      "WER（単語誤り率）",
+      "句読点F1（表現力と可読性）"
     ],
-    "section2_title": "2. Translation Quality",
-    "section2_engine": "Engines: Helsinki, MarianMT",
+    "section2_title": "2. 翻訳品質",
+    "section2_engine": "エンジン: Helsinki, MarianMT",
     "section2_metrics": [
-      "BLEU (standard metric)",
-      "COMET / chrF++ (semantic similarity)",
-      "Human review: fluency + adequacy"
+      "BLEU（標準指標）",
+      "COMET / chrF++（意味的類似度）",
+      "人手評価: 流暢さ + 十分性"
     ],
-    "section3_title": "3. Voice Synthesis Quality",
-    "section3_engine": "Engines: XTTS / YourTTS",
+    "section3_title": "3. 音声合成品質",
+    "section3_engine": "エンジン: XTTS / YourTTS",
     "section3_metrics": [
-      "MOS (Naturalness, similarity, expressiveness)",
-      "Speaker verification accuracy"
+      "MOS（自然さ・類似性・表現力）",
+      "話者照合精度"
     ],
-    "section4_title": "4. Alignment & Lip Sync",
+    "section4_title": "4. アライメントとリップシンク",
     "section4_metrics": [
-      "Segment duration mismatch",
-      "Wav2Lip sync confidence",
-      "Temporal drift analysis"
+      "セグメント長の不一致",
+      "Wav2Lip同期信頼度",
+      "時間ドリフト分析"
     ],
-    "section5_title": "5. Semantic Preservation",
-    "section5_method": "We use LLMs (like GPT-4) to judge whether the translated speech preserves the original meaning, tone, and emotion. Example prompt:",
-    "section5_prompt": "Compare this Mandarin transcript to the English voiceover. Does the tone, intent, and content match? Rate 1–5 and explain.",
-    "section6_title": "6. User Feedback & GTM Validation",
+    "section5_title": "5. 意味保持",
+    "section5_method": "翻訳後の音声が元の意味・トーン・感情を保持しているかを、GPT-4などのLLMで評価します。例: ",
+    "section5_prompt": "この中国語（標準語）の書き起こしと英語音声を比較し、トーン・意図・内容が一致しているかを1〜5で評価し、理由を説明してください。",
+    "section6_title": "6. ユーザーフィードバックとGTM検証",
     "section6_metrics": [
-      "Voice quality fit for product category",
-      "Viewer retention improvement",
-      "Adoption willingness from early users (e.g., 1688 sellers)"
+      "製品カテゴリへの音質適合性",
+      "視聴維持率の改善",
+      "初期ユーザー（例: 1688出店者）の導入意向"
     ],
-    "closing": "At Curify, we don’t just translate — we preserve storytelling, emotion, and clarity across languages. If you’re ready to scale your voice globally, get in touch.",
-    "available_locales": "Post available in: [EN] [ZH] [ES] [DE]"
+    "closing": "Curifyは単なる翻訳ではなく、言語をまたいで物語性・感情・明瞭さを保ちます。世界展開を始めるなら、ぜひご相談ください。",
+    "available_locales": "記事対応言語: [EN] [ZH] [ES] [DE]"
   },
   "storyboardToPipeline": {
-    "title": "From Storyboards to AI Pipelines – Redefining Animation",
+    "title": "ストーリーボードからAIパイプラインへ - アニメーション再定義",
     "intro": {
       "p1": "Most people think AI video means \"text in, clip out.\" But if you're aiming for <strong>cinematic, director-level control</strong>, it's an entirely different game.",
-      "p2": "In traditional animation, every detail matters — character design, motion continuity, timing, and scene transitions. Our goal is to make AI match that level of precision.",
-      "p3": "Animation today is both an art and a structured orchestration challenge. We think like directors, but build like engineers.",
+      "p2": "従来のアニメーションでは、キャラクターデザイン、動きの連続性、タイミング、シーン遷移など、あらゆる要素が重要です。私たちの目標は、AIでもその精度に到達することです。",
+      "p3": "現在のアニメーションは、芸術であると同時に、構造化されたオーケストレーションの課題でもあります。私たちは監督のように考え、エンジニアのように実装します。",
       "p4": "That's why we build <strong>Controlled Generation Pipelines</strong> instead of one-shot generation. These pipelines combine structure and creativity:",
       "pipelineItems": [
         "Storyboard-to-Video: JSON-based scene specs with IDs, timing, and camera metadata",
         "ComfyUI-based workflows: node-graph DAGs with versioned checkpoints, LoRA stacks, and seeds",
         "Temporal & multimodal control: shared scene IDs across image, motion, audio, and subtitles"
       ],
-      "p5": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
+      "p5": "それでは、AIパイプラインが実運用でどのように機能するか、シンプルな例で見ていきましょう。",
       "technicalNotes": [
         "All stages read/write typed artifacts (JSON/CSV, PNG sequences, WAV/MP3, MP4, .aep)",
         "Pipelines are orchestrated via Python/CLI (e.g., ComfyUI API, ffmpeg, TTS APIs)",
@@ -350,20 +350,20 @@
       ]
     },
     "pipeline": {
-      "title": "AI Video Generation Pipeline",
-      "description": "The AI video generation pipeline transforms text prompts into polished videos through structured stages with explicit inputs, outputs, and configs.",
+      "title": "AI動画生成パイプライン",
+      "description": "AI動画生成パイプラインは、明確な入力・出力・設定を持つ構造化ステージを通して、テキストプロンプトを完成動画へ変換します。",
       "prompt": "1. Prompt (raw idea → structured JSON spec)",
       "storyboard": "2. Storyboard (scene/shot table with timing, camera, and description)",
       "images": "3. Images (per-shot keyframes generated via Stable Diffusion / ComfyUI)",
-      "animation": "4. Animation (image sequences → motion, parallax, and effects)",
-      "voiceOver": "5. Voice Over (TTS + alignment data)",
+      "animation": "4. アニメーション（画像シーケンス → 動き、パララックス、エフェクト）",
+      "voiceOver": "5. 音声（TTS + アライメント情報）",
       "finalVideo": "6. Final Video (ffmpeg composition: video + audio + subtitles)",
       "features": [
         "JSON-first design: every scene is addressable and scriptable (scene_id, shot_id)",
         "ComfyUI-based workflows: modular, reproducible, composable DAGs for image/video generation",
         "Temporal & multimodal control: consistent seeds, character embeddings, and timing across modalities"
       ],
-      "exampleIntro": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
+      "exampleIntro": "それでは、AIパイプラインが実運用でどのように機能するか、シンプルな例で見ていきましょう。",
       "artifacts": {
         "promptSpec": "prompt_run_001.json",
         "storyboardTable": "storyboard_v1.csv",
@@ -375,9 +375,9 @@
     },
     "steps": {
       "step1": {
-        "title": "Step 1: Start with a Basic Prompt",
-        "example": "A girl stands at a midnight train station, wind blowing her hair.",
-        "expandedPrompt": "With the help of GPT or a local LLM, we expand this into a structured JSON object with global style, character definitions, and per-scene breakdown.",
+        "title": "Step 1: 基本プロンプトを作る",
+        "example": "真夜中の駅に少女が立ち、風が髪を揺らしている。",
+        "expandedPrompt": "GPTやローカルLLMを使い、全体スタイル、キャラクター定義、シーンごとの分解を含む構造化JSONへ展開します。",
         "technicalDetails": {
           "llmFields": [
             "global_style: art style, camera language, color palette",
@@ -389,8 +389,8 @@
         }
       },
       "step2": {
-        "title": "Step 2: Convert Prompt to a Storyboard Table",
-        "description": "The JSON spec is flattened into a storyboard table (CSV or Notion) that both humans and the pipeline can read.",
+        "title": "Step 2: プロンプトをストーリーボード表へ変換",
+        "description": "JSON仕様を、人物とパイプラインの双方が読めるストーリーボード表（CSVまたはNotion）に平坦化します。",
         "technicalDetails": {
           "columns": [
             "scene_id",
@@ -408,8 +408,8 @@
         }
       },
       "step3": {
-        "title": "🛠️ Step 3: Generate Visuals",
-        "description": "Generate high-quality keyframe images for each shot using Stable Diffusion through a ComfyUI workflow.",
+        "title": "🛠️ Step 3: ビジュアル生成",
+        "description": "ComfyUIワークフローを通して、Stable Diffusionで各ショットの高品質キーフレームを生成します。",
         "points": [
           "🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each row in `storyboard_v1.csv` into a high-res keyframe.",
           "Keep the style consistent by using the same base checkpoint, LoRA stack, sampler, and seed policy across all shots.",
@@ -441,8 +441,8 @@
         }
       },
       "step4": {
-        "title": "🎬 Step 4: Add Motion and Atmosphere in After Effects",
-        "description": "Enhance static keyframes with motion, parallax, and atmosphere using Adobe After Effects (or an equivalent compositor).",
+        "title": "🎬 Step 4: After Effectsで動きと空気感を追加",
+        "description": "Adobe After Effects（または同等の合成ツール）で、静止キーフレームに動き、パララックス、雰囲気表現を加えます。",
         "points": [
           "Import image sequences or keyframes into <strong>Adobe After Effects</strong> as layered compositions.",
           "Apply keyframe animations: pan, zoom, parallax layers, fog overlays, glow and light flicker.",
@@ -460,8 +460,8 @@
         }
       },
       "step5": {
-        "title": "🎧 Step 5: Add Voice and Subtitles",
-        "description": "Generate voiceover aligned to the storyboard and attach subtitles for accessibility and clarity.",
+        "title": "🎧 Step 5: 音声と字幕を追加",
+        "description": "ストーリーボードに合わせた音声を生成し、アクセシビリティと明瞭性のため字幕を付与します。",
         "points": [
           "Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers from the script, using a consistent speaker profile.",
           "For acronyms (like API, NBA), generate English snippets separately and merge in post to keep pronunciation clean.",
@@ -483,8 +483,8 @@
         }
       },
       "step6": {
-        "title": "Step 6: Final Composition with FFMPEG",
-        "description": "Use FFMPEG to combine all pieces into one final video file with audio and subtitles.",
+        "title": "Step 6: FFMPEGで最終合成",
+        "description": "FFMPEGで各素材を結合し、音声と字幕付きの最終動画ファイルを生成します。",
         "technicalDetails": {
           "inputs": {
             "video": "ae_renders/storyboard_v1_timeline.mp4",
@@ -1041,13 +1041,13 @@
     }
   },
   "nanoBananaProPrompts": {
-    "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "title": "Nano Banana Pro プロンプト集",
+    "description": "AIコンテンツ生成のための、実用的で創造的なプロンプトを厳選して紹介します。AIツールの効果を最大化したいときに役立ちます。",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "人気の Nano Banana Pro プロンプト",
+      "prompt1": "感情が通貨として流通する未来都市を舞台に、短い物語を書いてください。",
+      "prompt2": "初めてカフェで出会う2人のキャラクターの対話を生成してください。",
+      "prompt3": "AI搭載の革新的なキッチンガジェットの製品説明文を書いてください。"
     }
   },
   "ageAi": {

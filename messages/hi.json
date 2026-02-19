@@ -105,11 +105,11 @@
       "desc": "एक ही प्रक्रिया में वॉयस-ओवर, उपशीर्षक और लिप सिंक के साथ पूर्ण वीडियो अनुवाद।"
     },
     "toneColor": {
-      "title": "टोन रंग संरक्षण",
+      "title": "स्वर गुण संरक्षण",
       "desc": "मूल वक्ता की अनूठी आवाज विशेषताओं और तानवाला गुणों को बनाए रखता है।"
     },
     "emotional": {
-      "title": "भावनात्मक भाषण",
+      "title": "भावनात्मक वाणी",
       "desc": "AI भावनात्मक बारीकियों को पुन: पेश करता है, भाषाओं में प्रामाणिक अभिव्यक्ति सुनिश्चित करता है।"
     },
     "lipSync": {
@@ -127,7 +127,7 @@
   },
   "upcoming": {
     "title": "जल्द आ रहा है",
-    "subtitle": "अगली पीढ़ी की विशेषताएं विकास में",
+    "subtitle": "अगली पीढ़ी की विशेषताएँ विकास में हैं",
     "styleTransfer": {
       "title": "शैली स्थानांतरण",
       "desc": "AI-संचालित दृश्य परिवर्तन के साथ अपने वीडियो पर सिनेमाई या ब्रांड-विशिष्ट शैलियों को लागू करें।",
@@ -363,97 +363,97 @@
     }
   },
   "aeVsComfyUi": {
-    "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
-    "heading": "🎨 AE vs ComfyUI",
-    "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
-    "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
+    "title": "AE बनाम ComfyUI – एनीमेशन को पुनर्परिभाषित करना (भाग 3)",
+    "heading": "🎨 AE बनाम ComfyUI",
+    "intro1": "हमसे अक्सर पूछा जाता है: केवल आफ्टर इफेक्ट्स (AE) का उपयोग क्यों न करें? या ComfyUI के साथ परेशान क्यों हों? दोनों आवश्यक हैं — एक सूक्ष्म नियंत्रण प्रदान करता है, दूसरा जनरेटिव रचनात्मकता।",
+    "intro2": "AE समयरेखा परिशुद्धता और संक्रमण, प्रकाश व्यवस्था और प्रभावों पर नियंत्रण प्रदान करता है। ComfyUI प्रसार, पाठ और मल्टीमॉडल ऑर्केस्ट्रेशन को मिलाते हुए AI-मूल वर्कफ़्लो लाता है।",
     "table": {
       "colAE": "AE",
       "colComfy": "ComfyUI",
-      "row1a": "Precise VFX and motion control",
-      "row1b": "AI-native generation of videos",
-      "row2a": "Timeline-based editing",
-      "row2b": "Workflow/node-based rendering",
-      "row3a": "Manual / plugin-driven workflow",
-      "row3b": "Diffusion + LLM + multimodal orchestration"
+      "row1a": "सटीक VFX और गति नियंत्रण",
+      "row1b": "वीडियो का AI-मूल निर्माण",
+      "row2a": "समयरेखा-आधारित संपादन",
+      "row2b": "वर्कफ़्लो/नोड-आधारित रेंडरिंग",
+      "row3a": "मैनुअल / प्लगइन-संचालित वर्कफ़्लो",
+      "row3b": "प्रसार + LLM + मल्टीमॉडल ऑर्केस्ट्रेशन"
     },
-    "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
+    "outro": "हमारे वर्कफ़्लो में, ComfyUI AI निर्माण और पुनरावृत्ति को संभालता है, जबकि AE अंतिम रूप को परिष्कृत करता है — संक्रमण, ओवरले और कंपोजिटिंग।"
   },
   "video_translation_eval": {
-    "title": "Evaluating AI Video Translation Quality",
-    "subtitle": "Metrics that Matter",
-    "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we’ve built a robust evaluation pipeline to ensure each piece meets industry standards.",
-    "section1_title": "1. Transcription Quality",
-    "section1_engine": "Engine: WhisperX",
+    "title": "AI वीडियो अनुवाद गुणवत्ता का मूल्यांकन",
+    "subtitle": "मेट्रिक्स जो मायने रखते हैं",
+    "intro": "वीडियो का भाषाओं में अनुवाद करना कोई छोटी उपलब्धि नहीं है — इसमें ट्रांसक्रिप्शन, अनुवाद, वॉयस सिंथेसिस, टाइमिंग और बहुत कुछ शामिल है। Curify में, हमने यह सुनिश्चित करने के लिए एक मजबूत मूल्यांकन पाइपलाइन बनाई है कि प्रत्येक टुकड़ा उद्योग मानकों को पूरा करता है।",
+    "section1_title": "1. ट्रांसक्रिप्शन गुणवत्ता",
+    "section1_engine": "इंजन: WhisperX",
     "section1_metrics": [
-      "WER (Word Error Rate)",
-      "Punctuation F1 (for expressiveness and readability)"
+      "WER (शब्द त्रुटि दर)",
+      "विराम चिह्न F1 (अभिव्यक्ति और पठनीयता के लिए)"
     ],
-    "section2_title": "2. Translation Quality",
-    "section2_engine": "Engines: Helsinki, MarianMT",
+    "section2_title": "2. अनुवाद गुणवत्ता",
+    "section2_engine": "इंजन: Helsinki, MarianMT",
     "section2_metrics": [
-      "BLEU (standard metric)",
-      "COMET / chrF++ (semantic similarity)",
-      "Human review: fluency + adequacy"
+      "BLEU (मानक मीट्रिक)",
+      "COMET / chrF++ (अर्थगत समानता)",
+      "मानव समीक्षा: प्रवाह + पर्याप्तता"
     ],
-    "section3_title": "3. Voice Synthesis Quality",
-    "section3_engine": "Engines: XTTS / YourTTS",
+    "section3_title": "3. वॉयस सिंथेसिस गुणवत्ता",
+    "section3_engine": "इंजन: XTTS / YourTTS",
     "section3_metrics": [
-      "MOS (Naturalness, similarity, expressiveness)",
-      "Speaker verification accuracy"
+      "MOS (स्वाभाविकता, समानता, अभिव्यक्ति)",
+      "वक्ता सत्यापन सटीकता"
     ],
-    "section4_title": "4. Alignment & Lip Sync",
+    "section4_title": "4. संरेखण और लिप सिंक",
     "section4_metrics": [
-      "Segment duration mismatch",
-      "Wav2Lip sync confidence",
-      "Temporal drift analysis"
+      "खंड अवधि बेमेल",
+      "Wav2Lip सिंक आत्मविश्वास",
+      "लौकिक बहाव विश्लेषण"
     ],
-    "section5_title": "5. Semantic Preservation",
-    "section5_method": "We use LLMs (like GPT-4) to judge whether the translated speech preserves the original meaning, tone, and emotion. Example prompt:",
-    "section5_prompt": "Compare this Mandarin transcript to the English voiceover. Does the tone, intent, and content match? Rate 1–5 and explain.",
-    "section6_title": "6. User Feedback & GTM Validation",
+    "section5_title": "5. अर्थ संरक्षण",
+    "section5_method": "हम यह पहचानने के लिए LLM (जैसे GPT-4) का उपयोग करते हैं कि क्या अनुवादित भाषण मूल अर्थ, स्वर और भावना को संरक्षित करता है। उदाहरण प्रॉम्प्ट:",
+    "section5_prompt": "इस मैंडरिन ट्रांसक्रिप्ट की तुलना अंग्रेजी वॉयसओवर से करें। क्या टोन, इरादा और सामग्री मेल खाती है? 1–5 रेट करें और समझाएं।",
+    "section6_title": "6. उपयोगकर्ता प्रतिक्रिया और GTM सत्यापन",
     "section6_metrics": [
-      "Voice quality fit for product category",
-      "Viewer retention improvement",
-      "Adoption willingness from early users (e.g., 1688 sellers)"
+      "उत्पाद श्रेणी के लिए वॉयस गुणवत्ता फिट",
+      "दर्शक प्रतिधारण सुधार",
+      "प्रारंभिक उपयोगकर्ताओं से अपनाने की इच्छा (जैसे, 1688 विक्रेता)"
     ],
-    "closing": "At Curify, we don’t just translate — we preserve storytelling, emotion, and clarity across languages. If you’re ready to scale your voice globally, get in touch.",
-    "available_locales": "Post available in: [EN] [ZH] [ES] [DE]"
+    "closing": "Curify में, हम केवल अनुवाद नहीं करते हैं — हम भाषाओं में कहानी, भावना और स्पष्टता को संरक्षित करते हैं। यदि आप अपनी आवाज को विश्व स्तर पर स्केल करने के लिए तैयार हैं, तो संपर्क करें।",
+    "available_locales": "पोस्ट उपलब्ध है: [EN] [ZH] [ES] [DE]"
   },
   "storyboardToPipeline": {
-    "title": "From Storyboards to AI Pipelines – Redefining Animation",
+    "title": "स्टोरीबोर्ड से AI पाइपलाइनों तक - एनीमेशन को पुनर्परिभाषित करना",
     "intro": {
-      "p1": "Most people think AI video means \"text in, clip out.\" But if you're aiming for <strong>cinematic, director-level control</strong>, it's an entirely different game.",
-      "p2": "In traditional animation, every detail matters — character design, motion continuity, timing, and scene transitions. Our goal is to make AI match that level of precision.",
-      "p3": "Animation today is both an art and a structured orchestration challenge. We think like directors, but build like engineers.",
-      "p4": "That's why we build <strong>Controlled Generation Pipelines</strong> instead of one-shot generation. These pipelines combine structure and creativity:",
+      "p1": "ज्यादातर लोग सोचते हैं कि AI वीडियो का मतलब है 'टेक्स्ट इन, क्लिप आउट।' लेकिन अगर आप <strong>सिनेमाई, निर्देशक-स्तर के नियंत्रण</strong> का लक्ष्य बना रहे हैं, तो यह पूरी तरह से अलग खेल है।",
+      "p2": "पारंपरिक एनीमेशन में, हर विवरण मायने रखता है — चरित्र डिजाइन, गति निरंतरता, समय और दृश्य संक्रमण। हमारा लक्ष्य AI को उस स्तर की सटीकता से मेल कराना है।",
+      "p3": "एनीमेशन आज एक कला और एक संरचित ऑर्केस्ट्रेशन चुनौती दोनों है। हम निर्देशकों की तरह सोचते हैं, लेकिन इंजीनियरों की तरह बनाते हैं।",
+      "p4": "यही कारण है कि हम वन-शॉट जेनरेशन के बजाय <strong>नियंत्रित जेनरेशन पाइपलाइन</strong> बनाते हैं। ये पाइपलाइन संरचना और रचनात्मकता को जोड़ती हैं:",
       "pipelineItems": [
-        "Storyboard-to-Video: JSON-based scene specs with IDs, timing, and camera metadata",
-        "ComfyUI-based workflows: node-graph DAGs with versioned checkpoints, LoRA stacks, and seeds",
-        "Temporal & multimodal control: shared scene IDs across image, motion, audio, and subtitles"
+        "स्टोरीबोर्ड-टू-वीडियो: आईडी, समय और कैमरा मेटाडेटा के साथ JSON-आधारित दृश्य विनिर्देश",
+        "ComfyUI-आधारित वर्कफ़्लो: वर्जन्ड चेकपॉइंट्स, LoRA स्टैक और बीज के साथ नोड-ग्राफ DAGs",
+        "लौकिक और मल्टीमॉडल नियंत्रण: छवि, गति, ऑडियो और उपशीर्षक में साझा दृश्य आईडी"
       ],
-      "p5": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
+      "p5": "अब, आइए यह दिखाने के लिए एक सरल उदाहरण देखें कि व्यवहार में AI पाइपलाइन कैसे काम करती हैं।",
       "technicalNotes": [
-        "All stages read/write typed artifacts (JSON/CSV, PNG sequences, WAV/MP3, MP4, .aep)",
-        "Pipelines are orchestrated via Python/CLI (e.g., ComfyUI API, ffmpeg, TTS APIs)",
-        "Every run is reproducible through stored config (model, sampler, seed, prompts, duration)"
+        "सभी चरण टाइप्ड कलाकृतियों (JSON/CSV, PNG अनुक्रम, WAV/MP3, MP4, .aep) को पढ़ते/लिखते हैं",
+        "पाइपलाइन Python/CLI (जैसे, ComfyUI API, ffmpeg, TTS API) के माध्यम से ऑर्केस्ट्रेट की जाती हैं",
+        "प्रत्येक रन संग्रहीत कॉन्फ़िगरेशन (मॉडल, सैम्पलर, बीज, प्रॉम्प्ट्स, अवधि) के माध्यम से प्रतिलिपि प्रस्तुत करने योग्य है"
       ]
     },
     "pipeline": {
-      "title": "AI Video Generation Pipeline",
-      "description": "The AI video generation pipeline transforms text prompts into polished videos through structured stages with explicit inputs, outputs, and configs.",
-      "prompt": "1. Prompt (raw idea → structured JSON spec)",
-      "storyboard": "2. Storyboard (scene/shot table with timing, camera, and description)",
-      "images": "3. Images (per-shot keyframes generated via Stable Diffusion / ComfyUI)",
-      "animation": "4. Animation (image sequences → motion, parallax, and effects)",
-      "voiceOver": "5. Voice Over (TTS + alignment data)",
-      "finalVideo": "6. Final Video (ffmpeg composition: video + audio + subtitles)",
+      "title": "AI वीडियो निर्माण पाइपलाइन",
+      "description": "AI वीडियो निर्माण पाइपलाइन स्पष्ट इनपुट, आउटपुट और कॉन्फ़िगरेशन के साथ संरचित चरणों के माध्यम से टेक्स्ट प्रॉम्प्ट को पॉलिश किए गए वीडियो में बदल देती है।",
+      "prompt": "1. प्रॉम्प्ट (कच्चा विचार → संरचित JSON विनिर्देश)",
+      "storyboard": "2. स्टोरीबोर्ड (समय, कैमरा और विवरण के साथ दृश्य/शॉट तालिका)",
+      "images": "3. छवियाँ (स्टेबल डिफ्यूजन / ComfyUI के माध्यम से उत्पन्न प्रति-शॉट कीफ्रेम)",
+      "animation": "4. एनीमेशन (छवि अनुक्रम → गति, लंबन और प्रभाव)",
+      "voiceOver": "5. वॉयस ओवर (TTS + संरेखण डेटा)",
+      "finalVideo": "6. अंतिम वीडियो (ffmpeg रचना: वीडियो + ऑडियो + उपशीर्षक)",
       "features": [
-        "JSON-first design: every scene is addressable and scriptable (scene_id, shot_id)",
-        "ComfyUI-based workflows: modular, reproducible, composable DAGs for image/video generation",
-        "Temporal & multimodal control: consistent seeds, character embeddings, and timing across modalities"
+        "JSON-प्रथम डिज़ाइन: प्रत्येक दृश्य पता योग्य और स्क्रिप्ट करने योग्य है (scene_id, shot_id)",
+        "ComfyUI-आधारित वर्कफ़्लो: छवि/वीडियो निर्माण के लिए मॉड्यूलर, प्रतिलिपि प्रस्तुत करने योग्य, कंपोजिटेबल DAGs",
+        "लौकिक और मल्टीमॉडल नियंत्रण: तौर-तरीकों में लगातार बीज, चरित्र एम्बेडिंग और समय"
       ],
-      "exampleIntro": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
+      "exampleIntro": "अब, आइए यह दिखाने के लिए एक सरल उदाहरण देखें कि व्यवहार में AI पाइपलाइन कैसे काम करती हैं।",
       "artifacts": {
         "promptSpec": "prompt_run_001.json",
         "storyboardTable": "storyboard_v1.csv",
@@ -465,22 +465,22 @@
     },
     "steps": {
       "step1": {
-        "title": "Step 1: Start with a Basic Prompt",
-        "example": "A girl stands at a midnight train station, wind blowing her hair.",
-        "expandedPrompt": "With the help of GPT or a local LLM, we expand this into a structured JSON object with global style, character definitions, and per-scene breakdown.",
+        "title": "चरण 1: एक बुनियादी प्रॉम्प्ट से शुरू करें",
+        "example": "एक लड़की आधी रात को ट्रेन स्टेशन पर खड़ी है, हवा उसके बालों को उड़ा रही है।",
+        "expandedPrompt": "GPT या स्थानीय LLM की मदद से, हम इसे वैश्विक शैली, चरित्र परिभाषाओं और प्रति-दृश्य ब्रेकडाउन के साथ एक संरचित JSON ऑब्जेक्ट में विस्तारित करते हैं।",
         "technicalDetails": {
           "llmFields": [
-            "global_style: art style, camera language, color palette",
-            "characters: name, age, look, outfit, emotional state",
+            "global_style: कला शैली, कैमरा भाषा, रंग पैलेट",
+            "characters: नाम, आयु, रूप, पोशाक, भावनात्मक स्थिति",
             "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
           ],
           "outputFile": "prompt_run_001.json",
-          "exampleStack": "Python script calling OpenAI/LLM API and writing JSON to disk"
+          "exampleStack": "OpenAI/LLM API को कॉल करने और JSON को डिस्क पर लिखने वाली पायथन स्क्रिप्ट"
         }
       },
       "step2": {
-        "title": "Step 2: Convert Prompt to a Storyboard Table",
-        "description": "The JSON spec is flattened into a storyboard table (CSV or Notion) that both humans and the pipeline can read.",
+        "title": "चरण 2: प्रॉम्प्ट को स्टोरीबोर्ड तालिका में बदलें",
+        "description": "JSON विनिर्देश को एक स्टोरीबोर्ड तालिका (CSV या Notion) में समतल किया जाता है जिसे मनुष्य और पाइपलाइन दोनों पढ़ सकते हैं।",
         "technicalDetails": {
           "columns": [
             "scene_id",
@@ -493,17 +493,17 @@
             "character_state",
             "motion_notes"
           ],
-          "storage": "storyboard_v1.csv (used as the single source of truth for downstream steps)",
-          "automation": "Python / Node.js script transforms prompt_run_001.json → storyboard_v1.csv"
+          "storage": "storyboard_v1.csv (डाउनस्ट्रीम चरणों के लिए सत्य के एकल स्रोत के रूप में उपयोग किया जाता है)",
+          "automation": "Python / Node.js स्क्रिप्ट prompt_run_001.json → storyboard_v1.csv को बदलती है"
         }
       },
       "step3": {
-        "title": "🛠️ Step 3: Generate Visuals",
-        "description": "Generate high-quality keyframe images for each shot using Stable Diffusion through a ComfyUI workflow.",
+        "title": "🛠️ चरण 3: दृश्य उत्पन्न करें",
+        "description": "ComfyUI वर्कफ़्लो के माध्यम से स्टेबल डिफ्यूजन का उपयोग करके प्रत्येक शॉट के लिए उच्च-गुणवत्ता वाले कीफ्रेम चित्र उत्पन्न करें।",
         "points": [
-          "🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each row in `storyboard_v1.csv` into a high-res keyframe.",
-          "Keep the style consistent by using the same base checkpoint, LoRA stack, sampler, and seed policy across all shots.",
-          "Refine images with inpainting (for faces/hands) and outpainting (for extended compositions and camera motion)."
+          "🎨 `storyboard_v1.csv` में प्रत्येक पंक्ति को एक उच्च-रिज़ॉल्यूशन कीफ्रेम में बदलने के लिए <strong>Stable Diffusion</strong> या <strong>ComfyUI</strong> का उपयोग करें।",
+          "सभी शॉट्स में एक ही आधार चेकपॉइंट, LoRA स्टैक, सैम्पलर और बीज नीति का उपयोग करके शैली को सुसंगत रखें।",
+          "इनपेंटिंग (चेहरों/हाथों के लिए) और आउटपेंटिंग (विस्तारित रचनाओं और कैमरा गति के लिए) के साथ छवियों को परिष्कृत करें।"
         ],
         "technicalDetails": {
           "modelConfig": {
@@ -525,40 +525,40 @@
           },
           "comfyui": {
             "workflowFile": "workflows/storyboard_to_frame.json",
-            "inputMethod": "custom node / HTTP API reading storyboard_v1.csv and modelConfig",
-            "batching": "GPU batches keyed by scene_id to reuse loaded weights"
+            "inputMethod": "कस्टम नोड / HTTP API जो storyboard_v1.csv और modelConfig पढ़ रहा है",
+            "batching": "लोड किए गए भार का पुन: उपयोग करने के लिए scene_id द्वारा की गई GPU बैच"
           }
         }
       },
       "step4": {
-        "title": "🎬 Step 4: Add Motion and Atmosphere in After Effects",
-        "description": "Enhance static keyframes with motion, parallax, and atmosphere using Adobe After Effects (or an equivalent compositor).",
+        "title": "🎬 चरण 4: आफ्टर इफेक्ट्स में गति और वातावरण जोड़ें",
+        "description": "Adobe After Effects (या समतुल्य कंपोजिटर) का उपयोग करके गति, लंबन और वातावरण के साथ स्थिर कीफ्रेम को बढ़ाएं।",
         "points": [
-          "Import image sequences or keyframes into <strong>Adobe After Effects</strong> as layered compositions.",
-          "Apply keyframe animations: pan, zoom, parallax layers, fog overlays, glow and light flicker.",
-          "Add ambient sound cues and cinematic transitions between scenes."
+          "छवि अनुक्रमों या कीफ्रेम को स्तरित रचनाओं के रूप में <strong>Adobe After Effects</strong> में आयात करें।",
+          "कीफ्रेम एनिमेशन लागू करें: पैन, ज़ूम, लंबन परतें, कोहरा ओवरले, चमक और प्रकाश झिलमिलाहट।",
+          "परिवेशी ध्वनि संकेत और दृश्यों के बीच सिनेमाई संक्रमण जोड़ें।"
         ],
         "technicalDetails": {
-          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optional depth/alpha maps)",
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (प्लस वैकल्पिक गहराई/अल्फा मानचित्र)",
           "projectFile": "ae/storyboard_v1.aep",
           "automation": [
-            "Use AE scripts/ExtendScript or JSX to auto-create comps per scene_id.",
-            "Map `duration_seconds` from storyboard_v1.csv → comp duration.",
-            "Generate intermediate frames via AE plugins or video-aware diffusion tools if needed."
+            "प्रति scene_id comps ऑटो-क्रिएट करने के लिए AE स्क्रिप्ट/ExtendScript या JSX का उपयोग करें।",
+            "storyboard_v1.csv से `duration_seconds` → comp अवधि मैप करें।",
+            "यदि आवश्यक हो तो AE प्लगइन्स या वीडियो-जागरूक प्रसार टूल के माध्यम से मध्यवर्ती फ्रेम उत्पन्न करें।"
           ],
           "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
         }
       },
       "step5": {
-        "title": "🎧 Step 5: Add Voice and Subtitles",
-        "description": "Generate voiceover aligned to the storyboard and attach subtitles for accessibility and clarity.",
+        "title": "🎧 चरण 5: आवाज़ और उपशीर्षक जोड़ें",
+        "description": "स्टोरीबोर्ड से संरेखित वॉयसओवर उत्पन्न करें और पहुंच और स्पष्टता के लिए उपशीर्षक संलग्न करें。",
         "points": [
-          "Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers from the script, using a consistent speaker profile.",
-          "For acronyms (like API, NBA), generate English snippets separately and merge in post to keep pronunciation clean.",
-          "Add subtitles using `.srt` or `.json` timeline files synced to the voiceover track."
+          "एक सुसंगत वक्ता प्रोफ़ाइल का उपयोग करके स्क्रिप्ट से प्राकृतिक वॉयसओवर उत्पन्न करने के लिए <strong>XTTS</strong> या <strong>ElevenLabs</strong> का उपयोग करें。",
+          "संक्षिप्ताक्षरों (जैसे API, NBA) के लिए, अंग्रेजी स्निपेट्स अलग से उत्पन्न करें और उच्चारण को साफ रखने के लिए पोस्ट में मर्ज करें。",
+          "वॉयसओवर ट्रैक से समन्वयित `.srt` या `.json` टाइमलाइन फ़ाइलों का उपयोग करके उपशीर्षक जोड़ें।"
         ],
         "technicalDetails": {
-          "scriptSource": "dialogue and narration pulled from prompt_run_001.json + storyboard_v1.csv",
+          "scriptSource": "संवाद और कथन prompt_run_001.json + storyboard_v1.csv से खींचा गया",
           "ttsConfig": {
             "engine": "XTTS or ElevenLabs",
             "voiceId": "cinematic_female_en",
@@ -569,12 +569,12 @@
             "voiceFile": "audio/storyboard_v1_voiceover.wav",
             "subtitleFile": "subtitles/storyboard_v1.srt"
           },
-          "syncStrategy": "align `start_time` / `end_time` from storyboard_v1.csv with subtitle cues; ensure total audio length ≈ final timeline duration"
+          "syncStrategy": "उपशीर्षक संकेतों के साथ storyboard_v1.csv से `start_time` / `end_time` को संरेखित करें; सुनिश्चित करें कि कुल ऑडियो लंबाई ≈ अंतिम समयरेखा अवधि"
         }
       },
       "step6": {
-        "title": "Step 6: Final Composition with FFMPEG",
-        "description": "Use FFMPEG to combine all pieces into one final video file with audio and subtitles.",
+        "title": "चरण 6: FFMPEG के साथ अंतिम रचना",
+        "description": "ऑडियो और उपशीर्षक के साथ सभी टुकड़ों को एक अंतिम वीडियो फ़ाइल में संयोजित करने के लिए FFMPEG का उपयोग करें。",
         "technicalDetails": {
           "inputs": {
             "video": "ae_renders/storyboard_v1_timeline.mp4",
@@ -582,225 +582,225 @@
             "subtitles": "subtitles/storyboard_v1.srt"
           },
           "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC audio)"
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC ऑडियो)"
         }
       }
     },
-    "whatYouNeed": "📁 What You'll Need",
+    "whatYouNeed": "📁 आपको क्या चाहिए",
     "whatYouNeedTechnical": [
-      "GPU with at least 12GB VRAM for Stable Diffusion / ComfyUI",
-      "Python environment for JSON/CSV transforms and automation scripts",
-      "ComfyUI installed with required custom nodes and workflows",
-      "Adobe After Effects or similar compositor for motion and FX",
-      "XTTS / ElevenLabs API access for TTS",
-      "ffmpeg installed and available on the command line"
+      "Stable Diffusion / ComfyUI के लिए कम से कम 12GB VRAM वाला GPU",
+      "JSON/CSV परिवर्तन और स्वचालन स्क्रिप्ट के लिए Python वातावरण",
+      "आवश्यक कस्टम नोड्स और वर्कफ़्लो के साथ स्थापित ComfyUI",
+      "गति और FX के लिए Adobe After Effects या समान कंपोजिटर",
+      "TTS के लिए XTTS / ElevenLabs API एक्सेस",
+      "ffmpeg स्थापित और कमांड लाइन पर उपलब्ध"
     ],
-    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started."
+    "cta": "🚀 AI के साथ अपने स्टोरीबोर्ड को जीवन में लाने के लिए तैयार हैं? <strong>हम एक पूर्ण स्टार्टर किट प्रदान कर सकते हैं</strong> जिसमें उदाहरण JSONs, ComfyUI वर्कफ़्लो, और आपको शुरू करने में मदद करने के लिए ffmpeg/AE टेम्प्लेट शामिल हैं।"
   },
   "SceneDetection": {
     "tags": {
-      "computerVision": "Computer Vision",
-      "deepLearning": "Deep Learning",
-      "realTimeAnalysis": "Real-time Analysis"
+      "computerVision": "कंप्यूटर विजन",
+      "deepLearning": "डीप लर्निंग",
+      "realTimeAnalysis": "वास्तविक समय विश्लेषण"
     },
     "hero": {
-      "title": "Transform Video into Storyboards with AI",
-      "subtitle": "How we built an advanced pipeline that turns hours of footage into structured, searchable storyboards in minutes."
+      "title": "AI के साथ वीडियो को स्टोरीबोर्ड में बदलें",
+      "subtitle": "हमने एक उन्नत पाइपलाइन कैसे बनाई जो घंटों के फुटेज को मिनटों में संरचित, खोजने योग्य स्टोरीबोर्ड में बदल देती है।"
     },
     "introduction": {
-      "paragraph1": "Imagine being able to upload hours of raw footage and within minutes get a <strong>detailed, scene-by-scene breakdown</strong> of your entire video. That's exactly what our AI-powered scene detection system delivers.",
-      "paragraph2": "Built with cutting-edge Python libraries and deep learning models, this pipeline doesn't just detect scene changes—it understands the content, identifies key elements, and structures everything into a comprehensive storyboard."
+      "paragraph1": "कल्पना कीजिए कि आप घंटों के कच्चे फुटेज अपलोड कर सकते हैं और मिनटों के भीतर अपने पूरे वीडियो का <strong>विस्तृत, दृश्य-दर-दृश्य ब्रेकडाउन</strong> प्राप्त कर सकते हैं। हमारा AI-संचालित दृश्य पहचान प्रणाली ठीक यही प्रदान करती है।",
+      "paragraph2": "अत्याधुनिक पायथन पुस्तकालयों और गहन शिक्षण मॉडल के साथ निर्मित, यह पाइपलाइन केवल दृश्य परिवर्तनों का पता नहीं लगाती है — यह सामग्री को समझती है, प्रमुख तत्वों की पहचान करती है, और सब कुछ एक व्यापक स्टोरीबोर्ड में संरचित करती है।"
     },
-    "imageAlt": "The scene detection pipeline in action, identifying key moments and generating structured storyboards",
-    "protip": "For optimal results, ensure your video has clear visual separation between scenes. The system works best with well-lit footage and minimal motion blur. Consider adding chapter markers or scene breaks in your video editor to improve detection accuracy.",
+    "imageAlt": "दृश्य पहचान पाइपलाइन कार्रवाई में, प्रमुख क्षणों की पहचान करना और संरचित स्टोरीबोर्ड बनाना",
+    "protip": "इष्टतम परिणामों के लिए, सुनिश्चित करें कि आपके वीडियो में दृश्यों के बीच स्पष्ट दृश्य अलगाव है। सिस्टम अच्छी तरह से रोशनी वाले फुटेज और न्यूनतम गति धुंध के साथ सबसे अच्छा काम करता है। पता लगाने की सटीकता में सुधार के लिए अपने वीडियो संपादक में अध्याय मार्कर या दृश्य विराम जोड़ने पर विचार करें।",
     "humanEvaluation": {
-      "title": "Human Evaluation of AI Output",
-      "introduction": "While our AI pipeline is highly accurate, human evaluation remains a critical component of our quality assurance process. Here's how we ensure the highest quality output:",
+      "title": "AI आउटपुट का मानव मूल्यांकन",
+      "introduction": "हालांकि हमारी AI पाइपलाइन अत्यधिक सटीक है, फिर भी मानव मूल्यांकन हमारी गुणवत्ता आश्वासन प्रक्रिया का एक महत्वपूर्ण घटक बना हुआ है। यहाँ हम उच्चतम गुणवत्ता आउटपुट कैसे सुनिश्चित करते हैं:",
       "evaluationAreas": [
-        "<strong>Scene Boundary Accuracy</strong> - Reviewing and adjusting scene transition points",
-        "<strong>Metadata Validation</strong> - Verifying AI-generated descriptions, tags, and labels",
-        "<strong>Consistency Check</strong> - Ensuring uniform style and formatting across all scenes",
-        "<strong>Content Accuracy</strong> - Validating that the AI correctly identified key elements in each scene"
+        "<strong>दृश्य सीमा सटीकता</strong> - दृश्य संक्रमण बिंदुओं की समीक्षा और समायोजन",
+        "<strong>मेटाडेटा सत्यापन</strong> - AI-जनित विवरण, टैग और लेबल का सत्यापन",
+        "<strong>संगति जाँच</strong> - सभी दृश्यों में एक समान शैली और स्वरूपण सुनिश्चित करना",
+        "<strong>सामग्री सटीकता</strong> - यह सत्यापित करना कि AI ने प्रत्येक दृश्य में प्रमुख तत्वों की सही पहचान की है"
       ],
       "workflow": {
-        "title": "Human-in-the-Loop Workflow",
+        "title": "ह्यूमन-इन-द-लूप वर्कफ़्लो",
         "steps": [
-          "AI processes the video and generates initial storyboard",
-          "Human reviewers evaluate the AI output using our specialized tools",
-          "Reviewers provide feedback and make necessary adjustments",
-          "System learns from human corrections to improve future outputs",
-          "Final quality check before delivery"
+          "AI वीडियो को संसाधित करता है और प्रारंभिक स्टोरीबोर्ड बनाता है",
+          "मानव समीक्षक हमारे विशेष उपकरणों का उपयोग करके AI आउटपुट का मूल्यांकन करते हैं",
+          "समीक्षक प्रतिक्रिया प्रदान करते हैं और आवश्यक समायोजन करते हैं",
+          "प्रणाली भविष्य के आउटपुट को बेहतर बनाने के लिए मानव सुधारों से सीखती है",
+          "डिलीवरी से पहले अंतिम गुणवत्ता जांच"
         ]
       },
       "benefits": {
-        "title": "Benefits of Human Evaluation",
+        "title": "मानव मूल्यांकन के लाभ",
         "items": [
-          "<strong>Higher Accuracy</strong> - Human reviewers catch subtle nuances that AI might miss",
-          "<strong>Contextual Understanding</strong> - Better interpretation of cultural and situational context",
-          "<strong>Quality Assurance</strong> - Additional layer of validation for professional use cases",
-          "<strong>Continuous Improvement</strong> - Human feedback helps train and refine the AI models"
+          "<strong>उच्च सटीकता</strong> - मानव समीक्षक सूक्ष्म बारीकियों को पकड़ते हैं जो AI याद कर सकता है",
+          "<strong>प्रासंगिक समझ</strong> - सांस्कृतिक और परिस्थितिजन्य संदर्भ की बेहतर व्याख्या",
+          "<strong>गुणवत्ता आश्वासन</strong> - पेशेवर उपयोग के मामलों के लिए सत्यापन की अतिरिक्त परत",
+          "<strong>निरंतर सुधार</strong> - मानव प्रतिक्रिया AI मॉडल को प्रशिक्षित और परिष्कृत करने में मदद करती है"
         ]
       },
       "tools": {
-        "title": "Evaluation Tools",
-        "description": "Our platform includes specialized tools to assist human reviewers:",
+        "title": "मूल्यांकन उपकरण",
+        "description": "हमारे मंच में मानव समीक्षकों की सहायता के लिए विशेष उपकरण शामिल हैं:",
         "features": [
-          "Side-by-side video and storyboard comparison",
-          "Easy-to-use interface for adjusting scene boundaries",
-          "Bulk editing of metadata and tags",
-          "Collaboration features for team review",
-          "Version history and change tracking"
+          "साथ-साथ वीडियो और स्टोरीबोर्ड तुलना",
+          "दृश्य सीमाओं को समायोजित करने के लिए उपयोग में आसान इंटरफ़ेस",
+          "मेटाडेटा और टैग का थोक संपादन",
+          "टीम समीक्षा के लिए सहयोग सुविधाएँ",
+          "संस्करण इतिहास और परिवर्तन ट्रैकिंग"
         ]
       }
     },
     "header": {
-      "title": "From Raw Footage to Storyboards",
-      "author": "Curify AI Team",
-      "role": "AI Research Team",
-      "imageAlt": "AI analyzing video scenes and generating storyboards",
-      "imageCaption": "AI-powered scene detection in action, identifying key moments in video content",
-      "subtitle": "AI-Powered Video Analysis",
-      "date": "December 11, 2025",
-      "readingTime": "8 min read"
+      "title": "कच्चे फुटेज से स्टोरीबोर्ड तक",
+      "author": "Curify AI टीम",
+      "role": "AI अनुसंधान टीम",
+      "imageAlt": "AI वीडियो दृश्यों का विश्लेषण और स्टोरीबोर्ड बनाना",
+      "imageCaption": "एक्शन में AI-संचालित दृश्य पहचान, वीडियो सामग्री में प्रमुख क्षणों की पहचान करना",
+      "subtitle": "AI-संचालित वीडियो विश्लेषण",
+      "date": "11 दिसंबर, 2025",
+      "readingTime": "8 मिनट पढ़ें"
     },
     "Technical": {
-      "title": "TECHNICAL DEEP DIVE",
+      "title": "तकनीकी गहरा गोता",
       "steps": {
-        "step1": "How It Works: Under the Hood",
-        "videoProcessingPipeline": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
-        "step2": "Video Processing Pipeline",
-        "step2Text": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
-        "step3": "Scene Detection and Metadata Extraction",
-        "step3Text": "OpenCV-powered frame sampling at optimal intervals",
-        "step4": "Shot Analysis and Metadata Enhancement",
-        "step4Text": "Adaptive thresholding for precise scene boundary detection",
-        "step5": "Scene Labeling and Metadata Organization",
-        "step5Text": "Deep learning models for comprehensive scene understanding",
-        "step6": "Metadata Export and Integration",
-        "step6Text": "Export metadata to JSON format for integration with other tools"
+        "step1": "यह कैसे काम करता है: हुड के नीचे",
+        "videoProcessingPipeline": "हमारा सिस्टम एक परिष्कृत मल्टी-स्टेज पाइपलाइन के माध्यम से वीडियो संसाधित करता है जो सटीक दृश्य पहचान और विश्लेषण सुनिश्चित करता है:",
+        "step2": "वीडियो प्रसंस्करण पाइपलाइन",
+        "step2Text": "हमारा सिस्टम एक परिष्कृत मल्टी-स्टेज पाइपलाइन के माध्यम से वीडियो संसाधित करता है जो सटीक दृश्य पहचान और विश्लेषण सुनिश्चित करता है:",
+        "step3": "दृश्य पहचान और मेटाडेटा निष्कर्षण",
+        "step3Text": "इष्टतम अंतराल पर OpenCV-संचालित फ्रेम नमूनाकरण",
+        "step4": "शॉट विश्लेषण और मेटाडेटा संवर्धन",
+        "step4Text": "सटीक दृश्य सीमा पहचान के लिए अनुकूली सीमा",
+        "step5": "दृश्य लेबलिंग और मेटाडेटा संगठन",
+        "step5Text": "व्यापक दृश्य समझ के लिए गहन शिक्षण मॉडल",
+        "step6": "मेटाडेटा निर्यात और एकीकरण",
+        "step6Text": "अन्य उपकरणों के साथ एकीकरण के लिए JSON प्रारूप में मेटाडेटा निर्यात करें"
       }
     },
-    "featuresTitle": "Powerful Features at Your Fingertips",
-    "features1": "Seamless Video Integration",
-    "features1Text": "Process local files, YouTube links, or cloud storage with our unified interface.",
+    "featuresTitle": "शक्तिशाली सुविधाएँ आपकी उंगलियों पर",
+    "features1": "निर्बाध वीडियो एकीकरण",
+    "features1Text": "हमारे एकीकृत इंटरफ़ेस के साथ स्थानीय फ़ाइलों, YouTube लिंक या क्लाउड स्टोरेज को संसाधित करें।",
     "features": {
       "modularArchitecture": {
-        "title": "Modular Architecture",
-        "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+        "title": "मॉड्यूलर आर्किटेक्चर",
+        "description": "सिस्टम वीडियो विश्लेषण, AI प्रसंस्करण और आउटपुट निर्माण के लिए अलग-अलग घटकों के साथ बनाया गया है, जिससे इसे विस्तारित करना और बनाए रखना आसान हो जाता है।"
       },
       "performance": {
-        "title": "Performance Optimized",
-        "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
+        "title": "प्रदर्शन अनुकूलित",
+        "description": "कुशल फ्रेम प्रसंस्करण और समानांतरीकरण लंबे वीडियो के लिए भी तेज विश्लेषण सुनिश्चित करते हैं।"
       },
       "aiEnhanced": {
-        "title": "AI-Enhanced Analysis",
-        "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+        "title": "AI-संवर्धित विश्लेषण",
+        "description": "वैकल्पिक AI घटक गहरी दृश्य समझ और अधिक सटीक लेबलिंग प्रदान करते हैं।"
       }
     },
-    "features2": "Seamless Video Integration",
-    "features2Text": "Process local files, YouTube links, or cloud storage with our unified interface.",
-    "features3": "AI-Powered Analysis",
-    "features3Text": "Enhance scene understanding with our optional AI analysis module.",
-    "features4": "Camera Motion Detection",
-    "features4Text": "Automatically identify pans, zooms, and other camera movements.",
-    "features5": "Customizable Output",
-    "features5Text": "Export metadata to JSON format for integration with other tools.",
+    "features2": "निर्बाध वीडियो एकीकरण",
+    "features2Text": "हमारे एकीकृत इंटरफ़ेस के साथ स्थानीय फ़ाइलों, YouTube लिंक या क्लाउड स्टोरेज को संसाधित करें।",
+    "features3": "AI-संचालित विश्लेषण",
+    "features3Text": "हमारे वैकल्पिक AI विश्लेषण मॉड्यूल के साथ दृश्य समझ को बढ़ाएं।",
+    "features4": "कैमरा गति पहचान",
+    "features4Text": "पैन, ज़ूम और अन्य कैमरा आंदोलनों को स्वचालित रूप से पहचानें।",
+    "features5": "अनुकूलन योग्य आउटपुट",
+    "features5Text": "अन्य उपकरणों के साथ एकीकरण के लिए JSON प्रारूप में मेटाडेटा निर्यात करें।",
     "intro": {
-      "p1": "In today's fast-paced content creation landscape, <strong>efficient video analysis</strong> is no longer a luxury—it's a necessity. Our AI-powered scene detection technology transforms hours of raw footage into structured, searchable content in minutes, not days.",
-      "p2": "Whether you're a filmmaker, content creator, or media professional, understanding the power of automated scene detection can revolutionize your workflow and unlock new creative possibilities."
+      "p1": "आज के तेज-तर्रार सामग्री निर्माण परिदृश्य में, <strong>कुशल वीडियो विश्लेषण</strong> अब कोई विलासिता नहीं है — यह एक आवश्यकता है। हमारी AI-संचालित दृश्य पहचान तकनीक घंटों के कच्चे फुटेज को मिनटों में संरचित, खोजने योग्य सामग्री में बदल देती है, दिनों में नहीं।",
+      "p2": "चाहे आप एक फिल्म निर्माता, सामग्री निर्माता, या मीडिया पेशेवर हों, स्वचालित दृश्य पहचान की शक्ति को समझना आपके वर्कफ़्लो में क्रांति ला सकता है और नई रचनात्मक संभावनाओं को अनलॉक कर सकता है।"
     },
-    "proTip": "For best results, ensure your source video has clear audio and visual separation between scenes. Well-lit environments and minimal background noise significantly improve detection accuracy.",
+    "proTip": "सर्वोत्तम परिणामों के लिए, सुनिश्चित करें कि आपके स्रोत वीडियो में दृश्यों के बीच स्पष्ट ऑडियो और दृश्य अलगाव है। अच्छी तरह से रोशनी वाले वातावरण और न्यूनतम पृष्ठभूमि शोर पता लगाने की सटीकता में काफी सुधार करते हैं।",
     "titanicExample": {
-      "title": "Real-World Example: Titanic Scene Analysis",
-      "description": "Watch how our system analyzes a scene from Titanic, detecting shot changes and generating detailed scene metadata:",
-      "analysis": "Analysis:",
-      "analysisText": "Scene detection and metadata extraction in real-time"
+      "title": "वास्तविक दुनिया का उदाहरण: टाइटैनिक दृश्य विश्लेषण",
+      "description": "देखें कि हमारा सिस्टम टाइटैनिक के एक दृश्य का विश्लेषण कैसे करता है, शॉट परिवर्तनों का पता लगाता है और विस्तृत दृश्य मेटाडेटा उत्पन्न करता है:",
+      "analysis": "विश्लेषण:",
+      "analysisText": "वास्तविक समय में दृश्य पहचान और मेटाडेटा निष्कर्षण"
     },
     "inceptionExample": {
-      "title": "Dream Level Analysis: Inception Scene Breakdown",
-      "description": "Explore how our AI analyzes the complex dream layers and visual effects in Inception:",
-      "analysis": "Analysis",
-      "analysisText": "Dream layer detection and visual effect breakdown",
-      "breakdownTitle": "Scene Analysis Breakdown",
-      "showFullAnalysis": "Show Full Scene Analysis",
-      "hideFullAnalysis": "Hide Full Scene Analysis",
-      "fullSceneAnalysis": "Full Scene Analysis",
+      "title": "ड्रीम लेवल एनालिसिस: इंसेप्शन सीन ब्रेकडाउन",
+      "description": "अन्वेषण करें कि हमारा AI इंसेप्शन में जटिल स्वप्न परतों और दृश्य प्रभावों का विश्लेषण कैसे करता है:",
+      "analysis": "विश्लेषण",
+      "analysisText": "स्वप्न परत का पता लगाना और दृश्य प्रभाव का टूटना",
+      "breakdownTitle": "दृश्य विश्लेषण ब्रेकडाउन",
+      "showFullAnalysis": "पूर्ण दृश्य विश्लेषण दिखाएं",
+      "hideFullAnalysis": "पूर्ण दृश्य विश्लेषण छिपाएं",
+      "fullSceneAnalysis": "पूर्ण दृश्य विश्लेषण",
       "sceneCard": {
-        "mood": "Mood",
-        "environment": "Environment",
-        "shotNotes": "Shot Notes"
+        "mood": "मनोदशा",
+        "environment": "वातावरण",
+        "shotNotes": "शॉट नोट्स"
       }
     },
-    "Scene": "Scene",
+    "Scene": "दृश्य",
     "process": {
-      "title": "How Our Scene Detection Works",
+      "title": "हमारी दृश्य पहचान कैसे काम करती है",
       "steps": {
         "step1": {
-          "title": "1. Video Analysis",
-          "description": "Our AI scans your video frame by frame, analyzing visual and audio cues to identify potential scene boundaries.",
+          "title": "1. वीडियो विश्लेषण",
+          "description": "हमारा AI आपके वीडियो को फ्रेम दर फ्रेम स्कैन करता है, संभावित दृश्य सीमाओं की पहचान करने के लिए दृश्य और ऑडियो संकेतों का विश्लेषण करता है।",
           "details": [
-            "Analyzes color histograms and motion vectors",
-            "Detects audio level changes and silences",
-            "Identifies shot boundaries and transitions"
+            "रंग हिस्टोग्राम और गति वैक्टर का विश्लेषण करता है",
+            "ऑडियो स्तर के परिवर्तनों और चुप्पी का पता लगाता है",
+            "शॉट सीमाओं और संक्रमणों की पहचान करता है"
           ]
         },
         "step2": {
-          "title": "2. Scene Segmentation",
-          "description": "The system groups related shots into coherent scenes based on visual and temporal relationships.",
+          "title": "2. दृश्य विभाजन",
+          "description": "प्रणाली संबंधित शॉट्स को दृश्य और लौकिक संबंधों के आधार पर सुसंगत दृश्यों में समूहित करती है।",
           "details": [
-            "Uses machine learning to understand scene context",
-            "Considers shot duration and transition types",
-            "Merges related shots into logical scenes"
+            "दृश्य संदर्भ को समझने के लिए मशीन लर्निंग का उपयोग करता है",
+            "शॉट अवधि और संक्रमण प्रकारों पर विचार करता है",
+            "संबंधित शॉट्स को तार्किक दृश्यों में मिलाता है"
           ]
         },
         "step3": {
-          "title": "3. Content Classification",
-          "description": "Each detected scene is analyzed and categorized based on its visual and audio content.",
+          "title": "3. सामग्री वर्गीकरण",
+          "description": "प्रत्येक पहचाने गए दृश्य का विश्लेषण और उसकी दृश्य और ऑडियो सामग्री के आधार पर वर्गीकृत किया जाता है।",
           "details": [
-            "Identifies key visual elements and objects",
-            "Classifies scene type (e.g., interview, action, landscape)",
-            "Analyzes audio for speech, music, and effects"
+            "प्रमुख दृश्य तत्वों और वस्तुओं की पहचान करता है",
+            "दृश्य प्रकार को वर्गीकृत करता है (जैसे, साक्षात्कार, कार्रवाई, परिदृश्य)",
+            "भाषण, संगीत और प्रभावों के लिए ऑडियो का विश्लेषण करता है"
           ]
         },
         "step4": {
-          "title": "4. Metadata Generation",
-          "description": "Comprehensive metadata is generated for each scene, enabling powerful search and organization.",
+          "title": "4. मेटाडेटा जनरेशन",
+          "description": "प्रत्येक दृश्य के लिए व्यापक मेटाडेटा उत्पन्न होता है, जो शक्तिशाली खोज और संगठन को सक्षम बनाता है।",
           "details": [
-            "Creates timestamps and duration information",
-            "Generates representative thumbnails",
-            "Extracts key dialogue and audio cues"
+            "टाइमस्टैम्प और अवधि जानकारी बनाता है",
+            "प्रतिनिधि थंबनेल उत्पन्न करता है",
+            "प्रमुख संवाद और ऑडियो संकेत निकालता है"
           ]
         }
       }
     },
     "whyItWorks": {
-      "title": "Why Our Scene Detection Works So Well",
-      "points": "<li>Our AI analyzes both <strong>visual and audio cues</strong> to identify scene boundaries with over 95% accuracy.</li><li>Advanced <strong>machine learning models</strong> understand context, not just visual changes, for more natural scene detection.</li><li>Real-time processing allows for <strong>immediate feedback</strong> and adjustments during filming or editing.</li>"
+      "title": "हमारी दृश्य पहचान इतनी अच्छी तरह से क्यों काम करती है",
+      "points": "<li>हमारा AI दृश्य सीमाओं की 95% से अधिक सटीकता के साथ पहचान करने के लिए <strong>दृश्य और ऑडियो संकेतों</strong> दोनों का विश्लेषण करता है।</li><li>उन्नत <strong>मशीन लर्निंग मॉडल</strong> अधिक प्राकृतिक दृश्य पहचान के लिए संदर्भ को समझते हैं, न कि केवल दृश्य परिवर्तनों को।</li><li>वास्तविक समय प्रसंस्करण फिल्माने या संपादन के दौरान <strong>तत्काल प्रतिक्रिया</strong> और समायोजन की अनुमति देता है।</li>"
     },
     "recommendedStyle": {
-      "title": "Recommended Style for Best Results",
-      "description": "To get the most accurate scene detection, we recommend the following style guidelines:",
+      "title": "सर्वोत्तम परिणामों के लिए अनुशंसित शैली",
+      "description": "सबसे सटीक दृश्य पहचान प्राप्त करने के लिए, हम निम्नलिखित शैली दिशानिर्देशों की अनुशंसा करते हैं:",
       "points": [
-        "Maintain consistent lighting within each scene",
-        "Use clear audio markers or clapperboards between takes",
-        "Keep camera movements smooth and intentional",
-        "Maintain consistent audio levels within scenes"
+        "प्रत्येक दृश्य के भीतर लगातार प्रकाश व्यवस्था बनाए रखें",
+        "टेक्स के बीच स्पष्ट ऑडियो मार्कर या क्लैपरबोर्ड का उपयोग करें",
+        "कैमरा आंदोलनों को सुचारू और जानबूझकर रखें",
+        "दृश्यों के भीतर लगातार ऑडियो स्तर बनाए रखें"
       ]
     },
-    "title": "From Raw Footage to Storyboards: AI-Powered Video Analysis",
-    "description": "Discover how AI transforms raw video into structured storyboards with automated scene detection and analysis.",
+    "title": "कच्चे फुटेज से स्टोरीबोर्ड तक: AI-संचालित वीडियो विश्लेषण",
+    "description": "जानें कि कैसे AI स्वचालित दृश्य पहचान और विश्लेषण के साथ कच्चे वीडियो को संरचित स्टोरीबोर्ड में बदल देता है।",
     "timeline": {
-      "title": "Scene Timeline",
-      "viewScene": "View Scene {1}"
+      "title": "दृश्य समयरेखा",
+      "viewScene": "दृश्य {1} देखें"
     },
-    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started.",
+    "cta": "🚀 AI के साथ अपने स्टोरीबोर्ड को जीवन में लाने के लिए तैयार हैं? <strong>हम एक पूर्ण स्टार्टर किट प्रदान कर सकते हैं</strong> जिसमें उदाहरण JSONs, ComfyUI वर्कफ़्लो, और आपको शुरू करने में मदद करने के लिए ffmpeg/AE टेम्प्लेट शामिल हैं।",
     "sceneBreakdown": {
-      "title": "Understanding Scene Detection Output",
-      "introduction": "Let's break down a typical scene detection output to understand how our AI analyzes and structures video content. Below each explanation, you'll find the corresponding JSON structure that powers these insights.",
+      "title": "दृश्य पहचान आउटपुट को समझना",
+      "introduction": "आइए एक सामान्य दृश्य पहचान आउटपुट को समझें और देखें कि हमारी AI वीडियो सामग्री का विश्लेषण और संरचना कैसे करती है। हर व्याख्या के नीचे आपको उससे संबंधित JSON संरचना मिलेगी।",
       "scenes": [
         {
-          "title": "1. Scene Identification",
-          "content": "Each scene is assigned a unique identifier and timestamp range, allowing for precise navigation through the video content. This forms the foundation of our analysis.",
+          "title": "1. दृश्य पहचान",
+          "content": "प्रत्येक दृश्य को एक अद्वितीय पहचानकर्ता और टाइमस्टैम्प रेंज सौंपी जाती है, जो वीडियो सामग्री के माध्यम से सटीक नेविगेशन की अनुमति देती है। यह हमारे विश्लेषण की नींव बनाता है।",
           "example": "Scene 1 (00:00:02.50 - 00:00:05.20)",
           "jsonExample": {
             "scene_id": "scene_001",
@@ -810,11 +810,11 @@
             "keyframe_index": 5,
             "keyframe_time": 3.8
           },
-          "jsonDescription": "This JSON structure shows the basic identification data for a scene, including its unique ID, timing information, and the index/time of its representative keyframe."
+          "jsonDescription": "यह JSON संरचना एक दृश्य के लिए बुनियादी पहचान डेटा दिखाती है, जिसमें इसकी अनूठी आईडी, समय की जानकारी और इसके प्रतिनिधि कीफ्रेम का इंडेक्स/समय शामिल है।"
         },
         {
-          "title": "2. Visual Analysis",
-          "content": "Our AI examines keyframes to understand the visual composition of each scene, including dominant colors, lighting conditions, and visual elements.",
+          "title": "2. दृश्य विश्लेषण",
+          "content": "हमारा AI प्रत्येक दृश्य की दृश्य संरचना को समझने के लिए कीफ्रेम की जांच करता है, जिसमें प्रमुख रंग, प्रकाश की स्थिति और दृश्य तत्व शामिल हैं。",
           "example": "Keyframe analysis: Outdoor, daylight, multiple subjects",
           "jsonExample": {
             "visual_analysis": {
@@ -855,11 +855,11 @@
               ]
             }
           },
-          "jsonDescription": "This JSON shows the visual analysis data, including color information, lighting conditions, and detected objects with confidence scores."
+          "jsonDescription": "यह JSON दृश्य विश्लेषण डेटा दिखाता है, जिसमें रंग की जानकारी, प्रकाश की स्थिति और आत्मविश्वास स्कोर के साथ पता लगाए गए ऑब्जेक्ट शामिल हैं।"
         },
         {
-          "title": "3. Shot Composition",
-          "content": "Within each scene, we identify individual shots and their transitions, helping understand the visual flow and pacing of the content.",
+          "title": "3. शॉट संरचना",
+          "content": "प्रत्येक दृश्य के भीतर, हम व्यक्तिगत शॉट्स और उनके संक्रमणों की पहचान करते हैं, जो सामग्री के दृश्य प्रवाह और गति को समझने में मदद करते हैं।",
           "example": "3 shots detected with smooth cuts and one cross-fade",
           "jsonExample": {
             "shots": [
@@ -892,11 +892,11 @@
               }
             ]
           },
-          "jsonDescription": "This JSON structure details the shot composition within a scene, including timing, transition types, and camera motion analysis."
+          "jsonDescription": "यह JSON एक दृश्य के भीतर शॉट संरचना का विवरण देता है, जिसमें समय, संक्रमण प्रकार और कैमरा गति विश्लेषण शामिल हैं।"
         },
         {
-          "title": "4. Content Classification",
-          "content": "Scenes are automatically categorized based on their content, making it easy to find specific types of footage later.",
+          "title": "4. सामग्री वर्गीकरण",
+          "content": "दृश्यों को उनकी सामग्री के आधार पर स्वचालित रूप से वर्गीकृत किया जाता है, जिससे बाद में विशिष्ट प्रकार के फुटेज ढूंढना आसान हो जाता है।",
           "example": "Category: Drama, Setting: Ship Deck, Subjects: Main Characters",
           "jsonExample": {
             "content_analysis": {
@@ -944,13 +944,13 @@
               "action_required": true
             }
           },
-          "jsonDescription": "This JSON shows how the AI analyzes and classifies movie scenes, including character emotions, setting details, and narrative importance, with Titanic's dramatic lifeboat scene as an example."
+          "jsonDescription": "यह JSON दिखाता है कि AI फिल्म के दृश्यों का विश्लेषण और वर्गीकरण कैसे करता है, जिसमें चरित्र भावनाएं, सेटिंग विवरण और कथा महत्व शामिल हैं, टाइटैनिक के नाटकीय लाइफबोट दृश्य को उदाहरण के रूप में उपयोग करते हुए।"
         }
       ],
-      "analysisTitle": "Putting It All Together",
-      "analysisContent": "By combining these elements, our system creates a comprehensive map of your video content. This structured data powers features like intelligent search, automated editing, and content analysis.",
-      "fullExampleTitle": "Complete Scene Data Example",
-      "fullExampleDescription": "Here's how all the pieces come together in a complete scene analysis:",
+      "analysisTitle": "सब कुछ एक साथ रखना",
+      "analysisContent": "इन तत्वों को मिलाकर, हमारा सिस्टम आपकी वीडियो सामग्री का एक व्यापक नक्शा बनाता है। यह संरचित डेटा बुद्धिमान खोज, स्वचालित संपादन और सामग्री विश्लेषण जैसी सुविधाओं को शक्ति प्रदान करता है।",
+      "fullExampleTitle": "पूर्ण दृश्य डेटा उदाहरण",
+      "fullExampleDescription": "यहाँ बताया गया है कि पूर्ण दृश्य विश्लेषण में सभी टुकड़े कैसे एक साथ आते हैं:",
       "fullExample": {
         "scene_id": "scene_001",
         "start_time": 2.5,
@@ -1015,87 +1015,87 @@
           }
         ]
       },
-      "benefitsTitle": "Key Benefits",
+      "benefitsTitle": "मुख्य लाभ",
       "benefits": [
-        "<strong>Efficient Editing:</strong> Jump directly to any scene or shot without scrubbing through hours of footage",
-        "<strong>Smart Search:</strong> Find content based on visual elements, not just metadata",
-        "<strong>Consistent Quality:</strong> Identify and maintain visual consistency across your project",
-        "<strong>Data-Driven Decisions:</strong> Get insights into your content structure and pacing"
+        "<strong>कुशल संपादन:</strong> घंटों के फुटेज के माध्यम से स्क्रब किए बिना सीधे किसी भी दृश्य या शॉट पर कूदें",
+        "<strong>स्मार्ट खोज:</strong> केवल मेटाडेटा ही नहीं, बल्कि दृश्य तत्वों के आधार पर सामग्री खोजें",
+        "<strong>लगातार गुणवत्ता:</strong> अपनी परियोजना में दृश्य स्थिरता को पहचानें और बनाए रखें",
+        "<strong>डेटा-संचालित निर्णय:</strong> अपनी सामग्री संरचना और गति में अंतर्दृष्टि प्राप्त करें"
       ]
     },
     "conclusion": {
-      "title": "Transforming Video Production with AI",
-      "p1": "AI-powered scene detection is revolutionizing how we approach video production. By automating the tedious process of scene identification and organization, creators can focus on what truly matters – telling compelling stories. Our technology bridges the gap between raw footage and polished content, making professional-grade video analysis accessible to everyone.",
-      "p2": "As we continue to refine our algorithms and expand our capabilities, we're excited to see how filmmakers, educators, and content creators will leverage these tools to push the boundaries of visual storytelling. The future of video production is here, and it's more efficient and creative than ever before."
+      "title": "AI के साथ वीडियो उत्पादन को बदलना",
+      "p1": "AI-संचालित दृश्य पहचान वीडियो उत्पादन के प्रति हमारे दृष्टिकोण में क्रांति ला रही है। दृश्य पहचान और संगठन की थकाऊ प्रक्रिया को स्वचालित करके, निर्माता उन चीजों पर ध्यान केंद्रित कर सकते हैं जो वास्तव में मायने रखती हैं - सम्मोहक कहानियाँ सुनाना। हमारी तकनीक कच्चे फुटेज और पॉलिश की गई सामग्री के बीच की खाई को पाटती है, जिससे पेशेवर-ग्रेड वीडियो विश्लेषण सभी के लिए सुलभ हो जाता है।",
+      "p2": "जैसे-जैसे हम अपने एल्गोरिदम को परिष्कृत करना और अपनी क्षमताओं का विस्तार करना जारी रखते हैं, हम यह देखने के लिए उत्साहित हैं कि फिल्म निर्माता, शिक्षक और सामग्री निर्माता दृश्य कहानी कहने की सीमाओं को आगे बढ़ाने के लिए इन उपकरणों का लाभ कैसे उठाएंगे। वीडियो उत्पादन का भविष्य यहाँ है, और यह पहले से कहीं अधिक कुशल और रचनात्मक है।"
     },
-    "richStructuredOutput": "Rich, Structured Output",
-    "richStructuredOutputText": "Our system generates comprehensive storyboard data with detailed metadata for each scene, giving you complete control over your video content.",
+    "richStructuredOutput": "समृद्ध, संरचित आउटपुट",
+    "richStructuredOutputText": "हमारा सिस्टम प्रत्येक दृश्य के लिए विस्तृत मेटाडेटा के साथ व्यापक स्टोरीबोर्ड डेटा उत्पन्न करता है, जिससे आपको अपनी वीडियो सामग्री पर पूरा नियंत्रण मिलता है।",
     "advancedUsage": {
-      "title": "Advanced Usage & Customization",
-      "description": "The scene detection system is highly customizable to fit different use cases. Here are some advanced features and customization options:",
+      "title": "उन्नत उपयोग और अनुकूलन",
+      "description": "दृश्य पहचान प्रणाली विभिन्न उपयोग के मामलों में फिट होने के लिए अत्यधिक अनुकूलन योग्य है। यहाँ कुछ उन्नत सुविधाएँ और अनुकूलन विकल्प दिए गए हैं:",
       "features": {
         "thresholds": {
-          "title": "Custom Scene Detection Thresholds",
-          "description": "Adjust the sensitivity of scene detection by modifying the threshold parameter. Lower values make the detection more sensitive to changes."
+          "title": "कस्टम दृश्य पहचान थ्रेसहोल्ड",
+          "description": "थ्रेसहोल्ड पैरामीटर को संशोधित करके दृश्य पहचान की संवेदनशीलता को समायोजित करें। कम मान पता लगाने को परिवर्तनों के प्रति अधिक संवेदनशील बनाते हैं।"
         },
         "aiAnalysis": {
-          "title": "AI-Enhanced Analysis",
-          "description": "Enable AI analysis for more detailed scene understanding and labeling. This requires additional setup with the Ollama server."
+          "title": "AI-संवर्धित विश्लेषण",
+          "description": "अधिक विस्तृत दृश्य समझ और लेबलिंग के लिए AI विश्लेषण सक्षम करें। इसके लिए Ollama सर्वर के साथ अतिरिक्त सेटअप की आवश्यकता होती है।"
         },
         "outputCustomization": {
-          "title": "Output Customization",
-          "description": "Customize the output format and include additional metadata in the generated storyboard."
+          "title": "आउटपुट अनुकूलन",
+          "description": "आउटपुट प्रारूप को अनुकूलित करें और उत्पन्न स्टोरीबोर्ड में अतिरिक्त मेटाडेटा शामिल करें।"
         }
       },
       "integration": {
-        "title": "Integration with Other Tools",
-        "description": "The storyboard output can be easily integrated with other tools and workflows. Here are some examples:",
+        "title": "अन्य उपकरणों के साथ एकीकरण",
+        "description": "स्टोरीबोर्ड आउटपुट को अन्य उपकरणों और वर्कफ़्लो के साथ आसानी से एकीकृत किया जा सकता है। यहाँ कुछ उदाहरण दिए गए हैं:",
         "tools": {
           "editingSoftware": {
-            "title": "Video Editing Software",
-            "description": "Import the JSON output into video editors that support script-based editing"
+            "title": "वीडियो संपादन सॉफ्टवेयर",
+            "description": "JSON आउटपुट को वीडियो संपादकों में आयात करें जो स्क्रिप्ट-आधारित संपादन का समर्थन करते हैं"
           },
           "cms": {
-            "title": "Content Management Systems",
-            "description": "Automatically generate metadata for video assets"
+            "title": "सामग्री प्रबंधन प्रणाली",
+            "description": "वीडियो संपत्ति के लिए स्वचालित रूप से मेटाडेटा उत्पन्न करें"
           },
           "aiTraining": {
-            "title": "AI Training Data",
-            "description": "Use the structured output as training data for machine learning models"
+            "title": "AI प्रशिक्षण डेटा",
+            "description": "मशीन लर्निंग मॉडल के लिए प्रशिक्षण डेटा के रूप में संरचित आउटपुट का उपयोग करें"
           }
         }
       }
     },
     "Benefitss": {
-      "title": "Benefits",
-      "description": "The benefits of using our AI-powered scene detection system include:",
+      "title": "लाभ",
+      "description": "हमारे AI-संचालित दृश्य पहचान प्रणाली का उपयोग करने के लाभों में शामिल हैं:",
       "tags": {
-        "computerVision": "Computer Vision",
-        "deepLearning": "Deep Learning",
-        "realTimeAnalysis": "Real-time Analysis"
+        "computerVision": "कंप्यूटर विजन",
+        "deepLearning": "डीप लर्निंग",
+        "realTimeAnalysis": "वास्तविक समय विश्लेषण"
       },
       "features": {
         "modularArchitecture": {
-          "title": "Modular Architecture",
-          "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+          "title": "मॉड्यूलर आर्किटेक्चर",
+          "description": "सिस्टम वीडियो विश्लेषण, AI प्रसंस्करण और आउटपुट निर्माण के लिए अलग-अलग घटकों के साथ बनाया गया है, जिससे इसे विस्तारित करना और बनाए रखना आसान हो जाता है।"
         },
         "performance": {
-          "title": "Performance Optimized",
-          "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
+          "title": "प्रदर्शन अनुकूलित",
+          "description": "कुशल फ्रेम प्रसंस्करण और समानांतरीकरण लंबे वीडियो के लिए भी तेज विश्लेषण सुनिश्चित करते हैं।"
         },
         "aiEnhanced": {
-          "title": "AI-Enhanced Analysis",
-          "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+          "title": "AI-संवर्धित विश्लेषण",
+          "description": "वैकल्पिक AI घटक गहरी दृश्य समझ और अधिक सटीक लेबलिंग प्रदान करते हैं।"
         }
       }
     },
     "benefits": {
-      "subtitle": "WHY CHOOSE OUR SOLUTION",
-      "title": "The Power of AI-Powered Scene Analysis"
+      "subtitle": "हमारा समाधान क्यों चुनें",
+      "title": "AI-संचालित दृश्य विश्लेषण की शक्ति"
     },
     "integration": {
-      "title": "Easy Integration",
-      "description": "The structured JSON output makes it easy to integrate with other tools and workflows:",
+      "title": "आसान एकीकरण",
+      "description": "संरचित JSON आउटपुट अन्य उपकरणों और वर्कफ़्लो के साथ एकीकृत करना आसान बनाता है:",
       "technologies": [
         "Python",
         "JavaScript",
@@ -1106,179 +1106,179 @@
     },
     "features10": {
       "comprehensiveData": {
-        "title": "Comprehensive Scene Data",
+        "title": "व्यापक दृश्य डेटा",
         "items": [
-          "Precise timing information for each scene",
-          "Key frames for visual reference",
-          "Object detection results",
-          "Camera movement analysis"
+          "प्रत्येक दृश्य के लिए सटीक समय की जानकारी",
+          "दृश्य संदर्भ के लिए मुख्य फ्रेम",
+          "वस्तु का पता लगाने के परिणाम",
+          "कैमरा आंदोलन विश्लेषण"
         ]
       },
       "export": {
-        "title": "Export Option",
+        "title": "निर्यात विकल्प",
         "formats": {
           "json": "JSON"
         }
       }
     },
     "performance": {
-      "title": "Performance Optimized",
+      "title": "प्रदर्शन अनुकूलित",
       "features": {
-        "speed": "5-10x faster than real-time",
-        "memory": "Low memory footprint",
-        "parallel": "Parallel processing"
+        "speed": "वास्तविक समय की तुलना में 5-10 गुना तेज",
+        "memory": "कम स्मृति पदचिह्न",
+        "parallel": "समानांतर प्रसंस्करण"
       }
     }
   },
   "nanoBananaProPrompts": {
-    "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "title": "Nano Banana Pro प्रॉम्प्ट्स",
+    "description": "अपनी AI सामग्री निर्माण आवश्यकताओं के लिए रचनात्मक और प्रभावी प्रॉम्प्ट्स का संग्रह खोजें। ये प्रॉम्प्ट्स आपको अपने AI टूल का अधिकतम लाभ उठाने में मदद करने के लिए डिज़ाइन किए गए हैं।",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "लोकप्रिय Nano Banana Pro प्रॉम्प्ट्स",
+      "prompt1": "एक भविष्य के शहर के बारे में एक छोटी कहानी बनाएँ जहाँ भावनाएँ मुद्रा हैं",
+      "prompt2": "कॉफी शॉप में पहली बार मिलने वाले दो पात्रों के बीच एक संवाद उत्पन्न करें",
+      "prompt3": "एक अभिनव AI-संचालित रसोई गैजेट के लिए उत्पाद विवरण लिखें"
     }
   },
   "qaBotToTaskAgent": {
-    "heading": "🏗️ From QA Bot to Task Agent: An Architecture Guide",
-    "description": "Learn how to build reliable task agents that go beyond simple question answering",
-    "tldr": "TL;DR: Stop building chatbots that just answer questions. Start building Task Agents that actually do work.",
-    "intro": "This guide explains the architectural shift from monolithic QA bots to Task Agents using Static Rules, Dynamic Skills, and Deterministic Hooks—with concrete code examples and open-source references.",
+    "heading": "🏗️ QA बॉट से टास्क एजेंट तक: एक आर्किटेक्चर गाइड",
+    "description": "विश्वसनीय टास्क एजेंट बनाना सीखें जो साधारण प्रश्न उत्तर देने से परे हैं",
+    "tldr": "TL;DR: ऐसे चैटबॉट बनाना बंद करें जो केवल सवालों के जवाब देते हैं। टास्क एजेंट बनाना शुरू करें जो वास्तव में काम करते हैं।",
+    "intro": "यह गाइड मोनोलिथिक QA बॉट्स से टास्क एजेंट्स में आर्किटेक्चरल बदलाव की व्याख्या करता है, जिसमें स्टेटिक रूल्स, डायनेमिक स्किल्स और डिटरमिनिस्टिक हुक का उपयोग किया जाता है — ठोस कोड उदाहरणों और ओपन-सोर्स संदर्भों के साथ।",
     "coreShift": {
-      "title": "1. The Core Shift: QA Bot → Task Agent",
+      "title": "1. मुख्य बदलाव: QA बॉट → टास्क एजेंट",
       "content": [
-        "Most AI systems today are still context-stuffed QA bots:",
-        "• They answer questions well",
-        "• They hallucinate under pressure",
-        "• They lack guarantees around execution, safety, and consistency"
+        "आज अधिकांश AI सिस्टम अभी भी संदर्भ-भरे QA बॉट हैं:",
+        "• वे सवालों के जवाब अच्छी तरह देते हैं",
+        "• वे दबाव में भ्रमित हो जाते हैं",
+        "• उनके पास निष्पादन, सुरक्षा और स्थिरता के आसपास गारंटी की कमी है"
       ],
-      "keyInsight": "The key insight: Don't scale context. Structure it."
+      "keyInsight": "मुख्य अंतर्दृष्टि: संदर्भ को स्केल न करें। इसे संरचित करें।"
     },
     "threeLayerArch": {
-      "title": "2. The Three-Layer Architecture",
+      "title": "2. तीन-स्तरीय आर्किटेक्चर",
       "layers": [
         {
-          "title": "🧱 1. Static Context — Rules (Always On)",
+          "title": "🧱 1. स्टेटिक संदर्भ — नियम (हमेशा चालू)",
           "points": [
-            "Mental model: Employee handbook",
-            "Always loaded",
-            "Defines identity, coding standards, behavioral constraints",
-            "Prevents hallucinations and style drift",
-            "Small, stable, human-editable"
+            "मानसिक मॉडल: कर्मचारी पुस्तिका",
+            "हमेशा लोड रहता है",
+            "पहचान, कोडिंग मानकों, व्यवहारिक बाधाओं को परिभाषित करता है",
+            "भ्रम और शैली बहाव को रोकता है",
+            "छोटा, स्थिर, मानव-संपादन योग्य"
           ]
         },
         {
-          "title": "🛠️ 2. Dynamic Context — Skills (On Demand)",
+          "title": "🛠️ 2. डायनेमिक संदर्भ — कौशल (मांग पर)",
           "points": [
-            "Mental model: Toolbox",
-            "Loaded only when needed",
-            "Each skill is a self-contained capability",
-            "Keeps the context window clean"
+            "मानसिक मॉडल: टूलबॉक्स",
+            "केवल जरूरत पड़ने पर लोड किया जाता है",
+            "प्रत्येक कौशल एक स्व-निहित क्षमता है",
+            "संदर्भ विंडो को साफ रखता है"
           ]
         },
         {
-          "title": "⚓ 3. Deterministic Hooks — Guardrails",
+          "title": "⚓ 3. डिटरमिनिस्टिक हुक — रेलिंग",
           "points": [
-            "Mental model: Security + Compliance layer",
-            "Not probabilistic",
-            "Runs before / after LLM reasoning",
-            "Enforces rules that must never fail"
+            "मानसिक मॉडल: सुरक्षा + अनुपालन परत",
+            "संभाव्य नहीं",
+            "LLM तर्क से पहले / बाद में चलता है",
+            "उन नियमों को लागू करता है जो कभी विफल नहीं होने चाहिए"
           ]
         }
       ]
     },
     "projectStructure": {
-      "title": "3. Recommended Project Structure",
+      "title": "3. अनुशंसित परियोजना संरचना",
       "structure": "my-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
     },
     "staticContextExample": {
-      "title": "4. Static Context Example: .cursorrules",
+      "title": "4. स्टेटिक संदर्भ उदाहरण: .cursorrules",
       "content": "# ROLE\nYou are a Senior Python Engineer focused on production-grade systems.\n\n# RULES\n- NEVER use print() for debugging\n- ALWAYS type-hint functions\n- Propose a plan if touching >3 files\n\n# BEHAVIOR\n- Be concise\n- Ask clarifying questions if needed\n\nReference: https://github.com/PatrickJS/awesome-cursorrules"
     },
     "dynamicSkillExample": {
-      "title": "5. Dynamic Skill Example (MCP)",
+      "title": "5. डायनेमिक स्किल उदाहरण (MCP)",
       "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Created ticket {ticket_id} with priority={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReference: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
-      "title": "6. Deterministic Hook Example",
+      "title": "6. डिटरमिनिस्टिक हुक उदाहरण",
       "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Security violation detected\"}\n    return agent_node(state)\n\nReference: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "यदि आपका एजेंट केवल सवालों के जवाब देता है, तो यह एक चैटबॉट है। यदि यह विश्वसनीय रूप से काम करता है, तो यह एक टास्क एजेंट है।",
-    "taskAgentImageAlt": "Illustration of a task agent system architecture showing the interaction between different components"
+    "taskAgentImageAlt": "विभिन्न घटकों के बीच बातचीत को दर्शाने वाले टास्क एजेंट सिस्टम आर्किटेक्चर का चित्रण"
   },
   "ageAi": {
-    "heading": "Data Science in the Age of AI: Is the \"Sexiest Job\" Still Sexy?",
-    "intro1": "\"It was the best of times, it was the worst of times.\"",
-    "intro2": "A decade ago, Harvard Business Review called Data Scientist the \"sexiest job of the 21st century.\" Today, the landscape is shifting beneath our feet. While the demand for data talent remains high, the rise of Generative AI is fundamentally changing what it means to be a 'Data Scientist.'",
+    "heading": "AI के युग में डेटा साइंस: क्या \"सबसे सेक्सी जॉब\" अभी भी सेक्सी है?",
+    "intro1": "\"यह सबसे अच्छा समय था, यह सबसे खराब समय था।\"",
+    "intro2": "एक दशक पहले, हार्वर्ड बिजनेस रिव्यू ने डेटा साइंटिस्ट को \"21वीं सदी की सबसे सेक्सी जॉब\" कहा था। आज, परिदृश्य हमारे पैरों के नीचे बदल रहा है। जबकि डेटा प्रतिभा की मांग उच्च बनी हुई है, जनरेटिव AI का उदय मौलिक रूप से बदल रहा है कि 'डेटा साइंटिस्ट' होने का क्या मतलब है।",
     "realityCheck": {
-      "title": "The Reality Check",
-      "content": "Traditional domains like Search, Ads, and Recommendation (SAR) are maturing, and the industry is shifting its focus toward heavy-duty engineering and AI architecture. We are seeing a strange paradox.",
+      "title": "वास्तविकता की जाँच",
+      "content": "खोज, विज्ञापन और अनुशंसा (SAR) जैसे पारंपरिक डोमेन परिपक्व हो रहे हैं, और उद्योग अपना ध्यान भारी इंजीनियरिंग और AI आर्किटेक्चर की ओर स्थानांतरित कर रहा है। हम एक अजीब विरोधाभास देख रहे हैं।",
       "lowBarTrap": {
-        "title": "The \"Low-Bar\" Trap",
-        "content": "Master's students can now use GPT-4 to handle data cleaning, EDA, and visualization in seconds. However, without a solid foundation, they often lack the judgment to know when the AI is \"hallucinating\" or providing statistically flawed results."
+        "title": "\"लो-बार\" ट्रैप",
+        "content": "मास्टर के छात्र अब सेकंड में डेटा सफाई, EDA और विज़ुअलाइज़ेशन को संभालने के लिए GPT-4 का उपयोग कर सकते हैं। हालांकि, एक ठोस आधार के बिना, उनके पास अक्सर यह जानने के निर्णय की कमी होती है कि AI कब \"भ्रमित\" हो रहा है या सांख्यिकीय रूप से त्रुटिपूर्ण परिणाम प्रदान कर रहा है।"
       },
       "stakeholderShift": {
-        "title": "Stakeholder Shift",
-        "content": "When business partners can write their own prompts to get basic insights, many DS professionals feel \"under-stimulated,\" trapped in endless meetings and repetitive prompt engineering."
+        "title": "हितधारक बदलाव",
+        "content": "जब व्यापार भागीदार बुनियादी अंतर्दृष्टि प्राप्त करने के लिए अपने स्वयं के प्रॉम्प्ट लिख सकते हैं, तो कई DS पेशेवर \"कम उत्तेजित\" महसूस करते हैं, अंतहीन बैठकों और दोहराव वाली प्रॉम्प्ट इंजीनियरिंग में फंस जाते हैं।"
       }
     },
     "strategicPillars": {
-      "title": "How to Stay Indispensable: Two Strategic Pillars",
-      "intro": "To thrive in this era, we need to evolve from 'builders of models' to 'architects of value.' I see this happening in two dimensions:",
+      "title": "अपरिहार्य कैसे रहें: दो रणनीतिक स्तंभ",
+      "intro": "इस युग में पनपने के लिए, हमें 'मॉडल के निर्माता' से 'मूल्य के आर्किटेक्ट' में विकसित होने की आवश्यकता है। मैं इसे दो आयामों में होते हुए देखता हूं:",
       "buildingTools": {
-        "title": "Building the Tools (The Engineer/Architect Mindset)",
-        "subtitle": "Don't just use the AI; improve it.",
+        "title": "उपकरणों का निर्माण (इंजीनियर/आर्किटेक्ट मानसिकता)",
+        "subtitle": "केवल AI का उपयोग न करें; इसे सुधारें।",
         "points": [
           {
-            "title": "Model Evaluation & Governance",
-            "content": "As AI output becomes a commodity, the person who can define what a 'good' result looks like is the most valuable person in the room. Focus on specialized evaluation frameworks (like risk-weighting in Finance)."
+            "title": "मॉडल मूल्यांकन और शासन",
+            "content": "जैसे-जैसे AI आउटपुट एक वस्तु बन जाता है, वह व्यक्ति जो परिभाषित कर सकता है कि 'अच्छा' परिणाम कैसा दिखता है, कमरे में सबसे मूल्यवान व्यक्ति है। विशेष मूल्यांकन ढांचे (जैसे वित्त में जोखिम-भार) पर ध्यान दें।"
           },
           {
-            "title": "Domain Fine-Tuning",
-            "content": "Mastering techniques like LoRA or RAG to inject specific business knowledge into LLMs."
+            "title": "डोमेन फाइन-ट्यूनिंग",
+            "content": "LLM में विशिष्ट व्यावसायिक ज्ञान को इंजेक्ट करने के लिए LoRA या RAG जैसी तकनीकों में महारत हासिल करना।"
           },
           {
-            "title": "Automation",
-            "content": "Lead internal initiatives like 'Virtual Analysts' or automated experimentation pipelines."
+            "title": "स्वचालन",
+            "content": "'वर्चुअल एनालिस्ट' या स्वचालित प्रयोग पाइपलाइन जैसी आंतरिक पहलों का नेतृत्व करें।"
           }
         ]
       },
       "leveragingTools": {
-        "title": "Leveraging the Tools (The Strategist Mindset)",
-        "subtitle": "Use AI to 10x your output so you can focus on what humans do best.",
+        "title": "उपकरणों का लाभ उठाना (रणनीतिकार मानसिकता)",
+        "subtitle": "अपने आउटपुट को 10 गुना करने के लिए AI का उपयोग करें ताकि आप उस पर ध्यान केंद्रित कर सकें जो मनुष्य सबसे अच्छा करते हैं।",
         "points": [
           {
-            "title": "Domain Expertise",
-            "content": "AI knows the 'how,' but you know the 'why.' Deep business understanding allows you to provide the right context that AI lacks."
+            "title": "डोमेन विशेषज्ञता",
+            "content": "AI 'कैसे' जानता है, लेकिन आप 'क्यों' जानते हैं। गहरी व्यावसायिक समझ आपको सही संदर्भ प्रदान करने की अनुमति देती है जो AI के पास नहीं है।"
           },
           {
-            "title": "Critical Thinking & Experimentation",
-            "content": "While AI can generate code, human DS skills are still core for hypothesis testing, causal inference, and interpreting 'messy' real-world data."
+            "title": "आलोचनात्मक सोच और प्रयोग",
+            "content": "जबकि AI कोड उत्पन्न कर सकता है, मानव DS कौशल अभी भी परिकल्पना परीक्षण, कारण अनुमान और 'गड़बड़' वास्तविक दुनिया के डेटा की व्याख्या के लिए मुख्य हैं।"
           },
           {
-            "title": "Communication & Influence",
-            "content": "The ability to translate complex data into a business story and build stakeholder trust is a 'soft' skill that has become a 'hard' requirement."
+            "title": "संचार और प्रभाव",
+            "content": "जटिल डेटा को एक व्यावसायिक कहानी में अनुवाद करने और हितधारक विश्वास बनाने की क्षमता एक 'सॉफ्ट' कौशल है जो एक 'कठोर' आवश्यकता बन गई है।"
           }
         ]
       }
     },
     "bottomLine": {
-      "title": "The Bottom Line",
-      "content1": "AI hasn't killed Data Science; it has raised the floor. If your value was purely in writing SQL or tuning hyperparameters, the 'sexiness' is fading. But if you can bridge the gap between business problems and AI solutions, your value has never been higher.",
-      "content2": "Personal experience is your edge. A LLM can mimic logic, but it doesn't have the years of 'battle scars' from failed deployments or the intuition built from navigating complex organizations."
+      "title": "निष्कर्ष",
+      "content1": "AI ने डेटा साइंस को नहीं मारा है; इसने स्तर को ऊपर उठाया है। यदि आपका मूल्य पूरी तरह से SQL लिखने या हाइपरपैरामीटर ट्यूनिंग में था, तो 'सेक्सीनेस' लुप्त हो रही है। लेकिन अगर आप व्यावसायिक समस्याओं और AI समाधानों के बीच की खाई को पाट सकते हैं, तो आपका मूल्य कभी भी अधिक नहीं रहा है।",
+      "content2": "व्यक्तिगत अनुभव आपकी बढ़त है। एक LLM तर्क की नकल कर सकता है, लेकिन इसमें विफल तैनाती से 'युद्ध के निशान' या जटिल संगठनों को नेविगेट करने से निर्मित अंतर्ज्ञान नहीं है।"
     },
     "discussion": {
-      "title": "Let's discuss:",
-      "prompt": "Are you feeling more 'efficient' or 'replaced' in your current role? How are you evolving your toolkit this year?"
+      "title": "चर्चा करते हैं:",
+      "prompt": "क्या आप अपनी वर्तमान भूमिका में अधिक 'कुशल' या 'प्रतिस्थापित' महसूस कर रहे हैं? इस वर्ष आप अपनी टूलकिट कैसे विकसित कर रहे हैं?"
     },
     "hashtags": [
-      "#DataScience",
+      "#डेटासाइंस",
       "#AI",
-      "#MachineLearning",
-      "#GenerativeAI",
-      "#CareerDevelopment",
-      "#TechTrends"
+      "#मशीनलर्निंग",
+      "#जेनरेटिवAI",
+      "#करियरविकास",
+      "#तकनीकीरुझान"
     ]
   }
 }

@@ -1,8 +1,8 @@
 {
   "home": {
     "metadata": {
-      "title": "Curify | Power Content Creation with AI",
-      "description": "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale."
+      "title": "Curify | KI-gestützte Content-Erstellung",
+      "description": "Curify ist eine KI-native Plattform, die Kreativen, Lehrkräften und Medienteams hilft, Videos, Manga und Präsentationen im großen Maßstab zu erstellen und zu lokalisieren."
     },
     "hero": {
       "title": "KI-gestützte Content-Erstellung der nächsten Stufe",
@@ -65,25 +65,25 @@
   "export": {
     "title": "Export",
     "export": "Export",
-    "downloading": "Downloading..."
+    "downloading": "Wird heruntergeladen..."
   },
   "delete": {
-    "title": "Double Confirm",
-    "message": "Are you sure you want to delete this project",
-    "warning": "This action cannot be undone.",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "deleting": "Deleting..."
+    "title": "Bitte bestätigen",
+    "message": "Möchtest du dieses Projekt wirklich löschen?",
+    "warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "deleting": "Wird gelöscht..."
   },
   "userMenu": {
-    "topUpCredits": "Top Up Credits",
-    "remaining": "Remaining",
-    "planRemaining": "Plan Remaining",
-    "validUntil": "Valid until",
-    "creditsHistory": "Credits History",
-    "subscribePlan": "Subscribe Plan",
-    "supportTicket": "Support Ticket",
-    "signOut": "Sign Out"
+    "topUpCredits": "Credits aufladen",
+    "remaining": "Verbleibend",
+    "planRemaining": "Im Plan verbleibend",
+    "validUntil": "Gültig bis",
+    "creditsHistory": "Credit-Verlauf",
+    "subscribePlan": "Plan abonnieren",
+    "supportTicket": "Support-Ticket",
+    "signOut": "Abmelden"
   },
   "technology": {
     "multimodal": {
@@ -125,8 +125,8 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "Free Bilingual Subtitles Generator | Curify AI",
-      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+      "title": "Kostenloser Generator für zweisprachige Untertitel | Curify AI",
+      "description": "Erstelle mit Curifys kostenlosem KI-Tool zweisprachige Untertitel für deine Videos. Ideal für YouTube, TikTok, Bildung und globale Creator."
     },
     "title": "Zweisprachige Untertitel leicht gemacht",
     "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
@@ -149,34 +149,34 @@
   },
   "videoDubbing": {
     "metadata": {
-      "title": "AI Video Dubbing Tool | Curify AI",
-      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+      "title": "KI-Tool für Video-Synchronisation | Curify AI",
+      "description": "Synchronisiere deine Videos in über 170 Sprachen mit KI-Stimmklonen, Emotionsbewahrung und Lippensynchronisation. Teste Curifys KI-Synchronisation kostenlos."
     },
     "title": "KI-Video-Synchronisation mit natürlicher Stimme",
     "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
   },
   "about": {
     "metadata": {
-      "title": "About Curify | Vision, Technology & Team",
-      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+      "title": "Über Curify | Vision, Technologie & Team",
+      "description": "Erfahre mehr über Curifys Vision, Content-Erstellung mit KI zu demokratisieren. Wir sind ein Team aus Ingenieur:innen und Kreativen, das die Zukunft der Medienlokalisierung baut."
     }
   },
   "contact": {
     "metadata": {
-      "title": "Contact Us | Curify Studio",
-      "description": "Get in touch with the Curify team for support, sales, or partnerships. We are here to help you scale your content globally."
+      "title": "Kontakt | Curify Studio",
+      "description": "Kontaktiere das Curify-Team für Support, Vertrieb oder Partnerschaften. Wir helfen dir, Inhalte global zu skalieren."
     }
   },
   "blog": {
     "metadata": {
-      "title": "Curify Blog | AI Content Creation Insights",
-      "description": "Read the latest articles on AI video generation, dubbing, style transfer, and the future of content creation."
+      "title": "Curify Blog | Einblicke in KI-Content-Erstellung",
+      "description": "Lies die neuesten Artikel zu KI-Videoerstellung, Synchronisation, Stiltransfer und der Zukunft der Content-Erstellung."
     }
   },
   "pricing": {
     "metadata": {
-      "title": "Pricing Plans | Curify Studio",
-      "description": "Choose the right plan for your content creation needs. From free tools to enterprise-grade AI dubbing and localization."
+      "title": "Preispläne | Curify Studio",
+      "description": "Wähle den passenden Plan für deine Content-Erstellung - von kostenlosen Tools bis zu KI-Synchronisation und Lokalisierung auf Enterprise-Niveau."
     },
     "header": {
       "title": "Erste Schritte mit einem Plan",
@@ -331,7 +331,7 @@
     "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
   },
   "storyboardToPipeline": {
-    "title": "Van Storyboards naar AI-pijplijnen: Animatie Herdefiniëren",
+    "title": "Von Storyboards zu KI-Pipelines - Animation neu definiert",
     "intro": {
       "p1": "De meeste mensen denken dat video met AI betekent: 'tekst erin, clip eruit'. Maar als je een cinematografisch niveau zoekt, met regisseurscontrole, dan is dat een ander verhaal.",
       "p2": "In traditionele animatie telt elk detail: het personageontwerp, de continuïteit van de beweging, het ritme en de overgangen tussen scènes. Ons doel is dat AI datzelfde precisieniveau bereikt.",
@@ -704,8 +704,8 @@
     },
     "cta": "🚀 Klaar om je storyboard met AI tot leven te brengen? <strong>We kunnen een complete starterkit leveren</strong> met voorbeeld-JSON’s, ComfyUI-workflows en ffmpeg/AE-templates om je op weg te helpen.",
     "sceneBreakdown": {
-      "title": "Scenedetectie-output begrijpen",
-      "introduction": "Laten we een typische scenedetectie-output uitsplitsen om te begrijpen hoe onze AI video-inhoud analyseert en structureert. Onder elke uitleg vind je de bijbehorende JSON-structuur die deze inzichten aanstuurt.",
+      "title": "Ausgabe der Szenenerkennung verstehen",
+      "introduction": "Schauen wir uns eine typische Ausgabe der Szenenerkennung an, um zu verstehen, wie unsere KI Videoinhalte analysiert und strukturiert. Unter jeder Erklärung findest du die zugehörige JSON-Struktur, die diese Erkenntnisse ermöglicht.",
       "scenes": [
         {
           "title": "1. Scène-identificatie",
@@ -1041,12 +1041,12 @@
   },
   "nanoBananaProPrompts": {
     "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "description": "Entdecke eine Sammlung kreativer und effektiver Prompts für deine KI-Content-Erstellung. Diese Prompts helfen dir, das Beste aus deinen KI-Tools herauszuholen.",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "Beliebte Nano Banana Pro Prompts",
+      "prompt1": "Schreibe eine Kurzgeschichte über eine futuristische Stadt, in der Emotionen die Währung sind.",
+      "prompt2": "Erstelle einen Dialog zwischen zwei Figuren, die sich zum ersten Mal in einem Café treffen.",
+      "prompt3": "Verfasse eine Produktbeschreibung für ein innovatives, KI-gestütztes Küchengerät."
     }
   },
   "ageAi": {

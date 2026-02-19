@@ -27,25 +27,12 @@ export default function middleware(req: NextRequest) {
     return NextResponse.redirect(redirectUrl, { status: 308 });
   }
 
-  // 2) Block unsupported locale prefixes (e.g. /ko) BEFORE next-intl runs
-  // If you removed "ko" from routing.locales, next-intl may still treat it oddly depending on config.
-  // So we explicitly handle it here.
+  // 2) Parse optional locale prefix for downstream auth checks only.
   const pathname = url.pathname;
   const matched = pathname.match(/^\/([a-zA-Z]{2})(\/|$)/);
   const locale = matched?.[1]?.toLowerCase();
 
   const supportedLocales = (routing.locales || []).map((l) => l.toLowerCase());
-  const defaultLocale = (routing.defaultLocale || "en").toLowerCase();
-
-  // If path starts with a 2-letter locale but it's not supported -> 308 to default locale, keep the rest
-  // e.g. /ko/inspiration-hub -> /en/inspiration-hub
-  if (locale && !supportedLocales.includes(locale)) {
-    const rest = pathname.replace(new RegExp(`^/${locale}`), ""); // keep leading "/" in rest
-    const target = `/${defaultLocale}${rest || ""}`;
-    const redirectUrl = new URL(req.url);
-    redirectUrl.pathname = target;
-    return NextResponse.redirect(redirectUrl, { status: 308 });
-  }
 
   // 3) Run i18n middleware
   const res = intlMiddleware(req);
