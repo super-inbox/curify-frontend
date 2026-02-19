@@ -5,7 +5,7 @@ import BtnN from "../_components/button/ButtonNormal";
 import { useAtom } from "jotai";
 import { modalAtom, drawerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
 import { usePathname, useRouter, Link } from "@/i18n/navigation";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
 import { useEffect, useState, useRef } from "react";
 import { ChevronDown, Menu } from "lucide-react";
@@ -15,10 +15,12 @@ import {
   getLanguageByCode,
   isMoreLanguage,
 } from "@/lib/language_config";
+import LanguageSubmenu from "@/app/[locale]/_componentForPage/LanguageSubmenu";
 
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { locale } = useParams() as { locale: string };
 
   const [drawerState, setDrawerState] = useAtom(drawerAtom);
@@ -127,7 +129,13 @@ export default function Header() {
             {primaryLanguages.map((lang) => (
               <button
                 key={lang.locale}
-                onClick={() => router.replace(pathname, { locale: lang.locale })}
+                onClick={() => {
+                  const currentSearchParams = new URLSearchParams(searchParams.toString());
+                  const queryString = currentSearchParams.toString();
+                  const newPath = queryString ? `${pathname}?${queryString}` : pathname;
+                  
+                  router.replace(newPath, { locale: lang.locale });
+                }}
                 className={`cursor-pointer px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
                   locale === lang.locale
                     ? "bg-blue-50 text-blue-600"
@@ -155,25 +163,13 @@ export default function Header() {
               </button>
 
               {moreLanguagesOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                  {moreLanguages.map((lang) => (
-                    <button
-                      key={lang.locale}
-                      onClick={() => {
-                        router.replace(pathname, { locale: lang.locale });
-                        setMoreLanguagesOpen(false);
-                      }}
-                      className={`cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
-                        locale === lang.locale
-                          ? "bg-blue-50 text-blue-600"
-                          : "text-gray-700"
-                      }`}
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.name}</span>
-                    </button>
-                  ))}
-                </div>
+                <LanguageSubmenu
+                  currentLocale={locale}
+                  languages={moreLanguages as any}
+                  setShowLanguageSubmenu={setMoreLanguagesOpen}
+                  className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                  itemClassName="cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2"
+                />
               )}
             </div>
           </div>

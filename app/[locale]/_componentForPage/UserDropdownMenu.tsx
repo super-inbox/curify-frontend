@@ -3,6 +3,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import {
   Clock,
   Globe,
@@ -19,6 +20,7 @@ import type { User, UserSession } from "@/types/auth";
 import { allLanguages, getLanguageByCode } from "@/lib/language_config";
 import { transactionService, type Transaction } from "@/services/transactions";
 import TransactionHistoryDialog from "./TransactionHistoryDialog";
+import LanguageSubmenu from "./LanguageSubmenu";
 
 // ✅ Jotai drawerAtom import
 import { useSetAtom } from "jotai";
@@ -49,6 +51,7 @@ export default function UserDropdownMenu({
 }: UserDropdownMenuProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [showLanguageSubmenu, setShowLanguageSubmenu] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -200,27 +203,11 @@ export default function UserDropdownMenu({
             </button>
 
             {showLanguageSubmenu && (
-              <div className="absolute right-full top-0 w-72 -mr-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
-                {allLanguages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      const newPathname = pathname;
-                      router.replace(newPathname, { locale: lang.code });
-                      setShowLanguageSubmenu(false);
-                      onClose();
-                    }}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors cursor-pointer ${
-                      lang.code === currentLocale
-                        ? "bg-blue-50 text-blue-600"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    <span className="mr-2">{lang.flag}</span>
-                    {lang.name}
-                  </button>
-                ))}
-              </div>
+              <LanguageSubmenu
+                currentLocale={currentLocale}
+                onClose={onClose}
+                setShowLanguageSubmenu={setShowLanguageSubmenu}
+              />
             )}
           </div>
 
@@ -335,27 +322,11 @@ export default function UserDropdownMenu({
             </button>
 
             {showLanguageSubmenu && (
-              <div className="absolute right-full top-0 w-72 -mr-2 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
-                {allLanguages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      const newPathname = pathname;
-                      router.replace(newPathname, { locale: lang.code });
-                      setShowLanguageSubmenu(false);
-                      onClose();
-                    }}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors cursor-pointer ${
-                      lang.code === currentLocale
-                        ? "bg-blue-50 text-blue-600"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    <span className="mr-2">{lang.flag}</span>
-                    {lang.name}
-                  </button>
-                ))}
-              </div>
+              <LanguageSubmenu
+                currentLocale={currentLocale}
+                onClose={onClose}
+                setShowLanguageSubmenu={setShowLanguageSubmenu}
+              />
             )}
           </div>
 
