@@ -22,32 +22,7 @@ export default function QABotToTaskAgent() {
       {/* Sidebar */}
       <aside className="lg:w-64 flex-shrink-0">
         <div className="sticky top-24 space-y-6">
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <h3 className="font-bold text-lg mb-4 flex items-center">
-              <FaTools className="mr-2 text-blue-600" />
-              Tools & Resources
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/nano-banana-pro-prompts" 
-                  className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  <FaLightbulb className="mr-2 text-yellow-500" />
-                  Nano Banana Pro
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/inspiration-hub" 
-                  className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  <FaRocket className="mr-2 text-purple-500" />
-                  Inspiration Hub
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Tools & Resources section removed */}
         </div>
       </aside>
 
@@ -57,7 +32,7 @@ export default function QABotToTaskAgent() {
           {t("heading")}
         </h1>
 
-      <p className="mb-6 font-semibold text-gray-700">
+        <p className="mb-6 font-semibold text-gray-700">
         {t("tldr")}
       </p>
 

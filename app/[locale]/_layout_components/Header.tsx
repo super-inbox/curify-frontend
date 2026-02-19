@@ -125,17 +125,17 @@ export default function Header() {
           <div className="flex items-center gap-1 border-r border-gray-200 pr-4">
             {/* Primary Languages */}
             {primaryLanguages.map((lang) => (
-              <Link key={lang.locale} href={pathname} locale={lang.locale}>
-                <button
-                  className={`cursor-pointer px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                    locale === lang.locale
-                      ? "bg-blue-50 text-blue-600"
-                      : "text-gray-600 hover:bg-gray-50"
-                  }`}
-                >
-                  {lang.name}
-                </button>
-              </Link>
+              <button
+                key={lang.locale}
+                onClick={() => router.replace(pathname, { locale: lang.locale })}
+                className={`cursor-pointer px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                  locale === lang.locale
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                {lang.name}
+              </button>
             ))}
 
             {/* More dropdown */}
@@ -157,19 +157,21 @@ export default function Header() {
               {moreLanguagesOpen && (
                 <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                   {moreLanguages.map((lang) => (
-                    <Link key={lang.locale} href={pathname} locale={lang.locale}>
-                      <button
-                        onClick={() => setMoreLanguagesOpen(false)}
-                        className={`cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
-                          locale === lang.locale
-                            ? "bg-blue-50 text-blue-600"
-                            : "text-gray-700"
-                        }`}
-                      >
-                        <span>{lang.flag}</span>
-                        <span>{lang.name}</span>
-                      </button>
-                    </Link>
+                    <button
+                      key={lang.locale}
+                      onClick={() => {
+                        router.replace(pathname, { locale: lang.locale });
+                        setMoreLanguagesOpen(false);
+                      }}
+                      className={`cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
+                        locale === lang.locale
+                          ? "bg-blue-50 text-blue-600"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.name}</span>
+                    </button>
                   ))}
                 </div>
               )}
@@ -203,7 +205,7 @@ export default function Header() {
               isOpen={menuOpen}
               onClose={() => setMenuOpen(false)}
               onLanguageSelect={(lang: string) => {
-                router.push(`/${lang}`);
+                router.replace(pathname, { locale: lang });
                 setMenuOpen(false);
               }}
               onSignOut={() => {

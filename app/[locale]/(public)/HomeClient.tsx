@@ -6,16 +6,26 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { Search, Type, Building2, Sparkles } from "lucide-react";
 import { Inter } from "next/font/google";
+import ContentCreationToolsSidebar from "@/app/[locale]/_components/ContentCreationToolsSidebar";
 
 import {
   InspirationListItem,
   type InspirationCardType,
 } from "@/app/[locale]/_components/InspirationCard";
 import {
-  NanoInspirationRow,
-  type NanoInspirationCardType,
+  NanoInspirationRow,  
 } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
+
+import { NanoInspirationCardType } from "@/lib/nano_utils";
+
+import {
+  buildNanoRegistry,
+  buildNanoFeedCards,
+  normalizeLocale,
+  type RawTemplate,
+  type RawNanoImageRecord,
+} from "@/lib/nano_utils";
 
 // --- Font (modern SaaS look) ---
 const inter = Inter({
@@ -34,11 +44,10 @@ function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-function getInterleavedData(
-  mainCards: InspirationCardType[],
-  nanoCards: NanoInspirationCardType[]
-): InterleavedItem[] {
+function getInterleavedData(mainCards: InspirationCardType[], nanoCards: NanoInspirationCardType[]): InterleavedItem[] {
   const result: InterleavedItem[] = [];
+  let inserted = false;
+
   mainCards.forEach((card, index) => {
     result.push({ type: "inspiration", card });
     if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
@@ -47,27 +56,71 @@ function getInterleavedData(
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
       if (rowCards.length > 0) {
         result.push({ type: "nano", cards: rowCards });
+        inserted = true;
       }
     }
   });
+
+  if (!inserted && nanoCards.length > 0) {
+    result.push({ type: "nano", cards: nanoCards.slice(0, 3) });
+  }
+
   return result;
 }
 
-// --- Custom Hooks ---
+
 function useNanoCards(activeLang: Lang) {
-  const [allNanoCards, setAllNanoCards] = useState<NanoInspirationCardType[]>(
-    []
-  );
+  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
+
   useEffect(() => {
-    fetch("/data/nano_inspiration.json")
-      .then((res) => res.json())
-      .then((data) => setAllNanoCards(data))
-      .catch((err) => console.error("Failed to load nano cards:", err));
-  }, []);
-  return useMemo(
-    () => allNanoCards.filter((n) => n.language === activeLang),
-    [allNanoCards, activeLang]
-  );
+    let cancelled = false;
+
+    async function load() {
+      try {
+        console.log("[nano] loading nano cards, activeLang =", activeLang);
+
+        // Fetch both template metadata + image-level records
+        const [tplRes, imgRes] = await Promise.all([
+          fetch("/data/nano_templates.json"),
+          fetch("/data/nano_inspiration.json"),
+        ]);
+
+        const templatesRaw = (await tplRes.json()) as RawTemplate[];
+        const imagesRaw = (await imgRes.json()) as RawNanoImageRecord[];
+
+        const reg = buildNanoRegistry(templatesRaw, imagesRaw);
+
+        const locale = normalizeLocale(activeLang);
+
+        // Build 1 card per template (same shape home timeline consumes)
+        // Preload 1-2 images per card for carousel
+        const cards = buildNanoFeedCards(reg, locale, {
+          perTemplateMaxImages: 2,
+          strictLocale: true,
+        });
+
+        // One-line sanity log
+        console.log(
+          "[nano] built feed cards:",
+          cards.length,
+          "sample=",
+          cards[0]
+        );
+
+        if (!cancelled) setNanoCards(cards as any);
+      } catch (err) {
+        console.error("[nano] ❌ failed to load nano cards:", err);
+        if (!cancelled) setNanoCards([]);
+      }
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [activeLang]);
+
+  return nanoCards;
 }
 
 function useFilteredInspiration(
@@ -187,6 +240,12 @@ export default function HomeClient({
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
+  useEffect(() => {
+    console.log("[home] activeLang:", activeLang);
+    console.log("[home] nanoCards len:", nanoCards.length);
+    if (nanoCards.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
+  }, [activeLang, nanoCards]);
+
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     card: InspirationCardType | NanoInspirationCardType | null;
@@ -218,10 +277,10 @@ export default function HomeClient({
     <main
       className={classNames(
         inter.className,
-        "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-8"
+        "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6"
       )}
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1400px]">
         {/* Headline */}
         <div className="mb-8">
           <h1 className="text-[26px] font-semibold tracking-tight text-neutral-900 md:text-3xl">
@@ -238,7 +297,7 @@ export default function HomeClient({
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Left: Feed */}
           <div className="lg:col-span-8">
             {/* Search */}
@@ -270,81 +329,11 @@ export default function HomeClient({
             )}
           </div>
 
-          {/* Right: Sidebar */}
           <aside className="lg:col-span-4 lg:border-l lg:border-neutral-200/70 lg:pl-8">
-            <div className="space-y-6 lg:sticky lg:top-24">
-              {/* Tools */}
-              <div className="rounded-2xl border border-neutral-100 bg-white p-5 shadow-sm">
-                <h3 className="mb-4 text-lg font-semibold tracking-tight text-neutral-900">
-                  Content Creation Tools
-                </h3>
-
-                <div className="space-y-3">
-                  <SidebarToolItem
-                    icon={
-                      <img
-                        src="/icons/translation-icon.png"
-                        alt="Translation"
-                        className="h-6 w-6"
-                      />
-                    }
-                    colorClass="bg-blue-600"
-                    title="Video Translator"
-                    desc="Translate YouTube & MP4 videos"
-                    onClick={() => router.push(`/${activeLang}/video-dubbing`)}
-                  />
-
-                  <SidebarToolItem
-                    icon={
-                      <img
-                        src="/icons/subtitle-icon.png"
-                        alt="Subtitle"
-                        className="h-6 w-6"
-                      />
-                    }
-                    colorClass="bg-green-500"
-                    title="Subtitle Generator"
-                    desc="Create accurate subtitles instantly"
-                    onClick={() =>
-                      router.push(`/${activeLang}/bilingual-subtitles`)
-                    }
-                  />
-
-                  <SidebarToolItem
-                    icon={<Type className="h-5 w-5" />}
-                    colorClass="bg-purple-500"
-                    title="Word Cards"
-                    desc="Build vocabulary visually"
-                    badge={<NanoBadge />}
-                    // optional: could route to /nano-banana-pro-prompts or /n
-                    onClick={() =>
-                      router.push(`/${activeLang}/nano-banana-pro-prompts`)
-                    }
-                  />
-
-                  <SidebarToolItem
-                    icon={<Building2 className="h-5 w-5" />}
-                    colorClass="bg-sky-500"
-                    title="City Visual Packs"
-                    desc="Visual packs for global landmarks"
-                    badge={<NanoBadge />}
-                    onClick={() => router.push(`/${activeLang}/inspiration-hub`)}
-                  />
-                </div>
-
-                <div className="mt-6 border-t border-neutral-100 pt-4">
-                  <button
-                    onClick={() => router.push(`/${activeLang}/tools`)}
-                    className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-lg"
-                    type="button"
-                  >
-                    <Sparkles className="h-4 w-4" />
-                    Create New Content
-                  </button>
-                </div>
-              </div>
-            </div>
-          </aside>
+  <div className="space-y-6 lg:sticky lg:top-24">
+    <ContentCreationToolsSidebar activeLang={activeLang} />
+  </div>
+</aside>
         </div>
       </div>
 

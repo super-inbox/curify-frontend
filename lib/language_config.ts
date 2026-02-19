@@ -16,7 +16,6 @@ export const primaryLanguages: LanguageConfig[] = [
 // Additional languages in "More" dropdown
 export const moreLanguages: LanguageConfig[] = [
   { locale: "es", name: "Español", flag: "🇪🇸", code: "es" },
-  { locale: "fr", name: "Français", flag: "🇫🇷", code: "fr" },
   { locale: "de", name: "Deutsch", flag: "🇩🇪", code: "de" },
   { locale: "ja", name: "日本語", flag: "🇯🇵", code: "ja" },
   { locale: "hi", name: "हिंदी", flag: "🇮🇳", code: "hi" },
