@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useAtom } from "jotai";
 import { modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
 import { useTranslations } from "next-intl";

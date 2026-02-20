@@ -1,53 +1,66 @@
 {
-    "home": {
+  "home": {
+    "metadata": {
+      "title": "Curify | Yapay Zeka ile İçerik Oluşturmayı Güçlendirin",
+      "description": "Curify, içerik oluşturucuların, eğitimcilerin ve medya ekiplerinin videoları, mangaları ve sunumları ölçekli bir şekilde üretmesine ve yerelleştirmesine yardımcı olan yapay zeka tabanlı bir platformdur."
+    },
     "hero": {
-      "title": "Yapay Zeka ile Bir Sonraki Seviye İçerik Oluşturma",
-      "description": "Curify Studio, dil ve format engellerini aşmak için içerik oluşturucuları ve kuruluşları güçlendiren yapay zeka tabanlı bir platform geliştiriyor. Ton, stil ve duygusal derinliği koruyan otantik çeviriler sağlayarak içeriklerin küresel bir izleyici kitlesine ulaşmasını sağlıyoruz. Medya, eğitim ve eğlence kesişiminde, hızla küreselleşen bir endüstride içeriklerin sorunsuz bir şekilde uyarlanması için araçlar sunuyoruz."
+      "title": "Yapay Zeka ile İçerik Oluşturmayı Güçlendirin",
+      "description": "Curify Studio, içerik üreticilerinin ve kuruluşların dil ve format engellerini aşmasına yardımcı olan yapay zeka tabanlı bir içerik üretim platformu geliştiriyor. Platform, içeriği küresel kitlelere ölçekleme zorluğunu çözüyor ve ton, stil ile duygusal derinliği koruyan otantik çeviriler sunuyor. Medya, eğitim ve eğlencenin kesişiminde; hızla küreselleşen bir sektörde içerik üreticilerinin içeriklerini sorunsuz biçimde uyarlayabilmesi için araçlar sağlıyor."
     }
   },
   "coreFeatures": {
-  "oneShot": {
-    "title": "Tek Tıklamayla Çeviri",
-    "desc": "Tam video çevirisi, seslendirme, altyazı ve dudak senkronizasyonu tek adımda."
+    "oneShot": {
+      "title": "Tek Adımda Çeviri",
+      "desc": "Tek bir işlemde seslendirme, altyazı ve dudak senkronizasyonu ile tam video çevirisi."
+    },
+    "toneColor": {
+      "title": "Ses Rengi Koruma",
+      "desc": "Orijinal konuşmacının benzersiz ses özelliklerini ve ton kalitesini korur."
+    },
+    "emotional": {
+      "title": "Duygusal Konuşma",
+      "desc": "Yapay zeka, duygusal nüansları yeniden üreterek diller arasında otantik ifade sağlar."
+    },
+    "lipSync": {
+      "title": "Dudak Senkronizasyon Teknolojisi",
+      "desc": "Ağız hareketlerini çevrilmiş sesle mükemmel bir şekilde eşleştiren gelişmiş dudak senkronizasyonu."
+    },
+    "subtitle": {
+      "title": "Altyazı Oluşturucu",
+      "desc": "Hassas zamanlama ve doğal dil akışı ile akıllı altyazı oluşturma."
+    },
+    "languages": {
+      "title": "170+ Dil",
+      "desc": "İçeriğinizi 170'ten fazla dile yerel düzeyde doğrulukla çevirin."
+    }
   },
-  "toneColor": {
-    "title": "Ses Rengi Koruma",
-    "desc": "Orijinal konuşmacının benzersiz ses özelliklerini ve ton kalitesini korur."
-  },
-  "emotional": {
-    "title": "Duygusal Konuşma",
-    "desc": "Yapay zeka duygusal nüansları yeniden üretir ve dil sınırlarını aşan otantik ifade sağlar."
-  },
-  "lipSync": {
-    "title": "Lippen-Synchronisation",
-    "desc": "Fortschrittliche Lippen-Synchronisierung, die Mundbewegungen perfekt mit der übersetzten Tonspur abgleicht."
-  },
-  "subtitle": {
-    "title": "Untertitelgenerator",
-    "desc": "Intelligente Untertitelerstellung mit präzisem Timing und natürlichem Sprachfluss."
-  },
-  "languages": {
-    "title": "170+ Sprachen",
-    "desc": "Übersetzen Sie Ihre Inhalte in über 170 Sprachen mit nahezu muttersprachlicher Genauigkeit."
-  }
-},
- "upcoming": {
-    "title": "Demnächst verfügbar",
-    "subtitle": "Nächste Generation von Funktionen in Entwicklung",
+  "upcoming": {
+    "title": "Yakında",
+    "subtitle": "Geliştirilmekte olan yeni nesil özellikler",
     "styleTransfer": {
-      "title": "Stilübertragung",
-      "desc": "Wende filmische oder markenspezifische Stile auf deine Videos an – mit KI-gestützter visueller Transformation."
+      "title": "Stil Transferi",
+      "desc": "Yapay zeka destekli görsel dönüşüm ile videolarınıza sinematik veya markaya özgü stiller uygulayın.",
+      "icon": "🎨",
+      "status": "2025 3. Çeyrekte Geliyor",
+      "transcript": "Bu demo, yapay zeka destekli görsel stil transferi kullanarak canlı aksiyon drama klibini tuhaf bir Ghibli tarzı animasyona dönüştürüyor."
     },
     "mangaTranslation": {
-      "title": "Manga-Übersetzung",
-      "desc": "Automatische Übersetzung von Manga und Comics mit Texterkennung, Blasenbearbeitung und kultureller Anpassung."
+      "title": "Manga Çevirisi",
+      "desc": "Metin algılama, balon düzenleme ve kültürel uyarlama ile otomatik manga ve çizgi roman çevirisi.",
+      "icon": "📚",
+      "status": "2025 3. Çeyrekte Geliyor",
+      "transcript": "Bu prototip, konuşma balonu algılama ve iki dilli yerinde düzenleme dahil olmak üzere otomatik manga çevirisini göstermektedir."
     },
     "templatedVideo": {
-      "title": "Vorlagenbasierte Videogenerierung",
-      "desc": "Erstelle professionelle Videos aus Vorlagen mit KI-generierten Inhalten und Markenanpassung."
+      "title": "Şablonlu Video Oluşturma",
+      "desc": "Yapay zeka tarafından oluşturulan içerik ve özel marka ile şablonlardan profesyonel videolar oluşturun.",
+      "icon": "🎬",
+      "status": "2025 4. Çeyrekte Geliyor",
+      "transcript": "Bu demo, hikaye panosunu planlayarak ve görselleri birleştirerek erken ABD tarihi hakkında tarihi bir sahne oluşturan senaryodan videoya bir boru hattını göstermektedir."
     },
-    "statusQ3": "Kommt im Q3 2025",
-    "statusQ4": "Kommt im Q4 2025"
+    "statusQ3": "2025 3. Çeyrekte Geliyor",
+    "statusQ4": "2025 4. Çeyrekte Geliyor"
   },
   "export": {
     "title": "Dışa Aktar",
@@ -55,7 +68,7 @@
     "downloading": "İndiriliyor..."
   },
   "delete": {
-    "title": "Onayla",
+    "title": "Çifte Onay",
     "message": "Bu projeyi silmek istediğinizden emin misiniz?",
     "warning": "Bu işlem geri alınamaz.",
     "cancel": "İptal",
@@ -65,285 +78,342 @@
   "userMenu": {
     "topUpCredits": "Kredi Yükle",
     "remaining": "Kalan",
-    "planRemaining": "Plan Kalanı", 
+    "planRemaining": "Plan Kalanı",
     "validUntil": "Geçerlilik Tarihi",
     "creditsHistory": "Kredi Geçmişi",
-    "subscribePlan": "Planı Satın Al",
-    "supportTicket": "Destek Talebi",
+    "subscribePlan": "Plana Abone Ol",
+    "supportTicket": "Destek Bileti",
     "signOut": "Çıkış Yap"
   },
   "technology": {
     "multimodal": {
-      "title": "Çoklu Modlu Tanıma",
-      "desc": "Daha doğru ve sağlam transkripsiyonlar elde etmek için konuşma ve altyazı sinyallerini birleştiriyoruz. Bu çift kanallı tanıma, özellikle gürültülü veya karmaşık ses sahnelerinde hataları azaltır ve orijinal içerikle daha iyi eşleşme sağlar."
+      "title": "Çok Modlu Tanıma",
+      "desc": "Daha doğru ve sağlam transkripsiyon elde etmek için konuşma ve altyazı sinyallerini birleştiriyoruz. Bu çift kanallı tanıma, hataları azaltır ve özellikle gürültülü veya karmaşık ses sahnelerinde orijinal içerikle daha iyi hizalanmayı sağlar."
     },
     "emotional": {
-      "title": "Duygusal Konuşma Sentezi",
-      "desc": "Konuşma sentez modellerimiz, hikaye anlatımını geliştiren ve izleyiciyi daha fazla içine çeken ifadeli, duygusal nüanslı konuşmalar üretir. Ton, ritim ve nüansları yakalayarak yapay zeka seslerini daha insani hale getirir."
+      "title": "Duygusal Konuşma",
+      "desc": "Ses sentezi modellerimiz, hikaye anlatımını ve izleyici etkileşimini geliştiren etkileyici, duygusal açıdan zengin konuşmalar üretir. Tonu, ritmi ve nüansı yakalayarak yapay zeka seslerinin daha insan ve ilişkilendirilebilir hissettirmesini sağlıyoruz."
     },
     "lengthaware": {
-      "title": "Längenbewusste Übersetzung und Anpassung",
-      "desc": "Wir optimieren Übersetzungen nicht nur auf Genauigkeit, sondern auch auf Timing und Tempo – entscheidend für die Synchronisation von Video und Sprache. Nutzer können Tonfall, Länge und Formulierungen an unterschiedliche Inhalte und Zielgruppen anpassen."
+      "title": "Uzunluk Duyarlı Çeviri ve Özelleştirme",
+      "desc": "Çevirileri yalnızca doğruluk için değil, aynı zamanda video ve ses hizalaması için çok önemli olan zamanlama ve hız için de optimize ediyoruz. Kullanıcılar, farklı içerik ihtiyaçlarına veya izleyici tercihlerine uyacak şekilde tonu, uzunluğu ve ifadeyi daha da özelleştirebilir."
     },
     "controlled": {
-      "title": "Kontrollierte Videogenerierung",
-      "desc": "Wir ermöglichen strukturierte, vorlagenbasierte Videogenerierung mit steuerbaren visuellen Elementen und Übergängen. So erhalten Kreative kreative Freiheit und gleichzeitige Produktionskonsistenz – mit weniger manueller Arbeit und hoher Qualität."
+      "title": "Kontrollü Video Oluşturma",
+      "desc": "Kontrol edilebilir görsel öğeler ve geçişlerle yapılandırılmış, şablon odaklı video oluşturmayı mümkün kılıyoruz. Bu, yaratıcılara hem yaratıcı özgürlük hem de üretim tutarlılığı sağlayarak manuel çabayı azaltırken yüksek kaliteli çıktı sağlar."
     }
   },
   "tools": {
     "video_dubbing": {
-      "title": "Video-Synchronisation",
-      "desc": "Übersetze dein Video in jede Sprache mit präziser Lokalisierung und Sprachsynchronisation"
+      "title": "Video Dublajı",
+      "desc": "Videonuzu hassas yerelleştirme ve ses senkronizasyonu ile herhangi bir dile çevirin"
     },
     "subtitle_captioner": {
-      "title": "Untertitel-Generator",
-      "desc": "Erstelle automatisch mehrsprachige Untertitel zur Verbesserung von Klarheit und Zugänglichkeit"
+      "title": "Altyazı Oluşturucu",
+      "desc": "Netliği ve erişilebilirliği artırmak için çok dilli altyazıları otomatik olarak oluşturun"
     },
     "lip_syncing": {
-      "title": "Lippensynchronisation",
-      "desc": "Perfekte Lippensynchronität dank KI-gestützter Technik"
+      "title": "Dudak Senkronizasyonu",
+      "desc": "Yapay zeka destekli dudak senkronizasyonu ile dudakları konuşmayla mükemmel bir şekilde eşleştirin"
     },
     "style_transfer": {
-      "title": "Stilübertragung",
-      "desc": "Verwandle dein Video in Pixar-, Ghibli- oder andere künstlerische Stile – bald verfügbar"
+      "title": "Stil Transferi",
+      "desc": "Videonuzu Pixar, Ghibli veya diğer sanatsal stillere dönüştürün — yakında"
     },
-    "coming_soon": "Bald verfügbar",
-    "create": "Erstellen"
+    "coming_soon": "Yakında",
+    "create": "Oluştur"
   },
   "bilingual": {
-  "title": "Zweisprachige Untertitel leicht gemacht",
-  "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
-  "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
-  "cta": "Jetzt kostenlos ausprobieren",
-  "why": {
-    "title": "Warum Curify für zweisprachige Untertitel?",
-    "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
-    "point2": "Bewahrt Emotion, Ton und Timing.",
-    "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
-    "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
-  },
-  "faq": {
-    "title": "Häufige Fragen",
-    "q1": "Ist es wirklich kostenlos?",
-    "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
-    "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
-    "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
-  }
-},
-"videoDubbing": {
-  "title": "KI-Video-Synchronisation mit natürlicher Stimme",
-  "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
-},
-"pricing": {
-  "header": {
-    "title": "Erste Schritte mit einem Plan",
-    "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."
-  },
-  "common": {
-    "month": "Monat",
-    "pricing": "Preisgestaltung",
-    "receive": "Erhalten"
-  },
-  "buttons": {
-    "signUp": "Registrieren",
-    "subscribePlan": "Plan abonnieren",
-    "currentPlan": "Aktueller Plan",
-    "comingSoon": "Demnächst verfügbar",
-    "downgradeToFree": "Auf Kostenlos herabstufen",
-    "downgradeToCreator": "Auf Creator herabstufen",
-    "contactSales": "Vertrieb kontaktieren"
-  },
-  "plans": {
-    "free": {
-      "name": "Kostenlos",
-      "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
-      "features": [
-        "Videos ohne Wasserzeichen herunterladen",
-        "1 Stunde kostenlose Untertitelverarbeitung",
-        "SRT-Dateien exportieren"
-      ]
+    "metadata": {
+      "title": "Ücretsiz İki Dilli Altyazı Oluşturucu | Curify AI",
+      "description": "Curify'ın ücretsiz yapay zeka destekli aracıyla videolarınız için iki dilli altyazılar oluşturun. YouTube, TikTok, eğitim ve küresel içerik oluşturucular için mükemmel."
     },
-    "creator": {
-      "name": "Creator",
-      "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
-      "plusTitle": "Alles in Kostenlos, plus:",
-      "features": [
-        "Lippensynchronisation",
-        "Stapelverarbeitung",
-        "5 Stunden kostenlose Untertitelverarbeitung",
-        "Bis zu 30 Minuten pro Aufgabe"
-      ]
+    "title": "İki Dilli Altyazılar Artık Çok Kolay",
+    "intro": "Curify'ın yapay zeka altyazı motorunu kullanarak iki dilde otomatik olarak altyazı oluşturun. İçerik oluşturucular, eğitimciler ve küresel işletmeler için ideal.",
+    "example": "Örnek: Jensen Huang yapay zeka stratejisini açıklıyor — İngilizce + Çince altyazılar otomatik olarak oluşturuldu.",
+    "cta": "Ücretsiz Deneyin",
+    "why": {
+      "title": "İki Dilli Altyazılar İçin Neden Curify'ı Seçmelisiniz?",
+      "point1": "Doğru çeviri ile 170'ten fazla dili destekler.",
+      "point2": "Duygusal tonu ve zamanlamayı korur.",
+      "point3": "YouTube, TikTok ve eğitim videoları için mükemmeldir.",
+      "point4": "Yayınlanmaya hazır altyazı dosyalarını veya gömülü videoları dışa aktarın."
     },
-    "pro": {
-      "name": "Pro",
-      "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
-      "plusTitle": "Alles in Creator, plus:",
-      "features": [
-        "Stimmverschönerung & Rauschunterdrückung",
-        "Prioritätswarteschlange",
-        "Bis zu 60 Min. pro Aufgabe",
-        "Unbegrenzte Untertitelminuten"
-      ]
-    },
-    "enterprise": {
-      "name": "Enterprise",
-      "description": "Für Teams, Studios und Unternehmens-Workflows",
-      "customPricing": "Individuell",
-      "unlimited": "Unbegrenzt 🐚",
-      "tailoredSupport": "& maßgeschneiderter Support",
-      "plusTitle": "Alles in Pro, plus:",
-      "features": [
-        "Dedizierter Account-Manager",
-        "On-Premise-Bereitstellungsoptionen",
-        "API-Zugriff & Nutzungsanalyse",
-        "Individuelle Integrationen & SLA",
-        "Unbegrenzte Verarbeitungsstunden"
-      ]
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Gerçekten ücretsiz mi?",
+      "a1": "Evet, Curify ayda sınırlı altyazı dakikası içeren ücretsiz bir plan sunar.",
+      "q2": "Oluşturduktan sonra altyazıları düzenleyebilir miyim?",
+      "a2": "Kesinlikle. Dışa aktarmadan önce zamanlamayı, çeviriyi ve stili ayarlayabilirsiniz."
     }
   },
-  "table": {
+  "videoDubbing": {
+    "metadata": {
+      "title": "Yapay Zeka Video Dublaj Aracı | Curify AI",
+      "description": "Yapay zeka ses klonlama, duygu koruma ve dudak senkronizasyonu kullanarak videolarınızı 170'ten fazla dile dublaj yapın. Curify'ın yapay zeka dublajını ücretsiz deneyin."
+    },
+    "title": "Doğal Ses ile Yapay Zeka Video Dublajı",
+    "description": "Video içeriğinizi gerçekçi yapay zeka sesi ve dudak senkronizasyonu ile 170'ten fazla dile çevirin ve dublaj yapın. Uluslararası içerik oluşturucular ve markalar için mükemmel."
+  },
+  "about": {
+    "metadata": {
+      "title": "Curify Hakkında | Vizyon, Teknoloji ve Ekip",
+      "description": "Curify'ın yapay zeka ile içerik oluşturmayı demokratikleştirme vizyonunu öğrenin. Biz, medya yerelleştirmesinin geleceğini inşa eden bir mühendis ve yaratıcı ekibiyiz."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Bize Ulaşın | Curify Studio",
+      "description": "Destek, satış veya ortaklıklar için Curify ekibiyle iletişime geçin. İçeriğinizi küresel olarak ölçeklendirmenize yardımcı olmak için buradayız."
+    }
+  },
+  "blog": {
+    "metadata": {
+      "title": "Curify Blog | Yapay Zeka İçerik Oluşturma Analizleri",
+      "description": "Yapay zeka video oluşturma, dublaj, stil transferi ve içerik oluşturmanın geleceği hakkındaki en son makaleleri okuyun."
+    }
+  },
+  "pricing": {
+    "metadata": {
+      "title": "Fiyatlandırma Planları | Curify Studio",
+      "description": "İçerik oluşturma ihtiyaçlarınız için doğru planı seçin. Ücretsiz araçlardan kurumsal düzeyde yapay zeka dublajına ve yerelleştirmeye kadar."
+    },
     "header": {
-      "feature": "Funktion / Limit"
+      "title": "Bir planla başlarken",
+      "subtitle": "İhtiyaçlarınıza uygun bir plan seçin."
     },
-    "rows": {
-      "videoDownloadWithWatermark": "Video-Download mit Wasserzeichen",
-      "videoDownloadWithoutWatermark": "Video-Download ohne Wasserzeichen",
-      "downloadSrt": "SRT-Datei herunterladen",
-      "voiceBeautification": "Stimmverschönerung & Rauschunterdrückung",
-      "lipSync": "Lippensynchronisation",
-      "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
-      "batchProcessing": "Stapelverarbeitung",
-      "maxVideoLength": "Max. Videolänge pro Aufgabe",
-      "monthlyCredits": "Monatliche kostenlose Credits",
-      "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
-      "creditTopUp": "Credit-Aufladung"
+    "common": {
+      "month": "Ay",
+      "pricing": "Fiyatlandırma",
+      "receive": "Al"
     },
-    "values": {
-      "free": "Kostenlos",
-      "unlimited": "Unbegrenzt",
-      "oneHourPerMonth": "1 Std./Monat",
-      "fiveHoursPerMonth": "5 Std./Monat",
-      "fiveMinutes": "5 Min.",
-      "thirtyMinutes": "30 Min.",
-      "sixtyMinutes": "60 Min."
+    "buttons": {
+      "signUp": "Kaydol",
+      "subscribePlan": "Plana Abone Ol",
+      "currentPlan": "Mevcut Plan",
+      "comingSoon": "Yakında",
+      "downgradeToFree": "Ücretsiz Plana Geç",
+      "downgradeToCreator": "Creator Planına Geç",
+      "contactSales": "Satış Ekibiyle İletişime Geç"
+    },
+    "plans": {
+      "free": {
+        "name": "Ücretsiz",
+        "description": "Araçları test etmek ve hafif işler için harika",
+        "features": [
+          "Filigran olmadan video indirme",
+          "1 saat ücretsiz altyazı işleme",
+          "SRT dosyalarını dışa aktarma"
+        ]
+      },
+      "creator": {
+        "name": "Üretici",
+        "description": "Düzenli altyazı ve hafif dublaj yapan küçük içerik oluşturucular için ideal",
+        "plusTitle": "Ücretsiz plandaki her şey, artı:",
+        "features": [
+          "Dudak Senkronizasyonu",
+          "Toplu işleme",
+          "5 saat ücretsiz altyazı işleme",
+          "Görev başına 30 dakikaya kadar"
+        ]
+      },
+      "pro": {
+        "name": "Profesyonel",
+        "description": "Yakında — Yüksek hacimli içerik oluşturucular için tasarlandı",
+        "plusTitle": "Üretici planındaki her şey, artı:",
+        "features": [
+          "Ses güzelleştirme ve gürültü giderme",
+          "Öncelik sırası",
+          "Görev başına 60 dakikaya kadar",
+          "Sınırsız altyazı dakikası"
+        ]
+      },
+      "enterprise": {
+        "name": "Kurumsal",
+        "description": "Ekipler, stüdyolar ve kurumsal iş akışları için",
+        "customPricing": "Özel",
+        "unlimited": "Sınırsız 🐚",
+        "tailoredSupport": "ve özel destek",
+        "plusTitle": "Pro planındaki her şey, artı:",
+        "features": [
+          "Özel hesap yöneticisi",
+          "Şirket içi kurulum seçenekleri",
+          "API erişimi ve kullanım analizleri",
+          "Özel entegrasyonlar ve SLA",
+          "Sınırsız işleme saatleri"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "Özellik / Sınır"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "Filigranlı Video İndirme",
+        "videoDownloadWithoutWatermark": "Filigransız Video İndirme",
+        "downloadSrt": "SRT Dosyasını İndir",
+        "voiceBeautification": "Ses Güzelleştirme ve Gürültü Giderme",
+        "lipSync": "Dudak Senkronizasyonu",
+        "subtitleTools": "Altyazı Araçları (ekle/kaldır, çeviri yok)",
+        "batchProcessing": "Toplu İşleme",
+        "maxVideoLength": "Görev Başına Maksimum Video Uzunluğu",
+        "monthlyCredits": "Aylık Ücretsiz Krediler",
+        "priorityQueue": "Öncelik Sırası / Daha Hızlı İşleme",
+        "creditTopUp": "Kredi Yükleme"
+      },
+      "values": {
+        "free": "Ücretsiz",
+        "unlimited": "Sınırsız",
+        "oneHourPerMonth": "1 saat/ay",
+        "fiveHoursPerMonth": "5 saat/ay",
+        "fiveMinutes": "5 dk",
+        "thirtyMinutes": "30 dk",
+        "sixtyMinutes": "60 dk"
+      }
     }
-  }
-},
-"aeVsComfyUi": {
-  "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
-  "heading": "🎨 AE vs ComfyUI",
-  "intro1": "Wir werden oft gefragt: Warum nicht einfach After Effects (AE) verwenden? Oder warum ComfyUI? Beide sind wichtig — AE bietet präzise Kontrolle, ComfyUI ermöglicht generative Kreativität.",
-  "intro2": "AE bietet zeitbasierte Präzision sowie Kontrolle über Übergänge, Licht und Effekte. ComfyUI bringt AI-native Workflows, die Diffusion, Text und multimodale Orchestrierung kombinieren.",
-  "table": {
-    "colAE": "AE",
-    "colComfy": "ComfyUI",
-    "row1a": "Präzise VFX- und Bewegungssteuerung",
-    "row1b": "AI-native Videogenerierung",
-    "row2a": "Timeline-basiertes Editing",
-    "row2b": "Workflow-/Node-basiertes Rendering",
-    "row3a": "Manueller oder pluginbasierter Workflow",
-    "row3b": "Diffusion + LLM + multimodale Orchestrierung"
   },
-  "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing."
-},
-"video_translation_eval": {
-  "title": "Bewertung von KI-gestützter Videoübersetzung",
-  "subtitle": "Relevante Qualitätsmetriken",
-  "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
-  "section1_title": "1. Transkriptionsqualität",
-  "section1_engine": "Engine: WhisperX",
-  "section1_metrics": ["Wortfehlerrate (WER)", "Interpunktions-F1 (für Lesbarkeit und Ausdruck)"],
-  "section2_title": "2. Übersetzungsqualität",
-  "section2_engine": "Engines: Helsinki, MarianMT",
-  "section2_metrics": ["BLEU (Standard-Metrik)", "COMET / chrF++ (semantische Ähnlichkeit)", "Manuelle Bewertung: Lesbarkeit & Genauigkeit"],
-  "section3_title": "3. Sprachsynthesequalität",
-  "section3_engine": "Engines: XTTS / YourTTS",
-  "section3_metrics": ["MOS-Bewertung: Natürlichkeit, Ähnlichkeit, Ausdruck", "Genauigkeit der Sprechererkennung"],
-  "section4_title": "4. Timing & Lippensynchronisation",
-  "section4_metrics": ["Unterschiede in Segmentdauer", "Wav2Lip-Synchronwert", "Zeitliche Abweichung"],
-  "section5_title": "5. Semantische Erhaltung",
-  "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
-  "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
-  "section6_title": "6. Nutzerfeedback & GTM-Validierung",
-  "section6_metrics": ["Stimmqualität passend zum Produkttyp", "Erhöhte Zuschauerbindung bei lokalisierten Videos", "Nutzerbereitschaft zur Tool-Nutzung"],
-  "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
-  "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
-},
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI – Animasyonu Yeniden Tanımlamak (Bölüm 3)",
+    "heading": "🎨 AE ve ComfyUI",
+    "intro1": "Sık sık soruluyor: neden sadece After Effects (AE) kullanmıyorsunuz? Veya neden ComfyUI ile uğraşıyorsunuz? İkisi de önemlidir — biri ince kontrol sağlar, diğeri üretken yaratıcılık.",
+    "intro2": "AE, zaman çizelgesi hassasiyeti ve geçişler, aydınlatma ve efektler üzerinde kontrol sunar. ComfyUI, difüzyon, metin ve çok modlu orkestrasyonu birleştirerek AI-yerel iş akışları getirir.",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "Hassas VFX ve hareket kontrolü",
+      "row1b": "AI-yerel video oluşturma",
+      "row2a": "Zaman çizelgesi tabanlı düzenleme",
+      "row2b": "İş akışı/düğüm tabanlı render",
+      "row3a": "Manuel / eklenti odaklı iş akışı",
+      "row3b": "Difüzyon + LLM + çok modlu orkestrasyon"
+    },
+    "outro": "İş akışımızda, ComfyUI AI oluşturma ve yinelemeyi yönetirken, AE son görünümü iyileştirir — geçişler, bindirmeler ve birleştirme."
+  },
+  "video_translation_eval": {
+    "title": "AI Video Çeviri Kalitesini Değerlendirme",
+    "subtitle": "Önemli Metrikler",
+    "intro": "Videoları diller arasında çevirmek küçük bir başarı değildir — transkripsiyon, çeviri, ses sentezi, zamanlama ve daha fazlasını içerir. Curify'da, her parçanın endüstri standartlarını karşıladığından emin olmak için sağlam bir değerlendirme hattı oluşturduk.",
+    "section1_title": "1. Transkripsiyon Kalitesi",
+    "section1_engine": "Motor: WhisperX",
+    "section1_metrics": [
+      "WER (Kelime Hata Oranı)",
+      "Noktalama İşareti F1 (ifade ve okunabilirlik için)"
+    ],
+    "section2_title": "2. Çeviri Kalitesi",
+    "section2_engine": "Motorlar: Helsinki, MarianMT",
+    "section2_metrics": [
+      "BLEU (standart metrik)",
+      "COMET / chrF++ (anlamsal benzerlik)",
+      "İnsan incelemesi: akıcılık + yeterlilik"
+    ],
+    "section3_title": "3. Ses Sentezi Kalitesi",
+    "section3_engine": "Motorlar: XTTS / YourTTS",
+    "section3_metrics": [
+      "MOS (Doğallık, benzerlik, ifade)",
+      "Konuşmacı doğrulama doğruluğu"
+    ],
+    "section4_title": "4. Hizalama ve Dudak Senkronizasyonu",
+    "section4_metrics": [
+      "Segment süresi uyuşmazlığı",
+      "Wav2Lip senkronizasyon güveni",
+      "Zaman kayması analizi"
+    ],
+    "section5_title": "5. Anlamsal Koruma",
+    "section5_method": "Çevrilen konuşmanın orijinal anlamı, tonu ve duyguyu koruyup korumadığını değerlendirmek için LLM'leri (GPT-4 gibi) kullanıyoruz. Örnek istem:",
+    "section5_prompt": "Bu Mandarin transkriptini İngilizce seslendirme ile karşılaştırın. Ton, niyet ve içerik eşleşiyor mu? 1–5 arası puanlayın ve açıklayın.",
+    "section6_title": "6. Kullanıcı Geri Bildirimi ve GTM Doğrulaması",
+    "section6_metrics": [
+      "Ürün kategorisi için ses kalitesi uyumu",
+      "İzleyici tutma iyileştirmesi",
+      "Erken kullanıcılardan benimseme istekliliği (örneğin, 1688 satıcıları)"
+    ],
+    "closing": "Curify'da sadece çeviri yapmıyoruz — diller arasında hikaye anlatımını, duyguyu ve netliği koruyoruz. Sesinizi küresel olarak ölçeklendirmeye hazırsanız, iletişime geçin.",
+    "available_locales": "Gönderi şurada mevcut: [EN] [ZH] [ES] [DE]"
+  },
   "storyboardToPipeline": {
-    "title": "Storyboard'dan İş Akışına: Animasyonu Yeniden Tanımlamak",
+    "title": "Storyboard'dan AI Boru Hatlarına – Animasyonu Yeniden Tanımlamak",
     "intro": {
-      "p1": "Çoğu insan yapay zeka videonun 'metin gir, klip al' anlamına geldiğini düşünüyor. Ama sinematik, yönetmen düzeyinde kontrol istiyorsanız, bu tamamen farklı bir oyundur.",
-      "p2": "Geleneksel animasyonda her detay önemlidir - karakter tasarımı, hareket akışı, zamanlama ve sahne geçişleri. Amacımız, yapay zekanın bu hassasiyet seviyesine ulaşmasını sağlamak.",
-      "p3": "Günümüz animasyonu hem sanat hem de yapılandırılmış bir orkestrasyon mücadelesidir. Yönetmen gibi düşünüyor, mühendis gibi inşa ediyoruz.",
-      "p4": "Bu yüzden tek aşamalı üretim yerine <strong>Kontrollü Üretim İş Akışları</strong> oluşturuyoruz. Bu iş akışları hem yapıyı hem de yaratıcılığı birleştirir:",
+      "p1": "Çoğu insan AI videosunun \"metin gir, klip çık\" anlamına geldiğini düşünür. Ancak <strong>sinematik, yönetmen düzeyinde kontrol</strong> hedefliyorsanız, bu tamamen farklı bir oyundur.",
+      "p2": "Geleneksel animasyonda, her ayrıntı önemlidir — karakter tasarımı, hareket sürekliliği, zamanlama ve sahne geçişleri. Amacımız AI'yı bu hassasiyet düzeyine ulaştırmaktır.",
+      "p3": "Animasyon bugün hem bir sanat hem de yapılandırılmış bir orkestrasyon zorluğudur. Yönetmenler gibi düşünüyoruz, ancak mühendisler gibi inşa ediyoruz.",
+      "p4": "Bu yüzden tek seferlik üretim yerine <strong>Kontrollü Üretim Boru Hatları</strong> inşa ediyoruz. Bu boru hatları yapı ve yaratıcılığı birleştirir:",
       "pipelineItems": [
-        "Storyboard'dan Videoya: JSON tabanlı görsel özellikler, ID'ler, zaman damgaları ve kamera meta verileriyle",
-        "ComfyUI Tabanlı İş Akışı: Versiyonlanmış kontrol noktaları, LoRA yığınları ve tohumlarla DAG grafiği",
-        "Zamansal ve Çoklu Ortam Kontrolü: Görüntü, hareket, ses ve altyazılarda paylaşılan görsel ID'ler"
+        "Storyboard-to-Video: ID'ler, zamanlama ve kamera meta verileri ile JSON tabanlı sahne özellikleri",
+        "ComfyUI tabanlı iş akışları: versiyonlanmış kontrol noktaları, LoRA yığınları ve tohumlar ile düğüm-grafik DAG'leri",
+        "Zamansal ve çok modlu kontrol: görüntü, hareket, ses ve altyazılar arasında paylaşılan sahne ID'leri"
       ],
-      "p5": "Şimdi, yapay zeka iş akışlarının pratikte nasıl çalıştığını göstermek için basit bir örnek inceleyelim.",
+      "p5": "Şimdi, AI boru hatlarının pratikte nasıl çalıştığını göstermek için basit bir örnek üzerinden geçelim.",
       "technicalNotes": [
-        "Tüm adımlar yazılı eserleri okur/yazar (JSON/CSV, PNG dizileri, WAV/MP3, MP4, .aep)",
-        "İş akışları Python/CLI ile yönetilir (örn. ComfyUI API, ffmpeg, TTS API'ları)",
-        "Her çalıştırma, kaydedilmiş yapılandırmalar aracılığıyla tekrarlanabilir (model, örnekleyici, tohum, komut, süre)"
+        "Tüm aşamalar türlenmiş eserleri okur/yazar (JSON/CSV, PNG dizileri, WAV/MP3, MP4, .aep)",
+        "Boru hatları Python/CLI (örneğin, ComfyUI API, ffmpeg, TTS API'leri) aracılığıyla yönetilir",
+        "Her çalıştırma, saklanan yapılandırma (model, örnekleyici, tohum, istemler, süre) aracılığıyla tekrarlanabilir"
       ]
     },
     "pipeline": {
-      "title": "Yapay Zeka Video Oluşturma İş Akışı",
-      "description": "Yapay zeka video oluşturma iş akışı, metin komutlarını net girdiler, çıktılar ve yapılandırmalarla yapılandırılmış adımlar aracılığıyla bitmiş bir videoya dönüştürür.",
-      "prompt": "1. Komut (ham fikir → yapılandırılmış JSON özellikleri)",
-      "storyboard": "2. Storyboard (zaman, kamera ve açıklamalarla sahnelerin/çekimlerin tablosu)",
-      "images": "3. Görseller (Stable Diffusion/ComfyUI aracılığıyla çekim başına oluşturulan ana kareler)",
+      "title": "Yapay Zeka Video Oluşturma Boru Hattı",
+      "description": "Yapay zeka video oluşturma boru hattı, metin istemlerini açık girdiler, çıktılar ve yapılandırmalarla yapılandırılmış aşamalar aracılığıyla cilalı videolara dönüştürür.",
+      "prompt": "1. İstem (ham fikir → yapılandırılmış JSON spesifikasyonu)",
+      "storyboard": "2. Film şeridi (zamanlama, kamera ve açıklama içeren sahne/çekim tablosu)",
+      "images": "3. Görüntüler (Stable Diffusion / ComfyUI aracılığıyla oluşturulan çekim başına ana kareler)",
       "animation": "4. Animasyon (görüntü dizileri → hareket, paralaks ve efektler)",
-      "voiceOver": "5. Seslendirme (TTS + senkronizasyon verisi)",
-      "finalVideo": "6. Son Video (ffmpeg birleştirme: video + ses + altyazılar)",
+      "voiceOver": "5. Seslendirme (TTS + hizalama verileri)",
+      "finalVideo": "6. Son Video (ffmpeg kompozisyonu: video + ses + altyazılar)",
       "features": [
-        "JSON-Öncelikli Tasarım: Her sahne adreslenebilir ve programlanabilir (scene_id, shot_id)",
-        "ComfyUI Tabanlı İş Akışı: Görüntü/video oluşturma için modüler, tekrarlanabilir, birleştirilebilir DAG'ler",
-        "Zamansal ve Çoklu Ortam Kontrolü: Tüm modalitelerde tohumlar, karakter gömüleri ve tutarlı zamanlama"
+        "JSON öncelikli tasarım: her sahne adreslenebilir ve komut dosyası yazılabilir (scene_id, shot_id)",
+        "ComfyUI tabanlı iş akışları: görüntü/video oluşturma için modüler, tekrarlanabilir, birleştirilebilir DAG'ler",
+        "Zamansal ve çok modlu kontrol: modaliteler arasında tutarlı tohumlar, karakter yerleştirmeleri ve zamanlama"
       ],
-      "exampleIntro": "Şimdi, yapay zeka iş akışlarının pratikte nasıl çalıştığını göstermek için basit bir örnek inceleyelim.",
+      "exampleIntro": "Şimdi, yapay zeka boru hatlarının pratikte nasıl çalıştığını göstermek için basit bir örnek üzerinden geçelim.",
       "artifacts": {
         "promptSpec": "prompt_run_001.json",
         "storyboardTable": "storyboard_v1.csv",
         "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
-        "audioOutput": "audio/final_voiceover.wav",
+        "audioOutput": "audio/voiceover_final.wav",
         "subtitleFile": "subtitles/storyboard_v1.srt",
         "finalVideoFile": "exports/storyboard_v1_final.mp4"
       }
     },
     "steps": {
       "step1": {
-        "title": "Adım 1: Basit Bir Komutla Başlayın",
+        "title": "Adım 1: Temel Bir İstemle Başlayın",
         "example": "Bir kız gece yarısı tren istasyonunda duruyor, rüzgar saçlarını savuruyor.",
-        "expandedPrompt": "GPT veya yerel bir LLM yardımıyla, bunu küresel stil, karakter tanımlamaları ve sahne bazlı bölümlemelerle zenginleştirilmiş yapılandırılmış bir JSON nesnesine dönüştürüyoruz.",
+        "expandedPrompt": "GPT veya yerel bir LLM yardımıyla, bunu küresel stil, karakter tanımları ve sahne başına döküm içeren yapılandırılmış bir JSON nesnesine genişletiyoruz.",
         "technicalDetails": {
           "llmFields": [
-            "küresel_stil: sanatsal stil, kamera dili, renk paleti",
-            "karakterler: isim, yaş, görünüm, kıyafet, duygusal durum",
-            "sahneler: [{ scene_id, shot_id, açıklama, kamera_türü, süre_saniye }]"
+            "global_style: sanat stili, kamera dili, renk paleti",
+            "characters: isim, yaş, görünüm, kıyafet, duygusal durum",
+            "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
           ],
           "outputFile": "prompt_run_001.json",
-          "exampleStack": "OpenAI/LLM API'sini çağıran ve JSON'u diske yazan Python betiği"
+          "exampleStack": "OpenAI/LLM API'sini çağıran ve diske JSON yazan Python betiği"
         }
       },
       "step2": {
-        "title": "Adım 2: Komutu Bir Storyboard Tablosuna Dönüştürün",
-        "description": "JSON özellikleri, hem insanların hem de iş akışlarının okuyabileceği bir storyboard tablosuna (CSV veya Notion) düzleştirilir.",
+        "title": "Adım 2: İstemi Film Şeridi Tablosuna Dönüştürün",
+        "description": "JSON spesifikasyonu, hem insanların hem de boru hattının okuyabileceği bir film şeridi tablosuna (CSV veya Notion) düzleştirilir.",
         "technicalDetails": {
-          "sütunlar": [
-            "sahne_id", "çekim_id", "başlangıç_zamanı", "bitiş_zamanı", "süre_saniye",
-            "kamera_türü", "görsel_açıklama", "karakter_durumu", "hareket_notları"
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "motion_notes"
           ],
-          "depolama": "storyboard_v1.csv (sonraki adımlar için tek gerçek kaynak olarak kullanılır)",
-          "otomasyon": "prompt_run_001.json → storyboard_v1.csv dönüşümünü yapan Python/Node.js betiği"
+          "storage": "storyboard_v1.csv (aşağıdaki adımlar için tek doğruluk kaynağı olarak kullanılır)",
+          "automation": "Python / Node.js betiği prompt_run_001.json dosyasını storyboard_v1.csv dosyasına dönüştürür"
         }
       },
       "step3": {
-        "title": "Adım 3: Görselleri Oluşturun",
+        "title": "🛠️ Adım 3: Görseller Oluşturun",
+        "description": "Bir ComfyUI iş akışı aracılığıyla Stable Diffusion kullanarak her çekim için yüksek kaliteli ana kare görüntüleri oluşturun.",
         "points": [
-          "🎨 `storyboard_v1.csv` dosyasındaki her satırı yüksek çözünürlüklü ana karelere dönüştürmek için <strong>Stable Diffusion</strong> veya <strong>ComfyUI</strong> kullanın.",
-          "Aynı temel kontrol noktası, LoRA yığını, örnekleyici ve tohum politikasını kullanarak tüm çekimlerde tutarlı bir stil koruyun."
+          "🎨 `storyboard_v1.csv` içindeki her satırı yüksek çözünürlüklü bir ana kareye dönüştürmek için <strong>Stable Diffusion</strong> veya <strong>ComfyUI</strong> kullanın.",
+          "Tüm çekimlerde aynı temel kontrol noktasını, LoRA yığınını, örnekleyiciyi ve tohum politikasını kullanarak stili tutarlı tutun.",
+          "Görüntüleri iç boyama (yüzler/eller için) ve dış boyama (genişletilmiş kompozisyonlar ve kamera hareketi için) ile iyileştirin."
         ],
         "technicalDetails": {
           "modelConfig": {
@@ -358,519 +428,627 @@
               "style_cinematic_blue_hour.safetensors"
             ]
           },
-          "tutarlılık": {
-            "tohumStratejisi": "sahne_bazlı_sabit",
-            "tohumÖrneği": "tohum = hash(sahne_id + karakter_ismi)",
-            "isimlendirmeKuralı": "renders/sahne_{sahne_id}/cekım_{cekım_id}/kf_0001.png"
+          "consistency": {
+            "seedStrategy": "sahne_başına_sabit",
+            "seedExample": "tohum = hash(sahne_id + karakter_adı)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "özel düğüm / storyboard_v1.csv ve modelConfig okuyan HTTP API",
+            "batching": "Yüklenen ağırlıkları yeniden kullanmak için sahne_id ile anahtarlanmış GPU partileri"
           }
         }
       },
       "step4": {
-        "title": "Adım 4: After Effects'te Hareket ve Atmosfer Ekleyin",
+        "title": "🎬 Adım 4: After Effects'te Hareket ve Atmosfer Ekleyin",
+        "description": "Adobe After Effects (veya eşdeğer bir kompozitör) kullanarak statik ana kareleri hareket, paralaks ve atmosfer ile geliştirin.",
         "points": [
-          "Görsel dizileri veya ana kareleri <strong>Adobe After Effects</strong>'te katmanlı kompozisyonlar olarak içe aktarın.",
-          "Ana kare animasyonlarını uygulayın: kaydırma, yakınlaştırma, paralaks katmanları, sis, ışık titremesi.",
-          "Ortam ses efektleri ve sahneler arasında sinematik geçişler ekleyin."
+          "Görüntü dizilerini veya ana kareleri katmanlı kompozisyonlar olarak <strong>Adobe After Effects</strong>'e aktarın.",
+          "Ana kare animasyonlarını uygulayın: kaydırma, yakınlaştırma, paralaks katmanları, sis bindirmeleri, parıltı ve ışık titremesi.",
+          "Sahneler arasına ortam ses ipuçları ve sinematik geçişler ekleyin."
         ],
         "technicalDetails": {
-          "girdi": "renders/sahne_{sahne_id}/cekım_{cekım_id}/kf_0001.png (isteğe bağlı derinlik haritaları/alfa kanallarıyla)",
-          "projeDosyası": "ae/storyboard_v1.aep",
-          "otomasyon": [
-            "Sahneleri scene_id'ye göre otomatik oluşturmak için AE ExtendScript/JSX kullanın.",
-            "storyboard_v1.csv'den süre_saniye → kompozisyon süresini eşleştirin.",
-            "Gerekirse, AE eklentileri veya video-duyarlı difüzyon araçlarıyla ara kareler oluşturun."
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (artı isteğe bağlı derinlik/alfa haritaları)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "Scene_id başına otomatik kompozisyonlar oluşturmak için AE betiklerini/ExtendScript veya JSX kullanın.",
+            "storyboard_v1.csv'den `duration_seconds` değerini → kompozisyon süresine eşleyin.",
+            "Gerekirse AE eklentileri veya video duyarlı difüzyon araçları aracılığıyla ara kareler oluşturun."
           ],
-          "çıktı": "ae_renders/sahne_{sahne_id}_cekım_{cekım_id}_anim.mp4"
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
         }
       },
       "step5": {
-        "title": "Adım 5: Seslendirme ve Altyazı Ekleyin",
+        "title": "🎧 Adım 5: Ses ve Altyazı Ekleyin",
+        "description": "Film şeridine hizalanmış seslendirme oluşturun ve erişilebilirlik ve netlik için altyazılar ekleyin.",
         "points": [
-          "Doğal seslendirmeler oluşturmak için <strong>XTTS</strong> veya <strong>ElevenLabs</strong> kullanın, tutarlı bir ses profili kullanarak.",
-          "Kısaltmalar (API, NBA gibi) için İngilizce klipleri ayrı oluşturup sonradan birleştirerek temiz telaffuz sağlayın.",
-          "Seslendirmeyle senkronize `.srt` veya zaman çizelgesi `.json` dosyaları kullanarak altyazı ekleyin."
+          "Senaryodan doğal seslendirmeler oluşturmak için tutarlı bir konuşmacı profili kullanarak <strong>XTTS</strong> veya <strong>ElevenLabs</strong> kullanın.",
+          "Kısaltmalar (API, NBA gibi) için İngilizce parçacıkları ayrı ayrı oluşturun ve telaffuzu temiz tutmak için sonradan birleştirin.",
+          "Seslendirme iziyle senkronize edilmiş `.srt` veya `.json` zaman çizelgesi dosyalarını kullanarak altyazılar ekleyin."
         ],
         "technicalDetails": {
-          "betikKaynağı": "Diyaloglar ve anlatı prompt_run_001.json + storyboard_v1.csv'den çıkarıldı",
-          "ttsYapılandırması": {
-            "motor": "XTTS veya ElevenLabs",
-            "sesId": "sinematik_kadin_tr",
-            "örneklemeHızı": 44100,
-            "biçim": "wav"
+          "scriptSource": "prompt_run_001.json + storyboard_v1.csv'den çekilen diyalog ve anlatım",
+          "ttsConfig": {
+            "engine": "XTTS veya ElevenLabs",
+            "voiceId": "cinematic_female_en",
+            "sampleRate": 44100,
+            "format": "wav"
           },
-          "çıktılar": {
-            "sesDosyası": "audio/storyboard_v1_ses.wav",
-            "altyazıDosyası": "subtitles/storyboard_v1.srt"
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voiceover.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
           },
-          "senkronizasyonStratejisi": "storyboard_v1.csv'den `başlangıç_zamanı`/`bitiş_zamanı`nı altyazı kuyruklarıyla eşleştirin; toplam ses süresinin ≈ son zaman çizelgesi süresiyle eşleştiğinden emin olun"
+          "syncStrategy": "storyboard_v1.csv'den `start_time` / `end_time` değerlerini altyazı ipuçlarıyla hizalayın; toplam ses uzunluğunun ≈ son zaman çizelgesi süresi olduğundan emin olun"
         }
       },
       "step6": {
-        "title": "Adım 6: FFMPEG ile Son Birleştirme",
-        "description": "Tüm parçaları tek bir video dosyasında birleştirmek için FFMPEG kullanın.",
+        "title": "Adım 6: FFMPEG ile Son Kompozisyon",
+        "description": "FFMPEG kullanarak tüm parçaları ses ve altyazılarla birlikte tek bir son video dosyasında birleştirin.",
         "technicalDetails": {
-          "girdiler": {
-            "video": "ae_renders/storyboard_v1_zaman_cizelgesi.mp4",
-            "ses": "audio/storyboard_v1_ses.wav",
-            "altyazılar": "subtitles/storyboard_v1.srt"
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voiceover.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
           },
-          "ffmpegOrnegi": "ffmpeg -i storyboard_v1_zaman_cizelgesi.mp4 -i storyboard_v1_ses.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-          "çıktı": "exports/storyboard_v1_final.mp4 (H.264, 24 kare/sn, AAC ses)"
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC ses)"
         }
       }
     },
-    "whatYouNeed": "📁 İhtiyacınız Olacaklar",
+    "whatYouNeed": "📁 İhtiyacınız Olanlar",
     "whatYouNeedTechnical": [
-      "Stable Diffusion / ComfyUI için en az 12GB VRAM'li GPU",
+      "Stable Diffusion / ComfyUI için en az 12GB VRAM'e sahip GPU",
       "JSON/CSV dönüşümleri ve otomasyon betikleri için Python ortamı",
-      "Gerekli özel düğümler ve iş akışlarıyla yapılandırılmış ComfyUI kurulumu",
-      "Hareket ve efektler için Adobe After Effects veya benzeri bir kompozisyon yazılımı",
-      "Ses sentezi için XTTS / ElevenLabs API erişimi",
-      "Komut satırında kurulu ve erişilebilir ffmpeg"
+      "Gerekli özel düğümler ve iş akışları ile kurulmuş ComfyUI",
+      "Hareket ve FX için Adobe After Effects veya benzeri kompozitör",
+      "TTS için XTTS / ElevenLabs API erişimi",
+      "Komut satırında kurulu ve kullanılabilir ffmpeg"
     ],
-    "cta": "🚀 Storyboard'unuzu yapay zeka ile hayata geçirmeye hazır mısınız? <strong>Size başlamanız için JSON örnekleri, ComfyUI iş akışları ve ffmpeg/AE şablonları içeren kapsamlı bir başlangıç seti sunabiliriz.</strong>"
+    "cta": "🚀 Hikaye tahtanızı yapay zeka ile hayata geçirmeye hazır mısınız? Başlamanıza yardımcı olmak için örnek JSON'lar, ComfyUI iş akışları ve ffmpeg/AE şablonları içeren <strong>tam bir başlangıç kiti sağlayabiliriz</strong>."
   },
-
   "SceneDetection": {
-  "tags": {
-    "computerVision": "Bilgisayarla Görme",
-    "deepLearning": "Derin Öğrenme",
-    "realTimeAnalysis": "Gerçek Zamanlı Analiz"
-  },
-  "hero": {
-    "title": "Videoları Yapay Zekâ ile Storyboard’a Dönüştürün",
-    "subtitle": "Saatlerce süren görüntüleri dakikalar içinde yapılandırılmış, aranabilir storyboard’lara dönüştüren gelişmiş bir pipeline’ı nasıl kurduk."
-  },
-  "introduction": {
-    "paragraph1": "Saatlerce süren ham görüntüleri yükleyip dakikalar içinde tüm videonuzun <strong>detaylı, sahne sahne bir dökümünü</strong> aldığınızı hayal edin. Yapay zekâ destekli sahne tespit sistemimiz tam olarak bunu sunuyor.",
-    "paragraph2": "En son Python kütüphaneleri ve derin öğrenme modelleriyle geliştirilen bu pipeline yalnızca sahne geçişlerini tespit etmekle kalmaz — içeriği anlar, kilit unsurları belirler ve her şeyi kapsamlı bir storyboard’a dönüştürür."
-  },
-  "imageAlt": "Sahne tespit pipeline’ının çalışırken önemli anları belirlemesi ve yapılandırılmış storyboard’lar üretmesi",
-  "protip": "En iyi sonuçlar için videonuzda sahneler arasında net görsel ayrımlar olmasına dikkat edin. Sistem, iyi aydınlatılmış ve minimum hareket bulanıklığı içeren görüntülerle en iyi şekilde çalışır. Video düzenleyicide bölüm işaretleri veya sahne kırılımları eklemek doğruluğu artırabilir.",
-  "humanEvaluation": {
-    "title": "Yapay Zekâ Çıktısının İnsan Değerlendirmesi",
-    "introduction": "Yapay zekâ pipeline’ımız oldukça yüksek doğruluğa sahip olsa da, insan değerlendirmesi kalite güvence sürecimizin kritik bir parçasıdır. En yüksek kaliteyi şu şekilde sağlıyoruz:",
-    "evaluationAreas": [
-      "<strong>Sahne Sınırı Doğruluğu</strong> - Sahne geçiş noktalarının gözden geçirilmesi ve düzeltilmesi",
-      "<strong>Metadata Doğrulaması</strong> - Yapay zekâ tarafından üretilen açıklamaların, etiketlerin ve etiketlerin doğrulanması",
-      "<strong>Tutarlılık Kontrolü</strong> - Tüm sahnelerde stil ve format birliğinin sağlanması",
-      "<strong>İçerik Doğruluğu</strong> - Yapay zekânın her sahnedeki kilit unsurları doğru tespit ettiğinin kontrol edilmesi"
-    ],
-    "workflow": {
-      "title": "İnsan-Döngüde (Human-in-the-Loop) İş Akışı",
-      "steps": [
-        "Yapay zekâ videoyu işler ve ilk storyboard’u oluşturur",
-        "İnsan değerlendiriciler çıktıyı özel araçlarımızla inceler",
-        "Değerlendiriciler geri bildirim verir ve gerekli düzenlemeleri yapar",
-        "Sistem, insan düzeltmelerinden öğrenerek gelecekteki çıktıları iyileştirir",
-        "Teslimat öncesi son kalite kontrolü yapılır"
-      ]
-    },
-    "benefits": {
-      "title": "İnsan Değerlendirmenin Faydaları",
-      "items": [
-        "<strong>Daha Yüksek Doğruluk</strong> - İnsan değerlendiriciler yapay zekânın kaçırabileceği ince nüansları yakalar",
-        "<strong>Bağlamsal Anlayış</strong> - Kültürel ve durumsal bağlamın daha iyi yorumlanması",
-        "<strong>Kalite Güvencesi</strong> - Profesyonel kullanım senaryoları için ek doğrulama katmanı",
-        "<strong>Sürekli İyileştirme</strong> - İnsan geri bildirimi, yapay zekâ modellerinin eğitilmesine ve geliştirilmesine yardımcı olur"
-      ]
-    },
-    "tools": {
-      "title": "Değerlendirme Araçları",
-      "description": "Platformumuz insan değerlendiricilere yardımcı olan özel araçlar içerir:",
-      "features": [
-        "Video ve storyboard’un yan yana karşılaştırılması",
-        "Sahne sınırlarını ayarlamak için kullanımı kolay arayüz",
-        "Metadata ve etiketlerin toplu düzenlenmesi",
-        "Ekip incelemesi için iş birliği özellikleri",
-        "Sürüm geçmişi ve değişiklik takibi"
-      ]
-    }
-  },
-  "header": {
-    "title": "Ham Görüntüden Storyboard’a",
-    "author": "Curify AI Ekibi",
-    "role": "Yapay Zekâ Araştırma Ekibi",
-    "imageAlt": "Yapay zekânın video sahnelerini analiz etmesi ve storyboard üretmesi",
-    "imageCaption": "Yapay zekâ destekli sahne tespiti, videodaki önemli anları belirlerken",
-    "subtitle": "Yapay Zekâ Destekli Video Analizi",
-    "date": "11 Aralık 2025",
-    "readingTime": "8 dk okuma"
-  },
-  "Technical": {
-    "title": "TEKNİK DERİNLEME",
-    "steps": {
-      "step1": "Nasıl Çalışır: Perde Arkası",
-      "videoProcessingPipeline": "Sistemimiz, doğru sahne tespiti ve analiz sağlamak için videoları çok aşamalı, gelişmiş bir pipeline üzerinden işler:",
-      "step2": "Video İşleme Pipeline’ı",
-      "step2Text": "Sistemimiz videoları, doğru sahne tespiti ve analiz sağlayan gelişmiş çok aşamalı bir pipeline üzerinden işler:",
-      "step3": "Sahne Tespiti ve Metadata Çıkarımı",
-      "step3Text": "OpenCV destekli, optimum aralıklarda kare örnekleme",
-      "step4": "Plan Analizi ve Metadata Zenginleştirme",
-      "step4Text": "Hassas sahne sınırı tespiti için uyarlanabilir eşikleme",
-      "step5": "Sahne Etiketleme ve Metadata Organizasyonu",
-      "step5Text": "Kapsamlı sahne anlayışı için derin öğrenme modelleri",
-      "step6": "Metadata Dışa Aktarma ve Entegrasyon",
-      "step6Text": "Diğer araçlarla entegrasyon için metadata’yı JSON formatında dışa aktarın"
-    }
-  },
-
-"featuresTitle": "Parmaklarınızın Ucunda Güçlü Özellikler",
-"features1": "Sorunsuz Video Entegrasyonu",
-"features1Text": "Yerel dosyaları, YouTube bağlantılarını veya bulut depolamayı tek bir arayüz üzerinden işleyin.",
-"features": "Parmaklarınızın Ucunda Güçlü Özellikler",
-"features2": "Sorunsuz Video Entegrasyonu",
-"features2Text": "Yerel dosyaları, YouTube bağlantılarını veya bulut depolamayı tek bir arayüz üzerinden işleyin.",
-"features3": "Yapay Zekâ Destekli Analiz",
-"features3Text": "İsteğe bağlı yapay zekâ analiz modülüyle sahne anlayışını derinleştirin.",
-"features4": "Kamera Hareketi Tespiti",
-"features4Text": "Pan, zoom ve diğer kamera hareketlerini otomatik olarak belirleyin.",
-"features5": "Özelleştirilebilir Çıktı",
-"features5Text": "Metadata’yı diğer araçlarla entegrasyon için JSON formatında dışa aktarın.",
-
-"intro": {
-  "p1": "Günümüzün hızlı içerik üretim dünyasında <strong>verimli video analizi</strong> artık bir lüks değil, bir gerekliliktir. Yapay zekâ destekli sahne tespit teknolojimiz, saatler süren ham görüntüleri günler yerine dakikalar içinde yapılandırılmış, aranabilir içeriğe dönüştürür.",
-  "p2": "İster bir film yapımcısı, ister içerik üreticisi ya da medya profesyoneli olun; otomatik sahne tespitinin gücünü anlamak iş akışınızı kökten değiştirir ve yeni yaratıcı olanaklar sunar."
-},
-
-"proTip": "En iyi sonuçlar için kaynak videonuzda sahneler arasında net ses ve görüntü ayrımı olmasına dikkat edin. İyi aydınlatılmış ortamlar ve minimum arka plan gürültüsü doğruluğu ciddi ölçüde artırır.",
-
-"titanicExample": {
-  "title": "Gerçek Dünya Örneği: Titanic Sahne Analizi",
-  "description": "Sistemimizin Titanic’ten bir sahneyi nasıl analiz ettiğini, plan değişimlerini tespit edip detaylı sahne metadata’sı ürettiğini izleyin:",
-  "analysis": "Analiz:",
-  "analysisText": "Gerçek zamanlı sahne tespiti ve metadata çıkarımı"
-},
-
-"inceptionExample": {
-  "title": "Rüya Seviyesi Analizi: Inception Sahne İncelemesi",
-  "description": "Yapay zekâmızın Inception’daki karmaşık rüya katmanlarını ve görsel efektleri nasıl analiz ettiğini keşfedin:",
-  "analysis": "Analiz",
-  "analysisText": "Rüya katmanı tespiti ve görsel efekt analizi",
-  "breakdownTitle": "Sahne Analizi Dökümü",
-  "showFullAnalysis": "Tam Sahne Analizini Göster",
-  "hideFullAnalysis": "Tam Sahne Analizini Gizle",
-  "fullSceneAnalysis": "Tam Sahne Analizi",
-  "sceneCard": {
-    "mood": "Duygu Durumu",
-    "environment": "Ortam",
-    "shotNotes": "Plan Notları"
-  }
-},
-
-"Scene": "Sahne",
-
-"process": {
-  "title": "Sahne Tespit Sistemimiz Nasıl Çalışır",
-  "steps": {
-    "step1": {
-      "title": "1. Video Analizi",
-      "description": "Yapay zekâmız videonuzu kare kare tarayarak görsel ve işitsel ipuçlarını analiz eder ve olası sahne sınırlarını belirler.",
-      "details": [
-        "Renk histogramları ve hareket vektörleri analizi",
-        "Ses seviyesi değişimleri ve sessizlik tespiti",
-        "Plan sınırları ve geçişlerin belirlenmesi"
-      ]
-    },
-    "step2": {
-      "title": "2. Sahne Segmentasyonu",
-      "description": "Sistem, görsel ve zamansal ilişkileri temel alarak ilişkili planları tutarlı sahneler halinde gruplar.",
-      "details": [
-        "Sahne bağlamını anlamak için makine öğrenimi kullanımı",
-        "Plan süresi ve geçiş türlerinin değerlendirilmesi",
-        "İlgili planların mantıksal sahneler halinde birleştirilmesi"
-      ]
-    },
-    "step3": {
-      "title": "3. İçerik Sınıflandırma",
-      "description": "Her sahne, görsel ve işitsel içeriğine göre otomatik olarak analiz edilir ve kategorize edilir.",
-      "details": [
-        "Temel görsel öğe ve nesnelerin belirlenmesi",
-        "Sahne türü sınıflandırması (röportaj, aksiyon, manzara vb.)",
-        "Konuşma, müzik ve efektler için ses analizi"
-      ]
-    },
-    "step4": {
-      "title": "4. Metadata Üretimi",
-      "description": "Her sahne için kapsamlı metadata üretilir ve güçlü arama ile organizasyon sağlanır.",
-      "details": [
-        "Zaman damgaları ve süre bilgisi oluşturma",
-        "Temsili küçük resimler (thumbnail) üretme",
-        "Önemli diyalog ve ses ipuçlarını çıkarma"
-      ]
-    }
-  }
-},
-
-"whyItWorks": {
-  "title": "Sahne Tespitimiz Neden Bu Kadar İyi Çalışıyor",
-  "points": "<li>Yapay zekâmız sahne sınırlarını %95’in üzerinde doğrulukla belirlemek için hem <strong>görsel hem de işitsel ipuçlarını</strong> analiz eder.</li><li>Gelişmiş <strong>makine öğrenimi modelleri</strong>, yalnızca görsel değişimleri değil bağlamı da anlayarak daha doğal sahne tespiti sağlar.</li><li>Gerçek zamanlı işleme, çekim veya kurgu sırasında <strong>anında geri bildirim</strong> ve ayarlama imkânı sunar.</li>"
-},
-
-"recommendedStyle": {
-  "title": "En İyi Sonuçlar İçin Önerilen Stil",
-  "description": "En doğru sahne tespiti için aşağıdaki stil yönergelerini öneriyoruz:",
-  "points": [
-    "Her sahne içinde tutarlı aydınlatma kullanın",
-    "Planlar arasında net ses işaretleri veya klaket kullanın",
-    "Kamera hareketlerini akıcı ve bilinçli tutun",
-    "Sahneler içinde tutarlı ses seviyeleri sağlayın"
-  ]
-    },
-
-"title": "Ham Görüntülerden Storyboard’lara: Yapay Zekâ Destekli Video Analizi",
-"description": "Yapay zekânın ham videoyu otomatik sahne algılama ve analiz ile nasıl yapılandırılmış storyboard’lara dönüştürdüğünü keşfedin.",
-"timeline": {
-    "title": "Sahne Zaman Çizelgesi",
-    "viewScene": "Sahneyi Görüntüle {1}"
-  },
-  "cta": "🚀 Storyboard’unuzu yapay zekâ ile hayata geçirmeye hazır mısınız? <strong>Başlamanıza yardımcı olmak için</strong> örnek JSON’lar, ComfyUI iş akışları ve ffmpeg/AE şablonları içeren <strong>tam bir başlangıç kiti</strong> sunabiliriz.",
-  "sceneBreakdown": {
-    "title": "Sahne Algılama Çıktısını Anlamak",
-    "introduction": "Yapay zekâmızın video içeriğini nasıl analiz edip yapılandırdığını anlamak için tipik bir sahne algılama çıktısını inceleyelim. Her açıklamanın altında, bu içgörüleri destekleyen ilgili JSON yapısını bulacaksınız.",
-    "scenes": [
-      {
-        "title": "1. Sahne Tanımlama",
-        "content": "Her sahneye benzersiz bir tanımlayıcı ve zaman damgası aralığı atanır. Bu, video içeriğinde hassas gezinmeyi mümkün kılar ve analizimizin temelini oluşturur.",
-        "example": "Sahne 1 (00:00:02.50 - 00:00:05.20)",
-        "jsonExample": {
-          "scene_id": "scene_001",
-          "start_time": 2.5,
-          "end_time": 5.2,
-          "duration": 2.7,
-          "keyframe_index": 5,
-          "keyframe_time": 3.8
-        },
-        "jsonDescription": "Bu JSON yapısı, bir sahne için benzersiz kimlik, zamanlama bilgileri ve temsilci ana karenin indeks/zaman bilgisi gibi temel tanımlama verilerini gösterir."
-      },
-      {
-        "title": "2. Görsel Analiz",
-        "content": "Yapay zekâmız, her sahnenin görsel kompozisyonunu anlamak için ana kareleri inceler; baskın renkler, ışık koşulları ve görsel öğeler buna dahildir.",
-        "example": "Ana kare analizi: Açık alan, gün ışığı, birden fazla özne",
-        "jsonExample": {
-          "visual_analysis": {
-            "brightness": 0.78,
-            "contrast": 0.65,
-            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
-            "dominant_colors": [
-              { "color": "#3A5FCD", "percentage": 0.45 },
-              { "color": "#87CEEB", "percentage": 0.35 },
-              { "color": "#F5F5DC", "percentage": 0.20 }
-            ],
-            "lighting_condition": "gün ışığı",
-            "environment": "açık alan",
-            "detected_objects": [
-              { "label": "kişi", "confidence": 0.97, "count": 2 },
-              { "label": "gökyüzü", "confidence": 0.99, "count": 1 }
-            ]
-          }
-        },
-        "jsonDescription": "Bu JSON, renk bilgileri, ışık koşulları ve güven skorlarıyla birlikte algılanan nesneler dâhil olmak üzere görsel analiz verilerini gösterir."
-      },
-      {
-        "title": "3. Plan (Shot) Kompozisyonu",
-        "content": "Her sahne içinde, görsel akışı ve temponun anlaşılmasına yardımcı olmak için tekil planları ve aralarındaki geçişleri belirleriz.",
-        "example": "Yumuşak kesmeler ve bir çapraz geçişle 3 plan tespit edildi",
-        "jsonExample": {
-          "shots": [
-            {
-              "shot_id": "shot_001",
-              "start_time": 2.5,
-              "end_time": 3.1,
-              "transition": {
-                "type": "kesme",
-                "confidence": 0.98
-              },
-              "camera_motion": {
-                "type": "sabit",
-                "confidence": 0.92
-              }
-            },
-            {
-              "shot_id": "shot_002",
-              "start_time": 3.1,
-              "end_time": 4.3,
-              "transition": {
-                "type": "fade",
-                "duration": 0.3,
-                "confidence": 0.95
-              },
-              "camera_motion": {
-                "type": "sola_pan",
-                "confidence": 0.88
-              }
-            }
-          ]
-        },
-        "jsonDescription": "Bu JSON yapısı, bir sahne içindeki plan kompozisyonunu; zamanlama, geçiş türleri ve kamera hareketi analizini ayrıntılı şekilde gösterir."
-      },
-      {
-        "title": "4. İçerik Sınıflandırma",
-        "content": "Sahneler, içeriklerine göre otomatik olarak kategorize edilir; bu da ileride belirli görüntü türlerini kolayca bulmayı sağlar.",
-        "example": "Kategori: Dram, Mekân: Gemi Güvertesi, Özneler: Ana Karakterler",
-        "jsonExample": {
-          "content_analysis": {
-            "primary_category": "dram",
-            "secondary_categories": ["romantik", "felaket"],
-            "setting": {
-              "type": "gemi_güvertesi",
-              "time_of_day": "gece",
-              "confidence": 0.92
-            },
-            "subjects": [
-              {
-                "type": "ana_karakter",
-                "name": "Jack",
-                "position": "kare_merkezi",
-                "emotion": "kararlı",
-                "confidence": 0.89
-              },
-              {
-                "type": "ana_karakter",
-                "name": "Rose",
-                "position": "kare_merkezi",
-                "emotion": "korkmuş",
-                "confidence": 0.91
-              }
-            ],
-            "sentiment": {
-              "overall": "yoğun_dramatik",
-              "confidence": 0.88,
-              "emotions": ["korku", "kararlılık", "aciliyet"]
-            },
-            "key_elements": ["can_kurtaran_bot", "okyanus", "ay_ışığı"],
-            "narrative_importance": 0.95,
-            "action_required": true
-          }
-        },
-        "jsonDescription": "Bu JSON, yapay zekânın film sahnelerini nasıl analiz edip sınıflandırdığını; karakter duyguları, mekân detayları ve anlatısal önem dâhil olmak üzere gösterir. Örnek olarak Titanic’teki dramatik cankurtaran botu sahnesi kullanılmıştır."
-      }
-    ],
-    "analysisTitle": "Hepsini Bir Araya Getirmek",
-    "analysisContent": "Bu unsurlar birleştirildiğinde, sistemimiz video içeriğinizin kapsamlı bir haritasını oluşturur. Bu yapılandırılmış veriler; akıllı arama, otomatik kurgu ve içerik analizi gibi özellikleri mümkün kılar.",
-    "fullExampleTitle": "Eksiksiz Sahne Verisi Örneği",
-    "fullExampleDescription": "Tüm parçaların eksiksiz bir sahne analizinde nasıl bir araya geldiğini aşağıda görebilirsiniz:",
-    "benefitsTitle": "Temel Faydalar",
-    "benefits": [
-      "<strong>Verimli Kurgu:</strong> Saatlerce görüntü sarmadan doğrudan istediğiniz sahne veya plana atlayın",
-      "<strong>Akıllı Arama:</strong> Yalnızca metadata’ya değil, görsel öğelere göre içerik bulun",
-      "<strong>Tutarlı Kalite:</strong> Projeniz genelinde görsel tutarlılığı belirleyin ve koruyun",
-      "<strong>Veri Odaklı Kararlar:</strong> İçerik yapısı ve temposu hakkında içgörüler elde edin"
-    ]
-  },
-  "conclusion": {
-    "title": "Yapay Zekâ ile Video Prodüksiyonunu Dönüştürmek",
-    "p1": "Yapay zekâ destekli sahne algılama, video prodüksiyonuna yaklaşımımızı kökten değiştiriyor. Sahne tanımlama ve düzenleme gibi zahmetli süreçleri otomatikleştirerek, içerik üreticilerinin gerçekten önemli olana — etkileyici hikâyeler anlatmaya — odaklanmasını sağlıyor.",
-    "p2": "Algoritmalarımızı geliştirmeye ve yeteneklerimizi genişletmeye devam ederken, film yapımcılarının, eğitimcilerin ve içerik üreticilerinin bu araçları görsel hikâye anlatımının sınırlarını zorlamak için nasıl kullanacağını görmekten heyecan duyuyoruz."
-  },
-  "richStructuredOutput": "Zengin, Yapılandırılmış Çıktı",
-  "richStructuredOutputText": "Sistemimiz, her sahne için ayrıntılı metadata içeren kapsamlı storyboard verileri üretir ve video içeriğiniz üzerinde tam kontrol sağlar.",
-  "advancedUsage": {
-    "title": "Gelişmiş Kullanım ve Özelleştirme",
-    "description": "Sahne algılama sistemi, farklı kullanım senaryolarına uyacak şekilde son derece özelleştirilebilir.",
-    "features": {
-      "thresholds": {
-        "title": "Özel Sahne Algılama Eşikleri",
-        "description": "Eşik parametresini değiştirerek sahne algılama hassasiyetini ayarlayın. Daha düşük değerler, değişikliklere karşı daha hassas algılama sağlar."
-      },
-      "aiAnalysis": {
-        "title": "Yapay Zekâ Destekli Analiz",
-        "description": "Daha ayrıntılı sahne anlama ve etiketleme için yapay zekâ analizini etkinleştirin. Bunun için Ollama sunucusu ile ek kurulum gerekir."
-      },
-      "outputCustomization": {
-        "title": "Çıktı Özelleştirme",
-        "description": "Çıktı formatını özelleştirin ve oluşturulan storyboard’a ek metadata dâhil edin."
-      }
-    },
-    "integration": {
-      "title": "Diğer Araçlarla Entegrasyon",
-      "description": "Storyboard çıktısı, diğer araçlar ve iş akışlarıyla kolayca entegre edilebilir.",
-      "tools": {
-        "editingSoftware": {
-          "title": "Video Kurgu Yazılımları",
-          "description": "JSON çıktısını, betik tabanlı kurguyu destekleyen video editörlerine aktarın"
-        },
-        "cms": {
-          "title": "İçerik Yönetim Sistemleri",
-          "description": "Video varlıkları için otomatik metadata oluşturun"
-        },
-        "aiTraining": {
-          "title": "Yapay Zekâ Eğitim Verisi",
-          "description": "Yapılandırılmış çıktıyı makine öğrenmesi modelleri için eğitim verisi olarak kullanın"
-        }
-      }
-    }
-  },
-  "features": {
-    "modularArchitecture": {
-      "title": "Modüler Mimari",
-      "description": "Sistem; video analizi, yapay zekâ işleme ve çıktı üretimi için ayrı bileşenlerle inşa edilmiştir. Bu da genişletmeyi ve bakımı kolaylaştırır."
-    },
-    "performance": {
-      "title": "Performans Odaklı",
-      "description": "Verimli kare işleme ve paralelleştirme, uzun videolarda bile hızlı analiz sağlar."
-    },
-    "aiEnhanced": {
-      "title": "Yapay Zekâ ile Geliştirilmiş Analiz",
-      "description": "İsteğe bağlı yapay zekâ bileşenleri, daha derin sahne anlayışı ve daha doğru etiketleme sunar."
-    }
-  },
-  "Benefitss": {
-    "title": "Faydalar",
-    "description": "Yapay zekâ destekli sahne algılama sistemimizi kullanmanın avantajları:",
     "tags": {
-      "computerVision": "Bilgisayarla Görme",
+      "computerVision": "Bilgisayarlı Görü",
       "deepLearning": "Derin Öğrenme",
       "realTimeAnalysis": "Gerçek Zamanlı Analiz"
-    }
-  },
-  "benefits": {
-    "subtitle": "NEDEN ÇÖZÜMÜMÜZÜ SEÇMELİSİNİZ",
-    "title": "Yapay Zekâ Destekli Sahne Analizinin Gücü"
-  },
-  "integration": {
-    "title": "Kolay Entegrasyon",
-    "description": "Yapılandırılmış JSON çıktısı, diğer araçlar ve iş akışlarıyla entegrasyonu kolaylaştırır:",
-    "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
-  },
-  "features10": {
-    "comprehensiveData": {
-      "title": "Kapsamlı Sahne Verisi",
-      "items": [
-        "Her sahne için hassas zamanlama bilgisi",
-        "Görsel referans için ana kareler",
-        "Nesne algılama sonuçları",
-        "Kamera hareketi analizi"
+    },
+    "hero": {
+      "title": "Videoyu Yapay Zeka ile Film Şeritlerine Dönüştürün",
+      "subtitle": "Saatlerce süren görüntüleri dakikalar içinde yapılandırılmış, aranabilir film şeritlerine dönüştüren gelişmiş bir boru hattını nasıl inşa ettik."
+    },
+    "introduction": {
+      "paragraph1": "Saatlerce süren ham görüntüleri yükleyip dakikalar içinde tüm videonuzun <strong>ayrıntılı, sahne sahne dökümünü</strong> alabildiğinizi hayal edin. Yapay zeka destekli sahne algılama sistemimiz tam olarak bunu sağlar.",
+      "paragraph2": "En son Python kütüphaneleri ve derin öğrenme modelleriyle oluşturulan bu boru hattı, yalnızca sahne değişikliklerini algılamakla kalmaz, içeriği anlar, temel unsurları tanımlar ve her şeyi kapsamlı bir film şeridi halinde yapılandırır."
+    },
+    "imageAlt": "Önemli anları belirleyen ve yapılandırılmış film şeritleri oluşturan sahne algılama boru hattı çalışırken",
+    "protip": "En iyi sonuçlar için videonuzun sahneler arasında net görsel ayrımlara sahip olduğundan emin olun. Sistem en iyi iyi aydınlatılmış görüntüler ve minimum hareket bulanıklığı ile çalışır. Algılama doğruluğunu artırmak için video düzenleyicinize bölüm işaretleri veya sahne sonları eklemeyi düşünün.",
+    "humanEvaluation": {
+      "title": "Yapay Zeka Çıktısının İnsan Tarafından Değerlendirilmesi",
+      "introduction": "Yapay zeka boru hattımız oldukça doğru olsa da, insan değerlendirmesi kalite güvence sürecimizin kritik bir bileşeni olmaya devam ediyor. En yüksek kalitede çıktıyı nasıl sağladığımız aşağıda açıklanmıştır:",
+      "evaluationAreas": [
+        "<strong>Sahne Sınırı Doğruluğu</strong> - Sahne geçiş noktalarının incelenmesi ve ayarlanması",
+        "<strong>Meta Veri Doğrulama</strong> - Yapay zeka tarafından oluşturulan açıklamaların, etiketlerin ve etiketlerin doğrulanması",
+        "<strong>Tutarlılık Kontrolü</strong> - Tüm sahnelerde tek tip stil ve biçimlendirmenin sağlanması",
+        "<strong>İçerik Doğruluğu</strong> - Yapay zekanın her sahnedeki temel öğeleri doğru tanımladığının doğrulanması"
+      ],
+      "workflow": {
+        "title": "İnsan Döngüsü İş Akışı",
+        "steps": [
+          "Yapay zeka videoyu işler ve ilk film şeridini oluşturur",
+          "İnsan incelemeciler, özel araçlarımızı kullanarak yapay zeka çıktısını değerlendirir",
+          "İncelemeciler geri bildirim sağlar ve gerekli düzeltmeleri yapar",
+          "Sistem, gelecekteki çıktıları iyileştirmek için insan düzeltmelerinden öğrenir",
+          "Teslimattan önce son kalite kontrolü"
+        ]
+      },
+      "benefits": {
+        "title": "İnsan Değerlendirmesinin Faydaları",
+        "items": [
+          "<strong>Daha Yüksek Doğruluk</strong> - İnsan incelemeciler, yapay zekanın kaçırabileceği ince nüansları yakalar",
+          "<strong>Bağlamsal Anlayış</strong> - Kültürel ve durumsal bağlamın daha iyi yorumlanması",
+          "<strong>Kalite Güvencesi</strong> - Profesyonel kullanım durumları için ek doğrulama katmanı",
+          "<strong>Sürekli İyileştirme</strong> - İnsan geri bildirimi, yapay zeka modellerinin eğitilmesine ve iyileştirilmesine yardımcı olur"
+        ]
+      },
+      "tools": {
+        "title": "Değerlendirme Araçları",
+        "description": "Platformumuz insan incelemecilere yardımcı olmak için özel araçlar içerir:",
+        "features": [
+          "Yan yana video ve film şeridi karşılaştırması",
+          "Sahne sınırlarını ayarlamak için kullanımı kolay arayüz",
+          "Meta veri ve etiketlerin toplu düzenlenmesi",
+          "Ekip incelemesi için işbirliği özellikleri",
+          "Sürüm geçmişi ve değişiklik takibi"
+        ]
+      }
+    },
+    "header": {
+      "title": "Ham Görüntüden Film Şeritlerine",
+      "author": "Curify AI Ekibi",
+      "role": "AI Araştırma Ekibi",
+      "imageAlt": "Video sahnelerini analiz eden ve film şeritleri oluşturan yapay zeka",
+      "imageCaption": "Yapay zeka destekli sahne algılama çalışırken, video içeriğindeki önemli anları belirliyor",
+      "subtitle": "Yapay Zeka Destekli Video Analizi",
+      "date": "11 Aralık 2025",
+      "readingTime": "8 dk okuma"
+    },
+    "Technical": {
+      "title": "TEKNİK DERİNLEMESİNE İNCELEME",
+      "steps": {
+        "step1": "Nasıl Çalışır: Kaputun Altında",
+        "videoProcessingPipeline": "Sistemimiz, videoları doğru sahne algılama ve analiz sağlayan gelişmiş bir çok aşamalı boru hattı üzerinden işler:",
+        "step2": "Video İşleme Boru Hattı",
+        "step2Text": "Sistemimiz, videoları doğru sahne algılama ve analiz sağlayan gelişmiş bir çok aşamalı boru hattı üzerinden işler:",
+        "step3": "Sahne Algılama ve Meta Veri Çıkarımı",
+        "step3Text": "Optimal aralıklarla OpenCV destekli kare örnekleme",
+        "step4": "Çekim Analizi ve Meta Veri Geliştirme",
+        "step4Text": "Hassas sahne sınırı algılama için uyarlanabilir eşikleme",
+        "step5": "Sahne Etiketleme ve Meta Veri Organizasyonu",
+        "step5Text": "Kapsamlı sahne anlayışı için derin öğrenme modelleri",
+        "step6": "Meta Veri Dışa Aktarımı ve Entegrasyon",
+        "step6Text": "Meta verileri diğer araçlarla entegrasyon için JSON formatına dışa aktarma"
+      }
+    },
+    "featuresTitle": "Parmaklarınızın Ucundaki Güçlü Özellikler",
+    "features1": "Sorunsuz Video Entegrasyonu",
+    "features1Text": "Yerel dosyaları, YouTube bağlantılarını veya bulut depolamayı birleşik arayüzümüzle işleyin.",
+    "features": {
+      "modularArchitecture": {
+        "title": "Modüler Mimari",
+        "description": "Sistem, video analizi, yapay zeka işleme ve çıktı oluşturma için ayrı bileşenlerle oluşturulmuştur, bu da genişletilmesini ve bakımını kolaylaştırır."
+      },
+      "performance": {
+        "title": "Performans Optimize Edildi",
+        "description": "Verimli kare işleme ve paralelleştirme, uzun videolar için bile hızlı analiz sağlar."
+      },
+      "aiEnhanced": {
+        "title": "Yapay Zeka Destekli Analiz",
+        "description": "İsteğe bağlı yapay zeka bileşenleri, daha derin sahne anlayışı ve daha doğru etiketleme sağlar."
+      }
+    },
+    "features2": "Sorunsuz Video Entegrasyonu",
+    "features2Text": "Yerel dosyaları, YouTube bağlantılarını veya bulut depolamayı birleşik arayüzümüzle işleyin.",
+    "features3": "Yapay Zeka Destekli Analiz",
+    "features3Text": "İsteğe bağlı yapay zeka analiz modülümüzle sahne anlayışını geliştirin.",
+    "features4": "Kamera Hareketi Algılama",
+    "features4Text": "Kaydırma, yakınlaştırma ve diğer kamera hareketlerini otomatik olarak tanımlayın.",
+    "features5": "Özelleştirilebilir Çıktı",
+    "features5Text": "Meta verileri diğer araçlarla entegrasyon için JSON formatına dışa aktarın.",
+    "intro": {
+      "p1": "Günümüzün hızlı içerik oluşturma ortamında, <strong>verimli video analizi</strong> artık bir lüks değil — bir zorunluluktur. Yapay zeka destekli sahne algılama teknolojimiz, saatlerce süren ham görüntüleri günler değil dakikalar içinde yapılandırılmış, aranabilir içeriğe dönüştürür.",
+      "p2": "İster film yapımcısı, ister içerik oluşturucu veya medya profesyoneli olun, otomatik sahne algılamanın gücünü anlamak iş akışınızda devrim yaratabilir ve yeni yaratıcı olasılıkların kilidini açabilir."
+    },
+    "proTip": "En iyi sonuçlar için kaynak videonuzun net ses ve sahneler arasında görsel ayrıma sahip olduğundan emin olun. İyi aydınlatılmış ortamlar ve minimum arka plan gürültüsü, algılama doğruluğunu önemli ölçüde artırır.",
+    "titanicExample": {
+      "title": "Gerçek Dünya Örneği: Titanik Sahne Analizi",
+      "description": "Sistemimizin Titanik'ten bir sahneyi nasıl analiz ettiğini, çekim değişikliklerini algıladığını ve ayrıntılı sahne meta verileri oluşturduğunu izleyin:",
+      "analysis": "Analiz:",
+      "analysisText": "Gerçek zamanlı sahne algılama ve meta veri çıkarımı"
+    },
+    "inceptionExample": {
+      "title": "Rüya Seviyesi Analizi: Inception Sahne Dökümü",
+      "description": "Yapay zekamızın Inception'daki karmaşık rüya katmanlarını ve görsel efektleri nasıl analiz ettiğini keşfedin:",
+      "analysis": "Analiz",
+      "analysisText": "Rüya katmanı algılama ve görsel efekt dökümü",
+      "breakdownTitle": "Sahne Analizi Dökümü",
+      "showFullAnalysis": "Tam Sahne Analizini Göster",
+      "hideFullAnalysis": "Tam Sahne Analizini Gizle",
+      "fullSceneAnalysis": "Tam Sahne Analizi",
+      "sceneCard": {
+        "mood": "Ruh Hali",
+        "environment": "Ortam",
+        "shotNotes": "Çekim Notları"
+      }
+    },
+    "Scene": "Sahne",
+    "process": {
+      "title": "Sahne Algılamamız Nasıl Çalışır",
+      "steps": {
+        "step1": {
+          "title": "1. Video Analizi",
+          "description": "Yapay zekamız videonuzu kare kare tarar, potansiyel sahne sınırlarını belirlemek için görsel ve işitsel ipuçlarını analiz eder.",
+          "details": [
+            "Renk histogramlarını ve hareket vektörlerini analiz eder",
+            "Ses seviyesi değişikliklerini ve sessizlikleri algılar",
+            "Çekim sınırlarını ve geçişleri tanımlar"
+          ]
+        },
+        "step2": {
+          "title": "2. Sahne Segmentasyonu",
+          "description": "Sistem, ilgili çekimleri görsel ve zamansal ilişkilere dayalı olarak tutarlı sahneler halinde gruplandırır.",
+          "details": [
+            "Sahne bağlamını anlamak için makine öğrenimini kullanır",
+            "Çekim süresini ve geçiş türlerini dikkate alır",
+            "İlgili çekimleri mantıksal sahneler halinde birleştirir"
+          ]
+        },
+        "step3": {
+          "title": "3. İçerik Sınıflandırması",
+          "description": "Algılanan her sahne, görsel ve işitsel içeriğine göre analiz edilir ve kategorize edilir.",
+          "details": [
+            "Temel görsel öğeleri ve nesneleri tanımlar",
+            "Sahne türünü sınıflandırır (örneğin, röportaj, aksiyon, manzara)",
+            "Konuşma, müzik ve efektler için sesi analiz eder"
+          ]
+        },
+        "step4": {
+          "title": "4. Meta Veri Oluşturma",
+          "description": "Her sahne için kapsamlı meta veriler oluşturulur, bu da güçlü arama ve organizasyon sağlar.",
+          "details": [
+            "Zaman damgaları ve süre bilgileri oluşturur",
+            "Temsili küçük resimler oluşturur",
+            "Önemli diyalog ve ses ipuçlarını çıkarır"
+          ]
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "Sahne Algılamamız Neden Bu Kadar İyi Çalışıyor",
+      "points": "<li>Yapay zekamız, sahne sınırlarını %95'in üzerinde doğrulukla belirlemek için hem <strong>görsel hem de işitsel ipuçlarını</strong> analiz eder.</li><li>Gelişmiş <strong>makine öğrenimi modelleri</strong>, daha doğal sahne algılama için yalnızca görsel değişiklikleri değil, bağlamı da anlar.</li><li>Gerçek zamanlı işleme, çekim veya düzenleme sırasında <strong>anında geri bildirim</strong> ve ayarlamalar sağlar.</li>"
+    },
+    "recommendedStyle": {
+      "title": "En İyi Sonuçlar İçin Önerilen Stil",
+      "description": "En doğru sahne algılamayı elde etmek için aşağıdaki stil yönergelerini öneriyoruz:",
+      "points": [
+        "Her sahnede tutarlı aydınlatmayı koruyun",
+        "Çekimler arasında net ses işaretleri veya klaket kullanın",
+        "Kamera hareketlerini pürüzsüz ve kasıtlı tutun",
+        "Sahneler içinde tutarlı ses seviyelerini koruyun"
       ]
     },
-    "export": {
-      "title": "Dışa Aktarma Seçeneği",
-      "formats": {
-        "json": "JSON"
+    "title": "Ham Görüntüden Film Şeritlerine: Yapay Zeka Destekli Video Analizi",
+    "description": "Otomatik sahne algılama ve analiz ile yapay zekanın ham videoyu yapılandırılmış film şeritlerine nasıl dönüştürdüğünü keşfedin.",
+    "timeline": {
+      "title": "Sahne Zaman Çizelgesi",
+      "viewScene": "Sahneyi Görüntüle {1}"
+    },
+    "cta": "🚀 Film şeridinizi yapay zeka ile hayata geçirmeye hazır mısınız? Başlamanıza yardımcı olmak için örnek JSON'lar, ComfyUI iş akışları ve ffmpeg/AE şablonları içeren <strong>tam bir başlangıç kiti sağlayabiliriz</strong>.",
+    "sceneBreakdown": {
+      "title": "Sahne Algılama Çıktısını Anlama",
+      "introduction": "Yapay zekamızın video içeriğini nasıl analiz ettiğini ve yapılandırdığını anlamak için tipik bir sahne algılama çıktısını inceleyelim. Her açıklamanın altında, bu içgörüleri sağlayan karşılık gelen JSON yapısını bulacaksınız.",
+      "scenes": [
+        {
+          "title": "1. Sahne Tanımlama",
+          "content": "Her sahneye benzersiz bir tanımlayıcı ve zaman damgası aralığı atanır, bu da video içeriği boyunca hassas gezinmeye olanak tanır. Bu, analizimizin temelini oluşturur.",
+          "example": "Sahne 1 (00:00:02.50 - 00:00:05.20)",
+          "jsonExample": {
+            "scene_id": "scene_001",
+            "start_time": 2.5,
+            "end_time": 5.2,
+            "duration": 2.7,
+            "keyframe_index": 5,
+            "keyframe_time": 3.8
+          },
+          "jsonDescription": "Bu JSON yapısı, benzersiz kimliği, zamanlama bilgileri ve temsili ana karesinin dizini/zamanı dahil olmak üzere bir sahne için temel tanımlama verilerini gösterir."
+        },
+        {
+          "title": "2. Görsel Analiz",
+          "content": "Yapay zekamız, her sahnenin görsel kompozisyonunu anlamak için ana kareleri inceler; buna baskın renkler, aydınlatma koşulları ve görsel öğeler dahildir.",
+          "example": "Ana kare analizi: Dış mekan, gün ışığı, birden fazla özne",
+          "jsonExample": {
+            "visual_analysis": {
+              "brightness": 0.78,
+              "contrast": 0.65,
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
+              "dominant_colors": [
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
+              ],
+              "lighting_condition": "daylight",
+              "environment": "outdoor",
+              "detected_objects": [
+                {
+                  "label": "person",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "sky",
+                  "confidence": 0.99,
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "jsonDescription": "Bu JSON, renk bilgileri, aydınlatma koşulları ve güven puanlarıyla algılanan nesneler dahil olmak üzere görsel analiz verilerini gösterir."
+        },
+        {
+          "title": "3. Çekim Kompozisyonu",
+          "content": "Her sahne içinde, içeriğin görsel akışını ve temposunu anlamaya yardımcı olan bireysel çekimleri ve geçişlerini tanımlarız.",
+          "example": "Yumuşak kesimler ve bir çapraz geçiş ile algılanan 3 çekim",
+          "jsonExample": {
+            "shots": [
+              {
+                "shot_id": "shot_001",
+                "start_time": 2.5,
+                "end_time": 3.1,
+                "transition": {
+                  "type": "cut",
+                  "confidence": 0.98
+                },
+                "camera_motion": {
+                  "type": "static",
+                  "confidence": 0.92
+                }
+              },
+              {
+                "shot_id": "shot_002",
+                "start_time": 3.1,
+                "end_time": 4.3,
+                "transition": {
+                  "type": "fade",
+                  "duration": 0.3,
+                  "confidence": 0.95
+                },
+                "camera_motion": {
+                  "type": "pan_left",
+                  "confidence": 0.88
+                }
+              }
+            ]
+          },
+          "jsonDescription": "Bu JSON yapısı, zamanlama, geçiş türleri ve kamera hareketi analizi dahil olmak üzere bir sahne içindeki çekim kompozisyonunu detaylandırır."
+        },
+        {
+          "title": "4. İçerik Sınıflandırması",
+          "content": "Sahneler içeriklerine göre otomatik olarak kategorize edilir, bu da daha sonra belirli görüntü türlerini bulmayı kolaylaştırır.",
+          "example": "Kategori: Drama, Ortam: Gemi Güvertesi, Özneler: Ana Karakterler",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "drama",
+              "secondary_categories": [
+                "romance",
+                "disaster"
+              ],
+              "setting": {
+                "type": "ship_deck",
+                "time_of_day": "night",
+                "confidence": 0.92
+              },
+              "subjects": [
+                {
+                  "type": "main_character",
+                  "name": "Jack",
+                  "position": "center_frame",
+                  "emotion": "determined",
+                  "confidence": 0.89
+                },
+                {
+                  "type": "main_character",
+                  "name": "Rose",
+                  "position": "center_frame",
+                  "emotion": "fearful",
+                  "confidence": 0.91
+                }
+              ],
+              "sentiment": {
+                "overall": "intense_dramatic",
+                "confidence": 0.88,
+                "emotions": [
+                  "fear",
+                  "determination",
+                  "urgency"
+                ]
+              },
+              "key_elements": [
+                "lifeboat",
+                "ocean",
+                "moonlight"
+              ],
+              "narrative_importance": 0.95,
+              "action_required": true
+            }
+          },
+          "jsonDescription": "Bu JSON, Titanik'in dramatik cankurtaran sandalı sahnesini örnek alarak, karakter duyguları, ortam ayrıntıları ve anlatı önemi dahil olmak üzere yapay zekanın film sahnelerini nasıl analiz edip sınıflandırdığını gösterir."
+        }
+      ],
+      "analysisTitle": "Hepsini Bir Araya Getirmek",
+      "analysisContent": "Sistemimiz bu öğeleri birleştirerek video içeriğinizin kapsamlı bir haritasını oluşturur. Bu yapılandırılmış veriler, akıllı arama, otomatik düzenleme ve içerik analizi gibi özellikleri güçlendirir.",
+      "fullExampleTitle": "Tam Sahne Verisi Örneği",
+      "fullExampleDescription": "İşte tam bir sahne analizinde tüm parçaların nasıl bir araya geldiği:",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": 2.5,
+        "end_time": 5.2,
+        "duration": 2.7,
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": 30
+        },
+        "visual_analysis": {
+          "brightness": 0.78,
+          "contrast": 0.65,
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
+          "lighting_condition": "gün ışığı",
+          "environment": "stüdyo"
+        },
+        "audio_analysis": {
+          "has_speech": true,
+          "speech_confidence": 0.92,
+          "background_noise_level": 0.15,
+          "speaker_gender": [
+            "male",
+            "female"
+          ],
+          "speech_text": "Yapay zekanın video prodüksiyonunu nasıl dönüştürdüğünü tartışalım..."
+        },
+        "content_analysis": {
+          "primary_category": "röportaj",
+          "setting": "stüdyo",
+          "subjects": [
+            "host",
+            "guest"
+          ],
+          "sentiment": "nötr_pozitif"
+        },
+        "shots": [
+          {
+            "shot_id": "shot_001",
+            "start_time": 2.5,
+            "end_time": 3.1,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
+          },
+          {
+            "shot_id": "shot_002",
+            "start_time": 3.1,
+            "end_time": 5.2,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
+          }
+        ]
+      },
+      "benefitsTitle": "Temel Faydalar",
+      "benefits": [
+        "<strong>Verimli Düzenleme:</strong> Saatlerce süren görüntüler arasında gezinmeden doğrudan herhangi bir sahneye veya çekime atlayın",
+        "<strong>Akıllı Arama:</strong> Yalnızca meta verilere değil, görsel öğelere dayalı içerik bulun",
+        "<strong>Tutarlı Kalite:</strong> Projeniz genelinde görsel tutarlılığı belirleyin ve koruyun",
+        "<strong>Veriye Dayalı Kararlar:</strong> İçerik yapınız ve temponuz hakkında içgörüler edinin"
+      ]
+    },
+    "conclusion": {
+      "title": "Yapay Zeka ile Video Prodüksiyonunu Dönüştürmek",
+      "p1": "Yapay zeka destekli sahne algılama, video prodüksiyonuna yaklaşımımızda devrim yaratıyor. Sahne tanımlama ve organizasyonunun sıkıcı sürecini otomatikleştirerek, yaratıcılar gerçekten önemli olana — ilgi çekici hikayeler anlatmaya — odaklanabilirler. Teknolojimiz, ham görüntüler ile cilalı içerik arasındaki boşluğu doldurarak profesyonel düzeyde video analizini herkes için erişilebilir hale getiriyor.",
+      "p2": "Algoritmalarımızı geliştirmeye ve yeteneklerimizi genişletmeye devam ederken, film yapımcılarının, eğitimcilerin ve içerik oluşturucuların görsel hikaye anlatımının sınırlarını zorlamak için bu araçlardan nasıl yararlanacaklarını görmekten heyecan duyuyoruz. Video prodüksiyonunun geleceği burada ve her zamankinden daha verimli ve yaratıcı."
+    },
+    "richStructuredOutput": "Zengin, Yapılandırılmış Çıktı",
+    "richStructuredOutputText": "Sistemimiz, her sahne için ayrıntılı meta verilerle kapsamlı film şeridi verileri oluşturarak video içeriğiniz üzerinde tam kontrol sağlar.",
+    "advancedUsage": {
+      "title": "Gelişmiş Kullanım ve Özelleştirme",
+      "description": "Sahne algılama sistemi, farklı kullanım durumlarına uyacak şekilde son derece özelleştirilebilir. İşte bazı gelişmiş özellikler ve özelleştirme seçenekleri:",
+      "features": {
+        "thresholds": {
+          "title": "Özel Sahne Algılama Eşikleri",
+          "description": "Eşik parametresini değiştirerek sahne algılamanın hassasiyetini ayarlayın. Daha düşük değerler algılamayı değişikliklere karşı daha duyarlı hale getirir."
+        },
+        "aiAnalysis": {
+          "title": "Yapay Zeka Destekli Analiz",
+          "description": "Daha ayrıntılı sahne anlayışı ve etiketleme için yapay zeka analizini etkinleştirin. Bu, Ollama sunucusuyla ek kurulum gerektirir."
+        },
+        "outputCustomization": {
+          "title": "Çıktı Özelleştirme",
+          "description": "Çıktı formatını özelleştirin ve oluşturulan film şeridine ek meta veriler ekleyin."
+        }
+      },
+      "integration": {
+        "title": "Diğer Araçlarla Entegrasyon",
+        "description": "Film şeridi çıktısı, diğer araçlar ve iş akışlarıyla kolayca entegre edilebilir. İşte bazı örnekler:",
+        "tools": {
+          "editingSoftware": {
+            "title": "Video Düzenleme Yazılımı",
+            "description": "JSON çıktısını komut dosyası tabanlı düzenlemeyi destekleyen video düzenleyicilerine aktarın"
+          },
+          "cms": {
+            "title": "İçerik Yönetim Sistemleri",
+            "description": "Video varlıkları için meta verileri otomatik olarak oluşturun"
+          },
+          "aiTraining": {
+            "title": "Yapay Zeka Eğitim Verileri",
+            "description": "Yapılandırılmış çıktıyı makine öğrenimi modelleri için eğitim verisi olarak kullanın"
+          }
+        }
+      }
+    },
+    "Benefitss": {
+      "title": "Faydalar",
+      "description": "Yapay zeka destekli sahne algılama sistemimizi kullanmanın faydaları şunlardır:",
+      "tags": {
+        "computerVision": "Bilgisayarlı Görü",
+        "deepLearning": "Derin Öğrenme",
+        "realTimeAnalysis": "Gerçek Zamanlı Analiz"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "Modüler Mimari",
+          "description": "Sistem, video analizi, yapay zeka işleme ve çıktı oluşturma için ayrı bileşenlerle oluşturulmuştur, bu da genişletilmesini ve bakımını kolaylaştırır."
+        },
+        "performance": {
+          "title": "Performans Optimize Edildi",
+          "description": "Verimli kare işleme ve paralelleştirme, uzun videolar için bile hızlı analiz sağlar."
+        },
+        "aiEnhanced": {
+          "title": "Yapay Zeka Destekli Analiz",
+          "description": "İsteğe bağlı yapay zeka bileşenleri, daha derin sahne anlayışı ve daha doğru etiketleme sağlar."
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "NEDEN BİZİM ÇÖZÜMÜMÜZÜ SEÇMELİSİNİZ",
+      "title": "Yapay Zeka Destekli Sahne Analizinin Gücü"
+    },
+    "integration": {
+      "title": "Kolay Entegrasyon",
+      "description": "Yapılandırılmış JSON çıktısı, diğer araçlar ve iş akışlarıyla entegrasyonu kolaylaştırır:",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "Kapsamlı Sahne Verileri",
+        "items": [
+          "Her sahne için hassas zamanlama bilgileri",
+          "Görsel referans için ana kareler",
+          "Nesne algılama sonuçları",
+          "Kamera hareketi analizi"
+        ]
+      },
+      "export": {
+        "title": "Dışa Aktarma Seçeneği",
+        "formats": {
+          "json": "JSON"
+        }
+      }
+    },
+    "performance": {
+      "title": "Performans Optimize Edildi",
+      "features": {
+        "speed": "Gerçek zamandan 5-10 kat daha hızlı",
+        "memory": "Düşük bellek kullanımı",
+        "parallel": "Paralel işleme"
       }
     }
-  },
-  "performance": {
-    "title": "Performans Odaklı",
-    "features": {
-      "speed": "Gerçek zamandan 5–10 kat daha hızlı",
-      "memory": "Düşük bellek kullanımı",
-      "parallel": "Paralel işleme"
-    }
-  }
   },
   "aiPlatform": {
     "title": "Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
     "subtitle": "Bütçeyi Zorlamadan Ölçeklenebilir Bir Yapay Zeka Platformu Nasıl Kurulur?",
-    "intro": "Herkes yapay zeka ile bir şeyler yapmak istiyor - ancak çoğu şirket bir doktora ordusuna veya OpenAI büyüklüğünde bir bütçeye sahip değil. İyi haber: Buna ihtiyacınız yok.",
-    "imageAlt": "Yapay Zeka Platformu Mimarisi Şeması",
-    "heading": "🏗️ Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
-    
     "intro": {
       "p1": "Küçük ve orta ölçekli teknoloji şirketlerinde asıl avantaj, büyük modeller eğitmek değil, herkesin akıllı özellikler geliştirebildiği bir yapay zeka platformu inşa etmektir. İşte çevikliği etkiye dönüştürme yönteminiz.",
       "p2": "İşte finans, hukuk, müşteri hizmetleri ve mühendislik alanlarında yapay zekayı güçlendirmek için kullandığımız, bütçeyi zorlamadan veya 50 ML uzmanı işe almadan uygulanabilir, üretim hazırı bir plan."
     },
-
+    "imageAlt": "Yapay Zeka Platformu Mimarisi Şeması",
+    "heading": "🏗️ Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
     "mindsetShift": {
       "title": "1. Zihniyet Değişimi: Merkezileştirmeyin, Demokratikleştirin",
       "content": "Eğer yapay zeka ekibiniz bir darboğam haline geldiyse, zaten kaybettiniz demektir. Bunun yerine, ürün mühendislerinin ihtiyaç duyduklarını inşa edebilecekleri kendi kendine yeten bir yapay zeka altyapısı oluşturun.",
@@ -884,7 +1062,6 @@
       },
       "conclusion": "Bu, yapay zekayı bir araştırma projesinden iş çarpanına dönüştürür."
     },
-
     "stack": {
       "title": "2. Teknoloji Yığını: Basit ve Açık Kayırlı Tutun",
       "intro": "Aşırı mühendislik hızınızı keser. Sizi kilitlemeden karmaşıklığı soyutlayan üç katmanlı bir platform oluşturduk.",
@@ -917,7 +1094,6 @@
         "conclusion": "Bu, ürün ekiplerinin haftalar değil, saatler içinde ajan prototipleri oluşturmasını sağlar."
       }
     },
-
     "fineTuning": {
       "title": "3. İnce Ayardan Kaçının (Çoğu Zaman)",
       "content": "İşte sır: **büyük olasılıkla bir büyük dil modelini ince ayarlamanıza gerek yok.**",
@@ -929,7 +1105,6 @@
       ],
       "conclusion": "Yalnızca dar, yüksek hacimli görevler için küçük modelleri ince ayarlıyoruz ve bu da yüksek kaliteli, alana özgü veri toplama ve temizleme sürecinden sonra geliyor. Geri kalan her şey 'eğitim yerine mühendislik' ile çözülüyor."
     },
-
     "essentialWork": {
       "title": "5. Az İlgi Çeken, Ancak Temel İşler",
       "content": "En iyi platformlar sadece modellere dayanmaz. Sıkıcı, zor problemleri çözmeye dayanır:",
@@ -948,7 +1123,6 @@
         }
       ]
     },
-
     "conclusion": {
       "title": "Sonuç",
       "content": "Orta ölçekli teknoloji şirketleri için yapay zekada kazanmak, daha iyi bir büyük dil modeli oluşturmak anlamına gelmez. Yapay zekayı tekrarlanabilir, ölçeklenebilir bir iş sürecine dönüştüren bir platform inşa etmek anlamına gelir.",
@@ -957,96 +1131,29 @@
     }
   },
   "nanoBananaProPrompts": {
-    "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "title": "Nano Banana Pro İstemleri",
+    "description": "Yapay zeka içerik oluşturma ihtiyaçlarınız için yaratıcı ve etkili istemlerden oluşan bir koleksiyonu keşfedin. Bu istemler, yapay zeka araçlarınızdan en iyi şekilde yararlanmanıza yardımcı olmak için tasarlanmıştır.",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "Popüler Nano Banana Pro İstemleri",
+      "prompt1": "Duyguların para birimi olduğu fütüristik bir şehir hakkında kısa bir hikaye oluşturun",
+      "prompt2": "Bir kafede ilk kez tanışan iki karakter arasında bir diyalog oluşturun",
+      "prompt3": "Yenilikçi, yapay zeka destekli bir mutfak aleti için ürün açıklaması yazın"
     }
   },
-  "ageAi": {
-    "heading": "Yapay Zeka Çağında Veri Bilimi: Hala 'En Seksi İş' mi?",
-    "intro1": "Bu en iyi zamandı, bu en kötü zamandı.",
-    "intro2": "On yıl önce, Harvard Business Review veri bilimcileri '21. yüzyılın en seksi işi' olarak nitelendirmişti. Bugün, manzara çarpıcı biçimde değişiyor. Veri yeteneklerine olan talep yüksek kalmaya devam ederken, üretken yapay zekanın yükselişi 'veri bilimcisi' olmanın ne anlama geldiğini temelden dönüştürüyor.",
-    "realityCheck": {
-      "title": "Gerçeklik Kontrolü",
-      "content": "Arama, reklam ve öneri (SAR) gibi geleneksel alanlar olgunlaşıyor ve sektör sağlam mühendisliğe ve yapay zeka mimarisine yöneliyor. İlginç bir paradoksla karşı karşıyayız.",
-      "lowBarTrap": {
-        "title": "Düşük Çıta Tuzağı",
-        "content": "Yüksek lisans öğrencileri artık veri temizleme, keşifsel veri analizi ve görselleştirme için GPT-4'ü saniyeler içinde kullanabilir. Ancak sağlam bir temel olmadan, genellikle yapay zekanın ne zaman 'halüsinasyon gördüğünü' veya istatistiksel olarak şüpheli sonuçlar ürettiğini anlamak için gerekli muhakeme yeteneğinden yoksun kalıyorlar."
-      },
-      "stakeholderShift": {
-        "title": "Paydaşlardaki Değişim",
-        "content": "İş ortakları temel içgörüler için kendi istemlerini yazabildiğinde, birçok veri bilimci profesyoneli 'yetersiz uyarılmış' hissediyor, sonu gelmeyen toplantılara ve tekrarlayan istem mühendisliğine hapsoluyor."
-      }
-    },
-    "strategicPillars": {
-      "title": "Nasıl Vazgeçilmez Kalınır: İki Stratejik Sütun",
-      "intro": "Bu çağda başarılı olmak için 'model oluşturuculardan' 'değer mimarlarına' evrilmeliyiz. Bunun iki boyutta gerçekleştiğini görüyorum:",
-      "buildingTools": {
-        "title": "Araçlar İnşa Etmek (Mühendis/Mimar Zihniyeti)",
-        "subtitle": "Sadece yapay zekayı kullanmayın, onu daha iyi hale getirin.",
-        "points": [
-          {
-            "title": "Model Değerlendirme ve Yönetişim",
-            "content": "Yapay zeka çıktıları bir meta haline geldikçe, 'iyi' sonucun neye benzediğini tanımlayabilen kişi en değerli varlık haline geliyor. Finansta risk ağırlıklandırması gibi özel değerlendirme çerçevelerine odaklanın."
-          },
-          {
-            "title": "Alan Özelleştirmesi",
-            "content": "LLM'lere özel iş bilgisi enjekte etmek için LoRA veya RAG gibi tekniklerde uzmanlaşın."
-          },
-          {
-            "title": "Otomasyon",
-            "content": "'Sanal Analistler' veya otomatik deney boru hatları gibi dahili girişimlere öncülük edin."
-          }
-        ]
-      },
-      "leveragingTools": {
-        "title": "Araçlardan Yararlanmak (Stratejist Zihniyeti)",
-        "subtitle": "Yapay zekayı çıktınızı 10 kat artırmak ve insanların en iyi yaptıklarına odaklanmak için kullanın.",
-        "points": [
-          {
-            "title": "Alan Uzmanlığı",
-            "content": "Yapay zeka 'nasıl'ı bilir, siz 'neden'i bilirsiniz. Derin iş anlayışı, yapay zekanın sahip olmadığı bağlamı sağlar."
-          },
-          {
-            "title": "Eleştirel Düşünme ve Deney",
-            "content": "Yapay zeka kod üretebilir, ancak hipotez testi, nedensel çıkarım ve 'gerçek dünya' verilerini yorumlama konusunda insan veri bilimi becerileri hala temeldir."
-          },
-          {
-            "title": "İletişim ve Etki",
-            "content": "Karmaşık verileri iş hikayelerine dönüştürme ve paydaşlardan güven kazanma yeteneği, 'yumuşak' bir beceriden 'sert' bir gerekliliğe dönüştü."
-          }
-        ]
-      }
-    },
-    "bottomLine": {
-      "title": "Sonuç",
-      "content1": "Yapay zeka veri bilimini öldürmedi, sadece çıtayı yükseltti. Değeriniz sadece SQL yazmak veya hiperparametre ayarlamaksa, 'seksi' olan kısmı azalıyor. Ama iş zorlukları ile yapay zeka çözümleri arasında köprü kurabiliyorsanız, değeriniz her zamankinden daha yüksek.",
-      "content2": "Kişisel deneyiminiz sizin avantajınızdır. Bir LLM mantığı taklit edebilir, ancak başarısız dağıtımların 'savaş yaralarına' veya karmaşık organizasyonlarda gezinirken geliştirdiğiniz sezgiye sahip değildir."
-    },
-    "discussion": {
-      "title": "Tartışalım:",
-      "prompt": "Mevcut rolünüzde kendinizi daha 'verimli' mi yoksa 'değiştirilmiş' mi hissediyorsunuz? Bu yıl araç setinizi nasıl geliştiriyorsunuz?"
-    },
-    "hashtags": ["#VeriBilimi", "#YapayZeka", "#MakineÖğrenmesi", "#ÜretkenYapayZeka", "#KariyerGelişimi", "#TeknolojiTrendleri"]
-  },
   "qaBotToTaskAgent": {
-    "heading": "🏗️ Sohbet Botundan Görev Ajanına: Bir Mimarı Rehber",
-    "description": "Sadece soru-cevap yapmanın ötesine geçen güvenilir görev ajanları oluşturmayı öğrenin",
-    "tldr": "TL;DR: Sadece soru yanıtlayan sohbet botları yapmayı bırakın. Gerçekten iş yapan görev ajanları oluşturmaya başlayın.",
-    "intro": "Bu rehber, statik kuralları, dinamik becerileri ve deterministik kancaları kullanarak tek parça sohbet botlarından görev ajanlarına mimari bir geçişi açıklıyor - somut kod örnekleri ve açık kaynak referanslarla birlikte.",
+    "heading": "🏗️ QA Botundan Görev Ajanına: Bir Mimari Rehberi",
+    "description": "Basit soru cevaplamanın ötesine geçen güvenilir görev ajanlarının nasıl oluşturulacağını öğrenin",
+    "tldr": "Özet: Sadece soruları yanıtlayan sohbet robotları oluşturmayı bırakın. Gerçekten iş yapan Görev Ajanları oluşturmaya başlayın.",
+    "intro": "Bu rehber, Statik Kurallar, Dinamik Beceriler ve Deterministik Kancalar kullanarak monolitik QA botlarından Görev Ajanlarına mimari geçişi somut kod örnekleri ve açık kaynak referanslarıyla açıklamaktadır.",
     "coreShift": {
-      "title": "1. Temel Kayma: Sohbet Botu → Görev Ajanı",
+      "title": "1. Temel Değişim: QA Botu → Görev Ajanı",
       "content": [
-        "Bugün çoğu AI sistemi hala bağlam yüklü sohbet botlarıdır:",
-        "• Sorulara iyi yanıt verirler",
-        "• Baskı altında halüsinasyon yaparlar",
-        "• Yürütme, güvenlik veya tutarlılık garantisi vermezler"
+        "Bugün çoğu yapay zeka sistemi hala bağlam dolu QA botlarıdır:",
+        "• Soruları iyi yanıtlarlar",
+        "• Baskı altında halüsinasyon görürler",
+        "• Yürütme, güvenlik ve tutarlılık konusunda garantilerden yoksundurlar"
       ],
-      "keyInsight": "Temel İçgörü: Bağlamı ölçeklendirmeyin. Yapılandırın."
+      "keyInsight": "Temel içgörü: Bağlamı ölçeklendirmeyin. Yapılandırın."
     },
     "threeLayerArch": {
       "title": "2. Üç Katmanlı Mimari",
@@ -1054,50 +1161,124 @@
         {
           "title": "🧱 1. Statik Bağlam — Kurallar (Her Zaman Açık)",
           "points": [
-            "Zihinsel Model: Çalışan El Kitabı",
+            "Zihinsel model: Çalışan el kitabı",
             "Her zaman yüklü",
-            "Kimliği, kodlama standartlarını, davranış kısıtlamalarını tanımlar",
-            "Halüsinasyon ve stil sürüklenmesini önler",
-            "Küçük, kararlı ve insan tarafından düzenlenebilir"
+            "Kimliği, kodlama standartlarını, davranışsal kısıtlamaları tanımlar",
+            "Halüsinasyonları ve stil kaymasını önler",
+            "Küçük, kararlı, insan tarafından düzenlenebilir"
           ]
         },
         {
           "title": "🛠️ 2. Dinamik Bağlam — Beceriler (İsteğe Bağlı)",
           "points": [
-            "Zihinsel Model: Araç Kutusu",
-            "Sadece ihtiyaç duyulduğunda yüklenir",
-            "Her beceri kendi kendini kapsayan bir fonksiyondur",
+            "Zihinsel model: Alet çantası",
+            "Sadece gerektiğinde yüklenir",
+            "Her beceri kendi kendine yeten bir yetenektir",
             "Bağlam penceresini temiz tutar"
           ]
         },
         {
           "title": "⚓ 3. Deterministik Kancalar — Korkuluklar",
           "points": [
-            "Zihinsel Model: Güvenlik + Uyumluluk Katmanı",
-            "Olasılıksal değildir",
-            "LLM akıl yürütmesinden önce/sonra çalışır",
-            "Asla başarısız olmaması gereken kuralları zorlar"
+            "Zihinsel model: Güvenlik + Uyumluluk katmanı",
+            "Olasılıksal değil",
+            "LLM akıl yürütmesinden önce / sonra çalışır",
+            "Asla başarısız olmaması gereken kuralları uygular"
           ]
         }
       ]
     },
     "projectStructure": {
       "title": "3. Önerilen Proje Yapısı",
-      "structure": "benim-gorev-ajanim/\n├── .cursorrules\n├── main.py\n├── araclar/\n│   └── linear_mcp.py\n└── BENIOKU.md"
+      "structure": "my-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
     },
     "staticContextExample": {
       "title": "4. Statik Bağlam Örneği: .cursorrules",
-      "content": "# Rol\nÜretim seviyesi sistemlere odaklanmış kıdemli bir Python mühendisisiniz.\n\n# Kurallar\n- Hata ayıklama için print() kullanmayın\n- Tüm fonksiyonlara tip ipuçları ekleyin\n- 3'ten fazla dosyayı değiştirmeniz gerekiyorsa plan önerin\n\n# Davranış\n- Öz olun\n- Gerekirse netleştirme isteyin\n\nReferans: https://github.com/PatrickJS/awesome-cursorrules"
+      "content": "# ROL\nÜretim sınıfı sistemlere odaklanmış Kıdemli bir Python Mühendisisiniz.\n\n# KURALLAR\n- Hata ayıklama için ASLA print() kullanmayın\n- Fonksiyonlara HER ZAMAN tür ipucu ekleyin\n- >3 dosyaya dokunacaksanız bir plan önerin\n\n# DAVRANIŞ\n- Özlü olun\n- Gerekirse açıklayıcı sorular sorun\n\nReferans: https://github.com/PatrickJS/awesome-cursorrules"
     },
     "dynamicSkillExample": {
       "title": "5. Dinamik Beceri Örneği (MCP)",
-      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"GelistirmeAraclari\")\n\n@mcp.tool()\nasync def lineer_bilet_olustur(baslik: str, oncelik: str = \"dusuk\") -> str:\n    bilet_id = f\"LIN-{hash(baslik) % 10000}\"\n    return f\"{oncelik} öncelikli {bilet_id} bilet oluşturuldu\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferans: https://github.com/modelcontextprotocol/python-sdk"
+      "content": "from mcp.server.fastmcp import FastMCP\\n\\nmcp = FastMCP(\"DevTools\")\\n\\n@mcp.tool()\\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\\n    return f\"Öncelik={priority} ile {ticket_id} bileti oluşturuldu\"\\n\\nif __name__ == \"__main__\":\\n    mcp.run()\\n\\nReferans: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
       "title": "6. Deterministik Kanca Örneği",
-      "content": "def uyumluluk_kontrolu(state):\n    kullanici_girdisi = state[\"mesajlar\"][-1].content.lower()\n    if \"şifre\" in kullanici_girdisi or \"api_anahtari\" in kullanici_girdisi:\n        return {\"hata\": \"Güvenlik ihlali tespit edildi\"}\n    return ajan_dugumu(state)\n\nReferans: https://langchain-ai.github.io/langgraph/"
+      "content": "def compliance_check_hook(state):\\n    user_input = state[\"messages\"][-1].content.lower()\\n    if \"şifre\" in user_input or \"api_key\" in user_input:\\n        return {\"error\": \"Güvenlik ihlali tespit edildi\"}\\n    return agent_node(state)\\n\\nReferans: https://langchain-ai.github.io/langgraph/"
     },
-    "finalThought": "Eğer ajanınız sadece soruları yanıtlıyorsa, bu bir sohbet botudur. Eğer güvenilir bir şekilde iş yapıyorsa, bu bir görev ajanıdır."
+    "finalThought": "Ajanınız sadece soruları yanıtlıyorsa, o bir sohbet robotudur. Eğer güvenilir bir şekilde iş yapıyorsa, o bir Görev Ajanıdır.",
+    "taskAgentImageAlt": "Farklı bileşenler arasındaki etkileşimi gösteren bir görev ajanı sistem mimarisinin illüstrasyonu"
+  },
+  "ageAi": {
+    "heading": "Yapay Zeka Çağında Veri Bilimi: \"En Seksi İş\" Hala Seksi mi?",
+    "intro1": "\"Zamanların en iyisiydi, zamanların en kötüsüydü.\"",
+    "intro2": "On yıl önce, Harvard Business Review Veri Bilimcisini \"21. yüzyılın en seksi işi\" olarak adlandırdı. Bugün, zemin ayaklarımızın altından kayıyor. Veri yeteneğine olan talep yüksek kalmaya devam etse de, Üretken Yapay Zeka'nın yükselişi 'Veri Bilimcisi' olmanın ne anlama geldiğini temelden değiştiriyor.",
+    "realityCheck": {
+      "title": "Gerçeklik Kontrolü",
+      "content": "Arama, Reklamlar ve Öneri (SAR) gibi geleneksel alanlar olgunlaşıyor ve endüstri odağını ağır mühendislik ve yapay zeka mimarisine kaydırıyor. Garip bir paradoks görüyoruz.",
+      "lowBarTrap": {
+        "title": "\"Düşük Çıta\" Tuzağı",
+        "content": "Yüksek lisans öğrencileri artık veri temizleme, EDA ve görselleştirmeyi saniyeler içinde halletmek için GPT-4'ü kullanabilirler. Ancak, sağlam bir temel olmadan, yapay zekanın ne zaman \"halüsinasyon gördüğünü\" veya istatistiksel olarak hatalı sonuçlar sağladığını bilme muhakemesinden genellikle yoksundurlar."
+      },
+      "stakeholderShift": {
+        "title": "Paydaş Değişimi",
+        "content": "İş ortakları temel içgörüleri elde etmek için kendi istemlerini yazabildiklerinde, birçok DS uzmanı sonsuz toplantılar ve tekrarlayan istem mühendisliği içinde sıkışıp kalmış, \"yetersiz uyarılmış\" hissediyor."
+      }
+    },
+    "strategicPillars": {
+      "title": "Vazgeçilmez Kalmanın Yolları: İki Stratejik Sütun",
+      "intro": "Bu çağda gelişmek için 'model kurucuları' olmaktan 'değer mimarları' olmaya evrilmeliyiz. Bunun iki boyutta gerçekleştiğini görüyorum:",
+      "buildingTools": {
+        "title": "Araçları İnşa Etmek (Mühendis/Mimar Zihniyeti)",
+        "subtitle": "Yapay zekayı sadece kullanmayın; geliştirin.",
+        "points": [
+          {
+            "title": "Model Değerlendirme ve Yönetişim",
+            "content": "Yapay zeka çıktısı bir meta haline geldikçe, 'iyi' sonucun neye benzediğini tanımlayabilen kişi odadaki en değerli kişi olur. Özelleştirilmiş değerlendirme çerçevelerine odaklanın (Finans'ta risk ağırlıklandırması gibi)."
+          },
+          {
+            "title": "Alan İnce Ayarı",
+            "content": "Belirli iş bilgilerini LLM'lere enjekte etmek için LoRA veya RAG gibi tekniklerde ustalaşın."
+          },
+          {
+            "title": "Otomasyon",
+            "content": "'Sanal Analistler' veya otomatik deney boru hatları gibi dahili girişimlere liderlik edin."
+          }
+        ]
+      },
+      "leveragingTools": {
+        "title": "Araçlardan Yararlanmak (Stratejist Zihniyeti)",
+        "subtitle": "Çıktınızı 10 katına çıkarmak için yapay zekayı kullanın, böylece insanların en iyi yaptığı şeye odaklanabilirsiniz.",
+        "points": [
+          {
+            "title": "Alan Uzmanlığı",
+            "content": "Yapay zeka 'nasıl'ı bilir, ancak siz 'neden'i bilirsiniz. Derin iş anlayışı, yapay zekanın eksik olduğu doğru bağlamı sağlamanıza olanak tanır."
+          },
+          {
+            "title": "Eleştirel Düşünme ve Deney",
+            "content": "Yapay zeka kod üretebilse de, insan DS becerileri hala hipotez testi, nedensel çıkarım ve 'karışık' gerçek dünya verilerini yorumlamak için temeldir."
+          },
+          {
+            "title": "İletişim ve Etki",
+            "content": "Karmaşık verileri bir iş hikayesine dönüştürme ve paydaş güveni oluşturma yeteneği, 'zorunlu' bir gereklilik haline gelen 'yumuşak' bir beceridir."
+          }
+        ]
+      }
+    },
+    "bottomLine": {
+      "title": "Sonuç",
+      "content1": "Yapay zeka Veri Bilimini öldürmedi; çıtayı yükseltti. Değeriniz sadece SQL yazmak veya hiperparametreleri ayarlamaksa, 'seksilik' kayboluyor. Ancak iş sorunları ile yapay zeka çözümleri arasındaki boşluğu kapatabilirseniz, değeriniz hiç bu kadar yüksek olmamıştı.",
+      "content2": "Kişisel deneyim sizin avantajınızdır. Bir LLM mantığı taklit edebilir, ancak başarısız dağıtımlardan gelen yılların 'savaş yaralarına' veya karmaşık organizasyonlarda gezinerek oluşturulan sezgiye sahip değildir."
+    },
+    "discussion": {
+      "title": "Hadi tartışalım:",
+      "prompt": "Mevcut rolünüzde kendinizi daha 'verimli' mi yoksa 'değiştirilmiş' mi hissediyorsunuz? Araç setinizi bu yıl nasıl geliştiriyorsunuz?"
+    },
+    "hashtags": [
+      "#DataScience",
+      "#AI",
+      "#MachineLearning",
+      "#GenerativeAI",
+      "#CareerDevelopment",
+      "#TechTrends"
+    ]
   }
 }
-

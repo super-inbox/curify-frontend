@@ -5,10 +5,13 @@ export const routing = defineRouting({
     'en',    // 🇬🇧 English
     'zh',    // 🇨🇳 中文
     'es',    // 🇪🇸 Español  
+    'fr',    // 🇫🇷 Français
     'de',    // 🇩🇪 Deutsch
     'ja',    // 🇯🇵 日本語  
+    'ko',    // 🇰🇷 한국어
     'hi',    // 🇮🇳 हिंदी
-    'tr'     // 🇹🇷 Türkçe
+    'tr',    // 🇹🇷 Türkçe
+    'ru'     // 🇷🇺 Русский
   ],
   defaultLocale: 'en'
 });

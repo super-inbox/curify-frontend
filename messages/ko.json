@@ -1,691 +1,717 @@
 {
-    "home": {
+  "home": {
     "metadata": {
-      "title": "Curify | Power Content Creation with AI",
-      "description": "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale."
+      "title": "Curify | AI로 콘텐츠 제작 강화",
+      "description": "Curify는 크리에이터, 교육자 및 미디어 팀이 비디오, 만화 및 프레젠테이션을 대규모로 제작하고 현지화하도록 돕는 AI 네이티브 플랫폼입니다."
     },
     "hero": {
-      "title": "Power Content Creation with AI",
-      "description": "Curify Studio is building an AI-native content creation platform that empowers creators and organizations to overcome language and format barriers. We solve the challenge of scaling content across global audiences, enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly globalizing industry."
+      "title": "AI로 콘텐츠 제작 강화",
+      "description": "Curify Studio는 크리에이터와 조직이 언어 및 형식 장벽을 극복할 수 있도록 지원하는 AI 네이티브 콘텐츠 제작 플랫폼을 구축하고 있습니다. 우리는 톤, 스타일 및 감정적 깊이를 보존하는 진정한 번역을 가능하게 하여 글로벌 청중에게 콘텐츠를 확장하는 과제를 해결합니다. 미디어, 교육 및 엔터테인먼트의 교차점에서 운영하며 급변하는 글로벌 산업에서 크리에이터가 콘텐츠를 원활하게 조정할 수 있는 도구를 제공합니다."
     }
   },
   "coreFeatures": {
-  "oneShot": {
-    "title": "One-Shot Translation",
-    "desc": "Complete video translation with voice-over, subtitles, and lip sync in a single process."
+    "oneShot": {
+      "title": "원샷 번역",
+      "desc": "단일 프로세스로 음성 해설, 자막 및 립싱크가 포함된 전체 비디오 번역."
+    },
+    "toneColor": {
+      "title": "음색 보존",
+      "desc": "원래 화자의 고유한 음성 특성과 톤 품질을 유지합니다."
+    },
+    "emotional": {
+      "title": "감정적 발화",
+      "desc": "AI는 감정적 뉘앙스를 재현하여 언어 전반에 걸쳐 진정한 표현을 보장합니다."
+    },
+    "lipSync": {
+      "title": "립싱크 기술",
+      "desc": "번역된 오디오와 입 움직임을 완벽하게 일치시키는 고급 립 동기화."
+    },
+    "subtitle": {
+      "title": "자막 캡셔너",
+      "desc": "정확한 타이밍과 자연어 흐름을 갖춘 지능형 자막 생성."
+    },
+    "languages": {
+      "title": "170개 이상의 언어",
+      "desc": "네이티브 수준의 정확도로 170개 이상의 언어로 콘텐츠를 번역하세요."
+    }
   },
-  "toneColor": {
-    "title": "Tone Color Preservation",
-    "desc": "Maintains the original speaker's unique voice characteristics and tonal qualities."
-  },
-  "emotional": {
-    "title": "Emotional Speech",
-    "desc": "AI reproduces emotional nuances, ensuring authentic expression across languages."
-  },
-  "lipSync": {
-    "title": "Lip Sync Technology",
-    "desc": "Advanced lip synchronization that perfectly matches mouth movements to translated audio."
-  },
-  "subtitle": {
-    "title": "Subtitle Captioner",
-    "desc": "Intelligent subtitle generation with precise timing and natural language flow."
-  },
-  "languages": {
-    "title": "170+ Languages",
-    "desc": "Translate your content into over 170 languages with native-level accuracy."
-  
-  
-  }
-},
   "upcoming": {
-    "title": "Coming Soon",
-    "subtitle": "Next-generation features in development",
+    "title": "곧 출시 예정",
+    "subtitle": "개발 중인 차세대 기능",
     "styleTransfer": {
-      "title": "Style Transfer",
-      "desc": "Apply cinematic or brand-specific styles to your videos with AI-powered visual transformation.",
+      "title": "스타일 변환",
+      "desc": "AI 기반 시각적 변환을 통해 비디오에 영화적 또는 브랜드별 스타일을 적용하세요.",
       "icon": "🎨",
-      "status": "Coming Q3 2025",
-      "transcript": "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer."
+      "status": "2025년 3분기 출시 예정",
+      "transcript": "이 데모는 AI 기반 시각적 스타일 변환을 사용하여 실사 드라마 클립을 기발한 지브리 스타일 애니메이션으로 변환합니다."
     },
     "mangaTranslation": {
-      "title": "Manga Translation",
-      "desc": "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
+      "title": "만화 번역",
+      "desc": "텍스트 감지, 말풍선 편집 및 문화적 적응을 통한 자동 만화 및 만화 번역.",
       "icon": "📚",
-      "status": "Coming Q3 2025",
-      "transcript": "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing."
+      "status": "2025년 3분기 출시 예정",
+      "transcript": "이 프로토타입은 말풍선 감지 및 이중 언어 인플레이스 편집을 포함한 자동 만화 번역을 보여줍니다."
     },
     "templatedVideo": {
-      "title": "Templated Video Generation",
-      "desc": "Create professional videos from templates with AI-generated content and custom branding.",
+      "title": "템플릿 기반 비디오 생성",
+      "desc": "AI 생성 콘텐츠 및 맞춤형 브랜딩이 포함된 템플릿으로 전문적인 비디오를 만드세요.",
       "icon": "🎬",
-      "status": "Coming Q4 2025",
-      "transcript": "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals."
+      "status": "2025년 4분기 출시 예정",
+      "transcript": "이 데모는 스토리보드를 계획하고 시각적 요소를 조립하여 초기 미국 역사에 대한 역사적 장면을 생성하는 스크립트-투-비디오 파이프라인을 보여줍니다."
     },
-    "statusQ3": "Coming in Q3 2025",
-    "statusQ4": "Coming in Q4 2025"
+    "statusQ3": "2025년 3분기 출시 예정",
+    "statusQ4": "2025년 4분기 출시 예정"
   },
   "export": {
-    "title": "Export",
-    "export": "Export",
-    "downloading": "Downloading..."
+    "title": "내보내기",
+    "export": "내보내기",
+    "downloading": "다운로드 중..."
   },
   "delete": {
-    "title": "Double Confirm",
-    "message": "Are you sure you want to delete this project",
-    "warning": "This action cannot be undone.",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "deleting": "Deleting..."
+    "title": "이중 확인",
+    "message": "이 프로젝트를 삭제하시겠습니까?",
+    "warning": "이 작업은 취소할 수 없습니다.",
+    "cancel": "취소",
+    "delete": "삭제",
+    "deleting": "삭제 중..."
   },
   "userMenu": {
-    "topUpCredits": "Top Up Credits",
-    "remaining": "Remaining",
-    "planRemaining": "Plan Remaining", 
-    "validUntil": "Valid until",
-    "creditsHistory": "Credits History",
-    "subscribePlan": "Subscribe Plan",
-    "supportTicket": "Support Ticket",
-    "signOut": "Sign Out"
+    "topUpCredits": "크레딧 충전",
+    "remaining": "남음",
+    "planRemaining": "플랜 잔여",
+    "validUntil": "유효 기간",
+    "creditsHistory": "크레딧 내역",
+    "subscribePlan": "플랜 구독",
+    "supportTicket": "지원 티켓",
+    "signOut": "로그아웃"
   },
   "technology": {
     "multimodal": {
-      "title": "Multi-modal Recognition",
-      "desc": "We combine speech and subtitle signals to achieve more accurate and robust transcription. This dual-channel recognition reduces errors and ensures better alignment with the original content, especially in noisy or complex audio scenes."
+      "title": "멀티모달 인식",
+      "desc": "우리는 음성 및 자막 신호를 결합하여 더 정확하고 강력한 전사를 달성합니다. 이 이중 채널 인식은 오류를 줄이고 특히 시끄럽거나 복잡한 오디오 장면에서 원본 콘텐츠와의 더 나은 정렬을 보장합니다."
     },
     "emotional": {
-      "title": "Emotional Speech",
-      "desc": "Our voice synthesis models generate expressive, emotionally rich speech that enhances storytelling and viewer engagement. By capturing tone, rhythm, and nuance, we make AI voices feel more human and relatable."
+      "title": "감정적 발화",
+      "desc": "우리의 음성 합성 모델은 스토리텔링과 시청자 참여를 향상시키는 표현력이 풍부하고 감정적으로 풍부한 연설을 생성합니다. 톤, 리듬 및 뉘앙스를 포착하여 AI 음성을 더 인간적이고 공감할 수 있게 만듭니다."
     },
     "lengthaware": {
-      "title": "Length-aware Translation and Customization",
-      "desc": "We optimize translations not just for accuracy, but also for timing and pacing—crucial for video and voice alignment. Users can further customize tone, length, and phrasing to suit different content needs or audience preferences."
+      "title": "길이 인식 번역 및 사용자 정의",
+      "desc": "우리는 정확성뿐만 아니라 비디오 및 음성 정렬에 중요한 타이밍과 페이싱을 위해서도 번역을 최적화합니다. 사용자는 다양한 콘텐츠 요구 사항이나 청중 선호도에 맞게 톤, 길이 및 문구를 추가로 사용자 정의할 수 있습니다."
     },
     "controlled": {
-      "title": "Controlled Video Generation",
-      "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
+      "title": "제어된 비디오 생성",
+      "desc": "우리는 제어 가능한 시각적 요소 및 전환을 통해 구조화된 템플릿 기반 비디오 생성을 가능하게 합니다. 이는 크리에이터에게 창의적인 자유와 제작 일관성을 모두 제공하여 수동 작업을 줄이는 동시에 고품질 출력을 보장합니다."
     }
   },
   "tools": {
     "video_dubbing": {
-      "title": "Video Dubbing",
-      "desc": "Translate your video into any language with accurate localization and voice sync"
+      "title": "비디오 더빙",
+      "desc": "정확한 현지화 및 음성 동기화를 통해 비디오를 모든 언어로 번역하세요"
     },
     "subtitle_captioner": {
-      "title": "Subtitle Captioner",
-      "desc": "Auto-generate multilingual subtitles to enhance clarity and accessibility"
+      "title": "자막 캡셔너",
+      "desc": "명확성과 접근성을 높이기 위해 다국어 자막 자동 생성"
     },
     "lip_syncing": {
-      "title": "Lip Syncing",
-      "desc": "Match lips to speech perfectly with AI-powered lip sync"
+      "title": "립싱크",
+      "desc": "AI 기반 립싱크로 입술을 말과 완벽하게 일치시키세요"
     },
     "style_transfer": {
-      "title": "Style Transfer",
-      "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
+      "title": "스타일 변환",
+      "desc": "비디오를 Pixar, Ghibli 또는 기타 예술적 스타일로 변환하세요 — 곧 출시 예정"
     },
-    "coming_soon": "Coming Soon",
-    "create": "Create"
+    "coming_soon": "곧 출시 예정",
+    "create": "만들기"
   },
   "bilingual": {
     "metadata": {
-      "title": "Free Bilingual Subtitles Generator | Curify AI",
-      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+      "title": "무료 이중 언어 자막 생성기 | Curify AI",
+      "description": "Curify의 무료 AI 기반 도구로 비디오에 대한 이중 언어 자막을 만드세요. YouTube, TikTok, 교육 및 글로벌 크리에이터에게 적합합니다."
     },
-    "title": "Bilingual Subtitles Made Easy",
-  "intro": "Automatically generate subtitles in two languages using Curify’s AI subtitle engine. Ideal for creators, educators, and global businesses.",
-  "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto‑generated.",
-  "cta": "Try It Free",
-  "why": {
-    "title": "Why Choose Curify for Bilingual Subtitles?",
-    "point1": "Supports over 170 languages with accurate translation.",
-    "point2": "Preserves emotional tone and timing.",
-    "point3": "Perfect for YouTube, TikTok, and educational videos.",
-    "point4": "Export ready‑to‑publish subtitle files or embedded videos."
+    "title": "쉬운 이중 언어 자막",
+    "intro": "Curify의 AI 자막 엔진을 사용하여 두 가지 언어로 자막을 자동으로 생성하세요. 크리에이터, 교육자 및 글로벌 기업에 이상적입니다.",
+    "example": "예: AI 전략을 설명하는 젠슨 황 — 영어 + 중국어 자막 자동 생성.",
+    "cta": "무료로 사용해 보세요",
+    "why": {
+      "title": "이중 언어 자막에 Curify를 선택하는 이유는 무엇입니까?",
+      "point1": "정확한 번역으로 170개 이상의 언어를 지원합니다.",
+      "point2": "감정적 톤과 타이밍을 보존합니다.",
+      "point3": "YouTube, TikTok 및 교육용 비디오에 적합합니다.",
+      "point4": "게시 준비가 된 자막 파일 또는 임베디드 비디오를 내보냅니다."
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "q1": "정말 무료인가요?",
+      "a1": "예, Curify는 매월 제한된 자막 시간을 제공하는 무료 플랜을 제공합니다.",
+      "q2": "생성 후 자막을 편집할 수 있나요?",
+      "a2": "물론입니다. 내보내기 전에 타이밍, 번역 및 스타일을 조정할 수 있습니다."
+    }
   },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "q1": "Is it really free?",
-    "a1": "Yes, Curify offers a free plan with limited subtitle minutes per month.",
-    "q2": "Can I edit subtitles after generation?",
-    "a2": "Absolutely. You can adjust timing, translation, and style before exporting."
-  }
-},
-"videoDubbing": {
+  "videoDubbing": {
     "metadata": {
-      "title": "AI Video Dubbing Tool | Curify AI",
-      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+      "title": "AI 비디오 더빙 도구 | Curify AI",
+      "description": "AI 음성 복제, 감정 보존 및 립싱크를 사용하여 비디오를 170개 이상의 언어로 더빙하세요. Curify의 AI 더빙을 무료로 사용해 보세요."
     },
-    "title": "AI Video Dubbing with Natural Voice",
-    "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands."
+    "title": "자연스러운 목소리의 AI 비디오 더빙",
+    "description": "현실적인 AI 음성 및 립싱크로 비디오 콘텐츠를 170개 이상의 언어로 번역하고 더빙하세요. 국제 크리에이터 및 브랜드에 적합합니다."
   },
   "about": {
     "metadata": {
-      "title": "About Curify | Vision, Technology & Team",
-      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+      "title": "Curify 소개 | 비전, 기술 및 팀",
+      "description": "AI로 콘텐츠 제작을 민주화하려는 Curify의 비전에 대해 알아보세요. 우리는 미디어 현지화의 미래를 구축하는 엔지니어 및 크리에이터 팀입니다."
     }
   },
   "contact": {
     "metadata": {
-      "title": "Contact Us | Curify Studio",
-      "description": "Get in touch with the Curify team for support, sales, or partnerships. We are here to help you scale your content globally."
+      "title": "문의하기 | Curify Studio",
+      "description": "지원, 판매 또는 파트너십을 위해 Curify 팀에 문의하세요. 우리는 귀하가 콘텐츠를 전 세계적으로 확장하도록 돕기 위해 여기 있습니다."
     }
   },
   "blog": {
     "metadata": {
-      "title": "Curify Blog | AI Content Creation Insights",
-      "description": "Read the latest articles on AI video generation, dubbing, style transfer, and the future of content creation."
+      "title": "Curify 블로그 | AI 콘텐츠 제작 인사이트",
+      "description": "AI 비디오 생성, 더빙, 스타일 변환 및 콘텐츠 제작의 미래에 대한 최신 기사를 읽어보세요."
     }
   },
   "pricing": {
     "metadata": {
-      "title": "Pricing Plans | Curify Studio",
-      "description": "Choose the right plan for your content creation needs. From free tools to enterprise-grade AI dubbing and localization."
+      "title": "가격 플랜 | Curify Studio",
+      "description": "콘텐츠 제작 요구 사항에 맞는 플랜을 선택하세요. 무료 도구에서 엔터프라이즈급 AI 더빙 및 현지화까지."
     },
     "header": {
-    "title": "Getting started with a plan",
-    "subtitle": "Choose a plan that fits your needs."
-  },
-  "common": {
-    "month": "Month",
-    "pricing": "Pricing",
-    "receive": "Receive"
-  },
-  "buttons": {
-    "signUp": "Sign up",
-    "subscribePlan": "Subscribe Plan",
-    "currentPlan": "Current Plan",
-    "comingSoon": "Coming Soon",
-    "downgradeToFree": "Downgrade to Free",
-    "downgradeToCreator": "Downgrade to Creator",
-    "contactSales": "Contact Sales"
-  },
-  "plans": {
-    "free": {
-      "name": "Free",
-      "description": "Great for testing tools and light work",
-      "features": [
-        "Download videos without watermark",
-        "1 hour free subtitle processing",
-        "Export SRT files"
-      ]
+      "title": "플랜으로 시작하기",
+      "subtitle": "필요에 맞는 플랜을 선택하세요."
     },
-    "creator": {
-      "name": "Creator",
-      "description": "Ideal for small creators doing regular subtitling and light dubbing",
-      "plusTitle": "Everything in Free, plus:",
-      "features": [
-        "Lip Syncing",
-        "Batch processing",
-        "5 hours free subtitle processing",
-        "Up to 30 minutes per task"
-      ]
+    "common": {
+      "month": "월",
+      "pricing": "가격",
+      "receive": "수신"
     },
-    "pro": {
-      "name": "Pro",
-      "description": "Coming Soon — Designed for high-volume creators",
-      "plusTitle": "Everything in Creator, plus:",
-      "features": [
-        "Voice beautification & noise removal",
-        "Priority queue",
-        "Up to 60 min per task",
-        "Unlimited subtitle minutes"
-      ]
+    "buttons": {
+      "signUp": "가입하기",
+      "subscribePlan": "플랜 구독",
+      "currentPlan": "현재 플랜",
+      "comingSoon": "곧 출시 예정",
+      "downgradeToFree": "무료로 다운그레이드",
+      "downgradeToCreator": "Creator로 다운그레이드",
+      "contactSales": "영업팀 문의"
     },
-    "enterprise": {
-      "name": "Enterprise",
-      "description": "For teams, studios, and enterprise workflows",
-      "customPricing": "Custom",
-      "unlimited": "Unlimited 🐚",
-      "tailoredSupport": "& tailored support",
-      "plusTitle": "Everything in Pro, plus:",
-      "features": [
-        "Dedicated account manager",
-        "On-premise deployment options",
-        "API access & usage analytics",
-        "Custom integrations & SLA",
-        "Unlimited processing hours"
-      ]
-    }
-  },
-  "table": {
-    "header": {
-      "feature": "Feature / Limit"
-    },
-    "rows": {
-      "videoDownloadWithWatermark": "Video Download with Watermark",
-      "videoDownloadWithoutWatermark": "Video Download without Watermark",
-      "downloadSrt": "Download SRT File",
-      "voiceBeautification": "Voice Beautification & Noise Removal",
-      "lipSync": "Lip Sync",
-      "subtitleTools": "Subtitle Tools (add/remove, no translation)",
-      "batchProcessing": "Batch Processing",
-      "maxVideoLength": "Max Video Length per Task",
-      "monthlyCredits": "Monthly Free Credits",
-      "priorityQueue": "Priority Queue / Faster Processing",
-      "creditTopUp": "Credit Top-up"
-    },
-    "values": {
-      "free": "Free",
-      "unlimited": "Unlimited",
-      "oneHourPerMonth": "1 hrs/month",
-      "fiveHoursPerMonth": "5 hrs/month",
-      "fiveMinutes": "5 min",
-      "thirtyMinutes": "30 min",
-      "sixtyMinutes": "60 min"
-    }
-  }
-},
-"aeVsComfyUi": {
-  "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
-  "heading": "🎨 AE vs ComfyUI",
-  "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
-  "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
-  "table": {
-    "colAE": "AE",
-    "colComfy": "ComfyUI",
-    "row1a": "Precise VFX and motion control",
-    "row1b": "AI-native generation of videos",
-    "row2a": "Timeline-based editing",
-    "row2b": "Workflow/node-based rendering",
-    "row3a": "Manual / plugin-driven workflow",
-    "row3b": "Diffusion + LLM + multimodal orchestration"
-  },
-  "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
-},
-"video_translation_eval":{
-  "title": "Evaluating AI Video Translation Quality",
-  "subtitle": "Metrics that Matter",
-  "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we’ve built a robust evaluation pipeline to ensure each piece meets industry standards.",
-  "section1_title": "1. Transcription Quality",
-  "section1_engine": "Engine: WhisperX",
-  "section1_metrics": ["WER (Word Error Rate)", "Punctuation F1 (for expressiveness and readability)"],
-  "section2_title": "2. Translation Quality",
-  "section2_engine": "Engines: Helsinki, MarianMT",
-  "section2_metrics": ["BLEU (standard metric)", "COMET / chrF++ (semantic similarity)", "Human review: fluency + adequacy"],
-  "section3_title": "3. Voice Synthesis Quality",
-  "section3_engine": "Engines: XTTS / YourTTS",
-  "section3_metrics": ["MOS (Naturalness, similarity, expressiveness)", "Speaker verification accuracy"],
-  "section4_title": "4. Alignment & Lip Sync",
-  "section4_metrics": ["Segment duration mismatch", "Wav2Lip sync confidence", "Temporal drift analysis"],
-  "section5_title": "5. Semantic Preservation",
-  "section5_method": "We use LLMs (like GPT-4) to judge whether the translated speech preserves the original meaning, tone, and emotion. Example prompt:",
-  "section5_prompt": "Compare this Mandarin transcript to the English voiceover. Does the tone, intent, and content match? Rate 1–5 and explain.",
-  "section6_title": "6. User Feedback & GTM Validation",
-  "section6_metrics": ["Voice quality fit for product category", "Viewer retention improvement", "Adoption willingness from early users (e.g., 1688 sellers)"],
-  "closing": "At Curify, we don’t just translate — we preserve storytelling, emotion, and clarity across languages. If you’re ready to scale your voice globally, get in touch.",
-  "available_locales": "Post available in: [EN] [ZH] [ES] [DE]"
-},
-
-"storyboardToPipeline": {
-  "title": "From Storyboards to AI Pipelines – Redefining Animation",
-  "intro": {
-    "p1": "Most people think AI video means \"text in, clip out.\" But if you're aiming for <strong>cinematic, director-level control</strong>, it's an entirely different game.",
-    "p2": "In traditional animation, every detail matters — character design, motion continuity, timing, and scene transitions. Our goal is to make AI match that level of precision.",
-    "p3": "Animation today is both an art and a structured orchestration challenge. We think like directors, but build like engineers.",
-    "p4": "That's why we build <strong>Controlled Generation Pipelines</strong> instead of one-shot generation. These pipelines combine structure and creativity:",
-    "pipelineItems": [
-      "Storyboard-to-Video: JSON-based scene specs with IDs, timing, and camera metadata",
-      "ComfyUI-based workflows: node-graph DAGs with versioned checkpoints, LoRA stacks, and seeds",
-      "Temporal & multimodal control: shared scene IDs across image, motion, audio, and subtitles"
-    ],
-    "p5": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
-    "technicalNotes": [
-      "All stages read/write typed artifacts (JSON/CSV, PNG sequences, WAV/MP3, MP4, .aep)",
-      "Pipelines are orchestrated via Python/CLI (e.g., ComfyUI API, ffmpeg, TTS APIs)",
-      "Every run is reproducible through stored config (model, sampler, seed, prompts, duration)"
-    ]
-  },
-  "pipeline": {
-    "title": "AI Video Generation Pipeline",
-    "description": "The AI video generation pipeline transforms text prompts into polished videos through structured stages with explicit inputs, outputs, and configs.",
-    "prompt": "1. Prompt (raw idea → structured JSON spec)",
-    "storyboard": "2. Storyboard (scene/shot table with timing, camera, and description)",
-    "images": "3. Images (per-shot keyframes generated via Stable Diffusion / ComfyUI)",
-    "animation": "4. Animation (image sequences → motion, parallax, and effects)",
-    "voiceOver": "5. Voice Over (TTS + alignment data)",
-    "finalVideo": "6. Final Video (ffmpeg composition: video + audio + subtitles)",
-    "features": [
-      "JSON-first design: every scene is addressable and scriptable (scene_id, shot_id)",
-      "ComfyUI-based workflows: modular, reproducible, composable DAGs for image/video generation",
-      "Temporal & multimodal control: consistent seeds, character embeddings, and timing across modalities"
-    ],
-    "exampleIntro": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
-    "artifacts": {
-      "promptSpec": "prompt_run_001.json",
-      "storyboardTable": "storyboard_v1.csv",
-      "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
-      "audioOutput": "audio/voiceover_final.wav",
-      "subtitleFile": "subtitles/storyboard_v1.srt",
-      "finalVideoFile": "exports/storyboard_v1_final.mp4"
-    }
-  },
-  "steps": {
-    "step1": {
-      "title": "Step 1: Start with a Basic Prompt",
-      "example": "A girl stands at a midnight train station, wind blowing her hair.",
-      "expandedPrompt": "With the help of GPT or a local LLM, we expand this into a structured JSON object with global style, character definitions, and per-scene breakdown.",
-      "technicalDetails": {
-        "llmFields": [
-          "global_style: art style, camera language, color palette",
-          "characters: name, age, look, outfit, emotional state",
-          "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
-        ],
-        "outputFile": "prompt_run_001.json",
-        "exampleStack": "Python script calling OpenAI/LLM API and writing JSON to disk"
+    "plans": {
+      "free": {
+        "name": "무료",
+        "description": "도구 테스트 및 가벼운 작업에 적합",
+        "features": [
+          "워터마크 없이 비디오 다운로드",
+          "1시간 무료 자막 처리",
+          "SRT 파일 내보내기"
+        ]
+      },
+      "creator": {
+        "name": "크리에이터",
+        "description": "정기적인 자막 및 가벼운 더빙을 하는 소규모 크리에이터에게 이상적",
+        "plusTitle": "무료의 모든 것, 플러스:",
+        "features": [
+          "립싱크",
+          "일괄 처리",
+          "5시간 무료 자막 처리",
+          "작업당 최대 30분"
+        ]
+      },
+      "pro": {
+        "name": "프로",
+        "description": "곧 출시 예정 — 대량 크리에이터를 위해 설계됨",
+        "plusTitle": "Creator의 모든 것, 플러스:",
+        "features": [
+          "음성 미화 및 노이즈 제거",
+          "우선 순위 대기열",
+          "작업당 최대 60분",
+          "무제한 자막 시간"
+        ]
+      },
+      "enterprise": {
+        "name": "엔터프라이즈",
+        "description": "팀, 스튜디오 및 엔터프라이즈 워크플로용",
+        "customPricing": "맞춤형",
+        "unlimited": "무제한 🐚",
+        "tailoredSupport": "및 맞춤형 지원",
+        "plusTitle": "Pro의 모든 것, 플러스:",
+        "features": [
+          "전담 계정 관리자",
+          "온프레미스 배포 옵션",
+          "API 액세스 및 사용 분석",
+          "맞춤형 통합 및 SLA",
+          "무제한 처리 시간"
+        ]
       }
     },
-    "step2": {
-      "title": "Step 2: Convert Prompt to a Storyboard Table",
-      "description": "The JSON spec is flattened into a storyboard table (CSV or Notion) that both humans and the pipeline can read.",
-      "technicalDetails": {
-        "columns": [
-          "scene_id",
-          "shot_id",
-          "start_time",
-          "end_time",
-          "duration_seconds",
-          "camera_type",
-          "visual_description",
-          "character_state",
-          "motion_notes"
-        ],
-        "storage": "storyboard_v1.csv (used as the single source of truth for downstream steps)",
-        "automation": "Python / Node.js script transforms prompt_run_001.json → storyboard_v1.csv"
+    "table": {
+      "header": {
+        "feature": "기능 / 제한"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "워터마크 포함 비디오 다운로드",
+        "videoDownloadWithoutWatermark": "워터마크 없이 비디오 다운로드",
+        "downloadSrt": "SRT 파일 다운로드",
+        "voiceBeautification": "음성 미화 및 노이즈 제거",
+        "lipSync": "립싱크",
+        "subtitleTools": "자막 도구(추가/제거, 번역 없음)",
+        "batchProcessing": "일괄 처리",
+        "maxVideoLength": "작업당 최대 비디오 길이",
+        "monthlyCredits": "월간 무료 크레딧",
+        "priorityQueue": "우선 순위 대기열 / 더 빠른 처리",
+        "creditTopUp": "크레딧 충전"
+      },
+      "values": {
+        "free": "무료",
+        "unlimited": "무제한",
+        "oneHourPerMonth": "1시간/월",
+        "fiveHoursPerMonth": "5시간/월",
+        "fiveMinutes": "5분",
+        "thirtyMinutes": "30분",
+        "sixtyMinutes": "60분"
       }
+    }
+  },
+  "aeVsComfyUi": {
+    "title": "AE 대 ComfyUI – 애니메이션 재정의(3부)",
+    "heading": "🎨 AE 대 ComfyUI",
+    "intro1": "우리는 종종 질문을 받습니다: 그냥 After Effects(AE)을 사용하면 안 되나요? 아니면 왜 ComfyUI에 신경쓰나요? 둘 다 필수적입니다. 하나는 미세한 제어를 제공하고 다른 하나는 생성적인 창의성을 제공합니다.",
+    "intro2": "AE은 타임라인의 정확성과 전환, 조명 및 효과에 대한 제어 기능을 제공합니다. ComfyUI은 확산, 텍스트 및 다중 모드 오케스트레이션을 결합한 AI 기반 워크플로를 제공합니다.",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "정확한 VFX 및 모션 제어",
+      "row1b": "AI 기반 비디오 생성",
+      "row2a": "타임라인 기반 편집",
+      "row2b": "Workflow/node-based 렌더링",
+      "row3a": "수동/플러그인 기반 워크플로",
+      "row3b": "확산 + LLM + 다중 모달 오케스트레이션"
     },
-    "step3": {
-      "title": "🛠️ Step 3: Generate Visuals",
-      "description": "Generate high-quality keyframe images for each shot using Stable Diffusion through a ComfyUI workflow.",
-      "points": [
-        "🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each row in `storyboard_v1.csv` into a high-res keyframe.",
-        "Keep the style consistent by using the same base checkpoint, LoRA stack, sampler, and seed policy across all shots.",
-        "Refine images with inpainting (for faces/hands) and outpainting (for extended compositions and camera motion)."
+    "outro": "작업 흐름에서 ComfyUI은 AI 생성 및 반복을 처리하고 AE은 전환, 오버레이 및 합성과 같은 최종 모양을 다듬습니다."
+  },
+  "video_translation_eval": {
+    "title": "AI 영상번역 품질 평가",
+    "subtitle": "중요한 지표",
+    "intro": "여러 언어로 비디오를 번역하는 것은 결코 쉬운 일이 아닙니다. 여기에는 전사, 번역, 음성 합성, 타이밍 등이 포함됩니다. Curify에서는 각 제품이 업계 표준을 충족하는지 확인하기 위해 강력한 평가 파이프라인을 구축했습니다.",
+    "section1_title": "1. 전사 품질",
+    "section1_engine": "엔진: WhisperX",
+    "section1_metrics": [
+      "WER(단어 오류율)",
+      "구두점 F1(표현력 및 가독성을 위해)"
+    ],
+    "section2_title": "2. 번역 품질",
+    "section2_engine": "엔진: Helsinki, MarianMT",
+    "section2_metrics": [
+      "BLEU(표준 측정항목)",
+      "COMET / chrF++(의미적 유사성)",
+      "인적 검토: 유창성 + 타당성"
+    ],
+    "section3_title": "3. 음성합성 품질",
+    "section3_engine": "엔진: XTTS / YourTTS",
+    "section3_metrics": [
+      "MOS (자연성, 유사성, 표현성)",
+      "화자 검증 정확도"
+    ],
+    "section4_title": "4. 정렬 및 립싱크",
+    "section4_metrics": [
+      "세그먼트 기간 불일치",
+      "Wav2Lip 동기화 신뢰도",
+      "시간 드리프트 분석"
+    ],
+    "section5_title": "5. 의미 보존",
+    "section5_method": "우리는 LLMs(예: GPT-4)을 사용하여 번역된 음성이 원래 의미, 어조, 감정을 유지하는지 여부를 판단합니다. 예시 프롬프트:",
+    "section5_prompt": "이 중국어 대본을 영어 음성 해설과 비교해 보세요. 어조, 의도, 내용이 일치하는가? 1~5점으로 평가하고 설명하세요.",
+    "section6_title": "6. 사용자 피드백 및 GTM 검증",
+    "section6_metrics": [
+      "제품 카테고리에 맞는 음성 품질",
+      "시청자 유지율 개선",
+      "초기 사용자의 채택 의지(예: 1688 판매자)"
+    ],
+    "closing": "Curify에서는 단순히 번역하는 것이 아니라 언어 전반에 걸쳐 스토리텔링, 감정, 명확성을 보존합니다. 전 세계적으로 목소리를 확장할 준비가 되었다면 연락하세요.",
+    "available_locales": "게시물 사용 가능 지역: [EN] [ZH] [ES] [DE]"
+  },
+  "storyboardToPipeline": {
+    "title": "스토리보드에서 AI 파이프라인까지 - 애니메이션 재정의",
+    "intro": {
+      "p1": "대부분의 사람들은 AI 비디오가 \"텍스트 입력, 클립아웃\"을 의미한다고 생각합니다. 하지만 <strong>영화적이고 감독 수준의 제어</strong>를 목표로 한다면 완전히 다른 게임이 됩니다.",
+      "p2": "기존 애니메이션에서는 캐릭터 디자인, 모션 연속성, 타이밍, 장면 전환 등 모든 세부 사항이 중요합니다. 우리의 목표는 AI가 그 수준의 정밀도와 일치하도록 만드는 것입니다.",
+      "p3": "오늘날 애니메이션은 예술이자 구조화된 오케스트레이션의 과제입니다. 우리는 감독처럼 생각하지만 엔지니어처럼 만듭니다.",
+      "p4": "이것이 바로 우리가 일회성 생성 대신 <strong>제어형 생성 파이프라인</strong>을 구축하는 이유입니다. 이러한 파이프라인은 구조와 창의성을 결합합니다.",
+      "pipelineItems": [
+        "스토리보드-비디오: ID, 타이밍 및 카메라 메타데이터가 포함된 JSON 기반 장면 사양",
+        "ComfyUI 기반 워크플로: 버전이 지정된 체크포인트, LoRA 스택 및 시드가 포함된 노드 그래프 DAGs",
+        "시간 및 다중 모달 제어: 이미지, 모션, 오디오 및 자막 전반에 걸쳐 장면 ID 공유"
       ],
-      "technicalDetails": {
-        "modelConfig": {
-          "checkpoint": "sd_xl_base_1.0.safetensors",
-          "vae": "sdxl_vae.safetensors",
-          "sampler": "euler_a",
-          "steps": 25,
-          "cfgScale": 6.5,
-          "resolution": "1024x576",
-          "loraStack": [
-            "character_girl_v2.safetensors",
-            "style_cinematic_blue_hour.safetensors"
-          ]
-        },
-        "consistency": {
-          "seedStrategy": "fixed_per_scene",
-          "seedExample": "seed = hash(scene_id + character_name)",
-          "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
-        },
-        "comfyui": {
-          "workflowFile": "workflows/storyboard_to_frame.json",
-          "inputMethod": "custom node / HTTP API reading storyboard_v1.csv and modelConfig",
-          "batching": "GPU batches keyed by scene_id to reuse loaded weights"
+      "p5": "이제 AI 파이프라인이 실제로 어떻게 작동하는지 보여주는 간단한 예를 살펴보겠습니다.",
+      "technicalNotes": [
+        "모든 단계 read/write 유형의 아티팩트(JSON/CSV, PNG 시퀀스, WAV/MP3, MP4,.aep)",
+        "파이프라인은 Python/CLI(예: ComfyUI API, ffmpeg, TTS APIs)을 통해 조정됩니다.",
+        "저장된 구성(모델, 샘플러, 시드, 프롬프트, 기간)을 통해 모든 실행을 재현할 수 있습니다."
+      ]
+    },
+    "pipeline": {
+      "title": "AI 영상 생성 파이프라인",
+      "description": "AI 비디오 생성 파이프라인은 명시적인 입력, 출력 및 구성이 포함된 구조화된 단계를 통해 텍스트 프롬프트를 세련된 비디오로 변환합니다.",
+      "prompt": "1. 프롬프트(원시 아이디어 → 구조화된 JSON 사양)",
+      "storyboard": "2. 스토리보드(타이밍, 카메라, 설명이 포함된 scene/shot 테이블)",
+      "images": "3. 이미지(Stable Diffusion / ComfyUI을 통해 생성된 샷당 키프레임)",
+      "animation": "4. 애니메이션(이미지 시퀀스 → 모션, 시차 및 효과)",
+      "voiceOver": "5. 보이스 오버(TTS + 정렬 데이터)",
+      "finalVideo": "6. 최종 영상 (ffmpeg 구성: 영상 + 음성 + 자막)",
+      "features": [
+        "JSON-첫 번째 디자인: 모든 장면은 주소 지정 및 스크립트 가능(scene_id, Shot_id)",
+        "ComfyUI 기반 워크플로: image/video 생성을 위한 모듈식, 재현 가능, 구성 가능 DAGs",
+        "시간 및 다중 모드 제어: 양식 전반에 걸쳐 일관된 시드, 문자 임베딩 및 타이밍"
+      ],
+      "exampleIntro": "이제 AI 파이프라인이 실제로 어떻게 작동하는지 보여주는 간단한 예를 살펴보겠습니다.",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
+    "steps": {
+      "step1": {
+        "title": "1단계: 기본 프롬프트로 시작",
+        "example": "한 소녀가 자정 기차역에 서서 바람에 머리카락을 날리고 있습니다.",
+        "expandedPrompt": "GPT 또는 로컬 LLM의 도움으로 이를 전역 스타일, 문자 정의 및 장면별 분석이 포함된 구조화된 JSON 개체로 확장합니다.",
+        "technicalDetails": {
+          "llmFields": [
+            "global_style: 아트 스타일, 카메라 언어, 색상 팔레트",
+            "캐릭터: 이름, 나이, 외모, 의상, 감정상태",
+            "장면: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "Python 스크립트는 OpenAI/LLM API을 호출하고 JSON을 디스크에 씁니다."
+        }
+      },
+      "step2": {
+        "title": "2단계: 프롬프트를 스토리보드 테이블로 변환",
+        "description": "JSON 사양은 인간과 파이프라인이 모두 읽을 수 있는 스토리보드 테이블(CSV 또는 Notion)으로 평면화됩니다.",
+        "technicalDetails": {
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "motion_notes"
+          ],
+          "storage": "storyboard_v1.csv(다운스트림 단계의 단일 정보 소스로 사용됨)",
+          "automation": "Python / Node.js 스크립트는 prompt_run_001.json → storyboard_v1.csv를 변환합니다."
+        }
+      },
+      "step3": {
+        "title": "🛠️ 3단계: 비주얼 생성",
+        "description": "ComfyUI 워크플로를 통해 Stable Diffusion을(를) 사용하여 각 샷에 대해 고품질 키프레임 이미지를 생성하세요.",
+        "points": [
+          "🎨 <strong>Stable Diffusion</strong> 또는 <strong>ComfyUI</strong>을 사용하여 `storyboard_v1.csv`의 각 행을 고해상도 키프레임으로 전환하세요.",
+          "모든 샷에서 동일한 기본 체크포인트, LoRA 스택, 샘플러 및 시드 정책을 사용하여 스타일의 일관성을 유지하세요.",
+          "인페인팅(faces/hands용) 및 아웃페인팅(확장된 구성 및 카메라 동작용)을 사용하여 이미지를 다듬습니다."
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "consistency": {
+            "seedStrategy": "fixed_per_scene",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "사용자 정의 노드/HTTP API storyboard_v1.csv 및 modelConfig 읽기",
+            "batching": "GPU 로드된 가중치를 재사용하기 위해 scene_id로 키가 지정된 배치"
+          }
+        }
+      },
+      "step4": {
+        "title": "🎬 4단계: After Effects에 모션 및 분위기 추가",
+        "description": "Adobe After Effects(또는 이에 상응하는 합성기)을 사용하여 모션, 시차 및 대기로 정적 키프레임을 향상합니다.",
+        "points": [
+          "이미지 시퀀스나 키프레임을 <strong>Adobe After Effects</strong>에 레이어 구성으로 가져옵니다.",
+          "키프레임 애니메이션 적용: 팬, 확대/축소, 시차 레이어, 안개 오버레이, 광선 및 조명 깜박임.",
+          "장면 사이에 주변 소리 신호와 영화 같은 전환을 추가합니다."
+        ],
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png(추가로 선택적인 depth/alpha 지도)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "AE scripts/ExtendScript 또는 JSX를 사용하여 scene_id당 구성 요소를 자동 생성하세요.",
+            "storyboard_v1.csv에서 `duration_seconds`을 매핑 → 구성 시간.",
+            "필요한 경우 AE 플러그인이나 비디오 인식 확산 도구를 통해 중간 프레임을 생성하세요."
+          ],
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "🎧 5단계: 음성 및 자막 추가",
+        "description": "접근성과 명확성을 위해 스토리보드에 맞춰 음성 해설을 생성하고 자막을 첨부하세요.",
+        "points": [
+          "일관된 화자 프로필을 사용하여 스크립트에서 자연스러운 음성 해설을 생성하려면 <strong>XTTS</strong> 또는 <strong>ElevenLabs</strong>을 사용하세요.",
+          "약어(예: API, NBA)의 경우 영어 스니펫을 별도로 생성하고 게시물에 병합하여 깔끔한 발음을 유지하세요.",
+          "음성 해설 트랙에 동기화된 `.srt` 또는 `.json` 타임라인 파일을 사용하여 자막을 추가하세요."
+        ],
+        "technicalDetails": {
+          "scriptSource": "prompt_run_001.json + storyboard_v1.csv에서 가져온 대화 및 내레이션",
+          "ttsConfig": {
+            "engine": "XTTS 또는 ElevenLabs",
+            "voiceId": "cinematic_female_en",
+            "sampleRate": 44100,
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voiceover.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "storyboard_v1.csv의 `start_time` / `end_time`을 자막 신호와 정렬합니다. 총 오디오 길이 ≒ 최종 타임라인 지속 시간을 보장하세요."
+        }
+      },
+      "step6": {
+        "title": "6단계: FFMPEG을 사용한 최종 구성",
+        "description": "FFMPEG을(를) 사용하여 모든 부분을 오디오와 자막이 포함된 하나의 최종 비디오 파일로 결합하세요.",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voiceover.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4(H.264, 24fps, AAC 오디오)"
         }
       }
     },
-    "step4": {
-      "title": "🎬 Step 4: Add Motion and Atmosphere in After Effects",
-      "description": "Enhance static keyframes with motion, parallax, and atmosphere using Adobe After Effects (or an equivalent compositor).",
-      "points": [
-        "Import image sequences or keyframes into <strong>Adobe After Effects</strong> as layered compositions.",
-        "Apply keyframe animations: pan, zoom, parallax layers, fog overlays, glow and light flicker.",
-        "Add ambient sound cues and cinematic transitions between scenes."
-      ],
-      "technicalDetails": {
-        "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optional depth/alpha maps)",
-        "projectFile": "ae/storyboard_v1.aep",
-        "automation": [
-          "Use AE scripts/ExtendScript or JSX to auto-create comps per scene_id.",
-          "Map `duration_seconds` from storyboard_v1.csv → comp duration.",
-          "Generate intermediate frames via AE plugins or video-aware diffusion tools if needed."
-        ],
-        "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
-      }
-    },
-    "step5": {
-      "title": "🎧 Step 5: Add Voice and Subtitles",
-      "description": "Generate voiceover aligned to the storyboard and attach subtitles for accessibility and clarity.",
-      "points": [
-        "Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers from the script, using a consistent speaker profile.",
-        "For acronyms (like API, NBA), generate English snippets separately and merge in post to keep pronunciation clean.",
-        "Add subtitles using `.srt` or `.json` timeline files synced to the voiceover track."
-      ],
-      "technicalDetails": {
-        "scriptSource": "dialogue and narration pulled from prompt_run_001.json + storyboard_v1.csv",
-        "ttsConfig": {
-          "engine": "XTTS or ElevenLabs",
-          "voiceId": "cinematic_female_en",
-          "sampleRate": 44100,
-          "format": "wav"
-        },
-        "outputs": {
-          "voiceFile": "audio/storyboard_v1_voiceover.wav",
-          "subtitleFile": "subtitles/storyboard_v1.srt"
-        },
-        "syncStrategy": "align `start_time` / `end_time` from storyboard_v1.csv with subtitle cues; ensure total audio length ≈ final timeline duration"
-      }
-    },
-    "step6": {
-      "title": "Step 6: Final Composition with FFMPEG",
-      "description": "Use FFMPEG to combine all pieces into one final video file with audio and subtitles.",
-      "technicalDetails": {
-        "inputs": {
-          "video": "ae_renders/storyboard_v1_timeline.mp4",
-          "audio": "audio/storyboard_v1_voiceover.wav",
-          "subtitles": "subtitles/storyboard_v1.srt"
-        },
-        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-        "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC audio)"
-      }
-    }
+    "whatYouNeed": "📁 필요한 것",
+    "whatYouNeedTechnical": [
+      "GPU, Stable Diffusion / ComfyUI에 대해 최소 12GB VRAM",
+      "JSON/CSV 변환 및 자동화 스크립트를 위한 Python 환경",
+      "ComfyUI은 필수 사용자 정의 노드 및 워크플로와 함께 설치되었습니다.",
+      "모션 및 FX를 위한 Adobe After Effects 또는 유사한 합성기",
+      "XTTS / ElevenLabs API TTS 액세스",
+      "ffmpeg이(가) 설치되어 명령줄에서 사용 가능"
+    ],
+    "cta": "🚀 AI로 스토리보드에 생기를 불어넣을 준비가 되셨나요? <strong>우리는 시작하는 데 도움이 되는 예제 JSON, ComfyUI 워크플로 및 ffmpeg/AE 템플릿이 포함된 전체 시작 키트</strong>를 제공할 수 있습니다."
   },
-  "whatYouNeed": "📁 What You'll Need",
-  "whatYouNeedTechnical": [
-    "GPU with at least 12GB VRAM for Stable Diffusion / ComfyUI",
-    "Python environment for JSON/CSV transforms and automation scripts",
-    "ComfyUI installed with required custom nodes and workflows",
-    "Adobe After Effects or similar compositor for motion and FX",
-    "XTTS / ElevenLabs API access for TTS",
-    "ffmpeg installed and available on the command line"
-  ],
-  "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started."
-},
-
   "SceneDetection": {
     "tags": {
-      "computerVision": "Computer Vision",
-      "deepLearning": "Deep Learning",
-      "realTimeAnalysis": "Real-time Analysis"
+      "computerVision": "컴퓨터 비전",
+      "deepLearning": "딥러닝",
+      "realTimeAnalysis": "실시간 분석"
     },
     "hero": {
-      "title": "Transform Video into Storyboards with AI",
-      "subtitle": "How we built an advanced pipeline that turns hours of footage into structured, searchable storyboards in minutes."
+      "title": "AI를 통해 비디오를 스토리보드로 변환",
+      "subtitle": "몇 시간 분량의 영상을 구조화되고 검색 가능한 스토리보드로 몇 분 만에 변환하는 고급 파이프라인을 구축한 방법입니다."
     },
     "introduction": {
-      "paragraph1": "Imagine being able to upload hours of raw footage and within minutes get a <strong>detailed, scene-by-scene breakdown</strong> of your entire video. That's exactly what our AI-powered scene detection system delivers.",
-      "paragraph2": "Built with cutting-edge Python libraries and deep learning models, this pipeline doesn't just detect scene changes—it understands the content, identifies key elements, and structures everything into a comprehensive storyboard."
+      "paragraph1": "몇 시간 분량의 원본 영상을 업로드하고 몇 분 안에 전체 동영상의 <strong>자세한 장면별 분석</strong>을 얻을 수 있다고 상상해 보세요. 이것이 바로 당사의 AI 기반 장면 감지 시스템이 제공하는 기능입니다.",
+      "paragraph2": "최첨단 Python 라이브러리와 딥 러닝 모델로 구축된 이 파이프라인은 장면 변화를 감지할 뿐만 아니라 콘텐츠를 이해하고 핵심 요소를 식별하며 모든 것을 포괄적인 스토리보드로 구성합니다."
     },
-    "imageAlt": "The scene detection pipeline in action, identifying key moments and generating structured storyboards",
-    "protip": "For optimal results, ensure your video has clear visual separation between scenes. The system works best with well-lit footage and minimal motion blur. Consider adding chapter markers or scene breaks in your video editor to improve detection accuracy.",
+    "imageAlt": "주요 순간을 식별하고 구조화된 스토리보드를 생성하는 장면 감지 파이프라인 작동 중",
+    "protip": "최적의 결과를 얻으려면 비디오의 장면이 시각적으로 명확하게 구분되어 있어야 합니다. 시스템은 조명이 밝고 모션 블러가 최소화된 영상에서 가장 잘 작동합니다. 감지 정확도를 높이려면 비디오 편집기에 챕터 마커나 장면 나누기를 추가하는 것이 좋습니다.",
     "humanEvaluation": {
-      "title": "Human Evaluation of AI Output",
-      "introduction": "While our AI pipeline is highly accurate, human evaluation remains a critical component of our quality assurance process. Here's how we ensure the highest quality output:",
+      "title": "AI 출력에 대한 인간의 평가",
+      "introduction": "우리의 AI 파이프라인은 매우 정확하지만 사람의 평가는 품질 보증 프로세스의 중요한 구성 요소로 남아 있습니다. 최고 품질의 출력을 보장하는 방법은 다음과 같습니다.",
       "evaluationAreas": [
-        "<strong>Scene Boundary Accuracy</strong> - Reviewing and adjusting scene transition points",
-        "<strong>Metadata Validation</strong> - Verifying AI-generated descriptions, tags, and labels",
-        "<strong>Consistency Check</strong> - Ensuring uniform style and formatting across all scenes",
-        "<strong>Content Accuracy</strong> - Validating that the AI correctly identified key elements in each scene"
+        "<strong>장면 경계 정확도</strong> - 장면 전환 지점 검토 및 조정",
+        "<strong>메타데이터 검증</strong> - AI가 생성한 설명, 태그 및 라벨 확인",
+        "<strong>일관성 검사</strong> - 모든 장면에서 균일한 스타일과 형식 보장",
+        "<strong>콘텐츠 정확도</strong> - AI가 각 장면의 핵심 요소를 올바르게 식별했는지 검증"
       ],
       "workflow": {
-        "title": "Human-in-the-Loop Workflow",
+        "title": "인간 참여형(Human-In-The-Loop) 워크플로",
         "steps": [
-          "AI processes the video and generates initial storyboard",
-          "Human reviewers evaluate the AI output using our specialized tools",
-          "Reviewers provide feedback and make necessary adjustments",
-          "System learns from human corrections to improve future outputs",
-          "Final quality check before delivery"
+          "AI가 영상을 처리하고 초기 스토리보드를 생성합니다.",
+          "검토자는 전문 도구를 사용하여 AI 결과를 평가합니다.",
+          "검토자는 피드백을 제공하고 필요한 조정을 수행합니다.",
+          "시스템은 인간의 수정을 통해 학습하여 향후 출력을 개선합니다.",
+          "배송 전 최종 품질 확인"
         ]
       },
       "benefits": {
-        "title": "Benefits of Human Evaluation",
+        "title": "인간 평가의 이점",
         "items": [
-          "<strong>Higher Accuracy</strong> - Human reviewers catch subtle nuances that AI might miss",
-          "<strong>Contextual Understanding</strong> - Better interpretation of cultural and situational context",
-          "<strong>Quality Assurance</strong> - Additional layer of validation for professional use cases",
-          "<strong>Continuous Improvement</strong> - Human feedback helps train and refine the AI models"
+          "<strong>더 높은 정확도</strong> - 인간 검토자는 AI가 놓칠 수 있는 미묘한 차이를 포착합니다.",
+          "<strong>맥락적 이해</strong> - 문화적, 상황적 맥락에 대한 더 나은 해석",
+          "<strong>품질 보증</strong> - 전문적인 사용 사례에 대한 추가 검증 단계",
+          "<strong>지속적인 개선</strong> - 인간의 피드백은 AI 모델을 훈련하고 개선하는 데 도움이 됩니다."
         ]
       },
       "tools": {
-        "title": "Evaluation Tools",
-        "description": "Our platform includes specialized tools to assist human reviewers:",
+        "title": "평가 도구",
+        "description": "우리 플랫폼에는 인간 검토자를 지원하는 전문 도구가 포함되어 있습니다.",
         "features": [
-          "Side-by-side video and storyboard comparison",
-          "Easy-to-use interface for adjusting scene boundaries",
-          "Bulk editing of metadata and tags",
-          "Collaboration features for team review",
-          "Version history and change tracking"
+          "비디오와 스토리보드를 나란히 비교",
+          "장면 경계 조정을 위한 사용하기 쉬운 인터페이스",
+          "메타데이터 및 태그 대량 편집",
+          "팀 검토를 위한 협업 기능",
+          "버전 기록 및 변경 사항 추적"
         ]
       }
     },
     "header": {
-      "title": "From Raw Footage to Storyboards",
-      "author": "Curify AI Team",
-      "role": "AI Research Team",
-      "imageAlt": "AI analyzing video scenes and generating storyboards",
-      "imageCaption": "AI-powered scene detection in action, identifying key moments in video content",
-      "subtitle": "AI-Powered Video Analysis",
-      "date": "December 11, 2025",
-      "readingTime": "8 min read"
+      "title": "원본 영상부터 스토리보드까지",
+      "author": "큐리파이 AI팀",
+      "role": "AI 연구팀",
+      "imageAlt": "영상 장면을 분석하고 스토리보드를 생성하는 AI",
+      "imageCaption": "AI 기반 장면 감지 기능이 작동하여 비디오 콘텐츠의 주요 순간을 식별합니다.",
+      "subtitle": "AI 기반 영상 분석",
+      "date": "2025년 12월 11일",
+      "readingTime": "8분 읽기"
     },
-    "Technical":{
-      "title": "TECHNICAL DEEP DIVE",
+    "Technical": {
+      "title": "기술 심층 분석",
       "steps": {
-        "step1":"How It Works: Under the Hood",
-        "videoProcessingPipeline": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
-        "step2":"Video Processing Pipeline",
-        "step2Text": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
-        "step3":"Scene Detection and Metadata Extraction",
-        "step3Text": "OpenCV-powered frame sampling at optimal intervals",
-        "step4":"Shot Analysis and Metadata Enhancement",
-        "step4Text": "Adaptive thresholding for precise scene boundary detection",
-        "step5":"Scene Labeling and Metadata Organization",
-        "step5Text": "Deep learning models for comprehensive scene understanding",
-        "step6":"Metadata Export and Integration",
-        "step6Text": "Export metadata to JSON format for integration with other tools"
-        
+        "step1": "작동 방식: 내부",
+        "videoProcessingPipeline": "우리 시스템은 정확한 장면 감지 및 분석을 보장하는 정교한 다단계 파이프라인을 통해 비디오를 처리합니다.",
+        "step2": "비디오 처리 파이프라인",
+        "step2Text": "우리 시스템은 정확한 장면 감지 및 분석을 보장하는 정교한 다단계 파이프라인을 통해 비디오를 처리합니다.",
+        "step3": "장면 감지 및 메타데이터 추출",
+        "step3Text": "최적의 간격으로 OpenCV 기반 프레임 샘플링",
+        "step4": "샷 분석 및 메타데이터 향상",
+        "step4Text": "정확한 장면 경계 감지를 위한 적응형 임계값 지정",
+        "step5": "장면 라벨링 및 메타데이터 구성",
+        "step5Text": "포괄적인 장면 이해를 위한 딥 러닝 모델",
+        "step6": "메타데이터 내보내기 및 통합",
+        "step6Text": "다른 도구와의 통합을 위해 메타데이터를 JSON 형식으로 내보냅니다."
       }
     },
-    "featuresTitle": "Powerful Features at Your Fingertips",
-    "features1": "Seamless Video Integration",
-    "features1Text": "Process local files, YouTube links, or cloud storage with our unified interface.",
-    "features": "Powerful Features at Your Fingertips",
-    "features2": "Seamless Video Integration",
-    "features2Text": "Process local files, YouTube links, or cloud storage with our unified interface.",
-    "features3": "AI-Powered Analysis",
-    "features3Text": "Enhance scene understanding with our optional AI analysis module.",
-    "features4": "Camera Motion Detection",
-    "features4Text": "Automatically identify pans, zooms, and other camera movements.",
-    "features5": "Customizable Output",
-    "features5Text": "Export metadata to JSON format for integration with other tools.",
-    "intro": {
-      "p1": "In today's fast-paced content creation landscape, <strong>efficient video analysis</strong> is no longer a luxury—it's a necessity. Our AI-powered scene detection technology transforms hours of raw footage into structured, searchable content in minutes, not days.",
-      "p2": "Whether you're a filmmaker, content creator, or media professional, understanding the power of automated scene detection can revolutionize your workflow and unlock new creative possibilities."
+    "featuresTitle": "손끝에서 사용 가능한 강력한 기능",
+    "features1": "원활한 비디오 통합",
+    "features1Text": "통합 인터페이스로 로컬 파일, YouTube 링크 또는 클라우드 저장소를 처리하세요.",
+    "features": {
+      "modularArchitecture": {
+        "title": "모듈형 아키텍처",
+        "description": "영상 분석, AI 처리, 출력 생성을 위한 별도의 구성 요소로 시스템을 구축해 확장 및 유지 관리가 용이합니다."
+      },
+      "performance": {
+        "title": "성능 최적화",
+        "description": "효율적인 프레임 처리 및 병렬화로 긴 영상에도 빠른 분석이 가능합니다."
+      },
+      "aiEnhanced": {
+        "title": "AI 강화 분석",
+        "description": "선택적 AI 구성 요소는 장면을 더 깊이 이해하고 더 정확한 라벨링을 제공합니다."
+      }
     },
-    "proTip": "For best results, ensure your source video has clear audio and visual separation between scenes. Well-lit environments and minimal background noise significantly improve detection accuracy.",
+    "features2": "원활한 비디오 통합",
+    "features2Text": "통합 인터페이스로 로컬 파일, YouTube 링크 또는 클라우드 저장소를 처리하세요.",
+    "features3": "AI 기반 분석",
+    "features3Text": "옵션으로 제공되는 AI 분석 모듈을 통해 장면 이해도를 높이세요.",
+    "features4": "카메라 모션 감지",
+    "features4Text": "팬, 줌 및 기타 카메라 움직임을 자동으로 식별합니다.",
+    "features5": "맞춤형 출력",
+    "features5Text": "다른 도구와의 통합을 위해 메타데이터를 JSON 형식으로 내보냅니다.",
+    "intro": {
+      "p1": "오늘날 빠르게 변화하는 콘텐츠 제작 환경에서 <strong>효율적인 비디오 분석</strong>은 더 이상 사치가 아니라 필수입니다. 당사의 AI 기반 장면 감지 기술은 몇 시간 분량의 원본 영상을 며칠이 아닌 몇 분 만에 구조화되고 검색 가능한 콘텐츠로 변환합니다.",
+      "p2": "영화 제작자, 콘텐츠 제작자 또는 미디어 전문가이든 자동화된 장면 감지의 힘을 이해하면 작업 흐름을 혁신하고 새로운 창의적 가능성을 열어줄 수 있습니다."
+    },
+    "proTip": "최상의 결과를 얻으려면 소스 비디오의 오디오와 장면이 시각적으로 명확하게 구분되어 있는지 확인하십시오. 조명이 밝은 환경과 최소한의 배경 소음으로 감지 정확도가 크게 향상됩니다.",
     "titanicExample": {
-      "title": "Real-World Example: Titanic Scene Analysis",
-      "description": "Watch how our system analyzes a scene from Titanic, detecting shot changes and generating detailed scene metadata:",
-      "analysis": "Analysis:",
-      "analysisText": "Scene detection and metadata extraction in real-time"
+      "title": "실제 사례: 타이타닉 장면 분석",
+      "description": "우리 시스템이 어떻게 타이타닉의 장면을 분석하고 장면 변화를 감지하고 자세한 장면 메타데이터를 생성하는지 살펴보세요.",
+      "analysis": "분석:",
+      "analysisText": "실시간 장면 감지 및 메타데이터 추출"
     },
     "inceptionExample": {
-      "title": "Dream Level Analysis: Inception Scene Breakdown",
-      "description": "Explore how our AI analyzes the complex dream layers and visual effects in Inception:",
-      "analysis": "Analysis",
-      "analysisText": "Dream layer detection and visual effect breakdown",
-      "breakdownTitle": "Scene Analysis Breakdown",
-      "showFullAnalysis": "Show Full Scene Analysis",
-      "hideFullAnalysis": "Hide Full Scene Analysis",
-      "fullSceneAnalysis": "Full Scene Analysis",
+      "title": "드림 레벨 분석: 인셉션 장면 분석",
+      "description": "AI가 Inception에서 복잡한 꿈의 레이어와 시각 효과를 어떻게 분석하는지 살펴보세요.",
+      "analysis": "분석",
+      "analysisText": "드림 레이어 감지 및 시각 효과 분석",
+      "breakdownTitle": "장면 분석 분석",
+      "showFullAnalysis": "전체 장면 분석 표시",
+      "hideFullAnalysis": "전체 장면 분석 숨기기",
+      "fullSceneAnalysis": "전체 장면 분석",
       "sceneCard": {
-        "mood": "Mood",
-        "environment": "Environment",
-        "shotNotes": "Shot Notes"
+        "mood": "분위기",
+        "environment": "환경",
+        "shotNotes": "샷 노트"
       }
     },
-    "Scene": "Scene",
+    "Scene": "장면",
     "process": {
-      "title": "How Our Scene Detection Works",
+      "title": "장면 감지 작동 방식",
       "steps": {
         "step1": {
-          "title": "1. Video Analysis",
-          "description": "Our AI scans your video frame by frame, analyzing visual and audio cues to identify potential scene boundaries.",
+          "title": "1. 영상분석",
+          "description": "당사의 AI는 비디오를 프레임별로 스캔하고 시각적 및 오디오 신호를 분석하여 잠재적인 장면 경계를 식별합니다.",
           "details": [
-            "Analyzes color histograms and motion vectors",
-            "Detects audio level changes and silences",
-            "Identifies shot boundaries and transitions"
+            "색상 히스토그램 및 모션 벡터 분석",
+            "오디오 레벨 변화 및 무음을 감지합니다.",
+            "샷 경계 및 전환을 식별합니다."
           ]
         },
         "step2": {
-          "title": "2. Scene Segmentation",
-          "description": "The system groups related shots into coherent scenes based on visual and temporal relationships.",
+          "title": "2. 장면 분할",
+          "description": "시스템은 시각적, 시간적 관계를 기반으로 관련된 장면을 일관된 장면으로 그룹화합니다.",
           "details": [
-            "Uses machine learning to understand scene context",
-            "Considers shot duration and transition types",
-            "Merges related shots into logical scenes"
+            "기계 학습을 사용하여 장면 컨텍스트를 이해합니다.",
+            "촬영 시간과 전환 유형을 고려합니다.",
+            "관련 장면을 논리적 장면으로 병합합니다."
           ]
         },
         "step3": {
-          "title": "3. Content Classification",
-          "description": "Each detected scene is analyzed and categorized based on its visual and audio content.",
+          "title": "3. 콘텐츠 분류",
+          "description": "감지된 각 장면은 시각 및 청각 콘텐츠를 기준으로 분석 및 분류됩니다.",
           "details": [
-            "Identifies key visual elements and objects",
-            "Classifies scene type (e.g., interview, action, landscape)",
-            "Analyzes audio for speech, music, and effects"
+            "주요 시각적 요소 및 개체를 식별합니다.",
+            "장면 유형 분류(예: 인터뷰, 액션, 풍경)",
+            "음성, 음악 및 효과에 대한 오디오를 분석합니다."
           ]
         },
         "step4": {
-          "title": "4. Metadata Generation",
-          "description": "Comprehensive metadata is generated for each scene, enabling powerful search and organization.",
+          "title": "4. 메타데이터 생성",
+          "description": "각 장면에 대해 포괄적인 메타데이터가 생성되어 강력한 검색 및 구성이 가능합니다.",
           "details": [
-            "Creates timestamps and duration information",
-            "Generates representative thumbnails",
-            "Extracts key dialogue and audio cues"
+            "타임스탬프 및 기간 정보를 생성합니다.",
+            "대표 썸네일 생성",
+            "주요 대화 및 오디오 신호를 추출합니다."
           ]
         }
       }
     },
     "whyItWorks": {
-      "title": "Why Our Scene Detection Works So Well",
-      "points": "<li>Our AI analyzes both <strong>visual and audio cues</strong> to identify scene boundaries with over 95% accuracy.</li><li>Advanced <strong>machine learning models</strong> understand context, not just visual changes, for more natural scene detection.</li><li>Real-time processing allows for <strong>immediate feedback</strong> and adjustments during filming or editing.</li>"
+      "title": "장면 감지가 잘 작동하는 이유",
+      "points": "<li>Google AI는 <strong>시각적 신호와 오디오 신호</strong>를 모두 분석하여 95% 이상의 정확도로 장면 경계를 식별합니다.</li><li>고급 <strong>기계 학습 모델</strong> 시각적 변화뿐만 아니라 상황을 이해하여 더욱 자연스러운 장면 감지를 구현합니다.</li><li>실시간 처리를 통해 <strong>즉각적인 피드백</strong> 및 조정이 가능합니다. 촬영이나 편집 중에.</li>"
     },
     "recommendedStyle": {
-      "title": "Recommended Style for Best Results",
-      "description": "To get the most accurate scene detection, we recommend the following style guidelines:",
+      "title": "최상의 결과를 위한 권장 스타일",
+      "description": "가장 정확한 장면 감지를 얻으려면 다음 스타일 지침을 따르는 것이 좋습니다.",
       "points": [
-        "Maintain consistent lighting within each scene",
-        "Use clear audio markers or clapperboards between takes",
-        "Keep camera movements smooth and intentional",
-        "Maintain consistent audio levels within scenes"
+        "각 장면 내에서 일관된 조명 유지",
+        "테이크 사이에 선명한 오디오 마커나 클래퍼보드를 사용하세요.",
+        "카메라 움직임을 부드럽고 의도적으로 유지하세요.",
+        "장면 내에서 일관된 오디오 레벨 유지"
       ]
     },
-    "title": "From Raw Footage to Storyboards: AI-Powered Video Analysis",
-    "description": "Discover how AI transforms raw video into structured storyboards with automated scene detection and analysis.",
+    "title": "원본 영상부터 스토리보드까지: AI 기반 비디오 분석",
+    "description": "AI가 자동화된 장면 감지 및 분석을 통해 원시 비디오를 구조화된 스토리보드로 변환하는 방법을 알아보세요.",
     "timeline": {
-      "title": "Scene Timeline",
-      "viewScene": "View Scene {1}"
+      "title": "장면 타임라인",
+      "viewScene": "장면 보기 {1}"
     },
-    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started.",
+    "cta": "🚀 AI로 스토리보드에 생기를 불어넣을 준비가 되셨나요? <strong>우리는 시작하는 데 도움이 되는 예제 JSON, ComfyUI 워크플로 및 ffmpeg/AE 템플릿이 포함된 전체 시작 키트</strong>를 제공할 수 있습니다.",
     "sceneBreakdown": {
-      "title": "Understanding Scene Detection Output",
-      "introduction": "Let's break down a typical scene detection output to understand how our AI analyzes and structures video content. Below each explanation, you'll find the corresponding JSON structure that powers these insights.",
+      "title": "장면 감지 출력 이해",
+      "introduction": "AI가 비디오 콘텐츠를 분석하고 구조화하는 방법을 이해하기 위해 일반적인 장면 감지 출력을 분석해 보겠습니다. 각 설명 아래에서 이러한 통찰력을 뒷받침하는 해당 JSON 구조를 찾을 수 있습니다.",
       "scenes": [
         {
-          "title": "1. Scene Identification",
-          "content": "Each scene is assigned a unique identifier and timestamp range, allowing for precise navigation through the video content. This forms the foundation of our analysis.",
-          "example": "Scene 1 (00:00:02.50 - 00:00:05.20)",
+          "title": "1. 장면 식별",
+          "content": "각 장면에는 고유 식별자와 타임스탬프 범위가 할당되어 비디오 콘텐츠를 정확하게 탐색할 수 있습니다. 이것이 우리 분석의 기초를 형성합니다.",
+          "example": "장면 1(00:00:02.50 - 00:00:05.20)",
           "jsonExample": {
             "scene_id": "scene_001",
             "start_time": 2.5,
@@ -694,36 +720,57 @@
             "keyframe_index": 5,
             "keyframe_time": 3.8
           },
-          "jsonDescription": "This JSON structure shows the basic identification data for a scene, including its unique ID, timing information, and the index/time of its representative keyframe."
+          "jsonDescription": "이 JSON 구조는 고유 ID, 타이밍 정보 및 대표 키프레임의 index/time을 포함하여 장면에 대한 기본 식별 데이터를 표시합니다."
         },
         {
-          "title": "2. Visual Analysis",
-          "content": "Our AI examines keyframes to understand the visual composition of each scene, including dominant colors, lighting conditions, and visual elements.",
-          "example": "Keyframe analysis: Outdoor, daylight, multiple subjects",
+          "title": "2. 시각적 분석",
+          "content": "당사의 AI는 키프레임을 검사하여 주요 색상, 조명 조건 및 시각적 요소를 포함하여 각 장면의 시각적 구성을 이해합니다.",
+          "example": "키프레임 분석: 실외, 일광, 여러 피사체",
           "jsonExample": {
             "visual_analysis": {
               "brightness": 0.78,
               "contrast": 0.65,
-              "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
               "dominant_colors": [
-                {"color": "#3A5FCD", "percentage": 0.45},
-                {"color": "#87CEEB", "percentage": 0.35},
-                {"color": "#F5F5DC", "percentage": 0.20}
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
               ],
               "lighting_condition": "daylight",
               "environment": "outdoor",
               "detected_objects": [
-                {"label": "person", "confidence": 0.97, "count": 2},
-                {"label": "sky", "confidence": 0.99, "count": 1}
+                {
+                  "label": "person",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "sky",
+                  "confidence": 0.99,
+                  "count": 1
+                }
               ]
             }
           },
-          "jsonDescription": "This JSON shows the visual analysis data, including color information, lighting conditions, and detected objects with confidence scores."
+          "jsonDescription": "이 JSON은(는) 색상 정보, 조명 상태, 감지된 개체를 포함한 시각적 분석 데이터를 신뢰도 점수와 함께 보여줍니다."
         },
         {
-          "title": "3. Shot Composition",
-          "content": "Within each scene, we identify individual shots and their transitions, helping understand the visual flow and pacing of the content.",
-          "example": "3 shots detected with smooth cuts and one cross-fade",
+          "title": "3. 샷 구성",
+          "content": "각 장면 내에서 개별 장면과 전환을 식별하여 콘텐츠의 시각적 흐름과 속도를 이해하는 데 도움을 줍니다.",
+          "example": "부드러운 컷과 크로스페이드 1개로 3개의 샷이 감지되었습니다.",
           "jsonExample": {
             "shots": [
               {
@@ -755,16 +802,19 @@
               }
             ]
           },
-          "jsonDescription": "This JSON structure details the shot composition within a scene, including timing, transition types, and camera motion analysis."
+          "jsonDescription": "이 JSON 구조는 타이밍, 전환 유형 및 카메라 모션 분석을 포함하여 장면 내의 샷 구성을 자세히 설명합니다."
         },
         {
-          "title": "4. Content Classification",
-          "content": "Scenes are automatically categorized based on their content, making it easy to find specific types of footage later.",
-          "example": "Category: Drama, Setting: Ship Deck, Subjects: Main Characters",
+          "title": "4. 콘텐츠 분류",
+          "content": "장면은 콘텐츠에 따라 자동으로 분류되므로 나중에 특정 유형의 영상을 쉽게 찾을 수 있습니다.",
+          "example": "카테고리: 드라마, 설정: Ship Deck, 주제: 주요 등장인물",
           "jsonExample": {
             "content_analysis": {
               "primary_category": "drama",
-              "secondary_categories": ["romance", "disaster"],
+              "secondary_categories": [
+                "romance",
+                "disaster"
+              ],
               "setting": {
                 "type": "ship_deck",
                 "time_of_day": "night",
@@ -789,20 +839,28 @@
               "sentiment": {
                 "overall": "intense_dramatic",
                 "confidence": 0.88,
-                "emotions": ["fear", "determination", "urgency"]
+                "emotions": [
+                  "fear",
+                  "determination",
+                  "urgency"
+                ]
               },
-              "key_elements": ["lifeboat", "ocean", "moonlight"],
+              "key_elements": [
+                "lifeboat",
+                "ocean",
+                "moonlight"
+              ],
               "narrative_importance": 0.95,
               "action_required": true
             }
           },
-          "jsonDescription": "This JSON shows how the AI analyzes and classifies movie scenes, including character emotions, setting details, and narrative importance, with Titanic's dramatic lifeboat scene as an example."
+          "jsonDescription": "이 JSON은(는) 타이타닉의 극적인 구명정 장면을 예로 들어 AI가 캐릭터 감정, 설정 세부 사항, 내러티브 중요성 등 영화 장면을 어떻게 분석하고 분류하는지 보여줍니다."
         }
       ],
-      "analysisTitle": "Putting It All Together",
-      "analysisContent": "By combining these elements, our system creates a comprehensive map of your video content. This structured data powers features like intelligent search, automated editing, and content analysis.",
-      "fullExampleTitle": "Complete Scene Data Example",
-      "fullExampleDescription": "Here's how all the pieces come together in a complete scene analysis:",
+      "analysisTitle": "모든 것을 하나로 합치기",
+      "analysisContent": "이러한 요소를 결합함으로써 당사 시스템은 귀하의 비디오 콘텐츠에 대한 포괄적인 지도를 생성합니다. 이 구조화된 데이터는 지능형 검색, 자동화된 편집, 콘텐츠 분석과 같은 기능을 강화합니다.",
+      "fullExampleTitle": "완전한 장면 데이터 예",
+      "fullExampleDescription": "완전한 장면 분석에서 모든 조각이 어떻게 결합되는지는 다음과 같습니다.",
       "fullExample": {
         "scene_id": "scene_001",
         "start_time": 2.5,
@@ -817,7 +875,11 @@
         "visual_analysis": {
           "brightness": 0.78,
           "contrast": 0.65,
-          "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
           "lighting_condition": "daylight",
           "environment": "studio"
         },
@@ -825,13 +887,19 @@
           "has_speech": true,
           "speech_confidence": 0.92,
           "background_noise_level": 0.15,
-          "speaker_gender": ["male", "female"],
-          "speech_text": "Let's discuss how AI is transforming video production..."
+          "speaker_gender": [
+            "male",
+            "female"
+          ],
+          "speech_text": "AI가 비디오 제작을 어떻게 변화시키고 있는지 논의해 보겠습니다."
         },
         "content_analysis": {
           "primary_category": "interview",
           "setting": "studio",
-          "subjects": ["host", "guest"],
+          "subjects": [
+            "host",
+            "guest"
+          ],
           "sentiment": "neutral_positive"
         },
         "shots": [
@@ -840,283 +908,377 @@
             "start_time": 2.5,
             "end_time": 3.1,
             "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
-            "transition": {"type": "cut", "confidence": 0.98}
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
           },
           {
             "shot_id": "shot_002",
             "start_time": 3.1,
             "end_time": 5.2,
             "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
-            "transition": {"type": "fade", "confidence": 0.95}
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
           }
         ]
       },
-      "benefitsTitle": "Key Benefits",
+      "benefitsTitle": "주요 이점",
       "benefits": [
-        "<strong>Efficient Editing:</strong> Jump directly to any scene or shot without scrubbing through hours of footage",
-        "<strong>Smart Search:</strong> Find content based on visual elements, not just metadata",
-        "<strong>Consistent Quality:</strong> Identify and maintain visual consistency across your project",
-        "<strong>Data-Driven Decisions:</strong> Get insights into your content structure and pacing"
+        "<strong>효율적인 편집:</strong> 몇 시간 분량의 영상을 탐색하지 않고도 어떤 장면이나 장면으로 바로 이동할 수 있습니다.",
+        "<strong>스마트 검색:</strong> 메타데이터뿐만 아니라 시각적 요소를 기반으로 콘텐츠 찾기",
+        "<strong>일관적인 품질:</strong> 프로젝트 전체에서 시각적 일관성을 식별하고 유지합니다.",
+        "<strong>데이터 기반 결정:</strong> 콘텐츠 구조 및 속도에 대한 통찰력을 얻으세요."
       ]
     },
     "conclusion": {
-      "title": "Transforming Video Production with AI",
-      "p1": "AI-powered scene detection is revolutionizing how we approach video production. By automating the tedious process of scene identification and organization, creators can focus on what truly matters – telling compelling stories. Our technology bridges the gap between raw footage and polished content, making professional-grade video analysis accessible to everyone.",
-      "p2": "As we continue to refine our algorithms and expand our capabilities, we're excited to see how filmmakers, educators, and content creators will leverage these tools to push the boundaries of visual storytelling. The future of video production is here, and it's more efficient and creative than ever before."
+      "title": "AI를 통한 비디오 제작 혁신",
+      "p1": "AI 기반 장면 감지는 비디오 제작에 접근하는 방식에 혁명을 일으키고 있습니다. 지루한 장면 식별 및 구성 프로세스를 자동화함으로써 제작자는 진정으로 중요한 것, 즉 매력적인 스토리를 전달하는 데 집중할 수 있습니다. 우리의 기술은 원본 영상과 세련된 콘텐츠 사이의 격차를 해소하여 모든 사람이 전문가 수준의 비디오 분석에 액세스할 수 있도록 합니다.",
+      "p2": "우리는 계속해서 알고리즘을 개선하고 기능을 확장하면서 영화 제작자, 교육자 및 콘텐츠 제작자가 이러한 도구를 활용하여 시각적 스토리텔링의 한계를 뛰어넘는 방법을 보게 되어 기쁩니다. 비디오 제작의 미래가 여기에 있으며 그 어느 때보다 효율적이고 창의적입니다."
     },
-    "richStructuredOutput": "Rich, Structured Output",
-    "richStructuredOutputText": "Our system generates comprehensive storyboard data with detailed metadata for each scene, giving you complete control over your video content.",
+    "richStructuredOutput": "풍부하고 구조화된 출력",
+    "richStructuredOutputText": "당사 시스템은 각 장면에 대한 자세한 메타데이터가 포함된 포괄적인 스토리보드 데이터를 생성하므로 귀하는 비디오 콘텐츠를 완벽하게 제어할 수 있습니다.",
     "advancedUsage": {
-  "title": "Advanced Usage & Customization",
-  "description": "The scene detection system is highly customizable to fit different use cases. Here are some advanced features and customization options:",
-  "features": {
-    "thresholds": {
-      "title": "Custom Scene Detection Thresholds",
-      "description": "Adjust the sensitivity of scene detection by modifying the threshold parameter. Lower values make the detection more sensitive to changes."
-    },
-    "aiAnalysis": {
-      "title": "AI-Enhanced Analysis",
-      "description": "Enable AI analysis for more detailed scene understanding and labeling. This requires additional setup with the Ollama server."
-    },
-    "outputCustomization": {
-      "title": "Output Customization",
-      "description": "Customize the output format and include additional metadata in the generated storyboard."
-    }
-  },
-  "integration": {
-    "title": "Integration with Other Tools",
-    "description": "The storyboard output can be easily integrated with other tools and workflows. Here are some examples:",
-    "tools": {
-      "editingSoftware": {
-        "title": "Video Editing Software",
-        "description": "Import the JSON output into video editors that support script-based editing"
+      "title": "고급 사용 및 사용자 정의",
+      "description": "장면 감지 시스템은 다양한 사용 사례에 맞게 사용자 정의가 가능합니다. 다음은 몇 가지 고급 기능과 사용자 정의 옵션입니다.",
+      "features": {
+        "thresholds": {
+          "title": "사용자 정의 장면 감지 임계값",
+          "description": "임계값 매개변수를 수정하여 장면 감지 감도를 조정합니다. 값이 낮을수록 감지가 변경 사항에 더 민감해집니다."
+        },
+        "aiAnalysis": {
+          "title": "AI 강화 분석",
+          "description": "보다 자세한 장면 이해 및 라벨링을 위해 AI 분석을 활성화합니다. 이를 위해서는 Ollama 서버에 대한 추가 설정이 필요합니다."
+        },
+        "outputCustomization": {
+          "title": "출력 사용자 정의",
+          "description": "출력 형식을 사용자 정의하고 생성된 스토리보드에 추가 메타데이터를 포함합니다."
+        }
       },
-      "cms": {
-        "title": "Content Management Systems",
-        "description": "Automatically generate metadata for video assets"
-      },
-      "aiTraining": {
-        "title": "AI Training Data",
-        "description": "Use the structured output as training data for machine learning models"
+      "integration": {
+        "title": "다른 도구와의 통합",
+        "description": "스토리보드 출력은 다른 도구 및 작업 흐름과 쉽게 통합될 수 있습니다. 다음은 몇 가지 예입니다.",
+        "tools": {
+          "editingSoftware": {
+            "title": "비디오 편집 소프트웨어",
+            "description": "스크립트 기반 편집을 지원하는 비디오 편집기로 JSON 출력 가져오기"
+          },
+          "cms": {
+            "title": "콘텐츠 관리 시스템",
+            "description": "비디오 자산에 대한 메타데이터 자동 생성"
+          },
+          "aiTraining": {
+            "title": "AI 훈련 데이터",
+            "description": "구조화된 출력을 기계 학습 모델의 학습 데이터로 사용"
+          }
+        }
       }
-    }
-  }
-},
-"features": {
-  "modularArchitecture": {
-    "title": "Modular Architecture",
-    "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
-  },
-  "performance": {
-    "title": "Performance Optimized",
-    "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
-  },
-  "aiEnhanced": {
-    "title": "AI-Enhanced Analysis",
-    "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
-  }
-},
-"Benefitss": {
-  "title": "Benefits",
-  "description": "The benefits of using our AI-powered scene detection system include:",
-  "tags": {
-    "computerVision": "Computer Vision",
-    "deepLearning": "Deep Learning",
-    "realTimeAnalysis": "Real-time Analysis"
-  },
-  "features": {
-    "modularArchitecture": {
-      "title": "Modular Architecture",
-      "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+    },
+    "Benefitss": {
+      "title": "장점",
+      "description": "AI 기반 장면 감지 시스템을 사용하면 다음과 같은 이점이 있습니다.",
+      "tags": {
+        "computerVision": "컴퓨터 비전",
+        "deepLearning": "딥러닝",
+        "realTimeAnalysis": "실시간 분석"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "모듈형 아키텍처",
+          "description": "영상 분석, AI 처리, 출력 생성을 위한 별도의 구성 요소로 시스템을 구축해 확장 및 유지 관리가 용이합니다."
+        },
+        "performance": {
+          "title": "성능 최적화",
+          "description": "효율적인 프레임 처리 및 병렬화로 긴 영상에도 빠른 분석이 가능합니다."
+        },
+        "aiEnhanced": {
+          "title": "AI 강화 분석",
+          "description": "선택적 AI 구성 요소는 장면을 더 깊이 이해하고 더 정확한 라벨링을 제공합니다."
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "우리의 솔루션을 선택하는 이유",
+      "title": "AI 기반 장면 분석의 힘"
+    },
+    "integration": {
+      "title": "쉬운 통합",
+      "description": "구조화된 JSON 출력을 통해 다른 도구 및 작업 흐름과 쉽게 통합할 수 있습니다.",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "포괄적인 장면 데이터",
+        "items": [
+          "각 장면에 대한 정확한 타이밍 정보",
+          "시각적 참조를 위한 키 프레임",
+          "객체 감지 결과",
+          "카메라 움직임 분석"
+        ]
+      },
+      "export": {
+        "title": "내보내기 옵션",
+        "formats": {
+          "json": "JSON"
+        }
+      }
     },
     "performance": {
-      "title": "Performance Optimized",
-      "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
-    },
-    "aiEnhanced": {
-      "title": "AI-Enhanced Analysis",
-      "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+      "title": "성능 최적화",
+      "features": {
+        "speed": "실시간보다 5~10배 빠름",
+        "memory": "낮은 메모리 공간",
+        "parallel": "병렬 처리"
+      }
     }
-  }
-},
-"benefits": {
-  "subtitle": "WHY CHOOSE OUR SOLUTION",
-  "title": "The Power of AI-Powered Scene Analysis"
-},
-"integration": {
-  "title": "Easy Integration",
-  "description": "The structured JSON output makes it easy to integrate with other tools and workflows:",
-  "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
-},
-"features10": {
-  "comprehensiveData": {
-    "title": "Comprehensive Scene Data",
-    "items": [
-      "Precise timing information for each scene",
-      "Key frames for visual reference",
-      "Object detection results",
-      "Camera movement analysis"
-    ]
   },
-  "export": {
-    "title": "Export Option",
-    "formats": {
-      "json": "JSON"
-    }
-  }
-},
-"performance": {
-  "title": "Performance Optimized",
-  "features": {
-    "speed": "5-10x faster than real-time",
-    "memory": "Low memory footprint",
-    "parallel": "Parallel processing"
-  }
-}
-  },
-  
-
   "nanoBananaProPrompts": {
-    "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "title": "Nano Banana Pro 프롬프트",
+    "description": "AI 콘텐츠 생성 요구 사항에 대한 창의적이고 효과적인 프롬프트 컬렉션을 찾아보세요. 이러한 프롬프트는 AI 도구를 최대한 활용하는 데 도움이 되도록 설계되었습니다.",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "인기 Nano Banana Pro 프롬프트",
+      "prompt1": "감정이 화폐가 되는 미래 도시에 대한 단편 소설을 만들어 보세요.",
+      "prompt2": "커피숍에서 처음으로 만나는 두 캐릭터 간의 대화를 생성하세요.",
+      "prompt3": "혁신적인 AI 기반 주방 기기에 대한 제품 설명을 작성하세요."
     }
   },
   "qaBotToTaskAgent": {
-    "heading": "🏗️ From QA Bot to Task Agent: An Architecture Guide",
-    "description": "Learn how to build reliable task agents that go beyond simple question answering",
-    "tldr": "TL;DR: Stop building chatbots that just answer questions. Start building Task Agents that actually do work.",
-    "intro": "This guide explains the architectural shift from monolithic QA bots to Task Agents using Static Rules, Dynamic Skills, and Deterministic Hooks—with concrete code examples and open-source references.",
+    "heading": "🏗️ QA 봇에서 작업 에이전트까지: 아키텍처 가이드",
+    "description": "단순한 질의 응답을 넘어 신뢰할 수 있는 작업 에이전트를 구축하는 방법을 알아보세요.",
+    "tldr": "TL;DR: 질문에만 답하는 챗봇은 그만 만들고, 실제로 일을 수행하는 작업 에이전트를 구축하세요.",
+    "intro": "이 가이드에서는 구체적인 코드 예제와 오픈 소스 참조를 통해 정적 규칙, 동적 기술 및 결정적 후크를 사용하여 모놀리식 QA 봇에서 작업 에이전트로의 아키텍처 전환을 설명합니다.",
     "coreShift": {
-      "title": "1. The Core Shift: QA Bot → Task Agent",
+      "title": "1. 핵심 전환: QA 봇 → 작업 에이전트",
       "content": [
-        "Most AI systems today are still context-stuffed QA bots:",
-        "• They answer questions well",
-        "• They hallucinate under pressure",
-        "• They lack guarantees around execution, safety, and consistency"
+        "오늘날 대부분의 AI 시스템은 여전히 ​​상황에 맞는 QA 봇입니다.",
+        "• 질문에 잘 답변해줍니다.",
+        "• 압박감에 환각을 느낀다",
+        "• 실행, 안전, 일관성에 대한 보장이 부족합니다."
       ],
-      "keyInsight": "The key insight: Don't scale context. Structure it."
+      "keyInsight": "주요 통찰력: 컨텍스트를 확장하지 마십시오. 구조화하세요."
     },
     "threeLayerArch": {
-      "title": "2. The Three-Layer Architecture",
+      "title": "2. 3계층 아키텍처",
       "layers": [
         {
-          "title": "🧱 1. Static Context — Rules (Always On)",
+          "title": "🧱 1. 정적 컨텍스트 — 규칙(항상 켜짐)",
           "points": [
-            "Mental model: Employee handbook",
-            "Always loaded",
-            "Defines identity, coding standards, behavioral constraints",
-            "Prevents hallucinations and style drift",
-            "Small, stable, human-editable"
+            "정신 모델: 직원 핸드북",
+            "항상 로드됨",
+            "신원, 코딩 표준, 행동 제약 조건을 정의합니다.",
+            "환각과 스타일 드리프트를 방지합니다.",
+            "작고 안정적이며 사람이 편집 가능"
           ]
         },
         {
-          "title": "🛠️ 2. Dynamic Context — Skills (On Demand)",
+          "title": "🛠️ 2. 동적 컨텍스트 — 기술(주문형)",
           "points": [
-            "Mental model: Toolbox",
-            "Loaded only when needed",
-            "Each skill is a self-contained capability",
-            "Keeps the context window clean"
+            "정신 모델: 도구 상자",
+            "필요할 때만 로드됨",
+            "각 기술은 독립적인 기능입니다.",
+            "컨텍스트 창을 깨끗하게 유지합니다."
           ]
         },
         {
-          "title": "⚓ 3. Deterministic Hooks — Guardrails",
+          "title": "⚡ 3. 결정론적 후크 - 가드레일",
           "points": [
-            "Mental model: Security + Compliance layer",
-            "Not probabilistic",
-            "Runs before / after LLM reasoning",
-            "Enforces rules that must never fail"
+            "정신 모델: 보안 + 규정 준수 계층",
+            "확률적이지 않음",
+            "LLM 추론 전/후에 실행됩니다.",
+            "결코 실패해서는 안 되는 규칙을 시행합니다."
           ]
         }
       ]
     },
     "projectStructure": {
-      "title": "3. Recommended Project Structure",
-      "structure": "my-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+      "title": "3. 권장 프로젝트 구조",
+      "structure": "내 작업 에이전트/\n├──.cursorrules\n├── main.py\n├── 도구/\n│ └── linear_mcp.py\n└── README.md"
     },
     "staticContextExample": {
-      "title": "4. Static Context Example: .cursorrules",
-      "content": "# ROLE\nYou are a Senior Python Engineer focused on production-grade systems.\n\n# RULES\n- NEVER use print() for debugging\n- ALWAYS type-hint functions\n- Propose a plan if touching >3 files\n\n# BEHAVIOR\n- Be concise\n- Ask clarifying questions if needed\n\nReference: https://github.com/PatrickJS/awesome-cursorrules"
+      "title": "4. 정적 컨텍스트 예:.cursorrules",
+      "content": "# 역할\n귀하는 생산 등급 시스템에 주력하는 수석 Python 엔지니어입니다.\n\n# 규칙\n- 디버깅을 위해 절대로 print()를 사용하지 마세요.\n- 항상 유형 힌트 기능\n- 3개 이상의 파일을 터치하는 경우 계획 제안\n\n# 행동\n- 간결하게 작성하세요\n- 필요한 경우 명확한 질문을 하세요.\n\n참조: https://github.com/PatrickJS/awesome-cursorrules"
     },
     "dynamicSkillExample": {
-      "title": "5. Dynamic Skill Example (MCP)",
-      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Created ticket {ticket_id} with priority={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReference: https://github.com/modelcontextprotocol/python-sdk"
+      "title": "5. 다이나믹 스킬 예시(MCP)",
+      "content": "mcp.server.fastmcp에서 FastMCP 가져오기\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, 우선순위: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    f\"우선순위가 {priority}인 생성된 티켓 {ticket_id}\"을 반환합니다.\n\n__name__ == \"__main__\"인 경우:\n    mcp.run()\n\n참조: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
-      "title": "6. Deterministic Hook Example",
-      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Security violation detected\"}\n    return agent_node(state)\n\nReference: https://langchain-ai.github.io/langgraph/"
+      "title": "6. 결정적 후크 예",
+      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"보안 위반이 감지되었습니다\"}\n    return agent_node(state)\n\n참고: https://langchain-ai.github.io/langgraph/"
     },
-    "finalThought": "If your agent only answers questions, it's a chatbot. If it reliably executes work, it's a Task Agent."
+    "finalThought": "상담원이 질문에만 답변한다면 그것은 챗봇입니다. 안정적으로 작업을 실행한다면 태스크 에이전트입니다.",
+    "taskAgentImageAlt": "다양한 구성 요소 간의 상호 작용을 보여주는 작업 에이전트 시스템 아키텍처 그림"
   },
   "ageAi": {
-    "heading": "Data Science in the Age of AI: Is the \"Sexiest Job\" Still Sexy?",
-    "intro1": "\"It was the best of times, it was the worst of times.\"",
-    "intro2": "A decade ago, Harvard Business Review called Data Scientist the \"sexiest job of the 21st century.\" Today, the landscape is shifting beneath our feet. While the demand for data talent remains high, the rise of Generative AI is fundamentally changing what it means to be a 'Data Scientist.'",
+    "heading": "AI 시대의 데이터 과학: '가장 섹시한 직업'은 여전히 ​​섹시한가?",
+    "intro1": "\"최고의 시절이었고 최악의 시절이었습니다.\"",
+    "intro2": "10년 전 Harvard Business Review에서는 데이터 과학자를 \"21세기 가장 섹시한 직업\"이라고 불렀습니다. 오늘날 풍경은 우리 발 아래에서 변화하고 있습니다. 데이터 인재에 대한 수요는 여전히 높지만, 제너레이티브 AI(Generative AI)의 등장으로 '데이터 과학자'의 의미가 근본적으로 바뀌고 있습니다.",
     "realityCheck": {
-      "title": "The Reality Check",
-      "content": "Traditional domains like Search, Ads, and Recommendation (SAR) are maturing, and the industry is shifting its focus toward heavy-duty engineering and AI architecture. We are seeing a strange paradox.",
+      "title": "현실 점검",
+      "content": "SAR(검색, 광고 및 추천)과 같은 기존 도메인이 성숙해지고 있으며 업계는 강력한 엔지니어링 및 AI 아키텍처로 초점을 전환하고 있습니다. 우리는 이상한 역설을 보고 있습니다.",
       "lowBarTrap": {
-        "title": "The \"Low-Bar\" Trap",
-        "content": "Master's students can now use GPT-4 to handle data cleaning, EDA, and visualization in seconds. However, without a solid foundation, they often lack the judgment to know when the AI is \"hallucinating\" or providing statistically flawed results."
+        "title": "\"로우바\" 트랩",
+        "content": "석사 과정 학생들은 이제 GPT-4를 사용하여 데이터 정리, EDA 및 시각화를 몇 초 만에 처리할 수 있습니다. 그러나 탄탄한 기반이 없으면 AI가 언제 \"환각\"을 일으키거나 통계적으로 잘못된 결과를 제공하는지 판단력이 부족한 경우가 많습니다."
       },
       "stakeholderShift": {
-        "title": "Stakeholder Shift",
-        "content": "When business partners can write their own prompts to get basic insights, many DS professionals feel \"under-stimulated,\" trapped in endless meetings and repetitive prompt engineering."
+        "title": "이해관계자 이동",
+        "content": "비즈니스 파트너가 기본적인 통찰력을 얻기 위해 자체 프롬프트를 작성할 수 있을 때 많은 DS 전문가는 끝없는 회의와 반복적인 프롬프트 엔지니어링에 갇혀 \"자극 부족\"을 느낍니다."
       }
     },
     "strategicPillars": {
-      "title": "How to Stay Indispensable: Two Strategic Pillars",
-      "intro": "To thrive in this era, we need to evolve from 'builders of models' to 'architects of value.' I see this happening in two dimensions:",
+      "title": "필수 불가결한 상태를 유지하는 방법: 두 가지 전략적 기둥",
+      "intro": "이 시대에 성공하려면 '모델의 구축자'에서 '가치의 건축가'로 진화해야 합니다. 나는 이것이 두 가지 차원에서 일어나는 것을 봅니다.",
       "buildingTools": {
-        "title": "Building the Tools (The Engineer/Architect Mindset)",
-        "subtitle": "Don't just use the AI; improve it.",
+        "title": "도구 구축(Engineer/Architect 사고방식)",
+        "subtitle": "AI만 사용하지 마세요. 그것을 개선하십시오.",
         "points": [
           {
-            "title": "Model Evaluation & Governance",
-            "content": "As AI output becomes a commodity, the person who can define what a 'good' result looks like is the most valuable person in the room. Focus on specialized evaluation frameworks (like risk-weighting in Finance)."
+            "title": "모델 평가 및 거버넌스",
+            "content": "AI 결과물이 상품이 되면서 '좋은' 결과가 어떤 것인지 정의할 수 있는 사람이 이 방에서 가장 가치 있는 사람입니다. 전문적인 평가 프레임워크(예: 재무의 위험 가중치)에 중점을 둡니다."
           },
           {
-            "title": "Domain Fine-Tuning",
-            "content": "Mastering techniques like LoRA or RAG to inject specific business knowledge into LLMs."
+            "title": "도메인 미세 조정",
+            "content": "LoRA 또는 RAG와 같은 기술을 익히면 특정 비즈니스 지식을 LLMs에 주입할 수 있습니다."
           },
           {
             "title": "Automation",
-            "content": "Lead internal initiatives like 'Virtual Analysts' or automated experimentation pipelines."
+            "content": "'가상 분석가' 또는 자동화된 실험 파이프라인과 같은 내부 이니셔티브를 주도하세요."
           }
         ]
       },
       "leveragingTools": {
-        "title": "Leveraging the Tools (The Strategist Mindset)",
-        "subtitle": "Use AI to 10x your output so you can focus on what humans do best.",
+        "title": "도구 활용(전략가적 사고방식)",
+        "subtitle": "AI를 사용하여 생산량을 10배로 늘리면 인간이 가장 잘하는 일에 집중할 수 있습니다.",
         "points": [
           {
-            "title": "Domain Expertise",
-            "content": "AI knows the 'how,' but you know the 'why.' Deep business understanding allows you to provide the right context that AI lacks."
+            "title": "도메인 전문성",
+            "content": "AI는 '방법'을 알고 있지만, 당신은 '왜'를 알고 있습니다. 비즈니스에 대한 깊은 이해를 통해 AI가 부족한 올바른 컨텍스트를 제공할 수 있습니다."
           },
           {
-            "title": "Critical Thinking & Experimentation",
-            "content": "While AI can generate code, human DS skills are still core for hypothesis testing, causal inference, and interpreting 'messy' real-world data."
+            "title": "비판적 사고 및 실험",
+            "content": "AI가 코드를 생성할 수 있지만 인간의 DS 기술은 가설 테스트, 인과관계 추론, '지저분한' 실제 데이터 해석에 여전히 핵심입니다."
           },
           {
-            "title": "Communication & Influence",
-            "content": "The ability to translate complex data into a business story and build stakeholder trust is a 'soft' skill that has become a 'hard' requirement."
+            "title": "커뮤니케이션과 영향력",
+            "content": "복잡한 데이터를 비즈니스 스토리로 변환하고 이해관계자의 신뢰를 구축하는 능력은 '하드' 요구사항이 된 '소프트' 기술입니다."
           }
         ]
       }
     },
     "bottomLine": {
-      "title": "The Bottom Line",
-      "content1": "AI hasn't killed Data Science; it has raised the floor. If your value was purely in writing SQL or tuning hyperparameters, the 'sexiness' is fading. But if you can bridge the gap between business problems and AI solutions, your value has never been higher.",
-      "content2": "Personal experience is your edge. A LLM can mimic logic, but it doesn't have the years of 'battle scars' from failed deployments or the intuition built from navigating complex organizations."
+      "title": "결론",
+      "content1": "AI는 데이터 과학을 죽이지 않았습니다. 바닥이 높아졌습니다. 당신의 가치가 순전히 SQL 작성이나 하이퍼파라미터 조정에만 있었다면 '섹시함'은 사라지고 있습니다. 그러나 비즈니스 문제와 AI 솔루션 간의 격차를 해소할 수 있다면 귀하의 가치는 그 어느 때보다 높아질 것입니다.",
+      "content2": "개인적인 경험이 가장 중요합니다. LLM은 논리를 흉내낼 수 있지만 배포 실패로 인한 수년간의 '전투 상처'나 복잡한 조직을 탐색하면서 구축된 직관이 없습니다."
     },
     "discussion": {
-      "title": "Let's discuss:",
-      "prompt": "Are you feeling more 'efficient' or 'replaced' in your current role? How are you evolving your toolkit this year?"
+      "title": "논의해보자:",
+      "prompt": "현재 역할이 더 '효율적'이거나 '대체'되었다고 느끼시나요? 올해 툴킷을 어떻게 발전시키고 있습니까?"
     },
-    "hashtags": ["#DataScience", "#AI", "#MachineLearning", "#GenerativeAI", "#CareerDevelopment", "#TechTrends"]
+    "hashtags": [
+      "#DataScience",
+      "#AI",
+      "#MachineLearning",
+      "#GenerativeAI",
+      "#CareerDevelopment",
+      "#TechTrends"
+    ]
+  },
+  "aiPlatform": {
+    "title": "AI 성공을 위한 중견기업 플레이북",
+    "subtitle": "큰 비용을 들이지 않고 확장 가능한 AI 플랫폼을 구축하는 방법",
+    "intro": {
+      "p1": "중소 규모의 기술 기업에서 진정한 이점은 대규모 모델을 교육하는 데 있는 것이 아니라 모든 사람이 지능형 기능을 제공할 수 있는 AI 플랫폼을 구축하는 데 있습니다. 이것이 민첩성을 영향력으로 바꾸는 방법입니다.",
+      "p2": "현금을 낭비하거나 50명의 ML 전문가를 고용하지 않고도 재무, 법률, 고객 지원 및 엔지니어링 전반에 걸쳐 AI를 강화하는 데 사용한 실용적이고 생산 준비가 완료된 청사진은 다음과 같습니다."
+    },
+    "imageAlt": "AI Platform 아키텍처 다이어그램",
+    "heading": "🏗️ AI 성공을 위한 중견기업 플레이북",
+    "mindsetShift": {
+      "title": "1. 사고방식의 변화: 중앙화하지 말고 민주화하라",
+      "content": "AI 팀이 병목 현상을 겪고 있다면 이미 패배한 것입니다. 대신, 제품 엔지니어가 필요한 것을 구축할 수 있도록 지원하는 셀프 서비스 AI 인프라를 구축하세요.",
+      "goal": "목표: 도메인 전문가(금융, 법률, 지원 엔지니어)가 최소한의 ML 지식으로 AI 솔루션을 구축할 수 있도록 합니다.",
+      "reality": "현실: AI 팀이 고속도로를 건설합니다. 비즈니스 팀이 자동차를 운전합니다.",
+      "supportModel": {
+        "title": "지원 모델:",
+        "l1": "L1 — 셀프 서비스: 개발자는 플랫폼 도구를 사용하여 자체 기능을 구축합니다.",
+        "l2": "L2 — 컨설팅 및 자문: AI 팀은 신속한 설계, 평가 및 아키텍처를 지원합니다.",
+        "l3": "L3 — 공동 개발: 복잡하고 영향력이 큰 MVP를 공동으로 구축합니다."
+      },
+      "conclusion": "이는 AI를 연구 프로젝트에서 비즈니스 승수로 바꿔줍니다."
+    },
+    "stack": {
+      "title": "2. 스택: 얇게 유지하고 열어두세요",
+      "intro": "과도한 엔지니어링은 속도를 저하시킵니다. 우리는 사용자를 얽매이지 않고 복잡성을 추상화하는 3계층 플랫폼을 구축했습니다.",
+      "gateway": {
+        "title": "A. 통합 모델 게이트웨이",
+        "content": "한 상인과 결혼하지 마십시오. 다음 사이에서 요청을 원활하게 라우팅합니다.",
+        "points": [
+          "상업용 LLMs(GPT‑4, Claude 등) - 최상위 추론용.",
+          "비공개 모델(Llama, Qwen) - 민감한 데이터 및 비용 관리를 위한 것입니다.",
+          "전문가 모델 - 코딩, 비전 또는 지연 시간이 짧은 작업을 위한 것입니다."
+        ],
+        "conclusion": "게이트웨이는 재시도, 대체, 비용 추적 및 속도 제한을 처리하므로 개발자는 `platform.generate()`을(를) 호출하기만 하면 됩니다."
+      },
+      "knowledge": {
+        "title": "B. 서비스로서의 지식(RAG Made Simple)",
+        "content": "검색-증강 세대는 대부분의 비즈니스 가치가 존재하는 곳입니다. 하지만 엔지니어는 벡터 데이터베이스를 관리해서는 안 됩니다.",
+        "solution": "'드롭 앤 채팅' 인터페이스를 구축하세요. Wiki, PDF 또는 데이터베이스를 가리키면 플랫폼이 자동으로 수집, 청크, 포함 및 색인을 생성합니다. 이제 모든 팀은 개인용 최신 지식 기반을 보유하게 되었습니다."
+      },
+      "orchestration": {
+        "title": "C. 오케스트레이션 계층",
+        "content": "코드 우선 AI는 강력합니다. 워크플로 우선 AI가 더 빠릅니다.",
+        "example": "우리는 Dify, coze, n8n 등과 같은 로우 코드 도구를 사용하여 단계를 연결합니다.",
+        "workflow": [
+          "사용자 쿼리",
+          "문서 검색",
+          "호출 도구(API, SQL)",
+          "추론",
+          "출력"
+        ],
+        "conclusion": "이를 통해 제품 팀은 몇 주가 아닌 몇 시간 만에 에이전트 프로토타입을 제작할 수 있습니다."
+      }
+    },
+    "fineTuning": {
+      "title": "3. 미세 조정 건너뛰기(대부분의 경우)",
+      "content": "비밀은 다음과 같습니다. **아마도 LLM을(를) 미세 조정할 필요는 없을 것입니다.**",
+      "strategies": [
+        "더 나은 프롬프트: 체계적인 엔지니어링이 무작위 조정을 능가합니다.",
+        "고품질 RAG: 깔끔하고 구조화된 지식이 더 스마트한 모델을 능가합니다.",
+        "다중 모델 융합: 추론에는 GPT‑4를, 추출에는 로컬 모델을, 창의적인 작업에는 Claude를 사용합니다.",
+        "LLM‑판사로서: 강력한 모델을 사용하여 더 저렴한 모델의 결과를 평가합니다."
+      ],
+      "conclusion": "우리는 고품질 도메인 내 데이터를 수집하고 정리하는 오랜 과정을 거친 후 범위가 좁고 대용량 작업을 위한 소규모 모델만 미세 조정합니다. 다른 모든 것은 '교육보다 엔지니어링'입니다."
+    },
+    "essentialWork": {
+      "title": "5. 섹시하지 않고 필수적인 작업",
+      "content": "SOTA 플랫폼은 모델만으로 구축되지 않습니다. 지루하고 어려운 문제를 해결하는 데 기반을 두고 있습니다.",
+      "points": [
+        {
+          "title": "데이터 플라이휠",
+          "content": "프로덕션 사용을 기록하고 학습할 수 없으면 모델이 개선되지 않습니다. 규정을 준수하고 익명화된 데이터 파이프라인을 활성화하려면 조기에 보안 작업을 수행하세요."
+        },
+        {
+          "title": "느낌이 아닌 평가",
+          "content": "비즈니스 소유자에게 '황금 데이터세트'(실제 Q&A 쌍)를 요구하면 단순히 '멋져 보이는' 것이 아니라 precision/recall을 측정할 수 있습니다."
+        },
+        {
+          "title": "컴퓨팅 리소스",
+          "content": "추론은 CPU를 실행하는 것과 다릅니다. OOM 충돌을 방지하고 활용도를 최적화하려면 전용 모니터링이 필요합니다."
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "결론",
+      "content": "중견 기술 기업의 경우 AI에서 승리한다고 해서 더 나은 LLM을 구축하는 것은 아닙니다. 이는 AI를 반복 가능하고 확장 가능한 비즈니스 프로세스로 전환하는 플랫폼을 구축하는 것을 의미합니다.",
+      "finalThoughts": "인프라부터 시작하여 데이터를 보호하고 팀이 구축하도록 하세요. 미래는 모든 것을 지배하는 하나의 모델이 아닙니다. 미래는 전문 에이전트 집단으로, 각 에이전트는 실제 비즈니스 문제를 해결하고, 모든 에이전트는 문제를 단순화하는 플랫폼을 기반으로 합니다.",
+      "callToAction": "구축할 준비가 되셨나요? 단순함을 유지하고 열린 상태를 유지하며 다른 사람들을 활성화하는 데 집중하십시오."
+    }
   }
 }

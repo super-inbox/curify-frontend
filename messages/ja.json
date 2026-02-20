@@ -1,5 +1,9 @@
 {
   "home": {
+    "metadata": {
+      "title": "Curify | AIでコンテンツ制作を加速",
+      "description": "Curifyは、クリエイター・教育者・メディアチームが、動画、マンガ、プレゼン資料を大規模に制作・ローカライズできるAIネイティブプラットフォームです。"
+    },
     "hero": {
       "title": "AIを活用した次世代コンテンツ制作",
       "description": "Curify Studioは、言語やフォーマットの壁を越えてコンテンツを制作・ローカライズできるAIネイティブプラットフォームです。音声のトーン・スタイル・感情的ニュアンスを保ちながら、世界中の視聴者へ届く本物の翻訳体験を提供します。メディア・教育・エンターテインメントの交差点で、グローバル展開を加速するためのツールを提供しています。"
@@ -36,15 +40,24 @@
     "subtitle": "次世代機能を開発中",
     "styleTransfer": {
       "title": "スタイル転写",
-      "desc": "映画風やブランド特有のスタイルを動画に適用するAIビジュアル変換。"
+      "desc": "映画風やブランド特有のスタイルを動画に適用するAIビジュアル変換。",
+      "icon": "🎨",
+      "status": "2025年第3四半期公開予定",
+      "transcript": "このデモは、実写ドラマのクリップをジブリ風のアニメーションに変換します。"
     },
     "mangaTranslation": {
       "title": "マンガ翻訳",
-      "desc": "吹き出し検出・テキスト抽出・文化適応を含む自動マンガ翻訳。"
+      "desc": "吹き出し検出・テキスト抽出・文化適応を含む自動マンガ翻訳。",
+      "icon": "📚",
+      "status": "2025年第3四半期公開予定",
+      "transcript": "このプロトタイプは、自動マンガ翻訳を示しています。"
     },
     "templatedVideo": {
       "title": "テンプレート動画生成",
-      "desc": "テンプレートを使ってブランドに合わせた動画を自動生成。"
+      "desc": "テンプレートを使ってブランドに合わせた動画を自動生成。",
+      "icon": "🎬",
+      "status": "2025年第4四半期公開予定",
+      "transcript": "このデモは、脚本から動画へのパイプラインを示しています。"
     },
     "statusQ3": "2025年 第3四半期公開予定",
     "statusQ4": "2025年 第4四半期公開予定"
@@ -111,6 +124,10 @@
     "create": "作成"
   },
   "bilingual": {
+    "metadata": {
+      "title": "無料バイリンガル字幕ジェネレーター | Curify AI",
+      "description": "Curifyの無料AIツールで、動画にバイリンガル字幕を簡単作成。YouTube、TikTok、教育用途、グローバル展開に最適です。"
+    },
     "title": "バイリンガル字幕を簡単に作成",
     "intro": "CurifyのAI字幕エンジンで、2言語の字幕を自動生成。クリエイター、教育者、企業に最適。",
     "example": "例：Jensen HuangのAI戦略解説 — 英語と中国語の字幕を自動生成。",
@@ -131,10 +148,36 @@
     }
   },
   "videoDubbing": {
+    "metadata": {
+      "title": "AI動画吹き替えツール | Curify AI",
+      "description": "AI音声クローン、感情保持、リップシンクで動画を170以上の言語に吹き替え。CurifyのAI吹き替えを無料で試せます。"
+    },
     "title": "自然な声でのAI動画吹き替え",
     "description": "170以上の言語で動画を翻訳・同期し、自然なAI音声とリップシンクを提供します。国際展開するクリエイターやブランドに最適です。"
   },
+  "about": {
+    "metadata": {
+      "title": "Curifyについて | ビジョン・技術・チーム",
+      "description": "AIでコンテンツ制作を民主化するCurifyのビジョンを紹介します。私たちはメディアローカライゼーションの未来をつくるエンジニアとクリエイターのチームです。"
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "お問い合わせ | Curify Studio",
+      "description": "サポート、営業、提携についてはCurifyチームまでご連絡ください。コンテンツのグローバル展開を支援します。"
+    }
+  },
+  "blog": {
+    "metadata": {
+      "title": "Curifyブログ | AIコンテンツ制作インサイト",
+      "description": "AI動画生成、吹き替え、スタイル転写、コンテンツ制作の未来に関する最新記事をお届けします。"
+    }
+  },
   "pricing": {
+    "metadata": {
+      "title": "料金プラン | Curify Studio",
+      "description": "無料ツールからエンタープライズ向けAI吹き替え・ローカライズまで、用途に合うプランを選べます。"
+    },
     "header": {
       "title": "プランを選択",
       "subtitle": "ニーズに合わせて選べます"
@@ -164,7 +207,7 @@
         ]
       },
       "creator": {
-        "name": "Creator",
+        "name": "クリエイター",
         "description": "定期的に字幕や軽い吹き替えを行う小規模クリエイター向け",
         "plusTitle": "無料プランのすべてに加えて：",
         "features": [
@@ -186,7 +229,7 @@
         ]
       },
       "enterprise": {
-        "name": "Enterprise",
+        "name": "エンタープライズ",
         "description": "チーム・スタジオ・企業向けワークフロー",
         "customPricing": "カスタム",
         "unlimited": "無制限 🐚",
@@ -229,440 +272,331 @@
       }
     }
   },
-  "SceneDetection": {
-  "tags": {
-    "computerVision": "コンピュータビジョン",
-    "deepLearning": "ディープラーニング",
-    "realTimeAnalysis": "リアルタイム解析"
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI - アニメーション再定義（Part 3）",
+    "heading": "🎨 AE vs ComfyUI",
+    "intro1": "よく質問されるのは、After Effects（AE）だけで十分ではないか、あるいはなぜComfyUIかという点です。両方とも重要で、AEは精密な制御を、ComfyUIは生成系の創造性を担います。",
+    "intro2": "AEはタイムライン精度と、トランジション・ライティング・エフェクトの制御に強みがあります。ComfyUIは、拡散モデル、テキスト、多モーダル連携を統合したAIネイティブなワークフローを提供します。",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "高精度なVFXとモーション制御",
+      "row1b": "AIネイティブな動画生成",
+      "row2a": "タイムラインベース編集",
+      "row2b": "ワークフロー/ノードベースレンダリング",
+      "row3a": "手動/プラグイン中心のワークフロー",
+      "row3b": "拡散 + LLM + 多モーダルオーケストレーション"
+    },
+    "outro": "私たちのワークフローでは、ComfyUIがAI生成と反復を担い、AEがトランジション、オーバーレイ、合成処理など最終表現を仕上げます。"
   },
-  "hero": {
-    "title": "動画をAIでストーリーボードに変換",
-    "subtitle": "何時間分もの映像を、わずか数分で構造化された検索可能なストーリーボードに変換する高度なパイプラインの仕組みを紹介します。"
-  },
-  "introduction": {
-    "paragraph1": "何時間もの生素材の映像をアップロードするだけで、数分後には動画全体の<strong>詳細なシーンごとのブレイクダウン</strong>が手に入るとしたらどうでしょうか。これこそが、AI搭載シーン検出システムが実現していることです。",
-    "paragraph2": "最先端のPythonライブラリとディープラーニングモデルで構築されたこのパイプラインは、単にシーンの切り替わりを検出するだけではありません。コンテンツを理解し、重要な要素を特定し、すべてを包括的なストーリーボードとして構造化します。"
-  },
-  "imageAlt": "シーン検出パイプラインが重要な瞬間を検出し、構造化されたストーリーボードを生成している様子",
-  "protip": "最適な結果を得るには、シーン間の視覚的な区切りが明確な動画をご利用ください。十分な照明があり、モーションブラーが少ない映像で最も良く機能します。動画編集時にチャプターマーカーやシーンブレイクを追加しておくと、検出精度がさらに向上します。",
-  "humanEvaluation": {
-    "title": "AI出力の人手評価",
-    "introduction": "AIパイプラインは非常に高精度ですが、人手による評価は品質保証プロセスにおいて依然として重要な要素です。最高品質のアウトプットを実現するために、次のような手順を採用しています。",
-    "evaluationAreas": [
-      "<strong>シーン境界の精度</strong> – シーン遷移ポイントの確認と微調整",
-      "<strong>メタデータ検証</strong> – AIが生成した説明、タグ、ラベルの検証",
-      "<strong>一貫性チェック</strong> – すべてのシーンでスタイルとフォーマットの統一性を確認",
-      "<strong>コンテンツの正確性</strong> – 各シーンでAIが主要要素を正しく特定できているかを検証"
+  "video_translation_eval": {
+    "title": "AI動画翻訳品質の評価",
+    "subtitle": "本当に重要な指標",
+    "intro": "動画を多言語に翻訳するには、文字起こし、翻訳、音声合成、タイミング調整など、多くの工程が必要です。Curifyでは、各工程が業界水準を満たすよう、堅牢な評価パイプラインを構築しています。",
+    "section1_title": "1. 文字起こし品質",
+    "section1_engine": "エンジン: WhisperX",
+    "section1_metrics": [
+      "WER（単語誤り率）",
+      "句読点F1（表現力と可読性）"
     ],
-    "workflow": {
-      "title": "Human-in-the-Loopワークフロー",
-      "steps": [
-        "AIが動画を処理し、初期ストーリーボードを生成",
-        "人間のレビュアーが専用ツールを使ってAI出力を評価",
-        "レビュアーがフィードバックを行い、必要な修正を実施",
-        "システムが人手による修正から学習し、今後の出力を改善",
-        "納品前の最終品質チェックを実施"
+    "section2_title": "2. 翻訳品質",
+    "section2_engine": "エンジン: Helsinki, MarianMT",
+    "section2_metrics": [
+      "BLEU（標準指標）",
+      "COMET / chrF++（意味的類似度）",
+      "人手評価: 流暢さ + 十分性"
+    ],
+    "section3_title": "3. 音声合成品質",
+    "section3_engine": "エンジン: XTTS / YourTTS",
+    "section3_metrics": [
+      "MOS（自然さ・類似性・表現力）",
+      "話者照合精度"
+    ],
+    "section4_title": "4. アライメントとリップシンク",
+    "section4_metrics": [
+      "セグメント長の不一致",
+      "Wav2Lip同期信頼度",
+      "時間ドリフト分析"
+    ],
+    "section5_title": "5. 意味保持",
+    "section5_method": "翻訳後の音声が元の意味・トーン・感情を保持しているかを、GPT-4などのLLMで評価します。例: ",
+    "section5_prompt": "この中国語（標準語）の書き起こしと英語音声を比較し、トーン・意図・内容が一致しているかを1〜5で評価し、理由を説明してください。",
+    "section6_title": "6. ユーザーフィードバックとGTM検証",
+    "section6_metrics": [
+      "製品カテゴリへの音質適合性",
+      "視聴維持率の改善",
+      "初期ユーザー（例: 1688出店者）の導入意向"
+    ],
+    "closing": "Curifyは単なる翻訳ではなく、言語をまたいで物語性・感情・明瞭さを保ちます。世界展開を始めるなら、ぜひご相談ください。",
+    "available_locales": "記事対応言語: [EN] [ZH] [ES] [DE]"
+  },
+  "storyboardToPipeline": {
+    "title": "ストーリーボードからAIパイプラインへ - アニメーション再定義",
+    "intro": {
+      "p1": "ほとんどの人は、AI ビデオを「テキストを入力し、クリップアウトする」ことを意味すると考えています。しかし、<strong>映画のようなディレクターレベルのコントロール</strong>を目指している場合は、まったく別のゲームになります。",
+      "p2": "従来のアニメーションでは、キャラクターデザイン、動きの連続性、タイミング、シーン遷移など、あらゆる要素が重要です。私たちの目標は、AIでもその精度に到達することです。",
+      "p3": "現在のアニメーションは、芸術であると同時に、構造化されたオーケストレーションの課題でもあります。私たちは監督のように考え、エンジニアのように実装します。",
+      "p4": "そのため、ワンショット生成ではなく、<strong>制御された生成パイプライン</strong>を構築します。これらのパイプラインは構造と創造性を組み合わせています。",
+      "pipelineItems": [
+        "ストーリーボードからビデオへ: ID、タイミング、カメラのメタデータを含む JSON ベースのシーン仕様",
+        "ComfyUI ベースのワークフロー: バージョン管理されたチェックポイント、LoRA スタック、シードを含むノードグラフ DAGs",
+        "時間的およびマルチモーダルな制御: 画像、モーション、オーディオ、字幕にわたる共有シーン ID"
+      ],
+      "p5": "それでは、AIパイプラインが実運用でどのように機能するか、シンプルな例で見ていきましょう。",
+      "technicalNotes": [
+        "すべてのステージ read/write タイプ付きアーティファクト (JSON/CSV、PNG シーケンス、WAV/MP3、MP4、.aep)",
+        "パイプラインは Python/CLI 経由で調整されます (例: ComfyUI API、ffmpeg、TTS APIs)",
+        "すべての実行は、保存された構成 (モデル、サンプラー、シード、プロンプト、期間) を通じて再現可能です。"
       ]
     },
-    "benefits": {
-      "title": "人手評価の利点",
-      "items": [
-        "<strong>より高い精度</strong> – 人間のレビュアーはAIが見落としがちな微妙なニュアンスを検出可能",
-        "<strong>文脈理解</strong> – 文化的・状況的なコンテクストをより適切に解釈",
-        "<strong>品質保証</strong> – プロ用途向けに、追加の検証レイヤーを提供",
-        "<strong>継続的改善</strong> – 人手のフィードバックがAIモデルの学習と改善に貢献"
-      ]
-    },
-    "tools": {
-      "title": "評価用ツール",
-      "description": "プラットフォームには、人間のレビュアーを支援する専用ツールが組み込まれています。",
+    "pipeline": {
+      "title": "AI動画生成パイプライン",
+      "description": "AI動画生成パイプラインは、明確な入力・出力・設定を持つ構造化ステージを通して、テキストプロンプトを完成動画へ変換します。",
+      "prompt": "1. プロンプト (生のアイデア → 構造化された JSON 仕様)",
+      "storyboard": "2. ストーリーボード (タイミング、カメラ、説明を含む scene/shot テーブル)",
+      "images": "3. 画像 (Stable Diffusion / ComfyUI によって生成されたショットごとのキーフレーム)",
+      "animation": "4. アニメーション（画像シーケンス → 動き、パララックス、エフェクト）",
+      "voiceOver": "5. 音声（TTS + アライメント情報）",
+      "finalVideo": "6. 最終ビデオ (ffmpeg 構成: ビデオ + オーディオ + 字幕)",
       "features": [
-        "動画とストーリーボードの並列比較ビュー",
-        "シーン境界を簡単に調整できるインターフェース",
-        "メタデータやタグの一括編集機能",
-        "チームでレビューできるコラボレーション機能",
-        "変更履歴とトラッキング機能"
-      ]
-    }
-  },
-  "header": {
-    "title": "生素材からストーリーボードへ",
-    "author": "Curify AIチーム",
-    "role": "AIリサーチチーム",
-    "imageAlt": "AIが動画シーンを解析し、ストーリーボードを生成している様子",
-    "imageCaption": "AI搭載シーン検出により、動画コンテンツの重要な瞬間を特定",
-    "subtitle": "AIによる動画解析",
-    "date": "2025年12月11日",
-    "readingTime": "読了時間 8分"
-  },
-  "Technical": {
-    "title": "TECHNICAL DEEP DIVE",
-    "steps": {
-      "step1": "仕組み：内部アーキテクチャ",
-      "videoProcessingPipeline": "本システムは、高精度なシーン検出と解析を実現するため、洗練された多段階パイプラインで動画を処理します。",
-      "step2": "動画処理パイプライン",
-      "step2Text": "本システムは、高精度なシーン検出と解析を実現するため、洗練された多段階パイプラインで動画を処理します。",
-      "step3": "シーン検出とメタデータ抽出",
-      "step3Text": "最適な間隔でのOpenCVベースのフレームサンプリング",
-      "step4": "ショット解析とメタデータ拡張",
-      "step4Text": "シーン境界を高精度に検出するための適応的しきい値処理",
-      "step5": "シーンラベリングとメタデータ整理",
-      "step5Text": "包括的なシーン理解のためのディープラーニングモデル",
-      "step6": "メタデータのエクスポートと連携",
-      "step6Text": "他ツールとの連携のためにメタデータをJSON形式でエクスポート"
-    }
-  },
-  "featuresTitle": "強力な機能をあなたの手に",
-  "features1": "シームレスな動画取り込み",
-  "features1Text": "ローカルファイル、YouTubeリンク、クラウドストレージを統一インターフェースから処理可能。",
-  "features": "強力な機能をあなたの手に",
-  "features2": "シームレスな動画取り込み",
-  "features2Text": "ローカルファイル、YouTubeリンク、クラウドストレージを統一インターフェースから処理可能。",
-  "features3": "AI駆動の解析",
-  "features3Text": "オプションのAI解析モジュールでシーン理解をさらに強化。",
-  "features4": "カメラモーション検出",
-  "features4Text": "パンやズームなどのカメラ動作を自動的に識別。",
-  "features5": "カスタマイズ可能な出力",
-  "features5Text": "他ツールと連携しやすいJSON形式でメタデータをエクスポート可能。",
-  "intro": {
-    "p1": "スピードが求められる現代のコンテンツ制作において、<strong>効率的な動画解析</strong>はもはや贅沢ではなく必須要件となっています。AI搭載シーン検出技術により、何時間分もの生素材を、数日ではなく数分で構造化された検索可能なコンテンツへと変換できます。",
-    "p2": "映画制作者、クリエイター、メディアプロフェッショナルのいずれであっても、自動シーン検出の力を理解することで、ワークフローを一新し、新たなクリエイティブの可能性を切り開くことができます。"
-  },
-  "proTip": "ベストな結果を得るには、音声と映像の両方でシーンの区切りが明確なソース動画をご用意ください。十分な照明と少ない背景ノイズがある環境では、検出精度が大幅に向上します。",
-  "titanicExample": {
-    "title": "実例：『タイタニック』シーン解析",
-    "description": "本システムが『タイタニック』のワンシーンをどのように解析し、ショット変化を検出して詳細なシーンメタデータを生成するかをご覧ください。",
-    "analysis": "解析：",
-    "analysisText": "リアルタイムでのシーン検出とメタデータ抽出"
-  },
-  "inceptionExample": {
-    "title": "夢の階層解析：『インセプション』シーンブレイクダウン",
-    "description": "AIが『インセプション』の複雑な夢のレイヤーや視覚効果をどのように解析するかを探ってみましょう。",
-    "analysis": "解析",
-    "analysisText": "夢レイヤー検出とVFXブレイクダウン",
-    "breakdownTitle": "シーン解析ブレイクダウン",
-    "showFullAnalysis": "シーン解析の全文を表示",
-    "hideFullAnalysis": "シーン解析の全文を非表示",
-    "fullSceneAnalysis": "シーン解析全文",
-    "sceneCard": {
-      "mood": "ムード",
-      "environment": "環境",
-      "shotNotes": "ショットノート"
-    }
-  },
-  "Scene": "シーン",
-  "process": {
-    "title": "シーン検出の仕組み",
+        "JSON ファーストのデザイン: すべてのシーンがアドレス指定可能でスクリプト可能 (scene_id、shot_id)",
+        "ComfyUI ベースのワークフロー: image/video 生成用のモジュール式、再現可能、構成可能な DAGs",
+        "時間的およびマルチモーダルな制御: モダリティ全体での一貫したシード、文字の埋め込み、およびタイミング"
+      ],
+      "exampleIntro": "それでは、AIパイプラインが実運用でどのように機能するか、シンプルな例で見ていきましょう。",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
     "steps": {
       "step1": {
-        "title": "1. 動画解析",
-        "description": "AIが動画をフレーム単位で走査し、シーン境界の候補となる視覚・音声の手がかりを解析します。",
-        "details": [
-          "色ヒストグラムとモーションベクトルの解析",
-          "音量変化や無音区間の検出",
-          "ショット境界とトランジションの検出"
-        ]
+        "title": "Step 1: 基本プロンプトを作る",
+        "example": "真夜中の駅に少女が立ち、風が髪を揺らしている。",
+        "expandedPrompt": "GPTやローカルLLMを使い、全体スタイル、キャラクター定義、シーンごとの分解を含む構造化JSONへ展開します。",
+        "technicalDetails": {
+          "llmFields": [
+            "global_style: アート スタイル、カメラ言語、カラー パレット",
+            "登場人物：名前、年齢、見た目、服装、精神状態",
+            "シーン: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "Python スクリプトが OpenAI/LLM API を呼び出し、JSON をディスクに書き込む"
+        }
       },
       "step2": {
-        "title": "2. シーン分割",
-        "description": "システムは、視覚的および時間的な関係に基づいて関連するショットをまとめ、首尾一貫したシーン単位にグルーピングします。",
-        "details": [
-          "機械学習によりシーンコンテクストを理解",
-          "ショット長やトランジション種別を考慮",
-          "関連ショットをまとめて論理的なシーンを構成"
-        ]
+        "title": "Step 2: プロンプトをストーリーボード表へ変換",
+        "description": "JSON仕様を、人物とパイプラインの双方が読めるストーリーボード表（CSVまたはNotion）に平坦化します。",
+        "technicalDetails": {
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "motion_notes"
+          ],
+          "storage": "storyboard_v1.csv (下流ステップの信頼できる唯一の情報源として使用)",
+          "automation": "Python / Node.js スクリプトは prompt_run_001.json → storyboard_v1.csv を変換します"
+        }
       },
       "step3": {
-        "title": "3. コンテンツ分類",
-        "description": "検出された各シーンは、その映像と音声内容に基づいて解析・分類されます。",
-        "details": [
-          "主要な視覚要素やオブジェクトの特定",
-          "シーン種別（例：インタビュー、アクション、風景など）の分類",
-          "音声からスピーチ、音楽、効果音などを解析"
-        ]
+        "title": "🛠️ Step 3: ビジュアル生成",
+        "description": "ComfyUIワークフローを通して、Stable Diffusionで各ショットの高品質キーフレームを生成します。",
+        "points": [
+          "🎨 <strong>Stable Diffusion</strong> または <strong>ComfyUI</strong> を使用して、`storyboard_v1.csv` の各行を高解像度キーフレームに変換します。",
+          "すべてのショットで同じベース チェックポイント、LoRA スタック、サンプラー、シード ポリシーを使用することで、スタイルの一貫性を保ちます。",
+          "インペイント (faces/hands の場合) とアウトペイント (拡張された構図やカメラの動きの場合) を使用して画像を洗練します。"
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "consistency": {
+            "seedStrategy": "fixed_per_scene",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "カスタム ノード / HTTP API 読み取り storyboard_v1.csv および modelConfig",
+            "batching": "ロードされたウェイトを再利用するための GPU をキーとする scene_id バッチ"
+          }
+        }
       },
       "step4": {
-        "title": "4. メタデータ生成",
-        "description": "各シーンに包括的なメタデータを生成し、強力な検索や整理を可能にします。",
-        "details": [
-          "タイムスタンプと再生時間の情報を生成",
-          "代表サムネイルの作成",
-          "主要なセリフや音声キューの抽出"
-        ]
+        "title": "🎬 Step 4: After Effectsで動きと空気感を追加",
+        "description": "Adobe After Effects（または同等の合成ツール）で、静止キーフレームに動き、パララックス、雰囲気表現を加えます。",
+        "points": [
+          "画像シーケンスまたはキーフレームをレイヤー化されたコンポジションとして <strong>Adobe After Effects</strong> にインポートします。",
+          "キーフレーム アニメーションを適用します: パン、ズーム、視差レイヤー、フォグ オーバーレイ、グロー、ライト フリッカー。",
+          "シーン間に環境音の合図と映画のようなトランジションを追加します。"
+        ],
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (さらにオプションの depth/alpha マップ)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "AE scripts/ExtendScript または JSX を使用して、scene_id ごとにコンプを自動作成します。",
+            "`storyboard_v1.csv` の `duration_seconds` をコンポジションの長さにマッピングします。",
+            "必要に応じて、AE プラグインまたはビデオ対応拡散ツールを介して中間フレームを生成します。"
+          ],
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "🎧 Step 5: 音声と字幕を追加",
+        "description": "ストーリーボードに合わせた音声を生成し、アクセシビリティと明瞭性のため字幕を付与します。",
+        "points": [
+          "<strong>XTTS</strong> または <strong>ElevenLabs</strong> を使用して、一貫したスピーカー プロファイルを使用してスクリプトから自然なナレーションを生成します。",
+          "頭字語 (API、NBA など) の場合は、英語のスニペットを個別に生成し、ポストにマージして、発音をきれいに保ちます。",
+          "ナレーション トラックと同期されている `.srt` または `.json` タイムライン ファイルを使用して字幕を追加します。"
+        ],
+        "technicalDetails": {
+          "scriptSource": "prompt_run_001.json + storyboard_v1.csv から抽出されたダイアログとナレーション",
+          "ttsConfig": {
+            "engine": "XTTS または ElevenLabs",
+            "voiceId": "cinematic_female_en",
+            "sampleRate": 44100,
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voiceover.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "storyboard_v1.csv から `start_time` / `end_time` を字幕キューに合わせます。オーディオの合計の長さ ≈ 最終的なタイムラインの長さを確保する"
+        }
+      },
+      "step6": {
+        "title": "Step 6: FFMPEGで最終合成",
+        "description": "FFMPEGで各素材を結合し、音声と字幕付きの最終動画ファイルを生成します。",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voiceover.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264、24 fps、AAC オーディオ)"
+        }
       }
-    }
-  },
-  "whyItWorks": {
-    "title": "なぜこのシーン検出は高精度なのか",
-    "points": "<li>AIが<strong>映像と音声の両方の手がかり</strong>を解析することで、シーン境界を95%以上の精度で特定します。</li><li>高度な<strong>機械学習モデル</strong>により、単なる画面変化ではなく文脈を理解した自然なシーン検出を実現します。</li><li>リアルタイム処理により、撮影中や編集中に<strong>即時フィードバック</strong>と調整が可能です。</li>"
-  },
-  "recommendedStyle": {
-    "title": "最適な検出結果のための推奨スタイル",
-    "description": "最も正確なシーン検出を行うために、次のスタイルガイドラインを推奨します。",
-    "points": [
-      "各シーン内では照明条件を一定に保つ",
-      "テイク間で明確な音声マーカーやカチンコを使用する",
-      "カメラ動作は滑らかで意図的なものにする",
-      "シーン内では音声レベルをできるだけ一定に保つ"
-    ]
-  },
-  "title": "生素材からストーリーボードへ：AI搭載動画解析",
-  "description": "AIがどのように生素材の動画を自動シーン検出と解析によって構造化されたストーリーボードに変換するかをご紹介します。",
-  "timeline": {
-    "title": "シーンタイムライン",
-    "viewScene": "シーン {1} を表示"
-  },
-  "cta": "🚀 あなたのストーリーボード制作をAIで加速しませんか？<strong>サンプルJSON、ComfyUIワークフロー、ffmpeg/AEテンプレートを含むスターターキット</strong>をご提供できます。",
-  "sceneBreakdown": {
-    "title": "シーン検出出力の理解",
-    "introduction": "ここでは、典型的なシーン検出出力を分解し、AIが動画コンテンツをどのように解析・構造化しているかを説明します。各説明の下には、そのインサイトを支える対応するJSON構造を掲載しています。",
-    "scenes": [
-      {
-        "title": "1. シーン識別",
-        "content": "各シーンには一意のIDとタイムスタンプ範囲が割り当てられ、動画コンテンツを正確にナビゲートできるようになります。これが解析の基盤となります。",
-        "example": "シーン1 (00:00:02.50 - 00:00:05.20)",
-        "jsonExample": {
-          "scene_id": "scene_001",
-          "start_time": 2.5,
-          "end_time": 5.2,
-          "duration": 2.7,
-          "keyframe_index": 5,
-          "keyframe_time": 3.8
-        },
-        "jsonDescription": "このJSON構造は、シーンの一意のID、時間情報、および代表キーフレームのインデックス／時間など、基本的な識別データを示しています。"
-      },
-      {
-        "title": "2. 視覚解析",
-        "content": "AIはキーフレームを解析し、支配的な色、照明条件、視覚要素など、シーンの視覚構成を理解します。",
-        "example": "キーフレーム解析：屋外・昼間・複数の人物",
-        "jsonExample": {
-          "visual_analysis": {
-            "brightness": 0.78,
-            "contrast": 0.65,
-            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
-            "dominant_colors": [
-              { "color": "#3A5FCD", "percentage": 0.45 },
-              { "color": "#87CEEB", "percentage": 0.35 },
-              { "color": "#F5F5DC", "percentage": 0.20 }
-            ],
-            "lighting_condition": "daylight",
-            "environment": "outdoor",
-            "detected_objects": [
-              { "label": "person", "confidence": 0.97, "count": 2 },
-              { "label": "sky", "confidence": 0.99, "count": 1 }
-            ]
-          }
-        },
-        "jsonDescription": "このJSONは、色情報、照明条件、検出されたオブジェクトとその信頼度など、視覚解析のデータを示しています。"
-      },
-      {
-        "title": "3. ショット構成",
-        "content": "各シーン内で個々のショットとそのトランジションを特定し、映像の流れやテンポを把握できるようにします。",
-        "example": "スムーズなカット3つとクロスフェード1つを検出",
-        "jsonExample": {
-          "shots": [
-            {
-              "shot_id": "shot_001",
-              "start_time": 2.5,
-              "end_time": 3.1,
-              "transition": {
-                "type": "cut",
-                "confidence": 0.98
-              },
-              "camera_motion": {
-                "type": "static",
-                "confidence": 0.92
-              }
-            },
-            {
-              "shot_id": "shot_002",
-              "start_time": 3.1,
-              "end_time": 4.3,
-              "transition": {
-                "type": "fade",
-                "duration": 0.3,
-                "confidence": 0.95
-              },
-              "camera_motion": {
-                "type": "pan_left",
-                "confidence": 0.88
-              }
-            }
-          ]
-        },
-        "jsonDescription": "このJSON構造は、シーン内のショット構成を詳細に示し、時間情報、トランジションの種類、カメラモーションの解析結果を含みます。"
-      },
-      {
-        "title": "4. コンテンツ分類",
-        "content": "シーンは自動的に内容に基づいてカテゴリ分けされ、後から特定の種類の映像を簡単に検索できるようになります。",
-        "example": "カテゴリ：ドラマ、舞台：船のデッキ、被写体：メインキャラクター",
-        "jsonExample": {
-          "content_analysis": {
-            "primary_category": "drama",
-            "secondary_categories": ["romance", "disaster"],
-            "setting": {
-              "type": "ship_deck",
-              "time_of_day": "night",
-              "confidence": 0.92
-            },
-            "subjects": [
-              {
-                "type": "main_character",
-                "name": "Jack",
-                "position": "center_frame",
-                "emotion": "determined",
-                "confidence": 0.89
-              },
-              {
-                "type": "main_character",
-                "name": "Rose",
-                "position": "center_frame",
-                "emotion": "fearful",
-                "confidence": 0.91
-              }
-            ],
-            "sentiment": {
-              "overall": "intense_dramatic",
-              "confidence": 0.88,
-              "emotions": ["fear", "determination", "urgency"]
-            },
-            "key_elements": ["lifeboat", "ocean", "moonlight"],
-            "narrative_importance": 0.95,
-            "action_required": true
-          }
-        },
-        "jsonDescription": "このJSONは、『タイタニック』のドラマティックな救命ボートシーンを例に、キャラクターの感情、舞台設定、物語上の重要度など、映画シーンをAIがどのように解析・分類するかを示しています。"
-      }
+    },
+    "whatYouNeed": "📁 必要なもの",
+    "whatYouNeedTechnical": [
+      "GPU、Stable Diffusion / ComfyUI の場合は少なくとも 12GB VRAM",
+      "JSON/CSV 変換および自動化スクリプト用の Python 環境",
+      "ComfyUI は必要なカスタム ノードとワークフローとともにインストールされます",
+      "Adobe After Effects またはモーションおよび FX 用の同様のコンポジタ",
+      "XTTS / ElevenLabs API の TTS へのアクセス",
+      "ffmpeg がインストールされ、コマンド ラインで使用できるようになりました"
     ],
-    "analysisTitle": "すべてを統合すると",
-    "analysisContent": "これらの要素を組み合わせることで、システムは動画コンテンツの包括的なマップを生成します。この構造化データにより、インテリジェント検索、自動編集、コンテンツ解析といった機能が実現します。",
-    "fullExampleTitle": "完全なシーンデータ例",
-    "fullExampleDescription": "以下は、すべての要素が統合された完全なシーン解析の例です。",
-    "fullExample": {
-      "scene_id": "scene_001",
-      "start_time": 2.5,
-      "end_time": 5.2,
-      "duration": 2.7,
-      "metadata": {
-        "created_at": "2025-12-11T14:25:30Z",
-        "video_source": "interview_001.mp4",
-        "resolution": "1920x1080",
-        "fps": 30
-      },
-      "visual_analysis": {
-        "brightness": 0.78,
-        "contrast": 0.65,
-        "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
-        "lighting_condition": "daylight",
-        "environment": "studio"
-      },
-      "audio_analysis": {
-        "has_speech": true,
-        "speech_confidence": 0.92,
-        "background_noise_level": 0.15,
-        "speaker_gender": ["male", "female"],
-        "speech_text": "Let's discuss how AI is transforming video production..."
-      },
-      "content_analysis": {
-        "primary_category": "interview",
-        "setting": "studio",
-        "subjects": ["host", "guest"],
-        "sentiment": "neutral_positive"
-      },
-      "shots": [
-        {
-          "shot_id": "shot_001",
-          "start_time": 2.5,
-          "end_time": 3.1,
-          "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
-          "transition": { "type": "cut", "confidence": 0.98 }
-        },
-        {
-          "shot_id": "shot_002",
-          "start_time": 3.1,
-          "end_time": 5.2,
-          "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
-          "transition": { "type": "fade", "confidence": 0.95 }
-        }
-      ]
-    },
-    "benefitsTitle": "主なメリット",
-    "benefits": [
-      "<strong>効率的な編集：</strong> 何時間もの映像をスクラブすることなく、任意のシーンやショットに即座にジャンプ可能",
-      "<strong>スマート検索：</strong> メタデータだけでなく視覚要素に基づいてコンテンツを検索可能",
-      "<strong>一貫した品質：</strong> プロジェクト全体の視覚的一貫性を特定・維持",
-      "<strong>データ駆動の判断：</strong> コンテンツ構造やテンポに関するインサイトを取得"
-    ]
+    "cta": "🚀 AI を使用してストーリーボードに命を吹き込む準備はできていますか? <strong>開始に役立つサンプル JSON、ComfyUI ワークフロー、および ffmpeg/AE テンプレートを備えた完全なスターター キット</strong> を提供できます。"
   },
-  "conclusion": {
-    "title": "AIで変わる映像制作",
-    "p1": "AI搭載シーン検出は、映像制作のアプローチそのものを変えつつあります。煩雑なシーン特定と整理のプロセスを自動化することで、クリエイターは本当に重要な「物語づくり」に集中できるようになります。この技術は、生素材と完成コンテンツの間にあるギャップを埋め、プロレベルの動画解析をあらゆる人に開放します。",
-    "p2": "アルゴリズムの改良と機能拡張を続ける中で、映画制作者、教育者、コンテンツクリエイターがこれらのツールを活用し、ビジュアルストーリーテリングの可能性をどこまで押し広げていくのかが楽しみです。映像制作の未来はすでにここにあり、これまで以上に効率的でクリエイティブになっています。"
-  },
-  "richStructuredOutput": "リッチで構造化された出力",
-  "richStructuredOutputText": "本システムは、各シーンの詳細なメタデータを備えた包括的なストーリーボードデータを生成し、動画コンテンツを自在にコントロールできるようにします。",
-  "advancedUsage": {
-    "title": "高度な活用とカスタマイズ",
-    "description": "シーン検出システムは、さまざまなユースケースに合わせて高いカスタマイズ性を備えています。以下に、主な高度機能とカスタマイズオプションを紹介します。",
-    "features": {
-      "thresholds": {
-        "title": "カスタムシーン検出しきい値",
-        "description": "しきい値パラメータを調整することで、シーン検出の感度を変更できます。値を小さくすると、わずかな変化にも敏感に反応するようになります。"
-      },
-      "aiAnalysis": {
-        "title": "AI強化解析",
-        "description": "より詳細なシーン理解とラベリングのためにAI解析を有効化できます。これにはOllamaサーバーの追加セットアップが必要です。"
-      },
-      "outputCustomization": {
-        "title": "出力カスタマイズ",
-        "description": "出力フォーマットをカスタマイズし、生成されるストーリーボードに追加メタデータを含めることができます。"
-      }
-    },
-    "integration": {
-      "title": "他ツールとの連携",
-      "description": "ストーリーボード出力は、他のツールやワークフローと容易に統合できます。以下はその一例です。",
-      "tools": {
-        "editingSoftware": {
-          "title": "動画編集ソフト",
-          "description": "JSON出力をスクリプトベース編集に対応した動画編集ソフトへインポート可能"
-        },
-        "cms": {
-          "title": "コンテンツ管理システム",
-          "description": "動画アセット用のメタデータを自動生成"
-        },
-        "aiTraining": {
-          "title": "AIトレーニングデータ",
-          "description": "構造化された出力を機械学習モデルの学習データとして活用可能"
-        }
-      }
-    }
-  },
-  "features": {
-    "modularArchitecture": {
-      "title": "モジュラーアーキテクチャ",
-      "description": "動画解析、AI処理、出力生成の各コンポーネントを分離して構築しており、拡張性と保守性に優れています。"
-    },
-    "performance": {
-      "title": "パフォーマンス最適化",
-      "description": "効率的なフレーム処理と並列化により、長時間の動画でも高速に解析できます。"
-    },
-    "aiEnhanced": {
-      "title": "AI強化解析",
-      "description": "オプションのAIコンポーネントにより、より深いシーン理解と高精度なラベリングを提供します。"
-    }
-  },
-  "Benefitss": {
-    "title": "メリット",
-    "description": "AI搭載シーン検出システムを利用することで、次のようなメリットが得られます。",
+  "SceneDetection": {
     "tags": {
       "computerVision": "コンピュータビジョン",
       "deepLearning": "ディープラーニング",
       "realTimeAnalysis": "リアルタイム解析"
     },
+    "hero": {
+      "title": "動画をAIでストーリーボードに変換",
+      "subtitle": "何時間分もの映像を、わずか数分で構造化された検索可能なストーリーボードに変換する高度なパイプラインの仕組みを紹介します。"
+    },
+    "introduction": {
+      "paragraph1": "何時間もの生素材の映像をアップロードするだけで、数分後には動画全体の<strong>詳細なシーンごとのブレイクダウン</strong>が手に入るとしたらどうでしょうか。これこそが、AI搭載シーン検出システムが実現していることです。",
+      "paragraph2": "最先端のPythonライブラリとディープラーニングモデルで構築されたこのパイプラインは、単にシーンの切り替わりを検出するだけではありません。コンテンツを理解し、重要な要素を特定し、すべてを包括的なストーリーボードとして構造化します。"
+    },
+    "imageAlt": "シーン検出パイプラインが重要な瞬間を検出し、構造化されたストーリーボードを生成している様子",
+    "protip": "最適な結果を得るには、シーン間の視覚的な区切りが明確な動画をご利用ください。十分な照明があり、モーションブラーが少ない映像で最も良く機能します。動画編集時にチャプターマーカーやシーンブレイクを追加しておくと、検出精度がさらに向上します。",
+    "humanEvaluation": {
+      "title": "AI出力の人手評価",
+      "introduction": "AIパイプラインは非常に高精度ですが、人手による評価は品質保証プロセスにおいて依然として重要な要素です。最高品質のアウトプットを実現するために、次のような手順を採用しています。",
+      "evaluationAreas": [
+        "<strong>シーン境界の精度</strong> – シーン遷移ポイントの確認と微調整",
+        "<strong>メタデータ検証</strong> – AIが生成した説明、タグ、ラベルの検証",
+        "<strong>一貫性チェック</strong> – すべてのシーンでスタイルとフォーマットの統一性を確認",
+        "<strong>コンテンツの正確性</strong> – 各シーンでAIが主要要素を正しく特定できているかを検証"
+      ],
+      "workflow": {
+        "title": "Human-in-the-Loopワークフロー",
+        "steps": [
+          "AIが動画を処理し、初期ストーリーボードを生成",
+          "人間のレビュアーが専用ツールを使ってAI出力を評価",
+          "レビュアーがフィードバックを行い、必要な修正を実施",
+          "システムが人手による修正から学習し、今後の出力を改善",
+          "納品前の最終品質チェックを実施"
+        ]
+      },
+      "benefits": {
+        "title": "人手評価の利点",
+        "items": [
+          "<strong>より高い精度</strong> – 人間のレビュアーはAIが見落としがちな微妙なニュアンスを検出可能",
+          "<strong>文脈理解</strong> – 文化的・状況的なコンテクストをより適切に解釈",
+          "<strong>品質保証</strong> – プロ用途向けに、追加の検証レイヤーを提供",
+          "<strong>継続的改善</strong> – 人手のフィードバックがAIモデルの学習と改善に貢献"
+        ]
+      },
+      "tools": {
+        "title": "評価用ツール",
+        "description": "プラットフォームには、人間のレビュアーを支援する専用ツールが組み込まれています。",
+        "features": [
+          "動画とストーリーボードの並列比較ビュー",
+          "シーン境界を簡単に調整できるインターフェース",
+          "メタデータやタグの一括編集機能",
+          "チームでレビューできるコラボレーション機能",
+          "変更履歴とトラッキング機能"
+        ]
+      }
+    },
+    "header": {
+      "title": "生素材からストーリーボードへ",
+      "author": "Curify AIチーム",
+      "role": "AIリサーチチーム",
+      "imageAlt": "AIが動画シーンを解析し、ストーリーボードを生成している様子",
+      "imageCaption": "AI搭載シーン検出により、動画コンテンツの重要な瞬間を特定",
+      "subtitle": "AIによる動画解析",
+      "date": "2025年12月11日",
+      "readingTime": "読了時間 8分"
+    },
+    "Technical": {
+      "title": "技術的な詳細",
+      "steps": {
+        "step1": "仕組み：内部アーキテクチャ",
+        "videoProcessingPipeline": "本システムは、高精度なシーン検出と解析を実現するため、洗練された多段階パイプラインで動画を処理します。",
+        "step2": "動画処理パイプライン",
+        "step2Text": "本システムは、高精度なシーン検出と解析を実現するため、洗練された多段階パイプラインで動画を処理します。",
+        "step3": "シーン検出とメタデータ抽出",
+        "step3Text": "最適な間隔でのOpenCVベースのフレームサンプリング",
+        "step4": "ショット解析とメタデータ拡張",
+        "step4Text": "シーン境界を高精度に検出するための適応的しきい値処理",
+        "step5": "シーンラベリングとメタデータ整理",
+        "step5Text": "包括的なシーン理解のためのディープラーニングモデル",
+        "step6": "メタデータのエクスポートと連携",
+        "step6Text": "他ツールとの連携のためにメタデータをJSON形式でエクスポート"
+      }
+    },
+    "featuresTitle": "強力な機能をあなたの手に",
+    "features1": "シームレスな動画取り込み",
+    "features1Text": "ローカルファイル、YouTubeリンク、クラウドストレージを統一インターフェースから処理可能。",
     "features": {
       "modularArchitecture": {
         "title": "モジュラーアーキテクチャ",
-        "description": "動画解析、AI処理、出力生成のコンポーネントを分離することで、拡張と保守が容易になります。"
+        "description": "動画解析、AI処理、出力生成の各コンポーネントを分離して構築しており、拡張性と保守性に優れています。"
       },
       "performance": {
         "title": "パフォーマンス最適化",
@@ -670,53 +604,450 @@
       },
       "aiEnhanced": {
         "title": "AI強化解析",
-        "description": "オプションのAIコンポーネントが、より深いシーン理解と高精度のラベリングを実現します。"
+        "description": "オプションのAIコンポーネントにより、より深いシーン理解と高精度なラベリングを提供します。"
       }
-    }
-  },
-  "benefits": {
-    "subtitle": "なぜこのソリューションなのか",
-    "title": "AI搭載シーン解析の強み"
-  },
-  "integration": {
-    "title": "容易なインテグレーション",
-    "description": "構造化されたJSON出力により、他のツールやワークフローとの統合が容易になります。",
-    "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
-  },
-  "features10": {
-    "comprehensiveData": {
-      "title": "包括的なシーンデータ",
-      "items": [
-        "各シーンの正確なタイミング情報",
-        "視覚的リファレンスとなるキーフレーム",
-        "物体検出の結果",
-        "カメラ動作の解析"
+    },
+    "features2": "シームレスな動画取り込み",
+    "features2Text": "ローカルファイル、YouTubeリンク、クラウドストレージを統一インターフェースから処理可能。",
+    "features3": "AI駆動の解析",
+    "features3Text": "オプションのAI解析モジュールでシーン理解をさらに強化。",
+    "features4": "カメラモーション検出",
+    "features4Text": "パンやズームなどのカメラ動作を自動的に識別。",
+    "features5": "カスタマイズ可能な出力",
+    "features5Text": "他ツールと連携しやすいJSON形式でメタデータをエクスポート可能。",
+    "intro": {
+      "p1": "スピードが求められる現代のコンテンツ制作において、<strong>効率的な動画解析</strong>はもはや贅沢ではなく必須要件となっています。AI搭載シーン検出技術により、何時間分もの生素材を、数日ではなく数分で構造化された検索可能なコンテンツへと変換できます。",
+      "p2": "映画制作者、クリエイター、メディアプロフェッショナルのいずれであっても、自動シーン検出の力を理解することで、ワークフローを一新し、新たなクリエイティブの可能性を切り開くことができます。"
+    },
+    "proTip": "ベストな結果を得るには、音声と映像の両方でシーンの区切りが明確なソース動画をご用意ください。十分な照明と少ない背景ノイズがある環境では、検出精度が大幅に向上します。",
+    "titanicExample": {
+      "title": "実例：『タイタニック』シーン解析",
+      "description": "本システムが『タイタニック』のワンシーンをどのように解析し、ショット変化を検出して詳細なシーンメタデータを生成するかをご覧ください。",
+      "analysis": "解析：",
+      "analysisText": "リアルタイムでのシーン検出とメタデータ抽出"
+    },
+    "inceptionExample": {
+      "title": "夢の階層解析：『インセプション』シーンブレイクダウン",
+      "description": "AIが『インセプション』の複雑な夢のレイヤーや視覚効果をどのように解析するかを探ってみましょう。",
+      "analysis": "解析",
+      "analysisText": "夢レイヤー検出とVFXブレイクダウン",
+      "breakdownTitle": "シーン解析ブレイクダウン",
+      "showFullAnalysis": "シーン解析の全文を表示",
+      "hideFullAnalysis": "シーン解析の全文を非表示",
+      "fullSceneAnalysis": "シーン解析全文",
+      "sceneCard": {
+        "mood": "ムード",
+        "environment": "環境",
+        "shotNotes": "ショットノート"
+      }
+    },
+    "Scene": "シーン",
+    "process": {
+      "title": "シーン検出の仕組み",
+      "steps": {
+        "step1": {
+          "title": "1. 動画解析",
+          "description": "AIが動画をフレーム単位で走査し、シーン境界の候補となる視覚・音声の手がかりを解析します。",
+          "details": [
+            "色ヒストグラムとモーションベクトルの解析",
+            "音量変化や無音区間の検出",
+            "ショット境界とトランジションの検出"
+          ]
+        },
+        "step2": {
+          "title": "2. シーン分割",
+          "description": "システムは、視覚的および時間的な関係に基づいて関連するショットをまとめ、首尾一貫したシーン単位にグルーピングします。",
+          "details": [
+            "機械学習によりシーンコンテクストを理解",
+            "ショット長やトランジション種別を考慮",
+            "関連ショットをまとめて論理的なシーンを構成"
+          ]
+        },
+        "step3": {
+          "title": "3. コンテンツ分類",
+          "description": "検出された各シーンは、その映像と音声内容に基づいて解析・分類されます。",
+          "details": [
+            "主要な視覚要素やオブジェクトの特定",
+            "シーン種別（例：インタビュー、アクション、風景など）の分類",
+            "音声からスピーチ、音楽、効果音などを解析"
+          ]
+        },
+        "step4": {
+          "title": "4. メタデータ生成",
+          "description": "各シーンに包括的なメタデータを生成し、強力な検索や整理を可能にします。",
+          "details": [
+            "タイムスタンプと再生時間の情報を生成",
+            "代表サムネイルの作成",
+            "主要なセリフや音声キューの抽出"
+          ]
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "なぜこのシーン検出は高精度なのか",
+      "points": "<li>AIが<strong>映像と音声の両方の手がかり</strong>を解析することで、シーン境界を95%以上の精度で特定します。</li><li>高度な<strong>機械学習モデル</strong>により、単なる画面変化ではなく文脈を理解した自然なシーン検出を実現します。</li><li>リアルタイム処理により、撮影中や編集中に<strong>即時フィードバック</strong>と調整が可能です。</li>"
+    },
+    "recommendedStyle": {
+      "title": "最適な検出結果のための推奨スタイル",
+      "description": "最も正確なシーン検出を行うために、次のスタイルガイドラインを推奨します。",
+      "points": [
+        "各シーン内では照明条件を一定に保つ",
+        "テイク間で明確な音声マーカーやカチンコを使用する",
+        "カメラ動作は滑らかで意図的なものにする",
+        "シーン内では音声レベルをできるだけ一定に保つ"
       ]
     },
-    "export": {
-      "title": "エクスポートオプション",
-      "formats": {
-        "json": "JSON"
+    "title": "生素材からストーリーボードへ：AI搭載動画解析",
+    "description": "AIがどのように生素材の動画を自動シーン検出と解析によって構造化されたストーリーボードに変換するかをご紹介します。",
+    "timeline": {
+      "title": "シーンタイムライン",
+      "viewScene": "シーン {1} を表示"
+    },
+    "cta": "🚀 あなたのストーリーボード制作をAIで加速しませんか？<strong>サンプルJSON、ComfyUIワークフロー、ffmpeg/AEテンプレートを含むスターターキット</strong>をご提供できます。",
+    "sceneBreakdown": {
+      "title": "シーン検出出力の理解",
+      "introduction": "ここでは、典型的なシーン検出出力を分解し、AIが動画コンテンツをどのように解析・構造化しているかを説明します。各説明の下には、そのインサイトを支える対応するJSON構造を掲載しています。",
+      "scenes": [
+        {
+          "title": "1. シーン識別",
+          "content": "各シーンには一意のIDとタイムスタンプ範囲が割り当てられ、動画コンテンツを正確にナビゲートできるようになります。これが解析の基盤となります。",
+          "example": "シーン1 (00:00:02.50 - 00:00:05.20)",
+          "jsonExample": {
+            "scene_id": "scene_001",
+            "start_time": 2.5,
+            "end_time": 5.2,
+            "duration": 2.7,
+            "keyframe_index": 5,
+            "keyframe_time": 3.8
+          },
+          "jsonDescription": "このJSON構造は、シーンの一意のID、時間情報、および代表キーフレームのインデックス／時間など、基本的な識別データを示しています。"
+        },
+        {
+          "title": "2. 視覚解析",
+          "content": "AIはキーフレームを解析し、支配的な色、照明条件、視覚要素など、シーンの視覚構成を理解します。",
+          "example": "キーフレーム解析：屋外・昼間・複数の人物",
+          "jsonExample": {
+            "visual_analysis": {
+              "brightness": 0.78,
+              "contrast": 0.65,
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
+              "dominant_colors": [
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
+              ],
+              "lighting_condition": "daylight",
+              "environment": "outdoor",
+              "detected_objects": [
+                {
+                  "label": "person",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "sky",
+                  "confidence": 0.99,
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "jsonDescription": "このJSONは、色情報、照明条件、検出されたオブジェクトとその信頼度など、視覚解析のデータを示しています。"
+        },
+        {
+          "title": "3. ショット構成",
+          "content": "各シーン内で個々のショットとそのトランジションを特定し、映像の流れやテンポを把握できるようにします。",
+          "example": "スムーズなカット3つとクロスフェード1つを検出",
+          "jsonExample": {
+            "shots": [
+              {
+                "shot_id": "shot_001",
+                "start_time": 2.5,
+                "end_time": 3.1,
+                "transition": {
+                  "type": "cut",
+                  "confidence": 0.98
+                },
+                "camera_motion": {
+                  "type": "static",
+                  "confidence": 0.92
+                }
+              },
+              {
+                "shot_id": "shot_002",
+                "start_time": 3.1,
+                "end_time": 4.3,
+                "transition": {
+                  "type": "fade",
+                  "duration": 0.3,
+                  "confidence": 0.95
+                },
+                "camera_motion": {
+                  "type": "pan_left",
+                  "confidence": 0.88
+                }
+              }
+            ]
+          },
+          "jsonDescription": "このJSON構造は、シーン内のショット構成を詳細に示し、時間情報、トランジションの種類、カメラモーションの解析結果を含みます。"
+        },
+        {
+          "title": "4. コンテンツ分類",
+          "content": "シーンは自動的に内容に基づいてカテゴリ分けされ、後から特定の種類の映像を簡単に検索できるようになります。",
+          "example": "カテゴリ：ドラマ、舞台：船のデッキ、被写体：メインキャラクター",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "drama",
+              "secondary_categories": [
+                "romance",
+                "disaster"
+              ],
+              "setting": {
+                "type": "ship_deck",
+                "time_of_day": "night",
+                "confidence": 0.92
+              },
+              "subjects": [
+                {
+                  "type": "main_character",
+                  "name": "Jack",
+                  "position": "center_frame",
+                  "emotion": "determined",
+                  "confidence": 0.89
+                },
+                {
+                  "type": "main_character",
+                  "name": "Rose",
+                  "position": "center_frame",
+                  "emotion": "fearful",
+                  "confidence": 0.91
+                }
+              ],
+              "sentiment": {
+                "overall": "intense_dramatic",
+                "confidence": 0.88,
+                "emotions": [
+                  "fear",
+                  "determination",
+                  "urgency"
+                ]
+              },
+              "key_elements": [
+                "lifeboat",
+                "ocean",
+                "moonlight"
+              ],
+              "narrative_importance": 0.95,
+              "action_required": true
+            }
+          },
+          "jsonDescription": "このJSONは、『タイタニック』のドラマティックな救命ボートシーンを例に、キャラクターの感情、舞台設定、物語上の重要度など、映画シーンをAIがどのように解析・分類するかを示しています。"
+        }
+      ],
+      "analysisTitle": "すべてを統合すると",
+      "analysisContent": "これらの要素を組み合わせることで、システムは動画コンテンツの包括的なマップを生成します。この構造化データにより、インテリジェント検索、自動編集、コンテンツ解析といった機能が実現します。",
+      "fullExampleTitle": "完全なシーンデータ例",
+      "fullExampleDescription": "以下は、すべての要素が統合された完全なシーン解析の例です。",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": 2.5,
+        "end_time": 5.2,
+        "duration": 2.7,
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": 30
+        },
+        "visual_analysis": {
+          "brightness": 0.78,
+          "contrast": 0.65,
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
+          "lighting_condition": "daylight",
+          "environment": "studio"
+        },
+        "audio_analysis": {
+          "has_speech": true,
+          "speech_confidence": 0.92,
+          "background_noise_level": 0.15,
+          "speaker_gender": [
+            "male",
+            "female"
+          ],
+          "speech_text": "AI がビデオ制作をどのように変革しているかについて話しましょう..."
+        },
+        "content_analysis": {
+          "primary_category": "interview",
+          "setting": "studio",
+          "subjects": [
+            "host",
+            "guest"
+          ],
+          "sentiment": "neutral_positive"
+        },
+        "shots": [
+          {
+            "shot_id": "shot_001",
+            "start_time": 2.5,
+            "end_time": 3.1,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
+          },
+          {
+            "shot_id": "shot_002",
+            "start_time": 3.1,
+            "end_time": 5.2,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
+          }
+        ]
+      },
+      "benefitsTitle": "主なメリット",
+      "benefits": [
+        "<strong>効率的な編集：</strong> 何時間もの映像をスクラブすることなく、任意のシーンやショットに即座にジャンプ可能",
+        "<strong>スマート検索：</strong> メタデータだけでなく視覚要素に基づいてコンテンツを検索可能",
+        "<strong>一貫した品質：</strong> プロジェクト全体の視覚的一貫性を特定・維持",
+        "<strong>データ駆動の判断：</strong> コンテンツ構造やテンポに関するインサイトを取得"
+      ]
+    },
+    "conclusion": {
+      "title": "AIで変わる映像制作",
+      "p1": "AI搭載シーン検出は、映像制作のアプローチそのものを変えつつあります。煩雑なシーン特定と整理のプロセスを自動化することで、クリエイターは本当に重要な「物語づくり」に集中できるようになります。この技術は、生素材と完成コンテンツの間にあるギャップを埋め、プロレベルの動画解析をあらゆる人に開放します。",
+      "p2": "アルゴリズムの改良と機能拡張を続ける中で、映画制作者、教育者、コンテンツクリエイターがこれらのツールを活用し、ビジュアルストーリーテリングの可能性をどこまで押し広げていくのかが楽しみです。映像制作の未来はすでにここにあり、これまで以上に効率的でクリエイティブになっています。"
+    },
+    "richStructuredOutput": "リッチで構造化された出力",
+    "richStructuredOutputText": "本システムは、各シーンの詳細なメタデータを備えた包括的なストーリーボードデータを生成し、動画コンテンツを自在にコントロールできるようにします。",
+    "advancedUsage": {
+      "title": "高度な活用とカスタマイズ",
+      "description": "シーン検出システムは、さまざまなユースケースに合わせて高いカスタマイズ性を備えています。以下に、主な高度機能とカスタマイズオプションを紹介します。",
+      "features": {
+        "thresholds": {
+          "title": "カスタムシーン検出しきい値",
+          "description": "しきい値パラメータを調整することで、シーン検出の感度を変更できます。値を小さくすると、わずかな変化にも敏感に反応するようになります。"
+        },
+        "aiAnalysis": {
+          "title": "AI強化解析",
+          "description": "より詳細なシーン理解とラベリングのためにAI解析を有効化できます。これにはOllamaサーバーの追加セットアップが必要です。"
+        },
+        "outputCustomization": {
+          "title": "出力カスタマイズ",
+          "description": "出力フォーマットをカスタマイズし、生成されるストーリーボードに追加メタデータを含めることができます。"
+        }
+      },
+      "integration": {
+        "title": "他ツールとの連携",
+        "description": "ストーリーボード出力は、他のツールやワークフローと容易に統合できます。以下はその一例です。",
+        "tools": {
+          "editingSoftware": {
+            "title": "動画編集ソフト",
+            "description": "JSON出力をスクリプトベース編集に対応した動画編集ソフトへインポート可能"
+          },
+          "cms": {
+            "title": "コンテンツ管理システム",
+            "description": "動画アセット用のメタデータを自動生成"
+          },
+          "aiTraining": {
+            "title": "AIトレーニングデータ",
+            "description": "構造化された出力を機械学習モデルの学習データとして活用可能"
+          }
+        }
+      }
+    },
+    "Benefitss": {
+      "title": "メリット",
+      "description": "AI搭載シーン検出システムを利用することで、次のようなメリットが得られます。",
+      "tags": {
+        "computerVision": "コンピュータビジョン",
+        "deepLearning": "ディープラーニング",
+        "realTimeAnalysis": "リアルタイム解析"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "モジュラーアーキテクチャ",
+          "description": "動画解析、AI処理、出力生成のコンポーネントを分離することで、拡張と保守が容易になります。"
+        },
+        "performance": {
+          "title": "パフォーマンス最適化",
+          "description": "効率的なフレーム処理と並列化により、長時間の動画でも高速に解析できます。"
+        },
+        "aiEnhanced": {
+          "title": "AI強化解析",
+          "description": "オプションのAIコンポーネントが、より深いシーン理解と高精度のラベリングを実現します。"
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "なぜこのソリューションなのか",
+      "title": "AI搭載シーン解析の強み"
+    },
+    "integration": {
+      "title": "容易なインテグレーション",
+      "description": "構造化されたJSON出力により、他のツールやワークフローとの統合が容易になります。",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "包括的なシーンデータ",
+        "items": [
+          "各シーンの正確なタイミング情報",
+          "視覚的リファレンスとなるキーフレーム",
+          "物体検出の結果",
+          "カメラ動作の解析"
+        ]
+      },
+      "export": {
+        "title": "エクスポートオプション",
+        "formats": {
+          "json": "JSON"
+        }
+      }
+    },
+    "performance": {
+      "title": "パフォーマンス最適化",
+      "features": {
+        "speed": "実時間の5〜10倍の速度で処理",
+        "memory": "低メモリフットプリント",
+        "parallel": "並列処理対応"
       }
     }
   },
-  "performance": {
-    "title": "パフォーマンス最適化",
-    "features": {
-      "speed": "実時間の5〜10倍の速度で処理",
-      "memory": "低メモリフットプリント",
-      "parallel": "並列処理対応"
-    }
-  }
-},
-"nanoBananaProPrompts": {
-    "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+  "nanoBananaProPrompts": {
+    "title": "Nano Banana Pro プロンプト集",
+    "description": "AIコンテンツ生成のための、実用的で創造的なプロンプトを厳選して紹介します。AIツールの効果を最大化したいときに役立ちます。",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "人気の Nano Banana Pro プロンプト",
+      "prompt1": "感情が通貨として流通する未来都市を舞台に、短い物語を書いてください。",
+      "prompt2": "初めてカフェで出会う2人のキャラクターの対話を生成してください。",
+      "prompt3": "AI搭載の革新的なキッチンガジェットの製品説明文を書いてください。"
     }
   },
   "ageAi": {
@@ -784,21 +1115,24 @@
       "title": "ディスカッション：",
       "prompt": "現在の役割で「効率化された」と感じますか、それとも「置き換えられた」と感じますか？今年はどのようにスキルセットを進化させていますか？"
     },
-    "hashtags": ["#データサイエンス", "#AI", "#機械学習", "#生成AI", "#キャリア開発", "#テックトレンド"]
+    "hashtags": [
+      "#データサイエンス",
+      "#AI",
+      "#機械学習",
+      "#生成AI",
+      "#キャリア開発",
+      "#テックトレンド"
+    ]
   },
-
   "aiPlatform": {
     "title": "中堅企業のためのAI成功ガイド",
     "subtitle": "予算を圧迫せずにスケールするAIプラットフォームの構築方法",
-    "intro": "誰もがAIを活用したいと考えていますが、ほとんどの企業は大規模な研究チームや巨額の予算を持つことはできません。良いニュースは、それらがなくても実現可能だということです。",
-    "imageAlt": "AIプラットフォームアーキテクチャ図",
-    "heading": "🏗️ 中堅企業のためのAI成功ガイド",
-    
     "intro": {
       "p1": "中小規模のテック企業にとって真の強みは、大規模なモデルのトレーニングではなく、あらゆる人が知的な機能をリリースできるAIプラットフォームを構築することにあります。これが俊敏性をインパクトに変える方法です。",
       "p2": "ここでは、金融、法律、カスタマーサポート、エンジニアリングの分野で、予算を圧迫したり50人のML専門家を採用することなくAIを活用するための、実用的で本番環境に適した設計図を紹介します。"
     },
-
+    "imageAlt": "AIプラットフォームアーキテクチャ図",
+    "heading": "🏗️ 中堅企業のためのAI成功ガイド",
     "mindsetShift": {
       "title": "1. マインドセットの転換：中央集権から民主化へ",
       "content": "AIチームがボトルネックになっているなら、すでに負けています。代わりに、プロダクトエンジニアが必要なものを構築できるセルフサービス型のAIインフラを構築しましょう。",
@@ -812,7 +1146,6 @@
       },
       "conclusion": "これにより、AIは研究プロジェクトからビジネス倍増装置へと変わります。"
     },
-
     "stack": {
       "title": "2. スタック：シンプルでオープンなものを選ぶ",
       "intro": "過剰な設計は速度を低下させます。私たちは、複雑さを抽象化しながらも、ロックインを避ける3層プラットフォームを構築しました。",
@@ -845,7 +1178,6 @@
         "conclusion": "これにより、製品チームは数週間ではなく数時間でエージェントのプロトタイプを作成できます。"
       }
     },
-
     "fineTuning": {
       "title": "3. ファインチューニングは（ほとんどの場合）スキップする",
       "content": "秘密を教えましょう：**おそらくLLMのファインチューニングは必要ありません。**",
@@ -857,7 +1189,6 @@
       ],
       "conclusion": "私たちは、高品質なドメイン内データを収集・クリーニングする長いプロセスの後、狭くてボリュームの多いタスクにのみ小さなモデルをファインチューニングします。それ以外はすべて『トレーニングよりもエンジニアリング』です。"
     },
-
     "essentialWork": {
       "title": "5. 地味だが不可欠な作業",
       "content": "最先端のプラットフォームは、モデルだけで構築されるわけではありません。退屈で難しい問題を解決することで構築されます：",
@@ -876,7 +1207,6 @@
         }
       ]
     },
-
     "conclusion": {
       "title": "まとめ",
       "content": "中堅テクノロジー企業にとって、AIで成功することは、より優れたLLMを構築することを意味するのではありません。AIを繰り返し可能でスケーラブルなビジネスプロセスに変えるプラットフォームを構築することを意味します。",
@@ -884,7 +1214,6 @@
       "callToAction": "構築の準備はできましたか？シンプルに、オープンに保ち、他の人々をサポートすることに集中しましょう。"
     }
   },
-
   "qaBotToTaskAgent": {
     "heading": "🏗️ QAボットからタスクエージェントへ：アーキテクチャガイド",
     "description": "単なる質問応答を超えた信頼性の高いタスクエージェントの構築方法を学ぶ",
@@ -949,6 +1278,7 @@
       "title": "6. 決定論的フックの例",
       "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"パスワード\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"セキュリティ違反を検出しました\"}\n    return agent_node(state)\n\n参考: https://langchain-ai.github.io/langgraph/"
     },
-    "finalThought": "あなたのエージェントが質問に答えるだけなら、それはチャットボットです。信頼性高く作業を実行するなら、それはタスクエージェントです。"
+    "finalThought": "あなたのエージェントが質問に答えるだけなら、それはチャットボットです。信頼性高く作業を実行するなら、それはタスクエージェントです。",
+    "taskAgentImageAlt": "異なるコンポーネント間の相互作用を示すタスクエージェント・システムアーキテクチャの図"
   }
 }

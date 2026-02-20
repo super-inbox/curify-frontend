@@ -1,55 +1,67 @@
 {
-    "home": {
+  "home": {
+    "metadata": {
+      "title": "Curify | 用 AI 赋能内容创作",
+      "description": "Curify 是一个 AI 原生的内容创作平台，帮助创作者、教育工作者和媒体团队大规模制作和本地化视频、漫画及演示文稿。"
+    },
     "hero": {
       "title": "用 AI 赋能内容创作",
       "description": "Curify Studio 正在打造一个 AI 原生的内容创作平台，帮助创作者和机构突破语言与格式障碍。我们致力于解决内容全球化传播的难题，实现保留语气、风格和情感深度的真实翻译。立足于媒体、教育和娱乐的交汇点，我们为创作者提供一站式工具，助力他们在快速全球化的环境中无缝适配内容。"
     }
   },
   "coreFeatures": {
-  "oneShot": {
-    "title": "一键式翻译",
-    "desc": "一键完成视频翻译、配音、字幕和唇形同步。"
+    "oneShot": {
+      "title": "一键式翻译",
+      "desc": "一键完成视频翻译、配音、字幕和唇形同步。"
+    },
+    "toneColor": {
+      "title": "音色保留",
+      "desc": "保留原始说话人的独特音色和语调特征。"
+    },
+    "emotional": {
+      "title": "情感语音",
+      "desc": "AI 重现情感细节，确保跨语言的真实表达。"
+    },
+    "lipSync": {
+      "title": "唇形同步技术",
+      "desc": "先进的唇形同步，精准匹配翻译音频中的口型动作。"
+    },
+    "subtitle": {
+      "title": "字幕生成器",
+      "desc": "智能生成字幕，时间精准，语言自然流畅。"
+    },
+    "languages": {
+      "title": "170+ 种语言",
+      "desc": "可将内容翻译为 170 多种语言，接近母语级别的准确度。"
+    }
   },
-  "toneColor": {
-    "title": "音色保留",
-    "desc": "保留原始说话人的独特音色和语调特征。"
-  },
-  "emotional": {
-    "title": "情感语音",
-    "desc": "AI 重现情感细节，确保跨语言的真实表达。"
-  },
-  "lipSync": {
-    "title": "唇形同步技术",
-    "desc": "先进的唇形同步，精准匹配翻译音频中的口型动作。"
-  },
-  "subtitle": {
-    "title": "字幕生成器",
-    "desc": "智能生成字幕，时间精准，语言自然流畅。"
-  },
-  "languages": {
-    "title": "170+ 种语言",
-    "desc": "可将内容翻译为 170 多种语言，接近母语级别的准确度。"
-  }
-},
   "upcoming": {
     "title": "即将上线",
     "subtitle": "下一代功能正在开发中",
     "styleTransfer": {
       "title": "风格迁移",
-      "desc": "通过 AI 视觉风格转换，为视频添加电影级或品牌专属风格。"
+      "desc": "通过 AI 视觉风格转换，为视频添加电影级或品牌专属风格。",
+      "icon": "🎨",
+      "status": "预计 2025 Q3 上线",
+      "transcript": "该演示将真人视频转换为吉卜力风格动画。"
     },
     "mangaTranslation": {
       "title": "漫画翻译",
-      "desc": "自动识别漫画文本气泡并完成双语翻译与排版。"
+      "desc": "自动识别漫画文本气泡并完成双语翻译与排版。",
+      "icon": "📚",
+      "status": "预计 2025 Q3 上线",
+      "transcript": "该原型展示了自动漫画翻译。"
     },
     "templatedVideo": {
       "title": "模板化视频生成",
-      "desc": "使用 AI 自动生成内容和品牌样式，快速制作专业视频。"
+      "desc": "使用 AI 自动生成内容和品牌样式，快速制作专业视频。",
+      "icon": "🎬",
+      "status": "预计 2025 Q4 上线",
+      "transcript": "该演示展示了从剧本到视频的生成流程。"
     },
     "statusQ3": "预计 2025 Q3 上线",
     "statusQ4": "预计 2025 Q4 上线"
   },
-  
   "export": {
     "title": "导出",
     "export": "导出",
@@ -112,573 +124,931 @@
     "create": "创建"
   },
   "bilingual": {
-  "title": "轻松生成双语字幕",
-  "intro": "使用 Curify 的 AI 字幕引擎，自动为视频生成双语字幕。适合创作者、教育机构和全球企业。",
-  "example": "示例：黄仁勋讲解 AI 战略 — 自动生成中英双语字幕。",
-  "cta": "免费试用",
-  "why": {
-    "title": "为什么选择 Curify 的双语字幕？",
-    "point1": "支持 170+ 种语言，高精度翻译。",
-    "point2": "保留原说话者的语气和节奏。",
-    "point3": "完美适用于 YouTube、TikTok、教育视频。",
-    "point4": "可导出字幕文件或嵌入视频直接发布。"
-  },
-  "faq": {
-    "title": "常见问题",
-    "q1": "真的免费吗？",
-    "a1": "是的，Curify 提供每月有限分钟数的免费字幕计划。",
-    "q2": "生成后可以编辑字幕吗？",
-    "a2": "当然可以。你可以在导出前调整时间轴、翻译内容和样式。"
-  }
-},
-"videoDubbing": {
-  "title": "AI视频配音与自然语音",
-  "description": "使用逼真的AI语音和唇形同步，将您的视频内容翻译并配音成170多种语言。非常适合国际创作者和品牌。"
-},
-"pricing": {
-  "header": {
-    "title": "选择适合您的计划",
-    "subtitle": "选择满足您需求的计划。"
-  },
-  "common": {
-    "month": "月",
-    "pricing": "定价",
-    "receive": "获得"
-  },
-  "buttons": {
-    "signUp": "注册",
-    "subscribePlan": "订阅计划",
-    "currentPlan": "当前计划",
-    "comingSoon": "即将推出",
-    "downgradeToFree": "降级至免费版",
-    "downgradeToCreator": "降级至创作者版",
-    "contactSales": "联系销售"
-  },
-  "plans": {
-    "free": {
-      "name": "免费版",
-      "description": "适合测试工具和轻度工作",
-      "features": [
-        "下载无水印视频",
-        "1小时免费字幕处理",
-        "导出SRT文件"
-      ]
+    "metadata": {
+      "title": "免费双语字幕生成器 |固化人工智能",
+      "description": "使用 Curify 的免费人工智能工具为您的视频创建双语字幕。非常适合 YouTube、TikTok、教育和全球创作者。"
     },
-    "creator": {
-      "name": "创作者版",
-      "description": "适合定期制作字幕和轻度配音的小型创作者",
-      "plusTitle": "包含免费版的所有功能,以及:",
-      "features": [
-        "唇形同步",
-        "批量处理",
-        "5小时免费字幕处理",
-        "每个任务最长30分钟"
-      ]
+    "title": "轻松生成双语字幕",
+    "intro": "使用 Curify 的 AI 字幕引擎，自动为视频生成双语字幕。适合创作者、教育机构和全球企业。",
+    "example": "示例：黄仁勋讲解 AI 战略 — 自动生成中英双语字幕。",
+    "cta": "免费试用",
+    "why": {
+      "title": "为什么选择 Curify 的双语字幕？",
+      "point1": "支持 170+ 种语言，高精度翻译。",
+      "point2": "保留原说话者的语气和节奏。",
+      "point3": "完美适用于 YouTube、TikTok、教育视频。",
+      "point4": "可导出字幕文件或嵌入视频直接发布。"
     },
-    "pro": {
-      "name": "专业版",
-      "description": "即将推出 — 专为高产量创作者设计",
-      "plusTitle": "包含创作者版的所有功能,以及:",
-      "features": [
-        "语音美化和降噪",
-        "优先队列",
-        "每个任务最长60分钟",
-        "无限字幕分钟数"
-      ]
-    },
-    "enterprise": {
-      "name": "企业版",
-      "description": "适合团队、工作室和企业工作流程",
-      "customPricing": "定制",
-      "unlimited": "无限 🐚",
-      "tailoredSupport": "和定制支持",
-      "plusTitle": "包含专业版的所有功能,以及:",
-      "features": [
-        "专属客户经理",
-        "本地部署选项",
-        "API访问和使用分析",
-        "定制集成和SLA",
-        "无限处理时长"
-      ]
+    "faq": {
+      "title": "常见问题",
+      "q1": "真的免费吗？",
+      "a1": "是的，Curify 提供每月有限分钟数的免费字幕计划。",
+      "q2": "生成后可以编辑字幕吗？",
+      "a2": "当然可以。你可以在导出前调整时间轴、翻译内容和样式。"
     }
   },
-  "table": {
+  "videoDubbing": {
+    "metadata": {
+      "title": "AI视频配音工具|固化人工智能",
+      "description": "使用 AI 语音克隆、情感保存和口型同步将您的视频配音成 170 多种语言。免费尝试 Curify 的人工智能配音。"
+    },
+    "title": "AI视频配音与自然语音",
+    "description": "使用逼真的AI语音和唇形同步，将您的视频内容翻译并配音成170多种语言。非常适合国际创作者和品牌。"
+  },
+  "about": {
+    "metadata": {
+      "title": "关于 Curify |愿景、技术与团队",
+      "description": "了解 Curify 通过 AI 实现内容创作民主化的愿景。我们是一支由工程师和创作者组成的团队，致力于构建媒体本地化的未来。"
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "联系我们 | Curify Studio",
+      "description": "联系 Curify 团队获取支持、销售咨询或建立合作伙伴关系。我们助您实现内容的全球化扩展。"
+    }
+  },
+  "blog": {
+    "metadata": {
+      "title": "Curify 博客 | AI 内容创作洞察",
+      "description": "阅读关于 AI 视频生成、配音、风格迁移以及内容创作未来的最新文章。"
+    }
+  },
+  "pricing": {
+    "metadata": {
+      "title": "定价计划 |科菲工作室",
+      "description": "为您的内容创建需求选择正确的计划。从免费工具到企业级人工智能配音和本地化。"
+    },
     "header": {
-      "feature": "功能 / 限制"
+      "title": "选择适合您的计划",
+      "subtitle": "选择满足您需求的计划。"
     },
-    "rows": {
-      "videoDownloadWithWatermark": "下载带水印视频",
-      "videoDownloadWithoutWatermark": "下载无水印视频",
-      "downloadSrt": "下载SRT文件",
-      "voiceBeautification": "语音美化和降噪",
-      "lipSync": "唇形同步",
-      "subtitleTools": "字幕工具(添加/删除,无翻译)",
-      "batchProcessing": "批量处理",
-      "maxVideoLength": "每个任务最大视频长度",
-      "monthlyCredits": "每月免费额度",
-      "priorityQueue": "优先队列 / 更快处理",
-      "creditTopUp": "额度充值"
+    "common": {
+      "month": "月",
+      "pricing": "定价",
+      "receive": "获得"
     },
-    "values": {
-      "free": "免费",
-      "unlimited": "无限",
-      "oneHourPerMonth": "1小时/月",
-      "fiveHoursPerMonth": "5小时/月",
-      "fiveMinutes": "5分钟",
-      "thirtyMinutes": "30分钟",
-      "sixtyMinutes": "60分钟"
-    }
-  }
-},
-"aeVsComfyUi": {
-  "title": "AE vs ComfyUI —— 重塑动画创作（Part 3）",
-  "heading": "🎨 AE vs ComfyUI",
-  "intro1": "我们经常会被问：为什么不用 After Effects（AE）？或者为什么要用 ComfyUI？两者都很重要 —— 一个提供精细可控的时间线，另一个带来生成式的创造力。",
-  "intro2": "AE 具备时间线级的精确控制，包括转场、灯光和特效；而 ComfyUI 则提供 AI 原生的工作流，整合了扩散模型、文本与多模态编排能力。",
-  "table": {
-    "colAE": "AE",
-    "colComfy": "ComfyUI",
-    "row1a": "精确的特效与运动控制",
-    "row1b": "AI 原生的视频生成",
-    "row2a": "基于时间线的编辑",
-    "row2b": "基于节点/工作流渲染",
-    "row3a": "手动或插件驱动的流程",
-    "row3b": "扩散模型 + LLM + 多模态编排"
-  },
-  "outro": "在我们的工作流中，ComfyUI 负责 AI 生成与迭代，而 AE 用于最终的修饰 —— 转场、叠加和合成。"
-},
-"video_translation_eval":{
-  "title": "视频翻译质量评估指南",
-  "subtitle": "这些指标最重要",
-  "intro": "视频跨语言翻译并不简单，它涉及转录、翻译、配音、对齐等多个环节。Curify 建立了一套系统的评估流程，确保每一环都符合专业标准。",
-  "section1_title": "1. 转录质量",
-  "section1_engine": "引擎：WhisperX",
-  "section1_metrics": ["字错误率（WER）", "标点 F1 分数（提升表达和可读性）"],
-  "section2_title": "2. 翻译质量",
-  "section2_engine": "引擎：Helsinki、MarianMT",
-  "section2_metrics": ["BLEU 分数（传统指标）", "COMET / chrF++（语义相似度）", "人工评估：流畅度与准确性"],
-  "section3_title": "3. 配音质量",
-  "section3_engine": "引擎：XTTS / YourTTS",
-  "section3_metrics": ["主观评分（MOS）：自然度、音色相似度、情绪表现", "说话人验证准确率"],
-  "section4_title": "4. 对齐与口型同步",
-  "section4_metrics": ["音频时长偏差", "Wav2Lip 口型匹配分", "时间漂移分析"],
-  "section5_title": "5. 语义保持",
-  "section5_method": "我们使用大语言模型（如 GPT-4）来评估翻译内容是否保留原意、情绪和语气。示例 Prompt：",
-  "section5_prompt": "请比较这段中文原文和英文配音，判断语气、意图、内容是否一致？请打分并说明理由。",
-  "section6_title": "6. 用户反馈与市场验证",
-  "section6_metrics": ["配音风格是否符合产品", "本地视频观看时长是否提升", "用户/商家是否愿意采用"],
-  "closing": "在 Curify，我们不仅翻译语言，更传达情感与故事。如果你想让内容走向全球，欢迎联系我们。",
-  "available_locales": "可切换语言：[英文] [中文] [西语] [德语]"
-},
-
-"storyboardToPipeline": {
-  "title": "从故事板到AI流水线：重新定义动画制作",
-  "intro": {
-    "p1": "大多数人认为AI视频就是\"输入文字，输出片段\"。但如果你追求的是<strong>电影级、导演级别的控制</strong>，那完全是另一回事。",
-    "p2": "在传统动画中，每个细节都很重要——角色设计、动作连续性、时间安排和场景转换。我们的目标是让AI达到这种精确度。",
-    "p3": "如今的动画既是一门艺术，也是一项结构化编排的挑战。我们像导演一样思考，但像工程师一样构建。",
-    "p4": "这就是为什么我们构建<strong>受控生成流水线</strong>，而不是一次性生成。这些流水线结合了结构和创造力：",
-    "pipelineItems": [
-      "故事板到视频：基于JSON的视觉规范，包含ID、时间戳和摄像机元数据",
-      "基于ComfyUI的工作流：带有版本控制检查点、LoRA堆叠和种子的DAG图",
-      "时序和多模态控制：在图像、动作、音频和字幕中共享场景ID"
-    ],
-    "p5": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
-    "technicalNotes": [
-      "所有步骤都读取/写入类型化工件（JSON/CSV、PNG序列、WAV/MP3、MP4、.aep）",
-      "流水线通过Python/CLI编排（如ComfyUI API、ffmpeg、TTS API）",
-      "每次运行都可通过保存的配置重现（模型、采样器、种子、提示词、时长）"
-    ]
-  },
-  "pipeline": {
-    "title": "AI视频生成流水线",
-    "description": "AI视频生成流水线通过明确输入、输出和配置的结构化阶段，将文本提示转化为精美的视频。",
-    "prompt": "1. 提示词（原始想法 → 结构化JSON规范）",
-    "storyboard": "2. 故事板（带时间、镜头和描述的场次/镜头表格）",
-    "images": "3. 图像（通过Stable Diffusion/ComfyUI为每个镜头生成的关键帧）",
-    "animation": "4. 动画（图像序列 → 运动、视差和效果）",
-    "voiceOver": "5. 旁白（TTS + 同步数据）",
-    "finalVideo": "6. 最终视频（ffmpeg合成：视频 + 音频 + 字幕）",
-    "features": [
-      "JSON优先设计：每个场景都可寻址和可编程（scene_id, shot_id）",
-      "基于ComfyUI的工作流：用于图像/视频生成的模块化、可重现、可组合的DAG图",
-      "时序和多模态控制：在所有模态中保持一致的种子、角色嵌入和时间安排"
-    ],
-    "exampleIntro": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
-    "artifacts": {
-      "promptSpec": "prompt_run_001.json",
-      "storyboardTable": "storyboard_v1.csv",
-      "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
-      "audioOutput": "audio/final_voiceover.wav",
-      "subtitleFile": "subtitles/storyboard_v1.srt",
-      "finalVideoFile": "exports/storyboard_v1_final.mp4"
-    }
-  },
-  "steps": {
-    "step1": {
-      "title": "第一步：从基础提示词开始",
-      "example": "一个女孩站在午夜的车站，风吹动她的头发。",
-      "expandedPrompt": "在GPT或本地LLM的帮助下，我们将其扩展为包含全局风格、角色定义和分场信息的结构化JSON对象。",
-      "technicalDetails": {
-        "llmFields": [
-          "global_style: 艺术风格、镜头语言、调色板",
-          "characters: 姓名、年龄、外貌、服装、情感状态",
-          "scenes: [{ scene_id, shot_id, 描述, camera_type, duration_seconds }]"
-        ],
-        "outputFile": "prompt_run_001.json",
-        "exampleStack": "调用OpenAI/LLM API并将JSON写入磁盘的Python脚本"
+    "buttons": {
+      "signUp": "注册",
+      "subscribePlan": "订阅计划",
+      "currentPlan": "当前计划",
+      "comingSoon": "即将推出",
+      "downgradeToFree": "降级至免费版",
+      "downgradeToCreator": "降级至创作者版",
+      "contactSales": "联系销售"
+    },
+    "plans": {
+      "free": {
+        "name": "免费版",
+        "description": "适合测试工具和轻度工作",
+        "features": [
+          "下载无水印视频",
+          "1小时免费字幕处理",
+          "导出SRT文件"
+        ]
+      },
+      "creator": {
+        "name": "创作者版",
+        "description": "适合定期制作字幕和轻度配音的小型创作者",
+        "plusTitle": "包含免费版的所有功能,以及:",
+        "features": [
+          "唇形同步",
+          "批量处理",
+          "5小时免费字幕处理",
+          "每个任务最长30分钟"
+        ]
+      },
+      "pro": {
+        "name": "专业版",
+        "description": "即将推出 — 专为高产量创作者设计",
+        "plusTitle": "包含创作者版的所有功能,以及:",
+        "features": [
+          "语音美化和降噪",
+          "优先队列",
+          "每个任务最长60分钟",
+          "无限字幕分钟数"
+        ]
+      },
+      "enterprise": {
+        "name": "企业版",
+        "description": "适合团队、工作室和企业工作流程",
+        "customPricing": "定制",
+        "unlimited": "无限 🐚",
+        "tailoredSupport": "和定制支持",
+        "plusTitle": "包含专业版的所有功能,以及:",
+        "features": [
+          "专属客户经理",
+          "本地部署选项",
+          "API访问和使用分析",
+          "定制集成和SLA",
+          "无限处理时长"
+        ]
       }
     },
-    "step2": {
-      "title": "第二步：将提示词转换为故事板表格",
-      "description": "将JSON规范扁平化为人类和流水线都能读取的故事板表格（CSV或Notion）。",
-      "technicalDetails": {
-        "columns": [
-          "scene_id", "shot_id", "start_time", "end_time", "duration_seconds",
-          "camera_type", "visual_description", "character_state", "movement_notes"
-        ],
-        "storage": "storyboard_v1.csv（作为后续步骤的单一事实来源）",
-        "automation": "执行prompt_run_001.json → storyboard_v1.csv转换的Python/Node.js脚本"
+    "table": {
+      "header": {
+        "feature": "功能 / 限制"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "下载带水印视频",
+        "videoDownloadWithoutWatermark": "下载无水印视频",
+        "downloadSrt": "下载SRT文件",
+        "voiceBeautification": "语音美化和降噪",
+        "lipSync": "唇形同步",
+        "subtitleTools": "字幕工具(添加/删除,无翻译)",
+        "batchProcessing": "批量处理",
+        "maxVideoLength": "每个任务最大视频长度",
+        "monthlyCredits": "每月免费额度",
+        "priorityQueue": "优先队列 / 更快处理",
+        "creditTopUp": "额度充值"
+      },
+      "values": {
+        "free": "免费",
+        "unlimited": "无限",
+        "oneHourPerMonth": "1小时/月",
+        "fiveHoursPerMonth": "5小时/月",
+        "fiveMinutes": "5分钟",
+        "thirtyMinutes": "30分钟",
+        "sixtyMinutes": "60分钟"
       }
+    }
+  },
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI —— 重塑动画创作（Part 3）",
+    "heading": "🎨 AE 与 ComfyUI",
+    "intro1": "我们经常会被问：为什么不用 After Effects（AE）？或者为什么要用 ComfyUI？两者都很重要 —— 一个提供精细可控的时间线，另一个带来生成式的创造力。",
+    "intro2": "AE 具备时间线级的精确控制，包括转场、灯光和特效；而 ComfyUI 则提供 AI 原生的工作流，整合了扩散模型、文本与多模态编排能力。",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "精确的特效与运动控制",
+      "row1b": "AI 原生的视频生成",
+      "row2a": "基于时间线的编辑",
+      "row2b": "基于节点/工作流渲染",
+      "row3a": "手动或插件驱动的流程",
+      "row3b": "扩散模型 + LLM + 多模态编排"
     },
-    "step3": {
-      "title": "第三步：生成视觉效果",
-      "points": [
-        "🎨 使用<strong>Stable Diffusion</strong>或<strong>ComfyUI</strong>将`storyboard_v1.csv`中的每一行转换为高分辨率关键帧。",
-        "通过使用相同的基础检查点、LoRA堆叠、采样器和种子策略，保持所有镜头风格一致。"
+    "outro": "在我们的工作流中，ComfyUI 负责 AI 生成与迭代，而 AE 用于最终的修饰 —— 转场、叠加和合成。"
+  },
+  "video_translation_eval": {
+    "title": "视频翻译质量评估指南",
+    "subtitle": "这些指标最重要",
+    "intro": "视频跨语言翻译并不简单，它涉及转录、翻译、配音、对齐等多个环节。Curify 建立了一套系统的评估流程，确保每一环都符合专业标准。",
+    "section1_title": "1. 转录质量",
+    "section1_engine": "引擎：WhisperX",
+    "section1_metrics": [
+      "字错误率（WER）",
+      "标点 F1 分数（提升表达和可读性）"
+    ],
+    "section2_title": "2. 翻译质量",
+    "section2_engine": "引擎：Helsinki、MarianMT",
+    "section2_metrics": [
+      "BLEU 分数（传统指标）",
+      "COMET / chrF++（语义相似度）",
+      "人工评估：流畅度与准确性"
+    ],
+    "section3_title": "3. 配音质量",
+    "section3_engine": "引擎：XTTS / YourTTS",
+    "section3_metrics": [
+      "主观评分（MOS）：自然度、音色相似度、情绪表现",
+      "说话人验证准确率"
+    ],
+    "section4_title": "4. 对齐与口型同步",
+    "section4_metrics": [
+      "音频时长偏差",
+      "Wav2Lip 口型匹配分",
+      "时间漂移分析"
+    ],
+    "section5_title": "5. 语义保持",
+    "section5_method": "我们使用大语言模型（如 GPT-4）来评估翻译内容是否保留原意、情绪和语气。示例 Prompt：",
+    "section5_prompt": "请比较这段中文原文和英文配音，判断语气、意图、内容是否一致？请打分并说明理由。",
+    "section6_title": "6. 用户反馈与市场验证",
+    "section6_metrics": [
+      "配音风格是否符合产品",
+      "本地视频观看时长是否提升",
+      "用户/商家是否愿意采用"
+    ],
+    "closing": "在 Curify，我们不仅翻译语言，更传达情感与故事。如果你想让内容走向全球，欢迎联系我们。",
+    "available_locales": "可切换语言：[英文] [中文] [西语] [德语]"
+  },
+  "storyboardToPipeline": {
+    "title": "从故事板到AI流水线：重新定义动画制作",
+    "intro": {
+      "p1": "大多数人认为AI视频就是\"输入文字，输出片段\"。但如果你追求的是<strong>电影级、导演级别的控制</strong>，那完全是另一回事。",
+      "p2": "在传统动画中，每个细节都很重要——角色设计、动作连续性、时间安排和场景转换。我们的目标是让AI达到这种精确度。",
+      "p3": "如今的动画既是一门艺术，也是一项结构化编排的挑战。我们像导演一样思考，但像工程师一样构建。",
+      "p4": "这就是为什么我们构建<strong>受控生成流水线</strong>，而不是一次性生成。这些流水线结合了结构和创造力：",
+      "pipelineItems": [
+        "故事板到视频：基于JSON的视觉规范，包含ID、时间戳和摄像机元数据",
+        "基于ComfyUI的工作流：带有版本控制检查点、LoRA堆叠和种子的DAG图",
+        "时序和多模态控制：在图像、动作、音频和字幕中共享场景ID"
       ],
-      "technicalDetails": {
-        "modelConfig": {
-          "checkpoint": "sd_xl_base_1.0.safetensors",
-          "vae": "sdxl_vae.safetensors",
-          "sampler": "euler_a",
-          "steps": 25,
-          "cfgScale": 6.5,
-          "resolution": "1024x576",
-          "loraStack": [
-            "character_girl_v2.safetensors",
-            "style_cinematic_blue_hour.safetensors"
-          ]
-        },
-        "consistency": {
-          "seedStrategy": "per_scene_consistent",
-          "seedExample": "seed = hash(scene_id + character_name)",
-          "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+      "p5": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
+      "technicalNotes": [
+        "所有步骤都读取/写入类型化工件（JSON/CSV、PNG序列、WAV/MP3、MP4、.aep）",
+        "流水线通过Python/CLI编排（如ComfyUI API、ffmpeg、TTS API）",
+        "每次运行都可通过保存的配置重现（模型、采样器、种子、提示词、时长）"
+      ]
+    },
+    "pipeline": {
+      "title": "AI视频生成流水线",
+      "description": "AI视频生成流水线通过明确输入、输出和配置的结构化阶段，将文本提示转化为精美的视频。",
+      "prompt": "1. 提示词（原始想法 → 结构化JSON规范）",
+      "storyboard": "2. 故事板（带时间、镜头和描述的场次/镜头表格）",
+      "images": "3. 图像（通过Stable Diffusion/ComfyUI为每个镜头生成的关键帧）",
+      "animation": "4. 动画（图像序列 → 运动、视差和效果）",
+      "voiceOver": "5. 旁白（TTS + 同步数据）",
+      "finalVideo": "6. 最终视频（ffmpeg合成：视频 + 音频 + 字幕）",
+      "features": [
+        "JSON优先设计：每个场景都可寻址和可编程（scene_id, shot_id）",
+        "基于ComfyUI的工作流：用于图像/视频生成的模块化、可重现、可组合的DAG图",
+        "时序和多模态控制：在所有模态中保持一致的种子、角色嵌入和时间安排"
+      ],
+      "exampleIntro": "现在，让我们通过一个简单的例子来展示AI流水线在实践中的工作方式。",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
+    "steps": {
+      "step1": {
+        "title": "第一步：从基础提示词开始",
+        "example": "一个女孩站在午夜的车站，风吹动她的头发。",
+        "expandedPrompt": "在GPT或本地LLM的帮助下，我们将其扩展为包含全局风格、角色定义和分场信息的结构化JSON对象。",
+        "technicalDetails": {
+          "llmFields": [
+            "global_style: 艺术风格、镜头语言、调色板",
+            "characters: 姓名、年龄、外貌、服装、情感状态",
+            "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "调用OpenAI/LLM API并将JSON写入磁盘的Python脚本"
+        }
+      },
+      "step2": {
+        "title": "第二步：将提示词转换为故事板表格",
+        "description": "将JSON规范扁平化为人类和流水线都能读取的故事板表格（CSV或Notion）。",
+        "technicalDetails": {
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "movement_notes"
+          ],
+          "storage": "storyboard_v1.csv（作为后续步骤的单一事实来源）",
+          "automation": "执行prompt_run_001.json → storyboard_v1.csv转换的Python/Node.js脚本"
+        }
+      },
+      "step3": {
+        "title": "第三步：生成视觉效果",
+        "description": "通过 ComfyUI 工作流程使用 Stable Diffusion 为每个镜头生成高质量关键帧图像。",
+        "points": [
+          "🎨 使用<strong>Stable Diffusion</strong>或<strong>ComfyUI</strong>将`storyboard_v1.csv`中的每一行转换为高分辨率关键帧。",
+          "通过使用相同的基础检查点、LoRA堆叠、采样器和种子策略，保持所有镜头风格一致。",
+          "使用 inpainting（用于面部/手部）和 outpainting（用于扩展构图与镜头运动）进一步优化图像。"
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "consistency": {
+            "seedStrategy": "per_scene_consistent",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "自定义节点/HTTP API 读取 storyboard_v1.csv 和 modelConfig",
+            "batching": "GPU 批次由 scene_id 键入以重用加载的权重"
+          }
+        }
+      },
+      "step4": {
+        "title": "第四步：在After Effects中添加动效和氛围",
+        "description": "使用 Adobe After Effects （或等效的合成器）通过运动、视差和氛围增强静态关键帧。",
+        "points": [
+          "将图像序列或关键帧作为分层合成导入<strong>Adobe After Effects</strong>。",
+          "应用关键帧动画：平移、缩放、视差层、雾气、光线闪烁。",
+          "添加环境音效和场景间的电影转场。"
+        ],
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png（带可选的深度图/Alpha通道）",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "使用AE ExtendScript/JSX自动按scene_id创建合成",
+            "从storyboard_v1.csv映射duration_seconds → 合成时长",
+            "如果需要，使用AE插件或视频感知扩散工具生成中间帧"
+          ],
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "第五步：添加语音和字幕",
+        "description": "生成与故事板对齐的画外音并附加字幕以提高可访问性和清晰度。",
+        "points": [
+          "使用<strong>XTTS</strong>或<strong>ElevenLabs</strong>从脚本生成自然语音，保持一致的语音配置文件。",
+          "对于缩写（如API、NBA），单独生成英文片段并在后期合并，确保清晰发音。",
+          "添加与旁白同步的`.srt`或时间轴`.json`文件作为字幕。"
+        ],
+        "technicalDetails": {
+          "scriptSource": "从prompt_run_001.json + storyboard_v1.csv中提取的对话和旁白",
+          "ttsConfig": {
+            "engine": "XTTS或ElevenLabs",
+            "voiceId": "cinematic_female_zh",
+            "sampleRate": 44100,
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voiceover.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "将storyboard_v1.csv中的`start_time`/`end_time`与字幕提示对齐；确保总音频时长≈最终时间轴时长"
+        }
+      },
+      "step6": {
+        "title": "第六步：使用FFMPEG进行最终合成",
+        "description": "使用FFMPEG将所有部分合并为单个视频文件。",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voice.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24fps, AAC音频)"
         }
       }
     },
-    "step4": {
-      "title": "第四步：在After Effects中添加动效和氛围",
-      "points": [
-        "将图像序列或关键帧作为分层合成导入<strong>Adobe After Effects</strong>。",
-        "应用关键帧动画：平移、缩放、视差层、雾气、光线闪烁。",
-        "添加环境音效和场景间的电影转场。"
+    "whatYouNeed": "📁 您需要准备什么",
+    "whatYouNeedTechnical": [
+      "支持Stable Diffusion / ComfyUI的GPU（至少12GB显存）",
+      "用于JSON/CSV转换和自动化脚本的Python环境",
+      "配置了必要自定义节点和工作流的ComfyUI",
+      "用于运动效果制作的Adobe After Effects或类似合成软件",
+      "用于文本转语音的XTTS / ElevenLabs API访问权限",
+      "已安装并可从命令行访问的ffmpeg"
+    ],
+    "cta": "🚀 准备好用AI为您的故事板注入生命了吗？<strong>我们可以提供完整入门套件</strong>，包含示例JSON、ComfyUI工作流和ffmpeg/AE模板，助您快速上手。"
+  },
+  "SceneDetection": {
+    "tags": {
+      "computerVision": "计算机视觉",
+      "deepLearning": "深度学习",
+      "realTimeAnalysis": "实时分析"
+    },
+    "hero": {
+      "title": "用AI将视频转化为故事板",
+      "subtitle": "我们构建了一个高级流程，可将数小时的素材在几分钟内转化为结构化的、可搜索的故事板。"
+    },
+    "introduction": {
+      "paragraph1": "想象一下，您上传数小时的原始素材，几分钟内就能获得整个视频的<strong>详细分镜分析</strong>。这正是我们基于AI的场景检测系统所提供的功能。",
+      "paragraph2": "这个由前沿Python库和深度学习模型构建的流程，不仅能检测场景转换，还能理解内容、识别关键元素，并将一切组织成完整的故事板。"
+    },
+    "imageAlt": "场景检测流程正在运行，识别关键时刻并生成结构化故事板",
+    "protip": "使用自动场景检测作为起点，并手动调整结果以获得最佳准确性。",
+    "humanEvaluation": {
+      "title": "人类对人工智能输出的评估",
+      "introduction": "虽然我们的人工智能流程非常准确，但人工评估仍然是我们质量保证流程的关键组成部分。以下是我们如何确保最高质量的输出：",
+      "evaluationAreas": [
+        "<strong>场景边界精度</strong> - 检查和调整场景过渡点",
+        "<strong>元数据验证</strong> - 验证 AI 生成的描述、标签和标签",
+        "<strong>一致性检查</strong> - 确保所有场景的风格和格式统一",
+        "<strong>内容准确性</strong> - 验证 AI 是否正确识别了每个场景中的关键元素"
       ],
-      "technicalDetails": {
-        "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png（带可选的深度图/Alpha通道）",
-        "projectFile": "ae/storyboard_v1.aep",
-        "automation": [
-          "使用AE ExtendScript/JSX自动按scene_id创建合成",
-          "从storyboard_v1.csv映射duration_seconds → 合成时长",
-          "如果需要，使用AE插件或视频感知扩散工具生成中间帧"
-        ],
-        "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+      "workflow": {
+        "title": "人在环工作流程",
+        "steps": [
+          "人工智能处理视频并生成初始故事板",
+          "人工审核员使用我们的专业工具评估人工智能输出",
+          "审稿人提供反馈并做出必要的调整",
+          "系统从人类纠正中学习以改善未来的输出",
+          "交货前的最终质量检查"
+        ]
+      },
+      "benefits": {
+        "title": "人工评估的好处",
+        "items": [
+          "<strong>更高的准确度</strong> - 人类审阅者捕捉人工智能可能错过的细微差别",
+          "<strong>语境理解</strong> - 更好地解释文化和情境背景",
+          "<strong>质量保证</strong> - 专业用例的附加验证层",
+          "<strong>持续改进</strong> - 人类反馈有助于训练和完善人工智能模型"
+        ]
+      },
+      "tools": {
+        "title": "评估工具",
+        "description": "我们的平台包括协助人工审核员的专用工具：",
+        "features": [
+          "并排视频和故事板比较",
+          "用于调整场景边界的易于使用的界面",
+          "批量编辑元数据和标签",
+          "团队审核的协作功能",
+          "版本历史和变更跟踪"
+        ]
       }
     },
-    "step5": {
-      "title": "第五步：添加语音和字幕",
-      "points": [
-        "使用<strong>XTTS</strong>或<strong>ElevenLabs</strong>从脚本生成自然语音，保持一致的语音配置文件。",
-        "对于缩写（如API、NBA），单独生成英文片段并在后期合并，确保清晰发音。",
-        "添加与旁白同步的`.srt`或时间轴`.json`文件作为字幕。"
-      ],
-      "technicalDetails": {
-        "scriptSource": "从prompt_run_001.json + storyboard_v1.csv中提取的对话和旁白",
-        "ttsConfig": {
-          "engine": "XTTS或ElevenLabs",
-          "voiceId": "cinematic_female_zh",
-          "sampleRate": 44100,
-          "format": "wav"
-        },
-        "outputs": {
-          "audioFile": "audio/storyboard_v1_voice.wav",
-          "subtitleFile": "subtitles/storyboard_v1.srt"
-        },
-        "syncStrategy": "将storyboard_v1.csv中的`start_time`/`end_time`与字幕提示对齐；确保总音频时长≈最终时间轴时长"
+    "header": {
+      "title": "从原始素材到故事板",
+      "author": "Curify AI 团队",
+      "role": "人工智能研究团队",
+      "imageAlt": "人工智能分析视频场景并生成故事板",
+      "imageCaption": "人工智能驱动的场景检测正在运行，识别视频内容中的关键时刻",
+      "subtitle": "AI 驱动的视频分析",
+      "date": "2025 年 12 月 11 日",
+      "readingTime": "8 分钟阅读"
+    },
+    "Technical": {
+      "title": "技术深入探讨",
+      "steps": {
+        "step1": "技术实现",
+        "videoProcessingPipeline": "我们的系统通过复杂的多级管道处理视频，确保准确的场景检测和分析：",
+        "step2": "视频分析流程",
+        "step2Text": "我们的系统实时处理视频，检测场景变化并提取关键帧以进行进一步分析",
+        "step3": "场景检测和元数据提取",
+        "step3Text": "以最佳间隔进行 OpenCV 驱动的帧采样",
+        "step4": "镜头分析和元数据增强",
+        "step4Text": "用于精确场景边界检测的自适应阈值处理",
+        "step5": "场景标签和元数据组织",
+        "step5Text": "用于全面场景理解的深度学习模型",
+        "step6": "元数据导出和集成",
+        "step6Text": "将元数据导出为 JSON 格式以便与其他工具集成"
       }
     },
-    "step6": {
-      "title": "第六步：使用FFMPEG进行最终合成",
-      "description": "使用FFMPEG将所有部分合并为单个视频文件。",
-      "technicalDetails": {
-        "inputs": {
-          "video": "ae_renders/storyboard_v1_timeline.mp4",
-          "audio": "audio/storyboard_v1_voice.wav",
-          "subtitles": "subtitles/storyboard_v1.srt"
-        },
-        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voice.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-        "output": "exports/storyboard_v1_final.mp4 (H.264, 24fps, AAC音频)"
+    "featuresTitle": "触手可及的强大功能",
+    "features1": "实时场景检测",
+    "features1Text": "自动检测场景变化并标记以进行进一步处理",
+    "features": {
+      "modularArchitecture": {
+        "title": "模块化架构",
+        "description": "该系统由用于视频分析、人工智能处理和输出生成的独立组件构建，使其易于扩展和维护。"
+      },
+      "performance": {
+        "title": "性能优化",
+        "description": "高效的帧处理和并行化确保即使是长视频也能快速分析。"
+      },
+      "aiEnhanced": {
+        "title": "人工智能增强分析",
+        "description": "可选的人工智能组件可提供更深入的场景理解和更准确的标记。"
       }
-    }
-  },
-  "whatYouNeed": "📁 您需要准备什么",
-  "whatYouNeedTechnical": [
-    "支持Stable Diffusion / ComfyUI的GPU（至少12GB显存）",
-    "用于JSON/CSV转换和自动化脚本的Python环境",
-    "配置了必要自定义节点和工作流的ComfyUI",
-    "用于运动效果制作的Adobe After Effects或类似合成软件",
-    "用于文本转语音的XTTS / ElevenLabs API访问权限",
-    "已安装并可从命令行访问的ffmpeg"
-  ],
-  "cta": "🚀 准备好用AI为您的故事板注入生命了吗？<strong>我们可以提供完整入门套件</strong>，包含示例JSON、ComfyUI工作流和ffmpeg/AE模板，助您快速上手。"
-},
-
-"SceneDetection": {
-  "tags": {
-    "computerVision": "计算机视觉",
-    "deepLearning": "深度学习",
-    "realTimeAnalysis": "实时分析"
-  },
-  "hero": {
-    "title": "用AI将视频转化为故事板",
-    "subtitle": "我们构建了一个高级流程，可将数小时的素材在几分钟内转化为结构化的、可搜索的故事板。"
-  },
-  "introduction": {
-    "paragraph1": "想象一下，您上传数小时的原始素材，几分钟内就能获得整个视频的<strong>详细分镜分析</strong>。这正是我们基于AI的场景检测系统所提供的功能。",
-    "paragraph2": "这个由前沿Python库和深度学习模型构建的流程，不仅能检测场景转换，还能理解内容、识别关键元素，并将一切组织成完整的故事板。"
-  },
-  "imageAlt": "场景检测流程正在运行，识别关键时刻并生成结构化故事板",
-  "features1": "实时场景检测",
-  "features1Text": "自动检测场景变化并标记以进行进一步处理",
-  "features2": "自动场景描述",
-  "features2Text": "为每个检测到的场景生成详细描述",
-  "features3": "结构化JSON输出",
-  "features3Text": "以结构化格式导出分析结果以便后续处理",
-  "features4": "高级AI分析",
-  "features4Text": "使用高级AI模型进行准确的场景分析",
-  "features5": "用户友好界面",
-  "features5Text": "直观设计，快速轻松使用",
-  "protip": "使用自动场景检测作为起点，并手动调整结果以获得最佳准确性。",
-  "protip2": "为获得最佳效果，请确保您的视频在场景之间有清晰的视觉分隔。系统在光线良好、运动模糊最少的素材上表现最佳。考虑在视频编辑软件中添加章节标记或场景切割，以提高检测准确性。",
-  "Technical": {
-    "steps": {
-      "step1": "技术实现",
-      "step2": "视频分析流程",
-      "step2Text": "我们的系统实时处理视频，检测场景变化并提取关键帧以进行进一步分析"
-    }
-  },
-  "titanicExample": {
-    "title": "泰坦尼克号示例",
-    "description": "使用我们的AI场景检测分析标志性电影场景。",
-    "analysis": "分析：",
-    "analysisText": "系统成功识别了关键情感时刻、角色互动和场景转换。"
-  },
-  "sceneBreakdown": {
-    "title": "理解场景检测输出",
-    "introduction": "让我们拆解一个典型的场景检测输出，来了解我们的 AI 是如何分析并结构化视频内容的。在每段说明下方，你都可以看到支撑这些洞察的对应 JSON 结构。",
-    "scenes": [
-      {
-        "title": "1. 场景识别",
-        "content": "每个场景都会被分配一个唯一的标识符和时间范围，从而实现对视频内容的精确定位。这构成了整个分析流程的基础。",
-        "example": "场景 1（00:00:02.50 - 00:00:05.20）",
-        "jsonExample": {
-          "scene_id": "scene_001",
-          "start_time": 2.5,
-          "end_time": 5.2,
-          "duration": 2.7,
-          "keyframe_index": 5,
-          "keyframe_time": 3.8
-        },
-        "jsonDescription": "该 JSON 结构展示了场景的基础识别数据，包括唯一 ID、时间信息，以及代表性关键帧的索引和时间点。"
-      },
-      {
-        "title": "2. 视觉分析",
-        "content": "我们的 AI 会分析关键帧，以理解每个场景的视觉构成，包括主色调、光照条件以及主要视觉元素。",
-        "example": "关键帧分析：户外、白天、多人物",
-        "jsonExample": {
-          "visual_analysis": {
-            "brightness": 0.78,
-            "contrast": 0.65,
-            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
-            "dominant_colors": [
-              { "color": "#3A5FCD", "percentage": 0.45 },
-              { "color": "#87CEEB", "percentage": 0.35 },
-              { "color": "#F5F5DC", "percentage": 0.20 }
-            ],
-            "lighting_condition": "daylight",
-            "environment": "outdoor",
-            "detected_objects": [
-              { "label": "person", "confidence": 0.97, "count": 2 },
-              { "label": "sky", "confidence": 0.99, "count": 1 }
-            ]
-          }
-        },
-        "jsonDescription": "该 JSON 展示了视觉分析数据，包括颜色信息、光照条件，以及带有置信度的目标检测结果。"
-      },
-      {
-        "title": "3. 镜头构成",
-        "content": "在每个场景内部，我们会识别独立的镜头及其转场方式，以帮助理解画面节奏和视觉流动。",
-        "example": "检测到 3 个镜头，包含平滑切换和一次交叉淡入淡出",
-        "jsonExample": {
-          "shots": [
-            {
-              "shot_id": "shot_001",
-              "start_time": 2.5,
-              "end_time": 3.1,
-              "transition": {
-                "type": "cut",
-                "confidence": 0.98
-              },
-              "camera_motion": {
-                "type": "static",
-                "confidence": 0.92
-              }
-            },
-            {
-              "shot_id": "shot_002",
-              "start_time": 3.1,
-              "end_time": 4.3,
-              "transition": {
-                "type": "fade",
-                "duration": 0.3,
-                "confidence": 0.95
-              },
-              "camera_motion": {
-                "type": "pan_left",
-                "confidence": 0.88
-              }
-            }
+    },
+    "features2": "自动场景描述",
+    "features2Text": "为每个检测到的场景生成详细描述",
+    "features3": "结构化JSON输出",
+    "features3Text": "以结构化格式导出分析结果以便后续处理",
+    "features4": "高级AI分析",
+    "features4Text": "使用高级AI模型进行准确的场景分析",
+    "features5": "用户友好界面",
+    "features5Text": "直观设计，快速轻松使用",
+    "intro": {
+      "p1": "在当今快节奏的内容创作环境中，<strong>高效视频分析</strong>不再是一种奢侈品，而是一种必需品。我们的人工智能场景检测技术可在几分钟（而不是几天）内将数小时的原始素材转换为结构化、可搜索的内容。",
+      "p2": "无论您是电影制作人、内容创作者还是媒体专业人士，了解自动场景检测的强大功能都可以彻底改变您的工作流程并释放新的创意可能性。"
+    },
+    "proTip": "为了获得最佳效果，请确保源视频的场景之间具有清晰的音频和视觉分离。光线充足的环境和最小的背景噪音可显着提高检测准确性。",
+    "titanicExample": {
+      "title": "泰坦尼克号示例",
+      "description": "使用我们的AI场景检测分析标志性电影场景。",
+      "analysis": "分析：",
+      "analysisText": "系统成功识别了关键情感时刻、角色互动和场景转换。"
+    },
+    "inceptionExample": {
+      "title": "梦境层次分析：盗梦空间场景分解",
+      "description": "探索我们的人工智能如何分析《盗梦空间》中复杂的梦境图层和视觉效果：",
+      "analysis": "分析",
+      "analysisText": "梦境层检测及视觉效果分解",
+      "breakdownTitle": "场景分析分解",
+      "showFullAnalysis": "显示全场景分析",
+      "hideFullAnalysis": "隐藏全场景分析",
+      "fullSceneAnalysis": "全场景分析",
+      "sceneCard": {
+        "mood": "情绪",
+        "environment": "环境",
+        "shotNotes": "拍摄笔记"
+      }
+    },
+    "Scene": "场景",
+    "process": {
+      "title": "我们的场景检测如何工作",
+      "steps": {
+        "step1": {
+          "title": "1. 视频分析",
+          "description": "我们的人工智能逐帧扫描您的视频，分析视觉和音频线索以识别潜在的场景边界。",
+          "details": [
+            "分析颜色直方图和运动矢量",
+            "检测音频电平变化和静音",
+            "识别镜头边界和过渡"
           ]
         },
-        "jsonDescription": "该 JSON 结构详细描述了场景内的镜头构成，包括时间范围、转场类型以及镜头运动分析。"
-      },
-      {
-        "title": "4. 内容分类",
-        "content": "系统会根据内容自动对场景进行分类，方便你日后快速查找特定类型的素材。",
-        "example": "类别：剧情片，场景：船甲板，人物：主要角色",
-        "jsonExample": {
-          "content_analysis": {
-            "primary_category": "剧情",
-            "secondary_categories": ["爱情", "灾难"],
-            "setting": {
-              "type": "船甲板",
-              "time_of_day": "夜晚",
-              "confidence": 0.92
-            },
-            "subjects": [
+        "step2": {
+          "title": "2.场景分割",
+          "description": "该系统根据视觉和时间关系将相关镜头分组为连贯的场景。",
+          "details": [
+            "使用机器学习来理解场景上下文",
+            "考虑镜头持续时间和过渡类型",
+            "将相关镜头合并到逻辑场景中"
+          ]
+        },
+        "step3": {
+          "title": "3.内容分类",
+          "description": "每个检测到的场景都会根据其视觉和音频内容进行分析和分类。",
+          "details": [
+            "识别关键视觉元素和对象",
+            "对场景类型进行分类（例如采访、动作、风景）",
+            "分析音频中的语音、音乐和效果"
+          ]
+        },
+        "step4": {
+          "title": "4. 元数据生成",
+          "description": "为每个场景生成全面的元数据，从而实现强大的搜索和组织。",
+          "details": [
+            "创建时间戳和持续时间信息",
+            "生成代表性缩略图",
+            "提取关键对话和音频提示"
+          ]
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "为什么我们的场景检测效果这么好",
+      "points": "<li>我们的人工智能分析<strong>视觉和音频线索</strong>以超过95%的准确度识别场景边界。</li><li>先进的<strong>机器学习模型</strong>理解上下文，而不仅仅是视觉变化，以实现更自然的场景检测。</li><li>实时处理允许<strong>立即反馈</strong>并在拍摄期间进行调整或编辑.</li>"
+    },
+    "recommendedStyle": {
+      "title": "获得最佳效果的推荐样式",
+      "description": "为了获得最准确的场景检测，我们建议遵循以下风格指南：",
+      "points": [
+        "在每个场景中保持一致的照明",
+        "在拍摄之间使用清晰的音频标记或场记板",
+        "保持相机移动流畅且有意",
+        "保持场景内一致的音频电平"
+      ]
+    },
+    "title": "从原始素材到故事板：人工智能驱动的视频分析",
+    "description": "了解人工智能如何通过自动场景检测和分析将原始视频转换为结构化故事板。",
+    "timeline": {
+      "title": "场景时间轴",
+      "viewScene": "查看场景 {1}"
+    },
+    "cta": "🚀 准备好利用人工智能让您的故事板变得栩栩如生了吗？ <strong>我们可以提供完整的入门工具包</strong>，其中包含示例 JSON、ComfyUI 工作流程和 ffmpeg/AE 模板，以帮助您入门。",
+    "sceneBreakdown": {
+      "title": "理解场景检测输出",
+      "introduction": "让我们拆解一个典型的场景检测输出，来了解我们的 AI 是如何分析并结构化视频内容的。在每段说明下方，你都可以看到支撑这些洞察的对应 JSON 结构。",
+      "scenes": [
+        {
+          "title": "1. 场景识别",
+          "content": "每个场景都会被分配一个唯一的标识符和时间范围，从而实现对视频内容的精确定位。这构成了整个分析流程的基础。",
+          "example": "场景 1（00:00:02.50 - 00:00:05.20）",
+          "jsonExample": {
+            "scene_id": "scene_001",
+            "start_time": 2.5,
+            "end_time": 5.2,
+            "duration": 2.7,
+            "keyframe_index": 5,
+            "keyframe_time": 3.8
+          },
+          "jsonDescription": "该 JSON 结构展示了场景的基础识别数据，包括唯一 ID、时间信息，以及代表性关键帧的索引和时间点。"
+        },
+        {
+          "title": "2. 视觉分析",
+          "content": "我们的 AI 会分析关键帧，以理解每个场景的视觉构成，包括主色调、光照条件以及主要视觉元素。",
+          "example": "关键帧分析：户外、白天、多人物",
+          "jsonExample": {
+            "visual_analysis": {
+              "brightness": 0.78,
+              "contrast": 0.65,
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
+              "dominant_colors": [
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
+              ],
+              "lighting_condition": "daylight",
+              "environment": "outdoor",
+              "detected_objects": [
+                {
+                  "label": "person",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "sky",
+                  "confidence": 0.99,
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "jsonDescription": "该 JSON 展示了视觉分析数据，包括颜色信息、光照条件，以及带有置信度的目标检测结果。"
+        },
+        {
+          "title": "3. 镜头构成",
+          "content": "在每个场景内部，我们会识别独立的镜头及其转场方式，以帮助理解画面节奏和视觉流动。",
+          "example": "检测到 3 个镜头，包含平滑切换和一次交叉淡入淡出",
+          "jsonExample": {
+            "shots": [
               {
-                "type": "主要角色",
-                "name": "Jack",
-                "position": "画面中央",
-                "emotion": "坚定",
-                "confidence": 0.89
+                "shot_id": "shot_001",
+                "start_time": 2.5,
+                "end_time": 3.1,
+                "transition": {
+                  "type": "cut",
+                  "confidence": 0.98
+                },
+                "camera_motion": {
+                  "type": "static",
+                  "confidence": 0.92
+                }
               },
               {
-                "type": "主要角色",
-                "name": "Rose",
-                "position": "画面中央",
-                "emotion": "恐惧",
-                "confidence": 0.91
+                "shot_id": "shot_002",
+                "start_time": 3.1,
+                "end_time": 4.3,
+                "transition": {
+                  "type": "fade",
+                  "duration": 0.3,
+                  "confidence": 0.95
+                },
+                "camera_motion": {
+                  "type": "pan_left",
+                  "confidence": 0.88
+                }
               }
-            ],
-            "sentiment": {
-              "overall": "紧张戏剧性",
-              "confidence": 0.88,
-              "emotions": ["恐惧", "决心", "紧迫感"]
-            },
-            "key_elements": ["救生艇", "海洋", "月光"],
-            "narrative_importance": 0.95,
-            "action_required": true
-          }
+            ]
+          },
+          "jsonDescription": "该 JSON 结构详细描述了场景内的镜头构成，包括时间范围、转场类型以及镜头运动分析。"
         },
-        "jsonDescription": "该 JSON 展示了 AI 如何分析和分类电影场景，包括角色情绪、场景设定以及叙事重要性（以《泰坦尼克号》的救生艇场景为例）。"
-      }
-    ],
-    "analysisTitle": "整合分析",
-    "analysisContent": "通过整合以上所有元素，系统可以生成一份完整的视频内容结构图。这些结构化数据为智能搜索、自动剪辑和内容分析等功能提供了基础支持。",
-    "fullExampleTitle": "完整场景数据示例",
-    "fullExampleDescription": "以下是一个完整的场景分析示例，展示了所有模块如何协同工作：",
-    "benefitsTitle": "核心优势",
-    "benefits": [
-      "<strong>高效剪辑：</strong> 无需反复拖动时间轴，即可快速跳转到任意场景或镜头",
-      "<strong>智能搜索：</strong> 不仅基于元数据，还能基于视觉内容查找素材",
-      "<strong>一致性保障：</strong> 识别并保持项目整体视觉风格的一致性",
-      "<strong>数据驱动决策：</strong> 深入理解内容结构和节奏分布"
-    ]
-  },
-  "conclusion": {
-    "title": "AI 正在重塑视频制作流程",
-    "p1": "AI 场景检测正在彻底改变视频制作方式。通过自动化完成繁琐的场景识别与整理工作，创作者可以将精力集中在真正重要的事情上——讲好故事。我们的技术打通了原始素材与成片之间的鸿沟，让专业级视频分析变得人人可用。",
-    "p2": "随着算法的不断优化和能力的持续扩展，我们期待看到电影人、教育工作者和内容创作者利用这些工具不断突破视觉叙事的边界。视频制作的未来已经到来，而且更加高效、更具创造力。"
-  }
-  },
-
-  "ageAi": {
-    "heading": "AI 时代的数据科学：还是'最性感的职业'吗？",
-    "intro1": "这是最好的时代，也是最坏的时代。",
-    "intro2": "十年前，《哈佛商业评论》将数据科学家誉为'21世纪最性感的职业'。如今，这一格局正在发生翻天覆地的变化。虽然对数据人才的需求依然旺盛，但生成式AI的兴起正在从根本上重塑'数据科学家'这一职业的内涵。",
-    "realityCheck": {
-      "title": "现实检查",
-      "content": "搜索、广告和推荐(SAR)等传统领域正在成熟，行业正将重点转向稳健的工程和AI架构。我们正面临一个奇特的悖论。",
-      "lowBarTrap": {
-        "title": "低门槛陷阱",
-        "content": "现在，研究生们可以使用GPT-4在几秒钟内完成数据清洗、探索性数据分析和可视化。但如果没有扎实的基础，他们往往缺乏判断AI何时在'幻觉'或产生统计上可疑结果的能力。"
-      },
-      "stakeholderShift": {
-        "title": "利益相关者的转变",
-        "content": "当业务合作伙伴能够自己编写提示来获取基本见解时，许多数据科学专业人士感到'刺激不足'，陷入了无休止的会议和重复的提示工程中。"
-      }
-    },
-    "strategicPillars": {
-      "title": "如何保持不可或缺：两大战略支柱",
-      "intro": "要在这个时代蓬勃发展，我们需要从'模型构建者'进化为'价值架构师'。我认为这体现在两个维度：",
-      "buildingTools": {
-        "title": "构建工具（工程师/架构师思维）",
-        "subtitle": "不要只是使用AI，要让它变得更好。",
-        "points": [
+        {
+          "title": "4. 内容分类",
+          "content": "系统会根据内容自动对场景进行分类，方便你日后快速查找特定类型的素材。",
+          "example": "类别：剧情片，场景：船甲板，人物：主要角色",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "剧情",
+              "secondary_categories": [
+                "爱情",
+                "灾难"
+              ],
+              "setting": {
+                "type": "船甲板",
+                "time_of_day": "夜晚",
+                "confidence": 0.92
+              },
+              "subjects": [
+                {
+                  "type": "主要角色",
+                  "name": "Jack",
+                  "position": "画面中央",
+                  "emotion": "坚定",
+                  "confidence": 0.89
+                },
+                {
+                  "type": "主要角色",
+                  "name": "Rose",
+                  "position": "画面中央",
+                  "emotion": "恐惧",
+                  "confidence": 0.91
+                }
+              ],
+              "sentiment": {
+                "overall": "紧张戏剧性",
+                "confidence": 0.88,
+                "emotions": [
+                  "恐惧",
+                  "决心",
+                  "紧迫感"
+                ]
+              },
+              "key_elements": [
+                "救生艇",
+                "海洋",
+                "月光"
+              ],
+              "narrative_importance": 0.95,
+              "action_required": true
+            }
+          },
+          "jsonDescription": "该 JSON 展示了 AI 如何分析和分类电影场景，包括角色情绪、场景设定以及叙事重要性（以《泰坦尼克号》的救生艇场景为例）。"
+        }
+      ],
+      "analysisTitle": "整合分析",
+      "analysisContent": "通过整合以上所有元素，系统可以生成一份完整的视频内容结构图。这些结构化数据为智能搜索、自动剪辑和内容分析等功能提供了基础支持。",
+      "fullExampleTitle": "完整场景数据示例",
+      "fullExampleDescription": "以下是一个完整的场景分析示例，展示了所有模块如何协同工作：",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": 2.5,
+        "end_time": 5.2,
+        "duration": 2.7,
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": 30
+        },
+        "visual_analysis": {
+          "brightness": 0.78,
+          "contrast": 0.65,
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
+          "lighting_condition": "daylight",
+          "environment": "studio"
+        },
+        "audio_analysis": {
+          "has_speech": true,
+          "speech_confidence": 0.92,
+          "background_noise_level": 0.15,
+          "speaker_gender": [
+            "male",
+            "female"
+          ],
+          "speech_text": "让我们讨论人工智能如何改变视频制作......"
+        },
+        "content_analysis": {
+          "primary_category": "interview",
+          "setting": "studio",
+          "subjects": [
+            "host",
+            "guest"
+          ],
+          "sentiment": "neutral_positive"
+        },
+        "shots": [
           {
-            "title": "模型评估与治理",
-            "content": "随着AI输出变得商品化，能够定义什么是'好'结果的人将成为最有价值的资产。专注于特定领域的评估框架（如金融中的风险加权）。"
+            "shot_id": "shot_001",
+            "start_time": 2.5,
+            "end_time": 3.1,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
           },
           {
-            "title": "领域微调",
-            "content": "掌握LoRA或RAG等技术，向LLM注入特定业务知识。"
-          },
-          {
-            "title": "自动化",
-            "content": "领导'虚拟分析师'或自动化实验流水线等内部计划。"
+            "shot_id": "shot_002",
+            "start_time": 3.1,
+            "end_time": 5.2,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
           }
         ]
       },
-      "leveragingTools": {
-        "title": "利用工具（战略家思维）",
-        "subtitle": "使用AI将产出提高10倍，专注于人类最擅长的事情。",
-        "points": [
-          {
-            "title": "领域专长",
-            "content": "AI知道'如何'，而你知道'为什么'。深刻的业务理解提供了AI所缺乏的背景。"
+      "benefitsTitle": "核心优势",
+      "benefits": [
+        "<strong>高效剪辑：</strong> 无需反复拖动时间轴，即可快速跳转到任意场景或镜头",
+        "<strong>智能搜索：</strong> 不仅基于元数据，还能基于视觉内容查找素材",
+        "<strong>一致性保障：</strong> 识别并保持项目整体视觉风格的一致性",
+        "<strong>数据驱动决策：</strong> 深入理解内容结构和节奏分布"
+      ]
+    },
+    "conclusion": {
+      "title": "AI 正在重塑视频制作流程",
+      "p1": "AI 场景检测正在彻底改变视频制作方式。通过自动化完成繁琐的场景识别与整理工作，创作者可以将精力集中在真正重要的事情上——讲好故事。我们的技术打通了原始素材与成片之间的鸿沟，让专业级视频分析变得人人可用。",
+      "p2": "随着算法的不断优化和能力的持续扩展，我们期待看到电影人、教育工作者和内容创作者利用这些工具不断突破视觉叙事的边界。视频制作的未来已经到来，而且更加高效、更具创造力。"
+    },
+    "richStructuredOutput": "丰富、结构化的输出",
+    "richStructuredOutputText": "我们的系统生成全面的故事板数据以及每个场景的详细元数据，使您可以完全控制视频内容。",
+    "advancedUsage": {
+      "title": "高级使用和定制",
+      "description": "场景检测系统是高度可定制的，以适应不同的用例。以下是一些高级功能和自定义选项：",
+      "features": {
+        "thresholds": {
+          "title": "自定义场景检测阈值",
+          "description": "通过修改阈值参数来调整场景检测的灵敏度。较低的值使检测对变化更加敏感。"
+        },
+        "aiAnalysis": {
+          "title": "人工智能增强分析",
+          "description": "启用 AI 分析以实现更详细的场景理解和标记。这需要对 Ollama 服务器进行额外设置。"
+        },
+        "outputCustomization": {
+          "title": "输出定制",
+          "description": "自定义输出格式并在生成的故事板中包含其他元数据。"
+        }
+      },
+      "integration": {
+        "title": "与其他工具集成",
+        "description": "故事板输出可以轻松地与其他工具和工作流程集成。以下是一些示例：",
+        "tools": {
+          "editingSoftware": {
+            "title": "视频编辑软件",
+            "description": "将 JSON 输出导入到支持基于脚本的编辑的视频编辑器中"
           },
-          {
-            "title": "批判性思维与实验",
-            "content": "AI可以生成代码，但假设检验、因果推理和解释'真实世界'数据仍然需要人类数据科学技能。"
+          "cms": {
+            "title": "内容管理系统",
+            "description": "自动生成视频资产元数据"
           },
-          {
-            "title": "沟通与影响力",
-            "content": "将复杂数据转化为商业故事并获得利益相关者信任的能力，已经从'软'技能变成了'硬'要求。"
+          "aiTraining": {
+            "title": "人工智能训练数据",
+            "description": "使用结构化输出作为机器学习模型的训练数据"
           }
-        ]
+        }
       }
     },
-    "bottomLine": {
-      "title": "结论",
-      "content1": "AI没有杀死数据科学，它只是提高了标准。如果你的价值仅在于编写SQL或调整超参数，那么'性感'的部分正在消失。但如果你能在业务挑战和AI解决方案之间架起桥梁，你的价值比以往任何时候都高。",
-      "content2": "你的个人经验就是你的优势。LLM可以模仿逻辑，但它没有失败部署的'战斗伤痕'，也没有在复杂组织中培养的直觉。"
+    "Benefitss": {
+      "title": "优势",
+      "description": "使用我们的人工智能场景检测系统的好处包括：",
+      "tags": {
+        "computerVision": "计算机视觉",
+        "deepLearning": "深度学习",
+        "realTimeAnalysis": "实时分析"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "模块化架构",
+          "description": "该系统由用于视频分析、人工智能处理和输出生成的独立组件构建，使其易于扩展和维护。"
+        },
+        "performance": {
+          "title": "性能优化",
+          "description": "高效的帧处理和并行化确保即使是长视频也能快速分析。"
+        },
+        "aiEnhanced": {
+          "title": "人工智能增强分析",
+          "description": "可选的人工智能组件可提供更深入的场景理解和更准确的标记。"
+        }
+      }
     },
-    "discussion": {
-      "title": "讨论：",
-      "prompt": "在你目前的角色中，你感到更'高效'还是更'被取代'？今年你准备如何提升自己的技能？"
+    "benefits": {
+      "subtitle": "为什么选择我们的解决方案",
+      "title": "人工智能场景分析的力量"
     },
-    "hashtags": ["#数据科学", "#人工智能", "#机器学习", "#生成式AI", "#职业发展", "#科技趋势"]
+    "integration": {
+      "title": "轻松集成",
+      "description": "结构化的 JSON 输出可以轻松与其他工具和工作流程集成：",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "全面的场景数据",
+        "items": [
+          "每个场景的精确计时信息",
+          "视觉参考关键帧",
+          "物体检测结果",
+          "相机运动分析"
+        ]
+      },
+      "export": {
+        "title": "导出选项",
+        "formats": {
+          "json": "JSON"
+        }
+      }
+    },
+    "performance": {
+      "title": "性能优化",
+      "features": {
+        "speed": "比实时快 5-10 倍",
+        "memory": "内存占用低",
+        "parallel": "并行处理"
+      }
+    }
+  },
+  "nanoBananaProPrompts": {
+    "title": "Nano Banana Pro Prompts",
+    "description": "发现一系列满足您的 AI 内容生成需求的创意且有效的提示。这些提示旨在帮助您充分利用 AI 工具。",
+    "prompts": {
+      "title": "热门 Nano Banana Pro Prompts",
+      "prompt1": "创作一个关于情感即货币的未来城市的短篇故事",
+      "prompt2": "生成在咖啡店第一次见面的两个角色之间的对话",
+      "prompt3": "为创新型人工智能厨房小工具撰写产品说明"
+    }
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ 从问答机器人到任务代理：架构指南",
@@ -747,16 +1117,89 @@
     },
     "finalThought": "如果您的代理只能回答问题，那它只是一个聊天机器人。如果它能可靠地执行工作，那才是一个任务代理。"
   },
+  "ageAi": {
+    "heading": "AI 时代的数据科学：还是'最性感的职业'吗？",
+    "intro1": "这是最好的时代，也是最坏的时代。",
+    "intro2": "十年前，《哈佛商业评论》将数据科学家誉为'21世纪最性感的职业'。如今，这一格局正在发生翻天覆地的变化。虽然对数据人才的需求依然旺盛，但生成式AI的兴起正在从根本上重塑'数据科学家'这一职业的内涵。",
+    "realityCheck": {
+      "title": "现实检查",
+      "content": "搜索、广告和推荐(SAR)等传统领域正在成熟，行业正将重点转向稳健的工程和AI架构。我们正面临一个奇特的悖论。",
+      "lowBarTrap": {
+        "title": "低门槛陷阱",
+        "content": "现在，研究生们可以使用GPT-4在几秒钟内完成数据清洗、探索性数据分析和可视化。但如果没有扎实的基础，他们往往缺乏判断AI何时在'幻觉'或产生统计上可疑结果的能力。"
+      },
+      "stakeholderShift": {
+        "title": "利益相关者的转变",
+        "content": "当业务合作伙伴能够自己编写提示来获取基本见解时，许多数据科学专业人士感到'刺激不足'，陷入了无休止的会议和重复的提示工程中。"
+      }
+    },
+    "strategicPillars": {
+      "title": "如何保持不可或缺：两大战略支柱",
+      "intro": "要在这个时代蓬勃发展，我们需要从'模型构建者'进化为'价值架构师'。我认为这体现在两个维度：",
+      "buildingTools": {
+        "title": "构建工具（工程师/架构师思维）",
+        "subtitle": "不要只是使用AI，要让它变得更好。",
+        "points": [
+          {
+            "title": "模型评估与治理",
+            "content": "随着AI输出变得商品化，能够定义什么是'好'结果的人将成为最有价值的资产。专注于特定领域的评估框架（如金融中的风险加权）。"
+          },
+          {
+            "title": "领域微调",
+            "content": "掌握LoRA或RAG等技术，向LLM注入特定业务知识。"
+          },
+          {
+            "title": "自动化",
+            "content": "领导'虚拟分析师'或自动化实验流水线等内部计划。"
+          }
+        ]
+      },
+      "leveragingTools": {
+        "title": "利用工具（战略家思维）",
+        "subtitle": "使用AI将产出提高10倍，专注于人类最擅长的事情。",
+        "points": [
+          {
+            "title": "领域专长",
+            "content": "AI知道'如何'，而你知道'为什么'。深刻的业务理解提供了AI所缺乏的背景。"
+          },
+          {
+            "title": "批判性思维与实验",
+            "content": "AI可以生成代码，但假设检验、因果推理和解释'真实世界'数据仍然需要人类数据科学技能。"
+          },
+          {
+            "title": "沟通与影响力",
+            "content": "将复杂数据转化为商业故事并获得利益相关者信任的能力，已经从'软'技能变成了'硬'要求。"
+          }
+        ]
+      }
+    },
+    "bottomLine": {
+      "title": "结论",
+      "content1": "AI没有杀死数据科学，它只是提高了标准。如果你的价值仅在于编写SQL或调整超参数，那么'性感'的部分正在消失。但如果你能在业务挑战和AI解决方案之间架起桥梁，你的价值比以往任何时候都高。",
+      "content2": "你的个人经验就是你的优势。LLM可以模仿逻辑，但它没有失败部署的'战斗伤痕'，也没有在复杂组织中培养的直觉。"
+    },
+    "discussion": {
+      "title": "讨论：",
+      "prompt": "在你目前的角色中，你感到更'高效'还是更'被取代'？今年你准备如何提升自己的技能？"
+    },
+    "hashtags": [
+      "#数据科学",
+      "#人工智能",
+      "#机器学习",
+      "#生成式AI",
+      "#职业发展",
+      "#科技趋势"
+    ]
+  },
   "aiPlatform": {
     "title": "中型企业的AI成功指南",
     "subtitle": "如何构建一个经济实惠的可扩展AI平台",
-    "intro": "每个人都想使用AI进行开发，但大多数公司负担不起庞大的博士团队或OpenAI级别的预算。好消息是：您不需要这些。",
-    "imageAlt": "AI平台架构图",
-    "heading": "🏗️ 中型企业的AI成功指南",
     "intro": {
       "p1": "在中小型科技公司，真正的优势不在于训练庞大的模型，而在于构建一个让每个人都能开发智能功能的AI平台。这就是如何将敏捷性转化为影响力的方法。",
       "p2": "以下是我们用于在金融、法律、客户支持和工程领域推动AI发展的实用、生产就绪的蓝图，既不会烧钱，也无需雇佣50名ML专家。"
     },
+    "imageAlt": "AI平台架构图",
+    "heading": "🏗️ 中型企业的AI成功指南",
     "mindsetShift": {
       "title": "1. 思维转变：民主化而非集中化",
       "content": "如果您的AI团队成为瓶颈，您已经输了。相反，应该构建一个自服务的AI基础设施，让产品工程师能够构建他们需要的东西。",
@@ -838,6 +1281,4 @@
       "callToAction": "准备好开始构建了吗？保持简单，保持开放，专注于赋能他人。"
     }
   }
-
 }
-

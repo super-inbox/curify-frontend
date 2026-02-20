@@ -1,20 +1,22 @@
 // app/[locale]/agreement/page.tsx
-import Head from 'next/head';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "User Agreement | Curify Studio",
+  description:
+    "Read Curify Studio's user agreement and terms of use, including licensing, content responsibility, and service policies.",
+};
 
 export default function UserAgreementPage() {
   return (
-    <>
-      <Head>
-        <title>User Agreement | Curify Studio</title>
-      </Head>
-      <div className="max-w-5xl mx-auto p-20 text-gray-800 text-base sm:text-lg leading-relaxed">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6">🧑‍⚖️ User Agreement (Terms of Use)</h1>
-        <p className="mb-6">Effective Date: September 13, 2025</p>
+    <div className="max-w-5xl mx-auto p-20 text-gray-800 text-base sm:text-lg leading-relaxed">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6">🧑‍⚖️ User Agreement (Terms of Use)</h1>
+      <p className="mb-6">Effective Date: September 13, 2025</p>
 
-        <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">1. License for Processing</h2>
-        <p className="mb-6">
-          By uploading content, you grant Curify Studio a limited license to process the content solely for the purpose of delivering services (e.g., translation, dubbing, subtitle removal, generation). We do not use your content for model training or resale.
-        </p>
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">1. License for Processing</h2>
+      <p className="mb-6">
+        By uploading content, you grant Curify Studio a limited license to process the content solely for the purpose of delivering services (e.g., translation, dubbing, subtitle removal, generation). We do not use your content for model training or resale.
+      </p>
 
         <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">2. Derivative Work Responsibility</h2>
         <p className="mb-6">
@@ -61,11 +63,10 @@ export default function UserAgreementPage() {
           You agree to indemnify and hold harmless Curify Studio, its team, and partners from any legal claims or damages arising from your use of the service or your violation of these terms or any applicable law.
         </p>
 
-        <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">11. Governing Law</h2>
-        <p className="mb-6">
-          These terms are governed by the laws of the State of California, USA. Any disputes shall be resolved in the courts located in San Francisco County, California.
-        </p>
-      </div>
-    </>
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">11. Governing Law</h2>
+      <p className="mb-6">
+        These terms are governed by the laws of the State of California, USA. Any disputes shall be resolved in the courts located in San Francisco County, California.
+      </p>
+    </div>
   );
 }

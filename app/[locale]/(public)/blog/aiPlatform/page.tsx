@@ -4,10 +4,19 @@ import CdnImage from '../../../_components/CdnImage';
 import { FaLightbulb, FaCheck, FaLayerGroup, FaCogs, FaChartLine, FaTools, FaRocket } from 'react-icons/fa';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: "🏗️ The Mid-Sized Company's Playbook for AI Success",
-  description: "How to Build an AI Platform That Scales Without Breaking the Bank"
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "aiPlatform" });
+
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+  };
+}
 
 const SectionHeader = ({ title, icon: Icon }: { title: string; icon: any }) => (
   <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-6 flex items-center">
@@ -233,32 +242,6 @@ export default async function AIPlatform() {
       {/* Sidebar */}
       <aside className="lg:w-80 flex-shrink-0">
         <div className="sticky top-24 space-y-6">
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <h3 className="font-bold text-lg mb-4 flex items-center">
-              <FaTools className="mr-2 text-blue-600" />
-              Tools & Resources
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="/nano-banana-pro-prompts" 
-                  className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  <FaLightbulb className="mr-2 text-yellow-500" />
-                  Nano Banana Pro
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/inspiration-hub" 
-                  className="flex items-center text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  <FaRocket className="mr-2 text-purple-500" />
-                  Inspiration Hub
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </aside>
     </div>

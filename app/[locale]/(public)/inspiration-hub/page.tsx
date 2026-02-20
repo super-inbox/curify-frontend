@@ -4,11 +4,20 @@ import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { InspirationCardUI } from "@/types/inspiration";
 
-export const metadata: Metadata = {
-  title: "Daily Inspiration Hub | Curify",
-  description: "Curated cards that translate real-world signals into creator-ready hooks and production beats.",
-  alternates: { canonical: "/inspiration-hub" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Daily Inspiration Hub | Curify",
+    description:
+      "Curated cards that translate real-world signals into creator-ready hooks and production beats.",
+    alternates: { canonical: `/${locale}/inspiration-hub` },
+  };
+}
 
 // Helper for SEO Schema
 function generateJsonLd(cards: InspirationCardUI[]) {
