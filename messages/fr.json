@@ -1,0 +1,1284 @@
+{
+  "home": {
+    "metadata": {
+      "title": "Curify | Boostez la création de contenu avec l'IA",
+      "description": "Curify est une plateforme native d'IA aidant les créateurs, les éducateurs et les équipes médias à produire et localiser des vidéos, des mangas et des présentations à grande échelle."
+    },
+    "hero": {
+      "title": "Boostez la création de contenu avec l'IA",
+      "description": "Curify Studio construit une plateforme de création de contenu native d'IA qui permet aux créateurs et aux organisations de surmonter les barrières de langue et de format. Nous résolvons le défi de la mise à l'échelle du contenu pour des audiences mondiales, en permettant des traductions authentiques qui préservent le ton, le style et la profondeur émotionnelle. Opérant à l'intersection des médias, de l'éducation et du divertissement, nous fournissons des outils pour que les créateurs adaptent le contenu de manière transparente dans une industrie qui se mondialise rapidement."
+    }
+  },
+  "coreFeatures": {
+    "oneShot": {
+      "title": "Traduction en un clic",
+      "desc": "Traduction vidéo complète avec voix off, sous-titres et synchronisation labiale en un seul processus."
+    },
+    "toneColor": {
+      "title": "Préservation du timbre",
+      "desc": "Maintient les caractéristiques vocales uniques et les qualités tonales de l'orateur original."
+    },
+    "emotional": {
+      "title": "Parole émotionnelle",
+      "desc": "L'IA reproduit les nuances émotionnelles, assurant une expression authentique dans toutes les langues."
+    },
+    "lipSync": {
+      "title": "Technologie de synchronisation labiale",
+      "desc": "Synchronisation labiale avancée qui correspond parfaitement aux mouvements de la bouche avec l'audio traduit."
+    },
+    "subtitle": {
+      "title": "Sous-titreur",
+      "desc": "Génération intelligente de sous-titres avec un timing précis et un flux de langage naturel."
+    },
+    "languages": {
+      "title": "170+ Langues",
+      "desc": "Traduisez votre contenu dans plus de 170 langues avec une précision de niveau natif."
+    }
+  },
+  "upcoming": {
+    "title": "Bientôt disponible",
+    "subtitle": "Fonctionnalités de nouvelle génération en développement",
+    "styleTransfer": {
+      "title": "Transfert de style",
+      "desc": "Appliquez des styles cinématographiques ou spécifiques à la marque à vos vidéos avec une transformation visuelle alimentée par l'IA.",
+      "icon": "🎨",
+      "status": "Arrive au T3 2025",
+      "transcript": "Cette démo transforme un clip de drame en direct en une animation fantaisiste de style Ghibli en utilisant le transfert de style visuel alimenté par l'IA."
+    },
+    "mangaTranslation": {
+      "title": "Traduction de Manga",
+      "desc": "Traduction automatisée de mangas et de bandes dessinées avec détection de texte, édition de bulles et adaptation culturelle.",
+      "icon": "📚",
+      "status": "Arrive au T3 2025",
+      "transcript": "Ce prototype démontre la traduction automatique de mangas, y compris la détection de bulles de dialogue et l'édition bilingue sur place."
+    },
+    "templatedVideo": {
+      "title": "Génération de vidéo par modèle",
+      "desc": "Créez des vidéos professionnelles à partir de modèles avec du contenu généré par l'IA et une image de marque personnalisée.",
+      "icon": "🎬",
+      "status": "Arrive au T4 2025",
+      "transcript": "Cette démo montre un pipeline de scénario à vidéo générant une scène historique sur les débuts de l'histoire des États-Unis en planifiant le storyboard et en assemblant les visuels."
+    },
+    "statusQ3": "Arrive au T3 2025",
+    "statusQ4": "Arrive au T4 2025"
+  },
+  "export": {
+    "title": "Exporter",
+    "export": "Exporter",
+    "downloading": "Téléchargement..."
+  },
+  "delete": {
+    "title": "Double confirmation",
+    "message": "Êtes-vous sûr de vouloir supprimer ce projet",
+    "warning": "Cette action ne peut pas être annulée.",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "deleting": "Suppression..."
+  },
+  "userMenu": {
+    "topUpCredits": "Recharger des crédits",
+    "remaining": "Restant",
+    "planRemaining": "Plan restant",
+    "validUntil": "Valable jusqu'au",
+    "creditsHistory": "Historique des crédits",
+    "subscribePlan": "S'abonner au plan",
+    "supportTicket": "Ticket de support",
+    "signOut": "Se déconnecter"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Reconnaissance multimodale",
+      "desc": "Nous combinons les signaux de parole et de sous-titres pour obtenir une transcription plus précise et robuste. Cette reconnaissance à double canal réduit les erreurs et assure un meilleur alignement avec le contenu original, en particulier dans les scènes audio bruyantes ou complexes."
+    },
+    "emotional": {
+      "title": "Parole émotionnelle",
+      "desc": "Nos modèles de synthèse vocale génèrent une parole expressive et riche en émotions qui améliore la narration et l'engagement des spectateurs. En capturant le ton, le rythme et les nuances, nous rendons les voix de l'IA plus humaines et plus proches de nous."
+    },
+    "lengthaware": {
+      "title": "Traduction et personnalisation conscientes de la longueur",
+      "desc": "Nous optimisons les traductions non seulement pour la précision, mais aussi pour le timing et le rythme, ce qui est crucial pour l'alignement vidéo et vocal. Les utilisateurs peuvent personnaliser davantage le ton, la longueur et la formulation pour répondre aux différents besoins de contenu ou aux préférences du public."
+    },
+    "controlled": {
+      "title": "Génération de vidéo contrôlée",
+      "desc": "Nous permettons la génération de vidéos structurées et basées sur des modèles avec des éléments visuels et des transitions contrôlables. Cela donne aux créateurs à la fois une liberté créative et une cohérence de production, réduisant l'effort manuel tout en garantissant une sortie de haute qualité."
+    }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Doublage vidéo",
+      "desc": "Traduisez votre vidéo dans n'importe quelle langue avec une localisation précise et une synchronisation vocale"
+    },
+    "subtitle_captioner": {
+      "title": "Sous-titreur",
+      "desc": "Générez automatiquement des sous-titres multilingues pour améliorer la clarté et l'accessibilité"
+    },
+    "lip_syncing": {
+      "title": "Synchronisation labiale",
+      "desc": "Faites correspondre parfaitement les lèvres à la parole grâce à la synchronisation labiale alimentée par l'IA"
+    },
+    "style_transfer": {
+      "title": "Transfert de style",
+      "desc": "Transformez votre vidéo en styles artistiques Pixar, Ghibli ou autres — bientôt disponible"
+    },
+    "coming_soon": "Bientôt disponible",
+    "create": "Créer"
+  },
+  "bilingual": {
+    "metadata": {
+      "title": "Générateur de sous-titres bilingues gratuit | Curify AI",
+      "description": "Créez des sous-titres bilingues pour vos vidéos avec l'outil gratuit alimenté par l'IA de Curify. Parfait pour YouTube, TikTok, l'éducation et les créateurs mondiaux."
+    },
+    "title": "Sous-titres bilingues facilités",
+    "intro": "Générez automatiquement des sous-titres en deux langues à l'aide du moteur de sous-titrage IA de Curify. Idéal pour les créateurs, les éducateurs et les entreprises mondiales.",
+    "example": "Exemple : Jensen Huang expliquant la stratégie IA — sous-titres anglais + chinois générés automatiquement.",
+    "cta": "Essayez-le gratuitement",
+    "why": {
+      "title": "Pourquoi choisir Curify pour les sous-titres bilingues ?",
+      "point1": "Prend en charge plus de 170 langues avec une traduction précise.",
+      "point2": "Préserve le ton émotionnel et le timing.",
+      "point3": "Parfait pour les vidéos YouTube, TikTok et éducatives.",
+      "point4": "Exportez des fichiers de sous-titres prêts à publier ou des vidéos intégrées."
+    },
+    "faq": {
+      "title": "Foire aux questions",
+      "q1": "Est-ce vraiment gratuit ?",
+      "a1": "Oui, Curify propose un plan gratuit avec des minutes de sous-titrage limitées par mois.",
+      "q2": "Puis-je éditer les sous-titres après la génération ?",
+      "a2": "Absolument. Vous pouvez ajuster le timing, la traduction et le style avant l'exportation."
+    }
+  },
+  "videoDubbing": {
+    "metadata": {
+      "title": "Outil de doublage vidéo IA | Curify AI",
+      "description": "Doublez vos vidéos dans plus de 170 langues en utilisant le clonage vocal IA, la préservation des émotions et la synchronisation labiale. Essayez le doublage IA de Curify gratuitement."
+    },
+    "title": "Doublage vidéo IA avec voix naturelle",
+    "description": "Traduisez et doublez votre contenu vidéo dans plus de 170 langues avec une voix IA réaliste et une synchronisation labiale. Parfait pour les créateurs et les marques internationaux."
+  },
+  "about": {
+    "metadata": {
+      "title": "À propos de Curify | Vision, technologie et équipe",
+      "description": "Découvrez la vision de Curify de démocratiser la création de contenu avec l'IA. Nous sommes une équipe d'ingénieurs et de créateurs construisant l'avenir de la localisation des médias."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contactez-nous | Curify Studio",
+      "description": "Contactez l'équipe Curify pour le support, les ventes ou les partenariats. Nous sommes là pour vous aider à faire évoluer votre contenu à l'échelle mondiale."
+    }
+  },
+  "blog": {
+    "metadata": {
+      "title": "Blog Curify | Aperçus de la création de contenu IA",
+      "description": "Lisez les derniers articles sur la génération de vidéos IA, le doublage, le transfert de style et l'avenir de la création de contenu."
+    }
+  },
+  "pricing": {
+    "metadata": {
+      "title": "Plans tarifaires | Curify Studio",
+      "description": "Choisissez le bon plan pour vos besoins de création de contenu. Des outils gratuits au doublage et à la localisation IA de niveau entreprise."
+    },
+    "header": {
+      "title": "Commencer avec un plan",
+      "subtitle": "Choisissez un plan qui correspond à vos besoins."
+    },
+    "common": {
+      "month": "Mois",
+      "pricing": "Tarification",
+      "receive": "Recevoir"
+    },
+    "buttons": {
+      "signUp": "S'inscrire",
+      "subscribePlan": "S'abonner au plan",
+      "currentPlan": "Plan actuel",
+      "comingSoon": "Bientôt disponible",
+      "downgradeToFree": "Passer à Gratuit",
+      "downgradeToCreator": "Passer à Créateur",
+      "contactSales": "Contacter les ventes"
+    },
+    "plans": {
+      "free": {
+        "name": "Gratuit",
+        "description": "Idéal pour tester les outils et les travaux légers",
+        "features": [
+          "Télécharger des vidéos sans filigrane",
+          "1 heure de traitement de sous-titres gratuit",
+          "Exporter des fichiers SRT"
+        ]
+      },
+      "creator": {
+        "name": "Créateur",
+        "description": "Idéal pour les petits créateurs faisant du sous-titrage régulier et du doublage léger",
+        "plusTitle": "Tout ce qui est dans Gratuit, plus :",
+        "features": [
+          "Synchronisation labiale",
+          "Traitement par lots",
+          "5 heures de traitement de sous-titres gratuit",
+          "Jusqu'à 30 minutes par tâche"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Bientôt disponible — Conçu pour les créateurs à grand volume",
+        "plusTitle": "Tout ce qui est dans Créateur, plus :",
+        "features": [
+          "Embellissement de la voix et suppression du bruit",
+          "File d'attente prioritaire",
+          "Jusqu'à 60 min par tâche",
+          "Minutes de sous-titrage illimitées"
+        ]
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "description": "Pour les équipes, les studios et les flux de travail d'entreprise",
+        "customPricing": "Personnalisé",
+        "unlimited": "Illimité 🐚",
+        "tailoredSupport": "et support sur mesure",
+        "plusTitle": "Tout ce qui est dans Pro, plus :",
+        "features": [
+          "Gestionnaire de compte dédié",
+          "Options de déploiement sur site",
+          "Accès API et analyses d'utilisation",
+          "Intégrations personnalisées et SLA",
+          "Heures de traitement illimitées"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "Fonctionnalité / Limite"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "Téléchargement de vidéo avec filigrane",
+        "videoDownloadWithoutWatermark": "Téléchargement de vidéo sans filigrane",
+        "downloadSrt": "Télécharger le fichier SRT",
+        "voiceBeautification": "Embellissement de la voix et suppression du bruit",
+        "lipSync": "Synchronisation labiale",
+        "subtitleTools": "Outils de sous-titrage (ajouter/supprimer, pas de traduction)",
+        "batchProcessing": "Traitement par lots",
+        "maxVideoLength": "Longueur maximale de vidéo par tâche",
+        "monthlyCredits": "Crédits gratuits mensuels",
+        "priorityQueue": "File d'attente prioritaire / Traitement plus rapide",
+        "creditTopUp": "Recharge de crédits"
+      },
+      "values": {
+        "free": "Gratuit",
+        "unlimited": "Illimité",
+        "oneHourPerMonth": "1 h/mois",
+        "fiveHoursPerMonth": "5 h/mois",
+        "fiveMinutes": "5 minutes",
+        "thirtyMinutes": "30 minutes",
+        "sixtyMinutes": "60 minutes"
+      }
+    }
+  },
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI – Redéfinir l'animation (Partie 3)",
+    "heading": "🎨 AE contre ComfyUI",
+    "intro1": "On nous demande souvent: pourquoi ne pas simplement utiliser After Effects (AE)? Ou pourquoi s'embêter avec ComfyUI? Les deux sont essentiels: l’un assure un contrôle précis, l’autre une créativité générative.",
+    "intro2": "AE offre une précision chronologique et un contrôle sur les transitions, l'éclairage et les effets. ComfyUI apporte des workflows natifs d'IA, combinant diffusion, texte et orchestration multimodale.",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "VFX précis et contrôle de mouvement",
+      "row1b": "Génération de vidéos native par IA",
+      "row2a": "Édition basée sur la chronologie",
+      "row2b": "Rendu Workflow/node-based",
+      "row3a": "Flux de travail manuel/piloté par plugin",
+      "row3b": "Diffusion + LLM + orchestration multimodale"
+    },
+    "outro": "Dans notre flux de travail, ComfyUI gère la génération et l'itération de l'IA, tandis que AE affine l'apparence finale: transitions, superpositions et composition."
+  },
+  "video_translation_eval": {
+    "title": "Évaluation de la qualité de la traduction vidéo IA",
+    "subtitle": "Des mesures qui comptent",
+    "intro": "Traduire des vidéos dans plusieurs langues n'est pas une mince affaire: cela implique une transcription, une traduction, une synthèse vocale, un timing, etc. Chez Curify, nous avons construit un solide pipeline d’évaluation pour garantir que chaque pièce répond aux normes de l’industrie.",
+    "section1_title": "1. Qualité des transcriptions",
+    "section1_engine": "Moteur: WhisperX",
+    "section1_metrics": [
+      "WER (taux d'erreur de mots)",
+      "Ponctuation F1 (pour l'expressivité et la lisibilité)"
+    ],
+    "section2_title": "2. Qualité de la traduction",
+    "section2_engine": "Moteurs: Helsinki, MarianMT",
+    "section2_metrics": [
+      "BLEU (métrique standard)",
+      "COMET / chrF++ (similitude sémantique)",
+      "Bilan humain: maîtrise + adéquation"
+    ],
+    "section3_title": "3. Qualité de synthèse vocale",
+    "section3_engine": "Moteurs: XTTS / YourTTS",
+    "section3_metrics": [
+      "MOS (Naturalité, similarité, expressivité)",
+      "Précision de la vérification du locuteur"
+    ],
+    "section4_title": "4. Alignement et synchronisation labiale",
+    "section4_metrics": [
+      "Inadéquation de la durée du segment",
+      "Wav2Lip confiance de synchronisation",
+      "Analyse de la dérive temporelle"
+    ],
+    "section5_title": "5. Préservation sémantique",
+    "section5_method": "Nous utilisons LLMs (comme GPT-4) pour juger si le discours traduit préserve le sens, le ton et l'émotion d'origine. Exemple d'invite:",
+    "section5_prompt": "Comparez cette transcription en mandarin à la voix off anglaise. Le ton, l’intention et le contenu correspondent-ils? Notez 1 à 5 et expliquez.",
+    "section6_title": "6. Commentaires des utilisateurs et validation GTM",
+    "section6_metrics": [
+      "Qualité vocale adaptée à la catégorie de produit",
+      "Amélioration de la fidélisation des spectateurs",
+      "Volonté d'adoption des premiers utilisateurs (par exemple, 1 688 vendeurs)"
+    ],
+    "closing": "Chez Curify, nous ne nous contentons pas de traduire: nous préservons la narration, l'émotion et la clarté dans toutes les langues. Si vous êtes prêt à faire entendre votre voix à l’échelle mondiale, contactez-nous.",
+    "available_locales": "Poste disponible à: [EN] [ZH] [ES] [DE]"
+  },
+  "storyboardToPipeline": {
+    "title": "Des storyboards aux pipelines d’IA – Redéfinir l’animation",
+    "intro": {
+      "p1": "La plupart des gens pensent que la vidéo IA signifie « texte entrant, extrait ». Mais si vous visez <strong>un contrôle cinématographique au niveau du réalisateur</strong>, c'est un jeu complètement différent.",
+      "p2": "Dans l'animation traditionnelle, chaque détail compte: la conception des personnages, la continuité des mouvements, le timing et les transitions de scène. Notre objectif est de faire en sorte que l’IA corresponde à ce niveau de précision.",
+      "p3": "L’animation est aujourd’hui à la fois un art et un défi d’orchestration structurée. Nous pensons comme des réalisateurs, mais construisons comme des ingénieurs.",
+      "p4": "C'est pourquoi nous construisons des <strong>pipelines de génération contrôlée</strong> au lieu d'une génération ponctuelle. Ces pipelines allient structure et créativité:",
+      "pipelineItems": [
+        "Storyboard-to-Video: spécifications de scène basées sur JSON avec identifiants, timing et métadonnées de caméra",
+        "Workflows basés sur ComfyUI: graphe de nœuds DAGs avec points de contrôle versionnés, piles LoRA et graines",
+        "Contrôle temporel et multimodal: ID de scène partagés sur l'image, le mouvement, l'audio et les sous-titres"
+      ],
+      "p5": "Passons maintenant à un exemple simple pour montrer comment les pipelines d'IA fonctionnent dans la pratique.",
+      "technicalNotes": [
+        "Toutes les étapes read/write artefacts typés (JSON/CSV, séquences PNG, WAV/MP3, MP4,.aep)",
+        "Les pipelines sont orchestrés via Python/CLI (par exemple, ComfyUI API, ffmpeg, TTS APIs)",
+        "Chaque exécution est reproductible via la configuration stockée (modèle, échantillonneur, graine, invites, durée)"
+      ]
+    },
+    "pipeline": {
+      "title": "Pipeline de génération vidéo IA",
+      "description": "Le pipeline de génération vidéo IA transforme les invites textuelles en vidéos soignées via des étapes structurées avec des entrées, des sorties et des configurations explicites.",
+      "prompt": "1. Invite (idée brute → spécification JSON structurée)",
+      "storyboard": "2. Storyboard (tableau scene/shot avec timing, caméra et description)",
+      "images": "3. Images (images clés par prise de vue générées via Stable Diffusion / ComfyUI)",
+      "animation": "4. Animation (séquences d'images → mouvement, parallaxe et effets)",
+      "voiceOver": "5. Voix off (TTS + données d'alignement)",
+      "finalVideo": "6. Vidéo finale (composition ffmpeg: vidéo + audio + sous-titres)",
+      "features": [
+        "JSON-first design: chaque scène est adressable et scriptable (scene_id, shot_id)",
+        "Workflows basés sur ComfyUI: DAGs modulaires, reproductibles et composables pour la génération image/video",
+        "Contrôle temporel et multimodal: graines cohérentes, intégration de personnages et timing entre les modalités"
+      ],
+      "exampleIntro": "Passons maintenant à un exemple simple pour montrer comment les pipelines d'IA fonctionnent dans la pratique.",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
+    "steps": {
+      "step1": {
+        "title": "Étape 1: Commencez par une invite de base",
+        "example": "Une jeune fille se tient debout dans une gare à minuit, les cheveux soufflés par le vent.",
+        "expandedPrompt": "Avec l'aide de GPT ou d'un LLM local, nous développons cela en un objet JSON structuré avec un style global, des définitions de personnages et une répartition par scène.",
+        "technicalDetails": {
+          "llmFields": [
+            "global_style: style artistique, langage de la caméra, palette de couleurs",
+            "personnages: nom, âge, look, tenue, état émotionnel",
+            "scènes : [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "Script Python appelant OpenAI/LLM API et écrivant JSON sur le disque"
+        }
+      },
+      "step2": {
+        "title": "Étape 2: Convertir l'invite en tableau de storyboard",
+        "description": "La spécification JSON est aplatie dans un tableau de storyboard (CSV ou Notion) que les humains et le pipeline peuvent lire.",
+        "technicalDetails": {
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "motion_notes"
+          ],
+          "storage": "storyboard_v1.csv (utilisé comme source unique de vérité pour les étapes en aval)",
+          "automation": "Le script Python / Node.js transforme prompt_run_001.json → storyboard_v1.csv"
+        }
+      },
+      "step3": {
+        "title": "🛠️ Étape 3: Générer des visuels",
+        "description": "Générez des images clés de haute qualité pour chaque prise de vue à l'aide de Stable Diffusion via un flux de travail ComfyUI.",
+        "points": [
+          "🎨 Utilisez <strong>Stable Diffusion</strong> ou <strong>ComfyUI</strong> pour transformer chaque ligne de `storyboard_v1.csv` en une image clé haute résolution.",
+          "Gardez le style cohérent en utilisant le même point de contrôle de base, la même pile LoRA, l'échantillonneur et la même politique de départ pour tous les plans.",
+          "Affinez les images avec l'inpainting (pour faces/hands) et l'outpainting (pour les compositions étendues et le mouvement de la caméra)."
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "consistency": {
+            "seedStrategy": "fixed_per_scene",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "nœud personnalisé / HTTP API lecture storyboard_v1.csv et modelConfig",
+            "batching": "GPU lots saisis par scene_id pour réutiliser les poids chargés"
+          }
+        }
+      },
+      "step4": {
+        "title": "🎬 Étape 4: Ajouter du mouvement et de l'atmosphère dans After Effects",
+        "description": "Améliorez les images clés statiques avec du mouvement, de la parallaxe et de l'atmosphère à l'aide de Adobe After Effects (ou d'un compositeur équivalent).",
+        "points": [
+          "Importez des séquences d'images ou des images clés dans <strong>Adobe After Effects</strong> sous forme de compositions en couches.",
+          "Appliquez des animations d'images clés: panoramique, zoom, calques de parallaxe, superpositions de brouillard, lueur et scintillement de la lumière.",
+          "Ajoutez des signaux sonores ambiants et des transitions cinématiques entre les scènes."
+        ],
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus cartes depth/alpha facultatives)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "Utilisez AE scripts/ExtendScript ou JSX pour créer automatiquement des compositions par scene_id.",
+            "Mapper `duration_seconds` à partir de storyboard_v1.csv → durée de la composition.",
+            "Générez des images intermédiaires via des plugins AE ou des outils de diffusion vidéo si nécessaire."
+          ],
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "🎧 Étape 5: Ajouter une voix et des sous-titres",
+        "description": "Générez une voix off alignée sur le storyboard et attachez des sous-titres pour plus d'accessibilité et de clarté.",
+        "points": [
+          "Utilisez <strong>XTTS</strong> ou <strong>ElevenLabs</strong> pour générer des voix off naturelles à partir du script, en utilisant un profil de locuteur cohérent.",
+          "Pour les acronymes (comme API, NBA), générez des extraits d'anglais séparément et fusionnez-les dans la publication pour garder une prononciation claire.",
+          "Ajoutez des sous-titres à l'aide des fichiers de chronologie `.srt` ou `.json` synchronisés avec la piste de voix off."
+        ],
+        "technicalDetails": {
+          "scriptSource": "dialogue et narration tirés de prompt_run_001.json + storyboard_v1.csv",
+          "ttsConfig": {
+            "engine": "XTTS ou ElevenLabs",
+            "voiceId": "cinematic_female_en",
+            "sampleRate": 44100,
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voiceover.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "alignez `start_time` / `end_time` de storyboard_v1.csv avec les indices de sous-titres; garantir la longueur totale de l'audio ≈ durée finale de la chronologie"
+        }
+      },
+      "step6": {
+        "title": "Étape 6: Composition finale avec FFMPEG",
+        "description": "Utilisez FFMPEG pour combiner toutes les pièces en un seul fichier vidéo final avec audio et sous-titres.",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voiceover.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 ips, AAC audio)"
+        }
+      }
+    },
+    "whatYouNeed": "📁 Ce dont vous aurez besoin",
+    "whatYouNeedTechnical": [
+      "GPU avec au moins 12 Go VRAM pour Stable Diffusion / ComfyUI",
+      "Environnement Python pour les transformations JSON/CSV et les scripts d'automatisation",
+      "ComfyUI installé avec les nœuds et flux de travail personnalisés requis",
+      "Adobe After Effects ou compositeur similaire pour le mouvement et les effets",
+      "Accès XTTS / ElevenLabs API pour TTS",
+      "ffmpeg installé et disponible en ligne de commande"
+    ],
+    "cta": "🚀 Prêt à donner vie à votre storyboard avec l'IA? <strong>Nous pouvons fournir un kit de démarrage complet</strong> avec des exemples de JSON, des flux de travail ComfyUI et des modèles ffmpeg/AE pour vous aider à démarrer."
+  },
+  "SceneDetection": {
+    "tags": {
+      "computerVision": "Vision par ordinateur",
+      "deepLearning": "Apprentissage profond",
+      "realTimeAnalysis": "Analyse en temps réel"
+    },
+    "hero": {
+      "title": "Transformez la vidéo en storyboards avec l'IA",
+      "subtitle": "Comment nous avons construit un pipeline avancé qui transforme des heures de séquences en storyboards structurés et consultables en quelques minutes."
+    },
+    "introduction": {
+      "paragraph1": "Imaginez pouvoir mettre en ligne des heures de séquences brutes et obtenir en quelques minutes une <strong>répartition détaillée, scène par scène</strong> de l'intégralité de votre vidéo. C'est exactement ce qu'offre notre système de détection de scène alimenté par l'IA.",
+      "paragraph2": "Construit avec des bibliothèques Python de pointe et des modèles d'apprentissage profond, ce pipeline ne se contente pas de détecter les changements de scène: il comprend le contenu, identifie les éléments clés et structure le tout dans un storyboard complet."
+    },
+    "imageAlt": "Le pipeline de détection de scène en action, identifiant les moments clés et générant des storyboards structurés",
+    "protip": "Pour des résultats optimaux, assurez-vous que votre vidéo présente une séparation visuelle claire entre les scènes. Le système fonctionne mieux avec des images bien éclairées et un flou de mouvement minimal. Pensez à ajouter des marqueurs de chapitre ou des sauts de scène dans votre éditeur vidéo pour améliorer la précision de la détection.",
+    "humanEvaluation": {
+      "title": "Évaluation humaine des résultats de l'IA",
+      "introduction": "Même si notre pipeline d’IA est très précis, l’évaluation humaine reste un élément essentiel de notre processus d’assurance qualité. Voici comment nous garantissons un résultat de la plus haute qualité:",
+      "evaluationAreas": [
+        "<strong>Précision des limites de la scène</strong> - Examen et ajustement des points de transition de la scène",
+        "<strong>Validation des métadonnées</strong> – Vérification des descriptions, des balises et des étiquettes générées par l'IA",
+        "<strong>Contrôle de cohérence</strong> – Garantir un style et un formatage uniformes dans toutes les scènes",
+        "<strong>Content Accuracy</strong> - Vérifier que l'IA a correctement identifié les éléments clés dans chaque scène"
+      ],
+      "workflow": {
+        "title": "Flux de travail humain dans la boucle",
+        "steps": [
+          "L'IA traite la vidéo et génère le storyboard initial",
+          "Des évaluateurs humains évaluent les résultats de l'IA à l'aide de nos outils spécialisés",
+          "Les évaluateurs fournissent des commentaires et effectuent les ajustements nécessaires",
+          "Le système apprend des corrections humaines pour améliorer les résultats futurs",
+          "Contrôle qualité final avant livraison"
+        ]
+      },
+      "benefits": {
+        "title": "Avantages de l’évaluation humaine",
+        "items": [
+          "<strong>Précision supérieure</strong> – Les évaluateurs humains détectent des nuances subtiles que l'IA pourrait manquer",
+          "<strong>Compréhension contextuelle</strong> - Meilleure interprétation du contexte culturel et situationnel",
+          "<strong>Assurance qualité</strong> - Couche de validation supplémentaire pour les cas d'utilisation professionnelle",
+          "<strong>Amélioration continue</strong> – La rétroaction humaine aide à former et à affiner les modèles d'IA"
+        ]
+      },
+      "tools": {
+        "title": "Outils d'évaluation",
+        "description": "Notre plateforme comprend des outils spécialisés pour aider les évaluateurs humains:",
+        "features": [
+          "Comparaison côte à côte de vidéos et de storyboards",
+          "Interface facile à utiliser pour ajuster les limites de la scène",
+          "Modification en masse des métadonnées et des balises",
+          "Fonctionnalités de collaboration pour la révision en équipe",
+          "Historique des versions et suivi des modifications"
+        ]
+      }
+    },
+    "header": {
+      "title": "Des images brutes aux storyboards",
+      "author": "Équipe Curify AI",
+      "role": "Équipe de recherche en IA",
+      "imageAlt": "IA analysant des scènes vidéo et générant des storyboards",
+      "imageCaption": "Détection de scène basée sur l'IA en action, identifiant les moments clés du contenu vidéo",
+      "subtitle": "Analyse vidéo basée sur l'IA",
+      "date": "11 décembre 2025",
+      "readingTime": "8 minutes de lecture"
+    },
+    "Technical": {
+      "title": "PLONGÉE TECHNIQUE PROFONDE",
+      "steps": {
+        "step1": "Comment ça marche: sous le capot",
+        "videoProcessingPipeline": "Notre système traite les vidéos via un pipeline sophistiqué à plusieurs étapes qui garantit une détection et une analyse précises des scènes:",
+        "step2": "Pipeline de traitement vidéo",
+        "step2Text": "Notre système traite les vidéos via un pipeline sophistiqué à plusieurs étapes qui garantit une détection et une analyse précises des scènes:",
+        "step3": "Détection de scène et extraction de métadonnées",
+        "step3Text": "Échantillonnage de trames alimenté par OpenCV à intervalles optimaux",
+        "step4": "Analyse des plans et amélioration des métadonnées",
+        "step4Text": "Seuil adaptatif pour une détection précise des limites de la scène",
+        "step5": "Étiquetage des scènes et organisation des métadonnées",
+        "step5Text": "Modèles d'apprentissage profond pour une compréhension complète de la scène",
+        "step6": "Exportation et intégration de métadonnées",
+        "step6Text": "Exportez les métadonnées au format JSON pour l'intégration avec d'autres outils"
+      }
+    },
+    "featuresTitle": "Des fonctionnalités puissantes à portée de main",
+    "features1": "Intégration vidéo transparente",
+    "features1Text": "Traitez des fichiers locaux, des liens YouTube ou du stockage cloud avec notre interface unifiée.",
+    "features": {
+      "modularArchitecture": {
+        "title": "Architecture modulaire",
+        "description": "Le système est construit avec des composants distincts pour l'analyse vidéo, le traitement de l'IA et la génération de sorties, ce qui le rend facile à étendre et à maintenir."
+      },
+      "performance": {
+        "title": "Performances optimisées",
+        "description": "Le traitement efficace des images et la parallélisation garantissent une analyse rapide, même pour les vidéos longues."
+      },
+      "aiEnhanced": {
+        "title": "Analyse améliorée par l'IA",
+        "description": "Les composants IA en option offrent une compréhension plus approfondie de la scène et un étiquetage plus précis."
+      }
+    },
+    "features2": "Intégration vidéo transparente",
+    "features2Text": "Traitez des fichiers locaux, des liens YouTube ou du stockage cloud avec notre interface unifiée.",
+    "features3": "Analyse basée sur l'IA",
+    "features3Text": "Améliorez la compréhension de la scène avec notre module d’analyse IA en option.",
+    "features4": "Détection de mouvement de la caméra",
+    "features4Text": "Identifiez automatiquement les panoramiques, les zooms et autres mouvements de caméra.",
+    "features5": "Sortie personnalisable",
+    "features5Text": "Exportez les métadonnées au format JSON pour l'intégration avec d'autres outils.",
+    "intro": {
+      "p1": "Dans le paysage actuel de la création de contenu, en évolution rapide, <strong>analyse vidéo efficace</strong> n'est plus un luxe, c'est une nécessité. Notre technologie de détection de scène basée sur l'IA transforme des heures de séquences brutes en contenu structuré et consultable en quelques minutes, et non en quelques jours.",
+      "p2": "Que vous soyez cinéaste, créateur de contenu ou professionnel des médias, comprendre la puissance de la détection automatisée de scènes peut révolutionner votre flux de travail et ouvrir de nouvelles possibilités créatives."
+    },
+    "proTip": "Pour de meilleurs résultats, assurez-vous que votre vidéo source présente une séparation audio et visuelle claire entre les scènes. Des environnements bien éclairés et un bruit de fond minimal améliorent considérablement la précision de la détection.",
+    "titanicExample": {
+      "title": "Exemple concret: analyse de la scène du Titanic",
+      "description": "Regardez comment notre système analyse une scène de Titanic, détectant les changements de plan et générant des métadonnées détaillées de la scène:",
+      "analysis": "Analyse :",
+      "analysisText": "Détection de scène et extraction de métadonnées en temps réel"
+    },
+    "inceptionExample": {
+      "title": "Analyse du niveau de rêve: répartition de la scène de création",
+      "description": "Découvrez comment notre IA analyse les couches de rêve complexes et les effets visuels dans Inception:",
+      "analysis": "Analyse",
+      "analysisText": "Détection de la couche de rêve et répartition des effets visuels",
+      "breakdownTitle": "Répartition de l'analyse de scène",
+      "showFullAnalysis": "Afficher l'analyse complète de la scène",
+      "hideFullAnalysis": "Masquer l’analyse complète de la scène",
+      "fullSceneAnalysis": "Analyse complète de la scène",
+      "sceneCard": {
+        "mood": "Ambiance",
+        "environment": "Environnement",
+        "shotNotes": "Notes de prise de vue"
+      }
+    },
+    "Scene": "Scène",
+    "process": {
+      "title": "Comment fonctionne notre détection de scène",
+      "steps": {
+        "step1": {
+          "title": "1. Analyse vidéo",
+          "description": "Notre IA scanne votre vidéo image par image, analysant les signaux visuels et audio pour identifier les limites potentielles de la scène.",
+          "details": [
+            "Analyse les histogrammes de couleurs et les vecteurs de mouvement",
+            "Détecte les changements de niveau audio et les silences",
+            "Identifie les limites et les transitions des plans"
+          ]
+        },
+        "step2": {
+          "title": "2. Segmentation des scènes",
+          "description": "Le système regroupe les plans associés en scènes cohérentes basées sur des relations visuelles et temporelles.",
+          "details": [
+            "Utilise l'apprentissage automatique pour comprendre le contexte de la scène",
+            "Prend en compte la durée du plan et les types de transition",
+            "Fusionne les plans associés en scènes logiques"
+          ]
+        },
+        "step3": {
+          "title": "3. Classement du contenu",
+          "description": "Chaque scène détectée est analysée et catégorisée en fonction de son contenu visuel et audio.",
+          "details": [
+            "Identifie les éléments visuels et les objets clés",
+            "Classifie le type de scène (par exemple, interview, action, paysage)",
+            "Analyse l'audio pour la parole, la musique et les effets"
+          ]
+        },
+        "step4": {
+          "title": "4. Génération de métadonnées",
+          "description": "Des métadonnées complètes sont générées pour chaque scène, permettant une recherche et une organisation puissantes.",
+          "details": [
+            "Crée des horodatages et des informations sur la durée",
+            "Génère des vignettes représentatives",
+            "Extrait les dialogues clés et les signaux audio"
+          ]
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "Pourquoi notre détection de scène fonctionne si bien",
+      "points": "<li>Notre IA analyse à la fois <strong>les repères visuels et audio</strong> pour identifier les limites de la scène avec une précision de plus de 95 %.</li><li>Les <strong>modèles d'apprentissage automatique avancés</strong> comprennent le contexte, et pas seulement les changements visuels, pour une détection plus naturelle de la scène.</li><li>Le traitement en temps réel permet un <strong>retour immédiat</strong> et des ajustements pendant tournage ou montage.</li>"
+    },
+    "recommendedStyle": {
+      "title": "Style recommandé pour de meilleurs résultats",
+      "description": "Pour obtenir la détection de scène la plus précise, nous recommandons les directives de style suivantes:",
+      "points": [
+        "Maintenir un éclairage cohérent dans chaque scène",
+        "Utilisez des marqueurs audio clairs ou des clap entre les prises",
+        "Gardez les mouvements de la caméra fluides et intentionnels",
+        "Maintenir des niveaux audio cohérents dans les scènes"
+      ]
+    },
+    "title": "Des séquences brutes aux storyboards: analyse vidéo basée sur l'IA",
+    "description": "Découvrez comment l'IA transforme la vidéo brute en storyboards structurés avec une détection et une analyse automatisées des scènes.",
+    "timeline": {
+      "title": "Chronologie de la scène",
+      "viewScene": "Voir la scène {1}"
+    },
+    "cta": "🚀 Prêt à donner vie à votre storyboard avec l'IA? <strong>Nous pouvons fournir un kit de démarrage complet</strong> avec des exemples de JSON, des flux de travail ComfyUI et des modèles ffmpeg/AE pour vous aider à démarrer.",
+    "sceneBreakdown": {
+      "title": "Comprendre la sortie de détection de scène",
+      "introduction": "Décomposons une sortie typique de détection de scène pour comprendre comment notre IA analyse et structure le contenu vidéo. Sous chaque explication, vous trouverez la structure JSON correspondante qui alimente ces informations.",
+      "scenes": [
+        {
+          "title": "1. Identification de la scène",
+          "content": "Chaque scène se voit attribuer un identifiant unique et une plage d'horodatage, permettant une navigation précise dans le contenu vidéo. Ceci constitue le fondement de notre analyse.",
+          "example": "Scène 1 (00:00:02.50 - 00:00:05.20)",
+          "jsonExample": {
+            "scene_id": "scene_001",
+            "start_time": 2.5,
+            "end_time": 5.2,
+            "duration": 2.7,
+            "keyframe_index": 5,
+            "keyframe_time": 3.8
+          },
+          "jsonDescription": "Cette structure JSON affiche les données d'identification de base d'une scène, y compris son identifiant unique, les informations de synchronisation et le index/time de son image clé représentative."
+        },
+        {
+          "title": "2. Analyse visuelle",
+          "content": "Notre IA examine les images clés pour comprendre la composition visuelle de chaque scène, y compris les couleurs dominantes, les conditions d'éclairage et les éléments visuels.",
+          "example": "Analyse d'images clés: extérieur, lumière du jour, sujets multiples",
+          "jsonExample": {
+            "visual_analysis": {
+              "brightness": 0.78,
+              "contrast": 0.65,
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
+              "dominant_colors": [
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
+              ],
+              "lighting_condition": "daylight",
+              "environment": "outdoor",
+              "detected_objects": [
+                {
+                  "label": "person",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "sky",
+                  "confidence": 0.99,
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "jsonDescription": "Ce JSON affiche les données d'analyse visuelle, y compris les informations sur les couleurs, les conditions d'éclairage et les objets détectés avec des scores de confiance."
+        },
+        {
+          "title": "3. Composition du plan",
+          "content": "Au sein de chaque scène, nous identifions les plans individuels et leurs transitions, aidant ainsi à comprendre le flux visuel et le rythme du contenu.",
+          "example": "3 plans détectés avec des coupes douces et un fondu enchaîné",
+          "jsonExample": {
+            "shots": [
+              {
+                "shot_id": "shot_001",
+                "start_time": 2.5,
+                "end_time": 3.1,
+                "transition": {
+                  "type": "cut",
+                  "confidence": 0.98
+                },
+                "camera_motion": {
+                  "type": "static",
+                  "confidence": 0.92
+                }
+              },
+              {
+                "shot_id": "shot_002",
+                "start_time": 3.1,
+                "end_time": 4.3,
+                "transition": {
+                  "type": "fade",
+                  "duration": 0.3,
+                  "confidence": 0.95
+                },
+                "camera_motion": {
+                  "type": "pan_left",
+                  "confidence": 0.88
+                }
+              }
+            ]
+          },
+          "jsonDescription": "Cette structure JSON détaille la composition des plans au sein d'une scène, y compris le timing, les types de transition et l'analyse du mouvement de la caméra."
+        },
+        {
+          "title": "4. Classement du contenu",
+          "content": "Les scènes sont automatiquement classées en fonction de leur contenu, ce qui facilite la recherche ultérieure de types spécifiques de séquences.",
+          "example": "Catégorie: Drame, Cadre: Pont de navire, Sujets: Personnages principaux",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "drama",
+              "secondary_categories": [
+                "romance",
+                "disaster"
+              ],
+              "setting": {
+                "type": "ship_deck",
+                "time_of_day": "night",
+                "confidence": 0.92
+              },
+              "subjects": [
+                {
+                  "type": "main_character",
+                  "name": "Jack",
+                  "position": "center_frame",
+                  "emotion": "determined",
+                  "confidence": 0.89
+                },
+                {
+                  "type": "main_character",
+                  "name": "Rose",
+                  "position": "center_frame",
+                  "emotion": "fearful",
+                  "confidence": 0.91
+                }
+              ],
+              "sentiment": {
+                "overall": "intense_dramatic",
+                "confidence": 0.88,
+                "emotions": [
+                  "fear",
+                  "determination",
+                  "urgency"
+                ]
+              },
+              "key_elements": [
+                "lifeboat",
+                "ocean",
+                "moonlight"
+              ],
+              "narrative_importance": 0.95,
+              "action_required": true
+            }
+          },
+          "jsonDescription": "Ce JSON montre comment l'IA analyse et classe les scènes de film, y compris les émotions des personnages, les détails du décor et l'importance narrative, avec la scène dramatique du canot de sauvetage du Titanic comme exemple."
+        }
+      ],
+      "analysisTitle": "Rassembler tout cela",
+      "analysisContent": "En combinant ces éléments, notre système crée une carte complète de votre contenu vidéo. Ces données structurées alimentent des fonctionnalités telles que la recherche intelligente, l'édition automatisée et l'analyse de contenu.",
+      "fullExampleTitle": "Exemple de données de scène complètes",
+      "fullExampleDescription": "Voici comment toutes les pièces sont réunies dans une analyse complète de la scène:",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": 2.5,
+        "end_time": 5.2,
+        "duration": 2.7,
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": 30
+        },
+        "visual_analysis": {
+          "brightness": 0.78,
+          "contrast": 0.65,
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
+          "lighting_condition": "daylight",
+          "environment": "studio"
+        },
+        "audio_analysis": {
+          "has_speech": true,
+          "speech_confidence": 0.92,
+          "background_noise_level": 0.15,
+          "speaker_gender": [
+            "male",
+            "female"
+          ],
+          "speech_text": "Discutons de la façon dont l'IA transforme la production vidéo..."
+        },
+        "content_analysis": {
+          "primary_category": "interview",
+          "setting": "studio",
+          "subjects": [
+            "host",
+            "guest"
+          ],
+          "sentiment": "neutral_positive"
+        },
+        "shots": [
+          {
+            "shot_id": "shot_001",
+            "start_time": 2.5,
+            "end_time": 3.1,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
+          },
+          {
+            "shot_id": "shot_002",
+            "start_time": 3.1,
+            "end_time": 5.2,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
+          }
+        ]
+      },
+      "benefitsTitle": "Avantages clés",
+      "benefits": [
+        "<strong>Montage efficace:</strong> Accédez directement à n'importe quelle scène ou prise de vue sans parcourir des heures de séquences.",
+        "<strong>Recherche intelligente:</strong> Recherchez du contenu basé sur des éléments visuels, et pas seulement sur des métadonnées",
+        "<strong>Qualité constante:</strong> Identifiez et maintenez la cohérence visuelle tout au long de votre projet",
+        "<strong>Décisions basées sur les données:</strong> Obtenez des informations sur la structure et le rythme de votre contenu"
+      ]
+    },
+    "conclusion": {
+      "title": "Transformer la production vidéo avec l'IA",
+      "p1": "La détection de scène basée sur l'IA révolutionne notre approche de la production vidéo. En automatisant le processus fastidieux d’identification et d’organisation des scènes, les créateurs peuvent se concentrer sur ce qui compte vraiment: raconter des histoires captivantes. Notre technologie comble le fossé entre les images brutes et le contenu raffiné, rendant l'analyse vidéo de qualité professionnelle accessible à tous.",
+      "p2": "Alors que nous continuons à affiner nos algorithmes et à étendre nos capacités, nous sommes ravis de voir comment les cinéastes, les éducateurs et les créateurs de contenu exploiteront ces outils pour repousser les limites de la narration visuelle. L'avenir de la production vidéo est là, et elle est plus efficace et créative que jamais."
+    },
+    "richStructuredOutput": "Sortie riche et structurée",
+    "richStructuredOutputText": "Notre système génère des données de storyboard complètes avec des métadonnées détaillées pour chaque scène, vous donnant un contrôle total sur votre contenu vidéo.",
+    "advancedUsage": {
+      "title": "Utilisation et personnalisation avancées",
+      "description": "Le système de détection de scène est hautement personnalisable pour s'adapter à différents cas d'utilisation. Voici quelques fonctionnalités avancées et options de personnalisation:",
+      "features": {
+        "thresholds": {
+          "title": "Seuils de détection de scène personnalisés",
+          "description": "Ajustez la sensibilité de la détection de scène en modifiant le paramètre de seuil. Des valeurs inférieures rendent la détection plus sensible aux changements."
+        },
+        "aiAnalysis": {
+          "title": "Analyse améliorée par l'IA",
+          "description": "Activez l’analyse IA pour une compréhension et un étiquetage plus détaillés des scènes. Cela nécessite une configuration supplémentaire avec le serveur Ollama."
+        },
+        "outputCustomization": {
+          "title": "Personnalisation de la sortie",
+          "description": "Personnalisez le format de sortie et incluez des métadonnées supplémentaires dans le storyboard généré."
+        }
+      },
+      "integration": {
+        "title": "Intégration avec d'autres outils",
+        "description": "La sortie du storyboard peut être facilement intégrée à d’autres outils et flux de travail. Voici quelques exemples:",
+        "tools": {
+          "editingSoftware": {
+            "title": "Logiciel de montage vidéo",
+            "description": "Importez la sortie JSON dans des éditeurs vidéo prenant en charge l'édition basée sur des scripts"
+          },
+          "cms": {
+            "title": "Systèmes de gestion de contenu",
+            "description": "Générez automatiquement des métadonnées pour les ressources vidéo"
+          },
+          "aiTraining": {
+            "title": "Données de formation IA",
+            "description": "Utiliser la sortie structurée comme données d'entraînement pour les modèles d'apprentissage automatique"
+          }
+        }
+      }
+    },
+    "Benefitss": {
+      "title": "Avantages",
+      "description": "Les avantages de l’utilisation de notre système de détection de scène basé sur l’IA incluent:",
+      "tags": {
+        "computerVision": "Vision par ordinateur",
+        "deepLearning": "Apprentissage profond",
+        "realTimeAnalysis": "Analyse en temps réel"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "Architecture modulaire",
+          "description": "Le système est construit avec des composants distincts pour l'analyse vidéo, le traitement de l'IA et la génération de sorties, ce qui le rend facile à étendre et à maintenir."
+        },
+        "performance": {
+          "title": "Performances optimisées",
+          "description": "Le traitement efficace des images et la parallélisation garantissent une analyse rapide, même pour les vidéos longues."
+        },
+        "aiEnhanced": {
+          "title": "Analyse améliorée par l'IA",
+          "description": "Les composants IA en option offrent une compréhension plus approfondie de la scène et un étiquetage plus précis."
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "POURQUOI CHOISIR NOTRE SOLUTION",
+      "title": "La puissance de l’analyse de scène basée sur l’IA"
+    },
+    "integration": {
+      "title": "Intégration facile",
+      "description": "La sortie structurée JSON facilite l'intégration à d'autres outils et flux de travail:",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "Données de scène complètes",
+        "items": [
+          "Informations de timing précises pour chaque scène",
+          "Images clés pour référence visuelle",
+          "Résultats de détection d'objets",
+          "Analyse des mouvements de caméra"
+        ]
+      },
+      "export": {
+        "title": "Option d'exportation",
+        "formats": {
+          "json": "JSON"
+        }
+      }
+    },
+    "performance": {
+      "title": "Performances optimisées",
+      "features": {
+        "speed": "5 à 10 fois plus rapide qu'en temps réel",
+        "memory": "Faible empreinte mémoire",
+        "parallel": "Traitement parallèle"
+      }
+    }
+  },
+  "nanoBananaProPrompts": {
+    "title": "Prompts Pro de Nano Banana",
+    "description": "Découvrez une collection d'invites créatives et efficaces pour vos besoins en matière de génération de contenu IA. Ces invites sont conçues pour vous aider à tirer le meilleur parti de vos outils d’IA.",
+    "prompts": {
+      "title": "Prompts Pro Nano Banana populaires",
+      "prompt1": "Créez une courte histoire sur une ville futuriste où les émotions sont monnaie courante",
+      "prompt2": "Générez un dialogue entre deux personnages se rencontrant pour la première fois dans un café",
+      "prompt3": "Rédigez une description de produit pour un gadget de cuisine innovant alimenté par l'IA"
+    }
+  },
+  "qaBotToTaskAgent": {
+    "heading": "🏗️ Du robot QA à l'agent de tâche: un guide d'architecture",
+    "description": "Apprenez à créer des agents de tâches fiables qui vont au-delà de la simple réponse aux questions.",
+    "tldr": "TL;DR : Arrêtez de créer des chatbots qui se contentent de répondre aux questions. Commencez à créer des agents de tâches qui réalisent réellement le travail.",
+    "intro": "Ce guide explique le passage architectural des robots d'assurance qualité monolithiques aux agents de tâches utilisant des règles statiques, des compétences dynamiques et des hooks déterministes, avec des exemples de code concrets et des références open source.",
+    "coreShift": {
+      "title": "1. Le changement de base: Bot QA → Agent de tâche",
+      "content": [
+        "Aujourd’hui, la plupart des systèmes d’IA sont encore des robots d’assurance qualité contextuels:",
+        "• Ils répondent bien aux questions",
+        "• Ils hallucinent sous pression",
+        "• Ils manquent de garanties concernant l'exécution, la sécurité et la cohérence"
+      ],
+      "keyInsight": "L’idée clé: ne faites pas évoluer le contexte. Structurez-le."
+    },
+    "threeLayerArch": {
+      "title": "2. L'architecture à trois couches",
+      "layers": [
+        {
+          "title": "🧱 1. Contexte statique — Règles (toujours activées)",
+          "points": [
+            "Modèle mental: Manuel de l'employé",
+            "Toujours chargé",
+            "Définit l'identité, les normes de codage, les contraintes comportementales",
+            "Empêche les hallucinations et la dérive de style",
+            "Petit, stable, modifiable par l'homme"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Contexte dynamique — Compétences (à la demande)",
+          "points": [
+            "Modèle mental: boîte à outils",
+            "Chargé uniquement en cas de besoin",
+            "Chaque compétence est une capacité autonome",
+            "Maintient la fenêtre contextuelle propre"
+          ]
+        },
+        {
+          "title": "⚓ 3. Crochets déterministes — Garde-corps",
+          "points": [
+            "Modèle mental: couche Sécurité + Conformité",
+            "Pas probabiliste",
+            "S'exécute avant/après le raisonnement LLM",
+            "Applique des règles qui ne doivent jamais échouer"
+          ]
+        }
+      ]
+    },
+    "projectStructure": {
+      "title": "3. Structure de projet recommandée",
+      "structure": "mon-agent-de-tâches/\n├──.cursorrules\n├── main.py\n├── outils/\n│ └── linear_mcp.py\n└── README.md"
+    },
+    "staticContextExample": {
+      "title": "4. Exemple de contexte statique:.cursorrules",
+      "content": "# RÔLE\nVous êtes un ingénieur Python senior axé sur les systèmes de production.\n\n# RÈGLES\n- N'utilisez JAMAIS print() pour le débogage\n- TOUJOURS des fonctions d'indice de type\n- Proposer un plan si vous touchez > 3 fichiers\n\n# COMPORTEMENT\n- Soyez concis\n- Poser des questions de clarification si nécessaire\n\nRéférence: https://github.com/PatrickJS/awesome-cursorrules"
+    },
+    "dynamicSkillExample": {
+      "title": "5. Exemple de compétence dynamique (MCP)",
+      "content": "à partir de mcp.server.fastmcp importer FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(titre: str, priorité: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f \"Ticket créé {ticket_id} avec priorité = {priority}\"\n\nsi __name__ == \"__main__\":\n    mcp.run()\n\nRéférence: https://github.com/modelcontextprotocol/python-sdk"
+    },
+    "deterministicHookExample": {
+      "title": "6. Exemple de crochet déterministe",
+      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Violation de sécurité détectée\"}\n    return agent_node(state)\n\nRéférence: https://langchain-ai.github.io/langgraph/"
+    },
+    "finalThought": "Si votre agent répond uniquement aux questions, c'est un chatbot. S'il exécute le travail de manière fiable, il s'agit d'un agent de tâche.",
+    "taskAgentImageAlt": "Illustration d'une architecture système d'agent de tâche montrant l'interaction entre différents composants"
+  },
+  "ageAi": {
+    "heading": "La science des données à l’ère de l’IA: le « travail le plus sexy » est-il toujours sexy?",
+    "intro1": "\"C'était le meilleur des temps, c'était le pire des temps.\"",
+    "intro2": "Il y a dix ans, la Harvard Business Review qualifiait le Data Scientist de « travail le plus sexy du 21e siècle ». Aujourd’hui, le paysage change sous nos pieds. Alors que la demande de talents en matière de données reste élevée, l'essor de l'IA générative change fondamentalement ce que signifie être un « Data Scientist ».",
+    "realityCheck": {
+      "title": "Le test de la réalité",
+      "content": "Les domaines traditionnels tels que la recherche, les annonces et les recommandations (SAR) arrivent à maturité et le secteur se concentre désormais sur une ingénierie et une architecture d'IA robustes. Nous assistons à un étrange paradoxe.",
+      "lowBarTrap": {
+        "title": "Le piège à « barre basse »",
+        "content": "Les étudiants en master peuvent désormais utiliser GPT-4 pour gérer le nettoyage des données, l'EDA et la visualisation en quelques secondes. Cependant, sans une base solide, ils manquent souvent du jugement nécessaire pour savoir quand l’IA « hallucine » ou fournit des résultats statistiquement erronés."
+      },
+      "stakeholderShift": {
+        "title": "Changement de parties prenantes",
+        "content": "Lorsque les partenaires commerciaux peuvent rédiger leurs propres invites pour obtenir des informations de base, de nombreux professionnels DS se sentent « sous-stimulés », coincés dans des réunions interminables et une ingénierie d'invites répétitive."
+      }
+    },
+    "strategicPillars": {
+      "title": "Comment rester indispensable: deux piliers stratégiques",
+      "intro": "Pour prospérer à notre époque, nous devons passer du statut de « bâtisseurs de modèles » à celui d'« architectes de valeur ». Je vois cela se produire dans deux dimensions:",
+      "buildingTools": {
+        "title": "Construire les outils (l'état d'esprit Engineer/Architect)",
+        "subtitle": "Ne vous contentez pas d’utiliser l’IA; l'améliorer.",
+        "points": [
+          {
+            "title": "Évaluation du modèle et gouvernance",
+            "content": "Alors que les résultats de l’IA deviennent une marchandise, la personne capable de définir à quoi ressemble un « bon » résultat est la personne la plus précieuse dans la salle. Concentrez-vous sur des cadres d'évaluation spécialisés (comme la pondération des risques en finance)."
+          },
+          {
+            "title": "Ajustement du domaine",
+            "content": "Maîtriser des techniques comme LoRA ou RAG pour injecter des connaissances métier spécifiques dans LLMs."
+          },
+          {
+            "title": "Automation",
+            "content": "Dirigez des initiatives internes telles que des « analystes virtuels » ou des pipelines d'expérimentation automatisés."
+          }
+        ]
+      },
+      "leveragingTools": {
+        "title": "Tirer parti des outils (l’état d’esprit du stratège)",
+        "subtitle": "Utilisez l’IA pour multiplier par 10 votre production afin de pouvoir vous concentrer sur ce que les humains font de mieux.",
+        "points": [
+          {
+            "title": "Expertise du domaine",
+            "content": "L'IA connaît le « comment », mais vous connaissez le « pourquoi ». Une compréhension approfondie des affaires vous permet de fournir le bon contexte qui manque à l’IA."
+          },
+          {
+            "title": "Pensée critique et expérimentation",
+            "content": "Même si l'IA peut générer du code, les compétences humaines en matière de DS restent essentielles pour tester des hypothèses, inférer des causalités et interpréter des données « désordonnées » du monde réel."
+          },
+          {
+            "title": "Communication et influence",
+            "content": "La capacité à traduire des données complexes en une histoire commerciale et à instaurer la confiance des parties prenantes est une compétence « générale » qui est devenue une exigence « stricte »."
+          }
+        ]
+      }
+    },
+    "bottomLine": {
+      "title": "L'essentiel",
+      "content1": "L'IA n'a pas tué la science des données; cela a surélevé le plancher. Si votre valeur consistait uniquement à écrire du SQL ou à régler des hyperparamètres, le « côté sexy » s'estompe. Mais si vous parvenez à combler le fossé entre les problèmes commerciaux et les solutions d’IA, votre valeur n’aura jamais été aussi élevée.",
+      "content2": "L'expérience personnelle est votre avantage. Un LLM peut imiter la logique, mais il n'a pas les années de « cicatrices de bataille » dues à des déploiements ratés ni l'intuition acquise en naviguant dans des organisations complexes."
+    },
+    "discussion": {
+      "title": "Discutons:",
+      "prompt": "Vous sentez-vous plus « efficace » ou « remplacé » dans votre rôle actuel? Comment faites-vous évoluer votre boîte à outils cette année?"
+    },
+    "hashtags": [
+      "#DataScience",
+      "#AI",
+      "#MachineLearning",
+      "#GenerativeAI",
+      "#CareerDevelopment",
+      "#TechTrends"
+    ]
+  },
+  "aiPlatform": {
+    "title": "Le guide des entreprises de taille moyenne pour réussir en IA",
+    "subtitle": "Comment créer une plate-forme d'IA qui évolue sans se ruiner",
+    "intro": {
+      "p1": "Dans les petites et moyennes entreprises technologiques, le véritable avantage ne réside pas dans la formation de modèles massifs, mais dans la création d'une plate-forme d'IA qui permet à chacun de proposer des fonctionnalités intelligentes. C’est ainsi que vous transformez l’agilité en impact.",
+      "p2": "Voici un modèle pragmatique et prêt pour la production que nous avons utilisé pour alimenter l'IA dans les domaines financier, juridique, du support client et de l'ingénierie, sans dépenser d'argent ni embaucher 50 experts en ML."
+    },
+    "imageAlt": "Schéma d'architecture de la plateforme AI",
+    "heading": "🏗️ Le manuel des entreprises de taille moyenne pour réussir en IA",
+    "mindsetShift": {
+      "title": "1. Le changement de mentalité: démocratiser, ne pas centraliser",
+      "content": "Si votre équipe d'IA constitue un goulot d'étranglement, vous avez déjà perdu. Au lieu de cela, créez une infrastructure d’IA en libre-service qui permet aux ingénieurs produit de créer ce dont ils ont besoin.",
+      "goal": "Objectif: laisser les experts du domaine (finances, juridiques, ingénieurs de support) créer des solutions d'IA avec un minimum de connaissances en ML.",
+      "reality": "Réalité: L'équipe d'IA construit l'autoroute; les équipes commerciales conduisent les voitures.",
+      "supportModel": {
+        "title": "Modèle pris en charge:",
+        "l1": "L1 — Libre-service: les développeurs utilisent les outils de la plateforme pour créer leurs propres fonctionnalités.",
+        "l2": "L2 — Conseil et conseil: l'équipe d'IA aide à la conception, à l'évaluation et à l'architecture rapides.",
+        "l3": "L3 — Co‑développement: construire conjointement des MVP complexes et à fort impact."
+      },
+      "conclusion": "Cela transforme l’IA d’un projet de recherche en un multiplicateur commercial."
+    },
+    "stack": {
+      "title": "2. La pile: gardez-la fine, gardez-la ouverte",
+      "intro": "La suringénierie tue la vitesse. Nous avons construit une plateforme à trois niveaux qui élimine la complexité sans vous enfermer.",
+      "gateway": {
+        "title": "A. La passerelle modèle unifiée",
+        "content": "N'épousez pas un seul vendeur. Acheminez les demandes de manière transparente entre:",
+        "points": [
+          "Commercial LLMs (GPT‑4, Claude, etc.) — pour un raisonnement de haut niveau.",
+          "Modèles privés (Llama, Qwen) — pour les données sensibles et le contrôle des coûts.",
+          "Modèles spécialisés: pour les tâches de codage, de vision ou à faible latence."
+        ],
+        "conclusion": "La passerelle gère les tentatives, les solutions de secours, le suivi des coûts et les limites de débit. Les développeurs appellent donc simplement `platform.generate()`."
+      },
+      "knowledge": {
+        "title": "B. Connaissance en tant que service (RAG Made Simple)",
+        "content": "La génération de récupération augmentée est le domaine où réside la plupart de la valeur commerciale. Mais les ingénieurs ne devraient pas gérer des bases de données vectorielles.",
+        "solution": "Créez une interface « drop-and-chat »: pointez vers un wiki, des fichiers PDF ou une base de données, et la plateforme ingère, fragmente, intègre et indexe automatiquement. Désormais, chaque équipe dispose d’une base de connaissances privée et à jour."
+      },
+      "orchestration": {
+        "title": "C. La couche d'orchestration",
+        "content": "L’IA Code-first est puissante; L’IA axée sur le workflow est plus rapide.",
+        "example": "Nous utilisons des outils low‑code (comme Dify, coze, n8n etc) pour enchaîner les étapes:",
+        "workflow": [
+          "Requête de l'utilisateur",
+          "Récupérer des documents",
+          "Outil d'appel (API, SQL)",
+          "Raisonnement",
+          "Sortie"
+        ],
+        "conclusion": "Cela permet aux équipes produit de prototyper des agents en quelques heures, et non en quelques semaines."
+      }
+    },
+    "fineTuning": {
+      "title": "3. Ignorer le réglage fin (la plupart du temps)",
+      "content": "Voici le secret: **vous n'avez probablement pas besoin de peaufiner un LLM.**",
+      "strategies": [
+        "De meilleures invites: l'ingénierie systématique bat les ajustements aléatoires.",
+        "RAG de haute qualité: des connaissances claires et structurées l'emportent sur un modèle plus intelligent.",
+        "Fusion multimodèle: utilisez GPT‑4 pour le raisonnement, un modèle local pour l'extraction, Claude pour les tâches créatives.",
+        "LLM‑en tant que juge: utilisez un modèle solide pour évaluer les résultats des modèles moins chers."
+      ],
+      "conclusion": "Nous ajustons uniquement de petits modèles pour des tâches restreintes et à volume élevé, après un long processus de collecte et de nettoyage de données de haute qualité dans le domaine. Tout le reste est « de l'ingénierie plutôt que de la formation »."
+    },
+    "essentialWork": {
+      "title": "5. Le travail peu sexy et essentiel",
+      "content": "Les plates-formes SOTA ne sont pas construites uniquement sur des modèles. Ils sont construits sur la résolution de problèmes ennuyeux et difficiles:",
+      "points": [
+        {
+          "title": "Le volant de données",
+          "content": "Si vous ne pouvez pas vous connecter et tirer des leçons de l'utilisation en production, vos modèles ne s'amélioreront pas. Travaillez tôt avec la sécurité pour activer des pipelines de données conformes et anonymisés."
+        },
+        {
+          "title": "Une évaluation, pas des vibrations",
+          "content": "Exigez des « ensembles de données en or » auprès des propriétaires d'entreprise – de véritables paires de questions-réponses – afin de pouvoir mesurer precision/recall, et pas seulement « ça a l'air bien »."
+        },
+        {
+          "title": "Ressources informatiques",
+          "content": "L'inférence n'est pas comme faire fonctionner des processeurs. Vous avez besoin d’une surveillance dédiée pour éviter les plantages du MOO et optimiser l’utilisation."
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "L'essentiel",
+      "content": "Pour les entreprises technologiques de taille moyenne, gagner en IA ne signifie pas créer un meilleur LLM. Cela signifie créer une plateforme qui transforme l’IA en un processus métier reproductible et évolutif.",
+      "finalThoughts": "Commencez par l’infrastructure, sécurisez les données et laissez vos équipes se développer. L'avenir n'est pas un modèle unique pour les gouverner tous: il s'agit d'une flotte d'agents spécialisés, chacun résolvant un véritable problème commercial, le tout alimenté par une plateforme qui simplifie les choses.",
+      "callToAction": "Prêt à construire? Restez simple, restez ouvert et concentrez-vous sur l’habilitation des autres."
+    }
+  }
+}

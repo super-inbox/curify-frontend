@@ -560,7 +560,7 @@
         "technicalDetails": {
           "scriptSource": "संवाद और कथन prompt_run_001.json + storyboard_v1.csv से खींचा गया",
           "ttsConfig": {
-            "engine": "XTTS or ElevenLabs",
+            "engine": "XTTS या ElevenLabs",
             "voiceId": "cinematic_female_en",
             "sampleRate": 44100,
             "format": "wav"
@@ -970,8 +970,8 @@
             "#87CEEB",
             "#F5F5DC"
           ],
-          "lighting_condition": "daylight",
-          "environment": "studio"
+          "lighting_condition": "दिन का प्रकाश",
+          "environment": "स्टूडियो"
         },
         "audio_analysis": {
           "has_speech": true,
@@ -981,16 +981,16 @@
             "male",
             "female"
           ],
-          "speech_text": "Let's discuss how AI is transforming video production..."
+          "speech_text": "आइए चर्चा करें कि AI वीडियो प्रोडक्शन को कैसे बदल रहा है..."
         },
         "content_analysis": {
-          "primary_category": "interview",
-          "setting": "studio",
+          "primary_category": "साक्षात्कार",
+          "setting": "स्टूडियो",
           "subjects": [
             "host",
             "guest"
           ],
-          "sentiment": "neutral_positive"
+          "sentiment": "तटस्थ_सकारात्मक"
         },
         "shots": [
           {
@@ -1194,15 +1194,15 @@
     },
     "staticContextExample": {
       "title": "4. स्टेटिक संदर्भ उदाहरण: .cursorrules",
-      "content": "# ROLE\nYou are a Senior Python Engineer focused on production-grade systems.\n\n# RULES\n- NEVER use print() for debugging\n- ALWAYS type-hint functions\n- Propose a plan if touching >3 files\n\n# BEHAVIOR\n- Be concise\n- Ask clarifying questions if needed\n\nReference: https://github.com/PatrickJS/awesome-cursorrules"
+      "content": "# भूमिका\\nआप प्रोडक्शन-ग्रेड सिस्टम पर केंद्रित एक वरिष्ठ Python इंजीनियर हैं।\\n\\n# नियम\\n- डिबगिंग के लिए कभी भी print() का उपयोग न करें\\n- फ़ंक्शनों में हमेशा type hints जोड़ें\\n- यदि >3 फाइलों को छूना हो तो एक योजना प्रस्तावित करें\\n\\n# व्यवहार\\n- संक्षिप्त रहें\\n- आवश्यकता होने पर स्पष्टता के लिए प्रश्न पूछें\\n\\nसंदर्भ: https://github.com/PatrickJS/awesome-cursorrules"
     },
     "dynamicSkillExample": {
       "title": "5. डायनेमिक स्किल उदाहरण (MCP)",
-      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Created ticket {ticket_id} with priority={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReference: https://github.com/modelcontextprotocol/python-sdk"
+      "content": "from mcp.server.fastmcp import FastMCP\\n\\nmcp = FastMCP(\"DevTools\")\\n\\n@mcp.tool()\\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\\n    return f\"प्राथमिकता={priority} के साथ टिकट {ticket_id} बनाया गया\"\\n\\nif __name__ == \"__main__\":\\n    mcp.run()\\n\\nसंदर्भ: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
       "title": "6. डिटरमिनिस्टिक हुक उदाहरण",
-      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Security violation detected\"}\n    return agent_node(state)\n\nReference: https://langchain-ai.github.io/langgraph/"
+      "content": "def compliance_check_hook(state):\\n    user_input = state[\"messages\"][-1].content.lower()\\n    if \"पासवर्ड\" in user_input or \"api_key\" in user_input:\\n        return {\"error\": \"सुरक्षा उल्लंघन का पता चला\"}\\n    return agent_node(state)\\n\\nसंदर्भ: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "यदि आपका एजेंट केवल सवालों के जवाब देता है, तो यह एक चैटबॉट है। यदि यह विश्वसनीय रूप से काम करता है, तो यह एक टास्क एजेंट है।",
     "taskAgentImageAlt": "विभिन्न घटकों के बीच बातचीत को दर्शाने वाले टास्क एजेंट सिस्टम आर्किटेक्चर का चित्रण"

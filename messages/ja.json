@@ -207,7 +207,7 @@
         ]
       },
       "creator": {
-        "name": "Creator",
+        "name": "クリエイター",
         "description": "定期的に字幕や軽い吹き替えを行う小規模クリエイター向け",
         "plusTitle": "無料プランのすべてに加えて：",
         "features": [
@@ -229,7 +229,7 @@
         ]
       },
       "enterprise": {
-        "name": "Enterprise",
+        "name": "エンタープライズ",
         "description": "チーム・スタジオ・企業向けワークフロー",
         "customPricing": "カスタム",
         "unlimited": "無制限 🐚",
@@ -333,35 +333,35 @@
   "storyboardToPipeline": {
     "title": "ストーリーボードからAIパイプラインへ - アニメーション再定義",
     "intro": {
-      "p1": "Most people think AI video means \"text in, clip out.\" But if you're aiming for <strong>cinematic, director-level control</strong>, it's an entirely different game.",
+      "p1": "ほとんどの人は、AI ビデオを「テキストを入力し、クリップアウトする」ことを意味すると考えています。しかし、<strong>映画のようなディレクターレベルのコントロール</strong>を目指している場合は、まったく別のゲームになります。",
       "p2": "従来のアニメーションでは、キャラクターデザイン、動きの連続性、タイミング、シーン遷移など、あらゆる要素が重要です。私たちの目標は、AIでもその精度に到達することです。",
       "p3": "現在のアニメーションは、芸術であると同時に、構造化されたオーケストレーションの課題でもあります。私たちは監督のように考え、エンジニアのように実装します。",
-      "p4": "That's why we build <strong>Controlled Generation Pipelines</strong> instead of one-shot generation. These pipelines combine structure and creativity:",
+      "p4": "そのため、ワンショット生成ではなく、<strong>制御された生成パイプライン</strong>を構築します。これらのパイプラインは構造と創造性を組み合わせています。",
       "pipelineItems": [
-        "Storyboard-to-Video: JSON-based scene specs with IDs, timing, and camera metadata",
-        "ComfyUI-based workflows: node-graph DAGs with versioned checkpoints, LoRA stacks, and seeds",
-        "Temporal & multimodal control: shared scene IDs across image, motion, audio, and subtitles"
+        "ストーリーボードからビデオへ: ID、タイミング、カメラのメタデータを含む JSON ベースのシーン仕様",
+        "ComfyUI ベースのワークフロー: バージョン管理されたチェックポイント、LoRA スタック、シードを含むノードグラフ DAGs",
+        "時間的およびマルチモーダルな制御: 画像、モーション、オーディオ、字幕にわたる共有シーン ID"
       ],
       "p5": "それでは、AIパイプラインが実運用でどのように機能するか、シンプルな例で見ていきましょう。",
       "technicalNotes": [
-        "All stages read/write typed artifacts (JSON/CSV, PNG sequences, WAV/MP3, MP4, .aep)",
-        "Pipelines are orchestrated via Python/CLI (e.g., ComfyUI API, ffmpeg, TTS APIs)",
-        "Every run is reproducible through stored config (model, sampler, seed, prompts, duration)"
+        "すべてのステージ read/write タイプ付きアーティファクト (JSON/CSV、PNG シーケンス、WAV/MP3、MP4、.aep)",
+        "パイプラインは Python/CLI 経由で調整されます (例: ComfyUI API、ffmpeg、TTS APIs)",
+        "すべての実行は、保存された構成 (モデル、サンプラー、シード、プロンプト、期間) を通じて再現可能です。"
       ]
     },
     "pipeline": {
       "title": "AI動画生成パイプライン",
       "description": "AI動画生成パイプラインは、明確な入力・出力・設定を持つ構造化ステージを通して、テキストプロンプトを完成動画へ変換します。",
-      "prompt": "1. Prompt (raw idea → structured JSON spec)",
-      "storyboard": "2. Storyboard (scene/shot table with timing, camera, and description)",
-      "images": "3. Images (per-shot keyframes generated via Stable Diffusion / ComfyUI)",
+      "prompt": "1. プロンプト (生のアイデア → 構造化された JSON 仕様)",
+      "storyboard": "2. ストーリーボード (タイミング、カメラ、説明を含む scene/shot テーブル)",
+      "images": "3. 画像 (Stable Diffusion / ComfyUI によって生成されたショットごとのキーフレーム)",
       "animation": "4. アニメーション（画像シーケンス → 動き、パララックス、エフェクト）",
       "voiceOver": "5. 音声（TTS + アライメント情報）",
-      "finalVideo": "6. Final Video (ffmpeg composition: video + audio + subtitles)",
+      "finalVideo": "6. 最終ビデオ (ffmpeg 構成: ビデオ + オーディオ + 字幕)",
       "features": [
-        "JSON-first design: every scene is addressable and scriptable (scene_id, shot_id)",
-        "ComfyUI-based workflows: modular, reproducible, composable DAGs for image/video generation",
-        "Temporal & multimodal control: consistent seeds, character embeddings, and timing across modalities"
+        "JSON ファーストのデザイン: すべてのシーンがアドレス指定可能でスクリプト可能 (scene_id、shot_id)",
+        "ComfyUI ベースのワークフロー: image/video 生成用のモジュール式、再現可能、構成可能な DAGs",
+        "時間的およびマルチモーダルな制御: モダリティ全体での一貫したシード、文字の埋め込み、およびタイミング"
       ],
       "exampleIntro": "それでは、AIパイプラインが実運用でどのように機能するか、シンプルな例で見ていきましょう。",
       "artifacts": {
@@ -380,12 +380,12 @@
         "expandedPrompt": "GPTやローカルLLMを使い、全体スタイル、キャラクター定義、シーンごとの分解を含む構造化JSONへ展開します。",
         "technicalDetails": {
           "llmFields": [
-            "global_style: art style, camera language, color palette",
-            "characters: name, age, look, outfit, emotional state",
-            "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+            "global_style: アート スタイル、カメラ言語、カラー パレット",
+            "登場人物：名前、年齢、見た目、服装、精神状態",
+            "シーン: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
           ],
           "outputFile": "prompt_run_001.json",
-          "exampleStack": "Python script calling OpenAI/LLM API and writing JSON to disk"
+          "exampleStack": "Python スクリプトが OpenAI/LLM API を呼び出し、JSON をディスクに書き込む"
         }
       },
       "step2": {
@@ -403,17 +403,17 @@
             "character_state",
             "motion_notes"
           ],
-          "storage": "storyboard_v1.csv (used as the single source of truth for downstream steps)",
-          "automation": "Python / Node.js script transforms prompt_run_001.json → storyboard_v1.csv"
+          "storage": "storyboard_v1.csv (下流ステップの信頼できる唯一の情報源として使用)",
+          "automation": "Python / Node.js スクリプトは prompt_run_001.json → storyboard_v1.csv を変換します"
         }
       },
       "step3": {
         "title": "🛠️ Step 3: ビジュアル生成",
         "description": "ComfyUIワークフローを通して、Stable Diffusionで各ショットの高品質キーフレームを生成します。",
         "points": [
-          "🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each row in `storyboard_v1.csv` into a high-res keyframe.",
-          "Keep the style consistent by using the same base checkpoint, LoRA stack, sampler, and seed policy across all shots.",
-          "Refine images with inpainting (for faces/hands) and outpainting (for extended compositions and camera motion)."
+          "🎨 <strong>Stable Diffusion</strong> または <strong>ComfyUI</strong> を使用して、`storyboard_v1.csv` の各行を高解像度キーフレームに変換します。",
+          "すべてのショットで同じベース チェックポイント、LoRA スタック、サンプラー、シード ポリシーを使用することで、スタイルの一貫性を保ちます。",
+          "インペイント (faces/hands の場合) とアウトペイント (拡張された構図やカメラの動きの場合) を使用して画像を洗練します。"
         ],
         "technicalDetails": {
           "modelConfig": {
@@ -435,8 +435,8 @@
           },
           "comfyui": {
             "workflowFile": "workflows/storyboard_to_frame.json",
-            "inputMethod": "custom node / HTTP API reading storyboard_v1.csv and modelConfig",
-            "batching": "GPU batches keyed by scene_id to reuse loaded weights"
+            "inputMethod": "カスタム ノード / HTTP API 読み取り storyboard_v1.csv および modelConfig",
+            "batching": "ロードされたウェイトを再利用するための GPU をキーとする scene_id バッチ"
           }
         }
       },
@@ -444,17 +444,17 @@
         "title": "🎬 Step 4: After Effectsで動きと空気感を追加",
         "description": "Adobe After Effects（または同等の合成ツール）で、静止キーフレームに動き、パララックス、雰囲気表現を加えます。",
         "points": [
-          "Import image sequences or keyframes into <strong>Adobe After Effects</strong> as layered compositions.",
-          "Apply keyframe animations: pan, zoom, parallax layers, fog overlays, glow and light flicker.",
-          "Add ambient sound cues and cinematic transitions between scenes."
+          "画像シーケンスまたはキーフレームをレイヤー化されたコンポジションとして <strong>Adobe After Effects</strong> にインポートします。",
+          "キーフレーム アニメーションを適用します: パン、ズーム、視差レイヤー、フォグ オーバーレイ、グロー、ライト フリッカー。",
+          "シーン間に環境音の合図と映画のようなトランジションを追加します。"
         ],
         "technicalDetails": {
-          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optional depth/alpha maps)",
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (さらにオプションの depth/alpha マップ)",
           "projectFile": "ae/storyboard_v1.aep",
           "automation": [
-            "Use AE scripts/ExtendScript or JSX to auto-create comps per scene_id.",
-            "Map `duration_seconds` from storyboard_v1.csv → comp duration.",
-            "Generate intermediate frames via AE plugins or video-aware diffusion tools if needed."
+            "AE scripts/ExtendScript または JSX を使用して、scene_id ごとにコンプを自動作成します。",
+            "`storyboard_v1.csv` の `duration_seconds` をコンポジションの長さにマッピングします。",
+            "必要に応じて、AE プラグインまたはビデオ対応拡散ツールを介して中間フレームを生成します。"
           ],
           "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
         }
@@ -463,14 +463,14 @@
         "title": "🎧 Step 5: 音声と字幕を追加",
         "description": "ストーリーボードに合わせた音声を生成し、アクセシビリティと明瞭性のため字幕を付与します。",
         "points": [
-          "Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers from the script, using a consistent speaker profile.",
-          "For acronyms (like API, NBA), generate English snippets separately and merge in post to keep pronunciation clean.",
-          "Add subtitles using `.srt` or `.json` timeline files synced to the voiceover track."
+          "<strong>XTTS</strong> または <strong>ElevenLabs</strong> を使用して、一貫したスピーカー プロファイルを使用してスクリプトから自然なナレーションを生成します。",
+          "頭字語 (API、NBA など) の場合は、英語のスニペットを個別に生成し、ポストにマージして、発音をきれいに保ちます。",
+          "ナレーション トラックと同期されている `.srt` または `.json` タイムライン ファイルを使用して字幕を追加します。"
         ],
         "technicalDetails": {
-          "scriptSource": "dialogue and narration pulled from prompt_run_001.json + storyboard_v1.csv",
+          "scriptSource": "prompt_run_001.json + storyboard_v1.csv から抽出されたダイアログとナレーション",
           "ttsConfig": {
-            "engine": "XTTS or ElevenLabs",
+            "engine": "XTTS または ElevenLabs",
             "voiceId": "cinematic_female_en",
             "sampleRate": 44100,
             "format": "wav"
@@ -479,7 +479,7 @@
             "voiceFile": "audio/storyboard_v1_voiceover.wav",
             "subtitleFile": "subtitles/storyboard_v1.srt"
           },
-          "syncStrategy": "align `start_time` / `end_time` from storyboard_v1.csv with subtitle cues; ensure total audio length ≈ final timeline duration"
+          "syncStrategy": "storyboard_v1.csv から `start_time` / `end_time` を字幕キューに合わせます。オーディオの合計の長さ ≈ 最終的なタイムラインの長さを確保する"
         }
       },
       "step6": {
@@ -492,20 +492,20 @@
             "subtitles": "subtitles/storyboard_v1.srt"
           },
           "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC audio)"
+          "output": "exports/storyboard_v1_final.mp4 (H.264、24 fps、AAC オーディオ)"
         }
       }
     },
-    "whatYouNeed": "📁 What You'll Need",
+    "whatYouNeed": "📁 必要なもの",
     "whatYouNeedTechnical": [
-      "GPU with at least 12GB VRAM for Stable Diffusion / ComfyUI",
-      "Python environment for JSON/CSV transforms and automation scripts",
-      "ComfyUI installed with required custom nodes and workflows",
-      "Adobe After Effects or similar compositor for motion and FX",
-      "XTTS / ElevenLabs API access for TTS",
-      "ffmpeg installed and available on the command line"
+      "GPU、Stable Diffusion / ComfyUI の場合は少なくとも 12GB VRAM",
+      "JSON/CSV 変換および自動化スクリプト用の Python 環境",
+      "ComfyUI は必要なカスタム ノードとワークフローとともにインストールされます",
+      "Adobe After Effects またはモーションおよび FX 用の同様のコンポジタ",
+      "XTTS / ElevenLabs API の TTS へのアクセス",
+      "ffmpeg がインストールされ、コマンド ラインで使用できるようになりました"
     ],
-    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started."
+    "cta": "🚀 AI を使用してストーリーボードに命を吹き込む準備はできていますか? <strong>開始に役立つサンプル JSON、ComfyUI ワークフロー、および ffmpeg/AE テンプレートを備えた完全なスターター キット</strong> を提供できます。"
   },
   "SceneDetection": {
     "tags": {
@@ -574,7 +574,7 @@
       "readingTime": "読了時間 8分"
     },
     "Technical": {
-      "title": "TECHNICAL DEEP DIVE",
+      "title": "技術的な詳細",
       "steps": {
         "step1": "仕組み：内部アーキテクチャ",
         "videoProcessingPipeline": "本システムは、高精度なシーン検出と解析を実現するため、洗練された多段階パイプラインで動画を処理します。",
@@ -891,7 +891,7 @@
             "male",
             "female"
           ],
-          "speech_text": "Let's discuss how AI is transforming video production..."
+          "speech_text": "AI がビデオ制作をどのように変革しているかについて話しましょう..."
         },
         "content_analysis": {
           "primary_category": "interview",
@@ -1279,6 +1279,6 @@
       "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"パスワード\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"セキュリティ違反を検出しました\"}\n    return agent_node(state)\n\n参考: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "あなたのエージェントが質問に答えるだけなら、それはチャットボットです。信頼性高く作業を実行するなら、それはタスクエージェントです。",
-    "taskAgentImageAlt": "Illustration of a task agent system architecture showing the interaction between different components"
+    "taskAgentImageAlt": "異なるコンポーネント間の相互作用を示すタスクエージェント・システムアーキテクチャの図"
   }
 }

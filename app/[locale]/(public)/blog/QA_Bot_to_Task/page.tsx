@@ -1,13 +1,23 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Link from 'next/link';
 import CdnImage from '../../../_components/CdnImage';
 import { FaTools, FaLightbulb, FaRocket } from 'react-icons/fa';
 
-export const metadata: Metadata = {
-  title: "🏗️ From QA Bot to Task Agent: An Architecture Guide",
-  description: "Learn how to build reliable task agents that go beyond simple question answering"
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "qaBotToTaskAgent" });
+
+  return {
+    title: t("heading"),
+    description: t.has("description") ? t("description") : t("intro"),
+  };
+}
 
 interface Layer {
   title: string;

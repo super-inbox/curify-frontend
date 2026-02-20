@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
 
 import dynamic from 'next/dynamic';
@@ -22,10 +23,19 @@ interface StepsTranslations {
 }
 
 // SEO metadata for the blog post
-export const metadata: Metadata = {
-  title: "From Storyboards to AI Pipelines – Redefining Animation (Part 1)",
-  description: "How Curify AI bridges creative storytelling with structured, controllable AI video pipelines.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "storyboardToPipeline" });
+
+  return {
+    title: t("title"),
+    description: t("pipeline.description"),
+  };
+}
 
 /**
  * Helper component to render step points with proper typing

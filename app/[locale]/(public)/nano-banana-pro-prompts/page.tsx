@@ -12,6 +12,23 @@ type JsonData = {
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://curify-ai.com';
 const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE || 'https://cdn.curify-ai.com';
 
+function toOgLocale(locale: string) {
+  const map: Record<string, string> = {
+    en: 'en_US',
+    zh: 'zh_CN',
+    es: 'es_ES',
+    fr: 'fr_FR',
+    de: 'de_DE',
+    ja: 'ja_JP',
+    ko: 'ko_KR',
+    hi: 'hi_IN',
+    tr: 'tr_TR',
+    ru: 'ru_RU',
+  };
+
+  return map[locale] || 'en_US';
+}
+
 function readNanoBananaJson(): JsonData {
   const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
   const fileContent = fs.readFileSync(jsonPath, 'utf-8');
@@ -19,7 +36,12 @@ function readNanoBananaJson(): JsonData {
 }
 
 // Generate metadata for SEO
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   let totalPrompts = 0;
 
   try {
@@ -31,7 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const title = 'Nano Banana Pro Prompts - Discover Creative AI Prompts';
   const description = `Explore ${totalPrompts}+ curated AI prompts from top creators. Find inspiration for your next project with prompts for image generation, text creation, and more.`;
-  const url = `${SITE_URL}/nano-banana-pro-prompts`;
+  const url = `${SITE_URL}/${locale}/nano-banana-pro-prompts`;
 
   return {
     title,
@@ -52,7 +74,7 @@ export async function generateMetadata(): Promise<Metadata> {
     creator: 'Nano Banana',
     openGraph: {
       type: 'website',
-      locale: 'en_US',
+      locale: toOgLocale(locale),
       url,
       title,
       description,
@@ -91,7 +113,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // Server component that fetches initial data (from filesystem, not HTTP)
-export default async function NanoBananaProPromptsPage() {
+export default async function NanoBananaProPromptsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   let initialData: any[] = [];
   let error: string | null = null;
 
@@ -109,7 +136,7 @@ export default async function NanoBananaProPromptsPage() {
     '@type': 'CollectionPage',
     name: 'Nano Banana Pro Prompts',
     description: 'A curated collection of creative AI prompts for image generation, text creation, and more',
-    url: `${SITE_URL}/nano-banana-pro-prompts`,
+    url: `${SITE_URL}/${locale}/nano-banana-pro-prompts`,
     publisher: {
       '@type': 'Organization',
       name: 'Nano Banana',

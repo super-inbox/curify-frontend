@@ -125,8 +125,8 @@
   },
   "bilingual": {
     "metadata": {
-      "title": "Free Bilingual Subtitles Generator | Curify AI",
-      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+      "title": "免费双语字幕生成器 |固化人工智能",
+      "description": "使用 Curify 的免费人工智能工具为您的视频创建双语字幕。非常适合 YouTube、TikTok、教育和全球创作者。"
     },
     "title": "轻松生成双语字幕",
     "intro": "使用 Curify 的 AI 字幕引擎，自动为视频生成双语字幕。适合创作者、教育机构和全球企业。",
@@ -149,16 +149,16 @@
   },
   "videoDubbing": {
     "metadata": {
-      "title": "AI Video Dubbing Tool | Curify AI",
-      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+      "title": "AI视频配音工具|固化人工智能",
+      "description": "使用 AI 语音克隆、情感保存和口型同步将您的视频配音成 170 多种语言。免费尝试 Curify 的人工智能配音。"
     },
     "title": "AI视频配音与自然语音",
     "description": "使用逼真的AI语音和唇形同步，将您的视频内容翻译并配音成170多种语言。非常适合国际创作者和品牌。"
   },
   "about": {
     "metadata": {
-      "title": "About Curify | Vision, Technology & Team",
-      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
+      "title": "关于 Curify |愿景、技术与团队",
+      "description": "了解 Curify 通过 AI 实现内容创作民主化的愿景。我们是一支由工程师和创作者组成的团队，致力于构建媒体本地化的未来。"
     }
   },
   "contact": {
@@ -175,8 +175,8 @@
   },
   "pricing": {
     "metadata": {
-      "title": "Pricing Plans | Curify Studio",
-      "description": "Choose the right plan for your content creation needs. From free tools to enterprise-grade AI dubbing and localization."
+      "title": "定价计划 |科菲工作室",
+      "description": "为您的内容创建需求选择正确的计划。从免费工具到企业级人工智能配音和本地化。"
     },
     "header": {
       "title": "选择适合您的计划",
@@ -274,7 +274,7 @@
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI —— 重塑动画创作（Part 3）",
-    "heading": "🎨 AE vs ComfyUI",
+    "heading": "🎨 AE 与 ComfyUI",
     "intro1": "我们经常会被问：为什么不用 After Effects（AE）？或者为什么要用 ComfyUI？两者都很重要 —— 一个提供精细可控的时间线，另一个带来生成式的创造力。",
     "intro2": "AE 具备时间线级的精确控制，包括转场、灯光和特效；而 ComfyUI 则提供 AI 原生的工作流，整合了扩散模型、文本与多模态编排能力。",
     "table": {
@@ -368,7 +368,7 @@
         "promptSpec": "prompt_run_001.json",
         "storyboardTable": "storyboard_v1.csv",
         "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
-        "audioOutput": "audio/final_voiceover.wav",
+        "audioOutput": "audio/voiceover_final.wav",
         "subtitleFile": "subtitles/storyboard_v1.srt",
         "finalVideoFile": "exports/storyboard_v1_final.mp4"
       }
@@ -382,7 +382,7 @@
           "llmFields": [
             "global_style: 艺术风格、镜头语言、调色板",
             "characters: 姓名、年龄、外貌、服装、情感状态",
-            "scenes: [{ scene_id, shot_id, 描述, camera_type, duration_seconds }]"
+            "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
           ],
           "outputFile": "prompt_run_001.json",
           "exampleStack": "调用OpenAI/LLM API并将JSON写入磁盘的Python脚本"
@@ -409,10 +409,11 @@
       },
       "step3": {
         "title": "第三步：生成视觉效果",
-        "description": "Generate high-quality keyframe images for each shot using Stable Diffusion through a ComfyUI workflow.",
+        "description": "通过 ComfyUI 工作流程使用 Stable Diffusion 为每个镜头生成高质量关键帧图像。",
         "points": [
           "🎨 使用<strong>Stable Diffusion</strong>或<strong>ComfyUI</strong>将`storyboard_v1.csv`中的每一行转换为高分辨率关键帧。",
-          "通过使用相同的基础检查点、LoRA堆叠、采样器和种子策略，保持所有镜头风格一致。"
+          "通过使用相同的基础检查点、LoRA堆叠、采样器和种子策略，保持所有镜头风格一致。",
+          "使用 inpainting（用于面部/手部）和 outpainting（用于扩展构图与镜头运动）进一步优化图像。"
         ],
         "technicalDetails": {
           "modelConfig": {
@@ -434,14 +435,14 @@
           },
           "comfyui": {
             "workflowFile": "workflows/storyboard_to_frame.json",
-            "inputMethod": "custom node / HTTP API reading storyboard_v1.csv and modelConfig",
-            "batching": "GPU batches keyed by scene_id to reuse loaded weights"
+            "inputMethod": "自定义节点/HTTP API 读取 storyboard_v1.csv 和 modelConfig",
+            "batching": "GPU 批次由 scene_id 键入以重用加载的权重"
           }
         }
       },
       "step4": {
         "title": "第四步：在After Effects中添加动效和氛围",
-        "description": "Enhance static keyframes with motion, parallax, and atmosphere using Adobe After Effects (or an equivalent compositor).",
+        "description": "使用 Adobe After Effects （或等效的合成器）通过运动、视差和氛围增强静态关键帧。",
         "points": [
           "将图像序列或关键帧作为分层合成导入<strong>Adobe After Effects</strong>。",
           "应用关键帧动画：平移、缩放、视差层、雾气、光线闪烁。",
@@ -460,7 +461,7 @@
       },
       "step5": {
         "title": "第五步：添加语音和字幕",
-        "description": "Generate voiceover aligned to the storyboard and attach subtitles for accessibility and clarity.",
+        "description": "生成与故事板对齐的画外音并附加字幕以提高可访问性和清晰度。",
         "points": [
           "使用<strong>XTTS</strong>或<strong>ElevenLabs</strong>从脚本生成自然语音，保持一致的语音配置文件。",
           "对于缩写（如API、NBA），单独生成英文片段并在后期合并，确保清晰发音。",
@@ -490,7 +491,7 @@
             "audio": "audio/storyboard_v1_voice.wav",
             "subtitles": "subtitles/storyboard_v1.srt"
           },
-          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voice.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
           "output": "exports/storyboard_v1_final.mp4 (H.264, 24fps, AAC音频)"
         }
       }
@@ -523,87 +524,87 @@
     "imageAlt": "场景检测流程正在运行，识别关键时刻并生成结构化故事板",
     "protip": "使用自动场景检测作为起点，并手动调整结果以获得最佳准确性。",
     "humanEvaluation": {
-      "title": "Human Evaluation of AI Output",
-      "introduction": "While our AI pipeline is highly accurate, human evaluation remains a critical component of our quality assurance process. Here's how we ensure the highest quality output:",
+      "title": "人类对人工智能输出的评估",
+      "introduction": "虽然我们的人工智能流程非常准确，但人工评估仍然是我们质量保证流程的关键组成部分。以下是我们如何确保最高质量的输出：",
       "evaluationAreas": [
-        "<strong>Scene Boundary Accuracy</strong> - Reviewing and adjusting scene transition points",
-        "<strong>Metadata Validation</strong> - Verifying AI-generated descriptions, tags, and labels",
-        "<strong>Consistency Check</strong> - Ensuring uniform style and formatting across all scenes",
-        "<strong>Content Accuracy</strong> - Validating that the AI correctly identified key elements in each scene"
+        "<strong>场景边界精度</strong> - 检查和调整场景过渡点",
+        "<strong>元数据验证</strong> - 验证 AI 生成的描述、标签和标签",
+        "<strong>一致性检查</strong> - 确保所有场景的风格和格式统一",
+        "<strong>内容准确性</strong> - 验证 AI 是否正确识别了每个场景中的关键元素"
       ],
       "workflow": {
-        "title": "Human-in-the-Loop Workflow",
+        "title": "人在环工作流程",
         "steps": [
-          "AI processes the video and generates initial storyboard",
-          "Human reviewers evaluate the AI output using our specialized tools",
-          "Reviewers provide feedback and make necessary adjustments",
-          "System learns from human corrections to improve future outputs",
-          "Final quality check before delivery"
+          "人工智能处理视频并生成初始故事板",
+          "人工审核员使用我们的专业工具评估人工智能输出",
+          "审稿人提供反馈并做出必要的调整",
+          "系统从人类纠正中学习以改善未来的输出",
+          "交货前的最终质量检查"
         ]
       },
       "benefits": {
-        "title": "Benefits of Human Evaluation",
+        "title": "人工评估的好处",
         "items": [
-          "<strong>Higher Accuracy</strong> - Human reviewers catch subtle nuances that AI might miss",
-          "<strong>Contextual Understanding</strong> - Better interpretation of cultural and situational context",
-          "<strong>Quality Assurance</strong> - Additional layer of validation for professional use cases",
-          "<strong>Continuous Improvement</strong> - Human feedback helps train and refine the AI models"
+          "<strong>更高的准确度</strong> - 人类审阅者捕捉人工智能可能错过的细微差别",
+          "<strong>语境理解</strong> - 更好地解释文化和情境背景",
+          "<strong>质量保证</strong> - 专业用例的附加验证层",
+          "<strong>持续改进</strong> - 人类反馈有助于训练和完善人工智能模型"
         ]
       },
       "tools": {
-        "title": "Evaluation Tools",
-        "description": "Our platform includes specialized tools to assist human reviewers:",
+        "title": "评估工具",
+        "description": "我们的平台包括协助人工审核员的专用工具：",
         "features": [
-          "Side-by-side video and storyboard comparison",
-          "Easy-to-use interface for adjusting scene boundaries",
-          "Bulk editing of metadata and tags",
-          "Collaboration features for team review",
-          "Version history and change tracking"
+          "并排视频和故事板比较",
+          "用于调整场景边界的易于使用的界面",
+          "批量编辑元数据和标签",
+          "团队审核的协作功能",
+          "版本历史和变更跟踪"
         ]
       }
     },
     "header": {
-      "title": "From Raw Footage to Storyboards",
-      "author": "Curify AI Team",
-      "role": "AI Research Team",
-      "imageAlt": "AI analyzing video scenes and generating storyboards",
-      "imageCaption": "AI-powered scene detection in action, identifying key moments in video content",
-      "subtitle": "AI-Powered Video Analysis",
-      "date": "December 11, 2025",
-      "readingTime": "8 min read"
+      "title": "从原始素材到故事板",
+      "author": "Curify AI 团队",
+      "role": "人工智能研究团队",
+      "imageAlt": "人工智能分析视频场景并生成故事板",
+      "imageCaption": "人工智能驱动的场景检测正在运行，识别视频内容中的关键时刻",
+      "subtitle": "AI 驱动的视频分析",
+      "date": "2025 年 12 月 11 日",
+      "readingTime": "8 分钟阅读"
     },
     "Technical": {
-      "title": "TECHNICAL DEEP DIVE",
+      "title": "技术深入探讨",
       "steps": {
         "step1": "技术实现",
-        "videoProcessingPipeline": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
+        "videoProcessingPipeline": "我们的系统通过复杂的多级管道处理视频，确保准确的场景检测和分析：",
         "step2": "视频分析流程",
         "step2Text": "我们的系统实时处理视频，检测场景变化并提取关键帧以进行进一步分析",
-        "step3": "Scene Detection and Metadata Extraction",
-        "step3Text": "OpenCV-powered frame sampling at optimal intervals",
-        "step4": "Shot Analysis and Metadata Enhancement",
-        "step4Text": "Adaptive thresholding for precise scene boundary detection",
-        "step5": "Scene Labeling and Metadata Organization",
-        "step5Text": "Deep learning models for comprehensive scene understanding",
-        "step6": "Metadata Export and Integration",
-        "step6Text": "Export metadata to JSON format for integration with other tools"
+        "step3": "场景检测和元数据提取",
+        "step3Text": "以最佳间隔进行 OpenCV 驱动的帧采样",
+        "step4": "镜头分析和元数据增强",
+        "step4Text": "用于精确场景边界检测的自适应阈值处理",
+        "step5": "场景标签和元数据组织",
+        "step5Text": "用于全面场景理解的深度学习模型",
+        "step6": "元数据导出和集成",
+        "step6Text": "将元数据导出为 JSON 格式以便与其他工具集成"
       }
     },
-    "featuresTitle": "Powerful Features at Your Fingertips",
+    "featuresTitle": "触手可及的强大功能",
     "features1": "实时场景检测",
     "features1Text": "自动检测场景变化并标记以进行进一步处理",
     "features": {
       "modularArchitecture": {
-        "title": "Modular Architecture",
-        "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+        "title": "模块化架构",
+        "description": "该系统由用于视频分析、人工智能处理和输出生成的独立组件构建，使其易于扩展和维护。"
       },
       "performance": {
-        "title": "Performance Optimized",
-        "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
+        "title": "性能优化",
+        "description": "高效的帧处理和并行化确保即使是长视频也能快速分析。"
       },
       "aiEnhanced": {
-        "title": "AI-Enhanced Analysis",
-        "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+        "title": "人工智能增强分析",
+        "description": "可选的人工智能组件可提供更深入的场景理解和更准确的标记。"
       }
     },
     "features2": "自动场景描述",
@@ -615,10 +616,10 @@
     "features5": "用户友好界面",
     "features5Text": "直观设计，快速轻松使用",
     "intro": {
-      "p1": "In today's fast-paced content creation landscape, <strong>efficient video analysis</strong> is no longer a luxury—it's a necessity. Our AI-powered scene detection technology transforms hours of raw footage into structured, searchable content in minutes, not days.",
-      "p2": "Whether you're a filmmaker, content creator, or media professional, understanding the power of automated scene detection can revolutionize your workflow and unlock new creative possibilities."
+      "p1": "在当今快节奏的内容创作环境中，<strong>高效视频分析</strong>不再是一种奢侈品，而是一种必需品。我们的人工智能场景检测技术可在几分钟（而不是几天）内将数小时的原始素材转换为结构化、可搜索的内容。",
+      "p2": "无论您是电影制作人、内容创作者还是媒体专业人士，了解自动场景检测的强大功能都可以彻底改变您的工作流程并释放新的创意可能性。"
     },
-    "proTip": "For best results, ensure your source video has clear audio and visual separation between scenes. Well-lit environments and minimal background noise significantly improve detection accuracy.",
+    "proTip": "为了获得最佳效果，请确保源视频的场景之间具有清晰的音频和视觉分离。光线充足的环境和最小的背景噪音可显着提高检测准确性。",
     "titanicExample": {
       "title": "泰坦尼克号示例",
       "description": "使用我们的AI场景检测分析标志性电影场景。",
@@ -626,83 +627,83 @@
       "analysisText": "系统成功识别了关键情感时刻、角色互动和场景转换。"
     },
     "inceptionExample": {
-      "title": "Dream Level Analysis: Inception Scene Breakdown",
-      "description": "Explore how our AI analyzes the complex dream layers and visual effects in Inception:",
-      "analysis": "Analysis",
-      "analysisText": "Dream layer detection and visual effect breakdown",
-      "breakdownTitle": "Scene Analysis Breakdown",
-      "showFullAnalysis": "Show Full Scene Analysis",
-      "hideFullAnalysis": "Hide Full Scene Analysis",
-      "fullSceneAnalysis": "Full Scene Analysis",
+      "title": "梦境层次分析：盗梦空间场景分解",
+      "description": "探索我们的人工智能如何分析《盗梦空间》中复杂的梦境图层和视觉效果：",
+      "analysis": "分析",
+      "analysisText": "梦境层检测及视觉效果分解",
+      "breakdownTitle": "场景分析分解",
+      "showFullAnalysis": "显示全场景分析",
+      "hideFullAnalysis": "隐藏全场景分析",
+      "fullSceneAnalysis": "全场景分析",
       "sceneCard": {
-        "mood": "Mood",
-        "environment": "Environment",
-        "shotNotes": "Shot Notes"
+        "mood": "情绪",
+        "environment": "环境",
+        "shotNotes": "拍摄笔记"
       }
     },
-    "Scene": "Scene",
+    "Scene": "场景",
     "process": {
-      "title": "How Our Scene Detection Works",
+      "title": "我们的场景检测如何工作",
       "steps": {
         "step1": {
-          "title": "1. Video Analysis",
-          "description": "Our AI scans your video frame by frame, analyzing visual and audio cues to identify potential scene boundaries.",
+          "title": "1. 视频分析",
+          "description": "我们的人工智能逐帧扫描您的视频，分析视觉和音频线索以识别潜在的场景边界。",
           "details": [
-            "Analyzes color histograms and motion vectors",
-            "Detects audio level changes and silences",
-            "Identifies shot boundaries and transitions"
+            "分析颜色直方图和运动矢量",
+            "检测音频电平变化和静音",
+            "识别镜头边界和过渡"
           ]
         },
         "step2": {
-          "title": "2. Scene Segmentation",
-          "description": "The system groups related shots into coherent scenes based on visual and temporal relationships.",
+          "title": "2.场景分割",
+          "description": "该系统根据视觉和时间关系将相关镜头分组为连贯的场景。",
           "details": [
-            "Uses machine learning to understand scene context",
-            "Considers shot duration and transition types",
-            "Merges related shots into logical scenes"
+            "使用机器学习来理解场景上下文",
+            "考虑镜头持续时间和过渡类型",
+            "将相关镜头合并到逻辑场景中"
           ]
         },
         "step3": {
-          "title": "3. Content Classification",
-          "description": "Each detected scene is analyzed and categorized based on its visual and audio content.",
+          "title": "3.内容分类",
+          "description": "每个检测到的场景都会根据其视觉和音频内容进行分析和分类。",
           "details": [
-            "Identifies key visual elements and objects",
-            "Classifies scene type (e.g., interview, action, landscape)",
-            "Analyzes audio for speech, music, and effects"
+            "识别关键视觉元素和对象",
+            "对场景类型进行分类（例如采访、动作、风景）",
+            "分析音频中的语音、音乐和效果"
           ]
         },
         "step4": {
-          "title": "4. Metadata Generation",
-          "description": "Comprehensive metadata is generated for each scene, enabling powerful search and organization.",
+          "title": "4. 元数据生成",
+          "description": "为每个场景生成全面的元数据，从而实现强大的搜索和组织。",
           "details": [
-            "Creates timestamps and duration information",
-            "Generates representative thumbnails",
-            "Extracts key dialogue and audio cues"
+            "创建时间戳和持续时间信息",
+            "生成代表性缩略图",
+            "提取关键对话和音频提示"
           ]
         }
       }
     },
     "whyItWorks": {
-      "title": "Why Our Scene Detection Works So Well",
-      "points": "<li>Our AI analyzes both <strong>visual and audio cues</strong> to identify scene boundaries with over 95% accuracy.</li><li>Advanced <strong>machine learning models</strong> understand context, not just visual changes, for more natural scene detection.</li><li>Real-time processing allows for <strong>immediate feedback</strong> and adjustments during filming or editing.</li>"
+      "title": "为什么我们的场景检测效果这么好",
+      "points": "<li>我们的人工智能分析<strong>视觉和音频线索</strong>以超过95%的准确度识别场景边界。</li><li>先进的<strong>机器学习模型</strong>理解上下文，而不仅仅是视觉变化，以实现更自然的场景检测。</li><li>实时处理允许<strong>立即反馈</strong>并在拍摄期间进行调整或编辑.</li>"
     },
     "recommendedStyle": {
-      "title": "Recommended Style for Best Results",
-      "description": "To get the most accurate scene detection, we recommend the following style guidelines:",
+      "title": "获得最佳效果的推荐样式",
+      "description": "为了获得最准确的场景检测，我们建议遵循以下风格指南：",
       "points": [
-        "Maintain consistent lighting within each scene",
-        "Use clear audio markers or clapperboards between takes",
-        "Keep camera movements smooth and intentional",
-        "Maintain consistent audio levels within scenes"
+        "在每个场景中保持一致的照明",
+        "在拍摄之间使用清晰的音频标记或场记板",
+        "保持相机移动流畅且有意",
+        "保持场景内一致的音频电平"
       ]
     },
-    "title": "From Raw Footage to Storyboards: AI-Powered Video Analysis",
-    "description": "Discover how AI transforms raw video into structured storyboards with automated scene detection and analysis.",
+    "title": "从原始素材到故事板：人工智能驱动的视频分析",
+    "description": "了解人工智能如何通过自动场景检测和分析将原始视频转换为结构化故事板。",
     "timeline": {
-      "title": "Scene Timeline",
-      "viewScene": "View Scene {1}"
+      "title": "场景时间轴",
+      "viewScene": "查看场景 {1}"
     },
-    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started.",
+    "cta": "🚀 准备好利用人工智能让您的故事板变得栩栩如生了吗？ <strong>我们可以提供完整的入门工具包</strong>，其中包含示例 JSON、ComfyUI 工作流程和 ffmpeg/AE 模板，以帮助您入门。",
     "sceneBreakdown": {
       "title": "理解场景检测输出",
       "introduction": "让我们拆解一个典型的场景检测输出，来了解我们的 AI 是如何分析并结构化视频内容的。在每段说明下方，你都可以看到支撑这些洞察的对应 JSON 结构。",
@@ -890,7 +891,7 @@
             "male",
             "female"
           ],
-          "speech_text": "Let's discuss how AI is transforming video production..."
+          "speech_text": "让我们讨论人工智能如何改变视频制作......"
         },
         "content_analysis": {
           "primary_category": "interview",
@@ -937,74 +938,74 @@
       "p1": "AI 场景检测正在彻底改变视频制作方式。通过自动化完成繁琐的场景识别与整理工作，创作者可以将精力集中在真正重要的事情上——讲好故事。我们的技术打通了原始素材与成片之间的鸿沟，让专业级视频分析变得人人可用。",
       "p2": "随着算法的不断优化和能力的持续扩展，我们期待看到电影人、教育工作者和内容创作者利用这些工具不断突破视觉叙事的边界。视频制作的未来已经到来，而且更加高效、更具创造力。"
     },
-    "richStructuredOutput": "Rich, Structured Output",
-    "richStructuredOutputText": "Our system generates comprehensive storyboard data with detailed metadata for each scene, giving you complete control over your video content.",
+    "richStructuredOutput": "丰富、结构化的输出",
+    "richStructuredOutputText": "我们的系统生成全面的故事板数据以及每个场景的详细元数据，使您可以完全控制视频内容。",
     "advancedUsage": {
-      "title": "Advanced Usage & Customization",
-      "description": "The scene detection system is highly customizable to fit different use cases. Here are some advanced features and customization options:",
+      "title": "高级使用和定制",
+      "description": "场景检测系统是高度可定制的，以适应不同的用例。以下是一些高级功能和自定义选项：",
       "features": {
         "thresholds": {
-          "title": "Custom Scene Detection Thresholds",
-          "description": "Adjust the sensitivity of scene detection by modifying the threshold parameter. Lower values make the detection more sensitive to changes."
+          "title": "自定义场景检测阈值",
+          "description": "通过修改阈值参数来调整场景检测的灵敏度。较低的值使检测对变化更加敏感。"
         },
         "aiAnalysis": {
-          "title": "AI-Enhanced Analysis",
-          "description": "Enable AI analysis for more detailed scene understanding and labeling. This requires additional setup with the Ollama server."
+          "title": "人工智能增强分析",
+          "description": "启用 AI 分析以实现更详细的场景理解和标记。这需要对 Ollama 服务器进行额外设置。"
         },
         "outputCustomization": {
-          "title": "Output Customization",
-          "description": "Customize the output format and include additional metadata in the generated storyboard."
+          "title": "输出定制",
+          "description": "自定义输出格式并在生成的故事板中包含其他元数据。"
         }
       },
       "integration": {
-        "title": "Integration with Other Tools",
-        "description": "The storyboard output can be easily integrated with other tools and workflows. Here are some examples:",
+        "title": "与其他工具集成",
+        "description": "故事板输出可以轻松地与其他工具和工作流程集成。以下是一些示例：",
         "tools": {
           "editingSoftware": {
-            "title": "Video Editing Software",
-            "description": "Import the JSON output into video editors that support script-based editing"
+            "title": "视频编辑软件",
+            "description": "将 JSON 输出导入到支持基于脚本的编辑的视频编辑器中"
           },
           "cms": {
-            "title": "Content Management Systems",
-            "description": "Automatically generate metadata for video assets"
+            "title": "内容管理系统",
+            "description": "自动生成视频资产元数据"
           },
           "aiTraining": {
-            "title": "AI Training Data",
-            "description": "Use the structured output as training data for machine learning models"
+            "title": "人工智能训练数据",
+            "description": "使用结构化输出作为机器学习模型的训练数据"
           }
         }
       }
     },
     "Benefitss": {
-      "title": "Benefits",
-      "description": "The benefits of using our AI-powered scene detection system include:",
+      "title": "优势",
+      "description": "使用我们的人工智能场景检测系统的好处包括：",
       "tags": {
-        "computerVision": "Computer Vision",
-        "deepLearning": "Deep Learning",
-        "realTimeAnalysis": "Real-time Analysis"
+        "computerVision": "计算机视觉",
+        "deepLearning": "深度学习",
+        "realTimeAnalysis": "实时分析"
       },
       "features": {
         "modularArchitecture": {
-          "title": "Modular Architecture",
-          "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+          "title": "模块化架构",
+          "description": "该系统由用于视频分析、人工智能处理和输出生成的独立组件构建，使其易于扩展和维护。"
         },
         "performance": {
-          "title": "Performance Optimized",
-          "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
+          "title": "性能优化",
+          "description": "高效的帧处理和并行化确保即使是长视频也能快速分析。"
         },
         "aiEnhanced": {
-          "title": "AI-Enhanced Analysis",
-          "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+          "title": "人工智能增强分析",
+          "description": "可选的人工智能组件可提供更深入的场景理解和更准确的标记。"
         }
       }
     },
     "benefits": {
-      "subtitle": "WHY CHOOSE OUR SOLUTION",
-      "title": "The Power of AI-Powered Scene Analysis"
+      "subtitle": "为什么选择我们的解决方案",
+      "title": "人工智能场景分析的力量"
     },
     "integration": {
-      "title": "Easy Integration",
-      "description": "The structured JSON output makes it easy to integrate with other tools and workflows:",
+      "title": "轻松集成",
+      "description": "结构化的 JSON 输出可以轻松与其他工具和工作流程集成：",
       "technologies": [
         "Python",
         "JavaScript",
@@ -1015,38 +1016,38 @@
     },
     "features10": {
       "comprehensiveData": {
-        "title": "Comprehensive Scene Data",
+        "title": "全面的场景数据",
         "items": [
-          "Precise timing information for each scene",
-          "Key frames for visual reference",
-          "Object detection results",
-          "Camera movement analysis"
+          "每个场景的精确计时信息",
+          "视觉参考关键帧",
+          "物体检测结果",
+          "相机运动分析"
         ]
       },
       "export": {
-        "title": "Export Option",
+        "title": "导出选项",
         "formats": {
           "json": "JSON"
         }
       }
     },
     "performance": {
-      "title": "Performance Optimized",
+      "title": "性能优化",
       "features": {
-        "speed": "5-10x faster than real-time",
-        "memory": "Low memory footprint",
-        "parallel": "Parallel processing"
+        "speed": "比实时快 5-10 倍",
+        "memory": "内存占用低",
+        "parallel": "并行处理"
       }
     }
   },
   "nanoBananaProPrompts": {
     "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "description": "发现一系列满足您的 AI 内容生成需求的创意且有效的提示。这些提示旨在帮助您充分利用 AI 工具。",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "热门 Nano Banana Pro Prompts",
+      "prompt1": "创作一个关于情感即货币的未来城市的短篇故事",
+      "prompt2": "生成在咖啡店第一次见面的两个角色之间的对话",
+      "prompt3": "为创新型人工智能厨房小工具撰写产品说明"
     }
   },
   "qaBotToTaskAgent": {
@@ -1193,13 +1194,12 @@
   "aiPlatform": {
     "title": "中型企业的AI成功指南",
     "subtitle": "如何构建一个经济实惠的可扩展AI平台",
-    "intro": "每个人都想使用AI进行开发，但大多数公司负担不起庞大的博士团队或OpenAI级别的预算。好消息是：您不需要这些。",
-    "imageAlt": "AI平台架构图",
-    "heading": "🏗️ 中型企业的AI成功指南",
     "intro": {
       "p1": "在中小型科技公司，真正的优势不在于训练庞大的模型，而在于构建一个让每个人都能开发智能功能的AI平台。这就是如何将敏捷性转化为影响力的方法。",
       "p2": "以下是我们用于在金融、法律、客户支持和工程领域推动AI发展的实用、生产就绪的蓝图，既不会烧钱，也无需雇佣50名ML专家。"
     },
+    "imageAlt": "AI平台架构图",
+    "heading": "🏗️ 中型企业的AI成功指南",
     "mindsetShift": {
       "title": "1. 思维转变：民主化而非集中化",
       "content": "如果您的AI团队成为瓶颈，您已经输了。相反，应该构建一个自服务的AI基础设施，让产品工程师能够构建他们需要的东西。",

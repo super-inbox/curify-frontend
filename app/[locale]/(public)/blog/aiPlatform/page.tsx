@@ -4,10 +4,19 @@ import CdnImage from '../../../_components/CdnImage';
 import { FaLightbulb, FaCheck, FaLayerGroup, FaCogs, FaChartLine, FaTools, FaRocket } from 'react-icons/fa';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: "🏗️ The Mid-Sized Company's Playbook for AI Success",
-  description: "How to Build an AI Platform That Scales Without Breaking the Bank"
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "aiPlatform" });
+
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+  };
+}
 
 const SectionHeader = ({ title, icon: Icon }: { title: string; icon: any }) => (
   <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-6 flex items-center">

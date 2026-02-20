@@ -218,7 +218,7 @@
         ]
       },
       "pro": {
-        "name": "Pro",
+        "name": "Profesional",
         "description": "Próximamente — Diseñado para creadores de alto volumen",
         "plusTitle": "Todo en Creador, más:",
         "features": [
@@ -266,15 +266,15 @@
         "unlimited": "Ilimitado",
         "oneHourPerMonth": "1 h/mes",
         "fiveHoursPerMonth": "5 h/mes",
-        "fiveMinutes": "5 min",
-        "thirtyMinutes": "30 min",
-        "sixtyMinutes": "60 min"
+        "fiveMinutes": "5 min.",
+        "thirtyMinutes": "30 min.",
+        "sixtyMinutes": "60 min."
       }
     }
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Redefiniendo la Animación (Parte 3)",
-    "heading": "🎨 AE vs ComfyUI",
+    "heading": "🎨 AE frente a ComfyUI",
     "intro1": "A menudo nos preguntan: ¿por qué no usar simplemente After Effects (AE)? ¿O por qué molestarse con ComfyUI? Ambos son esenciales: uno proporciona control fino, el otro creatividad generativa.",
     "intro2": "AE ofrece precisión en la línea de tiempo y control sobre transiciones, iluminación y efectos. ComfyUI aporta flujos de trabajo nativos de IA, combinando difusión, texto y orquestación multimodal.",
     "table": {
@@ -1041,7 +1041,7 @@
     }
   },
   "nanoBananaProPrompts": {
-    "title": "Nano Banana Pro Prompts",
+    "title": "Prompts Pro de Nano Banana",
     "description": "Descubre una colección de prompts creativos y efectivos para tus necesidades de generación de contenido con IA. Estos prompts están diseñados para ayudarte a obtener lo mejor de tus herramientas de IA.",
     "prompts": {
       "title": "Prompts Populares de Nano Banana Pro",
@@ -1104,15 +1104,15 @@
     },
     "staticContextExample": {
       "title": "4. Ejemplo de Contexto Estático: .cursorrules",
-      "content": "# ROLE\nYou are a Senior Python Engineer focused on production-grade systems.\n\n# RULES\n- NEVER use print() for debugging\n- ALWAYS type-hint functions\n- Propose a plan if touching >3 files\n\n# BEHAVIOR\n- Be concise\n- Ask clarifying questions if needed\n\nReference: https://github.com/PatrickJS/awesome-cursorrules"
+      "content": "# ROL\nEres un Ingeniero Senior de Python enfocado en sistemas listos para producción.\n\n# REGLAS\n- NUNCA uses print() para depuración\n- SIEMPRE añade type hints a las funciones\n- Propón un plan si tocas >3 archivos\n\n# COMPORTAMIENTO\n- Sé conciso\n- Haz preguntas de aclaración si es necesario\n\nReferencia: https://github.com/PatrickJS/awesome-cursorrules"
     },
     "dynamicSkillExample": {
       "title": "5. Ejemplo de Habilidad Dinámica (MCP)",
-      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Created ticket {ticket_id} with priority={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReference: https://github.com/modelcontextprotocol/python-sdk"
+      "content": "from mcp.server.fastmcp import FastMCP\\n\\nmcp = FastMCP(\"DevTools\")\\n\\n@mcp.tool()\\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\\n    return f\"Ticket {ticket_id} creado con prioridad={priority}\"\\n\\nif __name__ == \"__main__\":\\n    mcp.run()\\n\\nReferencia: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
       "title": "6. Ejemplo de Hook Determinista",
-      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Security violation detected\"}\n    return agent_node(state)\n\nReference: https://langchain-ai.github.io/langgraph/"
+      "content": "def compliance_check_hook(state):\\n    user_input = state[\"messages\"][-1].content.lower()\\n    if \"contraseña\" in user_input or \"api_key\" in user_input:\\n        return {\"error\": \"Violación de seguridad detectada\"}\\n    return agent_node(state)\\n\\nReferencia: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "Si tu agente solo responde preguntas, es un chatbot. Si ejecuta trabajo de manera confiable, es un Agente de Tareas.",
     "taskAgentImageAlt": "Ilustración de una arquitectura de sistema de agente de tareas mostrando la interacción entre diferentes componentes"

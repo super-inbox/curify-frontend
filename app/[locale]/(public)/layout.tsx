@@ -24,7 +24,8 @@ export async function generateMetadata({
   
   // Remove locale prefix from pathname to get the canonical path
   // e.g. /zh/pricing -> /pricing
-  const pathWithoutLocale = pathname.replace(`/${locale}`, "") || "";
+  const pathWithoutLocale =
+    pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "";
   
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
   

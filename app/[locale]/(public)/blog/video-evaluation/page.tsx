@@ -1,13 +1,22 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
 
-export const metadata: Metadata = {
-  title: "Evaluating AI Video Translation Quality – Curify AI",
-  description:
-    "How Curify AI ensures high-quality video translation through metrics like WER, COMET, MOS, speaker similarity, sync timing, and user testing.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "video_translation_eval" });
+
+  return {
+    title: `${t("title")} – ${t("subtitle")}`,
+    description: t("intro"),
+  };
+}
 
 // A simple icon for lists
 const ListIcon = () => (

@@ -1,11 +1,22 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 
-export const metadata: Metadata = {
-  title: "Data Science in the Age of AI: Is the \"Sexiest Job\" Still Sexy?",
-  description: "Exploring how AI is reshaping the data science landscape and what it means for professionals in the field.",};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "ageAi" });
+
+  return {
+    title: t("heading"),
+    description: t("intro2"),
+  };
+}
 
 export default function AgeAiPost() {
   const t = useTranslations("ageAi");

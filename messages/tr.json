@@ -207,7 +207,7 @@
         ]
       },
       "creator": {
-        "name": "Creator",
+        "name": "Üretici",
         "description": "Düzenli altyazı ve hafif dublaj yapan küçük içerik oluşturucular için ideal",
         "plusTitle": "Ücretsiz plandaki her şey, artı:",
         "features": [
@@ -218,9 +218,9 @@
         ]
       },
       "pro": {
-        "name": "Pro",
+        "name": "Profesyonel",
         "description": "Yakında — Yüksek hacimli içerik oluşturucular için tasarlandı",
-        "plusTitle": "Creator planındaki her şey, artı:",
+        "plusTitle": "Üretici planındaki her şey, artı:",
         "features": [
           "Ses güzelleştirme ve gürültü giderme",
           "Öncelik sırası",
@@ -274,7 +274,7 @@
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Animasyonu Yeniden Tanımlamak (Bölüm 3)",
-    "heading": "🎨 AE vs ComfyUI",
+    "heading": "🎨 AE ve ComfyUI",
     "intro1": "Sık sık soruluyor: neden sadece After Effects (AE) kullanmıyorsunuz? Veya neden ComfyUI ile uğraşıyorsunuz? İkisi de önemlidir — biri ince kontrol sağlar, diğeri üretken yaratıcılık.",
     "intro2": "AE, zaman çizelgesi hassasiyeti ve geçişler, aydınlatma ve efektler üzerinde kontrol sunar. ComfyUI, difüzyon, metin ve çok modlu orkestrasyonu birleştirerek AI-yerel iş akışları getirir.",
     "table": {
@@ -403,8 +403,8 @@
             "character_state",
             "motion_notes"
           ],
-          "storage": "storyboard_v1.csv (used as the single source of truth for downstream steps)",
-          "automation": "Python / Node.js script transforms prompt_run_001.json → storyboard_v1.csv"
+          "storage": "storyboard_v1.csv (aşağıdaki adımlar için tek doğruluk kaynağı olarak kullanılır)",
+          "automation": "Python / Node.js betiği prompt_run_001.json dosyasını storyboard_v1.csv dosyasına dönüştürür"
         }
       },
       "step3": {
@@ -880,8 +880,8 @@
             "#87CEEB",
             "#F5F5DC"
           ],
-          "lighting_condition": "daylight",
-          "environment": "studio"
+          "lighting_condition": "gün ışığı",
+          "environment": "stüdyo"
         },
         "audio_analysis": {
           "has_speech": true,
@@ -891,16 +891,16 @@
             "male",
             "female"
           ],
-          "speech_text": "Let's discuss how AI is transforming video production..."
+          "speech_text": "Yapay zekanın video prodüksiyonunu nasıl dönüştürdüğünü tartışalım..."
         },
         "content_analysis": {
-          "primary_category": "interview",
-          "setting": "studio",
+          "primary_category": "röportaj",
+          "setting": "stüdyo",
           "subjects": [
             "host",
             "guest"
           ],
-          "sentiment": "neutral_positive"
+          "sentiment": "nötr_pozitif"
         },
         "shots": [
           {
@@ -1198,11 +1198,11 @@
     },
     "dynamicSkillExample": {
       "title": "5. Dinamik Beceri Örneği (MCP)",
-      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Created ticket {ticket_id} with priority={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferans: https://github.com/modelcontextprotocol/python-sdk"
+      "content": "from mcp.server.fastmcp import FastMCP\\n\\nmcp = FastMCP(\"DevTools\")\\n\\n@mcp.tool()\\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\\n    return f\"Öncelik={priority} ile {ticket_id} bileti oluşturuldu\"\\n\\nif __name__ == \"__main__\":\\n    mcp.run()\\n\\nReferans: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
       "title": "6. Deterministik Kanca Örneği",
-      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Security violation detected\"}\n    return agent_node(state)\n\nReferans: https://langchain-ai.github.io/langgraph/"
+      "content": "def compliance_check_hook(state):\\n    user_input = state[\"messages\"][-1].content.lower()\\n    if \"şifre\" in user_input or \"api_key\" in user_input:\\n        return {\"error\": \"Güvenlik ihlali tespit edildi\"}\\n    return agent_node(state)\\n\\nReferans: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "Ajanınız sadece soruları yanıtlıyorsa, o bir sohbet robotudur. Eğer güvenilir bir şekilde iş yapıyorsa, o bir Görev Ajanıdır.",
     "taskAgentImageAlt": "Farklı bileşenler arasındaki etkileşimi gösteren bir görev ajanı sistem mimarisinin illüstrasyonu"

@@ -20,9 +20,9 @@ export async function generateMetadata({
 
   const title = `${card.category} - Curify Nano Inspiration`;
   const description = (card.base_prompt || "").slice(0, 160);
-  const imageUrl = "";
-
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.curify-ai.com";
+  const rawImage = card.image_urls?.[0] || "/og-default.png";
+  const imageUrl = /^https?:\/\//i.test(rawImage) ? rawImage : `${baseUrl}${rawImage}`;
 
   return {
     title,
