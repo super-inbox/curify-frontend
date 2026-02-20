@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import path from 'path';
@@ -94,6 +95,54 @@ const getSourceBadgeClass = (sourceType: string) => {
   };
   return classes[sourceType as keyof typeof classes] || 'bg-gray-100 text-gray-800';
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+}): Promise<Metadata> {
+  const { id, locale } = await params;
+  const prompt = await fetchPrompt(id);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curify-ai.com';
+
+  if (!prompt) {
+    return {
+      title: 'Prompt Not Found',
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const title = `${prompt.title} | Nano Banana Pro Prompts`;
+  const description =
+    prompt.description ||
+    prompt.prompt_text.slice(0, 160) ||
+    'Creative AI prompt from Nano Banana Pro Prompts.';
+  const imageUrl = /^https?:\/\//i.test(prompt.image_url)
+    ? prompt.image_url
+    : `${siteUrl}${prompt.image_url}`;
+  const url = `${siteUrl}/${locale}/nano-banana-pro-prompts/${id}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url,
+      images: [imageUrl],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
+    },
+  };
+}
 
 export default async function PromptDetailPage({
   params

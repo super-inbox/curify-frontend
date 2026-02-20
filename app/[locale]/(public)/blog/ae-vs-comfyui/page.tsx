@@ -1,13 +1,22 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
 
-export const metadata: Metadata = {
-  title: "AE vs ComfyUI – Redefining Animation (Part 3)",
-  description:
-    "A comparison of After Effects and ComfyUI — two worlds of control and generative freedom in AI animation.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "aeVsComfyUi" });
+
+  return {
+    title: t("title"),
+    description: t("intro1"),
+  };
+}
 
 export default function AeVsComfyUiPost() {
   const t = useTranslations("aeVsComfyUi");

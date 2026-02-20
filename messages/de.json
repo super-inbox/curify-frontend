@@ -1,76 +1,89 @@
 {
-    "home": {
+  "home": {
+    "metadata": {
+      "title": "Curify | KI-gestützte Content-Erstellung",
+      "description": "Curify ist eine KI-native Plattform, die Kreativen, Lehrkräften und Medienteams hilft, Videos, Manga und Präsentationen im großen Maßstab zu erstellen und zu lokalisieren."
+    },
     "hero": {
       "title": "KI-gestützte Content-Erstellung der nächsten Stufe",
       "description": "Curify Studio entwickelt eine KI-native Plattform für Content-Erstellung, die Kreative und Organisationen dabei unterstützt, Sprach- und Formatbarrieren zu überwinden. Wir ermöglichen authentische Übersetzungen, die Ton, Stil und emotionale Tiefe bewahren – und helfen so, Inhalte effektiv für ein globales Publikum zu skalieren. An der Schnittstelle von Medien, Bildung und Unterhaltung bieten wir Werkzeuge, um Inhalte nahtlos an internationale Märkte anzupassen."
     }
   },
   "coreFeatures": {
-  "oneShot": {
-    "title": "Ein-Klick-Übersetzung",
-    "desc": "Komplette Videoübersetzung mit Voice-over, Untertiteln und Lippen-Synchronisation in einem Schritt."
+    "oneShot": {
+      "title": "Ein-Klick-Übersetzung",
+      "desc": "Komplette Videoübersetzung mit Voice-over, Untertiteln und Lippen-Synchronisation in einem Schritt."
+    },
+    "toneColor": {
+      "title": "Stimmfarbenerhaltung",
+      "desc": "Erhält die einzigartigen Stimmmerkmale und Tonqualitäten des ursprünglichen Sprechers."
+    },
+    "emotional": {
+      "title": "Emotionale Sprache",
+      "desc": "KI reproduziert emotionale Nuancen und sorgt für authentischen Ausdruck über Sprachgrenzen hinweg."
+    },
+    "lipSync": {
+      "title": "Lippen-Synchronisation",
+      "desc": "Fortschrittliche Lippen-Synchronisierung, die Mundbewegungen perfekt mit der übersetzten Tonspur abgleicht."
+    },
+    "subtitle": {
+      "title": "Untertitelgenerator",
+      "desc": "Intelligente Untertitelerstellung mit präzisem Timing und natürlichem Sprachfluss."
+    },
+    "languages": {
+      "title": "170+ Sprachen",
+      "desc": "Übersetzen Sie Ihre Inhalte in über 170 Sprachen mit nahezu muttersprachlicher Genauigkeit."
+    }
   },
-  "toneColor": {
-    "title": "Stimmfarbenerhaltung",
-    "desc": "Erhält die einzigartigen Stimmmerkmale und Tonqualitäten des ursprünglichen Sprechers."
-  },
-  "emotional": {
-    "title": "Emotionale Sprache",
-    "desc": "KI reproduziert emotionale Nuancen und sorgt für authentischen Ausdruck über Sprachgrenzen hinweg."
-  },
-  "lipSync": {
-    "title": "Lippen-Synchronisation",
-    "desc": "Fortschrittliche Lippen-Synchronisierung, die Mundbewegungen perfekt mit der übersetzten Tonspur abgleicht."
-  },
-  "subtitle": {
-    "title": "Untertitelgenerator",
-    "desc": "Intelligente Untertitelerstellung mit präzisem Timing und natürlichem Sprachfluss."
-  },
-  "languages": {
-    "title": "170+ Sprachen",
-    "desc": "Übersetzen Sie Ihre Inhalte in über 170 Sprachen mit nahezu muttersprachlicher Genauigkeit."
-  }
-},
- "upcoming": {
+  "upcoming": {
     "title": "Demnächst verfügbar",
     "subtitle": "Nächste Generation von Funktionen in Entwicklung",
     "styleTransfer": {
       "title": "Stilübertragung",
-      "desc": "Wende filmische oder markenspezifische Stile auf deine Videos an – mit KI-gestützter visueller Transformation."
+      "desc": "Wende filmische oder markenspezifische Stile auf deine Videos an – mit KI-gestützter visueller Transformation.",
+      "icon": "🎨",
+      "status": "Kommt in Q3 2025",
+      "transcript": "Diese Demo verwandelt einen Live-Action-Clip in eine Animation im Ghibli-Stil."
     },
     "mangaTranslation": {
       "title": "Manga-Übersetzung",
-      "desc": "Automatische Übersetzung von Manga und Comics mit Texterkennung, Blasenbearbeitung und kultureller Anpassung."
+      "desc": "Automatische Übersetzung von Manga und Comics mit Texterkennung, Blasenbearbeitung und kultureller Anpassung.",
+      "icon": "📚",
+      "status": "Kommt in Q3 2025",
+      "transcript": "Dieser Prototyp zeigt die automatische Manga-Übersetzung."
     },
     "templatedVideo": {
       "title": "Vorlagenbasierte Videogenerierung",
-      "desc": "Erstelle professionelle Videos aus Vorlagen mit KI-generierten Inhalten und Markenanpassung."
+      "desc": "Erstelle professionelle Videos aus Vorlagen mit KI-generierten Inhalten und Markenanpassung.",
+      "icon": "🎬",
+      "status": "Kommt in Q4 2025",
+      "transcript": "Diese Demo zeigt eine Skript-zu-Video-Pipeline."
     },
     "statusQ3": "Kommt im Q3 2025",
     "statusQ4": "Kommt im Q4 2025"
   },
   "export": {
-    "title": "Export",
-    "export": "Export",
-    "downloading": "Downloading..."
+    "title": "Exportieren",
+    "export": "Exportieren",
+    "downloading": "Wird heruntergeladen..."
   },
   "delete": {
-    "title": "Double Confirm",
-    "message": "Are you sure you want to delete this project",
-    "warning": "This action cannot be undone.",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "deleting": "Deleting..."
+    "title": "Bitte bestätigen",
+    "message": "Möchtest du dieses Projekt wirklich löschen?",
+    "warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "deleting": "Wird gelöscht..."
   },
   "userMenu": {
-    "topUpCredits": "Top Up Credits",
-    "remaining": "Remaining",
-    "planRemaining": "Plan Remaining", 
-    "validUntil": "Valid until",
-    "creditsHistory": "Credits History",
-    "subscribePlan": "Subscribe Plan",
-    "supportTicket": "Support Ticket",
-    "signOut": "Sign Out"
+    "topUpCredits": "Credits aufladen",
+    "remaining": "Verbleibend",
+    "planRemaining": "Im Plan verbleibend",
+    "validUntil": "Gültig bis",
+    "creditsHistory": "Credit-Verlauf",
+    "subscribePlan": "Plan abonnieren",
+    "supportTicket": "Support-Ticket",
+    "signOut": "Abmelden"
   },
   "technology": {
     "multimodal": {
@@ -111,819 +124,930 @@
     "create": "Erstellen"
   },
   "bilingual": {
-  "title": "Zweisprachige Untertitel leicht gemacht",
-  "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
-  "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
-  "cta": "Jetzt kostenlos ausprobieren",
-  "why": {
-    "title": "Warum Curify für zweisprachige Untertitel?",
-    "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
-    "point2": "Bewahrt Emotion, Ton und Timing.",
-    "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
-    "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
-  },
-  "faq": {
-    "title": "Häufige Fragen",
-    "q1": "Ist es wirklich kostenlos?",
-    "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
-    "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
-    "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
-  }
-},
-"videoDubbing": {
-  "title": "KI-Video-Synchronisation mit natürlicher Stimme",
-  "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
-},
-"pricing": {
-  "header": {
-    "title": "Erste Schritte mit einem Plan",
-    "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."
-  },
-  "common": {
-    "month": "Monat",
-    "pricing": "Preisgestaltung",
-    "receive": "Erhalten"
-  },
-  "buttons": {
-    "signUp": "Registrieren",
-    "subscribePlan": "Plan abonnieren",
-    "currentPlan": "Aktueller Plan",
-    "comingSoon": "Demnächst verfügbar",
-    "downgradeToFree": "Auf Kostenlos herabstufen",
-    "downgradeToCreator": "Auf Creator herabstufen",
-    "contactSales": "Vertrieb kontaktieren"
-  },
-  "plans": {
-    "free": {
-      "name": "Kostenlos",
-      "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
-      "features": [
-        "Videos ohne Wasserzeichen herunterladen",
-        "1 Stunde kostenlose Untertitelverarbeitung",
-        "SRT-Dateien exportieren"
-      ]
+    "metadata": {
+      "title": "Kostenloser Generator für zweisprachige Untertitel | Curify AI",
+      "description": "Erstelle mit Curifys kostenlosem KI-Tool zweisprachige Untertitel für deine Videos. Ideal für YouTube, TikTok, Bildung und globale Creator."
     },
-    "creator": {
-      "name": "Creator",
-      "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
-      "plusTitle": "Alles in Kostenlos, plus:",
-      "features": [
-        "Lippensynchronisation",
-        "Stapelverarbeitung",
-        "5 Stunden kostenlose Untertitelverarbeitung",
-        "Bis zu 30 Minuten pro Aufgabe"
-      ]
+    "title": "Zweisprachige Untertitel leicht gemacht",
+    "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
+    "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
+    "cta": "Jetzt kostenlos ausprobieren",
+    "why": {
+      "title": "Warum Curify für zweisprachige Untertitel?",
+      "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
+      "point2": "Bewahrt Emotion, Ton und Timing.",
+      "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
+      "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
     },
-    "pro": {
-      "name": "Pro",
-      "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
-      "plusTitle": "Alles in Creator, plus:",
-      "features": [
-        "Stimmverschönerung & Rauschunterdrückung",
-        "Prioritätswarteschlange",
-        "Bis zu 60 Min. pro Aufgabe",
-        "Unbegrenzte Untertitelminuten"
-      ]
-    },
-    "enterprise": {
-      "name": "Enterprise",
-      "description": "Für Teams, Studios und Unternehmens-Workflows",
-      "customPricing": "Individuell",
-      "unlimited": "Unbegrenzt 🐚",
-      "tailoredSupport": "& maßgeschneiderter Support",
-      "plusTitle": "Alles in Pro, plus:",
-      "features": [
-        "Dedizierter Account-Manager",
-        "On-Premise-Bereitstellungsoptionen",
-        "API-Zugriff & Nutzungsanalyse",
-        "Individuelle Integrationen & SLA",
-        "Unbegrenzte Verarbeitungsstunden"
-      ]
+    "faq": {
+      "title": "Häufige Fragen",
+      "q1": "Ist es wirklich kostenlos?",
+      "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
+      "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
+      "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
     }
   },
-  "table": {
+  "videoDubbing": {
+    "metadata": {
+      "title": "KI-Tool für Video-Synchronisation | Curify AI",
+      "description": "Synchronisiere deine Videos in über 170 Sprachen mit KI-Stimmklonen, Emotionsbewahrung und Lippensynchronisation. Teste Curifys KI-Synchronisation kostenlos."
+    },
+    "title": "KI-Video-Synchronisation mit natürlicher Stimme",
+    "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
+  },
+  "about": {
+    "metadata": {
+      "title": "Über Curify | Vision, Technologie & Team",
+      "description": "Erfahre mehr über Curifys Vision, Content-Erstellung mit KI zu demokratisieren. Wir sind ein Team aus Ingenieur:innen und Kreativen, das die Zukunft der Medienlokalisierung baut."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Kontakt | Curify Studio",
+      "description": "Kontaktiere das Curify-Team für Support, Vertrieb oder Partnerschaften. Wir helfen dir, Inhalte global zu skalieren."
+    }
+  },
+  "blog": {
+    "metadata": {
+      "title": "Curify Blog | Einblicke in KI-Content-Erstellung",
+      "description": "Lies die neuesten Artikel zu KI-Videoerstellung, Synchronisation, Stiltransfer und der Zukunft der Content-Erstellung."
+    }
+  },
+  "pricing": {
+    "metadata": {
+      "title": "Preispläne | Curify Studio",
+      "description": "Wähle den passenden Plan für deine Content-Erstellung - von kostenlosen Tools bis zu KI-Synchronisation und Lokalisierung auf Enterprise-Niveau."
+    },
     "header": {
-      "feature": "Funktion / Limit"
+      "title": "Erste Schritte mit einem Plan",
+      "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."
     },
-    "rows": {
-      "videoDownloadWithWatermark": "Video-Download mit Wasserzeichen",
-      "videoDownloadWithoutWatermark": "Video-Download ohne Wasserzeichen",
-      "downloadSrt": "SRT-Datei herunterladen",
-      "voiceBeautification": "Stimmverschönerung & Rauschunterdrückung",
-      "lipSync": "Lippensynchronisation",
-      "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
-      "batchProcessing": "Stapelverarbeitung",
-      "maxVideoLength": "Max. Videolänge pro Aufgabe",
-      "monthlyCredits": "Monatliche kostenlose Credits",
-      "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
-      "creditTopUp": "Credit-Aufladung"
+    "common": {
+      "month": "Monat",
+      "pricing": "Preisgestaltung",
+      "receive": "Erhalten"
     },
-    "values": {
-      "free": "Kostenlos",
-      "unlimited": "Unbegrenzt",
-      "oneHourPerMonth": "1 Std./Monat",
-      "fiveHoursPerMonth": "5 Std./Monat",
-      "fiveMinutes": "5 Min.",
-      "thirtyMinutes": "30 Min.",
-      "sixtyMinutes": "60 Min."
+    "buttons": {
+      "signUp": "Registrieren",
+      "subscribePlan": "Plan abonnieren",
+      "currentPlan": "Aktueller Plan",
+      "comingSoon": "Demnächst verfügbar",
+      "downgradeToFree": "Auf Kostenlos herabstufen",
+      "downgradeToCreator": "Auf Creator herabstufen",
+      "contactSales": "Vertrieb kontaktieren"
+    },
+    "plans": {
+      "free": {
+        "name": "Kostenlos",
+        "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
+        "features": [
+          "Videos ohne Wasserzeichen herunterladen",
+          "1 Stunde kostenlose Untertitelverarbeitung",
+          "SRT-Dateien exportieren"
+        ]
+      },
+      "creator": {
+        "name": "Kreator",
+        "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
+        "plusTitle": "Alles in Kostenlos, plus:",
+        "features": [
+          "Lippensynchronisation",
+          "Stapelverarbeitung",
+          "5 Stunden kostenlose Untertitelverarbeitung",
+          "Bis zu 30 Minuten pro Aufgabe"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
+        "plusTitle": "Alles in Creator, plus:",
+        "features": [
+          "Stimmverschönerung & Rauschunterdrückung",
+          "Prioritätswarteschlange",
+          "Bis zu 60 Min. pro Aufgabe",
+          "Unbegrenzte Untertitelminuten"
+        ]
+      },
+      "enterprise": {
+        "name": "Unternehmen",
+        "description": "Für Teams, Studios und Unternehmens-Workflows",
+        "customPricing": "Individuell",
+        "unlimited": "Unbegrenzt 🐚",
+        "tailoredSupport": "& maßgeschneiderter Support",
+        "plusTitle": "Alles in Pro, plus:",
+        "features": [
+          "Dedizierter Account-Manager",
+          "On-Premise-Bereitstellungsoptionen",
+          "API-Zugriff & Nutzungsanalyse",
+          "Individuelle Integrationen & SLA",
+          "Unbegrenzte Verarbeitungsstunden"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "Funktion / Limit"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "Video-Download mit Wasserzeichen",
+        "videoDownloadWithoutWatermark": "Video-Download ohne Wasserzeichen",
+        "downloadSrt": "SRT-Datei herunterladen",
+        "voiceBeautification": "Stimmverschönerung & Rauschunterdrückung",
+        "lipSync": "Lippensynchronisation",
+        "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
+        "batchProcessing": "Stapelverarbeitung",
+        "maxVideoLength": "Max. Videolänge pro Aufgabe",
+        "monthlyCredits": "Monatliche kostenlose Credits",
+        "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
+        "creditTopUp": "Credit-Aufladung"
+      },
+      "values": {
+        "free": "Kostenlos",
+        "unlimited": "Unbegrenzt",
+        "oneHourPerMonth": "1 Std./Monat",
+        "fiveHoursPerMonth": "5 Std./Monat",
+        "fiveMinutes": "5 Min.",
+        "thirtyMinutes": "30 Min.",
+        "sixtyMinutes": "60 Min."
+      }
     }
-  }
-},
-"aeVsComfyUi": {
-  "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
-  "heading": "🎨 AE vs ComfyUI",
-  "intro1": "Wir werden oft gefragt: Warum nicht einfach After Effects (AE) verwenden? Oder warum ComfyUI? Beide sind wichtig — AE bietet präzise Kontrolle, ComfyUI ermöglicht generative Kreativität.",
-  "intro2": "AE bietet zeitbasierte Präzision sowie Kontrolle über Übergänge, Licht und Effekte. ComfyUI bringt AI-native Workflows, die Diffusion, Text und multimodale Orchestrierung kombinieren.",
-  "table": {
-    "colAE": "AE",
-    "colComfy": "ComfyUI",
-    "row1a": "Präzise VFX- und Bewegungssteuerung",
-    "row1b": "AI-native Videogenerierung",
-    "row2a": "Timeline-basiertes Editing",
-    "row2b": "Workflow-/Node-basiertes Rendering",
-    "row3a": "Manueller oder pluginbasierter Workflow",
-    "row3b": "Diffusion + LLM + multimodale Orchestrierung"
   },
-  "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing."
-},
-"video_translation_eval": {
-  "title": "Bewertung von KI-gestützter Videoübersetzung",
-  "subtitle": "Relevante Qualitätsmetriken",
-  "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
-  "section1_title": "1. Transkriptionsqualität",
-  "section1_engine": "Engine: WhisperX",
-  "section1_metrics": ["Wortfehlerrate (WER)", "Interpunktions-F1 (für Lesbarkeit und Ausdruck)"],
-  "section2_title": "2. Übersetzungsqualität",
-  "section2_engine": "Engines: Helsinki, MarianMT",
-  "section2_metrics": ["BLEU (Standard-Metrik)", "COMET / chrF++ (semantische Ähnlichkeit)", "Manuelle Bewertung: Lesbarkeit & Genauigkeit"],
-  "section3_title": "3. Sprachsynthesequalität",
-  "section3_engine": "Engines: XTTS / YourTTS",
-  "section3_metrics": ["MOS-Bewertung: Natürlichkeit, Ähnlichkeit, Ausdruck", "Genauigkeit der Sprechererkennung"],
-  "section4_title": "4. Timing & Lippensynchronisation",
-  "section4_metrics": ["Unterschiede in Segmentdauer", "Wav2Lip-Synchronwert", "Zeitliche Abweichung"],
-  "section5_title": "5. Semantische Erhaltung",
-  "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
-  "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
-  "section6_title": "6. Nutzerfeedback & GTM-Validierung",
-  "section6_metrics": ["Stimmqualität passend zum Produkttyp", "Erhöhte Zuschauerbindung bei lokalisierten Videos", "Nutzerbereitschaft zur Tool-Nutzung"],
-  "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
-  "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
-},
- "storyboardToPipeline": {
-  "title": "Van Storyboards naar AI-pijplijnen: Animatie Herdefiniëren",
-  "intro": {
-    "p1": "De meeste mensen denken dat video met AI betekent: 'tekst erin, clip eruit'. Maar als je een cinematografisch niveau zoekt, met regisseurscontrole, dan is dat een ander verhaal.",
-    "p2": "In traditionele animatie telt elk detail: het personageontwerp, de continuïteit van de beweging, het ritme en de overgangen tussen scènes. Ons doel is dat AI datzelfde precisieniveau bereikt.",
-    "p3": "Vandaag is animatie zowel een kunst als een uitdaging in gestructureerde orkestratie. We denken als regisseurs, maar bouwen als ingenieurs.",
-    "p4": "Daarom bouwen we 'Pijplijnen voor Gecontroleerde Generatie' in plaats van generatie in één stap. Deze pijplijnen combineren structuur en creativiteit:",
-    "pipelineItems": [
-      "Storyboard naar video: scènespecificaties in JSON met ID's, timing en camerametadata",
-      "ComfyUI-gebaseerde workflows: DAG-grafen met versiebeheer van checkpoints, LoRA-stacks en seeds",
-      "Tijdelijke en multimodale controle: gedeelde scène-ID's over beeld, beweging, audio en ondertitels"
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
+    "heading": "🎨 AE vs ComfyUI",
+    "intro1": "Wir werden oft gefragt: Warum nicht einfach After Effects (AE) verwenden? Oder warum ComfyUI? Beide sind wichtig — AE bietet präzise Kontrolle, ComfyUI ermöglicht generative Kreativität.",
+    "intro2": "AE bietet zeitbasierte Präzision sowie Kontrolle über Übergänge, Licht und Effekte. ComfyUI bringt AI-native Workflows, die Diffusion, Text und multimodale Orchestrierung kombinieren.",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "Präzise VFX- und Bewegungssteuerung",
+      "row1b": "AI-native Videogenerierung",
+      "row2a": "Timeline-basiertes Editing",
+      "row2b": "Workflow-/Node-basiertes Rendering",
+      "row3a": "Manueller oder pluginbasierter Workflow",
+      "row3b": "Diffusion + LLM + multimodale Orchestrierung"
+    },
+    "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing."
+  },
+  "video_translation_eval": {
+    "title": "Bewertung von KI-gestützter Videoübersetzung",
+    "subtitle": "Relevante Qualitätsmetriken",
+    "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
+    "section1_title": "1. Transkriptionsqualität",
+    "section1_engine": "Motor: WhisperX",
+    "section1_metrics": [
+      "Wortfehlerrate (WER)",
+      "Interpunktions-F1 (für Lesbarkeit und Ausdruck)"
     ],
-    "p5": "Laten we nu een eenvoudig voorbeeld bekijken om te laten zien hoe AI-pijplijnen in de praktijk werken.",
-    "technicalNotes": [
-      "Alle stappen lezen/schrijven getypeerde artefacten (JSON/CSV, PNG-sequenties, WAV/MP3, MP4, .aep)",
-      "De pijplijnen worden georkestreerd via Python/CLI (bijv. ComfyUI API, ffmpeg, TTS-API's)",
-      "Elke uitvoering is reproduceerbaar via opgeslagen configuraties (model, sampler, seed, prompts, duur)"
-    ]
-  },
-  "pipeline": {
-    "title": "AI-videogeneratiepijplijn",
-    "description": "De AI-videogeneratiepijplijn zet tekstprompts om in afgewerkte video’s via gestructureerde stappen, met expliciete inputs, outputs en configuraties.",
-    "prompt": "1. Prompt (ruw idee → gestructureerde JSON-specificatie)",
-    "storyboard": "2. Storyboard (tabel met scènes/shots met timing, camera en beschrijving)",
-    "images": "3. Beelden (keyframes per shot gegenereerd via Stable Diffusion/ComfyUI)",
-    "animation": "4. Animatie (beeldsequenties → beweging, parallax en effecten)",
-    "voiceOver": "5. Voice-over (TTS + sync-data)",
-    "finalVideo": "6. Definitieve video (ffmpeg-compositie: video + audio + ondertitels)",
-    "features": [
-      "Design eerst in JSON: elke scène is adresseerbaar en programmeerbaar (scene_id, shot_id)",
-      "ComfyUI-gebaseerde workflows: modulaire, reproduceerbare en composeerbare DAG’s voor beeld-/videogeneratie",
-      "Tijdelijke en multimodale controle: consistente seeds, karakter-embeddings en timing over alle modaliteiten"
+    "section2_title": "2. Übersetzungsqualität",
+    "section2_engine": "Motoren: Helsinki, MarianMT",
+    "section2_metrics": [
+      "BLEU (Standard-Metrik)",
+      "COMET / chrF++ (semantische Ähnlichkeit)",
+      "Manuelle Bewertung: Lesbarkeit & Genauigkeit"
     ],
-    "exampleIntro": "Laten we nu een eenvoudig voorbeeld bekijken om te laten zien hoe AI-pijplijnen in de praktijk werken.",
-    "artifacts": {
-      "promptSpec": "prompt_run_001.json",
-      "storyboardTable": "storyboard_v1.csv",
-      "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
-      "audioOutput": "audio/final_voice.wav",
-      "subtitleFile": "subtitles/storyboard_v1.srt",
-      "finalVideoFile": "exports/storyboard_v1_final.mp4"
-    }
-  },
-  "steps": {
-    "step1": {
-      "title": "Stap 1: Begin met een Eenvoudige Prompt",
-      "example": "Een meisje wacht op een treinstation om middernacht, de wind beweegt haar haar.",
-      "expandedPrompt": "Met behulp van GPT of een lokaal LLM breiden we dit uit naar een gestructureerd JSON-object met globale stijl, personagedefinities en scène-opsplitsing.",
-      "technicalDetails": {
-        "llmFields": [
-          "global_style: artistieke stijl, camertaal, kleurpalet",
-          "characters: naam, leeftijd, uiterlijk, kleding, emotionele toestand",
-          "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
-        ],
-        "outputFile": "prompt_run_001.json",
-        "exampleStack": "Python-script dat de OpenAI/LLM-API aanroept en JSON naar schijf schrijft"
-      }
-    },
-    "step2": {
-      "title": "Stap 2: Zet de Prompt om in een Storyboardtabel",
-      "description": "De JSON-specificatie wordt afgevlakt naar een storyboardtabel (CSV of Notion) die zowel door mensen als door de pijplijn kan worden gelezen.",
-      "technicalDetails": {
-        "columns": [
-          "scene_id", "shot_id", "start_time", "end_time", "duration_seconds",
-          "camera_type", "visual_description", "character_state", "motion_notes"
-        ],
-        "storage": "storyboard_v1.csv (wordt gebruikt als enige bron van waarheid voor de volgende stappen)",
-        "automation": "Python/Node.js-script dat prompt_run_001.json → storyboard_v1.csv transformeert"
-      }
-    },
-    "step3": {
-      "title": "Stap 3: Genereer de Beelden",
-      "points": [
-        "🎨 Gebruik <strong>Stable Diffusion</strong> of <strong>ComfyUI</strong> om elke rij in `storyboard_v1.csv` om te zetten in een high-res keyframe.",
-        "Houd de stijl consistent door dezelfde baseline checkpoint, LoRA-stack, sampler en seed-strategie in alle shots te gebruiken."
-      ],
-      "technicalDetails": {
-        "modelConfig": {
-          "checkpoint": "sd_xl_base_1.0.safetensors",
-          "vae": "sdxl_vae.safetensors",
-          "sampler": "euler_a",
-          "steps": 25,
-          "cfgScale": 6.5,
-          "resolution": "1024x576",
-          "loraStack": [
-            "character_girl_v2.safetensors",
-            "style_cinematic_blue_hour.safetensors"
-          ]
-        },
-        "consistency": {
-          "seedStrategy": "fixed_per_scene",
-          "seedExample": "seed = hash(scene_id + character_name)",
-          "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
-        }
-      }
-    },
-    "step4": {
-      "title": "Stap 4: Voeg Beweging en Sfeer toe in After Effects",
-      "points": [
-        "Importeer beeldsequenties of keyframes in <strong>Adobe After Effects</strong> als gelaagde composities.",
-        "Pas keyframe-animaties toe: pans, zooms, parallaxlagen, mist en lichtflikkeringen.",
-        "Voeg omgevingsgeluid en cinematografische overgangen tussen scènes toe."
-      ],
-      "technicalDetails": {
-        "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optionele dieptekaarten/alfa-kanalen)",
-        "projectFile": "ae/storyboard_v1.aep",
-        "automation": [
-          "Gebruik AE-scripts/ExtendScript of JSX om automatisch composities per scene_id aan te maken.",
-          "Map `duration_seconds` uit storyboard_v1.csv → compositieduur.",
-          "Genereer tussenframes via AE-plugins of video-bewuste diffusiontools indien nodig."
-        ],
-        "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
-      }
-    },
-    "step5": {
-      "title": "Stap 5: Voeg Stem en Ondertitels toe",
-      "points": [
-        "Gebruik <strong>XTTS</strong> of <strong>ElevenLabs</strong> om natuurlijke voice-overs uit het script te genereren met een consistent stemprofiel.",
-        "Genereer voor acroniemen (zoals API, NBA) aparte Engelse fragmenten en mix die daarna in voor schone uitspraak.",
-        "Voeg ondertitels toe met `.srt`- of `.json`-tijdlijnbestanden die met de voice-over zijn gesynchroniseerd."
-      ],
-      "technicalDetails": {
-        "scriptSource": "dialoog en narratie afkomstig uit prompt_run_001.json + storyboard_v1.csv",
-        "ttsConfig": {
-          "engine": "XTTS of ElevenLabs",
-          "voiceId": "cinematic_female_nl",
-          "sampleRate": 44100,
-          "format": "wav"
-        },
-        "outputs": {
-          "voiceFile": "audio/storyboard_v1_voice.wav",
-          "subtitleFile": "subtitles/storyboard_v1.srt"
-        },
-        "syncStrategy": "lijn `start_time`/`end_time` uit storyboard_v1.csv uit met de ondertitel-events; zorg dat de totale audioduur ≈ de duur van de definitieve tijdlijn"
-      }
-    },
-    "step6": {
-      "title": "Stap 6: Finale Compositie met FFMPEG",
-      "description": "Gebruik FFMPEG om alle onderdelen te combineren tot één videobestand met audio en ondertitels.",
-      "technicalDetails": {
-        "inputs": {
-          "video": "ae_renders/storyboard_v1_timeline.mp4",
-          "audio": "audio/storyboard_v1_voice.wav",
-          "subtitles": "subtitles/storyboard_v1.srt"
-        },
-        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voice.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-        "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC-audio)"
-      }
-    }
-  },
-  "whatYouNeed": "📁 Wat je Nodig Hebt",
-  "whatYouNeedTechnical": [
-    "GPU met minstens 12 GB VRAM voor Stable Diffusion / ComfyUI",
-    "Python-omgeving voor JSON/CSV-transformaties en automatiseringsscripts",
-    "ComfyUI geïnstalleerd met de nodige aangepaste nodes en workflows",
-    "Adobe After Effects of een vergelijkbare compositor voor beweging en effecten",
-    "Toegang tot de XTTS- / ElevenLabs-API voor spraaksynthese",
-    "ffmpeg geïnstalleerd en beschikbaar in de command-line"
-  ],
-  "cta": "🚀 Klaar om je storyboard tot leven te brengen met AI? <strong>We kunnen je een complete starterkit leveren</strong> met JSON-voorbeelden, ComfyUI-workflows en ffmpeg/AE-templates om je op weg te helpen.",
-  "features": {
-    "modularArchitecture": {
-      "title": "Modulaire Architectuur",
-      "description": "Het systeem is opgebouwd uit gescheiden componenten voor videoanalyse, AI-verwerking en outputgeneratie, waardoor uitbreiding en onderhoud eenvoudig zijn."
-    }
-  }
-},
-"SceneDetection": {
-  "tags": {
-    "computerVision": "Computer Vision",
-    "deepLearning": "Deep Learning",
-    "realTimeAnalysis": "Realtime Analyse"
-  },
-  "hero": {
-    "title": "Transformeer video in storyboards met AI",
-    "subtitle": "Hoe we een geavanceerde pipeline bouwden die uren aan beeldmateriaal omzet in gestructureerde, doorzoekbare storyboards binnen enkele minuten."
-  },
-  "introduction": {
-    "paragraph1": "Stel je voor dat je uren aan ruwe beelden kunt uploaden en binnen enkele minuten een <strong>gedetailleerde, scène-voor-scène uitsplitsing</strong> van je volledige video ontvangt. Dat is precies wat ons AI-aangedreven scenedetectiesysteem levert.",
-    "paragraph2": "Gebouwd met de nieuwste Python-bibliotheken en deep-learningmodellen detecteert deze pipeline niet alleen scenewisselingen—hij begrijpt de inhoud, identificeert belangrijke elementen en structureert alles tot een uitgebreid storyboard."
-  },
-  "imageAlt": "De scenedetectie-pipeline in actie, die belangrijke momenten identificeert en gestructureerde storyboards genereert",
-  "protip": "Voor optimale resultaten zorg je ervoor dat je video duidelijke visuele scheidingen tussen scènes heeft. Het systeem werkt het best met goed verlichte beelden en minimale bewegingsonscherpte. Overweeg om hoofdstukmarkeringen of scènebreuken toe te voegen in je video-editor om de detectienauwkeurigheid te verbeteren.",
-  "humanEvaluation": {
-    "title": "Menselijke evaluatie van AI-output",
-    "introduction": "Hoewel onze AI-pipeline zeer nauwkeurig is, blijft menselijke evaluatie een cruciale component van ons kwaliteitsborgingsproces. Zo waarborgen we de hoogste kwaliteit:",
-    "evaluationAreas": [
-      "<strong>Nauwkeurigheid van scènegrenzen</strong> - Controleren en aanpassen van scèneovergangen",
-      "<strong>Validatie van metadata</strong> - Verifiëren van door AI gegenereerde beschrijvingen, tags en labels",
-      "<strong>Consistentiecontrole</strong> - Zorgen voor een uniforme stijl en opmaak over alle scènes",
-      "<strong>Inhoudsnauwkeurigheid</strong> - Controleren dat de AI belangrijke elementen in elke scène correct heeft geïdentificeerd"
+    "section3_title": "3. Sprachsynthesequalität",
+    "section3_engine": "Motoren: XTTS / YourTTS",
+    "section3_metrics": [
+      "MOS-Bewertung: Natürlichkeit, Ähnlichkeit, Ausdruck",
+      "Genauigkeit der Sprechererkennung"
     ],
-    "workflow": {
-      "title": "Human-in-the-loop workflow",
-      "steps": [
-        "AI verwerkt de video en genereert een eerste storyboard",
-        "Menselijke beoordelaars evalueren de AI-output met onze gespecialiseerde tools",
-        "Beoordelaars geven feedback en brengen waar nodig aanpassingen aan",
-        "Het systeem leert van menselijke correcties om toekomstige output te verbeteren",
-        "Laatste kwaliteitscontrole voor levering"
+    "section4_title": "4. Timing & Lippensynchronisation",
+    "section4_metrics": [
+      "Unterschiede in Segmentdauer",
+      "Wav2Lip-Synchronwert",
+      "Zeitliche Abweichung"
+    ],
+    "section5_title": "5. Semantische Erhaltung",
+    "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
+    "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
+    "section6_title": "6. Nutzerfeedback & GTM-Validierung",
+    "section6_metrics": [
+      "Stimmqualität passend zum Produkttyp",
+      "Erhöhte Zuschauerbindung bei lokalisierten Videos",
+      "Nutzerbereitschaft zur Tool-Nutzung"
+    ],
+    "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
+    "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
+  },
+  "storyboardToPipeline": {
+    "title": "Von Storyboards zu KI-Pipelines - Animation neu definiert",
+    "intro": {
+      "p1": "Die meisten Menschen denken, KI-Video bedeute „Text rein, Clip raus“. Wenn Sie jedoch <strong>filmische Kontrolle auf Regie-Niveau</strong> anstreben, ist das ein völlig anderes Spiel.",
+      "p2": "In der traditionellen Animation zählt jedes Detail: Charakterdesign, Bewegungskontinuität, Timing und Szenenübergänge. Unser Ziel ist es, KI auf dieses Präzisionsniveau zu bringen.",
+      "p3": "Vandaag is animatie zowel een kunst als een uitdaging in gestructureerde orkestratie. We denken als regisseurs, maar bouwen als ingenieurs.",
+      "p4": "Deshalb bauen wir <strong>Pipelines für kontrollierte Generierung</strong> statt One-Shot-Generierung. Diese Pipelines verbinden Struktur und Kreativität:",
+      "pipelineItems": [
+        "Storyboard naar video: scènespecificaties in JSON met ID's, timing en camerametadata",
+        "ComfyUI-gebaseerde workflows: DAG-grafen met versiebeheer van checkpoints, LoRA-stacks en seeds",
+        "Zeitliche und multimodale Kontrolle: gemeinsame Szenen-IDs für Bild, Bewegung, Audio und Untertitel"
+      ],
+      "p5": "Schauen wir uns nun ein einfaches Beispiel an, um zu zeigen, wie KI-Pipelines in der Praxis funktionieren.",
+      "technicalNotes": [
+        "Alle stappen lezen/schrijven getypeerde artefacten (JSON/CSV, PNG-sequenties, WAV/MP3, MP4, .aep)",
+        "De pijplijnen worden georkestreerd via Python/CLI (bijv. ComfyUI API, ffmpeg, TTS-API's)",
+        "Elke uitvoering is reproduceerbaar via opgeslagen configuraties (model, sampler, seed, prompts, duur)"
       ]
     },
-    "benefits": {
-      "title": "Voordelen van menselijke evaluatie",
-      "items": [
-        "<strong>Hogere nauwkeurigheid</strong> - Menselijke beoordelaars zien subtiele nuances die AI mogelijk mist",
-        "<strong>Contextueel begrip</strong> - Betere interpretatie van culturele en situationele context",
-        "<strong>Kwaliteitsborging</strong> - Extra validatielaag voor professionele use-cases",
-        "<strong>Continue verbetering</strong> - Menselijke feedback helpt AI-modellen te trainen en te verfijnen"
-      ]
-    },
-    "tools": {
-      "title": "Evaluatietools",
-      "description": "Ons platform bevat gespecialiseerde tools om menselijke beoordelaars te ondersteunen:",
+    "pipeline": {
+      "title": "AI-videogeneratiepijplijn",
+      "description": "Die KI-Videogenerierungs-Pipeline verwandelt Text-Prompts in fertig ausgearbeitete Videos über strukturierte Stufen mit klaren Inputs, Outputs und Konfigurationen.",
+      "prompt": "1. Prompt (ruw idee → gestructureerde JSON-specificatie)",
+      "storyboard": "2. Storyboard (tabel met scènes/shots met timing, camera en beschrijving)",
+      "images": "3. Bilder (Keyframes pro Aufnahme, generiert über Stable Diffusion/ComfyUI)",
+      "animation": "4. Animatie (beeldsequenties → beweging, parallax en effecten)",
+      "voiceOver": "5. Voice-over (TTS + Synchronisierungsdaten)",
+      "finalVideo": "6. Endgültiges Video (ffmpeg Komposition: Video + Audio + Untertitel)",
       "features": [
-        "Zij-aan-zij vergelijking van video en storyboard",
-        "Gebruiksvriendelijke interface voor het aanpassen van scènegrenzen",
-        "Bulkbewerking van metadata en tags",
-        "Samenwerkingsfuncties voor teamevaluaties",
-        "Versiegeschiedenis en wijzigingsregistratie"
-      ]
-    }
-  },
-  "header": {
-    "title": "Van ruwe beelden tot storyboards",
-    "author": "Curify AI Team",
-    "role": "AI-onderzoeksteam",
-    "imageAlt": "AI analyseert videobeelden en genereert storyboards",
-    "imageCaption": "AI-aangedreven scenedetectie in actie, die belangrijke momenten in video-inhoud identificeert",
-    "subtitle": "AI-aangedreven videoanalyse",
-    "date": "11 december 2025",
-    "readingTime": "8 min leestijd"
-  },
-  "Technical": {
-    "title": "TECHNISCHE VERDIEPING",
-    "steps": {
-      "step1": "Hoe het werkt: onder de motorkap",
-      "videoProcessingPipeline": "Ons systeem verwerkt video’s via een geavanceerde meerfasige pipeline die zorgt voor nauwkeurige scenedetectie en analyse:",
-      "step2": "Videoprocessing-pipeline",
-      "step2Text": "Ons systeem verwerkt video’s via een geavanceerde meerfasige pipeline die zorgt voor nauwkeurige scenedetectie en analyse:",
-      "step3": "Scenedetectie en metadata-extractie",
-      "step3Text": "Met OpenCV aangestuurde frame-sampling op optimale intervallen",
-      "step4": "Shotanalyse en metadata-verrijking",
-      "step4Text": "Adaptieve drempelwaarden voor precieze scènegrensdetectie",
-      "step5": "Scène-labeling en metadata-organisatie",
-      "step5Text": "Deep-learningmodellen voor uitgebreid begrip van scènes",
-      "step6": "Metadata-export en integratie",
-      "step6Text": "Exporteer metadata naar JSON-formaat voor integratie met andere tools"
-    }
-  },
-  "featuresTitle": "Krachtige functies binnen handbereik",
-  "features1": "Naadloze video-integratie",
-  "features1Text": "Verwerk lokale bestanden, YouTube-links of cloudopslag met onze uniforme interface.",
-  "features": "Krachtige functies binnen handbereik",
-  "features2": "Naadloze video-integratie",
-  "features2Text": "Verwerk lokale bestanden, YouTube-links of cloudopslag met onze uniforme interface.",
-  "features3": "AI-aangedreven analyse",
-  "features3Text": "Verbeter scènebegrip met onze optionele AI-analysemodule.",
-  "features4": "Camerabewegingdetectie",
-  "features4Text": "Identificeer automatisch pans, zooms en andere camerabewegingen.",
-  "features5": "Aanpasbare output",
-  "features5Text": "Exporteer metadata naar JSON-formaat voor integratie met andere tools.",
-  "intro": {
-    "p1": "In het huidige, snelle contentcreatielandschap is <strong>efficiënte videoanalyse</strong> geen luxe meer—het is een noodzaak. Onze AI-aangedreven scenedetectietechnologie transformeert uren aan ruwe beelden in gestructureerde, doorzoekbare content in minuten, niet dagen.",
-    "p2": "Of je nu filmmaker, content creator of mediaprofessional bent, inzicht in de kracht van geautomatiseerde scenedetectie kan je workflow revolutioneren en nieuwe creatieve mogelijkheden ontsluiten."
-  },
-  "proTip": "Voor de beste resultaten zorg je dat je bronvideo duidelijke audio- en visuele scheidingen tussen scènes heeft. Goed verlichte omgevingen en minimale achtergrondruis verbeteren de detectienauwkeurigheid aanzienlijk.",
-  "titanicExample": {
-    "title": "Praktijkvoorbeeld: Titanic-scèneanalyse",
-    "description": "Bekijk hoe ons systeem een scène uit Titanic analyseert, shotwisselingen detecteert en gedetailleerde scenemetadata genereert:",
-    "analysis": "Analyse:",
-    "analysisText": "Scenedetectie en metadata-extractie in realtime"
-  },
-  "inceptionExample": {
-    "title": "Droomniveau-analyse: Inception-scènebreakdown",
-    "description": "Ontdek hoe onze AI de complexe droomlagen en visuele effecten in Inception analyseert:",
-    "analysis": "Analyse",
-    "analysisText": "Droomlaag-detectie en uitsplitsing van visuele effecten",
-    "breakdownTitle": "Scèneanalyse-breakdown",
-    "showFullAnalysis": "Toon volledige scèneanalyse",
-    "hideFullAnalysis": "Verberg volledige scèneanalyse",
-    "fullSceneAnalysis": "Volledige scèneanalyse",
-    "sceneCard": {
-      "mood": "Sfeer",
-      "environment": "Omgeving",
-      "shotNotes": "Shotnotities"
-    }
-  },
-  "Scene": "Scène",
-  "process": {
-    "title": "Hoe onze scenedetectie werkt",
+        "Design eerst in JSON: elke scène is adresseerbaar en programmeerbaar (scene_id, shot_id)",
+        "ComfyUI-gebaseerde workflows: modulaire, reproduceerbare en composeerbare DAG’s voor beeld-/videogeneratie",
+        "Tijdelijke en multimodale controle: consistente seeds, karakter-embeddings en timing over alle modaliteiten"
+      ],
+      "exampleIntro": "Schauen wir uns nun ein einfaches Beispiel an, um zu zeigen, wie KI-Pipelines in der Praxis funktionieren.",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
     "steps": {
       "step1": {
-        "title": "1. Videoanalyse",
-        "description": "Onze AI scant je video frame voor frame en analyseert visuele en audio-indicatoren om potentiële scènegrenzen te identificeren.",
-        "details": [
-          "Analyseert kleurhistogrammen en bewegingsvectoren",
-          "Detecteert veranderingen in audiovolume en stiltes",
-          "Identificeert shotgrenzen en overgangen"
-        ]
+        "title": "Stap 1: Begin met een Eenvoudige Prompt",
+        "example": "Een meisje wacht op een treinstation om middernacht, de wind beweegt haar haar.",
+        "expandedPrompt": "Mit Hilfe von GPT oder eines lokalen LLM erweitern wir dies zu einem strukturierten JSON-Objekt mit globalem Stil, Charakterdefinitionen und einer Aufschlüsselung pro Szene.",
+        "technicalDetails": {
+          "llmFields": [
+            "global_style: artistieke stijl, camertaal, kleurpalet",
+            "characters: naam, leeftijd, uiterlijk, kleding, emotionele toestand",
+            "Szenen: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "Python-script dat de OpenAI/LLM-API aanroept en JSON naar schijf schrijft"
+        }
       },
       "step2": {
-        "title": "2. Scènesegmentatie",
-        "description": "Het systeem groepeert gerelateerde shots in coherente scènes op basis van visuele en temporele relaties.",
-        "details": [
-          "Gebruikt machine learning om de context van scènes te begrijpen",
-          "Houdt rekening met shotduur en overgangstypen",
-          "Voegt gerelateerde shots samen tot logische scènes"
-        ]
+        "title": "Schritt 2: Konvertieren Sie die Eingabeaufforderung in eine Storyboard-Tabelle",
+        "description": "Die JSON-Spezifikation wird zu einer Storyboard-Tabelle (CSV oder Notion zusammengefasst, die sowohl von Menschen als auch von der Pipeline gelesen werden kann.",
+        "technicalDetails": {
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "motion_notes"
+          ],
+          "storage": "storyboard_v1.csv (wird als einzige Quelle der Wahrheit für die folgenden Schritte verwendet)",
+          "automation": "Python/Node.js-script dat prompt_run_001.json → storyboard_v1.csv transformeert"
+        }
       },
       "step3": {
-        "title": "3. Inhoudsclassificatie",
-        "description": "Elke gedetecteerde scène wordt geanalyseerd en gecategoriseerd op basis van de visuele en audio-inhoud.",
-        "details": [
-          "Identificeert belangrijke visuele elementen en objecten",
-          "Classificeert het type scène (bijv. interview, actie, landschap)",
-          "Analyseert audio op spraak, muziek en effecten"
-        ]
+        "title": "Schritt 3: Generieren Sie die Bilder",
+        "description": "Generieren Sie hochwertige Keyframe-Bilder für jede Aufnahme mit Stable Diffusion über einen ComfyUI-Workflow.",
+        "points": [
+          "🎨 Verwenden Sie <strong>Stable Diffusion</strong> oder <strong>ComfyUI</strong>, um jede Zeile in `storyboard_v1.csv` in einen hochauflösenden Keyframe umzuwandeln.",
+          "Halten Sie den Stil konsistent, indem Sie bei allen Schlägen denselben Grundlinien-Checkpoint, denselben LoRA-Stack, denselben Sampler und dieselbe Seed-Strategie verwenden.",
+          "Verfeinern Sie Bilder mit Inpainting (für Gesichter/Hände) und Outpainting (für erweiterte Kompositionen und Kamerabewegungen)."
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "consistency": {
+            "seedStrategy": "fixed_per_scene",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "Benutzerdefinierter Knoten / HTTP API liest storyboard_v1.csv und modelConfig",
+            "batching": "GPU-Batches, die durch scene_id verschlüsselt wurden, um geladene Gewichte wiederzuverwenden"
+          }
+        }
       },
       "step4": {
-        "title": "4. Metadatageneratie",
-        "description": "Uitgebreide metadata wordt gegenereerd voor elke scène, waardoor krachtige zoek- en organisatiefuncties mogelijk worden.",
-        "details": [
-          "Maakt tijdstempels en duurinformatie aan",
-          "Genereert representatieve thumbnails",
-          "Extraheert belangrijke dialogen en audiocues"
-        ]
+        "title": "Schritt 4: Fügen Sie Bewegung und Atmosphäre in After Effects hinzu",
+        "description": "Verbessern Sie statische Keyframes mit Bewegung, Parallaxe und Atmosphäre mit Adobe After Effects (oder einem gleichwertigen Compositor).",
+        "points": [
+          "Importeer beeldsequenties of keyframes in <strong>Adobe After Effects</strong> als gelaagde composities.",
+          "Pas keyframe-animaties toe: pans, zooms, parallaxlagen, mist en lichtflikkeringen.",
+          "Fügen Sie Umgebungsgeräusche und filmische Übergänge zwischen Szenen hinzu."
+        ],
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optionele dieptekaarten/alfa-kanalen)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "Verwenden Sie AE-scripts/ExtendScript oder JSX, um automatisch Kompositionen gemäß scene_id zu erstellen.",
+            "Map `duration_seconds` uit storyboard_v1.csv → compositieduur.",
+            "Genereer tussenframes via AE-plugins of video-bewuste diffusiontools indien nodig."
+          ],
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "Schritt 5: Stimme und Untertitel hinzufügen",
+        "description": "Generieren Sie Voiceover, die auf das Storyboard abgestimmt sind, und fügen Sie Untertitel hinzu, um die Zugänglichkeit und Klarheit zu gewährleisten.",
+        "points": [
+          "Verwenden Sie <strong>XTTS</strong> oder <strong>ElevenLabs</strong>, um natürliche Voiceovers aus dem Drehbuch mit einem konsistenten Stimmprofil zu generieren.",
+          "Genereer voor acroniemen (zoals API, NBA) aparte Engelse fragmenten en mix die daarna in voor schone uitspraak.",
+          "Fügen Sie Untertitel mit `.srt` oder `.json`-tijdlijnbestanden hinzu, synchronisiert mit dem Voiceover."
+        ],
+        "technicalDetails": {
+          "scriptSource": "dialoog en narratie afkomstig uit prompt_run_001.json + storyboard_v1.csv",
+          "ttsConfig": {
+            "engine": "XTTS of ElevenLabs",
+            "voiceId": "cinematic_female_nl",
+            "sampleRate": 44100,
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voice.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "Richten Sie `start_time`/`end_time` von storyboard_v1.csv an den Untertitelereignissen aus. Stellen Sie sicher, dass die gesamte Audiodauer ≈ der Dauer der endgültigen Zeitleiste entspricht"
+        }
+      },
+      "step6": {
+        "title": "Schritt 6: Endgültige Komposition mit FFMPEG",
+        "description": "Verwenden Sie FFMPEG, um alle Teile in einer Videodatei mit Audio und Untertiteln zusammenzufassen.",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voice.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC-audio)"
+        }
       }
-    }
-  },
-  "whyItWorks": {
-    "title": "Waarom onze scenedetectie zo goed werkt",
-    "points": "<li>Onze AI analyseert zowel <strong>visuele als audio-indicatoren</strong> om scènegrenzen te identificeren met een nauwkeurigheid van meer dan 95%.</li><li>Geavanceerde <strong>machine-learningmodellen</strong> begrijpen context, niet alleen visuele veranderingen, voor natuurlijkere scenedetectie.</li><li>Realtime verwerking maakt <strong>directe feedback</strong> en aanpassingen tijdens het filmen of monteren mogelijk.</li>"
-  },
-  "recommendedStyle": {
-    "title": "Aanbevolen stijl voor de beste resultaten",
-    "description": "Om de meest nauwkeurige scenedetectie te krijgen, raden we de volgende stijlguidelines aan:",
-    "points": [
-      "Behoud consistente belichting binnen elke scène",
-      "Gebruik duidelijke audiomarkers of klapborden tussen takes",
-      "Houd camerabewegingen soepel en bewust",
-      "Behoud consistente audioniveaus binnen scènes"
-    ]
-  },
-  "title": "Van ruwe beelden tot storyboards: AI-aangedreven videoanalyse",
-  "description": "Ontdek hoe AI ruwe video transformeert in gestructureerde storyboards met geautomatiseerde scenedetectie en analyse.",
-  "timeline": {
-    "title": "Scènetijdlijn",
-    "viewScene": "Bekijk scène {1}"
-  },
-  "cta": "🚀 Klaar om je storyboard met AI tot leven te brengen? <strong>We kunnen een complete starterkit leveren</strong> met voorbeeld-JSON’s, ComfyUI-workflows en ffmpeg/AE-templates om je op weg te helpen.",
-  "sceneBreakdown": {
-    "title": "Scenedetectie-output begrijpen",
-    "introduction": "Laten we een typische scenedetectie-output uitsplitsen om te begrijpen hoe onze AI video-inhoud analyseert en structureert. Onder elke uitleg vind je de bijbehorende JSON-structuur die deze inzichten aanstuurt.",
-    "scenes": [
-      {
-        "title": "1. Scène-identificatie",
-        "content": "Elke scène krijgt een unieke identifier en tijdsbereik, waardoor nauwkeurige navigatie door de video-inhoud mogelijk wordt. Dit vormt de basis van onze analyse.",
-        "example": "Scène 1 (00:00:02.50 - 00:00:05.20)",
-        "jsonExample": {
-          "scene_id": "scene_001",
-          "start_time": 2.5,
-          "end_time": 5.2,
-          "duration": 2.7,
-          "keyframe_index": 5,
-          "keyframe_time": 3.8
-        },
-        "jsonDescription": "Deze JSON-structuur toont de basisidentificatiedata voor een scène, inclusief de unieke ID, timinginformatie en de index/tijd van het representatieve keyframe."
-      },
-      {
-        "title": "2. Visuele analyse",
-        "content": "Onze AI onderzoekt keyframes om de visuele compositie van elke scène te begrijpen, inclusief dominante kleuren, lichtomstandigheden en visuele elementen.",
-        "example": "Keyframe-analyse: Buiten, daglicht, meerdere personen",
-        "jsonExample": {
-          "visual_analysis": {
-            "brightness": 0.78,
-            "contrast": 0.65,
-            "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
-            "dominant_colors": [
-              {"color": "#3A5FCD", "percentage": 0.45},
-              {"color": "#87CEEB", "percentage": 0.35},
-              {"color": "#F5F5DC", "percentage": 0.20}
-            ],
-            "lighting_condition": "daglicht",
-            "environment": "buiten",
-            "detected_objects": [
-              {"label": "persoon", "confidence": 0.97, "count": 2},
-              {"label": "lucht", "confidence": 0.99, "count": 1}
-            ]
-          }
-        },
-        "jsonDescription": "Deze JSON toont de data van de visuele analyse, inclusief kleurinformatie, lichtomstandigheden en gedetecteerde objecten met betrouwbaarheidscores."
-      },
-      {
-        "title": "3. Shotcompositie",
-        "content": "Binnen elke scène identificeren we individuele shots en hun overgangen, wat helpt om de visuele flow en het tempo van de content te begrijpen.",
-        "example": "3 shots gedetecteerd met vloeiende cuts en één crossfade",
-        "jsonExample": {
-          "shots": [
-            {
-              "shot_id": "shot_001",
-              "start_time": 2.5,
-              "end_time": 3.1,
-              "transition": {
-                "type": "cut",
-                "confidence": 0.98
-              },
-              "camera_motion": {
-                "type": "statisch",
-                "confidence": 0.92
-              }
-            },
-            {
-              "shot_id": "shot_002",
-              "start_time": 3.1,
-              "end_time": 4.3,
-              "transition": {
-                "type": "fade",
-                "duration": 0.3,
-                "confidence": 0.95
-              },
-              "camera_motion": {
-                "type": "pan_naar_links",
-                "confidence": 0.88
-              }
-            }
-          ]
-        },
-        "jsonDescription": "Deze JSON-structuur beschrijft de shotcompositie binnen een scène, inclusief timing, overgangstypen en analyse van camerabewegingen."
-      },
-      {
-        "title": "4. Inhoudsclassificatie",
-        "content": "Scènes worden automatisch gecategoriseerd op basis van hun inhoud, waardoor je later eenvoudig specifieke soorten beeldmateriaal kunt terugvinden.",
-        "example": "Categorie: Drama, Setting: Scheepsdek, Personages: Hoofdpersonages",
-        "jsonExample": {
-          "content_analysis": {
-            "primary_category": "drama",
-            "secondary_categories": ["romantiek", "ramp"],
-            "setting": {
-              "type": "scheepsdek",
-              "time_of_day": "nacht",
-              "confidence": 0.92
-            },
-            "subjects": [
-              {
-                "type": "hoofdpersoon",
-                "name": "Jack",
-                "position": "midden_kader",
-                "emotion": "vastberaden",
-                "confidence": 0.89
-              },
-              {
-                "type": "hoofdpersoon",
-                "name": "Rose",
-                "position": "midden_kader",
-                "emotion": "angstig",
-                "confidence": 0.91
-              }
-            ],
-            "sentiment": {
-              "overall": "intens_dramatisch",
-              "confidence": 0.88,
-              "emotions": ["angst", "vastberadenheid", "urgentie"]
-            },
-            "key_elements": ["reddingsboot", "oceaan", "maanlicht"],
-            "narrative_importance": 0.95,
-            "action_required": true
-          }
-        },
-        "jsonDescription": "Deze JSON laat zien hoe de AI filmscènes analyseert en classificeert, inclusief emoties van personages, settingdetails en narratieve belangrijkheid, met de dramatische reddingsbootscène uit Titanic als voorbeeld."
-      }
+    },
+    "whatYouNeed": "📁 Das brauchst du",
+    "whatYouNeedTechnical": [
+      "GPU met minstens 12 GB VRAM voor Stable Diffusion / ComfyUI",
+      "Python-omgeving voor JSON/CSV-transformaties en automatiseringsscripts",
+      "ComfyUI geïnstalleerd met de nodige aangepaste nodes en workflows",
+      "Adobe After Effects of een vergelijkbare compositor voor beweging en effecten",
+      "Toegang tot de XTTS- / ElevenLabs-API voor spraaksynthese",
+      "ffmpeg geïnstalleerd en beschikbaar in de command-line"
     ],
-    "analysisTitle": "Alles samenbrengen",
-    "analysisContent": "Door deze elementen te combineren creëert ons systeem een uitgebreide kaart van je video-inhoud. Deze gestructureerde data vormt de basis voor functies zoals intelligente zoekopdrachten, geautomatiseerde montage en contentanalyse.",
-    "fullExampleTitle": "Compleet voorbeeld van scènedata",
-    "fullExampleDescription": "Zo komen alle onderdelen samen in een complete scèneanalyse:",
-    "fullExample": {
-      "scene_id": "scene_001",
-      "start_time": 2.5,
-      "end_time": 5.2,
-      "duration": 2.7,
-      "metadata": {
-        "created_at": "2025-12-11T14:25:30Z",
-        "video_source": "interview_001.mp4",
-        "resolution": "1920x1080",
-        "fps": 30
-      },
-      "visual_analysis": {
-        "brightness": 0.78,
-        "contrast": 0.65,
-        "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
-        "lighting_condition": "daglicht",
-        "environment": "studio"
-      },
-      "audio_analysis": {
-        "has_speech": true,
-        "speech_confidence": 0.92,
-        "background_noise_level": 0.15,
-        "speaker_gender": ["man", "vrouw"],
-        "speech_text": "Laten we bespreken hoe AI videoproductie transformeert..."
-      },
-      "content_analysis": {
-        "primary_category": "interview",
-        "setting": "studio",
-        "subjects": ["host", "gast"],
-        "sentiment": "neutraal_positief"
-      },
-      "shots": [
-        {
-          "shot_id": "shot_001",
-          "start_time": 2.5,
-          "end_time": 3.1,
-          "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
-          "transition": {"type": "cut", "confidence": 0.98}
-        },
-        {
-          "shot_id": "shot_002",
-          "start_time": 3.1,
-          "end_time": 5.2,
-          "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
-          "transition": {"type": "fade", "confidence": 0.95}
-        }
-      ]
-    },
-    "benefitsTitle": "Belangrijkste voordelen",
-    "benefits": [
-      "<strong>Efficiënte montage:</strong> Spring direct naar elke scène of shot zonder urenlang te hoeven scrollen",
-      "<strong>Slim zoeken:</strong> Vind content op basis van visuele elementen, niet alleen op metadata",
-      "<strong>Consistente kwaliteit:</strong> Identificeer en behoud visuele consistentie in je project",
-      "<strong>Data-gedreven beslissingen:</strong> Krijg inzicht in structuur en tempo van je content"
-    ]
+    "cta": "🚀 Bereit, dein Storyboard mit KI zum Leben zu erwecken? <strong>Wir können dir ein komplettes Starter-Kit bereitstellen</strong> mit Beispiel-JSONs, ComfyUI-Workflows und ffmpeg/AE-Templates für den schnellen Start."
   },
-  "conclusion": {
-    "title": "Videoproductie transformeren met AI",
-    "p1": "AI-aangedreven scenedetectie verandert de manier waarop we videoproductie benaderen. Door het tijdrovende proces van scène-identificatie en -organisatie te automatiseren, kunnen makers zich richten op wat echt telt – het vertellen van overtuigende verhalen. Onze technologie overbrugt de kloof tussen ruwe beelden en afgewerkte content, en maakt professionele videoanalyse voor iedereen toegankelijk.",
-    "p2": "Terwijl we onze algoritmen blijven verfijnen en onze mogelijkheden uitbreiden, zijn we benieuwd hoe filmmakers, docenten en content creators deze tools zullen inzetten om de grenzen van visuele storytelling te verleggen. De toekomst van videoproductie is hier, en die is efficiënter en creatiever dan ooit."
-  },
-  "richStructuredOutput": "Rijke, gestructureerde output",
-  "richStructuredOutputText": "Ons systeem genereert uitgebreide storyboarddata met gedetailleerde metadata voor elke scène, zodat je volledige controle hebt over je video-inhoud.",
-  "advancedUsage": {
-    "title": "Geavanceerd gebruik & maatwerk",
-    "description": "Het scenedetectiesysteem is sterk aanpasbaar voor verschillende use-cases. Enkele geavanceerde functies en maatwerkopties:",
-    "features": {
-      "thresholds": {
-        "title": "Aangepaste scenedetectiedrempels",
-        "description": "Pas de gevoeligheid van scenedetectie aan door de drempelparameter te wijzigen. Lagere waarden maken de detectie gevoeliger voor veranderingen."
-      },
-      "aiAnalysis": {
-        "title": "AI-verrijkte analyse",
-        "description": "Schakel AI-analyse in voor gedetailleerder scènebegrip en labeling. Dit vereist extra configuratie met de Ollama-server."
-      },
-      "outputCustomization": {
-        "title": "Outputmaatwerk",
-        "description": "Pas het outputformaat aan en voeg extra metadata toe in het gegenereerde storyboard."
-      }
-    },
-    "integration": {
-      "title": "Integratie met andere tools",
-      "description": "De storyboardoutput kan eenvoudig worden geïntegreerd met andere tools en workflows. Enkele voorbeelden:",
-      "tools": {
-        "editingSoftware": {
-          "title": "Videobewerkingssoftware",
-          "description": "Importeer de JSON-output in video-editors die scriptgestuurde montage ondersteunen"
-        },
-        "cms": {
-          "title": "Contentmanagementsystemen",
-          "description": "Genereer automatisch metadata voor video-assets"
-        },
-        "aiTraining": {
-          "title": "AI-trainingsdata",
-          "description": "Gebruik de gestructureerde output als trainingsdata voor machine-learningmodellen"
-        }
-      }
-    }
-  },
-  "features": {
-    "modularArchitecture": {
-      "title": "Moduleerbare architectuur",
-      "description": "Het systeem is opgebouwd uit gescheiden componenten voor videoanalyse, AI-verwerking en outputgeneratie, waardoor het eenvoudig uit te breiden en te onderhouden is."
-    },
-    "performance": {
-      "title": "Geoptimaliseerde prestaties",
-      "description": "Efficiënte frameverwerking en parallelisatie zorgen voor snelle analyse, zelfs bij lange video’s."
-    },
-    "aiEnhanced": {
-      "title": "AI-verrijkte analyse",
-      "description": "Optionele AI-componenten bieden dieper scènebegrip en nauwkeurigere labeling."
-    }
-  },
-  "Benefitss": {
-    "title": "Voordelen",
-    "description": "De voordelen van ons AI-aangedreven scenedetectiesysteem zijn onder andere:",
+  "SceneDetection": {
     "tags": {
-      "computerVision": "Computer Vision",
-      "deepLearning": "Deep Learning",
+      "computerVision": "Computervision",
+      "deepLearning": "Tiefes Lernen",
       "realTimeAnalysis": "Realtime Analyse"
     },
+    "hero": {
+      "title": "Transformeer video in storyboards met AI",
+      "subtitle": "Wie wir eine fortschrittliche Pipeline aufgebaut haben, die stundenlanges Filmmaterial in wenigen Minuten in strukturierte, durchsuchbare Storyboards umwandelt."
+    },
+    "introduction": {
+      "paragraph1": "Stellen Sie sich vor, Sie laden stundenlang Rohmaterial hoch und erhalten innerhalb von Minuten eine <strong>detaillierte Szene-für-Szene-Aufschlüsselung</strong> Ihres gesamten Videos. Genau das bietet unser KI-gestütztes Szenenerkennungssystem.",
+      "paragraph2": "Diese Pipeline wurde mit modernsten Python-Bibliotheken und Deep-Learning-Modellen entwickelt und erkennt nicht nur Szenenwechsel – sie versteht den Inhalt, identifiziert Schlüsselelemente und strukturiert alles zu einem umfassenden Storyboard."
+    },
+    "imageAlt": "De scenedetectie-pipeline in actie, die belangrijke momenten identificeert en gestructureerde storyboards genereert",
+    "protip": "Um optimale Ergebnisse zu erzielen, stellen Sie sicher, dass Ihr Video klare visuelle Trennungen zwischen den Szenen aufweist. Das System funktioniert am besten mit gut beleuchteten Bildern und minimaler Bewegungsunschärfe. Erwägen Sie das Hinzufügen von Kapitelmarkierungen oder Szenenunterbrechungen in Ihrem Videoeditor, um die Erkennungsgenauigkeit zu verbessern.",
+    "humanEvaluation": {
+      "title": "Menschliche Bewertung der KI-Ausgabe",
+      "introduction": "Obwohl unsere KI-Pipeline sehr genau ist, bleibt die menschliche Bewertung ein entscheidender Bestandteil unseres Qualitätssicherungsprozesses. So garantieren wir höchste Qualität:",
+      "evaluationAreas": [
+        "<strong>Szenengrenzengenauigkeit</strong> – Szenenübergänge überprüfen und anpassen",
+        "<strong>Validatie van metadata</strong> - Verifiëren van door AI gegenereerde beschrijvingen, tags en labels",
+        "<strong>Consistentiecontrole</strong> - Zorgen voor een uniforme stijl en opmaak over alle scènes",
+        "<strong>Inhoudsnauwkeurigheid</strong> - Controleren dat de AI belangrijke elementen in elke scène correct heeft geïdentificeerd"
+      ],
+      "workflow": {
+        "title": "Human-in-the-loop workflow",
+        "steps": [
+          "AI verwerkt de video en genereert een eerste storyboard",
+          "Menschliche Bewerter bewerten die KI-Ausgabe mit unseren speziellen Tools",
+          "Prüfer geben Feedback und nehmen bei Bedarf Anpassungen vor",
+          "Das System lernt aus menschlichen Korrekturen, um zukünftige Ergebnisse zu verbessern",
+          "Laatste kwaliteitscontrole voor levering"
+        ]
+      },
+      "benefits": {
+        "title": "Vorteile der menschlichen Bewertung",
+        "items": [
+          "<strong>Höhere Genauigkeit</strong> – Menschliche Bewerter erkennen subtile Nuancen, die der KI möglicherweise entgehen",
+          "<strong>Contextueel begrip</strong> - Betere interpretatie van culturele en situationele context",
+          "<strong>Kwaliteitsborging</strong> - Extra validatielaag voor professionele use-cases",
+          "<strong>Kontinuierliche Verbesserung</strong> – Menschliches Feedback hilft beim Trainieren und Verfeinern von KI-Modellen"
+        ]
+      },
+      "tools": {
+        "title": "Evaluatietools",
+        "description": "Unsere Plattform umfasst spezielle Tools zur Unterstützung menschlicher Prüfer:",
+        "features": [
+          "Zij-aan-zij vergelijking van video en storyboard",
+          "Gebruiksvriendelijke interface voor het aanpassen van scènegrenzen",
+          "Bulkbewerking van metadata en tags",
+          "Kollaborationsfunktionen für Teambewertungen",
+          "Versiegeschiedenis en wijzigingsregistratie"
+        ]
+      }
+    },
+    "header": {
+      "title": "Von Rohbildern bis hin zu Storyboards",
+      "author": "Curify AI-Team",
+      "role": "AI-onderzoeksteam",
+      "imageAlt": "AI analyseert videobeelden en genereert storyboards",
+      "imageCaption": "KI-gestützte Szenenerkennung in Aktion, die Schlüsselmomente in Videoinhalten identifiziert",
+      "subtitle": "KI-gestützte Videoanalyse",
+      "date": "11 december 2025",
+      "readingTime": "8 min leestijd"
+    },
+    "Technical": {
+      "title": "TECHNISCHE VERDIEPING",
+      "steps": {
+        "step1": "So funktioniert es: Unter der Haube",
+        "videoProcessingPipeline": "Unser System verarbeitet Videos über eine anspruchsvolle mehrstufige Pipeline, die eine präzise Szenenerkennung und -analyse gewährleistet:",
+        "step2": "Videoprocessing-pipeline",
+        "step2Text": "Unser System verarbeitet Videos über eine anspruchsvolle mehrstufige Pipeline, die eine präzise Szenenerkennung und -analyse gewährleistet:",
+        "step3": "Scenedetectie en metadata-extractie",
+        "step3Text": "Met OpenCV aangestuurde frame-sampling op optimale intervallen",
+        "step4": "Shotanalyse en metadata-verrijking",
+        "step4Text": "Adaptieve drempelwaarden voor precieze scènegrensdetectie",
+        "step5": "Scène-labeling en metadata-organisatie",
+        "step5Text": "Deep-learningmodellen voor uitgebreid begrip van scènes",
+        "step6": "Metadata-export en integratie",
+        "step6Text": "Exporteer metadata naar JSON-formaat voor integratie met andere tools"
+      }
+    },
+    "featuresTitle": "Krachtige functies binnen handbereik",
+    "features1": "Naadloze video-integratie",
+    "features1Text": "Verwerk lokale bestanden, YouTube-links of cloudopslag met onze uniforme interface.",
     "features": {
       "modularArchitecture": {
         "title": "Moduleerbare architectuur",
-        "description": "Het systeem is opgebouwd uit gescheiden componenten voor videoanalyse, AI-verwerking en outputgeneratie, waardoor het eenvoudig uit te breiden en te onderhouden is."
+        "description": "Das System besteht aus getrennten Komponenten für Videoanalyse, KI-Verarbeitung und Ausgabeerzeugung, wodurch es sich leicht erweitern und warten lässt."
       },
       "performance": {
         "title": "Geoptimaliseerde prestaties",
-        "description": "Efficiënte frameverwerking en parallelisatie zorgen voor snelle analyse, zelfs bij lange video’s."
+        "description": "Effiziente Frame-Verarbeitung und Parallelisierung sorgen auch bei langen Videos für eine schnelle Analyse."
       },
       "aiEnhanced": {
         "title": "AI-verrijkte analyse",
         "description": "Optionele AI-componenten bieden dieper scènebegrip en nauwkeurigere labeling."
       }
-    }
-  },
-  "benefits": {
-    "subtitle": "WAAROM ONZE OPLOSSING",
-    "title": "De kracht van AI-aangedreven scèneanalyse"
-  },
-  "integration": {
-    "title": "Eenvoudige integratie",
-    "description": "De gestructureerde JSON-output maakt het eenvoudig om met andere tools en workflows te integreren:",
-    "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
-  },
-  "features10": {
-    "comprehensiveData": {
-      "title": "Uitgebreide scènedata",
-      "items": [
-        "Precieze timinginformatie voor elke scène",
-        "Keyframes voor visuele referentie",
-        "Objectdetectieresultaten",
-        "Analyse van camerabewegingen"
+    },
+    "features2": "Naadloze video-integratie",
+    "features2Text": "Verwerk lokale bestanden, YouTube-links of cloudopslag met onze uniforme interface.",
+    "features3": "KI-gestützte Analyse",
+    "features3Text": "Verbeter scènebegrip met onze optionele AI-analysemodule.",
+    "features4": "Camerabewegingdetectie",
+    "features4Text": "Identificeer automatisch pans, zooms en andere camerabewegingen.",
+    "features5": "Aanpasbare output",
+    "features5Text": "Exporteer metadata naar JSON-formaat voor integratie met andere tools.",
+    "intro": {
+      "p1": "In der heutigen schnelllebigen Content-Erstellungslandschaft ist eine <strong>effiziente Videoanalyse</strong> kein Luxus mehr, sondern eine Notwendigkeit. Unsere KI-gestützte Szenenerkennungstechnologie wandelt stundenlanges Rohmaterial innerhalb von Minuten, nicht Tagen, in strukturierte, durchsuchbare Inhalte um.",
+      "p2": "Ob Filmemacher, Content Creator oder Medienprofi: Wer die Leistungsfähigkeit der automatisierten Szenenerkennung versteht, kann den eigenen Workflow revolutionieren und neue kreative Möglichkeiten erschließen."
+    },
+    "proTip": "Für die besten Ergebnisse sollte dein Quellvideo eine klare akustische und visuelle Trennung zwischen den Szenen haben. Gut ausgeleuchtete Umgebungen und minimale Hintergrundgeräusche verbessern die Erkennungsgenauigkeit deutlich.",
+    "titanicExample": {
+      "title": "Praktijkvoorbeeld: Titanic-scèneanalyse",
+      "description": "Sieh dir an, wie unser System eine Szene aus Titanic analysiert, Einstellungswechsel erkennt und detaillierte Szenenmetadaten erzeugt:",
+      "analysis": "Analyse:",
+      "analysisText": "Scenedetectie en metadata-extractie in realtime"
+    },
+    "inceptionExample": {
+      "title": "Droomniveau-analyse: Inception-scènebreakdown",
+      "description": "Ontdek hoe onze AI de complexe droomlagen en visuele effecten in Inception analyseert:",
+      "analysis": "Analyse",
+      "analysisText": "Droomlaag-detectie en uitsplitsing van visuele effecten",
+      "breakdownTitle": "Scèneanalyse-breakdown",
+      "showFullAnalysis": "Toon volledige scèneanalyse",
+      "hideFullAnalysis": "Verberg volledige scèneanalyse",
+      "fullSceneAnalysis": "Volledige scèneanalyse",
+      "sceneCard": {
+        "mood": "Sfeer",
+        "environment": "Omgeving",
+        "shotNotes": "Shotnotities"
+      }
+    },
+    "Scene": "Scène",
+    "process": {
+      "title": "Hoe onze scenedetectie werkt",
+      "steps": {
+        "step1": {
+          "title": "1. Videoanalyse",
+          "description": "Unsere KI scannt dein Video Frame für Frame und analysiert visuelle sowie auditive Hinweise, um potenzielle Szenengrenzen zu erkennen.",
+          "details": [
+            "Analyseert kleurhistogrammen en bewegingsvectoren",
+            "Detecteert veranderingen in audiovolume en stiltes",
+            "Identificeert shotgrenzen en overgangen"
+          ]
+        },
+        "step2": {
+          "title": "2. Scènesegmentatie",
+          "description": "Das System gruppiert zusammengehörige Einstellungen anhand visueller und zeitlicher Beziehungen zu kohärenten Szenen.",
+          "details": [
+            "Gebruikt machine learning om de context van scènes te begrijpen",
+            "Houdt rekening met shotduur en overgangstypen",
+            "Voegt gerelateerde shots samen tot logische scènes"
+          ]
+        },
+        "step3": {
+          "title": "3. Inhoudsclassificatie",
+          "description": "Jede erkannte Szene wird anhand ihres visuellen und akustischen Inhalts analysiert und kategorisiert.",
+          "details": [
+            "Identificeert belangrijke visuele elementen en objecten",
+            "Classificeert het type scène (bijv. interview, actie, landschap)",
+            "Analyseert audio op spraak, muziek en effecten"
+          ]
+        },
+        "step4": {
+          "title": "4. Metadatageneratie",
+          "description": "Für jede Szene werden umfangreiche Metadaten generiert, die leistungsstarke Such- und Organisationsfunktionen ermöglichen.",
+          "details": [
+            "Maakt tijdstempels en duurinformatie aan",
+            "Genereert representatieve thumbnails",
+            "Extraheert belangrijke dialogen en audiocues"
+          ]
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "Waarom onze scenedetectie zo goed werkt",
+      "points": "<li>Unsere KI analysiert sowohl <strong>visuelle als auch akustische Indikatoren</strong>, um Szenengrenzen mit einer Genauigkeit von mehr als 95 % zu identifizieren.</li><li>Erweiterte <strong>Modelle für maschinelles Lernen</strong> verstehen den Kontext, nicht nur visuelle Änderungen, für eine natürlichere Szene Erkennung.</li><li>Die Echtzeitverarbeitung ermöglicht <strong>sofortiges Feedback</strong> und Anpassungen während des Filmens oder Bearbeitens.</li>"
+    },
+    "recommendedStyle": {
+      "title": "Aanbevolen stijl voor de beste resultaten",
+      "description": "Om de meest nauwkeurige scenedetectie te krijgen, raden we de volgende stijlguidelines aan:",
+      "points": [
+        "Behoud consistente belichting binnen elke scène",
+        "Verwenden Sie zwischen den Aufnahmen klare Audiomarkierungen oder Klapptafeln",
+        "Halten Sie die Kamerabewegungen gleichmäßig und bewusst",
+        "Behoud consistente audioniveaus binnen scènes"
       ]
     },
-    "export": {
-      "title": "Exportoptie",
-      "formats": {
-        "json": "JSON"
+    "title": "Vom Rohmaterial bis zum Storyboard: KI-gestützte Videoanalyse",
+    "description": "Ontdek hoe AI ruwe video transformeert in gestructureerde storyboards met geautomatiseerde scenedetectie en analyse.",
+    "timeline": {
+      "title": "Scènetijdlijn",
+      "viewScene": "Szene {1} ansehen"
+    },
+    "cta": "🚀 Bereit, dein Storyboard mit KI zum Leben zu erwecken? <strong>Wir können dir ein komplettes Starter-Kit bereitstellen</strong> mit Beispiel-JSONs, ComfyUI-Workflows und ffmpeg/AE-Templates für den Einstieg.",
+    "sceneBreakdown": {
+      "title": "Ausgabe der Szenenerkennung verstehen",
+      "introduction": "Schauen wir uns eine typische Ausgabe der Szenenerkennung an, um zu verstehen, wie unsere KI Videoinhalte analysiert und strukturiert. Unter jeder Erklärung findest du die zugehörige JSON-Struktur, die diese Erkenntnisse ermöglicht.",
+      "scenes": [
+        {
+          "title": "1. Scène-identificatie",
+          "content": "Each scene is assigned a unique identifier and time range, allowing precise navigation through the video content. Dies bildet die Grundlage unserer Analyse.",
+          "example": "Scène 1 (00:00:02.50 - 00:00:05.20)",
+          "jsonExample": {
+            "scene_id": "scene_001",
+            "start_time": 2.5,
+            "end_time": 5.2,
+            "duration": 2.7,
+            "keyframe_index": 5,
+            "keyframe_time": 3.8
+          },
+          "jsonDescription": "Deze JSON-structuur toont de basisidentificatiedata voor een scène, inclusief de unieke ID, timinginformatie en de index/tijd van het representatieve keyframe."
+        },
+        {
+          "title": "2. Visuele analyse",
+          "content": "Unsere KI untersucht Schlüsselbilder, um die visuelle Zusammensetzung jeder Szene zu verstehen, einschließlich dominanter Farben, Lichtverhältnisse und visueller Elemente.",
+          "example": "Keyframe-analyse: Buiten, daglicht, meerdere personen",
+          "jsonExample": {
+            "visual_analysis": {
+              "brightness": 0.78,
+              "contrast": 0.65,
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
+              "dominant_colors": [
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
+              ],
+              "lighting_condition": "daglicht",
+              "environment": "buiten",
+              "detected_objects": [
+                {
+                  "label": "persoon",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "lucht",
+                  "confidence": 0.99,
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "jsonDescription": "Deze JSON toont de data van de visuele analyse, inclusief kleurinformatie, lichtomstandigheden en gedetecteerde objecten met betrouwbaarheidscores."
+        },
+        {
+          "title": "3. Shotcompositie",
+          "content": "Binnen elke scène identificeren we individuele shots en hun overgangen, wat helpt om de visuele flow en het tempo van de content te begrijpen.",
+          "example": "3 shots gedetecteerd met vloeiende cuts en één crossfade",
+          "jsonExample": {
+            "shots": [
+              {
+                "shot_id": "shot_001",
+                "start_time": 2.5,
+                "end_time": 3.1,
+                "transition": {
+                  "type": "cut",
+                  "confidence": 0.98
+                },
+                "camera_motion": {
+                  "type": "statisch",
+                  "confidence": 0.92
+                }
+              },
+              {
+                "shot_id": "shot_002",
+                "start_time": 3.1,
+                "end_time": 4.3,
+                "transition": {
+                  "type": "fade",
+                  "duration": 0.3,
+                  "confidence": 0.95
+                },
+                "camera_motion": {
+                  "type": "pan_naar_links",
+                  "confidence": 0.88
+                }
+              }
+            ]
+          },
+          "jsonDescription": "Deze JSON-structuur beschrijft de shotcompositie binnen een scène, inclusief timing, overgangstypen en analyse van camerabewegingen."
+        },
+        {
+          "title": "4. Inhoudsclassificatie",
+          "content": "Scènes worden automatisch gecategoriseerd op basis van hun inhoud, waardoor je later eenvoudig specifieke soorten beeldmateriaal kunt terugvinden.",
+          "example": "Categorie: Drama, Setting: Scheepsdek, Personages: Hoofdpersonages",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "drama",
+              "secondary_categories": [
+                "romantiek",
+                "ramp"
+              ],
+              "setting": {
+                "type": "scheepsdek",
+                "time_of_day": "nacht",
+                "confidence": 0.92
+              },
+              "subjects": [
+                {
+                  "type": "hoofdpersoon",
+                  "name": "Jack",
+                  "position": "midden_kader",
+                  "emotion": "vastberaden",
+                  "confidence": 0.89
+                },
+                {
+                  "type": "hoofdpersoon",
+                  "name": "Rose",
+                  "position": "midden_kader",
+                  "emotion": "angstig",
+                  "confidence": 0.91
+                }
+              ],
+              "sentiment": {
+                "overall": "intens_dramatisch",
+                "confidence": 0.88,
+                "emotions": [
+                  "angst",
+                  "vastberadenheid",
+                  "urgentie"
+                ]
+              },
+              "key_elements": [
+                "reddingsboot",
+                "oceaan",
+                "maanlicht"
+              ],
+              "narrative_importance": 0.95,
+              "action_required": true
+            }
+          },
+          "jsonDescription": "Deze JSON laat zien hoe de AI filmscènes analyseert en classificeert, inclusief emoties van personages, settingdetails en narratieve belangrijkheid, met de dramatische reddingsbootscène uit Titanic als voorbeeld."
+        }
+      ],
+      "analysisTitle": "Alles samenbrengen",
+      "analysisContent": "Durch die Kombination dieser Elemente erstellt unser System eine umfassende Karte deines Videoinhalts. Diese strukturierten Daten ermöglichen Funktionen wie intelligente Suche, automatisierten Schnitt und Inhaltsanalyse.",
+      "fullExampleTitle": "Compleet voorbeeld van scènedata",
+      "fullExampleDescription": "Zo komen alle onderdelen samen in een complete scèneanalyse:",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": 2.5,
+        "end_time": 5.2,
+        "duration": 2.7,
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": 30
+        },
+        "visual_analysis": {
+          "brightness": 0.78,
+          "contrast": 0.65,
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
+          "lighting_condition": "daglicht",
+          "environment": "studio"
+        },
+        "audio_analysis": {
+          "has_speech": true,
+          "speech_confidence": 0.92,
+          "background_noise_level": 0.15,
+          "speaker_gender": [
+            "man",
+            "vrouw"
+          ],
+          "speech_text": "Lassen Sie uns diskutieren, wie KI die Videoproduktion verändert..."
+        },
+        "content_analysis": {
+          "primary_category": "interview",
+          "setting": "studio",
+          "subjects": [
+            "host",
+            "gast"
+          ],
+          "sentiment": "neutraal_positief"
+        },
+        "shots": [
+          {
+            "shot_id": "shot_001",
+            "start_time": 2.5,
+            "end_time": 3.1,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
+          },
+          {
+            "shot_id": "shot_002",
+            "start_time": 3.1,
+            "end_time": 5.2,
+            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
+          }
+        ]
+      },
+      "benefitsTitle": "Belangrijkste voordelen",
+      "benefits": [
+        "<strong>Efficiënte montage:</strong> Spring direct naar elke scène of shot zonder urenlang te hoeven scrollen",
+        "<strong>Slim zoeken:</strong> Vind content op basis van visuele elementen, niet alleen op metadata",
+        "<strong>Consistente kwaliteit:</strong> Identificeer en behoud visuele consistentie in je project",
+        "<strong>Data-gedreven beslissingen:</strong> Krijg inzicht in structuur en tempo van je content"
+      ]
+    },
+    "conclusion": {
+      "title": "Videoproductie transformeren met AI",
+      "p1": "Die KI-gestützte Szenenerkennung verändert die Art und Weise, wie wir an die Videoproduktion herangehen. Durch die Automatisierung des zeitaufwändigen Prozesses der Szenenidentifikation und -organisatie können sich YouTuber auf das Wesentliche konzentrieren – das Erzählen fesselnder Geschichten. Unsere Technologie schließt die Lücke zwischen Rohmaterial und fertigen Inhalten und macht professionelle Videoanalysen für jedermann zugänglich.",
+      "p2": "Während wir unsere Algorithmen weiter verfeinern und unsere Fähigkeiten ausbauen, sind wir gespannt, wie Filmemacher, Lehrkräfte und Content Creator diese Werkzeuge nutzen, um die Grenzen des visuellen Storytellings zu verschieben. Die Zukunft der Videoproduktion ist da – effizienter und kreativer als je zuvor."
+    },
+    "richStructuredOutput": "Rijke, gestructureerde output",
+    "richStructuredOutputText": "Unser System erzeugt umfassende Storyboard-Daten mit detaillierten Metadaten für jede Szene und gibt dir damit die volle Kontrolle über deinen Videoinhalt.",
+    "advancedUsage": {
+      "title": "Erweiterte Nutzung und Anpassung",
+      "description": "Das Szenenerkennungssystem ist hochgradig anpassbar und eignet sich für unterschiedliche Anwendungsfälle. Hier sind einige erweiterte Funktionen und Anpassungsoptionen:",
+      "features": {
+        "thresholds": {
+          "title": "Aangepaste scenedetectiedrempels",
+          "description": "Pas de gevoeligheid van scenedetectie aan door de drempelparameter te wijzigen. Lagere waarden maken de detectie gevoeliger voor veranderingen."
+        },
+        "aiAnalysis": {
+          "title": "AI-verrijkte analyse",
+          "description": "Aktiviere die KI-Analyse für ein detaillierteres Szenenverständnis und Labeling. Dafür ist eine zusätzliche Einrichtung mit dem Ollama-Server erforderlich."
+        },
+        "outputCustomization": {
+          "title": "Outputmaatwerk",
+          "description": "Passen Sie das Ausgabeformat an und fügen Sie dem generierten Storyboard zusätzliche Metadaten hinzu."
+        }
+      },
+      "integration": {
+        "title": "Integratie met andere tools",
+        "description": "De storyboardoutput kan eenvoudig worden geïntegreerd met andere tools en workflows. Enkele voorbeelden:",
+        "tools": {
+          "editingSoftware": {
+            "title": "Videobewerkingssoftware",
+            "description": "Importeer de JSON-output in video-editors die scriptgestuurde montage ondersteunen"
+          },
+          "cms": {
+            "title": "Contentmanagementsystemen",
+            "description": "Genereer automatisch metadata voor video-assets"
+          },
+          "aiTraining": {
+            "title": "AI-trainingsdata",
+            "description": "Verwenden Sie die strukturierte Ausgabe als Trainingsdaten für Modelle für maschinelles Lernen"
+          }
+        }
+      }
+    },
+    "Benefitss": {
+      "title": "Voordelen",
+      "description": "Zu den Vorteilen unseres KI-gestützten Szenenerkennungssystems gehören:",
+      "tags": {
+        "computerVision": "Computervision",
+        "deepLearning": "Tiefes Lernen",
+        "realTimeAnalysis": "Realtime Analyse"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "Moduleerbare architectuur",
+          "description": "Das System besteht aus getrennten Komponenten für Videoanalyse, KI-Verarbeitung und Ausgabeerzeugung, wodurch es sich leicht erweitern und warten lässt."
+        },
+        "performance": {
+          "title": "Geoptimaliseerde prestaties",
+          "description": "Effiziente Frame-Verarbeitung und Parallelisierung sorgen auch bei langen Videos für eine schnelle Analyse."
+        },
+        "aiEnhanced": {
+          "title": "AI-verrijkte analyse",
+          "description": "Optionele AI-componenten bieden dieper scènebegrip en nauwkeurigere labeling."
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "WAAROM ONZE OPLOSSING",
+      "title": "Die Leistungsfähigkeit der KI-gestützten Szenenanalyse"
+    },
+    "integration": {
+      "title": "Eenvoudige integratie",
+      "description": "Die strukturierte JSON-Ausgabe lässt sich leicht in andere Tools und Workflows integrieren:",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "Uitgebreide scènedata",
+        "items": [
+          "Precieze timinginformatie voor elke scène",
+          "Keyframes voor visuele referentie",
+          "Objectdetectieresultaten",
+          "Analyse van camerabewegingen"
+        ]
+      },
+      "export": {
+        "title": "Exportoptie",
+        "formats": {
+          "json": "JSON"
+        }
+      }
+    },
+    "performance": {
+      "title": "Geoptimaliseerde prestaties",
+      "features": {
+        "speed": "5–10x sneller dan realtime",
+        "memory": "Laag geheugengebruik",
+        "parallel": "Parallelle verwerking"
       }
     }
   },
-  "performance": {
-    "title": "Geoptimaliseerde prestaties",
-    "features": {
-      "speed": "5–10x sneller dan realtime",
-      "memory": "Laag geheugengebruik",
-      "parallel": "Parallelle verwerking"
-    }
-  }
-},
-"nanoBananaProPrompts": {
+  "nanoBananaProPrompts": {
     "title": "Nano Banana Pro Prompts",
-    "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
+    "description": "Entdecke eine Sammlung kreativer und effektiver Prompts für deine KI-Content-Erstellung. Diese Prompts helfen dir, das Beste aus deinen KI-Tools herauszuholen.",
     "prompts": {
-      "title": "Popular Nano Banana Pro Prompts",
-      "prompt1": "Create a short story about a futuristic city where emotions are currency",
-      "prompt2": "Generate a dialogue between two characters meeting for the first time in a coffee shop",
-      "prompt3": "Write a product description for an innovative AI-powered kitchen gadget"
+      "title": "Beliebte Nano Banana Pro Prompts",
+      "prompt1": "Schreibe eine Kurzgeschichte über eine futuristische Stadt, in der Emotionen die Währung sind.",
+      "prompt2": "Erstelle einen Dialog zwischen zwei Figuren, die sich zum ersten Mal in einem Café treffen.",
+      "prompt3": "Verfasse eine Produktbeschreibung für ein innovatives, KI-gestütztes Küchengerät."
     }
   },
   "ageAi": {
@@ -991,20 +1115,24 @@
       "title": "Lassen Sie uns diskutieren:",
       "prompt": "Fühlen Sie sich in Ihrer aktuellen Rolle eher 'effizienter' oder 'ersetzbar'? Wie entwickeln Sie Ihr Werkzeugset in diesem Jahr weiter?"
     },
-    "hashtags": ["#DataScience", "#KI", "#MaschinellesLernen", "#GenerativeKI", "#Karriereentwicklung", "#TechTrends"]
+    "hashtags": [
+      "#DataScience",
+      "#KI",
+      "#MaschinellesLernen",
+      "#GenerativeKI",
+      "#Karriereentwicklung",
+      "#TechTrends"
+    ]
   },
   "aiPlatform": {
     "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "subtitle": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
-    "intro": "Jeder möchte mit KI arbeiten, aber die meisten Unternehmen können sich kein Heer von Doktoranden oder ein OpenAI-Budget leisten. Die gute Nachricht: Das müssen Sie auch nicht.",
-    "imageAlt": "KI-Plattform-Architekturdiagramm",
-    "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
-    
     "intro": {
       "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
       "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
     },
-
+    "imageAlt": "KI-Plattform-Architekturdiagramm",
+    "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "mindsetShift": {
       "title": "1. Die Denkweise: Demokratisieren statt zentralisieren",
       "content": "Wenn Ihr KI-Team zum Flaschenhals wird, haben Sie bereits verloren. Bauen Sie stattdessen eine Selbstbedienungs-KI-Infrastruktur auf, die Produktentwickler befähigt, das zu bauen, was sie benötigen.",
@@ -1018,7 +1146,6 @@
       },
       "conclusion": "So wird KI von einem Forschungsprojekt zu einem Geschäftsvervielfacher."
     },
-
     "stack": {
       "title": "2. Der Stack: Halten Sie ihn schlank und offen",
       "intro": "Übermäßige Komplexität tötet die Geschwindigkeit. Wir haben eine dreischichtige Plattform entwickelt, die Komplexität abstrahiert, ohne Sie einzuschränken.",
@@ -1051,7 +1178,6 @@
         "conclusion": "Dadurch können Produktteams in Stunden, nicht in Wochen, Prototypen erstellen."
       }
     },
-
     "fineTuning": {
       "title": "3. Überspringen Sie das Feinabstimmen (meistens)",
       "content": "**Hier ist das Geheimnis: Sie müssen ein LLM wahrscheinlich nicht feinabstimmen.**",
@@ -1063,7 +1189,6 @@
       ],
       "conclusion": "Wir stimmen nur kleine Modelle für enge, hochvolumige Aufgaben nach einem langen Prozess der Sammlung und Bereinigung hochwertiger domänenspezifischer Daten fein. Alles andere ist 'Engineering statt Training'."
     },
-
     "essentialWork": {
       "title": "4. Die unscheinbare, aber unverzichtbare Arbeit",
       "content": "Spitzenplattformen entstehen nicht allein durch Modelle. Sie entstehen durch die Lösung langweiliger, schwieriger Probleme:",
@@ -1082,7 +1207,6 @@
         }
       ]
     },
-
     "conclusion": {
       "title": "Das Fazit",
       "content": "Für mittelständische Technologieunternehmen bedeutet Erfolg mit KI nicht, ein besseres LLM zu bauen. Es bedeutet, eine Plattform zu schaffen, die KI in einen wiederholbaren, skalierbaren Geschäftsprozess verwandelt.",
@@ -1154,7 +1278,7 @@
       "title": "6. Beispiel für einen deterministischen Hook",
       "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"passwort\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Sicherheitsverletzung erkannt\"}\n    return agent_node(state)\n\nReferenz: https://langchain-ai.github.io/langgraph/"
     },
-    "finalThought": "Wenn Ihr Agent nur Fragen beantwortet, ist es ein Chatbot. Wenn er zuverlässig Arbeit ausführt, ist es ein Task-Agent."
+    "finalThought": "Wenn Ihr Agent nur Fragen beantwortet, ist es ein Chatbot. Wenn er zuverlässig Arbeit ausführt, ist es ein Task-Agent.",
+    "taskAgentImageAlt": "Abbildung einer Task-Agent-Systemarchitektur, die die Interaktion zwischen verschiedenen Komponenten zeigt"
   }
 }
-

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import blogs from "@/content/blogs.json";
+import { routing } from "@/i18n/routing";
 
 // ✅ Add nano templates
 import nanoTemplates from "@/public/data/nano_templates.json";
@@ -9,7 +10,7 @@ export const runtime = "nodejs";
 const BASE_URL = "https://www.curify-ai.com";
 
 // All supported locales
-const LOCALES = ["en", "zh", "es", "de", "fr", "ja", "ko", "hi", "ru", "tr"];
+const LOCALES = routing.locales;
 
 // Static pages (shared across locales)
 const STATIC_ROUTES = [

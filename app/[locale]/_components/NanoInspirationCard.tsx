@@ -4,7 +4,6 @@
 import { Layers } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   useCopyTracking,
@@ -44,7 +43,7 @@ export function NanoInspirationCard({
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
-
+  // Mock engagement numbers (Deterministic)
   const seedNum = useMemo(() => stableHashToInt(card.id), [card.id]);
 
   const [saveCount, setSaveCount] = useState(seedNum % 100 + 50);

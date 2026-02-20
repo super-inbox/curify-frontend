@@ -185,11 +185,12 @@ function ListItemActions({
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
-
+  
+  // Mock numbers (Deterministic)
   const seedNum = stableHashToInt(card.id);
-  const [saveCount, setSaveCount] = useState(seedNum % 100 + 50);
-  const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100);
-  const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20);
+  const [saveCount, setSaveCount] = useState(seedNum % 100 + 50); 
+  const [copyCount, setCopyCount] = useState(Math.floor(seedNum * 1.3) % 150 + 100); 
+  const [shareCount, setShareCount] = useState(Math.floor(seedNum * 0.7) % 50 + 20); 
 
   const trackCopy = useCopyTracking(card.id, "inspiration", viewMode);
   const trackShare = useShareTracking(card.id, "inspiration", viewMode);

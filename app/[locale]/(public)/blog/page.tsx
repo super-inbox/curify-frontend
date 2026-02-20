@@ -12,9 +12,19 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog.metadata" });
 
+  let title = t.has("title") ? t("title") : undefined;
+  let description = t.has("description") ? t("description") : undefined;
+
+  // Fallback to English if translation is missing
+  if (!title || !description) {
+    const tEn = await getTranslations({ locale: "en", namespace: "blog.metadata" });
+    if (!title) title = tEn("title");
+    if (!description) description = tEn("description");
+  }
+
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
   };
 }
 

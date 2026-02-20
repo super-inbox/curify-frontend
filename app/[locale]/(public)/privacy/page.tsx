@@ -1,20 +1,22 @@
 // app/[locale]/privacy/page.tsx
-import Head from 'next/head';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Curify Studio",
+  description:
+    "Read Curify Studio's privacy policy, including data handling, retention, third-party services, and user rights.",
+};
 
 export default function PrivacyPage() {
   return (
-    <>
-      <Head>
-        <title>Privacy Policy | Curify Studio</title>
-      </Head>
-      <div className="max-w-5xl mx-auto p-20 text-gray-800 text-base sm:text-lg leading-relaxed">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-6">🔐 Privacy Policy</h1>
-        <p className="mb-6">Effective Date: September 13, 2025</p>
+    <div className="max-w-5xl mx-auto p-20 text-gray-800 text-base sm:text-lg leading-relaxed">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6">🔐 Privacy Policy</h1>
+      <p className="mb-6">Effective Date: September 13, 2025</p>
 
-        <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">1. User-Uploaded Content</h2>
-        <p className="mb-6">
-          You retain full ownership of any videos, audio, transcripts, manga scans, or other content you upload to Curify Studio. By using our services, you grant us a limited, revocable license to process this content solely for the purpose of delivering our services. We do not use your content for model training or resale.
-        </p>
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">1. User-Uploaded Content</h2>
+      <p className="mb-6">
+        You retain full ownership of any videos, audio, transcripts, manga scans, or other content you upload to Curify Studio. By using our services, you grant us a limited, revocable license to process this content solely for the purpose of delivering our services. We do not use your content for model training or resale.
+      </p>
 
         <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">2. Voice Cloning Consent</h2>
         <p className="mb-6">
@@ -46,11 +48,10 @@ export default function PrivacyPage() {
           We may log metadata such as IP address, upload timestamps, and feature usage to detect abuse and ensure system integrity. These logs are not shared with third parties except as required by law and are deleted periodically.
         </p>
 
-        <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">8. Community-Contributed Content</h2>
-        <p className="mb-6">
-          We do not verify the legality or quality of user-uploaded content (e.g., manga scans, subtitle files, reference audio). Users are responsible for ensuring they have the rights to upload and process any materials submitted through Curify Studio.
-        </p>
-      </div>
-    </>
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-3">8. Community-Contributed Content</h2>
+      <p className="mb-6">
+        We do not verify the legality or quality of user-uploaded content (e.g., manga scans, subtitle files, reference audio). Users are responsible for ensuring they have the rights to upload and process any materials submitted through Curify Studio.
+      </p>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
@@ -28,6 +29,42 @@ function slugToTemplateId(slug: string) {
 function safeString(v: any) {
   if (v === null || v === undefined) return "";
   return String(v);
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: localeStr, slug } = await params;
+
+  const locale = normalizeLocale(localeStr);
+  const templateId = slugToTemplateId(slug);
+
+  const templates = nanoTemplates as unknown as RawTemplate[];
+  const images = nanoImages as unknown as RawNanoImageRecord[];
+  const reg = buildNanoRegistry(templates, images);
+  const data = buildNanoTemplateDetailData(reg, templateId, locale);
+
+  if (!data) {
+    return {
+      title: "Template Not Found",
+      description: "The requested nano template could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const title = `${data.template.template_id} | Nano Template`;
+  const description =
+    data.template.description ||
+    "Explore this nano template and generate curated outputs with Curify.";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${localeStr}/nano-template/${slug}`,
+    },
+  };
 }
 
 export default async function NanoTemplatePage({ params }: Props) {

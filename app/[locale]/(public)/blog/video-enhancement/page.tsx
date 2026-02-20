@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 // Import storyboard JSON directly
 import storyboard from "../../../../../public/data/storyboard.json";
@@ -7,11 +8,19 @@ import CdnImage from "../../../_components/CdnImage";
 import CdnVideo from "../../../_components/CdnVideo";
 import CdnAudio from "../../../_components/CdnAudio";
 
-export const metadata: Metadata = {
-  title: "AI Video Enhancement: Storyboards, Meme Captions & SFX Automation – Curify AI",
-  description:
-    "How Curify AI uses scene detection, LLM vision models, storyboards, captions, and sound effects to automatically enhance videos with meme-style storytelling.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog.metadata" });
+
+  return {
+    title: "AI Video Enhancement: Storyboards, Meme Captions & SFX Automation – Curify AI",
+    description: t("description"),
+  };
+}
 
 // Bullet icon
 const ListIcon = () => (

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRouter, useParams } from "next/navigation";
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
@@ -124,7 +124,7 @@ export default function ProjectDetailsPage() {
         {/* Top Bar */}
         <div className="flex justify-between items-center mb-6">
           <Link
-            href={`/${locale}/workspace`}
+            href="/workspace"
             className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors cursor-pointer"
           >
             <img src="/icons/arrow_left.svg" alt="Back" className="w-4 h-4" />

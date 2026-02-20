@@ -1,11 +1,21 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
-export const metadata: Metadata = {
-  title: "Agents vs Workflows – Redefining Animation (Part 2)",
-  description:
-    "How Curify AI blends predictable workflows with adaptive agents for smarter content creation.",
-};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog.metadata" });
+
+  return {
+    title: "Agents vs Workflows – Redefining Animation (Part 2)",
+    description: t("description"),
+  };
+}
 
 export default function AgentsVsWorkflowsPost() {
   return (

@@ -68,7 +68,7 @@ export async function generateStaticParams() {
  * ✅ FIXED: params is Promise
  */
 type PageProps = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 };
 
 /**
@@ -77,8 +77,9 @@ type PageProps = {
 export async function generateMetadata(
   { params }: PageProps
 ): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const cfg = COLLECTIONS[slug];
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
   if (!cfg) {
     return {
@@ -91,7 +92,7 @@ export async function generateMetadata(
     description: cfg.description,
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `/nano-banana-pro-prompts/collections/${slug}`,
+      canonical: `${siteUrl}/${locale}/nano-banana-pro-prompts/collections/${slug}`,
     },
   };
 }
