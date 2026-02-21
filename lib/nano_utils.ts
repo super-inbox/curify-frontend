@@ -254,7 +254,7 @@ export function buildNanoFeedCards(
   opts?: { perTemplateMaxImages?: number; strictLocale?: boolean }
 ): NanoInspirationCardType[] {
   const perTemplateMaxImages = opts?.perTemplateMaxImages ?? 6;
-  const strictLocale = opts?.strictLocale ?? false;
+  const strictLocale = opts?.strictLocale ?? true;
 
   const out: NanoInspirationCardType[] = [];
 
