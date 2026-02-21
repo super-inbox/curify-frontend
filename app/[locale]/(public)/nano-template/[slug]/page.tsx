@@ -5,7 +5,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 
 // ✅ NEW: merged seo json
-import nanoSeo from "@/public/data/nano_templates_seo.json";
+import nanoSeo from "@/public/data/nano_template_seo.json";
 
 import {
   type RawTemplate,
