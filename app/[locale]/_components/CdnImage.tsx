@@ -36,42 +36,77 @@ function toCdnUrl(src: string): string {
 }
 
 export default function CdnImage(props: ImageProps) {
-  const { src, ...rest } = props;
+  const { src, unoptimized, ...rest } = props;
 
-  // If StaticImageData, just pass through (Next handles it)
-  if (typeof src !== "string") {
-    // If caller forgot sizes AND not using fill, provide safe defaults
-    const hasFill = (rest as any).fill === true;
-    const hasWH =
-      typeof (rest as any).width !== "undefined" &&
-      typeof (rest as any).height !== "undefined";
-
-    if (!hasFill && !hasWH) {
-      return <Image src={src} width={512} height={512} {...rest} />;
-    }
-    return <Image src={src} {...rest} />;
-  }
-
-  const finalSrc = toCdnUrl(src);
-
-  // Debug: prints the final URL that Next/Image will request
-  if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
-    console.log("[CdnImage]", { rawSrc: src, finalSrc, CDN_BASE });
-  }
-
-  // Next/Image requires either:
-  // 1) width + height, OR
-  // 2) fill={true}
   const hasFill = (rest as any).fill === true;
   const hasWH =
     typeof (rest as any).width !== "undefined" &&
     typeof (rest as any).height !== "undefined";
 
-  if (!hasFill && !hasWH) {
-    // Safe defaults for your inspiration/nano preview images
-    return <Image src={finalSrc} width={512} height={512} {...rest} />;
+  // Helper: render with safe defaults
+  const render = (finalSrc: ImageProps["src"], forceUnoptimized?: boolean) => {
+    const finalUnoptimized =
+      typeof forceUnoptimized === "boolean"
+        ? forceUnoptimized
+        : typeof unoptimized === "boolean"
+          ? unoptimized
+          : true; // ✅ default to true (no Vercel transformations)
+
+    if (!hasFill && !hasWH) {
+      return (
+        <Image
+          src={finalSrc}
+          width={512}
+          height={512}
+          unoptimized={finalUnoptimized}
+          {...rest}
+        />
+      );
+    }
+
+    return <Image src={finalSrc} unoptimized={finalUnoptimized} {...rest} />;
+  };
+
+  // StaticImageData or other non-string src: let Next handle it.
+  // (Still set unoptimized default ONLY if caller provided it; otherwise keep Next default)
+  if (typeof src !== "string") {
+    // If caller didn't pass unoptimized, do NOT force it here (local/static is usually fine)
+    const finalUnoptimized = typeof unoptimized === "boolean" ? unoptimized : undefined;
+
+    if (!hasFill && !hasWH) {
+      return (
+        <Image
+          src={src}
+          width={512}
+          height={512}
+          unoptimized={finalUnoptimized}
+          {...rest}
+        />
+      );
+    }
+    return <Image src={src} unoptimized={finalUnoptimized} {...rest} />;
   }
 
-  return <Image src={finalSrc} {...rest} />;
+  const trimmed = src.trim();
+
+  // ✅ Avoid Next/Image crash / empty src warnings
+  if (!trimmed) {
+    if (process.env.NODE_ENV !== "production") {
+      // eslint-disable-next-line no-console
+      console.error("[CdnImage] Empty src string passed");
+      // eslint-disable-next-line no-console
+      console.trace();
+    }
+    return null;
+  }
+
+  const finalSrc = toCdnUrl(trimmed);
+
+  if (process.env.NODE_ENV !== "production") {
+    // eslint-disable-next-line no-console
+    console.log("[CdnImage]", { rawSrc: src, finalSrc, CDN_BASE });
+  }
+
+  // ✅ For CDN/remote strings: default to unoptimized=true to avoid Vercel transformations
+  return render(finalSrc, true);
 }
