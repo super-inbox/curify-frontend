@@ -20,7 +20,7 @@ const STATIC_ROUTES = [
   "/about",
   "/video-dubbing",
   "/bilingual-subtitles",
-  "/creator",
+  "/tools",
   "/lip-sync",
   "/privacy",
   "/agreement",
