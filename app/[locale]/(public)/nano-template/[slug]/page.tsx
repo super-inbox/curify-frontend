@@ -38,8 +38,7 @@ function safeString(v: any) {
  * ✅ Minimal SEO schema + optional content sections
  * Keep this compatible with both "full" and "minimal" seo json
  */
-type SeoBlock = {
-  canonical_slug?: string;
+type SeoBlock = {  
   meta_title?: string;
   meta_description?: string;
   og_image?: string;
@@ -140,7 +139,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // canonical_slug is a "canonical identifier", not necessarily the actual route slug.
   // We keep the page route as-is, but can point canonical to a preferred URL.
   // If you actually want canonical_slug to be routable, you must add redirect logic elsewhere.
-  const canonicalSlug = seo?.canonical_slug || slug;
+  const canonicalSlug = slug;
   const canonicalPath = `/${localeStr}/nano-template/${canonicalSlug}`;
 
   const title = normalizeText(seo?.meta_title) || `${data.template.template_id} | Nano Template`;
