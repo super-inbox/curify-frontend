@@ -38,8 +38,7 @@ function safeString(v: any) {
  * ✅ Minimal SEO schema + optional content sections
  * Keep this compatible with both "full" and "minimal" seo json
  */
-type SeoBlock = {
-  canonical_slug?: string;
+type SeoBlock = {  
   meta_title?: string;
   meta_description?: string;
   og_image?: string;
