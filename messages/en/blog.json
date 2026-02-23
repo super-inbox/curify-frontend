@@ -1,498 +1,245 @@
 {
-    "home": {
-    "metadata": {
-      "title": "Curify | Power Content Creation with AI",
-      "description": "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale."
-    },
-    "hero": {
-      "title": "Power Content Creation with AI",
-      "description": "Curify Studio is building an AI-native content creation platform that empowers creators and organizations to overcome language and format barriers. We solve the challenge of scaling content across global audiences, enabling authentic translations that preserve tone, style, and emotional depth. Operating at the intersection of media, education, and entertainment, we provide tools for creators to adapt content seamlessly in a rapidly globalizing industry."
-    }
-  },
-  "coreFeatures": {
-  "oneShot": {
-    "title": "One-Shot Translation",
-    "desc": "Complete video translation with voice-over, subtitles, and lip sync in a single process."
-  },
-  "toneColor": {
-    "title": "Tone Color Preservation",
-    "desc": "Maintains the original speaker's unique voice characteristics and tonal qualities."
-  },
-  "emotional": {
-    "title": "Emotional Speech",
-    "desc": "AI reproduces emotional nuances, ensuring authentic expression across languages."
-  },
-  "lipSync": {
-    "title": "Lip Sync Technology",
-    "desc": "Advanced lip synchronization that perfectly matches mouth movements to translated audio."
-  },
-  "subtitle": {
-    "title": "Subtitle Captioner",
-    "desc": "Intelligent subtitle generation with precise timing and natural language flow."
-  },
-  "languages": {
-    "title": "170+ Languages",
-    "desc": "Translate your content into over 170 languages with native-level accuracy."
-  
-  
-  }
-},
-  "upcoming": {
-    "title": "Coming Soon",
-    "subtitle": "Next-generation features in development",
-    "styleTransfer": {
-      "title": "Style Transfer",
-      "desc": "Apply cinematic or brand-specific styles to your videos with AI-powered visual transformation.",
-      "icon": "🎨",
-      "status": "Coming Q3 2025",
-      "transcript": "This demo transforms a live-action drama clip into a whimsical Ghibli-style animation using AI-driven visual style transfer."
-    },
-    "mangaTranslation": {
-      "title": "Manga Translation",
-      "desc": "Automated manga and comic translation with text detection, bubble editing, and cultural adaptation.",
-      "icon": "📚",
-      "status": "Coming Q3 2025",
-      "transcript": "This prototype demonstrates automatic manga translation, including speech bubble detection and bilingual in-place editing."
-    },
-    "templatedVideo": {
-      "title": "Templated Video Generation",
-      "desc": "Create professional videos from templates with AI-generated content and custom branding.",
-      "icon": "🎬",
-      "status": "Coming Q4 2025",
-      "transcript": "This demo shows a scripted-to-video pipeline generating a historical scene about early U.S. history by planning out the storyboard and assembling visuals."
-    },
-    "statusQ3": "Coming in Q3 2025",
-    "statusQ4": "Coming in Q4 2025"
-  },
-  "export": {
-    "title": "Export",
-    "export": "Export",
-    "downloading": "Downloading..."
-  },
-  "delete": {
-    "title": "Double Confirm",
-    "message": "Are you sure you want to delete this project",
-    "warning": "This action cannot be undone.",
-    "cancel": "Cancel",
-    "delete": "Delete",
-    "deleting": "Deleting..."
-  },
-  "userMenu": {
-    "topUpCredits": "Top Up Credits",
-    "remaining": "Remaining",
-    "planRemaining": "Plan Remaining", 
-    "validUntil": "Valid until",
-    "creditsHistory": "Credits History",
-    "subscribePlan": "Subscribe Plan",
-    "supportTicket": "Support Ticket",
-    "signOut": "Sign Out"
-  },
-  "technology": {
-    "multimodal": {
-      "title": "Multi-modal Recognition",
-      "desc": "We combine speech and subtitle signals to achieve more accurate and robust transcription. This dual-channel recognition reduces errors and ensures better alignment with the original content, especially in noisy or complex audio scenes."
-    },
-    "emotional": {
-      "title": "Emotional Speech",
-      "desc": "Our voice synthesis models generate expressive, emotionally rich speech that enhances storytelling and viewer engagement. By capturing tone, rhythm, and nuance, we make AI voices feel more human and relatable."
-    },
-    "lengthaware": {
-      "title": "Length-aware Translation and Customization",
-      "desc": "We optimize translations not just for accuracy, but also for timing and pacing—crucial for video and voice alignment. Users can further customize tone, length, and phrasing to suit different content needs or audience preferences."
-    },
-    "controlled": {
-      "title": "Controlled Video Generation",
-      "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
-    }
-  },
-  "tools": {
-    "video_dubbing": {
-      "title": "Video Dubbing",
-      "desc": "Translate your video into any language with accurate localization and voice sync"
-    },
-    "subtitle_captioner": {
-      "title": "Subtitle Captioner",
-      "desc": "Auto-generate multilingual subtitles to enhance clarity and accessibility"
-    },
-    "lip_syncing": {
-      "title": "Lip Syncing",
-      "desc": "Match lips to speech perfectly with AI-powered lip sync"
-    },
-    "style_transfer": {
-      "title": "Style Transfer",
-      "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
-    },
-    "coming_soon": "Coming Soon",
-    "create": "Create"
-  },
-  "bilingual": {
-    "metadata": {
-      "title": "Free Bilingual Subtitles Generator | Curify AI",
-      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
-    },
-    "title": "Bilingual Subtitles Made Easy",
-  "intro": "Automatically generate subtitles in two languages using Curify’s AI subtitle engine. Ideal for creators, educators, and global businesses.",
-  "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto‑generated.",
-  "cta": "Try It Free",
-  "why": {
-    "title": "Why Choose Curify for Bilingual Subtitles?",
-    "point1": "Supports over 170 languages with accurate translation.",
-    "point2": "Preserves emotional tone and timing.",
-    "point3": "Perfect for YouTube, TikTok, and educational videos.",
-    "point4": "Export ready‑to‑publish subtitle files or embedded videos."
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "q1": "Is it really free?",
-    "a1": "Yes, Curify offers a free plan with limited subtitle minutes per month.",
-    "q2": "Can I edit subtitles after generation?",
-    "a2": "Absolutely. You can adjust timing, translation, and style before exporting."
-  }
-},
-"videoDubbing": {
-    "metadata": {
-      "title": "AI Video Dubbing Tool | Curify AI",
-      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
-    },
-    "title": "AI Video Dubbing with Natural Voice",
-    "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands."
-  },
-  "about": {
-    "metadata": {
-      "title": "About Curify | Vision, Technology & Team",
-      "description": "Learn about Curify's vision to democratize content creation with AI. We are a team of engineers and creators building the future of media localization."
-    }
-  },
-  "contact": {
-    "metadata": {
-      "title": "Contact Us | Curify Studio",
-      "description": "Get in touch with the Curify team for support, sales, or partnerships. We are here to help you scale your content globally."
-    }
-  },
   "blog": {
     "metadata": {
       "title": "Curify Blog | AI Content Creation Insights",
       "description": "Read the latest articles on AI video generation, dubbing, style transfer, and the future of content creation."
     }
   },
-  "pricing": {
-    "metadata": {
-      "title": "Pricing Plans | Curify Studio",
-      "description": "Choose the right plan for your content creation needs. From free tools to enterprise-grade AI dubbing and localization."
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
+    "heading": "🎨 AE vs ComfyUI",
+    "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
+    "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "Precise VFX and motion control",
+      "row1b": "AI-native generation of videos",
+      "row2a": "Timeline-based editing",
+      "row2b": "Workflow/node-based rendering",
+      "row3a": "Manual / plugin-driven workflow",
+      "row3b": "Diffusion + LLM + multimodal orchestration"
     },
-    "header": {
-    "title": "Getting started with a plan",
-    "subtitle": "Choose a plan that fits your needs."
+    "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
   },
-  "common": {
-    "month": "Month",
-    "pricing": "Pricing",
-    "receive": "Receive"
-  },
-  "buttons": {
-    "signUp": "Sign up",
-    "subscribePlan": "Subscribe Plan",
-    "currentPlan": "Current Plan",
-    "comingSoon": "Coming Soon",
-    "downgradeToFree": "Downgrade to Free",
-    "downgradeToCreator": "Downgrade to Creator",
-    "contactSales": "Contact Sales"
-  },
-  "plans": {
-    "free": {
-      "name": "Free",
-      "description": "Great for testing tools and light work",
-      "features": [
-        "Download videos without watermark",
-        "1 hour free subtitle processing",
-        "Export SRT files"
-      ]
-    },
-    "creator": {
-      "name": "Creator",
-      "description": "Ideal for small creators doing regular subtitling and light dubbing",
-      "plusTitle": "Everything in Free, plus:",
-      "features": [
-        "Lip Syncing",
-        "Batch processing",
-        "5 hours free subtitle processing",
-        "Up to 30 minutes per task"
-      ]
-    },
-    "pro": {
-      "name": "Pro",
-      "description": "Coming Soon — Designed for high-volume creators",
-      "plusTitle": "Everything in Creator, plus:",
-      "features": [
-        "Voice beautification & noise removal",
-        "Priority queue",
-        "Up to 60 min per task",
-        "Unlimited subtitle minutes"
-      ]
-    },
-    "enterprise": {
-      "name": "Enterprise",
-      "description": "For teams, studios, and enterprise workflows",
-      "customPricing": "Custom",
-      "unlimited": "Unlimited 🐚",
-      "tailoredSupport": "& tailored support",
-      "plusTitle": "Everything in Pro, plus:",
-      "features": [
-        "Dedicated account manager",
-        "On-premise deployment options",
-        "API access & usage analytics",
-        "Custom integrations & SLA",
-        "Unlimited processing hours"
-      ]
-    }
-  },
-  "table": {
-    "header": {
-      "feature": "Feature / Limit"
-    },
-    "rows": {
-      "videoDownloadWithWatermark": "Video Download with Watermark",
-      "videoDownloadWithoutWatermark": "Video Download without Watermark",
-      "downloadSrt": "Download SRT File",
-      "voiceBeautification": "Voice Beautification & Noise Removal",
-      "lipSync": "Lip Sync",
-      "subtitleTools": "Subtitle Tools (add/remove, no translation)",
-      "batchProcessing": "Batch Processing",
-      "maxVideoLength": "Max Video Length per Task",
-      "monthlyCredits": "Monthly Free Credits",
-      "priorityQueue": "Priority Queue / Faster Processing",
-      "creditTopUp": "Credit Top-up"
-    },
-    "values": {
-      "free": "Free",
-      "unlimited": "Unlimited",
-      "oneHourPerMonth": "1 hrs/month",
-      "fiveHoursPerMonth": "5 hrs/month",
-      "fiveMinutes": "5 min",
-      "thirtyMinutes": "30 min",
-      "sixtyMinutes": "60 min"
-    }
-  }
-},
-"aeVsComfyUi": {
-  "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
-  "heading": "🎨 AE vs ComfyUI",
-  "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
-  "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
-  "table": {
-    "colAE": "AE",
-    "colComfy": "ComfyUI",
-    "row1a": "Precise VFX and motion control",
-    "row1b": "AI-native generation of videos",
-    "row2a": "Timeline-based editing",
-    "row2b": "Workflow/node-based rendering",
-    "row3a": "Manual / plugin-driven workflow",
-    "row3b": "Diffusion + LLM + multimodal orchestration"
-  },
-  "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
-},
-"video_translation_eval":{
-  "title": "Evaluating AI Video Translation Quality",
-  "subtitle": "Metrics that Matter",
-  "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we’ve built a robust evaluation pipeline to ensure each piece meets industry standards.",
-  "section1_title": "1. Transcription Quality",
-  "section1_engine": "Engine: WhisperX",
-  "section1_metrics": ["WER (Word Error Rate)", "Punctuation F1 (for expressiveness and readability)"],
-  "section2_title": "2. Translation Quality",
-  "section2_engine": "Engines: Helsinki, MarianMT",
-  "section2_metrics": ["BLEU (standard metric)", "COMET / chrF++ (semantic similarity)", "Human review: fluency + adequacy"],
-  "section3_title": "3. Voice Synthesis Quality",
-  "section3_engine": "Engines: XTTS / YourTTS",
-  "section3_metrics": ["MOS (Naturalness, similarity, expressiveness)", "Speaker verification accuracy"],
-  "section4_title": "4. Alignment & Lip Sync",
-  "section4_metrics": ["Segment duration mismatch", "Wav2Lip sync confidence", "Temporal drift analysis"],
-  "section5_title": "5. Semantic Preservation",
-  "section5_method": "We use LLMs (like GPT-4) to judge whether the translated speech preserves the original meaning, tone, and emotion. Example prompt:",
-  "section5_prompt": "Compare this Mandarin transcript to the English voiceover. Does the tone, intent, and content match? Rate 1–5 and explain.",
-  "section6_title": "6. User Feedback & GTM Validation",
-  "section6_metrics": ["Voice quality fit for product category", "Viewer retention improvement", "Adoption willingness from early users (e.g., 1688 sellers)"],
-  "closing": "At Curify, we don’t just translate — we preserve storytelling, emotion, and clarity across languages. If you’re ready to scale your voice globally, get in touch.",
-  "available_locales": "Post available in: [EN] [ZH] [ES] [DE]"
-},
-
-"storyboardToPipeline": {
-  "title": "From Storyboards to AI Pipelines – Redefining Animation",
-  "intro": {
-    "p1": "Most people think AI video means \"text in, clip out.\" But if you're aiming for <strong>cinematic, director-level control</strong>, it's an entirely different game.",
-    "p2": "In traditional animation, every detail matters — character design, motion continuity, timing, and scene transitions. Our goal is to make AI match that level of precision.",
-    "p3": "Animation today is both an art and a structured orchestration challenge. We think like directors, but build like engineers.",
-    "p4": "That's why we build <strong>Controlled Generation Pipelines</strong> instead of one-shot generation. These pipelines combine structure and creativity:",
-    "pipelineItems": [
-      "Storyboard-to-Video: JSON-based scene specs with IDs, timing, and camera metadata",
-      "ComfyUI-based workflows: node-graph DAGs with versioned checkpoints, LoRA stacks, and seeds",
-      "Temporal & multimodal control: shared scene IDs across image, motion, audio, and subtitles"
+  "video_translation_eval": {
+    "title": "Evaluating AI Video Translation Quality",
+    "subtitle": "Metrics that Matter",
+    "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we’ve built a robust evaluation pipeline to ensure each piece meets industry standards.",
+    "section1_title": "1. Transcription Quality",
+    "section1_engine": "Engine: WhisperX",
+    "section1_metrics": [
+      "WER (Word Error Rate)",
+      "Punctuation F1 (for expressiveness and readability)"
     ],
-    "p5": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
-    "technicalNotes": [
-      "All stages read/write typed artifacts (JSON/CSV, PNG sequences, WAV/MP3, MP4, .aep)",
-      "Pipelines are orchestrated via Python/CLI (e.g., ComfyUI API, ffmpeg, TTS APIs)",
-      "Every run is reproducible through stored config (model, sampler, seed, prompts, duration)"
-    ]
-  },
-  "pipeline": {
-    "title": "AI Video Generation Pipeline",
-    "description": "The AI video generation pipeline transforms text prompts into polished videos through structured stages with explicit inputs, outputs, and configs.",
-    "prompt": "1. Prompt (raw idea → structured JSON spec)",
-    "storyboard": "2. Storyboard (scene/shot table with timing, camera, and description)",
-    "images": "3. Images (per-shot keyframes generated via Stable Diffusion / ComfyUI)",
-    "animation": "4. Animation (image sequences → motion, parallax, and effects)",
-    "voiceOver": "5. Voice Over (TTS + alignment data)",
-    "finalVideo": "6. Final Video (ffmpeg composition: video + audio + subtitles)",
-    "features": [
-      "JSON-first design: every scene is addressable and scriptable (scene_id, shot_id)",
-      "ComfyUI-based workflows: modular, reproducible, composable DAGs for image/video generation",
-      "Temporal & multimodal control: consistent seeds, character embeddings, and timing across modalities"
+    "section2_title": "2. Translation Quality",
+    "section2_engine": "Engines: Helsinki, MarianMT",
+    "section2_metrics": [
+      "BLEU (standard metric)",
+      "COMET / chrF++ (semantic similarity)",
+      "Human review: fluency + adequacy"
     ],
-    "exampleIntro": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
-    "artifacts": {
-      "promptSpec": "prompt_run_001.json",
-      "storyboardTable": "storyboard_v1.csv",
-      "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
-      "audioOutput": "audio/voiceover_final.wav",
-      "subtitleFile": "subtitles/storyboard_v1.srt",
-      "finalVideoFile": "exports/storyboard_v1_final.mp4"
-    }
+    "section3_title": "3. Voice Synthesis Quality",
+    "section3_engine": "Engines: XTTS / YourTTS",
+    "section3_metrics": [
+      "MOS (Naturalness, similarity, expressiveness)",
+      "Speaker verification accuracy"
+    ],
+    "section4_title": "4. Alignment & Lip Sync",
+    "section4_metrics": [
+      "Segment duration mismatch",
+      "Wav2Lip sync confidence",
+      "Temporal drift analysis"
+    ],
+    "section5_title": "5. Semantic Preservation",
+    "section5_method": "We use LLMs (like GPT-4) to judge whether the translated speech preserves the original meaning, tone, and emotion. Example prompt:",
+    "section5_prompt": "Compare this Mandarin transcript to the English voiceover. Does the tone, intent, and content match? Rate 1–5 and explain.",
+    "section6_title": "6. User Feedback & GTM Validation",
+    "section6_metrics": [
+      "Voice quality fit for product category",
+      "Viewer retention improvement",
+      "Adoption willingness from early users (e.g., 1688 sellers)"
+    ],
+    "closing": "At Curify, we don’t just translate — we preserve storytelling, emotion, and clarity across languages. If you’re ready to scale your voice globally, get in touch.",
+    "available_locales": "Post available in: [EN] [ZH] [ES] [DE]"
   },
-  "steps": {
-    "step1": {
-      "title": "Step 1: Start with a Basic Prompt",
-      "example": "A girl stands at a midnight train station, wind blowing her hair.",
-      "expandedPrompt": "With the help of GPT or a local LLM, we expand this into a structured JSON object with global style, character definitions, and per-scene breakdown.",
-      "technicalDetails": {
-        "llmFields": [
-          "global_style: art style, camera language, color palette",
-          "characters: name, age, look, outfit, emotional state",
-          "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
-        ],
-        "outputFile": "prompt_run_001.json",
-        "exampleStack": "Python script calling OpenAI/LLM API and writing JSON to disk"
-      }
-    },
-    "step2": {
-      "title": "Step 2: Convert Prompt to a Storyboard Table",
-      "description": "The JSON spec is flattened into a storyboard table (CSV or Notion) that both humans and the pipeline can read.",
-      "technicalDetails": {
-        "columns": [
-          "scene_id",
-          "shot_id",
-          "start_time",
-          "end_time",
-          "duration_seconds",
-          "camera_type",
-          "visual_description",
-          "character_state",
-          "motion_notes"
-        ],
-        "storage": "storyboard_v1.csv (used as the single source of truth for downstream steps)",
-        "automation": "Python / Node.js script transforms prompt_run_001.json → storyboard_v1.csv"
-      }
-    },
-    "step3": {
-      "title": "🛠️ Step 3: Generate Visuals",
-      "description": "Generate high-quality keyframe images for each shot using Stable Diffusion through a ComfyUI workflow.",
-      "points": [
-        "🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each row in `storyboard_v1.csv` into a high-res keyframe.",
-        "Keep the style consistent by using the same base checkpoint, LoRA stack, sampler, and seed policy across all shots.",
-        "Refine images with inpainting (for faces/hands) and outpainting (for extended compositions and camera motion)."
+  "storyboardToPipeline": {
+    "title": "From Storyboards to AI Pipelines – Redefining Animation",
+    "intro": {
+      "p1": "Most people think AI video means \"text in, clip out.\" But if you're aiming for <strong>cinematic, director-level control</strong>, it's an entirely different game.",
+      "p2": "In traditional animation, every detail matters — character design, motion continuity, timing, and scene transitions. Our goal is to make AI match that level of precision.",
+      "p3": "Animation today is both an art and a structured orchestration challenge. We think like directors, but build like engineers.",
+      "p4": "That's why we build <strong>Controlled Generation Pipelines</strong> instead of one-shot generation. These pipelines combine structure and creativity:",
+      "pipelineItems": [
+        "Storyboard-to-Video: JSON-based scene specs with IDs, timing, and camera metadata",
+        "ComfyUI-based workflows: node-graph DAGs with versioned checkpoints, LoRA stacks, and seeds",
+        "Temporal & multimodal control: shared scene IDs across image, motion, audio, and subtitles"
       ],
-      "technicalDetails": {
-        "modelConfig": {
-          "checkpoint": "sd_xl_base_1.0.safetensors",
-          "vae": "sdxl_vae.safetensors",
-          "sampler": "euler_a",
-          "steps": 25,
-          "cfgScale": 6.5,
-          "resolution": "1024x576",
-          "loraStack": [
-            "character_girl_v2.safetensors",
-            "style_cinematic_blue_hour.safetensors"
-          ]
-        },
-        "consistency": {
-          "seedStrategy": "fixed_per_scene",
-          "seedExample": "seed = hash(scene_id + character_name)",
-          "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
-        },
-        "comfyui": {
-          "workflowFile": "workflows/storyboard_to_frame.json",
-          "inputMethod": "custom node / HTTP API reading storyboard_v1.csv and modelConfig",
-          "batching": "GPU batches keyed by scene_id to reuse loaded weights"
+      "p5": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
+      "technicalNotes": [
+        "All stages read/write typed artifacts (JSON/CSV, PNG sequences, WAV/MP3, MP4, .aep)",
+        "Pipelines are orchestrated via Python/CLI (e.g., ComfyUI API, ffmpeg, TTS APIs)",
+        "Every run is reproducible through stored config (model, sampler, seed, prompts, duration)"
+      ]
+    },
+    "pipeline": {
+      "title": "AI Video Generation Pipeline",
+      "description": "The AI video generation pipeline transforms text prompts into polished videos through structured stages with explicit inputs, outputs, and configs.",
+      "prompt": "1. Prompt (raw idea → structured JSON spec)",
+      "storyboard": "2. Storyboard (scene/shot table with timing, camera, and description)",
+      "images": "3. Images (per-shot keyframes generated via Stable Diffusion / ComfyUI)",
+      "animation": "4. Animation (image sequences → motion, parallax, and effects)",
+      "voiceOver": "5. Voice Over (TTS + alignment data)",
+      "finalVideo": "6. Final Video (ffmpeg composition: video + audio + subtitles)",
+      "features": [
+        "JSON-first design: every scene is addressable and scriptable (scene_id, shot_id)",
+        "ComfyUI-based workflows: modular, reproducible, composable DAGs for image/video generation",
+        "Temporal & multimodal control: consistent seeds, character embeddings, and timing across modalities"
+      ],
+      "exampleIntro": "Now, let's walk through a simple example to show how AI pipelines work in practice.",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
+    "steps": {
+      "step1": {
+        "title": "Step 1: Start with a Basic Prompt",
+        "example": "A girl stands at a midnight train station, wind blowing her hair.",
+        "expandedPrompt": "With the help of GPT or a local LLM, we expand this into a structured JSON object with global style, character definitions, and per-scene breakdown.",
+        "technicalDetails": {
+          "llmFields": [
+            "global_style: art style, camera language, color palette",
+            "characters: name, age, look, outfit, emotional state",
+            "scenes: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
+          ],
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "Python script calling OpenAI/LLM API and writing JSON to disk"
+        }
+      },
+      "step2": {
+        "title": "Step 2: Convert Prompt to a Storyboard Table",
+        "description": "The JSON spec is flattened into a storyboard table (CSV or Notion) that both humans and the pipeline can read.",
+        "technicalDetails": {
+          "columns": [
+            "scene_id",
+            "shot_id",
+            "start_time",
+            "end_time",
+            "duration_seconds",
+            "camera_type",
+            "visual_description",
+            "character_state",
+            "motion_notes"
+          ],
+          "storage": "storyboard_v1.csv (used as the single source of truth for downstream steps)",
+          "automation": "Python / Node.js script transforms prompt_run_001.json → storyboard_v1.csv"
+        }
+      },
+      "step3": {
+        "title": "🛠️ Step 3: Generate Visuals",
+        "description": "Generate high-quality keyframe images for each shot using Stable Diffusion through a ComfyUI workflow.",
+        "points": [
+          "🎨 Use <strong>Stable Diffusion</strong> or <strong>ComfyUI</strong> to turn each row in `storyboard_v1.csv` into a high-res keyframe.",
+          "Keep the style consistent by using the same base checkpoint, LoRA stack, sampler, and seed policy across all shots.",
+          "Refine images with inpainting (for faces/hands) and outpainting (for extended compositions and camera motion)."
+        ],
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": 25,
+            "cfgScale": 6.5,
+            "resolution": "1024x576",
+            "loraStack": [
+              "character_girl_v2.safetensors",
+              "style_cinematic_blue_hour.safetensors"
+            ]
+          },
+          "consistency": {
+            "seedStrategy": "fixed_per_scene",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "custom node / HTTP API reading storyboard_v1.csv and modelConfig",
+            "batching": "GPU batches keyed by scene_id to reuse loaded weights"
+          }
+        }
+      },
+      "step4": {
+        "title": "🎬 Step 4: Add Motion and Atmosphere in After Effects",
+        "description": "Enhance static keyframes with motion, parallax, and atmosphere using Adobe After Effects (or an equivalent compositor).",
+        "points": [
+          "Import image sequences or keyframes into <strong>Adobe After Effects</strong> as layered compositions.",
+          "Apply keyframe animations: pan, zoom, parallax layers, fog overlays, glow and light flicker.",
+          "Add ambient sound cues and cinematic transitions between scenes."
+        ],
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optional depth/alpha maps)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": [
+            "Use AE scripts/ExtendScript or JSX to auto-create comps per scene_id.",
+            "Map `duration_seconds` from storyboard_v1.csv → comp duration.",
+            "Generate intermediate frames via AE plugins or video-aware diffusion tools if needed."
+          ],
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "🎧 Step 5: Add Voice and Subtitles",
+        "description": "Generate voiceover aligned to the storyboard and attach subtitles for accessibility and clarity.",
+        "points": [
+          "Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers from the script, using a consistent speaker profile.",
+          "For acronyms (like API, NBA), generate English snippets separately and merge in post to keep pronunciation clean.",
+          "Add subtitles using `.srt` or `.json` timeline files synced to the voiceover track."
+        ],
+        "technicalDetails": {
+          "scriptSource": "dialogue and narration pulled from prompt_run_001.json + storyboard_v1.csv",
+          "ttsConfig": {
+            "engine": "XTTS or ElevenLabs",
+            "voiceId": "cinematic_female_en",
+            "sampleRate": 44100,
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voiceover.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "align `start_time` / `end_time` from storyboard_v1.csv with subtitle cues; ensure total audio length ≈ final timeline duration"
+        }
+      },
+      "step6": {
+        "title": "Step 6: Final Composition with FFMPEG",
+        "description": "Use FFMPEG to combine all pieces into one final video file with audio and subtitles.",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voiceover.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC audio)"
         }
       }
     },
-    "step4": {
-      "title": "🎬 Step 4: Add Motion and Atmosphere in After Effects",
-      "description": "Enhance static keyframes with motion, parallax, and atmosphere using Adobe After Effects (or an equivalent compositor).",
-      "points": [
-        "Import image sequences or keyframes into <strong>Adobe After Effects</strong> as layered compositions.",
-        "Apply keyframe animations: pan, zoom, parallax layers, fog overlays, glow and light flicker.",
-        "Add ambient sound cues and cinematic transitions between scenes."
-      ],
-      "technicalDetails": {
-        "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optional depth/alpha maps)",
-        "projectFile": "ae/storyboard_v1.aep",
-        "automation": [
-          "Use AE scripts/ExtendScript or JSX to auto-create comps per scene_id.",
-          "Map `duration_seconds` from storyboard_v1.csv → comp duration.",
-          "Generate intermediate frames via AE plugins or video-aware diffusion tools if needed."
-        ],
-        "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
-      }
-    },
-    "step5": {
-      "title": "🎧 Step 5: Add Voice and Subtitles",
-      "description": "Generate voiceover aligned to the storyboard and attach subtitles for accessibility and clarity.",
-      "points": [
-        "Use <strong>XTTS</strong> or <strong>ElevenLabs</strong> to generate natural voiceovers from the script, using a consistent speaker profile.",
-        "For acronyms (like API, NBA), generate English snippets separately and merge in post to keep pronunciation clean.",
-        "Add subtitles using `.srt` or `.json` timeline files synced to the voiceover track."
-      ],
-      "technicalDetails": {
-        "scriptSource": "dialogue and narration pulled from prompt_run_001.json + storyboard_v1.csv",
-        "ttsConfig": {
-          "engine": "XTTS or ElevenLabs",
-          "voiceId": "cinematic_female_en",
-          "sampleRate": 44100,
-          "format": "wav"
-        },
-        "outputs": {
-          "voiceFile": "audio/storyboard_v1_voiceover.wav",
-          "subtitleFile": "subtitles/storyboard_v1.srt"
-        },
-        "syncStrategy": "align `start_time` / `end_time` from storyboard_v1.csv with subtitle cues; ensure total audio length ≈ final timeline duration"
-      }
-    },
-    "step6": {
-      "title": "Step 6: Final Composition with FFMPEG",
-      "description": "Use FFMPEG to combine all pieces into one final video file with audio and subtitles.",
-      "technicalDetails": {
-        "inputs": {
-          "video": "ae_renders/storyboard_v1_timeline.mp4",
-          "audio": "audio/storyboard_v1_voiceover.wav",
-          "subtitles": "subtitles/storyboard_v1.srt"
-        },
-        "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
-        "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC audio)"
-      }
-    }
+    "whatYouNeed": "📁 What You'll Need",
+    "whatYouNeedTechnical": [
+      "GPU with at least 12GB VRAM for Stable Diffusion / ComfyUI",
+      "Python environment for JSON/CSV transforms and automation scripts",
+      "ComfyUI installed with required custom nodes and workflows",
+      "Adobe After Effects or similar compositor for motion and FX",
+      "XTTS / ElevenLabs API access for TTS",
+      "ffmpeg installed and available on the command line"
+    ],
+    "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started."
   },
-  "whatYouNeed": "📁 What You'll Need",
-  "whatYouNeedTechnical": [
-    "GPU with at least 12GB VRAM for Stable Diffusion / ComfyUI",
-    "Python environment for JSON/CSV transforms and automation scripts",
-    "ComfyUI installed with required custom nodes and workflows",
-    "Adobe After Effects or similar compositor for motion and FX",
-    "XTTS / ElevenLabs API access for TTS",
-    "ffmpeg installed and available on the command line"
-  ],
-  "cta": "🚀 Ready to bring your storyboard to life with AI? <strong>We can provide a full starter kit</strong> with example JSONs, ComfyUI workflows, and ffmpeg/AE templates to help you get started."
-},
-
   "SceneDetection": {
     "tags": {
       "computerVision": "Computer Vision",
@@ -559,28 +306,40 @@
       "date": "December 11, 2025",
       "readingTime": "8 min read"
     },
-    "Technical":{
+    "Technical": {
       "title": "TECHNICAL DEEP DIVE",
       "steps": {
-        "step1":"How It Works: Under the Hood",
+        "step1": "How It Works: Under the Hood",
         "videoProcessingPipeline": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
-        "step2":"Video Processing Pipeline",
+        "step2": "Video Processing Pipeline",
         "step2Text": "Our system processes videos through a sophisticated multi-stage pipeline that ensures accurate scene detection and analysis:",
-        "step3":"Scene Detection and Metadata Extraction",
+        "step3": "Scene Detection and Metadata Extraction",
         "step3Text": "OpenCV-powered frame sampling at optimal intervals",
-        "step4":"Shot Analysis and Metadata Enhancement",
+        "step4": "Shot Analysis and Metadata Enhancement",
         "step4Text": "Adaptive thresholding for precise scene boundary detection",
-        "step5":"Scene Labeling and Metadata Organization",
+        "step5": "Scene Labeling and Metadata Organization",
         "step5Text": "Deep learning models for comprehensive scene understanding",
-        "step6":"Metadata Export and Integration",
+        "step6": "Metadata Export and Integration",
         "step6Text": "Export metadata to JSON format for integration with other tools"
-        
       }
     },
     "featuresTitle": "Powerful Features at Your Fingertips",
     "features1": "Seamless Video Integration",
     "features1Text": "Process local files, YouTube links, or cloud storage with our unified interface.",
-    "features": "Powerful Features at Your Fingertips",
+    "features": {
+      "modularArchitecture": {
+        "title": "Modular Architecture",
+        "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+      },
+      "performance": {
+        "title": "Performance Optimized",
+        "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
+      },
+      "aiEnhanced": {
+        "title": "AI-Enhanced Analysis",
+        "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+      }
+    },
     "features2": "Seamless Video Integration",
     "features2Text": "Process local files, YouTube links, or cloud storage with our unified interface.",
     "features3": "AI-Powered Analysis",
@@ -704,17 +463,38 @@
             "visual_analysis": {
               "brightness": 0.78,
               "contrast": 0.65,
-              "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+              "color_palette": [
+                "#3A5FCD",
+                "#87CEEB",
+                "#F5F5DC"
+              ],
               "dominant_colors": [
-                {"color": "#3A5FCD", "percentage": 0.45},
-                {"color": "#87CEEB", "percentage": 0.35},
-                {"color": "#F5F5DC", "percentage": 0.20}
+                {
+                  "color": "#3A5FCD",
+                  "percentage": 0.45
+                },
+                {
+                  "color": "#87CEEB",
+                  "percentage": 0.35
+                },
+                {
+                  "color": "#F5F5DC",
+                  "percentage": 0.2
+                }
               ],
               "lighting_condition": "daylight",
               "environment": "outdoor",
               "detected_objects": [
-                {"label": "person", "confidence": 0.97, "count": 2},
-                {"label": "sky", "confidence": 0.99, "count": 1}
+                {
+                  "label": "person",
+                  "confidence": 0.97,
+                  "count": 2
+                },
+                {
+                  "label": "sky",
+                  "confidence": 0.99,
+                  "count": 1
+                }
               ]
             }
           },
@@ -764,7 +544,10 @@
           "jsonExample": {
             "content_analysis": {
               "primary_category": "drama",
-              "secondary_categories": ["romance", "disaster"],
+              "secondary_categories": [
+                "romance",
+                "disaster"
+              ],
               "setting": {
                 "type": "ship_deck",
                 "time_of_day": "night",
@@ -789,9 +572,17 @@
               "sentiment": {
                 "overall": "intense_dramatic",
                 "confidence": 0.88,
-                "emotions": ["fear", "determination", "urgency"]
+                "emotions": [
+                  "fear",
+                  "determination",
+                  "urgency"
+                ]
               },
-              "key_elements": ["lifeboat", "ocean", "moonlight"],
+              "key_elements": [
+                "lifeboat",
+                "ocean",
+                "moonlight"
+              ],
               "narrative_importance": 0.95,
               "action_required": true
             }
@@ -817,7 +608,11 @@
         "visual_analysis": {
           "brightness": 0.78,
           "contrast": 0.65,
-          "color_palette": ["#3A5FCD", "#87CEEB", "#F5F5DC"],
+          "color_palette": [
+            "#3A5FCD",
+            "#87CEEB",
+            "#F5F5DC"
+          ],
           "lighting_condition": "daylight",
           "environment": "studio"
         },
@@ -825,13 +620,19 @@
           "has_speech": true,
           "speech_confidence": 0.92,
           "background_noise_level": 0.15,
-          "speaker_gender": ["male", "female"],
+          "speaker_gender": [
+            "male",
+            "female"
+          ],
           "speech_text": "Let's discuss how AI is transforming video production..."
         },
         "content_analysis": {
           "primary_category": "interview",
           "setting": "studio",
-          "subjects": ["host", "guest"],
+          "subjects": [
+            "host",
+            "guest"
+          ],
           "sentiment": "neutral_positive"
         },
         "shots": [
@@ -840,14 +641,20 @@
             "start_time": 2.5,
             "end_time": 3.1,
             "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
-            "transition": {"type": "cut", "confidence": 0.98}
+            "transition": {
+              "type": "cut",
+              "confidence": 0.98
+            }
           },
           {
             "shot_id": "shot_002",
             "start_time": 3.1,
             "end_time": 5.2,
             "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
-            "transition": {"type": "fade", "confidence": 0.95}
+            "transition": {
+              "type": "fade",
+              "confidence": 0.95
+            }
           }
         ]
       },
@@ -867,115 +674,105 @@
     "richStructuredOutput": "Rich, Structured Output",
     "richStructuredOutputText": "Our system generates comprehensive storyboard data with detailed metadata for each scene, giving you complete control over your video content.",
     "advancedUsage": {
-  "title": "Advanced Usage & Customization",
-  "description": "The scene detection system is highly customizable to fit different use cases. Here are some advanced features and customization options:",
-  "features": {
-    "thresholds": {
-      "title": "Custom Scene Detection Thresholds",
-      "description": "Adjust the sensitivity of scene detection by modifying the threshold parameter. Lower values make the detection more sensitive to changes."
-    },
-    "aiAnalysis": {
-      "title": "AI-Enhanced Analysis",
-      "description": "Enable AI analysis for more detailed scene understanding and labeling. This requires additional setup with the Ollama server."
-    },
-    "outputCustomization": {
-      "title": "Output Customization",
-      "description": "Customize the output format and include additional metadata in the generated storyboard."
-    }
-  },
-  "integration": {
-    "title": "Integration with Other Tools",
-    "description": "The storyboard output can be easily integrated with other tools and workflows. Here are some examples:",
-    "tools": {
-      "editingSoftware": {
-        "title": "Video Editing Software",
-        "description": "Import the JSON output into video editors that support script-based editing"
+      "title": "Advanced Usage & Customization",
+      "description": "The scene detection system is highly customizable to fit different use cases. Here are some advanced features and customization options:",
+      "features": {
+        "thresholds": {
+          "title": "Custom Scene Detection Thresholds",
+          "description": "Adjust the sensitivity of scene detection by modifying the threshold parameter. Lower values make the detection more sensitive to changes."
+        },
+        "aiAnalysis": {
+          "title": "AI-Enhanced Analysis",
+          "description": "Enable AI analysis for more detailed scene understanding and labeling. This requires additional setup with the Ollama server."
+        },
+        "outputCustomization": {
+          "title": "Output Customization",
+          "description": "Customize the output format and include additional metadata in the generated storyboard."
+        }
       },
-      "cms": {
-        "title": "Content Management Systems",
-        "description": "Automatically generate metadata for video assets"
-      },
-      "aiTraining": {
-        "title": "AI Training Data",
-        "description": "Use the structured output as training data for machine learning models"
+      "integration": {
+        "title": "Integration with Other Tools",
+        "description": "The storyboard output can be easily integrated with other tools and workflows. Here are some examples:",
+        "tools": {
+          "editingSoftware": {
+            "title": "Video Editing Software",
+            "description": "Import the JSON output into video editors that support script-based editing"
+          },
+          "cms": {
+            "title": "Content Management Systems",
+            "description": "Automatically generate metadata for video assets"
+          },
+          "aiTraining": {
+            "title": "AI Training Data",
+            "description": "Use the structured output as training data for machine learning models"
+          }
+        }
       }
-    }
-  }
-},
-"features": {
-  "modularArchitecture": {
-    "title": "Modular Architecture",
-    "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
-  },
-  "performance": {
-    "title": "Performance Optimized",
-    "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
-  },
-  "aiEnhanced": {
-    "title": "AI-Enhanced Analysis",
-    "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
-  }
-},
-"Benefitss": {
-  "title": "Benefits",
-  "description": "The benefits of using our AI-powered scene detection system include:",
-  "tags": {
-    "computerVision": "Computer Vision",
-    "deepLearning": "Deep Learning",
-    "realTimeAnalysis": "Real-time Analysis"
-  },
-  "features": {
-    "modularArchitecture": {
-      "title": "Modular Architecture",
-      "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+    },
+    "Benefitss": {
+      "title": "Benefits",
+      "description": "The benefits of using our AI-powered scene detection system include:",
+      "tags": {
+        "computerVision": "Computer Vision",
+        "deepLearning": "Deep Learning",
+        "realTimeAnalysis": "Real-time Analysis"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "Modular Architecture",
+          "description": "The system is built with separate components for video analysis, AI processing, and output generation, making it easy to extend and maintain."
+        },
+        "performance": {
+          "title": "Performance Optimized",
+          "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
+        },
+        "aiEnhanced": {
+          "title": "AI-Enhanced Analysis",
+          "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "WHY CHOOSE OUR SOLUTION",
+      "title": "The Power of AI-Powered Scene Analysis"
+    },
+    "integration": {
+      "title": "Easy Integration",
+      "description": "The structured JSON output makes it easy to integrate with other tools and workflows:",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Vue"
+      ]
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "Comprehensive Scene Data",
+        "items": [
+          "Precise timing information for each scene",
+          "Key frames for visual reference",
+          "Object detection results",
+          "Camera movement analysis"
+        ]
+      },
+      "export": {
+        "title": "Export Option",
+        "formats": {
+          "json": "JSON"
+        }
+      }
     },
     "performance": {
       "title": "Performance Optimized",
-      "description": "Efficient frame processing and parallelization ensure fast analysis even for long videos."
-    },
-    "aiEnhanced": {
-      "title": "AI-Enhanced Analysis",
-      "description": "Optional AI components provide deeper scene understanding and more accurate labeling."
+      "features": {
+        "speed": "5-10x faster than real-time",
+        "memory": "Low memory footprint",
+        "parallel": "Parallel processing"
+      }
     }
-  }
-},
-"benefits": {
-  "subtitle": "WHY CHOOSE OUR SOLUTION",
-  "title": "The Power of AI-Powered Scene Analysis"
-},
-"integration": {
-  "title": "Easy Integration",
-  "description": "The structured JSON output makes it easy to integrate with other tools and workflows:",
-  "technologies": ["Python", "JavaScript", "Node.js", "React", "Vue"]
-},
-"features10": {
-  "comprehensiveData": {
-    "title": "Comprehensive Scene Data",
-    "items": [
-      "Precise timing information for each scene",
-      "Key frames for visual reference",
-      "Object detection results",
-      "Camera movement analysis"
-    ]
   },
-  "export": {
-    "title": "Export Option",
-    "formats": {
-      "json": "JSON"
-    }
-  }
-},
-"performance": {
-  "title": "Performance Optimized",
-  "features": {
-    "speed": "5-10x faster than real-time",
-    "memory": "Low memory footprint",
-    "parallel": "Parallel processing"
-  }
-}
-  },
-  
-
   "nanoBananaProPrompts": {
     "title": "Nano Banana Pro Prompts",
     "description": "Discover a collection of creative and effective prompts for your AI content generation needs. These prompts are designed to help you get the most out of your AI tools.",
@@ -1118,20 +915,24 @@
       "title": "Let's discuss:",
       "prompt": "Are you feeling more 'efficient' or 'replaced' in your current role? How are you evolving your toolkit this year?"
     },
-    "hashtags": ["#DataScience", "#AI", "#MachineLearning", "#GenerativeAI", "#CareerDevelopment", "#TechTrends"]
+    "hashtags": [
+      "#DataScience",
+      "#AI",
+      "#MachineLearning",
+      "#GenerativeAI",
+      "#CareerDevelopment",
+      "#TechTrends"
+    ]
   },
   "aiPlatform": {
     "title": "The Mid-Sized Company's Playbook for AI Success",
     "subtitle": "How to Build an AI Platform That Scales Without Breaking the Bank",
-    "intro": "Everyone wants to build with AI — but most companies can't afford an army of PhDs or an OpenAI‑sized budget. The good news: you don't have to.",
-    "imageAlt": "AI Platform Architecture Diagram",
-    "heading": "🏗️ The Mid-Sized Company's Playbook for AI Success",
-    
     "intro": {
       "p1": "At small‑ to medium‑sized tech companies, the real advantage isn't in training massive models — it's in building an AI platform that lets every one ship intelligent features. This is how you turn agility into impact.",
       "p2": "Here's a pragmatic, production‑ready blueprint we've used to power AI across finance, legal, customer support, and engineering, without burning cash or hiring 50 ML experts."
     },
-
+    "imageAlt": "AI Platform Architecture Diagram",
+    "heading": "🏗️ The Mid-Sized Company's Playbook for AI Success",
     "mindsetShift": {
       "title": "1. The Mindset Shift: Democratize, Don't Centralize",
       "content": "If your AI team is a bottleneck, you've already lost. Instead, build a self‑serve AI infrastructure that empowers product engineers to build what they need.",
@@ -1145,7 +946,6 @@
       },
       "conclusion": "This turns AI from a research project into a business multiplier."
     },
-
     "stack": {
       "title": "2. The Stack: Keep It Thin, Keep It Open",
       "intro": "Over‑engineering kills velocity. We built a three‑layer platform that abstracts complexity without locking you in.",
@@ -1178,7 +978,6 @@
         "conclusion": "This lets product teams prototype agents in hours, not weeks."
       }
     },
-
     "fineTuning": {
       "title": "3. Skip Fine‑Tuning (Most of the Time)",
       "content": "Here's the secret: **you probably don't need to fine‑tune an LLM.**",
@@ -1190,7 +989,6 @@
       ],
       "conclusion": "We only fine‑tune small models for narrow, high‑volume tasks, after a long process of collecting and cleaning high-quality in-domain data. Everything else is 'engineering over training.'"
     },
-
     "essentialWork": {
       "title": "5. The Unsexy, Essential Work",
       "content": "SOTA platforms aren't built on models alone. They're built on solving the boring, hard problems:",
@@ -1209,12 +1007,11 @@
         }
       ]
     },
-
     "conclusion": {
       "title": "The Bottom Line",
       "content": "For mid‑sized tech companies, winning at AI doesn't mean building a better LLM. It means building a platform that turns AI into a repeatable, scalable business process.",
       "finalThoughts": "Start with the infrastructure, secure the data, and let your teams build. The future isn't one model to rule them all — it's a fleet of specialized agents, each solving a real business problem, all powered by a platform that makes it simple.",
       "callToAction": "Ready to build? Keep it simple, keep it open, and focus on enabling others."
     }
-}
+  }
 }

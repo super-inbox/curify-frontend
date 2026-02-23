@@ -1,8 +1,17 @@
 import Link from 'next/link';
 import CdnImage from '../../_components/CdnImage';
-import blogPosts from '@/public/data/blogs.json';
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+
+interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  readTime: string;
+  tag: string;
+  image: string;
+}
 
 export async function generateMetadata({
   params,
@@ -29,9 +38,12 @@ export async function generateMetadata({
 }
 
 export default function BlogListPage() {
+  const t = useTranslations("blog");
+  const blogPosts = t.raw("posts") as BlogPost[];
+
   return (
     <div className="max-w-screen-xl mx-auto px-6 pt-24 pb-16">
-      <h1 className="text-4xl font-bold mb-10">Latest Articles</h1>
+      <h1 className="text-4xl font-bold mb-10">{t("latestArticles")}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {blogPosts.map((post) => (

@@ -1,0 +1,101 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "가격 플랜 | Curify Studio",
+      "description": "콘텐츠 제작 요구 사항에 맞는 플랜을 선택하세요. 무료 도구에서 엔터프라이즈급 AI 더빙 및 현지화까지."
+    },
+    "header": {
+      "title": "플랜으로 시작하기",
+      "subtitle": "필요에 맞는 플랜을 선택하세요."
+    },
+    "common": {
+      "month": "월",
+      "pricing": "가격",
+      "receive": "수신"
+    },
+    "buttons": {
+      "signUp": "가입하기",
+      "subscribePlan": "플랜 구독",
+      "currentPlan": "현재 플랜",
+      "comingSoon": "곧 출시 예정",
+      "downgradeToFree": "무료로 다운그레이드",
+      "downgradeToCreator": "Creator로 다운그레이드",
+      "contactSales": "영업팀 문의"
+    },
+    "plans": {
+      "free": {
+        "name": "무료",
+        "description": "도구 테스트 및 가벼운 작업에 적합",
+        "features": [
+          "워터마크 없이 비디오 다운로드",
+          "1시간 무료 자막 처리",
+          "SRT 파일 내보내기"
+        ]
+      },
+      "creator": {
+        "name": "크리에이터",
+        "description": "정기적인 자막 및 가벼운 더빙을 하는 소규모 크리에이터에게 이상적",
+        "plusTitle": "무료의 모든 것, 플러스:",
+        "features": [
+          "립싱크",
+          "일괄 처리",
+          "5시간 무료 자막 처리",
+          "작업당 최대 30분"
+        ]
+      },
+      "pro": {
+        "name": "프로",
+        "description": "곧 출시 예정 — 대량 크리에이터를 위해 설계됨",
+        "plusTitle": "Creator의 모든 것, 플러스:",
+        "features": [
+          "음성 미화 및 노이즈 제거",
+          "우선 순위 대기열",
+          "작업당 최대 60분",
+          "무제한 자막 시간"
+        ]
+      },
+      "enterprise": {
+        "name": "엔터프라이즈",
+        "description": "팀, 스튜디오 및 엔터프라이즈 워크플로용",
+        "customPricing": "맞춤형",
+        "unlimited": "무제한 🐚",
+        "tailoredSupport": "및 맞춤형 지원",
+        "plusTitle": "Pro의 모든 것, 플러스:",
+        "features": [
+          "전담 계정 관리자",
+          "온프레미스 배포 옵션",
+          "API 액세스 및 사용 분석",
+          "맞춤형 통합 및 SLA",
+          "무제한 처리 시간"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "기능 / 제한"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "워터마크 포함 비디오 다운로드",
+        "videoDownloadWithoutWatermark": "워터마크 없이 비디오 다운로드",
+        "downloadSrt": "SRT 파일 다운로드",
+        "voiceBeautification": "음성 미화 및 노이즈 제거",
+        "lipSync": "립싱크",
+        "subtitleTools": "자막 도구(추가/제거, 번역 없음)",
+        "batchProcessing": "일괄 처리",
+        "maxVideoLength": "작업당 최대 비디오 길이",
+        "monthlyCredits": "월간 무료 크레딧",
+        "priorityQueue": "우선 순위 대기열 / 더 빠른 처리",
+        "creditTopUp": "크레딧 충전"
+      },
+      "values": {
+        "free": "무료",
+        "unlimited": "무제한",
+        "oneHourPerMonth": "1시간/월",
+        "fiveHoursPerMonth": "5시간/월",
+        "fiveMinutes": "5분",
+        "thirtyMinutes": "30분",
+        "sixtyMinutes": "60분"
+      }
+    }
+  }
+}
