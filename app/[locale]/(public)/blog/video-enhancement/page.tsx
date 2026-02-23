@@ -14,11 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "blog.metadata" });
+  const t = await getTranslations({ locale, namespace: "videoEnhancement" });
 
   return {
-    title: "AI Video Enhancement: Storyboards, Meme Captions & SFX Automation – Curify AI",
-    description: t("description"),
+    title: "AI Video Enhancement: Storyboards, Captions & SFX",
+    description: "Discover how Curify AI's automated pipeline enhances videos with scene detection, generated storyboards, meme captions, and perfectly timed sound effects.",
   };
 }
 
