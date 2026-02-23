@@ -21,14 +21,14 @@ export async function generateMetadata({
   const { locale } = await params;
   const headerList = await headers();
   const pathname = headerList.get("x-pathname") || "";
-  
+
   // Remove locale prefix from pathname to get the canonical path
   // e.g. /zh/pricing -> /pricing
   const pathWithoutLocale =
     pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "";
-  
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
-  
+
   // Construct languages map for all supported locales
   const languages: Record<string, string> = {};
   routing.locales.forEach((lang) => {
@@ -64,7 +64,11 @@ export default async function PublicLocaleLayout({
 
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const common = (await import(`../../../messages/${locale}/common.json`)).default;
+  const home = (await import(`../../../messages/${locale}/home.json`)).default;
+  const blog = (await import(`../../../messages/${locale}/blog.json`)).default;
+  const pricing = (await import(`../../../messages/${locale}/pricing.json`)).default;
+  const messages = { ...common, ...home, ...blog, ...pricing };
 
   return (
     <html lang={locale} suppressHydrationWarning>
