@@ -13,9 +13,37 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.metadata" });
 
+  const baseUrl = "https://www.curify-ai.com";
+  const url = `${baseUrl}/${locale}`;
+
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url,
+      siteName: "Curify",
+      images: [
+        {
+          url: `${baseUrl}/og-cover.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "Curify – Turn Ideas Into Visual Thinking",
+        },
+      ],
+      locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      images: [`${baseUrl}/og-cover.jpg`],
+    },
   };
 }
 
@@ -33,22 +61,26 @@ export default async function HomePage() {
   // 4. Pass 'cards' prop to the Client Component
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Curify Studio",
-            "url": "https://www.curify-ai.com",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://www.curify-ai.com/inspiration-hub?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          })
-        }}
-      />
+     <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Curify",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "description":
+        "Curify is an AI-powered visual thinking platform that transforms trends, ideas, and knowledge into structured, shareable visual content including inspiration cards, infographics, and localized media.",
+      "url": "https://www.curify-ai.com",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    })
+  }}
+/>
       <HomeClient cards={cards} />
     </>
   );

@@ -7,6 +7,7 @@ import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { Search, Type, Building2, Sparkles } from "lucide-react";
 import { Inter } from "next/font/google";
 import ContentCreationToolsSidebar from "@/app/[locale]/_components/ContentCreationToolsSidebar";
+import { useTranslations } from "next-intl";
 
 import {
   InspirationListItem,
@@ -240,6 +241,8 @@ export default function HomeClient({
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
+  const tHero = useTranslations("home.hero"); // ✅
+
   useEffect(() => {
     console.log("[home] activeLang:", activeLang);
     console.log("[home] nanoCards len:", nanoCards.length);
@@ -280,20 +283,22 @@ export default function HomeClient({
         "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6"
       )}
     >
+
       <div className="mx-auto max-w-[1400px]">
-        {/* Headline */}
-        <div className="mb-8">
-          <h1 className="text-[26px] font-semibold tracking-tight text-neutral-900 md:text-3xl">
-            Discover Ideas{" "}
-            <span className="mx-2 font-light text-neutral-300">|</span>{" "}
-            Express Visually{" "}
-            <span className="mx-2 font-light text-neutral-300">|</span>{" "}
-            Create Content
-          </h1>
-          <p className="mt-2 text-sm text-neutral-500">
-            Curated inspirations + functional visual templates to help you
-            create faster.
-          </p>
+  {/* Headline */}
+  <div className="pt-10 pb-6">
+          <div className="mx-auto max-w-4xl">
+            <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
+              {tHero("title")}
+            </h1>
+
+            {/* ✅ If you keep hero.description as ONE paragraph */}
+            <p className="mt-4 text-base leading-relaxed text-neutral-700">
+              {tHero("description")}
+            </p>
+
+            {/* ✅ If you prefer two paragraphs, use hero.descriptionLine1/2 instead (see note below) */}
+          </div>
         </div>
 
         {/* 2-Column Grid */}
