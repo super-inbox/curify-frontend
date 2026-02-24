@@ -59,8 +59,8 @@ export default async function AIPlatform() {
 
           <div className="prose lg:prose-xl max-w-none">
 
-            <p className="text-lg">{t('p1')}</p>
-            <p className="text-lg">{t('p2')}</p>
+            <p className="text-lg">{t('intro.p1')}</p>
+            <p className="text-lg">{t('intro.p2')}</p>
           </div>
         </header>
 

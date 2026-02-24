@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Curify Blog | Einblicke in KI-Content-Erstellung",
       "description": "Lies die neuesten Artikel zu KI-Videoerstellung, Synchronisation, Stiltransfer und der Zukunft der Content-Erstellung."
-    }
+    },
+    "latestArticles": "Neueste Artikel",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+        "date": "30. Januar 2026",
+        "readTime": "9 Min. Lesezeit",
+        "tag": "KI-Plattform",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
+        "date": "30. Januar 2026",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "KI-Architektur",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
+        "date": "30. Januar 2026",
+        "readTime": "8 Min. Lesezeit",
+        "tag": "KI-Branche",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "Vom Rohmaterial zum Storyboard: KI-gestützte Videoanalyse",
+        "date": "11. Dezember 2025",
+        "readTime": "10 Min. Lesezeit",
+        "tag": "Videoanalyse",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "KI-Video-Enhancement: Storyboards, Meme-Captions & SFX-Automatisierung",
+        "date": "18. November 2025",
+        "readTime": "7 Min. Lesezeit",
+        "tag": "Videoverbesserung",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Bewertung der KI-Videoübersetzung: Metriken, auf die es ankommt",
+        "date": "14. November 2025",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "Lokalisierung",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Erstellen Sie Ihre eigene KI-gestützte Comic-Animation: Schritt-für-Schritt-Anleitung",
+        "date": "28. Oktober 2025",
+        "readTime": "5 Min. Lesezeit",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Teil 2: Agenten vs. Workflows – von der Kontrolle zur Intelligenz",
+        "date": "28. Oktober 2025",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "Generative Tools",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Teil 3: AE vs. ComfyUI – Motion Design vs. Diffusions-Pipelines",
+        "date": "28. Oktober 2025",
+        "readTime": "7 Min. Lesezeit",
+        "tag": "Tools & Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
@@ -855,15 +930,23 @@
       "#GenerativeKI",
       "#Karriereentwicklung",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "Ihre persönliche Erfahrung ist Ihr Vorteil. Ein Sprachmodell kann Logik nachahmen, aber es hat nicht die jahrelangen 'Kampfnarben' von gescheiterten Implementierungen oder die Intuition, die aus der Navigation in komplexen Organisationen entsteht.",
+    "content": "Traditionelle Bereiche wie Suche, Werbung und Empfehlungssysteme (SAR) reifen, und die Branche verlagert ihren Fokus auf leistungsstarke Technik und KI-Architektur. Wir beobachten ein seltsames Paradox.",
+    "lowBarTrap": {
+      "title": "Die \"Niedrige-Hürde\"-Falle",
+      "content": "Master-Studenten können heute GPT-4 nutzen, um in Sekundenschnelle Datenbereinigung, explorative Datenanalyse und Visualisierung durchzuführen. Ohne solide Grundlagen fehlt ihnen jedoch oft das Urteilsvermögen zu erkennen, wann die KI \"halluziniert\" oder statistisch fragwürdige Ergebnisse liefert."
+    },
+    "stakeholderShift": {
+      "title": "Der Wandel der Stakeholder",
+      "content": "Wenn Geschäftspartner ihre eigenen Eingabeaufforderungen schreiben können, um grundlegende Erkenntnisse zu erhalten, fühlen sich viele Data Scientists \"unterfordert\", gefangen in endlosen Besprechungen und sich wiederholendem Prompt-Engineering."
+    },
+    "title": "Data Science im Zeitalter der KI: Ist der \"Traumjob\" noch attraktiv?",
+    "description": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein."
   },
   "aiPlatform": {
     "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "subtitle": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
-    "intro": {
-      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
-      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
-    },
     "imageAlt": "KI-Plattform-Architekturdiagramm",
     "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "mindsetShift": {
@@ -945,7 +1028,12 @@
       "content": "Für mittelständische Technologieunternehmen bedeutet Erfolg mit KI nicht, ein besseres LLM zu bauen. Es bedeutet, eine Plattform zu schaffen, die KI in einen wiederholbaren, skalierbaren Geschäftsprozess verwandelt.",
       "finalThoughts": "Beginnen Sie mit der Infrastruktur, sichern Sie die Daten und lassen Sie Ihre Teams bauen. Die Zukunft besteht nicht aus einem Modell, das alles beherrscht – sondern aus einer Flotte spezialisierter Agenten, die jeweils ein echtes Geschäftsproblem lösen, alle angetrieben von einer Plattform, die es einfach macht.",
       "callToAction": "Bereit zum Bauen? Halten Sie es einfach, halten Sie es offen und konzentrieren Sie sich darauf, andere zu befähigen."
-    }
+    },
+    "intro": {
+      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
+      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
+    },
+    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen"
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",

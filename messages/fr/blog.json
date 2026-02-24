@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Blog Curify | Aperçus de la création de contenu IA",
       "description": "Lisez les derniers articles sur la génération de vidéos IA, le doublage, le transfert de style et l'avenir de la création de contenu."
-    }
+    },
+    "latestArticles": "Derniers Articles",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Le guide des entreprises de taille moyenne pour réussir en IA",
+        "date": "30 janvier 2026",
+        "readTime": "9 min de lecture",
+        "tag": "Plateforme d'IA",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "Du robot QA à l'agent de tâche: un guide d'architecture",
+        "date": "30 janvier 2026",
+        "readTime": "6 min de lecture",
+        "tag": "Architecture d'IA",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "La science des données à l'ère de l'IA: le \"travail le plus sexy\" l'est-il toujours?",
+        "date": "30 janvier 2026",
+        "readTime": "8 min de lecture",
+        "tag": "Industrie de l'IA",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "Des images brutes aux story-boards: analyse vidéo assistée par IA",
+        "date": "11 décembre 2025",
+        "readTime": "10 min de lecture",
+        "tag": "Analyse vidéo",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "Amélioration vidéo par IA: story-boards, sous-titres de mèmes et automatización SFX",
+        "date": "18 novembre 2025",
+        "readTime": "7 min de lecture",
+        "tag": "Amélioration vidéo",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Évaluation de la traduction vidéo par IA: les indicateurs qui comptent",
+        "date": "14 novembre 2025",
+        "readTime": "6 min de lecture",
+        "tag": "Localización",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Créez votre propre animation de bande dessinée assistée par IA: guide étape par étape",
+        "date": "28 octobre 2025",
+        "readTime": "5 min de lecture",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Partie 2: Agents vs Workflows – du contrôle à l'intelligence",
+        "date": "28 octobre 2025",
+        "readTime": "6 min de lecture",
+        "tag": "Outils génératifs",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Partie 3: AE vs ComfyUI – motion design vs pipelines de diffusion",
+        "date": "28 octobre 2025",
+        "readTime": "7 min de lecture",
+        "tag": "Outils et Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Redéfinir l'animation (Partie 3)",
@@ -922,15 +997,23 @@
       "#GenerativeAI",
       "#CareerDevelopment",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "L'expérience personnelle est votre avantage. Un LLM peut imiter la logique, mais il n'a pas les années de « cicatrices de bataille » dues à des déploiements ratés ni l'intuition acquise en naviguant dans des organisations complexes.",
+    "content": "Les domaines traditionnels tels que la recherche, les annonces et les recommandations (SAR) arrivent à maturité et le secteur se concentre désormais sur une ingénierie et une architecture d'IA robustes. Nous assistons à un étrange paradoxe.",
+    "lowBarTrap": {
+      "title": "Le piège à « barre basse »",
+      "content": "Les étudiants en master peuvent désormais utiliser GPT-4 pour gérer le nettoyage des données, l'EDA et la visualisation en quelques secondes. Cependant, sans une base solide, ils manquent souvent du jugement nécessaire pour savoir quand l’IA « hallucine » ou fournit des résultats statistiquement erronés."
+    },
+    "stakeholderShift": {
+      "title": "Changement de parties prenantes",
+      "content": "Lorsque les partenaires commerciaux peuvent rédiger leurs propres invites pour obtenir des informations de base, de nombreux professionnels DS se sentent « sous-stimulés », coincés dans des réunions interminables et une ingénierie d'invites répétitive."
+    },
+    "title": "La science des données à l’ère de l’IA: le « travail le plus sexy » est-il toujours sexy?",
+    "description": "Il y a dix ans, la Harvard Business Review qualifiait le Data Scientist de « travail le plus sexy du 21e siècle ». Aujourd’hui, le paysage change sous nos pieds. Alors que la demande de talents en matière de données reste élevée, l'essor de l'IA générative change fondamentalement ce que signifie être un « Data Scientist »."
   },
   "aiPlatform": {
     "title": "Le guide des entreprises de taille moyenne pour réussir en IA",
     "subtitle": "Comment créer une plate-forme d'IA qui évolue sans se ruiner",
-    "intro": {
-      "p1": "Dans les petites et moyennes entreprises technologiques, le véritable avantage ne réside pas dans la formation de modèles massifs, mais dans la création d'une plate-forme d'IA qui permet à chacun de proposer des fonctionnalités intelligentes. C’est ainsi que vous transformez l’agilité en impact.",
-      "p2": "Voici un modèle pragmatique et prêt pour la production que nous avons utilisé pour alimenter l'IA dans les domaines financier, juridique, du support client et de l'ingénierie, sans dépenser d'argent ni embaucher 50 experts en ML."
-    },
     "imageAlt": "Schéma d'architecture de la plateforme AI",
     "heading": "🏗️ Le manuel des entreprises de taille moyenne pour réussir en IA",
     "mindsetShift": {
@@ -1012,6 +1095,11 @@
       "content": "Pour les entreprises technologiques de taille moyenne, gagner en IA ne signifie pas créer un meilleur LLM. Cela signifie créer une plateforme qui transforme l’IA en un processus métier reproductible et évolutif.",
       "finalThoughts": "Commencez par l’infrastructure, sécurisez les données et laissez vos équipes se développer. L'avenir n'est pas un modèle unique pour les gouverner tous: il s'agit d'une flotte d'agents spécialisés, chacun résolvant un véritable problème commercial, le tout alimenté par une plateforme qui simplifie les choses.",
       "callToAction": "Prêt à construire? Restez simple, restez ouvert et concentrez-vous sur l’habilitation des autres."
-    }
+    },
+    "intro": {
+      "p1": "Dans les petites et moyennes entreprises technologiques, le véritable avantage ne réside pas dans la formation de modèles massifs, mais dans la création d'une plate-forme d'IA qui permet à chacun de proposer des fonctionnalités intelligentes. C’est ainsi que vous transformez l’agilité en impact.",
+      "p2": "Voici un modèle pragmatique et prêt pour la production que nous avons utilisé pour alimenter l'IA dans les domaines financier, juridique, du support client et de l'ingénierie, sans dépenser d'argent ni embaucher 50 experts en ML."
+    },
+    "description": "Comment créer une plate-forme d'IA qui évolue sans se ruiner"
   }
 }

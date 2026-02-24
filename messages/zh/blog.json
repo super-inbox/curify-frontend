@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Curify 博客 | AI 内容创作洞察",
       "description": "阅读关于 AI 视频生成、配音、风格迁移以及内容创作未来的最新文章。"
-    }
+    },
+    "latestArticles": "最新文章",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "中型企业的 AI 成功指南：如何构建可扩展的 AI 平台",
+        "date": "2026年1月30日",
+        "readTime": "9 分钟阅读",
+        "tag": "AI 平台",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "从 QA Bot 到任务智能体：架构指南",
+        "date": "2026年1月30日",
+        "readTime": "6 分钟阅读",
+        "tag": "AI 架构",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "AI 时代的数据科学：\"最性感的工作\"依然性感吗？",
+        "date": "2026年1月30日",
+        "readTime": "8 分钟阅读",
+        "tag": "AI 行业",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "从原始素材到故事板：AI 驱动的视频分析",
+        "date": "2025年12月11日",
+        "readTime": "10 分钟阅读",
+        "tag": "视频分析",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "AI 视频增强：故事板、表情包字幕与音效自动化",
+        "date": "2025年11月18日",
+        "readTime": "7 分钟阅读",
+        "tag": "视频增强",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "评估 AI 视频翻译：真正相关的指标",
+        "date": "2025年11月14日",
+        "readTime": "6 分钟阅读",
+        "tag": "本地化",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "自制 AI 漫改动画：简易分步指南",
+        "date": "2025年10月28日",
+        "readTime": "5 分钟阅读",
+        "tag": "动画",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "第 2 部分：智能体 (Agents) vs 工作流 —— 从控制到智能",
+        "date": "2025年10月28日",
+        "readTime": "6 分钟阅读",
+        "tag": "生成式工具",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "第 3 部分：AE vs ComfyUI —— 动效设计与扩散流水线的对垒",
+        "date": "2025年10月28日",
+        "readTime": "7 分钟阅读",
+        "tag": "工具与流水线",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI —— 重塑动画创作（Part 3）",
@@ -911,6 +986,7 @@
       "content1": "AI没有杀死数据科学，它只是提高了标准。如果你的价值仅在于编写SQL或调整超参数，那么'性感'的部分正在消失。但如果你能在业务挑战和AI解决方案之间架起桥梁，你的价值比以往任何时候都高。",
       "content2": "你的个人经验就是你的优势。LLM可以模仿逻辑，但它没有失败部署的'战斗伤痕'，也没有在复杂组织中培养的直觉。"
     },
+    "conclusion": "真正的竞争力，来自你将业务上下文、工程落地与AI能力连接起来的能力。",
     "discussion": {
       "title": "讨论：",
       "prompt": "在你目前的角色中，你感到更'高效'还是更'被取代'？今年你准备如何提升自己的技能？"
@@ -922,10 +998,22 @@
       "#生成式AI",
       "#职业发展",
       "#科技趋势"
-    ]
+    ],
+    "content": "搜索、广告和推荐(SAR)等传统领域正在成熟，行业正将重点转向稳健的工程和AI架构。我们正面临一个奇特的悖论。",
+    "lowBarTrap": {
+      "title": "低门槛陷阱",
+      "content": "现在，研究生们可以使用GPT-4在几秒钟内完成数据清洗、探索性数据分析和可视化。但如果没有扎实的基础，他们往往缺乏判断AI何时在'幻觉'或产生统计上可疑结果的能力。"
+    },
+    "stakeholderShift": {
+      "title": "利益相关者的转变",
+      "content": "当业务合作伙伴能够自己编写提示来获取基本见解时，许多数据科学专业人士感到'刺激不足'，陷入了无休止的会议和重复的提示工程中。"
+    },
+    "title": "AI 时代的数据科学：还是'最性感的职业'吗？",
+    "description": "十年前，《哈佛商业评论》将数据科学家誉为'21世纪最性感的职业'。如今，这一格局正在发生翻天覆地的变化。虽然对数据人才的需求依然旺盛，但生成式AI的兴起正在从根本上重塑'数据科学家'这一职业的内涵。"
   },
   "aiPlatform": {
     "title": "中型企业的AI成功指南",
+    "description": "了解中型企业扩展 AI 的战术。构建一个自服务的 AI 平台，使产品工程师能够在无需庞大 ML 团队的情况下开发智能功能。",
     "subtitle": "如何构建一个经济实惠的可扩展AI平台",
     "intro": {
       "p1": "在中小型科技公司，真正的优势不在于训练庞大的模型，而在于构建一个让每个人都能开发智能功能的AI平台。这就是如何将敏捷性转化为影响力的方法。",

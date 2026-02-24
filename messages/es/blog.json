@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Blog de Curify | Perspectivas de creación de contenido con IA",
       "description": "Lee los últimos artículos sobre generación de video con IA, doblaje, transferencia de estilo y el futuro de la creación de contenido."
-    }
+    },
+    "latestArticles": "Artículos Recientes",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "La Guía de Éxito en IA para Empresas Medianas: Cómo Construir una Plataforma que Escala",
+        "date": "30 de enero de 2026",
+        "readTime": "9 min de lectura",
+        "tag": "Plataforma de IA",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "De Bot de QA a Agente de Tareas: Una Guía de Arquitectura",
+        "date": "30 de enero de 2026",
+        "readTime": "6 min de lectura",
+        "tag": "Arquitectura de IA",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "La ciencia de datos en la era de la IA: ¿sigue siendo el 'trabajo más sexy'?",
+        "date": "30 de enero de 2026",
+        "readTime": "8 min de lectura",
+        "tag": "Industria de la IA",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "Del metraje bruto a los guiones gráficos: análisis de video impulsado por IA",
+        "date": "11 de diciembre de 2025",
+        "readTime": "10 min de lectura",
+        "tag": "Análisis de Video",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "Mejora de video por IA: guiones gráficos, subtítulos de memes y automatización de SFX",
+        "date": "18 de noviembre de 2025",
+        "readTime": "7 min de lectura",
+        "tag": "Mejora de Video",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Evaluación de la traducción de video por IA: métricas que realmente importan",
+        "date": "14 de noviembre de 2025",
+        "readTime": "6 min de lectura",
+        "tag": "Localización",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Crea tu propia animación de cómic impulsada por IA: guía paso a paso",
+        "date": "28 de octubre de 2025",
+        "readTime": "5 min de lectura",
+        "tag": "Animación",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Parte 2: Agentes vs. Flujos de trabajo – del control a la inteligencia",
+        "date": "28 de octubre de 2025",
+        "readTime": "6 min de lectura",
+        "tag": "Herramientas Generativas",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Parte 3: AE vs. ComfyUI – diseño de movimiento vs. pipelines de difusión",
+        "date": "28 de octubre de 2025",
+        "readTime": "7 min de lectura",
+        "tag": "Herramientas y Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Redefiniendo la Animación (Parte 3)",
@@ -841,11 +916,11 @@
     },
     "dynamicSkillExample": {
       "title": "5. Ejemplo de Habilidad Dinámica (MCP)",
-      "content": "from mcp.server.fastmcp import FastMCP\\n\\nmcp = FastMCP(\"DevTools\")\\n\\n@mcp.tool()\\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\\n    return f\"Ticket {ticket_id} creado con prioridad={priority}\"\\n\\nif __name__ == \"__main__\":\\n    mcp.run()\\n\\nReferencia: https://github.com/modelcontextprotocol/python-sdk"
+      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Ticket {ticket_id} creado con prioridad={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferencia: https://github.com/modelcontextprotocol/python-sdk"
     },
     "deterministicHookExample": {
       "title": "6. Ejemplo de Hook Determinista",
-      "content": "def compliance_check_hook(state):\\n    user_input = state[\"messages\"][-1].content.lower()\\n    if \"contraseña\" in user_input or \"api_key\" in user_input:\\n        return {\"error\": \"Violación de seguridad detectada\"}\\n    return agent_node(state)\\n\\nReferencia: https://langchain-ai.github.io/langgraph/"
+      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"contraseña\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Violación de seguridad detectada\"}\n    return agent_node(state)\n\nReferencia: https://langchain-ai.github.io/langgraph/"
     },
     "finalThought": "Si tu agente solo responde preguntas, es un chatbot. Si ejecuta trabajo de manera confiable, es un Agente de Tareas.",
     "taskAgentImageAlt": "Ilustración de una arquitectura de sistema de agente de tareas mostrando la interacción entre diferentes componentes"
@@ -922,15 +997,23 @@
       "#IAGenerativa",
       "#DesarrolloProfesional",
       "#TendenciasTecnológicas"
-    ]
+    ],
+    "conclusion": "La experiencia personal es tu ventaja. Un LLM puede imitar la lógica, pero no tiene los años de 'cicatrices de batalla' de implementaciones fallidas o la intuición construida al navegar por organizaciones complejas.",
+    "content": "Dominios tradicionales como Búsqueda, Anuncios y Recomendación (SAR) están madurando, y la industria está cambiando su enfoque hacia la ingeniería pesada y la arquitectura de IA. Estamos viendo una extraña paradoja.",
+    "lowBarTrap": {
+      "title": "La Trampa del \"Listón Bajo\"",
+      "content": "Los estudiantes de maestría ahora pueden usar GPT-4 para manejar la limpieza de datos, EDA y visualización en segundos. Sin embargo, sin una base sólida, a menudo carecen del juicio para saber cuándo la IA está \"alucinando\" o proporcionando resultados estadísticamente defectuosos."
+    },
+    "stakeholderShift": {
+      "title": "Cambio de Interesados",
+      "content": "Cuando los socios comerciales pueden escribir sus propios prompts para obtener ideas básicas, muchos profesionales de Ciencia de Datos se sienten \"infraestimulados\", atrapados en reuniones interminables e ingeniería de prompts repetitiva."
+    },
+    "title": "Ciencia de Datos en la Era de la IA: ¿Sigue Siendo el \"Trabajo Más Sexy\"?",
+    "description": "Hace una década, Harvard Business Review llamó al Científico de Datos el \"trabajo más sexy del siglo XXI\". Hoy, el panorama está cambiando bajo nuestros pies. Aunque la demanda de talento en datos sigue siendo alta, el auge de la IA Generativa está cambiando fundamentalmente lo que significa ser un 'Científico de Datos'."
   },
   "aiPlatform": {
     "title": "La Guía de Éxito en IA para Empresas Medianas",
     "subtitle": "Cómo Construir una Plataforma de IA que Escale sin Arruinarte",
-    "intro": {
-      "p1": "En las empresas tecnológicas pequeñas y medianas, la verdadera ventaja no está en entrenar modelos masivos, sino en construir una plataforma de IA que permita a todos implementar funciones inteligentes. Así es como conviertes la agilidad en impacto.",
-      "p2": "Aquí tienes un plan pragmático y listo para producción que hemos utilizado para impulsar la IA en finanzas, derecho, atención al cliente e ingeniería, sin gastar fortunas ni contratar a 50 expertos en ML."
-    },
     "imageAlt": "Diagrama de Arquitectura de Plataforma de IA",
     "heading": "🏗️ La Guía de Éxito en IA para Empresas Medianas",
     "mindsetShift": {
@@ -1012,6 +1095,11 @@
       "content": "Para las empresas tecnológicas medianas, ganar en IA no significa construir un mejor LLM. Significa construir una plataforma que convierta la IA en un proceso empresarial repetible y escalable.",
       "finalThoughts": "Comienza con la infraestructura, asegura los datos y deja que tus equipos construyan. El futuro no es un modelo para gobernarlos a todos, es una flota de agentes especializados, cada uno resolviendo un problema empresarial real, todos impulsados por una plataforma que lo hace simple.",
       "callToAction": "¿Listo para construir? Mantenlo simple, mantenlo abierto y enfócate en habilitar a los demás."
-    }
+    },
+    "intro": {
+      "p1": "En las empresas tecnológicas pequeñas y medianas, la verdadera ventaja no está en entrenar modelos masivos, sino en construir una plataforma de IA que permita a todos implementar funciones inteligentes. Así es como conviertes la agilidad en impacto.",
+      "p2": "Aquí tienes un plan pragmático y listo para producción que hemos utilizado para impulsar la IA en finanzas, derecho, atención al cliente e ingeniería, sin gastar fortunas ni contratar a 50 expertos en ML."
+    },
+    "description": "Cómo Construir una Plataforma de IA que Escale sin Arruinarte"
   }
 }

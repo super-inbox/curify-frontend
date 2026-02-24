@@ -29,9 +29,15 @@ const fs = require('fs');
 const path = require('path');
 
 const messagesDir = path.join(__dirname, '../messages');
-const files = fs.readdirSync(messagesDir).filter(f => f.endsWith('.json'));
+const enDir = path.join(messagesDir, 'en');
 
-const enContent = JSON.parse(fs.readFileSync(path.join(messagesDir, 'en.json'), 'utf8'));
+if (!fs.existsSync(enDir)) {
+  console.error('Error: en directory not found.');
+  process.exit(1);
+}
+
+const namespaces = fs.readdirSync(enDir).filter(f => f.endsWith('.json'));
+const locales = fs.readdirSync(messagesDir).filter(f => fs.statSync(path.join(messagesDir, f)).isDirectory() && f !== 'en');
 
 function getKeys(obj, prefix = '') {
   let keys = [];
@@ -45,26 +51,40 @@ function getKeys(obj, prefix = '') {
   return keys;
 }
 
-const enKeys = new Set(getKeys(enContent));
-console.log(`Total keys in en.json: ${enKeys.size}`);
+namespaces.forEach(ns => {
+  console.log(`\n================================`);
+  console.log(`Checking namespace: ${ns}`);
+  console.log(`================================`);
 
-files.forEach(file => {
-  if (file === 'en.json') return;
-  
-  try {
-    const content = JSON.parse(fs.readFileSync(path.join(messagesDir, file), 'utf8'));
-    const keys = new Set(getKeys(content));
-    
-    const missing = [...enKeys].filter(k => !keys.has(k));
-    const extra = [...keys].filter(k => !enKeys.has(k));
-    
-    console.log(`\n--- ${file} ---`);
-    console.log(`Missing keys: ${missing.length}`);
-    if (missing.length > 0) console.log(`Example missing: ${missing.slice(0, 3).join(', ')}`);
-    console.log(`Extra keys: ${extra.length}`);
-    if (extra.length > 0) console.log(`Example extra: ${extra.slice(0, 3).join(', ')}`);
-    
-  } catch (e) {
-    console.error(`Error parsing ${file}: ${e.message}`);
-  }
+  const enPath = path.join(enDir, ns);
+  const enContent = JSON.parse(fs.readFileSync(enPath, 'utf8'));
+  const enKeysArr = getKeys(enContent);
+  const enKeys = new Set(enKeysArr);
+  console.log(`Total keys in en/${ns}: ${enKeys.size}`);
+
+  locales.forEach(locale => {
+    const localePath = path.join(messagesDir, locale, ns);
+    if (!fs.existsSync(localePath)) {
+      console.log(`\n--- ${locale}/${ns} ---`);
+      console.log(`Missing entire namespace file.`);
+      return;
+    }
+
+    try {
+      const content = JSON.parse(fs.readFileSync(localePath, 'utf8'));
+      const keys = new Set(getKeys(content));
+
+      const missing = [...enKeys].filter(k => !keys.has(k));
+      const extra = [...keys].filter(k => !enKeys.has(k));
+
+      console.log(`\n--- ${locale}/${ns} ---`);
+      console.log(`Missing keys: ${missing.length}`);
+      if (missing.length > 0) console.log(`Example missing: ${missing.slice(0, 3).join(', ')}`);
+      console.log(`Extra keys: ${extra.length}`);
+      if (extra.length > 0) console.log(`Example extra: ${extra.slice(0, 3).join(', ')}`);
+
+    } catch (e) {
+      console.error(`Error parsing ${locale}/${ns}: ${e.message}`);
+    }
+  });
 });

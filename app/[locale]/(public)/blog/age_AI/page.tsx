@@ -20,6 +20,14 @@ export async function generateMetadata({
 
 export default function AgeAiPost() {
   const t = useTranslations("ageAi");
+  const buildingToolsPointsRaw = t.raw("strategicPillars.buildingTools.points");
+  const leveragingToolsPointsRaw = t.raw("strategicPillars.leveragingTools.points");
+  const buildingToolsPoints = Array.isArray(buildingToolsPointsRaw)
+    ? (buildingToolsPointsRaw as Array<{ title: string; content: string }>)
+    : [];
+  const leveragingToolsPoints = Array.isArray(leveragingToolsPointsRaw)
+    ? (leveragingToolsPointsRaw as Array<{ title: string; content: string }>)
+    : [];
 
   return (
     <article className="max-w-4xl pt-20 mx-auto px-6 pb-12 text-lg leading-8">
@@ -87,14 +95,12 @@ export default function AgeAiPost() {
             {t("strategicPillars.buildingTools.subtitle")}
           </p>
           <ul className="space-y-3">
-            {[
-              t("strategicPillars.buildingTools.points.0"),
-              t("strategicPillars.buildingTools.points.1"),
-              t("strategicPillars.buildingTools.points.2")
-            ].map((point, index) => (
+            {buildingToolsPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
-                <span>{point}</span>
+                <span>
+                  <span className="font-semibold">{point.title}:</span> {point.content}
+                </span>
               </li>
             ))}
           </ul>
@@ -109,14 +115,12 @@ export default function AgeAiPost() {
             {t("strategicPillars.leveragingTools.subtitle")}
           </p>
           <ul className="space-y-3">
-            {[
-              t("strategicPillars.leveragingTools.points.0"),
-              t("strategicPillars.leveragingTools.points.1"),
-              t("strategicPillars.leveragingTools.points.2")
-            ].map((point, index) => (
+            {leveragingToolsPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-green-500 mr-2">•</span>
-                <span>{point}</span>
+                <span>
+                  <span className="font-semibold">{point.title}:</span> {point.content}
+                </span>
               </li>
             ))}
           </ul>

@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Curify Blog | AI Video Generation & Content Creation",
       "description": "Read the latest articles on AI video generation, dubbing, style transfer, and the future of content creation. Stay updated and enhance your workflow today!"
-    }
+    },
+    "latestArticles": "Latest Articles",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "The Pragmatic AI Platform: How Mid‑Sized Tech Companies Win with AI",
+        "date": "January 30, 2026",
+        "readTime": "9 min read",
+        "tag": "AI Platform",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "From QA Bot to Task Agent: An Architecture Guide",
+        "date": "January 30, 2026",
+        "readTime": "6 min read",
+        "tag": "AI Architecture",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "Data Science in the Age of AI: Is the \"Sexiest Job\" Still Sexy?",
+        "date": "January 30, 2026",
+        "readTime": "8 min read",
+        "tag": "AI Industry",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "From Raw Footage to Storyboards: AI-Powered Video Analysis",
+        "date": "December 11, 2025",
+        "readTime": "10 min read",
+        "tag": "Video Analysis",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "AI Video Enhancement: Storyboards, Meme Captions & SFX Automation",
+        "date": "November 18, 2025",
+        "readTime": "7 min read",
+        "tag": "Video Enhancement",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Evaluating AI Video Translation: Metrics that Actually Matter",
+        "date": "November 14, 2025",
+        "readTime": "6 min read",
+        "tag": "Localization",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide",
+        "date": "October 28, 2025",
+        "readTime": "5 min read",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Part 2: Agents vs Workflows – From Control to Intelligence",
+        "date": "October 28, 2025",
+        "readTime": "6 min read",
+        "tag": "Generative Tools",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Part 3: AE vs ComfyUI – Motion Design vs Diffusion Pipelines",
+        "date": "October 28, 2025",
+        "readTime": "7 min read",
+        "tag": "Tools & Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI: The Ultimate Guide to AI Animation Workflows",
@@ -847,7 +922,8 @@
       "title": "6. Deterministic Hook Example",
       "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Security violation detected\"}\n    return agent_node(state)\n\nReference: https://langchain-ai.github.io/langgraph/"
     },
-    "finalThought": "If your agent only answers questions, it's a chatbot. If it reliably executes work, it's a Task Agent."
+    "finalThought": "If your agent only answers questions, it's a chatbot. If it reliably executes work, it's a Task Agent.",
+    "taskAgentImageAlt": "Illustration of a task-agent system architecture showing interaction between different components"
   },
   "ageAi": {
     "title": "Data Science in the Era of AI: Evolving Strategy",
@@ -920,14 +996,29 @@
       "#GenerativeAI",
       "#CareerDevelopment",
       "#TechTrends"
-    ]
+    ],
+    "realityCheck": {
+      "title": "Reality Check",
+      "content": "Traditional domains like Search, Ads, and Recommendation (SAR) are maturing, and the industry is shifting its focus toward heavy-duty engineering and AI architecture. We are seeing a strange paradox.",
+      "lowBarTrap": {
+        "title": "The \"Low-Bar\" Trap",
+        "content": "Master's students can now use GPT-4 to handle data cleaning, EDA, and visualization in seconds. However, without a solid foundation, they often lack the judgment to know when the AI is \"hallucinating\" or providing statistically flawed results."
+      },
+      "stakeholderShift": {
+        "title": "Stakeholder Shift",
+        "content": "When business partners can write their own prompts to get basic insights, many DS professionals feel \"under-stimulated,\" trapped in endless meetings and repetitive prompt engineering."
+      }
+    },
+    "conclusion": "Personal experience is your edge. A LLM can mimic logic, but it doesn't have the years of 'battle scars' from failed deployments or the intuition built from navigating complex organizations."
   },
   "aiPlatform": {
     "title": "The Mid-Sized Company's Playbook for AI Success",
     "description": "Discover the mid-sized company's playbook for scaling AI. Build a self-serve AI platform that empowers product engineers without needing a huge ML team.",
     "subtitle": "How to Build an AI Platform That Scales Without Breaking the Bank",
-    "p1": "At small‑ to medium‑sized tech companies, the real advantage isn't in training massive models — it's in building an AI platform that lets every one ship intelligent features. This is how you turn agility into impact.",
-    "p2": "Here's a pragmatic, production‑ready blueprint we've used to power AI across finance, legal, customer support, and engineering, without burning cash or hiring 50 ML experts.",
+    "intro": {
+      "p1": "At small‑ to medium‑sized tech companies, the real advantage isn't in training massive models — it's in building an AI platform that lets every one ship intelligent features. This is how you turn agility into impact.",
+      "p2": "Here's a pragmatic, production‑ready blueprint we've used to power AI across finance, legal, customer support, and engineering, without burning cash or hiring 50 ML experts."
+    },
     "imageAlt": "AI Platform Architecture Diagram",
     "heading": "🏗️ The Mid-Sized Company's Playbook for AI Success",
     "mindsetShift": {

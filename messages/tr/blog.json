@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Curify Blog | Yapay Zeka İçerik Oluşturma Analizleri",
       "description": "Yapay zeka video oluşturma, dublaj, stil transferi ve içerik oluşturmanın geleceği hakkındaki en son makaleleri okuyun."
-    }
+    },
+    "latestArticles": "Son Makaleler",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Şirketler için Yapay Zeka Başarısı: Ölçeklenebilirlik Stratejisi",
+        "date": "30 Ocak 2026",
+        "readTime": "9 dk okuma",
+        "tag": "Yapay Zeka Platformu",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "QA Botundan Görev Temsilcisine: Bir Mimari Rehber",
+        "date": "30 Ocak 2026",
+        "readTime": "6 dk okuma",
+        "tag": "Yapay Zeka Mimarisi",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "Yapay Zeka Çağında Veri Bilimi: 'En Seksi Meslek' Hala Seksi mi?",
+        "date": "30 Ocak 2026",
+        "readTime": "8 dk okuma",
+        "tag": "Yapay Zeka Endüstrisi",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "Ham Görüntüden Storyboard'a: Yapay Zeka Destekli Video Analizi",
+        "date": "11 Aralık 2025",
+        "readTime": "10 dk okuma",
+        "tag": "Video Analizi",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "Yapay Zeka Video İyileştirme: Storyboard'lar, Meme Altyazıları ve SFX Otomasyonu",
+        "date": "18 Kasım 2025",
+        "readTime": "7 dk okuma",
+        "tag": "Video İyileştirme",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Yapay Zeka Video Çeviri Değerlendirmesi: Gerçekten Önemli Olan Metrikler",
+        "date": "14 Kasım 2025",
+        "readTime": "6 dk okuma",
+        "tag": "Yerelleştirme",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Kendi Yapay Zeka Destekli Çizgi Roman Animasyonunuzu Oluşturun: Adım Adım Rehber",
+        "date": "28 Ekim 2025",
+        "readTime": "5 dk okuma",
+        "tag": "Animasyon",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Bölüm 2: Temsilciler ve İş Akışları – Kontrolden Zekaya",
+        "date": "28 Ekim 2025",
+        "readTime": "6 dk okuma",
+        "tag": "Üretken Araçlar",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Bölüm 3: AE vs ComfyUI – Hareket Tasarımı ve Difüzyon Hatları",
+        "date": "28 Ekim 2025",
+        "readTime": "7 dk okuma",
+        "tag": "Araçlar ve İş Hattı",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Animasyonu Yeniden Tanımlamak (Bölüm 3)",
@@ -776,10 +851,6 @@
   "aiPlatform": {
     "title": "Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
     "subtitle": "Bütçeyi Zorlamadan Ölçeklenebilir Bir Yapay Zeka Platformu Nasıl Kurulur?",
-    "intro": {
-      "p1": "Küçük ve orta ölçekli teknoloji şirketlerinde asıl avantaj, büyük modeller eğitmek değil, herkesin akıllı özellikler geliştirebildiği bir yapay zeka platformu inşa etmektir. İşte çevikliği etkiye dönüştürme yönteminiz.",
-      "p2": "İşte finans, hukuk, müşteri hizmetleri ve mühendislik alanlarında yapay zekayı güçlendirmek için kullandığımız, bütçeyi zorlamadan veya 50 ML uzmanı işe almadan uygulanabilir, üretim hazırı bir plan."
-    },
     "imageAlt": "Yapay Zeka Platformu Mimarisi Şeması",
     "heading": "🏗️ Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
     "mindsetShift": {
@@ -861,7 +932,12 @@
       "content": "Orta ölçekli teknoloji şirketleri için yapay zekada kazanmak, daha iyi bir büyük dil modeli oluşturmak anlamına gelmez. Yapay zekayı tekrarlanabilir, ölçeklenebilir bir iş sürecine dönüştüren bir platform inşa etmek anlamına gelir.",
       "finalThoughts": "Altyapıyla başlayın, veriyi güvenceye alın ve ekiplerinizin inşa etmesine izin verin. Gelecek, hepsine hükmeden tek bir model değil, her biri gerçek bir iş problemini çözen, hepsi de bunu basitleştiren bir platform tarafından desteklenen uzmanlaşmış ajanlar filosudur.",
       "callToAction": "İnşa etmeye hazır mısınız? Basit ve açık kaynaklı tutun ve başkalarını güçlendirmeye odaklanın."
-    }
+    },
+    "intro": {
+      "p1": "Küçük ve orta ölçekli teknoloji şirketlerinde asıl avantaj, büyük modeller eğitmek değil, herkesin akıllı özellikler geliştirebildiği bir yapay zeka platformu inşa etmektir. İşte çevikliği etkiye dönüştürme yönteminiz.",
+      "p2": "İşte finans, hukuk, müşteri hizmetleri ve mühendislik alanlarında yapay zekayı güçlendirmek için kullandığımız, bütçeyi zorlamadan veya 50 ML uzmanı işe almadan uygulanabilir, üretim hazırı bir plan."
+    },
+    "description": "Bütçeyi Zorlamadan Ölçeklenebilir Bir Yapay Zeka Platformu Nasıl Kurulur?"
   },
   "nanoBananaProPrompts": {
     "title": "Nano Banana Pro İstemleri",
@@ -1012,6 +1088,18 @@
       "#GenerativeAI",
       "#CareerDevelopment",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "Kişisel deneyim sizin avantajınızdır. Bir LLM mantığı taklit edebilir, ancak başarısız dağıtımlardan gelen yılların 'savaş yaralarına' veya karmaşık organizasyonlarda gezinerek oluşturulan sezgiye sahip değildir.",
+    "content": "Arama, Reklamlar ve Öneri (SAR) gibi geleneksel alanlar olgunlaşıyor ve endüstri odağını ağır mühendislik ve yapay zeka mimarisine kaydırıyor. Garip bir paradoks görüyoruz.",
+    "lowBarTrap": {
+      "title": "\"Düşük Çıta\" Tuzağı",
+      "content": "Yüksek lisans öğrencileri artık veri temizleme, EDA ve görselleştirmeyi saniyeler içinde halletmek için GPT-4'ü kullanabilirler. Ancak, sağlam bir temel olmadan, yapay zekanın ne zaman \"halüsinasyon gördüğünü\" veya istatistiksel olarak hatalı sonuçlar sağladığını bilme muhakemesinden genellikle yoksundurlar."
+    },
+    "stakeholderShift": {
+      "title": "Paydaş Değişimi",
+      "content": "İş ortakları temel içgörüleri elde etmek için kendi istemlerini yazabildiklerinde, birçok DS uzmanı sonsuz toplantılar ve tekrarlayan istem mühendisliği içinde sıkışıp kalmış, \"yetersiz uyarılmış\" hissediyor."
+    },
+    "title": "Yapay Zeka Çağında Veri Bilimi: \"En Seksi İş\" Hala Seksi mi?",
+    "description": "On yıl önce, Harvard Business Review Veri Bilimcisini \"21. yüzyılın en seksi işi\" olarak adlandırdı. Bugün, zemin ayaklarımızın altından kayıyor. Veri yeteneğine olan talep yüksek kalmaya devam etse de, Üretken Yapay Zeka'nın yükselişi 'Veri Bilimcisi' olmanın ne anlama geldiğini temelden değiştiriyor."
   }
 }

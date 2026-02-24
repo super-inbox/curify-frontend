@@ -212,7 +212,7 @@ export default function UserDropdownMenu({
           </div>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+            onClick={() => handleRoute("/pricing")}
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
@@ -220,7 +220,7 @@ export default function UserDropdownMenu({
           </button>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/contact`)}
+            onClick={() => handleRoute("/contact")}
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />
@@ -331,9 +331,9 @@ export default function UserDropdownMenu({
           </div>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+            onClick={() => handleRoute("/pricing")}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === `/${currentLocale}/pricing`
+              pathname === "/pricing"
                 ? "text-blue-600 font-semibold"
                 : ""
             }`}
@@ -343,9 +343,9 @@ export default function UserDropdownMenu({
           </button>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/contact`)}
+            onClick={() => handleRoute("/contact")}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === `/${currentLocale}/contact`
+              pathname === "/contact"
                 ? "text-blue-600 font-semibold"
                 : ""
             }`}

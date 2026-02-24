@@ -3,7 +3,82 @@
     "metadata": {
       "title": "Curify 블로그 | AI 콘텐츠 제작 인사이트",
       "description": "AI 비디오 생성, 더빙, 스타일 변환 및 콘텐츠 제작의 미래에 대한 최신 기사를 읽어보세요."
-    }
+    },
+    "latestArticles": "최신 기사",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "AI 성공을 위한 중견기업 플레이북: 확장 가능한 플랫폼 구축",
+        "date": "2026년 1월 30일",
+        "readTime": "9분 읽기",
+        "tag": "AI 플랫폼",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "QA 봇에서 태스크 에이전트로: 아키텍처 가이드",
+        "date": "2026년 1월 30일",
+        "readTime": "6분 읽기",
+        "tag": "AI 아키텍처",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "AI 시대의 데이터 사이언스: 여전히 '가장 섹시한 직업'인가?",
+        "date": "2026년 1월 30일",
+        "readTime": "8분 읽기",
+        "tag": "AI 산업",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "원본 영상에서 스토리보드까지: AI 기반 비디오 분석",
+        "date": "2025년 12월 11일",
+        "readTime": "10분 읽기",
+        "tag": "비디오 분석",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "AI 비디오 향상: 스토리보드, 밈 캡션 및 SFX 자동화",
+        "date": "2025년 11월 18일",
+        "readTime": "7분 읽기",
+        "tag": "비디오 향상",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "AI 비디오 번역 평가: 진정으로 중요한 지표",
+        "date": "2025년 11월 14일",
+        "readTime": "6분 읽기",
+        "tag": "현지화",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "나만의 AI 기반 만화 애니메이션 제작: 단계별 가이드",
+        "date": "2025년 10월 28일",
+        "readTime": "5분 읽기",
+        "tag": "애니메이션",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "파트 2: 에이전트 vs 워크플로우 – 제어에서 지능으로",
+        "date": "2025년 10월 28일",
+        "readTime": "6분 읽기",
+        "tag": "생성형 도구",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "파트 3: AE vs ComfyUI – 모션 디자인 vs 디퓨전 파이프라인",
+        "date": "2025년 10월 28일",
+        "readTime": "7분 읽기",
+        "tag": "도구 및 파이프라인",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE 대 ComfyUI – 애니메이션 재정의(3부)",
@@ -922,15 +997,23 @@
       "#GenerativeAI",
       "#CareerDevelopment",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "개인적인 경험이 가장 중요합니다. LLM은 논리를 흉내낼 수 있지만 배포 실패로 인한 수년간의 '전투 상처'나 복잡한 조직을 탐색하면서 구축된 직관이 없습니다.",
+    "content": "SAR(검색, 광고 및 추천)과 같은 기존 도메인이 성숙해지고 있으며 업계는 강력한 엔지니어링 및 AI 아키텍처로 초점을 전환하고 있습니다. 우리는 이상한 역설을 보고 있습니다.",
+    "lowBarTrap": {
+      "title": "\"로우바\" 트랩",
+      "content": "석사 과정 학생들은 이제 GPT-4를 사용하여 데이터 정리, EDA 및 시각화를 몇 초 만에 처리할 수 있습니다. 그러나 탄탄한 기반이 없으면 AI가 언제 \"환각\"을 일으키거나 통계적으로 잘못된 결과를 제공하는지 판단력이 부족한 경우가 많습니다."
+    },
+    "stakeholderShift": {
+      "title": "이해관계자 이동",
+      "content": "비즈니스 파트너가 기본적인 통찰력을 얻기 위해 자체 프롬프트를 작성할 수 있을 때 많은 DS 전문가는 끝없는 회의와 반복적인 프롬프트 엔지니어링에 갇혀 \"자극 부족\"을 느낍니다."
+    },
+    "title": "AI 시대의 데이터 과학: '가장 섹시한 직업'은 여전히 ​​섹시한가?",
+    "description": "10년 전 Harvard Business Review에서는 데이터 과학자를 \"21세기 가장 섹시한 직업\"이라고 불렀습니다. 오늘날 풍경은 우리 발 아래에서 변화하고 있습니다. 데이터 인재에 대한 수요는 여전히 높지만, 제너레이티브 AI(Generative AI)의 등장으로 '데이터 과학자'의 의미가 근본적으로 바뀌고 있습니다."
   },
   "aiPlatform": {
     "title": "AI 성공을 위한 중견기업 플레이북",
     "subtitle": "큰 비용을 들이지 않고 확장 가능한 AI 플랫폼을 구축하는 방법",
-    "intro": {
-      "p1": "중소 규모의 기술 기업에서 진정한 이점은 대규모 모델을 교육하는 데 있는 것이 아니라 모든 사람이 지능형 기능을 제공할 수 있는 AI 플랫폼을 구축하는 데 있습니다. 이것이 민첩성을 영향력으로 바꾸는 방법입니다.",
-      "p2": "현금을 낭비하거나 50명의 ML 전문가를 고용하지 않고도 재무, 법률, 고객 지원 및 엔지니어링 전반에 걸쳐 AI를 강화하는 데 사용한 실용적이고 생산 준비가 완료된 청사진은 다음과 같습니다."
-    },
     "imageAlt": "AI Platform 아키텍처 다이어그램",
     "heading": "🏗️ AI 성공을 위한 중견기업 플레이북",
     "mindsetShift": {
@@ -1012,6 +1095,11 @@
       "content": "중견 기술 기업의 경우 AI에서 승리한다고 해서 더 나은 LLM을 구축하는 것은 아닙니다. 이는 AI를 반복 가능하고 확장 가능한 비즈니스 프로세스로 전환하는 플랫폼을 구축하는 것을 의미합니다.",
       "finalThoughts": "인프라부터 시작하여 데이터를 보호하고 팀이 구축하도록 하세요. 미래는 모든 것을 지배하는 하나의 모델이 아닙니다. 미래는 전문 에이전트 집단으로, 각 에이전트는 실제 비즈니스 문제를 해결하고, 모든 에이전트는 문제를 단순화하는 플랫폼을 기반으로 합니다.",
       "callToAction": "구축할 준비가 되셨나요? 단순함을 유지하고 열린 상태를 유지하며 다른 사람들을 활성화하는 데 집중하십시오."
-    }
+    },
+    "intro": {
+      "p1": "중소 규모의 기술 기업에서 진정한 이점은 대규모 모델을 교육하는 데 있는 것이 아니라 모든 사람이 지능형 기능을 제공할 수 있는 AI 플랫폼을 구축하는 데 있습니다. 이것이 민첩성을 영향력으로 바꾸는 방법입니다.",
+      "p2": "현금을 낭비하거나 50명의 ML 전문가를 고용하지 않고도 재무, 법률, 고객 지원 및 엔지니어링 전반에 걸쳐 AI를 강화하는 데 사용한 실용적이고 생산 준비가 완료된 청사진은 다음과 같습니다."
+    },
+    "description": "큰 비용을 들이지 않고 확장 가능한 AI 플랫폼을 구축하는 방법"
   }
 }
