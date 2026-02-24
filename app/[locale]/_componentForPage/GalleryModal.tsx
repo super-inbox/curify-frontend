@@ -3,6 +3,7 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { GalleryItem } from "@/types/gallery";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
+import { useTranslations } from "next-intl";
 
 export default function GalleryModal({
   project,
@@ -11,6 +12,8 @@ export default function GalleryModal({
   project: GalleryItem;
   onClose: () => void;
 }) {
+  const t = useTranslations("galleryModal");
+
   return (
     <div className="fixed inset-0 z-30 flex items-center justify-center px-4 pointer-events-none">
       <div className="bg-white rounded-xl max-w-5xl w-full p-6 relative overflow-y-auto max-h-[90vh] shadow-xl pointer-events-auto">
@@ -30,10 +33,10 @@ export default function GalleryModal({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <h4 className="font-semibold mb-1">Script</h4>
+            <h4 className="font-semibold mb-1">{t("script")}</h4>
             <p className="text-sm whitespace-pre-wrap">{project.script}</p>
 
-            <h4 className="font-semibold mt-4 mb-1">Tags</h4>
+            <h4 className="font-semibold mt-4 mb-1">{t("tags")}</h4>
             <div className="flex flex-wrap gap-2 text-xs text-blue-600">
               {project.tags.map((tag) => (
                 <span key={tag}>#{tag}</span>

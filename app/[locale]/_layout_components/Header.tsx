@@ -16,8 +16,10 @@ import {
   isMoreLanguage,
 } from "@/lib/language_config";
 import LanguageSubmenu from "@/app/[locale]/_componentForPage/LanguageSubmenu";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("header");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -76,12 +78,12 @@ export default function Header() {
           {/* Logo - Always redirects to root */}
           <Link
             href="/"
-            aria-label="Curify Home"
+            aria-label={t("homeAriaLabel")}
             className="relative w-40 aspect-[160/38.597] cursor-pointer"
           >
             <Image
               src="/logo.svg"
-              alt="Curify Logo"
+              alt={t("logoAlt")}
               fill
               className="object-contain"
               priority
@@ -93,29 +95,29 @@ export default function Header() {
             <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
               {/* ✅ NEW: Home */}
               <Link href="/" className="hover:opacity-80">
-                Home
+                {t("home")}
               </Link>
 
               <Link
                 href="/inspiration-hub"
                 className="hover:opacity-80"
               >
-                Discover
+                {t("discover")}
               </Link>
               <Link
                 href="/nano-banana-pro-prompts"
                 className="hover:opacity-80"
               >
-                Gallery
+                {t("gallery")}
               </Link>
               <Link href="/tools" className="hover:opacity-80">
-                Tools
+                {t("tools")}
               </Link>
               <Link href="/blog" className="hover:opacity-80">
-                Blogs
+                {t("blogs")}
               </Link>
               <Link href="/workspace" className="hover:opacity-80">
-                Workspace
+                {t("workspace")}
               </Link>
             </nav>
           )}
@@ -158,7 +160,7 @@ export default function Header() {
               >
                 {isCurrentMoreLang && currentLanguage
                   ? currentLanguage.flag
-                  : "More"}
+                  : t("more")}
                 <ChevronDown className="h-3 w-3" />
               </button>
 
@@ -176,13 +178,13 @@ export default function Header() {
 
           {/* Conditional buttons based on login state */}
           {headerState === "out" ? (
-            <BtnN onClick={handleLoginClick}>Log in</BtnN>
+            <BtnN onClick={handleLoginClick}>{t("logIn")}</BtnN>
           ) : (
             <BtnN
               onClick={() => setModal("topup")}
               className="text-sm px-4 py-2"
             >
-              Top up Credits
+              {t("topUpCredits")}
             </BtnN>
           )}
 
@@ -191,7 +193,7 @@ export default function Header() {
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="cursor-pointer p-2 hover:bg-gray-100 rounded-md transition-colors"
-              aria-label="Menu"
+              aria-label={t("menuAriaLabel")}
             >
               <Menu className="h-6 w-6 text-gray-700" />
             </button>

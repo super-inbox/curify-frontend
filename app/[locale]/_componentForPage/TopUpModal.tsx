@@ -3,21 +3,21 @@
 import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { modalAtom } from "@/app/atoms/atoms";
-import { useParams } from "next/navigation";
 import { creditsToDollars } from "@/lib/credit_utils";
 import DialogCloseButton from "../_components/button/DialogCloseButton";
 import { apiClient } from "@/services/api";
 import { redirectToCheckout } from "@/services/stripe";
 import PaymentProcessingModal from "./PaymentProcessingModal";
+import { useTranslations } from "next-intl";
 
 export default function TopUpModal() {
   const [modal, setModal] = useAtom(modalAtom);
-  const { locale } = useParams();
   const [customCredits, setCustomCredits] = useState<number | "">("");
   const [showProcessing, setShowProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const userPlan = "Free"; // TODO: fetch from user profile
   const isOpen = modal === "topup";
+  const t = useTranslations("topUpModal");
 
   const handleClose = () => {
     setModal(null);
@@ -37,7 +37,7 @@ export default function TopUpModal() {
 
       // ✅ Validation: must be >= $0.50
       if (amount < 0.5) {
-        setError("Minimum top-up is $0.50.");
+        setError(t("minimumTopupError"));
         return;
       }
 
@@ -60,7 +60,7 @@ export default function TopUpModal() {
     } catch (error) {
       console.error("Top-up failed:", error);
       setShowProcessing(false);
-      alert("Failed to start payment. Please try again.");
+      alert(t("paymentStartFailed"));
     }
   };
 
@@ -81,12 +81,14 @@ export default function TopUpModal() {
           <DialogCloseButton onClick={handleClose} />
 
           {/* Title */}
-          <h2 className="text-xl font-bold text-center mb-4">Top Up Credits</h2>
+          <h2 className="text-xl font-bold text-center mb-4">{t("title")}</h2>
 
           {/* Reminder */}
           <p className="text-sm text-center text-gray-600 mb-6">
-            1 credit ≈ ${creditsToDollars(1, userPlan).toFixed(2)} (Plan:{" "}
-            {userPlan})
+            {t("creditRate", {
+              amount: creditsToDollars(1, userPlan).toFixed(2),
+              plan: userPlan,
+            })}
           </p>
 
           {/* Error Message */}
@@ -113,7 +115,7 @@ export default function TopUpModal() {
           {/* Custom Option */}
           <div className="mt-8">
             <label className="block text-sm font-medium text-gray-700 mb-2 text-center">
-              Enter custom credits
+              {t("customCreditsLabel")}
             </label>
             <div className="grid grid-cols-2 gap-3">
               {/* Input */}
@@ -126,7 +128,7 @@ export default function TopUpModal() {
                     e.target.value === "" ? "" : Number(e.target.value)
                   )
                 }
-                placeholder="e.g. 200"
+                placeholder={t("customCreditsPlaceholder")}
                 className="w-full border rounded-lg px-3 py-2.5 text-center shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
               {/* Button */}
@@ -153,7 +155,7 @@ export default function TopUpModal() {
 
           {/* Stripe note */}
           <p className="text-xs text-center text-gray-400 mt-8">
-            Payments are powered by Stripe.
+            {t("paymentsPoweredByStripe")}
           </p>
         </div>
       </div>

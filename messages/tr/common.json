@@ -21,5 +21,127 @@
     "subscribePlan": "Plana Abone Ol",
     "supportTicket": "Destek Bileti",
     "signOut": "Çıkış Yap"
+  },
+  "ctaButtons": {
+    "bookDemo": "Demo Rezervasyonu Yapın",
+    "mockUserNotLoaded": "Sahte kullanıcı verileri henüz yüklenmedi."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Discord Topluluğumuza Katılın",
+    "or": "Veya",
+    "contactByEmail": "E-posta Yoluyla Bize Ulaşın",
+    "emailPlaceholder": "E-posta",
+    "subjectPlaceholder": "Konu (Max 30 Karakter)",
+    "detailsPlaceholder": "Daha iyi anlamamıza ve hazırlanmamıza yardımcı olmak için durumunuzu ve ihtiyaçlarınızı burada açıklayabilirsiniz.\n\n2 iş günü içinde e-posta yoluyla inceleyip yanıt vereceğiz.",
+    "invalidEmail": "Geçerli bir e.",
+    "send": "Göndermek"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Videolarınızı Küreselleştirmek için Curify'a Katılın",
+    "welcomeSignin": "Videolarınızı Küreselleştirmeye Devam Edin",
+    "signUp": "Üye olmak",
+    "signIn": "Oturum aç",
+    "enterVerificationCode": "Doğrulama kodunu girin",
+    "or": "veya",
+    "emailPlaceholder": "E-posta",
+    "invalidEmail": "Geçerli bir e.",
+    "otpSentTo": "Şuraya bir kod gönderdik:",
+    "verificationCodePlaceholder": "Doğrulama Kodu",
+    "verifyCode": "Kodu Doğrula",
+    "resendCode": "Kodu Yeniden Gönder",
+    "invalidOtp": "Geçersiz OTP. Lütfen tekrar deneyin.",
+    "agreePrefix": "Curify'ı kullanarak şunları kabul etmiş olursunuz:",
+    "termsOfService": "Hizmet Şartları",
+    "and": "Ve",
+    "privacyPolicy": "Gizlilik Politikası",
+    "logoAlt": "logo"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "Ödeme İşleme",
+    "processingLine1": "Hizmet sağlayıcımızın ödemenizi doğrulamasını bekliyoruz.",
+    "processingLine2": "Normalde ~30 saniye sürer.",
+    "processingLine3": "Bu açılır pencereyi kapattığınızda krediler otomatik olarak görünecektir.",
+    "confirmedTitle": "✅ Ödeme Onaylandı",
+    "confirmedLine": "Çalışma alanına yönlendiriliyorsunuz...",
+    "timeoutTitle": "⚠️ Doğrulama Zaman Aşımı",
+    "timeoutLine1": "Ödemenizi 20 saniye içinde doğrulayamadık.",
+    "timeoutLine2": "Lütfen kredilerinizi profilinizden manuel olarak kontrol edin.",
+    "close": "Kapalı"
+  },
+  "topUpModal": {
+    "title": "Kredi Yükleme",
+    "planLabel": "Planı",
+    "minimumTopupError": "Minimum yükleme 0,50$'dır.",
+    "paymentStartFailed": "Ödeme başlatılamadı. Lütfen tekrar deneyin.",
+    "customCreditsLabel": "Özel kredileri girin",
+    "customCreditsPlaceholder": "örneğin 200",
+    "paymentsPoweredByStripe": "Ödemeler Stripe tarafından desteklenmektedir.",
+    "creditRate": "1 kredi ≈ ${amount} (Plan: {plan})"
+  },
+  "transactionHistory": {
+    "title": "Kredi Geçmişi",
+    "loading": "Yükleniyor...",
+    "empty": "Hiçbir işlem bulunamadı",
+    "id": "İD",
+    "type": "Tip",
+    "credits": "Kredi",
+    "amount": "Miktar",
+    "date": "Tarih",
+    "close": "Kapalı"
+  },
+  "userDropdown": {
+    "defaultUser": "Kullanıcı",
+    "notAvailable": "Yok",
+    "guest": "Misafir",
+    "notSignedIn": "Oturum açılmadı",
+    "defaultLanguage": "İngilizce",
+    "viewPricing": "Fiyatlandırmayı Görüntüle",
+    "contactUs": "Bize Ulaşın",
+    "signIn": "Oturum aç",
+    "totalCredits": "Toplam Kredi",
+    "planCredits": "Kredi Planı",
+    "expiresOn": "Süresi doluyor",
+    "creditsHistory": "Kredi Geçmişi",
+    "subscribePlan": "Abonelik Planı",
+    "supportTicket": "Destek Bileti",
+    "signOut": "Oturumu Kapat"
+  },
+  "header": {
+    "homeAriaLabel": "Ana Sayfa",
+    "logoAlt": "Logoyu İyileştir",
+    "home": "Ev",
+    "discover": "Keşfetmek",
+    "gallery": "Galeri",
+    "tools": "Aletler",
+    "blogs": "Bloglar",
+    "workspace": "Çalışma alanı",
+    "more": "Daha",
+    "logIn": "Giriş yapmak",
+    "topUpCredits": "Kredi yükleme",
+    "menuAriaLabel": "Menü"
+  },
+  "footer": {
+    "copyright": "© 2025",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Hizmet Şartları",
+    "aboutUs": "Hakkımızda",
+    "contactUs": "Bize Ulaşın"
+  },
+  "actionButtons": {
+    "save": "Kaydetmek",
+    "copy": "Kopyala",
+    "share": "Paylaşmak"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "İletişim kutusunu kapat"
+  },
+  "galleryModal": {
+    "script": "Senaryo",
+    "tags": "Etiketler"
+  },
+  "videoPlayer": {
+    "original": "Orijinal",
+    "translated": "Çevrildi",
+    "unsupported": "Tarayıcınız video etiketini desteklemiyor."
   }
 }

@@ -21,5 +21,127 @@
     "subscribePlan": "S'abonner au plan",
     "supportTicket": "Ticket de support",
     "signOut": "Se déconnecter"
+  },
+  "ctaButtons": {
+    "bookDemo": "Réservez une démo",
+    "mockUserNotLoaded": "Les données utilisateur fictives ne sont pas encore chargées."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Rejoignez notre communauté Discord",
+    "or": "Ou",
+    "contactByEmail": "Contactez-nous par e-mail",
+    "emailPlaceholder": "E-mail",
+    "subjectPlaceholder": "Objet (30 caractères maximum)",
+    "detailsPlaceholder": "Vous pouvez décrire ici votre situation et vos besoins pour nous aider à mieux comprendre et nous préparer.\n\nNous l'examinerons et vous répondrons par e-mail dans les 2 jours ouvrables.",
+    "invalidEmail": "S'il vous plaît, mettez une adresse email valide.",
+    "send": "Envoyer"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Rejoignez Curify pour globaliser vos vidéos",
+    "welcomeSignin": "Continuez à mondialiser vos vidéos",
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter",
+    "enterVerificationCode": "Entrez le code de vérification",
+    "or": "ou",
+    "emailPlaceholder": "E-mail",
+    "invalidEmail": "S'il vous plaît, mettez une adresse email valide.",
+    "otpSentTo": "Nous avons envoyé un code à",
+    "verificationCodePlaceholder": "Le code de vérification",
+    "verifyCode": "Vérifier le code",
+    "resendCode": "Renvoyer le code",
+    "invalidOtp": "OTP invalide. Veuillez réessayer.",
+    "agreePrefix": "En utilisant Curify, vous acceptez nos",
+    "termsOfService": "Conditions d'utilisation",
+    "and": "et",
+    "privacyPolicy": "politique de confidentialité",
+    "logoAlt": "logo"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "Traitement des paiements",
+    "processingLine1": "Nous attendons que notre prestataire vérifie votre paiement.",
+    "processingLine2": "Normalement, cela prend environ 30 secondes.",
+    "processingLine3": "Vous pouvez fermer cette fenêtre contextuelle et les crédits apparaîtront automatiquement.",
+    "confirmedTitle": "✅ Paiement confirmé",
+    "confirmedLine": "Redirection vers l'espace de travail...",
+    "timeoutTitle": "⚠️ Délai de vérification",
+    "timeoutLine1": "Nous n'avons pas pu vérifier votre paiement dans les 20 secondes.",
+    "timeoutLine2": "Veuillez vérifier vos crédits manuellement à partir de votre profil.",
+    "close": "Fermer"
+  },
+  "topUpModal": {
+    "title": "Recharger des crédits",
+    "planLabel": "Plan",
+    "minimumTopupError": "La recharge minimale est de 0,50 $.",
+    "paymentStartFailed": "Échec du démarrage du paiement. Veuillez réessayer.",
+    "customCreditsLabel": "Entrez des crédits personnalisés",
+    "customCreditsPlaceholder": "par ex. 200",
+    "paymentsPoweredByStripe": "Les paiements sont effectués par Stripe.",
+    "creditRate": "1 crédit ≈ ${amount} (Forfait : {plan})"
+  },
+  "transactionHistory": {
+    "title": "Historique des crédits",
+    "loading": "Chargement...",
+    "empty": "Aucune transaction trouvée",
+    "id": "IDENTIFIANT",
+    "type": "Taper",
+    "credits": "Crédits",
+    "amount": "Montant",
+    "date": "Date",
+    "close": "Fermer"
+  },
+  "userDropdown": {
+    "defaultUser": "Utilisateur",
+    "notAvailable": "N / A",
+    "guest": "Invité",
+    "notSignedIn": "Non connecté",
+    "defaultLanguage": "Anglais",
+    "viewPricing": "Voir les prix",
+    "contactUs": "Contactez-nous",
+    "signIn": "Se connecter",
+    "totalCredits": "Crédits totaux",
+    "planCredits": "Crédits du forfait",
+    "expiresOn": "Expire le",
+    "creditsHistory": "Historique des crédits",
+    "subscribePlan": "Abonnez-vous au forfait",
+    "supportTicket": "Billet d'assistance",
+    "signOut": "Se déconnecter"
+  },
+  "header": {
+    "homeAriaLabel": "Accueil Curifier",
+    "logoAlt": "Curifier le logo",
+    "home": "Maison",
+    "discover": "Découvrir",
+    "gallery": "Galerie",
+    "tools": "Outils",
+    "blogs": "Blogues",
+    "workspace": "Espace de travail",
+    "more": "Plus",
+    "logIn": "Se connecter",
+    "topUpCredits": "Recharger des crédits",
+    "menuAriaLabel": "Menu"
+  },
+  "footer": {
+    "copyright": "© 2025 Curifier",
+    "privacyPolicy": "politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "aboutUs": "À propos de nous",
+    "contactUs": "Contactez-nous"
+  },
+  "actionButtons": {
+    "save": "Sauvegarder",
+    "copy": "Copie",
+    "share": "Partager"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "Fermer la boîte de dialogue"
+  },
+  "galleryModal": {
+    "script": "Scénario",
+    "tags": "Balises"
+  },
+  "videoPlayer": {
+    "original": "Original",
+    "translated": "Traduit",
+    "unsupported": "Votre navigateur ne prend pas en charge la balise vidéo."
   }
 }

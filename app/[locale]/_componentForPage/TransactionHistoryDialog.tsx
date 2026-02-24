@@ -4,6 +4,7 @@
 import { Clock } from 'lucide-react';
 import type { Transaction } from '@/services/transactions';
 import DialogCloseButton from "../_components/button/DialogCloseButton";
+import { useTranslations } from "next-intl";
 
 interface TransactionHistoryDialogProps {
   isOpen: boolean;
@@ -18,6 +19,8 @@ export default function TransactionHistoryDialog({
   transactions,
   isLoading,
 }: TransactionHistoryDialogProps) {
+  const t = useTranslations("transactionHistory");
+
   if (!isOpen) return null;
 
   return (
@@ -34,7 +37,7 @@ export default function TransactionHistoryDialog({
         <div className="flex items-center justify-between p-4 border-b bg-gray-50 rounded-t-xl">
           <h2 className="flex items-center text-lg font-semibold text-gray-800">
             <Clock size={18} className="mr-2 text-gray-500" />
-            Credits History
+            {t("title")}
           </h2>
         </div>
 
@@ -43,27 +46,27 @@ export default function TransactionHistoryDialog({
           {isLoading ? (
             <div className="flex items-center justify-center py-6 text-gray-600">
               <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mr-2"></div>
-              Loading...
+              {t("loading")}
             </div>
           ) : transactions.length === 0 ? (
             <div className="text-center py-6 text-gray-500">
               <Clock size={32} className="mx-auto mb-2 text-gray-300" />
-              No transactions found
+              {t("empty")}
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
                 <thead className="bg-gray-100 text-gray-700">
                   <tr>
-                    <th className="px-3 py-2 border-b">ID</th>
+                    <th className="px-3 py-2 border-b">{t("id")}</th>
                     <th className="px-3 py-2 border-b w-32 whitespace-nowrap">
-                      Type
+                      {t("type")}
                     </th>
-                    <th className="px-3 py-2 border-b text-right">Credits</th>
+                    <th className="px-3 py-2 border-b text-right">{t("credits")}</th>
                     <th className="px-3 py-2 border-b w-24 text-right">
-                      Amount
+                      {t("amount")}
                     </th>
-                    <th className="px-3 py-2 border-b">Date</th>
+                    <th className="px-3 py-2 border-b">{t("date")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -127,7 +130,7 @@ export default function TransactionHistoryDialog({
             onClick={onClose}
             className="w-full px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium transition"
           >
-            Close
+            {t("close")}
           </button>
         </div>
       </div>

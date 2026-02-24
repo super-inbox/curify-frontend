@@ -21,5 +21,127 @@
     "subscribePlan": "플랜 구독",
     "supportTicket": "지원 티켓",
     "signOut": "로그아웃"
+  },
+  "ctaButtons": {
+    "bookDemo": "데모 예약",
+    "mockUserNotLoaded": "모의 사용자 데이터가 아직 로드되지 않았습니다."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Discord 커뮤니티에 참여하세요",
+    "or": "또는",
+    "contactByEmail": "이메일로 문의하기",
+    "emailPlaceholder": "이메일",
+    "subjectPlaceholder": "제목(최대 30자)",
+    "detailsPlaceholder": "우리가 더 잘 이해하고 준비하는 데 도움이 되도록 여기에 귀하의 상황과 필요 사항을 설명할 수 있습니다.\n\n영업일 기준 2일 이내에 이메일을 통해 검토하고 답변해 드리겠습니다.",
+    "invalidEmail": "유효한 이메일 주소를 입력하세요.",
+    "send": "보내다"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Curify에 가입하여 귀하의 비디오를 세계화하세요",
+    "welcomeSignin": "계속해서 비디오를 세계화하세요",
+    "signUp": "가입",
+    "signIn": "로그인",
+    "enterVerificationCode": "인증코드를 입력하세요",
+    "or": "또는",
+    "emailPlaceholder": "이메일",
+    "invalidEmail": "유효한 이메일 주소를 입력하세요.",
+    "otpSentTo": "다음 주소로 코드를 보냈습니다.",
+    "verificationCodePlaceholder": "인증코드",
+    "verifyCode": "코드 확인",
+    "resendCode": "코드 재전송",
+    "invalidOtp": "OTP가 잘못되었습니다. 다시 시도해 주세요.",
+    "agreePrefix": "Curify를 사용하면 다음 사항에 동의하게 됩니다.",
+    "termsOfService": "서비스 약관",
+    "and": "그리고",
+    "privacyPolicy": "개인 정보 보호 정책",
+    "logoAlt": "심벌 마크"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "결제 처리",
+    "processingLine1": "서비스 제공업체가 귀하의 결제를 확인하기를 기다리고 있습니다.",
+    "processingLine2": "일반적으로 30초 정도 소요됩니다.",
+    "processingLine3": "이 팝업을 닫으면 크레딧이 자동으로 표시됩니다.",
+    "confirmedTitle": "✅ 결제 확인됨",
+    "confirmedLine": "작업공간으로 리디렉션 중...",
+    "timeoutTitle": "⚠️ 인증 시간 초과",
+    "timeoutLine1": "20초 이내에 결제를 확인할 수 없습니다.",
+    "timeoutLine2": "프로필에서 직접 크레딧을 확인하세요.",
+    "close": "닫다"
+  },
+  "topUpModal": {
+    "title": "크레딧 충전",
+    "planLabel": "계획",
+    "minimumTopupError": "최소 충전 금액은 $0.50입니다.",
+    "paymentStartFailed": "결제를 시작하지 못했습니다. 다시 시도해 주세요.",
+    "customCreditsLabel": "맞춤 크레딧 입력",
+    "customCreditsPlaceholder": "예를 들어 200",
+    "paymentsPoweredByStripe": "결제는 Stripe을 통해 이루어집니다.",
+    "creditRate": "1크레딧 ≒ ${amount}(계획: {plan})"
+  },
+  "transactionHistory": {
+    "title": "학점 이력",
+    "loading": "로드 중...",
+    "empty": "거래가 없습니다.",
+    "id": "ID",
+    "type": "유형",
+    "credits": "크레딧",
+    "amount": "양",
+    "date": "날짜",
+    "close": "닫다"
+  },
+  "userDropdown": {
+    "defaultUser": "사용자",
+    "notAvailable": "해당 없음",
+    "guest": "손님",
+    "notSignedIn": "로그인되지 않음",
+    "defaultLanguage": "영어",
+    "viewPricing": "가격 보기",
+    "contactUs": "문의하기",
+    "signIn": "로그인",
+    "totalCredits": "총 학점",
+    "planCredits": "계획 크레딧",
+    "expiresOn": "만료 날짜",
+    "creditsHistory": "학점 이력",
+    "subscribePlan": "구독 계획",
+    "supportTicket": "지원 티켓",
+    "signOut": "로그아웃"
+  },
+  "header": {
+    "homeAriaLabel": "큐리파이 홈",
+    "logoAlt": "큐리파이 로고",
+    "home": "집",
+    "discover": "발견하다",
+    "gallery": "갱도",
+    "tools": "도구",
+    "blogs": "블로그",
+    "workspace": "작업공간",
+    "more": "더",
+    "logIn": "로그인",
+    "topUpCredits": "크레딧 충전",
+    "menuAriaLabel": "메뉴"
+  },
+  "footer": {
+    "copyright": "© 2025 큐리파이",
+    "privacyPolicy": "개인 정보 보호 정책",
+    "termsOfService": "서비스 약관",
+    "aboutUs": "회사 소개",
+    "contactUs": "문의하기"
+  },
+  "actionButtons": {
+    "save": "구하다",
+    "copy": "복사",
+    "share": "공유하다"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "대화상자 닫기"
+  },
+  "galleryModal": {
+    "script": "스크립트",
+    "tags": "태그"
+  },
+  "videoPlayer": {
+    "original": "원래의",
+    "translated": "번역됨",
+    "unsupported": "귀하의 브라우저는 video 태그를 지원하지 않습니다."
   }
 }

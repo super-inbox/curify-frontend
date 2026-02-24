@@ -21,5 +21,127 @@
     "subscribePlan": "プランを購読",
     "supportTicket": "サポートチケット",
     "signOut": "サインアウト"
+  },
+  "ctaButtons": {
+    "bookDemo": "デモを予約する",
+    "mockUserNotLoaded": "モックユーザーデータはまだロードされていません。"
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Discord コミュニティに参加してください",
+    "or": "または",
+    "contactByEmail": "メールでのお問い合わせ",
+    "emailPlaceholder": "電子メール",
+    "subjectPlaceholder": "件名 (最大 30 文字)",
+    "detailsPlaceholder": "当社がより深く理解し、準備できるよう、お客様の状況とニーズをここに説明していただけますようお願いいたします。\n\n内容を確認し、2 営業日以内にメールでご返答いたします。",
+    "invalidEmail": "有効なメールアドレスを入力してください。",
+    "send": "送信"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Curify に参加してビデオをグローバル化しましょう",
+    "welcomeSignin": "動画のグローバル化を継続する",
+    "signUp": "サインアップ",
+    "signIn": "サインイン",
+    "enterVerificationCode": "確認コードを入力してください",
+    "or": "または",
+    "emailPlaceholder": "電子メール",
+    "invalidEmail": "有効なメールアドレスを入力してください。",
+    "otpSentTo": "コードを送信しました",
+    "verificationCodePlaceholder": "検証コード",
+    "verifyCode": "コードの検証",
+    "resendCode": "コードを再送信する",
+    "invalidOtp": "無効な OTP。もう一度試してください。",
+    "agreePrefix": "Curify を使用すると、次のことに同意したことになります。",
+    "termsOfService": "利用規約",
+    "and": "そして",
+    "privacyPolicy": "プライバシーポリシー",
+    "logoAlt": "ロゴ"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "支払い処理",
+    "processingLine1": "サービスプロバイダーがお支払いを確認するのを待っています。",
+    "processingLine2": "通常は約 30 秒かかります。",
+    "processingLine3": "このポップアップを閉じると、クレジットが自動的に表示されます。",
+    "confirmedTitle": "✅ 支払いが確認されました",
+    "confirmedLine": "ワークスペースにリダイレクトしています...",
+    "timeoutTitle": "⚠️ 検証タイムアウト",
+    "timeoutLine1": "20 秒以内にお支払いを確認できませんでした。",
+    "timeoutLine2": "プロフィールからクレジットを手動で確認してください。",
+    "close": "近い"
+  },
+  "topUpModal": {
+    "title": "チャージクレジット",
+    "planLabel": "プラン",
+    "minimumTopupError": "最小チャージ額は 0.50 ドルです。",
+    "paymentStartFailed": "支払いの開始に失敗しました。もう一度試してください。",
+    "customCreditsLabel": "カスタム クレジットを入力してください",
+    "customCreditsPlaceholder": "例えば200",
+    "paymentsPoweredByStripe": "支払いは Stripe によって行われます。",
+    "creditRate": "1 クレジット ≈ ${amount} (計画: {plan})"
+  },
+  "transactionHistory": {
+    "title": "クレジット履歴",
+    "loading": "読み込み中...",
+    "empty": "トランザクションが見つかりませんでした",
+    "id": "ID",
+    "type": "タイプ",
+    "credits": "クレジット",
+    "amount": "額",
+    "date": "日付",
+    "close": "近い"
+  },
+  "userDropdown": {
+    "defaultUser": "ユーザー",
+    "notAvailable": "該当なし",
+    "guest": "ゲスト",
+    "notSignedIn": "サインインしていません",
+    "defaultLanguage": "英語",
+    "viewPricing": "価格を見る",
+    "contactUs": "お問い合わせ",
+    "signIn": "サインイン",
+    "totalCredits": "総クレジット数",
+    "planCredits": "プランクレジット",
+    "expiresOn": "有効期限は次のとおりです",
+    "creditsHistory": "クレジット履歴",
+    "subscribePlan": "購読プラン",
+    "supportTicket": "サポートチケット",
+    "signOut": "サインアウト"
+  },
+  "header": {
+    "homeAriaLabel": "キュリファイホーム",
+    "logoAlt": "キュリファイのロゴ",
+    "home": "家",
+    "discover": "発見する",
+    "gallery": "ギャラリー",
+    "tools": "ツール",
+    "blogs": "ブログ",
+    "workspace": "ワークスペース",
+    "more": "もっと",
+    "logIn": "ログイン",
+    "topUpCredits": "クレジットを補充する",
+    "menuAriaLabel": "メニュー"
+  },
+  "footer": {
+    "copyright": "© 2025 キュリファイ",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "aboutUs": "私たちについて",
+    "contactUs": "お問い合わせ"
+  },
+  "actionButtons": {
+    "save": "保存",
+    "copy": "コピー",
+    "share": "共有"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "ダイアログを閉じる"
+  },
+  "galleryModal": {
+    "script": "スクリプト",
+    "tags": "タグ"
+  },
+  "videoPlayer": {
+    "original": "オリジナル",
+    "translated": "翻訳済み",
+    "unsupported": "お使いのブラウザはvideoタグをサポートしていません。"
   }
 }
