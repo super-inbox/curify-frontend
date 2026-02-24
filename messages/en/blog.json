@@ -6,9 +6,9 @@
     }
   },
   "aeVsComfyUi": {
-    "title": "AE vs ComfyUI – Redefining Animation (Part 3)",
+    "title": "AE vs ComfyUI: The Ultimate Guide to AI Animation Workflows",
     "heading": "🎨 AE vs ComfyUI",
-    "intro1": "We often get asked: why not just use After Effects (AE)? Or why bother with ComfyUI? Both are essential — one provides fine control, the other generative creativity.",
+    "intro1": "We often get asked: why not just use After Effects? Or why bother with ComfyUI? Discover how to combine precise VFX control with generative AI creativity today!",
     "intro2": "AE offers timeline precision and control over transitions, lighting, and effects. ComfyUI brings AI-native workflows, combining diffusion, text, and multimodal orchestration.",
     "table": {
       "colAE": "AE",
@@ -785,8 +785,7 @@
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ From QA Bot to Task Agent: An Architecture Guide",
-    "description": "Learn how to build reliable task agents that go beyond simple question answering",
-    "taskAgentImageAlt": "Illustration of a task agent system architecture showing the interaction between different components",
+    "description": "Learn how to build reliable task agents that go beyond simple question answering. Discover deterministic execution, dynamic skills, and robust AI architecture.",
     "tldr": "TL;DR: Stop building chatbots that just answer questions. Start building task agents that actually get work done.",
     "intro": "This guide explains the architectural shift from monolithic QA bots to Task Agents using Static Rules, Dynamic Skills, and Deterministic Hooks—with concrete code examples and open-source references.",
     "coreShift": {
@@ -851,20 +850,19 @@
     "finalThought": "If your agent only answers questions, it's a chatbot. If it reliably executes work, it's a Task Agent."
   },
   "ageAi": {
+    "title": "Data Science in the Era of AI: Evolving Strategy",
+    "description": "Is Data Science still the sexiest job in the age of Generative AI? Learn how to evolve your skill set from building models to architecting business value.",
     "heading": "Data Science in the Age of AI: Is the \"Sexiest Job\" Still Sexy?",
     "intro1": "\"It was the best of times, it was the worst of times.\"",
     "intro2": "A decade ago, Harvard Business Review called Data Scientist the \"sexiest job of the 21st century.\" Today, the landscape is shifting beneath our feet. While the demand for data talent remains high, the rise of Generative AI is fundamentally changing what it means to be a 'Data Scientist.'",
-    "realityCheck": {
-      "title": "The Reality Check",
-      "content": "Traditional domains like Search, Ads, and Recommendation (SAR) are maturing, and the industry is shifting its focus toward heavy-duty engineering and AI architecture. We are seeing a strange paradox.",
-      "lowBarTrap": {
-        "title": "The \"Low-Bar\" Trap",
-        "content": "Master's students can now use GPT-4 to handle data cleaning, EDA, and visualization in seconds. However, without a solid foundation, they often lack the judgment to know when the AI is \"hallucinating\" or providing statistically flawed results."
-      },
-      "stakeholderShift": {
-        "title": "Stakeholder Shift",
-        "content": "When business partners can write their own prompts to get basic insights, many DS professionals feel \"under-stimulated,\" trapped in endless meetings and repetitive prompt engineering."
-      }
+    "content": "Traditional domains like Search, Ads, and Recommendation (SAR) are maturing, and the industry is shifting its focus toward heavy-duty engineering and AI architecture. We are seeing a strange paradox.",
+    "lowBarTrap": {
+      "title": "The \"Low-Bar\" Trap",
+      "content": "Master's students can now use GPT-4 to handle data cleaning, EDA, and visualization in seconds. However, without a solid foundation, they often lack the judgment to know when the AI is \"hallucinating\" or providing statistically flawed results."
+    },
+    "stakeholderShift": {
+      "title": "Stakeholder Shift",
+      "content": "When business partners can write their own prompts to get basic insights, many DS professionals feel \"under-stimulated,\" trapped in endless meetings and repetitive prompt engineering."
     },
     "strategicPillars": {
       "title": "How to Stay Indispensable: Two Strategic Pillars",
@@ -926,11 +924,10 @@
   },
   "aiPlatform": {
     "title": "The Mid-Sized Company's Playbook for AI Success",
+    "description": "Discover the mid-sized company's playbook for scaling AI. Build a self-serve AI platform that empowers product engineers without needing a huge ML team.",
     "subtitle": "How to Build an AI Platform That Scales Without Breaking the Bank",
-    "intro": {
-      "p1": "At small‑ to medium‑sized tech companies, the real advantage isn't in training massive models — it's in building an AI platform that lets every one ship intelligent features. This is how you turn agility into impact.",
-      "p2": "Here's a pragmatic, production‑ready blueprint we've used to power AI across finance, legal, customer support, and engineering, without burning cash or hiring 50 ML experts."
-    },
+    "p1": "At small‑ to medium‑sized tech companies, the real advantage isn't in training massive models — it's in building an AI platform that lets every one ship intelligent features. This is how you turn agility into impact.",
+    "p2": "Here's a pragmatic, production‑ready blueprint we've used to power AI across finance, legal, customer support, and engineering, without burning cash or hiring 50 ML experts.",
     "imageAlt": "AI Platform Architecture Diagram",
     "heading": "🏗️ The Mid-Sized Company's Playbook for AI Success",
     "mindsetShift": {
