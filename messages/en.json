@@ -105,26 +105,53 @@
       "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
     }
   },
-  "tools": {
-    "video_dubbing": {
-      "title": "Video Dubbing",
-      "desc": "Translate your video into any language with accurate localization and voice sync"
+    "tools": {
+      "meta": {
+        "title": "Curify Tools",
+        "description": "Explore Curify Studio tools for video dubbing, subtitles, and AI-powered content workflows."
+      },
+  
+      "hero": {
+        "watch_demo": "Watch the same video translated across different languages with preserved emotion and lip sync",
+        "transcript_label": "Transcript",
+        "training_transcript": "Welcome to Curify Studio. In this video, we showcase how AI translates and dubs content across languages...",
+        "currently_playing": "Currently playing: {label} version"
+      },
+  
+      "products": {
+        "title": "Products & Services",
+        "subtitle": "Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide."
+      },
+  
+      "audience": {
+        "title": "Our Target Audience",
+        "v1": "🎥 Video creators and YouTubers expanding to global markets",
+        "v2": "📖 Educators and knowledge platforms converting books to lectures",
+        "v3": "🎶 Media and entertainment companies localizing content across languages",
+        "v4": "📚 Manga publishers and fan translators automating translation and typesetting"
+      },
+  
+      "free_badge": "for FREE",
+  
+      "video_dubbing": {
+        "title": "Video Dubbing",
+        "desc": "Translate your video into any language with accurate localization and voice sync"
+      },
+      "subtitle_captioner": {
+        "title": "Subtitle Captioner",
+        "desc": "Auto-generate multilingual subtitles to enhance clarity and accessibility"
+      },
+      "lip_syncing": {
+        "title": "Lip Syncing",
+        "desc": "Match lips to speech perfectly with AI-powered lip sync"
+      },
+      "style_transfer": {
+        "title": "Style Transfer",
+        "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
+      },
+      "coming_soon": "Coming Soon",
+      "create": "Create"
     },
-    "subtitle_captioner": {
-      "title": "Subtitle Captioner",
-      "desc": "Auto-generate multilingual subtitles to enhance clarity and accessibility"
-    },
-    "lip_syncing": {
-      "title": "Lip Syncing",
-      "desc": "Match lips to speech perfectly with AI-powered lip sync"
-    },
-    "style_transfer": {
-      "title": "Style Transfer",
-      "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
-    },
-    "coming_soon": "Coming Soon",
-    "create": "Create"
-  },
   "bilingual": {
     "metadata": {
       "title": "Free Bilingual Subtitles Generator | Curify AI",
