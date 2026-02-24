@@ -1,298 +1,84 @@
 {
-  "home": {
-    "metadata": {
-      "title": "Curify | AIでコンテンツ制作を加速",
-      "description": "Curifyは、クリエイター・教育者・メディアチームが、動画、マンガ、プレゼン資料を大規模に制作・ローカライズできるAIネイティブプラットフォームです。"
-    },
-    "hero": {
-      "title": "AIを活用した次世代コンテンツ制作",
-      "description": "Curify Studioは、言語やフォーマットの壁を越えてコンテンツを制作・ローカライズできるAIネイティブプラットフォームです。音声のトーン・スタイル・感情的ニュアンスを保ちながら、世界中の視聴者へ届く本物の翻訳体験を提供します。メディア・教育・エンターテインメントの交差点で、グローバル展開を加速するためのツールを提供しています。"
-    }
-  },
-  "coreFeatures": {
-    "oneShot": {
-      "title": "ワンクリック翻訳",
-      "desc": "音声、字幕、リップシンクまでを含むフル動画翻訳を1ステップで実行。"
-    },
-    "toneColor": {
-      "title": "声質の再現",
-      "desc": "話者固有の声質やトーンを自然に再現します。"
-    },
-    "emotional": {
-      "title": "感情表現の再現",
-      "desc": "感情のニュアンスを保ち、言語を越えた自然な表現を実現します。"
-    },
-    "lipSync": {
-      "title": "リップシンク",
-      "desc": "翻訳音声と口の動きを高度に同期させたAIリップシンク技術。"
-    },
-    "subtitle": {
-      "title": "字幕ジェネレーター",
-      "desc": "自然な言語フローと正確なタイミングで字幕を自動生成。"
-    },
-    "languages": {
-      "title": "170以上の言語に対応",
-      "desc": "170以上の言語へ高精度に翻訳できます。"
-    }
-  },
-  "upcoming": {
-    "title": "近日公開",
-    "subtitle": "次世代機能を開発中",
-    "styleTransfer": {
-      "title": "スタイル転写",
-      "desc": "映画風やブランド特有のスタイルを動画に適用するAIビジュアル変換。",
-      "icon": "🎨",
-      "status": "2025年第3四半期公開予定",
-      "transcript": "このデモは、実写ドラマのクリップをジブリ風のアニメーションに変換します。"
-    },
-    "mangaTranslation": {
-      "title": "マンガ翻訳",
-      "desc": "吹き出し検出・テキスト抽出・文化適応を含む自動マンガ翻訳。",
-      "icon": "📚",
-      "status": "2025年第3四半期公開予定",
-      "transcript": "このプロトタイプは、自動マンガ翻訳を示しています。"
-    },
-    "templatedVideo": {
-      "title": "テンプレート動画生成",
-      "desc": "テンプレートを使ってブランドに合わせた動画を自動生成。",
-      "icon": "🎬",
-      "status": "2025年第4四半期公開予定",
-      "transcript": "このデモは、脚本から動画へのパイプラインを示しています。"
-    },
-    "statusQ3": "2025年 第3四半期公開予定",
-    "statusQ4": "2025年 第4四半期公開予定"
-  },
-  "export": {
-    "title": "エクスポート",
-    "export": "エクスポート",
-    "downloading": "ダウンロード中..."
-  },
-  "delete": {
-    "title": "再確認",
-    "message": "このプロジェクトを削除してもよろしいですか？",
-    "warning": "この操作は元に戻せません。",
-    "cancel": "キャンセル",
-    "delete": "削除",
-    "deleting": "削除中..."
-  },
-  "userMenu": {
-    "topUpCredits": "クレジット追加",
-    "remaining": "残り",
-    "planRemaining": "プラン残高",
-    "validUntil": "有効期限",
-    "creditsHistory": "クレジット履歴",
-    "subscribePlan": "プランを購読",
-    "supportTicket": "サポートチケット",
-    "signOut": "サインアウト"
-  },
-  "technology": {
-    "multimodal": {
-      "title": "マルチモーダル認識",
-      "desc": "音声と字幕を組み合わせ、ノイズ環境でも強い精度の高い転写を実現。"
-    },
-    "emotional": {
-      "title": "感情的音声合成",
-      "desc": "トーン・リズム・ニュアンスまで表現した自然な音声を生成。"
-    },
-    "lengthaware": {
-      "title": "長さ意識型翻訳",
-      "desc": "翻訳の正確性だけでなく、テンポ・タイミングも最適化し、映像と音声の同期を高めます。"
-    },
-    "controlled": {
-      "title": "制御可能な動画生成",
-      "desc": "テンプレートベースで構造化された動画生成を行い、高品質かつ一貫性のある映像制作をサポート。"
-    }
-  },
-  "tools": {
-    "video_dubbing": {
-      "title": "動画吹き替え",
-      "desc": "動画を任意の言語へ高精度にローカライズし、音声同期まで対応"
-    },
-    "subtitle_captioner": {
-      "title": "字幕ジェネレーター",
-      "desc": "明瞭でアクセシブルな多言語字幕を自動生成"
-    },
-    "lip_syncing": {
-      "title": "リップシンク",
-      "desc": "AIによる高精度な口元同期"
-    },
-    "style_transfer": {
-      "title": "スタイル転写",
-      "desc": "Pixar・ジブリなどのアートスタイルへの変換 — 近日公開"
-    },
-    "coming_soon": "近日公開",
-    "create": "作成",
-    "meta": {
-      "title": "Curifyツール",
-      "description": "動画の吹き替え、字幕、AI駆動のコンテンツワークフローのためのCurify Studioツールを探索してください。"
-    },
-    "hero": {
-      "watch_demo": "異なる言語で翻訳された同じ動画を、感情と口の動きを保ちながらご覧ください",
-      "transcript_label": "トランスクリプト",
-      "training_transcript": "Curify Studioへようこそ。この動画では、AIがどのようにコンテンツを言語間で翻訳し、吹き替えを行うかを紹介します...",
-      "currently_playing": "現在再生中: {label} バージョン"
-    },
-    "products": {
-      "title": "製品とサービス",
-      "subtitle": "私たちのAI駆動のソリューションはライブで、継続的に改善されています — すでに世界中のクリエイターやチームに利用されています。"
-    },
-    "audience": {
-      "title": "私たちのターゲットオーディエンス",
-      "v1": "🎥 グローバル市場に展開する動画クリエイターやYouTuber",
-      "v2": "📖 書籍を講義に変換する教育者や知識プラットフォーム",
-      "v3": "🎶 コンテンツを言語間でローカライズするメディアおよびエンターテインメント企業",
-      "v4": "📚 翻訳と組版を自動化するマンガ出版社やファン翻訳者"
-    },
-    "free_badge": "無料で"
-  },
-  "bilingual": {
-    "metadata": {
-      "title": "無料バイリンガル字幕ジェネレーター | Curify AI",
-      "description": "Curifyの無料AIツールで、動画にバイリンガル字幕を簡単作成。YouTube、TikTok、教育用途、グローバル展開に最適です。"
-    },
-    "title": "バイリンガル字幕を簡単に作成",
-    "intro": "CurifyのAI字幕エンジンで、2言語の字幕を自動生成。クリエイター、教育者、企業に最適。",
-    "example": "例：Jensen HuangのAI戦略解説 — 英語と中国語の字幕を自動生成。",
-    "cta": "無料で試す",
-    "why": {
-      "title": "なぜCurifyのバイリンガル字幕なのか？",
-      "point1": "170以上の言語に対応した高精度翻訳。",
-      "point2": "感情・トーン・タイミングを保持。",
-      "point3": "YouTube・TikTok・教育動画に最適。",
-      "point4": "字幕ファイルまたは埋め込み動画としてエクスポート可能。"
-    },
-    "faq": {
-      "title": "よくある質問",
-      "q1": "本当に無料ですか？",
-      "a1": "はい、Curifyは無料プランでも毎月一定量の字幕生成が可能です。",
-      "q2": "字幕を編集できますか？",
-      "a2": "もちろん。タイミング・翻訳・スタイルをエクスポート前に調整できます。"
-    }
-  },
-  "videoDubbing": {
-    "metadata": {
-      "title": "AI動画吹き替えツール | Curify AI",
-      "description": "AI音声クローン、感情保持、リップシンクで動画を170以上の言語に吹き替え。CurifyのAI吹き替えを無料で試せます。"
-    },
-    "title": "自然な声でのAI動画吹き替え",
-    "description": "170以上の言語で動画を翻訳・同期し、自然なAI音声とリップシンクを提供します。国際展開するクリエイターやブランドに最適です。"
-  },
-  "about": {
-    "metadata": {
-      "title": "Curifyについて | ビジョン・技術・チーム",
-      "description": "AIでコンテンツ制作を民主化するCurifyのビジョンを紹介します。私たちはメディアローカライゼーションの未来をつくるエンジニアとクリエイターのチームです。"
-    }
-  },
-  "contact": {
-    "metadata": {
-      "title": "お問い合わせ | Curify Studio",
-      "description": "サポート、営業、提携についてはCurifyチームまでご連絡ください。コンテンツのグローバル展開を支援します。"
-    }
-  },
   "blog": {
     "metadata": {
       "title": "Curifyブログ | AIコンテンツ制作インサイト",
       "description": "AI動画生成、吹き替え、スタイル転写、コンテンツ制作の未来に関する最新記事をお届けします。"
-    }
-  },
-  "pricing": {
-    "metadata": {
-      "title": "料金プラン | Curify Studio",
-      "description": "無料ツールからエンタープライズ向けAI吹き替え・ローカライズまで、用途に合うプランを選べます。"
     },
-    "header": {
-      "title": "プランを選択",
-      "subtitle": "ニーズに合わせて選べます"
-    },
-    "common": {
-      "month": "月",
-      "pricing": "料金",
-      "receive": "含まれる内容"
-    },
-    "buttons": {
-      "signUp": "登録",
-      "subscribePlan": "プランに加入",
-      "currentPlan": "現在のプラン",
-      "comingSoon": "近日公開",
-      "downgradeToFree": "無料プランへ変更",
-      "downgradeToCreator": "Creatorプランへ変更",
-      "contactSales": "営業に問い合わせ"
-    },
-    "plans": {
-      "free": {
-        "name": "無料",
-        "description": "ツールのお試しや軽作業に最適",
-        "features": [
-          "ウォーターマークなしで動画をダウンロード",
-          "字幕処理が毎月1時間無料",
-          "SRTファイルのエクスポート"
-        ]
+    "latestArticles": "最新記事",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "中堅企業のためのAI成功ガイド：低コストでスケールするプラットフォーム構築",
+        "date": "2026年1月30日",
+        "readTime": "読了時間 9 分",
+        "tag": "AIプラットフォーム",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
       },
-      "creator": {
-        "name": "クリエイター",
-        "description": "定期的に字幕や軽い吹き替えを行う小規模クリエイター向け",
-        "plusTitle": "無料プランのすべてに加えて：",
-        "features": [
-          "リップシンク",
-          "バッチ処理",
-          "毎月5時間の無料字幕処理",
-          "タスクあたり最大30分"
-        ]
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "QAボットからタスクエージェントへ：アーキテクチャガイド",
+        "date": "2026年1月30日",
+        "readTime": "読了時間 6 分",
+        "tag": "AIアーキテクチャ",
+        "image": "/images/qa-bot-architecture.jpg"
       },
-      "pro": {
-        "name": "Pro",
-        "description": "近日公開 — 大量処理を行うクリエイター向け",
-        "plusTitle": "Creatorプランのすべてに加えて：",
-        "features": [
-          "音声美化・ノイズ除去",
-          "優先キュー",
-          "タスクあたり最大60分",
-          "字幕処理時間無制限"
-        ]
+      {
+        "slug": "age_AI",
+        "title": "AI時代におけるデータサイエンス：'最もセクシーな職業'は今もセクシーか？",
+        "date": "2026年1月30日",
+        "readTime": "読了時間 8 分",
+        "tag": "AI業界",
+        "image": "/images/data-science-ai-era.jpg"
       },
-      "enterprise": {
-        "name": "エンタープライズ",
-        "description": "チーム・スタジオ・企業向けワークフロー",
-        "customPricing": "カスタム",
-        "unlimited": "無制限 🐚",
-        "tailoredSupport": "＋専用サポート",
-        "plusTitle": "Proのすべてに加えて：",
-        "features": [
-          "専任アカウントマネージャー",
-          "オンプレミス導入オプション",
-          "APIアクセス・使用状況分析",
-          "カスタム統合・SLA",
-          "処理時間無制限"
-        ]
+      {
+        "slug": "storyboard-labeling",
+        "title": "未編集映像からストーリーボードへ：AIによるビデオ分析",
+        "date": "2025年12月11日",
+        "readTime": "読了時間 10 分",
+        "tag": "ビデオ分析",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "AIビデオ補正：ストーリーボード、ミームキャプション、SFX自動化",
+        "date": "2025年11月18日",
+        "readTime": "読了時間 7 分",
+        "tag": "ビデオ補正",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "AIビデオ翻訳の評価：真に重要な指標",
+        "date": "2025年11月14日",
+        "readTime": "読了時間 6 分",
+        "tag": "ローカライゼーション",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "独自のAI搭載コミックアニメーションを作成：ステップバイステップガイド",
+        "date": "2025年10月28日",
+        "readTime": "読了時間 5 分",
+        "tag": "アニメーション",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "第2部：エージェント vs ワークフロー – 制御から知能へ",
+        "date": "2025年10月28日",
+        "readTime": "読了時間 6 分",
+        "tag": "生成ツール",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "第3部：AE vs ComfyUI – モーションデザイン vs 拡散パイプライン",
+        "date": "2025年10月28日",
+        "readTime": "読了時間 7 分",
+        "tag": "ツール＆パイプライン",
+        "image": "/images/ae-vs-comfyui.jpg"
       }
-    },
-    "table": {
-      "header": {
-        "feature": "機能 / 制限"
-      },
-      "rows": {
-        "videoDownloadWithWatermark": "ウォーターマーク付き動画ダウンロード",
-        "videoDownloadWithoutWatermark": "ウォーターマークなし動画ダウンロード",
-        "downloadSrt": "SRTダウンロード",
-        "voiceBeautification": "音声美化・ノイズ除去",
-        "lipSync": "リップシンク",
-        "subtitleTools": "字幕ツール（追加/削除・翻訳なし）",
-        "batchProcessing": "バッチ処理",
-        "maxVideoLength": "タスクごとの最大動画長",
-        "monthlyCredits": "毎月の無料クレジット",
-        "priorityQueue": "優先キュー / 高速処理",
-        "creditTopUp": "クレジット追加"
-      },
-      "values": {
-        "free": "無料",
-        "unlimited": "無制限",
-        "oneHourPerMonth": "月1時間",
-        "fiveHoursPerMonth": "月5時間",
-        "fiveMinutes": "5分",
-        "thirtyMinutes": "30分",
-        "sixtyMinutes": "60分"
-      }
-    }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI - アニメーション再定義（Part 3）",
@@ -1133,6 +919,7 @@
       "content1": "AIはデータサイエンスを殺すのではなく、その基準を引き上げただけです。あなたの価値がSQLを書いたりハイパーパラメータを調整したりすることだけにあるのなら、その「魅力」は薄れつつあります。しかし、ビジネス課題とAIソリューションの橋渡しができるなら、あなたの価値はこれまで以上に高まっています。",
       "content2": "あなたの個人的な経験が強みです。LLMは論理を模倣できますが、失敗した展開の「戦いの傷」や複雑な組織を渡り歩いて培った直感は持っていません。"
     },
+    "conclusion": "本当の競争力は、ビジネス文脈・実装力・AI活用をつなぐあなた自身の判断力にあります。",
     "discussion": {
       "title": "ディスカッション：",
       "prompt": "現在の役割で「効率化された」と感じますか、それとも「置き換えられた」と感じますか？今年はどのようにスキルセットを進化させていますか？"
@@ -1144,7 +931,18 @@
       "#生成AI",
       "#キャリア開発",
       "#テックトレンド"
-    ]
+    ],
+    "content": "検索、広告、レコメンデーション（SAR）などの従来のドメインは成熟期を迎え、業界は堅牢なエンジニアリングとAIアーキテクチャに重点を移行しています。私たちは奇妙なパラドックスを目の当たりにしています。",
+    "lowBarTrap": {
+      "title": "「低いハードル」の罠",
+      "content": "大学院生は今やGPT-4を使って、データクレンジング、探索的データ分析、可視化を数秒で行えます。しかし、確固とした基盤がなければ、AIが「幻覚」を見せているときや、統計的に問題のある結果を出しているときにそれを見抜く判断力に欠けることが多いのです。"
+    },
+    "stakeholderShift": {
+      "title": "ステークホルダーの変化",
+      "content": "ビジネスパートナーが基本的な分析を自分でプロンプトで行えるようになった今、多くのデータサイエンス専門家は「刺激不足」を感じ、終わりのない会議や反復的なプロンプトエンジニアリングに追われるようになっています。"
+    },
+    "title": "AI時代のデータサイエンス：『最も魅力的な仕事』はまだ存在するのか？",
+    "description": "10年前、ハーバード・ビジネス・レビューはデータサイエンティストを『21世紀で最も魅力的な仕事』と評しました。今日、状況は劇的に変化しています。データ人材の需要が依然として高い一方で、生成AIの台頭は『データサイエンティスト』という職種の本質を根本から変えつつあります。"
   },
   "aiPlatform": {
     "title": "中堅企業のためのAI成功ガイド",
@@ -1234,7 +1032,8 @@
       "content": "中堅テクノロジー企業にとって、AIで成功することは、より優れたLLMを構築することを意味するのではありません。AIを繰り返し可能でスケーラブルなビジネスプロセスに変えるプラットフォームを構築することを意味します。",
       "finalThoughts": "インフラから始め、データを保護し、チームが構築できるようにしましょう。未来は1つのモデルがすべてを支配するのではなく、それぞれが実際のビジネス課題を解決する専門エージェントの艦隊であり、それをシンプルにするプラットフォームによって支えられています。",
       "callToAction": "構築の準備はできましたか？シンプルに、オープンに保ち、他の人々をサポートすることに集中しましょう。"
-    }
+    },
+    "description": "予算を圧迫せずにスケールするAIプラットフォームの構築方法"
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ QAボットからタスクエージェントへ：アーキテクチャガイド",

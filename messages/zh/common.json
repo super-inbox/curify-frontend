@@ -1,0 +1,147 @@
+{
+  "export": {
+    "title": "导出",
+    "export": "导出",
+    "downloading": "下载中..."
+  },
+  "delete": {
+    "title": "二次确认",
+    "message": "您确定要删除这个项目吗",
+    "warning": "此操作无法撤销。",
+    "cancel": "取消",
+    "delete": "删除",
+    "deleting": "删除中..."
+  },
+  "userMenu": {
+    "topUpCredits": "充值积分",
+    "remaining": "剩余",
+    "planRemaining": "计划剩余",
+    "validUntil": "有效期至",
+    "creditsHistory": "积分历史",
+    "subscribePlan": "订阅计划",
+    "supportTicket": "技术支持",
+    "signOut": "退出登录"
+  },
+  "ctaButtons": {
+    "bookDemo": "预约演示",
+    "mockUserNotLoaded": "模拟用户数据尚未加载。"
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "加入我们的 Discord 社区",
+    "or": "或",
+    "contactByEmail": "通过邮件联系我们",
+    "emailPlaceholder": "邮箱",
+    "subjectPlaceholder": "主题（最多 30 个字符）",
+    "detailsPlaceholder": "你可以在这里描述你的具体情况和需求，帮助我们更好理解并准备。\n\n我们会在 2 个工作日内通过邮件回复。",
+    "invalidEmail": "请输入有效的邮箱地址。",
+    "send": "发送"
+  },
+  "signDrawer": {
+    "welcomeSignup": "加入 Curify，让你的视频走向全球",
+    "welcomeSignin": "继续全球化你的视频内容",
+    "signUp": "注册",
+    "signIn": "登录",
+    "enterVerificationCode": "请输入验证码",
+    "or": "或",
+    "emailPlaceholder": "邮箱",
+    "invalidEmail": "请输入有效的邮箱地址。",
+    "otpSentTo": "验证码已发送至",
+    "verificationCodePlaceholder": "验证码",
+    "verifyCode": "验证验证码",
+    "resendCode": "重新发送验证码",
+    "invalidOtp": "验证码无效，请重试。",
+    "agreePrefix": "使用 Curify 即表示你同意我们的",
+    "termsOfService": "服务条款",
+    "and": "和",
+    "privacyPolicy": "隐私政策",
+    "logoAlt": "logo"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "支付处理中",
+    "processingLine1": "我们正在等待服务商确认你的支付。",
+    "processingLine2": "通常需要约 30 秒。",
+    "processingLine3": "你可以关闭此弹窗，积分会自动到账。",
+    "confirmedTitle": "✅ 支付已确认",
+    "confirmedLine": "正在跳转到工作区...",
+    "timeoutTitle": "⚠️ 验证超时",
+    "timeoutLine1": "我们在 20 秒内未能确认你的支付。",
+    "timeoutLine2": "请前往个人资料页手动查看积分。",
+    "close": "关闭"
+  },
+  "topUpModal": {
+    "title": "充值积分",
+    "planLabel": "套餐",
+    "minimumTopupError": "最低充值金额为 $0.50。",
+    "paymentStartFailed": "发起支付失败，请重试。",
+    "customCreditsLabel": "输入自定义积分",
+    "customCreditsPlaceholder": "例如：200",
+    "paymentsPoweredByStripe": "支付由 Stripe 提供支持。",
+    "creditRate": "1 积分 ≈ ${amount}（套餐：{plan}）"
+  },
+  "transactionHistory": {
+    "title": "积分历史",
+    "loading": "加载中...",
+    "empty": "暂无交易记录",
+    "id": "ID",
+    "type": "类型",
+    "credits": "积分",
+    "amount": "金额",
+    "date": "日期",
+    "close": "关闭"
+  },
+  "userDropdown": {
+    "defaultUser": "用户",
+    "notAvailable": "暂无",
+    "guest": "访客",
+    "notSignedIn": "未登录",
+    "defaultLanguage": "英语",
+    "viewPricing": "查看价格",
+    "contactUs": "联系我们",
+    "signIn": "登录",
+    "totalCredits": "总积分",
+    "planCredits": "套餐积分",
+    "expiresOn": "到期时间",
+    "creditsHistory": "积分历史",
+    "subscribePlan": "订阅套餐",
+    "supportTicket": "支持工单",
+    "signOut": "退出登录"
+  },
+  "header": {
+    "homeAriaLabel": "Curify 首页",
+    "logoAlt": "Curify Logo",
+    "home": "首页",
+    "discover": "发现",
+    "gallery": "画廊",
+    "tools": "工具",
+    "blogs": "博客",
+    "workspace": "工作区",
+    "more": "更多",
+    "logIn": "登录",
+    "topUpCredits": "充值积分",
+    "menuAriaLabel": "菜单"
+  },
+  "footer": {
+    "copyright": "© 2025 Curify",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "aboutUs": "关于我们",
+    "contactUs": "联系我们"
+  },
+  "actionButtons": {
+    "save": "保存",
+    "copy": "复制",
+    "share": "分享"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "关闭对话框"
+  },
+  "galleryModal": {
+    "script": "脚本",
+    "tags": "标签"
+  },
+  "videoPlayer": {
+    "original": "原始",
+    "translated": "翻译后",
+    "unsupported": "你的浏览器不支持视频标签。"
+  }
+}

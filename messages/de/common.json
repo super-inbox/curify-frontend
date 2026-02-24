@@ -1,0 +1,147 @@
+{
+  "export": {
+    "title": "Exportieren",
+    "export": "Exportieren",
+    "downloading": "Wird heruntergeladen..."
+  },
+  "delete": {
+    "title": "Bitte bestätigen",
+    "message": "Möchtest du dieses Projekt wirklich löschen?",
+    "warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "deleting": "Wird gelöscht..."
+  },
+  "userMenu": {
+    "topUpCredits": "Credits aufladen",
+    "remaining": "Verbleibend",
+    "planRemaining": "Im Plan verbleibend",
+    "validUntil": "Gültig bis",
+    "creditsHistory": "Credit-Verlauf",
+    "subscribePlan": "Plan abonnieren",
+    "supportTicket": "Support-Ticket",
+    "signOut": "Abmelden"
+  },
+  "ctaButtons": {
+    "bookDemo": "Buchen Sie eine Demo",
+    "mockUserNotLoaded": "Scheinbenutzerdaten sind noch nicht geladen."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Treten Sie unserer Discord-Community bei",
+    "or": "Oder",
+    "contactByEmail": "Kontaktieren Sie uns per E-Mail",
+    "emailPlaceholder": "E-Mail",
+    "subjectPlaceholder": "Betreff (max. 30 Zeichen)",
+    "detailsPlaceholder": "Sie können hier Ihre Situation und Bedürfnisse beschreiben, damit wir sie besser verstehen und vorbereiten können.\n\nWir prüfen und antworten innerhalb von 2 Werktagen per E-Mail.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "send": "Schicken"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Treten Sie Curify bei, um Ihre Videos zu globalisieren",
+    "welcomeSignin": "Globalisieren Sie Ihre Videos weiter",
+    "signUp": "Melden Sie sich an",
+    "signIn": "Anmelden",
+    "enterVerificationCode": "Geben Sie den Bestätigungscode ein",
+    "or": "oder",
+    "emailPlaceholder": "E-Mail",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "otpSentTo": "Wir haben einen Code an gesendet",
+    "verificationCodePlaceholder": "Bestätigungscode",
+    "verifyCode": "Code überprüfen",
+    "resendCode": "Code erneut senden",
+    "invalidOtp": "Ungültiges OTP. Bitte versuchen Sie es erneut.",
+    "agreePrefix": "Durch die Nutzung von Curify stimmen Sie unseren zu",
+    "termsOfService": "Nutzungsbedingungen",
+    "and": "Und",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "logoAlt": "Logo"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "Zahlungsabwicklung",
+    "processingLine1": "Wir warten darauf, dass unser Dienstleister Ihre Zahlung bestätigt.",
+    "processingLine2": "Normalerweise dauert es etwa 30 Sekunden.",
+    "processingLine3": "Sie können dieses Popup schließen und die Credits werden automatisch angezeigt.",
+    "confirmedTitle": "✅ Zahlung bestätigt",
+    "confirmedLine": "Weiterleitung zum Arbeitsbereich...",
+    "timeoutTitle": "⚠️ Zeitüberschreitung bei der Überprüfung",
+    "timeoutLine1": "Wir konnten Ihre Zahlung nicht innerhalb von 20 Sekunden verifizieren.",
+    "timeoutLine2": "Bitte überprüfen Sie Ihre Credits manuell in Ihrem Profil.",
+    "close": "Schließen"
+  },
+  "topUpModal": {
+    "title": "Guthaben aufladen",
+    "planLabel": "Planen",
+    "minimumTopupError": "Die Mindestaufladung beträgt 0,50 $.",
+    "paymentStartFailed": "Die Zahlung konnte nicht gestartet werden. Bitte versuchen Sie es erneut.",
+    "customCreditsLabel": "Geben Sie benutzerdefinierte Credits ein",
+    "customCreditsPlaceholder": "z.B. 200",
+    "paymentsPoweredByStripe": "Zahlungen werden von Stripe unterstützt.",
+    "creditRate": "1 Credit ≈ ${amount} (Plan: {plan})"
+  },
+  "transactionHistory": {
+    "title": "Credits-Geschichte",
+    "loading": "Laden...",
+    "empty": "Keine Transaktionen gefunden",
+    "id": "AUSWEIS",
+    "type": "Typ",
+    "credits": "Credits",
+    "amount": "Menge",
+    "date": "Datum",
+    "close": "Schließen"
+  },
+  "userDropdown": {
+    "defaultUser": "Benutzer",
+    "notAvailable": "N / A",
+    "guest": "Gast",
+    "notSignedIn": "Nicht angemeldet",
+    "defaultLanguage": "Englisch",
+    "viewPricing": "Preise anzeigen",
+    "contactUs": "Kontaktieren Sie uns",
+    "signIn": "Anmelden",
+    "totalCredits": "Gesamt-Credits",
+    "planCredits": "Planen Sie Credits",
+    "expiresOn": "Läuft ab am",
+    "creditsHistory": "Credits-Geschichte",
+    "subscribePlan": "Abonnieren Sie den Plan",
+    "supportTicket": "Support-Ticket",
+    "signOut": "Abmelden"
+  },
+  "header": {
+    "homeAriaLabel": "Curify Home",
+    "logoAlt": "Curify-Logo",
+    "home": "Heim",
+    "discover": "Entdecken",
+    "gallery": "Galerie",
+    "tools": "Werkzeuge",
+    "blogs": "Blogs",
+    "workspace": "Arbeitsplatz",
+    "more": "Mehr",
+    "logIn": "Einloggen",
+    "topUpCredits": "Credits aufladen",
+    "menuAriaLabel": "Speisekarte"
+  },
+  "footer": {
+    "copyright": "© 2025 Curify",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Nutzungsbedingungen",
+    "aboutUs": "Über uns",
+    "contactUs": "Kontaktieren Sie uns"
+  },
+  "actionButtons": {
+    "save": "Speichern",
+    "copy": "Kopie",
+    "share": "Aktie"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "Dialog schließen"
+  },
+  "galleryModal": {
+    "script": "Skript",
+    "tags": "Schlagworte"
+  },
+  "videoPlayer": {
+    "original": "Original",
+    "translated": "Übersetzt",
+    "unsupported": "Ihr Browser unterstützt das Video-Tag nicht."
+  }
+}

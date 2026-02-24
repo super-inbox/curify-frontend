@@ -8,8 +8,10 @@ import { userAtom, headerAtom } from "@/app/atoms/atoms";
 import BtnP from "../_components/button/ButtonPrimary";
 import GoogleLoginButton from "../_components/button/GoogleLoginButton";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function Buttons() {
+  const t = useTranslations("ctaButtons");
   const router = useRouter();
 
   const [, setUser] = useAtom(userAtom);
@@ -30,7 +32,7 @@ export default function Buttons() {
       setHeaderState("in");
       router.push("/workspace");
     } else {
-      alert("Mock user data not loaded yet.");
+      alert(t("mockUserNotLoaded"));
     }
   };
 
@@ -39,7 +41,7 @@ export default function Buttons() {
       {/* Book a Demo CTA */}
       <Link href="/contact">
         <BtnP className="h-12 px-6 rounded-lg text-base">
-          Book a Demo
+          {t("bookDemo")}
         </BtnP>
       </Link>
 

@@ -1,0 +1,101 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "Preispläne | Curify Studio",
+      "description": "Wähle den passenden Plan für deine Content-Erstellung - von kostenlosen Tools bis zu KI-Synchronisation und Lokalisierung auf Enterprise-Niveau."
+    },
+    "header": {
+      "title": "Erste Schritte mit einem Plan",
+      "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."
+    },
+    "common": {
+      "month": "Monat",
+      "pricing": "Preisgestaltung",
+      "receive": "Erhalten"
+    },
+    "buttons": {
+      "signUp": "Registrieren",
+      "subscribePlan": "Plan abonnieren",
+      "currentPlan": "Aktueller Plan",
+      "comingSoon": "Demnächst verfügbar",
+      "downgradeToFree": "Auf Kostenlos herabstufen",
+      "downgradeToCreator": "Auf Creator herabstufen",
+      "contactSales": "Vertrieb kontaktieren"
+    },
+    "plans": {
+      "free": {
+        "name": "Kostenlos",
+        "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
+        "features": [
+          "Videos ohne Wasserzeichen herunterladen",
+          "1 Stunde kostenlose Untertitelverarbeitung",
+          "SRT-Dateien exportieren"
+        ]
+      },
+      "creator": {
+        "name": "Kreator",
+        "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
+        "plusTitle": "Alles in Kostenlos, plus:",
+        "features": [
+          "Lippensynchronisation",
+          "Stapelverarbeitung",
+          "5 Stunden kostenlose Untertitelverarbeitung",
+          "Bis zu 30 Minuten pro Aufgabe"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
+        "plusTitle": "Alles in Creator, plus:",
+        "features": [
+          "Stimmverschönerung & Rauschunterdrückung",
+          "Prioritätswarteschlange",
+          "Bis zu 60 Min. pro Aufgabe",
+          "Unbegrenzte Untertitelminuten"
+        ]
+      },
+      "enterprise": {
+        "name": "Unternehmen",
+        "description": "Für Teams, Studios und Unternehmens-Workflows",
+        "customPricing": "Individuell",
+        "unlimited": "Unbegrenzt 🐚",
+        "tailoredSupport": "& maßgeschneiderter Support",
+        "plusTitle": "Alles in Pro, plus:",
+        "features": [
+          "Dedizierter Account-Manager",
+          "On-Premise-Bereitstellungsoptionen",
+          "API-Zugriff & Nutzungsanalyse",
+          "Individuelle Integrationen & SLA",
+          "Unbegrenzte Verarbeitungsstunden"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "Funktion / Limit"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "Video-Download mit Wasserzeichen",
+        "videoDownloadWithoutWatermark": "Video-Download ohne Wasserzeichen",
+        "downloadSrt": "SRT-Datei herunterladen",
+        "voiceBeautification": "Stimmverschönerung & Rauschunterdrückung",
+        "lipSync": "Lippensynchronisation",
+        "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
+        "batchProcessing": "Stapelverarbeitung",
+        "maxVideoLength": "Max. Videolänge pro Aufgabe",
+        "monthlyCredits": "Monatliche kostenlose Credits",
+        "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
+        "creditTopUp": "Credit-Aufladung"
+      },
+      "values": {
+        "free": "Kostenlos",
+        "unlimited": "Unbegrenzt",
+        "oneHourPerMonth": "1 Std./Monat",
+        "fiveHoursPerMonth": "5 Std./Monat",
+        "fiveMinutes": "5 Min.",
+        "thirtyMinutes": "30 Min.",
+        "sixtyMinutes": "60 Min."
+      }
+    }
+  }
+}

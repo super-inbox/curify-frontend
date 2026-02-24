@@ -1,0 +1,101 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "料金プラン | Curify Studio",
+      "description": "無料ツールからエンタープライズ向けAI吹き替え・ローカライズまで、用途に合うプランを選べます。"
+    },
+    "header": {
+      "title": "プランを選択",
+      "subtitle": "ニーズに合わせて選べます"
+    },
+    "common": {
+      "month": "月",
+      "pricing": "料金",
+      "receive": "含まれる内容"
+    },
+    "buttons": {
+      "signUp": "登録",
+      "subscribePlan": "プランに加入",
+      "currentPlan": "現在のプラン",
+      "comingSoon": "近日公開",
+      "downgradeToFree": "無料プランへ変更",
+      "downgradeToCreator": "Creatorプランへ変更",
+      "contactSales": "営業に問い合わせ"
+    },
+    "plans": {
+      "free": {
+        "name": "無料",
+        "description": "ツールのお試しや軽作業に最適",
+        "features": [
+          "ウォーターマークなしで動画をダウンロード",
+          "字幕処理が毎月1時間無料",
+          "SRTファイルのエクスポート"
+        ]
+      },
+      "creator": {
+        "name": "クリエイター",
+        "description": "定期的に字幕や軽い吹き替えを行う小規模クリエイター向け",
+        "plusTitle": "無料プランのすべてに加えて：",
+        "features": [
+          "リップシンク",
+          "バッチ処理",
+          "毎月5時間の無料字幕処理",
+          "タスクあたり最大30分"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "近日公開 — 大量処理を行うクリエイター向け",
+        "plusTitle": "Creatorプランのすべてに加えて：",
+        "features": [
+          "音声美化・ノイズ除去",
+          "優先キュー",
+          "タスクあたり最大60分",
+          "字幕処理時間無制限"
+        ]
+      },
+      "enterprise": {
+        "name": "エンタープライズ",
+        "description": "チーム・スタジオ・企業向けワークフロー",
+        "customPricing": "カスタム",
+        "unlimited": "無制限 🐚",
+        "tailoredSupport": "＋専用サポート",
+        "plusTitle": "Proのすべてに加えて：",
+        "features": [
+          "専任アカウントマネージャー",
+          "オンプレミス導入オプション",
+          "APIアクセス・使用状況分析",
+          "カスタム統合・SLA",
+          "処理時間無制限"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "機能 / 制限"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "ウォーターマーク付き動画ダウンロード",
+        "videoDownloadWithoutWatermark": "ウォーターマークなし動画ダウンロード",
+        "downloadSrt": "SRTダウンロード",
+        "voiceBeautification": "音声美化・ノイズ除去",
+        "lipSync": "リップシンク",
+        "subtitleTools": "字幕ツール（追加/削除・翻訳なし）",
+        "batchProcessing": "バッチ処理",
+        "maxVideoLength": "タスクごとの最大動画長",
+        "monthlyCredits": "毎月の無料クレジット",
+        "priorityQueue": "優先キュー / 高速処理",
+        "creditTopUp": "クレジット追加"
+      },
+      "values": {
+        "free": "無料",
+        "unlimited": "無制限",
+        "oneHourPerMonth": "月1時間",
+        "fiveHoursPerMonth": "月5時間",
+        "fiveMinutes": "5分",
+        "thirtyMinutes": "30分",
+        "sixtyMinutes": "60分"
+      }
+    }
+  }
+}

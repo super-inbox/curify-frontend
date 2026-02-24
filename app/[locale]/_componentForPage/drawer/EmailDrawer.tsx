@@ -8,9 +8,11 @@ import Icon from "../../_components/Icon";
 import Input from "../../_components/Input";
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function EmailDrawer() {
   const [state, setState] = useAtom(drawerAtom);
+  const t = useTranslations("emailDrawer");
 
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -30,33 +32,33 @@ export default function EmailDrawer() {
         `}
         href="https://discord.gg/rKqzbvZu"
       >
-        <p className="mr-3">Join Our Discord Community</p>
+        <p className="mr-3">{t("joinDiscordCommunity")}</p>
         <Icon name="discord" size={5} />
       </Link>
 
       <p className="py-3 border-b border-b-[var(--c4)] w-full mb-3 text-center">
-        Or
+        {t("or")}
       </p>
 
       <div className="flex flex-col items-center gap-3 w-full">
-        <h2 className="text-base text-[var(--c2)]">Contact Us via Email</h2>
+        <h2 className="text-base text-[var(--c2)]">{t("contactByEmail")}</h2>
 
         <Input
           value={email}
-          placeholder="Email"
+          placeholder={t("emailPlaceholder")}
           onChange={setEmail}
           setValid={setEmailValid}
           rules={[
             {
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              errorMsg: "Please enter a valid email address.",
+              errorMsg: t("invalidEmail"),
             },
           ]}
         />
 
         <Input
           value={subject}
-          placeholder="Subject (Max 30 Characters)"
+          placeholder={t("subjectPlaceholder")}
           onChange={setSubject}
           setValid={setSubjectValid}
           cantEmpty
@@ -73,16 +75,14 @@ export default function EmailDrawer() {
               focus:shadow-[inset_0_0_0_1px_rgba(var(--p-blue-rgb),1)]
             `}
             value={detail}
-            placeholder={`You may describe your situation and needs here to help us better understand and prepare.
-
-We’ll review and respond via email within 2 business days.`}
+            placeholder={t("detailsPlaceholder")}
             onChange={(e) => setDetail(e.target.value)}
           />
         </div>
 
         <div className="-mb-3">
           <BtnN disabled={!(emailValid && subjectValid)} onClick={() => {}}>
-            Send
+            {t("send")}
           </BtnN>
         </div>
       </div>

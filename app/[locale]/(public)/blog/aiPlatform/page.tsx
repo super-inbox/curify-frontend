@@ -14,7 +14,7 @@ export async function generateMetadata({
 
   return {
     title: t("title"),
-    description: t("subtitle"),
+    description: t("description"),
   };
 }
 
@@ -34,7 +34,7 @@ const Point = ({ children }: { children: React.ReactNode }) => (
 
 export default async function AIPlatform() {
   const t = await getTranslations("aiPlatform");
-  
+
   return (
     <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-12">
       {/* Main Content */}
@@ -46,7 +46,7 @@ export default async function AIPlatform() {
           <p className="text-xl text-gray-600 mb-6">
             {t('subtitle')}
           </p>
-          
+
           <div className="float-right ml-6 mb-6 w-full max-w-md rounded-lg overflow-hidden shadow-lg">
             <CdnImage
               src="https://storage.googleapis.com/curify-static/aiPlatform.png"
@@ -56,9 +56,9 @@ export default async function AIPlatform() {
               className="w-full h-auto object-cover"
             />
           </div>
-          
+
           <div className="prose lg:prose-xl max-w-none">
-            
+
             <p className="text-lg">{t('intro.p1')}</p>
             <p className="text-lg">{t('intro.p2')}</p>
           </div>
@@ -71,7 +71,7 @@ export default async function AIPlatform() {
             <p>{t('mindsetShift.content')}</p>
             <p className="font-semibold">{t('mindsetShift.goal')}</p>
             <p className="italic">{t('mindsetShift.reality')}</p>
-            
+
             <div className="bg-gray-50 p-6 rounded-lg my-6">
               <h4 className="font-bold mb-3">{t('mindsetShift.supportModel.title')}</h4>
               <ul className="space-y-2">
@@ -89,7 +89,7 @@ export default async function AIPlatform() {
           <SectionHeader title={t('stack.title')} icon={FaLayerGroup} />
           <div className="prose lg:prose-lg max-w-none">
             <p>{t('stack.intro')}</p>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 my-6">
               <h3 className="text-xl font-bold mb-3">{t('stack.gateway.title')}</h3>
               <p>{t('stack.gateway.content')}</p>
@@ -229,7 +229,7 @@ export default async function AIPlatform() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link 
+            <Link
               href="/blog"
               className="inline-flex items-center justify-center px-6 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
             >

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { authService } from "@/services/auth";
 import { useSetAtom } from "jotai";
 import { userAtom } from "@/app/atoms/atoms";
+import { useTranslations } from "next-intl";
 
 interface Props {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface Props {
 
 export default function PaymentProcessingModal({ isOpen, onClose }: Props) {
   const router = useRouter();
+  const t = useTranslations("paymentProcessingModal");
   const [creditsConfirmed, setCreditsConfirmed] = useState(false);
   const [timedOut, setTimedOut] = useState(false);
   const setUser = useSetAtom(userAtom);
@@ -87,34 +89,34 @@ export default function PaymentProcessingModal({ isOpen, onClose }: Props) {
             <div className="flex justify-center mb-4">
               <div className="animate-spin rounded-full h-10 w-10 border-4 border-blue-500 border-t-transparent" />
             </div>
-            <h2 className="text-lg font-semibold text-gray-900">Payment Processing</h2>
+            <h2 className="text-lg font-semibold text-gray-900">{t("processingTitle")}</h2>
             <p className="mt-2 text-sm text-gray-600">
-              We are waiting for our service provider to verify your payment.
-              <br />Normally it takes ~30 seconds.
-              <br />You may close this popup and credits will appear automatically.
+              {t("processingLine1")}
+              <br />{t("processingLine2")}
+              <br />{t("processingLine3")}
             </p>
           </>
         )}
 
         {creditsConfirmed && (
           <>
-            <h2 className="text-lg font-semibold text-green-600">✅ Payment Confirmed</h2>
-            <p className="mt-2 text-sm text-gray-600">Redirecting to workspace...</p>
+            <h2 className="text-lg font-semibold text-green-600">{t("confirmedTitle")}</h2>
+            <p className="mt-2 text-sm text-gray-600">{t("confirmedLine")}</p>
           </>
         )}
 
         {timedOut && (
           <>
-            <h2 className="text-lg font-semibold text-red-600">⚠️ Verification Timeout</h2>
+            <h2 className="text-lg font-semibold text-red-600">{t("timeoutTitle")}</h2>
             <p className="mt-2 text-sm text-gray-600">
-              We couldn't verify your payment within 20 seconds.
-              <br />Please check your credits manually from your profile.
+              {t("timeoutLine1")}
+              <br />{t("timeoutLine2")}
             </p>
             <button
               onClick={onClose}
               className="mt-4 px-4 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200 rounded-lg"
             >
-              Close
+              {t("close")}
             </button>
           </>
         )}

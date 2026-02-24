@@ -14,11 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "blog.metadata" });
+  const t = await getTranslations({ locale, namespace: "videoEnhancement" });
 
   return {
-    title: "AI Video Enhancement: Storyboards, Meme Captions & SFX Automation – Curify AI",
-    description: t("description"),
+    title: "AI Video Enhancement: Storyboards, Captions & SFX",
+    description: "Discover how Curify AI's automated pipeline enhances videos with scene detection, generated storyboards, meme captions, and perfectly timed sound effects.",
   };
 }
 
@@ -66,7 +66,7 @@ export default function VideoEnhancementPost() {
               This post walks through how Curify AI builds an automated pipeline
               for <strong>scene-based video enhancement</strong> using:
               <strong> scene detection, GPT-4o Vision, storyboard JSON generation,
-              captioning, and SFX layering.</strong>
+                captioning, and SFX layering.</strong>
             </p>
           </div>
 
@@ -85,40 +85,40 @@ export default function VideoEnhancementPost() {
 
       {/* MAIN CONTENT */}
       <main className="max-w-4xl mx-auto space-y-16">
-{/* ------------------------------------------------------- */}
-{/* EXAMPLE VIDEOS */}
-{/* ------------------------------------------------------- */}
-<section>
-  <h2 className="text-3xl font-semibold mb-6">Before & After: Enhanced Clips</h2>
+        {/* ------------------------------------------------------- */}
+        {/* EXAMPLE VIDEOS */}
+        {/* ------------------------------------------------------- */}
+        <section>
+          <h2 className="text-3xl font-semibold mb-6">Before & After: Enhanced Clips</h2>
 
-  <p className="mb-4">
-    Below are examples showing the transformation from raw footage to
-    captioned, storyboard-driven, sound-enhanced clips.
-  </p>
+          <p className="mb-4">
+            Below are examples showing the transformation from raw footage to
+            captioned, storyboard-driven, sound-enhanced clips.
+          </p>
 
-  {/* 2 videos, scaled smaller */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
-    {/* ORIGINAL VIDEO (Adjusted for ~30% smaller size) */}
-    <div className="max-w-[70%] mx-auto origin-top">
-      <h3 className="font-semibold mb-2 text-center">Original</h3>
-      <CdnVideo
-        controls
-        className="w-full rounded-lg shadow"
-        src="/video/oil_crisis_original.mp4"
-      />
-    </div>
+          {/* 2 videos, scaled smaller */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
+            {/* ORIGINAL VIDEO (Adjusted for ~30% smaller size) */}
+            <div className="max-w-[70%] mx-auto origin-top">
+              <h3 className="font-semibold mb-2 text-center">Original</h3>
+              <CdnVideo
+                controls
+                className="w-full rounded-lg shadow"
+                src="/video/oil_crisis_original.mp4"
+              />
+            </div>
 
-    {/* ENHANCED VIDEO (Adjusted for ~30% smaller size) */}
-    <div className="max-w-[70%] mx-auto origin-top">
-      <h3 className="font-semibold mb-2 text-center">Enhanced</h3>
-      <CdnVideo
-        controls
-        className="w-full rounded-lg shadow"
-        src="/video/oil_crisis_enhanced.mp4"
-      />
-    </div>
-  </div>
-</section>
+            {/* ENHANCED VIDEO (Adjusted for ~30% smaller size) */}
+            <div className="max-w-[70%] mx-auto origin-top">
+              <h3 className="font-semibold mb-2 text-center">Enhanced</h3>
+              <CdnVideo
+                controls
+                className="w-full rounded-lg shadow"
+                src="/video/oil_crisis_enhanced.mp4"
+              />
+            </div>
+          </div>
+        </section>
 
         <hr className="border-gray-200" />
 
@@ -144,7 +144,7 @@ export default function VideoEnhancementPost() {
           {/* === INSERT ACTUAL STORYBOARD JSON === */}
           <div className="mt-6 p-6 rounded-lg bg-gray-50 border max-h-[400px] overflow-auto">
             <pre className="text-sm text-gray-700">
-{JSON.stringify(storyboard, null, 2)}
+              {JSON.stringify(storyboard, null, 2)}
             </pre>
           </div>
         </section>
@@ -172,73 +172,73 @@ export default function VideoEnhancementPost() {
         </section>
 
         <hr className="border-gray-200" />
-{/* ------------------------------------------------------- */}
-{/* SOUND EFFECTS */}
-{/* ------------------------------------------------------- */}
-<section>
-  <h2 className="text-3xl font-semibold mb-4">3. Sound Effects & Timing</h2>
+        {/* ------------------------------------------------------- */}
+        {/* SOUND EFFECTS */}
+        {/* ------------------------------------------------------- */}
+        <section>
+          <h2 className="text-3xl font-semibold mb-4">3. Sound Effects & Timing</h2>
 
-  <p className="mb-4">
-    The enhancement pipeline uses a small but expressive SFX library:
-  </p>
+          <p className="mb-4">
+            The enhancement pipeline uses a small but expressive SFX library:
+          </p>
 
-  {/* Added ListIcon for bullet points in SFX descriptions */}
-  <ul className="space-y-2">
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>cash</strong> – deal making / money bag
-    </li>
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>whoosh</strong> – transitions / fast movement
-    </li>
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>dun</strong> – dramatic emphasis
-    </li>
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>clown</strong> – comedic beats
-    </li>
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>news</strong> – broadcast intro sting
-    </li>
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>water_flow</strong> – oil/water ambience
-    </li>
-    <li className="flex items-start">
-      <ListIcon />
-      <strong>evil_laugh</strong> – humorous villain ending
-    </li>
-  </ul>
+          {/* Added ListIcon for bullet points in SFX descriptions */}
+          <ul className="space-y-2">
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>cash</strong> – deal making / money bag
+            </li>
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>whoosh</strong> – transitions / fast movement
+            </li>
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>dun</strong> – dramatic emphasis
+            </li>
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>clown</strong> – comedic beats
+            </li>
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>news</strong> – broadcast intro sting
+            </li>
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>water_flow</strong> – oil/water ambience
+            </li>
+            <li className="flex items-start">
+              <ListIcon />
+              <strong>evil_laugh</strong> – humorous villain ending
+            </li>
+          </ul>
 
-  {/* Audio players: 4 per row */}
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
-    {[
-      "cash",
-      "whoosh",
-      "dun",
-      "clown",
-      "news",
-      "water_flow",
-      "evil_laugh",
-    ].map((key) => (
-      <div
-        key={key}
-        className="p-4 bg-gray-50 rounded-lg border shadow-sm text-center"
-      >
-        <p className="font-semibold capitalize mb-2 text-sm">{key}</p>
-        <CdnAudio
-          controls
-          src={`/audio/${key}.mp3`}
-          className="w-full"
-        />
-      </div>
-    ))}
-  </div>
-</section>
+          {/* Audio players: 4 per row */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
+            {[
+              "cash",
+              "whoosh",
+              "dun",
+              "clown",
+              "news",
+              "water_flow",
+              "evil_laugh",
+            ].map((key) => (
+              <div
+                key={key}
+                className="p-4 bg-gray-50 rounded-lg border shadow-sm text-center"
+              >
+                <p className="font-semibold capitalize mb-2 text-sm">{key}</p>
+                <CdnAudio
+                  controls
+                  src={`/audio/${key}.mp3`}
+                  className="w-full"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
 
         <hr className="border-gray-200" />
 
@@ -261,10 +261,10 @@ export default function VideoEnhancementPost() {
 
         <footer className="pt-10 text-center">
           <p className="text-lg mb-4">
-            🚀 Want to enhance your videos using AI?  
+            🚀 Want to enhance your videos using AI?
             Try Curify Studio at{" "}
             <a
-              href="https://curify-ai.com"
+              href="https://www.curify-ai.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 underline font-semibold"

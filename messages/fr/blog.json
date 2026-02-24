@@ -1,298 +1,84 @@
 {
-  "home": {
-    "metadata": {
-      "title": "Curify | Boostez la création de contenu avec l'IA",
-      "description": "Curify est une plateforme native d'IA aidant les créateurs, les éducateurs et les équipes médias à produire et localiser des vidéos, des mangas et des présentations à grande échelle."
-    },
-    "hero": {
-      "title": "Boostez la création de contenu avec l'IA",
-      "description": "Curify Studio construit une plateforme de création de contenu native d'IA qui permet aux créateurs et aux organisations de surmonter les barrières de langue et de format. Nous résolvons le défi de la mise à l'échelle du contenu pour des audiences mondiales, en permettant des traductions authentiques qui préservent le ton, le style et la profondeur émotionnelle. Opérant à l'intersection des médias, de l'éducation et du divertissement, nous fournissons des outils pour que les créateurs adaptent le contenu de manière transparente dans une industrie qui se mondialise rapidement."
-    }
-  },
-  "coreFeatures": {
-    "oneShot": {
-      "title": "Traduction en un clic",
-      "desc": "Traduction vidéo complète avec voix off, sous-titres et synchronisation labiale en un seul processus."
-    },
-    "toneColor": {
-      "title": "Préservation du timbre",
-      "desc": "Maintient les caractéristiques vocales uniques et les qualités tonales de l'orateur original."
-    },
-    "emotional": {
-      "title": "Parole émotionnelle",
-      "desc": "L'IA reproduit les nuances émotionnelles, assurant une expression authentique dans toutes les langues."
-    },
-    "lipSync": {
-      "title": "Technologie de synchronisation labiale",
-      "desc": "Synchronisation labiale avancée qui correspond parfaitement aux mouvements de la bouche avec l'audio traduit."
-    },
-    "subtitle": {
-      "title": "Sous-titreur",
-      "desc": "Génération intelligente de sous-titres avec un timing précis et un flux de langage naturel."
-    },
-    "languages": {
-      "title": "170+ Langues",
-      "desc": "Traduisez votre contenu dans plus de 170 langues avec une précision de niveau natif."
-    }
-  },
-  "upcoming": {
-    "title": "Bientôt disponible",
-    "subtitle": "Fonctionnalités de nouvelle génération en développement",
-    "styleTransfer": {
-      "title": "Transfert de style",
-      "desc": "Appliquez des styles cinématographiques ou spécifiques à la marque à vos vidéos avec une transformation visuelle alimentée par l'IA.",
-      "icon": "🎨",
-      "status": "Arrive au T3 2025",
-      "transcript": "Cette démo transforme un clip de drame en direct en une animation fantaisiste de style Ghibli en utilisant le transfert de style visuel alimenté par l'IA."
-    },
-    "mangaTranslation": {
-      "title": "Traduction de Manga",
-      "desc": "Traduction automatisée de mangas et de bandes dessinées avec détection de texte, édition de bulles et adaptation culturelle.",
-      "icon": "📚",
-      "status": "Arrive au T3 2025",
-      "transcript": "Ce prototype démontre la traduction automatique de mangas, y compris la détection de bulles de dialogue et l'édition bilingue sur place."
-    },
-    "templatedVideo": {
-      "title": "Génération de vidéo par modèle",
-      "desc": "Créez des vidéos professionnelles à partir de modèles avec du contenu généré par l'IA et une image de marque personnalisée.",
-      "icon": "🎬",
-      "status": "Arrive au T4 2025",
-      "transcript": "Cette démo montre un pipeline de scénario à vidéo générant une scène historique sur les débuts de l'histoire des États-Unis en planifiant le storyboard et en assemblant les visuels."
-    },
-    "statusQ3": "Arrive au T3 2025",
-    "statusQ4": "Arrive au T4 2025"
-  },
-  "export": {
-    "title": "Exporter",
-    "export": "Exporter",
-    "downloading": "Téléchargement..."
-  },
-  "delete": {
-    "title": "Double confirmation",
-    "message": "Êtes-vous sûr de vouloir supprimer ce projet",
-    "warning": "Cette action ne peut pas être annulée.",
-    "cancel": "Annuler",
-    "delete": "Supprimer",
-    "deleting": "Suppression..."
-  },
-  "userMenu": {
-    "topUpCredits": "Recharger des crédits",
-    "remaining": "Restant",
-    "planRemaining": "Plan restant",
-    "validUntil": "Valable jusqu'au",
-    "creditsHistory": "Historique des crédits",
-    "subscribePlan": "S'abonner au plan",
-    "supportTicket": "Ticket de support",
-    "signOut": "Se déconnecter"
-  },
-  "technology": {
-    "multimodal": {
-      "title": "Reconnaissance multimodale",
-      "desc": "Nous combinons les signaux de parole et de sous-titres pour obtenir une transcription plus précise et robuste. Cette reconnaissance à double canal réduit les erreurs et assure un meilleur alignement avec le contenu original, en particulier dans les scènes audio bruyantes ou complexes."
-    },
-    "emotional": {
-      "title": "Parole émotionnelle",
-      "desc": "Nos modèles de synthèse vocale génèrent une parole expressive et riche en émotions qui améliore la narration et l'engagement des spectateurs. En capturant le ton, le rythme et les nuances, nous rendons les voix de l'IA plus humaines et plus proches de nous."
-    },
-    "lengthaware": {
-      "title": "Traduction et personnalisation conscientes de la longueur",
-      "desc": "Nous optimisons les traductions non seulement pour la précision, mais aussi pour le timing et le rythme, ce qui est crucial pour l'alignement vidéo et vocal. Les utilisateurs peuvent personnaliser davantage le ton, la longueur et la formulation pour répondre aux différents besoins de contenu ou aux préférences du public."
-    },
-    "controlled": {
-      "title": "Génération de vidéo contrôlée",
-      "desc": "Nous permettons la génération de vidéos structurées et basées sur des modèles avec des éléments visuels et des transitions contrôlables. Cela donne aux créateurs à la fois une liberté créative et une cohérence de production, réduisant l'effort manuel tout en garantissant une sortie de haute qualité."
-    }
-  },
-  "tools": {
-    "video_dubbing": {
-      "title": "Doublage vidéo",
-      "desc": "Traduisez votre vidéo dans n'importe quelle langue avec une localisation précise et une synchronisation vocale"
-    },
-    "subtitle_captioner": {
-      "title": "Sous-titreur",
-      "desc": "Générez automatiquement des sous-titres multilingues pour améliorer la clarté et l'accessibilité"
-    },
-    "lip_syncing": {
-      "title": "Synchronisation labiale",
-      "desc": "Faites correspondre parfaitement les lèvres à la parole grâce à la synchronisation labiale alimentée par l'IA"
-    },
-    "style_transfer": {
-      "title": "Transfert de style",
-      "desc": "Transformez votre vidéo en styles artistiques Pixar, Ghibli ou autres — bientôt disponible"
-    },
-    "coming_soon": "Bientôt disponible",
-    "create": "Créer",
-    "meta": {
-      "title": "Outils Curify",
-      "description": "Explorez les outils de Curify Studio pour le doublage vidéo, les sous-titres et les workflows de contenu alimentés par l'IA."
-    },
-    "hero": {
-      "watch_demo": "Regardez la même vidéo traduite dans différentes langues avec émotion et synchronisation labiale préservées",
-      "transcript_label": "Transcription",
-      "training_transcript": "Bienvenue dans Curify Studio. Dans cette vidéo, nous montrons comment l'IA traduit et double le contenu dans différentes langues...",
-      "currently_playing": "Lecture en cours : version {label}"
-    },
-    "products": {
-      "title": "Produits & Services",
-      "subtitle": "Nos solutions alimentées par l'IA sont en direct et s'améliorent continuellement — déjà utilisées par des créateurs et des équipes dans le monde entier."
-    },
-    "audience": {
-      "title": "Notre Public Cible",
-      "v1": "🎥 Créateurs de vidéos et YouTubers s'étendant sur les marchés mondiaux",
-      "v2": "📖 Éducateurs et plateformes de connaissances convertissant des livres en cours",
-      "v3": "🎶 Entreprises de médias et de divertissement localisant du contenu dans différentes langues",
-      "v4": "📚 Éditeurs de manga et traducteurs amateurs automatisant la traduction et la mise en page"
-    },
-    "free_badge": "GRATUIT"
-  },
-  "bilingual": {
-    "metadata": {
-      "title": "Générateur de sous-titres bilingues gratuit | Curify AI",
-      "description": "Créez des sous-titres bilingues pour vos vidéos avec l'outil gratuit alimenté par l'IA de Curify. Parfait pour YouTube, TikTok, l'éducation et les créateurs mondiaux."
-    },
-    "title": "Sous-titres bilingues facilités",
-    "intro": "Générez automatiquement des sous-titres en deux langues à l'aide du moteur de sous-titrage IA de Curify. Idéal pour les créateurs, les éducateurs et les entreprises mondiales.",
-    "example": "Exemple : Jensen Huang expliquant la stratégie IA — sous-titres anglais + chinois générés automatiquement.",
-    "cta": "Essayez-le gratuitement",
-    "why": {
-      "title": "Pourquoi choisir Curify pour les sous-titres bilingues ?",
-      "point1": "Prend en charge plus de 170 langues avec une traduction précise.",
-      "point2": "Préserve le ton émotionnel et le timing.",
-      "point3": "Parfait pour les vidéos YouTube, TikTok et éducatives.",
-      "point4": "Exportez des fichiers de sous-titres prêts à publier ou des vidéos intégrées."
-    },
-    "faq": {
-      "title": "Foire aux questions",
-      "q1": "Est-ce vraiment gratuit ?",
-      "a1": "Oui, Curify propose un plan gratuit avec des minutes de sous-titrage limitées par mois.",
-      "q2": "Puis-je éditer les sous-titres après la génération ?",
-      "a2": "Absolument. Vous pouvez ajuster le timing, la traduction et le style avant l'exportation."
-    }
-  },
-  "videoDubbing": {
-    "metadata": {
-      "title": "Outil de doublage vidéo IA | Curify AI",
-      "description": "Doublez vos vidéos dans plus de 170 langues en utilisant le clonage vocal IA, la préservation des émotions et la synchronisation labiale. Essayez le doublage IA de Curify gratuitement."
-    },
-    "title": "Doublage vidéo IA avec voix naturelle",
-    "description": "Traduisez et doublez votre contenu vidéo dans plus de 170 langues avec une voix IA réaliste et une synchronisation labiale. Parfait pour les créateurs et les marques internationaux."
-  },
-  "about": {
-    "metadata": {
-      "title": "À propos de Curify | Vision, technologie et équipe",
-      "description": "Découvrez la vision de Curify de démocratiser la création de contenu avec l'IA. Nous sommes une équipe d'ingénieurs et de créateurs construisant l'avenir de la localisation des médias."
-    }
-  },
-  "contact": {
-    "metadata": {
-      "title": "Contactez-nous | Curify Studio",
-      "description": "Contactez l'équipe Curify pour le support, les ventes ou les partenariats. Nous sommes là pour vous aider à faire évoluer votre contenu à l'échelle mondiale."
-    }
-  },
   "blog": {
     "metadata": {
       "title": "Blog Curify | Aperçus de la création de contenu IA",
       "description": "Lisez les derniers articles sur la génération de vidéos IA, le doublage, le transfert de style et l'avenir de la création de contenu."
-    }
-  },
-  "pricing": {
-    "metadata": {
-      "title": "Plans tarifaires | Curify Studio",
-      "description": "Choisissez le bon plan pour vos besoins de création de contenu. Des outils gratuits au doublage et à la localisation IA de niveau entreprise."
     },
-    "header": {
-      "title": "Commencer avec un plan",
-      "subtitle": "Choisissez un plan qui correspond à vos besoins."
-    },
-    "common": {
-      "month": "Mois",
-      "pricing": "Tarification",
-      "receive": "Recevoir"
-    },
-    "buttons": {
-      "signUp": "S'inscrire",
-      "subscribePlan": "S'abonner au plan",
-      "currentPlan": "Plan actuel",
-      "comingSoon": "Bientôt disponible",
-      "downgradeToFree": "Passer à Gratuit",
-      "downgradeToCreator": "Passer à Créateur",
-      "contactSales": "Contacter les ventes"
-    },
-    "plans": {
-      "free": {
-        "name": "Gratuit",
-        "description": "Idéal pour tester les outils et les travaux légers",
-        "features": [
-          "Télécharger des vidéos sans filigrane",
-          "1 heure de traitement de sous-titres gratuit",
-          "Exporter des fichiers SRT"
-        ]
+    "latestArticles": "Derniers Articles",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Le guide des entreprises de taille moyenne pour réussir en IA",
+        "date": "30 janvier 2026",
+        "readTime": "9 min de lecture",
+        "tag": "Plateforme d'IA",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
       },
-      "creator": {
-        "name": "Créateur",
-        "description": "Idéal pour les petits créateurs faisant du sous-titrage régulier et du doublage léger",
-        "plusTitle": "Tout ce qui est dans Gratuit, plus :",
-        "features": [
-          "Synchronisation labiale",
-          "Traitement par lots",
-          "5 heures de traitement de sous-titres gratuit",
-          "Jusqu'à 30 minutes par tâche"
-        ]
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "Du robot QA à l'agent de tâche: un guide d'architecture",
+        "date": "30 janvier 2026",
+        "readTime": "6 min de lecture",
+        "tag": "Architecture d'IA",
+        "image": "/images/qa-bot-architecture.jpg"
       },
-      "pro": {
-        "name": "Pro",
-        "description": "Bientôt disponible — Conçu pour les créateurs à grand volume",
-        "plusTitle": "Tout ce qui est dans Créateur, plus :",
-        "features": [
-          "Embellissement de la voix et suppression du bruit",
-          "File d'attente prioritaire",
-          "Jusqu'à 60 min par tâche",
-          "Minutes de sous-titrage illimitées"
-        ]
+      {
+        "slug": "age_AI",
+        "title": "La science des données à l'ère de l'IA: le \"travail le plus sexy\" l'est-il toujours?",
+        "date": "30 janvier 2026",
+        "readTime": "8 min de lecture",
+        "tag": "Industrie de l'IA",
+        "image": "/images/data-science-ai-era.jpg"
       },
-      "enterprise": {
-        "name": "Entreprise",
-        "description": "Pour les équipes, les studios et les flux de travail d'entreprise",
-        "customPricing": "Personnalisé",
-        "unlimited": "Illimité 🐚",
-        "tailoredSupport": "et support sur mesure",
-        "plusTitle": "Tout ce qui est dans Pro, plus :",
-        "features": [
-          "Gestionnaire de compte dédié",
-          "Options de déploiement sur site",
-          "Accès API et analyses d'utilisation",
-          "Intégrations personnalisées et SLA",
-          "Heures de traitement illimitées"
-        ]
+      {
+        "slug": "storyboard-labeling",
+        "title": "Des images brutes aux story-boards: analyse vidéo assistée par IA",
+        "date": "11 décembre 2025",
+        "readTime": "10 min de lecture",
+        "tag": "Analyse vidéo",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "Amélioration vidéo par IA: story-boards, sous-titres de mèmes et automatización SFX",
+        "date": "18 novembre 2025",
+        "readTime": "7 min de lecture",
+        "tag": "Amélioration vidéo",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Évaluation de la traduction vidéo par IA: les indicateurs qui comptent",
+        "date": "14 novembre 2025",
+        "readTime": "6 min de lecture",
+        "tag": "Localización",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Créez votre propre animation de bande dessinée assistée par IA: guide étape par étape",
+        "date": "28 octobre 2025",
+        "readTime": "5 min de lecture",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Partie 2: Agents vs Workflows – du contrôle à l'intelligence",
+        "date": "28 octobre 2025",
+        "readTime": "6 min de lecture",
+        "tag": "Outils génératifs",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Partie 3: AE vs ComfyUI – motion design vs pipelines de diffusion",
+        "date": "28 octobre 2025",
+        "readTime": "7 min de lecture",
+        "tag": "Outils et Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
       }
-    },
-    "table": {
-      "header": {
-        "feature": "Fonctionnalité / Limite"
-      },
-      "rows": {
-        "videoDownloadWithWatermark": "Téléchargement de vidéo avec filigrane",
-        "videoDownloadWithoutWatermark": "Téléchargement de vidéo sans filigrane",
-        "downloadSrt": "Télécharger le fichier SRT",
-        "voiceBeautification": "Embellissement de la voix et suppression du bruit",
-        "lipSync": "Synchronisation labiale",
-        "subtitleTools": "Outils de sous-titrage (ajouter/supprimer, pas de traduction)",
-        "batchProcessing": "Traitement par lots",
-        "maxVideoLength": "Longueur maximale de vidéo par tâche",
-        "monthlyCredits": "Crédits gratuits mensuels",
-        "priorityQueue": "File d'attente prioritaire / Traitement plus rapide",
-        "creditTopUp": "Recharge de crédits"
-      },
-      "values": {
-        "free": "Gratuit",
-        "unlimited": "Illimité",
-        "oneHourPerMonth": "1 h/mois",
-        "fiveHoursPerMonth": "5 h/mois",
-        "fiveMinutes": "5 minutes",
-        "thirtyMinutes": "30 minutes",
-        "sixtyMinutes": "60 minutes"
-      }
-    }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Redéfinir l'animation (Partie 3)",
@@ -1211,15 +997,23 @@
       "#GenerativeAI",
       "#CareerDevelopment",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "L'expérience personnelle est votre avantage. Un LLM peut imiter la logique, mais il n'a pas les années de « cicatrices de bataille » dues à des déploiements ratés ni l'intuition acquise en naviguant dans des organisations complexes.",
+    "content": "Les domaines traditionnels tels que la recherche, les annonces et les recommandations (SAR) arrivent à maturité et le secteur se concentre désormais sur une ingénierie et une architecture d'IA robustes. Nous assistons à un étrange paradoxe.",
+    "lowBarTrap": {
+      "title": "Le piège à « barre basse »",
+      "content": "Les étudiants en master peuvent désormais utiliser GPT-4 pour gérer le nettoyage des données, l'EDA et la visualisation en quelques secondes. Cependant, sans une base solide, ils manquent souvent du jugement nécessaire pour savoir quand l’IA « hallucine » ou fournit des résultats statistiquement erronés."
+    },
+    "stakeholderShift": {
+      "title": "Changement de parties prenantes",
+      "content": "Lorsque les partenaires commerciaux peuvent rédiger leurs propres invites pour obtenir des informations de base, de nombreux professionnels DS se sentent « sous-stimulés », coincés dans des réunions interminables et une ingénierie d'invites répétitive."
+    },
+    "title": "La science des données à l’ère de l’IA: le « travail le plus sexy » est-il toujours sexy?",
+    "description": "Il y a dix ans, la Harvard Business Review qualifiait le Data Scientist de « travail le plus sexy du 21e siècle ». Aujourd’hui, le paysage change sous nos pieds. Alors que la demande de talents en matière de données reste élevée, l'essor de l'IA générative change fondamentalement ce que signifie être un « Data Scientist »."
   },
   "aiPlatform": {
     "title": "Le guide des entreprises de taille moyenne pour réussir en IA",
     "subtitle": "Comment créer une plate-forme d'IA qui évolue sans se ruiner",
-    "intro": {
-      "p1": "Dans les petites et moyennes entreprises technologiques, le véritable avantage ne réside pas dans la formation de modèles massifs, mais dans la création d'une plate-forme d'IA qui permet à chacun de proposer des fonctionnalités intelligentes. C’est ainsi que vous transformez l’agilité en impact.",
-      "p2": "Voici un modèle pragmatique et prêt pour la production que nous avons utilisé pour alimenter l'IA dans les domaines financier, juridique, du support client et de l'ingénierie, sans dépenser d'argent ni embaucher 50 experts en ML."
-    },
     "imageAlt": "Schéma d'architecture de la plateforme AI",
     "heading": "🏗️ Le manuel des entreprises de taille moyenne pour réussir en IA",
     "mindsetShift": {
@@ -1301,6 +1095,11 @@
       "content": "Pour les entreprises technologiques de taille moyenne, gagner en IA ne signifie pas créer un meilleur LLM. Cela signifie créer une plateforme qui transforme l’IA en un processus métier reproductible et évolutif.",
       "finalThoughts": "Commencez par l’infrastructure, sécurisez les données et laissez vos équipes se développer. L'avenir n'est pas un modèle unique pour les gouverner tous: il s'agit d'une flotte d'agents spécialisés, chacun résolvant un véritable problème commercial, le tout alimenté par une plateforme qui simplifie les choses.",
       "callToAction": "Prêt à construire? Restez simple, restez ouvert et concentrez-vous sur l’habilitation des autres."
-    }
+    },
+    "intro": {
+      "p1": "Dans les petites et moyennes entreprises technologiques, le véritable avantage ne réside pas dans la formation de modèles massifs, mais dans la création d'une plate-forme d'IA qui permet à chacun de proposer des fonctionnalités intelligentes. C’est ainsi que vous transformez l’agilité en impact.",
+      "p2": "Voici un modèle pragmatique et prêt pour la production que nous avons utilisé pour alimenter l'IA dans les domaines financier, juridique, du support client et de l'ingénierie, sans dépenser d'argent ni embaucher 50 experts en ML."
+    },
+    "description": "Comment créer une plate-forme d'IA qui évolue sans se ruiner"
   }
 }

@@ -1,4 +1,7 @@
+"use client";
+
 import { Star, Copy, Share2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
@@ -27,6 +30,7 @@ export function ActionButtons({
   onCopy,
   onShare,
 }: ActionButtonsProps) {
+  const t = useTranslations("actionButtons");
   const baseBtn =
     "inline-flex items-center gap-2 px-1.5 py-1 text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer";
   const baseIcon = "h-6 w-6"; // more prominent
@@ -39,7 +43,7 @@ export function ActionButtons({
         type="button"
         onClick={onSave}
         className={classNames(baseBtn, saved && "text-amber-700")}
-        aria-label="Save"
+        aria-label={t("save")}
       >
         <Star
           className={classNames(baseIcon, "stroke-[1.4]")}
@@ -53,7 +57,7 @@ export function ActionButtons({
         type="button"
         onClick={onCopy}
         className={classNames(baseBtn, copied && "text-emerald-700")}
-        aria-label="Copy"
+        aria-label={t("copy")}
       >
         <Copy className={classNames(baseIcon, "stroke-[1.4]")} />
         <span className={baseCount}>{copyCount}</span>
@@ -64,7 +68,7 @@ export function ActionButtons({
         type="button"
         onClick={onShare}
         className={classNames(baseBtn, shared && "text-blue-700")}
-        aria-label="Share"
+        aria-label={t("share")}
       >
         <Share2 className={classNames(baseIcon, "stroke-[1.4]")} />
         <span className={baseCount}>{shareCount}</span>

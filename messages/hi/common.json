@@ -1,0 +1,147 @@
+{
+  "export": {
+    "title": "निर्यात",
+    "export": "निर्यात",
+    "downloading": "डाउनलोड हो रहा है..."
+  },
+  "delete": {
+    "title": "दोहरी पुष्टि",
+    "message": "क्या आप वाकई इस परियोजना को हटाना चाहते हैं",
+    "warning": "यह कार्रवाई पूर्ववत नहीं की जा सकती।",
+    "cancel": "रद्द करें",
+    "delete": "हटाएं",
+    "deleting": "हटाया जा रहा है..."
+  },
+  "userMenu": {
+    "topUpCredits": "क्रेडिट टॉप अप करें",
+    "remaining": "शेष",
+    "planRemaining": "योजना शेष",
+    "validUntil": "तक वैध",
+    "creditsHistory": "क्रेडिट इतिहास",
+    "subscribePlan": "योजना की सदस्यता लें",
+    "supportTicket": "समर्थन टिकट",
+    "signOut": "साइन आउट"
+  },
+  "ctaButtons": {
+    "bookDemo": "एक डेमो बुक करें",
+    "mockUserNotLoaded": "नकली उपयोगकर्ता डेटा अभी तक लोड नहीं हुआ है."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "हमारे कलह समुदाय में शामिल हों",
+    "or": "या",
+    "contactByEmail": "ईमेल के माध्यम से हमसे संपर्क करें",
+    "emailPlaceholder": "ईमेल",
+    "subjectPlaceholder": "विषय (अधिकतम 30 अक्षर)",
+    "detailsPlaceholder": "हमें बेहतर ढंग से समझने और तैयारी करने में मदद के लिए आप यहां अपनी स्थिति और जरूरतों का वर्णन कर सकते हैं।\n\nहम 2 व्यावसायिक दिनों के भीतर ईमेल के माध्यम से समीक्षा करेंगे और जवाब देंगे।",
+    "invalidEmail": "कृपया एक मान्य ईमेल पता प्रविष्ट करें।",
+    "send": "भेजना"
+  },
+  "signDrawer": {
+    "welcomeSignup": "अपने वीडियो को वैश्विक बनाने के लिए क्यूरीफाई से जुड़ें",
+    "welcomeSignin": "अपने वीडियो का वैश्वीकरण जारी रखें",
+    "signUp": "साइन अप करें",
+    "signIn": "दाखिल करना",
+    "enterVerificationCode": "सत्यापन कोड दर्ज करें",
+    "or": "या",
+    "emailPlaceholder": "ईमेल",
+    "invalidEmail": "कृपया एक मान्य ईमेल पता प्रविष्ट करें।",
+    "otpSentTo": "हमने एक कोड भेजा है",
+    "verificationCodePlaceholder": "सत्यापन कोड",
+    "verifyCode": "कोड सत्यापित करें",
+    "resendCode": "पुन: कोड भेजे",
+    "invalidOtp": "अमान्य ओटीपी. कृपया पुन: प्रयास करें।",
+    "agreePrefix": "क्यूरिफाई का उपयोग करके, आप हमारी बात से सहमत हैं",
+    "termsOfService": "सेवा की शर्तें",
+    "and": "और",
+    "privacyPolicy": "गोपनीयता नीति",
+    "logoAlt": "प्रतीक चिन्ह"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "भुगतान प्रसंस्करण",
+    "processingLine1": "हम आपके भुगतान को सत्यापित करने के लिए अपने सेवा प्रदाता की प्रतीक्षा कर रहे हैं।",
+    "processingLine2": "आम तौर पर इसमें ~30 सेकंड लगते हैं।",
+    "processingLine3": "आप इस पॉपअप को बंद कर सकते हैं और क्रेडिट स्वचालित रूप से दिखाई देंगे।",
+    "confirmedTitle": "✅ भुगतान की पुष्टि",
+    "confirmedLine": "कार्यस्थान पर पुनर्निर्देशित किया जा रहा है...",
+    "timeoutTitle": "⚠️ सत्यापन का समय समाप्त",
+    "timeoutLine1": "हम 20 सेकंड के भीतर आपके भुगतान को सत्यापित नहीं कर सके।",
+    "timeoutLine2": "कृपया अपनी प्रोफ़ाइल से अपने क्रेडिट मैन्युअल रूप से जांचें।",
+    "close": "बंद करना"
+  },
+  "topUpModal": {
+    "title": "टॉप अप क्रेडिट",
+    "planLabel": "योजना",
+    "minimumTopupError": "न्यूनतम टॉप-अप $0.50 है।",
+    "paymentStartFailed": "भुगतान प्रारंभ करने में विफल. कृपया पुन: प्रयास करें।",
+    "customCreditsLabel": "कस्टम क्रेडिट दर्ज करें",
+    "customCreditsPlaceholder": "जैसे 200",
+    "paymentsPoweredByStripe": "भुगतान स्ट्राइप द्वारा संचालित होते हैं।",
+    "creditRate": "1 क्रेडिट ≈ ${amount} (योजना: {plan})"
+  },
+  "transactionHistory": {
+    "title": "श्रेय इतिहास",
+    "loading": "लोड हो रहा है...",
+    "empty": "कोई परिणाम नहीं मिले",
+    "id": "पहचान",
+    "type": "प्रकार",
+    "credits": "क्रेडिट",
+    "amount": "मात्रा",
+    "date": "तारीख",
+    "close": "बंद करना"
+  },
+  "userDropdown": {
+    "defaultUser": "उपयोगकर्ता",
+    "notAvailable": "एन/ए",
+    "guest": "अतिथि",
+    "notSignedIn": "प्रवेश नहीं किया",
+    "defaultLanguage": "अंग्रेज़ी",
+    "viewPricing": "मूल्य निर्धारण देखें",
+    "contactUs": "हमसे संपर्क करें",
+    "signIn": "दाखिल करना",
+    "totalCredits": "कुल क्रेडिट",
+    "planCredits": "योजना क्रेडिट",
+    "expiresOn": "पर समय सीमा समाप्त",
+    "creditsHistory": "श्रेय इतिहास",
+    "subscribePlan": "सदस्यता योजना",
+    "supportTicket": "समर्थन टिकट",
+    "signOut": "साइन आउट"
+  },
+  "header": {
+    "homeAriaLabel": "घर को शुद्ध करें",
+    "logoAlt": "क्यूरिफाई लोगो",
+    "home": "घर",
+    "discover": "खोज करना",
+    "gallery": "गैलरी",
+    "tools": "औजार",
+    "blogs": "ब्लॉग",
+    "workspace": "कार्यस्थान",
+    "more": "अधिक",
+    "logIn": "लॉग इन करें",
+    "topUpCredits": "टॉप अप क्रेडिट",
+    "menuAriaLabel": "मेनू"
+  },
+  "footer": {
+    "copyright": "© 2025 क्यूरिफाई",
+    "privacyPolicy": "गोपनीयता नीति",
+    "termsOfService": "सेवा की शर्तें",
+    "aboutUs": "हमारे बारे में",
+    "contactUs": "हमसे संपर्क करें"
+  },
+  "actionButtons": {
+    "save": "बचाना",
+    "copy": "प्रतिलिपि",
+    "share": "शेयर करना"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "संवाद बंद करें"
+  },
+  "galleryModal": {
+    "script": "लिखी हुई कहानी",
+    "tags": "टैग"
+  },
+  "videoPlayer": {
+    "original": "मूल",
+    "translated": "अनुवाद",
+    "unsupported": "आपका ब्राउज़र में वीडियो टैग समर्थित नहीं है।"
+  }
+}

@@ -21,6 +21,7 @@ import { allLanguages, getLanguageByCode } from "@/lib/language_config";
 import { transactionService, type Transaction } from "@/services/transactions";
 import TransactionHistoryDialog from "./TransactionHistoryDialog";
 import LanguageSubmenu from "./LanguageSubmenu";
+import { useTranslations } from "next-intl";
 
 // ✅ Jotai drawerAtom import
 import { useSetAtom } from "jotai";
@@ -49,6 +50,7 @@ export default function UserDropdownMenu({
   isHistoryDialogOpen,
   setIsHistoryDialogOpen,
 }: UserDropdownMenuProps) {
+  const t = useTranslations("userDropdown");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -65,7 +67,7 @@ export default function UserDropdownMenu({
     (user as any)?.username ||
     (user as any)?.name ||
     user?.email?.split("@")?.[0] ||
-    "User";
+    t("defaultUser");
 
   // ✅ Safely calculate credits with null checks
   const totalCredits = user
@@ -84,7 +86,7 @@ export default function UserDropdownMenu({
         month: "long",
         day: "numeric",
       })
-    : "N/A";
+    : t("notAvailable");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -175,8 +177,8 @@ export default function UserDropdownMenu({
               <UserIcon className="text-gray-400" size={20} />
             </div>
             <div>
-              <h3 className="text-base font-semibold text-gray-700">Guest</h3>
-              <p className="text-sm text-gray-500">Not signed in</p>
+              <h3 className="text-base font-semibold text-gray-700">{t("guest")}</h3>
+              <p className="text-sm text-gray-500">{t("notSignedIn")}</p>
             </div>
           </div>
         </div>
@@ -191,7 +193,7 @@ export default function UserDropdownMenu({
               <div className="flex items-center">
                 <Globe size={18} className="mr-3 text-gray-500" />
                 <span className="text-gray-700">
-                  {currentLanguage?.name || "English"}
+                  {currentLanguage?.name || t("defaultLanguage")}
                 </span>
               </div>
               <ChevronRight
@@ -212,19 +214,19 @@ export default function UserDropdownMenu({
           </div>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+            onClick={() => handleRoute("/pricing")}
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
-            <span className="text-gray-700">View Pricing</span>
+            <span className="text-gray-700">{t("viewPricing")}</span>
           </button>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/contact`)}
+            onClick={() => handleRoute("/contact")}
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />
-            <span className="text-gray-700">Contact Us</span>
+            <span className="text-gray-700">{t("contactUs")}</span>
           </button>
 
           <button
@@ -232,7 +234,7 @@ export default function UserDropdownMenu({
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
           >
             <LogIn size={18} className="mr-3 text-blue-500" />
-            <span className="text-blue-600 font-medium">Sign In</span>
+            <span className="text-blue-600 font-medium">{t("signIn")}</span>
           </button>
         </div>
       </div>
@@ -261,7 +263,7 @@ export default function UserDropdownMenu({
           {/* Total Credits */}
           <div className="flex justify-between items-center">
             <span className="text-sm text-gray-600 text-[14px] font-medium">
-              Total Credits
+              {t("totalCredits")}
             </span>
             <span className="text-lg font-semibold text-purple-600 text-[16px]">
               {totalCredits} 🐚
@@ -275,7 +277,7 @@ export default function UserDropdownMenu({
                 <div className="flex items-center gap-1.5">
                   <Zap size={16} className="text-orange-500" />
                   <span className="text-sm text-gray-700 text-[13px] font-medium">
-                    Plan Credits
+                    {t("planCredits")}
                   </span>
                 </div>
                 <span className="text-md font-semibold text-orange-600 text-[14px]">
@@ -283,7 +285,7 @@ export default function UserDropdownMenu({
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-xs text-gray-500">Expires on</span>
+                <span className="text-xs text-gray-500">{t("expiresOn")}</span>
                 <span className="text-xs text-gray-600 font-medium">
                   {formattedExpirationDate}
                 </span>
@@ -299,7 +301,7 @@ export default function UserDropdownMenu({
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <Clock size={18} className="mr-3 text-gray-500" />
-            <span className="text-gray-700">Credits History</span>
+            <span className="text-gray-700">{t("creditsHistory")}</span>
           </button>
 
           <div className="relative">
@@ -310,7 +312,7 @@ export default function UserDropdownMenu({
               <div className="flex items-center">
                 <Globe size={18} className="mr-3 text-gray-500" />
                 <span className="text-gray-700">
-                  {currentLanguage?.name || "English"}
+                  {currentLanguage?.name || t("defaultLanguage")}
                 </span>
               </div>
               <ChevronRight
@@ -331,27 +333,27 @@ export default function UserDropdownMenu({
           </div>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/pricing`)}
+            onClick={() => handleRoute("/pricing")}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === `/${currentLocale}/pricing`
+              pathname === "/pricing"
                 ? "text-blue-600 font-semibold"
                 : ""
             }`}
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
-            <span className="text-gray-700">Subscribe Plan</span>
+            <span className="text-gray-700">{t("subscribePlan")}</span>
           </button>
 
           <button
-            onClick={() => handleRoute(`/${currentLocale}/contact`)}
+            onClick={() => handleRoute("/contact")}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === `/${currentLocale}/contact`
+              pathname === "/contact"
                 ? "text-blue-600 font-semibold"
                 : ""
             }`}
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />
-            <span className="text-gray-700">Support Ticket</span>
+            <span className="text-gray-700">{t("supportTicket")}</span>
           </button>
 
           <button
@@ -359,7 +361,7 @@ export default function UserDropdownMenu({
             className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
           >
             <LogOut size={18} className="mr-3 text-gray-500" />
-            <span className="text-gray-700">Sign Out</span>
+            <span className="text-gray-700">{t("signOut")}</span>
           </button>
         </div>
       </div>

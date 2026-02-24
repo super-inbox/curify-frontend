@@ -1,298 +1,84 @@
 {
-  "home": {
-    "metadata": {
-      "title": "Curify | Yapay Zeka ile İçerik Oluşturmayı Güçlendirin",
-      "description": "Curify, içerik oluşturucuların, eğitimcilerin ve medya ekiplerinin videoları, mangaları ve sunumları ölçekli bir şekilde üretmesine ve yerelleştirmesine yardımcı olan yapay zeka tabanlı bir platformdur."
-    },
-    "hero": {
-      "title": "Yapay Zeka ile İçerik Oluşturmayı Güçlendirin",
-      "description": "Curify Studio, içerik üreticilerinin ve kuruluşların dil ve format engellerini aşmasına yardımcı olan yapay zeka tabanlı bir içerik üretim platformu geliştiriyor. Platform, içeriği küresel kitlelere ölçekleme zorluğunu çözüyor ve ton, stil ile duygusal derinliği koruyan otantik çeviriler sunuyor. Medya, eğitim ve eğlencenin kesişiminde; hızla küreselleşen bir sektörde içerik üreticilerinin içeriklerini sorunsuz biçimde uyarlayabilmesi için araçlar sağlıyor."
-    }
-  },
-  "coreFeatures": {
-    "oneShot": {
-      "title": "Tek Adımda Çeviri",
-      "desc": "Tek bir işlemde seslendirme, altyazı ve dudak senkronizasyonu ile tam video çevirisi."
-    },
-    "toneColor": {
-      "title": "Ses Rengi Koruma",
-      "desc": "Orijinal konuşmacının benzersiz ses özelliklerini ve ton kalitesini korur."
-    },
-    "emotional": {
-      "title": "Duygusal Konuşma",
-      "desc": "Yapay zeka, duygusal nüansları yeniden üreterek diller arasında otantik ifade sağlar."
-    },
-    "lipSync": {
-      "title": "Dudak Senkronizasyon Teknolojisi",
-      "desc": "Ağız hareketlerini çevrilmiş sesle mükemmel bir şekilde eşleştiren gelişmiş dudak senkronizasyonu."
-    },
-    "subtitle": {
-      "title": "Altyazı Oluşturucu",
-      "desc": "Hassas zamanlama ve doğal dil akışı ile akıllı altyazı oluşturma."
-    },
-    "languages": {
-      "title": "170+ Dil",
-      "desc": "İçeriğinizi 170'ten fazla dile yerel düzeyde doğrulukla çevirin."
-    }
-  },
-  "upcoming": {
-    "title": "Yakında",
-    "subtitle": "Geliştirilmekte olan yeni nesil özellikler",
-    "styleTransfer": {
-      "title": "Stil Transferi",
-      "desc": "Yapay zeka destekli görsel dönüşüm ile videolarınıza sinematik veya markaya özgü stiller uygulayın.",
-      "icon": "🎨",
-      "status": "2025 3. Çeyrekte Geliyor",
-      "transcript": "Bu demo, yapay zeka destekli görsel stil transferi kullanarak canlı aksiyon drama klibini tuhaf bir Ghibli tarzı animasyona dönüştürüyor."
-    },
-    "mangaTranslation": {
-      "title": "Manga Çevirisi",
-      "desc": "Metin algılama, balon düzenleme ve kültürel uyarlama ile otomatik manga ve çizgi roman çevirisi.",
-      "icon": "📚",
-      "status": "2025 3. Çeyrekte Geliyor",
-      "transcript": "Bu prototip, konuşma balonu algılama ve iki dilli yerinde düzenleme dahil olmak üzere otomatik manga çevirisini göstermektedir."
-    },
-    "templatedVideo": {
-      "title": "Şablonlu Video Oluşturma",
-      "desc": "Yapay zeka tarafından oluşturulan içerik ve özel marka ile şablonlardan profesyonel videolar oluşturun.",
-      "icon": "🎬",
-      "status": "2025 4. Çeyrekte Geliyor",
-      "transcript": "Bu demo, hikaye panosunu planlayarak ve görselleri birleştirerek erken ABD tarihi hakkında tarihi bir sahne oluşturan senaryodan videoya bir boru hattını göstermektedir."
-    },
-    "statusQ3": "2025 3. Çeyrekte Geliyor",
-    "statusQ4": "2025 4. Çeyrekte Geliyor"
-  },
-  "export": {
-    "title": "Dışa Aktar",
-    "export": "Dışa Aktar",
-    "downloading": "İndiriliyor..."
-  },
-  "delete": {
-    "title": "Çifte Onay",
-    "message": "Bu projeyi silmek istediğinizden emin misiniz?",
-    "warning": "Bu işlem geri alınamaz.",
-    "cancel": "İptal",
-    "delete": "Sil",
-    "deleting": "Siliniyor..."
-  },
-  "userMenu": {
-    "topUpCredits": "Kredi Yükle",
-    "remaining": "Kalan",
-    "planRemaining": "Plan Kalanı",
-    "validUntil": "Geçerlilik Tarihi",
-    "creditsHistory": "Kredi Geçmişi",
-    "subscribePlan": "Plana Abone Ol",
-    "supportTicket": "Destek Bileti",
-    "signOut": "Çıkış Yap"
-  },
-  "technology": {
-    "multimodal": {
-      "title": "Çok Modlu Tanıma",
-      "desc": "Daha doğru ve sağlam transkripsiyon elde etmek için konuşma ve altyazı sinyallerini birleştiriyoruz. Bu çift kanallı tanıma, hataları azaltır ve özellikle gürültülü veya karmaşık ses sahnelerinde orijinal içerikle daha iyi hizalanmayı sağlar."
-    },
-    "emotional": {
-      "title": "Duygusal Konuşma",
-      "desc": "Ses sentezi modellerimiz, hikaye anlatımını ve izleyici etkileşimini geliştiren etkileyici, duygusal açıdan zengin konuşmalar üretir. Tonu, ritmi ve nüansı yakalayarak yapay zeka seslerinin daha insan ve ilişkilendirilebilir hissettirmesini sağlıyoruz."
-    },
-    "lengthaware": {
-      "title": "Uzunluk Duyarlı Çeviri ve Özelleştirme",
-      "desc": "Çevirileri yalnızca doğruluk için değil, aynı zamanda video ve ses hizalaması için çok önemli olan zamanlama ve hız için de optimize ediyoruz. Kullanıcılar, farklı içerik ihtiyaçlarına veya izleyici tercihlerine uyacak şekilde tonu, uzunluğu ve ifadeyi daha da özelleştirebilir."
-    },
-    "controlled": {
-      "title": "Kontrollü Video Oluşturma",
-      "desc": "Kontrol edilebilir görsel öğeler ve geçişlerle yapılandırılmış, şablon odaklı video oluşturmayı mümkün kılıyoruz. Bu, yaratıcılara hem yaratıcı özgürlük hem de üretim tutarlılığı sağlayarak manuel çabayı azaltırken yüksek kaliteli çıktı sağlar."
-    }
-  },
-  "tools": {
-    "video_dubbing": {
-      "title": "Video Dublajı",
-      "desc": "Videonuzu hassas yerelleştirme ve ses senkronizasyonu ile herhangi bir dile çevirin"
-    },
-    "subtitle_captioner": {
-      "title": "Altyazı Oluşturucu",
-      "desc": "Netliği ve erişilebilirliği artırmak için çok dilli altyazıları otomatik olarak oluşturun"
-    },
-    "lip_syncing": {
-      "title": "Dudak Senkronizasyonu",
-      "desc": "Yapay zeka destekli dudak senkronizasyonu ile dudakları konuşmayla mükemmel bir şekilde eşleştirin"
-    },
-    "style_transfer": {
-      "title": "Stil Transferi",
-      "desc": "Videonuzu Pixar, Ghibli veya diğer sanatsal stillere dönüştürün — yakında"
-    },
-    "coming_soon": "Yakında",
-    "create": "Oluştur",
-    "meta": {
-      "title": "Curify Araçları",
-      "description": "Video dublajı, altyazılar ve AI destekli içerik iş akışları için Curify Studio araçlarını keşfedin."
-    },
-    "hero": {
-      "watch_demo": "Farklı dillerde duyguyu ve dudak senkronizasyonunu koruyarak çevrilen aynı videoyu izleyin",
-      "transcript_label": "Transkript",
-      "training_transcript": "Curify Studio'ya hoş geldiniz. Bu videoda, AI'nın içerikleri diller arasında nasıl çevirdiğini ve dublaj yaptığını gösteriyoruz...",
-      "currently_playing": "Şu anda çalınıyor: {label} versiyonu"
-    },
-    "products": {
-      "title": "Ürünler & Hizmetler",
-      "subtitle": "AI destekli çözümlerimiz canlı ve sürekli olarak gelişiyor — dünya çapında yaratıcılar ve ekipler tarafından zaten kullanılıyor."
-    },
-    "audience": {
-      "title": "Hedef Kitlemiz",
-      "v1": "🎥 Küresel pazarlara açılan video yaratıcıları ve YouTuber'lar",
-      "v2": "📖 Kitapları derslere dönüştüren eğitimciler ve bilgi platformları",
-      "v3": "🎶 Diller arasında içerik lokalize eden medya ve eğlence şirketleri",
-      "v4": "📚 Çeviri ve dizgi otomasyonu yapan manga yayıncıları ve hayran çevirmenler"
-    },
-    "free_badge": "ÜCRETSİZ"
-  },
-  "bilingual": {
-    "metadata": {
-      "title": "Ücretsiz İki Dilli Altyazı Oluşturucu | Curify AI",
-      "description": "Curify'ın ücretsiz yapay zeka destekli aracıyla videolarınız için iki dilli altyazılar oluşturun. YouTube, TikTok, eğitim ve küresel içerik oluşturucular için mükemmel."
-    },
-    "title": "İki Dilli Altyazılar Artık Çok Kolay",
-    "intro": "Curify'ın yapay zeka altyazı motorunu kullanarak iki dilde otomatik olarak altyazı oluşturun. İçerik oluşturucular, eğitimciler ve küresel işletmeler için ideal.",
-    "example": "Örnek: Jensen Huang yapay zeka stratejisini açıklıyor — İngilizce + Çince altyazılar otomatik olarak oluşturuldu.",
-    "cta": "Ücretsiz Deneyin",
-    "why": {
-      "title": "İki Dilli Altyazılar İçin Neden Curify'ı Seçmelisiniz?",
-      "point1": "Doğru çeviri ile 170'ten fazla dili destekler.",
-      "point2": "Duygusal tonu ve zamanlamayı korur.",
-      "point3": "YouTube, TikTok ve eğitim videoları için mükemmeldir.",
-      "point4": "Yayınlanmaya hazır altyazı dosyalarını veya gömülü videoları dışa aktarın."
-    },
-    "faq": {
-      "title": "Sıkça Sorulan Sorular",
-      "q1": "Gerçekten ücretsiz mi?",
-      "a1": "Evet, Curify ayda sınırlı altyazı dakikası içeren ücretsiz bir plan sunar.",
-      "q2": "Oluşturduktan sonra altyazıları düzenleyebilir miyim?",
-      "a2": "Kesinlikle. Dışa aktarmadan önce zamanlamayı, çeviriyi ve stili ayarlayabilirsiniz."
-    }
-  },
-  "videoDubbing": {
-    "metadata": {
-      "title": "Yapay Zeka Video Dublaj Aracı | Curify AI",
-      "description": "Yapay zeka ses klonlama, duygu koruma ve dudak senkronizasyonu kullanarak videolarınızı 170'ten fazla dile dublaj yapın. Curify'ın yapay zeka dublajını ücretsiz deneyin."
-    },
-    "title": "Doğal Ses ile Yapay Zeka Video Dublajı",
-    "description": "Video içeriğinizi gerçekçi yapay zeka sesi ve dudak senkronizasyonu ile 170'ten fazla dile çevirin ve dublaj yapın. Uluslararası içerik oluşturucular ve markalar için mükemmel."
-  },
-  "about": {
-    "metadata": {
-      "title": "Curify Hakkında | Vizyon, Teknoloji ve Ekip",
-      "description": "Curify'ın yapay zeka ile içerik oluşturmayı demokratikleştirme vizyonunu öğrenin. Biz, medya yerelleştirmesinin geleceğini inşa eden bir mühendis ve yaratıcı ekibiyiz."
-    }
-  },
-  "contact": {
-    "metadata": {
-      "title": "Bize Ulaşın | Curify Studio",
-      "description": "Destek, satış veya ortaklıklar için Curify ekibiyle iletişime geçin. İçeriğinizi küresel olarak ölçeklendirmenize yardımcı olmak için buradayız."
-    }
-  },
   "blog": {
     "metadata": {
       "title": "Curify Blog | Yapay Zeka İçerik Oluşturma Analizleri",
       "description": "Yapay zeka video oluşturma, dublaj, stil transferi ve içerik oluşturmanın geleceği hakkındaki en son makaleleri okuyun."
-    }
-  },
-  "pricing": {
-    "metadata": {
-      "title": "Fiyatlandırma Planları | Curify Studio",
-      "description": "İçerik oluşturma ihtiyaçlarınız için doğru planı seçin. Ücretsiz araçlardan kurumsal düzeyde yapay zeka dublajına ve yerelleştirmeye kadar."
     },
-    "header": {
-      "title": "Bir planla başlarken",
-      "subtitle": "İhtiyaçlarınıza uygun bir plan seçin."
-    },
-    "common": {
-      "month": "Ay",
-      "pricing": "Fiyatlandırma",
-      "receive": "Al"
-    },
-    "buttons": {
-      "signUp": "Kaydol",
-      "subscribePlan": "Plana Abone Ol",
-      "currentPlan": "Mevcut Plan",
-      "comingSoon": "Yakında",
-      "downgradeToFree": "Ücretsiz Plana Geç",
-      "downgradeToCreator": "Creator Planına Geç",
-      "contactSales": "Satış Ekibiyle İletişime Geç"
-    },
-    "plans": {
-      "free": {
-        "name": "Ücretsiz",
-        "description": "Araçları test etmek ve hafif işler için harika",
-        "features": [
-          "Filigran olmadan video indirme",
-          "1 saat ücretsiz altyazı işleme",
-          "SRT dosyalarını dışa aktarma"
-        ]
+    "latestArticles": "Son Makaleler",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Şirketler için Yapay Zeka Başarısı: Ölçeklenebilirlik Stratejisi",
+        "date": "30 Ocak 2026",
+        "readTime": "9 dk okuma",
+        "tag": "Yapay Zeka Platformu",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
       },
-      "creator": {
-        "name": "Üretici",
-        "description": "Düzenli altyazı ve hafif dublaj yapan küçük içerik oluşturucular için ideal",
-        "plusTitle": "Ücretsiz plandaki her şey, artı:",
-        "features": [
-          "Dudak Senkronizasyonu",
-          "Toplu işleme",
-          "5 saat ücretsiz altyazı işleme",
-          "Görev başına 30 dakikaya kadar"
-        ]
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "QA Botundan Görev Temsilcisine: Bir Mimari Rehber",
+        "date": "30 Ocak 2026",
+        "readTime": "6 dk okuma",
+        "tag": "Yapay Zeka Mimarisi",
+        "image": "/images/qa-bot-architecture.jpg"
       },
-      "pro": {
-        "name": "Profesyonel",
-        "description": "Yakında — Yüksek hacimli içerik oluşturucular için tasarlandı",
-        "plusTitle": "Üretici planındaki her şey, artı:",
-        "features": [
-          "Ses güzelleştirme ve gürültü giderme",
-          "Öncelik sırası",
-          "Görev başına 60 dakikaya kadar",
-          "Sınırsız altyazı dakikası"
-        ]
+      {
+        "slug": "age_AI",
+        "title": "Yapay Zeka Çağında Veri Bilimi: 'En Seksi Meslek' Hala Seksi mi?",
+        "date": "30 Ocak 2026",
+        "readTime": "8 dk okuma",
+        "tag": "Yapay Zeka Endüstrisi",
+        "image": "/images/data-science-ai-era.jpg"
       },
-      "enterprise": {
-        "name": "Kurumsal",
-        "description": "Ekipler, stüdyolar ve kurumsal iş akışları için",
-        "customPricing": "Özel",
-        "unlimited": "Sınırsız 🐚",
-        "tailoredSupport": "ve özel destek",
-        "plusTitle": "Pro planındaki her şey, artı:",
-        "features": [
-          "Özel hesap yöneticisi",
-          "Şirket içi kurulum seçenekleri",
-          "API erişimi ve kullanım analizleri",
-          "Özel entegrasyonlar ve SLA",
-          "Sınırsız işleme saatleri"
-        ]
+      {
+        "slug": "storyboard-labeling",
+        "title": "Ham Görüntüden Storyboard'a: Yapay Zeka Destekli Video Analizi",
+        "date": "11 Aralık 2025",
+        "readTime": "10 dk okuma",
+        "tag": "Video Analizi",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "Yapay Zeka Video İyileştirme: Storyboard'lar, Meme Altyazıları ve SFX Otomasyonu",
+        "date": "18 Kasım 2025",
+        "readTime": "7 dk okuma",
+        "tag": "Video İyileştirme",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Yapay Zeka Video Çeviri Değerlendirmesi: Gerçekten Önemli Olan Metrikler",
+        "date": "14 Kasım 2025",
+        "readTime": "6 dk okuma",
+        "tag": "Yerelleştirme",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Kendi Yapay Zeka Destekli Çizgi Roman Animasyonunuzu Oluşturun: Adım Adım Rehber",
+        "date": "28 Ekim 2025",
+        "readTime": "5 dk okuma",
+        "tag": "Animasyon",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Bölüm 2: Temsilciler ve İş Akışları – Kontrolden Zekaya",
+        "date": "28 Ekim 2025",
+        "readTime": "6 dk okuma",
+        "tag": "Üretken Araçlar",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Bölüm 3: AE vs ComfyUI – Hareket Tasarımı ve Difüzyon Hatları",
+        "date": "28 Ekim 2025",
+        "readTime": "7 dk okuma",
+        "tag": "Araçlar ve İş Hattı",
+        "image": "/images/ae-vs-comfyui.jpg"
       }
-    },
-    "table": {
-      "header": {
-        "feature": "Özellik / Sınır"
-      },
-      "rows": {
-        "videoDownloadWithWatermark": "Filigranlı Video İndirme",
-        "videoDownloadWithoutWatermark": "Filigransız Video İndirme",
-        "downloadSrt": "SRT Dosyasını İndir",
-        "voiceBeautification": "Ses Güzelleştirme ve Gürültü Giderme",
-        "lipSync": "Dudak Senkronizasyonu",
-        "subtitleTools": "Altyazı Araçları (ekle/kaldır, çeviri yok)",
-        "batchProcessing": "Toplu İşleme",
-        "maxVideoLength": "Görev Başına Maksimum Video Uzunluğu",
-        "monthlyCredits": "Aylık Ücretsiz Krediler",
-        "priorityQueue": "Öncelik Sırası / Daha Hızlı İşleme",
-        "creditTopUp": "Kredi Yükleme"
-      },
-      "values": {
-        "free": "Ücretsiz",
-        "unlimited": "Sınırsız",
-        "oneHourPerMonth": "1 saat/ay",
-        "fiveHoursPerMonth": "5 saat/ay",
-        "fiveMinutes": "5 dk",
-        "thirtyMinutes": "30 dk",
-        "sixtyMinutes": "60 dk"
-      }
-    }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Animasyonu Yeniden Tanımlamak (Bölüm 3)",
@@ -1065,10 +851,6 @@
   "aiPlatform": {
     "title": "Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
     "subtitle": "Bütçeyi Zorlamadan Ölçeklenebilir Bir Yapay Zeka Platformu Nasıl Kurulur?",
-    "intro": {
-      "p1": "Küçük ve orta ölçekli teknoloji şirketlerinde asıl avantaj, büyük modeller eğitmek değil, herkesin akıllı özellikler geliştirebildiği bir yapay zeka platformu inşa etmektir. İşte çevikliği etkiye dönüştürme yönteminiz.",
-      "p2": "İşte finans, hukuk, müşteri hizmetleri ve mühendislik alanlarında yapay zekayı güçlendirmek için kullandığımız, bütçeyi zorlamadan veya 50 ML uzmanı işe almadan uygulanabilir, üretim hazırı bir plan."
-    },
     "imageAlt": "Yapay Zeka Platformu Mimarisi Şeması",
     "heading": "🏗️ Orta Ölçekli Şirketler için Yapay Zeka Başarı Rehberi",
     "mindsetShift": {
@@ -1150,7 +932,12 @@
       "content": "Orta ölçekli teknoloji şirketleri için yapay zekada kazanmak, daha iyi bir büyük dil modeli oluşturmak anlamına gelmez. Yapay zekayı tekrarlanabilir, ölçeklenebilir bir iş sürecine dönüştüren bir platform inşa etmek anlamına gelir.",
       "finalThoughts": "Altyapıyla başlayın, veriyi güvenceye alın ve ekiplerinizin inşa etmesine izin verin. Gelecek, hepsine hükmeden tek bir model değil, her biri gerçek bir iş problemini çözen, hepsi de bunu basitleştiren bir platform tarafından desteklenen uzmanlaşmış ajanlar filosudur.",
       "callToAction": "İnşa etmeye hazır mısınız? Basit ve açık kaynaklı tutun ve başkalarını güçlendirmeye odaklanın."
-    }
+    },
+    "intro": {
+      "p1": "Küçük ve orta ölçekli teknoloji şirketlerinde asıl avantaj, büyük modeller eğitmek değil, herkesin akıllı özellikler geliştirebildiği bir yapay zeka platformu inşa etmektir. İşte çevikliği etkiye dönüştürme yönteminiz.",
+      "p2": "İşte finans, hukuk, müşteri hizmetleri ve mühendislik alanlarında yapay zekayı güçlendirmek için kullandığımız, bütçeyi zorlamadan veya 50 ML uzmanı işe almadan uygulanabilir, üretim hazırı bir plan."
+    },
+    "description": "Bütçeyi Zorlamadan Ölçeklenebilir Bir Yapay Zeka Platformu Nasıl Kurulur?"
   },
   "nanoBananaProPrompts": {
     "title": "Nano Banana Pro İstemleri",
@@ -1301,6 +1088,18 @@
       "#GenerativeAI",
       "#CareerDevelopment",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "Kişisel deneyim sizin avantajınızdır. Bir LLM mantığı taklit edebilir, ancak başarısız dağıtımlardan gelen yılların 'savaş yaralarına' veya karmaşık organizasyonlarda gezinerek oluşturulan sezgiye sahip değildir.",
+    "content": "Arama, Reklamlar ve Öneri (SAR) gibi geleneksel alanlar olgunlaşıyor ve endüstri odağını ağır mühendislik ve yapay zeka mimarisine kaydırıyor. Garip bir paradoks görüyoruz.",
+    "lowBarTrap": {
+      "title": "\"Düşük Çıta\" Tuzağı",
+      "content": "Yüksek lisans öğrencileri artık veri temizleme, EDA ve görselleştirmeyi saniyeler içinde halletmek için GPT-4'ü kullanabilirler. Ancak, sağlam bir temel olmadan, yapay zekanın ne zaman \"halüsinasyon gördüğünü\" veya istatistiksel olarak hatalı sonuçlar sağladığını bilme muhakemesinden genellikle yoksundurlar."
+    },
+    "stakeholderShift": {
+      "title": "Paydaş Değişimi",
+      "content": "İş ortakları temel içgörüleri elde etmek için kendi istemlerini yazabildiklerinde, birçok DS uzmanı sonsuz toplantılar ve tekrarlayan istem mühendisliği içinde sıkışıp kalmış, \"yetersiz uyarılmış\" hissediyor."
+    },
+    "title": "Yapay Zeka Çağında Veri Bilimi: \"En Seksi İş\" Hala Seksi mi?",
+    "description": "On yıl önce, Harvard Business Review Veri Bilimcisini \"21. yüzyılın en seksi işi\" olarak adlandırdı. Bugün, zemin ayaklarımızın altından kayıyor. Veri yeteneğine olan talep yüksek kalmaya devam etse de, Üretken Yapay Zeka'nın yükselişi 'Veri Bilimcisi' olmanın ne anlama geldiğini temelden değiştiriyor."
   }
 }

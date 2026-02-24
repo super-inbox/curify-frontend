@@ -14,13 +14,21 @@ export async function generateMetadata({
 
   return {
     title: t("heading"),
-    description: t("intro2"),
+    description: t("description"),
   };
 }
 
 export default function AgeAiPost() {
   const t = useTranslations("ageAi");
-  
+  const buildingToolsPointsRaw = t.raw("strategicPillars.buildingTools.points");
+  const leveragingToolsPointsRaw = t.raw("strategicPillars.leveragingTools.points");
+  const buildingToolsPoints = Array.isArray(buildingToolsPointsRaw)
+    ? (buildingToolsPointsRaw as Array<{ title: string; content: string }>)
+    : [];
+  const leveragingToolsPoints = Array.isArray(leveragingToolsPointsRaw)
+    ? (leveragingToolsPointsRaw as Array<{ title: string; content: string }>)
+    : [];
+
   return (
     <article className="max-w-4xl pt-20 mx-auto px-6 pb-12 text-lg leading-8">
       <h1 className="text-4xl font-bold mb-8">
@@ -48,7 +56,7 @@ export default function AgeAiPost() {
       <h2 className="text-2xl font-bold mt-8 mb-4">
         {t("realityCheck.title")} <span className="text-2xl">🔍</span>
       </h2>
-      
+
       <p className="mb-4">
         {t("realityCheck.content")}
       </p>
@@ -60,7 +68,7 @@ export default function AgeAiPost() {
         <p className="mb-3">
           {t("realityCheck.lowBarTrap.content")}
         </p>
-        
+
         <h3 className="font-bold text-lg mt-4 mb-3">
           {t("realityCheck.stakeholderShift.title")}
         </h3>
@@ -72,7 +80,7 @@ export default function AgeAiPost() {
       <h2 className="text-2xl font-bold mt-12 mb-6">
         {t("strategicPillars.title")} <span className="text-2xl">🏗️</span>
       </h2>
-      
+
       <p className="mb-6">
         {t("strategicPillars.intro")}
       </p>
@@ -87,14 +95,12 @@ export default function AgeAiPost() {
             {t("strategicPillars.buildingTools.subtitle")}
           </p>
           <ul className="space-y-3">
-            {[
-              t("strategicPillars.buildingTools.points.0"),
-              t("strategicPillars.buildingTools.points.1"),
-              t("strategicPillars.buildingTools.points.2")
-            ].map((point, index) => (
+            {buildingToolsPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
-                <span>{point}</span>
+                <span>
+                  <span className="font-semibold">{point.title}:</span> {point.content}
+                </span>
               </li>
             ))}
           </ul>
@@ -109,14 +115,12 @@ export default function AgeAiPost() {
             {t("strategicPillars.leveragingTools.subtitle")}
           </p>
           <ul className="space-y-3">
-            {[
-              t("strategicPillars.leveragingTools.points.0"),
-              t("strategicPillars.leveragingTools.points.1"),
-              t("strategicPillars.leveragingTools.points.2")
-            ].map((point, index) => (
+            {leveragingToolsPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-green-500 mr-2">•</span>
-                <span>{point}</span>
+                <span>
+                  <span className="font-semibold">{point.title}:</span> {point.content}
+                </span>
               </li>
             ))}
           </ul>
@@ -211,8 +215,8 @@ export default function AgeAiPost() {
               'bg-pink-100 text-pink-800'
             ];
             return (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 className={`${colors[index % colors.length]} text-xs font-medium px-2.5 py-0.5 rounded`}
               >
                 {tag}

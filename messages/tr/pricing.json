@@ -1,0 +1,101 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "Fiyatlandırma Planları | Curify Studio",
+      "description": "İçerik oluşturma ihtiyaçlarınız için doğru planı seçin. Ücretsiz araçlardan kurumsal düzeyde yapay zeka dublajına ve yerelleştirmeye kadar."
+    },
+    "header": {
+      "title": "Bir planla başlarken",
+      "subtitle": "İhtiyaçlarınıza uygun bir plan seçin."
+    },
+    "common": {
+      "month": "Ay",
+      "pricing": "Fiyatlandırma",
+      "receive": "Al"
+    },
+    "buttons": {
+      "signUp": "Kaydol",
+      "subscribePlan": "Plana Abone Ol",
+      "currentPlan": "Mevcut Plan",
+      "comingSoon": "Yakında",
+      "downgradeToFree": "Ücretsiz Plana Geç",
+      "downgradeToCreator": "Creator Planına Geç",
+      "contactSales": "Satış Ekibiyle İletişime Geç"
+    },
+    "plans": {
+      "free": {
+        "name": "Ücretsiz",
+        "description": "Araçları test etmek ve hafif işler için harika",
+        "features": [
+          "Filigran olmadan video indirme",
+          "1 saat ücretsiz altyazı işleme",
+          "SRT dosyalarını dışa aktarma"
+        ]
+      },
+      "creator": {
+        "name": "Üretici",
+        "description": "Düzenli altyazı ve hafif dublaj yapan küçük içerik oluşturucular için ideal",
+        "plusTitle": "Ücretsiz plandaki her şey, artı:",
+        "features": [
+          "Dudak Senkronizasyonu",
+          "Toplu işleme",
+          "5 saat ücretsiz altyazı işleme",
+          "Görev başına 30 dakikaya kadar"
+        ]
+      },
+      "pro": {
+        "name": "Profesyonel",
+        "description": "Yakında — Yüksek hacimli içerik oluşturucular için tasarlandı",
+        "plusTitle": "Üretici planındaki her şey, artı:",
+        "features": [
+          "Ses güzelleştirme ve gürültü giderme",
+          "Öncelik sırası",
+          "Görev başına 60 dakikaya kadar",
+          "Sınırsız altyazı dakikası"
+        ]
+      },
+      "enterprise": {
+        "name": "Kurumsal",
+        "description": "Ekipler, stüdyolar ve kurumsal iş akışları için",
+        "customPricing": "Özel",
+        "unlimited": "Sınırsız 🐚",
+        "tailoredSupport": "ve özel destek",
+        "plusTitle": "Pro planındaki her şey, artı:",
+        "features": [
+          "Özel hesap yöneticisi",
+          "Şirket içi kurulum seçenekleri",
+          "API erişimi ve kullanım analizleri",
+          "Özel entegrasyonlar ve SLA",
+          "Sınırsız işleme saatleri"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "Özellik / Sınır"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "Filigranlı Video İndirme",
+        "videoDownloadWithoutWatermark": "Filigransız Video İndirme",
+        "downloadSrt": "SRT Dosyasını İndir",
+        "voiceBeautification": "Ses Güzelleştirme ve Gürültü Giderme",
+        "lipSync": "Dudak Senkronizasyonu",
+        "subtitleTools": "Altyazı Araçları (ekle/kaldır, çeviri yok)",
+        "batchProcessing": "Toplu İşleme",
+        "maxVideoLength": "Görev Başına Maksimum Video Uzunluğu",
+        "monthlyCredits": "Aylık Ücretsiz Krediler",
+        "priorityQueue": "Öncelik Sırası / Daha Hızlı İşleme",
+        "creditTopUp": "Kredi Yükleme"
+      },
+      "values": {
+        "free": "Ücretsiz",
+        "unlimited": "Sınırsız",
+        "oneHourPerMonth": "1 saat/ay",
+        "fiveHoursPerMonth": "5 saat/ay",
+        "fiveMinutes": "5 dk",
+        "thirtyMinutes": "30 dk",
+        "sixtyMinutes": "60 dk"
+      }
+    }
+  }
+}

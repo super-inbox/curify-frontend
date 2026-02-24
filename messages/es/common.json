@@ -1,0 +1,147 @@
+{
+  "export": {
+    "title": "Exportar",
+    "export": "Exportar",
+    "downloading": "Descargando..."
+  },
+  "delete": {
+    "title": "Doble confirmación",
+    "message": "¿Estás seguro de que quieres eliminar este proyecto?",
+    "warning": "Esta acción no se puede deshacer.",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "deleting": "Eliminando..."
+  },
+  "userMenu": {
+    "topUpCredits": "Recargar créditos",
+    "remaining": "Restante",
+    "planRemaining": "Plan restante",
+    "validUntil": "Válido hasta",
+    "creditsHistory": "Historial de créditos",
+    "subscribePlan": "Suscribirse al plan",
+    "supportTicket": "Ticket de soporte",
+    "signOut": "Cerrar sesión"
+  },
+  "ctaButtons": {
+    "bookDemo": "Reserve una demostración",
+    "mockUserNotLoaded": "Los datos del usuario simulado aún no se han cargado."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Únase a nuestra comunidad de Discord",
+    "or": "O",
+    "contactByEmail": "Contáctenos por correo electrónico",
+    "emailPlaceholder": "Correo electrónico",
+    "subjectPlaceholder": "Asunto (máximo 30 caracteres)",
+    "detailsPlaceholder": "Puede describir su situación y necesidades aquí para ayudarnos a comprender y prepararnos mejor.\n\nLo revisaremos y responderemos por correo electrónico dentro de 2 días hábiles.",
+    "invalidEmail": "Por favor, introduce una dirección de correo electrónico válida.",
+    "send": "Enviar"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Únete a Curify para globalizar tus vídeos",
+    "welcomeSignin": "Continúe globalizando sus videos",
+    "signUp": "Inscribirse",
+    "signIn": "Iniciar sesión",
+    "enterVerificationCode": "Ingrese el código de verificación",
+    "or": "o",
+    "emailPlaceholder": "Correo electrónico",
+    "invalidEmail": "Por favor, introduce una dirección de correo electrónico válida.",
+    "otpSentTo": "Hemos enviado un código a",
+    "verificationCodePlaceholder": "Código de verificación",
+    "verifyCode": "Verificar código",
+    "resendCode": "Reenviar código",
+    "invalidOtp": "OTP no válida. Por favor inténtalo de nuevo.",
+    "agreePrefix": "Al utilizar Curify, aceptas nuestra",
+    "termsOfService": "Términos de servicio",
+    "and": "y",
+    "privacyPolicy": "política de privacidad",
+    "logoAlt": "logo"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "Procesamiento de pagos",
+    "processingLine1": "Estamos esperando que nuestro proveedor de servicios verifique su pago.",
+    "processingLine2": "Normalmente tarda unos 30 segundos.",
+    "processingLine3": "Puede cerrar esta ventana emergente y los créditos aparecerán automáticamente.",
+    "confirmedTitle": "✅ Pago confirmado",
+    "confirmedLine": "Redirigiendo al espacio de trabajo...",
+    "timeoutTitle": "⚠️ Tiempo de espera de verificación",
+    "timeoutLine1": "No pudimos verificar su pago en 20 segundos.",
+    "timeoutLine2": "Por favor verifique sus créditos manualmente desde su perfil.",
+    "close": "Cerca"
+  },
+  "topUpModal": {
+    "title": "Créditos de recarga",
+    "planLabel": "Plan",
+    "minimumTopupError": "La recarga mínima es de $0,50.",
+    "paymentStartFailed": "No se pudo iniciar el pago. Por favor inténtalo de nuevo.",
+    "customCreditsLabel": "Ingrese créditos personalizados",
+    "customCreditsPlaceholder": "p.ej. 200",
+    "paymentsPoweredByStripe": "Los pagos funcionan con Stripe.",
+    "creditRate": "1 crédito ≈ ${amount} (Plan: {plan})"
+  },
+  "transactionHistory": {
+    "title": "Historial de créditos",
+    "loading": "Cargando...",
+    "empty": "No se encontraron transacciones",
+    "id": "IDENTIFICACIÓN",
+    "type": "Tipo",
+    "credits": "Créditos",
+    "amount": "Cantidad",
+    "date": "Fecha",
+    "close": "Cerca"
+  },
+  "userDropdown": {
+    "defaultUser": "Usuario",
+    "notAvailable": "N / A",
+    "guest": "Invitado",
+    "notSignedIn": "No iniciado sesión",
+    "defaultLanguage": "Inglés",
+    "viewPricing": "Ver precios",
+    "contactUs": "Contáctenos",
+    "signIn": "Iniciar sesión",
+    "totalCredits": "Créditos totales",
+    "planCredits": "Créditos del plan",
+    "expiresOn": "Expira el",
+    "creditsHistory": "Historial de créditos",
+    "subscribePlan": "Plan de suscripción",
+    "supportTicket": "Boleto de soporte",
+    "signOut": "Desconectar"
+  },
+  "header": {
+    "homeAriaLabel": "Curificar Inicio",
+    "logoAlt": "Logotipo de Curificar",
+    "home": "Hogar",
+    "discover": "Descubrir",
+    "gallery": "Galería",
+    "tools": "Herramientas",
+    "blogs": "Blogs",
+    "workspace": "Espacio de trabajo",
+    "more": "Más",
+    "logIn": "Acceso",
+    "topUpCredits": "Recargar créditos",
+    "menuAriaLabel": "Menú"
+  },
+  "footer": {
+    "copyright": "© 2025 Curificar",
+    "privacyPolicy": "política de privacidad",
+    "termsOfService": "Términos de servicio",
+    "aboutUs": "Sobre nosotros",
+    "contactUs": "Contáctenos"
+  },
+  "actionButtons": {
+    "save": "Ahorrar",
+    "copy": "Copiar",
+    "share": "Compartir"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "Cerrar diálogo"
+  },
+  "galleryModal": {
+    "script": "Guion",
+    "tags": "Etiquetas"
+  },
+  "videoPlayer": {
+    "original": "Original",
+    "translated": "Traducido",
+    "unsupported": "Su navegador no soporta la etiqueta de video."
+  }
+}

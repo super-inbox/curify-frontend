@@ -1,0 +1,147 @@
+{
+  "export": {
+    "title": "Export",
+    "export": "Export",
+    "downloading": "Downloading..."
+  },
+  "delete": {
+    "title": "Double Confirm",
+    "message": "Are you sure you want to delete this project",
+    "warning": "This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting..."
+  },
+  "userMenu": {
+    "topUpCredits": "Top Up Credits",
+    "remaining": "Remaining",
+    "planRemaining": "Plan Remaining",
+    "validUntil": "Valid until",
+    "creditsHistory": "Credits History",
+    "subscribePlan": "Subscribe Plan",
+    "supportTicket": "Support Ticket",
+    "signOut": "Sign Out"
+  },
+  "ctaButtons": {
+    "bookDemo": "Book a Demo",
+    "mockUserNotLoaded": "Mock user data not loaded yet."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Join Our Discord Community",
+    "or": "Or",
+    "contactByEmail": "Contact Us via Email",
+    "emailPlaceholder": "Email",
+    "subjectPlaceholder": "Subject (Max 30 Characters)",
+    "detailsPlaceholder": "You may describe your situation and needs here to help us better understand and prepare.\n\nWe’ll review and respond via email within 2 business days.",
+    "invalidEmail": "Please enter a valid email address.",
+    "send": "Send"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Join Curify to Globalize Your Videos",
+    "welcomeSignin": "Continue Globalizing Your Videos",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "enterVerificationCode": "Enter the verification code",
+    "or": "or",
+    "emailPlaceholder": "Email",
+    "invalidEmail": "Please enter a valid email address.",
+    "otpSentTo": "We've sent a code to",
+    "verificationCodePlaceholder": "Verification Code",
+    "verifyCode": "Verify Code",
+    "resendCode": "Resend Code",
+    "invalidOtp": "Invalid OTP. Please try again.",
+    "agreePrefix": "By using Curify, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "logoAlt": "logo"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "Payment Processing",
+    "processingLine1": "We are waiting for our service provider to verify your payment.",
+    "processingLine2": "Normally it takes ~30 seconds.",
+    "processingLine3": "You may close this popup and credits will appear automatically.",
+    "confirmedTitle": "✅ Payment Confirmed",
+    "confirmedLine": "Redirecting to workspace...",
+    "timeoutTitle": "⚠️ Verification Timeout",
+    "timeoutLine1": "We couldn't verify your payment within 20 seconds.",
+    "timeoutLine2": "Please check your credits manually from your profile.",
+    "close": "Close"
+  },
+  "topUpModal": {
+    "title": "Top Up Credits",
+    "planLabel": "Plan",
+    "minimumTopupError": "Minimum top-up is $0.50.",
+    "paymentStartFailed": "Failed to start payment. Please try again.",
+    "customCreditsLabel": "Enter custom credits",
+    "customCreditsPlaceholder": "e.g. 200",
+    "paymentsPoweredByStripe": "Payments are powered by Stripe.",
+    "creditRate": "1 credit ≈ ${amount} (Plan: {plan})"
+  },
+  "transactionHistory": {
+    "title": "Credits History",
+    "loading": "Loading...",
+    "empty": "No transactions found",
+    "id": "ID",
+    "type": "Type",
+    "credits": "Credits",
+    "amount": "Amount",
+    "date": "Date",
+    "close": "Close"
+  },
+  "userDropdown": {
+    "defaultUser": "User",
+    "notAvailable": "N/A",
+    "guest": "Guest",
+    "notSignedIn": "Not signed in",
+    "defaultLanguage": "English",
+    "viewPricing": "View Pricing",
+    "contactUs": "Contact Us",
+    "signIn": "Sign In",
+    "totalCredits": "Total Credits",
+    "planCredits": "Plan Credits",
+    "expiresOn": "Expires on",
+    "creditsHistory": "Credits History",
+    "subscribePlan": "Subscribe Plan",
+    "supportTicket": "Support Ticket",
+    "signOut": "Sign Out"
+  },
+  "header": {
+    "homeAriaLabel": "Curify Home",
+    "logoAlt": "Curify Logo",
+    "home": "Home",
+    "discover": "Discover",
+    "gallery": "Gallery",
+    "tools": "Tools",
+    "blogs": "Blogs",
+    "workspace": "Workspace",
+    "more": "More",
+    "logIn": "Log in",
+    "topUpCredits": "Top up Credits",
+    "menuAriaLabel": "Menu"
+  },
+  "footer": {
+    "copyright": "© 2025 Curify",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
+  },
+  "actionButtons": {
+    "save": "Save",
+    "copy": "Copy",
+    "share": "Share"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "Close dialog"
+  },
+  "galleryModal": {
+    "script": "Script",
+    "tags": "Tags"
+  },
+  "videoPlayer": {
+    "original": "Original",
+    "translated": "Translated",
+    "unsupported": "Your browser does not support the video tag."
+  }
+}

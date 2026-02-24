@@ -1,298 +1,84 @@
 {
-  "home": {
-    "metadata": {
-      "title": "Curify | KI-gestützte Content-Erstellung",
-      "description": "Curify ist eine KI-native Plattform, die Kreativen, Lehrkräften und Medienteams hilft, Videos, Manga und Präsentationen im großen Maßstab zu erstellen und zu lokalisieren."
-    },
-    "hero": {
-      "title": "KI-gestützte Content-Erstellung der nächsten Stufe",
-      "description": "Curify Studio entwickelt eine KI-native Plattform für Content-Erstellung, die Kreative und Organisationen dabei unterstützt, Sprach- und Formatbarrieren zu überwinden. Wir ermöglichen authentische Übersetzungen, die Ton, Stil und emotionale Tiefe bewahren – und helfen so, Inhalte effektiv für ein globales Publikum zu skalieren. An der Schnittstelle von Medien, Bildung und Unterhaltung bieten wir Werkzeuge, um Inhalte nahtlos an internationale Märkte anzupassen."
-    }
-  },
-  "coreFeatures": {
-    "oneShot": {
-      "title": "Ein-Klick-Übersetzung",
-      "desc": "Komplette Videoübersetzung mit Voice-over, Untertiteln und Lippen-Synchronisation in einem Schritt."
-    },
-    "toneColor": {
-      "title": "Stimmfarbenerhaltung",
-      "desc": "Erhält die einzigartigen Stimmmerkmale und Tonqualitäten des ursprünglichen Sprechers."
-    },
-    "emotional": {
-      "title": "Emotionale Sprache",
-      "desc": "KI reproduziert emotionale Nuancen und sorgt für authentischen Ausdruck über Sprachgrenzen hinweg."
-    },
-    "lipSync": {
-      "title": "Lippen-Synchronisation",
-      "desc": "Fortschrittliche Lippen-Synchronisierung, die Mundbewegungen perfekt mit der übersetzten Tonspur abgleicht."
-    },
-    "subtitle": {
-      "title": "Untertitelgenerator",
-      "desc": "Intelligente Untertitelerstellung mit präzisem Timing und natürlichem Sprachfluss."
-    },
-    "languages": {
-      "title": "170+ Sprachen",
-      "desc": "Übersetzen Sie Ihre Inhalte in über 170 Sprachen mit nahezu muttersprachlicher Genauigkeit."
-    }
-  },
-  "upcoming": {
-    "title": "Demnächst verfügbar",
-    "subtitle": "Nächste Generation von Funktionen in Entwicklung",
-    "styleTransfer": {
-      "title": "Stilübertragung",
-      "desc": "Wende filmische oder markenspezifische Stile auf deine Videos an – mit KI-gestützter visueller Transformation.",
-      "icon": "🎨",
-      "status": "Kommt in Q3 2025",
-      "transcript": "Diese Demo verwandelt einen Live-Action-Clip in eine Animation im Ghibli-Stil."
-    },
-    "mangaTranslation": {
-      "title": "Manga-Übersetzung",
-      "desc": "Automatische Übersetzung von Manga und Comics mit Texterkennung, Blasenbearbeitung und kultureller Anpassung.",
-      "icon": "📚",
-      "status": "Kommt in Q3 2025",
-      "transcript": "Dieser Prototyp zeigt die automatische Manga-Übersetzung."
-    },
-    "templatedVideo": {
-      "title": "Vorlagenbasierte Videogenerierung",
-      "desc": "Erstelle professionelle Videos aus Vorlagen mit KI-generierten Inhalten und Markenanpassung.",
-      "icon": "🎬",
-      "status": "Kommt in Q4 2025",
-      "transcript": "Diese Demo zeigt eine Skript-zu-Video-Pipeline."
-    },
-    "statusQ3": "Kommt im Q3 2025",
-    "statusQ4": "Kommt im Q4 2025"
-  },
-  "export": {
-    "title": "Exportieren",
-    "export": "Exportieren",
-    "downloading": "Wird heruntergeladen..."
-  },
-  "delete": {
-    "title": "Bitte bestätigen",
-    "message": "Möchtest du dieses Projekt wirklich löschen?",
-    "warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
-    "cancel": "Abbrechen",
-    "delete": "Löschen",
-    "deleting": "Wird gelöscht..."
-  },
-  "userMenu": {
-    "topUpCredits": "Credits aufladen",
-    "remaining": "Verbleibend",
-    "planRemaining": "Im Plan verbleibend",
-    "validUntil": "Gültig bis",
-    "creditsHistory": "Credit-Verlauf",
-    "subscribePlan": "Plan abonnieren",
-    "supportTicket": "Support-Ticket",
-    "signOut": "Abmelden"
-  },
-  "technology": {
-    "multimodal": {
-      "title": "Multimodale Erkennung",
-      "desc": "Wir kombinieren Sprach- und Untertitelsignale, um genauere und robustere Transkriptionen zu erzielen. Diese Zwei-Kanal-Erkennung reduziert Fehler und sorgt für bessere Übereinstimmung mit dem Originalinhalt – insbesondere in lauten oder komplexen Audioszenen."
-    },
-    "emotional": {
-      "title": "Emotionale Sprachsynthese",
-      "desc": "Unsere Sprachsynthese-Modelle erzeugen ausdrucksstarke, emotional nuancierte Sprache, die das Storytelling verbessert und das Publikum stärker einbindet. Durch die Erfassung von Tonfall, Rhythmus und Nuancen wirken AI-Stimmen menschlicher."
-    },
-    "lengthaware": {
-      "title": "Längenbewusste Übersetzung und Anpassung",
-      "desc": "Wir optimieren Übersetzungen nicht nur auf Genauigkeit, sondern auch auf Timing und Tempo – entscheidend für die Synchronisation von Video und Sprache. Nutzer können Tonfall, Länge und Formulierungen an unterschiedliche Inhalte und Zielgruppen anpassen."
-    },
-    "controlled": {
-      "title": "Kontrollierte Videogenerierung",
-      "desc": "Wir ermöglichen strukturierte, vorlagenbasierte Videogenerierung mit steuerbaren visuellen Elementen und Übergängen. So erhalten Kreative kreative Freiheit und gleichzeitige Produktionskonsistenz – mit weniger manueller Arbeit und hoher Qualität."
-    }
-  },
-  "tools": {
-    "video_dubbing": {
-      "title": "Video-Synchronisation",
-      "desc": "Übersetze dein Video in jede Sprache mit präziser Lokalisierung und Sprachsynchronisation"
-    },
-    "subtitle_captioner": {
-      "title": "Untertitel-Generator",
-      "desc": "Erstelle automatisch mehrsprachige Untertitel zur Verbesserung von Klarheit und Zugänglichkeit"
-    },
-    "lip_syncing": {
-      "title": "Lippensynchronisation",
-      "desc": "Perfekte Lippensynchronität dank KI-gestützter Technik"
-    },
-    "style_transfer": {
-      "title": "Stilübertragung",
-      "desc": "Verwandle dein Video in Pixar-, Ghibli- oder andere künstlerische Stile – bald verfügbar"
-    },
-    "coming_soon": "Bald verfügbar",
-    "create": "Erstellen",
-    "meta": {
-      "title": "Curify Tools",
-      "description": "Entdecken Sie die Curify Studio-Tools für Video-Dubbing, Untertitel und KI-gestützte Inhaltsworkflows."
-    },
-    "hero": {
-      "watch_demo": "Sehen Sie sich dasselbe Video an, das in verschiedene Sprachen übersetzt wurde, mit bewahrter Emotion und Lippen-Synchronisation",
-      "transcript_label": "Transkript",
-      "training_transcript": "Willkommen bei Curify Studio. In diesem Video zeigen wir, wie KI Inhalte über Sprachen hinweg übersetzt und synchronisiert...",
-      "currently_playing": "Aktuell wird gespielt: {label} Version"
-    },
-    "products": {
-      "title": "Produkte & Dienstleistungen",
-      "subtitle": "Unsere KI-gesteuerten Lösungen sind live und verbessern sich kontinuierlich – bereits von Kreativen und Teams weltweit genutzt."
-    },
-    "audience": {
-      "title": "Unsere Zielgruppe",
-      "v1": "🎥 Videoersteller und YouTuber, die in globale Märkte expandieren",
-      "v2": "📖 Pädagogen und Wissensplattformen, die Bücher in Vorlesungen umwandeln",
-      "v3": "🎶 Medien- und Unterhaltungsunternehmen, die Inhalte in verschiedene Sprachen lokalisieren",
-      "v4": "📚 Manga-Verlage und Fan-Übersetzer, die Übersetzung und Satz automatisieren"
-    },
-    "free_badge": "kostenlos"
-  },
-  "bilingual": {
-    "metadata": {
-      "title": "Kostenloser Generator für zweisprachige Untertitel | Curify AI",
-      "description": "Erstelle mit Curifys kostenlosem KI-Tool zweisprachige Untertitel für deine Videos. Ideal für YouTube, TikTok, Bildung und globale Creator."
-    },
-    "title": "Zweisprachige Untertitel leicht gemacht",
-    "intro": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
-    "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
-    "cta": "Jetzt kostenlos ausprobieren",
-    "why": {
-      "title": "Warum Curify für zweisprachige Untertitel?",
-      "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
-      "point2": "Bewahrt Emotion, Ton und Timing.",
-      "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
-      "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
-    },
-    "faq": {
-      "title": "Häufige Fragen",
-      "q1": "Ist es wirklich kostenlos?",
-      "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
-      "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
-      "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
-    }
-  },
-  "videoDubbing": {
-    "metadata": {
-      "title": "KI-Tool für Video-Synchronisation | Curify AI",
-      "description": "Synchronisiere deine Videos in über 170 Sprachen mit KI-Stimmklonen, Emotionsbewahrung und Lippensynchronisation. Teste Curifys KI-Synchronisation kostenlos."
-    },
-    "title": "KI-Video-Synchronisation mit natürlicher Stimme",
-    "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken."
-  },
-  "about": {
-    "metadata": {
-      "title": "Über Curify | Vision, Technologie & Team",
-      "description": "Erfahre mehr über Curifys Vision, Content-Erstellung mit KI zu demokratisieren. Wir sind ein Team aus Ingenieur:innen und Kreativen, das die Zukunft der Medienlokalisierung baut."
-    }
-  },
-  "contact": {
-    "metadata": {
-      "title": "Kontakt | Curify Studio",
-      "description": "Kontaktiere das Curify-Team für Support, Vertrieb oder Partnerschaften. Wir helfen dir, Inhalte global zu skalieren."
-    }
-  },
   "blog": {
     "metadata": {
       "title": "Curify Blog | Einblicke in KI-Content-Erstellung",
       "description": "Lies die neuesten Artikel zu KI-Videoerstellung, Synchronisation, Stiltransfer und der Zukunft der Content-Erstellung."
-    }
-  },
-  "pricing": {
-    "metadata": {
-      "title": "Preispläne | Curify Studio",
-      "description": "Wähle den passenden Plan für deine Content-Erstellung - von kostenlosen Tools bis zu KI-Synchronisation und Lokalisierung auf Enterprise-Niveau."
     },
-    "header": {
-      "title": "Erste Schritte mit einem Plan",
-      "subtitle": "Wählen Sie einen Plan, der Ihren Bedürfnissen entspricht."
-    },
-    "common": {
-      "month": "Monat",
-      "pricing": "Preisgestaltung",
-      "receive": "Erhalten"
-    },
-    "buttons": {
-      "signUp": "Registrieren",
-      "subscribePlan": "Plan abonnieren",
-      "currentPlan": "Aktueller Plan",
-      "comingSoon": "Demnächst verfügbar",
-      "downgradeToFree": "Auf Kostenlos herabstufen",
-      "downgradeToCreator": "Auf Creator herabstufen",
-      "contactSales": "Vertrieb kontaktieren"
-    },
-    "plans": {
-      "free": {
-        "name": "Kostenlos",
-        "description": "Ideal zum Testen von Tools und für leichte Arbeiten",
-        "features": [
-          "Videos ohne Wasserzeichen herunterladen",
-          "1 Stunde kostenlose Untertitelverarbeitung",
-          "SRT-Dateien exportieren"
-        ]
+    "latestArticles": "Neueste Artikel",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+        "date": "30. Januar 2026",
+        "readTime": "9 Min. Lesezeit",
+        "tag": "KI-Plattform",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
       },
-      "creator": {
-        "name": "Kreator",
-        "description": "Ideal für kleine Creators mit regelmäßiger Untertitelung und leichter Synchronisation",
-        "plusTitle": "Alles in Kostenlos, plus:",
-        "features": [
-          "Lippensynchronisation",
-          "Stapelverarbeitung",
-          "5 Stunden kostenlose Untertitelverarbeitung",
-          "Bis zu 30 Minuten pro Aufgabe"
-        ]
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
+        "date": "30. Januar 2026",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "KI-Architektur",
+        "image": "/images/qa-bot-architecture.jpg"
       },
-      "pro": {
-        "name": "Pro",
-        "description": "Demnächst verfügbar — Entwickelt für Creators mit hohem Volumen",
-        "plusTitle": "Alles in Creator, plus:",
-        "features": [
-          "Stimmverschönerung & Rauschunterdrückung",
-          "Prioritätswarteschlange",
-          "Bis zu 60 Min. pro Aufgabe",
-          "Unbegrenzte Untertitelminuten"
-        ]
+      {
+        "slug": "age_AI",
+        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
+        "date": "30. Januar 2026",
+        "readTime": "8 Min. Lesezeit",
+        "tag": "KI-Branche",
+        "image": "/images/data-science-ai-era.jpg"
       },
-      "enterprise": {
-        "name": "Unternehmen",
-        "description": "Für Teams, Studios und Unternehmens-Workflows",
-        "customPricing": "Individuell",
-        "unlimited": "Unbegrenzt 🐚",
-        "tailoredSupport": "& maßgeschneiderter Support",
-        "plusTitle": "Alles in Pro, plus:",
-        "features": [
-          "Dedizierter Account-Manager",
-          "On-Premise-Bereitstellungsoptionen",
-          "API-Zugriff & Nutzungsanalyse",
-          "Individuelle Integrationen & SLA",
-          "Unbegrenzte Verarbeitungsstunden"
-        ]
+      {
+        "slug": "storyboard-labeling",
+        "title": "Vom Rohmaterial zum Storyboard: KI-gestützte Videoanalyse",
+        "date": "11. Dezember 2025",
+        "readTime": "10 Min. Lesezeit",
+        "tag": "Videoanalyse",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "KI-Video-Enhancement: Storyboards, Meme-Captions & SFX-Automatisierung",
+        "date": "18. November 2025",
+        "readTime": "7 Min. Lesezeit",
+        "tag": "Videoverbesserung",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Bewertung der KI-Videoübersetzung: Metriken, auf die es ankommt",
+        "date": "14. November 2025",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "Lokalisierung",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Erstellen Sie Ihre eigene KI-gestützte Comic-Animation: Schritt-für-Schritt-Anleitung",
+        "date": "28. Oktober 2025",
+        "readTime": "5 Min. Lesezeit",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Teil 2: Agenten vs. Workflows – von der Kontrolle zur Intelligenz",
+        "date": "28. Oktober 2025",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "Generative Tools",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Teil 3: AE vs. ComfyUI – Motion Design vs. Diffusions-Pipelines",
+        "date": "28. Oktober 2025",
+        "readTime": "7 Min. Lesezeit",
+        "tag": "Tools & Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
       }
-    },
-    "table": {
-      "header": {
-        "feature": "Funktion / Limit"
-      },
-      "rows": {
-        "videoDownloadWithWatermark": "Video-Download mit Wasserzeichen",
-        "videoDownloadWithoutWatermark": "Video-Download ohne Wasserzeichen",
-        "downloadSrt": "SRT-Datei herunterladen",
-        "voiceBeautification": "Stimmverschönerung & Rauschunterdrückung",
-        "lipSync": "Lippensynchronisation",
-        "subtitleTools": "Untertitel-Tools (hinzufügen/entfernen, keine Übersetzung)",
-        "batchProcessing": "Stapelverarbeitung",
-        "maxVideoLength": "Max. Videolänge pro Aufgabe",
-        "monthlyCredits": "Monatliche kostenlose Credits",
-        "priorityQueue": "Prioritätswarteschlange / Schnellere Verarbeitung",
-        "creditTopUp": "Credit-Aufladung"
-      },
-      "values": {
-        "free": "Kostenlos",
-        "unlimited": "Unbegrenzt",
-        "oneHourPerMonth": "1 Std./Monat",
-        "fiveHoursPerMonth": "5 Std./Monat",
-        "fiveMinutes": "5 Min.",
-        "thirtyMinutes": "30 Min.",
-        "sixtyMinutes": "60 Min."
-      }
-    }
+    ]
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
@@ -1144,15 +930,23 @@
       "#GenerativeKI",
       "#Karriereentwicklung",
       "#TechTrends"
-    ]
+    ],
+    "conclusion": "Ihre persönliche Erfahrung ist Ihr Vorteil. Ein Sprachmodell kann Logik nachahmen, aber es hat nicht die jahrelangen 'Kampfnarben' von gescheiterten Implementierungen oder die Intuition, die aus der Navigation in komplexen Organisationen entsteht.",
+    "content": "Traditionelle Bereiche wie Suche, Werbung und Empfehlungssysteme (SAR) reifen, und die Branche verlagert ihren Fokus auf leistungsstarke Technik und KI-Architektur. Wir beobachten ein seltsames Paradox.",
+    "lowBarTrap": {
+      "title": "Die \"Niedrige-Hürde\"-Falle",
+      "content": "Master-Studenten können heute GPT-4 nutzen, um in Sekundenschnelle Datenbereinigung, explorative Datenanalyse und Visualisierung durchzuführen. Ohne solide Grundlagen fehlt ihnen jedoch oft das Urteilsvermögen zu erkennen, wann die KI \"halluziniert\" oder statistisch fragwürdige Ergebnisse liefert."
+    },
+    "stakeholderShift": {
+      "title": "Der Wandel der Stakeholder",
+      "content": "Wenn Geschäftspartner ihre eigenen Eingabeaufforderungen schreiben können, um grundlegende Erkenntnisse zu erhalten, fühlen sich viele Data Scientists \"unterfordert\", gefangen in endlosen Besprechungen und sich wiederholendem Prompt-Engineering."
+    },
+    "title": "Data Science im Zeitalter der KI: Ist der \"Traumjob\" noch attraktiv?",
+    "description": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein."
   },
   "aiPlatform": {
     "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "subtitle": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
-    "intro": {
-      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
-      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
-    },
     "imageAlt": "KI-Plattform-Architekturdiagramm",
     "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "mindsetShift": {
@@ -1234,7 +1028,12 @@
       "content": "Für mittelständische Technologieunternehmen bedeutet Erfolg mit KI nicht, ein besseres LLM zu bauen. Es bedeutet, eine Plattform zu schaffen, die KI in einen wiederholbaren, skalierbaren Geschäftsprozess verwandelt.",
       "finalThoughts": "Beginnen Sie mit der Infrastruktur, sichern Sie die Daten und lassen Sie Ihre Teams bauen. Die Zukunft besteht nicht aus einem Modell, das alles beherrscht – sondern aus einer Flotte spezialisierter Agenten, die jeweils ein echtes Geschäftsproblem lösen, alle angetrieben von einer Plattform, die es einfach macht.",
       "callToAction": "Bereit zum Bauen? Halten Sie es einfach, halten Sie es offen und konzentrieren Sie sich darauf, andere zu befähigen."
-    }
+    },
+    "intro": {
+      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
+      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
+    },
+    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen"
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",

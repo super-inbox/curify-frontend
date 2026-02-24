@@ -30,20 +30,24 @@ export default async function AppLocaleLayout({
 
   const user = session?.user
     ? {
-        id: (session.user as any).id,
-        name: session.user.username ?? null,
-        email: session.user.email ?? null,
-        image: session.user.username ?? (session.user as any).avatar_url ?? null,
-        avatar_url:
-          (session.user as any).avatar_url ?? null,
-        user_id: (session.user as any).user_id ?? null,
-        non_expiring_credits: (session.user as any).non_expiring_credits ?? 0,
-        expiring_credits: (session.user as any).expiring_credits ?? 0,
-        plan_name: (session.user as any).plan_name ?? null,
-      }
+      id: (session.user as any).id,
+      name: session.user.username ?? null,
+      email: session.user.email ?? null,
+      image: session.user.username ?? (session.user as any).avatar_url ?? null,
+      avatar_url:
+        (session.user as any).avatar_url ?? null,
+      user_id: (session.user as any).user_id ?? null,
+      non_expiring_credits: (session.user as any).non_expiring_credits ?? 0,
+      expiring_credits: (session.user as any).expiring_credits ?? 0,
+      plan_name: (session.user as any).plan_name ?? null,
+    }
     : null;
 
-  const messages = (await import(`../../../messages/${locale}.json`)).default;
+  const common = (await import(`../../../messages/${locale}/common.json`)).default;
+  const home = (await import(`../../../messages/${locale}/home.json`)).default;
+  const blog = (await import(`../../../messages/${locale}/blog.json`)).default;
+  const pricing = (await import(`../../../messages/${locale}/pricing.json`)).default;
+  const messages = { ...common, ...home, ...blog, ...pricing };
 
   return (
     <html lang={locale} suppressHydrationWarning>

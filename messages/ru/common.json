@@ -1,0 +1,147 @@
+{
+  "export": {
+    "title": "Экспорт",
+    "export": "Экспорт",
+    "downloading": "Скачивание..."
+  },
+  "delete": {
+    "title": "Двойное подтверждение",
+    "message": "Вы уверены, что хотите удалить этот проект?",
+    "warning": "Это действие нельзя отменить.",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "deleting": "Удаление..."
+  },
+  "userMenu": {
+    "topUpCredits": "Пополнить кредиты",
+    "remaining": "Осталось",
+    "planRemaining": "Остаток плана",
+    "validUntil": "Действует до",
+    "creditsHistory": "История кредитов",
+    "subscribePlan": "Подписаться на план",
+    "supportTicket": "Тикет поддержки",
+    "signOut": "Выйти"
+  },
+  "ctaButtons": {
+    "bookDemo": "Забронировать демо",
+    "mockUserNotLoaded": "Фиктивные пользовательские данные еще не загружены."
+  },
+  "emailDrawer": {
+    "joinDiscordCommunity": "Присоединяйтесь к нашему сообществу Discord",
+    "or": "Или",
+    "contactByEmail": "Свяжитесь с нами по электронной почте",
+    "emailPlaceholder": "Электронная почта",
+    "subjectPlaceholder": "Тема (максимум 30 символов)",
+    "detailsPlaceholder": "Вы можете описать здесь свою ситуацию и потребности, чтобы помочь нам лучше понять ее и подготовиться.\n\nМы рассмотрим и ответим по электронной почте в течение 2 рабочих дней.",
+    "invalidEmail": "Пожалуйста, введите действительный адрес электронной почты.",
+    "send": "Отправлять"
+  },
+  "signDrawer": {
+    "welcomeSignup": "Присоединяйтесь к Curify, чтобы глобализировать свои видео",
+    "welcomeSignin": "Продолжайте глобализацию своих видео",
+    "signUp": "Зарегистрироваться",
+    "signIn": "Войти",
+    "enterVerificationCode": "Введите код подтверждения",
+    "or": "или",
+    "emailPlaceholder": "Электронная почта",
+    "invalidEmail": "Пожалуйста, введите действительный адрес электронной почты.",
+    "otpSentTo": "Мы отправили код на",
+    "verificationCodePlaceholder": "Проверочный код",
+    "verifyCode": "Проверить код",
+    "resendCode": "Повторно отправить код",
+    "invalidOtp": "Неверный OTP. Пожалуйста, попробуйте еще раз.",
+    "agreePrefix": "Используя Curify, вы соглашаетесь с нашими",
+    "termsOfService": "Условия использования",
+    "and": "и",
+    "privacyPolicy": "политика конфиденциальности",
+    "logoAlt": "логотип"
+  },
+  "paymentProcessingModal": {
+    "processingTitle": "Обработка платежей",
+    "processingLine1": "Мы ждем, пока наш поставщик услуг подтвердит ваш платеж.",
+    "processingLine2": "Обычно это занимает ~30 секунд.",
+    "processingLine3": "Вы можете закрыть это всплывающее окно, и кредиты появятся автоматически.",
+    "confirmedTitle": "✅ Оплата подтверждена",
+    "confirmedLine": "Перенаправление в рабочую область...",
+    "timeoutTitle": "⚠️ Тайм-аут проверки",
+    "timeoutLine1": "Нам не удалось подтвердить ваш платеж в течение 20 секунд.",
+    "timeoutLine2": "Пожалуйста, проверьте свои кредиты вручную в своем профиле.",
+    "close": "Закрывать"
+  },
+  "topUpModal": {
+    "title": "Пополнение кредитов",
+    "planLabel": "План",
+    "minimumTopupError": "Минимальное пополнение составляет $0,50.",
+    "paymentStartFailed": "Не удалось начать оплату. Пожалуйста, попробуйте еще раз.",
+    "customCreditsLabel": "Введите индивидуальные кредиты",
+    "customCreditsPlaceholder": "например 200",
+    "paymentsPoweredByStripe": "Платежи осуществляются с помощью Stripe.",
+    "creditRate": "1 кредит ≈ ${amount} (План: {plan})"
+  },
+  "transactionHistory": {
+    "title": "Кредитная история",
+    "loading": "Загрузка...",
+    "empty": "Транзакции не найдены",
+    "id": "ИДЕНТИФИКАТОР",
+    "type": "Тип",
+    "credits": "Кредиты",
+    "amount": "Количество",
+    "date": "Дата",
+    "close": "Закрывать"
+  },
+  "userDropdown": {
+    "defaultUser": "Пользователь",
+    "notAvailable": "Н/Д",
+    "guest": "Гость",
+    "notSignedIn": "Не авторизован",
+    "defaultLanguage": "Английский",
+    "viewPricing": "Посмотреть цены",
+    "contactUs": "Связаться с нами",
+    "signIn": "Войти",
+    "totalCredits": "Всего кредитов",
+    "planCredits": "Плановые кредиты",
+    "expiresOn": "Срок действия истекает",
+    "creditsHistory": "Кредитная история",
+    "subscribePlan": "План подписки",
+    "supportTicket": "Билет в службу поддержки",
+    "signOut": "Выход"
+  },
+  "header": {
+    "homeAriaLabel": "Curify Главная",
+    "logoAlt": "Логотип Curify",
+    "home": "Дом",
+    "discover": "Обнаружить",
+    "gallery": "Галерея",
+    "tools": "Инструменты",
+    "blogs": "Блоги",
+    "workspace": "Рабочая область",
+    "more": "Более",
+    "logIn": "Авторизоваться",
+    "topUpCredits": "Пополнить кредиты",
+    "menuAriaLabel": "Меню"
+  },
+  "footer": {
+    "copyright": "© 2025 Кюрифай",
+    "privacyPolicy": "политика конфиденциальности",
+    "termsOfService": "Условия использования",
+    "aboutUs": "О нас",
+    "contactUs": "Связаться с нами"
+  },
+  "actionButtons": {
+    "save": "Сохранять",
+    "copy": "Копировать",
+    "share": "Делиться"
+  },
+  "dialogCloseButton": {
+    "ariaLabel": "Закрыть диалог"
+  },
+  "galleryModal": {
+    "script": "Скрипт",
+    "tags": "Теги"
+  },
+  "videoPlayer": {
+    "original": "Оригинал",
+    "translated": "Переведено",
+    "unsupported": "Ваш браузер не поддерживает тег видео."
+  }
+}
