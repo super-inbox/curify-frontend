@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
-import GoogleLoginButton from "@/app/[locale]/_components/button/GoogleLoginButton";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 
 export default function ToolsClient() {
@@ -25,9 +24,7 @@ export default function ToolsClient() {
     [setJobType, setModalState]
   );
 
-  // ---------------------------
-  // Tools hub cards (existing)
-  // ---------------------------
+  // Tools hub cards
   const tools = [
     {
       id: "video-dubbing",
@@ -41,7 +38,7 @@ export default function ToolsClient() {
       title: (
         <span>
           {t("tools.subtitle_captioner.title")}{" "}
-          <span className="text-red-600 font-bold">for FREE</span>
+          <span className="text-red-600 font-bold">{t("tools.free_badge")}</span>
         </span>
       ),
       desc: t("tools.subtitle_captioner.desc"),
@@ -64,9 +61,7 @@ export default function ToolsClient() {
     },
   ];
 
-  // ---------------------------
-  // Language switching demo (from HomeClient)
-  // ---------------------------
+  // Language switching demo (local demo-only)
   const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -100,9 +95,6 @@ export default function ToolsClient() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeLanguage]);
 
-  // ---------------------------
-  // Feature sections (from HomeClient)
-  // ---------------------------
   const coreFeatures = [
     { title: t("coreFeatures.oneShot.title"), desc: t("coreFeatures.oneShot.desc"), icon: "🎯" },
     { title: t("coreFeatures.toneColor.title"), desc: t("coreFeatures.toneColor.desc"), icon: "🎨" },
@@ -117,12 +109,11 @@ export default function ToolsClient() {
       <BgParticle />
 
       <div className="relative flex flex-col items-center mt-28 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+        {/* H1 for SEO */}
+        <h1 className="sr-only">{t("tools.meta.title")}</h1>
 
-        {/* --------------------------- */}
-        {/* Tools grid (central hub) */}
-        {/* --------------------------- */}
+        {/* Tools grid */}
         <section className="w-full mb-14">
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {tools.map((tool) => (
               <div
@@ -152,13 +143,11 @@ export default function ToolsClient() {
           </div>
         </section>
 
-        {/* --------------------------- */}
         {/* Language switching demo */}
-        {/* --------------------------- */}
         <section className="w-full mt-2 mb-20">
           <div className="text-center mb-8">
             <p className="text-base sm:text-lg text-[var(--c2)] mb-6">
-              Watch the same video translated across different languages with preserved emotion and lip sync
+              {t("tools.hero.watch_demo")}
             </p>
           </div>
 
@@ -175,7 +164,7 @@ export default function ToolsClient() {
               />
 
               <p className="text-sm text-gray-500 mt-4">
-                Transcript: "Welcome to Curify Studio. In this video, we showcase how AI translates and dubs content across languages..."
+                {t("tools.hero.transcript_label")}: "{t("tools.hero.training_transcript")}"
               </p>
 
               <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
@@ -188,6 +177,7 @@ export default function ToolsClient() {
                         ? "bg-blue-600 text-white shadow-md scale-110"
                         : "bg-white/80 text-gray-800 hover:bg-gray-100 border border-gray-300"
                     }`}
+                    type="button"
                   >
                     <span className="text-lg">{lang.flag}</span>
                     <span>{lang.label}</span>
@@ -196,22 +186,20 @@ export default function ToolsClient() {
               </div>
 
               <p className="text-center mt-4 text-[var(--c2)] font-medium">
-                Currently playing: {languages[activeLanguage].label} version
+                {t("tools.hero.currently_playing", { label: languages[activeLanguage].label })}
               </p>
             </div>
           </div>
         </section>
 
-        {/* --------------------------- */}
-        {/* Products & Services (core features) */}
-        {/* --------------------------- */}
+        {/* Products & Services */}
         <section className="w-full mb-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
-              Products & Services
+              {t("tools.products.title")}
             </h2>
             <p className="text-base sm:text-lg text-[var(--c2)]">
-              Our AI-driven solutions are live and continuously improving — already used by creators and teams worldwide.
+              {t("tools.products.subtitle")}
             </p>
           </div>
 
@@ -249,26 +237,22 @@ export default function ToolsClient() {
           </div>
         </section>
 
-        {/* --------------------------- */}
         {/* Target audience */}
-        {/* --------------------------- */}
         <section className="w-full mb-20">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
-              Our Target Audience
+              {t("tools.audience.title")}
             </h2>
             <ul className="text-base sm:text-lg text-[var(--c2)] leading-relaxed list-disc list-inside space-y-2 text-left">
-              <li>🎥 Video creators and YouTubers expanding to global markets</li>
-              <li>📖 Educators and knowledge platforms converting books to lectures</li>
-              <li>🎶 Media and entertainment companies localizing content across languages</li>
-              <li>📚 Manga publishers and fan translators automating translation and typesetting</li>
+              <li>{t("tools.audience.v1")}</li>
+              <li>{t("tools.audience.v2")}</li>
+              <li>{t("tools.audience.v3")}</li>
+              <li>{t("tools.audience.v4")}</li>
             </ul>
           </div>
         </section>
 
-        {/* --------------------------- */}
-        {/* Upcoming products */}
-        {/* --------------------------- */}
+        {/* Upcoming products (your existing i18n already) */}
         <section className="w-full mb-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
@@ -304,7 +288,7 @@ export default function ToolsClient() {
                   />
 
                   <p className="text-xs text-gray-400 mt-2">
-                    Transcript: {transcriptKey}
+                    {t("tools.hero.transcript_label")}: {transcriptKey}
                   </p>
                 </div>
               );
