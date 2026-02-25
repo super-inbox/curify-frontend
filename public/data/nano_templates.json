@@ -1123,5 +1123,151 @@
         ]
       }
     }
-  }    
+  },
+  {
+    "id": "template-fashion-ecommerce-detail",
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "description": "生成9:16竖版电商服饰详情长图，四段式排版，暖色调、干净高端的商业时尚风格，4K高清，适合电商详情页与社媒展示。",
+        "base_prompt": "（Fashion E-commerce Designer）根据上传的服饰参考图，生成一张 9:16 竖版电商服饰详情长图，整体风格统一暖色调、干净高端、商业时尚质感，4K 高清，产品与文字对焦清晰。\n\n画面从上到下分为 4 个清晰板块：\n1) 首屏视觉区：多位高颜值模特穿着该服饰，场景时尚，姿势自然灵动不僵硬；配文字【核心卖点：{core_selling_point}】。\n2) 面料细节区：3 张面料特写图（质感、弹力、工艺细节），搭配简洁图标说明。\n3) 搭配展示区：2 种不同配色或穿搭方式并排对比展示。\n4) 尺码信息区：标准尺码表格，含美码 XS、S、M、L、XL；采用通用正常尺码数据，文字清晰易读。\n\n整体排版整洁高级，色调统一，突出产品质感与卖点，适合电商详情页与商品宣传使用。直接出图。核心服饰参考上传图。核心卖点：{core_selling_point}。",
+        "parameters": [
+          {
+            "name": "core_selling_point",
+            "label": "核心卖点",
+            "type": "text",
+            "placeholder": ["保暖显瘦", "透气舒适", "百搭通勤", "高弹塑形", "防风防水"]
+          }
+        ]
+      },
+      "en": {
+        "category": "Fashion E-commerce Detail Long Image",
+        "description": "Generate a 9:16 vertical fashion e-commerce detail long image with a 4-section layout, warm tones, clean premium commercial style, 4K, suitable for product detail pages and social media showcases.",
+        "base_prompt": "(Fashion E-commerce Designer) Using the uploaded clothing reference image, generate a 9:16 vertical fashion e-commerce detail long image. Keep a consistent warm tone, clean premium layout, and high-end commercial fashion look in 4K resolution. Ensure the product and text are sharp and well-focused.\n\nSplit the canvas into 4 clear sections from top to bottom:\n1) Hero Visual: multiple attractive models wearing the outfit; a stylish environment; natural, dynamic poses (not stiff). Add headline text: [Key Selling Point: {core_selling_point}].\n2) Fabric Details: 3 close-up fabric shots (texture, stretch, craftsmanship details) with simple icon callouts.\n3) Styling Comparison: 2 different colorways or styling options shown side-by-side.\n4) Size Info: a standard size table including US sizes XS, S, M, L, XL with commonly used normal sizing values; text must be crisp and readable.\n\nOverall: tidy, premium composition; unified color tone; highlight material quality and selling points. Output the image directly. The outfit must follow the uploaded reference. Key selling point: {core_selling_point}.",
+        "parameters": [
+          {
+            "name": "core_selling_point",
+            "label": "Key Selling Point",
+            "type": "text",
+            "placeholder": [
+              "Warm & slimming",
+              "Breathable and comfortable",
+              "Versatile for workwear",
+              "High-stretch shaping fit",
+              "Windproof & waterproof"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint",
+    "locales": {
+      "en": {
+        "category": "Portrait Retouching Blueprint",
+        "description": "Create a professional portrait retouching blueprint with two side-by-side panels: left shows the untouched original portrait with precise red annotations and imperative English instructions; right shows the fully retouched final portrait based on those annotations.",
+        "base_prompt": "Professional portrait retoucher and blueprint designer. Create a professional portrait retouching blueprint with two side-by-side panels.\n\nLeft panel:\n- Show ONLY the original portrait (do not retouch it).\n- Mark all areas to be modified with precise red annotations (red lines, red circles, red dotted lines, red hand-drawn grid textures).\n- Each annotation must have a short, clear imperative English instruction.\n\nRight panel:\n- Show the fully retouched, optimized final portrait according to the left panel annotations.\n\nRetouching areas and requirements (must be annotated on the left and executed on the right):\n- Skin: refine texture, reduce oiliness, even skin tone, reduce redness.\n- Face: reshape eyebrows, define jawline, refine nose shape, slightly whiten teeth.\n- Eyes: reduce dark circles, eliminate puffiness, refine eye shape.\n- Hair: tame stray hairs, add natural volume.\n- Lighting & background: soften background, enhance fill light, balance overall lighting.\n\nOutput rules:\n- Left: original + accurate red annotations + short imperative English labels.\n- Right: polished, natural-looking retouched version.\n- No extra descriptions; only output the two-panel blueprint image.\n- Style: realistic, high-detail, professional portrait retouching blueprint.\nGenerate directly.",
+        "parameters": []
+      },
+      "zh": {
+        "category": "人像修图蓝图类",
+        "description": "制作专业人像修图蓝图：左右双栏排版，左侧为未修图原图+精准红色标注与英文指令，右侧为按标注完成的真实自然精修效果图。",
+        "base_prompt": "（Professional Portrait Retoucher）你是一位顶尖人像修图师与修图蓝图设计师。生成一张专业人像修图蓝图，左右两栏并排。\n\n左侧面板：\n- 仅展示原始人像（禁止对原图做任何修图）。\n- 用精准红色标注指出所有需要修改的位置（红线、红圈、红色虚线、红色手绘网格纹理等）。\n- 每处标注对应一条简短、清晰的英文祈使句修图指令。\n\n右侧面板：\n- 按左侧标注与指令完成精修后的最终人像，真实自然、专业高质感。\n\n必须标注并执行的修图项：\n- Skin：refine texture / reduce oiliness / even skin tone / reduce redness\n- Face：reshape eyebrows / define jawline / refine nose shape / slightly whiten teeth\n- Eyes：reduce dark circles / eliminate puffiness / refine eye shape\n- Hair：tame stray hairs / add natural volume\n- Lighting & background：soften background / enhance fill light / balance overall lighting\n\n输出规则：\n- 左侧：原图 + 清晰准确的红色标注 + 简短英文指令。\n- 右侧：完成后的自然精修图。\n- 不要输出额外文字说明，只输出双栏蓝图成图。\n- 风格：真实、高清、专业修图蓝图。\n直接出图。",
+        "parameters": []
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic",
+    "locales": {
+      "zh": {
+        "category": "历史文物类",
+        "description": "生成3:4中国风复古信息图海报，以文物手绘插画为中心，四象限科普板块+延伸知识区，典雅稳重、适合社交平台分享。",
+        "base_prompt": "（Chinese Style Infographic Designer）你是一位顶尖中国风复古信息图设计师，擅长融合传统纹样与科普内容，打造典雅兼具传播性的海报。\n\n根据用户指定的【{cultural_relic}】，生成一张 3:4 比例中国风复古信息图海报，标题为《文化价值与历史意义：中华文明的璀璨明珠》：\n- 画面中心：该文物的手绘插画，置于带有龙纹与云纹的传统边框中。\n- 四象限布局：\n  左上：历史地位\n  右上：考古价值\n  左下：艺术成就\n  右下：当代影响\n  每个板块都配项目符号列表与小图标。\n- 底部区域：\"延伸知识\"板块。\n\n整体色调柔和沉稳，以米黄、赭石、朱红与墨黑为主，营造中国古纸与墨书质感；背景装饰云纹、龙纹、回纹等传统纹样；中文文字采用书法风格字体。\n\n适合在社交平台分享（全程客观科普，不添加主观评价）。直接出图。文物为【{cultural_relic}】。",
+        "parameters": [
+          {
+            "name": "cultural_relic",
+            "label": "文物名称",
+            "type": "text",
+            "placeholder": ["越王勾践剑", "曾侯乙编钟", "司母戊鼎", "玉琮", "青铜爵"]
+          }
+        ]
+      },
+      "en": {
+        "category": "Chinese Cultural Relic Retro Infographic",
+        "description": "Generate a 3:4 Chinese retro-style infographic poster about a cultural relic’s historical and cultural significance, with a central hand-painted illustration, four quadrant sections, and an extra knowledge section.",
+        "base_prompt": "(Chinese Retro Infographic Designer) You are a top Chinese retro infographic designer who blends traditional patterns with objective educational content.\n\nGiven the cultural relic 【{cultural_relic}】, generate a 3:4 Chinese retro-style infographic poster titled \"Cultural Value & Historical Significance: A Jewel of Chinese Civilization\".\n- Center: a hand-painted illustration of the relic inside a traditional frame featuring dragon and cloud motifs.\n- Four quadrants:\n  Top-left: Historical Status\n  Top-right: Archaeological Value\n  Bottom-left: Artistic Achievement\n  Bottom-right: Modern Impact\n  Each quadrant contains bullet points and small icons.\n- Bottom area: an \"Extra Knowledge\" section.\n\nVisual style: calm, elegant palette (rice paper beige, ochre, vermilion, ink black) with antique paper + ink texture. Background includes traditional patterns (clouds, dragons, key-fret/meander). Typography: Chinese-calligraphy-inspired headings with clean readable body text.\n\nMust remain objective and educational (no subjective praise). Output the poster directly. Relic: 【{cultural_relic}】.",
+        "parameters": [
+          {
+            "name": "cultural_relic",
+            "label": "Cultural Relic",
+            "type": "text",
+            "placeholder": [
+              "Sword of Goujian",
+              "Zeng Hou Yi Bronze Bells",
+              "Simuwu Ding",
+              "Jade Cong",
+              "Bronze Jue Cup"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-dog-breed-retro-infographic",
+    "locales": {
+      "zh": {
+        "category": "犬种科普类",
+        "description": "生成9:16复古科学插画风犬种信息图：精细手绘犬种插画+解剖标注，多板块科普布局，旧纸质感，适合社交平台分享。",
+        "base_prompt": "（Retro Science Illustrator）你是一位顶尖复古科学插画师，擅长融合旧纸张质感与精准科普内容，打造兼具观赏性与知识性的犬种信息图。\n\n根据用户指定的【{dog_breed}】和【{dog_breed_english}】，生成一张 9:16 比例复古风格信息图海报，标题为「{dog_breed} - {dog_breed_english}」。\n\n画面核心：该犬种的精细手绘插画，带解剖标注，指向被毛、体型、足爪等关键特征。\n\n布局为多个清晰板块：\n- 左上：解剖结构与适应性（骨骼示意、肌肉层示意、足爪结构、健康注意事项子板块；配小图标与项目符号）\n- 右上：行为特征与可训练性（行为流程图、能量/专注曲线、可训练性条形图、互动场景连环画）\n- 左下：被毛系统与护理（皮肤横截面示意图、被毛放大图、护理要点清单）\n- 右下：个性总结（图标化性格标签 + 一句总结性文案）\n\n整体色调柔和沉稳，以米黄、深褐、浅棕为主，营造旧纸张与科学插画质感；背景点缀该犬种原生环境（农场/山林/家居等）的简约线稿；英文用清晰衬线体，中文用简洁无衬线体，标注用手写风格。\n\n全程客观科普，不添加主观评价。直接出图。犬种为【{dog_breed}】，英文名为【{dog_breed_english}】。",
+        "parameters": [
+          {
+            "name": "dog_breed",
+            "label": "犬种名称（中文）",
+            "type": "text",
+            "placeholder": ["金毛寻回犬", "柯基犬", "哈士奇", "贵宾犬", "比格犬"]
+          },
+          {
+            "name": "dog_breed_english",
+            "label": "犬种名称（英文）",
+            "type": "text",
+            "placeholder": [
+              "Golden Retriever",
+              "Corgi",
+              "Siberian Husky",
+              "Poodle",
+              "Beagle"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Dog Breed Retro Science Infographic",
+        "description": "Generate a 9:16 retro science illustration infographic for a dog breed, with a detailed hand-drawn breed illustration, anatomical callouts, and multiple structured educational sections.",
+        "base_prompt": "(Retro Science Illustrator) You are a top retro scientific illustrator who combines antique paper textures with precise educational content.\n\nGiven 【{dog_breed}】 and its English name 【{dog_breed_english}】, generate a 9:16 retro-style infographic poster titled \"{dog_breed} - {dog_breed_english}\".\n\nCenterpiece: a highly detailed hand-drawn illustration of the breed with anatomical callouts pointing to coat, body proportions, paws, and other key traits.\n\nStructured sections:\n- Top-left: Anatomy & Adaptation (mini panels for skeleton diagram, muscle layer diagram, paw structure, and health notes; with icons + bullet points)\n- Top-right: Behavior & Trainability (behavior flow chart, energy/focus curve, trainability bar chart, and a small interaction comic strip)\n- Bottom-left: Coat System & Care (skin cross-section diagram, magnified coat texture, and care checklist)\n- Bottom-right: Personality Summary (icon-based trait tags + one concise summary line)\n\nVisual style: calm earthy palette (antique beige, deep brown, light tan) with aged paper + scientific illustration feel. Background includes minimal line-art of the breed’s typical environment (farm/forest/home, etc.). Typography: clean serif for English, clean sans-serif for Chinese labels if present; handwritten style for callouts.\n\nKeep the content objective and educational (no subjective praise). Output the poster directly. Breed: 【{dog_breed}】; English name: 【{dog_breed_english}】.",
+        "parameters": [
+          {
+            "name": "dog_breed",
+            "label": "Dog Breed (Chinese or Local Name)",
+            "type": "text",
+            "placeholder": ["金毛寻回犬", "柯基犬", "哈士奇", "贵宾犬", "比格犬"]
+          },
+          {
+            "name": "dog_breed_english",
+            "label": "Dog Breed (English)",
+            "type": "text",
+            "placeholder": [
+              "Golden Retriever",
+              "Corgi",
+              "Siberian Husky",
+              "Poodle",
+              "Beagle"
+            ]
+          }
+        ]
+      }
+    }
+  }
 ]
