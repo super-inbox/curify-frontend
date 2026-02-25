@@ -424,313 +424,312 @@
         "title": "wuhan"
       }
     }
-  },  
-    {
-      "id": "template-architecture-empire-state-building",
-      "template_id": "template-architecture",
-      "asset": {
-        "image_url": "/images/nano_insp/template-architecture-zh-empire-state-building.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-empire-state-building-prev.jpg"
-      },
-      "params": {
-        "landmark": "empire state building"
-      },
-      "locales": {
-        "zh": {
-          "category": "建筑分析图",
-          "title": "empire state building"
-        },
-        "en": {
-          "category": "Architectural Analysis Infographic",
-          "title": "empire state building"
-        }
-      }
+  },
+  {
+    "id": "template-architecture-empire-state-building",
+    "template_id": "template-architecture",
+    "asset": {
+      "image_url": "/images/nano_insp/template-architecture-zh-empire-state-building.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-empire-state-building-prev.jpg"
     },
-    {
-      "id": "template-architecture-giant-wild-goose-pagoda",
-      "template_id": "template-architecture",
-      "asset": {
-        "image_url": "/images/nano_insp/template-architecture-zh-giant-wild-goose-pagoda.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-giant-wild-goose-pagoda-prev.jpg"
-      },
-      "params": {
-        "landmark": "giant wild goose pagoda"
-      },
-      "locales": {
-        "zh": {
-          "category": "建筑分析图",
-          "title": "giant wild goose pagoda"
-        },
-        "en": {
-          "category": "Architectural Analysis Infographic",
-          "title": "giant wild goose pagoda"
-        }
-      }
+    "params": {
+      "landmark": "empire state building"
     },
-    {
-      "id": "template-architecture-national-stadium-bird-nest",
-      "template_id": "template-architecture",
-      "asset": {
-        "image_url": "/images/nano_insp/template-architecture-zh-national-stadium-bird-nest.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-national-stadium-bird-nest-prev.jpg"
+    "locales": {
+      "zh": {
+        "category": "建筑分析图",
+        "title": "empire state building"
       },
-      "params": {
-        "landmark": "national stadium bird nest"
-      },
-      "locales": {
-        "zh": {
-          "category": "建筑分析图",
-          "title": "national stadium bird nest"
-        },
-        "en": {
-          "category": "Architectural Analysis Infographic",
-          "title": "national stadium bird nest"
-        }
+      "en": {
+        "category": "Architectural Analysis Infographic",
+        "title": "empire state building"
       }
+    }
+  },
+  {
+    "id": "template-architecture-giant-wild-goose-pagoda",
+    "template_id": "template-architecture",
+    "asset": {
+      "image_url": "/images/nano_insp/template-architecture-zh-giant-wild-goose-pagoda.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-giant-wild-goose-pagoda-prev.jpg"
     },
-    {
-      "id": "template-architecture-oriental-pearl-tower",
-      "template_id": "template-architecture",
-      "asset": {
-        "image_url": "/images/nano_insp/template-architecture-zh-oriental-pearl-tower.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-oriental-pearl-tower-prev.jpg"
+    "params": {
+      "landmark": "giant wild goose pagoda"
+    },
+    "locales": {
+      "zh": {
+        "category": "建筑分析图",
+        "title": "giant wild goose pagoda"
       },
-      "params": {
-        "landmark": "oriental pearl tower"
-      },
-      "locales": {
-        "zh": {
-          "category": "建筑分析图",
-          "title": "oriental pearl tower"
-        },
-        "en": {
-          "category": "Architectural Analysis Infographic",
-          "title": "oriental pearl tower"
-        }
+      "en": {
+        "category": "Architectural Analysis Infographic",
+        "title": "giant wild goose pagoda"
       }
+    }
+  },
+  {
+    "id": "template-architecture-national-stadium-bird-nest",
+    "template_id": "template-architecture",
+    "asset": {
+      "image_url": "/images/nano_insp/template-architecture-zh-national-stadium-bird-nest.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-national-stadium-bird-nest-prev.jpg"
     },
-    {
-      "id": "template-costume-zh-beijing-opera-colorful-female-armor",
-      "template_id": "template-costume-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-costume-zh-beijing-opera-colorful-female-armor.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-costume-zh-beijing-opera-colorful-female-armor-prev.jpg"
+    "params": {
+      "landmark": "national stadium bird nest"
+    },
+    "locales": {
+      "zh": {
+        "category": "建筑分析图",
+        "title": "national stadium bird nest"
       },
-      "params": {
-        "costume_style": "beijing opera colorful female armor"
-      },
-      "locales": {
-        "zh": {
-          "category": "国风服饰类",
-          "title": "beijing opera colorful female armor"
-        },
-        "en": {
-          "category": "Chinese Costume Infographic",
-          "title": "beijing opera colorful female armor"
-        }
+      "en": {
+        "category": "Architectural Analysis Infographic",
+        "title": "national stadium bird nest"
       }
+    }
+  },
+  {
+    "id": "template-architecture-oriental-pearl-tower",
+    "template_id": "template-architecture",
+    "asset": {
+      "image_url": "/images/nano_insp/template-architecture-zh-oriental-pearl-tower.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-architecture-zh-oriental-pearl-tower-prev.jpg"
     },
-    {
-      "id": "template-costume-zh-ming-dynasty-dragon-robe",
-      "template_id": "template-costume-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-costume-zh-ming-dynasty-dragon-robe.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-costume-zh-ming-dynasty-dragon-robe-prev.jpg"
+    "params": {
+      "landmark": "oriental pearl tower"
+    },
+    "locales": {
+      "zh": {
+        "category": "建筑分析图",
+        "title": "oriental pearl tower"
       },
-      "params": {
-        "costume_style": "ming dynasty dragon robe"
-      },
-      "locales": {
-        "zh": {
-          "category": "国风服饰类",
-          "title": "ming dynasty dragon robe"
-        },
-        "en": {
-          "category": "Chinese Costume Infographic",
-          "title": "ming dynasty dragon robe"
-        }
+      "en": {
+        "category": "Architectural Analysis Infographic",
+        "title": "oriental pearl tower"
       }
+    }
+  },
+  {
+    "id": "template-costume-zh-beijing-opera-colorful-female-armor",
+    "template_id": "template-costume-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-zh-beijing-opera-colorful-female-armor.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-zh-beijing-opera-colorful-female-armor-prev.jpg"
     },
-    {
-      "id": "template-costume-zh-qing-dynasty-buzi",
-      "template_id": "template-costume-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-costume-zh-qing-dynasty-buzi.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-costume-zh-qing-dynasty-buzi-prev.jpg"
+    "params": {
+      "costume_style": "beijing opera colorful female armor"
+    },
+    "locales": {
+      "zh": {
+        "category": "国风服饰类",
+        "title": "beijing opera colorful female armor"
       },
-      "params": {
-        "costume_style": "qing dynasty buzi"
-      },
-      "locales": {
-        "zh": {
-          "category": "国风服饰类",
-          "title": "qing dynasty buzi"
-        },
-        "en": {
-          "category": "Chinese Costume Infographic",
-          "title": "qing dynasty buzi"
-        }
+      "en": {
+        "category": "Chinese Costume Infographic",
+        "title": "beijing opera colorful female armor"
       }
+    }
+  },
+  {
+    "id": "template-costume-zh-ming-dynasty-dragon-robe",
+    "template_id": "template-costume-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-zh-ming-dynasty-dragon-robe.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-zh-ming-dynasty-dragon-robe-prev.jpg"
     },
-    {
-      "id": "template-costume-zh-song-beizi",
-      "template_id": "template-costume-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-costume-zh-song-beizi.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-costume-zh-song-beizi-prev.jpg"
+    "params": {
+      "costume_style": "ming dynasty dragon robe"
+    },
+    "locales": {
+      "zh": {
+        "category": "国风服饰类",
+        "title": "ming dynasty dragon robe"
       },
-      "params": {
-        "costume_style": "song beizi"
-      },
-      "locales": {
-        "zh": {
-          "category": "国风服饰类",
-          "title": "song beizi"
-        },
-        "en": {
-          "category": "Chinese Costume Infographic",
-          "title": "song beizi"
-        }
+      "en": {
+        "category": "Chinese Costume Infographic",
+        "title": "ming dynasty dragon robe"
       }
+    }
+  },
+  {
+    "id": "template-costume-zh-qing-dynasty-buzi",
+    "template_id": "template-costume-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-zh-qing-dynasty-buzi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-zh-qing-dynasty-buzi-prev.jpg"
     },
-    {
-      "id": "template-costume-zh-tang-qixiong",
-      "template_id": "template-costume-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-costume-zh-tang-qixiong-prev.jpg"
+    "params": {
+      "costume_style": "qing dynasty buzi"
+    },
+    "locales": {
+      "zh": {
+        "category": "国风服饰类",
+        "title": "qing dynasty buzi"
       },
-      "params": {
-        "costume_style": "tang qixiong"
-      },
-      "locales": {
-        "zh": {
-          "category": "国风服饰类",
-          "title": "tang qixiong"
-        },
-        "en": {
-          "category": "Chinese Costume Infographic",
-          "title": "tang qixiong"
-        }
+      "en": {
+        "category": "Chinese Costume Infographic",
+        "title": "qing dynasty buzi"
       }
+    }
+  },
+  {
+    "id": "template-costume-zh-song-beizi",
+    "template_id": "template-costume-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-zh-song-beizi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-zh-song-beizi-prev.jpg"
     },
-    {
-      "id": "template-education-card-resource-environmental-carrying-capacity",
-      "template_id": "template-education-card",
-      "asset": {
-        "image_url": "/images/nano_insp/template-education-card-zh-resource-environmental-carrying-capacity.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-education-card-zh-resource-environmental-carrying-capacity-prev.jpg"
+    "params": {
+      "costume_style": "song beizi"
+    },
+    "locales": {
+      "zh": {
+        "category": "国风服饰类",
+        "title": "song beizi"
       },
-      "params": {
-        "topic": "resource environmental carrying capacity"
-      },
-      "locales": {
-        "zh": {
-          "category": "学科知识卡片",
-          "title": "resource environmental carrying capacity"
-        },
-        "en": {
-          "category": "Educational Knowledge Card",
-          "title": "resource environmental carrying capacity"
-        }
+      "en": {
+        "category": "Chinese Costume Infographic",
+        "title": "song beizi"
       }
+    }
+  },
+  {
+    "id": "template-costume-zh-tang-qixiong",
+    "template_id": "template-costume-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-zh-tang-qixiong-prev.jpg"
     },
-    {
-      "id": "template-evolution-british-industrial-revolution",
-      "template_id": "template-evolution",
-      "asset": {
-        "image_url": "/images/nano_insp/template-evolution-en-british-industrial-revolution.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-evolution-en-british-industrial-revolution-prev.jpg"
+    "params": {
+      "costume_style": "tang qixiong"
+    },
+    "locales": {
+      "zh": {
+        "category": "国风服饰类",
+        "title": "tang qixiong"
       },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "发展纪年类",
-          "title": "british industrial revolution"
-        },
-        "en": {
-          "category": "Evolution Timeline Visualization",
-          "title": "british industrial revolution"
-        }
+      "en": {
+        "category": "Chinese Costume Infographic",
+        "title": "tang qixiong"
       }
+    }
+  },
+  {
+    "id": "template-education-card-resource-environmental-carrying-capacity",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-zh-resource-environmental-carrying-capacity.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-zh-resource-environmental-carrying-capacity-prev.jpg"
     },
-    {
-      "id": "template-evolution-western-art-development",
-      "template_id": "template-evolution",
-      "asset": {
-        "image_url": "/images/nano_insp/template-evolution-en-western-art-development.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-evolution-en-western-art-development-prev.jpg"
+    "params": {
+      "topic": "resource environmental carrying capacity"
+    },
+    "locales": {
+      "zh": {
+        "category": "学科知识卡片",
+        "title": "resource environmental carrying capacity"
       },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "发展纪年类",
-          "title": "western art development"
-        },
-        "en": {
-          "category": "Evolution Timeline Visualization",
-          "title": "western art development"
-        }
+      "en": {
+        "category": "Educational Knowledge Card",
+        "title": "resource environmental carrying capacity"
       }
+    }
+  },
+  {
+    "id": "template-evolution-british-industrial-revolution",
+    "template_id": "template-evolution",
+    "asset": {
+      "image_url": "/images/nano_insp/template-evolution-en-british-industrial-revolution.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-evolution-en-british-industrial-revolution-prev.jpg"
     },
-    {
-      "id": "template-evolution-chinese-social-changes",
-      "template_id": "template-evolution",
-      "asset": {
-        "image_url": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-evolution-zh-chinese-social-changes-prev.jpg"
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "发展纪年类",
+        "title": "british industrial revolution"
       },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "发展纪年类",
-          "title": "chinese social changes"
-        },
-        "en": {
-          "category": "Evolution Timeline Visualization",
-          "title": "chinese social changes"
-        }
+      "en": {
+        "category": "Evolution Timeline Visualization",
+        "title": "british industrial revolution"
       }
+    }
+  },
+  {
+    "id": "template-evolution-western-art-development",
+    "template_id": "template-evolution",
+    "asset": {
+      "image_url": "/images/nano_insp/template-evolution-en-western-art-development.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-evolution-en-western-art-development-prev.jpg"
     },
-    {
-      "id": "template-word-scene-child-park",
-      "template_id": "template-word-scene",
-      "asset": {
-        "image_url": "/images/nano_insp/template-word-scene-zh-child-park.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-child-park-prev.jpg"
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "发展纪年类",
+        "title": "western art development"
       },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "场景单词学习图",
-          "title": "child park"
-        },
-        "en": {
-          "category": "Vocabulary Scene Map",
-          "title": "child park"
-        }
+      "en": {
+        "category": "Evolution Timeline Visualization",
+        "title": "western art development"
       }
+    }
+  },
+  {
+    "id": "template-evolution-chinese-social-changes",
+    "template_id": "template-evolution",
+    "asset": {
+      "image_url": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-evolution-zh-chinese-social-changes-prev.jpg"
     },
-    {
-      "id": "template-word-scene-zhudi-and-nick-in-zootopia",
-      "template_id": "template-word-scene",
-      "asset": {
-        "image_url": "/images/nano_insp/template-word-scene-zh-zhudi-and-nick-in-zootopia.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-zhudi-and-nick-in-zootopia-prev.jpg"
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "发展纪年类",
+        "title": "chinese social changes"
       },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "场景单词学习图",
-          "title": "zhudi and nick in zootopia"
-        },
-        "en": {
-          "category": "Vocabulary Scene Map",
-          "title": "zhudi and nick in zootopia"
-        }
+      "en": {
+        "category": "Evolution Timeline Visualization",
+        "title": "chinese social changes"
       }
+    }
+  },
+  {
+    "id": "template-word-scene-child-park",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-child-park.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-child-park-prev.jpg"
     },
-
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "child park"
+      },
+      "en": {
+        "category": "Vocabulary Scene Map",
+        "title": "child park"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zhudi-and-nick-in-zootopia",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-zhudi-and-nick-in-zootopia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-zhudi-and-nick-in-zootopia-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "zhudi and nick in zootopia"
+      },
+      "en": {
+        "category": "Vocabulary Scene Map",
+        "title": "zhudi and nick in zootopia"
+      }
+    }
+  },
   {
     "id": "template-character-analysis-zh-bai-suzhen",
     "template_id": "template-character-analysis-zh",
@@ -1256,530 +1255,2164 @@
         "title": "explorer forest"
       }
     }
-  },  
-    {
-      "id": "template-food-bak-kut-teh",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-bak-kut-teh.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "bak kut teh"
-        }
-      }
+  },
+  {
+    "id": "template-food-bak-kut-teh",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-bak-kut-teh.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-bak-kut-teh-prev.jpg"
     },
-    {
-      "id": "template-food-guilin-rice-noodles",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-guilin-rice-noodles.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-guilin-rice-noodles-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "guilin rice noodles"
-        }
-      }
-    },
-    {
-      "id": "template-food-italian-pasta",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-italian-pasta.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-italian-pasta-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "italian pasta"
-        }
-      }
-    },
-    {
-      "id": "template-food-korean-cold-noodles",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-korean-cold-noodles.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-korean-cold-noodles-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "korean cold noodles"
-        }
-      }
-    },
-    {
-      "id": "template-food-sukiyaki",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-sukiyaki.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-sukiyaki-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "sukiyaki"
-        }
-      }
-    },
-    {
-      "id": "template-food-thai-basil-chicken-rice",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-thai-basil-chicken-rice.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-thai-basil-chicken-rice-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "thai basil chicken rice"
-        }
-      }
-    },
-    {
-      "id": "template-food-tianjin-jianbing-guozi",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-tianjin-jianbing-guozi.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-tianjin-jianbing-guozi-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "tianjin jianbing guozi"
-        }
-      }
-    },
-    {
-      "id": "template-food-vietnamese-spring-rolls",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-vietnamese-spring-rolls.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-vietnamese-spring-rolls-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "vietnamese spring rolls"
-        }
-      }
-    },
-    {
-      "id": "template-food-wine-mussels",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-wine-mussels.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-wine-mussels-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "wine mussels"
-        }
-      }
-    },
-    {
-      "id": "template-food-xian-roujiamo",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-xian-roujiamo.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-xian-roujiamo-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "xian roujiamo"
-        }
-      }
-    },
-    {
-      "id": "template-food-xiangyang-beef-noodles",
-      "template_id": "template-food",
-      "asset": {
-        "image_url": "/images/nano_insp/template-food-zh-xiangyang-beef-noodles.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-food-zh-xiangyang-beef-noodles-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "美食科普类",
-          "title": "xiangyang beef noodles"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-chunfen",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-chunfen.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-chunfen-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "chunfen"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-daxue",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-daxue.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-daxue-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "daxue"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-dongzhi",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-dongzhi.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "dongzhi"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-guyu",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-guyu.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-guyu-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "guyu"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-lichun",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-lichun.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-lichun-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "lichun"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-lixia",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-lixia.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-lixia-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "lixia"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-qingming",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-qingming.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-qingming-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "qingming"
-        }
-      }
-    },
-    {
-      "id": "template-solar-term-xiaoman",
-      "template_id": "template-solar-term",
-      "asset": {
-        "image_url": "/images/nano_insp/template-solar-term-zh-xiaoman.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-xiaoman-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "二十四节气类",
-          "title": "xiaoman"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-baiqi",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-baiqi.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-baiqi-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "baiqi"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-direnjie",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-direnjie.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-direnjie-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "direnjie"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-hanxin",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-hanxin.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-hanxin-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "hanxin"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-libai",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-libai.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-libai-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "libai"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-liqingzhao",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-liqingzhao.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-liqingzhao-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "liqingzhao"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-sushi",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-sushi.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-sushi-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "sushi"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-weiqing",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-weiqing.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-weiqing-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "weiqing"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-wuzetian",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-wuzetian.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-wuzetian-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "wuzetian"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-zhaokuo",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-zhaokuo.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-zhaokuo-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "zhaokuo"
-        }
-      }
-    },
-    {
-      "id": "template-character-zh-zhugeliang",
-      "template_id": "template-character-zh",
-      "asset": {
-        "image_url": "/images/nano_insp/template-character-zh-zhugeliang.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-character-zh-zhugeliang-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "人物像素拆解",
-          "title": "zhugeliang"
-        }
-      }
-    },
-    {
-      "id": "template-what-if-history-byzantine-tang",
-      "template_id": "template-what-if-history",
-      "asset": {
-        "image_url": "/images/nano_insp/template-what-if-history-zh-byzantine-tang.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-byzantine-tang-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "历史假设类",
-          "title": "byzantine tang"
-        }
-      }
-    },
-    {
-      "id": "template-what-if-history-ming-renaissance",
-      "template_id": "template-what-if-history",
-      "asset": {
-        "image_url": "/images/nano_insp/template-what-if-history-zh-ming-renaissance.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-ming-renaissance-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "历史假设类",
-          "title": "ming renaissance"
-        }
-      }
-    },
-    {
-      "id": "template-what-if-history-qin-alexander",
-      "template_id": "template-what-if-history",
-      "asset": {
-        "image_url": "/images/nano_insp/template-what-if-history-zh-qin-alexander.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-qin-alexander-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "历史假设类",
-          "title": "qin alexander"
-        }
-      }
-    },
-    {
-      "id": "template-what-if-history-roman-han",
-      "template_id": "template-what-if-history",
-      "asset": {
-        "image_url": "/images/nano_insp/template-what-if-history-zh-roman-han.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-roman-han-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "历史假设类",
-          "title": "roman han"
-        }
-      }
-    },
-    {
-      "id": "template-what-if-history-tang-arab",
-      "template_id": "template-what-if-history",
-      "asset": {
-        "image_url": "/images/nano_insp/template-what-if-history-zh-tang-arab.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-tang-arab-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "历史假设类",
-          "title": "tang arab"
-        }
-      }
-    },
-    {
-      "id": "template-what-if-history-zheng-he-america",
-      "template_id": "template-what-if-history",
-      "asset": {
-        "image_url": "/images/nano_insp/template-what-if-history-zh-zheng-he-america.jpg",
-        "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-zheng-he-america-prev.jpg"
-      },
-      "params": {},
-      "locales": {
-        "zh": {
-          "category": "历史假设类",
-          "title": "zheng he america"
-        }
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "bak kut teh"
       }
     }
+  },
+  {
+    "id": "template-food-guilin-rice-noodles",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-guilin-rice-noodles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-guilin-rice-noodles-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "guilin rice noodles"
+      }
+    }
+  },
+  {
+    "id": "template-food-italian-pasta",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-italian-pasta.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-italian-pasta-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "italian pasta"
+      }
+    }
+  },
+  {
+    "id": "template-food-korean-cold-noodles",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-korean-cold-noodles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-korean-cold-noodles-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "korean cold noodles"
+      }
+    }
+  },
+  {
+    "id": "template-food-sukiyaki",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-sukiyaki.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-sukiyaki-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "sukiyaki"
+      }
+    }
+  },
+  {
+    "id": "template-food-thai-basil-chicken-rice",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-thai-basil-chicken-rice.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-thai-basil-chicken-rice-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "thai basil chicken rice"
+      }
+    }
+  },
+  {
+    "id": "template-food-tianjin-jianbing-guozi",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-tianjin-jianbing-guozi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-tianjin-jianbing-guozi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "tianjin jianbing guozi"
+      }
+    }
+  },
+  {
+    "id": "template-food-vietnamese-spring-rolls",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-vietnamese-spring-rolls.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-vietnamese-spring-rolls-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "vietnamese spring rolls"
+      }
+    }
+  },
+  {
+    "id": "template-food-wine-mussels",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-wine-mussels.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-wine-mussels-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "wine mussels"
+      }
+    }
+  },
+  {
+    "id": "template-food-xian-roujiamo",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-xian-roujiamo.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-xian-roujiamo-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "xian roujiamo"
+      }
+    }
+  },
+  {
+    "id": "template-food-xiangyang-beef-noodles",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-zh-xiangyang-beef-noodles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-zh-xiangyang-beef-noodles-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "美食科普类",
+        "title": "xiangyang beef noodles"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-chunfen",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-chunfen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-chunfen-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "chunfen"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-daxue",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-daxue.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-daxue-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "daxue"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-dongzhi",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-dongzhi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "dongzhi"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-guyu",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-guyu.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-guyu-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "guyu"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-lichun",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-lichun.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-lichun-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "lichun"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-lixia",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-lixia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-lixia-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "lixia"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-qingming",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-qingming.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-qingming-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "qingming"
+      }
+    }
+  },
+  {
+    "id": "template-solar-term-xiaoman",
+    "template_id": "template-solar-term",
+    "asset": {
+      "image_url": "/images/nano_insp/template-solar-term-zh-xiaoman.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-solar-term-zh-xiaoman-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "二十四节气类",
+        "title": "xiaoman"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-baiqi",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-baiqi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-baiqi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "baiqi"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-direnjie",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-direnjie.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-direnjie-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "direnjie"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-hanxin",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-hanxin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-hanxin-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "hanxin"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-libai",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-libai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-libai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "libai"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-liqingzhao",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-liqingzhao.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-liqingzhao-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "liqingzhao"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-sushi",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-sushi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-sushi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "sushi"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-weiqing",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-weiqing.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-weiqing-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "weiqing"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-wuzetian",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-wuzetian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-wuzetian-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "wuzetian"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-zhaokuo",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-zhaokuo.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-zhaokuo-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "zhaokuo"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-zhugeliang",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-zhugeliang.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-zhugeliang-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "zhugeliang"
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history-byzantine-tang",
+    "template_id": "template-what-if-history",
+    "asset": {
+      "image_url": "/images/nano_insp/template-what-if-history-zh-byzantine-tang.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-byzantine-tang-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "title": "byzantine tang"
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history-ming-renaissance",
+    "template_id": "template-what-if-history",
+    "asset": {
+      "image_url": "/images/nano_insp/template-what-if-history-zh-ming-renaissance.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-ming-renaissance-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "title": "ming renaissance"
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history-qin-alexander",
+    "template_id": "template-what-if-history",
+    "asset": {
+      "image_url": "/images/nano_insp/template-what-if-history-zh-qin-alexander.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-qin-alexander-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "title": "qin alexander"
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history-roman-han",
+    "template_id": "template-what-if-history",
+    "asset": {
+      "image_url": "/images/nano_insp/template-what-if-history-zh-roman-han.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-roman-han-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "title": "roman han"
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history-tang-arab",
+    "template_id": "template-what-if-history",
+    "asset": {
+      "image_url": "/images/nano_insp/template-what-if-history-zh-tang-arab.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-tang-arab-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "title": "tang arab"
+      }
+    }
+  },
+  {
+    "id": "template-what-if-history-zheng-he-america",
+    "template_id": "template-what-if-history",
+    "asset": {
+      "image_url": "/images/nano_insp/template-what-if-history-zh-zheng-he-america.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-what-if-history-zh-zheng-he-america-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "历史假设类",
+        "title": "zheng he america"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-kangaroo-steak",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-kangaroo-steak.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-kangaroo-steak-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "kangaroo steak"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-atractylodes-macrocephala",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-atractylodes-macrocephala.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-atractylodes-macrocephala-prev.jpg"
+    },
+    "params": {
+      "herb_name": "atractylodes macrocephala"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "atractylodes macrocephala"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-astronaut-space",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-astronaut-space.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-astronaut-space-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "astronaut space"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-chef-kitchen",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-chef-kitchen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-chef-kitchen-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "chef kitchen"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-achyranthes",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-achyranthes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-achyranthes-prev.jpg"
+    },
+    "params": {
+      "herb_name": "achyranthes"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "achyranthes"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-caulis-spatholobi",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-caulis-spatholobi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-caulis-spatholobi-prev.jpg"
+    },
+    "params": {
+      "herb_name": "caulis spatholobi"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "caulis spatholobi"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-chuanxiong",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-chuanxiong.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-chuanxiong-prev.jpg"
+    },
+    "params": {
+      "herb_name": "chuanxiong"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "chuanxiong"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-leonurus",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-leonurus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-leonurus-prev.jpg"
+    },
+    "params": {
+      "herb_name": "leonurus"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "leonurus"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-safflower",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-safflower.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-safflower-prev.jpg"
+    },
+    "params": {
+      "herb_name": "safflower"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "safflower"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-restaurant",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-restaurant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-restaurant-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family restaurant"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-road",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-road.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-road-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family road"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-classroom",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-classroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-classroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student classroom"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-laboratory",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-laboratory.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-laboratory-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student laboratory"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-library",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-library.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-library-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student library"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-coix-lacryma-jobi",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-coix-lacryma-jobi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-coix-lacryma-jobi-prev.jpg"
+    },
+    "params": {
+      "herb_name": "coix lacryma jobi"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "coix lacryma jobi"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-dioscorea-polystachya",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-dioscorea-polystachya.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-dioscorea-polystachya-prev.jpg"
+    },
+    "params": {
+      "herb_name": "dioscorea polystachya"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "dioscorea polystachya"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-poria",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-poria.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-poria-prev.jpg"
+    },
+    "params": {
+      "herb_name": "poria"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "poria"
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint-en 1",
+    "template_id": "template-portrait-retouching-blueprint",
+    "asset": {
+      "image_url": "/images/nano_insp/template-portrait-retouching-blueprint-en 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-portrait-retouching-blueprint-en 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人像修图蓝图类",
+        "title": "en 1"
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint-en 2",
+    "template_id": "template-portrait-retouching-blueprint",
+    "asset": {
+      "image_url": "/images/nano_insp/template-portrait-retouching-blueprint-en 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-portrait-retouching-blueprint-en 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人像修图蓝图类",
+        "title": "en 2"
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint-en 3",
+    "template_id": "template-portrait-retouching-blueprint",
+    "asset": {
+      "image_url": "/images/nano_insp/template-portrait-retouching-blueprint-en 3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-portrait-retouching-blueprint-en 3-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人像修图蓝图类",
+        "title": "en 3"
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint-en 4",
+    "template_id": "template-portrait-retouching-blueprint",
+    "asset": {
+      "image_url": "/images/nano_insp/template-portrait-retouching-blueprint-en 4.png",
+      "preview_image_url": "/images/nano_insp_preview/template-portrait-retouching-blueprint-en 4-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人像修图蓝图类",
+        "title": "en 4"
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint-en 5",
+    "template_id": "template-portrait-retouching-blueprint",
+    "asset": {
+      "image_url": "/images/nano_insp/template-portrait-retouching-blueprint-en 5.png",
+      "preview_image_url": "/images/nano_insp_preview/template-portrait-retouching-blueprint-en 5-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人像修图蓝图类",
+        "title": "en 5"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-beef-tartare",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-beef-tartare.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-beef-tartare-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "beef tartare"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-kangaroo-steak",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-kangaroo-steak.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-kangaroo-steak-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "kangaroo steak"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-lamb-curry",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-lamb-curry.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-lamb-curry-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "lamb curry"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-neapolitan-pizza",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-neapolitan-pizza.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-neapolitan-pizza-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "neapolitan pizza"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-texas-smoked-bbq",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-texas-smoked-bbq.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-texas-smoked-bbq-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "texas smoked bbq"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-coptis",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-coptis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-coptis-prev.jpg"
+    },
+    "params": {
+      "herb_name": "coptis"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "coptis"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-dandelion",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-dandelion.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-dandelion-prev.jpg"
+    },
+    "params": {
+      "herb_name": "dandelion"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "dandelion"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-forsythia",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-forsythia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-forsythia-prev.jpg"
+    },
+    "params": {
+      "herb_name": "forsythia"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "forsythia"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-houttuynia-cordata",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-houttuynia-cordata.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-houttuynia-cordata-prev.jpg"
+    },
+    "params": {
+      "herb_name": "houttuynia cordata"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "houttuynia cordata"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-isatis-root",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-isatis-root.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-isatis-root-prev.jpg"
+    },
+    "params": {
+      "herb_name": "isatis root"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "isatis root"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-prunella-vulgaris",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-prunella-vulgaris.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-prunella-vulgaris-prev.jpg"
+    },
+    "params": {
+      "herb_name": "prunella vulgaris"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "prunella vulgaris"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-airport",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-airport.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-airport-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family airport"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-amusement",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-amusement.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-amusement-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family amusement"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-firestation",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-firestation.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-firestation-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family firestation"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-hotel",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-hotel.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-hotel-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family hotel"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-postoffice",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-postoffice.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-postoffice-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family postoffice"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-family-waterpark",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-family-waterpark.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-family-waterpark-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "family waterpark"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-dream-of-the-red-chamber 1",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-dream-of-the-red-chamber 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-dream-of-the-red-chamber 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic dream of the red chamber 1"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-dream-of-the-red-chamber 2",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-dream-of-the-red-chamber 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-dream-of-the-red-chamber 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic dream of the red chamber 2"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-dream-of-the-red-chamber 3",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-dream-of-the-red-chamber 3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-dream-of-the-red-chamber 3-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic dream of the red chamber 3"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-three-kingdoms 1",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-three-kingdoms 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-three-kingdoms 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic three kingdoms 1"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-three-kingdoms 2",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-three-kingdoms 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-three-kingdoms 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic three kingdoms 2"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-three-kingdoms 3",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-three-kingdoms 3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-three-kingdoms 3-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic three kingdoms 3"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-albizia-julibrissin",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-albizia-julibrissin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-albizia-julibrissin-prev.jpg"
+    },
+    "params": {
+      "herb_name": "albizia julibrissin"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "albizia julibrissin"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-polygonum-multiflorum-caulis",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-polygonum-multiflorum-caulis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-polygonum-multiflorum-caulis-prev.jpg"
+    },
+    "params": {
+      "herb_name": "polygonum multiflorum caulis"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "polygonum multiflorum caulis"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-semen-platycladi",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-semen-platycladi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-semen-platycladi-prev.jpg"
+    },
+    "params": {
+      "herb_name": "semen platycladi"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "semen platycladi"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-semen-ziziphi-spinosae",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-semen-ziziphi-spinosae.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-semen-ziziphi-spinosae-prev.jpg"
+    },
+    "params": {
+      "herb_name": "semen ziziphi spinosae"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "semen ziziphi spinosae"
+      }
+    }
+  },
+  {
+    "id": "template-intangible-heritage-zh-anshun-opera",
+    "template_id": "template-intangible-heritage-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-intangible-heritage-zh-anshun-opera.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-intangible-heritage-zh-anshun-opera-prev.jpg"
+    },
+    "params": {
+      "craft_name": "anshun opera"
+    },
+    "locales": {
+      "zh": {
+        "category": "非遗工艺",
+        "title": "anshun opera"
+      }
+    }
+  },
+  {
+    "id": "template-intangible-heritage-zh-lion-dance",
+    "template_id": "template-intangible-heritage-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-intangible-heritage-zh-lion-dance.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-intangible-heritage-zh-lion-dance-prev.jpg"
+    },
+    "params": {
+      "craft_name": "lion dance"
+    },
+    "locales": {
+      "zh": {
+        "category": "非遗工艺",
+        "title": "lion dance"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-shinchan-classroom",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-shinchan-classroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-shinchan-classroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "shinchan classroom"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-shinchan-hot-pot",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-shinchan-hot-pot.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-shinchan-hot-pot-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "shinchan hot pot"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-shinchan-metro",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-shinchan-metro.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-shinchan-metro-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "shinchan metro"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-shinchan-stadium",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-shinchan-stadium.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-shinchan-stadium-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "shinchan stadium"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-shinchan-swimming-pool",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-shinchan-swimming-pool.png",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-shinchan-swimming-pool-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "shinchan swimming pool"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-journey-to-the-west 1",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-journey-to-the-west 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic journey to the west 1"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-journey-to-the-west 2",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-journey-to-the-west 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic journey to the west 2"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-journey-to-the-west 3",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-journey-to-the-west 3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 3-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic journey to the west 3"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-sandy",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-sandy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-sandy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic sandy"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-sun-wukong",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-sun-wukong.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-sun-wukong-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic sun wukong"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-tang-seng",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-tang-seng.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-tang-seng-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic tang seng"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-academic-zhu-bajie",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-academic-zhu-bajie.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-academic-zhu-bajie-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "academic zhu bajie"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-eight-immortals",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-eight-immortals.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-eight-immortals-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "eight immortals"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-twelve-beauties-jinling 2",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-twelve-beauties-jinling 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-twelve-beauties-jinling 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "twelve beauties jinling 2"
+      }
+    }
+  },
+  {
+    "id": "template-character-zh-twelve-beauties-jinling",
+    "template_id": "template-character-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-zh-twelve-beauties-jinling.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-zh-twelve-beauties-jinling-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "人物像素拆解",
+        "title": "twelve beauties jinling"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-adenophora",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-adenophora.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-adenophora-prev.jpg"
+    },
+    "params": {
+      "herb_name": "adenophora"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "adenophora"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-goji",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-goji.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-goji-prev.jpg"
+    },
+    "params": {
+      "herb_name": "goji"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "goji"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-lily",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-lily.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-lily-prev.jpg"
+    },
+    "params": {
+      "herb_name": "lily"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "lily"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-ophiopogon",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-ophiopogon.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-ophiopogon-prev.jpg"
+    },
+    "params": {
+      "herb_name": "ophiopogon"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "ophiopogon"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-polygonatum",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-polygonatum.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-polygonatum-prev.jpg"
+    },
+    "params": {
+      "herb_name": "polygonatum"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "polygonatum"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-goji",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-goji.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-goji-prev.jpg"
+    },
+    "params": {
+      "herb_name": "goji"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "goji"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-jujube",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-jujube.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-jujube-prev.jpg"
+    },
+    "params": {
+      "herb_name": "jujube"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "jujube"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-longan",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-longan.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-longan-prev.jpg"
+    },
+    "params": {
+      "herb_name": "longan"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "longan"
+      }
+    }
+  },
+  {
+    "id": "template-travel-zh-xishuangbanna",
+    "template_id": "template-travel-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-zh-xishuangbanna.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-zh-xishuangbanna-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "旅游规划图",
+        "title": "xishuangbanna"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-military-base 1",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-military-base 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-military-base 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "military base 1"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-military-base 2",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-military-base 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-military-base 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "military base 2"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-new-year 1",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-new-year 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-new-year 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "new year 1"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-new-year 2",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-new-year 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-new-year 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "new year 2"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-party",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-party.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-party-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "party"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-ski-resort",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-ski-resort.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-ski-resort-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "ski resort"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-supermarket",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-supermarket.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-supermarket-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "supermarket"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-temple-fair 1",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-temple-fair 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-temple-fair 1-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "temple fair 1"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-temple-fair 2",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-temple-fair 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-temple-fair 2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "temple fair 2"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-temple-fair 3",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-temple-fair 3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-temple-fair 3-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "temple fair 3"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-bak-kut-teh",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-bak-kut-teh.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-bak-kut-teh-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "bak kut teh"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-banh-mi",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-banh-mi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-banh-mi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "banh mi"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-beef-bourguignon",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-beef-bourguignon.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-beef-bourguignon-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "beef bourguignon"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-beef-wellington",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-beef-wellington.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-beef-wellington-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "beef wellington"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-bun-cha",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-bun-cha.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-bun-cha-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "bun cha"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-nasi-lemak",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-nasi-lemak.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-nasi-lemak-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "nasi lemak"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-paella",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-paella.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-paella-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "paella"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-peking-duck",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-peking-duck.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-peking-duck-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "peking duck"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-taco",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-taco.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-taco-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "taco"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-tom-yum-soup",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-tom-yum-soup.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-tom-yum-soup-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "tom yum soup"
+      }
+    }
+  },
+  {
+    "id": "template-food-en-vietnamese-spring-rolls",
+    "template_id": "template-food",
+    "asset": {
+      "image_url": "/images/nano_insp/template-food-en-vietnamese-spring-rolls.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-food-en-vietnamese-spring-rolls-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "category": "Food Science Infographic",
+        "title": "vietnamese spring rolls"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-avocado",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-avocado.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-avocado-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "avocado"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "avocado"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-blueberry",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-blueberry.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-blueberry-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "blueberry"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "blueberry"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-chilean-cherries",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-chilean-cherries.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-chilean-cherries-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "chilean cherries"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "chilean cherries"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-cranberries",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-cranberries.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-cranberries-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "cranberries"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "cranberries"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-durian",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-durian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-durian-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "durian"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "durian"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-kiwi",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-kiwi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-kiwi-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "kiwi"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "kiwi"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-raspberry",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-raspberry.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-raspberry-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "raspberry"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "raspberry"
+      }
+    }
+  },
+  {
+    "id": "template-fruit-en-salak",
+    "template_id": "template-fruit",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fruit-en-salak.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fruit-en-salak-prev.jpg"
+    },
+    "params": {
+      "fruit_name": "salak"
+    },
+    "locales": {
+      "en": {
+        "category": "Fruit Category",
+        "title": "salak"
+      }
+    }
+  }
 ]
