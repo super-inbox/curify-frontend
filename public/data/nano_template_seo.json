@@ -10,7 +10,8 @@
     "robots": "index,follow",
     "og_type": "website"
   },
-  "templates": [
+  "templates": 
+  [
     {
       "id": "template-herbal-zh",
       "locales": {
@@ -20,6 +21,23 @@
             "meta_description": "一键生成“单味药材全景分解图（Herb Exploded Sheet）”：饮片结构、断面纹理、性味归经、功效标签、现代剂型与使用场景，适合科普海报与内容创作。",
             "og_image": "/images/seo/template-herbal-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把“单味中草药”做成一张可收藏的全景分解图：包含外观/断面/纹理细节、性味归经、核心功效标签、常见剂型与使用场景，并用清晰的科普信息图排版呈现。",
+              "who": "适合中医药科普账号、养生内容创作者、药材店/品牌做知识海报、学生做学习笔记，以及想把药材讲清楚（但不想写长文）的用户。",
+              "how": [
+                "输入药材中文名+别名（如有）+常见形态（饮片/原药材）。",
+                "给出你想强调的模块：性味归经/主功效/鉴别要点/禁忌注意/现代剂型（颗粒、胶囊等）。",
+                "要求“分解视图”：外观、断面、纹理、关键部位用箭头标注；信息密度高但要可读。",
+                "生成后校对：术语是否一致（归经、功效标签）；如偏差，要求“按你提供的要点重写文案，不改画面风格”。"
+              ],
+              "prompts": [
+                "生成《单味药材全景分解图》：药材“黄芪”，包含外观与断面纹理标注、性味归经、核心功效标签、常见剂型与使用场景、注意事项，3:4竖版，高信息密度科普排版。",
+                "做“当归”Herb Exploded Sheet：饮片结构、鉴别要点（颜色/气味/断面）、主功效、搭配思路（可选）、禁忌提示，清晰箭头注释，3:4。",
+                "生成“陈皮”分解图：产地与年份差异要点、外观纹理特写、性味归经、日常使用场景（泡茶/入膳），复古但清爽的中文信息图排版，3:4。"
+              ]
+            }
           }
         }
       }
@@ -33,6 +51,23 @@
             "meta_description": "生成等距像素艺术“演进博物馆”时间线：以空间递进表达历史阶段，双语标题与关键节点标记，适合学术可视化与主题对比展示。",
             "og_image": "/images/seo/template-evolution-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板用“等距像素博物馆”来做时间线：把阶段变化做成一段可漫游的展厅空间，每个展区对应一个时代/版本，配关键节点标牌、图标与对比注释，适合做演进脉络可视化。",
+              "who": "适合科普/历史/科技演进内容、产品版本迭代展示、教育讲解（课堂/笔记）、研究汇报中的对比时间线，以及想把“发展史”做得更好看的创作者。",
+              "how": [
+                "确定主题与时间范围（如“人类演化”“手机形态演进”“AI模型迭代”）。",
+                "列出 6–10 个阶段：每阶段给1句核心变化+1个标志物（图标/物件/符号）。",
+                "要求等距像素展厅：空间递进、展牌编号、阶段标题（可中英双语），并加小型图例/刻度尺。",
+                "生成后检查：阶段是否按时间顺序；如不顺，要求“保持画面风格不变，重新排列展牌与节点”。"
+              ],
+              "prompts": [
+                "生成“人类演化博物馆”像素等距时间线：能人→直立人→海德堡人→尼安德特人→智人，包含每阶段标志性工具/特征与关键节点标牌，中英双语小标题，3:4竖版。",
+                "做“手机形态演进博物馆”：功能机→翻盖→触屏→全面屏→折叠屏→AR眼镜（概念），每阶段一个代表机型/特征图标，等距像素展厅，3:4。",
+                "生成“Web开发框架演进”像素博物馆：jQuery→Backbone→Angular→React→Next.js→RSC（概念），每阶段关键理念一句话+图标，清晰节点标记，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -41,6 +76,23 @@
             "meta_description": "Create an isometric pixel-art “Evolution Museum” timeline where spatial progression represents historical stages—bilingual titles, key markers, and rich symbolic detail for comparison and education.",
             "og_image": "/images/seo/template-evolution-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template turns a timeline into an isometric pixel-art “museum walk-through”: each hall represents an era/version with labeled exhibits, milestone plaques, icons, and compact comparisons—highly visual and easy to skim.",
+              "who": "Great for educators, history/science explainers, product teams showing version evolution, researchers presenting stage-by-stage change, and creators who want timelines that feel like a story space (not a list).",
+              "how": [
+                "Pick a theme + time span (e.g., “human evolution”, “smartphone design”, “AI model releases”).",
+                "List 6–10 stages with a one-line key change + one signature artifact/icon per stage.",
+                "Ask for an isometric pixel museum: numbered halls, milestone plaques, clear typography, optional bilingual headings.",
+                "After generation, verify ordering and labels; if inconsistent, instruct: “keep the style, rearrange halls and milestone text only.”"
+              ],
+              "prompts": [
+                "Create an isometric pixel-art “Evolution Museum” timeline: Early Hominins → Homo habilis → Homo erectus → Neanderthals → Homo sapiens. Include exhibit icons, milestone plaques, and concise bilingual headings. Vertical 3:4.",
+                "Generate a “Smartphone Evolution Museum” timeline: feature phone → flip phone → early touchscreen → full-screen → foldables → AR glasses (concept). Each stage gets one iconic device silhouette + one key change. Vertical 3:4.",
+                "Make a “Web Framework Evolution Museum” timeline: jQuery → Backbone → Angular → React → Next.js → Server Components (concept). Add milestone markers and one-line takeaways. Vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -54,6 +106,23 @@
             "meta_description": "生成【目的地】手绘旅行地图：按日期分块展示每日路线，景点/美食/住宿/交通全中文标注，Q版治愈风，适合分享与打印。",
             "og_image": "/images/seo/template-travel-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把一次旅行做成“可打印的手绘行程地图”：按天分区显示路线，景点/美食/住宿/交通用Q版图标标注，并在版面上形成清晰的每日动线。",
+              "who": "适合旅行攻略分享、小红书/抖音旅行博主、家庭出游做行程卡、旅行社/民宿做推荐海报，以及想把行程讲清楚又好看的用户。",
+              "how": [
+                "输入目的地+出行天数+每一天的主要地点（按顺序）。",
+                "补充偏好：美食优先/亲子/摄影点/徒步/购物，并列出必须打卡的3–5个点。",
+                "要求地图风格：Q版治愈手绘、中文标注、每日路线用不同颜色/线型区分（可描述，不必指定具体色值）。",
+                "生成后检查：路线是否绕路、每天是否过满；如过满，让模型“把行程拆成上午/下午/晚间，并减少点位”。"
+              ],
+              "prompts": [
+                "生成“东京 4天手绘旅行地图”：按Day1–Day4分区，标注景点、美食、住宿与交通方式，Q版治愈风，全中文标注，3:4竖版可打印。",
+                "做“旧金山 2天亲子旅行地图”：动物园/科学馆/海边+餐厅推荐，路线清晰，加入小贴士（排队/时间段），Q版手绘，3:4。",
+                "生成“成都 3天美食路线地图”：宽窄巷子/锦里/太古里/火锅串串等，按天路线+美食图标重点突出，3:4竖版。"
+              ]
+            }
           }
         }
       }
@@ -67,6 +136,23 @@
             "meta_description": "生成地标建筑HUD风信息图：照片+白色技术注释叠加，含测量数据、材料数量、平面/剖面图与工程特征，适合建筑科普与作品集。",
             "og_image": "/images/seo/template-architecture-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把建筑照片升级成“HUD技术解析板”：在主视觉上叠加白线标注，附尺寸/材料/结构要点，并配平面或剖面小图、数据面板与工程特征说明，像科幻工程手册一样可读。",
+              "who": "适合建筑/设计学生做作品集、建筑科普账号、城市地标解读内容、展览导览海报，以及想把“看起来很酷但讲得更清楚”的建筑内容创作者。",
+              "how": [
+                "输入建筑名称+城市+你要强调的3–5个工程/结构亮点（如悬挑、桁架、幕墙系统）。",
+                "给出可引用的数据范围（高度、层数、材料类型；不确定可写“估算/约”）。",
+                "要求HUD风：白色细线注释、编号callout、数据面板、平面/剖面小窗、垂直3:4。",
+                "生成后检查：标注是否遮挡主体；如遮挡，要求“把标注移到边缘并用引线连接”。"
+              ],
+              "prompts": [
+                "生成“迪拜哈利法塔”HUD建筑解析图：主照片+白线技术标注，包含高度/楼层/结构体系要点、幕墙材料、风荷载设计亮点，并配剖面小图与数据面板，3:4竖版。",
+                "做“悉尼歌剧院”HUD信息图：壳体结构、预制分段、材料与声学空间要点，白线注释+编号callout+小型平面示意，3:4。",
+                "生成“萨格勒布当代博物馆（示例）”建筑解析板：强调采光、动线、结构与材料，照片上叠加HUD注释，底部给出3条设计亮点总结，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -75,6 +161,23 @@
             "meta_description": "Create a photo-based architectural infographic with dense HUD-style white technical annotations—measurements, materials, plans/sections, and engineering features in a clean vertical layout.",
             "og_image": "/images/seo/template-architecture-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template transforms a landmark photo into a HUD-style technical breakdown: clean white callouts, numbered annotations, data panels, and mini plan/section windows—like a sci-fi engineering dossier.",
+              "who": "Ideal for architecture/design students (portfolio boards), urban/landmark explainers, museum/exhibit visuals, and creators who want “cool + precise” technical storytelling.",
+              "how": [
+                "Provide the building name, location, and 3–5 features to highlight (structure, façade, span, circulation).",
+                "Add any known numbers (height, floors, materials). If unsure, label as “approx.” rather than guessing.",
+                "Request HUD styling: thin white lines, callout numbers, data panels, and a small plan/section inset. Vertical 3:4.",
+                "After generation, check readability; if labels overlap, ask to “move annotations to margins and extend leader lines.”"
+              ],
+              "prompts": [
+                "Create a “Burj Khalifa” architecture HUD infographic: photo + white technical annotations, data panels (height/floors/materials), structural system highlights, and a small section inset. Vertical 3:4.",
+                "Generate a “Sydney Opera House” HUD breakdown: shell geometry, construction modules, materials, and acoustic spaces. Include numbered callouts and a mini plan inset. Vertical 3:4.",
+                "Make a “Guggenheim Museum Bilbao” HUD board: façade system, structural concept, circulation highlights, and key dimensions (approx). Clean white overlays, vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -88,6 +191,23 @@
             "meta_description": "生成3:4竖版濒危物种知识图谱卡：6大模块（形态、栖息地、行为、种群趋势、威胁、保护/文化关系）+中英双语标注+图表可视化。",
             "og_image": "/images/seo/template-species-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张赛博朋克风“濒危物种知识卡”：主视觉物种+六大模块信息（形态/栖息地/行为/趋势/威胁/保护与文化）+简洁图表，并提供中英双语标注，适合快速科普与传播。",
+              "who": "适合自然科普账号、公益/环保组织内容、学生做物种报告、动物园/博物馆导览海报，以及喜欢高视觉冲击信息图的创作者。",
+              "how": [
+                "输入物种名称（中英名）+分布区域+3个显著特征（体型/颜色/行为）。",
+                "给出威胁清单（栖息地破坏/盗猎/气候等）与保护动作（保护区/法律/公众参与）。",
+                "要求6模块结构+种群趋势小图（上升/下降/不确定）+中英双语标题与要点。",
+                "生成后检查：信息是否过于“泛泛”；如泛泛，补充1–2个具体事实点并让模型重写模块文案。"
+              ],
+              "prompts": [
+                "生成“雪豹”濒危物种赛博朋克知识卡：中英双语标注，6大模块+种群趋势图+主要威胁与保护行动，3:4竖版，高对比霓虹信息图。",
+                "做“红毛猩猩”知识卡：形态/栖息地/行为/趋势/威胁/保护与文化关系，加入分布地图小窗与趋势图，双语标题，3:4。",
+                "生成“玳瑁海龟”濒危物种卡：突出海洋塑料与渔网威胁、繁殖与迁徙行为，6模块结构+数据面板，3:4。"
+              ]
+            }
           }
         }
       }
@@ -101,6 +221,23 @@
             "meta_description": "生成3:4人物概念拆解板：服装分层、表情集、材质特写、核心道具与随身物品，手写中文注释，适合二创设定与角色图鉴。",
             "og_image": "/images/seo/template-character-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张“角色设定拆解板”：主角色全身像+服装分层拆解+表情集+材质特写+随身物品清单，并配手写中文注释，适合做角色图鉴与二创设定。",
+              "who": "适合插画师/概念设计、同人二创、小说/漫画角色设定、游戏原型角色卡，以及想把角色细节一次讲清楚的创作者。",
+              "how": [
+                "输入角色身份（职业/时代/阵营）+3个性格关键词+1句人物口头禅/信条。",
+                "列出服装层级（外套/内搭/鞋帽等）与核心道具（武器/工具/纪念物）。",
+                "要求版式：主视觉居中，左右分栏细节小窗（材质/纹样/表情），手写注释风格，3:4竖版。",
+                "生成后检查：道具是否与身份一致；如不一致，让模型“基于身份重选道具，但保留整体画风”。"
+              ],
+              "prompts": [
+                "生成角色拆解设定图：角色“蒸汽朋克女机械师”，包含服装分层、表情集、材质特写、随身工具与核心道具，手写中文注释，3:4竖版。",
+                "做“唐代女侠”角色设定板：工笔+轻水墨质感，服饰层级、配饰细节、武器与随身物品、4种表情，中文注释，3:4。",
+                "生成“未来城市快递员”角色拆解：制服层级、背包结构、常用工具、身份徽章与贴纸细节，清晰标注，3:4。"
+              ]
+            }
           }
         }
       }
@@ -114,6 +251,23 @@
             "meta_description": "生成角色档案信息图：主视觉人像+表情设定+左右栏目（设定信息/羁绊关系）+底部关键物品拆解，可配置艺术风格与标题模块。",
             "og_image": "/images/seo/template-character-analysis-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板是“角色Dossier档案海报”：主视觉人像+表情设定条+左右栏目（基本设定/能力动机/羁绊关系）+底部关键物品拆解，适合做带剧情的角色分析。",
+              "who": "适合写作者/编剧做人物小传、二创做人物解析贴、游戏/漫画设定介绍、CP关系整理，以及想把人物“动机与关系”讲明白的创作者。",
+              "how": [
+                "输入角色背景（出身/目标/弱点）+关键关系网（3–6人：盟友/对手/牵挂）。",
+                "给出能力与代价：能力是什么、代价/限制是什么（越具体越好）。",
+                "要求版式：主视觉+表情条+左右栏目+底部物品拆解；标题可带“代号/档案编号”。",
+                "生成后检查：关系是否自洽；如矛盾，让模型“保留视觉风格，重写关系栏并统一称谓”。"
+              ],
+              "prompts": [
+                "生成角色Dossier：角色“地下记者”，主视觉人像+表情设定+左右栏目（背景/动机/能力与代价/羁绊关系）+底部关键物品拆解（相机、录音笔等），3:4竖版。",
+                "做“古代谋士”人物档案分析海报：档案编号、性格标签、策略风格、关系网（主君/对手/旧友），底部物品（折扇/密信），3:4。",
+                "生成“赛博雇佣兵”角色档案：能力模块（武器/义体/战术）、心理弱点、关系（雇主/叛徒/家人），HUD风排版，3:4。"
+              ]
+            }
           }
         }
       }
@@ -127,6 +281,23 @@
             "meta_description": "生成1:1等距微缩3D城市天气场景：地标居中，天气元素与建筑融合，上方排版城市名/日期/温度。适合社交分享与天气可视化。",
             "og_image": "/images/seo/template-weather-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把天气预报做成“微缩3D城市场景”：地标建筑居中，天气元素（雨雪雾风/阳光）与城市融合，上方统一排版城市名/日期/温度，适合每天一张的社交分享。",
+              "who": "适合城市生活账号、旅游局/景区运营、天气内容创作者、品牌做“当日氛围图”，以及想把天气信息做得更有质感的人。",
+              "how": [
+                "输入城市名+日期+温度区间+天气（晴/多云/小雨/大雪/雾等）。",
+                "指定一个代表性地标（没有就用“城市天际线+标志建筑”）。",
+                "要求等距微缩3D：天气元素与建筑互动（雨滴反光/雾层/雪堆/风向旗）。",
+                "生成后检查：文字是否清晰；如不清晰，要求“提高文字对比与留白，不改变场景风格”。"
+              ],
+              "prompts": [
+                "生成“上海 今日天气微缩城市场景”：东方明珠地标居中，小雨+湿润反光地面，上方排版城市名/日期/温度，1:1等距3D，适合社交分享。",
+                "做“纽约 天气图”：多云转晴，帝国大厦/天际线微缩场景，云层与阳光穿透效果，上方信息条，1:1。",
+                "生成“京都 冬季大雪天气”：清水寺风格地标+雪堆与飘雪粒子，顶部天气信息排版，1:1等距微缩3D。"
+              ]
+            }
           }
         }
       }
@@ -140,6 +311,23 @@
             "meta_description": "生成热点事件分析信息图：现象-本质分层、底层逻辑链条、长效影响辐射（短/中/长周期）+强可读中文排版，适合深度解读与传播。",
             "og_image": "/images/seo/template-hot-event-analysis-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把一个热点事件做成“多维分析图”：先把现象与本质分层，再给出因果链与利益相关者结构，最后用短/中/长期影响辐射图收束，适合做清晰、可传播的深度解读。",
+              "who": "适合热点解读账号、行业分析/商业观察、产品/运营复盘、研究生写作结构化梳理，以及想把复杂事件讲得有逻辑的人。",
+              "how": [
+                "输入事件一句话摘要+时间线（3–6个关键节点）。",
+                "列出参与方（至少3类：平台/监管/用户/产业链等）与各自动机。",
+                "要求三层结构：现象vs本质、底层逻辑链（因→果）、影响辐射（短/中/长）。",
+                "生成后检查：是否“观点先行”；如偏见重，让模型“先给事实框架，再给多视角假设”。"
+              ],
+              "prompts": [
+                "生成热点事件多维分析图：事件“某平台算法推荐机制引发争议”（用中性表述），包含时间线节点、参与方动机、因果链条、短中长期影响辐射，中文高可读排版，3:4竖版。",
+                "做“公司大裁员”事件分析图：现象与本质分层、成本/增长/组织结构逻辑链、对员工/行业/资本市场的影响辐射，3:4。",
+                "生成“某产品发布翻车”复盘信息图：关键节点、根因链条（需求/工程/沟通）、补救路径、长效影响，3:4竖版。"
+              ]
+            }
           }
         }
       }
@@ -153,6 +341,23 @@
             "meta_description": "生成高信息密度非遗工艺展板：历史背景、制作流程、艺术体系、纹样符号、传承现状与现代融合，并配工具/材料/场景细节插图。",
             "og_image": "/images/seo/template-intangible-heritage-zh-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张“非遗工艺A3展板”：用高信息密度的模块讲清历史源流、制作流程、工具材料、纹样符号系统、代表作品与传承现状，并补充现代应用场景，适合展陈与科普。",
+              "who": "适合文博/非遗科普账号、学校社团展板、文化机构宣传、文创品牌素材，以及想把传统工艺讲清楚并做出视觉质感的创作者。",
+              "how": [
+                "输入非遗名称+地区+一句话核心特色（如“竹编灯彩/蓝染/木版年画”）。",
+                "列出流程步骤（5–8步）与工具材料清单（越具体越好）。",
+                "要求模块：历史/流程/纹样符号/代表作品/传承现状/现代融合，并配小插图与标注。",
+                "生成后检查：步骤是否可执行；如不清晰，让模型“按你给的流程重写步骤说明并补关键动作”。"
+              ],
+              "prompts": [
+                "生成非遗工艺A3展板：主题“鱼灯（灯彩）”，包含历史背景、制作流程（7步）、工具材料、纹样符号与寓意、传承现状与现代应用，插图丰富，3:4竖版高密度排版。",
+                "做“蓝染”非遗展板：染料来源、扎染/蜡染要点、流程分步、常见纹样与象征、当代穿搭应用，3:4。",
+                "生成“木版年画”展板：刻版/套印流程、色彩体系、代表题材、传承与现代设计融合案例，清晰中文模块，3:4。"
+              ]
+            }
           }
         }
       }
@@ -166,6 +371,23 @@
             "meta_description": "把知识点变成信息图：可爱卡通卡片风或粉笔黑板报草图风，关键词突出、结构清晰，适合课堂讲解、笔记整理与科普分享。",
             "og_image": "/images/seo/template-education-card-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把任意知识点压缩成“可保存的知识卡”：两种风格可选（可爱卡通卡片 / 粉笔黑板报草图），用关键词+结构化小模块把概念讲清楚，适合一眼看懂。",
+              "who": "适合老师备课、学生做笔记、科普账号输出系列卡片、亲子教育内容，以及需要把复杂概念讲成“10秒能懂”的用户。",
+              "how": [
+                "输入主题+受众年龄/水平（小学/中学/成人入门）。",
+                "给出你希望包含的模块：定义/例子/公式/误区/小测验（可选）。",
+                "选择风格：可爱卡通 or 黑板报；要求关键词高亮、层级清晰、字大可读。",
+                "生成后检查：是否过于长；如过长，让模型“删到 6–8 个关键点并加1个例子”。"
+              ],
+              "prompts": [
+                "生成知识卡：主题“什么是光合作用”，面向小学高年级，可爱卡通卡片风，包含定义、过程三步、一个生活例子、小测验1题，3:4竖版。",
+                "做黑板报风知识卡：主题“牛顿第三定律”，包含公式、关键词、两个例子、常见误区，粉笔草图风，3:4。",
+                "生成“机器学习过拟合”知识卡：定义、原因、3种缓解方法、一个直观比喻，清晰结构，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -174,6 +396,23 @@
             "meta_description": "Turn any topic into a save-worthy infographic in two styles: cute pastel cartoon cards or chalkboard scientific sketch—clean structure, highlighted keywords, and readable layout.",
             "og_image": "/images/seo/template-education-card-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template turns any concept into a save-worthy educational card in two styles (cute pastel cards or chalkboard sketch). It highlights keywords and organizes ideas into small, readable blocks for fast learning.",
+              "who": "Perfect for teachers, students, science communicators, parents creating learning posts, and anyone who needs “quick clarity” without long text.",
+              "how": [
+                "Provide the topic and audience level (kids / beginner / intermediate).",
+                "Choose modules you want: definition, steps, examples, formula, common mistakes, mini-quiz.",
+                "Pick a style: cute card or chalkboard sketch; request large readable text and clear hierarchy.",
+                "If output is too long, ask to “compress to 6–8 key bullets + 1 example + 1 quiz question.”"
+              ],
+              "prompts": [
+                "Create an educational card on “Photosynthesis” for upper elementary: definition, 3-step process, one everyday example, and a 1-question mini quiz. Cute pastel card style. Vertical 3:4.",
+                "Generate a chalkboard-style card on “Newton’s Third Law”: formula, keywords, two examples, and one common misconception. Vertical 3:4.",
+                "Make a learning card on “Overfitting in Machine Learning”: definition, why it happens, 3 fixes, and one intuitive analogy. Clean layout, vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -187,6 +426,23 @@
             "meta_description": "生成3:4国风服饰科普插画：工笔重彩风，形制结构、针脚纹样、配饰细节、寓意注解与穿戴场景模块化拆解，适合科普传播与文创素材。",
             "og_image": "/images/seo/template-costume-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张“朝代服饰科普插画”：用工笔重彩质感把形制结构、纹样针脚、配饰细节、寓意注解与穿戴场景拆解成模块，既好看又适合学习收藏。",
+              "who": "适合国风科普/汉服账号、文创设计素材、历史爱好者做笔记、展览导览图，以及需要“准确+高级质感”的文化内容创作者。",
+              "how": [
+                "输入朝代/时期+服饰类型（常服/礼服/武服/官服等）+角色身份（士/官/贵族/平民）。",
+                "列出关键细节：领型、袖型、腰带、裙摆、头饰、纹样主题（如云纹/花鸟）。",
+                "要求模块：形制结构拆解+配饰细节特写+寓意注解+穿戴场景小窗，3:4竖版。",
+                "生成后检查：称谓与结构是否一致；如不一致，要求“保留画风，按你提供的形制要点修正文案”。"
+              ],
+              "prompts": [
+                "生成“唐代女子常服”国风服饰科普插画：工笔重彩风，形制结构、纹样寓意、配饰细节、穿戴场景模块化拆解，3:4竖版中文标注。",
+                "做“明代官服”科普图：补子纹样、帽饰、腰带与层次结构，配细节特写与注释，3:4。",
+                "生成“宋代文人服饰”信息图：领型袖型、材质与色彩偏好、日常场景，工笔风拆解，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -195,6 +451,23 @@
             "meta_description": "Create a premium 3:4 Chinese costume infographic with accurate dynasty-specific structure, craftsmanship details, pattern symbolism, and clean annotated breakdowns—ideal for cultural education and design.",
             "og_image": "/images/seo/template-costume-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template creates a premium 3:4 Chinese costume infographic with dynasty-accurate structure, craftsmanship details, pattern symbolism, accessories, and annotated breakdown panels.",
+              "who": "Great for cultural educators, costume designers, history creators, museum-style explainers, and anyone making high-quality “save & share” heritage visuals.",
+              "how": [
+                "Specify dynasty/period + garment type (daily wear / ceremonial / official) + character identity.",
+                "List key construction features (collar, sleeves, belt, layers) and pattern motifs.",
+                "Request modular panels: structural breakdown, accessory close-ups, symbolism notes, and a wear-scene vignette. Vertical 3:4.",
+                "After generation, verify consistency of labels; if off, ask to “keep the art style, correct the annotations based on my notes.”"
+              ],
+              "prompts": [
+                "Create a Tang Dynasty women’s everyday outfit infographic: detailed structure breakdown, pattern symbolism, accessory close-ups, and a small wearing-scene panel. Gongbi-inspired style. Vertical 3:4.",
+                "Generate a Ming Dynasty official robe infographic: badge motif (buzi), hat/accessories, layered construction, annotated close-ups. Vertical 3:4.",
+                "Make a Song Dynasty scholar outfit infographic: collar/sleeve structure, material & color preferences, daily-life vignette, clean English annotations. Vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -208,6 +481,23 @@
             "meta_description": "为【书名】生成6张3:4竖版书籍解读图文：封面钩子、核心主题、经典语录、核心观点、人物/维度关系、脉络梳理。统一风格，适合收藏转发。",
             "og_image": "/images/seo/template-book-series-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板一次生成一套“6张书籍解读图”（3:4竖版）：封面钩子→核心主题→金句→关键观点→关系图→脉络总结，风格统一，适合小红书/朋友圈/社群分享与收藏。",
+              "who": "适合读书博主、知识博主、课程讲师做书单内容、学习笔记整理，以及想把一本书讲清楚并提高转发收藏的用户。",
+              "how": [
+                "输入书名+作者+你想强调的受众（职场/创业/心理/历史等）。",
+                "给出3–5条核心观点与2–3条金句（没有就让模型从内容概括中生成）。",
+                "要求6张结构固定：每张有标题+要点+视觉符号；统一配色与字体层级。",
+                "生成后检查：观点是否重复；如重复，让模型“每张只保留一个主题并重新分配观点”。"
+              ],
+              "prompts": [
+                "为《Working Backwards》生成6张书籍解读图：封面钩子、核心主题、金句、关键观点、机制/人物关系、全书脉络总结，统一风格，3:4竖版。",
+                "生成《一句顶一万句》6张图解读：主题与人物关系、关键冲突与情绪线、代表性金句、脉络总结，适合小红书收藏转发，3:4。",
+                "为一本“AI产品方法论”书生成6张图：面向产品经理，突出框架、案例、误区与行动清单，统一视觉风格，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -216,6 +506,23 @@
             "meta_description": "Generate a consistent 6-image (3:4) book carousel: cover hook, core themes, key quotes, takeaways, relations, and structured outline—optimized for saving and sharing.",
             "og_image": "/images/seo/template-book-series-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template generates a consistent 6-image (3:4) book carousel: cover hook, core themes, key quotes, main takeaways, relationship/map view, and a structured outline—designed for saves and shares.",
+              "who": "Ideal for book creators, newsletter writers, educators, and anyone turning reading notes into high-performing social content.",
+              "how": [
+                "Provide book title + author + target audience angle (career / startup / psychology / history).",
+                "List 3–5 key ideas and 2–3 quotes (or ask the model to propose quotes-style snippets).",
+                "Lock the 6-slide structure and request consistent typography and visual language across slides.",
+                "After generation, remove redundancy by asking: “one theme per slide, redistribute points.”"
+              ],
+              "prompts": [
+                "Create a 6-image book carousel for “Working Backwards”: cover hook, core themes, key quotes, top takeaways, concept map, and structured outline. Consistent style. Vertical 3:4.",
+                "Generate a 6-image carousel for a book on “AI Product Strategy”: frameworks, examples, common pitfalls, and an action checklist—optimized for saving. Vertical 3:4.",
+                "Make a 6-image carousel for “Think Like a Rocket Scientist”: hook, mindset principles, favorite quote highlights, tools/practices, concept map, and summary. Vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -229,6 +536,23 @@
             "meta_description": "生成3:4中国风复古文物信息图：中心手绘文物插画+四象限讲清历史地位、考古价值、艺术成就、当代影响，并含延伸知识板块。",
             "og_image": "/images/seo/template-cultural-relic-retro-infographic-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张“复古文物四象限信息图”：中心手绘文物插画，四象限分别讲清历史地位、考古价值、艺术成就、当代影响，并补充延伸知识与小注释，适合科普与展览风内容。",
+              "who": "适合文博科普账号、历史爱好者、博物馆导览内容、文创品牌讲故事，以及想把文物讲得“有体系、可收藏”的创作者。",
+              "how": [
+                "输入文物名称+年代/朝代+出土/收藏地（可选）。",
+                "给出你想强调的四象限要点（每象限2–4条即可）。",
+                "要求复古排版：纸张质感、手绘插画、编号脚注、小型时间线或地点小窗。",
+                "生成后检查：术语是否准确；如需更稳妥，用“可能/一般认为/推测”表达不确定点。"
+              ],
+              "prompts": [
+                "生成中国文物复古四象限信息图：文物“司母戊鼎”，中心手绘插画+四象限（历史地位/考古价值/艺术成就/当代影响）+延伸知识板块，3:4竖版。",
+                "做“越王勾践剑”复古信息图：四象限讲清工艺特点、历史背景、发现故事、当代文化影响，复古纸张质感，3:4。",
+                "生成“唐三彩骆驼俑”信息图：艺术风格、贸易/丝路关联、考古价值、现代审美影响，四象限结构，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -237,6 +561,23 @@
             "meta_description": "Create a 3:4 Chinese retro infographic poster: central hand-painted relic illustration + four quadrants (historical status, archaeological value, artistic achievement, modern influence) plus “Extra Facts”.",
             "og_image": "/images/seo/template-cultural-relic-retro-infographic-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template creates a retro relic infographic: a central hand-painted artifact illustration plus four quadrants—historical status, archaeological value, artistic achievement, and modern influence—finished with an “Extra Facts” panel.",
+              "who": "Great for museum-style explainers, history educators, culture creators, and brands that want heritage storytelling with a collectible poster vibe.",
+              "how": [
+                "Provide relic name + dynasty/period + where it was found/held (optional).",
+                "Give 2–4 bullets for each quadrant (or ask the model to draft them).",
+                "Request retro poster styling: paper texture, hand-painted illustration, numbered footnotes, small timeline/map inset.",
+                "If facts are uncertain, instruct the model to use cautious phrasing (e.g., “likely / commonly believed”)."
+              ],
+              "prompts": [
+                "Create a Chinese relic retro infographic for “Simuwu Ding”: central hand-painted illustration + four quadrants + Extra Facts panel. Vertical 3:4.",
+                "Generate a retro infographic for the “Sword of Goujian”: craftsmanship, historical context, discovery story, and modern cultural influence—four quadrants + footnotes. Vertical 3:4.",
+                "Make a “Tang Sancai Camel Figurine” infographic: art style, Silk Road connections, archaeological value, and modern influence. Retro poster layout, vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -250,6 +591,23 @@
             "meta_description": "生成9:16犬种复古科普信息图：中心手绘犬种+解剖标注，包含结构适应性、行为可训练性、被毛护理与个性总结等多板块。",
             "og_image": "/images/seo/template-dog-breed-retro-infographic-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张9:16复古犬种科普信息图：中心手绘犬种+解剖标注（耳/鼻/腿/被毛等），并分模块讲结构适应性、训练难度、护理要点与性格总结，适合收藏分享。",
+              "who": "适合养犬科普账号、宠物店/训犬师内容、准备养狗的新手、学校科普，以及想做“像老杂志一样好看”的宠物内容创作者。",
+              "how": [
+                "输入犬种名称+体型（小/中/大）+家庭场景（公寓/有院子/亲子）。",
+                "列出你最关心的3项：掉毛/运动量/护毛/训练/社交等。",
+                "要求复古科学风：中心插画+白线解剖标注+模块化信息（护理/训练/性格/适应）。",
+                "生成后检查：是否与场景匹配；如不匹配，让模型“按公寓/亲子场景重写护理与运动建议”。"
+              ],
+              "prompts": [
+                "生成犬种复古科学信息图：犬种“金毛寻回犬”，9:16，中心手绘+解剖标注，模块含训练要点、运动量、被毛护理、性格总结与适合人群。",
+                "做“柯基”犬种信息图：体型结构标注、脊椎护理注意、训练与精力管理、掉毛护理，复古排版，9:16。",
+                "生成“哈士奇”科普图：耐寒适应性、运动需求、拆家风险与训练策略、护理要点，中心插画+标注，9:16。"
+              ]
+            }
           }
         },
         "en": {
@@ -258,6 +616,23 @@
             "meta_description": "Generate a 9:16 retro scientific dog-breed infographic: detailed hand-drawn illustration with anatomical annotations plus sections on adaptation, behavior/trainability, coat care, and personality.",
             "og_image": "/images/seo/template-dog-breed-retro-infographic-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template generates a 9:16 retro scientific dog-breed infographic: a central hand-drawn dog with anatomical callouts plus modules for adaptation, trainability, coat care, and personality—highly collectible and readable.",
+              "who": "Great for pet educators, trainers, shelters, pet brands, and first-time owners turning practical advice into shareable visuals.",
+              "how": [
+                "Provide the breed name, size, and living scenario (apartment / house / kids).",
+                "List your top concerns (shedding, energy, grooming, training difficulty).",
+                "Request retro science styling: central illustration, thin white annotations, modular panels.",
+                "After generation, ensure advice matches the living scenario; if not, ask to “rewrite care & exercise recommendations for my scenario.”"
+              ],
+              "prompts": [
+                "Generate a Golden Retriever retro infographic (9:16): central illustration + anatomical callouts, modules for training, energy needs, grooming, temperament, and best-fit households.",
+                "Create a Corgi breed infographic (9:16): structure callouts, back/health care notes, shedding & grooming, training tips, personality summary. Retro scientific layout.",
+                "Make a Husky infographic (9:16): cold adaptation, high exercise needs, training strategy, grooming, and common challenges—center illustration + callouts."
+              ]
+            }
           }
         }
       }
@@ -271,6 +646,23 @@
             "meta_description": "生成3:4美食科普海报：水彩主视觉、制作步骤、核心食材、起源文化与地方记忆模块，结构清晰可分享，适合品牌内容与社交传播。",
             "og_image": "/images/seo/template-food-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板把一道美食做成“全景科普海报”：水彩主视觉+制作步骤+核心食材+起源文化与地方记忆，并用模块化信息图讲清“怎么做、为什么这么做、从哪里来”。",
+              "who": "适合美食博主、餐饮品牌内容、地方文旅宣传、学校科普展示，以及想把食物故事讲得更有层次的创作者。",
+              "how": [
+                "输入菜名/食物+地区/流派（可选）+你想突出的一点（香料/工艺/文化故事）。",
+                "列出核心食材（5–10项）与关键步骤（5–7步）。",
+                "要求模块：步骤、食材、风味关键词、起源与文化、地方记忆/场景推荐，3:4竖版。",
+                "生成后检查：步骤与食材是否对应；不对应就让模型“按食材清单重排步骤并补关键火候”。"
+              ],
+              "prompts": [
+                "生成“兰州牛肉面”美食全景科普信息图：水彩主视觉+6步制作+核心食材+起源文化与地方记忆模块，3:4竖版中文排版。",
+                "做“法式可颂”科普海报：折叠层次原理、关键步骤、常见失败点、食材与风味关键词，3:4。",
+                "生成“墨西哥Taco”信息图：食材结构、风味组合、起源故事、适配场景（街头/家庭聚会），3:4竖版。"
+              ]
+            }
           }
         },
         "en": {
@@ -279,6 +671,23 @@
             "meta_description": "Create a 4K vertical 3:4 watercolor-style food infographic poster with steps, core ingredients, origin culture, and local memory modules—clean layout and highly shareable.",
             "og_image": "/images/seo/template-food-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template creates a full-spectrum food infographic poster: watercolor hero image, step-by-step process, core ingredients, origin culture, and “local memory” context—clear, structured, and shareable.",
+              "who": "Great for food creators, restaurant brands, tourism storytelling, educators, and anyone turning recipes into culture-forward content.",
+              "how": [
+                "Provide the dish name, region/cuisine (optional), and one angle to emphasize (technique, spice, history).",
+                "List 5–10 key ingredients and 5–7 essential steps.",
+                "Request modules: steps, ingredients, flavor keywords, origin story, and serving/scene suggestions. Vertical 3:4.",
+                "Verify ingredient-step consistency; if off, ask to “reorder steps to match the ingredient list and add key timing/heat notes.”"
+              ],
+              "prompts": [
+                "Create a “Lanzhou Beef Noodle” food infographic: watercolor hero image, 6 steps, core ingredients, origin culture, and local memory panel. Vertical 3:4.",
+                "Generate a “French Croissant” infographic: lamination concept, key steps, common failure fixes, ingredient list, flavor keywords. Vertical 3:4.",
+                "Make a “Mexican Taco” infographic: ingredient structure, flavor pairing logic, origin story, and serving scenarios (street food / party). Vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -292,6 +701,23 @@
             "meta_description": "生成A3竖版高密度节气知识图解：中央复古插画，周围模块含交节时间/太阳黄经、三候物候、文化内涵、习俗场景与农事/养生标签。",
             "og_image": "/images/seo/template-solar-term-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成一张A3高密度“节气知识海报”：中央复古插画，周围模块讲交节时间/太阳黄经、三候物候、文化内涵、习俗场景与农事/养生标签，一张图把节气讲透。",
+              "who": "适合国学/传统文化科普、学校课堂展板、亲子教育内容、文创/茶饮品牌做节气营销，以及想做“可打印可收藏”的节气海报的人。",
+              "how": [
+                "输入节气名称（如立春/霜降）+你想强调的地域（北方/江南等，可选）。",
+                "列出三候物候要点（没有就让模型生成，但要求符合常识）。",
+                "要求模块化排版：交节时间/太阳黄经、三候、习俗、农事、养生关键词、代表食物/花草（可选）。",
+                "生成后检查：文字是否过密；如过密，让模型“减少到每模块3条以内并增大字号”。"
+              ],
+              "prompts": [
+                "生成A3竖版“立春”节气知识海报：中央复古插画，模块含交节时间/太阳黄经、三候物候、习俗场景、农事与养生标签，中文高可读排版。",
+                "做“霜降”节气海报：三候、代表食物、习俗与农事、养生提示，复古插画+信息模块，A3竖版。",
+                "生成“夏至”节气知识图解：交节信息、物候变化、文化内涵、饮食与生活建议，A3竖版高密度但可读。"
+              ]
+            }
           }
         },
         "en": {
@@ -300,6 +726,23 @@
             "meta_description": "Generate an A3 vertical, high-density solar-term infographic: central retro illustration with modules for timing/solar longitude, phenology (three phases), customs, culture, and seasonal farming/health tips.",
             "og_image": "/images/seo/template-solar-term-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template generates an A3 vertical, high-density Chinese solar-term poster: a central retro illustration surrounded by modules for timing/solar longitude, the “three phases” of phenology, customs, cultural meaning, and seasonal farming/health tips.",
+              "who": "Ideal for cultural educators, classroom posters, family learning content, brands doing seasonal storytelling, and creators making printable heritage visuals.",
+              "how": [
+                "Provide the solar term name (e.g., Start of Spring, Frost’s Descent) and a region context if desired.",
+                "List (or request) the phenology “three phases” with cautious, general wording if uncertain.",
+                "Request modular layout: timing/solar longitude, phenology, customs, culture, seasonal tips, optional foods/plants.",
+                "If too dense, ask to “cap each module at 3 bullets and increase font size/spacing.”"
+              ],
+              "prompts": [
+                "Generate an A3 vertical infographic for “Start of Spring”: central retro illustration, modules for timing/solar longitude, three-phase phenology, customs, farming notes, and wellness tips. English typography.",
+                "Create an A3 poster for “Frost’s Descent”: phenology, seasonal foods, customs, farming/wellness tags, retro illustration + clean modules.",
+                "Make an A3 “Summer Solstice” infographic: timing, phenology shifts, cultural meaning, daily-life suggestions, high-density but readable layout."
+              ]
+            }
           }
         }
       }
@@ -313,6 +756,23 @@
             "meta_description": "Generate an ultra-HD 8K fruit infographic poster: labeled structure, nutrition, origin regions, growth process, health benefits, and history—clean commercial design with English-only typography.",
             "og_image": "/images/seo/template-fruit-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template generates an ultra-HD fruit infographic poster: labeled fruit anatomy/structure, nutrition highlights, origin regions, growth process, health benefits, and a short history panel—clean commercial design with English-only typography.",
+              "who": "Great for food brands, nutrition educators, grocery content, school posters, and creators making “save-worthy” fruit facts with premium visuals.",
+              "how": [
+                "Provide the fruit name and the angle (nutrition / origin / botanical structure / fun history).",
+                "List 5–8 nutrition points (or ask the model to propose) and 3–5 origin regions.",
+                "Request labeled structure cutaway + growth timeline mini-panel + clean commercial layout. Vertical 3:4.",
+                "After generation, check readability and accuracy; if too wordy, ask to “compress to the top 6 facts.”"
+              ],
+              "prompts": [
+                "Generate an 8K infographic poster for “Mango”: labeled structure, nutrition highlights, origin regions, growth process timeline, health benefits, and a short history panel. Clean commercial design. Vertical 3:4.",
+                "Create a “Blueberry” infographic: anatomy labels, antioxidants/nutrition facts, major origin regions, cultivation/growth stages, and quick history. English-only typography. Vertical 3:4.",
+                "Make a “Dragon Fruit” poster: labeled cross-section, nutrition, where it grows, pollination/growth process, and fun cultural notes. 8K look, vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -326,6 +786,23 @@
             "meta_description": "生成3:4人物档案卡：左右分栏古今对比，中间分割线，高级低饱和排版；底部含职业/关键词/特质/能力/物品对照与反差亮点。",
             "og_image": "/images/seo/template-character-comparison-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成“古今对比人物档案卡”：左右分栏角色A/B，中间分割线，底部用结构化模块对照职业、关键词、特质、能力、物品，并给出最强反差亮点，适合做反转与对比内容。",
+              "who": "适合短视频/图文做“古今反差”、历史人物现代化二创、IP角色对照、品牌人设对比，以及想做高互动讨论的创作者。",
+              "how": [
+                "输入角色A（古代/传统）与角色B（现代/当代）的身份设定与一句话标签。",
+                "为两边各给：3个关键词、2个能力、2个代表物品、1个弱点/代价。",
+                "要求低饱和高级排版：左右档案+底部对照表+一句“反差点总结”。",
+                "生成后检查：对比是否“同维度”；如不在同维度，让模型“统一维度后重写对照表”。"
+              ],
+              "prompts": [
+                "生成古今对比人物档案卡：A“古代镖师” vs B“现代快递员”，对照职业/关键词/能力/物品/弱点，并给出反差亮点总结，3:4竖版低饱和排版。",
+                "做“A 唐代女官” vs “B 现代女产品经理”对比档案：性格、能力、随身物品、压力来源，底部对照表，3:4。",
+                "生成“古代书生” vs “现代知识博主”人物对比卡：风格统一，高级排版，反差点一句话总结，3:4。"
+              ]
+            }
           }
         },
         "en": {
@@ -334,6 +811,23 @@
             "meta_description": "Generate a 3:4 HD character profile card with an ancient vs modern split layout, clean divider, premium typography, and structured comparison modules (traits, abilities, items, and contrast highlight).",
             "og_image": "/images/seo/template-character-comparison-en.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template creates an “Ancient vs Modern” split profile card: two-column layout with a clean divider, premium typography, and structured comparison blocks (role, keywords, traits, abilities, items) plus a punchy contrast highlight.",
+              "who": "Perfect for contrast storytelling, history-to-modern remixes, character/IP comparisons, brand archetype content, and creators optimizing for comments and shares.",
+              "how": [
+                "Define Character A (ancient/traditional) and Character B (modern) with one-line tags.",
+                "For each side, provide 3 keywords, 2 abilities, 2 signature items, and 1 weakness/trade-off.",
+                "Request the split layout + bottom comparison table + one “contrast highlight” sentence.",
+                "If comparison feels mismatched, ask to “standardize dimensions and rewrite the table only.”"
+              ],
+              "prompts": [
+                "Generate an Ancient vs Modern character card: A “Caravan Guard” vs B “Delivery Courier”. Compare role, keywords, abilities, items, weakness, and add one contrast highlight. Vertical 3:4.",
+                "Create a split dossier: A “Imperial Court Official” vs B “Product Manager”. Include traits, abilities, signature items, stressors, and a bottom comparison table. Vertical 3:4.",
+                "Make an Ancient vs Modern card: A “Scholar” vs B “Knowledge Creator”. Premium typography, clean divider, structured modules, and one-line contrast highlight. Vertical 3:4."
+              ]
+            }
           }
         }
       }
@@ -347,6 +841,23 @@
             "meta_description": "生成国风工笔对决档案卡：左右分屏角色A/B，顶部头像标签，左右档案信息，底部标志性物品，水墨战场背景与分割元素强化对决感。",
             "og_image": "/images/seo/template-battle-card-zh.jpg",
             "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板生成“国风对决档案卡”：左右分屏角色A/B，水墨战场背景+分割元素增强张力，顶部头像标签、左右档案信息、底部标志性物品展示，适合做“谁更强/谁会赢”的对决内容。",
+              "who": "适合国风二创、角色对战话题、小红书/短视频做互动投票、游戏/漫画角色宣传，以及想做强视觉冲击与评论区讨论的创作者。",
+              "how": [
+                "输入角色A与角色B：各自称号/门派/武器/绝技/弱点（至少各3条信息）。",
+                "设定对决主题：速度 vs 力量、智谋 vs 武力、守护 vs 毁灭等。",
+                "要求版式：左右分屏+顶部头像标签+底部物品栏+对决感分割元素（水墨飞溅/刀光）。",
+                "生成后检查：两边强度是否均衡；如一边过强，让模型“加入对方克制点或代价机制”。"
+              ],
+              "prompts": [
+                "生成国风对决角色档案卡：A“霸王项羽” vs B“战神吕布”，左右分屏，工笔+水墨战场背景，档案信息+标志性物品栏+绝技与弱点对照，3:4竖版。",
+                "做“A 花木兰” vs “B 杨门女将（代表人物）”对决卡：强调战斗风格差异与克制点，左右分屏高张力，3:4。",
+                "生成“武当剑客” vs “少林棍僧”对决档案：武器/身法/内功/弱点，底部物品与招式icon，水墨对决氛围，3:4。"
+              ]
+            }
           }
         }
       }
