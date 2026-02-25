@@ -7,6 +7,8 @@ import storyboard from "../../../../../public/data/storyboard.json";
 import CdnImage from "../../../_components/CdnImage";
 import CdnVideo from "../../../_components/CdnVideo";
 import CdnAudio from "../../../_components/CdnAudio";
+import TemplateLink, { TemplateSuggestions } from "../../../_components/TemplateLink";
+import { getTemplatesByCategory } from "@/utils/blogUtils";
 
 export async function generateMetadata({
   params,
@@ -39,6 +41,9 @@ const ListIcon = () => (
 );
 
 export default function VideoEnhancementPost() {
+  // Get related templates for this blog post
+  const evolutionTemplates = getTemplatesByCategory("evolution", "en");
+  const allTemplates = getTemplatesByCategory("", "en"); // Get all templates
   return (
     <article className="max-w-6xl mx-auto px-6 py-20 text-[18px] leading-8">
 
@@ -273,6 +278,14 @@ export default function VideoEnhancementPost() {
             </a>
           </p>
         </footer>
+
+        {/* Template Suggestions Section */}
+        <div className="mt-12">
+          <TemplateSuggestions 
+            templates={[...evolutionTemplates, ...allTemplates.slice(0, 3)]}
+            className="mt-8"
+          />
+        </div>
 
       </main>
     </article>

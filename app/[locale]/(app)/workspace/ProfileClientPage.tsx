@@ -14,6 +14,7 @@ import { formatDuration } from "@/lib/format_utils";
 import { projectService } from "@/services/projects";
 import { authService } from "@/services/auth";
 import GalleryGrid from "../../_componentForPage/GalleryGrid";
+import HotTopics from "../../_componentForPage/HotTopics";
 
 export default function ProfileClientPage() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -81,6 +82,8 @@ export default function ProfileClientPage() {
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
 
       <h2 className="text-2xl font-bold mb-4">My Projects</h2>
+
+      <HotTopics />
 
       {isRefreshing && (
         <div className="mb-4 inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full shadow-sm">

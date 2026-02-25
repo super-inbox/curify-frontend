@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
+import TemplateLink, { TemplateSuggestions } from "../../../_components/TemplateLink";
+import { getTemplatesByCategory } from "@/utils/blogUtils";
 
 export async function generateMetadata({
   params,
@@ -18,6 +20,9 @@ export async function generateMetadata({
 }
 
 export default function AgentsVsWorkflowsPost() {
+  // Get related templates for this blog post
+  const evolutionTemplates = getTemplatesByCategory("evolution", "en");
+  const allTemplates = getTemplatesByCategory("", "en"); // Get all templates
   return (
     <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
       <h1 className="text-4xl font-bold mb-8">🤖 Agents vs Workflows</h1>
@@ -58,6 +63,12 @@ export default function AgentsVsWorkflowsPost() {
         The future of creative automation lies in harmony: workflows provide
         <strong> control</strong>, agents bring <strong>creativity</strong>.
       </p>
+
+      {/* Template Suggestions Section */}
+      <TemplateSuggestions 
+        templates={[...evolutionTemplates, ...allTemplates.slice(0, 3)]}
+        className="mt-8"
+      />
     </article>
   );
 }

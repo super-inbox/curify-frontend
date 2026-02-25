@@ -117,6 +117,12 @@ export default function Header() {
               <Link href="/workspace" className="hover:opacity-80">
                 Workspace
               </Link>
+              <Link href="/hot-topics" className="hover:opacity-80">
+                Hot Topics
+              </Link>
+              <Link href="/hot-topics/list" className="hover:opacity-80 text-sm text-gray-600">
+                Simple List
+              </Link>
             </nav>
           )}
         </div>
