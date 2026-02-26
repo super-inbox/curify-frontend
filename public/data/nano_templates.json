@@ -1269,5 +1269,35 @@
         ]
       }
     }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh",
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "description": "Generate a 4K vertical MBTI Spring Festival travel comparison meme with two-panel contrast, cute animal characters, Chinese text, red border card style.",
+        "base_prompt": "（MBTI梗图设计师）你是一位顶尖AI视觉设计师，擅长生成高表现力、强对比、文字清晰的MBTI春运对比卡片。根据用户指定的【{persona_a}】、【{persona_b}】、【{scene_title}】，生成一张竖版9:16对比卡：整体为白色卡片+红色粗边框，上下双栏结构，每栏顶部是醒目加粗中文标题，中间是可爱动物拟人卡通插画，底部是搞笑文案。上半部分：标题【{persona_a} {scene_title}】，动物拟人插画，动作表情鲜明；下半部分：标题【{persona_b} {scene_title}】，与上半部分形成强烈反差对比。风格：扁平卡通、色彩明亮、文字清晰无错别字、画面干净、排版工整、4K高清、适合抖音小红书传播。直接出图，主体为MBTI春运对比。",
+        "parameters": [
+          {
+            "name": "persona_a",
+            "label": "人格A",
+            "type": "text",
+            "placeholder": ["ISTJ", "ENFP", "INFP", "INTJ"]
+          },
+          {
+            "name": "persona_b",
+            "label": "人格B",
+            "type": "text",
+            "placeholder": ["ENFP", "ISTJ", "ESTP", "INTP"]
+          },
+          {
+            "name": "scene_title",
+            "label": "春运场景",
+            "type": "text",
+            "placeholder": ["春运打包", "候车时", "高铁上", "赶高铁"]
+          }
+        ]
+      }
+    }
   }
 ]
