@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
+import ExampleImagesGrid from "./ExampleImagesGrid";
 
 // ✅ merged seo json (minimal + optional content sections)
 import nanoSeo from "@/public/data/nano_template_seo.json";
@@ -319,33 +320,7 @@ export default async function NanoTemplatePage({ params }: Props) {
 
       {/* SECTION 2: example images */}
       <section className="mt-8">
-        <div className="mb-3">
-          <h2 className="text-lg font-bold text-neutral-900">Example images</h2>
-          <p className="mt-1 text-sm text-neutral-600">
-            {section2Images.length} curated outputs for this template.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {section2Images.map((it) => (
-            <div
-              key={it.id}
-              className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow"
-            >
-              <CdnImage
-                src={it.preview}
-                alt={it.title || it.id}
-                className="w-full aspect-[4/3] object-cover"
-                loading="lazy"
-              />
-              <div className="p-4">
-                <div className="text-sm font-semibold text-neutral-900 line-clamp-2">
-                  {it.title || it.id}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <ExampleImagesGrid items={section2Images} maxRows={3} />        
 
         {/* SECTION 3: other templates */}
         <NanoTemplateDetailClient
