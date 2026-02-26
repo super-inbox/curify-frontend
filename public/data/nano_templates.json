@@ -1271,12 +1271,12 @@
     }
   },
   {
-    "id": "template-mbti-spring-festival-zh",
+    "id": "template-mbti-contrast-zh",
     "locales": {
       "zh": {
         "category": "MBTI趣味类",
         "description": "Generate a 4K vertical MBTI Spring Festival travel comparison meme with two-panel contrast, cute animal characters, Chinese text, red border card style.",
-        "base_prompt": "（MBTI梗图设计师）你是一位顶尖AI视觉设计师，擅长生成高表现力、强对比、文字清晰的MBTI春运对比卡片。根据用户指定的【{persona_a}】、【{persona_b}】、【{scene_title}】，生成一张竖版9:16对比卡：整体为白色卡片+红色粗边框，上下双栏结构，每栏顶部是醒目加粗中文标题，中间是可爱动物拟人卡通插画，底部是搞笑文案。上半部分：标题【{persona_a} {scene_title}】，动物拟人插画，动作表情鲜明；下半部分：标题【{persona_b} {scene_title}】，与上半部分形成强烈反差对比。风格：扁平卡通、色彩明亮、文字清晰无错别字、画面干净、排版工整、4K高清、适合抖音小红书传播。直接出图，主体为MBTI春运对比。",
+        "base_prompt": "（MBTI梗图设计师）你是一位顶尖AI视觉设计师，擅长生成高表现力、强对比、文字清晰的MBTI对比卡片。根据用户指定的【{persona_a}】、【{persona_b}】、【{scene_title}】，生成一张竖版9:16对比卡：整体为白色卡片+红色粗边框，上下双栏结构，每栏顶部是醒目加粗中文标题，中间是可爱动物拟人卡通插画，底部是搞笑文案。上半部分：标题【{persona_a} {scene_title}】，动物拟人插画，动作表情鲜明；下半部分：标题【{persona_b} {scene_title}】，与上半部分形成强烈反差对比。风格：扁平卡通、色彩明亮、文字清晰无错别字、画面干净、排版工整、4K高清、适合抖音小红书传播。直接出图，主体为MBTI春运对比。",
         "parameters": [
           {
             "name": "persona_a",
@@ -1298,6 +1298,21 @@
           }
         ]
       }
-    }
-  }
-]
+    },
+     "id": "template-guofeng-scroll-zh",
+     "locales": {
+     "zh": {
+     "category": "国风长卷类",
+     "description": "Generate a 4K horizontal Chinese traditional figure group scroll infographic poster with distinct characters, labeled names, and thematic background.",
+     "base_prompt": "（国风卷轴插画师）你是一位顶尖的中国传统工笔人物画师，擅长将经典人物群像绘制成长卷式百科海报。根据用户指定的【{group_name}】，生成一张 “中国传统人物群像长卷海报”：画面为横向长卷式构图，所有人物排成一条队列，从左至右依次展开；每个人物都有鲜明的传统服饰、标志性道具和神态，下方配有竖排名牌标注姓名；卷轴顶部有醒目的书法标题；背景为符合主题的场景元素（如祥云、海浪、山水、亭台等）。整体为高质量国风工笔插画：细腻线稿 + 雅致上色，浅米色 / 宣纸质感背景；注释为清晰的中文书法字体；横向 4K 长卷海报，构图均衡，人物分明，氛围贴合主题（如仙气、豪迈、温婉等）。直接出图，人物群像为【{group_name}】。",
+     "parameters": [
+      {
+         "name": "group_name",
+         "label": "人物群像主题名称",
+         "type": "text",
+         "placeholder": ["八仙过海", "竹林七贤", "金陵十二钗"]
+       }
+     ]
+   }
+ }
+}
