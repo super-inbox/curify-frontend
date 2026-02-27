@@ -1314,6 +1314,21 @@
        }
      ]
    }
- }
+ }，
+  "id": "template-mbti-myth-zh",
+  "locales": {
+    "zh": {
+      "category": "MBTI神话人物类",
+      "description": "Generate a set of 4 flat vector illustrations reimagining Chinese mythological figures as MBTI personality types, with clear labels and humorous descriptions.",
+      "base_prompt": "（Concept Artist）你是一位顶尖扁平矢量插画设计师，擅长将中国神话人物与MBTI人格类型结合创作。根据用户指定的【{myth_characters}】，创作一组包含4个角色的扁平矢量插画：采用现代几何风格，使用大胆的平涂色彩和干净的线条；每个角色的姿势和表情都要精准体现其对应的MBTI人格特质；在每个角色下方依次标注：1. MBTI代码（如：ENTP）；2. 中国神话人物名称（如：哪吒）；3. 一段简短幽默的中文描述（1-2句话），解释该角色如何体现这种人格类型。整体背景为纯白色，以突出角色形象。直接出图，角色为【{myth_characters}】。",
+      "parameters": [
+        {
+          "name": "myth_characters",
+          "label": "神话人物与MBTI组合",
+          "type": "text",
+          "placeholder": ["ENTP哪吒, ENTJ九天玄女, INTP太上老君, INTJ伏羲", "ENFP孙悟空, ENFJ观音菩萨, INFP嫦娥, INFJ姜子牙"]
+        }
+      ]
+    }
+  }
 }
-]
