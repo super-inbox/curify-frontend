@@ -2664,7 +2664,7 @@
     }
   },
   {
-    "id": "template-character-zh-academic-journey-to-the-west 1",
+    "id": "template-character-zh-academic-journey-to-the-west-1",
     "template_id": "template-character-zh",
     "asset": {
       "image_url": "/images/nano_insp/template-character-zh-academic-journey-to-the-west 1.jpg",
@@ -2679,7 +2679,7 @@
     }
   },
   {
-    "id": "template-character-zh-academic-journey-to-the-west 2",
+    "id": "template-character-zh-academic-journey-to-the-west-2",
     "template_id": "template-character-zh",
     "asset": {
       "image_url": "/images/nano_insp/template-character-zh-academic-journey-to-the-west 2.jpg",
@@ -2694,7 +2694,7 @@
     }
   },
   {
-    "id": "template-character-zh-academic-journey-to-the-west 3",
+    "id": "template-character-zh-academic-journey-to-the-west-3",
     "template_id": "template-character-zh",
     "asset": {
       "image_url": "/images/nano_insp/template-character-zh-academic-journey-to-the-west 3.jpg",
@@ -3412,6 +3412,834 @@
       "en": {
         "category": "Fruit Category",
         "title": "salak"
+      }
+    }
+  },
+  {
+    "id": "template-book-series-Journey-to-the-West 1",
+    "template_id": "template-book-series",
+    "asset": {
+      "image_url": "/images/nano_insp/template-book-series-Journey-to-the-West 1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-book-series-Journey-to-the-West 1-prev.jpg"
+    },
+    "params": {
+      "book_name": "Journey to the West 1"
+    },
+    "locales": {
+      "zh": {
+        "category": "书籍解读系列图文",
+        "title": "Journey to the West 1"
+      }
+    }
+  },
+  {
+    "id": "template-book-series-Journey-to-the-West 2",
+    "template_id": "template-book-series",
+    "asset": {
+      "image_url": "/images/nano_insp/template-book-series-Journey-to-the-West 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-book-series-Journey-to-the-West 2-prev.jpg"
+    },
+    "params": {
+      "book_name": "Journey to the West 2"
+    },
+    "locales": {
+      "zh": {
+        "category": "书籍解读系列图文",
+        "title": "Journey to the West 2"
+      }
+    }
+  },
+  {
+    "id": "template-book-series-Journey-to-the-West 3",
+    "template_id": "template-book-series",
+    "asset": {
+      "image_url": "/images/nano_insp/template-book-series-Journey-to-the-West 3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-book-series-Journey-to-the-West 3-prev.jpg"
+    },
+    "params": {
+      "book_name": "Journey to the West 3"
+    },
+    "locales": {
+      "zh": {
+        "category": "书籍解读系列图文",
+        "title": "Journey to the West 3"
+      }
+    }
+  },
+  {
+    "id": "template-book-series-Journey-to-the-West 4",
+    "template_id": "template-book-series",
+    "asset": {
+      "image_url": "/images/nano_insp/template-book-series-Journey-to-the-West 4.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-book-series-Journey-to-the-West 4-prev.jpg"
+    },
+    "params": {
+      "book_name": "Journey to the West 4"
+    },
+    "locales": {
+      "zh": {
+        "category": "书籍解读系列图文",
+        "title": "Journey to the West 4"
+      }
+    }
+  },
+  {
+    "id": "template-book-series-Journey-to-the-West 5",
+    "template_id": "template-book-series",
+    "asset": {
+      "image_url": "/images/nano_insp/template-book-series-Journey-to-the-West 5.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-book-series-Journey-to-the-West 5-prev.jpg"
+    },
+    "params": {
+      "book_name": "Journey to the West 5"
+    },
+    "locales": {
+      "zh": {
+        "category": "书籍解读系列图文",
+        "title": "Journey to the West 5"
+      }
+    }
+  },
+  {
+    "id": "template-book-series-Journey-to-the-West 6",
+    "template_id": "template-book-series",
+    "asset": {
+      "image_url": "/images/nano_insp/template-book-series-Journey-to-the-West 6.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-book-series-Journey-to-the-West 6-prev.jpg"
+    },
+    "params": {
+      "book_name": "Journey to the West 6"
+    },
+    "locales": {
+      "zh": {
+        "category": "书籍解读系列图文",
+        "title": "Journey to the West 6"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-eyemask",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-eyemask.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-eyemask-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "eyemask"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "eyemask"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-musical-instrument",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-musical-instrument.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-musical-instrument-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "musical instrument"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "musical instrument"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-pendant",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-pendant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-pendant-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "pendant"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "pendant"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-ring",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-ring.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-ring-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "ring"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "ring"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-scarf",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-scarf.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-scarf-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "scarf"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "scarf"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-tie",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-tie.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-tie-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "tie"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "tie"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-buddlejae-flos",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-buddlejae-flos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-buddlejae-flos-prev.jpg"
+    },
+    "params": {
+      "herb_name": "buddlejae flos"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "buddlejae flos"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-cassiae-semen",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-cassiae-semen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-cassiae-semen-prev.jpg"
+    },
+    "params": {
+      "herb_name": "cassiae semen"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "cassiae semen"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-eriocauli-flos",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-eriocauli-flos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-eriocauli-flos-prev.jpg"
+    },
+    "params": {
+      "herb_name": "eriocauli flos"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "eriocauli flos"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-mori-folium",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-mori-folium.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-mori-folium-prev.jpg"
+    },
+    "params": {
+      "herb_name": "mori folium"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "mori folium"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-plantaginis-semen",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-plantaginis-semen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-plantaginis-semen-prev.jpg"
+    },
+    "params": {
+      "herb_name": "plantaginis semen"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "plantaginis semen"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-dinosaur-jungle",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-dinosaur-jungle.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-dinosaur-jungle-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student dinosaur jungle"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-robot-factory",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-robot-factory.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-robot-factory-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student robot factory"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-space-station",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-space-station.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-space-station-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student space station"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-underwater-classroom",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-underwater-classroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-underwater-classroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student underwater classroom"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zh-student-wizard-school",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zh-student-wizard-school.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "场景单词学习图",
+        "title": "student wizard school"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-bag",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-bag.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-bag-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "bag"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "bag"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-camisole",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-camisole.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-camisole-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "camisole"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "camisole"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-necklace",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-necklace.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-necklace-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "necklace"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "necklace"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-scarf",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-scarf.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-scarf-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "scarf"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "scarf"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-shirt",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-shirt.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-shirt-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "shirt"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "shirt"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-socks",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-socks.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-socks-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "socks"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "socks"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-watch",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-watch.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-watch-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "watch"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "watch"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-american-ginseng",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-american-ginseng.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-american-ginseng-prev.jpg"
+    },
+    "params": {
+      "herb_name": "american ginseng"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "american ginseng"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-dendrobium",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-dendrobium.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-dendrobium-prev.jpg"
+    },
+    "params": {
+      "herb_name": "dendrobium"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "dendrobium"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-ophiopogon-japonicus",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-ophiopogon-japonicus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-ophiopogon-japonicus-prev.jpg"
+    },
+    "params": {
+      "herb_name": "ophiopogon japonicus"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "ophiopogon japonicus"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-polygonatum-odoratum",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-polygonatum-odoratum.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-polygonatum-odoratum-prev.jpg"
+    },
+    "params": {
+      "herb_name": "polygonatum odoratum"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "polygonatum odoratum"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-radix-trichosanthis",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-radix-trichosanthis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-radix-trichosanthis-prev.jpg"
+    },
+    "params": {
+      "herb_name": "radix trichosanthis"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "radix trichosanthis"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-schisandra-chinensis",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-schisandra-chinensis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-schisandra-chinensis-prev.jpg"
+    },
+    "params": {
+      "herb_name": "schisandra chinensis"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "schisandra chinensis"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail",
+    "template_id": "template-mbti-spring-festival-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "title": "ESTJ vs INTP high speed rail"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh-INFJ-vs-ESFJ-high-speed-rail.JPG",
+    "template_id": "template-mbti-spring-festival-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-high-speed-rail.JPG",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-high-speed-rail.JPG-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "title": "INFJ vs ESFJ high speed rail.JPG"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh-INFJ-vs-ESFJ-home",
+    "template_id": "template-mbti-spring-festival-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-home.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-home-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "title": "INFJ vs ESFJ home"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh-INTJ-vs-ESTP-high-speed-rail",
+    "template_id": "template-mbti-spring-festival-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-INTJ-vs-ESTP-high-speed-rail.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-INTJ-vs-ESTP-high-speed-rail-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "title": "INTJ vs ESTP high speed rail"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh-ISFJ-vs-ENTP-farewell",
+    "template_id": "template-mbti-spring-festival-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-ISFJ-vs-ENTP-farewell.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-ISFJ-vs-ENTP-farewell-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "title": "ISFJ vs ENTP farewell"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-spring-festival-zh-ISTJ-vs-ENFP-package",
+    "template_id": "template-mbti-spring-festival-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-ISTJ-vs-ENFP-package.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-ISTJ-vs-ENFP-package-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "title": "ISTJ vs ENFP package"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-desk-lamp",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-desk-lamp.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-desk-lamp-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "desk lamp"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "desk lamp"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-headphones-2",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-headphones 2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-headphones 2-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "headphones 2"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "headphones 2"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-mouse",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-mouse.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-mouse-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "mouse"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "mouse"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-dress",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-dress.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-dress-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "dress"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "dress"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-hat",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-hat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-hat-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "hat"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "hat"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-jacket",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-jacket.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-jacket-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "jacket"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "jacket"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-jeans",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-jeans.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-jeans-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "jeans"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "jeans"
+      }
+    }
+  },
+  {
+    "id": "template-fashion-ecommerce-zh-shoes",
+    "template_id": "template-fashion-ecommerce",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-shoes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-shoes-prev.jpg"
+    },
+    "params": {
+      "core_selling_point": "shoes"
+    },
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "title": "shoes"
+      }
+    }
+  },
+  {
+    "id": "template-weather-en-foster-city",
+    "template_id": "template-weather",
+    "asset": {
+      "image_url": "/images/nano_insp/template-weather-en-foster-city.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-weather-en-foster-city-prev.jpg"
+    },
+    "params": {
+      "city_name": "foster city"
+    },
+    "locales": {
+      "zh": {
+        "category": "微缩城市天气预报",
+        "title": "foster city"
       }
     }
   }
