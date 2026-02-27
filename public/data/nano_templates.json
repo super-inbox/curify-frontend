@@ -1314,6 +1314,21 @@
        }
      ]
    }
- }
+ }，
+  "id": "template-species-science-zh",
+  "locales": {
+    "zh": {
+      "category": "物种科普图鉴类",
+      "description": "Generate a 3:4 scientific infographic illustration with the species in the center and information modules around.",
+      "base_prompt": "（Scientific Illustrator）你是一位专业科普插画师，擅长绘制现代科学图鉴风格信息图表。根据用户指定的【{species_name}】，生成一张信息图表风格插画：中心为【{species_name}】高清主体大图，四周分布特征、功能、寿命、结构、生物细节等卡片式信息框，用清晰线条与分区排版连接展示。整体为现代科学图鉴风格，严谨美观，摄影级细节，文字使用中文，图片比例3:4。直接出图，物种为【{species_name}】。",
+      "parameters": [
+        {
+          "name": "species_name",
+          "label": "物种名称",
+          "type": "text",
+          "placeholder": ["大熊猫", "雪豹", "绿孔雀", "银杏", "桫椤"]
+        }
+      ]
+    }
+  }
 }
-]
