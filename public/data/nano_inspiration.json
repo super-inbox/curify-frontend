@@ -5366,5 +5366,277 @@
         "title": "hairdryer"
       }
     }
+  },
+  {
+    "id": "template-herbal-zh-cortex-eucommiae",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-cortex-eucommiae.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-cortex-eucommiae-prev.jpg"
+    },
+    "params": {
+      "herb_name": "cortex eucommiae"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "cortex eucommiae"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-herba-epimedii",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-herba-epimedii.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-herba-epimedii-prev.jpg"
+    },
+    "params": {
+      "herb_name": "herba epimedii"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "herba epimedii"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-herba-lycopodii",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-herba-lycopodii.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-herba-lycopodii-prev.jpg"
+    },
+    "params": {
+      "herb_name": "herba lycopodii"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "herba lycopodii"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-herba-taxilli",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-herba-taxilli.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-herba-taxilli-prev.jpg"
+    },
+    "params": {
+      "herb_name": "herba taxilli"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "herba taxilli"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-radix-dipsaci",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-radix-dipsaci.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-radix-dipsaci-prev.jpg"
+    },
+    "params": {
+      "herb_name": "radix dipsaci"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "radix dipsaci"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-zh-radix-morindae-officinalis",
+    "template_id": "template-herbal-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-zh-radix-morindae-officinalis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-radix-morindae-officinalis-prev.jpg"
+    },
+    "params": {
+      "herb_name": "radix morindae officinalis"
+    },
+    "locales": {
+      "zh": {
+        "category": "中草药类",
+        "title": "radix morindae officinalis"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-alsophila",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-alsophila.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-alsophila-prev.jpg"
+    },
+    "params": {
+      "species_name": "alsophila"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "alsophila"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-giant-panda",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-giant-panda.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-giant-panda-prev.jpg"
+    },
+    "params": {
+      "species_name": "giant panda"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "giant panda"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-ginkgo",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-ginkgo.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-ginkgo-prev.jpg"
+    },
+    "params": {
+      "species_name": "ginkgo"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "ginkgo"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-golden-camellia",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-golden-camellia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-golden-camellia-prev.jpg"
+    },
+    "params": {
+      "species_name": "golden camellia"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "golden camellia"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-green-peafowl",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-green-peafowl.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-green-peafowl-prev.jpg"
+    },
+    "params": {
+      "species_name": "green peafowl"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "green peafowl"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-hawksbill",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-hawksbill.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-hawksbill-prev.jpg"
+    },
+    "params": {
+      "species_name": "hawksbill"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "hawksbill"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-pangolin",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-pangolin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-pangolin-prev.jpg"
+    },
+    "params": {
+      "species_name": "pangolin"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "pangolin"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-paphiopedilum",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-paphiopedilum.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-paphiopedilum-prev.jpg"
+    },
+    "params": {
+      "species_name": "paphiopedilum"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "paphiopedilum"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-river-dolphin",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-river-dolphin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-river-dolphin-prev.jpg"
+    },
+    "params": {
+      "species_name": "river dolphin"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "river dolphin"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-zh-snow-leopard",
+    "template_id": "template-species-science-zh",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-zh-snow-leopard.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-zh-snow-leopard-prev.jpg"
+    },
+    "params": {
+      "species_name": "snow leopard"
+    },
+    "locales": {
+      "zh": {
+        "category": "物种科普图鉴类",
+        "title": "snow leopard"
+      }
+    }
   }
 ]

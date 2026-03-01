@@ -143,5 +143,36 @@
     "original": "Original",
     "translated": "Translated",
     "unsupported": "Your browser does not support the video tag."
+  },
+  "contentCreationSidebar": {
+    "title": "Content Creation Tools",
+    "cta": "Create New Content",
+    "tools": {
+      "videoTranslator": {
+        "title": "Video Dubbing",
+        "desc": "Translate and dub your video content into over 170 languages",
+        "alt": "Translation"
+      },
+      "subtitleGenerator": {
+        "title": "Bilingual Subtitle Generator",
+        "desc": "Automatically generate subtitles in two languages for free",
+        "alt": "Subtitle"
+      }
+    },
+    "nano": {
+      "badge": "Nano Banana",
+      "wordCard": {
+        "title": "Word Card",
+        "desc": "Turn a word into a compact learning card"
+      },
+      "ecommerceDetails": {
+        "title": "E-commerce Details",
+        "desc": "Generate product detail visuals for listings"
+      },
+      "whatIfHistory": {
+        "title": "What If History",
+        "desc": "Create historical reversal infographic posters"
+      }
+    }
   }
 }

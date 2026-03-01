@@ -123,39 +123,117 @@
     },
     "coming_soon": "Coming Soon",
     "create": "Create"
-  },
-  "bilingual": {
-    "metadata": {
-      "title": "Free Bilingual Subtitles Generator | Curify AI",
-      "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
-    },
-    "title": "Bilingual Subtitles Made Easy",
-    "intro": "Automatically generate subtitles in two languages using Curify’s AI subtitle engine. Ideal for creators, educators, and global businesses.",
-    "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto‑generated.",
-    "cta": "Try It Free",
-    "why": {
-      "title": "Why Choose Curify for Bilingual Subtitles?",
-      "point1": "Supports over 170 languages with accurate translation.",
-      "point2": "Preserves emotional tone and timing.",
-      "point3": "Perfect for YouTube, TikTok, and educational videos.",
-      "point4": "Export ready‑to‑publish subtitle files or embedded videos."
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "Is it really free?",
-      "a1": "Yes, Curify offers a free plan with limited subtitle minutes per month.",
-      "q2": "Can I edit subtitles after generation?",
-      "a2": "Absolutely. You can adjust timing, translation, and style before exporting."
-    }
-  },
-  "videoDubbing": {
-    "metadata": {
-      "title": "AI Video Dubbing Tool | Curify AI",
-      "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
-    },
-    "title": "AI Video Dubbing with Natural Voice",
-    "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands."
-  },
+  },  
+    "bilingual": {
+      "metadata": {
+        "title": "Free Bilingual Subtitles Generator | Curify AI",
+        "description": "Create bilingual subtitles for your videos with Curify’s free AI-powered tool. Perfect for YouTube, TikTok, education, and global creators."
+      },
+      "title": "Bilingual Subtitles Made Easy",
+      "intro": "Automatically generate subtitles in two languages using Curify’s AI subtitle engine. Ideal for creators, educators, and global businesses.",
+      "example": "Example: Jensen Huang explaining AI strategy — English + Chinese subtitles auto-generated.",
+      "cta": "Try It Free",
+      "why": {
+        "title": "Why Choose Curify for Bilingual Subtitles?",
+        "point1": "Supports over 170 languages with accurate translation.",
+        "point2": "Preserves emotional tone and timing.",
+        "point3": "Perfect for YouTube, TikTok, and educational videos.",
+        "point4": "Export ready-to-publish subtitle files or embedded videos."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "q1": "Is it really free?",
+        "a1": "Yes, Curify offers a free plan with limited subtitle minutes per month.",
+        "q2": "Can I edit subtitles after generation?",
+        "a2": "Absolutely. You can adjust timing, translation, and style before exporting."
+      },
+      "deep": {
+        "what": {
+          "title": "What Are Bilingual Subtitles?",
+          "p1": "Bilingual subtitles display two languages simultaneously on screen — typically the original spoken language and a translated version directly below it. Instead of replacing the original captions, bilingual subtitles preserve the source language while adding a synchronized translation.",
+          "p2": "This format is widely used in language learning videos, international YouTube channels, online courses, conference recordings, and global marketing. It helps viewers compare meaning in real time, improves comprehension, and expands accessibility without re-recording your video.",
+          "p3": "For example, a tech keynote delivered in English can show English on the first line and Chinese, Spanish, or Japanese on the second line — turning one video into a global asset."
+        },
+        "how": {
+          "title": "How Curify Generates High-Quality Bilingual Subtitles",
+          "p1": "Curify is not a simple caption generator. Our bilingual subtitle engine is built on a multi-stage AI translation pipeline designed for accuracy, timing precision, and contextual understanding.",
+          "p2": "First, we transcribe your video using high-accuracy speech recognition that handles natural speech, technical vocabulary, and multi-speaker dialogue. Then we translate with context-aware models that preserve intent and domain meaning — not just literal words.",
+          "p3": "Next, Curify aligns translated subtitles to the original speech segments, optimizing timing and readability. We keep line length balanced, choose clean sentence breaks, and maintain a natural reading speed for stacked dual-language subtitles.",
+          "p4": "Finally, Curify refines translations to better preserve tone — persuasive, educational, humorous, or dramatic — and ensures punctuation and rhythm feel natural in the target language.",
+          "p5": "You can export subtitle files (e.g., SRT), download bilingual subtitle tracks, or embed bilingual subtitles directly into your video — and edit timing, translation, and styling before publishing."
+        },
+        "usecases": {
+          "title": "Who Uses Bilingual Subtitles?",
+          "creatorsTitle": "For YouTube & TikTok Creators",
+          "creatorsBody": "Creators use bilingual subtitles to reach international audiences without managing separate channels. Bilingual subtitles can increase watch time, improve engagement from multilingual viewers, and help content rank in international search. On short-form platforms where videos autoplay without sound, bilingual subtitles also boost retention and accessibility.",
+          "educationTitle": "For Educators & Online Courses",
+          "educationBody": "Educational content benefits significantly from bilingual subtitles. Students can compare terminology across languages, retain vocabulary more easily, and follow complex explanations with less friction. This is especially useful for STEM lectures, certification courses, and language learning materials where accuracy and consistency matter.",
+          "businessTitle": "For Global Businesses",
+          "businessBody": "Businesses use bilingual subtitles for product demos, investor presentations, training videos, and marketing campaigns. Instead of producing separate localized videos, you can ship a single multilingual asset — reducing production cost while expanding global reach."
+        }
+      }
+    },    
+      "videoDubbing": {
+        "metadata": {
+          "title": "AI Video Dubbing Tool | Curify AI",
+          "description": "Dub your videos into 170+ languages using AI voice cloning, emotion preservation, and lip sync. Try Curify's AI dubbing for free."
+        },
+        "title": "AI Video Dubbing with Natural Voice",
+        "description": "Translate and dub your video content into over 170 languages with realistic AI voice and lip sync. Perfect for international creators and brands.",
+        "cta": "Try It Free",
+        "demo": {
+          "nowPlaying": "Currently playing: {lang} version",
+          "caption": "Example: AI-dubbed video with emotion preservation and lip sync across languages",
+          "aria": "AI video dubbing demo across multiple languages"
+        },
+        "why": {
+          "title": "Why Choose Curify AI Video Dubbing?",
+          "point1": "Natural AI voice cloning that preserves speaker emotion and tone",
+          "point2": "Automatic lip sync for a seamless viewing experience",
+          "point3": "Support for 170+ languages and dialects",
+          "point4": "Fast processing with professional-quality results",
+          "point5": "Ideal for YouTube, TikTok, corporate training, and e-learning"
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "q1": "How accurate is the AI dubbing?",
+          "a1": "Curify uses advanced voice cloning and translation models designed to preserve the original speaker’s tone, intent, and pacing. Lip sync further improves perceived realism by matching speech timing to the speaker’s mouth movement.",
+          "q2": "What languages are supported?",
+          "a2": "Curify supports 170+ languages, including English, Spanish, Chinese, French, German, Japanese, Korean, Arabic, and many more.",
+          "q3": "How long does dubbing take?",
+          "a3": "Processing time depends on video length and complexity, but most videos are ready within minutes. You’ll see progress updates and get notified when the dubbed video is complete."
+        },
+        "deep": {
+          "what": {
+            "title": "What Is AI Video Dubbing?",
+            "p1": "AI video dubbing is the process of translating spoken dialogue into another language and generating a natural-sounding voice track that matches the original delivery. Unlike subtitles, dubbing replaces the audio — making your content feel native to viewers in each target language.",
+            "p2": "High-quality dubbing requires more than translation. It must preserve meaning, tone, pacing, and emotion, while staying aligned with the speaker’s timing. For training content, product demos, and creator videos, this alignment is what separates “robotic” dubbing from professional localization.",
+            "p3": "Curify is built for modern global content: one upload, multilingual output — optimized for creators, educators, and businesses that need speed and quality at scale."
+          },
+          "how": {
+            "title": "How Curify Produces Natural Dubbing (Voice, Timing, and Lip Sync)",
+            "p1": "Curify’s dubbing quality comes from a multi-stage pipeline designed for faithful meaning, natural prosody, and tight alignment to the original video.",
+            "p2": "Step 1: High-accuracy transcription captures the original speech structure, including pauses, emphasis, and speaker turns. This becomes the timing backbone for the dubbing track.",
+            "p3": "Step 2: Context-aware translation preserves intent and domain meaning — especially for technical terms, brand language, and instructional content. We avoid literal phrasing when it sounds unnatural in the target language.",
+            "p4": "Step 3: Voice synthesis generates a natural voice track with controlled pacing. We optimize segment length and reading speed so the translated speech fits the original timing without sounding rushed or overly slow.",
+            "p5": "Step 4: Optional lip sync aligns speech timing to mouth motion for a more immersive viewing experience — particularly important for face-to-camera videos, interviews, and training sessions."
+          },
+          "usecases": {
+            "title": "Who Uses AI Dubbing?",
+            "creatorsTitle": "For YouTube, TikTok, and Global Creators",
+            "creatorsBody": "Creators use dubbing to reach new audiences without running separate productions. Dubbing makes content easier to consume than subtitles in many contexts, especially for entertainment, tutorials, and fast-paced short-form videos.",
+            "educationTitle": "For Corporate Training and E-Learning",
+            "educationBody": "Training teams and course creators use dubbing to localize onboarding, compliance, and product education. A natural voice track reduces cognitive load compared to reading subtitles — improving completion rates and learner retention.",
+            "businessTitle": "For Product Marketing and Customer Education",
+            "businessBody": "Global teams localize demos, explainers, webinars, and support videos with dubbing. Instead of recreating content per region, you can ship one video and deploy multiple language versions with consistent messaging."
+          },
+          "compare": {
+            "title": "AI Dubbing vs Subtitles: Which Should You Use?",
+            "p1": "Subtitles are ideal when viewers are comfortable reading, when you want to preserve the original audio, or when you need the fastest publishing workflow. Dubbing is ideal when you want a native viewing experience, higher engagement, and less reliance on reading.",
+            "p2": "Many teams use both: subtitles for speed and accessibility, dubbing for top-performing content and key markets. Curify supports both workflows so you can choose the right format for each video."
+          }
+        }
+      },
   "about": {
     "metadata": {
       "title": "About Curify | Vision, Technology & Team",

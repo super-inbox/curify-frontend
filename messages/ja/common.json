@@ -143,5 +143,36 @@
     "original": "オリジナル",
     "translated": "翻訳済み",
     "unsupported": "お使いのブラウザはvideoタグをサポートしていません。"
+  },
+  "contentCreationSidebar": {
+    "title": "コンテンツ作成ツール",
+    "cta": "新しいコンテンツを作成",
+    "tools": {
+      "videoTranslator": {
+        "title": "ビデオ吹き替え",
+        "desc": "動画コンテンツを170以上の言語に翻訳して吹き替えます",
+        "alt": "翻訳"
+      },
+      "subtitleGenerator": {
+        "title": "バイリンガル字幕ジェネレーター",
+        "desc": "無料で二言語の字幕を自動生成します",
+        "alt": "字幕"
+      }
+    },
+    "nano": {
+      "badge": "ナノバナナ",
+      "wordCard": {
+        "title": "ワードカード",
+        "desc": "単語をコンパクトな学習カードに変換します"
+      },
+      "ecommerceDetails": {
+        "title": "Eコマース詳細",
+        "desc": "リスティング用の製品詳細ビジュアルを生成します"
+      },
+      "whatIfHistory": {
+        "title": "もしも歴史",
+        "desc": "歴史の逆転インフォグラフィックポスターを作成します"
+      }
+    }
   }
 }

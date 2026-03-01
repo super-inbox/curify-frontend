@@ -2,7 +2,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Type, Building2, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Type, ShoppingBag, Sparkles, History } from "lucide-react";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
@@ -56,10 +57,10 @@ function SidebarToolItem({
   );
 }
 
-function NanoBadge() {
+function NanoBadge({ label }: { label: string }) {
   return (
     <span className="rounded-full bg-yellow-100 px-2 py-0.5 text-[11px] font-semibold text-yellow-700">
-      Nano Banana
+      {label}
     </span>
   );
 }
@@ -70,32 +71,36 @@ export default function ContentCreationToolsSidebar({
   activeLang: "en" | "zh";
 }) {
   const router = useRouter();
+  const t = useTranslations("contentCreationSidebar");
 
-  // ✅ New: link to dedicated nano templates (works for en/zh)
-  const nanoEducationSlug = "template-education-card";
-  const nanoArchitectureSlug = "template-architecture";
+  // ✅ Dedicated nano template slugs (keep your existing slug conventions)
+  const nanoWordCardSlug = "template-word-scene";
+  const nanoEcommerceDetailsSlug = "template-fashion-ecommerce";
+  const nanoWhatIfHistorySlug = "template-what-if-history";
 
-  const nanoEducationPath = `/${activeLang}/nano-template/${nanoEducationSlug}`;
-  const nanoArchitecturePath = `/${activeLang}/nano-template/${nanoArchitectureSlug}`;
+  const nanoWordCardPath = `/${activeLang}/nano-template/${nanoWordCardSlug}`;
+  const nanoEcommerceDetailsPath = `/${activeLang}/nano-template/${nanoEcommerceDetailsSlug}`;
+  const nanoWhatIfHistoryPath = `/${activeLang}/nano-template/${nanoWhatIfHistorySlug}`;
 
   return (
     <div className="rounded-2xl border border-neutral-100 bg-white p-5 shadow-sm">
       <h3 className="mb-4 text-lg font-semibold tracking-tight text-neutral-900">
-        Content Creation Tools
+        {t("title")}
       </h3>
 
       <div className="space-y-3">
+        {/* Tools */}
         <SidebarToolItem
           icon={
             <img
               src="/icons/translation-icon.png"
-              alt="Translation"
+              alt={t("tools.videoTranslator.alt")}
               className="h-6 w-6"
             />
           }
           colorClass="bg-blue-600"
-          title="Video Translator"
-          desc="Translate YouTube & MP4 videos"
+          title={t("tools.videoTranslator.title")}
+          desc={t("tools.videoTranslator.desc")}
           onClick={() => router.push(`/${activeLang}/video-dubbing`)}
         />
 
@@ -103,41 +108,42 @@ export default function ContentCreationToolsSidebar({
           icon={
             <img
               src="/icons/subtitle-icon.png"
-              alt="Subtitle"
+              alt={t("tools.subtitleGenerator.alt")}
               className="h-6 w-6"
             />
           }
           colorClass="bg-green-500"
-          title="Subtitle Generator"
-          desc="Create accurate subtitles instantly"
+          title={t("tools.subtitleGenerator.title")}
+          desc={t("tools.subtitleGenerator.desc")}
           onClick={() => router.push(`/${activeLang}/bilingual-subtitles`)}
         />
 
-        {/* ✅ Replaced bottom two with Nano template links */}
+        {/* Nano templates */}
         <SidebarToolItem
           icon={<Type className="h-5 w-5" />}
           colorClass="bg-purple-500"
-          title={activeLang === "zh" ? "学科知识卡片" : "Educational Card"}
-          desc={
-            activeLang === "zh"
-              ? "把输入主题变成信息图（3:4）"
-              : "Turn a topic into an infographic (3:4)"
-          }
-          badge={<NanoBadge />}
-          onClick={() => router.push(nanoEducationPath)}
+          title={t("nano.wordCard.title")}
+          desc={t("nano.wordCard.desc")}
+          badge={<NanoBadge label={t("nano.badge")} />}
+          onClick={() => router.push(nanoWordCardPath)}
         />
 
         <SidebarToolItem
-          icon={<Building2 className="h-5 w-5" />}
+          icon={<ShoppingBag className="h-5 w-5" />}
           colorClass="bg-sky-500"
-          title={activeLang === "zh" ? "建筑分析图" : "Architecture HUD"}
-          desc={
-            activeLang === "zh"
-              ? "地标建筑 HUD 风技术注释图"
-              : "Landmark photo + dense HUD annotations"
-          }
-          badge={<NanoBadge />}
-          onClick={() => router.push(nanoArchitecturePath)}
+          title={t("nano.ecommerceDetails.title")}
+          desc={t("nano.ecommerceDetails.desc")}
+          badge={<NanoBadge label={t("nano.badge")} />}
+          onClick={() => router.push(nanoEcommerceDetailsPath)}
+        />
+
+        <SidebarToolItem
+          icon={<History className="h-5 w-5" />}
+          colorClass="bg-orange-500"
+          title={t("nano.whatIfHistory.title")}
+          desc={t("nano.whatIfHistory.desc")}
+          badge={<NanoBadge label={t("nano.badge")} />}
+          onClick={() => router.push(nanoWhatIfHistoryPath)}
         />
       </div>
 
@@ -148,7 +154,7 @@ export default function ContentCreationToolsSidebar({
           type="button"
         >
           <Sparkles className="h-4 w-4" />
-          Create New Content
+          {t("cta")}
         </button>
       </div>
     </div>

@@ -143,5 +143,36 @@
     "original": "원래의",
     "translated": "번역됨",
     "unsupported": "귀하의 브라우저는 video 태그를 지원하지 않습니다."
+  },
+  "contentCreationSidebar": {
+    "title": "콘텐츠 제작 도구",
+    "cta": "새 콘텐츠 만들기",
+    "tools": {
+      "videoTranslator": {
+        "title": "비디오 더빙",
+        "desc": "비디오 콘텐츠를 170개 이상의 언어로 번역하고 더빙합니다",
+        "alt": "번역"
+      },
+      "subtitleGenerator": {
+        "title": "이중 언어 자막 생성기",
+        "desc": "두 언어로 자막을 자동으로 무료 생성합니다",
+        "alt": "자막"
+      }
+    },
+    "nano": {
+      "badge": "나노 바나나",
+      "wordCard": {
+        "title": "단어 카드",
+        "desc": "단어를 간편한 학습 카드로 변환합니다"
+      },
+      "ecommerceDetails": {
+        "title": "전자상거래 세부정보",
+        "desc": "리스트를 위한 제품 세부정보 비주얼을 생성합니다"
+      },
+      "whatIfHistory": {
+        "title": "역사적 반전",
+        "desc": "역사적 반전 인포그래픽 포스터를 만듭니다"
+      }
+    }
   }
 }

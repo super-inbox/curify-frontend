@@ -10,6 +10,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+
+  // ✅ Important: namespace should be "videoDubbing.metadata"
   const t = await getTranslations({ locale, namespace: "videoDubbing.metadata" });
 
   const title = t("title");
@@ -18,6 +20,9 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `${siteUrl}/${locale}/video-dubbing`,
+    },
     openGraph: {
       title,
       description,

@@ -143,5 +143,36 @@
     "original": "Original",
     "translated": "Übersetzt",
     "unsupported": "Ihr Browser unterstützt das Video-Tag nicht."
+  },
+  "contentCreationSidebar": {
+    "title": "Inhaltserstellungstools",
+    "cta": "Neuen Inhalt erstellen",
+    "tools": {
+      "videoTranslator": {
+        "title": "Videodubbing",
+        "desc": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen",
+        "alt": "Übersetzung"
+      },
+      "subtitleGenerator": {
+        "title": "Zweisprachiger Untertitelgenerator",
+        "desc": "Generieren Sie automatisch Untertitel in zwei Sprachen kostenlos",
+        "alt": "Untertitel"
+      }
+    },
+    "nano": {
+      "badge": "Nano-Banane",
+      "wordCard": {
+        "title": "Wortkarte",
+        "desc": "Verwandeln Sie ein Wort in eine kompakte Lernkarte"
+      },
+      "ecommerceDetails": {
+        "title": "E-Commerce-Details",
+        "desc": "Generieren Sie Produktdetailvisualisierungen für Angebote"
+      },
+      "whatIfHistory": {
+        "title": "Was wäre wenn Geschichte",
+        "desc": "Erstellen Sie historische Umkehr-Infografik-Poster"
+      }
+    }
   }
 }

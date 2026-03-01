@@ -1,16 +1,16 @@
 {
-"home": {
-  "metadata": {
-    "title": "Curify – Transformez les idées en pensée visuelle | IA & Localisation",
-    "description": "Curify est une plateforme de pensée visuelle alimentée par l’IA qui transforme tendances, idées et connaissances en contenus visuels structurés et partageables. Créez des infographies, cartes d’inspiration, sous-titres et vidéos traduites facilement.",
-    "ogTitle": "Curify – Transformez les idées en pensée visuelle",
-    "ogDescription": "Transformez tendances et idées en contenu visuel structuré. Cartes d’inspiration, infographies IA, traduction vidéo et outils de localisation — tout-en-un."
+  "home": {
+    "metadata": {
+      "title": "Curify – Transformez les idées en pensée visuelle | IA & Localisation",
+      "description": "Curify est une plateforme de pensée visuelle alimentée par l’IA qui transforme tendances, idées et connaissances en contenus visuels structurés et partageables. Créez des infographies, cartes d’inspiration, sous-titres et vidéos traduites facilement.",
+      "ogTitle": "Curify – Transformez les idées en pensée visuelle",
+      "ogDescription": "Transformez tendances et idées en contenu visuel structuré. Cartes d’inspiration, infographies IA, traduction vidéo et outils de localisation — tout-en-un."
+    },
+    "hero": {
+      "title": "Découvrez des idées | Exprimez visuellement | Créez du contenu",
+      "description": "Curify transforme tendances, idées et connaissances en contenus structurés et partageables. Des cartes d’inspiration aux infographies IA, en passant par les sous-titres et le doublage synchronisé."
+    }
   },
-  "hero": {
-    "title": "Découvrez des idées | Exprimez visuellement | Créez du contenu",
-    "description": "Curify transforme tendances, idées et connaissances en contenus structurés et partageables. Des cartes d’inspiration aux infographies IA, en passant par les sous-titres et le doublage synchronisé."
-  }
-},
   "coreFeatures": {
     "oneShot": {
       "title": "Traduction en un clic",
@@ -146,6 +146,31 @@
       "a1": "Oui, Curify propose un plan gratuit avec des minutes de sous-titrage limitées par mois.",
       "q2": "Puis-je éditer les sous-titres après la génération ?",
       "a2": "Absolument. Vous pouvez ajuster le timing, la traduction et le style avant l'exportation."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que les sous-titres bilingues ?",
+        "p1": "Les sous-titres bilingues affichent deux langues simultanément à l'écran — généralement la langue originale parlée et une version traduite directement en dessous. Au lieu de remplacer les sous-titres originaux, les sous-titres bilingues préservent la langue source tout en ajoutant une traduction synchronisée.",
+        "p2": "Ce format est largement utilisé dans les vidéos d'apprentissage des langues, les chaînes YouTube internationales, les cours en ligne, les enregistrements de conférences et le marketing mondial. Il aide les spectateurs à comparer le sens en temps réel, améliore la compréhension et élargit l'accessibilité sans avoir à réenregistrer votre vidéo.",
+        "p3": "Par exemple, une présentation technologique donnée en anglais peut afficher l'anglais sur la première ligne et le chinois, l'espagnol ou le japonais sur la deuxième ligne — transformant une vidéo en un atout mondial."
+      },
+      "how": {
+        "title": "Comment Curify génère des sous-titres bilingues de haute qualité",
+        "p1": "Curify n'est pas un simple générateur de sous-titres. Notre moteur de sous-titres bilingues est construit sur un pipeline de traduction IA en plusieurs étapes conçu pour l'exactitude, la précision du timing et la compréhension contextuelle.",
+        "p2": "Tout d'abord, nous transcrivons votre vidéo en utilisant une reconnaissance vocale de haute précision qui gère la parole naturelle, le vocabulaire technique et le dialogue entre plusieurs intervenants. Ensuite, nous traduisons avec des modèles sensibles au contexte qui préservent l'intention et le sens du domaine — pas seulement des mots littéraux.",
+        "p3": "Ensuite, Curify aligne les sous-titres traduits aux segments de discours originaux, optimisant le timing et la lisibilité. Nous maintenons la longueur des lignes équilibrée, choisissons des coupures de phrases claires et conservons une vitesse de lecture naturelle pour les sous-titres bilingues empilés.",
+        "p4": "Enfin, Curify affine les traductions pour mieux préserver le ton — persuasif, éducatif, humoristique ou dramatique — et s'assure que la ponctuation et le rythme semblent naturels dans la langue cible.",
+        "p5": "Vous pouvez exporter des fichiers de sous-titres (par exemple, SRT), télécharger des pistes de sous-titres bilingues ou intégrer des sous-titres bilingues directement dans votre vidéo — et modifier le timing, la traduction et le style avant publication."
+      },
+      "usecases": {
+        "title": "Qui utilise des sous-titres bilingues ?",
+        "creatorsTitle": "Pour les créateurs YouTube et TikTok",
+        "creatorsBody": "Les créateurs utilisent des sous-titres bilingues pour atteindre des audiences internationales sans gérer des chaînes séparées. Les sous-titres bilingues peuvent augmenter le temps de visionnage, améliorer l'engagement des spectateurs multilingues et aider le contenu à se classer dans les recherches internationales. Sur les plateformes de format court où les vidéos se lancent automatiquement sans son, les sous-titres bilingues augmentent également la rétention et l'accessibilité.",
+        "educationTitle": "Pour les éducateurs et les cours en ligne",
+        "educationBody": "Le contenu éducatif bénéficie considérablement des sous-titres bilingues. Les étudiants peuvent comparer la terminologie entre les langues, retenir le vocabulaire plus facilement et suivre des explications complexes avec moins de friction. Cela est particulièrement utile pour les cours STEM, les cours de certification et les matériaux d'apprentissage des langues où l'exactitude et la cohérence comptent.",
+        "businessTitle": "Pour les entreprises mondiales",
+        "businessBody": "Les entreprises utilisent des sous-titres bilingues pour des démonstrations de produits, des présentations aux investisseurs, des vidéos de formation et des campagnes marketing. Au lieu de produire des vidéos localisées séparées, vous pouvez expédier un seul actif multilingue — réduisant les coûts de production tout en élargissant la portée mondiale."
+      }
     }
   },
   "videoDubbing": {
@@ -154,7 +179,60 @@
       "description": "Doublez vos vidéos dans plus de 170 langues en utilisant le clonage vocal IA, la préservation des émotions et la synchronisation labiale. Essayez le doublage IA de Curify gratuitement."
     },
     "title": "Doublage vidéo IA avec voix naturelle",
-    "description": "Traduisez et doublez votre contenu vidéo dans plus de 170 langues avec une voix IA réaliste et une synchronisation labiale. Parfait pour les créateurs et les marques internationaux."
+    "description": "Traduisez et doublez votre contenu vidéo dans plus de 170 langues avec une voix IA réaliste et une synchronisation labiale. Parfait pour les créateurs et les marques internationaux.",
+    "cta": "Essayez-le gratuitement",
+    "demo": {
+      "nowPlaying": "Lecture en cours : version {lang}",
+      "caption": "Exemple : vidéo doublée par IA avec préservation des émotions et synchronisation labiale entre les langues",
+      "aria": "Démonstration de doublage vidéo IA dans plusieurs langues"
+    },
+    "why": {
+      "title": "Pourquoi choisir le doublage vidéo IA de Curify ?",
+      "point1": "Clonage vocal IA naturel qui préserve l'émotion et le ton du locuteur",
+      "point2": "Synchronisation labiale automatique pour une expérience de visionnage fluide",
+      "point3": "Support pour plus de 170 langues et dialectes",
+      "point4": "Traitement rapide avec des résultats de qualité professionnelle",
+      "point5": "Idéal pour YouTube, TikTok, la formation en entreprise et l'e-learning"
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Quelle est la précision du doublage IA ?",
+      "a1": "Curify utilise des modèles avancés de clonage vocal et de traduction conçus pour préserver le ton, l'intention et le rythme du locuteur original. La synchronisation labiale améliore encore le réalisme perçu en faisant correspondre le timing de la parole au mouvement des lèvres du locuteur.",
+      "q2": "Quelles langues sont prises en charge ?",
+      "a2": "Curify prend en charge plus de 170 langues, y compris l'anglais, l'espagnol, le chinois, le français, l'allemand, le japonais, le coréen, l'arabe et bien d'autres.",
+      "q3": "Combien de temps prend le doublage ?",
+      "a3": "Le temps de traitement dépend de la longueur et de la complexité de la vidéo, mais la plupart des vidéos sont prêtes en quelques minutes. Vous verrez des mises à jour de progression et serez notifié lorsque la vidéo doublée est terminée."
+    },
+    "deep": {
+      "what": {
+        "title": "Qu'est-ce que le doublage vidéo IA ?",
+        "p1": "Le doublage vidéo IA est le processus de traduction du dialogue parlé dans une autre langue et de génération d'une piste vocale naturelle qui correspond à la livraison originale. Contrairement aux sous-titres, le doublage remplace l'audio — rendant votre contenu natif pour les spectateurs dans chaque langue cible.",
+        "p2": "Un doublage de haute qualité nécessite plus que la traduction. Il doit préserver le sens, le ton, le rythme et l'émotion, tout en restant aligné sur le timing du locuteur. Pour le contenu de formation, les démonstrations de produits et les vidéos de créateurs, cet alignement est ce qui sépare le doublage « robotique » de la localisation professionnelle.",
+        "p3": "Curify est conçu pour le contenu mondial moderne : un téléchargement, une sortie multilingue — optimisé pour les créateurs, les éducateurs et les entreprises qui ont besoin de rapidité et de qualité à grande échelle."
+      },
+      "how": {
+        "title": "Comment Curify produit un doublage naturel (voix, timing et synchronisation labiale)",
+        "p1": "La qualité du doublage de Curify provient d'un pipeline en plusieurs étapes conçu pour un sens fidèle, une prosodie naturelle et un alignement serré avec la vidéo originale.",
+        "p2": "Étape 1 : La transcription de haute précision capture la structure de la parole originale, y compris les pauses, l'accentuation et les tours de parole. Cela devient la base de timing pour la piste de doublage.",
+        "p3": "Étape 2 : La traduction sensible au contexte préserve l'intention et le sens du domaine — en particulier pour les termes techniques, le langage de marque et le contenu pédagogique. Nous évitons les formulations littérales lorsque cela semble peu naturel dans la langue cible.",
+        "p4": "Étape 3 : La synthèse vocale génère une piste vocale naturelle avec un rythme contrôlé. Nous optimisons la longueur des segments et la vitesse de lecture afin que la parole traduite s'adapte au timing original sans sembler précipitée ou trop lente.",
+        "p5": "Étape 4 : La synchronisation labiale optionnelle aligne le timing de la parole sur le mouvement des lèvres pour une expérience de visionnage plus immersive — particulièrement importante pour les vidéos face caméra, les interviews et les sessions de formation."
+      },
+      "usecases": {
+        "title": "Qui utilise le doublage IA ?",
+        "creatorsTitle": "Pour les créateurs YouTube, TikTok et mondiaux",
+        "creatorsBody": "Les créateurs utilisent le doublage pour atteindre de nouvelles audiences sans gérer des productions séparées. Le doublage rend le contenu plus facile à consommer que les sous-titres dans de nombreux contextes, en particulier pour le divertissement, les tutoriels et les vidéos courtes au rythme rapide.",
+        "educationTitle": "Pour la formation en entreprise et l'e-learning",
+        "educationBody": "Les équipes de formation et les créateurs de cours utilisent le doublage pour localiser l'intégration, la conformité et l'éducation produit. Une piste vocale naturelle réduit la charge cognitive par rapport à la lecture des sous-titres — améliorant les taux d'achèvement et la rétention des apprenants.",
+        "businessTitle": "Pour le marketing produit et l'éducation client",
+        "businessBody": "Les équipes mondiales localisent des démonstrations, des explications, des webinaires et des vidéos de support avec le doublage. Au lieu de recréer du contenu par région, vous pouvez expédier une vidéo et déployer plusieurs versions linguistiques avec un message cohérent."
+      },
+      "compare": {
+        "title": "Doublage IA vs Sous-titres : Que devriez-vous utiliser ?",
+        "p1": "Les sous-titres sont idéaux lorsque les spectateurs sont à l'aise avec la lecture, lorsque vous souhaitez préserver l'audio original ou lorsque vous avez besoin du flux de publication le plus rapide. Le doublage est idéal lorsque vous souhaitez une expérience de visionnage native, un engagement plus élevé et moins de dépendance à la lecture.",
+        "p2": "De nombreuses équipes utilisent les deux : des sous-titres pour la rapidité et l'accessibilité, le doublage pour le contenu le plus performant et les marchés clés. Curify prend en charge les deux flux de travail afin que vous puissiez choisir le bon format pour chaque vidéo."
+      }
+    }
   },
   "about": {
     "metadata": {
