@@ -1,11 +1,25 @@
 /**
  * @file i18n_autotranslate.cjs
  * @description
- * Auto-translate missing i18n keys across locale JSON files in messages/.
+ * Auto-translate missing i18n keys across per-locale JSON files in messages/<locale>/*.json.
  *
- * - Uses base locale file as source-of-truth (default: messages/en.json)
- * - Discovers locales from messages/*.json (no hardcoded language list)
- * - For each target locale: translates ONLY missing leaf keys, merges back
+ * Folder layout:
+ *   messages/
+ *     en/
+ *       blog.json
+ *       common.json
+ *       home.json
+ *       pricing.json
+ *     zh/
+ *       ...
+ *
+ * Behavior:
+ * - Uses base locale folder as source-of-truth (default: messages/en/*.json)
+ * - Discovers locales from subfolders under messages/ (no hardcoded language list)
+ * - Discovers files from base locale folder (or via --files)
+ * - For each target locale + each file:
+ *    - translates ONLY missing leaf keys (string leaves) from base file
+ *    - merges back into target file (creates file/folders if missing)
  * - Preserves placeholders like {label} exactly
  * - Reads OPENAI_API_KEY from .env.local (and env)
  *
@@ -13,6 +27,11 @@
  *   node scripts/i18n_autotranslate.cjs --base en --write
  *   node scripts/i18n_autotranslate.cjs --base en --dry-run
  *   node scripts/i18n_autotranslate.cjs --base en --only zh es de --write
+ *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
+ *
+ * Notes:
+ * - `--files` accepts file basenames without .json (e.g. "common home pricing"),
+ *   or full names with .json (e.g. "common.json").
  */
 
 const fs = require("fs");
@@ -31,6 +50,7 @@ function parseArgs(argv) {
     dir: "messages",
     base: "en",
     only: null, // array or null
+    files: null, // array of basenames (without .json) or null -> discover from base folder
     model: "gpt-4o-mini",
     chunkSize: 60,
     write: false,
@@ -49,6 +69,10 @@ function parseArgs(argv) {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
       args.only = list.length ? list : null;
+    } else if (a === "--files") {
+      const list = [];
+      while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
+      args.files = list.length ? list : null;
     } else {
       console.warn(`[warn] Unknown arg: ${a}`);
     }
@@ -67,21 +91,61 @@ if (!fs.existsSync(messagesDir)) {
   process.exit(1);
 }
 
-const files = fs.readdirSync(messagesDir).filter((f) => f.endsWith(".json"));
-const locales = files.map((f) => f.replace(/\.json$/, "")).sort();
+function isDirectory(p) {
+  try {
+    return fs.statSync(p).isDirectory();
+  } catch {
+    return false;
+  }
+}
+
+// locales are subfolders under messages/
+const locales = fs
+  .readdirSync(messagesDir)
+  .filter((name) => isDirectory(path.join(messagesDir, name)))
+  .sort();
 
 if (!locales.includes(args.base)) {
   console.error(
-    `Base locale '${args.base}' not found in ${messagesDir}. Found: ${locales.join(", ")}`
+    `Base locale folder '${args.base}' not found in ${messagesDir}. Found: ${locales.join(", ")}`
   );
   process.exit(1);
 }
 
-const targetLocales = (args.only ? locales.filter((l) => args.only.includes(l)) : locales)
-  .filter((l) => l !== args.base);
+const targetLocales = (args.only ? locales.filter((l) => args.only.includes(l)) : locales).filter(
+  (l) => l !== args.base
+);
 
-function localeFile(locale) {
-  return path.join(messagesDir, `${locale}.json`);
+function localeDir(locale) {
+  return path.join(messagesDir, locale);
+}
+
+function normalizeFileToken(s) {
+  // allow "common" or "common.json"
+  return s.endsWith(".json") ? s.slice(0, -5) : s;
+}
+
+function listBaseFiles(baseLocale) {
+  const dir = localeDir(baseLocale);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.slice(0, -5)) // basenames without .json
+    .sort();
+}
+
+const baseFiles = args.files ? args.files.map(normalizeFileToken) : listBaseFiles(args.base);
+if (!baseFiles.length) {
+  console.error(
+    `No base files found under ${path.join(messagesDir, args.base)}.json. ` +
+      `Expected messages/${args.base}/*.json`
+  );
+  process.exit(1);
+}
+
+function localeFile(locale, fileBase) {
+  return path.join(localeDir(locale), `${fileBase}.json`);
 }
 
 /** -----------------------
@@ -91,7 +155,12 @@ function readJson(p) {
   return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
+function ensureDir(p) {
+  fs.mkdirSync(p, { recursive: true });
+}
+
 function writeJson(p, obj) {
+  ensureDir(path.dirname(p));
   fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf8");
 }
 
@@ -181,7 +250,7 @@ function stripCodeFence(s) {
   return s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
 }
 
-async function translateBatch({ baseLocale, targetLocale, items }) {
+async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
   const system = [
     "You are a professional localization translator for a software product UI and SEO text.",
     "Rules:",
@@ -193,6 +262,7 @@ async function translateBatch({ baseLocale, targetLocale, items }) {
 
   const user = [
     `Translate the following i18n strings from ${baseLocale} to ${targetLocale}.`,
+    `File: ${fileBase}.json`,
     "Return JSON: same keys -> translated strings.",
     "Do not add/remove keys.",
     "",
@@ -232,9 +302,7 @@ async function translateBatch({ baseLocale, targetLocale, items }) {
     const dst = parsed[k];
     if (typeof dst !== "string") parsed[k] = String(dst);
     if (!samePlaceholders(src, parsed[k])) {
-      throw new Error(
-        `Placeholder mismatch for key '${k}'\nsrc: ${src}\ndst: ${parsed[k]}`
-      );
+      throw new Error(`Placeholder mismatch for key '${k}'\nsrc: ${src}\ndst: ${parsed[k]}`);
     }
   }
 
@@ -245,72 +313,110 @@ async function translateBatch({ baseLocale, targetLocale, items }) {
  * Run
  * ---------------------- */
 (async function run() {
-  const basePath = localeFile(args.base);
-  const baseObj = readJson(basePath);
-  const baseKeys = new Set(getKeys(baseObj));
-
-  console.log(`[base] ${args.base}.json  keys=${baseKeys.size}`);
+  console.log(`[dir] ${messagesDir}`);
+  console.log(`[base] ${args.base}`);
+  console.log(`[files] ${baseFiles.join(", ")}`);
   console.log(`[found locales] ${locales.join(", ")}`);
   console.log(`[targets] ${targetLocales.join(", ") || "(none)"}`);
 
+  // Read all base files once
+  const baseFileObjs = {};
+  const baseFileKeySets = {};
+  for (const fileBase of baseFiles) {
+    const basePath = localeFile(args.base, fileBase);
+    if (!fs.existsSync(basePath)) {
+      console.warn(`[warn] base file missing: ${basePath} (skipping)`);
+      continue;
+    }
+    const obj = readJson(basePath);
+    baseFileObjs[fileBase] = obj;
+    baseFileKeySets[fileBase] = new Set(getKeys(obj));
+  }
+
+  const effectiveFiles = Object.keys(baseFileObjs).sort();
+  if (!effectiveFiles.length) {
+    console.error("No readable base files found. Nothing to do.");
+    process.exit(1);
+  }
+
   for (const loc of targetLocales) {
-    const targetPath = localeFile(loc);
-    let targetObj;
+    console.log(`\n==============================`);
+    console.log(`Locale: ${loc}`);
+    console.log(`==============================`);
 
-    try {
-      targetObj = readJson(targetPath);
-    } catch (e) {
-      console.error(`\n--- ${loc}.json ---`);
-      console.error(`Error parsing ${targetPath}: ${e.message}`);
-      continue;
-    }
+    for (const fileBase of effectiveFiles) {
+      const baseObj = baseFileObjs[fileBase];
+      const baseKeys = baseFileKeySets[fileBase];
 
-    const targetKeys = new Set(getKeys(targetObj));
-    const missingKeys = [...baseKeys].filter((k) => !targetKeys.has(k));
+      const targetPath = localeFile(loc, fileBase);
+      let targetObj = {};
 
-    // Only translate strings from base
-    const missingItems = {};
-    for (const k of missingKeys) {
-      const v = getValueByPath(baseObj, k);
-      if (typeof v === "string") missingItems[k] = v;
-    }
+      if (fs.existsSync(targetPath)) {
+        try {
+          targetObj = readJson(targetPath);
+        } catch (e) {
+          console.error(`\n--- ${loc}/${fileBase}.json ---`);
+          console.error(`Error parsing ${targetPath}: ${e.message}`);
+          continue;
+        }
+      } else {
+        // create empty file later (writeJson handles mkdir)
+        targetObj = {};
+      }
 
-    console.log(`\n--- ${loc}.json ---`);
-    console.log(`missing keys: ${missingKeys.length} (string missing: ${Object.keys(missingItems).length})`);
+      const targetKeys = new Set(getKeys(targetObj));
+      const missingKeys = [...baseKeys].filter((k) => !targetKeys.has(k));
 
-    if (!Object.keys(missingItems).length) {
-      console.log("✅ Nothing to translate.");
-      continue;
-    }
+      // Only translate string leaves from base
+      const missingItems = {};
+      for (const k of missingKeys) {
+        const v = getValueByPath(baseObj, k);
+        if (typeof v === "string") missingItems[k] = v;
+      }
 
-    const chunks = chunkEntries(missingItems, args.chunkSize);
-    const translatedAll = {};
+      console.log(`\n--- ${loc}/${fileBase}.json ---`);
+      console.log(
+        `missing keys: ${missingKeys.length} (string missing: ${Object.keys(missingItems).length})`
+      );
 
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
-      console.log(`  translating chunk ${i + 1}/${chunks.length} (${Object.keys(chunk).length} keys)...`);
+      if (!Object.keys(missingItems).length) {
+        console.log("✅ Nothing to translate.");
+        // still optionally create file if it didn't exist and base had no keys? (skip)
+        continue;
+      }
 
-      const translated = await translateBatch({
-        baseLocale: args.base,
-        targetLocale: loc,
-        items: chunk,
-      });
+      const chunks = chunkEntries(missingItems, args.chunkSize);
+      const translatedAll = {};
 
-      Object.assign(translatedAll, translated);
-    }
+      for (let i = 0; i < chunks.length; i++) {
+        const chunk = chunks[i];
+        console.log(
+          `  translating chunk ${i + 1}/${chunks.length} (${Object.keys(chunk).length} keys)...`
+        );
 
-    if (args.dryRun || !args.write) {
-      const sample = Object.entries(translatedAll).slice(0, 8);
-      console.log("sample:");
-      for (const [k, v] of sample) console.log(`  - ${k}: ${v}`);
-    }
+        const translated = await translateBatch({
+          baseLocale: args.base,
+          targetLocale: loc,
+          fileBase,
+          items: chunk,
+        });
 
-    if (args.write && !args.dryRun) {
-      mergeMissing(targetObj, translatedAll);
-      writeJson(targetPath, targetObj);
-      console.log(`✅ wrote ${Object.keys(translatedAll).length} keys to ${loc}.json`);
-    } else {
-      console.log("ℹ️ not written (use --write to save).");
+        Object.assign(translatedAll, translated);
+      }
+
+      if (args.dryRun || !args.write) {
+        const sample = Object.entries(translatedAll).slice(0, 8);
+        console.log("sample:");
+        for (const [k, v] of sample) console.log(`  - ${k}: ${v}`);
+      }
+
+      if (args.write && !args.dryRun) {
+        mergeMissing(targetObj, translatedAll);
+        writeJson(targetPath, targetObj);
+        console.log(`✅ wrote ${Object.keys(translatedAll).length} keys to ${loc}/${fileBase}.json`);
+      } else {
+        console.log("ℹ️ not written (use --write to save).");
+      }
     }
   }
 

@@ -18,6 +18,9 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `${siteUrl}/${locale}/bilingual-subtitles`,
+    },
     openGraph: {
       title,
       description,

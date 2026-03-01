@@ -143,5 +143,36 @@
     "original": "原始",
     "translated": "翻译后",
     "unsupported": "你的浏览器不支持视频标签。"
+  },
+  "contentCreationSidebar": {
+    "title": "内容创作工具",
+    "cta": "创建新内容",
+    "tools": {
+      "videoTranslator": {
+        "title": "视频配音",
+        "desc": "将您的视频内容翻译和配音成超过170种语言",
+        "alt": "翻译"
+      },
+      "subtitleGenerator": {
+        "title": "双语字幕生成器",
+        "desc": "免费自动生成两种语言的字幕",
+        "alt": "字幕"
+      }
+    },
+    "nano": {
+      "badge": "纳米香蕉",
+      "wordCard": {
+        "title": "单词卡片",
+        "desc": "将一个单词转化为紧凑的学习卡片"
+      },
+      "ecommerceDetails": {
+        "title": "电子商务详情",
+        "desc": "为产品列表生成产品细节视觉"
+      },
+      "whatIfHistory": {
+        "title": "如果历史",
+        "desc": "创建历史反转信息图海报"
+      }
+    }
   }
 }

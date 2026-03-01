@@ -143,5 +143,36 @@
     "original": "Original",
     "translated": "Traduit",
     "unsupported": "Votre navigateur ne prend pas en charge la balise vidéo."
+  },
+  "contentCreationSidebar": {
+    "title": "Outils de création de contenu",
+    "cta": "Créer un nouveau contenu",
+    "tools": {
+      "videoTranslator": {
+        "title": "Doublage vidéo",
+        "desc": "Traduisez et doublez votre contenu vidéo en plus de 170 langues",
+        "alt": "Traduction"
+      },
+      "subtitleGenerator": {
+        "title": "Générateur de sous-titres bilingue",
+        "desc": "Générez automatiquement des sous-titres dans deux langues gratuitement",
+        "alt": "Sous-titre"
+      }
+    },
+    "nano": {
+      "badge": "Banane Nano",
+      "wordCard": {
+        "title": "Carte de mots",
+        "desc": "Transformez un mot en une carte d'apprentissage compacte"
+      },
+      "ecommerceDetails": {
+        "title": "Détails de l'e-commerce",
+        "desc": "Générez des visuels de détails de produit pour les annonces"
+      },
+      "whatIfHistory": {
+        "title": "Et si l'histoire",
+        "desc": "Créez des affiches infographiques de renversement historique"
+      }
+    }
   }
 }
