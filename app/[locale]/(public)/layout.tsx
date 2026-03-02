@@ -13,6 +13,8 @@ import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+
 export async function generateMetadata({
   params,
 }: {
@@ -22,33 +24,18 @@ export async function generateMetadata({
   const headerList = await headers();
   const pathname = headerList.get("x-pathname") || "";
 
-  // Remove locale prefix from pathname to get the canonical path
-  // e.g. /zh/pricing -> /pricing
   const pathWithoutLocale =
     pathname.replace(new RegExp(`^/${locale}(?=/|$)`), "") || "";
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
-
-  // Construct languages map for all supported locales
-  const languages: Record<string, string> = {};
-  routing.locales.forEach((lang) => {
-    languages[lang] = `${siteUrl}/${lang}${pathWithoutLocale}`;
-  });
-
   return {
     alternates: {
-      canonical: `${siteUrl}/${locale}${pathWithoutLocale}`,
-      languages: {
-        ...languages,
-        "x-default": `${siteUrl}/en${pathWithoutLocale}`,
-      },
+      canonical: getCanonicalUrl(locale, pathWithoutLocale),
+      languages: getLanguagesMap(pathWithoutLocale),
     },
-    // Add default title template
     title: {
       template: '%s | Curify Studio',
       default: 'Curify Studio'
     },
-    // Fallback description if not provided by page
     description: 'Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale.'
   };
 }

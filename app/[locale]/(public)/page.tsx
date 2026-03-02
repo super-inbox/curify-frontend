@@ -4,6 +4,7 @@ import HomeClient from "./HomeClient";
 // 1. Import your service and mapper
 import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 export async function generateMetadata({
   params,
@@ -12,20 +13,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.metadata" });
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
-  const baseUrl = "https://www.curify-ai.com";
-  const url = `${baseUrl}/${locale}`;
+  const canonicalUrl = getCanonicalUrl(locale); // home = no path
 
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
+      languages: getLanguagesMap(),
     },
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url,
+      url: canonicalUrl,   // ← was using the wrong /en/ url here too
       siteName: "Curify",
       images: [
         {
