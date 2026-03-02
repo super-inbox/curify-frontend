@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import BilingualSubtitlesClient from "./BilingualSubtitlesClient";
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
@@ -14,17 +15,19 @@ export async function generateMetadata({
 
   const title = t("title");
   const description = t("description");
+  const canonicalUrl = getCanonicalUrl(locale, "/bilingual-subtitles");
 
   return {
     title,
     description,
     alternates: {
-      canonical: `${siteUrl}/${locale}/bilingual-subtitles`,
+      canonical: canonicalUrl,
+      languages: getLanguagesMap("/bilingual-subtitles"),
     },
     openGraph: {
       title,
       description,
-      url: `${siteUrl}/${locale}/bilingual-subtitles`,
+      url: canonicalUrl,
       type: "website",
       images: [
         {
