@@ -302,11 +302,15 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header with semantic HTML */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Nano Banana Pro Prompts</h1>
-          <p className="text-lg text-gray-600">Discover and explore creative prompts for your next project</p>
-        </header>
+
+      <header className="text-center mb-12">
+  <h1 className="text-4xl font-bold text-gray-900 mb-2">Nano Banana Prompts Gallery</h1>
+  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    Discover and copy the most effective <strong>nano banana prompts</strong>. 
+    Our curated collection helps you generate high-quality AI visuals using 
+    optimized templates and community-shared prompt engineering.
+  </p>
+</header>
 
         {/* Stats with semantic HTML */}
         <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 mb-8" aria-label="Statistics">
