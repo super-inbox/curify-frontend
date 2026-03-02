@@ -1335,5 +1335,40 @@
       ]
     }
   }
+ },
+{   "id": "template-city-miniature-zh",
+    "locales": {
+        "zh": {
+            "category": "城市微缩景观类",
+            "description": "Generate a high-detail street-style map of a city with a hyper-photorealistic miniature version dynamically emerging from its surface, including landmarks, scenery, streets, trees and transit.",
+            "base_prompt": "（Concept Artist）你是一位顶尖城市微缩景观概念设计师，擅长将城市地图与立体微缩景观结合创作。以{City Name}为主题，在复古质感的{City map}平面上，生成超写实逼真的城市微缩立体景观：包含精致建筑细节的本地标志性地标、经典人文风景、霓虹或传统韵味的热闹商业街、点缀着缤纷落叶的葱郁{seasonal trees}、沿着微缩轨道行驶的细腻{City Transit}列车。所有元素如同鲜活的3D城市沙盘从地图中自然生长而出，层间带有柔和阴影增强立体感。采用工作室柔和光影，冷暖色调和谐统一，电影级景深效果，背景虚化光斑柔和，建筑与植物纹理细节精致，2:3构图，超写实渲染，高清画质。直接出图，城市为{City Name}。",
+            "parameters": [
+                {
+                    "name": "City Name",
+                    "label": "城市名称",
+                    "type": "text",
+                    "placeholder": ["北京", "上海", "东京", "巴黎"]
+                },
+                {
+                    "name": "City map",
+                    "label": "地图风格",
+                    "type": "text",
+                    "placeholder": ["复古牛皮纸地图", "旧报纸质感地图", "做旧帆布地图"]
+                },
+                {
+                    "name": "seasonal trees",
+                    "label": "季节树木",
+                    "type": "text",
+                    "placeholder": ["枫树", "银杏树", "樱花树", "梧桐树"]
+                },
+                {
+                    "name": "City Transit",
+                    "label": "城市交通",
+                    "type": "text",
+                    "placeholder": ["地铁", "轻轨", "复古电车", "观光巴士"]
+                }
+            ]
+        }
+    }
 }
 ]
