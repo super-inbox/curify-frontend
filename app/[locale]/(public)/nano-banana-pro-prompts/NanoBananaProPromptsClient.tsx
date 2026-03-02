@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Search } from 'lucide-react';
 import PromptCard from './PromptCard';
+import { useTranslations } from "next-intl";
 
 type Prompt = {
   id: number;
@@ -124,6 +125,7 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
   useEffect(() => { setPrompts(filterPrompts()); }, [filterPrompts]);
 
   const loadMore = () => setDisplayedCount((prev) => prev + 20);
+  const t = useTranslations("nanoGallery");
 
   if (error) return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -147,14 +149,18 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Nano Banana Prompts Gallery</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover and copy the most effective <strong>nano banana prompts</strong>. Our curated
-            collection helps you generate high-quality AI visuals using optimized templates and
-            community-shared prompt engineering.
-          </p>
-        </header>
+      <header className="text-center mb-12">
+      <h1 className="text-4xl font-bold text-gray-900 mb-2">
+        {t("title")}
+      </h1>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        {t.rich("description", {
+          strong: (chunks) => (
+            <strong>{chunks}</strong>
+          ),
+        })}
+      </p>
+    </header>
 
         {/* Stats */}
         <section className="grid grid-cols-2 gap-5 mb-8" aria-label="Statistics">
