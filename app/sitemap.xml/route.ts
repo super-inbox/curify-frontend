@@ -64,12 +64,10 @@ function generateHreflangLinks(route: string, availableLocales?: string[]) {
       `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}/${lng}${route}" />`
   ).join("");
 
-  // x-default points to first available locale or 'en'
-  const defaultLocale = localesToUse.includes("en") ? "en" : localesToUse[0];
-  
+  // ✅ FIX: x-default now points to the unprefixed route to perfectly match Next.js HTTP headers
   return (
     links +
-    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/${defaultLocale}${route}" />`
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`
   );
 }
 
