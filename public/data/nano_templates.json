@@ -1369,6 +1369,69 @@
                 }
             ]
         }
+    }，
+    {
+    "id": "template-hotspot-card-zh",
+    "locales": {
+        "zh": {
+            "category": "热点知识卡类",
+            "description": "Generate a hand-painted watercolor style hot topic knowledge card with clear sections, icons and summary.",
+            "base_prompt": "（Hand-painted Illustrator）你是一位专业知识卡片设计师，擅长手绘水彩风格的热点知识科普设计。根据用户指定的【{hotspot_name}】，生成一张手绘水彩风格热点知识卡：顶部标题栏为“热点知识卡 | {hotspot_name}”，副标题为“{keyword1} {keyword2} {keyword3}”，采用复古丝带横幅设计；背景为柔和水彩晕染效果，主色调为{color_theme}；所有图标与线条为手绘风格，黑色清晰轮廓线，内部低饱和度柔和色彩；信息分为“核心速览”板块，下设3-4个逻辑子模块，每个模块含图标、标题、要点，用箭头或连线展示因果关系；底部设“一句话总结”引语框，高度概括热点本质与核心影响。整体排版整洁、层次分明、文艺治愈，适合科普传播。直接出图，主题为【{hotspot_name}】。",
+            "parameters": [
+                {
+                    "name": "hotspot_name",
+                    "label": "热点名称",
+                    "type": "text",
+                    "placeholder": ["人工智能发展", "碳中和目标", "文旅消费复苏"]
+                },
+                {
+                    "name": "keyword1",
+                    "label": "核心关键词1",
+                    "type": "text",
+                    "placeholder": ["科技"]
+                },
+                {
+                    "name": "keyword2",
+                    "label": "核心关键词2",
+                    "type": "text",
+                    "placeholder": ["创新"]
+                },
+                {
+                    "name": "keyword3",
+                    "label": "核心关键词3",
+                    "type": "text",
+                    "placeholder": ["未来"]
+                },
+                {
+                    "name": "color_theme",
+                    "label": "主色调",
+                    "type": "text",
+                    "placeholder": ["暖黄", "浅蓝", "清新绿"]
+                }
+            ]
+        }
+    }，
+    {
+    "id": "template-constellation-steampunk-zh",
+    "locales": {
+        "zh": {
+            "category": "星座蒸汽朋克解剖图谱类",
+            "description": "Generate a vintage steampunk-style constellation anatomical chart poster with mechanical structure, character modules and steampunk elements.",
+            "base_prompt": "（Steampunk Scientific Illustrator）你是一位专业复古蒸汽朋克解剖图谱设计师，擅长星座机械结构科普海报。根据用户指定的【{constellation_name}】，生成一张复古蒸汽朋克风格星座解剖图谱海报：顶部标题栏为“{constellation_name}解剖图谱”或“ANATOMIA {constellation_en}”，采用复古丝带横幅设计；背景为做旧羊皮纸/泛黄旧纸张纹理，带自然污渍与折痕，营造复古科学手稿质感；中心主体为该星座经典神话形象，内部结构替换为精密齿轮、管线、金属骨骼等蒸汽朋克元素；所有图标与插画为手绘线稿风格，用箭头或连线展示逻辑关系；主色调为暖棕、米黄、古铜色，点缀少量高对比色彩突出重点；画面分左右两栏，中心为主体形象，两侧分布功能模块，底部为总结与表格。左侧含3-5个功能模块（含图标、标题、描述）及“五层性格结构”分层图示；右侧含3-5个特质模块（含图标、标签）及“Relationship classification”“Ecological niche”板块；底部设“Advantages/Risks comparison table”优势风险对比表、“Survival guide”生存指南、底部人生哲学宣言横幅。整体严谨精致、复古机械美学，直接出图，星座为【{constellation_name}】。",
+            "parameters": [
+                {
+                    "name": "constellation_name",
+                    "label": "星座名称",
+                    "type": "text",
+                    "placeholder": ["白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座"]
+                },
+                {
+                    "name": "constellation_en",
+                    "label": "星座英文名称",
+                    "type": "text",
+                    "placeholder": ["ARIES", "TAURUS", "GEMINI", "CANCER", "LEO", "VIRGO"]
+                }
+            ]
+        }
     }
 }
-]
