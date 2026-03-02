@@ -10,21 +10,20 @@
     "robots": "index,follow",
     "og_type": "website"
   },
-  "templates": 
-  [
+  "templates": [
     {
       "id": "template-herbal-zh",
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "中草药全景分解图生成器｜本草科普信息图｜Curify Nano",
-            "meta_description": "一键生成“单味药材全景分解图（Herb Exploded Sheet）”：饮片结构、断面纹理、性味归经、功效标签、现代剂型与使用场景，适合科普海报与内容创作。",
+            "meta_title": "Nano Banana 提示词：中草药全景分解图生成器｜Curify AI",
+            "meta_description": "使用专业 Nano Banana 提示词一键生成“单味药材全景分解图”：涵盖饮片结构、药性归经与科普信息图排版，适合内容创作。",
             "og_image": "/images/seo/template-herbal-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板把“单味中草药”做成一张可收藏的全景分解图：包含外观/断面/纹理细节、性味归经、核心功效标签、常见剂型与使用场景，并用清晰的科普信息图排版呈现。",
+              "what": "这个模板通过优化的 Nano Banana 提示词把“单味中草药”做成一张可收藏的全景分解图：包含外观/断面细节、性味归经与核心功效标签，采用清晰的科普排版。",
               "who": "适合中医药科普账号、养生内容创作者、药材店/品牌做知识海报、学生做学习笔记，以及想把药材讲清楚（但不想写长文）的用户。",
               "how": [
                 "输入药材中文名+别名（如有）+常见形态（饮片/原药材）。",
@@ -47,14 +46,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "像素等距演进博物馆｜时间线信息图生成｜Curify Nano",
-            "meta_description": "生成等距像素艺术“演进博物馆”时间线：以空间递进表达历史阶段，双语标题与关键节点标记，适合学术可视化与主题对比展示。",
+            "meta_title": "Nano Banana 提示词：像素等距演进博物馆生成器｜Curify AI",
+            "meta_description": "利用 Nano Banana 提示词生成等距像素艺术“演进博物馆”时间线。通过空间递进表达历史阶段，支持中英双语标注。",
             "og_image": "/images/seo/template-evolution-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板用“等距像素博物馆”来做时间线：把阶段变化做成一段可漫游的展厅空间，每个展区对应一个时代/版本，配关键节点标牌、图标与对比注释，适合做演进脉络可视化。",
+              "what": "这个模板使用定制的 Nano Banana 提示词构建“等距像素博物馆”时间线：将历史阶段转化为可漫游的展厅空间，每个展区对应一个时代，配有关键节点标牌。",
               "who": "适合科普/历史/科技演进内容、产品版本迭代展示、教育讲解（课堂/笔记）、研究汇报中的对比时间线，以及想把“发展史”做得更好看的创作者。",
               "how": [
                 "确定主题与时间范围（如“人类演化”“手机形态演进”“AI模型迭代”）。",
@@ -72,14 +71,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Pixel “Evolution Museum” Timeline Generator | Curify Nano",
-            "meta_description": "Create an isometric pixel-art “Evolution Museum” timeline where spatial progression represents historical stages—bilingual titles, key markers, and rich symbolic detail for comparison and education.",
-            "og_image": "/images/seo/template-evolution-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Pixel Evolution Museum Timeline Generator",
+            "meta_description": "Create stunning isometric pixel-art timelines with these Nano Banana prompts. Represent historical stages as museum halls with bilingual titles and rich detail."
           },
           "content": {
             "sections": {
-              "what": "This template turns a timeline into an isometric pixel-art “museum walk-through”: each hall represents an era/version with labeled exhibits, milestone plaques, icons, and compact comparisons—highly visual and easy to skim.",
+              "what": "This template uses specific Nano Banana prompts to turn any timeline into an isometric pixel-art “museum walk-through,” where each hall represents a historical era with labeled exhibits and milestone plaques.",
               "who": "Great for educators, history/science explainers, product teams showing version evolution, researchers presenting stage-by-stage change, and creators who want timelines that feel like a story space (not a list).",
               "how": [
                 "Pick a theme + time span (e.g., “human evolution”, “smartphone design”, “AI model releases”).",
@@ -102,14 +99,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "可爱手绘旅行地图生成｜行程路线与景点美食｜Curify Nano",
-            "meta_description": "生成【目的地】手绘旅行地图：按日期分块展示每日路线，景点/美食/住宿/交通全中文标注，Q版治愈风，适合分享与打印。",
+            "meta_title": "Nano Banana 提示词：手绘旅行地图生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词生成目的地手绘旅行地图：按日期规划路线，景点、美食与交通全中文标注，治愈风排版。",
             "og_image": "/images/seo/template-travel-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板把一次旅行做成“可打印的手绘行程地图”：按天分区显示路线，景点/美食/住宿/交通用Q版图标标注，并在版面上形成清晰的每日动线。",
+              "what": "这个模板利用 Nano Banana 提示词将旅行行程转化为“手绘行程地图”：按天分区显示路线，包含景点与美食的 Q 版图标，形成直观的每日动线。",
               "who": "适合旅行攻略分享、小红书/抖音旅行博主、家庭出游做行程卡、旅行社/民宿做推荐海报，以及想把行程讲清楚又好看的用户。",
               "how": [
                 "输入目的地+出行天数+每一天的主要地点（按顺序）。",
@@ -132,14 +129,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "地标建筑HUD分析图｜白线技术标注信息图｜Curify Nano",
-            "meta_description": "生成地标建筑HUD风信息图：照片+白色技术注释叠加，含测量数据、材料数量、平面/剖面图与工程特征，适合建筑科普与作品集。",
+            "meta_title": "Nano Banana 提示词：地标建筑 HUD 分析图生成器｜Curify AI",
+            "meta_description": "通过 Nano Banana 提示词生成地标建筑 HUD 风信息图：白线技术标注，含测量数据与工程特征，适合建筑科普。",
             "og_image": "/images/seo/template-architecture-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板把建筑照片升级成“HUD技术解析板”：在主视觉上叠加白线标注，附尺寸/材料/结构要点，并配平面或剖面小图、数据面板与工程特征说明，像科幻工程手册一样可读。",
+              "what": "此模板使用专业 Nano Banana 提示词将建筑照片升级为“HUD 技术解析板”：叠加白线标注、尺寸数据与结构要点，呈现科幻工程手册般的视觉效果。",
               "who": "适合建筑/设计学生做作品集、建筑科普账号、城市地标解读内容、展览导览海报，以及想把“看起来很酷但讲得更清楚”的建筑内容创作者。",
               "how": [
                 "输入建筑名称+城市+你要强调的3–5个工程/结构亮点（如悬挑、桁架、幕墙系统）。",
@@ -157,20 +154,18 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Landmark Architecture HUD Infographic Generator | Curify Nano",
-            "meta_description": "Create a photo-based architectural infographic with dense HUD-style white technical annotations—measurements, materials, plans/sections, and engineering features in a clean vertical layout.",
-            "og_image": "/images/seo/template-architecture-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Landmark Architecture HUD Infographic",
+            "meta_description": "Transform architecture photos with Nano Banana prompts into technical HUD infographics. Includes measurements, structural details, and engineering annotations."
           },
           "content": {
             "sections": {
-              "what": "This template transforms a landmark photo into a HUD-style technical breakdown: clean white callouts, numbered annotations, data panels, and mini plan/section windows—like a sci-fi engineering dossier.",
+              "what": "This template leverages Nano Banana prompts to transform landmark photos into HUD-style technical breakdowns: featuring clean white callouts, numbered annotations, and data panels for a sci-fi engineering feel.",
               "who": "Ideal for architecture/design students (portfolio boards), urban/landmark explainers, museum/exhibit visuals, and creators who want “cool + precise” technical storytelling.",
               "how": [
                 "Provide the building name, location, and 3–5 features to highlight (structure, façade, span, circulation).",
                 "Add any known numbers (height, floors, materials). If unsure, label as “approx.” rather than guessing.",
                 "Request HUD styling: thin white lines, callout numbers, data panels, and a small plan/section inset. Vertical 3:4.",
-                "After generation, check readability; if labels overlap, ask to “move annotations to margins and extend leader lines.”"
+                "After generation, check readability and if labels overlap, ask to “move annotations to margins and extend leader lines.”"
               ],
               "prompts": [
                 "Create a “Burj Khalifa” architecture HUD infographic: photo + white technical annotations, data panels (height/floors/materials), structural system highlights, and a small section inset. Vertical 3:4.",
@@ -187,20 +182,20 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "濒危物种赛博朋克知识卡｜双语模块信息图｜Curify Nano",
-            "meta_description": "生成3:4竖版濒危物种知识图谱卡：6大模块（形态、栖息地、行为、种群趋势、威胁、保护/文化关系）+中英双语标注+图表可视化。",
+            "meta_title": "Nano Banana 提示词：濒危物种赛博朋克知识卡生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词生成濒危物种知识图谱：赛博朋克风格，包含形态、栖息地与保护趋势的中英双语标注。",
             "og_image": "/images/seo/template-species-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张赛博朋克风“濒危物种知识卡”：主视觉物种+六大模块信息（形态/栖息地/行为/趋势/威胁/保护与文化）+简洁图表，并提供中英双语标注，适合快速科普与传播。",
+              "what": "这个模板通过 Nano Banana 提示词生成一张赛博朋克风“濒危物种知识卡”：整合六大核心模块信息与简洁图表，支持中英双语标注，适合视觉系科普。",
               "who": "适合自然科普账号、公益/环保组织内容、学生做物种报告、动物园/博物馆导览海报，以及喜欢高视觉冲击信息图的创作者。",
               "how": [
                 "输入物种名称（中英名）+分布区域+3个显著特征（体型/颜色/行为）。",
                 "给出威胁清单（栖息地破坏/盗猎/气候等）与保护动作（保护区/法律/公众参与）。",
                 "要求6模块结构+种群趋势小图（上升/下降/不确定）+中英双语标题与要点。",
-                "生成后检查：信息是否过于“泛泛”；如泛泛，补充1–2个具体事实点并让模型重写模块文案。"
+                "生成后检查：信息是否过于“泛推”；如泛泛，补充1–2个具体事实点并让模型重写模块文案。"
               ],
               "prompts": [
                 "生成“雪豹”濒危物种赛博朋克知识卡：中英双语标注，6大模块+种群趋势图+主要威胁与保护行动，3:4竖版，高对比霓虹信息图。",
@@ -217,19 +212,19 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "人物像素级拆解设定图｜服装分层与道具表情｜Curify Nano",
-            "meta_description": "生成3:4人物概念拆解板：服装分层、表情集、材质特写、核心道具与随身物品，手写中文注释，适合二创设定与角色图鉴。",
+            "meta_title": "Nano Banana 提示词：人物像素级拆解设定图生成器｜Curify AI",
+            "meta_description": "利用 Nano Banana 提示词生成人物概念拆解板：含服装分层、表情集与道具特写，配有手写感中文注释。",
             "og_image": "/images/seo/template-character-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张“角色设定拆解板”：主角色全身像+服装分层拆解+表情集+材质特写+随身物品清单，并配手写中文注释，适合做角色图鉴与二创设定。",
+              "what": "这个模板使用 Nano Banana 提示词生成角色设定拆解板：包含主视觉全身像、服装细节、表情集与随身物品清单，呈现专业的手稿风格。",
               "who": "适合插画师/概念设计、同人二创、小说/漫画角色设定、游戏原型角色卡，以及想把角色细节一次讲清楚的创作者。",
               "how": [
                 "输入角色身份（职业/时代/阵营）+3个性格关键词+1句人物口头禅/信条。",
                 "列出服装层级（外套/内搭/鞋帽等）与核心道具（武器/工具/纪念物）。",
-                "要求版式：主视觉居中，左右分栏细节小窗（材质/纹样/表情），手写注释风格，3:4竖版。",
+                "要求版式：主视觉居_中，左右分栏细节小窗（材质/纹样/表情），手写注释风格，3:4竖版。",
                 "生成后检查：道具是否与身份一致；如不一致，让模型“基于身份重选道具，但保留整体画风”。"
               ],
               "prompts": [
@@ -247,14 +242,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "人物档案分析信息图｜角色Dossier海报｜Curify Nano",
-            "meta_description": "生成角色档案信息图：主视觉人像+表情设定+左右栏目（设定信息/羁绊关系）+底部关键物品拆解，可配置艺术风格与标题模块。",
+            "meta_title": "Nano Banana 提示词：角色档案 Dossier 信息图生成器｜Curify AI",
+            "meta_description": "通过 Nano Banana 提示词生成深度的角色分析档案：包含表情设定、能力动机与羁绊关系模块。",
             "og_image": "/images/seo/template-character-analysis-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板是“角色Dossier档案海报”：主视觉人像+表情设定条+左右栏目（基本设定/能力动机/羁绊关系）+底部关键物品拆解，适合做带剧情的角色分析。",
+              "what": "这个模板利用 Nano Banana 提示词打造“角色 Dossier 档案海报”：通过结构化分栏展示角色的基本设定、心路动机与复杂的关系网。",
               "who": "适合写作者/编剧做人物小传、二创做人物解析贴、游戏/漫画设定介绍、CP关系整理，以及想把人物“动机与关系”讲明白的创作者。",
               "how": [
                 "输入角色背景（出身/目标/弱点）+关键关系网（3–6人：盟友/对手/牵挂）。",
@@ -277,14 +272,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "微缩城市天气预报图｜等距3D地标天气场景｜Curify Nano",
-            "meta_description": "生成1:1等距微缩3D城市天气场景：地标居中，天气元素与建筑融合，上方排版城市名/日期/温度。适合社交分享与天气可视化。",
+            "meta_title": "Nano Banana 提示词：微缩城市天气场景生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词将枯燥的天气预报变为 3D 微缩城市场景：融合城市地标与即时天气元素。",
             "og_image": "/images/seo/template-weather-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板把天气预报做成“微缩3D城市场景”：地标建筑居中，天气元素（雨雪雾风/阳光）与城市融合，上方统一排版城市名/日期/温度，适合每天一张的社交分享。",
+              "what": "这个模板应用 Nano Banana 提示词将天气预报转化为“微缩 3D 城市场景”：地标建筑与动态天气效果自然交织，上方自动排版气象数据。",
               "who": "适合城市生活账号、旅游局/景区运营、天气内容创作者、品牌做“当日氛围图”，以及想把天气信息做得更有质感的人。",
               "how": [
                 "输入城市名+日期+温度区间+天气（晴/多云/小雨/大雪/雾等）。",
@@ -307,14 +302,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "热点事件多维分析图｜因果分层+逻辑链+影响辐射｜Curify Nano",
-            "meta_description": "生成热点事件分析信息图：现象-本质分层、底层逻辑链条、长效影响辐射（短/中/长周期）+强可读中文排版，适合深度解读与传播。",
+            "meta_title": "Nano Banana 提示词：热点事件多维分析图生成器｜Curify AI",
+            "meta_description": "通过 Nano Banana 提示词进行深度热点解读：生成涵盖因果链条、逻辑分层与辐射影响的专业信息图。",
             "og_image": "/images/seo/template-hot-event-analysis-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板把一个热点事件做成“多维分析图”：先把现象与本质分层，再给出因果链与利益相关者结构，最后用短/中/长期影响辐射图收束，适合做清晰、可传播的深度解读。",
+              "what": "这个模板结合 Nano Banana 提示词将复杂事件解构为“多维分析图”：分层剥离现象与本质，清晰呈现因果链条及长效影响。",
               "who": "适合热点解读账号、行业分析/商业观察、产品/运营复盘、研究生写作结构化梳理，以及想把复杂事件讲得有逻辑的人。",
               "how": [
                 "输入事件一句话摘要+时间线（3–6个关键节点）。",
@@ -337,14 +332,14 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "非遗工艺A3展板｜历史+流程+纹样+传承｜Curify Nano",
-            "meta_description": "生成高信息密度非遗工艺展板：历史背景、制作流程、艺术体系、纹样符号、传承现状与现代融合，并配工具/材料/场景细节插图。",
+            "meta_title": "Nano Banana 提示词：非遗工艺科普展板生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词生成高信息密度的非遗展板：涵盖工艺流程、历史背景与文化符号。",
             "og_image": "/images/seo/template-intangible-heritage-zh-zh.jpg",
             "robots": "index,follow"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张“非遗工艺A3展板”：用高信息密度的模块讲清历史源流、制作流程、工具材料、纹样符号系统、代表作品与传承现状，并补充现代应用场景，适合展陈与科普。",
+              "what": "此模板利用专业 Nano Banana 提示词生成“非遗工艺展板”：系统化呈现历史源流、制作流程、工具材料及其现代融合应用。",
               "who": "适合文博/非遗科普账号、学校社团展板、文化机构宣传、文创品牌素材，以及想把传统工艺讲清楚并做出视觉质感的创作者。",
               "how": [
                 "输入非遗名称+地区+一句话核心特色（如“竹编灯彩/蓝染/木版年画”）。",
@@ -367,14 +362,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "学科知识卡片生成｜可爱卡通/黑板报风｜Curify Nano",
-            "meta_description": "把知识点变成信息图：可爱卡通卡片风或粉笔黑板报草图风，关键词突出、结构清晰，适合课堂讲解、笔记整理与科普分享。",
-            "og_image": "/images/seo/template-education-card-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：学科知识卡片生成器｜Curify AI",
+            "meta_description": "利用 Nano Banana 提示词将知识点转化为可爱卡通或黑板报风的知识卡片：关键词突出、布局清晰。"
           },
           "content": {
             "sections": {
-              "what": "这个模板把任意知识点压缩成“可保存的知识卡”：两种风格可选（可爱卡通卡片 / 粉笔黑板报草图），用关键词+结构化小模块把概念讲清楚，适合一眼看懂。",
+              "what": "该模板基于 Nano Banana 提示词将任意概念压缩为“结构化知识卡”：可选马卡龙卡通或粉笔黑板报风格，旨在提升学习效率。",
               "who": "适合老师备课、学生做笔记、科普账号输出系列卡片、亲子教育内容，以及需要把复杂概念讲成“10秒能懂”的用户。",
               "how": [
                 "输入主题+受众年龄/水平（小学/中学/成人入门）。",
@@ -392,14 +385,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Educational Infographic Card Generator | Curify Nano",
-            "meta_description": "Turn any topic into a save-worthy infographic in two styles: cute pastel cartoon cards or chalkboard scientific sketch—clean structure, highlighted keywords, and readable layout.",
-            "og_image": "/images/seo/template-education-card-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Educational Infographic Card Generator",
+            "meta_description": "Copy-paste these Nano Banana prompts to turn any topic into a professional educational card. Styles include cute pastel or scientific chalkboard sketch."
           },
           "content": {
             "sections": {
-              "what": "This template turns any concept into a save-worthy educational card in two styles (cute pastel cards or chalkboard sketch). It highlights keywords and organizes ideas into small, readable blocks for fast learning.",
+              "what": "This template provides optimized Nano Banana prompts to turn concepts into save-worthy educational cards. It organizes ideas into small, readable blocks for rapid visual learning.",
               "who": "Perfect for teachers, students, science communicators, parents creating learning posts, and anyone who needs “quick clarity” without long text.",
               "how": [
                 "Provide the topic and audience level (kids / beginner / intermediate).",
@@ -422,14 +413,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "国风服饰科普插画｜朝代形制与细节拆解｜Curify Nano",
-            "meta_description": "生成3:4国风服饰科普插画：工笔重彩风，形制结构、针脚纹样、配饰细节、寓意注解与穿戴场景模块化拆解，适合科普传播与文创素材。",
-            "og_image": "/images/seo/template-costume-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：国风服饰科普插画生成器｜Curify AI",
+            "meta_description": "使用专业 Nano Banana 提示词生成精细的国风服饰科普图：包含朝代形制拆解、针脚纹样与穿戴场景。"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张“朝代服饰科普插画”：用工笔重彩质感把形制结构、纹样针脚、配饰细节、寓意注解与穿戴场景拆解成模块，既好看又适合学习收藏。",
+              "what": "此模板通过 Nano Banana 提示词生成具有工笔重彩质感的“朝代服饰科普图”：将形制结构、配饰细节与寓意注解模块化呈现。",
               "who": "适合国风科普/汉服账号、文创设计素材、历史爱好者做笔记、展览导览图，以及需要“准确+高级质感”的文化内容创作者。",
               "how": [
                 "输入朝代/时期+服饰类型（常服/礼服/武服/官服等）+角色身份（士/官/贵族/平民）。",
@@ -447,14 +436,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Chinese Costume Infographic Generator (3:4) | Curify Nano",
-            "meta_description": "Create a premium 3:4 Chinese costume infographic with accurate dynasty-specific structure, craftsmanship details, pattern symbolism, and clean annotated breakdowns—ideal for cultural education and design.",
-            "og_image": "/images/seo/template-costume-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Chinese Costume Infographic Generator",
+            "meta_description": "Unlock heritage storytelling with Nano Banana prompts. Generate detailed Chinese costume infographics with accurate dynasty breakdowns and symbolism."
           },
           "content": {
             "sections": {
-              "what": "This template creates a premium 3:4 Chinese costume infographic with dynasty-accurate structure, craftsmanship details, pattern symbolism, accessories, and annotated breakdown panels.",
+              "what": "This template utilizes Nano Banana prompts to create premium costume infographics featuring dynasty-accurate structures, pattern symbolism, and annotated accessory panels.",
               "who": "Great for cultural educators, costume designers, history creators, museum-style explainers, and anyone making high-quality “save & share” heritage visuals.",
               "how": [
                 "Specify dynasty/period + garment type (daily wear / ceremonial / official) + character identity.",
@@ -477,14 +464,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "小红书书籍解读6张图｜封面到脉络一套生成｜Curify Nano",
-            "meta_description": "为【书名】生成6张3:4竖版书籍解读图文：封面钩子、核心主题、经典语录、核心观点、人物/维度关系、脉络梳理。统一风格，适合收藏转发。",
-            "og_image": "/images/seo/template-book-series-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：书籍解读小红书 6 图生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词一键生成成套的书籍解读图文：包含封面钩子、核心观点与脉络梳理。"
           },
           "content": {
             "sections": {
-              "what": "这个模板一次生成一套“6张书籍解读图”（3:4竖版）：封面钩子→核心主题→金句→关键观点→关系图→脉络总结，风格统一，适合小红书/朋友圈/社群分享与收藏。",
+              "what": "该模板利用 Nano Banana 提示词一次性产出整套“书籍解读系列图”：从视觉封面到深度观点梳理，风格高度统一。",
               "who": "适合读书博主、知识博主、课程讲师做书单内容、学习笔记整理，以及想把一本书讲清楚并提高转发收藏的用户。",
               "how": [
                 "输入书名+作者+你想强调的受众（职场/创业/心理/历史等）。",
@@ -502,14 +487,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "6-Image Book Summary Carousel Generator | Curify Nano",
-            "meta_description": "Generate a consistent 6-image (3:4) book carousel: cover hook, core themes, key quotes, takeaways, relations, and structured outline—optimized for saving and sharing.",
-            "og_image": "/images/seo/template-book-series-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: 6-Image Book Summary Carousel",
+            "meta_description": "Scale your book reviews with Nano Banana prompts. Generate a consistent 6-slide carousel including takeaways and mind maps in one go."
           },
           "content": {
             "sections": {
-              "what": "This template generates a consistent 6-image (3:4) book carousel: cover hook, core themes, key quotes, main takeaways, relationship/map view, and a structured outline—designed for saves and shares.",
+              "what": "This template provides Nano Banana prompts to generate a visual book summary carousel: 6 consistent slides covering hooks, themes, takeaways, and concept maps for social media.",
               "who": "Ideal for book creators, newsletter writers, educators, and anyone turning reading notes into high-performing social content.",
               "how": [
                 "Provide book title + author + target audience angle (career / startup / psychology / history).",
@@ -532,14 +515,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "中国文物复古信息图｜四象限科普海报生成｜Curify Nano",
-            "meta_description": "生成3:4中国风复古文物信息图：中心手绘文物插画+四象限讲清历史地位、考古价值、艺术成就、当代影响，并含延伸知识板块。",
-            "og_image": "/images/seo/template-cultural-relic-retro-infographic-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：中国文物复古信息图生成器｜Curify AI",
+            "meta_description": "利用 Nano Banana 提示词生成复古四象限文物海报：整合历史地位、考古成就与艺术价值。"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张“复古文物四象限信息图”：中心手绘文物插画，四象限分别讲清历史地位、考古价值、艺术成就、当代影响，并补充延伸知识与小注释，适合科普与展览风内容。",
+              "what": "该模板应用 Nano Banana 提示词生成“复古文物信息图”：通过四象限排版深入浅出地讲解文物的多重价值，配有精美的手绘插图。",
               "who": "适合文博科普账号、历史爱好者、博物馆导览内容、文创品牌讲故事，以及想把文物讲得“有体系、可收藏”的创作者。",
               "how": [
                 "输入文物名称+年代/朝代+出土/收藏地（可选）。",
@@ -557,14 +538,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Chinese Cultural Relic Retro Infographic Generator | Curify Nano",
-            "meta_description": "Create a 3:4 Chinese retro infographic poster: central hand-painted relic illustration + four quadrants (historical status, archaeological value, artistic achievement, modern influence) plus “Extra Facts”.",
-            "og_image": "/images/seo/template-cultural-relic-retro-infographic-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Chinese Cultural Relic Infographic",
+            "meta_description": "Create museum-quality relic posters with Nano Banana prompts. Features a 4-quadrant layout covering archaeology, art, and modern influence."
           },
           "content": {
             "sections": {
-              "what": "This template creates a retro relic infographic: a central hand-painted artifact illustration plus four quadrants—historical status, archaeological value, artistic achievement, and modern influence—finished with an “Extra Facts” panel.",
+              "what": "This template uses Nano Banana prompts to build a retro relic infographic poster: featuring central hand-painted illustrations and deep-dive analysis quadrants for historical storytelling.",
               "who": "Great for museum-style explainers, history educators, culture creators, and brands that want heritage storytelling with a collectible poster vibe.",
               "how": [
                 "Provide relic name + dynasty/period + where it was found/held (optional).",
@@ -587,14 +566,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "犬种复古科学信息图｜解剖标注+行为训练+护理｜Curify Nano",
-            "meta_description": "生成9:16犬种复古科普信息图：中心手绘犬种+解剖标注，包含结构适应性、行为可训练性、被毛护理与个性总结等多板块。",
-            "og_image": "/images/seo/template-dog-breed-retro-infographic-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：犬种复古科学信息图生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词生成专业犬种科普：含解剖标注、训练建议与护理百科，复古科学风。"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张9:16复古犬种科普信息图：中心手绘犬种+解剖标注（耳/鼻/腿/被毛等），并分模块讲结构适应性、训练难度、护理要点与性格总结，适合收藏分享。",
+              "what": "模板通过 Nano Banana 提示词打造“犬种复古科普”：中心手绘犬种配以详细的解剖标注，并分板块详解护理与性格特质。",
               "who": "适合养犬科普账号、宠物店/训犬师内容、准备养狗的新手、学校科普，以及想做“像老杂志一样好看”的宠物内容创作者。",
               "how": [
                 "输入犬种名称+体型（小/中/大）+家庭场景（公寓/有院子/亲子）。",
@@ -612,14 +589,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Dog Breed Retro Infographic Generator | Curify Nano",
-            "meta_description": "Generate a 9:16 retro scientific dog-breed infographic: detailed hand-drawn illustration with anatomical annotations plus sections on adaptation, behavior/trainability, coat care, and personality.",
-            "og_image": "/images/seo/template-dog-breed-retro-infographic-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Dog Breed Retro Infographic Generator",
+            "meta_description": "Professional dog breed infographics powered by Nano Banana prompts. Includes anatomical annotations, coat care, and temperament guides."
           },
           "content": {
             "sections": {
-              "what": "This template generates a 9:16 retro scientific dog-breed infographic: a central hand-drawn dog with anatomical callouts plus modules for adaptation, trainability, coat care, and personality—highly collectible and readable.",
+              "what": "This template uses Nano Banana prompts to generate 9:16 scientific dog-breed posters: featuring hand-drawn illustrations and anatomical callouts for coat care and behavior.",
               "who": "Great for pet educators, trainers, shelters, pet brands, and first-time owners turning practical advice into shareable visuals.",
               "how": [
                 "Provide the breed name, size, and living scenario (apartment / house / kids).",
@@ -642,14 +617,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "美食全景科普信息图｜步骤+食材+文化｜Curify Nano",
-            "meta_description": "生成3:4美食科普海报：水彩主视觉、制作步骤、核心食材、起源文化与地方记忆模块，结构清晰可分享，适合品牌内容与社交传播。",
-            "og_image": "/images/seo/template-food-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：美食全景科普信息图生成器｜Curify AI",
+            "meta_description": "使用专业 Nano Banana 提示词将美食化为科普海报：涵盖水彩视觉、烹饪步骤与文化起源。"
           },
           "content": {
             "sections": {
-              "what": "这个模板把一道美食做成“全景科普海报”：水彩主视觉+制作步骤+核心食材+起源文化与地方记忆，并用模块化信息图讲清“怎么做、为什么这么做、从哪里来”。",
+              "what": "该模板基于 Nano Banana 提示词将菜品升级为“美食全景海报”：通过水彩视觉与结构化模块讲清烹饪流程与食物故事。",
               "who": "适合美食博主、餐饮品牌内容、地方文旅宣传、学校科普展示，以及想把食物故事讲得更有层次的创作者。",
               "how": [
                 "输入菜名/食物+地区/流派（可选）+你想突出的一点（香料/工艺/文化故事）。",
@@ -667,14 +640,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Food Science Infographic Poster Generator | Curify Nano",
-            "meta_description": "Create a 4K vertical 3:4 watercolor-style food infographic poster with steps, core ingredients, origin culture, and local memory modules—clean layout and highly shareable.",
-            "og_image": "/images/seo/template-food-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Food Science Infographic Generator",
+            "meta_description": "Transform recipes into cultural posters with Nano Banana prompts. Includes watercolor visuals, core ingredients, and regional history."
           },
           "content": {
             "sections": {
-              "what": "This template creates a full-spectrum food infographic poster: watercolor hero image, step-by-step process, core ingredients, origin culture, and “local memory” context—clear, structured, and shareable.",
+              "what": "This template uses Nano Banana prompts to create watercolor-style food infographics: documenting the “how and why” of recipes alongside origin and cultural context.",
               "who": "Great for food creators, restaurant brands, tourism storytelling, educators, and anyone turning recipes into culture-forward content.",
               "how": [
                 "Provide the dish name, region/cuisine (optional), and one angle to emphasize (technique, spice, history).",
@@ -697,14 +668,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "二十四节气A3知识海报｜三候物候+习俗农事｜Curify Nano",
-            "meta_description": "生成A3竖版高密度节气知识图解：中央复古插画，周围模块含交节时间/太阳黄经、三候物候、文化内涵、习俗场景与农事/养生标签。",
-            "og_image": "/images/seo/template-solar-term-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：二十四节气知识海报生成器｜Curify AI",
+            "meta_description": "利用 Nano Banana 提示词生成高密度节气知识图解：包含物候习俗、养生农事与复古插画。"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成一张A3高密度“节气知识海报”：中央复古插画，周围模块讲交节时间/太阳黄经、三候物候、文化内涵、习俗场景与农事/养生标签，一张图把节气讲透。",
+              "what": "该模板利用 Nano Banana 提示词生成一张“全景节气海报”：通过中央插画与周围模块深度解析节气的时间、物候与文化习俗。",
               "who": "适合国学/传统文化科普、学校课堂展板、亲子教育内容、文创/茶饮品牌做节气营销，以及想做“可打印可收藏”的节气海报的人。",
               "how": [
                 "输入节气名称（如立春/霜降）+你想强调的地域（北方/江南等，可选）。",
@@ -722,14 +691,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Chinese Solar Term A3 Infographic Generator | Curify Nano",
-            "meta_description": "Generate an A3 vertical, high-density solar-term infographic: central retro illustration with modules for timing/solar longitude, phenology (three phases), customs, culture, and seasonal farming/health tips.",
-            "og_image": "/images/seo/template-solar-term-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Chinese Solar Term Poster Generator",
+            "meta_description": "Educational solar term infographics powered by Nano Banana prompts. Features phenology, customs, and seasonal health tips."
           },
           "content": {
             "sections": {
-              "what": "This template generates an A3 vertical, high-density Chinese solar-term poster: a central retro illustration surrounded by modules for timing/solar longitude, the “three phases” of phenology, customs, cultural meaning, and seasonal farming/health tips.",
+              "what": "This template uses Nano Banana prompts to generate high-density solar-term posters: presenting phenology, farming notes, and cultural meaning in a printable A3 format.",
               "who": "Ideal for cultural educators, classroom posters, family learning content, brands doing seasonal storytelling, and creators making printable heritage visuals.",
               "how": [
                 "Provide the solar term name (e.g., Start of Spring, Frost’s Descent) and a region context if desired.",
@@ -752,14 +719,12 @@
       "locales": {
         "en": {
           "seo": {
-            "meta_title": "8K Fruit Infographic Poster Generator (3:4) | Curify Nano",
-            "meta_description": "Generate an ultra-HD 8K fruit infographic poster: labeled structure, nutrition, origin regions, growth process, health benefits, and history—clean commercial design with English-only typography.",
-            "og_image": "/images/seo/template-fruit-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Fruit Science Infographic Poster",
+            "meta_description": "Generate ultra-HD 8K fruit posters with Nano Banana prompts. Includes labeled anatomy, nutrition, and growth timelines."
           },
           "content": {
             "sections": {
-              "what": "This template generates an ultra-HD fruit infographic poster: labeled fruit anatomy/structure, nutrition highlights, origin regions, growth process, health benefits, and a short history panel—clean commercial design with English-only typography.",
+              "what": "This template generates commercial-grade fruit infographics using Nano Banana prompts: featuring anatomical cutaways, nutrition facts, and botanical growth cycles.",
               "who": "Great for food brands, nutrition educators, grocery content, school posters, and creators making “save-worthy” fruit facts with premium visuals.",
               "how": [
                 "Provide the fruit name and the angle (nutrition / origin / botanical structure / fun history).",
@@ -782,14 +747,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "古今对比人物档案卡｜左右分栏收藏卡｜Curify Nano",
-            "meta_description": "生成3:4人物档案卡：左右分栏古今对比，中间分割线，高级低饱和排版；底部含职业/关键词/特质/能力/物品对照与反差亮点。",
-            "og_image": "/images/seo/template-character-comparison-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：古今对比人物档案卡生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词生成极具反差感的人物对照卡：分栏展示特质、能力与现代转型亮点。"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成“古今对比人物档案卡”：左右分栏角色A/B，中间分割线，底部用结构化模块对照职业、关键词、特质、能力、物品，并给出最强反差亮点，适合做反转与对比内容。",
+              "what": "模板运用 Nano Banana 提示词打造“古今对照档案卡”：通过左右分栏结构对比角色的职业与能力，并总结其核心反差亮点。",
               "who": "适合短视频/图文做“古今反差”、历史人物现代化二创、IP角色对照、品牌人设对比，以及想做高互动讨论的创作者。",
               "how": [
                 "输入角色A（古代/传统）与角色B（现代/当代）的身份设定与一句话标签。",
@@ -807,14 +770,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Ancient vs Modern Character Profile Card Generator | Curify Nano",
-            "meta_description": "Generate a 3:4 HD character profile card with an ancient vs modern split layout, clean divider, premium typography, and structured comparison modules (traits, abilities, items, and contrast highlight).",
-            "og_image": "/images/seo/template-character-comparison-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Ancient vs Modern Character Profile",
+            "meta_description": "Generate viral contrast content with Nano Banana prompts. Features a split layout for trait-by-trait character comparisons."
           },
           "content": {
             "sections": {
-              "what": "This template creates an “Ancient vs Modern” split profile card: two-column layout with a clean divider, premium typography, and structured comparison blocks (role, keywords, traits, abilities, items) plus a punchy contrast highlight.",
+              "what": "This template uses Nano Banana prompts to create an “Ancient vs Modern” split profile: featuring dual columns and structured comparison blocks for abilities and signature items.",
               "who": "Perfect for contrast storytelling, history-to-modern remixes, character/IP comparisons, brand archetype content, and creators optimizing for comments and shares.",
               "how": [
                 "Define Character A (ancient/traditional) and Character B (modern) with one-line tags.",
@@ -837,14 +798,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "古风对决角色档案图卡｜左右分屏张力拉满｜Curify Nano",
-            "meta_description": "生成国风工笔对决档案卡：左右分屏角色A/B，顶部头像标签，左右档案信息，底部标志性物品，水墨战场背景与分割元素强化对决感。",
-            "og_image": "/images/seo/template-battle-card-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：古风对决角色档案生成器｜Curify AI",
+            "meta_description": "使用专业 Nano Banana 提示词生成高张力的对决图：包含水墨分割视觉与详细的战斗力对照。"
           },
           "content": {
             "sections": {
-              "what": "这个模板生成“国风对决档案卡”：左右分屏角色A/B，水墨战场背景+分割元素增强张力，顶部头像标签、左右档案信息、底部标志性物品展示，适合做“谁更强/谁会赢”的对决内容。",
+              "what": "该模板基于 Nano Banana 提示词生成“国风对决卡”：利用水墨战场背景强化角色之间的冲突感，并配有详细的称号与弱点标注。",
               "who": "适合国风二创、角色对战话题、小红书/短视频做互动投票、游戏/漫画角色宣传，以及想做强视觉冲击与评论区讨论的创作者。",
               "how": [
                 "输入角色A与角色B：各自称号/门派/武器/绝技/弱点（至少各3条信息）。",
@@ -867,14 +826,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "MBTI动物拟人群像插画｜16人格同框互动｜Curify Nano",
-            "meta_description": "生成治愈系群像插画：16种MBTI人格拟人动物在指定场景互动，细节丰富、光影柔和，并清晰标注MBTI代码，适合社交分享与收藏。",
-            "og_image": "/images/seo/template-mbti-animal-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：MBTI 16 人格动物拟人插画生成器｜Curify AI",
+            "meta_description": "通过 Nano Banana 提示词一键生成治愈系 MBTI 群像：16 种动物角色在同一场景的互动呈现。"
           },
           "content": {
             "sections": {
-              "what": "这个模板会把 16 种 MBTI 人格拟人化成动物角色，并放进同一个场景里产生互动；每个角色旁边会清晰标注四字母 MBTI 代码，画面细节丰富、氛围温暖，适合做“人格群像图”。",
+              "what": "这个模板结合 Nano Banana 提示词将 16 种人格拟人为动物角色并置于统一场景中，精准捕捉各人格的典型行为特点。",
               "who": "适合 MBTI 内容创作者、心理/自我成长账号、社群运营、同学朋友的团体合照梗图、以及想做“16人格在同一空间会发生什么”的趣味内容。",
               "how": [
                 "选一个场景：咖啡馆、办公室、露营、图书馆、海边等。",
@@ -892,14 +849,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "MBTI Animal Ensemble Illustration Generator | Curify Nano",
-            "meta_description": "Create a warm, detailed ensemble illustration of all 16 MBTI types as anthropomorphic animals interacting in a chosen scene, with clear 4-letter MBTI labels for every character.",
-            "og_image": "/images/seo/template-mbti-animal-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: MBTI Animal Ensemble Illustration",
+            "meta_description": "Create warm ensemble posters with Nano Banana prompts. Features all 16 MBTI personalities as animals interacting in custom scenes."
           },
           "content": {
             "sections": {
-              "what": "This template turns all 16 MBTI types into anthropomorphic animal characters placed in one cohesive scene, each clearly labeled with its 4-letter code. The result is a warm, detailed “ensemble poster” for sharing and collecting.",
+              "what": "This template uses specialized Nano Banana prompts to place all 16 MBTI animal types in a cohesive, warm scene—perfect for personality-driven social content.",
               "who": "Great for MBTI content creators, community managers, psychology/self-growth pages, friend-group memes, and anyone building a “16 personalities in one place” themed visual.",
               "how": [
                 "Pick a setting: cafe, office, campsite, library, beach, etc.",
@@ -922,14 +877,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "What If 历史逆转计划｜复古历史假设信息图｜Curify Nano",
-            "meta_description": "生成4K竖版3:4复古历史假设海报《What if · 历史逆转计划》：水彩+墨线手绘，结构化板块（人物档案/转折点/对决/三种假设场景）。",
-            "og_image": "/images/seo/template-what-if-history-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：What If 历史逆转海报生成器｜Curify AI",
+            "meta_description": "使用 Nano Banana 提示词创作反事实历史信息图：包含人物转折、矛盾对决与世界线推演。"
           },
           "content": {
             "sections": {
-              "what": "这个模板用于把一个反事实历史（What If）变成“复古手绘信息图海报”。画面会包含人物档案、关键转折点、核心对决/矛盾，以及 3 种假设场景草图，结构化呈现你的推演逻辑。",
+              "what": "该模板应用 Nano Banana 提示词将脑洞假设具象化为“复古推演海报”：通过结构化板块展示三种不同的历史分叉场景。",
               "who": "适合历史科普/故事号、写作/编剧灵感、短视频脚本策划、教育内容、以及喜欢做“历史如果改一刀会怎样”的脑洞内容。",
               "how": [
                 "确定一个改动点：人物没死/战争提前结束/联盟关系改变等。",
@@ -947,14 +900,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "What-If History Infographic Generator | Curify Nano",
-            "meta_description": "Create a 4K vertical retro “What if · Historical Reversal Plan” infographic with watercolor + ink style and structured sections: profile, turning point, core duel, and 3 scenario sketches.",
-            "og_image": "/images/seo/template-what-if-history-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: What-If Alternate History Poster",
+            "meta_description": "Simulate history with Nano Banana prompts. Generate posters featuring turning points, ripple effects, and diverging timelines."
           },
           "content": {
             "sections": {
-              "what": "This template turns a counterfactual “What-if” idea into a structured retro infographic poster with a profile, turning point, core conflict, and three distinct scenario sketches—designed to make your reasoning visual and shareable.",
+              "what": "This template provides Nano Banana prompts to visualize counterfactual history: featuring profiles, turning points, and scenario sketches for alternate world-building.",
               "who": "Perfect for history creators, writers/screenwriters, educators, and anyone producing alternate-history story prompts or thought experiments.",
               "how": [
                 "Choose a single divergence point (a survival, an alliance shift, a different outcome).",
@@ -977,14 +928,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "场景单词学习图｜英文+IPA+中文标注全物体｜Curify Nano",
-            "meta_description": "生成细节丰富场景插画，并为每个物体标注英文单词+IPA+中文翻译，排版清晰不遮挡主体，适合英语启蒙与词汇学习分享。",
-            "og_image": "/images/seo/template-word-scene-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：场景单词学习图生成器｜Curify AI",
+            "meta_description": "通过 Nano Banana 提示词生成精细的学习插画：一键标注英文、音标与中文翻译，适合英语启蒙。"
           },
           "content": {
             "sections": {
-              "what": "这个模板会生成一张细节丰富的场景插画，并为场景中的主要物体逐一标注：英文单词 + IPA 音标 + 中文翻译（推荐三行格式），让孩子/学习者用“看图记词”快速建立词汇联想。",
+              "what": "该模板配合 Nano Banana 提示词产出“沉浸式词汇地图”：为场景中的每个物体配上对应的英文、IPA 及其翻译，提升记忆效率。",
               "who": "适合英语启蒙家长、幼儿/小学英语老师、词汇学习博主、做学习资料的机构，以及想做“可打印词汇海报”的用户。",
               "how": [
                 "选择一个场景：厨房、超市、卧室、动物园、操场等。",
@@ -1002,14 +951,12 @@
         },
         "en": {
           "seo": {
-            "meta_title": "Vocabulary Scene Map Generator (Word + IPA + Chinese) | Curify Nano",
-            "meta_description": "Create a richly detailed scene illustration and label every object with English word + IPA + Chinese translation in a clean 3-line format—perfect for visual vocabulary learning.",
-            "og_image": "/images/seo/template-word-scene-en.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana Prompts: Visual Vocabulary Scene Map",
+            "meta_description": "Build visual learning materials with Nano Banana prompts. Automatically label objects with word, IPA, and translation."
           },
           "content": {
             "sections": {
-              "what": "This template generates a detailed scene illustration and labels key objects with a clean 3-line format: English word / IPA / Chinese translation—ideal for visual vocabulary building and printable study posters.",
+              "what": "This template offers Nano Banana prompts to build “Word Scene Maps”: labeling objects in detailed environments with a 3-line educational format for better retention.",
               "who": "Great for ESL teachers, parents teaching kids English, language-learning creators, and anyone making printable vocabulary materials.",
               "how": [
                 "Pick a scene: kitchen, supermarket, bedroom, zoo, playground, etc.",
@@ -1032,14 +979,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "学科知识信息图生成｜卡通/黑板报两种风格｜Curify Nano",
-            "meta_description": "把【知识点】做成可收藏的信息图：可爱卡通卡片风或粉笔黑板报草图风，结构清晰、关键词突出，适合科普分享与学习笔记。",
-            "og_image": "/images/seo/template-education-zh-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：学科知识信息图海报生成器｜Curify AI",
+            "meta_description": "使用专业 Nano Banana 提示词将枯燥的概念化为黑板报或卡通信息图：结构严谨且易于理解。"
           },
           "content": {
             "sections": {
-              "what": "这个模板会把一个知识点转成结构清晰的“信息图海报”，你可以选两种风格：可爱卡通卡片风（马卡龙配色、圆角模块）或粉笔黑板报草图风（白色粉笔线稿、重点高亮）。",
+              "what": "该模板利用 Nano Banana 提示词生成“学科信息海报”：提供卡通或黑板报两种视觉框架，旨在提升课堂讲解或自学的趣味性。",
               "who": "适合老师做课堂讲解、学生做学习笔记/作业展示、科普账号做知识图、以及想把复杂概念“讲清楚”的内容创作者。",
               "how": [
                 "输入知识点主题（例如：DNA双螺旋/板块构造/电磁感应）。",
@@ -1062,14 +1007,12 @@
       "locales": {
         "zh": {
           "seo": {
-            "meta_title": "年夜饭视觉菜谱海报｜步骤+食材+寓意｜Curify Nano",
-            "meta_description": "生成【菜品】年夜饭视觉烹饪指南：成品定妆照、食材用量、步骤插图、饮品搭配与吉祥寓意，春节氛围高质排版，适合分享收藏。",
-            "og_image": "/images/seo/template-recipe-zh-zh.jpg",
-            "robots": "index,follow"
+            "meta_title": "Nano Banana 提示词：视觉菜谱海报生成器｜Curify AI",
+            "meta_description": "通过 Nano Banana 提示词生成精美的烹饪指南：涵盖食材用量、分步图解与吉祥寓意，充满节日氛围。"
           },
           "content": {
             "sections": {
-              "what": "这个模板把一道菜做成“可收藏的视觉菜谱海报”：成品主视觉 + 食材用量 + 分步图解 + 口味/饮品搭配，并可加上春节/团圆主题的寓意文案，排版适合分享与打印。",
+              "what": "此模板采用 Nano Banana 提示词将菜谱转化为“视觉海报”：通过分步图解与成品定妆照展示，不仅讲清做菜流程，更注重社交传播的美感。",
               "who": "适合春节年夜饭分享、家庭菜谱整理、美食账号内容生产、餐饮品牌做菜单海报，以及想把“做菜步骤讲清楚”的用户。",
               "how": [
                 "输入菜名与口味偏好（清淡/麻辣/甜口）。",
