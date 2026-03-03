@@ -68,7 +68,7 @@ function NanoBadge({ label }: { label: string }) {
 export default function ContentCreationToolsSidebar({
   activeLang,
 }: {
-  activeLang: "en" | "zh";
+  activeLang: string;
 }) {
   const router = useRouter();
   const t = useTranslations("contentCreationSidebar");
