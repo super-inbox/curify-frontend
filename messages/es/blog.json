@@ -95,7 +95,143 @@
       "row3a": "Flujo de trabajo manual / impulsado por plugins",
       "row3b": "Difusión + LLM + orquestación multimodal"
     },
-    "outro": "En nuestro flujo de trabajo, ComfyUI maneja la generación e iteración de IA, mientras que AE refina el aspecto final: transiciones, superposiciones y composición."
+    "outro": "En nuestro flujo de trabajo, ComfyUI maneja la generación e iteración de IA, mientras que AE refina el aspecto final: transiciones, superposiciones y composición.",
+    "images": {
+      "guideCoverAlt": "Portada de la guía completa de ComfyUI",
+      "workflowFullAlt": "Flujo de trabajo completo de ComfyUI: de entrada a salida",
+      "caseFeltAlt": "Caso práctico de ComfyUI: mundo en miniatura de fieltro (flujo de trabajo de nodos)"
+    },
+    "sections": {
+      "s1": {
+        "title": "I. ¿Qué es ComfyUI?",
+        "p1": "ComfyUI es un editor de flujo de trabajo basado en nodos diseñado para contenido generado por IA, y es una poderosa herramienta de frontend para modelos de difusión como Stable Diffusion. A través de un gráfico de nodos visual, te permite combinar modelos libremente, controlar la lógica de generación y lograr un control completo del proceso, desde la generación de imágenes simples hasta creaciones multimodales complejas.",
+        "p2": "En el ecosistema de curify-ai.com, ComfyUI es nuestro motor central para la producción eficiente de contenido de IA."
+      },
+      "s2": {
+        "title": "II. Tutorial básico de ComfyUI: de 0 a 1",
+        "sub1": {
+          "title": "1) Configuración del entorno y primer inicio",
+          "b1Strong": "Despliegue local vs ejecución en la nube:",
+          "b1": "El despliegue local es adecuado para personalización profunda y necesidades de privacidad, mientras que la ejecución en la nube es más conveniente, sin necesidad de configurar un entorno complejo.",
+          "b2Strong": "Gestión de modelos:",
+          "b2": "Los componentes esenciales son el modelo central (Checkpoint), ajuste de estilo (LoRA) y control preciso (ControlNet), que se pueden obtener con un solo clic en la biblioteca de plantillas de curify-ai.com.",
+          "b3Strong": "Preguntas frecuentes:",
+          "b3": "CUDA no habilitado, falta de memoria de video y dependencias faltantes son problemas comunes al iniciar, consulta nuestra guía de solución de problemas para resolverlos rápidamente."
+        },
+        "sub2": {
+          "title": "2) Desglose de conceptos clave",
+          "b1Strong": "Gráfico de nodos (Node Graph):",
+          "b1": "Cada nodo representa un módulo funcional (como cargar un modelo, generar imágenes, aplicar estilos), definiendo el flujo de datos a través de conexiones, de manera intuitiva y controlable.",
+          "b2Strong": "Flujo de trabajo (Workflow):",
+          "b2": "Proceso de generación completo que se puede guardar, importar y exportar, curify-ai.com ofrece una gran cantidad de plantillas preestablecidas que cubren los escenarios de creación más populares.",
+          "b3Strong": "Muestreador y programador:",
+          "b3": "Elegir el muestreador adecuado (como Euler, DPM++) afecta directamente la calidad y velocidad de generación, nuestras plantillas ya han optimizado la mejor combinación para ti."
+        },
+        "sub3": {
+          "title": "3) Casos prácticos rápidos",
+          "b1Strong": "Texto a imagen:",
+          "b1": "Ingresa palabras clave de estilo de curify-ai y genera imágenes creativas de alta calidad con un solo clic.",
+          "b2Strong": "Imagen a imagen:",
+          "b2": "Sube una imagen de referencia, bloquea la composición a través del nodo ControlNet y luego redibuja con el nodo LoRA al estilo objetivo.",
+          "b3Strong": "Generación de video:",
+          "b3": "Combina nodos como AnimateDiff para convertir imágenes estáticas en contenido dinámico fluido."
+        }
+      },
+      "s3": {
+        "title": "III. Configuración de nodos y técnicas avanzadas: hacer la generación más precisa",
+        "sub1": {
+          "title": "1) Combinaciones de nodos comunes",
+          "b1Strong": "Nodo ControlNet:",
+          "b1": "Control preciso de la postura, bordes y profundidad de las personas, clave para lograr composiciones complejas.",
+          "b2Strong": "Nodo de mezcla LoRA:",
+          "b2": "Superponer múltiples LoRA de estilo para lograr fusión de estilos múltiples y ajuste de detalles.",
+          "b3Strong": "Nodo de control condicional:",
+          "b3": "A través de la distribución de pesos de palabras clave positivas y negativas, refuerza o debilita los detalles de generación, haciendo que la obra se ajuste más a tu creatividad."
+        },
+        "sub2": {
+          "title": "2) Optimización del rendimiento",
+          "b1Strong": "Optimización de memoria de video:",
+          "b1": "Habilita la decodificación en bloques y la cuantización de modelos para generar imágenes de mayor resolución con memoria de video limitada.",
+          "b2Strong": "Generación por lotes:",
+          "b2": "Utiliza la función de gestión de colas para generar en lotes materiales que cumplan con las especificaciones de curify-ai, mejorando la eficiencia de creación.",
+          "b3Strong": "Simplificación del flujo de trabajo:",
+          "b3": "Envuelve combinaciones de nodos comunes en subgráficos, reutilizables con un solo clic, evitando configuraciones repetidas."
+        },
+        "sub3": {
+          "title": "3) Solución de problemas y depuración",
+          "b1Strong": "Error de conexión de nodos:",
+          "b1": "Verifica si los tipos de datos coinciden (por ejemplo, si la salida de imagen está conectada a la entrada de imagen).",
+          "b2Strong": "Baja calidad de generación:",
+          "b2": "Verifica si las palabras clave son precisas, si el paso de muestreo es suficiente y si el modelo es adecuado para la tarea actual."
+        }
+      },
+      "s4": {
+        "title": "IV. curify-ai.com × ComfyUI: escenarios de aplicación exclusivos",
+        "sub1": {
+          "title": "1) Plantillas de flujo de trabajo de pintura AI",
+          "p1": "curify-ai.com ofrece una gran cantidad de plantillas de flujo de trabajo de ComfyUI que se pueden importar directamente, cubriendo estilos populares como anime, estilo nacional y realista, y proporcionando tamaños y formatos de materiales comerciales que cumplen con las especificaciones de la plataforma."
+        },
+        "sub2": {
+          "title": "2) Herramienta de creación eficiente",
+          "b1": "Combina las plantillas de palabras clave de curify-ai para lograr la producción en masa de contenido estilizado, aumentando significativamente la eficiencia de creación.",
+          "b2": "Ofrecemos soluciones de configuración de nodos específicas para generar imágenes de alta calidad que cumplan con las especificaciones de la plataforma con un solo clic."
+        },
+        "sub3": {
+          "title": "3) Flujo de trabajo colaborativo AE + ComfyUI",
+          "b1Strong": "Generación de IA:",
+          "b1": "Usa ComfyUI para generar materiales de IA, completando la estilización y la iteración de contenido.",
+          "b2Strong": "Composición posterior:",
+          "b2": "Importa los materiales generados en After Effects, utilizando su control preciso a nivel de línea de tiempo para completar transiciones, superposiciones y composiciones de efectos especiales.",
+          "b3Strong": "Producto final:",
+          "b3": "Genera videos o imágenes dinámicas de alta calidad que satisfacen las necesidades comerciales y creativas."
+        }
+      },
+      "s5": {
+        "title": "Cinco, ComfyUI vs After Effects: complementarios y no sustitutos",
+        "conclusionTitle": "Conclusión clave",
+        "conclusion": "En el flujo de trabajo de curify-ai, ComfyUI se encarga de la generación e iteración de IA, mientras que AE se utiliza para el acabado final, transiciones, superposiciones y composiciones; ambos son complementarios y no sustitutos.",
+        "table": {
+          "dimension": "Dimensión",
+          "ae": "After Effects (AE)",
+          "comfy": "ComfyUI",
+          "row1": {
+            "dim": "Posicionamiento clave",
+            "ae": "Software profesional de postproducción y efectos visuales",
+            "comfy": "Motor de inferencia generativa nativo de IA y editor de flujo de trabajo"
+          },
+          "row2": {
+            "dim": "Método de control",
+            "ae": "Control manual preciso basado en líneas de tiempo y capas",
+            "comfy": "Generación semi-aleatoria basada en gráficos de nodos, dependiente de modelos y parámetros"
+          },
+          "row3": {
+            "dim": "Capacidad de salida",
+            "ae": "Animaciones de alta calidad, VFX, cómics dinámicos",
+            "comfy": "Generación de imágenes / videos por IA, soporta orquestación multimodal"
+          },
+          "row4": {
+            "dim": "Flujo de trabajo",
+            "ae": "Proceso lineal manual o impulsado por plugins",
+            "comfy": "Flujo de trabajo basado en nodos con modelo de difusión + LLM + multimodal"
+          },
+          "row5": {
+            "dim": "Mejores escenarios",
+            "ae": "Composición final, transiciones, superposiciones, efectos especiales detallados",
+            "comfy": "Generación de contenido por IA, iteración, creación estilizada"
+          }
+        }
+      },
+      "s6": {
+        "title": "Seis, Próximos pasos",
+        "b1": "Visita curify-ai.com y descarga nuestra plantilla de flujo de trabajo ComfyUI personalizada para ti.",
+        "b2": "Completa la primera generación siguiendo el tutorial y experimenta la creación eficiente con IA.",
+        "b3": "Únete a nuestra comunidad y comparte consejos sobre configuración de nodos y optimización de flujos de trabajo con otros creadores."
+      }
+    },
+    "cta": {
+      "primary": "Ve a curify-ai.com para ver las plantillas",
+      "secondary": "Volver a la lista de blogs"
+    }
   },
   "video_translation_eval": {
     "title": "Evaluando la Calidad de la Traducción de Video con IA",

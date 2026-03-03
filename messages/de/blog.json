@@ -95,7 +95,143 @@
       "row3a": "Manueller oder pluginbasierter Workflow",
       "row3b": "Diffusion + LLM + multimodale Orchestrierung"
     },
-    "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing."
+    "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing.",
+    "images": {
+      "guideCoverAlt": "ComfyUI Vollständiger Leitfaden Coverbild",
+      "workflowFullAlt": "ComfyUI Vollständiger Workflow: Von Eingabe zu Ausgabe",
+      "caseFeltAlt": "ComfyUI Anwendungsfall: Filzminiaturwelt (Node-Workflow)"
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Was ist ComfyUI?",
+        "p1": "ComfyUI ist ein node-basierter Workflow-Editor, der speziell für KI-generierte Inhalte entwickelt wurde und ein leistungsstarkes Frontend-Tool für Diffusionsmodelle wie Stable Diffusion ist. Es ermöglicht dir, Modelle visuell zu kombinieren, die Generierungslogik zu steuern und den gesamten Prozess von einfachen Text-zu-Bild-Generierungen bis hin zu komplexen multimodalen Kreationen zu beherrschen.",
+        "p2": "Im Ökosystem von curify-ai.com ist ComfyUI unsere zentrale Engine für die effiziente Produktion von KI-Inhalten."
+      },
+      "s2": {
+        "title": "2. ComfyUI Grundtutorial: Von 0 auf 1",
+        "sub1": {
+          "title": "1) Umgebung einrichten und zum ersten Mal starten",
+          "b1Strong": "Lokale Bereitstellung vs. Cloud-Betrieb:",
+          "b1": "Die lokale Bereitstellung eignet sich für tiefgehende Anpassungen und Datenschutzbedürfnisse, während der Cloud-Betrieb bequemer ist und keine komplexe Umgebungskonfiguration erfordert.",
+          "b2Strong": "Modellverwaltung:",
+          "b2": "Kernmodelle (Checkpoint), Stilfeinabstimmung (LoRA) und präzise Steuerung (ControlNet) sind die drei wesentlichen Komponenten, die im Template-Bereich von curify-ai.com mit einem Klick erhältlich sind.",
+          "b3Strong": "Häufige Probleme:",
+          "b3": "CUDA nicht aktiviert, unzureichender VRAM und fehlende Abhängigkeiten sind häufige Probleme beim Start. Du kannst unser Fehlersuchhandbuch zur schnellen Lösung konsultieren."
+        },
+        "sub2": {
+          "title": "2) Kernkonzepte aufschlüsseln",
+          "b1Strong": "Node Graph:",
+          "b1": "Jeder Knoten repräsentiert ein Funktionsmodul (z. B. Modell laden, Bild generieren, Stil anwenden), und die Datenflüsse werden durch Verbindungen definiert, was intuitiv und kontrollierbar ist.",
+          "b2Strong": "Workflow:",
+          "b2": "Ein vollständiger Generierungsprozess, der gespeichert, importiert und exportiert werden kann. curify-ai.com bietet zahlreiche vordefinierte Vorlagen, die gängige Kreativszenerien abdecken.",
+          "b3Strong": "Sampler und Scheduler:",
+          "b3": "Die Wahl des geeigneten Samplers (z. B. Euler, DPM++) beeinflusst direkt die Generierungsqualität und -geschwindigkeit. Unsere Vorlagen sind bereits für dich optimiert."
+        },
+        "sub3": {
+          "title": "3) Schnelleinstieg Beispiele",
+          "b1Strong": "Text-zu-Bild:",
+          "b1": "Gib curify-ai Stil-Prompt-Wörter ein und generiere mit einem Klick hochwertige kreative Bilder.",
+          "b2Strong": "Bild-zu-Bild:",
+          "b2": "Lade ein Referenzbild hoch, sperre die Komposition über den ControlNet-Knoten und zeichne es dann mit dem LoRA-Knoten im Zielstil neu.",
+          "b3Strong": "Videoerstellung:",
+          "b3": "Kombiniere Nodes wie AnimateDiff, um statische Bilder in flüssige dynamische Inhalte umzuwandeln."
+        }
+      },
+      "s3": {
+        "title": "3. Knoten konfigurieren und fortgeschrittene Techniken: Für präzisere Generierungen",
+        "sub1": {
+          "title": "1) Häufig verwendete Knoten-Kombinationen",
+          "b1Strong": "ControlNet-Knoten:",
+          "b1": "Präzise Kontrolle über Posen, Kanten und Tiefen ist der Schlüssel zur Umsetzung komplexer Kompositionen.",
+          "b2Strong": "LoRA Mischknoten:",
+          "b2": "Überlagere mehrere Stil-LoRA, um eine Stilfusion und Detailanpassung zu erreichen.",
+          "b3Strong": "Bedingte Steuerknoten:",
+          "b3": "Durch die Gewichtung positiver und negativer Prompt-Wörter kannst du die Generierungsdetails verstärken oder abschwächen, um deine Kreativität besser zu reflektieren."
+        },
+        "sub2": {
+          "title": "2) Leistungsoptimierung",
+          "b1Strong": "VRAM-Optimierung:",
+          "b1": "Aktiviere Block-Dekodierung und Modellquantisierung, um bei begrenztem VRAM Bilder mit höherer Auflösung zu generieren.",
+          "b2Strong": "Batch-Generierung:",
+          "b2": "Nutze die Warteschlangenverwaltungsfunktion, um Materialien, die den curify-ai Standards entsprechen, in großen Mengen zu generieren und die Kreativitätseffizienz zu steigern.",
+          "b3Strong": "Workflow-Vereinfachung:",
+          "b3": "Verpacke häufig verwendete Knoten-Kombinationen in Untergrafiken, um sie mit einem Klick wiederzuverwenden und wiederholte Konfigurationen zu vermeiden."
+        },
+        "sub3": {
+          "title": "3) Fehlersuche und Debugging",
+          "b1Strong": "Fehlerhafte Knotenverbindungen:",
+          "b1": "Überprüfe, ob die Datentypen übereinstimmen (z. B. ob die Bildausgabe mit der Bildeingabe verbunden ist).",
+          "b2Strong": "Schlechte Generierungsqualität:",
+          "b2": "Überprüfe, ob die Prompt-Wörter präzise sind, ob die Sampling-Schritte ausreichend sind und ob das Modell für die aktuelle Aufgabe geeignet ist."
+        }
+      },
+      "s4": {
+        "title": "4. curify-ai.com × ComfyUI: Exklusive Anwendungsszenarien",
+        "sub1": {
+          "title": "1) AI Malworkflow-Vorlagen",
+          "p1": "curify-ai.com bietet zahlreiche direkt importierbare ComfyUI Workflow-Vorlagen, die gängige Stile wie Anime, nationale Stile und realistische Stile abdecken und Materialien in den Plattformstandards für kommerzielle Nutzung bereitstellen."
+        },
+        "sub2": {
+          "title": "2) Effizientes Kreativwerkzeug",
+          "b1": "Kombiniere die Prompt-Vorlagen von curify-ai, um stilisierte Inhalte in großen Mengen zu produzieren und die Kreativitätseffizienz erheblich zu steigern.",
+          "b2": "Wir bieten spezielle Knoten-Konfigurationslösungen an, um mit einem Klick hochwertige Bilder zu generieren, die den Plattformstandards entsprechen."
+        },
+        "sub3": {
+          "title": "3) AE + ComfyUI Kooperationsworkflow",
+          "b1Strong": "KI-Generierung:",
+          "b1": "Erzeuge KI-Materialien mit ComfyUI und vollziehe Stil- und Inhaltsiterationen.",
+          "b2Strong": "Postproduktion:",
+          "b2": "Importiere die generierten Materialien in After Effects und nutze die präzise Steuerung auf Zeitebene, um Übergänge, Überlagerungen und Effekte zu erstellen.",
+          "b3Strong": "Endgültiges Werk:",
+          "b3": "Hochwertige Videos oder animierte Bilder ausgeben, um geschäftliche und kreative Anforderungen zu erfüllen."
+        }
+      },
+      "s5": {
+        "title": "Fünf, ComfyUI vs After Effects: Ergänzend und nicht ersetzend",
+        "conclusionTitle": "Kernschlussfolgerung",
+        "conclusion": "Im Workflow von curify-ai ist ComfyUI für die KI-generierte Erstellung und Iteration verantwortlich, während AE für die endgültige Bearbeitung, Übergänge, Überlagerungen und Komposition verwendet wird. Beide sind ergänzend und nicht ersetzend.",
+        "table": {
+          "dimension": "Dimension",
+          "ae": "After Effects (AE)",
+          "comfy": "ComfyUI",
+          "row1": {
+            "dim": "Kernpositionierung",
+            "ae": "Professionelle Film-Postproduktion und Effekte-Software",
+            "comfy": "KI-native generative Inferenzmaschine und Workflow-Editor"
+          },
+          "row2": {
+            "dim": "Steuerungsmethode",
+            "ae": "Präzise manuelle Steuerung basierend auf Zeitachse und Ebenen",
+            "comfy": "Halb-zufällige Generierung basierend auf einem Knotendiagramm, abhängig von Modellen und Parametern"
+          },
+          "row3": {
+            "dim": "Ausgabefähigkeit",
+            "ae": "Hochwertige Animationen, VFX, dynamische Comics",
+            "comfy": "KI-Bild-/Videoerstellung, unterstützt multimodale Orchestrierung"
+          },
+          "row4": {
+            "dim": "Workflow",
+            "ae": "Manueller oder plugin-gesteuerter linearer Prozess",
+            "comfy": "Diffusionsmodell + LLM + multimodaler, knotenbasierter Workflow"
+          },
+          "row5": {
+            "dim": "Beste Szenarien",
+            "ae": "Endgültige Komposition, Übergänge, Überlagerungen, feine Effekte",
+            "comfy": "KI-Inhaltserstellung, Iteration, stilisierte Kreation"
+          }
+        }
+      },
+      "s6": {
+        "title": "Sechs, Nächste Schritte",
+        "b1": "Besuche curify-ai.com und lade unsere maßgeschneiderte ComfyUI-Workflow-Vorlage herunter.",
+        "b2": "Folge dem Tutorial, um die erste Erstellung abzuschließen und erlebe effiziente KI-Kreation.",
+        "b3": "Tritt unserer Community bei und tausche dich mit anderen Kreativen über Knotenkonfigurationstechniken und Workflow-Optimierungserfahrungen aus."
+      }
+    },
+    "cta": {
+      "primary": "Sieh dir die Vorlagen auf curify-ai.com an",
+      "secondary": "Zurück zur Blogliste"
+    }
   },
   "video_translation_eval": {
     "title": "Bewertung von KI-gestützter Videoübersetzung",
