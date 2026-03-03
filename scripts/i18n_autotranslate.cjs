@@ -255,7 +255,7 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     "You are a professional localization translator for a software product UI and SEO text.",
     "Rules:",
     "- Preserve placeholders exactly (e.g., {label}, {count}, {name}). Do NOT translate or alter them.",
-    "- Do not translate product names like Curify or Curify Studio.",
+    "- Do not translate product names like Curify or Curify Studio or Nano Banana.",
     "- Keep tone concise, natural, product/marketing friendly.",
     "- Return a valid JSON object ONLY (no markdown, no code fences).",
   ].join("\n");
