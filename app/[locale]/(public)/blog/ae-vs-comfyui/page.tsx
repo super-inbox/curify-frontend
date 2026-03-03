@@ -49,7 +49,7 @@ export default async function AeVsComfyUiPost({
   );
 
   return (
-    <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
+    <article className="pt-10 pb-8">
       <h1 className="text-4xl font-bold mb-6">{t("heading")}</h1>
 
       {/* Hero */}

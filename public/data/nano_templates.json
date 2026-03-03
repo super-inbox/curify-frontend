@@ -1336,7 +1336,8 @@
     }
   }
  },
-{   "id": "template-city-miniature-zh",
+{ 
+    "id": "template-city-miniature-zh",
     "locales": {
         "zh": {
             "category": "城市微缩景观类",
@@ -1369,7 +1370,8 @@
                 }
             ]
         }
-    }，
+    }
+},
     {
     "id": "template-hotspot-card-zh",
     "locales": {
@@ -1410,7 +1412,8 @@
                 }
             ]
         }
-    }，
+    }
+    },
     {
     "id": "template-constellation-steampunk-zh",
     "locales": {
@@ -1501,3 +1504,4 @@
       }
   }
 }
+]

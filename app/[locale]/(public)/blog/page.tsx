@@ -42,7 +42,7 @@ export default function BlogListPage() {
   const blogPosts = t.raw("posts") as BlogPost[];
 
   return (
-    <div className="max-w-screen-xl mx-auto px-6 pt-24 pb-16">
+    <div className="pt-2 pb-8">
       <h1 className="text-4xl font-bold mb-10">{t("latestArticles")}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
