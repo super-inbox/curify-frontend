@@ -31,7 +31,7 @@ export default function QABotToTaskAgent() {
   const t = useTranslations("qaBotToTaskAgent");
   
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-12">
+    <div className="pt-10 pb-8">
       {/* Sidebar */}
       <aside className="lg:w-64 flex-shrink-0">
         <div className="sticky top-24 space-y-6">

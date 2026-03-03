@@ -95,7 +95,143 @@
       "row3a": "Flux de travail manuel/piloté par plugin",
       "row3b": "Diffusion + LLM + orchestration multimodale"
     },
-    "outro": "Dans notre flux de travail, ComfyUI gère la génération et l'itération de l'IA, tandis que AE affine l'apparence finale: transitions, superpositions et composition."
+    "outro": "Dans notre flux de travail, ComfyUI gère la génération et l'itération de l'IA, tandis que AE affine l'apparence finale: transitions, superpositions et composition.",
+    "images": {
+      "guideCoverAlt": "Couverture du guide complet de ComfyUI",
+      "workflowFullAlt": "Flux de travail complet de ComfyUI : de l'entrée à la sortie",
+      "caseFeltAlt": "Cas pratique ComfyUI : monde miniature en feutre (flux de travail par nœuds)"
+    },
+    "sections": {
+      "s1": {
+        "title": "I. Qu'est-ce que ComfyUI ?",
+        "p1": "ComfyUI est un éditeur de flux de travail basé sur des nœuds conçu pour le contenu généré par l'IA, ainsi qu'un puissant outil frontal pour des modèles de diffusion comme Stable Diffusion. Grâce à un graphique de nœuds visuel, vous pouvez combiner librement des modèles, contrôler la logique de génération et maîtriser tout le processus, de la génération d'images simples à des créations multimodales complexes.",
+        "p2": "Dans l'écosystème de curify-ai.com, ComfyUI est notre moteur central pour la production efficace de contenu IA."
+      },
+      "s2": {
+        "title": "II. Tutoriel de base ComfyUI : de 0 à 1",
+        "sub1": {
+          "title": "1) Configuration de l'environnement et premier démarrage",
+          "b1Strong": "Déploiement local vs exécution dans le cloud :",
+          "b1": "Le déploiement local convient aux personnalisations profondes et aux besoins de confidentialité, tandis que l'exécution dans le cloud est plus pratique, sans nécessiter de configuration complexe.",
+          "b2Strong": "Gestion des modèles :",
+          "b2": "Les composants essentiels (Checkpoint), le réglage de style (LoRA) et le contrôle précis (ControlNet) sont trois éléments indispensables, disponibles en un clic dans la bibliothèque de modèles de curify-ai.com.",
+          "b3Strong": "Questions fréquentes :",
+          "b3": "CUDA non activé, mémoire vidéo insuffisante, dépendances manquantes sont des problèmes fréquents au démarrage, vous pouvez consulter notre guide de dépannage pour les résoudre rapidement."
+        },
+        "sub2": {
+          "title": "2) Décomposition des concepts clés",
+          "b1Strong": "Graphique de nœuds (Node Graph) :",
+          "b1": "Chaque nœud représente un module fonctionnel (comme charger un modèle, générer une image, appliquer un style), définissant le flux de données par des connexions, de manière intuitive et contrôlable.",
+          "b2Strong": "Flux de travail (Workflow) :",
+          "b2": "Processus de génération complet pouvant être sauvegardé, importé et exporté, curify-ai.com propose de nombreux modèles prédéfinis couvrant les scénarios de création principaux.",
+          "b3Strong": "Échantillonneur et planificateur :",
+          "b3": "Choisir l'échantillonneur approprié (comme Euler, DPM++) influence directement la qualité et la vitesse de génération, nos modèles sont déjà optimisés pour vous."
+        },
+        "sub3": {
+          "title": "3) Cas pratiques pour une prise en main rapide",
+          "b1Strong": "Texte à image :",
+          "b1": "Entrez des mots-clés de style curify-ai et générez des images créatives de haute qualité en un clic.",
+          "b2Strong": "Image à image :",
+          "b2": "Téléchargez une image de référence, verrouillez la composition via le nœud ControlNet, puis redessinez-la dans le style cible avec le nœud LoRA.",
+          "b3Strong": "Génération vidéo :",
+          "b3": "Combinez des nœuds comme AnimateDiff pour transformer des images statiques en contenu dynamique fluide."
+        }
+      },
+      "s3": {
+        "title": "III. Configuration des nœuds et techniques avancées : rendre la génération plus précise",
+        "sub1": {
+          "title": "1) Combinaisons de nœuds courants",
+          "b1Strong": "Nœud ControlNet :",
+          "b1": "Contrôle précis de la posture des personnages, des contours et de la profondeur, clé pour réaliser des compositions complexes.",
+          "b2Strong": "Nœud de mélange LoRA :",
+          "b2": "Superposez plusieurs styles LoRA pour réaliser des fusions de styles et des ajustements de détails.",
+          "b3Strong": "Nœud de contrôle conditionnel :",
+          "b3": "En ajustant les poids des mots-clés positifs et négatifs, renforcez ou atténuez les détails générés, rendant l'œuvre plus conforme à votre créativité."
+        },
+        "sub2": {
+          "title": "2) Optimisation des performances",
+          "b1Strong": "Optimisation de la mémoire vidéo :",
+          "b1": "Activez le décodage par blocs et la quantification des modèles pour générer des images de plus haute résolution avec une mémoire vidéo limitée.",
+          "b2Strong": "Génération en lot :",
+          "b2": "Utilisez la fonction de gestion de file d'attente pour générer en lot des ressources conformes aux normes de curify-ai, améliorant ainsi l'efficacité de la création.",
+          "b3Strong": "Simplification du flux de travail :",
+          "b3": "Regroupez les combinaisons de nœuds courants en sous-graphes pour une réutilisation en un clic, évitant ainsi les configurations répétitives."
+        },
+        "sub3": {
+          "title": "3) Dépannage et débogage",
+          "b1Strong": "Erreur de connexion des nœuds :",
+          "b1": "Vérifiez si les types de données correspondent (par exemple, la sortie d'image est-elle connectée à l'entrée d'image).",
+          "b2Strong": "Qualité de génération médiocre :",
+          "b2": "Vérifiez si les mots-clés sont précis, si le pas d'échantillonnage est suffisant et si le modèle est adapté à la tâche actuelle."
+        }
+      },
+      "s4": {
+        "title": "IV. curify-ai.com × ComfyUI : scénarios d'application exclusifs",
+        "sub1": {
+          "title": "1) Modèles de flux de travail de peinture IA",
+          "p1": "curify-ai.com propose de nombreux modèles de flux de travail ComfyUI directement importables, couvrant les styles principaux tels que l'animation, le style national et le réalisme, tout en fournissant des dimensions et des formats de ressources conformes aux normes de la plateforme."
+        },
+        "sub2": {
+          "title": "2) Outils de création efficaces",
+          "b1": "Combinez les modèles de mots-clés de curify-ai pour réaliser une production en série de contenu stylisé, augmentant considérablement l'efficacité de la création.",
+          "b2": "Nous proposons des solutions de configuration de nœuds dédiées pour générer en un clic des images de haute qualité conformes aux normes de la plateforme."
+        },
+        "sub3": {
+          "title": "3) Flux de travail collaboratif AE + ComfyUI",
+          "b1Strong": "Génération IA :",
+          "b1": "Utilisez ComfyUI pour générer des ressources IA, complétez le style et l'itération de contenu.",
+          "b2Strong": "Composition post-production :",
+          "b2": "Importez les ressources générées dans After Effects, en utilisant son contrôle précis au niveau de la timeline pour réaliser des transitions, des superpositions et des compositions d'effets spéciaux.",
+          "b3Strong": "Produit final :",
+          "b3": "Produisez des vidéos ou des images animées de haute qualité, répondant aux besoins commerciaux et créatifs."
+        }
+      },
+      "s5": {
+        "title": "Cinq, ComfyUI vs After Effects : complémentaires plutôt que substituts",
+        "conclusionTitle": "Conclusion clé",
+        "conclusion": "Dans le flux de travail de curify-ai, ComfyUI est responsable de la génération et de l'itération AI, tandis qu'AE est utilisé pour les finitions, les transitions, les superpositions et le compositing, les deux étant complémentaires plutôt que substitutifs.",
+        "table": {
+          "dimension": "Dimension",
+          "ae": "After Effects (AE)",
+          "comfy": "ComfyUI",
+          "row1": {
+            "dim": "Positionnement clé",
+            "ae": "Logiciel professionnel de compositing et d'effets spéciaux",
+            "comfy": "Moteur de raisonnement génératif natif AI et éditeur de flux de travail"
+          },
+          "row2": {
+            "dim": "Méthode de contrôle",
+            "ae": "Contrôle manuel précis basé sur la timeline et les calques",
+            "comfy": "Génération semi-aléatoire basée sur un graphe de nœuds, dépendant des modèles et des paramètres"
+          },
+          "row3": {
+            "dim": "Capacité de sortie",
+            "ae": "Animations de haute qualité, VFX, bandes dessinées animées",
+            "comfy": "Génération d'images / vidéos AI, supportant l'orchestration multimodale"
+          },
+          "row4": {
+            "dim": "Flux de travail",
+            "ae": "Processus linéaire manuel ou piloté par des plugins",
+            "comfy": "Flux de travail basé sur des nœuds avec modèle de diffusion + LLM + multimodal"
+          },
+          "row5": {
+            "dim": "Meilleur scénario",
+            "ae": "Composition finale, transitions, superpositions, effets spéciaux fins",
+            "comfy": "Génération de contenu AI, itération, création stylisée"
+          }
+        }
+      },
+      "s6": {
+        "title": "Six, Prochaines étapes",
+        "b1": "Visitez curify-ai.com pour télécharger notre modèle de flux de travail ComfyUI personnalisé pour vous.",
+        "b2": "Suivez le tutoriel pour effectuer votre première génération et découvrez la création AI efficace.",
+        "b3": "Rejoignez notre communauté et échangez des astuces de configuration de nœuds et des expériences d'optimisation de flux de travail avec d'autres créateurs."
+      }
+    },
+    "cta": {
+      "primary": "Allez sur curify-ai.com pour voir les modèles",
+      "secondary": "Retour à la liste des blogs"
+    }
   },
   "video_translation_eval": {
     "title": "Évaluation de la qualité de la traduction vidéo IA",

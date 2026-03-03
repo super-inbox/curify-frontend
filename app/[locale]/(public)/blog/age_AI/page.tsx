@@ -30,7 +30,7 @@ export default function AgeAiPost() {
     : [];
 
   return (
-    <article className="max-w-4xl pt-20 mx-auto px-6 pb-12 text-lg leading-8">
+    <article className="pt-10 pb-8">
       <h1 className="text-4xl font-bold mb-8">
         {t("heading")}
       </h1>

@@ -95,7 +95,143 @@
       "row3a": "Manual / plugin-driven workflow",
       "row3b": "Diffusion + LLM + multimodal orchestration"
     },
-    "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing."
+    "outro": "In our workflow, ComfyUI handles the AI generation and iteration, while AE refines the final look — transitions, overlays, and compositing.",
+    "images": {
+      "guideCoverAlt": "ComfyUI Complete Guide Cover Image",
+      "workflowFullAlt": "ComfyUI Full Workflow: From Input to Output",
+      "caseFeltAlt": "ComfyUI Case Study: Wool Felt Miniature World (Node Workflow)"
+    },
+    "sections": {
+      "s1": {
+        "title": "1. What is ComfyUI?",
+        "p1": "ComfyUI is a node-based workflow editor designed for AI-generated content, and a powerful frontend tool for diffusion models like Stable Diffusion. It allows you to freely combine models and control generation logic through a visual node graph, enabling full control from simple text-to-image to complex multimodal creations.",
+        "p2": "In the curify-ai.com ecosystem, ComfyUI is our core engine for efficiently producing AI content."
+      },
+      "s2": {
+        "title": "2. ComfyUI Basic Tutorial: Getting Started from 0 to 1",
+        "sub1": {
+          "title": "1) Environment Setup and First Launch",
+          "b1Strong": "Local Deployment vs Cloud Running:",
+          "b1": "Local deployment is suitable for deep customization and privacy needs, while cloud running is more convenient, requiring no complex environment setup.",
+          "b2Strong": "Model Management:",
+          "b2": "Core models (Checkpoint), style fine-tuning (LoRA), and precise control (ControlNet) are three essential components that can be easily obtained from the curify-ai.com template library.",
+          "b3Strong": "Common Issues:",
+          "b3": "CUDA not enabled, insufficient VRAM, and missing dependencies are frequent issues at startup; refer to our troubleshooting guide for quick solutions."
+        },
+        "sub2": {
+          "title": "2) Core Concept Breakdown",
+          "b1Strong": "Node Graph:",
+          "b1": "Each node represents a functional module (such as loading a model, generating an image, applying a style), defining data flow through connections, making it intuitive and controllable.",
+          "b2Strong": "Workflow:",
+          "b2": "A complete generation process that can be saved, imported, and exported; curify-ai.com provides numerous preset templates covering mainstream creative scenarios.",
+          "b3Strong": "Sampler and Scheduler:",
+          "b3": "Choosing the right sampler (like Euler, DPM++) directly affects generation quality and speed; our templates have optimized the best combinations for you."
+        },
+        "sub3": {
+          "title": "3) Quick Start Cases",
+          "b1Strong": "Text-to-Image:",
+          "b1": "Input curify-ai style prompts to generate high-quality creative images with one click.",
+          "b2Strong": "Image-to-Image:",
+          "b2": "Upload a reference image, lock the composition using the ControlNet node, and then use the LoRA node to redraw in the target style.",
+          "b3Strong": "Video Generation:",
+          "b3": "Combine nodes like AnimateDiff to transform static images into smooth dynamic content."
+        }
+      },
+      "s3": {
+        "title": "3. Node Configuration and Advanced Techniques: Making Generation More Precise",
+        "sub1": {
+          "title": "1) Common Node Combinations",
+          "b1Strong": "ControlNet Node:",
+          "b1": "Precisely control character poses, edges, and depth, which is key to achieving complex compositions.",
+          "b2Strong": "LoRA Mixing Node:",
+          "b2": "Overlay multiple style LoRAs to achieve multi-style fusion and detail fine-tuning.",
+          "b3Strong": "Conditional Control Node:",
+          "b3": "Strengthen or weaken generation details through positive and negative prompt weight distribution, making the work more aligned with your creativity."
+        },
+        "sub2": {
+          "title": "2) Performance Optimization",
+          "b1Strong": "VRAM Optimization:",
+          "b1": "Enable chunk decoding and model quantization to generate higher resolution images with limited VRAM.",
+          "b2Strong": "Batch Generation:",
+          "b2": "Utilize queue management features to batch generate materials that meet curify-ai specifications, enhancing creative efficiency.",
+          "b3Strong": "Workflow Simplification:",
+          "b3": "Package commonly used node combinations into subgraphs for one-click reuse, avoiding repetitive configuration."
+        },
+        "sub3": {
+          "title": "3) Troubleshooting and Debugging",
+          "b1Strong": "Node Connection Errors:",
+          "b1": "Check if data types match (e.g., whether image output is connected to image input).",
+          "b2Strong": "Poor Generation Quality:",
+          "b2": "Investigate whether prompts are precise, whether sampling steps are sufficient, and whether the model is suitable for the current task."
+        }
+      },
+      "s4": {
+        "title": "4. curify-ai.com × ComfyUI: Exclusive Application Scenarios",
+        "sub1": {
+          "title": "1) AI Painting Workflow Templates",
+          "p1": "curify-ai.com provides a large number of ComfyUI workflow templates that can be directly imported, covering mainstream styles such as anime, national style, and realism, and providing commercial material sizes and formats that meet platform specifications."
+        },
+        "sub2": {
+          "title": "2) Efficient Creative Tools",
+          "b1": "Combine curify-ai's prompt templates to achieve batch production of stylized content, significantly improving creative efficiency.",
+          "b2": "We provide dedicated node configuration solutions to generate high-quality images that meet platform specifications with one click."
+        },
+        "sub3": {
+          "title": "3) AE + ComfyUI Collaborative Workflow",
+          "b1Strong": "AI Generation:",
+          "b1": "Use ComfyUI to generate AI materials, completing style and content iteration.",
+          "b2Strong": "Post-Production Composition:",
+          "b2": "Import the generated materials into After Effects, utilizing its timeline-level precise control to complete transitions, overlays, and special effects composition.",
+          "b3Strong": "Final Output:",
+          "b3": "Output high-quality videos or dynamic images to meet commercial and creative needs."
+        }
+      },
+      "s5": {
+        "title": "5. ComfyUI vs After Effects: Complementary, Not Substitutive",
+        "conclusionTitle": "Core Conclusion",
+        "conclusion": "In the workflow of curify-ai, ComfyUI is responsible for AI generation and iteration, while AE is used for final touches, transitions, overlays, and compositing; the two are complementary rather than substitutive.",
+        "table": {
+          "dimension": "Dimension",
+          "ae": "After Effects (AE)",
+          "comfy": "ComfyUI",
+          "row1": {
+            "dim": "Core Positioning",
+            "ae": "Professional film post-production compositing and visual effects software",
+            "comfy": "AI-native generative inference engine and workflow editor"
+          },
+          "row2": {
+            "dim": "Control Method",
+            "ae": "Precise manual control based on timeline and layers",
+            "comfy": "Semi-random generation based on node graphs, relying on models and parameters"
+          },
+          "row3": {
+            "dim": "Output Capability",
+            "ae": "High-quality animations, VFX, dynamic comics",
+            "comfy": "AI image/video generation, supporting multimodal orchestration"
+          },
+          "row4": {
+            "dim": "Workflow",
+            "ae": "Manual or plugin-driven linear processes",
+            "comfy": "Diffusion model + LLM + multimodal node-based workflow"
+          },
+          "row5": {
+            "dim": "Best Scenarios",
+            "ae": "Final compositing, transitions, overlays, fine effects",
+            "comfy": "AI content generation, iteration, stylized creation"
+          }
+        }
+      },
+      "s6": {
+        "title": "6. Next Steps",
+        "b1": "Visit curify-ai.com to download the ComfyUI workflow template customized for you.",
+        "b2": "Complete your first generation following the tutorial and experience efficient AI creation.",
+        "b3": "Join our community to exchange node configuration tips and workflow optimization experiences with other creators."
+      }
+    },
+    "cta": {
+      "primary": "Go to curify-ai.com to see templates",
+      "secondary": "Return to blog list"
+    }
   },
   "video_translation_eval": {
     "title": "Evaluating AI Video Translation Quality",

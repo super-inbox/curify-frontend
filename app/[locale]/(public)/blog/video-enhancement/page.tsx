@@ -40,7 +40,7 @@ const ListIcon = () => (
 
 export default function VideoEnhancementPost() {
   return (
-    <article className="max-w-6xl mx-auto px-6 py-20 text-[18px] leading-8">
+    <article className="pt-10 pb-8">
 
       {/* ------------------------------------------------------- */}
       {/* HEADER */}

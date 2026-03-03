@@ -95,7 +95,143 @@
       "row3a": "Manuel / eklenti odaklı iş akışı",
       "row3b": "Difüzyon + LLM + çok modlu orkestrasyon"
     },
-    "outro": "İş akışımızda, ComfyUI AI oluşturma ve yinelemeyi yönetirken, AE son görünümü iyileştirir — geçişler, bindirmeler ve birleştirme."
+    "outro": "İş akışımızda, ComfyUI AI oluşturma ve yinelemeyi yönetirken, AE son görünümü iyileştirir — geçişler, bindirmeler ve birleştirme.",
+    "images": {
+      "guideCoverAlt": "ComfyUI Tam Kılavuzu Kapak Resmi",
+      "workflowFullAlt": "ComfyUI Tam İş Akışı: Girişten Çıkışa",
+      "caseFeltAlt": "ComfyUI Uygulama Örneği: Keçe Mini Dünya (Düğüm İş Akışı)"
+    },
+    "sections": {
+      "s1": {
+        "title": "1. ComfyUI Nedir?",
+        "p1": "ComfyUI, AI tarafından üretilen içerikler için tasarlanmış bir düğüm tabanlı iş akışı editörüdür ve Stable Diffusion gibi difüzyon modellerinin güçlü bir ön yüz aracıdır. Görsel düğüm grafiği ile modelinizi özgürce birleştirip, üretim mantığını kontrol ederek basit metinden görsele kadar karmaşık çok modlu yaratım sürecini tam olarak yönetmenizi sağlar.",
+        "p2": "curify-ai.com ekosisteminde, ComfyUI, AI içeriği verimli bir şekilde üretmenin temel motorudur."
+      },
+      "s2": {
+        "title": "2. ComfyUI Temel Eğitimi: 0'dan 1'e Başlangıç",
+        "sub1": {
+          "title": "1) Ortam Kurulumu ve İlk Başlatma",
+          "b1Strong": "Yerel Dağıtım vs Bulut Çalıştırma:",
+          "b1": "Yerel dağıtım, derin özelleştirme ve gizlilik ihtiyaçları için uygundur; bulut çalıştırma ise daha pratik olup karmaşık bir ortam yapılandırması gerektirmez.",
+          "b2Strong": "Model Yönetimi:",
+          "b2": "Temel modeller (Checkpoint), stil ince ayar (LoRA) ve hassas kontrol (ControlNet) üç temel bileşendir ve curify-ai.com şablon kütüphanesinden tek tıkla alınabilir.",
+          "b3Strong": "Sıkça Sorulan Sorular:",
+          "b3": "CUDA etkin değil, bellek yetersizliği, bağımlılık eksikliği, başlatma sırasında sık karşılaşılan sorunlardır; hızlı çözüm için hata ayıklama kılavuzumuza başvurabilirsiniz."
+        },
+        "sub2": {
+          "title": "2) Temel Kavramların Açıklanması",
+          "b1Strong": "Düğüm Grafiği (Node Graph):",
+          "b1": "Her düğüm, bir işlev modülünü temsil eder (örneğin, model yükleme, görüntü oluşturma, stil uygulama) ve veri akışını tanımlamak için bağlantılarla tanımlanır, sezgisel ve kontrol edilebilir.",
+          "b2Strong": "İş Akışı (Workflow):",
+          "b2": "Kaydedilebilir, içe aktarılabilir ve dışa aktarılabilir tam üretim süreci; curify-ai.com, ana akım yaratım senaryolarını kapsayan çok sayıda önceden ayarlanmış şablon sunar.",
+          "b3Strong": "Örnekleyici ve Zamanlayıcı:",
+          "b3": "Uygun bir örnekleyici (örneğin, Euler, DPM++) seçmek, üretim kalitesini ve hızını doğrudan etkiler; şablonlarımız en iyi kombinasyonu sizin için optimize etmiştir."
+        },
+        "sub3": {
+          "title": "3) Hızlı Başlangıç Örnekleri",
+          "b1Strong": "Metinden Görsele:",
+          "b1": "curify-ai stil anahtar kelimelerini girin, yüksek kaliteli yaratıcı görüntüleri tek tıkla oluşturun.",
+          "b2Strong": "Görüntüden Görüntüye:",
+          "b2": "Referans görüntüyü yükleyin, ControlNet düğümü ile kompozisyonu kilitleyin, ardından LoRA düğümü ile hedef stile yeniden çizin.",
+          "b3Strong": "Video Üretimi:",
+          "b3": "AnimateDiff gibi düğümleri birleştirerek statik görüntüleri akıcı dinamik içeriklere dönüştürün."
+        }
+      },
+      "s3": {
+        "title": "3. Düğüm Yapılandırması ve İleri Teknikler: Üretimi Daha Hassas Hale Getirin",
+        "sub1": {
+          "title": "1) Sık Kullanılan Düğüm Kombinasyonları",
+          "b1Strong": "ControlNet Düğümü:",
+          "b1": "Kişi pozunu, kenarları ve derinliği hassas bir şekilde kontrol etmek, karmaşık kompozisyonların gerçekleştirilmesinde anahtardır.",
+          "b2Strong": "LoRA Karışım Düğümü:",
+          "b2": "Birden fazla stil LoRA'yı üst üste ekleyerek çoklu stil birleşimi ve detay ince ayarı gerçekleştirin.",
+          "b3Strong": "Koşullu Kontrol Düğümü:",
+          "b3": "Pozitif ve negatif anahtar kelime ağırlık dağılımı ile üretim detaylarını güçlendirin veya zayıflatın, eserlerinizi yaratıcılığınıza daha uygun hale getirin."
+        },
+        "sub2": {
+          "title": "2) Performans Optimizasyonu",
+          "b1Strong": "Bellek Optimizasyonu:",
+          "b1": "Parçalı kod çözme ve model nicemesi etkinleştirerek, sınırlı bellek altında daha yüksek çözünürlüklü görüntüler oluşturun.",
+          "b2Strong": "Toplu Üretim:",
+          "b2": "Kuyruk yönetim işlevini kullanarak, curify-ai standartlarına uygun materyalleri toplu olarak üretin ve yaratım verimliliğini artırın.",
+          "b3Strong": "İş Akışını Basitleştirme:",
+          "b3": "Sık kullanılan düğüm kombinasyonlarını alt grafik olarak paketleyin, tek tıkla yeniden kullanın, tekrar yapılandırmayı önleyin."
+        },
+        "sub3": {
+          "title": "3) Hata Ayıklama ve Test",
+          "b1Strong": "Düğüm Bağlantı Hatası:",
+          "b1": "Veri türlerinin eşleşip eşleşmediğini kontrol edin (örneğin, görüntü çıkışı görüntü girişine bağlı mı).",
+          "b2Strong": "Düşük Üretim Kalitesi:",
+          "b2": "Anahtar kelimelerin doğruluğunu, örnekleme adımının yeterliliğini ve modelin mevcut göreve uygunluğunu kontrol edin."
+        }
+      },
+      "s4": {
+        "title": "4. curify-ai.com × ComfyUI: Özel Uygulama Senaryoları",
+        "sub1": {
+          "title": "1) AI Resimleme İş Akışı Şablonları",
+          "p1": "curify-ai.com, doğrudan içe aktarılabilen çok sayıda ComfyUI iş akışı şablonu sunar; bu şablonlar, anime, geleneksel Çin tarzı, gerçekçi gibi ana akım stilleri kapsar ve platform standartlarına uygun ticari materyal boyutları ve formatları sağlar."
+        },
+        "sub2": {
+          "title": "2) Verimli Yaratım Araçları",
+          "b1": "curify-ai'nin anahtar kelime şablonları ile stilize edilmiş içeriklerin toplu üretimini gerçekleştirin, yaratım verimliliğini büyük ölçüde artırın.",
+          "b2": "Platform standartlarına uygun yüksek kaliteli görüntüler oluşturmak için özel düğüm yapılandırma çözümleri sunuyoruz."
+        },
+        "sub3": {
+          "title": "3) AE + ComfyUI İşbirlikçi İş Akışı",
+          "b1Strong": "AI Üretimi:",
+          "b1": "ComfyUI ile AI materyalleri oluşturun, stilizasyon ve içerik iterasyonunu tamamlayın.",
+          "b2Strong": "Sonrası Birleştirme:",
+          "b2": "Oluşturulan materyalleri After Effects'e aktarın, zaman çizelgesi düzeyinde hassas kontrol ile geçiş, üst üste bindirme ve efekt birleştirmelerini tamamlayın.",
+          "b3Strong": "Sonuç Eser:",
+          "b3": "Yüksek kaliteli video veya dinamik görüntüler üretin, ticari ve yaratıcı ihtiyaçları karşılayın."
+        }
+      },
+      "s5": {
+        "title": "Beş, ComfyUI vs After Effects: Tamamlayıcı, Yerine Geçici Değil",
+        "conclusionTitle": "Ana Sonuç",
+        "conclusion": "curify-ai iş akışında, ComfyUI AI üretimi ve iterasyonu üstlenirken, AE son düzenleme, geçiş, üst üste bindirme ve kompozisyon için kullanılır; ikisi tamamlayıcıdır, yerine geçici değildir.",
+        "table": {
+          "dimension": "Boyut",
+          "ae": "After Effects (AE)",
+          "comfy": "ComfyUI",
+          "row1": {
+            "dim": "Ana Konum",
+            "ae": "Profesyonel film sonrası kompozisyon ve efekt yazılımı",
+            "comfy": "AI yerel üretken çıkarım motoru ve iş akışı editörü"
+          },
+          "row2": {
+            "dim": "Kontrol Yöntemi",
+            "ae": "Zaman çizelgesi ve katmanlara dayalı hassas manuel kontrol",
+            "comfy": "Düğüm grafiğine dayalı yarı rastgele üretim, model ve parametrelere bağımlı"
+          },
+          "row3": {
+            "dim": "Çıktı Yeteneği",
+            "ae": "Yüksek kaliteli animasyon, VFX, dinamik çizgi roman",
+            "comfy": "AI görüntü / video üretimi, çok modlu düzenlemeyi destekler"
+          },
+          "row4": {
+            "dim": "İş Akışı",
+            "ae": "Manuel veya eklenti destekli lineer süreç",
+            "comfy": "Dağıtım modeli + LLM + çok modlu düğüm tabanlı iş akışı"
+          },
+          "row5": {
+            "dim": "En İyi Senaryo",
+            "ae": "Son kompozisyon, geçiş, üst üste bindirme, ince efektler",
+            "comfy": "AI içerik üretimi, iterasyon, stilize yaratım"
+          }
+        }
+      },
+      "s6": {
+        "title": "Altı, Bir Sonraki Adım",
+        "b1": "curify-ai.com'u ziyaret edin, sizin için özel olarak hazırlanmış ComfyUI iş akışı şablonunu indirin.",
+        "b2": "Eğitimi takip ederek ilk üretimi tamamlayın, verimli AI yaratımını deneyimleyin.",
+        "b3": "Topluluğumuza katılın, diğer yaratıcılarla düğüm yapılandırma ipuçları ve iş akışı optimizasyon deneyimlerini paylaşın."
+      }
+    },
+    "cta": {
+      "primary": "Şablonları görmek için curify-ai.com'a gidin",
+      "secondary": "Blog listesine geri dön"
+    }
   },
   "video_translation_eval": {
     "title": "AI Video Çeviri Kalitesini Değerlendirme",

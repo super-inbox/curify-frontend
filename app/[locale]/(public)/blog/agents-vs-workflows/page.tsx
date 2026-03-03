@@ -19,7 +19,7 @@ export async function generateMetadata({
 
 export default function AgentsVsWorkflowsPost() {
   return (
-    <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
+    <article className="pt-10 pb-8">
       <h1 className="text-4xl font-bold mb-8">🤖 Agents vs Workflows</h1>
 
       <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
