@@ -225,6 +225,16 @@ export default async function NanoTemplatePage({ params }: Props) {
     perTemplateMaxImages: 2,
     strictLocale: false,
   }).filter((c) => c.template_id !== template.template_id);
+  
+  const rawTitle =
+  normalizeText(seo?.meta_title) ||
+  `Nano Banana Prompt Template: ${template.template_id}`;
+
+// remove trailing "｜Curify AI" or "| Curify AI"
+const h1 = rawTitle.replace(/\s*[｜|]\s*Curify AI\s*$/i, "");
+  const intro =
+  normalizeText(seo?.meta_description) ||
+  `Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.`;
 
   return (
     <main className="mx-auto max-w-6xl px-4 pt-24 pb-10">
@@ -241,7 +251,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       <div className="mb-6">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-neutral-900">{template.template_id}</h1>
+            <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
             <p className="mt-2 text-sm text-neutral-600">{template.description}</p>
           </div>
 
