@@ -1,22 +1,15 @@
-// ✅ You have enough info now.
-// Your example schema:
-// {
-//   id: string,                // <-- exampleId (has spaces; keep encodeURIComponent)
-//   template_id: string,       // <-- templateId
-//   locales: { [lng]: {...} }  // <-- availableLocales = Object.keys(locales)
-//   updated_at?: string        // (not present now; we'll fallback to now)
-// }
-//
-// We will implement:
-// - /sitemap.xml (main): static + blogs + templates (your existing file, unchanged)
-// - /sitemap-examples.xml (new): all example detail pages, locale-aware + fallback to template locales
-//
-// Add file: app/sitemap-examples.xml/route.ts
-// And add import: nanoInsp from "@/public/data/nano_inspiration.json"
-
-// -------------------------------
 // app/sitemap-examples.xml/route.ts
-// -------------------------------
+//
+// Generates example-detail URLs for Nano templates:
+// /nano-template/${templateId}/example/${exampleId}
+//
+// Locale strategy:
+// 1) Use example.locales keys if present (most accurate)
+// 2) Else fallback to template locales (from nano_templates.json)
+// 3) Else fallback to all supported locales (routing.locales)
+//
+// NOTE: routing.locales is typed as a readonly tuple, so we use `readonly string[]`
+// everywhere to avoid TS errors.
 
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
@@ -26,7 +19,7 @@ import nanoInspiration from "@/public/data/nano_inspiration.json";
 export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
-const LOCALES = routing.locales;
+const LOCALES = routing.locales; // readonly tuple
 
 type NanoTemplate = {
   id: string;
@@ -56,19 +49,24 @@ function getTemplateLocalesMap(): Map<string, string[]> {
   return m;
 }
 
-function generateHreflangLinks(route: string, availableLocales?: string[]) {
-  const localesToUse = availableLocales?.length ? availableLocales : LOCALES;
+// Accept readonly arrays to support routing.locales (readonly tuple)
+function generateHreflangLinks(route: string, availableLocales?: readonly string[]) {
+  const localesToUse: readonly string[] =
+    availableLocales && availableLocales.length > 0 ? availableLocales : LOCALES;
 
   const links = localesToUse
     .map((lng) => {
+      // Strip prefix for English
       const pathPrefix = lng === "en" ? "" : `/${lng}`;
       return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
     })
     .join("");
 
+  // x-default strictly points to the unprefixed route
   return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
 }
 
+// Accept readonly arrays to support routing.locales (readonly tuple)
 function generateUrlEntry(
   locale: string,
   route: string,
@@ -76,9 +74,10 @@ function generateUrlEntry(
     lastmod?: string;
     changefreq?: string;
     priority?: string;
-    availableLocales?: string[];
+    availableLocales?: readonly string[];
   }
 ) {
+  // Strip prefix for English
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
 
@@ -99,9 +98,7 @@ function generateUrlEntry(
 
 function pickLastmod(x: NanoExample): string | undefined {
   const v = x.updated_at || x.lastmod || x.date;
-  if (!v) return undefined;
-  // keep as-is; if it isn't ISO, Google is still usually OK
-  return v;
+  return v || undefined;
 }
 
 export async function GET() {
@@ -116,13 +113,16 @@ export async function GET() {
     const templateId = String(ex.template_id).trim();
     const exampleId = String(ex.id).trim();
 
-    // ✅ locale strategy:
+    // locale strategy:
     // 1) example locales (most accurate)
     // 2) fallback to template locales
     // 3) fallback to global LOCALES
     const exampleLocales = ex.locales ? Object.keys(ex.locales) : [];
-    const availableLocales =
-      (exampleLocales.length ? exampleLocales : templateLocalesMap.get(templateId)) || LOCALES;
+
+    const availableLocales: readonly string[] =
+      (exampleLocales.length
+        ? exampleLocales
+        : templateLocalesMap.get(templateId)) || LOCALES;
 
     const route = `/nano-template/${encodeURIComponent(templateId)}/example/${encodeURIComponent(
       exampleId
