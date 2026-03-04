@@ -33,7 +33,7 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
 
   const showDemo = Boolean(t("example")) && Boolean(t("cta")); // cheap guard
   const demo = tool.demo;
-  
+
   return (
     <main className="max-w-5xl mx-auto pt-20 px-6 py-12 text-[var(--c2)]">
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
@@ -56,8 +56,7 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
       className="w-full rounded-xl shadow mb-4"
       controls
       poster={demo.poster}
-      src={demo.src}
-      aria-label={t("demo.aria")}
+      src={demo.src}      
     />
     <p className="text-sm text-gray-500 mb-8">{t("example")}</p>
   </>
