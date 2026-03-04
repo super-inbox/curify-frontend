@@ -43,20 +43,18 @@ export function buildToolsHub(params: {
     );
 
     const href = locale ? `/tools/${tool.slug}` : undefined;
+    const action = tool.action;
 
     return {
       id: tool.id,
       title: titleNode,
       desc: t(tool.i18n.descKey),
       status: tool.status,
-
-      // ✅ NEW: card should navigate when NOT coming soon
       href: tool.status !== "coming_soon" ? href : undefined,
-
-      // Keep modal behavior for live tools
+    
       onClick:
-        tool.status === "create" && tool.action?.type === "modal"
-          ? () => openModal(tool.action!.mode)
+        tool.status === "create" && action?.type === "modal"
+          ? () => openModal(action.mode)
           : undefined,
     };
   };
