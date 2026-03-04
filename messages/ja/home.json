@@ -122,7 +122,60 @@
       "v3": "🎶 コンテンツを言語間でローカライズするメディアおよびエンターテインメント企業",
       "v4": "📚 翻訳と組版を自動化するマンガ出版社やファン翻訳者"
     },
-    "free_badge": "無料で"
+    "free_badge": "無料で",
+    "groups": {
+      "video": "ビデオツール",
+      "image": "画像ツール",
+      "audio": "オーディオツール"
+    },
+    "video_transcript_generator": {
+      "title": "ビデオトランスクリプトジェネレーター",
+      "desc": "ビデオを編集可能で再利用できる正確なトランスクリプトに変換します。"
+    },
+    "youtube_subtitle_downloader": {
+      "title": "YouTube字幕ダウンローダー",
+      "desc": "YouTubeから利用可能な字幕をワンクリックでダウンロードします。"
+    },
+    "video_subtitle_extractor": {
+      "title": "ビデオ字幕抽出ツール",
+      "desc": "埋め込まれた字幕を編集可能なSRT/VTTファイルに抽出します。"
+    },
+    "translate_subtitles": {
+      "title": "字幕翻訳",
+      "desc": "タイミングと構造を保持しながらSRT/VTTを翻訳します。"
+    },
+    "subtitle_converter": {
+      "title": "字幕コンバーター",
+      "desc": "タイムスタンプを壊さずにSRT、VTT、ASSなどの間で変換します。"
+    },
+    "subtitle_editor": {
+      "title": "字幕エディター",
+      "desc": "タイミングコントロールとクイックバッチ修正で字幕を編集します。"
+    },
+    "video_summarizer": {
+      "title": "ビデオ要約ツール",
+      "desc": "任意のビデオから簡潔な要約と重要なポイントを生成します。"
+    },
+    "storyboard_generator": {
+      "title": "ストーリーボードジェネレーター",
+      "desc": "ビデオをシーンごとのストーリーボードノートとプロンプトに変換します。"
+    },
+    "image_translation": {
+      "title": "画像翻訳",
+      "desc": "画像内のテキストを翻訳し、レイアウトをきれいに再構築します。"
+    },
+    "manga_translation": {
+      "title": "マンガ翻訳",
+      "desc": "バブルと組版を読みやすく保ちながらマンガパネルを翻訳します。"
+    },
+    "voice_clone": {
+      "title": "ボイスクローン",
+      "desc": "短いサンプルから声をクローンし、一貫したナレーションを実現します。"
+    },
+    "speech_translator": {
+      "title": "スピーチ翻訳",
+      "desc": "自然な表現でスピーチを別の言語に翻訳します。"
+    }
   },
   "bilingual": {
     "metadata": {
@@ -249,5 +302,66 @@
   "nanoGallery": {
     "title": "ナノバナナプロンプトギャラリー",
     "description": "最も効果的な<strong>ナノバナナプロンプト</strong>を発見し、コピーしましょう。私たちの厳選されたコレクションは、最適化されたテンプレートとコミュニティ共有のプロンプトエンジニアリングを使用して、高品質なAIビジュアルを生成するのに役立ちます。"
+  },
+  "hub": {
+    "groups": {
+      "video": "ビデオツール",
+      "image": "画像ツール",
+      "audio": "オーディオツール"
+    },
+    "tools": {
+      "meta": {
+        "title": "Curifyツール",
+        "description": "ビデオ吹き替え、字幕、AI駆動のコンテンツワークフローのためのCurify Studioツールを探索してください。"
+      },
+      "video_transcript_generator": {
+        "title": "ビデオトランスクリプトジェネレーター",
+        "desc": "ビデオを編集可能で再利用できる正確なトランスクリプトに変換します。"
+      },
+      "youtube_subtitle_downloader": {
+        "title": "YouTube字幕ダウンローダー",
+        "desc": "YouTubeから利用可能な字幕をワンクリックでダウンロードします。"
+      },
+      "video_subtitle_extractor": {
+        "title": "ビデオ字幕抽出ツール",
+        "desc": "埋め込まれた字幕を編集可能なSRT/VTTファイルに抽出します。"
+      },
+      "translate_subtitles": {
+        "title": "字幕翻訳",
+        "desc": "タイミングと構造を保持しながらSRT/VTTを翻訳します。"
+      },
+      "subtitle_converter": {
+        "title": "字幕コンバーター",
+        "desc": "タイムスタンプを壊さずにSRT、VTT、ASSなどの間で変換します。"
+      },
+      "subtitle_editor": {
+        "title": "字幕エディター",
+        "desc": "タイミングコントロールとクイックバッチ修正で字幕を編集します。"
+      },
+      "video_summarizer": {
+        "title": "ビデオ要約ツール",
+        "desc": "任意のビデオから簡潔な要約と重要なポイントを生成します。"
+      },
+      "storyboard_generator": {
+        "title": "ストーリーボードジェネレーター",
+        "desc": "ビデオをシーンごとのストーリーボードノートとプロンプトに変換します。"
+      },
+      "image_translation": {
+        "title": "画像翻訳",
+        "desc": "画像内のテキストを翻訳し、レイアウトをきれいに再構築します。"
+      },
+      "manga_translation": {
+        "title": "マンガ翻訳",
+        "desc": "バブルと組版を読みやすく保ちながらマンガパネルを翻訳します。"
+      },
+      "voice_clone": {
+        "title": "ボイスクローン",
+        "desc": "短いサンプルから声をクローンし、一貫したナレーションを実現します。"
+      },
+      "speech_translator": {
+        "title": "スピーチ翻訳",
+        "desc": "自然な表現でスピーチを別の言語に翻訳します。"
+      }
+    }
   }
 }

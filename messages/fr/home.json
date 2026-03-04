@@ -122,7 +122,60 @@
       "v3": "🎶 Entreprises de médias et de divertissement localisant du contenu dans différentes langues",
       "v4": "📚 Éditeurs de manga et traducteurs amateurs automatisant la traduction et la mise en page"
     },
-    "free_badge": "GRATUIT"
+    "free_badge": "GRATUIT",
+    "groups": {
+      "video": "Outils vidéo",
+      "image": "Outils image",
+      "audio": "Outils audio"
+    },
+    "video_transcript_generator": {
+      "title": "Générateur de transcription vidéo",
+      "desc": "Transformez la vidéo en transcriptions précises que vous pouvez éditer et réutiliser."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "Téléchargeur de sous-titres YouTube",
+      "desc": "Téléchargez les sous-titres disponibles de YouTube en un clic."
+    },
+    "video_subtitle_extractor": {
+      "title": "Extracteur de sous-titres vidéo",
+      "desc": "Extraire les sous-titres intégrés en fichiers SRT/VTT éditables."
+    },
+    "translate_subtitles": {
+      "title": "Traduire les sous-titres",
+      "desc": "Traduisez SRT/VTT tout en préservant le timing et la structure."
+    },
+    "subtitle_converter": {
+      "title": "Convertisseur de sous-titres",
+      "desc": "Convertissez entre SRT, VTT, ASS et plus sans casser les horodatages."
+    },
+    "subtitle_editor": {
+      "title": "Éditeur de sous-titres",
+      "desc": "Éditez les sous-titres avec des contrôles de timing et des corrections rapides en lot."
+    },
+    "video_summarizer": {
+      "title": "Résumé vidéo",
+      "desc": "Générez des résumés concis et des points clés à partir de n'importe quelle vidéo."
+    },
+    "storyboard_generator": {
+      "title": "Générateur de storyboard",
+      "desc": "Transformez les vidéos en notes et invites de storyboard scène par scène."
+    },
+    "image_translation": {
+      "title": "Traduction d'image",
+      "desc": "Traduisez le texte dans les images et reconstruisez la mise en page proprement."
+    },
+    "manga_translation": {
+      "title": "Traduction de manga",
+      "desc": "Traduisez les panneaux de manga tout en gardant les bulles et la typographie lisibles."
+    },
+    "voice_clone": {
+      "title": "Clone de voix",
+      "desc": "Clonez une voix à partir d'un court extrait pour une narration cohérente."
+    },
+    "speech_translator": {
+      "title": "Traducteur de discours",
+      "desc": "Traduisez le discours dans une autre langue avec une livraison naturelle."
+    }
   },
   "bilingual": {
     "metadata": {
@@ -249,5 +302,66 @@
   "nanoGallery": {
     "title": "Galerie de Prompts Nano Banana",
     "description": "Découvrez et copiez les <strong>prompts nano banana</strong> les plus efficaces. Notre collection soigneusement sélectionnée vous aide à générer des visuels AI de haute qualité en utilisant des modèles optimisés et l'ingénierie de prompts partagée par la communauté."
+  },
+  "hub": {
+    "groups": {
+      "video": "Outils vidéo",
+      "image": "Outils image",
+      "audio": "Outils audio"
+    },
+    "tools": {
+      "meta": {
+        "title": "Outils Curify",
+        "description": "Explorez les outils de Curify Studio pour le doublage vidéo, les sous-titres et les flux de travail de contenu alimentés par l'IA."
+      },
+      "video_transcript_generator": {
+        "title": "Générateur de transcriptions vidéo",
+        "desc": "Transformez la vidéo en transcriptions précises que vous pouvez éditer et réutiliser."
+      },
+      "youtube_subtitle_downloader": {
+        "title": "Téléchargeur de sous-titres YouTube",
+        "desc": "Téléchargez les sous-titres disponibles de YouTube en un clic."
+      },
+      "video_subtitle_extractor": {
+        "title": "Extracteur de sous-titres vidéo",
+        "desc": "Extraire les sous-titres intégrés en fichiers SRT/VTT modifiables."
+      },
+      "translate_subtitles": {
+        "title": "Traduire les sous-titres",
+        "desc": "Traduisez SRT/VTT tout en préservant le timing et la structure."
+      },
+      "subtitle_converter": {
+        "title": "Convertisseur de sous-titres",
+        "desc": "Convertissez entre SRT, VTT, ASS et plus sans casser les horodatages."
+      },
+      "subtitle_editor": {
+        "title": "Éditeur de sous-titres",
+        "desc": "Éditez les sous-titres avec des contrôles de timing et des corrections rapides en lot."
+      },
+      "video_summarizer": {
+        "title": "Résumé vidéo",
+        "desc": "Générez des résumés concis et des points clés à partir de n'importe quelle vidéo."
+      },
+      "storyboard_generator": {
+        "title": "Générateur de storyboard",
+        "desc": "Transformez les vidéos en notes et prompts de storyboard scène par scène."
+      },
+      "image_translation": {
+        "title": "Traduction d'images",
+        "desc": "Traduisez le texte dans les images et reconstruisez la mise en page proprement."
+      },
+      "manga_translation": {
+        "title": "Traduction de manga",
+        "desc": "Traduisez les panneaux de manga tout en gardant les bulles et la typographie lisibles."
+      },
+      "voice_clone": {
+        "title": "Clone de voix",
+        "desc": "Clonez une voix à partir d'un court extrait pour une narration cohérente."
+      },
+      "speech_translator": {
+        "title": "Traducteur de discours",
+        "desc": "Traduisez le discours dans une autre langue avec une livraison naturelle."
+      }
+    }
   }
 }

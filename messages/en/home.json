@@ -85,7 +85,8 @@
       "title": "Controlled Video Generation",
       "desc": "We enable structured, template-driven video generation with controllable visual elements and transitions. This gives creators both creative freedom and production consistency, reducing manual effort while ensuring high-quality output."
     }
-  },
+  },  
+  
   "tools": {
     "meta": {
       "title": "Curify Tools",
@@ -124,6 +125,59 @@
     "style_transfer": {
       "title": "Style Transfer",
       "desc": "Transform your video into Pixar, Ghibli, or other artistic styles — coming soon"
+    },
+    "groups": {
+      "video": "Video Tools",
+      "image": "Image Tools",
+      "audio": "Audio Tools"
+    },
+    "video_transcript_generator": {
+      "title": "Video transcript generator",
+      "desc": "Turn video into accurate transcripts you can edit and reuse."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "YouTube subtitle downloader",
+      "desc": "Download available subtitles from YouTube in one click."
+    },
+    "video_subtitle_extractor": {
+      "title": "Video subtitle extractor",
+      "desc": "Extract embedded subtitles into editable SRT/VTT files."
+    },
+    "translate_subtitles": {
+      "title": "Translate subtitles",
+      "desc": "Translate SRT/VTT while preserving timing and structure."
+    },
+    "subtitle_converter": {
+      "title": "Subtitle converter",
+      "desc": "Convert between SRT, VTT, ASS and more without breaking timestamps."
+    },
+    "subtitle_editor": {
+      "title": "Subtitle editor",
+      "desc": "Edit subtitles with timing controls and quick batch fixes."
+    },
+    "video_summarizer": {
+      "title": "Video summarizer",
+      "desc": "Generate concise summaries and key takeaways from any video."
+    },
+    "storyboard_generator": {
+      "title": "Storyboard generator",
+      "desc": "Convert videos into scene-by-scene storyboard notes and prompts."
+    },
+    "image_translation": {
+      "title": "Image translation",
+      "desc": "Translate text in images and rebuild the layout cleanly."
+    },
+    "manga_translation": {
+      "title": "Manga translation",
+      "desc": "Translate manga panels while keeping bubbles and typesetting readable."
+    },
+    "voice_clone": {
+      "title": "Voice clone",
+      "desc": "Clone a voice from a short sample for consistent narration."
+    },
+    "speech_translator": {
+      "title": "Speech translator",
+      "desc": "Translate speech to another language with natural delivery."
     },
     "coming_soon": "Coming Soon",
     "create": "Create"

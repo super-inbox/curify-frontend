@@ -6,6 +6,7 @@ import { useAtom } from "jotai";
 import { modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import { buildToolsHub } from "@/lib/tools-hub";
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
@@ -25,41 +26,7 @@ export default function ToolsClient() {
   );
 
   // Tools hub cards
-  const tools = [
-    {
-      id: "video-dubbing",
-      title: t("tools.video_dubbing.title"),
-      desc: t("tools.video_dubbing.desc"),
-      status: "create" as const,
-      onClick: () => openModal("translation"),
-    },
-    {
-      id: "subtitle-captioner",
-      title: (
-        <span>
-          {t("tools.subtitle_captioner.title")}{" "}
-          <span className="text-red-600 font-bold">{t("tools.free_badge")}</span>
-        </span>
-      ),
-      desc: t("tools.subtitle_captioner.desc"),
-      status: "create" as const,
-      onClick: () => openModal("subtitles"),
-    },
-    {
-      id: "lip-syncing",
-      title: t("tools.lip_syncing.title"),
-      desc: t("tools.lip_syncing.desc"),
-      status: "coming_soon" as const,
-      onClick: () => alert("Launch lip sync flow"),
-    },
-    {
-      id: "style-transfer",
-      title: t("tools.style_transfer.title"),
-      desc: t("tools.style_transfer.desc"),
-      status: "coming_soon" as const,
-      onClick: () => alert("Style transfer feature coming soon"),
-    },
-  ];
+  const toolGroups = buildToolsHub({ t, openModal });
 
   // Language switching demo (local demo-only)
   const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
@@ -108,41 +75,56 @@ export default function ToolsClient() {
     <>
       <BgParticle />
 
-      <div className="relative flex flex-col items-center mt-28 lg:mt-36 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
-        {/* H1 for SEO */}
+      <div className="relative flex flex-col items-center mt-16 lg:mt-20 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+                {/* H1 for SEO */}
         <h1 className="sr-only">{t("tools.meta.title")}</h1>
-
-        {/* Tools grid */}
+        {/* Tools (grouped) */}
         <section className="w-full mb-14">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {tools.map((tool) => (
-              <div
-                key={tool.id}
-                className="rounded-2xl shadow-lg p-5 flex flex-col justify-between bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] border border-gray-100"
-              >
-                <div className="flex-grow">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{tool.title}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{tool.desc}</p>
+          <div className="space-y-10">
+            {toolGroups.map((group) => (
+              <div key={group.groupId} className="w-full">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl sm:text-2xl font-bold text-[var(--c1)]">
+                    {group.title}
+                  </h2>
                 </div>
 
-                {tool.status === "create" ? (
-                  <button
-                    onClick={tool.onClick}
-                    className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer"
-                    type="button"
-                  >
-                    {t("tools.create")}
-                  </button>
-                ) : (
-                  <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
-                    {t("tools.coming_soon")}
-                  </p>
-                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  {group.items.map((tool) => (
+                    <div
+                      key={tool.id}
+                      className="rounded-2xl shadow-lg p-5 flex flex-col justify-between bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] border border-gray-100"
+                    >
+                      <div className="flex-grow">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">
+                          {tool.title}
+                        </h3>
+
+                        <p className="text-sm text-gray-600 mb-4">
+                          {"desc" in tool ? tool.desc : ""}
+                        </p>
+                      </div>
+
+                      {tool.status === "create" ? (
+                        <button
+                          onClick={tool.onClick}
+                          className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer"
+                          type="button"
+                        >
+                          {t("tools.create")}
+                        </button>
+                      ) : (
+                        <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
+                          {t("tools.coming_soon")}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
         </section>
-
         {/* Language switching demo */}
         <section className="w-full mt-2 mb-20">
           <div className="text-center mb-8">
