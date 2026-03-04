@@ -1,0 +1,156 @@
+{
+  "pipeline_metadata": {
+    "timestamp": "2026-02-24T20:38:08.066738",
+    "scores_file": "/Users/ronel/Downloads/dev/templates/curify/curify-frontend/app/[locale]/(app)/hot-topics/output_scores.json",
+    "curated_output": "/Users/ronel/Downloads/dev/templates/curify/curify-frontend/app/[locale]/(app)/hot-topics/curated_inspiration.json",
+    "api_url": "https://curify-video-translate-fhhrczckd5hef8ft.westus2-01.azurewebsites.net/inspiration/generate"
+  },
+  "topic_selection": {
+    "total_selected": 12,
+    "categories_covered": 7,
+    "sources_represented": 12,
+    "category_distribution": {
+      "Politics": 1,
+      "AI": 7,
+      "Tech Product": 1,
+      "General": 1,
+      "Science": 1,
+      "Climate": 1,
+      "Olympics": 1
+    },
+    "average_composite_score": 4.545833333333333,
+    "score_range": {
+      "min": 4.38,
+      "max": 4.71
+    }
+  },
+  "api_performance": {
+    "topics_sent": 12,
+    "successful_sends": 12,
+    "failed_sends": 0,
+    "success_rate": 1.0,
+    "total_cards_generated": 12,
+    "avg_cards_per_topic": 1.0
+  },
+  "generated_content": {
+    "cards": [
+      {
+        "source_topic": "Memory Black Market",
+        "source_url": "https://writingprompts.com/memory-black-market/",
+        "card_id": "a0111237-f056-4e85-819f-79ca18a7546b",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/a0111237-f056-4e85-819f-79ca18a7546b-prev.jpg"
+      },
+      {
+        "source_topic": "My helicopter went into freefall – inside an active volcano",
+        "source_url": "https://www.theguardian.com/lifeandstyle/2026/feb/10/my-helicopter-went-into-freefall-inside-an-active-volcano",
+        "card_id": "4d509eb8-0397-427f-ba48-5dedfb1f9f5f",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/4d509eb8-0397-427f-ba48-5dedfb1f9f5f-prev.jpg"
+      },
+      {
+        "source_topic": "A Version of ‘You’ From a Parallel Universe Could Be Manipulating Your Life, This Wild Theory Suggests",
+        "source_url": "https://www.popularmechanics.com/science/a70269027/quantum-multiverse-has-another-you/",
+        "card_id": "5e4a89fe-a311-45d7-9cf7-7456ec7a3b6e",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/5e4a89fe-a311-45d7-9cf7-7456ec7a3b6e-prev.jpg"
+      },
+      {
+        "source_topic": "Holy prosociality! Batman makes people stand for pregnant passengers",
+        "source_url": "https://www.newscientist.com/article/mg26935812-100-holy-prosociality-batman-makes-people-stand-for-pregnant-passengers/?utm_campaign=RSS%7CNSNS&utm_source=NSNS&utm_medium=RSS&utm_content=home",
+        "card_id": "7bca8655-407e-4899-aec2-7e031a64bdc0",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/7bca8655-407e-4899-aec2-7e031a64bdc0-prev.jpg"
+      },
+      {
+        "source_topic": "Can the clean-energy revolution save us from climate catastrophe?",
+        "source_url": "https://www.nature.com/articles/d41586-026-00332-2",
+        "card_id": "6d2ebc4f-c043-48f3-a467-c9e28e7002e6",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/6d2ebc4f-c043-48f3-a467-c9e28e7002e6-prev.jpg"
+      },
+      {
+        "source_topic": "If You Build It, Their Monopoly Dies",
+        "source_url": "https://filmthreat.com/features/ai-gatekeepers-noble-lie-yudkowsky-soares-if-anyone-builds-it-everyone-dies/?utm_source=rss&utm_medium=rss&utm_campaign=ai-gatekeepers-noble-lie-yudkowsky-soares-if-anyone-builds-it-everyone-dies",
+        "card_id": "31f57e70-4f4d-4b8e-8aee-a5531da84f87",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/31f57e70-4f4d-4b8e-8aee-a5531da84f87-prev.jpg"
+      },
+      {
+        "source_topic": "Into the Poohniverse: Peter Pan’s Neverland Nightmare",
+        "source_url": "https://www.filminquiry.com/into-the-poohniverse-peter-pans/",
+        "card_id": "3664093c-1f50-4008-ba76-50835abe9321",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/3664093c-1f50-4008-ba76-50835abe9321-prev.jpg"
+      },
+      {
+        "source_topic": "Raayan Trailer: A Battle Between a Wolf and A Lion Unfolds In This Dhanush Film",
+        "source_url": "https://www.filmcompanion.in/trailer-talk/tamil-trailer/raayan-trailer-a-battle-between-a-wolf-and-a-lion-unfolds-in-this-dhanush-film",
+        "card_id": "4a082725-19c4-4226-bcef-18c4fdc92ed6",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/4a082725-19c4-4226-bcef-18c4fdc92ed6-prev.jpg"
+      },
+      {
+        "source_topic": "Olympic Ice Dancer Gabriella Papadakis on the Relationship That Ended Her Career",
+        "source_url": "https://www.vogue.com/article/gabriella-papadakis-on-the-relationship-that-ended-her-career",
+        "card_id": "d0bd289e-e82c-44a5-be1f-dc581491e7ce",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/d0bd289e-e82c-44a5-be1f-dc581491e7ce-prev.jpg"
+      },
+      {
+        "source_topic": "From Cell to Screenplay: Finding My Voice Behind Bars",
+        "source_url": "https://www.filmcomment.com/blog/from-cell-to-screenplay-finding-my-voice-behind-bars-kwaneta-harris/",
+        "card_id": "57674fb0-f49b-422a-b62c-9d0d86f6b6cc",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/57674fb0-f49b-422a-b62c-9d0d86f6b6cc-prev.jpg"
+      },
+      {
+        "source_topic": "Li Wang captures life, love and longing in colour",
+        "source_url": "https://www.creativeboom.com/inspiration/li-wang-captures-life-love-and-longing-in-colour/",
+        "card_id": "fd202cd3-6029-4361-9688-613f2ff9c249",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/fd202cd3-6029-4361-9688-613f2ff9c249-prev.jpg"
+      },
+      {
+        "source_topic": "‘We’ll Find the Remnants of Ancient Alien Civilizations’: Read Musk’s Gibberish Rant from His xAI All-Hands Meeting",
+        "source_url": "https://gizmodo.com/well-find-the-remnants-of-ancient-alien-civilizations-read-musks-gibberish-rant-from-his-xai-all-hands-meeting-2000720876",
+        "card_id": "28db8e03-9dff-4248-a2eb-dd02d8cfd3c9",
+        "card_title": "工位美食：打工人的职场能量派对！",
+        "prompt": "画面：暖黄灯光下，杂乱堆满文件的工位上，摆放着精致的美食盒子，盒子里飘出诱人香气，旁边是同事们凑在一起开心分享美食的笑脸，办公的严肃氛围与美食的温馨形成反差，光影柔和，色彩鲜艳",
+        "output": "形式：场景切换+美食特写\n脚本钩子：忙碌工作中疲惫的打工人画面→突然出现的工位美食盛宴，氛围瞬间欢快起来\n\n完整执行方案\n角度类型：生活记录+文化科普类\n脚本梗概：镜头1（中景）：办公室里大家埋头工作，表情疲惫；镜头2（特写）：一份份精美的工位美食被端上工位；镜头3（中景）：同事们围在一起，开心地分享美食，交流互动；镜头4（旁白）：介绍工位美食带来的能量补给和社交好处，以及社交媒体上工位美食轻创业的案例；结尾镜头：大家带着满足的笑容继续投入工作，字幕：工位美食，让职场更有温度",
+        "preview_image": "/images/insp_preview/28db8e03-9dff-4248-a2eb-dd02d8cfd3c9-prev.jpg"
+      }
+    ],
+    "content_types": [
+      "Unknown"
+    ],
+    "languages": [
+      "Unknown"
+    ]
+  },
+  "recommendations": [
+    "Excellent API performance - all topics processed successfully"
+  ]
+}
