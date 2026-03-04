@@ -122,7 +122,60 @@
       "v3": "🎶 媒体和娱乐公司在不同语言中本地化内容",
       "v4": "📚 漫画出版商和粉丝翻译者自动化翻译和排版"
     },
-    "free_badge": "免费"
+    "free_badge": "免费",
+    "groups": {
+      "video": "视频工具",
+      "image": "图像工具",
+      "audio": "音频工具"
+    },
+    "video_transcript_generator": {
+      "title": "视频转录生成器",
+      "desc": "将视频转换为可编辑和重用的准确转录文本。"
+    },
+    "youtube_subtitle_downloader": {
+      "title": "YouTube 字幕下载器",
+      "desc": "一键下载 YouTube 上可用的字幕。"
+    },
+    "video_subtitle_extractor": {
+      "title": "视频字幕提取器",
+      "desc": "将嵌入的字幕提取为可编辑的 SRT/VTT 文件。"
+    },
+    "translate_subtitles": {
+      "title": "翻译字幕",
+      "desc": "在保留时间和结构的同时翻译 SRT/VTT。"
+    },
+    "subtitle_converter": {
+      "title": "字幕转换器",
+      "desc": "在 SRT、VTT、ASS 等之间转换而不破坏时间戳。"
+    },
+    "subtitle_editor": {
+      "title": "字幕编辑器",
+      "desc": "使用时间控制和快速批量修复编辑字幕。"
+    },
+    "video_summarizer": {
+      "title": "视频摘要生成器",
+      "desc": "从任何视频生成简洁的摘要和关键要点。"
+    },
+    "storyboard_generator": {
+      "title": "分镜头生成器",
+      "desc": "将视频转换为逐场景的分镜头笔记和提示。"
+    },
+    "image_translation": {
+      "title": "图像翻译",
+      "desc": "翻译图像中的文本并干净地重建布局。"
+    },
+    "manga_translation": {
+      "title": "漫画翻译",
+      "desc": "翻译漫画面板，同时保持气泡和排版的可读性。"
+    },
+    "voice_clone": {
+      "title": "声音克隆",
+      "desc": "从短样本中克隆声音以实现一致的叙述。"
+    },
+    "speech_translator": {
+      "title": "语音翻译器",
+      "desc": "将语音翻译成另一种语言，提供自然的表达。"
+    }
   },
   "bilingual": {
     "metadata": {
@@ -130,7 +183,7 @@
       "description": "使用 Curify 的免费人工智能工具为您的视频创建双语字幕。非常适合 YouTube、TikTok、教育和全球创作者。"
     },
     "title": "轻松生成双语字幕",
-    "intro": "使用 Curify 的 AI 字幕引擎，自动为视频生成双语字幕。适合创作者、教育机构和全球企业。",
+    "description": "使用 Curify 的 AI 字幕引擎，自动为视频生成双语字幕。适合创作者、教育机构和全球企业。",
     "example": "示例：黄仁勋讲解 AI 战略 — 自动生成中英双语字幕。",
     "cta": "免费试用",
     "why": {
@@ -232,7 +285,8 @@
         "p1": "当观众习惯阅读时，字幕是理想选择，当您想保留原始音频时，或者当您需要最快的发布工作流程时，配音是理想选择，当您想要原生的观看体验、更高的参与度和更少依赖阅读时。",
         "p2": "许多团队同时使用两者：字幕用于速度和可及性，配音用于表现最佳的内容和关键市场。Curify支持这两种工作流程，以便您可以为每个视频选择合适的格式。"
       }
-    }
+    },
+    "example": "示例：具有情感保留和跨语言同步的AI配音视频。"
   },
   "about": {
     "metadata": {
@@ -249,5 +303,66 @@
   "nanoGallery": {
     "title": "Nano Banana 提示库",
     "description": "发现并复制最有效的 <strong>nano banana 提示</strong>。我们精心策划的集合帮助您使用优化模板和社区共享的提示工程生成高质量的 AI 视觉效果。"
+  },
+  "hub": {
+    "groups": {
+      "video": "视频工具",
+      "image": "图像工具",
+      "audio": "音频工具"
+    },
+    "tools": {
+      "meta": {
+        "title": "Curify 工具",
+        "description": "探索 Curify Studio 的视频配音、字幕和 AI 驱动的内容工作流程工具。"
+      },
+      "video_transcript_generator": {
+        "title": "视频转录生成器",
+        "desc": "将视频转换为可编辑和重用的准确转录文本。"
+      },
+      "youtube_subtitle_downloader": {
+        "title": "YouTube 字幕下载器",
+        "desc": "一键下载 YouTube 上可用的字幕。"
+      },
+      "video_subtitle_extractor": {
+        "title": "视频字幕提取器",
+        "desc": "提取嵌入的字幕为可编辑的 SRT/VTT 文件。"
+      },
+      "translate_subtitles": {
+        "title": "翻译字幕",
+        "desc": "翻译 SRT/VTT，同时保留时间和结构。"
+      },
+      "subtitle_converter": {
+        "title": "字幕转换器",
+        "desc": "在 SRT、VTT、ASS 等格式之间转换，而不破坏时间戳。"
+      },
+      "subtitle_editor": {
+        "title": "字幕编辑器",
+        "desc": "使用时间控制和快速批量修复编辑字幕。"
+      },
+      "video_summarizer": {
+        "title": "视频摘要生成器",
+        "desc": "从任何视频生成简明的摘要和关键要点。"
+      },
+      "storyboard_generator": {
+        "title": "分镜生成器",
+        "desc": "将视频转换为逐场景的分镜笔记和提示。"
+      },
+      "image_translation": {
+        "title": "图像翻译",
+        "desc": "翻译图像中的文本，并干净地重建布局。"
+      },
+      "manga_translation": {
+        "title": "漫画翻译",
+        "desc": "翻译漫画面板，同时保持气泡和排版的可读性。"
+      },
+      "voice_clone": {
+        "title": "声音克隆",
+        "desc": "从短样本中克隆声音，以实现一致的叙述。"
+      },
+      "speech_translator": {
+        "title": "语音翻译器",
+        "desc": "将语音翻译成另一种语言，语调自然。"
+      }
+    }
   }
 }

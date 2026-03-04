@@ -122,7 +122,60 @@
       "v3": "🎶 여러 언어로 콘텐츠를 현지화하는 미디어 및 엔터테인먼트 회사",
       "v4": "📚 번역 및 조판을 자동화하는 만화 출판사 및 팬 번역가"
     },
-    "free_badge": "무료로"
+    "free_badge": "무료로",
+    "groups": {
+      "video": "비디오 도구",
+      "image": "이미지 도구",
+      "audio": "오디오 도구"
+    },
+    "video_transcript_generator": {
+      "title": "비디오 전사 생성기",
+      "desc": "비디오를 편집하고 재사용할 수 있는 정확한 전사로 변환합니다."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "YouTube 자막 다운로드 도구",
+      "desc": "한 번의 클릭으로 YouTube에서 사용 가능한 자막을 다운로드합니다."
+    },
+    "video_subtitle_extractor": {
+      "title": "비디오 자막 추출기",
+      "desc": "내장된 자막을 편집 가능한 SRT/VTT 파일로 추출합니다."
+    },
+    "translate_subtitles": {
+      "title": "자막 번역",
+      "desc": "타이밍과 구조를 유지하면서 SRT/VTT를 번역합니다."
+    },
+    "subtitle_converter": {
+      "title": "자막 변환기",
+      "desc": "타임스탬프를 손상시키지 않고 SRT, VTT, ASS 등 간에 변환합니다."
+    },
+    "subtitle_editor": {
+      "title": "자막 편집기",
+      "desc": "타이밍 제어 및 빠른 일괄 수정으로 자막을 편집합니다."
+    },
+    "video_summarizer": {
+      "title": "비디오 요약기",
+      "desc": "모든 비디오에서 간결한 요약 및 주요 내용을 생성합니다."
+    },
+    "storyboard_generator": {
+      "title": "스토리보드 생성기",
+      "desc": "비디오를 장면별 스토리보드 노트 및 프롬프트로 변환합니다."
+    },
+    "image_translation": {
+      "title": "이미지 번역",
+      "desc": "이미지의 텍스트를 번역하고 레이아웃을 깔끔하게 재구성합니다."
+    },
+    "manga_translation": {
+      "title": "망가 번역",
+      "desc": "버블과 타이포그래피를 읽기 쉽게 유지하면서 망가 패널을 번역합니다."
+    },
+    "voice_clone": {
+      "title": "음성 복제",
+      "desc": "짧은 샘플에서 음성을 복제하여 일관된 내레이션을 제공합니다."
+    },
+    "speech_translator": {
+      "title": "음성 번역기",
+      "desc": "자연스러운 전달로 다른 언어로 음성을 번역합니다."
+    }
   },
   "bilingual": {
     "metadata": {
@@ -130,7 +183,7 @@
       "description": "Curify의 무료 AI 기반 도구로 비디오에 대한 이중 언어 자막을 만드세요. YouTube, TikTok, 교육 및 글로벌 크리에이터에게 적합합니다."
     },
     "title": "쉬운 이중 언어 자막",
-    "intro": "Curify의 AI 자막 엔진을 사용하여 두 가지 언어로 자막을 자동으로 생성하세요. 크리에이터, 교육자 및 글로벌 기업에 이상적입니다.",
+    "description": "Curify의 AI 자막 엔진을 사용하여 두 가지 언어로 자막을 자동으로 생성하세요. 크리에이터, 교육자 및 글로벌 기업에 이상적입니다.",
     "example": "예: AI 전략을 설명하는 젠슨 황 — 영어 + 중국어 자막 자동 생성.",
     "cta": "무료로 사용해 보세요",
     "why": {
@@ -232,7 +285,8 @@
         "p1": "자막은 시청자가 읽는 데 편안할 때, 원래 오디오를 보존하고 싶을 때, 또는 가장 빠른 게시 워크플로우가 필요할 때 이상적입니다. 더빙은 원주율적인 시청 경험, 더 높은 참여도 및 읽기에 대한 의존도를 줄이고 싶을 때 이상적입니다.",
         "p2": "많은 팀이 둘 다 사용합니다: 속도와 접근성을 위한 자막, 성과가 높은 콘텐츠와 주요 시장을 위한 더빙. Curify는 두 가지 워크플로우를 모두 지원하므로 각 비디오에 적합한 형식을 선택할 수 있습니다."
       }
-    }
+    },
+    "example": "예: 감정 보존 및 언어 간 입술 동기화가 있는 AI 더빙 비디오."
   },
   "about": {
     "metadata": {
@@ -249,5 +303,66 @@
   "nanoGallery": {
     "title": "나노 바나나 프롬프트 갤러리",
     "description": "가장 효과적인 <strong>나노 바나나 프롬프트</strong>를 발견하고 복사하세요. 저희가 선별한 컬렉션은 최적화된 템플릿과 커뮤니티 공유 프롬프트 엔지니어링을 사용하여 고품질 AI 비주얼을 생성하는 데 도움을 줍니다."
+  },
+  "hub": {
+    "groups": {
+      "video": "비디오 도구",
+      "image": "이미지 도구",
+      "audio": "오디오 도구"
+    },
+    "tools": {
+      "meta": {
+        "title": "Curify 도구",
+        "description": "비디오 더빙, 자막 및 AI 기반 콘텐츠 워크플로를 위한 Curify Studio 도구를 탐색하세요."
+      },
+      "video_transcript_generator": {
+        "title": "비디오 전사 생성기",
+        "desc": "비디오를 편집하고 재사용할 수 있는 정확한 전사로 변환하세요."
+      },
+      "youtube_subtitle_downloader": {
+        "title": "YouTube 자막 다운로드기",
+        "desc": "한 번의 클릭으로 YouTube에서 사용 가능한 자막을 다운로드하세요."
+      },
+      "video_subtitle_extractor": {
+        "title": "비디오 자막 추출기",
+        "desc": "내장된 자막을 편집 가능한 SRT/VTT 파일로 추출하세요."
+      },
+      "translate_subtitles": {
+        "title": "자막 번역",
+        "desc": "타이밍과 구조를 유지하면서 SRT/VTT를 번역하세요."
+      },
+      "subtitle_converter": {
+        "title": "자막 변환기",
+        "desc": "타임스탬프를 깨지지 않게 SRT, VTT, ASS 등으로 변환하세요."
+      },
+      "subtitle_editor": {
+        "title": "자막 편집기",
+        "desc": "타이밍 제어 및 빠른 일괄 수정으로 자막을 편집하세요."
+      },
+      "video_summarizer": {
+        "title": "비디오 요약기",
+        "desc": "모든 비디오에서 간결한 요약과 주요 내용을 생성하세요."
+      },
+      "storyboard_generator": {
+        "title": "스토리보드 생성기",
+        "desc": "비디오를 장면별 스토리보드 노트 및 프롬프트로 변환하세요."
+      },
+      "image_translation": {
+        "title": "이미지 번역",
+        "desc": "이미지의 텍스트를 번역하고 레이아웃을 깔끔하게 재구성하세요."
+      },
+      "manga_translation": {
+        "title": "망가 번역",
+        "desc": "버블과 조판을 읽기 쉽게 유지하면서 망가 패널을 번역하세요."
+      },
+      "voice_clone": {
+        "title": "음성 복제",
+        "desc": "짧은 샘플에서 음성을 복제하여 일관된 내레이션을 제공합니다."
+      },
+      "speech_translator": {
+        "title": "음성 번역기",
+        "desc": "자연스러운 전달로 다른 언어로 음성을 번역하세요."
+      }
+    }
   }
 }

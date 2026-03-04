@@ -122,7 +122,60 @@
       "v3": "🎶 Empresas de medios y entretenimiento localizando contenido en diferentes idiomas",
       "v4": "📚 Editores de manga y traductores aficionados automatizando la traducción y la composición"
     },
-    "free_badge": "GRATIS"
+    "free_badge": "GRATIS",
+    "groups": {
+      "video": "Herramientas de Video",
+      "image": "Herramientas de Imagen",
+      "audio": "Herramientas de Audio"
+    },
+    "video_transcript_generator": {
+      "title": "Generador de transcripciones de video",
+      "desc": "Convierte video en transcripciones precisas que puedes editar y reutilizar."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "Descargador de subtítulos de YouTube",
+      "desc": "Descarga subtítulos disponibles de YouTube con un clic."
+    },
+    "video_subtitle_extractor": {
+      "title": "Extractor de subtítulos de video",
+      "desc": "Extrae subtítulos incrustados en archivos SRT/VTT editables."
+    },
+    "translate_subtitles": {
+      "title": "Traducir subtítulos",
+      "desc": "Traduce SRT/VTT mientras preservas el tiempo y la estructura."
+    },
+    "subtitle_converter": {
+      "title": "Convertidor de subtítulos",
+      "desc": "Convierte entre SRT, VTT, ASS y más sin romper las marcas de tiempo."
+    },
+    "subtitle_editor": {
+      "title": "Editor de subtítulos",
+      "desc": "Edita subtítulos con controles de tiempo y correcciones rápidas por lotes."
+    },
+    "video_summarizer": {
+      "title": "Resumidor de video",
+      "desc": "Genera resúmenes concisos y puntos clave de cualquier video."
+    },
+    "storyboard_generator": {
+      "title": "Generador de guiones gráficos",
+      "desc": "Convierte videos en notas y sugerencias de guiones gráficos escena por escena."
+    },
+    "image_translation": {
+      "title": "Traducción de imágenes",
+      "desc": "Traduce texto en imágenes y reconstruye el diseño de manera limpia."
+    },
+    "manga_translation": {
+      "title": "Traducción de manga",
+      "desc": "Traduce paneles de manga manteniendo burbujas y tipografía legibles."
+    },
+    "voice_clone": {
+      "title": "Clon de voz",
+      "desc": "Clona una voz a partir de una muestra corta para una narración consistente."
+    },
+    "speech_translator": {
+      "title": "Traductor de voz",
+      "desc": "Traduce el habla a otro idioma con una entrega natural."
+    }
   },
   "bilingual": {
     "metadata": {
@@ -130,7 +183,7 @@
       "description": "Crea subtítulos bilingües para tus videos con la herramienta gratuita impulsada por IA de Curify. Perfecto para YouTube, TikTok, educación y creadores globales."
     },
     "title": "Subtítulos bilingües fáciles",
-    "intro": "Genera automáticamente subtítulos en dos idiomas utilizando el motor de subtítulos de IA de Curify. Ideal para creadores, educadores y empresas globales.",
+    "description": "Genera automáticamente subtítulos en dos idiomas utilizando el motor de subtítulos de IA de Curify. Ideal para creadores, educadores y empresas globales.",
     "example": "Ejemplo: Jensen Huang explicando la estrategia de IA — subtítulos en inglés + chino generados automáticamente.",
     "cta": "Pruébalo gratis",
     "why": {
@@ -232,7 +285,8 @@
         "p1": "Los subtítulos son ideales cuando los espectadores se sienten cómodos leyendo, cuando deseas preservar el audio original o cuando necesitas el flujo de trabajo de publicación más rápido. El doblaje es ideal cuando deseas una experiencia de visualización nativa, mayor compromiso y menos dependencia de la lectura.",
         "p2": "Muchos equipos utilizan ambos: subtítulos para velocidad y accesibilidad, doblaje para contenido de alto rendimiento y mercados clave. Curify admite ambos flujos de trabajo para que puedas elegir el formato adecuado para cada video."
       }
-    }
+    },
+    "example": "Ejemplo: video doblado por IA con preservación de emociones y sincronización labial en diferentes idiomas."
   },
   "about": {
     "metadata": {
@@ -249,5 +303,66 @@
   "nanoGallery": {
     "title": "Galería de Prompts Nano Banana",
     "description": "Descubre y copia los <strong>prompts nano banana</strong> más efectivos. Nuestra colección curada te ayuda a generar visuales de IA de alta calidad utilizando plantillas optimizadas y técnicas de prompts compartidas por la comunidad."
+  },
+  "hub": {
+    "groups": {
+      "video": "Herramientas de Video",
+      "image": "Herramientas de Imagen",
+      "audio": "Herramientas de Audio"
+    },
+    "tools": {
+      "meta": {
+        "title": "Herramientas de Curify",
+        "description": "Explora las herramientas de Curify Studio para doblaje de video, subtítulos y flujos de trabajo de contenido impulsados por IA."
+      },
+      "video_transcript_generator": {
+        "title": "Generador de transcripciones de video",
+        "desc": "Convierte video en transcripciones precisas que puedes editar y reutilizar."
+      },
+      "youtube_subtitle_downloader": {
+        "title": "Descargador de subtítulos de YouTube",
+        "desc": "Descarga subtítulos disponibles de YouTube con un clic."
+      },
+      "video_subtitle_extractor": {
+        "title": "Extractor de subtítulos de video",
+        "desc": "Extrae subtítulos incrustados en archivos SRT/VTT editables."
+      },
+      "translate_subtitles": {
+        "title": "Traducir subtítulos",
+        "desc": "Traduce SRT/VTT mientras preservas el tiempo y la estructura."
+      },
+      "subtitle_converter": {
+        "title": "Convertidor de subtítulos",
+        "desc": "Convierte entre SRT, VTT, ASS y más sin romper las marcas de tiempo."
+      },
+      "subtitle_editor": {
+        "title": "Editor de subtítulos",
+        "desc": "Edita subtítulos con controles de tiempo y correcciones rápidas por lotes."
+      },
+      "video_summarizer": {
+        "title": "Resumidor de video",
+        "desc": "Genera resúmenes concisos y puntos clave de cualquier video."
+      },
+      "storyboard_generator": {
+        "title": "Generador de guiones gráficos",
+        "desc": "Convierte videos en notas y sugerencias de guiones gráficos escena por escena."
+      },
+      "image_translation": {
+        "title": "Traducción de imágenes",
+        "desc": "Traduce texto en imágenes y reconstruye el diseño de manera limpia."
+      },
+      "manga_translation": {
+        "title": "Traducción de manga",
+        "desc": "Traduce paneles de manga manteniendo burbujas y tipografía legibles."
+      },
+      "voice_clone": {
+        "title": "Clon de voz",
+        "desc": "Clona una voz a partir de una muestra corta para una narración consistente."
+      },
+      "speech_translator": {
+        "title": "Traductor de voz",
+        "desc": "Traduce el habla a otro idioma con una entrega natural."
+      }
+    }
   }
 }
