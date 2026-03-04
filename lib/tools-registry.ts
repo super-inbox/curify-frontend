@@ -2,36 +2,51 @@
 import type { ToolGroupId, ToolMode, ToolStatus } from "@/lib/tools-hub";
 
 export type ToolAction =
-  | { type: "modal"; mode: ToolMode } // opens your existing Create modal
-  | { type: "page" };                 // navigates to /tools/[slug] (future)
+  | { type: "modal"; mode: ToolMode }
+  | { type: "page" }
+  | { type: "none" };
+
+  export type ToolDemo =
+  | {
+      type: "language_switch";
+      defaultLang?: string;
+      languages: Record<string, { flag: string; video: string; label: string }>;
+    }
+  | {
+      type: "single_video";
+      src: string;
+      poster?: string;
+    };
 
 export type ToolDef = {
-  // stable identifiers
-  id: string;        // internal id used in UI lists
-  slug: string;      // SEO slug (recommended to match id, but can differ)
-
+  id: string;
+  slug: string;
   groupId: ToolGroupId;
-
-  // availability + behavior
   status: ToolStatus;
-  action?: ToolAction; // only meaningful when status === "create" (or when you want card click)
 
-  // i18n keys (all under tools.* as requested)
+  // ✅ required: generic tool SEO page namespace
+  // This MUST exist under messages/en/home.json (per your requirement)
+  namespace: string;
+
+  action?: ToolAction;
+
+  // Hub card keys (existing)
   i18n: {
     titleKey: string;
     descKey: string;
-    // optional: some tools have badges (free badge)
     showFreeBadge?: boolean;
   };
 
-  // optional SEO keys for unified /tools/[slug] pages later
+  // Optional tool-level SEO keys (NOT required if you use namespace.metadata)
+  // You can keep them for future, but generic page will use namespace.metadata.
   seo?: {
     titleKey: string;
     descriptionKey: string;
   };
+  demo?: ToolDemo;
+
 };
 
-// ---- helpers for building keys consistently ----
 const toolKeys = (k: string) => ({
   titleKey: `tools.${k}.title`,
   descKey: `tools.${k}.desc`,
@@ -52,24 +67,45 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "video-dubbing",
     groupId: "video",
     status: "create",
+    // ✅ you probably want a separate namespace, not bilingual
+    namespace: "videoDubbing",
     action: { type: "modal", mode: "translation" },
     i18n: toolKeys("video_dubbing"),
     seo: seoKeys("video_dubbing"),
+    demo: {
+      type: "language_switch",
+      defaultLang: "en",
+      languages: {
+        en: { flag: "🇺🇸", video: "/video/training_en.mp4", label: "EN" },
+        zh: { flag: "🇨🇳", video: "/video/training_zh.mp4", label: "ZH" },
+        es: { flag: "🇪🇸", video: "/video/training_es.mp4", label: "ES" },
+      },
+    },
   },
   {
     id: "subtitle-captioner",
-    slug: "bilingual-subtitles", // keep your existing slug if you want
+    slug: "bilingual-subtitles",
     groupId: "video",
     status: "create",
+    namespace: "bilingual",
     action: { type: "modal", mode: "subtitles" },
     i18n: { ...toolKeys("subtitle_captioner"), showFreeBadge: true },
     seo: seoKeys("subtitle_captioner"),
+    demo: {
+      type: "single_video",
+      src: "/video/demo_bilingual_subtitles.mp4",
+      poster: "/thumbnails/jensen_ai_strategy.jpg",
+    },
   },
+
+  // 🚧 coming soon (still appear in hub; detail page only if namespace exists)
   {
     id: "video-transcript-generator",
     slug: "video-transcript-generator",
     groupId: "video",
     status: "coming_soon",
+    namespace: "videoTranscriptGenerator",
+    action: { type: "none" },
     i18n: toolKeys("video_transcript_generator"),
     seo: seoKeys("video_transcript_generator"),
   },
@@ -78,6 +114,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "youtube-subtitle-downloader",
     groupId: "video",
     status: "coming_soon",
+    namespace: "youtubeSubtitleDownloader",
+    action: { type: "none" },
     i18n: toolKeys("youtube_subtitle_downloader"),
     seo: seoKeys("youtube_subtitle_downloader"),
   },
@@ -86,6 +124,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "video-subtitle-extractor",
     groupId: "video",
     status: "coming_soon",
+    namespace: "videoSubtitleExtractor",
+    action: { type: "none" },
     i18n: toolKeys("video_subtitle_extractor"),
     seo: seoKeys("video_subtitle_extractor"),
   },
@@ -94,6 +134,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "translate-subtitles",
     groupId: "video",
     status: "coming_soon",
+    namespace: "translateSubtitles",
+    action: { type: "none" },
     i18n: toolKeys("translate_subtitles"),
     seo: seoKeys("translate_subtitles"),
   },
@@ -102,6 +144,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "subtitle-converter",
     groupId: "video",
     status: "coming_soon",
+    namespace: "subtitleConverter",
+    action: { type: "none" },
     i18n: toolKeys("subtitle_converter"),
     seo: seoKeys("subtitle_converter"),
   },
@@ -110,6 +154,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "subtitle-editor",
     groupId: "video",
     status: "coming_soon",
+    namespace: "subtitleEditor",
+    action: { type: "none" },
     i18n: toolKeys("subtitle_editor"),
     seo: seoKeys("subtitle_editor"),
   },
@@ -118,6 +164,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "video-summarizer",
     groupId: "video",
     status: "coming_soon",
+    namespace: "videoSummarizer",
+    action: { type: "none" },
     i18n: toolKeys("video_summarizer"),
     seo: seoKeys("video_summarizer"),
   },
@@ -126,6 +174,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "storyboard-generator",
     groupId: "video",
     status: "coming_soon",
+    namespace: "storyboardGenerator",
+    action: { type: "none" },
     i18n: toolKeys("storyboard_generator"),
     seo: seoKeys("storyboard_generator"),
   },
@@ -138,6 +188,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "image-translation",
     groupId: "image",
     status: "coming_soon",
+    namespace: "imageTranslation",
+    action: { type: "none" },
     i18n: toolKeys("image_translation"),
     seo: seoKeys("image_translation"),
   },
@@ -146,6 +198,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "manga-translation",
     groupId: "image",
     status: "coming_soon",
+    namespace: "mangaTranslation",
+    action: { type: "none" },
     i18n: toolKeys("manga_translation"),
     seo: seoKeys("manga_translation"),
   },
@@ -154,6 +208,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "style-transfer",
     groupId: "image",
     status: "coming_soon",
+    namespace: "styleTransfer",
+    action: { type: "none" },
     i18n: toolKeys("style_transfer"),
     seo: seoKeys("style_transfer"),
   },
@@ -166,6 +222,8 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "voice-clone",
     groupId: "audio",
     status: "coming_soon",
+    namespace: "voiceClone",
+    action: { type: "none" },
     i18n: toolKeys("voice_clone"),
     seo: seoKeys("voice_clone"),
   },
@@ -174,26 +232,29 @@ export const TOOL_REGISTRY: ToolDef[] = [
     slug: "speech-translator",
     groupId: "audio",
     status: "coming_soon",
+    namespace: "speechTranslator",
+    action: { type: "none" },
     i18n: toolKeys("speech_translator"),
     seo: seoKeys("speech_translator"),
   },
 ];
 
-// ---- utility fns ----
-export function getToolBySlug(slug: string): ToolDef | undefined {
+export function getToolBySlug(slug: string) {
   return TOOL_REGISTRY.find((t) => t.slug === slug);
 }
 
-export function allToolSlugs(): string[] {
-  return TOOL_REGISTRY.map((t) => t.slug);
-}
-
+// ✅ NEW: group tools for tools-hub.tsx
 export function groupTools(): Record<ToolGroupId, ToolDef[]> {
   return TOOL_REGISTRY.reduce(
-    (acc, t) => {
-      acc[t.groupId].push(t);
+    (acc, tool) => {
+      acc[tool.groupId].push(tool);
       return acc;
     },
     { video: [], image: [], audio: [] } as Record<ToolGroupId, ToolDef[]>
   );
+}
+
+// (optional) sometimes handy
+export function getToolById(id: string) {
+  return TOOL_REGISTRY.find((t) => t.id === id);
 }

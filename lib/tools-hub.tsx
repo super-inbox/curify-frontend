@@ -11,7 +11,7 @@ export type ToolItem = {
   desc: ReactNode;
   status: ToolStatus;
   onClick?: () => void;
-  href?: string; // optional for future /tools/[slug]
+  href?: string;
 };
 
 export type ToolGroupId = "video" | "image" | "audio";
@@ -25,10 +25,9 @@ export type ToolGroup = {
 export function buildToolsHub(params: {
   t: (key: string, values?: Record<string, any>) => any;
   openModal: (mode: ToolMode) => void;
-  locale?: string; // optional if you want to build hrefs later
+  locale?: string;
 }): ToolGroup[] {
   const { t, openModal, locale } = params;
-
   const grouped = groupTools();
 
   const toItem = (tool: (typeof grouped)["video"][number]): ToolItem => {
@@ -43,14 +42,18 @@ export function buildToolsHub(params: {
       t(tool.i18n.titleKey)
     );
 
-    const href = locale ? `/${locale}/tools/${tool.slug}` : undefined;
+    const href = locale ? `/tools/${tool.slug}` : undefined;
 
     return {
       id: tool.id,
       title: titleNode,
       desc: t(tool.i18n.descKey),
       status: tool.status,
-      href: tool.action?.type === "page" ? href : undefined,
+
+      // ✅ NEW: card should navigate when NOT coming soon
+      href: tool.status !== "coming_soon" ? href : undefined,
+
+      // Keep modal behavior for live tools
       onClick:
         tool.status === "create" && tool.action?.type === "modal"
           ? () => openModal(tool.action!.mode)
@@ -59,20 +62,8 @@ export function buildToolsHub(params: {
   };
 
   return [
-    {
-      groupId: "video",
-      title: t("tools.groups.video"),
-      items: grouped.video.map(toItem),
-    },
-    {
-      groupId: "image",
-      title: t("tools.groups.image"),
-      items: grouped.image.map(toItem),
-    },
-    {
-      groupId: "audio",
-      title: t("tools.groups.audio"),
-      items: grouped.audio.map(toItem),
-    },
+    { groupId: "video", title: t("tools.groups.video"), items: grouped.video.map(toItem) },
+    { groupId: "image", title: t("tools.groups.image"), items: grouped.image.map(toItem) },
+    { groupId: "audio", title: t("tools.groups.audio"), items: grouped.audio.map(toItem) },
   ];
 }

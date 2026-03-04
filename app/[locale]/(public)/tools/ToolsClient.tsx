@@ -10,6 +10,7 @@ import { buildToolsHub } from "@/lib/tools-hub";
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
+import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVideoDemo";
 
 export default function ToolsClient() {
   const [, setModalState] = useAtom(modalAtom);
@@ -26,7 +27,7 @@ export default function ToolsClient() {
   );
 
   // Tools hub cards
-  const toolGroups = buildToolsHub({ t, openModal });
+  const toolGroups = buildToolsHub({ t, openModal, locale });
 
   // Language switching demo (local demo-only)
   const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
@@ -81,48 +82,75 @@ export default function ToolsClient() {
         {/* Tools (grouped) */}
         <section className="w-full mb-14">
           <div className="space-y-10">
-            {toolGroups.map((group) => (
-              <div key={group.groupId} className="w-full">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl sm:text-2xl font-bold text-[var(--c1)]">
-                    {group.title}
-                  </h2>
-                </div>
+          {toolGroups.map((group) => (
+  <div key={group.groupId} className="w-full">
+    <div className="flex items-center justify-between mb-4">
+      <h2 className="text-xl sm:text-2xl font-bold text-[var(--c1)]">
+        {group.title}
+      </h2>
+    </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  {group.items.map((tool) => (
-                    <div
-                      key={tool.id}
-                      className="rounded-2xl shadow-lg p-5 flex flex-col justify-between bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] border border-gray-100"
-                    >
-                      <div className="flex-grow">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">
-                          {tool.title}
-                        </h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {group.items.map((tool) => {
+        const Card = (
+          <div
+            className={`rounded-2xl shadow-lg p-5 flex flex-col justify-between 
+            bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] 
+            border border-gray-100 transition-shadow
+            ${tool.href ? "cursor-pointer hover:shadow-xl" : ""}`}
+          >
+            <div className="flex-grow">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                {tool.title}
+              </h3>
 
-                        <p className="text-sm text-gray-600 mb-4">
-                          {"desc" in tool ? tool.desc : ""}
-                        </p>
-                      </div>
+              <p className="text-sm text-gray-600 mb-4">
+                {"desc" in tool ? tool.desc : ""}
+              </p>
+            </div>
 
-                      {tool.status === "create" ? (
-                        <button
-                          onClick={tool.onClick}
-                          className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer"
-                          type="button"
-                        >
-                          {t("tools.create")}
-                        </button>
-                      ) : (
-                        <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
-                          {t("tools.coming_soon")}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+            {tool.status === "create" ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation(); // prevent link navigation
+                  tool.onClick?.();
+                }}
+                className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer"
+                type="button"
+              >
+                {t("tools.create")}
+              </button>
+            ) : (
+              <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
+                {t("tools.coming_soon")}
+              </p>
+            )}
+
+            
+          </div>
+        );
+
+        // clickable card if tool.href exists
+        if (tool.href) {
+          return (
+            <Link key={tool.id} href={tool.href} className="block hover:no-underline">
+              {Card}
+            </Link>
+          );
+        }
+
+        // otherwise plain card
+        return (
+          <div key={tool.id}>
+            {Card}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+))}
+            
           </div>
         </section>
         {/* Language switching demo */}
