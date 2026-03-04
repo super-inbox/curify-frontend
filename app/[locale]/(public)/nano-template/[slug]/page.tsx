@@ -218,6 +218,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       id: img!.id,
       title: img!.title || "",
       preview: img!.preview_image_url || img!.image_url,
+      templateId: img!.template_id,
     }));
 
   // SECTION 3: other templates

@@ -1,3 +1,6 @@
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoImages from "@/public/data/nano_inspiration.json";
+
 export type Locale = "zh" | "en";
 
 export type TemplateParameter = {
@@ -187,6 +190,12 @@ export function buildNanoRegistry(
   return { templates, images, templateById, imagesByTemplateId, imageById };
 }
 
+// ✅ add this singleton registry
+export const nanoRegistry: NanoRegistry = buildNanoRegistry(
+  nanoTemplates as unknown as RawTemplate[],
+  nanoImages as unknown as RawNanoImageRecord[]
+);
+
 export function getTemplateView(
   reg: NanoRegistry,
   templateId: string,
@@ -326,4 +335,88 @@ export function buildNanoTemplateDetailData(
     .filter(Boolean) as NanoTemplateDetailData["cards"];
 
   return { template, cards };
+}
+
+// ------------------------
+// Example detail page helpers
+// (used by /nano-template/[templateId]/example/[imageId])
+// ------------------------
+
+export type NanoExampleDetailData = {
+  image: ImageView;
+  filled_prompt: string;
+  template: TemplateView;
+  related: ImageView[];
+};
+
+/**
+ * Returns all data needed to render the SEO example detail page for a single image.
+ * Returns null if the image or template cannot be found.
+ */
+export function getNanoExampleDetail(
+  reg: NanoRegistry,
+  templateId: string,
+  imageId: string,
+  locale: Locale
+): NanoExampleDetailData | null {
+  const raw = reg.imageById.get(imageId);
+  if (!raw || raw.template_id !== templateId) return null;
+
+  const template = getTemplateView(reg, templateId, locale);
+  if (!template) return null;
+
+  const loc = raw.locales?.[locale] ?? raw.locales?.zh ?? raw.locales?.en ?? {};
+
+  const image: ImageView = {
+    id: raw.id,
+    template_id: raw.template_id,
+    locale,
+    title: loc.title,
+    category: loc.category,
+    params: raw.params ?? {},
+    image_url: raw.asset.image_url,
+    preview_image_url: raw.asset.preview_image_url ?? raw.asset.image_url,
+  };
+
+  const filled_prompt = fillPrompt(template.base_prompt, raw.params);
+
+  const related = getImageViewsForTemplate(reg, templateId, locale)
+    .filter((x) => x.id !== imageId)
+    .slice(0, 6);
+
+  return { image, filled_prompt, template, related };
+}
+
+// ── Return type ───────────────────────────────────────────────────────────────
+export type NanoExampleDetail = RawNanoImageRecord & {
+  base_prompt: string;
+  filled_prompt: string;
+};
+
+/**
+ * Get a single image record by templateId + imageId.
+ * Resolves base_prompt from the template and fills it with the image's params.
+ */
+export function getNanoExampleById(
+  templateId: string,
+  imageId: string,
+  locale: Locale = "zh"
+): NanoExampleDetail | null {
+  const img = nanoRegistry.imageById.get(imageId);
+  if (!img || img.template_id !== templateId) return null;
+
+  const tv = getTemplateView(nanoRegistry, templateId, locale);
+  const base_prompt = tv?.base_prompt ?? "";
+  const filled_prompt = fillPrompt(base_prompt, img.params ?? {});
+
+  return { ...img, base_prompt, filled_prompt };
+}
+
+/**
+ * Get all image records for a template (ordered as stored).
+ */
+export function getNanoExamplesByTemplateId(
+  templateId: string
+): RawNanoImageRecord[] {
+  return nanoRegistry.imagesByTemplateId.get(templateId) ?? [];
 }
