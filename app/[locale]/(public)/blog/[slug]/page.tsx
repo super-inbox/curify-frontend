@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import CdnImage from "../../_components/CdnImage";
-import TemplateLink, { TemplateSuggestions } from "../../_components/TemplateLink";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
+import TemplateLink, { TemplateSuggestions } from "@/app/[locale]/_components/TemplateLink";
 import { getTemplatesByCategory } from "@/utils/blogUtils";
 import { notFound } from "next/navigation";
 
@@ -11,64 +10,72 @@ import { notFound } from "next/navigation";
 const blogPosts = {
   // YouTube Translation blogs
   "translate-youtube-video": {
-    titleKey: "translateYoutubeVideo.title",
-    descriptionKey: "translateYoutubeVideo.intro",
+    titleKey: "title",
+    descriptionKey: "intro",
     image: "/images/youtube-translation.jpg",
     category: "video-translation",
-    relatedCategories: ["video-translation", "subtitle-generation"]
+    relatedCategories: ["video-translation", "subtitle-generation"],
+    namespace: "translateYoutubevideo"
   },
   "translate-youtube-video-to-english": {
-    titleKey: "translateYoutubeVideoToEnglish.title", 
-    descriptionKey: "translateYoutubeVideoToEnglish.intro",
+    titleKey: "title", 
+    descriptionKey: "intro",
     image: "/images/youtube-english-translation.jpg",
     category: "video-translation",
-    relatedCategories: ["video-translation", "video-dubbing"]
+    relatedCategories: ["video-translation", "video-dubbing"],
+    namespace: "translateYoutubeVideoToEnglish"
   },
   "ai-youtube-video-translator": {
-    titleKey: "aiYoutubeVideoTranslator.title",
-    descriptionKey: "aiYoutubeVideoTranslator.intro", 
+    titleKey: "title",
+    descriptionKey: "intro", 
     image: "/images/ai-youtube-translator.jpg",
     category: "video-translation",
-    relatedCategories: ["video-translation", "ai-tools"]
+    relatedCategories: ["video-translation", "ai-tools"],
+    namespace: "aiYoutubeVideoTranslator"
   },
   
   // Voice Cloning blogs
   "what-is-voice-cloning": {
-    titleKey: "whatIsVoiceCloning.title",
-    descriptionKey: "whatIsVoiceCloning.intro",
+    titleKey: "title",
+    descriptionKey: "intro",
     image: "/images/voice-cloning-basics.jpg",
     category: "audio-ai",
-    relatedCategories: ["audio-ai", "video-dubbing"]
+    relatedCategories: ["audio-ai", "video-dubbing"],
+    namespace: "whatIsVoiceCloning"
   },
   "voice-cloning-tools": {
-    titleKey: "voiceCloningTools.title",
-    descriptionKey: "voiceCloningTools.intro",
+    titleKey: "title",
+    descriptionKey: "intro",
     image: "/images/voice-cloning-tools.jpg", 
     category: "audio-ai",
-    relatedCategories: ["audio-ai", "video-dubbing"]
+    relatedCategories: ["audio-ai", "video-dubbing"],
+    namespace: "voiceCloningTools"
   },
   "f5-tts-voice-cloning": {
-    titleKey: "f5TtsVoiceCloning.title",
-    descriptionKey: "f5TtsVoiceCloning.intro",
+    titleKey: "title",
+    descriptionKey: "intro",
     image: "/images/f5-tts-voice-cloning.jpg",
     category: "audio-ai", 
-    relatedCategories: ["audio-ai", "video-dubbing"]
+    relatedCategories: ["audio-ai", "video-dubbing"],
+    namespace: "f5TtsVoiceCloning"
   },
 
   // ASL Translation pages (tool-oriented landing pages)
   "asl-video-translator": {
-    titleKey: "aslVideoTranslator.title",
-    descriptionKey: "aslVideoTranslator.intro",
+    titleKey: "title",
+    descriptionKey: "intro",
     image: "/images/asl-video-translator.jpg",
     category: "accessibility",
-    relatedCategories: ["video-translation", "subtitle-generation"]
+    relatedCategories: ["video-translation", "subtitle-generation"],
+    namespace: "aslVideoTranslator"
   },
   "how-to-translate-asl-video": {
-    titleKey: "howToTranslateAslVideo.title",
-    descriptionKey: "howToTranslateAslVideo.intro",
+    titleKey: "title",
+    descriptionKey: "intro",
     image: "/images/asl-translation-guide.jpg",
     category: "accessibility", 
-    relatedCategories: ["video-translation", "accessibility"]
+    relatedCategories: ["video-translation", "accessibility"],
+    namespace: "howToTranslateAslVideo"
   }
 };
 
@@ -89,7 +96,7 @@ export async function generateMetadata({
   }
 
   try {
-    const t = await getTranslations({ locale, namespace: `blog.${slug}` });
+    const t = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
     
     return {
       title: t(blogConfig.titleKey),
@@ -104,18 +111,82 @@ export async function generateMetadata({
   }
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const t = useTranslations();
-  const { locale, slug } = params;
+  const { locale, slug } = await params;
   
   const blogConfig = blogPosts[slug as keyof typeof blogPosts];
   if (!blogConfig) {
     notFound();
   }
+
+  const t = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
+
+  // Get English fallback translations if current locale is not English
+  let tEn = null;
+  if (locale !== 'en') {
+    try {
+      tEn = await getTranslations({ locale: 'en', namespace: `blog.${blogConfig.namespace}` });
+    } catch (error) {
+      // If English translations fail, we'll use defaults
+    }
+  }
+
+  // Define which keys exist for each blog post type
+  const availableKeys: Record<string, string[]> = {
+    'translateYoutubevideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'translateYoutubeVideoToEnglish': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'aiYoutubeVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'whatIsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'voiceCloningTools': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'f5TtsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+  };
+
+  const currentKeys = availableKeys[blogConfig.namespace] || [];
+
+  // Safe translation helper that only accesses known keys
+  const safeT = (key: string, defaultValue = "") => {
+    if (!currentKeys.includes(key)) {
+      return defaultValue;
+    }
+    try {
+      const result = t(key);
+      // If the result is the same as the key, it means translation wasn't found
+      if (result === key) {
+        // Try English fallback
+        if (tEn) {
+          try {
+            const englishResult = tEn(key);
+            return englishResult !== key ? englishResult : defaultValue;
+          } catch (error) {
+            return defaultValue;
+          }
+        }
+        return defaultValue;
+      }
+      return result;
+    } catch (error) {
+      // Try English fallback
+      if (tEn) {
+        try {
+          return tEn(key);
+        } catch (error) {
+          return defaultValue;
+        }
+      }
+      return defaultValue;
+    }
+  };
+
+  // Helper to check if a translation key exists
+  const hasKey = (key: string) => {
+    return currentKeys.includes(key);
+  };
 
   // Get related templates based on blog post categories
   const relatedTemplates = blogConfig.relatedCategories.flatMap(category => 
@@ -128,7 +199,7 @@ export default function BlogPostPage({
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           <CdnImage
             src={blogConfig.image}
-            alt={t(`blog.${slug}.${blogConfig.titleKey}`)}
+            alt={t(blogConfig.titleKey)}
             width={400}
             height={250}
             className="rounded-lg object-cover"
@@ -136,26 +207,110 @@ export default function BlogPostPage({
         </div>
         
         <h1 className="text-4xl font-bold mb-4">
-          {t(`blog.${slug}.${blogConfig.titleKey}`)}
+          {t(blogConfig.titleKey)}
         </h1>
         
         <div className="text-gray-600 mb-4">
-          {t(`blog.${slug}.date`, { defaultValue: "Latest Article" })} • {" "}
-          {t(`blog.${slug}.readTime`, { defaultValue: "5 min read" })}
+          {t("date", { defaultValue: "Latest Article" })} • {" "}
+          {t("readTime", { defaultValue: "5 min read" })}
         </div>
       </div>
 
       <div className="clear-both">
         {/* Dynamic content rendering based on slug */}
         {slug.startsWith('translate-youtube-video') && (
-          <YoutubeTranslationContent slug={slug} />
+          <YoutubeTranslationContent slug={slug} t={t} />
         )}
         {slug.startsWith('voice-cloning') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning' && (
-          <VoiceCloningContent slug={slug} />
+          <VoiceCloningContent slug={slug} t={t} />
         )}
         {slug.includes('asl') && (
-          <AslTranslationContent slug={slug} />
+          <AslTranslationContent slug={slug} t={t} />
         )}
+        
+        {/* Fallback content for any missing content */}
+        <div className="space-y-6">
+          <p className="text-lg font-semibold text-blue-600 mb-4">
+            {hasKey("intro") ? safeT("intro") : "Introduction"}
+          </p>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{hasKey("whatIsTitle") ? safeT("whatIsTitle") : "What is this?"}</h2>
+            <p className="mb-4">{hasKey("whatIsContent") ? safeT("whatIsContent") : "Content description..."}</p>
+          </section>
+
+          {(hasKey("whyTitle") || hasKey("whyContent")) && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("whyTitle") ? safeT("whyTitle") : "Why This Matters"}</h2>
+              <p className="mb-4">{hasKey("whyContent") ? safeT("whyContent") : "Learn why this topic is important..."}</p>
+            </section>
+          )}
+
+          {(hasKey("howTitle") || hasKey("howContent") || hasKey("step1Title")) && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("howTitle") ? safeT("howTitle") : "How It Works"}</h2>
+              {hasKey("step1Title") ? (
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h3 className="font-semibold mb-2">{safeT("step1Title")}</h3>
+                    <p>{safeT("step1Content")}</p>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h3 className="font-semibold mb-2">{safeT("step2Title")}</h3>
+                    <p>{safeT("step2Content")}</p>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h3 className="font-semibold mb-2">{safeT("step3Title")}</h3>
+                    <p>{safeT("step3Content")}</p>
+                  </div>
+                </div>
+              ) : (
+                <p className="mb-4">{hasKey("howContent") ? safeT("howContent") : "Step-by-step process..."}</p>
+              )}
+            </section>
+          )}
+
+          {(hasKey("howWorksTitle") || hasKey("howWorksContent")) && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("howWorksTitle") ? safeT("howWorksTitle") : "How It Works"}</h2>
+              <p className="mb-4">{hasKey("howWorksContent") ? safeT("howWorksContent") : "Technical explanation..."}</p>
+            </section>
+          )}
+
+          {(hasKey("useCasesTitle") || hasKey("useCasesContent")) && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("useCasesTitle") ? safeT("useCasesTitle") : "Use Cases"}</h2>
+              <p className="mb-4">{hasKey("useCasesContent") ? safeT("useCasesContent") : "Common applications..."}</p>
+            </section>
+          )}
+
+          {(hasKey("ethicalTitle") || hasKey("ethicalContent")) && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("ethicalTitle") ? safeT("ethicalTitle") : "Ethical Considerations"}</h2>
+              <p className="mb-4">{hasKey("ethicalContent") ? safeT("ethicalContent") : "Important ethical guidelines..."}</p>
+            </section>
+          )}
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{hasKey("toolsTitle") ? safeT("toolsTitle") : "Tools & Resources"}</h2>
+            <p className="mb-4">{hasKey("toolsContent") ? safeT("toolsContent") : "Learn about the best tools available..."}</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{hasKey("curifyTitle") ? safeT("curifyTitle") : "How Curify Can Help"}</h2>
+            <p className="mb-4">{hasKey("curifyContent") ? safeT("curifyContent") : "Curify offers comprehensive solutions for content creators..."}</p>
+            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+              <p className="text-green-800">
+                🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
+            <p>{hasKey("conclusionContent") ? safeT("conclusionContent") : "Start your journey with AI-powered content creation tools today."}</p>
+          </section>
+        </div>
       </div>
 
       {/* Related Templates Section */}
@@ -182,8 +337,7 @@ export default function BlogPostPage({
 }
 
 // Content components for different blog categories
-function YoutubeTranslationContent({ slug }: { slug: string }) {
-  const t = useTranslations(`blog.${slug}`);
+function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
   
   return (
     <div className="space-y-6">
@@ -203,20 +357,24 @@ function YoutubeTranslationContent({ slug }: { slug: string }) {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("howTitle")}</h2>
-        <div className="space-y-4">
-          <div className="p-4 bg-blue-50 rounded-lg">
-            <h3 className="font-semibold mb-2">{t("step1Title")}</h3>
-            <p>{t("step1Content")}</p>
+        {t("step1Title", { defaultValue: null }) ? (
+          <div className="space-y-4">
+            <div className="p-4 bg-blue-50 rounded-lg">
+              <h3 className="font-semibold mb-2">{t("step1Title")}</h3>
+              <p>{t("step1Content")}</p>
+            </div>
+            <div className="p-4 bg-blue-50 rounded-lg">
+              <h3 className="font-semibold mb-2">{t("step2Title")}</h3>
+              <p>{t("step2Content")}</p>
+            </div>
+            <div className="p-4 bg-blue-50 rounded-lg">
+              <h3 className="font-semibold mb-2">{t("step3Title")}</h3>
+              <p>{t("step3Content")}</p>
+            </div>
           </div>
-          <div className="p-4 bg-blue-50 rounded-lg">
-            <h3 className="font-semibold mb-2">{t("step2Title")}</h3>
-            <p>{t("step2Content")}</p>
-          </div>
-          <div className="p-4 bg-blue-50 rounded-lg">
-            <h3 className="font-semibold mb-2">{t("step3Title")}</h3>
-            <p>{t("step3Content")}</p>
-          </div>
-        </div>
+        ) : (
+          <p className="mb-4">{t("howContent")}</p>
+        )}
       </section>
 
       <section>
@@ -231,6 +389,11 @@ function YoutubeTranslationContent({ slug }: { slug: string }) {
           <p className="text-green-800">
             🎯 {t("ctaText")} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
+          <div className="mt-3 space-y-2">
+            <p className="text-green-700 text-sm">
+              🔗 Also try: <a href="/subtitle-generator" className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -242,9 +405,7 @@ function YoutubeTranslationContent({ slug }: { slug: string }) {
   );
 }
 
-function VoiceCloningContent({ slug }: { slug: string }) {
-  const t = useTranslations(`blog.${slug}`);
-  
+function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
   return (
     <div className="space-y-6">
       <p className="text-lg font-semibold text-purple-600 mb-4">
@@ -279,6 +440,16 @@ function VoiceCloningContent({ slug }: { slug: string }) {
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("curifyTitle")}</h2>
         <p className="mb-4">{t("curifyContent")}</p>
+        <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
+          <p className="text-purple-800">
+            🎯 {t("ctaText")} <a href="/video-dubbing" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+          </p>
+          <div className="mt-3 space-y-2">
+            <p className="text-purple-700 text-sm">
+              🔗 Also try: <a href="/video-translator" className="text-blue-600 hover:underline">Video Translator</a> | <a href="/subtitle-generator" className="text-blue-600 hover:underline">Subtitle Generator</a>
+            </p>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -289,48 +460,95 @@ function VoiceCloningContent({ slug }: { slug: string }) {
   );
 }
 
-function AslTranslationContent({ slug }: { slug: string }) {
-  const t = useTranslations(`blog.${slug}`);
+function AslTranslationContent({ slug, t }: { slug: string; t: any }) {
+  // Define which keys exist for each ASL blog post type
+  const availableKeys: Record<string, string[]> = {
+    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+  };
+
+  // Get the namespace based on slug
+  const namespace = slug === 'asl-video-translator' ? 'aslVideoTranslator' : 'howToTranslateAslVideo';
+  const currentKeys = availableKeys[namespace] || [];
+
+  // Safe translation helper
+  const safeT = (key: string, defaultValue = "") => {
+    if (!currentKeys.includes(key)) {
+      return defaultValue;
+    }
+    try {
+      return t(key);
+    } catch (error) {
+      return defaultValue;
+    }
+  };
+
+  // Helper to check if a translation key exists
+  const hasKey = (key: string) => {
+    return currentKeys.includes(key);
+  };
   
   return (
     <div className="space-y-6">
       <p className="text-lg font-semibold text-indigo-600 mb-4">
-        {t("intro")}
+        {safeT("intro")}
       </p>
       
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("whatIsTitle")}</h2>
-        <p className="mb-4">{t("whatIsContent")}</p>
+        <h2 className="text-2xl font-bold mb-4">{safeT("whatIsTitle")}</h2>
+        <p className="mb-4">{safeT("whatIsContent")}</p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("whenNeededTitle")}</h2>
-        <p className="mb-4">{t("whenNeededContent")}</p>
+        <h2 className="text-2xl font-bold mb-4">{safeT("whenNeededTitle")}</h2>
+        <p className="mb-4">{safeT("whenNeededContent")}</p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("howTitle")}</h2>
-        <p className="mb-4">{t("howContent")}</p>
+        <h2 className="text-2xl font-bold mb-4">{safeT("howTitle")}</h2>
+        {hasKey("step1Title") ? (
+          <div className="space-y-4">
+            <div className="p-4 bg-indigo-50 rounded-lg">
+              <h3 className="font-semibold mb-2">{safeT("step1Title")}</h3>
+              <p>{safeT("step1Content")}</p>
+            </div>
+            <div className="p-4 bg-indigo-50 rounded-lg">
+              <h3 className="font-semibold mb-2">{safeT("step2Title")}</h3>
+              <p>{safeT("step2Content")}</p>
+            </div>
+            <div className="p-4 bg-indigo-50 rounded-lg">
+              <h3 className="font-semibold mb-2">{safeT("step3Title")}</h3>
+              <p>{safeT("step3Content")}</p>
+            </div>
+          </div>
+        ) : (
+          <p className="mb-4">{safeT("howContent")}</p>
+        )}
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
-        <p className="mb-4">{t("toolsContent")}</p>
+        <h2 className="text-2xl font-bold mb-4">{safeT("toolsTitle")}</h2>
+        <p className="mb-4">{safeT("toolsContent")}</p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("curifyTitle")}</h2>
-        <p className="mb-4">{t("curifyContent")}</p>
+        <h2 className="text-2xl font-bold mb-4">{safeT("curifyTitle")}</h2>
+        <p className="mb-4">{safeT("curifyContent")}</p>
         <div className="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
           <p className="text-indigo-800">
-            🎯 {t("ctaText")} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {safeT("ctaText")} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
           </p>
+          <div className="mt-3 space-y-2">
+            <p className="text-indigo-700 text-sm">
+              🔗 Also try: <a href="/subtitle-generator" className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+            </p>
+          </div>
         </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
-        <p>{t("conclusionContent")}</p>
+        <h2 className="text-2xl font-bold mb-4">{safeT("conclusionTitle")}</h2>
+        <p>{safeT("conclusionContent")}</p>
       </section>
     </div>
   );

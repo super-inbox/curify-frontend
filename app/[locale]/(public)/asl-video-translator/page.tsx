@@ -134,6 +134,11 @@ export default function AslVideoTranslatorPage() {
                 Generate Subtitles
               </a>
             </div>
+            <div className="mt-3">
+              <p className="text-green-600 text-sm">
+                🔗 Also try: <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+              </p>
+            </div>
           </div>
         </section>
 
