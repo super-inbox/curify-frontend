@@ -14,5 +14,6 @@ export const routing = defineRouting({
     'ru'     // 🇷🇺 Русский
   ],
   defaultLocale: 'en',
+  localePrefix: "as-needed",
   alternateLinks: false
 });

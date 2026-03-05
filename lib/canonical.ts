@@ -1,4 +1,6 @@
 // lib/canonical.ts
+import { routing } from "@/i18n/routing";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
 export function getCanonicalUrl(locale: string, path: string = ""): string {
@@ -8,8 +10,7 @@ export function getCanonicalUrl(locale: string, path: string = ""): string {
   return `${siteUrl}${prefix}${normalizedPath}`;
 }
 
-export function getLanguagesMap(path: string = ""): Record<string, string> {
-  const { routing } = require("@/i18n/routing");
+export function getLanguagesMap(path: string = ""): Record<string, string> {  
   const normalizedPath = path && !path.startsWith("/") ? `/${path}` : path;
   
   const languages: Record<string, string> = {};

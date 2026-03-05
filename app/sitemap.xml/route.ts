@@ -1,26 +1,22 @@
+// app/sitemap.xml/route.ts
 import { NextResponse } from "next/server";
 import blogs from "@/content/blogs.json";
 import { routing } from "@/i18n/routing";
-
-// ✅ Add nano templates
 import nanoTemplates from "@/public/data/nano_templates.json";
+import { TOOL_REGISTRY } from "@/lib/tools-registry";
 
 export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
-
-// All supported locales
 const LOCALES = routing.locales;
 
-// Static pages (shared across locales)
+// ✅ Static pages (shared across locales)
 const STATIC_ROUTES = [
   "",
   "/contact",
   "/pricing",
   "/about",
-  "/video-dubbing",
-  "/bilingual-subtitles",
-  "/tools",  
+  "/tools", // tools hub
   "/privacy",
   "/agreement",
   "/blog",
@@ -30,7 +26,7 @@ const STATIC_ROUTES = [
 
 // Blog routes
 function getBlogRoutes() {
-  return blogs.map((slug: string) => `/blog/${slug}`);
+  return (blogs as unknown as string[]).map((slug: string) => `/blog/${slug}`);
 }
 
 // ✅ Nano template routes - RESPECTS LOCALE
@@ -45,47 +41,50 @@ function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
     .map((t) => {
       const templateId = t.id.trim();
       const availableLocales = t.locales ? Object.keys(t.locales) : [];
-      
       return {
         route: `/nano-template/${encodeURIComponent(templateId)}`,
         locales: availableLocales,
       };
     })
-    .filter((item) => item.locales.length > 0); // Only include templates with at least one locale
+    .filter((item) => item.locales.length > 0);
 }
 
-// 1. Update hreflang block to strip '/en' from x-default and the 'en' alternate
-function generateHreflangLinks(route: string, availableLocales?: string[]) {
-  const localesToUse = availableLocales || LOCALES;
-  
-  const links = localesToUse.map((lng) => {
-    // Strip prefix for English
-    const pathPrefix = lng === "en" ? "" : `/${lng}`;
-    return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
-  }).join("");
-
-  // x-default strictly points to the unprefixed route
-  return (
-    links +
-    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`
+// ✅ Tool routes from registry (only subtools with status != coming_soon)
+function getToolRoutes(): string[] {
+  return TOOL_REGISTRY.filter((t) => t.status !== "coming_soon").map(
+    (t) => `/tools/${encodeURIComponent(t.slug)}`
   );
 }
 
-// 2. Update the main <loc> generator to strip '/en' from the English URLs
+// 1) hreflang block: strip '/en' for English and x-default
+function generateHreflangLinks(route: string, availableLocales?: readonly string[]) {
+  const localesToUse: readonly string[] =
+    availableLocales && availableLocales.length > 0 ? availableLocales : LOCALES;
+
+  const links = localesToUse
+    .map((lng) => {
+      const pathPrefix = lng === "en" ? "" : `/${lng}`;
+      return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
+    })
+    .join("");
+
+  return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
+}
+
+// 2) <loc> generator: strip '/en' for English URLs
 function generateUrlEntry(
   locale: string,
   route: string,
-  opts?: { 
-    lastmod?: string; 
-    changefreq?: string; 
+  opts?: {
+    lastmod?: string;
+    changefreq?: string;
     priority?: string;
-    availableLocales?: string[];
+    availableLocales?: readonly string[];
   }
 ) {
-  // Strip prefix for English
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
-  
+
   const lastmod = opts?.lastmod ?? new Date().toISOString();
   const changefreq = opts?.changefreq ?? "weekly";
   const priority =
@@ -105,6 +104,7 @@ function generateUrlEntry(
 export async function GET() {
   const blogRoutes = getBlogRoutes();
   const nanoTemplateRoutes = getNanoTemplateRoutes();
+  const toolRoutes = getToolRoutes();
 
   let urls = "";
 
@@ -114,6 +114,16 @@ export async function GET() {
       urls += generateUrlEntry(locale, route, {
         changefreq: route === "" ? "daily" : "weekly",
         priority: route === "" && locale === "en" ? "1.0" : "0.8",
+      });
+    });
+  });
+
+  // ✅ Tool routes × locales (all locales; you can later restrict per-tool if needed)
+  toolRoutes.forEach((route) => {
+    LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        changefreq: "weekly",
+        priority: "0.8",
       });
     });
   });
@@ -128,13 +138,13 @@ export async function GET() {
     });
   });
 
-  // ✅ Nano template routes × ONLY THEIR AVAILABLE LOCALES
+  // Nano template routes × ONLY THEIR AVAILABLE LOCALES
   nanoTemplateRoutes.forEach(({ route, locales: availableLocales }) => {
     availableLocales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
         changefreq: "weekly",
         priority: "0.6",
-        availableLocales, // Pass available locales for proper hreflang
+        availableLocales,
       });
     });
   });

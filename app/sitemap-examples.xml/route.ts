@@ -3,18 +3,18 @@
 // Generates example-detail URLs for Nano templates:
 // /nano-template/${templateId}/example/${exampleId}
 //
-// Locale strategy:
-// 1) Use example.locales keys if present (most accurate)
-// 2) Else fallback to template locales (from nano_templates.json)
-// 3) Else fallback to all supported locales (routing.locales)
+// PLUS tool detail URLs from TOOL_REGISTRY (status != coming_soon):
+// /tools/${slug}
 //
-// NOTE: routing.locales is typed as a readonly tuple, so we use `readonly string[]`
-// everywhere to avoid TS errors.
+// Locale strategy:
+// - examples: 1) example.locales 2) template locales 3) routing.locales
+// - tools: all routing.locales (for now)
 
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
+import { TOOL_REGISTRY } from "@/lib/tools-registry";
 
 export const runtime = "nodejs";
 
@@ -49,6 +49,12 @@ function getTemplateLocalesMap(): Map<string, string[]> {
   return m;
 }
 
+function getToolRoutes(): string[] {
+  return TOOL_REGISTRY.filter((t) => t.status !== "coming_soon").map(
+    (t) => `/tools/${encodeURIComponent(t.slug)}`
+  );
+}
+
 // Accept readonly arrays to support routing.locales (readonly tuple)
 function generateHreflangLinks(route: string, availableLocales?: readonly string[]) {
   const localesToUse: readonly string[] =
@@ -66,7 +72,6 @@ function generateHreflangLinks(route: string, availableLocales?: readonly string
   return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
 }
 
-// Accept readonly arrays to support routing.locales (readonly tuple)
 function generateUrlEntry(
   locale: string,
   route: string,
@@ -77,7 +82,6 @@ function generateUrlEntry(
     availableLocales?: readonly string[];
   }
 ) {
-  // Strip prefix for English
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
 
@@ -104,19 +108,29 @@ function pickLastmod(x: NanoExample): string | undefined {
 export async function GET() {
   const templateLocalesMap = getTemplateLocalesMap();
   const examples = nanoInspiration as unknown as NanoExample[];
+  const toolRoutes = getToolRoutes();
 
   let urls = "";
 
+  // ✅ 1) Tool detail pages × locales
+  // (only those not coming_soon)
+  toolRoutes.forEach((route) => {
+    LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        changefreq: "weekly",
+        priority: "0.8",
+        availableLocales: LOCALES,
+      });
+    });
+  });
+
+  // ✅ 2) Nano template example pages × locales (existing logic)
   for (const ex of examples) {
     if (!ex?.id || !ex?.template_id) continue;
 
     const templateId = String(ex.template_id).trim();
     const exampleId = String(ex.id).trim();
 
-    // locale strategy:
-    // 1) example locales (most accurate)
-    // 2) fallback to template locales
-    // 3) fallback to global LOCALES
     const exampleLocales = ex.locales ? Object.keys(ex.locales) : [];
 
     const availableLocales: readonly string[] =
