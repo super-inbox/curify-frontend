@@ -191,7 +191,7 @@ async function processBatch(keys, targetLocale, targetContent) {
       const existingValue = getValueByPath(targetContent, key);
       
       // Skip if already translated and not empty
-      if (existingValue && existingValue.trim() !== '') {
+      if (existingValue && typeof existingValue === 'string' && existingValue.trim() !== '') {
         console.log(`✅ Skipping ${targetLocale}:${key} (already translated)`);
         return { key, translated: existingValue, skipped: true };
       }
