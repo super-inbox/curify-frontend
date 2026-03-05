@@ -117,7 +117,6 @@ export default function WorkspaceClient() {
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
       <h2 className="text-2xl font-bold mb-4">My Projects</h2>
 
-
       {isRefreshing && (
         <div className="mb-4 inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full shadow-sm">
           🔄 Refreshing...
