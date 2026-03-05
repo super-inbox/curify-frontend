@@ -1,13 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAtom } from "jotai";
-import { userAtom, authLoadingAtom, headerAtom } from "@/app/atoms/atoms";
+import { useAtom, useSetAtom } from "jotai";
+import { userAtom, authLoadingAtom, drawerAtom } from "@/app/atoms/atoms";
 import Icon from "../Icon";
 import { authService } from "@/services/auth";
-import { useSetAtom } from 'jotai';
-import { drawerAtom } from '@/app/atoms/atoms';
 import { jwtDecode } from "jwt-decode";
 
 declare global {
@@ -18,17 +15,14 @@ declare global {
 
 interface GoogleLoginButtonProps {
   variant?: "home" | "drawer";
-  callbackUrl?: string;
 }
 
-export default function GoogleLoginButton({ variant = "home", callbackUrl = "/workspace" }: GoogleLoginButtonProps) {
+export default function GoogleLoginButton({ variant = "home" }: GoogleLoginButtonProps) {
   const [, setUser] = useAtom(userAtom);
   const [, setAuthLoading] = useAtom(authLoadingAtom);
-  const [, setHeaderState] = useAtom(headerAtom);
   const setDrawerState = useSetAtom(drawerAtom);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [googleLoaded, setGoogleLoaded] = useState(false);
-  const router = useRouter();
 
   // Load Google Identity Services script
   useEffect(() => {
@@ -82,12 +76,11 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
     });
   }, []);
 
-  // ✅ Handle Google credential (decode and attach avatar_url)
+  // ✅ Handle Google credential — stays on current page after login
   const handleCredentialResponse = async (response: { credential: string }) => {
     try {
       console.log("Processing Google credential...");
 
-      // Decode ID token (JWT) to extract profile
       const decoded: {
         name: string;
         email: string;
@@ -102,20 +95,21 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
         avatar_url: decoded.picture,
       };
 
-      // Save tokens and user
+      // Persist tokens
       localStorage.setItem("access_token", result.data.access_token);
       localStorage.setItem("refresh_token", result.data.refresh_token);
-      localStorage.setItem("curifyUser", JSON.stringify(userWithAvatar));
 
+      // ✅ Setting userAtom also persists to localStorage via atomWithStorage
+      // and automatically flips headerAtom to "in" — no manual setHeaderState needed
       setUser(userWithAvatar);
       setDrawerState(null);
 
-      console.log("Google login successful, user authenticated");
+      console.log("Google login successful");
     } catch (error) {
       console.error("Google login failed:", error);
-      router.push("/?error=login_failed");
     } finally {
       setAuthLoading(false);
+      setIsGoogleLoading(false);
     }
   };
 
@@ -129,17 +123,9 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
     setIsGoogleLoading(true);
     setAuthLoading(true);
 
-    const params = new URLSearchParams(window.location.search);
-    const finalCallbackUrl = params.get("callbackUrl") || callbackUrl;
-
-    // Redirect to loading page
-    router.push(finalCallbackUrl);
-
     try {
       const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
       if (!clientId) throw new Error("Google Client ID not found");
-
-      console.log("Using Google Client ID:", clientId);
 
       window.google.accounts.id.initialize({
         client_id: clientId,
@@ -149,33 +135,33 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
         context: "signin",
       });
 
-      const tempButtonContainer = document.createElement('div');
-      tempButtonContainer.style.position = 'absolute';
-      tempButtonContainer.style.top = '-9999px';
-      tempButtonContainer.style.left = '-9999px';
+      const tempButtonContainer = document.createElement("div");
+      tempButtonContainer.style.cssText =
+        "position:absolute;top:-9999px;left:-9999px";
       document.body.appendChild(tempButtonContainer);
 
       window.google.accounts.id.renderButton(tempButtonContainer, {
-        theme: 'outline',
-        size: 'large',
-        type: 'standard',
-        shape: 'rectangular',
-        text: 'signin_with',
-        logo_alignment: 'left',
-        width: 250
+        theme: "outline",
+        size: "large",
+        type: "standard",
+        shape: "rectangular",
+        text: "signin_with",
+        logo_alignment: "left",
+        width: 250,
       });
 
       setTimeout(() => {
-        const googleButton = tempButtonContainer.querySelector('[role="button"]') as HTMLElement;
+        const googleButton = tempButtonContainer.querySelector(
+          '[role="button"]'
+        ) as HTMLElement;
+
         if (googleButton) {
-          console.log("Clicking Google button programmatically");
           googleButton.click();
         } else {
-          console.error("Google button not found");
           window.google.accounts.id.prompt((notification: any) => {
-            console.log("Google prompt result:", notification);
             if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-              router.push("/?error=popup_blocked");
+              setIsGoogleLoading(false);
+              setAuthLoading(false);
             }
           });
         }
@@ -186,12 +172,10 @@ export default function GoogleLoginButton({ variant = "home", callbackUrl = "/wo
           }
         }, 1000);
       }, 100);
-
     } catch (error) {
       console.error("Google login initialization failed:", error);
-      router.push("/?error=init_failed");
-    } finally {
       setIsGoogleLoading(false);
+      setAuthLoading(false);
     }
   };
 

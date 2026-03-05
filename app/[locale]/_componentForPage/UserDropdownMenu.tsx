@@ -23,7 +23,6 @@ import TransactionHistoryDialog from "./TransactionHistoryDialog";
 import LanguageSubmenu from "./LanguageSubmenu";
 import { useTranslations } from "next-intl";
 
-// ✅ Jotai drawerAtom import
 import { useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { authService } from "@/services/auth";
@@ -62,14 +61,12 @@ export default function UserDropdownMenu({
   const setUser = useSetAtom(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
 
-  // ✅ Display fields compatible with UserSession + User
   const displayName =
     (user as any)?.username ||
     (user as any)?.name ||
     user?.email?.split("@")?.[0] ||
     t("defaultUser");
 
-  // ✅ Safely calculate credits with null checks
   const totalCredits = user
     ? ((user as any).expiring_credits ?? 0) + ((user as any).non_expiring_credits ?? 0)
     : 0;
@@ -77,7 +74,6 @@ export default function UserDropdownMenu({
   const expiringCredits = (user as any)?.expiring_credits ?? 0;
   const nonExpiringCredits = (user as any)?.non_expiring_credits ?? 0;
 
-  // ✅ current_cycle_end may not exist on session user
   const cycleEnd = (user as any)?.current_cycle_end as string | undefined;
   const expirationDate = cycleEnd ? new Date(cycleEnd) : null;
   const formattedExpirationDate = expirationDate
@@ -127,17 +123,16 @@ export default function UserDropdownMenu({
     }
 
     sessionStorage.setItem("justSignedOut", "true");
-    setUser(null);
-    console.log("Signing out: user atom set to null.");
-    localStorage.removeItem("curifyUser");
+    setUser(null);                              // ✅ clears atomWithStorage + localStorage
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
     setDrawerState(null);
     onClose();
     onSignOut();
-    router.push("/");
+    // ✅ No router.push — user stays on the current page
   };
 
   const handleShowHistory = async () => {
-    // If not logged-in or missing an identifier, don't try to fetch
     const userId = (user as any)?.user_id ?? (user as any)?.id ?? null;
     if (!userId) return;
 
@@ -160,17 +155,15 @@ export default function UserDropdownMenu({
     onClose();
   };
 
-  // ✅ Use shared language config
   const currentLanguage = getLanguageByCode(currentLocale);
 
-  // ✅ Logged-out state
+  // ─── Logged-out state ────────────────────────────────────────────────────────
   if (!user) {
     return (
       <div
         ref={dropdownRef}
         className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
       >
-        {/* Header - Guest */}
         <div className="p-4 border-b border-gray-100">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
@@ -183,7 +176,6 @@ export default function UserDropdownMenu({
           </div>
         </div>
 
-        {/* Menu Items - Guest */}
         <div className="py-2 text-[15px]">
           <div className="relative">
             <button
@@ -241,14 +233,13 @@ export default function UserDropdownMenu({
     );
   }
 
-  // ✅ Logged-in state
+  // ─── Logged-in state ─────────────────────────────────────────────────────────
   return (
     <>
       <div
         ref={dropdownRef}
         className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
       >
-        {/* Header */}
         <div className="p-4 border-b border-gray-100">
           <h3 className="text-base font-semibold text-blue-600 text-[15px]">
             {displayName}
@@ -258,9 +249,7 @@ export default function UserDropdownMenu({
           </p>
         </div>
 
-        {/* Credits Info */}
         <div className="p-4 border-b border-gray-100 space-y-3">
-          {/* Total Credits */}
           <div className="flex justify-between items-center">
             <span className="text-sm text-gray-600 text-[14px] font-medium">
               {t("totalCredits")}
@@ -270,7 +259,6 @@ export default function UserDropdownMenu({
             </span>
           </div>
 
-          {/* Expiring Credits with expiration date */}
           {expiringCredits > 0 && (
             <div className="bg-orange-50 rounded-lg p-3 space-y-2">
               <div className="flex justify-between items-center">
@@ -294,7 +282,6 @@ export default function UserDropdownMenu({
           )}
         </div>
 
-        {/* Menu Items */}
         <div className="py-2 text-[15px]">
           <button
             onClick={handleShowHistory}
@@ -335,9 +322,7 @@ export default function UserDropdownMenu({
           <button
             onClick={() => handleRoute("/pricing")}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === "/pricing"
-                ? "text-blue-600 font-semibold"
-                : ""
+              pathname === "/pricing" ? "text-blue-600 font-semibold" : ""
             }`}
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
@@ -347,9 +332,7 @@ export default function UserDropdownMenu({
           <button
             onClick={() => handleRoute("/contact")}
             className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === "/contact"
-                ? "text-blue-600 font-semibold"
-                : ""
+              pathname === "/contact" ? "text-blue-600 font-semibold" : ""
             }`}
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />

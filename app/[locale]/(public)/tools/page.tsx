@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ToolsClient from "./ToolsClient";
 
+
 export const dynamic = "force-dynamic";
 
 type Props = {
@@ -52,6 +53,8 @@ export default function Page() {
   return (
     <main className="min-h-screen">
       <ToolsClient />
+      
     </main>
+    
   );
 }

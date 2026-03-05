@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
 
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
-import { userAtom, headerAtom } from "@/app/atoms/atoms";
+import { userAtom } from "@/app/atoms/atoms";
 import BtnP from "../_components/button/ButtonPrimary";
 import GoogleLoginButton from "../_components/button/GoogleLoginButton";
 import { useEffect, useState } from "react";
@@ -15,7 +15,6 @@ export default function Buttons() {
   const router = useRouter();
 
   const [, setUser] = useAtom(userAtom);
-  const [, setHeaderState] = useAtom(headerAtom);
   const [mockUser, setMockUser] = useState<any>(null);
 
   useEffect(() => {
@@ -27,9 +26,8 @@ export default function Buttons() {
 
   const handleMockLogin = () => {
     if (mockUser) {
-      localStorage.setItem("curifyUser", JSON.stringify(mockUser));
+      // ✅ Setting userAtom persists to localStorage and flips headerAtom automatically
       setUser(mockUser);
-      setHeaderState("in");
       router.push("/workspace");
     } else {
       alert(t("mockUserNotLoaded"));
@@ -38,14 +36,12 @@ export default function Buttons() {
 
   return (
     <div className="flex gap-4">
-      {/* Book a Demo CTA */}
       <Link href="/contact">
         <BtnP className="h-12 px-6 rounded-lg text-base">
           {t("bookDemo")}
         </BtnP>
       </Link>
 
-      {/* Google Button (styled same height/shape) */}
       <GoogleLoginButton variant="home" />
     </div>
   );

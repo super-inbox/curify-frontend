@@ -19,43 +19,43 @@ export function AuthProvider({
   children: React.ReactNode;
   initialUser: any;
 }) {
-  const [, setUser] = useAtom(userAtom);
+  const [user, setUser] = useAtom(userAtom);
   const [, setAuthLoading] = useAtom(authLoadingAtom);
   const [mounted, setMounted] = useState(false);
 
- // 你自己的 loading UI 逻辑也可以保留
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const pathWithoutLocale = useMemo(() => stripLocale(pathname), [pathname]);
-
   const isProtected = useMemo(
-    () => PROTECTED_PREFIXES.some(p => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")),
+    () => PROTECTED_PREFIXES.some(
+      (p) => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")
+    ),
     [pathWithoutLocale]
   );
-
-  const refresh = searchParams.get("refresh") === "1"; // 可选：支付/订阅回调专用
+  const refresh = searchParams.get("refresh") === "1";
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    // 1) 有 initialUser：直接注水，不请求
+    // 1) Server passed an initialUser (e.g. SSR session cookie) — use it directly
     if (initialUser) {
       setUser(initialUser);
       setAuthLoading(false);
       return;
     }
 
-    // 2) public 页：不要拉 profile（避免 locale 切换重复请求）
+    // 2) atomWithStorage already rehydrated userAtom from localStorage on mount.
+    //    For public pages, that's enough — no need to hit the API.
     if (!isProtected && !refresh) {
-      setUser(null);
       setAuthLoading(false);
       return;
     }
 
-    // 3) protected 或 refresh 才尝试拉 profile
+    // 3) Protected page or explicit refresh — verify the stored token is still
+    //    valid by fetching the profile. Clears user if the token has expired.
     const justSignedOut = sessionStorage.getItem('justSignedOut');
     if (justSignedOut) {
       setUser(null);
@@ -65,22 +65,24 @@ export function AuthProvider({
     }
 
     let cancelled = false;
-
     (async () => {
       setAuthLoading(true);
       try {
         const profile = await authService.getProfile();
         if (!cancelled) setUser(profile);
       } catch {
-        if (!cancelled) setUser(null);
+        // Token invalid/expired — clear persisted state
+        if (!cancelled) {
+          setUser(null);
+          localStorage.removeItem("access_token");
+          localStorage.removeItem("refresh_token");
+        }
       } finally {
         if (!cancelled) setAuthLoading(false);
       }
     })();
 
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [initialUser, isProtected, refresh, setUser, setAuthLoading]);
 
   if (!mounted) return null;
