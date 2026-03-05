@@ -3,33 +3,40 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useAtom } from "jotai";
-import { modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
+import { modalAtom, jobTypeAtom, userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { buildToolsHub } from "@/lib/tools-hub";
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
-import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVideoDemo";
+import CreateNewModal from "./CreateNewModal";
 
 export default function ToolsClient() {
   const [, setModalState] = useAtom(modalAtom);
   const [, setJobType] = useAtom(jobTypeAtom);
+  const [user] = useAtom(userAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
+  const [clientMounted] = useAtom(clientMountedAtom);
   const t = useTranslations();
   const { locale } = useParams<{ locale: string }>();
 
+  // ✅ Open modal only if logged in — otherwise prompt sign-in
   const openModal = useCallback(
     (mode: "translation" | "subtitles") => {
+      if (!user) {
+        setDrawerState("signin");
+        return;
+      }
       setJobType(mode);
       setModalState("add");
     },
-    [setJobType, setModalState]
+    [user, setJobType, setModalState, setDrawerState]
   );
 
-  // Tools hub cards
   const toolGroups = buildToolsHub({ t, openModal, locale });
 
-  // Language switching demo (local demo-only)
+  // Language switching demo
   const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -50,16 +57,12 @@ export default function ToolsClient() {
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
-
     const restoreAndPlay = () => {
       vid.currentTime = currentTime;
       vid.play().catch(() => {});
     };
-
     vid.onloadeddata = restoreAndPlay;
-    return () => {
-      vid.onloadeddata = null;
-    };
+    return () => { vid.onloadeddata = null; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeLanguage]);
 
@@ -77,82 +80,79 @@ export default function ToolsClient() {
       <BgParticle />
 
       <div className="relative flex flex-col items-center mt-16 lg:mt-20 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
-                {/* H1 for SEO */}
         <h1 className="sr-only">{t("tools.meta.title")}</h1>
-        {/* Tools (grouped) */}
+
+        {/* Tools hub (grouped) */}
         <section className="w-full mb-14">
           <div className="space-y-10">
-          {toolGroups.map((group) => (
-  <div key={group.groupId} className="w-full">
-    <div className="flex items-center justify-between mb-4">
-      <h2 className="text-xl sm:text-2xl font-bold text-[var(--c1)]">
-        {group.title}
-      </h2>
-    </div>
+            {toolGroups.map((group) => (
+              <div key={group.groupId} className="w-full">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl sm:text-2xl font-bold text-[var(--c1)]">
+                    {group.title}
+                  </h2>
+                </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      {group.items.map((tool) => {
-        const Card = (
-          <div
-            className={`rounded-2xl shadow-lg p-5 flex flex-col justify-between 
-            bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] 
-            border border-gray-100 transition-shadow
-            ${tool.href ? "cursor-pointer hover:shadow-xl" : ""}`}
-          >
-            <div className="flex-grow">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                {tool.title}
-              </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  {group.items.map((tool) => {
+                    const Card = (
+                      <div
+                        className={`rounded-2xl shadow-lg p-5 flex flex-col justify-between 
+                        bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] 
+                        border border-gray-100 transition-shadow
+                        ${tool.href ? "cursor-pointer hover:shadow-xl" : ""}`}
+                      >
+                        <div className="flex-grow">
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">
+                            {tool.title}
+                          </h3>
+                          <p className="text-sm text-gray-600 mb-4">
+                            {"desc" in tool ? tool.desc : ""}
+                          </p>
+                        </div>
 
-              <p className="text-sm text-gray-600 mb-4">
-                {"desc" in tool ? tool.desc : ""}
-              </p>
-            </div>
+                        {tool.status === "create" ? (
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              // ✅ tool.onClick comes from buildToolsHub which calls
+                              // openModal(mode) — already auth-gated above
+                              tool.onClick?.();
+                            }}
+                            className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative"
+                            type="button"
+                          >
+                            {t("tools.create")}
+                            {/* ✅ Show lock icon if not logged in (after mount) */}
+                            {clientMounted && !user && (
+                              <span className="ml-2 text-xs opacity-80">🔒</span>
+                            )}
+                          </button>
+                        ) : (
+                          <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
+                            {t("tools.coming_soon")}
+                          </p>
+                        )}
+                      </div>
+                    );
 
-            {tool.status === "create" ? (
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation(); // prevent link navigation
-                  tool.onClick?.();
-                }}
-                className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer"
-                type="button"
-              >
-                {t("tools.create")}
-              </button>
-            ) : (
-              <p className="mt-4 text-center text-blue-500 font-semibold italic text-lg">
-                {t("tools.coming_soon")}
-              </p>
-            )}
+                    if (tool.href) {
+                      return (
+                        <Link key={tool.id} href={tool.href} className="block hover:no-underline">
+                          {Card}
+                        </Link>
+                      );
+                    }
 
-            
-          </div>
-        );
-
-        // clickable card if tool.href exists
-        if (tool.href) {
-          return (
-            <Link key={tool.id} href={tool.href} className="block hover:no-underline">
-              {Card}
-            </Link>
-          );
-        }
-
-        // otherwise plain card
-        return (
-          <div key={tool.id}>
-            {Card}
-          </div>
-        );
-      })}
-    </div>
-  </div>
-))}
-            
+                    return <div key={tool.id}>{Card}</div>;
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
+
         {/* Language switching demo */}
         <section className="w-full mt-2 mb-20">
           <div className="text-center mb-8">
@@ -233,7 +233,6 @@ export default function ToolsClient() {
                   </Link>
                 );
               }
-
               if (isDubbing) {
                 return (
                   <Link key={index} href="/video-dubbing" className="block hover:no-underline">
@@ -241,7 +240,6 @@ export default function ToolsClient() {
                   </Link>
                 );
               }
-
               return <div key={index}>{card}</div>;
             })}
           </div>
@@ -262,7 +260,7 @@ export default function ToolsClient() {
           </div>
         </section>
 
-        {/* Upcoming products (your existing i18n already) */}
+        {/* Upcoming products */}
         <section className="w-full mb-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[var(--c1)] mb-4">
@@ -276,7 +274,6 @@ export default function ToolsClient() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {["styleTransfer", "mangaTranslation", "templatedVideo"].map((key, index) => {
               const transcriptKey = `upcoming.${key}.transcript`;
-
               return (
                 <div
                   key={index}
@@ -288,7 +285,6 @@ export default function ToolsClient() {
                   <p className="text-sm text-[var(--c2)] leading-relaxed mb-4">
                     {t(`upcoming.${key}.desc`)}
                   </p>
-
                   <CdnVideo
                     className="rounded-lg shadow-md w-full mt-auto"
                     controls
@@ -296,7 +292,6 @@ export default function ToolsClient() {
                     src={`/video/demo_${key}.mp4`}
                     aria-label={`Demo video for ${t(`upcoming.${key}.title`)}`}
                   />
-
                   <p className="text-xs text-gray-400 mt-2">
                     {t("tools.hero.transcript_label")}: {transcriptKey}
                   </p>
@@ -306,6 +301,8 @@ export default function ToolsClient() {
           </div>
         </section>
       </div>
+      {/* ✅ Modal must be rendered in the same component tree where modalAtom is set */}
+      <CreateNewModal />
     </>
   );
 }
