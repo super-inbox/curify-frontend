@@ -6,6 +6,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Image from "next/image";
 import { File } from "@/types/projects";
+import { useTranslations } from "next-intl";
 
 interface ExportDialogProps {
   isOpen: boolean;
@@ -14,6 +15,8 @@ interface ExportDialogProps {
 }
 
 export default function ExportDialog({ isOpen, onClose, files }: ExportDialogProps) {
+  const t = useTranslations("export");
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -33,7 +36,7 @@ export default function ExportDialog({ isOpen, onClose, files }: ExportDialogPro
                 {/* Header */}
                 <div className="flex justify-between items-center px-6 py-4 bg-gray-50 border-b border-gray-200">
                   <Dialog.Title className="text-lg font-semibold text-gray-900">
-                    Export
+                    {t("title")}
                   </Dialog.Title>
                   <button
                     type="button"
@@ -77,11 +80,11 @@ export default function ExportDialog({ isOpen, onClose, files }: ExportDialogPro
                       >
                         <Image
                           src="/icons/output.svg"
-                          alt="Export"
+                          alt={t("export")}
                           width={20}
                           height={20}
                         />
-                        <span className="text-sm font-medium text-gray-800">Export</span>
+                        <span className="text-sm font-medium text-gray-800">{t("export")}</span>
                       </a>
                     </div>
                   ))}

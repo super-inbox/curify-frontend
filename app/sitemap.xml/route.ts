@@ -20,8 +20,7 @@ const STATIC_ROUTES = [
   "/about",
   "/video-dubbing",
   "/bilingual-subtitles",
-  "/creator",
-  "/lip-sync",
+  "/tools",  
   "/privacy",
   "/agreement",
   "/blog",
@@ -55,26 +54,24 @@ function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
     .filter((item) => item.locales.length > 0); // Only include templates with at least one locale
 }
 
-// hreflang block
+// 1. Update hreflang block to strip '/en' from x-default and the 'en' alternate
 function generateHreflangLinks(route: string, availableLocales?: string[]) {
-  // If availableLocales is provided, only generate hreflang for those locales
   const localesToUse = availableLocales || LOCALES;
   
-  const links = localesToUse.map(
-    (lng) =>
-      `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}/${lng}${route}" />`
-  ).join("");
+  const links = localesToUse.map((lng) => {
+    // Strip prefix for English
+    const pathPrefix = lng === "en" ? "" : `/${lng}`;
+    return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
+  }).join("");
 
-  // x-default points to first available locale or 'en'
-  const defaultLocale = localesToUse.includes("en") ? "en" : localesToUse[0];
-  
+  // x-default strictly points to the unprefixed route
   return (
     links +
-    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/${defaultLocale}${route}" />`
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`
   );
 }
 
-// <url> entry for a specific locale
+// 2. Update the main <loc> generator to strip '/en' from the English URLs
 function generateUrlEntry(
   locale: string,
   route: string,
@@ -85,7 +82,10 @@ function generateUrlEntry(
     availableLocales?: string[];
   }
 ) {
-  const loc = `${BASE_URL}/${locale}${route}`;
+  // Strip prefix for English
+  const pathPrefix = locale === "en" ? "" : `/${locale}`;
+  const loc = `${BASE_URL}${pathPrefix}${route}`;
+  
   const lastmod = opts?.lastmod ?? new Date().toISOString();
   const changefreq = opts?.changefreq ?? "weekly";
   const priority =

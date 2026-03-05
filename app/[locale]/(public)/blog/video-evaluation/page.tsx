@@ -16,7 +16,7 @@ export async function generateMetadata({
 
   return {
     title: `${t("title")} – ${t("subtitle")}`,
-    description: t("intro"),
+    description: t("description"),
   };
 }
 
@@ -45,8 +45,8 @@ export default function VideoTranslationEvaluationPost() {
 
   return (
     // Keep the article container as the "max width" boundary
-    <article className="max-w-6xl mx-auto px-6 py-20 text-[18px] leading-8">
-      
+    <article className="pt-10 pb-8">
+
       {/* HEADER: This can remain full-width for impact */}
       <header className="mb-20 space-y-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center leading-tight">

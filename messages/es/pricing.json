@@ -1,0 +1,101 @@
+{
+  "pricing": {
+    "metadata": {
+      "title": "Planes de precios | Curify Studio",
+      "description": "Elige el plan adecuado para tus necesidades de creación de contenido. Desde herramientas gratuitas hasta doblaje y localización con IA de nivel empresarial."
+    },
+    "header": {
+      "title": "Empezando con un plan",
+      "subtitle": "Elige un plan que se ajuste a tus necesidades."
+    },
+    "common": {
+      "month": "Mes",
+      "pricing": "Precios",
+      "receive": "Recibir"
+    },
+    "buttons": {
+      "signUp": "Registrarse",
+      "subscribePlan": "Suscribirse al plan",
+      "currentPlan": "Plan actual",
+      "comingSoon": "Próximamente",
+      "downgradeToFree": "Cambiar a Gratis",
+      "downgradeToCreator": "Cambiar a Creador",
+      "contactSales": "Contactar con ventas"
+    },
+    "plans": {
+      "free": {
+        "name": "Gratis",
+        "description": "Genial para probar herramientas y trabajo ligero",
+        "features": [
+          "Descargar videos sin marca de agua",
+          "1 hora de procesamiento de subtítulos gratis",
+          "Exportar archivos SRT"
+        ]
+      },
+      "creator": {
+        "name": "Creador",
+        "description": "Ideal para pequeños creadores que hacen subtitulado regular y doblaje ligero",
+        "plusTitle": "Todo en Gratis, más:",
+        "features": [
+          "Sincronización labial",
+          "Procesamiento por lotes",
+          "5 horas de procesamiento de subtítulos gratis",
+          "Hasta 30 minutos por tarea"
+        ]
+      },
+      "pro": {
+        "name": "Profesional",
+        "description": "Próximamente — Diseñado para creadores de alto volumen",
+        "plusTitle": "Todo en Creador, más:",
+        "features": [
+          "Embellecimiento de voz y eliminación de ruido",
+          "Cola prioritaria",
+          "Hasta 60 min por tarea",
+          "Minutos de subtítulos ilimitados"
+        ]
+      },
+      "enterprise": {
+        "name": "Empresa",
+        "description": "Para equipos, estudios y flujos de trabajo empresariales",
+        "customPricing": "Personalizado",
+        "unlimited": "Ilimitado 🐚",
+        "tailoredSupport": "y soporte personalizado",
+        "plusTitle": "Todo en Pro, más:",
+        "features": [
+          "Gerente de cuenta dedicado",
+          "Opciones de implementación local",
+          "Acceso a API y análisis de uso",
+          "Integraciones personalizadas y SLA",
+          "Horas de procesamiento ilimitadas"
+        ]
+      }
+    },
+    "table": {
+      "header": {
+        "feature": "Función / Límite"
+      },
+      "rows": {
+        "videoDownloadWithWatermark": "Descarga de video con marca de agua",
+        "videoDownloadWithoutWatermark": "Descarga de video sin marca de agua",
+        "downloadSrt": "Descargar archivo SRT",
+        "voiceBeautification": "Embellecimiento de voz y eliminación de ruido",
+        "lipSync": "Sincronización labial",
+        "subtitleTools": "Herramientas de subtítulos",
+        "batchProcessing": "Procesamiento por lotes",
+        "maxVideoLength": "Longitud máxima de video por tarea",
+        "monthlyCredits": "Créditos gratuitos mensuales",
+        "priorityQueue": "Cola prioritaria",
+        "creditTopUp": "Recarga de créditos"
+      },
+      "values": {
+        "free": "Gratis",
+        "unlimited": "Ilimitado",
+        "oneHourPerMonth": "1 h/mes",
+        "fiveHoursPerMonth": "5 h/mes",
+        "fiveMinutes": "5 min.",
+        "thirtyMinutes": "30 min.",
+        "sixtyMinutes": "60 min."
+      }
+    }
+  }
+}

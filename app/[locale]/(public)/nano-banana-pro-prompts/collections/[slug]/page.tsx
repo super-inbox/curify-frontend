@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import NanoBananaProPromptsClient from "../../NanoBananaProPromptsClient";
+import { getCanonicalUrl } from "@/lib/canonical";
 
 type Prompt = any;
 
@@ -74,12 +75,11 @@ type PageProps = {
 /**
  * Metadata (SEO only for curated collections)
  */
-export async function generateMetadata(
-  { params }: PageProps
-): Promise<Metadata> {
+
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, locale } = await params;
   const cfg = COLLECTIONS[slug];
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
   if (!cfg) {
     return {
@@ -87,12 +87,16 @@ export async function generateMetadata(
     };
   }
 
+  const path = `/nano-banana-pro-prompts/collections/${slug}`;
+
   return {
     title: cfg.title,
     description: cfg.description,
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `${siteUrl}/${locale}/nano-banana-pro-prompts/collections/${slug}`,
+      canonical: getCanonicalUrl(locale, path),
+      // Note: no getLanguagesMap here — collection pages are English-only
+      // If you add translations later, add: languages: getLanguagesMap(path)
     },
   };
 }

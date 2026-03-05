@@ -146,7 +146,7 @@
     }
   },
   {
-    "id": "template-weather-zh",
+    "id": "template-weather",
     "locales": {
       "zh": {
         "category": "微缩城市天气预报",
@@ -846,7 +846,7 @@
     }
   },
   {
-    "id": "template-battle-card",
+    "id": "template-battle",
     "locales": {
       "zh": {
         "category": "古风对决角色档案类",
@@ -1123,5 +1123,385 @@
         ]
       }
     }
-  }    
+  },
+  {
+    "id": "template-fashion-ecommerce",
+    "locales": {
+      "zh": {
+        "category": "服饰电商详情类",
+        "description": "生成9:16竖版电商服饰详情长图，四段式排版，暖色调、干净高端的商业时尚风格，4K高清，适合电商详情页与社媒展示。",
+        "base_prompt": "（Fashion E-commerce Designer）根据上传的服饰参考图，生成一张 9:16 竖版电商服饰详情长图，整体风格统一暖色调、干净高端、商业时尚质感，4K 高清，产品与文字对焦清晰。\n\n画面从上到下分为 4 个清晰板块：\n1) 首屏视觉区：多位高颜值模特穿着该服饰，场景时尚，姿势自然灵动不僵硬；配文字【核心卖点：{core_selling_point}】。\n2) 面料细节区：3 张面料特写图（质感、弹力、工艺细节），搭配简洁图标说明。\n3) 搭配展示区：2 种不同配色或穿搭方式并排对比展示。\n4) 尺码信息区：标准尺码表格，含美码 XS、S、M、L、XL；采用通用正常尺码数据，文字清晰易读。\n\n整体排版整洁高级，色调统一，突出产品质感与卖点，适合电商详情页与商品宣传使用。直接出图。核心服饰参考上传图。核心卖点：{core_selling_point}。",
+        "parameters": [
+          {
+            "name": "core_selling_point",
+            "label": "核心卖点",
+            "type": "text",
+            "placeholder": ["保暖显瘦", "透气舒适", "百搭通勤", "高弹塑形", "防风防水"]
+          }
+        ]
+      },
+      "en": {
+        "category": "Fashion E-commerce Detail Long Image",
+        "description": "Generate a 9:16 vertical fashion e-commerce detail long image with a 4-section layout, warm tones, clean premium commercial style, 4K, suitable for product detail pages and social media showcases.",
+        "base_prompt": "(Fashion E-commerce Designer) Using the uploaded clothing reference image, generate a 9:16 vertical fashion e-commerce detail long image. Keep a consistent warm tone, clean premium layout, and high-end commercial fashion look in 4K resolution. Ensure the product and text are sharp and well-focused.\n\nSplit the canvas into 4 clear sections from top to bottom:\n1) Hero Visual: multiple attractive models wearing the outfit; a stylish environment; natural, dynamic poses (not stiff). Add headline text: [Key Selling Point: {core_selling_point}].\n2) Fabric Details: 3 close-up fabric shots (texture, stretch, craftsmanship details) with simple icon callouts.\n3) Styling Comparison: 2 different colorways or styling options shown side-by-side.\n4) Size Info: a standard size table including US sizes XS, S, M, L, XL with commonly used normal sizing values; text must be crisp and readable.\n\nOverall: tidy, premium composition; unified color tone; highlight material quality and selling points. Output the image directly. The outfit must follow the uploaded reference. Key selling point: {core_selling_point}.",
+        "parameters": [
+          {
+            "name": "core_selling_point",
+            "label": "Key Selling Point",
+            "type": "text",
+            "placeholder": [
+              "Warm & slimming",
+              "Breathable and comfortable",
+              "Versatile for workwear",
+              "High-stretch shaping fit",
+              "Windproof & waterproof"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-portrait-retouching-blueprint",
+    "locales": {
+      "en": {
+        "category": "Portrait Retouching Blueprint",
+        "description": "Create a professional portrait retouching blueprint with two side-by-side panels: left shows the untouched original portrait with precise red annotations and imperative English instructions; right shows the fully retouched final portrait based on those annotations.",
+        "base_prompt": "Professional portrait retoucher and blueprint designer. Create a professional portrait retouching blueprint with two side-by-side panels.\n\nLeft panel:\n- Show ONLY the original portrait (do not retouch it).\n- Mark all areas to be modified with precise red annotations (red lines, red circles, red dotted lines, red hand-drawn grid textures).\n- Each annotation must have a short, clear imperative English instruction.\n\nRight panel:\n- Show the fully retouched, optimized final portrait according to the left panel annotations.\n\nRetouching areas and requirements (must be annotated on the left and executed on the right):\n- Skin: refine texture, reduce oiliness, even skin tone, reduce redness.\n- Face: reshape eyebrows, define jawline, refine nose shape, slightly whiten teeth.\n- Eyes: reduce dark circles, eliminate puffiness, refine eye shape.\n- Hair: tame stray hairs, add natural volume.\n- Lighting & background: soften background, enhance fill light, balance overall lighting.\n\nOutput rules:\n- Left: original + accurate red annotations + short imperative English labels.\n- Right: polished, natural-looking retouched version.\n- No extra descriptions; only output the two-panel blueprint image.\n- Style: realistic, high-detail, professional portrait retouching blueprint.\nGenerate directly.",
+        "parameters": []
+      },
+      "zh": {
+        "category": "人像修图蓝图类",
+        "description": "制作专业人像修图蓝图：左右双栏排版，左侧为未修图原图+精准红色标注与英文指令，右侧为按标注完成的真实自然精修效果图。",
+        "base_prompt": "（Professional Portrait Retoucher）你是一位顶尖人像修图师与修图蓝图设计师。生成一张专业人像修图蓝图，左右两栏并排。\n\n左侧面板：\n- 仅展示原始人像（禁止对原图做任何修图）。\n- 用精准红色标注指出所有需要修改的位置（红线、红圈、红色虚线、红色手绘网格纹理等）。\n- 每处标注对应一条简短、清晰的英文祈使句修图指令。\n\n右侧面板：\n- 按左侧标注与指令完成精修后的最终人像，真实自然、专业高质感。\n\n必须标注并执行的修图项：\n- Skin：refine texture / reduce oiliness / even skin tone / reduce redness\n- Face：reshape eyebrows / define jawline / refine nose shape / slightly whiten teeth\n- Eyes：reduce dark circles / eliminate puffiness / refine eye shape\n- Hair：tame stray hairs / add natural volume\n- Lighting & background：soften background / enhance fill light / balance overall lighting\n\n输出规则：\n- 左侧：原图 + 清晰准确的红色标注 + 简短英文指令。\n- 右侧：完成后的自然精修图。\n- 不要输出额外文字说明，只输出双栏蓝图成图。\n- 风格：真实、高清、专业修图蓝图。\n直接出图。",
+        "parameters": []
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic",
+    "locales": {
+      "zh": {
+        "category": "历史文物类",
+        "description": "生成3:4中国风复古信息图海报，以文物手绘插画为中心，四象限科普板块+延伸知识区，典雅稳重、适合社交平台分享。",
+        "base_prompt": "（Chinese Style Infographic Designer）你是一位顶尖中国风复古信息图设计师，擅长融合传统纹样与科普内容，打造典雅兼具传播性的海报。\n\n根据用户指定的【{cultural_relic}】，生成一张 3:4 比例中国风复古信息图海报，标题为《文化价值与历史意义：中华文明的璀璨明珠》：\n- 画面中心：该文物的手绘插画，置于带有龙纹与云纹的传统边框中。\n- 四象限布局：\n  左上：历史地位\n  右上：考古价值\n  左下：艺术成就\n  右下：当代影响\n  每个板块都配项目符号列表与小图标。\n- 底部区域：\"延伸知识\"板块。\n\n整体色调柔和沉稳，以米黄、赭石、朱红与墨黑为主，营造中国古纸与墨书质感；背景装饰云纹、龙纹、回纹等传统纹样；中文文字采用书法风格字体。\n\n适合在社交平台分享（全程客观科普，不添加主观评价）。直接出图。文物为【{cultural_relic}】。",
+        "parameters": [
+          {
+            "name": "cultural_relic",
+            "label": "文物名称",
+            "type": "text",
+            "placeholder": ["越王勾践剑", "曾侯乙编钟", "司母戊鼎", "玉琮", "青铜爵"]
+          }
+        ]
+      },
+      "en": {
+        "category": "Chinese Cultural Relic Retro Infographic",
+        "description": "Generate a 3:4 Chinese retro-style infographic poster about a cultural relic’s historical and cultural significance, with a central hand-painted illustration, four quadrant sections, and an extra knowledge section.",
+        "base_prompt": "(Chinese Retro Infographic Designer) You are a top Chinese retro infographic designer who blends traditional patterns with objective educational content.\n\nGiven the cultural relic 【{cultural_relic}】, generate a 3:4 Chinese retro-style infographic poster titled \"Cultural Value & Historical Significance: A Jewel of Chinese Civilization\".\n- Center: a hand-painted illustration of the relic inside a traditional frame featuring dragon and cloud motifs.\n- Four quadrants:\n  Top-left: Historical Status\n  Top-right: Archaeological Value\n  Bottom-left: Artistic Achievement\n  Bottom-right: Modern Impact\n  Each quadrant contains bullet points and small icons.\n- Bottom area: an \"Extra Knowledge\" section.\n\nVisual style: calm, elegant palette (rice paper beige, ochre, vermilion, ink black) with antique paper + ink texture. Background includes traditional patterns (clouds, dragons, key-fret/meander). Typography: Chinese-calligraphy-inspired headings with clean readable body text.\n\nMust remain objective and educational (no subjective praise). Output the poster directly. Relic: 【{cultural_relic}】.",
+        "parameters": [
+          {
+            "name": "cultural_relic",
+            "label": "Cultural Relic",
+            "type": "text",
+            "placeholder": [
+              "Sword of Goujian",
+              "Zeng Hou Yi Bronze Bells",
+              "Simuwu Ding",
+              "Jade Cong",
+              "Bronze Jue Cup"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-dog-breed-retro-infographic",
+    "locales": {
+      "zh": {
+        "category": "犬种科普类",
+        "description": "生成9:16复古科学插画风犬种信息图：精细手绘犬种插画+解剖标注，多板块科普布局，旧纸质感，适合社交平台分享。",
+        "base_prompt": "（Retro Science Illustrator）你是一位顶尖复古科学插画师，擅长融合旧纸张质感与精准科普内容，打造兼具观赏性与知识性的犬种信息图。\n\n根据用户指定的【{dog_breed}】和【{dog_breed_english}】，生成一张 9:16 比例复古风格信息图海报，标题为「{dog_breed} - {dog_breed_english}」。\n\n画面核心：该犬种的精细手绘插画，带解剖标注，指向被毛、体型、足爪等关键特征。\n\n布局为多个清晰板块：\n- 左上：解剖结构与适应性（骨骼示意、肌肉层示意、足爪结构、健康注意事项子板块；配小图标与项目符号）\n- 右上：行为特征与可训练性（行为流程图、能量/专注曲线、可训练性条形图、互动场景连环画）\n- 左下：被毛系统与护理（皮肤横截面示意图、被毛放大图、护理要点清单）\n- 右下：个性总结（图标化性格标签 + 一句总结性文案）\n\n整体色调柔和沉稳，以米黄、深褐、浅棕为主，营造旧纸张与科学插画质感；背景点缀该犬种原生环境（农场/山林/家居等）的简约线稿；英文用清晰衬线体，中文用简洁无衬线体，标注用手写风格。\n\n全程客观科普，不添加主观评价。直接出图。犬种为【{dog_breed}】，英文名为【{dog_breed_english}】。",
+        "parameters": [
+          {
+            "name": "dog_breed",
+            "label": "犬种名称（中文）",
+            "type": "text",
+            "placeholder": ["金毛寻回犬", "柯基犬", "哈士奇", "贵宾犬", "比格犬"]
+          },
+          {
+            "name": "dog_breed_english",
+            "label": "犬种名称（英文）",
+            "type": "text",
+            "placeholder": [
+              "Golden Retriever",
+              "Corgi",
+              "Siberian Husky",
+              "Poodle",
+              "Beagle"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "category": "Dog Breed Retro Science Infographic",
+        "description": "Generate a 9:16 retro science illustration infographic for a dog breed, with a detailed hand-drawn breed illustration, anatomical callouts, and multiple structured educational sections.",
+        "base_prompt": "(Retro Science Illustrator) You are a top retro scientific illustrator who combines antique paper textures with precise educational content.\n\nGiven 【{dog_breed}】 and its English name 【{dog_breed_english}】, generate a 9:16 retro-style infographic poster titled \"{dog_breed} - {dog_breed_english}\".\n\nCenterpiece: a highly detailed hand-drawn illustration of the breed with anatomical callouts pointing to coat, body proportions, paws, and other key traits.\n\nStructured sections:\n- Top-left: Anatomy & Adaptation (mini panels for skeleton diagram, muscle layer diagram, paw structure, and health notes; with icons + bullet points)\n- Top-right: Behavior & Trainability (behavior flow chart, energy/focus curve, trainability bar chart, and a small interaction comic strip)\n- Bottom-left: Coat System & Care (skin cross-section diagram, magnified coat texture, and care checklist)\n- Bottom-right: Personality Summary (icon-based trait tags + one concise summary line)\n\nVisual style: calm earthy palette (antique beige, deep brown, light tan) with aged paper + scientific illustration feel. Background includes minimal line-art of the breed’s typical environment (farm/forest/home, etc.). Typography: clean serif for English, clean sans-serif for Chinese labels if present; handwritten style for callouts.\n\nKeep the content objective and educational (no subjective praise). Output the poster directly. Breed: 【{dog_breed}】; English name: 【{dog_breed_english}】.",
+        "parameters": [
+          {
+            "name": "dog_breed",
+            "label": "Dog Breed (Chinese or Local Name)",
+            "type": "text",
+            "placeholder": ["金毛寻回犬", "柯基犬", "哈士奇", "贵宾犬", "比格犬"]
+          },
+          {
+            "name": "dog_breed_english",
+            "label": "Dog Breed (English)",
+            "type": "text",
+            "placeholder": [
+              "Golden Retriever",
+              "Corgi",
+              "Siberian Husky",
+              "Poodle",
+              "Beagle"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "template-mbti-contrast-zh",
+    "locales": {
+      "zh": {
+        "category": "MBTI趣味类",
+        "description": "Generate a 4K vertical MBTI Spring Festival travel comparison meme with two-panel contrast, cute animal characters, Chinese text, red border card style.",
+        "base_prompt": "（MBTI梗图设计师）你是一位顶尖AI视觉设计师，擅长生成高表现力、强对比、文字清晰的MBTI对比卡片。根据用户指定的【{persona_a}】、【{persona_b}】、【{scene_title}】，生成一张竖版9:16对比卡：整体为白色卡片+红色粗边框，上下双栏结构，每栏顶部是醒目加粗中文标题，中间是可爱动物拟人卡通插画，底部是搞笑文案。上半部分：标题【{persona_a} {scene_title}】，动物拟人插画，动作表情鲜明；下半部分：标题【{persona_b} {scene_title}】，与上半部分形成强烈反差对比。风格：扁平卡通、色彩明亮、文字清晰无错别字、画面干净、排版工整、4K高清、适合抖音小红书传播。直接出图，主体为MBTI春运对比。",
+        "parameters": [
+          {
+            "name": "persona_a",
+            "label": "人格A",
+            "type": "text",
+            "placeholder": ["ISTJ", "ENFP", "INFP", "INTJ"]
+          },
+          {
+            "name": "persona_b",
+            "label": "人格B",
+            "type": "text",
+            "placeholder": ["ENFP", "ISTJ", "ESTP", "INTP"]
+          },
+          {
+            "name": "scene_title",
+            "label": "春运场景",
+            "type": "text",
+            "placeholder": ["春运打包", "候车时", "高铁上", "赶高铁"]
+          }
+        ]
+      }
+    }
+  },
+  {
+     "id": "template-guofeng-scroll-zh",
+     "locales": {
+     "zh": {
+     "category": "国风长卷类",
+     "description": "Generate a 4K horizontal Chinese traditional figure group scroll infographic poster with distinct characters, labeled names, and thematic background.",
+     "base_prompt": "（国风卷轴插画师）你是一位顶尖的中国传统工笔人物画师，擅长将经典人物群像绘制成长卷式百科海报。根据用户指定的【{group_name}】，生成一张 “中国传统人物群像长卷海报”：画面为横向长卷式构图，所有人物排成一条队列，从左至右依次展开；每个人物都有鲜明的传统服饰、标志性道具和神态，下方配有竖排名牌标注姓名；卷轴顶部有醒目的书法标题；背景为符合主题的场景元素（如祥云、海浪、山水、亭台等）。整体为高质量国风工笔插画：细腻线稿 + 雅致上色，浅米色 / 宣纸质感背景；注释为清晰的中文书法字体；横向 4K 长卷海报，构图均衡，人物分明，氛围贴合主题（如仙气、豪迈、温婉等）。直接出图，人物群像为【{group_name}】。",
+     "parameters": [
+      {
+         "name": "group_name",
+         "label": "人物群像主题名称",
+         "type": "text",
+         "placeholder": ["八仙过海", "竹林七贤", "金陵十二钗"]
+       }
+     ]
+   }
+ }
+},
+{
+  "id": "template-species-science-zh",
+  "locales": {
+    "zh": {
+      "category": "物种科普图鉴类",
+      "description": "Generate a 3:4 scientific infographic illustration with the species in the center and information modules around.",
+      "base_prompt": "（Scientific Illustrator）你是一位专业科普插画师，擅长绘制现代科学图鉴风格信息图表。根据用户指定的【{species_name}】，生成一张信息图表风格插画：中心为【{species_name}】高清主体大图，四周分布特征、功能、寿命、结构、生物细节等卡片式信息框，用清晰线条与分区排版连接展示。整体为现代科学图鉴风格，严谨美观，摄影级细节，文字使用中文，图片比例3:4。直接出图，物种为【{species_name}】。",
+      "parameters": [
+        {
+          "name": "species_name",
+          "label": "物种名称",
+          "type": "text",
+          "placeholder": ["大熊猫", "雪豹", "绿孔雀", "银杏", "桫椤"]
+        }
+      ]
+    }
+  }
+ },
+{ 
+    "id": "template-city-miniature-zh",
+    "locales": {
+        "zh": {
+            "category": "城市微缩景观类",
+            "description": "Generate a high-detail street-style map of a city with a hyper-photorealistic miniature version dynamically emerging from its surface, including landmarks, scenery, streets, trees and transit.",
+            "base_prompt": "（Concept Artist）你是一位顶尖城市微缩景观概念设计师，擅长将城市地图与立体微缩景观结合创作。以{City Name}为主题，在复古质感的{City map}平面上，生成超写实逼真的城市微缩立体景观：包含精致建筑细节的本地标志性地标、经典人文风景、霓虹或传统韵味的热闹商业街、点缀着缤纷落叶的葱郁{seasonal trees}、沿着微缩轨道行驶的细腻{City Transit}列车。所有元素如同鲜活的3D城市沙盘从地图中自然生长而出，层间带有柔和阴影增强立体感。采用工作室柔和光影，冷暖色调和谐统一，电影级景深效果，背景虚化光斑柔和，建筑与植物纹理细节精致，2:3构图，超写实渲染，高清画质。直接出图，城市为{City Name}。",
+            "parameters": [
+                {
+                    "name": "City Name",
+                    "label": "城市名称",
+                    "type": "text",
+                    "placeholder": ["北京", "上海", "东京", "巴黎"]
+                },
+                {
+                    "name": "City map",
+                    "label": "地图风格",
+                    "type": "text",
+                    "placeholder": ["复古牛皮纸地图", "旧报纸质感地图", "做旧帆布地图"]
+                },
+                {
+                    "name": "seasonal trees",
+                    "label": "季节树木",
+                    "type": "text",
+                    "placeholder": ["枫树", "银杏树", "樱花树", "梧桐树"]
+                },
+                {
+                    "name": "City Transit",
+                    "label": "城市交通",
+                    "type": "text",
+                    "placeholder": ["地铁", "轻轨", "复古电车", "观光巴士"]
+                }
+            ]
+        }
+    }
+},
+    {
+    "id": "template-hotspot-card-zh",
+    "locales": {
+        "zh": {
+            "category": "热点知识卡类",
+            "description": "Generate a hand-painted watercolor style hot topic knowledge card with clear sections, icons and summary.",
+            "base_prompt": "（Hand-painted Illustrator）你是一位专业知识卡片设计师，擅长手绘水彩风格的热点知识科普设计。根据用户指定的【{hotspot_name}】，生成一张手绘水彩风格热点知识卡：顶部标题栏为“热点知识卡 | {hotspot_name}”，副标题为“{keyword1} {keyword2} {keyword3}”，采用复古丝带横幅设计；背景为柔和水彩晕染效果，主色调为{color_theme}；所有图标与线条为手绘风格，黑色清晰轮廓线，内部低饱和度柔和色彩；信息分为“核心速览”板块，下设3-4个逻辑子模块，每个模块含图标、标题、要点，用箭头或连线展示因果关系；底部设“一句话总结”引语框，高度概括热点本质与核心影响。整体排版整洁、层次分明、文艺治愈，适合科普传播。直接出图，主题为【{hotspot_name}】。",
+            "parameters": [
+                {
+                    "name": "hotspot_name",
+                    "label": "热点名称",
+                    "type": "text",
+                    "placeholder": ["人工智能发展", "碳中和目标", "文旅消费复苏"]
+                },
+                {
+                    "name": "keyword1",
+                    "label": "核心关键词1",
+                    "type": "text",
+                    "placeholder": ["科技"]
+                },
+                {
+                    "name": "keyword2",
+                    "label": "核心关键词2",
+                    "type": "text",
+                    "placeholder": ["创新"]
+                },
+                {
+                    "name": "keyword3",
+                    "label": "核心关键词3",
+                    "type": "text",
+                    "placeholder": ["未来"]
+                },
+                {
+                    "name": "color_theme",
+                    "label": "主色调",
+                    "type": "text",
+                    "placeholder": ["暖黄", "浅蓝", "清新绿"]
+                }
+            ]
+        }
+    }
+    },
+    {
+    "id": "template-constellation-steampunk-zh",
+    "locales": {
+        "zh": {
+            "category": "星座蒸汽朋克解剖图谱类",
+            "description": "Generate a vintage steampunk-style constellation anatomical chart poster with mechanical structure, character modules and steampunk elements.",
+            "base_prompt": "（Steampunk Scientific Illustrator）你是一位专业复古蒸汽朋克解剖图谱设计师，擅长星座机械结构科普海报。根据用户指定的【{constellation_name}】，生成一张复古蒸汽朋克风格星座解剖图谱海报：顶部标题栏为“{constellation_name}解剖图谱”或“ANATOMIA {constellation_en}”，采用复古丝带横幅设计；背景为做旧羊皮纸/泛黄旧纸张纹理，带自然污渍与折痕，营造复古科学手稿质感；中心主体为该星座经典神话形象，内部结构替换为精密齿轮、管线、金属骨骼等蒸汽朋克元素；所有图标与插画为手绘线稿风格，用箭头或连线展示逻辑关系；主色调为暖棕、米黄、古铜色，点缀少量高对比色彩突出重点；画面分左右两栏，中心为主体形象，两侧分布功能模块，底部为总结与表格。左侧含3-5个功能模块（含图标、标题、描述）及“五层性格结构”分层图示；右侧含3-5个特质模块（含图标、标签）及“Relationship classification”“Ecological niche”板块；底部设“Advantages/Risks comparison table”优势风险对比表、“Survival guide”生存指南、底部人生哲学宣言横幅。整体严谨精致、复古机械美学，直接出图，星座为【{constellation_name}】。",
+            "parameters": [
+                {
+                    "name": "constellation_name",
+                    "label": "星座名称",
+                    "type": "text",
+                    "placeholder": ["白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座"]
+                },
+                {
+                    "name": "constellation_en",
+                    "label": "星座英文名称",
+                    "type": "text",
+                    "placeholder": ["ARIES", "TAURUS", "GEMINI", "CANCER", "LEO", "VIRGO"]
+                }
+            ]
+        }
+    }
+},
+{
+  "id": "template-hotspot-card-zh",
+  "locales": {
+      "zh": {
+          "category": "热点知识卡类",
+          "description": "Generate a hand-painted watercolor style hot topic knowledge card with clear sections, icons and summary.",
+          "base_prompt": "（Hand-painted Illustrator）你是一位专业知识卡片设计师，擅长手绘水彩风格的热点知识科普设计。根据用户指定的【{hotspot_name}】，生成一张手绘水彩风格热点知识卡：顶部标题栏为“热点知识卡 | {hotspot_name}”，副标题为“{keyword1} {keyword2} {keyword3}”，采用复古丝带横幅设计；背景为柔和水彩晕染效果，主色调为{color_theme}；所有图标与线条为手绘风格，黑色清晰轮廓线，内部低饱和度柔和色彩；信息分为“核心速览”板块，下设3-4个逻辑子模块，每个模块含图标、标题、要点，用箭头或连线展示因果关系；底部设“一句话总结”引语框，高度概括热点本质与核心影响。整体排版整洁、层次分明、文艺治愈，适合科普传播。直接出图，主题为【{hotspot_name}】。",
+          "parameters": [
+              {
+                  "name": "hotspot_name",
+                  "label": "热点名称",
+                  "type": "text",
+                  "placeholder": ["人工智能发展", "碳中和目标", "文旅消费复苏"]
+              },
+              {
+                  "name": "keyword1",
+                  "label": "核心关键词1",
+                  "type": "text",
+                  "placeholder": ["科技"]
+              },
+              {
+                  "name": "keyword2",
+                  "label": "核心关键词2",
+                  "type": "text",
+                  "placeholder": ["创新"]
+              },
+              {
+                  "name": "keyword3",
+                  "label": "核心关键词3",
+                  "type": "text",
+                  "placeholder": ["未来"]
+              },
+              {
+                  "name": "color_theme",
+                  "label": "主色调",
+                  "type": "text",
+                  "placeholder": ["暖黄", "浅蓝", "清新绿"]
+              }
+          ]
+      }
+  }
+},
+  {
+  "id": "template-constellation-steampunk-zh",
+  "locales": {
+      "zh": {
+          "category": "星座蒸汽朋克解剖图谱类",
+          "description": "Generate a vintage steampunk-style constellation anatomical chart poster with mechanical structure, character modules and steampunk elements.",
+          "base_prompt": "（Steampunk Scientific Illustrator）你是一位专业复古蒸汽朋克解剖图谱设计师，擅长星座机械结构科普海报。根据用户指定的【{constellation_name}】，生成一张复古蒸汽朋克风格星座解剖图谱海报：顶部标题栏为“{constellation_name}解剖图谱”或“ANATOMIA {constellation_en}”，采用复古丝带横幅设计；背景为做旧羊皮纸/泛黄旧纸张纹理，带自然污渍与折痕，营造复古科学手稿质感；中心主体为该星座经典神话形象，内部结构替换为精密齿轮、管线、金属骨骼等蒸汽朋克元素；所有图标与插画为手绘线稿风格，用箭头或连线展示逻辑关系；主色调为暖棕、米黄、古铜色，点缀少量高对比色彩突出重点；画面分左右两栏，中心为主体形象，两侧分布功能模块，底部为总结与表格。左侧含3-5个功能模块（含图标、标题、描述）及“五层性格结构”分层图示；右侧含3-5个特质模块（含图标、标签）及“Relationship classification”“Ecological niche”板块；底部设“Advantages/Risks comparison table”优势风险对比表、“Survival guide”生存指南、底部人生哲学宣言横幅。整体严谨精致、复古机械美学，直接出图，星座为【{constellation_name}】。",
+          "parameters": [
+              {
+                  "name": "constellation_name",
+                  "label": "星座名称",
+                  "type": "text",
+                  "placeholder": ["白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座"]
+              },
+              {
+                  "name": "constellation_en",
+                  "label": "星座英文名称",
+                  "type": "text",
+                  "placeholder": ["ARIES", "TAURUS", "GEMINI", "CANCER", "LEO", "VIRGO"]
+              }
+          ]
+      }
+  }
+}
 ]

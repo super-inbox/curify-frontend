@@ -4,6 +4,8 @@ import VideoDubbingClient from "./VideoDubbingClient";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+
 export async function generateMetadata({
   params,
 }: {
@@ -14,14 +16,19 @@ export async function generateMetadata({
 
   const title = t("title");
   const description = t("description");
+  const canonicalUrl = getCanonicalUrl(locale, "/video-dubbing");
 
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: getLanguagesMap("/video-dubbing"),
+    },
     openGraph: {
       title,
       description,
-      url: `${siteUrl}/${locale}/video-dubbing`,
+      url: canonicalUrl,
       type: "website",
       images: [
         {

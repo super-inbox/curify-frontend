@@ -55,11 +55,10 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
     const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
     const fileContent = fs.readFileSync(jsonPath, 'utf-8');
     const data: JsonData = JSON.parse(fileContent);
-    
+
     const prompt = data.prompts.find(p => p.id.toString() === id);
-    
     if (!prompt) return null;
-    
+
     return {
       id: prompt.id.toString(),
       title: prompt.title || 'Untitled Prompt',
@@ -71,7 +70,7 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
       category: prompt.category || 'Uncategorized',
       source_url: prompt.sourceUrl || '#',
       source_type: prompt.sourceType || 'unknown',
-      image_url: prompt.imageUrl 
+      image_url: prompt.imageUrl
         ? prompt.imageUrl.includes('static/images/')
           ? prompt.imageUrl.replace('/static/images/', '/images/')
           : prompt.imageUrl.startsWith('/')
@@ -101,8 +100,10 @@ export async function generateMetadata({
 }: {
   params: Promise<{ id: string; locale: string }>;
 }): Promise<Metadata> {
+
   const { id, locale } = await params;
   const prompt = await fetchPrompt(id);
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curify-ai.com';
 
   if (!prompt) {
@@ -117,24 +118,67 @@ export async function generateMetadata({
     prompt.description ||
     prompt.prompt_text.slice(0, 160) ||
     'Creative AI prompt from Nano Banana Pro Prompts.';
+
   const imageUrl = /^https?:\/\//i.test(prompt.image_url)
     ? prompt.image_url
     : `${siteUrl}${prompt.image_url}`;
+
   const url = `${siteUrl}/${locale}/nano-banana-pro-prompts/${id}`;
 
+  const keywords = [
+    'AI prompt',
+    'Nano Banana',
+    'prompt library',
+    prompt.category,
+    prompt.source_type,
+  ].filter(Boolean);
+
   return {
+    metadataBase: new URL(siteUrl),
+
     title,
     description,
+
     alternates: {
       canonical: url,
     },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    authors: prompt.author
+      ? [
+          {
+            name: prompt.author,
+            url: prompt.author_handle
+              ? `https://x.com/${prompt.author_handle.replace('@', '')}`
+              : undefined,
+          },
+        ]
+      : undefined,
+
+    keywords,
+
     openGraph: {
       title,
       description,
       type: 'article',
       url,
-      images: [imageUrl],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: prompt.title,
+        },
+      ],
+      publishedTime: prompt.date
+        ? new Date(prompt.date).toISOString()
+        : undefined,
     },
+
     twitter: {
       card: 'summary_large_image',
       title,
@@ -149,21 +193,77 @@ export default async function PromptDetailPage({
 }: {
   params: Promise<{ id: string; locale: string }>;
 }) {
-  // Await params before destructuring
+
   const { id, locale } = await params;
-  
   const prompt = await fetchPrompt(id);
+
   if (!prompt) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curify-ai.com';
+  const canonicalUrl = `${siteUrl}/${locale}/nano-banana-pro-prompts/${prompt.id}`;
+
+  const absoluteImageUrl = /^https?:\/\//i.test(prompt.image_url)
+    ? prompt.image_url
+    : `${siteUrl}${prompt.image_url}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": canonicalUrl,
+    url: canonicalUrl,
+    name: prompt.title,
+    description:
+      prompt.description ||
+      prompt.prompt_text.slice(0, 200) ||
+      "AI prompt from Nano Banana Pro Prompts.",
+    image: [absoluteImageUrl],
+    datePublished: prompt.date
+      ? new Date(prompt.date).toISOString()
+      : undefined,
+    author: prompt.author
+      ? {
+          "@type": "Person",
+          name: prompt.author,
+          identifier: prompt.author_handle || undefined,
+          url: prompt.author_handle
+            ? `https://x.com/${prompt.author_handle.replace("@", "")}`
+            : undefined,
+        }
+      : undefined,
+    genre: prompt.category || undefined,
+    keywords: [
+      "AI prompt",
+      "Nano Banana",
+      prompt.category,
+      prompt.source_type,
+    ].filter(Boolean),
+    isBasedOn:
+      prompt.source_url && prompt.source_url !== "#"
+        ? prompt.source_url
+        : undefined,
+    publisher: {
+      "@type": "Organization",
+      name: "Curify",
+      url: siteUrl,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <Link 
-              href={`/${locale}/nano-banana-pro-prompts`} 
+            <Link
+              href={`/${locale}/nano-banana-pro-prompts`}
               className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
             >
               <ArrowLeft className="h-4 w-4 mr-1" />
@@ -178,6 +278,7 @@ export default async function PromptDetailPage({
 
       <main className="max-w-4xl mx-auto py-6 sm:px-6 lg:px-8">
         <article className="bg-white shadow overflow-hidden rounded-lg">
+
           <div className="px-6 py-4">
             <div className="relative w-full h-96 bg-gray-50 flex items-center justify-center">
               <CdnImage
@@ -189,78 +290,39 @@ export default async function PromptDetailPage({
               />
             </div>
           </div>
-          
+
           <div className="px-6 py-5 border-b border-gray-200 sm:px-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex-1 min-w-0">
-                <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-                  {prompt.title}
-                </h1>
-                <div className="mt-2 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <svg className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
-                    {prompt.author}
-                    {prompt.author_handle && (
-                      <span className="ml-1 text-gray-400">(@{prompt.author_handle.replace('@', '')})</span>
-                    )}
-                  </div>
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <svg className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                    </svg>
-                    Created on {new Date(prompt.date).toLocaleDateString()}
-                  </div>
-                  <div className="mt-2">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getSourceBadgeClass(prompt.source_type)}`}>
-                      {prompt.source_type.charAt(0).toUpperCase() + prompt.source_type.slice(1)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h1 className="text-2xl font-bold text-gray-900">
+              {prompt.title}
+            </h1>
           </div>
 
           {prompt.description && (
             <div className="px-6 py-6 border-b border-gray-200">
-              <h2 className="text-lg font-medium text-gray-900 mb-3">Description</h2>
-              <p className="text-gray-600 whitespace-pre-line">{prompt.description}</p>
+              <h2 className="text-lg font-medium text-gray-900 mb-3">
+                Description
+              </h2>
+              <p className="text-gray-600 whitespace-pre-line">
+                {prompt.description}
+              </p>
             </div>
           )}
 
           <div className="px-6 py-6">
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
+              <h2 className="text-lg font-medium text-gray-900">
+                Prompt
+              </h2>
               <CopyButton text={prompt.prompt_text} />
             </div>
+
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <pre className="whitespace-pre-wrap font-sans text-gray-800">{prompt.prompt_text}</pre>
+              <pre className="whitespace-pre-wrap font-sans text-gray-800">
+                {prompt.prompt_text}
+              </pre>
             </div>
           </div>
 
-          <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-              {prompt.category && (
-                <div>
-                  <span className="font-medium text-gray-700">Category:</span> {prompt.category}
-                </div>
-              )}
-              {prompt.source_url && prompt.source_url !== '#' && (
-                <div>
-                  <span className="font-medium text-gray-700">Source:</span>{' '}
-                  <a 
-                    href={prompt.source_url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-indigo-600 hover:text-indigo-800"
-                  >
-                    View original
-                  </a>
-                </div>
-              )}
-            </div>
-          </div>
         </article>
       </main>
     </div>

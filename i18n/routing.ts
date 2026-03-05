@@ -13,5 +13,6 @@ export const routing = defineRouting({
     'tr',    // 🇹🇷 Türkçe
     'ru'     // 🇷🇺 Русский
   ],
-  defaultLocale: 'en'
+  defaultLocale: 'en',
+  alternateLinks: false
 });

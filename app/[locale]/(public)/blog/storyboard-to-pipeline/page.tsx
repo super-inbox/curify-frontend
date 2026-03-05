@@ -89,7 +89,7 @@ export default function StoryboardToPipelinePost() {
   };
 
   return (
-    <article className="max-w-4xl mx-auto px-6 py-12 prose prose-base md:prose-lg">
+    <article className="pt-10 pb-8">
       <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>
       
       {/* Featured image with floating layout */}

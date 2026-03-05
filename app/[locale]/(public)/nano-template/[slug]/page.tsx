@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
+import ExampleImagesGrid from "./ExampleImagesGrid";
 
 // ✅ merged seo json (minimal + optional content sections)
 import nanoSeo from "@/public/data/nano_template_seo.json";
@@ -38,8 +39,7 @@ function safeString(v: any) {
  * ✅ Minimal SEO schema + optional content sections
  * Keep this compatible with both "full" and "minimal" seo json
  */
-type SeoBlock = {
-  canonical_slug?: string;
+type SeoBlock = {  
   meta_title?: string;
   meta_description?: string;
   og_image?: string;
@@ -140,7 +140,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // canonical_slug is a "canonical identifier", not necessarily the actual route slug.
   // We keep the page route as-is, but can point canonical to a preferred URL.
   // If you actually want canonical_slug to be routable, you must add redirect logic elsewhere.
-  const canonicalSlug = seo?.canonical_slug || slug;
+  const canonicalSlug = slug;
   const canonicalPath = `/${localeStr}/nano-template/${canonicalSlug}`;
 
   const title = normalizeText(seo?.meta_title) || `${data.template.template_id} | Nano Template`;
@@ -218,6 +218,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       id: img!.id,
       title: img!.title || "",
       preview: img!.preview_image_url || img!.image_url,
+      templateId: img!.template_id,
     }));
 
   // SECTION 3: other templates
@@ -225,6 +226,16 @@ export default async function NanoTemplatePage({ params }: Props) {
     perTemplateMaxImages: 2,
     strictLocale: false,
   }).filter((c) => c.template_id !== template.template_id);
+  
+  const rawTitle =
+  normalizeText(seo?.meta_title) ||
+  `Nano Banana Prompt Template: ${template.template_id}`;
+
+// remove trailing "｜Curify AI" or "| Curify AI"
+const h1 = rawTitle.replace(/\s*[｜|]\s*Curify AI\s*$/i, "");
+  const intro =
+  normalizeText(seo?.meta_description) ||
+  `Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.`;
 
   return (
     <main className="mx-auto max-w-6xl px-4 pt-24 pb-10">
@@ -241,7 +252,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       <div className="mb-6">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-neutral-900">{template.template_id}</h1>
+            <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
             <p className="mt-2 text-sm text-neutral-600">{template.description}</p>
           </div>
 
@@ -320,33 +331,7 @@ export default async function NanoTemplatePage({ params }: Props) {
 
       {/* SECTION 2: example images */}
       <section className="mt-8">
-        <div className="mb-3">
-          <h2 className="text-lg font-bold text-neutral-900">Example images</h2>
-          <p className="mt-1 text-sm text-neutral-600">
-            {section2Images.length} curated outputs for this template.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {section2Images.map((it) => (
-            <div
-              key={it.id}
-              className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow"
-            >
-              <CdnImage
-                src={it.preview}
-                alt={it.title || it.id}
-                className="w-full aspect-[4/3] object-cover"
-                loading="lazy"
-              />
-              <div className="p-4">
-                <div className="text-sm font-semibold text-neutral-900 line-clamp-2">
-                  {it.title || it.id}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <ExampleImagesGrid items={section2Images} maxRows={3} />        
 
         {/* SECTION 3: other templates */}
         <NanoTemplateDetailClient

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Icon from "../../_components/Icon";
 import BtnSp from "../../_components/button/ButtonSpecial";
+import { useTranslations } from "next-intl";
 
 interface Props {
   src: string;
@@ -13,6 +14,7 @@ interface Props {
 
 export default function Video(props: Props) {
   const { src, whoPlaying, setWhoPlaying, side = "left" } = props;
+  const t = useTranslations("videoPlayer");
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -56,7 +58,7 @@ export default function Video(props: Props) {
           isLeft ? "left-[-3.75rem]" : "right-[-3.75rem]"
         }`}
       >
-        {isLeft ? 'Original' : 'Translated'}
+        {isLeft ? t("original") : t("translated")}
       </BtnSp>
       <div
         className={`
@@ -86,7 +88,7 @@ export default function Video(props: Props) {
         ref={videoRef}
         onEnded={() => setWhoPlaying("")}
       >
-        Your browser does not support the video tag.
+        {t("unsupported")}
       </video>
     </div>
   );

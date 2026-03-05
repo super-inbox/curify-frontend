@@ -1,0 +1,368 @@
+{
+  "home": {
+    "metadata": {
+      "title": "Curify – Convierte ideas en pensamiento visual | Infografías con IA y localización",
+      "description": "Curify es una plataforma de pensamiento visual impulsada por IA que transforma tendencias, ideas y conocimiento en contenido visual estructurado y compartible. Crea infografías, tarjetas de inspiración, subtítulos, videos traducidos y contenido localizado fácilmente.",
+      "ogTitle": "Curify – Convierte ideas en pensamiento visual",
+      "ogDescription": "Transforma tendencias e ideas en contenido visual estructurado. Tarjetas de inspiración, infografías con IA, traducción de video y herramientas de localización — todo en una sola plataforma."
+    },
+    "hero": {
+      "title": "Descubre Ideas | Expresa Visualmente | Crea Contenido",
+      "description": "Curify es una plataforma de pensamiento visual que transforma tendencias, ideas y conocimiento en contenido estructurado y compartible. Desde tarjetas de inspiración e infografías con IA hasta subtítulos, traducción y doblaje con sincronización labial."
+    }
+  },
+  "coreFeatures": {
+    "oneShot": {
+      "title": "Traducción en un solo paso",
+      "desc": "Traducción completa de video con voz en off, subtítulos y sincronización labial en un solo proceso."
+    },
+    "toneColor": {
+      "title": "Preservación del timbre",
+      "desc": "Mantiene las características vocales únicas y las cualidades tonales del hablante original."
+    },
+    "emotional": {
+      "title": "Habla emocional",
+      "desc": "La IA reproduce matices emocionales, asegurando una expresión auténtica en todos los idiomas."
+    },
+    "lipSync": {
+      "title": "Tecnología de sincronización labial",
+      "desc": "Sincronización labial avanzada que coincide perfectamente los movimientos de la boca con el audio traducido."
+    },
+    "subtitle": {
+      "title": "Subtitulador",
+      "desc": "Generación inteligente de subtítulos con sincronización precisa y flujo de lenguaje natural."
+    },
+    "languages": {
+      "title": "Más de 170 idiomas",
+      "desc": "Traduce tu contenido a más de 170 idiomas con precisión de nivel nativo."
+    }
+  },
+  "upcoming": {
+    "title": "Próximamente",
+    "subtitle": "Funciones de próxima generación en desarrollo",
+    "styleTransfer": {
+      "title": "Transferencia de estilo",
+      "desc": "Aplica estilos cinematográficos o específicos de marca a tus videos con transformación visual impulsada por IA.",
+      "icon": "🎨",
+      "status": "Llega el T3 2025",
+      "transcript": "Esta demostración transforma un clip de drama de acción en vivo en una animación caprichosa al estilo Ghibli utilizando transferencia de estilo visual impulsada por IA."
+    },
+    "mangaTranslation": {
+      "title": "Traducción de Manga",
+      "desc": "Traducción automatizada de manga y cómics con detección de texto, edición de burbujas y adaptación cultural.",
+      "icon": "📚",
+      "status": "Llega el T3 2025",
+      "transcript": "Este prototipo demuestra la traducción automática de manga, incluida la detección de burbujas de diálogo y la edición bilingüe en el lugar."
+    },
+    "templatedVideo": {
+      "title": "Generación de video con plantillas",
+      "desc": "Crea videos profesionales a partir de plantillas con contenido generado por IA y marca personalizada.",
+      "icon": "🎬",
+      "status": "Llega el T4 2025",
+      "transcript": "Esta demostración muestra una tubería de guion a video que genera una escena histórica sobre la historia temprana de EE. UU. planificando el guion gráfico y ensamblando imágenes."
+    },
+    "statusQ3": "Llega en el T3 2025",
+    "statusQ4": "Llega en el T4 2025"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Reconocimiento multimodal",
+      "desc": "Combinamos señales de voz y subtítulos para lograr una transcripción más precisa y robusta. Este reconocimiento de doble canal reduce errores y asegura una mejor alineación con el contenido original, especialmente en escenas de audio ruidosas o complejas."
+    },
+    "emotional": {
+      "title": "Habla emocional",
+      "desc": "Nuestros modelos de síntesis de voz generan un habla expresiva y emocionalmente rica que mejora la narración y la participación del espectador. Al capturar el tono, el ritmo y los matices, hacemos que las voces de IA se sientan más humanas y cercanas."
+    },
+    "lengthaware": {
+      "title": "Traducción y personalización consciente de la longitud",
+      "desc": "Optimizamos las traducciones no solo para la precisión, sino también para el tiempo y el ritmo, cruciales para la alineación de video y voz. Los usuarios pueden personalizar aún más el tono, la longitud y el fraseo para adaptarse a diferentes necesidades de contenido o preferencias de la audiencia."
+    },
+    "controlled": {
+      "title": "Generación de video controlada",
+      "desc": "Permitimos la generación de video estructurada y basada en plantillas con elementos visuales y transiciones controlables. Esto brinda a los creadores libertad creativa y consistencia en la producción, reduciendo el esfuerzo manual mientras se asegura una salida de alta calidad."
+    }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Doblaje de video",
+      "desc": "Traduce tu video a cualquier idioma con localización precisa y sincronización de voz"
+    },
+    "subtitle_captioner": {
+      "title": "Subtitulador",
+      "desc": "Genera automáticamente subtítulos multilingües para mejorar la claridad y la accesibilidad"
+    },
+    "lip_syncing": {
+      "title": "Sincronización labial",
+      "desc": "Combina los labios con el habla perfectamente con sincronización labial impulsada por IA"
+    },
+    "style_transfer": {
+      "title": "Transferencia de estilo",
+      "desc": "Transforma tu video en estilos artísticos de Pixar, Ghibli u otros — próximamente"
+    },
+    "coming_soon": "Próximamente",
+    "create": "Crear",
+    "meta": {
+      "title": "Herramientas de Curify",
+      "description": "Explora las herramientas de Curify Studio para doblaje de video, subtítulos y flujos de trabajo de contenido impulsados por IA."
+    },
+    "hero": {
+      "watch_demo": "Mira el mismo video traducido en diferentes idiomas con emoción y sincronización labial preservadas",
+      "transcript_label": "Transcripción",
+      "training_transcript": "Bienvenido a Curify Studio. En este video, mostramos cómo la IA traduce y dobla contenido en diferentes idiomas...",
+      "currently_playing": "Reproduciendo actualmente: versión {label}"
+    },
+    "products": {
+      "title": "Productos y Servicios",
+      "subtitle": "Nuestras soluciones impulsadas por IA están en vivo y mejorando continuamente — ya utilizadas por creadores y equipos en todo el mundo."
+    },
+    "audience": {
+      "title": "Nuestro Público Objetivo",
+      "v1": "🎥 Creadores de video y YouTubers que se expanden a mercados globales",
+      "v2": "📖 Educadores y plataformas de conocimiento convirtiendo libros en conferencias",
+      "v3": "🎶 Empresas de medios y entretenimiento localizando contenido en diferentes idiomas",
+      "v4": "📚 Editores de manga y traductores aficionados automatizando la traducción y la composición"
+    },
+    "free_badge": "GRATIS",
+    "groups": {
+      "video": "Herramientas de Video",
+      "image": "Herramientas de Imagen",
+      "audio": "Herramientas de Audio"
+    },
+    "video_transcript_generator": {
+      "title": "Generador de transcripciones de video",
+      "desc": "Convierte video en transcripciones precisas que puedes editar y reutilizar."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "Descargador de subtítulos de YouTube",
+      "desc": "Descarga subtítulos disponibles de YouTube con un clic."
+    },
+    "video_subtitle_extractor": {
+      "title": "Extractor de subtítulos de video",
+      "desc": "Extrae subtítulos incrustados en archivos SRT/VTT editables."
+    },
+    "translate_subtitles": {
+      "title": "Traducir subtítulos",
+      "desc": "Traduce SRT/VTT mientras preservas el tiempo y la estructura."
+    },
+    "subtitle_converter": {
+      "title": "Convertidor de subtítulos",
+      "desc": "Convierte entre SRT, VTT, ASS y más sin romper las marcas de tiempo."
+    },
+    "subtitle_editor": {
+      "title": "Editor de subtítulos",
+      "desc": "Edita subtítulos con controles de tiempo y correcciones rápidas por lotes."
+    },
+    "video_summarizer": {
+      "title": "Resumidor de video",
+      "desc": "Genera resúmenes concisos y puntos clave de cualquier video."
+    },
+    "storyboard_generator": {
+      "title": "Generador de guiones gráficos",
+      "desc": "Convierte videos en notas y sugerencias de guiones gráficos escena por escena."
+    },
+    "image_translation": {
+      "title": "Traducción de imágenes",
+      "desc": "Traduce texto en imágenes y reconstruye el diseño de manera limpia."
+    },
+    "manga_translation": {
+      "title": "Traducción de manga",
+      "desc": "Traduce paneles de manga manteniendo burbujas y tipografía legibles."
+    },
+    "voice_clone": {
+      "title": "Clon de voz",
+      "desc": "Clona una voz a partir de una muestra corta para una narración consistente."
+    },
+    "speech_translator": {
+      "title": "Traductor de voz",
+      "desc": "Traduce el habla a otro idioma con una entrega natural."
+    }
+  },
+  "bilingual": {
+    "metadata": {
+      "title": "Generador de subtítulos bilingües gratuito | Curify AI",
+      "description": "Crea subtítulos bilingües para tus videos con la herramienta gratuita impulsada por IA de Curify. Perfecto para YouTube, TikTok, educación y creadores globales."
+    },
+    "title": "Subtítulos bilingües fáciles",
+    "description": "Genera automáticamente subtítulos en dos idiomas utilizando el motor de subtítulos de IA de Curify. Ideal para creadores, educadores y empresas globales.",
+    "example": "Ejemplo: Jensen Huang explicando la estrategia de IA — subtítulos en inglés + chino generados automáticamente.",
+    "cta": "Pruébalo gratis",
+    "why": {
+      "title": "¿Por qué elegir Curify para subtítulos bilingües?",
+      "point1": "Soporta más de 170 idiomas con traducción precisa.",
+      "point2": "Preserva el tono emocional y el tiempo.",
+      "point3": "Perfecto para videos de YouTube, TikTok y educativos.",
+      "point4": "Exporta archivos de subtítulos listos para publicar o videos incrustados."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Es realmente gratis?",
+      "a1": "Sí, Curify ofrece un plan gratuito con minutos de subtítulos limitados por mes.",
+      "q2": "¿Puedo editar los subtítulos después de la generación?",
+      "a2": "Absolutamente. Puedes ajustar el tiempo, la traducción y el estilo antes de exportar."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué Son los Subtítulos Bilingües?",
+        "p1": "Los subtítulos bilingües muestran dos idiomas simultáneamente en la pantalla, típicamente el idioma original hablado y una versión traducida directamente debajo. En lugar de reemplazar los subtítulos originales, los subtítulos bilingües preservan el idioma fuente mientras añaden una traducción sincronizada.",
+        "p2": "Este formato se utiliza ampliamente en videos de aprendizaje de idiomas, canales internacionales de YouTube, cursos en línea, grabaciones de conferencias y marketing global. Ayuda a los espectadores a comparar significados en tiempo real, mejora la comprensión y expande la accesibilidad sin necesidad de volver a grabar tu video.",
+        "p3": "Por ejemplo, una presentación tecnológica realizada en inglés puede mostrar inglés en la primera línea y chino, español o japonés en la segunda línea, convirtiendo un video en un activo global."
+      },
+      "how": {
+        "title": "Cómo Curify Genera Subtítulos Bilingües de Alta Calidad",
+        "p1": "Curify no es un simple generador de subtítulos. Nuestro motor de subtítulos bilingües está construido sobre un pipeline de traducción de IA en múltiples etapas diseñado para precisión, exactitud en el tiempo y comprensión contextual.",
+        "p2": "Primero, transcribimos tu video utilizando un reconocimiento de voz de alta precisión que maneja el habla natural, vocabulario técnico y diálogos de múltiples hablantes. Luego traducimos con modelos conscientes del contexto que preservan la intención y el significado del dominio, no solo palabras literales.",
+        "p3": "A continuación, Curify alinea los subtítulos traducidos con los segmentos de habla originales, optimizando el tiempo y la legibilidad. Mantenemos el equilibrio en la longitud de las líneas, elegimos cortes de oraciones limpios y mantenemos una velocidad de lectura natural para los subtítulos bilingües apilados.",
+        "p4": "Finalmente, Curify refina las traducciones para preservar mejor el tono: persuasivo, educativo, humorístico o dramático, y asegura que la puntuación y el ritmo se sientan naturales en el idioma de destino.",
+        "p5": "Puedes exportar archivos de subtítulos (por ejemplo, SRT), descargar pistas de subtítulos bilingües o incrustar subtítulos bilingües directamente en tu video, y editar el tiempo, la traducción y el estilo antes de publicar."
+      },
+      "usecases": {
+        "title": "¿Quién Usa Subtítulos Bilingües?",
+        "creatorsTitle": "Para Creadores de YouTube y TikTok",
+        "creatorsBody": "Los creadores utilizan subtítulos bilingües para alcanzar audiencias internacionales sin gestionar canales separados. Los subtítulos bilingües pueden aumentar el tiempo de visualización, mejorar el compromiso de los espectadores multilingües y ayudar al contenido a posicionarse en búsquedas internacionales. En plataformas de formato corto donde los videos se reproducen automáticamente sin sonido, los subtítulos bilingües también aumentan la retención y la accesibilidad.",
+        "educationTitle": "Para Educadores y Cursos en Línea",
+        "educationBody": "El contenido educativo se beneficia significativamente de los subtítulos bilingües. Los estudiantes pueden comparar la terminología entre idiomas, retener vocabulario más fácilmente y seguir explicaciones complejas con menos fricción. Esto es especialmente útil para conferencias de STEM, cursos de certificación y materiales de aprendizaje de idiomas donde la precisión y la consistencia son importantes.",
+        "businessTitle": "Para Empresas Globales",
+        "businessBody": "Las empresas utilizan subtítulos bilingües para demostraciones de productos, presentaciones a inversores, videos de capacitación y campañas de marketing. En lugar de producir videos localizados separados, puedes enviar un único activo multilingüe, reduciendo el costo de producción mientras expandes el alcance global."
+      }
+    }
+  },
+  "videoDubbing": {
+    "metadata": {
+      "title": "Herramienta de doblaje de video con IA | Curify AI",
+      "description": "Dobla tus videos a más de 170 idiomas utilizando clonación de voz con IA, preservación de emociones y sincronización labial. Prueba el doblaje con IA de Curify gratis."
+    },
+    "title": "Doblaje de video con IA con voz natural",
+    "description": "Traduce y dobla tu contenido de video a más de 170 idiomas con voz de IA realista y sincronización labial. Perfecto para creadores y marcas internacionales.",
+    "cta": "Prueba Gratis",
+    "demo": {
+      "nowPlaying": "Reproduciendo actualmente: versión en {lang}",
+      "caption": "Ejemplo: video doblado por IA con preservación de emoción y sincronización labial entre idiomas",
+      "aria": "Demostración de doblaje de video por IA en múltiples idiomas"
+    },
+    "why": {
+      "title": "¿Por Qué Elegir el Doblaje de Video por IA de Curify?",
+      "point1": "Clonación de voz de IA natural que preserva la emoción y el tono del hablante",
+      "point2": "Sincronización labial automática para una experiencia de visualización fluida",
+      "point3": "Soporte para más de 170 idiomas y dialectos",
+      "point4": "Procesamiento rápido con resultados de calidad profesional",
+      "point5": "Ideal para YouTube, TikTok, capacitación corporativa y e-learning"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Qué tan preciso es el doblaje de IA?",
+      "a1": "Curify utiliza modelos avanzados de clonación de voz y traducción diseñados para preservar el tono, la intención y el ritmo del hablante original. La sincronización labial mejora aún más el realismo percibido al hacer coincidir el tiempo del habla con el movimiento de la boca del hablante.",
+      "q2": "¿Qué idiomas son compatibles?",
+      "a2": "Curify admite más de 170 idiomas, incluyendo inglés, español, chino, francés, alemán, japonés, coreano, árabe y muchos más.",
+      "q3": "¿Cuánto tiempo tarda el doblaje?",
+      "a3": "El tiempo de procesamiento depende de la longitud y complejidad del video, pero la mayoría de los videos están listos en minutos. Verás actualizaciones de progreso y recibirás notificaciones cuando el video doblado esté completo."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué Es el Doblaje de Video por IA?",
+        "p1": "El doblaje de video por IA es el proceso de traducir diálogos hablados a otro idioma y generar una pista de voz que suene natural y que coincida con la entrega original. A diferencia de los subtítulos, el doblaje reemplaza el audio, haciendo que tu contenido se sienta nativo para los espectadores en cada idioma de destino.",
+        "p2": "El doblaje de alta calidad requiere más que traducción. Debe preservar el significado, el tono, el ritmo y la emoción, mientras se mantiene alineado con el tiempo del hablante. Para contenido de capacitación, demostraciones de productos y videos de creadores, esta alineación es lo que separa el doblaje 'robótico' de la localización profesional.",
+        "p3": "Curify está diseñado para contenido global moderno: una carga, salida multilingüe, optimizada para creadores, educadores y empresas que necesitan velocidad y calidad a gran escala."
+      },
+      "how": {
+        "title": "Cómo Curify Produce Doblaje Natural (Voz, Tiempo y Sincronización Labial)",
+        "p1": "La calidad del doblaje de Curify proviene de un pipeline en múltiples etapas diseñado para un significado fiel, prosodia natural y alineación precisa con el video original.",
+        "p2": "Paso 1: La transcripción de alta precisión captura la estructura del habla original, incluyendo pausas, énfasis y turnos de los hablantes. Esto se convierte en la columna vertebral del tiempo para la pista de doblaje.",
+        "p3": "Paso 2: La traducción consciente del contexto preserva la intención y el significado del dominio, especialmente para términos técnicos, lenguaje de marca y contenido instructivo. Evitamos frases literales cuando suenan poco naturales en el idioma de destino.",
+        "p4": "Paso 3: La síntesis de voz genera una pista de voz natural con un ritmo controlado. Optimizamos la longitud de los segmentos y la velocidad de lectura para que el habla traducida se ajuste al tiempo original sin sonar apresurada o demasiado lenta.",
+        "p5": "Paso 4: La sincronización labial opcional alinea el tiempo del habla con el movimiento de la boca para una experiencia de visualización más inmersiva, particularmente importante para videos cara a cámara, entrevistas y sesiones de capacitación."
+      },
+      "usecases": {
+        "title": "¿Quién Usa el Doblaje de IA?",
+        "creatorsTitle": "Para Creadores de YouTube, TikTok y Globales",
+        "creatorsBody": "Los creadores utilizan el doblaje para alcanzar nuevas audiencias sin realizar producciones separadas. El doblaje hace que el contenido sea más fácil de consumir que los subtítulos en muchos contextos, especialmente para entretenimiento, tutoriales y videos de formato corto de ritmo rápido.",
+        "educationTitle": "Para Capacitación Corporativa y E-Learning",
+        "educationBody": "Los equipos de capacitación y los creadores de cursos utilizan el doblaje para localizar la incorporación, el cumplimiento y la educación sobre productos. Una pista de voz natural reduce la carga cognitiva en comparación con la lectura de subtítulos, mejorando las tasas de finalización y la retención de los aprendices.",
+        "businessTitle": "Para Marketing de Productos y Educación del Cliente",
+        "businessBody": "Los equipos globales localizan demostraciones, explicaciones, seminarios web y videos de soporte con doblaje. En lugar de recrear contenido por región, puedes enviar un video y desplegar múltiples versiones en diferentes idiomas con un mensaje consistente."
+      },
+      "compare": {
+        "title": "Doblaje de IA vs Subtítulos: ¿Cuál Deberías Usar?",
+        "p1": "Los subtítulos son ideales cuando los espectadores se sienten cómodos leyendo, cuando deseas preservar el audio original o cuando necesitas el flujo de trabajo de publicación más rápido. El doblaje es ideal cuando deseas una experiencia de visualización nativa, mayor compromiso y menos dependencia de la lectura.",
+        "p2": "Muchos equipos utilizan ambos: subtítulos para velocidad y accesibilidad, doblaje para contenido de alto rendimiento y mercados clave. Curify admite ambos flujos de trabajo para que puedas elegir el formato adecuado para cada video."
+      }
+    },
+    "example": "Ejemplo: video doblado por IA con preservación de emociones y sincronización labial en diferentes idiomas."
+  },
+  "about": {
+    "metadata": {
+      "title": "Acerca de Curify | Visión, tecnología y equipo",
+      "description": "Conoce la visión de Curify de democratizar la creación de contenido con IA. Somos un equipo de ingenieros y creadores construyendo el futuro de la localización de medios."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contáctanos | Curify Studio",
+      "description": "Ponte en contacto con el equipo de Curify para soporte, ventas o asociaciones. Estamos aquí para ayudarte a escalar tu contenido globalmente."
+    }
+  },
+  "nanoGallery": {
+    "title": "Galería de Prompts Nano Banana",
+    "description": "Descubre y copia los <strong>prompts nano banana</strong> más efectivos. Nuestra colección curada te ayuda a generar visuales de IA de alta calidad utilizando plantillas optimizadas y técnicas de prompts compartidas por la comunidad."
+  },
+  "hub": {
+    "groups": {
+      "video": "Herramientas de Video",
+      "image": "Herramientas de Imagen",
+      "audio": "Herramientas de Audio"
+    },
+    "tools": {
+      "meta": {
+        "title": "Herramientas de Curify",
+        "description": "Explora las herramientas de Curify Studio para doblaje de video, subtítulos y flujos de trabajo de contenido impulsados por IA."
+      },
+      "video_transcript_generator": {
+        "title": "Generador de transcripciones de video",
+        "desc": "Convierte video en transcripciones precisas que puedes editar y reutilizar."
+      },
+      "youtube_subtitle_downloader": {
+        "title": "Descargador de subtítulos de YouTube",
+        "desc": "Descarga subtítulos disponibles de YouTube con un clic."
+      },
+      "video_subtitle_extractor": {
+        "title": "Extractor de subtítulos de video",
+        "desc": "Extrae subtítulos incrustados en archivos SRT/VTT editables."
+      },
+      "translate_subtitles": {
+        "title": "Traducir subtítulos",
+        "desc": "Traduce SRT/VTT mientras preservas el tiempo y la estructura."
+      },
+      "subtitle_converter": {
+        "title": "Convertidor de subtítulos",
+        "desc": "Convierte entre SRT, VTT, ASS y más sin romper las marcas de tiempo."
+      },
+      "subtitle_editor": {
+        "title": "Editor de subtítulos",
+        "desc": "Edita subtítulos con controles de tiempo y correcciones rápidas por lotes."
+      },
+      "video_summarizer": {
+        "title": "Resumidor de video",
+        "desc": "Genera resúmenes concisos y puntos clave de cualquier video."
+      },
+      "storyboard_generator": {
+        "title": "Generador de guiones gráficos",
+        "desc": "Convierte videos en notas y sugerencias de guiones gráficos escena por escena."
+      },
+      "image_translation": {
+        "title": "Traducción de imágenes",
+        "desc": "Traduce texto en imágenes y reconstruye el diseño de manera limpia."
+      },
+      "manga_translation": {
+        "title": "Traducción de manga",
+        "desc": "Traduce paneles de manga manteniendo burbujas y tipografía legibles."
+      },
+      "voice_clone": {
+        "title": "Clon de voz",
+        "desc": "Clona una voz a partir de una muestra corta para una narración consistente."
+      },
+      "speech_translator": {
+        "title": "Traductor de voz",
+        "desc": "Traduce el habla a otro idioma con una entrega natural."
+      }
+    }
+  }
+}

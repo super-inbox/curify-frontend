@@ -24,11 +24,14 @@ interface Layer {
   points: string[];
 }
 
+const normalizeCodeBlock = (value: unknown): string =>
+  String(value).replace(/\\n/g, "\n").replace(/\\t/g, "\t");
+
 export default function QABotToTaskAgent() {
   const t = useTranslations("qaBotToTaskAgent");
   
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-12">
+    <div className="pt-10 pb-8">
       {/* Sidebar */}
       <aside className="lg:w-64 flex-shrink-0">
         <div className="sticky top-24 space-y-6">
@@ -121,7 +124,7 @@ export default function QABotToTaskAgent() {
           {t("dynamicSkillExample.title")}
         </h2>
         <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm border border-gray-200">
-          {t("dynamicSkillExample.content")}
+          {normalizeCodeBlock(t.raw("dynamicSkillExample.content"))}
         </pre>
       </section>
 
@@ -131,7 +134,7 @@ export default function QABotToTaskAgent() {
           {t("deterministicHookExample.title")}
         </h2>
         <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm border border-gray-200">
-          {t("deterministicHookExample.content")}
+          {normalizeCodeBlock(t.raw("deterministicHookExample.content"))}
         </pre>
       </section>
 

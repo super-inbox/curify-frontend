@@ -1,280 +1,427 @@
 /**
  * @file i18n_autotranslate.cjs
  * @description
- * This script automatically generates translations for all supported locales
- * based on English keys in the messages/ directory. It uses OpenAI's API to
- * translate content while preserving JSON structure and keys.
+ * Auto-translate missing i18n keys across per-locale JSON files in messages/<locale>/*.json.
  *
- * Features:
- * - Translates from English to all supported locales
- * - Preserves JSON structure and nested keys
- * - Handles blog content specifically
- * - Skips already translated keys (optional)
- * - Provides progress logging
+ * Folder layout:
+ *   messages/
+ *     en/
+ *       blog.json
+ *       common.json
+ *       home.json
+ *       pricing.json
+ *     zh/
+ *       ...
+ *
+ * Behavior:
+ * - Uses base locale folder as source-of-truth (default: messages/en/*.json)
+ * - Discovers locales from subfolders under messages/ (no hardcoded language list)
+ * - Discovers files from base locale folder (or via --files)
+ * - For each target locale + each file:
+ *    - translates ONLY missing leaf keys (string leaves) from base file
+ *    - merges back into target file (creates file/folders if missing)
+ * - Preserves placeholders like {label} exactly
+ * - Reads OPENAI_API_KEY from .env.local (and env)
  *
  * Usage:
- * $ node scripts/i18n_autotranslate.cjs
+ *   node scripts/i18n_autotranslate.cjs --base en --write
+ *   node scripts/i18n_autotranslate.cjs --base en --dry-run
+ *   node scripts/i18n_autotranslate.cjs --base en --only zh es de --write
+ *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
  *
- * Requirements:
- * - OPENAI_API_KEY in .env.local
- * - messages/en.json as source of truth
- * - Target locale files in messages/ directory
+ * Notes:
+ * - `--files` accepts file basenames without .json (e.g. "common home pricing"),
+ *   or full names with .json (e.g. "common.json").
  */
 
-const fs = require('fs');
-const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../.env.local') });
+const fs = require("fs");
+const path = require("path");
+const dotenv = require("dotenv");
+const OpenAI = require("openai");
 
-// Configuration
-const messagesDir = path.join(__dirname, '../messages');
-const sourceLocale = 'en';
-const targetLocales = ['de', 'es', 'fr', 'hi', 'ja', 'ko', 'ru', 'tr', 'zh'];
-const maxRetries = 3;
-const batchSize = 5; // Process keys in batches to avoid rate limits
+// Load .env.local first (project root default)
+dotenv.config({ path: path.join(process.cwd(), ".env.local") });
 
-// Check for OpenAI API key
-if (!process.env.OPENAI_API_KEY) {
-  console.error('❌ OPENAI_API_KEY not found in .env.local');
-  console.error('Please add: OPENAI_API_KEY=your_api_key_here');
+/** -----------------------
+ * CLI args (minimal parser)
+ * ---------------------- */
+function parseArgs(argv) {
+  const args = {
+    dir: "messages",
+    base: "en",
+    only: null, // array or null
+    files: null, // array of basenames (without .json) or null -> discover from base folder
+    model: "gpt-4o-mini",
+    chunkSize: 60,
+    write: false,
+    dryRun: false,
+  };
+
+  for (let i = 2; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === "--dir") args.dir = argv[++i];
+    else if (a === "--base") args.base = argv[++i];
+    else if (a === "--model") args.model = argv[++i];
+    else if (a === "--chunkSize") args.chunkSize = parseInt(argv[++i], 10);
+    else if (a === "--write") args.write = true;
+    else if (a === "--dry-run" || a === "--dryRun") args.dryRun = true;
+    else if (a === "--only") {
+      const list = [];
+      while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
+      args.only = list.length ? list : null;
+    } else if (a === "--files") {
+      const list = [];
+      while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
+      args.files = list.length ? list : null;
+    } else {
+      console.warn(`[warn] Unknown arg: ${a}`);
+    }
+  }
+  return args;
+}
+
+const args = parseArgs(process.argv);
+
+/** -----------------------
+ * Paths & locale discovery
+ * ---------------------- */
+const messagesDir = path.join(process.cwd(), args.dir);
+if (!fs.existsSync(messagesDir)) {
+  console.error(`messages dir not found: ${messagesDir}`);
   process.exit(1);
 }
 
-// Load source content
-const sourceFile = path.join(messagesDir, `${sourceLocale}.json`);
-const sourceContent = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
-
-// Target locales
-const targetFiles = targetLocales.reduce((acc, locale) => {
-  const filePath = path.join(messagesDir, `${locale}.json`);
-  if (fs.existsSync(filePath)) {
-    acc[locale] = {
-      path: filePath,
-      content: JSON.parse(fs.readFileSync(filePath, 'utf8'))
-    };
-  } else {
-    console.warn(`⚠️  Target file not found: ${filePath}`);
+function isDirectory(p) {
+  try {
+    return fs.statSync(p).isDirectory();
+  } catch {
+    return false;
   }
-  return acc;
-}, {});
+}
 
-/**
- * Recursively get all translation keys from an object
- */
-function getAllKeys(obj, prefix = '') {
+// locales are subfolders under messages/
+const locales = fs
+  .readdirSync(messagesDir)
+  .filter((name) => isDirectory(path.join(messagesDir, name)))
+  .sort();
+
+if (!locales.includes(args.base)) {
+  console.error(
+    `Base locale folder '${args.base}' not found in ${messagesDir}. Found: ${locales.join(", ")}`
+  );
+  process.exit(1);
+}
+
+const targetLocales = (args.only ? locales.filter((l) => args.only.includes(l)) : locales).filter(
+  (l) => l !== args.base
+);
+
+function localeDir(locale) {
+  return path.join(messagesDir, locale);
+}
+
+function normalizeFileToken(s) {
+  // allow "common" or "common.json"
+  return s.endsWith(".json") ? s.slice(0, -5) : s;
+}
+
+function listBaseFiles(baseLocale) {
+  const dir = localeDir(baseLocale);
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.slice(0, -5)) // basenames without .json
+    .sort();
+}
+
+const baseFiles = args.files ? args.files.map(normalizeFileToken) : listBaseFiles(args.base);
+if (!baseFiles.length) {
+  console.error(
+    `No base files found under ${path.join(messagesDir, args.base)}.json. ` +
+      `Expected messages/${args.base}/*.json`
+  );
+  process.exit(1);
+}
+
+function localeFile(locale, fileBase) {
+  return path.join(localeDir(locale), `${fileBase}.json`);
+}
+
+/** -----------------------
+ * JSON helpers
+ * ---------------------- */
+function readJson(p) {
+  return JSON.parse(fs.readFileSync(p, "utf8"));
+}
+
+function ensureDir(p) {
+  fs.mkdirSync(p, { recursive: true });
+}
+
+function writeJson(p, obj) {
+  ensureDir(path.dirname(p));
+  fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf8");
+}
+
+// Flatten nested object to dot keys (leaf nodes)
+function getKeys(obj, prefix = "") {
   let keys = [];
   for (const key in obj) {
-    if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
-      keys = keys.concat(getAllKeys(obj[key], prefix + key + '.'));
+    const val = obj[key];
+    const k = prefix ? `${prefix}.${key}` : key;
+    if (typeof val === "object" && val !== null && !Array.isArray(val)) {
+      keys = keys.concat(getKeys(val, k));
     } else {
-      keys.push(prefix + key);
+      keys.push(k);
     }
   }
   return keys;
 }
 
-/**
- * Get value from object by dot notation key
- */
-function getValueByPath(obj, path) {
-  return path.split('.').reduce((current, key) => current && current[key], obj);
-}
-
-/**
- * Set value in object by dot notation key
- */
-function setValueByPath(obj, path, value) {
-  const keys = path.split('.');
-  const lastKey = keys.pop();
-  const target = keys.reduce((current, key) => {
-    if (!current[key] || typeof current[key] !== 'object') {
-      current[key] = {};
-    }
-    return current[key];
-  }, obj);
-  target[lastKey] = value;
-}
-
-/**
- * Translate text using OpenAI API
- */
-async function translateText(text, targetLocale, context = '') {
-  const languageMap = {
-    'de': 'German',
-    'es': 'Spanish',
-    'fr': 'French',
-    'hi': 'Hindi',
-    'ja': 'Japanese',
-    'ko': 'Korean',
-    'ru': 'Russian',
-    'tr': 'Turkish',
-    'zh': 'Chinese (Simplified)'
-  };
-
-  const targetLanguage = languageMap[targetLocale];
-  if (!targetLanguage) {
-    throw new Error(`Unsupported target locale: ${targetLocale}`);
+function getValueByPath(obj, dottedKey) {
+  const parts = dottedKey.split(".");
+  let cur = obj;
+  for (const p of parts) {
+    if (!cur || typeof cur !== "object") return undefined;
+    cur = cur[p];
   }
+  return cur;
+}
 
-  const prompt = `Translate the following text to ${targetLanguage}. 
-${context ? `Context: ${context}\n\n` : ''}
-Important guidelines:
-- Maintain the same tone and style as the original
-- Keep any HTML tags or formatting unchanged
-- For technical terms, use the standard translation if available
-- For brand names like "Curify", keep them as-is
-- Preserve any markdown formatting
-- Translate naturally, not literally
+function setValueByPath(obj, dottedKey, value) {
+  const parts = dottedKey.split(".");
+  let cur = obj;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const p = parts[i];
+    if (!cur[p] || typeof cur[p] !== "object" || Array.isArray(cur[p])) cur[p] = {};
+    cur = cur[p];
+  }
+  cur[parts[parts.length - 1]] = value;
+}
 
-Text to translate:
-"${text}"
-
-Return only the translated text:`;
-
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a professional translator specializing in tech and content creation. Provide accurate, natural-sounding translations.'
-            },
-            {
-              role: 'user',
-              content: prompt
-            }
-          ],
-          temperature: 0.3,
-          max_tokens: 2000
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const translatedText = data.choices[0].message.content.trim();
-      
-      if (!translatedText) {
-        throw new Error('Empty translation received');
-      }
-
-      return translatedText;
-    } catch (error) {
-      console.warn(`⚠️  Translation attempt ${attempt} failed for ${targetLocale}: ${error.message}`);
-      if (attempt === maxRetries) {
-        throw error;
-      }
-      // Wait before retry (exponential backoff)
-      await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, attempt - 1)));
-    }
+// Merge ONLY missing keys into target object
+function mergeMissing(targetObj, patchMap) {
+  for (const [k, v] of Object.entries(patchMap)) {
+    const existing = getValueByPath(targetObj, k);
+    if (typeof existing === "undefined") setValueByPath(targetObj, k, v);
   }
 }
 
-/**
- * Process translation in batches
- */
-async function processBatch(keys, targetLocale, targetContent) {
-  const results = [];
-  
-  for (let i = 0; i < keys.length; i += batchSize) {
-    const batch = keys.slice(i, i + batchSize);
-    const batchPromises = batch.map(async (key) => {
-      const sourceValue = getValueByPath(sourceContent, key);
-      const existingValue = getValueByPath(targetContent, key);
-      
-      // Skip if already translated and not empty
-      if (existingValue && typeof existingValue === 'string' && existingValue.trim() !== '') {
-        console.log(`✅ Skipping ${targetLocale}:${key} (already translated)`);
-        return { key, translated: existingValue, skipped: true };
-      }
-
-      // Generate context for better translation
-      const keyParts = key.split('.');
-      const context = keyParts.includes('blog') 
-        ? `Blog content about ${keyParts[keyParts.length - 1]}`
-        : `UI content for ${keyParts.join(' > ')}`;
-
-      try {
-        const translated = await translateText(sourceValue, targetLocale, context);
-        setValueByPath(targetContent, key, translated);
-        console.log(`✅ Translated ${targetLocale}:${key}`);
-        return { key, translated, skipped: false };
-      } catch (error) {
-        console.error(`❌ Failed to translate ${targetLocale}:${key} - ${error.message}`);
-        return { key, translated: sourceValue, skipped: false, error: true };
-      }
-    });
-
-    const batchResults = await Promise.all(batchPromises);
-    results.push(...batchResults);
-    
-    // Rate limiting delay between batches
-    if (i + batchSize < keys.length) {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-  }
-  
-  return results;
+/** -----------------------
+ * Placeholder guard
+ * ---------------------- */
+function extractPlaceholders(s) {
+  if (typeof s !== "string") return [];
+  const m = s.match(/\{[^{}]+\}/g);
+  return m ? m : [];
 }
 
-/**
- * Main translation function
- */
-async function generateTranslations() {
-  console.log('🚀 Starting automatic translation generation...');
-  console.log(`📂 Source: ${sourceLocale}.json`);
-  console.log(`🌍 Target locales: ${targetLocales.join(', ')}`);
-  
-  // Get all keys from source
-  const allKeys = getAllKeys(sourceContent);
-  const blogKeys = allKeys.filter(key => key.startsWith('blog.'));
-  const otherKeys = allKeys.filter(key => !key.startsWith('blog.'));
-  
-  console.log(`📊 Found ${allKeys.length} total keys (${blogKeys.length} blog, ${otherKeys.length} other)`);
-  
-  // Process each target locale
-  for (const locale of targetLocales) {
-    if (!targetFiles[locale]) {
-      console.log(`⏭️  Skipping ${locale} (file not found)`);
+function samePlaceholders(src, dst) {
+  const a = extractPlaceholders(src);
+  const b = extractPlaceholders(dst);
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  return true;
+}
+
+/** -----------------------
+ * OpenAI translate
+ * ---------------------- */
+const apiKey = process.env.OPENAI_API_KEY;
+if (!apiKey) {
+  console.error("Missing OPENAI_API_KEY. Put it in .env.local or env.");
+  process.exit(1);
+}
+
+const client = new OpenAI({ apiKey });
+
+function chunkEntries(obj, chunkSize) {
+  const entries = Object.entries(obj);
+  const chunks = [];
+  for (let i = 0; i < entries.length; i += chunkSize) {
+    chunks.push(Object.fromEntries(entries.slice(i, i + chunkSize)));
+  }
+  return chunks;
+}
+
+function stripCodeFence(s) {
+  if (!s) return "";
+  return s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
+}
+
+async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
+  const system = [
+    "You are a professional localization translator for a software product UI and SEO text.",
+    "Rules:",
+    "- Preserve placeholders exactly (e.g., {label}, {count}, {name}). Do NOT translate or alter them.",
+    "- Do not translate product names like Curify or Curify Studio or Nano Banana.",
+    "- Keep tone concise, natural, product/marketing friendly.",
+    "- Return a valid JSON object ONLY (no markdown, no code fences).",
+  ].join("\n");
+
+  const user = [
+    `Translate the following i18n strings from ${baseLocale} to ${targetLocale}.`,
+    `File: ${fileBase}.json`,
+    "Return JSON: same keys -> translated strings.",
+    "Do not add/remove keys.",
+    "",
+    "Strings:",
+    JSON.stringify(items, null, 2),
+  ].join("\n");
+
+  const resp = await client.chat.completions.create({
+    model: args.model,
+    temperature: 0.2,
+    messages: [
+      { role: "system", content: system },
+      { role: "user", content: user },
+    ],
+  });
+
+  const raw = stripCodeFence(resp.choices?.[0]?.message?.content || "");
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (e) {
+    throw new Error(`Model did not return valid JSON.\nError: ${e.message}\nRaw:\n${raw}`);
+  }
+
+  // Validate key set exactly matches
+  const inKeys = new Set(Object.keys(items));
+  const outKeys = new Set(Object.keys(parsed));
+  const missing = [...inKeys].filter((k) => !outKeys.has(k));
+  const extra = [...outKeys].filter((k) => !inKeys.has(k));
+  if (missing.length || extra.length) {
+    throw new Error(`Key mismatch. missing=${missing.join(",")} extra=${extra.join(",")}`);
+  }
+
+  // Placeholder validation
+  for (const k of Object.keys(items)) {
+    const src = items[k];
+    const dst = parsed[k];
+    if (typeof dst !== "string") parsed[k] = String(dst);
+    if (!samePlaceholders(src, parsed[k])) {
+      throw new Error(`Placeholder mismatch for key '${k}'\nsrc: ${src}\ndst: ${parsed[k]}`);
+    }
+  }
+
+  return parsed;
+}
+
+/** -----------------------
+ * Run
+ * ---------------------- */
+(async function run() {
+  console.log(`[dir] ${messagesDir}`);
+  console.log(`[base] ${args.base}`);
+  console.log(`[files] ${baseFiles.join(", ")}`);
+  console.log(`[found locales] ${locales.join(", ")}`);
+  console.log(`[targets] ${targetLocales.join(", ") || "(none)"}`);
+
+  // Read all base files once
+  const baseFileObjs = {};
+  const baseFileKeySets = {};
+  for (const fileBase of baseFiles) {
+    const basePath = localeFile(args.base, fileBase);
+    if (!fs.existsSync(basePath)) {
+      console.warn(`[warn] base file missing: ${basePath} (skipping)`);
       continue;
     }
-    
-    console.log(`\n🌐 Processing ${locale}...`);
-    
-    try {
-      // Process blog keys first (higher priority)
-      console.log(`📝 Processing ${blogKeys.length} blog keys...`);
-      await processBatch(blogKeys, locale, targetFiles[locale].content);
-      
-      // Then process other keys
-      console.log(`⚙️  Processing ${otherKeys.length} other keys...`);
-      await processBatch(otherKeys, locale, targetFiles[locale].content);
-      
-      // Save the updated file
-      const outputPath = targetFiles[locale].path;
-      fs.writeFileSync(outputPath, JSON.stringify(targetFiles[locale].content, null, 2), 'utf8');
-      console.log(`💾 Saved ${outputPath}`);
-      
-    } catch (error) {
-      console.error(`❌ Failed to process ${locale}: ${error.message}`);
+    const obj = readJson(basePath);
+    baseFileObjs[fileBase] = obj;
+    baseFileKeySets[fileBase] = new Set(getKeys(obj));
+  }
+
+  const effectiveFiles = Object.keys(baseFileObjs).sort();
+  if (!effectiveFiles.length) {
+    console.error("No readable base files found. Nothing to do.");
+    process.exit(1);
+  }
+
+  for (const loc of targetLocales) {
+    console.log(`\n==============================`);
+    console.log(`Locale: ${loc}`);
+    console.log(`==============================`);
+
+    for (const fileBase of effectiveFiles) {
+      const baseObj = baseFileObjs[fileBase];
+      const baseKeys = baseFileKeySets[fileBase];
+
+      const targetPath = localeFile(loc, fileBase);
+      let targetObj = {};
+
+      if (fs.existsSync(targetPath)) {
+        try {
+          targetObj = readJson(targetPath);
+        } catch (e) {
+          console.error(`\n--- ${loc}/${fileBase}.json ---`);
+          console.error(`Error parsing ${targetPath}: ${e.message}`);
+          continue;
+        }
+      } else {
+        // create empty file later (writeJson handles mkdir)
+        targetObj = {};
+      }
+
+      const targetKeys = new Set(getKeys(targetObj));
+      const missingKeys = [...baseKeys].filter((k) => !targetKeys.has(k));
+
+      // Only translate string leaves from base
+      const missingItems = {};
+      for (const k of missingKeys) {
+        const v = getValueByPath(baseObj, k);
+        if (typeof v === "string") missingItems[k] = v;
+      }
+
+      console.log(`\n--- ${loc}/${fileBase}.json ---`);
+      console.log(
+        `missing keys: ${missingKeys.length} (string missing: ${Object.keys(missingItems).length})`
+      );
+
+      if (!Object.keys(missingItems).length) {
+        console.log("✅ Nothing to translate.");
+        // still optionally create file if it didn't exist and base had no keys? (skip)
+        continue;
+      }
+
+      const chunks = chunkEntries(missingItems, args.chunkSize);
+      const translatedAll = {};
+
+      for (let i = 0; i < chunks.length; i++) {
+        const chunk = chunks[i];
+        console.log(
+          `  translating chunk ${i + 1}/${chunks.length} (${Object.keys(chunk).length} keys)...`
+        );
+
+        const translated = await translateBatch({
+          baseLocale: args.base,
+          targetLocale: loc,
+          fileBase,
+          items: chunk,
+        });
+
+        Object.assign(translatedAll, translated);
+      }
+
+      if (args.dryRun || !args.write) {
+        const sample = Object.entries(translatedAll).slice(0, 8);
+        console.log("sample:");
+        for (const [k, v] of sample) console.log(`  - ${k}: ${v}`);
+      }
+
+      if (args.write && !args.dryRun) {
+        mergeMissing(targetObj, translatedAll);
+        writeJson(targetPath, targetObj);
+        console.log(`✅ wrote ${Object.keys(translatedAll).length} keys to ${loc}/${fileBase}.json`);
+      } else {
+        console.log("ℹ️ not written (use --write to save).");
+      }
     }
   }
-  
-  console.log('\n✨ Translation generation completed!');
-  console.log('📝 Note: Please review the generated translations for quality and accuracy');
-  console.log('🔧 You can run "node scripts/check_i18n.cjs" to verify translation completeness');
-}
 
-// Run the translation
-generateTranslations().catch(error => {
-  console.error('💥 Translation failed:', error);
+  console.log("\nDone.");
+})().catch((e) => {
+  console.error("\n[ERROR]", e.message || e);
   process.exit(1);
 });

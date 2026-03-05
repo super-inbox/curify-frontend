@@ -1,0 +1,844 @@
+{
+  "blog": {
+    "metadata": {
+      "title": "Curify Blog | Einblicke in KI-Content-Erstellung",
+      "description": "Lies die neuesten Artikel zu KI-Videoerstellung, Synchronisation, Stiltransfer und der Zukunft der Content-Erstellung."
+    },
+    "latestArticles": "Neueste Artikel",
+    "posts": [
+      {
+        "slug": "aiPlatform",
+        "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+        "date": "30. Januar 2026",
+        "readTime": "9 Min. Lesezeit",
+        "tag": "KI-Plattform",
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+      },
+      {
+        "slug": "QA_Bot_to_Task",
+        "title": "Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
+        "date": "30. Januar 2026",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "KI-Architektur",
+        "image": "/images/qa-bot-architecture.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
+        "date": "30. Januar 2026",
+        "readTime": "8 Min. Lesezeit",
+        "tag": "KI-Branche",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
+        "slug": "storyboard-labeling",
+        "title": "Vom Rohmaterial zum Storyboard: KI-gestützte Videoanalyse",
+        "date": "11. Dezember 2025",
+        "readTime": "10 Min. Lesezeit",
+        "tag": "Videoanalyse",
+        "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "video-enhancement",
+        "title": "KI-Video-Enhancement: Storyboards, Meme-Captions & SFX-Automatisierung",
+        "date": "18. November 2025",
+        "readTime": "7 Min. Lesezeit",
+        "tag": "Videoverbesserung",
+        "image": "/images/video-enhancement-pipeline.png"
+      },
+      {
+        "slug": "video-evaluation",
+        "title": "Bewertung der KI-Videoübersetzung: Metriken, auf die es ankommt",
+        "date": "14. November 2025",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "Lokalisierung",
+        "image": "/images/video-translation-eval.jpg"
+      },
+      {
+        "slug": "storyboard-to-pipeline",
+        "title": "Erstellen Sie Ihre eigene KI-gestützte Comic-Animation: Schritt-für-Schritt-Anleitung",
+        "date": "28. Oktober 2025",
+        "readTime": "5 Min. Lesezeit",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
+      },
+      {
+        "slug": "agents-vs-workflows",
+        "title": "Teil 2: Agenten vs. Workflows – von der Kontrolle zur Intelligenz",
+        "date": "28. Oktober 2025",
+        "readTime": "6 Min. Lesezeit",
+        "tag": "Generative Tools",
+        "image": "/images/agents-vs-workflows.jpg"
+      },
+      {
+        "slug": "ae-vs-comfyui",
+        "title": "Teil 3: AE vs. ComfyUI – Motion Design vs. Diffusions-Pipelines",
+        "date": "28. Oktober 2025",
+        "readTime": "7 Min. Lesezeit",
+        "tag": "Tools & Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
+      }
+    ]
+  },
+  "aeVsComfyUi": {
+    "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
+    "heading": "🎨 AE vs ComfyUI",
+    "intro1": "Wir werden oft gefragt: Warum nicht einfach After Effects (AE) verwenden? Oder warum ComfyUI? Beide sind wichtig — AE bietet präzise Kontrolle, ComfyUI ermöglicht generative Kreativität.",
+    "intro2": "AE bietet zeitbasierte Präzision sowie Kontrolle über Übergänge, Licht und Effekte. ComfyUI bringt AI-native Workflows, die Diffusion, Text und multimodale Orchestrierung kombinieren.",
+    "table": {
+      "colAE": "AE",
+      "colComfy": "ComfyUI",
+      "row1a": "Präzise VFX- und Bewegungssteuerung",
+      "row1b": "AI-native Videogenerierung",
+      "row2a": "Timeline-basiertes Editing",
+      "row2b": "Workflow-/Node-basiertes Rendering",
+      "row3a": "Manueller oder pluginbasierter Workflow",
+      "row3b": "Diffusion + LLM + multimodale Orchestrierung"
+    },
+    "outro": "In unserem Workflow übernimmt ComfyUI die AI-Generierung und Iteration, während AE den finalen Look verfeinert — Übergänge, Overlays und Compositing.",
+    "images": {
+      "guideCoverAlt": "ComfyUI Vollständiger Leitfaden Coverbild",
+      "workflowFullAlt": "ComfyUI Vollständiger Workflow: Von Eingabe zu Ausgabe",
+      "caseFeltAlt": "ComfyUI Anwendungsfall: Filzminiaturwelt (Node-Workflow)"
+    },
+    "sections": {
+      "s1": {
+        "title": "1. Was ist ComfyUI?",
+        "p1": "ComfyUI ist ein node-basierter Workflow-Editor, der speziell für KI-generierte Inhalte entwickelt wurde und ein leistungsstarkes Frontend-Tool für Diffusionsmodelle wie Stable Diffusion ist. Es ermöglicht dir, Modelle visuell zu kombinieren, die Generierungslogik zu steuern und den gesamten Prozess von einfachen Text-zu-Bild-Generierungen bis hin zu komplexen multimodalen Kreationen zu beherrschen.",
+        "p2": "Im Ökosystem von curify-ai.com ist ComfyUI unsere zentrale Engine für die effiziente Produktion von KI-Inhalten."
+      },
+      "s2": {
+        "title": "2. ComfyUI Grundtutorial: Von 0 auf 1",
+        "sub1": {
+          "title": "1) Umgebung einrichten und zum ersten Mal starten",
+          "b1Strong": "Lokale Bereitstellung vs. Cloud-Betrieb:",
+          "b1": "Die lokale Bereitstellung eignet sich für tiefgehende Anpassungen und Datenschutzbedürfnisse, während der Cloud-Betrieb bequemer ist und keine komplexe Umgebungskonfiguration erfordert.",
+          "b2Strong": "Modellverwaltung:",
+          "b2": "Kernmodelle (Checkpoint), Stilfeinabstimmung (LoRA) und präzise Steuerung (ControlNet) sind die drei wesentlichen Komponenten, die im Template-Bereich von curify-ai.com mit einem Klick erhältlich sind.",
+          "b3Strong": "Häufige Probleme:",
+          "b3": "CUDA nicht aktiviert, unzureichender VRAM und fehlende Abhängigkeiten sind häufige Probleme beim Start. Du kannst unser Fehlersuchhandbuch zur schnellen Lösung konsultieren."
+        },
+        "sub2": {
+          "title": "2) Kernkonzepte aufschlüsseln",
+          "b1Strong": "Node Graph:",
+          "b1": "Jeder Knoten repräsentiert ein Funktionsmodul (z. B. Modell laden, Bild generieren, Stil anwenden), und die Datenflüsse werden durch Verbindungen definiert, was intuitiv und kontrollierbar ist.",
+          "b2Strong": "Workflow:",
+          "b2": "Ein vollständiger Generierungsprozess, der gespeichert, importiert und exportiert werden kann. curify-ai.com bietet zahlreiche vordefinierte Vorlagen, die gängige Kreativszenerien abdecken.",
+          "b3Strong": "Sampler und Scheduler:",
+          "b3": "Die Wahl des geeigneten Samplers (z. B. Euler, DPM++) beeinflusst direkt die Generierungsqualität und -geschwindigkeit. Unsere Vorlagen sind bereits für dich optimiert."
+        },
+        "sub3": {
+          "title": "3) Schnelleinstieg Beispiele",
+          "b1Strong": "Text-zu-Bild:",
+          "b1": "Gib curify-ai Stil-Prompt-Wörter ein und generiere mit einem Klick hochwertige kreative Bilder.",
+          "b2Strong": "Bild-zu-Bild:",
+          "b2": "Lade ein Referenzbild hoch, sperre die Komposition über den ControlNet-Knoten und zeichne es dann mit dem LoRA-Knoten im Zielstil neu.",
+          "b3Strong": "Videoerstellung:",
+          "b3": "Kombiniere Nodes wie AnimateDiff, um statische Bilder in flüssige dynamische Inhalte umzuwandeln."
+        }
+      },
+      "s3": {
+        "title": "3. Knoten konfigurieren und fortgeschrittene Techniken: Für präzisere Generierungen",
+        "sub1": {
+          "title": "1) Häufig verwendete Knoten-Kombinationen",
+          "b1Strong": "ControlNet-Knoten:",
+          "b1": "Präzise Kontrolle über Posen, Kanten und Tiefen ist der Schlüssel zur Umsetzung komplexer Kompositionen.",
+          "b2Strong": "LoRA Mischknoten:",
+          "b2": "Überlagere mehrere Stil-LoRA, um eine Stilfusion und Detailanpassung zu erreichen.",
+          "b3Strong": "Bedingte Steuerknoten:",
+          "b3": "Durch die Gewichtung positiver und negativer Prompt-Wörter kannst du die Generierungsdetails verstärken oder abschwächen, um deine Kreativität besser zu reflektieren."
+        },
+        "sub2": {
+          "title": "2) Leistungsoptimierung",
+          "b1Strong": "VRAM-Optimierung:",
+          "b1": "Aktiviere Block-Dekodierung und Modellquantisierung, um bei begrenztem VRAM Bilder mit höherer Auflösung zu generieren.",
+          "b2Strong": "Batch-Generierung:",
+          "b2": "Nutze die Warteschlangenverwaltungsfunktion, um Materialien, die den curify-ai Standards entsprechen, in großen Mengen zu generieren und die Kreativitätseffizienz zu steigern.",
+          "b3Strong": "Workflow-Vereinfachung:",
+          "b3": "Verpacke häufig verwendete Knoten-Kombinationen in Untergrafiken, um sie mit einem Klick wiederzuverwenden und wiederholte Konfigurationen zu vermeiden."
+        },
+        "sub3": {
+          "title": "3) Fehlersuche und Debugging",
+          "b1Strong": "Fehlerhafte Knotenverbindungen:",
+          "b1": "Überprüfe, ob die Datentypen übereinstimmen (z. B. ob die Bildausgabe mit der Bildeingabe verbunden ist).",
+          "b2Strong": "Schlechte Generierungsqualität:",
+          "b2": "Überprüfe, ob die Prompt-Wörter präzise sind, ob die Sampling-Schritte ausreichend sind und ob das Modell für die aktuelle Aufgabe geeignet ist."
+        }
+      },
+      "s4": {
+        "title": "4. curify-ai.com × ComfyUI: Exklusive Anwendungsszenarien",
+        "sub1": {
+          "title": "1) AI Malworkflow-Vorlagen",
+          "p1": "curify-ai.com bietet zahlreiche direkt importierbare ComfyUI Workflow-Vorlagen, die gängige Stile wie Anime, nationale Stile und realistische Stile abdecken und Materialien in den Plattformstandards für kommerzielle Nutzung bereitstellen."
+        },
+        "sub2": {
+          "title": "2) Effizientes Kreativwerkzeug",
+          "b1": "Kombiniere die Prompt-Vorlagen von curify-ai, um stilisierte Inhalte in großen Mengen zu produzieren und die Kreativitätseffizienz erheblich zu steigern.",
+          "b2": "Wir bieten spezielle Knoten-Konfigurationslösungen an, um mit einem Klick hochwertige Bilder zu generieren, die den Plattformstandards entsprechen."
+        },
+        "sub3": {
+          "title": "3) AE + ComfyUI Kooperationsworkflow",
+          "b1Strong": "KI-Generierung:",
+          "b1": "Erzeuge KI-Materialien mit ComfyUI und vollziehe Stil- und Inhaltsiterationen.",
+          "b2Strong": "Postproduktion:",
+          "b2": "Importiere die generierten Materialien in After Effects und nutze die präzise Steuerung auf Zeitebene, um Übergänge, Überlagerungen und Effekte zu erstellen.",
+          "b3Strong": "Endgültiges Werk:",
+          "b3": "Hochwertige Videos oder animierte Bilder ausgeben, um geschäftliche und kreative Anforderungen zu erfüllen."
+        }
+      },
+      "s5": {
+        "title": "Fünf, ComfyUI vs After Effects: Ergänzend und nicht ersetzend",
+        "conclusionTitle": "Kernschlussfolgerung",
+        "conclusion": "Im Workflow von curify-ai ist ComfyUI für die KI-generierte Erstellung und Iteration verantwortlich, während AE für die endgültige Bearbeitung, Übergänge, Überlagerungen und Komposition verwendet wird. Beide sind ergänzend und nicht ersetzend.",
+        "table": {
+          "dimension": "Dimension",
+          "ae": "After Effects (AE)",
+          "comfy": "ComfyUI",
+          "row1": {
+            "dim": "Kernpositionierung",
+            "ae": "Professionelle Film-Postproduktion und Effekte-Software",
+            "comfy": "KI-native generative Inferenzmaschine und Workflow-Editor"
+          },
+          "row2": {
+            "dim": "Steuerungsmethode",
+            "ae": "Präzise manuelle Steuerung basierend auf Zeitachse und Ebenen",
+            "comfy": "Halb-zufällige Generierung basierend auf einem Knotendiagramm, abhängig von Modellen und Parametern"
+          },
+          "row3": {
+            "dim": "Ausgabefähigkeit",
+            "ae": "Hochwertige Animationen, VFX, dynamische Comics",
+            "comfy": "KI-Bild-/Videoerstellung, unterstützt multimodale Orchestrierung"
+          },
+          "row4": {
+            "dim": "Workflow",
+            "ae": "Manueller oder plugin-gesteuerter linearer Prozess",
+            "comfy": "Diffusionsmodell + LLM + multimodaler, knotenbasierter Workflow"
+          },
+          "row5": {
+            "dim": "Beste Szenarien",
+            "ae": "Endgültige Komposition, Übergänge, Überlagerungen, feine Effekte",
+            "comfy": "KI-Inhaltserstellung, Iteration, stilisierte Kreation"
+          }
+        }
+      },
+      "s6": {
+        "title": "Sechs, Nächste Schritte",
+        "b1": "Besuche curify-ai.com und lade unsere maßgeschneiderte ComfyUI-Workflow-Vorlage herunter.",
+        "b2": "Folge dem Tutorial, um die erste Erstellung abzuschließen und erlebe effiziente KI-Kreation.",
+        "b3": "Tritt unserer Community bei und tausche dich mit anderen Kreativen über Knotenkonfigurationstechniken und Workflow-Optimierungserfahrungen aus."
+      }
+    },
+    "cta": {
+      "primary": "Sieh dir die Vorlagen auf curify-ai.com an",
+      "secondary": "Zurück zur Blogliste"
+    }
+  },
+  "video_translation_eval": {
+    "title": "Bewertung von KI-gestützter Videoübersetzung",
+    "subtitle": "Relevante Qualitätsmetriken",
+    "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
+    "section1_title": "1. Transkriptionsqualität",
+    "section1_engine": "Motor: WhisperX",
+    "section1_metrics": "\"WER (Wortfehlerrate), Satzzeichen F1 (für Ausdruck und Lesbarkeit)\"",
+    "section2_title": "2. Übersetzungsqualität",
+    "section2_engine": "Motoren: Helsinki, MarianMT",
+    "section2_metrics": "\"BLEU (Standardmetrik), COMET / chrF++ (semantische Ähnlichkeit), Menschliche Überprüfung: Flüssigkeit + Angemessenheit\"",
+    "section3_title": "3. Sprachsynthesequalität",
+    "section3_engine": "Motoren: XTTS / YourTTS",
+    "section3_metrics": "MOS (Natürlichkeit, Ähnlichkeit, Ausdrucksstärke), Sprecher-Verifizierungsgenauigkeit",
+    "section4_title": "4. Timing & Lippensynchronisation",
+    "section4_metrics": "\"Segmentdauerabweichung, Wav2Lip-Synchronisationsvertrauen, Analyse der zeitlichen Drift\"",
+    "section5_title": "5. Semantische Erhaltung",
+    "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
+    "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
+    "section6_title": "6. Nutzerfeedback & GTM-Validierung",
+    "section6_metrics": "\"Sprachqualität passend zur Produktkategorie, Verbesserung der Zuschauerbindung, Bereitschaft zur Übernahme durch frühe Benutzer (z. B. 1688-Verkäufer)\"",
+    "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
+    "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
+  },
+  "storyboardToPipeline": {
+    "title": "Von Storyboards zu KI-Pipelines - Animation neu definiert",
+    "intro": {
+      "p1": "Die meisten Menschen denken, KI-Video bedeute „Text rein, Clip raus“. Wenn Sie jedoch <strong>filmische Kontrolle auf Regie-Niveau</strong> anstreben, ist das ein völlig anderes Spiel.",
+      "p2": "In der traditionellen Animation zählt jedes Detail: Charakterdesign, Bewegungskontinuität, Timing und Szenenübergänge. Unser Ziel ist es, KI auf dieses Präzisionsniveau zu bringen.",
+      "p3": "Vandaag is animatie zowel een kunst als een uitdaging in gestructureerde orkestratie. We denken als regisseurs, maar bouwen als ingenieurs.",
+      "p4": "Deshalb bauen wir <strong>Pipelines für kontrollierte Generierung</strong> statt One-Shot-Generierung. Diese Pipelines verbinden Struktur und Kreativität:",
+      "pipelineItems": "Storyboard-to-Video: JSON-basierte Szenenspezifikationen mit IDs, Timing und Kamerametadaten, ComfyUI-basierte Workflows: Knoten-Graph-DAGs mit versionierten Checkpoints, LoRA-Stacks und Seeds, Temporäre & multimodale Steuerung: gemeinsame Szenen-IDs über Bild-, Bewegungs-, Audio- und Untertiteldaten hinweg.",
+      "p5": "Schauen wir uns nun ein einfaches Beispiel an, um zu zeigen, wie KI-Pipelines in der Praxis funktionieren.",
+      "technicalNotes": "\"Alle Stufen lesen/schreiben typisierte Artefakte (JSON/CSV, PNG-Sequenzen, WAV/MP3, MP4, .aep). Pipelines werden über Python/CLI orchestriert (z. B. ComfyUI API, ffmpeg, TTS APIs). Jeder Durchlauf ist reproduzierbar durch gespeicherte Konfiguration (Modell, Sampler, Seed, Prompts, Dauer).\""
+    },
+    "pipeline": {
+      "title": "AI-videogeneratiepijplijn",
+      "description": "Die KI-Videogenerierungs-Pipeline verwandelt Text-Prompts in fertig ausgearbeitete Videos über strukturierte Stufen mit klaren Inputs, Outputs und Konfigurationen.",
+      "prompt": "1. Prompt (ruw idee → gestructureerde JSON-specificatie)",
+      "storyboard": "2. Storyboard (tabel met scènes/shots met timing, camera en beschrijving)",
+      "images": "3. Bilder (Keyframes pro Aufnahme, generiert über Stable Diffusion/ComfyUI)",
+      "animation": "4. Animatie (beeldsequenties → beweging, parallax en effecten)",
+      "voiceOver": "5. Voice-over (TTS + Synchronisierungsdaten)",
+      "finalVideo": "6. Endgültiges Video (ffmpeg Komposition: Video + Audio + Untertitel)",
+      "features": "\"JSON-First-Design: Jede Szene ist adressierbar und skriptfähig (Szene_ID, Aufnahme_ID), ComfyUI-basierte Workflows: modulare, reproduzierbare, zusammensetzbare DAGs für die Erzeugung von Bild-/Videomaterial, Temporale & multimodale Steuerung: konsistente Seeds, Charaktereinbettungen und Timing über Modalitäten hinweg\"",
+      "exampleIntro": "Schauen wir uns nun ein einfaches Beispiel an, um zu zeigen, wie KI-Pipelines in der Praxis funktionieren.",
+      "artifacts": {
+        "promptSpec": "prompt_run_001.json",
+        "storyboardTable": "storyboard_v1.csv",
+        "imageOutputDir": "renders/scene_{scene_id}/shot_{shot_id}/frame_####.png",
+        "audioOutput": "audio/voiceover_final.wav",
+        "subtitleFile": "subtitles/storyboard_v1.srt",
+        "finalVideoFile": "exports/storyboard_v1_final.mp4"
+      }
+    },
+    "steps": {
+      "step1": {
+        "title": "Stap 1: Begin met een Eenvoudige Prompt",
+        "example": "Een meisje wacht op een treinstation om middernacht, de wind beweegt haar haar.",
+        "expandedPrompt": "Mit Hilfe von GPT oder eines lokalen LLM erweitern wir dies zu einem strukturierten JSON-Objekt mit globalem Stil, Charakterdefinitionen und einer Aufschlüsselung pro Szene.",
+        "technicalDetails": {
+          "llmFields": "\"global_style: Kunststil, Kamerajargon, Farbpalette, Charaktere: Name, Alter, Aussehen, Outfit, emotionale Verfassung, Szenen: [{ Szene_ID, Aufnahme_ID, Beschreibung, Kameratyp, Dauer_in_Sekunden }]\"",
+          "outputFile": "prompt_run_001.json",
+          "exampleStack": "Python-script dat de OpenAI/LLM-API aanroept en JSON naar schijf schrijft"
+        }
+      },
+      "step2": {
+        "title": "Schritt 2: Konvertieren Sie die Eingabeaufforderung in eine Storyboard-Tabelle",
+        "description": "Die JSON-Spezifikation wird zu einer Storyboard-Tabelle (CSV oder Notion zusammengefasst, die sowohl von Menschen als auch von der Pipeline gelesen werden kann.",
+        "technicalDetails": {
+          "columns": "\"szene_id,shot_id,startzeit,endzeit,dauer_sekunden,kameratyp,visuelle_beschreibung,charakterzustand,bewegungsnotizen\"",
+          "storage": "storyboard_v1.csv (wird als einzige Quelle der Wahrheit für die folgenden Schritte verwendet)",
+          "automation": "Python/Node.js-script dat prompt_run_001.json → storyboard_v1.csv transformeert"
+        }
+      },
+      "step3": {
+        "title": "Schritt 3: Generieren Sie die Bilder",
+        "description": "Generieren Sie hochwertige Keyframe-Bilder für jede Aufnahme mit Stable Diffusion über einen ComfyUI-Workflow.",
+        "points": "\"🎨 Verwenden Sie <strong>Stable Diffusion</strong> oder <strong>ComfyUI</strong>, um jede Zeile in `storyboard_v1.csv` in ein hochauflösendes Keyframe umzuwandeln. Halten Sie den Stil konsistent, indem Sie denselben Basis-Checkpoint, LoRA-Stack, Sampler und Seed-Policy für alle Aufnahmen verwenden. Verfeinern Sie Bilder mit Inpainting (für Gesichter/Hände) und Outpainting (für erweiterte Kompositionen und Kamerabewegungen).\"",
+        "technicalDetails": {
+          "modelConfig": {
+            "checkpoint": "sd_xl_base_1.0.safetensors",
+            "vae": "sdxl_vae.safetensors",
+            "sampler": "euler_a",
+            "steps": "\"25\"",
+            "cfgScale": "\"6,5\"",
+            "resolution": "1024x576",
+            "loraStack": "\"character_girl_v2.safetensors,style_cinematic_blue_hour.safetensors\""
+          },
+          "consistency": {
+            "seedStrategy": "fixed_per_scene",
+            "seedExample": "seed = hash(scene_id + character_name)",
+            "namingConvention": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png"
+          },
+          "comfyui": {
+            "workflowFile": "workflows/storyboard_to_frame.json",
+            "inputMethod": "Benutzerdefinierter Knoten / HTTP API liest storyboard_v1.csv und modelConfig",
+            "batching": "GPU-Batches, die durch scene_id verschlüsselt wurden, um geladene Gewichte wiederzuverwenden"
+          }
+        }
+      },
+      "step4": {
+        "title": "Schritt 4: Fügen Sie Bewegung und Atmosphäre in After Effects hinzu",
+        "description": "Verbessern Sie statische Keyframes mit Bewegung, Parallaxe und Atmosphäre mit Adobe After Effects (oder einem gleichwertigen Compositor).",
+        "points": "\"Importieren Sie Bildsequenzen oder Keyframes in <strong>Adobe After Effects</strong> als Ebenenkompositionen. Wenden Sie Keyframe-Animationen an: Schwenken, Zoomen, Parallaxenebenen, Nebelüberlagerungen, Glühen und Lichtflackern. Fügen Sie Umgebungsgeräusche und kinoreife Übergänge zwischen Szenen hinzu.\"",
+        "technicalDetails": {
+          "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optionele dieptekaarten/alfa-kanalen)",
+          "projectFile": "ae/storyboard_v1.aep",
+          "automation": "\"Verwenden Sie AE-Skripte/ExtendScript oder JSX, um automatisch Kompositionen pro Szenen-ID zu erstellen. `duration_seconds` aus storyboard_v1.csv zu `comp duration` zuordnen. Generieren Sie bei Bedarf Zwischenbilder über AE-Plugins oder videoerfassende Diffusionstools.\"",
+          "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
+        }
+      },
+      "step5": {
+        "title": "Schritt 5: Stimme und Untertitel hinzufügen",
+        "description": "Generieren Sie Voiceover, die auf das Storyboard abgestimmt sind, und fügen Sie Untertitel hinzu, um die Zugänglichkeit und Klarheit zu gewährleisten.",
+        "points": "\"Verwenden Sie <strong>XTTS</strong> oder <strong>ElevenLabs</strong>, um natürliche Sprachausgaben aus dem Skript zu generieren, unter Verwendung eines konsistenten Sprecherprofils. Für Akronyme (wie API, NBA) generieren Sie separate englische Ausschnitte und fügen sie nachträglich zusammen, um die Aussprache sauber zu halten. Fügen Sie Untertitel hinzu, indem Sie `.srt`- oder `.json`-Zeitachsen-Dateien synchronisiert mit der Sprachausgabe-Spur verwenden.\"",
+        "technicalDetails": {
+          "scriptSource": "dialoog en narratie afkomstig uit prompt_run_001.json + storyboard_v1.csv",
+          "ttsConfig": {
+            "engine": "XTTS of ElevenLabs",
+            "voiceId": "cinematic_female_nl",
+            "sampleRate": "\"44100\"",
+            "format": "wav"
+          },
+          "outputs": {
+            "voiceFile": "audio/storyboard_v1_voice.wav",
+            "subtitleFile": "subtitles/storyboard_v1.srt"
+          },
+          "syncStrategy": "Richten Sie `start_time`/`end_time` von storyboard_v1.csv an den Untertitelereignissen aus. Stellen Sie sicher, dass die gesamte Audiodauer ≈ der Dauer der endgültigen Zeitleiste entspricht"
+        }
+      },
+      "step6": {
+        "title": "Schritt 6: Endgültige Komposition mit FFMPEG",
+        "description": "Verwenden Sie FFMPEG, um alle Teile in einer Videodatei mit Audio und Untertiteln zusammenzufassen.",
+        "technicalDetails": {
+          "inputs": {
+            "video": "ae_renders/storyboard_v1_timeline.mp4",
+            "audio": "audio/storyboard_v1_voice.wav",
+            "subtitles": "subtitles/storyboard_v1.srt"
+          },
+          "ffmpegExample": "ffmpeg -i storyboard_v1_timeline.mp4 -i storyboard_v1_voiceover.wav -c:v libx264 -c:a aac -shortest -vf subtitles=subtitles/storyboard_v1.srt exports/storyboard_v1_final.mp4",
+          "output": "exports/storyboard_v1_final.mp4 (H.264, 24 fps, AAC-audio)"
+        }
+      }
+    },
+    "whatYouNeed": "📁 Das brauchst du",
+    "whatYouNeedTechnical": "\"GPU mit mindestens 12 GB VRAM für stabile Diffusion / ComfyUI, Python-Umgebung für JSON/CSV-Transformationen und Automatisierungsskripte, ComfyUI installiert mit erforderlichen benutzerdefinierten Knoten und Workflows, Adobe After Effects oder ähnlicher Kompositor für Bewegung und Effekte, XTTS / ElevenLabs-API-Zugriff für TTS, ffmpeg installiert und verfügbar in der Befehlszeile\"",
+    "cta": "🚀 Bereit, dein Storyboard mit KI zum Leben zu erwecken? <strong>Wir können dir ein komplettes Starter-Kit bereitstellen</strong> mit Beispiel-JSONs, ComfyUI-Workflows und ffmpeg/AE-Templates für den schnellen Start."
+  },
+  "SceneDetection": {
+    "tags": {
+      "computerVision": "Computervision",
+      "deepLearning": "Tiefes Lernen",
+      "realTimeAnalysis": "Realtime Analyse"
+    },
+    "hero": {
+      "title": "Transformeer video in storyboards met AI",
+      "subtitle": "Wie wir eine fortschrittliche Pipeline aufgebaut haben, die stundenlanges Filmmaterial in wenigen Minuten in strukturierte, durchsuchbare Storyboards umwandelt."
+    },
+    "introduction": {
+      "paragraph1": "Stellen Sie sich vor, Sie laden stundenlang Rohmaterial hoch und erhalten innerhalb von Minuten eine <strong>detaillierte Szene-für-Szene-Aufschlüsselung</strong> Ihres gesamten Videos. Genau das bietet unser KI-gestütztes Szenenerkennungssystem.",
+      "paragraph2": "Diese Pipeline wurde mit modernsten Python-Bibliotheken und Deep-Learning-Modellen entwickelt und erkennt nicht nur Szenenwechsel – sie versteht den Inhalt, identifiziert Schlüsselelemente und strukturiert alles zu einem umfassenden Storyboard."
+    },
+    "imageAlt": "De scenedetectie-pipeline in actie, die belangrijke momenten identificeert en gestructureerde storyboards genereert",
+    "protip": "Um optimale Ergebnisse zu erzielen, stellen Sie sicher, dass Ihr Video klare visuelle Trennungen zwischen den Szenen aufweist. Das System funktioniert am besten mit gut beleuchteten Bildern und minimaler Bewegungsunschärfe. Erwägen Sie das Hinzufügen von Kapitelmarkierungen oder Szenenunterbrechungen in Ihrem Videoeditor, um die Erkennungsgenauigkeit zu verbessern.",
+    "humanEvaluation": {
+      "title": "Menschliche Bewertung der KI-Ausgabe",
+      "introduction": "Obwohl unsere KI-Pipeline sehr genau ist, bleibt die menschliche Bewertung ein entscheidender Bestandteil unseres Qualitätssicherungsprozesses. So garantieren wir höchste Qualität:",
+      "evaluationAreas": "\"<strong>Szenengrenzgenauigkeit</strong> - Überprüfung und Anpassung von Szenenübergangspunkten,<strong>Metadatenvalidierung</strong> - Überprüfung von KI-generierten Beschreibungen, Tags und Labels,<strong>Konsistenzprüfung</strong> - Sicherstellung eines einheitlichen Stils und Formats in allen Szenen,<strong>Inhaltsrichtigkeit</strong> - Validierung, dass die KI die Schlüsselelemente in jeder Szene korrekt identifiziert hat\"",
+      "workflow": {
+        "title": "Human-in-the-loop workflow",
+        "steps": "\"KI verarbeitet das Video und generiert ein erstes Storyboard, Menschliche Gutachter bewerten die KI-Ausgabe mithilfe unserer spezialisierten Tools, Gutachter geben Feedback und nehmen notwendige Anpassungen vor, System lernt aus menschlichen Korrekturen, um zukünftige Ausgaben zu verbessern, Abschließende Qualitätsprüfung vor der Auslieferung\""
+      },
+      "benefits": {
+        "title": "Vorteile der menschlichen Bewertung",
+        "items": "\"<strong>Höhere Genauigkeit</strong> - Menschliche Gutachter erfassen subtile Nuancen, die KI möglicherweise übersieht,<strong>Kontextuelles Verständnis</strong> - Bessere Interpretation des kulturellen und situativen Kontexts,<strong>Qualitätssicherung</strong> - Zusätzliche Validierungsebene für professionelle Anwendungsfälle,<strong>Fortlaufende Verbesserung</strong> - Menschliches Feedback hilft dabei, die KI-Modelle zu trainieren und zu verfeinern\""
+      },
+      "tools": {
+        "title": "Evaluatietools",
+        "description": "Unsere Plattform umfasst spezielle Tools zur Unterstützung menschlicher Prüfer:",
+        "features": "\"Vergleich von Video und Storyboard nebeneinander, Benutzerfreundliche Oberfläche zur Anpassung von Szenengrenzen, Massenbearbeitung von Metadaten und Tags, Kollaborationsfunktionen für Teamüberprüfung, Versionshistorie und Änderungsverfolgung\""
+      }
+    },
+    "header": {
+      "title": "Von Rohbildern bis hin zu Storyboards",
+      "author": "Curify AI-Team",
+      "role": "AI-onderzoeksteam",
+      "imageAlt": "AI analyseert videobeelden en genereert storyboards",
+      "imageCaption": "KI-gestützte Szenenerkennung in Aktion, die Schlüsselmomente in Videoinhalten identifiziert",
+      "subtitle": "KI-gestützte Videoanalyse",
+      "date": "11 december 2025",
+      "readingTime": "8 min leestijd"
+    },
+    "Technical": {
+      "title": "TECHNISCHE VERDIEPING",
+      "steps": {
+        "step1": "So funktioniert es: Unter der Haube",
+        "videoProcessingPipeline": "Unser System verarbeitet Videos über eine anspruchsvolle mehrstufige Pipeline, die eine präzise Szenenerkennung und -analyse gewährleistet:",
+        "step2": "Videoprocessing-pipeline",
+        "step2Text": "Unser System verarbeitet Videos über eine anspruchsvolle mehrstufige Pipeline, die eine präzise Szenenerkennung und -analyse gewährleistet:",
+        "step3": "Scenedetectie en metadata-extractie",
+        "step3Text": "Met OpenCV aangestuurde frame-sampling op optimale intervallen",
+        "step4": "Shotanalyse en metadata-verrijking",
+        "step4Text": "Adaptieve drempelwaarden voor precieze scènegrensdetectie",
+        "step5": "Scène-labeling en metadata-organisatie",
+        "step5Text": "Deep-learningmodellen voor uitgebreid begrip van scènes",
+        "step6": "Metadata-export en integratie",
+        "step6Text": "Exporteer metadata naar JSON-formaat voor integratie met andere tools"
+      }
+    },
+    "featuresTitle": "Krachtige functies binnen handbereik",
+    "features1": "Naadloze video-integratie",
+    "features1Text": "Verwerk lokale bestanden, YouTube-links of cloudopslag met onze uniforme interface.",
+    "features": {
+      "modularArchitecture": {
+        "title": "Moduleerbare architectuur",
+        "description": "Das System besteht aus getrennten Komponenten für Videoanalyse, KI-Verarbeitung und Ausgabeerzeugung, wodurch es sich leicht erweitern und warten lässt."
+      },
+      "performance": {
+        "title": "Geoptimaliseerde prestaties",
+        "description": "Effiziente Frame-Verarbeitung und Parallelisierung sorgen auch bei langen Videos für eine schnelle Analyse."
+      },
+      "aiEnhanced": {
+        "title": "AI-verrijkte analyse",
+        "description": "Optionele AI-componenten bieden dieper scènebegrip en nauwkeurigere labeling."
+      }
+    },
+    "features2": "Naadloze video-integratie",
+    "features2Text": "Verwerk lokale bestanden, YouTube-links of cloudopslag met onze uniforme interface.",
+    "features3": "KI-gestützte Analyse",
+    "features3Text": "Verbeter scènebegrip met onze optionele AI-analysemodule.",
+    "features4": "Camerabewegingdetectie",
+    "features4Text": "Identificeer automatisch pans, zooms en andere camerabewegingen.",
+    "features5": "Aanpasbare output",
+    "features5Text": "Exporteer metadata naar JSON-formaat voor integratie met andere tools.",
+    "intro": {
+      "p1": "In der heutigen schnelllebigen Content-Erstellungslandschaft ist eine <strong>effiziente Videoanalyse</strong> kein Luxus mehr, sondern eine Notwendigkeit. Unsere KI-gestützte Szenenerkennungstechnologie wandelt stundenlanges Rohmaterial innerhalb von Minuten, nicht Tagen, in strukturierte, durchsuchbare Inhalte um.",
+      "p2": "Ob Filmemacher, Content Creator oder Medienprofi: Wer die Leistungsfähigkeit der automatisierten Szenenerkennung versteht, kann den eigenen Workflow revolutionieren und neue kreative Möglichkeiten erschließen."
+    },
+    "proTip": "Für die besten Ergebnisse sollte dein Quellvideo eine klare akustische und visuelle Trennung zwischen den Szenen haben. Gut ausgeleuchtete Umgebungen und minimale Hintergrundgeräusche verbessern die Erkennungsgenauigkeit deutlich.",
+    "titanicExample": {
+      "title": "Praktijkvoorbeeld: Titanic-scèneanalyse",
+      "description": "Sieh dir an, wie unser System eine Szene aus Titanic analysiert, Einstellungswechsel erkennt und detaillierte Szenenmetadaten erzeugt:",
+      "analysis": "Analyse:",
+      "analysisText": "Scenedetectie en metadata-extractie in realtime"
+    },
+    "inceptionExample": {
+      "title": "Droomniveau-analyse: Inception-scènebreakdown",
+      "description": "Ontdek hoe onze AI de complexe droomlagen en visuele effecten in Inception analyseert:",
+      "analysis": "Analyse",
+      "analysisText": "Droomlaag-detectie en uitsplitsing van visuele effecten",
+      "breakdownTitle": "Scèneanalyse-breakdown",
+      "showFullAnalysis": "Toon volledige scèneanalyse",
+      "hideFullAnalysis": "Verberg volledige scèneanalyse",
+      "fullSceneAnalysis": "Volledige scèneanalyse",
+      "sceneCard": {
+        "mood": "Sfeer",
+        "environment": "Omgeving",
+        "shotNotes": "Shotnotities"
+      }
+    },
+    "Scene": "Scène",
+    "process": {
+      "title": "Hoe onze scenedetectie werkt",
+      "steps": {
+        "step1": {
+          "title": "1. Videoanalyse",
+          "description": "Unsere KI scannt dein Video Frame für Frame und analysiert visuelle sowie auditive Hinweise, um potenzielle Szenengrenzen zu erkennen.",
+          "details": "\"Analysiert Farbhistogramme und Bewegungsvektoren, erkennt Änderungen des Audiopegels und Stille, identifiziert Aufnahmegrenzen und Übergänge\""
+        },
+        "step2": {
+          "title": "2. Scènesegmentatie",
+          "description": "Das System gruppiert zusammengehörige Einstellungen anhand visueller und zeitlicher Beziehungen zu kohärenten Szenen.",
+          "details": "Verwendet maschinelles Lernen, um den Szenenkontext zu verstehen. Berücksichtigt die Aufnahmedauer und Übergangstypen. Fügt verwandte Aufnahmen zu logischen Szenen zusammen."
+        },
+        "step3": {
+          "title": "3. Inhoudsclassificatie",
+          "description": "Jede erkannte Szene wird anhand ihres visuellen und akustischen Inhalts analysiert und kategorisiert.",
+          "details": "\"Identifiziert wichtige visuelle Elemente und Objekte, Klassifiziert Szenentypen (z. B. Interview, Action, Landschaft), Analysiert Audio auf Sprache, Musik und Effekte\""
+        },
+        "step4": {
+          "title": "4. Metadatageneratie",
+          "description": "Für jede Szene werden umfangreiche Metadaten generiert, die leistungsstarke Such- und Organisationsfunktionen ermöglichen.",
+          "details": "\"Erstellt Zeitstempel und Dauerinformationen, Generiert repräsentative Miniaturansichten, Extrahiert wichtige Dialoge und Audio-Hinweise\""
+        }
+      }
+    },
+    "whyItWorks": {
+      "title": "Waarom onze scenedetectie zo goed werkt",
+      "points": "<li>Unsere KI analysiert sowohl <strong>visuelle als auch akustische Indikatoren</strong>, um Szenengrenzen mit einer Genauigkeit von mehr als 95 % zu identifizieren.</li><li>Erweiterte <strong>Modelle für maschinelles Lernen</strong> verstehen den Kontext, nicht nur visuelle Änderungen, für eine natürlichere Szene Erkennung.</li><li>Die Echtzeitverarbeitung ermöglicht <strong>sofortiges Feedback</strong> und Anpassungen während des Filmens oder Bearbeitens.</li>"
+    },
+    "recommendedStyle": {
+      "title": "Aanbevolen stijl voor de beste resultaten",
+      "description": "Om de meest nauwkeurige scenedetectie te krijgen, raden we de volgende stijlguidelines aan:",
+      "points": "\"Stellen Sie eine gleichbleibende Beleuchtung in jeder Szene sicher, Verwenden Sie klare Audio-Marker oder Klappenbretter zwischen den Takes, Halten Sie Kamerabewegungen fließend und gezielt, Stellen Sie gleichbleibende Audiopegel innerhalb der Szenen sicher\""
+    },
+    "title": "Vom Rohmaterial bis zum Storyboard: KI-gestützte Videoanalyse",
+    "description": "Ontdek hoe AI ruwe video transformeert in gestructureerde storyboards met geautomatiseerde scenedetectie en analyse.",
+    "timeline": {
+      "title": "Scènetijdlijn",
+      "viewScene": "Szene {1} ansehen"
+    },
+    "cta": "🚀 Bereit, dein Storyboard mit KI zum Leben zu erwecken? <strong>Wir können dir ein komplettes Starter-Kit bereitstellen</strong> mit Beispiel-JSONs, ComfyUI-Workflows und ffmpeg/AE-Templates für den Einstieg.",
+    "sceneBreakdown": {
+      "title": "Ausgabe der Szenenerkennung verstehen",
+      "introduction": "Schauen wir uns eine typische Ausgabe der Szenenerkennung an, um zu verstehen, wie unsere KI Videoinhalte analysiert und strukturiert. Unter jeder Erklärung findest du die zugehörige JSON-Struktur, die diese Erkenntnisse ermöglicht.",
+      "scenes": "\"[object Object],[object Object],[object Object],[object Object]\"",
+      "analysisTitle": "Alles samenbrengen",
+      "analysisContent": "Durch die Kombination dieser Elemente erstellt unser System eine umfassende Karte deines Videoinhalts. Diese strukturierten Daten ermöglichen Funktionen wie intelligente Suche, automatisierten Schnitt und Inhaltsanalyse.",
+      "fullExampleTitle": "Compleet voorbeeld van scènedata",
+      "fullExampleDescription": "Zo komen alle onderdelen samen in een complete scèneanalyse:",
+      "fullExample": {
+        "scene_id": "scene_001",
+        "start_time": "\"2,5\"",
+        "end_time": "\"5.2\"",
+        "duration": "\"2,7\"",
+        "metadata": {
+          "created_at": "2025-12-11T14:25:30Z",
+          "video_source": "interview_001.mp4",
+          "resolution": "1920x1080",
+          "fps": "\"30\""
+        },
+        "visual_analysis": {
+          "brightness": "\"0,78\"",
+          "contrast": "\"0,65\"",
+          "color_palette": "\"#3A5FCD,#87CEEB,#F5F5DC\"",
+          "lighting_condition": "daglicht",
+          "environment": "studio"
+        },
+        "audio_analysis": {
+          "has_speech": "\"wahr\"",
+          "speech_confidence": "\"0,92\"",
+          "background_noise_level": "\"0,15\"",
+          "speaker_gender": "\"männlich, weiblich\"",
+          "speech_text": "Lassen Sie uns diskutieren, wie KI die Videoproduktion verändert..."
+        },
+        "content_analysis": {
+          "primary_category": "interview",
+          "setting": "studio",
+          "subjects": "\"Gastgeber,Gast\"",
+          "sentiment": "neutraal_positief"
+        },
+        "shots": "\"[Objekt Objekt],[Objekt Objekt]\""
+      },
+      "benefitsTitle": "Belangrijkste voordelen",
+      "benefits": "\"<strong>Effizientes Bearbeiten:</strong> Springen Sie direkt zu einer Szene oder Aufnahme, ohne stundenlanges Durchsuchen des Materials,<strong>Intelligente Suche:</strong> Finden Sie Inhalte basierend auf visuellen Elementen, nicht nur Metadaten,<strong>Konsistente Qualität:</strong> Identifizieren und bewahren Sie visuelle Konsistenz in Ihrem Projekt,<strong>Datenbasierte Entscheidungen:</strong> Erhalten Sie Einblicke in die Struktur und das Tempo Ihrer Inhalte\""
+    },
+    "conclusion": {
+      "title": "Videoproductie transformeren met AI",
+      "p1": "Die KI-gestützte Szenenerkennung verändert die Art und Weise, wie wir an die Videoproduktion herangehen. Durch die Automatisierung des zeitaufwändigen Prozesses der Szenenidentifikation und -organisatie können sich YouTuber auf das Wesentliche konzentrieren – das Erzählen fesselnder Geschichten. Unsere Technologie schließt die Lücke zwischen Rohmaterial und fertigen Inhalten und macht professionelle Videoanalysen für jedermann zugänglich.",
+      "p2": "Während wir unsere Algorithmen weiter verfeinern und unsere Fähigkeiten ausbauen, sind wir gespannt, wie Filmemacher, Lehrkräfte und Content Creator diese Werkzeuge nutzen, um die Grenzen des visuellen Storytellings zu verschieben. Die Zukunft der Videoproduktion ist da – effizienter und kreativer als je zuvor."
+    },
+    "richStructuredOutput": "Rijke, gestructureerde output",
+    "richStructuredOutputText": "Unser System erzeugt umfassende Storyboard-Daten mit detaillierten Metadaten für jede Szene und gibt dir damit die volle Kontrolle über deinen Videoinhalt.",
+    "advancedUsage": {
+      "title": "Erweiterte Nutzung und Anpassung",
+      "description": "Das Szenenerkennungssystem ist hochgradig anpassbar und eignet sich für unterschiedliche Anwendungsfälle. Hier sind einige erweiterte Funktionen und Anpassungsoptionen:",
+      "features": {
+        "thresholds": {
+          "title": "Aangepaste scenedetectiedrempels",
+          "description": "Pas de gevoeligheid van scenedetectie aan door de drempelparameter te wijzigen. Lagere waarden maken de detectie gevoeliger voor veranderingen."
+        },
+        "aiAnalysis": {
+          "title": "AI-verrijkte analyse",
+          "description": "Aktiviere die KI-Analyse für ein detaillierteres Szenenverständnis und Labeling. Dafür ist eine zusätzliche Einrichtung mit dem Ollama-Server erforderlich."
+        },
+        "outputCustomization": {
+          "title": "Outputmaatwerk",
+          "description": "Passen Sie das Ausgabeformat an und fügen Sie dem generierten Storyboard zusätzliche Metadaten hinzu."
+        }
+      },
+      "integration": {
+        "title": "Integratie met andere tools",
+        "description": "De storyboardoutput kan eenvoudig worden geïntegreerd met andere tools en workflows. Enkele voorbeelden:",
+        "tools": {
+          "editingSoftware": {
+            "title": "Videobewerkingssoftware",
+            "description": "Importeer de JSON-output in video-editors die scriptgestuurde montage ondersteunen"
+          },
+          "cms": {
+            "title": "Contentmanagementsystemen",
+            "description": "Genereer automatisch metadata voor video-assets"
+          },
+          "aiTraining": {
+            "title": "AI-trainingsdata",
+            "description": "Verwenden Sie die strukturierte Ausgabe als Trainingsdaten für Modelle für maschinelles Lernen"
+          }
+        }
+      }
+    },
+    "Benefitss": {
+      "title": "Voordelen",
+      "description": "Zu den Vorteilen unseres KI-gestützten Szenenerkennungssystems gehören:",
+      "tags": {
+        "computerVision": "Computervision",
+        "deepLearning": "Tiefes Lernen",
+        "realTimeAnalysis": "Realtime Analyse"
+      },
+      "features": {
+        "modularArchitecture": {
+          "title": "Moduleerbare architectuur",
+          "description": "Das System besteht aus getrennten Komponenten für Videoanalyse, KI-Verarbeitung und Ausgabeerzeugung, wodurch es sich leicht erweitern und warten lässt."
+        },
+        "performance": {
+          "title": "Geoptimaliseerde prestaties",
+          "description": "Effiziente Frame-Verarbeitung und Parallelisierung sorgen auch bei langen Videos für eine schnelle Analyse."
+        },
+        "aiEnhanced": {
+          "title": "AI-verrijkte analyse",
+          "description": "Optionele AI-componenten bieden dieper scènebegrip en nauwkeurigere labeling."
+        }
+      }
+    },
+    "benefits": {
+      "subtitle": "WAAROM ONZE OPLOSSING",
+      "title": "Die Leistungsfähigkeit der KI-gestützten Szenenanalyse"
+    },
+    "integration": {
+      "title": "Eenvoudige integratie",
+      "description": "Die strukturierte JSON-Ausgabe lässt sich leicht in andere Tools und Workflows integrieren:",
+      "technologies": "\"Python, JavaScript, Node.js, React, Vue\""
+    },
+    "features10": {
+      "comprehensiveData": {
+        "title": "Uitgebreide scènedata",
+        "items": "\"Genaue Zeitinformationen für jede Szene, Schlüsselbilder zur visuellen Referenz, Ergebnisse der Objekterkennung, Analyse der Kamerabewegung\""
+      },
+      "export": {
+        "title": "Exportoptie",
+        "formats": {
+          "json": "JSON"
+        }
+      }
+    },
+    "performance": {
+      "title": "Geoptimaliseerde prestaties",
+      "features": {
+        "speed": "5–10x sneller dan realtime",
+        "memory": "Laag geheugengebruik",
+        "parallel": "Parallelle verwerking"
+      }
+    }
+  },
+  "nanoBananaProPrompts": {
+    "title": "Nano Banana Pro Prompts",
+    "description": "Entdecke eine Sammlung kreativer und effektiver Prompts für deine KI-Content-Erstellung. Diese Prompts helfen dir, das Beste aus deinen KI-Tools herauszuholen.",
+    "prompts": {
+      "title": "Beliebte Nano Banana Pro Prompts",
+      "prompt1": "Schreibe eine Kurzgeschichte über eine futuristische Stadt, in der Emotionen die Währung sind.",
+      "prompt2": "Erstelle einen Dialog zwischen zwei Figuren, die sich zum ersten Mal in einem Café treffen.",
+      "prompt3": "Verfasse eine Produktbeschreibung für ein innovatives, KI-gestütztes Küchengerät."
+    }
+  },
+  "ageAi": {
+    "heading": "Data Science im Zeitalter der KI: Ist der \"Traumjob\" noch attraktiv?",
+    "intro1": "\"Es war die beste aller Zeiten, es war die schlechteste aller Zeiten.\"",
+    "intro2": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein.",
+    "realityCheck": {
+      "title": "Die Realität",
+      "content": "Traditionelle Bereiche wie Suche, Werbung und Empfehlungssysteme (SAR) reifen, und die Branche verlagert ihren Fokus auf leistungsstarke Technik und KI-Architektur. Wir beobachten ein seltsames Paradox.",
+      "lowBarTrap": {
+        "title": "Die \"Niedrige-Hürde\"-Falle",
+        "content": "Master-Studenten können heute GPT-4 nutzen, um in Sekundenschnelle Datenbereinigung, explorative Datenanalyse und Visualisierung durchzuführen. Ohne solide Grundlagen fehlt ihnen jedoch oft das Urteilsvermögen zu erkennen, wann die KI \"halluziniert\" oder statistisch fragwürdige Ergebnisse liefert."
+      },
+      "stakeholderShift": {
+        "title": "Der Wandel der Stakeholder",
+        "content": "Wenn Geschäftspartner ihre eigenen Eingabeaufforderungen schreiben können, um grundlegende Erkenntnisse zu erhalten, fühlen sich viele Data Scientists \"unterfordert\", gefangen in endlosen Besprechungen und sich wiederholendem Prompt-Engineering."
+      }
+    },
+    "strategicPillars": {
+      "title": "Wie Sie unverzichtbar bleiben: Zwei strategische Säulen",
+      "intro": "Um in dieser Ära erfolgreich zu sein, müssen wir uns von 'Modellbauern' zu 'Architekten des Mehrwerts' entwickeln. Dies geschieht meiner Ansicht nach in zwei Dimensionen:",
+      "buildingTools": {
+        "title": "Die Werkzeuge bauen (Die Ingenieur-/Architekten-Mentalität)",
+        "subtitle": "Nutzen Sie die KI nicht nur, verbessern Sie sie.",
+        "points": "\"[object Object],[object Object],[object Object]\""
+      },
+      "leveragingTools": {
+        "title": "Die Werkzeuge nutzen (Die Strategen-Mentalität)",
+        "subtitle": "Nutzen Sie die KI, um Ihre Produktivität zu verzehnfachen und sich auf das zu konzentrieren, was Menschen am besten können.",
+        "points": "\"[object Object],[object Object],[object Object]\""
+      }
+    },
+    "bottomLine": {
+      "title": "Das Fazit",
+      "content1": "KI hat Data Science nicht getötet, sondern die Messlatte höher gelegt. Wenn Ihr Wert ausschließlich im Schreiben von SQL oder im Optimieren von Hyperparametern lag, verblasst die 'Attraktivität'. Aber wenn Sie die Lücke zwischen Geschäftsproblemen und KI-Lösungen schließen können, war Ihr Wert noch nie höher.",
+      "content2": "Ihre persönliche Erfahrung ist Ihr Vorteil. Ein Sprachmodell kann Logik nachahmen, aber es hat nicht die jahrelangen 'Kampfnarben' von gescheiterten Implementierungen oder die Intuition, die aus der Navigation in komplexen Organisationen entsteht."
+    },
+    "discussion": {
+      "title": "Lassen Sie uns diskutieren:",
+      "prompt": "Fühlen Sie sich in Ihrer aktuellen Rolle eher 'effizienter' oder 'ersetzbar'? Wie entwickeln Sie Ihr Werkzeugset in diesem Jahr weiter?"
+    },
+    "hashtags": [
+      "#DataScience",
+      "#KI",
+      "#MaschinellesLernen",
+      "#GenerativeKI",
+      "#Karriereentwicklung",
+      "#TechTrends"
+    ],
+    "conclusion": "Ihre persönliche Erfahrung ist Ihr Vorteil. Ein Sprachmodell kann Logik nachahmen, aber es hat nicht die jahrelangen 'Kampfnarben' von gescheiterten Implementierungen oder die Intuition, die aus der Navigation in komplexen Organisationen entsteht.",
+    "content": "Traditionelle Bereiche wie Suche, Werbung und Empfehlungssysteme (SAR) reifen, und die Branche verlagert ihren Fokus auf leistungsstarke Technik und KI-Architektur. Wir beobachten ein seltsames Paradox.",
+    "lowBarTrap": {
+      "title": "Die \"Niedrige-Hürde\"-Falle",
+      "content": "Master-Studenten können heute GPT-4 nutzen, um in Sekundenschnelle Datenbereinigung, explorative Datenanalyse und Visualisierung durchzuführen. Ohne solide Grundlagen fehlt ihnen jedoch oft das Urteilsvermögen zu erkennen, wann die KI \"halluziniert\" oder statistisch fragwürdige Ergebnisse liefert."
+    },
+    "stakeholderShift": {
+      "title": "Der Wandel der Stakeholder",
+      "content": "Wenn Geschäftspartner ihre eigenen Eingabeaufforderungen schreiben können, um grundlegende Erkenntnisse zu erhalten, fühlen sich viele Data Scientists \"unterfordert\", gefangen in endlosen Besprechungen und sich wiederholendem Prompt-Engineering."
+    },
+    "title": "Data Science im Zeitalter der KI: Ist der \"Traumjob\" noch attraktiv?",
+    "description": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein."
+  },
+  "aiPlatform": {
+    "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+    "subtitle": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
+    "imageAlt": "KI-Plattform-Architekturdiagramm",
+    "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+    "mindsetShift": {
+      "title": "1. Die Denkweise: Demokratisieren statt zentralisieren",
+      "content": "Wenn Ihr KI-Team zum Flaschenhals wird, haben Sie bereits verloren. Bauen Sie stattdessen eine Selbstbedienungs-KI-Infrastruktur auf, die Produktentwickler befähigt, das zu bauen, was sie benötigen.",
+      "goal": "Ziel: Domänenexperten (Finanzen, Recht, Support-Ingenieure) ermöglichen, KI-Lösungen mit minimalen ML-Kenntnissen zu erstellen.",
+      "reality": "Realität: Das KI-Team baut die Autobahn; die Fachabteilungen fahren die Autos.",
+      "supportModel": {
+        "title": "Unterstützungsmodell:",
+        "l1": "L1 – Selbstbedienung: Entwickler nutzen Plattform-Tools, um eigene Funktionen zu erstellen.",
+        "l2": "L2 – Beratung: Das KI-Team hilft bei Prompt-Design, Bewertung und Architektur.",
+        "l3": "L3 – Gemeinsame Entwicklung: Gemeinsame Entwicklung komplexer, wirkungsvoller MVPs."
+      },
+      "conclusion": "So wird KI von einem Forschungsprojekt zu einem Geschäftsvervielfacher."
+    },
+    "stack": {
+      "title": "2. Der Stack: Halten Sie ihn schlank und offen",
+      "intro": "Übermäßige Komplexität tötet die Geschwindigkeit. Wir haben eine dreischichtige Plattform entwickelt, die Komplexität abstrahiert, ohne Sie einzuschränken.",
+      "gateway": {
+        "title": "A. Das einheitliche Modell-Gateway",
+        "content": "Binden Sie sich nicht an einen Anbieter. Leiten Sie Anfragen nahtlos zwischen:",
+        "points": "\"Kommerzielle LLMs (GPT‑4, Claude usw.) – für erstklassiges Denken.,Private Modelle (Llama, Qwen) – für sensible Daten und Kostenkontrolle.,Spezialmodelle – für Codierung, Vision oder Aufgaben mit geringer Latenz.\"",
+        "conclusion": "Das Gateway übernimmt Wiederholungsversuche, Fallbacks, Kostenverfolgung und Ratenbegrenzungen – Entwickler rufen einfach `platform.generate()` auf."
+      },
+      "knowledge": {
+        "title": "B. Wissen-als-Service (RAG vereinfacht)",
+        "content": "Retrieval-Augmented Generation ist der Bereich, in dem der größte Geschäftswert entsteht. Aber Ingenieure sollten sich nicht um Vektordatenbanken kümmern müssen.",
+        "solution": "Bauen Sie eine 'Drop-and-Chat'-Schnittstelle: Zeigen Sie auf ein Wiki, PDFs oder eine Datenbank, und die Plattform übernimmt die Aufnahme, Aufteilung, Einbettung und Indizierung – automatisch. Jetzt hat jedes Team eine private, aktuelle Wissensdatenbank."
+      },
+      "orchestration": {
+        "title": "C. Die Orchestrierungsschicht",
+        "content": "Code-zentrierte KI ist mächtig; workflow-zentrierte KI ist schneller.",
+        "example": "Wir verwenden Low-Code-Tools (wie Dify, Coze, n8n usw.), um Schritte zu verketten:",
+        "workflow": "\"Benutzerabfrage, Dokumente abrufen, Tool aufrufen (API, SQL), Grund, Ausgabe\"",
+        "conclusion": "Dadurch können Produktteams in Stunden, nicht in Wochen, Prototypen erstellen."
+      }
+    },
+    "fineTuning": {
+      "title": "3. Überspringen Sie das Feinabstimmen (meistens)",
+      "content": "**Hier ist das Geheimnis: Sie müssen ein LLM wahrscheinlich nicht feinabstimmen.**",
+      "strategies": "\"Bessere Hinweise: Systematisches Engineering schlägt zufälliges Feintuning.,Hochwertiger RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.,Multi-Model-Fusion: Verwenden Sie GPT-4 für das Argumentieren, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.,LLM-als-Richter: Verwenden Sie ein starkes Modell, um Ausgaben von kostengünstigeren Modellen zu bewerten.\"",
+      "conclusion": "Wir stimmen nur kleine Modelle für enge, hochvolumige Aufgaben nach einem langen Prozess der Sammlung und Bereinigung hochwertiger domänenspezifischer Daten fein. Alles andere ist 'Engineering statt Training'."
+    },
+    "essentialWork": {
+      "title": "4. Die unscheinbare, aber unverzichtbare Arbeit",
+      "content": "Spitzenplattformen entstehen nicht allein durch Modelle. Sie entstehen durch die Lösung langweiliger, schwieriger Probleme:",
+      "points": "\"[object Object],[object Object],[object Object]\""
+    },
+    "conclusion": {
+      "title": "Das Fazit",
+      "content": "Für mittelständische Technologieunternehmen bedeutet Erfolg mit KI nicht, ein besseres LLM zu bauen. Es bedeutet, eine Plattform zu schaffen, die KI in einen wiederholbaren, skalierbaren Geschäftsprozess verwandelt.",
+      "finalThoughts": "Beginnen Sie mit der Infrastruktur, sichern Sie die Daten und lassen Sie Ihre Teams bauen. Die Zukunft besteht nicht aus einem Modell, das alles beherrscht – sondern aus einer Flotte spezialisierter Agenten, die jeweils ein echtes Geschäftsproblem lösen, alle angetrieben von einer Plattform, die es einfach macht.",
+      "callToAction": "Bereit zum Bauen? Halten Sie es einfach, halten Sie es offen und konzentrieren Sie sich darauf, andere zu befähigen."
+    },
+    "intro": {
+      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
+      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
+    },
+    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen"
+  },
+  "qaBotToTaskAgent": {
+    "heading": "🏗️ Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
+    "description": "Erfahren Sie, wie Sie zuverlässige Task-Agenten erstellen, die über einfache Frage-Antwort-Funktionen hinausgehen",
+    "tldr": "TL;DR: Hören Sie auf, Chatbots zu bauen, die nur Fragen beantworten. Beginnen Sie mit der Entwicklung von Task-Agenten, die tatsächlich Arbeit verrichten.",
+    "intro": "Dieser Leitfaden erklärt den architektonischen Wandel von monolithischen QA-Bots zu Task-Agenten mit statischen Regeln, dynamischen Fähigkeiten und deterministischen Hooks – mit konkreten Codebeispielen und Open-Source-Referenzen.",
+    "coreShift": {
+      "title": "1. Die grundlegende Veränderung: Vom QA-Bot zum Task-Agenten",
+      "content": "Die meisten KI-Systeme von heute sind immer noch kontextgefüllte QA-Bots:,• Sie beantworten Fragen gut,• Sie halluzinieren unter Druck,• Es fehlen Garantien bezüglich Ausführung, Sicherheit und Konsistenz.",
+      "keyInsight": "Die zentrale Erkenntnis: Skalieren Sie nicht den Kontext. Strukturieren Sie ihn."
+    },
+    "threeLayerArch": {
+      "title": "2. Die Drei-Schichten-Architektur",
+      "layers": "\"[Objekt Objekt],[Objekt Objekt],[Objekt Objekt]\""
+    },
+    "projectStructure": {
+      "title": "3. Empfohlene Projektstruktur",
+      "structure": "mein-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+    },
+    "staticContextExample": {
+      "title": "4. Beispiel für statischen Kontext: .cursorrules",
+      "content": "# ROLLE\nSie sind ein erfahrener Python-Entwickler mit Fokus auf produktionsreife Systeme.\n\n# REGELN\n- NIEMALS print() zum Debuggen verwenden\n- Funktionen IMMER typisieren\n- Bei Änderungen an >3 Dateien einen Plan vorschlagen\n\n# VERHALTEN\n- Seien Sie prägnant\n- Stellen Sie bei Bedarf klärende Fragen\n\nReferenz: https://github.com/PatrickJS/awesome-cursorrules"
+    },
+    "dynamicSkillExample": {
+      "title": "5. Beispiel für eine dynamische Fähigkeit (MCP)",
+      "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Erstellt Ticket {ticket_id} mit Priorität={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferenz: https://github.com/modelcontextprotocol/python-sdk"
+    },
+    "deterministicHookExample": {
+      "title": "6. Beispiel für einen deterministischen Hook",
+      "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"passwort\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Sicherheitsverletzung erkannt\"}\n    return agent_node(state)\n\nReferenz: https://langchain-ai.github.io/langgraph/"
+    },
+    "finalThought": "Wenn Ihr Agent nur Fragen beantwortet, ist es ein Chatbot. Wenn er zuverlässig Arbeit ausführt, ist es ein Task-Agent.",
+    "taskAgentImageAlt": "Abbildung einer Task-Agent-Systemarchitektur, die die Interaktion zwischen verschiedenen Komponenten zeigt"
+  }
+}

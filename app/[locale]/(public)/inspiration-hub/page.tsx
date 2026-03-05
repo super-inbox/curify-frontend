@@ -3,6 +3,7 @@ import InspirationHubClient from "./InspirationHubClient";
 import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { InspirationCardUI } from "@/types/inspiration";
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 export async function generateMetadata({
   params,
@@ -15,7 +16,10 @@ export async function generateMetadata({
     title: "Daily Inspiration Hub | Curify",
     description:
       "Curated cards that translate real-world signals into creator-ready hooks and production beats.",
-    alternates: { canonical: `/${locale}/inspiration-hub` },
+    alternates: {
+      canonical: getCanonicalUrl(locale, "/inspiration-hub"),
+      languages: getLanguagesMap("/inspiration-hub"),
+    },
   };
 }
 

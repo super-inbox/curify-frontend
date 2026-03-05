@@ -9,29 +9,20 @@ export default function BilingualSubtitlesClient() {
   const t = useTranslations("bilingual");
   const user = useAtomValue(userAtom);
   const setDrawer = useSetAtom(drawerAtom);
-  const setModal = useSetAtom(modalAtom);
   const [, setModalState] = useAtom(modalAtom);
   const setJobType = useSetAtom(jobTypeAtom);
 
-// In BilingualSubtitlesClient.tsx
-const handleTryItClick = () => {
-
-    console.log("Checking user object:", user); 
-    // This will show you just the user_id (or undefined)
-    console.log("User ID:", user?.user_id);
-
-  if (user?.user_id) {
-    console.log("User is logged in. Opening modal...");
-    setJobType("subtitles");
-    setModalState("add");
-  } else {
-    console.log("User is logged out. Opening signin drawer...");
-    setDrawer("signin");
-  }
-};
+  const handleTryItClick = () => {
+    if (user?.user_id) {
+      setJobType("subtitles");
+      setModalState("add");
+    } else {
+      setDrawer("signin");
+    }
+  };
 
   return (
-    <main className="max-w-3xl mx-auto pt-24 px-6 py-12 text-[var(--c2)]">
+    <main className="max-w-5xl mx-auto pt-24 px-6 py-12 text-[var(--c2)]">
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("intro")}</p>
 
@@ -64,11 +55,50 @@ const handleTryItClick = () => {
 
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-4 text-[var(--c1)]">{t("faq.title")}</h2>
+
         <p className="text-base mb-2">{t("faq.q1")}</p>
         <p className="text-sm text-gray-600 mb-4">{t("faq.a1")}</p>
 
         <p className="text-base mb-2">{t("faq.q2")}</p>
         <p className="text-sm text-gray-600 mb-4">{t("faq.a2")}</p>
+      </section>
+
+      {/* ✅ New: High-authority SEO content */}
+      <section className="mt-20 space-y-10">
+        <div className="space-y-3">
+          <h2 className="text-2xl font-semibold text-[var(--c1)]">{t("deep.what.title")}</h2>
+          <p className="text-base">{t("deep.what.p1")}</p>
+          <p className="text-base">{t("deep.what.p2")}</p>
+          <p className="text-base">{t("deep.what.p3")}</p>
+        </div>
+
+        <div className="space-y-3">
+          <h2 className="text-2xl font-semibold text-[var(--c1)]">{t("deep.how.title")}</h2>
+          <p className="text-base">{t("deep.how.p1")}</p>
+          <p className="text-base">{t("deep.how.p2")}</p>
+          <p className="text-base">{t("deep.how.p3")}</p>
+          <p className="text-base">{t("deep.how.p4")}</p>
+          <p className="text-base">{t("deep.how.p5")}</p>
+        </div>
+
+        <div className="space-y-5">
+          <h2 className="text-2xl font-semibold text-[var(--c1)]">{t("deep.usecases.title")}</h2>
+
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-[var(--c1)]">{t("deep.usecases.creatorsTitle")}</h3>
+            <p className="text-base">{t("deep.usecases.creatorsBody")}</p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-[var(--c1)]">{t("deep.usecases.educationTitle")}</h3>
+            <p className="text-base">{t("deep.usecases.educationBody")}</p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-[var(--c1)]">{t("deep.usecases.businessTitle")}</h3>
+            <p className="text-base">{t("deep.usecases.businessBody")}</p>
+          </div>
+        </div>
       </section>
     </main>
   );

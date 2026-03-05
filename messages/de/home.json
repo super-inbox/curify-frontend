@@ -1,0 +1,368 @@
+{
+  "home": {
+    "metadata": {
+      "title": "Curify – Ideen in visuelles Denken verwandeln | KI-Infografiken & Lokalisierung",
+      "description": "Curify ist eine KI-gestützte Plattform für visuelles Denken, die Trends, Ideen und Wissen in strukturierte, teilbare visuelle Inhalte verwandelt. Erstellen Sie Infografiken, Inspirationskarten, Untertitel, übersetzte Videos und lokalisierte Medien ganz einfach.",
+      "ogTitle": "Curify – Ideen in visuelles Denken verwandeln",
+      "ogDescription": "Verwandeln Sie Trends und Ideen in strukturierte visuelle Inhalte. Inspirationskarten, KI-Infografiken, Videoübersetzung und Lokalisierung – alles auf einer Plattform."
+    },
+    "hero": {
+      "title": "Ideen entdecken | Visuell ausdrücken | Inhalte erstellen",
+      "description": "Curify ist eine Plattform für visuelles Denken, die Trends, Ideen und Wissen in strukturierte, teilbare Inhalte verwandelt. Von Inspirationskarten und KI-Infografiken bis hin zu Untertiteln, Übersetzung und Lip-Sync-Synchronisation – wir verbinden Inspiration mit Produktion."
+    }
+  },
+  "coreFeatures": {
+    "oneShot": {
+      "title": "Ein-Klick-Übersetzung",
+      "desc": "Komplette Videoübersetzung mit Voice-over, Untertiteln und Lippen-Synchronisation in einem Schritt."
+    },
+    "toneColor": {
+      "title": "Stimmfarbenerhaltung",
+      "desc": "Erhält die einzigartigen Stimmmerkmale und Tonqualitäten des ursprünglichen Sprechers."
+    },
+    "emotional": {
+      "title": "Emotionale Sprache",
+      "desc": "KI reproduziert emotionale Nuancen und sorgt für authentischen Ausdruck über Sprachgrenzen hinweg."
+    },
+    "lipSync": {
+      "title": "Lippen-Synchronisation",
+      "desc": "Fortschrittliche Lippen-Synchronisierung, die Mundbewegungen perfekt mit der übersetzten Tonspur abgleicht."
+    },
+    "subtitle": {
+      "title": "Untertitelgenerator",
+      "desc": "Intelligente Untertitelerstellung mit präzisem Timing und natürlichem Sprachfluss."
+    },
+    "languages": {
+      "title": "170+ Sprachen",
+      "desc": "Übersetzen Sie Ihre Inhalte in über 170 Sprachen mit nahezu muttersprachlicher Genauigkeit."
+    }
+  },
+  "upcoming": {
+    "title": "Demnächst verfügbar",
+    "subtitle": "Nächste Generation von Funktionen in Entwicklung",
+    "styleTransfer": {
+      "title": "Stilübertragung",
+      "desc": "Wende filmische oder markenspezifische Stile auf deine Videos an – mit KI-gestützter visueller Transformation.",
+      "icon": "🎨",
+      "status": "Kommt in Q3 2025",
+      "transcript": "Diese Demo verwandelt einen Live-Action-Clip in eine Animation im Ghibli-Stil."
+    },
+    "mangaTranslation": {
+      "title": "Manga-Übersetzung",
+      "desc": "Automatische Übersetzung von Manga und Comics mit Texterkennung, Blasenbearbeitung und kultureller Anpassung.",
+      "icon": "📚",
+      "status": "Kommt in Q3 2025",
+      "transcript": "Dieser Prototyp zeigt die automatische Manga-Übersetzung."
+    },
+    "templatedVideo": {
+      "title": "Vorlagenbasierte Videogenerierung",
+      "desc": "Erstelle professionelle Videos aus Vorlagen mit KI-generierten Inhalten und Markenanpassung.",
+      "icon": "🎬",
+      "status": "Kommt in Q4 2025",
+      "transcript": "Diese Demo zeigt eine Skript-zu-Video-Pipeline."
+    },
+    "statusQ3": "Kommt im Q3 2025",
+    "statusQ4": "Kommt im Q4 2025"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Multimodale Erkennung",
+      "desc": "Wir kombinieren Sprach- und Untertitelsignale, um genauere und robustere Transkriptionen zu erzielen. Diese Zwei-Kanal-Erkennung reduziert Fehler und sorgt für bessere Übereinstimmung mit dem Originalinhalt – insbesondere in lauten oder komplexen Audioszenen."
+    },
+    "emotional": {
+      "title": "Emotionale Sprachsynthese",
+      "desc": "Unsere Sprachsynthese-Modelle erzeugen ausdrucksstarke, emotional nuancierte Sprache, die das Storytelling verbessert und das Publikum stärker einbindet. Durch die Erfassung von Tonfall, Rhythmus und Nuancen wirken AI-Stimmen menschlicher."
+    },
+    "lengthaware": {
+      "title": "Längenbewusste Übersetzung und Anpassung",
+      "desc": "Wir optimieren Übersetzungen nicht nur auf Genauigkeit, sondern auch auf Timing und Tempo – entscheidend für die Synchronisation von Video und Sprache. Nutzer können Tonfall, Länge und Formulierungen an unterschiedliche Inhalte und Zielgruppen anpassen."
+    },
+    "controlled": {
+      "title": "Kontrollierte Videogenerierung",
+      "desc": "Wir ermöglichen strukturierte, vorlagenbasierte Videogenerierung mit steuerbaren visuellen Elementen und Übergängen. So erhalten Kreative kreative Freiheit und gleichzeitige Produktionskonsistenz – mit weniger manueller Arbeit und hoher Qualität."
+    }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Video-Synchronisation",
+      "desc": "Übersetze dein Video in jede Sprache mit präziser Lokalisierung und Sprachsynchronisation"
+    },
+    "subtitle_captioner": {
+      "title": "Untertitel-Generator",
+      "desc": "Erstelle automatisch mehrsprachige Untertitel zur Verbesserung von Klarheit und Zugänglichkeit"
+    },
+    "lip_syncing": {
+      "title": "Lippensynchronisation",
+      "desc": "Perfekte Lippensynchronität dank KI-gestützter Technik"
+    },
+    "style_transfer": {
+      "title": "Stilübertragung",
+      "desc": "Verwandle dein Video in Pixar-, Ghibli- oder andere künstlerische Stile – bald verfügbar"
+    },
+    "coming_soon": "Bald verfügbar",
+    "create": "Erstellen",
+    "meta": {
+      "title": "Curify Tools",
+      "description": "Entdecken Sie die Curify Studio-Tools für Video-Dubbing, Untertitel und KI-gestützte Inhaltsworkflows."
+    },
+    "hero": {
+      "watch_demo": "Sehen Sie sich dasselbe Video an, das in verschiedene Sprachen übersetzt wurde, mit bewahrter Emotion und Lippen-Synchronisation",
+      "transcript_label": "Transkript",
+      "training_transcript": "Willkommen bei Curify Studio. In diesem Video zeigen wir, wie KI Inhalte über Sprachen hinweg übersetzt und synchronisiert...",
+      "currently_playing": "Aktuell wird gespielt: {label} Version"
+    },
+    "products": {
+      "title": "Produkte & Dienstleistungen",
+      "subtitle": "Unsere KI-gesteuerten Lösungen sind live und verbessern sich kontinuierlich – bereits von Kreativen und Teams weltweit genutzt."
+    },
+    "audience": {
+      "title": "Unsere Zielgruppe",
+      "v1": "🎥 Videoersteller und YouTuber, die in globale Märkte expandieren",
+      "v2": "📖 Pädagogen und Wissensplattformen, die Bücher in Vorlesungen umwandeln",
+      "v3": "🎶 Medien- und Unterhaltungsunternehmen, die Inhalte in verschiedene Sprachen lokalisieren",
+      "v4": "📚 Manga-Verlage und Fan-Übersetzer, die Übersetzung und Satz automatisieren"
+    },
+    "free_badge": "kostenlos",
+    "groups": {
+      "video": "Video-Tools",
+      "image": "Bild-Tools",
+      "audio": "Audio-Tools"
+    },
+    "video_transcript_generator": {
+      "title": "Video-Transkriptgenerator",
+      "desc": "Verwandeln Sie Videos in genaue Transkripte, die Sie bearbeiten und wiederverwenden können."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "YouTube-Untertitel-Downloader",
+      "desc": "Laden Sie verfügbare Untertitel von YouTube mit einem Klick herunter."
+    },
+    "video_subtitle_extractor": {
+      "title": "Video-Untertitel-Extractor",
+      "desc": "Extrahieren Sie eingebettete Untertitel in bearbeitbare SRT/VTT-Dateien."
+    },
+    "translate_subtitles": {
+      "title": "Untertitel übersetzen",
+      "desc": "Übersetzen Sie SRT/VTT und bewahren Sie Timing und Struktur."
+    },
+    "subtitle_converter": {
+      "title": "Untertitel-Konverter",
+      "desc": "Konvertieren Sie zwischen SRT, VTT, ASS und mehr, ohne Zeitstempel zu brechen."
+    },
+    "subtitle_editor": {
+      "title": "Untertitel-Editor",
+      "desc": "Bearbeiten Sie Untertitel mit Timing-Steuerungen und schnellen Batch-Korrekturen."
+    },
+    "video_summarizer": {
+      "title": "Video-Zusammenfasser",
+      "desc": "Erzeugen Sie prägnante Zusammenfassungen und wichtige Erkenntnisse aus jedem Video."
+    },
+    "storyboard_generator": {
+      "title": "Storyboard-Generator",
+      "desc": "Verwandeln Sie Videos in Szenen-für-Szenen-Storyboard-Notizen und -Anweisungen."
+    },
+    "image_translation": {
+      "title": "Bildübersetzung",
+      "desc": "Übersetzen Sie Text in Bildern und stellen Sie das Layout sauber wieder her."
+    },
+    "manga_translation": {
+      "title": "Manga-Übersetzung",
+      "desc": "Übersetzen Sie Manga-Panels und halten Sie Sprechblasen und Satzgestaltung lesbar."
+    },
+    "voice_clone": {
+      "title": "Stimmenklon",
+      "desc": "Klonen Sie eine Stimme aus einer kurzen Probe für konsistente Erzählungen."
+    },
+    "speech_translator": {
+      "title": "Sprachübersetzer",
+      "desc": "Übersetzen Sie Sprache in eine andere Sprache mit natürlicher Lieferung."
+    }
+  },
+  "bilingual": {
+    "metadata": {
+      "title": "Kostenloser Generator für zweisprachige Untertitel | Curify AI",
+      "description": "Erstelle mit Curifys kostenlosem KI-Tool zweisprachige Untertitel für deine Videos. Ideal für YouTube, TikTok, Bildung und globale Creator."
+    },
+    "title": "Zweisprachige Untertitel leicht gemacht",
+    "description": "Erstelle automatisch Untertitel in zwei Sprachen mit Curifys KI‑Untertitel‑Engine. Ideal für Creator, Lehrkräfte und internationale Unternehmen.",
+    "example": "Beispiel: Jensen Huang erklärt die KI‑Strategie — automatisch erstellte englische und chinesische Untertitel.",
+    "cta": "Jetzt kostenlos ausprobieren",
+    "why": {
+      "title": "Warum Curify für zweisprachige Untertitel?",
+      "point1": "Unterstützt über 170 Sprachen mit präziser Übersetzung.",
+      "point2": "Bewahrt Emotion, Ton und Timing.",
+      "point3": "Perfekt für YouTube, TikTok und Lehrvideos.",
+      "point4": "Exportiere fertige Untertiteldateien oder eingebettete Videos."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "q1": "Ist es wirklich kostenlos?",
+      "a1": "Ja, Curify bietet einen kostenlosen Plan mit monatlich begrenzten Untertitelminuten.",
+      "q2": "Kann ich die Untertitel nachträglich bearbeiten?",
+      "a2": "Natürlich. Du kannst Timing, Übersetzung und Stil anpassen, bevor du exportierst."
+    },
+    "deep": {
+      "what": {
+        "title": "Was sind zweisprachige Untertitel?",
+        "p1": "Zweisprachige Untertitel zeigen zwei Sprachen gleichzeitig auf dem Bildschirm an – typischerweise die ursprüngliche gesprochene Sprache und eine übersetzte Version direkt darunter. Anstatt die ursprünglichen Untertitel zu ersetzen, bewahren zweisprachige Untertitel die Quellsprache und fügen eine synchronisierte Übersetzung hinzu.",
+        "p2": "Dieses Format wird häufig in Sprachlernvideos, internationalen YouTube-Kanälen, Online-Kursen, Konferenzaufzeichnungen und globalem Marketing verwendet. Es hilft den Zuschauern, die Bedeutung in Echtzeit zu vergleichen, verbessert das Verständnis und erweitert die Zugänglichkeit, ohne Ihr Video neu aufnehmen zu müssen.",
+        "p3": "Zum Beispiel kann eine technische Keynote, die auf Englisch gehalten wird, auf der ersten Zeile Englisch und auf der zweiten Zeile Chinesisch, Spanisch oder Japanisch anzeigen – und verwandelt ein Video in ein globales Asset."
+      },
+      "how": {
+        "title": "Wie Curify hochwertige zweisprachige Untertitel generiert",
+        "p1": "Curify ist kein einfacher Untertitelgenerator. Unsere zweisprachige Untertitel-Engine basiert auf einer mehrstufigen KI-Übersetzungspipeline, die für Genauigkeit, Timing-Präzision und kontextuelles Verständnis entwickelt wurde.",
+        "p2": "Zuerst transkribieren wir Ihr Video mit hochgenauer Spracherkennung, die natürliche Sprache, Fachvokabular und Dialoge mit mehreren Sprechern verarbeitet. Dann übersetzen wir mit kontextbewussten Modellen, die Absicht und Bedeutungen im Fachbereich bewahren – nicht nur wörtliche Wörter.",
+        "p3": "Als nächstes richtet Curify die übersetzten Untertitel an den ursprünglichen Sprachsegmenten aus und optimiert Timing und Lesbarkeit. Wir halten die Zeilenlängen ausgewogen, wählen saubere Satzpausen und gewährleisten eine natürliche Lesegeschwindigkeit für gestapelte zweisprachige Untertitel.",
+        "p4": "Schließlich verfeinert Curify die Übersetzungen, um den Ton besser zu bewahren – überzeugend, lehrreich, humorvoll oder dramatisch – und sorgt dafür, dass Interpunktion und Rhythmus in der Zielsprache natürlich wirken.",
+        "p5": "Sie können Untertiteldateien (z.B. SRT) exportieren, zweisprachige Untertitelspuren herunterladen oder zweisprachige Untertitel direkt in Ihr Video einbetten – und Timing, Übersetzung und Stil vor der Veröffentlichung bearbeiten."
+      },
+      "usecases": {
+        "title": "Wer nutzt zweisprachige Untertitel?",
+        "creatorsTitle": "Für YouTube- und TikTok-Creators",
+        "creatorsBody": "Creators nutzen zweisprachige Untertitel, um internationale Zielgruppen zu erreichen, ohne separate Kanäle verwalten zu müssen. Zweisprachige Untertitel können die Wiedergabezeit erhöhen, das Engagement mehrsprachiger Zuschauer verbessern und helfen, Inhalte in internationalen Suchen zu ranken. Auf Plattformen für Kurzvideos, auf denen Videos ohne Ton automatisch abgespielt werden, steigern zweisprachige Untertitel auch die Beibehaltung und Zugänglichkeit.",
+        "educationTitle": "Für Educators und Online-Kurse",
+        "educationBody": "Bildungsinhalte profitieren erheblich von zweisprachigen Untertiteln. Schüler können Terminologie zwischen den Sprachen vergleichen, Vokabeln leichter behalten und komplexe Erklärungen mit weniger Reibung folgen. Dies ist besonders nützlich für STEM-Vorlesungen, Zertifizierungskurse und Materialien zum Sprachenlernen, bei denen Genauigkeit und Konsistenz wichtig sind.",
+        "businessTitle": "Für globale Unternehmen",
+        "businessBody": "Unternehmen nutzen zweisprachige Untertitel für Produktdemos, Investorenpräsentationen, Schulungsvideos und Marketingkampagnen. Anstatt separate lokalisierte Videos zu produzieren, können Sie ein einziges mehrsprachiges Asset bereitstellen – die Produktionskosten senken und die globale Reichweite erweitern."
+      }
+    }
+  },
+  "videoDubbing": {
+    "metadata": {
+      "title": "KI-Tool für Video-Synchronisation | Curify AI",
+      "description": "Synchronisiere deine Videos in über 170 Sprachen mit KI-Stimmklonen, Emotionsbewahrung und Lippensynchronisation. Teste Curifys KI-Synchronisation kostenlos."
+    },
+    "title": "KI-Video-Synchronisation mit natürlicher Stimme",
+    "description": "Übersetzen und synchronisieren Sie Ihre Videoinhalte in über 170 Sprachen mit realistischer KI-Stimme und Lippensynchronisation. Perfekt für internationale Ersteller und Marken.",
+    "cta": "Jetzt kostenlos ausprobieren",
+    "demo": {
+      "nowPlaying": "Aktuell wird gespielt: {lang} Version",
+      "caption": "Beispiel: KI-synchronisiertes Video mit Emotionserhaltung und Lippenbewegung über Sprachen hinweg",
+      "aria": "KI-Video-Dubbing-Demo in mehreren Sprachen"
+    },
+    "why": {
+      "title": "Warum Curify AI Video Dubbing wählen?",
+      "point1": "Natürliche KI-Stimmenklonung, die Emotion und Ton des Sprechers bewahrt",
+      "point2": "Automatische Lippenbewegung für ein nahtloses Seherlebnis",
+      "point3": "Unterstützung für über 170 Sprachen und Dialekte",
+      "point4": "Schnelle Verarbeitung mit professionellen Ergebnissen",
+      "point5": "Ideal für YouTube, TikTok, Unternehmensschulungen und E-Learning"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Wie genau ist das KI-Dubbing?",
+      "a1": "Curify verwendet fortschrittliche Stimmenklon- und Übersetzungsmodelle, die darauf ausgelegt sind, den Ton, die Absicht und das Tempo des ursprünglichen Sprechers zu bewahren. Die Lippenbewegung verbessert die wahrgenommene Realität, indem sie das Timing der Sprache mit der Mundbewegung des Sprechers abgleicht.",
+      "q2": "Welche Sprachen werden unterstützt?",
+      "a2": "Curify unterstützt über 170 Sprachen, darunter Englisch, Spanisch, Chinesisch, Französisch, Deutsch, Japanisch, Koreanisch, Arabisch und viele mehr.",
+      "q3": "Wie lange dauert das Dubbing?",
+      "a3": "Die Verarbeitungszeit hängt von der Länge und Komplexität des Videos ab, aber die meisten Videos sind innerhalb von Minuten bereit. Sie erhalten Fortschrittsupdates und werden benachrichtigt, wenn das synchronisierte Video fertig ist."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist KI-Video-Dubbing?",
+        "p1": "KI-Video-Dubbing ist der Prozess, gesprochene Dialoge in eine andere Sprache zu übersetzen und eine natürlich klingende Sprachspur zu erzeugen, die der ursprünglichen Lieferung entspricht. Im Gegensatz zu Untertiteln ersetzt Dubbing den Ton – wodurch Ihr Inhalt für Zuschauer in jeder Zielsprache nativ wirkt.",
+        "p2": "Hochwertiges Dubbing erfordert mehr als nur Übersetzung. Es muss Bedeutung, Ton, Tempo und Emotion bewahren und gleichzeitig mit dem Timing des Sprechers übereinstimmen. Für Schulungsinhalte, Produktdemos und Creator-Videos ist diese Ausrichtung das, was „robotisches“ Dubbing von professioneller Lokalisierung unterscheidet.",
+        "p3": "Curify ist für moderne globale Inhalte gebaut: ein Upload, mehrsprachige Ausgabe – optimiert für Creators, Educators und Unternehmen, die Geschwindigkeit und Qualität in großem Maßstab benötigen."
+      },
+      "how": {
+        "title": "Wie Curify natürliches Dubbing produziert (Stimme, Timing und Lippenbewegung)",
+        "p1": "Die Dubbing-Qualität von Curify stammt aus einer mehrstufigen Pipeline, die für treue Bedeutung, natürliche Prosodie und enge Ausrichtung an dem ursprünglichen Video entwickelt wurde.",
+        "p2": "Schritt 1: Hochgenaue Transkription erfasst die ursprüngliche Sprachstruktur, einschließlich Pausen, Betonung und Sprecherwechsel. Dies wird zur zeitlichen Grundlage für die Dubbing-Spur.",
+        "p3": "Schritt 2: Kontextbewusste Übersetzung bewahrt Absicht und Fachbedeutung – insbesondere für technische Begriffe, Markensprache und Schulungsinhalte. Wir vermeiden wörtliche Formulierungen, wenn sie in der Zielsprache unnatürlich klingen.",
+        "p4": "Schritt 3: Sprachsynthese erzeugt eine natürliche Sprachspur mit kontrolliertem Tempo. Wir optimieren die Segmentlängen und die Lesegeschwindigkeit, sodass die übersprochene Sprache zum ursprünglichen Timing passt, ohne gehetzt oder zu langsam zu wirken.",
+        "p5": "Schritt 4: Optionale Lippenbewegung richtet das Timing der Sprache an der Mundbewegung aus, um ein immersiveres Seherlebnis zu schaffen – besonders wichtig für Videos, die direkt in die Kamera gerichtet sind, Interviews und Schulungssitzungen."
+      },
+      "usecases": {
+        "title": "Wer nutzt KI-Dubbing?",
+        "creatorsTitle": "Für YouTube, TikTok und globale Creators",
+        "creatorsBody": "Creators nutzen Dubbing, um neue Zielgruppen zu erreichen, ohne separate Produktionen durchführen zu müssen. Dubbing macht Inhalte in vielen Kontexten einfacher konsumierbar als Untertitel, insbesondere für Unterhaltung, Tutorials und schnelle Kurzvideos.",
+        "educationTitle": "Für Unternehmensschulungen und E-Learning",
+        "educationBody": "Schulungsteams und Kursanbieter nutzen Dubbing, um Onboarding, Compliance und Produktschulungen zu lokalisieren. Eine natürliche Sprachspur reduziert die kognitive Belastung im Vergleich zum Lesen von Untertiteln – was die Abschlussraten und die Beibehaltung der Lernenden verbessert.",
+        "businessTitle": "Für Produktmarketing und Kundenbildung",
+        "businessBody": "Globale Teams lokalisieren Demos, Erklärvideos, Webinare und Supportvideos mit Dubbing. Anstatt Inhalte für jede Region neu zu erstellen, können Sie ein Video bereitstellen und mehrere Sprachversionen mit konsistenter Botschaft bereitstellen."
+      },
+      "compare": {
+        "title": "KI-Dubbing vs. Untertitel: Was sollten Sie verwenden?",
+        "p1": "Untertitel sind ideal, wenn Zuschauer mit dem Lesen vertraut sind, wenn Sie den ursprünglichen Ton bewahren möchten oder wenn Sie den schnellsten Veröffentlichungsworkflow benötigen. Dubbing ist ideal, wenn Sie ein natives Seherlebnis, ein höheres Engagement und weniger Abhängigkeit vom Lesen wünschen.",
+        "p2": "Viele Teams nutzen beides: Untertitel für Geschwindigkeit und Zugänglichkeit, Dubbing für leistungsstarke Inhalte und wichtige Märkte. Curify unterstützt beide Workflows, sodass Sie das richtige Format für jedes Video auswählen können."
+      }
+    },
+    "example": "Beispiel: KI-synchronisiertes Video mit Emotionsbewahrung und Lippenbewegungssynchronisation über Sprachen hinweg."
+  },
+  "about": {
+    "metadata": {
+      "title": "Über Curify | Vision, Technologie & Team",
+      "description": "Erfahre mehr über Curifys Vision, Content-Erstellung mit KI zu demokratisieren. Wir sind ein Team aus Ingenieur:innen und Kreativen, das die Zukunft der Medienlokalisierung baut."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Kontakt | Curify Studio",
+      "description": "Kontaktiere das Curify-Team für Support, Vertrieb oder Partnerschaften. Wir helfen dir, Inhalte global zu skalieren."
+    }
+  },
+  "nanoGallery": {
+    "title": "Nano Banana Prompts Galerie",
+    "description": "Entdecken und kopieren Sie die effektivsten <strong>nano banana prompts</strong>. Unsere kuratierte Sammlung hilft Ihnen, hochwertige KI-Visualisierungen mit optimierten Vorlagen und von der Community geteiltem Prompt Engineering zu generieren."
+  },
+  "hub": {
+    "groups": {
+      "video": "Video-Tools",
+      "image": "Bild-Tools",
+      "audio": "Audio-Tools"
+    },
+    "tools": {
+      "meta": {
+        "title": "Curify-Tools",
+        "description": "Entdecken Sie die Curify Studio-Tools für Video-Dubbing, Untertitel und KI-gestützte Inhaltsworkflows."
+      },
+      "video_transcript_generator": {
+        "title": "Video-Transkriptgenerator",
+        "desc": "Verwandeln Sie Videos in präzise Transkripte, die Sie bearbeiten und wiederverwenden können."
+      },
+      "youtube_subtitle_downloader": {
+        "title": "YouTube-Untertitel-Downloader",
+        "desc": "Laden Sie verfügbare Untertitel von YouTube mit einem Klick herunter."
+      },
+      "video_subtitle_extractor": {
+        "title": "Video-Untertitel-Extractor",
+        "desc": "Extrahieren Sie eingebettete Untertitel in bearbeitbare SRT/VTT-Dateien."
+      },
+      "translate_subtitles": {
+        "title": "Untertitel übersetzen",
+        "desc": "Übersetzen Sie SRT/VTT und bewahren Sie Timing und Struktur."
+      },
+      "subtitle_converter": {
+        "title": "Untertitel-Konverter",
+        "desc": "Konvertieren Sie zwischen SRT, VTT, ASS und mehr, ohne Zeitstempel zu brechen."
+      },
+      "subtitle_editor": {
+        "title": "Untertitel-Editor",
+        "desc": "Bearbeiten Sie Untertitel mit Timing-Steuerungen und schnellen Batch-Korrekturen."
+      },
+      "video_summarizer": {
+        "title": "Video-Zusammenfasser",
+        "desc": "Erstellen Sie prägnante Zusammenfassungen und wichtige Erkenntnisse aus jedem Video."
+      },
+      "storyboard_generator": {
+        "title": "Storyboard-Generator",
+        "desc": "Verwandeln Sie Videos in Szenen-für-Szenen-Storyboard-Notizen und -Anweisungen."
+      },
+      "image_translation": {
+        "title": "Bildübersetzung",
+        "desc": "Übersetzen Sie Text in Bildern und stellen Sie das Layout sauber wieder her."
+      },
+      "manga_translation": {
+        "title": "Manga-Übersetzung",
+        "desc": "Übersetzen Sie Manga-Panels und halten Sie Sprechblasen und Satzgestaltung lesbar."
+      },
+      "voice_clone": {
+        "title": "Stimmenklon",
+        "desc": "Klonen Sie eine Stimme aus einer kurzen Probe für konsistente Erzählungen."
+      },
+      "speech_translator": {
+        "title": "Sprachübersetzer",
+        "desc": "Übersetzen Sie Sprache in eine andere Sprache mit natürlicher Lieferung."
+      }
+    }
+  }
+}

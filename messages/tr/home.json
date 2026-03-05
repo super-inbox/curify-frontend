@@ -1,0 +1,368 @@
+{
+  "home": {
+    "metadata": {
+      "title": "Curify – Fikirleri Görsel Düşünceye Dönüştürün | Yapay Zeka & Lokalizasyon",
+      "description": "Curify, trendleri ve fikirleri yapılandırılmış, paylaşılabilir görsel içeriğe dönüştüren yapay zeka destekli bir görsel düşünme platformudur.",
+      "ogTitle": "Curify – Fikirleri Görsel Düşünceye Dönüştürün",
+      "ogDescription": "İlham kartları, AI infografikler ve video çeviri araçları tek bir platformda."
+    },
+    "hero": {
+      "title": "Fikirleri Keşfet | Görsel Olarak İfade Et | İçerik Oluştur",
+      "description": "Curify, trendleri ve fikirleri yapılandırılmış görsel içeriğe dönüştürür. İlham kartlarından altyazı ve video çeviriye kadar."
+    }
+  },
+  "coreFeatures": {
+    "oneShot": {
+      "title": "Tek Adımda Çeviri",
+      "desc": "Tek bir işlemde seslendirme, altyazı ve dudak senkronizasyonu ile tam video çevirisi."
+    },
+    "toneColor": {
+      "title": "Ses Rengi Koruma",
+      "desc": "Orijinal konuşmacının benzersiz ses özelliklerini ve ton kalitesini korur."
+    },
+    "emotional": {
+      "title": "Duygusal Konuşma",
+      "desc": "Yapay zeka, duygusal nüansları yeniden üreterek diller arasında otantik ifade sağlar."
+    },
+    "lipSync": {
+      "title": "Dudak Senkronizasyon Teknolojisi",
+      "desc": "Ağız hareketlerini çevrilmiş sesle mükemmel bir şekilde eşleştiren gelişmiş dudak senkronizasyonu."
+    },
+    "subtitle": {
+      "title": "Altyazı Oluşturucu",
+      "desc": "Hassas zamanlama ve doğal dil akışı ile akıllı altyazı oluşturma."
+    },
+    "languages": {
+      "title": "170+ Dil",
+      "desc": "İçeriğinizi 170'ten fazla dile yerel düzeyde doğrulukla çevirin."
+    }
+  },
+  "upcoming": {
+    "title": "Yakında",
+    "subtitle": "Geliştirilmekte olan yeni nesil özellikler",
+    "styleTransfer": {
+      "title": "Stil Transferi",
+      "desc": "Yapay zeka destekli görsel dönüşüm ile videolarınıza sinematik veya markaya özgü stiller uygulayın.",
+      "icon": "🎨",
+      "status": "2025 3. Çeyrekte Geliyor",
+      "transcript": "Bu demo, yapay zeka destekli görsel stil transferi kullanarak canlı aksiyon drama klibini tuhaf bir Ghibli tarzı animasyona dönüştürüyor."
+    },
+    "mangaTranslation": {
+      "title": "Manga Çevirisi",
+      "desc": "Metin algılama, balon düzenleme ve kültürel uyarlama ile otomatik manga ve çizgi roman çevirisi.",
+      "icon": "📚",
+      "status": "2025 3. Çeyrekte Geliyor",
+      "transcript": "Bu prototip, konuşma balonu algılama ve iki dilli yerinde düzenleme dahil olmak üzere otomatik manga çevirisini göstermektedir."
+    },
+    "templatedVideo": {
+      "title": "Şablonlu Video Oluşturma",
+      "desc": "Yapay zeka tarafından oluşturulan içerik ve özel marka ile şablonlardan profesyonel videolar oluşturun.",
+      "icon": "🎬",
+      "status": "2025 4. Çeyrekte Geliyor",
+      "transcript": "Bu demo, hikaye panosunu planlayarak ve görselleri birleştirerek erken ABD tarihi hakkında tarihi bir sahne oluşturan senaryodan videoya bir boru hattını göstermektedir."
+    },
+    "statusQ3": "2025 3. Çeyrekte Geliyor",
+    "statusQ4": "2025 4. Çeyrekte Geliyor"
+  },
+  "technology": {
+    "multimodal": {
+      "title": "Çok Modlu Tanıma",
+      "desc": "Daha doğru ve sağlam transkripsiyon elde etmek için konuşma ve altyazı sinyallerini birleştiriyoruz. Bu çift kanallı tanıma, hataları azaltır ve özellikle gürültülü veya karmaşık ses sahnelerinde orijinal içerikle daha iyi hizalanmayı sağlar."
+    },
+    "emotional": {
+      "title": "Duygusal Konuşma",
+      "desc": "Ses sentezi modellerimiz, hikaye anlatımını ve izleyici etkileşimini geliştiren etkileyici, duygusal açıdan zengin konuşmalar üretir. Tonu, ritmi ve nüansı yakalayarak yapay zeka seslerinin daha insan ve ilişkilendirilebilir hissettirmesini sağlıyoruz."
+    },
+    "lengthaware": {
+      "title": "Uzunluk Duyarlı Çeviri ve Özelleştirme",
+      "desc": "Çevirileri yalnızca doğruluk için değil, aynı zamanda video ve ses hizalaması için çok önemli olan zamanlama ve hız için de optimize ediyoruz. Kullanıcılar, farklı içerik ihtiyaçlarına veya izleyici tercihlerine uyacak şekilde tonu, uzunluğu ve ifadeyi daha da özelleştirebilir."
+    },
+    "controlled": {
+      "title": "Kontrollü Video Oluşturma",
+      "desc": "Kontrol edilebilir görsel öğeler ve geçişlerle yapılandırılmış, şablon odaklı video oluşturmayı mümkün kılıyoruz. Bu, yaratıcılara hem yaratıcı özgürlük hem de üretim tutarlılığı sağlayarak manuel çabayı azaltırken yüksek kaliteli çıktı sağlar."
+    }
+  },
+  "tools": {
+    "video_dubbing": {
+      "title": "Video Dublajı",
+      "desc": "Videonuzu hassas yerelleştirme ve ses senkronizasyonu ile herhangi bir dile çevirin"
+    },
+    "subtitle_captioner": {
+      "title": "Altyazı Oluşturucu",
+      "desc": "Netliği ve erişilebilirliği artırmak için çok dilli altyazıları otomatik olarak oluşturun"
+    },
+    "lip_syncing": {
+      "title": "Dudak Senkronizasyonu",
+      "desc": "Yapay zeka destekli dudak senkronizasyonu ile dudakları konuşmayla mükemmel bir şekilde eşleştirin"
+    },
+    "style_transfer": {
+      "title": "Stil Transferi",
+      "desc": "Videonuzu Pixar, Ghibli veya diğer sanatsal stillere dönüştürün — yakında"
+    },
+    "coming_soon": "Yakında",
+    "create": "Oluştur",
+    "meta": {
+      "title": "Curify Araçları",
+      "description": "Video dublajı, altyazılar ve AI destekli içerik iş akışları için Curify Studio araçlarını keşfedin."
+    },
+    "hero": {
+      "watch_demo": "Farklı dillerde duyguyu ve dudak senkronizasyonunu koruyarak çevrilen aynı videoyu izleyin",
+      "transcript_label": "Transkript",
+      "training_transcript": "Curify Studio'ya hoş geldiniz. Bu videoda, AI'nın içerikleri diller arasında nasıl çevirdiğini ve dublaj yaptığını gösteriyoruz...",
+      "currently_playing": "Şu anda çalınıyor: {label} versiyonu"
+    },
+    "products": {
+      "title": "Ürünler & Hizmetler",
+      "subtitle": "AI destekli çözümlerimiz canlı ve sürekli olarak gelişiyor — dünya çapında yaratıcılar ve ekipler tarafından zaten kullanılıyor."
+    },
+    "audience": {
+      "title": "Hedef Kitlemiz",
+      "v1": "🎥 Küresel pazarlara açılan video yaratıcıları ve YouTuber'lar",
+      "v2": "📖 Kitapları derslere dönüştüren eğitimciler ve bilgi platformları",
+      "v3": "🎶 Diller arasında içerik lokalize eden medya ve eğlence şirketleri",
+      "v4": "📚 Çeviri ve dizgi otomasyonu yapan manga yayıncıları ve hayran çevirmenler"
+    },
+    "free_badge": "ÜCRETSİZ",
+    "groups": {
+      "video": "Video Araçları",
+      "image": "Görüntü Araçları",
+      "audio": "Ses Araçları"
+    },
+    "video_transcript_generator": {
+      "title": "Video transkript oluşturucu",
+      "desc": "Videoyu düzenleyip yeniden kullanabileceğiniz doğru transkriptlere dönüştürün."
+    },
+    "youtube_subtitle_downloader": {
+      "title": "YouTube altyazı indirici",
+      "desc": "YouTube'dan mevcut altyazıları tek tıkla indirin."
+    },
+    "video_subtitle_extractor": {
+      "title": "Video altyazı çıkarıcı",
+      "desc": "Gömülü altyazıları düzenlenebilir SRT/VTT dosyalarına çıkarın."
+    },
+    "translate_subtitles": {
+      "title": "Altyazıları çevir",
+      "desc": "Zamanlama ve yapıyı koruyarak SRT/VTT'yi çevirin."
+    },
+    "subtitle_converter": {
+      "title": "Altyazı dönüştürücü",
+      "desc": "Zaman damgalarını bozmadan SRT, VTT, ASS ve daha fazlası arasında dönüştürün."
+    },
+    "subtitle_editor": {
+      "title": "Altyazı düzenleyici",
+      "desc": "Zamanlama kontrolleri ve hızlı toplu düzeltmeler ile altyazıları düzenleyin."
+    },
+    "video_summarizer": {
+      "title": "Video özetleyici",
+      "desc": "Herhangi bir videodan kısa özetler ve ana noktaları oluşturun."
+    },
+    "storyboard_generator": {
+      "title": "Storyboard oluşturucu",
+      "desc": "Videoları sahne sahne storyboard notlarına ve ipuçlarına dönüştürün."
+    },
+    "image_translation": {
+      "title": "Görüntü çevirisi",
+      "desc": "Görüntülerdeki metni çevirin ve düzeni temiz bir şekilde yeniden oluşturun."
+    },
+    "manga_translation": {
+      "title": "Manga çevirisi",
+      "desc": "Manga panellerini baloncukları ve yazım düzenini okunabilir tutarak çevirin."
+    },
+    "voice_clone": {
+      "title": "Ses klonu",
+      "desc": "Kısa bir örnekten bir sesi klonlayarak tutarlı anlatım sağlayın."
+    },
+    "speech_translator": {
+      "title": "Konuşma çevirmeni",
+      "desc": "Konuşmayı doğal bir şekilde başka bir dile çevirin."
+    }
+  },
+  "bilingual": {
+    "metadata": {
+      "title": "Ücretsiz İki Dilli Altyazı Oluşturucu | Curify AI",
+      "description": "Curify'ın ücretsiz yapay zeka destekli aracıyla videolarınız için iki dilli altyazılar oluşturun. YouTube, TikTok, eğitim ve küresel içerik oluşturucular için mükemmel."
+    },
+    "title": "İki Dilli Altyazılar Artık Çok Kolay",
+    "description": "Curify'ın yapay zeka altyazı motorunu kullanarak iki dilde otomatik olarak altyazı oluşturun. İçerik oluşturucular, eğitimciler ve küresel işletmeler için ideal.",
+    "example": "Örnek: Jensen Huang yapay zeka stratejisini açıklıyor — İngilizce + Çince altyazılar otomatik olarak oluşturuldu.",
+    "cta": "Ücretsiz Deneyin",
+    "why": {
+      "title": "İki Dilli Altyazılar İçin Neden Curify'ı Seçmelisiniz?",
+      "point1": "Doğru çeviri ile 170'ten fazla dili destekler.",
+      "point2": "Duygusal tonu ve zamanlamayı korur.",
+      "point3": "YouTube, TikTok ve eğitim videoları için mükemmeldir.",
+      "point4": "Yayınlanmaya hazır altyazı dosyalarını veya gömülü videoları dışa aktarın."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Gerçekten ücretsiz mi?",
+      "a1": "Evet, Curify ayda sınırlı altyazı dakikası içeren ücretsiz bir plan sunar.",
+      "q2": "Oluşturduktan sonra altyazıları düzenleyebilir miyim?",
+      "a2": "Kesinlikle. Dışa aktarmadan önce zamanlamayı, çeviriyi ve stili ayarlayabilirsiniz."
+    },
+    "deep": {
+      "what": {
+        "title": "İkili Altyazılar Nedir?",
+        "p1": "İkili altyazılar, ekranda iki dili aynı anda gösterir — genellikle orijinal konuşulan dil ve hemen altında bir çeviri versiyonu. Orijinal altyazıları değiştirmek yerine, ikili altyazılar kaynak dili korurken senkronize bir çeviri ekler.",
+        "p2": "Bu format, dil öğrenme videolarında, uluslararası YouTube kanallarında, çevrimiçi kurslarda, konferans kayıtlarında ve küresel pazarlamada yaygın olarak kullanılmaktadır. İzleyicilerin anlamı gerçek zamanlı olarak karşılaştırmasına yardımcı olur, anlama yeteneğini geliştirir ve videonuzu yeniden kaydetmeden erişilebilirliği artırır.",
+        "p3": "Örneğin, İngilizce sunulan bir teknoloji anahtar kelimesi, ilk satırda İngilizce ve ikinci satırda Çince, İspanyolca veya Japonca gösterebilir — bir videoyu küresel bir varlık haline getirir."
+      },
+      "how": {
+        "title": "Curify Yüksek Kaliteli İkili Altyazıları Nasıl Üretiyor?",
+        "p1": "Curify, basit bir altyazı oluşturucu değildir. İkili altyazı motorumuz, doğruluk, zamanlama hassasiyeti ve bağlamsal anlayış için tasarlanmış çok aşamalı bir AI çeviri hattı üzerine inşa edilmiştir.",
+        "p2": "Öncelikle, videonuzu doğal konuşma, teknik terimler ve çoklu konuşmacı diyaloglarını işleyen yüksek doğrulukta ses tanıma kullanarak transkribe ediyoruz. Ardından, niyet ve alan anlamını koruyan bağlam farkındalığına sahip modellerle çeviri yapıyoruz — sadece kelimeleri değil.",
+        "p3": "Sonrasında, Curify, çevrilen altyazıları orijinal konuşma segmentlerine hizalar, zamanlama ve okunabilirliği optimize eder. Satır uzunluğunu dengede tutar, temiz cümle kesimleri seçer ve yığılmış iki dilli altyazılar için doğal bir okuma hızını koruruz.",
+        "p4": "Son olarak, Curify, tonun daha iyi korunmasını sağlamak için çevirileri rafine eder — ikna edici, eğitici, mizahi veya dramatik — ve noktalama işaretlerinin ve ritmin hedef dilde doğal hissettirmesini sağlar.",
+        "p5": "Altyazı dosyalarını (örneğin, SRT) dışa aktarabilir, ikili altyazı parçalarını indirebilir veya ikili altyazıları doğrudan videonuza gömebilir — ve yayınlamadan önce zamanlama, çeviri ve stil üzerinde düzenleme yapabilirsiniz."
+      },
+      "usecases": {
+        "title": "İkili Altyazıları Kim Kullanır?",
+        "creatorsTitle": "YouTube ve TikTok İçin Yaratıcılar",
+        "creatorsBody": "Yaratıcılar, ayrı kanalları yönetmeden uluslararası izleyicilere ulaşmak için ikili altyazıları kullanır. İkili altyazılar, izleme süresini artırabilir, çok dilli izleyicilerden etkileşimi geliştirebilir ve içeriğin uluslararası aramalarda sıralanmasına yardımcı olabilir. Ses olmadan otomatik oynatılan kısa videoların bulunduğu platformlarda, ikili altyazılar ayrıca tutumu ve erişilebilirliği artırır.",
+        "educationTitle": "Eğitmenler ve Çevrimiçi Kurslar İçin",
+        "educationBody": "Eğitim içeriği, ikili altyazılardan önemli ölçüde fayda sağlar. Öğrenciler, diller arasında terminolojiyi karşılaştırabilir, kelime dağarcığını daha kolay koruyabilir ve karmaşık açıklamaları daha az zorlukla takip edebilir. Bu, özellikle STEM dersleri, sertifika kursları ve doğruluğun ve tutarlılığın önemli olduğu dil öğrenme materyalleri için faydalıdır.",
+        "businessTitle": "Küresel İşletmeler İçin",
+        "businessBody": "İşletmeler, ürün tanıtımları, yatırımcı sunumları, eğitim videoları ve pazarlama kampanyaları için ikili altyazıları kullanır. Ayrı yerelleştirilmiş videolar üretmek yerine, tek bir çok dilli varlık gönderebilir — üretim maliyetini azaltırken küresel erişimi artırır."
+      }
+    }
+  },
+  "videoDubbing": {
+    "metadata": {
+      "title": "Yapay Zeka Video Dublaj Aracı | Curify AI",
+      "description": "Yapay zeka ses klonlama, duygu koruma ve dudak senkronizasyonu kullanarak videolarınızı 170'ten fazla dile dublaj yapın. Curify'ın yapay zeka dublajını ücretsiz deneyin."
+    },
+    "title": "Doğal Ses ile Yapay Zeka Video Dublajı",
+    "description": "Video içeriğinizi gerçekçi yapay zeka sesi ve dudak senkronizasyonu ile 170'ten fazla dile çevirin ve dublaj yapın. Uluslararası içerik oluşturucular ve markalar için mükemmel.",
+    "cta": "Ücretsiz Deneyin",
+    "demo": {
+      "nowPlaying": "Şu anda oynatılıyor: {lang} versiyonu",
+      "caption": "Örnek: Duygu koruma ve diller arasında dudak senkronizasyonu ile AI ile dublaj yapılmış video",
+      "aria": "Birden fazla dilde AI video dublajı demosu"
+    },
+    "why": {
+      "title": "Neden Curify AI Video Dublajını Seçmelisiniz?",
+      "point1": "Konuşmacının duygusunu ve tonunu koruyan doğal AI ses klonlama",
+      "point2": "Kesintisiz bir izleme deneyimi için otomatik dudak senkronizasyonu",
+      "point3": "170'ten fazla dil ve lehçe desteği",
+      "point4": "Profesyonel kalitede sonuçlarla hızlı işleme",
+      "point5": "YouTube, TikTok, kurumsal eğitim ve e-öğrenme için ideal"
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "AI dublajı ne kadar doğru?",
+      "a1": "Curify, orijinal konuşmacının tonunu, niyetini ve temposunu korumak için tasarlanmış gelişmiş ses klonlama ve çeviri modelleri kullanır. Dudak senkronizasyonu, konuşma zamanlamasını konuşmacının ağız hareketiyle eşleştirerek algılanan gerçekçiliği daha da artırır.",
+      "q2": "Hangi diller destekleniyor?",
+      "a2": "Curify, İngilizce, İspanyolca, Çince, Fransızca, Almanca, Japonca, Korece, Arapça ve daha birçok dili içeren 170'ten fazla dili destekler.",
+      "q3": "Dublaj ne kadar sürer?",
+      "a3": "İşleme süresi video uzunluğuna ve karmaşıklığına bağlıdır, ancak çoğu video birkaç dakika içinde hazırdır. İlerleme güncellemelerini göreceksiniz ve dublajlı video tamamlandığında bilgilendirileceksiniz."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Dublajı Nedir?",
+        "p1": "AI video dublajı, konuşulan diyalogları başka bir dile çevirme ve orijinal sunuma uyan doğal bir ses kaydı oluşturma sürecidir. Altyazılardan farklı olarak, dublaj sesi değiştirir — içeriğinizi her hedef dilde izleyicilere yerel hissettirmesini sağlar.",
+        "p2": "Yüksek kaliteli dublaj, sadece çeviri gerektirmez. Anlamı, tonu, temposu ve duyguyu korumalıdır, aynı zamanda konuşmacının zamanlamasıyla uyumlu kalmalıdır. Eğitim içeriği, ürün tanıtımları ve yaratıcı videolar için bu uyum, 'robotik' dublaj ile profesyonel yerelleştirme arasındaki farkı yaratır.",
+        "p3": "Curify, modern küresel içerik için tasarlanmıştır: bir yükleme, çok dilli çıktı — hız ve kaliteyi ölçeklendirmesi gereken yaratıcılar, eğitmenler ve işletmeler için optimize edilmiştir."
+      },
+      "how": {
+        "title": "Curify Doğal Dublajı Nasıl Üretir (Ses, Zamanlama ve Dudak Senkronizasyonu)",
+        "p1": "Curify’nin dublaj kalitesi, sadık anlam, doğal prosodi ve orijinal videoya sıkı uyum için tasarlanmış çok aşamalı bir hattın sonucudur.",
+        "p2": "Adım 1: Yüksek doğrulukta transkripsiyon, duraklamalar, vurgular ve konuşmacı dönüşlerini içeren orijinal konuşma yapısını yakalar. Bu, dublaj kaydı için zamanlama omurgası haline gelir.",
+        "p3": "Adım 2: Bağlam farkındalığına sahip çeviri, niyet ve alan anlamını korur — özellikle teknik terimler, marka dili ve eğitim içeriği için. Hedef dilde doğal hissettirmeyen kelime öbeklerinden kaçınıyoruz.",
+        "p4": "Adım 3: Ses sentezi, kontrollü bir tempoya sahip doğal bir ses kaydı oluşturur. Segment uzunluğunu ve okuma hızını optimize ederiz, böylece çevrilen konuşma orijinal zamanlamaya uyar ve aceleci veya aşırı yavaş hissettirmeden uyum sağlar.",
+        "p5": "Adım 4: İsteğe bağlı dudak senkronizasyonu, konuşma zamanlamasını ağız hareketiyle hizalar ve daha etkileyici bir izleme deneyimi sağlar — özellikle yüz-yüze videolar, röportajlar ve eğitim oturumları için önemlidir."
+      },
+      "usecases": {
+        "title": "AI Dublajını Kim Kullanır?",
+        "creatorsTitle": "YouTube, TikTok ve Küresel Yaratıcılar İçin",
+        "creatorsBody": "Yaratıcılar, ayrı prodüksiyonlar yürütmeden yeni izleyicilere ulaşmak için dublajı kullanır. Dublaj, birçok bağlamda altyazılardan daha kolay tüketilebilir hale getirir, özellikle eğlence, eğitim ve hızlı tempolu kısa videolar için.",
+        "educationTitle": "Kurumsal Eğitim ve E-Öğrenme İçin",
+        "educationBody": "Eğitim ekipleri ve kurs yaratıcıları, oryantasyon, uyum ve ürün eğitimi için dublajı yerelleştirmek için kullanır. Doğal bir ses kaydı, altyazı okumaya kıyasla bilişsel yükü azaltır — tamamlama oranlarını ve öğrenici tutumunu artırır.",
+        "businessTitle": "Ürün Pazarlaması ve Müşteri Eğitimi İçin",
+        "businessBody": "Küresel ekipler, dublaj ile tanıtımlar, açıklayıcı videolar, web seminerleri ve destek videolarını yerelleştirir. Her bölge için içeriği yeniden oluşturmak yerine, tek bir video gönderebilir ve tutarlı mesajlaşma ile birden fazla dil versiyonu dağıtabilirsiniz."
+      },
+      "compare": {
+        "title": "AI Dublajı ve Altyazılar: Hangisini Kullanmalısınız?",
+        "p1": "Altyazılar, izleyicilerin okumakta rahat olduğu, orijinal sesi korumak istediğiniz veya en hızlı yayın akışına ihtiyaç duyduğunuz durumlarda idealdir. Dublaj, yerel bir izleme deneyimi, daha yüksek etkileşim ve okumaya daha az bağımlılık istediğinizde idealdir.",
+        "p2": "Birçok ekip her ikisini de kullanır: hız ve erişilebilirlik için altyazılar, en iyi performans gösteren içerik ve ana pazarlar için dublaj. Curify, her video için doğru formatı seçmenizi sağlamak için her iki iş akışını da destekler."
+      }
+    },
+    "example": "Örnek: Duygu koruma ve dublaj senkronizasyonu ile AI tarafından dublajlanmış video."
+  },
+  "about": {
+    "metadata": {
+      "title": "Curify Hakkında | Vizyon, Teknoloji ve Ekip",
+      "description": "Curify'ın yapay zeka ile içerik oluşturmayı demokratikleştirme vizyonunu öğrenin. Biz, medya yerelleştirmesinin geleceğini inşa eden bir mühendis ve yaratıcı ekibiyiz."
+    }
+  },
+  "contact": {
+    "metadata": {
+      "title": "Bize Ulaşın | Curify Studio",
+      "description": "Destek, satış veya ortaklıklar için Curify ekibiyle iletişime geçin. İçeriğinizi küresel olarak ölçeklendirmenize yardımcı olmak için buradayız."
+    }
+  },
+  "nanoGallery": {
+    "title": "Nano Banana İpuçları Galerisi",
+    "description": "En etkili <strong>nano banana ipuçlarını</strong> keşfedin ve kopyalayın. Özenle hazırlanmış koleksiyonumuz, optimize edilmiş şablonlar ve topluluk tarafından paylaşılan ipuçları mühendisliği kullanarak yüksek kaliteli AI görselleri oluşturmanıza yardımcı olur."
+  },
+  "hub": {
+    "groups": {
+      "video": "Video Araçları",
+      "image": "Görüntü Araçları",
+      "audio": "Ses Araçları"
+    },
+    "tools": {
+      "meta": {
+        "title": "Curify Araçları",
+        "description": "Video dublajı, altyazılar ve AI destekli içerik iş akışları için Curify Studio araçlarını keşfedin."
+      },
+      "video_transcript_generator": {
+        "title": "Video transkript oluşturucu",
+        "desc": "Videoyu düzenleyip yeniden kullanabileceğiniz doğru transkriptlere dönüştürün."
+      },
+      "youtube_subtitle_downloader": {
+        "title": "YouTube altyazı indirici",
+        "desc": "YouTube'dan mevcut altyazıları tek tıklamayla indirin."
+      },
+      "video_subtitle_extractor": {
+        "title": "Video altyazı çıkarıcı",
+        "desc": "Gömülü altyazıları düzenlenebilir SRT/VTT dosyalarına çıkarın."
+      },
+      "translate_subtitles": {
+        "title": "Altyazıları çevir",
+        "desc": "Zamanlamayı ve yapıyı koruyarak SRT/VTT'yi çevirin."
+      },
+      "subtitle_converter": {
+        "title": "Altyazı dönüştürücü",
+        "desc": "Zaman damgalarını bozmadan SRT, VTT, ASS ve daha fazlası arasında dönüştürün."
+      },
+      "subtitle_editor": {
+        "title": "Altyazı düzenleyici",
+        "desc": "Zamanlama kontrolleri ve hızlı toplu düzeltmeler ile altyazıları düzenleyin."
+      },
+      "video_summarizer": {
+        "title": "Video özetleyici",
+        "desc": "Herhangi bir videodan özlü özetler ve önemli noktalar oluşturun."
+      },
+      "storyboard_generator": {
+        "title": "Storyboard oluşturucu",
+        "desc": "Videoları sahne sahne storyboard notları ve ipuçlarına dönüştürün."
+      },
+      "image_translation": {
+        "title": "Görüntü çevirisi",
+        "desc": "Görüntülerdeki metni çevirin ve düzeni temiz bir şekilde yeniden oluşturun."
+      },
+      "manga_translation": {
+        "title": "Manga çevirisi",
+        "desc": "Manga panellerini baloncukları ve yazı tiplerini okunabilir tutarak çevirin."
+      },
+      "voice_clone": {
+        "title": "Ses klonu",
+        "desc": "Tutarlı anlatım için kısa bir örnekten sesi klonlayın."
+      },
+      "speech_translator": {
+        "title": "Konuşma çevirmeni",
+        "desc": "Konuşmayı doğal bir şekilde başka bir dile çevirin."
+      }
+    }
+  }
+}

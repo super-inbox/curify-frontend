@@ -11,11 +11,13 @@ import Link from "next/link";
 import GoogleLoginButton from "../../_components/button/GoogleLoginButton";
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function SignDrawer() {
   const [state] = useAtom(drawerAtom);
   const safeState = state || "signup";
   const { locale } = useParams();
+  const t = useTranslations("signDrawer");
 
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(false);
@@ -26,12 +28,12 @@ export default function SignDrawer() {
 
   const messages: Record<string, Record<string, string>> = {
     signup: {
-      welcome: "Join Curify to Globalize Your Videos",
-      button: "Sign Up",
+      welcome: t("welcomeSignup"),
+      button: t("signUp"),
     },
     signin: {
-      welcome: "Continue Globalizing Your Videos",
-      button: "Sign In",
+      welcome: t("welcomeSignin"),
+      button: t("signIn"),
     }
   };
 
@@ -50,7 +52,7 @@ export default function SignDrawer() {
     if (otpValid) {
       setErrorMsg("");
       console.log("OTP verified:", otp);
-      setErrorMsg("Invalid OTP. Please try again.");
+      setErrorMsg(t("invalidOtp"));
     }
   };
 
@@ -73,12 +75,12 @@ export default function SignDrawer() {
           </button>
         )}
         <div className="relative w-36 aspect-[160/38.597] mx-auto">
-          <Image src="/logo.svg" alt="logo" fill className="object-contain" />
+          <Image src="/logo.svg" alt={t("logoAlt")} fill className="object-contain" />
         </div>
       </div>
 
       <p className="mt-3 mb-10 w-full text-center text-lg font-medium">
-        {step === 1 ? content.welcome : "Enter the verification code"}
+        {step === 1 ? content.welcome : t("enterVerificationCode")}
       </p>
 
       <div className="flex flex-col gap-5 items-center w-full max-w-sm mx-auto px-2">
@@ -88,17 +90,17 @@ export default function SignDrawer() {
               <GoogleLoginButton callbackUrl="/workspace" variant="drawer" />
             </div>
 
-            <div className="text-sm text-gray-500">or</div>
+            <div className="text-sm text-gray-500">{t("or")}</div>
 
             <Input
               value={email}
-              placeholder="Email"
+              placeholder={t("emailPlaceholder")}
               onChange={setEmail}
               setValid={setEmailValid}
               rules={[
                 {
                   pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  errorMsg: "Please enter a valid email address.",
+                  errorMsg: t("invalidEmail"),
                 },
               ]}
               disabled={true}
@@ -116,11 +118,11 @@ export default function SignDrawer() {
         ) : (
           <>
             <p className="text-sm text-gray-700 text-center">
-              We've sent a code to <span className="font-semibold">{email}</span>.
+              {t("otpSentTo")} <span className="font-semibold">{email}</span>.
             </p>
             <Input
               value={otp}
-              placeholder="Verification Code"
+              placeholder={t("verificationCodePlaceholder")}
               onChange={setOtp}
               setValid={setOtpValid}
               rules={[]} 
@@ -132,24 +134,24 @@ export default function SignDrawer() {
               disabled={true}
               onClick={handleOtpSubmit}
             >
-              Verify Code
+              {t("verifyCode")}
             </BtnN>
             <button className="text-xs text-blue-600 hover:underline mt-2 cursor-not-allowed opacity-50" disabled>
-              Resend Code
+              {t("resendCode")}
             </button>
           </>
         )}
       </div>
 
       <p className="text-[var(--c4)] text-center mt-10 text-xs">
-        By using Curify, you agree to our
+        {t("agreePrefix")}
         <br />
         <Link className="underline" href={`/${locale}/agreement`}>
-          Terms of Service
+          {t("termsOfService")}
         </Link>{" "}
-        and{" "}
+        {t("and")}{" "}
         <Link className="underline" href={`/${locale}/privacy`}>
-          Privacy Policy
+          {t("privacyPolicy")}
         </Link>
       </p>
     </Drawer>

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import NanoBananaProPromptsClient from './NanoBananaProPromptsClient';
 import fs from 'fs';
 import path from 'path';
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 export const runtime = 'nodejs'; // required for fs
 
@@ -35,7 +36,6 @@ function readNanoBananaJson(): JsonData {
   return JSON.parse(fileContent);
 }
 
-// Generate metadata for SEO
 export async function generateMetadata({
   params,
 }: {
@@ -46,36 +46,29 @@ export async function generateMetadata({
 
   try {
     const data = readNanoBananaJson();
-    totalPrompts = Array.isArray(data?.prompts) ? data!.prompts!.length : 0;
+    totalPrompts = Array.isArray(data?.prompts) ? data.prompts.length : 0;
   } catch (error) {
     console.error('Error reading prompts for metadata:', error);
   }
 
   const title = 'Nano Banana Pro Prompts - Discover Creative AI Prompts';
   const description = `Explore ${totalPrompts}+ curated AI prompts from top creators. Find inspiration for your next project with prompts for image generation, text creation, and more.`;
-  const url = `${SITE_URL}/${locale}/nano-banana-pro-prompts`;
+  const canonicalUrl = getCanonicalUrl(locale, "/nano-banana-pro-prompts");
 
   return {
     title,
     description,
     keywords: [
-      'AI prompts',
-      'creative prompts',
-      'prompt engineering',
-      'AI image generation',
-      'ChatGPT prompts',
-      'stable diffusion prompts',
-      'midjourney prompts',
-      'prompt library',
-      'AI tools',
-      'creative AI',
+      'AI prompts', 'creative prompts', 'prompt engineering',
+      'AI image generation', 'ChatGPT prompts', 'stable diffusion prompts',
+      'midjourney prompts', 'prompt library', 'AI tools', 'creative AI',
     ],
     authors: [{ name: 'Nano Banana' }],
     creator: 'Nano Banana',
     openGraph: {
       type: 'website',
       locale: toOgLocale(locale),
-      url,
+      url: canonicalUrl,
       title,
       description,
       siteName: 'Nano Banana Pro Prompts',
@@ -107,7 +100,8 @@ export async function generateMetadata({
       },
     },
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
+      languages: getLanguagesMap("/nano-banana-pro-prompts"),
     },
   };
 }
