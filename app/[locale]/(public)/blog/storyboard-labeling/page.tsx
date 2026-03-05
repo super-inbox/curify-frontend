@@ -357,30 +357,14 @@ export default function SceneDetectionPage() {
                       {t('features10.export.title')}
                     </h4>
                     <ul className="text-sm text-gray-700 space-y-1.5">
-                      <li className="flex items-start">
-                        <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{t('features10.export.title')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{t('features10.export.title')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{t('features10.export.title')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{t('features10.export.title')}</span>
-                      </li>
+                      {t.raw('features10.export.formats').map((format: string, index: number) => (
+                        <li key={index} className="flex items-start">
+                          <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{format}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
@@ -647,7 +631,7 @@ export default function SceneDetectionPage() {
           </p>
 
           <div className="space-y-12">
-            {((t.raw('sceneBreakdown.scenes') as any[]) || []).map((scene: any, index: number) => (
+            {((Array.isArray(t.raw('sceneBreakdown.scenes')) ? t.raw('sceneBreakdown.scenes') : [])).map((scene: any, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-xl font-semibold text-blue-700 mb-3">
                   {scene.title}
@@ -693,7 +677,7 @@ export default function SceneDetectionPage() {
               {t('sceneBreakdown.benefitsTitle')}
             </h4>
             <ul className="space-y-2">
-              {(t.raw('sceneBreakdown.benefits') as string[]).map((benefit: string, index: number) => (
+              {(Array.isArray(t.raw('sceneBreakdown.benefits')) ? t.raw('sceneBreakdown.benefits') : []).map((benefit: string, index: number) => (
                 <li key={index} className="flex items-start" dangerouslySetInnerHTML={{ __html: benefit }} />
               ))}
             </ul>

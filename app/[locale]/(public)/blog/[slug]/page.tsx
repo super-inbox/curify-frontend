@@ -123,13 +123,13 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const t = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
+  const t = await getTranslations({ locale, namespace: `blog` });
 
   // Get English fallback translations if current locale is not English
   let tEn = null;
   if (locale !== 'en') {
     try {
-      tEn = await getTranslations({ locale: 'en', namespace: `blog.${blogConfig.namespace}` });
+      tEn = await getTranslations({ locale: 'en', namespace: `blog` });
     } catch (error) {
       // If English translations fail, we'll use defaults
     }
@@ -155,14 +155,14 @@ export default async function BlogPostPage({
       return defaultValue;
     }
     try {
-      const result = t(key);
+      const result = t(`${blogConfig.namespace}.${key}`);
       // If the result is the same as the key, it means translation wasn't found
-      if (result === key) {
+      if (result === `${blogConfig.namespace}.${key}`) {
         // Try English fallback
         if (tEn) {
           try {
-            const englishResult = tEn(key);
-            return englishResult !== key ? englishResult : defaultValue;
+            const englishResult = tEn(`${blogConfig.namespace}.${key}`);
+            return englishResult !== `${blogConfig.namespace}.${key}` ? englishResult : defaultValue;
           } catch (error) {
             return defaultValue;
           }
@@ -174,7 +174,7 @@ export default async function BlogPostPage({
       // Try English fallback
       if (tEn) {
         try {
-          return tEn(key);
+          return tEn(`${blogConfig.namespace}.${key}`);
         } catch (error) {
           return defaultValue;
         }
@@ -199,7 +199,7 @@ export default async function BlogPostPage({
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           <CdnImage
             src={blogConfig.image}
-            alt={t(blogConfig.titleKey)}
+            alt={t(`${blogConfig.namespace}.${blogConfig.titleKey}`)}
             width={400}
             height={250}
             className="rounded-lg object-cover"
@@ -207,110 +207,116 @@ export default async function BlogPostPage({
         </div>
         
         <h1 className="text-4xl font-bold mb-4">
-          {t(blogConfig.titleKey)}
+          {t(`${blogConfig.namespace}.${blogConfig.titleKey}`)}
         </h1>
         
         <div className="text-gray-600 mb-4">
-          {t("date", { defaultValue: "Latest Article" })} • {" "}
-          {t("readTime", { defaultValue: "5 min read" })}
+          {t(`${blogConfig.namespace}.date`, { defaultValue: "Latest Article" })} • {" "}
+          {t(`${blogConfig.namespace}.readTime`, { defaultValue: "5 min read" })}
         </div>
       </div>
 
       <div className="clear-both">
         {/* Dynamic content rendering based on slug */}
         {slug.startsWith('translate-youtube-video') && (
-          <YoutubeTranslationContent slug={slug} t={t} />
+          <YoutubeTranslationContent slug={slug} t={safeT} />
         )}
-        {slug.startsWith('voice-cloning') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning' && (
-          <VoiceCloningContent slug={slug} t={t} />
+        {(slug.startsWith('voice-cloning') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning') && (
+          <VoiceCloningContent slug={slug} t={safeT} />
         )}
         {slug.includes('asl') && (
-          <AslTranslationContent slug={slug} t={t} />
+          <AslTranslationContent slug={slug} t={t} tEn={tEn} />
         )}
         
-        {/* Fallback content for any missing content */}
-        <div className="space-y-6">
-          <p className="text-lg font-semibold text-blue-600 mb-4">
-            {hasKey("intro") ? safeT("intro") : "Introduction"}
-          </p>
-          
-          <section>
-            <h2 className="text-2xl font-bold mb-4">{hasKey("whatIsTitle") ? safeT("whatIsTitle") : "What is this?"}</h2>
-            <p className="mb-4">{hasKey("whatIsContent") ? safeT("whatIsContent") : "Content description..."}</p>
-          </section>
-
-          {(hasKey("whyTitle") || hasKey("whyContent")) && (
+        {/* Fallback content for any missing content - only render if no specific component handled it */}
+        {!slug.startsWith('translate-youtube-video') && 
+         !slug.startsWith('voice-cloning') && 
+         slug !== 'what-is-voice-cloning' && 
+         slug !== 'f5-tts-voice-cloning' && 
+         !slug.includes('asl') && (
+          <div className="space-y-6">
+            <p className="text-lg font-semibold text-blue-600 mb-4">
+              {hasKey("intro") ? safeT("intro") : "Introduction"}
+            </p>
+            
             <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("whyTitle") ? safeT("whyTitle") : "Why This Matters"}</h2>
-              <p className="mb-4">{hasKey("whyContent") ? safeT("whyContent") : "Learn why this topic is important..."}</p>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("whatIsTitle") ? safeT("whatIsTitle") : "What is this?"}</h2>
+              <p className="mb-4">{hasKey("whatIsContent") ? safeT("whatIsContent") : "Content description..."}</p>
             </section>
-          )}
 
-          {(hasKey("howTitle") || hasKey("howContent") || hasKey("step1Title")) && (
-            <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("howTitle") ? safeT("howTitle") : "How It Works"}</h2>
-              {hasKey("step1Title") ? (
-                <div className="space-y-4">
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <h3 className="font-semibold mb-2">{safeT("step1Title")}</h3>
-                    <p>{safeT("step1Content")}</p>
+            {(hasKey("whyTitle") || hasKey("whyContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("whyTitle") ? safeT("whyTitle") : "Why This Matters"}</h2>
+                <p className="mb-4">{hasKey("whyContent") ? safeT("whyContent") : "Learn why this topic is important..."}</p>
+              </section>
+            )}
+
+            {(hasKey("howTitle") || hasKey("howContent") || hasKey("step1Title")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("howTitle") ? safeT("howTitle") : "How It Works"}</h2>
+                {hasKey("step1Title") ? (
+                  <div className="space-y-4">
+                    <div className="p-4 bg-blue-50 rounded-lg">
+                      <h3 className="font-semibold mb-2">{safeT("step1Title")}</h3>
+                      <p>{safeT("step1Content")}</p>
+                    </div>
+                    <div className="p-4 bg-blue-50 rounded-lg">
+                      <h3 className="font-semibold mb-2">{safeT("step2Title")}</h3>
+                      <p>{safeT("step2Content")}</p>
+                    </div>
+                    <div className="p-4 bg-blue-50 rounded-lg">
+                      <h3 className="font-semibold mb-2">{safeT("step3Title")}</h3>
+                      <p>{safeT("step3Content")}</p>
+                    </div>
                   </div>
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <h3 className="font-semibold mb-2">{safeT("step2Title")}</h3>
-                    <p>{safeT("step2Content")}</p>
-                  </div>
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <h3 className="font-semibold mb-2">{safeT("step3Title")}</h3>
-                    <p>{safeT("step3Content")}</p>
-                  </div>
-                </div>
-              ) : (
-                <p className="mb-4">{hasKey("howContent") ? safeT("howContent") : "Step-by-step process..."}</p>
-              )}
-            </section>
-          )}
+                ) : (
+                  <p className="mb-4">{hasKey("howContent") ? safeT("howContent") : "Step-by-step process..."}</p>
+                )}
+              </section>
+            )}
 
-          {(hasKey("howWorksTitle") || hasKey("howWorksContent")) && (
+            {(hasKey("howWorksTitle") || hasKey("howWorksContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("howWorksTitle") ? safeT("howWorksTitle") : "How It Works"}</h2>
+                <p className="mb-4">{hasKey("howWorksContent") ? safeT("howWorksContent") : "Technical explanation..."}</p>
+              </section>
+            )}
+
+            {(hasKey("useCasesTitle") || hasKey("useCasesContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("useCasesTitle") ? safeT("useCasesTitle") : "Use Cases"}</h2>
+                <p className="mb-4">{hasKey("useCasesContent") ? safeT("useCasesContent") : "Common applications..."}</p>
+              </section>
+            )}
+
+            {(hasKey("ethicalTitle") || hasKey("ethicalContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("ethicalTitle") ? safeT("ethicalTitle") : "Ethical Considerations"}</h2>
+                <p className="mb-4">{hasKey("ethicalContent") ? safeT("ethicalContent") : "Important ethical guidelines..."}</p>
+              </section>
+            )}
+
             <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("howWorksTitle") ? safeT("howWorksTitle") : "How It Works"}</h2>
-              <p className="mb-4">{hasKey("howWorksContent") ? safeT("howWorksContent") : "Technical explanation..."}</p>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("toolsTitle") ? safeT("toolsTitle") : "Tools & Resources"}</h2>
+              <p className="mb-4">{hasKey("toolsContent") ? safeT("toolsContent") : "Learn about the best tools available..."}</p>
             </section>
-          )}
 
-          {(hasKey("useCasesTitle") || hasKey("useCasesContent")) && (
             <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("useCasesTitle") ? safeT("useCasesTitle") : "Use Cases"}</h2>
-              <p className="mb-4">{hasKey("useCasesContent") ? safeT("useCasesContent") : "Common applications..."}</p>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("curifyTitle") ? safeT("curifyTitle") : "How Curify Can Help"}</h2>
+              <p className="mb-4">{hasKey("curifyContent") ? safeT("curifyContent") : "Curify offers comprehensive solutions for content creators..."}</p>
+              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-800">
+                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
+                </p>
+              </div>
             </section>
-          )}
 
-          {(hasKey("ethicalTitle") || hasKey("ethicalContent")) && (
             <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("ethicalTitle") ? safeT("ethicalTitle") : "Ethical Considerations"}</h2>
-              <p className="mb-4">{hasKey("ethicalContent") ? safeT("ethicalContent") : "Important ethical guidelines..."}</p>
+              <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
+              <p>{hasKey("conclusionContent") ? safeT("conclusionContent") : "Start your journey with AI-powered content creation tools today."}</p>
             </section>
-          )}
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">{hasKey("toolsTitle") ? safeT("toolsTitle") : "Tools & Resources"}</h2>
-            <p className="mb-4">{hasKey("toolsContent") ? safeT("toolsContent") : "Learn about the best tools available..."}</p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">{hasKey("curifyTitle") ? safeT("curifyTitle") : "How Curify Can Help"}</h2>
-            <p className="mb-4">{hasKey("curifyContent") ? safeT("curifyContent") : "Curify offers comprehensive solutions for content creators..."}</p>
-            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-green-800">
-                🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
-            <p>{hasKey("conclusionContent") ? safeT("conclusionContent") : "Start your journey with AI-powered content creation tools today."}</p>
-          </section>
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Related Templates Section */}
@@ -460,25 +466,48 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
   );
 }
 
-function AslTranslationContent({ slug, t }: { slug: string; t: any }) {
+function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: any }) {
+  // Get the namespace based on slug
+  const namespace = slug === 'asl-video-translator' ? 'aslVideoTranslator' : 'howToTranslateAslVideo';
+  
   // Define which keys exist for each ASL blog post type
   const availableKeys: Record<string, string[]> = {
     'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
   };
 
-  // Get the namespace based on slug
-  const namespace = slug === 'asl-video-translator' ? 'aslVideoTranslator' : 'howToTranslateAslVideo';
   const currentKeys = availableKeys[namespace] || [];
 
-  // Safe translation helper
+  // Safe translation helper that mimics the parent logic but with correct namespace
   const safeT = (key: string, defaultValue = "") => {
     if (!currentKeys.includes(key)) {
       return defaultValue;
     }
     try {
-      return t(key);
+      const result = t(`${namespace}.${key}`);
+      // If the result is the same as the key, it means translation wasn't found
+      if (result === `${namespace}.${key}`) {
+        // Try English fallback
+        if (tEn) {
+          try {
+            const englishResult = tEn(`${namespace}.${key}`);
+            return englishResult !== `${namespace}.${key}` ? englishResult : defaultValue;
+          } catch (error) {
+            return defaultValue;
+          }
+        }
+        return defaultValue;
+      }
+      return result;
     } catch (error) {
+      // Try English fallback
+      if (tEn) {
+        try {
+          return tEn(`${namespace}.${key}`);
+        } catch (error) {
+          return defaultValue;
+        }
+      }
       return defaultValue;
     }
   };
