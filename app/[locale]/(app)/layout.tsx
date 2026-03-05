@@ -1,8 +1,6 @@
 import "../../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/services/authOptions";
 
 import Script from "next/script";
 import Header from "../_layout_components/Header";
@@ -12,8 +10,6 @@ import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
-import UserHydrator from "../UserHydrator";
-import { AuthProvider } from "../authProvider";
 
 export default async function AppLocaleLayout({
   children,
@@ -25,23 +21,6 @@ export default async function AppLocaleLayout({
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) notFound();
-
-  const session = await getServerSession(authOptions);
-
-  const user = session?.user
-    ? {
-      id: (session.user as any).id,
-      name: session.user.username ?? null,
-      email: session.user.email ?? null,
-      image: session.user.username ?? (session.user as any).avatar_url ?? null,
-      avatar_url:
-        (session.user as any).avatar_url ?? null,
-      user_id: (session.user as any).user_id ?? null,
-      non_expiring_credits: (session.user as any).non_expiring_credits ?? 0,
-      expiring_credits: (session.user as any).expiring_credits ?? 0,
-      plan_name: (session.user as any).plan_name ?? null,
-    }
-    : null;
 
   const common = (await import(`../../../messages/${locale}/common.json`)).default;
   const home = (await import(`../../../messages/${locale}/home.json`)).default;
@@ -69,20 +48,22 @@ export default async function AppLocaleLayout({
       </head>
 
       <body suppressHydrationWarning>
-        <AuthProvider initialUser={user}>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <AppWrapper user={user}>
-              <UserHydrator initialUser={user}>
-                <Header />
-                <TopUpModal />
-                <SignDrawer />
-                {children}
-                <Toaster />
-                <Footer />
-              </UserHydrator>
-            </AppWrapper>
-          </NextIntlClientProvider>
-        </AuthProvider>
+        {/*
+          No AuthProvider needed here.
+          userAtom is restored from localStorage by atomWithStorage (getOnInit: true)
+          before the first render — Header, WorkspaceClient, and all other client
+          components read from it directly with no API roundtrip required.
+        */}
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <AppWrapper user={null}>
+            <Header />
+            <TopUpModal />
+            <SignDrawer />
+            {children}
+            <Toaster />
+            <Footer />
+          </AppWrapper>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
