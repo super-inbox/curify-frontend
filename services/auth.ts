@@ -19,7 +19,7 @@ export const authService = {
   async googleLogin(credential: string): Promise<AuthResponse> {
     return apiClient.request<AuthResponse>('/auth/google-login', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },  // 👈 force this
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token: credential }),
     });
   },
@@ -36,7 +36,10 @@ export const authService = {
   },
 
   async logout() {
-    // Clear client-side state - cookies handled by server
-    window.location.href = '/';
+    // ✅ Just clear tokens — no redirect.
+    // The caller (UserDropdownMenu) owns navigation, user stays on current page.
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+    localStorage.removeItem("curifyUser");
   },
 };

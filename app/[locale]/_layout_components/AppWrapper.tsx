@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useAtom } from "jotai";
-import { footerAtom, headerAtom, userAtom } from "@/app/atoms/atoms";
+import { footerAtom, userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { usePathname } from "next/navigation";
 import type { User, UserSession } from "@/types/auth";
 
@@ -15,20 +15,25 @@ interface Props {
 
 export default function AppWrapper({ children, user }: Props) {
   const [, setUser] = useAtom(userAtom);
-  const [, setHeaderState] = useAtom(headerAtom);
   const [, setFooterState] = useAtom(footerAtom);
+  const [, setClientMounted] = useAtom(clientMountedAtom);
 
   const pathname = usePathname();
 
-  // ✅ Track user by stable ID to prevent duplicate updates
   const lastUserIdRef = useRef<string | null>(null);
   const hasInitialized = useRef(false);
 
+  // ✅ Set clientMountedAtom to true once on first client mount.
+  // Being a Jotai atom (not useState), this survives route changes —
+  // Header and WorkspaceClient read it and skip the pre-mount placeholder
+  // on subsequent navigations, eliminating the flash.
   useEffect(() => {
-    // Build stable user identifier
+    setClientMounted(true);
+  }, [setClientMounted]);
+
+  useEffect(() => {
     const currentUserId = user?.user_id || user?.email || null;
 
-    // ✅ Only update if user actually changed
     if (lastUserIdRef.current === currentUserId && hasInitialized.current) {
       return;
     }
@@ -36,14 +41,12 @@ export default function AppWrapper({ children, user }: Props) {
     lastUserIdRef.current = currentUserId;
     hasInitialized.current = true;
 
+    // Only write to userAtom if the server actually returned a user.
+    // If server passes null, leave atomWithStorage's restored value untouched.
     if (user) {
-      setUser(user);          // ✅ userAtom 现在允许 AnyUser
-      setHeaderState("in");
-    } else {
-      setUser(null);
-      setHeaderState("out");
+      setUser(user);
     }
-  }, [user, setUser, setHeaderState]);
+  }, [user, setUser]);
 
   useEffect(() => {
     const pagePart = pathname.split("/");

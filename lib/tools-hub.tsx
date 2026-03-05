@@ -11,7 +11,7 @@ export type ToolItem = {
   desc: ReactNode;
   status: ToolStatus;
   onClick?: () => void;
-  href?: string;
+  href?: string; // unprefixed, i18n Link will add locale automatically
 };
 
 export type ToolGroupId = "video" | "image" | "audio";
@@ -24,10 +24,20 @@ export type ToolGroup = {
 
 export function buildToolsHub(params: {
   t: (key: string, values?: Record<string, any>) => any;
-  openModal: (mode: ToolMode) => void;
+
+  /**
+   * ✅ NEW (recommended): open by toolId (so we can route job_type / config)
+   * ToolsClient can auth-gate + set CreateNewModal context
+   */
+  openToolModal: (toolId: string) => void;
+
+  /**
+   * optional; kept for backward compatibility but NOT used for href
+   * because i18n Link already handles locale prefixing.
+   */
   locale?: string;
 }): ToolGroup[] {
-  const { t, openModal, locale } = params;
+  const { t, openToolModal } = params;
   const grouped = groupTools();
 
   const toItem = (tool: (typeof grouped)["video"][number]): ToolItem => {
@@ -42,26 +52,41 @@ export function buildToolsHub(params: {
       t(tool.i18n.titleKey)
     );
 
-    const href = locale ? `/tools/${tool.slug}` : undefined;
-    const action = tool.action;
+    // ✅ IMPORTANT: use unprefixed path; i18n <Link> will prefix locale
+    const href = `/tools/${tool.slug}`;
+
+    const canNavigate = tool.status !== "coming_soon";
+    const canCreate = tool.status === "create";
 
     return {
       id: tool.id,
       title: titleNode,
       desc: t(tool.i18n.descKey),
       status: tool.status,
-      href: tool.status !== "coming_soon" ? href : undefined,
-    
-      onClick:
-        tool.status === "create" && action?.type === "modal"
-          ? () => openModal(action.mode)
-          : undefined,
+
+      // ✅ only non-coming-soon have pages
+      href: canNavigate ? href : undefined,
+
+      // ✅ only create tools open the modal
+      onClick: canCreate ? () => openToolModal(tool.id) : undefined,
     };
   };
 
   return [
-    { groupId: "video", title: t("tools.groups.video"), items: grouped.video.map(toItem) },
-    { groupId: "image", title: t("tools.groups.image"), items: grouped.image.map(toItem) },
-    { groupId: "audio", title: t("tools.groups.audio"), items: grouped.audio.map(toItem) },
+    {
+      groupId: "video",
+      title: t("tools.groups.video"),
+      items: grouped.video.map(toItem),
+    },
+    {
+      groupId: "image",
+      title: t("tools.groups.image"),
+      items: grouped.image.map(toItem),
+    },
+    {
+      groupId: "audio",
+      title: t("tools.groups.audio"),
+      items: grouped.audio.map(toItem),
+    },
   ];
 }
