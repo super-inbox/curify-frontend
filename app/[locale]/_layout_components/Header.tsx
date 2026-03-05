@@ -78,8 +78,7 @@ export default function Header() {
     setDrawerState(drawerState === "signin" ? null : "signin");
   };
 
-  const avatarInitial =
-    user?.first_name?.charAt(0)?.toUpperCase() ||
+  const avatarInitial =    
     user?.email?.charAt(0)?.toUpperCase() ||
     "?";
 
