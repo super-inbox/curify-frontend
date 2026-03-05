@@ -168,7 +168,7 @@ export default function Header() {
               - After first mount: correctly shows avatar or "Log in" based on userAtom
               - On subsequent navigations: clientMountedAtom stays true — no flash */}
           {!clientMounted ? (
-            <BtnN onClick={() => {}} aria-hidden="true" tabIndex={-1}>
+            <BtnN onClick={() => {}} aria-hidden="true">
               {t("logIn")}
             </BtnN>
           ) : isLoggedIn ? (
@@ -181,7 +181,7 @@ export default function Header() {
                 {user.avatar_url && !avatarError ? (
                   <Image
                     src={user.avatar_url}
-                    alt={user.first_name || user.email || "User avatar"}
+                    alt={user.email || "User avatar"}
                     width={36}
                     height={36}
                     className="object-cover w-full h-full"

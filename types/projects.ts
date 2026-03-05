@@ -1,3 +1,4 @@
+
 // Enums to mirror backend choices
 export type SubtitleFormat = 'none' | 'source' | 'target' | 'bilingual';
 export type AudioOption = 'original' | 'dubbed' | 'premium';
@@ -12,6 +13,14 @@ export type ProjectStatus =
   | "COMPLETED"
   | "FAILED";
 
+export type BackendJobType =
+| "subtitle_only"
+| "full_translation"
+| "srt_translator"
+| "video_transcript"
+| "youtube_subtitles";
+
+
 export interface ProjectStatusUpdate {
   project_id: string;
   status: ProjectStatus;
@@ -20,6 +29,7 @@ export interface ProjectStatusUpdate {
 
 // Job settings interface aligned with backend
 export interface JobSettings {
+  job_type: BackendJobType;
   erase_original_subtitles: boolean;
   subtitles_enabled: SubtitleFormat;
   audio_option: AudioOption;

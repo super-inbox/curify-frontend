@@ -1,24 +1,29 @@
+// CreateNewModal.tsx
 "use client";
 
 import { useAtom } from "jotai";
-import { modalAtom, jobTypeAtom, userAtom } from "@/app/atoms/atoms";
+import { modalAtom, userAtom, createJobContextAtom } from "@/app/atoms/atoms";
 import Modal from "../../_components/Modal";
 import Upload from "../../_components/Upload";
 import { useEffect, useRef, useState } from "react";
 import Options from "../../_components/Options";
-import Icon from "../../_components/Icon";
 import BtnP from "../../_components/button/ButtonPrimary";
 import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
 import { videoService } from "@/services/video";
 import { getLangCode, languages } from "@/lib/language_utils";
-import { SubtitleFormat, JobSettings } from "@/types/projects";
+import type { SubtitleFormat } from "@/types/projects";
+import type { BackendJobType } from "@/types/projects";
+import { getJobUiConfig } from "@/lib/create-job-ui";
 
 export default function CreateNewModal() {
   const router = useRouter();
   const [modalState, setModalState] = useAtom(modalAtom);
-  const [jobType] = useAtom(jobTypeAtom);
   const [user] = useAtom(userAtom);
+
+  const [jobCtx] = useAtom(createJobContextAtom);
+  const job_type: BackendJobType = (jobCtx?.job_type as BackendJobType) ?? "subtitle_only";
+  const ui = getJobUiConfig(job_type);
 
   const [videoId, setVideoId] = useState<string | null>(null);
   const [videoBlobUrl, setVideoBlobUrl] = useState<string>("");
@@ -34,9 +39,9 @@ export default function CreateNewModal() {
   const sourceRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
 
-  const [voiceover, setVoiceover] = useState<"Yes" | "No">(jobType === "subtitles" ? "No" : "Yes");
+  const [voiceover, setVoiceover] = useState<"Yes" | "No">(ui.allowVoiceover ? "Yes" : "No");
   const [subtitle, setSubtitle] = useState<"None" | "Source" | "Target" | "Bilingual">(
-    jobType === "subtitles" ? "Target" : "None"
+    ui.subtitleOptions.includes("Target") ? "Target" : "None"
   );
   const [requireTranslation, setRequireTranslation] = useState<"Yes" | "No">("No");
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -44,17 +49,17 @@ export default function CreateNewModal() {
   const [youtubeUrl, setYoutubeUrl] = useState<string>("");
   const [isYoutubeUpload, setIsYoutubeUpload] = useState<boolean>(false);
 
-  // ✅ Read credits directly from userAtom — always up to date, no separate fetch
   const remainingCredits =
-    ((user as any)?.non_expiring_credits ?? 0) +
-    ((user as any)?.expiring_credits ?? 0);
+    ((user as any)?.non_expiring_credits ?? 0) + ((user as any)?.expiring_credits ?? 0);
 
   const getDuration = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const seconds = e.currentTarget.duration;
     const minutes = seconds / 60;
-    const rate = jobType === "translation" ? 5 : 0;
+
+    const rate = ui.ratePerMinute;
     const billableMinutes = Math.max(minutes, 1);
     setCost(Math.ceil(billableMinutes * rate));
+
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     setDuration(`${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`);
@@ -62,12 +67,8 @@ export default function CreateNewModal() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (sourceRef.current && !sourceRef.current.contains(e.target as Node)) {
-        setIsSourceOpen(false);
-      }
-      if (targetRef.current && !targetRef.current.contains(e.target as Node)) {
-        setIsTargetOpen(false);
-      }
+      if (sourceRef.current && !sourceRef.current.contains(e.target as Node)) setIsSourceOpen(false);
+      if (targetRef.current && !targetRef.current.contains(e.target as Node)) setIsTargetOpen(false);
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -79,21 +80,37 @@ export default function CreateNewModal() {
     };
   }, [localPreviewUrl]);
 
-  // ✅ Reset voiceover/subtitle defaults when jobType changes
   useEffect(() => {
-    setVoiceover(jobType === "subtitles" ? "No" : "Yes");
-    setSubtitle(jobType === "subtitles" ? "Target" : "None");
-  }, [jobType]);
+    setShowMissingTargetWarning(false);
+    setTransto("Select Language");
+    setSource("Auto Detect");
 
-  const handleStart = async () => {
-    if (!uploadedFile || !videoId) return;
+    setVoiceover(ui.allowVoiceover ? "Yes" : "No");
 
-    if (jobType === "translation" && transto === "Select Language") {
-      setShowMissingTargetWarning(true);
-      return;
+    if (!ui.allowSubtitles) {
+      setSubtitle("None");
+    } else {
+      setSubtitle(ui.subtitleOptions.includes("Target") ? "Target" : ui.subtitleOptions[0] ?? "None");
     }
 
-    if (jobType === "subtitles" && requireTranslation === "Yes" && transto === "Select Language") {
+    setRequireTranslation("No");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [job_type]);
+
+  const requiresTargetLang = () => {
+    if (!ui.showTargetLang) return false;
+    if (job_type === "subtitle_only") return requireTranslation === "Yes";
+    return true;
+  };
+
+  const handleStart = async () => {
+    if (job_type === "youtube_subtitles") {
+      if (!videoId) return;
+    } else {
+      if (!uploadedFile || !videoId) return;
+    }
+
+    if (requiresTargetLang() && transto === "Select Language") {
       setShowMissingTargetWarning(true);
       return;
     }
@@ -104,36 +121,43 @@ export default function CreateNewModal() {
     }
 
     try {
-      const isRemoveSubtitle = subtitle === "Source" && jobType === "subtitles";
+      const isRemoveSubtitle = subtitle === "Source" && job_type === "subtitle_only";
 
-      let subtitleValue: string;
-      if (jobType === "translation") {
-        subtitleValue = subtitle.toLowerCase();
+      let subtitles_enabled: string = "none";
+      if (!ui.allowSubtitles) {
+        subtitles_enabled = "none";
+      } else if (job_type === "full_translation") {
+        subtitles_enabled = subtitle.toLowerCase();
+      } else if (job_type === "subtitle_only") {
+        subtitles_enabled = requireTranslation === "Yes" ? subtitle.toLowerCase() : "source";
       } else {
-        subtitleValue = requireTranslation === "Yes" ? subtitle.toLowerCase() : "source";
+        subtitles_enabled = subtitle.toLowerCase();
       }
+
+      const target_language = requiresTargetLang() ? getLangCode(transto) : undefined;
 
       const newProject = await projectService.createProject({
         video_id: videoId,
         job_settings: {
-          source_language: source === "Auto Detect" ? "auto" : getLangCode(source),
-          target_language:
-            jobType === "translation"
-              ? getLangCode(transto)
-              : requireTranslation === "Yes"
-              ? getLangCode(transto)
-              : undefined,
-          subtitles_enabled: subtitleValue as SubtitleFormat,
-          audio_option:
-            jobType === "subtitles"
-              ? "original"
-              : voiceover === "Yes"
+          job_type,
+          source_language: ui.showSourceLang
+            ? source === "Auto Detect"
+              ? "auto"
+              : getLangCode(source)
+            : "auto",
+          target_language,
+          subtitles_enabled: subtitles_enabled as SubtitleFormat,
+          audio_option: ui.allowVoiceover
+            ? voiceover === "Yes"
               ? "dubbed"
-              : "original",
+              : "original"
+            : "original",
           erase_original_subtitles: isRemoveSubtitle,
           allow_lip_syncing: false,
         },
-        project_name: uploadedFile.name,
+        project_name:
+          uploadedFile?.name ??
+          (job_type === "youtube_subtitles" ? `youtube_${videoId}.mp4` : "job"),
       });
 
       setModalState(null);
@@ -144,67 +168,74 @@ export default function CreateNewModal() {
     }
   };
 
-  const title = jobType === "subtitles" ? "Add Subtitles" : "Generate Translated Video";
+  const title = ui.title;
 
   return (
     <>
-      {/* Upload Modal */}
       <Modal title={title} open={modalState === "add"}>
         {!localPreviewUrl ? (
           <div className="flex flex-col items-center w-full">
-            <Upload
-              onPreviewReady={(localUrl, file) => {
-                setLocalPreviewUrl(localUrl);
-                setUploadedFile(file);
-                setIsUploading(true);
-                setIsYoutubeUpload(false);
-              }}
-              onUploaded={(id, blobUrl) => {
-                setVideoId(id);
-                setVideoBlobUrl(blobUrl);
-                setIsUploading(false);
-                setModalState("setting");
-              }}
-            />
-
-            <div className="flex items-center gap-3 w-full max-w-md my-6">
-              <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="text-gray-500 text-sm font-medium">OR</span>
-              <div className="flex-1 h-px bg-gray-300"></div>
-            </div>
-
-            <div className="w-full max-w-md">
-              <input
-                type="text"
-                placeholder="https://www.youtube.com/shorts/t84v79KXbFY"
-                value={youtubeUrl}
-                onChange={(e) => setYoutubeUrl(e.target.value)}
-                onKeyDown={async (e) => {
-                  if (e.key === "Enter" && youtubeUrl.trim() && !isUploading) {
-                    e.preventDefault();
-                    setIsUploading(true);
-                    setIsYoutubeUpload(true);
-                    try {
-                      const result = await videoService.uploadYoutubeVideo(youtubeUrl);
-                      if (!result || !result.video_id) throw new Error("Invalid response from server");
-                      setVideoId(result.video_id);
-                      setVideoBlobUrl(result.blob_url);
-                      setLocalPreviewUrl(result.blob_url);
-                      setUploadedFile(new File([], `youtube_${result.video_id}.mp4`));
-                      setIsUploading(false);
-                      setModalState("setting");
-                    } catch (error) {
-                      console.error("YouTube upload failed:", error);
-                      alert("Failed to upload YouTube video. Please check the URL and try again.");
-                      setIsUploading(false);
-                      setIsYoutubeUpload(false);
-                    }
-                  }
+            {ui.allowUpload ? (
+              <Upload
+                onPreviewReady={(localUrl, file) => {
+                  setLocalPreviewUrl(localUrl);
+                  setUploadedFile(file);
+                  setIsUploading(true);
+                  setIsYoutubeUpload(false);
                 }}
-                disabled={isUploading}
-                className="w-full px-4 py-3 border-2 border-blue-400 rounded-lg text-sm focus:outline-none focus:border-blue-600 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                onUploaded={(id, blobUrl) => {
+                  setVideoId(id);
+                  setVideoBlobUrl(blobUrl);
+                  setIsUploading(false);
+                  setModalState("setting");
+                }}
               />
-            </div>
+            ) : null}
+
+            {ui.allowUpload && ui.allowYoutube ? (
+              <div className="flex items-center gap-3 w-full max-w-md my-6">
+                <div className="flex-1 h-px bg-gray-300" />
+                <span className="text-gray-500 text-sm font-medium">OR</span>
+                <div className="flex-1 h-px bg-gray-300" />
+              </div>
+            ) : null}
+
+            {ui.allowYoutube ? (
+              <div className="w-full max-w-md">
+                <input
+                  type="text"
+                  placeholder="https://www.youtube.com/shorts/t84v79KXbFY"
+                  value={youtubeUrl}
+                  onChange={(e) => setYoutubeUrl(e.target.value)}
+                  onKeyDown={async (e) => {
+                    if (e.key === "Enter" && youtubeUrl.trim() && !isUploading) {
+                      e.preventDefault();
+                      setIsUploading(true);
+                      setIsYoutubeUpload(true);
+                      try {
+                        const result = await videoService.uploadYoutubeVideo(youtubeUrl);
+                        if (!result || !result.video_id) throw new Error("Invalid response from server");
+
+                        setVideoId(result.video_id);
+                        setVideoBlobUrl(result.blob_url);
+                        setLocalPreviewUrl(result.blob_url);
+                        setUploadedFile(new File([], `youtube_${result.video_id}.mp4`));
+
+                        setIsUploading(false);
+                        setModalState("setting");
+                      } catch (error) {
+                        console.error("YouTube upload failed:", error);
+                        alert("Failed to upload YouTube video. Please check the URL and try again.");
+                        setIsUploading(false);
+                        setIsYoutubeUpload(false);
+                      }
+                    }
+                  }}
+                  disabled={isUploading}
+                  className="w-full px-4 py-3 border-2 border-blue-400 rounded-lg text-sm focus:outline-none focus:border-blue-600 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
+                />
+              </div>
+            ) : null}
           </div>
         ) : isUploading ? (
           <div className="flex flex-col items-center">
@@ -215,7 +246,7 @@ export default function CreateNewModal() {
                 onLoadedMetadata={getDuration}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
-                <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-3"></div>
+                <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-3" />
                 <p className="text-white font-medium text-sm">
                   {isYoutubeUpload ? "Downloading from YouTube..." : "Uploading video..."}
                 </p>
@@ -225,17 +256,10 @@ export default function CreateNewModal() {
                 {duration}
               </div>
             </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <svg className="w-4 h-4 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-              </svg>
-              <span>Processing options will appear after upload completes</span>
-            </div>
           </div>
         ) : null}
       </Modal>
 
-      {/* Settings Modal */}
       <Modal title={title} open={modalState === "setting"}>
         <div className="flex flex-col items-center">
           <div className="w-80 h-48 bg-[var(--c1)]/20 rounded-2xl overflow-hidden relative mt-5 mb-6">
@@ -257,120 +281,108 @@ export default function CreateNewModal() {
           </div>
 
           <div className="flex flex-col items-center gap-4.5 w-full">
-            {jobType === "translation" ? (
+            {ui.allowRequireTranslationToggle ? (
+              <Options
+                label="Require Translation"
+                options={["Yes", "No"]}
+                value={requireTranslation}
+                onChange={(value) => {
+                  setRequireTranslation(value as "Yes" | "No");
+                  if (value === "No") setShowMissingTargetWarning(false);
+                }}
+              />
+            ) : null}
+
+            {(ui.showSourceLang || ui.showTargetLang) ? (
               <>
                 <div className="flex gap-3 w-full">
-                  <div className="flex-1 relative" ref={sourceRef}>
-                    <div
-                      className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
-                      onClick={() => setIsSourceOpen(!isSourceOpen)}
-                    >
-                      <label className="block text-xs text-gray-500 mb-1">Source Language</label>
-                      <p>{source}</p>
-                    </div>
-                    {isSourceOpen && (
-                      <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
-                        <div className="px-4 py-2 hover:bg-blue-50 cursor-pointer" onClick={() => { setSource("Auto Detect"); setIsSourceOpen(false); }}>
-                          Auto Detect
-                        </div>
-                        {languages.map((lang) => (
-                          <div key={lang.code} className="px-4 py-2 hover:bg-blue-50 cursor-pointer" onClick={() => { setSource(lang.name); setIsSourceOpen(false); }}>
-                            {lang.name}
-                          </div>
-                        ))}
+                  {ui.showSourceLang ? (
+                    <div className="flex-1 relative" ref={sourceRef}>
+                      <div
+                        className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
+                        onClick={() => setIsSourceOpen(!isSourceOpen)}
+                      >
+                        <label className="block text-xs text-gray-500 mb-1">Source Language</label>
+                        <p>{source}</p>
                       </div>
-                    )}
-                  </div>
-
-                  <div className="flex-1 relative" ref={targetRef}>
-                    <div
-                      className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
-                      onClick={() => setIsTargetOpen(!isTargetOpen)}
-                    >
-                      <label className="block text-xs text-gray-500 mb-1">Translate To</label>
-                      <p>{transto}</p>
-                    </div>
-                    {isTargetOpen && (
-                      <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
-                        {languages.map((lang) => (
-                          <div key={lang.code} className="px-4 py-2 hover:bg-blue-50 cursor-pointer" onClick={() => { setTransto(lang.name); setShowMissingTargetWarning(false); setIsTargetOpen(false); }}>
-                            {lang.name}
+                      {isSourceOpen && (
+                        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
+                          <div
+                            className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                            onClick={() => {
+                              setSource("Auto Detect");
+                              setIsSourceOpen(false);
+                            }}
+                          >
+                            Auto Detect
                           </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                {showMissingTargetWarning && (
-                  <p className="text-red-500 text-sm mt-1 -mb-3">Please select a target language before proceeding.</p>
-                )}
-                <Options label="Voiceover" options={["Yes", "No"]} value={voiceover} onChange={setVoiceover} />
-                <Options label="Subtitles" options={["None", "Source", "Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
-              </>
-            ) : (
-              <>
-                <Options
-                  label="Require Translation"
-                  options={["Yes", "No"]}
-                  value={requireTranslation}
-                  onChange={(value) => {
-                    setRequireTranslation(value as "Yes" | "No");
-                    if (value === "No") setShowMissingTargetWarning(false);
-                  }}
-                />
-
-                {requireTranslation === "Yes" && (
-                  <>
-                    <div className="flex gap-3 w-full">
-                      <div className="flex-1 relative" ref={sourceRef}>
-                        <div
-                          className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
-                          onClick={() => setIsSourceOpen(!isSourceOpen)}
-                        >
-                          <label className="block text-xs text-gray-500 mb-1">Source Language</label>
-                          <p>{source}</p>
-                        </div>
-                        {isSourceOpen && (
-                          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
-                            <div className="px-4 py-2 hover:bg-blue-50 cursor-pointer" onClick={() => { setSource("Auto Detect"); setIsSourceOpen(false); }}>
-                              Auto Detect
+                          {languages.map((lang) => (
+                            <div
+                              key={lang.code}
+                              className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                              onClick={() => {
+                                setSource(lang.name);
+                                setIsSourceOpen(false);
+                              }}
+                            >
+                              {lang.name}
                             </div>
-                            {languages.map((lang) => (
-                              <div key={lang.code} className="px-4 py-2 hover:bg-blue-50 cursor-pointer" onClick={() => { setSource(lang.name); setIsSourceOpen(false); }}>
-                                {lang.name}
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex-1 relative" ref={targetRef}>
-                        <div
-                          className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
-                          onClick={() => setIsTargetOpen(!isTargetOpen)}
-                        >
-                          <label className="block text-xs text-gray-500 mb-1">Translate To</label>
-                          <p>{transto}</p>
+                          ))}
                         </div>
-                        {isTargetOpen && (
-                          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
-                            {languages.map((lang) => (
-                              <div key={lang.code} className="px-4 py-2 hover:bg-blue-50 cursor-pointer" onClick={() => { setTransto(lang.name); setShowMissingTargetWarning(false); setIsTargetOpen(false); }}>
-                                {lang.name}
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
+                      )}
                     </div>
-                    {showMissingTargetWarning && (
-                      <p className="text-red-500 text-sm mt-1 -mb-3">Please select a target language before proceeding.</p>
-                    )}
-                    <Options label="Subtitles" options={["Target", "Bilingual"]} value={subtitle} onChange={setSubtitle} />
-                  </>
-                )}
+                  ) : null}
+
+                  {ui.showTargetLang && requiresTargetLang() ? (
+                    <div className="flex-1 relative" ref={targetRef}>
+                      <div
+                        className="cursor-pointer w-full border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-blue-400 text-sm text-gray-800"
+                        onClick={() => setIsTargetOpen(!isTargetOpen)}
+                      >
+                        <label className="block text-xs text-gray-500 mb-1">Translate To</label>
+                        <p>{transto}</p>
+                      </div>
+                      {isTargetOpen && (
+                        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md max-h-52 overflow-y-auto text-sm">
+                          {languages.map((lang) => (
+                            <div
+                              key={lang.code}
+                              className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                              onClick={() => {
+                                setTransto(lang.name);
+                                setShowMissingTargetWarning(false);
+                                setIsTargetOpen(false);
+                              }}
+                            >
+                              {lang.name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : null}
+                </div>
+
+                {showMissingTargetWarning ? (
+                  <p className="text-red-500 text-sm mt-1 -mb-3">
+                    Please select a target language before proceeding.
+                  </p>
+                ) : null}
               </>
-            )}
+            ) : null}
+
+            {ui.allowVoiceover ? (
+              <Options label="Voiceover" options={["Yes", "No"]} value={voiceover} onChange={setVoiceover} />
+            ) : null}
+
+            {ui.allowSubtitles ? (
+              <Options
+                label="Subtitles"
+                options={ui.subtitleOptions}
+                value={subtitle}
+                onChange={(v) => setSubtitle(v as any)}
+              />
+            ) : null}
           </div>
 
           <p className="flex items-center mt-6.5 mb-2">
@@ -379,9 +391,7 @@ export default function CreateNewModal() {
             <span className="ml-3 text-sm text-gray-500">(Available: {remainingCredits})</span>
           </p>
 
-          <BtnP onClick={handleStart}>
-            {jobType === "subtitles" ? "Add Subtitles" : "Start Translation"}
-          </BtnP>
+          <BtnP onClick={handleStart}>{ui.ctaLabel}</BtnP>
         </div>
       </Modal>
     </>

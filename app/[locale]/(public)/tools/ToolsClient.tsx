@@ -3,10 +3,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useAtom } from "jotai";
-import { modalAtom, jobTypeAtom, userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import {
+  modalAtom,
+  userAtom,
+  drawerAtom,
+  clientMountedAtom,
+  createJobContextAtom, // ✅ NEW
+} from "@/app/atoms/atoms";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import { buildToolsHub } from "@/lib/tools-hub";
+import { getToolById } from "@/lib/tools-registry"; // ✅ NEW
 
 import BgParticle from "@/app/[locale]/_componentForPage/BgParticle";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
@@ -14,29 +21,39 @@ import CreateNewModal from "./CreateNewModal";
 
 export default function ToolsClient() {
   const [, setModalState] = useAtom(modalAtom);
-  const [, setJobType] = useAtom(jobTypeAtom);
+  const [, setCreateJobCtx] = useAtom(createJobContextAtom); // ✅ NEW
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
+
   const t = useTranslations();
   const { locale } = useParams<{ locale: string }>();
 
   // ✅ Open modal only if logged in — otherwise prompt sign-in
-  const openModal = useCallback(
-    (mode: "translation" | "subtitles") => {
+  // ✅ Now uses tool registry job_type (backend-aligned)
+  const openToolModal = useCallback(
+    (toolId: string) => {
+      const tool = getToolById(toolId);
+      if (!tool) return;
+
       if (!user) {
         setDrawerState("signin");
         return;
       }
-      setJobType(mode);
+
+      // ✅ CreateNewModal reads this and renders correct UI + submits job_settings.job_type
+      setCreateJobCtx({ toolId: tool.id, slug: tool.slug, job_type: tool.job_type });
       setModalState("add");
     },
-    [user, setJobType, setModalState, setDrawerState]
+    [user, setDrawerState, setCreateJobCtx, setModalState]
   );
 
-  const toolGroups = buildToolsHub({ t, openModal, locale });
+  // ✅ buildToolsHub should now set onClick to call openToolModal(tool.id)
+  const toolGroups = buildToolsHub({ t, openToolModal, locale });
 
+  // -------------------------
   // Language switching demo
+  // -------------------------
   const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -57,12 +74,16 @@ export default function ToolsClient() {
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
+
     const restoreAndPlay = () => {
       vid.currentTime = currentTime;
       vid.play().catch(() => {});
     };
+
     vid.onloadeddata = restoreAndPlay;
-    return () => { vid.onloadeddata = null; };
+    return () => {
+      vid.onloadeddata = null;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeLanguage]);
 
@@ -100,12 +121,17 @@ export default function ToolsClient() {
                         className={`rounded-2xl shadow-lg p-5 flex flex-col justify-between 
                         bg-white bg-[linear-gradient(135deg,_#E0E7FF_0%,_#F0F4FF_100%)] 
                         border border-gray-100 transition-shadow
-                        ${tool.href ? "cursor-pointer hover:shadow-xl" : ""}`}
+                        ${
+                          tool.href
+                            ? "cursor-pointer hover:shadow-xl"
+                            : tool.status !== "coming_soon"
+                            ? "cursor-pointer hover:shadow-xl"
+                            : ""
+                        }`}
                       >
                         <div className="flex-grow">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">
-                            {tool.title}
-                          </h3>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">{tool.title}</h3>
+
                           <p className="text-sm text-gray-600 mb-4">
                             {"desc" in tool ? tool.desc : ""}
                           </p>
@@ -116,15 +142,13 @@ export default function ToolsClient() {
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-                              // ✅ tool.onClick comes from buildToolsHub which calls
-                              // openModal(mode) — already auth-gated above
+                              // ✅ tool.onClick is auth-gated inside openToolModal
                               tool.onClick?.();
                             }}
                             className="mt-4 w-full text-white px-4 py-2 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative"
                             type="button"
                           >
                             {t("tools.create")}
-                            {/* ✅ Show lock icon if not logged in (after mount) */}
                             {clientMounted && !user && (
                               <span className="ml-2 text-xs opacity-80">🔒</span>
                             )}
@@ -137,11 +161,27 @@ export default function ToolsClient() {
                       </div>
                     );
 
+                    // ✅ Card click navigates if href exists
+                    // ✅ Otherwise (create tools), card click triggers modal open
                     if (tool.href) {
                       return (
                         <Link key={tool.id} href={tool.href} className="block hover:no-underline">
                           {Card}
                         </Link>
+                      );
+                    }
+
+                    // If it's creatable and has onClick, make the whole card clickable too
+                    if (tool.status === "create" && tool.onClick) {
+                      return (
+                        <button
+                          key={tool.id}
+                          type="button"
+                          onClick={tool.onClick}
+                          className="text-left"
+                        >
+                          {Card}
+                        </button>
                       );
                     }
 
@@ -196,7 +236,9 @@ export default function ToolsClient() {
               </div>
 
               <p className="text-center mt-4 text-[var(--c2)] font-medium">
-                {t("tools.hero.currently_playing", { label: languages[activeLanguage].label })}
+                {t("tools.hero.currently_playing", {
+                  label: languages[activeLanguage].label,
+                })}
               </p>
             </div>
           </div>
@@ -221,12 +263,15 @@ export default function ToolsClient() {
               const card = (
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-blue-500/40 hover:border-purple-500/60 transition-all duration-300 hover:scale-105">
                   <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">{feature.title}</h3>
+                  <h3 className="text-xl font-bold text-[var(--c1)] mb-3">
+                    {feature.title}
+                  </h3>
                   <p className="text-sm text-[var(--c2)] leading-relaxed">{feature.desc}</p>
                 </div>
               );
 
               if (isSubtitle) {
+                // ✅ these legacy routes redirect to /tools/* already
                 return (
                   <Link key={index} href="/bilingual-subtitles" className="block hover:no-underline">
                     {card}
@@ -301,6 +346,7 @@ export default function ToolsClient() {
           </div>
         </section>
       </div>
+
       {/* ✅ Modal must be rendered in the same component tree where modalAtom is set */}
       <CreateNewModal />
     </>
