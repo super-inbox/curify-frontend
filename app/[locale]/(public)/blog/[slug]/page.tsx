@@ -86,7 +86,7 @@ const blogPosts = {
   "translate-youtube-video": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/2cb58cf3-c05f-45d0-9f04-67fd7ba00267",
+    image: "/images/70s-looking-ai-image-1024x559.png",
     category: "video-translation",
     relatedCategories: ["video-translation", "subtitle-generation"],
     namespace: "translateYoutubevideo"
@@ -94,7 +94,7 @@ const blogPosts = {
   "translate-youtube-video-to-english": {
     titleKey: "title", 
     descriptionKey: "intro",
-    image: "/images/9920f5ad-c6bb-4375-9255-a80f8568b0a9",
+    image: "/images/micro-world-illusion-prompt-1-1024x559.png",
     category: "video-translation",
     relatedCategories: ["video-translation", "video-dubbing"],
     namespace: "translateYoutubeVideoToEnglish"
@@ -102,7 +102,7 @@ const blogPosts = {
   "ai-youtube-video-translator": {
     titleKey: "title",
     descriptionKey: "intro", 
-    image: "/images/f5c790f9-f0e2-4c4d-b274-bf4bcd1c4764",
+    image: "/images/impossible-crowd-control-prompt-1024x559.png", 
     category: "video-translation",
     relatedCategories: ["video-translation", "ai-tools"],
     namespace: "aiYoutubeVideoTranslator"
@@ -138,7 +138,7 @@ const blogPosts = {
   "asl-video-translator": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/a012b2032a3bdf195cd6a04d661acef4_thumb_1767268289422.jpg",
+    image: "/images/cd9f11ae1593c57b9b73d647ca7497e6_thumb_1765981345671.jpg",
     category: "accessibility",
     relatedCategories: ["video-translation", "subtitle-generation"],
     namespace: "aslVideoTranslator"
@@ -146,7 +146,7 @@ const blogPosts = {
   "how-to-translate-asl-video": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/4f61825a8edc8bb57ae2652db01fce88_thumb_1762936816791.jpg",
+    image: "/images/wristwatch-image-1024x559.png",
     category: "accessibility", 
     relatedCategories: ["video-translation", "accessibility"],
     namespace: "howToTranslateAslVideo"
