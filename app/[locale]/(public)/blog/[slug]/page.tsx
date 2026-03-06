@@ -177,11 +177,21 @@ export async function generateMetadata({
       description: t(blogConfig.descriptionKey),
     };
   } catch (error) {
-    // Fallback if translation not found
-    return {
-      title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-      description: "Learn more about AI-powered content creation tools",
-    };
+    // Fallback to English translations if locale translations not found
+    try {
+      const t = await getTranslations({ locale: 'en', namespace: `blog.${blogConfig.namespace}` });
+      
+      return {
+        title: t(blogConfig.titleKey),
+        description: t(blogConfig.descriptionKey),
+      };
+    } catch (fallbackError) {
+      // Final fallback if even English fails
+      return {
+        title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+        description: "Learn more about AI-powered content creation tools",
+      };
+    }
   }
 }
 
@@ -206,6 +216,19 @@ export default async function BlogPostPage({
       tEn = await getTranslations({ locale: 'en', namespace: `blog` });
     } catch (error) {
       // If English translations fail, we'll use defaults
+    }
+  }
+
+  // Try to get namespace-specific translations with fallback
+  let tNamespace = null;
+  try {
+    tNamespace = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
+  } catch (error) {
+    // Fallback to English if locale translations not found
+    try {
+      tNamespace = await getTranslations({ locale: 'en', namespace: `blog.${blogConfig.namespace}` });
+    } catch (fallbackError) {
+      // If even English fails, tNamespace will remain null and we'll use defaults
     }
   }
 
@@ -237,33 +260,22 @@ export default async function BlogPostPage({
     if (!currentKeys.includes(key)) {
       return defaultValue;
     }
-    try {
-      const result = t(`${blogConfig.namespace}.${key}`);
-      // If the result is the same as the key, it means translation wasn't found
-      if (result === `${blogConfig.namespace}.${key}`) {
-        // Try English fallback
-        if (tEn) {
-          try {
-            const englishResult = tEn(`${blogConfig.namespace}.${key}`);
-            return englishResult !== `${blogConfig.namespace}.${key}` ? englishResult : defaultValue;
-          } catch (error) {
-            return defaultValue;
-          }
-        }
-        return defaultValue;
-      }
-      return result;
-    } catch (error) {
-      // Try English fallback
-      if (tEn) {
-        try {
-          return tEn(`${blogConfig.namespace}.${key}`);
-        } catch (error) {
+    
+    // Use namespace-specific translations if available
+    if (tNamespace) {
+      try {
+        const result = tNamespace(key);
+        // If the result is the same as the key, it means translation wasn't found
+        if (result === key) {
           return defaultValue;
         }
+        return result;
+      } catch (error) {
+        return defaultValue;
       }
-      return defaultValue;
     }
+    
+    return defaultValue;
   };
 
   // Helper to check if a translation key exists
@@ -282,7 +294,7 @@ export default async function BlogPostPage({
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           <CdnImage
             src={blogConfig.image}
-            alt={t(`${blogConfig.namespace}.${blogConfig.titleKey}`)}
+            alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
             width={400}
             height={250}
             className="rounded-lg object-cover"
@@ -290,12 +302,12 @@ export default async function BlogPostPage({
         </div>
         
         <h1 className="text-4xl font-bold mb-4">
-          {t(`${blogConfig.namespace}.${blogConfig.titleKey}`)}
+          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
         </h1>
         
         <div className="text-gray-600 mb-4">
-          {t(`${blogConfig.namespace}.date`, { defaultValue: "Latest Article" })} • {" "}
-          {t(`${blogConfig.namespace}.readTime`, { defaultValue: "5 min read" })}
+          {tNamespace ? tNamespace("date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
+          {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
         </div>
       </div>
 
