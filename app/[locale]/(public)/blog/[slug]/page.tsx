@@ -8,6 +8,80 @@ import { notFound } from "next/navigation";
 
 // Blog post configuration - this will contain all our blog posts
 const blogPosts = {
+  // Original blog posts
+  "aiPlatform": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/platformai.webp",
+    category: "ai-platform",
+    relatedCategories: ["ai-platform", "ai-tools"],
+    namespace: "aiPlatform"
+  },
+  "QA_Bot_to_Task": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/qa-bot-architecture.jpg",
+    category: "ai-architecture",
+    relatedCategories: ["ai-architecture", "ai-tools"],
+    namespace: "qaBotToTask"
+  },
+  "age_AI": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/data-science-ai-era.jpg",
+    category: "ai-industry",
+    relatedCategories: ["ai-industry", "data-science"],
+    namespace: "ageAi"
+  },
+  "storyboard-labeling": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/storyboard-labeling-with-ai.jpg",
+    category: "video-analysis",
+    relatedCategories: ["video-analysis", "ai-tools"],
+    namespace: "storyboardLabeling"
+  },
+  "video-enhancement": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/video-enhancement-pipeline.png",
+    category: "video-enhancement",
+    relatedCategories: ["video-enhancement", "ai-tools"],
+    namespace: "videoEnhancement"
+  },
+  "video-evaluation": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/video-translation-eval.jpg",
+    category: "localization",
+    relatedCategories: ["localization", "video-translation"],
+    namespace: "videoEvaluation"
+  },
+  "storyboard-to-pipeline": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/ai-animation-pipeline.jpg",
+    category: "animation",
+    relatedCategories: ["animation", "video-tools"],
+    namespace: "storyboardToPipeline"
+  },
+  "agents-vs-workflows": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/agents-vs-workflows.jpg",
+    category: "generative-tools",
+    relatedCategories: ["generative-tools", "ai-tools"],
+    namespace: "agentsVsWorkflows"
+  },
+  "ae-vs-comfyui": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/ae-vs-comfyui.jpg",
+    category: "tools-pipeline",
+    relatedCategories: ["tools-pipeline", "video-tools"],
+    namespace: "aeVsComfyui"
+  },
+  
   // YouTube Translation blogs
   "translate-youtube-video": {
     titleKey: "title",
@@ -137,6 +211,15 @@ export default async function BlogPostPage({
 
   // Define which keys exist for each blog post type
   const availableKeys: Record<string, string[]> = {
+    'aiPlatform': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'qaBotToTask': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'ageAi': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'storyboardLabeling': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'videoEnhancement': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'videoEvaluation': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'storyboardToPipeline': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'agentsVsWorkflows': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'aeVsComfyui': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'translateYoutubevideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'translateYoutubeVideoToEnglish': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aiYoutubeVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
@@ -228,7 +311,7 @@ export default async function BlogPostPage({
           <AslTranslationContent slug={slug} t={t} tEn={tEn} />
         )}
         
-        {/* Fallback content for any missing content - only render if no specific component handled it */}
+        {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') && 
          !slug.startsWith('voice-cloning') && 
          slug !== 'what-is-voice-cloning' && 
