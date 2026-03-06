@@ -6,13 +6,90 @@ import TemplateLink, { TemplateSuggestions } from "@/app/[locale]/_components/Te
 import { getTemplatesByCategory } from "@/utils/blogUtils";
 import { notFound } from "next/navigation";
 
+// Force dynamic rendering to avoid static generation issues
+export const dynamic = 'force-dynamic';
+
 // Blog post configuration - this will contain all our blog posts
 const blogPosts = {
+  // Original blog posts
+  "aiPlatform": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/platformai.webp",
+    category: "ai-platform",
+    relatedCategories: ["ai-platform", "ai-tools"],
+    namespace: "aiPlatform"
+  },
+  "QA_Bot_to_Task": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/qa-bot-architecture.jpg",
+    category: "ai-architecture",
+    relatedCategories: ["ai-architecture", "ai-tools"],
+    namespace: "qaBotToTask"
+  },
+  "age_AI": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/data-science-ai-era.jpg",
+    category: "ai-industry",
+    relatedCategories: ["ai-industry", "data-science"],
+    namespace: "ageAi"
+  },
+  "storyboard-labeling": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/storyboard-labeling-with-ai.jpg",
+    category: "video-analysis",
+    relatedCategories: ["video-analysis", "ai-tools"],
+    namespace: "storyboardLabeling"
+  },
+  "video-enhancement": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/video-enhancement-pipeline.png",
+    category: "video-enhancement",
+    relatedCategories: ["video-enhancement", "ai-tools"],
+    namespace: "videoEnhancement"
+  },
+  "video-evaluation": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/video-translation-eval.jpg",
+    category: "localization",
+    relatedCategories: ["localization", "video-translation"],
+    namespace: "videoEvaluation"
+  },
+  "storyboard-to-pipeline": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/ai-animation-pipeline.jpg",
+    category: "animation",
+    relatedCategories: ["animation", "video-tools"],
+    namespace: "storyboardToPipeline"
+  },
+  "agents-vs-workflows": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/agents-vs-workflows.jpg",
+    category: "generative-tools",
+    relatedCategories: ["generative-tools", "ai-tools"],
+    namespace: "agentsVsWorkflows"
+  },
+  "ae-vs-comfyui": {
+    titleKey: "title",
+    descriptionKey: "intro",
+    image: "/images/ae-vs-comfyui.jpg",
+    category: "tools-pipeline",
+    relatedCategories: ["tools-pipeline", "video-tools"],
+    namespace: "aeVsComfyui"
+  },
+  
   // YouTube Translation blogs
   "translate-youtube-video": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/youtube-translation.jpg",
+    image: "/images/70s-looking-ai-image-1024x559.png",
     category: "video-translation",
     relatedCategories: ["video-translation", "subtitle-generation"],
     namespace: "translateYoutubevideo"
@@ -20,7 +97,7 @@ const blogPosts = {
   "translate-youtube-video-to-english": {
     titleKey: "title", 
     descriptionKey: "intro",
-    image: "/images/youtube-english-translation.jpg",
+    image: "/images/micro-world-illusion-prompt-1-1024x559.png",
     category: "video-translation",
     relatedCategories: ["video-translation", "video-dubbing"],
     namespace: "translateYoutubeVideoToEnglish"
@@ -28,7 +105,7 @@ const blogPosts = {
   "ai-youtube-video-translator": {
     titleKey: "title",
     descriptionKey: "intro", 
-    image: "/images/ai-youtube-translator.jpg",
+    image: "/images/impossible-crowd-control-prompt-1024x559.png", 
     category: "video-translation",
     relatedCategories: ["video-translation", "ai-tools"],
     namespace: "aiYoutubeVideoTranslator"
@@ -38,7 +115,7 @@ const blogPosts = {
   "what-is-voice-cloning": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/voice-cloning-basics.jpg",
+    image: "/images/13afe9a51466ddb3cd36344f90b46b02_thumb_1766410125845.jpg",
     category: "audio-ai",
     relatedCategories: ["audio-ai", "video-dubbing"],
     namespace: "whatIsVoiceCloning"
@@ -46,7 +123,7 @@ const blogPosts = {
   "voice-cloning-tools": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/voice-cloning-tools.jpg", 
+    image: "/images/f593c8c73c3972d943a6fcb28e32bcdd_thumb_1764943492218.jpg", 
     category: "audio-ai",
     relatedCategories: ["audio-ai", "video-dubbing"],
     namespace: "voiceCloningTools"
@@ -54,7 +131,7 @@ const blogPosts = {
   "f5-tts-voice-cloning": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/f5-tts-voice-cloning.jpg",
+    image: "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg",
     category: "audio-ai", 
     relatedCategories: ["audio-ai", "video-dubbing"],
     namespace: "f5TtsVoiceCloning"
@@ -64,7 +141,7 @@ const blogPosts = {
   "asl-video-translator": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/asl-video-translator.jpg",
+    image: "/images/cd9f11ae1593c57b9b73d647ca7497e6_thumb_1765981345671.jpg",
     category: "accessibility",
     relatedCategories: ["video-translation", "subtitle-generation"],
     namespace: "aslVideoTranslator"
@@ -72,7 +149,7 @@ const blogPosts = {
   "how-to-translate-asl-video": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/asl-translation-guide.jpg",
+    image: "/images/wristwatch-image-1024x559.png",
     category: "accessibility", 
     relatedCategories: ["video-translation", "accessibility"],
     namespace: "howToTranslateAslVideo"
@@ -103,11 +180,21 @@ export async function generateMetadata({
       description: t(blogConfig.descriptionKey),
     };
   } catch (error) {
-    // Fallback if translation not found
-    return {
-      title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-      description: "Learn more about AI-powered content creation tools",
-    };
+    // Fallback to English translations if locale translations not found
+    try {
+      const t = await getTranslations({ locale: 'en', namespace: `blog.${blogConfig.namespace}` });
+      
+      return {
+        title: t(blogConfig.titleKey),
+        description: t(blogConfig.descriptionKey),
+      };
+    } catch (fallbackError) {
+      // Final fallback if even English fails
+      return {
+        title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+        description: "Learn more about AI-powered content creation tools",
+      };
+    }
   }
 }
 
@@ -135,8 +222,30 @@ export default async function BlogPostPage({
     }
   }
 
+  // Try to get namespace-specific translations with fallback
+  let tNamespace = null;
+  try {
+    tNamespace = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
+  } catch (error) {
+    // Fallback to English if locale translations not found
+    try {
+      tNamespace = await getTranslations({ locale: 'en', namespace: `blog.${blogConfig.namespace}` });
+    } catch (fallbackError) {
+      // If even English fails, tNamespace will remain null and we'll use defaults
+    }
+  }
+
   // Define which keys exist for each blog post type
   const availableKeys: Record<string, string[]> = {
+    'aiPlatform': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'qaBotToTask': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'ageAi': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'storyboardLabeling': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'videoEnhancement': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'videoEvaluation': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'storyboardToPipeline': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'agentsVsWorkflows': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'aeVsComfyui': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'translateYoutubevideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'translateYoutubeVideoToEnglish': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aiYoutubeVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
@@ -154,33 +263,22 @@ export default async function BlogPostPage({
     if (!currentKeys.includes(key)) {
       return defaultValue;
     }
-    try {
-      const result = t(`${blogConfig.namespace}.${key}`);
-      // If the result is the same as the key, it means translation wasn't found
-      if (result === `${blogConfig.namespace}.${key}`) {
-        // Try English fallback
-        if (tEn) {
-          try {
-            const englishResult = tEn(`${blogConfig.namespace}.${key}`);
-            return englishResult !== `${blogConfig.namespace}.${key}` ? englishResult : defaultValue;
-          } catch (error) {
-            return defaultValue;
-          }
-        }
-        return defaultValue;
-      }
-      return result;
-    } catch (error) {
-      // Try English fallback
-      if (tEn) {
-        try {
-          return tEn(`${blogConfig.namespace}.${key}`);
-        } catch (error) {
+    
+    // Use namespace-specific translations if available
+    if (tNamespace) {
+      try {
+        const result = tNamespace(key);
+        // If the result is the same as the key, it means translation wasn't found
+        if (result === key) {
           return defaultValue;
         }
+        return result;
+      } catch (error) {
+        return defaultValue;
       }
-      return defaultValue;
     }
+    
+    return defaultValue;
   };
 
   // Helper to check if a translation key exists
@@ -199,7 +297,7 @@ export default async function BlogPostPage({
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           <CdnImage
             src={blogConfig.image}
-            alt={t(`${blogConfig.namespace}.${blogConfig.titleKey}`)}
+            alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
             width={400}
             height={250}
             className="rounded-lg object-cover"
@@ -207,12 +305,12 @@ export default async function BlogPostPage({
         </div>
         
         <h1 className="text-4xl font-bold mb-4">
-          {t(`${blogConfig.namespace}.${blogConfig.titleKey}`)}
+          {tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
         </h1>
         
         <div className="text-gray-600 mb-4">
-          {t(`${blogConfig.namespace}.date`, { defaultValue: "Latest Article" })} • {" "}
-          {t(`${blogConfig.namespace}.readTime`, { defaultValue: "5 min read" })}
+          {tNamespace ? tNamespace("date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
+          {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
         </div>
       </div>
 
@@ -228,7 +326,7 @@ export default async function BlogPostPage({
           <AslTranslationContent slug={slug} t={t} tEn={tEn} />
         )}
         
-        {/* Fallback content for any missing content - only render if no specific component handled it */}
+        {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') && 
          !slug.startsWith('voice-cloning') && 
          slug !== 'what-is-voice-cloning' && 

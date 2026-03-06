@@ -13,7 +13,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const home = (await import(`../messages/${locale}/home.json`)).default;
   const blog = (await import(`../messages/${locale}/blog.json`)).default;
   const pricing = (await import(`../messages/${locale}/pricing.json`)).default;
-  const agentsVsWorkflows = (await import(`../messages/${locale}/agentsVsWorkflows.json`)).default;
 
   return {
     locale,
@@ -21,8 +20,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...common,
       ...home,
       ...pricing,
-      ...blog,
-      agentsVsWorkflows
+      ...blog
     }
   };
 });
