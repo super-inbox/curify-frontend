@@ -77,6 +77,70 @@
         "readTime": "読了時間 7 分",
         "tag": "ツール＆パイプライン",
         "image": "/images/ae-vs-comfyui.jpg"
+      },
+      {
+        "slug": "ai-youtube-video-translator",
+        "title": "AI YouTube動画翻訳者：2026年のベストツールと方法",
+        "date": "March 4, 2026",
+        "readTime": "11 min read",
+        "tag": "Video Translation",
+        "image": "/images/ai-youtube-translator.jpg"
+      },
+      {
+        "slug": "asl-video-translator",
+        "title": "ASLビデオ翻訳者：手話翻訳ツール",
+        "date": "March 4, 2026",
+        "readTime": "6 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-video-translator.jpg"
+      },
+      {
+        "slug": "f5-tts-voice-cloning",
+        "title": "F5-TTS音声クローン：プロフェッショナルAI音声ソリューション",
+        "date": "March 4, 2026",
+        "readTime": "7 min read",
+        "tag": "AI Audio",
+        "image": "/images/f5-tts-voice-cloning.jpg"
+      },
+      {
+        "slug": "how-to-translate-asl-video",
+        "title": "ASLビデオを翻訳する方法：完全ガイド",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-translation-guide.jpg"
+      },
+      {
+        "slug": "translate-youtube-video",
+        "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
+        "date": "March 4, 2026",
+        "readTime": "12 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-translation.jpg"
+      },
+      {
+        "slug": "translate-youtube-video-to-english",
+        "title": "YouTube動画を英語に翻訳する：AI駆動のソリューション",
+        "date": "March 4, 2026",
+        "readTime": "10 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-english-translation.jpg"
+      },
+      {
+        "slug": "voice-cloning-tools",
+        "title": "最高の音声クローンツール：F5-TTS、ElevenLabsなど",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-tools.jpg"
+      },
+      {
+        "slug": "what-is-voice-cloning",
+        "title": "音声クローンとは？AI音声技術の理解",
+        "date": "March 4, 2026",
+        "readTime": "9 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-basics.jpg"
       }
     ],
     "translateYoutubevideo": {
@@ -422,23 +486,42 @@
   "video_translation_eval": {
     "title": "AI動画翻訳品質の評価",
     "subtitle": "本当に重要な指標",
+    "description": "AI動画翻訳品質評価に関する包括的なガイド。文字起こし、翻訳、音声合成、リップシンク、意味保持、ユーザーフィードバックなど、各工程の評価指標を詳しく解説します。",
     "intro": "動画を多言語に翻訳するには、文字起こし、翻訳、音声合成、タイミング調整など、多くの工程が必要です。Curifyでは、各工程が業界水準を満たすよう、堅牢な評価パイプラインを構築しています。",
     "section1_title": "1. 文字起こし品質",
     "section1_engine": "エンジン: WhisperX",
-    "section1_metrics": "\"WER（Word Error Rate）、句読点 F1（表現力と読みやすさのため）\"",
+    "section1_metrics": [
+      "WER（Word Error Rate）",
+      "句読点 F1（表現力と読みやすさのため）"
+    ],
     "section2_title": "2. 翻訳品質",
     "section2_engine": "エンジン: Helsinki, MarianMT",
-    "section2_metrics": "\"BLEU（標準メトリック）、COMET / chrF++（意味の類似性）、人間によるレビュー：流暢さ + 適切さ\"",
+    "section2_metrics": [
+      "BLEU（標準メトリック）",
+      "COMET / chrF++（意味の類似性）",
+      "人間によるレビュー：流暢さ + 適切さ"
+    ],
     "section3_title": "3. 音声合成品質",
     "section3_engine": "エンジン: XTTS / YourTTS",
-    "section3_metrics": "\"MOS（自然さ、類似性、表現力）、スピーカー認証の精度\"",
+    "section3_metrics": [
+      "MOS（自然さ、類似性、表現力）",
+      "スピーカー認証の精度"
+    ],
     "section4_title": "4. アライメントとリップシンク",
-    "section4_metrics": "\"セグメントの長さの不一致、Wav2Lip同期信頼度、時間的なずれの分析\"",
+    "section4_metrics": [
+      "セグメントの長さの不一致",
+      "Wav2Lip同期信頼度",
+      "時間的なずれの分析"
+    ],
     "section5_title": "5. 意味保持",
     "section5_method": "翻訳後の音声が元の意味・トーン・感情を保持しているかを、GPT-4などのLLMで評価します。例: ",
     "section5_prompt": "この中国語（標準語）の書き起こしと英語音声を比較し、トーン・意図・内容が一致しているかを1〜5で評価し、理由を説明してください。",
     "section6_title": "6. ユーザーフィードバックとGTM検証",
-    "section6_metrics": "\"製品カテゴリに適した音声品質、視聴者の滞在時間の向上、初期ユーザーからの採用意欲（例：1688のセラー）\"",
+    "section6_metrics": [
+      "製品カテゴリに適した音声品質",
+      "視聴者の滞在時間の向上",
+      "初期ユーザーからの採用意欲（例：1688のセラー）"
+    ],
     "closing": "Curifyは単なる翻訳ではなく、言語をまたいで物語性・感情・明瞭さを保ちます。世界展開を始めるなら、ぜひご相談ください。",
     "available_locales": "記事対応言語: [EN] [ZH] [ES] [DE]"
   },
@@ -839,7 +922,7 @@
             "description": "インタビューセットの全体像"
           },
           {
-            "type": "close_up", 
+            "type": "close_up",
             "description": "スピーカーの表情やジェスチャー"
           }
         ]
@@ -1048,7 +1131,11 @@
       "gateway": {
         "title": "A. 統合モデルゲートウェイ",
         "content": "一つのベンダーに依存してはいけません。以下の間でシームレスにリクエストをルーティングします：",
-        "points": "\"商用LLMs（GPT-4、Claudeなど）- トップティアの推論用。,プライベートモデル（Llama、Qwen）- 機密データとコスト管理用。,スペシャリストモデル- コーディング、ビジョン、または低遅延タスク用。\"",
+        "points": [
+          "商用LLMs（GPT-4、Claudeなど）- トップティアの推論用。",
+          "プライベートモデル（Llama、Qwen）- 機密データとコスト管理用。",
+          "スペシャリストモデル- コーディング、ビジョン、または低遅延タスク用。"
+        ],
         "conclusion": "ゲートウェイはリトライ、フォールバック、コスト追跡、レート制限を処理するため、開発者は単に`platform.generate()`を呼び出すだけです。"
       },
       "knowledge": {
@@ -1060,14 +1147,25 @@
         "title": "C. オーケストレーション層",
         "content": "コードファーストのAIは強力ですが、ワークフローファーストのAIの方が速い場合があります。",
         "example": "低コードツール（Dify、coze、n8nなど）を使用してステップを連鎖させます：",
-        "workflow": "ユーザークエリ、ドキュメントの取得、ツールの呼び出し（API、SQL）、理由、出力",
+        "workflow": [
+          "ユーザークエリ",
+          "ドキュメントの取得",
+          "ツールの呼び出し（API、SQL）",
+          "理由",
+          "出力"
+        ],
         "conclusion": "これにより、製品チームは数週間ではなく数時間でエージェントのプロトタイプを作成できます。"
       }
     },
     "fineTuning": {
       "title": "3. ファインチューニングは（ほとんどの場合）スキップする",
       "content": "秘密を教えましょう：**おそらくLLMのファインチューニングは必要ありません。**",
-      "strategies": "\"より良いプロンプト：体系的なエンジニアリングがランダムな調整を上回ります。,高品質なRAG：クリーンで構造化された知識がよりスマートなモデルを上回ります。,マルチモデル融合：理論にはGPT-4を、抽出にはローカルモデルを、クリエイティブなタスクにはClaudeを使用します。,LLMを裁判官として：強力なモデルを使用して、より安価なモデルの出力を評価します。\"",
+      "strategies": [
+          "より良いプロンプト：体系的なエンジニアリングがランダムな調整を上回ります。",
+          "高品質なRAG：クリーンで構造化された知識がよりスマートなモデルを上回ります。",
+          "マルチモデル融合：理論にはGPT-4を、抽出にはローカルモデルを、クリエイティブなタスクにはClaudeを使用します。",
+          "LLMを裁判官として：強力なモデルを使用して、より安価なモデルの出力を評価します。"
+        ],
       "conclusion": "私たちは、高品質なドメイン内データを収集・クリーニングする長いプロセスの後、狭くてボリュームの多いタスクにのみ小さなモデルをファインチューニングします。それ以外はすべて『トレーニングよりもエンジニアリング』です。"
     },
     "essentialWork": {
@@ -1103,12 +1201,46 @@
     "intro": "このガイドでは、静的ルール、動的スキル、決定論的フックを使用して、モノリシックなQAボットからタスクエージェントへのアーキテクチャの移行について、具体的なコード例とオープンソースのリファレンスを交えて説明します。",
     "coreShift": {
       "title": "1. 中核的な転換：QAボット → タスクエージェント",
-      "content": "現在のほとんどのAIシステムは、まだコンテキストに満ちたQAボットです:、• 彼らは質問にうまく答えます、• 彼らはプレッシャーの下で幻覚を起こします、• 実行、安全性、一貫性に関する保証が欠けています\"",
+      "content": [
+        "現在のほとんどのAIシステムは、まだコンテキストに満ちたQAボットです:",
+        "• 彼らは質問にうまく答えます",
+        "• 彼らはプレッシャーの下で幻覚を起こします",
+        "• 実行、安全性、一貫性に関する保証が欠けています"
+      ],
       "keyInsight": "重要な洞察：コンテキストをスケールするのではなく、構造化しましょう。"
     },
     "threeLayerArch": {
       "title": "2. 3層アーキテクチャ",
-      "layers": "\"[object Object],[object Object],[object Object]\"  \n\"[オブジェクト オブジェクト],[オブジェクト オブジェクト],[オブジェクト オブジェクト]\""
+      "layers": [
+        {
+          "title": "🧱 1. 静的コンテキスト — ルール（常時オン）",
+          "points": [
+            "メンタルモデル：従業員ハンドブック",
+            "常にロードされている",
+            "アイデンティティ、コーディング標準、行動制約を定義する",
+            "ハルシネーションとスタイルのドリフトを防ぐ",
+            "小さく、安定しており、人間が編集可能"
+          ]
+        },
+        {
+          "title": "🛠️ 2. 動的コンテキスト — スキル（オンデマンド）",
+          "points": [
+            "メンタルモデル：ツールボックス",
+            "必要な時のみロードされる",
+            "各スキルは自己完結型の能力",
+            "コンテキストウィンドウをクリーンに保つ"
+          ]
+        },
+        {
+          "title": "⚓ 3. 決定論的フック — ガードレール",
+          "points": [
+            "メンタルモデル：セキュリティ + コンプライアンス層",
+            "確率的ではない",
+            "LLM推論の前後に実行される",
+            "絶対に失敗してはならないルールを強制する"
+          ]
+        }
+      ]
     },
     "projectStructure": {
       "title": "3. 推奨プロジェクト構成",

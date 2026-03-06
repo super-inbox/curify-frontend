@@ -7,6 +7,54 @@
     "latestArticles": "Neueste Artikel",
     "posts": [
       {
+        "slug": "f5-tts-voice-cloning",
+        "title": "F5-TTS Sprachklonung: Professionelle KI-Sprachlösungen",
+        "date": "March 4, 2026",
+        "readTime": "7 min read",
+        "tag": "AI Audio",
+        "image": "/images/f5-tts-voice-cloning.jpg"
+      },
+      {
+        "slug": "how-to-translate-asl-video",
+        "title": "Wie man ASL-Videos übersetzt: Vollständiger Leitfaden",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-translation-guide.jpg"
+      },
+      {
+        "slug": "translate-youtube-video",
+        "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
+        "date": "March 4, 2026",
+        "readTime": "12 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-translation.jpg"
+      },
+      {
+        "slug": "translate-youtube-video-to-english",
+        "title": "YouTube-Videos ins Englische übersetzen: KI-gestützte Lösungen",
+        "date": "March 4, 2026",
+        "readTime": "10 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-english-translation.jpg"
+      },
+      {
+        "slug": "what-is-voice-cloning",
+        "title": "Was ist Sprachklonung? Verständnis der KI-Sprachtechnologie",
+        "date": "March 4, 2026",
+        "readTime": "9 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-basics.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
+        "date": "30. Januar 2026",
+        "readTime": "8 Min. Lesezeit",
+        "tag": "KI-Branche",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
         "slug": "aiPlatform",
         "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
         "date": "30. Januar 2026",
@@ -21,14 +69,6 @@
         "readTime": "6 Min. Lesezeit",
         "tag": "KI-Architektur",
         "image": "/images/qa-bot-architecture.jpg"
-      },
-      {
-        "slug": "age_AI",
-        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
-        "date": "30. Januar 2026",
-        "readTime": "8 Min. Lesezeit",
-        "tag": "KI-Branche",
-        "image": "/images/data-science-ai-era.jpg"
       },
       {
         "slug": "storyboard-labeling",
@@ -77,6 +117,30 @@
         "readTime": "7 Min. Lesezeit",
         "tag": "Tools & Pipeline",
         "image": "/images/ae-vs-comfyui.jpg"
+      },
+      {
+        "slug": "ai-youtube-video-translator",
+        "title": "KI YouTube Video Übersetzer: Beste Tools & Methoden 2026",
+        "date": "March 4, 2026",
+        "readTime": "11 min read",
+        "tag": "Video Translation",
+        "image": "/images/ai-youtube-translator.jpg"
+      },
+      {
+        "slug": "asl-video-translator",
+        "title": "ASL Video Translator: Werkzeuge zur Übersetzung von Gebärdensprache",
+        "date": "March 4, 2026",
+        "readTime": "6 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-video-translator.jpg"
+      },
+      {
+        "slug": "voice-cloning-tools",
+        "title": "Beste Sprachklonungstools: F5-TTS, ElevenLabs & mehr",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-tools.jpg"
       }
     ],
     "translateYoutubevideo": {
@@ -422,23 +486,42 @@
   "video_translation_eval": {
     "title": "Bewertung von KI-gestützter Videoübersetzung",
     "subtitle": "Relevante Qualitätsmetriken",
+    "description": "Entdecken Sie, wie wir die Qualität der KI-Videoübersetzung mit wichtigen Metriken wie WER, BLEU, MOS und mehr bewerten.",
     "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
     "section1_title": "1. Transkriptionsqualität",
     "section1_engine": "Motor: WhisperX",
-    "section1_metrics": "\"WER (Wortfehlerrate), Satzzeichen F1 (für Ausdruck und Lesbarkeit)\"",
+    "section1_metrics": [
+      "WER (Wortfehlerrate)",
+      "Satzzeichen F1 (für Ausdruck und Lesbarkeit)"
+    ],
     "section2_title": "2. Übersetzungsqualität",
     "section2_engine": "Motoren: Helsinki, MarianMT",
-    "section2_metrics": "\"BLEU (Standardmetrik), COMET / chrF++ (semantische Ähnlichkeit), Menschliche Überprüfung: Flüssigkeit + Angemessenheit\"",
+    "section2_metrics": [
+      "BLEU (Standardmetrik)",
+      "COMET / chrF++ (semantische Ähnlichkeit)",
+      "Menschliche Überprüfung: Flüssigkeit + Angemessenheit"
+    ],
     "section3_title": "3. Sprachsynthesequalität",
     "section3_engine": "Motoren: XTTS / YourTTS",
-    "section3_metrics": "MOS (Natürlichkeit, Ähnlichkeit, Ausdrucksstärke), Sprecher-Verifizierungsgenauigkeit",
+    "section3_metrics": [
+      "MOS (Natürlichkeit, Ähnlichkeit, Ausdrucksstärke)",
+      "Sprecher-Verifizierungsgenauigkeit"
+    ],
     "section4_title": "4. Timing & Lippensynchronisation",
-    "section4_metrics": "\"Segmentdauerabweichung, Wav2Lip-Synchronisationsvertrauen, Analyse der zeitlichen Drift\"",
+    "section4_metrics": [
+      "Segmentdauerabweichung",
+      "Wav2Lip-Synchronisationsvertrauen",
+      "Analyse der zeitlichen Drift"
+    ],
     "section5_title": "5. Semantische Erhaltung",
     "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
     "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
     "section6_title": "6. Nutzerfeedback & GTM-Validierung",
-    "section6_metrics": "\"Sprachqualität passend zur Produktkategorie, Verbesserung der Zuschauerbindung, Bereitschaft zur Übernahme durch frühe Benutzer (z. B. 1688-Verkäufer)\"",
+    "section6_metrics": [
+      "Sprachqualität passend zur Produktkategorie",
+      "Verbesserung der Zuschauerbindung",
+      "Bereitschaft zur Übernahme durch frühe Benutzer (z. B. 1688-Verkäufer)"
+    ],
     "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
     "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
   },
@@ -1075,11 +1158,11 @@
       "title": "3. Überspringen Sie das Feinabstimmen (meistens)",
       "content": "**Hier ist das Geheimnis: Sie müssen ein LLM wahrscheinlich nicht feinabstimmen.**",
       "strategies": [
-          "Bessere Hinweise: Systematisches Engineering schlägt zufälliges Feintuning.",
-          "Hochwertiger RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.",
-          "Multi-Model-Fusion: Verwenden Sie GPT-4 für das Argumentieren, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.",
-          "LLM-als-Richter: Verwenden Sie ein starkes Modell, um Ausgaben von kostengünstigeren Modellen zu bewerten."
-        ],
+        "Bessere Hinweise: Systematisches Engineering schlägt zufälliges Feintuning.",
+        "Hochwertiger RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.",
+        "Multi-Model-Fusion: Verwenden Sie GPT-4 für das Argumentieren, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.",
+        "LLM-als-Richter: Verwenden Sie ein starkes Modell, um Ausgaben von kostengünstigeren Modellen zu bewerten."
+      ],
       "conclusion": "Wir stimmen nur kleine Modelle für enge, hochvolumige Aufgaben nach einem langen Prozess der Sammlung und Bereinigung hochwertiger domänenspezifischer Daten fein. Alles andere ist 'Engineering statt Training'."
     },
     "essentialWork": {

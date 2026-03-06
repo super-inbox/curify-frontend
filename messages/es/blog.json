@@ -77,6 +77,70 @@
         "readTime": "7 min de lectura",
         "tag": "Herramientas y Pipeline",
         "image": "/images/ae-vs-comfyui.jpg"
+      },
+      {
+        "slug": "translate-youtube-video",
+        "title": "Cómo traducir videos de YouTube: guía completa paso a paso",
+        "date": "4 de marzo de 2026",
+        "readTime": "12 min de lectura",
+        "tag": "Traducción de Video",
+        "image": "/images/youtube-translation.jpg"
+      },
+      {
+        "slug": "translate-youtube-video-to-english",
+        "title": "Traducir videos de YouTube al inglés: soluciones impulsadas por IA",
+        "date": "4 de marzo de 2026",
+        "readTime": "10 min de lectura",
+        "tag": "Traducción de Video",
+        "image": "/images/youtube-english-translation.jpg"
+      },
+      {
+        "slug": "ai-youtube-video-translator",
+        "title": "Traductor de videos de YouTube por IA: mejores herramientas y métodos 2026",
+        "date": "4 de marzo de 2026",
+        "readTime": "11 min de lectura",
+        "tag": "Traducción de Video",
+        "image": "/images/ai-youtube-translator.jpg"
+      },
+      {
+        "slug": "what-is-voice-cloning",
+        "title": "¿Qué es la Clonación de Voz? Entendiendo la Tecnología de Voz AI",
+        "date": "4 de marzo de 2026",
+        "readTime": "9 min de lectura",
+        "tag": "Audio IA",
+        "image": "/images/voice-cloning-basics.jpg"
+      },
+      {
+        "slug": "voice-cloning-tools",
+        "title": "Mejores Herramientas de Clonación de Voz: F5-TTS, ElevenLabs y Más",
+        "date": "4 de marzo de 2026",
+        "readTime": "8 min de lectura",
+        "tag": "Audio IA",
+        "image": "/images/voice-cloning-tools.jpg"
+      },
+      {
+        "slug": "f5-tts-voice-cloning",
+        "title": "Clonación de Voz F5-TTS: Soluciones Profesionales de Voz AI",
+        "date": "4 de marzo de 2026",
+        "readTime": "7 min de lectura",
+        "tag": "Audio IA",
+        "image": "/images/f5-tts-voice-cloning.jpg"
+      },
+      {
+        "slug": "asl-video-translator",
+        "title": "Traductor de Video ASL: Herramientas de Traducción de Lengua de Señas",
+        "date": "4 de marzo de 2026",
+        "readTime": "6 min de lectura",
+        "tag": "Accesibilidad",
+        "image": "/images/asl-video-translator.jpg"
+      },
+      {
+        "slug": "how-to-translate-asl-video",
+        "title": "Cómo Traducir Video ASL: Guía Completa",
+        "date": "4 de marzo de 2026",
+        "readTime": "8 min de lectura",
+        "tag": "Accesibilidad",
+        "image": "/images/asl-translation-guide.jpg"
       }
     ],
     "translateYoutubevideo": {
@@ -422,23 +486,42 @@
   "video_translation_eval": {
     "title": "Evaluando la Calidad de la Traducción de Video con IA",
     "subtitle": "Métricas que Importan",
+    "description": "Descubre cómo evaluamos la calidad de la traducción de video con IA utilizando métricas clave como WER, BLEU, MOS y más.",
     "intro": "Traducir videos entre idiomas no es una tarea pequeña: implica transcripción, traducción, síntesis de voz, sincronización y más. En Curify, hemos construido una tubería de evaluación robusta para asegurar que cada pieza cumpla con los estándares de la industria.",
     "section1_title": "1. Calidad de Transcripción",
     "section1_engine": "Motor: WhisperX",
-    "section1_metrics": "\"WER (Tasa de Error de Palabras), F1 de Puntuación (para expresividad y legibilidad)\"",
+    "section1_metrics": [
+      "WER (Tasa de Error de Palabras)",
+      "F1 de Puntuación (para expresividad y legibilidad)"
+    ],
     "section2_title": "2. Calidad de Traducción",
     "section2_engine": "Motores: Helsinki, MarianMT",
-    "section2_metrics": "\"BLEU (métrica estándar), COMET / chrF++ (similitud semántica), Revisión humana: fluidez + adecuación\"",
+    "section2_metrics": [
+      "BLEU (métrica estándar)",
+      "COMET / chrF++ (similitud semántica)",
+      "Revisión humana: fluidez + adecuación"
+    ],
     "section3_title": "3. Calidad de Síntesis de Voz",
     "section3_engine": "Motores: XTTS / YourTTS",
-    "section3_metrics": "\"MOS (Naturalidad, similitud, expresividad), precisión de verificación del hablante\"",
+    "section3_metrics": [
+      "MOS (Naturalidad, similitud, expresividad)",
+      "precisión de verificación del hablante"
+    ],
     "section4_title": "4. Alineación y Sincronización Labial",
-    "section4_metrics": "\"Desajuste en la duración del segmento, Confianza de sincronización Wav2Lip, Análisis de deriva temporal\"",
+    "section4_metrics": [
+      "Desajuste en la duración del segmento",
+      "Confianza de sincronización Wav2Lip",
+      "Análisis de deriva temporal"
+    ],
     "section5_title": "5. Preservación Semántica",
     "section5_method": "Usamos LLMs (como GPT-4) para juzgar si el habla traducida preserva el significado, el tono y la emoción originales. Ejemplo de prompt:",
     "section5_prompt": "Compara esta transcripción en mandarín con la voz en off en inglés. ¿Coinciden el tono, la intención y el contenido? Califica del 1 al 5 y explica.",
     "section6_title": "6. Comentarios de Usuarios y Validación GTM",
-    "section6_metrics": "\"Calidad de voz adecuada para la categoría del producto, mejora de la retención de espectadores, disposición a la adopción por parte de los usuarios tempranos (por ejemplo, vendedores de 1688)\"",
+    "section6_metrics": [
+      "Calidad de voz adecuada para la categoría del producto",
+      "mejora de la retención de espectadores",
+      "disposición a la adopción por parte de los usuarios tempranos (por ejemplo, vendedores de 1688)"
+    ],
     "closing": "En Curify, no solo traducimos, preservamos la narración, la emoción y la claridad en todos los idiomas. Si estás listo para escalar tu voz globalmente, contáctanos.",
     "available_locales": "Publicación disponible en: [EN] [ZH] [ES] [DE]"
   },
@@ -957,12 +1040,46 @@
     "intro": "Esta guía explica el cambio arquitectónico de bots de QA monolíticos a Agentes de Tareas utilizando Reglas Estáticas, Habilidades Dinámicas y Hooks Deterministas—con ejemplos de código concretos y referencias de código abierto.",
     "coreShift": {
       "title": "1. El Cambio Central: Bot de QA → Agente de Tareas",
-      "content": "La mayoría de los sistemas de IA actuales siguen siendo bots de QA repletos de contexto: • Responden bien a las preguntas, • Alucinan bajo presión, • Carecen de garantías en cuanto a ejecución, seguridad y consistencia.",
+      "content": [
+        "La mayoría de los sistemas de IA actuales siguen siendo bots de QA repletos de contexto:",
+        "• Responden bien a las preguntas",
+        "• Alucinan bajo presión", 
+        "• Carecen de garantías en cuanto a ejecución, seguridad y consistencia"
+      ],
       "keyInsight": "La clave: No escales el contexto. Estrutúralo."
     },
     "threeLayerArch": {
       "title": "2. La Arquitectura de Tres Capas",
-      "layers": "\"[objeto Objeto],[objeto Objeto],[objeto Objeto]\""
+      "layers": [
+        {
+          "title": "🧱 1. Contexto Estático — Reglas (Siempre Activas)",
+          "points": [
+            "Modelo mental: Manual del empleado",
+            "Siempre cargado",
+            "Define identidad, estándares de código, restricciones de comportamiento",
+            "Previene alucinaciones y deriva de estilo",
+            "Pequeño, estable, editable por humanos"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Contexto Dinámico — Habilidades (Bajo Demanda)",
+          "points": [
+            "Modelo mental: Caja de herramientas",
+            "Cargado solo cuando se necesita",
+            "Cada habilidad es una capacidad autocontenida",
+            "Mantiene limpia la ventana de contexto"
+          ]
+        },
+        {
+          "title": "⚓ 3. Hooks Deterministas — Barandillas",
+          "points": [
+            "Modelo mental: Capa de Seguridad + Cumplimiento",
+            "No probabilístico",
+            "Se ejecuta antes / después del razonamiento LLM",
+            "Fuerza reglas que nunca deben fallar"
+          ]
+        }
+      ]
     },
     "projectStructure": {
       "title": "3. Estructura de Proyecto Recomendada",
@@ -1068,7 +1185,11 @@
       "gateway": {
         "title": "A. La Pasarela Unificada de Modelos",
         "content": "No te cases con un solo proveedor. Enruta solicitudes sin problemas entre:",
-        "points": "\"LLMs comerciales (GPT‑4, Claude, etc.) — para razonamiento de primer nivel.,Modelos privados (Llama, Qwen) — para datos sensibles y control de costos.,Modelos especializados — para codificación, visión o tareas de baja latencia.\"",
+        "points": [
+          "LLMs comerciales (GPT‑4, Claude, etc.) — para razonamiento de primer nivel.",
+          "Modelos privados (Llama, Qwen) — para datos sensibles y control de costos.",
+          "Modelos especializados — para codificación, visión o tareas de baja latencia."
+        ],
         "conclusion": "La pasarela maneja reintentos, respaldos, seguimiento de costos y límites de tasa, por lo que los desarrolladores solo necesitan llamar a `platform.generate()`."
       },
       "knowledge": {
@@ -1080,7 +1201,13 @@
         "title": "C. La Capa de Orquestación",
         "content": "La IA 'code-first' es poderosa; la IA 'workflow-first' es más rápida.",
         "example": "Usamos herramientas de bajo código (como Dify, coze, n8n, etc.) para encadenar pasos:",
-        "workflow": "\"Consulta de usuario, Recuperar documentos, Llamar herramienta (API, SQL), Razón, Salida\"",
+        "workflow": [
+          "Consulta de usuario",
+          "Recuperar documentos", 
+          "Llamar herramienta (API, SQL)",
+          "Razón",
+          "Salida"
+        ],
         "conclusion": "Esto permite a los equipos de producto prototipar agentes en horas, no en semanas."
       }
     },

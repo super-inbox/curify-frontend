@@ -7,6 +7,38 @@
     "latestArticles": "Derniers Articles",
     "posts": [
       {
+        "slug": "f5-tts-voice-cloning",
+        "title": "Clonage Vocal F5-TTS : Solutions Vocales AI Professionnelles",
+        "date": "March 4, 2026",
+        "readTime": "7 min read",
+        "tag": "AI Audio",
+        "image": "/images/f5-tts-voice-cloning.jpg"
+      },
+      {
+        "slug": "translate-youtube-video",
+        "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
+        "date": "March 4, 2026",
+        "readTime": "12 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-translation.jpg"
+      },
+      {
+        "slug": "translate-youtube-video-to-english",
+        "title": "Traduire des vidéos YouTube en anglais : Solutions alimentées par l'IA",
+        "date": "March 4, 2026",
+        "readTime": "10 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-english-translation.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "La science des données à l'ère de l'IA: le \"travail le plus sexy\" l'est-il toujours?",
+        "date": "30 janvier 2026",
+        "readTime": "8 min de lecture",
+        "tag": "Industrie de l'IA",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
         "slug": "aiPlatform",
         "title": "Le guide des entreprises de taille moyenne pour réussir en IA",
         "date": "30 janvier 2026",
@@ -23,20 +55,52 @@
         "image": "/images/qa-bot-architecture.jpg"
       },
       {
-        "slug": "age_AI",
-        "title": "La science des données à l'ère de l'IA: le \"travail le plus sexy\" l'est-il toujours?",
-        "date": "30 janvier 2026",
-        "readTime": "8 min de lecture",
-        "tag": "Industrie de l'IA",
-        "image": "/images/data-science-ai-era.jpg"
-      },
-      {
         "slug": "storyboard-labeling",
         "title": "Des images brutes aux story-boards: analyse vidéo assistée par IA",
         "date": "11 décembre 2025",
         "readTime": "10 min de lecture",
         "tag": "Analyse vidéo",
         "image": "/images/storyboard-labeling-with-ai.jpg"
+      },
+      {
+        "slug": "ai-youtube-video-translator",
+        "title": "Traducteur de vidéos YouTube par IA : Meilleurs outils et méthodes 2026",
+        "date": "March 4, 2026",
+        "readTime": "11 min read",
+        "tag": "Video Translation",
+        "image": "/images/ai-youtube-translator.jpg"
+      },
+      {
+        "slug": "asl-video-translator",
+        "title": "Traducteur Vidéo ASL : Outils de Traduction en Langue des Signes",
+        "date": "March 4, 2026",
+        "readTime": "6 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-video-translator.jpg"
+      },
+      {
+        "slug": "how-to-translate-asl-video",
+        "title": "Comment Traduire une Vidéo ASL : Guide Complet",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-translation-guide.jpg"
+      },
+      {
+        "slug": "voice-cloning-tools",
+        "title": "Meilleurs Outils de Clonage Vocal : F5-TTS, ElevenLabs & Plus",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-tools.jpg"
+      },
+      {
+        "slug": "what-is-voice-cloning",
+        "title": "Qu'est-ce que le Clonage Vocal ? Comprendre la Technologie Vocale AI",
+        "date": "March 4, 2026",
+        "readTime": "9 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-basics.jpg"
       },
       {
         "slug": "video-enhancement",
@@ -55,12 +119,12 @@
         "image": "/images/video-translation-eval.jpg"
       },
       {
-        "slug": "storyboard-to-pipeline",
-        "title": "Créez votre propre animation de bande dessinée assistée par IA: guide étape par étape",
+        "slug": "ae-vs-comfyui",
+        "title": "Partie 3: AE vs ComfyUI – motion design vs pipelines de diffusion",
         "date": "28 octobre 2025",
-        "readTime": "5 min de lecture",
-        "tag": "Animation",
-        "image": "/images/ai-animation-pipeline.jpg"
+        "readTime": "7 min de lecture",
+        "tag": "Outils et Pipeline",
+        "image": "/images/ae-vs-comfyui.jpg"
       },
       {
         "slug": "agents-vs-workflows",
@@ -71,12 +135,12 @@
         "image": "/images/agents-vs-workflows.jpg"
       },
       {
-        "slug": "ae-vs-comfyui",
-        "title": "Partie 3: AE vs ComfyUI – motion design vs pipelines de diffusion",
+        "slug": "storyboard-to-pipeline",
+        "title": "Créez votre propre animation de bande dessinée assistée par IA: guide étape par étape",
         "date": "28 octobre 2025",
-        "readTime": "7 min de lecture",
-        "tag": "Outils et Pipeline",
-        "image": "/images/ae-vs-comfyui.jpg"
+        "readTime": "5 min de lecture",
+        "tag": "Animation",
+        "image": "/images/ai-animation-pipeline.jpg"
       }
     ],
     "translateYoutubevideo": {
@@ -424,7 +488,8 @@
   "video_translation_eval": {
     "title": "Évaluation de la qualité de la traduction vidéo IA",
     "subtitle": "Des mesures qui comptent",
-    "intro": "Traduire des vidéos dans plusieurs langues n'est pas une mince affaire: cela implique une transcription, une traduction, une synthèse vocale, un timing, etc. Chez Curify, nous avons construit un solide pipeline d’évaluation pour garantir que chaque pièce répond aux normes de l’industrie.",
+    "description": "Découvrez les métriques essentielles pour évaluer la qualité de la traduction vidéo par IA, de la transcription à la synthèse vocale.",
+    "intro": "Traduire des vidéos dans plusieurs langues n'est pas une mince affaire: cela implique une transcription, une traduction, une synthèse vocale, un timing, etc. Chez Curify, nous avons construit un solide pipeline d'évaluation pour garantir que chaque pièce répond aux normes de l'industrie.",
     "section1_title": "1. Qualité des transcriptions",
     "section1_engine": "Moteur: WhisperX",
     "section1_metrics": [
@@ -982,12 +1047,46 @@
     "intro": "Ce guide explique le passage architectural des robots d'assurance qualité monolithiques aux agents de tâches utilisant des règles statiques, des compétences dynamiques et des hooks déterministes, avec des exemples de code concrets et des références open source.",
     "coreShift": {
       "title": "1. Le changement de base: Bot QA → Agent de tâche",
-      "content": "La plupart des systèmes d'IA d'aujourd'hui sont encore des chatbots de questions-réponses bourrés de contexte : • Ils répondent bien aux questions, • Ils hallucinent sous pression, • Ils manquent de garanties en matière d'exécution, de sécurité et de cohérence.",
+      "content": [
+        "La plupart des systèmes d'IA d'aujourd'hui sont encore des chatbots de questions-réponses bourrés de contexte :",
+        "• Ils répondent bien aux questions",
+        "• Ils hallucinent sous pression",
+        "• Ils manquent de garanties en matière d'exécution, de sécurité et de cohérence"
+      ],
       "keyInsight": "L’idée clé: ne faites pas évoluer le contexte. Structurez-le."
     },
     "threeLayerArch": {
       "title": "2. L'architecture à trois couches",
-      "layers": "\"[objet Objet],[objet Objet],[objet Objet]\""
+      "layers": [
+        {
+          "title": "🧱 1. Contexte Statique — Règles (Toujours Actives)",
+          "points": [
+            "Modèle mental: Manuel de l'employé",
+            "Toujours chargé",
+            "Définit l'identité, les standards de code, les contraintes comportementales",
+            "Prévient les hallucinations et la dérive de style",
+            "Petit, stable, modifiable par l'homme"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Contexte Dynamique — Compétences (À la Demande)",
+          "points": [
+            "Modèle mental: Boîte à outils",
+            "Chargé uniquement lorsque nécessaire",
+            "Chaque compétence est une capacité auto-contenue",
+            "Garde la fenêtre de contexte propre"
+          ]
+        },
+        {
+          "title": "⚓ 3. Hooks Déterministes — Garde-fous",
+          "points": [
+            "Modèle mental: Couche de Sécurité + Conformité",
+            "Non probabiliste",
+            "S'exécute avant / après le raisonnement LLM",
+            "Force les règles qui ne doivent jamais échouer"
+          ]
+        }
+      ]
     },
     "projectStructure": {
       "title": "3. Structure de projet recommandée",
@@ -1093,7 +1192,11 @@
       "gateway": {
         "title": "A. La passerelle modèle unifiée",
         "content": "N'épousez pas un seul vendeur. Acheminez les demandes de manière transparente entre:",
-        "points": "\"LLM commerciaux (GPT-4, Claude, etc.) - pour un raisonnement de premier ordre.,Modèles privés (Llama, Qwen) - pour les données sensibles et le contrôle des coûts.,Modèles spécialisés - pour la programmation, la vision ou les tâches à faible latence.\"",
+        "points": [
+          "LLM commerciaux (GPT-4, Claude, etc.) - pour un raisonnement de premier ordre.",
+          "Modèles privés (Llama, Qwen) - pour les données sensibles et le contrôle des coûts.",
+          "Modèles spécialisés - pour la programmation, la vision ou les tâches à faible latence."
+        ],
         "conclusion": "La passerelle gère les tentatives, les solutions de secours, le suivi des coûts et les limites de débit. Les développeurs appellent donc simplement `platform.generate()`."
       },
       "knowledge": {
@@ -1105,7 +1208,13 @@
         "title": "C. La couche d'orchestration",
         "content": "L’IA Code-first est puissante; L’IA axée sur le workflow est plus rapide.",
         "example": "Nous utilisons des outils low‑code (comme Dify, coze, n8n etc) pour enchaîner les étapes:",
-        "workflow": "\"Requête utilisateur, Récupération de documents, Appel d'outil (API, SQL), Raison, Résultat\"",
+        "workflow": [
+          "Requête utilisateur",
+          "Récupération de documents",
+          "Appel d'outil (API, SQL)",
+          "Raison",
+          "Résultat"
+        ],
         "conclusion": "Cela permet aux équipes produit de prototyper des agents en quelques heures, et non en quelques semaines."
       }
     },
@@ -1113,11 +1222,11 @@
       "title": "3. Ignorer le réglage fin (la plupart du temps)",
       "content": "Voici le secret: **vous n'avez probablement pas besoin de peaufiner un LLM.**",
       "strategies": [
-          "Meilleurs conseils : l'ingénierie systématique bat les ajustements aléatoires.",
-          "RAG de haute qualité : une connaissance propre et structurée bat un modèle plus intelligent.",
-          "Fusion multi-modèles : utilisez GPT-4 pour le raisonnement, un modèle local pour l'extraction, Claude pour les tâches créatives.",
-          "LLM-en-tant-que-juge : utilisez un modèle fort pour évaluer les sorties de modèles moins chers."
-        ],
+        "Meilleurs conseils : l'ingénierie systématique bat les ajustements aléatoires.",
+        "RAG de haute qualité : une connaissance propre et structurée bat un modèle plus intelligent.",
+        "Fusion multi-modèles : utilisez GPT-4 pour le raisonnement, un modèle local pour l'extraction, Claude pour les tâches créatives.",
+        "LLM-en-tant-que-juge : utilisez un modèle fort pour évaluer les sorties de modèles moins chers."
+      ],
       "conclusion": "Nous ajustons uniquement de petits modèles pour des tâches restreintes et à volume élevé, après un long processus de collecte et de nettoyage de données de haute qualité dans le domaine. Tout le reste est « de l'ingénierie plutôt que de la formation »."
     },
     "essentialWork": {

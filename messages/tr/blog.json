@@ -77,6 +77,70 @@
         "readTime": "7 dk okuma",
         "tag": "Araçlar ve İş Hattı",
         "image": "/images/ae-vs-comfyui.jpg"
+      },
+      {
+        "slug": "ai-youtube-video-translator",
+        "title": "AI YouTube Video Çevirmeni: En İyi Araçlar ve Yöntemler 2026",
+        "date": "March 4, 2026",
+        "readTime": "11 min read",
+        "tag": "Video Translation",
+        "image": "/images/ai-youtube-translator.jpg"
+      },
+      {
+        "slug": "asl-video-translator",
+        "title": "ASL Video Çevirmeni: İşaret Dili Çeviri Araçları",
+        "date": "March 4, 2026",
+        "readTime": "6 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-video-translator.jpg"
+      },
+      {
+        "slug": "f5-tts-voice-cloning",
+        "title": "F5-TTS Ses Klonlama: Profesyonel AI Ses Çözümleri",
+        "date": "March 4, 2026",
+        "readTime": "7 min read",
+        "tag": "AI Audio",
+        "image": "/images/f5-tts-voice-cloning.jpg"
+      },
+      {
+        "slug": "how-to-translate-asl-video",
+        "title": "ASL Videosunu Nasıl Çevirirsiniz: Tam Kılavuz",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-translation-guide.jpg"
+      },
+      {
+        "slug": "translate-youtube-video",
+        "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
+        "date": "March 4, 2026",
+        "readTime": "12 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-translation.jpg"
+      },
+      {
+        "slug": "translate-youtube-video-to-english",
+        "title": "YouTube Videolarını İngilizceye Çevirin: AI Destekli Çözümler",
+        "date": "March 4, 2026",
+        "readTime": "10 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-english-translation.jpg"
+      },
+      {
+        "slug": "voice-cloning-tools",
+        "title": "En İyi Ses Klonlama Araçları: F5-TTS, ElevenLabs ve Daha Fazlası",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-tools.jpg"
+      },
+      {
+        "slug": "what-is-voice-cloning",
+        "title": "Ses Klonlama Nedir? AI Ses Teknolojisini Anlamak",
+        "date": "March 4, 2026",
+        "readTime": "9 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-basics.jpg"
       }
     ],
     "translateYoutubevideo": {
@@ -422,23 +486,42 @@
   "video_translation_eval": {
     "title": "AI Video Çeviri Kalitesini Değerlendirme",
     "subtitle": "Önemli Metrikler",
+    "description": "AI video çeviri kalitesini WER, BLEU, MOS ve daha fazlası gibi temel metrikler kullanarak nasıl değerlendirdiğimizi keşfedin.",
     "intro": "Videoları diller arasında çevirmek küçük bir başarı değildir — transkripsiyon, çeviri, ses sentezi, zamanlama ve daha fazlasını içerir. Curify'da, her parçanın endüstri standartlarını karşıladığından emin olmak için sağlam bir değerlendirme hattı oluşturduk.",
     "section1_title": "1. Transkripsiyon Kalitesi",
     "section1_engine": "Motor: WhisperX",
-    "section1_metrics": "\"WER (Kelime Hata Oranı), Noktalama F1 (ifade ve okunabilirlik için)\"",
+    "section1_metrics": [
+      "WER (Kelime Hata Oranı)",
+      "Noktalama F1 (ifade ve okunabilirlik için)"
+    ],
     "section2_title": "2. Çeviri Kalitesi",
     "section2_engine": "Motorlar: Helsinki, MarianMT",
-    "section2_metrics": "\"BLEU (standart metrik), COMET / chrF++ (anlamsal benzerlik), İnsan incelemesi: akıcılık + yeterlilik\"",
+    "section2_metrics": [
+      "BLEU (standart metrik)",
+      "COMET / chrF++ (anlamsal benzerlik)",
+      "İnsan incelemesi: akıcılık + yeterlilik"
+    ],
     "section3_title": "3. Ses Sentezi Kalitesi",
     "section3_engine": "Motorlar: XTTS / YourTTS",
-    "section3_metrics": "\"MOS (Doğallık, benzerlik, ifade), Konuşmacı doğrulama doğruluğu\"",
+    "section3_metrics": [
+      "MOS (Doğallık, benzerlik, ifade)",
+      "Konuşmacı doğrulama doğruluğu"
+    ],
     "section4_title": "4. Hizalama ve Dudak Senkronizasyonu",
-    "section4_metrics": "\"Segment süresi uyumsuzluğu, Wav2Lip senkronizasyon güveni, Zamansal kayma analizi\"",
+    "section4_metrics": [
+      "Segment süresi uyumsuzluğu",
+      "Wav2Lip senkronizasyon güveni",
+      "Zamansal kayma analizi"
+    ],
     "section5_title": "5. Anlamsal Koruma",
     "section5_method": "Çevrilen konuşmanın orijinal anlamı, tonu ve duyguyu koruyup korumadığını değerlendirmek için LLM'leri (GPT-4 gibi) kullanıyoruz. Örnek istem:",
     "section5_prompt": "Bu Mandarin transkriptini İngilizce seslendirme ile karşılaştırın. Ton, niyet ve içerik eşleşiyor mu? 1–5 arası puanlayın ve açıklayın.",
     "section6_title": "6. Kullanıcı Geri Bildirimi ve GTM Doğrulaması",
-    "section6_metrics": "\"Ürün kategorisine uygun ses kalitesi, İzleyici tutma oranı artışı, Erken kullanıcılardan benimseme isteği (örneğin, 1688 satıcıları)\"",
+    "section6_metrics": [
+      "Ürün kategorisine uygun ses kalitesi",
+      "İzleyici tutma oranı artışı",
+      "Erken kullanıcılardan benimseme isteği (örneğin, 1688 satıcıları)"
+    ],
     "closing": "Curify'da sadece çeviri yapmıyoruz — diller arasında hikaye anlatımını, duyguyu ve netliği koruyoruz. Sesinizi küresel olarak ölçeklendirmeye hazırsanız, iletişime geçin.",
     "available_locales": "Gönderi şurada mevcut: [EN] [ZH] [ES] [DE]"
   },
@@ -994,11 +1077,11 @@
       "title": "3. İnce Ayardan Kaçının (Çoğu Zaman)",
       "content": "İşte sır: **büyük olasılıkla bir büyük dil modelini ince ayarlamanıza gerek yok.**",
       "strategies": [
-          "İyileştirilmiş ipuçları: sistemli mühendislik, rastgele ayarlamanın önüne geçer.",
-          "Yüksek kaliteli RAG: temiz, yapılandırılmış bilgi, daha akıllı bir modelin önüne geçer.",
-          "Çoklu model füzyonu: akıl yürütme için GPT-4'ü, çıkarma için yerel modeli, yaratıcı görevler için Claude'ü kullanın.",
-          "LLM olarak bir hakim: daha ucuz modellerin çıktılarını değerlendirmek için güçlü bir model kullanın."
-        ],
+        "İyileştirilmiş ipuçları: sistemli mühendislik, rastgele ayarlamanın önüne geçer.",
+        "Yüksek kaliteli RAG: temiz, yapılandırılmış bilgi, daha akıllı bir modelin önüne geçer.",
+        "Çoklu model füzyonu: akıl yürütme için GPT-4'ü, çıkarma için yerel modeli, yaratıcı görevler için Claude'ü kullanın.",
+        "LLM olarak bir hakim: daha ucuz modellerin çıktılarını değerlendirmek için güçlü bir model kullanın."
+      ],
       "conclusion": "Yalnızca dar, yüksek hacimli görevler için küçük modelleri ince ayarlıyoruz ve bu da yüksek kaliteli, alana özgü veri toplama ve temizleme sürecinden sonra geliyor. Geri kalan her şey 'eğitim yerine mühendislik' ile çözülüyor."
     },
     "essentialWork": {
@@ -1048,12 +1131,46 @@
     "intro": "Bu rehber, Statik Kurallar, Dinamik Beceriler ve Deterministik Kancalar kullanarak monolitik QA botlarından Görev Ajanlarına mimari geçişi somut kod örnekleri ve açık kaynak referanslarıyla açıklamaktadır.",
     "coreShift": {
       "title": "1. Temel Değişim: QA Botu → Görev Ajanı",
-      "content": "\"Bugün çoğu yapay zeka sistemi hala bağlam dolu QA botlarıdır:,• Soruları iyi yanıtlarlar,• Baskı altında hayal kurarlar,• Yürütme, güvenlik ve tutarlılık konusunda garanti eksikliği yaşarlar\"",
+      "content": [
+        "Bugün çoğu yapay zeka sistemi hala bağlam dolu QA botlarıdır:",
+        "• Soruları iyi yanıtlarlar",
+        "• Baskı altında hayal kurarlar",
+        "• Yürütme, güvenlik ve tutarlılık konusunda garanti eksikliği yaşarlar"
+      ],
       "keyInsight": "Temel içgörü: Bağlamı ölçeklendirmeyin. Yapılandırın."
     },
     "threeLayerArch": {
       "title": "2. Üç Katmanlı Mimari",
-      "layers": "\"[nesne Nesne],[nesne Nesne],[nesne Nesne]\""
+      "layers": [
+        {
+          "title": "🧱 1. Statik Bağlam — Kurallar (Her Zaman Aktif)",
+          "points": [
+            "Zihinsel model: Çalışan el kitabı",
+            "Her zaman yüklü",
+            "Kimliği, kodlama standartlarını, davranış kısıtlamalarını tanımlar",
+            "Halüsinasyonları ve stil kaymasını önler",
+            "Küçük, kararlı, insan tarafından düzenlenebilir"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Dinamik Bağlam — Beceriler (İsteğe Bağlı)",
+          "points": [
+            "Zihinsel model: Araç kutusu",
+            "Sadece gerektiğinde yüklenir",
+            "Her beceri kendi kendine yeten bir yetenektir",
+            "Bağlam penceresini temiz tutar"
+          ]
+        },
+        {
+          "title": "⚓ 3. Deterministik Kancalar — Korkuluklar",
+          "points": [
+            "Zihinsel model: Güvenlik + Uyumluluk katmanı",
+            "Olasılıksal değil",
+            "LLM muhakemesinden önce / sonra çalışır",
+            "Asla başarısız olmaması gereken kuralları zorunlu kılar"
+          ]
+        }
+      ]
     },
     "projectStructure": {
       "title": "3. Önerilen Proje Yapısı",

@@ -331,6 +331,7 @@
     }
   },
   "aeVsComfyUi": {
+    "title": "Part 3: AE vs ComfyUI – Motion Design vs Diffusion Pipelines",
     "heading": "AE vs ComfyUI",
     "images": {
       "guideCoverAlt": "ComfyUI complete guide cover image",
@@ -394,6 +395,13 @@
           "b2": "Use the queue management function to batch generate resources that meet curify-ai standards, improving creation efficiency.",
           "b3Strong": "Workflow simplification:",
           "b3": "Group common node combinations into subgraphs for one-click reuse, avoiding repetitive configurations."
+        },
+        "sub3": {
+          "title": "3) Troubleshooting and Debugging",
+          "b1Strong": "Node connection errors:",
+          "b1": "Ensure data types match (e.g., image output connects to image input).",
+          "b2Strong": "Poor generation quality:",
+          "b2": "Check if prompts are accurate, sampling steps are sufficient, and the model is suitable for the current task."
         }
       },
       "s4": {
@@ -478,6 +486,7 @@
   "video_translation_eval": {
     "title": "Evaluating AI Video Translation Quality",
     "subtitle": "Metrics that Matter",
+    "description": "Discover the essential metrics for evaluating AI video translation quality, from transcription to voice synthesis.",
     "intro": "Translating videos across languages is no small feat — it involves transcription, translation, voice synthesis, timing, and more. At Curify, we've built a robust evaluation pipeline to ensure each piece meets industry standards.",
     "section1_title": "1. Transcription Quality",
     "section1_engine": "Engine: WhisperX",
