@@ -86,7 +86,7 @@ const blogPosts = {
   "translate-youtube-video": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/youtube-translation.jpg",
+    image: "/images/2cb58cf3-c05f-45d0-9f04-67fd7ba00267",
     category: "video-translation",
     relatedCategories: ["video-translation", "subtitle-generation"],
     namespace: "translateYoutubevideo"
@@ -94,7 +94,7 @@ const blogPosts = {
   "translate-youtube-video-to-english": {
     titleKey: "title", 
     descriptionKey: "intro",
-    image: "/images/youtube-english-translation.jpg",
+    image: "/images/9920f5ad-c6bb-4375-9255-a80f8568b0a9",
     category: "video-translation",
     relatedCategories: ["video-translation", "video-dubbing"],
     namespace: "translateYoutubeVideoToEnglish"
@@ -102,7 +102,7 @@ const blogPosts = {
   "ai-youtube-video-translator": {
     titleKey: "title",
     descriptionKey: "intro", 
-    image: "/images/ai-youtube-translator.jpg",
+    image: "/images/f5c790f9-f0e2-4c4d-b274-bf4bcd1c4764",
     category: "video-translation",
     relatedCategories: ["video-translation", "ai-tools"],
     namespace: "aiYoutubeVideoTranslator"
@@ -112,7 +112,7 @@ const blogPosts = {
   "what-is-voice-cloning": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/voice-cloning-basics.jpg",
+    image: "/images/13afe9a51466ddb3cd36344f90b46b02_thumb_1766410125845.jpg",
     category: "audio-ai",
     relatedCategories: ["audio-ai", "video-dubbing"],
     namespace: "whatIsVoiceCloning"
@@ -120,7 +120,7 @@ const blogPosts = {
   "voice-cloning-tools": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/voice-cloning-tools.jpg", 
+    image: "/images/f593c8c73c3972d943a6fcb28e32bcdd_thumb_1764943492218.jpg", 
     category: "audio-ai",
     relatedCategories: ["audio-ai", "video-dubbing"],
     namespace: "voiceCloningTools"
@@ -128,7 +128,7 @@ const blogPosts = {
   "f5-tts-voice-cloning": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/f5-tts-voice-cloning.jpg",
+    image: "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg",
     category: "audio-ai", 
     relatedCategories: ["audio-ai", "video-dubbing"],
     namespace: "f5TtsVoiceCloning"
@@ -138,7 +138,7 @@ const blogPosts = {
   "asl-video-translator": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/asl-video-translator.jpg",
+    image: "/images/a012b2032a3bdf195cd6a04d661acef4_thumb_1767268289422.jpg",
     category: "accessibility",
     relatedCategories: ["video-translation", "subtitle-generation"],
     namespace: "aslVideoTranslator"
@@ -146,7 +146,7 @@ const blogPosts = {
   "how-to-translate-asl-video": {
     titleKey: "title",
     descriptionKey: "intro",
-    image: "/images/asl-translation-guide.jpg",
+    image: "/images/4f61825a8edc8bb57ae2652db01fce88_thumb_1762936816791.jpg",
     category: "accessibility", 
     relatedCategories: ["video-translation", "accessibility"],
     namespace: "howToTranslateAslVideo"
