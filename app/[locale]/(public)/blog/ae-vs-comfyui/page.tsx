@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
+import TemplateLink, { TemplateSuggestions } from "../../../_components/TemplateLink";
+import { getTemplatesByCategory } from "@/utils/blogUtils";
 
 function pickLocaleImage(locale: string, zhSrc: string, enSrc: string) {
   return locale === "zh" ? zhSrc : enSrc; // all non-zh locales use English version
@@ -47,6 +49,10 @@ export default async function AeVsComfyUiPost({
     "/images/blogs/ComfyUI-Practical-Case-zh.jpg",
     "/images/blogs/ComfyUI-Practical-Case-en.jpg"
   );
+
+  // Get related templates for this blog post
+  const evolutionTemplates = getTemplatesByCategory("evolution", "en");
+  const animationTemplates = getTemplatesByCategory("animation", "en");
 
   return (
     <article className="pt-10 pb-8">

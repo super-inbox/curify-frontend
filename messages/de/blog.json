@@ -7,6 +7,54 @@
     "latestArticles": "Neueste Artikel",
     "posts": [
       {
+        "slug": "f5-tts-voice-cloning",
+        "title": "F5-TTS Sprachklonung: Professionelle KI-Sprachlösungen",
+        "date": "March 4, 2026",
+        "readTime": "7 min read",
+        "tag": "AI Audio",
+        "image": "/images/f5-tts-voice-cloning.jpg"
+      },
+      {
+        "slug": "how-to-translate-asl-video",
+        "title": "Wie man ASL-Videos übersetzt: Vollständiger Leitfaden",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-translation-guide.jpg"
+      },
+      {
+        "slug": "translate-youtube-video",
+        "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
+        "date": "March 4, 2026",
+        "readTime": "12 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-translation.jpg"
+      },
+      {
+        "slug": "translate-youtube-video-to-english",
+        "title": "YouTube-Videos ins Englische übersetzen: KI-gestützte Lösungen",
+        "date": "March 4, 2026",
+        "readTime": "10 min read",
+        "tag": "Video Translation",
+        "image": "/images/youtube-english-translation.jpg"
+      },
+      {
+        "slug": "what-is-voice-cloning",
+        "title": "Was ist Sprachklonung? Verständnis der KI-Sprachtechnologie",
+        "date": "March 4, 2026",
+        "readTime": "9 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-basics.jpg"
+      },
+      {
+        "slug": "age_AI",
+        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
+        "date": "30. Januar 2026",
+        "readTime": "8 Min. Lesezeit",
+        "tag": "KI-Branche",
+        "image": "/images/data-science-ai-era.jpg"
+      },
+      {
         "slug": "aiPlatform",
         "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
         "date": "30. Januar 2026",
@@ -21,14 +69,6 @@
         "readTime": "6 Min. Lesezeit",
         "tag": "KI-Architektur",
         "image": "/images/qa-bot-architecture.jpg"
-      },
-      {
-        "slug": "age_AI",
-        "title": "Data Science im Zeitalter der KI: Ist der 'sexieste Job' noch sexy?",
-        "date": "30. Januar 2026",
-        "readTime": "8 Min. Lesezeit",
-        "tag": "KI-Branche",
-        "image": "/images/data-science-ai-era.jpg"
       },
       {
         "slug": "storyboard-labeling",
@@ -77,8 +117,218 @@
         "readTime": "7 Min. Lesezeit",
         "tag": "Tools & Pipeline",
         "image": "/images/ae-vs-comfyui.jpg"
+      },
+      {
+        "slug": "ai-youtube-video-translator",
+        "title": "KI YouTube Video Übersetzer: Beste Tools & Methoden 2026",
+        "date": "March 4, 2026",
+        "readTime": "11 min read",
+        "tag": "Video Translation",
+        "image": "/images/ai-youtube-translator.jpg"
+      },
+      {
+        "slug": "asl-video-translator",
+        "title": "ASL Video Translator: Werkzeuge zur Übersetzung von Gebärdensprache",
+        "date": "March 4, 2026",
+        "readTime": "6 min read",
+        "tag": "Accessibility",
+        "image": "/images/asl-video-translator.jpg"
+      },
+      {
+        "slug": "voice-cloning-tools",
+        "title": "Beste Sprachklonungstools: F5-TTS, ElevenLabs & mehr",
+        "date": "March 4, 2026",
+        "readTime": "8 min read",
+        "tag": "AI Audio",
+        "image": "/images/voice-cloning-tools.jpg"
       }
-    ]
+    ],
+    "translateYoutubevideo": {
+      "title": "So übersetzen Sie YouTube-Videos: Vollständiger Schritt-für-Schritt-Leitfaden",
+      "date": "4. März 2026",
+      "readTime": "12 Min. Lesezeit",
+      "intro": "Erfahren Sie, wie Sie YouTube-Videos effektiv mit KI-gestützten Tools und Techniken übersetzen. Erreichen Sie globale Zielgruppen, indem Sie Ihre Inhalte in mehreren Sprachen zugänglich machen.",
+      "whatIsTitle": "Was ist die Übersetzung von YouTube-Videos?",
+      "whatIsContent": "Die Übersetzung von YouTube-Videos ist der Prozess, Videoinhalte von einer Sprache in eine andere zu konvertieren, während die ursprüngliche Botschaft, der Ton und der Kontext erhalten bleiben. Dazu gehört die Übersetzung gesprochener Dialoge, von Texten auf dem Bildschirm und kulturellen Referenzen.",
+      "whyTitle": "Warum YouTube-Videos übersetzen?",
+      "whyContent": "Die Übersetzung von YouTube-Videos erweitert Ihre Reichweite zu globalen Zielgruppen, erhöht das Engagement und verbessert die Zugänglichkeit. Sie hilft, sich mit Zuschauern zu verbinden, die Inhalte in ihrer Muttersprache bevorzugen.",
+      "howTitle": "So übersetzen Sie YouTube-Videos",
+      "step1Title": "Schritt 1: Wählen Sie Ihre Übersetzungsmethode",
+      "step1Content": "Wählen Sie zwischen automatisierter KI-Übersetzung, professioneller menschlicher Übersetzung oder einem hybriden Ansatz, basierend auf Ihrem Budget und Ihren Qualitätsanforderungen.",
+      "step2Title": "Schritt 2: Bereiten Sie Ihre Videoinhalte vor",
+      "step2Content": "Sammeln Sie Ihre Videodateien, Transkripte und vorhandene Untertitel. Stellen Sie sicher, dass Ihre Inhalte für die Übersetzung optimiert sind, mit klarem Audio und minimalem Hintergrundgeräusch.",
+      "step3Title": "Schritt 3: Ausführen und Überprüfen",
+      "step3Content": "Führen Sie den Übersetzungsprozess durch und überprüfen Sie dann sorgfältig das Ergebnis auf Genauigkeit, kulturelle Angemessenheit und Timing. Nehmen Sie notwendige Anpassungen vor.",
+      "toolsTitle": "Beste Tools für die YouTube-Übersetzung",
+      "toolsContent": "Professionelle Tools wie Curify's Video Translator bieten umfassende Lösungen mit KI-gestützter Übersetzung, Untertitelgenerierung und Sprachsynchronisation.",
+      "curifyTitle": "Wie Curify helfen kann",
+      "curifyContent": "Curify bietet eine All-in-One-Plattform für die Übersetzung von YouTube-Videos mit fortschrittlicher KI-Technologie, die mehrere Sprachen und hochwertige Ergebnisse unterstützt.",
+      "ctaText": "Bereit, Ihre YouTube-Videos zu übersetzen?",
+      "ctaLink": "Probieren Sie Curify's Video Translator aus",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "Die Übersetzung von YouTube-Videos ist für globale Inhaltsanbieter unerlässlich. Mit den richtigen Tools und Ansätzen können Sie effektiv Zielgruppen weltweit erreichen."
+    },
+    "translateYoutubeVideoToEnglish": {
+      "title": "YouTube-Videos ins Englische übersetzen: KI-gestützte Lösungen",
+      "date": "4. März 2026",
+      "readTime": "10 Min. Lesezeit",
+      "intro": "Entdecken Sie, wie Sie YouTube-Videos ins Englische übersetzen können, indem Sie fortschrittliche KI-Technologie nutzen. Machen Sie Ihre Inhalte für englischsprachige Zielgruppen weltweit zugänglich.",
+      "whatIsTitle": "Warum ins Englische übersetzen?",
+      "whatIsContent": "Englisch ist die globale Sprache von Wirtschaft und Unterhaltung. Ihre Inhalte ins Englische zu übersetzen, eröffnet enormes Publikums-Potenzial und erhöht die Auffindbarkeit.",
+      "whyTitle": "Vorteile der englischen Übersetzung",
+      "whyContent": "Die englische Übersetzung erweitert Ihre Reichweite erheblich, verbessert die SEO-Leistung und erhöht die Monetarisierungsmöglichkeiten durch breiteren Zugang zum Publikum.",
+      "howTitle": "KI-gestützter Übersetzungsprozess ins Englische",
+      "step1Title": "Schritt 1: Laden Sie Ihr Video hoch",
+      "step1Content": "Laden Sie Ihr YouTube-Video auf die Übersetzungsplattform hoch und wählen Sie Englisch als Zielsprache.",
+      "step2Title": "Schritt 2: KI-Übersetzung",
+      "step2Content": "Die KI analysiert Ihre Videoinhalte, transkribiert den Ton und übersetzt alles ins Englische, während Kontext und Bedeutung erhalten bleiben.",
+      "step3Title": "Schritt 3: Überprüfen und Veröffentlichen",
+      "step3Content": "Überprüfen Sie die übersetzten Inhalte auf Genauigkeit, nehmen Sie notwendige Anpassungen vor und veröffentlichen Sie Ihr ins Englische übersetztes Video.",
+      "toolsTitle": "KI-Übersetzungstools",
+      "toolsContent": "Moderne KI-Übersetzungstools bieten hochwertige englische Übersetzungen mit natürlich klingender Sprachsynthese und präziser Untertitelgenerierung.",
+      "curifyTitle": "Curify's Lösung für die englische Übersetzung",
+      "curifyContent": "Curify bietet hochmoderne KI-Übersetzungen, die speziell für Englisch optimiert sind und natürliche Ergebnisse und kulturelle Genauigkeit gewährleisten.",
+      "ctaText": "Möchten Sie heute mit der Übersetzung ins Englische beginnen?",
+      "ctaLink": "Probieren Sie Curify's English Translator aus",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "Die KI-gestützte englische Übersetzung erleichtert es mehr denn je, globale Zielgruppen zu erreichen und die Wirkung Ihrer Inhalte zu erweitern."
+    },
+    "aiYoutubeVideoTranslator": {
+      "title": "KI YouTube Video Übersetzer: Beste Tools & Methoden 2026",
+      "date": "4. März 2026",
+      "readTime": "11 Min. Lesezeit",
+      "intro": "Erforschen Sie die besten KI YouTube Video Übersetzer und Methoden, die 2026 verfügbar sind. Vergleichen Sie Funktionen, Preise und Effektivität, um die richtige Lösung für Ihre Bedürfnisse auszuwählen.",
+      "whatIsTitle": "Was ist ein KI YouTube Video Übersetzer?",
+      "whatIsContent": "Ein KI YouTube Video Übersetzer nutzt künstliche Intelligenz, um Videoinhalte automatisch zu übersetzen, einschließlich Audio, Untertitel und Text auf dem Bildschirm, in verschiedene Sprachen.",
+      "whyTitle": "Warum KI-Übersetzung verwenden?",
+      "whyContent": "KI-Übersetzung bietet Geschwindigkeit, Kosteneffizienz und Skalierbarkeit im Vergleich zu traditionellen Übersetzungsmethoden und ist ideal für Inhaltsanbieter.",
+      "howTitle": "Wie KI Videoübersetzung funktioniert",
+      "step1Title": "Schritt 1: Inhaltsanalyse",
+      "step1Content": "Die KI analysiert Ihr Video, um gesprochene Wörter, Texte auf dem Bildschirm und den Kontext für eine genaue Übersetzung zu identifizieren.",
+      "step2Title": "Schritt 2: Sprachverarbeitung",
+      "step2Content": "Fortschrittliche NLP-Modelle übersetzen die Inhalte, während Bedeutung, Ton und kulturelle Nuancen erhalten bleiben.",
+      "step3Title": "Schritt 3: Ausgabeerzeugung",
+      "step3Content": "Das System generiert übersetzte Audios, Untertitel und hält die Synchronisation mit dem ursprünglichen Video-Timing aufrecht.",
+      "toolsTitle": "Top KI-Übersetzungstools",
+      "toolsContent": "Führende Tools wie Curify bieten umfassende KI-Übersetzungen mit Sprachklonung, Untertitelgenerierung und Unterstützung für mehrere Sprachen.",
+      "curifyTitle": "Warum Curify wählen",
+      "curifyContent": "Curify hebt sich durch seine fortschrittliche KI-Technologie, benutzerfreundliche Oberfläche und qualitativ hochwertige Übersetzungsergebnisse in über 50 Sprachen ab.",
+      "ctaText": "Bereit, KI-Übersetzung zu erleben?",
+      "ctaLink": "Teste Curifys KI-Übersetzer",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "KI-YouTube-Videoübersetzer haben die Lokalisierung von Inhalten revolutioniert und sie für Creator aller Größen zugänglich gemacht."
+    },
+    "whatIsVoiceCloning": {
+      "title": "Was ist Sprachklonung? Verständnis der KI-Sprachtechnologie",
+      "date": "4. März 2026",
+      "readTime": "9 Minuten Lesezeit",
+      "intro": "Erfahren Sie mehr über die Technologie der Sprachklonung und wie KI realistische synthetische Stimmen erzeugen kann. Entdecken Sie Anwendungen, Vorteile und ethische Überlegungen.",
+      "whatIsTitle": "Was ist Sprachklonung?",
+      "whatIsContent": "Sprachklonung ist eine KI-Technologie, die ein digitales Abbild einer menschlichen Stimme erstellt, das in der Lage ist, neue Sprache mit denselben Stimmmerkmalen zu erzeugen.",
+      "howWorksTitle": "Wie Sprachklonung funktioniert",
+      "howWorksContent": "Sprachklonung verwendet Deep-Learning-Modelle, um Sprachproben zu analysieren, einzigartige Merkmale wie Tonhöhe, Klangfarbe und Rhythmus zu extrahieren und dann neue Sprache zu generieren.",
+      "toolsTitle": "Technologie der Sprachklonung",
+      "toolsContent": "Moderne Sprachklonungstools verwenden fortschrittliche neuronale Netzwerke, um hochrealistische Sprachkopien mit minimalen Trainingsdaten zu erstellen.",
+      "useCasesTitle": "Anwendungen der Sprachklonung",
+      "useCasesContent": "Sprachklonung wird in der Inhaltserstellung, bei Hörbüchern, virtuellen Assistenten, Barrierefreiheitswerkzeugen und personalisiertem Marketing eingesetzt.",
+      "ethicalTitle": "Ethische Überlegungen",
+      "ethicalContent": "Sprachklonung wirft wichtige ethische Fragen zu Einwilligung, Missbrauch und Authentizität auf. Holen Sie immer die Erlaubnis ein und verwenden Sie sie verantwortungsbewusst.",
+      "curifyTitle": "Curifys Sprachklonungslösung",
+      "curifyContent": "Curify bietet eine ethische Technologie zur Sprachklonung mit integrierten Sicherheitsvorkehrungen und Qualitätskontrollen für professionelle Anwendungen.",
+      "ctaText": "Bereit, Sprachklonung zu erkunden?",
+      "ctaLink": "Teste Curifys Sprachklonung",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "Die Technologie der Sprachklonung transformiert die Inhaltserstellung und erfordert gleichzeitig verantwortungsbewusste Nutzung und ethische Überlegungen."
+    },
+    "voiceCloningTools": {
+      "title": "Beste Sprachklonungstools: F5-TTS, ElevenLabs & mehr",
+      "date": "4. März 2026",
+      "readTime": "8 Minuten Lesezeit",
+      "intro": "Vergleichen Sie die besten heute verfügbaren Sprachklonungstools. Finden Sie heraus, welches Tool die Funktionen, Qualität und Preise bietet, die Ihren Bedürfnissen entsprechen.",
+      "whatIsTitle": "Top-Plattformen für Sprachklonung",
+      "whatIsContent": "Führende Sprachklonungstools sind F5-TTS für Open-Source-Lösungen, ElevenLabs für Premium-Qualität und Curify für ausgewogene Funktionen.",
+      "howWorksTitle": "Wie diese Tools sich vergleichen",
+      "howWorksContent": "Jedes Tool bietet einzigartige Stärken: F5-TTS bietet Anpassungsmöglichkeiten, ElevenLabs glänzt in der Qualität, während Curify beides mit Benutzerfreundlichkeit kombiniert.",
+      "toolsTitle": "Funktionsvergleich",
+      "toolsContent": "Vergleichen Sie Sprachqualität, Sprachunterstützung, Preise und Benutzerfreundlichkeit über verschiedene Plattformen, um Ihre ideale Lösung zu finden.",
+      "useCasesTitle": "Beste Anwendungsfälle für jedes Tool",
+      "useCasesContent": "Verschiedene Tools glänzen in unterschiedlichen Szenarien: Inhaltserstellung, kommerzielle Anwendungen oder persönliche Projekte.",
+      "ethicalTitle": "Ethische Tools auswählen",
+      "ethicalContent": "Wählen Sie Tools aus, die Einwilligung, Wasserzeichen und Richtlinien für verantwortungsbewusste Nutzung priorisieren, um ethische Sprachklonung zu gewährleisten.",
+      "curifyTitle": "Warum Curify herausragt",
+      "curifyContent": "Curify kombiniert Qualität, Erschwinglichkeit und ethische Standards mit umfassenden Funktionen für alle Bedürfnisse der Sprachklonung.",
+      "ctaText": "Finden Sie Ihr perfektes Sprachklonungstool?",
+      "ctaLink": "Teste Curifys Sprachtools",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "Das richtige Sprachklonungstool hängt von Ihren spezifischen Bedürfnissen, Ihrem Budget und ethischen Überlegungen ab."
+    },
+    "f5TtsVoiceCloning": {
+      "title": "F5-TTS Sprachklonung: Professionelle KI-Sprachlösungen",
+      "date": "4. März 2026",
+      "readTime": "7 Minuten Lesezeit",
+      "intro": "Entdecken Sie die Sprachklonungstechnologie von F5-TTS und wie sie professionelle KI-Sprachlösungen ermöglicht. Erfahren Sie mehr über Funktionen, Anwendungen und Implementierung.",
+      "whatIsTitle": "Was ist F5-TTS?",
+      "whatIsContent": "F5-TTS ist ein fortschrittliches Open-Source-Text-to-Speech- und Sprachklonungssystem, das hochwertige, natürlich klingende Sprachsynthese erzeugt.",
+      "howWorksTitle": "F5-TTS-Technologie",
+      "howWorksContent": "F5-TTS verwendet diffusionsbasierte Modelle und fortschrittliche neuronale Architekturen, um eine überlegene Sprachqualität und Klonungsgenauigkeit zu erreichen.",
+      "toolsTitle": "Professionelle Funktionen",
+      "toolsContent": "F5-TTS bietet professionelle Funktionen wie Unterstützung für mehrere Sprecher, Emotionskontrolle und Echtzeitsynthesefunktionen.",
+      "useCasesTitle": "Professionelle Anwendungen",
+      "useCasesContent": "Ideal für die Inhaltserstellung, die Produktion von Hörbüchern, virtuelle Assistenten und kommerzielle Voice-over-Anwendungen.",
+      "ethicalTitle": "Berufsethik",
+      "ethicalContent": "Die professionelle Nutzung erfordert die richtige Lizenzierung, Dokumentation der Zustimmung und die Einhaltung von Vorschriften und Richtlinien zur Sprachklonierung.",
+      "curifyTitle": "Curify's F5-TTS-Integration",
+      "curifyContent": "Curify integriert F5-TTS-Technologie mit zusätzlichen Optimierungen und benutzerfreundlichen Schnittstellen für professionelle Anwendungen.",
+      "ctaText": "Bereit für professionelles Voice Cloning?",
+      "ctaLink": "Teste Curify's F5-TTS-Lösung",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "F5-TTS repräsentiert die Spitze der Sprachklonierungstechnologie und bietet professionelle Ergebnisse für anspruchsvolle Anwendungen."
+    },
+    "aslVideoTranslator": {
+      "title": "ASL Video Translator: Werkzeuge zur Übersetzung von Gebärdensprache",
+      "date": "4. März 2026",
+      "readTime": "6 Min. Lesezeit",
+      "intro": "Entdecken Sie die Technologie zur Übersetzung von ASL-Videos, die Kommunikationslücken zwischen Gebärdensprache und gesprochenen Sprachgemeinschaften überbrückt.",
+      "whatIsTitle": "Was ist ASL Video Translation?",
+      "whatIsContent": "Die ASL-Videoübersetzung nutzt KI, um zwischen American Sign Language und englischem Text/gesprochener Sprache zu konvertieren und Inhalte zugänglich zu machen.",
+      "whenNeededTitle": "Wann wird ASL-Übersetzung benötigt?",
+      "whenNeededContent": "Wesentlich für Bildungsinhalte, öffentliche Dienste, Unterhaltung und alle Inhalte, die sich an gehörlose und schwerhörige Zielgruppen richten.",
+      "howTitle": "Wie ASL-Übersetzung funktioniert",
+      "howContent": "KI-Modelle analysieren Gebärdensprachgesten, Gesichtsausdrücke und Kontext, um genaue Übersetzungen in Text oder gesprochene Sprache bereitzustellen.",
+      "toolsTitle": "ASL-Übersetzungswerkzeuge",
+      "toolsContent": "Moderne Werkzeuge nutzen Computer Vision und maschinelles Lernen, um Gebärdensprache mit zunehmender Genauigkeit zu erkennen und zu übersetzen.",
+      "curifyTitle": "Curify's ASL-Übersetzung",
+      "curifyContent": "Curify bietet ASL-Übersetzungsfunktionen mit Fokus auf Zugänglichkeit und Inklusion für vielfältige Zielgruppen.",
+      "ctaText": "Möchten Sie Ihre Inhalte zugänglich machen?",
+      "ctaLink": "Teste Curify's ASL-Übersetzer",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "Die ASL-Videoübersetzung ist entscheidend für die Erstellung inklusiver Inhalte, die alle Zielgruppen unabhängig von der Hörfähigkeit erreichen."
+    },
+    "howToTranslateAslVideo": {
+      "title": "Wie man ASL-Videos übersetzt: Vollständiger Leitfaden",
+      "date": "4. März 2026",
+      "readTime": "8 Min. Lesezeit",
+      "intro": "Erfahren Sie den vollständigen Prozess der Übersetzung von ASL-Videos, um Inhalte zugänglich zu machen. Entdecken Sie Werkzeuge, Techniken und Best Practices.",
+      "whatIsTitle": "Verständnis der ASL-Übersetzung",
+      "whatIsContent": "Die ASL-Übersetzung umfasst die Umwandlung von Inhalten in Gebärdensprache in Text oder gesprochene Sprache, während Bedeutung und Kontext erhalten bleiben.",
+      "whenNeededTitle": "Wann Sie ASL-Übersetzung benötigen",
+      "whenNeededContent": "Erforderlich für Bildungseinrichtungen, Regierungsdienste, Gesundheitswesen und alle öffentlich zugänglichen Inhalte.",
+      "howTitle": "ASL-Übersetzungsprozess",
+      "step1Title": "Schritt 1: Video Vorbereitung",
+      "step1Content": "Sorgen Sie für eine klare Beleuchtung, eine angemessene Rahmung und eine qualitativ hochwertige Videoaufnahme von Inhalten in Gebärdensprache.",
+      "step2Title": "Schritt 2: KI-Analyse",
+      "step2Content": "Verwenden Sie KI-Tools, um Handbewegungen, Gesichtsausdrücke und Körpersprache für eine genaue Interpretation zu analysieren.",
+      "step3Title": "Schritt 3: Übersetzung und Überprüfung",
+      "step3Content": "Generieren Sie Übersetzungen und überprüfen Sie diese mit Muttersprachlern der ASL auf Genauigkeit und kulturelle Angemessenheit.",
+      "toolsTitle": "Übersetzungswerkzeuge und Ressourcen",
+      "toolsContent": "Professionelle ASL-Übersetzungswerkzeuge kombinieren Computer Vision mit linguistischer Analyse für genaue Ergebnisse.",
+      "curifyTitle": "Curify's ASL-Übersetzungslösung",
+      "curifyContent": "Curify bietet umfassende ASL-Übersetzungswerkzeuge mit Fokus auf Genauigkeit und Zugänglichkeitsstandards.",
+      "ctaText": "Möchten Sie mit der Übersetzung von ASL-Inhalten beginnen?",
+      "ctaLink": "Teste Curify's ASL-Werkzeuge",
+      "conclusionTitle": "Fazit",
+      "conclusionContent": "Eine ordnungsgemäße ASL-Übersetzung schafft wirklich inklusive Inhalte, die allen Mitgliedern Ihres Publikums dienen."
+    }
   },
   "aeVsComfyUi": {
     "title": "AE vs ComfyUI – Animation neu definiert (Teil 3)",
@@ -236,40 +486,41 @@
   "video_translation_eval": {
     "title": "Bewertung von KI-gestützter Videoübersetzung",
     "subtitle": "Relevante Qualitätsmetriken",
+    "description": "Entdecken Sie, wie wir die Qualität der KI-Videoübersetzung mit wichtigen Metriken wie WER, BLEU, MOS und mehr bewerten.",
     "intro": "Die Übersetzung von Videos über Sprachgrenzen hinweg erfordert mehr als nur Worte – sie umfasst Transkription, Übersetzung, Sprachsynthese, Timing und mehr. Curify nutzt ein strukturiertes Bewertungssystem, um höchste Qualität sicherzustellen.",
     "section1_title": "1. Transkriptionsqualität",
     "section1_engine": "Motor: WhisperX",
     "section1_metrics": [
-      "Wortfehlerrate (WER)",
-      "Interpunktions-F1 (für Lesbarkeit und Ausdruck)"
+      "WER (Wortfehlerrate)",
+      "Satzzeichen F1 (für Ausdruck und Lesbarkeit)"
     ],
     "section2_title": "2. Übersetzungsqualität",
     "section2_engine": "Motoren: Helsinki, MarianMT",
     "section2_metrics": [
-      "BLEU (Standard-Metrik)",
+      "BLEU (Standardmetrik)",
       "COMET / chrF++ (semantische Ähnlichkeit)",
-      "Manuelle Bewertung: Lesbarkeit & Genauigkeit"
+      "Menschliche Überprüfung: Flüssigkeit + Angemessenheit"
     ],
     "section3_title": "3. Sprachsynthesequalität",
     "section3_engine": "Motoren: XTTS / YourTTS",
     "section3_metrics": [
-      "MOS-Bewertung: Natürlichkeit, Ähnlichkeit, Ausdruck",
-      "Genauigkeit der Sprechererkennung"
+      "MOS (Natürlichkeit, Ähnlichkeit, Ausdrucksstärke)",
+      "Sprecher-Verifizierungsgenauigkeit"
     ],
     "section4_title": "4. Timing & Lippensynchronisation",
     "section4_metrics": [
-      "Unterschiede in Segmentdauer",
-      "Wav2Lip-Synchronwert",
-      "Zeitliche Abweichung"
+      "Segmentdauerabweichung",
+      "Wav2Lip-Synchronisationsvertrauen",
+      "Analyse der zeitlichen Drift"
     ],
     "section5_title": "5. Semantische Erhaltung",
     "section5_method": "Wir verwenden große Sprachmodelle (wie GPT-4), um zu prüfen, ob Tonfall, Emotion und Bedeutung erhalten bleiben. Beispiel-Prompt:",
     "section5_prompt": "Vergleiche das chinesische Transkript mit der englischen Sprachversion. Stimmen Ton, Absicht und Inhalt überein? Bewerte mit 1–5 und begründe.",
     "section6_title": "6. Nutzerfeedback & GTM-Validierung",
     "section6_metrics": [
-      "Stimmqualität passend zum Produkttyp",
-      "Erhöhte Zuschauerbindung bei lokalisierten Videos",
-      "Nutzerbereitschaft zur Tool-Nutzung"
+      "Sprachqualität passend zur Produktkategorie",
+      "Verbesserung der Zuschauerbindung",
+      "Bereitschaft zur Übernahme durch frühe Benutzer (z. B. 1688-Verkäufer)"
     ],
     "closing": "Bei Curify geht es um mehr als Übersetzung — wir bewahren Geschichte, Emotion und Klarheit. Möchtest du deine Inhalte weltweit verbreiten? Melde dich bei uns.",
     "available_locales": "Verfügbar in: [EN] [ZH] [ES] [DE]"
@@ -281,17 +532,9 @@
       "p2": "In der traditionellen Animation zählt jedes Detail: Charakterdesign, Bewegungskontinuität, Timing und Szenenübergänge. Unser Ziel ist es, KI auf dieses Präzisionsniveau zu bringen.",
       "p3": "Vandaag is animatie zowel een kunst als een uitdaging in gestructureerde orkestratie. We denken als regisseurs, maar bouwen als ingenieurs.",
       "p4": "Deshalb bauen wir <strong>Pipelines für kontrollierte Generierung</strong> statt One-Shot-Generierung. Diese Pipelines verbinden Struktur und Kreativität:",
-      "pipelineItems": [
-        "Storyboard naar video: scènespecificaties in JSON met ID's, timing en camerametadata",
-        "ComfyUI-gebaseerde workflows: DAG-grafen met versiebeheer van checkpoints, LoRA-stacks en seeds",
-        "Zeitliche und multimodale Kontrolle: gemeinsame Szenen-IDs für Bild, Bewegung, Audio und Untertitel"
-      ],
+      "pipelineItems": "Storyboard-to-Video: JSON-basierte Szenenspezifikationen mit IDs, Timing und Kamerametadaten, ComfyUI-basierte Workflows: Knoten-Graph-DAGs mit versionierten Checkpoints, LoRA-Stacks und Seeds, Temporäre & multimodale Steuerung: gemeinsame Szenen-IDs über Bild-, Bewegungs-, Audio- und Untertiteldaten hinweg.",
       "p5": "Schauen wir uns nun ein einfaches Beispiel an, um zu zeigen, wie KI-Pipelines in der Praxis funktionieren.",
-      "technicalNotes": [
-        "Alle stappen lezen/schrijven getypeerde artefacten (JSON/CSV, PNG-sequenties, WAV/MP3, MP4, .aep)",
-        "De pijplijnen worden georkestreerd via Python/CLI (bijv. ComfyUI API, ffmpeg, TTS-API's)",
-        "Elke uitvoering is reproduceerbaar via opgeslagen configuraties (model, sampler, seed, prompts, duur)"
-      ]
+      "technicalNotes": "\"Alle Stufen lesen/schreiben typisierte Artefakte (JSON/CSV, PNG-Sequenzen, WAV/MP3, MP4, .aep). Pipelines werden über Python/CLI orchestriert (z. B. ComfyUI API, ffmpeg, TTS APIs). Jeder Durchlauf ist reproduzierbar durch gespeicherte Konfiguration (Modell, Sampler, Seed, Prompts, Dauer).\""
     },
     "pipeline": {
       "title": "AI-videogeneratiepijplijn",
@@ -302,11 +545,7 @@
       "animation": "4. Animatie (beeldsequenties → beweging, parallax en effecten)",
       "voiceOver": "5. Voice-over (TTS + Synchronisierungsdaten)",
       "finalVideo": "6. Endgültiges Video (ffmpeg Komposition: Video + Audio + Untertitel)",
-      "features": [
-        "Design eerst in JSON: elke scène is adresseerbaar en programmeerbaar (scene_id, shot_id)",
-        "ComfyUI-gebaseerde workflows: modulaire, reproduceerbare en composeerbare DAG’s voor beeld-/videogeneratie",
-        "Tijdelijke en multimodale controle: consistente seeds, karakter-embeddings en timing over alle modaliteiten"
-      ],
+      "features": "\"JSON-First-Design: Jede Szene ist adressierbar und skriptfähig (Szene_ID, Aufnahme_ID), ComfyUI-basierte Workflows: modulare, reproduzierbare, zusammensetzbare DAGs für die Erzeugung von Bild-/Videomaterial, Temporale & multimodale Steuerung: konsistente Seeds, Charaktereinbettungen und Timing über Modalitäten hinweg\"",
       "exampleIntro": "Schauen wir uns nun ein einfaches Beispiel an, um zu zeigen, wie KI-Pipelines in der Praxis funktionieren.",
       "artifacts": {
         "promptSpec": "prompt_run_001.json",
@@ -323,11 +562,7 @@
         "example": "Een meisje wacht op een treinstation om middernacht, de wind beweegt haar haar.",
         "expandedPrompt": "Mit Hilfe von GPT oder eines lokalen LLM erweitern wir dies zu einem strukturierten JSON-Objekt mit globalem Stil, Charakterdefinitionen und einer Aufschlüsselung pro Szene.",
         "technicalDetails": {
-          "llmFields": [
-            "global_style: artistieke stijl, camertaal, kleurpalet",
-            "characters: naam, leeftijd, uiterlijk, kleding, emotionele toestand",
-            "Szenen: [{ scene_id, shot_id, description, camera_type, duration_seconds }]"
-          ],
+          "llmFields": "\"global_style: Kunststil, Kamerajargon, Farbpalette, Charaktere: Name, Alter, Aussehen, Outfit, emotionale Verfassung, Szenen: [{ Szene_ID, Aufnahme_ID, Beschreibung, Kameratyp, Dauer_in_Sekunden }]\"",
           "outputFile": "prompt_run_001.json",
           "exampleStack": "Python-script dat de OpenAI/LLM-API aanroept en JSON naar schijf schrijft"
         }
@@ -336,17 +571,7 @@
         "title": "Schritt 2: Konvertieren Sie die Eingabeaufforderung in eine Storyboard-Tabelle",
         "description": "Die JSON-Spezifikation wird zu einer Storyboard-Tabelle (CSV oder Notion zusammengefasst, die sowohl von Menschen als auch von der Pipeline gelesen werden kann.",
         "technicalDetails": {
-          "columns": [
-            "scene_id",
-            "shot_id",
-            "start_time",
-            "end_time",
-            "duration_seconds",
-            "camera_type",
-            "visual_description",
-            "character_state",
-            "motion_notes"
-          ],
+          "columns": "\"szene_id,shot_id,startzeit,endzeit,dauer_sekunden,kameratyp,visuelle_beschreibung,charakterzustand,bewegungsnotizen\"",
           "storage": "storyboard_v1.csv (wird als einzige Quelle der Wahrheit für die folgenden Schritte verwendet)",
           "automation": "Python/Node.js-script dat prompt_run_001.json → storyboard_v1.csv transformeert"
         }
@@ -354,23 +579,16 @@
       "step3": {
         "title": "Schritt 3: Generieren Sie die Bilder",
         "description": "Generieren Sie hochwertige Keyframe-Bilder für jede Aufnahme mit Stable Diffusion über einen ComfyUI-Workflow.",
-        "points": [
-          "🎨 Verwenden Sie <strong>Stable Diffusion</strong> oder <strong>ComfyUI</strong>, um jede Zeile in `storyboard_v1.csv` in einen hochauflösenden Keyframe umzuwandeln.",
-          "Halten Sie den Stil konsistent, indem Sie bei allen Schlägen denselben Grundlinien-Checkpoint, denselben LoRA-Stack, denselben Sampler und dieselbe Seed-Strategie verwenden.",
-          "Verfeinern Sie Bilder mit Inpainting (für Gesichter/Hände) und Outpainting (für erweiterte Kompositionen und Kamerabewegungen)."
-        ],
+        "points": "\"🎨 Verwenden Sie <strong>Stable Diffusion</strong> oder <strong>ComfyUI</strong>, um jede Zeile in `storyboard_v1.csv` in ein hochauflösendes Keyframe umzuwandeln. Halten Sie den Stil konsistent, indem Sie denselben Basis-Checkpoint, LoRA-Stack, Sampler und Seed-Policy für alle Aufnahmen verwenden. Verfeinern Sie Bilder mit Inpainting (für Gesichter/Hände) und Outpainting (für erweiterte Kompositionen und Kamerabewegungen).\"",
         "technicalDetails": {
           "modelConfig": {
             "checkpoint": "sd_xl_base_1.0.safetensors",
             "vae": "sdxl_vae.safetensors",
             "sampler": "euler_a",
-            "steps": 25,
-            "cfgScale": 6.5,
+            "steps": "\"25\"",
+            "cfgScale": "\"6,5\"",
             "resolution": "1024x576",
-            "loraStack": [
-              "character_girl_v2.safetensors",
-              "style_cinematic_blue_hour.safetensors"
-            ]
+            "loraStack": "\"character_girl_v2.safetensors,style_cinematic_blue_hour.safetensors\""
           },
           "consistency": {
             "seedStrategy": "fixed_per_scene",
@@ -387,36 +605,24 @@
       "step4": {
         "title": "Schritt 4: Fügen Sie Bewegung und Atmosphäre in After Effects hinzu",
         "description": "Verbessern Sie statische Keyframes mit Bewegung, Parallaxe und Atmosphäre mit Adobe After Effects (oder einem gleichwertigen Compositor).",
-        "points": [
-          "Importeer beeldsequenties of keyframes in <strong>Adobe After Effects</strong> als gelaagde composities.",
-          "Pas keyframe-animaties toe: pans, zooms, parallaxlagen, mist en lichtflikkeringen.",
-          "Fügen Sie Umgebungsgeräusche und filmische Übergänge zwischen Szenen hinzu."
-        ],
+        "points": "\"Importieren Sie Bildsequenzen oder Keyframes in <strong>Adobe After Effects</strong> als Ebenenkompositionen. Wenden Sie Keyframe-Animationen an: Schwenken, Zoomen, Parallaxenebenen, Nebelüberlagerungen, Glühen und Lichtflackern. Fügen Sie Umgebungsgeräusche und kinoreife Übergänge zwischen Szenen hinzu.\"",
         "technicalDetails": {
           "input": "renders/scene_{scene_id}/shot_{shot_id}/kf_0001.png (plus optionele dieptekaarten/alfa-kanalen)",
           "projectFile": "ae/storyboard_v1.aep",
-          "automation": [
-            "Verwenden Sie AE-scripts/ExtendScript oder JSX, um automatisch Kompositionen gemäß scene_id zu erstellen.",
-            "Map `duration_seconds` uit storyboard_v1.csv → compositieduur.",
-            "Genereer tussenframes via AE-plugins of video-bewuste diffusiontools indien nodig."
-          ],
+          "automation": "\"Verwenden Sie AE-Skripte/ExtendScript oder JSX, um automatisch Kompositionen pro Szenen-ID zu erstellen. `duration_seconds` aus storyboard_v1.csv zu `comp duration` zuordnen. Generieren Sie bei Bedarf Zwischenbilder über AE-Plugins oder videoerfassende Diffusionstools.\"",
           "output": "ae_renders/scene_{scene_id}_shot_{shot_id}_anim.mp4"
         }
       },
       "step5": {
         "title": "Schritt 5: Stimme und Untertitel hinzufügen",
         "description": "Generieren Sie Voiceover, die auf das Storyboard abgestimmt sind, und fügen Sie Untertitel hinzu, um die Zugänglichkeit und Klarheit zu gewährleisten.",
-        "points": [
-          "Verwenden Sie <strong>XTTS</strong> oder <strong>ElevenLabs</strong>, um natürliche Voiceovers aus dem Drehbuch mit einem konsistenten Stimmprofil zu generieren.",
-          "Genereer voor acroniemen (zoals API, NBA) aparte Engelse fragmenten en mix die daarna in voor schone uitspraak.",
-          "Fügen Sie Untertitel mit `.srt` oder `.json`-tijdlijnbestanden hinzu, synchronisiert mit dem Voiceover."
-        ],
+        "points": "\"Verwenden Sie <strong>XTTS</strong> oder <strong>ElevenLabs</strong>, um natürliche Sprachausgaben aus dem Skript zu generieren, unter Verwendung eines konsistenten Sprecherprofils. Für Akronyme (wie API, NBA) generieren Sie separate englische Ausschnitte und fügen sie nachträglich zusammen, um die Aussprache sauber zu halten. Fügen Sie Untertitel hinzu, indem Sie `.srt`- oder `.json`-Zeitachsen-Dateien synchronisiert mit der Sprachausgabe-Spur verwenden.\"",
         "technicalDetails": {
           "scriptSource": "dialoog en narratie afkomstig uit prompt_run_001.json + storyboard_v1.csv",
           "ttsConfig": {
             "engine": "XTTS of ElevenLabs",
             "voiceId": "cinematic_female_nl",
-            "sampleRate": 44100,
+            "sampleRate": "\"44100\"",
             "format": "wav"
           },
           "outputs": {
@@ -441,14 +647,7 @@
       }
     },
     "whatYouNeed": "📁 Das brauchst du",
-    "whatYouNeedTechnical": [
-      "GPU met minstens 12 GB VRAM voor Stable Diffusion / ComfyUI",
-      "Python-omgeving voor JSON/CSV-transformaties en automatiseringsscripts",
-      "ComfyUI geïnstalleerd met de nodige aangepaste nodes en workflows",
-      "Adobe After Effects of een vergelijkbare compositor voor beweging en effecten",
-      "Toegang tot de XTTS- / ElevenLabs-API voor spraaksynthese",
-      "ffmpeg geïnstalleerd en beschikbaar in de command-line"
-    ],
+    "whatYouNeedTechnical": "\"GPU mit mindestens 12 GB VRAM für stabile Diffusion / ComfyUI, Python-Umgebung für JSON/CSV-Transformationen und Automatisierungsskripte, ComfyUI installiert mit erforderlichen benutzerdefinierten Knoten und Workflows, Adobe After Effects oder ähnlicher Kompositor für Bewegung und Effekte, XTTS / ElevenLabs-API-Zugriff für TTS, ffmpeg installiert und verfügbar in der Befehlszeile\"",
     "cta": "🚀 Bereit, dein Storyboard mit KI zum Leben zu erwecken? <strong>Wir können dir ein komplettes Starter-Kit bereitstellen</strong> mit Beispiel-JSONs, ComfyUI-Workflows und ffmpeg/AE-Templates für den schnellen Start."
   },
   "SceneDetection": {
@@ -470,41 +669,19 @@
     "humanEvaluation": {
       "title": "Menschliche Bewertung der KI-Ausgabe",
       "introduction": "Obwohl unsere KI-Pipeline sehr genau ist, bleibt die menschliche Bewertung ein entscheidender Bestandteil unseres Qualitätssicherungsprozesses. So garantieren wir höchste Qualität:",
-      "evaluationAreas": [
-        "<strong>Szenengrenzengenauigkeit</strong> – Szenenübergänge überprüfen und anpassen",
-        "<strong>Validatie van metadata</strong> - Verifiëren van door AI gegenereerde beschrijvingen, tags en labels",
-        "<strong>Consistentiecontrole</strong> - Zorgen voor een uniforme stijl en opmaak over alle scènes",
-        "<strong>Inhoudsnauwkeurigheid</strong> - Controleren dat de AI belangrijke elementen in elke scène correct heeft geïdentificeerd"
-      ],
+      "evaluationAreas": "\"<strong>Szenengrenzgenauigkeit</strong> - Überprüfung und Anpassung von Szenenübergangspunkten,<strong>Metadatenvalidierung</strong> - Überprüfung von KI-generierten Beschreibungen, Tags und Labels,<strong>Konsistenzprüfung</strong> - Sicherstellung eines einheitlichen Stils und Formats in allen Szenen,<strong>Inhaltsrichtigkeit</strong> - Validierung, dass die KI die Schlüsselelemente in jeder Szene korrekt identifiziert hat\"",
       "workflow": {
         "title": "Human-in-the-loop workflow",
-        "steps": [
-          "AI verwerkt de video en genereert een eerste storyboard",
-          "Menschliche Bewerter bewerten die KI-Ausgabe mit unseren speziellen Tools",
-          "Prüfer geben Feedback und nehmen bei Bedarf Anpassungen vor",
-          "Das System lernt aus menschlichen Korrekturen, um zukünftige Ergebnisse zu verbessern",
-          "Laatste kwaliteitscontrole voor levering"
-        ]
+        "steps": "\"KI verarbeitet das Video und generiert ein erstes Storyboard, Menschliche Gutachter bewerten die KI-Ausgabe mithilfe unserer spezialisierten Tools, Gutachter geben Feedback und nehmen notwendige Anpassungen vor, System lernt aus menschlichen Korrekturen, um zukünftige Ausgaben zu verbessern, Abschließende Qualitätsprüfung vor der Auslieferung\""
       },
       "benefits": {
         "title": "Vorteile der menschlichen Bewertung",
-        "items": [
-          "<strong>Höhere Genauigkeit</strong> – Menschliche Bewerter erkennen subtile Nuancen, die der KI möglicherweise entgehen",
-          "<strong>Contextueel begrip</strong> - Betere interpretatie van culturele en situationele context",
-          "<strong>Kwaliteitsborging</strong> - Extra validatielaag voor professionele use-cases",
-          "<strong>Kontinuierliche Verbesserung</strong> – Menschliches Feedback hilft beim Trainieren und Verfeinern von KI-Modellen"
-        ]
+        "items": "\"<strong>Höhere Genauigkeit</strong> - Menschliche Gutachter erfassen subtile Nuancen, die KI möglicherweise übersieht,<strong>Kontextuelles Verständnis</strong> - Bessere Interpretation des kulturellen und situativen Kontexts,<strong>Qualitätssicherung</strong> - Zusätzliche Validierungsebene für professionelle Anwendungsfälle,<strong>Fortlaufende Verbesserung</strong> - Menschliches Feedback hilft dabei, die KI-Modelle zu trainieren und zu verfeinern\""
       },
       "tools": {
         "title": "Evaluatietools",
         "description": "Unsere Plattform umfasst spezielle Tools zur Unterstützung menschlicher Prüfer:",
-        "features": [
-          "Zij-aan-zij vergelijking van video en storyboard",
-          "Gebruiksvriendelijke interface voor het aanpassen van scènegrenzen",
-          "Bulkbewerking van metadata en tags",
-          "Kollaborationsfunktionen für Teambewertungen",
-          "Versiegeschiedenis en wijzigingsregistratie"
-        ]
+        "features": "\"Vergleich von Video und Storyboard nebeneinander, Benutzerfreundliche Oberfläche zur Anpassung von Szenengrenzen, Massenbearbeitung von Metadaten und Tags, Kollaborationsfunktionen für Teamüberprüfung, Versionshistorie und Änderungsverfolgung\""
       }
     },
     "header": {
@@ -592,38 +769,22 @@
         "step1": {
           "title": "1. Videoanalyse",
           "description": "Unsere KI scannt dein Video Frame für Frame und analysiert visuelle sowie auditive Hinweise, um potenzielle Szenengrenzen zu erkennen.",
-          "details": [
-            "Analyseert kleurhistogrammen en bewegingsvectoren",
-            "Detecteert veranderingen in audiovolume en stiltes",
-            "Identificeert shotgrenzen en overgangen"
-          ]
+          "details": "\"Analysiert Farbhistogramme und Bewegungsvektoren, erkennt Änderungen des Audiopegels und Stille, identifiziert Aufnahmegrenzen und Übergänge\""
         },
         "step2": {
           "title": "2. Scènesegmentatie",
           "description": "Das System gruppiert zusammengehörige Einstellungen anhand visueller und zeitlicher Beziehungen zu kohärenten Szenen.",
-          "details": [
-            "Gebruikt machine learning om de context van scènes te begrijpen",
-            "Houdt rekening met shotduur en overgangstypen",
-            "Voegt gerelateerde shots samen tot logische scènes"
-          ]
+          "details": "Verwendet maschinelles Lernen, um den Szenenkontext zu verstehen. Berücksichtigt die Aufnahmedauer und Übergangstypen. Fügt verwandte Aufnahmen zu logischen Szenen zusammen."
         },
         "step3": {
           "title": "3. Inhoudsclassificatie",
           "description": "Jede erkannte Szene wird anhand ihres visuellen und akustischen Inhalts analysiert und kategorisiert.",
-          "details": [
-            "Identificeert belangrijke visuele elementen en objecten",
-            "Classificeert het type scène (bijv. interview, actie, landschap)",
-            "Analyseert audio op spraak, muziek en effecten"
-          ]
+          "details": "\"Identifiziert wichtige visuelle Elemente und Objekte, Klassifiziert Szenentypen (z. B. Interview, Action, Landschaft), Analysiert Audio auf Sprache, Musik und Effekte\""
         },
         "step4": {
           "title": "4. Metadatageneratie",
           "description": "Für jede Szene werden umfangreiche Metadaten generiert, die leistungsstarke Such- und Organisationsfunktionen ermöglichen.",
-          "details": [
-            "Maakt tijdstempels en duurinformatie aan",
-            "Genereert representatieve thumbnails",
-            "Extraheert belangrijke dialogen en audiocues"
-          ]
+          "details": "\"Erstellt Zeitstempel und Dauerinformationen, Generiert repräsentative Miniaturansichten, Extrahiert wichtige Dialoge und Audio-Hinweise\""
         }
       }
     },
@@ -634,12 +795,7 @@
     "recommendedStyle": {
       "title": "Aanbevolen stijl voor de beste resultaten",
       "description": "Om de meest nauwkeurige scenedetectie te krijgen, raden we de volgende stijlguidelines aan:",
-      "points": [
-        "Behoud consistente belichting binnen elke scène",
-        "Verwenden Sie zwischen den Aufnahmen klare Audiomarkierungen oder Klapptafeln",
-        "Halten Sie die Kamerabewegungen gleichmäßig und bewusst",
-        "Behoud consistente audioniveaus binnen scènes"
-      ]
+      "points": "\"Stellen Sie eine gleichbleibende Beleuchtung in jeder Szene sicher, Verwenden Sie klare Audio-Marker oder Klappenbretter zwischen den Takes, Halten Sie Kamerabewegungen fließend und gezielt, Stellen Sie gleichbleibende Audiopegel innerhalb der Szenen sicher\""
     },
     "title": "Vom Rohmaterial bis zum Storyboard: KI-gestützte Videoanalyse",
     "description": "Ontdek hoe AI ruwe video transformeert in gestructureerde storyboards met geautomatiseerde scenedetectie en analyse.",
@@ -653,23 +809,22 @@
       "introduction": "Schauen wir uns eine typische Ausgabe der Szenenerkennung an, um zu verstehen, wie unsere KI Videoinhalte analysiert und strukturiert. Unter jeder Erklärung findest du die zugehörige JSON-Struktur, die diese Erkenntnisse ermöglicht.",
       "scenes": [
         {
-          "title": "1. Scène-identificatie",
-          "content": "Each scene is assigned a unique identifier and time range, allowing precise navigation through the video content. Dies bildet die Grundlage unserer Analyse.",
-          "example": "Scène 1 (00:00:02.50 - 00:00:05.20)",
+          "title": "Szenengrenzerkennung",
+          "content": "Unsere KI analysiert visuelle und auditive Hinweise, um präzise Szenenübergänge zu identifizieren und verwendet fortschrittliche Computer-Vision-Techniken, um Veränderungen in Beleuchtung, Komposition und Bewegungsmustern zu erkennen.",
+          "example": "Szene 1: 00:00 - 02:30\nÜbergangstyp: Hard Cut\nVertrauen: 98%",
           "jsonExample": {
             "scene_id": "scene_001",
-            "start_time": 2.5,
-            "end_time": 5.2,
-            "duration": 2.7,
-            "keyframe_index": 5,
-            "keyframe_time": 3.8
+            "start_time": "0.0",
+            "end_time": "150.0",
+            "transition_type": "hard_cut",
+            "confidence": 0.98
           },
-          "jsonDescription": "Deze JSON-structuur toont de basisidentificatiedata voor een scène, inclusief de unieke ID, timinginformatie en de index/tijd van het representatieve keyframe."
+          "jsonDescription": "Jede Szene enthält präzise Zeitangaben, Übergangserkennung und Vertrauenswerte für zuverlässige Segmentierung."
         },
         {
-          "title": "2. Visuele analyse",
-          "content": "Unsere KI untersucht Schlüsselbilder, um die visuelle Zusammensetzung jeder Szene zu verstehen, einschließlich dominanter Farben, Lichtverhältnisse und visueller Elemente.",
-          "example": "Keyframe-analyse: Buiten, daglicht, meerdere personen",
+          "title": "Visuelle Analyse",
+          "content": "Umfassende Extraktion visueller Merkmale einschließlich Farbpaletten, Beleuchtungsbedingungen, Bewegungsvektoren und Kompositionsanalyse, um die visuellen Eigenschaften jeder Szene zu verstehen.",
+          "example": "Helligkeit: 0.78\nKontrast: 0.65\nDominante Farben: #3A5FCD, #87CEEB",
           "jsonExample": {
             "visual_analysis": {
               "brightness": 0.78,
@@ -679,126 +834,51 @@
                 "#87CEEB",
                 "#F5F5DC"
               ],
-              "dominant_colors": [
-                {
-                  "color": "#3A5FCD",
-                  "percentage": 0.45
-                },
-                {
-                  "color": "#87CEEB",
-                  "percentage": 0.35
-                },
-                {
-                  "color": "#F5F5DC",
-                  "percentage": 0.2
-                }
+              "lighting_condition": "daylight",
+              "environment": "studio"
+            }
+          },
+          "jsonDescription": "Visuelle Metadaten ermöglichen inhaltsbasierte Suche und ästhetische Analyse in Ihrer Videobibliothek."
+        },
+        {
+          "title": "Audioverarbeitung",
+          "content": "Fortschrittliche Audioanalyse erkennt Sprache, Musik und Soundeffekte, während gesprochene Inhalte extrahiert und Audiopegel analysiert werden, um umfassendes Szenenverständnis zu ermöglichen.",
+          "example": "Sprache erkannt: 92% Vertrauen\nHintergrundgeräusch: Niedrig\nSprecher: 2 (männlich, weiblich)",
+          "jsonExample": {
+            "audio_analysis": {
+              "has_speech": true,
+              "speech_confidence": 0.92,
+              "background_noise_level": 0.15,
+              "speaker_demographics": [
+                "male",
+                "female"
               ],
-              "lighting_condition": "daglicht",
-              "environment": "buiten",
-              "detected_objects": [
-                {
-                  "label": "persoon",
-                  "confidence": 0.97,
-                  "count": 2
-                },
-                {
-                  "label": "lucht",
-                  "confidence": 0.99,
-                  "count": 1
-                }
+              "speech_text": "Lassen Sie uns diskutieren, wie KI die Videoproduktion verändert..."
+            }
+          },
+          "jsonDescription": "Audio-Metadaten bieten Kontext für die Inhaltserkennung und Barrierefreiheitsfunktionen wie automatische Transkription."
+        },
+        {
+          "title": "Inhaltsklassifizierung",
+          "content": "KI-gestützte Klassifizierung identifiziert Szenentypen, Einstellungen, Themen und Stimmungen, um intelligente Inhaltsorganisation und automatische Tagging zu ermöglichen.",
+          "example": "Kategorie: Interview\nEinstellung: Studio\nStimmung: Neutral-positiv",
+          "jsonExample": {
+            "content_analysis": {
+              "primary_category": "interview",
+              "setting": "studio",
+              "subjects": [
+                "host",
+                "guest"
+              ],
+              "sentiment": "neutral_positive",
+              "tags": [
+                "technology",
+                "AI",
+                "video production"
               ]
             }
           },
-          "jsonDescription": "Deze JSON toont de data van de visuele analyse, inclusief kleurinformatie, lichtomstandigheden en gedetecteerde objecten met betrouwbaarheidscores."
-        },
-        {
-          "title": "3. Shotcompositie",
-          "content": "Binnen elke scène identificeren we individuele shots en hun overgangen, wat helpt om de visuele flow en het tempo van de content te begrijpen.",
-          "example": "3 shots gedetecteerd met vloeiende cuts en één crossfade",
-          "jsonExample": {
-            "shots": [
-              {
-                "shot_id": "shot_001",
-                "start_time": 2.5,
-                "end_time": 3.1,
-                "transition": {
-                  "type": "cut",
-                  "confidence": 0.98
-                },
-                "camera_motion": {
-                  "type": "statisch",
-                  "confidence": 0.92
-                }
-              },
-              {
-                "shot_id": "shot_002",
-                "start_time": 3.1,
-                "end_time": 4.3,
-                "transition": {
-                  "type": "fade",
-                  "duration": 0.3,
-                  "confidence": 0.95
-                },
-                "camera_motion": {
-                  "type": "pan_naar_links",
-                  "confidence": 0.88
-                }
-              }
-            ]
-          },
-          "jsonDescription": "Deze JSON-structuur beschrijft de shotcompositie binnen een scène, inclusief timing, overgangstypen en analyse van camerabewegingen."
-        },
-        {
-          "title": "4. Inhoudsclassificatie",
-          "content": "Scènes worden automatisch gecategoriseerd op basis van hun inhoud, waardoor je later eenvoudig specifieke soorten beeldmateriaal kunt terugvinden.",
-          "example": "Categorie: Drama, Setting: Scheepsdek, Personages: Hoofdpersonages",
-          "jsonExample": {
-            "content_analysis": {
-              "primary_category": "drama",
-              "secondary_categories": [
-                "romantiek",
-                "ramp"
-              ],
-              "setting": {
-                "type": "scheepsdek",
-                "time_of_day": "nacht",
-                "confidence": 0.92
-              },
-              "subjects": [
-                {
-                  "type": "hoofdpersoon",
-                  "name": "Jack",
-                  "position": "midden_kader",
-                  "emotion": "vastberaden",
-                  "confidence": 0.89
-                },
-                {
-                  "type": "hoofdpersoon",
-                  "name": "Rose",
-                  "position": "midden_kader",
-                  "emotion": "angstig",
-                  "confidence": 0.91
-                }
-              ],
-              "sentiment": {
-                "overall": "intens_dramatisch",
-                "confidence": 0.88,
-                "emotions": [
-                  "angst",
-                  "vastberadenheid",
-                  "urgentie"
-                ]
-              },
-              "key_elements": [
-                "reddingsboot",
-                "oceaan",
-                "maanlicht"
-              ],
-              "narrative_importance": 0.95,
-              "action_required": true
-            }
-          },
-          "jsonDescription": "Deze JSON laat zien hoe de AI filmscènes analyseert en classificeert, inclusief emoties van personages, settingdetails en narratieve belangrijkheid, met de dramatische reddingsbootscène uit Titanic als voorbeeld."
+          "jsonDescription": "Inhaltsklassifizierung ermöglicht leistungsstarke Suche, Filterung und automatisierte Inhaltsverwaltungs-Workflows."
         }
       ],
       "analysisTitle": "Alles samenbrengen",
@@ -807,80 +887,47 @@
       "fullExampleDescription": "Zo komen alle onderdelen samen in een complete scèneanalyse:",
       "fullExample": {
         "scene_id": "scene_001",
-        "start_time": 2.5,
-        "end_time": 5.2,
-        "duration": 2.7,
+        "start_time": "\"2,5\"",
+        "end_time": "\"5.2\"",
+        "duration": "\"2,7\"",
         "metadata": {
           "created_at": "2025-12-11T14:25:30Z",
           "video_source": "interview_001.mp4",
           "resolution": "1920x1080",
-          "fps": 30
+          "fps": "\"30\""
         },
         "visual_analysis": {
-          "brightness": 0.78,
-          "contrast": 0.65,
-          "color_palette": [
-            "#3A5FCD",
-            "#87CEEB",
-            "#F5F5DC"
-          ],
+          "brightness": "\"0,78\"",
+          "contrast": "\"0,65\"",
+          "color_palette": "\"#3A5FCD,#87CEEB,#F5F5DC\"",
           "lighting_condition": "daglicht",
           "environment": "studio"
         },
         "audio_analysis": {
-          "has_speech": true,
-          "speech_confidence": 0.92,
-          "background_noise_level": 0.15,
-          "speaker_gender": [
-            "man",
-            "vrouw"
-          ],
+          "has_speech": "\"wahr\"",
+          "speech_confidence": "\"0,92\"",
+          "background_noise_level": "\"0,15\"",
+          "speaker_gender": "\"männlich, weiblich\"",
           "speech_text": "Lassen Sie uns diskutieren, wie KI die Videoproduktion verändert..."
         },
         "content_analysis": {
           "primary_category": "interview",
           "setting": "studio",
-          "subjects": [
-            "host",
-            "gast"
-          ],
+          "subjects": "\"Gastgeber,Gast\"",
           "sentiment": "neutraal_positief"
         },
-        "shots": [
-          {
-            "shot_id": "shot_001",
-            "start_time": 2.5,
-            "end_time": 3.1,
-            "keyframe": "https://example.com/keyframes/scene_001_shot_001.jpg",
-            "transition": {
-              "type": "cut",
-              "confidence": 0.98
-            }
-          },
-          {
-            "shot_id": "shot_002",
-            "start_time": 3.1,
-            "end_time": 5.2,
-            "keyframe": "https://example.com/keyframes/scene_001_shot_002.jpg",
-            "transition": {
-              "type": "fade",
-              "confidence": 0.95
-            }
-          }
-        ]
+        "shots": "\"[Objekt Objekt],[Objekt Objekt]\""
       },
       "benefitsTitle": "Belangrijkste voordelen",
-      "benefits": [
-        "<strong>Efficiënte montage:</strong> Spring direct naar elke scène of shot zonder urenlang te hoeven scrollen",
-        "<strong>Slim zoeken:</strong> Vind content op basis van visuele elementen, niet alleen op metadata",
-        "<strong>Consistente kwaliteit:</strong> Identificeer en behoud visuele consistentie in je project",
-        "<strong>Data-gedreven beslissingen:</strong> Krijg inzicht in structuur en tempo van je content"
-      ]
+      "benefits": "\"<strong>Effizientes Bearbeiten:</strong> Springen Sie direkt zu einer Szene oder Aufnahme, ohne stundenlanges Durchsuchen des Materials,<strong>Intelligente Suche:</strong> Finden Sie Inhalte basierend auf visuellen Elementen, nicht nur Metadaten,<strong>Konsistente Qualität:</strong> Identifizieren und bewahren Sie visuelle Konsistenz in Ihrem Projekt,<strong>Datenbasierte Entscheidungen:</strong> Erhalten Sie Einblicke in die Struktur und das Tempo Ihrer Inhalte\""
     },
     "conclusion": {
       "title": "Videoproductie transformeren met AI",
       "p1": "Die KI-gestützte Szenenerkennung verändert die Art und Weise, wie wir an die Videoproduktion herangehen. Durch die Automatisierung des zeitaufwändigen Prozesses der Szenenidentifikation und -organisatie können sich YouTuber auf das Wesentliche konzentrieren – das Erzählen fesselnder Geschichten. Unsere Technologie schließt die Lücke zwischen Rohmaterial und fertigen Inhalten und macht professionelle Videoanalysen für jedermann zugänglich.",
-      "p2": "Während wir unsere Algorithmen weiter verfeinern und unsere Fähigkeiten ausbauen, sind wir gespannt, wie Filmemacher, Lehrkräfte und Content Creator diese Werkzeuge nutzen, um die Grenzen des visuellen Storytellings zu verschieben. Die Zukunft der Videoproduktion ist da – effizienter und kreativer als je zuvor."
+      "p2": "Während wir unsere Algorithmen weiter verfeinern und unsere Fähigkeiten ausbauen, sind wir gespannt, wie Filmemacher, Lehrkräfte und Content Creator diese Werkzeuge nutzen, um die Grenzen des visuellen Storytellings zu verschieben. Die Zukunft der Videoproduktion ist da – effizienter und kreativer als je zuvor.",
+      "content": "Die KI-gestützte Szenenerkennung revolutioniert, wie wir mit Videoinhalten arbeiten. Durch die Automatisierung des mühsamen Prozesses der Szenenidentifikation und -analyse ermöglichen wir es den Kreativen, sich auf das Wesentliche zu konzentrieren – das Erzählen fesselnder Geschichten.",
+      "finalThought": "Die Zukunft der Videoproduktion ist da, und sie wird durch intelligente Automatisierung unterstützt, die die menschliche Kreativität verbessert, anstatt sie zu ersetzen.",
+      "nextSteps": "Bereit, Ihren Video-Workflow zu transformieren? Entdecken Sie unsere KI-gestützten Werkzeuge und überzeugen Sie sich selbst von dem Unterschied."
     },
     "richStructuredOutput": "Rijke, gestructureerde output",
     "richStructuredOutputText": "Unser System erzeugt umfassende Storyboard-Daten mit detaillierten Metadaten für jede Szene und gibt dir damit die volle Kontrolle über deinen Videoinhalt.",
@@ -950,29 +997,26 @@
     "integration": {
       "title": "Eenvoudige integratie",
       "description": "Die strukturierte JSON-Ausgabe lässt sich leicht in andere Tools und Workflows integrieren:",
-      "technologies": [
-        "Python",
-        "JavaScript",
-        "Node.js",
-        "React",
-        "Vue"
-      ]
+      "technologies": "\"Python, JavaScript, Node.js, React, Vue\""
     },
     "features10": {
       "comprehensiveData": {
-        "title": "Uitgebreide scènedata",
+        "title": "Umfassende Szenendaten",
         "items": [
-          "Precieze timinginformatie voor elke scène",
-          "Keyframes voor visuele referentie",
-          "Objectdetectieresultaten",
-          "Analyse van camerabewegingen"
+          "Genaue Zeitinformationen für jede Szene",
+          "Schlüsselbilder zur visuellen Referenz",
+          "Ergebnisse der Objekterkennung",
+          "Analyse der Kamerabewegung"
         ]
       },
       "export": {
-        "title": "Exportoptie",
-        "formats": {
-          "json": "JSON"
-        }
+        "title": "Exportoptionen",
+        "formats": [
+          "JSON für programmatischen Zugriff",
+          "CSV für Tabellenkalkulationanalyse",
+          "XML für Legacy-Systemintegration",
+          "Benutzerdefinierte Formate verfügbar"
+        ]
       }
     },
     "performance": {
@@ -1016,38 +1060,12 @@
       "buildingTools": {
         "title": "Die Werkzeuge bauen (Die Ingenieur-/Architekten-Mentalität)",
         "subtitle": "Nutzen Sie die KI nicht nur, verbessern Sie sie.",
-        "points": [
-          {
-            "title": "Modellbewertung und -steuerung",
-            "content": "Da KI-Ergebnisse zur Handelsware werden, ist die Person am wertvollsten, die definieren kann, wie ein 'gutes' Ergebnis aussieht. Konzentrieren Sie sich auf spezialisierte Bewertungsrahmen (wie Risikogewichtung im Finanzwesen)."
-          },
-          {
-            "title": "Domänenspezifische Feinabstimmung",
-            "content": "Beherrschen Sie Techniken wie LoRA oder RAG, um spezifisches Geschäftswissen in LLMs einzubringen."
-          },
-          {
-            "title": "Automatisierung",
-            "content": "Leiten Sie interne Initiativen wie 'Virtuelle Analysten' oder automatisierte Experimentierpipelines."
-          }
-        ]
+        "points": "\"[object Object],[object Object],[object Object]\""
       },
       "leveragingTools": {
         "title": "Die Werkzeuge nutzen (Die Strategen-Mentalität)",
         "subtitle": "Nutzen Sie die KI, um Ihre Produktivität zu verzehnfachen und sich auf das zu konzentrieren, was Menschen am besten können.",
-        "points": [
-          {
-            "title": "Fachwissen",
-            "content": "Die KI kennt das 'Wie', aber Sie kennen das 'Warum'. Tiefgreifendes Geschäftsverständnis ermöglicht es Ihnen, den Kontext zu liefern, der der KI fehlt."
-          },
-          {
-            "title": "Kritisches Denken und Experimentieren",
-            "content": "Während KI Code generieren kann, bleiben menschliche Fähigkeiten im Bereich Data Science entscheidend für Hypothesentests, Kausalanalyse und die Interpretation 'unordentlicher' realer Daten."
-          },
-          {
-            "title": "Kommunikation und Einflussnahme",
-            "content": "Die Fähigkeit, komplexe Daten in eine Geschäftsgeschichte zu übersetzen und das Vertrauen der Stakeholder zu gewinnen, ist eine 'weiche' Fähigkeit, die zu einer 'harten' Anforderung geworden ist."
-          }
-        ]
+        "points": "\"[object Object],[object Object],[object Object]\""
       }
     },
     "bottomLine": {
@@ -1078,13 +1096,19 @@
       "content": "Wenn Geschäftspartner ihre eigenen Eingabeaufforderungen schreiben können, um grundlegende Erkenntnisse zu erhalten, fühlen sich viele Data Scientists \"unterfordert\", gefangen in endlosen Besprechungen und sich wiederholendem Prompt-Engineering."
     },
     "title": "Data Science im Zeitalter der KI: Ist der \"Traumjob\" noch attraktiv?",
-    "description": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein."
+    "description": "Vor einem Jahrzehnt bezeichnete die Harvard Business Review den Data Scientist als den \"attraktivsten Beruf des 21. Jahrhunderts\". Heute verändert sich die Landschaft grundlegend. Während die Nachfrage nach Datenexperten nach wie vor hoch ist, verändert der Aufstieg generativer KI grundlegend, was es bedeutet, ein 'Data Scientist' zu sein.",
+    "imageAlt": "Illustration, die die Entwicklung der Datenwissenschaft im KI-Zeitalter darstellt"
   },
   "aiPlatform": {
     "title": "Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
     "subtitle": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
     "imageAlt": "KI-Plattform-Architekturdiagramm",
     "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+    "intro": {
+      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
+      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
+    },
+    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
     "mindsetShift": {
       "title": "1. Die Denkweise: Demokratisieren statt zentralisieren",
       "content": "Wenn Ihr KI-Team zum Flaschenhals wird, haben Sie bereits verloren. Bauen Sie stattdessen eine Selbstbedienungs-KI-Infrastruktur auf, die Produktentwickler befähigt, das zu bauen, was sie benötigen.",
@@ -1105,9 +1129,9 @@
         "title": "A. Das einheitliche Modell-Gateway",
         "content": "Binden Sie sich nicht an einen Anbieter. Leiten Sie Anfragen nahtlos zwischen:",
         "points": [
-          "Kommerziellen LLMs (GPT-4, Claude, etc.) – für erstklassige Argumentation.",
-          "Privaten Modellen (Llama, Qwen) – für sensible Daten und Kostenkontrolle.",
-          "Spezialmodellen – für Programmierung, Bildverarbeitung oder Echtzeitanwendungen."
+          "Kommerzielle LLMs (GPT‑4, Claude usw.) – für erstklassiges Denken.",
+          "Private Modelle (Llama, Qwen) – für sensible Daten und Kostenkontrolle.",
+          "Spezialmodelle – für Codierung, Vision oder Aufgaben mit geringer Latenz."
         ],
         "conclusion": "Das Gateway übernimmt Wiederholungsversuche, Fallbacks, Kostenverfolgung und Ratenbegrenzungen – Entwickler rufen einfach `platform.generate()` auf."
       },
@@ -1121,10 +1145,10 @@
         "content": "Code-zentrierte KI ist mächtig; workflow-zentrierte KI ist schneller.",
         "example": "Wir verwenden Low-Code-Tools (wie Dify, Coze, n8n usw.), um Schritte zu verketten:",
         "workflow": [
-          "Benutzeranfrage",
+          "Benutzerabfrage",
           "Dokumente abrufen",
-          "Werkzeug aufrufen (API, SQL)",
-          "Schlussfolgern",
+          "Tool aufrufen (API, SQL)",
+          "Grund",
           "Ausgabe"
         ],
         "conclusion": "Dadurch können Produktteams in Stunden, nicht in Wochen, Prototypen erstellen."
@@ -1134,10 +1158,10 @@
       "title": "3. Überspringen Sie das Feinabstimmen (meistens)",
       "content": "**Hier ist das Geheimnis: Sie müssen ein LLM wahrscheinlich nicht feinabstimmen.**",
       "strategies": [
-        "Bessere Prompts: Systematisches Engineering schlägt zufälliges Anpassen.",
-        "Hochwertiges RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.",
-        "Multi-Modell-Fusion: Verwenden Sie GPT-4 für die Argumentation, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.",
-        "LLM-als-Richter: Verwenden Sie ein starkes Modell, um die Ausgaben günstigerer Modelle zu bewerten."
+        "Bessere Hinweise: Systematisches Engineering schlägt zufälliges Feintuning.",
+        "Hochwertiger RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.",
+        "Multi-Model-Fusion: Verwenden Sie GPT-4 für das Argumentieren, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.",
+        "LLM-als-Richter: Verwenden Sie ein starkes Modell, um Ausgaben von kostengünstigeren Modellen zu bewerten."
       ],
       "conclusion": "Wir stimmen nur kleine Modelle für enge, hochvolumige Aufgaben nach einem langen Prozess der Sammlung und Bereinigung hochwertiger domänenspezifischer Daten fein. Alles andere ist 'Engineering statt Training'."
     },
@@ -1146,16 +1170,16 @@
       "content": "Spitzenplattformen entstehen nicht allein durch Modelle. Sie entstehen durch die Lösung langweiliger, schwieriger Probleme:",
       "points": [
         {
-          "title": "Die Daten-Spirale",
-          "content": "Wenn Sie nicht in der Lage sind, Produktionsdaten zu protokollieren und daraus zu lernen, werden sich Ihre Modelle nicht verbessern. Arbeiten Sie frühzeitig mit der Sicherheitsabteilung zusammen, um konforme, anonymisierte Datenpipelines zu ermöglichen."
+          "title": "Daten-Pipeline & Governance",
+          "content": "Automatisierte Datenbereinigung, PII-Erkennung und Audit-Trails für Compliance."
         },
         {
-          "title": "Bewertung, nicht Bauchgefühl",
-          "content": "Fordern Sie von den Fachabteilungen 'Goldstandard-Datensätze' an – echte Frage-Antwort-Paare – damit Sie Präzision und Vollständigkeit messen können, nicht nur 'sieht gut aus'."
+          "title": "Observability & Monitoring",
+          "content": "Echtzeit-Tracking der Modellleistung, Kosten und Benutzerzufriedenheit."
         },
         {
-          "title": "Rechenressourcen",
-          "content": "Inferenz ist nicht wie das Ausführen von CPUs. Sie benötigen spezielle Überwachung, um Speicherüberläufe zu verhindern und die Auslastung zu optimieren."
+          "title": "Sicherheit & Zugriffskontrolle",
+          "content": "Unternehmensfähige Authentifizierung, Datenverschlüsselung und Nutzungsquoten."
         }
       ]
     },
@@ -1164,12 +1188,7 @@
       "content": "Für mittelständische Technologieunternehmen bedeutet Erfolg mit KI nicht, ein besseres LLM zu bauen. Es bedeutet, eine Plattform zu schaffen, die KI in einen wiederholbaren, skalierbaren Geschäftsprozess verwandelt.",
       "finalThoughts": "Beginnen Sie mit der Infrastruktur, sichern Sie die Daten und lassen Sie Ihre Teams bauen. Die Zukunft besteht nicht aus einem Modell, das alles beherrscht – sondern aus einer Flotte spezialisierter Agenten, die jeweils ein echtes Geschäftsproblem lösen, alle angetrieben von einer Plattform, die es einfach macht.",
       "callToAction": "Bereit zum Bauen? Halten Sie es einfach, halten Sie es offen und konzentrieren Sie sich darauf, andere zu befähigen."
-    },
-    "intro": {
-      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
-      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
-    },
-    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen"
+    }
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
@@ -1179,10 +1198,10 @@
     "coreShift": {
       "title": "1. Die grundlegende Veränderung: Vom QA-Bot zum Task-Agenten",
       "content": [
-        "Die meisten KI-Systeme sind heute immer noch kontextüberladene QA-Bots:",
+        "Die meisten KI-Systeme von heute sind immer noch kontextgefüllte QA-Bots:",
         "• Sie beantworten Fragen gut",
         "• Sie halluzinieren unter Druck",
-        "• Sie bieten keine Garantien für Ausführung, Sicherheit und Konsistenz"
+        "• Es fehlen Garantien bezüglich Ausführung, Sicherheit und Konsistenz"
       ],
       "keyInsight": "Die zentrale Erkenntnis: Skalieren Sie nicht den Kontext. Strukturieren Sie ihn."
     },
@@ -1192,28 +1211,28 @@
         {
           "title": "🧱 1. Statischer Kontext — Regeln (Immer aktiv)",
           "points": [
-            "Mentales Modell: Mitarbeiterhandbuch",
+            "Gedankenmodell: Mitarbeiterhandbuch",
             "Immer geladen",
-            "Definiert Identität, Codierungsstandards, Verhaltensrichtlinien",
-            "Verhindert Halluzinationen und Stilabweichungen",
+            "Definiert Identität, Codierungsstandards, Verhaltensbeschränkungen",
+            "Verhindert Halluzinationen und Stildrift",
             "Klein, stabil, von Menschen bearbeitbar"
           ]
         },
         {
           "title": "🛠️ 2. Dynamischer Kontext — Fähigkeiten (Bei Bedarf)",
           "points": [
-            "Mentales Modell: Werkzeugkasten",
-            "Wird nur bei Bedarf geladen",
-            "Jede Fähigkeit ist eine eigenständige Funktion",
+            "Gedankenmodell: Werkzeugkasten",
+            "Nur bei Bedarf geladen",
+            "Jede Fähigkeit ist eine in sich geschlossene Fähigkeit",
             "Hält das Kontextfenster sauber"
           ]
         },
         {
-          "title": "⚓ 3. Deterministische Hooks — Leitplanken",
+          "title": "⚓ 3. Deterministische Hooks — Schutzgeländer",
           "points": [
-            "Mentales Modell: Sicherheits- und Compliance-Schicht",
+            "Gedankenmodell: Sicherheits + Compliance-Schicht",
             "Nicht probabilistisch",
-            "Läuft vor/nach der LLM-Verarbeitung",
+            "Läuft vor / nach LLM-Reasoning",
             "Erzwingt Regeln, die niemals fehlschlagen dürfen"
           ]
         }
