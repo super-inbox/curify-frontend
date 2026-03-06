@@ -74,6 +74,14 @@ export default function StoryboardToPipelinePost() {
   // Get related templates for this blog post
   const evolutionTemplates = getTemplatesByCategory("evolution", "en");
   const allTemplates = getTemplatesByCategory("", "en"); // Get all templates
+  
+  // Combine templates without duplicates
+  const combinedTemplates = [
+    ...evolutionTemplates,
+    ...allTemplates.filter(template => 
+      !evolutionTemplates.some(evoTemplate => evoTemplate.id === template.id)
+    ).slice(0, 3)
+  ];
 
   // Get step data with proper typing
   const getStep = (stepKey: string): StepTranslations => {
@@ -404,7 +412,7 @@ ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex "[0:a][1:a]amix=inputs=2"
 
       {/* Template Suggestions Section */}
       <TemplateSuggestions 
-        templates={[...evolutionTemplates, ...allTemplates.slice(0, 3)]}
+        templates={combinedTemplates}
         className="mt-8"
       />
     </article>

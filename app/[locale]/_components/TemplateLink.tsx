@@ -60,9 +60,9 @@ export function TemplateSuggestions({
         Related Nano Templates
       </h4>
       <div className="space-y-2">
-        {displayTemplates.map((template) => (
+        {displayTemplates.map((template, index) => (
           <TemplateLink
-            key={template.id}
+            key={`${template.id}-${index}`}
             href={template.url}
             title={template.title}
             category={template.category}

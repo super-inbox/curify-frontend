@@ -948,9 +948,12 @@
       },
       "export": {
         "title": "Option d'exportation",
-        "formats": {
-          "json": "JSON"
-        }
+        "formats": [
+          "JSON pour l'accès programmatique",
+          "CSV pour l'analyse de tableur",
+          "XML pour l'intégration avec les systèmes hérités",
+          "Formats personnalisés disponibles"
+        ]
       }
     },
     "performance": {
@@ -1109,13 +1112,31 @@
     "fineTuning": {
       "title": "3. Ignorer le réglage fin (la plupart du temps)",
       "content": "Voici le secret: **vous n'avez probablement pas besoin de peaufiner un LLM.**",
-      "strategies": "\"Meilleurs conseils : l'ingénierie systématique bat les ajustements aléatoires.,RAG de haute qualité : une connaissance propre et structurée bat un modèle plus intelligent.,Fusion multi-modèles : utilisez GPT-4 pour le raisonnement, un modèle local pour l'extraction, Claude pour les tâches créatives.,LLM-en-tant-que-juge : utilisez un modèle fort pour évaluer les sorties de modèles moins chers.\"",
+      "strategies": [
+          "Meilleurs conseils : l'ingénierie systématique bat les ajustements aléatoires.",
+          "RAG de haute qualité : une connaissance propre et structurée bat un modèle plus intelligent.",
+          "Fusion multi-modèles : utilisez GPT-4 pour le raisonnement, un modèle local pour l'extraction, Claude pour les tâches créatives.",
+          "LLM-en-tant-que-juge : utilisez un modèle fort pour évaluer les sorties de modèles moins chers."
+        ],
       "conclusion": "Nous ajustons uniquement de petits modèles pour des tâches restreintes et à volume élevé, après un long processus de collecte et de nettoyage de données de haute qualité dans le domaine. Tout le reste est « de l'ingénierie plutôt que de la formation »."
     },
     "essentialWork": {
       "title": "5. Le travail peu sexy et essentiel",
       "content": "Les plates-formes SOTA ne sont pas construites uniquement sur des modèles. Ils sont construits sur la résolution de problèmes ennuyeux et difficiles:",
-      "points": "\"[objet Objet],[objet Objet],[objet Objet]\""
+      "points": [
+        {
+          "title": "La Roue des Données",
+          "content": "Si vous ne pouvez pas enregistrer et apprendre de l'utilisation en production, vos modèles ne s'amélioreront pas. Travaillez avec la sécurité dès le début pour activer des pipelines de données conformes et anonymisés."
+        },
+        {
+          "title": "Évaluation, Pas Sentiments",
+          "content": "Exigez des 'ensembles de données dorés' des propriétaires d'entreprise - de vraies paires questions-réponses - afin que vous puissiez mesurer la précision/rappel, pas juste 'ça a l'air bien'."
+        },
+        {
+          "title": "Ressources de Calcul",
+          "content": "L'inférence n'est pas comme exécuter des CPU. Vous avez besoin d'une surveillance dédiée pour prévenir les plantages OOM et optimiser l'utilisation."
+        }
+      ]
     },
     "conclusion": {
       "title": "L'essentiel",

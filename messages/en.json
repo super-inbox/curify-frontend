@@ -1148,9 +1148,7 @@
   },
   "export": {
     "title": "Export Option",
-    "formats": {
-      "json": "JSON"
-    }
+    "formats": ["JSON", "CSV", "XML", "SRT"]
   }
 },
 "performance": {

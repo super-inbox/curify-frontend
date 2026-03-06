@@ -923,9 +923,12 @@
       },
       "export": {
         "title": "Opción de Exportación",
-        "formats": {
-          "json": "JSON"
-        }
+        "formats": [
+          "JSON para acceso programático",
+          "CSV para análisis de hojas de cálculo",
+          "XML para integración con sistemas heredados",
+          "Formatos personalizados disponibles"
+        ]
       }
     },
     "performance": {
@@ -1084,13 +1087,31 @@
     "fineTuning": {
       "title": "3. Omite el Ajuste Fino (La Mayoría de las Veces)",
       "content": "Aquí está el secreto: **probablemente no necesitas ajustar un LLM.**",
-      "strategies": "\"Mejores indicaciones: la ingeniería sistemática supera a los ajustes aleatorios.,RAG de alta calidad: el conocimiento limpio y estructurado supera a un modelo más inteligente.,Fusión de múltiples modelos: utiliza GPT-4 para el razonamiento, un modelo local para la extracción, Claude para tareas creativas.,LLM-como-juez: utiliza un modelo fuerte para evaluar las salidas de los más económicos.\"",
+      "strategies": [
+          "Mejores indicaciones: la ingeniería sistemática supera a los ajustes aleatorios.",
+          "RAG de alta calidad: el conocimiento limpio y estructurado supera a un modelo más inteligente.",
+          "Fusión de múltiples modelos: utiliza GPT-4 para el razonamiento, un modelo local para la extracción, Claude para tareas creativas.",
+          "LLM-como-juez: utiliza un modelo fuerte para evaluar las salidas de los más económicos."
+        ],
       "conclusion": "Solo ajustamos modelos pequeños para tareas específicas de alto volumen, después de un largo proceso de recopilación y limpieza de datos de dominio de alta calidad. Todo lo demás es 'ingeniería sobre entrenamiento'."
     },
     "essentialWork": {
       "title": "5. El Trabajo Esencial Poco Atractivo",
       "content": "Las plataformas de última generación no se construyen solo con modelos. Se construyen resolviendo problemas aburridos y difíciles:",
-      "points": "\"[objeto Objeto],[objeto Objeto],[objeto Objeto]\""
+      "points": [
+        {
+          "title": "La Rueda de Datos",
+          "content": "Si no puedes registrar y aprender del uso en producción, tus modelos no mejorarán. Trabaja con seguridad desde el principio para habilitar canalizaciones de datos compatibles y anonimizados."
+        },
+        {
+          "title": "Evaluación, No Sensaciones",
+          "content": "Exige 'conjuntos de datos dorados' de los dueños del negocio: pares de preguntas y respuestas reales, para que puedas medir precisión/recuerdo, no solo 'se ve bien'."
+        },
+        {
+          "title": "Recursos de Computación",
+          "content": "La inferencia no es como ejecutar CPUs. Necesitas monitoreo dedicado para prevenir fallos de OOM y optimizar la utilización."
+        }
+      ]
     },
     "conclusion": {
       "title": "Conclusión",

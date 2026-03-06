@@ -918,14 +918,22 @@
     },
     "features10": {
       "comprehensiveData": {
-        "title": "Uitgebreide scènedata",
-        "items": "\"Genaue Zeitinformationen für jede Szene, Schlüsselbilder zur visuellen Referenz, Ergebnisse der Objekterkennung, Analyse der Kamerabewegung\""
+        "title": "Umfassende Szenendaten",
+        "items": [
+          "Genaue Zeitinformationen für jede Szene",
+          "Schlüsselbilder zur visuellen Referenz",
+          "Ergebnisse der Objekterkennung",
+          "Analyse der Kamerabewegung"
+        ]
       },
       "export": {
-        "title": "Exportoptie",
-        "formats": {
-          "json": "JSON"
-        }
+        "title": "Exportoptionen",
+        "formats": [
+          "JSON für programmatischen Zugriff",
+          "CSV für Tabellenkalkulationanalyse",
+          "XML für Legacy-Systemintegration",
+          "Benutzerdefinierte Formate verfügbar"
+        ]
       }
     },
     "performance": {
@@ -1013,6 +1021,11 @@
     "subtitle": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
     "imageAlt": "KI-Plattform-Architekturdiagramm",
     "heading": "🏗️ Der Leitfaden für mittelständische Unternehmen zum KI-Erfolg",
+    "intro": {
+      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
+      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
+    },
+    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen",
     "mindsetShift": {
       "title": "1. Die Denkweise: Demokratisieren statt zentralisieren",
       "content": "Wenn Ihr KI-Team zum Flaschenhals wird, haben Sie bereits verloren. Bauen Sie stattdessen eine Selbstbedienungs-KI-Infrastruktur auf, die Produktentwickler befähigt, das zu bauen, was sie benötigen.",
@@ -1032,7 +1045,11 @@
       "gateway": {
         "title": "A. Das einheitliche Modell-Gateway",
         "content": "Binden Sie sich nicht an einen Anbieter. Leiten Sie Anfragen nahtlos zwischen:",
-        "points": "\"Kommerzielle LLMs (GPT‑4, Claude usw.) – für erstklassiges Denken.,Private Modelle (Llama, Qwen) – für sensible Daten und Kostenkontrolle.,Spezialmodelle – für Codierung, Vision oder Aufgaben mit geringer Latenz.\"",
+        "points": [
+          "Kommerzielle LLMs (GPT‑4, Claude usw.) – für erstklassiges Denken.",
+          "Private Modelle (Llama, Qwen) – für sensible Daten und Kostenkontrolle.",
+          "Spezialmodelle – für Codierung, Vision oder Aufgaben mit geringer Latenz."
+        ],
         "conclusion": "Das Gateway übernimmt Wiederholungsversuche, Fallbacks, Kostenverfolgung und Ratenbegrenzungen – Entwickler rufen einfach `platform.generate()` auf."
       },
       "knowledge": {
@@ -1044,32 +1061,51 @@
         "title": "C. Die Orchestrierungsschicht",
         "content": "Code-zentrierte KI ist mächtig; workflow-zentrierte KI ist schneller.",
         "example": "Wir verwenden Low-Code-Tools (wie Dify, Coze, n8n usw.), um Schritte zu verketten:",
-        "workflow": "\"Benutzerabfrage, Dokumente abrufen, Tool aufrufen (API, SQL), Grund, Ausgabe\"",
+        "workflow": [
+          "Benutzerabfrage",
+          "Dokumente abrufen",
+          "Tool aufrufen (API, SQL)",
+          "Grund",
+          "Ausgabe"
+        ],
         "conclusion": "Dadurch können Produktteams in Stunden, nicht in Wochen, Prototypen erstellen."
       }
     },
     "fineTuning": {
       "title": "3. Überspringen Sie das Feinabstimmen (meistens)",
       "content": "**Hier ist das Geheimnis: Sie müssen ein LLM wahrscheinlich nicht feinabstimmen.**",
-      "strategies": "\"Bessere Hinweise: Systematisches Engineering schlägt zufälliges Feintuning.,Hochwertiger RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.,Multi-Model-Fusion: Verwenden Sie GPT-4 für das Argumentieren, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.,LLM-als-Richter: Verwenden Sie ein starkes Modell, um Ausgaben von kostengünstigeren Modellen zu bewerten.\"",
+      "strategies": [
+          "Bessere Hinweise: Systematisches Engineering schlägt zufälliges Feintuning.",
+          "Hochwertiger RAG: Sauberes, strukturiertes Wissen schlägt ein intelligenteres Modell.",
+          "Multi-Model-Fusion: Verwenden Sie GPT-4 für das Argumentieren, ein lokales Modell für die Extraktion, Claude für kreative Aufgaben.",
+          "LLM-als-Richter: Verwenden Sie ein starkes Modell, um Ausgaben von kostengünstigeren Modellen zu bewerten."
+        ],
       "conclusion": "Wir stimmen nur kleine Modelle für enge, hochvolumige Aufgaben nach einem langen Prozess der Sammlung und Bereinigung hochwertiger domänenspezifischer Daten fein. Alles andere ist 'Engineering statt Training'."
     },
     "essentialWork": {
       "title": "4. Die unscheinbare, aber unverzichtbare Arbeit",
       "content": "Spitzenplattformen entstehen nicht allein durch Modelle. Sie entstehen durch die Lösung langweiliger, schwieriger Probleme:",
-      "points": "\"[object Object],[object Object],[object Object]\""
+      "points": [
+        {
+          "title": "Daten-Pipeline & Governance",
+          "content": "Automatisierte Datenbereinigung, PII-Erkennung und Audit-Trails für Compliance."
+        },
+        {
+          "title": "Observability & Monitoring",
+          "content": "Echtzeit-Tracking der Modellleistung, Kosten und Benutzerzufriedenheit."
+        },
+        {
+          "title": "Sicherheit & Zugriffskontrolle",
+          "content": "Unternehmensfähige Authentifizierung, Datenverschlüsselung und Nutzungsquoten."
+        }
+      ]
     },
     "conclusion": {
       "title": "Das Fazit",
       "content": "Für mittelständische Technologieunternehmen bedeutet Erfolg mit KI nicht, ein besseres LLM zu bauen. Es bedeutet, eine Plattform zu schaffen, die KI in einen wiederholbaren, skalierbaren Geschäftsprozess verwandelt.",
       "finalThoughts": "Beginnen Sie mit der Infrastruktur, sichern Sie die Daten und lassen Sie Ihre Teams bauen. Die Zukunft besteht nicht aus einem Modell, das alles beherrscht – sondern aus einer Flotte spezialisierter Agenten, die jeweils ein echtes Geschäftsproblem lösen, alle angetrieben von einer Plattform, die es einfach macht.",
       "callToAction": "Bereit zum Bauen? Halten Sie es einfach, halten Sie es offen und konzentrieren Sie sich darauf, andere zu befähigen."
-    },
-    "intro": {
-      "p1": "Bei kleinen und mittelständischen Technologieunternehmen liegt der wahre Vorteil nicht im Training riesiger Modelle, sondern im Aufbau einer KI-Plattform, die es jedem ermöglicht, intelligente Funktionen zu erstellen. So verwandeln Sie Agilität in Wirkung.",
-      "p2": "Hier ist ein praxisnaher, produktionsreiter Ansatz, den wir erfolgreich in den Bereichen Finanzen, Recht, Kundensupport und Technik eingesetzt haben – ohne das Budget zu sprengen oder 50 ML-Experten einzustellen."
-    },
-    "description": "Wie man eine KI-Plattform aufbaut, die mitwächst, ohne das Budget zu sprengen"
+    }
   },
   "qaBotToTaskAgent": {
     "heading": "🏗️ Vom QA-Bot zum Task-Agent: Ein Architekturleitfaden",
@@ -1078,12 +1114,46 @@
     "intro": "Dieser Leitfaden erklärt den architektonischen Wandel von monolithischen QA-Bots zu Task-Agenten mit statischen Regeln, dynamischen Fähigkeiten und deterministischen Hooks – mit konkreten Codebeispielen und Open-Source-Referenzen.",
     "coreShift": {
       "title": "1. Die grundlegende Veränderung: Vom QA-Bot zum Task-Agenten",
-      "content": "Die meisten KI-Systeme von heute sind immer noch kontextgefüllte QA-Bots:,• Sie beantworten Fragen gut,• Sie halluzinieren unter Druck,• Es fehlen Garantien bezüglich Ausführung, Sicherheit und Konsistenz.",
+      "content": [
+        "Die meisten KI-Systeme von heute sind immer noch kontextgefüllte QA-Bots:",
+        "• Sie beantworten Fragen gut",
+        "• Sie halluzinieren unter Druck",
+        "• Es fehlen Garantien bezüglich Ausführung, Sicherheit und Konsistenz"
+      ],
       "keyInsight": "Die zentrale Erkenntnis: Skalieren Sie nicht den Kontext. Strukturieren Sie ihn."
     },
     "threeLayerArch": {
       "title": "2. Die Drei-Schichten-Architektur",
-      "layers": "\"[Objekt Objekt],[Objekt Objekt],[Objekt Objekt]\""
+      "layers": [
+        {
+          "title": "🧱 1. Statischer Kontext — Regeln (Immer aktiv)",
+          "points": [
+            "Gedankenmodell: Mitarbeiterhandbuch",
+            "Immer geladen",
+            "Definiert Identität, Codierungsstandards, Verhaltensbeschränkungen",
+            "Verhindert Halluzinationen und Stildrift",
+            "Klein, stabil, von Menschen bearbeitbar"
+          ]
+        },
+        {
+          "title": "🛠️ 2. Dynamischer Kontext — Fähigkeiten (Bei Bedarf)",
+          "points": [
+            "Gedankenmodell: Werkzeugkasten",
+            "Nur bei Bedarf geladen",
+            "Jede Fähigkeit ist eine in sich geschlossene Fähigkeit",
+            "Hält das Kontextfenster sauber"
+          ]
+        },
+        {
+          "title": "⚓ 3. Deterministische Hooks — Schutzgeländer",
+          "points": [
+            "Gedankenmodell: Sicherheits + Compliance-Schicht",
+            "Nicht probabilistisch",
+            "Läuft vor / nach LLM-Reasoning",
+            "Erzwingt Regeln, die niemals fehlschlagen dürfen"
+          ]
+        }
+      ]
     },
     "projectStructure": {
       "title": "3. Empfohlene Projektstruktur",

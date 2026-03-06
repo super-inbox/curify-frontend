@@ -923,9 +923,12 @@
       },
       "export": {
         "title": "Dışa Aktarma Seçeneği",
-        "formats": {
-          "json": "JSON"
-        }
+        "formats": [
+          "JSON programatik erişim için",
+          "CSV elektronik tablo analizi için",
+          "XML eski sistem entegrasyonu için",
+          "Özel formatlar mevcut"
+        ]
       }
     },
     "performance": {
@@ -961,7 +964,11 @@
       "gateway": {
         "title": "A. Birleşik Model Ağ Geçidi",
         "content": "Tek bir satıcıya bağlı kalmayın. İstekleri sorunsuz bir şekilde yönlendirin:",
-        "points": "\"Ticari LLM'ler (GPT-4, Claude, vb.) - üst düzey akıl yürütme için.,Özel modeller (Llama, Qwen) - hassas veri ve maliyet kontrolü için.,Uzman modeller - kodlama, görüntü işleme veya düşük gecikmeli görevler için.\"",
+        "points": [
+          "Ticari LLM'ler (GPT-4, Claude, vb.) - üst düzey akıl yürütme için.",
+          "Özel modeller (Llama, Qwen) - hassas veri ve maliyet kontrolü için.",
+          "Uzman modeller - kodlama, görüntü işleme veya düşük gecikmeli görevler için."
+        ],
         "conclusion": "Ağ geçidi, yeniden denemeleri, yedeklemeleri, maliyet takibini ve hız sınırlarını yönetir — böylece geliştiriciler sadece `platform.generate()` çağrısı yapar."
       },
       "knowledge": {
@@ -973,20 +980,44 @@
         "title": "C. Orkestrasyon Katmanı",
         "content": "Kod-öncelikli yapay zeka güçlüdür; ancak iş akışı-öncelikli yapay zeka daha hızlıdır.",
         "example": "Adımları zincirlemek için düşük kodlu araçlar (Dify, coze, n8n gibi) kullanıyoruz:",
-        "workflow": "\"Kullanıcı sorgusu,Belgeleri al,Aracı çağır (API, SQL),Neden,Çıktı\"",
+        "workflow": [
+          "Kullanıcı sorgusu",
+          "Belgeleri al",
+          "Aracı çağır (API, SQL)",
+          "Neden",
+          "Çıktı"
+        ],
         "conclusion": "Bu, ürün ekiplerinin haftalar değil, saatler içinde ajan prototipleri oluşturmasını sağlar."
       }
     },
     "fineTuning": {
       "title": "3. İnce Ayardan Kaçının (Çoğu Zaman)",
       "content": "İşte sır: **büyük olasılıkla bir büyük dil modelini ince ayarlamanıza gerek yok.**",
-      "strategies": "\"İyileştirilmiş ipuçları: sistemli mühendislik, rastgele ayarlamanın önüne geçer.,Yüksek kaliteli RAG: temiz, yapılandırılmış bilgi, daha akıllı bir modelin önüne geçer.,Çoklu model füzyonu: akıl yürütme için GPT-4'ü, çıkarma için yerel modeli, yaratıcı görevler için Claude'ü kullanın.,LLM olarak bir hakim: daha ucuz modellerin çıktılarını değerlendirmek için güçlü bir model kullanın.\"",
+      "strategies": [
+          "İyileştirilmiş ipuçları: sistemli mühendislik, rastgele ayarlamanın önüne geçer.",
+          "Yüksek kaliteli RAG: temiz, yapılandırılmış bilgi, daha akıllı bir modelin önüne geçer.",
+          "Çoklu model füzyonu: akıl yürütme için GPT-4'ü, çıkarma için yerel modeli, yaratıcı görevler için Claude'ü kullanın.",
+          "LLM olarak bir hakim: daha ucuz modellerin çıktılarını değerlendirmek için güçlü bir model kullanın."
+        ],
       "conclusion": "Yalnızca dar, yüksek hacimli görevler için küçük modelleri ince ayarlıyoruz ve bu da yüksek kaliteli, alana özgü veri toplama ve temizleme sürecinden sonra geliyor. Geri kalan her şey 'eğitim yerine mühendislik' ile çözülüyor."
     },
     "essentialWork": {
       "title": "5. Az İlgi Çeken, Ancak Temel İşler",
       "content": "En iyi platformlar sadece modellere dayanmaz. Sıkıcı, zor problemleri çözmeye dayanır:",
-      "points": "\"[nesne Nesne],[nesne Nesne],[nesne Nesne]\""
+      "points": [
+        {
+          "title": "Veri Tekerleği",
+          "content": "Üretim kullanımını kaydedemiyorsanız ve öğrenemiyorsanız, modelleriniz iyileşmeyecektir. Uyumlu, anonimleştirilmiş veri boru hatlarını etkinleştirmek için en baştan güvenlikle çalışın."
+        },
+        {
+          "title": "Değerlendirme, İçgüdü Değil",
+          "content": "İş sahiplerinden 'altın veri setleri' — gerçek soru-cevap çiftleri — isteyin, böylece sadece 'iyi görünüyor' değil, kesinlik/hatırlama ölçebilirsiniz."
+        },
+        {
+          "title": "Hesaplama Kaynakları",
+          "content": "Çıkarım, CPU çalıştırmak gibi değildir. OOM çökmelerini önlemek ve kullanımı optimize etmek için özel izleme gereklidir."
+        }
+      ]
     },
     "conclusion": {
       "title": "Sonuç",
