@@ -6,6 +6,9 @@ import TemplateLink, { TemplateSuggestions } from "@/app/[locale]/_components/Te
 import { getTemplatesByCategory } from "@/utils/blogUtils";
 import { notFound } from "next/navigation";
 
+// Force dynamic rendering to avoid static generation issues
+export const dynamic = 'force-dynamic';
+
 // Blog post configuration - this will contain all our blog posts
 const blogPosts = {
   // Original blog posts
