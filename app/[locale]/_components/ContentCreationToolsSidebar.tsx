@@ -122,27 +122,27 @@ export default function ContentCreationToolsSidebar({
         <SidebarToolItem
           icon={<Type className="h-5 w-5" />}
           colorClass="bg-purple-500"
-          title={t("nano.wordCard.title")}
-          desc={t("nano.wordCard.desc")}
-          badge={<NanoBadge label={t("nano.badge")} />}
+          title={t("nanoSidebar.wordCard.title")}
+          desc={t("nanoSidebar.wordCard.desc")}
+          badge={<NanoBadge label={t("nanoSidebar.badge")} />}
           onClick={() => router.push(nanoWordCardPath)}
         />
 
         <SidebarToolItem
           icon={<ShoppingBag className="h-5 w-5" />}
           colorClass="bg-sky-500"
-          title={t("nano.ecommerceDetails.title")}
-          desc={t("nano.ecommerceDetails.desc")}
-          badge={<NanoBadge label={t("nano.badge")} />}
+          title={t("nanoSidebar.ecommerceDetails.title")}
+          desc={t("nanoSidebar.ecommerceDetails.desc")}
+          badge={<NanoBadge label={t("nanoSidebar.badge")} />}
           onClick={() => router.push(nanoEcommerceDetailsPath)}
         />
 
         <SidebarToolItem
           icon={<History className="h-5 w-5" />}
           colorClass="bg-orange-500"
-          title={t("nano.whatIfHistory.title")}
-          desc={t("nano.whatIfHistory.desc")}
-          badge={<NanoBadge label={t("nano.badge")} />}
+          title={t("nanoSidebar.whatIfHistory.title")}
+          desc={t("nanoSidebar.whatIfHistory.desc")}
+          badge={<NanoBadge label={t("nanoSidebar.badge")} />}
           onClick={() => router.push(nanoWhatIfHistoryPath)}
         />
       </div>

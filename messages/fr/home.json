@@ -364,5 +364,21 @@
         "desc": "Traduisez le discours dans une autre langue avec une livraison naturelle."
       }
     }
+  },
+  "nanoTemplate": {
+    "reproduce": {
+      "title": "Reproduire ce modèle",
+      "subtitle": "Utilisez vos entrées — l'aperçu du prompt se met à jour instantanément.",
+      "noParams": "Ce modèle n'a pas de paramètres. Vous pouvez copier le prompt de base directement.",
+      "generateBtn": "Générer",
+      "copyBtn": "Copier le prompt",
+      "copiedBtn": "Copié !",
+      "comingSoonNotice": "Prompt copié ! La génération par IA arrive bientôt — collez-le n'importe où en attendant.",
+      "previewLabel": "Aperçu du prompt"
+    },
+    "otherTemplates": {
+      "title": "Autres modèles nano",
+      "subtitle": "Explorez d'autres catégories et préréglages."
+    }
   }
 }

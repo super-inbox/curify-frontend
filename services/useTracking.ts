@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { apiClient } from "@/services/api";
 
 type ContentType = "inspiration" | "nano_inspiration" | "nano_gallery";
-type ActionType = "view" | "click" | "copy" | "favorite" | "share";
+type ActionType = "view" | "click" | "copy" | "favorite" | "share" | "generate";
 
 export interface TrackingOptions {
   contentId: string;
@@ -233,6 +233,27 @@ export function useShareTracking(
       contentId,
       contentType,
       actionType: "share",
+      viewMode,
+    });
+  }, [contentId, contentType, viewMode, track]);
+}
+
+/**
+ * Hook for tracking generate events.
+ * Used when a user clicks a "Generate" button (distinct from copy).
+ */
+export function useGenerateTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: "list" | "cards"
+) {
+  const { track } = useTracking();
+
+  return useCallback(() => {
+    track({
+      contentId,
+      contentType,
+      actionType: "generate",
       viewMode,
     });
   }, [contentId, contentType, viewMode, track]);

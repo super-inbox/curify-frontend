@@ -364,5 +364,21 @@
         "desc": "자연스러운 전달로 다른 언어로 음성을 번역하세요."
       }
     }
+  },
+  "nanoTemplate": {
+    "reproduce": {
+      "title": "이 템플릿 재현하기",
+      "subtitle": "입력을 사용하세요 — 프롬프트 미리보기가 즉시 업데이트됩니다.",
+      "noParams": "이 템플릿에는 매개변수가 없습니다. 기본 프롬프트를 직접 복사할 수 있습니다.",
+      "generateBtn": "생성",
+      "copyBtn": "프롬프트 복사",
+      "copiedBtn": "복사됨!",
+      "comingSoonNotice": "프롬프트가 복사되었습니다! AI 생성이 곧 제공됩니다 — 그동안 어디에나 붙여넣으세요.",
+      "previewLabel": "프롬프트 미리보기"
+    },
+    "otherTemplates": {
+      "title": "기타 나노 템플릿",
+      "subtitle": "다른 카테고리와 프리셋을 탐색하세요."
+    }
   }
 }

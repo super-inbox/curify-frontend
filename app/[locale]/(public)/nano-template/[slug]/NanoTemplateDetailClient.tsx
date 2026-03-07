@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import { useCopyTracking, useGenerateTracking } from "@/services/useTracking";
 
 type TemplateParameter = {
   name: string;
@@ -44,8 +46,8 @@ export default function NanoTemplateDetailClient(props: {
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
 }) {
-  const router = useRouter();
   const searchParams = useSearchParams();
+  const t = useTranslations("nanoTemplate");
 
   const {
     locale,
@@ -60,6 +62,12 @@ export default function NanoTemplateDetailClient(props: {
   // -------- Section 1: Reproduce (only used if showReproduce) --------
   const [form, setForm] = useState<Record<string, any>>({});
   const [copied, setCopied] = useState(false);
+  const [generated, setGenerated] = useState(false);
+
+  // Copy button: action_type="copy" — merges with card-level copy tracking
+  const trackCopy = useCopyTracking(template.template_id, "nano_inspiration", "list");
+  // Generate button: action_type="generate" — distinct from copy
+  const trackGenerate = useGenerateTracking(template.template_id, "nano_inspiration", "list");
 
   // Pre-fill:
   // 1) URL query params (highest priority)
@@ -99,27 +107,35 @@ export default function NanoTemplateDetailClient(props: {
     setForm((prev) => ({ ...prev, [name]: v }));
   };
 
+  // Copy button: tracks as "copy", same event as card-level copy
   const onCopy = async () => {
     try {
       await navigator.clipboard.writeText(filledPrompt.trim());
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1200);
-    } catch {}
+      trackCopy();
+      if (!copied) {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      }
+    } catch {
+      // clipboard access denied — silently ignore
+    }
   };
 
-  // Updated: This should actually trigger generation with Claude
-  // You'll need to implement this based on your app's architecture
-  const onGoGenerate = () => {
-    // Option 1: If you want to navigate to a chat with the prompt pre-filled
-    // You might need to encode the prompt and pass it to your chat interface
-    const encodedPrompt = encodeURIComponent(filledPrompt.trim());
-    router.push(`/${locale}/chat?prompt=${encodedPrompt}`);
-    
-    // Option 2: If you have a different generation mechanism, implement it here
-    // For example, you might want to open a modal or call an API
+  // Generate button: copies the prompt (generation not yet implemented) + tracks as "generate"
+  const onGoGenerate = async () => {
+    try {
+      await navigator.clipboard.writeText(filledPrompt.trim());
+      trackGenerate();
+      if (!generated) {
+        setGenerated(true);
+        setTimeout(() => setGenerated(false), 2500);
+      }
+    } catch {
+      // clipboard access denied — silently ignore
+    }
   };
 
-  // -------- Section 3: Other templates row (handlers live in client) --------
+  // -------- Section 3: Other templates row --------
   const requireAuth = () => true;
   const onViewClick = () => {};
 
@@ -130,11 +146,10 @@ export default function NanoTemplateDetailClient(props: {
         <section className="rounded-3xl border border-neutral-200 bg-white p-5 sm:p-6 shadow-sm">
           <div>
             <h2 className="text-lg font-bold text-neutral-900">
-              Reproduce this template
+              {t("reproduce.title")}
             </h2>
             <p className="mt-1 text-sm text-neutral-600">
-              Use your inputs (or quick placeholders) — the prompt preview updates
-              instantly.
+              {t("reproduce.subtitle")}
             </p>
           </div>
 
@@ -144,8 +159,7 @@ export default function NanoTemplateDetailClient(props: {
               <div className="space-y-3">
                 {params.length === 0 ? (
                   <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-700">
-                    This template has no parameters. You can copy the base prompt
-                    directly.
+                    {t("reproduce.noParams")}
                   </div>
                 ) : (
                   params.map((p) => {
@@ -217,22 +231,31 @@ export default function NanoTemplateDetailClient(props: {
                 )}
               </div>
 
-              <div className="mt-4 flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={onGoGenerate}
-                  className="rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 transition-colors cursor-pointer"
-                >
-                  Generate
-                </button>
+                <div className="mt-4 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={onGoGenerate}
+                    className="rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 transition-colors cursor-pointer"
+                  >
+                    {generated ? t("reproduce.copiedBtn") : t("reproduce.generateBtn")}
+                  </button>
 
-                <button
-                  type="button"
-                  onClick={onCopy}
-                  className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-bold text-neutral-800 hover:bg-neutral-50 transition-colors cursor-pointer"
-                >
-                  {copied ? "Copied!" : "Copy prompt"}
-                </button>
+                  <button
+                    type="button"
+                    onClick={onCopy}
+                    className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-bold text-neutral-800 hover:bg-neutral-50 transition-colors cursor-pointer"
+                  >
+                    {copied ? t("reproduce.copiedBtn") : t("reproduce.copyBtn")}
+                  </button>
+                </div>
+
+                {/* Coming-soon notice — shown after Generate is clicked */}
+                {generated && (
+                  <p className="text-sm text-purple-600 font-medium animate-pulse">
+                    {t("reproduce.comingSoonNotice")}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -240,7 +263,7 @@ export default function NanoTemplateDetailClient(props: {
             <div className="lg:col-span-7">
               <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
                 <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
-                  Prompt preview
+                  {t("reproduce.previewLabel")}
                 </div>
                 <pre className="whitespace-pre-wrap text-sm leading-relaxed text-neutral-800">
                   {filledPrompt.trim() || template.base_prompt || ""}
@@ -256,10 +279,10 @@ export default function NanoTemplateDetailClient(props: {
         <section className={showReproduce ? "mt-10" : ""}>
           <div className="mb-3">
             <h2 className="text-lg font-bold text-neutral-900">
-              Other nano templates
+              {t("otherTemplates.title")}
             </h2>
             <p className="mt-1 text-sm text-neutral-600">
-              Explore other categories and presets.
+              {t("otherTemplates.subtitle")}
             </p>
           </div>
 

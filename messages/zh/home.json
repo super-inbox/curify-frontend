@@ -364,5 +364,21 @@
         "desc": "将语音翻译成另一种语言，语调自然。"
       }
     }
+  },
+  "nanoTemplate": {
+    "reproduce": {
+      "title": "重现此模板",
+      "subtitle": "使用您的输入 — 提示预览会即时更新。",
+      "noParams": "此模板没有参数。您可以直接复制基础提示。",
+      "generateBtn": "生成",
+      "copyBtn": "复制提示",
+      "copiedBtn": "已复制！",
+      "comingSoonNotice": "提示已复制！AI 生成即将到来 — 暂时可以在任何地方粘贴。",
+      "previewLabel": "提示预览"
+    },
+    "otherTemplates": {
+      "title": "其他 nano 模板",
+      "subtitle": "探索其他类别和预设。"
+    }
   }
 }

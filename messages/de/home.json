@@ -364,5 +364,21 @@
         "desc": "Übersetzen Sie Sprache in eine andere Sprache mit natürlicher Lieferung."
       }
     }
+  },
+  "nanoTemplate": {
+    "reproduce": {
+      "title": "Dieses Template reproduzieren",
+      "subtitle": "Verwenden Sie Ihre Eingaben — die Vorschau des Prompts wird sofort aktualisiert.",
+      "noParams": "Dieses Template hat keine Parameter. Sie können den Basis-Prompt direkt kopieren.",
+      "generateBtn": "Generieren",
+      "copyBtn": "Prompt kopieren",
+      "copiedBtn": "Kopiert!",
+      "comingSoonNotice": "Prompt kopiert! Die KI-Generierung kommt bald — fügen Sie es in der Zwischenzeit überall ein.",
+      "previewLabel": "Prompt-Vorschau"
+    },
+    "otherTemplates": {
+      "title": "Andere Nano-Templates",
+      "subtitle": "Entdecken Sie andere Kategorien und Voreinstellungen."
+    }
   }
 }
