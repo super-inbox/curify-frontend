@@ -12,7 +12,7 @@ import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
 import { videoService } from "@/services/video";
 import { getLangCode, languages } from "@/lib/language_utils";
-import type { SubtitleFormat } from "@/types/projects";
+import type { SubtitleFormat, AudioOption } from "@/types/projects";
 import type { BackendJobType } from "@/types/projects";
 import { getJobUiConfig } from "@/lib/create-job-ui";
 
@@ -154,11 +154,11 @@ export default function CreateNewModal() {
             : "auto",
           target_language,
           subtitles_enabled: subtitles_enabled as SubtitleFormat,
-          audio_option: ui.allowVoiceover
+          audio_option: (ui.allowVoiceover
             ? voiceover === "Yes"
               ? "dubbed"
               : "original"
-            : "original",
+            : "original") as AudioOption,
           erase_original_subtitles: isRemoveSubtitle,
           allow_lip_syncing: false,
         },

@@ -51,12 +51,14 @@ export const projectService = {
     return response.data;
   },
 
-  // ✅ Get live project status
-  async getProjectStatus(projectId: string): Promise<ProjectStatusUpdate> {
-    return apiClient.request<ProjectStatusUpdate>(
-      `/projects/${projectId}/status`
-    );
-  },
+// ✅ Get live project status
+async getProjectStatus(projectId: string): Promise<ProjectStatusUpdate> {
+  const response = await apiClient.request<{ data: ProjectStatusUpdate }>(
+    `/projects/${projectId}/status`
+  );
+  return response.data;
+},
+
 
   // ✅ Delete a project
   async deleteProject(projectId: string): Promise<void> {

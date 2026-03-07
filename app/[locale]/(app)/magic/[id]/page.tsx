@@ -42,7 +42,7 @@ export default function Magic() {
 
         if (isCancelled || isRedirectingRef.current) return;
 
-        const projectStatus = statusRes?.data?.status;
+        const projectStatus = statusRes?.status;
 
         console.log("Resolved project status:", projectStatus);
 

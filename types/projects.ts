@@ -21,12 +21,6 @@ export type BackendJobType =
 | "youtube_subtitles";
 
 
-export interface ProjectStatusUpdate {
-  project_id: string;
-  status: ProjectStatus;
-  updated_at: string;
-}
-
 // Job settings interface aligned with backend
 export interface JobSettings {
   job_type: BackendJobType;
@@ -63,10 +57,10 @@ export interface CreateProjectRequest {
   is_production?: boolean;
 }
 
-// For polling or handling status updates
 export interface ProjectStatusUpdate {
   project_id: string;
-  status: Project['status'];
+  status: ProjectStatus;
+  updated_at?: string;
   progress?: number;
   message?: string;
 }
