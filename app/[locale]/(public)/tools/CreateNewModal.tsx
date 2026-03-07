@@ -12,7 +12,7 @@ import { useRouter } from "@/i18n/navigation";
 import { projectService } from "@/services/projects";
 import { videoService } from "@/services/video";
 import { getLangCode, languages } from "@/lib/language_utils";
-import type { SubtitleFormat } from "@/types/projects";
+import type { SubtitleFormat, AudioOption } from "@/types/projects";
 import type { BackendJobType } from "@/types/projects";
 import { getJobUiConfig } from "@/lib/create-job-ui";
 
@@ -31,6 +31,7 @@ export default function CreateNewModal() {
   const [duration, setDuration] = useState("");
   const [cost, setCost] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
+  const [isStarting, setIsStarting] = useState(false);
 
   const [source, setSource] = useState("Auto Detect");
   const [transto, setTransto] = useState("Select Language");
@@ -104,6 +105,8 @@ export default function CreateNewModal() {
   };
 
   const handleStart = async () => {
+    if (isStarting) return;
+
     if (job_type === "youtube_subtitles") {
       if (!videoId) return;
     } else {
@@ -121,6 +124,8 @@ export default function CreateNewModal() {
     }
 
     try {
+      setIsStarting(true);
+
       const isRemoveSubtitle = subtitle === "Source" && job_type === "subtitle_only";
 
       let subtitles_enabled: string = "none";
@@ -134,9 +139,11 @@ export default function CreateNewModal() {
         subtitles_enabled = subtitle.toLowerCase();
       }
 
-      const target_language = requiresTargetLang() ? getLangCode(transto) : undefined;
+      const target_language = requiresTargetLang()
+      ? getLangCode(transto)
+      : undefined;
 
-      const newProject = await projectService.createProject({
+      const payload = {
         video_id: videoId,
         job_settings: {
           job_type,
@@ -147,24 +154,31 @@ export default function CreateNewModal() {
             : "auto",
           target_language,
           subtitles_enabled: subtitles_enabled as SubtitleFormat,
-          audio_option: ui.allowVoiceover
+          audio_option: (ui.allowVoiceover
             ? voiceover === "Yes"
               ? "dubbed"
               : "original"
-            : "original",
+            : "original") as AudioOption,
           erase_original_subtitles: isRemoveSubtitle,
           allow_lip_syncing: false,
         },
         project_name:
           uploadedFile?.name ??
           (job_type === "youtube_subtitles" ? `youtube_${videoId}.mp4` : "job"),
-      });
-
+      };
+      
+      // print payload
+      console.log("createProject payload:", payload);
+      console.log("createProject payload JSON:", JSON.stringify(payload, null, 2));
+      
+      const newProject = await projectService.createProject(payload);
+    
       setModalState(null);
       router.replace(`/magic/${newProject.project_id}`);
     } catch (error) {
       alert("Failed to create project.");
       console.error(error);
+      setIsStarting(false); // only reset on error; on success we navigate away
     }
   };
 
@@ -391,7 +405,19 @@ export default function CreateNewModal() {
             <span className="ml-3 text-sm text-gray-500">(Available: {remainingCredits})</span>
           </p>
 
-          <BtnP onClick={handleStart}>{ui.ctaLabel}</BtnP>
+          <BtnP onClick={handleStart} disabled={isStarting} className={isStarting ? "cursor-not-allowed opacity-70" : ""}>
+            {isStarting ? (
+              <span className="flex items-center gap-2">
+                <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                </svg>
+                Starting...
+              </span>
+            ) : (
+              ui.ctaLabel
+            )}
+          </BtnP>
         </div>
       </Modal>
     </>

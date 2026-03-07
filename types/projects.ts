@@ -1,7 +1,7 @@
 
 // Enums to mirror backend choices
 export type SubtitleFormat = 'none' | 'source' | 'target' | 'bilingual';
-export type AudioOption = 'original' | 'dubbed' | 'premium';
+export type AudioOption = "dubbed" | "original" | "premium";
 
 export type ProjectStatus =
   | "QUEUED"
@@ -20,12 +20,6 @@ export type BackendJobType =
 | "video_transcript"
 | "youtube_subtitles";
 
-
-export interface ProjectStatusUpdate {
-  project_id: string;
-  status: ProjectStatus;
-  updated_at: string;
-}
 
 // Job settings interface aligned with backend
 export interface JobSettings {
@@ -63,10 +57,10 @@ export interface CreateProjectRequest {
   is_production?: boolean;
 }
 
-// For polling or handling status updates
 export interface ProjectStatusUpdate {
   project_id: string;
-  status: Project['status'];
+  status: ProjectStatus;
+  updated_at?: string;
   progress?: number;
   message?: string;
 }

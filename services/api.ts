@@ -47,6 +47,7 @@ class ApiClient {
     const start = Date.now();
 
     try {
+
       const response = await fetch(url, {
         ...options,
         credentials: "include",
