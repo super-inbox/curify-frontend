@@ -15,6 +15,22 @@
   "title": "Nano Banana Prompts Gallery",
   "description": "Discover and copy the most effective <strong>nano banana prompts</strong>. Our curated collection helps you generate high-quality AI visuals using optimized templates and community-shared prompt engineering."
 },
+"nanoTemplate": {
+  "reproduce": {
+    "title": "Reproduce this template",
+    "subtitle": "Use your inputs — the prompt preview updates instantly.",
+    "noParams": "This template has no parameters. You can copy the base prompt directly.",
+    "generateBtn": "Generate",
+    "copyBtn": "Copy prompt",
+    "copiedBtn": "Copied!",
+    "comingSoonNotice": "Prompt copied! AI generation is coming soon — paste it anywhere in the meantime.",
+    "previewLabel": "Prompt preview"
+  },
+  "otherTemplates": {
+    "title": "Other nano templates",
+    "subtitle": "Explore other categories and presets."
+  }
+},
   "coreFeatures": {
     "oneShot": {
       "title": "One-Shot Translation",

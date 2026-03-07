@@ -364,5 +364,21 @@
         "desc": "Konuşmayı doğal bir şekilde başka bir dile çevirin."
       }
     }
+  },
+  "nanoTemplate": {
+    "reproduce": {
+      "title": "Bu şablonu yeniden oluştur",
+      "subtitle": "Girdiğinizi kullanın — istem önizlemesi anında güncellenir.",
+      "noParams": "Bu şablonun parametreleri yok. Temel istemi doğrudan kopyalayabilirsiniz.",
+      "generateBtn": "Oluştur",
+      "copyBtn": "İstemi kopyala",
+      "copiedBtn": "Kopyalandı!",
+      "comingSoonNotice": "İstem kopyalandı! AI üretimi yakında geliyor — bu arada her yere yapıştırın.",
+      "previewLabel": "İstem önizlemesi"
+    },
+    "otherTemplates": {
+      "title": "Diğer nano şablonlar",
+      "subtitle": "Diğer kategorileri ve ön ayarları keşfedin."
+    }
   }
 }

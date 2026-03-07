@@ -364,5 +364,21 @@
         "desc": "Traduce el habla a otro idioma con una entrega natural."
       }
     }
+  },
+  "nanoTemplate": {
+    "reproduce": {
+      "title": "Reproducir esta plantilla",
+      "subtitle": "Usa tus entradas: la vista previa del aviso se actualiza al instante.",
+      "noParams": "Esta plantilla no tiene parámetros. Puedes copiar el aviso base directamente.",
+      "generateBtn": "Generar",
+      "copyBtn": "Copiar aviso",
+      "copiedBtn": "¡Copiado!",
+      "comingSoonNotice": "¡Aviso copiado! La generación de IA llegará pronto; pégalo en cualquier lugar mientras tanto.",
+      "previewLabel": "Vista previa del aviso"
+    },
+    "otherTemplates": {
+      "title": "Otras plantillas nano",
+      "subtitle": "Explora otras categorías y ajustes preestablecidos."
+    }
   }
 }

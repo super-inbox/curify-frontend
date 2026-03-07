@@ -3,35 +3,43 @@
 
 import { useTranslations } from "next-intl";
 import { useAtomValue, useAtom, useSetAtom } from "jotai";
-import { userAtom, drawerAtom, modalAtom, jobTypeAtom } from "@/app/atoms/atoms";
+import {
+  userAtom,
+  drawerAtom,
+  modalAtom,
+  createJobContextAtom,
+  clientMountedAtom,
+} from "@/app/atoms/atoms";
 import CdnVideo from "@/app/[locale]/_components/CdnVideo";
 import { getToolBySlug } from "@/lib/tools-registry";
 import LanguageSwitchVideoDemo from "@/app/[locale]/_components/LanguageSwitchVideoDemo";
-
+import CreateNewModal from "../CreateNewModal";
 
 export default function ToolGenericClient({ slug }: { slug: string }) {
   const tool = getToolBySlug(slug);
   if (!tool) return null;
 
   const t = useTranslations(tool.namespace);
+  const tGlobal = useTranslations();
 
   const user = useAtomValue(userAtom);
+  const clientMounted = useAtomValue(clientMountedAtom);
   const setDrawer = useSetAtom(drawerAtom);
   const [, setModalState] = useAtom(modalAtom);
-  const setJobType = useSetAtom(jobTypeAtom);
+  const setCreateJobCtx = useSetAtom(createJobContextAtom);
 
   const handleTryItClick = () => {
     if (tool.action?.type !== "modal") return;
 
-    if (user?.user_id) {
-      setJobType(tool.action.mode);
-      setModalState("add");
-    } else {
+    if (!user) {
       setDrawer("signin");
+      return;
     }
+
+    setCreateJobCtx({ toolId: tool.id, slug: tool.slug, job_type: tool.job_type });
+    setModalState("add");
   };
 
-  const showDemo = Boolean(t("example")) && Boolean(t("cta")); // cheap guard
   const demo = tool.demo;
 
   return (
@@ -39,40 +47,42 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("description")}</p>
 
-      // inside ToolGenericClient / ToolGenericClientPage
-
-
-{demo?.type === "language_switch" ? (
-  <LanguageSwitchVideoDemo
-    ariaLabel={t("demo.aria")}
-    caption={t("demo.caption")}
-    nowPlayingText={(label) => t("demo.nowPlaying", { lang: label })}
-    languages={demo.languages}
-    defaultLang={demo.defaultLang}
-  />
-) : demo?.type === "single_video" ? (
-  <>
-    <CdnVideo
-      className="w-full rounded-xl shadow mb-4"
-      controls
-      poster={demo.poster}
-      src={demo.src}      
-    />
-    <p className="text-sm text-gray-500 mb-8">{t("example")}</p>
-  </>
-) : null}
+      {demo?.type === "language_switch" ? (
+        <LanguageSwitchVideoDemo
+          ariaLabel={t("demo.aria")}
+          caption={t("demo.caption")}
+          nowPlayingText={(label) => t("demo.nowPlaying", { lang: label })}
+          languages={demo.languages}
+          defaultLang={demo.defaultLang}
+        />
+      ) : demo?.type === "single_video" ? (
+        <>
+          <CdnVideo
+            className="w-full rounded-xl shadow mb-4"
+            controls
+            poster={demo.poster}
+            src={demo.src}
+          />
+          <p className="text-sm text-gray-500 mb-8">{t("example")}</p>
+        </>
+      ) : null}
 
       <div className="mt-8 text-center">
         {tool.status === "create" && tool.action?.type === "modal" ? (
           <button
             onClick={handleTryItClick}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium py-3 px-6 rounded-xl transition"
+            className="mt-4 text-white px-6 py-3 rounded-lg font-bold bg-gradient-to-r from-[#5a50e5] to-[#7f76ff] hover:opacity-90 transition-opacity duration-300 shadow-lg cursor-pointer relative text-lg"
             type="button"
           >
-            {t("cta")}
+            {tGlobal("tools.create")}
+            {clientMounted && !user && (
+              <span className="ml-2 text-xs opacity-80">🔒</span>
+            )}
           </button>
         ) : (
-          <p className="text-blue-600 font-semibold italic text-lg">Coming Soon</p>
+          <p className="text-blue-600 font-semibold italic text-lg">
+            {tGlobal("tools.coming_soon")}
+          </p>
         )}
       </div>
 
@@ -132,6 +142,7 @@ export default function ToolGenericClient({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+      <CreateNewModal />
     </main>
   );
 }
