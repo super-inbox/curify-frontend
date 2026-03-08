@@ -1,6 +1,6 @@
 // app/sitemap.xml/route.ts
 import { NextResponse } from "next/server";
-import blogs from "@/content/blogs.json";
+import blogs from "@/public/data/blogs.json";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
@@ -26,7 +26,7 @@ const STATIC_ROUTES = [
 
 // Blog routes
 function getBlogRoutes() {
-  return (blogs as unknown as string[]).map((slug: string) => `/blog/${slug}`);
+  return (blogs as unknown as Array<{ slug: string }>).map((blog) => `/blog/${blog.slug}`);
 }
 
 // ✅ Nano template routes - RESPECTS LOCALE

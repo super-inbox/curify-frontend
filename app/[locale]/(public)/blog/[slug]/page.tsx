@@ -3,158 +3,98 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import TemplateLink, { TemplateSuggestions } from "@/app/[locale]/_components/TemplateLink";
-import { getTemplatesByCategory } from "@/utils/blogUtils";
+import { getTemplatesByCategory, TemplateLink as TemplateLinkType } from "@/utils/blogUtils";
 import { notFound } from "next/navigation";
+import blogsData from "@/public/data/blogs.json";
+import { getToolBySlug } from "@/lib/tools-registry";
 
 // Force dynamic rendering to avoid static generation issues
 export const dynamic = 'force-dynamic';
 
-// Blog post configuration - this will contain all our blog posts
-const blogPosts = {
-  // Original blog posts
-  "aiPlatform": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/platformai.webp",
-    category: "ai-platform",
-    relatedCategories: ["ai-platform", "ai-tools"],
-    namespace: "aiPlatform"
-  },
-  "QA_Bot_to_Task": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/qa-bot-architecture.jpg",
-    category: "ai-architecture",
-    relatedCategories: ["ai-architecture", "ai-tools"],
-    namespace: "qaBotToTask"
-  },
-  "age_AI": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/data-science-ai-era.jpg",
-    category: "ai-industry",
-    relatedCategories: ["ai-industry", "data-science"],
-    namespace: "ageAi"
-  },
-  "storyboard-labeling": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/storyboard-labeling-with-ai.jpg",
-    category: "video-analysis",
-    relatedCategories: ["video-analysis", "ai-tools"],
-    namespace: "storyboardLabeling"
-  },
-  "video-enhancement": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/video-enhancement-pipeline.png",
-    category: "video-enhancement",
-    relatedCategories: ["video-enhancement", "ai-tools"],
-    namespace: "videoEnhancement"
-  },
-  "video-evaluation": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/video-translation-eval.jpg",
-    category: "localization",
-    relatedCategories: ["localization", "video-translation"],
-    namespace: "videoEvaluation"
-  },
-  "storyboard-to-pipeline": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/ai-animation-pipeline.jpg",
-    category: "animation",
-    relatedCategories: ["animation", "video-tools"],
-    namespace: "storyboardToPipeline"
-  },
-  "agents-vs-workflows": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/agents-vs-workflows.jpg",
-    category: "generative-tools",
-    relatedCategories: ["generative-tools", "ai-tools"],
-    namespace: "agentsVsWorkflows"
-  },
-  "ae-vs-comfyui": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/ae-vs-comfyui.jpg",
-    category: "tools-pipeline",
-    relatedCategories: ["tools-pipeline", "video-tools"],
-    namespace: "aeVsComfyui"
-  },
-  
-  // YouTube Translation blogs
-  "translate-youtube-video": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/70s-looking-ai-image-1024x559.png",
-    category: "video-translation",
-    relatedCategories: ["video-translation", "subtitle-generation"],
-    namespace: "translateYoutubevideo"
-  },
-  "translate-youtube-video-to-english": {
-    titleKey: "title", 
-    descriptionKey: "intro",
-    image: "/images/micro-world-illusion-prompt-1-1024x559.png",
-    category: "video-translation",
-    relatedCategories: ["video-translation", "video-dubbing"],
-    namespace: "translateYoutubeVideoToEnglish"
-  },
-  "ai-youtube-video-translator": {
-    titleKey: "title",
-    descriptionKey: "intro", 
-    image: "/images/impossible-crowd-control-prompt-1024x559.png", 
-    category: "video-translation",
-    relatedCategories: ["video-translation", "ai-tools"],
-    namespace: "aiYoutubeVideoTranslator"
-  },
-  
-  // Voice Cloning blogs
-  "what-is-voice-cloning": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/13afe9a51466ddb3cd36344f90b46b02_thumb_1766410125845.jpg",
-    category: "audio-ai",
-    relatedCategories: ["audio-ai", "video-dubbing"],
-    namespace: "whatIsVoiceCloning"
-  },
-  "voice-cloning-tools": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/f593c8c73c3972d943a6fcb28e32bcdd_thumb_1764943492218.jpg", 
-    category: "audio-ai",
-    relatedCategories: ["audio-ai", "video-dubbing"],
-    namespace: "voiceCloningTools"
-  },
-  "f5-tts-voice-cloning": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg",
-    category: "audio-ai", 
-    relatedCategories: ["audio-ai", "video-dubbing"],
-    namespace: "f5TtsVoiceCloning"
-  },
+// Helper functions to get tool URLs from registry
+function getVideoDubbingUrl() {
+  const tool = getToolBySlug("video-dubbing");
+  return tool ? (tool.slug === "video-dubbing" ? "/video-dubbing" : `/tools/${tool.slug}`) : "/video-dubbing";
+}
 
-  // ASL Translation pages (tool-oriented landing pages)
-  "asl-video-translator": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/cd9f11ae1593c57b9b73d647ca7497e6_thumb_1765981345671.jpg",
-    category: "accessibility",
-    relatedCategories: ["video-translation", "subtitle-generation"],
-    namespace: "aslVideoTranslator"
-  },
-  "how-to-translate-asl-video": {
-    titleKey: "title",
-    descriptionKey: "intro",
-    image: "/images/wristwatch-image-1024x559.png",
-    category: "accessibility", 
-    relatedCategories: ["video-translation", "accessibility"],
-    namespace: "howToTranslateAslVideo"
-  }
-};
+function getSubtitleGeneratorUrl() {
+  const tool = getToolBySlug("bilingual-subtitles");
+  return tool ? `/tools/${tool.slug}` : "/tools/bilingual-subtitles";
+}
+
+// Helper function to map blog data to the expected format
+function createBlogPostsConfig() {
+  const blogPosts: Record<string, any> = {};
+  
+  blogsData.forEach((blog) => {
+    const slug = blog.slug;
+    
+    // Determine namespace based on slug pattern
+    let namespace = slug.replace(/-/g, '');
+    
+    // Special cases for namespace mapping
+    const namespaceMap: Record<string, string> = {
+      'aiPlatform': 'aiPlatform',
+      'QA_Bot_to_Task': 'qaBotToTask',
+      'age_AI': 'ageAi',
+      'storyboard-labeling': 'storyboardLabeling',
+      'video-enhancement': 'videoEnhancement',
+      'video-evaluation': 'videoEvaluation',
+      'storyboard-to-pipeline': 'storyboardToPipeline',
+      'agents-vs-workflows': 'agentsVsWorkflows',
+      'ae-vs-comfyui': 'aeVsComfyui',
+      'translate-youtube-video': 'translateYoutubevideo',
+      'translate-youtube-video-to-english': 'translateYoutubeVideoToEnglish',
+      'ai-youtube-video-translator': 'aiYoutubeVideoTranslator',
+      'what-is-voice-cloning': 'whatIsVoiceCloning',
+      'voice-cloning-tools': 'voiceCloningTools',
+      'f5-tts-voice-cloning': 'f5TtsVoiceCloning',
+      'asl-video-translator': 'aslVideoTranslator',
+      'how-to-translate-asl-video': 'howToTranslateAslVideo'
+    };
+    
+    namespace = namespaceMap[slug] || namespace;
+    
+    // Determine category based on tag or slug pattern
+    let category = blog.tag?.toLowerCase().replace(/\s+/g, '-') || 'general';
+    let relatedCategories: string[] = [];
+    
+    // Set related categories based on category
+    if (category === 'ai-platform' || category === 'ai-architecture') {
+      relatedCategories = [category, 'ai-tools'];
+    } else if (category === 'video-analysis' || category === 'video-enhancement' || category === 'animation') {
+      relatedCategories = [category, 'video-tools'];
+    } else if (category === 'localization') {
+      relatedCategories = [category, 'video-translation'];
+    } else if (category === 'generative-tools' || category === 'tools-pipeline') {
+      relatedCategories = [category, 'video-tools'];
+    } else if (category === 'video-translation') {
+      relatedCategories = [category, 'subtitle-generation'];
+    } else if (category === 'ai-industry') {
+      relatedCategories = [category, 'data-science'];
+    } else if (category === 'ai-audio') {
+      relatedCategories = [category, 'video-dubbing'];
+    } else if (category === 'accessibility') {
+      relatedCategories = ['video-translation', 'subtitle-generation'];
+    } else {
+      relatedCategories = [category];
+    }
+    
+    blogPosts[slug] = {
+      titleKey: "title",
+      descriptionKey: "intro",
+      image: blog.image,
+      category: category,
+      relatedCategories: relatedCategories,
+      namespace: namespace
+    };
+  });
+  
+  return blogPosts;
+}
+
+// Blog post configuration - dynamically generated from blogs data
+const blogPosts = createBlogPostsConfig();
 
 export async function generateStaticParams() {
   return Object.keys(blogPosts).map((slug) => ({ slug }));
@@ -287,7 +227,7 @@ export default async function BlogPostPage({
   };
 
   // Get related templates based on blog post categories
-  const relatedTemplates = blogConfig.relatedCategories.flatMap(category => 
+  const relatedTemplates = blogConfig.relatedCategories.flatMap((category: string) => 
     getTemplatesByCategory(category, locale)
   );
 
@@ -404,7 +344,7 @@ export default async function BlogPostPage({
               <p className="mb-4">{hasKey("curifyContent") ? safeT("curifyContent") : "Curify offers comprehensive solutions for content creators..."}</p>
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-green-800">
-                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
+                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
                 </p>
               </div>
             </section>
@@ -424,7 +364,7 @@ export default async function BlogPostPage({
             ✨ Related Curify Tools
           </h3>
           <div className="grid gap-3">
-            {relatedTemplates.slice(0, 6).map((template) => (
+            {relatedTemplates.slice(0, 6).map((template: TemplateLinkType) => (
               <TemplateLink
                 key={template.id}
                 href={template.url}
@@ -491,11 +431,11 @@ function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
-            🎯 {t("ctaText")} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-green-700 text-sm">
-              🔗 Also try: <a href="/subtitle-generator" className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
@@ -546,11 +486,11 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
           <p className="text-purple-800">
-            🎯 {t("ctaText")} <a href="/video-dubbing" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-purple-700 text-sm">
-              🔗 Also try: <a href="/video-translator" className="text-blue-600 hover:underline">Video Translator</a> | <a href="/subtitle-generator" className="text-blue-600 hover:underline">Subtitle Generator</a>
+              🔗 Also try: <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Translator</a> | <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a>
             </p>
           </div>
         </div>
@@ -663,11 +603,11 @@ function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: an
         <p className="mb-4">{safeT("curifyContent")}</p>
         <div className="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
           <p className="text-indigo-800">
-            🎯 {safeT("ctaText")} <a href="/video-translator" className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
+            🎯 {safeT("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-indigo-700 text-sm">
-              🔗 Also try: <a href="/subtitle-generator" className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
