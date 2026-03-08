@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import VideoDubbingClient from "./VideoDubbingClient";
+import { SITE_URL } from "@/lib/constants";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
@@ -32,7 +32,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${siteUrl}/og-video-dubbing.png`,
+          url: `${SITE_URL}/og-video-dubbing.png`,
           width: 1200,
           height: 630,
           alt: title,

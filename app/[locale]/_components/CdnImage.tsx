@@ -1,11 +1,7 @@
 "use client";
 
 import Image, { type ImageProps } from "next/image";
-
-const CDN_BASE =
-  process.env.NEXT_PUBLIC_CDN_URL ||
-  process.env.NEXT_PUBLIC_CDN_BASE || // keep compatibility if you used this name elsewhere
-  "";
+import { CDN_BASE } from "@/lib/constants";
 
 /**
  * Contract:

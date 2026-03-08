@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import BilingualSubtitlesClient from "./BilingualSubtitlesClient";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+import { SITE_URL } from "@/lib/constants";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
 
 export async function generateMetadata({
   params,
@@ -31,7 +31,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${siteUrl}/og-bilingual-subtitles.png`,
+          url: `${SITE_URL}/og-bilingual-subtitles.png`,
           width: 1200,
           height: 630,
           alt: title,

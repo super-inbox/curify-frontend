@@ -21,6 +21,7 @@ import {
 
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import { CDN_BASE } from "@/lib/constants";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -73,8 +74,6 @@ type SeoTemplateEntry = {
   locales: Record<string, SeoLocalePayload>;
 };
 
-const SEO_BASE_URL = "https://www.curify-ai.com";
-
 function parseRobots(robots?: string): Metadata["robots"] | undefined {
   if (!robots) return undefined;
   const s = robots.toLowerCase().replace(/\s/g, "");
@@ -106,7 +105,7 @@ function resolveSeoPayload(templateId: string, locale: string): SeoLocalePayload
 function toAbsUrlMaybe(url?: string) {
   if (!url) return undefined;
   if (url.startsWith("http://") || url.startsWith("https://")) return url;
-  return `${SEO_BASE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+  return `${CDN_BASE}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
 function normalizeText(s?: string) {
@@ -163,7 +162,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: (seo?.og_type as any) || "website",
       title: seo?.og_title || title,
       description: seo?.og_description || description,
-      url: `${SEO_BASE_URL}${canonicalPath}`,
+      url: `${CDN_BASE}${canonicalPath}`,
       images: ogImage ? [{ url: ogImage }] : undefined,
       siteName: "Curify",
       locale: localeStr,
