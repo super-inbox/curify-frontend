@@ -36,6 +36,6 @@ export const PROJECT_STATUS = {
   QUEUED: 'queued',
 } as const;
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://curify-ai.com';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curify-ai.com';
 export const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE || 'https://cdn.curify-ai.com';
 export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";

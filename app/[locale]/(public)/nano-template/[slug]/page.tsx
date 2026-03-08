@@ -21,7 +21,7 @@ import {
 
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import { CDN_BASE } from "@/lib/constants";
+import { CDN_BASE, SITE_URL } from "@/lib/constants";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -162,7 +162,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: (seo?.og_type as any) || "website",
       title: seo?.og_title || title,
       description: seo?.og_description || description,
-      url: `${CDN_BASE}${canonicalPath}`,
+      url: `${SITE_URL}${canonicalPath}`,
       images: ogImage ? [{ url: ogImage }] : undefined,
       siteName: "Curify",
       locale: localeStr,
