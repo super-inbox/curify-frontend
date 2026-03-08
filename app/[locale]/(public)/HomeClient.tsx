@@ -13,9 +13,7 @@ import {
   InspirationListItem,
   type InspirationCardType,
 } from "@/app/[locale]/_components/InspirationCard";
-import {
-  NanoInspirationRow,  
-} from "@/app/[locale]/_components/NanoInspirationCard";
+import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
@@ -27,6 +25,9 @@ import {
   type RawTemplate,
   type RawNanoImageRecord,
 } from "@/lib/nano_utils";
+
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoInspiration from "@/public/data/nano_inspiration.json";
 
 // --- Font (modern SaaS look) ---
 const inter = Inter({
@@ -81,59 +82,36 @@ function getInterleavedData(
   return result;
 }
 
-
 function useNanoCards(activeLang: Lang) {
-  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
+  return useMemo(() => {
+    try {
+      console.log("[nano] building nano cards, activeLang =", activeLang);
 
-  useEffect(() => {
-    let cancelled = false;
+      const reg = buildNanoRegistry(
+        nanoTemplates as unknown as RawTemplate[],
+        nanoInspiration as unknown as RawNanoImageRecord[]
+      );
 
-    async function load() {
-      try {
-        console.log("[nano] loading nano cards, activeLang =", activeLang);
+      const locale = normalizeLocale(activeLang);
 
-        // Fetch both template metadata + image-level records
-        const [tplRes, imgRes] = await Promise.all([
-          fetch("/data/nano_templates.json"),
-          fetch("/data/nano_inspiration.json"),
-        ]);
+      const cards = buildNanoFeedCards(reg, locale, {
+        perTemplateMaxImages: 2,
+        strictLocale: true,
+      });
 
-        const templatesRaw = (await tplRes.json()) as RawTemplate[];
-        const imagesRaw = (await imgRes.json()) as RawNanoImageRecord[];
+      console.log(
+        "[nano] built feed cards:",
+        cards.length,
+        "sample=",
+        cards[0]
+      );
 
-        const reg = buildNanoRegistry(templatesRaw, imagesRaw);
-
-        const locale = normalizeLocale(activeLang);
-
-        // Build 1 card per template (same shape home timeline consumes)
-        // Preload 1-2 images per card for carousel
-        const cards = buildNanoFeedCards(reg, locale, {
-          perTemplateMaxImages: 2,
-          strictLocale: true,
-        });
-
-        // One-line sanity log
-        console.log(
-          "[nano] built feed cards:",
-          cards.length,
-          "sample=",
-          cards[0]
-        );
-
-        if (!cancelled) setNanoCards(cards as any);
-      } catch (err) {
-        console.error("[nano] ❌ failed to load nano cards:", err);
-        if (!cancelled) setNanoCards([]);
-      }
+      return cards as NanoInspirationCardType[];
+    } catch (err) {
+      console.error("[nano] ❌ failed to build nano cards:", err);
+      return [];
     }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
   }, [activeLang]);
-
-  return nanoCards;
 }
 
 function useFilteredInspiration(
@@ -253,7 +231,7 @@ export default function HomeClient({
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
-  const tHero = useTranslations("home.hero"); // ✅
+  const tHero = useTranslations("home.hero");
 
   useEffect(() => {
     console.log("[home] activeLang:", activeLang);
@@ -295,21 +273,17 @@ export default function HomeClient({
         "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6"
       )}
     >
-
       <div className="mx-auto max-w-[1400px]">
-  {/* Headline */}
-  <div className="pt-10 pb-6">
+        {/* Headline */}
+        <div className="pt-10 pb-6">
           <div className="mx-auto max-w-4xl">
             <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
               {tHero("title")}
             </h1>
 
-            {/* ✅ If you keep hero.description as ONE paragraph */}
             <p className="mt-4 text-base leading-relaxed text-neutral-700">
               {tHero("description")}
             </p>
-
-            {/* ✅ If you prefer two paragraphs, use hero.descriptionLine1/2 instead (see note below) */}
           </div>
         </div>
 
@@ -347,10 +321,10 @@ export default function HomeClient({
           </div>
 
           <aside className="lg:col-span-4 lg:border-l lg:border-neutral-200/70 lg:pl-8">
-  <div className="space-y-6 lg:sticky lg:top-24">
-    <ContentCreationToolsSidebar activeLang={activeLang} />
-  </div>
-</aside>
+            <div className="space-y-6 lg:sticky lg:top-24">
+              <ContentCreationToolsSidebar activeLang={activeLang} />
+            </div>
+          </aside>
         </div>
       </div>
 
@@ -397,7 +371,7 @@ function ListView({
         }
         return (
           <NanoInspirationRow
-            key={`nano-row-${index}`}
+            key={`nano-row-${item.cards.map((c) => c.id).join("-") || index}`}
             cards={item.cards}
             requireAuth={requireAuth}
             onViewClick={(c) => onOpenModal(c, "nano")}
