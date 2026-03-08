@@ -14,7 +14,7 @@ import {
   type InspirationCardType,
 } from "@/app/[locale]/_components/InspirationCard";
 import {
-  NanoInspirationRow,  
+  NanoInspirationRow,
 } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
@@ -82,11 +82,15 @@ function getInterleavedData(
 }
 
 
+// Returns null while loading, [] if loaded but empty, or the cards array
 function useNanoCards(activeLang: Lang) {
-  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[]>([]);
+  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[] | null>(null);
 
   useEffect(() => {
     let cancelled = false;
+
+    // Reset to null on lang change so we don't flash stale data
+    setNanoCards(null);
 
     async function load() {
       try {
@@ -250,15 +254,16 @@ export default function HomeClient({
   const router = useRouter();
   const [query, setQuery] = useState("");
   const { activeLang } = useLanguageSync();
+  // nanoCards is null while loading, [] if loaded but empty, or populated array
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
-  const tHero = useTranslations("home.hero"); // ✅
+  const tHero = useTranslations("home.hero");
 
   useEffect(() => {
     console.log("[home] activeLang:", activeLang);
-    console.log("[home] nanoCards len:", nanoCards.length);
-    if (nanoCards.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
+    console.log("[home] nanoCards len:", nanoCards?.length ?? "loading");
+    if (nanoCards?.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
   }, [activeLang, nanoCards]);
 
   const [modalState, setModalState] = useState<{
@@ -295,21 +300,16 @@ export default function HomeClient({
         "min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6"
       )}
     >
-
       <div className="mx-auto max-w-[1400px]">
-  {/* Headline */}
-  <div className="pt-10 pb-6">
+        {/* Headline */}
+        <div className="pt-10 pb-6">
           <div className="mx-auto max-w-4xl">
             <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
               {tHero("title")}
             </h1>
-
-            {/* ✅ If you keep hero.description as ONE paragraph */}
             <p className="mt-4 text-base leading-relaxed text-neutral-700">
               {tHero("description")}
             </p>
-
-            {/* ✅ If you prefer two paragraphs, use hero.descriptionLine1/2 instead (see note below) */}
           </div>
         </div>
 
@@ -330,27 +330,35 @@ export default function HomeClient({
               </div>
             </div>
 
-            {/* Feed */}
-            <ListView
-              filteredMainCards={filteredCards}
-              nanoCards={nanoCards}
-              requireAuth={requireAuth}
-              onOpenModal={handleOpenModal}
-            />
-
-            {filteredCards.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
-                <Search className="mb-4 h-10 w-10 opacity-20" />
-                <p>No results found for your search.</p>
+            {/* Feed — only render once nano cards have finished loading */}
+            {nanoCards === null ? (
+              <div className="flex justify-center py-20 text-neutral-400">
+                <span className="animate-pulse text-sm">Loading…</span>
               </div>
+            ) : (
+              <>
+                <ListView
+                  filteredMainCards={filteredCards}
+                  nanoCards={nanoCards}
+                  requireAuth={requireAuth}
+                  onOpenModal={handleOpenModal}
+                />
+
+                {filteredCards.length === 0 && (
+                  <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
+                    <Search className="mb-4 h-10 w-10 opacity-20" />
+                    <p>No results found for your search.</p>
+                  </div>
+                )}
+              </>
             )}
           </div>
 
           <aside className="lg:col-span-4 lg:border-l lg:border-neutral-200/70 lg:pl-8">
-  <div className="space-y-6 lg:sticky lg:top-24">
-    <ContentCreationToolsSidebar activeLang={activeLang} />
-  </div>
-</aside>
+            <div className="space-y-6 lg:sticky lg:top-24">
+              <ContentCreationToolsSidebar activeLang={activeLang} />
+            </div>
+          </aside>
         </div>
       </div>
 
