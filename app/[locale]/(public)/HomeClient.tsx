@@ -13,9 +13,7 @@ import {
   InspirationListItem,
   type InspirationCardType,
 } from "@/app/[locale]/_components/InspirationCard";
-import {
-  NanoInspirationRow,
-} from "@/app/[locale]/_components/NanoInspirationCard";
+import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
@@ -27,6 +25,9 @@ import {
   type RawTemplate,
   type RawNanoImageRecord,
 } from "@/lib/nano_utils";
+
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoInspiration from "@/public/data/nano_inspiration.json";
 
 // --- Font (modern SaaS look) ---
 const inter = Inter({
@@ -81,63 +82,36 @@ function getInterleavedData(
   return result;
 }
 
-
-// Returns null while loading, [] if loaded but empty, or the cards array
 function useNanoCards(activeLang: Lang) {
-  const [nanoCards, setNanoCards] = useState<NanoInspirationCardType[] | null>(null);
+  return useMemo(() => {
+    try {
+      console.log("[nano] building nano cards, activeLang =", activeLang);
 
-  useEffect(() => {
-    let cancelled = false;
+      const reg = buildNanoRegistry(
+        nanoTemplates as unknown as RawTemplate[],
+        nanoInspiration as unknown as RawNanoImageRecord[]
+      );
 
-    // Reset to null on lang change so we don't flash stale data
-    setNanoCards(null);
+      const locale = normalizeLocale(activeLang);
 
-    async function load() {
-      try {
-        console.log("[nano] loading nano cards, activeLang =", activeLang);
+      const cards = buildNanoFeedCards(reg, locale, {
+        perTemplateMaxImages: 2,
+        strictLocale: true,
+      });
 
-        // Fetch both template metadata + image-level records
-        const [tplRes, imgRes] = await Promise.all([
-          fetch("/data/nano_templates.json"),
-          fetch("/data/nano_inspiration.json"),
-        ]);
+      console.log(
+        "[nano] built feed cards:",
+        cards.length,
+        "sample=",
+        cards[0]
+      );
 
-        const templatesRaw = (await tplRes.json()) as RawTemplate[];
-        const imagesRaw = (await imgRes.json()) as RawNanoImageRecord[];
-
-        const reg = buildNanoRegistry(templatesRaw, imagesRaw);
-
-        const locale = normalizeLocale(activeLang);
-
-        // Build 1 card per template (same shape home timeline consumes)
-        // Preload 1-2 images per card for carousel
-        const cards = buildNanoFeedCards(reg, locale, {
-          perTemplateMaxImages: 2,
-          strictLocale: true,
-        });
-
-        // One-line sanity log
-        console.log(
-          "[nano] built feed cards:",
-          cards.length,
-          "sample=",
-          cards[0]
-        );
-
-        if (!cancelled) setNanoCards(cards as any);
-      } catch (err) {
-        console.error("[nano] ❌ failed to load nano cards:", err);
-        if (!cancelled) setNanoCards([]);
-      }
+      return cards as NanoInspirationCardType[];
+    } catch (err) {
+      console.error("[nano] ❌ failed to build nano cards:", err);
+      return [];
     }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
   }, [activeLang]);
-
-  return nanoCards;
 }
 
 function useFilteredInspiration(
@@ -254,7 +228,6 @@ export default function HomeClient({
   const router = useRouter();
   const [query, setQuery] = useState("");
   const { activeLang } = useLanguageSync();
-  // nanoCards is null while loading, [] if loaded but empty, or populated array
   const nanoCards = useNanoCards(activeLang);
   const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
@@ -262,8 +235,8 @@ export default function HomeClient({
 
   useEffect(() => {
     console.log("[home] activeLang:", activeLang);
-    console.log("[home] nanoCards len:", nanoCards?.length ?? "loading");
-    if (nanoCards?.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
+    console.log("[home] nanoCards len:", nanoCards.length);
+    if (nanoCards.length) console.log("[home] nanoCards[0]:", nanoCards[0]);
   }, [activeLang, nanoCards]);
 
   const [modalState, setModalState] = useState<{
@@ -307,6 +280,7 @@ export default function HomeClient({
             <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
               {tHero("title")}
             </h1>
+
             <p className="mt-4 text-base leading-relaxed text-neutral-700">
               {tHero("description")}
             </p>
@@ -330,27 +304,19 @@ export default function HomeClient({
               </div>
             </div>
 
-            {/* Feed — only render once nano cards have finished loading */}
-            {nanoCards === null ? (
-              <div className="flex justify-center py-20 text-neutral-400">
-                <span className="animate-pulse text-sm">Loading…</span>
-              </div>
-            ) : (
-              <>
-                <ListView
-                  filteredMainCards={filteredCards}
-                  nanoCards={nanoCards}
-                  requireAuth={requireAuth}
-                  onOpenModal={handleOpenModal}
-                />
+            {/* Feed */}
+            <ListView
+              filteredMainCards={filteredCards}
+              nanoCards={nanoCards}
+              requireAuth={requireAuth}
+              onOpenModal={handleOpenModal}
+            />
 
-                {filteredCards.length === 0 && (
-                  <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
-                    <Search className="mb-4 h-10 w-10 opacity-20" />
-                    <p>No results found for your search.</p>
-                  </div>
-                )}
-              </>
+            {filteredCards.length === 0 && (
+              <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
+                <Search className="mb-4 h-10 w-10 opacity-20" />
+                <p>No results found for your search.</p>
+              </div>
             )}
           </div>
 
@@ -405,7 +371,7 @@ function ListView({
         }
         return (
           <NanoInspirationRow
-            key={`nano-row-${index}`}
+            key={`nano-row-${item.cards.map((c) => c.id).join("-") || index}`}
             cards={item.cards}
             requireAuth={requireAuth}
             onViewClick={(c) => onOpenModal(c, "nano")}

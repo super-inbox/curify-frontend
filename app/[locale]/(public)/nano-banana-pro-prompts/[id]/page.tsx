@@ -51,6 +51,11 @@ type Prompt = {
   retweets: number;
 };
 
+const DEFAULT_CONTENT_LOCALE = 'en';
+
+const buildPromptUrl = (locale: string, id: string) =>
+  `${SITE_URL}/${locale}/nano-banana-pro-prompts/${id}`;
+
 const fetchPrompt = async (id: string): Promise<Prompt | null> => {
   try {
     const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
@@ -101,9 +106,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ id: string; locale: string }>;
 }): Promise<Metadata> {
-
   const { id, locale } = await params;
-  const prompt = await fetchPrompt(id);  
+  const prompt = await fetchPrompt(id);
 
   if (!prompt) {
     return {
@@ -122,7 +126,8 @@ export async function generateMetadata({
     ? prompt.image_url
     : `${SITE_URL}${prompt.image_url}`;
 
-  const url = `${SITE_URL}/${locale}/nano-banana-pro-prompts/${id}`;
+  const pageUrl = buildPromptUrl(locale, id);
+  const canonicalUrl = buildPromptUrl(DEFAULT_CONTENT_LOCALE, id);
 
   const keywords = [
     'AI prompt',
@@ -139,7 +144,20 @@ export async function generateMetadata({
     description,
 
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
+      languages: {
+        en: buildPromptUrl('en', id),
+        zh: buildPromptUrl('zh', id),
+        ja: buildPromptUrl('ja', id),
+        ko: buildPromptUrl('ko', id),
+        de: buildPromptUrl('de', id),
+        es: buildPromptUrl('es', id),
+        fr: buildPromptUrl('fr', id),
+        ru: buildPromptUrl('ru', id),
+        hi: buildPromptUrl('hi', id),
+        tr: buildPromptUrl('tr', id),
+        'x-default': canonicalUrl,
+      },
     },
 
     robots: {
@@ -164,7 +182,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'article',
-      url,
+      url: pageUrl,
       images: [
         {
           url: imageUrl,
@@ -192,7 +210,6 @@ export default async function PromptDetailPage({
 }: {
   params: Promise<{ id: string; locale: string }>;
 }) {
-
   const { id, locale } = await params;
   const prompt = await fetchPrompt(id);
 
@@ -200,7 +217,7 @@ export default async function PromptDetailPage({
     notFound();
   }
 
-  const canonicalUrl = `${SITE_URL}/${locale}/nano-banana-pro-prompts/${prompt.id}`;
+  const canonicalUrl = buildPromptUrl(DEFAULT_CONTENT_LOCALE, prompt.id);
 
   const absoluteImageUrl = /^https?:\/\//i.test(prompt.image_url)
     ? prompt.image_url
@@ -250,8 +267,6 @@ export default async function PromptDetailPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
-
-      {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -276,7 +291,6 @@ export default async function PromptDetailPage({
 
       <main className="max-w-4xl mx-auto py-6 sm:px-6 lg:px-8">
         <article className="bg-white shadow overflow-hidden rounded-lg">
-
           <div className="px-6 py-4">
             <div className="relative w-full h-96 bg-gray-50 flex items-center justify-center">
               <CdnImage
@@ -320,7 +334,6 @@ export default async function PromptDetailPage({
               </pre>
             </div>
           </div>
-
         </article>
       </main>
     </div>
