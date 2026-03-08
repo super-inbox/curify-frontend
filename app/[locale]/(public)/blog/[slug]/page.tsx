@@ -6,9 +6,21 @@ import TemplateLink, { TemplateSuggestions } from "@/app/[locale]/_components/Te
 import { getTemplatesByCategory, TemplateLink as TemplateLinkType } from "@/utils/blogUtils";
 import { notFound } from "next/navigation";
 import blogsData from "@/public/data/blogs.json";
+import { getToolBySlug } from "@/lib/tools-registry";
 
 // Force dynamic rendering to avoid static generation issues
 export const dynamic = 'force-dynamic';
+
+// Helper functions to get tool URLs from registry
+function getVideoDubbingUrl() {
+  const tool = getToolBySlug("video-dubbing");
+  return tool ? (tool.slug === "video-dubbing" ? "/video-dubbing" : `/tools/${tool.slug}`) : "/video-dubbing";
+}
+
+function getSubtitleGeneratorUrl() {
+  const tool = getToolBySlug("bilingual-subtitles");
+  return tool ? `/tools/${tool.slug}` : "/tools/bilingual-subtitles";
+}
 
 // Helper function to map blog data to the expected format
 function createBlogPostsConfig() {
@@ -332,7 +344,7 @@ export default async function BlogPostPage({
               <p className="mb-4">{hasKey("curifyContent") ? safeT("curifyContent") : "Curify offers comprehensive solutions for content creators..."}</p>
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-green-800">
-                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href="/video-dubbing" className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
+                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
                 </p>
               </div>
             </section>
@@ -419,11 +431,11 @@ function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
-            🎯 {t("ctaText")} <a href="/video-dubbing" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-green-700 text-sm">
-              🔗 Also try: <a href="/tools/bilingual-subtitles" className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
@@ -474,11 +486,11 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
           <p className="text-purple-800">
-            🎯 {t("ctaText")} <a href="/video-dubbing" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-purple-700 text-sm">
-              🔗 Also try: <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Translator</a> | <a href="/tools/bilingual-subtitles" className="text-blue-600 hover:underline">Subtitle Generator</a>
+              🔗 Also try: <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Translator</a> | <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a>
             </p>
           </div>
         </div>
@@ -591,11 +603,11 @@ function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: an
         <p className="mb-4">{safeT("curifyContent")}</p>
         <div className="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
           <p className="text-indigo-800">
-            🎯 {safeT("ctaText")} <a href="/video-dubbing" className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
+            🎯 {safeT("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-indigo-700 text-sm">
-              🔗 Also try: <a href="/tools/bilingual-subtitles" className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href="/video-dubbing" className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
