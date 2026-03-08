@@ -45,26 +45,38 @@ function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-function getInterleavedData(mainCards: InspirationCardType[], nanoCards: NanoInspirationCardType[]): InterleavedItem[] {
+function getInterleavedData(
+  mainCards: InspirationCardType[],
+  nanoCards: NanoInspirationCardType[]
+): InterleavedItem[] {
   const result: InterleavedItem[] = [];
-  let inserted = false;
+
+  // nano row first
+  if (nanoCards.length > 0) {
+    result.push({
+      type: "nano",
+      cards: nanoCards.slice(0, 3),
+    });
+  }
 
   mainCards.forEach((card, index) => {
     result.push({ type: "inspiration", card });
-    if ((index + 1) % 4 === 0 && nanoCards.length > 0) {
-      const blockIndex = Math.floor(index / 4);
+
+    // insert nano row after every 3 inspiration cards
+    if ((index + 1) % 3 === 0 && nanoCards.length > 0) {
+      const blockIndex = Math.floor((index + 1) / 3);
       const startIdx = (blockIndex * 3) % nanoCards.length;
+
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
+
       if (rowCards.length > 0) {
-        result.push({ type: "nano", cards: rowCards });
-        inserted = true;
+        result.push({
+          type: "nano",
+          cards: rowCards,
+        });
       }
     }
   });
-
-  if (!inserted && nanoCards.length > 0) {
-    result.push({ type: "nano", cards: nanoCards.slice(0, 3) });
-  }
 
   return result;
 }
