@@ -1297,6 +1297,31 @@
             "placeholder": ["春运打包", "候车时", "高铁上", "赶高铁"]
           }
         ]
+      },
+      "en": {
+        "category": "MBTI Fun",
+        "description": "Generate a 4K vertical MBTI comparison meme with a two-panel contrast layout, cute animal characters, bold titles, and a red card-style frame.",
+        "base_prompt": "(MBTI Meme Designer) You are a top-tier AI visual designer specializing in expressive MBTI comparison cards with strong contrast and clear typography. Based on the user inputs [{persona_a}], [{persona_b}], and [{scene_title}], generate a vertical 9:16 comparison card. The design should be a white card with a thick red border and a two-panel layout stacked vertically. Each panel includes a bold title at the top, a cute anthropomorphic animal illustration in the middle, and a humorous caption at the bottom. Top panel: title \"{persona_a} during {scene_title}\", expressive animal illustration. Bottom panel: title \"{persona_b} during {scene_title}\", creating a strong visual and behavioral contrast with the top panel. Style: flat cartoon, bright colors, clean composition, clear readable text, neat layout, 4K resolution, optimized for social media sharing (TikTok, Instagram, Xiaohongshu). Output the final image directly.",
+        "parameters": [
+          {
+            "name": "persona_a",
+            "label": "Persona A",
+            "type": "text",
+            "placeholder": ["ISTJ", "ENFP", "INFP", "INTJ"]
+          },
+          {
+            "name": "persona_b",
+            "label": "Persona B",
+            "type": "text",
+            "placeholder": ["ENFP", "ISTJ", "ESTP", "INTP"]
+          },
+          {
+            "name": "scene_title",
+            "label": "Scenario",
+            "type": "text",
+            "placeholder": ["packing for travel", "waiting at the station", "on the train", "rushing to catch the train"]
+          }
+        ]
       }
     }
   },
