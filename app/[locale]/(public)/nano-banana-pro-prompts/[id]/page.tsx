@@ -6,6 +6,7 @@ import path from 'path';
 import fs from 'fs';
 import CopyButton from './CopyButton';
 import CdnImage from '../../../_components/CdnImage';
+import { SITE_URL } from '@/lib/constants';
 
 interface JsonPrompt {
   id: number;
@@ -102,9 +103,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 
   const { id, locale } = await params;
-  const prompt = await fetchPrompt(id);
-
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curify-ai.com';
+  const prompt = await fetchPrompt(id);  
 
   if (!prompt) {
     return {
@@ -121,9 +120,9 @@ export async function generateMetadata({
 
   const imageUrl = /^https?:\/\//i.test(prompt.image_url)
     ? prompt.image_url
-    : `${siteUrl}${prompt.image_url}`;
+    : `${SITE_URL}${prompt.image_url}`;
 
-  const url = `${siteUrl}/${locale}/nano-banana-pro-prompts/${id}`;
+  const url = `${SITE_URL}/${locale}/nano-banana-pro-prompts/${id}`;
 
   const keywords = [
     'AI prompt',
@@ -134,7 +133,7 @@ export async function generateMetadata({
   ].filter(Boolean);
 
   return {
-    metadataBase: new URL(siteUrl),
+    metadataBase: new URL(SITE_URL),
 
     title,
     description,
@@ -201,12 +200,11 @@ export default async function PromptDetailPage({
     notFound();
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curify-ai.com';
-  const canonicalUrl = `${siteUrl}/${locale}/nano-banana-pro-prompts/${prompt.id}`;
+  const canonicalUrl = `${SITE_URL}/${locale}/nano-banana-pro-prompts/${prompt.id}`;
 
   const absoluteImageUrl = /^https?:\/\//i.test(prompt.image_url)
     ? prompt.image_url
-    : `${siteUrl}${prompt.image_url}`;
+    : `${SITE_URL}${prompt.image_url}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -246,7 +244,7 @@ export default async function PromptDetailPage({
     publisher: {
       "@type": "Organization",
       name: "Curify",
-      url: siteUrl,
+      url: SITE_URL,
     },
   };
 

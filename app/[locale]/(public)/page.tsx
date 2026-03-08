@@ -5,6 +5,7 @@ import HomeClient from "./HomeClient";
 import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+import { SITE_URL } from "@/lib/constants";
 
 export async function generateMetadata({
   params,
@@ -13,7 +14,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.metadata" });
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.curify-ai.com";
+
+  const baseUrl = SITE_URL;
 
   const canonicalUrl = getCanonicalUrl(locale); // home = no path
 

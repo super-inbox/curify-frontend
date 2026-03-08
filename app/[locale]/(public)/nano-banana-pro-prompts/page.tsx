@@ -3,15 +3,13 @@ import NanoBananaProPromptsClient from './NanoBananaProPromptsClient';
 import fs from 'fs';
 import path from 'path';
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+import { SITE_URL, CDN_BASE } from "@/lib/constants";
 
 export const runtime = 'nodejs'; // required for fs
 
 type JsonData = {
   prompts?: any[];
 };
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://curify-ai.com';
-const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE || 'https://cdn.curify-ai.com';
 
 function toOgLocale(locale: string) {
   const map: Record<string, string> = {

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { apiClient } from "@/services/api";
+import { API_BASE } from "@/lib/constants";
 
 type ContentType = "inspiration" | "nano_inspiration" | "nano_gallery";
 type ActionType = "view" | "click" | "copy" | "favorite" | "share" | "generate";
@@ -14,10 +15,6 @@ export interface TrackingOptions {
 }
 
 const TRACK_ENDPOINT = "/interactions/track";
-
-// NOTE: apiClient keeps baseURL private, so for sendBeacon we use the same env var.
-// Keep this consistent with services/api.ts.
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 /**
  * Generate a session ID that persists during the browser session.
