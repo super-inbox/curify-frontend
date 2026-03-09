@@ -50,7 +50,10 @@ function createBlogPostsConfig() {
       'voice-cloning-tools': 'voiceCloningTools',
       'f5-tts-voice-cloning': 'f5TtsVoiceCloning',
       'asl-video-translator': 'aslVideoTranslator',
-      'how-to-translate-asl-video': 'howToTranslateAslVideo'
+      'how-to-translate-asl-video': 'howToTranslateAslVideo',
+      'chinese-herbal-medicine-visual-guide': 'chineseHerbalMedicineVisualGuide',
+      'evolution-timelines-visualization': 'evolutionTimelinesVisualization',
+      'chinese-costume-history-infographic': 'chineseCostumeHistoryInfographic'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -76,6 +79,12 @@ function createBlogPostsConfig() {
       relatedCategories = [category, 'video-dubbing'];
     } else if (category === 'accessibility') {
       relatedCategories = ['video-translation', 'subtitle-generation'];
+    } else if (category === 'traditional-medicine') {
+      relatedCategories = [category, 'educational-content'];
+    } else if (category === 'data-visualization') {
+      relatedCategories = [category, 'educational-content'];
+    } else if (category === 'cultural-heritage') {
+      relatedCategories = [category, 'educational-content'];
     } else {
       relatedCategories = [category];
     }
@@ -193,7 +202,10 @@ export default async function BlogPostPage({
     'voiceCloningTools': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'f5TtsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'evolutionTimelinesVisualization': ['intro', 'whatIsTitle', 'whatIsContent', 'importanceTitle', 'importanceContent', 'techniquesTitle', 'techniquesContent', 'examplesTitle', 'examplesContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'chineseCostumeHistoryInfographic': ['intro', 'whatIsTitle', 'whatIsContent', 'dynastiesTitle', 'dynastiesContent', 'characteristicsTitle', 'characteristicsContent', 'modernTitle', 'modernContent', 'culturalTitle', 'culturalContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
   };
 
   const currentKeys = availableKeys[blogConfig.namespace] || [];
@@ -265,13 +277,19 @@ export default async function BlogPostPage({
         {slug.includes('asl') && (
           <AslTranslationContent slug={slug} t={t} tEn={tEn} />
         )}
+        {(slug === 'chinese-herbal-medicine-visual-guide' || slug === 'evolution-timelines-visualization' || slug === 'chinese-costume-history-infographic') && (
+          <NanoTemplateContent slug={slug} t={safeT} />
+        )}
         
         {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') && 
          !slug.startsWith('voice-cloning') && 
          slug !== 'what-is-voice-cloning' && 
          slug !== 'f5-tts-voice-cloning' && 
-         !slug.includes('asl') && (
+         !slug.includes('asl') &&
+         slug !== 'chinese-herbal-medicine-visual-guide' &&
+         slug !== 'evolution-timelines-visualization' &&
+         slug !== 'chinese-costume-history-infographic' && (
           <div className="space-y-6">
             <p className="text-lg font-semibold text-blue-600 mb-4">
               {hasKey("intro") ? safeT("intro") : "Introduction"}
@@ -616,6 +634,108 @@ function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: an
       <section>
         <h2 className="text-2xl font-bold mb-4">{safeT("conclusionTitle")}</h2>
         <p>{safeT("conclusionContent")}</p>
+      </section>
+    </div>
+  );
+}
+
+function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
+  return (
+    <div className="space-y-6">
+      <p className="text-lg font-semibold text-green-600 mb-4">
+        {t("intro")}
+      </p>
+      
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("whatIsTitle")}</h2>
+        <p className="mb-4">{t("whatIsContent")}</p>
+      </section>
+
+      {(slug === 'chinese-herbal-medicine-visual-guide') && (
+        <>
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("historyTitle")}</h2>
+            <p className="mb-4">{t("historyContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("benefitsTitle")}</h2>
+            <p className="mb-4">{t("benefitsContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("popularTitle")}</h2>
+            <p className="mb-4">{t("popularContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("usageTitle")}</h2>
+            <p className="mb-4">{t("usageContent")}</p>
+          </section>
+        </>
+      )}
+
+      {(slug === 'evolution-timelines-visualization') && (
+        <>
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("importanceTitle")}</h2>
+            <p className="mb-4">{t("importanceContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("techniquesTitle")}</h2>
+            <p className="mb-4">{t("techniquesContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("examplesTitle")}</h2>
+            <p className="mb-4">{t("examplesContent")}</p>
+          </section>
+        </>
+      )}
+
+      {(slug === 'chinese-costume-history-infographic') && (
+        <>
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("dynastiesTitle")}</h2>
+            <p className="mb-4">{t("dynastiesContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("characteristicsTitle")}</h2>
+            <p className="mb-4">{t("characteristicsContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("modernTitle")}</h2>
+            <p className="mb-4">{t("modernContent")}</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("culturalTitle")}</h2>
+            <p className="mb-4">{t("culturalContent")}</p>
+          </section>
+        </>
+      )}
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
+        <p className="mb-4">{t("toolsContent")}</p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("curifyTitle")}</h2>
+        <p className="mb-4">{t("curifyContent")}</p>
+        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+          <p className="text-green-800">
+            🎯 {t("ctaText")} <a href="/templates" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
+        <p>{t("conclusionContent")}</p>
       </section>
     </div>
   );
