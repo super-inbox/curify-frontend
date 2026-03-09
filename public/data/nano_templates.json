@@ -1528,5 +1528,28 @@
           ]
       }
   }
+},
+  {
+    "id": "template-mascot-curibot-zh",
+    "locales": {
+      "zh": {
+        "category": "品牌IP吉祥物类",
+        "description": "Create a professional brand mascot character design sheet for specified AI platform, featuring the customized mascot name.",
+        "base_prompt": "（Character Designer）你是一位专业的IP角色与吉祥物设计师，擅长制作标准化角色设定集。为 {platform_name} 创作品牌吉祥物 {mascot_name} 的专业角色设定图。风格为可爱、友好、未来感的Q版机器人，超高清8K，矢量插画，柔和渐变，线条干净，角色无文字。圆形头部，闪亮大眼睛，头顶小天线，紧凑机械身体，友好微笑，2.5头身，圆润造型，拟人化特征，亲切聪慧表情。浅灰色坐标纸背景，网格布局，分区清晰：1. 全身正面主视图（居中最大）；2. 侧视图、背视图、3/4视角图（围绕主视图）；3. 表情组：开心/欢迎、兴奋/灵感、思考/处理、成功庆祝、友好挥手（一排5个）；4. 道具变体：手持平板、手持魔法棒、手持内容卡片堆、手持喇叭（一排4个）；5. 右下角色卡参考区，含色卡、色值、标注。配色：主色深蓝#1E3A8A、亮蓝#3B82F6、点缀紫#8B5CF6、纯白#FFFFFF、浅灰阴影#E5E7EB。扁平色+细腻高光，所有视角配色统一。受迪士尼/皮克斯Q版风格启发，卡哇伊美学，未来科技感，专业UI/UX吉祥物设计，构图清晰，焦点锐利，对称，所有视角比例统一，无杂乱背景，无水印，元素独立。--no text on character, blurry, low resolution, inconsistent proportions, extra limbs, missing features, messy background, photorealistic, 3D render, ugly, scary, distorted, watermark, signature",
+        "parameters": [
+          {
+            "name": "mascot_name",
+            "label": "吉祥物名称",
+            "type": "text",
+            "placeholder": ["CURIBOT", "AIBOT", "SMARTBOT"]
+          },
+          {
+            "name": "platform_name",
+            "label": "平台名称",
+            "type": "text",
+            "placeholder": ["Curify AI Platform", "Smart AI Platform", "Easy AI Platform"]
+          }
+        ]
+      }
+    }
 }
-]
