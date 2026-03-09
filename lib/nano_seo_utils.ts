@@ -175,6 +175,117 @@ export function buildNanoH1(seoMetaTitle: string | undefined, fallback: string):
   return raw.replace(/\s*[｜|]\s*Curify AI\s*$/i, "");
 }
 
+// ─── Pro-prompt metadata ──────────────────────────────────────────────────────
+
+/** Locales supported by the nano-banana-pro-prompts section. */
+export const PRO_PROMPT_LOCALES = [
+  "en", "zh", "ja", "ko", "de", "es", "fr", "ru", "hi", "tr",
+] as const;
+
+export type ProPromptLocale = (typeof PRO_PROMPT_LOCALES)[number];
+
+/**
+ * Build a locale → absolute URL map for hreflang `<link rel="alternate">` tags.
+ * The canonical locale ("en") is also set as "x-default".
+ */
+export function buildProPromptAlternates(
+  buildUrl: (locale: string) => string
+): Record<string, string> & { "x-default": string } {
+  const canonical = buildUrl("en");
+  return {
+    ...Object.fromEntries(PRO_PROMPT_LOCALES.map((l) => [l, buildUrl(l)])),
+    "x-default": canonical,
+  };
+}
+
+export type ProPromptMetadataInput = {
+  /** Resolved prompt title — used in `<title>` and OG/Twitter tags. */
+  title: string;
+  /** Short description or first 160 chars of prompt text. */
+  description: string;
+  /** Absolute image URL (already resolved to https://…). */
+  absoluteImageUrl: string;
+  /** Page URL for the current locale. */
+  pageUrl: string;
+  /** Canonical URL (always the "en" locale URL). */
+  canonicalUrl: string;
+  /** ISO date string, or undefined. */
+  date?: string;
+  /** Author display name, or undefined. */
+  author?: string;
+  /** Author handle (e.g. "@foo"), or undefined. */
+  authorHandle?: string;
+  /** Prompt category, source type, etc. — filtered for falsiness by the caller. */
+  keywords: string[];
+};
+
+/**
+ * Build the full Next.js Metadata object for the nano-banana-pro-prompts
+ * detail page, including hreflang alternates, author, keywords, and
+ * article-typed OpenGraph.
+ */
+export function buildProPromptMetadata(
+  input: ProPromptMetadataInput,
+  buildUrl: (locale: string) => string
+): Metadata {
+  const {
+    title,
+    description,
+    absoluteImageUrl,
+    pageUrl,
+    canonicalUrl,
+    date,
+    author,
+    authorHandle,
+    keywords,
+  } = input;
+
+  const fullTitle = `${title} | Nano Banana Pro Prompts`;
+
+  return {
+    metadataBase: new URL(SITE_URL),
+
+    title: fullTitle,
+    description,
+
+    alternates: {
+      canonical: canonicalUrl,
+      languages: buildProPromptAlternates(buildUrl),
+    },
+
+    robots: { index: true, follow: true },
+
+    authors: author
+      ? [
+          {
+            name: author,
+            url: authorHandle
+              ? `https://x.com/${authorHandle.replace("@", "")}`
+              : undefined,
+          },
+        ]
+      : undefined,
+
+    keywords,
+
+    openGraph: {
+      title: fullTitle,
+      description,
+      type: "article",
+      url: pageUrl,
+      images: [{ url: absoluteImageUrl, width: 1200, height: 630, alt: title }],
+      publishedTime: date ? new Date(date).toISOString() : undefined,
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: [absoluteImageUrl],
+    },
+  };
+}
+
 /**
  * Normalize the content sections from the SEO payload so callers
  * get ready-to-render, already-trimmed values.

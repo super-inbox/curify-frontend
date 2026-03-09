@@ -7,6 +7,9 @@ import fs from 'fs';
 import CopyButton from './CopyButton';
 import CdnImage from '../../../_components/CdnImage';
 import { SITE_URL } from '@/lib/constants';
+import { toAbsUrlMaybe, buildProPromptMetadata } from '@/lib/nano_seo_utils';
+
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface JsonPrompt {
   id: number;
@@ -51,10 +54,23 @@ type Prompt = {
   retweets: number;
 };
 
+// ─── Constants & helpers ──────────────────────────────────────────────────────
+
 const DEFAULT_CONTENT_LOCALE = 'en';
 
 const buildPromptUrl = (locale: string, id: string) =>
   `${SITE_URL}/${locale}/nano-banana-pro-prompts/${id}`;
+
+const getSourceBadgeClass = (sourceType: string) => {
+  const classes = {
+    twitter: 'bg-blue-100 text-blue-800',
+    youtube: 'bg-red-100 text-red-800',
+    promptgather: 'bg-purple-100 text-purple-800',
+  };
+  return classes[sourceType as keyof typeof classes] || 'bg-gray-100 text-gray-800';
+};
+
+// ─── Data fetching ────────────────────────────────────────────────────────────
 
 const fetchPrompt = async (id: string): Promise<Prompt | null> => {
   try {
@@ -84,7 +100,7 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
             : `/${prompt.imageUrl}`
         : '/images/default-prompt-image.jpg',
       likes: prompt.likes ?? 0,
-      retweets: prompt.retweets ?? 0
+      retweets: prompt.retweets ?? 0,
     };
   } catch (error) {
     console.error('Error fetching prompt:', error instanceof Error ? error.message : 'Unknown error');
@@ -92,14 +108,7 @@ const fetchPrompt = async (id: string): Promise<Prompt | null> => {
   }
 };
 
-const getSourceBadgeClass = (sourceType: string) => {
-  const classes = {
-    twitter: 'bg-blue-100 text-blue-800',
-    youtube: 'bg-red-100 text-red-800',
-    promptgather: 'bg-purple-100 text-purple-800',
-  };
-  return classes[sourceType as keyof typeof classes] || 'bg-gray-100 text-gray-800';
-};
+// ─── Metadata ─────────────────────────────────────────────────────────────────
 
 export async function generateMetadata({
   params,
@@ -116,112 +125,43 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${prompt.title} | Nano Banana Pro Prompts`;
-  const description =
-    prompt.description ||
-    prompt.prompt_text.slice(0, 160) ||
-    'Creative AI prompt from Nano Banana Pro Prompts.';
+  // toAbsUrlMaybe handles both relative ("/images/…") and already-absolute URLs
+  const absoluteImageUrl =
+    toAbsUrlMaybe(prompt.image_url) ?? `${SITE_URL}/images/default-prompt-image.jpg`;
 
-  const imageUrl = /^https?:\/\//i.test(prompt.image_url)
-    ? prompt.image_url
-    : `${SITE_URL}${prompt.image_url}`;
-
-  const pageUrl = buildPromptUrl(locale, id);
-  const canonicalUrl = buildPromptUrl(DEFAULT_CONTENT_LOCALE, id);
-
-  const keywords = [
-    'AI prompt',
-    'Nano Banana',
-    'prompt library',
-    prompt.category,
-    prompt.source_type,
-  ].filter(Boolean);
-
-  return {
-    metadataBase: new URL(SITE_URL),
-
-    title,
-    description,
-
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: buildPromptUrl('en', id),
-        zh: buildPromptUrl('zh', id),
-        ja: buildPromptUrl('ja', id),
-        ko: buildPromptUrl('ko', id),
-        de: buildPromptUrl('de', id),
-        es: buildPromptUrl('es', id),
-        fr: buildPromptUrl('fr', id),
-        ru: buildPromptUrl('ru', id),
-        hi: buildPromptUrl('hi', id),
-        tr: buildPromptUrl('tr', id),
-        'x-default': canonicalUrl,
-      },
+  return buildProPromptMetadata(
+    {
+      title: prompt.title,
+      description:
+        prompt.description || prompt.prompt_text.slice(0, 160) ||
+        'Creative AI prompt from Nano Banana Pro Prompts.',
+      absoluteImageUrl,
+      pageUrl: buildPromptUrl(locale, id),
+      canonicalUrl: buildPromptUrl(DEFAULT_CONTENT_LOCALE, id),
+      date: prompt.date,
+      author: prompt.author,
+      authorHandle: prompt.author_handle,
+      keywords: ['AI prompt', 'Nano Banana', 'prompt library', prompt.category, prompt.source_type].filter(Boolean),
     },
-
-    robots: {
-      index: true,
-      follow: true,
-    },
-
-    authors: prompt.author
-      ? [
-          {
-            name: prompt.author,
-            url: prompt.author_handle
-              ? `https://x.com/${prompt.author_handle.replace('@', '')}`
-              : undefined,
-          },
-        ]
-      : undefined,
-
-    keywords,
-
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      url: pageUrl,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: prompt.title,
-        },
-      ],
-      publishedTime: prompt.date
-        ? new Date(prompt.date).toISOString()
-        : undefined,
-    },
-
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [imageUrl],
-    },
-  };
+    (l) => buildPromptUrl(l, id)
+  );
 }
 
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
 export default async function PromptDetailPage({
-  params
+  params,
 }: {
   params: Promise<{ id: string; locale: string }>;
 }) {
   const { id, locale } = await params;
   const prompt = await fetchPrompt(id);
 
-  if (!prompt) {
-    notFound();
-  }
+  if (!prompt) notFound();
 
   const canonicalUrl = buildPromptUrl(DEFAULT_CONTENT_LOCALE, prompt.id);
-
-  const absoluteImageUrl = /^https?:\/\//i.test(prompt.image_url)
-    ? prompt.image_url
-    : `${SITE_URL}${prompt.image_url}`;
+  const absoluteImageUrl =
+    toAbsUrlMaybe(prompt.image_url) ?? `${SITE_URL}/images/default-prompt-image.jpg`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -230,13 +170,10 @@ export default async function PromptDetailPage({
     url: canonicalUrl,
     name: prompt.title,
     description:
-      prompt.description ||
-      prompt.prompt_text.slice(0, 200) ||
+      prompt.description || prompt.prompt_text.slice(0, 200) ||
       "AI prompt from Nano Banana Pro Prompts.",
     image: [absoluteImageUrl],
-    datePublished: prompt.date
-      ? new Date(prompt.date).toISOString()
-      : undefined,
+    datePublished: prompt.date ? new Date(prompt.date).toISOString() : undefined,
     author: prompt.author
       ? {
           "@type": "Person",
@@ -248,16 +185,9 @@ export default async function PromptDetailPage({
         }
       : undefined,
     genre: prompt.category || undefined,
-    keywords: [
-      "AI prompt",
-      "Nano Banana",
-      prompt.category,
-      prompt.source_type,
-    ].filter(Boolean),
+    keywords: ["AI prompt", "Nano Banana", prompt.category, prompt.source_type].filter(Boolean),
     isBasedOn:
-      prompt.source_url && prompt.source_url !== "#"
-        ? prompt.source_url
-        : undefined,
+      prompt.source_url && prompt.source_url !== "#" ? prompt.source_url : undefined,
     publisher: {
       "@type": "Organization",
       name: "Curify",
@@ -304,30 +234,21 @@ export default async function PromptDetailPage({
           </div>
 
           <div className="px-6 py-5 border-b border-gray-200 sm:px-6">
-            <h1 className="text-2xl font-bold text-gray-900">
-              {prompt.title}
-            </h1>
+            <h1 className="text-2xl font-bold text-gray-900">{prompt.title}</h1>
           </div>
 
           {prompt.description && (
             <div className="px-6 py-6 border-b border-gray-200">
-              <h2 className="text-lg font-medium text-gray-900 mb-3">
-                Description
-              </h2>
-              <p className="text-gray-600 whitespace-pre-line">
-                {prompt.description}
-              </p>
+              <h2 className="text-lg font-medium text-gray-900 mb-3">Description</h2>
+              <p className="text-gray-600 whitespace-pre-line">{prompt.description}</p>
             </div>
           )}
 
           <div className="px-6 py-6">
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-medium text-gray-900">
-                Prompt
-              </h2>
+              <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
               <CopyButton text={prompt.prompt_text} />
             </div>
-
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <pre className="whitespace-pre-wrap font-sans text-gray-800">
                 {prompt.prompt_text}
