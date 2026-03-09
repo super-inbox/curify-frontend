@@ -11,18 +11,18 @@ import {
   type RawNanoImageRecord,
 } from "@/lib/nano_utils";
 import { getNanoExampleById, getNanoExamplesByTemplateId } from "@/lib/nano_utils";
+import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type PageParams = {
   locale: string;
-  slug: string;      // matches the [slug] folder name, e.g. "battle-zh"
-  exampleId: string; // URL-encoded image id
+  slug: string;
+  exampleId: string;
 };
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
-/** slug "battle-zh" → templateId "template-battle-zh" */
 function slugToTemplateId(slug: string) {
   if (!slug) return "";
   return slug.startsWith("template-") ? slug : `template-${slug}`;
@@ -40,7 +40,7 @@ export async function generateStaticParams() {
   return locales.flatMap((locale) =>
     images.map((img) => ({
       locale,
-      slug: toSlug(img.template_id),          // e.g. "battle-zh"
+      slug: toSlug(img.template_id),
       exampleId: encodeURIComponent(img.id),
     }))
   );
@@ -66,13 +66,16 @@ export async function generateMetadata({
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
 
+  // Reuse toAbsUrlMaybe so OG image handling is consistent with the template page
+  const ogImage = toAbsUrlMaybe(example.asset.image_url);
+
   return {
     title: `${title} — Nano Banana Prompt Generator`,
     description: `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${category} template.`,
     openGraph: {
       title: `${title} | Nano Banana`,
       description: `Nano Banana ${category.toLowerCase()} prompt — see the exact prompt and how to recreate this image.`,
-      images: [{ url: example.asset.image_url }],
+      images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
       canonical: `/${locale}/nano-template/${slug}/example/${rawExampleId}`,
