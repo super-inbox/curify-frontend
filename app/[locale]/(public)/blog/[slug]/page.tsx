@@ -53,7 +53,8 @@ function createBlogPostsConfig() {
       'how-to-translate-asl-video': 'howToTranslateAslVideo',
       'chinese-herbal-medicine-visual-guide': 'chineseHerbalMedicineVisualGuide',
       'evolution-timelines-visualization': 'evolutionTimelinesVisualization',
-      'chinese-costume-history-infographic': 'chineseCostumeHistoryInfographic'
+      'chinese-costume-history-infographic': 'chineseCostumeHistoryInfographic',
+      'creative-ai-tools-websites': 'creativeAiToolsWebsites'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -205,7 +206,8 @@ export default async function BlogPostPage({
     'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'evolutionTimelinesVisualization': ['intro', 'whatIsTitle', 'whatIsContent', 'importanceTitle', 'importanceContent', 'techniquesTitle', 'techniquesContent', 'examplesTitle', 'examplesContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'chineseCostumeHistoryInfographic': ['intro', 'whatIsTitle', 'whatIsContent', 'dynastiesTitle', 'dynastiesContent', 'characteristicsTitle', 'characteristicsContent', 'modernTitle', 'modernContent', 'culturalTitle', 'culturalContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+    'chineseCostumeHistoryInfographic': ['intro', 'whatIsTitle', 'whatIsContent', 'dynastiesTitle', 'dynastiesContent', 'characteristicsTitle', 'characteristicsContent', 'modernTitle', 'modernContent', 'culturalTitle', 'culturalContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'creativeAiToolsWebsites': ['intro', 'whatIsTitle', 'whatIsContent', 'inspirationTitle', 'inspirationContent', 'featuredTitle', 'featuredContent', 'aiTitle', 'aiContent', 'aiFeaturedTitle', 'aiFeaturedContent', 'conclusionTitle', 'conclusionContent']
   };
 
   const currentKeys = availableKeys[blogConfig.namespace] || [];
@@ -335,6 +337,44 @@ export default async function BlogPostPage({
               <section>
                 <h2 className="text-2xl font-bold mb-4">{hasKey("howWorksTitle") ? safeT("howWorksTitle") : "How It Works"}</h2>
                 <p className="mb-4">{hasKey("howWorksContent") ? safeT("howWorksContent") : "Technical explanation..."}</p>
+              </section>
+            )}
+
+            {(hasKey("inspirationTitle") || hasKey("inspirationContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("inspirationTitle") ? safeT("inspirationTitle") : "Creative Inspiration"}</h2>
+                <p className="mb-4">{hasKey("inspirationContent") ? safeT("inspirationContent") : "Inspiration content..."}</p>
+              </section>
+            )}
+
+            {(hasKey("featuredTitle") || hasKey("featuredContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("featuredTitle") ? safeT("featuredTitle") : "Featured Inspiration Tools"}</h2>
+                <div 
+                  className="prose prose-lg max-w-none mb-4"
+                  dangerouslySetInnerHTML={{ 
+                    __html: hasKey("featuredContent") ? safeT("featuredContent").replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '</p><p className="mb-4">').replace(/\n/g, '<br/>') : "Featured tools content..."
+                  }} 
+                />
+              </section>
+            )}
+
+            {(hasKey("aiTitle") || hasKey("aiContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("aiTitle") ? safeT("aiTitle") : "AI Generation Tools"}</h2>
+                <p className="mb-4">{hasKey("aiContent") ? safeT("aiContent") : "AI tools content..."}</p>
+              </section>
+            )}
+
+            {(hasKey("aiFeaturedTitle") || hasKey("aiFeaturedContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("aiFeaturedTitle") ? safeT("aiFeaturedTitle") : "Featured AI Tools"}</h2>
+                <div 
+                  className="prose prose-lg max-w-none mb-4"
+                  dangerouslySetInnerHTML={{ 
+                    __html: hasKey("aiFeaturedContent") ? safeT("aiFeaturedContent").replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '</p><p className="mb-4">').replace(/\n/g, '<br/>') : "Featured AI tools content..."
+                  }} 
+                />
               </section>
             )}
 
@@ -639,6 +679,15 @@ function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: an
   );
 }
 
+function getTemplateUrl(slug: string) {
+  const templateMap: Record<string, string> = {
+    'evolution-timelines-visualization': '/nano-template/evolution',
+    'chinese-costume-history-infographic': '/nano-template/costume-zh',
+    'chinese-herbal-medicine-visual-guide': '/nano-template/herbal-zh'
+  };
+  return templateMap[slug] || '/nano-template';
+}
+
 function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
   return (
     <div className="space-y-6">
@@ -665,7 +714,17 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
           
           <section>
             <h2 className="text-2xl font-bold mb-4">{t("popularTitle")}</h2>
-            <p className="mb-4">{t("popularContent")}</p>
+            <div 
+              className="overflow-x-auto"
+              dangerouslySetInnerHTML={{ 
+                __html: t("popularContent")
+                  .replace(/\| Herb \| Primary Use‑Cases \| Evidence label \| Key safety flags \|\n\| :--- \| :--- \| :--- \| :--- \|\n/, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Herb</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Primary Use‑Cases</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Evidence label</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Key safety flags</th></tr></thead><tbody>')
+                  .replace(/\| 草药 \| 主要使用案例 \| 证据标签 \| 主要安全提示 \|\n\| :--- \| :--- \| :--- \| :--- \|\n/, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">草药</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">主要使用案例</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">证据标签</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">主要安全提示</th></tr></thead><tbody>')
+                  .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
+                  .replace(/$/, '</tbody></table>')
+                  .replace(/\n/g, '')
+              }}
+            />
           </section>
           
           <section>
@@ -728,14 +787,26 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
-            🎯 {t("ctaText")} <a href="/templates" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getTemplateUrl(slug)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
         </div>
       </section>
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
-        <p>{t("conclusionContent")}</p>
+        <div 
+          className="prose prose-lg max-w-none"
+          dangerouslySetInnerHTML={{ 
+            __html: t("conclusionContent")
+              .replace(/## (.+)/g, '<h3 class="text-xl font-semibold mt-6 mb-3">$1</h3>')
+              .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+              .replace(/- \*\*Individual Herb Resources\*\*:/g, '<li><strong>Individual Herb Resources:</strong><ul class="list-disc pl-6 ml-4 mt-2 mb-2">')
+              .replace(/- \*\*Research Reviews\*\*:/g, '<li><strong>Research Reviews:</strong><ul class="list-disc pl-6 ml-4 mt-2 mb-2">')
+              .replace(/    - (.+)/g, '<li class="ml-6 text-sm">$1</li>')
+              .replace(/^- (.+)(?!\n    -)/gm, '<li class="mb-1">$1</li></ul>')
+              .replace(/\n\n/g, '<br /><br />')
+          }}
+        />
       </section>
     </div>
   );
