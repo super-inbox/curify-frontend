@@ -1,6 +1,5 @@
-// app/sitemap-blogs.xml/route.ts
 import { NextResponse } from "next/server";
-import blogs from "@/content/blogs.json";
+import blogs from "@/public/data/blogs.json";
 import { routing } from "@/i18n/routing";
 
 export const runtime = "nodejs";
@@ -8,9 +7,22 @@ export const runtime = "nodejs";
 const BASE_URL = "https://www.curify-ai.com";
 const LOCALES = routing.locales;
 
+type BlogRecord = {
+  slug: string;
+  title?: string;
+  date?: string;
+  readTime?: string;
+  tag?: string;
+  image?: string;
+};
+
 // Blog routes
-function getBlogRoutes() {
-  return (blogs as unknown as string[]).map((slug: string) => `/blog/${slug}`);
+function getBlogRoutes(): string[] {
+  const records = blogs as BlogRecord[];
+
+  return records
+    .filter((b) => b?.slug)
+    .map((b) => `/blog/${encodeURIComponent(b.slug)}`);
 }
 
 // hreflang block
@@ -20,7 +32,10 @@ function generateHreflangLinks(route: string) {
     return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
   }).join("");
 
-  return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
+  return (
+    links +
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`
+  );
 }
 
 // URL entry

@@ -1,6 +1,5 @@
 // app/sitemap.xml/route.ts
 import { NextResponse } from "next/server";
-import blogs from "@/public/data/blogs.json";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
@@ -16,18 +15,12 @@ const STATIC_ROUTES = [
   "/contact",
   "/pricing",
   "/about",
-  "/tools", // tools hub
+  "/tools",
   "/privacy",
   "/agreement",
-  "/blog",
   "/nano-banana-pro-prompts",
   "/inspiration-hub",
 ];
-
-// Blog routes
-function getBlogRoutes() {
-  return (blogs as unknown as Array<{ slug: string }>).map((blog) => `/blog/${blog.slug}`);
-}
 
 // ✅ Nano template routes - RESPECTS LOCALE
 function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
@@ -49,16 +42,16 @@ function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
     .filter((item) => item.locales.length > 0);
 }
 
-// ✅ Tool routes from registry (only subtools with status != coming_soon)
+// ✅ Tool routes from registry
 function getToolRoutes(): string[] {
-  return TOOL_REGISTRY.filter((t) => t.status !== "coming_soon").map(
-    (t) => `/tools/${encodeURIComponent(t.slug)}`
-  );
+  return TOOL_REGISTRY
+    .filter((t) => t.status !== "coming_soon")
+    .map((t) => `/tools/${encodeURIComponent(t.slug)}`);
 }
 
-// 1) hreflang block: strip '/en' for English and x-default
+// hreflang generator
 function generateHreflangLinks(route: string, availableLocales?: readonly string[]) {
-  const localesToUse: readonly string[] =
+  const localesToUse =
     availableLocales && availableLocales.length > 0 ? availableLocales : LOCALES;
 
   const links = localesToUse
@@ -71,7 +64,7 @@ function generateHreflangLinks(route: string, availableLocales?: readonly string
   return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
 }
 
-// 2) <loc> generator: strip '/en' for English URLs
+// URL entry generator
 function generateUrlEntry(
   locale: string,
   route: string,
@@ -102,13 +95,12 @@ function generateUrlEntry(
 }
 
 export async function GET() {
-  const blogRoutes = getBlogRoutes();
   const nanoTemplateRoutes = getNanoTemplateRoutes();
   const toolRoutes = getToolRoutes();
 
   let urls = "";
 
-  // Static routes × locales
+  // Static routes
   STATIC_ROUTES.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
@@ -118,7 +110,7 @@ export async function GET() {
     });
   });
 
-  // ✅ Tool routes × locales (all locales; you can later restrict per-tool if needed)
+  // Tool routes
   toolRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
@@ -128,17 +120,7 @@ export async function GET() {
     });
   });
 
-  // Blog routes × locales
-  blogRoutes.forEach((route) => {
-    LOCALES.forEach((locale) => {
-      urls += generateUrlEntry(locale, route, {
-        changefreq: "weekly",
-        priority: "0.7",
-      });
-    });
-  });
-
-  // Nano template routes × ONLY THEIR AVAILABLE LOCALES
+  // Nano templates
   nanoTemplateRoutes.forEach(({ route, locales: availableLocales }) => {
     availableLocales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
