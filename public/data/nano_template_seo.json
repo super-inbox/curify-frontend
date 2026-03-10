@@ -1040,6 +1040,61 @@
           }
         }
       }
+    },
+    {
+      "id": "template-mbti-generic",
+      "locales": {
+        "zh": {
+          "seo": {
+            "meta_title": "Nano Banana 提示词：MBTI角色可视化生成器｜Curify AI",
+            "meta_description": "用 Nano Banana 提示词生成高传播感的 MBTI 角色主题图。支持 MBTI × 动物、MBTI × 三国、MBTI × Friends、MBTI × AI 创业者等多种人物与场景组合。",
+            "og_image": "/images/seo/template-mbti-generic-zh.jpg",
+            "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "这个模板用于把 MBTI 人格类型转化成强视觉、强传播的角色场景图。它不是局限于某一种固定形式，而是一个通用的 MBTI 抽象模板：可以把 MBTI 映射到动物、历史人物、电视剧角色、AI 创始人、校园人物等任意角色集合，并放进某个具体场景中，生成具有鲜明人格差异的可视化内容。",
+              "who": "适合做社交媒体内容、人格测试延展内容、角色分析类内容、IP混搭内容，以及需要通过“人格 + 角色 + 场景”讲故事的创作者。尤其适合 MBTI 爱好者、内容博主、心理学类账号、娱乐账号、历史改编类账号，以及做系列化内容的人。",
+              "how": [
+                "先确定一个清晰的 MBTI 主题，例如“MBTI在职场中的表现”“MBTI如果是三国人物”“MBTI在旅行中的样子”。",
+                "再确定角色集合（character set），比如动物、Friends角色、红楼梦人物、AI创始人、历史人物等。",
+                "选择一个具体场景，让不同人格在同一情境中被放大和区分，例如开会、坐飞机、聚会、旅行、创业讨论等。",
+                "最后补充风格要求，例如可爱卡通、电影感写实、日漫群像、信息图海报风等。生成后如果角色差异不够明显，可以要求“强化不同人格的动作、表情与互动方式”。"
+              ],
+              "prompts": [
+                "生成“MBTI如果是Friends角色”的群像海报：在朋友聚会上，不同MBTI人格映射到Friends风格人物，体现不同社交反应与互动，整体为高传播感角色插画，3:4竖版。",
+                "做“MBTI在开会时的样子”：角色集合为AI创业者，不同人格在会议室讨论产品方向时呈现不同状态，信息清晰、角色对比鲜明、海报感强，3:4。",
+                "生成“MBTI如果生活在三国”的主题图：以三国人物原型映射不同MBTI人格，在军帐讨论战局的场景中体现其性格差异，风格为高质感历史角色插画，3:4。"
+              ]
+            }
+          }
+        },
+        "en": {
+          "seo": {
+            "meta_title": "Nano Banana Prompts: MBTI Character Visual Generator",
+            "meta_description": "Create highly shareable MBTI visuals with Nano Banana prompts. Mix MBTI with animals, historical figures, TV characters, AI founders, and more across custom scenes and styles.",
+            "og_image": "/images/seo/template-mbti-generic-en.jpg",
+            "robots": "index,follow"
+          },
+          "content": {
+            "sections": {
+              "what": "This template is a flexible MBTI visual generator designed to turn personality types into highly shareable character-based scenes. Instead of being limited to one narrow format, it works as a generic MBTI framework: you can map MBTI types onto animals, historical figures, TV characters, founders, students, or any custom character set, then place them in a specific scenario to highlight personality differences.",
+              "who": "Ideal for social media creators, MBTI content makers, personality and psychology pages, entertainment accounts, fandom remix pages, and anyone creating repeatable content formats based on character behavior. It is especially useful when you want to combine personality systems with pop culture, history, education, or workplace storytelling.",
+              "how": [
+                "Start by choosing a clear MBTI angle, such as “MBTI in meetings,” “MBTI while traveling,” or “MBTI as famous historical figures.”",
+                "Pick a character set, for example animals, TV show characters, startup founders, classic literary figures, or fictional archetypes.",
+                "Choose a concrete scene so the personality differences become visually obvious — for example a team meeting, house party, airport boarding, ski trip, or strategy session.",
+                "Add a visual style such as cartoon illustration, cinematic realism, anime ensemble, or editorial infographic poster. If the first result feels too generic, ask for stronger contrast in body language, facial expressions, and interpersonal dynamics."
+              ],
+              "prompts": [
+                "Create an MBTI visual titled “MBTI Types as Friends Characters”: place the personalities in a lively house-party setting, mapping each type onto a recognizable sitcom-style character archetype, with strong contrast in social behavior, expression, and interaction. Vertical 3:4.",
+                "Generate “MBTI in Startup Meetings”: use AI founders as the character set, showing how different MBTI types behave during a product strategy discussion in an office. Clear contrast, expressive poses, high-shareability poster composition. Vertical 3:4.",
+                "Make “MBTI in the Three Kingdoms”: map MBTI types onto famous Three Kingdoms-inspired characters inside a war-camp strategy scene, highlighting differences in leadership, caution, ambition, and emotional control. Vertical 3:4."
+              ]
+            }
+          }
+        }
+      }
     }
   ]
 }

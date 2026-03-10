@@ -1849,5 +1849,116 @@
         ]
       }
     }
+  },
+  {
+    "id": "template-mbti-generic",
+    "locales": {
+      "zh": {
+        "base_prompt": "（MBTI Visual Story Designer）你是一位擅长人格类型可视化表达的顶尖AI视觉设计师。根据用户指定的【{mbti_topic}】、【{character_set}】、【{scene_description}】和【{visual_style}】，生成一张高完成度、强传播感的MBTI主题视觉图。画面核心是将不同MBTI人格类型映射到【{character_set}】中的角色/形象/原型，并放置在【{scene_description}】场景中，体现不同人格的典型行为、气质和互动方式。整体要求构图清晰、角色区分明显、信息一眼可懂、适合社交媒体传播。画面风格为【{visual_style}】，细节丰富、质感统一、叙事生动，图片比例3:4，文字使用中文。直接出图，主题为【{mbti_topic}】。",
+        "parameters": [
+          {
+            "name": "mbti_topic",
+            "label": "MBTI主题",
+            "type": "text",
+            "placeholder": [
+              "MBTI在职场开会时的表现",
+              "MBTI在朋友聚会中的样子",
+              "MBTI在旅行中的状态",
+              "MBTI如果是AI创业者",
+              "MBTI如果生活在三国"
+            ]
+          },
+          {
+            "name": "character_set",
+            "label": "角色/原型集合",
+            "type": "text",
+            "placeholder": [
+              "动物拟人角色",
+              "三国人物",
+              "红楼梦人物",
+              "Friends角色",
+              "AI创业者"
+            ]
+          },
+          {
+            "name": "scene_description",
+            "label": "场景描述",
+            "type": "text",
+            "placeholder": [
+              "在雪山滑雪场准备出发",
+              "在飞机上寻找座位",
+              "在公司会议室开周会",
+              "在朋友聚会上聊天和互动",
+              "在创业办公室讨论产品方向"
+            ]
+          },
+          {
+            "name": "visual_style",
+            "label": "视觉风格",
+            "type": "text",
+            "placeholder": [
+              "可爱卡通插画",
+              "高质感角色海报",
+              "日漫群像风格",
+              "电影感写实插画",
+              "信息图海报风"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "You are a top-tier AI visual designer specialized in turning personality systems into highly shareable visual concepts. Based on the user-provided [{mbti_topic}], [{character_set}], [{scene_description}], and [{visual_style}], generate a polished MBTI-themed visual composition. The image should map different MBTI personality types onto characters, archetypes, or personas from [{character_set}], placed within the scenario [{scene_description}], showing each type’s distinctive behavior, mood, and interaction style. The composition should be clear, expressive, and instantly understandable, with strong contrast between personalities and strong social-media appeal. Use the visual style [{visual_style}], with rich detail, cohesive rendering, and vivid storytelling. Vertical 3:4 format. Use English text if any labels are included. Directly generate the final image for the theme [{mbti_topic}].",
+        "parameters": [
+          {
+            "name": "mbti_topic",
+            "label": "MBTI theme",
+            "type": "text",
+            "placeholder": [
+              "How MBTI types behave in meetings",
+              "MBTI types at a friends’ gathering",
+              "MBTI types while traveling",
+              "MBTI as AI founders",
+              "MBTI in ancient kingdoms"
+            ]
+          },
+          {
+            "name": "character_set",
+            "label": "Character / archetype set",
+            "type": "text",
+            "placeholder": [
+              "anthropomorphic animals",
+              "Three Kingdoms characters",
+              "Dream of the Red Chamber characters",
+              "Friends TV characters",
+              "AI startup founders"
+            ]
+          },
+          {
+            "name": "scene_description",
+            "label": "Scene description",
+            "type": "text",
+            "placeholder": [
+              "getting ready at a ski resort",
+              "finding seats on an airplane",
+              "sitting in a startup team meeting",
+              "chatting at a house party",
+              "brainstorming product strategy in an office"
+            ]
+          },
+          {
+            "name": "visual_style",
+            "label": "Visual style",
+            "type": "text",
+            "placeholder": [
+              "cute cartoon illustration",
+              "high-end character poster",
+              "anime ensemble scene",
+              "cinematic semi-realistic illustration",
+              "editorial infographic poster"
+            ]
+          }
+        ]
+      }
+    }
   }
 ]
