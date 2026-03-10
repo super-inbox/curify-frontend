@@ -1,5 +1,6 @@
 import "../../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { routing } from "@/i18n/routing";
@@ -33,10 +34,11 @@ export async function generateMetadata({
       languages: getLanguagesMap(pathWithoutLocale),
     },
     title: {
-      template: '%s | Curify Studio',
-      default: 'Curify Studio'
+      template: "%s | Curify Studio",
+      default: "Curify Studio",
     },
-    description: 'Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale.'
+    description:
+      "Curify is an AI-native platform helping creators, educators, and media teams produce and localize videos, manga, and presentations at scale.",
   };
 }
 
@@ -51,11 +53,7 @@ export default async function PublicLocaleLayout({
 
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const common = (await import(`../../../messages/${locale}/common.json`)).default;
-  const home = (await import(`../../../messages/${locale}/home.json`)).default;
-  const blog = (await import(`../../../messages/${locale}/blog.json`)).default;
-  const pricing = (await import(`../../../messages/${locale}/pricing.json`)).default;
-  const messages = { ...common, ...home, ...blog, ...pricing };
+  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -83,7 +81,6 @@ export default async function PublicLocaleLayout({
 
       <body suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {/* Public: no server session, no user hydration */}
           <AppWrapper user={null}>
             <Header />
             <TopUpModal />

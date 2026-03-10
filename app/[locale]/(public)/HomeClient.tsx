@@ -4,7 +4,7 @@ import { useMemo, useState, useEffect, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
-import { Search, Type, Building2, Sparkles } from "lucide-react";
+import { Search } from "lucide-react";
 import { Inter } from "next/font/google";
 import ContentCreationToolsSidebar from "@/app/[locale]/_components/ContentCreationToolsSidebar";
 import { useTranslations } from "next-intl";
@@ -29,7 +29,7 @@ import {
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 
-// --- Font (modern SaaS look) ---
+// --- Font ---
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -52,29 +52,19 @@ function getInterleavedData(
 ): InterleavedItem[] {
   const result: InterleavedItem[] = [];
 
-  // nano row first
   if (nanoCards.length > 0) {
-    result.push({
-      type: "nano",
-      cards: nanoCards.slice(0, 3),
-    });
+    result.push({ type: "nano", cards: nanoCards.slice(0, 3) });
   }
 
   mainCards.forEach((card, index) => {
     result.push({ type: "inspiration", card });
 
-    // insert nano row after every 3 inspiration cards
     if ((index + 1) % 3 === 0 && nanoCards.length > 0) {
       const blockIndex = Math.floor((index + 1) / 3);
       const startIdx = (blockIndex * 3) % nanoCards.length;
-
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
-
       if (rowCards.length > 0) {
-        result.push({
-          type: "nano",
-          cards: rowCards,
-        });
+        result.push({ type: "nano", cards: rowCards });
       }
     }
   });
@@ -82,7 +72,11 @@ function getInterleavedData(
   return result;
 }
 
-function useNanoCards(activeLang: Lang) {
+/**
+ * Builds nano feed cards with i18n-resolved category + description.
+ * `translate` is a safe wrapper around tNano(key) — see HomeClient.
+ */
+function useNanoCards(activeLang: Lang, translate: (key: string) => string) {
   return useMemo(() => {
     try {
       console.log("[nano] building nano cards, activeLang =", activeLang);
@@ -97,6 +91,7 @@ function useNanoCards(activeLang: Lang) {
       const cards = buildNanoFeedCards(reg, locale, {
         perTemplateMaxImages: 2,
         strictLocale: true,
+        translate,
       });
 
       console.log(
@@ -111,7 +106,8 @@ function useNanoCards(activeLang: Lang) {
       console.error("[nano] ❌ failed to build nano cards:", err);
       return [];
     }
-  }, [activeLang]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeLang, translate]);
 }
 
 function useFilteredInspiration(
@@ -148,7 +144,6 @@ function useFilteredInspiration(
 function useLanguageSync() {
   const pathname = usePathname();
 
-  // Robustly determine current lang from URL
   const urlLang: Lang = useMemo(
     () => (pathname?.startsWith("/zh") ? "zh" : "en"),
     [pathname]
@@ -160,65 +155,6 @@ function useLanguageSync() {
   return { activeLang };
 }
 
-// --- Sidebar Sub-components ---
-function SidebarToolItem({
-  icon,
-  colorClass,
-  title,
-  desc,
-  badge,
-  onClick,
-}: {
-  icon: React.ReactNode;
-  colorClass: string;
-  title: string;
-  desc: string;
-  badge?: React.ReactNode;
-  onClick?: () => void;
-}) {
-  return (
-    <div
-      role={onClick ? "button" : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onClick={onClick}
-      onKeyDown={(e) => {
-        if (!onClick) return;
-        if (e.key === "Enter" || e.key === " ") onClick();
-      }}
-      className={classNames(
-        "group flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-neutral-50",
-        onClick ? "cursor-pointer" : ""
-      )}
-    >
-      <div
-        className={classNames(
-          "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
-          colorClass
-        )}
-      >
-        {icon}
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center gap-2">
-          <h4 className="text-[15px] font-semibold text-neutral-900">
-            {title}
-          </h4>
-          {badge}
-        </div>
-        <p className="mt-0.5 text-sm text-neutral-500 leading-snug">{desc}</p>
-      </div>
-    </div>
-  );
-}
-
-function NanoBadge() {
-  return (
-    <span className="rounded-full bg-yellow-100 px-2 py-0.5 text-[11px] font-semibold text-yellow-700">
-      Nano Banana
-    </span>
-  );
-}
-
 // --- Main Client Component ---
 export default function HomeClient({
   cards = [],
@@ -228,10 +164,25 @@ export default function HomeClient({
   const router = useRouter();
   const [query, setQuery] = useState("");
   const { activeLang } = useLanguageSync();
-  const nanoCards = useNanoCards(activeLang);
-  const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
   const tHero = useTranslations("home.hero");
+
+  const tNano = useTranslations("nano");
+
+  /** Safe wrapper — returns "" for any key not yet in nano.json */
+  const translateNano = useCallback(
+    (key: string): string => {
+      try {
+        return tNano(key as any) ?? "";
+      } catch {
+        return "";
+      }
+    },
+    [tNano]
+  );
+
+  const nanoCards = useNanoCards(activeLang, translateNano);
+  const filteredCards = useFilteredInspiration(cards, activeLang, query);
 
   useEffect(() => {
     console.log("[home] activeLang:", activeLang);
@@ -280,7 +231,6 @@ export default function HomeClient({
             <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
               {tHero("title")}
             </h1>
-
             <p className="mt-4 text-base leading-relaxed text-neutral-700">
               {tHero("description")}
             </p>

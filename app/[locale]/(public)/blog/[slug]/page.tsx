@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import TemplateLink, { TemplateSuggestions } from "@/app/[locale]/_components/TemplateLink";
-import { getTemplatesByCategory, TemplateLink as TemplateLinkType } from "@/utils/blogUtils";
 import { notFound } from "next/navigation";
 import blogsData from "@/public/data/blogs.json";
 import { getToolBySlug } from "@/lib/tools-registry";
@@ -245,11 +243,6 @@ export default async function BlogPostPage({
     return currentKeys.includes(key);
   };
 
-  // Get related templates based on blog post categories
-  const relatedTemplates = blogConfig.relatedCategories.flatMap((category: string) => 
-    getTemplatesByCategory(category, locale)
-  );
-
   return (
     <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
       <div className="mb-8">
@@ -420,25 +413,6 @@ export default async function BlogPostPage({
         )}
       </div>
 
-      {/* Related Templates Section */}
-      {relatedTemplates.length > 0 && (
-        <aside className="mt-12 p-6 bg-gray-50 rounded-lg border">
-          <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-            ✨ Related Curify Tools
-          </h3>
-          <div className="grid gap-3">
-            {relatedTemplates.slice(0, 6).map((template: TemplateLinkType) => (
-              <TemplateLink
-                key={template.id}
-                href={template.url}
-                title={template.title}
-                category={template.category}
-                className="block p-3 bg-white rounded border hover:border-blue-300 transition-colors"
-              />
-            ))}
-          </div>
-        </aside>
-      )}
     </article>
   );
 }

@@ -28,6 +28,7 @@
  *   node scripts/i18n_autotranslate.cjs --base en --dry-run
  *   node scripts/i18n_autotranslate.cjs --base en --only zh es de --write
  *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
+ *   node scripts/i18n_autotranslate.cjs --base zh --files nano --write
  *
  * Notes:
  * - `--files` accepts file basenames without .json (e.g. "common home pricing"),
@@ -121,7 +122,6 @@ function localeDir(locale) {
 }
 
 function normalizeFileToken(s) {
-  // allow "common" or "common.json"
   return s.endsWith(".json") ? s.slice(0, -5) : s;
 }
 
@@ -131,14 +131,14 @@ function listBaseFiles(baseLocale) {
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".json"))
-    .map((f) => f.slice(0, -5)) // basenames without .json
+    .map((f) => f.slice(0, -5))
     .sort();
 }
 
 const baseFiles = args.files ? args.files.map(normalizeFileToken) : listBaseFiles(args.base);
 if (!baseFiles.length) {
   console.error(
-    `No base files found under ${path.join(messagesDir, args.base)}.json. ` +
+    `No base files found under ${path.join(messagesDir, args.base)}. ` +
       `Expected messages/${args.base}/*.json`
   );
   process.exit(1);
@@ -152,7 +152,10 @@ function localeFile(locale, fileBase) {
  * JSON helpers
  * ---------------------- */
 function readJson(p) {
-  return JSON.parse(fs.readFileSync(p, "utf8"));
+  if (!fs.existsSync(p)) return {};
+  const raw = fs.readFileSync(p, "utf8").trim();
+  if (!raw) return {};
+  return JSON.parse(raw);
 }
 
 function ensureDir(p) {
@@ -221,7 +224,9 @@ function samePlaceholders(src, dst) {
   const a = extractPlaceholders(src);
   const b = extractPlaceholders(dst);
   if (a.length !== b.length) return false;
-  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false;
+  }
   return true;
 }
 
@@ -287,7 +292,6 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     throw new Error(`Model did not return valid JSON.\nError: ${e.message}\nRaw:\n${raw}`);
   }
 
-  // Validate key set exactly matches
   const inKeys = new Set(Object.keys(items));
   const outKeys = new Set(Object.keys(parsed));
   const missing = [...inKeys].filter((k) => !outKeys.has(k));
@@ -296,7 +300,6 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     throw new Error(`Key mismatch. missing=${missing.join(",")} extra=${extra.join(",")}`);
   }
 
-  // Placeholder validation
   for (const k of Object.keys(items)) {
     const src = items[k];
     const dst = parsed[k];
@@ -319,16 +322,24 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
   console.log(`[found locales] ${locales.join(", ")}`);
   console.log(`[targets] ${targetLocales.join(", ") || "(none)"}`);
 
-  // Read all base files once
   const baseFileObjs = {};
   const baseFileKeySets = {};
+
   for (const fileBase of baseFiles) {
     const basePath = localeFile(args.base, fileBase);
     if (!fs.existsSync(basePath)) {
       console.warn(`[warn] base file missing: ${basePath} (skipping)`);
       continue;
     }
-    const obj = readJson(basePath);
+
+    let obj;
+    try {
+      obj = readJson(basePath);
+    } catch (e) {
+      console.error(`[error] failed to parse base file ${basePath}: ${e.message}`);
+      continue;
+    }
+
     baseFileObjs[fileBase] = obj;
     baseFileKeySets[fileBase] = new Set(getKeys(obj));
   }
@@ -359,15 +370,11 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
           console.error(`Error parsing ${targetPath}: ${e.message}`);
           continue;
         }
-      } else {
-        // create empty file later (writeJson handles mkdir)
-        targetObj = {};
       }
 
       const targetKeys = new Set(getKeys(targetObj));
       const missingKeys = [...baseKeys].filter((k) => !targetKeys.has(k));
 
-      // Only translate string leaves from base
       const missingItems = {};
       for (const k of missingKeys) {
         const v = getValueByPath(baseObj, k);
@@ -381,7 +388,6 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
 
       if (!Object.keys(missingItems).length) {
         console.log("✅ Nothing to translate.");
-        // still optionally create file if it didn't exist and base had no keys? (skip)
         continue;
       }
 
@@ -407,7 +413,9 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
       if (args.dryRun || !args.write) {
         const sample = Object.entries(translatedAll).slice(0, 8);
         console.log("sample:");
-        for (const [k, v] of sample) console.log(`  - ${k}: ${v}`);
+        for (const [k, v] of sample) {
+          console.log(`  - ${k}: ${v}`);
+        }
       }
 
       if (args.write && !args.dryRun) {

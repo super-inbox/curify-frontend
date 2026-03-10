@@ -9,7 +9,12 @@ export const runtime = "nodejs";
 const BASE_URL = "https://www.curify-ai.com";
 const LOCALES = routing.locales;
 
-// ✅ Static pages (shared across locales)
+// Only bump this when nano template pages materially change
+const NANO_TEMPLATES_LASTMOD = new Date().toISOString();
+
+// Keep unchanged pages stable so Google doesn't think everything changed
+const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
+
 const STATIC_ROUTES = [
   "",
   "/contact",
@@ -22,35 +27,27 @@ const STATIC_ROUTES = [
   "/inspiration-hub",
 ];
 
-// ✅ Nano template routes - RESPECTS LOCALE
 function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
-  const raws = nanoTemplates as unknown as Array<{
-    id: string;
-    locales?: Record<string, any>;
-  }>;
+  const raws = nanoTemplates as unknown as Array<{ id: string }>;
 
   return raws
     .filter((t) => t?.id && typeof t.id === "string")
-    .map((t) => {
-      const templateId = t.id.trim();
-      const availableLocales = t.locales ? Object.keys(t.locales) : [];
-      return {
-        route: `/nano-template/${encodeURIComponent(templateId)}`,
-        locales: availableLocales,
-      };
-    })
-    .filter((item) => item.locales.length > 0);
+    .map((t) => ({
+      route: `/nano-template/${encodeURIComponent(t.id.trim())}`,
+      locales: [...LOCALES],
+    }));
 }
 
-// ✅ Tool routes from registry
 function getToolRoutes(): string[] {
   return TOOL_REGISTRY
     .filter((t) => t.status !== "coming_soon")
     .map((t) => `/tools/${encodeURIComponent(t.slug)}`);
 }
 
-// hreflang generator
-function generateHreflangLinks(route: string, availableLocales?: readonly string[]) {
+function generateHreflangLinks(
+  route: string,
+  availableLocales?: readonly string[]
+) {
   const localesToUse =
     availableLocales && availableLocales.length > 0 ? availableLocales : LOCALES;
 
@@ -61,10 +58,12 @@ function generateHreflangLinks(route: string, availableLocales?: readonly string
     })
     .join("");
 
-  return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
+  return (
+    links +
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`
+  );
 }
 
-// URL entry generator
 function generateUrlEntry(
   locale: string,
   route: string,
@@ -78,7 +77,7 @@ function generateUrlEntry(
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
 
-  const lastmod = opts?.lastmod ?? new Date().toISOString();
+  const lastmod = opts?.lastmod ?? STABLE_LASTMOD;
   const changefreq = opts?.changefreq ?? "weekly";
   const priority =
     opts?.priority ?? (route === "" && locale === "en" ? "1.0" : "0.8");
@@ -100,30 +99,33 @@ export async function GET() {
 
   let urls = "";
 
-  // Static routes
+  // Static routes: unchanged
   STATIC_ROUTES.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
+        lastmod: STABLE_LASTMOD,
         changefreq: route === "" ? "daily" : "weekly",
         priority: route === "" && locale === "en" ? "1.0" : "0.8",
       });
     });
   });
 
-  // Tool routes
+  // Tool routes: unchanged
   toolRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
+        lastmod: STABLE_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
       });
     });
   });
 
-  // Nano templates
+  // Nano templates: changed
   nanoTemplateRoutes.forEach(({ route, locales: availableLocales }) => {
     availableLocales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
+        lastmod: NANO_TEMPLATES_LASTMOD,
         changefreq: "weekly",
         priority: "0.6",
         availableLocales,
