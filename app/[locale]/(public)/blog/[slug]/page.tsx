@@ -12,14 +12,20 @@ import { getToolBySlug } from "@/lib/tools-registry";
 export const dynamic = 'force-dynamic';
 
 // Helper functions to get tool URLs from registry
-function getVideoDubbingUrl() {
+function getVideoDubbingUrl(locale: string) {
   const tool = getToolBySlug("video-dubbing");
-  return tool ? (tool.slug === "video-dubbing" ? "/video-dubbing" : `/tools/${tool.slug}`) : "/video-dubbing";
+  if (tool && tool.status === "create") {
+    return `/${locale}/video-dubbing`;
+  }
+  return `/${locale}/tools`;
 }
 
-function getSubtitleGeneratorUrl() {
+function getSubtitleGeneratorUrl(locale: string) {
   const tool = getToolBySlug("bilingual-subtitles");
-  return tool ? `/tools/${tool.slug}` : "/tools/bilingual-subtitles";
+  if (tool && tool.status === "create") {
+    return `/${locale}/bilingual-subtitles`;
+  }
+  return `/${locale}/tools`;
 }
 
 // Helper function to map blog data to the expected format
@@ -203,8 +209,7 @@ export default async function BlogPostPage({
     'voiceCloningTools': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'f5TtsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+        'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'evolutionTimelinesVisualization': ['intro', 'whatIsTitle', 'whatIsContent', 'importanceTitle', 'importanceContent', 'techniquesTitle', 'techniquesContent', 'examplesTitle', 'examplesContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'chineseCostumeHistoryInfographic': ['intro', 'whatIsTitle', 'whatIsContent', 'dynastiesTitle', 'dynastiesContent', 'characteristicsTitle', 'characteristicsContent', 'modernTitle', 'modernContent', 'culturalTitle', 'culturalContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'creativeAiToolsWebsites': ['intro', 'whatIsTitle', 'whatIsContent', 'inspirationTitle', 'inspirationContent', 'featuredTitle', 'featuredContent', 'aiTitle', 'aiContent', 'aiFeaturedTitle', 'aiFeaturedContent', 'conclusionTitle', 'conclusionContent']
@@ -271,13 +276,13 @@ export default async function BlogPostPage({
       <div className="clear-both">
         {/* Dynamic content rendering based on slug */}
         {slug.startsWith('translate-youtube-video') && (
-          <YoutubeTranslationContent slug={slug} t={safeT} />
+          <YoutubeTranslationContent slug={slug} t={safeT} locale={locale} />
         )}
         {(slug.startsWith('voice-cloning') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning') && (
-          <VoiceCloningContent slug={slug} t={safeT} />
+          <VoiceCloningContent slug={slug} t={safeT} locale={locale} />
         )}
         {slug.includes('asl') && (
-          <AslTranslationContent slug={slug} t={t} tEn={tEn} />
+          <AslTranslationContent slug={slug} t={t} tEn={tEn} locale={locale} />
         )}
         {(slug === 'chinese-herbal-medicine-visual-guide' || slug === 'evolution-timelines-visualization' || slug === 'chinese-costume-history-infographic') && (
           <NanoTemplateContent slug={slug} t={safeT} />
@@ -402,7 +407,7 @@ export default async function BlogPostPage({
               <p className="mb-4">{hasKey("curifyContent") ? safeT("curifyContent") : "Curify offers comprehensive solutions for content creators..."}</p>
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-green-800">
-                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
+                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
                 </p>
               </div>
             </section>
@@ -439,7 +444,7 @@ export default async function BlogPostPage({
 }
 
 // Content components for different blog categories
-function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
+function YoutubeTranslationContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
   
   return (
     <div className="space-y-6">
@@ -489,11 +494,11 @@ function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
-            🎯 {t("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-green-700 text-sm">
-              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl(locale)} className="text-blue-600 hover:underline">Bilingual Subtitles</a> | <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
@@ -507,7 +512,7 @@ function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
   );
 }
 
-function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
+function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
   return (
     <div className="space-y-6">
       <p className="text-lg font-semibold text-purple-600 mb-4">
@@ -544,11 +549,11 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
           <p className="text-purple-800">
-            🎯 {t("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-purple-700 text-sm">
-              🔗 Also try: <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Translator</a> | <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a>
+              🔗 Also try: <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline">Video Dubbing</a> | <a href={getSubtitleGeneratorUrl(locale)} className="text-blue-600 hover:underline">Subtitle Generator</a>
             </p>
           </div>
         </div>
@@ -562,14 +567,13 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
   );
 }
 
-function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: any }) {
+function AslTranslationContent({ slug, t, tEn, locale }: { slug: string; t: any; tEn: any; locale: string }) {
   // Get the namespace based on slug
-  const namespace = slug === 'asl-video-translator' ? 'aslVideoTranslator' : 'howToTranslateAslVideo';
+  const namespace = 'aslVideoTranslator';
   
   // Define which keys exist for each ASL blog post type
   const availableKeys: Record<string, string[]> = {
-    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
   };
 
   const currentKeys = availableKeys[namespace] || [];
@@ -661,11 +665,11 @@ function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: an
         <p className="mb-4">{safeT("curifyContent")}</p>
         <div className="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
           <p className="text-indigo-800">
-            🎯 {safeT("ctaText")} <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
+            🎯 {safeT("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{safeT("ctaLink")}</a>
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-indigo-700 text-sm">
-              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl(locale)} className="text-blue-600 hover:underline">Bilingual Subtitles</a> | <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
