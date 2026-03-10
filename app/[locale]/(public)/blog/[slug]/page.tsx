@@ -203,8 +203,7 @@ export default async function BlogPostPage({
     'voiceCloningTools': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'f5TtsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+        'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'evolutionTimelinesVisualization': ['intro', 'whatIsTitle', 'whatIsContent', 'importanceTitle', 'importanceContent', 'techniquesTitle', 'techniquesContent', 'examplesTitle', 'examplesContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'chineseCostumeHistoryInfographic': ['intro', 'whatIsTitle', 'whatIsContent', 'dynastiesTitle', 'dynastiesContent', 'characteristicsTitle', 'characteristicsContent', 'modernTitle', 'modernContent', 'culturalTitle', 'culturalContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'creativeAiToolsWebsites': ['intro', 'whatIsTitle', 'whatIsContent', 'inspirationTitle', 'inspirationContent', 'featuredTitle', 'featuredContent', 'aiTitle', 'aiContent', 'aiFeaturedTitle', 'aiFeaturedContent', 'conclusionTitle', 'conclusionContent']
@@ -493,7 +492,7 @@ function YoutubeTranslationContent({ slug, t }: { slug: string; t: any }) {
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-green-700 text-sm">
-              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Bilingual Subtitles</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
@@ -548,7 +547,7 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-purple-700 text-sm">
-              🔗 Also try: <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Translator</a> | <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a>
+              🔗 Also try: <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a> | <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a>
             </p>
           </div>
         </div>
@@ -564,12 +563,11 @@ function VoiceCloningContent({ slug, t }: { slug: string; t: any }) {
 
 function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: any }) {
   // Get the namespace based on slug
-  const namespace = slug === 'asl-video-translator' ? 'aslVideoTranslator' : 'howToTranslateAslVideo';
+  const namespace = 'aslVideoTranslator';
   
   // Define which keys exist for each ASL blog post type
   const availableKeys: Record<string, string[]> = {
-    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'howContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'howToTranslateAslVideo': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+    'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
   };
 
   const currentKeys = availableKeys[namespace] || [];
@@ -665,7 +663,7 @@ function AslTranslationContent({ slug, t, tEn }: { slug: string; t: any; tEn: an
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-indigo-700 text-sm">
-              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Subtitle Generator</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
+              🔗 Also try: <a href={getSubtitleGeneratorUrl()} className="text-blue-600 hover:underline">Bilingual Subtitles</a> | <a href={getVideoDubbingUrl()} className="text-blue-600 hover:underline">Video Dubbing</a>
             </p>
           </div>
         </div>
