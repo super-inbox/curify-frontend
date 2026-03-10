@@ -155,7 +155,9 @@ export function makeNanoTemplateUrl(templateId: string, locale: Locale) {
       ? window.location.origin
       : process.env.NEXT_PUBLIC_BASE_URL || "";
   const slug = toSlug(templateId);
-  return `${base}/${locale}/nano-template/${slug}`;
+  return locale === "en"
+    ? `${base}/nano-template/${slug}`
+    : `${base}/${locale}/nano-template/${slug}`;
 }
 
 export function normalizeCarouselUrls(
