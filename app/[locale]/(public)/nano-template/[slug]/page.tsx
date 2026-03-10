@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
@@ -13,6 +14,7 @@ import {
   buildNanoTemplateDetailData,
   getImageViewsForTemplate,
   buildNanoFeedCards,
+  nanoTemplateI18nKey,
   type Locale,
 } from "@/lib/nano_utils";
 
@@ -26,7 +28,6 @@ import {
 } from "@/lib/nano_seo_utils";
 
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
-import CdnImage from "@/app/[locale]/_components/CdnImage";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -34,6 +35,18 @@ type Props = {
 
 function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
+}
+
+function makeSafeNanoTranslator(
+  tNano: Awaited<ReturnType<typeof getTranslations>>
+) {
+  return (key: string): string => {
+    try {
+      return tNano(key as any) ?? "";
+    } catch {
+      return "";
+    }
+  };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -45,7 +58,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const templates = nanoTemplates as unknown as RawTemplate[];
   const images = nanoImages as unknown as RawNanoImageRecord[];
   const reg = buildNanoRegistry(templates, images);
-  const data = buildNanoTemplateDetailData(reg, templateId, locale);
+
+  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
+  const translateNano = makeSafeNanoTranslator(tNano);
+
+  const data = buildNanoTemplateDetailData(
+    reg,
+    templateId,
+    locale,
+    translateNano
+  );
 
   if (!data) {
     return {
@@ -55,15 +77,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const localizedDescription =
+    data.template.description ||
+    normalizeText(
+      translateNano(nanoTemplateI18nKey(templateId, "description"))
+    ) ||
+    "Explore this nano template and generate curated outputs with Curify.";
+
   return buildNanoTemplateMetadata({
     templateId,
     locale,
     localeStr,
     slug,
     fallbackTitle: `${data.template.template_id} | Nano Template`,
-    fallbackDescription:
-      normalizeText(data.template.description) ||
-      "Explore this nano template and generate curated outputs with Curify.",
+    fallbackDescription: localizedDescription,
   });
 }
 
@@ -75,9 +102,17 @@ export default async function NanoTemplatePage({ params }: Props) {
 
   const templates = nanoTemplates as unknown as RawTemplate[];
   const images = nanoImages as unknown as RawNanoImageRecord[];
-
   const reg = buildNanoRegistry(templates, images);
-  const data = buildNanoTemplateDetailData(reg, templateId, locale);
+
+  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
+  const translateNano = makeSafeNanoTranslator(tNano);
+
+  const data = buildNanoTemplateDetailData(
+    reg,
+    templateId,
+    locale,
+    translateNano
+  );
 
   if (!data) notFound();
 
@@ -93,12 +128,13 @@ export default async function NanoTemplatePage({ params }: Props) {
     seo?.meta_title,
     `Nano Banana Prompt Template: ${template.template_id}`
   );
+
   const intro =
     normalizeText(seo?.meta_description) ||
+    template.description ||
     "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
 
-  // SECTION 2: example images
-  const imageViews = getImageViewsForTemplate(reg, templateId, template.locale);
+  const imageViews = getImageViewsForTemplate(reg, templateId, locale);
   const imageMap = new Map(imageViews.map((x) => [x.id, x]));
 
   const orderedImageIds =
@@ -116,10 +152,10 @@ export default async function NanoTemplatePage({ params }: Props) {
       templateId: img!.template_id,
     }));
 
-  // SECTION 3: other templates
   const otherNanoCards = buildNanoFeedCards(reg, locale as Locale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
+    translate: translateNano,
   }).filter((c) => c.template_id !== template.template_id);
 
   return (
@@ -127,33 +163,32 @@ export default async function NanoTemplatePage({ params }: Props) {
       {schema ? (
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ) : null}
 
-      {/* Header */}
       <div className="mb-6">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
-            <p className="mt-2 text-sm text-neutral-600">{template.description}</p>
+            <p className="mt-2 text-sm text-neutral-600">
+              {template.description || intro}
+            </p>
           </div>
 
           <div className="flex items-center gap-2">
             {template.category ? (
-              <span className="rounded-full bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 border border-purple-100">
+              <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
                 {template.category}
               </span>
             ) : null}
-            <span className="rounded-full bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700 border border-neutral-200">
+            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">
               {safeString(template.locale || locale).toUpperCase()}
             </span>
           </div>
         </div>
       </div>
 
-      {/* SECTION 1: generator / reproduce */}
       <NanoTemplateDetailClient
         locale={locale}
         template={{
@@ -166,31 +201,38 @@ export default async function NanoTemplatePage({ params }: Props) {
         showOtherTemplates={false}
       />
 
-      {/* SEO content blocks */}
       {(h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0) ? (
         <section className="mt-10 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
 
           {h2What ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">What is this template?</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                What is this template?
+              </h3>
               <p className="mt-2 text-sm leading-6 text-neutral-700">{h2What}</p>
             </div>
           ) : null}
 
           {h2Who ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">Who should use it?</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                Who should use it?
+              </h3>
               <p className="mt-2 text-sm leading-6 text-neutral-700">{h2Who}</p>
             </div>
           ) : null}
 
           {h2How.length > 0 ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">How to use it</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                How to use it
+              </h3>
               <ol className="mt-2 list-decimal pl-5 text-sm leading-6 text-neutral-700">
                 {h2How.map((s, i) => (
-                  <li key={i} className="mt-1">{s}</li>
+                  <li key={i} className="mt-1">
+                    {s}
+                  </li>
                 ))}
               </ol>
             </div>
@@ -198,10 +240,14 @@ export default async function NanoTemplatePage({ params }: Props) {
 
           {h2Prompts.length > 0 ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">Example prompts</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                Example prompts
+              </h3>
               <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-neutral-700">
                 {h2Prompts.map((s, i) => (
-                  <li key={i} className="mt-1">{s}</li>
+                  <li key={i} className="mt-1">
+                    {s}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -209,11 +255,9 @@ export default async function NanoTemplatePage({ params }: Props) {
         </section>
       ) : null}
 
-      {/* SECTION 2: example images */}
       <section className="mt-8">
         <ExampleImagesGrid items={section2Images} maxRows={3} />
 
-        {/* SECTION 3: other templates */}
         <NanoTemplateDetailClient
           locale={locale}
           template={{

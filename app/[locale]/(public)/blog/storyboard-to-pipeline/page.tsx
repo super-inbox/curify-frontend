@@ -6,10 +6,6 @@ import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
-import TemplateLink, { TemplateSuggestions } from "../../../_components/TemplateLink";
-import { getTemplatesByCategory } from "@/utils/blogUtils";
-
-import dynamic from 'next/dynamic';
 
 // Define types for our translations
 type StepPoints = string | string[];
@@ -71,18 +67,6 @@ export default function StoryboardToPipelinePost() {
   // Initialize translations for the 'storyboardToPipeline' namespace
   const t = useTranslations("storyboardToPipeline");
 
-  // Get related templates for this blog post
-  const evolutionTemplates = getTemplatesByCategory("evolution", "en");
-  const allTemplates = getTemplatesByCategory("", "en"); // Get all templates
-  
-  // Combine templates without duplicates
-  const combinedTemplates = [
-    ...evolutionTemplates,
-    ...allTemplates.filter(template => 
-      !evolutionTemplates.some(evoTemplate => evoTemplate.id === template.id)
-    ).slice(0, 3)
-  ];
-
   // Get step data with proper typing
   const getStep = (stepKey: string): StepTranslations => {
     const title = t(`steps.${stepKey}.title`);
@@ -117,24 +101,7 @@ export default function StoryboardToPipelinePost() {
         })}
       </p>
       
-      <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-        <h4 className="font-semibold text-blue-900 mb-2">🎨 Related Nano Templates:</h4>
-        <p className="text-sm text-blue-800 mb-3">
-          Enhance your storyboard workflow with these specialized templates:
-        </p>
-        <div className="space-y-2">
-          <TemplateLink
-            href="/nano-template/template-evolution"
-            title="Create an isometric pixel-art evolution museum timeline"
-            category="Evolution Timeline Visualization"
-          />
-          <TemplateLink
-            href="/nano-template/template-herbal-zh"
-            title="Generate a 4K vertical Herb Exploded Sheet infographic"
-            category="中草药类"
-          />
-        </div>
-      </div>
+
       <p className="text-gray-700 mb-6">
         {t.rich('intro.p2', {
           strong: (chunks) => <strong>{chunks}</strong>
@@ -149,12 +116,6 @@ export default function StoryboardToPipelinePost() {
         {t.rich('intro.p4', {
           strong: (chunks) => <strong>{chunks}</strong>
         })}
-      </p>
-
-      <p className="text-gray-700 mb-6">
-        For those looking to create compelling visual narratives, you might want to explore 
-        our <TemplateLink href="/nano-template/template-evolution" title="evolution timeline templates" category="Evolution Timeline Visualization" /> 
-        which can help you create stunning visual progressions for your storyboards.
       </p>
 
       {/* Visual pipeline representation */}
@@ -410,11 +371,7 @@ ffmpeg -i output_temp.mp4 -i music.mp3 -filter_complex "[0:a][1:a]amix=inputs=2"
         })}
       </div>
 
-      {/* Template Suggestions Section */}
-      <TemplateSuggestions 
-        templates={combinedTemplates}
-        className="mt-8"
-      />
+     
     </article>
   );
 }

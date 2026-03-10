@@ -1,89 +1,153 @@
-import nanoTemplates from '@/public/data/nano_templates.json';
+import nanoTemplates from "@/public/data/nano_templates.json";
+import { nanoTemplateI18nKey, type TranslateFn } from "@/lib/nano_utils";
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
 
 export interface NanoTemplate {
   id: string;
   locales: {
-    [locale: string]: {
-      category: string;
-      description: string;
-      base_prompt: string;
-      parameters: Array<{
-        name: string;
-        label: string;
-        type: string;
-        placeholder: string[];
-      }>;
-    } | undefined;
+    [locale: string]:
+      | {
+          // NOTE: `category` and `description` have moved to messages/[locale]/nano.json
+          base_prompt: string;
+          parameters: Array<{
+            name: string;
+            label: string;
+            type: string;
+            placeholder: string[];
+          }>;
+        }
+      | undefined;
   };
 }
 
 export interface TemplateLink {
   id: string;
+  /**
+   * Resolved from i18n — the caller must supply a `translate` function.
+   * Falls back to the template `id` when no translator is provided.
+   */
   title: string;
+  /** Resolved from i18n — empty string when no translator is provided. */
   category: string;
   url: string;
   locale: string;
 }
 
-// Get all nano templates for a specific locale
-export function getNanoTemplates(locale: string = 'en'): TemplateLink[] {
-  return nanoTemplates
-    .filter((template: NanoTemplate) => template.locales[locale])
-    .map((template: NanoTemplate) => {
-      const localeData = template.locales[locale];
-      if (!localeData) return null;
-      
+// ---------------------------------------------------------------------------
+// Core helpers
+// ---------------------------------------------------------------------------
+
+/**
+ * Returns all nano templates available for `locale`, with `title` and
+ * `category` resolved via the supplied `translate` function.
+ *
+ * Pass `t` from `useTranslations('nano')` (client) or
+ * `await getTranslations('nano')` (server).
+ *
+ * If `translate` is omitted, `title` falls back to the template id and
+ * `category` is an empty string — useful for structural/data-only use.
+ */
+export function getNanoTemplates(
+  locale: string = "en",
+  translate?: TranslateFn
+): TemplateLink[] {
+  return (nanoTemplates as NanoTemplate[])
+    .filter((template) => template.locales[locale] != null)
+    .map((template) => {
+      const title = translate
+        ? translate(nanoTemplateI18nKey(template.id, "description"))
+            .split(".")[0] // first sentence as title, mirrors old behaviour
+        : template.id;
+
+      const category = translate
+        ? translate(nanoTemplateI18nKey(template.id, "category"))
+        : "";
+
       return {
         id: template.id,
-        title: localeData.description.split('.')[0], // Use first sentence as title
-        category: localeData.category,
-        url: `/nano-template/${template.id}`,
-        locale: locale
-      };
-    })
-    .filter((item): item is TemplateLink => item !== null);
+        title,
+        category,
+        url: `/${locale}/nano-template/${template.id.replace(/^template-/, "")}`,
+        locale,
+      } satisfies TemplateLink;
+    });
 }
 
-// Get templates by category
-export function getTemplatesByCategory(category: string, locale: string = 'en'): TemplateLink[] {
-  return getNanoTemplates(locale).filter(template => 
-    template.category.toLowerCase().includes(category.toLowerCase())
+/**
+ * Returns templates filtered by category for the given locale.
+ */
+export function getTemplatesByCategory(
+  category: string,
+  locale: string = "en",
+  translate?: TranslateFn
+): TemplateLink[] {
+  return getNanoTemplates(locale, translate).filter((t) =>
+    t.category.toLowerCase().includes(category.toLowerCase())
   );
 }
 
-// Search templates by keyword
-export function searchTemplates(keyword: string, locale: string = 'en'): TemplateLink[] {
-  const searchTerm = keyword.toLowerCase();
-  return getNanoTemplates(locale).filter(template =>
-    template.title.toLowerCase().includes(searchTerm) ||
-    template.category.toLowerCase().includes(searchTerm)
+/**
+ * Full-text search across `title` and `category`.
+ */
+export function searchTemplates(
+  keyword: string,
+  locale: string = "en",
+  translate?: TranslateFn
+): TemplateLink[] {
+  const q = keyword.toLowerCase();
+  return getNanoTemplates(locale, translate).filter(
+    (t) =>
+      t.title.toLowerCase().includes(q) || t.category.toLowerCase().includes(q)
   );
 }
 
-// Parse blog content and replace template references with links
-export function parseTemplateLinks(content: string, locale: string = 'en'): string {
-  // Pattern to match template references like {{template-id}} or [[template-name]]
+// ---------------------------------------------------------------------------
+// Blog content parser
+// ---------------------------------------------------------------------------
+
+/**
+ * Replaces `{{template-id}}` or `[[template-name]]` tokens inside a blog
+ * content string with HTML anchor tags pointing to the template detail page.
+ *
+ * Pass `translate` so that link labels use the real i18n title rather than
+ * the raw template id.
+ *
+ * @example
+ * // In a React Server Component:
+ * const t = await getTranslations('nano');
+ * const html = parseTemplateLinks(rawContent, 'en', t);
+ */
+export function parseTemplateLinks(
+  content: string,
+  locale: string = "en",
+  translate?: TranslateFn
+): string {
+  const templates = getNanoTemplates(locale, translate);
+
+  // Matches {{template-id}} or [[template-name]]
   const templatePattern = /\{\{([^}]+)\}\}|\[\[([^\]]+)\]\]/g;
-  
-  return content.replace(templatePattern, (match, templateId, templateName) => {
-    const templates = getNanoTemplates(locale);
-    
-    if (templateId) {
-      // Try to find by ID
-      const template = templates.find(t => t.id === templateId.trim());
-      if (template) {
-        return `<a href="${template.url}" class="template-link" data-template-id="${template.id}">${template.title}</a>`;
+
+  return content.replace(
+    templatePattern,
+    (_match, templateId?: string, templateName?: string) => {
+      if (templateId) {
+        const tpl = templates.find((t) => t.id === templateId.trim());
+        if (tpl) {
+          return `<a href="${tpl.url}" class="template-link" data-template-id="${tpl.id}">${tpl.title}</a>`;
+        }
+      } else if (templateName) {
+        const tpl = templates.find((t) =>
+          t.title.toLowerCase().includes(templateName.trim().toLowerCase())
+        );
+        if (tpl) {
+          return `<a href="${tpl.url}" class="template-link" data-template-id="${tpl.id}">${tpl.title}</a>`;
+        }
       }
-    } else if (templateName) {
-      // Try to find by name/title
-      const template = templates.find(t => 
-        t.title.toLowerCase().includes(templateName.trim().toLowerCase())
-      );
-      if (template) {
-        return `<a href="${template.url}" class="template-link" data-template-id="${template.id}">${template.title}</a>`;
-      }
+
+      return _match; // no match → keep original token
     }
-    
-    return match; // Return original if no match found
-  });
+  );
 }

@@ -1,5 +1,6 @@
 import "../../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import Script from "next/script";
@@ -22,11 +23,7 @@ export default async function AppLocaleLayout({
 
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const common = (await import(`../../../messages/${locale}/common.json`)).default;
-  const home = (await import(`../../../messages/${locale}/home.json`)).default;
-  const blog = (await import(`../../../messages/${locale}/blog.json`)).default;
-  const pricing = (await import(`../../../messages/${locale}/pricing.json`)).default;
-  const messages = { ...common, ...home, ...blog, ...pricing };
+  const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -48,12 +45,6 @@ export default async function AppLocaleLayout({
       </head>
 
       <body suppressHydrationWarning>
-        {/*
-          No AuthProvider needed here.
-          userAtom is restored from localStorage by atomWithStorage (getOnInit: true)
-          before the first render — Header, WorkspaceClient, and all other client
-          components read from it directly with no API roundtrip required.
-        */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppWrapper user={null}>
             <Header />

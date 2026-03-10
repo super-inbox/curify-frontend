@@ -17,8 +17,8 @@ export type RawTemplate = {
     Record<
       Locale,
       {
-        category: string;
-        description: string;
+        // NOTE: `category` and `description` have been moved to messages/[locale]/nano.json
+        // Only prompt-critical fields remain here
         base_prompt: string;
         parameters: TemplateParameter[];
       }
@@ -48,6 +48,13 @@ export type TemplateView = {
   template_id: string;
   slug: string;
   locale: Locale;
+  /**
+   * `category` and `description` are no longer sourced from nano_templates.json.
+   * Callers must inject them from the i18n namespace `nano.templates.{template_id}.category`
+   * and `nano.templates.{template_id}.description`.
+   * These fields are kept on the type for backward compatibility but will be empty
+   * strings when built without translation injection.
+   */
   category: string;
   description: string;
   base_prompt: string;
@@ -71,11 +78,19 @@ export type NanoInspirationCardType = {
   id: string; // group card id (usually template_id)
   template_id: string;
   language: Locale; // keep existing prop name to avoid churn
+  /**
+   * Populated by the caller via i18n — not sourced from JSON.
+   * Use `t(`nano.templates.${template_id}.category`)` at the call site.
+   */
   category: string;
 
   image_urls: string[];
   preview_image_urls: string[];
 
+  /**
+   * Populated by the caller via i18n — not sourced from JSON.
+   * Use `t(`nano.templates.${template_id}.description`)` at the call site.
+   */
   description?: string;
   base_prompt?: string;
   template_parameters?: TemplateParameter[];
@@ -91,6 +106,35 @@ export type NanoRegistry = {
   imageById: Map<string, RawNanoImageRecord>;
 };
 
+// ---------------------------------------------------------------------------
+// i18n translation resolver type
+// Callers pass a function matching next-intl's `t()` signature so that
+// nano_utils stays framework-agnostic and testable.
+// ---------------------------------------------------------------------------
+export type TranslateFn = (key: string) => string;
+
+/**
+ * Build the i18n key for a template's display field.
+ *
+ * nano.json structure (flat, no nesting):
+ * {
+ *   "template-herbal-zh": { "category": "...", "description": "..." }
+ * }
+ *
+ * When consumed via useTranslations("nano") / getTranslations("nano"),
+ * the key passed to t() must be just  "template-herbal-zh.category"
+ * — the namespace ("nano") is already bound by useTranslations/getTranslations.
+ */
+export function nanoTemplateI18nKey(
+  templateId: string,
+  field: "category" | "description"
+): string {
+  // e.g. "template-dog-breed-retro-infographic.category"
+  return `${templateId}.${field}`;
+}
+
+// ---------------------------------------------------------------------------
+
 export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
 }
@@ -100,7 +144,8 @@ export function normalizeLocale(locale: string): Locale {
 }
 
 export function getLocaleFromPath(): Locale {
-  const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+  const pathname =
+    typeof window !== "undefined" ? window.location.pathname : "";
   return pathname.startsWith("/en") ? "en" : "zh";
 }
 
@@ -190,12 +235,22 @@ export function buildNanoRegistry(
   return { templates, images, templateById, imagesByTemplateId, imageById };
 }
 
-// ✅ add this singleton registry
+// ✅ singleton registry
 export const nanoRegistry: NanoRegistry = buildNanoRegistry(
   nanoTemplates as unknown as RawTemplate[],
   nanoImages as unknown as RawNanoImageRecord[]
 );
 
+/**
+ * Returns a TemplateView for the given template + locale.
+ *
+ * `category` and `description` are intentionally empty strings here —
+ * inject them at the call site using:
+ *   `t(nanoTemplateI18nKey(templateId, 'category'))`
+ *   `t(nanoTemplateI18nKey(templateId, 'description'))`
+ *
+ * Or pass a `translate` function to `getTemplateViewWithTranslations` instead.
+ */
 export function getTemplateView(
   reg: NanoRegistry,
   templateId: string,
@@ -213,11 +268,35 @@ export function getTemplateView(
     template_id: raw.id,
     slug: toSlug(raw.id),
     locale: resolved,
-    category: value.category,
-    description: value.description,
+    // Callers must fill these from i18n
+    category: "",
+    description: "",
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],
+  };
+}
+
+/**
+ * Like `getTemplateView` but resolves `category` and `description` via the
+ * supplied translation function so the result is fully populated.
+ *
+ * Use this in server components (pass `await getTranslations('nano')`),
+ * or in client components (pass `useTranslations('nano')`).
+ */
+export function getTemplateViewWithTranslations(
+  reg: NanoRegistry,
+  templateId: string,
+  locale: Locale,
+  t: TranslateFn
+): TemplateView | null {
+  const view = getTemplateView(reg, templateId, locale);
+  if (!view) return null;
+
+  return {
+    ...view,
+    category: t(nanoTemplateI18nKey(templateId, "category")),
+    description: t(nanoTemplateI18nKey(templateId, "description")),
   };
 }
 
@@ -235,14 +314,6 @@ export function getImageViewsForTemplate(
     const imageUrl = img.asset.image_url;
     const previewUrl = img.asset.preview_image_url ?? img.asset.image_url;
 
-    // // 🔍 DEBUG: verify preview image path
-    // console.log("[nano_utils] preview check", {
-    //   templateId,
-    //   imageId: img.id,
-    //   image_url: img.asset.image_url,
-    //   preview_image_url: img.asset.preview_image_url      
-    // });
-
     return {
       id: img.id,
       template_id: img.template_id,
@@ -256,34 +327,53 @@ export function getImageViewsForTemplate(
   });
 }
 
-// 1 card per template for feed/list
+/**
+ * Builds feed cards for all templates.
+ *
+ * Pass `translate` to populate `category` and `description` on each card.
+ * If omitted, those fields will be empty strings (fine for structural/data use,
+ * not for rendering).
+ */
 export function buildNanoFeedCards(
   reg: NanoRegistry,
   locale: Locale,
-  opts?: { perTemplateMaxImages?: number; strictLocale?: boolean }
+  opts?: {
+    perTemplateMaxImages?: number;
+    strictLocale?: boolean;
+    /** next-intl t() from the 'nano' namespace */
+    translate?: TranslateFn;
+  }
 ): NanoInspirationCardType[] {
   const perTemplateMaxImages = opts?.perTemplateMaxImages ?? 6;
   const strictLocale = opts?.strictLocale ?? true;
+  const t = opts?.translate;
 
   const out: NanoInspirationCardType[] = [];
 
-  for (const t of reg.templates) {
-    const tv = getTemplateView(reg, t.id, locale);
+  for (const raw of reg.templates) {
+    const tv = getTemplateView(reg, raw.id, locale);
     if (!tv) continue;
 
     if (strictLocale && tv.locale !== locale) continue;
 
-    const imgs = getImageViewsForTemplate(reg, t.id, tv.locale);
+    const imgs = getImageViewsForTemplate(reg, raw.id, tv.locale);
     if (imgs.length === 0) continue;
 
     const sliced = imgs.slice(0, perTemplateMaxImages);
+
+    const category = t
+      ? t(nanoTemplateI18nKey(raw.id, "category"))
+      : "";
+    const description = t
+      ? t(nanoTemplateI18nKey(raw.id, "description"))
+      : "";
 
     out.push({
       id: tv.template_id,
       template_id: tv.template_id,
       language: tv.locale,
-      category: tv.category,
-      description: tv.description,
+      category,
+      description,
       base_prompt: tv.base_prompt,
       template_parameters: tv.parameters,
       image_urls: sliced.map((x) => x.image_url),
@@ -308,9 +398,14 @@ export type NanoTemplateDetailData = {
 export function buildNanoTemplateDetailData(
   reg: NanoRegistry,
   templateId: string,
-  locale: Locale
+  locale: Locale,
+  /** Pass to get populated category/description; otherwise they'll be empty */
+  translate?: TranslateFn
 ): NanoTemplateDetailData | null {
-  const template = getTemplateView(reg, templateId, locale);
+  const template = translate
+    ? getTemplateViewWithTranslations(reg, templateId, locale, translate)
+    : getTemplateView(reg, templateId, locale);
+
   if (!template) return null;
 
   const images = getImageViewsForTemplate(reg, templateId, template.locale);
@@ -349,20 +444,19 @@ export type NanoExampleDetailData = {
   related: ImageView[];
 };
 
-/**
- * Returns all data needed to render the SEO example detail page for a single image.
- * Returns null if the image or template cannot be found.
- */
 export function getNanoExampleDetail(
   reg: NanoRegistry,
   templateId: string,
   imageId: string,
-  locale: Locale
+  locale: Locale,
+  translate?: TranslateFn
 ): NanoExampleDetailData | null {
   const raw = reg.imageById.get(imageId);
   if (!raw || raw.template_id !== templateId) return null;
 
-  const template = getTemplateView(reg, templateId, locale);
+  const template = translate
+    ? getTemplateViewWithTranslations(reg, templateId, locale, translate)
+    : getTemplateView(reg, templateId, locale);
   if (!template) return null;
 
   const loc = raw.locales?.[locale] ?? raw.locales?.zh ?? raw.locales?.en ?? {};
@@ -393,28 +487,25 @@ export type NanoExampleDetail = RawNanoImageRecord & {
   filled_prompt: string;
 };
 
-/**
- * Get a single image record by templateId + imageId.
- * Resolves base_prompt from the template and fills it with the image's params.
- */
 export function getNanoExampleById(
   templateId: string,
   imageId: string,
-  locale: Locale = "zh"
+  locale: Locale = "zh",
+  translate?: TranslateFn
 ): NanoExampleDetail | null {
   const img = nanoRegistry.imageById.get(imageId);
   if (!img || img.template_id !== templateId) return null;
 
-  const tv = getTemplateView(nanoRegistry, templateId, locale);
+  const tv = translate
+    ? getTemplateViewWithTranslations(nanoRegistry, templateId, locale, translate)
+    : getTemplateView(nanoRegistry, templateId, locale);
+
   const base_prompt = tv?.base_prompt ?? "";
   const filled_prompt = fillPrompt(base_prompt, img.params ?? {});
 
   return { ...img, base_prompt, filled_prompt };
 }
 
-/**
- * Get all image records for a template (ordered as stored).
- */
 export function getNanoExamplesByTemplateId(
   templateId: string
 ): RawNanoImageRecord[] {

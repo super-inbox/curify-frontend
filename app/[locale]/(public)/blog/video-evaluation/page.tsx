@@ -3,8 +3,6 @@ import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import CdnImage from "../../../_components/CdnImage";
-import TemplateLink, { TemplateSuggestions } from "../../../_components/TemplateLink";
-import { getTemplatesByCategory } from "@/utils/blogUtils";
 
 export async function generateMetadata({
   params,
@@ -38,10 +36,6 @@ const ListIcon = () => (
 
 export default function VideoTranslationEvaluationPost() {
   const t = useTranslations("video_translation_eval");
-
-  // Get related templates for this blog post
-  const evolutionTemplates = getTemplatesByCategory("evolution", "en");
-  const allTemplates = getTemplatesByCategory("", "en"); // Get all templates
 
   return (
     // Keep the article container as the "max width" boundary
@@ -174,14 +168,7 @@ export default function VideoTranslationEvaluationPost() {
             </a>
           </p>
         </footer>
-
-        {/* Template Suggestions Section */}
-        <div className="mt-12">
-          <TemplateSuggestions 
-            templates={[...evolutionTemplates, ...allTemplates.slice(0, 3)]}
-            className="mt-8"
-          />
-        </div>
+       
       </main>
     </article>
   );

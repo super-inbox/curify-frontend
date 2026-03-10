@@ -1,5 +1,11 @@
-import Link from 'next/link';
-import { ExternalLink, Sparkles } from 'lucide-react';
+"use client";
+
+import Link from "next/link";
+import { Sparkles, ArrowUpRight } from "lucide-react";
+
+// ---------------------------------------------------------------------------
+// TemplateLink
+// ---------------------------------------------------------------------------
 
 interface TemplateLinkProps {
   href: string;
@@ -9,30 +15,59 @@ interface TemplateLinkProps {
   className?: string;
 }
 
-export default function TemplateLink({ 
-  href, 
-  title, 
-  category, 
+export default function TemplateLink({
+  href,
+  title,
+  category,
   showIcon = true,
-  className = "" 
+  className = "",
 }: TemplateLinkProps) {
   return (
     <Link
       href={href}
-      className={`inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 underline decoration-2 decoration-blue-200 hover:decoration-blue-400 transition-all duration-200 ${className}`}
-      title={category ? `${title} - ${category}` : title}
+      title={category ? `${title} — ${category}` : title}
+      className={[
+        // Base layout
+        "group inline-flex items-center gap-1.5",
+        // Typography
+        "text-[13px] font-medium leading-snug",
+        // Color + underline
+        "text-violet-700 underline decoration-violet-200 underline-offset-2",
+        "hover:text-violet-900 hover:decoration-violet-500",
+        // Transition
+        "transition-all duration-150",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
-      {showIcon && <Sparkles className="w-3 h-3" />}
-      <span className="font-medium">{title}</span>
-      {category && (
-        <span className="text-xs text-gray-500 ml-1">({category})</span>
+      {showIcon && (
+        <Sparkles
+          className="w-3 h-3 shrink-0 text-violet-400 group-hover:text-violet-600 transition-colors duration-150"
+          aria-hidden
+        />
       )}
-      <ExternalLink className="w-3 h-3 opacity-60" />
+
+      <span>{title}</span>
+
+      {category && (
+        <span className="text-[11px] font-normal text-neutral-400 group-hover:text-neutral-500 transition-colors duration-150 ml-0.5">
+          ({category})
+        </span>
+      )}
+
+      <ArrowUpRight
+        className="w-3 h-3 shrink-0 opacity-40 group-hover:opacity-70 group-hover:translate-x-px group-hover:-translate-y-px transition-all duration-150"
+        aria-hidden
+      />
     </Link>
   );
 }
 
-// Component for rendering multiple template suggestions
+// ---------------------------------------------------------------------------
+// TemplateSuggestions
+// ---------------------------------------------------------------------------
+
 interface TemplateSuggestionsProps {
   templates: Array<{
     id: string;
@@ -44,37 +79,57 @@ interface TemplateSuggestionsProps {
   className?: string;
 }
 
-export function TemplateSuggestions({ 
-  templates, 
-  maxItems = 3, 
-  className = "" 
+export function TemplateSuggestions({
+  templates,
+  maxItems = 3,
+  className = "",
 }: TemplateSuggestionsProps) {
-  const displayTemplates = templates.slice(0, maxItems);
+  const visible = templates.slice(0, maxItems);
+  const overflow = templates.length - maxItems;
 
-  if (displayTemplates.length === 0) return null;
+  if (visible.length === 0) return null;
 
   return (
-    <div className={`mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200 ${className}`}>
-      <h4 className="text-sm font-semibold text-blue-900 mb-3 flex items-center gap-2">
-        <Sparkles className="w-4 h-4" />
-        Related Nano Templates
-      </h4>
-      <div className="space-y-2">
-        {displayTemplates.map((template, index) => (
-          <TemplateLink
-            key={`${template.id}-${index}`}
-            href={template.url}
-            title={template.title}
-            category={template.category}
-            className="block text-sm"
-          />
-        ))}
+    <aside
+      className={[
+        "mt-6 rounded-2xl border border-violet-100 bg-violet-50/60 px-4 py-3.5",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      aria-label="Related Nano Templates"
+    >
+      {/* Header */}
+      <div className="mb-3 flex items-center gap-1.5">
+        <Sparkles
+          className="h-3.5 w-3.5 shrink-0 text-violet-500"
+          aria-hidden
+        />
+        <span className="text-[11px] font-semibold uppercase tracking-widest text-violet-600">
+          Related Nano Templates
+        </span>
       </div>
-      {templates.length > maxItems && (
-        <p className="text-xs text-blue-600 mt-2">
-          +{templates.length - maxItems} more templates available
+
+      {/* Links */}
+      <ul className="space-y-2">
+        {visible.map((tpl, i) => (
+          <li key={`${tpl.id}-${i}`}>
+            <TemplateLink
+              href={tpl.url}
+              title={tpl.title}
+              category={tpl.category}
+              className="block"
+            />
+          </li>
+        ))}
+      </ul>
+
+      {/* Overflow badge */}
+      {overflow > 0 && (
+        <p className="mt-2.5 text-[11px] text-violet-500 font-medium">
+          +{overflow} more template{overflow === 1 ? "" : "s"} available
         </p>
       )}
-    </div>
+    </aside>
   );
 }
