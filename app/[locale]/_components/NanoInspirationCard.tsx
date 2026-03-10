@@ -3,7 +3,7 @@
 
 import { Layers } from "lucide-react";
 import React, { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   useCopyTracking,
@@ -13,10 +13,8 @@ import {
 import { stableHashToInt } from "@/lib/hash_utils";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
 import {
-  type Locale,
   buildParamSummary,
   fillPrompt,
-  getLocaleFromPath,
   makeNanoTemplateUrl,
   normalizeCarouselUrls,
 } from "@/lib/nano_utils";
@@ -39,10 +37,18 @@ export function NanoInspirationCard({
   onViewClick,
 }: NanoInspirationCardProps) {
   const router = useRouter();
+  const pathname = usePathname();
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shared, setShared] = useState(false);
+
+  // Use actual page locale:
+  // - /zh/... => zh
+  // - everything else => en
+  const pageLocale = pathname?.startsWith("/zh") ? "zh" : "en";
+
   // Mock engagement numbers (Deterministic)
   const seedNum = useMemo(() => stableHashToInt(card.id), [card.id]);
 
@@ -59,8 +65,7 @@ export function NanoInspirationCard({
   const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
   const trackSave = useClickTracking(card.id, "nano_inspiration", "list");
 
-  const localeFromPath = getLocaleFromPath() as Locale;
-  const canonicalUrl = makeNanoTemplateUrl(card.template_id, localeFromPath);
+  const canonicalUrl = makeNanoTemplateUrl(card.template_id, pageLocale);
 
   const normalized = useMemo(() => {
     return normalizeCarouselUrls(card.image_urls, card.preview_image_urls);
@@ -83,7 +88,12 @@ export function NanoInspirationCard({
     trackCardClick();
 
     if (card.template_id) {
-      router.push(makeNanoTemplateUrl(card.template_id, localeFromPath));
+      if (pageLocale === "en") {
+        const url = new URL(canonicalUrl);
+        router.push(url.pathname + url.search + url.hash);
+      } else {
+        router.push(canonicalUrl);
+      }
       return;
     }
 
@@ -157,12 +167,11 @@ export function NanoInspirationCard({
   return (
     <div
       onClick={handleCardClick}
-      // ✅ make card a flex column so actions can be pinned to bottom (vertical alignment across cards)
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md hover:shadow-2xl hover:border-purple-300 transition-all duration-300 cursor-pointer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md transition-all duration-300 cursor-pointer hover:border-purple-300 hover:shadow-2xl"
     >
       {/* Category Badge */}
       <div className="mb-4 flex items-center justify-between gap-2">
-        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 border border-purple-200 shadow-sm">
+        <span className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 shadow-sm">
           <span className="text-base">💡</span>
           {card.category}
         </span>
@@ -175,20 +184,20 @@ export function NanoInspirationCard({
       </div>
 
       {/* Image Carousel */}
-      <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-inner border-2 border-purple-100">
+      <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl border-2 border-purple-100 bg-white shadow-inner">
         {displaySrc ? (
           <CdnImage
             src={displaySrc}
             alt={`${card.category} preview ${currentImageIndex + 1}`}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
             unoptimized
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-neutral-400">
             <div className="text-center">
               <svg
-                className="mx-auto h-12 w-12 mb-2"
+                className="mx-auto mb-2 h-12 w-12"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -212,7 +221,7 @@ export function NanoInspirationCard({
                 e.stopPropagation();
                 prevImage();
               }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 backdrop-blur-sm px-3 py-2 text-white opacity-0 transition-all hover:bg-black/75 group-hover:opacity-100 shadow-lg cursor-pointer"
+              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/60 px-3 py-2 text-white opacity-0 shadow-lg backdrop-blur-sm transition-all hover:bg-black/75 group-hover:opacity-100"
               type="button"
               aria-label="Previous image"
             >
@@ -224,14 +233,14 @@ export function NanoInspirationCard({
                 e.stopPropagation();
                 nextImage();
               }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 backdrop-blur-sm px-3 py-2 text-white opacity-0 transition-all hover:bg-black/75 group-hover:opacity-100 shadow-lg cursor-pointer"
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/60 px-3 py-2 text-white opacity-0 shadow-lg backdrop-blur-sm transition-all hover:bg-black/75 group-hover:opacity-100"
               type="button"
               aria-label="Next image"
             >
               ›
             </button>
 
-            <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1.5">
+            <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full bg-black/40 px-3 py-1.5 backdrop-blur-sm">
               {Array.from({ length: totalImages }).map((_, idx) => (
                 <div
                   key={idx}
@@ -249,33 +258,31 @@ export function NanoInspirationCard({
       </div>
 
       {/* Description / Param summary */}
-      <div className="mb-4 rounded-2xl bg-white/60 backdrop-blur-sm border border-purple-100 p-4">
+      <div className="mb-4 rounded-2xl border border-purple-100 bg-white/60 p-4 backdrop-blur-sm">
         {card.description ? (
-          <p className="text-[15px] leading-snug text-neutral-800 font-medium line-clamp-2">
+          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-800 font-medium">
             {card.description}
           </p>
         ) : paramSummary ? (
-          <p className="text-[15px] leading-snug text-neutral-800 font-medium line-clamp-2">
+          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-800 font-medium">
             {paramSummary}
           </p>
         ) : (
-          <p className="text-[15px] leading-snug text-neutral-700 font-medium line-clamp-2">
+          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-700 font-medium">
             Click to create with this template
           </p>
         )}
 
         {paramSummary && (
-          <p className="mt-1 text-[13px] text-neutral-500 line-clamp-1">
+          <p className="mt-1 line-clamp-1 text-[13px] text-neutral-500">
             {paramSummary}
           </p>
         )}
       </div>
 
       {/* Actions */}
-      {/* ✅ mt-auto pins this to the bottom so buttons align vertically across cards */}
       <div className="mt-auto flex items-center">
         <ActionButtons
-          // ✅ request smaller icons + numbers          
           saved={saved}
           copied={copied}
           shared={shared}
