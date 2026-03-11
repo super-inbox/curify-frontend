@@ -3,15 +3,24 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import ExampleImagesGrid from "../../ExampleImagesGrid";
+import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import {
   toSlug,
   normalizeLocale,
+  buildNanoRegistry,
+  buildNanoFeedCards,
+  getImageViewsForTemplate,
+  getNanoExampleById,
   type Locale,
   type RawNanoImageRecord,
+  type RawTemplate,
 } from "@/lib/nano_utils";
-import { getNanoExampleById, getNanoExamplesByTemplateId } from "@/lib/nano_utils";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoImages from "@/public/data/nano_inspiration.json";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -24,8 +33,17 @@ type PageParams = {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function slugToTemplateId(slug: string) {
-  if (!slug) return "";
   return slug.startsWith("template-") ? slug : `template-${slug}`;
+}
+
+function makeSafeNanoTranslator(tNano: Awaited<ReturnType<typeof getTranslations>>) {
+  return (key: string): string => {
+    try {
+      return tNano(key as any) ?? "";
+    } catch {
+      return "";
+    }
+  };
 }
 
 // ─── Static generation ────────────────────────────────────────────────────────
@@ -34,11 +52,9 @@ export async function generateStaticParams() {
   const mod = (await import("@/public/data/nano_inspiration.json")) as unknown as {
     default: RawNanoImageRecord[];
   };
-  const images = mod.default;
   const locales: Locale[] = ["en", "zh"];
-
   return locales.flatMap((locale) =>
-    images.map((img) => ({
+    mod.default.map((img) => ({
       locale,
       slug: toSlug(img.template_id),
       exampleId: encodeURIComponent(img.id),
@@ -65,8 +81,6 @@ export async function generateMetadata({
   const loc = example.locales?.[locale] ?? example.locales?.zh ?? {};
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
-
-  // Reuse toAbsUrlMaybe so OG image handling is consistent with the template page
   const ogImage = toAbsUrlMaybe(example.asset.image_url);
 
   return {
@@ -99,10 +113,6 @@ export default async function NanoExampleDetailPage({
   const example = getNanoExampleById(templateId, imageId, locale);
   if (!example) notFound();
 
-  const related = getNanoExamplesByTemplateId(templateId)
-    .filter((e) => e.id !== imageId)
-    .slice(0, 6);
-
   const loc = example.locales?.[locale] ?? example.locales?.zh ?? {};
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
@@ -113,13 +123,38 @@ export default async function NanoExampleDetailPage({
     Object.entries(example.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
   );
 
+  // ── Shared data ──
+  const reg = buildNanoRegistry(
+    nanoTemplates as unknown as RawTemplate[],
+    nanoImages as unknown as RawNanoImageRecord[]
+  );
+
+  const tNano = await getTranslations({ locale: rawLocale, namespace: "nano" });
+  const translateNano = makeSafeNanoTranslator(tNano);
+
+  // Images for this template (excluding current), used by ExampleImagesGrid
+  const imageViews = getImageViewsForTemplate(reg, templateId, locale);
+  const gridItems = imageViews
+    .filter((img) => img.id !== imageId)
+    .map((img) => ({
+      id: img.id,
+      title: img.title || "",
+      preview: img.preview_image_url || img.image_url,
+      templateId: img.template_id,
+    }));
+
+  // Other templates feed — identical shape to the template page
+  const otherNanoCards = buildNanoFeedCards(reg, locale as Locale, {
+    perTemplateMaxImages: 2,
+    strictLocale: false,
+    translate: translateNano,
+  }).filter((c) => c.template_id !== templateId);
+
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ── */}
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
-        <Link href={`/${locale}`} className="hover:text-neutral-800">
-          Home
-        </Link>
+        <Link href={`/${locale}`} className="hover:text-neutral-800">Home</Link>
         <span>/</span>
         <Link href={`/${locale}/nano-template/${slug}`} className="hover:text-neutral-800">
           {category || slug}
@@ -128,7 +163,7 @@ export default async function NanoExampleDetailPage({
         <span className="font-medium text-neutral-800 line-clamp-1">{title}</span>
       </nav>
 
-      {/* ── Hero grid ── */}
+      {/* ── Hero ── */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
           <CdnImage
@@ -155,7 +190,7 @@ export default async function NanoExampleDetailPage({
             >
               Prompt
             </h2>
-            <div className="relative rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
               <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed text-neutral-800">
                 {prompt || "—"}
               </pre>
@@ -190,37 +225,23 @@ export default async function NanoExampleDetailPage({
         <PromptBreakdown prompt={prompt} params={example.params ?? {}} />
       </section>
 
-      {/* ── Related examples ── */}
-      {related.length > 0 && (
-        <section className="mt-12">
-          <h2 className="mb-4 text-lg font-bold text-neutral-900">More from this template</h2>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {related.map((rel) => {
-              const relLoc = rel.locales?.[locale] ?? rel.locales?.zh ?? {};
-              const relTitle = relLoc.title ?? rel.id;
-              return (
-                <Link
-                  key={rel.id}
-                  href={`/${locale}/nano-template/${slug}/example/${encodeURIComponent(rel.id)}`}
-                  className="group block overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-shadow hover:shadow-md"
-                >
-                  <CdnImage
-                    src={rel.asset.preview_image_url ?? rel.asset.image_url}
-                    alt={relTitle}
-                    className="aspect-square w-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="p-2">
-                    <p className="line-clamp-1 text-[11px] font-medium text-neutral-700 transition-colors group-hover:text-purple-700">
-                      {relTitle}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      )}
+      {/* ── More from this template + other templates (mirrors template page) ── */}
+      <section className="mt-8">
+        {gridItems.length > 0 && (
+          <>
+            <h2 className="mb-4 text-lg font-bold text-neutral-900">More from this template</h2>
+            <ExampleImagesGrid items={gridItems} maxRows={3} />
+          </>
+        )}
+
+        <NanoTemplateDetailClient
+          locale={locale}
+          template={{ template_id: templateId, base_prompt: "", parameters: [] }}
+          otherNanoCards={otherNanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+        />
+      </section>
 
       {/* ── JSON-LD ── */}
       <script
@@ -292,12 +313,8 @@ function PromptBreakdown({
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b border-neutral-200">
-              <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
-                Variable
-              </th>
-              <th className="py-2 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
-                Value used
-              </th>
+              <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">Variable</th>
+              <th className="py-2 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">Value used</th>
             </tr>
           </thead>
           <tbody>
@@ -305,9 +322,7 @@ function PromptBreakdown({
               <tr key={k} className="border-b border-neutral-100">
                 <td className="py-2 pr-4 font-mono text-xs text-neutral-600">{`{${k}}`}</td>
                 <td className="py-2 text-neutral-800">
-                  {v != null && String(v).trim() !== "" ? (
-                    String(v)
-                  ) : (
+                  {v != null && String(v).trim() !== "" ? String(v) : (
                     <span className="italic text-neutral-400">—</span>
                   )}
                 </td>
