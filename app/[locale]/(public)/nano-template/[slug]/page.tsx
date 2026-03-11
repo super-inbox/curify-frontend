@@ -1,3 +1,5 @@
+// app/[locale]/nano-template/[slug]/page.tsx
+
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -24,7 +26,6 @@ import {
   buildNanoH1,
   resolveContentSections,
   normalizeText,
-  safeString,
 } from "@/lib/nano_seo_utils";
 
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
@@ -62,12 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
   const translateNano = makeSafeNanoTranslator(tNano);
 
-  const data = buildNanoTemplateDetailData(
-    reg,
-    templateId,
-    locale,
-    translateNano
-  );
+  const data = buildNanoTemplateDetailData(reg, templateId, locale, translateNano);
 
   if (!data) {
     return {
@@ -77,11 +73,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  // Both fields are now localized via translateNano
   const localizedDescription =
     data.template.description ||
-    normalizeText(
-      translateNano(nanoTemplateI18nKey(templateId, "description"))
-    ) ||
+    normalizeText(translateNano(nanoTemplateI18nKey(templateId, "description"))) ||
     "Explore this nano template and generate curated outputs with Curify.";
 
   return buildNanoTemplateMetadata({
@@ -89,7 +84,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     localeStr,
     slug,
-    fallbackTitle: `${data.template.template_id} | Nano Template`,
+    fallbackTitle: `${data.template.category || data.template.template_id} | Nano Template`,
     fallbackDescription: localizedDescription,
   });
 }
@@ -107,13 +102,8 @@ export default async function NanoTemplatePage({ params }: Props) {
   const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
   const translateNano = makeSafeNanoTranslator(tNano);
 
-  const data = buildNanoTemplateDetailData(
-    reg,
-    templateId,
-    locale,
-    translateNano
-  );
-
+  // template.category and template.description are fully localized here
+  const data = buildNanoTemplateDetailData(reg, templateId, locale, translateNano);
   if (!data) notFound();
 
   const { template } = data;
@@ -124,11 +114,13 @@ export default async function NanoTemplatePage({ params }: Props) {
 
   const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(payload);
 
+  // Use localized category as h1 fallback instead of raw template_id
   const h1 = buildNanoH1(
     seo?.meta_title,
-    `Nano Banana Prompt Template: ${template.template_id}`
+    template.category || template.template_id
   );
 
+  // template.description is already localized — use it directly
   const intro =
     normalizeText(seo?.meta_description) ||
     template.description ||
@@ -171,21 +163,16 @@ export default async function NanoTemplatePage({ params }: Props) {
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
-            <p className="mt-2 text-sm text-neutral-600">
-              {template.description || intro}
-            </p>
+            {/* localized description from translateNano */}
+            <p className="mt-2 text-sm text-neutral-600">{intro}</p>
           </div>
 
-          <div className="flex items-center gap-2">
-            {template.category ? (
-              <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-                {template.category}
-              </span>
-            ) : null}
-            <span className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-semibold text-neutral-700">
-              {safeString(template.locale || locale).toUpperCase()}
+          {/* localized category badge */}
+          {template.category ? (
+            <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+              {template.category}
             </span>
-          </div>
+          ) : null}
         </div>
       </div>
 
@@ -207,48 +194,32 @@ export default async function NanoTemplatePage({ params }: Props) {
 
           {h2What ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">
-                What is this template?
-              </h3>
+              <h3 className="text-base font-semibold text-neutral-900">What is this template?</h3>
               <p className="mt-2 text-sm leading-6 text-neutral-700">{h2What}</p>
             </div>
           ) : null}
 
           {h2Who ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">
-                Who should use it?
-              </h3>
+              <h3 className="text-base font-semibold text-neutral-900">Who should use it?</h3>
               <p className="mt-2 text-sm leading-6 text-neutral-700">{h2Who}</p>
             </div>
           ) : null}
 
           {h2How.length > 0 ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">
-                How to use it
-              </h3>
+              <h3 className="text-base font-semibold text-neutral-900">How to use it</h3>
               <ol className="mt-2 list-decimal pl-5 text-sm leading-6 text-neutral-700">
-                {h2How.map((s, i) => (
-                  <li key={i} className="mt-1">
-                    {s}
-                  </li>
-                ))}
+                {h2How.map((s, i) => <li key={i} className="mt-1">{s}</li>)}
               </ol>
             </div>
           ) : null}
 
           {h2Prompts.length > 0 ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">
-                Example prompts
-              </h3>
+              <h3 className="text-base font-semibold text-neutral-900">Example prompts</h3>
               <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-neutral-700">
-                {h2Prompts.map((s, i) => (
-                  <li key={i} className="mt-1">
-                    {s}
-                  </li>
-                ))}
+                {h2Prompts.map((s, i) => <li key={i} className="mt-1">{s}</li>)}
               </ul>
             </div>
           ) : null}

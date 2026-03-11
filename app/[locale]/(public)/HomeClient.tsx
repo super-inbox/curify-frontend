@@ -321,7 +321,7 @@ function ListView({
         }
         return (
           <NanoInspirationRow
-            key={`nano-row-${item.cards.map((c) => c.id).join("-") || index}`}
+            key={`nano-row-${index}`}
             cards={item.cards}
             requireAuth={requireAuth}
             onViewClick={(c) => onOpenModal(c, "nano")}
