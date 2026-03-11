@@ -17,11 +17,11 @@ import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCa
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
+import { resolveContentLocale } from "@/lib/locale_utils";
 
 import {
   buildNanoRegistry,
   buildNanoFeedCards,
-  normalizeLocale,
   type RawTemplate,
   type RawNanoImageRecord,
 } from "@/lib/nano_utils";
@@ -86,7 +86,7 @@ function useNanoCards(activeLang: Lang, translate: (key: string) => string) {
         nanoInspiration as unknown as RawNanoImageRecord[]
       );
 
-      const locale = normalizeLocale(activeLang);
+      const locale = resolveContentLocale(activeLang);
 
       const cards = buildNanoFeedCards(reg, locale, {
         perTemplateMaxImages: 2,

@@ -10,12 +10,10 @@ import ExampleImagesGrid from "./ExampleImagesGrid";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
-  normalizeLocale,
   buildNanoRegistry,
   buildNanoTemplateDetailData,
   getImageViewsForTemplate,
   buildNanoFeedCards,
-  type Locale,
 } from "@/lib/nano_utils";
 
 import {
@@ -36,6 +34,10 @@ function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
 }
 
+function resolveContentLocale(locale: string): "en" | "zh" {
+  return locale === "zh" ? "zh" : "en";
+}
+
 async function loadNanoMessages(localeStr: string): Promise<NanoMessagesDict> {
   try {
     const mod = await import(`@/messages/${localeStr}/nano.json`);
@@ -46,7 +48,8 @@ async function loadNanoMessages(localeStr: string): Promise<NanoMessagesDict> {
 }
 
 async function getPageData(localeStr: string, slug: string) {
-  const locale = normalizeLocale(localeStr);
+  const pageLocale = localeStr;
+  const contentLocale = resolveContentLocale(localeStr);
   const templateId = slugToTemplateId(slug);
 
   const templates = nanoTemplates as unknown as RawTemplate[];
@@ -60,10 +63,8 @@ async function getPageData(localeStr: string, slug: string) {
   const data = buildNanoTemplateDetailData(
     reg,
     templateId,
-    locale,
+    contentLocale,
     (key: string) => {
-      const entry = localizedRawEntry as Record<string, unknown> | undefined;
-
       if (key === `${templateId}.title`) return localizedEntry.title ?? "";
       if (key === `${templateId}.category`) return localizedEntry.category ?? "";
       if (key === `${templateId}.description`) return localizedEntry.description ?? "";
@@ -84,7 +85,8 @@ async function getPageData(localeStr: string, slug: string) {
   };
 
   return {
-    locale,
+    pageLocale,
+    contentLocale,
     templateId,
     reg,
     data,
@@ -132,7 +134,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NanoTemplatePage({ params }: Props) {
   const { locale: localeStr, slug } = await params;
 
-  const { locale, templateId, reg, data, nanoMessages, localizedEntry } =
+  const { pageLocale, contentLocale, templateId, reg, data, nanoMessages, localizedEntry } =
     await getPageData(localeStr, slug);
 
   if (!data) notFound();
@@ -154,7 +156,7 @@ export default async function NanoTemplatePage({ params }: Props) {
     template.description ||
     "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
 
-  const imageViews = getImageViewsForTemplate(reg, templateId, locale);
+  const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
   const imageMap = new Map(imageViews.map((x) => [x.id, x]));
 
   const orderedImageIds =
@@ -172,7 +174,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       templateId: img!.template_id,
     }));
 
-  const otherNanoCards = buildNanoFeedCards(reg, locale as Locale, {
+  const otherNanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: () => "",
@@ -196,7 +198,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       </div>
 
       <NanoTemplateDetailClient
-        locale={locale}
+        locale={pageLocale}
         template={{
           template_id: template.template_id,
           base_prompt: template.base_prompt || "",
@@ -260,10 +262,14 @@ export default async function NanoTemplatePage({ params }: Props) {
       ) : null}
 
       <section className="mt-8">
-        <ExampleImagesGrid items={section2Images} maxRows={3} />
+        <ExampleImagesGrid
+          items={section2Images}
+          locale={pageLocale}
+          maxRows={3}
+        />
 
         <NanoTemplateDetailClient
-          locale={locale}
+          locale={pageLocale}
           template={{
             template_id: template.template_id,
             base_prompt: template.base_prompt || "",

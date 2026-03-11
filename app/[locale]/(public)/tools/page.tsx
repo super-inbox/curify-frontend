@@ -9,10 +9,8 @@ import { SITE_URL } from "@/lib/constants";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
-  normalizeLocale,
   buildNanoRegistry,
   buildNanoFeedCards,
-  type Locale,
 } from "@/lib/nano_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
@@ -29,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = t("tools.meta.title");
   const description = t("tools.meta.description");
-  
+
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const url = `${SITE_URL}${pathPrefix}/tools`;
 
@@ -68,12 +66,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale: localeStr } = await params;
-  const locale = normalizeLocale(localeStr);
 
   const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
   const translateNano = (key: string): string => {
     try {
-      return tNano(key as any) ?? "";
+      return tNano(key as never) ?? "";
     } catch {
       return "";
     }
@@ -84,7 +81,7 @@ export default async function Page({ params }: Props) {
     nanoImages as unknown as RawNanoImageRecord[]
   );
 
-  const nanoCards = buildNanoFeedCards(reg, locale as Locale, {
+  const nanoCards = buildNanoFeedCards(reg, localeStr, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
@@ -96,7 +93,7 @@ export default async function Page({ params }: Props) {
 
       <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <NanoTemplateDetailClient
-          locale={locale}
+          locale={localeStr}
           template={{ template_id: "", base_prompt: "", parameters: [] }}
           otherNanoCards={nanoCards}
           showReproduce={false}

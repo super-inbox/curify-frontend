@@ -9,15 +9,14 @@ import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import {
   toSlug,
-  normalizeLocale,
   buildNanoRegistry,
   buildNanoFeedCards,
   getImageViewsForTemplate,
   getNanoExampleById,
-  type Locale,
   type RawNanoImageRecord,
   type RawTemplate,
 } from "@/lib/nano_utils";
+import { resolveContentLocale } from "@/lib/locale_utils";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
@@ -39,7 +38,7 @@ function slugToTemplateId(slug: string) {
 function makeSafeNanoTranslator(tNano: Awaited<ReturnType<typeof getTranslations>>) {
   return (key: string): string => {
     try {
-      return tNano(key as any) ?? "";
+      return tNano(key as never) ?? "";
     } catch {
       return "";
     }
@@ -52,7 +51,9 @@ export async function generateStaticParams() {
   const mod = (await import("@/public/data/nano_inspiration.json")) as unknown as {
     default: RawNanoImageRecord[];
   };
-  const locales: Locale[] = ["en", "zh"];
+
+  const locales = ["en", "zh"];
+
   return locales.flatMap((locale) =>
     mod.default.map((img) => ({
       locale,
@@ -71,16 +72,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale, slug, exampleId: rawExampleId } = await params;
 
-  const pageLocale = rawLocale;
-  const contentLocale = normalizeLocale(rawLocale);
-
+  const contentLocale = resolveContentLocale(rawLocale);
   const templateId = slugToTemplateId(slug);
   const imageId = decodeURIComponent(rawExampleId);
 
   const example = getNanoExampleById(templateId, imageId, contentLocale);
   if (!example) return {};
 
-  const loc = example.locales?.[contentLocale] ?? example.locales?.zh ?? {};
+  const loc = example.locales?.[contentLocale] ?? example.locales?.en ?? example.locales?.zh ?? {};
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
   const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
@@ -94,7 +93,7 @@ export async function generateMetadata({
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
-      canonical: `/${pageLocale}/nano-template/${slug}/example/${rawExampleId}`,
+      canonical: `/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`,
     },
   };
 }
@@ -108,16 +107,14 @@ export default async function NanoExampleDetailPage({
 }) {
   const { locale: rawLocale, slug, exampleId: rawExampleId } = await params;
 
-  const pageLocale = rawLocale;
-  const contentLocale = normalizeLocale(rawLocale);
-
+  const contentLocale = resolveContentLocale(rawLocale);
   const templateId = slugToTemplateId(slug);
   const imageId = decodeURIComponent(rawExampleId);
 
   const example = getNanoExampleById(templateId, imageId, contentLocale);
   if (!example) notFound();
 
-  const loc = example.locales?.[contentLocale] ?? example.locales?.zh ?? {};
+  const loc = example.locales?.[contentLocale] ?? example.locales?.en ?? example.locales?.zh ?? {};
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
   const prompt = example.filled_prompt || example.base_prompt || "";
@@ -127,7 +124,6 @@ export default async function NanoExampleDetailPage({
     Object.entries(example.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
   );
 
-  // ── Shared data ──
   const reg = buildNanoRegistry(
     nanoTemplates as unknown as RawTemplate[],
     nanoImages as unknown as RawNanoImageRecord[]
@@ -136,7 +132,6 @@ export default async function NanoExampleDetailPage({
   const tNano = await getTranslations({ locale: rawLocale, namespace: "nano" });
   const translateNano = makeSafeNanoTranslator(tNano);
 
-  // Images for this template (excluding current), used by ExampleImagesGrid
   const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
   const gridItems = imageViews
     .filter((img) => img.id !== imageId)
@@ -147,8 +142,7 @@ export default async function NanoExampleDetailPage({
       templateId: img.template_id,
     }));
 
-  // Other templates feed — identical shape to the template page
-  const otherNanoCards = buildNanoFeedCards(reg, contentLocale as Locale, {
+  const otherNanoCards = buildNanoFeedCards(reg, rawLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
@@ -156,14 +150,13 @@ export default async function NanoExampleDetailPage({
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-      {/* ── Breadcrumb ── */}
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
-        <Link href={`/${pageLocale}`} className="hover:text-neutral-800">
+        <Link href={`/${rawLocale}`} className="hover:text-neutral-800">
           Home
         </Link>
         <span>/</span>
         <Link
-          href={`/${pageLocale}/nano-template/${slug}`}
+          href={`/${rawLocale}/nano-template/${slug}`}
           className="hover:text-neutral-800"
         >
           {category || slug}
@@ -172,7 +165,6 @@ export default async function NanoExampleDetailPage({
         <span className="font-medium text-neutral-800 line-clamp-1">{title}</span>
       </nav>
 
-      {/* ── Hero ── */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
           <CdnImage
@@ -219,7 +211,7 @@ export default async function NanoExampleDetailPage({
 
           <div className="mt-auto pt-2">
             <Link
-              href={`/${pageLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
+              href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
               className="inline-block rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-purple-700"
             >
               Try this template →
@@ -228,23 +220,21 @@ export default async function NanoExampleDetailPage({
         </div>
       </div>
 
-      {/* ── Prompt breakdown ── */}
       <section className="mt-10 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-bold text-neutral-900">Prompt breakdown</h2>
         <PromptBreakdown prompt={prompt} params={example.params ?? {}} />
       </section>
 
-      {/* ── More from this template + other templates (mirrors template page) ── */}
       <section className="mt-8">
         {gridItems.length > 0 && (
           <>
             <h2 className="mb-4 text-lg font-bold text-neutral-900">More from this template</h2>
-            <ExampleImagesGrid items={gridItems} maxRows={3} />
+            <ExampleImagesGrid items={gridItems} locale={rawLocale} maxRows={3} />
           </>
         )}
 
         <NanoTemplateDetailClient
-          locale={pageLocale as Locale}
+          locale={rawLocale}
           template={{ template_id: templateId, base_prompt: "", parameters: [] }}
           otherNanoCards={otherNanoCards}
           showReproduce={false}
@@ -252,7 +242,6 @@ export default async function NanoExampleDetailPage({
         />
       </section>
 
-      {/* ── JSON-LD ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

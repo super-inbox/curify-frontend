@@ -137,10 +137,6 @@ export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
 }
 
-export function normalizeLocale(locale: string): Locale {
-  return locale === "en" ? "en" : "zh";
-}
-
 export function getLocaleFromPath(): Locale {
   const pathname =
     typeof window !== "undefined" ? window.location.pathname : "";
