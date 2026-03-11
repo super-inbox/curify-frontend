@@ -6,7 +6,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla convierte 'hierbas chinas simples' en un gráfico panorámico coleccionable utilizando los prompts optimizados de Nano Banana: incluye detalles de apariencia/corte, propiedades y efectos clave, con un diseño claro y educativo.",
-        "who": "Ideal para cuentas de divulgación de medicina tradicional china, creadores de contenido sobre salud, tiendas/marcas de hierbas que crean carteles informativos, estudiantes que hacen apuntes, y usuarios que desean explicar las hierbas sin escribir textos largos."
+        "who": "Ideal para cuentas de divulgación de medicina tradicional china, creadores de contenido sobre salud, tiendas/marcas de hierbas que crean carteles informativos, estudiantes que hacen apuntes, y usuarios que desean explicar las hierbas sin escribir textos largos.",
+        "how": [
+          "Introduce el nombre en chino de la hierba + sinónimos (si los hay) + formas comunes (rodajas/ingredientes originales).",
+          "Indica el módulo que deseas enfatizar: propiedades y meridianos/efectos principales/puntos de identificación/precauciones/formas modernas (gránulos, cápsulas, etc.).",
+          "Solicita una 'vista desglosada': apariencia, sección transversal, textura, partes clave marcadas con flechas; alta densidad de información pero legible.",
+          "Revisa después de generar: ¿son consistentes los términos (meridianos, etiquetas de efectos)? Si hay desviaciones, solicita 'reescribir el texto según los puntos que proporcionaste, sin cambiar el estilo visual'."
+        ],
+        "prompts": [
+          "Genera un 'diagrama desglosado de hierbas individuales': hierba 'Huangqi', que incluye anotaciones de apariencia y textura de sección transversal, propiedades y meridianos, etiquetas de efectos centrales, formas comunes y escenarios de uso, formato vertical 3:4, diseño informativo de alta densidad.",
+          "Haz una 'Hoja Explosiva de Hierba' para 'Donggui': estructura de rodajas, puntos de identificación (color/olor/sección transversal), efectos principales, ideas de combinación (opcional), advertencias, anotaciones claras con flechas, 3:4.",
+          "Genera un diagrama desglosado de 'Chenpi': puntos clave sobre diferencias de origen y año, primer plano de apariencia y textura, propiedades y meridianos, escenarios de uso diario (infusiones/ingredientes), diseño gráfico retro pero fresco en chino, 3:4."
+        ]
       }
     }
   },
@@ -17,7 +28,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para construir una línea de tiempo de 'museo de píxeles isométricos': transforma etapas históricas en espacios de exhibición navegables, con cada área correspondiente a una era, equipada con señales de hitos clave.",
-        "who": "Ideal para contenido de divulgación científica/historia/evolución tecnológica, exhibiciones de iteraciones de productos, explicaciones educativas (clases/apuntes), líneas de tiempo comparativas en informes de investigación, y creadores que desean hacer la 'historia del desarrollo' más atractiva."
+        "who": "Ideal para contenido de divulgación científica/historia/evolución tecnológica, exhibiciones de iteraciones de productos, explicaciones educativas (clases/apuntes), líneas de tiempo comparativas en informes de investigación, y creadores que desean hacer la 'historia del desarrollo' más atractiva.",
+        "how": [
+          "Define el tema y el rango de tiempo (por ejemplo, 'evolución humana', 'evolución de la forma del teléfono', 'iteración de modelos de IA').",
+          "Enumera de 6 a 10 etapas: para cada etapa, proporciona 1 cambio clave + 1 marcador (icono/objeto/símbolo).",
+          "Solicita un salón de exhibición de píxeles equidistantes: progresión espacial, numeración de paneles, títulos de etapas (puede ser en chino e inglés), y añade una pequeña leyenda/regla.",
+          "Revisa después de generar: ¿están las etapas en orden cronológico? Si no lo están, solicita 'mantener el estilo visual sin cambios, reorganizar los paneles y nodos'."
+        ],
+        "prompts": [
+          "Genera una línea de tiempo de píxeles equidistantes para el 'Museo de Evolución Humana': Homo habilis → Homo erectus → Homo heidelbergensis → Neandertales → Homo sapiens, incluyendo herramientas/características icónicas de cada etapa y paneles de nodos clave, subtítulos en chino e inglés, formato vertical 3:4.",
+          "Haz un 'Museo de Evolución de la Forma del Teléfono': teléfono funcional → plegable → pantalla táctil → pantalla completa → pantalla plegable → gafas AR (concepto), un modelo representativo/icono por etapa, salón de exhibición de píxeles equidistantes, 3:4.",
+          "Genera un 'Museo de Evolución de Frameworks de Desarrollo Web': jQuery → Backbone → Angular → React → Next.js → RSC (concepto), una frase clave + icono por etapa, marcadores de nodos claros, 3:4."
+        ]
       }
     }
   },
@@ -28,7 +50,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para convertir itinerarios de viaje en un 'mapa de itinerario dibujado a mano': muestra rutas por día, incluye íconos de lugares y comidas en estilo Q, formando un flujo diario intuitivo.",
-        "who": "Ideal para compartir guías de viaje, creadores de contenido de viaje en Xiaohongshu/Douyin, familias que crean tarjetas de itinerario, agencias de viajes/alojamientos que hacen carteles de recomendaciones, y usuarios que desean explicar su itinerario de manera clara y atractiva."
+        "who": "Ideal para compartir guías de viaje, creadores de contenido de viaje en Xiaohongshu/Douyin, familias que crean tarjetas de itinerario, agencias de viajes/alojamientos que hacen carteles de recomendaciones, y usuarios que desean explicar su itinerario de manera clara y atractiva.",
+        "how": [
+          "Introduce el destino + días de viaje + principales lugares de cada día (en orden).",
+          "Añade preferencias: comida prioritaria/familia/fotografía/caminatas/compras, y enumera 3-5 puntos que deben ser visitados.",
+          "Solicita un estilo de mapa: ilustración curativa en estilo chibi, anotaciones en chino, rutas diarias diferenciadas por diferentes colores/tipos de líneas (puedes describir, no es necesario especificar valores de color concretos).",
+          "Revisa después de generar: ¿las rutas son directas, cada día está sobrecargado? Si está sobrecargado, pide al modelo 'dividir el itinerario en mañana/tarde/noche y reducir puntos'."
+        ],
+        "prompts": [
+          "Genera un 'mapa de viaje dibujado a mano de 4 días en Tokio': dividido por Día 1-Día 4, marcando puntos de interés, comida, alojamiento y medios de transporte, estilo curativo en chibi, anotaciones completamente en chino, formato vertical 3:4 imprimible.",
+          "Haz un 'mapa de viaje familiar de 2 días en San Francisco': zoológico/museo de ciencias/playa + recomendaciones de restaurantes, ruta clara, añade consejos (colas/horarios), dibujado a mano en estilo chibi, 3:4.",
+          "Genera un 'mapa de ruta gastronómica de 3 días en Chengdu': Kuanzhai Alley/Jinli/Taikoo Li/hot pot, ruta diaria + iconos de comida destacados, formato vertical 3:4."
+        ]
       }
     }
   },
@@ -39,7 +72,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza prompts profesionales de Nano Banana para actualizar fotos de edificios a un 'panel de análisis técnico HUD': superpone líneas blancas, datos de dimensiones y puntos clave de estructura, presentando un efecto visual similar a un manual de ingeniería de ciencia ficción.",
-        "who": "Ideal para estudiantes de arquitectura/diseño que crean portafolios, cuentas de divulgación de arquitectura, contenido de interpretación de hitos urbanos, carteles de guías de exposiciones, y creadores que desean hacer contenido arquitectónico que 'se vea genial pero se explique claramente'."
+        "who": "Ideal para estudiantes de arquitectura/diseño que crean portafolios, cuentas de divulgación de arquitectura, contenido de interpretación de hitos urbanos, carteles de guías de exposiciones, y creadores que desean hacer contenido arquitectónico que 'se vea genial pero se explique claramente'.",
+        "how": [
+          "Introduce el nombre del edificio + ciudad + 3-5 puntos destacados de ingeniería/estructura que deseas enfatizar (como voladizos, armazones, sistemas de fachada).",
+          "Proporciona un rango de datos que se pueda citar (altura, número de pisos, tipo de material; si no estás seguro, puedes escribir 'estimado/aproximado').",
+          "Solicita un estilo HUD: anotaciones en líneas finas blancas, numeración de llamadas, panel de datos, ventanas de planta/sección, vertical 3:4.",
+          "Revisa después de generar: ¿las anotaciones ocultan el sujeto? Si ocultan, solicita 'mover las anotaciones al borde y conectarlas con líneas guía'."
+        ],
+        "prompts": [
+          "Genera un diagrama HUD del 'Burj Khalifa en Dubái': foto principal + anotaciones técnicas en líneas blancas, incluyendo puntos clave sobre altura/número de pisos/sistema estructural, materiales de fachada, aspectos destacados del diseño de carga de viento, y añade pequeñas imágenes de sección y panel de datos, formato vertical 3:4.",
+          "Haz un infográfico HUD del 'Sydney Opera House': estructura de concha, secciones prefabricadas, puntos clave sobre materiales y acústica, anotaciones en líneas blancas + numeración de llamadas + esquema de planta pequeño, 3:4.",
+          "Genera un panel de análisis arquitectónico del 'Museo de Arte Contemporáneo de Zagreb (ejemplo)': enfatiza la iluminación, el flujo, la estructura y los materiales, superponiendo anotaciones HUD sobre la foto, y proporciona 3 resúmenes de aspectos destacados del diseño en la parte inferior, 3:4."
+        ]
       }
     }
   },
@@ -50,7 +94,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla genera una 'tarjeta de conocimiento de especies en peligro ciberpunk' utilizando los prompts de Nano Banana: integra información de seis módulos clave y gráficos simples, soporta anotaciones en chino e inglés, ideal para divulgación visual.",
-        "who": "Ideal para cuentas de divulgación de naturaleza, contenido de organizaciones benéficas/ambientales, estudiantes que hacen informes sobre especies, carteles de guías de zoológicos/museos, y creadores que disfrutan de infografías de alto impacto visual."
+        "who": "Ideal para cuentas de divulgación de naturaleza, contenido de organizaciones benéficas/ambientales, estudiantes que hacen informes sobre especies, carteles de guías de zoológicos/museos, y creadores que disfrutan de infografías de alto impacto visual.",
+        "how": [
+          "Introduce el nombre de la especie (nombre en chino e inglés) + área de distribución + 3 características notables (tamaño/color/comportamiento).",
+          "Proporciona una lista de amenazas (destrucción de hábitat/caza furtiva/cambio climático, etc.) y acciones de conservación (áreas protegidas/leyes/participación pública).",
+          "Solicita una estructura de 6 módulos + gráfico de tendencia poblacional (aumento/disminución/incierto) + título y puntos clave en chino e inglés.",
+          "Revisa después de generar: ¿la información es demasiado 'general'? Si es demasiado general, añade 1-2 puntos de hecho específicos y pide al modelo que reescriba el texto del módulo."
+        ],
+        "prompts": [
+          "Genera una tarjeta de conocimiento de especie en peligro 'Snow Leopard': anotaciones en chino e inglés, 6 módulos + gráfico de tendencia poblacional + principales amenazas y acciones de conservación, formato vertical 3:4, infografía de neón de alto contraste.",
+          "Haz una tarjeta de conocimiento de 'Orangután': morfología/hábitat/comportamiento/tendencias/amenazas/relaciones de conservación y cultura, añade una pequeña ventana de mapa de distribución y gráfico de tendencias, título bilingüe, 3:4.",
+          "Genera una tarjeta de especie en peligro 'Tortuga Boba': destaca las amenazas de plástico marino y redes de pesca, comportamiento de reproducción y migración, estructura de 6 módulos + panel de datos, 3:4."
+        ]
       }
     }
   },
@@ -61,7 +116,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para generar un panel de descomposición de personajes: incluye una imagen completa del personaje, detalles de vestuario, colección de expresiones y lista de objetos personales, presentando un estilo de boceto profesional.",
-        "who": "Ideal para ilustradores/diseñadores conceptuales, creadores de contenido de fanfiction, diseño de personajes para novelas/cómics, tarjetas de personajes para prototipos de juegos, y creadores que desean explicar los detalles de los personajes de una vez."
+        "who": "Ideal para ilustradores/diseñadores conceptuales, creadores de contenido de fanfiction, diseño de personajes para novelas/cómics, tarjetas de personajes para prototipos de juegos, y creadores que desean explicar los detalles de los personajes de una vez.",
+        "how": [
+          "Introduce la identidad del personaje (profesión/época/facción) + 3 palabras clave de personalidad + 1 frase característica/credo del personaje.",
+          "Enumera los niveles de vestimenta (abrigo/ropa interior/gorros y zapatos) y los objetos clave (armas/herramientas/recuerdos).",
+          "Solicita un formato: visual principal centrado, ventanas de detalles a la izquierda y derecha (material/textura/expresión), estilo de anotaciones manuscritas, formato vertical 3:4.",
+          "Revisa después de generar: ¿los objetos son consistentes con la identidad? Si no son consistentes, pide al modelo 'seleccionar nuevamente los objetos basándose en la identidad, pero mantener el estilo visual general'."
+        ],
+        "prompts": [
+          "Genera un diagrama de configuración del personaje: personaje 'mecánica steampunk femenina', que incluye capas de vestimenta, conjunto de expresiones, primer plano de materiales, herramientas y objetos clave, anotaciones en chino manuscrito, formato vertical 3:4.",
+          "Haz un panel de configuración de personaje 'Heroína de la Dinastía Tang': textura de pincelada + acuarela ligera, niveles de vestimenta, detalles de accesorios, armas y objetos personales, 4 expresiones, anotaciones en chino, 3:4.",
+          "Genera un desglose del personaje 'Mensajero de la Ciudad del Futuro': niveles de uniforme, estructura de mochila, herramientas comunes, insignia de identidad y detalles de pegatinas, anotaciones claras, 3:4."
+        ]
       }
     }
   },
@@ -72,7 +138,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para convertir recetas en un 'cartel visual': muestra el proceso de cocción a través de ilustraciones paso a paso y fotos del producto final, no solo explica el proceso de cocinar, sino que también enfatiza la estética para la difusión social.",
-        "who": "Ideal para compartir cenas de Nochevieja, organizar recetas familiares, producción de contenido para cuentas de comida, carteles de menús para marcas de restauración, y usuarios que desean 'explicar los pasos de cocinar' claramente."
+        "who": "Ideal para compartir cenas de Nochevieja, organizar recetas familiares, producción de contenido para cuentas de comida, carteles de menús para marcas de restauración, y usuarios que desean 'explicar los pasos de cocinar' claramente.",
+        "how": [
+          "Introduce el nombre del plato y las preferencias de sabor (ligero/picante/dulce).",
+          "Enumera la lista de ingredientes y las cantidades clave (gramos/cucharadas), y enfatiza que 'los pasos deben ser ejecutables'.",
+          "Solicita un desglose en 5-7 pasos: el tiempo de cocción/tiempo/acciones clave deben estar escritos.",
+          "Revisa después de generar: ¿los ingredientes y los pasos son consistentes? Si no son consistentes, pide al modelo 'reorganizar los pasos según la lista'."
+        ],
+        "prompts": [
+          "Genera un 'cartel visual de recetas para la cena de Nochevieja': plato 'Pato Pekinés', que incluye la visual principal del producto terminado, ingredientes y cantidades, desglose en 7 pasos, combinaciones de bebidas y significados auspiciosos, ambiente de Año Nuevo Chino, formato vertical 3:4.",
+          "Haz un 'cartel visual de receta de Mapo Tofu': cantidades de ingredientes, consejos clave de cocción, desglose en 6 pasos, diseño claro adecuado para coleccionar y compartir, 3:4.",
+          "Genera un cartel de receta de 'Paella Española': lista de ingredientes, desglose de pasos, puntos comunes de fallo y sugerencias de corrección, formato vertical 3:4."
+        ]
       }
     }
   },
@@ -83,7 +160,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para crear un 'cartel de archivo de personajes Dossier': presenta la configuración básica del personaje, motivaciones y una compleja red de relaciones a través de un diseño estructurado en columnas.",
-        "who": "Ideal para escritores/guionistas que crean biografías de personajes, creadores de contenido que analizan personajes, presentaciones de configuraciones de juegos/cómics, organización de relaciones de CP, y creadores que desean explicar 'motivaciones y relaciones' de los personajes."
+        "who": "Ideal para escritores/guionistas que crean biografías de personajes, creadores de contenido que analizan personajes, presentaciones de configuraciones de juegos/cómics, organización de relaciones de CP, y creadores que desean explicar 'motivaciones y relaciones' de los personajes.",
+        "how": [
+          "Introduce el trasfondo del personaje (origen/objetivo/puntos débiles) + red de relaciones clave (3-6 personas: aliados/rivales/preocupaciones).",
+          "Proporciona habilidades y costos: ¿cuáles son las habilidades, cuáles son los costos/restricciones (cuanto más específico, mejor)?",
+          "Solicita un formato: visual principal + barra de expresiones + columnas a la izquierda y derecha + desglose de objetos en la parte inferior; el título puede incluir 'código/número de archivo'.",
+          "Revisa después de generar: ¿las relaciones son coherentes? Si hay contradicciones, pide al modelo 'mantener el estilo visual, reescribir la sección de relaciones y unificar los nombres'."
+        ],
+        "prompts": [
+          "Genera un Dossier del personaje: personaje 'periodista subterráneo', retrato visual principal + configuración de expresiones + columnas a la izquierda y derecha (trasfondo/motivación/habilidades y costos/relaciones) + desglose de objetos clave en la parte inferior (cámara, grabadora, etc.), formato vertical 3:4.",
+          "Haz un cartel de análisis de perfil del 'estratega antiguo': número de archivo, etiquetas de personalidad, estilo de estrategia, red de relaciones (señor/competidor/amigo antiguo), objetos en la parte inferior (abanico plegable/nota confidencial), 3:4.",
+          "Genera un perfil de personaje 'mercenario cibernético': módulos de habilidades (armas/cuerpos cibernéticos/tácticas), debilidades psicológicas, relaciones (empleador/traidor/familia), diseño en estilo HUD, 3:4."
+        ]
       }
     }
   },
@@ -94,7 +182,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar 'imágenes de pronóstico del tiempo en miniatura' con un fuerte impacto visual. La imagen se centra en una ciudad 3D isométrica, con un edificio emblemático en el centro, rodeado de calles, vehículos, peatones y elementos naturales, y superpone información meteorológica, fecha y temperatura, convirtiendo la información del clima en un cartel urbano que combina densidad informativa y diseño.",
-        "who": "Ideal para cuentas de clima, cuentas de información urbana, creadores de contenido turístico, editores de medios locales, y para aquellos que desean hacer que la 'información meteorológica' sea más viral en contenido de diseño. También es adecuado para crear tarjetas diarias de clima urbano, gráficos de clima para días festivos o portadas visuales en redes sociales."
+        "who": "Ideal para cuentas de clima, cuentas de información urbana, creadores de contenido turístico, editores de medios locales, y para aquellos que desean hacer que la 'información meteorológica' sea más viral en contenido de diseño. También es adecuado para crear tarjetas diarias de clima urbano, gráficos de clima para días festivos o portadas visuales en redes sociales.",
+        "how": [
+          "Primero determina el nombre de la ciudad y un hito representativo, como Shanghai, Tokio, París, Nueva York.",
+          "Luego especifica el tipo de clima, como soleado, tormenta, día de nieve, día nublado, día de niebla, tormenta eléctrica, etc., y agrega la atmósfera temporal, como mañana, atardecer o noche.",
+          "Describe los elementos visuales, como la carretera principal, puentes, ríos, vehículos, árboles, densidad de edificios y estilo de color, para que la ciudad sea más reconocible.",
+          "Finalmente, agrega requisitos de diseño, como temperatura, fecha, icono del clima, estilo del nombre de la ciudad; si la información no es lo suficientemente clara, puedes pedir 'reforzar el diseño del clima y la identificación del hito'."
+        ],
+        "prompts": [
+          "Genera un gráfico de pronóstico del tiempo en miniatura de la ciudad de Shanghai: la Perla Oriental en el centro, cielo azul y nubes blancas en un día soleado, modelo de ciudad en miniatura 3D equidistante, superponiendo el clima, la fecha y el diseño de temperatura, información clara, 9:16.",
+          "Crea una tarjeta de clima de ciudad para un día de nieve en Tokio: modelo en miniatura de la Torre de Tokio y barrios densos, ambiente nevado, tonos fríos, incluye el nombre de la ciudad en japonés y la información del clima en diseño, 9:16.",
+          "Genera un cartel de clima nocturno lluvioso en Nueva York: paisaje en miniatura de rascacielos y calles de Manhattan, reflejos de luces en la lluvia, iconos del clima, fecha y temperatura claramente legibles, diseño atractivo."
+        ]
       }
     }
   },
@@ -105,7 +204,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para generar un 'cartel de información disciplinaria': ofrece dos marcos visuales, caricatura o pizarra, con el objetivo de aumentar la diversión en la enseñanza en clase o el autoaprendizaje.",
-        "who": "Ideal para profesores que hacen explicaciones en clase, estudiantes que hacen apuntes/exhibiciones de tareas, cuentas de divulgación que producen gráficos de conocimiento, y creadores de contenido que desean 'explicar conceptos complejos' claramente."
+        "who": "Ideal para profesores que hacen explicaciones en clase, estudiantes que hacen apuntes/exhibiciones de tareas, cuentas de divulgación que producen gráficos de conocimiento, y creadores de contenido que desean 'explicar conceptos complejos' claramente.",
+        "how": [
+          "Introduce el tema del punto de conocimiento (por ejemplo: doble hélice de ADN/teoría de placas/inducción electromagnética).",
+          "Selecciona un estilo: estilo de tarjeta de dibujos animados (más adecuado para niños) o estilo de boceto de pizarra (más adecuado para ciencia/competencias).",
+          "Solicita una estructura: definición → puntos clave → ilustración → ejemplos/fórmulas (ajusta según tu disciplina).",
+          "Revisa después de generar: ¿las palabras clave son destacadas, las ilustraciones corresponden a los puntos clave? Si es necesario, pide al modelo 'reducir texto, aumentar ilustraciones'."
+        ],
+        "prompts": [
+          "Crea una infografía de conocimiento sobre la \"estructura de doble hélice del ADN\": incluye definición, componentes clave, diagrama estructural, conceptos erróneos comunes, estilo de boceto de pizarra, vertical 3:4.",
+          "Genera una tarjeta de conocimiento sobre \"tectónica de placas y terremotos\": estilo de tarjeta de dibujos animados, colores macaron, diagrama de flujo que explica el movimiento de placas → estrés → terremoto, palabras clave destacadas, 3:4.",
+          "Explica \"inducción electromagnética\" en estilo de pizarra: fórmula central, ilustración de la regla de la mano derecha, tres ejemplos típicos, estructura clara, vertical 3:4."
+        ]
       }
     }
   },
@@ -116,7 +226,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla combina los prompts de Nano Banana para descomponer eventos complejos en un 'gráfico de análisis multidimensional': descompone fenómenos y esencias en capas, presentando claramente cadenas de causa y efecto y sus impactos a largo plazo.",
-        "who": "Ideal para cuentas que analizan eventos candentes, análisis de industrias/observaciones comerciales, revisiones de productos/operaciones, estructuración de escritura para estudiantes de posgrado, y personas que desean explicar eventos complejos de manera lógica."
+        "who": "Ideal para cuentas que analizan eventos candentes, análisis de industrias/observaciones comerciales, revisiones de productos/operaciones, estructuración de escritura para estudiantes de posgrado, y personas que desean explicar eventos complejos de manera lógica.",
+        "how": [
+          "Introduce un resumen del evento en una frase + línea de tiempo (3–6 puntos clave).",
+          "Enumera las partes interesadas (al menos 3 categorías: plataforma/regulación/usuarios/cadena de suministro, etc.) y sus respectivas motivaciones.",
+          "Requiere una estructura de tres niveles: fenómeno vs esencia, cadena lógica subyacente (causa → efecto), impacto y radiación (corto/medio/largo).",
+          "Revisa después de generar: ¿es \"la opinión la que prevalece\"? Si hay sesgos, haz que el modelo \"primero proporcione un marco de hechos, luego múltiples hipótesis\"."
+        ],
+        "prompts": [
+          "Genera un gráfico de análisis multidimensional de eventos candentes: el evento \"el mecanismo de recomendación de algoritmos de cierta plataforma ha generado controversia\" (en términos neutrales), incluye puntos de la línea de tiempo, motivaciones de las partes interesadas, cadena de causa y efecto, impacto a corto, medio y largo plazo, diseño en chino de alta legibilidad, vertical 3:4.",
+          "Crea un gráfico de análisis del evento \"despidos masivos en la empresa\": diferenciación entre fenómeno y esencia, cadena lógica de costos/crecimiento/estructura organizativa, impacto en empleados/industria/mercado de capital, 3:4.",
+          "Genera una infografía de revisión sobre \"el lanzamiento fallido de un producto\": puntos clave, cadena de causas raíz (demanda/ingeniería/comunicación), caminos de remediación, impacto a largo plazo, vertical 3:4."
+        ]
       }
     }
   },
@@ -127,7 +248,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza prompts profesionales de Nano Banana para generar un 'panel de artesanías del patrimonio inmaterial': presenta de manera sistemática el flujo histórico, procesos de producción, herramientas y materiales, y sus aplicaciones modernas.",
-        "who": "Ideal para cuentas de divulgación de patrimonio cultural/patrimonio inmaterial, paneles de clubes escolares, promoción de instituciones culturales, materiales de marcas de cultura creativa, y creadores que desean explicar las artesanías tradicionales con un toque visual."
+        "who": "Ideal para cuentas de divulgación de patrimonio cultural/patrimonio inmaterial, paneles de clubes escolares, promoción de instituciones culturales, materiales de marcas de cultura creativa, y creadores que desean explicar las artesanías tradicionales con un toque visual.",
+        "how": [
+          "Introduce el nombre del patrimonio inmaterial + región + una frase sobre la característica central (por ejemplo, \"lámpara de bambú/tingido azul/pintura de bloques de madera\").",
+          "Enumera los pasos del proceso (5–8 pasos) y la lista de herramientas y materiales (cuanto más específicos, mejor).",
+          "Requiere módulos: historia/proceso/símbolos de patrones/obras representativas/situación de transmisión/fusión moderna, y acompáñalos con ilustraciones pequeñas y anotaciones.",
+          "Revisa después de generar: ¿son los pasos ejecutables? Si no están claros, haz que el modelo \"reescriba la descripción de los pasos según el proceso que proporcionaste y agregue acciones clave\"."
+        ],
+        "prompts": [
+          "Genera un panel A3 sobre artesanía del patrimonio inmaterial: tema \"lámpara de pez (luz de colores)\", incluye antecedentes históricos, proceso de fabricación (7 pasos), herramientas y materiales, símbolos de patrones y significados, situación de transmisión y aplicaciones modernas, ilustraciones ricas, diseño vertical 3:4 de alta densidad.",
+          "Crea un panel sobre el patrimonio inmaterial \"tingido azul\": origen de los tintes, puntos clave del atado y la cera, pasos del proceso, patrones comunes y simbolismo, aplicaciones contemporáneas, 3:4.",
+          "Genera un panel sobre \"pintura de bloques de madera\": proceso de grabado/impresión, sistema de colores, temas representativos, casos de fusión entre transmisión y diseño moderno, módulos en chino claros, 3:4."
+        ]
       }
     }
   },
@@ -138,7 +270,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para comprimir cualquier concepto en una 'tarjeta de conocimiento estructurada': se puede elegir entre estilo de caricatura de macarrón o pizarra, con el objetivo de aumentar la eficiencia de aprendizaje.",
-        "who": "Ideal para profesores que preparan clases, estudiantes que toman notas, cuentas de divulgación que producen series de tarjetas, contenido de educación para padres e hijos, y usuarios que necesitan explicar conceptos complejos en '10 segundos'."
+        "who": "Ideal para profesores que preparan clases, estudiantes que toman notas, cuentas de divulgación que producen series de tarjetas, contenido de educación para padres e hijos, y usuarios que necesitan explicar conceptos complejos en '10 segundos'.",
+        "how": [
+          "Introduce el tema + edad/nivel del público (primaria/secundaria/adultos principiantes).",
+          "Proporciona los módulos que deseas incluir: definición/ejemplos/fórmulas/conceptos erróneos/cuestionario (opcional).",
+          "Selecciona un estilo: dibujos animados adorables o pizarra; requiere que las palabras clave estén resaltadas, con niveles claros y texto grande y legible.",
+          "Revisa después de generar: ¿es demasiado largo? Si es demasiado largo, haz que el modelo \"reduzca a 6–8 puntos clave y agregue 1 ejemplo\"."
+        ],
+        "prompts": [
+          "Genera una tarjeta de conocimiento: tema \"¿qué es la fotosíntesis?\", dirigida a estudiantes de primaria de alto nivel, estilo de tarjeta de dibujos animados adorables, incluye definición, tres pasos del proceso, un ejemplo de la vida, un cuestionario de 1 pregunta, vertical 3:4.",
+          "Crea una tarjeta de conocimiento en estilo de pizarra: tema \"tercera ley de Newton\", incluye fórmula, palabras clave, dos ejemplos, conceptos erróneos comunes, estilo de boceto de tiza, 3:4.",
+          "Genera una tarjeta de conocimiento sobre \"sobreajuste en aprendizaje automático\": definición, causas, 3 métodos de mitigación, una metáfora intuitiva, estructura clara, 3:4."
+        ]
       }
     }
   },
@@ -149,7 +292,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para generar un 'gráfico de divulgación de vestimenta de dinastías' con textura de pintura detallada: presenta de manera modular la estructura, detalles de accesorios y anotaciones de significado.",
-        "who": "Ideal para cuentas de divulgación de vestimenta tradicional/cultura china, materiales de diseño cultural, notas de entusiastas de la historia, gráficos de guías de exposiciones, y creadores de contenido cultural que necesitan 'precisión y calidad visual'."
+        "who": "Ideal para cuentas de divulgación de vestimenta tradicional/cultura china, materiales de diseño cultural, notas de entusiastas de la historia, gráficos de guías de exposiciones, y creadores de contenido cultural que necesitan 'precisión y calidad visual'.",
+        "how": [
+          "Introduce la dinastía/período + tipo de vestimenta (ropa común/vestido/ropa de combate/ropa oficial, etc.) + identidad del personaje (guerrero/oficial/noble/plebeyo).",
+          "Enumera los detalles clave: tipo de cuello, tipo de manga, cinturón, dobladillo, tocado, tema de patrones (como nubes/pájaros y flores).",
+          "Requiere módulos: desglose de la estructura + detalles de accesorios + anotaciones de significado + ventana pequeña de escenas de uso, vertical 3:4.",
+          "Revisa después de generar: ¿coinciden los títulos y la estructura? Si no coinciden, pide que \"mantenga el estilo y corrija el texto según los puntos de estructura que proporcionaste\"."
+        ],
+        "prompts": [
+          "Genera una ilustración de divulgación sobre la vestimenta femenina común de la dinastía Tang: estilo de pintura detallada y colorida, desglose modular de la estructura, significado de los patrones, detalles de los accesorios y escenas de uso, anotaciones en chino vertical 3:4.",
+          "Crea una ilustración de divulgación sobre el \"vestido oficial de la dinastía Ming\": patrones de bordado, tocados, cinturones y estructura de capas, con detalles y anotaciones, 3:4.",
+          "Genera una infografía sobre la vestimenta de los literatos de la dinastía Song: tipo de cuello y manga, preferencias de materiales y colores, escenas cotidianas, desglose en estilo de pintura detallada, 3:4."
+        ]
       }
     }
   },
@@ -160,7 +314,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para producir un conjunto completo de 'gráficos de análisis de libros': desde la portada visual hasta el análisis profundo de opiniones, con un estilo altamente uniforme.",
-        "who": "Ideal para bloggers de libros, bloggers de conocimiento, instructores de cursos que crean contenido de listas de libros, organización de notas de aprendizaje, y usuarios que desean explicar un libro claramente y aumentar su difusión y收藏."
+        "who": "Ideal para bloggers de libros, bloggers de conocimiento, instructores de cursos que crean contenido de listas de libros, organización de notas de aprendizaje, y usuarios que desean explicar un libro claramente y aumentar su difusión y收藏.",
+        "how": [
+          "Introduce el título del libro + autor + el público que deseas enfatizar (trabajo/emprendimiento/psicología/historia, etc.).",
+          "Proporciona de 3 a 5 puntos clave y de 2 a 3 citas memorables (si no hay, haz que el modelo genere a partir del resumen del contenido).",
+          "Requiere 6 diapositivas con estructura fija: cada una con título + puntos clave + símbolo visual; colores y jerarquía de fuentes unificados.",
+          "Revisa después de generar: ¿hay puntos repetidos? Si hay repeticiones, haz que el modelo \"mantenga solo un tema por diapositiva y redistribuya los puntos\"."
+        ],
+        "prompts": [
+          "Genera 6 gráficos de interpretación del libro \"Working Backwards\": gancho de la portada, tema central, citas memorables, puntos clave, relaciones de mecanismos/personajes, resumen de la trama del libro, estilo unificado, vertical 3:4.",
+          "Genera 6 gráficos de interpretación de \"Una frase vale mil palabras\": relaciones de tema y personajes, conflictos clave y líneas emocionales, citas representativas, resumen de la trama, adecuado para coleccionar y compartir en Xiaohongshu, 3:4.",
+          "Genera 6 gráficos para un libro sobre \"metodología de productos de IA\": dirigido a gerentes de producto, destacando marcos, casos, conceptos erróneos y listas de acciones, estilo visual unificado, 3:4."
+        ]
       }
     }
   },
@@ -171,7 +336,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para producir un 'mapa de vocabulario inmersivo': asigna el inglés, IPA y traducción correspondiente a cada objeto en la escena, mejorando la eficiencia de la memoria.",
-        "who": "Ideal para padres que enseñan inglés, maestros de inglés para niños/escuelas primarias, bloggers de aprendizaje de vocabulario, instituciones que producen materiales de aprendizaje, y usuarios que desean crear 'carteles de vocabulario imprimibles'."
+        "who": "Ideal para padres que enseñan inglés, maestros de inglés para niños/escuelas primarias, bloggers de aprendizaje de vocabulario, instituciones que producen materiales de aprendizaje, y usuarios que desean crear 'carteles de vocabulario imprimibles'.",
+        "how": [
+          "Selecciona una escena: cocina, supermercado, dormitorio, zoológico, patio de recreo, etc.",
+          "Requiere formato de anotación: English / IPA / 中文 (tres líneas), y enfatiza \"no cubrir los objetos\".",
+          "Controla la densidad: primero anota de 15 a 25 objetos de alta frecuencia, demasiados parecerán desordenados.",
+          "Revisa después de generar: cambia palabras difíciles por palabras más básicas, o agrega \"anotaciones agrupadas por área\"."
+        ],
+        "prompts": [
+          "Genera un gráfico de aprendizaje de palabras sobre la escena de \"cocina\": ilustración rica en detalles, anota 20 objetos comunes, cada anotación en tres líneas (inglés/IPA/chino), diseño claro sin cubrir el sujeto, vertical 3:4.",
+          "Genera un gráfico de vocabulario sobre la escena de \"supermercado\": incluye estantes, caja registradora, carrito de compras, etc., anota 25 sustantivos de alta frecuencia, anotación en inglés + IPA + chino en tres líneas, lo más cerca posible de los objetos pero sin cubrir, vertical 3:4.",
+          "Genera un cartel de vocabulario sobre la escena de \"zoológico\": anota animales e instalaciones (puerta, jaula, boleto, mapa, etc.), formato de tres líneas en inglés/IPA/chino, adecuado para impresión."
+        ]
       }
     }
   },
@@ -182,7 +358,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para generar una 'infografía retro de reliquias culturales': explica de manera accesible el valor múltiple de las reliquias a través de un diseño de cuadrantes, acompañado de hermosas ilustraciones dibujadas a mano.",
-        "who": "Ideal para cuentas de divulgación de patrimonio cultural, entusiastas de la historia, contenido de guías de museos, marcas de cultura creativa que cuentan historias, y creadores que desean explicar las reliquias de manera 'sistemática y coleccionable'."
+        "who": "Ideal para cuentas de divulgación de patrimonio cultural, entusiastas de la historia, contenido de guías de museos, marcas de cultura creativa que cuentan historias, y creadores que desean explicar las reliquias de manera 'sistemática y coleccionable'.",
+        "how": [
+          "Introduce el nombre del artefacto + año/dinastía + lugar de excavación/colección (opcional).",
+          "Proporciona los puntos clave de cuatro cuadrantes que deseas enfatizar (2–4 puntos por cuadrante).",
+          "Requiere un diseño retro: textura de papel, ilustraciones dibujadas a mano, notas numeradas, pequeña línea de tiempo o ventana de ubicación.",
+          "Revisa después de generar: ¿son precisos los términos? Si es necesario ser más cauteloso, usa \"posiblemente/generalmente se considera/especulación\" para expresar puntos inciertos."
+        ],
+        "prompts": [
+          "Genera un gráfico retro de cuatro cuadrantes sobre artefactos chinos: artefacto \"Ding de Simuwu\", ilustración central dibujada a mano + cuatro cuadrantes (posición histórica/valor arqueológico/logros artísticos/influencia contemporánea) + sección de conocimiento adicional, vertical 3:4.",
+          "Crea un gráfico retro sobre la \"espada de Goujian\": cuatro cuadrantes que explican características de la artesanía, antecedentes históricos, historia del descubrimiento, influencia cultural contemporánea, textura de papel retro, 3:4.",
+          "Genera un gráfico sobre \"figuritas de camello de la dinastía Tang\": estilo artístico, relación con el comercio/Ruta de la Seda, valor arqueológico, influencia estética moderna, estructura de cuatro cuadrantes, 3:4."
+        ]
       }
     }
   },
@@ -193,7 +380,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para crear 'divulgación retro de razas de perros': un perro dibujado a mano en el centro con anotaciones detalladas de anatomía, y secciones que explican el cuidado y las características de personalidad.",
-        "who": "Ideal para cuentas de divulgación sobre perros, contenido de tiendas de mascotas/entrenadores, nuevos dueños de perros, divulgación escolar, y creadores de contenido de mascotas que desean hacer contenido 'tan atractivo como una revista antigua'."
+        "who": "Ideal para cuentas de divulgación sobre perros, contenido de tiendas de mascotas/entrenadores, nuevos dueños de perros, divulgación escolar, y creadores de contenido de mascotas que desean hacer contenido 'tan atractivo como una revista antigua'.",
+        "how": [
+          "Introduce el nombre de la raza de perro + tamaño (pequeño/medio/grande) + escenario familiar (apartamento/con patio/con niños).",
+          "Enumera tus 3 principales preocupaciones: caída de pelo/nivel de actividad/cuidado del pelaje/entrenamiento/socialización, etc.",
+          "Requiere un estilo retro y científico: ilustración central + anotaciones de anatomía en líneas blancas + información modular (cuidado/entrenamiento/personaje/adaptación).",
+          "Revisa después de generar: ¿coincide con el escenario? Si no coincide, haz que el modelo \"reescriba las recomendaciones de cuidado y ejercicio según el escenario de apartamento/con niños\"."
+        ],
+        "prompts": [
+          "Genera un gráfico científico retro sobre la raza de perro: raza \"Golden Retriever\", 9:16, ilustración central dibujada a mano + anotaciones anatómicas, módulos que incluyen puntos clave de entrenamiento, nivel de actividad, cuidado del pelaje, resumen de carácter y grupos adecuados.",
+          "Crea un gráfico sobre la raza \"Corgi\": anotaciones sobre la estructura del tamaño, cuidado de la columna vertebral, entrenamiento y gestión de energía, cuidado del pelaje, diseño retro, 9:16.",
+          "Genera un gráfico sobre la raza \"Husky\": adaptabilidad al frío, necesidades de ejercicio, riesgos de destrucción y estrategias de entrenamiento, puntos clave de cuidado, ilustración central + anotaciones, 9:16."
+        ]
       }
     }
   },
@@ -204,7 +402,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para actualizar los platos a un 'cartel panorámico de comida': explica el proceso de cocción y la historia de los alimentos a través de una estética acuarelada y módulos estructurados.",
-        "who": "Ideal para bloggers de comida, contenido de marcas de restauración, promoción de turismo local, exhibiciones escolares, y creadores que desean contar la historia de los alimentos de manera más profunda."
+        "who": "Ideal para bloggers de comida, contenido de marcas de restauración, promoción de turismo local, exhibiciones escolares, y creadores que desean contar la historia de los alimentos de manera más profunda.",
+        "how": [
+          "Introduce el nombre del plato/comida + región/escuela (opcional) + un punto que deseas destacar (especias/técnica/historia cultural).",
+          "Enumera los ingredientes clave (5–10 elementos) y los pasos clave (5–7 pasos).",
+          "Módulos requeridos: pasos, ingredientes, palabras clave de sabor, origen y cultura, recuerdos locales/recomendaciones de escenas, formato vertical 3:4.",
+          "Revisa después de generar: si los pasos y los ingredientes coinciden; si no coinciden, haz que el modelo 'reordene los pasos según la lista de ingredientes y complete los tiempos de cocción clave'."
+        ],
+        "prompts": [
+          "Genera una infografía panorámica sobre 'Lanzhou Beef Noodle': visual principal en acuarela + 6 pasos de preparación + ingredientes clave + módulo de origen cultural y recuerdos locales, formato vertical 3:4 en chino.",
+          "Crea un cartel de divulgación sobre 'Croissant Francés': principios de capas plegadas, pasos clave, puntos de fallo comunes, ingredientes y palabras clave de sabor, formato 3:4.",
+          "Genera una infografía sobre 'Taco Mexicano': estructura de ingredientes, combinaciones de sabor, historia de origen, escenarios de adaptación (calle/fiesta familiar), formato vertical 3:4."
+        ]
       }
     }
   },
@@ -215,7 +424,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para generar un 'cartel panorámico de términos solares': analiza en profundidad el tiempo, fenómenos y costumbres culturales a través de una ilustración central y módulos circundantes.",
-        "who": "Ideal para divulgación de estudios clásicos/cultura tradicional, paneles escolares, contenido de educación para padres e hijos, marketing de marcas culturales/té, y personas que desean crear carteles de términos solares que sean 'imprimibles y coleccionables'."
+        "who": "Ideal para divulgación de estudios clásicos/cultura tradicional, paneles escolares, contenido de educación para padres e hijos, marketing de marcas culturales/té, y personas que desean crear carteles de términos solares que sean 'imprimibles y coleccionables'.",
+        "how": [
+          "Ingresa el nombre del término solar (como Lichun/Shuangjiang) + la región que deseas enfatizar (norte/jiangnan, etc., opcional).",
+          "Enumera tres puntos clave sobre los fenómenos (si no hay, haz que el modelo genere, pero debe ser razonable).",
+          "Requiere un formato modular: tiempo de cambio de término/longitud solar, tres fenómenos, costumbres, palabras clave de agricultura, alimentos representativos/plantas (opcional).",
+          "Revisa después de generar: si el texto es demasiado denso; si es demasiado denso, haz que el modelo 'reduzca a 3 líneas por módulo y aumente el tamaño de la fuente'."
+        ],
+        "prompts": [
+          "Genera un cartel de conocimiento sobre el término solar 'Lichun' en formato A3 vertical: ilustración retro central, módulos que incluyen tiempo de cambio de término/longitud solar, fenómenos, escenas de costumbres, etiquetas de agricultura y salud, formato en chino de alta legibilidad.",
+          "Crea un cartel sobre el término solar 'Shuangjiang': tres fenómenos, alimentos representativos, costumbres y agricultura, consejos de salud, ilustración retro + módulos de información, formato A3 vertical.",
+          "Genera una infografía sobre el término solar 'Xiazhi': información de cambio de término, cambios en los fenómenos, connotaciones culturales, sugerencias de alimentación y vida, formato A3 vertical de alta densidad pero legible."
+        ]
       }
     }
   },
@@ -226,7 +446,18 @@
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para materializar hipótesis creativas en un 'cartel de retroceso': presenta tres escenarios de bifurcación histórica diferentes a través de secciones estructuradas.",
-        "who": "Ideal para cuentas de divulgación histórica/cuentos, inspiración para escritura/guionismo, planificación de guiones para videos cortos, contenido educativo, y personas que disfrutan de hacer contenido sobre 'qué pasaría si la historia cambiara'."
+        "who": "Ideal para cuentas de divulgación histórica/cuentos, inspiración para escritura/guionismo, planificación de guiones para videos cortos, contenido educativo, y personas que disfrutan de hacer contenido sobre 'qué pasaría si la historia cambiara'.",
+        "how": [
+          "Determina un punto de cambio: personaje no muerto/guerra terminada antes/cambio en relaciones de alianza, etc.",
+          "Escribe claramente la historia base y el punto de bifurcación: qué sucedió en la historia real, dónde se supone que comienza la desviación.",
+          "Enumera 3 reacciones en cadena: cambios principales en política, economía, militar o cultura.",
+          "Revisa después de generar la estructura: título claro, punto de bifurcación definido, diferencias suficientes entre los tres escenarios."
+        ],
+        "prompts": [
+          "Genera 'What if · Plan de Inversión Histórica': supón que 'Napoleón vivió hasta 1850 y participó en el nuevo orden europeo', incluye perfiles de personajes, puntos de inflexión clave, relaciones de confrontación, bocetos de tres escenarios hipotéticos, acuarela + línea de tinta dibujada a mano en estilo retro, formato vertical 3:4.",
+          "What if: supón que 'la dinastía Ming completó la colonización marítima antes', produce una infografía retro: puntos de inflexión, aliados y enemigos, comparación de tres líneas de tiempo diferentes, diseño estructurado, formato vertical 3:4.",
+          "What if: supón que 'el telégrafo apareció en la época del Imperio Romano', genera un cartel de historia contrafactual: archivos/cadena de mecanismos/tres escenarios de deducción, estilo de infografía dibujada a mano retro."
+        ]
       }
     }
   },
@@ -237,7 +468,18 @@
     "content": {
       "sections": {
         "what": "Este template utiliza los Prompts de Nano Banana para crear tarjetas de comparación de personajes antiguos y modernos: compara las profesiones y habilidades de los personajes a través de una estructura de columnas divididas y resume sus puntos destacados de contraste.",
-        "who": "Ideal para creadores de contenido de videos cortos/imágenes que hacen 'contrastes antiguos y modernos', reinterpretaciones modernas de personajes históricos, comparaciones de personajes de IP, comparaciones de marcas, así como para creadores que buscan discusiones de alta interacción."
+        "who": "Ideal para creadores de contenido de videos cortos/imágenes que hacen 'contrastes antiguos y modernos', reinterpretaciones modernas de personajes históricos, comparaciones de personajes de IP, comparaciones de marcas, así como para creadores que buscan discusiones de alta interacción.",
+        "how": [
+          "Ingresa el personaje A (antiguo/tradicional) y el personaje B (moderno/contemporáneo) con su configuración de identidad y una etiqueta de una frase.",
+          "Proporciona a cada lado: 3 palabras clave, 2 habilidades, 2 objetos representativos, 1 debilidad/costo.",
+          "Requiere un formato de alta calidad y baja saturación: perfiles a la izquierda + tabla de comparación en la parte inferior + una 'resumen de puntos de contraste' en una frase.",
+          "Revisa después de generar: verifica si la comparación está 'en la misma dimensión'; si no está en la misma dimensión, haz que el modelo 'reescriba la tabla de comparación después de unificar la dimensión'."
+        ],
+        "prompts": [
+          "Genera una tarjeta de perfil de comparación entre antiguos y modernos: A 'Guerrero Antiguo' vs B 'Mensajero Moderno', comparando profesión/palabras clave/habilidades/objetos/debilidades, y proporciona un resumen de puntos de contraste, formato vertical 3:4 de baja saturación.",
+          "Crea una tarjeta de comparación: 'A Funcionaria de la Dinastía Tang' vs 'B Gerente de Producto Moderno': personalidad, habilidades, objetos personales, fuentes de presión, tabla de comparación en la parte inferior, formato 3:4.",
+          "Genera una tarjeta de comparación entre 'Estudiante Antiguo' vs 'Bloguero de Conocimiento Moderno': estilo unificado, formato de alta calidad, resumen de puntos de contraste en una frase, formato 3:4."
+        ]
       }
     }
   },
@@ -248,7 +490,18 @@
     "content": {
       "sections": {
         "what": "Este template combina los Prompts de Nano Banana para personificar los 16 tipos de personalidad como personajes animales en un escenario unificado, capturando con precisión las características de comportamiento típicas de cada personalidad.",
-        "who": "Ideal para creadores de contenido MBTI, cuentas de crecimiento personal/psicológico, gestión de comunidades, memes de fotos grupales con amigos, y para aquellos que desean crear contenido divertido sobre 'qué sucedería si 16 personalidades estuvieran en el mismo espacio'."
+        "who": "Ideal para creadores de contenido MBTI, cuentas de crecimiento personal/psicológico, gestión de comunidades, memes de fotos grupales con amigos, y para aquellos que desean crear contenido divertido sobre 'qué sucedería si 16 personalidades estuvieran en el mismo espacio'.",
+        "how": [
+          "Elige un escenario: cafetería, oficina, camping, biblioteca, playa, etc.",
+          "Establece el estilo de la ilustración y la atmósfera: ilustración curativa, acuarela ligera, cuento de hadas, estilo japonés, etc.",
+          "Ingresa los puntos de interacción que deseas enfatizar: quién lleva el ritmo, quién observa, quién socializa, quién está solo.",
+          "Revisa después de generar: verifica si los 16 códigos están completos, si las etiquetas son claras; si es necesario, agrega 'las etiquetas deben estar cerca de los personajes'."
+        ],
+        "prompts": [
+          "Genera una ilustración grupal curativa: 16 tipos de animales personificados según MBTI interactuando en un 'campamento de fin de semana', cada personaje con su código MBTI claramente etiquetado, luz suave, detalles ricos, formato vertical 3:4.",
+          "Genera un grupo de animales personificados según 16 personalidades: el escenario es 'área de oficina abierta', cada personalidad tiene acciones y expresiones típicas (socialización extrovertida, soledad introvertida, análisis racional, consuelo emocional, etc.), todas etiquetadas con el código MBTI, estilo de ilustración cálido.",
+          "Animales personificados según 16 personalidades en un mismo cuadro: el escenario es 'cafetería', cada personaje interactúa con objetos (libros, computadora, café, notas), la imagen es ordenada, las etiquetas no obstruyen el sujeto, formato vertical 3:4."
+        ]
       }
     }
   },
@@ -259,7 +512,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar 'tarjetas de personajes de batalla de estilo antiguo'. La imagen presenta la relación de confrontación entre dos personajes de manera dividida: en la parte superior están los retratos y títulos, en el medio la ilustración completa, y en la parte inferior las armas o elementos icónicos, junto con descripciones de identidad, facción, poder de combate, personalidad o relaciones, formando una imagen de configuración de batalla con fuerte narrativa y tensión.",
-        "who": "Ideal para creadores de contenido de artes marciales, fantasía, historia, Tres Reinos, configuraciones de novelas, personajes originales, así como para empaquetar personajes de juegos, carteles narrativos, gráficos de relaciones entre personajes, y contenido de comparación de personajes en plataformas sociales."
+        "who": "Ideal para creadores de contenido de artes marciales, fantasía, historia, Tres Reinos, configuraciones de novelas, personajes originales, así como para empaquetar personajes de juegos, carteles narrativos, gráficos de relaciones entre personajes, y contenido de comparación de personajes en plataformas sociales.",
+        "how": [
+          "Primero determina los dos oponentes, como héroe vs villano, estratega vs guerrero, espadachín vs cuchillero, o dos personajes históricos/originales.",
+          "Luego, añade la identidad, título, facción, habilidades, armas y temperamento representativo de cada personaje para resaltar las diferencias.",
+          "Especifica el estilo artístico, como estilo tradicional, acuarela, ilustración antigua, o estilo de personajes de juego, para decidir la calidad general.",
+          "Finalmente, enfatiza la composición y la sensación de duelo, como 'pantalla dividida a la izquierda y derecha, confrontación central, fuerte tensión entre personajes, módulo de perfil completo'; si no es lo suficientemente dramático, puedes pedir 'reforzar el conflicto visual y el contraste de identidad'."
+        ],
+        "prompts": [
+          "Genera una tarjeta de perfil de duelo de personajes de artes marciales: espadachín de rostro frío vs cuchillero arrogante, pantalla dividida, avatar y título en la parte superior, ilustración de cuerpo completo en el centro, exhibición de armas en la parte inferior, estilo tradicional, 3:4 vertical.",
+          "Crea una imagen de duelo de personajes de los Tres Reinos: Zhuge Liang vs Sima Yi, configuración de duelo de estrategas, el módulo de perfil de personajes incluye facción, etiquetas de estrategia y objetos representativos, cartel de infografía de estilo antiguo.",
+          "Genera un cartel de confrontación de personajes de fantasía original: mujer espadachín del camino recto vs líder de secta demoníaca, confrontación central, detalles ricos en vestuario, exhibición de artefactos en la parte inferior, fuerte sentido narrativo en general."
+        ]
       }
     }
   },
@@ -270,7 +534,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar imágenes largas para páginas de detalles de moda en e-commerce. La imagen utiliza un diseño vertical 9:16, que generalmente incluye la visual principal de un modelo, detalles de tela, descripción de puntos de diseño, características del corte y sugerencias de combinación, fusionando 'información del producto' con 'expresión de moda' en una imagen adecuada para la conversión.",
-        "who": "Ideal para marcas de ropa, vendedores de e-commerce, diseñadores independientes, creadores de contenido en Xiaohongshu, equipos visuales de marcas, y para aquellos que necesitan generar rápidamente páginas de detalles de moda de alta calidad y gráficos para redes sociales."
+        "who": "Ideal para marcas de ropa, vendedores de e-commerce, diseñadores independientes, creadores de contenido en Xiaohongshu, equipos visuales de marcas, y para aquellos que necesitan generar rápidamente páginas de detalles de moda de alta calidad y gráficos para redes sociales.",
+        "how": [
+          "Primero ingresa el tipo de ropa y la categoría principal, como vestido, traje, abrigo de plumas, camisa, sudadera, etc.",
+          "Luego describe el estilo de diseño y el público objetivo, como trabajo, estilo francés, minimalismo urbano, dulce y fresco, casual y deportivo, para ayudar al modelo a unificar la dirección visual.",
+          "Añade un módulo de puntos de venta, como tejido, corte, cuello, tipo de manga, ventajas del diseño, escenarios de uso o atributos estacionales, para aumentar la densidad de información del comercio electrónico en la imagen larga.",
+          "Finalmente, especifica el estilo comercial, como fotografía de marca de alta gama, luz suave cálida, fondo sencillo, diseño en cuatro secciones; si no se parece lo suficiente a una página de detalles, puedes pedir 'reforzar la zona de texto modular y los primeros planos de detalles'."
+        ],
+        "prompts": [
+          "Genera una imagen de detalles de comercio electrónico de un vestido francés: visual principal de modelo + primer plano de detalles de tejido + puntos destacados de corte + sugerencias de combinación, estilo comercial de alta gama en tonos cálidos, 9:16.",
+          "Crea una imagen larga de exhibición de productos de abrigo de plumas de invierno: diseño en cuatro secciones, destacando el tejido aislante, el diseño de capucha, el efecto al usar y el escenario de uso en el trabajo, adecuado para redes sociales y páginas de detalles.",
+          "Genera un cartel de página de detalles de traje masculino: modelo vistiendo, primer plano de línea de hombros y tejido, puntos destacados del diseño, sugerencias de escenario de negocios, en general limpio y de alta gama, vertical 4K."
+        ]
       }
     }
   },
@@ -281,7 +556,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar 'planos para retocar retratos'. La imagen generalmente presenta una disposición de dos columnas: la izquierda muestra la foto original, con líneas de anotación y texto de instrucciones que indican las áreas a tratar, como tono de piel, luz y sombra, fondo, cabello, rasgos faciales o arrugas de la ropa; la derecha muestra el efecto natural después de la edición, haciendo que la lógica de la edición sea visualmente intuitiva.",
-        "who": "Ideal para fotógrafos, editores de fotos, cuentas de enseñanza de fotografía, bloggers de diseño visual, creadores de retratos de belleza, y para equipos de contenido que necesitan hacer 'comparaciones antes y después de la edición' y 'mostrar los pasos de la edición'."
+        "who": "Ideal para fotógrafos, editores de fotos, cuentas de enseñanza de fotografía, bloggers de diseño visual, creadores de retratos de belleza, y para equipos de contenido que necesitan hacer 'comparaciones antes y después de la edición' y 'mostrar los pasos de la edición'.",
+        "how": [
+          "Primero determina el tipo de retrato original, como retrato fotográfico, retrato comercial, foto de identificación, foto de boda o estilo de fotografía callejera.",
+          "Luego enumera los puntos que necesitan corrección, como tono de piel uniforme, iluminación debajo de los ojos, limpieza de fondo, tridimensionalidad facial, cabello desordenado, detalles de ropa, etc.",
+          "Especifica la dirección de la edición, como textura natural, retoque comercial, estilo coreano transparente, retrato cinematográfico, para evitar desviaciones excesivas en el estilo final.",
+          "Finalmente, pide 'mantener la imagen original a la izquierda con anotaciones precisas, mostrar el resultado retocado a la derecha, en general como un plano de enseñanza de retoque profesional'; si el efecto es demasiado fuerte, puedes añadir 'mantenerlo real y natural, no exagerar el suavizado'."
+        ],
+        "prompts": [
+          "Genera un plano de retoque fotográfico: imagen original a la izquierda con anotaciones rojas y instrucciones de retoque en inglés, resultado retocado natural a la derecha, destacando la uniformidad del tono de piel, iluminación ocular y limpieza de fondo, estilo de tutorial profesional.",
+          "Crea una imagen de enseñanza de retoque de retrato comercial: a la izquierda, señala la optimización de luz y sombra, organización de cabello, reducción de arrugas, tratamiento de pliegues de ropa, a la derecha, resultado real con sensación de alta gama.",
+          "Genera un cartel de comparación de antes y después de retoque de retrato: diseño de dos columnas, fuerte sensación de enseñanza, anotaciones claras, en general limpio y profesional."
+        ]
       }
     }
   },
@@ -292,7 +578,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar imágenes de comparación de dos personalidades MBTI con alta capacidad de difusión. La imagen generalmente utiliza una estructura de dos cuadros, ya sea vertical u horizontal, mostrando las diferentes reacciones de dos tipos MBTI en la misma escena para crear un fuerte contraste, y se acompaña de personajes animales adorables, títulos llamativos y textos breves en chino, siendo ideal para la difusión en plataformas sociales y la creación en serie.",
-        "who": "Ideal para creadores de contenido MBTI, entusiastas de pruebas de personalidad, cuentas de entretenimiento, bloggers de memes, diseñadores de portadas para Xiaohongshu y videos cortos, así como para aquellos que desean continuar creando contenido de 'comparaciones de múltiples grupos de personalidades sobre el mismo tema'."
+        "who": "Ideal para creadores de contenido MBTI, entusiastas de pruebas de personalidad, cuentas de entretenimiento, bloggers de memes, diseñadores de portadas para Xiaohongshu y videos cortos, así como para aquellos que desean continuar creando contenido de 'comparaciones de múltiples grupos de personalidades sobre el mismo tema'.",
+        "how": [
+          "Primero determina los dos MBTI a comparar, como I vs E, J vs P, o combinaciones de personalidad más específicas.",
+          "Luego elige una situación de vida que genere un contraste fácil, como regresar a casa para el Año Nuevo, viajar, reuniones, citas, proyectos, cuidar niños, etc.",
+          "Establece la forma de expresión de los personajes, como antropomorfismo de animales, personajes en estilo chibi o personajes de cómic, para hacer las diferencias de personalidad más intuitivas.",
+          "Finalmente, añade requisitos de diseño, como comparación en dos cuadros, borde rojo, título en chino claro, texto breve y con humor; si no es lo suficientemente gracioso, puedes pedir 'reforzar el contraste y las expresiones de las dos personalidades'."
+        ],
+        "prompts": [
+          "Genera un meme de comparación de MBTI para el regreso a casa en el Año Nuevo: la parte superior es un ENFP socializando en el camino a casa, la parte inferior es un INTJ queriendo evitar el bullicio, personajes antropomorfos, comparación en dos cuadros, título en chino, estilo de tarjeta con borde rojo.",
+          "Crea una imagen de comparación de 'cómo se comportan los MBTI al viajar': ESFP vs ISTJ, mostrando diferencias marcadas en el aeropuerto y el hotel, personajes de dibujos animados adorables, vertical 4K.",
+          "Genera un meme de 'reacciones de MBTI en una reunión': ENTP e ISFJ mostrando diferentes comportamientos en la misma reunión, texto divertido, acciones exageradas, adecuado para difusión en redes sociales."
+        ]
       }
     }
   },
@@ -303,7 +600,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar imágenes de grupos de personajes en estilo de rollo tradicional chino. La imagen generalmente es una composición de rollo horizontal, con múltiples personajes distribuidos secuencialmente en la misma imagen, cada uno con acciones, vestimenta y sentido de identidad independientes, y se puede acompañar de nombres o etiquetas de personajes, combinando atractivo visual, narrativa y sentido de colección.",
-        "who": "Ideal para cuentas de cultura histórica, creadores visuales de estilo nacional, organización de personajes de novelas/dramas, planificación de personajes de IP, diseño de carteles de grupos, y para aquellos que necesitan crear contenido de 'múltiples personajes en un mismo marco, con un mundo unificado'."
+        "who": "Ideal para cuentas de cultura histórica, creadores visuales de estilo nacional, organización de personajes de novelas/dramas, planificación de personajes de IP, diseño de carteles de grupos, y para aquellos que necesitan crear contenido de 'múltiples personajes en un mismo marco, con un mundo unificado'.",
+        "how": [
+          "Primero determina el conjunto de personajes, como personajes de los Tres Reinos, personajes de Sueño en el Pabellón Rojo, ministros famosos de la antigüedad, personajes mitológicos o un grupo original de héroes.",
+          "Luego añade un escenario o tema unificado, como corte imperial, banquete, paisaje en rollo, viaje por el mundo, retrato de festividades, etc., para hacer el conjunto más completo.",
+          "Especifica el estilo de pintura, como pintura tradicional china, pintura detallada, ilustración antigua, o rollo de acuarela suave, para unificar la calidad visual.",
+          "Finalmente, pide anotaciones de nombres de personajes, diferencias claras entre personajes, y ritmo visual con capas; si los personajes son fáciles de confundir, puedes añadir 'reforzar la identificación de vestimenta y postura de cada personaje'."
+        ],
+        "prompts": [
+          "Genera un rollo de personajes de los Tres Reinos: Liu Bei, Cao Cao, Zhuge Liang, Guan Yu, etc., desplegados uno tras otro, composición en rollo horizontal, anotaciones de nombres, calidad de ilustración antigua, 4K.",
+          "Crea un rollo de personajes de Sueño en el Pabellón Rojo: personajes principales distribuidos en un fondo de jardín, con diversas formas de personajes, nombres claramente anotados, elegante y detallado.",
+          "Genera un cartel de rollo de grupo de héroes originales: varios personajes de diferentes sectas desplegados a lo largo de un paisaje, con vestimenta característica de cada secta, en general con un fuerte sentido narrativo y coleccionable."
+        ]
       }
     }
   },
@@ -314,7 +622,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar infografías de especies con estructura clara y visualmente unificada. La imagen generalmente tiene una especie como sujeto central, rodeada de módulos sobre clasificación, hábitat, comportamiento, dieta, distribución, ciclo de vida o nivel de protección, transformando el complejo conocimiento biológico en contenido infográfico adecuado para la difusión.",
-        "who": "Ideal para cuentas de divulgación natural, contenido educativo sobre animales y plantas, materiales para aulas escolares, visuales para museos o exposiciones temáticas de naturaleza, tarjetas de conocimiento para padres e hijos, y para cualquier creador que necesite convertir el conocimiento sobre especies en contenido visual."
+        "who": "Ideal para cuentas de divulgación natural, contenido educativo sobre animales y plantas, materiales para aulas escolares, visuales para museos o exposiciones temáticas de naturaleza, tarjetas de conocimiento para padres e hijos, y para cualquier creador que necesite convertir el conocimiento sobre especies en contenido visual.",
+        "how": [
+          "Primero determina el nombre de la especie y especifica si es un animal, planta, insecto, organismo marino u otra categoría.",
+          "Enumera los módulos de información que más deseas destacar, como posición taxonómica, características externas, hábitat, posición en la cadena alimentaria, estado de conservación, etc.",
+          "Especifica el estilo artístico, como ilustración científica, guía de biodiversidad, infografía moderna, o cartel educativo sobre la naturaleza, para decidir la calidad visual general.",
+          "Finalmente, pide 'sujeto centrado, módulos alrededor, diseño de información claro'; si el contenido no es lo suficientemente profesional, puedes añadir 'agregar nombre científico, área de distribución y etiquetas clave de divulgación'."
+        ],
+        "prompts": [
+          "Genera una infografía sobre la especie del leopardo de las nieves: el leopardo de las nieves se muestra en el centro, módulos alrededor incluyen hábitat, distribución, hábitos de caza, nivel de protección y características físicas, 3:4 vertical.",
+          "Crea una infografía sobre el ginkgo: el sujeto es una ilustración completa de la planta, los módulos incluyen clasificación, características de las hojas, entorno de crecimiento, significado histórico y valor de aplicación, diseño claro.",
+          "Genera una tarjeta de conocimiento sobre la mariposa monarca: ilustración realista en el centro, rodeada de información sobre ciclo de vida, rutas migratorias, fuentes de alimento y datos de conservación, adecuada para difusión educativa."
+        ]
       }
     }
   },
@@ -325,7 +644,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar 'mapas de paisajes urbanos en miniatura'. La imagen se asemeja a un modelo urbano hiperrealista que se eleva desde la superficie del mapa, fusionando edificios emblemáticos, redes viales, parques, cuerpos de agua, áreas residenciales y servicios de transporte, visualizando la información del espacio urbano de manera inmersiva, combinando la sensación de mapa y modelo.",
-        "who": "Ideal para contenido turístico, promoción de ciudades, exhibiciones de planificación urbana, educación geográfica, cuentas de turismo local, y para diseñadores y creadores que necesitan crear contenido visual de 'reconocimiento instantáneo de una ciudad'."
+        "who": "Ideal para contenido turístico, promoción de ciudades, exhibiciones de planificación urbana, educación geográfica, cuentas de turismo local, y para diseñadores y creadores que necesitan crear contenido visual de 'reconocimiento instantáneo de una ciudad'.",
+        "how": [
+          "Primero ingresa el nombre de la ciudad y especifica los edificios emblemáticos y áreas características que deseas conservar o resaltar.",
+          "Luego describe las características espaciales de la ciudad, como ríos que cruzan la ciudad, costera, ciudad montañosa, densidad de rascacielos, barrios europeos, comparación entre la ciudad antigua y la nueva, etc.",
+          "Añade elementos que deben aparecer, como carreteras, puentes, tráfico, metro, elevados, parques, costa, bosques, etc., para enriquecer las capas del mapa.",
+          "Finalmente, especifica el estilo artístico, como modelo en miniatura hiperrealista, mapa isométrico, sensación de cartel turístico o maquetas urbanas de alta precisión; si la ciudad no es lo suficientemente reconocible, puedes pedir 'reforzar las características de los edificios emblemáticos y la disposición general del barrio'."
+        ],
+        "prompts": [
+          "Genera un mapa de paisaje en miniatura de la ciudad de Shanghái: la Torre Oriental Perla, el grupo de rascacielos de Lujiazui, el río Huangpu y los puentes son claramente visibles, modelo en miniatura hiperrealista que se eleva desde la superficie del mapa, con ricos detalles.",
+          "Crea un mapa en miniatura de la ciudad montañosa de Chongqing: carreteras onduladas, tráfico tridimensional, edificios de la ciudad montañosa distribuidos densamente, incluyendo puentes, tren ligero y el río, con una fuerte capa visual.",
+          "Genera un paisaje en miniatura de la ciudad de París: la Torre Eiffel, el río Sena, las calles y los parques emergen de la superficie del mapa, combinando la sensación de mapa y modelo, adecuado para promoción turística."
+        ]
       }
     }
   },
@@ -336,7 +666,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para convertir eventos de actualidad, temas sociales, noticias de la industria o tendencias en una tarjeta de conocimiento clara y visualmente amigable. La imagen generalmente utiliza un estilo de acuarela dibujada a mano o infografía ligera, incluyendo título, conclusión clave, explicación de fondo, resumen de puntos clave y iconos auxiliares, ideal para lectura rápida y reenvío.",
-        "who": "Ideal para cuentas de análisis de tendencias, editores de medios, bloggers de conocimiento, observadores de la industria, creadores de contenido educativo, y para equipos que desean condensar noticias complejas o contenido de tendencias en 'una imagen que lo explique todo'."
+        "who": "Ideal para cuentas de análisis de tendencias, editores de medios, bloggers de conocimiento, observadores de la industria, creadores de contenido educativo, y para equipos que desean condensar noticias complejas o contenido de tendencias en 'una imagen que lo explique todo'.",
+        "how": [
+          "Primero determina el tema candente, como un evento de noticias, cambio de política, tendencia tecnológica, tema comercial o fenómeno social.",
+          "Luego desglosa de 3 a 5 puntos clave de información, como qué sucedió, por qué es importante, qué impacto tiene, y cómo se percibe.",
+          "Especifica el estilo de expresión, como acuarela a mano, tarjeta de conocimiento suave, infografía de medios, o estilo de reenvío en redes sociales, para que el contenido sea tanto profesional como atractivo.",
+          "Finalmente, pide 'título llamativo, secciones claras, contenido conciso'; si el contenido es demasiado disperso, puedes añadir 'comprimir a un resumen clave adecuado para leer en una tarjeta'."
+        ],
+        "prompts": [
+          "Genera una tarjeta de conocimiento sobre un tema candente: el tema es '¿Por qué la generación de videos por IA ha vuelto a ser popular recientemente?', incluye contexto, cambios clave, impacto en la industria y una conclusión, estilo de acuarela a mano, secciones claras.",
+          "Crea una tarjeta de conocimiento sobre un tema social: en torno a 'el regreso del trabajo remoto', explica las razones, pros y contras, impacto y tendencias futuras en 4 módulos, adecuado para difusión en redes sociales.",
+          "Genera una tarjeta de resumen de un tema comercial: el tema es '¿Por qué el lanzamiento de una nueva tecnología ha generado atención?', incluye iconos, resumen clave y sección de conclusión, estilo general de infografía ligera."
+        ]
       }
     }
   },
@@ -347,7 +688,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar carteles de mapas de constelaciones en estilo steampunk. La imagen combina la personalidad de las constelaciones, dispositivos mecánicos, símbolos estéticos y configuraciones de personajes, presentándolos en forma de 'mapa anatómico' o 'manual mecánico', que generalmente incluye el sujeto principal, descomposición de la estructura mecánica, etiquetas de constelaciones, módulos de personalidad y elementos decorativos retro.",
-        "who": "Ideal para creadores de contenido sobre constelaciones, diseño de carteles estéticos, entusiastas de la configuración de personalidades, ilustradores de fantasía, cuentas de contenido de estilo steampunk, y para aquellos que necesitan crear 'carteles de personalidad con alta visibilidad visual'."
+        "who": "Ideal para creadores de contenido sobre constelaciones, diseño de carteles estéticos, entusiastas de la configuración de personalidades, ilustradores de fantasía, cuentas de contenido de estilo steampunk, y para aquellos que necesitan crear 'carteles de personalidad con alta visibilidad visual'.",
+        "how": [
+          "Primero determina el nombre del signo zodiacal y especifica qué tipo de rasgo de personalidad deseas resaltar más, como racional, romántico, controlador, sensible, aventurero, etc.",
+          "Luego añade configuraciones visuales, como alas mecánicas, corazón de engranajes, mochila de vapor, estructura de cobre, dispositivos de alquimia, para hacer más clara la sensación steampunk.",
+          "Especifica la estructura del póster, como el protagonista centrado, anotaciones mecánicas al lado, un módulo de explicación de constelaciones en la parte inferior y un fondo con patrones de mapas antiguos.",
+          "Finalmente, solicita 'estilo retro steampunk, sensación de mapa anatómico, etiquetas claras'; si se parece demasiado a una ilustración común, puedes añadir 'mejorar la sensación de anotaciones mecánicas y manuales'."
+        ],
+        "prompts": [
+          "Genera un póster anatómico steampunk de Escorpio: el personaje principal centrado, con cola mecánica y armadura de cobre, rodeado de anotaciones estructurales y un módulo de personalidad, estilo de mapa retro.",
+          "Crea un póster de personalidad mecánica de Géminis: estructura de personajes gemelos, elementos de engranajes y relojes destacados, incluyendo etiquetas de constelación, desglose de personalidad y anotaciones al estilo de un manual.",
+          "Genera un mapa de constelación steampunk de Acuario: combinación de personajes y dispositivos de vapor, con tuberías, recipientes de vidrio y símbolos de alquimia, en general como un mapa mecánico del siglo XIX."
+        ]
       }
     }
   },
@@ -358,7 +710,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para generar infografías de frutas de alta calidad. La imagen generalmente presenta una ilustración realista o semi-realista de la fruta como sujeto central, rodeada de módulos sobre estructura, valor nutricional, distribución geográfica, ciclo de crecimiento, beneficios para la salud e historia de desarrollo, transformando el 'conocimiento sobre frutas' en un hermoso contenido visual adecuado para la difusión y exhibición.",
-        "who": "Ideal para cuentas de divulgación, creadores de contenido sobre alimentación saludable, instituciones educativas, marcas de alimentos, bloggers de medios, y para aquellos que necesitan crear carteles de conocimiento sobre alimentos de alta calidad, contenido de marca o materiales educativos para padres e hijos."
+        "who": "Ideal para cuentas de divulgación, creadores de contenido sobre alimentación saludable, instituciones educativas, marcas de alimentos, bloggers de medios, y para aquellos que necesitan crear carteles de conocimiento sobre alimentos de alta calidad, contenido de marca o materiales educativos para padres e hijos.",
+        "how": [
+          "Primero, ingresa el nombre de la fruta, como manzana, fresa, mango, arándano, durián, etc., y determina si necesitas resaltar alguna variedad.",
+          "Luego, enumera los módulos de información que más deseas enfatizar, como componentes nutricionales, entorno de cultivo, proceso de maduración, cultura de origen, beneficios o recomendaciones de consumo.",
+          "Especifica el estilo visual, como infografía científica, dibujo natural a mano, guía de botánica retro, o estilo moderno de divulgación comercial, para decidir la calidad del producto final.",
+          "Finalmente, solicita 'sujeto claro, anotaciones profesionales, módulos ricos'; si deseas que se parezca más a un póster de alta gama, puedes añadir 'mejorar la calidad, el espacio en blanco y la jerarquía de diseño'."
+        ],
+        "prompts": [
+          "Genera una infografía sobre la manzana: el sujeto es una manzana completa y su sección, rodeada de módulos que incluyen anotaciones estructurales, valor nutricional, principales regiones de cultivo y beneficios de consumo, en formato vertical 3:4.",
+          "Crea un póster de conocimiento sobre el mango: resalta las diferencias de variedades, el proceso de maduración, los componentes nutricionales y la distribución en regiones tropicales, con un estilo de divulgación comercial de alta calidad.",
+          "Genera una infografía sobre arándanos: ilustración realista en el centro, con información sobre valor antioxidante, entorno de cultivo, ciclo de crecimiento y recomendaciones de consumo alrededor, adecuada para compartir en plataformas sociales."
+        ]
       }
     }
   },
@@ -369,7 +732,18 @@
     "content": {
       "sections": {
         "what": "Este template se utiliza para transformar los tipos de personalidad MBTI en escenas de personajes visualmente impactantes y de gran difusión. No se limita a una forma fija, sino que es un template abstracto MBTI universal: puede mapear MBTI a animales, personajes históricos, personajes de series, fundadores de IA, personajes de campus, etc., y colocarlos en un escenario específico, generando contenido visual con marcadas diferencias de personalidad.",
-        "who": "Ideal para creadores de contenido en redes sociales, contenido de extensión de pruebas de personalidad, análisis de personajes, contenido de mezcla de IP, y para creadores que necesitan contar historias a través de 'personalidad + personaje + escenario'. Especialmente adecuado para entusiastas de MBTI, bloggers de contenido, cuentas de psicología, cuentas de entretenimiento, cuentas de adaptaciones históricas, y para aquellos que crean contenido en serie."
+        "who": "Ideal para creadores de contenido en redes sociales, contenido de extensión de pruebas de personalidad, análisis de personajes, contenido de mezcla de IP, y para creadores que necesitan contar historias a través de 'personalidad + personaje + escenario'. Especialmente adecuado para entusiastas de MBTI, bloggers de contenido, cuentas de psicología, cuentas de entretenimiento, cuentas de adaptaciones históricas, y para aquellos que crean contenido en serie.",
+        "how": [
+          "Primero determina un tema claro de MBTI, como 'el desempeño de MBTI en el lugar de trabajo', 'MBTI como personajes de los Tres Reinos', 'MBTI en situaciones de viaje'.",
+          "Luego determina el conjunto de personajes (character set), como animales, personajes de Friends, personajes de Sueño en el Pabellón Rojo, fundadores de IA, personajes históricos, etc.",
+          "Elige un escenario específico para que diferentes personalidades se amplifiquen y se diferencien en la misma situación, como reuniones, vuelos, fiestas, viajes, discusiones de emprendimiento, etc.",
+          "Finalmente, agrega requisitos de estilo, como caricaturas adorables, realismo cinematográfico, grupos de estilo de anime, estilo de infografía de cartel, etc. Después de generar, si las diferencias entre los personajes no son lo suficientemente claras, puedes pedir 'reforzar las acciones, expresiones e interacciones de diferentes personalidades'."
+        ],
+        "prompts": [
+          "Genera un cartel grupal de 'MBTI como personajes de Friends': en una reunión de amigos, diferentes personalidades de MBTI mapeadas a personajes de Friends, reflejando diferentes reacciones sociales e interacciones, en general, ilustraciones de personajes de alta viralidad, formato vertical 3:4.",
+          "Crea 'MBTI en situaciones de reunión': el conjunto de personajes son emprendedores de IA, diferentes personalidades muestran diferentes estados en la sala de reuniones discutiendo la dirección del producto, información clara, comparación de personajes marcada, fuerte sensación de cartel, formato 3:4.",
+          "Genera un tema de 'MBTI si viviera en los Tres Reinos': mapeando personajes de los Tres Reinos a diferentes personalidades de MBTI, mostrando sus diferencias de carácter en la escena de discusión de estrategias en el campamento militar, estilo de ilustración de personajes históricos de alta calidad, formato 3:4."
+        ]
       }
     }
   },
@@ -378,7 +752,18 @@
     "content": {
       "sections": {
         "what": "Este template aplica los Prompts de Nano Banana para transformar el pronóstico del tiempo en un 'escenario urbano 3D en miniatura': edificios emblemáticos y efectos climáticos dinámicos se entrelazan naturalmente, con datos meteorológicos automáticamente dispuestos en la parte superior.",
-        "who": "Ideal para cuentas de vida urbana, oficinas de turismo/gestión de atracciones, creadores de contenido sobre el clima, marcas que crean 'imágenes del ambiente del día', y para aquellos que desean presentar la información meteorológica de una manera más estética."
+        "who": "Ideal para cuentas de vida urbana, oficinas de turismo/gestión de atracciones, creadores de contenido sobre el clima, marcas que crean 'imágenes del ambiente del día', y para aquellos que desean presentar la información meteorológica de una manera más estética.",
+        "how": [
+          "Ingresa el nombre de la ciudad + fecha + rango de temperatura + clima (soleado/nublado/lluvia ligera/nieve intensa/niebla, etc.).",
+          "Especifica un hito representativo (si no hay, usa 'silhouette de la ciudad + edificio emblemático').",
+          "Requiere un 3D en miniatura equidistante: elementos climáticos interactuando con edificios (reflejos de gotas de lluvia/nubes/nevada/banderas de viento).",
+          "Revisa después de generar: si el texto es claro; si no es claro, pide 'aumentar el contraste del texto y el espacio en blanco, sin cambiar el estilo de la escena'."
+        ],
+        "prompts": [
+          "Genera 'Shanghai Pronóstico del Tiempo en Miniatura': el hito de la Perla Oriental en el centro, lluvia ligera + suelo húmedo y reflectante, en la parte superior el nombre de la ciudad/fecha/temperatura, 1:1 3D equidistante, adecuado para compartir en redes sociales.",
+          "Crea 'Mapa del Tiempo de Nueva York': de nublado a soleado, escena en miniatura del Empire State Building/silueta de la ciudad, efecto de nubes y luz solar, barra de información en la parte superior, 1:1.",
+          "Genera 'Kyoto Tiempo de Nieve en Invierno': hito estilo Templo Kiyomizu + montones de nieve y partículas de nieve, información meteorológica en la parte superior, 1:1 3D en miniatura equidistante."
+        ]
       }
     }
   },
@@ -387,7 +772,18 @@
     "content": {
       "sections": {
         "what": "Este template, basado en los Prompts de Nano Banana, genera 'tarjetas de batalla de estilo nacional': utiliza un fondo de campo de tinta para intensificar la sensación de conflicto entre los personajes, y viene con títulos y anotaciones de debilidades detalladas.",
-        "who": "Ideal para reinterpretaciones de estilo nacional, temas de batallas de personajes, votaciones interactivas en Xiaohongshu/videos cortos, promoción de personajes de juegos/cómics, y para creadores que buscan un fuerte impacto visual y discusión en los comentarios."
+        "who": "Ideal para reinterpretaciones de estilo nacional, temas de batallas de personajes, votaciones interactivas en Xiaohongshu/videos cortos, promoción de personajes de juegos/cómics, y para creadores que buscan un fuerte impacto visual y discusión en los comentarios.",
+        "how": [
+          "Ingresa el personaje A y el personaje B: título/escuela/arma/habilidad/debilidad (al menos 3 datos cada uno).",
+          "Establece el tema del duelo: velocidad vs fuerza, astucia vs fuerza bruta, protección vs destrucción, etc.",
+          "Requiere un diseño: pantalla dividida a la izquierda y derecha + etiquetas de avatar en la parte superior + barra de objetos en la parte inferior + elementos de separación de duelo (salpicaduras de tinta/efecto de espada).",
+          "Revisa después de generar: verifica si la intensidad de ambos lados es equilibrada; si un lado es demasiado fuerte, haz que el modelo 'agregue puntos de restricción o mecanismos de costo del oponente'."
+        ],
+        "prompts": [
+          "Genera una tarjeta de perfil de duelo de estilo nacional: A 'Rey Xiang Yu' vs B 'Dios de la Guerra Lü Bu', pantalla dividida, fondo de batalla en tinta y acuarela, información de perfil + barra de objetos icónicos + comparación de habilidades y debilidades, formato vertical 3:4.",
+          "Crea una tarjeta de duelo: 'A Hua Mulan' vs 'B Heroína de la Puerta Yang (personaje representativo)': enfatiza las diferencias en el estilo de combate y los puntos de restricción, pantalla dividida de alta tensión, formato 3:4.",
+          "Genera un perfil de duelo entre 'Espadachín de Wudang' vs 'Monje de Shaolin': arma/método de movimiento/energía interna/debilidad, iconos de objetos y habilidades en la parte inferior, atmósfera de duelo en tinta, formato 3:4."
+        ]
       }
     }
   }

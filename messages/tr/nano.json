@@ -6,7 +6,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, optimize edilmiş Nano Banana anahtar kelimeleri ile 'tek bileşenli geleneksel bitkisel tıp' için koleksiyonluk bir panorama ayrıntılı görüntü oluşturur: dış görünüm/ kesit detayları, özellikler ve temel fayda etiketlerini içerir, net bir bilimsel düzenleme kullanır.",
-        "who": "Geleneksel tıp bilim hesapları, sağlık içerik üreticileri, bitki dükkanları/markaları için bilgi posterleri, öğrenciler için öğrenme notları ve bitkileri net bir şekilde anlatmak isteyen (uzun yazılar yazmak istemeyen) kullanıcılar için uygundur."
+        "who": "Geleneksel tıp bilim hesapları, sağlık içerik üreticileri, bitki dükkanları/markaları için bilgi posterleri, öğrenciler için öğrenme notları ve bitkileri net bir şekilde anlatmak isteyen (uzun yazılar yazmak istemeyen) kullanıcılar için uygundur.",
+        "how": [
+          "Bitki adını Çince + takma adını (varsa) + yaygın formunu (dilim/ham bitki) girin.",
+          "Vurgulamak istediğiniz modülü belirtin: tat ve özellikler/ana etkiler/tanıma noktaları/yasaklar ve dikkat edilmesi gerekenler/modern formülasyonlar (tablet, kapsül vb.).",
+          "“Parçalı görünüm” talep edin: görünüm, kesit, doku, önemli noktaları oklarla işaretleyin; bilgi yoğunluğu yüksek ama okunabilir olmalı.",
+          "Üretim sonrası kontrol: terimler tutarlı mı (özellikler, etkiler etiketleri); sapma varsa, “verdiğiniz noktaları dikkate alarak metni yeniden yazın, görsel stil değişmesin” talep edin."
+        ],
+        "prompts": [
+          "“Tek bitki malzemesi panoramik parçalı görünüm” oluşturun: bitki “Astragalus”, görünüm ve kesit doku işaretlemeleri, tat ve özellikler, ana etkiler etiketleri, yaygın formülasyonlar ve kullanım senaryoları, dikkat edilmesi gerekenler, 3:4 dikey, yüksek bilgi yoğunluğu bilimsel düzen.",
+          "“Angelica” bitkisi için Parçalı Sayfa oluşturun: dilim yapısı, tanıma noktaları (renk/koku/kesit), ana etkiler, eşleştirme fikirleri (isteğe bağlı), yasak uyarıları, net ok işaretlemeleri, 3:4.",
+          "“Kuru portakal kabuğu” parçalı görünüm oluşturun: üretim yeri ve yıl farklılıkları, görünüm doku yakın çekimi, tat ve özellikler, günlük kullanım senaryoları (çay demlemek/yemek), retro ama ferah bir Çince bilgi grafiği düzeni, 3:4."
+        ]
       }
     }
   },
@@ -17,7 +28,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, özel Nano Banana anahtar kelimeleri kullanarak 'izometrik piksel müzesi' zaman çizelgesi oluşturur: tarihi aşamaları gezilebilir sergi alanlarına dönüştürür, her sergi alanı bir dönemi temsil eder ve anahtar nokta tabelaları ile donatılmıştır.",
-        "who": "Bilim/histori/teknoloji evrimi içerikleri, ürün versiyonları gösterimi, eğitim açıklamaları (sınıf/notlar), araştırma raporlarındaki karşılaştırmalı zaman çizelgeleri ve 'gelişim tarihini' daha çekici hale getirmek isteyen yaratıcılar için uygundur."
+        "who": "Bilim/histori/teknoloji evrimi içerikleri, ürün versiyonları gösterimi, eğitim açıklamaları (sınıf/notlar), araştırma raporlarındaki karşılaştırmalı zaman çizelgeleri ve 'gelişim tarihini' daha çekici hale getirmek isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Tema ve zaman aralığını belirleyin (örneğin “insan evrimi”, “telefon biçim evrimi”, “AI model iterasyonu”).",
+          "6–10 aşama listeleyin: her aşama için 1 ana değişim cümlesi + 1 simge (ikon/nesne/simge).",
+          "Eşit aralıklı piksel sergisi talep edin: mekansal ilerleme, sergi numarası, aşama başlıkları (Çince ve İngilizce olabilir), ve küçük bir simge/ölçek ekleyin.",
+          "Üretim sonrası kontrol: aşamalar zaman sırasına göre mi; eğer sıralı değilse, “görsel stil değişmesin, sergi panolarını ve düğümleri yeniden düzenleyin” talep edin."
+        ],
+        "prompts": [
+          "“İnsan evrimi müzesi” piksel eşit aralıklı zaman çizgisi oluşturun: Homo habilis → Homo erectus → Heidelbergensis → Neandertal → Homo sapiens, her aşamada simgesel araçlar/özellikler ve ana düğüm panoları, Çince ve İngilizce küçük başlıklar, 3:4 dikey.",
+          "“Telefon biçim evrimi müzesi” oluşturun: fonksiyonel telefon → katlanabilir → dokunmatik ekran → tam ekran → katlanabilir ekran → AR gözlükleri (kavram), her aşamada bir temsilci model/özellik simgesi, eşit aralıklı piksel sergisi, 3:4.",
+          "“Web geliştirme çerçeveleri evrimi” piksel müzesi oluşturun: jQuery → Backbone → Angular → React → Next.js → RSC (kavram), her aşamada ana fikir bir cümle + simge, net düğüm işaretlemeleri, 3:4."
+        ]
       }
     }
   },
@@ -28,7 +50,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimelerini kullanarak seyahat planını 'el yapımı seyahat haritası' haline dönüştürür: günlere bölünmüş yolları gösterir, turistik yerler ve yemeklerin Q versiyon simgelerini içerir, günlük hareket yollarını görsel olarak oluşturur.",
-        "who": "Seyahat rehberi paylaşımı, Xiaohongshu/Douyin seyahat blog yazarları, aile gezileri için seyahat kartları, seyahat acenteleri/pansiyonlar için öneri posterleri ve seyahatlerini net ve güzel bir şekilde anlatmak isteyen kullanıcılar için uygundur."
+        "who": "Seyahat rehberi paylaşımı, Xiaohongshu/Douyin seyahat blog yazarları, aile gezileri için seyahat kartları, seyahat acenteleri/pansiyonlar için öneri posterleri ve seyahatlerini net ve güzel bir şekilde anlatmak isteyen kullanıcılar için uygundur.",
+        "how": [
+          "Hedef yeri + seyahat gün sayısını + her günün ana yerlerini (sırayla) girin.",
+          "Tercihleri ekleyin: yemek öncelikli/çocuk dostu/fotoğraf noktaları/yürüyüş/alışveriş ve 3–5 zorunlu durak listeleyin.",
+          "Harita tarzı talep edin: Q versiyonu şifalı el çizimi, Çince etiketleme, günlük rotayı farklı renkler/çizgi stilleri ile ayırın (tanımlanabilir, belirli renk değerleri belirtmek zorunda değil).",
+          "Üretim sonrası kontrol: rota dolambaçlı mı, her gün aşırı mı; eğer aşırıysa, modelden “programı sabah/öğleden sonra/gece olarak ayırmasını ve nokta sayısını azaltmasını” isteyin."
+        ],
+        "prompts": [
+          "“Tokyo 4 günlük el çizimi seyahat haritası” oluşturun: Day1–Day4 bölümleri, turistik yerler, yemekler, konaklama ve ulaşım yöntemleri ile işaretleyin, Q versiyonu şifalı stil, tamamen Çince etiketleme, 3:4 dikey, yazdırılabilir.",
+          "“San Francisco 2 günlük çocuk dostu seyahat haritası” oluşturun: hayvanat bahçesi/bilim müzesi/deniz kenarı + restoran önerileri, net rota, küçük ipuçları (sıra/zaman dilimi) ekleyin, Q versiyonu el çizimi, 3:4.",
+          "“Chengdu 3 günlük yemek rotası haritası” oluşturun: Kuanzhai Alley/Jinli/Taikoo Li/Hotpot skewers vb., günlük rota + yemek simgeleri vurgulanmış, 3:4 dikey."
+        ]
       }
     }
   },
@@ -39,7 +72,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, profesyonel Nano Banana anahtar kelimeleri kullanarak mimari fotoğrafları 'HUD teknik analiz panosu' haline getirir: beyaz hat etiketleri, boyut verileri ve yapı noktaları ile üst üste bindirilmiş, bilim kurgu mühendislik kılavuzu gibi görsel bir etki sunar.",
-        "who": "Mimarlık/tasarım öğrencileri için portföy, mimari bilim hesapları, şehir simgeleri yorumlama içerikleri, sergi rehber posterleri ve 'görsel olarak havalı ama daha net anlatan' mimari içerik yaratıcıları için uygundur."
+        "who": "Mimarlık/tasarım öğrencileri için portföy, mimari bilim hesapları, şehir simgeleri yorumlama içerikleri, sergi rehber posterleri ve 'görsel olarak havalı ama daha net anlatan' mimari içerik yaratıcıları için uygundur.",
+        "how": [
+          "Bina adını + şehri + vurgulamak istediğiniz 3–5 mühendislik/yapı özelliğini (örneğin, çıkıntı, kiriş, cephe sistemi) girin.",
+          "Alıntı yapılabilir veri aralığını belirtin (yükseklik, kat sayısı, malzeme türü; belirsizse “tahmini/ortalama” yazabilirsiniz).",
+          "HUD tarzı talep edin: beyaz ince çizgi notları, numaralı açıklamalar, veri panelleri, düzlem/kesit küçük pencereleri, dikey 3:4.",
+          "Üretim sonrası kontrol: etiketler ana yapıyı kapatıyor mu; eğer kapatıyorsa, “etiketleri kenara taşıyın ve bağlantı çizgileri kullanın” talep edin."
+        ],
+        "prompts": [
+          "“Dubai Burj Khalifa” HUD bina analiz grafiği oluşturun: ana fotoğraf + beyaz çizgi teknik etiketleri, yükseklik/kat/ yapı sistemi noktaları, cephe malzemeleri, rüzgar yükü tasarım özellikleri ve kesit küçük resim ve veri panelleri ile birlikte, 3:4 dikey.",
+          "“Sydney Opera House” HUD bilgi grafiği oluşturun: kabuk yapısı, önceden hazırlanmış parçalar, malzeme ve akustik alan noktaları, beyaz çizgi notları + numaralı açıklamalar + küçük düzlem şeması, 3:4.",
+          "“Zagreb Çağdaş Sanat Müzesi (örnek)” bina analiz panosu oluşturun: aydınlatma, hareket yolları, yapı ve malzeme vurgulayın, fotoğraflar üzerine HUD notları ekleyin, altta 3 tasarım özelliği özeti verin, 3:4."
+        ]
       }
     }
   },
@@ -50,7 +94,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri ile bir siberpunk tarzında 'tehdit altındaki türler bilgi kartı' oluşturur: altı ana modül bilgisi ve basit grafiklerle birleştirir, Çince ve İngilizce etiketlemeyi destekler, görsel bilim için uygundur.",
-        "who": "Doğa bilim hesapları, hayır/çevre örgütleri içerikleri, öğrenciler için tür raporları, hayvanat bahçeleri/müze rehber posterleri ve yüksek görsel etkili infografikler seven yaratıcılar için uygundur."
+        "who": "Doğa bilim hesapları, hayır/çevre örgütleri içerikleri, öğrenciler için tür raporları, hayvanat bahçeleri/müze rehber posterleri ve yüksek görsel etkili infografikler seven yaratıcılar için uygundur.",
+        "how": [
+          "Tür adını (Çince ve İngilizce) + dağılım alanını + 3 belirgin özelliği (vücut şekli/rengi/davranışı) girin.",
+          "Tehdit listesini (habitat tahribi/kaçak avcılık/iklim vb.) ve koruma eylemlerini (koruma alanları/yasal düzenlemeler/kamu katılımı) belirtin.",
+          "6 modül yapısı + popülasyon eğilim küçük resmi (artış/azalış/belirsiz) + Çince ve İngilizce başlık ve noktalar talep edin.",
+          "Üretim sonrası kontrol: bilgi çok “genel mi”; eğer genel ise, 1–2 somut gerçek noktası ekleyin ve modelden modül metnini yeniden yazmasını isteyin."
+        ],
+        "prompts": [
+          "“Kar leoparı” tehdit altındaki türler siberpunk bilgi kartı oluşturun: Çince ve İngilizce etiketleme, 6 ana modül + popülasyon eğilim grafiği + ana tehditler ve koruma eylemleri, 3:4 dikey, yüksek kontrast neon bilgi grafiği.",
+          "“Orangutan” bilgi kartı oluşturun: morfoloji/habitat/davranış/eğilim/tehditler/koruma ve kültürel ilişkiler, dağılım haritası küçük penceresi ve eğilim grafiği ekleyin, çift dilli başlık, 3:4.",
+          "“Caretta caretta” tehdit altındaki tür kartı oluşturun: deniz plastikleri ve balık ağları tehditlerini, üreme ve göç davranışlarını vurgulayın, 6 modül yapısı + veri panelleri, 3:4."
+        ]
       }
     }
   },
@@ -61,7 +116,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak karakter tasarım ayrıştırma panosu oluşturur: ana görsel tam boy fotoğrafı, kıyafet detayları, ifade seti ve kişisel eşyalar listesi içerir, profesyonel bir el yazısı tarzı sunar.",
-        "who": "İllüstratörler/kavram tasarımı, fan yapımı, roman/çizgi roman karakter tasarımı, oyun prototip karakter kartları ve karakter detaylarını bir seferde net bir şekilde anlatmak isteyen yaratıcılar için uygundur."
+        "who": "İllüstratörler/kavram tasarımı, fan yapımı, roman/çizgi roman karakter tasarımı, oyun prototip karakter kartları ve karakter detaylarını bir seferde net bir şekilde anlatmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Karakter kimliğini (meslek/çağ/cephe) + 3 kişilik anahtar kelimeyi + 1 karakterin özdeyişi/ilkesi girin.",
+          "Kıyafet katmanlarını (dış giysi/iç giyim/ayakkabı/şapka vb.) ve ana nesneleri (silah/araç/hatıra) listeleyin.",
+          "Düzen talep edin: ana görsel ortada, solda ve sağda detay küçük pencereleri (malzeme/doku/ifade), el yazısı notları stili, 3:4 dikey.",
+          "Üretim sonrası kontrol: nesneler kimlikle uyumlu mu; eğer uyumlu değilse, modelden “kimliğe göre nesneleri yeniden seçmesini ama genel görsel stilin korunmasını” isteyin."
+        ],
+        "prompts": [
+          "Karakter parçalama tasarım grafiği oluşturun: karakter “steampunk kadın mühendis”, kıyafet katmanları, ifade seti, malzeme yakın çekimi, taşınabilir aletler ve ana nesneler, el yazısı Çince notları, 3:4 dikey.",
+          "“Tang dönemi kadın kahramanı” karakter tasarım panosu oluşturun: ince işçilik + hafif su renkli doku, kıyafet katmanları, aksesuar detayları, silah ve taşınabilir nesneler, 4 farklı ifade, Çince notlar, 3:4.",
+          "“Gelecek şehir kuryesi” karakter parçalama oluşturun: üniforma katmanları, sırt çantası yapısı, yaygın aletler, kimlik rozetleri ve etiket detayları, net işaretlemeler, 3:4."
+        ]
       }
     }
   },
@@ -72,7 +138,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak tarifleri 'görsel poster' haline dönüştürür: adım adım grafikler ve bitmiş ürün fotoğrafları ile gösterir, sadece yemek yapma sürecini net bir şekilde anlatmakla kalmaz, aynı zamanda sosyal paylaşım estetiğine de önem verir.",
-        "who": "Yeni yıl akşam yemeği paylaşımı, aile tarifleri düzenleme, yemek hesapları içerik üretimi, restoran markaları için menü posterleri ve 'yemek yapma adımlarını net bir şekilde anlatmak' isteyen kullanıcılar için uygundur."
+        "who": "Yeni yıl akşam yemeği paylaşımı, aile tarifleri düzenleme, yemek hesapları içerik üretimi, restoran markaları için menü posterleri ve 'yemek yapma adımlarını net bir şekilde anlatmak' isteyen kullanıcılar için uygundur.",
+        "how": [
+          "Yemek adını ve tat tercihlerini (hafif/acı/tatlı) girin.",
+          "Malzeme listesini ve ana miktarları (gram/kaşık) listeleyin ve “adımların uygulanabilir olması gerektiğini” vurgulayın.",
+          "5–7 adımda adım adım açıklama talep edin: pişirme süresi/ana hareketler yazılmalıdır.",
+          "Üretim sonrası kontrol: malzemeler ve adımlar uyumlu mu; eğer uyumlu değilse, modelden “listeye göre adımları yeniden sıralamasını” isteyin."
+        ],
+        "prompts": [
+          "“Yeni yıl akşamı görsel yemek tarifleri posteri” oluşturun: yemek “Pekin ördeği”, ana görsel, malzemeler ve miktar, 7 adım açıklama, içecek eşleşmeleri ve uğurlu anlamlar, Yeni yıl atmosferi, 3:4 dikey.",
+          "“Mapo tofu” görsel tarif oluşturun: malzeme gramajı, ana pişirme ipuçları, 6 adımda açıklama, düzen net ve paylaşım için uygun, 3:4.",
+          "“İspanyol deniz ürünleri pilavı Paella” tarif posteri oluşturun: malzeme listesi, adım açıklamaları, yaygın hata noktaları ve düzeltme önerileri, 3:4 dikey."
+        ]
       }
     }
   },
@@ -83,7 +160,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak 'karakter Dossier dosya posterleri' oluşturur: karakterin temel ayarlarını, motivasyonlarını ve karmaşık ilişki ağını yapılandırılmış sütunlarla gösterir.",
-        "who": "Yazarlar/senaristler için karakter biyografileri, fan yapımı karakter analiz gönderileri, oyun/çizgi roman tanıtımları, CP ilişkileri düzenleme ve karakterin 'motivasyon ve ilişkilerini' net bir şekilde anlatmak isteyen yaratıcılar için uygundur."
+        "who": "Yazarlar/senaristler için karakter biyografileri, fan yapımı karakter analiz gönderileri, oyun/çizgi roman tanıtımları, CP ilişkileri düzenleme ve karakterin 'motivasyon ve ilişkilerini' net bir şekilde anlatmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Karakter arka planını (köken/hedef/zayıflık) + ana ilişki ağını (3–6 kişi: müttefik/rakip/ilgi alanı) girin.",
+          "Yetenek ve maliyetleri belirtin: yetenek nedir, maliyet/kısıtlama nedir (ne kadar somut olursa o kadar iyi).",
+          "Düzen talep edin: ana görsel + ifade çubuğu + sol ve sağ sütun + alt kısımda nesne parçalama; başlık “kod/şifre numarası” içerebilir.",
+          "Üretim sonrası kontrol: ilişkiler tutarlı mı; eğer çelişkiliyse, modelden “görsel stil korunarak, ilişki sütununu yeniden yazmasını ve unvanları birleştirmesini” isteyin."
+        ],
+        "prompts": [
+          "Karakter Dossier oluşturun: karakter “yeraltı gazetecisi”, ana görsel portre + ifade tasarımı + sol ve sağ sütun (arka plan/motiv/yetenek ve maliyet/bağlantı ilişkisi) + alt kısımda ana nesne parçalama (kamera, ses kaydedici vb.), 3:4 dikey.",
+          "“Eski dönem danışmanı” karakter dosyası analiz posteri oluşturun: dosya numarası, kişilik etiketleri, strateji tarzı, ilişki ağı (hükümdar/rakip/eski dost), alt kısımda nesneler (katlanır şemsiye/gizli mektup), 3:4.",
+          "“Siber paralı asker” karakter dosyası oluşturun: yetenek modülü (silah/biyonik/strateji), psikolojik zayıflık, ilişkiler (işveren/hain/aile), HUD tarzı düzen, 3:4."
+        ]
       }
     }
   },
@@ -94,7 +182,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, güçlü görsel etki yaratan 'küçük şehir hava durumu tahmin grafiği' oluşturmak için kullanılır. Görsel, izometrik 3D şehir merkezli olup, ortada simgesel yapılar, çevresinde yollar, araçlar, yayalar ve doğal unsurlar yer alır ve hava durumu bilgileri, tarih ve sıcaklık düzenlemeleri ile üst üste bindirilerek, hava bilgilerini bilgi yoğunluğu ve tasarım hissi olan bir şehir posteri haline getirir.",
-        "who": "Hava durumu hesapları, şehir bilgisi hesapları, turizm içerik üreticileri, yerel medya editörleri ve 'hava durumu bilgilerini' daha yayılabilir hale getirmek isteyen tasarım odaklı içerik üreticileri için uygundur. Ayrıca günlük şehir hava kartları, tatil seyahati hava grafikleri veya sosyal medya görsel kapakları oluşturmak için de uygundur."
+        "who": "Hava durumu hesapları, şehir bilgisi hesapları, turizm içerik üreticileri, yerel medya editörleri ve 'hava durumu bilgilerini' daha yayılabilir hale getirmek isteyen tasarım odaklı içerik üreticileri için uygundur. Ayrıca günlük şehir hava kartları, tatil seyahati hava grafikleri veya sosyal medya görsel kapakları oluşturmak için de uygundur.",
+        "how": [
+          "Öncelikle şehir adını ve temsilci simgeyi belirleyin, örneğin Şanghay, Tokyo, Paris, New York.",
+          "Sonra hava durumu türünü belirtin, örneğin güneşli, şiddetli yağmur, kar, bulutlu, sis, fırtına vb. ve zaman atmosferini ekleyin, örneğin sabah, akşam veya gece manzarası.",
+          "Görüntü unsurlarını tanımlayın, örneğin ana caddeler, köprüler, nehirler, araçlar, ağaçlar, bina yoğunluğu ve renk tonu stili, şehri daha tanınabilir hale getirin.",
+          "Son olarak düzenleme gereksinimlerini ekleyin, örneğin sıcaklık, tarih, hava durumu simgeleri, şehir adı dil stili; eğer bilgiler yeterince net değilse, \"hava durumu düzenini ve simge tanınabilirliğini güçlendirin\" isteyin."
+        ],
+        "prompts": [
+          "Şanghay şehir mikro hava durumu tahmin grafiği oluşturun: Doğu Mücevheri merkezde, güneşli mavi gökyüzü, eşit mesafeli 3D şehir mikro modeli, hava durumu, tarih ve sıcaklık düzenlemesi ile üst üste, bilgi net, 9:16.",
+          "Tokyo'da kar yağışlı bir şehir hava kartı oluşturun: Tokyo Kulesi ve yoğun sokakların maket modeli, kar yağışı atmosferi, soğuk tonlar, Japonca şehir adı ve hava bilgisi düzenlemesi ekleyin, 9:16.",
+          "New York'ta yağmurlu bir gece şehir hava posteri oluşturun: Manhattan yüksek binaları ve sokakların maket manzarası, yağmur gecesi ışık yansımaları, hava simgeleri, tarih ve sıcaklık bilgileri net okunabilir, güçlü bir tasarım."
+        ]
       }
     }
   },
@@ -105,7 +204,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak 'disiplin bilgi posterleri' oluşturur: karikatür veya kara tahta tarzında iki görsel çerçeve sunar, sınıf açıklamalarını veya kendi kendine öğrenmeyi eğlenceli hale getirmeyi amaçlar.",
-        "who": "Öğretmenler için sınıf açıklamaları, öğrenciler için öğrenme notları/ödev sunumları, bilim hesapları için bilgi grafikleri ve karmaşık kavramları 'net bir şekilde anlatmak' isteyen içerik yaratıcıları için uygundur."
+        "who": "Öğretmenler için sınıf açıklamaları, öğrenciler için öğrenme notları/ödev sunumları, bilim hesapları için bilgi grafikleri ve karmaşık kavramları 'net bir şekilde anlatmak' isteyen içerik yaratıcıları için uygundur.",
+        "how": [
+          "Bilgi noktası temasını girin (örneğin: DNA çift sarmalı/levha yapısı/elektromanyetik indüksiyon).",
+          "Tarz seçin: çizgi film kart tarzı (daha küçük yaş grubu için daha uygun) veya kara tahta rapor taslağı tarzı (daha bilimsel/yarışma için daha uygun).",
+          "Yapı talep edin: tanım → ana noktalar → grafik → örnek/formül (disiplininize göre ayarlayın).",
+          "Üretim sonrası kontrol: anahtar kelimeler belirgin mi, grafikler ana noktalara mı karşılık geliyor; gerekirse modelden “metni azaltmasını, grafikleri artırmasını” isteyin."
+        ],
+        "prompts": [
+          "“DNA çift sarmal yapısını” bir disiplin bilgisi infografiği haline getirin: tanım, ana bileşenler, yapı diyagramı, yaygın yanlış anlamalar içermeli, kara tahta tarzında, 3:4 dikey.",
+          "“Levha tektoniği ve depremler” bilgi kartı oluşturun: karikatür kart tarzında, makaron renkleri, levha hareketini → stres → deprem açıklayan bir akış diyagramı, anahtar kelimeleri vurgulayarak, 3:4.",
+          "“Elektromanyetik indüksiyonu” kara tahta tarzında açıklayın: ana formül, sağ el kuralı diyagramı, üç tipik örnek ipucu, net bir yapı, 3:4 dikey."
+        ]
       }
     }
   },
@@ -116,7 +226,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri ile karmaşık olayları 'çok boyutlu analiz grafiği' haline getirir: olguları ve özleri katmanlı bir şekilde ayırır, neden-sonuç zincirini ve uzun vadeli etkileri net bir şekilde sunar.",
-        "who": "Sıcak yorum hesapları, sektör analizi/ticari gözlemler, ürün/operasyon değerlendirmeleri, lisansüstü yazım yapılandırmaları ve karmaşık olayları mantıklı bir şekilde anlatmak isteyenler için uygundur."
+        "who": "Sıcak yorum hesapları, sektör analizi/ticari gözlemler, ürün/operasyon değerlendirmeleri, lisansüstü yazım yapılandırmaları ve karmaşık olayları mantıklı bir şekilde anlatmak isteyenler için uygundur.",
+        "how": [
+          "Olayın bir cümlelik özeti + zaman çizelgesi (3–6 anahtar nokta) girin.",
+          "Tarafları listeleyin (en az 3 kategori: platform/denetim/kullanıcı/endüstri zinciri vb.) ve her birinin motivasyonlarını belirtin.",
+          "Üç katmanlı yapı talep edin: fenomen vs. öz, alt yapı mantık zinciri (neden → sonuç), etki yayılımı (kısa/orta/uzun).",
+          "Üretim sonrası kontrol edin: “görüşlerin öncelikli olup olmadığını”; önyargı ağırsa, modele “önce gerçek çerçevesini ver, sonra çoklu bakış açısı varsayımlarını sun” dedirtin."
+        ],
+        "prompts": [
+          "Sıcak olay çok boyutlu analiz grafiği oluşturun: olay “bir platform algoritma öneri mekanizmasının tartışma yaratması” (nötr bir ifade kullanarak), zaman çizelgesi noktaları, tarafların motivasyonları, neden-sonuç zinciri, kısa, orta ve uzun vadeli etki yayılımı içermeli, yüksek okunabilir Türkçe düzenleme, 3:4 dikey.",
+          "“Şirket büyük işten çıkarma” olay analizi grafiği oluşturun: fenomen ve öz katmanları, maliyet/büyüme/organizasyon yapısı mantık zinciri, çalışanlar/endüstri/sermaye piyasası üzerindeki etki yayılımı, 3:4.",
+          "“Bir ürün lansmanı başarısızlığı” geri dönüş bilgi grafiği oluşturun: anahtar noktalar, kök neden zinciri (talep/mühendislik/iletişim), düzeltme yolları, uzun vadeli etkiler, 3:4 dikey."
+        ]
       }
     }
   },
@@ -127,7 +248,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, profesyonel Nano Banana anahtar kelimeleri kullanarak 'somut olmayan kültürel miras el sanatları panosu' oluşturur: tarihsel akış, üretim süreçleri, araç malzemeleri ve modern entegrasyon uygulamalarını sistematik olarak sunar.",
-        "who": "Kültürel miras/bilim hesapları, okul kulübü panoları, kültürel kuruluşlar için tanıtım, kültürel yaratım markası materyalleri ve geleneksel el sanatlarını net bir şekilde anlatmak ve görsel kalite oluşturmak isteyen yaratıcılar için uygundur."
+        "who": "Kültürel miras/bilim hesapları, okul kulübü panoları, kültürel kuruluşlar için tanıtım, kültürel yaratım markası materyalleri ve geleneksel el sanatlarını net bir şekilde anlatmak ve görsel kalite oluşturmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Somut olmayan miras adı + bölge + bir cümlelik ana özellik (örneğin “bambu dokuma lamba/indigo/ahşap baskı yılbaşı resmi”) girin.",
+          "Süreç adımlarını (5–8 adım) ve araç malzeme listesini (ne kadar spesifik olursa o kadar iyi) listeleyin.",
+          "Modül talep edin: tarih/süreç/örnek semboller/temsil eserleri/aktarım durumu/modern entegrasyon ve küçük resimler ile notlar ekleyin.",
+          "Üretim sonrası kontrol edin: adımların uygulanabilir olup olmadığını; belirsizse, modele “verdiğiniz sürece göre adım açıklamalarını yeniden yazdırın ve anahtar hareketleri ekleyin” dedirtin."
+        ],
+        "prompts": [
+          "Somut olmayan miras el sanatı A3 sergi panosu oluşturun: tema “balık lambası (ışık süsü)”, tarihsel arka plan, üretim süreci (7 adım), araç malzemeleri, örnek semboller ve anlamlar, aktarım durumu ve modern uygulama, zengin resimlerle, 3:4 dikey yüksek yoğunluklu düzenleme.",
+          "“İndigo” somut olmayan miras sergi panosu oluşturun: boya kaynağı, bağlama/adam boyama noktaları, süreç adımları, yaygın desenler ve semboller, çağdaş giyim uygulamaları, 3:4.",
+          "“Ahşap baskı yılbaşı resmi” sergi panosu oluşturun: kalıp/katman baskı süreci, renk sistemi, temsil edilen konular, aktarım ve modern tasarım entegrasyon örnekleri, net Türkçe modüller, 3:4."
+        ]
       }
     }
   },
@@ -138,7 +270,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak herhangi bir kavramı 'yapılandırılmış bilgi kartı' haline getirir: makaron karikatür veya tebeşir kara tahta tarzı seçeneği ile, öğrenme verimliliğini artırmayı amaçlar.",
-        "who": "Öğretmenler için ders hazırlığı, öğrenciler için not alma, bilim hesapları için dizi kartları üretimi, ebeveyn-çocuk eğitim içerikleri ve karmaşık kavramları '10 saniyede anlaşılır' hale getirmek isteyen kullanıcılar için uygundur."
+        "who": "Öğretmenler için ders hazırlığı, öğrenciler için not alma, bilim hesapları için dizi kartları üretimi, ebeveyn-çocuk eğitim içerikleri ve karmaşık kavramları '10 saniyede anlaşılır' hale getirmek isteyen kullanıcılar için uygundur.",
+        "how": [
+          "Tema + hedef yaş/grup (ilkokul/ortaokul/yetişkin başlangıç) girin.",
+          "Dahil etmek istediğiniz modülleri belirtin: tanım/örnek/formül/yanlış anlamalar/küçük test (isteğe bağlı).",
+          "Tarz seçin: sevimli karikatür veya kara tahta; anahtar kelimeleri vurgulama, net katmanlar, okunabilir büyük yazı gerektirir.",
+          "Üretim sonrası kontrol edin: çok uzun mu; eğer çok uzunsa, modele “6–8 ana noktaya indir ve 1 örnek ekle” dedirtin."
+        ],
+        "prompts": [
+          "Bilgi kartı oluşturun: tema “fotosentez nedir”, ilkokul üst sınıflarına yönelik, sevimli karikatür kart tarzında, tanım, üç adımda süreç, bir yaşam örneği, 1 küçük test sorusu içermeli, 3:4 dikey.",
+          "Kara tahta tarzında bilgi kartı oluşturun: tema “Newton'un üçüncü yasası”, formül, anahtar kelimeler, iki örnek, yaygın yanlış anlamalar, tebeşir çizim tarzında, 3:4.",
+          "“Makine öğrenimi aşırı uyumu” bilgi kartı oluşturun: tanım, nedenler, 3 hafifletme yöntemi, bir sezgisel benzetme, net yapı, 3:4."
+        ]
       }
     }
   },
@@ -149,7 +292,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak detaylı bir 'hanedan giysileri bilgilendirme grafiği' oluşturur: şekil yapısı, aksesuar detayları ve anlam açıklamalarını modüler olarak sunar.",
-        "who": "Geleneksel kültür bilgilendirme/hanfu hesapları, kültürel yaratım tasarım materyalleri, tarih meraklıları için not alma, sergi rehber grafikleri ve 'doğru + yüksek kaliteli' kültürel içerik yaratıcıları için uygundur."
+        "who": "Geleneksel kültür bilgilendirme/hanfu hesapları, kültürel yaratım tasarım materyalleri, tarih meraklıları için not alma, sergi rehber grafikleri ve 'doğru + yüksek kaliteli' kültürel içerik yaratıcıları için uygundur.",
+        "how": [
+          "Dönem/çağ + kıyafet türü (gündelik kıyafet/resmi kıyafet/askeri kıyafet/devlet kıyafeti vb.) + karakter kimliği (savaşçı/adam/soylu/halk) girin.",
+          "Anahtar detayları listeleyin: yaka şekli, kol şekli, kemer, etek, başlık, desen teması (örneğin bulut deseni/çiçek kuş).",
+          "Modül talep edin: yapı analizi + aksesuar detayları + anlam açıklamaları + giyinme sahneleri küçük penceresi, 3:4 dikey.",
+          "Üretim sonrası kontrol edin: unvan ve yapı uyumlu mu; uyumsuzsa, “tarzı koruyarak, sağladığınız yapı noktalarına göre metni düzeltin” dedirtin."
+        ],
+        "prompts": [
+          "“Tang döneminde kadın gündelik kıyafeti” ulusal stil kıyafet bilimsel illüstrasyonu oluşturun: ince detaylı renkli tarz, yapı analizi, desen anlamları, aksesuar detayları, giyinme sahneleri modüler analizi, 3:4 dikey Türkçe notlarla.",
+          "“Ming dönemi devlet kıyafeti” bilimsel grafik oluşturun: yaka deseni, başlık, kemer ve katman yapısı, detaylı çekimler ve notlarla, 3:4.",
+          "“Song dönemi entelektüel kıyafeti” bilgi grafiği oluşturun: yaka ve kol şekilleri, malzeme ve renk tercihleri, günlük sahneler, ince detaylı analiz, 3:4."
+        ]
       }
     }
   },
@@ -160,7 +314,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak bir 'kitap analizi dizi grafiği' oluşturur: görsel kapaktan derinlemesine görüş düzenlemelerine kadar, stil yüksek derecede birleştirilmiştir.",
-        "who": "Kitap blog yazarları, bilgi blog yazarları, kurs eğitmenleri için kitap listesi içerikleri, öğrenme notları düzenleme ve bir kitabı net bir şekilde anlatmak ve paylaşımını artırmak isteyen kullanıcılar için uygundur."
+        "who": "Kitap blog yazarları, bilgi blog yazarları, kurs eğitmenleri için kitap listesi içerikleri, öğrenme notları düzenleme ve bir kitabı net bir şekilde anlatmak ve paylaşımını artırmak isteyen kullanıcılar için uygundur.",
+        "how": [
+          "Kitap adı + yazar + vurgulamak istediğiniz hedef kitle (iş dünyası/girişimcilik/psikoloji/tarih vb.) girin.",
+          "3–5 ana görüş ve 2–3 alıntı verin (yoksa modelin içerikten özetlemesini sağlayın).",
+          "6 sayfa yapı talep edin: her sayfada başlık + ana noktalar + görsel semboller; renk ve yazı hiyerarşisi birleştirilmiş olmalı.",
+          "Üretim sonrası kontrol edin: görüşler tekrarlanıyor mu; eğer tekrarlanıyorsa, modele “her sayfada sadece bir tema bırak ve görüşleri yeniden dağıt” dedirtin."
+        ],
+        "prompts": [
+          "《Working Backwards》 için 6 kitap yorum grafiği oluşturun: kapak çekiciliği, ana tema, alıntılar, ana görüşler, mekanizma/karakter ilişkisi, kitabın genel özetini, tek tip stil, 3:4 dikey.",
+          "《一句顶一万句》 için 6 grafik yorum oluşturun: tema ve karakter ilişkisi, ana çatışma ve duygu çizgisi, temsilci alıntılar, özet, küçük kırmızı kitap için uygun, 3:4.",
+          "Bir “AI ürün metodolojisi” kitabı için 6 grafik oluşturun: ürün yöneticilerine yönelik, çerçeve, örnekler, yanlış anlamalar ve eylem listesi vurgulanmalı, tek tip görsel stil, 3:4."
+        ]
       }
     }
   },
@@ -171,7 +336,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri ile 'sürükleyici kelime haritası' üretir: sahnedeki her nesneye karşılık gelen İngilizce, IPA ve çevirisini ekleyerek hafıza verimliliğini artırır.",
-        "who": "İngilizce öğretimi yapan ebeveynler, anaokulu/ilkokul İngilizce öğretmenleri, kelime öğrenme blog yazarları, öğrenme materyalleri üreten kurumlar ve 'yazdırılabilir kelime posterleri' yapmak isteyen kullanıcılar için uygundur."
+        "who": "İngilizce öğretimi yapan ebeveynler, anaokulu/ilkokul İngilizce öğretmenleri, kelime öğrenme blog yazarları, öğrenme materyalleri üreten kurumlar ve 'yazdırılabilir kelime posterleri' yapmak isteyen kullanıcılar için uygundur.",
+        "how": [
+          "Bir sahne seçin: mutfak, süpermarket, yatak odası, hayvanat bahçesi, oyun alanı vb.",
+          "Etiket formatı talep edin: English / IPA / Türkçe (üç satır), ve “nesneleri örtmemeye” vurgu yapın.",
+          "Yoğunluğu kontrol edin: önce 15–25 yüksek frekanslı nesneyi etiketleyin, çok fazla olursa dağınık görünür.",
+          "Üretim sonrası ince ayar yapın: zor kelimeleri daha temel kelimelerle değiştirin veya “bölgelere göre gruplandırarak etiketleme” ekleyin."
+        ],
+        "prompts": [
+          "“Mutfak sahnesi kelime öğrenme grafiği” oluşturun: detaylı resim, 20 yaygın nesneyi etiketleyin, her etiket üç satır (İngilizce/IPA/Türkçe), düzen net olmalı ve ana nesneyi örtmemeli, 3:4 dikey.",
+          "“Süpermarket sahnesi kelime grafiği” oluşturun: raflar, kasa, alışveriş arabası vb. içermeli, 25 yüksek frekanslı isim etiketleyin, İngilizce + IPA + Türkçe üç satır etiket, nesnelere yakın ama örtmemeye çalışın, 3:4 dikey.",
+          "“Hayvanat bahçesi sahnesi kelime posteri” oluşturun: hayvanlar ve tesisleri etiketleyin (kapı, kafes, bilet, harita vb.), İngilizce/IPA/Türkçe üç satır formatında, basıma uygun."
+        ]
       }
     }
   },
@@ -182,7 +358,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak 'retro kültürel miras bilgi grafiği' oluşturur: dört bölümlü düzen ile kültürel mirasın çoklu değerlerini derinlemesine anlatır, güzel el yapımı illüstrasyonlarla desteklenir.",
-        "who": "Kültürel miras bilim hesapları, tarih meraklıları, müze rehber içerikleri, kültürel yaratım markaları hikaye anlatımı ve kültürel mirası 'sistematik ve koleksiyonluk' hale getirmek isteyen yaratıcılar için uygundur."
+        "who": "Kültürel miras bilim hesapları, tarih meraklıları, müze rehber içerikleri, kültürel yaratım markaları hikaye anlatımı ve kültürel mirası 'sistematik ve koleksiyonluk' hale getirmek isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Kültürel eser adı + dönem/çağ + çıkarıldığı/kolleksiyon yeri (isteğe bağlı) girin.",
+          "Vurgulamak istediğiniz dört çeyrek ana noktaları verin (her çeyrek için 2–4 madde yeterlidir).",
+          "Eski tarz düzenleme talep edin: kağıt dokusu, el çizimi illüstrasyon, numaralı dipnotlar, küçük zaman çizelgesi veya yer penceresi.",
+          "Üretim sonrası kontrol edin: terimler doğru mu; daha güvenilir olması için “muhtemel/genellikle kabul edilen/varsayılan” ifadeleri kullanarak belirsiz noktaları ifade edin."
+        ],
+        "prompts": [
+          "Çin kültürel eserleri retro dört çeyrek bilgi grafiği oluşturun: eser “Si Mu Wu Ding”, merkezde el çizimi illüstrasyon + dört çeyrek (tarihsel konum/arkeolojik değer/sanatsal başarı/modern etki) + genişletilmiş bilgi bölümü, 3:4 dikey.",
+          "“Yue Wang Gou Jian Kılıcı” retro bilgi grafiği oluşturun: dört çeyrek, işçilik özelliklerini, tarihsel arka planı, keşif hikayesini, modern kültürel etkisini açıklamalı, retro kağıt dokusu, 3:4.",
+          "“Tang San Cai Deve Heykeli” bilgi grafiği oluşturun: sanatsal stil, ticaret/İpek Yolu ilişkisi, arkeolojik değer, modern estetik etkisi, dört çeyrek yapısı, 3:4."
+        ]
       }
     }
   },
@@ -193,7 +380,18 @@
     "content": {
       "sections": {
         "what": "Şablon, Nano Banana anahtar kelimeleri ile 'köpek ırkı retro bilgilendirme' oluşturur: merkezi el yapımı köpek ırkı ile detaylı anatomik etiketler eklenir ve bakım ile karakter özelliklerini bölümlere ayırarak açıklar.",
-        "who": "Köpek bakımı bilim hesapları, pet dükkanları/koşucular için içerikler, köpek sahiplenmeyi düşünen yeni başlayanlar, okul bilimleri ve 'eski dergiler kadar güzel' evcil hayvan içerikleri yaratmak isteyenler için uygundur."
+        "who": "Köpek bakımı bilim hesapları, pet dükkanları/koşucular için içerikler, köpek sahiplenmeyi düşünen yeni başlayanlar, okul bilimleri ve 'eski dergiler kadar güzel' evcil hayvan içerikleri yaratmak isteyenler için uygundur.",
+        "how": [
+          "Köpek ırkı adı + boyut (küçük/orta/büyük) + aile sahnesi (daire/avlu/çocuklarla) girin.",
+          "En çok önemsediğiniz 3 maddeyi listeleyin: tüy dökme/egzersiz miktarı/tüy bakımı/ eğitim/sosyalizasyon vb.",
+          "Retro bilim tarzı talep edin: merkezde illüstrasyon + beyaz hatla anatomik etiketleme + modüler bilgiler (bakım/eğitim/karakter/uyum).",
+          "Üretim sonrası kontrol edin: sahneyle uyumlu mu; uyumsuzsa, modele “daire/çocuk sahnesine göre bakım ve egzersiz önerilerini yeniden yazdır” dedirtin."
+        ],
+        "prompts": [
+          "Köpek ırkı retro bilim bilgi grafiği oluşturun: köpek ırkı “Golden Retriever”, 9:16, merkezde el çizimi + anatomik etiketleme, modüller eğitim noktaları, egzersiz miktarı, tüy bakımı, karakter özeti ve uygun insanlar.",
+          "“Corgi” köpek ırkı bilgi grafiği oluşturun: boyut yapısı etiketleme, omurga bakımı, eğitim ve enerji yönetimi, tüy bakımı, retro düzenleme, 9:16.",
+          "“Siberian Husky” bilimsel grafik oluşturun: soğuk iklime uyum, egzersiz gereksinimleri, yıkım riski ve eğitim stratejileri, bakım noktaları, merkezde illüstrasyon + etiketleme, 9:16."
+        ]
       }
     }
   },
@@ -204,7 +402,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri ile yemekleri 'yemek panorama posteri' haline getirir: suluboya görseli ve yapılandırılmış modüller ile pişirme süreçlerini ve yiyecek hikayelerini net bir şekilde anlatır.",
-        "who": "Yemek blog yazarları, restoran markası içerikleri, yerel kültürel turizm tanıtımları, okul bilimleri sergileri ve yiyecek hikayelerini daha katmanlı bir şekilde anlatmak isteyen yaratıcılar için uygundur."
+        "who": "Yemek blog yazarları, restoran markası içerikleri, yerel kültürel turizm tanıtımları, okul bilimleri sergileri ve yiyecek hikayelerini daha katmanlı bir şekilde anlatmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Yemek adı/gıda + bölge/okul (isteğe bağlı) + vurgulamak istediğiniz bir nokta (baharat/işçilik/kültürel hikaye) girin.",
+          "Temel malzemeleri (5-10 madde) ve ana adımları (5-7 adım) listeleyin.",
+          "Gerekli modüller: adımlar, malzemeler, tat anahtar kelimeleri, köken ve kültür, yerel anılar/sahne önerileri, 3:4 dikey format.",
+          "Üretim sonrası kontrol: adımlar ve malzemeler eşleşiyor mu; eşleşmiyorsa modelden \"malzeme listesine göre adımları yeniden sıralayıp kritik pişirme noktalarını eklemesini\" isteyin."
+        ],
+        "prompts": [
+          "\"Lanzhou Beef Noodle\" yemeği için kapsamlı bilgi grafiği oluşturun: suluboya ana görsel + 6 adım yapım + temel malzemeler + köken kültürü ve yerel anılar modülü, 3:4 dikey formatta Çince düzenleme.",
+          "\"Fransız Croissant\" bilimsel posterini yapın: katlama katmanları prensibi, ana adımlar, yaygın başarısızlık noktaları, malzemeler ve tat anahtar kelimeleri, 3:4.",
+          "\"Meksika Taco\" bilgi grafiği oluşturun: malzeme yapısı, tat kombinasyonları, köken hikayesi, uyumlu sahne (sokak/aile buluşması), 3:4 dikey format."
+        ]
       }
     }
   },
@@ -215,7 +424,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak bir 'panorama iklim posteri' oluşturur: merkezi illüstrasyon ve çevresindeki modüller ile iklimin zamanı, fenolojisi ve kültürel geleneklerini derinlemesine analiz eder.",
-        "who": "Klasik kültür/bilim bilgilendirme, okul sınıf panoları, ebeveyn-çocuk eğitim içerikleri, kültürel yaratım/çay markaları için iklim pazarlaması ve 'yazdırılabilir ve koleksiyonluk' iklim posterleri yapmak isteyenler için uygundur."
+        "who": "Klasik kültür/bilim bilgilendirme, okul sınıf panoları, ebeveyn-çocuk eğitim içerikleri, kültürel yaratım/çay markaları için iklim pazarlaması ve 'yazdırılabilir ve koleksiyonluk' iklim posterleri yapmak isteyenler için uygundur.",
+        "how": [
+          "Güneş terimi adını girin (örneğin, İlkbahar/Donma) + vurgulamak istediğiniz bölgeyi (Kuzey/Jiangnan vb., isteğe bağlı) belirtin.",
+          "Üç dönemsel olayın ana noktalarını listeleyin (yoksa modelin oluşturmasına izin verin, ancak mantığa uygun olmasını isteyin).",
+          "Modüler düzenleme isteyin: geçiş zamanı/güneşin boylamı, üç dönem, gelenekler, tarım, sağlık anahtar kelimeleri, temsilci yiyecekler/bitkiler (isteğe bağlı).",
+          "Üretim sonrası kontrol: metin çok yoğun mu; eğer çok yoğunsa, modelden \"her modülde 3 maddeye düşürmesini ve yazı tipini büyütmesini\" isteyin."
+        ],
+        "prompts": [
+          "A3 dikey formatta \"İlkbahar\" güneş terimi bilgi posteri oluşturun: merkezi retro illüstrasyon, modüller geçiş zamanı/güneşin boylamı, üç dönemsel olay, geleneksel sahneler, tarım ve sağlık etiketleri, Çince yüksek okunabilir düzenleme.",
+          "\"Donma\" güneş terimi posteri yapın: üç dönem, temsilci yiyecekler, gelenekler ve tarım, sağlık ipuçları, retro illüstrasyon + bilgi modülü, A3 dikey format.",
+          "\"Yaz Dönümü\" güneş terimi bilgi grafiği oluşturun: geçiş bilgileri, dönemsel değişiklikler, kültürel anlam, beslenme ve yaşam önerileri, A3 dikey format yüksek yoğunluk ama okunabilir."
+        ]
       }
     }
   },
@@ -226,7 +446,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana anahtar kelimeleri kullanarak hayal gücü varsayımlarını 'retro senaryo posterleri' haline getirir: yapılandırılmış bölümler ile üç farklı tarihsel ayrım sahnesini gösterir.",
-        "who": "Tarih bilgilendirme/hikaye hesapları, yazım/senarist ilhamları, kısa video senaryo planlamaları, eğitim içerikleri ve 'tarih bir bıçakla değişirse ne olur' tarzı içerikler yapmak isteyenler için uygundur."
+        "who": "Tarih bilgilendirme/hikaye hesapları, yazım/senarist ilhamları, kısa video senaryo planlamaları, eğitim içerikleri ve 'tarih bir bıçakla değişirse ne olur' tarzı içerikler yapmak isteyenler için uygundur.",
+        "how": [
+          "Bir değişim noktası belirleyin: karakter ölmemiş/ savaş erken sona ermiş/ ittifak ilişkisi değişmiş vb.",
+          "Temel tarihi ve ayrım noktasını net bir şekilde yazın: gerçek tarihte ne oldu, varsayımlar nereden sapmaya başladı.",
+          "3 zincirleme tepki listeleyin: politik, ekonomik, askeri veya kültürel ana değişiklikler.",
+          "Üretim sonrası yapıyı kontrol edin: başlık net, ayrım noktası belirgin, üç sahne arasındaki farklılık yeterince büyük."
+        ],
+        "prompts": [
+          "《What if · Tarih Tersine Çevirme Planı》 oluşturun: \"Napolyon 1850'de hayatta kalsaydı ve Avrupa'nın yeni düzenine katılsaydı\" varsayımını içeren karakter profilleri, kritik dönüm noktaları, çatışma ilişkileri, üç varsayımsal sahne taslağı, suluboya + mürekkep çizim retro tarzı, 3:4 dikey format.",
+          "What if: \"Ming Hanedanı deniz kolonizasyonunu erken tamamladı\" varsayımını yapın, retro bilgi grafiği oluşturun: dönüm noktaları, müttefikler ve düşmanlık, üç farklı dünya hattı karşılaştırması, yapılandırılmış düzen, 3:4 dikey format.",
+          "What if: \"Telgraf Roma İmparatorluğu döneminde ortaya çıksaydı\" varsayımını yapın, karşıt tarih posteri oluşturun: arşivler/mekanizm zinciri/üç varsayımsal sahne, retro el çizimi bilgi grafiği tarzı."
+        ]
       }
     }
   },
@@ -237,7 +468,18 @@
     "content": {
       "sections": {
         "what": "Şablon, Nano Banana İpucu kullanarak 'Geçmiş ve Günümüz Karşılaştırma Kartı' oluşturur: Karakterlerin meslek ve yeteneklerini yan yana karşılaştırarak, temel farkları özetler.",
-        "who": "Kısa videolar/görseller ile 'Geçmiş ve Günümüz Farkı', tarihi karakterlerin modern yorumları, IP karakter karşılaştırmaları, marka kişilik karşılaştırmaları yapmak isteyen ve yüksek etkileşimli tartışmalar yapmak isteyen yaratıcılar için uygundur."
+        "who": "Kısa videolar/görseller ile 'Geçmiş ve Günümüz Farkı', tarihi karakterlerin modern yorumları, IP karakter karşılaştırmaları, marka kişilik karşılaştırmaları yapmak isteyen ve yüksek etkileşimli tartışmalar yapmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Karakter A (eski/geleneksel) ve karakter B (modern/çağdaş) kimlik ayarlarını ve bir cümlelik etiket girin.",
+          "Her iki taraf için de: 3 anahtar kelime, 2 yetenek, 2 temsilci nesne, 1 zayıflık/maliyet verin.",
+          "Düşük doygunlukta yüksek kaliteli düzenleme isteyin: solda profiller + altta karşılaştırma tablosu + \"farklılık özeti\" cümlesi.",
+          "Üretim sonrası kontrol: karşılaştırma \"aynı boyutta\" mı; eğer aynı boyutta değilse, modelden \"boyutları birleştirip karşılaştırma tablosunu yeniden yazmasını\" isteyin."
+        ],
+        "prompts": [
+          "Eski ve yeni karşılaştırma karakter profili kartı oluşturun: A \"Eski Koruma\" vs B \"Modern Kuryeci\", meslek/anahtar kelime/yetenek/nesne/zayıflık karşılaştırması yapın ve farklılık vurgusu özeti verin, 3:4 dikey format düşük doygunlukta düzenleme.",
+          "A \"Tang Hanedanı Kadın Görevlisi\" vs B \"Modern Kadın Ürün Yöneticisi\" karşılaştırma kartı yapın: kişilik, yetenek, yanındaki nesneler, stres kaynakları, altta karşılaştırma tablosu, 3:4.",
+          "\"Eski Öğrenci\" vs \"Modern Bilgi Bloggerı\" karakter karşılaştırma kartı oluşturun: stil birleştirilmiş, yüksek kaliteli düzenleme, farklılık özeti bir cümle, 3:4."
+        ]
       }
     }
   },
@@ -248,7 +490,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana İpucu ile 16 kişilik tipi hayvan karakterlerine dönüştürerek tek bir sahnede birleştirir ve her kişiliğin tipik davranış özelliklerini hassas bir şekilde yakalar.",
-        "who": "MBTI içerik üreticileri, psikoloji/kendini geliştirme hesapları, topluluk yönetimi, arkadaşlarla grup fotoğrafları için mizahi içerikler ve '16 kişilik aynı mekanda ne olur' gibi eğlenceli içerikler yapmak isteyenler için uygundur."
+        "who": "MBTI içerik üreticileri, psikoloji/kendini geliştirme hesapları, topluluk yönetimi, arkadaşlarla grup fotoğrafları için mizahi içerikler ve '16 kişilik aynı mekanda ne olur' gibi eğlenceli içerikler yapmak isteyenler için uygundur.",
+        "how": [
+          "Bir sahne seçin: kafe, ofis, kamp, kütüphane, deniz kenarı vb.",
+          "Resim tarzı ve atmosfer belirleyin: iyileştirici illüstrasyon, hafif suluboya, masal, Japon tarzı vb.",
+          "Vurgulamak istediğiniz etkileşim noktalarını girin: kim ritmi belirliyor, kim gözlemliyor, kim sosyalleşiyor, kim yalnız kalıyor.",
+          "Üretim sonrası kontrol: 16 kodun tam olup olmadığını, etiketlerin net olup olmadığını kontrol edin; gerekirse \"etiketlerin karakterlere yakın olmasını\" isteyin."
+        ],
+        "prompts": [
+          "Bir iyileştirici grup illüstrasyonu oluşturun: 16 MBTI kişiliği canlandıran hayvanlar \"hafta sonu kamp alanında\" etkileşimde bulunuyor, her karakterin yanında MBTI kodu net bir şekilde belirtilmiş, ışık yumuşak, detaylar zengin, 3:4 dikey format.",
+          "16 kişilik hayvan canlandırmaları oluşturun: sahne \"şirket açık ofis alanı\", her kişilik tipik hareket ve ifadelerle (dışa dönük sosyalleşme, içe dönük yalnızlık, mantıklı analiz, duygusal rahatlama vb.) gösteriliyor, tümü MBTI kodlarıyla etiketlenmiş, sıcak illüstrasyon tarzı.",
+          "MBTI 16 kişilik hayvanları bir arada: sahne \"kafe\", her karakter nesnelerle etkileşimde (kitap, bilgisayar, kahve, not kağıdı), görüntü düzenli, etiketler ana temayı örtmüyor, 3:4 dikey format."
+        ]
       }
     }
   },
@@ -259,7 +512,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, 'Geleneksel Karşılaşma Karakter Kartı' oluşturmak için kullanılır. Görsel, iki karakterin karşıt ilişkisini yan yana bölünmüş bir şekilde sunar: üstte profil resimleri ve unvanlar, ortada tam çizim, altta silah veya simgesel nesne ve kimlik, taraf, savaş gücü, kişilik veya ilişki açıklamaları ile birlikte güçlü bir anlatım ve gerilim yaratan karakter karşılaşma tasarımını oluşturur.",
-        "who": "Savaş, fantastik, tarihi, Üç Krallık, roman tasarımı, orijinal karakter evreni içerik üreticileri için uygundur; ayrıca oyun karakter paketleme, hikaye odaklı posterler, karakter ilişkisi grafikleri ve sosyal medya platformlarında karakter karşılaştırma içerikleri için de uygundur."
+        "who": "Savaş, fantastik, tarihi, Üç Krallık, roman tasarımı, orijinal karakter evreni içerik üreticileri için uygundur; ayrıca oyun karakter paketleme, hikaye odaklı posterler, karakter ilişkisi grafikleri ve sosyal medya platformlarında karakter karşılaştırma içerikleri için de uygundur.",
+        "how": [
+          "Öncelikle karşılaşacak iki tarafı belirleyin, örneğin kahraman vs kötü adam, stratejist vs savaşçı, kılıç ustası vs bıçak ustası veya iki tarihi/özgün karakter.",
+          "Her karakterin kimliğini, unvanını, tarafını, yeteneklerini, silahlarını ve temsil ettiği özellikleri ekleyin, böylece karakter farklılıkları daha belirgin hale gelsin.",
+          "Çizim tarzını belirleyin, örneğin ince detaylı geleneksel tarz, suluboya, antik tarz illüstrasyon veya oyun karakteri tasarımı, genel kaliteyi belirleyin.",
+          "Son olarak kompozisyon ve karşılaşma hissini vurgulayın, örneğin 'sola ve sağa bölünmüş ekran, merkezde karşı karşıya, karakterler güçlü bir gerilim, dosya modülü tam'; eğer yeterince dramatik değilse, 'görüş çatışmasını ve kimlik farkını güçlendirin' isteyebilirsiniz."
+        ],
+        "prompts": [
+          "Bir dövüş karakteri karşılaşma kartı oluşturun: soğuk yüzlü kılıç ustası vs kibirli bıçak ustası, sola ve sağa bölünmüş ekran, üstte profil ve unvan, ortada tam boy illüstrasyon, altta silah sergisi, ince detaylı geleneksel tarz, 3:4 dikey.",
+          "Üç Krallık karakterleri karşılaşma resmi oluşturun: Zhuge Liang vs Sima Yi, stratejist karşılaşma ayarı, karakter dosya modülü taraf, strateji etiketleri ve temsil nesneleri içermektedir, antik tarz bilgi grafiği posteri.",
+          "Özgün bir Xianxia karakteri karşılaşma posteri oluşturun: doğru yol kadın kılıç ustası vs şeytan tarikatı lideri, merkezde karşılaşma, kıyafet detayları zengin, altta sihirli nesne sergisi, genel olarak güçlü bir hikaye hissi."
+        ]
       }
     }
   },
@@ -270,7 +534,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, moda e-ticaret detay sayfası uzun grafikleri oluşturmak için kullanılır. Görsel, genellikle 9:16 dikey ticari düzenlemeyi içerir, genellikle model giyimi ana görseli, kumaş detayları, tasarım vurguları, kesim özellikleri ve kombin önerileri içerir ve 'ürün bilgilerini' ve 'moda ifadesini' bir araya getirerek dönüşüm için uygun bir ürün sergileme grafiği oluşturur.",
-        "who": "Giyim markaları, e-ticaret satıcıları, bağımsız tasarımcılar, Xiaohongshu içerik üreticileri ve hızlı bir şekilde yüksek kaliteli moda detay sayfaları ve sosyal medya sergileme grafikleri oluşturmak isteyenler için uygundur."
+        "who": "Giyim markaları, e-ticaret satıcıları, bağımsız tasarımcılar, Xiaohongshu içerik üreticileri ve hızlı bir şekilde yüksek kaliteli moda detay sayfaları ve sosyal medya sergileme grafikleri oluşturmak isteyenler için uygundur.",
+        "how": [
+          "Öncelikle kıyafet türünü ve ana kategoriyi girin, örneğin elbise, takım elbise, mont, gömlek, sweatshirt vb.",
+          "Sonra tasarım stilini ve hedef kitleyi tanımlayın, örneğin ofis, Fransız, şehir minimalist, tatlı havalı, rahat spor, modelin görsel yönünü birleştirmesine yardımcı olun.",
+          "Satış noktası modülünü ekleyin, örneğin kumaş, kesim, yaka, kol tipi, kalıp avantajları, giyme senaryosu veya mevsim özellikleri, uzun resmin e-ticaret bilgi yoğunluğunu artırın.",
+          "Son olarak ticari tarzı belirleyin, örneğin yüksek kaliteli marka fotoğrafçılığı, sıcak renk yumuşak ışık, sade arka plan, dört bölümlü düzen; eğer yeterince detay sayfası gibi değilse, 'modüler metin alanı ve detay yakınlaştırmasını güçlendirin' isteyebilirsiniz."
+        ],
+        "prompts": [
+          "Fransız elbise e-ticaret detay resmi oluşturun: model ana görsel + kumaş detay yakınlaştırması + kesim vurgusu + kombin önerisi, sıcak renk yüksek kaliteli ticari moda tarzı, 9:16.",
+          "Kış montu ürün sergileme uzun resmi oluşturun: dört bölümlü düzen, sıcak tutan kumaş, kapüşon tasarımı, üst giyim etkisi ve ofis giyimi senaryosunu vurgulayın, sosyal medya ve detay sayfasına uygun.",
+          "Erkek takım elbise detay sayfası posteri oluşturun: model giyimi, omuz çizgisi ve kumaş yakınlaştırması, kalıp satış noktası, iş sahnesi önerisi, genel olarak temiz ve yüksek kaliteli, 4K dikey."
+        ]
       }
     }
   },
@@ -281,7 +556,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, 'portre rötuş planı' oluşturmak için kullanılır. Görsel genellikle iki sütunlu bir yapıya sahiptir: sol tarafta orijinal fotoğrafı gösterir ve işaretleme çizgileri ve talimat metinleri ile işlenmesi gereken alanları belirtir, örneğin cilt tonu, ışık-gölge, arka plan, saç, yüz hatları veya kıyafet kırışıklıkları; sağ tarafta ise doğal bir efekt ile işlenmiş görüntüyü gösterir, böylece rötuş mantığı görsel olarak anlaşılır hale gelir.",
-        "who": "Fotoğrafçılar, rötuş uzmanları, fotoğraf eğitimi hesapları, görsel tasarım blog yazarları, makyaj portre içerik üreticileri ve 'rötuş öncesi ve sonrası karşılaştırma' ve 'rötuş eğitim adımlarını gösterme' yapmak isteyen içerik ekipleri için uygundur."
+        "who": "Fotoğrafçılar, rötuş uzmanları, fotoğraf eğitimi hesapları, görsel tasarım blog yazarları, makyaj portre içerik üreticileri ve 'rötuş öncesi ve sonrası karşılaştırma' ve 'rötuş eğitim adımlarını gösterme' yapmak isteyen içerik ekipleri için uygundur.",
+        "how": [
+          "Öncelikle orijinal portre türünü belirleyin, örneğin fotoğraf, ticari portre, kimlik fotoğrafı, düğün fotoğrafı veya sokak tarzı.",
+          "Sonra düzeltilecek ana noktaları listeleyin, örneğin cilt tonu eşitliği, göz altı aydınlatması, arka plan temizliği, yüz hacmi, dağınık saç, giysi detayları vb.",
+          "Düzenleme yönünü belirleyin, örneğin doğal doku, ticari ince ayar, Kore tarzı şeffaf, sinematik portre, nihai stilin aşırı sapmasını önleyin.",
+          "Son olarak 'sol tarafta orijinal resmi ve kesin etiketleri koruyun, sağ tarafta ince ayar sonuçlarını gösterin, genel olarak profesyonel bir fotoğraf düzenleme öğretim planı' isteyin; eğer sonuç fazla ağırsa, 'gerçek ve doğal kalın, aşırı pürüzsüzleştirmeyin' ekleyebilirsiniz."
+        ],
+        "prompts": [
+          "Bir fotoğraf düzenleme planı oluşturun: sol tarafta orijinal portre ile kırmızı etiket ve İngilizce düzenleme talimatları, sağ tarafta doğal ince ayar sonuçları, cilt tonu birliği, göz aydınlatması ve arka plan temizliği vurgulanmış, profesyonel öğretim tarzı.",
+          "Ticari portre düzenleme öğretim resmi oluşturun: sol tarafta ışık gölge optimizasyonu, saç düzenleme, burun çizgisi azaltma, giysi kırışıklığı düzeltme, sağ tarafta gerçek yüksek kaliteli sonuç.",
+          "Bir fotoğraf düzenleme öncesi ve sonrası karşılaştırma posteri oluşturun: solda ve sağda iki sütun düzeni, öğretim hissi güçlü, etiketler net, genel olarak temiz ve profesyonel."
+        ]
       }
     }
   },
@@ -292,7 +578,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, yüksek yayılma potansiyeline sahip MBTI çift kişilik karşılaştırma mizah grafikleri oluşturmak için kullanılır. Görsel genellikle üst üste veya yan yana iki bölüm yapısına sahiptir ve iki MBTI tipi aynı sahnedeki farklı tepkileri ile güçlü bir zıtlık oluşturur ve sevimli hayvan karakterler, dikkat çekici başlıklar ve kısa metinlerle birlikte gelir, genel olarak sosyal medya yayılımı ve serileştirilmiş içerik için uygundur.",
-        "who": "MBTI içerik üreticileri, kişilik testi meraklıları, eğlence hesapları, mizah grafiği blog yazarları, Xiaohongshu ve kısa video kapak tasarımcıları ve 'aynı tema, çoklu kişilik karşılaştırmaları' içeriği üretmek isteyenler için uygundur."
+        "who": "MBTI içerik üreticileri, kişilik testi meraklıları, eğlence hesapları, mizah grafiği blog yazarları, Xiaohongshu ve kısa video kapak tasarımcıları ve 'aynı tema, çoklu kişilik karşılaştırmaları' içeriği üretmek isteyenler için uygundur.",
+        "how": [
+          "Öncelikle karşılaştırılacak iki MBTI belirleyin, örneğin I vs E, J vs P veya daha spesifik iki kişilik kombinasyonu.",
+          "Sonra kolayca zıtlık oluşturabilecek bir yaşam sahnesi seçin, örneğin Yeni Yıl'da eve dönüş, seyahat, parti, toplantı, aşk, proje yapma, çocuk bakma vb.",
+          "Karakter ifade biçimini belirleyin, örneğin hayvan insanlaştırma, Q versiyon karakter veya çizgi film tarzı karakter, kişilik farklılıklarını daha belirgin hale getirin.",
+          "Son olarak düzenleme gereksinimlerini ekleyin, örneğin çift sütun karşılaştırma, kırmızı çerçeve, net Çince başlık, kısa ve eğlenceli metin; eğer yeterince komik değilse, 'iki kişiliğin zıtlığını ve ifade hareketlerini güçlendirin' isteyebilirsiniz."
+        ],
+        "prompts": [
+          "MBTI Yeni Yıl eve dönüş karşılaştırma mizah resmi oluşturun: üst kısım ENFP'nin eve dönüş yolunda sosyal olarak aktif olduğu, alt kısım INTJ'nin sürekli huzur aradığı, hayvan insanlaştırma karakterleri, çift sütun karşılaştırma, Çince başlık, kırmızı çerçeve kart tarzı.",
+          "MBTI seyahat sırasında nasıl göründüğüne dair karşılaştırma resmi oluşturun: ESFP vs ISTJ, havaalanı ve otel sahnelerinde belirgin farklılıkları yansıtan, sevimli çizgi film karakterleri, 4K dikey.",
+          "Toplantıdaki MBTI tepkileri mizah resmi oluşturun: ENTP ve ISFJ'nin aynı toplantı sahnesindeki farklı davranışları, metin eğlenceli, hareketler abartılı, sosyal medya paylaşımına uygun."
+        ]
       }
     }
   },
@@ -303,7 +600,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Çin geleneksel uzun rulo tarzında karakter grup resimleri oluşturmak için kullanılır. Görsel genellikle yatay olarak açılan bir uzun rulo kompozisyonudur, birçok karakter aynı sahnede sıralı olarak yer alır, her karakterin bağımsız hareketleri, kıyafetleri ve kimlik hissi vardır ve isim veya karakter etiketleri ile birlikte gelebilir, genel olarak izlenebilirlik, anlatı ve koleksiyon hissi taşır.",
-        "who": "Tarih ve kültür hesapları, geleneksel görsel içerik üreticileri, roman/dram karakter düzenlemeleri, IP karakter planlaması, grup poster tasarımı ve 'birçok karakterin aynı çerçevede, ortak bir dünya görüşü' içeriği üretmek isteyenler için uygundur."
+        "who": "Tarih ve kültür hesapları, geleneksel görsel içerik üreticileri, roman/dram karakter düzenlemeleri, IP karakter planlaması, grup poster tasarımı ve 'birçok karakterin aynı çerçevede, ortak bir dünya görüşü' içeriği üretmek isteyenler için uygundur.",
+        "how": [
+          "Öncelikle karakter grubunu belirleyin, örneğin Üç Krallık karakterleri, Kırmızı Saray karakterleri, antik ünlü devlet adamları, mitolojik karakterler veya özgün bir nehir karakterleri.",
+          "Sonra birleştirici bir sahne veya tema ekleyin, örneğin saray, ziyafet, dağ ve su uzun rulo, nehir yolculuğu, bayram karakterleri vb., genel olarak daha bütünsel hale getirin.",
+          "Çizim tarzını belirleyin, örneğin geleneksel Çin resmi, ince detaylı renkli, antik tarz illüstrasyon, hafif renkli uzun rulo tarzı, genel resim havasını birleştirin.",
+          "Son olarak karakter isim etiketleri, karakter farklılıkları net, resim ritmi katmanlı olmasını isteyin; eğer karakterler kolayca karışıyorsa, 'her karakterin kıyafet ve duruş tanınabilirliğini güçlendirin' ekleyebilirsiniz."
+        ],
+        "prompts": [
+          "Üç Krallık karakterleri uzun rulo oluşturun: Liu Bei, Cao Cao, Zhuge Liang, Guan Yu gibi karakterler sırayla açılır, yatay uzun rulo kompozisyonu, isim etiketleri, antik tarz illüstrasyon kalitesi, 4K.",
+          "Kırmızı Saray karakterleri grup uzun rulo oluşturun: ana karakterler bahçe arka planında dağıtılmış, karakter şekilleri farklı, isimler net etiketlenmiş, zarif ve ince.",
+          "Özgün bir nehir karakterleri grup uzun rulo posteri oluşturun: birkaç tarikat karakteri dağ ve su uzun rulosunda açılır, kıyafetler her tarikatın özelliklerini taşır, genel olarak hikaye hissi ve koleksiyon hissi."
+        ]
       }
     }
   },
@@ -314,7 +622,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, yapı olarak net ve görsel olarak tutarlı tür bilgilendirme grafikleri oluşturmak için kullanılır. Görsel genellikle belirli bir türü merkez alır ve etrafında sınıflandırma, yaşam alanı, alışkanlıklar, beslenme, dağılım, yaşam döngüsü veya koruma seviyeleri gibi modüllerle çevrilidir, karmaşık biyolojik bilgileri yayılmaya uygun grafik içerik haline getirir.",
-        "who": "Doğa bilgilendirme hesapları, hayvan ve bitki eğitimi içerikleri, okul ders materyalleri, müze veya doğa temalı sergiler için görsel içerikler, ebeveyn-çocuk bilgi kartları ve tür bilgilerini görselleştirmek isteyen herhangi bir içerik üreticisi için uygundur."
+        "who": "Doğa bilgilendirme hesapları, hayvan ve bitki eğitimi içerikleri, okul ders materyalleri, müze veya doğa temalı sergiler için görsel içerikler, ebeveyn-çocuk bilgi kartları ve tür bilgilerini görselleştirmek isteyen herhangi bir içerik üreticisi için uygundur.",
+        "how": [
+          "Öncelikle tür adını belirleyin ve bunun hayvan, bitki, böcek, deniz canlısı veya diğer kategorilerden hangisi olduğunu ekleyin.",
+          "Vurgulamak istediğiniz bilgi modüllerini listeleyin, örneğin sınıflandırma durumu, dış görünüm özellikleri, yaşam alanı, besin zinciri konumu, koruma durumu vb.",
+          "Çizim tarzını belirleyin, örneğin bilimsel illüstrasyon, doğa tarihi kitabı, modern bilgi grafiği, doğa eğitimi posteri tarzı, genel görsel kalitesini belirleyin.",
+          "Son olarak 'ana konu ortada, modüller etrafında, bilgi düzenlemesi net' isteyin; eğer içerik yeterince profesyonel değilse, 'bilimsel ad, dağılım alanı ve anahtar bilimsel etiketleri artırın' ekleyebilirsiniz."
+        ],
+        "prompts": [
+          "Kar leoparı türü bilgi grafiği oluşturun: kar leoparı ortada sergileniyor, etrafında yaşam alanı, dağılım, avlanma alışkanlıkları, koruma seviyesi ve fiziksel özellikler modülleri, 3:4 dikey.",
+          "Ginkgo ağacı bilgi grafiği oluşturun: ana konu tam bitki illüstrasyonu, modüller sınıflandırma, yaprak özellikleri, büyüme ortamı, tarihsel anlam ve uygulama değeri içeriyor, düzen net.",
+          "Kral Kelebek bilgi kartı oluşturun: ana konu gerçekçi illüstrasyon ortada, etrafında yaşam döngüsü, göç yolları, besin kaynakları ve koruma bilgileri eklenmiş, eğitim yayınına uygun."
+        ]
       }
     }
   },
@@ -325,7 +644,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, 'şehir küçük manzara haritası' oluşturmak için kullanılır. Görsel, harita yüzeyinden üç boyutlu olarak yükselen süper gerçekçi bir şehir modeli gibidir, simgesel yapılar, yol ağı, parklar, su yolları, yerleşim alanları ve ulaşım tesisleri ile birleştirilir, böylece şehir alan bilgileri etkileyici bir şekilde görselleştirilir, hem harita hissi hem de model hissi taşır.",
-        "who": "Turizm içerikleri, şehir tanıtımları, şehir planlama sunumları, coğrafya eğitimi, yerel kültür ve turizm hesapları ve 'belirli bir şehri tanınabilir hale getiren' görsel içerikler üretmek isteyen tasarımcılar ve yaratıcılar için uygundur."
+        "who": "Turizm içerikleri, şehir tanıtımları, şehir planlama sunumları, coğrafya eğitimi, yerel kültür ve turizm hesapları ve 'belirli bir şehri tanınabilir hale getiren' görsel içerikler üretmek isteyen tasarımcılar ve yaratıcılar için uygundur.",
+        "how": [
+          "Öncelikle şehir adını girin ve korumak veya güçlendirmek istediğiniz simgesel yapılar ve özellikli bölgeleri belirtin.",
+          "Sonra şehir mekansal özelliklerini tanımlayın, örneğin nehirlerin şehirden geçmesi, kıyı, dağ şehri, yoğun binalar, Avrupa tarzı sokaklar, eski şehir ve yeni şehir karşıtlıkları vb.",
+          "Görünmesi gereken unsurları ekleyin, örneğin yollar, köprüler, araç trafiği, metro, viyadük, parklar, kıyı şeridi, ormanlar vb., harita katmanlarını güçlendirin.",
+          "Son olarak çizim tarzını belirtin, örneğin aşırı gerçekçi maket, izometrik harita, turizm posteri hissi veya yüksek kaliteli şehir maketi; eğer şehir tanınabilirliği yeterince değilse, 'sembolik yapılar ve genel sokak düzeni özelliklerini güçlendirin' isteyebilirsiniz."
+        ],
+        "prompts": [
+          "Şanghay şehir maket manzara haritası oluşturun: Doğu Mücevheri, Lujiazui yüksek binaları, Huangpu Nehri ve köprüler belirgin bir şekilde görünür, aşırı gerçekçi maket harita yüzeyinden yükseliyor, detaylar zengin.",
+          "Çongçing dağ şehri maket haritası oluşturun: dalgalı yollar, üç boyutlu ulaşım, dağ şehri binaları yoğun dağılımda, köprüler, hafif raylı sistem ve nehir suyu içeriyor, görsel katmanlar güçlü.",
+          "Paris şehir maket manzarası oluşturun: Eyfel Kulesi, Seine Nehri, sokak yolları ve parklar harita yüzeyinde beliriyor, hem harita hissi hem de maket hissi taşıyor, turizm tanıtımına uygun."
+        ]
       }
     }
   },
@@ -336,7 +666,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, güncel olayları, sosyal konuları, sektör haberlerini veya trend konuları, yapı olarak net ve görsel olarak dost bir bilgi kartına dönüştürmek için kullanılır. Görsel genellikle el çizimi sulu boya veya hafif bilgi grafiği tarzında olup, başlık, ana sonuç, arka plan açıklaması, anahtar noktalar özeti ve yardımcı simgeler içerir, hızlı okuma ve paylaşım için uygundur.",
-        "who": "Güncel olay yorumlama hesapları, medya editörleri, bilgi blog yazarları, sektör gözlemcileri, eğitim içerik üreticileri ve karmaşık haber veya trend içeriklerini 'bir grafikle açıklamak' isteyen ekipler için uygundur."
+        "who": "Güncel olay yorumlama hesapları, medya editörleri, bilgi blog yazarları, sektör gözlemcileri, eğitim içerik üreticileri ve karmaşık haber veya trend içeriklerini 'bir grafikle açıklamak' isteyen ekipler için uygundur.",
+        "how": [
+          "Öncelikle sıcak konu başlığını belirleyin, örneğin bir haber olayı, politika değişikliği, teknoloji trendi, ticari konu veya sosyal fenomen.",
+          "Sonra 3 ila 5 en kritik bilgi noktasını ayırın, örneğin ne oldu, neden önemli, ne tür etkiler yarattı, nasıl bakılıyor.",
+          "İfade tarzını belirleyin, örneğin el yapımı suluboya, nazik bilgi kartı, medya bilgi grafiği, sosyal medya paylaşım tarzı, içeriği hem profesyonel hem de çekici hale getirin.",
+          "Son olarak 'başlık dikkat çekici, bölümler net, içerik özlü' isteyin; eğer içerik çok dağınık ise, 'bir kart okuyuşuna uygun özet noktalarına sıkıştırın' ekleyebilirsiniz."
+        ],
+        "prompts": [
+          "Bir sıcak bilgi kartı oluşturun: konu 'AI video üretimi neden tekrar popüler oldu', arka plan, ana değişiklikler, endüstri etkileri ve bir özet cümlesi içermektedir, el yapımı suluboya tarzı, bölümler net.",
+          "Sosyal konu bilgi kartı oluşturun: 'uzaktan çalışma geri dönüşü' etrafında, 4 modül ile neden, artılar, eksiler, etkiler ve gelecekteki trendleri açıklayın, sosyal medya paylaşımına uygun.",
+          "Ticari sıcak özet kartı oluşturun: konu 'bir yeni teknolojinin tanıtımı neden dikkat çekti', simgeler, anahtar özet ve sonuç bölümü ekleyin, genel olarak hafif bilgi grafiği tarzı."
+        ]
       }
     }
   },
@@ -347,7 +688,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, steampunk tarzında burç anatomisi grafik posterleri oluşturmak için kullanılır. Görsel, burç kişilikleri, mekanik yapılar, estetik semboller ve karakter tasarımlarını bir araya getirir ve 'anatomik grafik' veya 'mekanik kılavuz' şeklinde sunar, genellikle karakter ana unsurları, mekanik yapı parçaları, burç etiketleri, kişilik modülleri ve retro dekoratif unsurlar içerir.",
-        "who": "Burç içerik üreticileri, estetik odaklı poster tasarımcıları, kişilik tasarımı meraklıları, fantastik tema illüstratörleri, steampunk tarzı içerik hesapları ve 'yüksek görsel tanınabilirlikte kişilik posterleri' oluşturmak isteyen yaratıcılar için uygundur."
+        "who": "Burç içerik üreticileri, estetik odaklı poster tasarımcıları, kişilik tasarımı meraklıları, fantastik tema illüstratörleri, steampunk tarzı içerik hesapları ve 'yüksek görsel tanınabilirlikte kişilik posterleri' oluşturmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Öncelikle burç adını belirleyin ve hangi tür kişilik özelliklerini daha fazla vurgulamak istediğinizi belirtin, örneğin mantıklı, romantik, kontrol arzusu, hassas, maceracı vb.",
+          "Sonra görsel ayarları ekleyin, örneğin mekanik kanatlar, dişli kalp, buhar çantası, bakır yapı, simya cihazları vb., steampunk hissini daha belirgin hale getirin.",
+          "Belirli bir poster yapısı belirleyin, örneğin ana karakter ortada, yanında mekanik parçalama etiketleri, altta burç açıklama modülü, arka planda retro harita desenleri.",
+          "Son olarak 'retro steampunk, anatomik harita hissi, etiketler net' isteyin; eğer çok sıradan bir illüstrasyona benziyorsa, 'mekanik parçalama etiketleri ve kullanım kılavuzu hissini artırın' şeklinde bir ek yapabilirsiniz."
+        ],
+        "prompts": [
+          "Akrep burcu steampunk anatomik harita posteri oluşturun: ana karakter ortada, mekanik kuyruk iğnesi ve bakır zırh ile, etrafında yapı etiketleri ve kişilik modülü, retro harita tarzında.",
+          "İkizler burcu mekanik kişilik posteri yapın: ikili karakter yapısı, dişliler ve saat unsurları belirgin, burç etiketleri, kişilik analizi ve kullanım kılavuzu tarzı etiketler içermektedir.",
+          "Kova burcu steampunk burç haritası oluşturun: karakter ve buhar makineleri birleşimi, borular, cam kaplar ve simya sembolleri zengin, genel olarak 19. yüzyıl mekanik tasarım haritası gibi."
+        ]
       }
     }
   },
@@ -358,7 +710,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, yüksek kaliteli meyve bilgilendirme grafikleri oluşturmak için kullanılır. Görselin merkezi genellikle meyve ana unsuru ile gerçekçi veya yarı gerçekçi bir illüstrasyondur, etrafında yapı etiketleri, besin değerleri, yetiştirme alanları, büyüme döngüleri, sağlık faydaları ve gelişim tarihleri gibi modüllerle çevrilidir, 'meyve bilgilerini' yayılmaya ve sergilemeye uygun şık görsel grafiklere dönüştürür.",
-        "who": "Bilgilendirme hesapları, sağlıklı beslenme içerik üreticileri, eğitim kurumları, gıda markaları, sosyal medya blog yazarları ve yüksek kaliteli gıda bilgisi posterleri, marka içerikleri veya ebeveyn-çocuk eğitim materyalleri oluşturmak isteyenler için uygundur."
+        "who": "Bilgilendirme hesapları, sağlıklı beslenme içerik üreticileri, eğitim kurumları, gıda markaları, sosyal medya blog yazarları ve yüksek kaliteli gıda bilgisi posterleri, marka içerikleri veya ebeveyn-çocuk eğitim materyalleri oluşturmak isteyenler için uygundur.",
+        "how": [
+          "Önce meyve adını girin, örneğin elma, çilek, mango, yaban mersini, durian vb. ve belirli bir çeşidi vurgulayıp vurgulamayacağınıza karar verin.",
+          "Sonra en çok vurgulamak istediğiniz bilgi modüllerini listeleyin, örneğin besin değerleri, yetiştirme ortamı, olgunlaşma süreci, yerel kültür, faydaları veya tüketim önerileri.",
+          "Belirli bir görsel stil belirleyin, örneğin bilimsel bilgi grafiği, doğal el çizimi, retro doğa tarihi kitabı, modern ticari popüler bilim tarzı, nihai ürünün havasını belirleyin.",
+          "Son olarak 'ana tema net, etiketler profesyonel, modüller zengin' isteyin; eğer daha yüksek kaliteli bir poster istiyorsanız, 'hissi artırın, boşluk bırakın ve düzen katmanlarını güçlendirin' şeklinde bir ek yapabilirsiniz."
+        ],
+        "prompts": [
+          "Elma bilimsel bilgi grafiği oluşturun: ana tema tam bir elma ve kesit, etrafındaki modüller yapı etiketleri, besin değeri, ana üretim yeri ve tüketim faydalarını içermektedir, 3:4 dikey format.",
+          "Mango bilgi posteri yapın: çeşit farklılıklarını, olgunlaşma sürecini, besin değerlerini ve tropikal üretim dağılımını vurgulayın, genel olarak yüksek kaliteli ticari popüler bilim tarzında.",
+          "Yaban mersini bilgi grafiği oluşturun: merkezde gerçekçi bir illüstrasyon, etrafında antioksidan değeri, yetiştirme ortamı, büyüme döngüsü ve tüketim önerileri ekleyin, sosyal medya paylaşımı için uygun."
+        ]
       }
     }
   },
@@ -369,7 +732,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, MBTI kişilik tiplerini güçlü görsel ve yayılma potansiyeline sahip karakter sahne resimlerine dönüştürmek için kullanılır. Belirli bir formata bağlı değildir, genel bir MBTI soyut şablondur: MBTI'yi hayvanlar, tarihi karakterler, dizi karakterleri, AI kurucuları, okul karakterleri gibi herhangi bir karakter grubuna haritalandırabilir ve belirli bir sahneye yerleştirerek belirgin kişilik farklılıkları olan görselleştirilmiş içerikler oluşturur.",
-        "who": "Sosyal medya içerikleri, kişilik testi genişletme içerikleri, karakter analizi içerikleri, IP karışım içerikleri ve 'kişilik + karakter + sahne' ile hikaye anlatımı yapmak isteyen yaratıcılar için uygundur. Özellikle MBTI meraklıları, içerik blog yazarları, psikoloji hesapları, eğlence hesapları, tarihi uyarlama hesapları ve serileştirilmiş içerikler üretenler için uygundur."
+        "who": "Sosyal medya içerikleri, kişilik testi genişletme içerikleri, karakter analizi içerikleri, IP karışım içerikleri ve 'kişilik + karakter + sahne' ile hikaye anlatımı yapmak isteyen yaratıcılar için uygundur. Özellikle MBTI meraklıları, içerik blog yazarları, psikoloji hesapları, eğlence hesapları, tarihi uyarlama hesapları ve serileştirilmiş içerikler üretenler için uygundur.",
+        "how": [
+          "Öncelikle net bir MBTI teması belirleyin, örneğin \"MBTI'nin iş yerindeki performansı\", \"MBTI eğer Üç Krallık karakterleri olsaydı\", \"MBTI'nin seyahat sırasında nasıl göründüğü\".",
+          "Sonra bir karakter seti belirleyin, örneğin hayvanlar, Friends karakterleri, Kırmızı Köşk karakterleri, AI kurucuları, tarihi figürler vb.",
+          "Farklı kişiliklerin aynı durum içinde büyütülüp ayrıştırılacağı belirli bir sahne seçin, örneğin toplantı, uçak yolculuğu, parti, seyahat, girişim tartışması vb.",
+          "Son olarak stil gereksinimlerini ekleyin, örneğin sevimli karikatür, sinema gerçekçiliği, Japon anime grubu, bilgi grafiği poster tarzı vb. Üretim sonrası karakter farklılıkları yeterince belirgin değilse, \"farklı kişiliklerin hareketlerini, ifadelerini ve etkileşim tarzlarını güçlendirmesini\" isteyin."
+        ],
+        "prompts": [
+          "\"MBTI eğer Friends karakterleri olsaydı\" grup posteri oluşturun: arkadaş toplantısında, farklı MBTI kişilikleri Friends tarzı karakterlere yansıtılıyor, farklı sosyal tepkileri ve etkileşimleri yansıtıyor, genel olarak yüksek paylaşım hissi olan karakter illüstrasyonu, 3:4 dikey format.",
+          "\"MBTI toplantılardayken nasıl görünür\" yapın: karakter seti AI girişimcileri, farklı kişilikler toplantı odasında ürün yönü tartışırken farklı durumlar sergiliyor, bilgi net, karakter karşılaştırmaları belirgin, poster hissi güçlü, 3:4.",
+          "\"MBTI eğer Üç Krallık'ta yaşıyor olsaydı\" temalı bir grafik oluşturun: Üç Krallık karakter prototipleri farklı MBTI kişiliklerine yansıtılıyor, askeri çadırda savaş durumunu tartışırken karakter farklılıklarını yansıtıyor, stil yüksek kaliteli tarihi karakter illüstrasyonu, 3:4."
+        ]
       }
     }
   },
@@ -378,7 +752,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana İpucu kullanarak hava tahminlerini 'küçük 3D şehir sahnesi' haline dönüştürür: simgesel yapılar ve dinamik hava efektleri doğal bir şekilde iç içe geçer, üstte hava durumu verileri otomatik olarak düzenlenir.",
-        "who": "Şehir yaşamı hesapları, turizm ofisleri/yerel işletmeler, hava durumu içerik üreticileri, markaların 'günlük atmosfer grafiği' oluşturması ve hava bilgilerini daha kaliteli hale getirmek isteyenler için uygundur."
+        "who": "Şehir yaşamı hesapları, turizm ofisleri/yerel işletmeler, hava durumu içerik üreticileri, markaların 'günlük atmosfer grafiği' oluşturması ve hava bilgilerini daha kaliteli hale getirmek isteyenler için uygundur.",
+        "how": [
+          "Şehir adı + tarih + sıcaklık aralığı + hava durumu (güneşli/bulutlu/yağmur/snow/fog vb.) girin.",
+          "Temsilci bir simge belirleyin (yoksa \"şehir silueti + simgesel yapı\" kullanın).",
+          "Eşit mesafeli küçültülmüş 3D isteyin: hava durumu unsurları ve yapılar etkileşimde (yağmur damlalarının yansıması/bulut tabakası/kardan yığın/rüzgar yönü bayrağı).",
+          "Üretim sonrası kontrol: metin net mi; eğer net değilse, \"metin kontrastını artırın ve boşluk bırakın, sahne stilini değiştirmeden\" isteyin."
+        ],
+        "prompts": [
+          "\"Şanghay Bugün Hava Durumu Küçültülmüş Şehir Manzarası\" oluşturun: Doğu Mücevheri simgesi ortada, hafif yağmur + ıslak yansıtma zemin, üstte şehir adı/tarih/sıcaklık düzenlemesi, 1:1 eşit mesafeli 3D, sosyal paylaşım için uygun.",
+          "\"New York Hava Haritası\" yapın: bulutlu ve güneşli, İmparatorluk Devleti Binası/şehir silueti küçültülmüş sahnesi, bulut tabakası ve güneşin geçiş etkisi, üstte bilgi çubuğu, 1:1.",
+          "\"Kyoto Kışında Büyük Kar Hava Durumu\" oluşturun: Kiyomizu Tapınağı tarzı simge + kar yığınları ve kar tanesi parçacıkları, üstte hava durumu bilgisi düzenlemesi, 1:1 eşit mesafeli küçültülmüş 3D."
+        ]
       }
     }
   },
@@ -387,7 +772,18 @@
     "content": {
       "sections": {
         "what": "Bu şablon, Nano Banana İpucu kullanarak 'Geleneksel Karşılaşma Kartı' oluşturur: mürekkep savaş alanı arka planını kullanarak karakterler arasındaki çatışma hissini güçlendirir ve detaylı unvanlar ve zayıflıklar ile birlikte gelir.",
-        "who": "Geleneksel içerik üretimi, karakter karşılaşma konuları, Xiaohongshu/kısa videolar ile etkileşimli anketler, oyun/çizgi roman karakter tanıtımları ve güçlü görsel etki ile yorum alanı tartışmaları yapmak isteyen yaratıcılar için uygundur."
+        "who": "Geleneksel içerik üretimi, karakter karşılaşma konuları, Xiaohongshu/kısa videolar ile etkileşimli anketler, oyun/çizgi roman karakter tanıtımları ve güçlü görsel etki ile yorum alanı tartışmaları yapmak isteyen yaratıcılar için uygundur.",
+        "how": [
+          "Karakter A ve Karakter B'yi girin: her birinin unvanı/okulu/silahi/özel yeteneği/zayıflığı (en az 3 bilgi).",
+          "Karşılaşma temasını belirleyin: hız vs güç, zeka vs kuvvet, koruma vs yıkım vb.",
+          "Düzen isteyin: solda sağda bölünmüş ekran + üstte profil etiketleri + altta nesne çubuğu + karşılaşma hissi bölücü unsurlar (mürekkep sıçraması/kılıç ışığı).",
+          "Üretim sonrası kontrol: iki tarafın gücü dengeli mi; eğer bir taraf çok güçlü ise, modelden \"karşı tarafın zayıf noktalarını veya maliyet mekanizmasını eklemesini\" isteyin."
+        ],
+        "prompts": [
+          "Ulusal tarzda karşılaşma karakter profili kartı oluşturun: A \"Büyük Hükümdar Xiang Yu\" vs B \"Savaş Tanrısı Lü Bu\", solda sağda bölünmüş ekran, ince işçilik + mürekkep savaş alanı arka planı, profil bilgileri + simgesel nesne çubuğu + özel yetenekler ve zayıflık karşılaştırması, 3:4 dikey format.",
+          "A \"Hua Mulan\" vs B \"Yang Kapısı Kadın Komutanı (temsilci karakter)\" karşılaşma kartı yapın: savaş tarzı farklılıklarını ve zayıf noktaları vurgulayın, solda sağda bölünmüş ekran yüksek gerilim, 3:4.",
+          "\"Wudang Kılıç Ustası\" vs \"Shaolin Sopası Rahibi\" karşılaşma profili oluşturun: silah/yetenek/beden hareketi/zayıflık, altta nesne ve hareket simgeleri, mürekkep karşılaşma atmosferi, 3:4."
+        ]
       }
     }
   }

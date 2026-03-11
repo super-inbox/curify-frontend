@@ -6,7 +6,18 @@
     "content": {
       "sections": {
         "what": "This template creates a collectible panorama decomposition diagram of 'single herbal medicine' using optimized Nano Banana prompts: featuring appearance/cross-section details, flavor properties and core efficacy labels, presented in clear scientific layout.",
-        "who": "Suitable for TCM science popularization accounts, wellness content creators, herbal shops/brands for knowledge posters, students for study notes, and users who want to explain herbal materials clearly (but don’t want to write long texts)."
+        "who": "Suitable for TCM science popularization accounts, wellness content creators, herbal shops/brands for knowledge posters, students for study notes, and users who want to explain herbal materials clearly (but don’t want to write long texts).",
+        "how": [
+          "Enter the Chinese name of the herb + aliases (if any) + common forms (slices/raw herbs).",
+          "Specify the modules you want to emphasize: properties and meridians/main effects/key identification points/precautions/modern dosage forms (granules, capsules, etc.).",
+          "Request a 'decomposed view': appearance, cross-section, texture, key parts marked with arrows; high information density but readable.",
+          "Proofread after generation: Are the terms consistent (meridians, effect labels); if there are deviations, request 'rewrite the copy based on the points you provided, without changing the visual style'."
+        ],
+        "prompts": [
+          "Generate a 'Single Herb Panorama Decomposition Diagram': herb 'Huangqi', including appearance and cross-section texture annotations, properties and meridians, core effect labels, common dosage forms and usage scenarios, 3:4 portrait, high information density popular science layout.",
+          "Create an 'Angelica' Herb Exploded Sheet: slice structure, key identification points (color/smell/cross-section), main effects, pairing ideas (optional), precaution tips, clear arrow annotations, 3:4.",
+          "Generate a 'Chenpi' decomposition diagram: key points of origin and year differences, close-up of appearance texture, properties and meridians, daily usage scenarios (tea brewing/cooking), retro yet refreshing Chinese infographic layout, 3:4."
+        ]
       }
     }
   },
@@ -17,7 +28,18 @@
     "content": {
       "sections": {
         "what": "This template uses customized Nano Banana prompts to build an 'isometric pixel museum' timeline: transforming historical stages into navigable exhibition spaces, with each exhibition area corresponding to an era, complete with key node signage.",
-        "who": "Suitable for science popularization/history/technology evolution content, product version iteration displays, educational explanations (classroom/notes), comparative timelines in research reports, and creators who want to make 'development history' more visually appealing."
+        "who": "Suitable for science popularization/history/technology evolution content, product version iteration displays, educational explanations (classroom/notes), comparative timelines in research reports, and creators who want to make 'development history' more visually appealing.",
+        "how": [
+          "Define the theme and time range (e.g., 'Human Evolution', 'Mobile Phone Form Evolution', 'AI Model Iteration').",
+          "List 6–10 stages: give 1 core change + 1 landmark (icon/object/symbol) for each stage.",
+          "Request equidistant pixel exhibition: spatial progression, display board numbering, stage titles (can be bilingual), and add small legends/scale bars.",
+          "Check after generation: Are the stages in chronological order; if not, request 'keep the visual style unchanged, rearrange the display boards and nodes'."
+        ],
+        "prompts": [
+          "Generate a 'Human Evolution Museum' pixel equidistant timeline: Homo habilis → Homo erectus → Heidelbergensis → Neanderthal → Homo sapiens, including iconic tools/features and key node signage for each stage, bilingual subtitles, 3:4 portrait.",
+          "Create a 'Mobile Phone Form Evolution Museum': feature phone → flip phone → touchscreen → full-screen → foldable screen → AR glasses (concept), one representative model/feature icon for each stage, equidistant pixel exhibition, 3:4.",
+          "Generate a 'Web Development Framework Evolution' pixel museum: jQuery → Backbone → Angular → React → Next.js → RSC (concept), one key idea per stage + icon, clear node markings, 3:4."
+        ]
       }
     }
   },
@@ -28,7 +50,18 @@
     "content": {
       "sections": {
         "what": "This template utilizes Nano Banana prompts to transform travel itineraries into 'hand-drawn itinerary maps': displaying routes by day, featuring Q-version icons for attractions and food, creating an intuitive daily movement line.",
-        "who": "Suitable for travel guide sharing, Xiaohongshu/Douyin travel bloggers, families creating itinerary cards, travel agencies/B&Bs making recommendation posters, and users who want to explain their itineraries clearly and beautifully."
+        "who": "Suitable for travel guide sharing, Xiaohongshu/Douyin travel bloggers, families creating itinerary cards, travel agencies/B&Bs making recommendation posters, and users who want to explain their itineraries clearly and beautifully.",
+        "how": [
+          "Enter destination + travel days + main locations for each day (in order).",
+          "Add preferences: food first/parent-child/photography spots/hiking/shopping, and list 3–5 must-visit spots.",
+          "Request map style: Q-version healing hand-drawn, Chinese annotations, daily routes distinguished by different colors/line types (can describe, no need to specify exact color values).",
+          "Check after generation: Is the route detoured, is each day too packed; if too packed, let the model 'split the itinerary into morning/afternoon/evening and reduce points'."
+        ],
+        "prompts": [
+          "Generate a 'Tokyo 4-Day Hand-Drawn Travel Map': divided by Day 1–Day 4, marking attractions, food, accommodation, and transportation methods, Q-version healing style, fully Chinese annotations, 3:4 portrait printable.",
+          "Create a 'San Francisco 2-Day Family Travel Map': zoo/science museum/beach + restaurant recommendations, clear route, add tips (queue/time slots), Q-version hand-drawn, 3:4.",
+          "Generate a 'Chengdu 3-Day Food Route Map': Kuanzhai Alley/Jinli/Taikoo Li/hot pot skewers, daily routes + food icons highlighted, 3:4 portrait."
+        ]
       }
     }
   },
@@ -39,7 +72,18 @@
     "content": {
       "sections": {
         "what": "This template uses professional Nano Banana prompts to upgrade building photos into 'HUD technical analysis boards': overlaying white line annotations, dimension data, and structural key points, presenting a sci-fi engineering manual-like visual effect.",
-        "who": "Suitable for architecture/design students creating portfolios, architectural science popularization accounts, city landmark interpretation content, exhibition guide posters, and creators who want to make 'cool-looking but clearer' architectural content."
+        "who": "Suitable for architecture/design students creating portfolios, architectural science popularization accounts, city landmark interpretation content, exhibition guide posters, and creators who want to make 'cool-looking but clearer' architectural content.",
+        "how": [
+          "Enter building name + city + 3–5 engineering/structural highlights you want to emphasize (e.g., cantilever, truss, curtain wall system).",
+          "Provide the data range that can be cited (height, number of floors, material type; if uncertain, write 'estimate/about').",
+          "Request HUD style: white fine line annotations, numbered callouts, data panels, plan/section small windows, vertical 3:4.",
+          "Check after generation: Are the annotations obstructing the main body; if obstructing, request 'move the annotations to the edge and connect with leader lines'."
+        ],
+        "prompts": [
+          "Generate a 'Dubai Burj Khalifa' HUD architectural analysis diagram: main photo + white line technical annotations, including height/floors/structural system highlights, curtain wall materials, wind load design highlights, with section small images and data panels, 3:4 portrait.",
+          "Create a 'Sydney Opera House' HUD infographic: shell structure, prefabricated segments, material and acoustic space highlights, white line annotations + numbered callouts + small plan diagram, 3:4.",
+          "Generate a 'Zagreb Museum of Contemporary Art (example)' architectural analysis board: emphasize lighting, flow, structure, and materials, overlay HUD annotations on photos, provide 3 design highlight summaries at the bottom, 3:4."
+        ]
       }
     }
   },
@@ -50,7 +94,18 @@
     "content": {
       "sections": {
         "what": "This template generates a cyberpunk-style 'endangered species knowledge card' using Nano Banana prompts: integrating six core module information and concise charts, supporting bilingual annotations in Chinese and English, suitable for visual science popularization.",
-        "who": "Suitable for natural science popularization accounts, public welfare/environmental organization content, students creating species reports, zoo/museum guide posters, and creators who like high-visual-impact infographics."
+        "who": "Suitable for natural science popularization accounts, public welfare/environmental organization content, students creating species reports, zoo/museum guide posters, and creators who like high-visual-impact infographics.",
+        "how": [
+          "Enter species name (Chinese and English) + distribution area + 3 notable features (size/color/behavior).",
+          "Provide a list of threats (habitat destruction/poaching/climate, etc.) and conservation actions (protected areas/laws/public participation).",
+          "Request 6-module structure + population trend small chart (increasing/decreasing/uncertain) + bilingual title and key points.",
+          "Check after generation: Is the information too 'generic'; if generic, supplement with 1–2 specific factual points and let the model rewrite the module copy."
+        ],
+        "prompts": [
+          "Generate a 'Snow Leopard' endangered species cyberpunk knowledge card: bilingual annotations, 6 major modules + population trend chart + main threats and conservation actions, 3:4 portrait, high contrast neon infographic.",
+          "Create a 'Orangutan' knowledge card: morphology/habitat/behavior/trends/threats/conservation and cultural relations, add a distribution map small window and trend chart, bilingual title, 3:4.",
+          "Generate a 'Hawksbill Sea Turtle' endangered species card: highlight threats from marine plastic and fishing nets, breeding and migration behavior, 6-module structure + data panel, 3:4."
+        ]
       }
     }
   },
@@ -61,7 +116,18 @@
     "content": {
       "sections": {
         "what": "This template generates character setting breakdown boards using Nano Banana prompts: including main visual full-body images, clothing details, expression sets, and personal item lists, presenting a professional manuscript style.",
-        "who": "Suitable for illustrators/concept designers, fan creations, novel/comic character settings, game prototype character cards, and creators who want to explain character details clearly at once."
+        "who": "Suitable for illustrators/concept designers, fan creations, novel/comic character settings, game prototype character cards, and creators who want to explain character details clearly at once.",
+        "how": [
+          "Enter character identity (profession/era/camp) + 3 personality keywords + 1 catchphrase/creed.",
+          "List clothing hierarchy (outerwear/innerwear/footwear/hats, etc.) and core props (weapons/tools/mementos).",
+          "Request layout: main visual centered, left and right column detail small windows (material/pattern/expression), handwritten annotation style, 3:4 portrait.",
+          "Check after generation: Are the props consistent with the identity; if not consistent, let the model 'reselect props based on identity, but retain the overall visual style'."
+        ],
+        "prompts": [
+          "Generate character breakdown setting diagram: character 'Steampunk Female Mechanic', including clothing layering, expression set, material close-ups, personal tools and core props, handwritten Chinese annotations, 3:4 portrait.",
+          "Create a 'Tang Dynasty Female Hero' character setting board: meticulous + light watercolor texture, clothing hierarchy, accessory details, weapons and personal items, 4 expressions, Chinese annotations, 3:4.",
+          "Generate a 'Future City Courier' character breakdown: uniform hierarchy, backpack structure, commonly used tools, identity badge and sticker details, clear annotations, 3:4."
+        ]
       }
     }
   },
@@ -72,7 +138,18 @@
     "content": {
       "sections": {
         "what": "This template uses Nano Banana prompts to transform recipes into 'visual posters': showcasing step-by-step illustrations and finished product photos, not only clarifying the cooking process but also emphasizing the aesthetic for social sharing.",
-        "who": "Suitable for sharing New Year's Eve dinner, organizing family recipes, producing content for food accounts, restaurant brands making menu posters, and users who want to clarify 'cooking steps'."
+        "who": "Suitable for sharing New Year's Eve dinner, organizing family recipes, producing content for food accounts, restaurant brands making menu posters, and users who want to clarify 'cooking steps'.",
+        "how": [
+          "Enter dish name and taste preference (light/spicy/sweet).",
+          "List ingredients and key quantities (grams/spoons), and emphasize 'steps must be executable'.",
+          "Request 5–7 step-by-step illustrations: cooking time/temperature/key actions must be written out.",
+          "Check after generation: Are the ingredients consistent with the steps; if inconsistent, let the model 'rearrange the steps according to the list'."
+        ],
+        "prompts": [
+          "Generate 'New Year's Eve Visual Recipe Poster': dish 'Peking Duck', including finished main visual, ingredients and quantities, 7-step illustration, drink pairing and auspicious meanings, Spring Festival atmosphere, 3:4 portrait.",
+          "Create a 'Mapo Tofu' visual recipe: ingredient grams, key cooking tips, 6-step breakdown, clear layout suitable for collection and sharing, 3:4.",
+          "Generate 'Spanish Paella' recipe poster: ingredient list, step-by-step illustration, common failure points and correction suggestions, 3:4 portrait."
+        ]
       }
     }
   },
@@ -83,7 +160,18 @@
     "content": {
       "sections": {
         "what": "This template utilizes Nano Banana prompts to create 'character dossier posters': displaying structured columns of character basic settings, motivations, and complex relationship networks.",
-        "who": "Suitable for writers/screenwriters creating character biographies, fan creations making character analysis posts, game/comic setting introductions, CP relationship organization, and creators who want to clarify 'motivations and relationships' of characters."
+        "who": "Suitable for writers/screenwriters creating character biographies, fan creations making character analysis posts, game/comic setting introductions, CP relationship organization, and creators who want to clarify 'motivations and relationships' of characters.",
+        "how": [
+          "Enter character background (origin/goal/weakness) + key relationship network (3–6 people: allies/rivals/concerns).",
+          "Provide abilities and costs: what the abilities are, what the costs/limitations are (the more specific, the better).",
+          "Request layout: main visual + expression bar + left and right columns + bottom item breakdown; the title can include 'code/file number'.",
+          "Check after generation: Are the relationships coherent; if contradictory, let the model 'retain the visual style, rewrite the relationship section and unify the titles'."
+        ],
+        "prompts": [
+          "Generate character Dossier: character 'Underground Journalist', main visual portrait + expression settings + left and right columns (background/motivation/abilities and costs/bond relationships) + bottom key item breakdown (camera, voice recorder, etc.), 3:4 portrait.",
+          "Create an 'Ancient Strategist' character profile analysis poster: file number, personality tags, strategy style, relationship network (lord/rival/old friend), bottom items (folding fan/secret letter), 3:4.",
+          "Generate 'Cyber Mercenary' character profile: ability modules (weapons/cybernetics/tactics), psychological weaknesses, relationships (employer/traitor/family), HUD style layout, 3:4."
+        ]
       }
     }
   },
@@ -94,7 +182,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate visually impactful 'miniature city weather forecast images'. The scene centers around an isometric 3D city, with a landmark building in the center, surrounded by streets, vehicles, pedestrians, and natural elements, overlaid with weather information, date, and temperature formatting, turning weather information into a city poster that combines information density and design.",
-        "who": "Suitable for weather accounts, urban information accounts, travel content creators, local media editors, and those wanting to make 'weather information' more shareable through design-oriented content. Also suitable for daily city weather cards, holiday travel weather images, or social media visual covers."
+        "who": "Suitable for weather accounts, urban information accounts, travel content creators, local media editors, and those wanting to make 'weather information' more shareable through design-oriented content. Also suitable for daily city weather cards, holiday travel weather images, or social media visual covers.",
+        "how": [
+          "First determine the city name and representative landmark, such as Shanghai, Tokyo, Paris, New York.",
+          "Then specify the weather type, such as sunny, heavy rain, snowy, cloudy, foggy, thunderstorm, etc., and supplement the time atmosphere, such as morning, dusk, or night scene.",
+          "Describe the visual elements, such as main roads, bridges, rivers, vehicles, trees, building density and color tone style, to make the city more recognizable.",
+          "Finally, add layout requirements, such as temperature, date, weather icons, city name language style; if the information is not clear enough, you can request 'strengthen weather layout and landmark recognition'."
+        ],
+        "prompts": [
+          "Generate a miniature weather forecast image for Shanghai: centered on the Oriental Pearl, sunny blue sky and white clouds, equidistant 3D miniature city model, overlaid with weather, date, and temperature layout, clear information, 9:16.",
+          "Create a Tokyo snowy city weather card: a miniature model of Tokyo Tower and dense neighborhoods, snowy atmosphere, cool tones, with Japanese city name and weather information layout, 9:16.",
+          "Generate a New York rainy night city weather poster: a miniature landscape of Manhattan skyscrapers and streets, rain night light reflections, clear weather icons, date, and temperature information, strong design sense."
+        ]
       }
     }
   },
@@ -105,7 +204,18 @@
     "content": {
       "sections": {
         "what": "This template utilizes Nano Banana prompts to generate 'subject information posters': providing cartoon or blackboard report visual frameworks, aimed at enhancing the fun of classroom explanations or self-study.",
-        "who": "Suitable for teachers making classroom explanations, students creating study notes/homework displays, science popularization accounts producing knowledge graphics, and content creators who want to clarify complex concepts."
+        "who": "Suitable for teachers making classroom explanations, students creating study notes/homework displays, science popularization accounts producing knowledge graphics, and content creators who want to clarify complex concepts.",
+        "how": [
+          "Enter knowledge point topic (e.g., DNA double helix/plate tectonics/electromagnetic induction).",
+          "Choose style: cartoon card style (more suitable for younger audiences) or blackboard report sketch style (more suitable for science/competition).",
+          "Request structure: definition → key points → illustrations → examples/formulas (adjust according to your subject).",
+          "Check after generation: Are the keywords prominent, do the illustrations correspond to the key points; if necessary, let the model 'reduce text, increase illustrations'."
+        ],
+        "prompts": [
+          "Create an infographic on 'DNA Double Helix Structure': include definition, key components, structural diagram, common misconceptions, in a blackboard report chalk sketch style, 3:4 portrait.",
+          "Generate a knowledge card on 'Plate Tectonics and Earthquakes': in a cartoon card style, macaron colors, flowchart explaining plate movement → stress → earthquake, with keywords highlighted, 3:4.",
+          "Explain 'Electromagnetic Induction' in a blackboard report style: core formula, right-hand rule illustration, three typical example prompts, clear structure, 3:4 portrait."
+        ]
       }
     }
   },
@@ -116,7 +226,18 @@
     "content": {
       "sections": {
         "what": "This template combines Nano Banana prompts to deconstruct complex events into 'multidimensional analysis diagrams': layering the phenomena and essence, clearly presenting causal chains and long-term impacts.",
-        "who": "Suitable for hot topic interpretation accounts, industry analysis/business observation, product/operation reviews, structured writing for graduate students, and those who want to explain complex events logically."
+        "who": "Suitable for hot topic interpretation accounts, industry analysis/business observation, product/operation reviews, structured writing for graduate students, and those who want to explain complex events logically.",
+        "how": [
+          "Input a one-sentence summary of the event + timeline (3–6 key nodes).",
+          "List the participants (at least 3 categories: platform/regulation/user/industry chain, etc.) and their motivations.",
+          "Require a three-layer structure: phenomenon vs essence, underlying logic chain (cause → effect), impact radiation (short/medium/long).",
+          "Check after generation: is it 'opinion first'; if biased, let the model 'first provide a factual framework, then give multiple perspective hypotheses'."
+        ],
+        "prompts": [
+          "Generate a multi-dimensional analysis chart of a hot event: event 'controversy triggered by a certain platform's algorithm recommendation mechanism' (in neutral wording), including timeline nodes, participant motivations, causal chain, short, medium, and long-term impact radiation, with high readability Chinese layout, 3:4 portrait.",
+          "Create an analysis chart for the 'mass layoffs' event: layered phenomenon and essence, cost/growth/organizational structure logic chain, impact radiation on employees/industry/capital market, 3:4.",
+          "Generate a retrospective infographic on 'a product launch failure': key nodes, root cause chain (demand/engineering/communication), remedy path, long-term impact, 3:4 portrait."
+        ]
       }
     }
   },
@@ -127,7 +248,18 @@
     "content": {
       "sections": {
         "what": "This template utilizes professional Nano Banana prompts to generate 'intangible cultural heritage craft boards': systematically presenting historical origins, production processes, tools and materials, and their modern integration applications.",
-        "who": "Suitable for cultural heritage/science popularization accounts, school club boards, cultural institution promotions, cultural and creative brand materials, and creators who want to clarify traditional crafts and create visual quality."
+        "who": "Suitable for cultural heritage/science popularization accounts, school club boards, cultural institution promotions, cultural and creative brand materials, and creators who want to clarify traditional crafts and create visual quality.",
+        "how": [
+          "Input the intangible heritage name + region + a one-sentence core feature (e.g., 'bamboo weaving lanterns/blue dyeing/woodblock New Year paintings').",
+          "List the process steps (5–8 steps) and tool/material list (the more specific, the better).",
+          "Require modules: history/process/pattern symbols/representative works/current status of inheritance/modern integration, with small illustrations and annotations.",
+          "Check after generation: are the steps executable; if unclear, let the model 'rewrite the step description according to the process you provided and add key actions'."
+        ],
+        "prompts": [
+          "Generate an A3 exhibition board for intangible heritage craft: theme 'fish lanterns (light decorations)', including historical background, production process (7 steps), tools and materials, pattern symbols and meanings, current status of inheritance and modern applications, rich illustrations, 3:4 portrait high-density layout.",
+          "Create an exhibition board for 'blue dyeing' intangible heritage: dye sources, key points of tie-dyeing/wax dyeing, step-by-step process, common patterns and symbols, contemporary fashion applications, 3:4.",
+          "Generate an exhibition board for 'woodblock New Year paintings': carving/printing process, color system, representative themes, cases of inheritance and modern design integration, clear Chinese modules, 3:4."
+        ]
       }
     }
   },
@@ -138,7 +270,18 @@
     "content": {
       "sections": {
         "what": "This template is based on Nano Banana prompts to compress any concept into 'structured knowledge cards': offering options for macaron cartoon or chalkboard report styles, aimed at enhancing learning efficiency.",
-        "who": "Suitable for teachers preparing lessons, students taking notes, science popularization accounts producing series of cards, parent-child education content, and users who need to explain complex concepts in '10 seconds or less'."
+        "who": "Suitable for teachers preparing lessons, students taking notes, science popularization accounts producing series of cards, parent-child education content, and users who need to explain complex concepts in '10 seconds or less'.",
+        "how": [
+          "Input topic + audience age/level (elementary/middle/adult beginner).",
+          "Provide the modules you wish to include: definition/examples/formulas/common misconceptions/quiz (optional).",
+          "Choose a style: cute cartoon or blackboard report; require keywords to be highlighted, clear hierarchy, and large readable text.",
+          "Check after generation: is it too long; if too long, let the model 'reduce to 6–8 key points and add 1 example'."
+        ],
+        "prompts": [
+          "Generate a knowledge card: topic 'What is photosynthesis', aimed at upper elementary students, cute cartoon card style, including definition, three steps of the process, one real-life example, one quiz question, 3:4 portrait.",
+          "Create a blackboard report style knowledge card: topic 'Newton's Third Law', including formula, keywords, two examples, common misconceptions, chalk sketch style, 3:4.",
+          "Generate a knowledge card on 'machine learning overfitting': definition, causes, 3 mitigation methods, one intuitive analogy, clear structure, 3:4."
+        ]
       }
     }
   },
@@ -149,7 +292,18 @@
     "content": {
       "sections": {
         "what": "This template generates 'dynasty costume science illustrations' with meticulous and colorful textures using Nano Banana prompts: modularizing the structure, accessory details, and meaning annotations.",
-        "who": "Suitable for traditional culture/science popularization/Hanfu accounts, cultural and creative design materials, history enthusiasts taking notes, exhibition guide maps, and cultural content creators needing 'accuracy + high quality'."
+        "who": "Suitable for traditional culture/science popularization/Hanfu accounts, cultural and creative design materials, history enthusiasts taking notes, exhibition guide maps, and cultural content creators needing 'accuracy + high quality'.",
+        "how": [
+          "Input dynasty/period + clothing type (everyday wear/formal wear/military wear/official wear, etc.) + character identity (scholar/officer/noble/commoner).",
+          "List key details: collar style, sleeve style, belt, skirt hem, headwear, pattern theme (e.g., cloud pattern/flower and bird).",
+          "Require modules: structural breakdown + accessory detail close-ups + meaning annotations + wearing scene small windows, 3:4 portrait.",
+          "Check after generation: are the titles and structures consistent; if inconsistent, request 'retain the artistic style, and revise the text according to the structural points you provided'."
+        ],
+        "prompts": [
+          "Generate a 'Tang Dynasty women's everyday wear' national style clothing science illustration: meticulous heavy color style, structural breakdown, pattern meanings, accessory details, wearing scene modular breakdown, 3:4 portrait with Chinese annotations.",
+          "Create a 'Ming Dynasty official attire' science illustration: rank badge patterns, headwear, belt and layering structure, with detail close-ups and annotations, 3:4.",
+          "Generate an infographic on 'Song Dynasty literati clothing': collar and sleeve styles, material and color preferences, daily scenes, meticulous style breakdown, 3:4."
+        ]
       }
     }
   },
@@ -160,7 +314,18 @@
     "content": {
       "sections": {
         "what": "This template utilizes Nano Banana prompts to produce a complete set of 'book interpretation series images' at once: from visual covers to in-depth viewpoint organization, with a highly unified style.",
-        "who": "Suitable for book bloggers, knowledge bloggers, course instructors creating book list content, organizing study notes, and users who want to explain a book clearly and increase shares and saves."
+        "who": "Suitable for book bloggers, knowledge bloggers, course instructors creating book list content, organizing study notes, and users who want to explain a book clearly and increase shares and saves.",
+        "how": [
+          "Input book title + author + the audience you want to emphasize (workplace/entrepreneurship/psychology/history, etc.).",
+          "Provide 3–5 core points and 2–3 memorable quotes (if none, let the model generate from the content summary).",
+          "Require 6 fixed structure images: each with a title + key points + visual symbols; unified color scheme and font hierarchy.",
+          "Check after generation: are there repeated points; if repeated, let the model 'retain only one theme per image and reallocate the points'."
+        ],
+        "prompts": [
+          "Generate 6 book interpretation images for 'Working Backwards': cover hook, core theme, memorable quotes, key points, mechanisms/character relationships, overall book context summary, unified style, 3:4 portrait.",
+          "Generate 6 images interpreting 'One Sentence is Worth Ten Thousand': theme and character relationships, key conflicts and emotional lines, representative memorable quotes, context summary, suitable for sharing on Xiaohongshu, 3:4.",
+          "Generate 6 images for a book on 'AI Product Methodology': aimed at product managers, highlighting frameworks, cases, misconceptions, and action lists, unified visual style, 3:4."
+        ]
       }
     }
   },
@@ -171,7 +336,18 @@
     "content": {
       "sections": {
         "what": "This template, in conjunction with Nano Banana prompts, produces an 'immersive vocabulary map': pairing each object in the scene with corresponding English, IPA, and translations to enhance memory efficiency.",
-        "who": "Suitable for English enlightenment parents, preschool/primary school English teachers, vocabulary learning bloggers, institutions creating learning materials, and users who want to create 'printable vocabulary posters'."
+        "who": "Suitable for English enlightenment parents, preschool/primary school English teachers, vocabulary learning bloggers, institutions creating learning materials, and users who want to create 'printable vocabulary posters'.",
+        "how": [
+          "Choose a scene: kitchen, supermarket, bedroom, zoo, playground, etc.",
+          "Require annotation format: English / IPA / Chinese (three lines), and emphasize 'not obscuring objects'.",
+          "Control density: first annotate 15–25 high-frequency objects, too many will appear cluttered.",
+          "Adjust after generation: replace difficult words with simpler ones, or add 'group annotations by area'."
+        ],
+        "prompts": [
+          "Generate a 'kitchen scene vocabulary learning image': richly detailed illustration, annotate 20 common objects, each annotation three lines (English/IPA/Chinese), clear layout without obscuring the main subject, 3:4 portrait.",
+          "Generate a 'supermarket scene vocabulary image': include shelves, checkout counters, shopping carts, etc., annotate 25 high-frequency nouns, English + IPA + Chinese three-line annotations, as close to the objects as possible without obscuring, 3:4 portrait.",
+          "Generate a 'zoo scene vocabulary poster': annotate animals and facilities (gate, cage, ticket, map, etc.), in English/IPA/Chinese three-line format, suitable for printing."
+        ]
       }
     }
   },
@@ -182,7 +358,18 @@
     "content": {
       "sections": {
         "what": "This template applies Nano Banana prompts to generate 'retro cultural relic infographics': explaining the multiple values of cultural relics through quadrant layout, accompanied by exquisite hand-drawn illustrations.",
-        "who": "Suitable for cultural heritage science popularization accounts, history enthusiasts, museum guide content, cultural and creative brands telling stories, and creators who want to present cultural relics in a 'systematic and collectible' manner."
+        "who": "Suitable for cultural heritage science popularization accounts, history enthusiasts, museum guide content, cultural and creative brands telling stories, and creators who want to present cultural relics in a 'systematic and collectible' manner.",
+        "how": [
+          "Input relic name + era/dynasty + excavation/collection location (optional).",
+          "Provide the four quadrant points you want to emphasize (2–4 points per quadrant).",
+          "Require retro layout: paper texture, hand-drawn illustrations, numbered footnotes, small timeline or location windows.",
+          "Check after generation: are the terms accurate; if more reliable, express uncertainties with 'possibly/general consensus/speculation'."
+        ],
+        "prompts": [
+          "Generate a retro four-quadrant infographic on Chinese relics: relic 'Simuwu Ding', center hand-drawn illustration + four quadrants (historical status/archaeological value/artistic achievement/contemporary influence) + extended knowledge section, 3:4 portrait.",
+          "Create a retro infographic on 'Sword of Goujian': four quadrants explaining craftsmanship features, historical background, discovery story, contemporary cultural influence, retro paper texture, 3:4.",
+          "Generate an infographic on 'Tang Sancai Camel Figurine': artistic style, trade/Silk Road connections, archaeological value, modern aesthetic influence, four-quadrant structure, 3:4."
+        ]
       }
     }
   },
@@ -193,7 +380,18 @@
     "content": {
       "sections": {
         "what": "This template uses Nano Banana prompts to create 'dog breed retro science': featuring a central hand-drawn dog breed with detailed anatomical annotations, and explaining care and personality traits in sections.",
-        "who": "Suitable for dog science popularization accounts, pet shops/dog trainers' content, new dog owners, school science, and creators who want to make pet content 'as visually appealing as old magazines'."
+        "who": "Suitable for dog science popularization accounts, pet shops/dog trainers' content, new dog owners, school science, and creators who want to make pet content 'as visually appealing as old magazines'.",
+        "how": [
+          "Input dog breed name + size (small/medium/large) + family scene (apartment/yard/parent-child).",
+          "List your top 3 concerns: shedding/exercise needs/grooming/training/socialization, etc.",
+          "Require retro scientific style: central illustration + white line anatomical annotations + modular information (care/training/personality/adaptability).",
+          "Check after generation: does it match the scene; if not, let the model 'rewrite care and exercise suggestions according to apartment/parent-child scenes'."
+        ],
+        "prompts": [
+          "Generate a retro scientific infographic on dog breeds: breed 'Golden Retriever', 9:16, central hand-drawn + anatomical annotations, modules include training points, exercise needs, coat care, personality summary, and suitable groups.",
+          "Create an infographic on the 'Corgi' breed: structural annotations, spine care notes, training and energy management, shedding care, retro layout, 9:16.",
+          "Generate a science illustration on 'Siberian Husky': cold adaptability, exercise requirements, risk of destruction, and training strategies, central illustration + annotations, 9:16."
+        ]
       }
     }
   },
@@ -204,7 +402,18 @@
     "content": {
       "sections": {
         "what": "This template is based on Nano Banana prompts to upgrade dishes into 'culinary panorama posters': clarifying cooking processes and food stories through watercolor visuals and structured modules.",
-        "who": "Suitable for food bloggers, restaurant brand content, local cultural tourism promotions, school science displays, and creators who want to tell food stories with more depth."
+        "who": "Suitable for food bloggers, restaurant brand content, local cultural tourism promotions, school science displays, and creators who want to tell food stories with more depth.",
+        "how": [
+          "Input dish name/food + region/style (optional) + one point you want to highlight (spices/craft/cultural story).",
+          "List core ingredients (5–10 items) and key steps (5–7 steps).",
+          "Required modules: steps, ingredients, flavor keywords, origin and culture, local memories/scenario recommendations, 3:4 portrait.",
+          "Check after generation: do steps correspond to ingredients; if not, instruct the model to 'rearrange steps according to the ingredient list and supplement key cooking times'."
+        ],
+        "prompts": [
+          "Generate a panoramic infographic for 'Lanzhou Beef Noodle': watercolor main visual + 6 steps of production + core ingredients + origin culture and local memory module, 3:4 portrait Chinese layout.",
+          "Create a popular science poster for 'French Croissant': folding layer principle, key steps, common failure points, ingredients and flavor keywords, 3:4.",
+          "Generate an infographic for 'Mexican Taco': ingredient structure, flavor combinations, origin story, suitable scenarios (street/home gathering), 3:4 portrait."
+        ]
       }
     }
   },
@@ -215,7 +424,18 @@
     "content": {
       "sections": {
         "what": "This template utilizes Nano Banana prompts to generate a 'panorama solar terms poster': deeply analyzing the time, phenology, and cultural customs of solar terms through central illustrations and surrounding modules.",
-        "who": "Suitable for traditional culture/science popularization, school classroom boards, parent-child education content, cultural/tea brands for solar term marketing, and those who want to create 'printable and collectible' solar term posters."
+        "who": "Suitable for traditional culture/science popularization, school classroom boards, parent-child education content, cultural/tea brands for solar term marketing, and those who want to create 'printable and collectible' solar term posters.",
+        "how": [
+          "Input the solar term name (e.g., Lichun/Shuangjiang) + the region you want to emphasize (North/South, etc., optional).",
+          "List three key points of the phenology (if none, let the model generate, but require it to conform to common sense).",
+          "Require modular layout: solar term time/sun longitude, three phenology phases, customs, agricultural keywords, representative food/flowers (optional).",
+          "Check after generation: is the text too dense; if too dense, instruct the model to 'reduce to no more than 3 points per module and increase font size'."
+        ],
+        "prompts": [
+          "Generate an A3 portrait knowledge poster for 'Lichun': central retro illustration, modules include solar term time/sun longitude, three phenology phases, customs scenes, agricultural and health tags, high readability Chinese layout.",
+          "Create a poster for 'Shuangjiang': three phenology phases, representative food, customs and agriculture, health tips, retro illustration + information modules, A3 portrait.",
+          "Generate a knowledge illustration for 'Summer Solstice': solar term information, phenological changes, cultural connotations, dietary and lifestyle suggestions, A3 portrait high density but readable."
+        ]
       }
     }
   },
@@ -226,7 +446,18 @@
     "content": {
       "sections": {
         "what": "This template applies Nano Banana prompts to visualize hypothetical scenarios as 'retro deduction posters': showcasing three different historical branching scenarios through structured sections.",
-        "who": "Suitable for history science popularization/story accounts, writing/screenwriting inspiration, short video script planning, educational content, and those who enjoy creating 'what if history was different' scenarios."
+        "who": "Suitable for history science popularization/story accounts, writing/screenwriting inspiration, short video script planning, educational content, and those who enjoy creating 'what if history was different' scenarios.",
+        "how": [
+          "Identify a point of change: character not dead/war ends early/alliance relationship changes, etc.",
+          "Clearly write the baseline history and the divergence point: what happened in real history, where the assumption begins to diverge.",
+          "List 3 chain reactions: major changes in politics, economy, military, or culture.",
+          "Check structure after generation: clear title, clear divergence point, sufficient differences in three scenarios."
+        ],
+        "prompts": [
+          "Generate 'What if · History Reversal Plan': assume 'Napoleon lived until 1850 and participated in the new order of Europe', including character profiles, key turning points, confrontation relationships, sketches of three hypothetical scenarios, watercolor + ink line hand-drawn retro style, 3:4 portrait.",
+          "What if: assume 'the Ming Dynasty completed maritime colonization early', output a retro infographic: turning points, allies and adversaries, comparison of three different world lines, structured layout, 3:4 portrait.",
+          "What if: assume 'the telegraph appeared during the Roman Empire', generate a counterfactual history poster: archives/mechanism chain/three deduction scenarios, retro hand-drawn infographic style."
+        ]
       }
     }
   },
@@ -237,7 +468,18 @@
     "content": {
       "sections": {
         "what": "This template uses Nano Banana prompts to create a 'Historical and Modern Comparison Card': comparing characters' professions and abilities through a split-column structure, summarizing their core contrasting highlights.",
-        "who": "Suitable for creators making short videos/images on 'historical vs modern', modern reinterpretations of historical figures, IP character comparisons, brand persona comparisons, and those looking for high-interaction discussions."
+        "who": "Suitable for creators making short videos/images on 'historical vs modern', modern reinterpretations of historical figures, IP character comparisons, brand persona comparisons, and those looking for high-interaction discussions.",
+        "how": [
+          "Input character A (ancient/traditional) and character B (modern/contemporary) identity settings and a one-sentence label.",
+          "Provide 3 keywords, 2 abilities, 2 representative items, and 1 weakness/cost for each side.",
+          "Require low saturation high-end layout: left and right profiles + bottom comparison table + a summary of 'contrast points'.",
+          "Check after generation: is the comparison 'in the same dimension'; if not in the same dimension, instruct the model to 'unify dimensions and rewrite the comparison table'."
+        ],
+        "prompts": [
+          "Generate a comparison character profile card: A 'Ancient Bodyguard' vs B 'Modern Courier', comparing profession/keywords/abilities/items/weaknesses, and provide a summary of contrast highlights, 3:4 portrait low saturation layout.",
+          "Create a comparison profile for 'A Tang Dynasty Female Official' vs 'B Modern Female Product Manager': personality, abilities, personal items, sources of stress, bottom comparison table, 3:4.",
+          "Generate a character comparison card for 'Ancient Scholar' vs 'Modern Knowledge Blogger': unified style, high-end layout, one-sentence summary of contrast points, 3:4."
+        ]
       }
     }
   },
@@ -248,7 +490,18 @@
     "content": {
       "sections": {
         "what": "This template combines Nano Banana prompts to personify the 16 personality types as animal characters placed in a unified scene, accurately capturing the typical behavioral traits of each personality.",
-        "who": "Suitable for MBTI content creators, psychology/self-growth accounts, community managers, group photos with friends, and those wanting to create fun content on 'what happens when 16 personalities are in the same space'."
+        "who": "Suitable for MBTI content creators, psychology/self-growth accounts, community managers, group photos with friends, and those wanting to create fun content on 'what happens when 16 personalities are in the same space'.",
+        "how": [
+          "Choose a scene: café, office, camping, library, seaside, etc.",
+          "Set the art style and atmosphere: healing illustration, light watercolor, fairy tale, Japanese style, etc.",
+          "Input the interaction points you want to emphasize: who is leading the rhythm, who is observing, who is socializing, who is alone.",
+          "Check after generation: are the 16 codes complete, are the labels clear; if necessary, supplement 'labels should be close to the characters'."
+        ],
+        "prompts": [
+          "Generate a healing group illustration: 16 types of MBTI personality anthropomorphic animals interacting at a 'weekend camping site', with clear MBTI codes next to each character, soft lighting, rich details, 3:4 portrait.",
+          "Generate a group portrait of 16 personality animals: the scene is in a 'company open office area', each personality has typical actions and expressions (extroverted socializing, introverted solitude, rational analysis, emotional comfort, etc.), all labeled with MBTI codes, warm illustration style.",
+          "MBTI 16 personality animals in the same frame: the scene is a 'café', each character interacts with props (books, computers, coffee, sticky notes), the image is tidy, labels do not obscure the main subject, 3:4 portrait."
+        ]
       }
     }
   },
@@ -259,7 +512,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate 'Ancient Style Duel Character Profile Cards'. The scene presents the confrontation between two characters in a split-screen format: the top features avatars and titles, the middle shows complete illustrations, and the bottom displays weapons or iconic items, along with identity, faction, combat power, personality, or relationship descriptions, forming a strong narrative and tension-filled character duel setting.",
-        "who": "Suitable for creators of martial arts, fantasy, history, Three Kingdoms, novel settings, original character worldviews, as well as game character packaging, plot-oriented posters, character relationship diagrams, and social platform character comparison content."
+        "who": "Suitable for creators of martial arts, fantasy, history, Three Kingdoms, novel settings, original character worldviews, as well as game character packaging, plot-oriented posters, character relationship diagrams, and social platform character comparison content.",
+        "how": [
+          "First, determine the two sides of the duel, such as hero vs villain, strategist vs warrior, swordsman vs knife fighter, or two historical/original characters.",
+          "Then supplement each character's identity, title, faction, abilities, weapons, and representative temperament to make the character differences more distinct.",
+          "Specify the art style, such as meticulous national style, ink wash, ancient style illustration, or game character design, to determine the overall texture.",
+          "Finally, emphasize composition and the sense of confrontation, such as 'split screen left and right, central confrontation, strong character tension, complete profile module'; if it's not dramatic enough, you can request 'enhance visual conflict and identity contrast'."
+        ],
+        "prompts": [
+          "Generate a martial arts character duel profile card: cold-faced swordsman vs arrogant knife fighter, split screen left and right, top with avatar and title, middle with full-body illustration, bottom with weapon display, meticulous national style, 3:4 vertical.",
+          "Create a Three Kingdoms character duel image: Zhuge Liang vs Sima Yi, strategist duel setting, character profile module includes faction, strategy tags, and representative objects, ancient style infographic poster.",
+          "Generate an original Xianxia character confrontation poster: righteous female sword cultivator vs demonic sect young master, central confrontation, rich clothing details, bottom with magical artifacts display, overall strong narrative sense."
+        ]
       }
     }
   },
@@ -270,7 +534,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate long images for fashion e-commerce detail pages. The layout adopts a 9:16 vertical commercial format, typically including the main visual of the model's outfit, partial fabric details, design highlights, fit points, and matching suggestions, combining 'product information' with 'fashion expression' into a conversion-friendly product display image.",
-        "who": "Suitable for clothing brands, e-commerce sellers, independent designers, Xiaohongshu product recommendation content creators, brand visual teams, and those needing to quickly generate high-quality fashion detail pages and social media display images."
+        "who": "Suitable for clothing brands, e-commerce sellers, independent designers, Xiaohongshu product recommendation content creators, brand visual teams, and those needing to quickly generate high-quality fashion detail pages and social media display images.",
+        "how": [
+          "First, input the clothing type and core category, such as dress, suit, down jacket, shirt, hoodie, etc.",
+          "Then describe the design style and target audience, such as commuting, French style, urban minimalism, sweet cool, casual sports, to help the model unify the visual direction.",
+          "Supplement the selling points module, such as fabric, cut, neckline, sleeve type, fit advantages, dressing scenarios, or seasonal attributes, to make the long image denser in e-commerce information.",
+          "Finally, specify the commercial style, such as high-end brand photography, warm soft light, simple background, four-part layout; if it doesn't look like a detail page, you can request 'enhance the modular copy area and detail close-ups'."
+        ],
+        "prompts": [
+          "Generate a French dress e-commerce detail image: model main visual + fabric detail close-up + cutting highlights + matching suggestions, warm high-end commercial fashion style, 9:16.",
+          "Create a winter down jacket product display long image: four-part layout, highlighting warm fabric, hood design, upper body effect, and commuting dressing scenarios, suitable for social media and detail pages.",
+          "Generate a men's suit detail page poster: model outfit, shoulder line and fabric close-up, fit selling points, business scene suggestions, overall clean and high-end, 4K vertical."
+        ]
       }
     }
   },
@@ -281,7 +556,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate 'portrait retouching blueprints'. The scene typically features a dual-column layout: the left side displays the original photo, with annotation lines and directive text indicating areas to be processed, such as skin tone, lighting, background, hair strands, facial features, or clothing wrinkles; the right side shows the natural effect of the retouched image, making the retouching logic visually intuitive.",
-        "who": "Suitable for photographers, retouchers, photography teaching accounts, visual design bloggers, beauty portrait creators, and content teams needing to showcase 'before and after retouching comparisons' and 'retouching teaching steps'."
+        "who": "Suitable for photographers, retouchers, photography teaching accounts, visual design bloggers, beauty portrait creators, and content teams needing to showcase 'before and after retouching comparisons' and 'retouching teaching steps'.",
+        "how": [
+          "First, determine the type of the original portrait, such as portrait, commercial portrait, ID photo, wedding photo, or street photography style.",
+          "Then list the key points that need correction, such as even skin tone, under-eye brightening, background cleaning, facial dimensionality, messy hair, clothing details, etc.",
+          "Specify the retouching direction, such as natural texture, commercial refinement, Korean transparent, cinematic portrait, to avoid excessive style deviation.",
+          "Finally, request 'the left side retains the original image with precise annotations, the right side presents the refined result, overall like a professional retouching teaching blueprint'; if the effect is too heavy, you can add 'keep it real and natural, don't over-smooth'."
+        ],
+        "prompts": [
+          "Generate a photography retouching blueprint: left side original portrait with red annotations and English retouching instructions, right side for natural refined results, highlighting skin tone uniformity, eye brightening, and background cleaning, professional tutorial style.",
+          "Create a commercial portrait retouching teaching image: left side marking light and shadow optimization, hair arrangement, reducing nasolabial folds, handling clothing wrinkles, right side for real high-end result.",
+          "Generate a before-and-after comparison poster for portrait retouching: left and right column layout, strong teaching feel, clear annotations, overall clean and professional."
+        ]
       }
     }
   },
@@ -292,7 +578,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate highly shareable MBTI dual personality comparison memes. The scene typically adopts a top-bottom or left-right dual grid structure, using two MBTI types' different reactions in the same scene to create strong contrasts, accompanied by cute animal characters, eye-catching titles, and short Chinese copy, making it suitable for social platform sharing and serialized creation.",
-        "who": "Suitable for MBTI content creators, personality test enthusiasts, entertainment accounts, meme bloggers, Xiaohongshu and short video cover designers, and those wanting to continuously create 'the same theme with multiple personality comparisons'."
+        "who": "Suitable for MBTI content creators, personality test enthusiasts, entertainment accounts, meme bloggers, Xiaohongshu and short video cover designers, and those wanting to continuously create 'the same theme with multiple personality comparisons'.",
+        "how": [
+          "First, determine the two MBTI types for comparison, such as I vs E, J vs P, or more specific two personality combinations.",
+          "Then choose a life scenario that easily forms a contrast, such as returning home for the Spring Festival, traveling, parties, meetings, dating, doing projects, taking care of children, etc.",
+          "Set the character expression form, such as anthropomorphized animals, chibi characters, or comic-style characters, to make personality differences more intuitive.",
+          "Finally, supplement layout requirements, such as dual-grid comparison, red borders, clear Chinese titles, concise and witty copy; if it's not funny enough, you can request 'enhance the contrast and expressions of the two personalities'."
+        ],
+        "prompts": [
+          "Generate an MBTI Spring Festival homecoming comparison meme: the upper half is ENFP socializing on the way home, the lower half is INTJ wanting to hide from the noise, anthropomorphized animal characters, dual-grid comparison, Chinese title, red border card style.",
+          "Create a 'MBTI travel behavior' comparison image: ESFP vs ISTJ, showcasing distinct differences in airport and hotel scenarios, cute cartoon characters, 4K vertical.",
+          "Generate a 'MBTI reactions in meetings' meme: ENTP and ISFJ showing different behaviors in the same meeting scenario, interesting copy, exaggerated actions, suitable for social media sharing."
+        ]
       }
     }
   },
@@ -303,7 +600,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate character group images in the style of traditional Chinese long scrolls. The scene is generally a horizontally unfolded long scroll composition, with multiple characters distributed sequentially in the same image, each character having independent actions, clothing, and a sense of identity, and can be accompanied by names or character tags, combining aesthetics, narrative, and collectibility.",
-        "who": "Suitable for historical culture accounts, national style visual creators, organization of novel/drama characters, IP character planning, group portrait design, and those needing to create content with 'multiple characters in the same frame, unified worldview'."
+        "who": "Suitable for historical culture accounts, national style visual creators, organization of novel/drama characters, IP character planning, group portrait design, and those needing to create content with 'multiple characters in the same frame, unified worldview'.",
+        "how": [
+          "First, determine the character collection, such as Three Kingdoms characters, Dream of the Red Chamber characters, ancient famous ministers, mythological characters, or original Jianghu group portraits.",
+          "Then supplement a unified scene or theme, such as court, banquet, landscape scroll, Jianghu journey, festival group portrait, to make the overall more complete.",
+          "Specify the painting style, such as traditional Chinese painting, meticulous coloring, ancient style illustration, light color scroll style, to unify the visual temperament.",
+          "Finally, require character name annotations, clear character differences, and layered visual rhythm; if characters are easily confused, you can add 'enhance the recognition of each character's clothing and posture'."
+        ],
+        "prompts": [
+          "Generate a Three Kingdoms character scroll: Liu Bei, Cao Cao, Zhuge Liang, Guan Yu, etc. unfold in sequence, horizontal scroll composition, name annotations, ancient style illustration texture, 4K.",
+          "Create a Dream of the Red Chamber character group scroll: main characters distributed in a garden background, character shapes vary, names clearly annotated, elegant and delicate.",
+          "Generate an original Jianghu group scroll poster: several sect characters unfold along the landscape scroll, clothing features distinct sect characteristics, overall has a sense of story and collectability."
+        ]
       }
     }
   },
@@ -314,7 +622,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate clear-structured, visually unified species science information graphics. The scene typically centers around a specific species, surrounded by modules on classification, habitat, habits, diet, distribution, life cycle, or conservation status, turning complex biological knowledge into image-based content suitable for sharing.",
-        "who": "Suitable for natural science accounts, animal and plant education content, school classroom materials, museum or nature-themed exhibition visuals, parent-child knowledge cards, and any creators needing to visualize species knowledge."
+        "who": "Suitable for natural science accounts, animal and plant education content, school classroom materials, museum or nature-themed exhibition visuals, parent-child knowledge cards, and any creators needing to visualize species knowledge.",
+        "how": [
+          "First, determine the species name and specify whether it is an animal, plant, insect, marine organism, or other category.",
+          "List the information modules you want to emphasize, such as classification status, appearance characteristics, habitat, food chain position, conservation status, etc.",
+          "Specify the art style, such as scientific illustration, natural history guide, modern infographic, nature education poster style, to determine the overall visual texture.",
+          "Finally, request 'subject centered, modules surrounding, information layout clear'; if the content is not professional enough, you can add 'increase scientific name, distribution area, and key popular science tags'."
+        ],
+        "prompts": [
+          "Generate a snow leopard species popular science illustration: snow leopard displayed in the center, surrounding modules include habitat, distribution, predation habits, protection level, and physical characteristics, 3:4 vertical.",
+          "Create a ginkgo tree popular science infographic: the main subject is a complete plant illustration, modules include classification, leaf characteristics, growth environment, historical significance, and application value, clear layout.",
+          "Generate a monarch butterfly knowledge card: realistic illustration centered, surrounding information includes life cycle, migration route, food sources, and conservation information, suitable for educational dissemination."
+        ]
       }
     }
   },
@@ -325,7 +644,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate 'city miniature landscape maps'. The scene resembles a hyper-realistic city model that rises from the surface of a map, integrating landmark buildings, road networks, parks, water systems, residential areas, and transportation facilities, visualizing urban spatial information in an immersive way, combining map and model aesthetics.",
-        "who": "Suitable for travel content, urban promotion, city planning displays, geography education, local cultural tourism accounts, and designers and creators needing to create 'visual content that instantly identifies a city'."
+        "who": "Suitable for travel content, urban promotion, city planning displays, geography education, local cultural tourism accounts, and designers and creators needing to create 'visual content that instantly identifies a city'.",
+        "how": [
+          "First, input the city name and specify the landmarks and characteristic areas you wish to retain or enhance.",
+          "Then describe the spatial characteristics of the city, such as rivers running through the city, coastal areas, mountain cities, dense skyscrapers, European-style blocks, comparisons between old and new towns, etc.",
+          "Supplement the elements that need to appear, such as roads, bridges, traffic, subways, elevated roads, parks, coastlines, forests, etc., to enhance the map's layers.",
+          "Finally, specify the art style, such as hyper-realistic miniature models, isometric maps, travel poster feel, or high-precision city sand table; if the city's recognizability is not enough, you can request 'enhance the characteristics of landmarks and overall block layout'."
+        ],
+        "prompts": [
+          "Generate a Shanghai city miniature landscape map: Oriental Pearl Tower, Lujiazui skyscraper group, Huangpu River and bridges clearly visible, hyper-realistic miniature model rising from the map surface, rich in detail.",
+          "Create a Chongqing mountain city miniature map: undulating roads, three-dimensional traffic, mountain city buildings densely distributed, including bridges, light rail, and river water, strong visual layers.",
+          "Generate a Paris city miniature landscape: Eiffel Tower, Seine River, street roads, and parks emerging from the map surface, combining map feel and model feel, suitable for tourism promotion."
+        ]
       }
     }
   },
@@ -336,7 +666,18 @@
     "content": {
       "sections": {
         "what": "This template is used to transform hot events, social issues, industry news, or trending topics into a clear-structured, visually friendly knowledge card. The scene typically adopts a hand-drawn watercolor or light infographic style, including a title, core conclusions, background explanations, key point summaries, and auxiliary icons, suitable for quick reading and sharing.",
-        "who": "Suitable for hotspot interpretation accounts, media editors, knowledge bloggers, industry observers, educational content creators, and teams wanting to compress complex news or trend content into 'one image to explain everything'."
+        "who": "Suitable for hotspot interpretation accounts, media editors, knowledge bloggers, industry observers, educational content creators, and teams wanting to compress complex news or trend content into 'one image to explain everything'.",
+        "how": [
+          "First, determine the hotspot theme, such as a news event, policy change, technology trend, business topic, or social phenomenon.",
+          "Then break down 3 to 5 key information points, such as what happened, why it's important, what impact it brings, and how to view it.",
+          "Specify the expression style, such as hand-drawn watercolor, gentle knowledge card, media infographic, social platform repost style, to make the content both professional and visually appealing.",
+          "Finally, request 'eye-catching title, clear sections, concise content'; if the content is too scattered, you can add 'compress into a key summary suitable for reading on a single card'."
+        ],
+        "prompts": [
+          "Generate a hotspot knowledge card: the theme is 'Why AI video generation has become popular again recently', including background, key changes, industry impact, and a summary, hand-drawn watercolor style, clear sections.",
+          "Create a social issue knowledge card: focusing on 'the resurgence of remote work', explaining reasons, pros and cons, impacts, and future trends in 4 modules, suitable for social media sharing.",
+          "Generate a business hotspot summary card: the theme is 'Why a new technology release has attracted attention', adding icons, key summaries, and conclusion sections, overall light infographic style."
+        ]
       }
     }
   },
@@ -347,7 +688,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate steampunk-style constellation anatomy diagram posters. The scene combines constellation personalities, mechanical devices, aesthetic symbols, and character settings, presented in the form of 'anatomy diagrams' or 'mechanical manuals', typically including character subjects, mechanical structure breakdowns, constellation labels, personality modules, and retro decorative elements.",
-        "who": "Suitable for constellation content creators, aesthetic poster designers, personality setting enthusiasts, fantasy-themed illustrators, steampunk-style content accounts, and those needing to create 'high visual recognition personality posters'."
+        "who": "Suitable for constellation content creators, aesthetic poster designers, personality setting enthusiasts, fantasy-themed illustrators, steampunk-style content accounts, and those needing to create 'high visual recognition personality posters'.",
+        "how": [
+          "First, determine the constellation name and specify which type of personality traits you want to highlight, such as rational, romantic, controlling, sensitive, adventurous, etc.",
+          "Then supplement visual settings, such as mechanical wings, gear hearts, steam backpacks, copper structures, alchemical devices, to make the steampunk feel more distinct.",
+          "Specify the poster structure, such as centering the main character, mechanical decomposition labels on the side, a constellation description module at the bottom, and a vintage map pattern in the background.",
+          "Finally, request 'vintage steampunk, anatomical map feel, clear labels'; if it looks too much like a regular illustration, you can add 'enhance the mechanical decomposition labels and manual texture'."
+        ],
+        "prompts": [
+          "Generate a steampunk anatomical map poster for Scorpio: the main character centered, with mechanical tail spikes and copper armor, surrounded by structural labels and personality modules, in a vintage map style.",
+          "Create a Gemini mechanical persona poster: twin character structure, prominent gears and clock elements, including constellation labels, personality breakdown, and manual-style annotations.",
+          "Generate a steampunk constellation map for Aquarius: the character combined with steam devices, rich in pipes, glass containers, and alchemical symbols, overall resembling a 19th-century mechanical design map."
+        ]
       }
     }
   },
@@ -358,7 +710,18 @@
     "content": {
       "sections": {
         "what": "This template is used to generate high-quality fruit science popularization information graphics. The center of the scene typically features realistic or semi-realistic illustrations of the fruit subject, surrounded by modules on structural annotations, nutritional value, distribution, growth cycles, health benefits, and historical development, transforming 'fruit knowledge' into exquisite visual guides suitable for sharing and display.",
-        "who": "Suitable for science popularization accounts, healthy eating content creators, educational institutions, food brands, self-media bloggers, and those needing to create high-quality food knowledge posters, brand content, or parent-child educational materials."
+        "who": "Suitable for science popularization accounts, healthy eating content creators, educational institutions, food brands, self-media bloggers, and those needing to create high-quality food knowledge posters, brand content, or parent-child educational materials.",
+        "how": [
+          "First, input the fruit name, such as apple, strawberry, mango, blueberry, durian, etc., and determine if a specific variety needs to be highlighted.",
+          "Then list the information modules you want to emphasize, such as nutritional components, growing environment, ripening process, cultural origin, benefits, or consumption suggestions.",
+          "Specify the visual style, such as scientific infographic, natural hand-drawn, vintage natural history illustration, or modern commercial science popularization style, to determine the final product's temperament.",
+          "Finally, request 'clear subject, professional annotations, rich modules'; if you want it to look more like a high-end poster, you can add 'enhance texture, white space, and layout hierarchy'."
+        ],
+        "prompts": [
+          "Generate an apple science popularization infographic: the main subject is a whole apple and a cross-section, with surrounding modules including structural labels, nutritional value, main production areas, and consumption benefits, in a 3:4 portrait format.",
+          "Create a mango knowledge poster: highlight variety differences, ripening process, nutritional components, and tropical production distribution, overall in a high-quality commercial science popularization style.",
+          "Generate a blueberry infographic: realistic illustration at the center, with surrounding information on antioxidant value, growing environment, growth cycle, and consumption suggestions, suitable for social media sharing."
+        ]
       }
     }
   },
@@ -369,7 +732,18 @@
     "content": {
       "sections": {
         "what": "This template is used to transform MBTI personality types into visually striking, highly shareable character scene images. It is not limited to a fixed form but is a universal MBTI abstract template: it can map MBTI to animals, historical figures, TV characters, AI founders, campus characters, and any character set placed in a specific scene, generating visual content with distinct personality differences.",
-        "who": "Suitable for social media content, personality test extension content, character analysis content, IP mashup content, and creators who need to tell stories through 'personality + character + scene'. Especially suitable for MBTI enthusiasts, content bloggers, psychology accounts, entertainment accounts, historical adaptation accounts, and those creating serialized content."
+        "who": "Suitable for social media content, personality test extension content, character analysis content, IP mashup content, and creators who need to tell stories through 'personality + character + scene'. Especially suitable for MBTI enthusiasts, content bloggers, psychology accounts, entertainment accounts, historical adaptation accounts, and those creating serialized content.",
+        "how": [
+          "First determine a clear MBTI theme, such as 'MBTI performance in the workplace', 'MBTI as characters from the Three Kingdoms', 'MBTI in travel'.",
+          "Then determine the character set, such as animals, Friends characters, Dream of the Red Chamber characters, AI founders, historical figures, etc.",
+          "Choose a specific scene to amplify and distinguish different personalities in the same context, such as meetings, flying, parties, travel, entrepreneurial discussions, etc.",
+          "Finally, add style requirements, such as cute cartoon, cinematic realism, Japanese anime group portrait, infographic poster style, etc. If the character differences are not obvious enough after generation, you can request 'strengthen the actions, expressions, and interaction methods of different personalities'."
+        ],
+        "prompts": [
+          "Generate a group poster for 'MBTI as Friends characters': at a friends gathering, different MBTI personalities mapped to Friends style characters, reflecting different social reactions and interactions, overall high shareability character illustration, 3:4 portrait.",
+          "Create 'MBTI in a meeting': character set as AI entrepreneurs, different personalities presenting different states while discussing product direction in the conference room, clear information, distinct character comparisons, strong poster feel, 3:4.",
+          "Generate a thematic image of 'MBTI if living in the Three Kingdoms': mapping different MBTI personalities to Three Kingdoms character prototypes, reflecting personality differences in the scene of discussing battle strategies in the military tent, style as high-quality historical character illustration, 3:4."
+        ]
       }
     }
   },
@@ -378,7 +752,18 @@
     "content": {
       "sections": {
         "what": "This template applies Nano Banana prompts to transform weather forecasts into 'miniature 3D city scenes': landmark buildings and dynamic weather effects naturally intertwined, with meteorological data automatically formatted above.",
-        "who": "Suitable for urban lifestyle accounts, tourism bureau/attraction operations, weather content creators, brands creating 'daily atmosphere images', and those wanting to present weather information in a more refined way."
+        "who": "Suitable for urban lifestyle accounts, tourism bureau/attraction operations, weather content creators, brands creating 'daily atmosphere images', and those wanting to present weather information in a more refined way.",
+        "how": [
+          "Input city name + date + temperature range + weather (sunny/cloudy/light rain/heavy snow/fog, etc.).",
+          "Specify a representative landmark (if none, use 'city skyline + landmark building').",
+          "Require equidistant miniature 3D: weather elements interacting with buildings (raindrop reflections/fog layers/snow piles/wind direction flags).",
+          "Check after generation: is the text clear; if not clear, instruct to 'increase text contrast and whitespace, without changing the scene style'."
+        ],
+        "prompts": [
+          "Generate 'Shanghai Today's Weather Miniature City Scene': Oriental Pearl landmark centered, light rain + wet reflective ground, city name/date/temperature layout at the top, 1:1 equidistant 3D, suitable for social sharing.",
+          "Create 'New York Weather Map': cloudy to sunny, Empire State Building/city skyline miniature scene, cloud and sunlight penetration effects, information bar at the top, 1:1.",
+          "Generate 'Kyoto Winter Heavy Snow Weather': Kiyomizu Temple style landmark + snow piles and falling snow particles, weather information layout at the top, 1:1 equidistant miniature 3D."
+        ]
       }
     }
   },
@@ -387,7 +772,18 @@
     "content": {
       "sections": {
         "what": "This template generates 'National Style Duel Cards' based on Nano Banana prompts: using an ink wash battlefield background to enhance the sense of conflict between characters, accompanied by detailed titles and weakness annotations.",
-        "who": "Suitable for national style reinterpretations, character battle topics, interactive voting on Xiaohongshu/short videos, game/comic character promotions, and creators wanting strong visual impact and discussion in the comments."
+        "who": "Suitable for national style reinterpretations, character battle topics, interactive voting on Xiaohongshu/short videos, game/comic character promotions, and creators wanting strong visual impact and discussion in the comments.",
+        "how": [
+          "Input character A and character B: respective titles/clans/weapons/special skills/weaknesses (at least 3 pieces of information each).",
+          "Set the duel theme: speed vs strength, wisdom vs force, protection vs destruction, etc.",
+          "Require layout: left-right split screen + top avatar labels + bottom item bar + duel feel dividing elements (ink splash/blade light).",
+          "Check after generation: is the strength balanced on both sides; if one side is too strong, instruct the model to 'add counterpoints or cost mechanisms for the other side'."
+        ],
+        "prompts": [
+          "Generate a national style duel character profile card: A 'Overlord Xiang Yu' vs B 'War God Lü Bu', left-right split screen, fine brush + ink battle background, profile information + iconic item bar + special skills and weaknesses comparison, 3:4 portrait.",
+          "Create a duel card for 'A Hua Mulan' vs 'B Yang Family Female Generals (representative character)': emphasize differences in combat style and counterpoints, left-right split screen high tension, 3:4.",
+          "Generate a duel profile for 'Wudang Swordsman' vs 'Shaolin Staff Monk': weapons/movement/internal skills/weaknesses, bottom items and moves icon, ink duel atmosphere, 3:4."
+        ]
       }
     }
   }

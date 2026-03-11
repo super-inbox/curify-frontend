@@ -125,18 +125,12 @@ export type TranslateFn = (key: string) => string;
  * the key passed to t() must be just  "template-herbal-zh.category"
  * — the namespace ("nano") is already bound by useTranslations/getTranslations.
  */
-export type NanoTemplateField =
-  | "title"
-  | "category"
-  | "description";
-
-export function nanoTemplateI18nKey(
-  templateId: string,
-  field: NanoTemplateField
-): string {
-  return `${templateId}.${field}`;
-}
-
+  export function nanoTemplateI18nKey(
+    templateId: string,
+    field: string
+  ): string {
+    return `${templateId}.${field}`;
+  }
 // ---------------------------------------------------------------------------
 
 export function toSlug(templateId: string) {
