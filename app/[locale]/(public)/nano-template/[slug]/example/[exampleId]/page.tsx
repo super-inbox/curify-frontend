@@ -20,7 +20,7 @@ import { resolveContentLocale } from "@/lib/locale_utils";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
-
+import { Locale } from "@/lib/locale_utils";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type PageParams = {

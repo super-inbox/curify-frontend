@@ -1,7 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
-
-export type Locale = "zh" | "en";
+import { Locale } from "@/lib/locale_utils";
 
 export type TemplateParameter = {
   name: string;
@@ -330,6 +329,7 @@ export function getImageViewsForTemplate(
  * If omitted, those fields will be empty strings (fine for structural/data use,
  * not for rendering).
  */
+
 export function buildNanoFeedCards(
   reg: NanoRegistry,
   locale: Locale,
