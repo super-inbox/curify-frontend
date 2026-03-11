@@ -402,7 +402,7 @@ export default function CreateNewModal() {
           <p className="flex items-center mt-6.5 mb-2">
             Credits Required:
             <span className="text-[var(--p-blue)] ml-1">{cost}</span>
-            <span className="ml-3 text-sm text-gray-500">(Available: {remainingCredits})</span>
+            <span className="ml-3 text-sm text-gray-500" suppressHydrationWarning>(Available: {remainingCredits})</span>
           </p>
 
           <BtnP onClick={handleStart} disabled={isStarting} className={isStarting ? "cursor-not-allowed opacity-70" : ""}>

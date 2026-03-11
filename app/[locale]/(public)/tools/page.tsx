@@ -1,8 +1,20 @@
 // app/[locale]/tools/page.tsx
+
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ToolsClient from "./ToolsClient";
+import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 
+import {
+  type RawTemplate,
+  type RawNanoImageRecord,
+  normalizeLocale,
+  buildNanoRegistry,
+  buildNanoFeedCards,
+  type Locale,
+} from "@/lib/nano_utils";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoImages from "@/public/data/nano_inspiration.json";
 
 export const dynamic = "force-dynamic";
 
@@ -29,8 +41,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         en: `${base}/en/tools`,
         zh: `${base}/zh/tools`,
         es: `${base}/es/tools`,
-        // add other locales you support here
-        // "x-default": `${base}/en/tools`,
       },
     },
     openGraph: {
@@ -49,12 +59,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Page() {
+export default async function Page({ params }: Props) {
+  const { locale: localeStr } = await params;
+  const locale = normalizeLocale(localeStr);
+
+  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
+  const translateNano = (key: string): string => {
+    try {
+      return tNano(key as any) ?? "";
+    } catch {
+      return "";
+    }
+  };
+
+  const reg = buildNanoRegistry(
+    nanoTemplates as unknown as RawTemplate[],
+    nanoImages as unknown as RawNanoImageRecord[]
+  );
+
+  const nanoCards = buildNanoFeedCards(reg, locale as Locale, {
+    perTemplateMaxImages: 2,
+    strictLocale: false,
+    translate: translateNano,
+  });
+
   return (
     <main className="min-h-screen">
       <ToolsClient />
-      
+
+      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+        <NanoTemplateDetailClient
+          locale={locale}
+          template={{ template_id: "", base_prompt: "", parameters: [] }}
+          otherNanoCards={nanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+        />
+      </div>
     </main>
-    
   );
 }
