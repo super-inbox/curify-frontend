@@ -26,7 +26,12 @@ export type NanoLocaleMessageEntry = {
   category?: string;
   description?: string;
   content?: {
-    sections?: SeoContentSections;
+    sections?: {
+      what?: unknown;
+      who?: unknown;
+      how?: unknown;
+      prompts?: unknown;
+    };
   };
 };
 
@@ -45,10 +50,31 @@ export function safeString(v: unknown): string {
   return String(v);
 }
 
-/** Trim a value to a string, returning "" if falsy. */
-export function normalizeText(s?: string): string {
-  if (!s) return "";
-  return String(s).trim();
+/** Trim any value to a string, returning "" if empty/non-meaningful. */
+export function normalizeText(v: unknown): string {
+  if (v === null || v === undefined) return "";
+  const s = String(v).trim();
+  return s;
+}
+
+/**
+ * Normalize unknown input into a clean string array.
+ * Supports:
+ * - ["a", "b"]
+ * - "single string" => ["single string"]
+ * - anything else => []
+ */
+export function normalizeStringArray(v: unknown): string[] {
+  if (Array.isArray(v)) {
+    return v.map((x) => normalizeText(x)).filter(Boolean);
+  }
+
+  if (typeof v === "string") {
+    const s = normalizeText(v);
+    return s ? [s] : [];
+  }
+
+  return [];
 }
 
 /**
@@ -303,7 +329,40 @@ export function resolveContentSections(
   return {
     h2What: normalizeText(sections?.what),
     h2Who: normalizeText(sections?.who),
-    h2How: (sections?.how ?? []).map((x) => normalizeText(x)).filter(Boolean),
-    h2Prompts: (sections?.prompts ?? []).map((x) => normalizeText(x)).filter(Boolean),
+    h2How: normalizeStringArray(sections?.how),
+    h2Prompts: normalizeStringArray(sections?.prompts),
+  };
+}
+
+export function normalizeNanoLocaleMessageEntry(
+  entry: unknown
+): NanoLocaleMessageEntry {
+  const obj =
+    entry && typeof entry === "object"
+      ? (entry as Record<string, unknown>)
+      : {};
+
+  const content =
+    obj.content && typeof obj.content === "object"
+      ? (obj.content as Record<string, unknown>)
+      : {};
+
+  const sections =
+    content.sections && typeof content.sections === "object"
+      ? (content.sections as Record<string, unknown>)
+      : {};
+
+  return {
+    title: normalizeText(obj.title),
+    category: normalizeText(obj.category),
+    description: normalizeText(obj.description),
+    content: {
+      sections: {
+        what: normalizeText(sections.what),
+        who: normalizeText(sections.who),
+        how: normalizeStringArray(sections.how),
+        prompts: normalizeStringArray(sections.prompts),
+      },
+    },
   };
 }

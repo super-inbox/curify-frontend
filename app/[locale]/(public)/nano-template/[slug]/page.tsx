@@ -2,7 +2,6 @@
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
@@ -20,12 +19,11 @@ import {
 } from "@/lib/nano_utils";
 
 import {
-  type NanoLocaleMessageEntry,
   type NanoMessagesDict,
   buildNanoTemplateMetadata,
   buildNanoH1,
   resolveContentSections,
-  normalizeText,
+  normalizeNanoLocaleMessageEntry,
 } from "@/lib/nano_seo_utils";
 
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
@@ -38,99 +36,16 @@ function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
 }
 
-function getByPath(obj: unknown, path: string): unknown {
-  if (!obj || typeof obj !== "object") return undefined;
-
-  return path.split(".").reduce<unknown>((acc, key) => {
-    if (!acc || typeof acc !== "object") return undefined;
-    return (acc as Record<string, unknown>)[key];
-  }, obj);
-}
-
-async function loadNanoMessages(localeStr: string): Promise<Record<string, any>> {
+async function loadNanoMessages(localeStr: string): Promise<NanoMessagesDict> {
   try {
-    // Adjust this import path if your messages folder is elsewhere.
-    const mod = await import(`@/messages/${localeStr}.json`);
-    return (mod.default?.nano ?? {}) as Record<string, any>;
+    const mod = await import(`@/messages/${localeStr}/nano.json`);
+    return (mod.default ?? {}) as NanoMessagesDict;
   } catch {
     return {};
   }
 }
 
-function makeSafeNanoTranslator(
-  tNano: Awaited<ReturnType<typeof getTranslations>>
-) {
-  return (key: string): string => {
-    try {
-      return tNano(key as any) ?? "";
-    } catch {
-      return "";
-    }
-  };
-}
-
-function buildLocalizedNanoMessageEntry(
-  templateId: string,
-  translateNano: (key: string) => string,
-  rawNanoMessages: Record<string, any>
-): NanoLocaleMessageEntry {
-  const title = normalizeText(translateNano(`${templateId}.title`));
-  const category = normalizeText(translateNano(`${templateId}.category`));
-  const description = normalizeText(translateNano(`${templateId}.description`));
-
-  const what = normalizeText(
-    translateNano(`${templateId}.content.sections.what`)
-  );
-  const who = normalizeText(
-    translateNano(`${templateId}.content.sections.who`)
-  );
-
-  const howRaw = getByPath(rawNanoMessages, `${templateId}.content.sections.how`);
-  const promptsRaw = getByPath(
-    rawNanoMessages,
-    `${templateId}.content.sections.prompts`
-  );
-
-  const how = Array.isArray(howRaw)
-    ? howRaw.map((s) => normalizeText(String(s))).filter(Boolean)
-    : [];
-
-  const prompts = Array.isArray(promptsRaw)
-    ? promptsRaw.map((s) => normalizeText(String(s))).filter(Boolean)
-    : [];
-
-  return {
-    title,
-    category,
-    description,
-    content: {
-      sections: {
-        what,
-        who,
-        how,
-        prompts,
-      },
-    },
-  };
-}
-
-function buildSingleTemplateNanoMessages(
-  templateId: string,
-  translateNano: (key: string) => string,
-  rawNanoMessages: Record<string, any>
-): NanoMessagesDict {
-  return {
-    [templateId]: buildLocalizedNanoMessageEntry(
-      templateId,
-      translateNano,
-      rawNanoMessages
-    ),
-  };
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale: localeStr, slug } = await params;
-
+async function getPageData(localeStr: string, slug: string) {
   const locale = normalizeLocale(localeStr);
   const templateId = slugToTemplateId(slug);
 
@@ -138,11 +53,53 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const images = nanoImages as unknown as RawNanoImageRecord[];
   const reg = buildNanoRegistry(templates, images);
 
-  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
-  const translateNano = makeSafeNanoTranslator(tNano);
-  const rawNanoMessages = await loadNanoMessages(localeStr);
+  const nanoMessagesRaw = await loadNanoMessages(localeStr);
+  const localizedRawEntry = nanoMessagesRaw?.[templateId];
+  const localizedEntry = normalizeNanoLocaleMessageEntry(localizedRawEntry);
 
-  const data = buildNanoTemplateDetailData(reg, templateId, locale, translateNano);
+  const data = buildNanoTemplateDetailData(
+    reg,
+    templateId,
+    locale,
+    (key: string) => {
+      const entry = localizedRawEntry as Record<string, unknown> | undefined;
+
+      if (key === `${templateId}.title`) return localizedEntry.title ?? "";
+      if (key === `${templateId}.category`) return localizedEntry.category ?? "";
+      if (key === `${templateId}.description`) return localizedEntry.description ?? "";
+
+      if (key === `${templateId}.content.sections.what`) {
+        return localizedEntry.content?.sections?.what ?? "";
+      }
+      if (key === `${templateId}.content.sections.who`) {
+        return localizedEntry.content?.sections?.who ?? "";
+      }
+
+      return "";
+    }
+  );
+
+  const nanoMessages: NanoMessagesDict = {
+    [templateId]: localizedEntry,
+  };
+
+  return {
+    locale,
+    templateId,
+    reg,
+    data,
+    nanoMessages,
+    localizedEntry,
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: localeStr, slug } = await params;
+
+  const { templateId, data, nanoMessages, localizedEntry } = await getPageData(
+    localeStr,
+    slug
+  );
 
   if (!data) {
     return {
@@ -152,19 +109,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const nanoMessages = buildSingleTemplateNanoMessages(
-    templateId,
-    translateNano,
-    rawNanoMessages
-  );
-  const localizedEntry = nanoMessages[templateId];
+  const { template } = data;
 
   const fallbackTitle =
-    localizedEntry?.category || data.template.category || data.template.template_id;
+    localizedEntry.category || template.category || template.template_id;
 
   const fallbackDescription =
-    localizedEntry?.description ||
-    data.template.description ||
+    localizedEntry.description ||
+    template.description ||
     "Explore this nano template and generate curated outputs with Curify.";
 
   return buildNanoTemplateMetadata({
@@ -180,28 +132,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NanoTemplatePage({ params }: Props) {
   const { locale: localeStr, slug } = await params;
 
-  const locale = normalizeLocale(localeStr);
-  const templateId = slugToTemplateId(slug);
+  const { locale, templateId, reg, data, nanoMessages, localizedEntry } =
+    await getPageData(localeStr, slug);
 
-  const templates = nanoTemplates as unknown as RawTemplate[];
-  const images = nanoImages as unknown as RawNanoImageRecord[];
-  const reg = buildNanoRegistry(templates, images);
-
-  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
-  const translateNano = makeSafeNanoTranslator(tNano);
-  const rawNanoMessages = await loadNanoMessages(localeStr);
-
-  const data = buildNanoTemplateDetailData(reg, templateId, locale, translateNano);
   if (!data) notFound();
 
   const { template } = data;
-
-  const nanoMessages = buildSingleTemplateNanoMessages(
-    templateId,
-    translateNano,
-    rawNanoMessages
-  );
-  const localizedEntry = nanoMessages[templateId];
 
   const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(
     templateId,
@@ -209,12 +145,12 @@ export default async function NanoTemplatePage({ params }: Props) {
   );
 
   const h1 = buildNanoH1(
-    localizedEntry?.title,
-    localizedEntry?.category || template.category || template.template_id
+    localizedEntry.title,
+    localizedEntry.category || template.category || template.template_id
   );
 
   const intro =
-    localizedEntry?.description ||
+    localizedEntry.description ||
     template.description ||
     "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
 
@@ -239,7 +175,7 @@ export default async function NanoTemplatePage({ params }: Props) {
   const otherNanoCards = buildNanoFeedCards(reg, locale as Locale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
-    translate: translateNano,
+    translate: () => "",
   }).filter((c) => c.template_id !== template.template_id);
 
   return (
@@ -251,9 +187,9 @@ export default async function NanoTemplatePage({ params }: Props) {
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
           </div>
 
-          {template.category ? (
+          {(localizedEntry.category || template.category) ? (
             <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-              {template.category}
+              {localizedEntry.category || template.category}
             </span>
           ) : null}
         </div>

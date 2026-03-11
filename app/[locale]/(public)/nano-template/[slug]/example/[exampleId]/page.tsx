@@ -71,17 +71,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale, slug, exampleId: rawExampleId } = await params;
 
-  const locale = normalizeLocale(rawLocale);
+  const pageLocale = rawLocale;
+  const contentLocale = normalizeLocale(rawLocale);
+
   const templateId = slugToTemplateId(slug);
   const imageId = decodeURIComponent(rawExampleId);
 
-  const example = getNanoExampleById(templateId, imageId, locale);
+  const example = getNanoExampleById(templateId, imageId, contentLocale);
   if (!example) return {};
 
-  const loc = example.locales?.[locale] ?? example.locales?.zh ?? {};
+  const loc = example.locales?.[contentLocale] ?? example.locales?.zh ?? {};
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
-  const ogImage = toAbsUrlMaybe(example.asset.image_url);
+  const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
 
   return {
     title: `${title} — Nano Banana Prompt Generator`,
@@ -92,7 +94,7 @@ export async function generateMetadata({
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
-      canonical: `/${locale}/nano-template/${slug}/example/${rawExampleId}`,
+      canonical: `/${pageLocale}/nano-template/${slug}/example/${rawExampleId}`,
     },
   };
 }
@@ -106,14 +108,16 @@ export default async function NanoExampleDetailPage({
 }) {
   const { locale: rawLocale, slug, exampleId: rawExampleId } = await params;
 
-  const locale = normalizeLocale(rawLocale);
+  const pageLocale = rawLocale;
+  const contentLocale = normalizeLocale(rawLocale);
+
   const templateId = slugToTemplateId(slug);
   const imageId = decodeURIComponent(rawExampleId);
 
-  const example = getNanoExampleById(templateId, imageId, locale);
+  const example = getNanoExampleById(templateId, imageId, contentLocale);
   if (!example) notFound();
 
-  const loc = example.locales?.[locale] ?? example.locales?.zh ?? {};
+  const loc = example.locales?.[contentLocale] ?? example.locales?.zh ?? {};
   const title = loc.title ?? example.id;
   const category = loc.category ?? "";
   const prompt = example.filled_prompt || example.base_prompt || "";
@@ -133,7 +137,7 @@ export default async function NanoExampleDetailPage({
   const translateNano = makeSafeNanoTranslator(tNano);
 
   // Images for this template (excluding current), used by ExampleImagesGrid
-  const imageViews = getImageViewsForTemplate(reg, templateId, locale);
+  const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
   const gridItems = imageViews
     .filter((img) => img.id !== imageId)
     .map((img) => ({
@@ -144,7 +148,7 @@ export default async function NanoExampleDetailPage({
     }));
 
   // Other templates feed — identical shape to the template page
-  const otherNanoCards = buildNanoFeedCards(reg, locale as Locale, {
+  const otherNanoCards = buildNanoFeedCards(reg, contentLocale as Locale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
@@ -154,9 +158,14 @@ export default async function NanoExampleDetailPage({
     <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ── */}
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
-        <Link href={`/${locale}`} className="hover:text-neutral-800">Home</Link>
+        <Link href={`/${pageLocale}`} className="hover:text-neutral-800">
+          Home
+        </Link>
         <span>/</span>
-        <Link href={`/${locale}/nano-template/${slug}`} className="hover:text-neutral-800">
+        <Link
+          href={`/${pageLocale}/nano-template/${slug}`}
+          className="hover:text-neutral-800"
+        >
           {category || slug}
         </Link>
         <span>/</span>
@@ -210,7 +219,7 @@ export default async function NanoExampleDetailPage({
 
           <div className="mt-auto pt-2">
             <Link
-              href={`/${locale}/nano-template/${slug}?${new URLSearchParams(paramEntries)}`}
+              href={`/${pageLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
               className="inline-block rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-purple-700"
             >
               Try this template →
@@ -235,7 +244,7 @@ export default async function NanoExampleDetailPage({
         )}
 
         <NanoTemplateDetailClient
-          locale={locale}
+          locale={pageLocale as Locale}
           template={{ template_id: templateId, base_prompt: "", parameters: [] }}
           otherNanoCards={otherNanoCards}
           showReproduce={false}
@@ -274,8 +283,9 @@ function PromptBreakdown({
   prompt: string;
   params: Record<string, any>;
 }) {
-  if (!prompt)
+  if (!prompt) {
     return <p className="text-sm text-neutral-500">No prompt data available.</p>;
+  }
 
   const parts = prompt.split(/(\{[^}]+\})/g);
 
@@ -313,8 +323,12 @@ function PromptBreakdown({
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="border-b border-neutral-200">
-              <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">Variable</th>
-              <th className="py-2 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">Value used</th>
+              <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
+                Variable
+              </th>
+              <th className="py-2 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
+                Value used
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -322,7 +336,9 @@ function PromptBreakdown({
               <tr key={k} className="border-b border-neutral-100">
                 <td className="py-2 pr-4 font-mono text-xs text-neutral-600">{`{${k}}`}</td>
                 <td className="py-2 text-neutral-800">
-                  {v != null && String(v).trim() !== "" ? String(v) : (
+                  {v != null && String(v).trim() !== "" ? (
+                    String(v)
+                  ) : (
                     <span className="italic text-neutral-400">—</span>
                   )}
                 </td>
