@@ -436,7 +436,6 @@ export function buildNanoTemplateDetailData(
 
 // ------------------------
 // Example detail page helpers
-// (used by /nano-template/[templateId]/example/[imageId])
 // ------------------------
 
 export type NanoExampleDetailData = {

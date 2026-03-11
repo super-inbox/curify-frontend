@@ -1,18 +1,18 @@
-// app/sitemap.xml/route.ts
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
+import { toSlug } from "@/lib/nano_utils";
 
 export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
 const LOCALES = routing.locales;
 
-// Only bump this when nano template pages materially change
-const NANO_TEMPLATES_LASTMOD = new Date().toISOString();
+// Bump this only when nano template pages materially change
+const NANO_TEMPLATES_LASTMOD = "2026-03-11T00:00:00.000Z";
 
-// Keep unchanged pages stable so Google doesn't think everything changed
+// Keep unchanged pages stable
 const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
 
 const STATIC_ROUTES = [
@@ -33,7 +33,7 @@ function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
   return raws
     .filter((t) => t?.id && typeof t.id === "string")
     .map((t) => ({
-      route: `/nano-template/${encodeURIComponent(t.id.trim())}`,
+      route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
       locales: [...LOCALES],
     }));
 }
@@ -99,7 +99,7 @@ export async function GET() {
 
   let urls = "";
 
-  // Static routes: unchanged
+  // Static routes
   STATIC_ROUTES.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
@@ -110,7 +110,7 @@ export async function GET() {
     });
   });
 
-  // Tool routes: unchanged
+  // Tool routes
   toolRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
@@ -121,7 +121,7 @@ export async function GET() {
     });
   });
 
-  // Nano templates: changed
+  // Nano template detail pages
   nanoTemplateRoutes.forEach(({ route, locales: availableLocales }) => {
     availableLocales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {

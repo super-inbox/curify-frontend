@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import { toSlug } from "@/lib/nano_utils";
 
 // Updated types matching new schema
 export type TemplateParameter = {
@@ -253,7 +254,7 @@ export function TemplateDetailPage({ template, templateCards, allTemplates, loca
               {otherTemplates.map((t) => (
                 <button
                   key={t.id}
-                  onClick={() => router.push(`/${locale}/nano-template/${t.id}`)}
+                  onClick={() => router.push(`/${locale}/nano-template/${toSlug(t.id)}`)}
                   className="group text-left rounded-2xl bg-white border-2 border-purple-200 p-6 hover:border-purple-400 hover:shadow-xl transition-all"
                 >
                   <div className="flex items-start gap-4 mb-3">
