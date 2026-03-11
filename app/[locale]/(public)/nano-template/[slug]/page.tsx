@@ -1,4 +1,4 @@
-// app/[locale]/nano-template/[slug]/page.tsx
+// app/[locale]/(public)/nano-template/[slug]/page.tsx
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -16,12 +16,12 @@ import {
   buildNanoTemplateDetailData,
   getImageViewsForTemplate,
   buildNanoFeedCards,
-  nanoTemplateI18nKey,
   type Locale,
 } from "@/lib/nano_utils";
 
 import {
-  resolveSeoPayload,
+  type NanoLocaleMessageEntry,
+  type NanoMessagesDict,
   buildNanoTemplateMetadata,
   buildNanoH1,
   resolveContentSections,
@@ -38,6 +38,25 @@ function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
 }
 
+function getByPath(obj: unknown, path: string): unknown {
+  if (!obj || typeof obj !== "object") return undefined;
+
+  return path.split(".").reduce<unknown>((acc, key) => {
+    if (!acc || typeof acc !== "object") return undefined;
+    return (acc as Record<string, unknown>)[key];
+  }, obj);
+}
+
+async function loadNanoMessages(localeStr: string): Promise<Record<string, any>> {
+  try {
+    // Adjust this import path if your messages folder is elsewhere.
+    const mod = await import(`@/messages/${localeStr}.json`);
+    return (mod.default?.nano ?? {}) as Record<string, any>;
+  } catch {
+    return {};
+  }
+}
+
 function makeSafeNanoTranslator(
   tNano: Awaited<ReturnType<typeof getTranslations>>
 ) {
@@ -47,6 +66,65 @@ function makeSafeNanoTranslator(
     } catch {
       return "";
     }
+  };
+}
+
+function buildLocalizedNanoMessageEntry(
+  templateId: string,
+  translateNano: (key: string) => string,
+  rawNanoMessages: Record<string, any>
+): NanoLocaleMessageEntry {
+  const title = normalizeText(translateNano(`${templateId}.title`));
+  const category = normalizeText(translateNano(`${templateId}.category`));
+  const description = normalizeText(translateNano(`${templateId}.description`));
+
+  const what = normalizeText(
+    translateNano(`${templateId}.content.sections.what`)
+  );
+  const who = normalizeText(
+    translateNano(`${templateId}.content.sections.who`)
+  );
+
+  const howRaw = getByPath(rawNanoMessages, `${templateId}.content.sections.how`);
+  const promptsRaw = getByPath(
+    rawNanoMessages,
+    `${templateId}.content.sections.prompts`
+  );
+
+  const how = Array.isArray(howRaw)
+    ? howRaw.map((s) => normalizeText(String(s))).filter(Boolean)
+    : [];
+
+  const prompts = Array.isArray(promptsRaw)
+    ? promptsRaw.map((s) => normalizeText(String(s))).filter(Boolean)
+    : [];
+
+  return {
+    title,
+    category,
+    description,
+    content: {
+      sections: {
+        what,
+        who,
+        how,
+        prompts,
+      },
+    },
+  };
+}
+
+function buildSingleTemplateNanoMessages(
+  templateId: string,
+  translateNano: (key: string) => string,
+  rawNanoMessages: Record<string, any>
+): NanoMessagesDict {
+  return {
+    [templateId]: buildLocalizedNanoMessageEntry(
+      templateId,
+      translateNano,
+      rawNanoMessages
+    ),
   };
 }
 
@@ -62,6 +140,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
   const translateNano = makeSafeNanoTranslator(tNano);
+  const rawNanoMessages = await loadNanoMessages(localeStr);
 
   const data = buildNanoTemplateDetailData(reg, templateId, locale, translateNano);
 
@@ -73,19 +152,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  // Both fields are now localized via translateNano
-  const localizedDescription =
+  const nanoMessages = buildSingleTemplateNanoMessages(
+    templateId,
+    translateNano,
+    rawNanoMessages
+  );
+  const localizedEntry = nanoMessages[templateId];
+
+  const fallbackTitle =
+    localizedEntry?.category || data.template.category || data.template.template_id;
+
+  const fallbackDescription =
+    localizedEntry?.description ||
     data.template.description ||
-    normalizeText(translateNano(nanoTemplateI18nKey(templateId, "description"))) ||
     "Explore this nano template and generate curated outputs with Curify.";
 
   return buildNanoTemplateMetadata({
     templateId,
-    locale,
     localeStr,
     slug,
-    fallbackTitle: `${data.template.category || data.template.template_id} | Nano Template`,
-    fallbackDescription: localizedDescription,
+    nanoMessages,
+    fallbackTitle: `${fallbackTitle} | Nano Template`,
+    fallbackDescription,
   });
 }
 
@@ -101,28 +189,32 @@ export default async function NanoTemplatePage({ params }: Props) {
 
   const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
   const translateNano = makeSafeNanoTranslator(tNano);
+  const rawNanoMessages = await loadNanoMessages(localeStr);
 
-  // template.category and template.description are fully localized here
   const data = buildNanoTemplateDetailData(reg, templateId, locale, translateNano);
   if (!data) notFound();
 
   const { template } = data;
 
-  const payload = resolveSeoPayload(templateId, locale);
-  const seo = payload?.seo;
-  const schema = seo?.schema;
+  const nanoMessages = buildSingleTemplateNanoMessages(
+    templateId,
+    translateNano,
+    rawNanoMessages
+  );
+  const localizedEntry = nanoMessages[templateId];
 
-  const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(payload);
-
-  // Use localized category as h1 fallback instead of raw template_id
-  const h1 = buildNanoH1(
-    seo?.meta_title,
-    template.category || template.template_id
+  const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(
+    templateId,
+    nanoMessages
   );
 
-  // template.description is already localized — use it directly
+  const h1 = buildNanoH1(
+    localizedEntry?.title,
+    localizedEntry?.category || template.category || template.template_id
+  );
+
   const intro =
-    normalizeText(seo?.meta_description) ||
+    localizedEntry?.description ||
     template.description ||
     "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
 
@@ -152,22 +244,13 @@ export default async function NanoTemplatePage({ params }: Props) {
 
   return (
     <main className="mx-auto max-w-6xl px-4 pt-24 pb-10">
-      {schema ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ) : null}
-
       <div className="mb-6">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
-            {/* localized description from translateNano */}
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
           </div>
 
-          {/* localized category badge */}
           {template.category ? (
             <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
               {template.category}
@@ -188,20 +271,24 @@ export default async function NanoTemplatePage({ params }: Props) {
         showOtherTemplates={false}
       />
 
-      {(h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0) ? (
+      {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
         <section className="mt-10 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
 
           {h2What ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">What is this template?</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                What is this template?
+              </h3>
               <p className="mt-2 text-sm leading-6 text-neutral-700">{h2What}</p>
             </div>
           ) : null}
 
           {h2Who ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">Who should use it?</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                Who should use it?
+              </h3>
               <p className="mt-2 text-sm leading-6 text-neutral-700">{h2Who}</p>
             </div>
           ) : null}
@@ -210,16 +297,26 @@ export default async function NanoTemplatePage({ params }: Props) {
             <div className="mt-5">
               <h3 className="text-base font-semibold text-neutral-900">How to use it</h3>
               <ol className="mt-2 list-decimal pl-5 text-sm leading-6 text-neutral-700">
-                {h2How.map((s, i) => <li key={i} className="mt-1">{s}</li>)}
+                {h2How.map((s, i) => (
+                  <li key={i} className="mt-1">
+                    {s}
+                  </li>
+                ))}
               </ol>
             </div>
           ) : null}
 
           {h2Prompts.length > 0 ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">Example prompts</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                Example prompts
+              </h3>
               <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-neutral-700">
-                {h2Prompts.map((s, i) => <li key={i} className="mt-1">{s}</li>)}
+                {h2Prompts.map((s, i) => (
+                  <li key={i} className="mt-1">
+                    {s}
+                  </li>
+                ))}
               </ul>
             </div>
           ) : null}

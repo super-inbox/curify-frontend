@@ -1,138 +1,790 @@
 {
   "template-herbal-zh": {
     "category": "Kräuter",
-    "description": "Erstellen Sie ein 4K vertikales „Herb Exploded Sheet“ Infografik-Poster für ein einzelnes chinesisches Kraut mit beschrifteten Teilen, Eigenschaften und modernen Formen."
+    "description": "Erstellen Sie ein 4K vertikales „Herb Exploded Sheet“ Infografik-Poster für ein einzelnes chinesisches Kraut mit beschrifteten Teilen, Eigenschaften und modernen Formen.",
+    "title": "Nano Banana Prompt: Panorama-Zerlegungsdiagramm für chinesische Kräuter｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt mit optimierten Nano Banana Prompts ein sammelbares Panorama-Zerlegungsdiagramm für \"Einzelkräuter\": Sie enthält Details zu Aussehen/Schnitt, Geschmacksrichtungen und Hauptwirkungen, präsentiert in klarer, wissenschaftlicher Typografie.",
+        "who": "Geeignet für TCM-Popularisierungsaccounts, Wellness-Inhaltsersteller, Kräutergeschäfte/Marken zur Erstellung von Wissensplakaten, Studenten für Lernnotizen und Nutzer, die Kräuter klar erklären möchten (aber keine langen Texte schreiben wollen).",
+        "how": [
+          "Geben Sie den chinesischen Namen der Kräuter + Synonyme (falls vorhanden) + häufige Formen (z.B. Stücke/ursprüngliche Kräuter) ein.",
+          "Geben Sie das Modul an, das Sie betonen möchten: Geschmack und Wirkung/ Hauptwirkung/ Identifikationspunkte/ Vorsichtsmaßnahmen/ moderne Darreichungsformen (Granulate, Kapseln usw.).",
+          "Forderung nach „Zerlegungsansicht“: Aussehen, Querschnitt, Textur, wichtige Teile mit Pfeilen markieren; hohe Informationsdichte, aber lesbar.",
+          "Überprüfen nach der Generierung: Sind die Begriffe konsistent (Wirkung, Wirkungslabel); bei Abweichungen fordern Sie an: „Schreiben Sie den Text basierend auf den von Ihnen bereitgestellten Punkten neu, ohne den Stil des Bildes zu ändern“."
+        ],
+        "prompts": [
+          "Generieren Sie eine „Vollansicht der einzelnen Kräuter“: Kräuter „Astragalus“, einschließlich Aussehen und Querschnittsmarkierungen, Geschmack und Wirkung, Hauptwirkungsetiketten, häufige Darreichungsformen und Nutzungsszenarien, Vorsichtsmaßnahmen, 3:4 Hochformat, hohe Informationsdichte.",
+          "Erstellen Sie ein „Angelica“ Herb Exploded Sheet: Struktur der Stücke, Identifikationspunkte (Farbe/Geruch/Querschnitt), Hauptwirkung, Kombinationsideen (optional), Vorsichtshinweise, klare Pfeilnotizen, 3:4.",
+          "Generieren Sie eine „Chenpi“ Zerlegungsansicht: Unterschiede in Herkunft und Jahr, Nahaufnahme der Textur, Geschmack und Wirkung, alltägliche Nutzungsszenarien (Tee aufbrühen/Kochen), nostalgisches, aber frisches chinesisches Infografikdesign, 3:4."
+        ]
+      }
+    }
   },
   "template-evolution": {
     "category": "Entwicklung",
-    "description": "Erstellen Sie eine isometrische Pixel-Art „Evolution Museum“ Zeitstrahl-Szene, die den zeitlichen Verlauf mit räumlichem Verlauf und zweisprachigen Titeln abbildet."
+    "description": "Erstellen Sie eine isometrische Pixel-Art „Evolution Museum“ Zeitstrahl-Szene, die den zeitlichen Verlauf mit räumlichem Verlauf und zweisprachigen Titeln abbildet.",
+    "title": "Nano Banana Prompt: Pixel-Isometrisches Evolutionsmuseum Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt maßgeschneiderte Nano Banana Prompts, um eine Zeitlinie für ein \"isometrisches Pixelmuseum\" zu erstellen: Sie verwandelt historische Phasen in durchstreifbare Ausstellungsräume, wobei jeder Bereich einer Epoche entspricht und mit Schildern zu Schlüsselmomenten ausgestattet ist.",
+        "who": "Geeignet für Inhalte zur Popularisierung von Wissenschaft/Geschichte/Technologie, Präsentationen von Produktversionen, Bildungsanleitungen (Unterricht/Notizen), Vergleichszeitlinien in Forschungsberichten und für Kreatoren, die die \"Entwicklungsgeschichte\" ansprechender gestalten möchten.",
+        "how": [
+          "Bestimmen Sie das Thema und den Zeitrahmen (z.B. „Menschliche Evolution“, „Entwicklung der Mobiltelefonformen“, „Iteration von KI-Modellen“).",
+          "Listen Sie 6–10 Phasen auf: Jede Phase gibt 1 Satz zur Kernveränderung + 1 Symbol (Icon/Gegenstand/Symbol).",
+          "Forderung nach gleichmäßigem Pixel-Ausstellungsraum: räumlicher Fortschritt, Ausstellungsnummer, Phasentitel (auch in Chinesisch und Englisch), und fügen Sie eine kleine Legende/ Maßstab hinzu.",
+          "Überprüfen nach der Generierung: Sind die Phasen in chronologischer Reihenfolge; wenn nicht, fordern Sie an: „Behalten Sie den Stil des Bildes bei, ordnen Sie die Ausstellungsstücke und Knoten neu an“."
+        ],
+        "prompts": [
+          "Generieren Sie eine „Menschliche Evolutionsmuseum“ Pixel-äquidistante Zeitleiste: Homo habilis → Homo erectus → Homo heidelbergensis → Neandertaler → Homo sapiens, einschließlich jeder Phase ikonischer Werkzeuge/Eigenschaften und wichtiger Knotenbeschilderung, zweisprachige Untertitel, 3:4 Hochformat.",
+          "Erstellen Sie ein „Museum zur Entwicklung der Mobiltelefonformen“: Funktionstelefon → Klapptelefon → Touchscreen → Vollbild → Faltbildschirm → AR-Brille (Konzept), jedes Stadium ein repräsentatives Modell/ Symbol, äquidistante Pixel-Ausstellungsraum, 3:4.",
+          "Generieren Sie ein „Museum zur Entwicklung von Web-Entwicklungsrahmen“: jQuery → Backbone → Angular → React → Next.js → RSC (Konzept), jede Phase eine Schlüsselaussage + Icon, klare Knotenmarkierung, 3:4."
+        ]
+      }
+    }
   },
   "template-travel-zh": {
     "category": "Reiseplanung",
-    "description": "Zeichnen Sie eine niedliche handgezeichnete Reisekarte mit täglichen Routenblöcken, Sehenswürdigkeiten, Essen, Unterkünften und Transportmitteln, die in vereinfachtem Chinesisch beschriftet sind."
+    "description": "Zeichnen Sie eine niedliche handgezeichnete Reisekarte mit täglichen Routenblöcken, Sehenswürdigkeiten, Essen, Unterkünften und Transportmitteln, die in vereinfachtem Chinesisch beschriftet sind.",
+    "title": "Nano Banana Prompt: Handgezeichneter Reisekarten-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um Reisepläne in \"handgezeichnete Reisekarten\" umzuwandeln: Sie zeigt Routen nach Tagen unterteilt, enthält Q-Version-Icons für Sehenswürdigkeiten und Speisen und bildet eine intuitive tägliche Bewegungsroute.",
+        "who": "Geeignet für das Teilen von Reiseleitfäden, Reiseblogger auf Xiaohongshu/Douyin, Familien, die Reisepläne erstellen, Reisebüros/Unterkünfte zur Erstellung von Empfehlungsplakaten und Nutzer, die ihre Reise klar und ansprechend darstellen möchten.",
+        "how": [
+          "Geben Sie das Reiseziel + Reisetage + die Hauptorte jedes Tages (in Reihenfolge) ein.",
+          "Fügen Sie Vorlieben hinzu: Essen zuerst/ Familienfreundlich/ Fotostellen/ Wandern/ Einkaufen und listen Sie 3–5 Punkte auf, die unbedingt besucht werden müssen.",
+          "Forderung nach Kartenstil: Q-Version, heilende Handzeichnung, chinesische Beschriftung, tägliche Routen in verschiedenen Farben/Linienarten unterscheiden (kann beschrieben werden, muss keine spezifischen Farbwerte angeben).",
+          "Überprüfen nach der Generierung: Ist die Route umständlich, ist jeder Tag überfüllt; wenn überfüllt, lassen Sie das Modell „die Reise in Vormittag/Nachmittag/Abend aufteilen und die Punkte reduzieren“."
+        ],
+        "prompts": [
+          "Generieren Sie eine „4-tägige handgezeichnete Reisekarte für Tokio“: nach Tag 1–Tag 4 unterteilt, Sehenswürdigkeiten, Essen, Unterkunft und Verkehrsmittel beschriften, Q-Version, heilender Stil, vollständig chinesische Beschriftung, 3:4 Hochformat, druckbar.",
+          "Erstellen Sie eine „2-tägige Familienreise-Karte für San Francisco“: Zoo/Wissenschaftsmuseum/Strand + Restaurantempfehlungen, klare Route, fügen Sie Tipps hinzu (Warten/Zeitfenster), Q-Version, handgezeichnet, 3:4.",
+          "Generieren Sie eine „3-tägige Essensroute-Karte für Chengdu“: Kuanzhai Alley/Jinli/Taikoo Li/Hotpot-Spieße usw., nach Tagesroute + Essenssymbole hervorheben, 3:4 Hochformat."
+        ]
+      }
+    }
   },
   "template-architecture": {
     "category": "Architektur",
-    "description": "Erstellen Sie eine Infografik-Overlay im HUD-Stil für markante Architektur mit Maßen, Materialien, Plänen/Schnitten und technischen Anmerkungen."
+    "description": "Erstellen Sie eine Infografik-Overlay im HUD-Stil für markante Architektur mit Maßen, Materialien, Plänen/Schnitten und technischen Anmerkungen.",
+    "title": "Nano Banana Prompt: HUD-Analyse-Diagramm für Landmarkenarchitektur Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet professionelle Nano Banana Prompts, um Architektur-Fotos in \"HUD-Technik-Analyseplatten\" aufzuwerten: Sie überlagert weiße Linienmarkierungen, Maßdaten und Strukturpunkte und präsentiert einen visuellen Effekt wie in einem Science-Fiction-Ingenieurehandbuch.",
+        "who": "Geeignet für Architektur-/Designstudenten zur Erstellung von Portfolios, TCM-Popularisierungsaccounts, Inhalten zur Interpretation von Stadtmarken, Ausstellungsführungsplakaten und für Kreatoren, die \"cool aussehende, aber klar erklärte\" Architektur-Inhalte erstellen möchten.",
+        "how": [
+          "Geben Sie den Gebäudenamen + Stadt + 3–5 Ingenieur-/Strukturmerkmale an, die Sie betonen möchten (z.B. Überhang, Fachwerk, Vorhangfassadensystem).",
+          "Geben Sie den zitierbaren Datenbereich an (Höhe, Anzahl der Stockwerke, Materialtyp; wenn unsicher, können Sie „geschätzt/ungefähr“ schreiben).",
+          "Forderung nach HUD-Stil: weiße feine Linienbeschriftung, nummerierte Callouts, Datenpanel, Grundriss/Querschnittsfenster, vertikal 3:4.",
+          "Überprüfen nach der Generierung: Decken die Beschriftungen das Hauptobjekt ab; wenn ja, fordern Sie an: „Verschieben Sie die Beschriftungen an den Rand und verbinden Sie sie mit Leitungen“."
+        ],
+        "prompts": [
+          "Generieren Sie eine „Dubai Burj Khalifa“ HUD-Bauanalyse: Hauptfoto + weiße Linien technische Beschriftung, einschließlich Höhe/Stockwerke/Strukturpunkte, Vorhangfassadenmaterial, Windlastdesign-Highlights, und fügen Sie Querschnittsminiaturansichten und Datenpanels hinzu, 3:4 Hochformat.",
+          "Erstellen Sie eine „Sydney Opera House“ HUD-Infografik: Schalenstruktur, vorgefertigte Segmente, Material- und akustische Raummerkmale, weiße Linienbeschriftung + nummerierte Callouts + kleine Grundrissdarstellung, 3:4.",
+          "Generieren Sie ein „Zagreb Museum für zeitgenössische Kunst (Beispiel)“ Bauanalyse-Panel: betonen Sie Licht, Bewegungsfluss, Struktur und Materialien, HUD-Beschriftungen über Fotos, am unteren Rand 3 Design-Highlights zusammenfassen, 3:4."
+        ]
+      }
+    }
   },
   "template-species-zh": {
     "category": "Arten- und Pflanzenschutz",
-    "description": "Erstellen Sie eine Cyberpunk-Style Wissenskarten für gefährdete Arten mit sechs zweisprachigen Modulen, Diagrammen und einer zentralen realistischen Illustration."
+    "description": "Erstellen Sie eine Cyberpunk-Style Wissenskarten für gefährdete Arten mit sechs zweisprachigen Modulen, Diagrammen und einer zentralen realistischen Illustration.",
+    "title": "Nano Banana Prompt: Cyberspace-Wissen-Karte für gefährdete Arten Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt mit Nano Banana Prompts eine Cyberspace-Wissen-Karte für \"gefährdete Arten\": Sie integriert Informationen aus sechs Kernmodulen und einfache Diagramme, unterstützt zweisprachige Beschriftungen in Chinesisch und Englisch und eignet sich für visuelle Wissenschaftskommunikation.",
+        "who": "Geeignet für Naturwissenschafts-Popularisierungsaccounts, Inhalte von gemeinnützigen/Umweltschutzorganisationen, Studenten für Artenberichte, Ausstellungsplakate von Zoos/Museen und für Kreatoren, die visuell ansprechende Infografiken mögen.",
+        "how": [
+          "Geben Sie den Namen der Art (chinesischer und englischer Name) + Verbreitungsgebiet + 3 auffällige Merkmale (Größe/Farbe/Verhalten) ein.",
+          "Geben Sie eine Liste von Bedrohungen (Lebensraumzerstörung/ Wilderei/ Klima usw.) und Schutzmaßnahmen (Schutzgebiete/Gesetze/Öffentlichkeitsbeteiligung) an.",
+          "Forderung nach 6-Modul-Struktur + Populationstrend-Miniaturansicht (steigend/ fallend/ ungewiss) + zweisprachige Titel und Punkte.",
+          "Überprüfen nach der Generierung: Sind die Informationen zu „allgemein“; wenn ja, fügen Sie 1–2 spezifische Fakten hinzu und lassen Sie das Modell die Modultexte umschreiben."
+        ],
+        "prompts": [
+          "Generieren Sie eine „Schneeleopard“ gefährdete Art Cyberpunk-Wissenkarte: zweisprachige Beschriftung, 6 Module + Populationstrenddiagramm + Hauptbedrohungen und Schutzmaßnahmen, 3:4 Hochformat, hochkontrastierende Neon-Infografik.",
+          "Erstellen Sie eine „Orang-Utan“ Wissenskarte: Morphologie/Lebensraum/Verhalten/Trend/Bedrohungen/Schutz- und Kulturbeziehungen, fügen Sie eine Verbreitungskartenminiaturansicht und ein Trenddiagramm hinzu, zweisprachiger Titel, 3:4.",
+          "Generieren Sie eine „Schildkröte“ gefährdete Art-Karte: betonen Sie Bedrohungen durch Meeresplastik und Fischernetze, Fortpflanzungs- und Migrationsverhalten, 6-Modul-Struktur + Datenpanel, 3:4."
+        ]
+      }
+    }
   },
   "template-character-zh": {
     "category": "Charakterpixel-Analyse",
-    "description": "Generieren Sie ein detailliertes Charakterkonzept-Diagramm mit Outfit-Schichten, Ausdrücken, Requisiten und handschriftlichen chinesischen Anmerkungen."
+    "description": "Generieren Sie ein detailliertes Charakterkonzept-Diagramm mit Outfit-Schichten, Ausdrücken, Requisiten und handschriftlichen chinesischen Anmerkungen.",
+    "title": "Nano Banana Prompt: Charakter-Pixel-Level-Zerlegungsdiagramm Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana Prompts, um Charakterdesign-Zerlegungsplatten zu erstellen: Sie enthält Ganzkörperansichten, Kleidungsdetails, eine Sammlung von Gesichtsausdrücken und eine Liste persönlicher Gegenstände und präsentiert einen professionellen Manuskriptstil.",
+        "who": "Geeignet für Illustratoren/Konzeptdesigner, Fan-Fiction, Charakterdesign für Romane/Comics, Prototypen für Spiele und für Kreatoren, die Charakterdetails klar und umfassend darstellen möchten.",
+        "how": [
+          "Geben Sie die Charakteridentität (Beruf/Epoche/Fraktion) + 3 Charakterstichworte + 1 Satz Charakterzitat/Leitprinzip ein.",
+          "Listen Sie die Bekleidungsstufen (Mantel/Unterbekleidung/Hüte usw.) und die wichtigsten Requisiten (Waffen/Werkzeuge/Andenken) auf.",
+          "Forderung nach Layout: Hauptvisual zentriert, Details in zwei Spalten (Material/Textur/Emotion), handschriftlicher Notizstil, 3:4 Hochformat.",
+          "Überprüfen nach der Generierung: Stimmen die Requisiten mit der Identität überein; wenn nicht, lassen Sie das Modell „die Requisiten basierend auf der Identität neu auswählen, aber den Gesamtstil beibehalten“."
+        ],
+        "prompts": [
+          "Generieren Sie eine Charakter-Zerlegungsdesignkarte: Charakter „Steampunk weiblicher Mechaniker“, einschließlich Bekleidungsstufen, Emotionssammlung, Material-Nahaufnahmen, tragbare Werkzeuge und Hauptrequisiten, handschriftliche chinesische Beschriftung, 3:4 Hochformat.",
+          "Erstellen Sie ein „Tang-Dynastie weiblicher Held“ Charakterdesign-Panel: Detailreiche + leichte Tusche-Textur, Bekleidungsstufen, Zubehördetails, Waffen und tragbare Gegenstände, 4 Emotionen, chinesische Beschriftung, 3:4.",
+          "Generieren Sie eine „Zukunftsstadt-Kurier“ Charakter-Zerlegung: Uniformstufen, Rucksackstruktur, häufig verwendete Werkzeuge, Identitätsabzeichen und Aufkleberdetails, klare Beschriftung, 3:4."
+        ]
+      }
+    }
   },
   "template-recipe-zh": {
     "category": "Rezept",
-    "description": "Gestalten Sie ein festliches chinesisches Neujahrsrezept-Poster mit Zutaten, Schritt-für-Schritt-Visualisierungen, Symbolik und handschriftlichen chinesischen Notizen."
+    "description": "Gestalten Sie ein festliches chinesisches Neujahrsrezept-Poster mit Zutaten, Schritt-für-Schritt-Visualisierungen, Symbolik und handschriftlichen chinesischen Notizen.",
+    "title": "Nano Banana Prompt: Visuelle Rezeptplakat-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um Rezepte in \"visuelle Plakate\" umzuwandeln: Sie zeigt Schritt-für-Schritt-Diagramme und Fotos des Endprodukts, um nicht nur den Kochprozess klar zu erklären, sondern auch die Ästhetik für soziale Medien zu betonen.",
+        "who": "Geeignet für das Teilen von Neujahrsessen, das Organisieren von Familienrezepten, die Erstellung von Inhalten für Food-Accounts, die Erstellung von Menüplakaten durch Gastronomiemarken und für Nutzer, die \"Kochschritte klar erklären\" möchten.",
+        "how": [
+          "Geben Sie den Gerichtsnamen und die Geschmackspräferenzen (leicht/scharf/süß) ein.",
+          "Listen Sie die Zutatenliste und die wichtigen Mengen (Gramm/Esslöffel) auf und betonen Sie, dass „die Schritte ausführbar sein müssen“.",
+          "Forderung nach 5–7 Schritten mit Schritt-für-Schritt-Diagramm: Garzeit/Zeit/Schlüsselaktionen müssen angegeben werden.",
+          "Überprüfen nach der Generierung: Stimmen die Zutaten mit den Schritten überein; wenn nicht, lassen Sie das Modell „die Schritte nach der Liste neu anordnen“."
+        ],
+        "prompts": [
+          "Generieren Sie ein „Visuelles Rezeptplakat für das Neujahrsessen“: Gericht „Pekingente“, einschließlich Hauptvisual des Endprodukts, Zutaten und Mengen, 7 Schritte Diagramm, Getränkekombination und glückliche Bedeutung, Frühlingsfest-Stimmung, 3:4 Hochformat.",
+          "Erstellen Sie ein „Mapo Tofu“ visuelles Rezept: Zutaten in Gramm, wichtige Garzeit-Hinweise, 6 Schritte Zerlegungsdiagramm, klare Gestaltung geeignet für Sammlung und Teilen, 3:4.",
+          "Generieren Sie ein „Spanisches Paella-Rezeptplakat“: Zutatenliste, Schritt-für-Schritt-Diagramm, häufige Fehler und Korrekturvorschläge, 3:4 Hochformat."
+        ]
+      }
+    }
   },
   "template-character-analysis-zh": {
     "category": "Charakteranalyse",
-    "description": "Erstellen Sie eine Infografik für ein Charakterdossier mit konfigurierbarem Kunststil, Abschnitten, Beziehungen und wichtigen Elementen, die als einheitliches Profil angeordnet sind."
+    "description": "Erstellen Sie eine Infografik für ein Charakterdossier mit konfigurierbarem Kunststil, Abschnitten, Beziehungen und wichtigen Elementen, die als einheitliches Profil angeordnet sind.",
+    "title": "Nano Banana Prompt: Charakter-Dossier-Infografik-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um \"Charakter-Dossier-Plakate\" zu erstellen: Sie zeigt die grundlegenden Einstellungen, Motivationen und komplexen Beziehungsnetzwerke der Charaktere in strukturierten Spalten.",
+        "who": "Geeignet für Autoren/Drehbuchautoren zur Erstellung von Charakterbiografien, Fan-Fiction zur Charakteranalyse, Einführung in Spiel-/Comic-Settings, CP-Beziehungsorganisation und für Kreatoren, die \"Motivationen und Beziehungen\" klar erklären möchten.",
+        "how": [
+          "Geben Sie den Charakterhintergrund (Herkunft/Ziel/Schwächen) + Schlüsselbeziehungen (3–6 Personen: Verbündete/Gegner/Anliegen) ein.",
+          "Geben Sie Fähigkeiten und Kosten an: Was sind die Fähigkeiten, was sind die Kosten/Einschränkungen (je spezifischer, desto besser).",
+          "Forderung nach Layout: Hauptvisual + Emotionsleiste + linke und rechte Spalten + untere Aufschlüsselung der Gegenstände; der Titel kann „Codename/Aktennummer“ enthalten.",
+          "Überprüfen nach der Generierung: Sind die Beziehungen konsistent; wenn es Widersprüche gibt, lassen Sie das Modell „den visuellen Stil beibehalten, die Beziehungsspalte umschreiben und die Bezeichnungen vereinheitlichen“."
+        ],
+        "prompts": [
+          "Generieren Sie ein Charakter-Dossier: Charakter „Untergrundjournalist“, Hauptvisual-Porträt + Emotionsdesign + linke und rechte Spalten (Hintergrund/Motivation/Fähigkeiten und Kosten/Bindungsbeziehungen) + untere Aufschlüsselung der Schlüsselsachen (Kamera, Diktiergerät usw.), 3:4 Hochformat.",
+          "Erstellen Sie ein „Antiker Berater“ Charakterprofil-Analyseplakat: Aktennummer, Charakteretiketten, Strategie-Stil, Beziehungsnetz (Herrscher/Gegner/alte Freunde), untere Gegenstände (Faltfächer/Geheimbotschaften), 3:4.",
+          "Generieren Sie ein „Cyber-Söldner“ Charakterprofil: Fähigkeitsmodule (Waffen/Prothesen/Taktiken), psychologische Schwächen, Beziehungen (Arbeitgeber/Verräter/Familie), HUD-Stil Layout, 3:4."
+        ]
+      }
+    }
   },
   "template-weather": {
     "category": "Miniaturstadt Wettervorhersage",
-    "description": "Rendern Sie eine Miniatur-isometrische 3D-Stadtwetter-Szene mit einem zentralen Wahrzeichen und überlagerten Wetter-/Datum-/Temperaturtypografie in der Sprache der Stadt."
+    "description": "Rendern Sie eine Miniatur-isometrische 3D-Stadtwetter-Szene mit einem zentralen Wahrzeichen und überlagerten Wetter-/Datum-/Temperaturtypografie in der Sprache der Stadt.",
+    "title": "Nano Banana Prompt: Generator für Miniaturstadt-Wettervorhersagen｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von „visuell eindrucksvollen Miniaturstadt-Wettervorhersagebildern“. Das Bild hat eine isometrische 3D-Stadt als Kern, mit einem markanten Wahrzeichen in der Mitte, umgeben von Straßen, Fahrzeugen, Fußgängern und Naturelementen, und überlagert Wetterinformationen, Datum und Temperatur, um Wetterinformationen in ein Stadtplakat mit hoher Informationsdichte und Designästhetik zu verwandeln.",
+        "who": "Geeignet für Wetteraccounts, Stadtinformationskanäle, Reiseinhaltsproduzenten, lokale Medienredakteure sowie für kreative Designer, die „Wetterinformationen“ ansprechender gestalten möchten. Auch geeignet für tägliche Stadtwetterkarten, Feiertagsreise-Wetterbilder oder visuelle Social-Media-Cover.",
+        "how": [
+          "Bestimme zuerst den Stadtnamen und das repräsentative Wahrzeichen, wie Shanghai, Tokio, Paris, New York.",
+          "Bestimme dann den Wettertyp, wie sonnig, starker Regen, schneereiche Tage, bewölkt, neblig, Gewitter usw., und ergänze die zeitliche Atmosphäre, wie Morgen, Dämmerung oder Nachtansicht.",
+          "Beschreibe die Bildelemente, wie Hauptstraße, Brücken, Flüsse, Fahrzeuge, Bäume, Gebäudedichte und Farbtonstil, um die Stadt erkennbarer zu machen.",
+          "Füge schließlich Layout-Anforderungen hinzu, wie Temperatur, Datum, Wetter-Icons, Sprachstil des Stadtnamens; wenn die Informationen nicht klar genug sind, kannst du verlangen, dass „die Wetterlayout und die Erkennbarkeit des Wahrzeichens verstärkt werden“."
+        ],
+        "prompts": [
+          "Generiere eine Mikrowettervorhersage für die Stadt Shanghai: Oriental Pearl im Mittelpunkt, sonniger blauer Himmel mit weißen Wolken, gleichmäßiges 3D-Stadtmodell, überlagert mit Wetter-, Datum- und Temperatur-Layout, klare Informationen, 9:16.",
+          "Erstelle eine Wetterkarte für Tokio an einem schneereichen Tag: Tokyo Tower und ein Miniaturmodell der dicht besiedelten Straßen, schneebedeckte Atmosphäre, kühle Farbtöne, füge den japanischen Stadtnamen und Wetterinformationen in das Layout ein, 9:16.",
+          "Generiere ein Wetterplakat für eine regnerische Nacht in New York: Miniaturansicht von Manhattans Wolkenkratzern und Straßen, Lichtreflexionen bei Regen, Wetter-Icons, Datum und Temperaturinformationen klar lesbar, starkes Design."
+        ]
+      }
+    }
   },
   "template-education-zh": {
     "category": "Fachwissen-Karten",
-    "description": "Verwandeln Sie ein Thema in eine Infografik im niedlichen Cartoon-Stil oder im Kreidetafel-Skizzenstil, der standardmäßig der Eingabesprache entspricht."
+    "description": "Verwandeln Sie ein Thema in eine Infografik im niedlichen Cartoon-Stil oder im Kreidetafel-Skizzenstil, der standardmäßig der Eingabesprache entspricht.",
+    "title": "Nano Banana Prompt: Fachwissen-Infografik-Plakat-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um \"Fachwissen-Plakate\" zu erstellen: Sie bietet zwei visuelle Rahmen, Cartoon oder Tafel, um das Interesse an Unterrichtserklärungen oder Selbststudium zu steigern.",
+        "who": "Geeignet für Lehrer zur Durchführung von Unterrichtserklärungen, Studenten zur Erstellung von Lernnotizen/Aufgabenpräsentationen, Wissenschaftsaccounts zur Erstellung von Wissensgrafiken und für Kreatoren, die komplexe Konzepte \"klar erklären\" möchten.",
+        "how": [
+          "Geben Sie das Thema des Wissenspunkts ein (z.B.: DNA-Doppelhelix/Plattentektonik/elektromagnetische Induktion).",
+          "Wählen Sie den Stil: Cartoon-Kartenstil (eher für jüngere) oder Tafelbericht-Skizzenstil (eher für Wissenschaft/Wettbewerb).",
+          "Forderung nach Struktur: Definition → Punkte → Abbildung → Beispiele/Formeln (je nach Ihrem Fach anpassen).",
+          "Überprüfen nach der Generierung: Sind die Schlüsselwörter hervorgehoben, stimmen die Abbildungen mit den Punkten überein; lassen Sie das Modell gegebenenfalls „weniger Text, mehr Abbildungen“ hinzufügen."
+        ],
+        "prompts": [
+          "Erstelle eine Infografik zum Thema „DNA-Doppelhelixstruktur“: einschließlich Definition, Schlüsselkomponenten, Strukturdiagramm, häufige Missverständnisse, im Stil einer Tafelansicht mit Kreidezeichnung, im Hochformat 3:4.",
+          "Generiere eine Wissenskarten zu „Plattentektonik und Erdbeben“: im Cartoon-Stil, mit Pastellfarben, ein Flussdiagramm zur Erklärung der Plattenbewegung → Stress → Erdbeben, Schlüsselwörter hervorgehoben, im Format 3:4.",
+          "Erkläre „elektromagnetische Induktion“ im Stil einer Tafelansicht: zentrale Formeln, Darstellung der rechten Handregel, drei typische Beispielhinweise, klare Struktur, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-hot-event-analysis-zh": {
     "category": "Hot-Event-Analyse",
-    "description": "Generieren Sie eine 3:4 chinesische Hot-Event-Analyse-Infografik mit geschichteten Kausalitäten, Mechanismusketten und Wirkungskarten."
+    "description": "Generieren Sie eine 3:4 chinesische Hot-Event-Analyse-Infografik mit geschichteten Kausalitäten, Mechanismusketten und Wirkungskarten.",
+    "title": "Nano Banana Prompt: Multidimensionaler Analyse-Diagramm-Generator für heiße Ereignisse｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage kombiniert Nano Banana Prompts, um komplexe Ereignisse in \"multidimensionale Analyse-Diagramme\" zu zerlegen: Sie schält Phänomene und Essenzen schichtweise ab und präsentiert klar die Kausalitätsketten und langfristigen Auswirkungen.",
+        "who": "Geeignet für Accounts zur Analyse heißer Themen, Branchenanalysen/Wirtschaftsbeobachtungen, Produkt-/Betriebsrückblicke, strukturierte Berichterstattung für Graduiertenarbeiten und für Personen, die komplexe Ereignisse logisch erklären möchten.",
+        "how": [
+          "Gib eine einzeilige Zusammenfassung des Ereignisses + Zeitachse (3–6 Schlüsselereignisse) ein.",
+          "Liste die beteiligten Parteien auf (mindestens 3 Kategorien: Plattform/Regulierung/Nutzer/Wertschöpfungskette usw.) und deren jeweilige Motive.",
+          "Forderung nach dreischichtiger Struktur: Phänomen vs. Essenz, zugrunde liegende Logik (Ursache → Wirkung), Einflussstrahlung (kurz/mittel/lang).",
+          "Überprüfe nach der Generierung: Ist die „Meinung vorrangig“? Wenn Vorurteile stark sind, lass das Modell „zuerst den Faktenrahmen geben, dann mehrere Perspektivenhypothesen“. "
+        ],
+        "prompts": [
+          "Generiere eine multidimensionale Analysegrafik zu einem aktuellen Ereignis: „Die Algorithmus-Empfehlungsmechanismen einer Plattform führen zu Kontroversen“ (neutral formuliert), einschließlich Zeitachsenknoten, Motive der Beteiligten, Kausalitätskette, kurz-, mittel- und langfristige Auswirkungen, gut lesbare chinesische Typografie, im Hochformat 3:4.",
+          "Erstelle eine Analysegrafik zum Ereignis „Massive Entlassungen in Unternehmen“: Schichtung von Phänomen und Essenz, Kosten/Wachstum/Organisationsstruktur Logik, Auswirkungen auf Mitarbeiter/Branche/Kapitalmarkt, im Format 3:4.",
+          "Generiere eine Rückblick-Infografik zu „Fehler bei der Produkteinführung“: Schlüsselereignisse, Ursachenketten (Bedarf/Engineering/Kommunikation), Lösungswege, langfristige Auswirkungen, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-intangible-heritage-zh": {
     "category": "Immaterielle Kulturerbe",
-    "description": "Erstellen Sie ein hochdichtes A3-Infografik-Board, das ein chinesisches immaterielles Kulturerbe-Handwerk erklärt, mit Geschichte, Prozess, Motiven und moderner Erhaltung."
+    "description": "Erstellen Sie ein hochdichtes A3-Infografik-Board, das ein chinesisches immaterielles Kulturerbe-Handwerk erklärt, mit Geschichte, Prozess, Motiven und moderner Erhaltung.",
+    "title": "Nano Banana Prompt: Infotafeln zur Popularisierung immateriellen Kulturerbes Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt professionelle Nano Banana Prompts, um \"Infotafeln für immaterielle Kulturerbes\" zu erstellen: Sie präsentiert systematisch historische Ursprünge, Herstellungsprozesse, Werkzeuge und Materialien sowie deren moderne Anwendungen.",
+        "who": "Geeignet für Accounts zur Popularisierung von Kultur-/immateriellem Erbe, Schulvereinsplakate, Kulturinstitutionen zur Werbung, Materialien für kreative Marken und für Kreatoren, die traditionelle Handwerke klar erklären und visuelle Qualität schaffen möchten.",
+        "how": [
+          "Gib den Namen des immateriellen Erbes + Region + eine einzeilige Kernmerkmale ein (z.B. „Bambusgeflecht/Lazurblau/ Holzschnitt-Jahresbilder“).",
+          "Liste die Schritte des Prozesses (5–8 Schritte) und die Liste der Werkzeuge und Materialien (je spezifischer, desto besser).",
+          "Forderung nach Modulen: Geschichte/Prozess/Musterzeichen/Vertreterwerke/Übertragungsstatus/moderne Integration, mit kleinen Illustrationen und Anmerkungen.",
+          "Überprüfe nach der Generierung: Sind die Schritte ausführbar? Wenn nicht klar, lass das Modell „die Schrittanweisungen gemäß dem von dir gegebenen Prozess neu schreiben und die Schlüsselaktionen ergänzen“. "
+        ],
+        "prompts": [
+          "Generiere ein A3-Poster für immaterielle Erbschaft: Thema „Fischlaterne (Lichtkunst)“, einschließlich historischer Hintergrund, Herstellungsprozess (7 Schritte), Werkzeuge und Materialien, Musterzeichen und Bedeutung, Übertragungsstatus und moderne Anwendungen, reichhaltige Illustrationen, im Hochformat 3:4 mit hoher Dichte.",
+          "Erstelle ein Poster für „Indigo-Färbung“: Farbstoffquellen, wichtige Punkte zur Bindung/Wachsfärbung, schrittweiser Prozess, häufige Muster und Symbole, zeitgenössische Modeanwendungen, im Format 3:4.",
+          "Generiere ein Poster für „Holzschnitt-Jahresbilder“: Druck- und Druckverfahren, Farbsystem, repräsentative Themen, Übertragung und moderne Designintegrationsbeispiele, klare chinesische Module, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-education-card": {
     "category": "Fachwissen-Karten",
-    "description": "Verwandeln Sie ein Eingabethema in eine chinesische Bildungsinfografik im niedlichen Cartoon-Stil oder im wissenschaftlichen Kreidetafel-Skizzenstil (3:4)."
+    "description": "Verwandeln Sie ein Eingabethema in eine chinesische Bildungsinfografik im niedlichen Cartoon-Stil oder im wissenschaftlichen Kreidetafel-Skizzenstil (3:4).",
+    "title": "Nano Banana Prompt: Fachwissen-Karten-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage basiert auf Nano Banana Prompts, um beliebige Konzepte in \"strukturierte Wissenskarten\" zu komprimieren: Wählen Sie zwischen Cartoon- oder Tafel-Stilen, um die Lernleistung zu steigern.",
+        "who": "Geeignet für Lehrer zur Unterrichtsvorbereitung, Studenten zur Erstellung von Notizen, Wissenschaftsaccounts zur Erstellung von Serienkarten, Eltern-Kind-Bildungsinhalte und für Nutzer, die komplexe Konzepte in \"10 Sekunden verständlich\" erklären möchten.",
+        "how": [
+          "Gib das Thema + Zielgruppe Alter/Niveau (Grundschule/Mittelschule/Erwachsenen-Einstieg) ein.",
+          "Gib die Module an, die du einbeziehen möchtest: Definition/Beispiele/Formeln/Missverständnisse/kleine Tests (optional).",
+          "Wähle den Stil: niedlicher Cartoon oder Tafelansicht; Schlüsselwörter sollten hervorgehoben, die Hierarchie klar und die Schrift groß und lesbar sein.",
+          "Überprüfe nach der Generierung: Ist es zu lang? Wenn zu lang, lass das Modell „auf 6–8 Schlüsselpunkte kürzen und 1 Beispiel hinzufügen“. "
+        ],
+        "prompts": [
+          "Generiere eine Wissenskarten: Thema „Was ist Photosynthese“, für die oberen Klassen der Grundschule, im niedlichen Cartoon-Stil, einschließlich Definition, drei Schritte des Prozesses, ein Lebensbeispiel, eine kleine Testfrage, im Hochformat 3:4.",
+          "Erstelle eine Wissenskarten im Stil einer Tafelansicht: Thema „Newtons drittes Gesetz“, einschließlich Formel, Schlüsselwörter, zwei Beispiele, häufige Missverständnisse, im Kreidezeichnung-Stil, im Format 3:4.",
+          "Generiere eine Wissenskarten zu „Überanpassung im maschinellen Lernen“: Definition, Ursachen, 3 Methoden zur Minderung, eine anschauliche Metapher, klare Struktur, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-costume-zh": {
     "category": "Traditionelle Kleidung",
-    "description": "Erstellen Sie eine 4K vertikale Infografik über traditionelle Kleidung (3:4), die die spezifische Kleidungsform mit goldener Komposition präsentiert, Detailtreue und visuelle Ästhetik vereint, geeignet für Bildungszwecke und kreative Designmaterialien."
+    "description": "Erstellen Sie eine 4K vertikale Infografik über traditionelle Kleidung (3:4), die die spezifische Kleidungsform mit goldener Komposition präsentiert, Detailtreue und visuelle Ästhetik vereint, geeignet für Bildungszwecke und kreative Designmaterialien.",
+    "title": "Nano Banana Prompt: Illustrationen zur Popularisierung traditioneller Kleidung Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt mit Nano Banana Prompts \"Infografiken zur Popularisierung dynastischer Kleidung\": Sie modularisiert Struktur, Zubehördetails und Bedeutungen in einem kunstvollen, detaillierten Stil.",
+        "who": "Geeignet für Accounts zur Popularisierung traditioneller Kleidung/Chinesischer Kleidung, kreative Designmaterialien, Notizen für Geschichtsinteressierte, Ausstellungsführungspläne und für Kreatoren, die \"genau und mit hochwertiger Ästhetik\" kulturelle Inhalte erstellen möchten.",
+        "how": [
+          "Gib Dynastie/Epoche + Bekleidungsart (Alltagskleidung/Feierkleidung/Militärkleidung/Amtskleidung usw.) + Rollenidentität (Geistlicher/Beamter/Nobelmann/Bürger) ein.",
+          "Liste die Schlüsseldetails auf: Kragenform, Ärmelform, Gürtel, Rocksaum, Kopfschmuck, Muster-Thema (z.B. Wolkenmuster/Blumen und Vögel).",
+          "Forderung nach Modulen: Strukturzerlegung + Detailaufnahme von Accessoires + Bedeutungsannotation + Trageszenen-Modul, im Hochformat 3:4.",
+          "Überprüfe nach der Generierung: Stimmen Bezeichnung und Struktur überein? Wenn nicht, fordere „behalte den Stil bei und korrigiere den Text gemäß den von dir bereitgestellten Strukturpunkten“. "
+        ],
+        "prompts": [
+          "Generiere eine wissenschaftliche Illustration zur „Alltagskleidung von Frauen in der Tang-Dynastie“: im detaillierten, bunten Stil, Struktur, Musterbedeutung, Accessoire-Details, modulare Zerlegung der Trageszenen, im Hochformat 3:4 mit chinesischen Beschriftungen.",
+          "Erstelle eine wissenschaftliche Grafik für „Amtskleidung der Ming-Dynastie“: Muster des Aufnähers, Kopfschmuck, Gürtel und Schichtstruktur, mit Detailaufnahmen und Anmerkungen, im Format 3:4.",
+          "Generiere eine Infografik zu „Kleidung von Literaten in der Song-Dynastie“: Kragen- und Ärmelformen, Material- und Farbvorlieben, alltägliche Szenen, detaillierte Zerlegung im feinen Stil, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-book-series": {
     "category": "Buchreihe",
-    "description": "Generieren Sie 6 vertikale (3:4) Buchwerbungsgrafiken für Xiaohongshu: Cover-Titel, Kernthemen, klassische Zitate, Kernpunkte, Personen-/Dimensionenbeziehungen, Kontextanalyse; einheitlicher Stil, geeignet für verschiedene Buchtypen."
+    "description": "Generieren Sie 6 vertikale (3:4) Buchwerbungsgrafiken für Xiaohongshu: Cover-Titel, Kernthemen, klassische Zitate, Kernpunkte, Personen-/Dimensionenbeziehungen, Kontextanalyse; einheitlicher Stil, geeignet für verschiedene Buchtypen.",
+    "title": "Nano Banana Prompt: Buchinterpretation Xiaohongshu 6-Bilder-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um eine komplette Reihe von \"Buchinterpretationsbildern\" auf einmal zu erstellen: Von visuellen Covern bis hin zu tiefen Meinungsanalysen, mit einem einheitlichen Stil.",
+        "who": "Geeignet für Buchblogger, Wissensblogger, Kursleiter zur Erstellung von Buchlisten, das Organisieren von Lernnotizen und für Nutzer, die ein Buch klar erklären und die Weiterleitung und das Speichern erhöhen möchten.",
+        "how": [
+          "Gib den Buchtitel + Autor + das Publikum, das du betonen möchtest (Beruf/Unternehmertum/Psychologie/Geschichte usw.) ein.",
+          "Gib 3–5 Kernpunkte und 2–3 prägnante Zitate an (wenn nicht vorhanden, lass das Modell aus dem Inhalt zusammenfassen).",
+          "Forderung nach 6 festen Strukturen: Jede Seite hat Titel + Punkte + visuelle Symbole; einheitliche Farbgebung und Schriftartenhierarchie.",
+          "Überprüfe nach der Generierung: Wiederholen sich die Punkte? Wenn ja, lass das Modell „jedes Thema nur einmal behalten und die Punkte neu zuordnen“. "
+        ],
+        "prompts": [
+          "Generiere 6 Buchinterpretationsgrafiken für „Working Backwards“: Cover-Hook, Kernthema, prägnante Zitate, Schlüsselideen, Mechanismen/Beziehungen zwischen Personen, Zusammenfassung des gesamten Buches, einheitlicher Stil, im Hochformat 3:4.",
+          "Generiere 6 Grafiken zur Interpretation von „Ein Satz ersetzt zehntausend Sätze“: Thema und Beziehungen zwischen Personen, zentrale Konflikte und emotionale Linien, repräsentative prägnante Zitate, Zusammenfassung des Inhalts, geeignet zum Speichern und Teilen auf Xiaohongshu, im Hochformat 3:4.",
+          "Generiere 6 Grafiken für ein Buch über „Methoden für KI-Produkte“: für Produktmanager, mit Fokus auf Rahmen, Fallstudien, Missverständnisse und Aktionslisten, einheitlicher visueller Stil, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-word-scene": {
     "category": "Wortszene Lern-Illustration",
-    "description": "Generieren Sie detaillierte Szenenillustrationen und beschriften Sie alle Objekte mit englischen Wörtern + IPA + chinesischer Übersetzung, geeignet für die Visualisierung des Englischlernens."
+    "description": "Generieren Sie detaillierte Szenenillustrationen und beschriften Sie alle Objekte mit englischen Wörtern + IPA + chinesischer Übersetzung, geeignet für die Visualisierung des Englischlernens.",
+    "title": "Nano Banana Prompt: Szenen-Wort-Lern-Diagramm-Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um \"immersive Wortkarten\" zu erstellen: Sie versieht jedes Objekt in der Szene mit dem entsprechenden Englisch, IPA und Übersetzungen, um die Gedächtniseffizienz zu steigern.",
+        "who": "Geeignet für Eltern, die Englisch unterrichten, Englischlehrer für Vorschulkinder/Grundschüler, Vokabellernblogger, Institutionen, die Lernmaterialien erstellen, und für Nutzer, die \"druckbare Wortplakate\" erstellen möchten.",
+        "how": [
+          "Wähle eine Szene: Küche, Supermarkt, Schlafzimmer, Zoo, Spielplatz usw.",
+          "Forderung nach Beschriftungsformat: Englisch / IPA / Chinesisch (drei Zeilen), und betone „nicht die Objekte verdecken“. ",
+          "Kontrolliere die Dichte: Beschrifte zuerst 15–25 häufige Objekte, zu viele wirken unordentlich.",
+          "Überprüfe nach der Generierung: Lass schwierige Wörter durch einfachere ersetzen oder ergänze „nach Regionen gruppierte Beschriftungen“. "
+        ],
+        "prompts": [
+          "Generiere eine „Küchenszenen-Wortlerngrafik“: reichhaltige Illustrationen, beschrifte 20 häufige Objekte, jede Beschriftung in drei Zeilen (Englisch/IPA/Chinesisch), klare Typografie, die das Hauptobjekt nicht verdeckt, im Hochformat 3:4.",
+          "Generiere eine „Supermarktszenen-Wortschatzgrafik“: einschließlich Regale, Kassen, Einkaufswagen usw., beschrifte 25 häufige Nomen, Englisch + IPA + Chinesisch in drei Zeilen, so nah wie möglich an den Objekten, aber nicht verdeckend, im Hochformat 3:4.",
+          "Generiere ein „Zoo-Szenen-Wortschatzplakat“: beschrifte Tiere und Einrichtungen (Tor, Käfig, Ticket, Karte usw.), Englisch/IPA/Chinesisch im dreizeiligen Format, geeignet zum Drucken."
+        ]
+      }
+    }
   },
   "template-cultural-relic-retro-infographic": {
     "category": "Historische Relikte",
-    "description": "Generieren Sie ein 3:4 chinesisches Retro-Infografik-Poster, das auf handgezeichneten Illustrationen von Relikten basiert, mit vier Quadranten für Bildungsinhalte + Erweiterungswissen, elegant und stabil, geeignet für soziale Plattformen."
+    "description": "Generieren Sie ein 3:4 chinesisches Retro-Infografik-Poster, das auf handgezeichneten Illustrationen von Relikten basiert, mit vier Quadranten für Bildungsinhalte + Erweiterungswissen, elegant und stabil, geeignet für soziale Plattformen.",
+    "title": "Nano Banana Prompt: Retro-Infografik für chinesische Kulturgüter Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana Prompts, um \"Retro-Infografiken für Kulturgüter\" zu erstellen: Sie erklärt die vielfältigen Werte von Kulturgütern durch ein quadrantes Layout und wird von schönen handgezeichneten Illustrationen begleitet.",
+        "who": "Geeignet für Accounts zur Popularisierung von Kulturgütern, Geschichtsinteressierte, Inhalte für Museumsführungen, kreative Marken zur Geschichtenerzählung und für Kreatoren, die Kulturgüter \"systematisch und sammelbar\" erklären möchten.",
+        "how": [
+          "Gib den Namen des kulturellen Relikts + Jahr/Ära + Fundort/Sammlungsort (optional) ein.",
+          "Gib die vier Punkte an, die du betonen möchtest (je Quadrant 2–4 Punkte).",
+          "Forderung nach Retro-Typografie: Papierstruktur, handgezeichnete Illustrationen, nummerierte Fußnoten, kleine Zeitachse oder Standortfenster.",
+          "Überprüfe nach der Generierung: Sind die Begriffe genau? Wenn mehr Sicherheit erforderlich ist, drücke Unsicherheiten mit „möglicherweise/allgemein angenommen/angenommen“ aus."
+        ],
+        "prompts": [
+          "Generiere eine retro-infografische Darstellung von chinesischen kulturellen Relikten: Relikt „Simuwu-Ding“, zentrale handgezeichnete Illustration + vier Quadranten (historische Bedeutung/archäologischer Wert/künstlerische Errungenschaften/zeitgenössischer Einfluss) + erweiterte Wissensabschnitte, im Hochformat 3:4.",
+          "Erstelle eine retro-infografische Darstellung des „Schwerts von König Goujian“: vier Quadranten, die die Merkmale der Handwerkskunst, den historischen Hintergrund, die Entdeckungsgeschichte und den zeitgenössischen kulturellen Einfluss klar darstellen, mit retro Papierstruktur, im Hochformat 3:4.",
+          "Generiere eine Infografik zu „Tang-Sancai-Kamelstatuen“: Kunststil, Handels-/Seidenstraßenbezug, archäologischer Wert, Einfluss auf moderne Ästhetik, quadratische Struktur, im Hochformat 3:4."
+        ]
+      }
+    }
   },
   "template-dog-breed-retro-infographic": {
     "category": "Hunderassen",
-    "description": "Generieren Sie eine 9:16 Retro-Wissenschaftsillustration für Hunderassen: detaillierte handgezeichnete Hunderassenillustrationen + anatomische Beschriftungen, mehrteilige Bildungsanordnung, alter Papierstil, geeignet für soziale Plattformen."
+    "description": "Generieren Sie eine 9:16 Retro-Wissenschaftsillustration für Hunderassen: detaillierte handgezeichnete Hunderassenillustrationen + anatomische Beschriftungen, mehrteilige Bildungsanordnung, alter Papierstil, geeignet für soziale Plattformen.",
+    "title": "Nano Banana Prompt: Retro-Wissenschaftsinfografik für Hunderassen Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt mit Nano Banana Prompts \"Retro-Wissenschaftsinfografiken für Hunderassen\": Sie kombiniert handgezeichnete Hunderassen mit detaillierten anatomischen Beschriftungen und erklärt Pflege- und Charaktermerkmale in verschiedenen Abschnitten.",
+        "who": "Geeignet für Accounts zur Popularisierung von Hunden, Inhalte von Tierhandlungen/Hundetrainern, Neulinge, die einen Hund adoptieren möchten, Schulwissenschaft und für Kreatoren, die \"so schön wie alte Magazine\" ansprechende Inhalte über Haustiere erstellen möchten.",
+        "how": [
+          "Gib den Hunderassenamen + Größe (klein/mittel/groß) + Familienszene (Wohnung/Haus mit Garten/Eltern-Kind) ein.",
+          "Liste die 3 Punkte auf, die dir am wichtigsten sind: Haarausfall/Bewegungsbedarf/Pflege/Training/Sozialisation usw.",
+          "Forderung nach retro-wissenschaftlichem Stil: zentrale Illustration + weiße Linienanatomie-Beschriftung + modulare Informationen (Pflege/Training/Charakter/Anpassung).",
+          "Überprüfe nach der Generierung: Passt es zur Szene? Wenn nicht, lass das Modell „Pflege- und Bewegungsratschläge nach Wohnung/Eltern-Kind-Szenen neu schreiben“. "
+        ],
+        "prompts": [
+          "Generiere eine retro-wissenschaftliche Infografik zur Hunderasse: Hunderasse „Golden Retriever“, 9:16, zentrale handgezeichnete Illustration + anatomische Beschriftung, Module enthalten Trainingspunkte, Bewegungsbedarf, Fellpflege, Charakterzusammenfassung und geeignete Zielgruppen.",
+          "Erstelle eine Infografik zur Hunderasse „Corgi“: Struktur- und Pflegehinweise, Wirbelsäulenpflege, Training und Energieverwaltung, Haarausfallpflege, retro Typografie, 9:16.",
+          "Generiere eine wissenschaftliche Grafik zu „Siberian Husky“: Kälteanpassungsfähigkeit, Bewegungsbedarf, Zerstörungsrisiko und Trainingsstrategien, zentrale Illustration + Beschriftung, 9:16."
+        ]
+      }
+    }
   },
   "template-food": {
     "category": "Essen",
-    "description": "Generieren Sie ein 4K vertikales 3:4 Infografik-Poster über Essen: Aquarell-Handzeichnung als Hauptvisual + Titel + Herstellungsschritte + Hauptzutaten + regionale Kultur + lokale Erinnerungen."
+    "description": "Generieren Sie ein 4K vertikales 3:4 Infografik-Poster über Essen: Aquarell-Handzeichnung als Hauptvisual + Titel + Herstellungsschritte + Hauptzutaten + regionale Kultur + lokale Erinnerungen.",
+    "title": "Nano Banana Prompt: Panorama-Infografik für kulinarische Wissenschaft Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um Gerichte in \"Panorama-Plakate für kulinarische Wissenschaft\" aufzuwerten: Sie erklärt den Kochprozess und die Geschichten von Lebensmitteln durch Aquarellvisualisierungen und strukturierte Module.",
+        "who": "Geeignet für Food-Blogger, Inhalte von Gastronomiemarken, lokale Kultur- und Tourismuswerbung, Schulwissenschaftsdemonstrationen und für Kreatoren, die die Geschichten von Lebensmitteln vielschichtiger erzählen möchten.",
+        "how": [
+          "Gib den Gerichtsnamen/Essen + Region/Stil (optional) + einen Punkt, den du hervorheben möchtest (Gewürze/Techniken/Kulturgeschichte) ein.",
+          "Liste die Hauptzutaten (5–10) und die wichtigsten Schritte (5–7) auf.",
+          "Modulanforderungen: Schritte, Zutaten, Geschmacksstichworte, Herkunft und Kultur, lokale Erinnerungen/Szenenempfehlungen, 3:4 Hochformat.",
+          "Überprüfe nach der Generierung: Stimmen die Schritte mit den Zutaten überein? Wenn nicht, lasse das Modell „die Schritte nach der Zutatenliste neu anordnen und die wichtigen Garzeiten ergänzen“."
+        ],
+        "prompts": [
+          "Generiere eine kulinarische Panorama-Infografik zu „Lanzhou Rindernudeln“: Aquarell-Hauptvisual + 6 Schritte zur Zubereitung + Hauptzutaten + Herkunftskultur und lokale Erinnerungsmodule, 3:4 Hochformat auf Chinesisch.",
+          "Erstelle ein populärwissenschaftliches Plakat zu „Französischen Croissants“: Prinzip der Faltstruktur, wichtige Schritte, häufige Fehlerquellen, Zutaten und Geschmacksstichworte, 3:4.",
+          "Generiere eine Infografik zu „Mexikanischen Tacos“: Zutatenstruktur, Geschmackszusammenstellung, Herkunftsgeschichte, passende Szenen (Straßenfest/Familienfeier), 3:4 Hochformat."
+        ]
+      }
+    }
   },
   "template-solar-term": {
     "category": "24 Solarperioden",
-    "description": "Generieren Sie ein A3 vertikales hochinformatives Poster über Solarperioden: zentrale Retro-Illustration, umgeben von kulturellen Inhalten, Übergangszeiten/Sonnenlängengrad, drei Phasen der Wetterkunde, Bräuche und landwirtschaftliche/gesundheitliche Etiketten."
+    "description": "Generieren Sie ein A3 vertikales hochinformatives Poster über Solarperioden: zentrale Retro-Illustration, umgeben von kulturellen Inhalten, Übergangszeiten/Sonnenlängengrad, drei Phasen der Wetterkunde, Bräuche und landwirtschaftliche/gesundheitliche Etiketten.",
+    "title": "Nano Banana Prompt: Wissensplakat für die 24 Solarperioden Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um ein \"Panorama-Plakat für Solarperioden\" zu erstellen: Sie analysiert die Zeit, Phänomene und kulturellen Bräuche der Solarperioden durch zentrale Illustrationen und umgebende Module.",
+        "who": "Geeignet für Accounts zur Popularisierung von klassischer Literatur/traditioneller Kultur, Schulplakate, Eltern-Kind-Bildungsinhalte, kreative Marken für Tee- und Kulturmarketing und für Personen, die \"druckbare und sammelbare\" Plakate für Solarperioden erstellen möchten.",
+        "how": [
+          "Gib den Namen des solarterms ein (z.B. Lichun/Frostfall) + die Region, die du betonen möchtest (Nord-/Jiangnan-Region etc., optional).",
+          "Liste die drei wichtigsten Punkte der Phänologie auf (wenn nicht vorhanden, lasse das Modell generieren, aber es sollte dem gesunden Menschenverstand entsprechen).",
+          "Modularer Layout-Anforderung: Übergangszeit/solare Länge, drei Phasen, Bräuche, Landwirtschaft, Gesundheitsstichworte, repräsentative Lebensmittel/Pflanzen (optional).",
+          "Überprüfe nach der Generierung: Ist der Text zu dicht? Wenn ja, lasse das Modell „auf maximal 3 Punkte pro Modul reduzieren und die Schriftgröße erhöhen“."
+        ],
+        "prompts": [
+          "Generiere ein A3 Hochformat Plakat zum solarterm „Lichun“: Zentrale Retro-Illustration, Module enthalten Übergangszeit/solare Länge, drei Phasen der Phänologie, Bräuche, Landwirtschaft und Gesundheitsstichworte, gut lesbares Layout auf Chinesisch.",
+          "Erstelle ein Plakat zum solarterm „Frostfall“: drei Phasen, repräsentative Lebensmittel, Bräuche und Landwirtschaft, Gesundheitshinweise, Retro-Illustration + Informationsmodule, A3 Hochformat.",
+          "Generiere eine Wissensgrafik zum solarterm „Sommersonnenwende“: Übergangsinfos, Phänologie, kulturelle Bedeutung, Essens- und Lebensvorschläge, A3 Hochformat, hohe Dichte, aber lesbar."
+        ]
+      }
+    }
   },
   "template-what-if-history": {
     "category": "Historische Hypothesen",
-    "description": "Generieren Sie ein 4K vertikales 3:4 Retro-Infografik-Poster „Was wäre wenn · Historische Umkehrungsplan“: Aquarell + Tinte handgezeichnet, warme alte Papierästhetik, enthält vollständige strukturierte Abschnitte."
+    "description": "Generieren Sie ein 4K vertikales 3:4 Retro-Infografik-Poster „Was wäre wenn · Historische Umkehrungsplan“: Aquarell + Tinte handgezeichnet, warme alte Papierästhetik, enthält vollständige strukturierte Abschnitte.",
+    "title": "Nano Banana Prompt: What If Geschichtsumkehr-Plakat Generator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt Nano Banana Prompts, um hypothetische Szenarien in \"Retro-Szenarien-Plakate\" zu visualisieren: Sie zeigt drei verschiedene historische Abzweigungen in strukturierten Abschnitten.",
+        "who": "Geeignet für Accounts zur Popularisierung von Geschichte/Geschichten, Inspirationsquellen für Schreiben/Drehbuchautoren, Kurzvideo-Skripting, Bildungsinhalte und für Personen, die \"Was wäre, wenn die Geschichte anders verlaufen wäre\"-Inhalte erstellen möchten.",
+        "how": [
+          "Bestimme einen Veränderungspunkt: Person lebt nicht mehr/Krieg endet früher/Allianzen ändern sich usw.",
+          "Schreibe die Basisgeschichte und den Abzweigungspunkt klar auf: Was ist in der realen Geschichte passiert, wo beginnt die Hypothese abzuwichen.",
+          "Liste 3 Kettenreaktionen auf: Hauptveränderungen in Politik, Wirtschaft, Militär oder Kultur.",
+          "Überprüfe nach der Generierung die Struktur: Titel klar, Abzweigungspunkt eindeutig, Unterschiede zwischen den drei Szenarien ausreichend groß."
+        ],
+        "prompts": [
+          "Generiere „Was wäre wenn · Geschichtsumkehrplan“: Hypothese „Napoleon lebt bis 1850 und beteiligt sich an der neuen Ordnung in Europa“, enthält Personenprofile, wichtige Wendepunkte, Konfliktbeziehungen, drei hypothetische Szenarien, Aquarell + Tuschezeichnung im Retro-Stil, 3:4 Hochformat.",
+          "Was wäre wenn: Hypothese „Die Ming-Dynastie vollendet die maritime Kolonisation früher“, produziere eine Retro-Infografik: Wendepunkte, Verbündete und Feinde, Vergleich von drei verschiedenen Weltlinien, strukturiertes Layout, 3:4 Hochformat.",
+          "Was wäre wenn: Hypothese „Der Telegraph erscheint im Römischen Reich“, generiere ein alternativen Geschichtsplakat: Archive/Mechanismen/Ketten von drei Szenarien, Retro-Handzeichnung-Infografik-Stil."
+        ]
+      }
+    }
   },
   "template-character-comparison": {
     "category": "Vergleich von Charakteren",
-    "description": "Generieren Sie eine 3:4 vertikale HD-Charakterkarte: links und rechts Vergleich von alt und neu, in der Mitte eine saubere Trennlinie, niedrige Sättigung, hochwertige Typografie, detaillierte Illustrationen und vollständige Informationsmodule, geeignet für Charaktere-Referenzkarten/Sammlerkarten."
+    "description": "Generieren Sie eine 3:4 vertikale HD-Charakterkarte: links und rechts Vergleich von alt und neu, in der Mitte eine saubere Trennlinie, niedrige Sättigung, hochwertige Typografie, detaillierte Illustrationen und vollständige Informationsmodule, geeignet für Charaktere-Referenzkarten/Sammlerkarten.",
+    "title": "Nano Banana Prompt: Generator für historische und moderne Charaktervergleichskarten｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template nutzt Nano Banana Prompts, um „historische und moderne Vergleichskarten“ zu erstellen: Durch eine zweigeteilte Struktur werden die Berufe und Fähigkeiten der Charaktere verglichen und ihre zentralen Kontrastmerkmale zusammengefasst.",
+        "who": "Geeignet für Kurzvideo-/Grafikinhalt, der „historische Kontraste“, die Modernisierung historischer Figuren, den Vergleich von IP-Charakteren, Markenidentitäten sowie für kreative Schöpfer, die hochinteraktive Diskussionen führen möchten.",
+        "how": [
+          "Gib die Identitätseinstellungen und eine Satzbeschreibung für Charakter A (alt/klassisch) und Charakter B (modern/zeitgenössisch) ein.",
+          "Gib für beide Seiten: 3 Schlüsselwörter, 2 Fähigkeiten, 2 repräsentative Gegenstände, 1 Schwäche/Kosten an.",
+          "Modularer Layout-Anforderung: Profile links und rechts + Vergleichstabelle am unteren Rand + eine Zusammenfassung des „Kontrastpunkts“.",
+          "Überprüfe nach der Generierung: Ist der Vergleich „in derselben Dimension“? Wenn nicht, lasse das Modell „die Dimension vereinheitlichen und die Vergleichstabelle neu schreiben“."
+        ],
+        "prompts": [
+          "Generiere eine Vergleichskarte für alte und moderne Charaktere: A „Alter Bodyguard“ vs B „Moderner Kurier“, vergleiche Beruf/Schlüsselwörter/Fähigkeiten/Gegenstände/Schwächen und gib eine Zusammenfassung der Kontrastpunkte, 3:4 Hochformat, niedrig gesättigtes Layout.",
+          "Erstelle einen Vergleich von „A Tang-Dynastie Beamtin“ vs „B moderne Produktmanagerin“: Charakter, Fähigkeiten, persönliche Gegenstände, Stressquellen, Vergleichstabelle am unteren Rand, 3:4.",
+          "Generiere eine Vergleichskarte für „Alter Gelehrter“ vs „Moderner Wissensblogger“: einheitlicher Stil, hochwertiges Layout, Zusammenfassung des Kontrastpunkts in einem Satz, 3:4."
+        ]
+      }
+    }
   },
   "template-mbti-animal": {
     "category": "MBTI Tierillustrationen",
-    "description": "Erstellen Sie eine heilende Gruppenillustration: 16 MBTI-Persönlichkeiten als personifizierte Tiere in alltäglichen Interaktionen in einer bestimmten Szene, detailreich, warm und interessant, mit klaren MBTI-Codes."
+    "description": "Erstellen Sie eine heilende Gruppenillustration: 16 MBTI-Persönlichkeiten als personifizierte Tiere in alltäglichen Interaktionen in einer bestimmten Szene, detailreich, warm und interessant, mit klaren MBTI-Codes.",
+    "title": "Nano Banana Prompt: MBTI 16 Persönlichkeiten Tier-Personifizierungsgenerator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template kombiniert Nano Banana Prompts, um 16 Persönlichkeiten in Tiercharaktere zu personifizieren und in einer einheitlichen Szene darzustellen, um die typischen Verhaltensmerkmale jeder Persönlichkeit präzise einzufangen.",
+        "who": "Geeignet für MBTI-Inhaltsersteller, psychologische/selbstentwicklungsorientierte Konten, Community-Management, Gruppenfotos von Freunden und Klassenkameraden sowie für kreative Schöpfer, die „was passiert, wenn 16 Persönlichkeiten im selben Raum sind“ unterhaltsame Inhalte erstellen möchten.",
+        "how": [
+          "Wähle eine Szene: Café, Büro, Camping, Bibliothek, Strand usw.",
+          "Bestimme den Zeichenstil und die Atmosphäre: heilende Illustrationen, leichte Aquarelle, Märchen, japanischer Stil usw.",
+          "Gib die Interaktionspunkte ein, die du betonen möchtest: Wer gibt den Rhythmus vor, wer beobachtet, wer sozialisiert, wer ist allein.",
+          "Überprüfe nach der Generierung: Sind die 16 Codes vollständig, sind die Beschriftungen klar? Ergänze bei Bedarf „die Beschriftungen sollten nahe bei den Charakteren sein“."
+        ],
+        "prompts": [
+          "Generiere eine heilende Gruppenillustration: 16 MBTI-Persönlichkeiten als personifizierte Tiere interagieren beim „Wochenend-Camping“, neben jedem Charakter ist der MBTI-Code klar beschriftet, sanfte Licht- und Schatteneffekte, detailliert, 3:4 Hochformat.",
+          "Generiere eine personifizierte Gruppenillustration von 16 Persönlichkeitstypen: Die Szene ist „offenes Büro“, jede Persönlichkeit hat typische Bewegungen und Ausdrücke (extrovertierte Sozialisierung, introvertierte Einsamkeit, rationale Analyse, emotionale Beruhigung usw.), alle MBTI-Codes sind beschriftet, warme Illustrationsästhetik.",
+          "MBTI 16 Persönlichkeiten zusammen: Die Szene ist „Café“, jeder Charakter interagiert mit Requisiten (Bücher, Computer, Kaffee, Notizen), das Bild ist ordentlich, die Beschriftungen verdecken nicht das Hauptmotiv, 3:4 Hochformat."
+        ]
+      }
+    }
   },
   "template-battle": {
     "category": "Historische Duelle",
-    "description": "Generieren Sie eine vertikale Infografik über historische Duelle: geteilte Bildschirmansicht von Charakter A/B, Kopfzeilen mit Profilinformationen, ikonische Objekte am unteren Rand, insgesamt hohe Spannung."
+    "description": "Generieren Sie eine vertikale Infografik über historische Duelle: geteilte Bildschirmansicht von Charakter A/B, Kopfzeilen mit Profilinformationen, ikonische Objekte am unteren Rand, insgesamt hohe Spannung.",
+    "title": "Nano Banana Prompt: Generator für historische Duellcharaktere｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von „historischen Duellcharakterkarten“. Das Bild zeigt die Konfrontation zwischen zwei Charakteren in einer zweigeteilten Ansicht: Oben sind die Avatare und Titel, in der Mitte die vollständige Darstellung, unten die Waffen oder markanten Gegenstände, ergänzt durch Identität, Fraktion, Kampfkraft, Persönlichkeit oder Beziehungsbeschreibungen, um eine starke narrative und spannungsgeladene Charakterduell-Visualisierung zu schaffen.",
+        "who": "Geeignet für Schöpfer von Wuxia-, Xianxia-, historischen, Drei-Königreiche-, Roman-Settings, originellen Charakter-Weltinhalten, sowie für die Verpackung von Spielcharakteren, plotorientierte Poster, Charakterbeziehungsdiagramme und Inhalte zum Charaktervergleich auf sozialen Plattformen.",
+        "how": [
+          "Bestimme zunächst die beiden Kontrahenten, z.B. Held vs Bösewicht, Stratege vs Krieger, Schwertkämpfer vs Messerstecher oder zwei historische/erfundene Figuren.",
+          "Ergänze dann die Identität, Titel, Fraktion, Fähigkeiten, Waffen und repräsentativen Charakter jedes Charakters, um die Unterschiede zwischen den Figuren deutlicher zu machen.",
+          "Bestimme den Zeichenstil, z.B. feine nationale Stilkunst, Tuschemalerei, antike Illustrationen, Charakterdesigns aus Spielen, um die gesamte Qualität zu bestimmen.",
+          "Betone schließlich die Komposition und das Gefühl des Duells, z.B. \"geteilte Bildschirmansicht, zentrale Konfrontation, starke Charakterdynamik, vollständige Profilmodule\"; wenn es nicht dramatisch genug ist, kannst du verlangen, \"den Blickkonflikt und den Identitätskontrast zu verstärken\"."
+        ],
+        "prompts": [
+          "Generiere eine Duellkarte für Martial-Arts-Charaktere: kalter Schwertkämpfer vs arrogante Messerstecher, geteilte Bildschirmansicht, Kopf- und Titelbilder oben, Ganzkörperillustration in der Mitte, Waffenpräsentation unten, feiner nationaler Stil, 3:4 Hochformat.",
+          "Erstelle ein Duellbild von Figuren aus den Drei Königreichen: Zhuge Liang vs Sima Yi, Strategen-Duell-Setting, das Charakterprofil-Modul enthält Fraktion, Strategietags und repräsentative Objekte, antikes Informationsgrafik-Poster.",
+          "Generiere ein Plakat für ein Duell zwischen Original-Xianxia-Charakteren: rechtschaffene Schwertkämpferin vs Meister des Teufels, zentrale Konfrontation, reichhaltige Details der Kleidung, Präsentation von magischen Artefakten unten, insgesamt mit starkem dramatischen Gefühl."
+        ]
+      }
+    }
   },
   "template-fashion-ecommerce": {
     "category": "Mode E-Commerce",
-    "description": "Generieren Sie eine 9:16 vertikale E-Commerce-Mode-Detailgrafik, vierteilige Anordnung, warme Farben, sauberes und hochwertiges kommerzielles Mode-Design, 4K HD, geeignet für E-Commerce-Detailseiten und soziale Medien."
+    "description": "Generieren Sie eine 9:16 vertikale E-Commerce-Mode-Detailgrafik, vierteilige Anordnung, warme Farben, sauberes und hochwertiges kommerzielles Mode-Design, 4K HD, geeignet für E-Commerce-Detailseiten und soziale Medien.",
+    "title": "Nano Banana Prompt: Generator für E-Commerce-Bekleidungsdetailbilder｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von langen Bildern für Bekleidungs-E-Commerce-Detailseiten. Das Bild verwendet ein 9:16 Hochformat-Layout, das normalerweise das Hauptvisual des Models, Details des Stoffes, Designmerkmale, Passformvorteile und Stylingvorschläge enthält, um „Produktinformationen“ und „modische Ausdrucksformen“ in ein umsatzförderndes Produktbild zu integrieren.",
+        "who": "Geeignet für Bekleidungsmarken, E-Commerce-Verkäufer, unabhängige Designer, Xiaohongshu-Influencer und Markenvisualisierungsteams sowie für diejenigen, die schnell hochwertige Bekleidungsdetailseiten und Social-Media-Darstellungen erstellen möchten.",
+        "how": [
+          "Gib zuerst den Kleidungsstil und die Hauptkategorie an, z.B. Kleider, Anzüge, Daunenjacken, Hemden, Sweatshirts usw.",
+          "Beschreibe dann den Designstil und die Zielgruppe, z.B. Pendler, französisch, urban minimalistisch, süß und cool, lässig sportlich, um dem Modell eine einheitliche visuelle Richtung zu geben.",
+          "Ergänze das Verkaufsmodul, z.B. Stoff, Schnitt, Kragenform, Ärmelform, Schnittvorteile, Styling-Szenarien oder saisonale Eigenschaften, um die Informationsdichte des langen Bildes zu erhöhen.",
+          "Bestimme schließlich den kommerziellen Stil, z.B. hochwertige Markenfotografie, warmes weiches Licht, einfacher Hintergrund, vierteilige Layout; wenn es nicht wie eine Detailseite aussieht, kannst du verlangen, \"den modularen Textbereich und die Detailansicht zu verstärken\"."
+        ],
+        "prompts": [
+          "Generiere ein E-Commerce-Detailbild für ein französisches Kleid: Hauptvisual des Models + Detailaufnahme des Stoffes + Schnitt-Highlights + Styling-Vorschläge, warmes, hochwertiges kommerzielles Modegefühl, 9:16.",
+          "Erstelle ein langes Bild für die Produktpräsentation einer Winterdaunenjacke: vierteilige Layout, betone wärmendes Material, Kapuzen-Design, Oberkörper-Effekt und Pendler-Styling-Szenarien, geeignet für soziale Medien und Detailseiten.",
+          "Generiere ein Plakat für die Detailseite eines Herrenanzugs: Model-Styling, Schulterlinien- und Stoffdetails, Schnittvorteile, Geschäftsszenarien, insgesamt sauber und hochwertig, 4K Hochformat."
+        ]
+      }
+    }
   },
   "template-portrait-retouching-blueprint": {
     "category": "Porträt-Retusche-Blueprint",
-    "description": "Erstellen Sie einen professionellen Porträt-Retusche-Blueprint: zweispaltige Anordnung, links das unbearbeitete Originalbild + präzise rote Markierungen und englische Anweisungen, rechts das nach Markierungen bearbeitete, realistische und natürliche Retusche-Ergebnisbild."
+    "description": "Erstellen Sie einen professionellen Porträt-Retusche-Blueprint: zweispaltige Anordnung, links das unbearbeitete Originalbild + präzise rote Markierungen und englische Anweisungen, rechts das nach Markierungen bearbeitete, realistische und natürliche Retusche-Ergebnisbild.",
+    "title": "Nano Banana Prompt: Generator für Porträtretusche-Blueprints｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von „Porträtretusche-Blueprints“. Das Bild ist normalerweise in zwei Spalten unterteilt: Links wird das Originalfoto angezeigt, mit Linien und Anweisungen, die die zu bearbeitenden Bereiche wie Hautfarbe, Licht und Schatten, Hintergrund, Haare, Gesichtszüge oder Falten in der Kleidung kennzeichnen; rechts wird das natürliche Ergebnis nach der Retusche gezeigt, um die Logik der Bildbearbeitung visuell darzustellen.",
+        "who": "Geeignet für Fotografen, Retuscheure, Fotolehrkonten, visuelle Design-Blogger, Schönheits- und Porträtkreatoren sowie für Teams, die „Vorher-Nachher-Vergleiche“ und „Schritte zur Bildbearbeitung“ zeigen möchten.",
+        "how": [
+          "Bestimme zuerst den Typ des ursprünglichen Porträts, z.B. Porträtfotografie, kommerzielles Porträt, Ausweisfoto, Hochzeitsfoto oder Streetstyle.",
+          "Liste dann die Punkte auf, die korrigiert werden müssen, z.B. gleichmäßiger Hautton, Aufhellung unter den Augen, Hintergrundreinigung, Gesichtsstruktur, unordentliche Haare, Kleidungsdetails usw.",
+          "Bestimme die Retusche-Richtung, z.B. natürliche Textur, kommerzielle Feinbearbeitung, koreanische Transparenz, filmisches Porträt, um große Stilabweichungen zu vermeiden.",
+          "Fordere schließlich, \"links das Originalbild mit präzisen Markierungen zu belassen, rechts das retuschierte Ergebnis zu zeigen, insgesamt wie ein professioneller Retusche-Lehrplan\"; wenn der Effekt zu stark ist, kannst du hinzufügen, \"realistisch und natürlich bleiben, nicht übermäßig glätten\"."
+        ],
+        "prompts": [
+          "Generiere einen Retusche-Lehrplan für Fotografie: links das ursprüngliche Porträt mit roten Markierungen und englischen Retusche-Anweisungen, rechts das natürliche Retuschergebnis, betone gleichmäßigen Hautton, Augenaufhellung und Hintergrundreinigung, professioneller Lehrstil.",
+          "Erstelle ein Lehrbild für die Retusche von kommerziellen Porträts: links die Optimierung von Licht und Schatten, das Ordnen von Haaren, das Abschwächen von Nasolabialfalten, das Bearbeiten von Falten in der Kleidung, rechts das reale hochwertige Endergebnis.",
+          "Generiere ein Plakat für den Vorher-Nachher-Vergleich von Porträtfotos: zweispaltiges Layout, stark lehrend, klare Markierungen, insgesamt sauber und professionell."
+        ]
+      }
+    }
   },
   "template-mbti-contrast-zh": {
     "category": "MBTI Spaß",
-    "description": "Generieren Sie ein 4K vertikales MBTI Frühlingsfest-Reisevergleichs-Meme mit einem zweigeteilten Kontrast, niedlichen Tiercharakteren, chinesischem Text, rotem Randkartenstil."
+    "description": "Generieren Sie ein 4K vertikales MBTI Frühlingsfest-Reisevergleichs-Meme mit einem zweigeteilten Kontrast, niedlichen Tiercharakteren, chinesischem Text, rotem Randkartenstil.",
+    "title": "Nano Banana Prompt: Generator für MBTI-Vergleichs-Memes｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von hochverbreitbaren MBTI-Doppel-Persönlichkeitsvergleichs-Memes. Das Bild verwendet normalerweise eine obere und untere oder linke und rechte Struktur, um die unterschiedlichen Reaktionen zweier MBTI-Typen in derselben Szene zu zeigen und starke Kontraste zu erzeugen, ergänzt durch niedliche Tiercharaktere, auffällige Titel und kurze chinesische Texte, die insgesamt für die Verbreitung auf sozialen Plattformen und serielle Kreationen geeignet sind.",
+        "who": "Geeignet für MBTI-Inhaltsersteller, Persönlichkeits-Test-Enthusiasten, Unterhaltungsaccounts, Meme-Blogger, Xiaohongshu- und Kurzvideo-Cover-Designer sowie für diejenigen, die kontinuierlich Inhalte zu „dem gleichen Thema, mehreren Persönlichkeiten im Vergleich“ erstellen möchten.",
+        "how": [
+          "Bestimme zuerst die beiden zu vergleichenden MBTI, z.B. I vs E, J vs P oder spezifischere Persönlichkeitskombinationen.",
+          "Wähle dann eine leicht kontrastierende Alltagssituation, z.B. Heimkehr zu Neujahr, Reisen, Feiern, Meetings, Verlieben, Projekte, Kinderbetreuung usw.",
+          "Bestimme die Darstellung der Charaktere, z.B. anthropomorphe Tiere, Chibi-Charaktere oder Comic-Stil-Charaktere, um die Unterschiede zwischen den Persönlichkeiten deutlicher zu machen.",
+          "Füge schließlich Layout-Anforderungen hinzu, z.B. zweispaltiger Vergleich, roter Rahmen, klarer chinesischer Titel, kurze und prägnante Texte; wenn es nicht lustig genug ist, kannst du verlangen, \"den Kontrast und die Ausdrucksbewegungen der beiden Persönlichkeiten zu verstärken\"."
+        ],
+        "prompts": [
+          "Generiere einen MBTI-Vergleichs-Meme für die Heimkehr zu Neujahr: Der obere Teil zeigt einen ENFP, der auf dem Heimweg voller sozialer Interaktionen ist, der untere Teil zeigt einen INTJ, der die ganze Zeit Ruhe sucht, anthropomorphe Charaktere, zweispaltiger Vergleich, chinesischer Titel, roter Rahmen-Kartenstil.",
+          "Erstelle ein Vergleichsbild für \"Wie MBTI beim Reisen aussieht\": ESFP vs ISTJ, die deutlichen Unterschiede in den Szenen am Flughafen und im Hotel zeigen, niedliche Cartoon-Charaktere, 4K Hochformat.",
+          "Generiere ein Meme für die MBTI-Reaktionen während eines Meetings: ENTP und ISFJ zeigen unterschiedliche Verhaltensweisen in derselben Besprechungssituation, der Text ist witzig, die Bewegungen übertrieben, geeignet für soziale Medien."
+        ]
+      }
+    }
   },
   "template-guofeng-scroll-zh": {
     "category": "Traditionelle Rollbilder",
-    "description": "Generieren Sie ein 4K horizontales chinesisches traditionelles Figuren-Gruppenroll-Infografik-Poster mit klaren Charakteren, beschrifteten Namen und thematischem Hintergrund."
+    "description": "Generieren Sie ein 4K horizontales chinesisches traditionelles Figuren-Gruppenroll-Infografik-Poster mit klaren Charakteren, beschrifteten Namen und thematischem Hintergrund.",
+    "title": "Nano Banana Prompt: Generator für traditionelle chinesische Charakterrollen｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von Gruppenporträts im traditionellen chinesischen Rollenspielstil. Das Bild ist normalerweise in einer horizontalen Rollenkonstruktion angeordnet, in der mehrere Charaktere in einer einzigen Szene verteilt sind, wobei jeder Charakter unabhängige Bewegungen, Kleidung und Identitätsgefühl hat und mit Namen oder Charakteretiketten versehen werden kann, um sowohl ästhetische, narrative als auch sammelbare Inhalte zu schaffen.",
+        "who": "Geeignet für historische Kulturaccounts, traditionelle visuelle Kreatoren, die Organisation von Roman-/Dramacharakteren, IP-Charakterplanung, Gruppenposter-Design sowie für diejenigen, die Inhalte zu „mehreren Charakteren im selben Rahmen, einheitliche Weltanschauung“ erstellen möchten.",
+        "how": [
+          "Bestimme zuerst die Charaktergruppe, z.B. Figuren aus den Drei Königreichen, Figuren aus dem Traum der Roten Kammer, berühmte Minister der Antike, mythologische Charaktere oder originale Jianghu-Gruppen.",
+          "Ergänze dann ein einheitliches Szenario oder Thema, z.B. Hof, Bankett, Landschaftsrolle, Jianghu-Reise, Festtagsgruppe usw., um das Gesamtbild vollständiger zu machen.",
+          "Bestimme den Malstil, z.B. traditionelle chinesische Malerei, feine kolorierte Malerei, antike Illustrationen, sanfte Farbrollen, um die Bildqualität zu vereinheitlichen.",
+          "Fordere schließlich die Kennzeichnung der Charakternamen, klare Unterschiede zwischen den Charakteren und eine schichtweise Bilddynamik; wenn die Charaktere leicht zu verwechseln sind, kannst du hinzufügen, \"die Erkennbarkeit der Kleidung und Posen jedes Charakters zu verstärken\"."
+        ],
+        "prompts": [
+          "Generiere eine Rolle der Figuren aus den Drei Königreichen: Liu Bei, Cao Cao, Zhuge Liang, Guan Yu usw. werden nacheinander entfaltet, horizontale Rollenkomposition, Namen kennzeichnen, antike Illustrationsqualität, 4K.",
+          "Erstelle eine Gruppenrolle für die Figuren aus dem Traum der Roten Kammer: Hauptfiguren verteilt im Gartenhintergrund, unterschiedliche Figurenformen, Namen klar gekennzeichnet, elegant und detailliert.",
+          "Generiere ein Plakat für eine originale Jianghu-Gruppenrolle: mehrere Charaktere aus verschiedenen Schulen entfalten sich entlang einer Landschaftsrolle, die Kleidung hat jeweils charakteristische Merkmale der Schulen, insgesamt mit einem Gefühl von Geschichte und Sammlungswert."
+        ]
+      }
+    }
   },
   "template-species-science-zh": {
     "category": "Artenwissenschaft",
-    "description": "Generieren Sie eine 3:4 wissenschaftliche Infografik-Illustration mit der Art im Zentrum und Informationsmodulen darum herum."
+    "description": "Generieren Sie eine 3:4 wissenschaftliche Infografik-Illustration mit der Art im Zentrum und Informationsmodulen darum herum.",
+    "title": "Nano Banana Prompt: Generator für Artenwissenschafts-Infografiken｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von klar strukturierten, visuell einheitlichen Artenwissenschafts-Infografiken. Das Bild hat normalerweise eine bestimmte Art als zentrales Thema, umgeben von Modulen wie Klassifikation, Lebensraum, Verhalten, Ernährung, Verbreitung, Lebenszyklus oder Schutzstatus, um komplexes biologisches Wissen in geeignete, verbreitbare Infografiken zu verwandeln.",
+        "who": "Geeignet für Naturwissenschaftsaccounts, Bildungsinhalte zu Tieren und Pflanzen, Schulmaterialien, visuelle Ausstellungen in Museen oder Naturthemen sowie für alle, die Artenwissen in bildliche Inhalte umsetzen möchten.",
+        "how": [
+          "Bestimme zuerst den Namen der Art und ergänze, ob es sich um ein Tier, eine Pflanze, ein Insekt, ein Meereslebewesen oder eine andere Kategorie handelt.",
+          "Liste die Informationen auf, die du am meisten betonen möchtest, z.B. Klassifikationsstatus, äußere Merkmale, Lebensraum, Position in der Nahrungskette, Schutzstatus usw.",
+          "Bestimme den Zeichenstil, z.B. wissenschaftliche Illustrationen, Naturkundebücher, moderne Informationsgrafiken, Naturbildungsposter, um die gesamte visuelle Qualität zu bestimmen.",
+          "Fordere schließlich, \"das Hauptobjekt zentriert, Module umgeben, klare Informationsanordnung\"; wenn der Inhalt nicht professionell genug ist, kannst du hinzufügen, \"wissenschaftliche Namen, Verbreitungsgebiete und wichtige Bildungslabels hinzuzufügen\"."
+        ],
+        "prompts": [
+          "Generiere eine Informationsgrafik über die Schneeleopardenart: Schneeleopard wird zentral angezeigt, umgebende Module umfassen Lebensraum, Verbreitung, Jagdverhalten, Schutzstatus und körperliche Merkmale, 3:4 Hochformat.",
+          "Erstelle eine Informationsgrafik über den Ginkgo-Baum: Hauptobjekt ist eine vollständige Pflanzenillustration, Module enthalten Klassifikation, Blattmerkmale, Wachstumsumgebung, historische Bedeutung und Anwendungswert, klare Anordnung.",
+          "Generiere eine Wissenskarten über den Monarchfalter: Hauptobjekt ist eine realistische Illustration in der Mitte, umgeben von Informationen über Lebenszyklus, Migrationsrouten, Nahrungsquellen und Schutzinformationen, geeignet für Bildungszwecke."
+        ]
+      }
+    }
   },
   "template-city-miniature-zh": {
     "category": "Stadtminiatur",
-    "description": "Generieren Sie eine hochdetaillierte Straßenkarte einer Stadt mit einer hyper-fotorealistischen Miniaturversion, die dynamisch aus ihrer Oberfläche hervorgeht, einschließlich Wahrzeichen, Landschaften, Straßen, Bäume und Verkehr."
+    "description": "Generieren Sie eine hochdetaillierte Straßenkarte einer Stadt mit einer hyper-fotorealistischen Miniaturversion, die dynamisch aus ihrer Oberfläche hervorgeht, einschließlich Wahrzeichen, Landschaften, Straßen, Bäume und Verkehr.",
+    "title": "Nano Banana Prompt: Generator für Miniaturstadt-Landschaftskarten｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von „Miniaturstadt-Landschaftskarten“. Das Bild sieht aus wie ein hyperrealistisches Stadtmodell, das von der Kartenoberfläche abhebt und Wahrzeichen, Straßennetze, Parks, Wasserwege, Wohngebiete und Verkehrseinrichtungen integriert, um städtische Rauminformationen auf eine eindringliche Weise zu visualisieren, die sowohl kartografische als auch modellhafte Elemente umfasst.",
+        "who": "Geeignet für Reiseinhalte, Stadtwerbung, Stadtplanung, geografische Bildung, lokale Kultur- und Tourismusaccounts sowie für Designer und Kreative, die visuelle Inhalte erstellen möchten, die „eine Stadt auf den ersten Blick erkennbar machen“.",
+        "how": [
+          "Gib zuerst den Städtenamen ein und bestimme, welche Wahrzeichen und charakteristischen Bereiche du beibehalten oder verstärken möchtest.",
+          "Beschreibe dann die räumlichen Merkmale der Stadt, z.B. Flüsse, die durch die Stadt fließen, Küstenlage, Bergstadt, dichte Wolkenkratzer, europäische Stadtviertel, Vergleich zwischen Altstadt und Neubau usw.",
+          "Ergänze die Elemente, die erscheinen sollen, z.B. Straßen, Brücken, Verkehr, U-Bahn, Hochbahn, Parks, Küstenlinien, Wälder usw., um die Kartenschichtung zu verstärken.",
+          "Bestimme schließlich den Zeichenstil, z.B. hyperrealistisches Miniaturmodell, isometrische Karte, Tourismusplakatgefühl oder hochpräzises Stadtmodell; wenn die Erkennbarkeit der Stadt nicht ausreicht, kannst du verlangen, \"die Merkmale der Wahrzeichen und des gesamten Stadtviertels zu verstärken\"."
+        ],
+        "prompts": [
+          "Generiere eine Miniaturansichtskarte von Shanghai: Oriental Pearl Tower, Lujiazui Wolkenkratzer, Huangpu-Fluss und Brücken sind deutlich sichtbar, hyperrealistisches Miniaturmodell hebt sich von der Kartenoberfläche ab, reich an Details.",
+          "Erstelle eine Miniaturkarte der Bergstadt Chongqing: hügelige Straßen, dreidimensionale Verkehrsanordnung, dichte Verteilung von Bergstadtgebäuden, einschließlich Brücken, U-Bahn und Flusswasser, starke visuelle Schichtung.",
+          "Generiere eine Miniaturansicht von Paris: Eiffelturm, Seine, Straßen und Parks erscheinen an der Kartenoberfläche, kombiniert mit Karten- und Modellgefühl, geeignet für Tourismuswerbung."
+        ]
+      }
+    }
   },
   "template-hotspot-card-zh": {
     "category": "Hotspot-Wissen-Karten",
-    "description": "Erstellen Sie eine handgemalte Aquarell-Stil Hot-Topic-Wissen-Karte mit klaren Abschnitten, Symbolen und Zusammenfassungen."
+    "description": "Erstellen Sie eine handgemalte Aquarell-Stil Hot-Topic-Wissen-Karte mit klaren Abschnitten, Symbolen und Zusammenfassungen.",
+    "title": "Nano Banana Prompt: Generator für Hotspot-Wissen-Karten｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient dazu, aktuelle Ereignisse, gesellschaftliche Themen, Branchennachrichten oder Trendthemen in eine klar strukturierte, visuell ansprechende Wissenskarte umzuwandeln. Das Bild verwendet normalerweise handgezeichnete Aquarell- oder leichte Infografik-Stile und enthält Titel, zentrale Schlussfolgerungen, Hintergrundinformationen, wichtige Punkte und unterstützende Icons, die für schnelles Lesen und Teilen geeignet sind.",
+        "who": "Geeignet für Hotspot-Analyseaccounts, Medienredakteure, Wissensblogger, Branchenbeobachter, Bildungsinhaltsproduzenten sowie für Teams, die komplexe Nachrichten oder Trendinhalte in „einem Bild klar darstellen“ möchten.",
+        "how": [
+          "Bestimme zuerst das Hot-Topic, z.B. ein Nachrichtenereignis, politische Veränderungen, Technologietrends, Geschäftsthemen oder gesellschaftliche Phänomene.",
+          "Zerlege dann 3 bis 5 der wichtigsten Informationspunkte, z.B. was passiert ist, warum es wichtig ist, welche Auswirkungen es hat, wie man darüber denkt.",
+          "Bestimme den Ausdrucksstil, z.B. handgezeichnete Aquarelle, sanfte Wissenskarten, Medien-Infografiken, soziale Plattformen, um den Inhalt sowohl professionell als auch ansprechend zu gestalten.",
+          "Fordere schließlich, \"auffällige Titel, klare Abschnitte, prägnante Inhalte\"; wenn der Inhalt zu verstreut ist, kannst du hinzufügen, \"kompakte Zusammenfassung für eine Kartenlesung\"."
+        ],
+        "prompts": [
+          "Generiere eine Wissenskarte: Thema ist \"Warum die KI-Videoerstellung kürzlich wieder populär wurde\", enthält Hintergrund, wichtige Veränderungen, Branchenwirkungen und eine Zusammenfassung, handgezeichnete Aquarell-Optik, klare Abschnitte.",
+          "Erstelle eine Wissenskarte zu gesellschaftlichen Themen: rund um \"die Rückkehr des Homeoffice\", erkläre die Gründe, Vor- und Nachteile, Auswirkungen und zukünftige Trends in 4 Modulen, geeignet für soziale Medien.",
+          "Generiere eine Zusammenfassungskarte für geschäftliche Hotspots: Thema ist \"Warum die Veröffentlichung einer neuen Technologie Aufmerksamkeit erregt hat\", füge Icons, wichtige Zusammenfassungen und einen Schlussbereich hinzu, insgesamt im leichten Infografik-Stil."
+        ]
+      }
+    }
   },
   "template-constellation-steampunk-zh": {
     "category": "Sternzeichen Steampunk Anatomie-Diagramm",
-    "description": "Erstellen Sie ein vintage Steampunk-Stil Sternzeichen anatomisches Diagramm-Poster mit mechanischer Struktur, Charaktermodulen und Steampunk-Elementen."
+    "description": "Erstellen Sie ein vintage Steampunk-Stil Sternzeichen anatomisches Diagramm-Poster mit mechanischer Struktur, Charaktermodulen und Steampunk-Elementen.",
+    "title": "Nano Banana Prompt: Generator für Steampunk-Sternbild-Diagramme｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von Steampunk-Stil Sternbild-Diagramm-Postern. Das Bild kombiniert Sternbild-Persönlichkeiten, mechanische Vorrichtungen, ästhetische Symbole und Charakterdesigns und präsentiert sie in Form von „Anatomiediagrammen“ oder „mechanischen Handbüchern“, die normalerweise Charaktere, mechanische Strukturen, Sternbildetiketten, Persönlichkeitsmodule und retro Dekorationselemente enthalten.",
+        "who": "Geeignet für Sternbild-Inhaltsersteller, ästhetisch orientierte Poster-Designer, Persönlichkeitsdesign-Enthusiasten, Fantasy-Illustratoren, Steampunk-Inhaltaccounts sowie für kreative Schöpfer, die „hochvisuell erkennbare Persönlichkeitsplakate“ erstellen möchten.",
+        "how": [
+          "Bestimme zuerst den Namen des Sternzeichens und erkläre, welche Art von Persönlichkeitsmerkmalen du hervorheben möchtest, z.B. rational, romantisch, kontrollierend, sensibel, abenteuerlustig usw.",
+          "Ergänze dann visuelle Einstellungen, z.B. mechanische Flügel, Zahnradherz, Dampfrucksack, kupferne Strukturen, alchemistische Geräte, um das Steampunk-Gefühl klarer zu machen.",
+          "Geben Sie die Struktur des Posters an, z. B. Hauptfigur zentriert, mechanische Zerlegungsbeschriftungen daneben, Sternbildbeschreibung am unteren Rand, Hintergrund mit retro-muster.",
+          "Schließlich verlangen Sie „retro Steampunk, anatomische Diagramm-Ästhetik, klare Beschriftungen“; wenn es zu sehr wie eine gewöhnliche Illustration aussieht, können Sie hinzufügen: „Verbessern Sie die mechanische Zerlegungsbeschriftung und die Qualität des Handbuchs“."
+        ],
+        "prompts": [
+          "Generieren Sie ein Steampunk-Anatomie-Poster für das Sternzeichen Skorpion: Hauptfigur zentriert, mit mechanischem Stachel und Kupferpanzer, umgeben von Strukturbeschriftungen und Charaktermodulen, im retro Diagramm-Stil.",
+          "Erstellen Sie ein Poster für den mechanischen Charakter der Zwillinge: Zwillingsfigurenstruktur, deutlich sichtbare Zahnrad- und Uhrelemente, einschließlich Sternzeichenbeschriftungen, Charakteranalysen und handbuchartigen Beschriftungen.",
+          "Generieren Sie ein Steampunk-Sternzeichen-Diagramm für den Wassermann: Figuren kombiniert mit Dampfanlagen, reich an Rohren, Glasbehältern und Alchemiesymbolen, insgesamt wie ein mechanisches Diagramm aus dem 19. Jahrhundert."
+        ]
+      }
+    }
   },
   "template-fruit": {
     "category": "Früchte Wissensgrafik",
-    "description": "Generieren Sie eine 3:4 Hochformat Ultra-HD 8K Früchte Wissensgrafik, die Strukturannotationen, Nährwert, Verbreitungsgebiete, Wachstumsprozess, gesundheitliche Vorteile und Entwicklungsgeschichte enthält, geeignet für hochwertige kommerzielle Präsentationen."
+    "description": "Generieren Sie eine 3:4 Hochformat Ultra-HD 8K Früchte Wissensgrafik, die Strukturannotationen, Nährwert, Verbreitungsgebiete, Wachstumsprozess, gesundheitliche Vorteile und Entwicklungsgeschichte enthält, geeignet für hochwertige kommerzielle Präsentationen.",
+    "title": "Nano Banana Prompt: Generator für Obstwissenschafts-Infografiken｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient zur Erstellung von hochwertigen Obstwissenschafts-Infografiken. Das Bild zeigt normalerweise eine realistische oder halb-realistischen Illustration des Obstes im Zentrum, umgeben von strukturierten Beschriftungen, Nährwerten, Verbreitungen, Wachstumszyklen, gesundheitlichen Vorteilen und Entwicklungsgeschichte, um „Obstwissen“ in ansprechende, verbreitbare visuelle Inhalte zu verwandeln.",
+        "who": "Geeignet für Wissenschaftsaccounts, Inhalte zu gesunder Ernährung, Bildungseinrichtungen, Lebensmittelmarken, Self-Media-Blogger sowie für diejenigen, die hochwertige Lebensmittelwissensplakate, Markeninhalte oder Materialien für die Eltern-Kind-Erziehung erstellen möchten.",
+        "how": [
+          "Geben Sie zuerst den Namen der Frucht ein, z. B. Apfel, Erdbeere, Mango, Blaubeere, Durian usw., und entscheiden Sie, ob eine bestimmte Sorte hervorgehoben werden soll.",
+          "Listen Sie dann die Informationen auf, die Sie am meisten betonen möchten, z. B. Nährstoffe, Anbaubedingungen, Reifungsprozess, Herkunftskultur, Wirkungen oder Verzehrempfehlungen.",
+          "Geben Sie den visuellen Stil an, z. B. wissenschaftliche Infografik, natürliche Handzeichnung, retro Naturkundebuch, modernen kommerziellen Wissenschafts-Stil, um die Qualität des Endprodukts zu bestimmen.",
+          "Schließlich verlangen Sie „klare Hauptfigur, professionelle Beschriftungen, reichhaltige Module“; wenn es mehr wie ein hochwertiges Poster aussehen soll, können Sie hinzufügen: „Verbessern Sie die Qualität, lassen Sie Platz und Schichten im Layout“."
+        ],
+        "prompts": [
+          "Generieren Sie eine Infografik über Äpfel: Die Hauptfigur ist ein ganzer Apfel und ein Querschnitt, umgebende Module enthalten Strukturbeschriftungen, Nährwerte, Hauptanbaugebiete und Verzehrempfehlungen, im Hochformat 3:4.",
+          "Erstellen Sie ein Wissensposter über Mango: Heben Sie Sortenunterschiede, Reifungsprozess, Nährstoffe und Verbreitung in tropischen Regionen hervor, insgesamt im hochwertigen kommerziellen Wissenschafts-Stil.",
+          "Generieren Sie eine Infografik über Blaubeeren: Realistische Illustration im Zentrum, umgeben von antioxidativen Werten, Anbaubedingungen, Wachstumszyklen und Verzehrempfehlungen, geeignet für soziale Plattformen."
+        ]
+      }
+    }
   },
   "template-mbti-generic": {
     "category": "MBTI-Persönlichkeitsvergleichs-Meme",
-    "description": "Erstelle eine visuell ansprechende MBTI-Persönlichkeitsvergleichsillustration, die zeigt, wie sich verschiedene MBTI-Typen in einer bestimmten Situation verhalten. Die Charaktere sollten jeden Persönlichkeitstyp durch ausdrucksstarke Aktionen, Stimmungen und Interaktionen innerhalb des Szenarios darstellen. Verwende einen niedlichen, lebhaften Cartoon-Stil mit starkem Kontrast zwischen den Persönlichkeiten und klaren Beschriftungen, optimiert für virales Teilen in sozialen Medien im vertikalen 3:4-Format."
+    "description": "Erstelle eine visuell ansprechende MBTI-Persönlichkeitsvergleichsillustration, die zeigt, wie sich verschiedene MBTI-Typen in einer bestimmten Situation verhalten. Die Charaktere sollten jeden Persönlichkeitstyp durch ausdrucksstarke Aktionen, Stimmungen und Interaktionen innerhalb des Szenarios darstellen. Verwende einen niedlichen, lebhaften Cartoon-Stil mit starkem Kontrast zwischen den Persönlichkeiten und klaren Beschriftungen, optimiert für virales Teilen in sozialen Medien im vertikalen 3:4-Format.",
+    "title": "Nano Banana Prompt: MBTI Charaktervisualisierungsgenerator｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template dient dazu, MBTI-Persönlichkeitstypen in starke visuelle, stark verbreitbare Charakter-Szenenbilder umzuwandeln. Es ist nicht auf eine feste Form beschränkt, sondern ein universelles MBTI-Abstrakt-Template: Es kann MBTI auf Tiere, historische Figuren, TV-Charaktere, KI-Gründer, Campusfiguren und andere Charaktergruppen abbilden und in eine spezifische Szene einfügen, um visuelle Inhalte mit ausgeprägten Persönlichkeitsunterschieden zu erzeugen.",
+        "who": "Geeignet für die Erstellung von Social-Media-Inhalten, Erweiterungsinhalten zu Persönlichkeitstests, Charakteranalysen, IP-Crossovers sowie für kreative Schöpfer, die Geschichten durch „Persönlichkeit + Charakter + Szene“ erzählen möchten. Besonders geeignet für MBTI-Enthusiasten, Content-Influencer, psychologische Konten, Unterhaltungsaccounts, historische Adaptionen sowie für Serieninhaltsersteller.",
+        "how": [
+          "Bestimme zuerst ein klares MBTI-Thema, wie „MBTI im Berufsleben“, „MBTI als Figuren der Drei Königreiche“, „MBTI auf Reisen“.",
+          "Bestimme dann die Charaktergruppe (character set), wie Tiere, Friends-Charaktere, Figuren aus dem Traum der Roten Kammer, KI-Gründer, historische Figuren usw.",
+          "Wähle eine spezifische Szene, in der verschiedene Persönlichkeiten in derselben Situation hervorgehoben und unterschieden werden, wie Besprechungen, Flüge, Partys, Reisen, Diskussionen über Unternehmensgründungen usw.",
+          "Füge schließlich Stilvorgaben hinzu, wie niedlicher Cartoon, filmischer Realismus, japanischer Manga-Gruppenstil, Infografik-Plakatstil usw. Wenn die Unterschiede zwischen den Charakteren nicht deutlich genug sind, kannst du verlangen, dass „die Bewegungen, Ausdrücke und Interaktionsweisen der verschiedenen Persönlichkeiten verstärkt werden“."
+        ],
+        "prompts": [
+          "Generiere ein Gruppenplakat zu „MBTI als Friends-Charaktere“: Auf einer Freundesfeier werden verschiedene MBTI-Persönlichkeiten in Friends-Stil-Figuren abgebildet, die unterschiedliche soziale Reaktionen und Interaktionen zeigen, insgesamt eine hochgradig teilbare Charakterillustration, 3:4 Hochformat.",
+          "Erstelle „MBTI im Meeting“: Die Charaktergruppe besteht aus KI-Gründern, verschiedene Persönlichkeiten zeigen unterschiedliche Zustände während der Diskussion über Produktstrategien im Besprechungsraum, klare Informationen, deutlicher Charaktervergleich, starkes Plakatgefühl, 3:4.",
+          "Generiere ein thematisches Bild zu „MBTI im Drei Königreiche“: Abbildung von Figuren aus den Drei Königreichen, die verschiedene MBTI-Persönlichkeiten darstellen, in der Szene, in der sie im Militärlager die Schlacht besprechen, um ihre Charakterunterschiede zu zeigen, Stil ist hochwertige historische Charakterillustration, 3:4."
+        ]
+      }
+    }
+  },
+  "template-weather-zh": {
+    "title": "Nano Banana Prompt: Generator für Miniaturstadt-Wetter-Szenen｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template nutzt Nano Banana Prompts, um Wettervorhersagen in „Miniatur 3D-Stadt-Szenen“ umzuwandeln: Wahrzeichen und dynamische Wettereffekte verweben sich natürlich, während meteorologische Daten automatisch oben angeordnet werden.",
+        "who": "Geeignet für Stadtlebensaccounts, Tourismusbehörden/Attraktionen, Wetterinhaltsproduzenten, Marken, die „tägliche Atmosphärenbilder“ erstellen möchten, sowie für diejenigen, die Wetterinformationen ansprechender gestalten möchten.",
+        "how": [
+          "Gib den Stadtnamen + Datum + Temperaturbereich + Wetter (sonnig/bewölkt/leichten Regen/starken Schnee/Nebel usw.) ein.",
+          "Gib ein repräsentatives Wahrzeichen an (wenn nicht vorhanden, verwende „Stadt-Skyline + markantes Gebäude“).",
+          "Modularer Layout-Anforderung: Wetterelemente und Gebäude interagieren (Regentropfenreflexion/Nebel/Schneehaufen/Windfahne).",
+          "Überprüfe nach der Generierung: Ist der Text klar? Wenn nicht, fordere „eine Verbesserung des Textkontrasts und des Weißraums, ohne den Stil der Szene zu ändern“ an."
+        ],
+        "prompts": [
+          "Generiere „Shanghai heutiges Wetter Mikrostadt-Szenario“: Oriental Pearl Landmark in der Mitte, leichter Regen + feuchter, reflektierender Boden, oben die Stadtname/Daten/Temperatur, 1:1 gleichmäßiges 3D, geeignet für soziale Medien.",
+          "Erstelle „New York Wetterkarte“: Bewölkt zu sonnig, Empire State Building/Skyline Mikroszenario, Wolken- und Sonnenstrahlen-Effekte, Informationsleiste oben, 1:1.",
+          "Generiere „Kyoto Winter Schneewetter“: Kiyomizu-dera-Stil-Wahrzeichen + Schneehaufen und schneefallende Partikel, oben Wetterinformationen, 1:1 gleichmäßiges 3D."
+        ]
+      }
+    }
+  },
+  "template-battle-card": {
+    "title": "Nano Banana Prompt: Generator für historische Duellcharakterkarten｜Curify AI",
+    "content": {
+      "sections": {
+        "what": "Dieses Template basiert auf Nano Banana Prompts zur Erstellung von „traditionellen Duellkarten“: Mit einem Tusche-Hintergrund wird das Konfliktgefühl zwischen den Charakteren verstärkt, ergänzt durch detaillierte Titel und Schwächen.",
+        "who": "Geeignet für traditionelle Adaptionen, Charakterduell-Themen, interaktive Umfragen auf Xiaohongshu/Kurzvideos, Spiel-/Comic-Charakterwerbung sowie für kreative Schöpfer, die starke visuelle Eindrücke und Diskussionen im Kommentarbereich erzeugen möchten.",
+        "how": [
+          "Gib Charakter A und Charakter B ein: jeweilige Titel/Schule/Waffen/Spezialtechniken/Schwächen (mindestens 3 Informationen pro Charakter).",
+          "Bestimme das Duellthema: Geschwindigkeit vs Stärke, Intelligenz vs Gewalt, Schutz vs Zerstörung usw.",
+          "Modularer Layout-Anforderung: geteilte Ansicht links und rechts + obere Kopfzeilen + untere Gegenstandsliste + Trennungselemente für das Duellgefühl (Tusche-Spritzer/Klingenlicht).",
+          "Überprüfe nach der Generierung: Ist die Stärke auf beiden Seiten ausgewogen? Wenn eine Seite zu stark ist, lasse das Modell „Gegenseitige Schwächen oder Kostenmechanismen hinzufügen“."
+        ],
+        "prompts": [
+          "Generiere eine Charakterkarte für den Duellstil: A „Hegemon Xiang Yu“ vs B „Kriegsgott Lü Bu“, geteilte Ansicht, detaillierte Tusche + Aquarell-Schlachtfeld-Hintergrund, Profilinformationen + ikonische Gegenstandsliste + Spezialtechniken und Schwächen im Vergleich, 3:4 Hochformat.",
+          "Erstelle eine Duellkarte von „A Hua Mulan“ vs „B Yangs weibliche Generälin (repräsentative Figur)“: Betone die Unterschiede im Kampfstil und die Schwächen, geteilte Ansicht mit hoher Spannung, 3:4.",
+          "Generiere eine Duellkarte für „Wudang-Schwertkämpfer“ vs „Shaolin-Stab-Mönch“: Waffen/Fähigkeiten/Innere Kraft/Schwächen, untere Gegenstände und Bewegungs-Icons, Tusche-Duell-Atmosphäre, 3:4."
+        ]
+      }
+    }
   }
 }

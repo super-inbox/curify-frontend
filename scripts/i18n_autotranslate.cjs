@@ -167,40 +167,84 @@ function writeJson(p, obj) {
   fs.writeFileSync(p, JSON.stringify(obj, null, 2) + "\n", "utf8");
 }
 
-// Flatten nested object to dot keys (leaf nodes)
 function getKeys(obj, prefix = "") {
   let keys = [];
+
+  if (Array.isArray(obj)) {
+    obj.forEach((val, idx) => {
+      const k = prefix ? `${prefix}.${idx}` : String(idx);
+      if (val !== null && typeof val === "object") {
+        keys = keys.concat(getKeys(val, k));
+      } else {
+        keys.push(k);
+      }
+    });
+    return keys;
+  }
+
   for (const key in obj) {
     const val = obj[key];
     const k = prefix ? `${prefix}.${key}` : key;
-    if (typeof val === "object" && val !== null && !Array.isArray(val)) {
+
+    if (val !== null && typeof val === "object") {
       keys = keys.concat(getKeys(val, k));
     } else {
       keys.push(k);
     }
   }
+
   return keys;
 }
 
 function getValueByPath(obj, dottedKey) {
   const parts = dottedKey.split(".");
   let cur = obj;
+
   for (const p of parts) {
-    if (!cur || typeof cur !== "object") return undefined;
-    cur = cur[p];
+    if (cur == null) return undefined;
+
+    if (Array.isArray(cur)) {
+      const idx = Number(p);
+      if (Number.isNaN(idx)) return undefined;
+      cur = cur[idx];
+    } else if (typeof cur === "object") {
+      cur = cur[p];
+    } else {
+      return undefined;
+    }
   }
+
   return cur;
 }
-
 function setValueByPath(obj, dottedKey, value) {
   const parts = dottedKey.split(".");
   let cur = obj;
+
   for (let i = 0; i < parts.length - 1; i++) {
     const p = parts[i];
-    if (!cur[p] || typeof cur[p] !== "object" || Array.isArray(cur[p])) cur[p] = {};
-    cur = cur[p];
+    const next = parts[i + 1];
+    const nextIsIndex = /^\d+$/.test(next);
+
+    if (Array.isArray(cur)) {
+      const idx = Number(p);
+      if (cur[idx] == null) {
+        cur[idx] = nextIsIndex ? [] : {};
+      }
+      cur = cur[idx];
+    } else {
+      if (cur[p] == null || typeof cur[p] !== "object") {
+        cur[p] = nextIsIndex ? [] : {};
+      }
+      cur = cur[p];
+    }
   }
-  cur[parts[parts.length - 1]] = value;
+
+  const last = parts[parts.length - 1];
+  if (Array.isArray(cur)) {
+    cur[Number(last)] = value;
+  } else {
+    cur[last] = value;
+  }
 }
 
 // Merge ONLY missing keys into target object
