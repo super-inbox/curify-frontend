@@ -1,5 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import { nanoTemplateI18nKey, type TranslateFn } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_utils";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -70,7 +71,7 @@ export function getNanoTemplates(
         id: template.id,
         title,
         category,
-        url: `/${locale}/nano-template/${template.id.replace(/^template-/, "")}`,
+        url: `/${locale}/nano-template/${toSlug(template.id)}`,
         locale,
       } satisfies TemplateLink;
     });
