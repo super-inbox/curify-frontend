@@ -1,6 +1,5 @@
-export type ContentLocale = "en" | "zh";
 export type Locale = "zh" | "en";
 
-export function resolveContentLocale(locale: string): ContentLocale {
+export function resolveContentLocale(locale: string): Locale {
   return locale === "zh" ? "zh" : "en";
 }

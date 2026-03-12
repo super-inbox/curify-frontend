@@ -10,11 +10,14 @@ import ExampleImagesGrid from "./ExampleImagesGrid";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
+  type TranslateFn,
   buildNanoRegistry,
   buildNanoTemplateDetailData,
   getImageViewsForTemplate,
   buildNanoFeedCards,
 } from "@/lib/nano_utils";
+
+import { resolveContentLocale } from "@/lib/locale_utils";
 
 import {
   type NanoMessagesDict,
@@ -32,10 +35,6 @@ type Props = {
 
 function slugToTemplateId(slug: string) {
   return slug.startsWith("template-") ? slug : `template-${slug}`;
-}
-
-function resolveContentLocale(locale: string): "en" | "zh" {
-  return locale === "zh" ? "zh" : "en";
 }
 
 async function loadNanoMessages(localeStr: string): Promise<NanoMessagesDict> {
@@ -60,24 +59,35 @@ async function getPageData(localeStr: string, slug: string) {
   const localizedRawEntry = nanoMessagesRaw?.[templateId];
   const localizedEntry = normalizeNanoLocaleMessageEntry(localizedRawEntry);
 
+  const translateNano: TranslateFn = (key: string): string => {
+    if (key === `${templateId}.title`) {
+      return String(localizedEntry.title ?? "");
+    }
+
+    if (key === `${templateId}.category`) {
+      return String(localizedEntry.category ?? "");
+    }
+
+    if (key === `${templateId}.description`) {
+      return String(localizedEntry.description ?? "");
+    }
+
+    if (key === `${templateId}.content.sections.what`) {
+      return String(localizedEntry.content?.sections?.what ?? "");
+    }
+
+    if (key === `${templateId}.content.sections.who`) {
+      return String(localizedEntry.content?.sections?.who ?? "");
+    }
+
+    return "";
+  };
+
   const data = buildNanoTemplateDetailData(
     reg,
     templateId,
     contentLocale,
-    (key: string) => {
-      if (key === `${templateId}.title`) return localizedEntry.title ?? "";
-      if (key === `${templateId}.category`) return localizedEntry.category ?? "";
-      if (key === `${templateId}.description`) return localizedEntry.description ?? "";
-
-      if (key === `${templateId}.content.sections.what`) {
-        return localizedEntry.content?.sections?.what ?? "";
-      }
-      if (key === `${templateId}.content.sections.who`) {
-        return localizedEntry.content?.sections?.who ?? "";
-      }
-
-      return "";
-    }
+    translateNano
   );
 
   const nanoMessages: NanoMessagesDict = {
@@ -134,8 +144,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NanoTemplatePage({ params }: Props) {
   const { locale: localeStr, slug } = await params;
 
-  const { pageLocale, contentLocale, templateId, reg, data, nanoMessages, localizedEntry } =
-    await getPageData(localeStr, slug);
+  const {
+    pageLocale,
+    contentLocale,
+    templateId,
+    reg,
+    data,
+    nanoMessages,
+    localizedEntry,
+  } = await getPageData(localeStr, slug);
 
   if (!data) notFound();
 
@@ -177,7 +194,7 @@ export default async function NanoTemplatePage({ params }: Props) {
   const otherNanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
-    translate: () => "",
+    translate: (_key: string): string => "",
   }).filter((c) => c.template_id !== template.template_id);
 
   return (
@@ -189,7 +206,7 @@ export default async function NanoTemplatePage({ params }: Props) {
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
           </div>
 
-          {(localizedEntry.category || template.category) ? (
+          {localizedEntry.category || template.category ? (
             <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
               {localizedEntry.category || template.category}
             </span>

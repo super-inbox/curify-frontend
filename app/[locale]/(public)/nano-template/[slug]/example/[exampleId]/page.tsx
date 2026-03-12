@@ -142,7 +142,7 @@ export default async function NanoExampleDetailPage({
       templateId: img.template_id,
     }));
 
-  const otherNanoCards = buildNanoFeedCards(reg, rawLocale, {
+  const otherNanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,

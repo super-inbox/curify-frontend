@@ -14,6 +14,7 @@ import {
 } from "@/lib/nano_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
+import { resolveContentLocale } from "@/lib/locale_utils";
 
 export const dynamic = "force-dynamic";
 
@@ -81,7 +82,7 @@ export default async function Page({ params }: Props) {
     nanoImages as unknown as RawNanoImageRecord[]
   );
 
-  const nanoCards = buildNanoFeedCards(reg, localeStr, {
+  const nanoCards = buildNanoFeedCards(reg, resolveContentLocale(localeStr), {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,

@@ -17,7 +17,7 @@ import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCa
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
-import { resolveContentLocale } from "@/lib/locale_utils";
+import { resolveContentLocale, Locale } from "@/lib/locale_utils";
 
 import {
   buildNanoRegistry,

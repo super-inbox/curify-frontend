@@ -16,13 +16,12 @@ import {
   buildNanoRegistry,
   buildNanoFeedCards,
   type RawTemplate,
-  type RawNanoImageRecord,
-  type Locale,
+  type RawNanoImageRecord,  
 } from "@/lib/nano_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
-
+import { Locale } from "@/lib/locale_utils";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface JsonPrompt {
