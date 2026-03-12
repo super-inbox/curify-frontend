@@ -21,7 +21,7 @@ import {
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
-import { Locale } from "@/lib/locale_utils";
+import { Locale, makeSafeNanoTranslator } from "@/lib/locale_utils";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface JsonPrompt {
@@ -89,16 +89,6 @@ const normalizeImageUrl = (raw: string | null): string => {
   if (raw.startsWith("/")) return raw;
   return `/${raw}`;
 };
-
-function makeSafeNanoTranslator(tNano: Awaited<ReturnType<typeof getTranslations>>) {
-  return (key: string): string => {
-    try {
-      return tNano(key as any) ?? "";
-    } catch {
-      return "";
-    }
-  };
-}
 
 // ─── Data fetching ────────────────────────────────────────────────────────────
 
