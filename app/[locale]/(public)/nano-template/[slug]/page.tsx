@@ -102,13 +102,14 @@ async function getPageData(localeStr: string, slug: string) {
     data,
     nanoMessages,
     localizedEntry,
+    translateNano,
   };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeStr, slug } = await params;
 
-  const { templateId, data, nanoMessages, localizedEntry } = await getPageData(
+  const { templateId, data, nanoMessages, localizedEntry, translateNano } = await getPageData(
     localeStr,
     slug
   );
@@ -152,6 +153,7 @@ export default async function NanoTemplatePage({ params }: Props) {
     data,
     nanoMessages,
     localizedEntry,
+    translateNano,
   } = await getPageData(localeStr, slug);
 
   if (!data) notFound();
@@ -194,7 +196,7 @@ export default async function NanoTemplatePage({ params }: Props) {
   const otherNanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
-    translate: (_key: string): string => "",
+    translate: translateNano,
   }).filter((c) => c.template_id !== template.template_id);
 
   return (
