@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import ExampleImagesGrid from "./ExampleImagesGrid";
-
+import { getTranslations } from "next-intl/server";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
@@ -18,6 +18,7 @@ import {
 } from "@/lib/nano_utils";
 
 import { resolveContentLocale } from "@/lib/locale_utils";
+import { Locale, makeSafeNanoTranslator } from "@/lib/locale_utils";
 
 import {
   type NanoMessagesDict,
@@ -59,29 +60,8 @@ async function getPageData(localeStr: string, slug: string) {
   const localizedRawEntry = nanoMessagesRaw?.[templateId];
   const localizedEntry = normalizeNanoLocaleMessageEntry(localizedRawEntry);
 
-  const translateNano: TranslateFn = (key: string): string => {
-    if (key === `${templateId}.title`) {
-      return String(localizedEntry.title ?? "");
-    }
-
-    if (key === `${templateId}.category`) {
-      return String(localizedEntry.category ?? "");
-    }
-
-    if (key === `${templateId}.description`) {
-      return String(localizedEntry.description ?? "");
-    }
-
-    if (key === `${templateId}.content.sections.what`) {
-      return String(localizedEntry.content?.sections?.what ?? "");
-    }
-
-    if (key === `${templateId}.content.sections.who`) {
-      return String(localizedEntry.content?.sections?.who ?? "");
-    }
-
-    return "";
-  };
+  const tNano = await getTranslations({ locale: pageLocale, namespace: "nano" });
+  const translateNano = makeSafeNanoTranslator(tNano);
 
   const data = buildNanoTemplateDetailData(
     reg,
