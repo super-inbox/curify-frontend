@@ -1,7 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
-
-export type Locale = "zh" | "en";
+import { Locale } from "@/lib/locale_utils";
 
 export type TemplateParameter = {
   name: string;
@@ -135,10 +134,6 @@ export type TranslateFn = (key: string) => string;
 
 export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
-}
-
-export function normalizeLocale(locale: string): Locale {
-  return locale === "en" ? "en" : "zh";
 }
 
 export function getLocaleFromPath(): Locale {
@@ -334,6 +329,7 @@ export function getImageViewsForTemplate(
  * If omitted, those fields will be empty strings (fine for structural/data use,
  * not for rendering).
  */
+
 export function buildNanoFeedCards(
   reg: NanoRegistry,
   locale: Locale,

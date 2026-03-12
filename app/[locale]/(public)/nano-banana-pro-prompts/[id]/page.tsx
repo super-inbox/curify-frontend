@@ -12,17 +12,16 @@ import CdnImage from "../../../_components/CdnImage";
 import NanoTemplateDetailClient from "../../nano-template/[slug]/NanoTemplateDetailClient";
 import { SITE_URL } from "@/lib/constants";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
-import {
-  normalizeLocale,
+import {  
   buildNanoRegistry,
   buildNanoFeedCards,
   type RawTemplate,
-  type RawNanoImageRecord,
-  type Locale,
+  type RawNanoImageRecord,  
 } from "@/lib/nano_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
-
+import { resolveContentLocale } from "@/lib/locale_utils";
+import { Locale } from "@/lib/locale_utils";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface JsonPrompt {
@@ -190,7 +189,7 @@ export default async function PromptDetailPage({
   const tNano = await getTranslations({ locale, namespace: "nano" });
   const translateNano = makeSafeNanoTranslator(tNano);
 
-  const nanoCards = buildNanoFeedCards(reg, normalizeLocale(locale) as Locale, {
+  const nanoCards = buildNanoFeedCards(reg, resolveContentLocale(locale) as Locale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
@@ -328,7 +327,7 @@ export default async function PromptDetailPage({
         {/* ── Other templates — same component & data as template page ── */}
         <section className="mt-8">
           <NanoTemplateDetailClient
-            locale={normalizeLocale(locale)}
+            locale={locale}
             template={{ template_id: "", base_prompt: "", parameters: [] }}
             otherNanoCards={nanoCards}
             showReproduce={false}
