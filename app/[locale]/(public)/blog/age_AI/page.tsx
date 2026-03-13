@@ -145,38 +145,71 @@ export default function AgeAiPost() {
       </p>
 
       {/* Related Articles Section */}
-      <div className="mt-16 pt-8 border-t border-gray-200">
+      <section className="mt-16">
         <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              slug: 'aiPlatform',
+              title: 'The Pragmatic AI Platform: How Mid‑Sized Tech Companies Win with AI',
+              date: 'January 30, 2026',
+              readTime: '9 min read',
+              tag: 'DS & AI Engineering',
+              image: '/images/platformai.webp',
+            },
+            {
+              slug: 'QA_Bot_to_Task',
+              title: 'From QA Bot to Task Agent: An Architecture Guide',
+              date: 'January 30, 2026',
+              readTime: '6 min read',
+              tag: 'DS & AI Engineering',
+              image: '/images/qa-bot-architecture.jpg',
+            },
+            {
+              slug: 'agents-vs-workflows',
+              title: 'Part 2: Agents vs Workflows – From Control to Intelligence',
+              date: 'October 28, 2025',
+              readTime: '6 min read',
+              tag: 'Creator Tools',
+              image: '/images/agents-vs-workflows.jpg',
+            }
+          ].map((post) => (
+            <Link
+              href={`/blog/${post.slug}`}
+              key={post.slug}
+              className="group border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+            >
+              <div className="relative h-40 w-full">
+                <CdnImage
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <div className="text-xs uppercase text-red-600 font-semibold mb-1">
+                  {post.tag}
+                </div>
+                <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition">
+                  {post.title}
+                </h3>
+                <div className="text-xs text-gray-500 mt-1">
+                  {post.date} • {post.readTime}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
           <Link
-            href="/blog/QA_Bot_to_Task"
-            className="group block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-500 transition-colors"
+            href="/blog"
+            className="inline-flex items-center justify-center px-6 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
           >
-            <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600">
-              From QA Bot to Task Agent: An Architecture Guide
-            </h3>
-            <p className="text-gray-600 mb-3">
-              Learn how to evolve simple QA systems into autonomous task agents
-              with our comprehensive architecture guide.
-            </p>
-            <span className="text-blue-600 text-sm font-medium">Read more →</span>
-          </Link>
-
-          <Link
-            href="/blog/agents-vs-workflows"
-            className="group block p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-500 transition-colors"
-          >
-            <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600">
-              Agents vs Workflows – From Control to Intelligence
-            </h3>
-            <p className="text-gray-600 mb-3">
-              Explore the shift from rigid workflows to intelligent agents in
-              modern AI systems.
-            </p>
-            <span className="text-blue-600 text-sm font-medium">Read more →</span>
+            See all blog posts
           </Link>
         </div>
-      </div>
+      </section>
 
       {/* Next Article */}
       <div className="mt-12 pt-6 border-t border-gray-200">

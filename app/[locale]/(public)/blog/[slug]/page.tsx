@@ -447,15 +447,16 @@ function YoutubeTranslationContent({ slug, t, locale }: { slug: string; t: any; 
   const formatContent = (content: string) => {
     return content
       // Handle markdown tables first - 3 column table
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th></tr></thead><tbody>')
-      // Handle 3 column table rows - more specific pattern
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \|\n/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
-      // Handle 4 column tables
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
-      // Handle 4 column table rows - more specific pattern
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
-      // Close table tags
-      .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    // 1. TABLES FIRST - before bold/any other formatting
+    .replace(/^\|(.+?)\|(.+?)\|(.+?)\|\n\|-{3,}\s*\|\s*-{3,}\s*\|\s*-{3,}\s*\|\n/gm, 
+      '<table class="min-w-full..."><thead class="bg-gray-50"><tr><th...>$1</th><th...>$2</th><th...>$3</th></tr></thead><tbody>')
+    .replace(/^\|(.+?)\|(.+?)\|(.+?)\|\n/gm, 
+      '<tr class="hover:bg-gray-50"><td...>$1</td><td...>$2</td><td...>$3</td></tr>')
+    .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+    
+    // 2. THEN bold (won't break tables now)
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    // ... rest of your rules
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
