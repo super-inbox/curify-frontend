@@ -1991,5 +1991,313 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-mbti-generic-employee-en-estp-prev.jpg"
-  }
-]
+  },
+   {
+    "id": "template-mbti-generic-en-siliconvalley",
+    "locales": {
+        "en": {
+            "base_prompt": "You are a top-tier AI visual designer specialized in turning personality systems into highly shareable visual concepts. Based on the user-provided [{mbti_topic}], [{founder_name}], [{mbti_type}], [{tagline}], and [{visual_style}], generate a polished MBTI-themed visual composition. The image should map the MBTI personality type [{mbti_type}] onto the Silicon Valley tech founder [{founder_name}], placed within the scenario 'standing on a futuristic circuit board platform surrounded by iconic brand/tech elements representing his career achievements', showing the type’s distinctive analytical, innovative, or visionary traits. The composition should be clear, expressive, and instantly understandable, with strong tech aesthetic and social-media appeal. Use the visual style [{visual_style}], with clean vector art, soft gradients, isometric perspective, rich detail, cohesive rendering, and vivid storytelling. Vertical 3:4 format. Use English text for labels (title: 'MBTI × Silicon Valley Founders', display [{founder_name}], [{mbti_type}], [{tagline}]). Include a Curify watermark at the bottom right. Directly generate the final image for the theme [{mbti_topic}].",
+            "parameters": [
+                {
+                    "name": "mbti_topic",
+                    "label": "MBTI theme",
+                    "type": "text",
+                    "placeholder": [
+                        "MBTI as AI founders",
+                        "MBTI × Silicon Valley Founders",
+                        "MBTI tech industry archetypes"
+                    ]
+                },
+                {
+                    "name": "founder_name",
+                    "label": "Founder Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Bill Gates",
+                        "Jensen Huang",
+                        "Elon Musk",
+                        "Steve Jobs",
+                        "Mark Zuckerberg"
+                    ]
+                },
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": [
+                        "INTP",
+                        "ENTP",
+                        "INTJ",
+                        "ENFP",
+                        "ISTJ"
+                    ]
+                },
+                {
+                    "name": "tagline",
+                    "label": "Tagline",
+                    "type": "text",
+                    "placeholder": [
+                        "The Logician, Analytical Innovator",
+                        "The Visionary, AI Revolution Leader",
+                        "The Mastermind, Tech Pioneer",
+                        "The Champion, Creative Disruptor"
+                    ]
+                },
+                {
+                    "name": "visual_style",
+                    "label": "Visual style",
+                    "type": "text",
+                    "placeholder": [
+                        "cute chibi isometric vector illustration",
+                        "high-end character poster",
+                        "clean tech aesthetic vector art"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-generic-en-siliconvalley-jobs-prev.jpg"
+},
+  {
+    "id": "template-mbti-generic-en-nba",
+    "locales": {
+        "en": {
+            "base_prompt": "（NBA Card Designer）You are a top-tier NBA card designer, specialized in MBTI-themed basketball star collectible cards. According to the user-specified [{player_name}], create a vertical 3:4 premium collectible card for {player_name}, matching the style of the reference images. Card layout: - Top: Large ornate gold/metallic font displaying the MBTI type {mbti_type} - Subtitle: Elegant script font for the persona title {persona_title} - Center: Bold serif font for {player_name}, alongside the player in their iconic jersey (number {jersey_number}) in a shooting pose, rendered in detailed comic book illustration style - Left side: 4 bullet points (with basketball icons) listing key traits/achievements: {trait_1}, {trait_2}, {trait_3}, {trait_4} - Bottom: Thematic decorative elements matching the player/MBTI persona (e.g., championship rings, mascot, symbolic creature, trophies) - Frame: Metallic silver border with subtle gradient background (team color-themed), swirling smoke/brush stroke textures - Style: High-detail comic illustration, rich shading, metallic gold/bronze text effects, professional collectible card aesthetic, no extra clutter, Curify watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, cohesive color palette matching the player's team, direct image generation. The player is [{player_name}].",
+            "parameters": [
+                {
+                    "name": "player_name",
+                    "label": "Player Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Kevin Durant",
+                        "Kobe Bryant",
+                        "LeBron James",
+                        "Stephen Curry",
+                        "Michael Jordan",
+                        "Lebron James"
+                    ]
+                },
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": [
+                        "ISFP",
+                        "ISTP",
+                        "ESFJ",
+                        "ENFP",
+                        "ESTJ",
+                        "ENTJ"
+                    ]
+                },
+                {
+                    "name": "persona_title",
+                    "label": "Persona Title",
+                    "type": "text",
+                    "placeholder": [
+                        "THE ARTIST",
+                        "THE MAMBA",
+                        "THE KING",
+                        "THE MAGICIAN",
+                        "THE GOAT",
+                        "THE LEADER"
+                    ]
+                },
+                {
+                    "name": "jersey_number",
+                    "label": "Jersey Number",
+                    "type": "text",
+                    "placeholder": [
+                        "35",
+                        "24",
+                        "23",
+                        "30",
+                        "23",
+                        "6"
+                    ]
+                },
+                {
+                    "name": "trait_1",
+                    "label": "Key Trait 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Pure Hooper",
+                        "Mamba Mentality",
+                        "The Chosen One",
+                        "Range King",
+                        "Competitive Beast",
+                        "Floor General"
+                    ]
+                },
+                {
+                    "name": "trait_2",
+                    "label": "Key Trait 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Silky Smooth",
+                        "5× NBA Champion",
+                        "4× NBA Champion",
+                        "3-Point Legend",
+                        "6× NBA Champion",
+                        "Playmaker"
+                    ]
+                },
+                {
+                    "name": "trait_3",
+                    "label": "Key Trait 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Craft Master",
+                        "The Assassin",
+                        "Longevity God",
+                        "Clutch Performer",
+                        "Air Jordan",
+                        "Leader of Men"
+                    ]
+                },
+                {
+                    "name": "trait_4",
+                    "label": "Key Trait 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Sensitive Soul",
+                        "Job's Not Finished",
+                        "Community Leader",
+                        "Team Player",
+                        "Global Icon",
+                        "Champion Mindset"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-generic-en-nba-kobebryant-prev.jpg"
+},
+  {
+    "id": "template-mbti-generic-en-marvel",
+    "locales": {
+        "en": {
+            "base_prompt": "（MBTI Superhero Designer）You are a top-tier AI visual designer specialized in MBTI superhero character infographics. According to the user-specified [{character_name}], create a vertical 3:4 MBTI-themed superhero character poster for {character_name}. Layout structure: 1. Top half: Full-body illustration of {character_name} in their iconic superhero costume, dynamic pose matching their powers, in a clean comic book / isometric vector art style; background features thematic elements (e.g., energy effects, symbols, patterns) tied to their origin/powers, Curify logo at top left. 2. Middle section: White rounded rectangle card displaying: - Large bold red text: {mbti_type} - Character name: {character_name} - Tagline: \"{mbti_role}, {superhero_title}\" 3. Bottom section: Split into two isometric platform blocks (left/right), each holding 3-4 symbolic props/items that represent {character_name}'s powers, backstory, or iconic gear; connect these to the character’s traits. 4. Footer: 5 key personality traits in clean sans-serif font (e.g., {trait_1}, {trait_2}, {trait_3}, {trait_4}, {trait_5}), plus a short descriptive paragraph (optional) explaining the character’s MBTI alignment. Style: Polished vector illustration, cohesive color palette matching the character’s suit, sharp lines, soft gradients, no messy backgrounds, professional infographic aesthetic, social-media friendly. Vertical 3:4 format, 4K ultra-high definition, direct image generation. The superhero is [{character_name}].",
+            "parameters": [
+                {
+                    "name": "character_name",
+                    "label": "Superhero Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Wolverine (Logan)",
+                        "Rogue",
+                        "Thor Odinson",
+                        "Scarlet Witch (Wanda)",
+                        "Iron Man (Tony Stark)",
+                        "Spider-Man (Peter Parker)"
+                    ]
+                },
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": [
+                        "ISTP",
+                        "INFP",
+                        "ESTP",
+                        "INFP",
+                        "ENTJ",
+                        "ENFJ"
+                    ]
+                },
+                {
+                    "name": "mbti_role",
+                    "label": "MBTI Role",
+                    "type": "text",
+                    "placeholder": [
+                        "The Virtuoso",
+                        "The Mediator",
+                        "The Entrepreneur",
+                        "The Mediator",
+                        "The Commander",
+                        "The Protagonist"
+                    ]
+                },
+                {
+                    "name": "superhero_title",
+                    "label": "Superhero Title",
+                    "type": "text",
+                    "placeholder": [
+                        "Feral Fighter",
+                        "Untouchable Soul",
+                        "God of Thunder",
+                        "Reality Shaper",
+                        "Genius Billionaire",
+                        "Friendly Neighborhood Hero"
+                    ]
+                },
+                {
+                    "name": "trait_1",
+                    "label": "Key Trait 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Independent",
+                        "Empathetic",
+                        "Adventurous",
+                        "Idealistic",
+                        "Strategic",
+                        "Compassionate"
+                    ]
+                },
+                {
+                    "name": "trait_2",
+                    "label": "Key Trait 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Practical",
+                        "Idealistic",
+                        "Impulsive",
+                        "Emotional",
+                        "Confident",
+                        "Responsible"
+                    ]
+                },
+                {
+                    "name": "trait_3",
+                    "label": "Key Trait 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Observant",
+                        "Conflicted",
+                        "Charismatic",
+                        "Creative",
+                        "Innovative",
+                        "Quick-Witted"
+                    ]
+                },
+                {
+                    "name": "trait_4",
+                    "label": "Key Trait 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Action-Oriented",
+                        "Identity-Seeking",
+                        "Courageous",
+                        "Empathetic",
+                        "Ambitious",
+                        "Resilient"
+                    ]
+                },
+                {
+                    "name": "trait_5",
+                    "label": "Key Trait 5",
+                    "type": "text",
+                    "placeholder": [
+                        "Adaptable",
+                        "Compassionate",
+                        "Bold",
+                        "Introspective",
+                        "Decisive",
+                        "Optimistic"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-generic-en-marvel-thorodinson-prev.jpg"
+}
