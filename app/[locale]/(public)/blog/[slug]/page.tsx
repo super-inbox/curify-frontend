@@ -126,6 +126,11 @@ export async function generateMetadata({
   try {
     const t = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
     
+    console.log('Namespace:', `blog.${blogConfig.namespace}`);
+    console.log('TitleKey:', blogConfig.titleKey);
+    console.log('DescriptionKey:', blogConfig.descriptionKey);
+    console.log('Available keys:', Object.keys(t));
+    
     const metadata: Metadata = {
       title: t(blogConfig.titleKey),
       description: t(blogConfig.descriptionKey),
@@ -225,7 +230,7 @@ export default async function BlogPostPage({
     'translateYoutubeVideoToEnglish': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aiYoutubeVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'whatIsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
-    'voiceCloningTools': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
+    'voiceCloningTools': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'galleryTitle', 'galleryContent', 'PipelineTitle', 'PipelineContent', 'subtitleText', 'SubtitleContent', 'complianceTitle', 'complianceContent', 'TemplateTitle', 'TemplateContent', 'ReferencesTitle', 'ReferencesContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'f5TtsVoiceCloning': ['intro', 'whatIsTitle', 'whatIsContent', 'howWorksTitle', 'howWorksContent', 'toolsTitle', 'toolsContent', 'useCasesTitle', 'useCasesContent', 'ethicalTitle', 'ethicalContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'aslVideoTranslator': ['intro', 'whatIsTitle', 'whatIsContent', 'whenNeededTitle', 'whenNeededContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
         'chineseHerbalMedicineVisualGuide': ['intro', 'whatIsTitle', 'whatIsContent', 'historyTitle', 'historyContent', 'benefitsTitle', 'benefitsContent', 'popularTitle', 'popularContent', 'usageTitle', 'usageContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
@@ -290,7 +295,7 @@ export default async function BlogPostPage({
 
       <div className="clear-both">
         {/* Dynamic content rendering based on slug */}
-        {slug.startsWith('translate-youtube-video') && (
+        {(slug.startsWith('translate-youtube-video') || slug === 'ai-youtube-video-translator' || slug === 'translate-youtube-video-to-english') && (
           <YoutubeTranslationContent slug={slug} t={safeT} locale={locale} />
         )}
         {(slug.startsWith('voice-cloning') || slug === 'what-is-voice-cloning' || slug === 'f5-tts-voice-cloning') && (
@@ -302,16 +307,21 @@ export default async function BlogPostPage({
         {(slug === 'chinese-herbal-medicine-visual-guide' || slug === 'evolution-timelines-visualization' || slug === 'chinese-costume-history-infographic') && (
           <NanoTemplateContent slug={slug} t={safeT} />
         )}
+        {slug === 'nano-banana-prompt-ecosystem' && (
+          <NanoBananaContent slug={slug} t={safeT} locale={locale} />
+        )}
         
         {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') && 
+         slug !== 'ai-youtube-video-translator' && 
          !slug.startsWith('voice-cloning') && 
          slug !== 'what-is-voice-cloning' && 
          slug !== 'f5-tts-voice-cloning' && 
          !slug.includes('asl') &&
          slug !== 'chinese-herbal-medicine-visual-guide' &&
          slug !== 'evolution-timelines-visualization' &&
-         slug !== 'chinese-costume-history-infographic' && (
+         slug !== 'chinese-costume-history-infographic' &&
+         slug !== 'nano-banana-prompt-ecosystem' && (
           <div className="space-y-6">
             <p className="text-lg font-semibold text-blue-600 mb-4">
               {hasKey("intro") ? safeT("intro") : "Introduction"}
@@ -398,6 +408,27 @@ export default async function BlogPostPage({
               </section>
             )}
 
+            {(hasKey("ecosystemTitle") || hasKey("ecosystemContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("ecosystemTitle") ? safeT("ecosystemTitle") : "Ecosystem"}</h2>
+                <p className="mb-4">{hasKey("ecosystemContent") ? safeT("ecosystemContent") : "Ecosystem content..."}</p>
+              </section>
+            )}
+
+            {(hasKey("seoTitle") || hasKey("seoContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("seoTitle") ? safeT("seoTitle") : "SEO & Optimization"}</h2>
+                <p className="mb-4">{hasKey("seoContent") ? safeT("seoContent") : "SEO content..."}</p>
+              </section>
+            )}
+
+            {(hasKey("generatorTitle") || hasKey("generatorContent")) && (
+              <section>
+                <h2 className="text-2xl font-bold mb-4">{hasKey("generatorTitle") ? safeT("generatorTitle") : "Generator"}</h2>
+                <p className="mb-4">{hasKey("generatorContent") ? safeT("generatorContent") : "Generator content..."}</p>
+              </section>
+            )}
+
             {(hasKey("useCasesTitle") || hasKey("useCasesContent")) && (
               <section>
                 <h2 className="text-2xl font-bold mb-4">{hasKey("useCasesTitle") ? safeT("useCasesTitle") : "Use Cases"}</h2>
@@ -444,28 +475,99 @@ export default async function BlogPostPage({
 
 // Content components for different blog categories
 function YoutubeTranslationContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
-  const formatContent = (content: string) => {
-    return content
-      // Handle markdown tables first - 3 column table
-    // 1. TABLES FIRST - before bold/any other formatting
-    .replace(/^\|(.+?)\|(.+?)\|(.+?)\|\n\|-{3,}\s*\|\s*-{3,}\s*\|\s*-{3,}\s*\|\n/gm, 
-      '<table class="min-w-full..."><thead class="bg-gray-50"><tr><th...>$1</th><th...>$2</th><th...>$3</th></tr></thead><tbody>')
-    .replace(/^\|(.+?)\|(.+?)\|(.+?)\|\n/gm, 
-      '<tr class="hover:bg-gray-50"><td...>$1</td><td...>$2</td><td...>$3</td></tr>')
-    .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+  const parseMarkdownTable = (content: string): string => {
+    const lines = content.split('\n');
+    let result = '';
+    let i = 0;
     
-    // 2. THEN bold (won't break tables now)
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    // ... rest of your rules
+    while (i < lines.length) {
+      const line = lines[i].trim();
+      
+      // Check if this is a table header
+      if (line.startsWith('|') && line.includes('|') && i + 1 < lines.length) {
+        const nextLine = lines[i + 1].trim();
+        
+        // Check if next line is a separator (contains dashes)
+        if (nextLine.startsWith('|') && nextLine.includes('-')) {
+          // Parse header
+          const headerCells = line.split('|').map(cell => cell.trim()).filter(cell => cell);
+          const columnCount = headerCells.length;
+          
+          // Start table
+          result += '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr>';
+          
+          headerCells.forEach(header => {
+            result += `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">${header}</th>`;
+          });
+          
+          result += '</tr></thead><tbody>';
+          
+          // Skip header and separator lines
+          i += 2;
+          
+          // Parse table rows
+          while (i < lines.length) {
+            const rowLine = lines[i].trim();
+            
+            // Stop if we hit an empty line or non-table line
+            if (!rowLine || !rowLine.startsWith('|')) {
+              break;
+            }
+            
+            const rowCells = rowLine.split('|').map(cell => cell.trim()).filter(cell => cell);
+            
+            // Skip if row doesn't match column count
+            if (rowCells.length === columnCount) {
+              result += '<tr class="hover:bg-gray-50">';
+              rowCells.forEach((cell, index) => {
+                const isHeader = index === 0; // First column is often a header
+                const cellClass = isHeader 
+                  ? 'px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b'
+                  : 'px-6 py-4 text-sm text-gray-500 border-b';
+                result += `<td class="${cellClass}">${cell}</td>`;
+              });
+              result += '</tr>';
+            }
+            
+            i++;
+          }
+          
+          // Close table
+          result += '</tbody></table>';
+          continue;
+        }
+      }
+      
+      // Add non-table lines as-is
+      result += lines[i] + '\n';
+      i++;
+    }
+    
+    return result;
+  };
+
+  const formatContent = (content: string) => {
+    // First parse tables
+    let processed = parseMarkdownTable(content);
+    
+    // Then handle other markdown formatting
+    return processed
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
       .replace(/^\*\*(.*?)\*\*:\s*(.+)$/gm, '<li><strong>$1:</strong> $2</li>')
-      // Handle regular bullet points
+      // Handle bullet points at start of line
       .replace(/^- (.+)$/gm, '<li>$1</li>')
+      // Handle bullet points without space after dash (e.g., "-**Bold**: text")
+      .replace(/-(\*\*(.*?)\*\*:)\s*(.+?)(?=\s*-\*\*|$)/g, '<li><strong>$2:</strong> $3</li>')
+      // Handle bullet points after colon (like "criteria (adapt as needed):- Quality:")
+      .replace(/:- (.+)$/gm, ':<ul class="list-disc pl-6 mb-4"><li>$1</li></ul>')
+      // Handle bullet points after colon with space (like "calculator: - GPU")
+      .replace(/: - (.+)$/gm, ':<ul class="list-disc pl-6 mb-4"><li>$1</li></ul>')
       // Convert consecutive list items to proper lists
       .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4">$&</ul>')
-      // Handle paragraph breaks
+      // Handle paragraph breaks (but avoid breaking within lists)
+      .replace(/(<\/ul>)\s*\n\s*\n/g, '$1')
       .replace(/\n\n/g, '</p><p className="mb-4">')
       // Handle remaining line breaks
       .replace(/\n/g, '<br/>');
@@ -584,24 +686,43 @@ function YoutubeTranslationContent({ slug, t, locale }: { slug: string; t: any; 
 
 function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
   const formatContent = (content: string) => {
-    return content
-      // Handle markdown tables first
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th></tr></thead><tbody>')
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
-      // Handle table rows
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
+    // Ensure content is a string, fallback to empty string if not
+    const safeContent = typeof content === 'string' ? content : '';
+    
+    return safeContent
+      // Handle code blocks first (before other markdown processing)
+      .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
+        const lang = language || 'text';
+        return `<pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4"><code class="language-${lang}">${code.trim()}</code></pre>`;
+      })
+      // Handle inline code
+      .replace(/`([^`]+)`/g, '<code class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">$1</code>')
+      // Handle markdown tables first - support both with and without spaces
+      // 4-column table header
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\|---?\|---?\|---?\|---?\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
+      // 3-column table header
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n\|---?\|---?\|---?\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th></tr></thead><tbody>')
+      // Handle table rows - support both with and without spaces
+      // 4-column table rows
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\s*$/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
+      // 3-column table rows
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
       // Close table tags
       .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
       .replace(/^\*\*(.*?)\*\*:\s*(.+)$/gm, '<li><strong>$1:</strong> $2</li>')
-      // Handle regular bullet points
+      // Handle bullet points at start of line
       .replace(/^- (.+)$/gm, '<li>$1</li>')
+      // Handle bullet points after colon (like "criteria (adapt as needed):- Quality:")
+      .replace(/:- (.+)$/gm, ':<ul class="list-disc pl-6 mb-4"><li>$1</li></ul>')
+      // Handle bullet points after colon with space (like "calculator: - GPU")
+      .replace(/: - (.+)$/gm, ':<ul class="list-disc pl-6 mb-4"><li>$1</li></ul>')
       // Convert consecutive list items to proper lists
       .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4">$&</ul>')
-      // Handle paragraph breaks
+      // Handle paragraph breaks (but avoid breaking within lists)
+      .replace(/(<\/ul>)\s*\n\s*\n/g, '$1')
       .replace(/\n\n/g, '</p><p className="mb-4">')
       // Handle remaining line breaks
       .replace(/\n/g, '<br/>');
@@ -663,14 +784,79 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
         />
       </section>
 
+      {(t("galleryTitle", { defaultValue: null }) || t("galleryContent", { defaultValue: null })) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{t("galleryTitle") || "Gallery"}</h2>
+          <div 
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{ 
+              __html: formatContent(t("galleryContent") || "")
+            }} 
+          />
+        </section>
+      )}
+
+      {t("PipelineTitle", { defaultValue: null }) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{t("PipelineTitle")}</h2>
+          <div 
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{ 
+              __html: formatContent(t("PipelineContent") || "Pipeline integration content...")
+            }} 
+          />
+        </section>
+      )}
+
+      {(t("subtitleText", { defaultValue: null }) || t("SubtitleContent", { defaultValue: null })) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{t("subtitleText") || "Subtitles and Lip-sync"}</h2>
+          <div 
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{ 
+              __html: formatContent(t("SubtitleContent") || "")
+            }} 
+          />
+        </section>
+      )}
+
+      {(t("complianceTitle", { defaultValue: null }) || t("complianceContent", { defaultValue: null })) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{t("complianceTitle") || "Compliance"}</h2>
+          <div 
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{ 
+              __html: formatContent(t("complianceContent") || "")
+            }} 
+          />
+        </section>
+      )}
+
+      {(t("TemplateTitle", { defaultValue: null }) || t("TemplateContent", { defaultValue: null })) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{t("TemplateTitle") || "Templates"}</h2>
+          <div 
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{ 
+              __html: formatContent(t("TemplateContent") || "")
+            }} 
+          />
+        </section>
+      )}
+
+      {(t("ReferencesTitle", { defaultValue: null }) || t("ReferencesContent", { defaultValue: null })) && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">{t("ReferencesTitle") || "References"}</h2>
+          <div 
+            className="prose prose-lg max-w-none mb-4"
+            dangerouslySetInnerHTML={{ 
+              __html: formatContent(t("ReferencesContent") || "")
+            }} 
+          />
+        </section>
+      )}
+
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("curifyTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatContent(t("curifyContent"))
-          }} 
-        />
         <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
           <p className="text-purple-800">
             🎯 {t("ctaText")} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
@@ -893,12 +1079,16 @@ function getTemplateUrl(slug: string) {
 function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
   const formatContent = (content: string) => {
     return content
-      // Handle markdown tables first
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th></tr></thead><tbody>')
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
-      // Handle table rows
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
-      .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
+      // Handle markdown tables first - support both with and without spaces
+      // 4-column table header
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\|-+\s*\|[- ]+\s*\|[- ]+\s*\|[- ]+\s*\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
+      // 3-column table header
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n\|-+\s*\|[- ]+\s*\|[- ]+\s*\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th></tr></thead><tbody>')
+      // Handle table rows - support both with and without spaces
+      // 4-column table rows
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
+      // 3-column table rows
+      .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
       // Close table tags
       .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
       // Handle bold text
@@ -1020,7 +1210,12 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
-        <p className="mb-4">{t("toolsContent")}</p>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("toolsContent"))
+          }} 
+        />
       </section>
 
       <section>
@@ -1047,6 +1242,101 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
               .replace(/^- (.+)(?!\n    -)/gm, '<li class="mb-1">$1</li></ul>')
               .replace(/\n\n/g, '<br /><br />')
           }}
+        />
+      </section>
+    </div>
+  );
+}
+
+function NanoBananaContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
+  const formatContent = (content: string) => {
+    return content
+      // Handle bold text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      // Handle paragraph breaks
+      .replace(/\n\n/g, '</p><p className="mb-4">')
+      // Handle remaining line breaks
+      .replace(/\n/g, '<br/>');
+  };
+
+  return (
+    <div className="space-y-6">
+      <p className="text-lg font-semibold text-blue-600 mb-4">
+        {t("intro")}
+      </p>
+      
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("whatIsTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("whatIsContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("ecosystemTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("ecosystemContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("seoTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("seoContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("generatorTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("generatorContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("toolsContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("curifyTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("curifyContent"))
+          }} 
+        />
+        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+          <p className="text-green-800">
+            🎯 {t("ctaText")} <a href="http://localhost:3000/nano-banana-pro-prompts" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("conclusionContent"))
+          }} 
         />
       </section>
     </div>

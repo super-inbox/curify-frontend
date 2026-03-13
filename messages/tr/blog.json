@@ -141,6 +141,38 @@
         "readTime": "9 min read",
         "tag": "AI Audio",
         "image": "/images/voiceclone.webp"
+      },
+      {
+        "slug": "evolution-timelines-visualization",
+        "title": "Evrim Zaman Çizgileri: Tarihsel Gelişimi AI ile Nasıl Görselleştirirsiniz",
+        "date": "25 Şubat 2026",
+        "readTime": "10 dk okuma",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg"
+      },
+      {
+        "slug": "chinese-costume-history-infographic",
+        "title": "Çin Kostüm Tarihi: Tang Hanedanlığı'ndan Modern Moda'ya",
+        "date": "26 Şubat 2026",
+        "readTime": "15 dk okuma",
+        "tag": "Kültür",
+        "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg"
+      },
+      {
+        "slug": "creative-ai-tools-websites",
+        "title": "İlham Tükenmesini Önlemek İçin 6 Gerçek Yaratıcı & AI Araçları Web Sitesi",
+        "date": "10 Mart 2026",
+        "readTime": "8 dk okuma",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/sevenimages.webp"
+      },
+      {
+        "slug": "nano-banana-prompt-ecosystem",
+        "title": "Nano Banana Prompt Ekosistemi",
+        "date": "12 Mart 2026",
+        "readTime": "10 dk okuma",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nanobannanapromptblog.png"
       }
     ],
     "translateYoutubevideo": {
@@ -270,7 +302,19 @@
       "conclusionTitle": "Sonuç",
       "conclusionContent": "Doğru ses klonlama aracı, belirli ihtiyaçlarınıza, bütçenize ve etik hususlara bağlıdır.",
       "seoKeywords": "ses klonlama araçları 2026, en iyi AI ses klonlama yazılımı, F5‑TTS vs ElevenLabs, Curify ses klonlama, AI ses sentezi karşılaştırması, açık kaynak TTS, sıfırdan ses klonlama, sinirsel ses sentezi karşılaştırmaları, dublaj otomasyon araçları, çok dilli ses yerelleştirme",
-      "metaDescription": "2026'nın en iyi ses klonlama araçlarını keşfedin. F5‑TTS, ElevenLabs ve Curify'yi gerçekçilik, hız ve uyum açısından karşılaştırarak iş akışınız için ideal AI ses klonlama ve dublaj çözümünü bulun."
+      "metaDescription": "2026'nın en iyi ses klonlama araçlarını keşfedin. F5‑TTS, ElevenLabs ve Curify'yi gerçekçilik, hız ve uyum açısından karşılaştırarak iş akışınız için ideal AI ses klonlama ve dublaj çözümünü bulun.",
+      "galleryTitle": "Ses A/B galerinizin doğru şekilde oluşturulması",
+      "galleryContent": "Güvenilir bir dinleme galerisi, paydaşların ticari değişimleri bir bakışta görmesine yardımcı olur.\n- Referans kaydı: her yerel hedef için ses sahibinizden 10-20 saniye temiz konuşma kaydedin; 48 kHz WAV; oda tonu eklenmiş. Dosyalarla birlikte onay belgelerini kaydedin.\n- Senaryo başına üçlü: her yerel için her test senaryosunda üç dosya oluşturun—Referans (insan), F5-TTS sıfırdan, ve Ticari TTS. Yayınlamadan önce ses seviyesini eşleştirin (-16 LUFS platformlar için).\n- Barındırma ve adlandırma: kayıpsız ana dosyaları saklayın ve 192 kbps AAC önizlemeleri yayınlayın. en_es_lesson1_ref.wav, en_es_lesson1_f5.wav, en_es_lesson1_com.wav gibi tutarlı bir şema kullanın.\n- Dinleme notları: yorumları spesifik tutun—patlayıcılar (p, b), sibilantlar (s, sh), nefes/gürültü eşiği ve prosodi hizalaması. Dudak senkronizasyonunu etkileyecek zamanlama uyumsuzluklarını işaretleyin.\n\nİki hızlı kılavuz: test ifadelerini 30 saniyenin altında tutun, kayma azaltmak için; WER karşılaştırmalarının elma-elma olması için senaryolar arasında noktalama işaretlerini ve sayıları normalize edin.",
+      "PipelineTitle": "YouTube, TikTok ve eğitim hatları için entegrasyon",
+      "PipelineContent": "Operasyon koltuğundan, çoğu hata model hatası değil—hat sorunlarıdır. İşte pragmatik bir entegrasyon modeli.\n\n- Parti vs akış: son karışım için parti renderları kullanın; etkileşimli inceleme için yalnızca akışı etkinleştirin. Yığınınız destekliyorsa ara fonem hizalamalarını önbelleğe alın.\n- Eşzamanlılık & kuyruklama: klonlama ile renderlama için GPU havuzlarını izole edin, böylece birindeki ani artış diğerini aç bırakmasın. İdempotent işler ve kontrol noktası ile yeniden başlatmaları kullanın.\n- Varlık hijyeni: standart örnekleme oranları (video için 48 kHz), dosya adlandırma, LUFS normalizasyonu ve yeniden düzenlemeleri sürdüren sahne başına tutacaklar.\n\nPlatform spesifikleri:\n\n- YouTube: çok dilli ses parçaları ve otomatik dublaj, inceleme kontrolleri ile desteklenir. Yaratıcılar, kanal düzeyinde otomatik dublajı etkinleştirebilir, her video için dil renderlarını önizleyebilir ve yayınlamadan önce incelemeyi seçebilir, **YouTube’un Otomatik Dublaj Yardımı (2026)** ve [**YouTube blogundaki ifadeci otomatik dublaj (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/) notlarında belirtildiği gibi.\n- YouTube'da açıklamalar: içerik anlamlı bir şekilde değiştirilirse veya sentetik olarak üretilirse ve gerçekçi görünüyorsa, yükleme sırasında açıklama yapmalısınız; yapmazsanız YouTube etiketleyebilir. **YouTube’un AI açıklama politikası (2026)**'ya bakın.\n- TikTok: çok dilli dağıtımı bugün ayrı yerelleştirilmiş yüklemeler olarak ele alın; resmi destek merkezleri yalnızca tek parça “Ses ekle” belgeliyor, [**TikTok’un Sesler Yardım sayfası (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds) üzerinden.",
+      "subtitleText": "Altyazılar ve dudak senkronizasyonu hizalaması ölçeklenebilir",
+      "SubtitleContent": "Çapraz dilli dublaj, zamanlama ve artikülasyona bağlıdır. Birkaç alışkanlık, çoğu görsel artefaktan kaçınmanıza yardımcı olur.\n\n- Sözlük ve telaffuz: her yerel için sözlükler ve fonetik ipuçları oluşturun; bunları tutarlı bir şekilde TTS aşamasına ve altyazı oluşturucunuza besleyin.\n- Fonem düzeyinde itici: zor kelimeler için duraklamaları kısaltın veya hızı birkaç yüzde ayarlayın, böylece ağız kapanmaları patlayıcılar ve affrikatlarla hizalanır.\n- Önce altyazılar, sonra dudak senkronizasyonu: doğru, insan tarafından gözden geçirilmiş altyazılarla başlayın; ardından video katmanında dudak senkronizasyonu bozulmasını uygulayın, ses katmanında değil.\n\nBu adımları birleştiren ekipler için, [**Curify**](https://www.curify-ai.com/en/tools) çok dilli altyazılar oluşturmak ve TTS sesiniz hazır olduğunda dudak senkronizasyonu uygulamak için kullanılabilir. 170'den fazla dili destekler ve yayınlamadan önce zamanlamayı kontrol etmek için tek bir yer sağlar. Hangi aracın iş akışınıza en uygun olduğunu kullanın; anahtar, gözden geçirmeyi merkezi hale getirmektir, böylece daha az zamanlama düzenlemesi gözden kaçabilir.",
+      "complianceTitle": "Gönderim yapabileceğiniz uyum ve köken",
+      "complianceContent": "Bu bölüm hukuki tavsiye değildir; yargı alanınız için danışmanlık alın. Bununla birlikte, yaygın, savunulabilir uygulamalar vardır.\n- Onay ve haklar: ses sahibi(ler)den açık yazılı onay alın; referans sesin kökenini belgeleyin. Bazı eyaletlerde, kamuya açıklama hakları ölümden sonra devam edebilir—avukatınız kapsamı ve süresini onaylayabilir.\n- Açıklamalar: sentetik veya anlamlı bir şekilde değiştirilmiş sesler için, gerektiğinde etiketleyin. YouTube gibi platformlar, yükleme sırasında açıklama yolları sağlar (yukarıdaki politika bağlantısına bakın).\n- Telefon uyarısı: ABD FCC, AI tarafından üretilen seslerin TCPA kapsamında “yapay” olduğunu ve önceden açık onay olmadan robokollarda yasadışı olduğunu belirtti. [**FCC’nin 2024 açıklayıcı kararı**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal) ve herhangi bir dış arama kampanyasının uygun onay ve senaryoları olduğundan emin olun.\n- Köken ve denetim: her render için istemleri, model sürümlerini, donanımı ve çözme parametrelerini kaydedin. Mümkünse, kökeni gömün (örneğin, C2PA manifestoları) veya neyi gönderdiğinizi ve ne zaman gönderdiğinizi kanıtlayabilmeniz için imzalı yan manifestoları saklayın. Her sürüm için hafif bir denetim paketi—senaryolar, yapılandırmalar, onay formları ve QC puanları—sorular ortaya çıktığında size yardımcı olacaktır.",
+      "TemplateTitle": "Kopyalayabileceğiniz şablonlar ve kontrol listeleri",
+      "TemplateContent": "Yayın kriterleri (gerekirse uyarlayın):- Kalite: WER ≤ yerel başına eşik; UTMOS (sistem düzeyi) kabul bandınız içinde; duyulabilir kesme yok; ağız kapanmaları kahraman çekimlerinde 2-3 kare içinde hizalanır.- Gecikme & maliyet: kararlı durum RTF SLA'nızı karşılar; maliyet/dk bütçe içinde.\n- Uyum: dosyada onay belgeleri; açıklamalar uygulandı; köken günlükleri arşiv için dışa aktarıldı. Dakika başına maliyet hesaplayıcısı için girdiler: \n- GPU $/saat (veya API $/1M karakter) - Ölçülen RTF ve ortalama klip uzunluğu \n- Dilde kelime/dakika ve karakter/kelime varsayımları \n- Eşzamanlılık seviyesi ve beklenen günlük hacim QC rubrik alıntısı (puan 1-5): anlaşılırlık, ton eşleşmesi, prosodi, sibilant/patlayıcı işleme, zamanlama hizalaması, gürültü eşiği ve genel doğallık. Yorumları eyleme geçirilebilir tutun—“00:07'de yumuşatılmış ‘s’; gürültüyü %10 azaltın” çok daha faydalıdır, “robotik ses çıkarıyor”dan.",
+      "ReferencesTitle": "Referanslar",
+      "ReferencesContent": "- Mimari ve kod: Bakımcıların belgeleri [**SWivid/F5‑TTS GitHub deposu**](https://github.com/SWivid/F5-TTS) (Mart 2026'da erişildi) ve [**OpenReview F5‑TTS makalesi (2025)**](https://openreview.net/forum?id=JiX2DuTkeU) akış eşleştirme TTS ve sıfırdan klonlama için temel sağlar.\n- Karşılaştırma yöntemleri: ByteDance’in [**seed‑tts‑eval kılavuzu (2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); Whisper büyük-v3 yapılandırma tartışmaları [**Whisper deposunda (2025)**](https://github.com/openai/whisper/discussions/1762); MOS benzeri puanlama [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22) aracılığıyla.\n- Platform politikaları: YouTube çok dilli ses ve inceleme akışı **Otomatik Dublaj Yardımı (2026)**; ifadeci otomatik dublaj genişlemesi [**YouTube blogunda (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/) tanımlanmıştır; AI açıklama gereksinimleri **YouTube’un politika sayfasında (2026)** özetlenmiştir; TikTok’un tek parça sesi [**Sesler Yardım sayfasında (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds) belgelenmiştir.\n- Uyum: FCC’nin AI sesleri ve robokollar üzerindeki duruşu [**2024 Açıklayıcı Karar**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal) üzerinde.\n- Fiyatlandırma referansları: [**Azure Speech (2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly (2026)**](https://aws.amazon.com/jp/polly/pricing/), [**ElevenLabs API (2026)**](https://elevenlabs.io/pricing/api) ve [**Google Cloud TTS fiyatlandırma indeksi**](https://cloud.google.com/text-to-speech/pricing) üzerindeki resmi oran belgeleri."
     },
     "f5TtsVoiceCloning": {
       "title": "F5-TTS Ses Klonlama: Profesyonel AI Ses Çözümleri",
@@ -436,6 +480,30 @@
       "ctaLink": "Curify'nin Kostüm Analiz Şablonlarını Deneyin",
       "conclusionTitle": "Sonuç",
       "conclusionContent": "Çin kostüm tarihi, malzeme bilimi, sosyal sinyalizasyon ve sanatsal ifade kombinleyen sofistike bir kültürel teknoloji sistemini temsil eder. Gelişmiş dijital belgeleme ve analiz yöntemleri aracılığıyla, bu mirası koruyabilirken, moda tasarımı, kültürel eğitim ve tarihsel araştırmalarda çağdaş uygulamaları mümkün kılabiliriz."
+    },
+    "nanoBananaPromptEcosystem": {
+      "title": "Nano Banana Prompt Ekosistemi",
+      "slug": "nano-banana-prompt-ecosystem",
+      "metaDescription": "Nano Banana Prompt Ekosisteminin, ürün odaklı SEO, yapılandırılmış istemler ve analiz destekli optimizasyon ile AI jeneratörleri oluşturmanıza nasıl yardımcı olduğunu öğrenin.",
+      "date": "12 Mart 2026",
+      "readTime": "10 dk okuma",
+      "intro": "Nano Banana Prompt Ekosisteminin AI içerik üretimini nasıl dönüştürdüğünü keşfedin. Ürün odaklı SEO stratejimiz ve ustaca tasarlanmış istem kütüphanemiz ile, daha yüksek sıralama yapan ve hedef kitlenizle derin bağ kuran içerikler oluşturacaksınız.",
+      "whatIsTitle": "Nano Banana Prompt Ekosistemi Nedir?",
+      "whatIsContent": "Nano Banana Prompt Ekosistemi, içerik üreticileri, pazarlamacılar ve geliştiriciler için tasarlanmış yüksek performanslı AI istemlerinin derlenmiş bir koleksiyonudur. Her istem, arama görünürlüğü, alaka düzeyi ve etkileşim için optimize edilmiştir, böylece AI tarafından üretilen içeriğiniz öne çıkar ve hedef okuyucularınızla rezonans kurar.",
+      "ecosystemTitle": "Tam İçerik Ekosistemi",
+      "ecosystemContent": "Ekosistemimiz, eğitim içeriği, kültürel miras, veri görselleştirme, yaratıcı medya ve teknik belgeler gibi çeşitli içerik kategorilerini kapsar. Her kategori, belirli kullanıcı niyetleri ve arama hedefleri ile stratejik olarak hizalanmıştır, böylece AI araçlarınız, çoklu nişler arasında amaçlı, keşfedilebilir ve değer odaklı içerikler üretebilir.",
+      "seoTitle": "SEO Odaklı İçerik Stratejisi",
+      "seoContent": "SEO yaklaşımımız, anahtar kelime araştırması, kullanıcı niyet analizi ve içerik optimizasyonunu her isteme entegre eder. Ekosistem, AI tarafından üretilen içeriğinizin hedef anahtar kelimeler için doğal olarak sıralanmasını sağlarken, okunabilirlik ve etkileşimi de korur.",
+      "generatorTitle": "AI Destekli İçerik Jeneratörleri",
+      "generatorContent": "Yapılandırılmış istem şablonlarımızla karmaşık AI içerik jeneratörleri oluşturun. Her jeneratör, belirli içerik türleri için optimize edilmiştir, böylece tüm içerik kanallarınızda tutarlı çıktı kalitesi ve marka uyumu sağlanır.",
+      "toolsTitle": "Dahil Olan Araçlar ve Kaynaklar",
+      "toolsContent": "İstem şablonları, optimizasyon kılavuzları, performans analitiği panelleri ve ekip işbirliği araçları dahil olmak üzere tam kaynak setimizi açığa çıkarın. İçerik performansını takip edin, sıralama iyileştirmelerini ölçün ve veri destekli içgörülerle stratejinizi geliştirin, böylece içerik üretim sisteminiz sürekli evrim geçirir.",
+      "curifyTitle": "Curify, İstem Stratejinizi Nasıl Geliştirir",
+      "curifyContent": "Curify, Nano Banana istemleri ile sorunsuz bir şekilde entegre olur, gelişmiş AI modellerini yapılandırılmış içerik zekası ile bağlar. Platform, ekiplerin istem kullanımını oluşturmasına, özelleştirmesine ve ölçeklendirmesine yardımcı olurken, performansı takip eder ve tüm projelerde tutarlı içerik kalitesini korur. Gerçek zamanlı analitik ve makine öğrenimi destekli optimizasyon önerileri alın.",
+      "ctaText": "AI içerik stratejinizi dönüştürmeye hazır mısınız?",
+      "ctaLink": "Nano Banana ile başlayın",
+      "conclusionTitle": "AI İçerik Stratejinizi Dönüştürmeye Hazır mısınız?",
+      "conclusionContent": "Nano Banana Prompt Ekosistemi, başarılı olmanız için gereken her şeyi sağlar: ürün odaklı bir SEO çerçevesi, ustaca mühendislik yapılmış bir istem kütüphanesi ve güçlü analitik araçlar. AI fikirlerinizi yüksek performanslı içeriklere dönüştürün; sıralama, etkileşim ve dönüşüm sağlayın. Yolculuğunuza bugün başlayın ve yapılandırılmış, SEO optimize edilmiş istemlerin neler yapabileceğini görün."
     }
   },
   "aeVsComfyUi": {
@@ -1027,7 +1095,12 @@
         "shots": "\"[nesne Nesne],[nesne Nesne]\""
       },
       "benefitsTitle": "Temel Faydalar",
-      "benefits": "\"<strong>Efektif Düzenleme:</strong> Saatlerce görüntüyü tarayarak değil, doğrudan herhangi bir sahneye veya çekime atlayın,<strong>Akıllı Arama:</strong> Metaverilerden ziyade görsel unsurlara dayalı içerik bulun,<strong>Tutarlı Kalite:</strong> Projede görsel tutarlılığı tanımlayın ve koruyun,<strong>Veriye Dayalı Kararlar:</strong> İçerik yapınıza ve tempoya dair içgörüler edinin\""
+      "benefits": [
+        "<strong>Verimli Düzenleme:</strong> Görüntüleri aramak için saatler harcamadan doğrudan herhangi bir sahneye veya çekime atlayın.",
+        "<strong>Akıllı Arama:</strong> İçeriği yalnızca meta verilerle değil, görsel unsurlara dayalı olarak bulun.",
+        "<strong>Tutarlı Kalite:</strong> Projeniz boyunca görsel tutarlılığı tanımlayın ve koruyun.",
+        "<strong>Veri Tabanlı Kararlar:</strong> İçeriğinizin yapısı ve temposu hakkında içgörüler edinin."
+      ]
     },
     "conclusion": {
       "title": "Yapay Zeka ile Video Prodüksiyonunu Dönüştürmek",
@@ -1100,7 +1173,13 @@
     },
     "benefits": {
       "subtitle": "NEDEN BİZİM ÇÖZÜMÜMÜZÜ SEÇMELİSİNİZ",
-      "title": "Yapay Zeka Destekli Sahne Analizinin Gücü"
+      "title": "Yapay Zeka Destekli Sahne Analizinin Gücü",
+      "items": [
+        "Saatlerce manuel sahne kaydı ve analizi yapmaktan tasarruf edin.",
+        "Akıllı sahne organizasyonu ile düzenleme verimliliğini artırın.",
+        "AI tarafından üretilen meta verilerle içerik keşfini geliştirin.",
+        "Video projelerinizde tutarlı kaliteyi koruyun."
+      ]
     },
     "integration": {
       "title": "Kolay Entegrasyon",
@@ -1321,12 +1400,38 @@
       "buildingTools": {
         "title": "Araçları İnşa Etmek (Mühendis/Mimar Zihniyeti)",
         "subtitle": "Yapay zekayı sadece kullanmayın; geliştirin.",
-        "points": "\"[nesne Nesne],[nesne Nesne],[nesne Nesne]\""
+        "points": [
+          {
+            "title": "Model Değerlendirme & Yönetimi",
+            "content": "AI çıktısı bir mal haline geldikçe, 'iyi' bir sonucun neye benzediğini tanımlayabilen kişi odadaki en değerli kişidir. Uzmanlaşmış değerlendirme çerçevelerine odaklanın (Finans'taki risk ağırlığı gibi)."
+          },
+          {
+            "title": "Alan İnce Ayarı",
+            "content": "LLM'lere belirli iş bilgilerini enjekte etmek için LoRA veya RAG gibi teknikleri ustalaşmak."
+          },
+          {
+            "title": "Otomasyon",
+            "content": "'Sanal Analistler' veya otomatik deney boru hatları gibi iç girişimlere öncülük edin."
+          }
+        ]
       },
       "leveragingTools": {
         "title": "Araçlardan Yararlanmak (Stratejist Zihniyeti)",
         "subtitle": "Çıktınızı 10 katına çıkarmak için yapay zekayı kullanın, böylece insanların en iyi yaptığı şeye odaklanabilirsiniz.",
-        "points": "\"[nesne Nesne],[nesne Nesne],[nesne Nesne]\""
+        "points": [
+          {
+            "title": "Alan Uzmanlığı",
+            "content": "AI 'nasıl' yapacağını biliyor, ama siz 'neden' yaptığını biliyorsunuz. Derin iş anlayışı, AI'nın eksik olduğu doğru bağlamı sağlamanızı sağlar."
+          },
+          {
+            "title": "Eleştirel Düşünme & Deney",
+            "content": "AI kod üretebilirken, insan DS becerileri hala hipotez testi, nedensel çıkarım ve 'dağınık' gerçek dünya verilerini yorumlama için temeldir."
+          },
+          {
+            "title": "İletişim & Etki",
+            "content": "Karmaşık verileri bir iş hikayesine çevirebilme ve paydaş güveni oluşturma yeteneği, 'yumuşak' bir beceri olarak 'sert' bir gereklilik haline geldi."
+          }
+        ]
       }
     },
     "bottomLine": {

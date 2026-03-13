@@ -141,6 +141,38 @@
         "readTime": "9 min read",
         "tag": "AI Audio",
         "image": "/images/voiceclone.webp"
+      },
+      {
+        "slug": "evolution-timelines-visualization",
+        "title": "진화 타임라인: AI로 역사적 발전을 시각화하는 방법",
+        "date": "2026년 2월 25일",
+        "readTime": "10분 읽기",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg"
+      },
+      {
+        "slug": "chinese-costume-history-infographic",
+        "title": "중국 의상 역사: 당나라에서 현대 패션까지",
+        "date": "2026년 2월 26일",
+        "readTime": "15분 읽기",
+        "tag": "문화",
+        "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg"
+      },
+      {
+        "slug": "creative-ai-tools-websites",
+        "title": "영감을 끝내는 6개의 창의적 AI 도구 웹사이트",
+        "date": "2026년 3월 10일",
+        "readTime": "8분 읽기",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/sevenimages.webp"
+      },
+      {
+        "slug": "nano-banana-prompt-ecosystem",
+        "title": "Nano Banana 프롬프트 생태계",
+        "date": "2026년 3월 12일",
+        "readTime": "10분 읽기",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nanobannanapromptblog.png"
       }
     ],
     "translateYoutubevideo": {
@@ -270,7 +302,19 @@
       "conclusionTitle": "결론",
       "conclusionContent": "올바른 음성 복제 도구는 귀하의 특정 요구, 예산 및 윤리적 고려에 따라 다릅니다.",
       "seoKeywords": "2026년 음성 클로닝 도구, 최고의 AI 음성 클로닝 소프트웨어, F5‑TTS 대 ElevenLabs, Curify 음성 클로닝, AI 음성 합성 비교, 오픈 소스 TTS, 제로샷 음성 클로닝, 신경 음성 합성 벤치마크, 더빙 자동화 도구, 다국어 음성 현지화",
-      "metaDescription": "2026년 최고의 음성 클로닝 도구를 발견하세요. F5‑TTS, ElevenLabs 및 Curify를 현실감, 속도 및 준수 측면에서 비교하여 워크플로우에 적합한 AI 음성 클로닝 및 더빙 솔루션을 찾으세요."
+      "metaDescription": "2026년 최고의 음성 클로닝 도구를 발견하세요. F5‑TTS, ElevenLabs 및 Curify를 현실감, 속도 및 준수 측면에서 비교하여 워크플로우에 적합한 AI 음성 클로닝 및 더빙 솔루션을 찾으세요.",
+      "galleryTitle": "오디오 A/B 갤러리를 올바르게 구축하세요",
+      "galleryContent": "신뢰할 수 있는 청취 갤러리는 이해관계자가 한눈에 트레이드오프를 이해하는 데 도움을 줍니다.\n- 참조 캡처: 각 로케일 대상에서 음성 소유자로부터 10-20초의 깨끗한 음성을 녹음하세요; 48 kHz WAV; 룸톤 패딩. 파일과 함께 동의 문서를 기록하세요.\n- 스크립트당 트리플릿: 각 로케일의 각 테스트 스크립트에 대해 세 개의 파일을 렌더링하세요—참조(인간), F5-TTS 제로샷, 상업적 TTS. 게시 전에 음량을 일치시키세요 (-16 LUFS for platforms).\n- 호스팅 및 명명: 무손실 마스터를 저장하고 192 kbps AAC 미리보기를 게시하세요. en_es_lesson1_ref.wav, en_es_lesson1_f5.wav, en_es_lesson1_com.wav와 같은 일관된 스킴을 사용하세요.\n- 청취 노트: 댓글을 구체적으로 유지하세요—폭발음(p, b), 치찰음(s, sh), 호흡/소음 바닥, 그리고 운율 정렬. 립싱크에 영향을 줄 타이밍 불일치를 표시하세요.\n\n두 가지 빠른 가이드라인: 드리프트를 줄이기 위해 테스트 발화를 30초 이하로 유지하세요; 스크립트 전반에 걸쳐 구두점과 숫자를 정규화하여 WER 비교가 사과와 사과가 되도록 하세요.",
+      "PipelineTitle": "YouTube, TikTok 및 교육 파이프라인 통합",
+      "PipelineContent": "운영 관점에서 대부분의 실패는 모델 실패가 아니라 파이프라인 문제입니다. 실용적인 통합 패턴은 다음과 같습니다.\n\n- 배치 대 스트리밍: 최종 믹스를 위해 배치 렌더를 사용하세요; 인터랙티브 리뷰를 위해서만 스트리밍을 활성화하세요. 스택이 지원하는 경우 중간 음소 정렬을 캐시하세요.\n- 동시성 및 대기열: 클로닝과 렌더링을 위해 GPU 풀을 분리하여 한쪽의 스파이크가 다른 쪽을 굶기지 않도록 하세요. 멱등 작업과 체크포인트 이력을 사용하세요.\n- 자산 위생: 표준화된 샘플 비율(비디오의 경우 48 kHz), 파일 명명, LUFS 정규화 및 재편집을 견디는 장면별 핸들을 유지하세요.\n\n플랫폼 세부사항:\n\n- YouTube: 다국어 오디오 트랙 및 자동 더빙은 리뷰 제어와 함께 지원됩니다. 제작자는 채널 수준의 자동 더빙을 활성화하고, 비디오별 언어 렌더를 미리 보고, 게시 전에 검토할 수 있습니다. 이는 **YouTube의 자동 더빙 도움말(2026)** 및 [**YouTube 블로그의 표현적 자동 더빙(2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/)에 설명되어 있습니다.\n- YouTube의 공개: 콘텐츠가 의미 있게 변경되거나 합성 생성되어 현실적으로 보일 경우, 업로드 중에 공개해야 합니다; 그렇지 않으면 YouTube가 라벨을 붙일 수 있습니다. **YouTube의 AI 공개 정책(2026)**을 참조하세요.\n- TikTok: 오늘날 다국어 배포를 별도의 현지화된 업로드로 처리하세요; 공식 지원 센터는 단일 트랙 “사운드 추가”만 문서화합니다. [**TikTok의 사운드 도움말 페이지(2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds)를 참조하세요.",
+      "subtitleText": "대규모 자막 및 립싱크 정렬",
+      "SubtitleContent": "교차 언어 더빙은 타이밍과 발음에 따라 생존합니다. 몇 가지 습관이 대부분의 시각적 아티팩트를 방지합니다.\n\n- 용어집 및 발음: 각 로케일에 대한 용어집과 발음 힌트를 유지하세요; 이를 TTS 단계와 자막 생성기에 일관되게 제공하세요.\n- 음소 수준의 조정: 까다로운 단어에 대해, 입술이 폭발음 및 파열음과 일치하도록 몇 퍼센트의 속도를 조정하거나 일시 중지를 줄이세요.\n- 자막 먼저, 그 다음 립싱크: 정확하고 인간이 검토한 자막으로 시작하세요; 그런 다음 비디오 레이어에서 립싱크 왜곡을 적용하세요, 오디오가 아니라.\n\n이 단계들을 통합하는 팀을 위해, [**Curify**](https://www.curify-ai.com/en/tools)를 사용하여 다국어 자막을 생성하고 TTS 오디오가 준비된 후 립싱크를 적용할 수 있습니다. 170개 이상의 언어를 지원하며 게시 전에 타이밍을 확인할 수 있는 단일 장소를 제공합니다. 파이프라인에 가장 적합한 도구를 사용하세요; 핵심은 검토를 중앙 집중화하여 타이밍 수정이 누락되지 않도록 하는 것입니다.",
+      "complianceTitle": "배송할 수 있는 준수 및 출처",
+      "complianceContent": "이 섹션은 법률 자문이 아닙니다; 귀하의 관할권에 대해 변호사와 상담하세요. 그렇긴 하지만, 일반적이고 방어 가능한 관행이 있습니다.\n- 동의 및 권리: 음성 소유자로부터 명시적인 서면 동의를 얻으세요; 참조 오디오의 출처를 문서화하세요. 일부 주에서는 사망 후에도 공개 권리가 지속될 수 있습니다—귀하의 변호사가 범위와 기간을 확인할 수 있습니다.\n- 공개: 합성 또는 의미 있게 변경된 음성에 대해 요구되는 경우 라벨을 붙이세요. YouTube와 같은 플랫폼은 업로드 중에 공개 경로를 제공합니다(위 정책 링크 참조).\n- 전화 주의: 미국 FCC는 AI 생성 음성이 TCPA에 따라 “인공적”이며 사전 명시적 동의 없이 로보콜에서 불법이라고 판결했습니다. [**FCC의 2024 선언적 판결**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal)을 참조하고 모든 아웃바운드 전화 캠페인이 적절한 동의 및 스크립트를 갖추도록 하세요.\n- 출처 및 감사: 각 렌더에 대한 프롬프트, 모델 버전, 하드웨어 및 디코딩 매개변수를 기록하세요. 가능하다면 출처를 포함하거나(예: C2PA 매니페스트) 서명된 사이드카 매니페스트를 유지하여 무엇을 배송했는지와 언제 배송했는지를 증명할 수 있도록 하세요. 각 릴리스를 위한 경량 감사 번들—스크립트, 구성, 동의서 및 QC 점수—는 몇 달 후 질문이 발생할 때 유용합니다.",
+      "TemplateTitle": "복사할 수 있는 템플릿 및 체크리스트",
+      "TemplateContent": "릴리스 기준(필요에 따라 조정): - 품질: WER ≤ 귀하의 기준에 따라 로케일별; UTMOS(시스템 수준)가 수용 범위 내; 들리는 클리핑 없음; 입술 닫힘이 주요 샷에서 2-3프레임 이내에 정렬됨. - 대기 시간 및 비용: 정상 상태 RTF가 귀하의 SLA를 충족; 비용/분이 예산 범위 내. - 준수: 파일에 동의 문서가 있음; 공개가 적용됨; 출처 로그가 아카이브로 내보내짐. 분당 비용 계산기를 위한 입력: - GPU $/시간 (또는 API $/1M 문자) - 측정된 RTF 및 평균 클립 길이 - 언어별 분당 단어 및 문자/단어 가정 - 동시성 수준 및 예상 일일 볼륨 QC 루브릭 발췌(점수 1-5): 이해도, 음색 일치, 운율, 치찰음/폭발음 처리, 타이밍 정렬, 소음 바닥 및 전반적인 자연스러움. 댓글을 실행 가능하게 유지하세요—“00:07에서 ‘s’ 부드럽게; 노이즈를 10% 줄이세요”는 “로봇처럼 들린다”보다 훨씬 유용합니다.",
+      "ReferencesTitle": "참조",
+      "ReferencesContent": "- 아키텍처 및 코드: [**SWivid/F5‑TTS GitHub 리포지토리**](https://github.com/SWivid/F5-TTS) (2026년 3월 접근) 및 [**OpenReview F5‑TTS 논문(2025)**](https://openreview.net/forum?id=JiX2DuTkeU)는 흐름 일치 TTS 및 제로샷 클로닝의 기초를 제공합니다.\n- 벤치마킹 방법: ByteDance의 [**seed‑tts‑eval 가이드(2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); Whisper large‑v3 구성 논의는 [**Whisper 리포지토리(2025)**](https://github.com/openai/whisper/discussions/1762)에서; MOS와 유사한 점수는 [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22)를 통해.\n- 플랫폼 정책: YouTube 다국어 오디오 및 리뷰 흐름은 **자동 더빙 도움말(2026)**에; 표현적 자동 더빙 확장은 [**YouTube 블로그(2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/)에 설명되어 있습니다; AI 공개 요구 사항은 **YouTube 정책 페이지(2026)**에 요약되어 있습니다; TikTok의 단일 트랙 오디오는 [**사운드 도움말 페이지(2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds)에서 문서화되어 있습니다.\n- 준수: AI 음성과 로보콜에 대한 FCC의 입장은 [**2024 선언적 판결**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal)에서 확인할 수 있습니다.\n- 가격 참조: [**Azure Speech(2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly(2026)**](https://aws.amazon.com/jp/polly/pricing/), [**ElevenLabs API(2026)**](https://elevenlabs.io/pricing/api), 및 [**Google Cloud TTS 가격 지수**](https://cloud.google.com/text-to-speech/pricing)에 대한 공식 요금 문서."
     },
     "f5TtsVoiceCloning": {
       "title": "F5-TTS 음성 복제: 전문 AI 음성 솔루션",
@@ -436,6 +480,30 @@
       "ctaLink": "Curify의 의상 분석 템플릿을 사용해 보세요",
       "conclusionTitle": "결론",
       "conclusionContent": "중국 의상 역사는 물질 과학, 사회적 신호 및 예술적 표현을 결합한 정교한 문화 기술 시스템을 나타냅니다. 고급 디지털 문서화 및 분석 방법을 통해 우리는 이 유산을 보존하면서 패션 디자인, 문화 교육 및 역사 연구에서 현대적 응용을 가능하게 할 수 있습니다."
+    },
+    "nanoBananaPromptEcosystem": {
+      "title": "Nano Banana 프롬프트 생태계",
+      "slug": "nano-banana-prompt-ecosystem",
+      "metaDescription": "Nano Banana 프롬프트 생태계가 제품 중심 SEO, 구조화된 프롬프트 및 분석 기반 최적화를 통해 AI 생성기를 구축하는 데 어떻게 도움이 되는지 알아보세요.",
+      "date": "2026년 3월 12일",
+      "readTime": "10분 읽기",
+      "intro": "Nano Banana 프롬프트 생태계가 AI 콘텐츠 생성 방식을 어떻게 변화시키는지 알아보세요. 제품 중심의 SEO 전략과 전문적으로 설계된 프롬프트 라이브러리를 통해, 더 높은 순위를 차지하고 청중과 깊이 연결되는 콘텐츠를 제작할 수 있습니다.",
+      "whatIsTitle": "Nano Banana 프롬프트 생태계란 무엇인가요?",
+      "whatIsContent": "Nano Banana 프롬프트 생태계는 콘텐츠 제작자, 마케터 및 개발자를 위해 설계된 고성능 AI 프롬프트의 큐레이션된 컬렉션입니다. 각 프롬프트는 검색 가시성, 관련성 및 참여를 최적화하여 AI 생성 콘텐츠가 돋보이고 목표 독자와 공감할 수 있도록 합니다.",
+      "ecosystemTitle": "완전한 콘텐츠 생태계",
+      "ecosystemContent": "우리의 생태계는 교육 콘텐츠, 문화 유산, 데이터 시각화, 창의적 미디어 및 기술 문서 등 다양한 콘텐츠 카테고리를 포함합니다. 각 카테고리는 특정 사용자 의도 및 검색 목표와 전략적으로 정렬되어 있어 AI 도구가 여러 틈새에서 목적이 있고 발견 가능하며 가치 중심의 콘텐츠를 생성할 수 있습니다.",
+      "seoTitle": "SEO 기반 콘텐츠 전략",
+      "seoContent": "우리의 SEO 접근 방식은 키워드 연구, 사용자 의도 분석 및 콘텐츠 최적화를 모든 프롬프트에 통합합니다. 생태계는 AI 생성 콘텐츠가 자연스럽게 목표 키워드에 대해 순위를 매기면서 가독성과 참여를 유지하도록 보장합니다.",
+      "generatorTitle": "AI 기반 콘텐츠 생성기",
+      "generatorContent": "구조화된 프롬프트 템플릿으로 정교한 AI 콘텐츠 생성기를 구축하세요. 각 생성기는 특정 콘텐츠 유형에 최적화되어 있어 모든 콘텐츠 채널에서 일관된 출력 품질과 브랜드 정렬을 보장합니다.",
+      "toolsTitle": "포함된 도구 및 리소스",
+      "toolsContent": "프롬프트 템플릿, 최적화 가이드, 성과 분석 대시보드 및 팀 협업 도구를 포함한 완전한 리소스 세트를 잠금 해제하세요. 콘텐츠 성과를 추적하고, 순위 개선을 측정하며, 데이터 기반 통찰력을 통해 전략을 정제하여 콘텐츠 생성 시스템을 지속적으로 발전시키세요.",
+      "curifyTitle": "Curify가 귀하의 프롬프트 전략을 어떻게 향상시키는가",
+      "curifyContent": "Curify는 Nano Banana 프롬프트와 원활하게 통합되어 고급 AI 모델과 구조화된 콘텐츠 인텔리전스를 연결합니다. 이 플랫폼은 팀이 프롬프트 사용을 구축, 사용자 정의 및 확장하는 데 도움을 주며 성과를 추적하고 모든 프로젝트에서 일관된 콘텐츠 품질을 유지합니다. 머신 러닝 기반의 실시간 분석 및 최적화 제안을 받으세요.",
+      "ctaText": "AI 콘텐츠 전략을 변혁할 준비가 되셨나요?",
+      "ctaLink": "Nano Banana로 시작하세요",
+      "conclusionTitle": "AI 콘텐츠 전략을 변혁할 준비가 되셨나요?",
+      "conclusionContent": "Nano Banana 프롬프트 생태계는 성공에 필요한 모든 것을 제공합니다: 제품 중심의 SEO 프레임워크, 전문적으로 설계된 프롬프트 라이브러리 및 강력한 분석 도구. AI 아이디어를 높은 성과를 내는 콘텐츠로 전환하여 순위를 매기고, 참여시키고, 전환하세요. 오늘 여정을 시작하고 구조화된 SEO 최적화 프롬프트가 가져오는 차이를 확인하세요."
     }
   },
   "aeVsComfyUi": {
@@ -1105,7 +1173,13 @@
     },
     "benefits": {
       "subtitle": "우리의 솔루션을 선택하는 이유",
-      "title": "AI 기반 장면 분석의 힘"
+      "title": "AI 기반 장면 분석의 힘",
+      "items": [
+        "수동 장면 기록 및 분석에 소요되는 시간을 절약하세요",
+        "지능적인 장면 조직으로 편집 효율성을 향상시키세요",
+        "AI 생성 메타데이터로 콘텐츠 발견을 향상시키세요",
+        "비디오 프로젝트 전반에 걸쳐 일관된 품질을 유지하세요"
+      ]
     },
     "integration": {
       "title": "쉬운 통합",
@@ -1235,12 +1309,38 @@
       "buildingTools": {
         "title": "도구 구축(Engineer/Architect 사고방식)",
         "subtitle": "AI만 사용하지 마세요. 그것을 개선하십시오.",
-        "points": "\"[object Object],[object Object],[object Object]\" -> \"[object Object],[object Object],[object Object]\""
+        "points": [
+          {
+            "title": "모델 평가 및 거버넌스",
+            "content": "AI 출력이 상품화됨에 따라, '좋은' 결과가 무엇인지 정의할 수 있는 사람이 가장 가치 있는 사람입니다. 전문화된 평가 프레임워크(예: 금융의 위험 가중치)에 집중하세요."
+          },
+          {
+            "title": "도메인 미세 조정",
+            "content": "특정 비즈니스 지식을 LLM에 주입하기 위한 LoRA 또는 RAG와 같은 기술을 마스터합니다."
+          },
+          {
+            "title": "자동화",
+            "content": "'가상 분석가' 또는 자동화된 실험 파이프라인과 같은 내부 이니셔티브를 주도합니다."
+          }
+        ]
       },
       "leveragingTools": {
         "title": "도구 활용(전략가적 사고방식)",
         "subtitle": "AI를 사용하여 생산량을 10배로 늘리면 인간이 가장 잘하는 일에 집중할 수 있습니다.",
-        "points": "\"[object Object],[object Object],[object Object]\" -> \"[object Object],[object Object],[object Object]\""
+        "points": [
+          {
+            "title": "도메인 전문성",
+            "content": "AI는 '어떻게' 하는지 알지만, 당신은 '왜' 하는지 압니다. 깊은 비즈니스 이해는 AI가 부족한 올바른 맥락을 제공할 수 있게 합니다."
+          },
+          {
+            "title": "비판적 사고 및 실험",
+            "content": "AI가 코드를 생성할 수 있지만, 인간의 데이터 과학 기술은 여전히 가설 테스트, 인과 추론 및 '어지러운' 실제 데이터를 해석하는 데 핵심적입니다."
+          },
+          {
+            "title": "커뮤니케이션 및 영향력",
+            "content": "복잡한 데이터를 비즈니스 스토리로 변환하고 이해관계자의 신뢰를 구축하는 능력은 '부드러운' 기술이지만 '단단한' 요구 사항이 되었습니다."
+          }
+        ]
       }
     },
     "bottomLine": {

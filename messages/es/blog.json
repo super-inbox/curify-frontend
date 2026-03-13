@@ -141,6 +141,38 @@
         "readTime": "8 min de lectura",
         "tag": "Accesibilidad",
         "image": "/images/aslvideov2.webp"
+      },
+      {
+        "slug": "evolution-timelines-visualization",
+        "title": "Líneas de tiempo de evolución: Cómo visualizar la progresión histórica con IA",
+        "date": "25 de febrero de 2026",
+        "readTime": "10 min de lectura",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg"
+      },
+      {
+        "slug": "chinese-costume-history-infographic",
+        "title": "Historia del traje chino: Desde la dinastía Tang hasta la moda moderna",
+        "date": "26 de febrero de 2026",
+        "readTime": "15 min de lectura",
+        "tag": "Cultura",
+        "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg"
+      },
+      {
+        "slug": "creative-ai-tools-websites",
+        "title": "6 sitios web de herramientas creativas y de IA para acabar con el agotamiento de inspiración",
+        "date": "10 de marzo de 2026",
+        "readTime": "8 min de lectura",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/sevenimages.webp"
+      },
+      {
+        "slug": "nano-banana-prompt-ecosystem",
+        "title": "Ecosistema de Prompts de Nano Banana",
+        "date": "12 de marzo de 2026",
+        "readTime": "10 min de lectura",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nanobannanapromptblog.png"
       }
     ],
     "translateYoutubevideo": {
@@ -270,7 +302,19 @@
       "conclusionTitle": "Conclusión",
       "conclusionContent": "La herramienta de clonación de voz adecuada depende de tus necesidades específicas, presupuesto y consideraciones éticas.",
       "seoKeywords": "herramientas de clonación de voz 2026, mejor software de clonación de voz AI, F5‑TTS vs ElevenLabs, clonación de voz Curify, comparación de síntesis de voz AI, TTS de código abierto, clonación de voz de cero disparos, benchmarks de síntesis de voz neural, herramientas de automatización de doblaje, localización de voz multilingüe",
-      "metaDescription": "Descubre las mejores herramientas de clonación de voz de 2026. Compara F5‑TTS, ElevenLabs y Curify en realismo, velocidad y cumplimiento para encontrar la solución ideal de clonación de voz y doblaje AI para tu flujo de trabajo."
+      "metaDescription": "Descubre las mejores herramientas de clonación de voz de 2026. Compara F5‑TTS, ElevenLabs y Curify en realismo, velocidad y cumplimiento para encontrar la solución ideal de clonación de voz y doblaje AI para tu flujo de trabajo.",
+      "galleryTitle": "Construye tu galería de audio A/B de la manera correcta",
+      "galleryContent": "Una galería de escucha creíble ayuda a los interesados a percibir los compromisos de un vistazo.\n- Captura de referencia: graba de 10 a 20 segundos de habla clara de tu propietario de voz por cada localidad objetivo; 48 kHz WAV; con tono de sala. Registra los artefactos de consentimiento junto a los archivos.\n- Tripletas por guion: para cada guion de prueba en cada localidad, genera tres archivos: Referencia (humano), F5-TTS cero-shot y TTS Comercial. Igualar el volumen (-16 LUFS para plataformas) antes de publicar.\n- Alojamiento y nombramiento: almacena masters sin pérdida y publica avances de 192 kbps AAC. Usa un esquema consistente como en_es_leccion1_ref.wav, en_es_leccion1_f5.wav, en_es_leccion1_com.wav.\n- Notas de escucha: mantén los comentarios específicos: explosiones (p, b), sibilantes (s, sh), piso de respiración/ruido y alineación de prosodia. Marca desajustes de tiempo que afectarán la sincronización labial.\n\nDos pautas rápidas: mantén las expresiones de prueba por debajo de 30 segundos para reducir el desvío; normaliza la puntuación y los números en todos los guiones para que las comparaciones de WER sean manzanas con manzanas.",
+      "PipelineTitle": "Integración para YouTube, TikTok y pipelines educativos",
+      "PipelineContent": "Desde el asiento de operaciones, la mayoría de los fracasos no son fallos del modelo, son problemas de pipeline. Aquí hay un patrón de integración pragmático.\n\n- Lote vs streaming: usa renders por lotes para la mezcla final; habilita streaming solo para revisión interactiva. Almacena alineaciones intermedias de fonemas si tu stack lo soporta.\n- Concurrencia y encolado: aísla grupos de GPU para clonación vs renderizado para que los picos en uno no agoten al otro. Usa trabajos idempotentes y reanudaciones con puntos de control.\n- Higiene de activos: tasas de muestreo estandarizadas (48 kHz para video), nombramiento de archivos, normalización de LUFS y manejadores por escena que sobrevivan a las re-ediciones.\n\nEspecificaciones de la plataforma:\n\n- YouTube: se admiten pistas de audio multilingües y auto-doblaje con controles de revisión. Los creadores pueden habilitar el auto-doblaje a nivel de canal, previsualizar renders de idioma por video y optar por revisar antes de publicar, como se detalla en **Ayuda de Doblaje Automático de YouTube (2026)** y las notas de expansión en [**el blog de YouTube sobre doblaje automático expresivo (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/).\n- Divulgaciones en YouTube: cuando el contenido se altera de manera significativa o se genera sintéticamente y parece realista, debes divulgarlo durante la carga; YouTube puede etiquetar si no lo haces. Consulta **la política de divulgación de IA de YouTube (2026)**.\n- TikTok: trata la distribución multilingüe como cargas localizadas separadas hoy; los centros de soporte oficiales solo documentan “Agregar sonido” de pista única, según [**la página de ayuda de sonidos de TikTok (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds).",
+      "subtitleText": "Subtítulos y alineación de sincronización labial a gran escala",
+      "SubtitleContent": "El doblaje cruzado vive o muere por el tiempo y la articulación. Algunos hábitos previenen la mayoría de los artefactos visuales.\n\n- Glosario y pronunciación: mantén glosarios por localidad y pistas fonéticas; aliméntalos de manera consistente a la etapa de TTS y a tu generador de subtítulos.\n- Empujones a nivel de fonema: para palabras difíciles, acorta las pausas o ajusta el ritmo unos pocos por ciento para que los cierres labiales se alineen con las explosiones y africadas.\n- Subtítulos primero, luego sincronización labial: comienza con subtítulos precisos, revisados por humanos; luego aplica la deformación de sincronización labial en la capa de video, no en el audio.\n\nPara equipos que consolidan estos pasos, [**Curify**](https://www.curify-ai.com/en/tools) se puede usar para generar subtítulos multilingües y aplicar sincronización labial después de que tu audio TTS esté listo. Soporta más de 170 idiomas y proporciona un solo lugar para verificar el tiempo antes de publicar. Usa cualquier herramienta que se ajuste mejor a tu pipeline; la clave es centralizar la revisión para que menos ediciones de tiempo se pierdan.",
+      "complianceTitle": "Cumplimiento y procedencia que puedes enviar",
+      "complianceContent": "Esta sección no es asesoría legal; consulta a un abogado para tu jurisdicción. Dicho esto, hay prácticas comunes y defendibles.\n- Consentimiento y derechos: obtén consentimiento explícito por escrito de los propietarios de la voz; documenta la procedencia del audio de referencia. Los derechos de publicidad pueden persistir más allá de la muerte en algunos estados; tu abogado puede confirmar el alcance y el término.\n- Divulgaciones: para voces sintéticas o significativamente alteradas, etiqueta donde sea necesario. Plataformas como YouTube proporcionan caminos de divulgación durante la carga (consulta el enlace de política anterior).\n- Precaución telefónica: la FCC de EE. UU. dictaminó que las voces generadas por IA son “artificiales” bajo la TCPA e ilegales en llamadas automáticas sin consentimiento expreso previo. Consulta [**la resolución declarativa de la FCC de 2024**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal) y asegúrate de que cualquier campaña de llamadas salientes tenga el consentimiento y los guiones apropiados.\n- Procedencia y auditoría: registra prompts, versiones de modelos, hardware y parámetros de decodificación para cada renderizado. Donde sea posible, incrusta la procedencia (por ejemplo, manifiestos C2PA) o guarda manifiestos de lado firmados para que puedas probar lo que enviaste y cuándo. Un paquete de auditoría ligero para cada lanzamiento: guiones, configuraciones, formularios de consentimiento y puntajes de QC, te salvará cuando surjan preguntas meses después.",
+      "TemplateTitle": "Plantillas y listas de verificación que puedes copiar",
+      "TemplateContent": "Criterios de lanzamiento (adapta según sea necesario):- Calidad: WER ≤ tu umbral por localidad; UTMOS (nivel del sistema) dentro de tu banda de aceptación; sin recortes audibles; los cierres labiales se alinean dentro de 2-3 fotogramas en tomas principales.- Latencia y costo: el RTF en estado estable cumple con tu SLA; costo/minuto dentro del presupuesto.\n- Cumplimiento: artefactos de consentimiento en archivo; divulgaciones aplicadas; registros de procedencia exportados para archivo. Entradas para un calculador de costo por minuto: \n- GPU $/hora (o API $/1M caracteres) - RTF medido y longitud promedio de clip \n- Suposiciones de palabras/minuto y caracteres/palabra por idioma \n- Nivel de concurrencia y volumen diario esperado Excerpto de rúbrica de QC (puntaje 1-5): inteligibilidad, coincidencia de timbre, prosodia, manejo de sibilantes/explosiones, alineación de tiempo, piso de ruido y naturalidad general. Mantén los comentarios accionables: “suavizar ‘s’ en 00:07; reducir el ruido en un 10%” es mucho más útil que “suena robótico.”",
+      "ReferencesTitle": "Referencias",
+      "ReferencesContent": "- Arquitectura y código: La documentación de los mantenedores en el [**repositorio de GitHub de SWivid/F5‑TTS**](https://github.com/SWivid/F5-TTS) (accedido en marzo de 2026) y el [**documento de F5‑TTS de OpenReview (2025)**](https://openreview.net/forum?id=JiX2DuTkeU) proporcionan la base para el TTS de coincidencia de flujo y clonación cero-shot.\n- Métodos de evaluación: La guía de [**seed‑tts‑eval de ByteDance (2025)**](https://github.com/BytedanceSpeech/seed-tts-eval); discusiones sobre la configuración de Whisper large‑v3 en [**el repositorio de Whisper (2025)**](https://github.com/openai/whisper/discussions/1762); puntuación tipo MOS a través de [**UTMOS (VoiceMOS 2022)**](https://github.com/sarulab-speech/UTMOS22).\n- Políticas de plataforma: audio multilingüe de YouTube y flujo de revisión en **Ayuda de Doblaje Automático (2026)**; expansión de doblaje automático expresivo descrita en [**el blog de YouTube (2026)**](https://blog.youtube/news-and-events/youtube-auto-dubbing-expressive-speech/); requisitos de divulgación de IA resumidos en **la página de política de YouTube (2026)**; audio de pista única de TikTok documentado en [**la página de ayuda de sonidos (2026)**](https://support.tiktok.com/en/using-tiktok/creating-videos/sounds).\n- Cumplimiento: La postura de la FCC sobre voces de IA y llamadas automáticas en [**la Resolución Declarativa de 2024**](https://www.fcc.gov/document/fcc-declares-ai-generated-voices-robocalls-illegal).\n- Referencias de precios: Documentos de tarifas oficiales en [**Azure Speech (2026)**](https://azure.microsoft.com/en-us/pricing/details/speech/), [**AWS Polly (2026)**](https://aws.amazon.com/jp/polly/pricing/), [**API de ElevenLabs (2026)**](https://elevenlabs.io/pricing/api), y [**índice de precios de Google Cloud TTS**](https://cloud.google.com/text-to-speech/pricing)."
     },
     "f5TtsVoiceCloning": {
       "title": "Clonación de Voz F5-TTS: Soluciones Profesionales de Voz AI",
@@ -411,6 +455,30 @@
       "ctaLink": "Prueba las Plantillas de Análisis de Vestuario de Curify",
       "conclusionTitle": "Conclusión",
       "conclusionContent": "La historia del vestuario chino representa un sofisticado sistema tecnológico cultural que combina ciencia de materiales, señalización social y expresión artística. A través de métodos avanzados de documentación y análisis digital, podemos preservar este patrimonio mientras habilitamos aplicaciones contemporáneas en diseño de moda, educación cultural e investigación histórica."
+    },
+    "nanoBananaPromptEcosystem": {
+      "title": "Ecosistema de Prompts de Nano Banana",
+      "slug": "nano-banana-prompt-ecosystem",
+      "metaDescription": "Descubre cómo el Ecosistema de Prompts de Nano Banana te ayuda a construir generadores de IA con SEO orientado al producto, prompts estructurados y optimización impulsada por análisis.",
+      "date": "12 de marzo de 2026",
+      "readTime": "10 min de lectura",
+      "intro": "Descubre cómo el Ecosistema de Prompts de Nano Banana transforma la generación de contenido de IA. Con nuestra estrategia de SEO orientada al producto y una biblioteca de prompts diseñados por expertos, crearás contenido que se clasifica más alto y conecta profundamente con tu audiencia.",
+      "whatIsTitle": "¿Qué es el Ecosistema de Prompts de Nano Banana?",
+      "whatIsContent": "El Ecosistema de Prompts de Nano Banana es una colección curada de prompts de IA de alto rendimiento diseñados para creadores de contenido, marketers y desarrolladores. Cada prompt está optimizado para visibilidad en búsqueda, relevancia y compromiso, asegurando que tu contenido generado por IA se destaque y resuene con tus lectores objetivo.",
+      "ecosystemTitle": "El Ecosistema Completo de Contenido",
+      "ecosystemContent": "Nuestro ecosistema cubre diversas categorías de contenido, incluyendo contenido educativo, patrimonio cultural, visualización de datos, medios creativos y documentación técnica. Cada categoría está alineada estratégicamente con intenciones de usuario específicas y objetivos de búsqueda, permitiendo que tus herramientas de IA generen contenido intencionado, descubrible y orientado al valor a través de múltiples nichos.",
+      "seoTitle": "Estrategia de Contenido Impulsada por SEO",
+      "seoContent": "Nuestro enfoque de SEO integra investigación de palabras clave, análisis de intención del usuario y optimización de contenido en cada prompt. El ecosistema asegura que tu contenido generado por IA se clasifique naturalmente para palabras clave objetivo mientras mantiene la legibilidad y el compromiso.",
+      "generatorTitle": "Generadores de Contenido Impulsados por IA",
+      "generatorContent": "Construye generadores de contenido de IA sofisticados con nuestras plantillas de prompts estructuradas. Cada generador está optimizado para tipos de contenido específicos, asegurando calidad de salida consistente y alineación de marca en todos tus canales de contenido.",
+      "toolsTitle": "Herramientas y Recursos Incluidos",
+      "toolsContent": "Desbloquea nuestra suite completa de recursos que incluye plantillas de prompts, guías de optimización, paneles de análisis de rendimiento y herramientas de colaboración en equipo. Realiza un seguimiento del rendimiento del contenido, mide las mejoras en el ranking y refina tu estrategia con información impulsada por datos que evolucionan continuamente tu sistema de generación de contenido.",
+      "curifyTitle": "Cómo Curify Mejora Tu Estrategia de Prompts",
+      "curifyContent": "Curify se integra sin problemas con los prompts de Nano Banana, conectando modelos de IA avanzados con inteligencia de contenido estructurada. La plataforma ayuda a los equipos a construir, personalizar y escalar el uso de prompts mientras realiza un seguimiento del rendimiento y mantiene una calidad de contenido consistente en todos los proyectos. Obtén análisis en tiempo real y sugerencias de optimización impulsadas por aprendizaje automático.",
+      "ctaText": "¿Listo para transformar tu estrategia de contenido de IA?",
+      "ctaLink": "Comienza con Nano Banana",
+      "conclusionTitle": "¿Listo para Transformar Tu Estrategia de Contenido de IA?",
+      "conclusionContent": "El Ecosistema de Prompts de Nano Banana proporciona todo lo que necesitas para tener éxito: un marco de SEO centrado en el producto, una biblioteca de prompts ingenieramente diseñada y potentes herramientas de análisis. Convierte tus ideas de IA en contenido de alto rendimiento que clasifica, involucra y convierte. Comienza tu viaje hoy y observa la diferencia que pueden hacer los prompts estructurados y optimizados para SEO."
     }
   },
   "aeVsComfyUi": {
@@ -1002,7 +1070,12 @@
         "shots": "\"[object Object],[object Object]\""
       },
       "benefitsTitle": "Beneficios Clave",
-      "benefits": "\"<strong>Edición eficiente:</strong> Salta directamente a cualquier escena o toma sin tener que revisar horas de metraje,<strong>Búsqueda inteligente:</strong> Encuentra contenido basado en elementos visuales, no solo en metadatos,<strong>Calidad consistente:</strong> Identifica y mantiene la consistencia visual en todo tu proyecto,<strong>Decisiones basadas en datos:</strong> Obtén información sobre la estructura y ritmo de tu contenido\""
+      "benefits": [
+        "<strong>Edición Eficiente:</strong> Salta directamente a cualquier escena o toma sin horas de búsqueda a través del metraje",
+        "<strong>Búsqueda Inteligente:</strong> Encuentra contenido basado en elementos visuales, no solo en metadatos",
+        "<strong>Calidad Consistente:</strong> Identifica y mantiene la consistencia visual en tu proyecto",
+        "<strong>Decisiones Basadas en Datos:</strong> Obtén información sobre la estructura y el ritmo de tu contenido"
+      ]
     },
     "conclusion": {
       "title": "Transformando la Producción de Video con IA",
@@ -1075,7 +1148,13 @@
     },
     "benefits": {
       "subtitle": "POR QUÉ ELEGIR NUESTRA SOLUCIÓN",
-      "title": "El Poder del Análisis de Escenas Impulsado por IA"
+      "title": "El Poder del Análisis de Escenas Impulsado por IA",
+      "items": [
+        "Ahorra horas de registro y análisis manual de escenas",
+        "Mejora la eficiencia de edición con organización inteligente de escenas",
+        "Mejora el descubrimiento de contenido con metadatos generados por IA",
+        "Mantén una calidad consistente en tus proyectos de video"
+      ]
     },
     "integration": {
       "title": "Integración Fácil",
@@ -1205,12 +1284,38 @@
       "buildingTools": {
         "title": "Construyendo las Herramientas (La Mentalidad de Ingeniero/Arquitecto)",
         "subtitle": "No solo uses la IA; mejórala.",
-        "points": "\"[objeto Object],[objeto Object],[objeto Object]\""
+        "points": [
+          {
+            "title": "Evaluación y Gobernanza de Modelos",
+            "content": "A medida que la salida de IA se convierte en una mercancía, la persona que puede definir cómo se ve un 'buen' resultado es la más valiosa en la sala. Enfócate en marcos de evaluación especializados (como la ponderación de riesgos en Finanzas)."
+          },
+          {
+            "title": "Ajuste Fino de Dominio",
+            "content": "Dominar técnicas como LoRA o RAG para inyectar conocimiento específico del negocio en LLMs."
+          },
+          {
+            "title": "Automatización",
+            "content": "Liderar iniciativas internas como 'Analistas Virtuales' o pipelines de experimentación automatizada."
+          }
+        ]
       },
       "leveragingTools": {
         "title": "Aprovechando las Herramientas (La Mentalidad de Estratega)",
         "subtitle": "Usa la IA para multiplicar por 10 tu producción para que puedas concentrarte en lo que los humanos hacen mejor.",
-        "points": "\"[objeto Objeto],[objeto Objeto],[objeto Objeto]\""
+        "points": [
+          {
+            "title": "Experiencia en Dominio",
+            "content": "La IA sabe 'cómo', pero tú sabes 'por qué'. Un profundo entendimiento del negocio te permite proporcionar el contexto adecuado que le falta a la IA."
+          },
+          {
+            "title": "Pensamiento Crítico y Experimentación",
+            "content": "Mientras que la IA puede generar código, las habilidades humanas de DS siguen siendo fundamentales para la prueba de hipótesis, inferencia causal e interpretación de datos 'desordenados' del mundo real."
+          },
+          {
+            "title": "Comunicación e Influencia",
+            "content": "La capacidad de traducir datos complejos en una historia de negocio y construir confianza con los interesados es una habilidad 'blanda' que se ha convertido en un requisito 'duro'."
+          }
+        ]
       }
     },
     "bottomLine": {
