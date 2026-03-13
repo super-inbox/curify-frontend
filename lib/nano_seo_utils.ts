@@ -2,29 +2,17 @@
  * nano_seo_utils.ts
  *
  * Shared SEO/metadata utilities for nano-template pages.
- * Extracted from NanoTemplatePage so both the template and example
- * detail pages can share the same resolution logic without duplication.
+ * Updated to use:
+ * - og_image from public/data/nano_templates.json
+ * - title/category/description/content from messages/[locale]/nano.json
+ * - fixed robots = index,follow
  */
 
 import type { Metadata } from "next";
-import nanoSeo from "@/public/data/nano_template_seo.json";
+import nanoTemplates from "@/public/data/nano_templates.json";
 import { CDN_BASE, SITE_URL } from "@/lib/constants";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-
-export type SeoBlock = {
-  meta_title?: string;
-  meta_description?: string;
-  og_image?: string;
-  robots?: string;
-  og_type?: string;
-  og_title?: string;
-  og_description?: string;
-  twitter_card?: string;
-  twitter_title?: string;
-  twitter_description?: string;
-  schema?: any;
-};
 
 export type SeoContentSections = {
   what?: string;
@@ -33,16 +21,25 @@ export type SeoContentSections = {
   prompts?: string[];
 };
 
-export type SeoLocalePayload = {
-  seo?: SeoBlock;
+export type NanoLocaleMessageEntry = {
+  title?: string;
+  category?: string;
+  description?: string;
   content?: {
-    sections?: SeoContentSections;
+    sections?: {
+      what?: unknown;
+      who?: unknown;
+      how?: unknown;
+      prompts?: unknown;
+    };
   };
 };
 
-export type SeoTemplateEntry = {
+export type NanoMessagesDict = Record<string, NanoLocaleMessageEntry>;
+
+export type NanoTemplateCore = {
   id: string;
-  locales: Record<string, SeoLocalePayload>;
+  og_image?: string;
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -53,10 +50,31 @@ export function safeString(v: unknown): string {
   return String(v);
 }
 
-/** Trim a value to a string, returning "" if falsy. */
-export function normalizeText(s?: string): string {
-  if (!s) return "";
-  return String(s).trim();
+/** Trim any value to a string, returning "" if empty/non-meaningful. */
+export function normalizeText(v: unknown): string {
+  if (v === null || v === undefined) return "";
+  const s = String(v).trim();
+  return s;
+}
+
+/**
+ * Normalize unknown input into a clean string array.
+ * Supports:
+ * - ["a", "b"]
+ * - "single string" => ["single string"]
+ * - anything else => []
+ */
+export function normalizeStringArray(v: unknown): string[] {
+  if (Array.isArray(v)) {
+    return v.map((x) => normalizeText(x)).filter(Boolean);
+  }
+
+  if (typeof v === "string") {
+    const s = normalizeText(v);
+    return s ? [s] : [];
+  }
+
+  return [];
 }
 
 /**
@@ -69,45 +87,25 @@ export function toAbsUrlMaybe(url?: string): string | undefined {
   return `${CDN_BASE}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
-/**
- * Parse a robots string like "index, follow" or "noindex, nofollow"
- * into Next.js Metadata robots shape.
- */
-export function parseRobots(robots?: string): Metadata["robots"] | undefined {
-  if (!robots) return undefined;
-  const s = robots.toLowerCase().replace(/\s/g, "");
-  const index = s.includes("noindex") ? false : s.includes("index") ? true : undefined;
-  const follow = s.includes("nofollow") ? false : s.includes("follow") ? true : undefined;
-  if (index === undefined && follow === undefined) return undefined;
-  return { index, follow };
-}
+// ─── Template core resolution ────────────────────────────────────────────────
 
-// ─── SEO JSON resolution ──────────────────────────────────────────────────────
-
-/** Find the SEO entry for a given templateId in the JSON file. */
-export function resolveSeoEntry(templateId: string): SeoTemplateEntry | null {
-  const list = (nanoSeo as any)?.templates as SeoTemplateEntry[] | undefined;
-  if (!list?.length) return null;
+/** Find the template core entry for a given templateId in nano_templates.json. */
+export function resolveTemplateCore(templateId: string): NanoTemplateCore | null {
+  const list = nanoTemplates as NanoTemplateCore[];
+  if (!Array.isArray(list) || !list.length) return null;
   return list.find((t) => t.id === templateId) ?? null;
 }
 
 /**
- * Resolve the locale-specific SEO payload for a template.
- * Prefers the exact locale, falls back to "en", then the first available locale.
+ * Resolve localized nano message payload.
+ * Prefers the exact templateId entry only.
  */
-export function resolveSeoPayload(
+export function resolveLocaleMessage(
   templateId: string,
-  locale: string
-): SeoLocalePayload | null {
-  const entry = resolveSeoEntry(templateId);
-  if (!entry) return null;
-
-  const payload =
-    entry.locales?.[locale] ??
-    entry.locales?.["en"] ??
-    Object.values(entry.locales || {})[0];
-
-  return payload ?? null;
+  nanoMessages: NanoMessagesDict | null | undefined
+): NanoLocaleMessageEntry | null {
+  if (!nanoMessages) return null;
+  return nanoMessages[templateId] ?? null;
 }
 
 // ─── Metadata builders ────────────────────────────────────────────────────────
@@ -115,31 +113,38 @@ export function resolveSeoPayload(
 /**
  * Build the full Next.js Metadata object for the nano-template detail page.
  *
- * @param opts.templateId  - e.g. "template-battle-zh"
- * @param opts.locale      - normalized locale string, e.g. "en"
- * @param opts.localeStr   - raw locale from params (used in paths/OG locale)
- * @param opts.slug        - URL slug, e.g. "battle-zh"
- * @param opts.fallbackTitle       - used when no SEO meta_title is set
- * @param opts.fallbackDescription - used when no SEO meta_description is set
+ * @param opts.templateId  - e.g. "template-battle"
+ * @param opts.localeStr   - raw locale from params, e.g. "en"
+ * @param opts.slug        - URL slug, e.g. "battle"
+ * @param opts.nanoMessages - localized messages from messages/[locale]/nano.json
+ * @param opts.fallbackTitle       - optional fallback when no localized title exists
+ * @param opts.fallbackDescription - optional fallback when no localized description exists
  */
 export function buildNanoTemplateMetadata(opts: {
   templateId: string;
-  locale: string;
   localeStr: string;
   slug: string;
-  fallbackTitle: string;
-  fallbackDescription: string;
+  nanoMessages: NanoMessagesDict;
+  fallbackTitle?: string;
+  fallbackDescription?: string;
 }): Metadata {
-  const { templateId, locale, localeStr, slug, fallbackTitle, fallbackDescription } = opts;
+  const {
+    templateId,
+    localeStr,
+    slug,
+    nanoMessages,
+    fallbackTitle = "Nano Banana Template | Curify AI",
+    fallbackDescription = "",
+  } = opts;
 
-  const payload = resolveSeoPayload(templateId, locale);
-  const seo = payload?.seo;
+  const templateCore = resolveTemplateCore(templateId);
+  const message = resolveLocaleMessage(templateId, nanoMessages);
 
   const canonicalPath = `/${localeStr}/nano-template/${slug}`;
 
-  const title = normalizeText(seo?.meta_title) || fallbackTitle;
-  const description = normalizeText(seo?.meta_description) || fallbackDescription;
-  const ogImage = toAbsUrlMaybe(seo?.og_image);
+  const title = normalizeText(message?.title) || fallbackTitle;
+  const description = normalizeText(message?.description) || fallbackDescription;
+  const ogImage = toAbsUrlMaybe(templateCore?.og_image);
 
   return {
     title,
@@ -147,39 +152,68 @@ export function buildNanoTemplateMetadata(opts: {
     alternates: {
       canonical: canonicalPath,
     },
-    robots: parseRobots(seo?.robots) || { index: true, follow: true },
+    robots: { index: true, follow: true },
     openGraph: {
-      type: (seo?.og_type as any) || "website",
-      title: seo?.og_title || title,
-      description: seo?.og_description || description,
+      type: "website",
+      title,
+      description,
       url: `${SITE_URL}${canonicalPath}`,
       images: ogImage ? [{ url: ogImage }] : undefined,
       siteName: "Curify",
       locale: localeStr,
     },
     twitter: {
-      card: (seo?.twitter_card as any) || "summary_large_image",
-      title: seo?.twitter_title || title,
-      description: seo?.twitter_description || description,
+      card: "summary_large_image",
+      title,
+      description,
       images: ogImage ? [ogImage] : undefined,
     },
   };
 }
 
 /**
- * Derive the display H1 from the SEO meta_title by stripping the
+ * Derive the display H1 from the localized title by stripping the
  * "| Curify AI" suffix that's typically appended for search engines.
  */
-export function buildNanoH1(seoMetaTitle: string | undefined, fallback: string): string {
-  const raw = normalizeText(seoMetaTitle) || fallback;
+export function buildNanoH1(title: string | undefined, fallback: string): string {
+  const raw = normalizeText(title) || fallback;
   return raw.replace(/\s*[｜|]\s*Curify AI\s*$/i, "");
+}
+
+/**
+ * Resolve localized template display fields.
+ */
+export function resolveNanoDisplayData(
+  templateId: string,
+  nanoMessages: NanoMessagesDict | null | undefined
+): {
+  title: string;
+  category: string;
+  description: string;
+} {
+  const message = resolveLocaleMessage(templateId, nanoMessages);
+
+  return {
+    title: normalizeText(message?.title),
+    category: normalizeText(message?.category),
+    description: normalizeText(message?.description),
+  };
 }
 
 // ─── Pro-prompt metadata ──────────────────────────────────────────────────────
 
 /** Locales supported by the nano-banana-pro-prompts section. */
 export const PRO_PROMPT_LOCALES = [
-  "en", "zh", "ja", "ko", "de", "es", "fr", "ru", "hi", "tr",
+  "en",
+  "zh",
+  "ja",
+  "ko",
+  "de",
+  "es",
+  "fr",
+  "ru",
+  "hi",
+  "tr",
 ] as const;
 
 export type ProPromptLocale = (typeof PRO_PROMPT_LOCALES)[number];
@@ -199,23 +233,14 @@ export function buildProPromptAlternates(
 }
 
 export type ProPromptMetadataInput = {
-  /** Resolved prompt title — used in `<title>` and OG/Twitter tags. */
   title: string;
-  /** Short description or first 160 chars of prompt text. */
   description: string;
-  /** Absolute image URL (already resolved to https://…). */
   absoluteImageUrl: string;
-  /** Page URL for the current locale. */
   pageUrl: string;
-  /** Canonical URL (always the "en" locale URL). */
   canonicalUrl: string;
-  /** ISO date string, or undefined. */
   date?: string;
-  /** Author display name, or undefined. */
   author?: string;
-  /** Author handle (e.g. "@foo"), or undefined. */
   authorHandle?: string;
-  /** Prompt category, source type, etc. — filtered for falsiness by the caller. */
   keywords: string[];
 };
 
@@ -287,20 +312,57 @@ export function buildProPromptMetadata(
 }
 
 /**
- * Normalize the content sections from the SEO payload so callers
+ * Normalize the content sections from the localized nano messages so callers
  * get ready-to-render, already-trimmed values.
  */
-export function resolveContentSections(payload: SeoLocalePayload | null): {
+export function resolveContentSections(
+  templateId: string,
+  nanoMessages: NanoMessagesDict | null | undefined
+): {
   h2What: string;
   h2Who: string;
   h2How: string[];
   h2Prompts: string[];
 } {
-  const sections = payload?.content?.sections;
+  const sections = resolveLocaleMessage(templateId, nanoMessages)?.content?.sections;
+
   return {
     h2What: normalizeText(sections?.what),
     h2Who: normalizeText(sections?.who),
-    h2How: (sections?.how ?? []).map((x) => normalizeText(x)).filter(Boolean),
-    h2Prompts: (sections?.prompts ?? []).map((x) => normalizeText(x)).filter(Boolean),
+    h2How: normalizeStringArray(sections?.how),
+    h2Prompts: normalizeStringArray(sections?.prompts),
+  };
+}
+
+export function normalizeNanoLocaleMessageEntry(
+  entry: unknown
+): NanoLocaleMessageEntry {
+  const obj =
+    entry && typeof entry === "object"
+      ? (entry as Record<string, unknown>)
+      : {};
+
+  const content =
+    obj.content && typeof obj.content === "object"
+      ? (obj.content as Record<string, unknown>)
+      : {};
+
+  const sections =
+    content.sections && typeof content.sections === "object"
+      ? (content.sections as Record<string, unknown>)
+      : {};
+
+  return {
+    title: normalizeText(obj.title),
+    category: normalizeText(obj.category),
+    description: normalizeText(obj.description),
+    content: {
+      sections: {
+        what: normalizeText(sections.what),
+        who: normalizeText(sections.who),
+        how: normalizeStringArray(sections.how),
+        prompts: normalizeStringArray(sections.prompts),
+      },
+    },
   };
 }

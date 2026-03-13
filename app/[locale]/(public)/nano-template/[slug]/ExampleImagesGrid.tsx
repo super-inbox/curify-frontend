@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import { toSlug } from "@/lib/nano_utils";
 
 type Item = {
   id: string;
@@ -56,7 +57,7 @@ export default function ExampleImagesGrid({
         {visible.map((it) => (
           <Link
             key={it.id}
-            href={`/${locale}/nano-template/${it.templateId}/example/${encodeURIComponent(it.id)}`}
+            href={`/${locale}/nano-template/${toSlug(it.templateId)}/example/${encodeURIComponent(it.id)}`}
             className="group block overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
           >
             <div className="relative overflow-hidden">

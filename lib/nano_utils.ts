@@ -1,7 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
-
-export type Locale = "zh" | "en";
+import { Locale } from "@/lib/locale_utils";
 
 export type TemplateParameter = {
   name: string;
@@ -125,22 +124,16 @@ export type TranslateFn = (key: string) => string;
  * the key passed to t() must be just  "template-herbal-zh.category"
  * — the namespace ("nano") is already bound by useTranslations/getTranslations.
  */
-export function nanoTemplateI18nKey(
-  templateId: string,
-  field: "category" | "description"
-): string {
-  // e.g. "template-dog-breed-retro-infographic.category"
-  return `${templateId}.${field}`;
-}
-
+  export function nanoTemplateI18nKey(
+    templateId: string,
+    field: string
+  ): string {
+    return `${templateId}.${field}`;
+  }
 // ---------------------------------------------------------------------------
 
 export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
-}
-
-export function normalizeLocale(locale: string): Locale {
-  return locale === "en" ? "en" : "zh";
 }
 
 export function getLocaleFromPath(): Locale {
@@ -336,6 +329,7 @@ export function getImageViewsForTemplate(
  * If omitted, those fields will be empty strings (fine for structural/data use,
  * not for rendering).
  */
+
 export function buildNanoFeedCards(
   reg: NanoRegistry,
   locale: Locale,
@@ -436,7 +430,6 @@ export function buildNanoTemplateDetailData(
 
 // ------------------------
 // Example detail page helpers
-// (used by /nano-template/[templateId]/example/[imageId])
 // ------------------------
 
 export type NanoExampleDetailData = {

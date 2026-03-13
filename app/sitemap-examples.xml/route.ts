@@ -1,25 +1,14 @@
-// app/sitemap-examples.xml/route.ts
-//
-// Generates example-detail URLs for Nano templates:
-// /nano-template/${templateId}/example/${exampleId}
-//
-// PLUS tool detail URLs from TOOL_REGISTRY (status != coming_soon):
-// /tools/${slug}
-//
-// Locale strategy:
-// - examples: 1) example.locales 2) template locales 3) routing.locales
-// - tools: all routing.locales (for now)
-
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
-import { TOOL_REGISTRY } from "@/lib/tools-registry";
+import { toSlug } from "@/lib/nano_utils";
 
 export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
-const LOCALES = routing.locales; // readonly tuple
+const LOCALES = routing.locales;
+const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
 
 type NanoTemplate = {
   id: string;
@@ -35,7 +24,7 @@ type NanoExample = {
   date?: string;
 };
 
-// Build a lookup: templateId -> availableLocales (fallback for language-agnostic examples)
+// templateId -> available locales
 function getTemplateLocalesMap(): Map<string, string[]> {
   const raws = nanoTemplates as unknown as NanoTemplate[];
 
@@ -49,27 +38,24 @@ function getTemplateLocalesMap(): Map<string, string[]> {
   return m;
 }
 
-function getToolRoutes(): string[] {
-  return TOOL_REGISTRY.filter((t) => t.status !== "coming_soon").map(
-    (t) => `/tools/${encodeURIComponent(t.slug)}`
-  );
-}
-
-// Accept readonly arrays to support routing.locales (readonly tuple)
-function generateHreflangLinks(route: string, availableLocales?: readonly string[]) {
+function generateHreflangLinks(
+  route: string,
+  availableLocales?: readonly string[]
+) {
   const localesToUse: readonly string[] =
     availableLocales && availableLocales.length > 0 ? availableLocales : LOCALES;
 
   const links = localesToUse
     .map((lng) => {
-      // Strip prefix for English
       const pathPrefix = lng === "en" ? "" : `/${lng}`;
       return `<xhtml:link rel="alternate" hreflang="${lng}" href="${BASE_URL}${pathPrefix}${route}" />`;
     })
     .join("");
 
-  // x-default strictly points to the unprefixed route
-  return links + `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
+  return (
+    links +
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`
+  );
 }
 
 function generateUrlEntry(
@@ -85,7 +71,7 @@ function generateUrlEntry(
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
 
-  const lastmod = opts?.lastmod ?? new Date().toISOString();
+  const lastmod = opts?.lastmod ?? STABLE_LASTMOD;
   const changefreq = opts?.changefreq ?? "weekly";
   const priority = opts?.priority ?? "0.5";
 
@@ -101,30 +87,15 @@ function generateUrlEntry(
 }
 
 function pickLastmod(x: NanoExample): string | undefined {
-  const v = x.updated_at || x.lastmod || x.date;
-  return v || undefined;
+  return x.updated_at || x.lastmod || x.date || undefined;
 }
 
 export async function GET() {
   const templateLocalesMap = getTemplateLocalesMap();
   const examples = nanoInspiration as unknown as NanoExample[];
-  const toolRoutes = getToolRoutes();
 
   let urls = "";
 
-  // ✅ 1) Tool detail pages × locales
-  // (only those not coming_soon)
-  toolRoutes.forEach((route) => {
-    LOCALES.forEach((locale) => {
-      urls += generateUrlEntry(locale, route, {
-        changefreq: "weekly",
-        priority: "0.8",
-        availableLocales: LOCALES,
-      });
-    });
-  });
-
-  // ✅ 2) Nano template example pages × locales (existing logic)
   for (const ex of examples) {
     if (!ex?.id || !ex?.template_id) continue;
 
@@ -132,24 +103,23 @@ export async function GET() {
     const exampleId = String(ex.id).trim();
 
     const exampleLocales = ex.locales ? Object.keys(ex.locales) : [];
-
     const availableLocales: readonly string[] =
       (exampleLocales.length
         ? exampleLocales
         : templateLocalesMap.get(templateId)) || LOCALES;
 
-    const route = `/nano-template/${encodeURIComponent(templateId)}/example/${encodeURIComponent(
-      exampleId
-    )}`;
+    const route = `/nano-template/${encodeURIComponent(
+      toSlug(templateId)
+    )}/example/${encodeURIComponent(exampleId)}`;
 
-    const lastmod = pickLastmod(ex);
+    const lastmod = pickLastmod(ex) ?? STABLE_LASTMOD;
 
     for (const locale of availableLocales) {
       urls += generateUrlEntry(locale, route, {
+        lastmod,
         changefreq: "weekly",
         priority: "0.5",
         availableLocales,
-        lastmod,
       });
     }
   }

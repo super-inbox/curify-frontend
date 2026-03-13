@@ -17,11 +17,11 @@ import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCa
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
+import { resolveContentLocale, Locale } from "@/lib/locale_utils";
 
 import {
   buildNanoRegistry,
   buildNanoFeedCards,
-  normalizeLocale,
   type RawTemplate,
   type RawNanoImageRecord,
 } from "@/lib/nano_utils";
@@ -86,7 +86,7 @@ function useNanoCards(activeLang: Lang, translate: (key: string) => string) {
         nanoInspiration as unknown as RawNanoImageRecord[]
       );
 
-      const locale = normalizeLocale(activeLang);
+      const locale = resolveContentLocale(activeLang);
 
       const cards = buildNanoFeedCards(reg, locale, {
         perTemplateMaxImages: 2,
@@ -321,7 +321,7 @@ function ListView({
         }
         return (
           <NanoInspirationRow
-            key={`nano-row-${item.cards.map((c) => c.id).join("-") || index}`}
+            key={`nano-row-${index}`}
             cards={item.cards}
             requireAuth={requireAuth}
             onViewClick={(c) => onOpenModal(c, "nano")}

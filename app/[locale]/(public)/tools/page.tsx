@@ -1,8 +1,20 @@
 // app/[locale]/tools/page.tsx
+
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ToolsClient from "./ToolsClient";
+import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+import { SITE_URL } from "@/lib/constants";
 
+import {
+  type RawTemplate,
+  type RawNanoImageRecord,
+  buildNanoRegistry,
+  buildNanoFeedCards,
+} from "@/lib/nano_utils";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoImages from "@/public/data/nano_inspiration.json";
+import { resolveContentLocale } from "@/lib/locale_utils";
 
 export const dynamic = "force-dynamic";
 
@@ -17,8 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = t("tools.meta.title");
   const description = t("tools.meta.description");
 
-  const base = process.env.NEXT_PUBLIC_BASE_URL || "https://www.curify-ai.com";
-  const url = `${base}/${locale}/tools`;
+  const pathPrefix = locale === "en" ? "" : `/${locale}`;
+  const url = `${SITE_URL}${pathPrefix}/tools`;
 
   return {
     title,
@@ -26,11 +38,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: url,
       languages: {
-        en: `${base}/en/tools`,
-        zh: `${base}/zh/tools`,
-        es: `${base}/es/tools`,
-        // add other locales you support here
-        // "x-default": `${base}/en/tools`,
+        en: `${SITE_URL}/tools`,
+        zh: `${SITE_URL}/zh/tools`,
+        es: `${SITE_URL}/es/tools`,
+        de: `${SITE_URL}/de/tools`,
+        fr: `${SITE_URL}/fr/tools`,
+        hi: `${SITE_URL}/hi/tools`,
+        ja: `${SITE_URL}/ja/tools`,
+        ko: `${SITE_URL}/ko/tools`,
+        tr: `${SITE_URL}/tr/tools`,
       },
     },
     openGraph: {
@@ -49,12 +65,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Page() {
+export default async function Page({ params }: Props) {
+  const { locale: localeStr } = await params;
+
+  const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
+  const translateNano = (key: string): string => {
+    try {
+      return tNano(key as never) ?? "";
+    } catch {
+      return "";
+    }
+  };
+
+  const reg = buildNanoRegistry(
+    nanoTemplates as unknown as RawTemplate[],
+    nanoImages as unknown as RawNanoImageRecord[]
+  );
+
+  const nanoCards = buildNanoFeedCards(reg, resolveContentLocale(localeStr), {
+    perTemplateMaxImages: 2,
+    strictLocale: false,
+    translate: translateNano,
+  });
+
   return (
     <main className="min-h-screen">
       <ToolsClient />
-      
+
+      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+        <NanoTemplateDetailClient
+          locale={localeStr}
+          template={{ template_id: "", base_prompt: "", parameters: [] }}
+          otherNanoCards={nanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+        />
+      </div>
     </main>
-    
   );
 }
