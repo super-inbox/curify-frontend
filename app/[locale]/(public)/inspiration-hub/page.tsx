@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
 import InspirationHubClient from "./InspirationHubClient";
+import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { InspirationCardUI } from "@/types/inspiration";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
+import { makeSafeTranslator } from "@/lib/locale_utils";
 
 export async function generateMetadata({
   params,
@@ -23,7 +27,6 @@ export async function generateMetadata({
   };
 }
 
-// Helper for SEO Schema
 function generateJsonLd(cards: InspirationCardUI[]) {
   return {
     "@context": "https://schema.org",
@@ -34,7 +37,7 @@ function generateJsonLd(cards: InspirationCardUI[]) {
       position: idx + 1,
       item: {
         "@type": "CreativeWork",
-        name: c.hook.text.replace(/"/g, ""), // Clean quotes
+        name: c.hook.text.replace(/"/g, ""),
         inLanguage: c.lang,
         description: c.signal.summary || c.translation.tag,
         url: `${process.env.NEXT_PUBLIC_BASE_URL}/inspiration-hub#${c.id}`,
@@ -52,17 +55,22 @@ function generateJsonLd(cards: InspirationCardUI[]) {
   };
 }
 
-export default async function InspirationHubPage() {
-  // 1. Fetch
-  const rawData = await inspirationService.getCards({ 
-    review_status: "APPROVED", 
-    limit: 100 
+export default async function InspirationHubPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const tTopicsRoot = await getTranslations({ locale });
+  const translateTopics = makeSafeTranslator(tTopicsRoot);
+
+  const rawData = await inspirationService.getCards({
+    review_status: "APPROVED",
+    limit: 100,
   });
 
-  // 2. Transform
   const cards = rawData.map(mapDTOToUICard);
-
-  // 3. SEO
   const jsonLd = generateJsonLd(cards);
 
   return (
@@ -71,8 +79,14 @@ export default async function InspirationHubPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       <main className="mx-auto max-w-6xl px-4 pt-20 pb-10">
+        <TopicNavRow
+          locale={locale}
+          translateTopics={translateTopics}
+          activeTopic="trending"
+        />
+
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
             Daily Inspiration Hub
@@ -83,7 +97,6 @@ export default async function InspirationHubPage() {
           </p>
         </header>
 
-        {/* Pass mapped UI cards to Client */}
         <InspirationHubClient cards={cards} />
       </main>
     </>
