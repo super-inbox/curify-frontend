@@ -1,5 +1,4 @@
-// app/[locale]/(public)/nano-template/[slug]/page.tsx
-
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -10,15 +9,18 @@ import { getTranslations } from "next-intl/server";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
-  type TranslateFn,
   buildNanoRegistry,
   buildNanoTemplateDetailData,
   getImageViewsForTemplate,
   buildNanoFeedCards,
 } from "@/lib/nano_utils";
 
-import { resolveContentLocale } from "@/lib/locale_utils";
-import { Locale, makeSafeNanoTranslator } from "@/lib/locale_utils";
+import {
+  resolveContentLocale,
+  makeSafeTranslator,
+  buildTopicHref,
+  getTopicLabel,
+} from "@/lib/locale_utils";
 
 import {
   type NanoMessagesDict,
@@ -61,7 +63,10 @@ async function getPageData(localeStr: string, slug: string) {
   const localizedEntry = normalizeNanoLocaleMessageEntry(localizedRawEntry);
 
   const tNano = await getTranslations({ locale: pageLocale, namespace: "nano" });
-  const translateNano = makeSafeNanoTranslator(tNano);
+  const translateNano = makeSafeTranslator(tNano);
+
+  const tTopics = await getTranslations({ locale: pageLocale});
+  const translateTopics = makeSafeTranslator(tTopics);
 
   const data = buildNanoTemplateDetailData(
     reg,
@@ -83,13 +88,14 @@ async function getPageData(localeStr: string, slug: string) {
     nanoMessages,
     localizedEntry,
     translateNano,
+    translateTopics,
   };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeStr, slug } = await params;
 
-  const { templateId, data, nanoMessages, localizedEntry, translateNano } = await getPageData(
+  const { templateId, data, nanoMessages, localizedEntry } = await getPageData(
     localeStr,
     slug
   );
@@ -134,11 +140,13 @@ export default async function NanoTemplatePage({ params }: Props) {
     nanoMessages,
     localizedEntry,
     translateNano,
+    translateTopics,
   } = await getPageData(localeStr, slug);
 
   if (!data) notFound();
 
   const { template } = data;
+  const templateTopics = template.topics ?? [];
 
   const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(
     templateId,
@@ -186,6 +194,20 @@ export default async function NanoTemplatePage({ params }: Props) {
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
+
+            {templateTopics.length > 0 ? (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {templateTopics.map((topic) => (
+                  <Link
+                    key={topic}
+                    href={buildTopicHref(pageLocale, topic)}
+                    className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 transition hover:border-blue-200 hover:bg-blue-100"
+                  >
+                    {getTopicLabel(topic, translateTopics)}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           {localizedEntry.category || template.category ? (
