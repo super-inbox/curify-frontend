@@ -1,0 +1,52 @@
+export type TemplateParameter = {
+  name: string;
+  label: string;
+  type: "text" | "textarea" | "select";
+  placeholder?: string | string[];
+  options?: string[];
+};
+
+/**
+ * Replace {param} placeholders in base prompt
+ */
+export function fillPrompt(basePrompt: string, params: Record<string, any>) {
+  let prompt = basePrompt || "";
+
+  for (const [key, value] of Object.entries(params || {})) {
+    const regex = new RegExp(`\\{${key}\\}`, "g");
+    prompt = prompt.replace(regex, String(value ?? ""));
+  }
+
+  return prompt;
+}
+
+/**
+ * Normalize placeholder values
+ * Supports:
+ *  - string
+ *  - string[]
+ */
+export function normalizePrefills(placeholder?: string | string[]) {
+  if (!placeholder) {
+    return {
+      displayPlaceholder: "",
+      candidates: [] as string[],
+    };
+  }
+
+  if (Array.isArray(placeholder)) {
+    const candidates = placeholder.filter(
+      (x) => typeof x === "string" && x.trim() !== ""
+    );
+
+    return {
+      displayPlaceholder: candidates[0] ?? "",
+      candidates,
+    };
+  }
+
+  return {
+    displayPlaceholder: placeholder,
+    candidates: [] as string[],
+  };
+}
