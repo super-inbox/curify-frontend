@@ -1,39 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
-import { useCopyTracking, useGenerateTracking } from "@/services/useTracking";
 
-type TemplateParameter = {
-  name: string;
-  label: string;
-  type: "text" | "textarea" | "select";
-  // NOTE: placeholder can be string OR list of strings (prefill candidates)
-  placeholder?: string | string[];
-  options?: string[];
-};
-
-function fillPrompt(basePrompt: string, params: Record<string, any>) {
-  let p = basePrompt || "";
-  for (const [k, v] of Object.entries(params || {})) {
-    const regex = new RegExp(`\\{${k}\\}`, "g");
-    p = p.replace(regex, String(v || ""));
-  }
-  return p;
-}
-
-function normalizePrefills(p?: string | string[]) {
-  if (!p) return { displayPlaceholder: "", candidates: [] as string[] };
-  if (Array.isArray(p)) {
-    const candidates = p.filter((x) => typeof x === "string" && x.trim() !== "");
-    return { displayPlaceholder: candidates[0] ?? "", candidates };
-  }
-  return { displayPlaceholder: p, candidates: [] as string[] };
-}
+import ReproduceTemplateSection from "./ReproduceTemplateSection";
+import type { TemplateParameter } from "@/lib/nano_prompt_utils";
 
 export default function NanoTemplateDetailClient(props: {
   locale: string;
@@ -46,235 +19,22 @@ export default function NanoTemplateDetailClient(props: {
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
 }) {
-  const searchParams = useSearchParams();
   const t = useTranslations("nanoTemplate");
 
   const {
-    locale,
     template,
     otherNanoCards,
     showReproduce = true,
     showOtherTemplates = true,
   } = props;
 
-  const params = template.parameters || [];
-
-  // -------- Section 1: Reproduce (only used if showReproduce) --------
-  const [form, setForm] = useState<Record<string, any>>({});
-  const [copied, setCopied] = useState(false);
-  const [generated, setGenerated] = useState(false);
-
-  // Copy button: action_type="copy" — merges with card-level copy tracking
-  const trackCopy = useCopyTracking(template.template_id, "nano_inspiration", "list");
-  // Generate button: action_type="generate" — distinct from copy
-  const trackGenerate = useGenerateTracking(template.template_id, "nano_inspiration", "list");
-
-  // Pre-fill:
-  // 1) URL query params (highest priority)
-  // 2) placeholders (if placeholder is a list, pick first)
-  useEffect(() => {
-    if (!showReproduce) return;
-
-    const next: Record<string, any> = {};
-    for (const p of params) {
-      const qv = searchParams?.get(p.name);
-      if (qv !== null && qv !== undefined && String(qv).trim() !== "") {
-        next[p.name] = qv;
-        continue;
-      }
-
-      const { candidates } = normalizePrefills(p.placeholder);
-      if (candidates.length > 0) {
-        next[p.name] = candidates[0];
-      }
-    }
-
-    setForm(next);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showReproduce, template.template_id, searchParams]);
-
-  // Reactively fill the prompt whenever form changes
-  const filledPrompt = useMemo(
-    () => fillPrompt(template.base_prompt || "", form),
-    [template.base_prompt, form]
-  );
-
-  const onChange = (name: string, value: any) => {
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const onPickPrefill = (name: string, v: string) => {
-    setForm((prev) => ({ ...prev, [name]: v }));
-  };
-
-  // Copy button: tracks as "copy", same event as card-level copy
-  const onCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(filledPrompt.trim());
-      trackCopy();
-      if (!copied) {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2500);
-      }
-    } catch {
-      // clipboard access denied — silently ignore
-    }
-  };
-
-  // Generate button: copies the prompt (generation not yet implemented) + tracks as "generate"
-  const onGoGenerate = async () => {
-    try {
-      await navigator.clipboard.writeText(filledPrompt.trim());
-      trackGenerate();
-      if (!generated) {
-        setGenerated(true);
-        setTimeout(() => setGenerated(false), 2500);
-      }
-    } catch {
-      // clipboard access denied — silently ignore
-    }
-  };
-
-  // -------- Section 3: Other templates row --------
   const requireAuth = () => true;
   const onViewClick = () => {};
 
   return (
     <>
-      {/* SECTION 1 (optional) */}
-      {showReproduce && (
-        <section className="rounded-3xl border border-neutral-200 bg-white p-5 sm:p-6 shadow-sm">
-          <div>
-            <h2 className="text-lg font-bold text-neutral-900">
-              {t("reproduce.title")}
-            </h2>
-            <p className="mt-1 text-sm text-neutral-600">
-              {t("reproduce.subtitle")}
-            </p>
-          </div>
+      {showReproduce && <ReproduceTemplateSection template={template} />}
 
-          <div className="mt-5 grid grid-cols-1 gap-5 lg:grid-cols-12">
-            {/* Inputs */}
-            <div className="lg:col-span-5">
-              <div className="space-y-3">
-                {params.length === 0 ? (
-                  <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-700">
-                    {t("reproduce.noParams")}
-                  </div>
-                ) : (
-                  params.map((p) => {
-                    const value = form[p.name] ?? "";
-                    const { displayPlaceholder, candidates } = normalizePrefills(
-                      p.placeholder
-                    );
-
-                    const common =
-                      "w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300";
-
-                    return (
-                      <div key={p.name}>
-                        <div className="mb-1 flex items-center justify-between gap-3">
-                          <div className="text-sm font-semibold text-neutral-800">
-                            {p.label || p.name}
-                          </div>
-
-                          {/* quick prefills (if placeholder is list) */}
-                          {candidates.length > 0 && (
-                            <div className="flex flex-wrap items-center justify-end gap-1.5">
-                              {candidates.slice(0, 4).map((cand) => (
-                                <button
-                                  key={`${p.name}-${cand}`}
-                                  type="button"
-                                  onClick={() => onPickPrefill(p.name, cand)}
-                                  className="rounded-full border border-neutral-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-neutral-700 hover:bg-neutral-50 cursor-pointer transition-colors"
-                                  title={`Use: ${cand}`}
-                                >
-                                  {cand}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-
-                        {p.type === "textarea" ? (
-                          <textarea
-                            value={value}
-                            onChange={(e) => onChange(p.name, e.target.value)}
-                            placeholder={displayPlaceholder || ""}
-                            className={common}
-                            rows={3}
-                          />
-                        ) : p.type === "select" ? (
-                          <select
-                            value={value}
-                            onChange={(e) => onChange(p.name, e.target.value)}
-                            className={common}
-                          >
-                            <option value="">Select…</option>
-                            {(p.options || []).map((opt) => (
-                              <option key={opt} value={opt}>
-                                {opt}
-                              </option>
-                            ))}
-                          </select>
-                        ) : (
-                          <input
-                            value={value}
-                            onChange={(e) => onChange(p.name, e.target.value)}
-                            placeholder={displayPlaceholder || ""}
-                            className={common}
-                          />
-                        )}
-                      </div>
-                    );
-                  })
-                )}
-              </div>
-
-                <div className="mt-4 flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={onGoGenerate}
-                    className="rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 transition-colors cursor-pointer"
-                  >
-                    {generated ? t("reproduce.copiedBtn") : t("reproduce.generateBtn")}
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={onCopy}
-                    className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-bold text-neutral-800 hover:bg-neutral-50 transition-colors cursor-pointer"
-                  >
-                    {copied ? t("reproduce.copiedBtn") : t("reproduce.copyBtn")}
-                  </button>
-                </div>
-
-                {/* Coming-soon notice — shown after Generate is clicked */}
-                {generated && (
-                  <p className="text-sm text-purple-600 font-medium animate-pulse">
-                    {t("reproduce.comingSoonNotice")}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {/* Prompt preview */}
-            <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-                <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
-                  {t("reproduce.previewLabel")}
-                </div>
-                <pre className="whitespace-pre-wrap text-sm leading-relaxed text-neutral-800">
-                  {filledPrompt.trim() || template.base_prompt || ""}
-                </pre>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 3 (optional) */}
       {showOtherTemplates && (
         <section className={showReproduce ? "mt-10" : ""}>
           <div className="mb-3">
