@@ -59,6 +59,12 @@ const DEFAULT_BUCKET = process.env.CDN_BUCKET || "gs://curify-static";
 
 const LOCALE_RE = /^[a-z]{2}$/;
 
+function normalizeDashes(str) {
+  return String(str)
+    .normalize("NFKC")
+    .replace(/[\u2010\u2011\u2012\u2013\u2014\u2015\u2212\uFE58\uFE63\uFF0D]/g, "-");
+}
+
 function parseArgs(argv) {
   const out = {
     source: DEFAULT_SOURCE_DIR,
@@ -150,8 +156,12 @@ function normalizeTemplates(templateJson) {
 }
 
 function matchTemplateIdFromStem(stem, templateIdsSorted) {
+  const normalizedStem = normalizeDashes(stem);
   for (const tid of templateIdsSorted) {
-    if (stem === tid || stem.startsWith(tid + "-")) return tid;
+    const normalizedTid = normalizeDashes(tid);
+    if (normalizedStem === normalizedTid || normalizedStem.startsWith(normalizedTid + "-")) {
+      return tid;
+    }
   }
   return null;
 }
@@ -159,7 +169,10 @@ function matchTemplateIdFromStem(stem, templateIdsSorted) {
 function parseStem(stem, templateId) {
   // stem: template-education-zh-dna-double-helix
   // -> locale=zh, slug=dna-double-helix
-  let rest = stem.slice(templateId.length);
+  const normalizedStem = normalizeDashes(stem);
+  const normalizedTemplateId = normalizeDashes(templateId);
+
+  let rest = normalizedStem.slice(normalizedTemplateId.length);
   if (rest.startsWith("-")) rest = rest.slice(1);
   if (!rest) return { localeFromName: null, slug: "" };
 
@@ -336,7 +349,8 @@ async function main() {
   for (const filePath of imageFiles) {
     const fileName = path.basename(filePath);
     const ext = path.extname(fileName).toLowerCase();
-    const stem = path.basename(fileName, ext);
+    const rawStem = path.basename(fileName, ext);
+    const stem = normalizeDashes(rawStem);
 
     // already exists in nano_inspiration.json?
     if (existingFileNames.has(fileName)) {
@@ -451,8 +465,6 @@ async function main() {
 
     console.log(`\n⏫ Syncing nano_insp + nano_insp_preview to ${args.bucket} ...`);
 
-    // Only sync these two folders (fast + safe)
-    // You can switch to rsync -r if you prefer mirroring.
     execSync(
       `gsutil -m rsync -r "${path.join(REPO_ROOT, "public/images/nano_insp")}" "${args.bucket}/images/nano_insp"`,
       { stdio: "inherit" }
