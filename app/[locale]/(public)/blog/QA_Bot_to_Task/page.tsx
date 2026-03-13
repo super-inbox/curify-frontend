@@ -149,28 +149,28 @@ export default function QABotToTaskAgent() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              slug: 'agents-vs-workflows',
-              title: 'Agents vs Workflows – From Control to Intelligence',
-              date: 'October 28, 2025',
-              readTime: '6 min read',
-              tag: 'AI Architecture',
-              image: 'https://storage.googleapis.com/curify-static/agents-vs-workflows.jpg',
+              slug: 'aiPlatform',
+              title: 'The Pragmatic AI Platform: How Mid‑Sized Tech Companies Win with AI',
+              date: 'January 30, 2026',
+              readTime: '9 min read',
+              tag: 'DS & AI Engineering',
+              image: '/images/platformai.webp',
             },
             {
               slug: 'age_AI',
               title: 'Data Science in the Age of AI: Is the "Sexiest Job" Still Sexy?',
               date: 'January 30, 2026',
               readTime: '8 min read',
-              tag: 'AI Industry',
-              image: 'https://storage.googleapis.com/curify-static/1_ef4wcJrfRHv5laz-yVmYMA.webp',
+              tag: 'DS & AI Engineering',
+              image: '/images/data-science-ai-era.jpg',
             },
             {
-              slug: 'storyboard-to-pipeline',
-              title: 'Create Your Own AI-Powered Comic Animation',
+              slug: 'agents-vs-workflows',
+              title: 'Part 2: Agents vs Workflows – From Control to Intelligence',
               date: 'October 28, 2025',
-              readTime: '5 min read',
-              tag: 'AI Tools',
-              image: 'https://storage.googleapis.com/curify-static/ai-animation-pipeline.jpg',
+              readTime: '6 min read',
+              tag: 'Creator Tools',
+              image: '/images/agents-vs-workflows.jpg',
             }
           ].map((post) => (
             <Link
