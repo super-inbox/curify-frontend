@@ -786,5 +786,74 @@
         ]
       }
     }
+  },
+  "template-mbti-marvel-en": {
+    "category": "Categoría de Infografía de Personajes MBTI",
+    "description": "Crea carteles infográficos de superhéroes con temática MBTI que mapean tipos de personalidad en personajes icónicos al estilo Marvel.",
+    "title": "Nano Banana Prompt: Generador de Infografías de Superhéroes MBTI Marvel | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para generar carteles infográficos de superhéroes con temática MBTI. Cada imagen visualiza el tipo de personalidad de un personaje a través de una ilustración de personaje al estilo cómic combinada con elementos infográficos como tarjetas de rasgos, props simbólicos y descriptores de personalidad.",
+        "who": "Adecuado para creadores de psicología de personalidad, comunidades de fans de Marvel/superhéroes, creadores de contenido de cultura pop, páginas de discusión sobre MBTI, diseñadores de infografías y cuentas de redes sociales que convierten personajes ficticios en arquetipos de personalidad.",
+        "how": [
+          "Elige un personaje de superhéroe (por ejemplo, Wolverine, Scarlet Witch, Spider-Man).",
+          "Asigna un tipo MBTI y un rol que mejor se ajuste a la personalidad del personaje.",
+          "Agrega un título corto al estilo de superhéroe que describa su identidad o poder.",
+          "Enumera cinco rasgos clave de personalidad que reflejen el tipo MBTI.",
+          "Genera el cartel infográfico con la ilustración del personaje, props simbólicos y la descripción de la personalidad."
+        ],
+        "prompts": [
+          "Genera un cartel infográfico de superhéroe MBTI para Wolverine (Logan): ISTP – El Virtuoso, 'Luchador Salvaje', con rasgos Independiente, Práctico, Observador, Orientado a la Acción, Adaptable.",
+          "Crea un cartel de personaje MBTI para Scarlet Witch (Wanda): INFP – El Mediador, 'Modeladora de Realidad', destacando empatía, imaginación y profundidad emocional.",
+          "Genera un cartel infográfico MBTI de Spider-Man: ENFJ – El Protagonista, 'Héroe del Vecindario Amigable', con rasgos Compasivo, Responsable, Ingenioso, Resiliente, Optimista."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba-en": {
+    "category": "Categoría de Tarjetas Deportivas MBTI",
+    "description": "Crea tarjetas de baloncesto MBTI de estilo coleccionable que combinan tipos de personalidad con jugadores legendarios de la NBA.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Baloncesto MBTI NBA | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para generar visuales de tarjetas de baloncesto coleccionables que mapean tipos de personalidad MBTI a jugadores famosos de la NBA. El diseño se asemeja a tarjetas de intercambio premium con tipografía metálica, poses ilustradas de jugadores y logros o rasgos impulsados por la personalidad.",
+        "who": "Adecuado para comunidades de fans del baloncesto, cuentas de redes sociales de la NBA, creadores de infografías deportivas, páginas de psicología de personalidad, experimentos de diseño de tarjetas coleccionables y narradores de análisis deportivos.",
+        "how": [
+          "Selecciona un jugador de la NBA para presentar en la tarjeta.",
+          "Asigna un tipo de personalidad MBTI que coincida con su estilo de liderazgo o juego.",
+          "Crea un título de persona (por ejemplo, 'El Rey', 'El Mago').",
+          "Agrega el número de camiseta del jugador y cuatro rasgos o logros definitorios.",
+          "Genera la tarjeta coleccionable con bordes metálicos, paleta de colores del equipo y pose ilustrada del jugador."
+        ],
+        "prompts": [
+          "Crea una tarjeta de baloncesto MBTI para Kobe Bryant: ISTP – 'LA MAMBA', número de camiseta 24, rasgos Mentalidad Mamba, 5× Campeón de la NBA, El Asesino, Trabajo No Terminado.",
+          "Genera una tarjeta MBTI NBA para Stephen Curry: ENFP – 'EL MAGO', número de camiseta 30, rasgos Rey del Rango, Leyenda de 3 Puntos, Actuador Clutch, Jugador de Equipo.",
+          "Crea una tarjeta MBTI de Michael Jordan: ESTJ – 'EL GOAT', número de camiseta 23, rasgos Bestia Competitiva, 6× Campeón de la NBA, Air Jordan, Ícono Global."
+        ]
+      }
+    }
+  },
+  "template-mbti-siliconvalley-en": {
+    "category": "Categoría de Visualización de Fundadores Tecnológicos MBTI",
+    "description": "Crea conceptos visuales MBTI que mapean tipos de personalidad en fundadores e innovadores icónicos de Silicon Valley.",
+    "title": "Nano Banana Prompt: Generador Visual de Fundadores de Silicon Valley MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para crear composiciones visuales con temática tecnológica MBTI que presentan a fundadores famosos de Silicon Valley. Cada imagen retrata a un fundador de pie dentro de un entorno tecnológico futurista, simbolizando sus rasgos de personalidad, estilo de liderazgo e impacto en la industria.",
+        "who": "Adecuado para creadores de cultura tecnológica, comunidades de startups y emprendimiento, entusiastas de MBTI, educadores de IA/tecnología, bloggers de análisis de liderazgo y páginas de redes sociales que discuten personalidades de Silicon Valley.",
+        "how": [
+          "Elige un fundador de Silicon Valley (por ejemplo, Steve Jobs, Elon Musk, Bill Gates).",
+          "Asigna un tipo MBTI que represente su estilo de liderazgo o innovación.",
+          "Escribe un breve eslogan que resuma el arquetipo del fundador (por ejemplo, 'El Maestro, Pionero Tecnológico').",
+          "Elige un estilo visual como arte vectorial tecnológico o diseño de cartel de personaje.",
+          "Genera la visual mostrando al fundador en un entorno tecnológico futurista con elementos simbólicos de marca o innovación."
+        ],
+        "prompts": [
+          "Genera una visual de fundador MBTI para Steve Jobs: INTJ – 'El Maestro, Pionero Tecnológico', de pie sobre una plataforma de circuito futurista con símbolos de innovación inspirados en Apple.",
+          "Crea un cartel de fundador tecnológico MBTI para Elon Musk: ENTP – 'El Visionario, Líder de la Revolución de IA', rodeado de elementos de cohete, chip de IA y vehículo eléctrico.",
+          "Genera una visualización MBTI para Bill Gates: INTP – 'El Lógico, Innovador Analítico', con símbolos clásicos de computación y software en un entorno tecnológico futurista."
+        ]
+      }
+    }
   }
 }
