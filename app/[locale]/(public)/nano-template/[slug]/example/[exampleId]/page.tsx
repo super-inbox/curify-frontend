@@ -220,10 +220,11 @@ export default async function NanoExampleDetailPage({
   </Link>
 
   <ExampleActionBar
-    exampleId={example.id}
-    pageUrl={examplePageUrl}
-    title={title}
-  />
+  exampleId={example.id}
+  pageUrl={examplePageUrl}
+  title={title}
+  promptText={prompt}
+/>
 </div>
         </div>
       </div>

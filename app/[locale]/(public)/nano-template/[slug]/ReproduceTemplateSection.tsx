@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
+import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import {
   useCopyTracking,
@@ -35,7 +36,7 @@ export default function ReproduceTemplateSection(props: {
   const params = template.parameters || [];
 
   const [form, setForm] = useState<Record<string, any>>({});
-  const [copied, setCopied] = useState(false);
+  
   const [generated, setGenerated] = useState(false);
 
   const [showAllParams, setShowAllParams] = useState(false);
@@ -102,18 +103,6 @@ export default function ReproduceTemplateSection(props: {
 
   const onPickPrefill = (name: string, v: string) => {
     setForm((prev) => ({ ...prev, [name]: v }));
-  };
-
-  const onCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(promptText);
-      trackCopy();
-
-      if (!copied) {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2500);
-      }
-    } catch {}
   };
 
   const onGenerate = async () => {
@@ -238,14 +227,10 @@ export default function ReproduceTemplateSection(props: {
                 {generated ? t("reproduce.copiedBtn") : t("reproduce.generateBtn")}
               </button>
 
-              <button
-                type="button"
-                onClick={onCopy}
-                className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-bold text-neutral-800 hover:bg-neutral-50"
-              >
-                {copied ? t("reproduce.copiedBtn") : t("reproduce.copyBtn")}
-              </button>
-
+              <CopyPromptButton
+      text={promptText}
+      onCopied={trackCopy}
+    />
               <ShareButton
                 url={shareUrl}
                 title={template.template_id}
