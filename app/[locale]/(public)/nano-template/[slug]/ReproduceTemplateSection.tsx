@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-import { useCopyTracking, useGenerateTracking } from "@/services/useTracking";
+import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
+import {
+  useCopyTracking,
+  useGenerateTracking,
+  useShareTracking,
+} from "@/services/useTracking";
 import {
   fillPrompt,
   normalizePrefills,
@@ -24,22 +30,28 @@ export default function ReproduceTemplateSection(props: {
   const { template } = props;
 
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const t = useTranslations("nanoTemplate");
 
   const params = template.parameters || [];
 
   const [form, setForm] = useState<Record<string, any>>({});
-  const [copied, setCopied] = useState(false);
+  
   const [generated, setGenerated] = useState(false);
 
   const [showAllParams, setShowAllParams] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
 
-  const trackCopy = useCopyTracking(template.template_id, "nano_inspiration", "list");
+  const trackCopy = useCopyTracking(template.template_id, "nano_inspiration", "cards");
   const trackGenerate = useGenerateTracking(
     template.template_id,
     "nano_inspiration",
-    "list"
+    "cards"
+  );
+  const trackShare = useShareTracking(
+    template.template_id,
+    "nano_inspiration",
+    "cards"
   );
 
   useEffect(() => {
@@ -68,6 +80,12 @@ export default function ReproduceTemplateSection(props: {
     [template.base_prompt, form]
   );
 
+  const shareUrl = useMemo(() => {
+    if (typeof window === "undefined") return "";
+    const qs = searchParams?.toString();
+    return `${window.location.origin}${pathname}${qs ? `?${qs}` : ""}`;
+  }, [pathname, searchParams]);
+
   const visibleParams = showAllParams
     ? params
     : params.slice(0, COLLAPSED_PARAM_ROWS);
@@ -85,18 +103,6 @@ export default function ReproduceTemplateSection(props: {
 
   const onPickPrefill = (name: string, v: string) => {
     setForm((prev) => ({ ...prev, [name]: v }));
-  };
-
-  const onCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(promptText);
-      trackCopy();
-
-      if (!copied) {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2500);
-      }
-    } catch {}
   };
 
   const onGenerate = async () => {
@@ -212,7 +218,7 @@ export default function ReproduceTemplateSection(props: {
           </div>
 
           <div className="mt-4 flex flex-col gap-3">
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <button
                 type="button"
                 onClick={onGenerate}
@@ -221,13 +227,16 @@ export default function ReproduceTemplateSection(props: {
                 {generated ? t("reproduce.copiedBtn") : t("reproduce.generateBtn")}
               </button>
 
-              <button
-                type="button"
-                onClick={onCopy}
-                className="rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-bold text-neutral-800 hover:bg-neutral-50"
-              >
-                {copied ? t("reproduce.copiedBtn") : t("reproduce.copyBtn")}
-              </button>
+              <CopyPromptButton
+      text={promptText}
+      onCopied={trackCopy}
+    />
+              <ShareButton
+                url={shareUrl}
+                title={template.template_id}
+                text="Try this Nano Banana template"
+                onShared={trackShare}
+              />
             </div>
 
             {generated && (
@@ -239,35 +248,34 @@ export default function ReproduceTemplateSection(props: {
         </div>
 
         {/* RIGHT: PROMPT PREVIEW */}
-<div className="lg:col-span-7">
-  <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-    <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
-      {t("reproduce.previewLabel")}
-    </div>
+        <div className="lg:col-span-7">
+          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+            <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
+              {t("reproduce.previewLabel")}
+            </div>
 
-    <pre className="whitespace-pre-wrap text-sm leading-relaxed text-neutral-800">
-      {previewPromptText}
-    </pre>
+            <pre className="whitespace-pre-wrap text-sm leading-relaxed text-neutral-800">
+              {previewPromptText}
+            </pre>
 
-    {!showFullPrompt && shouldFoldPrompt && (
-      <div className="mt-2 text-sm text-neutral-500">...</div>
-    )}
+            {!showFullPrompt && shouldFoldPrompt && (
+              <div className="mt-2 text-sm text-neutral-500">...</div>
+            )}
 
-    {shouldFoldPrompt && (
-      <div className="mt-3 flex justify-end">
-        <button
-          type="button"
-          onClick={() => setShowFullPrompt((prev) => !prev)}
-          className="cursor-pointer text-sm font-semibold text-purple-600 hover:text-purple-700"
-        >
-          {showFullPrompt ? "Show less" : "Show full prompt"}
-        </button>
+            {shouldFoldPrompt && (
+              <div className="mt-3 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setShowFullPrompt((prev) => !prev)}
+                  className="cursor-pointer text-sm font-semibold text-purple-600 hover:text-purple-700"
+                >
+                  {showFullPrompt ? "Show less" : "Show full prompt"}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-    )}
-  </div>
-</div>
-      </div>
-      
     </section>
   );
 }
