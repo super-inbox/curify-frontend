@@ -22,6 +22,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import { Locale, makeSafeNanoTranslator } from "@/lib/locale_utils";
+import PromptActionBar from "./PromptActionBar";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface JsonPrompt {
@@ -270,10 +271,16 @@ export default async function PromptDetailPage({
 
           {/* Prompt text */}
           <div className="px-6 py-6">
-            <div className="flex justify-between items-center mb-3">
-              <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
-              <CopyButton text={prompt.prompt_text} />
-            </div>
+
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+  <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
+  <PromptActionBar
+    promptId={prompt.id}
+    promptText={prompt.prompt_text}
+    pageUrl={buildPromptUrl(locale, prompt.id)}
+    title={prompt.title}
+  />
+</div>
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <pre className="whitespace-pre-wrap font-sans text-gray-800">{prompt.prompt_text}</pre>
             </div>

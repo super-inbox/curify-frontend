@@ -21,6 +21,8 @@ import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { Locale } from "@/lib/locale_utils";
+import ExampleActionBar from "./ExampleActionBar";
+import { SITE_URL } from "@/lib/constants";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type PageParams = {
@@ -148,6 +150,7 @@ export default async function NanoExampleDetailPage({
     translate: translateNano,
   }).filter((c) => c.template_id !== templateId);
 
+  const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
@@ -208,15 +211,20 @@ export default async function NanoExampleDetailPage({
               </span>
             ))}
           </div>
+          <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
+  <Link
+    href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
+    className="inline-block rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-purple-700"
+  >
+    Try this template →
+  </Link>
 
-          <div className="mt-auto pt-2">
-            <Link
-              href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
-              className="inline-block rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-            >
-              Try this template →
-            </Link>
-          </div>
+  <ExampleActionBar
+    exampleId={example.id}
+    pageUrl={examplePageUrl}
+    title={title}
+  />
+</div>
         </div>
       </div>
 
