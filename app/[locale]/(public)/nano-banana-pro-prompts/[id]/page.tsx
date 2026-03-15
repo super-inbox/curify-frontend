@@ -7,7 +7,7 @@ import Link from "next/link";
 import path from "path";
 import fs from "fs";
 import { getTranslations } from "next-intl/server";
-import CopyButton from "./CopyButton";
+
 import CdnImage from "../../../_components/CdnImage";
 import NanoTemplateDetailClient from "../../nano-template/[slug]/NanoTemplateDetailClient";
 import { SITE_URL } from "@/lib/constants";
