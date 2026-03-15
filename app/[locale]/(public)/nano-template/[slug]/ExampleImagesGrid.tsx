@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
+import { useClickTracking } from "@/services/useTracking";
 
 type Item = {
   id: string;
@@ -35,6 +36,44 @@ function useCols() {
   return cols;
 }
 
+function ExampleImageCard({
+  item,
+  locale,
+}: {
+  item: Item;
+  locale: string;
+}) {
+  const trackClick = useClickTracking(item.id, "nano_inspiration", "cards");
+
+  return (
+    <Link
+      href={`/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`}
+      onClick={trackClick}
+      className="group block overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+    >
+      <div className="relative overflow-hidden">
+        <CdnImage
+          src={item.preview}
+          alt={item.title || item.id}
+          className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
+          <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
+            View prompt →
+          </span>
+        </div>
+      </div>
+
+      <div className="p-4">
+        <div className="line-clamp-2 text-sm font-semibold text-neutral-900 transition-colors group-hover:text-purple-700">
+          {item.title || item.id}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export default function ExampleImagesGrid({
   items,
   maxRows = 3,
@@ -54,32 +93,15 @@ export default function ExampleImagesGrid({
   return (
     <div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((it) => (
-          <Link
-            key={it.id}
-            href={`/${locale}/nano-template/${toSlug(it.templateId)}/example/${encodeURIComponent(it.id)}`}
-            className="group block overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <div className="relative overflow-hidden">
-              <CdnImage
-                src={it.preview}
-                alt={it.title || it.id}
-                className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
-                <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
-                  View prompt →
-                </span>
-              </div>
-            </div>
-            <div className="p-4">
-              <div className="line-clamp-2 text-sm font-semibold text-neutral-900 transition-colors group-hover:text-purple-700">
-                {it.title || it.id}
-              </div>
-            </div>
-          </Link>
-        ))}
+
+      {visible.map((it) => (
+  <ExampleImageCard
+    key={it.id}
+    item={it}
+    locale={locale}
+  />
+))}
+
       </div>
 
       {items.length > limit && (
