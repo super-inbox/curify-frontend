@@ -10,8 +10,6 @@ declare global {
   }
 }
 
-const GA_ID = "G-23QXSJ8HS7";
-
 export default function GoogleAnalyticsTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -24,11 +22,14 @@ export default function GoogleAnalyticsTracker() {
 
     const queryString = searchParams?.toString();
     const pagePath = queryString ? `${pathname}?${queryString}` : pathname;
+    const pageLocation = window.location.href;
 
-    if (lastTrackedUrlRef.current === pagePath) return;
-    lastTrackedUrlRef.current = pagePath;
+    if (lastTrackedUrlRef.current === pageLocation) return;
+    lastTrackedUrlRef.current = pageLocation;
 
-    window.gtag("config", GA_ID, {
+    window.gtag("event", "page_view", {
+      page_title: document.title,
+      page_location: pageLocation,
       page_path: pagePath,
     });
   }, [pathname, searchParams]);

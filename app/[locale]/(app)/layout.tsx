@@ -39,6 +39,9 @@ export default async function AppLocaleLayout({
     function gtag(){dataLayer.push(arguments);}
     window.gtag = gtag;
     gtag('js', new Date());
+    gtag('config', 'G-23QXSJ8HS7', {
+      send_page_view: false
+    });
   `}
 </Script>
 
