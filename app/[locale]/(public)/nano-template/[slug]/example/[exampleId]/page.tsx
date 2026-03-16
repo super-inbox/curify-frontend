@@ -172,6 +172,7 @@ export default async function NanoExampleDetailPage({
       </nav>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
+      
         <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[480px]">
           <ProgressiveCdnImage
             previewSrc={example.asset.preview_image_url}
