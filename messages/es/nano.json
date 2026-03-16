@@ -855,5 +855,29 @@
         ]
       }
     }
+  },
+  "template-mbti-breakingbad-en": {
+    "category": "Categoría de Tarjetas de Personajes de MBTI de TV",
+    "description": "Crea tarjetas de personajes de MBTI al estilo coleccionable inspiradas en Breaking Bad y Better Call Saul, combinando la tipificación de personalidad con visuales icónicos de dramas criminales.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Personajes de MBTI de Breaking Bad | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para generar tarjetas de personajes de MBTI de alta calidad estilizadas según el oscuro y industrial mundo de Breaking Bad y Better Call Saul. El diseño combina encabezados de metal desgastado, tipografía de tabla periódica, retratos al estilo cómic y fortalezas, debilidades, citas y objetos simbólicos impulsados por la personalidad.",
+        "who": "Adecuado para comunidades de fans de Breaking Bad y Better Call Saul, páginas de análisis de personajes de TV, creadores de contenido de MBTI, diseñadores de infografías de cultura pop, experimentadores de tarjetas coleccionables y cuentas de redes sociales enfocadas en entretenimiento.",
+        "how": [
+          "Elige un personaje de Breaking Bad o Better Call Saul para presentar en la tarjeta.",
+          "Asigna un tipo de MBTI y un título de arquetipo que se ajusten a la psicología y comportamiento del personaje.",
+          "Agrega un subtítulo de personaje o etiqueta de rol como 'El Químico' o 'El Abogado'.",
+          "Enumera las cuatro funciones cognitivas e incluye una cita emblemática que capture la identidad del personaje.",
+          "Agrega fortalezas, debilidades y cinco íconos de rasgos clave relacionados con los objetos, profesión u objetos simbólicos del personaje.",
+          "Genera la tarjeta coleccionable final utilizando una paleta industrial desgastada, motivos químicos, iluminación dramática e ilustración al estilo cómic."
+        ],
+        "prompts": [
+          "Crea una tarjeta MBTI de Breaking Bad para Walter White: INTJ – El Arquitecto, subtítulo 'El Químico', cita emblemática 'Yo soy el que llama.', fortalezas Inteligente, Estratégico, Determinado, Enfocado, Orgulloso, debilidades Arrogante, Controlador, Orgulloso, Despiadado, Autodestructivo, rasgos clave Frasco de Química, Sombrero de Heisenberg, Equipo de Laboratorio, Vaso de Precipitados, Tabla Periódica.",
+          "Genera una tarjeta MBTI de Better Call Saul para Saul Goodman: ENTP – El Tramposo, subtítulo 'El Abogado', cita emblemática 'Todo bien, hombre.', fortalezas Carismático, Ingenioso, Persuasivo, Oportunista, Creativo, debilidades Manipulador, Imprudente, Deshonesto, Impulsivo, Evitativo, rasgos clave Maletín Legal, Constitución de América, Teléfono Móvil, Traje Colorido, Anuncio en Cartelera.",
+          "Crea una tarjeta de personaje MBTI de Breaking Bad para Jesse Pinkman: ESFP – El Rebelde, subtítulo 'El Superviviente', cita emblemática '¡Sí, ciencia!', fortalezas Leal, Emocional, Callejero, Adaptable, Valiente, debilidades Impulsivo, Inseguro, Reactivo, Autodestructivo, Fácilmente Manipulado, rasgos clave Traje de Hazmat Amarillo, Caja de Altavoz, Cigarrillo, Montón de Dinero, RV."
+        ]
+      }
+    }
   }
 }

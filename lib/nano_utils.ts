@@ -38,7 +38,7 @@ export type RawNanoImageRecord = {
 
   asset: {
     image_url: string; // "/images/insp/xxx.jpg"
-    preview_image_url?: string; // "/images/insp_preview/xxx-prev.jpg"
+    preview_image_url: string; // "/images/insp_preview/xxx-prev.jpg"
   };
 
   params: Record<string, any>;

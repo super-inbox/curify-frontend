@@ -834,7 +834,30 @@
       }
     }
   },
-
+  "template-mbti-breakingbad-en": {
+    "category": "MBTI TV Character Card Category",
+    "description": "Create gritty collectible-style MBTI character cards inspired by Breaking Bad and Better Call Saul, blending personality typing with iconic crime-drama visuals.",
+    "title": "Nano Banana Prompt: MBTI Breaking Bad Character Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses customized Nano Banana prompts to generate premium MBTI character cards styled after the dark, industrial world of Breaking Bad and Better Call Saul. The design combines weathered metal headers, periodic table typography, comic-style portraits, and personality-driven strengths, weaknesses, quotes, and symbolic props.",
+        "who": "Suitable for Breaking Bad and Better Call Saul fan communities, TV character analysis pages, MBTI content creators, pop culture infographic designers, collectible card experimenters, and entertainment-focused social media accounts.",
+        "how": [
+          "Choose a character from Breaking Bad or Better Call Saul to feature on the card.",
+          "Assign an MBTI type and archetype title that fit the character’s psychology and behavior.",
+          "Add a character subtitle or role label such as 'The Chemist' or 'The Lawyer'.",
+          "List the four cognitive functions and include one signature quote that captures the character’s identity.",
+          "Add strengths, weaknesses, and five key-trait icons tied to the character’s props, profession, or symbolic objects.",
+          "Generate the final collectible card using a gritty industrial palette, chemical motifs, dramatic lighting, and comic-book-style illustration."
+        ],
+        "prompts": [
+          "Create a Breaking Bad MBTI card for Walter White: INTJ – The Architect, subtitle 'The Chemist', signature quote 'I am the one who knocks.', strengths Intelligent, Strategic, Determined, Focused, Prideful, weaknesses Arrogant, Controlling, Prideful, Ruthless, Self-Destructive, key traits Chemistry Flask, Heisenberg Hat, Lab Equipment, Beaker, Periodic Table.",
+          "Generate a Better Call Saul MBTI card for Saul Goodman: ENTP – The Trickster, subtitle 'The Lawyer', signature quote 'S'all good, man.', strengths Charismatic, Quick-Witted, Persuasive, Opportunistic, Creative, weaknesses Manipulative, Reckless, Dishonest, Impulsive, Avoidant, key traits Legal Briefcase, Constitution of America, Cell Phone, Colorful Suit, Billboard Ad.",
+          "Create a Breaking Bad MBTI character card for Jesse Pinkman: ESFP – The Rebel, subtitle 'The Survivor', signature quote 'Yeah, science!', strengths Loyal, Emotional, Street-Smart, Adaptable, Courageous, weaknesses Impulsive, Insecure, Reactive, Self-Destructive, Easily Manipulated, key traits Yellow Hazmat Suit, Speaker Box, Cigarette, Cash Stack, RV."
+        ]
+      }
+    }
+  },
   "template-mbti-siliconvalley-en": {
     "category": "MBTI Tech Founder Visualization Category",
     "description": "Create MBTI visual concepts that map personality types onto iconic Silicon Valley founders and innovators.",

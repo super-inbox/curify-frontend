@@ -3,26 +3,29 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
-import CdnImage from "@/app/[locale]/_components/CdnImage";
+
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
+import ExampleActionBar from "./ExampleActionBar";
+import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
+import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import {
   toSlug,
-  buildNanoRegistry,
-  buildNanoFeedCards,
-  getImageViewsForTemplate,
   getNanoExampleById,
   type RawNanoImageRecord,
-  type RawTemplate,
 } from "@/lib/nano_utils";
-import { resolveContentLocale } from "@/lib/locale_utils";
+
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
-import nanoTemplates from "@/public/data/nano_templates.json";
-import nanoImages from "@/public/data/nano_inspiration.json";
-import { Locale } from "@/lib/locale_utils";
-import ExampleActionBar from "./ExampleActionBar";
 import { SITE_URL } from "@/lib/constants";
+
+import {
+  buildNanoPageContext,
+  buildTemplateImageGridItems,
+  buildOtherTemplateCards,
+  getImageViewsForTemplate,
+  resolveLocalizedExampleCopy,
+} from "@/lib/nano_page_data";
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type PageParams = {
@@ -31,19 +34,49 @@ type PageParams = {
   exampleId: string;
 };
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// ─── Shared page data ─────────────────────────────────────────────────────────
 
-function slugToTemplateId(slug: string) {
-  return slug.startsWith("template-") ? slug : `template-${slug}`;
-}
+async function getPageData(localeStr: string, slug: string, rawExampleId: string) {
+  const ctx = await buildNanoPageContext(localeStr, slug);
+  const imageId = decodeURIComponent(rawExampleId);
 
-function makeSafeNanoTranslator(tNano: Awaited<ReturnType<typeof getTranslations>>) {
-  return (key: string): string => {
-    try {
-      return tNano(key as never) ?? "";
-    } catch {
-      return "";
-    }
+  const example = getNanoExampleById(ctx.templateId, imageId, ctx.contentLocale);
+  if (!example) return null;
+
+  const { title, category } = resolveLocalizedExampleCopy(
+    example,
+    ctx.contentLocale,
+    ctx.localizedEntry
+  );
+
+  const prompt = example.filled_prompt || example.base_prompt || "";
+  const tags = [category, "nano banana", "prompt generator", "ai image"].filter(Boolean);
+
+  const paramEntries = Object.fromEntries(
+    Object.entries(example.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
+  );
+
+  const imageViews = getImageViewsForTemplate(ctx.reg, ctx.templateId, ctx.contentLocale);
+  const gridItems = buildTemplateImageGridItems(imageViews, imageId);
+
+  const otherNanoCards = buildOtherTemplateCards(
+    ctx.reg,
+    ctx.contentLocale,
+    ctx.translateNano,
+    ctx.templateId
+  );
+
+  return {
+    ...ctx,
+    imageId,
+    example,
+    title,
+    category,
+    prompt,
+    tags,
+    paramEntries,
+    gridItems,
+    otherNanoCards,
   };
 }
 
@@ -74,16 +107,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: rawLocale, slug, exampleId: rawExampleId } = await params;
 
-  const contentLocale = resolveContentLocale(rawLocale);
-  const templateId = slugToTemplateId(slug);
-  const imageId = decodeURIComponent(rawExampleId);
+  const pageData = await getPageData(rawLocale, slug, rawExampleId);
+  if (!pageData) return {};
 
-  const example = getNanoExampleById(templateId, imageId, contentLocale);
-  if (!example) return {};
-
-  const loc = example.locales?.[contentLocale] ?? example.locales?.en ?? example.locales?.zh ?? {};
-  const title = loc.title ?? example.id;
-  const category = loc.category ?? "";
+  const { title, category, example } = pageData;
   const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
 
   return {
@@ -109,50 +136,26 @@ export default async function NanoExampleDetailPage({
 }) {
   const { locale: rawLocale, slug, exampleId: rawExampleId } = await params;
 
-  const contentLocale = resolveContentLocale(rawLocale);
-  const templateId = slugToTemplateId(slug);
-  const imageId = decodeURIComponent(rawExampleId);
+  const pageData = await getPageData(rawLocale, slug, rawExampleId);
+  if (!pageData) notFound();
 
-  const example = getNanoExampleById(templateId, imageId, contentLocale);
-  if (!example) notFound();
-
-  const loc = example.locales?.[contentLocale] ?? example.locales?.en ?? example.locales?.zh ?? {};
-  const title = loc.title ?? example.id;
-  const category = loc.category ?? "";
-  const prompt = example.filled_prompt || example.base_prompt || "";
-  const tags = [category, "nano banana", "prompt generator", "ai image"].filter(Boolean);
-
-  const paramEntries = Object.fromEntries(
-    Object.entries(example.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
-  );
-
-  const reg = buildNanoRegistry(
-    nanoTemplates as unknown as RawTemplate[],
-    nanoImages as unknown as RawNanoImageRecord[]
-  );
-
-  const tNano = await getTranslations({ locale: rawLocale, namespace: "nano" });
-  const translateNano = makeSafeNanoTranslator(tNano);
-
-  const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
-  const gridItems = imageViews
-    .filter((img) => img.id !== imageId)
-    .map((img) => ({
-      id: img.id,
-      title: img.title || "",
-      preview: img.preview_image_url || img.image_url,
-      templateId: img.template_id,
-    }));
-
-  const otherNanoCards = buildNanoFeedCards(reg, contentLocale, {
-    perTemplateMaxImages: 2,
-    strictLocale: false,
-    translate: translateNano,
-  }).filter((c) => c.template_id !== templateId);
+  const {
+    pageLocale,
+    templateId,
+    example,
+    title,
+    category,
+    prompt,
+    tags,
+    paramEntries,
+    gridItems,
+    otherNanoCards,
+  } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
+
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
         <Link href={`/${rawLocale}`} className="hover:text-neutral-800">
           Home
@@ -165,37 +168,40 @@ export default async function NanoExampleDetailPage({
           {category || slug}
         </Link>
         <span>/</span>
-        <span className="font-medium text-neutral-800 line-clamp-1">{title}</span>
+        <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
       </nav>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
-          <CdnImage
-            src={example.asset.image_url}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
+        <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[480px]">
+          <ProgressiveCdnImage
+            previewSrc={example.asset.preview_image_url}
+            fullSrc={example.asset.image_url}
             alt={title}
-            className="w-full object-cover"
+            className="h-full w-full object-contain"
             priority
           />
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3 lg:h-[480px]">
           {category && (
             <span className="inline-block w-fit rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
               {category}
             </span>
           )}
 
-          <h1 className="text-2xl font-bold leading-snug text-neutral-900">{title}</h1>
+          <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+            {title}
+          </h1>
 
-          <section aria-labelledby="prompt-heading">
+          <section aria-labelledby="prompt-heading" className="min-h-0 flex-1">
             <h2
               id="prompt-heading"
-              className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-500"
+              className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
             >
               Prompt
             </h2>
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-              <pre className="whitespace-pre-wrap font-mono text-sm leading-relaxed text-neutral-800">
+            <div className="h-full overflow-y-auto rounded-2xl border border-neutral-200 bg-neutral-50 p-3">
+              <pre className="whitespace-pre-wrap font-mono text-xs leading-relaxed text-neutral-800 sm:text-sm">
                 {prompt || "—"}
               </pre>
             </div>
@@ -205,27 +211,28 @@ export default async function NanoExampleDetailPage({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-neutral-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-neutral-600"
+                className="rounded-full border border-neutral-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-neutral-600 sm:px-2.5 sm:py-1 sm:text-[11px]"
               >
                 #{tag}
               </span>
             ))}
           </div>
-          <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
-  <Link
-    href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
-    className="inline-block rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-  >
-    Try this template →
-  </Link>
 
-  <ExampleActionBar
-  exampleId={example.id}
-  pageUrl={examplePageUrl}
-  title={title}
-  promptText={prompt}
-/>
-</div>
+          <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">
+            <Link
+              href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
+              className="inline-block rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-purple-700"
+            >
+              Try this template →
+            </Link>
+
+            <ExampleActionBar
+              exampleId={example.id}
+              pageUrl={examplePageUrl}
+              title={title}
+              promptText={prompt}
+            />
+          </div>
         </div>
       </div>
 
@@ -237,13 +244,15 @@ export default async function NanoExampleDetailPage({
       <section className="mt-8">
         {gridItems.length > 0 && (
           <>
-            <h2 className="mb-4 text-lg font-bold text-neutral-900">More from this template</h2>
-            <ExampleImagesGrid items={gridItems} locale={rawLocale} maxRows={3} />
+            <h2 className="mb-4 text-lg font-bold text-neutral-900">
+              More from this template
+            </h2>
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={3} />
           </>
         )}
 
         <NanoTemplateDetailClient
-          locale={rawLocale}
+          locale={pageLocale}
           template={{ template_id: templateId, base_prompt: "", parameters: [] }}
           otherNanoCards={otherNanoCards}
           showReproduce={false}
@@ -269,82 +278,5 @@ export default async function NanoExampleDetailPage({
         }}
       />
     </main>
-  );
-}
-
-// ─── Prompt Breakdown ─────────────────────────────────────────────────────────
-
-function PromptBreakdown({
-  prompt,
-  params,
-}: {
-  prompt: string;
-  params: Record<string, any>;
-}) {
-  if (!prompt) {
-    return <p className="text-sm text-neutral-500">No prompt data available.</p>;
-  }
-
-  const parts = prompt.split(/(\{[^}]+\})/g);
-
-  return (
-    <div className="space-y-4">
-      <p className="text-sm text-neutral-600">
-        Variables in{" "}
-        <span className="rounded border border-amber-200 bg-amber-50 px-1 py-0.5 font-mono text-xs text-amber-800">
-          {"{curly braces}"}
-        </span>{" "}
-        are replaced with your inputs:
-      </p>
-
-      <p className="rounded-2xl border border-neutral-100 bg-neutral-50 p-4 font-mono text-sm leading-7">
-        {parts.map((part, i) => {
-          const match = part.match(/^\{(.+)\}$/);
-          if (match) {
-            const key = match[1];
-            const value = params[key];
-            return (
-              <span
-                key={i}
-                className="mx-0.5 inline-block rounded border border-purple-200 bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-800"
-                title={value != null ? `Value: ${value}` : `Parameter: ${key}`}
-              >
-                {value != null ? String(value) : `{${key}}`}
-              </span>
-            );
-          }
-          return <span key={i}>{part}</span>;
-        })}
-      </p>
-
-      {Object.keys(params).length > 0 && (
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr className="border-b border-neutral-200">
-              <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
-                Variable
-              </th>
-              <th className="py-2 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
-                Value used
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(params).map(([k, v]) => (
-              <tr key={k} className="border-b border-neutral-100">
-                <td className="py-2 pr-4 font-mono text-xs text-neutral-600">{`{${k}}`}</td>
-                <td className="py-2 text-neutral-800">
-                  {v != null && String(v).trim() !== "" ? (
-                    String(v)
-                  ) : (
-                    <span className="italic text-neutral-400">—</span>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
   );
 }
