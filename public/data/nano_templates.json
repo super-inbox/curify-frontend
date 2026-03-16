@@ -2339,5 +2339,327 @@
     },
     "og_image": "/images/nano_insp_preview/template-mbti-siliconvalley-en-jobs-prev.jpg",
     "topics": "psychology"
+},
+  {
+    "id": "template-mbti-breakingbad-en",
+    "locales": {
+        "en": {
+            "base_prompt": "（Breaking Bad MBTI Card Designer）You are a top-tier MBTI character card designer specialized in Breaking Bad/Better Call Saul themed infographics. According to the user-specified [{character_name}], create a vertical 3:4 premium collectible character card for {character_name}, matching the gritty, industrial, crime-drama aesthetic of the reference images. Card layout: 1. Top: Rusty metal plate header displaying {mbti_type} - {mbti_title}, with a subtitle \"{character_subtitle}\" in quotes. 2. Character name: Spelled out using periodic table element tiles (each letter mapped to a chemical element symbol/atomic number), styled as weathered metal blocks. 3. Center: Detailed comic-style portrait of {character_name} in their iconic outfit, set against a thematic background tied to their story (e.g., law office, desert, cartel compound, lab, office). 4. Left panel: \"COGNITIVE FUNCTIONS\" section listing {cog_func_1}, {cog_func_2}, {cog_func_3}, {cog_func_4}, with a \"SIGNATURE QUOTE\" box containing {signature_quote}. 5. Right panel: \"STRENGTHS\" (green flask icons) listing {strength_1}, {strength_2}, {strength_3}, {strength_4}, {strength_5} and \"WEAKNESSES\" (red warning icons) listing {weakness_1}, {weakness_2}, {weakness_3}, {weakness_4}, {weakness_5}. 6. Bottom panel: \"KEY TRAITS\" section with 5 isometric icons + labels representing {character_name}'s iconic props/identities (e.g., {trait_icon_1}, {trait_icon_2}, {trait_icon_3}, {trait_icon_4}, {trait_icon_5}). Style: Gritty industrial aesthetic, weathered metal/grunge textures, chemical/periodic table motifs, comic book illustration, rich shading, dramatic lighting, cohesive color palette matching the character’s story, Curify/Better Call Saul watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The character is [{character_name}].",
+            "parameters": [
+                {
+                    "name": "character_name",
+                    "label": "Character Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Walter White",
+                        "Saul Goodman",
+                        "Mike Ehrmantraut",
+                        "Lalo Salamanca",
+                        "Howard Hamlin",
+                        "Gus Fring"
+                    ]
+                },
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": [
+                        "INTJ",
+                        "ENFP",
+                        "ISTJ",
+                        "ENFJ",
+                        "ESTJ",
+                        "ENTJ"
+                    ]
+                },
+                {
+                    "name": "mbti_title",
+                    "label": "MBTI Title",
+                    "type": "text",
+                    "placeholder": [
+                        "The Architect",
+                        "The Champion",
+                        "The Logistician",
+                        "The Protagonist",
+                        "The Executive",
+                        "The Commander"
+                    ]
+                },
+                {
+                    "name": "character_subtitle",
+                    "label": "Character Subtitle",
+                    "type": "text",
+                    "placeholder": [
+                        "The Chemist",
+                        "The Lawyer",
+                        "The Fixer",
+                        "The Charismatic",
+                        "The Administrator",
+                        "The Villain"
+                    ]
+                },
+                {
+                    "name": "cog_func_1",
+                    "label": "Cognitive Function 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Ni",
+                        "Ne",
+                        "Si",
+                        "Fe",
+                        "Te",
+                        "Te"
+                    ]
+                },
+                {
+                    "name": "cog_func_2",
+                    "label": "Cognitive Function 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Te",
+                        "Fi",
+                        "Ti",
+                        "Ni",
+                        "Si",
+                        "Ni"
+                    ]
+                },
+                {
+                    "name": "cog_func_3",
+                    "label": "Cognitive Function 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Fi",
+                        "Te",
+                        "Fe",
+                        "Se",
+                        "Ne",
+                        "Se"
+                    ]
+                },
+                {
+                    "name": "cog_func_4",
+                    "label": "Cognitive Function 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Se",
+                        "Si",
+                        "Ne",
+                        "Ti",
+                        "Fi",
+                        "Fi"
+                    ]
+                },
+                {
+                    "name": "signature_quote",
+                    "label": "Signature Quote",
+                    "type": "text",
+                    "placeholder": [
+                        "I am the one who knocks.",
+                        "Better Call Saul!",
+                        "No more half-measures.",
+                        "Tell me again.",
+                        "You're not a real lawyer.",
+                        "What does a man do?"
+                    ]
+                },
+                {
+                    "name": "strength_1",
+                    "label": "Strength 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Intelligent",
+                        "Charismatic",
+                        "Professional",
+                        "Fearless",
+                        "Diligent",
+                        "Strategic"
+                    ]
+                },
+                {
+                    "name": "strength_2",
+                    "label": "Strength 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Strategic",
+                        "Quick-witted",
+                        "Disciplined",
+                        "Perceptive",
+                        "Honorable",
+                        "Controlled"
+                    ]
+                },
+                {
+                    "name": "strength_3",
+                    "label": "Strength 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Determined",
+                        "Creative",
+                        "Reliable",
+                        "Charming",
+                        "Fair",
+                        "Brilliant"
+                    ]
+                },
+                {
+                    "name": "strength_4",
+                    "label": "Strength 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Focused",
+                        "Adaptable",
+                        "Calm",
+                        "Resourceful",
+                        "Confident",
+                        "Ruthless"
+                    ]
+                },
+                {
+                    "name": "strength_5",
+                    "label": "Strength 5",
+                    "type": "text",
+                    "placeholder": [
+                        "Prideful",
+                        "Persuasive",
+                        "Loyal",
+                        "Bold",
+                        "Generous",
+                        "Disciplined"
+                    ]
+                },
+                {
+                    "name": "weakness_1",
+                    "label": "Weakness 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Arrogant",
+                        "Unethical",
+                        "Emotionless",
+                        "Violent",
+                        "Naive",
+                        "Cold"
+                    ]
+                },
+                {
+                    "name": "weakness_2",
+                    "label": "Weakness 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Controlling",
+                        "Selfish",
+                        "Distant",
+                        "Cruel",
+                        "Blind",
+                        "Manipulative"
+                    ]
+                },
+                {
+                    "name": "weakness_3",
+                    "label": "Weakness 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Prideful",
+                        "Chaotic",
+                        "Unforgiving",
+                        "Obsessive",
+                        "Repressed",
+                        "Merciless"
+                    ]
+                },
+                {
+                    "name": "weakness_4",
+                    "label": "Weakness 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Ruthless",
+                        "Dishonest",
+                        "Aloof",
+                        "Unpredictable",
+                        "Too Trusting",
+                        "Detached"
+                    ]
+                },
+                {
+                    "name": "weakness_5",
+                    "label": "Weakness 5",
+                    "type": "text",
+                    "placeholder": [
+                        "Self-Destructive",
+                        "Reckless",
+                        "Unemotional",
+                        "Dangerous",
+                        "Tragic",
+                        "Inhuman"
+                    ]
+                },
+                {
+                    "name": "trait_icon_1",
+                    "label": "Trait Icon 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Chemistry Flask",
+                        "Law Briefcase",
+                        "Gun",
+                        "Cartel Symbol",
+                        "Law Scales",
+                        "Chicken Logo"
+                    ]
+                },
+                {
+                    "name": "trait_icon_2",
+                    "label": "Trait Icon 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Heisenberg Hat",
+                        "Phone",
+                        "Watch",
+                        "Money",
+                        "Boxing Gloves",
+                        "Knife"
+                    ]
+                },
+                {
+                    "name": "trait_icon_3",
+                    "label": "Trait Icon 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Lab Equipment",
+                        "Microphone",
+                        "Newspaper",
+                        "Lighter",
+                        "Car Keys",
+                        "Pen"
+                    ]
+                },
+                {
+                    "name": "trait_icon_4",
+                    "label": "Trait Icon 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Beaker",
+                        "Business Card",
+                        "Photo",
+                        "Cactus",
+                        "Coffee Cup",
+                        "Folder"
+                    ]
+                },
+                {
+                    "name": "trait_icon_5",
+                    "label": "Trait Icon 5",
+                    "type": "text",
+                    "placeholder": [
+                        "Periodic Table",
+                        "Desk",
+                        "Evidence Bag",
+                        "Explosion",
+                        "Clock",
+                        "Poison"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-breakingbad-en-walter-prev.jpg"
 }
-]
