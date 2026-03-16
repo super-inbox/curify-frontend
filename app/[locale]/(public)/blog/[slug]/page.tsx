@@ -786,7 +786,7 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
 
       {(t("galleryTitle", { defaultValue: null }) || t("galleryContent", { defaultValue: null })) && (
         <section>
-          <h2 className="text-2xl font-bold mb-4">{t("galleryTitle") || "Gallery"}</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("galleryTitle") || ""}</h2>
           <div 
             className="prose prose-lg max-w-none mb-4"
             dangerouslySetInnerHTML={{ 
@@ -802,7 +802,7 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
           <div 
             className="prose prose-lg max-w-none mb-4"
             dangerouslySetInnerHTML={{ 
-              __html: formatContent(t("PipelineContent") || "Pipeline integration content...")
+              __html: formatContent(t("PipelineContent") || "")
             }} 
           />
         </section>
@@ -810,7 +810,7 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
 
       {(t("subtitleText", { defaultValue: null }) || t("SubtitleContent", { defaultValue: null })) && (
         <section>
-          <h2 className="text-2xl font-bold mb-4">{t("subtitleText") || "Subtitles and Lip-sync"}</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("subtitleText") || ""}</h2>
           <div 
             className="prose prose-lg max-w-none mb-4"
             dangerouslySetInnerHTML={{ 
@@ -822,7 +822,7 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
 
       {(t("complianceTitle", { defaultValue: null }) || t("complianceContent", { defaultValue: null })) && (
         <section>
-          <h2 className="text-2xl font-bold mb-4">{t("complianceTitle") || "Compliance"}</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("complianceTitle") || ""}</h2>
           <div 
             className="prose prose-lg max-w-none mb-4"
             dangerouslySetInnerHTML={{ 
@@ -834,7 +834,7 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
 
       {(t("TemplateTitle", { defaultValue: null }) || t("TemplateContent", { defaultValue: null })) && (
         <section>
-          <h2 className="text-2xl font-bold mb-4">{t("TemplateTitle") || "Templates"}</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("TemplateTitle") || ""}</h2>
           <div 
             className="prose prose-lg max-w-none mb-4"
             dangerouslySetInnerHTML={{ 
@@ -846,7 +846,7 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
 
       {(t("ReferencesTitle", { defaultValue: null }) || t("ReferencesContent", { defaultValue: null })) && (
         <section>
-          <h2 className="text-2xl font-bold mb-4">{t("ReferencesTitle") || "References"}</h2>
+          <h2 className="text-2xl font-bold mb-4">{t("ReferencesTitle") || ""}</h2>
           <div 
             className="prose prose-lg max-w-none mb-4"
             dangerouslySetInnerHTML={{ 
