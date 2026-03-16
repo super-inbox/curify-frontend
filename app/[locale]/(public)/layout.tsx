@@ -59,6 +59,11 @@ export default async function PublicLocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+
+      <meta
+    name="facebook-domain-verification"
+    content="abc123xyz"
+  /> 
       <Script
           src="//at.alicdn.com/t/c/font_4910365_wqytpll6n9g.js"
           strategy="beforeInteractive"
