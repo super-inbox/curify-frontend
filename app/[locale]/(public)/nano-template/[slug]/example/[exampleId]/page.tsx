@@ -185,97 +185,96 @@ export default async function NanoExampleDetailPage({
         <span>/</span>
         <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
       </nav>
+      <section className="relative">
+  {prevNext ? (
+    <>
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden lg:flex items-center">
+        <Link
+          href={prevNext.prev.href}
+          aria-label="Previous example"
+          className="pointer-events-auto inline-flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
+        >
+          &lt;
+        </Link>
+      </div>
 
-      <section className="lg:grid lg:grid-cols-[64px_minmax(0,1fr)_64px] lg:gap-6">
-        <div className="hidden lg:flex lg:items-center lg:justify-center">
-          {prevNext ? (
-            <Link
-              href={prevNext.prev.href}
-              aria-label="Previous example"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-neutral-200 bg-white text-lg text-neutral-700 shadow-sm transition hover:bg-neutral-50"
-            >
-              ←
-            </Link>
-          ) : null}
-        </div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex items-center justify-end">
+        <Link
+          href={prevNext.next.href}
+          aria-label="Next example"
+          className="pointer-events-auto inline-flex h-10 w-10 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
+        >
+          &gt;
+        </Link>
+      </div>
+    </>
+  ) : null}
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[520px]">
-            <ProgressiveCdnImage
-              previewSrc={example.asset.preview_image_url}
-              fullSrc={example.asset.image_url}
-              alt={title}
-              className="h-full w-full object-contain"
-              priority
-            />
-          </div>
-
-          <div className="flex flex-col gap-4 lg:min-h-[520px]">
-  {(templateTopics.length > 0 || category) && (
-    <div className="flex flex-wrap items-center gap-2">
-      {templateTopics.length > 0 ? (
-        <TopicNavRow
-          locale={pageLocale}
-          topics={[templateTopics[0]]}
-          className="mb-0"
-          showDisabled={false}
-          size="small"
-        />
-      ) : null}
-
-      {category ? (
-        <span className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-          {category}
-        </span>
-      ) : null}
+  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
+    <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[520px]">
+      <ProgressiveCdnImage
+        previewSrc={example.asset.preview_image_url}
+        fullSrc={example.asset.image_url}
+        alt={title}
+        className="h-full w-full object-contain"
+        priority
+      />
     </div>
-  )}
 
-  <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-    {title}
-  </h1>
+    <div className="flex flex-col gap-4 lg:min-h-[520px]">
+      {(templateTopics.length > 0 || category) && (
+        <div className="flex flex-wrap items-center gap-2">
+          {templateTopics.length > 0 ? (
+            <TopicNavRow
+              locale={pageLocale}
+              topics={[templateTopics[0]]}
+              className="mb-0"
+              showDisabled={false}
+              size="small"
+            />
+          ) : null}
 
-  <section aria-labelledby="prompt-heading" className="flex flex-col">
-    <h2
-      id="prompt-heading"
-      className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
-    >
-      Prompt
-    </h2>
-
-    <PromptBreakdown prompt={prompt} params={example.params ?? {}} />
-  </section>
-
-  <div className="flex flex-wrap items-center gap-2 pt-2">
-    <Link
-      href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
-      className="inline-block rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-    >
-      Try this template →
-    </Link>
-
-    <ExampleActionBar
-      exampleId={example.id}
-      pageUrl={examplePageUrl}
-      title={title}
-      promptText={prompt}
-    />
-  </div>
-</div>
-        </div>
-
-        <div className="hidden lg:flex lg:items-center lg:justify-center">
-          {prevNext ? (
-            <Link
-              href={prevNext.next.href}
-              aria-label="Next example"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-neutral-200 bg-white text-lg text-neutral-700 shadow-sm transition hover:bg-neutral-50"
-            >
-              →
-            </Link>
+          {category ? (
+            <span className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+              {category}
+            </span>
           ) : null}
         </div>
+      )}
+
+      <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+        {title}
+      </h1>
+
+      <section aria-labelledby="prompt-heading" className="flex flex-col">
+        <h2
+          id="prompt-heading"
+          className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
+        >
+          Prompt
+        </h2>
+
+        <PromptBreakdown prompt={prompt} params={example.params ?? {}} />
       </section>
+
+      <div className="flex flex-wrap items-center gap-2 pt-2">
+        <Link
+          href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
+          className="inline-block rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-purple-700"
+        >
+          Try this template →
+        </Link>
+
+        <ExampleActionBar
+          exampleId={example.id}
+          pageUrl={examplePageUrl}
+          title={title}
+          promptText={prompt}
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {prevNext ? (
         <div className="mt-4 flex items-center justify-between gap-3 lg:hidden">
