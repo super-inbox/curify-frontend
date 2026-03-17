@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/auth/'],
+      disallow: ['/api/', '/auth/', "/public/data/"],    
     },
     sitemap: 'https://www.curify-ai.com/sitemap.xml',
     host: 'https://www.curify-ai.com',
