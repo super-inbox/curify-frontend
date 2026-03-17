@@ -9,14 +9,15 @@ import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleActionBar from "./ExampleActionBar";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
-import {
-  toSlug,
-  getNanoExampleById,
-  type RawNanoImageRecord,
-} from "@/lib/nano_utils";
-
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
+import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+
+import { toSlug, getTemplateView, type RawNanoImageRecord } from "@/lib/nano_utils";
+import {
+  getNanoExampleById,
+  buildCircularExampleNav,
+} from "@/lib/nano_example_utils";
 
 import {
   buildNanoPageContext,
@@ -26,15 +27,11 @@ import {
   resolveLocalizedExampleCopy,
 } from "@/lib/nano_page_data";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 type PageParams = {
   locale: string;
   slug: string;
   exampleId: string;
 };
-
-// ─── Shared page data ─────────────────────────────────────────────────────────
 
 async function getPageData(localeStr: string, slug: string, rawExampleId: string) {
   const ctx = await buildNanoPageContext(localeStr, slug);
@@ -42,6 +39,9 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const example = getNanoExampleById(ctx.templateId, imageId, ctx.contentLocale);
   if (!example) return null;
+
+  const templateView = getTemplateView(ctx.reg, ctx.templateId, ctx.contentLocale);
+  const templateTopics = templateView?.topics ?? [];
 
   const { title, category } = resolveLocalizedExampleCopy(
     example,
@@ -56,8 +56,22 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     Object.entries(example.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
   );
 
-  const imageViews = getImageViewsForTemplate(ctx.reg, ctx.templateId, ctx.contentLocale);
+  const imageViews = getImageViewsForTemplate(
+    ctx.reg,
+    ctx.templateId,
+    ctx.contentLocale
+  );
+
   const gridItems = buildTemplateImageGridItems(imageViews, imageId);
+
+  const prevNext = buildCircularExampleNav({
+    reg: ctx.reg,
+    templateId: ctx.templateId,
+    contentLocale: ctx.contentLocale,
+    pageLocale: localeStr,
+    slug,
+    currentExampleId: imageId,
+  });
 
   const otherNanoCards = buildOtherTemplateCards(
     ctx.reg,
@@ -76,11 +90,11 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     tags,
     paramEntries,
     gridItems,
+    prevNext,
     otherNanoCards,
+    templateTopics,
   };
 }
-
-// ─── Static generation ────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
   const mod = (await import("@/public/data/nano_inspiration.json")) as unknown as {
@@ -98,8 +112,6 @@ export async function generateStaticParams() {
   );
 }
 
-// ─── Metadata ─────────────────────────────────────────────────────────────────
-
 export async function generateMetadata({
   params,
 }: {
@@ -110,15 +122,18 @@ export async function generateMetadata({
   const pageData = await getPageData(rawLocale, slug, rawExampleId);
   if (!pageData) return {};
 
-  const { title, category, example } = pageData;
+  const { title, category, example, templateTopics } = pageData;
   const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
+
+  const topicText = templateTopics?.length ? templateTopics[0] : "";
+  const categoryText = category || topicText || "nano banana";
 
   return {
     title: `${title} — Nano Banana Prompt Generator`,
-    description: `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${category} template.`,
+    description: `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${categoryText} template.`,
     openGraph: {
       title: `${title} | Nano Banana`,
-      description: `Nano Banana ${category.toLowerCase()} prompt — see the exact prompt and how to recreate this image.`,
+      description: `Nano Banana ${categoryText.toLowerCase()} prompt — see the exact prompt and how to recreate this image.`,
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
@@ -126,8 +141,6 @@ export async function generateMetadata({
     },
   };
 }
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function NanoExampleDetailPage({
   params,
@@ -149,13 +162,15 @@ export default async function NanoExampleDetailPage({
     tags,
     paramEntries,
     gridItems,
+    prevNext,
     otherNanoCards,
+    templateTopics,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
         <Link href={`/${rawLocale}`} className="hover:text-neutral-800">
           Home
@@ -170,77 +185,118 @@ export default async function NanoExampleDetailPage({
         <span>/</span>
         <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
       </nav>
-
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
-      
-        <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[480px]">
-          <ProgressiveCdnImage
-            previewSrc={example.asset.preview_image_url}
-            fullSrc={example.asset.image_url}
-            alt={title}
-            className="h-full w-full object-contain"
-            priority
-          />
-        </div>
-
-        <div className="flex flex-col gap-3 lg:h-[480px]">
-          {category && (
-            <span className="inline-block w-fit rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-              {category}
-            </span>
-          )}
-
-          <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-            {title}
-          </h1>
-
-          <section aria-labelledby="prompt-heading" className="min-h-0 flex-1">
-            <h2
-              id="prompt-heading"
-              className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
-            >
-              Prompt
-            </h2>
-            <div className="h-full overflow-y-auto rounded-2xl border border-neutral-200 bg-neutral-50 p-3">
-              <pre className="whitespace-pre-wrap font-mono text-xs leading-relaxed text-neutral-800 sm:text-sm">
-                {prompt || "—"}
-              </pre>
-            </div>
-          </section>
-
-          <div className="flex flex-wrap gap-1.5">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-neutral-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-neutral-600 sm:px-2.5 sm:py-1 sm:text-[11px]"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">
-            <Link
-              href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
-              className="inline-block rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-            >
-              Try this template →
-            </Link>
-
-            <ExampleActionBar
-              exampleId={example.id}
-              pageUrl={examplePageUrl}
-              title={title}
-              promptText={prompt}
-            />
-          </div>
-        </div>
+      <section className="relative">
+  {prevNext ? (
+    <>
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden lg:flex items-center">
+        <Link
+          href={prevNext.prev.href}
+          aria-label="Previous example"
+          className="pointer-events-auto inline-flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
+        >
+          &lt;
+        </Link>
       </div>
 
-      <section className="mt-10 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-4 text-lg font-bold text-neutral-900">Prompt breakdown</h2>
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex items-center justify-end">
+        <Link
+          href={prevNext.next.href}
+          aria-label="Next example"
+          className="pointer-events-auto inline-flex h-10 w-10 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
+        >
+          &gt;
+        </Link>
+      </div>
+    </>
+  ) : null}
+
+  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
+    <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[520px]">
+      <ProgressiveCdnImage
+        previewSrc={example.asset.preview_image_url}
+        fullSrc={example.asset.image_url}
+        alt={title}
+        className="h-full w-full object-contain"
+        priority
+      />
+    </div>
+
+    <div className="flex flex-col gap-4 lg:min-h-[520px]">
+      {(templateTopics.length > 0 || category) && (
+        <div className="flex flex-wrap items-center gap-2">
+          {templateTopics.length > 0 ? (
+            <TopicNavRow
+              locale={pageLocale}
+              topics={[templateTopics[0]]}
+              className="mb-0"
+              showDisabled={false}
+              size="small"
+            />
+          ) : null}
+
+          {category ? (
+            <span className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+              {category}
+            </span>
+          ) : null}
+        </div>
+      )}
+
+      <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+        {title}
+      </h1>
+
+      <section aria-labelledby="prompt-heading" className="flex flex-col">
+        <h2
+          id="prompt-heading"
+          className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
+        >
+          Prompt
+        </h2>
+
         <PromptBreakdown prompt={prompt} params={example.params ?? {}} />
       </section>
+
+      <div className="flex flex-wrap items-center gap-2 pt-2">
+        <Link
+          href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
+          className="inline-block rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-purple-700"
+        >
+          Try this template →
+        </Link>
+
+        <ExampleActionBar
+          exampleId={example.id}
+          pageUrl={examplePageUrl}
+          title={title}
+          promptText={prompt}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+      {prevNext ? (
+        <div className="mt-4 flex items-center justify-between gap-3 lg:hidden">
+          <Link
+            href={prevNext.prev.href}
+            className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+          >
+            ← Prev
+          </Link>
+
+          <span className="text-xs font-medium text-neutral-500">
+            {prevNext.index + 1} / {prevNext.total}
+          </span>
+
+          <Link
+            href={prevNext.next.href}
+            className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
+          >
+            Next →
+          </Link>
+        </div>
+      ) : null}
 
       <section className="mt-8">
         {gridItems.length > 0 && (

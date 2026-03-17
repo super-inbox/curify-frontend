@@ -5,12 +5,7 @@ import type { Metadata } from "next";
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 
-import { buildNanoTemplateDetailData } from "@/lib/nano_utils";
-
-import {
-  buildTopicHref,
-  getTopicLabel,
-} from "@/lib/locale_utils";
+import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 
 import {
   buildNanoTemplateMetadata,
@@ -23,6 +18,7 @@ import {
   buildOrderedTemplateImageGridItems,
   buildOtherTemplateCards,
   getImageViewsForTemplate,
+  buildNanoTemplateDetailData,
 } from "@/lib/nano_page_data";
 
 type Props = {
@@ -95,8 +91,7 @@ export default async function NanoTemplatePage({ params }: Props) {
     data,
     nanoMessages,
     localizedEntry,
-    translateNano,
-    translateTopics,
+    translateNano,    
   } = await getPageData(localeStr, slug);
 
   if (!data) notFound();
@@ -147,18 +142,13 @@ export default async function NanoTemplatePage({ params }: Props) {
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
 
             {templateTopics.length > 0 ? (
-              <div className="mt-4 flex flex-wrap gap-2">
-                {templateTopics.map((topic) => (
-                  <Link
-                    key={topic}
-                    href={buildTopicHref(pageLocale, topic)}
-                    className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 transition hover:border-blue-200 hover:bg-blue-100"
-                  >
-                    {getTopicLabel(topic, translateTopics)}
-                  </Link>
-                ))}
-              </div>
-            ) : null}
+  <TopicNavRow
+    locale={pageLocale}    
+    topics={templateTopics}
+    className="mt-4 mb-0"
+    showDisabled={false}
+  />
+) : null}
           </div>
 
           {categoryLabel ? (

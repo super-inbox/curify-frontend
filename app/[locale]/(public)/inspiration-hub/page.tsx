@@ -62,8 +62,7 @@ export default async function InspirationHubPage({
 }) {
   const { locale } = await params;
 
-  const tTopicsRoot = await getTranslations({ locale });
-  const translateTopics = makeSafeTranslator(tTopicsRoot);
+  const tTopicsRoot = await getTranslations({ locale });  
 
   const rawData = await inspirationService.getCards({
     review_status: "APPROVED",
@@ -82,8 +81,7 @@ export default async function InspirationHubPage({
 
       <main className="mx-auto max-w-6xl px-4 pt-20 pb-10">
         <TopicNavRow
-          locale={locale}
-          translateTopics={translateTopics}
+          locale={locale}          
           activeTopic="trending"
         />
 

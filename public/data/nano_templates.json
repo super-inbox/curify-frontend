@@ -16,6 +16,21 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "(Medica Concept Artist) You are a top herbal illustration concept designer, skilled at creating panoramic knowledge breakdowns of \"single herbal materials.\" Based on the user's specified 【{herb_name}】, generate a \"Herb Exploded Sheet\": a high-definition illustration of the actual slices/dried form of the herb placed in the center; evenly surrounding it are the original plant form, enlarged key parts of the plant, enlarged cross-sections/textures, small labels for taste and meridian, efficacy icons, modern dosage forms (powder/granules/capsules/decoction forms), and small illustrations of usage scenarios, all connected with fine lines/arrows/frames to create an encyclopedic poster-style educational design. The overall design is a high-quality 2D illustration: clear line art + soft coloring, with a beige/parchment/light gray scientific poster-style background; annotations are in simulated handwritten Chinese + small English counterparts; a vertical 4K single-page poster with clear white space and distinct information sections (entirely educational, with no treatment claims). Directly output the image, with the herb being 【{herb_name}】.",
+        "parameters": [
+          {
+            "name": "herb_name",
+            "type": "text",
+            "label": "Herbal Material Name",
+            "placeholder": [
+              "Ginseng",
+              "Angelica",
+              "Astragalus"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-herbal-zh-caulis-spatholobi-prev.jpg",
@@ -218,6 +233,30 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "You are a travel illustrator skilled in a cute hand-drawn style. Create a hand-drawn travel map of 【{destination}】 that reflects the seasonal and time characteristics of 【{date_range}】. The overall style should be cute and hand-drawn, featuring the core attractions, local delicacies, accommodations, and transportation methods of the destination designed as chibi-style illustrations with rounded lines and bright, fresh colors. All text should be in simplified Chinese, accurately labeling the destination, attractions, food, accommodations, and itinerary content in a cute cartoon font that is clear and readable. Clearly indicate the routes between locations (using cute lines/footprints and other elements), and display the key activities for each day segmented by 【{date_range}】 with clear divisions. The aspect ratio should be fixed at 4:3, with a resolution that is double the basic size, accurately restoring the basic topographical outline of the destination (reflecting local terrain/coastline characteristics), incorporating representative elements of the corresponding season, and aligning with the regional characteristics of the destination. The image should be rich in detail, healing, and lively, balancing a cute visual appeal with practical itinerary use, suitable for printing and electronic display.",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "text",
+            "label": "Travel Destination",
+            "placeholder": [
+              "Beijing",
+              "Dali",
+              "Tokyo"
+            ]
+          },
+          {
+            "name": "date_range",
+            "type": "text",
+            "label": "Travel Period",
+            "placeholder": [
+              "1/19-1/25",
+              "7/1-7/5"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-travel-zh-xishuangbanna-prev.jpg",
@@ -274,6 +313,20 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "Generate a 3:4 vertical information card for the endangered species 【{species_name}】, featuring a comprehensive knowledge map in a cyberpunk aesthetic style. The background should be a deep ocean black or forest dark green, with semi-transparent teal, ice blue, and coral pink neon lines outlining module borders and data visualization graphics. The overall design should present a futuristic UI interface with a layered design, incorporating soft glowing effects, realistic animal illustrations, and simple vector icons. The card must include the following six core modules, each labeled in both Chinese and English: 1. Biological ontology (classification hierarchy + morphological parameters + close-up details); 2. Ecology and habitat (distribution map + environmental indicators + habitat layers); 3. Behavior and social structure (behavior proportion pie chart + social structure diagram + sound wave visualization); 4. Life cycle and population dynamics (timeline + 30-year trend line + conservation status); 5. Threat mechanisms and risk structure (radar chart + threat icon annotations); 6. Conservation/culture/human relations (action cycle flow + policy nodes + cultural symbols). A central enlarged realistic illustration with a soft light halo, and clean, tech-inspired text.",
+        "parameters": [
+          {
+            "name": "species_name",
+            "type": "text",
+            "label": "Species Name",
+            "placeholder": [
+              "Siberian Tiger",
+              "Giant Panda"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-species-zh-baiji-prev.jpg",
@@ -304,6 +357,29 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "You are a top-tier game and anime concept art designer, skilled in creating detailed character design illustrations. You possess the ability of 'pixel-level disassembly', allowing you to see through the layers of a character's clothing, capture subtle changes in facial expressions, and visualize related items. Based on 【{character_source} featuring {character_name}】, generate a 'panoramic character depth concept breakdown' image with a 3:4 aspect ratio. The image must include a full-body illustration of the central character, surrounded by displays of the character's clothing layers, different expressions, core props, material close-ups, and a showcase of intimate and personal items that reflect everyday life. Include: clothing layers (multi-layer outfits + disassembly of intimate undergarments), expression set (3-4 close-ups of the head showing different emotions), material close-ups, related items (personal bags and their contents, beauty and care products, intimate life objects). Art style: Maintain a high-quality 2D illustration style or concept design sketch style, with clean and crisp lines. Background: Use a beige, parchment, or light gray textured background. Text description: Simulate handwritten notes next to each disassembled element, briefly explaining the material or brand/model hints, using Chinese.",
+        "parameters": [
+          {
+            "name": "character_source",
+            "type": "text",
+            "label": "Character Source",
+            "placeholder": [
+              "Crayon Shin-chan",
+              "Detective Conan"
+            ]
+          },
+          {
+            "name": "character_name",
+            "type": "text",
+            "label": "Character Name",
+            "placeholder": [
+              "Shinnosuke Nohara",
+              "Shinichi Kudo"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 1-prev.jpg",
@@ -322,6 +398,20 @@
             "placeholder": [
               "经典红烧肉",
               "清蒸鱼"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "You are a world-class visual recipe designer. Create a visual cooking guide poster for 【{dish_name}】 for the New Year's Eve dinner, blending the warm atmosphere of traditional Spring Festival, the enticing texture of Studio Ghibli food, and the meticulous structure of Da Vinci's manuscripts. Design a festive title area at the top of the poster, presenting the dish name and auspicious alternative names for the New Year's Eve dinner, using gold foil, paper-cutting, or calligraphy styles to highlight the festive spirit; place a perfect finished photo of the dish in the center, emphasizing steam, color, and plating aesthetics to showcase the abundance and reunion of the New Year's Eve dinner. The background should feature warm-toned vintage paper or traditional Spring Festival patterns (such as window flowers, auspicious clouds, etc.), with soft and warm tones. Surround the central finished dish with a modular layout: neatly display all ingredients in the top left corner with their quantities, incorporating small Spring Festival decorations; present 3-4 dynamic illustrations of core cooking steps at the bottom/right side, using arrows to indicate the sequence and incorporating elements of traditional Chinese style; showcase matching beverages and the meanings of the New Year's Eve dinner in the top right corner; and present cooking tips in the bottom left corner using a scroll or folding fan. Use dashed lines, handwritten notes, and arrows to connect ingredients, steps, and the finished product, forming a clear visual path. Maintain a fixed 3:4 aspect ratio, with vibrant and enticing dish colors, a low-saturation warm-toned background, and all annotations in Simplified Chinese, balancing festivity, texture, and culinary rigor, suitable for showcasing and referencing the New Year's Eve dinner.",
+        "parameters": [
+          {
+            "name": "dish_name",
+            "type": "text",
+            "label": "Dish Name",
+            "placeholder": [
+              "Classic Braised Pork",
+              "Steamed Fish"
             ]
           }
         ]
@@ -373,6 +463,47 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "Generate a detailed information chart for 【{character_name}】, using the aesthetics of 【{art_style}】. In the center, there should be a classic half-body/full-body portrait of the character (including clothing/pose/expression), placed within a specified material/shape frame. Top row: a series of headshot designs showcasing 3-4 emotional variations. Left column: labeled as 【{left_section_title}】, containing 3-4 official setting details (name, birthplace, personality, special moves, etc.) in the specified font style. Right column: labeled as 【{right_section_title}】, displaying key characters A/B/C and their features in the form of Polaroids/bounty notices/gem projections. Bottom: breakdown of key items/equipment, presented as game item illustrations/museum exhibits. The overall color tone, lines, and material texture should follow the input settings, completing a unified character profile information chart.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "type": "text",
+            "label": "Character Name",
+            "placeholder": [
+              "Sun Wukong",
+              "Nezha"
+            ]
+          },
+          {
+            "name": "art_style",
+            "type": "text",
+            "label": "Art Style",
+            "placeholder": [
+              "Cyberpunk",
+              "Ink Wash"
+            ]
+          },
+          {
+            "name": "left_section_title",
+            "type": "text",
+            "label": "Left Section Title",
+            "placeholder": [
+              "Personal Profile",
+              "Attributes Panel"
+            ]
+          },
+          {
+            "name": "right_section_title",
+            "type": "text",
+            "label": "Right Section Title",
+            "placeholder": [
+              "Bond Relationships",
+              "Interpersonal Network"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
@@ -394,6 +525,20 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "Generate a 1:1 isometric miniature 3D cartoon city weather scene: a 45° top-down view, with landmarks centered, a detailed model, PBR materials, and soft realistic lighting. Creatively blend weather elements with urban architecture to form a dynamic interaction between the cityscape and weather conditions. The background should be minimalistic and in soft solid colors to highlight the main subject. Centered at the top: a large title \"【{city_name}】\", followed by a weather icon, and below that, the date (in small text) and temperature (in medium text). The text should match the city's native language. Please check the current weather for the city before rendering.",
+        "parameters": [
+          {
+            "name": "city_name",
+            "type": "text",
+            "label": "City Name",
+            "placeholder": [
+              "Beijing",
+              "Shanghai"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-weather-zh-beijing-prev.jpg",
@@ -412,6 +557,20 @@
             "placeholder": [
               "光合作用",
               "勾股定理"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "Extract the core themes and key points from the input content 【{topic}】 and generate an infographic (choose one of two styles): A) Cute digital cartoon style: landscape 3:4, pure white/very light solid color background, macaron color scheme (mainly light green, paired with sky blue/beige/light orange/light pink), rounded and friendly lines; organize information using rounded rectangles, flowcharts, and arrows; include a small number of cute anthropomorphized icons (sun/cloud/chemical molecule, etc.); text should be in rounded sans-serif cartoon style, highlighting keywords and leaving plenty of white space. B) Hand-drawn blackboard report/science manuscript chalk sketch style: portrait 3:4, dark gray near blackboard texture background; main body in white chalk lines + cross-hatching shadows; use a small amount of highly saturated accent colors (lemon yellow/cyan/magenta/bright green) to emphasize key graphics and annotations; overall resembling a draft page bursting with inspiration, elements are dense but the core is clear, text should be in irregular handwritten chalk font. The default language is consistent with the input content language.",
+        "parameters": [
+          {
+            "name": "topic",
+            "type": "text",
+            "label": "Knowledge Point Theme",
+            "placeholder": [
+              "Photosynthesis",
+              "Pythagorean Theorem"
             ]
           }
         ]
@@ -453,6 +612,37 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "Generate a visual infographic on hot events: portrait 3:4; text in English with clear and separate layers; white background. Title: Multi-dimensional visual analysis with AI — 【{event_title}】 (in-depth exploration). Content structure: 1) Phenomenon-Essence Layered Diagram: from top to bottom “Surface Phenomenon Layer → Direct Cause Layer → Deep Essence Layer,” with arrows indicating causal relationships; 2) Underlying Logic Breakdown Diagram: process chain “{logic_chain},” labeling subjects, actions, and results; 3) Long-term Impact Radiation Diagram: radiating from the event towards {impact_axes}, labeling impact content and duration (short/medium/long), using colors to distinguish impact levels (red high/yellow medium/blue low).",
+        "parameters": [
+          {
+            "name": "event_title",
+            "type": "text",
+            "label": "Event Title (for main title)",
+            "placeholder": [
+              "US 'Kill Line'",
+              "Layoffs at a Company",
+              "Policy Change"
+            ]
+          },
+          {
+            "name": "logic_chain",
+            "type": "text",
+            "label": "Underlying Logic Chain (connect with →)",
+            "placeholder": [
+              "Capital Dominance → Policy Adaptation → Individual Pressure → System Elimination"
+            ]
+          },
+          {
+            "name": "impact_axes",
+            "type": "text",
+            "label": "Impact Radiation Direction",
+            "placeholder": [
+              "Social/Political/International"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-hot-event-analysis-zh-declining-fertility-rate-prev.jpg",
@@ -473,6 +663,22 @@
               "苏绣",
               "景泰蓝",
               "木版年画"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "Visualization flowchart of traditional intangible cultural heritage crafts in China (A3 poster layout): The theme is 【{craft_name}】. It must include: 1. Historical development and cultural background; 2. Artistic characteristics and production techniques; 3. Overall artistic system (regional schools/styles, singing styles, forms, thematic differences, etc.); 4. Traditional patterns and cultural symbols; 5. Production techniques and current status of inheritance (including digitization and integration with cultural tourism); 6. Surrounding annotations with detailed illustrations of core components (evolution of tools and materials, structural control diagrams, detailed craftsmanship and scenes of old artisans, performance/use ecology, etc.). The style is retro, exquisite, and high in information density, with professional Chinese knowledge analysis; the color scheme leans towards traditional architectural paintings/ancient book color palettes.",
+        "parameters": [
+          {
+            "name": "craft_name",
+            "type": "text",
+            "label": "Name of the intangible cultural heritage craft",
+            "placeholder": [
+              "Shadow Play",
+              "Suzhou Embroidery",
+              "Cloisonné",
+              "Woodblock New Year Pictures"
             ]
           }
         ]
@@ -1472,6 +1678,278 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "(Character Battle Designer) You are a professional illustrator specializing in ancient-style character duels. Create a vertical ancient-style character duel profile card with the theme of \"{battle_theme}: {character_A} vs {character_B}\". The composition is split-screen in the center: on the left, {character_A}, dressed in {style_A} attire as a {identity_A}, holding {item_A}, with a {expression_A} expression, {action_A}, as if {scene_A}; on the right, {character_B}, dressed in {style_B} attire as a {identity_B}, holding {item_B}, with a {expression_B} expression, {action_B}, as if {scene_B}. The background features an ink wash landscape of {battle_scene}, with {element_A} on the left, {element_B} on the right, a {foreground_effect} in the foreground, and a {divider} in the middle to enhance the sense of confrontation. The card modules include: 1. Four small avatars at the top, two on each side, displaying key emotional tags for both sides; 2. Profile for character A on the left: name, origin, personality, core abilities; 3. Profile for character B on the right: name, origin, personality, core abilities; 4. Two iconic items on each side at the bottom. The overall style is traditional Chinese fine brushwork, with delicate lines, elegant colors, and a {style_tone}, creating maximum visual tension, ready for output.",
+        "parameters": [
+          {
+            "name": "battle_theme",
+            "type": "text",
+            "label": "Duel Theme",
+            "placeholder": [
+              "Pinnacle of Military Confrontation",
+              "Duel of Military Saints",
+              "Duel of Three Kingdoms Strategists",
+              "Chu-Han Contention",
+              "Duel of Famous Generals of Song and Jin",
+              "Duel of the Great Han Heroes",
+              "Duel of Famous Detectives and Statesmen",
+              "Duel of Poets and Immortals",
+              "Duel of Empress and Chancellor",
+              "Duel of Three Kingdoms Overlords"
+            ]
+          },
+          {
+            "name": "character_A",
+            "type": "text",
+            "label": "Character A",
+            "placeholder": [
+              "Han Xin",
+              "Sun Wu",
+              "Zhuge Liang",
+              "Liu Bang",
+              "Yue Fei",
+              "Wei Qing",
+              "Di Renjie",
+              "Li Bai",
+              "Wu Zetian",
+              "Sun Quan"
+            ]
+          },
+          {
+            "name": "character_B",
+            "type": "text",
+            "label": "Character B",
+            "placeholder": [
+              "Bai Qi",
+              "Wu Qi",
+              "Sima Yi",
+              "Xiang Yu",
+              "Jin Wuzhu",
+              "Huo Qubing",
+              "Bao Zheng",
+              "Du Fu",
+              "Princess Taiping",
+              "Cao Cao"
+            ]
+          },
+          {
+            "name": "style_A",
+            "type": "text",
+            "label": "Style of A's Attire",
+            "placeholder": [
+              "Han Dynasty Armor",
+              "Tang Dynasty Martial Attire",
+              "Song Dynasty Scholar Robe",
+              "Ming Dynasty Armor",
+              "Warring States Armor"
+            ]
+          },
+          {
+            "name": "identity_A",
+            "type": "text",
+            "label": "A's Identity Setting",
+            "placeholder": [
+              "Famous General",
+              "Military Strategist",
+              "Advisor",
+              "Emperor",
+              "Hero"
+            ]
+          },
+          {
+            "name": "item_A",
+            "type": "text",
+            "label": "A's Weapon/Item",
+            "placeholder": [
+              "Spear",
+              "Sword",
+              "Feather Fan",
+              "Military Treatise",
+              "Imperial Seal"
+            ]
+          },
+          {
+            "name": "expression_A",
+            "type": "text",
+            "label": "A's Expression",
+            "placeholder": [
+              "Calm",
+              "Fierce",
+              "Composed",
+              "Determined",
+              "Proud"
+            ]
+          },
+          {
+            "name": "action_A",
+            "type": "text",
+            "label": "A's Action",
+            "placeholder": [
+              "Charging Forward on Horseback",
+              "Standing Firm with Spear",
+              "Waving Fan to Formulate Strategy",
+              "Drawing Sword from Sheath",
+              "Focusing on the Enemy"
+            ]
+          },
+          {
+            "name": "scene_A",
+            "type": "text",
+            "label": "A's Atmosphere Description",
+            "placeholder": [
+              "Flags fluttering in the wind",
+              "Killing aura fills the battlefield",
+              "Strategies brewing in the military tent",
+              "Storm approaching",
+              "Lonely army confronting in the snowy night"
+            ]
+          },
+          {
+            "name": "style_B",
+            "type": "text",
+            "label": "Style of B's Attire",
+            "placeholder": [
+              "Qin Dynasty Iron Armor",
+              "Wei-Jin Dark Armor",
+              "Jin Dynasty Battle Robe",
+              "Warring States Military Outfit",
+              "Tang Dynasty Armor"
+            ]
+          },
+          {
+            "name": "identity_B",
+            "type": "text",
+            "label": "B's Identity Setting",
+            "placeholder": [
+              "Famous General",
+              "Powerful Minister",
+              "Emperor",
+              "Commander",
+              "Assassin"
+            ]
+          },
+          {
+            "name": "item_B",
+            "type": "text",
+            "label": "B's Weapon/Item",
+            "placeholder": [
+              "Fang Tian Hua Ji",
+              "Long Knife",
+              "Battle Axe",
+              "Bow and Arrow",
+              "Short Blade"
+            ]
+          },
+          {
+            "name": "expression_B",
+            "type": "text",
+            "label": "B's Expression",
+            "placeholder": [
+              "Ruthless",
+              "Gloomy",
+              "Cold Smile",
+              "Majestic",
+              "Cunning"
+            ]
+          },
+          {
+            "name": "action_B",
+            "type": "text",
+            "label": "B's Action",
+            "placeholder": [
+              "Approaching with Halberd",
+              "Swinging Knife through the Wind",
+              "Flanking on Horseback",
+              "Drawing Bow and Waiting",
+              "Crushing Fallen Leaves"
+            ]
+          },
+          {
+            "name": "scene_B",
+            "type": "text",
+            "label": "B's Atmosphere Description",
+            "placeholder": [
+              "Dark clouds looming",
+              "Flames lighting the sky",
+              "Cold light under the moon",
+              "Ancient road with desolate smoke",
+              "Remnants of the city walls"
+            ]
+          },
+          {
+            "name": "battle_scene",
+            "type": "text",
+            "label": "Duel Scene",
+            "placeholder": [
+              "Ink wash landscape battlefield",
+              "In front of an ancient city gate",
+              "Open field battlefield",
+              "Night battle by the river",
+              "Snowy mountain pass"
+            ]
+          },
+          {
+            "name": "element_A",
+            "type": "text",
+            "label": "Left Side Environmental Element",
+            "placeholder": [
+              "Banners",
+              "Pine Forest",
+              "Military Tent",
+              "Setting Sun",
+              "River Mist"
+            ]
+          },
+          {
+            "name": "element_B",
+            "type": "text",
+            "label": "Right Side Environmental Element",
+            "placeholder": [
+              "Beacon Fire",
+              "Ruined Wall",
+              "Cold Moon",
+              "Falling Snow",
+              "Crows"
+            ]
+          },
+          {
+            "name": "foreground_effect",
+            "type": "text",
+            "label": "Foreground Atmosphere Effect",
+            "placeholder": [
+              "Dust Rising",
+              "Ink Splashes",
+              "Spinning Leaves",
+              "Slanting Rain",
+              "Sparks Flying"
+            ]
+          },
+          {
+            "name": "divider",
+            "type": "text",
+            "label": "Middle Divider Element",
+            "placeholder": [
+              "Cracked Ink Lines",
+              "Crossed Weapon Silhouettes",
+              "Yin Yang Taiji Pattern",
+              "Lightning Strikes",
+              "Calligraphy of the word 'Battle'"
+            ]
+          },
+          {
+            "name": "style_tone",
+            "type": "text",
+            "label": "Overall Style Tone",
+            "placeholder": [
+              "Stern",
+              "Desolate",
+              "Heroic",
+              "Epic",
+              "Tragic"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-battle-zh-hanxin-baiqi.jpg 1-prev.jpg",
@@ -1737,6 +2215,21 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "(Guofeng Scroll Illustrator) You are a top-tier traditional Chinese meticulous portrait artist, skilled in creating classic character group portraits as long scroll-style encyclopedic posters. Based on the user-specified 【{group_name}】, generate a 'Traditional Chinese Character Group Long Scroll Poster': the composition is in a horizontal long scroll format, with all characters arranged in a line from left to right; each character features distinct traditional attire, iconic props, and expressions, with vertical name tags below indicating their names; the top of the scroll has a prominent calligraphic title; the background includes thematic scene elements (such as auspicious clouds, ocean waves, mountains and waters, pavilions, etc.). The overall work is a high-quality Guofeng meticulous illustration: delicate linework + elegant coloring, with a light beige / rice paper texture background; annotations are in clear Chinese calligraphy font; horizontal 4K long scroll poster, with balanced composition, distinct characters, and an atmosphere that aligns with the theme (such as ethereal, heroic, gentle, etc.). Directly output the image, with the character group being 【{group_name}】.",
+        "parameters": [
+          {
+            "name": "group_name",
+            "type": "text",
+            "label": "Character Group Theme Name",
+            "placeholder": [
+              "Eight Immortals Crossing the Sea",
+              "Seven Sages of the Bamboo Grove",
+              "Twelve Beauties of Jinling"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-water-margin-prev.jpg",
@@ -1758,6 +2251,23 @@
               "绿孔雀",
               "银杏",
               "桫椤"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "(Scientific Illustrator) You are a professional science illustrator, skilled in creating infographic-style illustrations for modern scientific reference. Based on the user-specified 【{species_name}】, generate an infographic-style illustration: the center features a high-definition main image of 【{species_name}】, surrounded by card-style information boxes detailing characteristics, functions, lifespan, structure, and biological details, connected with clear lines and organized layout. The overall style is that of a modern scientific reference, rigorous and aesthetically pleasing, with photographic-level detail, text in English, and an image ratio of 3:4. Directly produce the image, with the species being 【{species_name}】.",
+        "parameters": [
+          {
+            "name": "species_name",
+            "type": "text",
+            "label": "Species Name",
+            "placeholder": [
+              "Giant Panda",
+              "Snow Leopard",
+              "Green Peafowl",
+              "Ginkgo",
+              "Tree Fern"
             ]
           }
         ]
@@ -1813,6 +2323,54 @@
               "轻轨",
               "复古电车",
               "观光巴士"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "(Concept Artist) You are a top-notch city miniature landscape concept designer, skilled in combining city maps with three-dimensional miniature landscapes. Based on the theme of {City Name}, generate a hyper-realistic three-dimensional city miniature landscape on a vintage-style {City map}: featuring local iconic landmarks with intricate architectural details, classic cultural scenery, bustling commercial streets with neon or traditional charm, lush {seasonal trees} adorned with colorful fallen leaves, and delicate {City Transit} trains running along miniature tracks. All elements naturally emerge from the map like a vibrant 3D city model, with soft shadows enhancing the sense of depth between layers. Use soft studio lighting, harmoniously balanced warm and cool tones, cinematic depth of field effects, softly blurred background bokeh, and exquisite details in the textures of buildings and plants, in a 2:3 composition, hyper-realistic rendering, and high-definition quality. Directly output the image, with the city being {City Name}.",
+        "parameters": [
+          {
+            "name": "City Name",
+            "type": "text",
+            "label": "City Name",
+            "placeholder": [
+              "Beijing",
+              "Shanghai",
+              "Tokyo",
+              "Paris"
+            ]
+          },
+          {
+            "name": "City map",
+            "type": "text",
+            "label": "Map Style",
+            "placeholder": [
+              "Vintage Parchment Map",
+              "Old Newspaper Texture Map",
+              "Aged Canvas Map"
+            ]
+          },
+          {
+            "name": "seasonal trees",
+            "type": "text",
+            "label": "Seasonal Trees",
+            "placeholder": [
+              "Maple",
+              "Ginkgo",
+              "Cherry Blossom",
+              "Phoenix Tree"
+            ]
+          },
+          {
+            "name": "City Transit",
+            "type": "text",
+            "label": "City Transit",
+            "placeholder": [
+              "Subway",
+              "Light Rail",
+              "Vintage Tram",
+              "Sightseeing Bus"
             ]
           }
         ]
@@ -1872,6 +2430,55 @@
             ]
           }
         ]
+      },
+      "en": {
+        "base_prompt": "(Hand-painted Illustrator) You are a professional knowledge card designer, specializing in hand-painted watercolor style designs for popular science. Based on the user's specified 【{hotspot_name}】, create a hand-painted watercolor style knowledge card: the top title bar should read 'Knowledge Card | {hotspot_name}', with a subtitle of '{keyword1} {keyword2} {keyword3}', using a vintage ribbon banner design; the background should feature a soft watercolor gradient effect, with the main color theme being {color_theme}; all icons and lines should be in a hand-drawn style, with clear black outlines and soft, low-saturation colors inside; the information should be divided into a 'Core Overview' section, with 3-4 logical sub-modules, each containing an icon, title, and key points, displaying causal relationships with arrows or connecting lines; at the bottom, include a 'One-Sentence Summary' quote box that succinctly encapsulates the essence and core impact of the hotspot. The overall layout should be neat, well-structured, and artistically healing, suitable for popular science communication. Directly output the image, themed around 【{hotspot_name}】.",
+        "parameters": [
+          {
+            "name": "hotspot_name",
+            "type": "text",
+            "label": "Hotspot Name",
+            "placeholder": [
+              "Development of Artificial Intelligence",
+              "Carbon Neutrality Goals",
+              "Recovery of Cultural and Tourism Consumption"
+            ]
+          },
+          {
+            "name": "keyword1",
+            "type": "text",
+            "label": "Core Keyword 1",
+            "placeholder": [
+              "Technology"
+            ]
+          },
+          {
+            "name": "keyword2",
+            "type": "text",
+            "label": "Core Keyword 2",
+            "placeholder": [
+              "Innovation"
+            ]
+          },
+          {
+            "name": "keyword3",
+            "type": "text",
+            "label": "Core Keyword 3",
+            "placeholder": [
+              "Future"
+            ]
+          },
+          {
+            "name": "color_theme",
+            "type": "text",
+            "label": "Main Color Theme",
+            "placeholder": [
+              "Warm Yellow",
+              "Light Blue",
+              "Fresh Green"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-hotspot-card-zh-solid-state-battery-prev.jpg",
@@ -1900,6 +2507,37 @@
             "name": "constellation_en",
             "label": "星座英文名称",
             "type": "text",
+            "placeholder": [
+              "ARIES",
+              "TAURUS",
+              "GEMINI",
+              "CANCER",
+              "LEO",
+              "VIRGO"
+            ]
+          }
+        ]
+      },
+      "en": {
+        "base_prompt": "(Steampunk Scientific Illustrator) You are a professional retro steampunk anatomical chart designer, specializing in posters that illustrate the mechanical structure of constellations. Based on the user-specified 【{constellation_name}】, generate a vintage steampunk-style constellation anatomical chart poster: the top title bar should read “{constellation_name} Anatomical Chart” or “ANATOMIA {constellation_en}”, designed with a retro ribbon banner; the background should feature aged parchment or yellowed paper texture, with natural stains and creases to create the feel of a vintage scientific manuscript; the central subject should depict the classic mythological figure of the constellation, with internal structures replaced by intricate gears, pipes, and metal skeletons as steampunk elements; all icons and illustrations should be in a hand-drawn line art style, using arrows or connecting lines to show logical relationships; the main color scheme should be warm brown, cream, and antique bronze, accented with a few high-contrast colors to highlight key points; the layout should be divided into left and right columns, with the central figure as the main focus, and functional modules distributed on both sides, with a summary and table at the bottom. The left side should contain 3-5 functional modules (including icons, titles, descriptions) and a “Five-layer Personality Structure” diagram; the right side should include 3-5 trait modules (including icons, labels) and sections for “Relationship Classification” and “Ecological Niche”; the bottom should feature an “Advantages/Risks Comparison Table”, a “Survival Guide”, and a banner with a life philosophy declaration. The overall design should be rigorous and exquisite, embodying retro mechanical aesthetics, directly producing an image for the constellation 【{constellation_name}】.",
+        "parameters": [
+          {
+            "name": "constellation_name",
+            "type": "text",
+            "label": "Constellation Name",
+            "placeholder": [
+              "Aries",
+              "Taurus",
+              "Gemini",
+              "Cancer",
+              "Leo",
+              "Virgo"
+            ]
+          },
+          {
+            "name": "constellation_en",
+            "type": "text",
+            "label": "Constellation English Name",
             "placeholder": [
               "ARIES",
               "TAURUS",
@@ -2031,637 +2669,637 @@
   {
     "id": "template-mbti-marvel-en",
     "locales": {
-        "en": {
-            "base_prompt": "（MBTI Superhero Designer）You are a top-tier AI visual designer specialized in MBTI superhero character infographics. According to the user-specified [{character_name}], create a vertical 3:4 MBTI-themed superhero character poster for {character_name}. Layout structure: 1. Top half: Full-body illustration of {character_name} in their iconic superhero costume, dynamic pose matching their powers, in a clean comic book / isometric vector art style; background features thematic elements (e.g., energy effects, symbols, patterns) tied to their origin/powers, Curify logo at top left. 2. Middle section: White rounded rectangle card displaying: - Large bold red text: {mbti_type} - Character name: {character_name} - Tagline: \"{mbti_role}, {superhero_title}\" 3. Bottom section: Split into two isometric platform blocks (left/right), each holding 3-4 symbolic props/items that represent {character_name}'s powers, backstory, or iconic gear; connect these to the character’s traits. 4. Footer: 5 key personality traits in clean sans-serif font (e.g., {trait_1}, {trait_2}, {trait_3}, {trait_4}, {trait_5}), plus a short descriptive paragraph (optional) explaining the character’s MBTI alignment. Style: Polished vector illustration, cohesive color palette matching the character’s suit, sharp lines, soft gradients, no messy backgrounds, professional infographic aesthetic, social-media friendly. Vertical 3:4 format, 4K ultra-high definition, direct image generation. The superhero is [{character_name}].",
-            "parameters": [
-                {
-                    "name": "character_name",
-                    "label": "Superhero Name",
-                    "type": "text",
-                    "placeholder": [
-                        "Wolverine (Logan)",
-                        "Rogue",
-                        "Thor Odinson",
-                        "Scarlet Witch (Wanda)",
-                        "Iron Man (Tony Stark)",
-                        "Spider-Man (Peter Parker)"
-                    ]
-                },
-                {
-                    "name": "mbti_type",
-                    "label": "MBTI Type",
-                    "type": "text",
-                    "placeholder": [
-                        "ISTP",
-                        "INFP",
-                        "ESTP",
-                        "INFP",
-                        "ENTJ",
-                        "ENFJ"
-                    ]
-                },
-                {
-                    "name": "mbti_role",
-                    "label": "MBTI Role",
-                    "type": "text",
-                    "placeholder": [
-                        "The Virtuoso",
-                        "The Mediator",
-                        "The Entrepreneur",
-                        "The Mediator",
-                        "The Commander",
-                        "The Protagonist"
-                    ]
-                },
-                {
-                    "name": "superhero_title",
-                    "label": "Superhero Title",
-                    "type": "text",
-                    "placeholder": [
-                        "Feral Fighter",
-                        "Untouchable Soul",
-                        "God of Thunder",
-                        "Reality Shaper",
-                        "Genius Billionaire",
-                        "Friendly Neighborhood Hero"
-                    ]
-                },
-                {
-                    "name": "trait_1",
-                    "label": "Key Trait 1",
-                    "type": "text",
-                    "placeholder": [
-                        "Independent",
-                        "Empathetic",
-                        "Adventurous",
-                        "Idealistic",
-                        "Strategic",
-                        "Compassionate"
-                    ]
-                },
-                {
-                    "name": "trait_2",
-                    "label": "Key Trait 2",
-                    "type": "text",
-                    "placeholder": [
-                        "Practical",
-                        "Idealistic",
-                        "Impulsive",
-                        "Emotional",
-                        "Confident",
-                        "Responsible"
-                    ]
-                },
-                {
-                    "name": "trait_3",
-                    "label": "Key Trait 3",
-                    "type": "text",
-                    "placeholder": [
-                        "Observant",
-                        "Conflicted",
-                        "Charismatic",
-                        "Creative",
-                        "Innovative",
-                        "Quick-Witted"
-                    ]
-                },
-                {
-                    "name": "trait_4",
-                    "label": "Key Trait 4",
-                    "type": "text",
-                    "placeholder": [
-                        "Action-Oriented",
-                        "Identity-Seeking",
-                        "Courageous",
-                        "Empathetic",
-                        "Ambitious",
-                        "Resilient"
-                    ]
-                },
-                {
-                    "name": "trait_5",
-                    "label": "Key Trait 5",
-                    "type": "text",
-                    "placeholder": [
-                        "Adaptable",
-                        "Compassionate",
-                        "Bold",
-                        "Introspective",
-                        "Decisive",
-                        "Optimistic"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（MBTI Superhero Designer）You are a top-tier AI visual designer specialized in MBTI superhero character infographics. According to the user-specified [{character_name}], create a vertical 3:4 MBTI-themed superhero character poster for {character_name}. Layout structure: 1. Top half: Full-body illustration of {character_name} in their iconic superhero costume, dynamic pose matching their powers, in a clean comic book / isometric vector art style; background features thematic elements (e.g., energy effects, symbols, patterns) tied to their origin/powers, Curify logo at top left. 2. Middle section: White rounded rectangle card displaying: - Large bold red text: {mbti_type} - Character name: {character_name} - Tagline: \"{mbti_role}, {superhero_title}\" 3. Bottom section: Split into two isometric platform blocks (left/right), each holding 3-4 symbolic props/items that represent {character_name}'s powers, backstory, or iconic gear; connect these to the character’s traits. 4. Footer: 5 key personality traits in clean sans-serif font (e.g., {trait_1}, {trait_2}, {trait_3}, {trait_4}, {trait_5}), plus a short descriptive paragraph (optional) explaining the character’s MBTI alignment. Style: Polished vector illustration, cohesive color palette matching the character’s suit, sharp lines, soft gradients, no messy backgrounds, professional infographic aesthetic, social-media friendly. Vertical 3:4 format, 4K ultra-high definition, direct image generation. The superhero is [{character_name}].",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Superhero Name",
+            "type": "text",
+            "placeholder": [
+              "Wolverine (Logan)",
+              "Rogue",
+              "Thor Odinson",
+              "Scarlet Witch (Wanda)",
+              "Iron Man (Tony Stark)",
+              "Spider-Man (Peter Parker)"
             ]
-        }
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISTP",
+              "INFP",
+              "ESTP",
+              "INFP",
+              "ENTJ",
+              "ENFJ"
+            ]
+          },
+          {
+            "name": "mbti_role",
+            "label": "MBTI Role",
+            "type": "text",
+            "placeholder": [
+              "The Virtuoso",
+              "The Mediator",
+              "The Entrepreneur",
+              "The Mediator",
+              "The Commander",
+              "The Protagonist"
+            ]
+          },
+          {
+            "name": "superhero_title",
+            "label": "Superhero Title",
+            "type": "text",
+            "placeholder": [
+              "Feral Fighter",
+              "Untouchable Soul",
+              "God of Thunder",
+              "Reality Shaper",
+              "Genius Billionaire",
+              "Friendly Neighborhood Hero"
+            ]
+          },
+          {
+            "name": "trait_1",
+            "label": "Key Trait 1",
+            "type": "text",
+            "placeholder": [
+              "Independent",
+              "Empathetic",
+              "Adventurous",
+              "Idealistic",
+              "Strategic",
+              "Compassionate"
+            ]
+          },
+          {
+            "name": "trait_2",
+            "label": "Key Trait 2",
+            "type": "text",
+            "placeholder": [
+              "Practical",
+              "Idealistic",
+              "Impulsive",
+              "Emotional",
+              "Confident",
+              "Responsible"
+            ]
+          },
+          {
+            "name": "trait_3",
+            "label": "Key Trait 3",
+            "type": "text",
+            "placeholder": [
+              "Observant",
+              "Conflicted",
+              "Charismatic",
+              "Creative",
+              "Innovative",
+              "Quick-Witted"
+            ]
+          },
+          {
+            "name": "trait_4",
+            "label": "Key Trait 4",
+            "type": "text",
+            "placeholder": [
+              "Action-Oriented",
+              "Identity-Seeking",
+              "Courageous",
+              "Empathetic",
+              "Ambitious",
+              "Resilient"
+            ]
+          },
+          {
+            "name": "trait_5",
+            "label": "Key Trait 5",
+            "type": "text",
+            "placeholder": [
+              "Adaptable",
+              "Compassionate",
+              "Bold",
+              "Introspective",
+              "Decisive",
+              "Optimistic"
+            ]
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-mbti-marvel-en-rogue-prev.jpg",
     "topics": "psychology"
-},
-{
+  },
+  {
     "id": "template-mbti-nba-en",
     "locales": {
-        "en": {
-            "base_prompt": "（NBA Card Designer）You are a top-tier NBA card designer, specialized in MBTI-themed basketball star collectible cards. According to the user-specified [{player_name}], create a vertical 3:4 premium collectible card for {player_name}, matching the style of the reference images. Card layout: - Top: Large ornate gold/metallic font displaying the MBTI type {mbti_type} - Subtitle: Elegant script font for the persona title {persona_title} - Center: Bold serif font for {player_name}, alongside the player in their iconic jersey (number {jersey_number}) in a shooting pose, rendered in detailed comic book illustration style - Left side: 4 bullet points (with basketball icons) listing key traits/achievements: {trait_1}, {trait_2}, {trait_3}, {trait_4} - Bottom: Thematic decorative elements matching the player/MBTI persona (e.g., championship rings, mascot, symbolic creature, trophies) - Frame: Metallic silver border with subtle gradient background (team color-themed), swirling smoke/brush stroke textures - Style: High-detail comic illustration, rich shading, metallic gold/bronze text effects, professional collectible card aesthetic, no extra clutter, Curify watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, cohesive color palette matching the player's team, direct image generation. The player is [{player_name}].",
-            "parameters": [
-                {
-                    "name": "player_name",
-                    "label": "Player Name",
-                    "type": "text",
-                    "placeholder": [
-                        "Kevin Durant",
-                        "Kobe Bryant",
-                        "LeBron James",
-                        "Stephen Curry",
-                        "Michael Jordan",
-                        "Lebron James"
-                    ]
-                },
-                {
-                    "name": "mbti_type",
-                    "label": "MBTI Type",
-                    "type": "text",
-                    "placeholder": [
-                        "ISFP",
-                        "ISTP",
-                        "ESFJ",
-                        "ENFP",
-                        "ESTJ",
-                        "ENTJ"
-                    ]
-                },
-                {
-                    "name": "persona_title",
-                    "label": "Persona Title",
-                    "type": "text",
-                    "placeholder": [
-                        "THE ARTIST",
-                        "THE MAMBA",
-                        "THE KING",
-                        "THE MAGICIAN",
-                        "THE GOAT",
-                        "THE LEADER"
-                    ]
-                },
-                {
-                    "name": "jersey_number",
-                    "label": "Jersey Number",
-                    "type": "text",
-                    "placeholder": [
-                        "35",
-                        "24",
-                        "23",
-                        "30",
-                        "23",
-                        "6"
-                    ]
-                },
-                {
-                    "name": "trait_1",
-                    "label": "Key Trait 1",
-                    "type": "text",
-                    "placeholder": [
-                        "Pure Hooper",
-                        "Mamba Mentality",
-                        "The Chosen One",
-                        "Range King",
-                        "Competitive Beast",
-                        "Floor General"
-                    ]
-                },
-                {
-                    "name": "trait_2",
-                    "label": "Key Trait 2",
-                    "type": "text",
-                    "placeholder": [
-                        "Silky Smooth",
-                        "5× NBA Champion",
-                        "4× NBA Champion",
-                        "3-Point Legend",
-                        "6× NBA Champion",
-                        "Playmaker"
-                    ]
-                },
-                {
-                    "name": "trait_3",
-                    "label": "Key Trait 3",
-                    "type": "text",
-                    "placeholder": [
-                        "Craft Master",
-                        "The Assassin",
-                        "Longevity God",
-                        "Clutch Performer",
-                        "Air Jordan",
-                        "Leader of Men"
-                    ]
-                },
-                {
-                    "name": "trait_4",
-                    "label": "Key Trait 4",
-                    "type": "text",
-                    "placeholder": [
-                        "Sensitive Soul",
-                        "Job's Not Finished",
-                        "Community Leader",
-                        "Team Player",
-                        "Global Icon",
-                        "Champion Mindset"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（NBA Card Designer）You are a top-tier NBA card designer, specialized in MBTI-themed basketball star collectible cards. According to the user-specified [{player_name}], create a vertical 3:4 premium collectible card for {player_name}, matching the style of the reference images. Card layout: - Top: Large ornate gold/metallic font displaying the MBTI type {mbti_type} - Subtitle: Elegant script font for the persona title {persona_title} - Center: Bold serif font for {player_name}, alongside the player in their iconic jersey (number {jersey_number}) in a shooting pose, rendered in detailed comic book illustration style - Left side: 4 bullet points (with basketball icons) listing key traits/achievements: {trait_1}, {trait_2}, {trait_3}, {trait_4} - Bottom: Thematic decorative elements matching the player/MBTI persona (e.g., championship rings, mascot, symbolic creature, trophies) - Frame: Metallic silver border with subtle gradient background (team color-themed), swirling smoke/brush stroke textures - Style: High-detail comic illustration, rich shading, metallic gold/bronze text effects, professional collectible card aesthetic, no extra clutter, Curify watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, cohesive color palette matching the player's team, direct image generation. The player is [{player_name}].",
+        "parameters": [
+          {
+            "name": "player_name",
+            "label": "Player Name",
+            "type": "text",
+            "placeholder": [
+              "Kevin Durant",
+              "Kobe Bryant",
+              "LeBron James",
+              "Stephen Curry",
+              "Michael Jordan",
+              "Lebron James"
             ]
-        }
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISFP",
+              "ISTP",
+              "ESFJ",
+              "ENFP",
+              "ESTJ",
+              "ENTJ"
+            ]
+          },
+          {
+            "name": "persona_title",
+            "label": "Persona Title",
+            "type": "text",
+            "placeholder": [
+              "THE ARTIST",
+              "THE MAMBA",
+              "THE KING",
+              "THE MAGICIAN",
+              "THE GOAT",
+              "THE LEADER"
+            ]
+          },
+          {
+            "name": "jersey_number",
+            "label": "Jersey Number",
+            "type": "text",
+            "placeholder": [
+              "35",
+              "24",
+              "23",
+              "30",
+              "23",
+              "6"
+            ]
+          },
+          {
+            "name": "trait_1",
+            "label": "Key Trait 1",
+            "type": "text",
+            "placeholder": [
+              "Pure Hooper",
+              "Mamba Mentality",
+              "The Chosen One",
+              "Range King",
+              "Competitive Beast",
+              "Floor General"
+            ]
+          },
+          {
+            "name": "trait_2",
+            "label": "Key Trait 2",
+            "type": "text",
+            "placeholder": [
+              "Silky Smooth",
+              "5× NBA Champion",
+              "4× NBA Champion",
+              "3-Point Legend",
+              "6× NBA Champion",
+              "Playmaker"
+            ]
+          },
+          {
+            "name": "trait_3",
+            "label": "Key Trait 3",
+            "type": "text",
+            "placeholder": [
+              "Craft Master",
+              "The Assassin",
+              "Longevity God",
+              "Clutch Performer",
+              "Air Jordan",
+              "Leader of Men"
+            ]
+          },
+          {
+            "name": "trait_4",
+            "label": "Key Trait 4",
+            "type": "text",
+            "placeholder": [
+              "Sensitive Soul",
+              "Job's Not Finished",
+              "Community Leader",
+              "Team Player",
+              "Global Icon",
+              "Champion Mindset"
+            ]
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-mbti-nba-en-kobebryant-prev.jpg",
     "topics": "psychology"
-},
-{
+  },
+  {
     "id": "template-mbti-siliconvalley-en",
     "locales": {
-        "en": {
-            "base_prompt": "You are a top-tier AI visual designer specialized in turning personality systems into highly shareable visual concepts. Based on the user-provided [{mbti_topic}], [{founder_name}], [{mbti_type}], [{tagline}], and [{visual_style}], generate a polished MBTI-themed visual composition. The image should map the MBTI personality type [{mbti_type}] onto the Silicon Valley tech founder [{founder_name}], placed within the scenario 'standing on a futuristic circuit board platform surrounded by iconic brand/tech elements representing his career achievements', showing the type’s distinctive analytical, innovative, or visionary traits. The composition should be clear, expressive, and instantly understandable, with strong tech aesthetic and social-media appeal. Use the visual style [{visual_style}], with clean vector art, soft gradients, isometric perspective, rich detail, cohesive rendering, and vivid storytelling. Vertical 3:4 format. Use English text for labels (title: 'MBTI × Silicon Valley Founders', display [{founder_name}], [{mbti_type}], [{tagline}]). Include a Curify watermark at the bottom right. Directly generate the final image for the theme [{mbti_topic}].",
-            "parameters": [
-                {
-                    "name": "mbti_topic",
-                    "label": "MBTI theme",
-                    "type": "text",
-                    "placeholder": [
-                        "MBTI as AI founders",
-                        "MBTI × Silicon Valley Founders",
-                        "MBTI tech industry archetypes"
-                    ]
-                },
-                {
-                    "name": "founder_name",
-                    "label": "Founder Name",
-                    "type": "text",
-                    "placeholder": [
-                        "Bill Gates",
-                        "Jensen Huang",
-                        "Elon Musk",
-                        "Steve Jobs",
-                        "Mark Zuckerberg"
-                    ]
-                },
-                {
-                    "name": "mbti_type",
-                    "label": "MBTI Type",
-                    "type": "text",
-                    "placeholder": [
-                        "INTP",
-                        "ENTP",
-                        "INTJ",
-                        "ENFP",
-                        "ISTJ"
-                    ]
-                },
-                {
-                    "name": "tagline",
-                    "label": "Tagline",
-                    "type": "text",
-                    "placeholder": [
-                        "The Logician, Analytical Innovator",
-                        "The Visionary, AI Revolution Leader",
-                        "The Mastermind, Tech Pioneer",
-                        "The Champion, Creative Disruptor"
-                    ]
-                },
-                {
-                    "name": "visual_style",
-                    "label": "Visual style",
-                    "type": "text",
-                    "placeholder": [
-                        "cute chibi isometric vector illustration",
-                        "high-end character poster",
-                        "clean tech aesthetic vector art"
-                    ]
-                }
+      "en": {
+        "base_prompt": "You are a top-tier AI visual designer specialized in turning personality systems into highly shareable visual concepts. Based on the user-provided [{mbti_topic}], [{founder_name}], [{mbti_type}], [{tagline}], and [{visual_style}], generate a polished MBTI-themed visual composition. The image should map the MBTI personality type [{mbti_type}] onto the Silicon Valley tech founder [{founder_name}], placed within the scenario 'standing on a futuristic circuit board platform surrounded by iconic brand/tech elements representing his career achievements', showing the type’s distinctive analytical, innovative, or visionary traits. The composition should be clear, expressive, and instantly understandable, with strong tech aesthetic and social-media appeal. Use the visual style [{visual_style}], with clean vector art, soft gradients, isometric perspective, rich detail, cohesive rendering, and vivid storytelling. Vertical 3:4 format. Use English text for labels (title: 'MBTI × Silicon Valley Founders', display [{founder_name}], [{mbti_type}], [{tagline}]). Include a Curify watermark at the bottom right. Directly generate the final image for the theme [{mbti_topic}].",
+        "parameters": [
+          {
+            "name": "mbti_topic",
+            "label": "MBTI theme",
+            "type": "text",
+            "placeholder": [
+              "MBTI as AI founders",
+              "MBTI × Silicon Valley Founders",
+              "MBTI tech industry archetypes"
             ]
-        }
+          },
+          {
+            "name": "founder_name",
+            "label": "Founder Name",
+            "type": "text",
+            "placeholder": [
+              "Bill Gates",
+              "Jensen Huang",
+              "Elon Musk",
+              "Steve Jobs",
+              "Mark Zuckerberg"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "INTP",
+              "ENTP",
+              "INTJ",
+              "ENFP",
+              "ISTJ"
+            ]
+          },
+          {
+            "name": "tagline",
+            "label": "Tagline",
+            "type": "text",
+            "placeholder": [
+              "The Logician, Analytical Innovator",
+              "The Visionary, AI Revolution Leader",
+              "The Mastermind, Tech Pioneer",
+              "The Champion, Creative Disruptor"
+            ]
+          },
+          {
+            "name": "visual_style",
+            "label": "Visual style",
+            "type": "text",
+            "placeholder": [
+              "cute chibi isometric vector illustration",
+              "high-end character poster",
+              "clean tech aesthetic vector art"
+            ]
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-mbti-siliconvalley-en-jobs-prev.jpg",
     "topics": "psychology"
-},
-{
-  "id": "template-mbti-breakingbad-en",
-  "locales": {
-      "en": {
-          "base_prompt": "（Breaking Bad MBTI Card Designer）You are a top-tier MBTI character card designer specialized in Breaking Bad/Better Call Saul themed infographics. According to the user-specified [{character_name}], create a vertical 3:4 premium collectible character card for {character_name}, matching the gritty, industrial, crime-drama aesthetic of the reference images. Card layout: 1. Top: Rusty metal plate header displaying {mbti_type} - {mbti_title}, with a subtitle \"{character_subtitle}\" in quotes. 2. Character name: Spelled out using periodic table element tiles (each letter mapped to a chemical element symbol/atomic number), styled as weathered metal blocks. 3. Center: Detailed comic-style portrait of {character_name} in their iconic outfit, set against a thematic background tied to their story (e.g., law office, desert, cartel compound, lab, office). 4. Left panel: \"COGNITIVE FUNCTIONS\" section listing {cog_func_1}, {cog_func_2}, {cog_func_3}, {cog_func_4}, with a \"SIGNATURE QUOTE\" box containing {signature_quote}. 5. Right panel: \"STRENGTHS\" (green flask icons) listing {strength_1}, {strength_2}, {strength_3}, {strength_4}, {strength_5} and \"WEAKNESSES\" (red warning icons) listing {weakness_1}, {weakness_2}, {weakness_3}, {weakness_4}, {weakness_5}. 6. Bottom panel: \"KEY TRAITS\" section with 5 isometric icons + labels representing {character_name}'s iconic props/identities (e.g., {trait_icon_1}, {trait_icon_2}, {trait_icon_3}, {trait_icon_4}, {trait_icon_5}). Style: Gritty industrial aesthetic, weathered metal/grunge textures, chemical/periodic table motifs, comic book illustration, rich shading, dramatic lighting, cohesive color palette matching the character’s story, Curify/Better Call Saul watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The character is [{character_name}].",
-          "parameters": [
-              {
-                  "name": "character_name",
-                  "label": "Character Name",
-                  "type": "text",
-                  "placeholder": [
-                      "Walter White",
-                      "Saul Goodman",
-                      "Mike Ehrmantraut",
-                      "Lalo Salamanca",
-                      "Howard Hamlin",
-                      "Gus Fring"
-                  ]
-              },
-              {
-                  "name": "mbti_type",
-                  "label": "MBTI Type",
-                  "type": "text",
-                  "placeholder": [
-                      "INTJ",
-                      "ENFP",
-                      "ISTJ",
-                      "ENFJ",
-                      "ESTJ",
-                      "ENTJ"
-                  ]
-              },
-              {
-                  "name": "mbti_title",
-                  "label": "MBTI Title",
-                  "type": "text",
-                  "placeholder": [
-                      "The Architect",
-                      "The Champion",
-                      "The Logistician",
-                      "The Protagonist",
-                      "The Executive",
-                      "The Commander"
-                  ]
-              },
-              {
-                  "name": "character_subtitle",
-                  "label": "Character Subtitle",
-                  "type": "text",
-                  "placeholder": [
-                      "The Chemist",
-                      "The Lawyer",
-                      "The Fixer",
-                      "The Charismatic",
-                      "The Administrator",
-                      "The Villain"
-                  ]
-              },
-              {
-                  "name": "cog_func_1",
-                  "label": "Cognitive Function 1",
-                  "type": "text",
-                  "placeholder": [
-                      "Ni",
-                      "Ne",
-                      "Si",
-                      "Fe",
-                      "Te",
-                      "Te"
-                  ]
-              },
-              {
-                  "name": "cog_func_2",
-                  "label": "Cognitive Function 2",
-                  "type": "text",
-                  "placeholder": [
-                      "Te",
-                      "Fi",
-                      "Ti",
-                      "Ni",
-                      "Si",
-                      "Ni"
-                  ]
-              },
-              {
-                  "name": "cog_func_3",
-                  "label": "Cognitive Function 3",
-                  "type": "text",
-                  "placeholder": [
-                      "Fi",
-                      "Te",
-                      "Fe",
-                      "Se",
-                      "Ne",
-                      "Se"
-                  ]
-              },
-              {
-                  "name": "cog_func_4",
-                  "label": "Cognitive Function 4",
-                  "type": "text",
-                  "placeholder": [
-                      "Se",
-                      "Si",
-                      "Ne",
-                      "Ti",
-                      "Fi",
-                      "Fi"
-                  ]
-              },
-              {
-                  "name": "signature_quote",
-                  "label": "Signature Quote",
-                  "type": "text",
-                  "placeholder": [
-                      "I am the one who knocks.",
-                      "Better Call Saul!",
-                      "No more half-measures.",
-                      "Tell me again.",
-                      "You're not a real lawyer.",
-                      "What does a man do?"
-                  ]
-              },
-              {
-                  "name": "strength_1",
-                  "label": "Strength 1",
-                  "type": "text",
-                  "placeholder": [
-                      "Intelligent",
-                      "Charismatic",
-                      "Professional",
-                      "Fearless",
-                      "Diligent",
-                      "Strategic"
-                  ]
-              },
-              {
-                  "name": "strength_2",
-                  "label": "Strength 2",
-                  "type": "text",
-                  "placeholder": [
-                      "Strategic",
-                      "Quick-witted",
-                      "Disciplined",
-                      "Perceptive",
-                      "Honorable",
-                      "Controlled"
-                  ]
-              },
-              {
-                  "name": "strength_3",
-                  "label": "Strength 3",
-                  "type": "text",
-                  "placeholder": [
-                      "Determined",
-                      "Creative",
-                      "Reliable",
-                      "Charming",
-                      "Fair",
-                      "Brilliant"
-                  ]
-              },
-              {
-                  "name": "strength_4",
-                  "label": "Strength 4",
-                  "type": "text",
-                  "placeholder": [
-                      "Focused",
-                      "Adaptable",
-                      "Calm",
-                      "Resourceful",
-                      "Confident",
-                      "Ruthless"
-                  ]
-              },
-              {
-                  "name": "strength_5",
-                  "label": "Strength 5",
-                  "type": "text",
-                  "placeholder": [
-                      "Prideful",
-                      "Persuasive",
-                      "Loyal",
-                      "Bold",
-                      "Generous",
-                      "Disciplined"
-                  ]
-              },
-              {
-                  "name": "weakness_1",
-                  "label": "Weakness 1",
-                  "type": "text",
-                  "placeholder": [
-                      "Arrogant",
-                      "Unethical",
-                      "Emotionless",
-                      "Violent",
-                      "Naive",
-                      "Cold"
-                  ]
-              },
-              {
-                  "name": "weakness_2",
-                  "label": "Weakness 2",
-                  "type": "text",
-                  "placeholder": [
-                      "Controlling",
-                      "Selfish",
-                      "Distant",
-                      "Cruel",
-                      "Blind",
-                      "Manipulative"
-                  ]
-              },
-              {
-                  "name": "weakness_3",
-                  "label": "Weakness 3",
-                  "type": "text",
-                  "placeholder": [
-                      "Prideful",
-                      "Chaotic",
-                      "Unforgiving",
-                      "Obsessive",
-                      "Repressed",
-                      "Merciless"
-                  ]
-              },
-              {
-                  "name": "weakness_4",
-                  "label": "Weakness 4",
-                  "type": "text",
-                  "placeholder": [
-                      "Ruthless",
-                      "Dishonest",
-                      "Aloof",
-                      "Unpredictable",
-                      "Too Trusting",
-                      "Detached"
-                  ]
-              },
-              {
-                  "name": "weakness_5",
-                  "label": "Weakness 5",
-                  "type": "text",
-                  "placeholder": [
-                      "Self-Destructive",
-                      "Reckless",
-                      "Unemotional",
-                      "Dangerous",
-                      "Tragic",
-                      "Inhuman"
-                  ]
-              },
-              {
-                  "name": "trait_icon_1",
-                  "label": "Trait Icon 1",
-                  "type": "text",
-                  "placeholder": [
-                      "Chemistry Flask",
-                      "Law Briefcase",
-                      "Gun",
-                      "Cartel Symbol",
-                      "Law Scales",
-                      "Chicken Logo"
-                  ]
-              },
-              {
-                  "name": "trait_icon_2",
-                  "label": "Trait Icon 2",
-                  "type": "text",
-                  "placeholder": [
-                      "Heisenberg Hat",
-                      "Phone",
-                      "Watch",
-                      "Money",
-                      "Boxing Gloves",
-                      "Knife"
-                  ]
-              },
-              {
-                  "name": "trait_icon_3",
-                  "label": "Trait Icon 3",
-                  "type": "text",
-                  "placeholder": [
-                      "Lab Equipment",
-                      "Microphone",
-                      "Newspaper",
-                      "Lighter",
-                      "Car Keys",
-                      "Pen"
-                  ]
-              },
-              {
-                  "name": "trait_icon_4",
-                  "label": "Trait Icon 4",
-                  "type": "text",
-                  "placeholder": [
-                      "Beaker",
-                      "Business Card",
-                      "Photo",
-                      "Cactus",
-                      "Coffee Cup",
-                      "Folder"
-                  ]
-              },
-              {
-                  "name": "trait_icon_5",
-                  "label": "Trait Icon 5",
-                  "type": "text",
-                  "placeholder": [
-                      "Periodic Table",
-                      "Desk",
-                      "Evidence Bag",
-                      "Explosion",
-                      "Clock",
-                      "Poison"
-                  ]
-              }
-          ]
-      }
   },
-  "og_image": "/images/nano_insp_preview/template-mbti-breakingbad-en-walter-prev.jpg",
-  "topics": "psychology"
-}
+  {
+    "id": "template-mbti-breakingbad-en",
+    "locales": {
+      "en": {
+        "base_prompt": "（Breaking Bad MBTI Card Designer）You are a top-tier MBTI character card designer specialized in Breaking Bad/Better Call Saul themed infographics. According to the user-specified [{character_name}], create a vertical 3:4 premium collectible character card for {character_name}, matching the gritty, industrial, crime-drama aesthetic of the reference images. Card layout: 1. Top: Rusty metal plate header displaying {mbti_type} - {mbti_title}, with a subtitle \"{character_subtitle}\" in quotes. 2. Character name: Spelled out using periodic table element tiles (each letter mapped to a chemical element symbol/atomic number), styled as weathered metal blocks. 3. Center: Detailed comic-style portrait of {character_name} in their iconic outfit, set against a thematic background tied to their story (e.g., law office, desert, cartel compound, lab, office). 4. Left panel: \"COGNITIVE FUNCTIONS\" section listing {cog_func_1}, {cog_func_2}, {cog_func_3}, {cog_func_4}, with a \"SIGNATURE QUOTE\" box containing {signature_quote}. 5. Right panel: \"STRENGTHS\" (green flask icons) listing {strength_1}, {strength_2}, {strength_3}, {strength_4}, {strength_5} and \"WEAKNESSES\" (red warning icons) listing {weakness_1}, {weakness_2}, {weakness_3}, {weakness_4}, {weakness_5}. 6. Bottom panel: \"KEY TRAITS\" section with 5 isometric icons + labels representing {character_name}'s iconic props/identities (e.g., {trait_icon_1}, {trait_icon_2}, {trait_icon_3}, {trait_icon_4}, {trait_icon_5}). Style: Gritty industrial aesthetic, weathered metal/grunge textures, chemical/periodic table motifs, comic book illustration, rich shading, dramatic lighting, cohesive color palette matching the character’s story, Curify/Better Call Saul watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The character is [{character_name}].",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Character Name",
+            "type": "text",
+            "placeholder": [
+              "Walter White",
+              "Saul Goodman",
+              "Mike Ehrmantraut",
+              "Lalo Salamanca",
+              "Howard Hamlin",
+              "Gus Fring"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "INTJ",
+              "ENFP",
+              "ISTJ",
+              "ENFJ",
+              "ESTJ",
+              "ENTJ"
+            ]
+          },
+          {
+            "name": "mbti_title",
+            "label": "MBTI Title",
+            "type": "text",
+            "placeholder": [
+              "The Architect",
+              "The Champion",
+              "The Logistician",
+              "The Protagonist",
+              "The Executive",
+              "The Commander"
+            ]
+          },
+          {
+            "name": "character_subtitle",
+            "label": "Character Subtitle",
+            "type": "text",
+            "placeholder": [
+              "The Chemist",
+              "The Lawyer",
+              "The Fixer",
+              "The Charismatic",
+              "The Administrator",
+              "The Villain"
+            ]
+          },
+          {
+            "name": "cog_func_1",
+            "label": "Cognitive Function 1",
+            "type": "text",
+            "placeholder": [
+              "Ni",
+              "Ne",
+              "Si",
+              "Fe",
+              "Te",
+              "Te"
+            ]
+          },
+          {
+            "name": "cog_func_2",
+            "label": "Cognitive Function 2",
+            "type": "text",
+            "placeholder": [
+              "Te",
+              "Fi",
+              "Ti",
+              "Ni",
+              "Si",
+              "Ni"
+            ]
+          },
+          {
+            "name": "cog_func_3",
+            "label": "Cognitive Function 3",
+            "type": "text",
+            "placeholder": [
+              "Fi",
+              "Te",
+              "Fe",
+              "Se",
+              "Ne",
+              "Se"
+            ]
+          },
+          {
+            "name": "cog_func_4",
+            "label": "Cognitive Function 4",
+            "type": "text",
+            "placeholder": [
+              "Se",
+              "Si",
+              "Ne",
+              "Ti",
+              "Fi",
+              "Fi"
+            ]
+          },
+          {
+            "name": "signature_quote",
+            "label": "Signature Quote",
+            "type": "text",
+            "placeholder": [
+              "I am the one who knocks.",
+              "Better Call Saul!",
+              "No more half-measures.",
+              "Tell me again.",
+              "You're not a real lawyer.",
+              "What does a man do?"
+            ]
+          },
+          {
+            "name": "strength_1",
+            "label": "Strength 1",
+            "type": "text",
+            "placeholder": [
+              "Intelligent",
+              "Charismatic",
+              "Professional",
+              "Fearless",
+              "Diligent",
+              "Strategic"
+            ]
+          },
+          {
+            "name": "strength_2",
+            "label": "Strength 2",
+            "type": "text",
+            "placeholder": [
+              "Strategic",
+              "Quick-witted",
+              "Disciplined",
+              "Perceptive",
+              "Honorable",
+              "Controlled"
+            ]
+          },
+          {
+            "name": "strength_3",
+            "label": "Strength 3",
+            "type": "text",
+            "placeholder": [
+              "Determined",
+              "Creative",
+              "Reliable",
+              "Charming",
+              "Fair",
+              "Brilliant"
+            ]
+          },
+          {
+            "name": "strength_4",
+            "label": "Strength 4",
+            "type": "text",
+            "placeholder": [
+              "Focused",
+              "Adaptable",
+              "Calm",
+              "Resourceful",
+              "Confident",
+              "Ruthless"
+            ]
+          },
+          {
+            "name": "strength_5",
+            "label": "Strength 5",
+            "type": "text",
+            "placeholder": [
+              "Prideful",
+              "Persuasive",
+              "Loyal",
+              "Bold",
+              "Generous",
+              "Disciplined"
+            ]
+          },
+          {
+            "name": "weakness_1",
+            "label": "Weakness 1",
+            "type": "text",
+            "placeholder": [
+              "Arrogant",
+              "Unethical",
+              "Emotionless",
+              "Violent",
+              "Naive",
+              "Cold"
+            ]
+          },
+          {
+            "name": "weakness_2",
+            "label": "Weakness 2",
+            "type": "text",
+            "placeholder": [
+              "Controlling",
+              "Selfish",
+              "Distant",
+              "Cruel",
+              "Blind",
+              "Manipulative"
+            ]
+          },
+          {
+            "name": "weakness_3",
+            "label": "Weakness 3",
+            "type": "text",
+            "placeholder": [
+              "Prideful",
+              "Chaotic",
+              "Unforgiving",
+              "Obsessive",
+              "Repressed",
+              "Merciless"
+            ]
+          },
+          {
+            "name": "weakness_4",
+            "label": "Weakness 4",
+            "type": "text",
+            "placeholder": [
+              "Ruthless",
+              "Dishonest",
+              "Aloof",
+              "Unpredictable",
+              "Too Trusting",
+              "Detached"
+            ]
+          },
+          {
+            "name": "weakness_5",
+            "label": "Weakness 5",
+            "type": "text",
+            "placeholder": [
+              "Self-Destructive",
+              "Reckless",
+              "Unemotional",
+              "Dangerous",
+              "Tragic",
+              "Inhuman"
+            ]
+          },
+          {
+            "name": "trait_icon_1",
+            "label": "Trait Icon 1",
+            "type": "text",
+            "placeholder": [
+              "Chemistry Flask",
+              "Law Briefcase",
+              "Gun",
+              "Cartel Symbol",
+              "Law Scales",
+              "Chicken Logo"
+            ]
+          },
+          {
+            "name": "trait_icon_2",
+            "label": "Trait Icon 2",
+            "type": "text",
+            "placeholder": [
+              "Heisenberg Hat",
+              "Phone",
+              "Watch",
+              "Money",
+              "Boxing Gloves",
+              "Knife"
+            ]
+          },
+          {
+            "name": "trait_icon_3",
+            "label": "Trait Icon 3",
+            "type": "text",
+            "placeholder": [
+              "Lab Equipment",
+              "Microphone",
+              "Newspaper",
+              "Lighter",
+              "Car Keys",
+              "Pen"
+            ]
+          },
+          {
+            "name": "trait_icon_4",
+            "label": "Trait Icon 4",
+            "type": "text",
+            "placeholder": [
+              "Beaker",
+              "Business Card",
+              "Photo",
+              "Cactus",
+              "Coffee Cup",
+              "Folder"
+            ]
+          },
+          {
+            "name": "trait_icon_5",
+            "label": "Trait Icon 5",
+            "type": "text",
+            "placeholder": [
+              "Periodic Table",
+              "Desk",
+              "Evidence Bag",
+              "Explosion",
+              "Clock",
+              "Poison"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-breakingbad-en-walter-prev.jpg",
+    "topics": "psychology"
+  }
 ]
