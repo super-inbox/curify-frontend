@@ -20,12 +20,12 @@ import { NanoInspirationCardType } from "@/lib/nano_utils";
 import { resolveContentLocale, Locale } from "@/lib/locale_utils";
 
 import {
-  buildNanoRegistry,
-  buildNanoFeedCards,
+  buildNanoRegistry,  
   type RawTemplate,
   type RawNanoImageRecord,
 } from "@/lib/nano_utils";
 
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 

@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import topics from "@/public/data/topics.json";
+import { useTranslations } from "next-intl";
+
+import allTopics from "@/public/data/topics.json";
 import { buildTopicHref, getTopicLabel } from "@/lib/locale_utils";
 
 type TopicRecord = {
@@ -11,14 +15,17 @@ type TopicRecord = {
 
 type Props = {
   locale: string;
-  translateTopics: (key: string) => string;
   activeTopic?: string;
+  topics?: string[];
+  className?: string;
+  showDisabled?: boolean;
+  size?: "default" | "small";
 };
 
 const DISABLED_TOPICS = new Set(["gaming", "career"]);
 
 function getSortedTopics(): TopicRecord[] {
-  return [...(topics as TopicRecord[])].sort(
+  return [...(allTopics as TopicRecord[])].sort(
     (a, b) => (a.priority ?? 999) - (b.priority ?? 999)
   );
 }
@@ -29,14 +36,31 @@ function getTrendingHref(locale: string) {
 
 export default function TopicNavRow({
   locale,
-  translateTopics,
   activeTopic,
+  topics,
+  className,
+  showDisabled = true,
+  size = "default",
 }: Props) {
+  const t = useTranslations();
   const sortedTopics = getSortedTopics();
 
+  const visibleTopics = topics?.length
+    ? topics
+        .map((id) => sortedTopics.find((topic) => topic.id === id))
+        .filter((topic): topic is TopicRecord => Boolean(topic))
+    : sortedTopics;
+
+  if (!visibleTopics.length) return null;
+
+  const pillClassName =
+    size === "small"
+      ? "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
+      : "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
+
   return (
-    <div className="mb-6 flex flex-wrap gap-2">
-      {sortedTopics.map((topic) => {
+    <div className={["flex flex-wrap items-center gap-2", className].filter(Boolean).join(" ")}>
+      {visibleTopics.map((topic) => {
         const isDisabled = DISABLED_TOPICS.has(topic.id);
         const isActive = activeTopic === topic.id;
 
@@ -45,13 +69,16 @@ export default function TopicNavRow({
             ? getTrendingHref(locale)
             : buildTopicHref(locale, topic.id);
 
-        const label = getTopicLabel(topic.id, translateTopics);
+        const label = getTopicLabel(topic.id, t);
 
-        if (isDisabled) {
+        if (isDisabled && showDisabled) {
           return (
             <span
               key={topic.id}
-              className="rounded-full border border-neutral-200 bg-neutral-100 px-3 py-1 text-sm font-medium text-neutral-400 cursor-not-allowed"
+              className={[
+                pillClassName,
+                "cursor-not-allowed border border-neutral-200 bg-neutral-100 text-neutral-400",
+              ].join(" ")}
               title="Coming soon"
             >
               {label}
@@ -59,16 +86,21 @@ export default function TopicNavRow({
           );
         }
 
+        if (isDisabled && !showDisabled) {
+          return null;
+        }
+
         return (
           <Link
             key={topic.id}
             href={href}
             aria-current={isActive ? "page" : undefined}
-            className={
+            className={[
+              pillClassName,
               isActive
-                ? "rounded-full border border-blue-200 bg-blue-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-blue-700"
-                : "rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 transition hover:border-blue-200 hover:bg-blue-100"
-            }
+                ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
+                : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
+            ].join(" ")}
           >
             {label}
           </Link>

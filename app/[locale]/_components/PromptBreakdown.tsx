@@ -16,25 +16,35 @@ export default function PromptBreakdown({
     return prompt.split(/(\{[^}]+\})/g);
   }, [prompt]);
 
+  const hasParams = Object.keys(params).length > 0;
+
   if (!prompt) {
-    return <p className="text-sm text-neutral-500">No prompt data available.</p>;
+    return (
+      <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+        <p className="text-sm text-neutral-500">No prompt data available.</p>
+      </div>
+    );
   }
 
   return (
-    <div className="space-y-4">
-      <p className="text-sm text-neutral-600">
-        Variables in{" "}
-        <span className="rounded border border-amber-200 bg-amber-50 px-1 py-0.5 font-mono text-xs text-amber-800">
-          {"{curly braces}"}
-        </span>{" "}
-        are replaced with your inputs:
-      </p>
+    <div className="flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+      <div className="mb-4">
+        <p className="text-sm text-neutral-600">
+          Variables in{" "}
+          <span className="rounded border border-amber-200 bg-amber-50 px-1 py-0.5 font-mono text-xs text-amber-800">
+            {"{curly braces}"}
+          </span>{" "}
+          are replaced with your inputs.
+        </p>
+      </div>
 
-      <div className="relative">
+      <div className="flex-1 min-h-0">
         <div
           className={[
-            "rounded-2xl border border-neutral-100 bg-neutral-50 p-4 font-mono text-sm leading-7 transition-all",
-            expanded ? "" : "line-clamp-3",
+            "rounded-2xl border border-neutral-100 bg-white p-4 font-mono text-sm leading-7 transition-all",
+            expanded
+              ? "h-auto"
+              : "h-full max-h-[220px] overflow-hidden",
           ].join(" ")}
         >
           {parts.map((part, i) => {
@@ -55,52 +65,50 @@ export default function PromptBreakdown({
             return <span key={i}>{part}</span>;
           })}
         </div>
-
-        {!expanded && (
-          <>
-            {/* fade bottom */}
-            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-neutral-50 to-transparent" />
-
-            {/* expand control */}
-            <button
-              type="button"
-              onClick={() => setExpanded(true)}
-              className="absolute bottom-2 right-3 font-mono text-sm font-bold text-neutral-600 hover:text-neutral-900"
-              aria-label="Expand prompt"
-            >
-              ....
-            </button>
-          </>
-        )}
       </div>
 
-      {Object.keys(params).length > 0 && (
-        <table className="w-full border-collapse text-sm">
-          <thead>
-            <tr className="border-b border-neutral-200">
-              <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
-                Variable
-              </th>
-              <th className="py-2 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
-                Value used
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(params).map(([k, v]) => (
-              <tr key={k} className="border-b border-neutral-100">
-                <td className="py-2 pr-4 font-mono text-xs text-neutral-600">{`{${k}}`}</td>
-                <td className="py-2 text-neutral-800">
-                  {v != null && String(v).trim() !== "" ? (
-                    String(v)
-                  ) : (
-                    <span className="italic text-neutral-400">—</span>
-                  )}
-                </td>
+      <div className="mt-3 flex items-center justify-end">
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="text-sm font-semibold text-purple-700 transition hover:text-purple-800 cursor-pointer"
+          aria-expanded={expanded}
+        >
+          {expanded ? "Show less" : "Show more"}
+        </button>
+      </div>
+
+      {hasParams && expanded && (
+        <div className="mt-4 overflow-hidden rounded-2xl border border-neutral-100 bg-white">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-neutral-200">
+                <th className="py-2 pl-4 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
+                  Variable
+                </th>
+                <th className="py-2 pr-4 text-left text-xs font-bold uppercase tracking-wider text-neutral-500">
+                  Value used
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {Object.entries(params).map(([k, v]) => (
+                <tr key={k} className="border-b border-neutral-100 last:border-b-0">
+                  <td className="py-2 pl-4 pr-4 font-mono text-xs text-neutral-600">
+                    {`{${k}}`}
+                  </td>
+                  <td className="py-2 pr-4 text-neutral-800">
+                    {v != null && String(v).trim() !== "" ? (
+                      String(v)
+                    ) : (
+                      <span className="italic text-neutral-400">—</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

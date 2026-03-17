@@ -6,9 +6,10 @@ import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
-  buildNanoRegistry,
-  buildNanoFeedCards,
+  buildNanoRegistry,  
 } from "@/lib/nano_utils";
+
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import {
   resolveContentLocale,
   makeSafeTranslator,
