@@ -237,7 +237,7 @@ export default async function BlogPostPage({
     'evolutionTimelinesVisualization': ['intro', 'whatIsTitle', 'whatIsContent', 'importanceTitle', 'importanceContent', 'techniquesTitle', 'techniquesContent', 'examplesTitle', 'examplesContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'chineseCostumeHistoryInfographic': ['intro', 'whatIsTitle', 'whatIsContent', 'dynastiesTitle', 'dynastiesContent', 'characteristicsTitle', 'characteristicsContent', 'modernTitle', 'modernContent', 'culturalTitle', 'culturalContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
     'creativeAiToolsWebsites': ['intro', 'whatIsTitle', 'whatIsContent', 'inspirationTitle', 'inspirationContent', 'featuredTitle', 'featuredContent', 'aiTitle', 'aiContent', 'aiFeaturedTitle', 'aiFeaturedContent', 'conclusionTitle', 'conclusionContent'],
-    'nanoBananaPromptEcosystem': ['intro', 'whatIsTitle', 'whatIsContent', 'ecosystemTitle', 'ecosystemContent', 'seoTitle', 'seoContent', 'generatorTitle', 'generatorContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
+    'nanoBananaPromptEcosystem': ['intro', 'whatIsTitle', 'whatIsContent', 'ecosystemTitle', 'ecosystemContent', 'seoTitle', 'seoContent', 'generatorTitle', 'generatorContent', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent', 'promptGuideTitle', 'promptGuideContent', 'promptStructureTitle', 'promptStructureContent', 'promptExamplesTitle', 'promptExamplesContent', 'promptTemplatesTitle', 'promptTemplatesContent', 'promptGenerationTitle', 'promptGenerationContent']
   };
 
   const currentKeys = availableKeys[blogConfig.namespace] || [];
@@ -1328,6 +1328,56 @@ function NanoBananaContent({ slug, t, locale }: { slug: string; t: any; locale: 
             🎯 {t("ctaText")} <a href="http://localhost:3000/nano-banana-pro-prompts" className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
         </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("promptGuideTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("promptGuideContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("promptStructureTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("promptStructureContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("promptExamplesTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("promptExamplesContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("promptTemplatesTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("promptTemplatesContent"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("promptGenerationTitle")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatContent(t("promptGenerationContent"))
+          }} 
+        />
       </section>
 
       <section>
