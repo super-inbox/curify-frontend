@@ -106,8 +106,7 @@ export default async function Page({ params }: Props) {
     <main className="min-h-screen">
       <section className="mx-auto max-w-6xl px-4 pt-20 pb-6 sm:px-6 lg:px-8">
         <TopicNavRow
-          locale={localeStr}
-          translateTopics={translateTopics}
+          locale={localeStr}          
           activeTopic={slug}
         />
 
