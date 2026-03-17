@@ -1,95 +1,54 @@
-// app/[locale]/(public)/nano-template/[slug]/page.tsx
-
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-import nanoTemplates from "@/public/data/nano_templates.json";
-import nanoImages from "@/public/data/nano_inspiration.json";
 import ExampleImagesGrid from "./ExampleImagesGrid";
-import { getTranslations } from "next-intl/server";
-import {
-  type RawTemplate,
-  type RawNanoImageRecord,
-  type TranslateFn,
-  buildNanoRegistry,
-  buildNanoTemplateDetailData,
-  getImageViewsForTemplate,
-  buildNanoFeedCards,
-} from "@/lib/nano_utils";
+import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 
-import { resolveContentLocale } from "@/lib/locale_utils";
-import { Locale, makeSafeNanoTranslator } from "@/lib/locale_utils";
+import { buildNanoTemplateDetailData } from "@/lib/nano_utils";
 
 import {
-  type NanoMessagesDict,
+  buildTopicHref,
+  getTopicLabel,
+} from "@/lib/locale_utils";
+
+import {
   buildNanoTemplateMetadata,
   buildNanoH1,
   resolveContentSections,
-  normalizeNanoLocaleMessageEntry,
 } from "@/lib/nano_seo_utils";
 
-import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
+import {
+  buildNanoPageContext,
+  buildOrderedTemplateImageGridItems,
+  buildOtherTemplateCards,
+  getImageViewsForTemplate,
+} from "@/lib/nano_page_data";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-function slugToTemplateId(slug: string) {
-  return slug.startsWith("template-") ? slug : `template-${slug}`;
-}
-
-async function loadNanoMessages(localeStr: string): Promise<NanoMessagesDict> {
-  try {
-    const mod = await import(`@/messages/${localeStr}/nano.json`);
-    return (mod.default ?? {}) as NanoMessagesDict;
-  } catch {
-    return {};
-  }
-}
-
 async function getPageData(localeStr: string, slug: string) {
-  const pageLocale = localeStr;
-  const contentLocale = resolveContentLocale(localeStr);
-  const templateId = slugToTemplateId(slug);
-
-  const templates = nanoTemplates as unknown as RawTemplate[];
-  const images = nanoImages as unknown as RawNanoImageRecord[];
-  const reg = buildNanoRegistry(templates, images);
-
-  const nanoMessagesRaw = await loadNanoMessages(localeStr);
-  const localizedRawEntry = nanoMessagesRaw?.[templateId];
-  const localizedEntry = normalizeNanoLocaleMessageEntry(localizedRawEntry);
-
-  const tNano = await getTranslations({ locale: pageLocale, namespace: "nano" });
-  const translateNano = makeSafeNanoTranslator(tNano);
+  const ctx = await buildNanoPageContext(localeStr, slug);
 
   const data = buildNanoTemplateDetailData(
-    reg,
-    templateId,
-    contentLocale,
-    translateNano
+    ctx.reg,
+    ctx.templateId,
+    ctx.contentLocale,
+    ctx.translateNano
   );
 
-  const nanoMessages: NanoMessagesDict = {
-    [templateId]: localizedEntry,
-  };
-
   return {
-    pageLocale,
-    contentLocale,
-    templateId,
-    reg,
+    ...ctx,
     data,
-    nanoMessages,
-    localizedEntry,
-    translateNano,
   };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeStr, slug } = await params;
 
-  const { templateId, data, nanoMessages, localizedEntry, translateNano } = await getPageData(
+  const { templateId, data, nanoMessages, localizedEntry } = await getPageData(
     localeStr,
     slug
   );
@@ -105,7 +64,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { template } = data;
 
   const fallbackTitle =
-    localizedEntry.category || template.category || template.template_id;
+    localizedEntry.title ||
+    localizedEntry.category ||
+    template.category ||
+    template.template_id;
 
   const fallbackDescription =
     localizedEntry.description ||
@@ -134,21 +96,23 @@ export default async function NanoTemplatePage({ params }: Props) {
     nanoMessages,
     localizedEntry,
     translateNano,
+    translateTopics,
   } = await getPageData(localeStr, slug);
 
   if (!data) notFound();
 
   const { template } = data;
+  const templateTopics = template.topics ?? [];
 
   const { h2What, h2Who, h2How, h2Prompts } = resolveContentSections(
     templateId,
     nanoMessages
   );
 
-  const h1 = buildNanoH1(
-    localizedEntry.title,
-    localizedEntry.category || template.category || template.template_id
-  );
+  const categoryLabel =
+    localizedEntry.category || template.category || template.template_id;
+
+  const h1 = buildNanoH1(localizedEntry.title, categoryLabel);
 
   const intro =
     localizedEntry.description ||
@@ -156,28 +120,23 @@ export default async function NanoTemplatePage({ params }: Props) {
     "Copy and customize this Nano Banana prompt to generate structured, shareable visuals in seconds.";
 
   const imageViews = getImageViewsForTemplate(reg, templateId, contentLocale);
-  const imageMap = new Map(imageViews.map((x) => [x.id, x]));
 
   const orderedImageIds =
     template.cards?.length > 0
       ? template.cards.map((c) => c.image_id)
       : imageViews.map((x) => x.id);
 
-  const section2Images = orderedImageIds
-    .map((id) => imageMap.get(id))
-    .filter(Boolean)
-    .map((img) => ({
-      id: img!.id,
-      title: img!.title || "",
-      preview: img!.preview_image_url || img!.image_url,
-      templateId: img!.template_id,
-    }));
+  const section2Images = buildOrderedTemplateImageGridItems(
+    imageViews,
+    orderedImageIds
+  );
 
-  const otherNanoCards = buildNanoFeedCards(reg, contentLocale, {
-    perTemplateMaxImages: 2,
-    strictLocale: false,
-    translate: translateNano,
-  }).filter((c) => c.template_id !== template.template_id);
+  const otherNanoCards = buildOtherTemplateCards(
+    reg,
+    contentLocale,
+    translateNano,
+    template.template_id
+  );
 
   return (
     <main className="mx-auto max-w-6xl px-4 pt-24 pb-10">
@@ -186,11 +145,25 @@ export default async function NanoTemplatePage({ params }: Props) {
           <div>
             <h1 className="text-2xl font-bold text-neutral-900">{h1}</h1>
             <p className="mt-2 text-sm text-neutral-600">{intro}</p>
+
+            {templateTopics.length > 0 ? (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {templateTopics.map((topic) => (
+                  <Link
+                    key={topic}
+                    href={buildTopicHref(pageLocale, topic)}
+                    className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 transition hover:border-blue-200 hover:bg-blue-100"
+                  >
+                    {getTopicLabel(topic, translateTopics)}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
           </div>
 
-          {localizedEntry.category || template.category ? (
+          {categoryLabel ? (
             <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
-              {localizedEntry.category || template.category}
+              {categoryLabel}
             </span>
           ) : null}
         </div>
@@ -232,7 +205,9 @@ export default async function NanoTemplatePage({ params }: Props) {
 
           {h2How.length > 0 ? (
             <div className="mt-5">
-              <h3 className="text-base font-semibold text-neutral-900">How to use it</h3>
+              <h3 className="text-base font-semibold text-neutral-900">
+                How to use it
+              </h3>
               <ol className="mt-2 list-decimal pl-5 text-sm leading-6 text-neutral-700">
                 {h2How.map((s, i) => (
                   <li key={i} className="mt-1">

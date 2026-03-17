@@ -12,6 +12,10 @@ export type TemplateParameter = {
 
 export type RawTemplate = {
   id: string; // canonical template id, e.g. "template-education-card"
+
+  // canonical topic slugs only, e.g. "ai" or ["film", "psychology"]
+  topics?: string | string[];
+
   locales?: Partial<
     Record<
       Locale,
@@ -34,7 +38,7 @@ export type RawNanoImageRecord = {
 
   asset: {
     image_url: string; // "/images/insp/xxx.jpg"
-    preview_image_url?: string; // "/images/insp_preview/xxx-prev.jpg"
+    preview_image_url: string; // "/images/insp_preview/xxx-prev.jpg"
   };
 
   params: Record<string, any>;
@@ -47,6 +51,7 @@ export type TemplateView = {
   template_id: string;
   slug: string;
   locale: Locale;
+
   /**
    * `category` and `description` are no longer sourced from nano_templates.json.
    * Callers must inject them from the i18n namespace `nano.templates.{template_id}.category`
@@ -56,6 +61,10 @@ export type TemplateView = {
    */
   category: string;
   description: string;
+
+  // canonical topic slugs for downstream translation/rendering
+  topics: string[];
+
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
@@ -77,18 +86,22 @@ export type NanoInspirationCardType = {
   id: string; // group card id (usually template_id)
   template_id: string;
   language: Locale; // keep existing prop name to avoid churn
+
   /**
    * Populated by the caller via i18n — not sourced from JSON.
-   * Use `t(`nano.templates.${template_id}.category`)` at the call site.
+   * Use `t(\`${template_id}.category\`)` at the call site.
    */
   category: string;
+
+  // canonical topic slugs
+  topics: string[];
 
   image_urls: string[];
   preview_image_urls: string[];
 
   /**
    * Populated by the caller via i18n — not sourced from JSON.
-   * Use `t(`nano.templates.${template_id}.description`)` at the call site.
+   * Use `t(\`${template_id}.description\`)` at the call site.
    */
   description?: string;
   base_prompt?: string;
@@ -121,15 +134,15 @@ export type TranslateFn = (key: string) => string;
  * }
  *
  * When consumed via useTranslations("nano") / getTranslations("nano"),
- * the key passed to t() must be just  "template-herbal-zh.category"
+ * the key passed to t() must be just "template-herbal-zh.category"
  * — the namespace ("nano") is already bound by useTranslations/getTranslations.
  */
-  export function nanoTemplateI18nKey(
-    templateId: string,
-    field: string
-  ): string {
-    return `${templateId}.${field}`;
-  }
+export function nanoTemplateI18nKey(
+  templateId: string,
+  field: string
+): string {
+  return `${templateId}.${field}`;
+}
 // ---------------------------------------------------------------------------
 
 export function toSlug(templateId: string) {
@@ -206,6 +219,31 @@ function pickLocale<T>(
   return null;
 }
 
+function normalizeTopicValues(value: unknown): string[] {
+  if (typeof value === "string") {
+    return value
+      .split(",")
+      .map((v) => v.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  if (Array.isArray(value)) {
+    return value
+      .map((v) => String(v).trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  return [];
+}
+
+function dedupeStrings(values: string[]): string[] {
+  return [...new Set(values.filter(Boolean))];
+}
+
+export function getTemplateTopics(template: RawTemplate): string[] {
+  return dedupeStrings(normalizeTopicValues(template.topics));
+}
+
 export function buildNanoRegistry(
   templates: RawTemplate[],
   images: RawNanoImageRecord[]
@@ -219,8 +257,6 @@ export function buildNanoRegistry(
   }
 
   for (const img of images) {
-    console.log("[nano][image]", img.id, "→", img.template_id);
-
     imageById.set(img.id, img);
     const arr = imagesByTemplateId.get(img.template_id) ?? [];
     arr.push(img);
@@ -263,9 +299,9 @@ export function getTemplateView(
     template_id: raw.id,
     slug: toSlug(raw.id),
     locale: resolved,
-    // Callers must fill these from i18n
     category: "",
     description: "",
+    topics: getTemplateTopics(raw),
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],
@@ -326,10 +362,8 @@ export function getImageViewsForTemplate(
  * Builds feed cards for all templates.
  *
  * Pass `translate` to populate `category` and `description` on each card.
- * If omitted, those fields will be empty strings (fine for structural/data use,
- * not for rendering).
+ * If omitted, those fields will be empty strings.
  */
-
 export function buildNanoFeedCards(
   reg: NanoRegistry,
   locale: Locale,
@@ -357,18 +391,15 @@ export function buildNanoFeedCards(
 
     const sliced = imgs.slice(0, perTemplateMaxImages);
 
-    const category = t
-      ? t(nanoTemplateI18nKey(raw.id, "category"))
-      : "";
-    const description = t
-      ? t(nanoTemplateI18nKey(raw.id, "description"))
-      : "";
+    const category = t ? t(nanoTemplateI18nKey(raw.id, "category")) : "";
+    const description = t ? t(nanoTemplateI18nKey(raw.id, "description")) : "";
 
     out.push({
       id: tv.template_id,
       template_id: tv.template_id,
       language: tv.locale,
       category,
+      topics: tv.topics,
       description,
       base_prompt: tv.base_prompt,
       template_parameters: tv.parameters,

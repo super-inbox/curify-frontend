@@ -11,6 +11,7 @@ import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
+import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
 export default async function AppLocaleLayout({
   children,
@@ -28,23 +29,28 @@ export default async function AppLocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
-          strategy="lazyOnload"
-        />
-        <Script id="ga4-init" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-23QXSJ8HS7', { page_path: window.location.pathname });
-          `}
-        </Script>
+      <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
+  strategy="afterInteractive"
+/>
+<Script id="ga4-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-23QXSJ8HS7', {
+      send_page_view: false
+    });
+  `}
+</Script>
 
         <script src="https://accounts.google.com/gsi/client" async defer />
       </head>
 
       <body suppressHydrationWarning>
+      <GoogleAnalyticsTracker />
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppWrapper user={null}>
             <Header />

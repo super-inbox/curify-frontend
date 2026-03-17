@@ -786,5 +786,98 @@
         ]
       }
     }
+  },
+  "template-mbti-marvel-en": {
+    "category": "Catégorie d'infographie de personnage MBTI",
+    "description": "Créez des affiches infographiques de super-héros sur le thème du MBTI qui associent les types de personnalité à des personnages emblématiques de style Marvel.",
+    "title": "Nano Banana Prompt : Générateur d'infographies de super-héros MBTI Marvel | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des invites personnalisées de Nano Banana pour générer des affiches infographiques de super-héros sur le thème du MBTI. Chaque image visualise le type de personnalité d'un personnage à travers une illustration de personnage de style bande dessinée combinée à des éléments infographiques tels que des cartes de traits, des accessoires symboliques et des descripteurs de personnalité.",
+        "who": "Convient aux créateurs de psychologie de la personnalité, aux communautés de fans de Marvel/super-héros, aux créateurs de contenu de culture pop, aux pages de discussion MBTI, aux designers d'infographies et aux comptes de médias sociaux qui transforment des personnages fictifs en archétypes de personnalité.",
+        "how": [
+          "Choisissez un personnage de super-héros (par exemple, Wolverine, Scarlet Witch, Spider-Man).",
+          "Attribuez un type MBTI et un rôle qui correspondent le mieux à la personnalité du personnage.",
+          "Ajoutez un court titre de style super-héros décrivant leur identité ou pouvoir.",
+          "Listez cinq traits de personnalité clés qui reflètent le type MBTI.",
+          "Générez l'affiche infographique avec l'illustration du personnage, des accessoires symboliques et une description de la personnalité."
+        ],
+        "prompts": [
+          "Générez une affiche infographique de super-héros MBTI pour Wolverine (Logan) : ISTP – Le Virtuose, 'Feral Fighter', avec les traits Indépendant, Pratique, Observateur, Orienté Action, Adaptable.",
+          "Créez une affiche de personnage MBTI pour Scarlet Witch (Wanda) : INFP – Le Médiateur, 'Reality Shaper', mettant en avant l'empathie, l'imagination et la profondeur émotionnelle.",
+          "Générez une affiche infographique MBTI pour Spider-Man : ENFJ – Le Protagoniste, 'Héros du Quartier Amical', avec les traits Compatissant, Responsable, Rapide d'Esprit, Résilient, Optimiste."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba-en": {
+    "category": "Catégorie de cartes de sport MBTI",
+    "description": "Créez des cartes de basket-ball MBTI de style collection qui combinent les types de personnalité avec des joueurs légendaires de la NBA.",
+    "title": "Nano Banana Prompt : Générateur de cartes de basket-ball MBTI NBA | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des invites personnalisées de Nano Banana pour générer des visuels de cartes de basket-ball de collection qui associent les types de personnalité MBTI à des joueurs célèbres de la NBA. La mise en page ressemble à des cartes de collection premium avec une typographie métallique, des poses illustrées de joueurs et des réalisations ou traits axés sur la personnalité.",
+        "who": "Convient aux communautés de fans de basket-ball, aux comptes de médias sociaux de la NBA, aux créateurs d'infographies sportives, aux pages de psychologie de la personnalité, aux expériences de design de cartes de collection et aux narrateurs d'analyses sportives.",
+        "how": [
+          "Sélectionnez un joueur de la NBA à mettre en avant sur la carte.",
+          "Attribuez un type de personnalité MBTI qui correspond à leur style de leadership ou de jeu.",
+          "Créez un titre de persona (par exemple, 'Le Roi', 'Le Magicien').",
+          "Ajoutez le numéro de maillot du joueur et quatre traits ou réalisations définissants.",
+          "Générez la carte de collection avec des bordures métalliques, une palette de couleurs d'équipe et une pose illustrée du joueur."
+        ],
+        "prompts": [
+          "Créez une carte de basket-ball MBTI pour Kobe Bryant : ISTP – 'THE MAMBA', numéro de maillot 24, traits Mentalité Mamba, 5× Champion NBA, L'Assassin, Job's Not Finished.",
+          "Générez une carte MBTI NBA pour Stephen Curry : ENFP – 'THE MAGICIAN', numéro de maillot 30, traits Roi de la Portée, Légende du Tir à 3 Points, Performeur Clutch, Joueur d'Équipe.",
+          "Créez une carte MBTI pour Michael Jordan : ESTJ – 'THE GOAT', numéro de maillot 23, traits Bête Compétitive, 6× Champion NBA, Air Jordan, Icône Mondiale."
+        ]
+      }
+    }
+  },
+  "template-mbti-siliconvalley-en": {
+    "category": "Catégorie de visualisation de fondateur technologique MBTI",
+    "description": "Créez des concepts visuels MBTI qui associent les types de personnalité à des fondateurs et innovateurs emblématiques de la Silicon Valley.",
+    "title": "Nano Banana Prompt : Générateur de visuels de fondateur MBTI Silicon Valley | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des invites personnalisées de Nano Banana pour créer des compositions visuelles MBTI sur le thème de la technologie mettant en vedette des fondateurs célèbres de la Silicon Valley. Chaque image représente un fondateur se tenant dans un environnement technologique futuriste, symbolisant ses traits de personnalité, son style de leadership et son impact dans l'industrie.",
+        "who": "Convient aux créateurs de culture technologique, aux communautés de startups et d'entrepreneuriat, aux passionnés de MBTI, aux éducateurs en IA/technologie, aux blogueurs d'analyse de leadership et aux pages de médias sociaux discutant des personnalités de la Silicon Valley.",
+        "how": [
+          "Choisissez un fondateur de la Silicon Valley (par exemple, Steve Jobs, Elon Musk, Bill Gates).",
+          "Attribuez un type MBTI représentant leur style de leadership ou d'innovation.",
+          "Écrivez un court slogan résumant l'archétype du fondateur (par exemple, 'Le Maître d'Esprit, Pionnier Technologique').",
+          "Choisissez un style visuel tel que l'art vectoriel technologique ou le design d'affiche de personnage.",
+          "Générez le visuel montrant le fondateur dans un environnement technologique futuriste avec des éléments symboliques de marque ou d'innovation."
+        ],
+        "prompts": [
+          "Générez un visuel de fondateur MBTI pour Steve Jobs : INTJ – 'Le Maître d'Esprit, Pionnier Technologique', debout sur une plateforme de circuit futuriste avec des symboles d'innovation inspirés d'Apple.",
+          "Créez une affiche de fondateur technologique MBTI pour Elon Musk : ENTP – 'Le Visionnaire, Leader de la Révolution IA', entouré d'éléments de fusée, de puce IA et de véhicule électrique.",
+          "Générez une visualisation MBTI pour Bill Gates : INTP – 'Le Logicien, Innovateur Analytique', avec des symboles classiques de l'informatique et des logiciels dans un environnement technologique futuriste."
+        ]
+      }
+    }
+  },
+  "template-mbti-breakingbad-en": {
+    "category": "Catégorie de carte de personnage MBTI TV",
+    "description": "Créez des cartes de personnage MBTI au style collectible inspirées par Breaking Bad et Better Call Saul, alliant typage de personnalité et visuels iconiques de drame criminel.",
+    "title": "Nano Banana Prompt : Générateur de carte de personnage MBTI Breaking Bad | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des prompts personnalisés de Nano Banana pour générer des cartes de personnage MBTI premium stylisées selon le monde sombre et industriel de Breaking Bad et Better Call Saul. Le design combine des en-têtes en métal usé, une typographie de tableau périodique, des portraits de style bande dessinée, et des forces, faiblesses, citations et accessoires symboliques axés sur la personnalité.",
+        "who": "Convient aux communautés de fans de Breaking Bad et Better Call Saul, aux pages d'analyse de personnages de TV, aux créateurs de contenu MBTI, aux designers d'infographies de culture pop, aux expérimentateurs de cartes à collectionner, et aux comptes de médias sociaux axés sur le divertissement.",
+        "how": [
+          "Choisissez un personnage de Breaking Bad ou Better Call Saul à mettre en avant sur la carte.",
+          "Attribuez un type MBTI et un titre d'archétype qui correspondent à la psychologie et au comportement du personnage.",
+          "Ajoutez un sous-titre de personnage ou un label de rôle tel que 'Le Chimiste' ou 'L'Avocat'.",
+          "Listez les quatre fonctions cognitives et incluez une citation signature qui capture l'identité du personnage.",
+          "Ajoutez des forces, des faiblesses et cinq icônes de traits clés liés aux accessoires, à la profession ou aux objets symboliques du personnage.",
+          "Générez la carte collectible finale en utilisant une palette industrielle rugueuse, des motifs chimiques, un éclairage dramatique et une illustration de style bande dessinée."
+        ],
+        "prompts": [
+          "Créez une carte MBTI Breaking Bad pour Walter White : INTJ – L'Architecte, sous-titre 'Le Chimiste', citation signature 'Je suis celui qui frappe.', forces Intelligent, Stratégique, Déterminé, Concentré, Fière, faiblesses Arrogant, Contrôlant, Fière, Impitoyable, Autodestructeur, traits clés Flacon de chimie, Chapeau Heisenberg, Équipement de laboratoire, Bécher, Tableau périodique.",
+          "Générez une carte MBTI Better Call Saul pour Saul Goodman : ENTP – Le Farceur, sous-titre 'L'Avocat', citation signature 'Tout va bien, mec.', forces Charismatique, Rapide d'esprit, Persuasif, Opportuniste, Créatif, faiblesses Manipulateur, Imprudent, Malhonnête, Impulsif, Évitant, traits clés Mallette légale, Constitution des États-Unis, Téléphone portable, Costume coloré, Publicité sur panneau.",
+          "Créez une carte de personnage MBTI Breaking Bad pour Jesse Pinkman : ESFP – Le Rebelle, sous-titre 'Le Survivant', citation signature 'Ouais, science !', forces Loyal, Émotionnel, Malin, Adaptable, Courageux, faiblesses Impulsif, Insecure, Réactif, Autodestructeur, Facilement manipulé, traits clés Costume de protection jaune, Boîte à haut-parleur, Cigarette, Pile de cash, RV."
+        ]
+      }
+    }
   }
 }
