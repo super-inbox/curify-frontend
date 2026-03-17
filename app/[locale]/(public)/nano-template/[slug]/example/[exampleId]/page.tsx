@@ -9,14 +9,15 @@ import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleActionBar from "./ExampleActionBar";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
-import {
-  toSlug,
-  getNanoExampleById,
-  type RawNanoImageRecord,
-} from "@/lib/nano_utils";
-
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
+
+import { toSlug, type RawNanoImageRecord } from "@/lib/nano_utils";
+
+import {
+  getNanoExampleById,
+  buildCircularExampleNav,
+} from "@/lib/nano_example_utils";
 
 import {
   buildNanoPageContext,
@@ -25,7 +26,6 @@ import {
   getImageViewsForTemplate,
   resolveLocalizedExampleCopy,
 } from "@/lib/nano_page_data";
-
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type PageParams = {
@@ -35,7 +35,6 @@ type PageParams = {
 };
 
 // ─── Shared page data ─────────────────────────────────────────────────────────
-
 async function getPageData(localeStr: string, slug: string, rawExampleId: string) {
   const ctx = await buildNanoPageContext(localeStr, slug);
   const imageId = decodeURIComponent(rawExampleId);
@@ -56,8 +55,22 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     Object.entries(example.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
   );
 
-  const imageViews = getImageViewsForTemplate(ctx.reg, ctx.templateId, ctx.contentLocale);
+  const imageViews = getImageViewsForTemplate(
+    ctx.reg,
+    ctx.templateId,
+    ctx.contentLocale
+  );
+
   const gridItems = buildTemplateImageGridItems(imageViews, imageId);
+
+  const prevNext = buildCircularExampleNav({
+    reg: ctx.reg,
+    templateId: ctx.templateId,
+    contentLocale: ctx.contentLocale,
+    pageLocale: localeStr,
+    slug,
+    currentExampleId: imageId,
+  });
 
   const otherNanoCards = buildOtherTemplateCards(
     ctx.reg,
@@ -76,6 +89,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     tags,
     paramEntries,
     gridItems,
+    prevNext,
     otherNanoCards,
   };
 }
@@ -149,6 +163,7 @@ export default async function NanoExampleDetailPage({
     tags,
     paramEntries,
     gridItems,
+    prevNext,
     otherNanoCards,
   } = pageData;
 
@@ -172,15 +187,38 @@ export default async function NanoExampleDetailPage({
       </nav>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-stretch">
-      
-        <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[480px]">
-          <ProgressiveCdnImage
-            previewSrc={example.asset.preview_image_url}
-            fullSrc={example.asset.image_url}
-            alt={title}
-            className="h-full w-full object-contain"
-            priority
-          />
+        <div className="flex flex-col gap-3">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[480px]">
+            <ProgressiveCdnImage
+              previewSrc={example.asset.preview_image_url}
+              fullSrc={example.asset.image_url}
+              alt={title}
+              className="h-full w-full object-contain"
+              priority
+            />
+          </div>
+
+          {prevNext && (
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 shadow-sm">
+              <Link
+                href={prevNext.prev.href}
+                className="inline-flex items-center rounded-xl border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+              >
+                ← Prev
+              </Link>
+
+              <span className="text-xs font-medium text-neutral-500">
+                {prevNext.index + 1} / {prevNext.total}
+              </span>
+
+              <Link
+                href={prevNext.next.href}
+                className="inline-flex items-center rounded-xl border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+              >
+                Next →
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col gap-3 lg:h-[480px]">

@@ -5,11 +5,18 @@ import { getTranslations } from "next-intl/server";
 import {
   type RawTemplate,
   type RawNanoImageRecord,
+  type NanoInspirationCardType,
+  type TranslateFn,
   buildNanoRegistry,
-  getImageViewsForTemplate,
-  buildNanoFeedCards,
-  getNanoExampleById,
+  getTemplateView,
+  getTemplateViewWithTranslations,
+  nanoTemplateI18nKey,
 } from "@/lib/nano_utils";
+
+import {
+  getImageViewsForTemplate,
+  getNanoExampleById,
+} from "@/lib/nano_example_utils";
 
 import {
   resolveContentLocale,
@@ -102,6 +109,104 @@ export function buildOrderedTemplateImageGridItems(
       preview: img.preview_image_url || img.image_url,
       templateId: img.template_id,
     }));
+}
+
+export function buildNanoFeedCards(
+  reg: ReturnType<typeof buildNanoRegistry>,
+  locale: Locale,
+  opts?: {
+    perTemplateMaxImages?: number;
+    strictLocale?: boolean;
+    translate?: TranslateFn;
+  }
+): NanoInspirationCardType[] {
+  const perTemplateMaxImages = opts?.perTemplateMaxImages ?? 6;
+  const strictLocale = opts?.strictLocale ?? true;
+  const t = opts?.translate;
+
+  const out: NanoInspirationCardType[] = [];
+
+  for (const raw of reg.templates) {
+    const tv = getTemplateView(reg, raw.id, locale);
+    if (!tv) continue;
+
+    if (strictLocale && tv.locale !== locale) continue;
+
+    const imgs = getImageViewsForTemplate(reg, raw.id, tv.locale);
+    if (imgs.length === 0) continue;
+
+    const sliced = imgs.slice(0, perTemplateMaxImages);
+
+    const category = t ? t(nanoTemplateI18nKey(raw.id, "category")) : "";
+    const description = t ? t(nanoTemplateI18nKey(raw.id, "description")) : "";
+
+    out.push({
+      id: tv.template_id,
+      template_id: tv.template_id,
+      language: tv.locale,
+      category,
+      topics: tv.topics,
+      description,
+      base_prompt: tv.base_prompt,
+      template_parameters: tv.parameters,
+      image_urls: sliced.map((x) => x.image_url),
+      preview_image_urls: sliced.map((x) => x.preview_image_url ?? x.image_url),
+      sample_parameters: sliced[0]?.params,
+    });
+  }
+
+  return out;
+}
+
+export type NanoTemplateDetailData = {
+  template: ReturnType<typeof getTemplateView>;
+  cards: Array<{
+    image_id: string;
+    params: Record<string, any>;
+    image_url: string;
+    preview_image_url: string;
+  }>;
+};
+
+export function buildNanoTemplateDetailData(
+  reg: ReturnType<typeof buildNanoRegistry>,
+  templateId: string,
+  locale: Locale,
+  translate?: TranslateFn
+) {
+  const template = translate
+    ? getTemplateViewWithTranslations(reg, templateId, locale, translate)
+    : getTemplateView(reg, templateId, locale);
+
+  if (!template) return null;
+
+  const images = getImageViewsForTemplate(reg, templateId, template.locale);
+  const imageMap = new Map(images.map((x) => [x.id, x] as const));
+
+  const curated =
+    template.cards.length > 0
+      ? template.cards
+      : images.map((x) => ({ image_id: x.id, params: x.params }));
+
+  const cards = curated
+    .map((c) => {
+      const img = imageMap.get(c.image_id);
+      if (!img) return null;
+      return {
+        image_id: img.id,
+        params: c.params ?? img.params,
+        image_url: img.image_url,
+        preview_image_url: img.preview_image_url ?? img.image_url,
+      };
+    })
+    .filter(Boolean) as Array<{
+      image_id: string;
+      params: Record<string, any>;
+      image_url: string;
+      preview_image_url: string;
+    }>;
+
+  return { template, cards };
 }
 
 export function buildOtherTemplateCards(

@@ -5,8 +5,6 @@ import type { Metadata } from "next";
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 
-import { buildNanoTemplateDetailData } from "@/lib/nano_utils";
-
 import {
   buildTopicHref,
   getTopicLabel,
@@ -23,6 +21,7 @@ import {
   buildOrderedTemplateImageGridItems,
   buildOtherTemplateCards,
   getImageViewsForTemplate,
+  buildNanoTemplateDetailData,
 } from "@/lib/nano_page_data";
 
 type Props = {
