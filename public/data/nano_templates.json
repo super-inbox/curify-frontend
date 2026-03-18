@@ -1,6 +1,6 @@
 [
   {
-    "id": "template-herbal-zh",
+    "id": "template-herbal",
     "locales": {
       "zh": {
         "base_prompt": "（Medica Concept Artist）你是一位顶尖本草插画概念设计师，擅长把\"单味药材\"画成全景式知识分解图。根据用户指定的【{herb_name}】，生成一张\"单味药材全景分解图（Herb Exploded Sheet）\"：中央放置该药材真实饮片/干品本体的高清插画；四周均匀环绕原植物形态、植物关键部位放大、断面/纹理放大、性味归经小标签、功效图标、现代剂型（粉末/颗粒/胶囊/煎煮形态）、使用场景小插图，并用细线/箭头/框架建立连接，形成百科海报式科普设计。整体为高质量2D插画：清晰线稿+柔和上色，米色/羊皮纸/浅灰科研海报风背景；注释为模拟手写中文+小号英文对照；纵向4K单页海报，留白清晰，信息分区明确（全程科普表达，不做治疗承诺）。直接出图，药材为【{herb_name}】。",
@@ -34,7 +34,8 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-herbal-zh-caulis-spatholobi-prev.jpg",
-    "topics": "learning"
+    "topics": "learning",
+    "legacy_id": "template-herbal-zh"
   },
   {
     "id": "template-evolution",
@@ -208,7 +209,7 @@
     "topics": "learning"
   },
   {
-    "id": "template-travel-zh",
+    "id": "template-travel",
     "locales": {
       "zh": {
         "base_prompt": "你是擅长可爱手绘风格的旅行插画师，生成一张【{destination}】的手绘旅行地图，贴合【{date_range}】的季节与时间特点。整体为可爱手绘风，将该目的地的核心景点、当地特色美食、住宿、交通方式均设计成Q版萌系图案，线条圆润、色彩明快清新。全程用简体中文标注，精准标注目的地、景点、美食、住宿及行程内容，字体为可爱卡通字体，清晰可读。清晰标出各地点间的移动路线（用萌系线条/小脚印等元素呈现），按【{date_range}】分块展示每日重点活动，区块划分清晰。固定为4:3画幅，分辨率为基础的两倍，精准还原目的地基础地形轮廓（贴合当地地形/海岸线特点），融入对应季节代表性元素，贴合目的地地域特色，画面细节满满、治愈活泼，兼顾萌系视觉感与行程实用性，适配打印、电子展示等场景。",
@@ -260,7 +261,8 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-travel-zh-xishuangbanna-prev.jpg",
-    "topics": "travel"
+    "topics": "travel",
+    "legacy_id": "template-travel-zh"
   },
   {
     "id": "template-architecture",
@@ -298,7 +300,7 @@
     "topics": "travel"
   },
   {
-    "id": "template-species-zh",
+    "id": "template-species",
     "locales": {
       "zh": {
         "base_prompt": "生成一张3:4竖版的濒危物种【{species_name}】综合性知识图谱信息卡片，采用赛博朋克科技美学风格，背景为深邃的深海黑或森林墨绿，用半透明的青绿色、冰蓝色、珊瑚粉荧光霓虹线条勾勒模块边框 and 数据可视化图形，整体呈现未来感UI界面，采用分层设计，添加柔和的发光效果，结合写实动物插画与简洁矢量图标。卡片必须包含以下6个核心模块，每个模块均配有中英双语标注：1生物学本体（分类层级+形态参数+局部特写）；2生态与栖息地（分布图+环境指标+栖息地分层）；3行为与社会结构（行为占比饼图+社会结构图+声波可视化）；4生命周期与种群动态（时间轴+30年趋势折线+保护等级）；5威胁机制与风险结构（雷达图+威胁图标注解）；6保护/文化/人类关系（行动循环流程+政策节点+文化象征）。中央放大写实插画并有柔光晕，文字干净科技感。",
@@ -330,10 +332,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-species-zh-baiji-prev.jpg",
-    "topics": "nature"
+    "topics": "nature",
+    "legacy_id": "template-species-zh"
   },
   {
-    "id": "template-character-zh",
+    "id": "template-character",
     "locales": {
       "zh": {
         "base_prompt": "你是一位顶尖的游戏与动漫概念美术设计大师，擅长制作详尽的角色设定图。你具备\"像素级拆解\"的能力，能够透视角色的穿着层级、捕捉微表情变化，并将与其相关的物品进行具象化还原。根据【{character_source}中{character_name}】，生成一张\"全景式角色深度概念分解图\"，图片比例3:4。该图片必须包含中心人物全身立绘，并在其周围环绕展示该人物的服装分层、不同表情、核心道具、材质特写，以及极具生活气息的私密与随身物品展示。包含：服装分层（多层穿搭+私密内着拆解）、表情集（3-4个头部特写展示不同情绪）、材质特写、关联物品（随身包袋与内容物、美妆与护理、私密生活物件）。画风: 保持高质量的2D插画风格或概念设计草图风格，线条干净利落。背景: 使用米黄色、羊皮纸或浅灰色纹理背景。文字说明: 在每个拆解元素旁模拟手写注释，简要说明材质或品牌/型号暗示，使用中文。",
@@ -383,10 +386,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-character-zh-academic-journey-to-the-west 1-prev.jpg",
-    "topics": "film"
+    "topics": "film",
+    "legacy_id": "template-character-zh"
   },
   {
-    "id": "template-recipe-zh",
+    "id": "template-recipe",
     "locales": {
       "zh": {
         "base_prompt": "你是世界级视觉菜谱设计师，生成一张【{dish_name}】的年夜饭视觉烹饪指南海报，画风融合传统春节温馨氛围、吉卜力美食诱人质感与达芬奇手稿严谨结构。画面顶部设计喜庆标题区域，呈现菜品名称及年夜饭吉祥别称，文字用烫金/剪纸/书法风格，凸显年节感；中心放置菜品完美成品定妆照，突出热气、色泽与摆盘美学，彰显年夜饭丰盛团圆感。背景采用暖色调复古纸张或春节传统图案（窗花、祥云等），色调柔和温馨。围绕中心成品模块化布局：左上角整齐陈列全部食材并标注用量，融入春节小装饰；底部/右侧呈现3-4个核心烹饪步骤动态插图，用箭头指示顺序，融入国风元素；右上角展示适配饮品与年夜饭寓意；左下角用卷轴/折扇呈现烹饪小贴士。用春节元素虚线、手写注释、箭头串联食材-步骤-成品，形成清晰视觉路径。固定3:4比例，菜品色彩鲜艳诱人，背景低饱和暖色调，所有标注用简体中文，兼顾喜庆感、质感与烹饪严谨性，适配年夜饭场景展示与烹饪参考。",
@@ -418,10 +422,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-recipe-zh-sweet-and-sour-ribs-prev.jpg",
-    "topics": "lifestyle"
+    "topics": "lifestyle",
+    "legacy_id": "template-recipe-zh"
   },
   {
-    "id": "template-character-analysis-zh",
+    "id": "template-character-analysis",
     "locales": {
       "zh": {
         "base_prompt": "生成一张【{character_name}】详细信息图，采用【{art_style}】美学。中间为角色经典半身/全身画像（服装/动作/表情），置于指定材质/形状相框中。顶行：一排头像设定稿展示3-4种情绪变化。左列：标有【{left_section_title}】等区域，含3-4条官方设定信息（姓名、出生地、性格、必杀技等）与指定字体风格。右列：标有【{right_section_title}】区域，以拍立得/悬赏令/宝石投影等形式展示关键人物A/B/C及特征。底部：拆解关键物品/装备，以游戏道具图鉴/博物馆展品风展示。整体色调、线条与材质质感按输入设定，完成统一的角色档案信息图。",
@@ -507,7 +512,8 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
-    "topics": "psychology"
+    "topics": "psychology",
+    "legacy_id": "template-character-analysis-zh"
   },
   {
     "id": "template-weather",
@@ -545,7 +551,7 @@
     "topics": "nature"
   },
   {
-    "id": "template-education-zh",
+    "id": "template-education",
     "locales": {
       "zh": {
         "base_prompt": "根据输入内容【{topic}】提取核心主题与要点，生成信息图（两种风格任选其一）：A）可爱数字卡通风：横版3:4，背景纯白/极浅纯色，马卡龙配色（浅绿为主，搭配天蓝/米黄/淡橙/淡粉），线条圆润亲和；用圆角矩形、流程图、箭头组织信息；加入少量拟人化可爱图标（太阳/云朵/化学分子等）；文字为圆润无衬线卡通风，突出关键词，多留白。B）手绘黑板报/科学手稿粉笔草图风：竖版3:4，深灰近黑板纹理背景；主体白色粉笔线条+交叉排线阴影；用少量高饱和点缀色（柠檬黄/青色/品红/亮绿）强调关键图形与注释；整体像灵感迸发的草稿页，元素密集但核心清晰，文字为不规则手写粉笔字体。默认语言随输入内容语言一致。",
@@ -577,10 +583,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-education-zh-conservation-of-energy-prev.jpg",
-    "topics": "learning"
+    "topics": "learning",
+    "legacy_id": "template-education-zh"
   },
   {
-    "id": "template-hot-event-analysis-zh",
+    "id": "template-hot-event-analysis",
     "locales": {
       "zh": {
         "base_prompt": "生成可视化热点事件信息图：竖版3:4；文字用中文且单独图层清晰可读；白色系背景。标题：用AI进行多维可视化分析——【{event_title}】（深层挖掘）。内容结构：1）现象-本质分层图：自上而下“表面现象层→直接成因层→深层本质层”，用箭头标注传导关系；2）底层逻辑拆解示意图：流程链条“{logic_chain}”，标注主体、行为与结果；3）长效影响辐射图：以事件为原点向{impact_axes}方向辐射，标注影响内容与周期（短/中/长），用颜色区分影响程度（红高/黄中/蓝低）。",
@@ -646,10 +653,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-hot-event-analysis-zh-declining-fertility-rate-prev.jpg",
-    "topics": "ai"
+    "topics": "ai",
+    "legacy_id": "template-hot-event-analysis-zh"
   },
   {
-    "id": "template-intangible-heritage-zh",
+    "id": "template-intangible-heritage",
     "locales": {
       "zh": {
         "base_prompt": "中国传统非遗工艺信息可视化流程图（A3展板排版）：主题为【{craft_name}】。必须包含：1历史发展与文化背景；2艺术特征与制作工艺；3整体艺术体系（地域流派/唱腔/造型/题材差异等）；4传统纹样与文化符号；5制作工艺与传承现状（含数字化与文旅融合）；6周围标注核心组件细节插图（工具材料演变、结构操控示意、细节工艺与老艺人场景、演出/使用生态等）。风格复古精致高信息密度，专业中文知识解析；配色偏传统建筑彩画/古籍色谱。",
@@ -685,7 +693,8 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-intangible-heritage-zh-anshun-opera-prev.jpg",
-    "topics": "history"
+    "topics": "history",
+    "legacy_id": "template-intangible-heritage-zh"
   },
   {
     "id": "template-education-card",
@@ -723,7 +732,7 @@
     "topics": "learning"
   },
   {
-    "id": "template-costume-zh",
+    "id": "template-costume",
     "locales": {
       "zh": {
         "base_prompt": "（Chinese Style Costume Illustration Artist）你是一位顶尖国风服饰专业科普插画师，擅长还原各朝代服饰形制并打造细节拉满的科普插画。根据用户指定的【{costume_style}】，生成一张3:4竖版黄金构图的国风服饰专业科普插画：核心聚焦【{costume_style}】，中央主体完整呈现服饰全貌，针脚、纹样、配饰等工艺细节精准复刻；采用模块化布局，融合主视觉展示+多维度细节拆解特写+纹样寓意注解+小型穿戴场景插画，信息层次分明。以中式工笔重彩为核心技法，线条细腻流畅、勾勒利落，配色典雅温润不艳俗，严格遵循对应朝代服饰规制与色彩体系；背景铺陈浅米仿古宣纸质感，点缀中式回纹边框增添古韵，文字注解选用瘦金体或宋体，字体清晰易读、排版规整。整体高还原服饰结构层次、纹样寓意、配饰细节，背景干净无杂乱元素，色彩和谐统一，兼具科普专业性与视觉美感，适配科普内容传播、文创设计素材等多元场景。直接出图，服饰形制为【{costume_style}】。",
@@ -757,7 +766,8 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-costume-zh-ming-dynasty-dragon-robe-prev.jpg",
-    "topics": "design"
+    "topics": "design",
+    "legacy_id": "template-costume-zh"
   },
   {
     "id": "template-book-series",
@@ -2116,7 +2126,7 @@
     "topics": "nature"
   },
   {
-    "id": "template-mbti-contrast-zh",
+    "id": "template-mbti-contrast",
     "locales": {
       "zh": {
         "base_prompt": "（MBTI梗图设计师）你是一位顶尖AI视觉设计师，擅长生成高表现力、强对比、文字清晰的MBTI对比卡片。根据用户指定的【{persona_a}】、【{persona_b}】、【{scene_title}】，生成一张竖版9:16对比卡：整体为白色卡片+红色粗边框，上下双栏结构，每栏顶部是醒目加粗中文标题，中间是可爱动物拟人卡通插画，底部是搞笑文案。上半部分：标题【{persona_a} {scene_title}】，动物拟人插画，动作表情鲜明；下半部分：标题【{persona_b} {scene_title}】，与上半部分形成强烈反差对比。风格：扁平卡通、色彩明亮、文字清晰无错别字、画面干净、排版工整、4K高清、适合抖音小红书传播。直接出图，主体为MBTI春运对比。",
@@ -2196,10 +2206,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-mbti-contrast-zh-INFJ vs ESFJ-home-prev.jpg",
-    "topics": "psychology"
+    "topics": "psychology",
+    "legacy_id": "template-mbti-contrast-zh"
   },
   {
-    "id": "template-guofeng-scroll-zh",
+    "id": "template-guofeng-scroll",
     "locales": {
       "zh": {
         "base_prompt": "（国风卷轴插画师）你是一位顶尖的中国传统工笔人物画师，擅长将经典人物群像绘制成长卷式百科海报。根据用户指定的【{group_name}】，生成一张 “中国传统人物群像长卷海报”：画面为横向长卷式构图，所有人物排成一条队列，从左至右依次展开；每个人物都有鲜明的传统服饰、标志性道具和神态，下方配有竖排名牌标注姓名；卷轴顶部有醒目的书法标题；背景为符合主题的场景元素（如祥云、海浪、山水、亭台等）。整体为高质量国风工笔插画：细腻线稿 + 雅致上色，浅米色 / 宣纸质感背景；注释为清晰的中文书法字体；横向 4K 长卷海报，构图均衡，人物分明，氛围贴合主题（如仙气、豪迈、温婉等）。直接出图，人物群像为【{group_name}】。",
@@ -2233,10 +2244,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-water-margin-prev.jpg",
-    "topics": "design"
+    "topics": "design",
+    "legacy_id": "template-guofeng-scroll-zh"
   },
   {
-    "id": "template-species-science-zh",
+    "id": "template-species-science",
     "locales": {
       "zh": {
         "base_prompt": "（Scientific Illustrator）你是一位专业科普插画师，擅长绘制现代科学图鉴风格信息图表。根据用户指定的【{species_name}】，生成一张信息图表风格插画：中心为【{species_name}】高清主体大图，四周分布特征、功能、寿命、结构、生物细节等卡片式信息框，用清晰线条与分区排版连接展示。整体为现代科学图鉴风格，严谨美观，摄影级细节，文字使用中文，图片比例3:4。直接出图，物种为【{species_name}】。",
@@ -2274,10 +2286,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-species-science-zh-hawksbill-prev.jpg",
-    "topics": "nature"
+    "topics": "nature",
+    "legacy_id": "template-species-science-zh"
   },
   {
-    "id": "template-city-miniature-zh",
+    "id": "template-city-miniature",
     "locales": {
       "zh": {
         "base_prompt": "（Concept Artist）你是一位顶尖城市微缩景观概念设计师，擅长将城市地图与立体微缩景观结合创作。以{City Name}为主题，在复古质感的{City map}平面上，生成超写实逼真的城市微缩立体景观：包含精致建筑细节的本地标志性地标、经典人文风景、霓虹或传统韵味的热闹商业街、点缀着缤纷落叶的葱郁{seasonal trees}、沿着微缩轨道行驶的细腻{City Transit}列车。所有元素如同鲜活的3D城市沙盘从地图中自然生长而出，层间带有柔和阴影增强立体感。采用工作室柔和光影，冷暖色调和谐统一，电影级景深效果，背景虚化光斑柔和，建筑与植物纹理细节精致，2:3构图，超写实渲染，高清画质。直接出图，城市为{City Name}。",
@@ -2377,10 +2390,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-city-miniature-zh-shanghai-prev.jpg",
-    "topics": "travel"
+    "topics": "travel",
+    "legacy_id": "template-city-miniature-zh"
   },
   {
-    "id": "template-hotspot-card-zh",
+    "id": "template-hotspot-card",
     "locales": {
       "zh": {
         "base_prompt": "（Hand-painted Illustrator）你是一位专业知识卡片设计师，擅长手绘水彩风格的热点知识科普设计。根据用户指定的【{hotspot_name}】，生成一张手绘水彩风格热点知识卡：顶部标题栏为“热点知识卡 | {hotspot_name}”，副标题为“{keyword1} {keyword2} {keyword3}”，采用复古丝带横幅设计；背景为柔和水彩晕染效果，主色调为{color_theme}；所有图标与线条为手绘风格，黑色清晰轮廓线，内部低饱和度柔和色彩；信息分为“核心速览”板块，下设3-4个逻辑子模块，每个模块含图标、标题、要点，用箭头或连线展示因果关系；底部设“一句话总结”引语框，高度概括热点本质与核心影响。整体排版整洁、层次分明、文艺治愈，适合科普传播。直接出图，主题为【{hotspot_name}】。",
@@ -2482,10 +2496,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-hotspot-card-zh-solid-state-battery-prev.jpg",
-    "topics": "ai"
+    "topics": "ai",
+    "legacy_id": "template-hotspot-card-zh"
   },
   {
-    "id": "template-constellation-steampunk-zh",
+    "id": "template-constellation-steampunk",
     "locales": {
       "zh": {
         "base_prompt": "（Steampunk Scientific Illustrator）你是一位专业复古蒸汽朋克解剖图谱设计师，擅长星座机械结构科普海报。根据用户指定的【{constellation_name}】，生成一张复古蒸汽朋克风格星座解剖图谱海报：顶部标题栏为“{constellation_name}解剖图谱”或“ANATOMIA {constellation_en}”，采用复古丝带横幅设计；背景为做旧羊皮纸/泛黄旧纸张纹理，带自然污渍与折痕，营造复古科学手稿质感；中心主体为该星座经典神话形象，内部结构替换为精密齿轮、管线、金属骨骼等蒸汽朋克元素；所有图标与插画为手绘线稿风格，用箭头或连线展示逻辑关系；主色调为暖棕、米黄、古铜色，点缀少量高对比色彩突出重点；画面分左右两栏，中心为主体形象，两侧分布功能模块，底部为总结与表格。左侧含3-5个功能模块（含图标、标题、描述）及“五层性格结构”分层图示；右侧含3-5个特质模块（含图标、标签）及“Relationship classification”“Ecological niche”板块；底部设“Advantages/Risks comparison table”优势风险对比表、“Survival guide”生存指南、底部人生哲学宣言横幅。整体严谨精致、复古机械美学，直接出图，星座为【{constellation_name}】。",
@@ -2551,7 +2566,8 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-constellation-steampunk-zh-libra-prev.jpg",
-    "topics": "psychology"
+    "topics": "psychology",
+    "legacy_id": "template-constellation-steampunk-zh"
   },
   {
     "id": "template-mbti-generic",
@@ -2979,7 +2995,7 @@
     "topics": "psychology"
   },
   {
-    "id": "template-mbti-breakingbad-en",
+    "id": "template-mbti-breakingbad",
     "locales": {
       "en": {
         "base_prompt": "（Breaking Bad MBTI Card Designer）You are a top-tier MBTI character card designer specialized in Breaking Bad/Better Call Saul themed infographics. According to the user-specified [{character_name}], create a vertical 3:4 premium collectible character card for {character_name}, matching the gritty, industrial, crime-drama aesthetic of the reference images. Card layout: 1. Top: Rusty metal plate header displaying {mbti_type} - {mbti_title}, with a subtitle \"{character_subtitle}\" in quotes. 2. Character name: Spelled out using periodic table element tiles (each letter mapped to a chemical element symbol/atomic number), styled as weathered metal blocks. 3. Center: Detailed comic-style portrait of {character_name} in their iconic outfit, set against a thematic background tied to their story (e.g., law office, desert, cartel compound, lab, office). 4. Left panel: \"COGNITIVE FUNCTIONS\" section listing {cog_func_1}, {cog_func_2}, {cog_func_3}, {cog_func_4}, with a \"SIGNATURE QUOTE\" box containing {signature_quote}. 5. Right panel: \"STRENGTHS\" (green flask icons) listing {strength_1}, {strength_2}, {strength_3}, {strength_4}, {strength_5} and \"WEAKNESSES\" (red warning icons) listing {weakness_1}, {weakness_2}, {weakness_3}, {weakness_4}, {weakness_5}. 6. Bottom panel: \"KEY TRAITS\" section with 5 isometric icons + labels representing {character_name}'s iconic props/identities (e.g., {trait_icon_1}, {trait_icon_2}, {trait_icon_3}, {trait_icon_4}, {trait_icon_5}). Style: Gritty industrial aesthetic, weathered metal/grunge textures, chemical/periodic table motifs, comic book illustration, rich shading, dramatic lighting, cohesive color palette matching the character’s story, Curify/Better Call Saul watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The character is [{character_name}].",

@@ -1,41 +1,63 @@
-// next.config.js
+import { NextConfig } from 'next';
 const { routing } = require("./i18n/routing");
 const withNextIntl = require("next-intl/plugin")(routing);
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+/**
+ * Interface representing the structure of a redirect rule.
+ * Next.js internal 'Redirect' type is more complex, so we define 
+ * our local requirement here.
+ */
+interface RedirectRule {
+  source: string;
+  destination: string;
+  permanent: boolean;
+}
+
+// Explicitly type the array to prevent 'any[]' inference errors
+let generatedRedirects: RedirectRule[] = [];
+
+try {
+  // Use require for the CommonJS generated file
+  const loadedRedirects = require("./redirects.generated.cjs");
+
+  if (Array.isArray(loadedRedirects)) {
+    generatedRedirects = loadedRedirects as RedirectRule[];
+  }
+} catch (e) {
+  generatedRedirects = [];
+}
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  eslint: { ignoreDuringBuilds: true },
+  eslint: { 
+    ignoreDuringBuilds: true 
+  },
 
-  // 👇 Prevent /en/ → /en or /en → /en/ redirects
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
 
   experimental: {
-    serverActions: { allowedOrigins: ["*"] },
+    serverActions: { 
+      allowedOrigins: ["*"] 
+    },
   },
 
   images: {
-    domains: [
-      "lh3.googleusercontent.com",
-      "cdn.curify-ai.com",
-      "videotranslatetest.blob.core.windows.net",
-      "pbs.twimg.com",
-      "storage.googleapis.com",
-      "images.unsplash.com",
+    remotePatterns: [
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      { protocol: 'https', hostname: 'cdn.curify-ai.com' },
+      { protocol: 'https', hostname: 'videotranslatetest.blob.core.windows.net' },
+      { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'storage.googleapis.com' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
 
   async redirects() {
-    // ✅ IMPORTANT: restrict :locale so it doesn't match "/tools/..." (locale="tools")
-    const LOCALE_RE = routing.locales.join("|"); // e.g. "en|zh|es|fr|de|ja|ko|hi|tr|ru"
+    const LOCALE_RE = routing.locales.join("|");
 
-    return [
-      // ---------------------------
-      // Unprefixed legacy routes → /tools/*
-      // (default locale "en" style)
-      // ---------------------------
+    const manualRedirects: RedirectRule[] = [
       {
         source: "/bilingual-subtitles",
         destination: "/tools/bilingual-subtitles",
@@ -46,11 +68,6 @@ const nextConfig = {
         destination: "/tools/video-dubbing",
         permanent: true,
       },
-
-      // ---------------------------
-      // Prefixed legacy routes → /:locale/tools/*
-      // (restricted to actual locales)
-      // ---------------------------
       {
         source: `/:locale(${LOCALE_RE})/bilingual-subtitles`,
         destination: "/:locale/tools/bilingual-subtitles",
@@ -61,62 +78,53 @@ const nextConfig = {
         destination: "/:locale/tools/video-dubbing",
         permanent: true,
       },
-
-      // ---------------------------
-      // Optional: canonicalize English to unprefixed
-      // /en/tools/* → /tools/*
-      // ---------------------------
       {
         source: "/en/tools/:path*",
         destination: "/tools/:path*",
         permanent: true,
       },
     ];
+
+    const safeGeneratedRedirects = generatedRedirects.filter(
+      (r): r is RedirectRule =>
+        !!r &&
+        typeof r.source === "string" &&
+        typeof r.destination === "string" &&
+        typeof r.permanent === "boolean" &&
+        r.source !== r.destination
+    );
+
+    return [...manualRedirects, ...safeGeneratedRedirects];
   },
 
   async headers() {
+    const commonHeaders = [
+      {
+        key: "Cross-Origin-Opener-Policy",
+        value: "same-origin-allow-popups",
+      },
+      {
+        key: "Cross-Origin-Embedder-Policy",
+        value: "unsafe-none",
+      },
+    ];
+
     return [
       {
         source: "/:path*",
-        headers: [
-          {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin-allow-popups",
-          },
-          {
-            key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none",
-          },
-        ],
+        headers: commonHeaders,
       },
       {
         source: "/_next/:path*",
-        headers: [
-          {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin-allow-popups",
-          },
-          {
-            key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none",
-          },
-        ],
+        headers: commonHeaders,
       },
       {
         source: "/api/:path*",
-        headers: [
-          {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin-allow-popups",
-          },
-          {
-            key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none",
-          },
-        ],
+        headers: commonHeaders,
       },
     ];
   },
 };
 
-module.exports = withNextIntl(nextConfig);
+// Use ES Module export for .ts files
+export default withNextIntl(nextConfig);

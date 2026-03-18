@@ -17,6 +17,7 @@ import {
   fillPrompt,
   makeNanoTemplateUrl,
   normalizeCarouselUrls,
+  getLocaleFromPath,
 } from "@/lib/nano_utils";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
@@ -47,7 +48,7 @@ export function NanoInspirationCard({
   // Use actual page locale:
   // - /zh/... => zh
   // - everything else => en
-  const pageLocale = pathname?.startsWith("/zh") ? "zh" : "en";
+  const pageLocale = getLocaleFromPath(pathname);
 
   // Mock engagement numbers (Deterministic)
   const seedNum = useMemo(() => stableHashToInt(card.id), [card.id]);
@@ -88,12 +89,7 @@ export function NanoInspirationCard({
     trackCardClick();
 
     if (card.template_id) {
-      if (pageLocale === "en") {
-        const url = new URL(canonicalUrl);
-        router.push(url.pathname + url.search + url.hash);
-      } else {
-        router.push(canonicalUrl);
-      }
+      router.push(canonicalUrl);
       return;
     }
 

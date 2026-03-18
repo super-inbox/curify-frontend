@@ -11,7 +11,7 @@
 import type { Metadata } from "next";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import { CDN_BASE, SITE_URL } from "@/lib/constants";
-
+import { SUPPORTED_LOCALES } from "@/lib/generated/locales";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export type SeoContentSections = {
@@ -140,7 +140,14 @@ export function buildNanoTemplateMetadata(opts: {
   const templateCore = resolveTemplateCore(templateId);
   const message = resolveLocaleMessage(templateId, nanoMessages);
 
-  const canonicalPath = `/${localeStr}/nano-template/${slug}`;
+  const canonicalUrl = `${SITE_URL}/${localeStr}/nano-template/${slug}`;
+
+  const languages = Object.fromEntries(
+    SUPPORTED_LOCALES.map((locale) => [
+      locale,
+      `${SITE_URL}/${locale}/nano-template/${slug}`,
+    ])
+  );
 
   const title = normalizeText(message?.title) || fallbackTitle;
   const description = normalizeText(message?.description) || fallbackDescription;
@@ -150,14 +157,18 @@ export function buildNanoTemplateMetadata(opts: {
     title,
     description,
     alternates: {
-      canonical: canonicalPath,
+      canonical: canonicalUrl,
+      languages: {
+        ...languages,
+        "x-default": `${SITE_URL}/en/nano-template/${slug}`,
+      },
     },
     robots: { index: true, follow: true },
     openGraph: {
       type: "website",
       title,
       description,
-      url: `${SITE_URL}${canonicalPath}`,
+      url: canonicalUrl,
       images: ogImage ? [{ url: ogImage }] : undefined,
       siteName: "Curify",
       locale: localeStr,

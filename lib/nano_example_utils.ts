@@ -1,4 +1,4 @@
-import { Locale } from "@/lib/locale_utils";
+import { PageLocale } from "@/lib/locale_utils";
 import {
   nanoRegistry,
   fillPrompt,
@@ -57,7 +57,7 @@ export function buildNanoExampleHrefFromTemplateId(params: {
 export function getImageViewsForTemplate(
   reg: NanoRegistry,
   templateId: string,
-  locale: Locale
+  locale: PageLocale
 ): ImageView[] {
   const imgs = reg.imagesByTemplateId.get(templateId) ?? [];
 
@@ -102,7 +102,7 @@ export function getCircularNeighbors<T extends { id: string }>(
 export function getCircularImageViewNeighbors(
   reg: NanoRegistry,
   templateId: string,
-  locale: Locale,
+  locale: PageLocale,
   currentId: string
 ): CircularNeighbors<ImageView> | null {
   const views = getImageViewsForTemplate(reg, templateId, locale);
@@ -118,7 +118,7 @@ export function getNanoExamplesByTemplateId(
 export function getNanoExampleById(
   templateId: string,
   imageId: string,
-  locale: Locale = "zh",
+  locale: PageLocale = "en",
   translate?: TranslateFn
 ): NanoExampleDetail | null {
   const img = nanoRegistry.imageById.get(imageId);
@@ -138,7 +138,7 @@ export function getNanoExampleDetail(
   reg: NanoRegistry,
   templateId: string,
   imageId: string,
-  locale: Locale,
+  locale: PageLocale,
   translate?: TranslateFn
 ): NanoExampleDetailData | null {
   const raw = reg.imageById.get(imageId);
@@ -174,7 +174,7 @@ export function getNanoExampleDetail(
 export function buildCircularExampleNav(params: {
   reg: NanoRegistry;
   templateId: string;
-  contentLocale: Locale;
+  contentLocale: PageLocale;
   pageLocale: string;
   slug: string;
   currentExampleId: string;
