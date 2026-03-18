@@ -3317,5 +3317,171 @@
     },
     "og_image": "/images/nano_insp_preview/template-mbti-breakingbad-en-walter-prev.jpg",
     "topics": "psychology"
-  }
-]
+  },
+  {
+    "id": "template-sports-battle",
+    "locales": {
+        "en": {
+            "base_prompt": "（NBA VS Infographic Designer）You are a top-tier sports infographic designer specialized in NBA player vs player comparison posters. According to the user-specified [{comparison_topic}], create a vertical 3:4 premium NBA-themed comparison poster for {comparison_topic}, matching the dynamic, neon/electric comic book art style of the reference images. Card layout: 1. Top: Large bold headline \"{comparison_topic}\" in a stylized, glowing font, setting the debate theme. 2. Center split: Two full-body comic-style portraits of {player_left} (left side) and {player_right} (right side), each in their iconic team uniform, dynamic action pose (e.g., shooting, dribbling, dunking), with team-themed background effects (e.g., flames, lightning, team logos, court lines). 3. Middle VS section: A prominent \"VS\" graphic (with basketball/energy effects) separating the two players. 4. Stats comparison panel: A structured grid listing key career metrics for both players, with clear labels and icons (e.g., 3PM, PPG, assists, trophies, championships), using contrasting colors to highlight differences. 5. Player nicknames: Below each portrait, display the player's nickname {nickname_left} and {nickname_right} in bold team-colored font. 6. Bottom section: Two descriptive tags summarizing each player's core identity (e.g., {tag_left}, {tag_right}), paired with 3-4 thematic icons representing their playing style/legacy. Style: Dynamic comic book illustration, vibrant team-color palette, neon/electric glow effects, clean UI elements, clear data visualization, professional sports infographic aesthetic, Curify watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The comparison topic is [{comparison_topic}].",
+            "parameters": [
+                {
+                    "name": "comparison_topic",
+                    "label": "Comparison Topic",
+                    "type": "text",
+                    "placeholder": [
+                        "WHO CHANGED THE GAME FROM BEYOND THE ARC?",
+                        "WHO WAS THE MOST UNSTOPPABLE FORCE?",
+                        "WHO DOMINATED THE 2000s: SCORER OR MAESTRO?",
+                        "WHO IS THE GREATEST POINT GUARD?",
+                        "WHO REVOLUTIONIZED THE GAME?"
+                    ]
+                },
+                {
+                    "name": "player_left",
+                    "label": "Left Player Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Stephen Curry",
+                        "Allen Iverson",
+                        "Kobe Bryant",
+                        "Magic Johnson",
+                        "LeBron James"
+                    ]
+                },
+                {
+                    "name": "nickname_left",
+                    "label": "Left Player Nickname",
+                    "type": "text",
+                    "placeholder": [
+                        "THE CHEF",
+                        "THE ANSWER",
+                        "THE BLACK MAMBA",
+                        "THE MAGICIAN",
+                        "THE KING"
+                    ]
+                },
+                {
+                    "name": "player_right",
+                    "label": "Right Player Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Ray Allen",
+                        "Russell Westbrook",
+                        "Steve Nash",
+                        "John Stockton",
+                        "Michael Jordan"
+                    ]
+                },
+                {
+                    "name": "nickname_right",
+                    "label": "Right Player Nickname",
+                    "type": "text",
+                    "placeholder": [
+                        "JESUS SHUTTLESWORTH",
+                        "THE BRODIE",
+                        "THE POINT GOD",
+                        "THE FLOOR GENERAL",
+                        "THE GOAT"
+                    ]
+                },
+                {
+                    "name": "tag_left",
+                    "label": "Left Player Identity Tag",
+                    "type": "text",
+                    "placeholder": [
+                        "DEEP RANGE SNIPER - GAME CHANGER",
+                        "CROSSOVER KING - ELUSIVE GHOST",
+                        "MAMBA MENTALITY - INDIVIDUAL DOMINANCE",
+                        "PLAYMAKER EXTRAORDINAIRE - SHOWTIME STAR",
+                        "CHOSEN ONE - LONGEVITY LEGEND"
+                    ]
+                },
+                {
+                    "name": "tag_right",
+                    "label": "Right Player Identity Tag",
+                    "type": "text",
+                    "placeholder": [
+                        "PURE SHOOTER - PRECISION MASTER",
+                        "TRIPLE-DOUBLE MACHINE - UNSTOPPABLE FORCE",
+                        "TEAM FIRST - OFFENSIVE ORCHESTRATOR",
+                        "STEAL KING - DEFENSIVE MAESTRO",
+                        "ULTIMATE COMPETITOR - 6x CHAMPION"
+                    ]
+                },
+                {
+                    "name": "stat_1_left",
+                    "label": "Stat 1 (Left)",
+                    "type": "text",
+                    "placeholder": [
+                        "4,233 CAREER 3PM",
+                        "26.7 CAREER PPG",
+                        "25.0 CAREER PPG",
+                        "19.5 PPG + 11.2 APG",
+                        "27.2 CAREER PPG"
+                    ]
+                },
+                {
+                    "name": "stat_1_right",
+                    "label": "Stat 1 (Right)",
+                    "type": "text",
+                    "placeholder": [
+                        "2,973 CAREER 3PM",
+                        "21.9 CAREER PPG",
+                        "8.5 CAREER PPG + 14.3 APG",
+                        "13.1 PPG + 10.5 APG",
+                        "30.1 CAREER PPG"
+                    ]
+                },
+                {
+                    "name": "stat_2_left",
+                    "label": "Stat 2 (Left)",
+                    "type": "text",
+                    "placeholder": [
+                        "42.2% 3P%",
+                        "4× SCORING TITLES",
+                        "5× NBA CHAMPIONSHIPS",
+                        "5× NBA FINALS",
+                        "4× NBA CHAMPIONSHIPS"
+                    ]
+                },
+                {
+                    "name": "stat_2_right",
+                    "label": "Stat 2 (Right)",
+                    "type": "text",
+                    "placeholder": [
+                        "40.0% 3P%",
+                        "2× SCORING TITLES",
+                        "2× MVP AWARDS",
+                        "9× ALL-DEFENSIVE",
+                        "6× NBA CHAMPIONSHIPS"
+                    ]
+                },
+                {
+                    "name": "stat_3_left",
+                    "label": "Stat 3 (Left)",
+                    "type": "text",
+                    "placeholder": [
+                        "4.0 3PM PER GAME",
+                        "ANKLE BREAKER CROSSOVER",
+                        "44.7% FG EFFICIENCY",
+                        "NO-LOOK PASS MASTER",
+                        "FLOOR GENERAL LEADERSHIP"
+                    ]
+                },
+                {
+                    "name": "stat_3_right",
+                    "label": "Stat 3 (Right)",
+                    "type": "text",
+                    "placeholder": [
+                        "2.3 3PM PER GAME",
+                        "EXPLOSIVE THUNDER DUNK",
+                        "49.0% FG + 90.4% FT",
+                        "STEAL KING - DEFENSIVE PILLAR",
+                        "FLYING DEFENDER - CLUTCH SHOT"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-sports-battle-template-sports-battle-kobe-vs-rayallen-prev.jpg"
+}
