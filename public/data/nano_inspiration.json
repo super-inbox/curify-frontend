@@ -86,7 +86,7 @@
   },
   {
     "id": "template-education-dna-double-helix",
-    "template_id": "template-education",
+    "template_id": "template-education-card",
     "asset": {
       "image_url": "/images/nano_insp/template-education-zh-dna-double-helix.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-education-zh-dna-double-helix-prev.jpg"
@@ -105,7 +105,7 @@
   },
   {
     "id": "template-education-plate-tectonics",
-    "template_id": "template-education",
+    "template_id": "template-education-card",
     "asset": {
       "image_url": "/images/nano_insp/template-education-zh-plate-tectonics.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-education-zh-plate-tectonics-prev.jpg"
@@ -916,7 +916,7 @@
   },
   {
     "id": "template-education-electromagnetic-induction",
-    "template_id": "template-education",
+    "template_id": "template-education-card",
     "asset": {
       "image_url": "/images/nano_insp/template-education-zh-electromagnetic-induction.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-education-zh-electromagnetic-induction-prev.jpg"
@@ -1357,7 +1357,7 @@
   },
   {
     "id": "template-education-conservation-of-energy",
-    "template_id": "template-education",
+    "template_id": "template-education-card",
     "asset": {
       "image_url": "/images/nano_insp/template-education-zh-conservation-of-energy.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-education-zh-conservation-of-energy-prev.jpg"
@@ -1374,7 +1374,7 @@
   },
   {
     "id": "template-education-newtons-laws",
-    "template_id": "template-education",
+    "template_id": "template-education-card",
     "asset": {
       "image_url": "/images/nano_insp/template-education-zh-newtons-laws.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-education-zh-newtons-laws-prev.jpg"
@@ -10903,6 +10903,410 @@
     "locales": {
       "en": {
         "title": "walter white jr"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-climate-action",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-climate-action.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-climate-action-prev.jpg"
+    },
+    "params": {
+      "topic": "climate action"
+    },
+    "locales": {
+      "zh": {
+        "title": "climate action"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-conservation-redline",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-conservation-redline.png",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-conservation-redline-prev.jpg"
+    },
+    "params": {
+      "topic": "conservation redline"
+    },
+    "locales": {
+      "zh": {
+        "title": "conservation redline"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-ecosystem-balance",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-ecosystem-balance.png",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-ecosystem-balance-prev.jpg"
+    },
+    "params": {
+      "topic": "ecosystem balance"
+    },
+    "locales": {
+      "zh": {
+        "title": "ecosystem balance"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-land-planning",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-land-planning.png",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-land-planning-prev.jpg"
+    },
+    "params": {
+      "topic": "land planning"
+    },
+    "locales": {
+      "zh": {
+        "title": "land planning"
+      }
+    }
+  },
+  {
+    "id": "template-education-low-carbon",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-low-carbon.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-low-carbon-prev.jpg"
+    },
+    "params": {
+      "topic": "low carbon"
+    },
+    "locales": {
+      "zh": {
+        "title": "low carbon"
+      }
+    }
+  },
+  {
+    "id": "template-education-sustainable",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-sustainable.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-sustainable-prev.jpg"
+    },
+    "params": {
+      "topic": "sustainable"
+    },
+    "locales": {
+      "zh": {
+        "title": "sustainable"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-agent-coulson",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-agent-coulson.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-agent-coulson-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "agent coulson"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-hawkeye",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-hawkeye.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-hawkeye-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "hawkeye"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-nick-fury",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-nick-fury.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-nick-fury-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "nick fury"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-war-machine",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-war-machine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-war-machine-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "war machine"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-winter-soldier",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-winter-soldier.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-winter-soldier-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "winter soldier"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-gaara",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-gaara.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-gaara-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "gaara"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-hinata",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-hinata.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-hinata-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "hinata"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-itachi",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-itachi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-itachi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "itachi"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-kakashi",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-kakashi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-kakashi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "kakashi"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-naruto",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-naruto.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-naruto-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "naruto"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-sakura",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-sakura.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-sakura-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "sakura"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-sasuke",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-sasuke.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-sasuke-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "sasuke"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-naruto-shikamaru",
+    "template_id": "template-mbti-naruto",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-naruto-shikamaru.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-naruto-shikamaru-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "shikamaru"
+      }
+    }
+  },
+  {
+    "id": "template-sports-battle-kobe-rayallen",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-kobe-rayallen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-kobe-rayallen-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "kobe rayallen"
+      }
+    }
+  },
+  {
+    "id": "template-sports-battle-lebron-karlmalone",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-lebron-karlmalone.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-lebron-karlmalone-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "lebron karlmalone"
+      }
+    }
+  },
+  {
+    "id": "template-sports-battle-magic-stockton",
+    "template_id": "template-sports-battle",
+    "asset": {
+      "image_url": "/images/nano_insp/template-sports-battle-magic-stockton.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-sports-battle-magic-stockton-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "magic stockton"
+      }
+    }
+  },
+  {
+    "id": "template-travel-kuala-lumpur",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-kuala-lumpur.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-kuala-lumpur-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "kuala lumpur"
+      }
+    }
+  },
+  {
+    "id": "template-travel-osaka",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-osaka.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-osaka-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "osaka"
+      }
+    }
+  },
+  {
+    "id": "template-travel-pakistan",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-pakistan.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-pakistan-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "pakistan"
+      }
+    }
+  },
+  {
+    "id": "template-travel-seoul",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-seoul.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-seoul-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "seoul"
+      }
+    }
+  },
+  {
+    "id": "template-travel-singapore",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-singapore.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-singapore-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "singapore"
+      }
+    }
+  },
+  {
+    "id": "template-travel-tokyo",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-tokyo.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-tokyo-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "tokyo"
       }
     }
   }
