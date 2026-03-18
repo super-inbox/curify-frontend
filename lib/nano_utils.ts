@@ -1,6 +1,7 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
-import { Locale } from "@/lib/locale_utils";
+import { SUPPORTED_LOCALES } from "./generated/locales";
+import { PageLocale } from "@/lib/locale_utils";
 
 export type TemplateParameter = {
   name: string;
@@ -16,7 +17,7 @@ export type RawTemplate = {
 
   locales?: Partial<
     Record<
-      Locale,
+    PageLocale,
       {
         base_prompt: string;
         parameters: TemplateParameter[];
@@ -37,13 +38,13 @@ export type RawNanoImageRecord = {
   };
 
   params: Record<string, any>;
-  locales?: Partial<Record<Locale, { category?: string; title?: string }>>;
+  locales?: Partial<Record<PageLocale, { category?: string; title?: string }>>;
 };
 
 export type TemplateView = {
   template_id: string;
   slug: string;
-  locale: Locale;
+  locale: PageLocale;
   category: string;
   description: string;
   topics: string[];
@@ -55,7 +56,7 @@ export type TemplateView = {
 export type ImageView = {
   id: string;
   template_id: string;
-  locale: Locale;
+  locale: PageLocale;
   title?: string;
   category?: string;
   params: Record<string, any>;
@@ -66,7 +67,7 @@ export type ImageView = {
 export type NanoInspirationCardType = {
   id: string;
   template_id: string;
-  language: Locale;
+  language: PageLocale;
   category: string;
   topics: string[];
   image_urls: string[];
@@ -95,21 +96,27 @@ export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
 }
 
-export function getLocaleFromPath(): Locale {
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "";
-  return pathname.startsWith("/en") ? "en" : "zh";
+export function getLocaleFromPath(pathname?: string): PageLocale {
+  if (!pathname) return "en";
+
+  const seg = pathname.split("/")[1];
+
+  if (SUPPORTED_LOCALES.includes(seg as any)) {
+    return seg as PageLocale;
+  }
+
+  return "en";
 }
 
-export function makeNanoTemplateUrl(templateId: string, locale: Locale) {
-  const base =
-    typeof window !== "undefined"
-      ? window.location.origin
-      : process.env.NEXT_PUBLIC_BASE_URL || "";
+export function makeNanoTemplateUrl(
+  templateId: string,
+  locale: PageLocale = "en"
+): string {
   const slug = toSlug(templateId);
+
   return locale === "en"
-    ? `${base}/nano-template/${slug}`
-    : `${base}/${locale}/nano-template/${slug}`;
+    ? `/nano-template/${slug}`
+    : `/${locale}/nano-template/${slug}`;
 }
 
 export function normalizeCarouselUrls(
@@ -147,9 +154,9 @@ export function fillPrompt(basePrompt?: string, params?: Record<string, any>) {
 }
 
 function pickLocale<T>(
-  locales: Partial<Record<Locale, T>> | undefined,
-  locale: Locale
-): { value: T; resolved: Locale } | null {
+  locales: Partial<Record<PageLocale, T>> | undefined,
+  locale: PageLocale
+): { value: T; resolved: PageLocale } | null {
   if (!locales) return null;
 
   const v = locales[locale];
@@ -215,7 +222,7 @@ export const nanoRegistry: NanoRegistry = buildNanoRegistry(
 export function getTemplateView(
   reg: NanoRegistry,
   templateId: string,
-  locale: Locale
+  locale: PageLocale
 ): TemplateView | null {
   const raw = reg.templateById.get(templateId);
   if (!raw) return null;
@@ -241,7 +248,7 @@ export function getTemplateView(
 export function getTemplateViewWithTranslations(
   reg: NanoRegistry,
   templateId: string,
-  locale: Locale,
+  locale: PageLocale,
   t: TranslateFn
 ): TemplateView | null {
   const view = getTemplateView(reg, templateId, locale);

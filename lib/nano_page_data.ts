@@ -21,7 +21,7 @@ import {
 import {
   resolveContentLocale,
   makeSafeTranslator,
-  Locale,
+  PageLocale,
 } from "@/lib/locale_utils";
 
 import {
@@ -44,7 +44,7 @@ export async function loadNanoMessages(localeStr: string): Promise<NanoMessagesD
 
 export async function buildNanoPageContext(localeStr: string, slug: string) {
   const pageLocale = localeStr;
-  const contentLocale: Locale = resolveContentLocale(localeStr);
+  const contentLocale: PageLocale = resolveContentLocale(localeStr);
   const templateId = slugToTemplateId(slug);
 
   const templates = nanoTemplates as unknown as RawTemplate[];
@@ -113,7 +113,7 @@ export function buildOrderedTemplateImageGridItems(
 
 export function buildNanoFeedCards(
   reg: ReturnType<typeof buildNanoRegistry>,
-  locale: Locale,
+  locale: PageLocale,
   opts?: {
     perTemplateMaxImages?: number;
     strictLocale?: boolean;
@@ -171,7 +171,7 @@ export type NanoTemplateDetailData = {
 export function buildNanoTemplateDetailData(
   reg: ReturnType<typeof buildNanoRegistry>,
   templateId: string,
-  locale: Locale,
+  locale: PageLocale,
   translate?: TranslateFn
 ) {
   const template = translate
@@ -211,7 +211,7 @@ export function buildNanoTemplateDetailData(
 
 export function buildOtherTemplateCards(
   reg: ReturnType<typeof buildNanoRegistry>,
-  contentLocale: Locale,
+  contentLocale: PageLocale,
   translateNano: (key: string) => string,
   excludeTemplateId: string
 ) {
@@ -224,7 +224,7 @@ export function buildOtherTemplateCards(
 
 export function resolveLocalizedExampleCopy(
   example: NonNullable<ReturnType<typeof getNanoExampleById>>,
-  contentLocale: Locale,
+  contentLocale: PageLocale,
   localizedEntry?: { title?: string | null; category?: string | null }
 ) {
   const fallbackLoc =

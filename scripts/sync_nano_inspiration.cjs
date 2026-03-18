@@ -65,6 +65,11 @@ function normalizeDashes(str) {
     .replace(/[\u2010\u2011\u2012\u2013\u2014\u2015\u2212\uFE58\uFE63\uFF0D]/g, "-");
 }
 
+// Only strip the locale segment you explicitly want to remove.
+function stripLocaleSegmentFromStem(stem) {
+  return normalizeDashes(stem).replace(/-(en|zh)-/g, "-");
+}
+
 function parseArgs(argv) {
   const out = {
     source: DEFAULT_SOURCE_DIR,
@@ -201,14 +206,9 @@ function getCategory(templateObj, locale) {
 }
 
 function inferParams(templateObj, slug) {
-  // Best-effort:
-  // - if template has exactly 1 parameter under the chosen locale OR top-level, fill it using slug
   const slugText = (slug || "").replace(/-/g, " ").trim();
 
-  // Prefer locale parameters if present, but we may not know locale here; fallback to scanning any locale.
-  // Also allow top-level "parameters" if your templates are structured that way.
   const topParams = Array.isArray(templateObj?.parameters) ? templateObj.parameters : null;
-
   if (topParams && topParams.length === 1 && typeof topParams[0]?.name === "string") {
     return { [topParams[0].name]: slugText };
   }
@@ -225,7 +225,6 @@ function inferParams(templateObj, slug) {
 }
 
 function pickTitle(params, slug, fallbackStem) {
-  // Similar heuristic as your python
   const preferredKeys = ["topic", "book_name", "costume_style", "scene_type", "character_name", "herb_name"];
   for (const k of preferredKeys) {
     const v = params?.[k];
@@ -250,10 +249,8 @@ async function generatePreviewWithSizeCap(srcPath, outPath, dryRun) {
   await ensureDir(path.dirname(outPath));
   if (dryRun) return;
 
-  // Always output jpeg preview
   let quality = START_QUALITY;
 
-  // Read & resize once
   const base = sharp(srcPath).rotate().resize({
     width: MAX_SIZE,
     height: MAX_SIZE,
@@ -261,7 +258,6 @@ async function generatePreviewWithSizeCap(srcPath, outPath, dryRun) {
     withoutEnlargement: true,
   });
 
-  // Try decreasing quality until <= MAX_PREVIEW_KB or MIN_QUALITY
   while (true) {
     await base
       .clone()
@@ -277,7 +273,6 @@ async function generatePreviewWithSizeCap(srcPath, outPath, dryRun) {
 }
 
 function buildExistingImageSet(nanoInspJson) {
-  // supports either array or { items: [...] } if you ever wrap it
   const items = Array.isArray(nanoInspJson)
     ? nanoInspJson
     : Array.isArray(nanoInspJson?.items)
@@ -291,7 +286,12 @@ function buildExistingImageSet(nanoInspJson) {
     const url = it?.asset?.image_url;
     if (typeof url === "string") {
       existingImageUrls.add(url);
-      existingFileNames.add(path.posix.basename(url));
+
+      const baseName = path.posix.basename(url);
+      const baseExt = path.posix.extname(baseName).toLowerCase();
+      const baseStem = path.posix.basename(baseName, baseExt);
+      const normalizedBaseName = `${stripLocaleSegmentFromStem(baseStem)}${baseExt}`;
+      existingFileNames.add(normalizedBaseName);
     }
   }
   return { items, existingImageUrls, existingFileNames };
@@ -328,14 +328,12 @@ async function main() {
   await ensureDir(IMAGE_DIR);
   await ensureDir(PREVIEW_DIR);
 
-  // Load jsons
   const templateJson = await readJson(TEMPLATE_JSON_PATH);
   const { templatesById, templateIdsSorted } = normalizeTemplates(templateJson);
 
   const nanoInspJson = await readJson(INSP_JSON_PATH);
   const { items: existingItems, existingFileNames } = buildExistingImageSet(nanoInspJson);
 
-  // Scan source
   const allFiles = await walkFilesRecursive(SOURCE_DIR);
   const imageFiles = allFiles.filter(isImageFile);
 
@@ -345,47 +343,43 @@ async function main() {
   const unmatched = [];
   const addedRecords = [];
 
-  // Process
   for (const filePath of imageFiles) {
-    const fileName = path.basename(filePath);
-    const ext = path.extname(fileName).toLowerCase();
-    const rawStem = path.basename(fileName, ext);
+    const originalFileName = path.basename(filePath);
+    const ext = path.extname(originalFileName).toLowerCase();
+    const rawStem = path.basename(originalFileName, ext);
     const stem = normalizeDashes(rawStem);
 
-    // already exists in nano_inspiration.json?
-    if (existingFileNames.has(fileName)) {
+    const cleanedStem = stripLocaleSegmentFromStem(stem);
+    const cleanedFileName = `${cleanedStem}${ext}`;
+
+    if (existingFileNames.has(cleanedFileName)) {
       continue;
     }
 
-    // template match by stem prefix
     const templateId = matchTemplateIdFromStem(stem, templateIdsSorted);
     if (!templateId) {
-      unmatched.push(fileName);
+      unmatched.push(originalFileName);
       continue;
     }
 
-    matched.push(fileName);
+    matched.push(originalFileName);
 
     const tpl = templatesById.get(templateId);
     const { localeFromName, slug } = parseStem(stem, templateId);
     const locale = chooseLocaleForTemplate(tpl, localeFromName);
 
-    // Copy raw image
-    const dstImageFsPath = path.join(IMAGE_DIR, fileName);
+    const dstImageFsPath = path.join(IMAGE_DIR, cleanedFileName);
     await copyFileIfNeeded(filePath, dstImageFsPath, args.dryRun);
 
-    // Generate preview (always jpg)
-    const previewFileName = `${stem}-prev.jpg`;
+    const previewFileName = `${cleanedStem}-prev.jpg`;
     const dstPreviewFsPath = path.join(PREVIEW_DIR, previewFileName);
     await generatePreviewWithSizeCap(dstImageFsPath, dstPreviewFsPath, args.dryRun);
 
-    // Build record (schema per your example)
     const params = inferParams(tpl, slug);
-
-    const title = pickTitle(params, slug, stem);
+    const title = pickTitle(params, slug, cleanedStem);
     const category = locale ? getCategory(tpl, locale) : undefined;
 
-    const recId = stem; // keep stable id = filename stem
+    const recId = cleanedStem;
 
     const localesOut = {};
     if (locale) {
@@ -398,7 +392,7 @@ async function main() {
       id: recId,
       template_id: templateId,
       asset: {
-        image_url: `${PUBLIC_IMAGE_URL_PREFIX}${fileName}`,
+        image_url: `${PUBLIC_IMAGE_URL_PREFIX}${cleanedFileName}`,
         preview_image_url: `${PUBLIC_PREVIEW_URL_PREFIX}${previewFileName}`,
       },
       params,
@@ -408,23 +402,22 @@ async function main() {
     addedRecords.push(record);
   }
 
-  // Update nano_inspiration.json
+  let finalNanoInsp;
   if (addedRecords.length > 0) {
     const newItems = existingItems.concat(addedRecords);
-
-    // Preserve original shape (array vs {items:[]})
     const outJson = Array.isArray(nanoInspJson) ? newItems : { ...nanoInspJson, items: newItems };
 
     if (!args.dryRun) {
       await writeJson(INSP_JSON_PATH, outJson);
     }
 
+    finalNanoInsp = outJson;
     console.log(`✅ Added ${addedRecords.length} new inspiration records to nano_inspiration.json`);
   } else {
+    finalNanoInsp = nanoInspJson;
     console.log("✅ No new images to add (all already present or unmatched).");
   }
 
-  // Console output: matched/unmatched
   console.log("");
   console.log("=== Template Match Summary ===");
   console.log(`Matched:   ${matched.length}`);
@@ -440,8 +433,6 @@ async function main() {
     for (const f of matched) console.log("  -", f);
   }
 
-  // Count images per template (including existing + newly added)
-  const finalNanoInsp = await readJson(INSP_JSON_PATH);
   const finalItems = Array.isArray(finalNanoInsp)
     ? finalNanoInsp
     : Array.isArray(finalNanoInsp?.items)
@@ -456,7 +447,6 @@ async function main() {
     console.log(`${tid}: ${n}`);
   }
 
-  // Sync to CDN
   if (args.sync) {
     if (args.dryRun) {
       console.log("\n(dry-run) Skipping gsutil sync.");

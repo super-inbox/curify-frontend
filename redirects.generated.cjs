@@ -81,103 +81,103 @@ module.exports = [
     "permanent": true
   },
   {
-    "source": "/en/nano-template/character-analysis-zh",
-    "destination": "/en/nano-template/character-analysis",
+    "source": "/nano-template/character-analysis-zh",
+    "destination": "/nano-template/character-analysis",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/character-zh",
-    "destination": "/en/nano-template/character",
+    "source": "/nano-template/character-zh",
+    "destination": "/nano-template/character",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/city-miniature-zh",
-    "destination": "/en/nano-template/city-miniature",
+    "source": "/nano-template/city-miniature-zh",
+    "destination": "/nano-template/city-miniature",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/constellation-steampunk-zh",
-    "destination": "/en/nano-template/constellation-steampunk",
+    "source": "/nano-template/constellation-steampunk-zh",
+    "destination": "/nano-template/constellation-steampunk",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/costume-zh",
-    "destination": "/en/nano-template/costume",
+    "source": "/nano-template/costume-zh",
+    "destination": "/nano-template/costume",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/education-zh",
-    "destination": "/en/nano-template/education",
+    "source": "/nano-template/education-zh",
+    "destination": "/nano-template/education",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/guofeng-scroll-zh",
-    "destination": "/en/nano-template/guofeng-scroll",
+    "source": "/nano-template/guofeng-scroll-zh",
+    "destination": "/nano-template/guofeng-scroll",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/herbal-zh",
-    "destination": "/en/nano-template/herbal",
+    "source": "/nano-template/herbal-zh",
+    "destination": "/nano-template/herbal",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/hot-event-analysis-zh",
-    "destination": "/en/nano-template/hot-event-analysis",
+    "source": "/nano-template/hot-event-analysis-zh",
+    "destination": "/nano-template/hot-event-analysis",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/hotspot-card-zh",
-    "destination": "/en/nano-template/hotspot-card",
+    "source": "/nano-template/hotspot-card-zh",
+    "destination": "/nano-template/hotspot-card",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/intangible-heritage-zh",
-    "destination": "/en/nano-template/intangible-heritage",
+    "source": "/nano-template/intangible-heritage-zh",
+    "destination": "/nano-template/intangible-heritage",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/mbti-contrast-zh",
-    "destination": "/en/nano-template/mbti-contrast",
+    "source": "/nano-template/mbti-contrast-zh",
+    "destination": "/nano-template/mbti-contrast",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/recipe-zh",
-    "destination": "/en/nano-template/recipe",
+    "source": "/nano-template/recipe-zh",
+    "destination": "/nano-template/recipe",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/species-science-zh",
-    "destination": "/en/nano-template/species-science",
+    "source": "/nano-template/species-science-zh",
+    "destination": "/nano-template/species-science",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/species-zh",
-    "destination": "/en/nano-template/species",
+    "source": "/nano-template/species-zh",
+    "destination": "/nano-template/species",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/template-character-analysis-zh/example/template-character-analysis-zh-sun-wukong",
-    "destination": "/en/nano-template/template-character-analysis-zh/example/template-character-analysis-sun-wukong",
+    "source": "/nano-template/character-analysis-zh/example/template-character-analysis-zh-sun-wukong",
+    "destination": "/nano-template/character-analysis-zh/example/template-character-analysis-sun-wukong",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/template-character-analysis-zh/example/template-character-analysis-zh-zhu-bajie",
-    "destination": "/en/nano-template/template-character-analysis-zh/example/template-character-analysis-zhu-bajie",
+    "source": "/nano-template/character-analysis-zh/example/template-character-analysis-zh-zhu-bajie",
+    "destination": "/nano-template/character-analysis-zh/example/template-character-analysis-zhu-bajie",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/template-character-zh/example/template-character-zh-academic-sun-wukong",
-    "destination": "/en/nano-template/template-character-zh/example/template-character-academic-sun-wukong",
+    "source": "/nano-template/character-zh/example/template-character-zh-academic-sun-wukong",
+    "destination": "/nano-template/character-zh/example/template-character-academic-sun-wukong",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/template-species-zh/example/template-species-zh-giant-panda",
-    "destination": "/en/nano-template/template-species-zh/example/template-species-giant-panda",
+    "source": "/nano-template/species-zh/example/template-species-zh-giant-panda",
+    "destination": "/nano-template/species-zh/example/template-species-giant-panda",
     "permanent": true
   },
   {
-    "source": "/en/nano-template/travel-zh",
-    "destination": "/en/nano-template/travel",
+    "source": "/nano-template/travel-zh",
+    "destination": "/nano-template/travel",
     "permanent": true
   },
   {
@@ -581,118 +581,33 @@ module.exports = [
     "permanent": true
   },
   {
-    "source": "/nano-template/character-analysis-zh",
-    "destination": "/nano-template/character-analysis",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/character-zh",
-    "destination": "/nano-template/character",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/city-miniature-zh",
-    "destination": "/nano-template/city-miniature",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/constellation-steampunk-zh",
-    "destination": "/nano-template/constellation-steampunk",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/costume-zh",
-    "destination": "/nano-template/costume",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/education-zh",
-    "destination": "/nano-template/education",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/guofeng-scroll-zh",
-    "destination": "/nano-template/guofeng-scroll",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/herbal-zh",
-    "destination": "/nano-template/herbal",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/hot-event-analysis-zh",
-    "destination": "/nano-template/hot-event-analysis",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/hotspot-card-zh",
-    "destination": "/nano-template/hotspot-card",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/intangible-heritage-zh",
-    "destination": "/nano-template/intangible-heritage",
-    "permanent": true
-  },
-  {
     "source": "/nano-template/intangible-heritage-zh/example/template-intangible-heritage-zh-lion-dance",
     "destination": "/nano-template/intangible-heritage/example/template-intangible-heritage-lion-dance",
     "permanent": true
   },
   {
-    "source": "/nano-template/mbti-contrast-zh",
-    "destination": "/nano-template/mbti-contrast",
+    "source": "/nano-template/character-zh/example/template-character-zh-baiqi",
+    "destination": "/nano-template/character-zh/example/template-character-baiqi",
     "permanent": true
   },
   {
-    "source": "/nano-template/recipe-zh",
-    "destination": "/nano-template/recipe",
+    "source": "/nano-template/costume-zh/example/template-costume-zh-song-beizi",
+    "destination": "/nano-template/costume-zh/example/template-costume-song-beizi",
     "permanent": true
   },
   {
-    "source": "/nano-template/species-science-zh",
-    "destination": "/nano-template/species-science",
+    "source": "/nano-template/education-zh/example/template-education-zh-electromagnetic-induction",
+    "destination": "/nano-template/education-zh/example/template-education-electromagnetic-induction",
     "permanent": true
   },
   {
-    "source": "/nano-template/species-zh",
-    "destination": "/nano-template/species",
+    "source": "/nano-template/herbal-zh/example/template-herbal-zh-american-ginseng",
+    "destination": "/nano-template/herbal-zh/example/template-herbal-american-ginseng",
     "permanent": true
   },
   {
-    "source": "/nano-template/template-character-zh/example/template-character-zh-baiqi",
-    "destination": "/nano-template/template-character-zh/example/template-character-baiqi",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/template-costume-zh/example/template-costume-zh-song-beizi",
-    "destination": "/nano-template/template-costume-zh/example/template-costume-song-beizi",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/template-education-zh/example/template-education-zh-electromagnetic-induction",
-    "destination": "/nano-template/template-education-zh/example/template-education-electromagnetic-induction",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/template-herbal-zh/example/template-herbal-zh-american-ginseng",
-    "destination": "/nano-template/template-herbal-zh/example/template-herbal-american-ginseng",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/template-herbal-zh/example/template-herbal-zh-cassiae-semen",
-    "destination": "/nano-template/template-herbal-zh/example/template-herbal-cassiae-semen",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/template-species-zh/example/template-species-zh-giant-panda",
-    "destination": "/nano-template/template-species-zh/example/template-species-giant-panda",
-    "permanent": true
-  },
-  {
-    "source": "/nano-template/travel-zh",
-    "destination": "/nano-template/travel",
+    "source": "/nano-template/herbal-zh/example/template-herbal-zh-cassiae-semen",
+    "destination": "/nano-template/herbal-zh/example/template-herbal-cassiae-semen",
     "permanent": true
   },
   {
@@ -936,28 +851,28 @@ module.exports = [
     "permanent": true
   },
   {
-    "source": "/zh/nano-template/template-character-analysis-zh/example/template-character-analysis-zh-tang-seng",
-    "destination": "/zh/nano-template/template-character-analysis-zh/example/template-character-analysis-tang-seng",
+    "source": "/zh/nano-template/character-analysis-zh/example/template-character-analysis-zh-tang-seng",
+    "destination": "/zh/nano-template/character-analysis-zh/example/template-character-analysis-tang-seng",
     "permanent": true
   },
   {
-    "source": "/zh/nano-template/template-character-zh/example/template-character-zh-baiqi",
-    "destination": "/zh/nano-template/template-character-zh/example/template-character-baiqi",
+    "source": "/zh/nano-template/character-zh/example/template-character-zh-baiqi",
+    "destination": "/zh/nano-template/character-zh/example/template-character-baiqi",
     "permanent": true
   },
   {
-    "source": "/zh/nano-template/template-character-zh/example/template-character-zh-hanxin",
-    "destination": "/zh/nano-template/template-character-zh/example/template-character-hanxin",
+    "source": "/zh/nano-template/character-zh/example/template-character-zh-hanxin",
+    "destination": "/zh/nano-template/character-zh/example/template-character-hanxin",
     "permanent": true
   },
   {
-    "source": "/zh/nano-template/template-character-zh/example/template-character-zh-zhugeliang",
-    "destination": "/zh/nano-template/template-character-zh/example/template-character-zhugeliang",
+    "source": "/zh/nano-template/character-zh/example/template-character-zh-zhugeliang",
+    "destination": "/zh/nano-template/character-zh/example/template-character-zhugeliang",
     "permanent": true
   },
   {
-    "source": "/zh/nano-template/template-mbti-contrast-zh/example/template-mbti-contrast-zh-love-INFP-vs-ESTP-confession",
-    "destination": "/zh/nano-template/template-mbti-contrast-zh/example/template-mbti-contrast-love-INFP-vs-ESTP-confession",
+    "source": "/zh/nano-template/mbti-contrast-zh/example/template-mbti-contrast-zh-love-INFP-vs-ESTP-confession",
+    "destination": "/zh/nano-template/mbti-contrast-zh/example/template-mbti-contrast-love-INFP-vs-ESTP-confession",
     "permanent": true
   },
   {
@@ -965,4 +880,4 @@ module.exports = [
     "destination": "/zh/nano-template/travel",
     "permanent": true
   }
-];
+]

@@ -1,20 +1,21 @@
 import { getTranslations } from "next-intl/server";
 import { SUPPORTED_LOCALES } from "@/lib/generated/locales";
 
-export type Locale = (typeof SUPPORTED_LOCALES)[number];
+export type PageLocale = (typeof SUPPORTED_LOCALES)[number];
 
-export const DEFAULT_LOCALE: Locale =
-  (SUPPORTED_LOCALES.includes("en" as Locale) ? "en" : SUPPORTED_LOCALES[0]) as Locale;
 
-export function isSupportedLocale(locale: string): locale is Locale {
-  return SUPPORTED_LOCALES.includes(locale as Locale);
+export const DEFAULT_LOCALE: PageLocale =
+  (SUPPORTED_LOCALES.includes("en" as PageLocale) ? "en" : SUPPORTED_LOCALES[0]) as PageLocale;
+
+export function isSupportedLocale(locale: string): locale is PageLocale {
+  return SUPPORTED_LOCALES.includes(locale as PageLocale);
 }
 
-export function resolveContentLocale(locale: string): Locale {
+export function resolveContentLocale(locale: string): PageLocale {
   return isSupportedLocale(locale) ? locale : DEFAULT_LOCALE;
 }
 
-export function getSupportedLocales(): readonly Locale[] {
+export function getSupportedLocales(): readonly PageLocale[] {
   return SUPPORTED_LOCALES;
 }
 

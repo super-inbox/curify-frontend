@@ -1,57 +1,63 @@
-// next.config.js
+import { NextConfig } from 'next';
 const { routing } = require("./i18n/routing");
 const withNextIntl = require("next-intl/plugin")(routing);
 
 /**
- * @typedef {Object} RedirectRule
- * @property {string} source
- * @property {string} destination
- * @property {boolean} permanent
+ * Interface representing the structure of a redirect rule.
+ * Next.js internal 'Redirect' type is more complex, so we define 
+ * our local requirement here.
  */
+interface RedirectRule {
+  source: string;
+  destination: string;
+  permanent: boolean;
+}
 
-/** @type {RedirectRule[]} */
-let generatedRedirects = [];
+// Explicitly type the array to prevent 'any[]' inference errors
+let generatedRedirects: RedirectRule[] = [];
 
 try {
-  /** @type {unknown} */
+  // Use require for the CommonJS generated file
   const loadedRedirects = require("./redirects.generated.cjs");
 
   if (Array.isArray(loadedRedirects)) {
-    generatedRedirects = loadedRedirects;
+    generatedRedirects = loadedRedirects as RedirectRule[];
   }
 } catch (e) {
   generatedRedirects = [];
 }
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  eslint: { ignoreDuringBuilds: true },
+  eslint: { 
+    ignoreDuringBuilds: true 
+  },
 
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
 
   experimental: {
-    serverActions: { allowedOrigins: ["*"] },
+    serverActions: { 
+      allowedOrigins: ["*"] 
+    },
   },
 
   images: {
-    domains: [
-      "lh3.googleusercontent.com",
-      "cdn.curify-ai.com",
-      "videotranslatetest.blob.core.windows.net",
-      "pbs.twimg.com",
-      "storage.googleapis.com",
-      "images.unsplash.com",
+    remotePatterns: [
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      { protocol: 'https', hostname: 'cdn.curify-ai.com' },
+      { protocol: 'https', hostname: 'videotranslatetest.blob.core.windows.net' },
+      { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'storage.googleapis.com' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
 
   async redirects() {
     const LOCALE_RE = routing.locales.join("|");
 
-    /** @type {RedirectRule[]} */
-    const manualRedirects = [
+    const manualRedirects: RedirectRule[] = [
       {
         source: "/bilingual-subtitles",
         destination: "/tools/bilingual-subtitles",
@@ -79,10 +85,9 @@ const nextConfig = {
       },
     ];
 
-    /** @type {RedirectRule[]} */
     const safeGeneratedRedirects = generatedRedirects.filter(
-      (r) =>
-        r &&
+      (r): r is RedirectRule =>
+        !!r &&
         typeof r.source === "string" &&
         typeof r.destination === "string" &&
         typeof r.permanent === "boolean" &&
@@ -93,48 +98,33 @@ const nextConfig = {
   },
 
   async headers() {
+    const commonHeaders = [
+      {
+        key: "Cross-Origin-Opener-Policy",
+        value: "same-origin-allow-popups",
+      },
+      {
+        key: "Cross-Origin-Embedder-Policy",
+        value: "unsafe-none",
+      },
+    ];
+
     return [
       {
         source: "/:path*",
-        headers: [
-          {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin-allow-popups",
-          },
-          {
-            key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none",
-          },
-        ],
+        headers: commonHeaders,
       },
       {
         source: "/_next/:path*",
-        headers: [
-          {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin-allow-popups",
-          },
-          {
-            key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none",
-          },
-        ],
+        headers: commonHeaders,
       },
       {
         source: "/api/:path*",
-        headers: [
-          {
-            key: "Cross-Origin-Opener-Policy",
-            value: "same-origin-allow-popups",
-          },
-          {
-            key: "Cross-Origin-Embedder-Policy",
-            value: "unsafe-none",
-          },
-        ],
+        headers: commonHeaders,
       },
     ];
   },
 };
 
-module.exports = withNextIntl(nextConfig);
+// Use ES Module export for .ts files
+export default withNextIntl(nextConfig);
