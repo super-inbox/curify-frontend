@@ -787,52 +787,6 @@
       }
     }
   },
-  "template-mbti-marvel-en": {
-    "category": "MBTI Character Infographic Category",
-    "description": "Create MBTI-themed superhero infographic posters that map personality types onto iconic Marvel-style characters.",
-    "title": "Nano Banana Prompt: MBTI Marvel Superhero Infographic Generator | Curify AI",
-    "content": {
-      "sections": {
-        "what": "This template uses customized Nano Banana prompts to generate MBTI-themed superhero infographic posters. Each image visualizes a character's personality type through a comic-style character illustration combined with infographic elements such as trait cards, symbolic props, and personality descriptors.",
-        "who": "Suitable for personality psychology creators, Marvel/superhero fan communities, pop-culture content creators, MBTI discussion pages, infographic designers, and social media accounts that turn fictional characters into personality archetypes.",
-        "how": [
-          "Choose a superhero character (e.g., Wolverine, Scarlet Witch, Spider-Man).",
-          "Assign an MBTI type and role that best fits the character’s personality.",
-          "Add a short superhero-style title describing their identity or power.",
-          "List five key personality traits that reflect the MBTI type.",
-          "Generate the infographic poster with character illustration, symbolic props, and personality description."
-        ],
-        "prompts": [
-          "Generate an MBTI superhero infographic poster for Wolverine (Logan): ISTP – The Virtuoso, 'Feral Fighter', with traits Independent, Practical, Observant, Action-Oriented, Adaptable.",
-          "Create an MBTI character poster for Scarlet Witch (Wanda): INFP – The Mediator, 'Reality Shaper', highlighting empathy, imagination, and emotional depth.",
-          "Generate a Spider-Man MBTI infographic poster: ENFJ – The Protagonist, 'Friendly Neighborhood Hero', with traits Compassionate, Responsible, Quick-Witted, Resilient, Optimistic."
-        ]
-      }
-    }
-  },
-  "template-mbti-nba-en": {
-    "category": "MBTI Sports Card Category",
-    "description": "Create collectible-style MBTI basketball cards that combine personality types with legendary NBA players.",
-    "title": "Nano Banana Prompt: MBTI NBA Basketball Card Generator | Curify AI",
-    "content": {
-      "sections": {
-        "what": "This template uses customized Nano Banana prompts to generate collectible basketball card visuals that map MBTI personality types to famous NBA players. The layout resembles premium trading cards with metallic typography, illustrated player poses, and personality-driven achievements or traits.",
-        "who": "Suitable for basketball fan communities, NBA social media accounts, sports infographic creators, personality psychology pages, collectible card design experiments, and sports analytics storytellers.",
-        "how": [
-          "Select an NBA player to feature on the card.",
-          "Assign an MBTI personality type that matches their leadership or play style.",
-          "Create a persona title (e.g., 'The King', 'The Magician').",
-          "Add the player’s jersey number and four defining traits or achievements.",
-          "Generate the collectible card with metallic borders, team color palette, and illustrated player pose."
-        ],
-        "prompts": [
-          "Create an MBTI basketball card for Kobe Bryant: ISTP – 'THE MAMBA', jersey number 24, traits Mamba Mentality, 5× NBA Champion, The Assassin, Job's Not Finished.",
-          "Generate an MBTI NBA card for Stephen Curry: ENFP – 'THE MAGICIAN', jersey number 30, traits Range King, 3-Point Legend, Clutch Performer, Team Player.",
-          "Create a Michael Jordan MBTI card: ESTJ – 'THE GOAT', jersey number 23, traits Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
-        ]
-      }
-    }
-  },
   "template-mbti-breakingbad": {
     "category": "MBTI TV Character Card Category",
     "description": "Create gritty collectible-style MBTI character cards inspired by Breaking Bad and Better Call Saul, blending personality typing with iconic crime-drama visuals.",
@@ -857,7 +811,53 @@
       }
     }
   },
-  "template-mbti-siliconvalley-en": {
+  "template-mbti-marvel": {
+    "category": "MBTI Character Infographic Category",
+    "description": "Create MBTI-themed superhero infographic posters that map personality types onto iconic Marvel-style characters.",
+    "title": "Nano Banana Prompt: MBTI Marvel Superhero Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses customized Nano Banana prompts to generate MBTI-themed superhero infographic posters. Each image visualizes a character's personality type through a comic-style character illustration combined with infographic elements such as trait cards, symbolic props, and personality descriptors.",
+        "who": "Suitable for personality psychology creators, Marvel/superhero fan communities, pop-culture content creators, MBTI discussion pages, infographic designers, and social media accounts that turn fictional characters into personality archetypes.",
+        "how": [
+          "Choose a superhero character (e.g., Wolverine, Scarlet Witch, Spider-Man).",
+          "Assign an MBTI type and role that best fits the character’s personality.",
+          "Add a short superhero-style title describing their identity or power.",
+          "List five key personality traits that reflect the MBTI type.",
+          "Generate the infographic poster with character illustration, symbolic props, and personality description."
+        ],
+        "prompts": [
+          "Generate an MBTI superhero infographic poster for Wolverine (Logan): ISTP – The Virtuoso, 'Feral Fighter', with traits Independent, Practical, Observant, Action-Oriented, Adaptable.",
+          "Create an MBTI character poster for Scarlet Witch (Wanda): INFP – The Mediator, 'Reality Shaper', highlighting empathy, imagination, and emotional depth.",
+          "Generate a Spider-Man MBTI infographic poster: ENFJ – The Protagonist, 'Friendly Neighborhood Hero', with traits Compassionate, Responsible, Quick-Witted, Resilient, Optimistic."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "MBTI Sports Card Category",
+    "description": "Create collectible-style MBTI basketball cards that combine personality types with legendary NBA players.",
+    "title": "Nano Banana Prompt: MBTI NBA Basketball Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses customized Nano Banana prompts to generate collectible basketball card visuals that map MBTI personality types to famous NBA players. The layout resembles premium trading cards with metallic typography, illustrated player poses, and personality-driven achievements or traits.",
+        "who": "Suitable for basketball fan communities, NBA social media accounts, sports infographic creators, personality psychology pages, collectible card design experiments, and sports analytics storytellers.",
+        "how": [
+          "Select an NBA player to feature on the card.",
+          "Assign an MBTI personality type that matches their leadership or play style.",
+          "Create a persona title (e.g., 'The King', 'The Magician').",
+          "Add the player’s jersey number and four defining traits or achievements.",
+          "Generate the collectible card with metallic borders, team color palette, and illustrated player pose."
+        ],
+        "prompts": [
+          "Create an MBTI basketball card for Kobe Bryant: ISTP – 'THE MAMBA', jersey number 24, traits Mamba Mentality, 5× NBA Champion, The Assassin, Job's Not Finished.",
+          "Generate an MBTI NBA card for Stephen Curry: ENFP – 'THE MAGICIAN', jersey number 30, traits Range King, 3-Point Legend, Clutch Performer, Team Player.",
+          "Create a Michael Jordan MBTI card: ESTJ – 'THE GOAT', jersey number 23, traits Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
+        ]
+      }
+    }
+  },
+  "template-mbti-siliconvalley": {
     "category": "MBTI Tech Founder Visualization Category",
     "description": "Create MBTI visual concepts that map personality types onto iconic Silicon Valley founders and innovators.",
     "title": "Nano Banana Prompt: MBTI Silicon Valley Founder Visual Generator | Curify AI",
