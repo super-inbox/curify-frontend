@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import { CDN_BASE, SITE_URL } from "@/lib/constants";
 import { SUPPORTED_LOCALES } from "@/lib/generated/locales";
+import { getCanonicalUrl } from "@/lib/canonical";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export type SeoContentSections = {
@@ -140,13 +141,11 @@ export function buildNanoTemplateMetadata(opts: {
   const templateCore = resolveTemplateCore(templateId);
   const message = resolveLocaleMessage(templateId, nanoMessages);
 
-  const canonicalUrl = `${SITE_URL}/${localeStr}/nano-template/${slug}`;
+  const path = `/nano-template/${slug}`;
+  const canonicalUrl = getCanonicalUrl(localeStr, path);
 
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((locale) => [
-      locale,
-      `${SITE_URL}/${locale}/nano-template/${slug}`,
-    ])
+    SUPPORTED_LOCALES.map((locale) => [locale, getCanonicalUrl(locale, path)])
   );
 
   const title = normalizeText(message?.title) || fallbackTitle;
@@ -160,7 +159,7 @@ export function buildNanoTemplateMetadata(opts: {
       canonical: canonicalUrl,
       languages: {
         ...languages,
-        "x-default": `${SITE_URL}/en/nano-template/${slug}`,
+        "x-default": getCanonicalUrl("en", path),
       },
     },
     robots: { index: true, follow: true },
