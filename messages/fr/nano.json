@@ -879,5 +879,51 @@
         ]
       }
     }
+  },
+  "template-sports-battle": {
+    "category": "Catégorie d'infographie sportive",
+    "description": "Générez une affiche de comparaison « Joueur contre Joueur » au style NBA en 4K, avec des statistiques, une narration visuelle et un design de rivalité emblématique.",
+    "title": "Nano Banana Prompt : Générateur d'infographie Joueur NBA VS | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une infographie de comparaison à fort impact entre joueurs NBA en utilisant des prompts Nano Banana : avec des portraits dynamiques, des statistiques tête-à-tête, des surnoms et des résumés d'héritage dans une mise en page de style bande dessinée audacieuse.",
+        "who": "Convient aux créateurs de contenu sportif, aux pages de fans NBA, aux éditeurs de médias sociaux, aux concepteurs de vignettes YouTube, et à quiconque créant des visuels sportifs engageants de style débat (débats GOAT, comparaisons de compétences, affrontements d'époques).",
+        "how": [
+          "Définissez clairement le sujet de la comparaison (par exemple, 'Qui a changé le jeu au-delà de l'arc ?' ou 'Meilleur tireur en fin de match ?').",
+          "Spécifiez les deux joueurs et éventuellement leurs équipes/époques emblématiques pour le style visuel.",
+          "Incluez des catégories de statistiques clés (3PM, PPG, passes décisives, championnats, MVP, etc.) pour structurer la grille de comparaison.",
+          "Ajoutez des surnoms, des traits caractéristiques et de courts tags d'identité pour renforcer la narration (par exemple, 'Le Chef', 'Tireur Pur').",
+          "Après la génération, vérifiez l'exactitude des statistiques et la clarté visuelle ; si nécessaire, demandez 'affiner la mise en page des statistiques et assurer que les deux côtés sont équilibrés sans changer de style'."
+        ],
+        "prompts": [
+          "Générez un 'Infographie Joueur VS NBA' pour 'QUI A CHANGÉ LE JEU AU-DELÀ DE L'ARC ?' comparant Stephen Curry et Ray Allen, incluant des poses de tir dynamiques, un graphique VS central, un panneau de statistiques (3PM, PPG, championnats), des surnoms et des tags d'héritage, style bande dessinée néon, 3:4.",
+          "Créez une 'Affiche de Débat GOAT' comparant LeBron James et Michael Jordan, avec des portraits en pleine longueur, une grille de statistiques de championnats et MVP, des surnoms emblématiques et des descripteurs d'héritage contrastés, mise en page d'infographie sportive énergique, 3:4.",
+          "Générez une 'Comparaison de Tireurs Clutch' entre Kobe Bryant et Kevin Durant, incluant des poses d'action dramatiques, des statistiques de performance clés, des traits caractéristiques et un diviseur VS stylisé, style bande dessinée cinématographique, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-naruto": {
+    "category": "Catégorie d'infographie MBTI Anime",
+    "description": "Générez une carte de personnage MBTI au style Naruto en 4K, avec analyse de personnalité, fonctions cognitives et design inspiré de l'anime.",
+    "title": "Nano Banana Prompt : Générateur de Carte de Personnage MBTI Naruto | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une carte de personnage MBTI premium sur le thème de Naruto en utilisant des prompts Nano Banana : combinant des portraits de personnages au style anime, typage de personnalité, décompositions des fonctions cognitives et résumés d'identité narrative dans un format d'infographie collectible.",
+        "who": "Convient aux créateurs de contenu anime, aux passionnés de MBTI, aux pages de fans Naruto, aux designers de médias sociaux, et aux utilisateurs créant des visuels d'analyse de personnage partageables (décompositions de personnalité, contenu de fandom, publications narratives).",
+        "how": [
+          "Spécifiez le personnage Naruto et son type MBTI (ou laissez le modèle inférer en fonction des traits de personnalité).",
+          "Incluez des traits de personnalité clés, des éléments d'histoire et des capacités caractéristiques pour enrichir la carte.",
+          "Structurez la section MBTI avec 4 fonctions cognitives (Fi, Ne, Si, Te, etc.) et de courtes phrases descriptives.",
+          "Ajoutez 3 à 4 mots-clés de traits et 2 à 3 puces de résumé narratif pour capturer l'identité du personnage.",
+          "Après la génération, vérifiez l'exactitude du MBTI et la clarté de la formulation ; si nécessaire, demandez 'affiner les descriptions de personnalité tout en gardant la même mise en page et le même style artistique'."
+        ],
+        "prompts": [
+          "Générez une 'Carte de Personnage MBTI Naruto' pour Gaara avec une personnalité INFP, incluant un portrait anime en pleine longueur avec des effets de sable, un panneau de défilement MBTI (Fi, Ne, Si, Te), des icônes de traits (empathique, protecteur, silencieux, idéaliste) et un résumé narratif, style anime Naruto, 3:4.",
+          "Créez une 'Carte de Personnalité Naruto' pour Itachi Uchiha avec un typage INFJ, incluant un fond thématique de clan, une décomposition des fonctions cognitives, des traits clés et des éléments narratifs symboliques, mise en page d'infographie anime propre, 3:4.",
+          "Générez une 'Infographie MBTI Naruto' pour Naruto Uzumaki avec une personnalité ENFP, présentant une pose d'action dynamique, des effets de chakra lumineux, des traits de personnalité, des fonctions cognitives et un résumé d'identité motivant, style anime vibrant, 3:4."
+        ]
+      }
+    }
   }
 }

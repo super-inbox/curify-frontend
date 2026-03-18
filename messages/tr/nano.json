@@ -879,5 +879,51 @@
         ]
       }
     }
+  },
+  "template-sports-battle": {
+    "category": "Spor İnfografik Kategorisi",
+    "description": "İstatistikler, görsel hikaye anlatımı ve ikonik rekabet tasarımı ile 4K dikey NBA tarzı “Oyuncu vs Oyuncu” karşılaştırma posteri oluşturun.",
+    "title": "Nano Banana Prompt: NBA Oyuncusu VS İnfografik Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, dinamik portreler, karşılıklı istatistikler, takma adlar ve miras özetleri içeren cesur bir çizgi roman tarzı düzenle, yüksek etkili bir NBA oyuncusu vs oyuncu karşılaştırma infografiği oluşturur.",
+        "who": "Spor içerik üreticileri, NBA hayran sayfaları, sosyal medya editörleri, YouTube küçük resim tasarımcıları ve ilgi çekici tartışma tarzı spor görselleri (GOAT tartışmaları, yetenek karşılaştırmaları, dönem çatışmaları) oluşturan herkes için uygundur.",
+        "how": [
+          "Karşılaştırma konusunu net bir şekilde tanımlayın (örneğin, 'Kim oyunu üçlük çizgisinin gerisinden değiştirdi?' veya 'En iyi son an atıcısı?').",
+          "İki oyuncuyu belirtin ve isteğe bağlı olarak görsel stil için ikonik takımları/dönemleri ekleyin.",
+          "Karşılaştırma ızgarasını yapılandırmak için ana istatistik kategorilerini (3PM, PPG, asistler, şampiyonluklar, MVP'ler vb.) ekleyin.",
+          "Hikaye anlatımını güçlendirmek için takma adlar, imza özellikler ve kısa kimlik etiketleri ekleyin (örneğin, 'Şef', 'Saf Atıcı').",
+          "Oluşturmadan sonra, istatistik doğruluğunu ve görsel netliği kontrol edin; gerekirse, 'istatistik düzenini düzeltin ve her iki tarafın dengesini koruyarak stil değiştirmeden' isteyin."
+        ],
+        "prompts": [
+          "Stephen Curry ile Ray Allen'ı karşılaştıran 'KİM OYUNU ÜÇLÜK ÇİZGİSİNİN GERİSİNDEN DEĞİŞTİRDİ?' için bir NBA 'Oyuncu VS İnfografik' oluşturun; dinamik atış pozları, VS merkez grafiği, istatistik paneli (3PM, PPG, şampiyonluklar), takma adlar ve miras etiketleri, neon çizgi roman tarzı, 3:4.",
+          "LeBron James ile Michael Jordan'ı karşılaştıran bir 'GOAT Tartışma Posteri' oluşturun; tam vücut portreleri, şampiyonluk ve MVP istatistik ızgarası, ikonik takma adlar ve zıt miras tanımlayıcıları ile yüksek enerjili spor infografik düzeni, 3:4.",
+          "Kobe Bryant ile Kevin Durant arasında bir 'Son An Atıcısı Karşılaştırması' oluşturun; dramatik aksiyon pozları, ana performans istatistikleri, imza özellikler ve stilize edilmiş VS ayırıcı ile sinematik çizgi roman tarzı, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-naruto": {
+    "category": "Anime MBTI İnfografik Kategorisi",
+    "description": "Kişilik analizi, bilişsel işlevler ve anime ilhamlı tasarım ile 4K dikey Naruto tarzı MBTI karakter kartı oluşturun.",
+    "title": "Nano Banana Prompt: Naruto MBTI Karakter Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, anime tarzı karakter portreleri, kişilik tipleri, bilişsel işlev ayrıntıları ve koleksiyonluk infografik formatında anlatı kimlik özetleri ile birlikte Nano Banana istemlerini kullanarak premium bir Naruto temalı MBTI karakter kartı oluşturur.",
+        "who": "Anime içerik üreticileri, MBTI meraklıları, Naruto hayran sayfaları, sosyal medya tasarımcıları ve paylaşılabilir karakter analizi görselleri (kişilik ayrıntıları, fandom içeriği, hikaye anlatımı gönderileri) oluşturan kullanıcılar için uygundur.",
+        "how": [
+          "Naruto karakterini ve MBTI türünü belirtin (veya modelin kişilik özelliklerine göre çıkarmasına izin verin).",
+          "Kartı zenginleştirmek için ana kişilik özelliklerini, geçmiş hikaye unsurlarını ve imza yeteneklerini ekleyin.",
+          "MBTI bölümünü 4 bilişsel işlev (Fi, Ne, Si, Te vb.) ve kısa tanımlayıcı ifadelerle yapılandırın.",
+          "Karakter kimliğini yakalamak için 3-4 özellik anahtar kelimesi ve 2-3 anlatı özeti maddesi ekleyin.",
+          "Oluşturmadan sonra, MBTI doğruluğunu ve kelime netliğini kontrol edin; gerekirse, 'aynı düzeni ve sanat stilini koruyarak kişilik tanımlarını düzeltin' isteyin."
+        ],
+        "prompts": [
+          "Gaara için INFP kişiliği ile bir 'Naruto MBTI Karakter Kartı' oluşturun; kum efektleri ile tam vücut anime portresi, MBTI parşömen paneli (Fi, Ne, Si, Te), özellik simgeleri (duygusal, koruyucu, sessiz, idealist) ve anlatı özeti, Naruto anime tarzı, 3:4.",
+          "Itachi Uchiha için INFJ tipi ile bir 'Naruto Kişilik Kartı' oluşturun; klan temalı arka plan, bilişsel işlev ayrıntısı, anahtar özellikler ve sembolik anlatı unsurları ile temiz anime infografik düzeni, 3:4.",
+          "Naruto Uzumaki için ENFP kişiliği ile bir 'Naruto MBTI İnfografiği' oluşturun; dinamik aksiyon pozu, parlak chakra efektleri, kişilik özellikleri, bilişsel işlevler ve motive edici kimlik özeti, canlı anime tarzı, 3:4."
+        ]
+      }
+    }
   }
 }
