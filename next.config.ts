@@ -2,13 +2,33 @@
 const { routing } = require("./i18n/routing");
 const withNextIntl = require("next-intl/plugin")(routing);
 
+/**
+ * @typedef {Object} RedirectRule
+ * @property {string} source
+ * @property {string} destination
+ * @property {boolean} permanent
+ */
+
+/** @type {RedirectRule[]} */
+let generatedRedirects = [];
+
+try {
+  /** @type {unknown} */
+  const loadedRedirects = require("./redirects.generated.cjs");
+
+  if (Array.isArray(loadedRedirects)) {
+    generatedRedirects = loadedRedirects;
+  }
+} catch (e) {
+  generatedRedirects = [];
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 
   eslint: { ignoreDuringBuilds: true },
 
-  // 👇 Prevent /en/ → /en or /en → /en/ redirects
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
 
@@ -28,14 +48,10 @@ const nextConfig = {
   },
 
   async redirects() {
-    // ✅ IMPORTANT: restrict :locale so it doesn't match "/tools/..." (locale="tools")
-    const LOCALE_RE = routing.locales.join("|"); // e.g. "en|zh|es|fr|de|ja|ko|hi|tr|ru"
+    const LOCALE_RE = routing.locales.join("|");
 
-    return [
-      // ---------------------------
-      // Unprefixed legacy routes → /tools/*
-      // (default locale "en" style)
-      // ---------------------------
+    /** @type {RedirectRule[]} */
+    const manualRedirects = [
       {
         source: "/bilingual-subtitles",
         destination: "/tools/bilingual-subtitles",
@@ -46,11 +62,6 @@ const nextConfig = {
         destination: "/tools/video-dubbing",
         permanent: true,
       },
-
-      // ---------------------------
-      // Prefixed legacy routes → /:locale/tools/*
-      // (restricted to actual locales)
-      // ---------------------------
       {
         source: `/:locale(${LOCALE_RE})/bilingual-subtitles`,
         destination: "/:locale/tools/bilingual-subtitles",
@@ -61,17 +72,24 @@ const nextConfig = {
         destination: "/:locale/tools/video-dubbing",
         permanent: true,
       },
-
-      // ---------------------------
-      // Optional: canonicalize English to unprefixed
-      // /en/tools/* → /tools/*
-      // ---------------------------
       {
         source: "/en/tools/:path*",
         destination: "/tools/:path*",
         permanent: true,
       },
     ];
+
+    /** @type {RedirectRule[]} */
+    const safeGeneratedRedirects = generatedRedirects.filter(
+      (r) =>
+        r &&
+        typeof r.source === "string" &&
+        typeof r.destination === "string" &&
+        typeof r.permanent === "boolean" &&
+        r.source !== r.destination
+    );
+
+    return [...manualRedirects, ...safeGeneratedRedirects];
   },
 
   async headers() {
