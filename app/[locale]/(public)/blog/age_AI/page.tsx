@@ -1,8 +1,9 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
+import RelatedBlogs from "../../../_components/RelatedBlogs";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,7 @@ export async function generateMetadata({
 
 export default function AgeAiPost() {
   const t = useTranslations("ageAi");
+  const locale = useLocale();
   const buildingToolsPointsRaw = t.raw("strategicPillars.buildingTools.points");
   const leveragingToolsPointsRaw = t.raw("strategicPillars.leveragingTools.points");
   const buildingToolsPoints = Array.isArray(buildingToolsPointsRaw)
@@ -145,77 +147,13 @@ export default function AgeAiPost() {
       </p>
 
       {/* Related Articles Section */}
-      <section className="mt-16">
-        <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              slug: 'aiPlatform',
-              title: 'The Pragmatic AI Platform: How Mid‑Sized Tech Companies Win with AI',
-              date: 'January 30, 2026',
-              readTime: '9 min read',
-              tag: 'DS & AI Engineering',
-              image: '/images/platformai.webp',
-            },
-            {
-              slug: 'QA_Bot_to_Task',
-              title: 'From QA Bot to Task Agent: An Architecture Guide',
-              date: 'January 30, 2026',
-              readTime: '6 min read',
-              tag: 'DS & AI Engineering',
-              image: '/images/qa-bot-architecture.jpg',
-            },
-            {
-              slug: 'agents-vs-workflows',
-              title: 'Part 2: Agents vs Workflows – From Control to Intelligence',
-              date: 'October 28, 2025',
-              readTime: '6 min read',
-              tag: 'Creator Tools',
-              image: '/images/agents-vs-workflows.jpg',
-            }
-          ].map((post) => (
-            <Link
-              href={`/blog/${post.slug}`}
-              key={post.slug}
-              className="group border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
-            >
-              <div className="relative h-40 w-full">
-                <CdnImage
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <div className="text-xs uppercase text-red-600 font-semibold mb-1">
-                  {post.tag}
-                </div>
-                <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition">
-                  {post.title}
-                </h3>
-                <div className="text-xs text-gray-500 mt-1">
-                  {post.date} • {post.readTime}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <Link
-            href="/blog"
-            className="inline-flex items-center justify-center px-6 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
-          >
-            See all blog posts
-          </Link>
-        </div>
-      </section>
+      <RelatedBlogs currentSlug="age_AI" locale={locale} />
 
       {/* Next Article */}
       <div className="mt-12 pt-6 border-t border-gray-200">
         <p className="text-sm text-gray-500 mb-2">Next Article</p>
         <Link
-          href="/blog/QA_Bot_to_Task"
+          href={`/${locale}/blog/QA_Bot_to_Task`}
           className="group flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
         >
           <div>
