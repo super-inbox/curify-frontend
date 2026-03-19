@@ -10,8 +10,8 @@ import {
   type RawTemplate,
   type RawNanoImageRecord,
   buildNanoRegistry,
-  buildNanoFeedCards,
 } from "@/lib/nano_utils";
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";

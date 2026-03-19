@@ -1,9 +1,22 @@
 import { getTranslations } from "next-intl/server";
+import { SUPPORTED_LOCALES } from "@/lib/generated/locales";
 
-export type Locale = "zh" | "en";
+export type PageLocale = (typeof SUPPORTED_LOCALES)[number];
 
-export function resolveContentLocale(locale: string): Locale {
-  return locale === "zh" ? "zh" : "en";
+
+export const DEFAULT_LOCALE: PageLocale =
+  (SUPPORTED_LOCALES.includes("en" as PageLocale) ? "en" : SUPPORTED_LOCALES[0]) as PageLocale;
+
+export function isSupportedLocale(locale: string): locale is PageLocale {
+  return SUPPORTED_LOCALES.includes(locale as PageLocale);
+}
+
+export function resolveContentLocale(locale: string): PageLocale {
+  return isSupportedLocale(locale) ? locale : DEFAULT_LOCALE;
+}
+
+export function getSupportedLocales(): readonly PageLocale[] {
+  return SUPPORTED_LOCALES;
 }
 
 export function makeSafeTranslator(
@@ -29,8 +42,13 @@ export function titleCaseFromSlug(slug: string): string {
     .join(" ");
 }
 
+export function buildLocalizedHref(locale: string, path: string) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return locale === DEFAULT_LOCALE ? normalizedPath : `/${locale}${normalizedPath}`;
+}
+
 export function buildTopicHref(locale: string, topic: string) {
-  return locale === "en" ? `/topics/${topic}` : `/${locale}/topics/${topic}`;
+  return buildLocalizedHref(locale, `/topics/${topic}`);
 }
 
 export function getTopicLabel(

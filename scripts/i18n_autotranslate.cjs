@@ -28,7 +28,7 @@
  *   node scripts/i18n_autotranslate.cjs --base en --dry-run
  *   node scripts/i18n_autotranslate.cjs --base en --only zh es de --write
  *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
- *   node scripts/i18n_autotranslate.cjs --base zh --files nano --write
+ *   node scripts/i18n_autotranslate.cjs --base en --files nano --write
  *
  * Notes:
  * - `--files` accepts file basenames without .json (e.g. "common home pricing"),

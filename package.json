@@ -11,6 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "i18n:gen": "node scripts/generate-locales.cjs",
     "i18n:check": "node scripts/check_i18n.cjs",
     "i18n:verify": "node scripts/verify_consistency.cjs",
     "storybook": "storybook dev -p 6006",
