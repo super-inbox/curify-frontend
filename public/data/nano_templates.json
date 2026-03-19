@@ -3731,5 +3731,197 @@
   },
   "og_image": "/images/nano_insp_preview/template-mbti-naruto-narutouzumaki-prev.jpg",
   "topics": "psychology"
+},
+  {
+    "id": "template-mbti-yellowstone",
+    "locales": {
+        "en": {
+            "base_prompt": "（Yellowstone MBTI Analyst）You are a top-tier MBTI character analyst specialized in Yellowstone-themed personality infographics. According to the user-specified [{character_name}], create a vertical 3:4 premium MBTI personality analysis card for {character_name}, matching the rustic, western ranch aesthetic of the reference images. Card layout: 1. Top: Bold title \"MBTI PERSONALITY ANALYSIS\" + large stylized font for {mbti_type} - {mbti_title}, with Yellowstone/Y logo branding. 2. Character section: Portrait of {character_name} in iconic western/ranch attire, with their name {character_name}, role {character_role}, and 4 MBTI letter icons (E/I, N/S, T/F, J/P) with descriptive labels. 3. Cognitive functions panel: 4 sections (2x2 grid) listing {cog_func_1}, {cog_func_2}, {cog_func_3}, {cog_func_4}, each with an icon and short description explaining how the function manifests in {character_name}. 4. Middle gallery: 3 small thematic photos showing key moments/identities of {character_name} (e.g., ranch life, work scenes, personal moments), set against a Yellowstone mountain/ranch background. 5. Bottom section: - Enneagram type (if applicable: {enneagram_type}) with a diagram/icon - 4 core trait labels (e.g., {trait_1}, {trait_2}, {trait_3}, {trait_4}) with matching western/ranch icons - A closing tagline summarizing {character_name}'s core identity (e.g., {core_tagline}). Style: Rustic western/ranch aesthetic, weathered paper/leather textures, earthy color palette (browns, beiges, deep greens), clean serif fonts, western-themed icons, Yellowstone mountain/ranch motifs, Curify watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The character is [{character_name}].",
+            "parameters": [
+                {
+                    "name": "character_name",
+                    "label": "Character Name",
+                    "type": "text",
+                    "placeholder": [
+                        "John Dutton",
+                        "Beth Dutton",
+                        "Kayce Dutton",
+                        "Jamie Dutton",
+                        "Rip Wheeler",
+                        "Monica Dutton"
+                    ]
+                },
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": [
+                        "ENTJ",
+                        "INTJ",
+                        "ISFP",
+                        "INTJ",
+                        "ISTP",
+                        "INFJ"
+                    ]
+                },
+                {
+                    "name": "mbti_title",
+                    "label": "MBTI Title",
+                    "type": "text",
+                    "placeholder": [
+                        "The Commander",
+                        "The Architect",
+                        "The Adventurer",
+                        "The Logician",
+                        "The Virtuoso",
+                        "The Advocate"
+                    ]
+                },
+                {
+                    "name": "character_role",
+                    "label": "Character Role",
+                    "type": "text",
+                    "placeholder": [
+                        "Ranch Patriarch",
+                        "Ranch Enforcer",
+                        "Livestock Agent",
+                        "Attorney",
+                        "Ranch Foreman",
+                        "Native Activist"
+                    ]
+                },
+                {
+                    "name": "cog_func_1",
+                    "label": "Cognitive Function 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Te",
+                        "Ni",
+                        "Fi",
+                        "Ti",
+                        "Ti",
+                        "Ni"
+                    ]
+                },
+                {
+                    "name": "cog_func_2",
+                    "label": "Cognitive Function 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Ni",
+                        "Te",
+                        "Se",
+                        "Ni",
+                        "Se",
+                        "Fe"
+                    ]
+                },
+                {
+                    "name": "cog_func_3",
+                    "label": "Cognitive Function 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Se",
+                        "Fi",
+                        "Ni",
+                        "Te",
+                        "Ni",
+                        "Ti"
+                    ]
+                },
+                {
+                    "name": "cog_func_4",
+                    "label": "Cognitive Function 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Fi",
+                        "Se",
+                        "Te",
+                        "Fe",
+                        "Fe",
+                        "Se"
+                    ]
+                },
+                {
+                    "name": "enneagram_type",
+                    "label": "Enneagram Type",
+                    "type": "text",
+                    "placeholder": [
+                        "8w9",
+                        "8w7",
+                        "6w5",
+                        "5w6",
+                        "8w9",
+                        "4w5"
+                    ]
+                },
+                {
+                    "name": "trait_1",
+                    "label": "Core Trait 1",
+                    "type": "text",
+                    "placeholder": [
+                        "Protective",
+                        "Ruthless",
+                        "Loyal",
+                        "Calculating",
+                        "Tough",
+                        "Empathetic"
+                    ]
+                },
+                {
+                    "name": "trait_2",
+                    "label": "Core Trait 2",
+                    "type": "text",
+                    "placeholder": [
+                        "Strategic",
+                        "Sharp",
+                        "Quiet",
+                        "Ambitious",
+                        "Reliable",
+                        "Idealistic"
+                    ]
+                },
+                {
+                    "name": "trait_3",
+                    "label": "Core Trait 3",
+                    "type": "text",
+                    "placeholder": [
+                        "Authoritative",
+                        "Confident",
+                        "Brave",
+                        "Cunning",
+                        "Silent",
+                        "Compassionate"
+                    ]
+                },
+                {
+                    "name": "trait_4",
+                    "label": "Core Trait 4",
+                    "type": "text",
+                    "placeholder": [
+                        "Family-Oriented",
+                        "Fearless",
+                        "Conflict",
+                        "Selfish",
+                        "Fearless",
+                        "Principled"
+                    ]
+                },
+                {
+                    "name": "core_tagline",
+                    "label": "Core Tagline",
+                    "type": "text",
+                    "placeholder": [
+                        "Yellowstone Ranch Legacy",
+                        "Dutton Family Protector",
+                        "Between Two Worlds",
+                        "Tragic Genius",
+                        "Ranch Muscle & Heart",
+                        "Cultural Guardian"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-yellowstone-johndutton-prev.jpg"
 }
-]
