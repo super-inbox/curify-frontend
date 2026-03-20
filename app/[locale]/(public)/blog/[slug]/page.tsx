@@ -305,7 +305,7 @@ export default async function BlogPostPage({
           <AslTranslationContent slug={slug} t={t} tEn={tEn} locale={locale} />
         )}
         {(slug === 'chinese-herbal-medicine-visual-guide' || slug === 'evolution-timelines-visualization' || slug === 'chinese-costume-history-infographic') && (
-          <NanoTemplateContent slug={slug} t={safeT} />
+          <NanoTemplateContent slug={slug} t={safeT} locale={locale} />
         )}
         {slug === 'nano-banana-prompt-ecosystem' && (
           <NanoBananaContent slug={slug} t={safeT} locale={locale} />
@@ -552,6 +552,8 @@ function YoutubeTranslationContent({ slug, t, locale }: { slug: string; t: any; 
     
     // Then handle other markdown formatting
     return processed
+      // Handle markdown links [text](url)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
@@ -709,6 +711,8 @@ function VoiceCloningContent({ slug, t, locale }: { slug: string; t: any; locale
       .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
       // Close table tags
       .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+      // Handle markdown links [text](url)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
@@ -896,6 +900,8 @@ function AslTranslationContent({ slug, t, tEn, locale }: { slug: string; t: any;
       .replace(/\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|/g, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$4</td></tr>')
       // Close table tags
       .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+      // Handle markdown links [text](url)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
@@ -1067,16 +1073,16 @@ function AslTranslationContent({ slug, t, tEn, locale }: { slug: string; t: any;
   );
 }
 
-function getTemplateUrl(slug: string) {
+function getTemplateUrl(slug: string, locale: string) {
   const templateMap: Record<string, string> = {
     'evolution-timelines-visualization': '/nano-template/evolution',
     'chinese-costume-history-infographic': '/nano-template/costume-zh',
     'chinese-herbal-medicine-visual-guide': '/nano-template/herbal-zh'
   };
-  return templateMap[slug] || '/nano-template';
+  return `/${locale}${templateMap[slug] || '/nano-template'}`;
 }
 
-function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
+function NanoTemplateContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
   const formatContent = (content: string) => {
     return content
       // Handle markdown tables first - support both with and without spaces
@@ -1091,6 +1097,8 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
       .replace(/^\| (.+?) \| (.+?) \| (.+?) \|\n/gm, '<tr class="hover:bg-gray-50"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-b">$1</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$2</td><td class="px-6 py-4 text-sm text-gray-500 border-b">$3</td></tr>')
       // Close table tags
       .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
+      // Handle markdown links [text](url)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle bullet points with bold headers: **Header**: Description
@@ -1223,7 +1231,7 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
         <p className="mb-4">{t("curifyContent")}</p>
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800">
-            🎯 {t("ctaText")} <a href={getTemplateUrl(slug)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
+            🎯 {t("ctaText")} <a href={getTemplateUrl(slug, locale)} className="text-blue-600 hover:underline font-semibold">{t("ctaLink")}</a>
           </p>
         </div>
       </section>
@@ -1251,6 +1259,8 @@ function NanoTemplateContent({ slug, t }: { slug: string; t: any }) {
 function NanoBananaContent({ slug, t, locale }: { slug: string; t: any; locale: string }) {
   const formatContent = (content: string) => {
     return content
+      // Handle markdown links [text](url)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
       // Handle bold text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Handle paragraph breaks

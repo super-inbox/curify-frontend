@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import CdnImage from './CdnImage';
+import { useTranslations } from 'next-intl';
 
 interface BlogPost {
   slug: string;
@@ -18,6 +21,8 @@ interface RelatedBlogCardProps {
 }
 
 export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogCardProps) {
+  const t = useTranslations('blog');
+  
   return (
     <Link
       href={`/${locale}/blog/${blog.slug}`}
@@ -49,7 +54,7 @@ export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogC
         </h3>
         
         <div className="flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-700">
-          <span>Read more</span>
+          <span>{t('readMore', { defaultValue: 'Read more' })}</span>
           <svg
             className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-1"
             fill="none"

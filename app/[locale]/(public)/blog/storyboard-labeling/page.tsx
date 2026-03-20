@@ -18,11 +18,12 @@
 
  */
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import CdnVideo from "../../../_components/CdnVideo";
+import RelatedBlogs from "../../../_components/RelatedBlogs";
 
 // Import scene analysis data from JSON file
 import dreamScenes from '@/public/data/dream-scene-analysis.json';
@@ -56,6 +57,7 @@ function ProTip({ children }: { children: React.ReactNode }) {
 export default function SceneDetectionPage() {
   const [showFullAnalysis, setShowFullAnalysis] = useState(false);
   const t = useTranslations('SceneDetection');
+  const locale = useLocale();
 
   return (
     <div className="pt-10 pb-8">
@@ -108,21 +110,6 @@ export default function SceneDetectionPage() {
               <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
                 {t('tags.realTimeAnalysis')}
               </span>
-            </div>
-          </div>
-
-          <div className="relative w-full h-96 rounded-xl overflow-hidden mb-12">
-            <CdnImage
-              src="/blog/storyboard-labeling-hero.jpg"
-              alt="AI analyzing video scenes and generating storyboards"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-              <p className="text-white/80 text-sm">
-                {t('imageAlt')}
-              </p>
             </div>
           </div>
         </div>
@@ -702,71 +689,7 @@ export default function SceneDetectionPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                slug: 'video-enhancement',
-                title: 'AI Video Enhancement: Storyboards, Meme Captions & SFX Automation',
-                date: 'November 18, 2025',
-                readTime: '7 min read',
-                tag: 'Creator Tools',
-                image: '/images/video-enhancement-pipeline.png',
-              },
-              {
-                slug: 'storyboard-to-pipeline',
-                title: 'Create Your Own AI-Powered Comic Animation: A Simple Step-by-Step Guide',
-                date: 'October 28, 2025',
-                readTime: '5 min read',
-                tag: 'Creator Tools',
-                image: '/images/ai-animation-pipeline.jpg',
-              },
-              {
-                slug: 'agents-vs-workflows',
-                title: 'Part 2: Agents vs Workflows – From Control to Intelligence',
-                date: 'October 28, 2025',
-                readTime: '6 min read',
-                tag: 'Creator Tools',
-                image: '/images/agents-vs-workflows.jpg',
-              }
-            ].map((post) => (
-              <Link
-                href={`/blog/${post.slug}`}
-                key={post.slug}
-                className="group border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
-              >
-                <div className="relative h-40 w-full">
-                  <CdnImage
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="text-xs uppercase text-red-600 font-semibold mb-1">
-                    {post.tag}
-                  </div>
-                  <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition">
-                    {post.title}
-                  </h3>
-                  <div className="text-xs text-gray-500 mt-1">
-                    {post.date} • {post.readTime}
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center px-6 py-2 border border-gray-300 text-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
-            >
-              See all blog posts
-            </Link>
-          </div>
-        </section>
+        <RelatedBlogs currentSlug="storyboard-labeling" locale={locale} />
       </article>
     </div>
   );
