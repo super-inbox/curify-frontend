@@ -925,5 +925,30 @@
       ]
     }
   }
+},
+"template-mbti-yellowstone": {
+  "category": "TV Drama MBTI Infographic Category",
+  "description": "Generate a 4K vertical Yellowstone-style MBTI character card with personality analysis, cognitive functions, and rustic western design.",
+  "title": "Nano Banana Prompt: Yellowstone MBTI Character Card Generator | Curify AI",
+  "content": {
+    "sections": {
+      "what": "This template creates a premium Yellowstone-themed MBTI personality card using Nano Banana prompts: combining western-style character portraits, personality typing, cognitive function breakdowns, and identity-driven storytelling in a cinematic infographic format inspired by ranch life and power dynamics.",      
+      "who": "Suitable for Yellowstone fans, TV drama content creators, MBTI enthusiasts, storytelling bloggers, social media designers, and users creating shareable character analysis visuals focused on leadership, family dynamics, and moral conflict.",      
+      "how": [
+        "Specify the Yellowstone character and their MBTI type (or let the model infer based on behavior and personality traits).",
+        "Include character role (e.g., ranch patriarch, enforcer, attorney) and key story context to ground the analysis.",
+        "Structure the MBTI section with 4 cognitive functions (Te, Ni, Fi, Se, etc.) and short explanations tied to real character decisions.",
+        "Add 3–4 core traits and an optional Enneagram type to deepen personality interpretation.",
+        "Include a strong identity tagline summarizing the character’s role in power, family, or survival.",
+        "After generation, refine wording for clarity and realism by prompting: 'make the personality analysis more grounded and consistent with the show tone'."
+      ],
+      
+      "prompts": [
+        "Generate a 'Yellowstone MBTI Character Card' for John Dutton with ENTJ personality, including western ranch portrait, MBTI panel (Te, Ni, Se, Fi), Enneagram 8w9, traits (protective, strategic, authoritative, family-oriented), and a legacy-driven identity tagline, rustic western style, 3:4.",        
+        "Create a 'Yellowstone Personality Analysis Card' for Beth Dutton with INTJ typing, including sharp business-oriented traits, cognitive function breakdown, Enneagram 8w7, and symbolic western imagery reflecting power and control, clean infographic layout, 3:4.",        
+        "Generate a 'Yellowstone MBTI Infographic' for Rip Wheeler with ISTP personality, featuring rugged ranch aesthetic, cognitive functions, core traits (loyal, tough, silent, fearless), and a grounded identity summary, cinematic western style, 3:4."
+      ]
+    }
+  }
 }
 }

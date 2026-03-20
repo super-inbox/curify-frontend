@@ -925,5 +925,29 @@
         ]
       }
     }
+  },
+  "template-mbti-yellowstone": {
+    "category": "Catégorie d'infographie MBTI de drame télévisé",
+    "description": "Générez une carte de personnage MBTI verticale 4K de style Yellowstone avec analyse de personnalité, fonctions cognitives et design rustique western.",
+    "title": "Nano Banana Prompt : Générateur de carte de personnage MBTI Yellowstone | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une carte de personnalité MBTI de thème Yellowstone haut de gamme en utilisant des prompts Nano Banana : combinant portraits de personnages de style western, typage de personnalité, décompositions des fonctions cognitives et narration axée sur l'identité dans un format infographique cinématographique inspiré de la vie de ranch et des dynamiques de pouvoir.",
+        "who": "Convient aux fans de Yellowstone, créateurs de contenu de drame télévisé, passionnés de MBTI, blogueurs de narration, designers de médias sociaux et utilisateurs créant des visuels d'analyse de personnage partageables axés sur le leadership, les dynamiques familiales et les conflits moraux.",
+        "how": [
+          "Spécifiez le personnage de Yellowstone et son type MBTI (ou laissez le modèle inférer en fonction du comportement et des traits de personnalité).",
+          "Incluez le rôle du personnage (par exemple, patriarche du ranch, exécuteur, avocat) et le contexte clé de l'histoire pour ancrer l'analyse.",
+          "Structurez la section MBTI avec 4 fonctions cognitives (Te, Ni, Fi, Se, etc.) et de courtes explications liées aux décisions réelles des personnages.",
+          "Ajoutez 3 à 4 traits principaux et un type d'Ennéagramme optionnel pour approfondir l'interprétation de la personnalité.",
+          "Incluez un slogan d'identité fort résumant le rôle du personnage dans le pouvoir, la famille ou la survie.",
+          "Après la génération, affinez le wording pour plus de clarté et de réalisme en demandant : 'rendez l'analyse de personnalité plus ancrée et cohérente avec le ton de l'émission'."
+        ],
+        "prompts": [
+          "Générez une 'Carte de personnage MBTI Yellowstone' pour John Dutton avec une personnalité ENTJ, incluant un portrait de ranch western, un panneau MBTI (Te, Ni, Se, Fi), Ennéagramme 8w9, traits (protecteur, stratégique, autoritaire, orienté famille) et un slogan d'identité axé sur l'héritage, style western rustique, 3:4.",
+          "Créez une 'Carte d'analyse de personnalité Yellowstone' pour Beth Dutton avec un typage INTJ, incluant des traits orientés vers les affaires, décomposition des fonctions cognitives, Ennéagramme 8w7, et imagerie western symbolique reflétant le pouvoir et le contrôle, mise en page infographique propre, 3:4.",
+          "Générez une 'Infographie MBTI Yellowstone' pour Rip Wheeler avec une personnalité ISTP, présentant une esthétique de ranch robuste, fonctions cognitives, traits principaux (loyal, dur, silencieux, intrépide) et un résumé d'identité ancré, style western cinématographique, 3:4."
+        ]
+      }
+    }
   }
 }
