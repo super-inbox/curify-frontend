@@ -3925,5 +3925,173 @@
   },
   "og_image": "/images/nano_insp_preview/template-mbti-yellowstone-johndutton-prev.jpg",
   "topics": "psychology"
+},
+{
+  "id": "template-mbti-ghibli",
+  "locales": {
+      "en": {
+          "base_prompt": "（Ghibli MBTI Card Designer）You are a top-tier Ghibli-style MBTI character card designer, specialized in Studio Ghibli-themed personality infographics. According to the user-specified [{character_name}], create a vertical 3:4 premium MBTI analysis card for {character_name}, matching the whimsical, hand-drawn watercolor aesthetic of the reference images. Card layout: 1. Top: Character name {character_name} in a stylized Ghibli font, with subtitle {character_subtitle}; large MBTI type {mbti_type} - {mbti_title} below, surrounded by Ghibli-style decorative elements (vines, flowers, clouds, stars, or film-specific motifs like kodamas, brooms, waves). 2. Character portrait: Full-body hand-drawn illustration of {character_name} in their iconic outfit, set against a thematic background tied to their film (e.g., forest, bathhouse, moving castle, coastal town, sky), rendered in soft Studio Ghibli watercolor style. 3. Cognitive functions panel: 4 circular/rounded icons (2x2 grid) listing {cog_func_1}, {cog_func_2}, {cog_func_3}, {cog_func_4}, each with a film-themed icon and short description explaining how the function manifests in {character_name}. 4. Trait gallery: 4 small illustrated panels (with icons) showing key traits {trait_1}, {trait_2}, {trait_3}, {trait_4}, each paired with a descriptive phrase. 5. Bottom storyboard: 4 small sequential illustrations depicting iconic moments/arcs of {character_name} from their film, reinforcing their personality and journey. Style: Classic Studio Ghibli hand-drawn watercolor art, soft pastel/earthy color palette, delicate linework, whimsical nature/film motifs, warm nostalgic tone, Curify watermark at top left. Vertical 3:4 format, ultra-high definition 4K, sharp focus, no extra clutter, direct image generation. The character is [{character_name}].",
+          "parameters": [
+              {
+                  "name": "character_name",
+                  "label": "Character Name",
+                  "type": "text",
+                  "placeholder": [
+                      "Chihiro",
+                      "Totoro",
+                      "San",
+                      "Sophie",
+                      "Kiki",
+                      "Howl"
+                  ]
+              },
+              {
+                  "name": "character_subtitle",
+                  "label": "Character Subtitle",
+                  "type": "text",
+                  "placeholder": [
+                      "Spirited Away",
+                      "My Neighbor Totoro",
+                      "Princess Mononoke",
+                      "Howl's Moving Castle",
+                      "Kiki's Delivery Service",
+                      "Howl's Moving Castle"
+                  ]
+              },
+              {
+                  "name": "mbti_type",
+                  "label": "MBTI Type",
+                  "type": "text",
+                  "placeholder": [
+                      "INFP",
+                      "ISFJ",
+                      "INFJ",
+                      "INTP",
+                      "ENFP",
+                      "ENTP"
+                  ]
+              },
+              {
+                  "name": "mbti_title",
+                  "label": "MBTI Title",
+                  "type": "text",
+                  "placeholder": [
+                      "The Mediator",
+                      "The Defender",
+                      "The Advocate",
+                      "The Logician",
+                      "The Champion",
+                      "The Debater"
+                  ]
+              },
+              {
+                  "name": "cog_func_1",
+                  "label": "Cognitive Function 1",
+                  "type": "text",
+                  "placeholder": [
+                      "Fi",
+                      "Si",
+                      "Ni",
+                      "Ti",
+                      "Ne",
+                      "Ne"
+                  ]
+              },
+              {
+                  "name": "cog_func_2",
+                  "label": "Cognitive Function 2",
+                  "type": "text",
+                  "placeholder": [
+                      "Ne",
+                      "Fe",
+                      "Fe",
+                      "Ne",
+                      "Fi",
+                      "Ti"
+                  ]
+              },
+              {
+                  "name": "cog_func_3",
+                  "label": "Cognitive Function 3",
+                  "type": "text",
+                  "placeholder": [
+                      "Si",
+                      "Ti",
+                      "Ti",
+                      "Si",
+                      "Si",
+                      "Fe"
+                  ]
+              },
+              {
+                  "name": "cog_func_4",
+                  "label": "Cognitive Function 4",
+                  "type": "text",
+                  "placeholder": [
+                      "Te",
+                      "Ne",
+                      "Se",
+                      "Fe",
+                      "Te",
+                      "Si"
+                  ]
+              },
+              {
+                  "name": "trait_1",
+                  "label": "Key Trait 1",
+                  "type": "text",
+                  "placeholder": [
+                      "Kind",
+                      "Gentle",
+                      "Brave",
+                      "Calm",
+                      "Energetic",
+                      "Dramatic"
+                  ]
+              },
+              {
+                  "name": "trait_2",
+                  "label": "Key Trait 2",
+                  "type": "text",
+                  "placeholder": [
+                      "Brave",
+                      "Protective",
+                      "Fierce",
+                      "Wise",
+                      "Curious",
+                      "Charming"
+                  ]
+              },
+              {
+                  "name": "trait_3",
+                  "label": "Key Trait 3",
+                  "type": "text",
+                  "placeholder": [
+                      "Sincere",
+                      "Quiet",
+                      "Loyal",
+                      "Patient",
+                      "Kind",
+                      "Smart"
+                  ]
+              },
+              {
+                  "name": "trait_4",
+                  "label": "Key Trait 4",
+                  "type": "text",
+                  "placeholder": [
+                      "Growing",
+                      "Warm",
+                      "Wild",
+                      "Strong",
+                      "Independent",
+                      "Mysterious"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-mbti-ghibli-ponyo-prev.jpg",
+  "topics": "psychology"
 }
 ]

@@ -949,5 +949,29 @@
         ]
       }
     }
+  },
+  "template-mbti-ghibli": {
+    "category": "Categoría de Infografía MBTI de Anime",
+    "description": "Genera una tarjeta de personaje MBTI al estilo Studio Ghibli en 4K vertical con análisis de personalidad, funciones cognitivas, diseño de acuarela caprichoso y narración cinematográfica.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Personaje MBTI de Ghibli | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una tarjeta de personalidad MBTI premium con temática de Studio Ghibli utilizando los prompts de Nano Banana: combinando retratos de personajes en acuarela dibujados a mano, tipificación MBTI, desglose de funciones cognitivas, rasgos de personalidad clave y momentos visuales narrativos en un formato infográfico cálido y caprichoso inspirado en las películas clásicas de Ghibli.",
+        "who": "Adecuado para fanáticos de Studio Ghibli, creadores de contenido de anime, entusiastas del MBTI, narradores visuales, bloggers de análisis de personajes, diseñadores de redes sociales y usuarios que crean tarjetas de personalidad compartibles centradas en la identidad, el crecimiento, la emoción y la construcción de mundos cinematográficos.",
+        "how": [
+          "Especifica el personaje de Ghibli y su tipo MBTI, o deja que el modelo infiera el tipo a partir del comportamiento del personaje, patrones emocionales y su papel en la historia.",
+          "Incluye el título de la película o subtítulo para anclar el estilo visual y los motivos ambientales, como espíritus del bosque, interiores de baños, castillos en movimiento, pueblos costeros o cielos mágicos.",
+          "Estructura la sección MBTI con 4 funciones cognitivas y añade breves explicaciones que muestren cómo cada función aparece en las decisiones, relaciones y viaje emocional del personaje.",
+          "Añade de 3 a 4 rasgos clave que reflejen el arco de personalidad del personaje, como gentil, valiente, curioso, leal, independiente o misterioso.",
+          "Utiliza un breve eslogan de identidad para resumir el mundo interior o el papel narrativo del personaje, como soñador, protector, errante, sanador o héroe reacio.",
+          "Después de la generación, refina la consistencia y el tono pidiendo: 'haz que el análisis de personalidad sea más emocionalmente fundamentado y alineado con la atmósfera de la película de Ghibli'."
+        ],
+        "prompts": [
+          "Genera una 'Tarjeta de Personaje MBTI de Ghibli' para Chihiro con personalidad ISFJ, incluyendo retrato en acuarela suave, motivos de baño inspirados en Spirited Away, panel MBTI (Si, Fe, Ti, Ne), rasgos (amable, valiente, sincera, en crecimiento) y un eslogan de identidad de crecimiento personal, infografía caprichosa de cuento, 3:4.",
+          "Crea una 'Tarjeta de Análisis de Personalidad de Studio Ghibli' para Howl con tipificación ENTP, incluyendo retrato de fantasía elegante, fondo de castillo en movimiento mágico, desglose de funciones cognitivas, rasgos (encantador, dramático, inteligente, misterioso) y un resumen de identidad romántico y emocionalmente profundo, estilo de acuarela dibujada a mano, 3:4.",
+          "Genera una 'Infografía MBTI de Ghibli' para San con personalidad INFJ, presentando imágenes del bosque de Princesa Mononoke, funciones cognitivas, rasgos clave (valiente, feroz, leal, salvaje) y un eslogan de identidad impulsado por la naturaleza, diseño cinematográfico en acuarela, 3:4."
+        ]
+      }
+    }
   }
 }
