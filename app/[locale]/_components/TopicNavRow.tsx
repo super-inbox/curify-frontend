@@ -20,6 +20,7 @@ type Props = {
   className?: string;
   showDisabled?: boolean;
   size?: "default" | "small";
+  onTopicClick?: (topicId: string) => void;
 };
 
 const DISABLED_TOPICS = new Set(["gaming", "career"]);
@@ -41,6 +42,7 @@ export default function TopicNavRow({
   className,
   showDisabled = true,
   size = "default",
+  onTopicClick,
 }: Props) {
   const t = useTranslations();
   const sortedTopics = getSortedTopics();
@@ -101,6 +103,7 @@ export default function TopicNavRow({
                 ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
                 : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
             ].join(" ")}
+            onClick={() => onTopicClick?.(topic.id)}
           >
             {label}
           </Link>

@@ -64,8 +64,14 @@ export function formatContent(content: string): string {
   const tableRegex = /(\|.+\|\n\|[-| :]+\|\n(?:\|.+\|\n?)*)/g;
   content = content.replace(tableRegex, (match) => parseMarkdownTable(match));
 
-  return (
-    content
+  // 2. Handle code blocks before other processing
+  const codeBlockRegex = /```(\w+)?\n([\s\S]*?)```/g;
+  content = content.replace(codeBlockRegex, (match, language, code) => {
+    const lang = language || 'text';
+    return `</p><pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm my-4"><code class="language-${lang}">${code}</code></pre><p>`;
+  });
+
+  return `<p>${content
       // Bold text
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       // Bullet points with bold header: **Header**: Description
@@ -80,9 +86,8 @@ export function formatContent(content: string): string {
         /(<li>[\s\S]*?<\/li>)(\n<li>[\s\S]*?<\/li>)*/g,
         (match) => `<ul class="list-disc pl-6 mb-4">${match}</ul>`
       )
-      // Double newlines → paragraph breaks
+      // Double newlines → paragraph breaks (but avoid breaking within code blocks)
       .replace(/\n\n/g, '</p><p class="mb-4">')
       // Remaining single newlines
-      .replace(/\n/g, "<br/>")
-  );
+      .replace(/\n/g, "<br/>")}</p>`;
 }
