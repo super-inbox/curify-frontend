@@ -1,24 +1,18 @@
-import fs from 'fs';
-import path from 'path';
+// lib/nano_data_source.ts
 
-const USE_REMOTE = process.env.NANO_DATA_REMOTE === 'true';
-
-// 👉 未来直接改这个 URL
-const REMOTE_URL = 'https://storage.googleapis.com/curify-static/data/nanobanana.json';
+const REMOTE_URL =
+  process.env.NANO_DATA_URL ||
+  'https://storage.googleapis.com/curify-static/data/nanobanana.json';
 
 export async function loadNanoData(): Promise<any> {
-  // 🔥 future: CDN mode
-  if (USE_REMOTE) {
-    const res = await fetch(REMOTE_URL, {
-      // 关键：允许 CDN cache
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) throw new Error('Failed to fetch remote nano data');
-    return res.json();
+  const res = await fetch(REMOTE_URL, {
+    // ✅ 利用 Next.js / Vercel edge cache
+    next: { revalidate: 3600 }, // 1 hour
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch nano data: ${res.status}`);
   }
 
-  // ✅ current: local file
-  const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
-  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
-  return JSON.parse(fileContent);
+  return res.json();
 }
