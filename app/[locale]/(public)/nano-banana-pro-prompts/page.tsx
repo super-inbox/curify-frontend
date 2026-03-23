@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { SITE_URL, CDN_BASE } from "@/lib/constants";
+import { loadNanoData } from '@/lib/nano_data_source';
 
 export const runtime = 'nodejs'; // required for fs
 
@@ -28,12 +29,6 @@ function toOgLocale(locale: string) {
   return map[locale] || 'en_US';
 }
 
-function readNanoBananaJson(): JsonData {
-  const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
-  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
-  return JSON.parse(fileContent);
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -43,7 +38,7 @@ export async function generateMetadata({
   let totalPrompts = 0;
 
   try {
-    const data = readNanoBananaJson();
+    const data = await loadNanoData();
     totalPrompts = Array.isArray(data?.prompts) ? data.prompts.length : 0;
   } catch (error) {
     console.error('Error reading prompts for metadata:', error);
@@ -115,7 +110,7 @@ export default async function NanoBananaProPromptsPage({
   let error: string | null = null;
 
   try {
-    const data = readNanoBananaJson();
+    const data = await loadNanoData();
     initialData = Array.isArray(data?.prompts) ? data.prompts! : [];
   } catch (err) {
     console.error('Error loading initial prompts:', err);

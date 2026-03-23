@@ -1,5 +1,4 @@
-import fs from 'fs';
-import path from 'path';
+import { loadNanoData } from '@/lib/nano_data_source';
 
 export interface JsonPrompt {
   id: number;
@@ -38,45 +37,43 @@ export async function getPrompts(
   domainFilter: string = 'all',
   layoutFilter: string = 'all'
 ) {
-  const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
-  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
-  const data: JsonData = JSON.parse(fileContent);
-  
+  const data: JsonData = await loadNanoData();
+
   let filteredPrompts = [...data.prompts];
-  
+
   // Apply filters
   if (searchTerm) {
     const searchLower = searchTerm.toLowerCase();
-    filteredPrompts = filteredPrompts.filter(prompt => 
-      (prompt.title?.toLowerCase().includes(searchLower)) ||
-      (prompt.description?.toLowerCase().includes(searchLower)) ||
-      (prompt.promptText?.toLowerCase().includes(searchLower))
+    filteredPrompts = filteredPrompts.filter(prompt =>
+      prompt.title?.toLowerCase().includes(searchLower) ||
+      prompt.description?.toLowerCase().includes(searchLower) ||
+      prompt.promptText?.toLowerCase().includes(searchLower)
     );
   }
-  
+
   if (sourceFilter !== 'all') {
-    filteredPrompts = filteredPrompts.filter(prompt => 
+    filteredPrompts = filteredPrompts.filter(prompt =>
       prompt.sourceType === sourceFilter
     );
   }
-  
+
   if (domainFilter !== 'all') {
-    filteredPrompts = filteredPrompts.filter(prompt => 
+    filteredPrompts = filteredPrompts.filter(prompt =>
       prompt.domainCategory === domainFilter
     );
   }
-  
+
   if (layoutFilter !== 'all') {
-    filteredPrompts = filteredPrompts.filter(prompt => 
+    filteredPrompts = filteredPrompts.filter(prompt =>
       prompt.layoutCategory === layoutFilter
     );
   }
-  
+
   // Apply pagination
   const startIndex = (page - 1) * limit;
   const endIndex = startIndex + limit;
   const paginatedPrompts = filteredPrompts.slice(startIndex, endIndex);
-  
+
   return {
     data: paginatedPrompts,
     pagination: {
@@ -90,11 +87,9 @@ export async function getPrompts(
   };
 }
 
-export function getMetadata() {
-  const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
-  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
-  const data: JsonData = JSON.parse(fileContent);
-  
+export async function getMetadata() {
+  const data: JsonData = await loadNanoData();
+
   return {
     sources: data.metadata.sources,
     layoutCategories: data.metadata.layoutCategories,
@@ -102,10 +97,8 @@ export function getMetadata() {
   };
 }
 
-export function getPromptById(id: string) {
-  const jsonPath = path.join(process.cwd(), 'public', 'data', 'nanobanana.json');
-  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
-  const data: JsonData = JSON.parse(fileContent);
-  
+export async function getPromptById(id: string) {
+  const data: JsonData = await loadNanoData();
+
   return data.prompts.find(prompt => prompt.id.toString() === id) || null;
 }

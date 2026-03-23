@@ -86,11 +86,21 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
   const loadData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('/data/nanobanana.json');
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  
+      const response = await fetch('/api/nano_prompts');
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+  
       const responseData = await response.json();
+  
       const promptsData = responseData?.prompts;
-      if (!Array.isArray(promptsData)) throw new Error('Expected a "prompts" array in the response');
+  
+      if (!Array.isArray(promptsData)) {
+        throw new Error('Expected a "prompts" array in the response');
+      }
+  
       processPrompts(promptsData);
     } catch (err) {
       console.error('Error loading prompts:', err);

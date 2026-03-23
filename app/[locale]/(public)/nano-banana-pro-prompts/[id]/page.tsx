@@ -4,18 +4,16 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import path from "path";
-import fs from "fs";
 import { getTranslations } from "next-intl/server";
 
 import CdnImage from "../../../_components/CdnImage";
 import NanoTemplateDetailClient from "../../nano-template/[slug]/NanoTemplateDetailClient";
 import { SITE_URL } from "@/lib/constants";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
-import {  
+import {
   buildNanoRegistry,
   type RawTemplate,
-  type RawNanoImageRecord,  
+  type RawNanoImageRecord,
 } from "@/lib/nano_utils";
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import nanoTemplates from "@/public/data/nano_templates.json";
@@ -23,6 +21,8 @@ import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import { PageLocale, makeSafeNanoTranslator } from "@/lib/locale_utils";
 import PromptActionBar from "./PromptActionBar";
+import { loadNanoData } from "@/lib/nano_data_source"; // ✅ 新增
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface JsonPrompt {
@@ -95,8 +95,8 @@ const normalizeImageUrl = (raw: string | null): string => {
 
 async function fetchPrompt(id: string): Promise<Prompt | null> {
   try {
-    const jsonPath = path.join(process.cwd(), "public", "data", "nanobanana.json");
-    const data: JsonData = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
+    const data: JsonData = await loadNanoData(); // ✅ 关键改动
+
     const p = data.prompts.find((p) => p.id.toString() === id);
     if (!p) return null;
 
@@ -172,7 +172,6 @@ export default async function PromptDetailPage({
   const absoluteImageUrl =
     toAbsUrlMaybe(prompt.image_url) ?? `${SITE_URL}/images/default-prompt-image.jpg`;
 
-  // ── Nano templates feed — identical to template page ──
   const reg = buildNanoRegistry(
     nanoTemplates as unknown as RawTemplate[],
     nanoImages as unknown as RawNanoImageRecord[]
@@ -238,7 +237,6 @@ export default async function PromptDetailPage({
 
       <main className="max-w-6xl mx-auto py-6 sm:px-6 lg:px-8">
         <article className="bg-white shadow overflow-hidden rounded-lg">
-          {/* Image */}
           <div className="px-6 py-4">
             <div className="relative w-full h-96 bg-gray-50 flex items-center justify-center">
               <CdnImage
@@ -251,7 +249,6 @@ export default async function PromptDetailPage({
             </div>
           </div>
 
-          {/* Title + source badge */}
           <div className="px-6 py-5 border-b border-gray-200 flex items-start justify-between gap-3">
             <h1 className="text-2xl font-bold text-gray-900">{prompt.title}</h1>
             <span
@@ -261,7 +258,6 @@ export default async function PromptDetailPage({
             </span>
           </div>
 
-          {/* Description */}
           {prompt.description && (
             <div className="px-6 py-6 border-b border-gray-200">
               <h2 className="text-lg font-medium text-gray-900 mb-3">Description</h2>
@@ -269,24 +265,23 @@ export default async function PromptDetailPage({
             </div>
           )}
 
-          {/* Prompt text */}
           <div className="px-6 py-6">
-
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-  <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
-  <PromptActionBar
-    promptId={prompt.id}
-    promptText={prompt.prompt_text}
-    pageUrl={buildPromptUrl(locale, prompt.id)}
-    title={prompt.title}
-  />
-</div>
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+              <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
+              <PromptActionBar
+                promptId={prompt.id}
+                promptText={prompt.prompt_text}
+                pageUrl={buildPromptUrl(locale, prompt.id)}
+                title={prompt.title}
+              />
+            </div>
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <pre className="whitespace-pre-wrap font-sans text-gray-800">{prompt.prompt_text}</pre>
+              <pre className="whitespace-pre-wrap font-sans text-gray-800">
+                {prompt.prompt_text}
+              </pre>
             </div>
           </div>
 
-          {/* Author / meta footer */}
           <div className="px-6 py-4 border-t border-gray-100 bg-gray-50 flex flex-wrap items-center gap-4 text-sm text-gray-500">
             <span>
               By{" "}
@@ -303,34 +298,8 @@ export default async function PromptDetailPage({
                 <span className="font-medium text-gray-700">{prompt.author}</span>
               )}
             </span>
-            {prompt.category && (
-              <span className="rounded-full border border-neutral-200 bg-white px-2.5 py-0.5 text-[11px] font-semibold text-neutral-600">
-                {prompt.category}
-              </span>
-            )}
-            {prompt.source_url && prompt.source_url !== "#" && (
-              <a
-                href={prompt.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto text-xs text-indigo-500 hover:text-indigo-700"
-              >
-                View source ↗
-              </a>
-            )}
           </div>
         </article>
-
-        {/* ── Other templates — same component & data as template page ── */}
-        <section className="mt-8">
-          <NanoTemplateDetailClient
-            locale={locale}
-            template={{ template_id: "", base_prompt: "", parameters: [] }}
-            otherNanoCards={nanoCards}
-            showReproduce={false}
-            showOtherTemplates={true}
-          />
-        </section>
       </main>
     </div>
   );
