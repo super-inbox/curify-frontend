@@ -834,29 +834,6 @@
       }
     }
   },
-  "template-mbti-nba": {
-    "category": "Catégorie de cartes de sport MBTI",
-    "description": "Créez des cartes de basket-ball MBTI de style collection qui combinent les types de personnalité avec des joueurs légendaires de la NBA.",
-    "title": "Nano Banana Prompt : Générateur de cartes de basket-ball MBTI NBA | Curify AI",
-    "content": {
-      "sections": {
-        "what": "Ce modèle utilise des invites personnalisées de Nano Banana pour générer des visuels de cartes de basket-ball de collection qui associent les types de personnalité MBTI à des joueurs célèbres de la NBA. La mise en page ressemble à des cartes de collection premium avec une typographie métallique, des poses illustrées de joueurs et des réalisations ou traits axés sur la personnalité.",
-        "who": "Convient aux communautés de fans de basket-ball, aux comptes de médias sociaux de la NBA, aux créateurs d'infographies sportives, aux pages de psychologie de la personnalité, aux expériences de design de cartes de collection et aux narrateurs d'analyses sportives.",
-        "how": [
-          "Sélectionnez un joueur de la NBA à mettre en avant sur la carte.",
-          "Attribuez un type de personnalité MBTI qui correspond à leur style de leadership ou de jeu.",
-          "Créez un titre de persona (par exemple, 'Le Roi', 'Le Magicien').",
-          "Ajoutez le numéro de maillot du joueur et quatre traits ou réalisations définissants.",
-          "Générez la carte de collection avec des bordures métalliques, une palette de couleurs d'équipe et une pose illustrée du joueur."
-        ],
-        "prompts": [
-          "Créez une carte de basket-ball MBTI pour Kobe Bryant : ISTP – 'THE MAMBA', numéro de maillot 24, traits Mentalité Mamba, 5× Champion NBA, L'Assassin, Job's Not Finished.",
-          "Générez une carte MBTI NBA pour Stephen Curry : ENFP – 'THE MAGICIAN', numéro de maillot 30, traits Roi de la Portée, Légende du Tir à 3 Points, Performeur Clutch, Joueur d'Équipe.",
-          "Créez une carte MBTI pour Michael Jordan : ESTJ – 'THE GOAT', numéro de maillot 23, traits Bête Compétitive, 6× Champion NBA, Air Jordan, Icône Mondiale."
-        ]
-      }
-    }
-  },
   "template-mbti-siliconvalley": {
     "category": "Catégorie de visualisation de fondateur technologique MBTI",
     "description": "Créez des concepts visuels MBTI qui associent les types de personnalité à des fondateurs et innovateurs emblématiques de la Silicon Valley.",
@@ -970,6 +947,29 @@
           "Générez une 'Carte de personnage MBTI Ghibli' pour Chihiro avec une personnalité ISFJ, incluant un portrait aquarelle doux, des motifs de bains inspirés de Spirited Away, un panneau MBTI (Si, Fe, Ti, Ne), des traits (gentil, courageux, sincère, en croissance) et un slogan identitaire de passage à l'âge adulte, infographie fantaisiste de conte de fées, 3:4.",
           "Créez une 'Carte d'analyse de personnalité Studio Ghibli' pour Howl avec un typage ENTP, incluant un portrait de fantasy élégant, un fond de château en mouvement magique, une décomposition des fonctions cognitives, des traits (charmant, dramatique, intelligent, mystérieux) et un résumé identitaire romantique et émotionnellement riche, style aquarelle dessiné à la main, 3:4.",
           "Générez une 'Infographie MBTI Ghibli' pour San avec une personnalité INFJ, présentant des images de forêt de Princess Mononoke, des fonctions cognitives, des traits principaux (courageux, féroce, loyal, sauvage) et un slogan identitaire axé sur la nature, design aquarelle cinématographique, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "Catégorie de cartes de sport MBTI",
+    "description": "Créez des cartes de basket-ball MBTI de style collection qui combinent les types de personnalité avec des joueurs légendaires de la NBA.",
+    "title": "Nano Banana Prompt : Générateur de cartes de basket-ball MBTI NBA | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des invites personnalisées de Nano Banana pour générer des visuels de cartes de basket-ball de collection qui associent les types de personnalité MBTI à des joueurs célèbres de la NBA. La mise en page ressemble à des cartes de collection premium avec une typographie métallique, des poses illustrées de joueurs et des réalisations ou traits axés sur la personnalité.",
+        "who": "Convient aux communautés de fans de basket-ball, aux comptes de médias sociaux de la NBA, aux créateurs d'infographies sportives, aux pages de psychologie de la personnalité, aux expériences de design de cartes de collection et aux narrateurs d'analyses sportives.",
+        "how": [
+          "Sélectionnez un joueur de la NBA à mettre en avant sur la carte.",
+          "Attribuez un type de personnalité MBTI qui correspond à leur style de leadership ou de jeu.",
+          "Créez un titre de persona (par exemple, 'Le Roi', 'Le Magicien').",
+          "Ajoutez le numéro de maillot du joueur et quatre traits ou réalisations définissants.",
+          "Générez la carte de collection avec des bordures métalliques, une palette de couleurs d'équipe et une pose illustrée du joueur."
+        ],
+        "prompts": [
+          "Créez une carte de basket-ball MBTI pour Kobe Bryant : ISTP – 'THE MAMBA', numéro de maillot 24, traits Mentalité Mamba, 5× Champion NBA, L'Assassin, Job's Not Finished.",
+          "Générez une carte MBTI NBA pour Stephen Curry : ENFP – 'THE MAGICIAN', numéro de maillot 30, traits Roi de la Portée, Légende du Tir à 3 Points, Performeur Clutch, Joueur d'Équipe.",
+          "Créez une carte MBTI pour Michael Jordan : ESTJ – 'THE GOAT', numéro de maillot 23, traits Bête Compétitive, 6× Champion NBA, Air Jordan, Icône Mondiale."
         ]
       }
     }

@@ -834,29 +834,6 @@
       }
     }
   },
-  "template-mbti-nba": {
-    "category": "MBTI Sports Card Category",
-    "description": "Create collectible-style MBTI basketball cards that combine personality types with legendary NBA players.",
-    "title": "Nano Banana Prompt: MBTI NBA Basketball Card Generator | Curify AI",
-    "content": {
-      "sections": {
-        "what": "This template uses customized Nano Banana prompts to generate collectible basketball card visuals that map MBTI personality types to famous NBA players. The layout resembles premium trading cards with metallic typography, illustrated player poses, and personality-driven achievements or traits.",
-        "who": "Suitable for basketball fan communities, NBA social media accounts, sports infographic creators, personality psychology pages, collectible card design experiments, and sports analytics storytellers.",
-        "how": [
-          "Select an NBA player to feature on the card.",
-          "Assign an MBTI personality type that matches their leadership or play style.",
-          "Create a persona title (e.g., 'The King', 'The Magician').",
-          "Add the player’s jersey number and four defining traits or achievements.",
-          "Generate the collectible card with metallic borders, team color palette, and illustrated player pose."
-        ],
-        "prompts": [
-          "Create an MBTI basketball card for Kobe Bryant: ISTP – 'THE MAMBA', jersey number 24, traits Mamba Mentality, 5× NBA Champion, The Assassin, Job's Not Finished.",
-          "Generate an MBTI NBA card for Stephen Curry: ENFP – 'THE MAGICIAN', jersey number 30, traits Range King, 3-Point Legend, Clutch Performer, Team Player.",
-          "Create a Michael Jordan MBTI card: ESTJ – 'THE GOAT', jersey number 23, traits Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
-        ]
-      }
-    }
-  },
   "template-mbti-siliconvalley": {
     "category": "MBTI Tech Founder Visualization Category",
     "description": "Create MBTI visual concepts that map personality types onto iconic Silicon Valley founders and innovators.",
@@ -881,98 +858,120 @@
     }
   },
   "template-sports-battle": {
-  "category": "Sports Infographic Category",
-  "description": "Generate a 4K vertical NBA-style “Player vs Player” comparison poster with stats, visual storytelling, and iconic rivalry design.",
-  "title": "Nano Banana Prompt: NBA Player VS Infographic Generator | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template creates a high-impact NBA player vs player comparison infographic using Nano Banana prompts: featuring dynamic portraits, head-to-head stats, nicknames, and legacy summaries in a bold comic-style layout.",
-      "who": "Suitable for sports content creators, NBA fan pages, social media editors, YouTube thumbnail designers, and anyone creating engaging debate-style sports visuals (GOAT debates, skill comparisons, era clashes).",
-      "how": [
-        "Define the comparison topic clearly (e.g., 'Who changed the game from beyond the arc?' or 'Best clutch shooter?').",
-        "Specify the two players and optionally their iconic teams/eras for visual styling.",
-        "Include key stats categories (3PM, PPG, assists, championships, MVPs, etc.) to structure the comparison grid.",
-        "Add nicknames, signature traits, and short identity tags to strengthen storytelling (e.g., 'The Chef', 'Pure Shooter').",
-        "After generation, verify stat accuracy and visual clarity; if needed, request 'refine stats layout and ensure both sides are balanced without changing style'."
-      ],
-      "prompts": [
-        "Generate an NBA 'Player VS Infographic' for 'WHO CHANGED THE GAME FROM BEYOND THE ARC?' comparing Stephen Curry vs Ray Allen, including dynamic shooting poses, VS center graphic, stats panel (3PM, PPG, championships), nicknames, and legacy tags, neon comic style, 3:4.",
-        "Create a 'GOAT Debate Poster' comparing LeBron James vs Michael Jordan, with full-body portraits, championship and MVP stats grid, iconic nicknames, and contrasting legacy descriptors, high-energy sports infographic layout, 3:4.",
-        "Generate a 'Clutch Shooter Comparison' between Kobe Bryant and Kevin Durant, including dramatic action poses, key performance stats, signature traits, and stylized VS divider, cinematic comic style, 3:4."
-      ]
+    "category": "Sports Infographic Category",
+    "description": "Generate a 4K vertical NBA-style “Player vs Player” comparison poster with stats, visual storytelling, and iconic rivalry design.",
+    "title": "Nano Banana Prompt: NBA Player VS Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a high-impact NBA player vs player comparison infographic using Nano Banana prompts: featuring dynamic portraits, head-to-head stats, nicknames, and legacy summaries in a bold comic-style layout.",
+        "who": "Suitable for sports content creators, NBA fan pages, social media editors, YouTube thumbnail designers, and anyone creating engaging debate-style sports visuals (GOAT debates, skill comparisons, era clashes).",
+        "how": [
+          "Define the comparison topic clearly (e.g., 'Who changed the game from beyond the arc?' or 'Best clutch shooter?').",
+          "Specify the two players and optionally their iconic teams/eras for visual styling.",
+          "Include key stats categories (3PM, PPG, assists, championships, MVPs, etc.) to structure the comparison grid.",
+          "Add nicknames, signature traits, and short identity tags to strengthen storytelling (e.g., 'The Chef', 'Pure Shooter').",
+          "After generation, verify stat accuracy and visual clarity; if needed, request 'refine stats layout and ensure both sides are balanced without changing style'."
+        ],
+        "prompts": [
+          "Generate an NBA 'Player VS Infographic' for 'WHO CHANGED THE GAME FROM BEYOND THE ARC?' comparing Stephen Curry vs Ray Allen, including dynamic shooting poses, VS center graphic, stats panel (3PM, PPG, championships), nicknames, and legacy tags, neon comic style, 3:4.",
+          "Create a 'GOAT Debate Poster' comparing LeBron James vs Michael Jordan, with full-body portraits, championship and MVP stats grid, iconic nicknames, and contrasting legacy descriptors, high-energy sports infographic layout, 3:4.",
+          "Generate a 'Clutch Shooter Comparison' between Kobe Bryant and Kevin Durant, including dramatic action poses, key performance stats, signature traits, and stylized VS divider, cinematic comic style, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-naruto": {
+    "category": "Anime MBTI Infographic Category",
+    "description": "Generate a 4K vertical Naruto-style MBTI character card with personality analysis, cognitive functions, and anime-inspired design.",
+    "title": "Nano Banana Prompt: Naruto MBTI Character Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium Naruto-themed MBTI character card using Nano Banana prompts: combining anime-style character portraits, personality typing, cognitive function breakdowns, and narrative identity summaries in a collectible infographic format.",
+        "who": "Suitable for anime content creators, MBTI enthusiasts, Naruto fan pages, social media designers, and users creating shareable character analysis visuals (personality breakdowns, fandom content, storytelling posts).",
+        "how": [
+          "Specify the Naruto character and their MBTI type (or let the model infer based on personality traits).",
+          "Include key personality traits, backstory elements, and signature abilities to enrich the card.",
+          "Structure the MBTI section with 4 cognitive functions (Fi, Ne, Si, Te, etc.) and short descriptive phrases.",
+          "Add 3–4 trait keywords and 2–3 narrative summary bullets to capture character identity.",
+          "After generation, verify MBTI accuracy and wording clarity; if needed, request 'refine personality descriptions while keeping the same layout and art style'."
+        ],
+        "prompts": [
+          "Generate a 'Naruto MBTI Character Card' for Gaara with INFP personality, including full-body anime portrait with sand effects, MBTI scroll panel (Fi, Ne, Si, Te), trait icons (empathetic, protective, quiet, idealistic), and narrative summary, Naruto anime style, 3:4.",
+          "Create a 'Naruto Personality Card' for Itachi Uchiha with INFJ typing, including clan-themed background, cognitive function breakdown, key traits, and symbolic narrative elements, clean anime infographic layout, 3:4.",
+          "Generate a 'Naruto MBTI Infographic' for Naruto Uzumaki with ENFP personality, featuring dynamic action pose, bright chakra effects, personality traits, cognitive functions, and motivational identity summary, vibrant anime style, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-yellowstone": {
+    "category": "TV Drama MBTI Infographic Category",
+    "description": "Generate a 4K vertical Yellowstone-style MBTI character card with personality analysis, cognitive functions, and rustic western design.",
+    "title": "Nano Banana Prompt: Yellowstone MBTI Character Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium Yellowstone-themed MBTI personality card using Nano Banana prompts: combining western-style character portraits, personality typing, cognitive function breakdowns, and identity-driven storytelling in a cinematic infographic format inspired by ranch life and power dynamics.",
+        "who": "Suitable for Yellowstone fans, TV drama content creators, MBTI enthusiasts, storytelling bloggers, social media designers, and users creating shareable character analysis visuals focused on leadership, family dynamics, and moral conflict.",
+        "how": [
+          "Specify the Yellowstone character and their MBTI type (or let the model infer based on behavior and personality traits).",
+          "Include character role (e.g., ranch patriarch, enforcer, attorney) and key story context to ground the analysis.",
+          "Structure the MBTI section with 4 cognitive functions (Te, Ni, Fi, Se, etc.) and short explanations tied to real character decisions.",
+          "Add 3–4 core traits and an optional Enneagram type to deepen personality interpretation.",
+          "Include a strong identity tagline summarizing the character’s role in power, family, or survival.",
+          "After generation, refine wording for clarity and realism by prompting: 'make the personality analysis more grounded and consistent with the show tone'."
+        ],
+        "prompts": [
+          "Generate a 'Yellowstone MBTI Character Card' for John Dutton with ENTJ personality, including western ranch portrait, MBTI panel (Te, Ni, Se, Fi), Enneagram 8w9, traits (protective, strategic, authoritative, family-oriented), and a legacy-driven identity tagline, rustic western style, 3:4.",
+          "Create a 'Yellowstone Personality Analysis Card' for Beth Dutton with INTJ typing, including sharp business-oriented traits, cognitive function breakdown, Enneagram 8w7, and symbolic western imagery reflecting power and control, clean infographic layout, 3:4.",
+          "Generate a 'Yellowstone MBTI Infographic' for Rip Wheeler with ISTP personality, featuring rugged ranch aesthetic, cognitive functions, core traits (loyal, tough, silent, fearless), and a grounded identity summary, cinematic western style, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-ghibli": {
+    "category": "Anime MBTI Infographic Category",
+    "description": "Generate a 4K vertical Studio Ghibli-style MBTI character card with personality analysis, cognitive functions, whimsical watercolor design, and cinematic storybook storytelling.",
+    "title": "Nano Banana Prompt: Ghibli MBTI Character Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium Studio Ghibli-themed MBTI personality card using Nano Banana prompts: combining hand-drawn watercolor character portraits, MBTI typing, cognitive function breakdowns, key personality traits, and story-driven visual moments in a warm, whimsical infographic format inspired by classic Ghibli films.",
+        "who": "Suitable for Studio Ghibli fans, anime content creators, MBTI enthusiasts, visual storytellers, character analysis bloggers, social media designers, and users creating shareable personality cards focused on identity, growth, emotion, and cinematic worldbuilding.",
+        "how": [
+          "Specify the Ghibli character and their MBTI type, or let the model infer the type from the character's behavior, emotional patterns, and role in the story.",
+          "Include the film title or subtitle to anchor the visual style and environmental motifs, such as forest spirits, bathhouse interiors, moving castles, seaside towns, or magical skies.",
+          "Structure the MBTI section with 4 cognitive functions and add short explanations showing how each function appears in the character's decisions, relationships, and emotional journey.",
+          "Add 3–4 core traits that reflect the character's personality arc, such as gentle, brave, curious, loyal, independent, or mysterious.",
+          "Use a short identity tagline to summarize the character's inner world or narrative role, such as dreamer, protector, wanderer, healer, or reluctant hero.",
+          "After generation, refine consistency and tone by prompting: 'make the personality analysis more emotionally grounded and aligned with the Ghibli film atmosphere'."
+        ],
+        "prompts": [
+          "Generate a 'Ghibli MBTI Character Card' for Chihiro with ISFJ personality, including soft watercolor portrait, Spirited Away-inspired bathhouse motifs, MBTI panel (Si, Fe, Ti, Ne), traits (kind, brave, sincere, growing), and a coming-of-age identity tagline, whimsical storybook infographic, 3:4.",
+          "Create a 'Studio Ghibli Personality Analysis Card' for Howl with ENTP typing, including elegant fantasy portrait, magical moving castle background, cognitive function breakdown, traits (charming, dramatic, smart, mysterious), and a romantic, emotionally layered identity summary, hand-drawn watercolor style, 3:4.",
+          "Generate a 'Ghibli MBTI Infographic' for San with INFJ personality, featuring Princess Mononoke forest imagery, cognitive functions, core traits (brave, fierce, loyal, wild), and a nature-driven identity tagline, cinematic watercolor design, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "MBTI Sports Card Category",
+    "description": "Create collectible-style MBTI basketball cards that combine personality types with legendary NBA players.",
+    "title": "Nano Banana Prompt: MBTI NBA Basketball Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses customized Nano Banana prompts to generate collectible basketball card visuals that map MBTI personality types to famous NBA players. The layout resembles premium trading cards with metallic typography, illustrated player poses, and personality-driven achievements or traits.",
+        "who": "Suitable for basketball fan communities, NBA social media accounts, sports infographic creators, personality psychology pages, collectible card design experiments, and sports analytics storytellers.",
+        "how": [
+          "Select an NBA player to feature on the card.",
+          "Assign an MBTI personality type that matches their leadership or play style.",
+          "Create a persona title (e.g., 'The King', 'The Magician').",
+          "Add the player’s jersey number and four defining traits or achievements.",
+          "Generate the collectible card with metallic borders, team color palette, and illustrated player pose."
+        ],
+        "prompts": [
+          "Create an MBTI basketball card for Kobe Bryant: ISTP – 'THE MAMBA', jersey number 24, traits Mamba Mentality, 5× NBA Champion, The Assassin, Job's Not Finished.",
+          "Generate an MBTI NBA card for Stephen Curry: ENFP – 'THE MAGICIAN', jersey number 30, traits Range King, 3-Point Legend, Clutch Performer, Team Player.",
+          "Create a Michael Jordan MBTI card: ESTJ – 'THE GOAT', jersey number 23, traits Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
+        ]
+      }
     }
   }
-},
-"template-mbti-naruto": {
-  "category": "Anime MBTI Infographic Category",
-  "description": "Generate a 4K vertical Naruto-style MBTI character card with personality analysis, cognitive functions, and anime-inspired design.",
-  "title": "Nano Banana Prompt: Naruto MBTI Character Card Generator | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template creates a premium Naruto-themed MBTI character card using Nano Banana prompts: combining anime-style character portraits, personality typing, cognitive function breakdowns, and narrative identity summaries in a collectible infographic format.",
-      "who": "Suitable for anime content creators, MBTI enthusiasts, Naruto fan pages, social media designers, and users creating shareable character analysis visuals (personality breakdowns, fandom content, storytelling posts).",
-      "how": [
-        "Specify the Naruto character and their MBTI type (or let the model infer based on personality traits).",
-        "Include key personality traits, backstory elements, and signature abilities to enrich the card.",
-        "Structure the MBTI section with 4 cognitive functions (Fi, Ne, Si, Te, etc.) and short descriptive phrases.",
-        "Add 3–4 trait keywords and 2–3 narrative summary bullets to capture character identity.",
-        "After generation, verify MBTI accuracy and wording clarity; if needed, request 'refine personality descriptions while keeping the same layout and art style'."
-      ],
-      "prompts": [
-        "Generate a 'Naruto MBTI Character Card' for Gaara with INFP personality, including full-body anime portrait with sand effects, MBTI scroll panel (Fi, Ne, Si, Te), trait icons (empathetic, protective, quiet, idealistic), and narrative summary, Naruto anime style, 3:4.",
-        "Create a 'Naruto Personality Card' for Itachi Uchiha with INFJ typing, including clan-themed background, cognitive function breakdown, key traits, and symbolic narrative elements, clean anime infographic layout, 3:4.",
-        "Generate a 'Naruto MBTI Infographic' for Naruto Uzumaki with ENFP personality, featuring dynamic action pose, bright chakra effects, personality traits, cognitive functions, and motivational identity summary, vibrant anime style, 3:4."
-      ]
-    }
-  }
-},
-"template-mbti-yellowstone": {
-  "category": "TV Drama MBTI Infographic Category",
-  "description": "Generate a 4K vertical Yellowstone-style MBTI character card with personality analysis, cognitive functions, and rustic western design.",
-  "title": "Nano Banana Prompt: Yellowstone MBTI Character Card Generator | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template creates a premium Yellowstone-themed MBTI personality card using Nano Banana prompts: combining western-style character portraits, personality typing, cognitive function breakdowns, and identity-driven storytelling in a cinematic infographic format inspired by ranch life and power dynamics.",      
-      "who": "Suitable for Yellowstone fans, TV drama content creators, MBTI enthusiasts, storytelling bloggers, social media designers, and users creating shareable character analysis visuals focused on leadership, family dynamics, and moral conflict.",      
-      "how": [
-        "Specify the Yellowstone character and their MBTI type (or let the model infer based on behavior and personality traits).",
-        "Include character role (e.g., ranch patriarch, enforcer, attorney) and key story context to ground the analysis.",
-        "Structure the MBTI section with 4 cognitive functions (Te, Ni, Fi, Se, etc.) and short explanations tied to real character decisions.",
-        "Add 3–4 core traits and an optional Enneagram type to deepen personality interpretation.",
-        "Include a strong identity tagline summarizing the character’s role in power, family, or survival.",
-        "After generation, refine wording for clarity and realism by prompting: 'make the personality analysis more grounded and consistent with the show tone'."
-      ],
-      
-      "prompts": [
-        "Generate a 'Yellowstone MBTI Character Card' for John Dutton with ENTJ personality, including western ranch portrait, MBTI panel (Te, Ni, Se, Fi), Enneagram 8w9, traits (protective, strategic, authoritative, family-oriented), and a legacy-driven identity tagline, rustic western style, 3:4.",        
-        "Create a 'Yellowstone Personality Analysis Card' for Beth Dutton with INTJ typing, including sharp business-oriented traits, cognitive function breakdown, Enneagram 8w7, and symbolic western imagery reflecting power and control, clean infographic layout, 3:4.",        
-        "Generate a 'Yellowstone MBTI Infographic' for Rip Wheeler with ISTP personality, featuring rugged ranch aesthetic, cognitive functions, core traits (loyal, tough, silent, fearless), and a grounded identity summary, cinematic western style, 3:4."
-      ]
-    }
-  }
-},
-"template-mbti-ghibli": {
-  "category": "Anime MBTI Infographic Category",
-  "description": "Generate a 4K vertical Studio Ghibli-style MBTI character card with personality analysis, cognitive functions, whimsical watercolor design, and cinematic storybook storytelling.",
-  "title": "Nano Banana Prompt: Ghibli MBTI Character Card Generator | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template creates a premium Studio Ghibli-themed MBTI personality card using Nano Banana prompts: combining hand-drawn watercolor character portraits, MBTI typing, cognitive function breakdowns, key personality traits, and story-driven visual moments in a warm, whimsical infographic format inspired by classic Ghibli films.",
-      "who": "Suitable for Studio Ghibli fans, anime content creators, MBTI enthusiasts, visual storytellers, character analysis bloggers, social media designers, and users creating shareable personality cards focused on identity, growth, emotion, and cinematic worldbuilding.",
-      "how": [
-        "Specify the Ghibli character and their MBTI type, or let the model infer the type from the character's behavior, emotional patterns, and role in the story.",
-        "Include the film title or subtitle to anchor the visual style and environmental motifs, such as forest spirits, bathhouse interiors, moving castles, seaside towns, or magical skies.",
-        "Structure the MBTI section with 4 cognitive functions and add short explanations showing how each function appears in the character's decisions, relationships, and emotional journey.",
-        "Add 3–4 core traits that reflect the character's personality arc, such as gentle, brave, curious, loyal, independent, or mysterious.",
-        "Use a short identity tagline to summarize the character's inner world or narrative role, such as dreamer, protector, wanderer, healer, or reluctant hero.",
-        "After generation, refine consistency and tone by prompting: 'make the personality analysis more emotionally grounded and aligned with the Ghibli film atmosphere'."
-      ],
-      "prompts": [
-        "Generate a 'Ghibli MBTI Character Card' for Chihiro with ISFJ personality, including soft watercolor portrait, Spirited Away-inspired bathhouse motifs, MBTI panel (Si, Fe, Ti, Ne), traits (kind, brave, sincere, growing), and a coming-of-age identity tagline, whimsical storybook infographic, 3:4.",
-        "Create a 'Studio Ghibli Personality Analysis Card' for Howl with ENTP typing, including elegant fantasy portrait, magical moving castle background, cognitive function breakdown, traits (charming, dramatic, smart, mysterious), and a romantic, emotionally layered identity summary, hand-drawn watercolor style, 3:4.",
-        "Generate a 'Ghibli MBTI Infographic' for San with INFJ personality, featuring Princess Mononoke forest imagery, cognitive functions, core traits (brave, fierce, loyal, wild), and a nature-driven identity tagline, cinematic watercolor design, 3:4."
-      ]
-    }
-  }
-}
 }

@@ -834,29 +834,6 @@
       }
     }
   },
-  "template-mbti-nba": {
-    "category": "MBTI Sportkarten-Kategorie",
-    "description": "Erstellen Sie sammelbare MBTI-Basketballkarten, die Persönlichkeitstypen mit legendären NBA-Spielern kombinieren.",
-    "title": "Nano Banana Prompt: MBTI NBA Basketballkarten-Generator | Curify AI",
-    "content": {
-      "sections": {
-        "what": "Diese Vorlage verwendet angepasste Nano Banana-Prompts, um sammelbare Basketballkarten-Visuals zu generieren, die MBTI-Persönlichkeitstypen mit berühmten NBA-Spielern abbilden. Das Layout ähnelt hochwertigen Sammelkarten mit metallischer Typografie, illustrierten Spielerposen und persönlichkeitsgetriebenen Errungenschaften oder Eigenschaften.",
-        "who": "Geeignet für Basketball-Fangemeinschaften, NBA-Social-Media-Konten, Sport-Infografik-Ersteller, Seiten zur Persönlichkeitspsychologie, Experimente im Kartendesign und Geschichtenerzähler im Sportanalytikbereich.",
-        "how": [
-          "Wählen Sie einen NBA-Spieler aus, der auf der Karte abgebildet werden soll.",
-          "Weisen Sie einen MBTI-Persönlichkeitstyp zu, der zu ihrem Führungs- oder Spielstil passt.",
-          "Erstellen Sie einen Persona-Titel (z. B. 'Der König', 'Der Magier').",
-          "Fügen Sie die Trikotnummer des Spielers und vier definierende Eigenschaften oder Errungenschaften hinzu.",
-          "Generieren Sie die Sammelkarte mit metallischen Rändern, Teamfarbpalette und illustrierter Spielerpose."
-        ],
-        "prompts": [
-          "Erstellen Sie eine MBTI-Basketballkarte für Kobe Bryant: ISTP – 'THE MAMBA', Trikotnummer 24, Eigenschaften Mamba Mentality, 5× NBA Champion, The Assassin, Job's Not Finished.",
-          "Generieren Sie eine MBTI NBA-Karte für Stephen Curry: ENFP – 'THE MAGICIAN', Trikotnummer 30, Eigenschaften Range King, 3-Point Legend, Clutch Performer, Team Player.",
-          "Erstellen Sie eine Michael Jordan MBTI-Karte: ESTJ – 'THE GOAT', Trikotnummer 23, Eigenschaften Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
-        ]
-      }
-    }
-  },
   "template-mbti-siliconvalley": {
     "category": "MBTI Tech-Gründer-Visualisierungskategorie",
     "description": "Erstellen Sie MBTI-Visuelle Konzepte, die Persönlichkeitstypen auf ikonische Silicon Valley-Gründer und Innovatoren abbilden.",
@@ -970,6 +947,29 @@
           "Generiere eine 'Ghibli MBTI Charakterkarte' für Chihiro mit ISFJ-Persönlichkeit, einschließlich sanftem Aquarellporträt, von Spirited Away inspirierten Badehausmotiven, MBTI-Panel (Si, Fe, Ti, Ne), Merkmalen (freundlich, mutig, aufrichtig, wachsend) und einem Coming-of-Age-Identitätsslogan, verspielte Geschichtenerzähl-Infografik, 3:4.",
           "Erstelle eine 'Studio Ghibli Persönlichkeitsanalyse-Karte' für Howl mit ENTP-Typisierung, einschließlich elegantem Fantasieporträt, magischem beweglichem Schloss-Hintergrund, Aufschlüsselung der kognitiven Funktionen, Merkmalen (charmant, dramatisch, intelligent, geheimnisvoll) und einer romantischen, emotionalen Zusammenfassung der Identität, handgezeichnetem Aquarellstil, 3:4.",
           "Generiere eine 'Ghibli MBTI Infografik' für San mit INFJ-Persönlichkeit, mit Bildern aus dem Prinzessin Mononoke-Wald, kognitiven Funktionen, zentralen Merkmalen (mutig, wild, loyal, ungezähmt) und einem naturgetriebenen Identitätsslogan, filmischem Aquarell-Design, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "MBTI Sportkarten-Kategorie",
+    "description": "Erstellen Sie sammelbare MBTI-Basketballkarten, die Persönlichkeitstypen mit legendären NBA-Spielern kombinieren.",
+    "title": "Nano Banana Prompt: MBTI NBA Basketballkarten-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet angepasste Nano Banana-Prompts, um sammelbare Basketballkarten-Visuals zu generieren, die MBTI-Persönlichkeitstypen mit berühmten NBA-Spielern abbilden. Das Layout ähnelt hochwertigen Sammelkarten mit metallischer Typografie, illustrierten Spielerposen und persönlichkeitsgetriebenen Errungenschaften oder Eigenschaften.",
+        "who": "Geeignet für Basketball-Fangemeinschaften, NBA-Social-Media-Konten, Sport-Infografik-Ersteller, Seiten zur Persönlichkeitspsychologie, Experimente im Kartendesign und Geschichtenerzähler im Sportanalytikbereich.",
+        "how": [
+          "Wählen Sie einen NBA-Spieler aus, der auf der Karte abgebildet werden soll.",
+          "Weisen Sie einen MBTI-Persönlichkeitstyp zu, der zu ihrem Führungs- oder Spielstil passt.",
+          "Erstellen Sie einen Persona-Titel (z. B. 'Der König', 'Der Magier').",
+          "Fügen Sie die Trikotnummer des Spielers und vier definierende Eigenschaften oder Errungenschaften hinzu.",
+          "Generieren Sie die Sammelkarte mit metallischen Rändern, Teamfarbpalette und illustrierter Spielerpose."
+        ],
+        "prompts": [
+          "Erstellen Sie eine MBTI-Basketballkarte für Kobe Bryant: ISTP – 'THE MAMBA', Trikotnummer 24, Eigenschaften Mamba Mentality, 5× NBA Champion, The Assassin, Job's Not Finished.",
+          "Generieren Sie eine MBTI NBA-Karte für Stephen Curry: ENFP – 'THE MAGICIAN', Trikotnummer 30, Eigenschaften Range King, 3-Point Legend, Clutch Performer, Team Player.",
+          "Erstellen Sie eine Michael Jordan MBTI-Karte: ESTJ – 'THE GOAT', Trikotnummer 23, Eigenschaften Competitive Beast, 6× NBA Champion, Air Jordan, Global Icon."
         ]
       }
     }
