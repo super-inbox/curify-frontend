@@ -834,29 +834,6 @@
       }
     }
   },
-  "template-mbti-nba": {
-    "category": "MBTI Spor Kartı Kategorisi",
-    "description": "Kişilik tiplerini efsanevi NBA oyuncuları ile birleştiren koleksiyon tarzı MBTI basketbol kartları oluşturun.",
-    "title": "Nano Banana Prompt: MBTI NBA Basketbol Kartı Üretici | Curify AI",
-    "content": {
-      "sections": {
-        "what": "Bu şablon, ünlü NBA oyuncularına MBTI kişilik tiplerini haritalayan koleksiyonluk basketbol kartı görselleri oluşturmak için özelleştirilmiş Nano Banana istemlerini kullanır. Düzen, metalik tipografi, illüstrasyonlu oyuncu pozları ve kişilik odaklı başarılar veya özelliklerle premium ticaret kartlarını andırır.",
-        "who": "Basketbol hayran toplulukları, NBA sosyal medya hesapları, spor infografik yaratıcıları, kişilik psikolojisi sayfaları, koleksiyon kartı tasarım deneyleri ve spor analitiği hikaye anlatıcıları için uygundur.",
-        "how": [
-          "Kartta yer alacak bir NBA oyuncusu seçin.",
-          "Liderlik veya oyun tarzına uyan bir MBTI kişilik tipi atayın.",
-          "Bir persona başlığı oluşturun (örn. 'Kral', 'Büyücü').",
-          "Oyuncunun forma numarasını ve dört tanımlayıcı özellik veya başarı ekleyin.",
-          "Metal çerçeveler, takım renk paleti ve illüstrasyonlu oyuncu pozuyla koleksiyon kartını oluşturun."
-        ],
-        "prompts": [
-          "Kobe Bryant için bir MBTI basketbol kartı oluşturun: ISTP – 'THE MAMBA', forma numarası 24, Mamba Mentality, 5× NBA Şampiyonu, The Assassin, Job's Not Finished özellikleri ile.",
-          "Stephen Curry için bir MBTI NBA kartı oluşturun: ENFP – 'THE MAGICIAN', forma numarası 30, Range King, 3-Point Legend, Clutch Performer, Team Player özellikleri ile.",
-          "Michael Jordan için bir MBTI kartı oluşturun: ESTJ – 'THE GOAT', forma numarası 23, Competitive Beast, 6× NBA Şampiyonu, Air Jordan, Global Icon özellikleri ile."
-        ]
-      }
-    }
-  },
   "template-mbti-siliconvalley": {
     "category": "MBTI Teknoloji Kurucusu Görselleştirme Kategorisi",
     "description": "Kişilik tiplerini ikonik Silicon Valley kurucuları ve yenilikçileri ile haritalayan MBTI görsel kavramları oluşturun.",
@@ -970,6 +947,29 @@
           "Chihiro için ISFJ kişiliği ile 'Ghibli MBTI Karakter Kartı' oluşturun; yumuşak suluboya portre, Spirited Away'den ilham alan hamam motifleri, MBTI paneli (Si, Fe, Ti, Ne), özellikler (nazik, cesur, samimi, gelişen) ve bir ergenlik kimliği sloganı, fantastik masal infografiği, 3:4.",
           "Howl için ENTP türlendirmesi ile 'Studio Ghibli Kişilik Analiz Kartı' oluşturun; şık fantezi portresi, sihirli hareketli kale arka planı, bilişsel işlev analizi, özellikler (büyüleyici, dramatik, zeki, gizemli) ve romantik, duygusal katmanlı bir kimlik özeti, el çizimi suluboya tarzı, 3:4.",
           "San için INFJ kişiliği ile 'Ghibli MBTI İnfografiği' oluşturun; Prenses Mononoke orman görüntüleri, bilişsel işlevler, ana özellikler (cesur, sert, sadık, vahşi) ve doğa odaklı bir kimlik sloganı, sinematik suluboya tasarımı, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "MBTI Spor Kartı Kategorisi",
+    "description": "Kişilik tiplerini efsanevi NBA oyuncuları ile birleştiren koleksiyon tarzı MBTI basketbol kartları oluşturun.",
+    "title": "Nano Banana Prompt: MBTI NBA Basketbol Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, ünlü NBA oyuncularına MBTI kişilik tiplerini haritalayan koleksiyonluk basketbol kartı görselleri oluşturmak için özelleştirilmiş Nano Banana istemlerini kullanır. Düzen, metalik tipografi, illüstrasyonlu oyuncu pozları ve kişilik odaklı başarılar veya özelliklerle premium ticaret kartlarını andırır.",
+        "who": "Basketbol hayran toplulukları, NBA sosyal medya hesapları, spor infografik yaratıcıları, kişilik psikolojisi sayfaları, koleksiyon kartı tasarım deneyleri ve spor analitiği hikaye anlatıcıları için uygundur.",
+        "how": [
+          "Kartta yer alacak bir NBA oyuncusu seçin.",
+          "Liderlik veya oyun tarzına uyan bir MBTI kişilik tipi atayın.",
+          "Bir persona başlığı oluşturun (örn. 'Kral', 'Büyücü').",
+          "Oyuncunun forma numarasını ve dört tanımlayıcı özellik veya başarı ekleyin.",
+          "Metal çerçeveler, takım renk paleti ve illüstrasyonlu oyuncu pozuyla koleksiyon kartını oluşturun."
+        ],
+        "prompts": [
+          "Kobe Bryant için bir MBTI basketbol kartı oluşturun: ISTP – 'THE MAMBA', forma numarası 24, Mamba Mentality, 5× NBA Şampiyonu, The Assassin, Job's Not Finished özellikleri ile.",
+          "Stephen Curry için bir MBTI NBA kartı oluşturun: ENFP – 'THE MAGICIAN', forma numarası 30, Range King, 3-Point Legend, Clutch Performer, Team Player özellikleri ile.",
+          "Michael Jordan için bir MBTI kartı oluşturun: ESTJ – 'THE GOAT', forma numarası 23, Competitive Beast, 6× NBA Şampiyonu, Air Jordan, Global Icon özellikleri ile."
         ]
       }
     }

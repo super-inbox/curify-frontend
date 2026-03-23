@@ -2812,7 +2812,7 @@
     "topics": "psychology"
   },
   {
-    "id": "template-mbti-nba",
+    "id": "template-mbti-sports",
     "locales": {
       "en": {
         "base_prompt": "（NBA Card Designer）You are a top-tier NBA card designer, specialized in MBTI-themed basketball star collectible cards. According to the user-specified [{player_name}], create a vertical 3:4 premium collectible card for {player_name}, matching the style of the reference images. Card layout: - Top: Large ornate gold/metallic font displaying the MBTI type {mbti_type} - Subtitle: Elegant script font for the persona title {persona_title} - Center: Bold serif font for {player_name}, alongside the player in their iconic jersey (number {jersey_number}) in a shooting pose, rendered in detailed comic book illustration style - Left side: 4 bullet points (with basketball icons) listing key traits/achievements: {trait_1}, {trait_2}, {trait_3}, {trait_4} - Bottom: Thematic decorative elements matching the player/MBTI persona (e.g., championship rings, mascot, symbolic creature, trophies) - Frame: Metallic silver border with subtle gradient background (team color-themed), swirling smoke/brush stroke textures - Style: High-detail comic illustration, rich shading, metallic gold/bronze text effects, professional collectible card aesthetic, no extra clutter, Curify watermark at bottom right. Vertical 3:4 format, ultra-high definition 4K, sharp focus, cohesive color palette matching the player's team, direct image generation. The player is [{player_name}].",
