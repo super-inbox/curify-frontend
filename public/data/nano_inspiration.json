@@ -12051,5 +12051,363 @@
         "title": "park"
       }
     }
+  },
+  {
+    "id": "template-costume-han-dynasty",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-han-dynasty.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-han-dynasty-prev.jpg"
+    },
+    "params": {
+      "costume_style": "han dynasty"
+    },
+    "locales": {
+      "zh": {
+        "title": "han dynasty"
+      }
+    }
+  },
+  {
+    "id": "template-costume-sui-dynasty",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-sui-dynasty.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-sui-dynasty-prev.jpg"
+    },
+    "params": {
+      "costume_style": "sui dynasty"
+    },
+    "locales": {
+      "zh": {
+        "title": "sui dynasty"
+      }
+    }
+  },
+  {
+    "id": "template-costume-wei-jin-dynasties",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-wei-jin-dynasties.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-wei-jin-dynasties-prev.jpg"
+    },
+    "params": {
+      "costume_style": "wei jin dynasties"
+    },
+    "locales": {
+      "zh": {
+        "title": "wei jin dynasties"
+      }
+    }
+  },
+  {
+    "id": "template-costume-yuan-dynasty",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-yuan-dynasty.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-yuan-dynasty-prev.jpg"
+    },
+    "params": {
+      "costume_style": "yuan dynasty"
+    },
+    "locales": {
+      "zh": {
+        "title": "yuan dynasty"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-calcifer",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-calcifer.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-calcifer-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "calcifer"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-kaonashi",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-kaonashi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-kaonashi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "kaonashi"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-pazu",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-pazu.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-pazu-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "pazu"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-porco-rosso",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-porco-rosso.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-porco-rosso-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "porco rosso"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-sheeta",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-sheeta.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-sheeta-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "sheeta"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-sosuke",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-sosuke.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-sosuke-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "sosuke"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-ghibli-yubaba",
+    "template_id": "template-mbti-ghibli",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-ghibli-yubaba.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-ghibli-yubaba-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "yubaba"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-colossus",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-colossus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-colossus-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "colossus"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-human-torch",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-human-torch.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-human-torch-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "human torch"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-namor",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-namor.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-namor-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "namor"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-nova",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-nova.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-nova-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "nova"
+      }
+    }
+  },
+  {
+    "id": "template-travel-dubai",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-dubai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-dubai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "dubai"
+      }
+    }
+  },
+  {
+    "id": "template-travel-iceland",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-iceland.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-iceland-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "iceland"
+      }
+    }
+  },
+  {
+    "id": "template-travel-indonesia",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-indonesia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-indonesia-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "indonesia"
+      }
+    }
+  },
+  {
+    "id": "template-travel-macau",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-macau.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-macau-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "macau"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-bathroom",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-bathroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-bathroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "bathroom"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-bedroom",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-bedroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-bedroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "bedroom"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-farm",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-farm.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-farm-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "farm"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-kitchen",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-kitchen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-kitchen-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "kitchen"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-restaurant",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-restaurant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-restaurant-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "restaurant"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-zoo",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-zoo.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zoo-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "zoo"
+      }
+    }
   }
 ]
