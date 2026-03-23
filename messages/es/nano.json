@@ -834,29 +834,6 @@
       }
     }
   },
-  "template-mbti-nba": {
-    "category": "Categoría de Tarjetas Deportivas MBTI",
-    "description": "Crea tarjetas de baloncesto MBTI de estilo coleccionable que combinan tipos de personalidad con jugadores legendarios de la NBA.",
-    "title": "Nano Banana Prompt: Generador de Tarjetas de Baloncesto MBTI NBA | Curify AI",
-    "content": {
-      "sections": {
-        "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para generar visuales de tarjetas de baloncesto coleccionables que mapean tipos de personalidad MBTI a jugadores famosos de la NBA. El diseño se asemeja a tarjetas de intercambio premium con tipografía metálica, poses ilustradas de jugadores y logros o rasgos impulsados por la personalidad.",
-        "who": "Adecuado para comunidades de fans del baloncesto, cuentas de redes sociales de la NBA, creadores de infografías deportivas, páginas de psicología de personalidad, experimentos de diseño de tarjetas coleccionables y narradores de análisis deportivos.",
-        "how": [
-          "Selecciona un jugador de la NBA para presentar en la tarjeta.",
-          "Asigna un tipo de personalidad MBTI que coincida con su estilo de liderazgo o juego.",
-          "Crea un título de persona (por ejemplo, 'El Rey', 'El Mago').",
-          "Agrega el número de camiseta del jugador y cuatro rasgos o logros definitorios.",
-          "Genera la tarjeta coleccionable con bordes metálicos, paleta de colores del equipo y pose ilustrada del jugador."
-        ],
-        "prompts": [
-          "Crea una tarjeta de baloncesto MBTI para Kobe Bryant: ISTP – 'LA MAMBA', número de camiseta 24, rasgos Mentalidad Mamba, 5× Campeón de la NBA, El Asesino, Trabajo No Terminado.",
-          "Genera una tarjeta MBTI NBA para Stephen Curry: ENFP – 'EL MAGO', número de camiseta 30, rasgos Rey del Rango, Leyenda de 3 Puntos, Actuador Clutch, Jugador de Equipo.",
-          "Crea una tarjeta MBTI de Michael Jordan: ESTJ – 'EL GOAT', número de camiseta 23, rasgos Bestia Competitiva, 6× Campeón de la NBA, Air Jordan, Ícono Global."
-        ]
-      }
-    }
-  },
   "template-mbti-siliconvalley": {
     "category": "Categoría de Visualización de Fundadores Tecnológicos MBTI",
     "description": "Crea conceptos visuales MBTI que mapean tipos de personalidad en fundadores e innovadores icónicos de Silicon Valley.",
@@ -922,6 +899,77 @@
           "Genera una 'Tarjeta de Personaje MBTI de Naruto' para Gaara con personalidad INFP, incluyendo retrato de cuerpo completo estilo anime con efectos de arena, panel de pergamino MBTI (Fi, Ne, Si, Te), íconos de rasgos (empático, protector, callado, idealista) y resumen narrativo, estilo anime de Naruto, 3:4.",
           "Crea una 'Tarjeta de Personalidad de Naruto' para Itachi Uchiha con tipificación INFJ, incluyendo fondo temático del clan, desglose de funciones cognitivas, rasgos clave y elementos narrativos simbólicos, diseño limpio de infografía anime, 3:4.",
           "Genera una 'Infografía MBTI de Naruto' para Naruto Uzumaki con personalidad ENFP, presentando pose de acción dinámica, efectos de chakra brillantes, rasgos de personalidad, funciones cognitivas y resumen de identidad motivacional, estilo anime vibrante, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-yellowstone": {
+    "category": "Categoría de Infografía MBTI de Drama TV Yellowstone",
+    "description": "Genera una tarjeta de personaje MBTI vertical en estilo Yellowstone en 4K con análisis de personalidad, funciones cognitivas y diseño rústico del oeste.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Personaje MBTI Yellowstone | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una tarjeta de personalidad MBTI temática de Yellowstone premium utilizando los prompts de Nano Banana: combinando retratos de personajes al estilo del oeste, tipificación de personalidad, desgloses de funciones cognitivas y narración impulsada por la identidad en un formato infográfico cinematográfico inspirado en la vida de rancho y dinámicas de poder.",
+        "who": "Adecuado para fanáticos de Yellowstone, creadores de contenido de drama TV, entusiastas del MBTI, bloggers de narración, diseñadores de redes sociales y usuarios que crean visuales de análisis de personajes compartibles centrados en liderazgo, dinámicas familiares y conflictos morales.",
+        "how": [
+          "Especifica el personaje de Yellowstone y su tipo MBTI (o deja que el modelo infiera según el comportamiento y rasgos de personalidad).",
+          "Incluye el rol del personaje (por ejemplo, patriarca del rancho, ejecutor, abogado) y el contexto clave de la historia para fundamentar el análisis.",
+          "Estructura la sección MBTI con 4 funciones cognitivas (Te, Ni, Fi, Se, etc.) y breves explicaciones vinculadas a decisiones reales del personaje.",
+          "Agrega de 3 a 4 rasgos centrales y un tipo de Eneagrama opcional para profundizar en la interpretación de la personalidad.",
+          "Incluye un eslogan de identidad fuerte que resuma el papel del personaje en el poder, la familia o la supervivencia.",
+          "Después de la generación, refina la redacción para mayor claridad y realismo pidiendo: 'haz que el análisis de personalidad sea más fundamentado y consistente con el tono del programa'."
+        ],
+        "prompts": [
+          "Genera una 'Tarjeta de Personaje MBTI de Yellowstone' para John Dutton con personalidad ENTJ, incluyendo retrato de rancho del oeste, panel MBTI (Te, Ni, Se, Fi), Eneagrama 8w9, rasgos (protector, estratégico, autoritario, orientado a la familia) y un eslogan de identidad impulsado por el legado, estilo rústico del oeste, 3:4.",
+          "Crea una 'Tarjeta de Análisis de Personalidad de Yellowstone' para Beth Dutton con tipificación INTJ, incluyendo rasgos agudos orientados a los negocios, desglose de funciones cognitivas, Eneagrama 8w7, e imágenes simbólicas del oeste que reflejan poder y control, diseño infográfico limpio, 3:4.",
+          "Genera una 'Infografía MBTI de Yellowstone' para Rip Wheeler con personalidad ISTP, presentando una estética de rancho robusta, funciones cognitivas, rasgos centrales (leal, duro, silencioso, valiente) y un resumen de identidad fundamentado, estilo western cinematográfico, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-ghibli": {
+    "category": "Categoría de Infografía MBTI de Anime",
+    "description": "Genera una tarjeta de personaje MBTI al estilo Studio Ghibli en 4K vertical con análisis de personalidad, funciones cognitivas, diseño de acuarela caprichoso y narración cinematográfica.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Personaje MBTI de Ghibli | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una tarjeta de personalidad MBTI premium con temática de Studio Ghibli utilizando los prompts de Nano Banana: combinando retratos de personajes en acuarela dibujados a mano, tipificación MBTI, desglose de funciones cognitivas, rasgos de personalidad clave y momentos visuales narrativos en un formato infográfico cálido y caprichoso inspirado en las películas clásicas de Ghibli.",
+        "who": "Adecuado para fanáticos de Studio Ghibli, creadores de contenido de anime, entusiastas del MBTI, narradores visuales, bloggers de análisis de personajes, diseñadores de redes sociales y usuarios que crean tarjetas de personalidad compartibles centradas en la identidad, el crecimiento, la emoción y la construcción de mundos cinematográficos.",
+        "how": [
+          "Especifica el personaje de Ghibli y su tipo MBTI, o deja que el modelo infiera el tipo a partir del comportamiento del personaje, patrones emocionales y su papel en la historia.",
+          "Incluye el título de la película o subtítulo para anclar el estilo visual y los motivos ambientales, como espíritus del bosque, interiores de baños, castillos en movimiento, pueblos costeros o cielos mágicos.",
+          "Estructura la sección MBTI con 4 funciones cognitivas y añade breves explicaciones que muestren cómo cada función aparece en las decisiones, relaciones y viaje emocional del personaje.",
+          "Añade de 3 a 4 rasgos clave que reflejen el arco de personalidad del personaje, como gentil, valiente, curioso, leal, independiente o misterioso.",
+          "Utiliza un breve eslogan de identidad para resumir el mundo interior o el papel narrativo del personaje, como soñador, protector, errante, sanador o héroe reacio.",
+          "Después de la generación, refina la consistencia y el tono pidiendo: 'haz que el análisis de personalidad sea más emocionalmente fundamentado y alineado con la atmósfera de la película de Ghibli'."
+        ],
+        "prompts": [
+          "Genera una 'Tarjeta de Personaje MBTI de Ghibli' para Chihiro con personalidad ISFJ, incluyendo retrato en acuarela suave, motivos de baño inspirados en Spirited Away, panel MBTI (Si, Fe, Ti, Ne), rasgos (amable, valiente, sincera, en crecimiento) y un eslogan de identidad de crecimiento personal, infografía caprichosa de cuento, 3:4.",
+          "Crea una 'Tarjeta de Análisis de Personalidad de Studio Ghibli' para Howl con tipificación ENTP, incluyendo retrato de fantasía elegante, fondo de castillo en movimiento mágico, desglose de funciones cognitivas, rasgos (encantador, dramático, inteligente, misterioso) y un resumen de identidad romántico y emocionalmente profundo, estilo de acuarela dibujada a mano, 3:4.",
+          "Genera una 'Infografía MBTI de Ghibli' para San con personalidad INFJ, presentando imágenes del bosque de Princesa Mononoke, funciones cognitivas, rasgos clave (valiente, feroz, leal, salvaje) y un eslogan de identidad impulsado por la naturaleza, diseño cinematográfico en acuarela, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "Categoría de Tarjetas Deportivas MBTI",
+    "description": "Crea tarjetas de baloncesto MBTI de estilo coleccionable que combinan tipos de personalidad con jugadores legendarios de la NBA.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Baloncesto MBTI NBA | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para generar visuales de tarjetas de baloncesto coleccionables que mapean tipos de personalidad MBTI a jugadores famosos de la NBA. El diseño se asemeja a tarjetas de intercambio premium con tipografía metálica, poses ilustradas de jugadores y logros o rasgos impulsados por la personalidad.",
+        "who": "Adecuado para comunidades de fans del baloncesto, cuentas de redes sociales de la NBA, creadores de infografías deportivas, páginas de psicología de personalidad, experimentos de diseño de tarjetas coleccionables y narradores de análisis deportivos.",
+        "how": [
+          "Selecciona un jugador de la NBA para presentar en la tarjeta.",
+          "Asigna un tipo de personalidad MBTI que coincida con su estilo de liderazgo o juego.",
+          "Crea un título de persona (por ejemplo, 'El Rey', 'El Mago').",
+          "Agrega el número de camiseta del jugador y cuatro rasgos o logros definitorios.",
+          "Genera la tarjeta coleccionable con bordes metálicos, paleta de colores del equipo y pose ilustrada del jugador."
+        ],
+        "prompts": [
+          "Crea una tarjeta de baloncesto MBTI para Kobe Bryant: ISTP – 'LA MAMBA', número de camiseta 24, rasgos Mentalidad Mamba, 5× Campeón de la NBA, El Asesino, Trabajo No Terminado.",
+          "Genera una tarjeta MBTI NBA para Stephen Curry: ENFP – 'EL MAGO', número de camiseta 30, rasgos Rey del Rango, Leyenda de 3 Puntos, Actuador Clutch, Jugador de Equipo.",
+          "Crea una tarjeta MBTI de Michael Jordan: ESTJ – 'EL GOAT', número de camiseta 23, rasgos Bestia Competitiva, 6× Campeón de la NBA, Air Jordan, Ícono Global."
         ]
       }
     }

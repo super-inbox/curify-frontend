@@ -834,29 +834,6 @@
       }
     }
   },
-  "template-mbti-nba": {
-    "category": "MBTI Spor Kartı Kategorisi",
-    "description": "Kişilik tiplerini efsanevi NBA oyuncuları ile birleştiren koleksiyon tarzı MBTI basketbol kartları oluşturun.",
-    "title": "Nano Banana Prompt: MBTI NBA Basketbol Kartı Üretici | Curify AI",
-    "content": {
-      "sections": {
-        "what": "Bu şablon, ünlü NBA oyuncularına MBTI kişilik tiplerini haritalayan koleksiyonluk basketbol kartı görselleri oluşturmak için özelleştirilmiş Nano Banana istemlerini kullanır. Düzen, metalik tipografi, illüstrasyonlu oyuncu pozları ve kişilik odaklı başarılar veya özelliklerle premium ticaret kartlarını andırır.",
-        "who": "Basketbol hayran toplulukları, NBA sosyal medya hesapları, spor infografik yaratıcıları, kişilik psikolojisi sayfaları, koleksiyon kartı tasarım deneyleri ve spor analitiği hikaye anlatıcıları için uygundur.",
-        "how": [
-          "Kartta yer alacak bir NBA oyuncusu seçin.",
-          "Liderlik veya oyun tarzına uyan bir MBTI kişilik tipi atayın.",
-          "Bir persona başlığı oluşturun (örn. 'Kral', 'Büyücü').",
-          "Oyuncunun forma numarasını ve dört tanımlayıcı özellik veya başarı ekleyin.",
-          "Metal çerçeveler, takım renk paleti ve illüstrasyonlu oyuncu pozuyla koleksiyon kartını oluşturun."
-        ],
-        "prompts": [
-          "Kobe Bryant için bir MBTI basketbol kartı oluşturun: ISTP – 'THE MAMBA', forma numarası 24, Mamba Mentality, 5× NBA Şampiyonu, The Assassin, Job's Not Finished özellikleri ile.",
-          "Stephen Curry için bir MBTI NBA kartı oluşturun: ENFP – 'THE MAGICIAN', forma numarası 30, Range King, 3-Point Legend, Clutch Performer, Team Player özellikleri ile.",
-          "Michael Jordan için bir MBTI kartı oluşturun: ESTJ – 'THE GOAT', forma numarası 23, Competitive Beast, 6× NBA Şampiyonu, Air Jordan, Global Icon özellikleri ile."
-        ]
-      }
-    }
-  },
   "template-mbti-siliconvalley": {
     "category": "MBTI Teknoloji Kurucusu Görselleştirme Kategorisi",
     "description": "Kişilik tiplerini ikonik Silicon Valley kurucuları ve yenilikçileri ile haritalayan MBTI görsel kavramları oluşturun.",
@@ -922,6 +899,77 @@
           "Gaara için INFP kişiliği ile bir 'Naruto MBTI Karakter Kartı' oluşturun; kum efektleri ile tam vücut anime portresi, MBTI parşömen paneli (Fi, Ne, Si, Te), özellik simgeleri (duygusal, koruyucu, sessiz, idealist) ve anlatı özeti, Naruto anime tarzı, 3:4.",
           "Itachi Uchiha için INFJ tipi ile bir 'Naruto Kişilik Kartı' oluşturun; klan temalı arka plan, bilişsel işlev ayrıntısı, anahtar özellikler ve sembolik anlatı unsurları ile temiz anime infografik düzeni, 3:4.",
           "Naruto Uzumaki için ENFP kişiliği ile bir 'Naruto MBTI İnfografiği' oluşturun; dinamik aksiyon pozu, parlak chakra efektleri, kişilik özellikleri, bilişsel işlevler ve motive edici kimlik özeti, canlı anime tarzı, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-yellowstone": {
+    "category": "TV Drama MBTI İnfografik Kategorisi",
+    "description": "Kişilik analizi, bilişsel fonksiyonlar ve rustik batı tasarımı ile 4K dikey Yellowstone tarzı MBTI karakter kartı oluşturun.",
+    "title": "Nano Banana İsteği: Yellowstone MBTI Karakter Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana isteklerini kullanarak premium bir Yellowstone temalı MBTI kişilik kartı oluşturur: batı tarzı karakter portreleri, kişilik tipleri, bilişsel fonksiyon analizleri ve çiftlik yaşamı ile güç dinamiklerinden ilham alan sinematik infografik formatında kimlik odaklı hikaye anlatımı birleştirir.",
+        "who": "Yellowstone hayranları, TV drama içerik üreticileri, MBTI meraklıları, hikaye anlatımı blog yazarları, sosyal medya tasarımcıları ve liderlik, aile dinamikleri ve ahlaki çatışma üzerine odaklanmış paylaşılabilir karakter analizi görselleri oluşturan kullanıcılar için uygundur.",
+        "how": [
+          "Yellowstone karakterini ve MBTI türünü belirtin (ya da modelin davranış ve kişilik özelliklerine dayanarak çıkarım yapmasına izin verin).",
+          "Analizi temellendirmek için karakter rolünü (örneğin, çiftlik patriği, zorba, avukat) ve ana hikaye bağlamını ekleyin.",
+          "MBTI bölümünü 4 bilişsel fonksiyon (Te, Ni, Fi, Se, vb.) ve gerçek karakter kararlarıyla bağlantılı kısa açıklamalarla yapılandırın.",
+          "Kişilik yorumunu derinleştirmek için 3-4 temel özellik ve isteğe bağlı bir Enneagram türü ekleyin.",
+          "Karakterin güç, aile veya hayatta kalma rolünü özetleyen güçlü bir kimlik sloganı ekleyin.",
+          "Oluşturmadan sonra, 'kişilik analizini daha gerçekçi ve dizi tonuyla tutarlı hale getir' isteğiyle kelimeleri netlik ve gerçekçilik için gözden geçirin."
+        ],
+        "prompts": [
+          "John Dutton için ENTJ kişiliği ile 'Yellowstone MBTI Karakter Kartı' oluşturun, batı çiftliği portresi, MBTI paneli (Te, Ni, Se, Fi), Enneagram 8w9, özellikler (koruyucu, stratejik, otoriter, aile odaklı) ve miras odaklı bir kimlik sloganı, rustik batı tarzı, 3:4 dahil edin.",
+          "Beth Dutton için INTJ tipi ile 'Yellowstone Kişilik Analiz Kartı' oluşturun, keskin iş odaklı özellikler, bilişsel fonksiyon analizi, Enneagram 8w7 ve güç ile kontrolü yansıtan sembolik batı imgeleri, temiz infografik düzen, 3:4 dahil edin.",
+          "Rip Wheeler için ISTP kişiliği ile 'Yellowstone MBTI İnfografiği' oluşturun, sağlam çiftlik estetiği, bilişsel fonksiyonlar, temel özellikler (sadık, sert, sessiz, korkusuz) ve bir kimlik özeti, sinematik batı tarzı, 3:4 dahil edin."
+        ]
+      }
+    }
+  },
+  "template-mbti-ghibli": {
+    "category": "Anime MBTI İnfografik Kategorisi",
+    "description": "Kişilik analizi, bilişsel işlevler, fantastik suluboya tasarımı ve sinematik masal anlatımı ile 4K dikey Studio Ghibli tarzı MBTI karakter kartı oluşturun.",
+    "title": "Nano Banana Prompt: Ghibli MBTI Karakter Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana prompt'ları kullanarak el çizimi suluboya karakter portreleri, MBTI türlendirmesi, bilişsel işlev analizleri, ana kişilik özellikleri ve klasik Ghibli filmlerinden ilham alan sıcak, fantastik bir infografik formatında hikaye odaklı görsel anlar ile bir premium Studio Ghibli temalı MBTI kişilik kartı oluşturur.",
+        "who": "Studio Ghibli hayranları, anime içerik üreticileri, MBTI meraklıları, görsel hikaye anlatıcıları, karakter analizi blog yazarları, sosyal medya tasarımcıları ve kimlik, gelişim, duygu ve sinematik dünya inşasına odaklanmış paylaşılabilir kişilik kartları oluşturan kullanıcılar için uygundur.",
+        "how": [
+          "Ghibli karakterini ve MBTI türünü belirtin veya modelin karakterin davranışlarından, duygusal kalıplarından ve hikayedeki rolünden türü çıkarmasına izin verin.",
+          "Görsel tarzı ve çevresel motifleri bağlamak için film başlığını veya alt başlığını ekleyin; orman ruhları, hamam iç mekanları, hareketli kaleler, deniz kenarı kasabaları veya sihirli gökyüzü gibi.",
+          "MBTI bölümünü 4 bilişsel işlev ile yapılandırın ve her işlevin karakterin kararlarında, ilişkilerinde ve duygusal yolculuğunda nasıl göründüğünü gösteren kısa açıklamalar ekleyin.",
+          "Karakterin kişilik gelişimini yansıtan 3-4 ana özelliği ekleyin; nazik, cesur, meraklı, sadık, bağımsız veya gizemli gibi.",
+          "Karakterin iç dünyasını veya anlatı rolünü özetlemek için kısa bir kimlik sloganı kullanın; hayalperest, koruyucu, gezgin, iyileştirici veya isteksiz kahraman gibi.",
+          "Oluşturmadan sonra, tutarlılığı ve tonu iyileştirmek için 'kişilik analizini daha duygusal olarak temellendirin ve Ghibli film atmosferi ile uyumlu hale getirin' şeklinde bir yönlendirme yapın."
+        ],
+        "prompts": [
+          "Chihiro için ISFJ kişiliği ile 'Ghibli MBTI Karakter Kartı' oluşturun; yumuşak suluboya portre, Spirited Away'den ilham alan hamam motifleri, MBTI paneli (Si, Fe, Ti, Ne), özellikler (nazik, cesur, samimi, gelişen) ve bir ergenlik kimliği sloganı, fantastik masal infografiği, 3:4.",
+          "Howl için ENTP türlendirmesi ile 'Studio Ghibli Kişilik Analiz Kartı' oluşturun; şık fantezi portresi, sihirli hareketli kale arka planı, bilişsel işlev analizi, özellikler (büyüleyici, dramatik, zeki, gizemli) ve romantik, duygusal katmanlı bir kimlik özeti, el çizimi suluboya tarzı, 3:4.",
+          "San için INFJ kişiliği ile 'Ghibli MBTI İnfografiği' oluşturun; Prenses Mononoke orman görüntüleri, bilişsel işlevler, ana özellikler (cesur, sert, sadık, vahşi) ve doğa odaklı bir kimlik sloganı, sinematik suluboya tasarımı, 3:4."
+        ]
+      }
+    }
+  },
+  "template-mbti-nba": {
+    "category": "MBTI Spor Kartı Kategorisi",
+    "description": "Kişilik tiplerini efsanevi NBA oyuncuları ile birleştiren koleksiyon tarzı MBTI basketbol kartları oluşturun.",
+    "title": "Nano Banana Prompt: MBTI NBA Basketbol Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, ünlü NBA oyuncularına MBTI kişilik tiplerini haritalayan koleksiyonluk basketbol kartı görselleri oluşturmak için özelleştirilmiş Nano Banana istemlerini kullanır. Düzen, metalik tipografi, illüstrasyonlu oyuncu pozları ve kişilik odaklı başarılar veya özelliklerle premium ticaret kartlarını andırır.",
+        "who": "Basketbol hayran toplulukları, NBA sosyal medya hesapları, spor infografik yaratıcıları, kişilik psikolojisi sayfaları, koleksiyon kartı tasarım deneyleri ve spor analitiği hikaye anlatıcıları için uygundur.",
+        "how": [
+          "Kartta yer alacak bir NBA oyuncusu seçin.",
+          "Liderlik veya oyun tarzına uyan bir MBTI kişilik tipi atayın.",
+          "Bir persona başlığı oluşturun (örn. 'Kral', 'Büyücü').",
+          "Oyuncunun forma numarasını ve dört tanımlayıcı özellik veya başarı ekleyin.",
+          "Metal çerçeveler, takım renk paleti ve illüstrasyonlu oyuncu pozuyla koleksiyon kartını oluşturun."
+        ],
+        "prompts": [
+          "Kobe Bryant için bir MBTI basketbol kartı oluşturun: ISTP – 'THE MAMBA', forma numarası 24, Mamba Mentality, 5× NBA Şampiyonu, The Assassin, Job's Not Finished özellikleri ile.",
+          "Stephen Curry için bir MBTI NBA kartı oluşturun: ENFP – 'THE MAGICIAN', forma numarası 30, Range King, 3-Point Legend, Clutch Performer, Team Player özellikleri ile.",
+          "Michael Jordan için bir MBTI kartı oluşturun: ESTJ – 'THE GOAT', forma numarası 23, Competitive Beast, 6× NBA Şampiyonu, Air Jordan, Global Icon özellikleri ile."
         ]
       }
     }
