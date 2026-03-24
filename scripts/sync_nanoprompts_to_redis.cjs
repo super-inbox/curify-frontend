@@ -88,8 +88,7 @@ async function main() {
       port: Number(redisPort),
       tls: redisTls,
       connectTimeout: 10000,
-    },
-    username: redisUsername,
+    },    
     password: redisPassword,
   });
 
