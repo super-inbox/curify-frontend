@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import allTopics from "@/public/data/topics.json";
 import { buildTopicHref, getTopicLabel } from "@/lib/locale_utils";
+// import { trackEvent } from "@/lib/analytics";
 
 type TopicRecord = {
   id: string;
@@ -20,7 +21,6 @@ type Props = {
   className?: string;
   showDisabled?: boolean;
   size?: "default" | "small";
-  onTopicClick?: (topicId: string) => void;
 };
 
 const DISABLED_TOPICS = new Set(["gaming", "career"]);
@@ -42,9 +42,9 @@ export default function TopicNavRow({
   className,
   showDisabled = true,
   size = "default",
-  onTopicClick,
 }: Props) {
-  const t = useTranslations();
+  const t = useTranslations("topics");
+
   const sortedTopics = getSortedTopics();
 
   const visibleTopics = topics?.length
@@ -60,8 +60,29 @@ export default function TopicNavRow({
       ? "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
       : "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
 
+  const handleTopicClick = (topicId: string) => {
+    // Replace with your actual analytics call
+    // trackEvent("topic_nav_click", {
+    //   topic_id: topicId,
+    //   locale,
+    //   active_topic: activeTopic ?? null,
+    //   source: "topic_nav_row",
+    // });
+
+    console.log("topic_nav_click", {
+      topic_id: topicId,
+      locale,
+      active_topic: activeTopic ?? null,
+      source: "topic_nav_row",
+    });
+  };
+
   return (
-    <div className={["flex flex-wrap items-center gap-2", className].filter(Boolean).join(" ")}>
+    <div
+      className={["flex flex-wrap items-center gap-2", className]
+        .filter(Boolean)
+        .join(" ")}
+    >
       {visibleTopics.map((topic) => {
         const isDisabled = DISABLED_TOPICS.has(topic.id);
         const isActive = activeTopic === topic.id;
@@ -71,7 +92,7 @@ export default function TopicNavRow({
             ? getTrendingHref(locale)
             : buildTopicHref(locale, topic.id);
 
-        const label = getTopicLabel(topic.id, t);
+        const label = t(`${topic.id}.displayName`);
 
         if (isDisabled && showDisabled) {
           return (
@@ -103,7 +124,7 @@ export default function TopicNavRow({
                 ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
                 : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
             ].join(" ")}
-            onClick={() => onTopicClick?.(topic.id)}
+            onClick={() => handleTopicClick(topic.id)}
           >
             {label}
           </Link>
