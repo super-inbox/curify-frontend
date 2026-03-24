@@ -87,8 +87,7 @@ export default async function InspirationHubPage({
       <main className="mx-auto max-w-6xl px-4 pt-20 pb-10">
         <TopicNavRow
           locale={locale}          
-          activeTopic="trending"
-          onTopicClick={handleTopicClick}
+          activeTopic="trending"          
         />
 
         <header className="mb-8">
