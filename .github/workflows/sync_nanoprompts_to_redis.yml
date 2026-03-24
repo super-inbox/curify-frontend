@@ -1,0 +1,37 @@
+name: Sync Nano Prompts to Redis
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "public/data/nanobanana.json"
+      - "scripts/sync_nanoprompts_to_redis.cjs"
+      - ".github/workflows/sync_nanoprompts_to_redis.yml"
+  workflow_dispatch:
+
+jobs:
+  sync-nanoprompts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync nanoprompts to Redis
+        env:
+          REDIS_HOST: curify-redis.westus2.redis.azure.net
+          REDIS_PORT: 10000
+          REDIS_USERNAME: default
+          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+          REDIS_TLS: true
+        run: npm run redis:sync:nanoprompts
