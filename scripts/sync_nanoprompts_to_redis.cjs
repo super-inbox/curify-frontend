@@ -1,8 +1,8 @@
 const { createClient } = require("redis");
 
 async function main() {
-  const redisHost = process.env.REDIS_HOST || "curify-nano-redis.westus2.redis.azure.net";
-  const redisPort = process.env.REDIS_PORT || "10000";
+  const redisHost = "curify-nano-redis.westus2.redis.azure.net";
+  const redisPort = "10000";
   const redisPassword = process.env.REDIS_PASSWORD;
 
   if (!redisHost || !redisPassword) {
