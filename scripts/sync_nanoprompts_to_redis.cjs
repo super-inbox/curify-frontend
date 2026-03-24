@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { createCluster } = require("redis");
+const { createClient } = require("redis");
 
 const SOURCE_PATH = path.join(process.cwd(), "public", "data", "nanobanana.json");
 
@@ -71,7 +71,8 @@ async function main() {
 
   console.log(`Loaded ${prompts.length} prompts, ${validPrompts.length} valid.`);
 
-  const redisHost = process.env.REDIS_HOST;
+  const redisHost =
+    process.env.REDIS_HOST || "curify-nano-redis.westus2.redis.azure.net";
   const redisPort = process.env.REDIS_PORT || "10000";
   const redisUsername = process.env.REDIS_USERNAME || "default";
   const redisPassword = process.env.REDIS_PASSWORD;
@@ -81,26 +82,31 @@ async function main() {
     throw new Error("Missing Redis config: REDIS_HOST or REDIS_PASSWORD");
   }
 
-  const protocol = redisTls ? "rediss" : "redis";
-  const rootUrl = `${protocol}://${encodeURIComponent(redisUsername)}:${encodeURIComponent(redisPassword)}@${redisHost}:${redisPort}`;
-
-  const client = createCluster({
-    rootNodes: [{ url: rootUrl }],
-    defaults: {
-      socket: {
-        tls: redisTls,
-      },
-      username: redisUsername,
-      password: redisPassword,
+  const client = createClient({
+    socket: {
+      host: redisHost,
+      port: Number(redisPort),
+      tls: redisTls,
+      connectTimeout: 10000,
     },
+    username: redisUsername,
+    password: redisPassword,
   });
 
   client.on("error", (err) => {
-    console.error("Redis Cluster Error:", err);
+    console.error("Redis Client Error:", err);
+  });
+
+  client.on("connect", () => {
+    console.log("Redis socket connected");
+  });
+
+  client.on("ready", () => {
+    console.log("Redis client ready");
   });
 
   await client.connect();
-  console.log("Connected to Redis cluster.");
+  console.log("Connected to Redis.");
 
   const pipeline = client.multi();
 
@@ -171,7 +177,7 @@ async function main() {
   console.log(`Wrote 1 nano_prompts:most_popular key`);
   console.log(`Wrote ${tagMap.size} nano_prompts:tag:{tag} keys`);
 
-  await client.close();
+  await client.quit();
 }
 
 main().catch((err) => {
