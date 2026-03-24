@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { createClient } = require("redis");
+const { createCluster } = require("redis");
 
 const SOURCE_PATH = path.join(process.cwd(), "public", "data", "nanobanana.json");
 
@@ -10,6 +10,10 @@ function safeString(v) {
 
 function safeArray(v) {
   return Array.isArray(v) ? v : [];
+}
+
+function normalizeTag(tag) {
+  return safeString(tag).trim().toLowerCase();
 }
 
 function toSummary(prompt) {
@@ -37,6 +41,23 @@ function validatePrompt(prompt) {
   return true;
 }
 
+function hasTagOverlap(aTags, bTags) {
+  const setA = new Set(safeArray(aTags).map(normalizeTag).filter(Boolean));
+  const arrB = safeArray(bTags).map(normalizeTag).filter(Boolean);
+
+  if (setA.size === 0 || arrB.length === 0) return false;
+  return arrB.some((tag) => setA.has(tag));
+}
+
+function buildRelatedPrompts(currentPrompt, allPrompts, limit = 4) {
+  return allPrompts
+    .filter((p) => p.id !== currentPrompt.id)
+    .filter((p) => hasTagOverlap(currentPrompt.tags, p.tags))
+    .sort((a, b) => scorePrompt(b) - scorePrompt(a))
+    .slice(0, limit)
+    .map(toSummary);
+}
+
 async function main() {
   if (!fs.existsSync(SOURCE_PATH)) {
     throw new Error(`Source file not found: ${SOURCE_PATH}`);
@@ -50,45 +71,39 @@ async function main() {
 
   console.log(`Loaded ${prompts.length} prompts, ${validPrompts.length} valid.`);
 
-  const redisUrl = process.env.REDIS_URL;
   const redisHost = process.env.REDIS_HOST;
   const redisPort = process.env.REDIS_PORT || "10000";
   const redisUsername = process.env.REDIS_USERNAME || "default";
   const redisPassword = process.env.REDIS_PASSWORD;
   const redisTls = (process.env.REDIS_TLS || "true").toLowerCase() === "true";
 
-  let client;
+  if (!redisHost || !redisPassword) {
+    throw new Error("Missing Redis config: REDIS_HOST or REDIS_PASSWORD");
+  }
 
-  if (redisUrl) {
-    client = createClient({ url: redisUrl });
-  } else {
-    if (!redisHost || !redisPassword) {
-      throw new Error(
-        "Missing Redis config. Provide REDIS_URL or REDIS_HOST + REDIS_PASSWORD."
-      );
-    }
+  const protocol = redisTls ? "rediss" : "redis";
+  const rootUrl = `${protocol}://${encodeURIComponent(redisUsername)}:${encodeURIComponent(redisPassword)}@${redisHost}:${redisPort}`;
 
-    client = createClient({
+  const client = createCluster({
+    rootNodes: [{ url: rootUrl }],
+    defaults: {
       socket: {
-        host: redisHost,
-        port: Number(redisPort),
         tls: redisTls,
       },
       username: redisUsername,
       password: redisPassword,
-    });
-  }
+    },
+  });
 
   client.on("error", (err) => {
-    console.error("Redis Client Error:", err);
+    console.error("Redis Cluster Error:", err);
   });
 
   await client.connect();
-  console.log("Connected to Redis.");
+  console.log("Connected to Redis cluster.");
 
   const pipeline = client.multi();
 
-  // 1) per-prompt detail
   for (const prompt of validPrompts) {
     const fullPrompt = {
       id: prompt.id,
@@ -102,12 +117,12 @@ async function main() {
       category: safeString(prompt.category),
       likes: Number(prompt.likes || 0),
       retweets: Number(prompt.retweets || 0),
+      related: buildRelatedPrompts(prompt, validPrompts, 4),
     };
 
     pipeline.set(`nano_prompt:${prompt.id}`, JSON.stringify(fullPrompt));
   }
 
-  // 2) most popular
   const mostPopular = [...validPrompts]
     .sort((a, b) => scorePrompt(b) - scorePrompt(a))
     .slice(0, 100)
@@ -115,19 +130,17 @@ async function main() {
 
   pipeline.set("nano_prompts:most_popular", JSON.stringify(mostPopular));
 
-  // 3) tag collections
   const tagMap = new Map();
 
   for (const prompt of validPrompts) {
     const tags = safeArray(prompt.tags);
 
     for (const rawTag of tags) {
-      const tag = safeString(rawTag).trim();
+      const tag = normalizeTag(rawTag);
       if (!tag) continue;
 
-      const slug = tag.toLowerCase();
-      if (!tagMap.has(slug)) tagMap.set(slug, []);
-      tagMap.get(slug).push(prompt);
+      if (!tagMap.has(tag)) tagMap.set(tag, []);
+      tagMap.get(tag).push(prompt);
     }
   }
 
@@ -139,7 +152,6 @@ async function main() {
     pipeline.set(`nano_prompts:tag:${tag}`, JSON.stringify(summaries));
   }
 
-  // 4) optional lightweight metadata for debugging / ops
   const metadata = {
     totalPrompts: validPrompts.length,
     totalTags: tagMap.size,
@@ -159,7 +171,7 @@ async function main() {
   console.log(`Wrote 1 nano_prompts:most_popular key`);
   console.log(`Wrote ${tagMap.size} nano_prompts:tag:{tag} keys`);
 
-  await client.quit();
+  await client.close();
 }
 
 main().catch((err) => {
