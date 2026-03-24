@@ -29,7 +29,7 @@ jobs:
 
       - name: Sync nanoprompts to Redis
         env:
-          REDIS_HOST: curify-redis.westus2.redis.azure.net
+          REDIS_HOST: curify-nano-redis.westus2.redis.azure.net
           REDIS_PORT: 10000
           REDIS_USERNAME: default
           REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
