@@ -18,8 +18,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@formatjs/icu-messageformat-parser": "^3.5.3",
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
+    "@mermaid-js/mermaid-cli": "^11.12.0",
     "@phosphor-icons/react": "^2.1.10",
     "@stripe/stripe-js": "^7.9.0",
     "@types/better-sqlite3": "^7.6.13",
@@ -32,6 +34,7 @@
     "jotai": "^2.12.4",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.542.0",
+    "mermaid": "^11.13.0",
     "next": "15.3.6",
     "next-auth": "^4.24.11",
     "next-intl": "^4.1.0",

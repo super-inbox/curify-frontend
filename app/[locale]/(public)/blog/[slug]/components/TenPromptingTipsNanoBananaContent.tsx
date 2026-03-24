@@ -1,13 +1,12 @@
 import { formatNanoBananaContent } from "../utils/content-formatters";
-import NanoBananaExamples from "../NanoBananaExamples";
 
-interface NanoBananaContentProps {
+interface TenPromptingTipsNanoBananaContentProps {
   slug: string;
   t: any;
   locale: string;
 }
 
-export default function NanoBananaContent({ slug, t, locale }: NanoBananaContentProps) {
+export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: TenPromptingTipsNanoBananaContentProps) {
   return (
     <div className="space-y-6">
       <p className="text-lg font-semibold text-blue-600 mb-4">
@@ -15,41 +14,101 @@ export default function NanoBananaContent({ slug, t, locale }: NanoBananaContent
       </p>
       
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("whatIsTitle")}</h2>
+        <h2 className="text-2xl font-bold mb-4">{t("tip1Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
           dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("whatIsContent"))
+            __html: formatNanoBananaContent(t("tip1Content"))
           }} 
         />
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("ecosystemTitle")}</h2>
+        <h2 className="text-2xl font-bold mb-4">{t("tip2Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
           dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("ecosystemContent"))
+            __html: formatNanoBananaContent(t("tip2Content"))
           }} 
         />
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("seoTitle")}</h2>
+        <h2 className="text-2xl font-bold mb-4">{t("tip3Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
           dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("seoContent"))
+            __html: formatNanoBananaContent(t("tip3Content"))
           }} 
         />
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold mb-4">{t("generatorTitle")}</h2>
+        <h2 className="text-2xl font-bold mb-4">{t("tip4Title")}</h2>
         <div 
           className="prose prose-lg max-w-none mb-4"
           dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("generatorContent"))
+            __html: formatNanoBananaContent(t("tip4Content"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("tip5Title")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatNanoBananaContent(t("tip5Content"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("tip6Title")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatNanoBananaContent(t("tip6Content"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("tip7Title")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatNanoBananaContent(t("tip7Content"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("tip8Title")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatNanoBananaContent(t("tip8Content"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("tip9Title")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatNanoBananaContent(t("tip9Content"))
+          }} 
+        />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">{t("tip10Title")}</h2>
+        <div 
+          className="prose prose-lg max-w-none mb-4"
+          dangerouslySetInnerHTML={{ 
+            __html: formatNanoBananaContent(t("tip10Content"))
           }} 
         />
       </section>
@@ -78,58 +137,6 @@ export default function NanoBananaContent({ slug, t, locale }: NanoBananaContent
           </p>
         </div>
       </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("promptGuideTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("promptGuideContent"))
-          }} 
-        />
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("promptStructureTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("promptStructureContent"))
-          }} 
-        />
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("promptExamplesTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("promptExamplesContent"))
-          }} 
-        />
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("promptTemplatesTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("promptTemplatesContent"))
-          }} 
-        />
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">{t("promptGenerationTitle")}</h2>
-        <div 
-          className="prose prose-lg max-w-none mb-4"
-          dangerouslySetInnerHTML={{ 
-            __html: formatNanoBananaContent(t("promptGenerationContent"))
-          }} 
-        />
-      </section>
-
-      <NanoBananaExamples locale={locale} blogSlug={slug} />
 
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("conclusionTitle")}</h2>
