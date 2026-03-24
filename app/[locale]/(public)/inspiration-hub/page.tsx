@@ -72,6 +72,11 @@ export default async function InspirationHubPage({
   const cards = rawData.map(mapDTOToUICard);
   const jsonLd = generateJsonLd(cards);
 
+  const handleTopicClick = (topicId: string) => {
+    console.log(`Topic clicked: ${topicId}`);
+    // Add your custom logic here
+  };
+
   return (
     <>
       <script
@@ -83,6 +88,7 @@ export default async function InspirationHubPage({
         <TopicNavRow
           locale={locale}          
           activeTopic="trending"
+          onTopicClick={handleTopicClick}
         />
 
         <header className="mb-8">
