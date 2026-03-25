@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Search } from 'lucide-react';
 import PromptCard from './PromptCard';
 import { useTranslations } from "next-intl";
+import { nanoPromptsService, NanoPrompt } from '@/services/nanoPrompts';
 
 type Prompt = {
   id: number;
@@ -56,10 +57,7 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
   const [displayedCount, setDisplayedCount] = useState(20);
 
   useEffect(() => {
-    if (initialData && initialData.length > 0) {
-      processPrompts(initialData);
-      setIsLoading(false);
-    } else if (!error) {
+    if (!error) {
       loadData();
     } else {
       setIsLoading(false);
@@ -86,22 +84,24 @@ export default function NanoBananaProPromptsClient({ initialData, error }: NanoB
   const loadData = async () => {
     try {
       setIsLoading(true);
-  
-      const response = await fetch('/api/nano_prompts');
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-  
-      const responseData = await response.json();
-  
-      const promptsData = responseData?.prompts;
-  
-      if (!Array.isArray(promptsData)) {
-        throw new Error('Expected a "prompts" array in the response');
-      }
-  
-      processPrompts(promptsData);
+      const nanoPrompts = await nanoPromptsService.getMostPopularNanoPrompts();
+      const mapped: Prompt[] = nanoPrompts.map((p: NanoPrompt) => ({
+        id: p.id,
+        title: p.title,
+        description: p.description,
+        promptText: p.prompt,
+        author: null,
+        date: null,
+        category: p.tags?.[0] ?? null,
+        sourceUrl: null,
+        sourceType: null,
+        imageUrl: p.imageURL,
+        authorHandle: null,
+        likes: 0,
+        retweets: 0,
+        domainCategory: p.tags?.[0] ?? null,
+      }));
+      processPrompts(mapped);
     } catch (err) {
       console.error('Error loading prompts:', err);
     } finally {

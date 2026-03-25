@@ -21,36 +21,9 @@ import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import { PageLocale, makeSafeNanoTranslator } from "@/lib/locale_utils";
 import PromptActionBar from "./PromptActionBar";
-import { loadNanoData } from "@/lib/nano_data_source"; // ✅ 新增
+import { nanoPromptsService } from "@/services/nanoPrompts";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-
-interface JsonPrompt {
-  id: number;
-  title: string | null;
-  description: string | null;
-  promptText: string;
-  author: string | null;
-  authorHandle: string | null;
-  date: string | null;
-  category: string | null;
-  sourceUrl: string | null;
-  sourceType: string | null;
-  imageUrl: string | null;
-  likes: number | null;
-  retweets: number | null;
-}
-
-interface JsonData {
-  prompts: JsonPrompt[];
-  metadata: {
-    sources: string[];
-    layoutCategories: Array<{ category: string; count: number }>;
-    domainCategories: Array<{ category: string; count: number }>;
-    total: number;
-    lastUpdated: string;
-  };
-}
 
 type Prompt = {
   id: string;
@@ -95,25 +68,20 @@ const normalizeImageUrl = (raw: string | null): string => {
 
 async function fetchPrompt(id: string): Promise<Prompt | null> {
   try {
-    const data: JsonData = await loadNanoData(); // ✅ 关键改动
-
-    const p = data.prompts.find((p) => p.id.toString() === id);
-    if (!p) return null;
-
+    const p = await nanoPromptsService.getNanoPrompt(id);
     return {
       id: p.id.toString(),
       title: p.title || "Untitled Prompt",
       description: p.description || "",
-      prompt_text: p.promptText || "",
-      author: p.author || "Anonymous",
-      author_handle: p.authorHandle ?? undefined,
-      date: p.date || new Date().toISOString().split("T")[0],
-      category: p.category || "Uncategorized",
-      source_url: p.sourceUrl || "#",
-      source_type: p.sourceType || "unknown",
-      image_url: normalizeImageUrl(p.imageUrl),
-      likes: p.likes ?? 0,
-      retweets: p.retweets ?? 0,
+      prompt_text: p.prompt || "",
+      author: "Anonymous",
+      date: new Date().toISOString().split("T")[0],
+      category: p.tags?.[0] || "Uncategorized",
+      source_url: "#",
+      source_type: "unknown",
+      image_url: normalizeImageUrl(p.imageURL),
+      likes: 0,
+      retweets: 0,
     };
   } catch (err) {
     console.error("Error fetching prompt:", err instanceof Error ? err.message : err);

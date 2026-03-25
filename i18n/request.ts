@@ -13,6 +13,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const blog = (await import(`../messages/${locale}/blog.json`)).default;
   const pricing = (await import(`../messages/${locale}/pricing.json`)).default;
   const nano = (await import(`../messages/${locale}/nano.json`)).default;
+  let nanoPromptsTags: Record<string, unknown>;
+  try {
+    nanoPromptsTags = (await import(`../messages/${locale}/nanoPromptsTags.json`)).default;
+  } catch {
+    nanoPromptsTags = (await import(`../messages/en/nanoPromptsTags.json`)).default;
+  }
 
   return {
     locale,
@@ -25,6 +31,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       // Do NOT spread nano flat — its template IDs would collide with other
       // top-level keys and "nano" namespace would never exist.
       nano,
+      nanoPromptsTags,
     },
   };
 });
