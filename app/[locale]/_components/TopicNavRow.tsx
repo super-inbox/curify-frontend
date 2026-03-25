@@ -3,16 +3,9 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import allTopics from "@/public/data/topics.json";
 import { buildTopicHref } from "@/lib/locale_utils";
 import { useClickTracking } from "@/services/useTracking";
-
-type TopicRecord = {
-  id: string;
-  icon?: string;
-  priority?: number;
-  keywords?: string[];
-};
+import { getTopics, type Topic } from "@/lib/topicRegistry";
 
 type Props = {
   locale: string;
@@ -25,12 +18,6 @@ type Props = {
 
 const DISABLED_TOPICS = new Set(["gaming", "career"]);
 
-function getSortedTopics(): TopicRecord[] {
-  return [...(allTopics as TopicRecord[])].sort(
-    (a, b) => (a.priority ?? 999) - (b.priority ?? 999)
-  );
-}
-
 function getTrendingHref(locale: string) {
   return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
 }
@@ -42,7 +29,7 @@ function TopicLink({
   isActive,
   pillClassName,
 }: {
-  topic: TopicRecord;
+  topic: Topic;
   href: string;
   label: string;
   isActive: boolean;
@@ -77,12 +64,12 @@ export default function TopicNavRow({
 }: Props) {
   const t = useTranslations("topics");
 
-  const sortedTopics = getSortedTopics();
+  const sortedTopics = getTopics();
 
   const visibleTopics = topics?.length
     ? topics
         .map((id) => sortedTopics.find((topic) => topic.id === id))
-        .filter((topic): topic is TopicRecord => Boolean(topic))
+        .filter((topic): topic is Topic => Boolean(topic))
     : sortedTopics;
 
   if (!visibleTopics.length) return null;
