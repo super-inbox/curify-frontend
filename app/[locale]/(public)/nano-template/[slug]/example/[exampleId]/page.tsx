@@ -304,7 +304,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={3} />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} />
           </>
         )}
 
