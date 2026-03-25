@@ -229,7 +229,7 @@ export default async function NanoTemplatePage({ params }: Props) {
         <ExampleImagesGrid
           items={section2Images}
           locale={pageLocale}
-          maxRows={3}
+          maxRows={2}
         />
 
         <NanoTemplateDetailClient
