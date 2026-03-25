@@ -3,16 +3,9 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import allTopics from "@/public/data/topics.json";
-import { buildTopicHref, getTopicLabel } from "@/lib/locale_utils";
-// import { trackEvent } from "@/lib/analytics";
-
-type TopicRecord = {
-  id: string;
-  icon?: string;
-  priority?: number;
-  keywords?: string[];
-};
+import { buildTopicHref } from "@/lib/locale_utils";
+import { useClickTracking } from "@/services/useTracking";
+import { getTopics, type TopicWithTemplates } from "@/lib/topicRegistry";
 
 type Props = {
   locale: string;
@@ -23,16 +16,40 @@ type Props = {
   size?: "default" | "small";
 };
 
-const DISABLED_TOPICS = new Set(["gaming", "career"]);
-
-function getSortedTopics(): TopicRecord[] {
-  return [...(allTopics as TopicRecord[])].sort(
-    (a, b) => (a.priority ?? 999) - (b.priority ?? 999)
-  );
-}
-
 function getTrendingHref(locale: string) {
   return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
+}
+
+function TopicLink({
+  topic,
+  href,
+  label,
+  isActive,
+  pillClassName,
+}: {
+  topic: TopicWithTemplates;
+  href: string;
+  label: string;
+  isActive: boolean;
+  pillClassName: string;
+}) {
+  const trackClick = useClickTracking(topic.id, "topic_capsule" as any);
+
+  return (
+    <Link
+      href={href}
+      aria-current={isActive ? "page" : undefined}
+      className={[
+        pillClassName,
+        isActive
+          ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
+          : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
+      ].join(" ")}
+      onClick={trackClick}
+    >
+      {label}
+    </Link>
+  );
 }
 
 export default function TopicNavRow({
@@ -45,12 +62,12 @@ export default function TopicNavRow({
 }: Props) {
   const t = useTranslations("topics");
 
-  const sortedTopics = getSortedTopics();
+  const sortedTopics = getTopics();
 
   const visibleTopics = topics?.length
     ? topics
         .map((id) => sortedTopics.find((topic) => topic.id === id))
-        .filter((topic): topic is TopicRecord => Boolean(topic))
+        .filter((topic): topic is TopicWithTemplates => Boolean(topic))
     : sortedTopics;
 
   if (!visibleTopics.length) return null;
@@ -60,23 +77,6 @@ export default function TopicNavRow({
       ? "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
       : "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
 
-  const handleTopicClick = (topicId: string) => {
-    // Replace with your actual analytics call
-    // trackEvent("topic_nav_click", {
-    //   topic_id: topicId,
-    //   locale,
-    //   active_topic: activeTopic ?? null,
-    //   source: "topic_nav_row",
-    // });
-
-    console.log("topic_nav_click", {
-      topic_id: topicId,
-      locale,
-      active_topic: activeTopic ?? null,
-      source: "topic_nav_row",
-    });
-  };
-
   return (
     <div
       className={["flex flex-wrap items-center gap-2", className]
@@ -84,14 +84,10 @@ export default function TopicNavRow({
         .join(" ")}
     >
       {visibleTopics.map((topic) => {
-        const isDisabled = DISABLED_TOPICS.has(topic.id);
+        const isDisabled = topic.id === "trending" ? false : !topic.isEnabled;
         const isActive = activeTopic === topic.id;
 
-        const href =
-          topic.id === "trending"
-            ? getTrendingHref(locale)
-            : buildTopicHref(locale, topic.id);
-
+        const href = buildTopicHref(locale, topic.id);
         const label = t(`${topic.id}.displayName`);
 
         if (isDisabled && showDisabled) {
@@ -114,20 +110,14 @@ export default function TopicNavRow({
         }
 
         return (
-          <Link
+          <TopicLink
             key={topic.id}
+            topic={topic}
             href={href}
-            aria-current={isActive ? "page" : undefined}
-            className={[
-              pillClassName,
-              isActive
-                ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
-                : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
-            ].join(" ")}
-            onClick={() => handleTopicClick(topic.id)}
-          >
-            {label}
-          </Link>
+            label={label}
+            isActive={isActive}
+            pillClassName={pillClassName}
+          />
         );
       })}
     </div>

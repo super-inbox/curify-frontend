@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef } from "react";
 import { apiClient } from "@/services/api";
 import { API_BASE } from "@/lib/constants";
 
-type ContentType = "inspiration" | "nano_inspiration" | "nano_gallery";
+type ContentType = "inspiration" | "nano_inspiration" | "nano_gallery" | "topic_capsule" | "tag_capsule" | "menu_link";
+
 type ActionType = "view" | "click" | "copy" | "favorite" | "share" | "generate";
 
 export interface TrackingOptions {
