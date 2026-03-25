@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import allTopics from "@/public/data/topics.json";
-import { buildTopicHref, getTopicLabel } from "@/lib/locale_utils";
-// import { trackEvent } from "@/lib/analytics";
+import { buildTopicHref } from "@/lib/locale_utils";
+import { useClickTracking } from "@/services/useTracking";
 
 type TopicRecord = {
   id: string;
@@ -35,6 +35,38 @@ function getTrendingHref(locale: string) {
   return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
 }
 
+function TopicLink({
+  topic,
+  href,
+  label,
+  isActive,
+  pillClassName,
+}: {
+  topic: TopicRecord;
+  href: string;
+  label: string;
+  isActive: boolean;
+  pillClassName: string;
+}) {
+  const trackClick = useClickTracking(topic.id, "topic_capsule");
+
+  return (
+    <Link
+      href={href}
+      aria-current={isActive ? "page" : undefined}
+      className={[
+        pillClassName,
+        isActive
+          ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
+          : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
+      ].join(" ")}
+      onClick={trackClick}
+    >
+      {label}
+    </Link>
+  );
+}
+
 export default function TopicNavRow({
   locale,
   activeTopic,
@@ -59,23 +91,6 @@ export default function TopicNavRow({
     size === "small"
       ? "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
       : "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
-
-  const handleTopicClick = (topicId: string) => {
-    // Replace with your actual analytics call
-    // trackEvent("topic_nav_click", {
-    //   topic_id: topicId,
-    //   locale,
-    //   active_topic: activeTopic ?? null,
-    //   source: "topic_nav_row",
-    // });
-
-    console.log("topic_nav_click", {
-      topic_id: topicId,
-      locale,
-      active_topic: activeTopic ?? null,
-      source: "topic_nav_row",
-    });
-  };
 
   return (
     <div
@@ -114,20 +129,14 @@ export default function TopicNavRow({
         }
 
         return (
-          <Link
+          <TopicLink
             key={topic.id}
+            topic={topic}
             href={href}
-            aria-current={isActive ? "page" : undefined}
-            className={[
-              pillClassName,
-              isActive
-                ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
-                : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
-            ].join(" ")}
-            onClick={() => handleTopicClick(topic.id)}
-          >
-            {label}
-          </Link>
+            label={label}
+            isActive={isActive}
+            pillClassName={pillClassName}
+          />
         );
       })}
     </div>
