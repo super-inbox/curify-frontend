@@ -13,9 +13,15 @@ type TemplateLike = {
   topics?: string | string[];
 };
 
+export type TopicWithTemplates = Topic & {
+  templates: TemplateLike[];
+  templateCount: number;
+  isEnabled: boolean;
+};
+
 export type TopicRegistry = {
-  topics: Topic[];
-  topicById: Map<string, Topic>;
+  topics: TopicWithTemplates[];
+  topicById: Map<string, TopicWithTemplates>;
   topicToTemplates: Map<string, TemplateLike[]>;
   templateToTopics: Map<string, string[]>;
 };
@@ -38,24 +44,20 @@ function normalizeTopicValues(value: unknown): string[] {
 }
 
 function buildTopicRegistry(): TopicRegistry {
-  const sortedTopics = [...(topics as Topic[])].sort(
+  const baseTopics = [...(topics as Topic[])].sort(
     (a, b) => (a.priority ?? 999) - (b.priority ?? 999)
-  );
-
-  const topicById = new Map<string, Topic>(
-    sortedTopics.map((topic) => [topic.id, topic])
   );
 
   const topicToTemplates = new Map<string, TemplateLike[]>();
   const templateToTopics = new Map<string, string[]>();
 
-  for (const topic of sortedTopics) {
+  for (const topic of baseTopics) {
     topicToTemplates.set(topic.id, []);
   }
 
   for (const template of nanoTemplates as TemplateLike[]) {
-    const topicIds = normalizeTopicValues(template.topics).filter((topicId) =>
-      topicById.has(topicId)
+    const topicIds = [...new Set(normalizeTopicValues(template.topics))].filter(
+      (topicId) => topicToTemplates.has(topicId)
     );
 
     templateToTopics.set(template.id, topicIds);
@@ -65,8 +67,22 @@ function buildTopicRegistry(): TopicRegistry {
     }
   }
 
+  const enrichedTopics: TopicWithTemplates[] = baseTopics.map((topic) => {
+    const templates = topicToTemplates.get(topic.id) ?? [];
+    return {
+      ...topic,
+      templates,
+      templateCount: templates.length,
+      isEnabled: templates.length > 0,
+    };
+  });
+
+  const topicById = new Map<string, TopicWithTemplates>(
+    enrichedTopics.map((topic) => [topic.id, topic])
+  );
+
   return {
-    topics: sortedTopics,
+    topics: enrichedTopics,
     topicById,
     topicToTemplates,
     templateToTopics,
@@ -75,11 +91,11 @@ function buildTopicRegistry(): TopicRegistry {
 
 const registry = buildTopicRegistry();
 
-export function getTopics(): Topic[] {
+export function getTopics(): TopicWithTemplates[] {
   return registry.topics;
 }
 
-export function getTopicById(topicId: string): Topic | undefined {
+export function getTopicById(topicId: string): TopicWithTemplates | undefined {
   return registry.topicById.get(topicId);
 }
 
@@ -93,6 +109,10 @@ export function getTopicIdsForTemplate(templateId: string): string[] {
 
 export function hasTopic(topicId: string): boolean {
   return registry.topicById.has(topicId);
+}
+
+export function isTopicEnabled(topicId: string): boolean {
+  return (registry.topicById.get(topicId)?.templateCount ?? 0) > 0;
 }
 
 export { normalizeTopicValues };

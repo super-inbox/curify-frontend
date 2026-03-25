@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { buildTopicHref } from "@/lib/locale_utils";
 import { useClickTracking } from "@/services/useTracking";
-import { getTopics, type Topic } from "@/lib/topicRegistry";
+import { getTopics, type TopicWithTemplates } from "@/lib/topicRegistry";
 
 type Props = {
   locale: string;
@@ -15,8 +15,6 @@ type Props = {
   showDisabled?: boolean;
   size?: "default" | "small";
 };
-
-const DISABLED_TOPICS = new Set(["gaming", "career"]);
 
 function getTrendingHref(locale: string) {
   return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
@@ -29,13 +27,13 @@ function TopicLink({
   isActive,
   pillClassName,
 }: {
-  topic: Topic;
+  topic: TopicWithTemplates;
   href: string;
   label: string;
   isActive: boolean;
   pillClassName: string;
 }) {
-  const trackClick = useClickTracking(topic.id, "topic_capsule");
+  const trackClick = useClickTracking(topic.id, "topic_capsule" as any);
 
   return (
     <Link
@@ -69,7 +67,7 @@ export default function TopicNavRow({
   const visibleTopics = topics?.length
     ? topics
         .map((id) => sortedTopics.find((topic) => topic.id === id))
-        .filter((topic): topic is Topic => Boolean(topic))
+        .filter((topic): topic is TopicWithTemplates => Boolean(topic))
     : sortedTopics;
 
   if (!visibleTopics.length) return null;
@@ -86,14 +84,10 @@ export default function TopicNavRow({
         .join(" ")}
     >
       {visibleTopics.map((topic) => {
-        const isDisabled = DISABLED_TOPICS.has(topic.id);
+        const isDisabled = topic.id === "trending" ? false : !topic.isEnabled;
         const isActive = activeTopic === topic.id;
 
-        const href =
-          topic.id === "trending"
-            ? getTrendingHref(locale)
-            : buildTopicHref(locale, topic.id);
-
+        const href = buildTopicHref(locale, topic.id);
         const label = t(`${topic.id}.displayName`);
 
         if (isDisabled && showDisabled) {

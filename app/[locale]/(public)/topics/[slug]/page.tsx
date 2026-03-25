@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
@@ -28,6 +28,15 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const { locale: localeStr, slug } = await params;
+
+  if (slug === "trending") {
+    redirect(
+      localeStr === "en"
+        ? "/inspiration-hub"
+        : `/${localeStr}/inspiration-hub`
+    );
+  }
+
   const contentLocale = resolveContentLocale(localeStr);
 
   const tNano = await getTranslations({ locale: localeStr, namespace: "nano" });
