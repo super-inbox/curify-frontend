@@ -131,7 +131,7 @@ export default function Header() {
               />
               <HeaderTrackedLink
                 href="/inspiration-hub"
-                label={t("discover")}
+                label={t("trending")}
                 contentId="header_discover"
               />
               <HeaderTrackedLink
