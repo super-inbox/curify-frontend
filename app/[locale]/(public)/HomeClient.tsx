@@ -181,7 +181,10 @@ export default function HomeClient({
   }>({ isOpen: false, card: null, type: "inspiration" });
 
   const handleOpenModal = useCallback(
-    (card: InspirationCardType | NanoInspirationCardType, type: "inspiration" | "nano") => {
+    (
+      card: InspirationCardType | NanoInspirationCardType,
+      type: "inspiration" | "nano"
+    ) => {
       setModalState({ isOpen: true, card, type });
     },
     []
@@ -193,26 +196,24 @@ export default function HomeClient({
   }, []);
 
   return (
-    <main
+    <div
       className={classNames(
         inter.className,
-        "min-h-screen bg-[#FDFDFD] px-4 pb-10 pt-18 md:px-6 lg:px-8"
+        "w-full bg-[#FDFDFD] px-4 pb-10 pt-4 md:px-6 lg:px-10"
       )}
     >
-      <div className="mx-auto w-full max-w-[1200px]">
-        <div className="pb-6 pt-10">
-          <div className="mx-auto max-w-4xl">
-            <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
-              {tHero("title")}
-            </h1>
-            <p className="mt-4 text-base leading-relaxed text-neutral-700">
-              {tHero("description")}
-            </p>
-          </div>
+      <div className="mx-auto w-full max-w-[1500px]">
+        <div className="mx-auto max-w-6xl pb-6 pt-2">
+          <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
+            {tHero("title")}
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-neutral-700">
+            {tHero("description")}
+          </p>
         </div>
 
-        <div className="mx-auto max-w-5xl">
-          <div className="sticky top-24 z-10 mb-6 rounded-2xl border border-neutral-200 bg-white/95 p-2 shadow-sm backdrop-blur">
+        <div className="mx-auto w-full max-w-6xl">
+          <div className="sticky top-28 z-10 mb-6 rounded-2xl border border-neutral-200 bg-white/95 p-2 shadow-sm backdrop-blur">
             <div className="flex items-center gap-2 px-2">
               <Search className="h-5 w-5 text-neutral-400" />
               <input
@@ -246,7 +247,7 @@ export default function HomeClient({
         onClose={handleCloseModal}
         cardType={modalState.type}
       />
-    </main>
+    </div>
   );
 }
 
@@ -259,7 +260,10 @@ function ListView({
   filteredMainCards: InspirationCardType[];
   nanoCards: NanoInspirationCardType[];
   requireAuth: () => boolean;
-  onOpenModal: (card: InspirationCardType | NanoInspirationCardType, type: "inspiration" | "nano") => void;
+  onOpenModal: (
+    card: InspirationCardType | NanoInspirationCardType,
+    type: "inspiration" | "nano"
+  ) => void;
 }) {
   const data = useMemo(
     () => getInterleavedData(filteredMainCards, nanoCards),

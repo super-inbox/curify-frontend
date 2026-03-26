@@ -50,15 +50,7 @@ export default async function AppLocaleLayout({
 
             <main className="ml-[300px] min-h-screen">
               <TopUpModal />
-              <SignDrawer />
-
-              {!isBlogPage && (
-  <div className="sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
-    <div className="mx-auto flex max-w-[1200px] justify-center">
-      <EntryBar locale={locale} />
-    </div>
-  </div>
-)}
+              <SignDrawer />          
 
               {children}
 

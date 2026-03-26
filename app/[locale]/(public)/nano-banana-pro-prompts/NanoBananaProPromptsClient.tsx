@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import { Search } from 'lucide-react';
+import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import PromptCard from './PromptCard';
-import { nanoPromptsService } from '@/services/nanoPrompts';
-import type { NanoPromptBase } from '@/types/nanoPrompts';
+import PromptCard from "./PromptCard";
+import { nanoPromptsService } from "@/services/nanoPrompts";
+import type { NanoPromptBase } from "@/types/nanoPrompts";
 
 /**
  * UI Prompt Shape (view model)
@@ -37,10 +37,6 @@ interface Props {
   error: string | null;
 }
 
-// ─────────────────────────────────────────────────────────────
-// Mapping
-// ─────────────────────────────────────────────────────────────
-
 function mapNanoPromptToUI(p: NanoPromptBase): Prompt {
   return {
     id: p.id,
@@ -54,36 +50,36 @@ function mapNanoPromptToUI(p: NanoPromptBase): Prompt {
   };
 }
 
-// ─────────────────────────────────────────────────────────────
-// Component
-// ─────────────────────────────────────────────────────────────
+function toSlug(value: string) {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
-export default function NanoBananaProPromptsClient({ initialData, error }: Props) {
+export default function NanoBananaProPromptsClient({
+  initialData,
+  error,
+}: Props) {
   const t = useTranslations("nanoGallery");
 
-  // Data
   const [allPrompts, setAllPrompts] = useState<Prompt[]>(initialData || []);
   const [prompts, setPrompts] = useState<Prompt[]>([]);
 
-  // UI State
   const [isLoading, setIsLoading] = useState(!initialData);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sourceFilter, setSourceFilter] = useState<string>('all');
-  const [domainFilter, setDomainFilter] = useState<string>('all');
-
-  // Derived State
-  const [sources, setSources] = useState<string[]>(['all']);
-  const [domainCategories, setDomainCategories] = useState<DomainCategory[]>([]);
+  const [sourceFilter, setSourceFilter] = useState<string>("all");
+  const [sources, setSources] = useState<string[]>(["all"]);
+  const [domainCategories, setDomainCategories] = useState<DomainCategory[]>(
+    []
+  );
   const [displayedCount, setDisplayedCount] = useState(20);
 
   const [pagination, setPagination] = useState<Pagination>({
     total: 0,
     hasNextPage: false,
   });
-
-  // ─────────────────────────────────────────────────────────────
-  // Load Data
-  // ─────────────────────────────────────────────────────────────
 
   useEffect(() => {
     if (!error) loadData();
@@ -99,7 +95,7 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
 
       processPrompts(mapped);
     } catch (err) {
-      console.error('Error loading prompts:', err);
+      console.error("Error loading prompts:", err);
     } finally {
       setIsLoading(false);
     }
@@ -107,19 +103,17 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
 
   function processPrompts(data: Prompt[]) {
     const valid = data.filter(
-      (p) => p && typeof p.id === 'number' && typeof p.title === 'string'
+      (p) => p && typeof p.id === "number" && typeof p.title === "string"
     );
 
     setAllPrompts(valid);
 
-    // Sources
     const uniqueSources = Array.from(
       new Set(valid.map((p) => p.sourceType).filter(Boolean))
     ) as string[];
 
-    setSources(['all', ...uniqueSources]);
+    setSources(["all", ...uniqueSources]);
 
-    // Domain categories
     const counts: Record<string, number> = {};
     valid.forEach((p) => {
       if (p.domainCategory) {
@@ -128,36 +122,20 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
     });
 
     setDomainCategories(
-      Object.entries(counts).map(([category, count]) => ({
-        category,
-        count,
-      }))
+      Object.entries(counts)
+        .map(([category, count]) => ({
+          category,
+          count,
+        }))
+        .sort((a, b) => b.count - a.count)
     );
   }
-
-  // ─────────────────────────────────────────────────────────────
-  // Filtering
-  // ─────────────────────────────────────────────────────────────
 
   const filterPrompts = useCallback(() => {
     let filtered = [...allPrompts];
 
-    if (searchTerm) {
-      const search = searchTerm.toLowerCase();
-
-      filtered = filtered.filter((p) =>
-        p.title?.toLowerCase().includes(search) ||
-        p.description?.toLowerCase().includes(search) ||
-        p.promptText?.toLowerCase().includes(search)
-      );
-    }
-
-    if (sourceFilter !== 'all') {
+    if (sourceFilter !== "all") {
       filtered = filtered.filter((p) => p.sourceType === sourceFilter);
-    }
-
-    if (domainFilter !== 'all') {
-      filtered = filtered.filter((p) => p.domainCategory === domainFilter);
     }
 
     const total = filtered.length;
@@ -169,11 +147,11 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
     });
 
     return filtered.slice(0, displayedCount);
-  }, [allPrompts, searchTerm, sourceFilter, domainFilter, displayedCount]);
+  }, [allPrompts, sourceFilter, displayedCount]);
 
   useEffect(() => {
     setDisplayedCount(20);
-  }, [searchTerm, sourceFilter, domainFilter]);
+  }, [sourceFilter]);
 
   useEffect(() => {
     setPrompts(filterPrompts());
@@ -181,13 +159,9 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
 
   const loadMore = () => setDisplayedCount((prev) => prev + 20);
 
-  // ─────────────────────────────────────────────────────────────
-  // States
-  // ─────────────────────────────────────────────────────────────
-
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center">
         <p className="text-gray-500">{error}</p>
       </div>
     );
@@ -195,88 +169,54 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin h-10 w-10 border-b-2 border-indigo-600 rounded-full" />
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="h-10 w-10 animate-spin rounded-full border-b-2 border-indigo-600" />
       </div>
     );
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // UI
-  // ─────────────────────────────────────────────────────────────
-
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900">
-            {t("title")}
-          </h1>
-          <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gray-50 px-4 py-4">
+      <div className="mx-auto max-w-7xl">
+        <header className="mb-10 text-center">
+          <h1 className="text-4xl font-bold text-gray-900">{t("title")}</h1>
+          <p className="mx-auto mt-2 max-w-2xl text-gray-600">
             {t.rich("description", {
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </p>
         </header>
 
-        {/* Stats */}
-        <section className="grid grid-cols-2 gap-5 mb-8">
-          <StatCard label="Total Results" value={pagination.total} />
-          <StatCard label="Loaded" value={`${prompts.length} / ${pagination.total}`} />
-        </section>
-
-        {/* Categories */}
         {domainCategories.length > 0 && (
-          <section className="mb-8">
-            <h2 className="text-lg font-medium mb-4">Categories</h2>
+          <section className="sticky top-24 z-20 mb-8 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-sm backdrop-blur">
+            <div className="mb-3 flex items-center justify-between">
+              <h2 className="text-base font-semibold text-gray-900">
+                Categories
+              </h2>
+            </div>
+
             <div className="flex flex-wrap gap-3">
               {domainCategories.map(({ category, count }) => (
-                <button
+                <Link
                   key={category}
-                  onClick={() =>
-                    setDomainFilter((prev) =>
-                      prev === category ? 'all' : category
-                    )
-                  }
-                  className={`px-3 py-2 rounded-lg border ${
-                    domainFilter === category
-                      ? 'bg-indigo-100 border-indigo-300'
-                      : 'bg-white border-gray-200'
-                  }`}
+                  href={`/nano-banana-pro-prompts/tag/${encodeURIComponent(category)}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-800 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700"
                 >
-                  {category} ({count})
-                </button>
+                  <span>{category}</span>
+                  <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-500">
+                    {count}
+                  </span>
+                </Link>
               ))}
             </div>
           </section>
         )}
 
-        {/* Search */}
-        <section className="bg-white p-6 rounded-lg shadow mb-8">
-          <div className="relative">
-            <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-            <input
-              type="search"
-              className="pl-10 w-full border rounded-md p-2"
-              placeholder="Search prompts..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </section>
-
-        {/* Grid */}
         {prompts.length === 0 ? (
-          <EmptyState onReset={() => {
-            setSearchTerm('');
-            setSourceFilter('all');
-            setDomainFilter('all');
-          }} />
+          <EmptyState />
         ) : (
           <>
-            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {prompts.map((p) => (
                 <PromptCard key={p.id} prompt={p} />
               ))}
@@ -286,9 +226,9 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
               <div className="mt-8 text-center">
                 <button
                   onClick={loadMore}
-                  className="px-6 py-3 bg-indigo-600 text-white rounded-md"
+                  className="rounded-md bg-indigo-600 px-6 py-3 text-white"
                 >
-                  Load More ({prompts.length} of {pagination.total})
+                  Load More
                 </button>
               </div>
             )}
@@ -299,29 +239,10 @@ export default function NanoBananaProPromptsClient({ initialData, error }: Props
   );
 }
 
-// ─────────────────────────────────────────────────────────────
-// Small Components
-// ─────────────────────────────────────────────────────────────
-
-function StatCard({ label, value }: { label: string; value: string | number }) {
+function EmptyState() {
   return (
-    <div className="bg-white p-5 rounded-lg shadow">
-      <dt className="text-sm text-gray-500">{label}</dt>
-      <dd className="text-2xl font-semibold">{value}</dd>
-    </div>
-  );
-}
-
-function EmptyState({ onReset }: { onReset: () => void }) {
-  return (
-    <div className="text-center py-12 bg-white rounded-lg shadow">
+    <div className="rounded-lg bg-white py-12 text-center shadow">
       <p className="text-gray-500">No prompts found</p>
-      <button
-        onClick={onReset}
-        className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded"
-      >
-        Clear Filters
-      </button>
     </div>
   );
 }

@@ -44,7 +44,6 @@ export async function generateMetadata({
   };
 }
 
-
 export default async function PublicLocaleLayout({
   children,
   params,
@@ -58,18 +57,14 @@ export default async function PublicLocaleLayout({
 
   const messages = await getMessages();
 
-  // 👇 detect current path
   const headerList = await headers();
   const pathname = headerList.get("x-pathname") || "";
 
-  // 👇 exclude blog pages
   const isBlogPage = pathname.includes("/blog");
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <head>
-        {/* (keep existing scripts unchanged) */}
-      </head>
+      <head>{/* keep existing scripts */}</head>
 
       <body suppressHydrationWarning>
         <GoogleAnalyticsTracker />
@@ -81,13 +76,18 @@ export default async function PublicLocaleLayout({
             <main className="ml-[300px] min-h-screen">
               <TopUpModal />
               <SignDrawer />
+
               {!isBlogPage && (
-  <div className="sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
-    <div className="mx-auto flex max-w-[1200px] justify-center">
-      <EntryBar locale={locale} />
-    </div>
-  </div>
-)}
+                <div className="sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
+                  <div className="mx-auto max-w-[1280px] px-6 sm:px-10">
+                    {/* ✅ Narrower EntryBar */}
+                    <div className="w-full max-w-[900px]">
+                      <EntryBar locale={locale} />
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {children}
 
               <Toaster />

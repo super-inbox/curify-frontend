@@ -222,8 +222,8 @@ export default function Header() {
 
             {isLoggedIn && (
               <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="flex items-center gap-4 rounded-full bg-[#efefef] px-7 py-4 text-[18px] font-semibold text-[#2f2f2f] hover:bg-[#e9e9e9]"
+              onClick={() => router.push("/workspace")}
+                className="flex items-center gap-4 rounded-full bg-[#efefef] px-7 py-4 text-[18px] font-semibold text-[#2f2f2f] hover:bg-[#e9e9e9] cursor-pointer"
               >
                 {user?.avatar_url && !avatarError ? (
                   <Image
@@ -242,6 +242,8 @@ export default function Header() {
                 <span>{t("workspace")}</span>
               </button>
             )}
+
+
           </nav>
         )}
 

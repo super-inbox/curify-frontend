@@ -100,12 +100,12 @@ export default function ToolsClient() {
     <>
       <BgParticle />
 
-      <div className="relative flex flex-col items-center mt-16 lg:mt-20 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+      <div className="relative flex flex-col items-center mt-0 lg:mt-0 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
         <h1 className="sr-only">{t("tools.meta.title")}</h1>
 
         {/* Tools hub (grouped) */}
         <section className="w-full mb-14">
-          <div className="space-y-10">
+          <div className="space-y-4">
             {toolGroups.map((group) => (
               <div key={group.groupId} className="w-full">
                 <div className="flex items-center justify-between mb-4">
