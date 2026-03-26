@@ -3,7 +3,8 @@ import { getMessages } from 'next-intl/server';
 import { getCanonicalUrl, getLanguagesMap } from '@/lib/canonical';
 import { SITE_URL } from '@/lib/constants';
 import PromptCard from '../../PromptCard';
-import { nanoPromptsService, NanoPrompt } from '@/services/nanoPrompts';
+import { nanoPromptsService } from '@/services/nanoPrompts';
+import type { NanoPromptBase } from '@/types/nanoPrompts';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 
 type TagEntry = { title?: string; description?: string; introText?: string };                                                                               
@@ -33,23 +34,17 @@ async function getTagEntry(tag: string): Promise<TagEntry> {
   return tagsData?.[tag] ?? tagsData?.[tag.toLowerCase()] ?? {};
 }
 
-function mapPrompt(p: NanoPrompt) {
+function mapPrompt(p: NanoPromptBase) {
   return {
     id: p.id,
     title: p.title,
     description: p.description,
     promptText: p.prompt,
-    author: null,
-    date: null,
-    category: p.tags?.[0] ?? null,
-    sourceUrl: null,
-    sourceType: null,
     imageUrl: p.imageURL,
-    authorHandle: null,
-    likes: 0,
-    retweets: 0,
+    category: p.tags?.[0] ?? null,
+    sourceType: null,
     domainCategory: p.tags?.[0] ?? null,
-};
+  };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
