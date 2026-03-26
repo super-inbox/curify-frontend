@@ -19,7 +19,7 @@ export type ActionType =
   | "favorite"
   | "share"
   | "generate"
-  | "remix"; // ✅ added
+  | "remix";
 
 export type ViewMode = "list" | "cards";
 
@@ -75,11 +75,15 @@ async function trackViaApiClient(payload: Record<string, unknown>) {
       body: JSON.stringify(payload),
       keepalive: true as never,
     });
-  } catch {}
+  } catch {
+    // tracking should never break UX
+  }
 }
 
 function trackWithBeacon(payload: Record<string, unknown>) {
-  if (typeof navigator === "undefined" || !navigator.sendBeacon) return false;
+  if (typeof navigator === "undefined" || typeof navigator.sendBeacon !== "function") {
+    return false;
+  }
 
   try {
     const url = `${API_BASE}${TRACK_ENDPOINT}`;
@@ -113,7 +117,9 @@ export function useTracking() {
   const trackOnUnload = useCallback((options: TrackingOptions) => {
     const payload = buildPayload(options);
     const ok = trackWithBeacon(payload);
-    if (!ok) void trackViaApiClient(payload);
+    if (!ok) {
+      void trackViaApiClient(payload);
+    }
   }, []);
 
   return { track, trackAction, trackOnUnload };
@@ -134,8 +140,8 @@ export function useViewTracking(
 
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) {
-          if (!e.isIntersecting) continue;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
 
           track({
             contentId,
@@ -156,4 +162,64 @@ export function useViewTracking(
   }, [contentId, contentType, viewMode, track]);
 
   return ref;
+}
+
+export function useClickTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  return useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "click");
+  }, [contentId, contentType, viewMode, trackAction]);
+}
+
+export function useCopyTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  return useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "copy");
+  }, [contentId, contentType, viewMode, trackAction]);
+}
+
+export function useShareTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  return useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "share");
+  }, [contentId, contentType, viewMode, trackAction]);
+}
+
+export function useGenerateTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  return useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "generate");
+  }, [contentId, contentType, viewMode, trackAction]);
+}
+
+export function useRemixTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  return useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "remix");
+  }, [contentId, contentType, viewMode, trackAction]);
 }

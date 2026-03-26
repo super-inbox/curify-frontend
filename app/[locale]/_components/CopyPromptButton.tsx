@@ -24,7 +24,7 @@ export default function CopyPromptButton({
   return (
     <button
       onClick={handle}
-      className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
+      className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50 cursor-pointer"
     >
       <Copy className="h-4 w-4" />
       {copied ? "Copied" : "Copy"}
