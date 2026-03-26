@@ -12,7 +12,6 @@ import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
-import EntryBar from "@/app/[locale]/_components/EntryBar";
 
 import { toSlug, getTemplateView, type RawNanoImageRecord } from "@/lib/nano_utils";
 import {
@@ -171,11 +170,8 @@ export default async function NanoExampleDetailPage({
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mb-6">
-        <EntryBar locale={pageLocale} />
-      </div>
-
+    <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
         <Link href={`/${rawLocale}`} className="hover:text-neutral-800">
           Home
