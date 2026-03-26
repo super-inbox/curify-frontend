@@ -20,8 +20,7 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import { PageLocale, makeSafeNanoTranslator } from "@/lib/locale_utils";
-
-import { loadNanoData } from "@/lib/nano_data_source"; // ✅ 新增
+import { nanoPromptsService } from "@/services/nanoPrompts";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
