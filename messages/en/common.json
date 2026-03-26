@@ -147,6 +147,16 @@
     "translated": "Translated",
     "unsupported": "Your browser does not support the video tag."
   },
+  "entryBar": {
+    "question": "What do you want to create today?",
+    "items": {
+      "character": "Character & Personality",
+      "learning": "Learning & Knowledge",
+      "visual": "Aesthetic & Visual Design",
+      "product": "Product & Marketing",
+      "video": "Video & Subtitles"
+    }
+  },
   "contentCreationSidebar": {
     "title": "Content Creation Tools",
     "cta": "Create New Content",
@@ -161,7 +171,7 @@
         "desc": "Automatically generate subtitles in two languages for free",
         "alt": "Subtitle"
       }
-    },
+    },    
     "nanoSidebar": {
       "badge": "Nano Banana",
       "wordCard": {
