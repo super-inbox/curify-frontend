@@ -4,24 +4,42 @@ import { useCallback, useEffect, useRef } from "react";
 import { apiClient } from "@/services/api";
 import { API_BASE } from "@/lib/constants";
 
-type ContentType = "inspiration" | "nano_inspiration" | "nano_gallery" | "topic_capsule" | "tag_capsule" | "menu_link";
+export type ContentType =
+  | "inspiration"
+  | "nano_inspiration"
+  | "nano_gallery"
+  | "topic_capsule"
+  | "tag_capsule"
+  | "menu_link";
 
-type ActionType = "view" | "click" | "copy" | "favorite" | "share" | "generate";
+export type ActionType =
+  | "view"
+  | "click"
+  | "copy"
+  | "favorite"
+  | "share"
+  | "generate"
+  | "remix"; // ✅ added
+
+export type ViewMode = "list" | "cards";
 
 export interface TrackingOptions {
   contentId: string;
   contentType: ContentType;
   actionType: ActionType;
-  viewMode?: "list" | "cards";
+  viewMode?: ViewMode;
+}
+
+export interface TrackingTarget {
+  contentId: string;
+  contentType: ContentType;
+  viewMode?: ViewMode;
 }
 
 const TRACK_ENDPOINT = "/interactions/track";
+const SESSION_KEY = "_curify_session_id";
 
-/**
- * Generate a session ID that persists during the browser session.
- */
 function getSessionId(): string {
-  const SESSION_KEY = "_curify_session_id";
   if (typeof window === "undefined") return "";
 
   let sessionId = sessionStorage.getItem(SESSION_KEY);
@@ -32,125 +50,92 @@ function getSessionId(): string {
   return sessionId;
 }
 
-/**
- * Get user ID from local storage (if logged in).
- * If you don't store user_id, this can be removed safely.
- */
 function getUserId(): string | null {
   if (typeof window === "undefined") return null;
   return localStorage.getItem("user_id");
 }
 
-/**
- * Build tracking payload (MUST match FastAPI TrackInteractionRequest).
- */
 function buildPayload(options: TrackingOptions) {
-  const sessionId = getSessionId();
-  const userId = getUserId();
-  const referrer = typeof window !== "undefined" ? document.referrer : undefined;
-
   return {
     content_id: options.contentId,
     content_type: options.contentType,
     action_type: options.actionType,
-    user_id: userId ?? undefined,
-    session_id: sessionId || undefined,
     view_mode: options.viewMode,
-    referrer,
+    user_id: getUserId() ?? undefined,
+    session_id: getSessionId() || undefined,
+    referrer:
+      typeof document !== "undefined" ? document.referrer || undefined : undefined,
   };
 }
 
-/**
- * Best-effort tracking with apiClient.
- * Fail silently.
- */
-async function trackViaApiClient(payload: any) {
+async function trackViaApiClient(payload: Record<string, unknown>) {
   try {
-    await apiClient.request<any>(TRACK_ENDPOINT, {
+    await apiClient.request(TRACK_ENDPOINT, {
       method: "POST",
       body: JSON.stringify(payload),
-      keepalive: true as any,
+      keepalive: true as never,
     });
-  } catch {
-    // tracking must never break UX
-  }
+  } catch {}
 }
 
-/**
- * More reliable tracking during unload using sendBeacon when available.
- * Falls back to apiClient if beacon isn't available.
- */
-function trackWithBeaconOrApi(payload: any) {
-  if (typeof window === "undefined") return;
+function trackWithBeacon(payload: Record<string, unknown>) {
+  if (typeof navigator === "undefined" || !navigator.sendBeacon) return false;
 
   try {
-    if (navigator.sendBeacon) {
-      const url = `${API_BASE}${TRACK_ENDPOINT}`;
-      const blob = new Blob([JSON.stringify(payload)], {
-        type: "application/json",
-      });
-      navigator.sendBeacon(url, blob);
-      return;
-    }
+    const url = `${API_BASE}${TRACK_ENDPOINT}`;
+    const blob = new Blob([JSON.stringify(payload)], {
+      type: "application/json",
+    });
+    return navigator.sendBeacon(url, blob);
   } catch {
-    // ignore and fall back
+    return false;
   }
-
-  void trackViaApiClient(payload);
 }
 
-/**
- * Track an interaction (normal path).
- */
-async function trackInteraction(options: TrackingOptions): Promise<void> {
+async function trackInteraction(options: TrackingOptions) {
   if (typeof window === "undefined") return;
   const payload = buildPayload(options);
   await trackViaApiClient(payload);
 }
 
-/**
- * Hook for manual tracking (normal path).
- */
 export function useTracking() {
   const track = useCallback((options: TrackingOptions) => {
     void trackInteraction(options);
   }, []);
 
+  const trackAction = useCallback(
+    (target: TrackingTarget, actionType: ActionType) => {
+      track({ ...target, actionType });
+    },
+    [track]
+  );
+
   const trackOnUnload = useCallback((options: TrackingOptions) => {
     const payload = buildPayload(options);
-    trackWithBeaconOrApi(payload);
+    const ok = trackWithBeacon(payload);
+    if (!ok) void trackViaApiClient(payload);
   }, []);
 
-  return { track, trackOnUnload };
+  return { track, trackAction, trackOnUnload };
 }
 
-/**
- * Hook for tracking view events automatically:
- * Tracks when an element enters the viewport.
- */
 export function useViewTracking(
   contentId: string,
   contentType: ContentType,
-  viewMode?: "list" | "cards",
-  options?: {
-    threshold?: number;
-    once?: boolean;
-  }
+  viewMode?: ViewMode
 ) {
-  const elementRef = useRef<HTMLElement | null>(null);
-  const hasTracked = useRef(false);
+  const ref = useRef<HTMLElement | null>(null);
+  const tracked = useRef(false);
   const { track } = useTracking();
 
   useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-
-    if (options?.once && hasTracked.current) return;
+    const el = ref.current;
+    if (!el || tracked.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
 
           track({
             contentId,
@@ -159,100 +144,16 @@ export function useViewTracking(
             viewMode,
           });
 
-          hasTracked.current = true;
-
-          if (options?.once) {
-            observer.unobserve(element);
-          }
+          tracked.current = true;
+          observer.unobserve(el);
         }
       },
-      { threshold: options?.threshold ?? 0.5 }
+      { threshold: 0.5 }
     );
 
-    observer.observe(element);
+    observer.observe(el);
     return () => observer.disconnect();
-  }, [contentId, contentType, viewMode, track, options?.once, options?.threshold]);
-
-  return elementRef;
-}
-
-/**
- * Hook for tracking click events.
- */
-export function useClickTracking(
-  contentId: string,
-  contentType: ContentType,
-  viewMode?: "list" | "cards"
-) {
-  const { track } = useTracking();
-
-  return useCallback(() => {
-    track({
-      contentId,
-      contentType,
-      actionType: "click",
-      viewMode,
-    });
   }, [contentId, contentType, viewMode, track]);
-}
 
-/**
- * Hook for tracking copy events.
- */
-export function useCopyTracking(
-  contentId: string,
-  contentType: ContentType,
-  viewMode?: "list" | "cards"
-) {
-  const { track } = useTracking();
-
-  return useCallback(() => {
-    track({
-      contentId,
-      contentType,
-      actionType: "copy",
-      viewMode,
-    });
-  }, [contentId, contentType, viewMode, track]);
-}
-
-/**
- * Hook for tracking share events.
- */
-export function useShareTracking(
-  contentId: string,
-  contentType: ContentType,
-  viewMode?: "list" | "cards"
-) {
-  const { track } = useTracking();
-
-  return useCallback(() => {
-    track({
-      contentId,
-      contentType,
-      actionType: "share",
-      viewMode,
-    });
-  }, [contentId, contentType, viewMode, track]);
-}
-
-/**
- * Hook for tracking generate events.
- * Used when a user clicks a "Generate" button (distinct from copy).
- */
-export function useGenerateTracking(
-  contentId: string,
-  contentType: ContentType,
-  viewMode?: "list" | "cards"
-) {
-  const { track } = useTracking();
-
-  return useCallback(() => {
-    track({
-      contentId,
-      contentType,
-      actionType: "generate",
-      viewMode,
-    });
-  }, [contentId, contentType, viewMode, track]);
+  return ref;
 }
