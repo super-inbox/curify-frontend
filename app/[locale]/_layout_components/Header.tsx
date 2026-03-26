@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import BtnN from "../_components/button/ButtonNormal";
 import { useAtom } from "jotai";
-import { modalAtom, drawerAtom, headerAtom, userAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import {
+  modalAtom,
+  drawerAtom,
+  headerAtom,
+  userAtom,
+  clientMountedAtom,
+} from "@/app/atoms/atoms";
 import { usePathname, useRouter, Link } from "@/i18n/navigation";
 import { useParams, useSearchParams } from "next/navigation";
 import UserDropdownMenu from "@/app/[locale]/_componentForPage/UserDropdownMenu";
@@ -17,6 +23,27 @@ import {
 } from "@/lib/language_config";
 import LanguageSubmenu from "@/app/[locale]/_componentForPage/LanguageSubmenu";
 import { useTranslations } from "next-intl";
+import { useClickTracking } from "@/services/useTracking";
+
+type HeaderTrackedLinkProps = {
+  href: string;
+  label: string;
+  contentId: string;
+};
+
+function HeaderTrackedLink({
+  href,
+  label,
+  contentId,
+}: HeaderTrackedLinkProps) {
+  const trackClick = useClickTracking(contentId, "menu_link");
+
+  return (
+    <Link href={href} className="hover:opacity-80" onClick={trackClick}>
+      {label}
+    </Link>
+  );
+}
 
 export default function Header() {
   const t = useTranslations("header");
@@ -29,12 +56,8 @@ export default function Header() {
   const [headerState] = useAtom(headerAtom);
   const [user] = useAtom(userAtom);
   const [, setModal] = useAtom(modalAtom);
-
-  // ✅ Use atom instead of useState — survives route changes so the header
-  // never re-flashes the logged-out state when navigating between pages.
   const [clientMounted] = useAtom(clientMountedAtom);
 
-  // Close the signin/signup drawer automatically when user logs in
   useEffect(() => {
     if (user && (drawerState === "signin" || drawerState === "signup")) {
       setDrawerState(null);
@@ -78,18 +101,12 @@ export default function Header() {
     setDrawerState(drawerState === "signin" ? null : "signin");
   };
 
-  const avatarInitial =    
-    user?.email?.charAt(0)?.toUpperCase() ||
-    "?";
-
-  // ✅ clientMounted is true from the first navigation onwards —
-  // only false on the very first SSR render of the session.
+  const avatarInitial = user?.email?.charAt(0)?.toUpperCase() || "?";
   const isLoggedIn = clientMounted && !!user;
 
   return (
-    <header className="flex px-8 py-1.5 fixed z-50 top-0 w-full bg-white/80 shadow-md backdrop-blur-sm">
-      <div className="flex items-center justify-between w-full">
-        {/* Left: Logo + Nav */}
+    <header className="fixed top-0 z-50 flex w-full bg-white/80 px-8 py-1.5 shadow-md backdrop-blur-sm">
+      <div className="flex w-full items-center justify-between">
         <div className="flex items-center space-x-8">
           <Link
             href="/"
@@ -106,31 +123,57 @@ export default function Header() {
           </Link>
 
           {(headerState === "out" || headerState === "in") && (
-            <nav className="hidden sm:flex space-x-6 text-sm text-[var(--c1)] font-medium">
-              <Link href="/" className="hover:opacity-80">{t("home")}</Link>
-              <Link href="/inspiration-hub" className="hover:opacity-80">{t("discover")}</Link>
-              <Link href="/nano-banana-pro-prompts" className="hover:opacity-80">{t("gallery")}</Link>
-              <Link href="/tools" className="hover:opacity-80">{t("tools")}</Link>
-              <Link href="/blog" className="hover:opacity-80">{t("blogs")}</Link>
-              <Link href="/workspace" className="hover:opacity-80">{t("workspace")}</Link>
+            <nav className="hidden space-x-6 text-sm font-medium text-[var(--c1)] sm:flex">
+              <HeaderTrackedLink
+                href="/"
+                label={t("home")}
+                contentId="header_home"
+              />
+              <HeaderTrackedLink
+                href="/inspiration-hub"
+                label={t("discover")}
+                contentId="header_discover"
+              />
+              <HeaderTrackedLink
+                href="/nano-banana-pro-prompts"
+                label={t("gallery")}
+                contentId="header_gallery"
+              />
+              <HeaderTrackedLink
+                href="/tools"
+                label={t("tools")}
+                contentId="header_tools"
+              />
+              <HeaderTrackedLink
+                href="/blog"
+                label={t("blogs")}
+                contentId="header_blogs"
+              />
+              <HeaderTrackedLink
+                href="/workspace"
+                label={t("workspace")}
+                contentId="header_workspace"
+              />
             </nav>
           )}
         </div>
 
-        {/* Right: Language, Actions, Menu */}
         <div className="flex items-center space-x-4">
-          {/* Language Selector */}
           <div className="flex items-center gap-1 border-r border-gray-200 pr-4">
             {primaryLanguages.map((lang) => (
               <button
                 key={lang.locale}
                 onClick={() => {
-                  const currentSearchParams = new URLSearchParams(searchParams.toString());
+                  const currentSearchParams = new URLSearchParams(
+                    searchParams.toString()
+                  );
                   const queryString = currentSearchParams.toString();
-                  const newPath = queryString ? `${pathname}?${queryString}` : pathname;
+                  const newPath = queryString
+                    ? `${pathname}?${queryString}`
+                    : pathname;
                   router.replace(newPath, { locale: lang.locale });
                 }}
-                className={`cursor-pointer px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                className={`cursor-pointer rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                   locale === lang.locale
                     ? "bg-blue-50 text-blue-600"
                     : "text-gray-600 hover:bg-gray-50"
@@ -143,11 +186,15 @@ export default function Header() {
             <div className="relative" ref={moreDropdownRef}>
               <button
                 onClick={() => setMoreLanguagesOpen(!moreLanguagesOpen)}
-                className={`cursor-pointer flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                  isCurrentMoreLang ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-50"
+                className={`cursor-pointer flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+                  isCurrentMoreLang
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-600 hover:bg-gray-50"
                 }`}
               >
-                {isCurrentMoreLang && currentLanguage ? currentLanguage.flag : t("more")}
+                {isCurrentMoreLang && currentLanguage
+                  ? currentLanguage.flag
+                  : t("more")}
                 <ChevronDown className="h-3 w-3" />
               </button>
 
@@ -156,17 +203,13 @@ export default function Header() {
                   currentLocale={locale}
                   languages={moreLanguages as any}
                   setShowLanguageSubmenu={setMoreLanguagesOpen}
-                  className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
-                  itemClassName="cursor-pointer w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2"
+                  className="absolute right-0 z-50 mt-2 w-40 rounded-lg border border-gray-200 bg-white py-2 shadow-lg"
+                  itemClassName="flex w-full cursor-pointer items-center gap-2 px-4 py-2 text-left text-sm hover:bg-gray-50"
                 />
               )}
             </div>
           </div>
 
-          {/* ✅ Auth section
-              - Before first mount (SSR): renders "Log in" placeholder — matches server HTML
-              - After first mount: correctly shows avatar or "Log in" based on userAtom
-              - On subsequent navigations: clientMountedAtom stays true — no flash */}
           {!clientMounted ? (
             <BtnN onClick={() => {}} aria-hidden="true">
               {t("logIn")}
@@ -175,7 +218,7 @@ export default function Header() {
             <>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="cursor-pointer flex items-center justify-center rounded-full overflow-hidden w-9 h-9 ring-2 ring-blue-100 hover:ring-blue-400 transition-all focus:outline-none"
+                className="flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full ring-2 ring-blue-100 transition-all hover:ring-blue-400 focus:outline-none"
                 aria-label="Open user menu"
               >
                 {user.avatar_url && !avatarError ? (
@@ -184,18 +227,21 @@ export default function Header() {
                     alt={user.email || "User avatar"}
                     width={36}
                     height={36}
-                    className="object-cover w-full h-full"
+                    className="h-full w-full object-cover"
                     onError={() => setAvatarError(true)}
                     referrerPolicy="no-referrer"
                   />
                 ) : (
-                  <span className="flex items-center justify-center w-full h-full bg-blue-500 text-white text-sm font-semibold select-none">
+                  <span className="flex h-full w-full select-none items-center justify-center bg-blue-500 text-sm font-semibold text-white">
                     {avatarInitial}
                   </span>
                 )}
               </button>
 
-              <BtnN onClick={() => setModal("topup")} className="text-sm px-4 py-2">
+              <BtnN
+                onClick={() => setModal("topup")}
+                className="px-4 py-2 text-sm"
+              >
                 {t("topUpCredits")}
               </BtnN>
             </>
@@ -203,11 +249,10 @@ export default function Header() {
             <BtnN onClick={handleLoginClick}>{t("logIn")}</BtnN>
           )}
 
-          {/* Hamburger Menu */}
           <div className="relative" ref={menuDropdownRef}>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="cursor-pointer p-2 hover:bg-gray-100 rounded-md transition-colors"
+              className="cursor-pointer rounded-md p-2 transition-colors hover:bg-gray-100"
               aria-label={t("menuAriaLabel")}
             >
               <Menu className="h-6 w-6 text-gray-700" />
