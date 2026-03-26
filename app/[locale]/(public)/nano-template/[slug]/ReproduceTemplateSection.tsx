@@ -4,13 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
-import ShareButton from "@/app/[locale]/_components/ShareButton";
-import {
-  useCopyTracking,
-  useGenerateTracking,
-  useShareTracking,
-} from "@/services/useTracking";
+import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+
 import {
   fillPrompt,
   normalizePrefills,
@@ -34,25 +29,9 @@ export default function ReproduceTemplateSection(props: {
   const t = useTranslations("nanoTemplate");
 
   const params = template.parameters || [];
-
   const [form, setForm] = useState<Record<string, any>>({});
-  
-  const [generated, setGenerated] = useState(false);
-
   const [showAllParams, setShowAllParams] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
-
-  const trackCopy = useCopyTracking(template.template_id, "nano_inspiration", "cards");
-  const trackGenerate = useGenerateTracking(
-    template.template_id,
-    "nano_inspiration",
-    "cards"
-  );
-  const trackShare = useShareTracking(
-    template.template_id,
-    "nano_inspiration",
-    "cards"
-  );
 
   useEffect(() => {
     const next: Record<string, any> = {};
@@ -105,18 +84,6 @@ export default function ReproduceTemplateSection(props: {
     setForm((prev) => ({ ...prev, [name]: v }));
   };
 
-  const onGenerate = async () => {
-    try {
-      await navigator.clipboard.writeText(promptText);
-      trackGenerate();
-
-      if (!generated) {
-        setGenerated(true);
-        setTimeout(() => setGenerated(false), 2500);
-      }
-    } catch {}
-  };
-
   return (
     <section className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm sm:p-6">
       <div>
@@ -129,7 +96,6 @@ export default function ReproduceTemplateSection(props: {
       </div>
 
       <div className="mt-5 grid grid-cols-1 gap-5 lg:grid-cols-12">
-        {/* LEFT: INPUTS */}
         <div className="lg:col-span-5">
           <div className="space-y-3">
             {params.length === 0 ? (
@@ -140,7 +106,6 @@ export default function ReproduceTemplateSection(props: {
               <>
                 {visibleParams.map((p) => {
                   const value = form[p.name] ?? "";
-
                   const { displayPlaceholder, candidates } = normalizePrefills(
                     p.placeholder
                   );
@@ -217,37 +182,30 @@ export default function ReproduceTemplateSection(props: {
             )}
           </div>
 
-          <div className="mt-4 flex flex-col gap-3">
-            <div className="flex flex-wrap gap-3">
-              <button
-                type="button"
-                onClick={onGenerate}
-                className="rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700"
-              >
-                {generated ? t("reproduce.copiedBtn") : t("reproduce.generateBtn")}
-              </button>
-
-              <CopyPromptButton
-      text={promptText}
-      onCopied={trackCopy}
-    />
-              <ShareButton
-                url={shareUrl}
-                title={template.template_id}
-                text="Try this Nano Banana template"
-                onShared={trackShare}
-              />
-            </div>
-
-            {generated && (
-              <p className="animate-pulse text-sm font-medium text-purple-600">
-                {t("reproduce.comingSoonNotice")}
-              </p>
-            )}
-          </div>
+          <UnifiedActionBar
+            className="mt-4"
+            tracking={{
+              contentId: template.template_id,
+              contentType: "nano_inspiration",
+              viewMode: "cards",
+            }}
+            generate={{
+              enabled: true,
+              text: promptText,
+            }}
+            copy={{
+              enabled: true,
+              text: promptText,
+            }}
+            share={{
+              enabled: true,
+              url: shareUrl,
+              title: template.template_id,
+              text: "Try this Nano Banana template",
+            }}
+          />
         </div>
 
-        {/* RIGHT: PROMPT PREVIEW */}
         <div className="lg:col-span-7">
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
             <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">

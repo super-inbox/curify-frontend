@@ -171,6 +171,16 @@ export default async function NanoTemplatePage({ params }: Props) {
         showOtherTemplates={false}
       />
 
+<section className="mt-8">
+<h2 className="mb-4 text-lg font-bold text-neutral-900">
+              From this template
+            </h2>
+<ExampleImagesGrid
+          items={section2Images}
+          locale={pageLocale}
+          maxRows={2}
+        />
+</section>
       {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
         <section className="mt-10 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
@@ -226,12 +236,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       ) : null}
 
       <section className="mt-8">
-        <ExampleImagesGrid
-          items={section2Images}
-          locale={pageLocale}
-          maxRows={3}
-        />
-
+       
         <NanoTemplateDetailClient
           locale={pageLocale}
           template={{

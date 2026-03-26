@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import ExampleActionBar from "./ExampleActionBar";
+import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
@@ -257,21 +257,32 @@ export default async function NanoExampleDetailPage({
         <PromptBreakdown prompt={prompt} params={example.params ?? {}} />
       </section>
 
-      <div className="flex flex-wrap items-center gap-2 pt-2">
-        <Link
-          href={`/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`}
-          className="inline-block rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-purple-700"
-        >
-          Try this template →
-        </Link>
-
-        <ExampleActionBar
-          exampleId={example.id}
-          pageUrl={examplePageUrl}
-          title={title}
-          promptText={prompt}
-        />
+      <div className="mt-auto">
+      <UnifiedActionBar
+  className="pt-2"
+  tracking={{
+    contentId: example.id,
+    contentType: "nano_inspiration",
+    viewMode: "cards",
+  }}
+  remix={{
+    enabled: true,
+    href: `/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`,
+  }}
+  copy={{
+    enabled: true,
+    text: prompt,
+  }}
+  share={{
+    enabled: true,
+    url: examplePageUrl,
+    title,
+    text: `Check out this Nano Banana example: ${title}`,
+  }}
+/>
       </div>
+
+      
     </div>
   </div>
 </section>
@@ -304,7 +315,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={3} />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} />
           </>
         )}
 

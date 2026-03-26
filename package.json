@@ -15,7 +15,8 @@
     "i18n:check": "node scripts/check_i18n.cjs",
     "i18n:verify": "node scripts/verify_consistency.cjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "redis:sync:nanoprompts": "node scripts/sync_nanoprompts_to_redis.cjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
@@ -41,6 +42,7 @@
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
+    "redis": "^5.11.0",
     "sharp": "^0.34.5",
     "sitemap": "^9.0.0",
     "stripe": "^18.0.0"

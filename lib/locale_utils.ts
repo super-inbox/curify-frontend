@@ -42,13 +42,16 @@ export function titleCaseFromSlug(slug: string): string {
     .join(" ");
 }
 
-export function buildLocalizedHref(locale: string, path: string) {
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return locale === DEFAULT_LOCALE ? normalizedPath : `/${locale}${normalizedPath}`;
-}
+export function buildTopicHref(locale: string, topicId: string) {
+  const normalized = topicId.trim().toLowerCase();
 
-export function buildTopicHref(locale: string, topic: string) {
-  return buildLocalizedHref(locale, `/topics/${topic}`);
+  if (normalized === "trending") {
+    return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
+  }
+
+  return locale === "en"
+    ? `/topics/${normalized}`
+    : `/${locale}/topics/${normalized}`;
 }
 
 export function getTopicLabel(

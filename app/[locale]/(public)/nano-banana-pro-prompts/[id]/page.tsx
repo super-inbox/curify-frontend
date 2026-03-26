@@ -7,7 +7,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 import CdnImage from "../../../_components/CdnImage";
-import NanoTemplateDetailClient from "../../nano-template/[slug]/NanoTemplateDetailClient";
+import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import { SITE_URL } from "@/lib/constants";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import {
@@ -20,8 +20,8 @@ import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import { resolveContentLocale } from "@/lib/locale_utils";
 import { PageLocale, makeSafeNanoTranslator } from "@/lib/locale_utils";
-import PromptActionBar from "./PromptActionBar";
-import { nanoPromptsService } from "@/services/nanoPrompts";
+
+import { loadNanoData } from "@/lib/nano_data_source"; // ✅ 新增
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -236,12 +236,24 @@ export default async function PromptDetailPage({
           <div className="px-6 py-6">
             <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
               <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
-              <PromptActionBar
-                promptId={prompt.id}
-                promptText={prompt.prompt_text}
-                pageUrl={buildPromptUrl(locale, prompt.id)}
-                title={prompt.title}
-              />
+              
+              <UnifiedActionBar
+  tracking={{
+    contentId: prompt.id,
+    contentType: "nano_gallery",
+    viewMode: "cards",
+  }}
+  copy={{
+    enabled: true,
+    text: prompt.prompt_text,
+  }}
+  share={{
+    enabled: true,
+    url: buildPromptUrl(locale, prompt.id),
+    title: prompt.title,
+    text: `Check out this AI prompt: ${prompt.title}`,
+  }}
+/> 
             </div>
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <pre className="whitespace-pre-wrap font-sans text-gray-800">
