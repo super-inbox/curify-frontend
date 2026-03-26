@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
 import { getCanonicalPath } from "@/lib/canonical";
@@ -46,6 +47,15 @@ function EntryBarItem({ item, locale }: ItemProps) {
 
 export default function EntryBar({ locale, className }: Props) {
   const t = useTranslations("entryBar");
+  const pathname = usePathname();
+
+  const isBlogPage =
+    pathname === "/blog" ||
+    pathname.startsWith("/blog/") ||
+    pathname === `/${locale}/blog` ||
+    pathname.startsWith(`/${locale}/blog/`);
+
+  if (isBlogPage) return null;
 
   return (
     <section

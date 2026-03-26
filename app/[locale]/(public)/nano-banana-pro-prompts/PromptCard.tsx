@@ -4,26 +4,16 @@ import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
-
-export type PromptCardData = {
-  id: number;
-  title: string;
-  description: string | null;
-  promptText: string;
-  imageUrl: string | null;
-  category: string | null;
-  sourceType: string | null;
-  domainCategory: string | null;
-};
+import type { NanoPromptBase } from '@/types/nanoPrompts';
 
 interface PromptCardProps {
-  prompt: PromptCardData;
+  prompt: NanoPromptBase;
 }
 
 const PLACEHOLDER_IMAGE =
   'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1064&auto=format&fit=crop';
 
-const normalizeCdnImageUrl = (imageUrl: string | null): string => {
+const normalizeCdnImageUrl = (imageUrl: string | null | undefined): string => {
   if (!imageUrl) return '/images/default-prompt-image.jpg';
   if (imageUrl.includes('static/images/')) {
     return imageUrl.replace('/static/images/', '/images/');
@@ -37,27 +27,18 @@ const normalizeCdnImageUrl = (imageUrl: string | null): string => {
   return imageUrl;
 };
 
-const getSourceBadgeClass = (sourceType: string) => {
-  const classes: Record<string, string> = {
-    twitter: 'bg-blue-500/80 text-white',
-    youtube: 'bg-red-500/80 text-white',
-    promptgather: 'bg-purple-500/80 text-white',
-  };
-  return classes[sourceType] || 'bg-gray-500/80 text-white';
-};
-
 export default function PromptCard({ prompt }: PromptCardProps) {
   const [copied, setCopied] = useState(false);
   const [hasImgError, setHasImgError] = useState(false);
 
-  const normalizedUrl = normalizeCdnImageUrl(prompt.imageUrl);
+  const normalizedUrl = normalizeCdnImageUrl(prompt.imageURL);
 
   const copyToClipboard = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
     try {
-      await navigator.clipboard.writeText(prompt.promptText);
+      await navigator.clipboard.writeText(prompt.prompt);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -71,7 +52,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
       className="group block overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       aria-label={`View details for ${prompt.title}`}
     >
-      <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
         <CdnImage
           src={hasImgError ? PLACEHOLDER_IMAGE : normalizedUrl}
           alt={prompt.title}
@@ -80,20 +61,17 @@ export default function PromptCard({ prompt }: PromptCardProps) {
           onError={() => setHasImgError(true)}
         />
 
-        {prompt.sourceType && (
-          <span
-            className={`absolute top-2 left-2 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide backdrop-blur-sm ${getSourceBadgeClass(
-              prompt.sourceType
-            )}`}
-          >
-            {prompt.sourceType}
-          </span>
-        )}
-
-        {prompt.domainCategory && (
-          <span className="absolute top-2 right-2 rounded-full bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm">
-            {prompt.domainCategory}
-          </span>
+        {prompt.tags?.length > 0 && (
+          <div className="absolute left-2 right-2 top-2 flex flex-wrap justify-end gap-1">
+            {prompt.tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         )}
       </div>
 
@@ -108,14 +86,14 @@ export default function PromptCard({ prompt }: PromptCardProps) {
           </p>
         )}
 
-        {prompt.promptText && (
+        {prompt.prompt && (
           <div
             className="relative rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 pr-16"
             onClick={(e) => e.preventDefault()}
           >
             <p className="line-clamp-2 text-xs text-gray-500">
-              {prompt.promptText.slice(0, 80)}
-              {prompt.promptText.length > 80 ? '…' : ''}
+              {prompt.prompt.slice(0, 80)}
+              {prompt.prompt.length > 80 ? '…' : ''}
             </p>
 
             <button
@@ -137,12 +115,6 @@ export default function PromptCard({ prompt }: PromptCardProps) {
               )}
             </button>
           </div>
-        )}
-
-        {prompt.category && (
-          <p className="truncate text-xs text-gray-400">
-            {prompt.category}
-          </p>
         )}
       </div>
     </Link>

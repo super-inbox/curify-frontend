@@ -9,115 +9,33 @@ import { SITE_URL } from "@/lib/constants";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 
 import { nanoPromptsService } from "@/services/nanoPrompts";
-import { NanoPrompt, NanoPromptBase } from "@/types/nanoPrompts";
+import type { NanoPrompt } from "@/types/nanoPrompts";
+import PromptCard from "../PromptCard";
 
 const DEFAULT_CONTENT_LOCALE = "en";
 
-// ─── UI Types ────────────────────────────────────────────────────────────────
-
-type PromptCardData = {
-  id: string;
-  title: string;
-  description: string;
-  prompt_text: string;
-  image_url: string;
-  tags: string[];
-};
-
-type PromptPageData = {
-  id: string;
-  title: string;
-  description: string;
-  prompt_text: string;
-  image_url: string;
-  tags: string[];
-  related: PromptCardData[];
-
-  // meta (optional / future-ready)
-  author: string;
-  author_handle?: string;
-  date: string;
-  category: string;
-  source_url: string;
-  source_type: string;
-  likes: number;
-  retweets: number;
-};
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-const buildPromptUrl = (locale: string, id: string) =>
+const buildPromptUrl = (locale: string, id: number | string) =>
   `${SITE_URL}/${locale}/nano-banana-pro-prompts/${id}`;
-
-const buildPromptPath = (locale: string, id: string) =>
-  `/${locale}/nano-banana-pro-prompts/${id}`;
-
-const getSourceBadgeClass = (sourceType: string): string => {
-  const classes: Record<string, string> = {
-    twitter: "bg-blue-100 text-blue-800",
-    youtube: "bg-red-100 text-red-800",
-    promptgather: "bg-purple-100 text-purple-800",
-  };
-  return classes[sourceType] ?? "bg-gray-100 text-gray-800";
-};
 
 const normalizeImageUrl = (raw: string | null | undefined): string => {
   if (!raw) return "/images/default-prompt-image.jpg";
-  if (raw.includes("static/images/")) return raw.replace("/static/images/", "/images/");
+  if (raw.includes("static/images/")) {
+    return raw.replace("/static/images/", "/images/");
+  }
   if (raw.startsWith("//")) return `https:${raw}`;
   if (raw.startsWith("/")) return raw;
   if (raw.startsWith("http://") || raw.startsWith("https://")) return raw;
   return `/${raw}`;
 };
 
-// ─── Mapping Layer ───────────────────────────────────────────────────────────
-
-function mapPromptCard(item: NanoPromptBase): PromptCardData {
-  return {
-    id: String(item.id),
-    title: item.title || "Untitled Prompt",
-    description: item.description || "",
-    prompt_text: item.prompt || "",
-    image_url: normalizeImageUrl(item.imageURL),
-    tags: item.tags || [],
-  };
-}
-
-function mapPromptDetail(item: NanoPrompt): PromptPageData {
-  return {
-    id: String(item.id),
-    title: item.title || "Untitled Prompt",
-    description: item.description || "",
-    prompt_text: item.prompt || "",
-    image_url: normalizeImageUrl(item.imageURL),
-    tags: item.tags || [],
-    related: Array.isArray(item.related)
-      ? item.related.map(mapPromptCard)
-      : [],
-
-    // default meta (can upgrade later)
-    author: "Anonymous",
-    author_handle: undefined,
-    date: new Date().toISOString().split("T")[0],
-    category: item.tags?.[0] || "Uncategorized",
-    source_url: "#",
-    source_type: "unknown",
-    likes: 0,
-    retweets: 0,
-  };
-}
-
-async function fetchPrompt(id: string): Promise<PromptPageData | null> {
+async function fetchPrompt(id: string): Promise<NanoPrompt | null> {
   try {
-    const prompt = await nanoPromptsService.getNanoPrompt(id);
-    return mapPromptDetail(prompt);
+    return await nanoPromptsService.getNanoPrompt(id);
   } catch (err) {
     console.error("Error fetching prompt:", err);
     return null;
   }
 }
-
-// ─── Metadata ────────────────────────────────────────────────────────────────
 
 export async function generateMetadata({
   params,
@@ -134,8 +52,11 @@ export async function generateMetadata({
     };
   }
 
+  const imageUrl = normalizeImageUrl(prompt.imageURL);
+  const promptText = prompt.prompt;
+
   const absoluteImageUrl =
-    toAbsUrlMaybe(prompt.image_url) ??
+    toAbsUrlMaybe(imageUrl) ??
     `${SITE_URL}/images/default-prompt-image.jpg`;
 
   return buildProPromptMetadata(
@@ -143,77 +64,23 @@ export async function generateMetadata({
       title: prompt.title,
       description:
         prompt.description ||
-        prompt.prompt_text.slice(0, 160) ||
+        promptText.slice(0, 160) ||
         "Creative AI prompt from Nano Banana.",
       absoluteImageUrl,
-      pageUrl: buildPromptUrl(locale, id),
-      canonicalUrl: buildPromptUrl(DEFAULT_CONTENT_LOCALE, id),
-      date: prompt.date,
-      author: prompt.author,
-      authorHandle: prompt.author_handle,
+      pageUrl: buildPromptUrl(locale, prompt.id),
+      canonicalUrl: buildPromptUrl(DEFAULT_CONTENT_LOCALE, prompt.id),
+      date: new Date().toISOString().split("T")[0],
+      author: "Anonymous",
       keywords: [
         "AI prompt",
         "Nano Banana",
         "prompt library",
-        prompt.category,
+        ...prompt.tags,
       ].filter(Boolean),
     },
-    (l) => buildPromptUrl(l, id)
+    (l) => buildPromptUrl(l, prompt.id)
   );
 }
-
-// ─── Components ──────────────────────────────────────────────────────────────
-
-function RelatedPromptCard({
-  prompt,
-  locale,
-}: {
-  prompt: PromptCardData;
-  locale: string;
-}) {
-  return (
-    <Link
-      href={buildPromptPath(locale, prompt.id)}
-      className="group block overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
-    >
-      <div className="relative aspect-[4/3] bg-gray-50">
-        <CdnImage
-          src={prompt.image_url}
-          alt={prompt.title}
-          fill
-          className="object-cover transition-transform group-hover:scale-[1.02]"
-        />
-      </div>
-
-      <div className="p-4">
-        <h3 className="line-clamp-2 text-base font-semibold text-gray-900">
-          {prompt.title}
-        </h3>
-
-        {prompt.description && (
-          <p className="mt-2 line-clamp-3 text-sm text-gray-600">
-            {prompt.description}
-          </p>
-        )}
-
-        {prompt.tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
-            {prompt.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-    </Link>
-  );
-}
-
-// ─── Page ────────────────────────────────────────────────────────────────────
 
 export default async function PromptDetailPage({
   params,
@@ -225,9 +92,12 @@ export default async function PromptDetailPage({
 
   if (!prompt) notFound();
 
+  const imageUrl = normalizeImageUrl(prompt.imageURL);
+  const promptText = prompt.prompt;
+
   const canonicalUrl = buildPromptUrl(DEFAULT_CONTENT_LOCALE, prompt.id);
   const absoluteImageUrl =
-    toAbsUrlMaybe(prompt.image_url) ??
+    toAbsUrlMaybe(imageUrl) ??
     `${SITE_URL}/images/default-prompt-image.jpg`;
 
   const jsonLd = {
@@ -236,16 +106,15 @@ export default async function PromptDetailPage({
     "@id": canonicalUrl,
     url: canonicalUrl,
     name: prompt.title,
-    description:
-      prompt.description ||
-      prompt.prompt_text.slice(0, 200),
+    description: prompt.description || promptText.slice(0, 200),
     image: [absoluteImageUrl],
-    datePublished: new Date(prompt.date).toISOString(),
+    datePublished: new Date().toISOString(),
     author: {
       "@type": "Person",
-      name: prompt.author,
+      name: "Anonymous",
     },
-    genre: prompt.category,
+    genre: prompt.tags[0] || "AI Prompt",
+    keywords: prompt.tags,
     publisher: {
       "@type": "Organization",
       name: "Curify",
@@ -272,7 +141,7 @@ export default async function PromptDetailPage({
             </Link>
 
             <span className="text-sm text-gray-500">
-              {new Date(prompt.date).toLocaleDateString()}
+              {new Date().toLocaleDateString()}
             </span>
           </div>
         </div>
@@ -280,11 +149,10 @@ export default async function PromptDetailPage({
 
       <main className="mx-auto max-w-6xl py-4 sm:px-6 lg:px-8">
         <article className="overflow-hidden rounded-lg bg-white shadow">
-          {/* Image */}
           <div className="px-6 py-4">
             <div className="relative flex h-96 w-full items-center justify-center bg-gray-50">
               <CdnImage
-                src={prompt.image_url}
+                src={imageUrl}
                 alt={prompt.title}
                 fill
                 className="object-contain"
@@ -293,22 +161,25 @@ export default async function PromptDetailPage({
             </div>
           </div>
 
-          {/* Title */}
-          <div className="flex items-start justify-between gap-3 border-b border-gray-200 px-6 py-5">
+          <div className="border-b border-gray-200 px-6 py-5">
             <h1 className="text-2xl font-bold text-gray-900">
               {prompt.title}
             </h1>
 
-            <span
-              className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${getSourceBadgeClass(
-                prompt.source_type
-              )}`}
-            >
-              {prompt.source_type}
-            </span>
+            {prompt.tags.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {prompt.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* Description */}
           {prompt.description && (
             <div className="border-b border-gray-200 px-6 py-6">
               <h2 className="mb-3 text-lg font-medium text-gray-900">
@@ -320,22 +191,19 @@ export default async function PromptDetailPage({
             </div>
           )}
 
-          {/* Prompt */}
           <div className="px-6 py-6">
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-lg font-medium text-gray-900">
-                Prompt
-              </h2>
+              <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
 
               <UnifiedActionBar
                 tracking={{
-                  contentId: prompt.id,
+                  contentId: String(prompt.id),
                   contentType: "nano_gallery",
                   viewMode: "cards",
                 }}
                 copy={{
                   enabled: true,
-                  text: prompt.prompt_text,
+                  text: promptText,
                 }}
                 share={{
                   enabled: true,
@@ -347,26 +215,21 @@ export default async function PromptDetailPage({
 
             <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
               <pre className="whitespace-pre-wrap text-gray-800">
-                {prompt.prompt_text}
+                {promptText}
               </pre>
             </div>
           </div>
         </article>
 
-        {/* Related */}
         {prompt.related.length > 0 && (
           <section className="mt-10">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
               Related Images
             </h2>
 
-            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {prompt.related.map((p) => (
-                <RelatedPromptCard
-                  key={p.id}
-                  prompt={p}
-                  locale={locale}
-                />
+                <PromptCard key={p.id} prompt={p} />
               ))}
             </div>
           </section>

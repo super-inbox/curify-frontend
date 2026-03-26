@@ -18,6 +18,7 @@ export default function NanoTemplateDetailClient(props: {
   otherNanoCards: NanoInspirationCardType[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
+  showOtherTemplateTitle?: boolean; // ✅ NEW
 }) {
   const t = useTranslations("nanoTemplate");
 
@@ -26,6 +27,7 @@ export default function NanoTemplateDetailClient(props: {
     otherNanoCards,
     showReproduce = true,
     showOtherTemplates = true,
+    showOtherTemplateTitle = true, // ✅ default true
   } = props;
 
   const requireAuth = () => true;
@@ -37,14 +39,16 @@ export default function NanoTemplateDetailClient(props: {
 
       {showOtherTemplates && (
         <section className={showReproduce ? "mt-10" : ""}>
-          <div className="mb-3">
-            <h2 className="text-lg font-bold text-neutral-900">
-              {t("otherTemplates.title")}
-            </h2>
-            <p className="mt-1 text-sm text-neutral-600">
-              {t("otherTemplates.subtitle")}
-            </p>
-          </div>
+          {showOtherTemplateTitle && (
+            <div className="mb-3">
+              <h2 className="text-lg font-bold text-neutral-900">
+                {t("otherTemplates.title")}
+              </h2>
+              <p className="mt-1 text-sm text-neutral-600">
+                {t("otherTemplates.subtitle")}
+              </p>
+            </div>
+          )}
 
           <NanoInspirationRow
             cards={otherNanoCards}

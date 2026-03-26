@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
@@ -8,55 +8,19 @@ import PromptCard from "./PromptCard";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
 
-/**
- * UI Prompt Shape (view model)
- */
-type Prompt = {
-  id: number;
-  title: string;
-  description: string | null;
-  promptText: string;
-  imageUrl: string | null;
-  category: string | null;
-  sourceType: string | null;
-  domainCategory: string | null;
-};
-
 type Pagination = {
   total: number;
   hasNextPage: boolean;
 };
 
-interface DomainCategory {
+interface TagCategory {
   category: string;
   count: number;
 }
 
 interface Props {
-  initialData: Prompt[] | null;
+  initialData: NanoPromptBase[] | null;
   error: string | null;
-}
-
-function mapNanoPromptToUI(p: NanoPromptBase): Prompt {
-  return {
-    id: p.id,
-    title: p.title,
-    description: p.description ?? null,
-    promptText: p.prompt,
-    imageUrl: p.imageURL ?? null,
-    category: p.tags?.[0] ?? null,
-    sourceType: null,
-    domainCategory: p.tags?.[0] ?? null,
-  };
-}
-
-function toSlug(value: string) {
-  return value
-    .trim()
-    .toLowerCase()
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 }
 
 export default function NanoBananaProPromptsClient({
@@ -65,97 +29,63 @@ export default function NanoBananaProPromptsClient({
 }: Props) {
   const t = useTranslations("nanoGallery");
 
-  const [allPrompts, setAllPrompts] = useState<Prompt[]>(initialData || []);
-  const [prompts, setPrompts] = useState<Prompt[]>([]);
-
-  const [isLoading, setIsLoading] = useState(!initialData);
-  const [sourceFilter, setSourceFilter] = useState<string>("all");
-  const [sources, setSources] = useState<string[]>(["all"]);
-  const [domainCategories, setDomainCategories] = useState<DomainCategory[]>(
-    []
+  const [allPrompts, setAllPrompts] = useState<NanoPromptBase[]>(
+    initialData || []
   );
+  const [isLoading, setIsLoading] = useState(!initialData);
   const [displayedCount, setDisplayedCount] = useState(20);
 
-  const [pagination, setPagination] = useState<Pagination>({
-    total: 0,
-    hasNextPage: false,
-  });
-
   useEffect(() => {
-    if (!error) loadData();
-    else setIsLoading(false);
-  }, []);
-
-  async function loadData() {
-    try {
-      setIsLoading(true);
-
-      const nanoPrompts = await nanoPromptsService.getMostPopularNanoPrompts();
-      const mapped = nanoPrompts.map(mapNanoPromptToUI);
-
-      processPrompts(mapped);
-    } catch (err) {
-      console.error("Error loading prompts:", err);
-    } finally {
+    if (initialData || error) {
       setIsLoading(false);
+      return;
     }
-  }
 
-  function processPrompts(data: Prompt[]) {
-    const valid = data.filter(
-      (p) => p && typeof p.id === "number" && typeof p.title === "string"
-    );
+    async function loadData() {
+      try {
+        setIsLoading(true);
+        const nanoPrompts =
+          await nanoPromptsService.getMostPopularNanoPrompts();
+        setAllPrompts(
+          nanoPrompts.filter(
+            (p) => p && typeof p.id === "number" && typeof p.title === "string"
+          )
+        );
+      } catch (err) {
+        console.error("Error loading prompts:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
-    setAllPrompts(valid);
+    loadData();
+  }, [initialData, error]);
 
-    const uniqueSources = Array.from(
-      new Set(valid.map((p) => p.sourceType).filter(Boolean))
-    ) as string[];
-
-    setSources(["all", ...uniqueSources]);
-
+  const categories = useMemo<TagCategory[]>(() => {
     const counts: Record<string, number> = {};
-    valid.forEach((p) => {
-      if (p.domainCategory) {
-        counts[p.domainCategory] = (counts[p.domainCategory] || 0) + 1;
+
+    allPrompts.forEach((prompt) => {
+      const primaryTag = prompt.tags?.[0];
+      if (primaryTag) {
+        counts[primaryTag] = (counts[primaryTag] || 0) + 1;
       }
     });
 
-    setDomainCategories(
-      Object.entries(counts)
-        .map(([category, count]) => ({
-          category,
-          count,
-        }))
-        .sort((a, b) => b.count - a.count)
-    );
-  }
+    return Object.entries(counts)
+      .map(([category, count]) => ({ category, count }))
+      .sort((a, b) => b.count - a.count);
+  }, [allPrompts]);
 
-  const filterPrompts = useCallback(() => {
-    let filtered = [...allPrompts];
+  const prompts = useMemo(() => {
+    return allPrompts.slice(0, displayedCount);
+  }, [allPrompts, displayedCount]);
 
-    if (sourceFilter !== "all") {
-      filtered = filtered.filter((p) => p.sourceType === sourceFilter);
-    }
-
-    const total = filtered.length;
-    const visible = Math.min(displayedCount, total);
-
-    setPagination({
-      total,
-      hasNextPage: visible < total,
-    });
-
-    return filtered.slice(0, displayedCount);
-  }, [allPrompts, sourceFilter, displayedCount]);
-
-  useEffect(() => {
-    setDisplayedCount(20);
-  }, [sourceFilter]);
-
-  useEffect(() => {
-    setPrompts(filterPrompts());
-  }, [filterPrompts]);
+  const pagination = useMemo<Pagination>(() => {
+    return {
+      total: allPrompts.length,
+      hasNextPage: displayedCount < allPrompts.length,
+    };
+  }, [allPrompts.length, displayedCount]);
 
   const loadMore = () => setDisplayedCount((prev) => prev + 20);
 
@@ -187,7 +117,7 @@ export default function NanoBananaProPromptsClient({
           </p>
         </header>
 
-        {domainCategories.length > 0 && (
+        {categories.length > 0 && (
           <section className="sticky top-24 z-20 mb-8 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-sm backdrop-blur">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="text-base font-semibold text-gray-900">
@@ -196,7 +126,7 @@ export default function NanoBananaProPromptsClient({
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {domainCategories.map(({ category, count }) => (
+              {categories.map(({ category, count }) => (
                 <Link
                   key={category}
                   href={`/nano-banana-pro-prompts/tag/${encodeURIComponent(category)}`}
@@ -217,8 +147,8 @@ export default function NanoBananaProPromptsClient({
         ) : (
           <>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {prompts.map((p) => (
-                <PromptCard key={p.id} prompt={p} />
+              {prompts.map((prompt) => (
+                <PromptCard key={prompt.id} prompt={prompt} />
               ))}
             </div>
 

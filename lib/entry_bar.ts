@@ -8,7 +8,7 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
   {
     id: "character",
     emoji: "🎭",
-    path: "/topics/psychology",
+    path: "/topics/character",
   },
   {
     id: "learning",
@@ -28,7 +28,7 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
   {
     id: "product",
     emoji: "🛍️",
-    path: "/topics/commerce",
+    path: "/topics/product",
   },
   {
     id: "video",

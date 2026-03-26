@@ -1,33 +1,14 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import NanoBananaProPromptsClient from './NanoBananaProPromptsClient';
-import fs from 'fs';
-import path from 'path';
-import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
-import { SITE_URL, CDN_BASE } from "@/lib/constants";
-import { loadNanoData } from '@/lib/nano_data_source';
+import { getCanonicalUrl, getLanguagesMap } from '@/lib/canonical';
+import { SITE_URL } from '@/lib/constants';
+import { nanoPromptsService } from '@/services/nanoPrompts';
+import type { NanoPromptBase } from '@/types/nanoPrompts';
+import { toOgLocale } from '@/lib/locale_utils';
 
-export const runtime = 'nodejs'; // required for fs
+export const runtime = 'nodejs';
 
-type JsonData = {
-  prompts?: any[];
-};
-
-function toOgLocale(locale: string) {
-  const map: Record<string, string> = {
-    en: 'en_US',
-    zh: 'zh_CN',
-    es: 'es_ES',
-    fr: 'fr_FR',
-    de: 'de_DE',
-    ja: 'ja_JP',
-    ko: 'ko_KR',
-    hi: 'hi_IN',
-    tr: 'tr_TR',
-    ru: 'ru_RU',
-  };
-
-  return map[locale] || 'en_US';
-}
 
 export async function generateMetadata({
   params,
@@ -35,26 +16,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  let totalPrompts = 0;
-
-  try {
-    const data = await loadNanoData();
-    totalPrompts = Array.isArray(data?.prompts) ? data.prompts.length : 0;
-  } catch (error) {
-    console.error('Error reading prompts for metadata:', error);
-  }
 
   const title = 'Nano Banana Pro Prompts - Discover Creative AI Prompts';
-  const description = `Explore ${totalPrompts}+ curated AI prompts from top creators. Find inspiration for your next project with prompts for image generation, text creation, and more.`;
-  const canonicalUrl = getCanonicalUrl(locale, "/nano-banana-pro-prompts");
+  const description =
+    'Explore curated AI prompts from top creators. Find inspiration for your next project with prompts for image generation, text creation, and more.';
+  const canonicalUrl = getCanonicalUrl(locale, '/nano-banana-pro-prompts');
 
   return {
     title,
     description,
     keywords: [
-      'AI prompts', 'creative prompts', 'prompt engineering',
-      'AI image generation', 'ChatGPT prompts', 'stable diffusion prompts',
-      'midjourney prompts', 'prompt library', 'AI tools', 'creative AI',
+      'AI prompts',
+      'creative prompts',
+      'prompt engineering',
+      'AI image generation',
+      'ChatGPT prompts',
+      'stable diffusion prompts',
+      'midjourney prompts',
+      'prompt library',
+      'AI tools',
+      'creative AI',
     ],
     authors: [{ name: 'Nano Banana' }],
     creator: 'Nano Banana',
@@ -94,35 +75,34 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: canonicalUrl,
-      languages: getLanguagesMap("/nano-banana-pro-prompts"),
+      languages: getLanguagesMap('/nano-banana-pro-prompts'),
     },
   };
 }
 
-// Server component that fetches initial data (from filesystem, not HTTP)
 export default async function NanoBananaProPromptsPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  let initialData: any[] = [];
+
+  let initialData: NanoPromptBase[] | null = null;
   let error: string | null = null;
 
   try {
-    const data = await loadNanoData();
-    initialData = Array.isArray(data?.prompts) ? data.prompts! : [];
+    initialData = await nanoPromptsService.getMostPopularNanoPrompts();
   } catch (err) {
     console.error('Error loading initial prompts:', err);
     error = err instanceof Error ? err.message : 'Failed to load prompts';
   }
 
-  // Generate JSON-LD structured data for SEO
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Nano Banana Pro Prompts',
-    description: 'A curated collection of creative AI prompts for image generation, text creation, and more',
+    description:
+      'A curated collection of creative AI prompts for image generation, text creation, and more',
     url: `${SITE_URL}/${locale}/nano-banana-pro-prompts`,
     publisher: {
       '@type': 'Organization',
@@ -132,35 +112,29 @@ export default async function NanoBananaProPromptsPage({
         url: `${SITE_URL}/images/logo.png`,
       },
     },
-    numberOfItems: initialData.length,
-    itemListElement: initialData.slice(0, 10).map((prompt: any, index: number) => ({
+    numberOfItems: initialData?.length ?? 0,
+    itemListElement: (initialData ?? []).slice(0, 10).map((prompt, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
         '@type': 'CreativeWork',
-        name: prompt?.title || 'Untitled Prompt',
-        description: prompt?.description || 'AI creative prompt',
-        author: {
-          '@type': 'Person',
-          name: prompt?.author || 'Unknown',
-        },
-        datePublished: prompt?.date || undefined,
-        // Use absolute, valid image URL for SEO
-        image: prompt?.imageUrl,
+        name: prompt.title || 'Untitled Prompt',
+        description: prompt.description || 'AI creative prompt',
+        image: prompt.imageURL,
       },
     })),
   };
 
   return (
     <>
-      {/* Add structured data for search engines */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-
-      {/* Client component with initial data */}
-      <NanoBananaProPromptsClient initialData={initialData} error={error} />
+      <NanoBananaProPromptsClient
+        initialData={initialData}
+        error={error}
+      />
     </>
   );
 }

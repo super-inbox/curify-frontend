@@ -1,80 +1,26 @@
 [
   {
-    "id": "trending",
-    "icon": "trending-up",
-    "priority": 0,
-    "keywords": ["trending", "viral", "hot topics", "current events", "culture"]
-  },
-  {
     "id": "learning",
     "icon": "book-open",
     "priority": 1,
     "keywords": ["education", "knowledge", "learning", "infographic", "science"]
   },
   {
-    "id": "psychology",
+    "id": "character",
     "icon": "brain",
     "priority": 2,
     "keywords": ["mbti", "personality", "psychology", "character", "archetype"]
   },
   {
-    "id": "history",
-    "icon": "scroll-text",
-    "priority": 3,
-    "keywords": ["history", "battle", "timeline", "heritage", "culture"]
-  },
-  {
-    "id": "career",
-    "icon": "briefcase",
-    "priority": 4,
-    "keywords": ["career", "workplace", "startup", "productivity", "business"]
-  },
-  {
-    "id": "commerce",
+    "id": "product",
     "icon": "shopping-bag",
     "priority": 5,
     "keywords": ["ecommerce", "product", "fashion", "branding", "marketing"]
-  },
-  {
-    "id": "design",
-    "icon": "palette",
-    "priority": 6,
-    "keywords": ["design", "illustration", "creative", "uiux", "visual"]
-  },
-  {
-    "id": "nature",
-    "icon": "leaf",
-    "priority": 7,
-    "keywords": ["nature", "species", "science", "environment", "wildlife"]
-  },
-  {
-    "id": "travel",
-    "icon": "map",
-    "priority": 8,
-    "keywords": ["travel", "destination", "landmark", "tourism", "culture"]
   },
   {
     "id": "lifestyle",
     "icon": "sparkles",
     "priority": 9,
     "keywords": ["lifestyle", "food", "fashion", "home", "social"]
-  },
-  {
-    "id": "film",
-    "icon": "clapperboard",
-    "priority": 10,
-    "keywords": ["film", "story", "scene", "storyboard", "narrative"]
-  },
-  {
-    "id": "ai",
-    "icon": "cpu",
-    "priority": 11,
-    "keywords": ["ai", "agent", "workflow", "automation", "technology"]
-  },
-  {
-    "id": "gaming",
-    "icon": "gamepad-2",
-    "priority": 12,
-    "keywords": ["gaming", "virtual world", "character", "fantasy"]
   }
 ]
