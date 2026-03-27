@@ -13683,5 +13683,317 @@
         "title": "rainy day"
       }
     }
+  },
+  {
+    "id": "template-costume-indian-sari",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-indian-sari.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-indian-sari-prev.jpg"
+    },
+    "params": {
+      "costume_style": "indian sari"
+    },
+    "locales": {
+      "zh": {
+        "title": "indian sari"
+      }
+    }
+  },
+  {
+    "id": "template-costume-korean-hanbok-mens",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-korean-hanbok-mens.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-korean-hanbok-mens-prev.jpg"
+    },
+    "params": {
+      "costume_style": "korean hanbok mens"
+    },
+    "locales": {
+      "zh": {
+        "title": "korean hanbok mens"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-druig",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-druig.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-druig-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "druig"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-gilgamesh",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-gilgamesh.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-gilgamesh-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "gilgamesh"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-ikaris",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-ikaris.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-ikaris-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "ikaris"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-phastos",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-phastos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-phastos-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "phastos"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-01-cover",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-01-cover-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 01 cover"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-02-performance-vs-stock",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-02-performance-vs-stock.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-02-performance-vs-stock-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 02 performance vs stock"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-03-deadend-strategy",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-03-deadend-strategy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-03-deadend-strategy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 03 deadend strategy"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-04-deadend-openai",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-04-deadend-openai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-04-deadend-openai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 04 deadend openai"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-05-deadend-claude",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-05-deadend-claude.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-05-deadend-claude-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 05 deadend claude"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-06-ai-plugin-vs-agent",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-06-ai-plugin-vs-agent.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-06-ai-plugin-vs-agent-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 06 ai plugin vs agent"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-07-case-google-gemini",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-07-case-google-gemini.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-07-case-google-gemini-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 07 case google gemini"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-08-future-path",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-08-future-path.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-08-future-path-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 08 future path"
+      }
+    }
+  },
+  {
+    "id": "template-travel-lhasa",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-lhasa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-lhasa-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "lhasa"
+      }
+    }
+  },
+  {
+    "id": "template-travel-mumbai",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-mumbai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-mumbai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "mumbai"
+      }
+    }
+  },
+  {
+    "id": "template-travel-phuket",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-phuket.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-phuket-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "phuket"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-animal-actions",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-animal-actions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-animal-actions-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "animal actions"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-banana-ripeness",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-banana-ripeness.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "banana ripeness"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-coffee-drinks",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-coffee-drinks.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-coffee-drinks-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "coffee drinks"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-space",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-space.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-space-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "space"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-weather",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-weather.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-weather-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "weather"
+      }
+    }
   }
 ]

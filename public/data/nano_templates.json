@@ -4093,5 +4093,187 @@
     },
     "og_image": "/images/nano_insp_preview/template-mbti-ghibli-ponyo-prev.jpg",
     "topics": "character"
+  },
+  {
+    "id": "template-vocabulary",
+    "locales": {
+        "zh": {
+            "base_prompt": "（英语单词卡设计师）你是一位专业的双语单词卡片设计师，擅长制作清新可爱的英语学习海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质主题英语单词卡，风格参考图中清新可爱、儿童友好的卡通插画质感。卡片布局：1. 顶部：标题为“{topic_name} | {topic_chinese}”，使用醒目可爱的字体，搭配主题匹配的柔和背景（如动物用浅绿色、咖啡用浅蓝色、太空用星空、天气用米黄色）。2. 网格布局：8个单词卡片以4×2或2×4网格排列，每张卡片包含：左侧：对应单词的可爱彩色卡通插画（动物、饮品、水果、太空、天气等图标）；右侧：大号英文单词 {word_1_en}、中文释义 {word_1_cn}、括号内标注拼音 ({pinyin_1})。3. 整体风格：卡片为圆角简洁设计，柔和马卡龙色系，友好卡通插画风格，文字清晰易读，高对比便于识别，无多余元素，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "Animals",
+                        "Food",
+                        "Fruits",
+                        "Weather",
+                        "Space",
+                        "Coffee"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "动物",
+                        "食物",
+                        "水果",
+                        "天气",
+                        "太空",
+                        "咖啡"
+                    ]
+                },
+                {
+                    "name": "word_1_en",
+                    "label": "单词1（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Cat",
+                        "Apple",
+                        "Sun",
+                        "Moon",
+                        "Latte"
+                    ]
+                },
+                {
+                    "name": "word_1_cn",
+                    "label": "单词1（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "猫",
+                        "苹果",
+                        "太阳",
+                        "月亮",
+                        "拿铁"
+                    ]
+                },
+                {
+                    "name": "pinyin_1",
+                    "label": "单词1（拼音）",
+                    "type": "text",
+                    "placeholder": [
+                        "māo",
+                        "píng guǒ",
+                        "tài yáng",
+                        "yuè liang",
+                        "ná tiě"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
+    "topics": "learning"
+},
+  {
+    "id": "template-series-infographic",
+    "locales": {
+        "zh": {
+            "base_prompt": "（通用系列信息图设计师）你是一位顶级模块化信息图设计师，擅长创作系列主题组图，每张卡片聚焦一个核心章节，风格统一、叙事连贯。根据用户指定的【{series_topic}】，生成一套完整的竖版3:4高品质系列卡片，所有卡片保持一致的视觉语言与排版逻辑，仅替换内容即可适配不同主题（商业、科普、文化、教育等）。单张卡片通用结构：1. 顶部标题栏：醒目标题「{section_title}」，搭配主题匹配的柔和背景色，圆角边框设计。2. 中心视觉区：核心卡通/插画/示意图，直观呈现章节核心概念（如对比图、时间线、流程图、拟人化形象、场景插画），风格为{art_style}。3. 内容模块区：布局为左右分栏/上下堆叠/多图标网格，每个模块包含「图标+标签+简短说明」。4. 底部总结栏：高亮文本框，放置该章节的核心结论/标语/金句。整体风格：干净圆角UI，柔和配色，清晰易读的字体，无多余装饰，左上角带Curify水印，竖版3:4格式，4K超高清，直接出图。系列主题为【{series_topic}】。",
+            "parameters": [
+                {
+                    "name": "series_topic",
+                    "label": "系列主题",
+                    "type": "text",
+                    "placeholder": [
+                        "微软的AI困境",
+                        "蝴蝶的生命周期",
+                        "中国传统节日",
+                        "太阳系行星科普",
+                        "情绪管理指南"
+                    ]
+                },
+                {
+                    "name": "art_style",
+                    "label": "绘画风格",
+                    "type": "text",
+                    "placeholder": [
+                        "可爱卡通风格",
+                        "扁平插画风格",
+                        "复古国风插画",
+                        "科技感线稿风格",
+                        "水彩手绘风格"
+                    ]
+                },
+                {
+                    "name": "section_title",
+                    "label": "章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "概览：核心矛盾与现象",
+                        "原因篇：战略短视与依赖",
+                        "对比篇：两种模式差异",
+                        "案例篇：竞品成功经验",
+                        "方案篇：未来破局路径"
+                    ]
+                },
+                {
+                    "name": "overview_title",
+                    "label": "概览标题",
+                    "type": "text",
+                    "placeholder": [
+                        "核心矛盾：业绩与股价的撕裂",
+                        "生命循环：从卵到蝴蝶",
+                        "岁时节庆：中国人的时间美学"
+                    ]
+                },
+                {
+                    "name": "section1_title",
+                    "label": "第一章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "死局①：战略短视+选人失误",
+                        "阶段1：卵——生命的起点",
+                        "春节：辞旧迎新，阖家团圆"
+                    ]
+                },
+                {
+                    "name": "section2_title",
+                    "label": "第二章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "死局②：OpenAI合作悬顶之剑",
+                        "阶段2：幼虫——贪吃的成长",
+                        "清明：慎终追远，踏青寻春"
+                    ]
+                },
+                {
+                    "name": "comparison_title",
+                    "label": "对比章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "对比：AI外挂 vs AI原生Agent",
+                        "对比：蝴蝶与蛾的差异",
+                        "对比：中西节日文化差异"
+                    ]
+                },
+                {
+                    "name": "case_title",
+                    "label": "案例章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "案例启示：谷歌Gemini的逆袭",
+                        "案例：帝王蝶的迁徙奇迹",
+                        "案例：端午节的起源与流变"
+                    ]
+                },
+                {
+                    "name": "solutions_title",
+                    "label": "解决方案标题",
+                    "type": "text",
+                    "placeholder": [
+                        "未来出路：破局方案",
+                        "保护建议：蝴蝶栖息地保护",
+                        "传承路径：传统节日的当代活化"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-01-cover-prev.jpg",
+"topics": "learning"
   }
 ]

@@ -973,5 +973,51 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+  "category": "Language Learning Card Category",
+  "description": "Create visually engaging bilingual vocabulary cards that combine English words, Chinese meanings, and pronunciation in a clean, educational format.",
+  "title": "Nano Banana Prompt: Bilingual Vocabulary Card Generator | Curify AI",
+  "content": {
+    "sections": {
+      "what": "This template uses structured Nano Banana prompts to generate high-quality bilingual vocabulary cards. Each card presents English words alongside Chinese translations and pinyin, paired with cute, intuitive illustrations. The layout is designed for clarity, memorability, and visual appeal, making it ideal for language learning and educational content.",
+      "who": "Suitable for language learners, ESL educators, Chinese learners, educational content creators, parents teaching children, vocabulary app designers, and social media accounts focused on learning content.",
+      "how": [
+        "Choose a topic (e.g., Animals, Food, Weather, Space).",
+        "Provide the English and Chinese title for the topic.",
+        "Define vocabulary words with English, Chinese translation, and pinyin.",
+        "Generate a grid-based vocabulary card with illustrations for each word.",
+        "Ensure the design uses soft colors, rounded layout, and clear typography for readability."
+      ],
+      "prompts": [
+        "Create a vocabulary card for Animals: Cat (猫, māo), Dog (狗, gǒu), Bird (鸟, niǎo), Fish (鱼, yú), Rabbit (兔子, tù zi), Panda (熊猫, xióng māo), Tiger (老虎, lǎo hǔ), Elephant (大象, dà xiàng).",
+        "Generate a Food vocabulary card: Apple (苹果, píng guǒ), Bread (面包, miàn bāo), Milk (牛奶, niú nǎi), Coffee (咖啡, kā fēi), Rice (米饭, mǐ fàn), Egg (鸡蛋, jī dàn), Cake (蛋糕, dàn gāo), Juice (果汁, guǒ zhī).",
+        "Create a Weather vocabulary card: Sun (太阳, tài yáng), Rain (雨, yǔ), Snow (雪, xuě), Wind (风, fēng), Cloud (云, yún), Storm (暴风雨, bào fēng yǔ), Fog (雾, wù), Rainbow (彩虹, cǎi hóng)."
+      ]
+    }
   }
+},
+"template-series-infographic": {
+  "category": "Series Infographic Category",
+  "description": "Create modular, multi-card infographic series that break down complex topics into structured, visually consistent chapters.",
+  "title": "Nano Banana Prompt: Series Infographic Generator | Curify AI",
+  "content": {
+    "sections": {
+      "what": "This template generates a cohesive series of infographic cards, each representing a chapter of a larger topic. The design follows a consistent visual system with structured sections such as title, central illustration, modular content blocks, and summary highlights. It is optimized for storytelling across multiple cards with clarity and visual continuity.",
+      "who": "Suitable for educators, content creators, business storytellers, startup analysts, product explainers, science communicators, and social media creators producing multi-part educational or narrative content.",
+      "how": [
+        "Define a series topic (e.g., AI trends, lifecycle processes, cultural systems).",
+        "Break the topic into structured sections or chapters.",
+        "Assign a visual style (e.g., flat illustration, cartoon, watercolor, tech diagram).",
+        "Design each card with a title, central visual, and modular explanation blocks.",
+        "Add a highlighted summary or takeaway at the bottom of each card."
+      ],
+      "prompts": [
+        "Create a series infographic on 'The Lifecycle of a Butterfly' with sections: Overview, Egg Stage, Larva Stage, Pupa Stage, Adult Stage, and include soft pastel illustrations.",
+        "Generate a multi-card infographic for 'Microsoft's AI Strategy Challenges' with sections on strategy, competition, partnerships, risks, and future outlook in a clean tech illustration style.",
+        "Create a series infographic on 'Emotional Intelligence Guide' with chapters on awareness, regulation, empathy, communication, and growth, using friendly cartoon visuals."
+      ]
+    }
+  }
+}
 }

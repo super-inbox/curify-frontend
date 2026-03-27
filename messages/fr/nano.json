@@ -973,5 +973,51 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Catégorie de cartes de vocabulaire pour l'apprentissage des langues",
+    "description": "Créez des cartes de vocabulaire bilingues visuellement engageantes qui combinent des mots anglais, des significations chinoises et une prononciation dans un format éducatif clair.",
+    "title": "Nano Banana Prompt : Générateur de cartes de vocabulaire bilingues | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des invites structurées de Nano Banana pour générer des cartes de vocabulaire bilingues de haute qualité. Chaque carte présente des mots anglais accompagnés de traductions chinoises et de pinyin, associés à des illustrations mignonnes et intuitives. La mise en page est conçue pour la clarté, la mémorabilité et l'attrait visuel, ce qui la rend idéale pour l'apprentissage des langues et le contenu éducatif.",
+        "who": "Convient aux apprenants en langues, aux éducateurs ESL, aux apprenants chinois, aux créateurs de contenu éducatif, aux parents enseignant aux enfants, aux concepteurs d'applications de vocabulaire et aux comptes de médias sociaux axés sur le contenu d'apprentissage.",
+        "how": [
+          "Choisissez un sujet (par exemple, Animaux, Nourriture, Météo, Espace).",
+          "Fournissez le titre en anglais et en chinois pour le sujet.",
+          "Définissez des mots de vocabulaire avec la traduction anglaise, la traduction chinoise et le pinyin.",
+          "Générez une carte de vocabulaire basée sur une grille avec des illustrations pour chaque mot.",
+          "Assurez-vous que le design utilise des couleurs douces, une mise en page arrondie et une typographie claire pour la lisibilité."
+        ],
+        "prompts": [
+          "Créez une carte de vocabulaire pour les Animaux : Chat (猫, māo), Chien (狗, gǒu), Oiseau (鸟, niǎo), Poisson (鱼, yú), Lapin (兔子, tù zi), Panda (熊猫, xióng māo), Tigre (老虎, lǎo hǔ), Éléphant (大象, dà xiàng).",
+          "Générez une carte de vocabulaire sur la Nourriture : Pomme (苹果, píng guǒ), Pain (面包, miàn bāo), Lait (牛奶, niú nǎi), Café (咖啡, kā fēi), Riz (米饭, mǐ fàn), Œuf (鸡蛋, jī dàn), Gâteau (蛋糕, dàn gāo), Jus (果汁, guǒ zhī).",
+          "Créez une carte de vocabulaire sur la Météo : Soleil (太阳, tài yáng), Pluie (雨, yǔ), Neige (雪, xuě), Vent (风, fēng), Nuage (云, yún), Tempête (暴风雨, bào fēng yǔ), Brouillard (雾, wù), Arc-en-ciel (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Catégorie d'infographie de série",
+    "description": "Créez des séries d'infographies modulaires et multi-cartes qui décomposent des sujets complexes en chapitres structurés et visuellement cohérents.",
+    "title": "Nano Banana Prompt : Générateur d'infographies de série | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une série cohérente de cartes d'infographie, chacune représentant un chapitre d'un sujet plus large. Le design suit un système visuel cohérent avec des sections structurées telles que le titre, l'illustration centrale, les blocs de contenu modulaires et les points forts du résumé. Il est optimisé pour raconter des histoires à travers plusieurs cartes avec clarté et continuité visuelle.",
+        "who": "Convient aux éducateurs, créateurs de contenu, narrateurs d'affaires, analystes de startups, explicateurs de produits, communicateurs scientifiques et créateurs de médias sociaux produisant du contenu éducatif ou narratif en plusieurs parties.",
+        "how": [
+          "Définissez un sujet de série (par exemple, tendances de l'IA, processus de cycle de vie, systèmes culturels).",
+          "Décomposez le sujet en sections ou chapitres structurés.",
+          "Attribuez un style visuel (par exemple, illustration plate, dessin animé, aquarelle, diagramme technique).",
+          "Concevez chaque carte avec un titre, un visuel central et des blocs d'explication modulaires.",
+          "Ajoutez un résumé ou un point à retenir en bas de chaque carte."
+        ],
+        "prompts": [
+          "Créez une infographie de série sur 'Le cycle de vie d'un papillon' avec des sections : Vue d'ensemble, Stade de l'œuf, Stade de la larve, Stade de la chrysalide, Stade adulte, et incluez des illustrations pastel douces.",
+          "Générez une infographie multi-cartes pour 'Les défis de la stratégie IA de Microsoft' avec des sections sur la stratégie, la concurrence, les partenariats, les risques et les perspectives futures dans un style d'illustration technologique propre.",
+          "Créez une infographie de série sur 'Guide de l'intelligence émotionnelle' avec des chapitres sur la conscience, la régulation, l'empathie, la communication et la croissance, en utilisant des visuels de dessin animé amicaux."
+        ]
+      }
+    }
   }
 }
