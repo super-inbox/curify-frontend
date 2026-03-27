@@ -135,6 +135,8 @@ export function formatVoiceCloningContent(content: string): string {
   const safeContent = typeof content === 'string' ? content : '';
   
   return `<p>${safeContent
+    // Handle image references [Image: url - alt text]
+    .replace(/\[Image:\s*([^\]]+)\s*-\s*([^\]]+)\]/g, '<img src="$1" alt="$2" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />')
     // Handle code blocks first (before other markdown processing)
     .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
       const lang = language || 'text';
@@ -210,6 +212,8 @@ export function formatAslContent(content: string): string {
 // Enhanced content formatter for Nano Template content
 export function formatNanoTemplateContent(content: string): string {
   return content
+    // Handle image references [Image: url - alt text]
+    .replace(/\[Image:\s*([^\]]+)\s*-\s*([^\]]+)\]/g, '<img src="$1" alt="$2" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />')
     // Handle markdown tables first - support both with and without spaces
     // 4-column table header
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\|-+\s*\|[- ]+\s*\|[- ]+\s*\|[- ]+\s*\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')

@@ -111,6 +111,160 @@ export default function NanoTemplateContent({ slug, t, locale }: NanoTemplateCon
         </>
       )}
 
+      {(slug === 'nano-banana-prompt-ecosystem') && (
+        <>
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptFirstTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptFirstContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("bestImagePromptsTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("bestImagePromptsContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptsByCategoryTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptsByCategoryContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("howToWritePromptsTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("howToWritePromptsContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("ecosystemTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("ecosystemContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("seoTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("seoContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("generatorTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("generatorContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("useCasesTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("useCasesContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("integrationTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("integrationContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("communityTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("communityContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptGuideTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptGuideContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptStructureTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptStructureContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptExamplesTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptExamplesContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptTemplatesTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptTemplatesContent"))
+              }} 
+            />
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4">{t("promptGenerationTitle")}</h2>
+            <div 
+              className="prose prose-lg max-w-none mb-4"
+              dangerouslySetInnerHTML={{ 
+                __html: formatNanoTemplateContent(t("promptGenerationContent"))
+              }} 
+            />
+          </section>
+        </>
+      )}
+
       <section>
         <h2 className="text-2xl font-bold mb-4">{t("toolsTitle")}</h2>
         <div 

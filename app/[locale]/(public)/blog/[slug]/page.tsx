@@ -14,6 +14,8 @@ import AslTranslationContent from "./components/AslTranslationContent";
 import NanoTemplateContent from "./components/NanoTemplateContent";
 import NanoBananaContent from "./components/NanoBananaContent";
 import VideoTranscriptionContent from "./components/VideoTranscriptionContent";
+import TenPromptingTipsNanoBananaContent from "./components/TenPromptingTipsNanoBananaContent";
+import TenPromptingTipsVideoGenerationContent from "./components/TenPromptingTipsVideoGenerationContent";
 
 // Force dynamic rendering to avoid static generation issues
 export const dynamic = 'force-dynamic';
@@ -201,6 +203,12 @@ export default async function BlogPostPage({
         {slug === 'video-transcription-business-guide' && (
           <VideoTranscriptionContent slug={slug} t={safeT} locale={locale} />
         )}
+        {slug === '10-prompting-tips-nano-banana' && (
+          <TenPromptingTipsNanoBananaContent slug={slug} t={safeT} locale={locale} />
+        )}
+        {slug === '10-prompting-tips-video-generation' && (
+          <TenPromptingTipsVideoGenerationContent slug={slug} t={safeT} locale={locale} />
+        )}
         
         
         {/* Original blog posts - use generic content renderer */}
@@ -214,7 +222,9 @@ export default async function BlogPostPage({
          slug !== 'evolution-timelines-visualization' &&
          slug !== 'chinese-costume-history-infographic' &&
          slug !== 'nano-banana-prompt-ecosystem' &&
-         slug !== 'video-transcription-business-guide' && (
+         slug !== 'video-transcription-business-guide' &&
+         slug !== '10-prompting-tips-nano-banana' &&
+         slug !== '10-prompting-tips-video-generation' && (
           <div className="space-y-6">
             <p className="text-lg font-semibold text-blue-600 mb-4">
               {hasKey("intro") ? safeT("intro") : "Introduction"}

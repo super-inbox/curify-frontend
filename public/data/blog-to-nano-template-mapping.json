@@ -1,0 +1,28 @@
+{
+  "chinese-herbal-medicine-visual-guide": {
+    "template_id": "template-herbal",
+    "sample_parameters": {
+      "herb_name": "dragon's blood"
+    },
+    "category": "Herbal Category",
+    "description": "Generate a 4K vertical 'Herb Exploded Sheet' infographic poster for a single Chinese herb with labeled parts, properties, and modern forms.",
+    "image_urls": ["/images/nano_insp/template-herbal-zh-dragon's-blood.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-herbal-zh-dragon's-blood-prev.jpg"]
+  },
+  "evolution-timelines-visualization": {
+    "template_id": "template-evolution",
+    "sample_parameters": {},
+    "category": "Evolution Timeline Category",
+    "description": "Create an isometric pixel-art 'evolution museum' timeline scene that maps time progression to spatial progression with bilingual titles.",
+    "image_urls": ["/images/nano_insp/template-evolution-zh-currency-forms.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-evolution-zh-currency-forms-prev.jpg"]
+  },
+  "chinese-costume-history-infographic": {
+    "template_id": "template-travel",
+    "sample_parameters": {},
+    "category": "Travel Planning Map",
+    "description": "Draw a cute hand-drawn travel map with daily route blocks, landmarks, food, lodging, and transport labeled in Simplified Chinese.",
+    "image_urls": ["/images/nano_insp/template-travel-zh-beijing.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg"]
+  }
+}

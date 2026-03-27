@@ -2,53 +2,36 @@
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import { PageLocale } from "@/lib/locale_utils";
+import blogToNanoTemplateMapping from "@/public/data/blog-to-nano-template-mapping.json";
 
 interface NanoBananaExamplesProps {
   locale: string;
+  blogSlug?: string;
 }
 
-export default function NanoBananaExamples({ locale }: NanoBananaExamplesProps) {
+export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamplesProps) {
   const requireAuth = () => true;
   const onViewClick = () => {};
 
-  const exampleCards: NanoInspirationCardType[] = [
-    {
-      id: "template-herbal-dragon's-blood",
-      template_id: "template-herbal",
-      language: "en" as const,
-      category: "Herbal Category",
-      description: "Generate a 4K vertical 'Herb Exploded Sheet' infographic poster for a single Chinese herb with labeled parts, properties, and modern forms.",
-      image_urls: ["/images/nano_insp/template-herbal-zh-dragon's-blood.jpg"],
-      preview_image_urls: ["/images/nano_insp_preview/template-herbal-zh-dragon's-blood-prev.jpg"],
-      sample_parameters: { herb_name: "dragon's blood" },
-      base_prompt: "",
-      topics: ["learning"]
-    },
-    {
-      id: "template-evolution-currency-forms",
-      template_id: "template-evolution", 
-      language: "en" as const,
-      category: "Evolution Timeline Category",
-      description: "Create an isometric pixel-art 'evolution museum' timeline scene that maps time progression to spatial progression with bilingual titles.",
-      image_urls: ["/images/nano_insp/template-evolution-zh-currency-forms.jpg"],
-      preview_image_urls: ["/images/nano_insp_preview/template-evolution-zh-currency-forms-prev.jpg"],
-      sample_parameters: {},
-      base_prompt: "",
-      topics: ["learning"]
-    },
-    {
-      id: "template-travel-beijing",
-      template_id: "template-travel",
-      language: "en" as const,
-      category: "Travel Planning Map", 
-      description: "Draw a cute hand-drawn travel map with daily route blocks, landmarks, food, lodging, and transport labeled in Simplified Chinese.",
-      image_urls: ["/images/nano_insp/template-travel-zh-beijing.jpg"],
-      preview_image_urls: ["/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg"],
-      sample_parameters: {},
-      base_prompt: "",
-      topics: ["travel"]
-    }
-  ];
+  // Generate example cards from JSON mapping
+  const exampleCards: NanoInspirationCardType[] = Object.entries(blogToNanoTemplateMapping).map(([blogId, mapping]: [string, any]) => ({
+    id: `${mapping.template_id}-${blogId}`,
+    template_id: mapping.template_id,
+    language: locale as PageLocale,
+    category: mapping.category,
+    description: mapping.description,
+    image_urls: mapping.image_urls,
+    preview_image_urls: mapping.preview_image_urls,
+    sample_parameters: mapping.sample_parameters,
+    base_prompt: "",
+    topics: mapping.template_id === "template-travel" ? ["travel"] : ["learning"]
+  }));
+
+  // If blogSlug is provided, filter to show only relevant template
+  const filteredCards = blogSlug 
+    ? exampleCards.filter(card => card.id.includes(blogSlug))
+    : exampleCards;
 
   return (
     <section>
@@ -57,7 +40,7 @@ export default function NanoBananaExamples({ locale }: NanoBananaExamplesProps) 
         <p className="text-gray-600 mb-6">Explore our most popular Nano Banana prompt templates to see what's possible:</p>
         
         <NanoInspirationRow 
-          cards={exampleCards}
+          cards={filteredCards}
           requireAuth={requireAuth}
           onViewClick={onViewClick}
         />
