@@ -973,5 +973,51 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Categoría de Tarjetas de Aprendizaje de Idiomas",
+    "description": "Crea tarjetas de vocabulario bilingües visualmente atractivas que combinan palabras en inglés, significados en chino y pronunciación en un formato limpio y educativo.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Vocabulario Bilingüe | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts estructurados de Nano Banana para generar tarjetas de vocabulario bilingües de alta calidad. Cada tarjeta presenta palabras en inglés junto a traducciones en chino y pinyin, acompañadas de ilustraciones lindas e intuitivas. El diseño está pensado para la claridad, la memorización y el atractivo visual, lo que la hace ideal para el aprendizaje de idiomas y contenido educativo.",
+        "who": "Adecuado para estudiantes de idiomas, educadores de ESL, estudiantes de chino, creadores de contenido educativo, padres que enseñan a sus hijos, diseñadores de aplicaciones de vocabulario y cuentas de redes sociales enfocadas en contenido de aprendizaje.",
+        "how": [
+          "Elige un tema (por ejemplo, Animales, Comida, Clima, Espacio).",
+          "Proporciona el título en inglés y chino para el tema.",
+          "Define palabras de vocabulario con traducción en inglés, chino y pinyin.",
+          "Genera una tarjeta de vocabulario basada en una cuadrícula con ilustraciones para cada palabra.",
+          "Asegúrate de que el diseño utilice colores suaves, un diseño redondeado y tipografía clara para la legibilidad."
+        ],
+        "prompts": [
+          "Crea una tarjeta de vocabulario para Animales: Gato (猫, māo), Perro (狗, gǒu), Pájaro (鸟, niǎo), Pez (鱼, yú), Conejo (兔子, tù zi), Panda (熊猫, xióng māo), Tigre (老虎, lǎo hǔ), Elefante (大象, dà xiàng).",
+          "Genera una tarjeta de vocabulario de Comida: Manzana (苹果, píng guǒ), Pan (面包, miàn bāo), Leche (牛奶, niú nǎi), Café (咖啡, kā fēi), Arroz (米饭, mǐ fàn), Huevo (鸡蛋, jī dàn), Pastel (蛋糕, dàn gāo), Jugo (果汁, guǒ zhī).",
+          "Crea una tarjeta de vocabulario de Clima: Sol (太阳, tài yáng), Lluvia (雨, yǔ), Nieve (雪, xuě), Viento (风, fēng), Nube (云, yún), Tormenta (暴风雨, bào fēng yǔ), Niebla (雾, wù), Arcoíris (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Categoría de Infografía de Series",
+    "description": "Crea series de infografías modulares y de múltiples tarjetas que descomponen temas complejos en capítulos estructurados y visualmente consistentes.",
+    "title": "Nano Banana Prompt: Generador de Infografías de Series | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una serie cohesiva de tarjetas infográficas, cada una representando un capítulo de un tema más grande. El diseño sigue un sistema visual consistente con secciones estructuradas como título, ilustración central, bloques de contenido modulares y resúmenes destacados. Está optimizado para contar historias a través de múltiples tarjetas con claridad y continuidad visual.",
+        "who": "Adecuado para educadores, creadores de contenido, narradores de negocios, analistas de startups, explicadores de productos, comunicadores científicos y creadores de redes sociales que producen contenido educativo o narrativo en múltiples partes.",
+        "how": [
+          "Define un tema de serie (por ejemplo, tendencias de IA, procesos de ciclo de vida, sistemas culturales).",
+          "Descompón el tema en secciones o capítulos estructurados.",
+          "Asigna un estilo visual (por ejemplo, ilustración plana, caricatura, acuarela, diagrama técnico).",
+          "Diseña cada tarjeta con un título, visual central y bloques de explicación modulares.",
+          "Agrega un resumen destacado o conclusión en la parte inferior de cada tarjeta."
+        ],
+        "prompts": [
+          "Crea una infografía de serie sobre 'El Ciclo de Vida de una Mariposa' con secciones: Visión General, Etapa de Huevo, Etapa de Larva, Etapa de Pupa, Etapa de Adulto, e incluye ilustraciones suaves en tonos pastel.",
+          "Genera una infografía de múltiples tarjetas para 'Desafíos de la Estrategia de IA de Microsoft' con secciones sobre estrategia, competencia, asociaciones, riesgos y perspectivas futuras en un estilo de ilustración técnica limpia.",
+          "Crea una infografía de serie sobre 'Guía de Inteligencia Emocional' con capítulos sobre conciencia, regulación, empatía, comunicación y crecimiento, utilizando visuales amigables de caricaturas."
+        ]
+      }
+    }
   }
 }

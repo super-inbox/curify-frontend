@@ -27,7 +27,7 @@ function EntryBarItem({ item, locale }: ItemProps) {
 
   const trackClick = useClickTracking(
     `entry-bar:${item.id}`,
-    "inspiration",
+    "topic_capsule",
     "cards"
   );
 

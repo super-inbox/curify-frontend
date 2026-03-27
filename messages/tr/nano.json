@@ -973,5 +973,51 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Dil Öğrenme Kartı Kategorisi",
+    "description": "İngilizce kelimeleri, Çince anlamları ve telaffuzları temiz, eğitici bir formatta birleştiren görsel olarak etkileyici iki dilli kelime kartları oluşturun.",
+    "title": "Nano Banana Prompt: İki Dilli Kelime Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yüksek kaliteli iki dilli kelime kartları oluşturmak için yapılandırılmış Nano Banana istemlerini kullanır. Her kart, İngilizce kelimeleri Çince çevirileri ve pinyin ile birlikte sunar, sevimli ve sezgisel illüstrasyonlarla eşleştirilmiştir. Düzen, netlik, akılda kalıcılık ve görsel çekicilik için tasarlanmıştır, bu da dil öğrenimi ve eğitim içeriği için idealdir.",
+        "who": "Dil öğrenicileri, ESL eğitmenleri, Çince öğrenenler, eğitim içerik üreticileri, çocuklara öğretim yapan ebeveynler, kelime uygulaması tasarımcıları ve öğrenme içeriğine odaklanan sosyal medya hesapları için uygundur.",
+        "how": [
+          "Bir konu seçin (örn. Hayvanlar, Gıda, Hava Durumu, Uzay).",
+          "Konu için İngilizce ve Çince başlığı sağlayın.",
+          "İngilizce, Çince çeviri ve pinyin ile kelime dağarcığı kelimelerini tanımlayın.",
+          "Her kelime için illüstrasyonlarla birlikte ızgara tabanlı bir kelime kartı oluşturun.",
+          "Tasarımın okunabilirlik için yumuşak renkler, yuvarlak düzen ve net tipografi kullandığından emin olun."
+        ],
+        "prompts": [
+          "Hayvanlar için bir kelime kartı oluşturun: Kedi (猫, māo), Köpek (狗, gǒu), Kuş (鸟, niǎo), Balık (鱼, yú), Tavşan (兔子, tù zi), Panda (熊猫, xióng māo), Kaplan (老虎, lǎo hǔ), Fil (大象, dà xiàng).",
+          "Bir Gıda kelime kartı oluşturun: Elma (苹果, píng guǒ), Ekmek (面包, miàn bāo), Süt (牛奶, niú nǎi), Kahve (咖啡, kā fēi), Pirinç (米饭, mǐ fàn), Yumurta (鸡蛋, jī dàn), Kek (蛋糕, dàn gāo), Meyve Suyu (果汁, guǒ zhī).",
+          "Bir Hava Durumu kelime kartı oluşturun: Güneş (太阳, tài yáng), Yağmur (雨, yǔ), Kar (雪, xuě), Rüzgar (风, fēng), Bulut (云, yún), Fırtına (暴风雨, bào fēng yǔ), Sis (雾, wù), Gökkuşağı (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Seri İnfografik Kategorisi",
+    "description": "Karmaşık konuları yapılandırılmış, görsel olarak tutarlı bölümlere ayıran modüler, çok kartlı infografik serileri oluşturun.",
+    "title": "Nano Banana Prompt: Seri İnfografik Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her biri daha büyük bir konunun bir bölümünü temsil eden uyumlu bir infografik kartları serisi oluşturur. Tasarım, başlık, merkezi illüstrasyon, modüler içerik blokları ve özet vurguları gibi yapılandırılmış bölümlerle tutarlı bir görsel sistem izler. Birden fazla kartta hikaye anlatımı için netlik ve görsel süreklilik sağlamak üzere optimize edilmiştir.",
+        "who": "Eğitmenler, içerik üreticileri, iş hikaye anlatıcıları, girişim analistleri, ürün açıklayıcıları, bilim iletişimcileri ve çok parçalı eğitim veya anlatı içeriği üreten sosyal medya yaratıcıları için uygundur.",
+        "how": [
+          "Bir seri konusu tanımlayın (örn. AI trendleri, yaşam döngüsü süreçleri, kültürel sistemler).",
+          "Konuyu yapılandırılmış bölümlere veya bölümlere ayırın.",
+          "Bir görsel stil atayın (örn. düz illüstrasyon, karikatür, sulu boya, teknoloji diyagramı).",
+          "Her kartı bir başlık, merkezi görsel ve modüler açıklama blokları ile tasarlayın.",
+          "Her kartın altına vurgulanmış bir özet veya çıkarım ekleyin."
+        ],
+        "prompts": [
+          "'Bir Kelebeğin Yaşam Döngüsü' üzerine bir seri infografik oluşturun; bölümler: Genel Bakış, Yumurtlama Aşaması, Larva Aşaması, Pupa Aşaması, Yetişkin Aşaması ve yumuşak pastel illüstrasyonlar ekleyin.",
+          "'Microsoft'un AI Strateji Zorlukları' için strateji, rekabet, ortaklıklar, riskler ve gelecekteki görünüm üzerine bölümlerle temiz bir teknoloji illüstrasyon tarzında çok kartlı bir infografik oluşturun.",
+          "'Duygusal Zeka Rehberi' üzerine bir seri infografik oluşturun; bölümler: farkındalık, düzenleme, empati, iletişim ve büyüme, dostça karikatür görselleri kullanarak."
+        ]
+      }
+    }
   }
 }
