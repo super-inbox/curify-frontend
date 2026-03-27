@@ -199,11 +199,12 @@ export default function HomeClient({
     <div
       className={classNames(
         inter.className,
-        "w-full bg-[#FDFDFD] px-4 pb-10 pt-4 md:px-6 lg:px-10"
+        "w-full bg-[#FDFDFD] px-4 pb-10 pt-0 md:px-6 lg:px-10"
       )}
     >
-      <div className="mx-auto w-full max-w-[1500px]">
-        <div className="mx-auto max-w-6xl pb-6 pt-2">
+
+      <div className="w-full max-w-[1400px]">
+        <div className="w-full max-w-[1400px] pb-6 pl-3">
           <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
             {tHero("title")}
           </h1>
@@ -211,8 +212,8 @@ export default function HomeClient({
             {tHero("description")}
           </p>
         </div>
-
-        <div className="mx-auto w-full max-w-6xl">
+  
+        <div className="w-full">
           <div className="sticky top-28 z-10 mb-6 rounded-2xl border border-neutral-200 bg-white/95 p-2 shadow-sm backdrop-blur">
             <div className="flex items-center gap-2 px-2">
               <Search className="h-5 w-5 text-neutral-400" />
@@ -224,14 +225,14 @@ export default function HomeClient({
               />
             </div>
           </div>
-
+  
           <ListView
             filteredMainCards={filteredCards}
             nanoCards={nanoCards}
             requireAuth={requireAuth}
             onOpenModal={handleOpenModal}
           />
-
+  
           {filteredCards.length === 0 && (
             <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
               <Search className="mb-4 h-10 w-10 opacity-20" />
@@ -240,7 +241,7 @@ export default function HomeClient({
           )}
         </div>
       </div>
-
+  
       <CardViewModal
         card={modalState.card}
         isOpen={modalState.isOpen}
@@ -249,51 +250,51 @@ export default function HomeClient({
       />
     </div>
   );
-}
-
-function ListView({
-  filteredMainCards,
-  nanoCards,
-  requireAuth,
-  onOpenModal,
-}: {
-  filteredMainCards: InspirationCardType[];
-  nanoCards: NanoInspirationCardType[];
-  requireAuth: () => boolean;
-  onOpenModal: (
-    card: InspirationCardType | NanoInspirationCardType,
-    type: "inspiration" | "nano"
-  ) => void;
-}) {
-  const data = useMemo(
-    () => getInterleavedData(filteredMainCards, nanoCards),
-    [filteredMainCards, nanoCards]
-  );
-
-  return (
-    <div className="space-y-6">
-      {data.map((item, index) => {
-        if (item.type === "inspiration") {
+  }
+  
+  function ListView({
+    filteredMainCards,
+    nanoCards,
+    requireAuth,
+    onOpenModal,
+  }: {
+    filteredMainCards: InspirationCardType[];
+    nanoCards: NanoInspirationCardType[];
+    requireAuth: () => boolean;
+    onOpenModal: (
+      card: InspirationCardType | NanoInspirationCardType,
+      type: "inspiration" | "nano"
+    ) => void;
+  }) {
+    const data = useMemo(
+      () => getInterleavedData(filteredMainCards, nanoCards),
+      [filteredMainCards, nanoCards]
+    );
+  
+    return (
+      <div className="space-y-6">
+        {data.map((item, index) => {
+          if (item.type === "inspiration") {
+            return (
+              <InspirationListItem
+                key={`insp-${item.card.id}`}
+                card={item.card}
+                viewMode="list"
+                requireAuth={requireAuth}
+                onViewClick={() => onOpenModal(item.card, "inspiration")}
+              />
+            );
+          }
+  
           return (
-            <InspirationListItem
-              key={`insp-${item.card.id}`}
-              card={item.card}
-              viewMode="list"
+            <NanoInspirationRow
+              key={`nano-row-${index}`}
+              cards={item.cards}
               requireAuth={requireAuth}
-              onViewClick={() => onOpenModal(item.card, "inspiration")}
+              onViewClick={(c) => onOpenModal(c, "nano")}
             />
           );
-        }
-
-        return (
-          <NanoInspirationRow
-            key={`nano-row-${index}`}
-            cards={item.cards}
-            requireAuth={requireAuth}
-            onViewClick={(c) => onOpenModal(c, "nano")}
-          />
-        );
-      })}
-    </div>
-  );
-}
+        })}
+      </div>
+    );
+  }
