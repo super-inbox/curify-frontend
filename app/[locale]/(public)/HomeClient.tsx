@@ -55,9 +55,11 @@ function getInterleavedData(
   mainCards.forEach((card, index) => {
     result.push({ type: "inspiration", card });
 
-    if ((index + 1) % 3 === 0 && nanoCards.length > 0) {
-      const blockIndex = Math.floor((index + 1) / 3);
+    // ✅ change 3 → 2
+    if ((index + 1) % 2 === 0 && nanoCards.length > 0) {
+      const blockIndex = Math.floor((index + 1) / 2); // ✅ also update divisor
       const startIdx = (blockIndex * 3) % nanoCards.length;
+
       const rowCards = nanoCards.slice(startIdx, startIdx + 3);
       if (rowCards.length > 0) {
         result.push({ type: "nano", cards: rowCards });
