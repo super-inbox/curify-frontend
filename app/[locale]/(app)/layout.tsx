@@ -52,7 +52,7 @@ export default async function AppLocaleLayout({
           <AppWrapper user={null}>
             <Header />
 
-            <main className="ml-[300px] min-h-screen">
+            <main className="min-h-screen lg:ml-[300px]">
               <TopUpModal />
               <SignDrawer />          
 
