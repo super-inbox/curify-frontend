@@ -170,7 +170,7 @@ export default async function NanoExampleDetailPage({
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
       
       <nav className="mb-6 flex items-center gap-1.5 text-xs text-neutral-500">
         <Link href={`/${rawLocale}`} className="hover:text-neutral-800">
