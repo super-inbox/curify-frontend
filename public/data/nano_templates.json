@@ -4163,7 +4163,42 @@
                     ]
                 }
             ]
-        }
+        },
+        "en": {
+        "base_prompt": "(English Vocabulary Card Designer) You are a professional bilingual vocabulary card designer specializing in creating clean and cute English learning posters. Based on the user-specified [{topic_name}], generate a high-quality vertical 3:4 themed English vocabulary card. The style should resemble fresh, cute, and child-friendly cartoon illustrations. Layout: 1. Top: Title \"{topic_name} | {topic_chinese}\" with playful typography and a soft background matching the theme (e.g., light green for animals, light blue for coffee, starry sky for space, beige for weather). 2. Grid layout: 8 vocabulary cards arranged in a 4×2 or 2×4 grid. Each card includes: Left: a cute colored cartoon illustration; Right: large English word {word_1_en}, Chinese meaning {word_1_cn}, and pinyin ({pinyin_1}). 3. Overall style: rounded corners, pastel colors, friendly illustrations, clear readable text, high contrast, no extra elements, Curify watermark on top-left. Vertical 3:4 format, 4K ultra HD.",
+        "parameters": [
+          {
+            "name": "topic_name",
+            "label": "English Topic",
+            "type": "text",
+            "placeholder": ["Animals", "Food", "Fruits", "Weather", "Space", "Coffee"]
+          },
+          {
+            "name": "topic_chinese",
+            "label": "Chinese Topic",
+            "type": "text",
+            "placeholder": ["Animals (CN)", "Food (CN)", "Fruits (CN)", "Weather (CN)", "Space (CN)", "Coffee (CN)"]
+          },
+          {
+            "name": "word_1_en",
+            "label": "Word 1 (English)",
+            "type": "text",
+            "placeholder": ["Cat", "Apple", "Sun", "Moon", "Latte"]
+          },
+          {
+            "name": "word_1_cn",
+            "label": "Word 1 (Chinese)",
+            "type": "text",
+            "placeholder": ["Cat (CN)", "Apple (CN)", "Sun (CN)", "Moon (CN)", "Latte (CN)"]
+          },
+          {
+            "name": "pinyin_1",
+            "label": "Word 1 (Pinyin)",
+            "type": "text",
+            "placeholder": ["mao", "ping guo", "tai yang", "yue liang", "na tie"]
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
     "topics": "learning"
@@ -4171,6 +4206,107 @@
   {
     "id": "template-series-infographic",
     "locales": {
+      "en": {
+        "base_prompt": "(Modular Infographic Designer) You are a top-tier modular infographic designer specializing in creating cohesive multi-card visual series. Based on the user-specified [{series_topic}], generate a complete set of vertical 3:4 high-quality infographic cards. Each card focuses on one core section while maintaining consistent visual language. Single card structure: 1. Top title bar: prominent title \"{section_title}\" with soft themed background and rounded corners. 2. Central visual: core illustration/diagram representing the concept (comparison, timeline, flowchart, character, or scene) in {art_style}. 3. Content modules: layout with sections containing \"icon + label + short description\". 4. Bottom summary: highlighted box with key takeaway. Style: clean rounded UI, soft colors, clear typography, no extra decoration, Curify watermark top-left, vertical 3:4, 4K ultra HD.",
+        "parameters": [
+          {
+            "name": "series_topic",
+            "label": "Series Topic",
+            "type": "text",
+            "placeholder": [
+              "Microsoft's AI Dilemma",
+              "Butterfly Life Cycle",
+              "Traditional Chinese Festivals",
+              "Solar System Guide",
+              "Emotion Management Guide"
+            ]
+          },
+          {
+            "name": "art_style",
+            "label": "Art Style",
+            "type": "text",
+            "placeholder": [
+              "Cute Cartoon Style",
+              "Flat Illustration Style",
+              "Vintage Chinese Style",
+              "Tech Line Art Style",
+              "Watercolor Style"
+            ]
+          },
+          {
+            "name": "section_title",
+            "label": "Section Title",
+            "type": "text",
+            "placeholder": [
+              "Overview: Core Conflict",
+              "Causes: Strategy Issues",
+              "Comparison: Two Models",
+              "Case Study",
+              "Solutions"
+            ]
+          },
+          {
+            "name": "overview_title",
+            "label": "Overview Title",
+            "type": "text",
+            "placeholder": [
+              "Core Conflict: Performance vs Growth",
+              "Life Cycle Overview",
+              "Cultural Calendar"
+            ]
+          },
+          {
+            "name": "section1_title",
+            "label": "Section 1 Title",
+            "type": "text",
+            "placeholder": [
+              "Problem 1: Short-term Strategy",
+              "Stage 1: Egg",
+              "Spring Festival"
+            ]
+          },
+          {
+            "name": "section2_title",
+            "label": "Section 2 Title",
+            "type": "text",
+            "placeholder": [
+              "Problem 2: Dependency Risk",
+              "Stage 2: Larva",
+              "Qingming Festival"
+            ]
+          },
+          {
+            "name": "comparison_title",
+            "label": "Comparison Section Title",
+            "type": "text",
+            "placeholder": [
+              "Comparison: AI Add-on vs Native",
+              "Butterfly vs Moth",
+              "Eastern vs Western Festivals"
+            ]
+          },
+          {
+            "name": "case_title",
+            "label": "Case Study Title",
+            "type": "text",
+            "placeholder": [
+              "Case: Google's Comeback",
+              "Case: Monarch Migration",
+              "Case: Dragon Boat Festival"
+            ]
+          },
+          {
+            "name": "solutions_title",
+            "label": "Solutions Title",
+            "type": "text",
+            "placeholder": [
+              "Future Strategy",
+              "Conservation Tips",
+              "Modern Adaptation"
+            ]
+          }
+        ]
+      },
         "zh": {
             "base_prompt": "（通用系列信息图设计师）你是一位顶级模块化信息图设计师，擅长创作系列主题组图，每张卡片聚焦一个核心章节，风格统一、叙事连贯。根据用户指定的【{series_topic}】，生成一套完整的竖版3:4高品质系列卡片，所有卡片保持一致的视觉语言与排版逻辑，仅替换内容即可适配不同主题（商业、科普、文化、教育等）。单张卡片通用结构：1. 顶部标题栏：醒目标题「{section_title}」，搭配主题匹配的柔和背景色，圆角边框设计。2. 中心视觉区：核心卡通/插画/示意图，直观呈现章节核心概念（如对比图、时间线、流程图、拟人化形象、场景插画），风格为{art_style}。3. 内容模块区：布局为左右分栏/上下堆叠/多图标网格，每个模块包含「图标+标签+简短说明」。4. 底部总结栏：高亮文本框，放置该章节的核心结论/标语/金句。整体风格：干净圆角UI，柔和配色，清晰易读的字体，无多余装饰，左上角带Curify水印，竖版3:4格式，4K超高清，直接出图。系列主题为【{series_topic}】。",
             "parameters": [
