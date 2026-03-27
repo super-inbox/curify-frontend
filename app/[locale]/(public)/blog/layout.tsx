@@ -1,5 +1,3 @@
-import ContentCreationToolsSidebar from "@/app/[locale]/_components/ContentCreationToolsSidebar";
-
 export default async function BlogLayout({
   children,
   params,
@@ -7,20 +5,12 @@ export default async function BlogLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  await params;
 
   return (
-    <main className="min-h-screen bg-[#FDFDFD] px-4 pt-18 pb-10 lg:px-6">
-      <div className="mx-auto max-w-[1400px]">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-8 min-w-0">{children}</div>
-
-          <aside className="lg:col-span-4 lg:border-l lg:border-neutral-200/70 lg:pl-8">
-            <div className="space-y-6 lg:sticky lg:top-24">
-              <ContentCreationToolsSidebar activeLang={locale} />
-            </div>
-          </aside>
-        </div>
+    <main className="min-h-screen bg-[#FDFDFD] px-4 pt-4 pb-10 md:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1280px]">
+        <div className="min-w-0">{children}</div>
       </div>
     </main>
   );

@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
@@ -28,14 +28,6 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const { locale: localeStr, slug } = await params;
-
-  if (slug === "trending") {
-    redirect(
-      localeStr === "en"
-        ? "/inspiration-hub"
-        : `/${localeStr}/inspiration-hub`
-    );
-  }
 
   const contentLocale = resolveContentLocale(localeStr);
 
@@ -84,33 +76,31 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      <section className="mx-auto max-w-6xl px-4 pt-20 pb-6 sm:px-6 lg:px-8">
-        <TopicNavRow locale={localeStr} activeTopic={slug} />
+      <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
 
-        <div>
-          <p className="mb-3 text-sm font-medium uppercase tracking-wide text-neutral-500">
-            Topic
-          </p>
-          <h1 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+        <div className="max-w-5xl">
+          <h1 className="text-5xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
             {topicTitle}
           </h1>
+
           {topicDescription ? (
-            <p className="mt-4 text-base leading-7 text-neutral-600">
+            <p className="mt-3 text-base leading-7 text-neutral-600">
               {topicDescription}
             </p>
           ) : null}
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
         <NanoTemplateDetailClient
           locale={localeStr}
           template={{ template_id: "", base_prompt: "", parameters: [] }}
           otherNanoCards={nanoCards}
           showReproduce={false}
           showOtherTemplates={true}
+          showOtherTemplateTitle={false}
         />
-      </div>
+      </section>
     </main>
   );
 }

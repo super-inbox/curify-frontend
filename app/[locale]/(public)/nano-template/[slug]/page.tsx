@@ -134,7 +134,7 @@ export default async function NanoTemplatePage({ params }: Props) {
   );
 
   return (
-    <main className="mx-auto max-w-6xl px-4 pt-24 pb-10">
+    <main className="mx-auto max-w-6xl px-4 pt-4 pb-10">
       <div className="mb-6">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>

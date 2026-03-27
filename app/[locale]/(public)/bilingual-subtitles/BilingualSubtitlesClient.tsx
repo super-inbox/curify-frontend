@@ -22,7 +22,7 @@ export default function BilingualSubtitlesClient() {
   };
 
   return (
-    <main className="max-w-5xl mx-auto pt-24 px-6 py-12 text-[var(--c2)]">
+    <main className="max-w-5xl mx-auto pt-24 px-6 py-4 text-[var(--c2)]">
       <h1 className="text-4xl font-bold mb-4 text-[var(--c1)]">{t("title")}</h1>
       <p className="text-lg mb-6">{t("intro")}</p>
 

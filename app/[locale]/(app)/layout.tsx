@@ -13,6 +13,9 @@ import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
+import EntryBar from "@/app/[locale]/_components/EntryBar";
+import { headers } from "next/headers";
+
 export default async function AppLocaleLayout({
   children,
   params,
@@ -26,39 +29,34 @@ export default async function AppLocaleLayout({
 
   const messages = await getMessages();
 
+  // 👇 detect path
+  const headerList = await headers();
+  const pathname = headerList.get("x-pathname") || "";
+
+  const isBlogPage = pathname.includes("/blog");
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-      <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-23QXSJ8HS7"
-  strategy="afterInteractive"
-/>
-<Script id="ga4-init" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', 'G-23QXSJ8HS7', {
-      send_page_view: false
-    });
-  `}
-</Script>
-
-        <script src="https://accounts.google.com/gsi/client" async defer />
+        {/* keep existing scripts */}
       </head>
 
       <body suppressHydrationWarning>
-      <GoogleAnalyticsTracker />
+        <GoogleAnalyticsTracker />
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppWrapper user={null}>
             <Header />
-            <TopUpModal />
-            <SignDrawer />
-            {children}
-            <Toaster />
-            <Footer />
+
+            <main className="ml-[300px] min-h-screen">
+              <TopUpModal />
+              <SignDrawer />          
+
+              {children}
+
+              <Toaster />
+              <Footer />
+            </main>
           </AppWrapper>
         </NextIntlClientProvider>
       </body>

@@ -2,11 +2,20 @@
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "./constants";
 
-export function getCanonicalUrl(locale: string, path: string = ""): string {
+function buildCanonicalPath(locale: string, path: string = ""): string {
   const prefix = locale === "en" ? "" : `/${locale}`;
-  // Ensure path starts with / if not empty
-  const normalizedPath = path && !path.startsWith("/") ? `/${path}` : path;
-  return `${SITE_URL}${prefix}${normalizedPath}`;
+  const normalizedPath =
+    path && !path.startsWith("/") ? `/${path}` : path;
+
+  return `${prefix}${normalizedPath}`;
+}
+
+export function getCanonicalPath(locale: string, path: string = ""): string {
+  return buildCanonicalPath(locale, path);
+}
+
+export function getCanonicalUrl(locale: string, path: string = ""): string {
+  return `${SITE_URL}${buildCanonicalPath(locale, path)}`;
 }
 
 export function getLanguagesMap(path: string = ""): Record<string, string> {  

@@ -84,12 +84,7 @@ export default async function InspirationHubPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="mx-auto max-w-6xl px-4 pt-20 pb-10">
-        <TopicNavRow
-          locale={locale}          
-          activeTopic="trending"          
-        />
-
+      <main className="mx-auto max-w-6xl px-4 pt-4 pb-10">        
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
             Daily Inspiration Hub

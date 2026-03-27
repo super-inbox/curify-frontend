@@ -60,3 +60,19 @@ export function getTopicLabel(
 ): string {
   return translateTopics(`topics.${topic}.displayName`) || titleCaseFromSlug(topic);
 }
+
+export function toOgLocale(locale: string) {
+  const map: Record<string, string> = {
+    en: 'en_US',
+    zh: 'zh_CN',
+    es: 'es_ES',
+    fr: 'fr_FR',
+    de: 'de_DE',
+    ja: 'ja_JP',
+    ko: 'ko_KR',
+    hi: 'hi_IN',
+    tr: 'tr_TR',
+    ru: 'ru_RU',
+  };
+  return map[locale] || 'en_US';
+}

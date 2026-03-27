@@ -1,4 +1,3 @@
-// File: components/UserDropdownMenu.tsx
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -68,7 +67,8 @@ export default function UserDropdownMenu({
     t("defaultUser");
 
   const totalCredits = user
-    ? ((user as any).expiring_credits ?? 0) + ((user as any).non_expiring_credits ?? 0)
+    ? ((user as any).expiring_credits ?? 0) +
+      ((user as any).non_expiring_credits ?? 0)
     : 0;
 
   const expiringCredits = (user as any)?.expiring_credits ?? 0;
@@ -123,13 +123,12 @@ export default function UserDropdownMenu({
     }
 
     sessionStorage.setItem("justSignedOut", "true");
-    setUser(null);                              // ✅ clears atomWithStorage + localStorage
+    setUser(null);
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
     setDrawerState(null);
     onClose();
     onSignOut();
-    // ✅ No router.push — user stays on the current page
   };
 
   const handleShowHistory = async () => {
@@ -157,20 +156,21 @@ export default function UserDropdownMenu({
 
   const currentLanguage = getLanguageByCode(currentLocale);
 
-  // ─── Logged-out state ────────────────────────────────────────────────────────
   if (!user) {
     return (
       <div
         ref={dropdownRef}
-        className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+        className="absolute bottom-full left-0 mb-2 w-72 rounded-lg border border-gray-200 bg-white shadow-lg z-50"
       >
-        <div className="p-4 border-b border-gray-100">
+        <div className="border-b border-gray-100 p-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100">
               <UserIcon className="text-gray-400" size={20} />
             </div>
             <div>
-              <h3 className="text-base font-semibold text-gray-700">{t("guest")}</h3>
+              <h3 className="text-base font-semibold text-gray-700">
+                {t("guest")}
+              </h3>
               <p className="text-sm text-gray-500">{t("notSignedIn")}</p>
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function UserDropdownMenu({
           <div className="relative">
             <button
               onClick={handleLanguageClick}
-              className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
+              className="flex w-full cursor-pointer items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-50"
             >
               <div className="flex items-center">
                 <Globe size={18} className="mr-3 text-gray-500" />
@@ -197,17 +197,19 @@ export default function UserDropdownMenu({
             </button>
 
             {showLanguageSubmenu && (
-              <LanguageSubmenu
-                currentLocale={currentLocale}
-                onClose={onClose}
-                setShowLanguageSubmenu={setShowLanguageSubmenu}
-              />
+              <div className="absolute bottom-0 left-full ml-2">
+                <LanguageSubmenu
+                  currentLocale={currentLocale}
+                  onClose={onClose}
+                  setShowLanguageSubmenu={setShowLanguageSubmenu}
+                />
+              </div>
             )}
           </div>
 
           <button
             onClick={() => handleRoute("/pricing")}
-            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+            className="flex w-full cursor-pointer items-center px-4 py-3 text-left transition-colors hover:bg-gray-50"
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
             <span className="text-gray-700">{t("viewPricing")}</span>
@@ -215,7 +217,7 @@ export default function UserDropdownMenu({
 
           <button
             onClick={() => handleRoute("/contact")}
-            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+            className="flex w-full cursor-pointer items-center px-4 py-3 text-left transition-colors hover:bg-gray-50"
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />
             <span className="text-gray-700">{t("contactUs")}</span>
@@ -223,58 +225,57 @@ export default function UserDropdownMenu({
 
           <button
             onClick={handleLogin}
-            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
+            className="mt-2 flex w-full cursor-pointer items-center border-t border-gray-100 px-4 py-3 text-left transition-colors hover:bg-gray-50"
           >
             <LogIn size={18} className="mr-3 text-blue-500" />
-            <span className="text-blue-600 font-medium">{t("signIn")}</span>
+            <span className="font-medium text-blue-600">{t("signIn")}</span>
           </button>
         </div>
       </div>
     );
   }
 
-  // ─── Logged-in state ─────────────────────────────────────────────────────────
   return (
     <>
       <div
         ref={dropdownRef}
-        className="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+        className="absolute bottom-full left-0 mb-2 w-72 rounded-lg border border-gray-200 bg-white shadow-lg z-50"
       >
-        <div className="p-4 border-b border-gray-100">
-          <h3 className="text-base font-semibold text-blue-600 text-[15px]">
+        <div className="border-b border-gray-100 p-4">
+          <h3 className="text-[15px] font-semibold text-blue-600">
             {displayName}
           </h3>
-          <p className="text-sm text-gray-600 truncate text-[14px]">
+          <p className="truncate text-[14px] text-sm text-gray-600">
             {user?.email}
           </p>
         </div>
 
-        <div className="p-4 border-b border-gray-100 space-y-3">
-          <div className="flex justify-between items-center">
-            <span className="text-sm text-gray-600 text-[14px] font-medium">
+        <div className="space-y-3 border-b border-gray-100 p-4">
+          <div className="flex items-center justify-between">
+            <span className="text-[14px] text-sm font-medium text-gray-600">
               {t("totalCredits")}
             </span>
-            <span className="text-lg font-semibold text-purple-600 text-[16px]">
+            <span className="text-[16px] text-lg font-semibold text-purple-600">
               {totalCredits} 🐚
             </span>
           </div>
 
           {expiringCredits > 0 && (
-            <div className="bg-orange-50 rounded-lg p-3 space-y-2">
-              <div className="flex justify-between items-center">
+            <div className="space-y-2 rounded-lg bg-orange-50 p-3">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <Zap size={16} className="text-orange-500" />
-                  <span className="text-sm text-gray-700 text-[13px] font-medium">
+                  <span className="text-[13px] text-sm font-medium text-gray-700">
                     {t("planCredits")}
                   </span>
                 </div>
-                <span className="text-md font-semibold text-orange-600 text-[14px]">
+                <span className="text-[14px] text-md font-semibold text-orange-600">
                   {expiringCredits} 🐚
                 </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">{t("expiresOn")}</span>
-                <span className="text-xs text-gray-600 font-medium">
+                <span className="text-xs font-medium text-gray-600">
                   {formattedExpirationDate}
                 </span>
               </div>
@@ -285,7 +286,7 @@ export default function UserDropdownMenu({
         <div className="py-2 text-[15px]">
           <button
             onClick={handleShowHistory}
-            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+            className="flex w-full cursor-pointer items-center px-4 py-3 text-left transition-colors hover:bg-gray-50"
           >
             <Clock size={18} className="mr-3 text-gray-500" />
             <span className="text-gray-700">{t("creditsHistory")}</span>
@@ -294,7 +295,7 @@ export default function UserDropdownMenu({
           <div className="relative">
             <button
               onClick={handleLanguageClick}
-              className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
+              className="flex w-full cursor-pointer items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-50"
             >
               <div className="flex items-center">
                 <Globe size={18} className="mr-3 text-gray-500" />
@@ -311,18 +312,20 @@ export default function UserDropdownMenu({
             </button>
 
             {showLanguageSubmenu && (
-              <LanguageSubmenu
-                currentLocale={currentLocale}
-                onClose={onClose}
-                setShowLanguageSubmenu={setShowLanguageSubmenu}
-              />
+              <div className="absolute bottom-0 left-full ml-2">
+                <LanguageSubmenu
+                  currentLocale={currentLocale}
+                  onClose={onClose}
+                  setShowLanguageSubmenu={setShowLanguageSubmenu}
+                />
+              </div>
             )}
           </div>
 
           <button
             onClick={() => handleRoute("/pricing")}
-            className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === "/pricing" ? "text-blue-600 font-semibold" : ""
+            className={`flex w-full cursor-pointer items-center px-4 py-3 text-left transition-colors hover:bg-gray-50 ${
+              pathname === "/pricing" ? "font-semibold text-blue-600" : ""
             }`}
           >
             <CreditCard size={18} className="mr-3 text-gray-500" />
@@ -331,8 +334,8 @@ export default function UserDropdownMenu({
 
           <button
             onClick={() => handleRoute("/contact")}
-            className={`w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer ${
-              pathname === "/contact" ? "text-blue-600 font-semibold" : ""
+            className={`flex w-full cursor-pointer items-center px-4 py-3 text-left transition-colors hover:bg-gray-50 ${
+              pathname === "/contact" ? "font-semibold text-blue-600" : ""
             }`}
           >
             <HelpCircle size={18} className="mr-3 text-gray-500" />
@@ -341,7 +344,7 @@ export default function UserDropdownMenu({
 
           <button
             onClick={handleSignOut}
-            className="w-full px-4 py-3 text-left flex items-center hover:bg-gray-50 transition-colors cursor-pointer border-t border-gray-100 mt-2"
+            className="mt-2 flex w-full cursor-pointer items-center border-t border-gray-100 px-4 py-3 text-left transition-colors hover:bg-gray-50"
           >
             <LogOut size={18} className="mr-3 text-gray-500" />
             <span className="text-gray-700">{t("signOut")}</span>

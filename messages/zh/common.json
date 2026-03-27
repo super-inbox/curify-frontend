@@ -118,7 +118,8 @@
     "more": "更多",
     "logIn": "登录",
     "topUpCredits": "充值积分",
-    "menuAriaLabel": "菜单"
+    "menuAriaLabel": "菜单",
+    "trending": "热门"
   },
   "footer": {
     "copyright": "© 2025 Curify",
@@ -176,6 +177,17 @@
         "title": "如果历史",
         "desc": "创建历史反转信息图海报"
       }
+    }
+  },
+  "entryBar": {
+    "question": "你今天想创作什么？",
+    "items": {
+      "character": "人物角色",
+      "learning": "知识分享",
+      "visual": "视觉设计",
+      "product": "产品与营销",
+      "video": "视频",
+      "lifestyle": "生活方式"
     }
   }
 }

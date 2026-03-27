@@ -111,6 +111,7 @@
     "logoAlt": "Curify Logo",
     "home": "Home",
     "discover": "Discover",
+    "trending": "Trending",
     "gallery": "Gallery",
     "tools": "Tools",
     "blogs": "Blogs",
@@ -147,6 +148,17 @@
     "translated": "Translated",
     "unsupported": "Your browser does not support the video tag."
   },
+  "entryBar": {
+    "question": "What do you want to create today?",
+    "items": {
+      "character": "Characters",
+      "learning": "Learning",
+      "visual": "Visual Design",
+      "product": "Product & Marketing",
+      "video": "Videos",
+      "lifestyle": "Lifestyle"
+    }
+  },
   "contentCreationSidebar": {
     "title": "Content Creation Tools",
     "cta": "Create New Content",
@@ -161,7 +173,7 @@
         "desc": "Automatically generate subtitles in two languages for free",
         "alt": "Subtitle"
       }
-    },
+    },    
     "nanoSidebar": {
       "badge": "Nano Banana",
       "wordCard": {
