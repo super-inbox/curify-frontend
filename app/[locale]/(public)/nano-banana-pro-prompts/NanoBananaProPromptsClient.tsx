@@ -21,11 +21,13 @@ interface TagCategory {
 interface Props {
   initialData: NanoPromptBase[] | null;
   error: string | null;
+  staticCategories: TagCategory[];
 }
 
 export default function NanoBananaProPromptsClient({
   initialData,
   error,
+  staticCategories,
 }: Props) {
   const t = useTranslations("nanoGallery");
 
@@ -61,20 +63,7 @@ export default function NanoBananaProPromptsClient({
     loadData();
   }, [initialData, error]);
 
-  const categories = useMemo<TagCategory[]>(() => {
-    const counts: Record<string, number> = {};
-
-    allPrompts.forEach((prompt) => {
-      const primaryTag = prompt.tags?.[0];
-      if (primaryTag) {
-        counts[primaryTag] = (counts[primaryTag] || 0) + 1;
-      }
-    });
-
-    return Object.entries(counts)
-      .map(([category, count]) => ({ category, count }))
-      .sort((a, b) => b.count - a.count);
-  }, [allPrompts]);
+  const categories = staticCategories;
 
   const prompts = useMemo(() => {
     return allPrompts.slice(0, displayedCount);

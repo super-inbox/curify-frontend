@@ -1,0 +1,794 @@
+{
+  "metadata": {
+    "sources": [
+      "eweek",
+      "github",
+      "imagine_art",
+      "promptgather"
+    ],
+    "layoutCategories": [
+      {
+        "category": "Multi-Panel",
+        "count": 3007
+      },
+      {
+        "category": "Grid Layout",
+        "count": 1277
+      },
+      {
+        "category": "Single Image",
+        "count": 6
+      },
+      {
+        "category": "Infographic",
+        "count": 4
+      },
+      {
+        "category": "Step-by-Step",
+        "count": 2
+      },
+      {
+        "category": "Collage",
+        "count": 2
+      }
+    ],
+    "total": 1406,
+    "lastUpdated": "2026-01-20T18:09:58.064Z",
+    "tags": [
+      {
+        "tag": "indoor",
+        "count": 644,
+        "title": "Indoor Scene AI Prompts",
+        "description": "Browse AI prompts for cozy interior settings, indoor portraits, studio environments, and beautifully lit indoor scenes.",
+        "keywords": [
+          "indoor ai prompts",
+          "interior scene prompts",
+          "studio environment ai",
+          "indoor portrait prompts"
+        ],
+        "introText": "Explore prompts that bring warmth, intimacy, and detail to every indoor environment."
+      },
+      {
+        "tag": "young woman",
+        "count": 578,
+        "title": "Young Woman AI Prompts",
+        "description": "Discover AI prompts featuring young women in portraits, lifestyle scenes, fashion imagery, and expressive visual storytelling.",
+        "keywords": [
+          "young woman ai prompts",
+          "female portrait prompts",
+          "lifestyle scene ai",
+          "woman photography prompts"
+        ],
+        "introText": "Find prompts that capture the energy, style, and personality of young women in every setting."
+      },
+      {
+        "tag": "woman",
+        "count": 408,
+        "title": "Woman AI Prompts",
+        "description": "Explore AI prompts centered on women in portraits, fashion, lifestyle, and artistic visual compositions.",
+        "keywords": [
+          "woman ai prompts",
+          "female portrait ai",
+          "women lifestyle prompts",
+          "female-focused image prompts"
+        ],
+        "introText": "Discover prompts that celebrate women through powerful, beautiful, and expressive visual imagery."
+      },
+      {
+        "tag": "Graphic Design",
+        "count": 399,
+        "title": "Graphic Design AI Prompts",
+        "description": "Explore AI prompts for visual layouts, typography compositions, poster design, and bold graphic art concepts.",
+        "keywords": [
+          "graphic design ai prompts",
+          "poster design prompts",
+          "typography ai",
+          "visual layout prompts"
+        ],
+        "introText": "Discover prompts for striking graphic designs, bold posters, and compelling visual compositions."
+      },
+      {
+        "tag": "Product Photography",
+        "count": 390,
+        "title": "Product Photography AI Prompts",
+        "description": "Explore AI prompts for commercial product shots, e-commerce visuals, studio product setups, and sleek brand photography.",
+        "keywords": [
+          "product photography ai prompts",
+          "commercial product prompts",
+          "e-commerce visual ai",
+          "studio product prompts"
+        ],
+        "introText": "Discover prompts for polished product photography that showcases items at their very best."
+      },
+      {
+        "tag": "serene",
+        "count": 296,
+        "title": "Serene AI Prompts",
+        "description": "Browse AI prompts for calm, peaceful visuals \u2014 from tranquil nature scenes to quiet indoor moments and meditative imagery.",
+        "keywords": [
+          "serene ai prompts",
+          "calm visual prompts",
+          "peaceful scene ai",
+          "tranquil image prompts"
+        ],
+        "introText": "Explore prompts that evoke stillness, peace, and a sense of beautiful calm."
+      },
+      {
+        "tag": "urban",
+        "count": 279,
+        "title": "Urban Scene AI Prompts",
+        "description": "Explore AI prompts for city streets, urban architecture, street photography, and the vibrant energy of metropolitan life.",
+        "keywords": [
+          "urban ai prompts",
+          "city scene prompts",
+          "street photography ai",
+          "metropolitan visual prompts"
+        ],
+        "introText": "Discover prompts that capture the grit, energy, and beauty of urban environments."
+      },
+      {
+        "tag": "elegant",
+        "count": 238,
+        "title": "Elegant AI Prompts",
+        "description": "Browse AI prompts for refined, sophisticated visuals \u2014 from elegant fashion and interiors to graceful portraiture and polished compositions.",
+        "keywords": [
+          "elegant ai prompts",
+          "sophisticated visual prompts",
+          "refined image ai",
+          "graceful scene prompts"
+        ],
+        "introText": "Find prompts that embody sophistication, grace, and timeless visual elegance."
+      },
+      {
+        "tag": "bold",
+        "count": 206,
+        "title": "Bold AI Prompts",
+        "description": "Discover AI prompts for striking, high-contrast visuals with strong colors, dramatic compositions, and confident graphic impact.",
+        "keywords": [
+          "bold ai prompts",
+          "high contrast visual prompts",
+          "dramatic composition ai",
+          "strong graphic prompts"
+        ],
+        "introText": "Explore prompts that make a statement with bold colors, strong lines, and powerful visual impact."
+      },
+      {
+        "tag": "nature",
+        "count": 190,
+        "title": "Nature AI Prompts",
+        "description": "Explore AI prompts for natural scenes, flora, fauna, landscapes, and the serene beauty of the outdoors.",
+        "keywords": [
+          "nature ai prompts",
+          "natural scene prompts",
+          "flora fauna ai",
+          "outdoor landscape prompts"
+        ],
+        "introText": "Discover prompts that celebrate the quiet wonder and breathtaking beauty of the natural world."
+      },
+      {
+        "tag": "person",
+        "count": 185,
+        "title": "Person AI Prompts",
+        "description": "Browse AI prompts featuring people in portraits, candid scenes, lifestyle imagery, and expressive human-focused compositions.",
+        "keywords": [
+          "person ai prompts",
+          "human portrait prompts",
+          "candid scene ai",
+          "people photography prompts"
+        ],
+        "introText": "Find prompts that put people at the center \u2014 capturing personality, emotion, and human connection."
+      },
+      {
+        "tag": "playful",
+        "count": 177,
+        "title": "Playful AI Prompts",
+        "description": "Discover AI prompts full of fun, energy, and creativity \u2014 from whimsical scenes to lively characters and joyful visual compositions.",
+        "keywords": [
+          "playful ai prompts",
+          "fun visual prompts",
+          "whimsical scene ai",
+          "lively image prompts"
+        ],
+        "introText": "Explore prompts that bring out the fun, lighthearted, and imaginative side of visual creativity."
+      },
+      {
+        "tag": "Fashion Photography",
+        "count": 158,
+        "title": "Fashion Photography AI Prompts",
+        "description": "Discover AI prompts for editorial fashion shoots, model portraits, stylish lookbooks, and high-fashion imagery.",
+        "keywords": [
+          "fashion photography ai prompts",
+          "editorial fashion prompts",
+          "model photography ai",
+          "lookbook image prompts"
+        ],
+        "introText": "Find prompts for striking fashion photography, editorial looks, and stylish visual narratives."
+      },
+      {
+        "tag": "Portrait Photography",
+        "count": 156,
+        "title": "Portrait Photography AI Prompts",
+        "description": "Browse AI prompts for expressive portraits, editorial headshots, dramatic lighting, and compelling human-focused photography.",
+        "keywords": [
+          "portrait photography ai prompts",
+          "headshot prompts",
+          "portrait lighting ai",
+          "human portrait visual prompts"
+        ],
+        "introText": "Explore prompts that capture personality, emotion, and expression through stunning portrait photography."
+      },
+      {
+        "tag": "outdoor",
+        "count": 152,
+        "title": "Outdoor Scene AI Prompts",
+        "description": "Explore AI prompts for outdoor photography, open-air environments, natural backdrops, and fresh, dynamic exterior settings.",
+        "keywords": [
+          "outdoor ai prompts",
+          "exterior scene prompts",
+          "open air visual ai",
+          "outdoor photography prompts"
+        ],
+        "introText": "Discover prompts that take visuals outside \u2014 into sunlight, fresh air, and natural surroundings."
+      },
+      {
+        "tag": "Illustration",
+        "count": 114,
+        "title": "Illustration AI Prompts",
+        "description": "Explore curated AI prompts for hand-drawn styles, editorial illustrations, storybook art, and expressive visual narratives.",
+        "keywords": [
+          "illustration ai prompts",
+          "hand-drawn art prompts",
+          "editorial illustration ai",
+          "storybook art prompts"
+        ],
+        "introText": "Discover prompts for expressive illustrations, storybook scenes, and beautifully crafted visual art."
+      },
+      {
+        "tag": "stylish",
+        "count": 88,
+        "title": "Stylish AI Prompts",
+        "description": "Browse AI prompts for fashionable, trend-forward visuals with chic styling, modern aesthetics, and polished design sensibilities.",
+        "keywords": [
+          "stylish ai prompts",
+          "fashionable visual prompts",
+          "chic aesthetic ai",
+          "modern style prompts"
+        ],
+        "introText": "Find prompts that ooze style, from head-turning fashion to sleek, contemporary visual design."
+      },
+      {
+        "tag": "joyful",
+        "count": 81,
+        "title": "Joyful AI Prompts",
+        "description": "Explore AI prompts for happy, uplifting visuals \u2014 smiling portraits, celebratory scenes, and imagery that radiates positivity.",
+        "keywords": [
+          "joyful ai prompts",
+          "happy scene prompts",
+          "uplifting visual ai",
+          "celebratory image prompts"
+        ],
+        "introText": "Discover prompts that radiate happiness, warmth, and the pure joy of being alive."
+      },
+      {
+        "tag": "man",
+        "count": 60,
+        "title": "Man AI Prompts",
+        "description": "Browse AI prompts featuring men in portraits, lifestyle scenes, fashion shoots, and compelling visual compositions.",
+        "keywords": [
+          "man ai prompts",
+          "male portrait prompts",
+          "men lifestyle ai",
+          "male-focused image prompts"
+        ],
+        "introText": "Find prompts that capture strength, style, and character in portraits and scenes featuring men."
+      },
+      {
+        "tag": "mood",
+        "count": 59,
+        "title": "Mood AI Prompts",
+        "description": "Discover AI prompts that prioritize atmosphere and emotion \u2014 moody lighting, cinematic tones, and evocative visual storytelling.",
+        "keywords": [
+          "mood ai prompts",
+          "atmospheric visual prompts",
+          "moody lighting ai",
+          "cinematic tone prompts"
+        ],
+        "introText": "Explore prompts that set the scene with rich atmosphere, emotion, and unforgettable visual mood."
+      },
+      {
+        "tag": "couple",
+        "count": 58,
+        "title": "Couple AI Prompts",
+        "description": "Explore AI prompts for couple portraits, romantic moments, relationship-focused storytelling, and intimate visual compositions.",
+        "keywords": [
+          "couple ai prompts",
+          "romantic portrait prompts",
+          "relationship visual ai",
+          "couple photography prompts"
+        ],
+        "introText": "Find prompts that celebrate connection, romance, and the beauty of two people together."
+      },
+      {
+        "tag": "inviting",
+        "count": 56,
+        "title": "Inviting AI Prompts",
+        "description": "Browse AI prompts for warm, welcoming visuals \u2014 cozy spaces, inviting scenes, and imagery that makes you feel right at home.",
+        "keywords": [
+          "inviting ai prompts",
+          "warm scene prompts",
+          "cozy visual ai",
+          "welcoming image prompts"
+        ],
+        "introText": "Discover prompts that create spaces and scenes that feel warm, comfortable, and deeply inviting."
+      },
+      {
+        "tag": "art",
+        "count": 47,
+        "title": "Art AI Prompts",
+        "description": "Explore AI prompts for fine art, abstract expression, mixed media, and creative visual works across every artistic style.",
+        "keywords": [
+          "art ai prompts",
+          "fine art prompts",
+          "abstract art ai",
+          "creative visual prompts"
+        ],
+        "introText": "Find prompts that push the boundaries of artistic expression across every medium and style."
+      },
+      {
+        "tag": "young man",
+        "count": 46,
+        "title": "Young Man AI Prompts",
+        "description": "Browse AI prompts featuring young men in portraits, lifestyle scenes, streetwear fashion, and expressive visual storytelling.",
+        "keywords": [
+          "young man ai prompts",
+          "male portrait prompts",
+          "youth lifestyle ai",
+          "streetwear photography prompts"
+        ],
+        "introText": "Explore prompts that capture the style, confidence, and energy of young men in vivid visual imagery."
+      },
+      {
+        "tag": "whimsical",
+        "count": 44,
+        "title": "Whimsical AI Prompts",
+        "description": "Discover AI prompts for imaginative, fantastical, and dreamlike visuals \u2014 from fairy-tale scenes to surreal, playful compositions.",
+        "keywords": [
+          "whimsical ai prompts",
+          "fantastical scene prompts",
+          "dreamlike visual ai",
+          "surreal image prompts"
+        ],
+        "introText": "Explore prompts that transport you to magical, whimsical worlds full of wonder and imagination."
+      },
+      {
+        "tag": "dynamic",
+        "count": 42,
+        "title": "Dynamic AI Prompts",
+        "description": "Explore AI prompts for action-packed, energetic visuals \u2014 motion blur, dramatic angles, kinetic compositions, and high-energy scenes.",
+        "keywords": [
+          "dynamic ai prompts",
+          "action scene prompts",
+          "energetic visual ai",
+          "motion image prompts"
+        ],
+        "introText": "Find prompts that bring movement, energy, and excitement to every frame."
+      },
+      {
+        "tag": "dramatic",
+        "count": 39,
+        "title": "Dramatic AI Prompts",
+        "description": "Browse AI prompts for high-contrast, emotionally charged visuals \u2014 dramatic lighting, intense expressions, and powerful cinematic scenes.",
+        "keywords": [
+          "dramatic ai prompts",
+          "cinematic lighting prompts",
+          "high contrast visual ai",
+          "intense scene prompts"
+        ],
+        "introText": "Discover prompts that heighten tension, emotion, and dramatic impact through powerful visual storytelling."
+      },
+      {
+        "tag": "futuristic",
+        "count": 31,
+        "title": "Futuristic AI Prompts",
+        "description": "Discover AI prompts for sci-fi scenes, futuristic architecture, advanced technology visuals, and tomorrow's world imagined today.",
+        "keywords": [
+          "futuristic ai prompts",
+          "sci-fi scene prompts",
+          "future technology ai",
+          "cyberpunk visual prompts"
+        ],
+        "introText": "Explore prompts that envision the future \u2014 from gleaming cities to cutting-edge technology and beyond."
+      },
+      {
+        "tag": "mystical",
+        "count": 31,
+        "title": "Mystical AI Prompts",
+        "description": "Browse AI prompts for ethereal, magical, and otherworldly visuals \u2014 ancient mysteries, fantasy realms, and mystical atmospheres.",
+        "keywords": [
+          "mystical ai prompts",
+          "magical scene prompts",
+          "ethereal visual ai",
+          "fantasy realm prompts"
+        ],
+        "introText": "Find prompts that unlock hidden worlds, ancient magic, and the captivating beauty of the mystical."
+      },
+      {
+        "tag": "vibrant",
+        "count": 29,
+        "title": "Vibrant AI Prompts",
+        "description": "Explore AI prompts for bold, colorful visuals bursting with energy \u2014 vivid palettes, lively scenes, and eye-catching imagery.",
+        "keywords": [
+          "vibrant ai prompts",
+          "colorful visual prompts",
+          "bold color ai",
+          "vivid scene prompts"
+        ],
+        "introText": "Discover prompts that celebrate color, life, and the joyful vibrancy of the world around us."
+      },
+      {
+        "tag": "romantic",
+        "count": 27,
+        "title": "Romantic AI Prompts",
+        "description": "Discover AI prompts for romantic visuals \u2014 soft lighting, intimate moments, dreamy atmospheres, and love-inspired imagery.",
+        "keywords": [
+          "romantic ai prompts",
+          "intimate scene prompts",
+          "love visual ai",
+          "soft lighting image prompts"
+        ],
+        "introText": "Explore prompts that capture tenderness, passion, and the timeless beauty of romance."
+      },
+      {
+        "tag": "Digital Art",
+        "count": 25,
+        "title": "Digital Art AI Prompts",
+        "description": "Explore AI prompts for digital paintings, mixed-media art, stylized illustrations, and creative visual expressions.",
+        "keywords": [
+          "digital art ai prompts",
+          "digital painting prompts",
+          "stylized art prompts",
+          "mixed media ai prompts"
+        ],
+        "introText": "Discover prompts for vibrant digital paintings, stylized artwork, and expressive visual compositions."
+      },
+      {
+        "tag": "artistic",
+        "count": 24,
+        "title": "Artistic AI Prompts",
+        "description": "Browse AI prompts for creatively expressive visuals \u2014 painterly aesthetics, art-inspired compositions, and boundary-pushing imagery.",
+        "keywords": [
+          "artistic ai prompts",
+          "expressive visual prompts",
+          "painterly aesthetic ai",
+          "creative composition prompts"
+        ],
+        "introText": "Find prompts that blend creativity and craft into visually striking, artistically rich imagery."
+      },
+      {
+        "tag": "Fashion Design",
+        "count": 18,
+        "title": "Fashion Design AI Prompts",
+        "description": "Browse AI prompts for clothing design, textile patterns, runway looks, and avant-garde fashion concepts.",
+        "keywords": [
+          "fashion design ai prompts",
+          "clothing design prompts",
+          "runway fashion ai",
+          "textile pattern prompts"
+        ],
+        "introText": "Explore prompts that inspire bold clothing designs, intricate textures, and cutting-edge fashion concepts."
+      },
+      {
+        "tag": "young person",
+        "count": 18,
+        "title": "Young Person AI Prompts",
+        "description": "Explore AI prompts featuring young people in portraits, lifestyle scenes, and vibrant, youthful visual storytelling.",
+        "keywords": [
+          "young person ai prompts",
+          "youth portrait prompts",
+          "teenage lifestyle ai",
+          "young people visual prompts"
+        ],
+        "introText": "Discover prompts that capture the energy, authenticity, and spirit of youth in vivid detail."
+      },
+      {
+        "tag": "transport",
+        "count": 17,
+        "title": "Transport AI Prompts",
+        "description": "Explore AI prompts for vehicles, transportation scenes, mobility concepts, and the visual world of movement and travel.",
+        "keywords": [
+          "transport ai prompts",
+          "vehicle scene prompts",
+          "mobility visual ai",
+          "travel transportation prompts"
+        ],
+        "introText": "Find prompts that put the world in motion \u2014 from sleek vehicles to bustling transport scenes."
+      },
+      {
+        "tag": "thoughtful",
+        "count": 17,
+        "title": "Thoughtful AI Prompts",
+        "description": "Discover AI prompts for contemplative, introspective visuals \u2014 quiet moments, reflective expressions, and meditative scene compositions.",
+        "keywords": [
+          "thoughtful ai prompts",
+          "contemplative visual prompts",
+          "introspective scene ai",
+          "reflective image prompts"
+        ],
+        "introText": "Explore prompts that invite pause, reflection, and a deeper look at the quieter moments of life."
+      },
+      {
+        "tag": "Health & Fitness",
+        "count": 10,
+        "title": "Health & Fitness AI Prompts",
+        "description": "Browse AI prompts for fitness photography, wellness visuals, athletic scenes, and healthy lifestyle imagery.",
+        "keywords": [
+          "health fitness ai prompts",
+          "fitness photography prompts",
+          "wellness visual ai",
+          "athletic scene prompts"
+        ],
+        "introText": "Explore prompts that capture the energy, strength, and vitality of health and fitness."
+      },
+      {
+        "tag": "Branding & Identity",
+        "count": 7,
+        "title": "Branding & Identity AI Prompts",
+        "description": "Explore AI prompts for logo design, brand visuals, identity systems, and cohesive brand storytelling.",
+        "keywords": [
+          "branding ai prompts",
+          "logo design prompts",
+          "brand identity ai",
+          "visual identity prompts"
+        ],
+        "introText": "Discover prompts that shape bold brand identities, iconic logos, and memorable visual systems."
+      },
+      {
+        "tag": "Social Media Content",
+        "count": 6,
+        "title": "Social Media Content AI Prompts",
+        "description": "Browse AI prompts for scroll-stopping social posts, Instagram-worthy visuals, engaging content, and platform-ready imagery.",
+        "keywords": [
+          "social media ai prompts",
+          "instagram visual prompts",
+          "content creation ai",
+          "social post image prompts"
+        ],
+        "introText": "Explore prompts designed to create eye-catching, shareable visuals for every social media platform."
+      },
+      {
+        "tag": "Gaming",
+        "count": 6,
+        "title": "Gaming AI Prompts",
+        "description": "Discover AI prompts for video game environments, game character art, pixel art, and immersive gaming world visuals.",
+        "keywords": [
+          "gaming ai prompts",
+          "video game art prompts",
+          "game character ai",
+          "pixel art prompts"
+        ],
+        "introText": "Find prompts that bring game worlds, characters, and environments to vivid life."
+      },
+      {
+        "tag": "Character Design",
+        "count": 5,
+        "title": "Character Design AI Prompts",
+        "description": "Browse AI prompts for original character creation, concept characters, fantasy heroes, and unique visual personas.",
+        "keywords": [
+          "character design ai prompts",
+          "original character prompts",
+          "fantasy character ai",
+          "character concept prompts"
+        ],
+        "introText": "Explore prompts for designing expressive, original characters across every genre and style."
+      },
+      {
+        "tag": "Marketing & Advertising",
+        "count": 4,
+        "title": "Marketing & Advertising AI Prompts",
+        "description": "Explore AI prompts for ad campaigns, promotional visuals, brand messaging imagery, and persuasive marketing content.",
+        "keywords": [
+          "marketing ai prompts",
+          "advertising visual prompts",
+          "ad campaign ai",
+          "promotional image prompts"
+        ],
+        "introText": "Discover prompts that power bold campaigns, persuasive ads, and attention-grabbing marketing visuals."
+      },
+      {
+        "tag": "Storytelling",
+        "count": 4,
+        "title": "Storytelling AI Prompts",
+        "description": "Browse AI prompts for narrative scenes, visual story sequences, emotional moments, and character-driven imagery.",
+        "keywords": [
+          "storytelling ai prompts",
+          "narrative visual prompts",
+          "story scene ai",
+          "character story prompts"
+        ],
+        "introText": "Explore prompts that craft compelling narratives, emotional scenes, and powerful visual stories."
+      },
+      {
+        "tag": "Architecture",
+        "count": 3,
+        "title": "Architecture AI Prompts",
+        "description": "Explore AI prompts for architectural renders, building facades, interior spaces, and structural design concepts.",
+        "keywords": [
+          "architecture ai prompts",
+          "building design prompts",
+          "architectural render prompts",
+          "structural design ai"
+        ],
+        "introText": "Discover prompts for striking buildings, architectural details, and visionary structural designs."
+      },
+      {
+        "tag": "Product Design",
+        "count": 3,
+        "title": "Product Design AI Prompts",
+        "description": "Discover AI prompts for industrial design concepts, product sketches, consumer goods visuals, and innovative object design.",
+        "keywords": [
+          "product design ai prompts",
+          "industrial design prompts",
+          "consumer product ai",
+          "object design visual prompts"
+        ],
+        "introText": "Find prompts that inspire innovative product concepts, elegant industrial design, and creative object visuals."
+      },
+      {
+        "tag": "Interior Design",
+        "count": 3,
+        "title": "Interior Design AI Prompts",
+        "description": "Browse AI prompts for room styling, interior architecture, furniture arrangements, and atmospheric living spaces.",
+        "keywords": [
+          "interior design ai prompts",
+          "room styling prompts",
+          "interior architecture ai",
+          "living space visual prompts"
+        ],
+        "introText": "Explore prompts that design beautiful interiors, from cozy rooms to luxurious living spaces."
+      },
+      {
+        "tag": "Traditional Art",
+        "count": 2,
+        "title": "Traditional Art AI Prompts",
+        "description": "Discover AI prompts inspired by oil painting, watercolor, charcoal sketches, and classical fine art techniques.",
+        "keywords": [
+          "traditional art ai prompts",
+          "oil painting prompts",
+          "watercolor ai art",
+          "classical fine art prompts"
+        ],
+        "introText": "Find prompts that evoke the timeless beauty of traditional painting, drawing, and fine art."
+      },
+      {
+        "tag": "Nature & Wildlife",
+        "count": 2,
+        "title": "Nature & Wildlife AI Prompts",
+        "description": "Discover AI prompts for wildlife photography, forest scenes, ocean life, and the stunning diversity of the natural world.",
+        "keywords": [
+          "nature wildlife ai prompts",
+          "wildlife photography prompts",
+          "forest scene ai",
+          "animal visual prompts"
+        ],
+        "introText": "Find prompts that celebrate the raw beauty of nature, from wildlife encounters to serene natural landscapes."
+      },
+      {
+        "tag": "Concept Art",
+        "count": 2,
+        "title": "Concept Art AI Prompts",
+        "description": "Discover AI prompts for world-building, environment concepts, creature designs, and pre-production visual development.",
+        "keywords": [
+          "concept art ai prompts",
+          "environment concept prompts",
+          "world building ai",
+          "pre-production art prompts"
+        ],
+        "introText": "Find prompts that fuel creative world-building, imaginative environments, and bold concept art."
+      },
+      {
+        "tag": "Home & Garden",
+        "count": 2,
+        "title": "Home & Garden AI Prompts",
+        "description": "Discover AI prompts for cozy home interiors, garden landscapes, outdoor living spaces, and domestic lifestyle scenes.",
+        "keywords": [
+          "home garden ai prompts",
+          "interior decor prompts",
+          "garden landscape ai",
+          "outdoor living prompts"
+        ],
+        "introText": "Find prompts for inviting home spaces, lush gardens, and beautiful domestic settings."
+      },
+      {
+        "tag": "Food Photography",
+        "count": 2,
+        "title": "Food Photography AI Prompts",
+        "description": "Browse AI prompts for culinary photography, styled food scenes, restaurant dishes, and appetizing visual compositions.",
+        "keywords": [
+          "food photography ai prompts",
+          "culinary visual prompts",
+          "food styling ai",
+          "restaurant dish prompts"
+        ],
+        "introText": "Explore prompts that make every dish look irresistible through beautifully styled food visuals."
+      },
+      {
+        "tag": "Web Design",
+        "count": 1,
+        "title": "Web Design AI Prompts",
+        "description": "Explore AI prompts for website layouts, landing page visuals, web UI concepts, and modern digital design aesthetics.",
+        "keywords": [
+          "web design ai prompts",
+          "website layout prompts",
+          "landing page visual ai",
+          "digital design prompts"
+        ],
+        "introText": "Discover prompts for modern, visually compelling web designs and engaging digital experiences."
+      },
+      {
+        "tag": "Environmental Science",
+        "count": 1,
+        "title": "Environmental Science AI Prompts",
+        "description": "Discover AI prompts for ecology visuals, climate concepts, natural ecosystems, and environmental awareness imagery.",
+        "keywords": [
+          "environmental science ai prompts",
+          "ecology visual prompts",
+          "climate art prompts",
+          "nature ecosystem ai"
+        ],
+        "introText": "Find prompts that capture the beauty and urgency of our natural world and environment."
+      },
+      {
+        "tag": "Software Development",
+        "count": 1,
+        "title": "Software Development AI Prompts",
+        "description": "Discover AI prompts for code visualization, developer workspaces, tech concepts, and software-inspired abstract imagery.",
+        "keywords": [
+          "software development ai prompts",
+          "code visualization prompts",
+          "developer workspace ai",
+          "tech concept visual prompts"
+        ],
+        "introText": "Find prompts that visualize the world of software, from elegant code to futuristic development environments."
+      },
+      {
+        "tag": "3D Art & Modeling",
+        "count": 1,
+        "title": "3D Art & Modeling AI Prompts",
+        "description": "Browse AI prompts for 3D renders, CGI characters, sculptural forms, and photorealistic modeling scenes.",
+        "keywords": [
+          "3d art ai prompts",
+          "3d modeling prompts",
+          "cgi ai image prompts",
+          "3d render prompts"
+        ],
+        "introText": "Explore prompts crafted for stunning 3D renders, sculpted characters, and cinematic CGI scenes."
+      },
+      {
+        "tag": "Landscape Photography",
+        "count": 1,
+        "title": "Landscape Photography AI Prompts",
+        "description": "Discover AI prompts for sweeping scenic views, golden hour landscapes, mountainscapes, and breathtaking natural photography.",
+        "keywords": [
+          "landscape photography ai prompts",
+          "scenic view prompts",
+          "nature photography ai",
+          "golden hour prompts"
+        ],
+        "introText": "Find prompts that capture the scale and beauty of nature's most stunning landscapes."
+      },
+      {
+        "tag": "Personal Development",
+        "count": 1,
+        "title": "Personal Development AI Prompts",
+        "description": "Explore AI prompts for motivational visuals, self-growth concepts, mindfulness imagery, and inspirational storytelling.",
+        "keywords": [
+          "personal development ai prompts",
+          "motivational visual prompts",
+          "mindfulness ai art",
+          "inspirational image prompts"
+        ],
+        "introText": "Discover prompts that inspire growth, reflection, and the journey toward a better self."
+      }
+    ]
+  }
+}
