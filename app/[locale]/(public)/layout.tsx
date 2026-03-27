@@ -13,6 +13,8 @@ import TopUpModal from "../_componentForPage/TopUpModal";
 import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
+import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
+
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
@@ -67,6 +69,8 @@ export default async function PublicLocaleLayout({
       <head>{/* keep existing scripts */}</head>
 
       <body suppressHydrationWarning>
+      <GoogleAnalyticsInit />
+
         <GoogleAnalyticsTracker />
 
         <NextIntlClientProvider locale={locale} messages={messages}>
