@@ -169,12 +169,13 @@ export default async function PromptDetailPage({
             {prompt.tags.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-2">
                 {prompt.tags.map((tag) => (
-                  <span
+                  <Link
                     key={tag}
-                    className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600"
+                    href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`}
+                    className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700 hover:bg-indigo-100"
                   >
                     {tag}
-                  </span>
+                  </Link>
                 ))}
               </div>
             )}
