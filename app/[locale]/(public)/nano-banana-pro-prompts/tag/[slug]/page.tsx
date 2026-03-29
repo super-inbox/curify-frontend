@@ -6,6 +6,8 @@ import PromptCard from '../../PromptCard';
 import { nanoPromptsService } from '@/services/nanoPrompts';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale } from '@/lib/locale_utils';
+import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
+import CategoriesSection from './CategoriesSection';
 
 type TagEntry = {
   title?: string;
@@ -103,6 +105,11 @@ export default async function TagPage({ params }: Props) {
     console.error('Error fetching prompts for tag:', tag, err);
   }
 
+  const categories = nanoMetadata.metadata.tags.map((t) => ({
+    category: t.tag,
+    count: t.count,
+  }));
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -138,6 +145,8 @@ export default async function TagPage({ params }: Props) {
               {prompts.length} prompt{prompts.length !== 1 ? 's' : ''}
             </p>
           </header>
+
+          <CategoriesSection categories={categories} currentTag={tag} />
 
           {prompts.length === 0 ? (
             <div className="rounded-lg bg-white py-12 text-center shadow">
