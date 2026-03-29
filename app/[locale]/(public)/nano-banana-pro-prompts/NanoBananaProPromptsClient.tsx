@@ -21,11 +21,13 @@ interface TagCategory {
 interface Props {
   initialData: NanoPromptBase[] | null;
   error: string | null;
+  staticCategories: TagCategory[];
 }
 
 export default function NanoBananaProPromptsClient({
   initialData,
   error,
+  staticCategories,
 }: Props) {
   const t = useTranslations("nanoGallery");
 
@@ -61,20 +63,8 @@ export default function NanoBananaProPromptsClient({
     loadData();
   }, [initialData, error]);
 
-  const categories = useMemo<TagCategory[]>(() => {
-    const counts: Record<string, number> = {};
-
-    allPrompts.forEach((prompt) => {
-      const primaryTag = prompt.tags?.[0];
-      if (primaryTag) {
-        counts[primaryTag] = (counts[primaryTag] || 0) + 1;
-      }
-    });
-
-    return Object.entries(counts)
-      .map(([category, count]) => ({ category, count }))
-      .sort((a, b) => b.count - a.count);
-  }, [allPrompts]);
+  const categories = staticCategories;
+  const [categoriesExpanded, setCategoriesExpanded] = useState(false);
 
   const prompts = useMemo(() => {
     return allPrompts.slice(0, displayedCount);
@@ -118,7 +108,7 @@ export default function NanoBananaProPromptsClient({
         </header>
 
         {categories.length > 0 && (
-          <section className="sticky top-24 z-20 mb-8 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-sm backdrop-blur">
+          <section className="mb-8 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-sm backdrop-blur">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="text-base font-semibold text-gray-900">
                 Categories
@@ -126,7 +116,7 @@ export default function NanoBananaProPromptsClient({
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {categories.map(({ category, count }) => (
+              {(categoriesExpanded ? categories : categories.slice(0, 8)).map(({ category, count }) => (
                 <Link
                   key={category}
                   href={`/nano-banana-pro-prompts/tag/${encodeURIComponent(category)}`}
@@ -139,6 +129,15 @@ export default function NanoBananaProPromptsClient({
                 </Link>
               ))}
             </div>
+
+            {categories.length > 8 && (
+              <button
+                onClick={() => setCategoriesExpanded((prev) => !prev)}
+                className="mt-3 text-sm text-indigo-600 hover:text-indigo-800"
+              >
+                {categoriesExpanded ? "▲ Show less" : `▼ Show all ${categories.length} categories`}
+              </button>
+            )}
           </section>
         )}
 

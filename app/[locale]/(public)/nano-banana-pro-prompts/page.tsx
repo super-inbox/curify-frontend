@@ -6,6 +6,7 @@ import { SITE_URL } from '@/lib/constants';
 import { nanoPromptsService } from '@/services/nanoPrompts';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale } from '@/lib/locale_utils';
+import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 
 export const runtime = 'nodejs';
 
@@ -134,6 +135,10 @@ export default async function NanoBananaProPromptsPage({
       <NanoBananaProPromptsClient
         initialData={initialData}
         error={error}
+        staticCategories={nanoMetadata.metadata.tags.map((t) => ({
+          category: t.tag,
+          count: t.count,
+        }))}
       />
     </>
   );
