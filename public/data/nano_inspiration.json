@@ -13995,5 +13995,343 @@
         "title": "weather"
       }
     }
+  },
+  {
+    "id": "template-costume-greek-fustanella",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-greek-fustanella.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-greek-fustanella-prev.jpg"
+    },
+    "params": {
+      "costume_style": "greek fustanella"
+    },
+    "locales": {
+      "zh": {
+        "title": "greek fustanella"
+      }
+    }
+  },
+  {
+    "id": "template-costume-japanese-kimono-furisode",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-japanese-kimono-furisode.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-japanese-kimono-furisode-prev.jpg"
+    },
+    "params": {
+      "costume_style": "japanese kimono furisode"
+    },
+    "locales": {
+      "zh": {
+        "title": "japanese kimono furisode"
+      }
+    }
+  },
+  {
+    "id": "template-costume-korean-hanbok-choson-ot",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-korean-hanbok-choson-ot.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-korean-hanbok-choson-ot-prev.jpg"
+    },
+    "params": {
+      "costume_style": "korean hanbok choson ot"
+    },
+    "locales": {
+      "zh": {
+        "title": "korean hanbok choson ot"
+      }
+    }
+  },
+  {
+    "id": "template-costume-thai-silk-sari",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-thai-silk-sari.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-thai-silk-sari-prev.jpg"
+    },
+    "params": {
+      "costume_style": "thai silk sari"
+    },
+    "locales": {
+      "zh": {
+        "title": "thai silk sari"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-houzao-monkey-bezoar",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-houzao-monkey-bezoar.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-houzao-monkey-bezoar-prev.jpg"
+    },
+    "params": {
+      "herb_name": "houzao monkey bezoar"
+    },
+    "locales": {
+      "zh": {
+        "title": "houzao monkey bezoar"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-jinguolan-tinospora-root",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-jinguolan-tinospora-root.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-jinguolan-tinospora-root-prev.jpg"
+    },
+    "params": {
+      "herb_name": "jinguolan tinospora root"
+    },
+    "locales": {
+      "zh": {
+        "title": "jinguolan tinospora root"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-yesu-aeginetia",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-yesu-aeginetia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-yesu-aeginetia-prev.jpg"
+    },
+    "params": {
+      "herb_name": "yesu aeginetia"
+    },
+    "locales": {
+      "zh": {
+        "title": "yesu aeginetia"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-yunzhi-turkey-tail",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-yunzhi-turkey-tail.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-yunzhi-turkey-tail-prev.jpg"
+    },
+    "params": {
+      "herb_name": "yunzhi turkey tail"
+    },
+    "locales": {
+      "zh": {
+        "title": "yunzhi turkey tail"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-black-cat",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-black-cat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-black-cat-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "black cat"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-cloak-and-dagger",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-cloak-and-dagger.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-cloak-and-dagger-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "cloak and dagger"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-elektra",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-elektra.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-elektra-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "elektra"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-shang-chi",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-shang-chi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-shang-chi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "shang chi"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-01-core-conflict",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-01-core-conflict.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-01-core-conflict-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 01 core conflict"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-02-three-overviews",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-02-three-overviews.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-02-three-overviews-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 02 three overviews"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-03-peace-efforts-detailed",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-03-peace-efforts-detailed.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-03-peace-efforts-detailed-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 03 peace efforts detailed"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-04-military-actions-detailed",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-04-military-actions-detailed.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-04-military-actions-detailed-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 04 military actions detailed"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-01-core-concept",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-01-core-concept.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-01-core-concept-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 01 core concept"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-02-more-for-less",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-02-more-for-less.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-02-more-for-less-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 02 more for less"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-03-more-for-more",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-03-more-for-more.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-03-more-for-more-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 03 more for more"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-04-complete-strategy",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-04-complete-strategy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-04-complete-strategy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 04 complete strategy"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-desserts",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-desserts.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-desserts-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "desserts"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-musical-instruments",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-musical-instruments.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-musical-instruments-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "musical instruments"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-vegetables",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-vegetables.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-vegetables-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "vegetables"
+      }
+    }
   }
 ]
