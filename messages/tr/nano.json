@@ -1019,5 +1019,74 @@
         ]
       }
     }
+  },
+  "template-english-top5-phrases": {
+    "category": "İngilizce Öğrenme İfade Kartları",
+    "description": "Günlük ifadeleri net görseller ve çevirilerle birleştirerek çocuklar için sevimli iki dilli Top 5 İngilizce ifade kartları oluşturun.",
+    "title": "Nano Banana Prompt: Top 5 İngilizce İfadeler Öğrenme Kartları | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, çocuklar için tasarlanmış iki dilli 'Top 5' İngilizce ifade kartları oluşturmak için Nano Banana istemlerini kullanır. Her kart, İngilizce metin, Çince çeviriler ve uyumlu çizgi film illüstrasyonları ile temiz, renkli bir düzen içinde beş yaygın kullanılan ifadeyi sunar.",
+        "who": "Ebeveynler, erken çocukluk eğitmenleri, ESL öğretmenleri, dil öğrenme içerik üreticileri, evde eğitim yapan aileler ve çocuk eğitimi içeriğine odaklanan sosyal medya hesapları için uygundur.",
+        "how": [
+          "Selamlaşma, özür dileme veya iltifat gibi pratik bir iletişim konusu seçin.",
+          "Açık bir İngilizce başlık ve onun Çince karşılığını yazın.",
+          "Karşılık gelen Çince çevirilerle birlikte beş yaygın kullanılan İngilizce ifadeyi sağlayın.",
+          "Her ifadenin basit, doğal ve yaşa uygun olmasını sağlayın.",
+          "Her ifade için renkli bölümler ve uyumlu çizgi film illüstrasyonları ile kartı oluşturun."
+        ],
+        "prompts": [
+          "Teşekkür etmenin 5 Yolu kartını oluşturun: Teşekkür ederim!, Çok teşekkürler!, Bunu takdir ediyorum!, Ne kadar naziksiniz!, Minnettarım!",
+          "Başkalarını selamlamanın 5 Yolu kartını oluşturun: Merhaba!, Selam!, Nasılsın?, Tanıştığımıza memnun oldum!, Günaydın!",
+          "Hoşça kalmanın 5 Yolu kartını oluşturun: Hoşça kal!, Sonra görüşürüz!, Kendine iyi bak!, Şimdilik hoşça kal!, Görüşürüz!"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "İngilizce Hata Düzeltme Kartları",
+    "description": "Yanlış ve doğru cümleleri net açıklamalar ve görsellerle karşılaştıran iki dilli İngilizce hata düzeltme kartları oluşturun.",
+    "title": "Nano Banana Prompt: İngilizce Hata Düzeltme Öğrenme Kartları | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yaygın öğrenici hatalarını yan yana karşılaştırmalarla vurgulayan iki dilli İngilizce düzeltme kartları oluşturur. Her kart, yanlış ve doğru cümleleri net bir format ve çocuk dostu illüstrasyonlarla görsel olarak karşılaştırır.",
+        "who": "ESL öğrenicileri, öğretmenler, ebeveynler, özel ders merkezleri, dil öğrenme içerik üreticileri ve dil bilgisi geliştirmeye odaklanan eğitim içerik platformları için uygundur.",
+        "how": [
+          "Zaman, edatlar veya cümle yapısı gibi bir dil bilgisi konusu seçin.",
+          "Yaygın öğrenici hatalarını yansıtan yanlış örnek cümleler sağlayın.",
+          "Her cümlenin düzeltilmiş versiyonlarını yazın.",
+          "Açıklamaların öğreniciler için basit ve sezgisel olmasını sağlayın.",
+          "Açık bir ❌ vs ✅ karşılaştırması ve destekleyici illüstrasyonlarla görsel bir kart oluşturun."
+        ],
+        "prompts": [
+          "Zaman Hataları için bir İngilizce hata düzeltme kartı oluşturun: yanlış 'Ben dün parka gidiyorum' vs doğru 'Ben dün parka gittim'.",
+          "Soru Hataları kartını oluşturun: yanlış 'Sen bir öğrencisin?' vs doğru 'Sen bir öğrenci misin?'.",
+          "Edat Hataları kartını oluşturun: yanlış 'Ben pazartesi varıyorum' vs doğru 'Ben pazartesi varıyorum'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "İngilizce Diyalog Sahne Kartları",
+    "description": "Gerçek yaşam konuşmalarını simüle eden iki dilli İngilizce diyalog sahne kartları oluşturun, illüstrasyonlu bağlamlar ve rol tabanlı konuşmalar ile.",
+    "title": "Nano Banana Prompt: İngilizce Diyalog Sahne Öğrenme Kartları | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, restoranlar, okullar veya dükkanlar gibi günlük senaryolar içinde iki dilli İngilizce diyalog kartları oluşturur. Her kart, karakterler arasında yapılandırılmış konuşma alışverişleri ile merkezi bir illüstrasyonlu sahneyi birleştirir.",
+        "who": "ESL başlangıç seviyesindeki öğrenciler, İngilizce öğrenen çocuklar, öğretmenler, ebeveynler, dil uygulamaları ve konuşma pratiğine odaklanan içerik üreticileri için uygundur.",
+        "how": [
+          "Alışveriş, selamlaşma veya yemek yeme gibi gerçek yaşam senaryolarından birini seçin.",
+          "İki konuşmacının rollerini tanımlayın (örneğin, garson ve çocuk).",
+          "İngilizce 4-5 kısa konuşma alışverişi yazın.",
+          "Her satır için net Çince çeviriler sağlayın.",
+          "Merkezi bir sahne illüstrasyonu ve renk kodlu diyalog balonları ile kartı oluşturun."
+        ],
+        "prompts": [
+          "Bir restoran diyalog kartı oluşturun: Garson ve Çocuk arasında yemek ve içecek siparişi içeren bir konuşma.",
+          "Bir alışveriş diyalogu oluşturun: Çocuk ve Dükkan Sahibi fiyat ve satın alma hakkında konuşuyor.",
+          "Bir selamlaşma diyalogu oluşturun: iki çocuk tanışıyor ve kendilerini tanıtıyor."
+        ]
+      }
+    }
   }
 }

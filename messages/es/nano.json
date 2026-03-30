@@ -1019,5 +1019,74 @@
         ]
       }
     }
+  },
+  "template-english-top5-phrases": {
+    "category": "Tarjetas de Expresiones en Inglés",
+    "description": "Crea lindas tarjetas bilingües de las 5 mejores frases en inglés para niños, combinando expresiones cotidianas con visuales claras y traducciones.",
+    "title": "Nano Banana Prompt: Tarjetas de Aprendizaje de las 5 Mejores Frases en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza los prompts de Nano Banana para generar tarjetas bilingües de 'Top 5' expresiones en inglés diseñadas para niños. Cada tarjeta presenta cinco frases de uso común con texto en inglés, traducciones al chino e ilustraciones de dibujos animados que coinciden en un diseño limpio y colorido.",
+        "who": "Adecuado para padres, educadores de la primera infancia, maestros de ESL, creadores de aprendizaje de idiomas, familias que educan en casa y cuentas de redes sociales enfocadas en contenido educativo para niños.",
+        "how": [
+          "Elige un tema de comunicación práctico como saludos, disculpas o cumplidos.",
+          "Escribe un título claro en inglés y su equivalente en chino.",
+          "Proporciona cinco expresiones en inglés de uso común con sus traducciones correspondientes al chino.",
+          "Asegúrate de que cada frase sea simple, natural y apropiada para la edad.",
+          "Genera la tarjeta con secciones coloridas e ilustraciones de dibujos animados que coincidan para cada frase."
+        ],
+        "prompts": [
+          "Crea una tarjeta de las 5 maneras de decir gracias con frases: ¡Gracias!, ¡Muchas gracias!, ¡Lo aprecio!, ¡Es muy amable de tu parte!, ¡Estoy agradecido!",
+          "Genera una tarjeta de las 5 maneras de saludar a otros con frases: ¡Hola!, ¡Hola!, ¿Cómo estás?, ¡Encantado de conocerte!, ¡Buenos días!",
+          "Crea una tarjeta de las 5 maneras de despedirse con frases: ¡Adiós!, ¡Hasta luego!, ¡Cuídate!, ¡Hasta pronto!, ¡Nos vemos pronto!"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "Tarjetas de Corrección de Errores en Inglés",
+    "description": "Genera tarjetas bilingües de corrección de errores en inglés que comparan oraciones incorrectas vs correctas con explicaciones y visuales claras.",
+    "title": "Nano Banana Prompt: Tarjetas de Aprendizaje de Corrección de Errores en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea tarjetas de corrección en inglés bilingües que destacan errores comunes de los aprendices a través de comparaciones lado a lado. Cada tarjeta contrasta visualmente oraciones incorrectas y correctas con un formato claro e ilustraciones amigables para niños.",
+        "who": "Adecuado para aprendices de ESL, maestros, padres, centros de tutoría, creadores de aprendizaje de idiomas y plataformas de contenido educativo enfocadas en la mejora de la gramática.",
+        "how": [
+          "Selecciona un tema gramatical como tiempos, preposiciones o estructura de oraciones.",
+          "Proporciona oraciones de ejemplo incorrectas que reflejen errores comunes de los aprendices.",
+          "Escribe las versiones corregidas de cada oración.",
+          "Asegúrate de que las explicaciones sean simples e intuitivas para los aprendices.",
+          "Genera una tarjeta visual con una comparación clara ❌ vs ✅ y ilustraciones de apoyo."
+        ],
+        "prompts": [
+          "Crea una tarjeta de corrección de errores en inglés para errores de tiempo: incorrecto 'I go to the park yesterday' vs correcto 'I went to the park yesterday'.",
+          "Genera una tarjeta de errores de pregunta: incorrecto 'You are a student?' vs correcto 'Are you a student?'.",
+          "Crea una tarjeta de errores de preposición: incorrecto 'I arrive in Monday' vs correcto 'I arrive on Monday'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "Tarjetas de Escena de Diálogo en Inglés",
+    "description": "Crea tarjetas de escena de diálogo en inglés bilingües que simulan conversaciones de la vida real con contextos ilustrados y diálogos basados en roles.",
+    "title": "Nano Banana Prompt: Tarjetas de Aprendizaje de Escena de Diálogo en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de diálogo en inglés bilingües ambientadas en escenarios cotidianos como restaurantes, escuelas o tiendas. Cada tarjeta combina una escena ilustrada central con intercambios conversacionales estructurados entre personajes.",
+        "who": "Adecuado para principiantes de ESL, niños que aprenden inglés, maestros, padres, aplicaciones de idiomas y creadores de contenido que se enfocan en la práctica del inglés conversacional.",
+        "how": [
+          "Elige un escenario de la vida real como compras, saludos o cenas.",
+          "Define los roles de dos hablantes (por ejemplo, camarero y niño).",
+          "Escribe 4–5 intercambios conversacionales cortos en inglés.",
+          "Proporciona traducciones claras al chino para cada línea.",
+          "Genera la tarjeta con una ilustración de escena central y burbujas de diálogo codificadas por colores."
+        ],
+        "prompts": [
+          "Crea una tarjeta de diálogo en un restaurante: conversación entre el camarero y el niño incluyendo el pedido de comida y bebidas.",
+          "Genera un diálogo de compras: niño y tendero discutiendo precio y compra.",
+          "Crea un diálogo de saludo: dos niños encontrándose y presentándose."
+        ]
+      }
+    }
   }
 }

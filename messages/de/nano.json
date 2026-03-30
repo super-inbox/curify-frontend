@@ -1019,5 +1019,74 @@
         ]
       }
     }
+  },
+  "template-english-top5-phrases": {
+    "category": "Englisch Lern Ausdruckskarten",
+    "description": "Erstellen Sie niedliche zweisprachige Top 5 Englisch Ausdruckskarten für Kinder, die alltägliche Ausdrücke mit klaren Bildern und Übersetzungen kombinieren.",
+    "title": "Nano Banana Prompt: Top 5 Englisch Phrasen Lernkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana Prompts, um zweisprachige 'Top 5' Englisch Ausdruckskarten für Kinder zu erstellen. Jede Karte präsentiert fünf häufig verwendete Phrasen mit englischem Text, chinesischen Übersetzungen und passenden Cartoon-Illustrationen in einem sauberen, bunten Layout.",
+        "who": "Geeignet für Eltern, frühkindliche Erzieher, ESL-Lehrer, Sprachlern-Schöpfer, homeschooling Familien und Social-Media-Accounts, die sich auf Bildungsinhalte für Kinder konzentrieren.",
+        "how": [
+          "Wählen Sie ein praktisches Kommunikationsthema wie Begrüßungen, Entschuldigungen oder Komplimente.",
+          "Schreiben Sie einen klaren englischen Titel und dessen chinesisches Äquivalent.",
+          "Geben Sie fünf häufig verwendete englische Ausdrücke mit entsprechenden chinesischen Übersetzungen an.",
+          "Stellen Sie sicher, dass jede Phrase einfach, natürlich und altersgerecht ist.",
+          "Erstellen Sie die Karte mit bunten Abschnitten und passenden Cartoon-Illustrationen für jede Phrase."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Top 5 Möglichkeiten, Danke zu sagen Karte mit Phrasen: Danke!, Vielen Dank!, Ich schätze es!, Das ist so nett von Ihnen!, Ich bin dankbar!",
+          "Generieren Sie eine Top 5 Möglichkeiten, andere zu begrüßen Karte mit Phrasen: Hallo!, Hi!, Wie geht's?, Schön, Sie kennenzulernen!, Guten Morgen!",
+          "Erstellen Sie eine Top 5 Möglichkeiten, sich zu verabschieden Karte mit Phrasen: Auf Wiedersehen!, Bis später!, Pass auf dich auf!, Tschüss für jetzt!, Bis bald!"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "Englisch Fehlerkorrekturkarten",
+    "description": "Generieren Sie zweisprachige Englisch Fehlerkorrekturkarten, die falsche vs. korrekte Sätze mit klaren Erklärungen und Bildern vergleichen.",
+    "title": "Nano Banana Prompt: Englisch Fehlerkorrektur Lernkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt zweisprachige Englisch Korrekturkarten, die häufige Lernfehler durch Seitenvergleiche hervorheben. Jede Karte kontrastiert visuell falsche und korrekte Sätze mit klarer Formatierung und kinderfreundlichen Illustrationen.",
+        "who": "Geeignet für ESL-Lernende, Lehrer, Eltern, Nachhilfezentren, Sprachlern-Schöpfer und Bildungsinhalte-Plattformen, die sich auf Grammatikverbesserung konzentrieren.",
+        "how": [
+          "Wählen Sie ein Grammatikthema wie Zeitformen, Präpositionen oder Satzstruktur.",
+          "Geben Sie falsche Beispielsätze an, die häufige Lernfehler widerspiegeln.",
+          "Schreiben Sie die korrigierten Versionen jedes Satzes.",
+          "Stellen Sie sicher, dass die Erklärungen einfach und intuitiv für Lernende sind.",
+          "Generieren Sie eine visuelle Karte mit klaren ❌ vs ✅ Vergleichen und unterstützenden Illustrationen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Englisch Fehlerkorrekturkarte für Zeitfehler: falsch 'Ich gehe gestern in den Park' vs korrekt 'Ich bin gestern in den Park gegangen'.",
+          "Generieren Sie eine Fragenfehlerkarte: falsch 'Sie sind ein Schüler?' vs korrekt 'Sind Sie ein Schüler?'.",
+          "Erstellen Sie eine Präpositionsfehlerkarte: falsch 'Ich komme in Montag an' vs korrekt 'Ich komme am Montag an'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "Englisch Dialogszene Karten",
+    "description": "Erstellen Sie zweisprachige Englisch Dialogszene Karten, die reale Gespräche mit illustrierten Kontexten und rollenbasierten Dialogen simulieren.",
+    "title": "Nano Banana Prompt: Englisch Dialogszene Lernkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert zweisprachige Englisch Dialogkarten, die in alltäglichen Szenarien wie Restaurants, Schulen oder Geschäften angesiedelt sind. Jede Karte kombiniert eine zentrale illustrierte Szene mit strukturierten Gesprächsaustauschen zwischen Charakteren.",
+        "who": "Geeignet für ESL-Anfänger, Kinder, die Englisch lernen, Lehrer, Eltern, Sprach-Apps und Inhaltsanbieter, die sich auf das Üben von Konversationsenglisch konzentrieren.",
+        "how": [
+          "Wählen Sie ein reales Szenario wie Einkaufen, Begrüßung oder Essen.",
+          "Definieren Sie die Rollen von zwei Sprechern (z.B. Kellner und Kind).",
+          "Schreiben Sie 4–5 kurze Gesprächsaustausche auf Englisch.",
+          "Geben Sie klare chinesische Übersetzungen für jede Zeile an.",
+          "Generieren Sie die Karte mit einer zentralen Szenenillustration und farbcodierten Sprechblasen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Restaurantdialogkarte: Kellner und Kind Gespräch einschließlich Bestellung von Essen und Getränken.",
+          "Generieren Sie einen Einkaufsdialog: Kind und Verkäufer diskutieren Preis und Kauf.",
+          "Erstellen Sie einen Begrüßungsdialog: zwei Kinder treffen sich und stellen sich vor."
+        ]
+      }
+    }
   }
 }
