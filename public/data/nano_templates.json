@@ -4843,5 +4843,352 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
     "topics": "learning"
+},
+{
+  "id": "template-movie-poster",
+  "locales": {
+      "en": {
+          "base_prompt": "（Movie Infographic Illustrator）You are a professional movie infographic illustrator, specializing in creating cute cartoon-style movie information posters. Based on the user-specified {movie_name}, generate a vertical 3:4 premium movie introduction card, matching the Q-version cartoon, warm and healing aesthetic of the reference images. Card Layout: 1. Header Section: Large stylized title \"{movie_name}\", subtitle \"{movie_subtitle}\", release year {release_year} + core tag icons. 2. Central Illustration Area: A Q-version cartoon illustration recreating the movie's iconic scene and core characters, with a background matching the movie's atmosphere. 3. Content Modules (4 modules): DIRECTOR & CAST (director + starring actors & roles, director's chair icon), STORY (brief plot summary, book icon), AWARDS (awards & acclaim, trophy icon), ICONIC SCENES / FAMOUS QUOTES (classic scenes / famous quotes, camera / speech bubble icon). 4. Decorative Elements: Add movie-themed decorations around the card border (musical notes, film reels, feathers, waves, etc.). Overall Style: Clean rounded-corner UI, soft pastel/movie-themed color palette, Q-version cartoon character illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {movie_name}.",
+          "parameters": [
+              {
+                  "name": "movie_name",
+                  "label": "Movie Name",
+                  "type": "text",
+                  "placeholder": [
+                      "LA LA LAND",
+                      "FORREST GUMP",
+                      "TITANIC",
+                      "THE SHAWSHANK REDEMPTION"
+                  ]
+              },
+              {
+                  "name": "movie_subtitle",
+                  "label": "Movie Subtitle",
+                  "type": "text",
+                  "placeholder": [
+                      "A Musical Romance",
+                      "Life is Like a Box of Chocolates",
+                      "An Epic Romance",
+                      "Hope is a Good Thing"
+                  ]
+              },
+              {
+                  "name": "release_year",
+                  "label": "Release Year",
+                  "type": "text",
+                  "placeholder": [
+                      "2016",
+                      "1994",
+                      "1997",
+                      "1994"
+                  ]
+              },
+              {
+                  "name": "director",
+                  "label": "Director",
+                  "type": "text",
+                  "placeholder": [
+                      "Damien Chazelle",
+                      "Robert Zemeckis",
+                      "James Cameron",
+                      "Frank Darabont"
+                  ]
+              },
+              {
+                  "name": "cast",
+                  "label": "Starring & Roles",
+                  "type": "text",
+                  "placeholder": [
+                      "Ryan Gosling as Sebastian, Emma Stone as Mia",
+                      "Tom Hanks as Forrest Gump",
+                      "Leonardo DiCaprio as Jack, Kate Winslet as Rose",
+                      "Tim Robbins as Andy, Morgan Freeman as Red"
+                  ]
+              },
+              {
+                  "name": "story",
+                  "label": "Story Summary",
+                  "type": "text",
+                  "placeholder": [
+                      "Two dreamers in Los Angeles fall in love while pursuing their passions.",
+                      "A simple man witnesses 20th century American history while pursuing his love.",
+                      "A poor artist and a rich woman fall in love aboard the Titanic.",
+                      "A wrongfully convicted banker finds freedom and hope in prison."
+                  ]
+              },
+              {
+                  "name": "awards",
+                  "label": "Awards & Legacy",
+                  "type": "text",
+                  "placeholder": [
+                      "6 Academy Awards, 7 Golden Globe Awards",
+                      "6 Academy Awards including Best Picture",
+                      "11 Academy Awards (tied record)",
+                      "7 Oscar nominations, #1 on IMDb Top 250"
+                  ]
+              },
+              {
+                  "name": "iconic_scenes",
+                  "label": "Iconic Scenes / Famous Quotes",
+                  "type": "text",
+                  "placeholder": [
+                      "Griffith Observatory dance, City of Stars",
+                      "\"Life is like a box of chocolates...\", \"Run, Forrest, run!\"",
+                      "\"I'm the king of the world!\", flying pose",
+                      "\"Hope is a good thing...\", rain escape scene"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-movie-poster-la-la-land-prev.jpg",
+  "topics": "lifestyle"
+},
+{
+  "id": "template-series-travel",
+  "locales": {
+      "en": {
+          "base_prompt": "（Travel Infographic Designer）You are a professional travel infographic designer, specializing in creating cute cartoon-style travel map posters. Based on the user-specified {destination_name} and {trip_duration} days, generate a complete set of vertical 3:4 premium travel map cards, matching the kawaii, warm, and detailed aesthetic of the reference images. Set Structure: 1. Overview Card: Title \"{destination_name} Travel Guide\", divided into FOOD (5 local dishes with cartoon icons), ATTRACTIONS (4-5 landmarks on a map), TRANSPORT (4 transport types with icons), decorated with {destination}-themed elements. 2. Daily Itinerary Cards (one per day): Title \"DAY {day_number} - {date}\", split into Morning/Afternoon/Evening blocks, each with activity icon, description, cost label, and simplified route map background. Overall Style: Clean rounded-corner UI, soft pastel color palette, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {destination_name} {trip_duration}-day travel guide.",
+          "parameters": [
+              {
+                  "name": "destination_name",
+                  "label": "Destination Name",
+                  "type": "text",
+                  "placeholder": [
+                      "Netherlands",
+                      "Japan",
+                      "Italy",
+                      "Thailand"
+                  ]
+              },
+              {
+                  "name": "trip_duration",
+                  "label": "Trip Duration (days)",
+                  "type": "text",
+                  "placeholder": [
+                      "3",
+                      "5",
+                      "7",
+                      "10"
+                  ]
+              },
+              {
+                  "name": "day_number",
+                  "label": "Day Number",
+                  "type": "text",
+                  "placeholder": [
+                      "1",
+                      "2",
+                      "3"
+                  ]
+              },
+              {
+                  "name": "date",
+                  "label": "Date",
+                  "type": "text",
+                  "placeholder": [
+                      "May 1st",
+                      "May 2nd",
+                      "May 3rd"
+                  ]
+              },
+              {
+                  "name": "local_foods",
+                  "label": "Local Foods (5 items)",
+                  "type": "text",
+                  "placeholder": [
+                      "Stroopwafel, Bitterballen, Haring, Gouda cheese, Mini Poffertjes",
+                      "Sushi, Ramen, Tempura, Matcha, Takoyaki",
+                      "Pizza, Pasta, Gelato, Espresso, Tiramisu",
+                      "Pad Thai, Tom Yum, Green Curry, Mango Sticky Rice, Som Tum"
+                  ]
+              },
+              {
+                  "name": "attractions",
+                  "label": "Key Attractions (4-5 items)",
+                  "type": "text",
+                  "placeholder": [
+                      "Keukenhof tulip garden, Amsterdam canals, Giethoorn, Van Gogh Museum",
+                      "Tokyo Tower, Fushimi Inari, Osaka Castle, Mount Fuji",
+                      "Colosseum, Venice Canals, Pisa Tower, Amalfi Coast",
+                      "Grand Palace, Floating Markets, Ayutthaya Ruins, Phi Phi Islands"
+                  ]
+              },
+              {
+                  "name": "transport_types",
+                  "label": "Local Transport (4 types)",
+                  "type": "text",
+                  "placeholder": [
+                      "Bicycle, NS train, Tram, Canal boat",
+                      "Shinkansen, Bus, Subway, Bicycle",
+                      "Vaporetto, Train, Scooter, Walking",
+                      "Tuk-tuk, Bus, Train, Long-tail boat"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg",
+  "topics": "lifestyle"
+},
+{
+  "id": "template-fat-loss-plan",
+  "locales": {
+      "en": {
+          "base_prompt": "（Fitness Infographic Designer）You are a professional fitness infographic designer, specializing in creating cute cartoon-style 1-week fat loss plan posters. Based on the user's {gender}, {height}, {current_weight}, and {weight_loss_goal}, generate a vertical 3:4 premium 1-week fat loss plan card, matching the kawaii, warm, and clear aesthetic of the reference images. Card Layout: 1. Header: Title \"1-WEEK {fat_loss_type} FAT LOSS PLAN\", goal \"Lose {weight_loss_goal} kg in 7 Days!\", profile info \"Height: {height} | Weight: {current_weight} | {gender}\", gender-matching cartoon avatar. 2. Daily Meal Plan: 4 columns (Breakfast/Lunch/Snack/Dinner) with kawaii food icons + bullet-point meal details + water reminder \"DRINK {water_intake}L+ WATER DAILY!\". 3. Weekly Workout Plan: 4 columns (MON/WED/FRI, TUE/THU, SAT, SUN) with kawaii workout illustrations + activity descriptions. 4. Tips/Warnings: Checkbox list of advice + motivational slogan. Overall Style: Clean rounded-corner UI, soft pastel colors, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {gender}'s 1-week fat loss plan (lose {weight_loss_goal} kg).",
+          "parameters": [
+              {
+                  "name": "gender",
+                  "label": "Gender",
+                  "type": "text",
+                  "placeholder": [
+                      "Male",
+                      "Female"
+                  ]
+              },
+              {
+                  "name": "height",
+                  "label": "Height (cm)",
+                  "type": "text",
+                  "placeholder": [
+                      "180 cm",
+                      "172 cm"
+                  ]
+              },
+              {
+                  "name": "current_weight",
+                  "label": "Current Weight (kg)",
+                  "type": "text",
+                  "placeholder": [
+                      "100 kg",
+                      "63 kg"
+                  ]
+              },
+              {
+                  "name": "weight_loss_goal",
+                  "label": "Weight Loss Goal (kg)",
+                  "type": "text",
+                  "placeholder": [
+                      "6 kg",
+                      "1.5 kg"
+                  ]
+              },
+              {
+                  "name": "fat_loss_type",
+                  "label": "Fat Loss Type",
+                  "type": "text",
+                  "placeholder": [
+                      "EXTREME",
+                      "REGULAR"
+                  ]
+              },
+              {
+                  "name": "water_intake",
+                  "label": "Daily Water Intake (L)",
+                  "type": "text",
+                  "placeholder": [
+                      "3L",
+                      "2.5L"
+                  ]
+              },
+              {
+                  "name": "workout_type",
+                  "label": "Workout Plan Type",
+                  "type": "text",
+                  "placeholder": [
+                      "JOINT-FRIENDLY",
+                      "WEEKLY"
+                  ]
+              },
+              {
+                  "name": "workout_mon",
+                  "label": "Mon/Wed/Fri Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "45 min Elliptical/Bike + 3×45sec Plank Core",
+                      "30 min HIIT + 15 min Core Training"
+                  ]
+              },
+              {
+                  "name": "workout_tue",
+                  "label": "Tue/Thu Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "45 min Swimming OR 50 min Brisk Walking",
+                      "45 min Brisk Walking or Dancing"
+                  ]
+              },
+              {
+                  "name": "workout_sat",
+                  "label": "Saturday Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "8,000-10,000 Steps Walk",
+                      "30 min Yoga & Stretching"
+                  ]
+              },
+              {
+                  "name": "workout_sun",
+                  "label": "Sunday Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "20 min Full Body Stretch + Rest & Recovery",
+                      "REST DAY - Recovery & Sleep"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-fat-loss-plan--male-extreme-6kg-prev.jpg",
+  "topics": "lifestyle"
+},
+{
+  "id": "template-child-hobby-skill",
+  "locales": {
+      "en": {
+          "base_prompt": "（Children's Education Infographic Designer）You are a professional children's education infographic designer, specializing in creating cute cartoon-style hobby & skill recommendation posters. Based on the user's {age} and {gender}, generate a vertical 3:4 premium \"Best Hobbies & Skills for {age}-Year-Old {gender}s\" card, matching the kawaii, warm, and clear aesthetic of the reference images. Card Layout: 1. Header: Title \"BEST HOBBIES & SKILLS FOR {age}-YEAR-OLD {gender}s\", subtitle \"Building Interests for Lifelong Growth\", circular {gender} child avatar + 4 hobby circular illustrations. 2. Main Modules: Left (Recommended Hobbies: 6 hobbies + 5-star ratings), Right (Skills Developed: 6 skill icons + labels). 3. Guidelines: 6 blocks (3 NO rules + 3 YES tips) with cartoon icons. 4. Bottom: Time Recommendation + Core Principle. Overall Style: Clean rounded-corner UI, soft pastel colors, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: Best hobbies & skills for {age}-year-old {gender}s.",
+          "parameters": [
+              {
+                  "name": "age",
+                  "label": "Age",
+                  "type": "text",
+                  "placeholder": [
+                      "6",
+                      "5",
+                      "7"
+                  ]
+              },
+              {
+                  "name": "gender",
+                  "label": "Gender",
+                  "type": "text",
+                  "placeholder": [
+                      "BOY",
+                      "GIRL"
+                  ]
+              },
+              {
+                  "name": "hobbies_list",
+                  "label": "Recommended Hobbies",
+                  "type": "text",
+                  "placeholder": [
+                      "Piano, Basketball, Art & Drawing, LEGO & Coding, Swimming, Drums",
+                      "Violin, Ballet Dance, Art & Painting, Guzheng, Swimming, Drama & Theater"
+                  ]
+              },
+              {
+                  "name": "skills_list",
+                  "label": "Skills Developed",
+                  "type": "text",
+                  "placeholder": [
+                      "Musical Sense, Coordination, Creativity, Logic Thinking, Teamwork, Focus",
+                      "Musical Literacy, Graceful Posture, Artistic Taste, Expression, Confidence, Coordination"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-child-hobby-skill--6yo-boy-prev.jpg",
+    "topics": "lifestyle"
 }
 ]

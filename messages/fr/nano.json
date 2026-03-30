@@ -1088,5 +1088,98 @@
         ]
       }
     }
+  },
+  "template-movie-poster": {
+    "category": "Cartes Infographiques & Résumés de Films",
+    "description": "Créez des affiches infographiques de films générées par IA avec distribution, résumé de l'intrigue, récompenses et scènes emblématiques. Parfait pour les résumés de films, les critiques de films et le contenu sur les réseaux sociaux.",
+    "title": "Générateur d'Affiches de Films & Résumés de Films IA (Style Infographique) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des affiches infographiques de films alimentées par IA qui combinent des résumés d'intrigue, des détails sur la distribution, des récompenses et des scènes emblématiques en une carte visuellement engageante et partageable. Il fonctionne à la fois comme un générateur de résumés de films et un outil de narration visuelle.",
+        "who": "Idéal pour les fans de cinéma, les blogueurs de films, les critiques YouTube, les créateurs TikTok, les éducateurs et les pages de réseaux sociaux partageant des résumés et des analyses de films.",
+        "how": [
+          "Entrez un titre de film et un sous-titre.",
+          "Ajoutez l'année de sortie, le réalisateur et la distribution principale.",
+          "Écrivez un court résumé de l'intrigue du film.",
+          "Incluez des récompenses, des évaluations ou des réalisations.",
+          "Mettez en avant des scènes emblématiques ou des citations célèbres.",
+          "Générez une affiche infographique de film partageable."
+        ],
+        "prompts": [
+          "Créez un résumé infographique du film Titanic avec distribution et récompenses.",
+          "Générez une affiche du film La La Land avec des points forts de l'histoire et de la musique.",
+          "Créez une carte de résumé de Forrest Gump avec des citations et des scènes clés."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Cartes de Planification d'Itinéraire de Voyage & Guide",
+    "description": "Générez des plans d'itinéraire de voyage IA avec des horaires quotidiens, des cartes, des recommandations de nourriture et des attractions. Parfait pour la planification de voyages et la création de contenu de voyage.",
+    "title": "Générateur de Planificateur d'Itinéraire de Voyage IA & Guide de Voyage (Plans Quotidiens) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des plans d'itinéraire de voyage alimentés par IA incluant des guides de destination, des horaires quotidiens, des cartes, des recommandations de nourriture et des conseils de transport. Il agit comme un planificateur de voyage complet et un générateur de guides de voyage.",
+        "who": "Parfait pour les voyageurs, les blogueurs de voyage, les nomades numériques, les planificateurs de voyage, les agences et les créateurs de contenu partageant des guides de voyage.",
+        "how": [
+          "Entrez une destination et la durée du voyage.",
+          "Listez les plats populaires et les attractions incontournables.",
+          "Définissez les options de transport.",
+          "Planifiez des activités quotidiennes (matin, après-midi, soir).",
+          "Générez un itinéraire de voyage complet avec des cartes visuelles."
+        ],
+        "prompts": [
+          "Créez un itinéraire de voyage de 5 jours au Japon avec des plans quotidiens.",
+          "Générez un planificateur de voyage de 3 jours en Italie avec nourriture et attractions.",
+          "Créez un guide de voyage en Thaïlande avec itinéraire et conseils de transport."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Cartes de Plan de Perte de Poids & Fitness",
+    "description": "Créez des plans de perte de poids de 1 semaine générés par IA avec des plans de repas, des routines d'entraînement et des stratégies de perte de graisse. Idéal pour les débutants en fitness et le suivi de la santé.",
+    "title": "Générateur de Plan de Perte de Poids de 1 Semaine IA (Plan de Repas + Entraînement) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des plans de perte de poids personnalisés alimentés par IA combinant des plans de régime, des horaires d'entraînement, des objectifs d'hydratation et des conseils de fitness en un programme structuré de perte de graisse de 7 jours.",
+        "who": "Idéal pour les débutants, les passionnés de fitness, les utilisateurs de salle de sport, les entraîneurs personnels et les créateurs de contenu partageant des parcours de perte de poids.",
+        "how": [
+          "Entrez votre sexe, votre taille et votre poids actuel.",
+          "Définissez un objectif de perte de poids.",
+          "Personnalisez les repas quotidiens et les objectifs d'hydratation.",
+          "Ajoutez des routines d'entraînement hebdomadaires.",
+          "Générez un plan de perte de poids structuré de 7 jours."
+        ],
+        "prompts": [
+          "Créez un plan de perte de poids de 1 semaine pour perdre 6 kg.",
+          "Générez un plan de régime et d'entraînement pour débutants.",
+          "Créez un plan de perte de graisse avec cardio et emploi du temps des repas."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Cartes d'Apprentissage & Développement de Compétences pour Enfants",
+    "description": "Générez des plans d'apprentissage personnalisés pour enfants avec des idées de loisirs et de développement de compétences par âge. Idéal pour les parents, l'éducation précoce et la planification du développement de l'enfant.",
+    "title": "Meilleurs Loisirs & Compétences pour Enfants par Âge (Planificateur d'Apprentissage IA) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes d'apprentissage et de développement pour enfants alimentées par IA recommandant des loisirs et des compétences en fonction de l'âge. Il aide les parents à planifier l'éducation précoce et les activités de développement des compétences.",
+        "who": "Conçu pour les parents, les enseignants, les familles d'instruction à domicile, les plateformes éducatives et les créateurs de contenu sur le développement de l'enfant.",
+        "how": [
+          "Entrez l'âge et le sexe de l'enfant.",
+          "Sélectionnez des loisirs recommandés.",
+          "Définissez les compétences clés à développer.",
+          "Ajoutez des conseils d'apprentissage et des orientations d'activité.",
+          "Générez une carte de plan d'apprentissage structurée pour enfants."
+        ],
+        "prompts": [
+          "Meilleurs loisirs pour un garçon de 6 ans.",
+          "Plan de développement de compétences pour enfants par âge.",
+          "Activités d'apprentissage pour enfants avec avantages."
+        ]
+      }
+    }
   }
 }

@@ -1088,5 +1088,98 @@
         ]
       }
     }
+  },
+  "template-movie-poster": {
+    "category": "Tarjetas de Infografía y Resumen de Películas",
+    "description": "Crea carteles de infografía de películas generados por IA con elenco, resumen de la trama, premios y escenas icónicas. Perfecto para resúmenes de películas, críticas de cine y contenido en redes sociales.",
+    "title": "Generador de Carteles de Películas y Resúmenes de Cine con IA (Estilo Infografía) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera carteles de infografía de películas impulsados por IA que combinan resúmenes de tramas, detalles del elenco, premios y escenas icónicas en una tarjeta visualmente atractiva y compartible. Funciona como generador de resúmenes de películas y herramienta de narración visual.",
+        "who": "Ideal para fanáticos del cine, bloggers de cine, revisores de YouTube, creadores de TikTok, educadores y páginas de redes sociales que comparten resúmenes y análisis de películas.",
+        "how": [
+          "Ingresa un título de película y un subtítulo.",
+          "Agrega el año de estreno, director y elenco principal.",
+          "Escribe un breve resumen de la trama de la película.",
+          "Incluye premios, calificaciones o logros.",
+          "Destaca escenas icónicas o citas famosas.",
+          "Genera un cartel de infografía de película compartible."
+        ],
+        "prompts": [
+          "Crea un resumen de infografía de la película Titanic con elenco y premios.",
+          "Genera un cartel de la película La La Land con historia y momentos musicales destacados.",
+          "Crea una tarjeta de resumen de Forrest Gump con citas y escenas clave."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Tarjetas de Planificador de Itinerarios de Viaje y Guía",
+    "description": "Genera planes de itinerarios de viaje con IA con horarios diarios, mapas, recomendaciones de comida y atracciones. Perfecto para la planificación de viajes y la creación de contenido de viaje.",
+    "title": "Generador de Planificador de Itinerarios de Viaje con IA y Guía de Viaje (Planes Diarios) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera planes de itinerarios de viaje impulsados por IA que incluyen guías de destinos, horarios diarios, mapas, recomendaciones de comida y consejos de transporte. Actúa como un planificador de viajes completo y generador de guías de viaje.",
+        "who": "Perfecto para viajeros, bloggers de viajes, nómadas digitales, planificadores de viajes, agencias y creadores de contenido que comparten guías de viaje.",
+        "how": [
+          "Ingresa un destino y la duración del viaje.",
+          "Enumera comidas populares y atracciones imprescindibles.",
+          "Define opciones de transporte.",
+          "Planifica actividades diarias (mañana, tarde, noche).",
+          "Genera un itinerario de viaje completo con tarjetas visuales."
+        ],
+        "prompts": [
+          "Crea un itinerario de viaje de 5 días a Japón con planes diarios.",
+          "Genera un planificador de viaje de 3 días a Italia con comida y atracciones.",
+          "Crea una guía de viaje a Tailandia con itinerario y consejos de transporte."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Tarjetas de Planes de Pérdida de Peso y Fitness",
+    "description": "Crea planes de pérdida de peso de 1 semana generados por IA con planes de comidas, rutinas de ejercicios y estrategias de pérdida de grasa. Ideal para principiantes en fitness y seguimiento de salud.",
+    "title": "Generador de Plan de Pérdida de Peso de 1 Semana con IA (Plan de Comidas + Ejercicio) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera planes de pérdida de peso personalizados con IA que combinan planes de dieta, horarios de ejercicios, objetivos de hidratación y consejos de fitness en un programa estructurado de pérdida de grasa de 7 días.",
+        "who": "Genial para principiantes, entusiastas del fitness, usuarios de gimnasio, entrenadores personales y creadores de contenido que comparten sus viajes de pérdida de peso.",
+        "how": [
+          "Ingresa tu género, altura y peso actual.",
+          "Establece un objetivo de pérdida de peso.",
+          "Personaliza las comidas diarias y los objetivos de hidratación.",
+          "Agrega rutinas de ejercicios semanales.",
+          "Genera un plan de pérdida de peso estructurado de 7 días."
+        ],
+        "prompts": [
+          "Crea un plan de pérdida de peso de 1 semana para perder 6 kg.",
+          "Genera un plan de dieta y ejercicio para principiantes.",
+          "Crea un plan de pérdida de grasa con horario de cardio y comidas."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Tarjetas de Aprendizaje y Desarrollo de Habilidades para Niños",
+    "description": "Genera planes de aprendizaje personalizados para niños con ideas de hobbies y desarrollo de habilidades por edad. Ideal para padres, educación temprana y planificación del desarrollo infantil.",
+    "title": "Mejores Hobbies y Habilidades para Niños por Edad (Planificador de Aprendizaje IA) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de aprendizaje y desarrollo para niños impulsadas por IA que recomiendan hobbies y habilidades según la edad. Ayuda a los padres a planificar actividades de educación temprana y desarrollo de habilidades.",
+        "who": "Diseñado para padres, maestros, familias que educan en casa, plataformas educativas y creadores de contenido sobre desarrollo infantil.",
+        "how": [
+          "Ingresa la edad y el género del niño.",
+          "Selecciona hobbies recomendados.",
+          "Define habilidades clave a desarrollar.",
+          "Agrega consejos de aprendizaje y orientación de actividades.",
+          "Genera una tarjeta de plan de aprendizaje estructurada para niños."
+        ],
+        "prompts": [
+          "Mejores hobbies para un niño de 6 años.",
+          "Plan de desarrollo de habilidades para niños por edad.",
+          "Actividades de aprendizaje para niños con beneficios."
+        ]
+      }
+    }
   }
 }

@@ -1088,5 +1088,98 @@
       ]
     }
   }
-}
+},
+  "template-movie-poster": {
+    "category": "Movie Infographic & Summary Cards",
+    "description": "Create AI-generated movie infographic posters with cast, plot summary, awards, and iconic scenes. Perfect for film summaries, movie reviews, and social media content.",
+    "title": "AI Movie Poster & Film Summary Generator (Infographic Style) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered movie infographic posters that combine plot summaries, cast details, awards, and iconic scenes into a visually engaging, shareable card. It functions as both a movie summary generator and a visual storytelling tool.",
+        "who": "Ideal for movie fans, film bloggers, YouTube reviewers, TikTok creators, educators, and social media pages sharing movie summaries and analysis.",
+        "how": [
+          "Enter a movie title and subtitle.",
+          "Add release year, director, and main cast.",
+          "Write a short movie plot summary.",
+          "Include awards, ratings, or achievements.",
+          "Highlight iconic scenes or famous quotes.",
+          "Generate a shareable movie infographic poster."
+        ],
+        "prompts": [
+          "Create a Titanic movie summary infographic with cast and awards.",
+          "Generate a La La Land movie poster with story and music highlights.",
+          "Create a Forrest Gump summary card with quotes and key scenes."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Travel Itinerary Planner & Guide Cards",
+    "description": "Generate AI travel itinerary plans with daily schedules, maps, food recommendations, and attractions. Perfect for trip planning and travel content creation.",
+    "title": "AI Travel Itinerary Planner & Trip Guide Generator (Daily Plans) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered travel itinerary plans including destination guides, daily schedules, maps, food recommendations, and transport tips. It acts as a complete trip planner and travel guide generator.",
+        "who": "Perfect for travelers, travel bloggers, digital nomads, trip planners, agencies, and content creators sharing travel guides.",
+        "how": [
+          "Enter a destination and trip duration.",
+          "List popular foods and must-see attractions.",
+          "Define transportation options.",
+          "Plan daily activities (morning, afternoon, evening).",
+          "Generate a complete travel itinerary with visual cards."
+        ],
+        "prompts": [
+          "Create a 5-day Japan travel itinerary with daily plans.",
+          "Generate a 3-day Italy trip planner with food and attractions.",
+          "Create a Thailand travel guide with itinerary and transport tips."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Weight Loss & Fitness Plan Cards",
+    "description": "Create AI-generated 1-week weight loss plans with meal plans, workout routines, and fat loss strategies. Ideal for fitness beginners and health tracking.",
+    "title": "AI 1-Week Weight Loss Plan Generator (Meal + Workout Plan) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates personalized AI weight loss plans combining diet plans, workout schedules, hydration goals, and fitness tips into a structured 7-day fat loss program.",
+        "who": "Great for beginners, fitness enthusiasts, gym users, personal trainers, and content creators sharing weight loss journeys.",
+        "how": [
+          "Enter your gender, height, and current weight.",
+          "Set a weight loss goal.",
+          "Customize daily meals and hydration targets.",
+          "Add weekly workout routines.",
+          "Generate a structured 7-day weight loss plan."
+        ],
+        "prompts": [
+          "Create a 1-week weight loss plan to lose 6kg.",
+          "Generate a beginner diet and workout plan.",
+          "Create a fat loss plan with cardio and meal schedule."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Kids Learning & Skill Development Cards",
+    "description": "Generate personalized kids learning plans with hobbies and skill development ideas by age. Ideal for parents, early education, and child development planning.",
+    "title": "Best Hobbies & Skills for Kids by Age (AI Learning Planner) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered kids learning and development cards recommending hobbies and skills based on age. It helps parents plan early education and skill-building activities.",
+        "who": "Designed for parents, teachers, homeschooling families, education platforms, and child development content creators.",
+        "how": [
+          "Enter the child's age and gender.",
+          "Select recommended hobbies.",
+          "Define key skills to develop.",
+          "Add learning tips and activity guidance.",
+          "Generate a structured kids learning plan card."
+        ],
+        "prompts": [
+          "Best hobbies for a 6-year-old boy.",
+          "Kids skill development plan by age.",
+          "Learning activities for children with benefits."
+        ]
+      }
+    }
+  }
 }
