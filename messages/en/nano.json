@@ -1019,5 +1019,74 @@
       ]
     }
   }
+},
+"template-english-top5-phrases": {
+  "category": "English Learning Expression Cards",
+  "description": "Create cute bilingual Top 5 English phrase cards for kids, combining everyday expressions with clear visuals and translations.",
+  "title": "Nano Banana Prompt: Top 5 English Phrases Learning Cards | Curify AI",
+  "content": {
+    "sections": {
+      "what": "This template uses Nano Banana prompts to generate bilingual 'Top 5' English expression cards designed for children. Each card presents five commonly used phrases with English text, Chinese translations, and matching cartoon illustrations in a clean, colorful layout.",
+      "who": "Suitable for parents, early childhood educators, ESL teachers, language learning creators, homeschooling families, and social media accounts focused on kids education content.",
+      "how": [
+        "Choose a practical communication topic such as greetings, apologies, or compliments.",
+        "Write a clear English title and its Chinese equivalent.",
+        "Provide five commonly used English expressions with corresponding Chinese translations.",
+        "Ensure each phrase is simple, natural, and age-appropriate.",
+        "Generate the card with colorful sections and matching cartoon illustrations for each phrase."
+      ],
+      "prompts": [
+        "Create a Top 5 Ways to Say Thank You card with phrases: Thank you!, Thanks a lot!, I appreciate it!, That's so kind of you!, I'm grateful!",
+        "Generate a Top 5 Ways to Greet Others card with phrases: Hello!, Hi there!, How are you?, Nice to meet you!, Good morning!",
+        "Create a Top 5 Ways to Say Goodbye card with phrases: Goodbye!, See you later!, Take care!, Bye for now!, See you soon!"
+      ]
+    }
+  }
+},
+"template-english-error-correction": {
+  "category": "English Error Correction Cards",
+  "description": "Generate bilingual English mistake correction cards that compare wrong vs correct sentences with clear explanations and visuals.",
+  "title": "Nano Banana Prompt: English Error Correction Learning Cards | Curify AI",
+  "content": {
+    "sections": {
+      "what": "This template creates bilingual English correction cards that highlight common learner mistakes through side-by-side comparisons. Each card visually contrasts incorrect and correct sentences with clear formatting and child-friendly illustrations.",
+      "who": "Suitable for ESL learners, teachers, parents, tutoring centers, language learning creators, and educational content platforms focused on grammar improvement.",
+      "how": [
+        "Select a grammar topic such as tense, prepositions, or sentence structure.",
+        "Provide incorrect example sentences that reflect common learner mistakes.",
+        "Write the corrected versions of each sentence.",
+        "Ensure explanations are simple and intuitive for learners.",
+        "Generate a visual card with clear ❌ vs ✅ comparison and supportive illustrations."
+      ],
+      "prompts": [
+        "Create an English error correction card for Tense Mistakes: wrong 'I go to the park yesterday' vs correct 'I went to the park yesterday'.",
+        "Generate a Question Mistakes card: wrong 'You are a student?' vs correct 'Are you a student?'.",
+        "Create a Preposition Mistakes card: wrong 'I arrive in Monday' vs correct 'I arrive on Monday'."
+      ]
+    }
+  }
+},
+"template-english-dialogue-scene": {
+  "category": "English Dialogue Scene Cards",
+  "description": "Create bilingual English dialogue scene cards that simulate real-life conversations with illustrated contexts and role-based speech.",
+  "title": "Nano Banana Prompt: English Dialogue Scene Learning Cards | Curify AI",
+  "content": {
+    "sections": {
+      "what": "This template generates bilingual English dialogue cards set in everyday scenarios such as restaurants, schools, or shops. Each card combines a central illustrated scene with structured conversational exchanges between characters.",
+      "who": "Suitable for ESL beginners, children learning English, teachers, parents, language apps, and content creators focusing on conversational English practice.",
+      "how": [
+        "Choose a real-life scenario such as shopping, greeting, or dining.",
+        "Define the roles of two speakers (e.g., waiter and child).",
+        "Write 4–5 short conversational exchanges in English.",
+        "Provide clear Chinese translations for each line.",
+        "Generate the card with a central scene illustration and color-coded dialogue bubbles."
+      ],
+      "prompts": [
+        "Create a restaurant dialogue card: Waiter and Child conversation including ordering food and drinks.",
+        "Generate a shopping dialogue: Child and Shopkeeper discussing price and purchase.",
+        "Create a greeting dialogue: two children meeting and introducing themselves."
+      ]
+    }
+  }
 }
 }

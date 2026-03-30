@@ -4411,5 +4411,437 @@
     },
     "og_image": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-01-cover-prev.jpg",
 "topics": "learning"
-  }
+  },
+  {
+    "id": "template-english-top5-phrases",
+    "locales": {
+        "zh": {
+            "base_prompt": "（少儿英语Top 5表达卡设计师）你是一位专业的少儿英语启蒙卡片设计师，擅长制作清新可爱的双语表达清单海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质“Top 5 Ways to {topic_english}”表达卡片，风格参考图中可爱卡通、儿童友好的质感。卡片布局：1. 顶部标题：醒目标题「Top 5 Ways to {topic_english} / {topic_chinese}」，搭配柔和圆角边框，文字清晰易读。2. 条目列表：5个彩色圆角条目（从上到下依次为浅蓝、浅粉、浅黄、浅绿、浅紫），每个条目包含：左侧：序号（1. / 2. / 3. / 4. / 5.）；中间：大号英文表达（如 {phrase_1_en}）+ 下方中文释义（如 {phrase_1_cn}）；右侧：对应表达的可爱卡通插画（拟人化儿童形象，动作匹配语义）。3. 整体风格：干净圆角UI，柔和马卡龙色系，Q版卡通人物插画，文字清晰醒目，无多余装饰，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "主题名称",
+                    "type": "text",
+                    "placeholder": [
+                        "Say 'Thank You'",
+                        "Give Compliments",
+                        "Say 'Sorry'",
+                        "Greet Others",
+                        "Say Goodbye"
+                    ]
+                },
+                {
+                    "name": "topic_english",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "Say 'Thank You'",
+                        "Give Compliments",
+                        "Say 'Sorry'",
+                        "Greet Others",
+                        "Say Goodbye"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "5种说'谢谢'的方式",
+                        "5种赞美的方式",
+                        "5种说'对不起'的方式",
+                        "5种打招呼的方式",
+                        "5种说再见的方式"
+                    ]
+                },
+                {
+                    "name": "phrase_1_en",
+                    "label": "表达1（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Thank you!",
+                        "Good job!",
+                        "I'm sorry!",
+                        "Hello!",
+                        "Goodbye!"
+                    ]
+                },
+                {
+                    "name": "phrase_1_cn",
+                    "label": "表达1（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "谢谢！",
+                        "做得好！",
+                        "对不起！",
+                        "你好！",
+                        "再见！"
+                    ]
+                },
+                {
+                    "name": "phrase_2_en",
+                    "label": "表达2（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Thanks a lot!",
+                        "You're amazing!",
+                        "I apologize!",
+                        "Hi there!",
+                        "See you later!"
+                    ]
+                },
+                {
+                    "name": "phrase_2_cn",
+                    "label": "表达2（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "非常感谢！",
+                        "你太棒了！",
+                        "我道歉！",
+                        "嗨！",
+                        "待会儿见！"
+                    ]
+                },
+                {
+                    "name": "phrase_3_en",
+                    "label": "表达3（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "I appreciate it!",
+                        "Well done!",
+                        "My bad!",
+                        "How are you?",
+                        "Take care!"
+                    ]
+                },
+                {
+                    "name": "phrase_3_cn",
+                    "label": "表达3（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "我很感激！",
+                        "干得漂亮！",
+                        "我的错！",
+                        "你好吗？",
+                        "保重！"
+                    ]
+                },
+                {
+                    "name": "phrase_4_en",
+                    "label": "表达4（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "That's so kind of you!",
+                        "You're so smart!",
+                        "I'm so sorry!",
+                        "Nice to meet you!",
+                        "Bye for now!"
+                    ]
+                },
+                {
+                    "name": "phrase_4_cn",
+                    "label": "表达4（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "你真好！",
+                        "你真聪明！",
+                        "非常抱歉！",
+                        "很高兴认识你！",
+                        "先再见啦！"
+                    ]
+                },
+                {
+                    "name": "phrase_5_en",
+                    "label": "表达5（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "I'm grateful!",
+                        "I'm proud of you!",
+                        "Please forgive me!",
+                        "Good morning!",
+                        "See you soon!"
+                    ]
+                },
+                {
+                    "name": "phrase_5_cn",
+                    "label": "表达5（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "我很感恩！",
+                        "我为你骄傲！",
+                        "请原谅我！",
+                        "早上好！",
+                        "回头见！"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg",
+    "topics": "learning"
+},
+  {
+    "id": "template-english-error-correction",
+    "locales": {
+        "zh": {
+            "base_prompt": "（少儿英语纠错卡设计师）你是一位专业的少儿英语纠错卡片设计师，擅长制作清新可爱的双语正误对比学习海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质“{topic_english} / {topic_chinese}”英语纠错卡片，风格参考图中可爱卡通、儿童友好的质感。卡片布局：1. 顶部标题：醒目标题「{topic_english} / {topic_chinese}」，搭配柔和圆角边框，文字清晰易读。2. 内容模块：2组上下排列的正误对比单元，每组单元分为左右两栏：左侧（浅粉色背景）：红色叉号❌+错误英文句子{wrong_sentence} + 中文释义（错误）+ 困惑场景卡通插画；右侧（浅绿色背景）：绿色对号✅+正确英文句子{correct_sentence} + 中文释义（正确）+ 开心场景卡通插画；两组单元之间用虚线分隔，可添加子主题小标题。3. 整体风格：干净圆角UI，柔和马卡龙色系，Q版卡通人物插画，文字清晰醒目，无多余装饰，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "主题名称",
+                    "type": "text",
+                    "placeholder": [
+                        "Tense Mistakes",
+                        "Question Mistakes",
+                        "Preposition Mistakes",
+                        "Article Mistakes",
+                        "Subject-Verb Agreement Mistakes"
+                    ]
+                },
+                {
+                    "name": "topic_english",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "Tense Mistakes",
+                        "Question Mistakes",
+                        "Preposition Mistakes",
+                        "Article Mistakes",
+                        "Subject-Verb Agreement Mistakes"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "时态错误",
+                        "疑问句错误",
+                        "介词错误",
+                        "冠词错误",
+                        "主谓一致错误"
+                    ]
+                },
+                {
+                    "name": "wrong_sentence_1",
+                    "label": "错误句子1",
+                    "type": "text",
+                    "placeholder": [
+                        "I go to the park yesterday",
+                        "You are a student?",
+                        "I arrive in Monday",
+                        "I have a cat. Cat is black.",
+                        "He go to school every day"
+                    ]
+                },
+                {
+                    "name": "correct_sentence_1",
+                    "label": "正确句子1",
+                    "type": "text",
+                    "placeholder": [
+                        "I went to the park yesterday",
+                        "Are you a student?",
+                        "I arrive on Monday",
+                        "I have a cat. The cat is black.",
+                        "He goes to school every day"
+                    ]
+                },
+                {
+                    "name": "wrong_sentence_2",
+                    "label": "错误句子2",
+                    "type": "text",
+                    "placeholder": [
+                        "She is watch TV now",
+                        "What you want to eat?",
+                        "I'm good in English",
+                        "He is an honest man.",
+                        "They plays football on weekends"
+                    ]
+                },
+                {
+                    "name": "correct_sentence_2",
+                    "label": "正确句子2",
+                    "type": "text",
+                    "placeholder": [
+                        "She is watching TV now",
+                        "What do you want to eat?",
+                        "I'm good at English",
+                        "He is a honest man.",
+                        "They play football on weekends"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg",
+    "topics": "learning"
+},
+  {
+    "id": "template-english-dialogue-scene",
+    "locales": {
+        "zh": {
+            "base_prompt": "（少儿英语情景对话卡设计师）你是一位专业的少儿英语情景对话卡片设计师，擅长制作清新可爱的双语生活场景学习海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质“{topic_english} / {topic_chinese}”英语情景对话卡片，风格参考图中可爱卡通、儿童友好的质感。卡片布局：1. 顶部标题：醒目标题「{topic_english} / {topic_chinese}」，搭配柔和圆角边框，可点缀少量主题相关小装饰。2. 中心插画区：一幅完整的卡通场景插画，还原对话发生的生活场景（如餐厅、公园、商店、学校等），包含对话角色，画风Q版可爱，色彩明亮温暖。3. 对话区：4-5组对话气泡（交替颜色区分角色），每组对话包含：角色称呼（如{speaker_1}、{speaker_2}）+ 英文对话内容（如{dialogue_1_en}）+ 中文释义（如{dialogue_1_cn}），用不同底色区分说话人，排版清晰。4. 整体风格：干净圆角UI，柔和马卡龙色系，Q版卡通人物插画，文字醒目，无多余装饰，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "主题名称",
+                    "type": "text",
+                    "placeholder": [
+                        "At the Restaurant",
+                        "Greeting",
+                        "Shopping",
+                        "At School",
+                        "At the Hospital"
+                    ]
+                },
+                {
+                    "name": "topic_english",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "At the Restaurant",
+                        "Greeting",
+                        "Shopping",
+                        "At School",
+                        "At the Hospital"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "在餐厅点餐",
+                        "打招呼",
+                        "在商店购物",
+                        "在学校",
+                        "在医院"
+                    ]
+                },
+                {
+                    "name": "speaker_1",
+                    "label": "说话人1",
+                    "type": "text",
+                    "placeholder": [
+                        "Waiter",
+                        "Child A",
+                        "Child",
+                        "Teacher",
+                        "Doctor"
+                    ]
+                },
+                {
+                    "name": "speaker_2",
+                    "label": "说话人2",
+                    "type": "text",
+                    "placeholder": [
+                        "Child",
+                        "Child B",
+                        "Shopkeeper",
+                        "Student",
+                        "Patient"
+                    ]
+                },
+                {
+                    "name": "dialogue_1_en",
+                    "label": "对话1（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "What would you like?",
+                        "Hello!",
+                        "Hello! I want an apple.",
+                        "Good morning, class!",
+                        "What's wrong with you?"
+                    ]
+                },
+                {
+                    "name": "dialogue_1_cn",
+                    "label": "对话1（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "你想要什么？",
+                        "你好！",
+                        "你好！我想要一个苹果。",
+                        "早上好，同学们！",
+                        "你哪里不舒服？"
+                    ]
+                },
+                {
+                    "name": "dialogue_2_en",
+                    "label": "对话2（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "I want noodles, please.",
+                        "Hi!",
+                        "Here you are.",
+                        "Good morning, teacher!",
+                        "I have a headache."
+                    ]
+                },
+                {
+                    "name": "dialogue_2_cn",
+                    "label": "对话2（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "我想要面条。",
+                        "嗨！",
+                        "给你。",
+                        "早上好，老师！",
+                        "我头疼。"
+                    ]
+                },
+                {
+                    "name": "dialogue_3_en",
+                    "label": "对话3（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Anything to drink?",
+                        "How are you?",
+                        "How much is it?",
+                        "May I go to the bathroom?",
+                        "Take this medicine three times a day."
+                    ]
+                },
+                {
+                    "name": "dialogue_3_cn",
+                    "label": "对话3（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "要喝的吗？",
+                        "你好吗？",
+                        "多少钱？",
+                        "我可以去洗手间吗？",
+                        "这个药一天吃三次。"
+                    ]
+                },
+                {
+                    "name": "dialogue_4_en",
+                    "label": "对话4（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Orange juice, please.",
+                        "I'm fine, thank you!",
+                        "Two yuan.",
+                        "Sure, be quick.",
+                        "Thank you, doctor."
+                    ]
+                },
+                {
+                    "name": "dialogue_4_cn",
+                    "label": "对话4（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "橙汁，谢谢。",
+                        "我很好，谢谢！",
+                        "两元。",
+                        "可以，快点。",
+                        "谢谢你，医生。"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
+    "topics": "learning"
+}
 ]

@@ -1019,5 +1019,74 @@
         ]
       }
     }
+  },
+  "template-english-top5-phrases": {
+    "category": "Cartes d'expressions en anglais pour l'apprentissage",
+    "description": "Créez de jolies cartes bilingues des 5 meilleures phrases en anglais pour les enfants, combinant des expressions courantes avec des visuels clairs et des traductions.",
+    "title": "Nano Banana Prompt : Cartes d'apprentissage des 5 meilleures phrases en anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise les prompts de Nano Banana pour générer des cartes d'expressions bilingues 'Top 5' en anglais conçues pour les enfants. Chaque carte présente cinq phrases couramment utilisées avec du texte en anglais, des traductions en chinois et des illustrations de dessins animés assorties dans une mise en page propre et colorée.",
+        "who": "Convient aux parents, aux éducateurs de la petite enfance, aux enseignants d'anglais langue seconde, aux créateurs d'apprentissage des langues, aux familles qui font l'école à la maison et aux comptes de médias sociaux axés sur le contenu éducatif pour les enfants.",
+        "how": [
+          "Choisissez un sujet de communication pratique tel que les salutations, les excuses ou les compliments.",
+          "Écrivez un titre clair en anglais et son équivalent en chinois.",
+          "Fournissez cinq expressions anglaises couramment utilisées avec les traductions correspondantes en chinois.",
+          "Assurez-vous que chaque phrase est simple, naturelle et adaptée à l'âge.",
+          "Générez la carte avec des sections colorées et des illustrations de dessins animés assorties pour chaque phrase."
+        ],
+        "prompts": [
+          "Créez une carte des 5 façons de dire merci avec les phrases : Merci !, Merci beaucoup !, Je l'apprécie !, C'est très gentil de votre part !, Je suis reconnaissant !",
+          "Générez une carte des 5 façons de saluer les autres avec les phrases : Bonjour !, Salut !, Comment ça va ?, Enchanté de vous rencontrer !, Bonjour !",
+          "Créez une carte des 5 façons de dire au revoir avec les phrases : Au revoir !, À plus tard !, Prenez soin de vous !, À bientôt !, À très vite !"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "Cartes de correction d'erreurs en anglais",
+    "description": "Générez des cartes de correction d'erreurs en anglais bilingues qui comparent des phrases incorrectes et correctes avec des explications et des visuels clairs.",
+    "title": "Nano Banana Prompt : Cartes d'apprentissage de correction d'erreurs en anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée des cartes de correction en anglais bilingues qui mettent en évidence les erreurs courantes des apprenants à travers des comparaisons côte à côte. Chaque carte contraste visuellement les phrases incorrectes et correctes avec un formatage clair et des illustrations adaptées aux enfants.",
+        "who": "Convient aux apprenants d'anglais langue seconde, aux enseignants, aux parents, aux centres de tutorat, aux créateurs d'apprentissage des langues et aux plateformes de contenu éducatif axées sur l'amélioration de la grammaire.",
+        "how": [
+          "Sélectionnez un sujet de grammaire tel que le temps, les prépositions ou la structure de la phrase.",
+          "Fournissez des phrases d'exemple incorrectes qui reflètent les erreurs courantes des apprenants.",
+          "Écrivez les versions corrigées de chaque phrase.",
+          "Assurez-vous que les explications sont simples et intuitives pour les apprenants.",
+          "Générez une carte visuelle avec une comparaison claire ❌ vs ✅ et des illustrations de soutien."
+        ],
+        "prompts": [
+          "Créez une carte de correction d'erreurs en anglais pour les erreurs de temps : incorrect 'I go to the park yesterday' vs correct 'I went to the park yesterday'.",
+          "Générez une carte d'erreurs de questions : incorrect 'You are a student?' vs correct 'Are you a student?'.",
+          "Créez une carte d'erreurs de prépositions : incorrect 'I arrive in Monday' vs correct 'I arrive on Monday'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "Cartes de scènes de dialogue en anglais",
+    "description": "Créez des cartes de scènes de dialogue en anglais bilingues qui simulent des conversations réelles avec des contextes illustrés et des discours basés sur des rôles.",
+    "title": "Nano Banana Prompt : Cartes d'apprentissage de scènes de dialogue en anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes de dialogue en anglais bilingues situées dans des scénarios quotidiens tels que des restaurants, des écoles ou des magasins. Chaque carte combine une scène illustrée centrale avec des échanges conversationnels structurés entre les personnages.",
+        "who": "Convient aux débutants en anglais langue seconde, aux enfants apprenant l'anglais, aux enseignants, aux parents, aux applications linguistiques et aux créateurs de contenu axés sur la pratique de l'anglais conversationnel.",
+        "how": [
+          "Choisissez un scénario de la vie réelle tel que le shopping, les salutations ou le repas.",
+          "Définissez les rôles de deux interlocuteurs (par exemple, serveur et enfant).",
+          "Écrivez 4 à 5 courts échanges conversationnels en anglais.",
+          "Fournissez des traductions claires en chinois pour chaque ligne.",
+          "Générez la carte avec une illustration de scène centrale et des bulles de dialogue codées par couleur."
+        ],
+        "prompts": [
+          "Créez une carte de dialogue au restaurant : conversation entre le serveur et l'enfant incluant la commande de nourriture et de boissons.",
+          "Générez un dialogue de shopping : enfant et commerçant discutant du prix et de l'achat.",
+          "Créez un dialogue de salutation : deux enfants se rencontrant et se présentant."
+        ]
+      }
+    }
   }
 }
