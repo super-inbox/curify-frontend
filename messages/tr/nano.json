@@ -1088,5 +1088,98 @@
         ]
       }
     }
+  },
+  "template-movie-poster": {
+    "category": "Film İnfografiği ve Özet Kartları",
+    "description": "Kadro, konu özeti, ödüller ve ikonik sahnelerle AI tarafından üretilen film infografik posterleri oluşturun. Film özetleri, film incelemeleri ve sosyal medya içerikleri için mükemmel.",
+    "title": "AI Film Posteri ve Film Özeti Üretici (İnfografik Tarzı) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, konu özetleri, kadro detayları, ödüller ve ikonik sahneleri görsel olarak etkileyici, paylaşılabilir bir kartta birleştiren AI destekli film infografik posterleri üretir. Hem bir film özeti üretici hem de görsel hikaye anlatım aracı olarak işlev görür.",
+        "who": "Film hayranları, film blog yazarları, YouTube incelemecileri, TikTok içerik üreticileri, eğitimciler ve film özetleri ve analizleri paylaşan sosyal medya sayfaları için idealdir.",
+        "how": [
+          "Bir film başlığı ve alt başlık girin.",
+          "Çıkış yılı, yönetmen ve ana kadroyu ekleyin.",
+          "Kısa bir film konu özeti yazın.",
+          "Ödülleri, puanları veya başarıları ekleyin.",
+          "İkonik sahneleri veya ünlü alıntıları vurgulayın.",
+          "Paylaşılabilir bir film infografik posteri oluşturun."
+        ],
+        "prompts": [
+          "Kadro ve ödüllerle Titanic film özeti infografiği oluşturun.",
+          "Hikaye ve müzik vurgularıyla La La Land film posteri oluşturun.",
+          "Alıntılar ve ana sahnelerle Forrest Gump özet kartı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Seyahat Programı Planlayıcı ve Rehber Kartları",
+    "description": "Günlük programlar, haritalar, yemek önerileri ve cazibe merkezleri ile AI seyahat programı planları oluşturun. Seyahat planlaması ve seyahat içerik oluşturma için mükemmel.",
+    "title": "AI Seyahat Programı Planlayıcı ve Gezi Rehberi Üretici (Günlük Planlar) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, destinasyon rehberleri, günlük programlar, haritalar, yemek önerileri ve ulaşım ipuçları içeren AI destekli seyahat programı planları üretir. Tam bir seyahat planlayıcı ve rehber üretici olarak işlev görür.",
+        "who": "Seyahat edenler, seyahat blog yazarları, dijital göçebeler, seyahat planlayıcıları, ajanslar ve seyahat rehberleri paylaşan içerik oluşturucular için mükemmel.",
+        "how": [
+          "Bir destinasyon ve seyahat süresi girin.",
+          "Popüler yemekleri ve görülmesi gereken cazibe merkezlerini listeleyin.",
+          "Ulaşım seçeneklerini tanımlayın.",
+          "Günlük aktiviteleri planlayın (sabah, öğleden sonra, akşam).",
+          "Görsel kartlarla tam bir seyahat programı oluşturun."
+        ],
+        "prompts": [
+          "Günlük planlarla 5 günlük Japonya seyahat programı oluşturun.",
+          "Yemek ve cazibe merkezleri ile 3 günlük İtalya seyahat planlayıcısı oluşturun.",
+          "Güzergah ve ulaşım ipuçları ile Tayland seyahat rehberi oluşturun."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Kilo Kaybı ve Fitness Plan Kartları",
+    "description": "Yemek planları, egzersiz rutinleri ve yağ kaybı stratejileri ile AI tarafından üretilen 1 haftalık kilo kaybı planları oluşturun. Fitness başlangıçları ve sağlık takibi için idealdir.",
+    "title": "AI 1 Haftalık Kilo Kaybı Planı Üretici (Yemek + Egzersiz Planı) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, diyet planları, egzersiz programları, su tüketim hedefleri ve fitness ipuçlarını bir araya getirerek yapılandırılmış 7 günlük yağ kaybı programı oluşturan kişiselleştirilmiş AI kilo kaybı planları üretir.",
+        "who": "Başlangıçlar, fitness tutkunları, spor salonu kullanıcıları, kişisel antrenörler ve kilo kaybı yolculuklarını paylaşan içerik oluşturucular için harika.",
+        "how": [
+          "Cinsiyetinizi, boyunuzu ve mevcut kilonuzu girin.",
+          "Bir kilo kaybı hedefi belirleyin.",
+          "Günlük yemekleri ve su tüketim hedeflerini özelleştirin.",
+          "Haftalık egzersiz rutinleri ekleyin.",
+          "Yapılandırılmış 7 günlük kilo kaybı planı oluşturun."
+        ],
+        "prompts": [
+          "6kg kaybetmek için 1 haftalık kilo kaybı planı oluşturun.",
+          "Başlangıç düzeyinde diyet ve egzersiz planı oluşturun.",
+          "Kardiyo ve yemek programı ile bir yağ kaybı planı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Çocuklar için Öğrenme ve Beceri Geliştirme Kartları",
+    "description": "Yaşa göre hobiler ve beceri geliştirme fikirleri ile kişiselleştirilmiş çocuk öğrenme planları oluşturun. Ebeveynler, erken eğitim ve çocuk gelişimi planlaması için idealdir.",
+    "title": "Yaşa Göre Çocuklar İçin En İyi Hobiler ve Beceriler (AI Öğrenme Planlayıcı) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yaşa göre hobiler ve beceriler öneren AI destekli çocuk öğrenme ve gelişim kartları üretir. Ebeveynlerin erken eğitim ve beceri geliştirme aktivitelerini planlamalarına yardımcı olur.",
+        "who": "Ebeveynler, öğretmenler, evde eğitim yapan aileler, eğitim platformları ve çocuk gelişimi içerik oluşturucuları için tasarlanmıştır.",
+        "how": [
+          "Çocuğun yaşını ve cinsiyetini girin.",
+          "Önerilen hobileri seçin.",
+          "Geliştirilecek ana becerileri tanımlayın.",
+          "Öğrenme ipuçları ve aktivite rehberliği ekleyin.",
+          "Yapılandırılmış bir çocuk öğrenme planı kartı oluşturun."
+        ],
+        "prompts": [
+          "6 yaşındaki bir erkek çocuk için en iyi hobiler.",
+          "Yaşa göre çocuk beceri geliştirme planı.",
+          "Faydalarıyla çocuklar için öğrenme aktiviteleri."
+        ]
+      }
+    }
   }
 }

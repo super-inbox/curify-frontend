@@ -1088,5 +1088,98 @@
         ]
       }
     }
+  },
+  "template-movie-poster": {
+    "category": "Film-Infografiken & Zusammenfassungs-Karten",
+    "description": "Erstellen Sie KI-generierte Film-Infografik-Poster mit Besetzung, Handlungszusammenfassung, Auszeichnungen und ikonischen Szenen. Perfekt für Filmzusammenfassungen, Filmkritiken und Inhalte für soziale Medien.",
+    "title": "KI-Filmplakat & Filmzusammenfassungs-Generator (Infografik-Stil) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Film-Infografik-Poster, die Handlungszusammenfassungen, Besetzungsdetails, Auszeichnungen und ikonische Szenen in einer visuell ansprechenden, teilbaren Karte kombinieren. Sie fungiert sowohl als Filmzusammenfassungs-Generator als auch als visuelles Erzählwerkzeug.",
+        "who": "Ideal für Filmfans, Filmblogger, YouTube-Rezensenten, TikTok-Creators, Pädagogen und Social-Media-Seiten, die Filmzusammenfassungen und Analysen teilen.",
+        "how": [
+          "Geben Sie einen Filmtitel und einen Untertitel ein.",
+          "Fügen Sie das Veröffentlichungsjahr, den Regisseur und die Hauptbesetzung hinzu.",
+          "Schreiben Sie eine kurze Handlungszusammenfassung.",
+          "Fügen Sie Auszeichnungen, Bewertungen oder Erfolge hinzu.",
+          "Heben Sie ikonische Szenen oder berühmte Zitate hervor.",
+          "Generieren Sie ein teilbares Film-Infografik-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Filmzusammenfassung von Titanic mit Besetzung und Auszeichnungen.",
+          "Generieren Sie ein Filmplakat zu La La Land mit Story- und Musik-Highlights.",
+          "Erstellen Sie eine Zusammenfassungskarte zu Forrest Gump mit Zitaten und Schlüsselszenen."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Reiseplaner & Reiseführer-Karten",
+    "description": "Generieren Sie KI-Reiseplanungen mit täglichen Zeitplänen, Karten, Essensempfehlungen und Attraktionen. Perfekt für Reiseplanung und Erstellung von Reiseinhalten.",
+    "title": "KI-Reiseplaner & Reiseführer-Generator (Tägliche Pläne) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Reiseplanungen, einschließlich Zielortführern, täglichen Zeitplänen, Karten, Essensempfehlungen und Transporttipps. Sie fungiert als vollständiger Reiseplaner und Reiseführer-Generator.",
+        "who": "Perfekt für Reisende, Reiseblogger, digitale Nomaden, Reiseplaner, Agenturen und Content-Creator, die Reiseführer teilen.",
+        "how": [
+          "Geben Sie ein Ziel und die Reisedauer ein.",
+          "Listen Sie beliebte Speisen und Sehenswürdigkeiten auf.",
+          "Definieren Sie Transportmöglichkeiten.",
+          "Planen Sie tägliche Aktivitäten (Morgen, Nachmittag, Abend).",
+          "Generieren Sie einen vollständigen Reiseplan mit visuellen Karten."
+        ],
+        "prompts": [
+          "Erstellen Sie einen 5-tägigen Reiseplan für Japan mit täglichen Plänen.",
+          "Generieren Sie einen 3-tägigen Reiseplan für Italien mit Essen und Attraktionen.",
+          "Erstellen Sie einen Reiseführer für Thailand mit Reiseverlauf und Transporttipps."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Gewichtsverlust & Fitnessplan-Karten",
+    "description": "Erstellen Sie KI-generierte 1-Wochen-Gewichtsverlustpläne mit Ernährungsplänen, Trainingsroutinen und Strategien zum Fettabbau. Ideal für Fitness-Anfänger und Gesundheitsüberwachung.",
+    "title": "KI 1-Wochen-Gewichtsverlustplan-Generator (Essen + Trainingsplan) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert personalisierte KI-Gewichtsverlustpläne, die Ernährungspläne, Trainingspläne, Hydrationsziele und Fitnesstipps in ein strukturiertes 7-tägiges Fettabbauprogramm kombinieren.",
+        "who": "Ideal für Anfänger, Fitnessbegeisterte, Fitnessstudiobesucher, Personal Trainer und Content-Creator, die Gewichtsverlustreisen teilen.",
+        "how": [
+          "Geben Sie Ihr Geschlecht, Ihre Größe und Ihr aktuelles Gewicht ein.",
+          "Setzen Sie ein Gewichtsverlustziel.",
+          "Passen Sie tägliche Mahlzeiten und Hydrationsziele an.",
+          "Fügen Sie wöchentliche Trainingsroutinen hinzu.",
+          "Generieren Sie einen strukturierten 7-tägigen Gewichtsverlustplan."
+        ],
+        "prompts": [
+          "Erstellen Sie einen 1-Wochen-Gewichtsverlustplan, um 6 kg zu verlieren.",
+          "Generieren Sie einen Anfänger-Ernährungs- und Trainingsplan.",
+          "Erstellen Sie einen Fettabbauplan mit Cardio- und Mahlzeitenplan."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Kinder Lernen & Fähigkeiten Entwicklungs-Karten",
+    "description": "Generieren Sie personalisierte Lernpläne für Kinder mit Hobbys und Ideen zur Fähigkeitenentwicklung nach Alter. Ideal für Eltern, frühkindliche Bildung und Planung der kindlichen Entwicklung.",
+    "title": "Beste Hobbys & Fähigkeiten für Kinder nach Alter (KI-Lernplaner) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Lern- und Entwicklungskarten für Kinder, die Hobbys und Fähigkeiten basierend auf dem Alter empfehlen. Sie hilft Eltern, frühkindliche Bildung und Aktivitäten zur Fähigkeitenentwicklung zu planen.",
+        "who": "Entwickelt für Eltern, Lehrer, homeschooling Familien, Bildungsplattformen und Content-Creator zur kindlichen Entwicklung.",
+        "how": [
+          "Geben Sie das Alter und Geschlecht des Kindes ein.",
+          "Wählen Sie empfohlene Hobbys aus.",
+          "Definieren Sie Schlüsselkompetenzen, die entwickelt werden sollen.",
+          "Fügen Sie Lernhinweise und Aktivitätsanleitungen hinzu.",
+          "Generieren Sie eine strukturierte Lernplan-Karte für Kinder."
+        ],
+        "prompts": [
+          "Beste Hobbys für einen 6-jährigen Jungen.",
+          "Plan zur Fähigkeitenentwicklung für Kinder nach Alter.",
+          "Lernaktivitäten für Kinder mit Vorteilen."
+        ]
+      }
+    }
   }
 }
