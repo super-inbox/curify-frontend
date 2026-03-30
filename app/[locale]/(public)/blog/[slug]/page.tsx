@@ -16,6 +16,9 @@ import NanoBananaContent from "./components/NanoBananaContent";
 import VideoTranscriptionContent from "./components/VideoTranscriptionContent";
 import TenPromptingTipsNanoBananaContent from "./components/TenPromptingTipsNanoBananaContent";
 import TenPromptingTipsVideoGenerationContent from "./components/TenPromptingTipsVideoGenerationContent";
+import LipSyncContent from "./components/LipSyncContent";
+import LipSyncTechnicalContent from "./components/LipSyncTechnicalContent";
+import ImageGenerationModelComparisonContent from "./components/ImageGenerationModelComparisonContent";
 
 // Force dynamic rendering to avoid static generation issues
 export const dynamic = 'force-dynamic';
@@ -160,6 +163,56 @@ export default async function BlogPostPage({
     return currentKeys.includes(key);
   };
 
+  // Pre-load array data for the component
+  let arrayData: Record<string, any> = {};
+  try {
+    // Try to load the current locale data
+    const currentLocaleData = await import(`@/messages/${locale}/blog.json`) as { default: Record<string, any> };
+    const currentNamespace = currentLocaleData.default[blogConfig.namespace];
+    if (currentNamespace) {
+      // Extract only array keys and special HTML content keys
+      const arrayKeys = currentKeys.filter(key => 
+        key.includes('Steps') || 
+        key.includes('Features') || 
+        key.includes('Checklist') || 
+        key.includes('Tasks') || 
+        key.includes('Content') || 
+        key.includes('Table') ||
+        key.includes('TemplateDisplay')
+      );
+      arrayKeys.forEach(key => {
+        if (currentNamespace[key]) {
+          arrayData[key] = currentNamespace[key];
+        }
+      });
+    }
+  } catch (error) {
+    // If loading current locale fails, try English fallback
+    try {
+      const englishData = await import(`@/messages/en/blog.json`) as { default: Record<string, any> };
+      const englishNamespace = englishData.default[blogConfig.namespace];
+      if (englishNamespace) {
+        // Extract only array keys and special HTML content keys
+        const arrayKeys = currentKeys.filter(key => 
+          key.includes('Steps') || 
+          key.includes('Features') || 
+          key.includes('Checklist') || 
+          key.includes('Tasks') || 
+          key.includes('Content') || 
+          key.includes('Table') ||
+          key.includes('TemplateDisplay')
+        );
+        arrayKeys.forEach(key => {
+          if (englishNamespace[key]) {
+            arrayData[key] = englishNamespace[key];
+          }
+        });
+      }
+    } catch (fallbackError) {
+      // If even English fails, arrayData remains empty
+    }
+  }
+
   return (
     <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
       <div className="mb-8">
@@ -207,7 +260,16 @@ export default async function BlogPostPage({
           <TenPromptingTipsNanoBananaContent slug={slug} t={safeT} locale={locale} />
         )}
         {slug === '10-prompting-tips-video-generation' && (
-          <TenPromptingTipsVideoGenerationContent slug={slug} t={safeT} locale={locale} />
+          <TenPromptingTipsVideoGenerationContent slug={slug} t={safeT} arrayData={arrayData} locale={locale} />
+        )}
+        {slug === 'lip-sync-business-guide' && (
+          <LipSyncContent slug={slug} t={safeT} locale={locale} />
+        )}
+        {slug === 'lip-sync-technical-deep-dive' && (
+          <LipSyncTechnicalContent slug={slug} t={safeT} locale={locale} />
+        )}
+        {slug === 'image-generation-model-comparison' && (
+          <ImageGenerationModelComparisonContent slug={slug} t={safeT} locale={locale} />
         )}
         
         
@@ -224,7 +286,10 @@ export default async function BlogPostPage({
          slug !== 'nano-banana-prompt-ecosystem' &&
          slug !== 'video-transcription-business-guide' &&
          slug !== '10-prompting-tips-nano-banana' &&
-         slug !== '10-prompting-tips-video-generation' && (
+         slug !== '10-prompting-tips-video-generation' &&
+         slug !== 'lip-sync-business-guide' &&
+         slug !== 'lip-sync-technical-deep-dive' &&
+         slug !== 'image-generation-model-comparison' && (
           <div className="space-y-6">
             <p className="text-lg font-semibold text-blue-600 mb-4">
               {hasKey("intro") ? safeT("intro") : "Introduction"}

@@ -68,6 +68,24 @@ export default async function PublicLocaleLayout({
 
       <body suppressHydrationWarning>
         <GoogleAnalyticsTracker />
+        <Script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" strategy="afterInteractive" />
+        <Script id="init-mermaid" strategy="afterInteractive">
+          {`
+            setTimeout(() => {
+              if (typeof mermaid !== 'undefined') {
+                mermaid.initialize({ 
+                  startOnLoad: true, 
+                  theme: 'default',
+                  flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true
+                  }
+                });
+                mermaid.run();
+              }
+            }, 1000);
+          `}
+        </Script>
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppWrapper user={null}>
