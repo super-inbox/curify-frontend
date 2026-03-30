@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
+import { useClickTracking } from "@/services/useTracking";
 interface TagCategory {
   category: string;
   count: number;
@@ -15,7 +15,7 @@ interface Props {
 
 export default function CategoriesSection({ categories, currentTag }: Props) {
   const [expanded, setExpanded] = useState(false);
-
+  
   if (categories.length === 0) return null;
 
   return (
@@ -27,6 +27,7 @@ export default function CategoriesSection({ categories, currentTag }: Props) {
       <div className="flex flex-wrap gap-3">
         {(expanded ? categories : categories.slice(0, 8)).map(({ category, count }) => (
           <Link
+            onClick={useClickTracking(`nano_prompt_tags:${category}`, "tag_capsule")}
             key={category}
             href={`/nano-banana-pro-prompts/tag/${encodeURIComponent(category)}`}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium shadow-sm transition ${

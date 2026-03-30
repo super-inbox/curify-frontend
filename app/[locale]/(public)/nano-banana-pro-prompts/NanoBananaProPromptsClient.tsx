@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import PromptCard from "./PromptCard";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
-
+import { useClickTracking } from "@/services/useTracking";
 type Pagination = {
   total: number;
   hasNextPage: boolean;
@@ -118,6 +118,7 @@ export default function NanoBananaProPromptsClient({
             <div className="flex flex-wrap gap-3">
               {(categoriesExpanded ? categories : categories.slice(0, 8)).map(({ category, count }) => (
                 <Link
+                  onClick = {useClickTracking(`nano_prompt_tags:${category}`, "tag_capsule")}
                   key={category}
                   href={`/nano-banana-pro-prompts/tag/${encodeURIComponent(category)}`}
                   className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-800 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700"
