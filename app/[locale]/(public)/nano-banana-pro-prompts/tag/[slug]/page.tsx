@@ -8,7 +8,6 @@ import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 import CategoriesSection from './CategoriesSection';
-
 type TagEntry = {
   title?: string;
   description?: string;
