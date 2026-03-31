@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import PromptCard from "./PromptCard";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
+import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
 
 type Pagination = {
   total: number;
@@ -21,11 +22,13 @@ interface TagCategory {
 interface Props {
   initialData: NanoPromptBase[] | null;
   error: string | null;
+  staticCategories: TagCategory[];
 }
 
 export default function NanoBananaProPromptsClient({
   initialData,
   error,
+  staticCategories,
 }: Props) {
   const t = useTranslations("nanoGallery");
 
@@ -61,20 +64,8 @@ export default function NanoBananaProPromptsClient({
     loadData();
   }, [initialData, error]);
 
-  const categories = useMemo<TagCategory[]>(() => {
-    const counts: Record<string, number> = {};
-
-    allPrompts.forEach((prompt) => {
-      const primaryTag = prompt.tags?.[0];
-      if (primaryTag) {
-        counts[primaryTag] = (counts[primaryTag] || 0) + 1;
-      }
-    });
-
-    return Object.entries(counts)
-      .map(([category, count]) => ({ category, count }))
-      .sort((a, b) => b.count - a.count);
-  }, [allPrompts]);
+  const categories = staticCategories;
+  const [categoriesExpanded, setCategoriesExpanded] = useState(false);
 
   const prompts = useMemo(() => {
     return allPrompts.slice(0, displayedCount);
@@ -117,30 +108,7 @@ export default function NanoBananaProPromptsClient({
           </p>
         </header>
 
-        {categories.length > 0 && (
-          <section className="sticky top-24 z-20 mb-8 rounded-2xl border border-gray-200 bg-white/95 p-4 shadow-sm backdrop-blur">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-base font-semibold text-gray-900">
-                Categories
-              </h2>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              {categories.map(({ category, count }) => (
-                <Link
-                  key={category}
-                  href={`/nano-banana-pro-prompts/tag/${encodeURIComponent(category)}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-800 shadow-sm transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700"
-                >
-                  <span>{category}</span>
-                  <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-500">
-                    {count}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        <CategoriesSection categories={categories} currentTag="" />
 
         {prompts.length === 0 ? (
           <EmptyState />

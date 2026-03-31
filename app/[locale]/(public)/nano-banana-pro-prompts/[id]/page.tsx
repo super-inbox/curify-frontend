@@ -11,7 +11,7 @@ import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
-
+//import { useClickTracking } from "@/services/useTracking";
 const DEFAULT_CONTENT_LOCALE = "en";
 
 const buildPromptUrl = (locale: string, id: number | string) =>
@@ -121,6 +121,7 @@ export default async function PromptDetailPage({
       url: SITE_URL,
     },
   };
+ 
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -169,12 +170,14 @@ export default async function PromptDetailPage({
             {prompt.tags.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-2">
                 {prompt.tags.map((tag) => (
-                  <span
+                  <Link
+                    //onClick = {useClickTracking(`nano_prompt_tags:${tag}`, "tag_capsule")}
                     key={tag}
-                    className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600"
+                    href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`}
+                    className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700 hover:bg-indigo-100"
                   >
                     {tag}
-                  </span>
+                  </Link>
                 ))}
               </div>
             )}

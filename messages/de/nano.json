@@ -973,5 +973,213 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Kategorie für Sprachlernkarte",
+    "description": "Erstellen Sie visuell ansprechende zweisprachige Vokabelkarten, die englische Wörter, chinesische Bedeutungen und Aussprache in einem klaren, lehrreichen Format kombinieren.",
+    "title": "Nano Banana Prompt: Generator für zweisprachige Vokabelkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet strukturierte Nano Banana Prompts, um hochwertige zweisprachige Vokabelkarten zu generieren. Jede Karte präsentiert englische Wörter zusammen mit chinesischen Übersetzungen und Pinyin, ergänzt durch niedliche, intuitive Illustrationen. Das Layout ist auf Klarheit, Merkbarkeit und visuelle Anziehungskraft ausgelegt, was es ideal für das Sprachenlernen und Bildungsinhalte macht.",
+        "who": "Geeignet für Sprachlerner, ESL-Pädagogen, Chinesischlerner, Ersteller von Bildungsinhalten, Eltern, die Kindern unterrichten, Designer von Vokabel-Apps und Social-Media-Accounts, die sich auf Lerninhalte konzentrieren.",
+        "how": [
+          "Wählen Sie ein Thema (z. B. Tiere, Essen, Wetter, Raum).",
+          "Geben Sie den englischen und chinesischen Titel für das Thema an.",
+          "Definieren Sie Vokabelwörter mit englischer, chinesischer Übersetzung und Pinyin.",
+          "Generieren Sie eine rasterbasierte Vokabelkarte mit Illustrationen für jedes Wort.",
+          "Stellen Sie sicher, dass das Design sanfte Farben, ein abgerundetes Layout und klare Typografie für die Lesbarkeit verwendet."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Vokabelkarte für Tiere: Katze (猫, māo), Hund (狗, gǒu), Vogel (鸟, niǎo), Fisch (鱼, yú), Kaninchen (兔子, tù zi), Panda (熊猫, xióng māo), Tiger (老虎, lǎo hǔ), Elefant (大象, dà xiàng).",
+          "Generieren Sie eine Vokabelkarte für Essen: Apfel (苹果, píng guǒ), Brot (面包, miàn bāo), Milch (牛奶, niú nǎi), Kaffee (咖啡, kā fēi), Reis (米饭, mǐ fàn), Ei (鸡蛋, jī dàn), Kuchen (蛋糕, dàn gāo), Saft (果汁, guǒ zhī).",
+          "Erstellen Sie eine Vokabelkarte für Wetter: Sonne (太阳, tài yáng), Regen (雨, yǔ), Schnee (雪, xuě), Wind (风, fēng), Wolke (云, yún), Sturm (暴风雨, bào fēng yǔ), Nebel (雾, wù), Regenbogen (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Kategorie für Serien-Infografiken",
+    "description": "Erstellen Sie modulare, mehrteilige Infografikserien, die komplexe Themen in strukturierte, visuell konsistente Kapitel unterteilen.",
+    "title": "Nano Banana Prompt: Generator für Serien-Infografiken | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert eine kohärente Serie von Infografik-Karten, die jeweils ein Kapitel eines größeren Themas darstellen. Das Design folgt einem konsistenten visuellen System mit strukturierten Abschnitten wie Titel, zentraler Illustration, modularen Inhaltsblöcken und Zusammenfassungs-Highlights. Es ist optimiert für Geschichtenerzählen über mehrere Karten hinweg mit Klarheit und visueller Kontinuität.",
+        "who": "Geeignet für Pädagogen, Inhaltsanbieter, Geschäftserzähler, Startup-Analysten, Produkt-Erklärer, Wissenschaftskommunikatoren und Social-Media-Ersteller, die mehrteilige Bildungs- oder Erzählinhalte produzieren.",
+        "how": [
+          "Definieren Sie ein Serienthema (z. B. KI-Trends, Lebenszyklusprozesse, kulturelle Systeme).",
+          "Unterteilen Sie das Thema in strukturierte Abschnitte oder Kapitel.",
+          "Weisen Sie einen visuellen Stil zu (z. B. flache Illustration, Cartoon, Aquarell, technische Diagramme).",
+          "Gestalten Sie jede Karte mit einem Titel, einer zentralen Visualisierung und modularen Erklärungselementen.",
+          "Fügen Sie am Ende jeder Karte eine hervorgehobene Zusammenfassung oder Erkenntnis hinzu."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Serien-Infografik über 'Den Lebenszyklus eines Schmetterlings' mit den Abschnitten: Überblick, Ei-Stadium, Larven-Stadium, Puppen-Stadium, Erwachsenen-Stadium und fügen Sie sanfte Pastell-Illustrationen hinzu.",
+          "Generieren Sie eine mehrteilige Infografik für 'Microsofts Herausforderungen in der KI-Strategie' mit Abschnitten zu Strategie, Wettbewerb, Partnerschaften, Risiken und Zukunftsausblick in einem klaren technischen Illustrationsstil.",
+          "Erstellen Sie eine Serien-Infografik über 'Leitfaden zur emotionalen Intelligenz' mit Kapiteln über Bewusstsein, Regulierung, Empathie, Kommunikation und Wachstum, unter Verwendung freundlicher Cartoon-Visuals."
+        ]
+      }
+    }
+  },
+  "template-english-top5-phrases": {
+    "category": "Englisch Lern Ausdruckskarten",
+    "description": "Erstellen Sie niedliche zweisprachige Top 5 Englisch Ausdruckskarten für Kinder, die alltägliche Ausdrücke mit klaren Bildern und Übersetzungen kombinieren.",
+    "title": "Nano Banana Prompt: Top 5 Englisch Phrasen Lernkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana Prompts, um zweisprachige 'Top 5' Englisch Ausdruckskarten für Kinder zu erstellen. Jede Karte präsentiert fünf häufig verwendete Phrasen mit englischem Text, chinesischen Übersetzungen und passenden Cartoon-Illustrationen in einem sauberen, bunten Layout.",
+        "who": "Geeignet für Eltern, frühkindliche Erzieher, ESL-Lehrer, Sprachlern-Schöpfer, homeschooling Familien und Social-Media-Accounts, die sich auf Bildungsinhalte für Kinder konzentrieren.",
+        "how": [
+          "Wählen Sie ein praktisches Kommunikationsthema wie Begrüßungen, Entschuldigungen oder Komplimente.",
+          "Schreiben Sie einen klaren englischen Titel und dessen chinesisches Äquivalent.",
+          "Geben Sie fünf häufig verwendete englische Ausdrücke mit entsprechenden chinesischen Übersetzungen an.",
+          "Stellen Sie sicher, dass jede Phrase einfach, natürlich und altersgerecht ist.",
+          "Erstellen Sie die Karte mit bunten Abschnitten und passenden Cartoon-Illustrationen für jede Phrase."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Top 5 Möglichkeiten, Danke zu sagen Karte mit Phrasen: Danke!, Vielen Dank!, Ich schätze es!, Das ist so nett von Ihnen!, Ich bin dankbar!",
+          "Generieren Sie eine Top 5 Möglichkeiten, andere zu begrüßen Karte mit Phrasen: Hallo!, Hi!, Wie geht's?, Schön, Sie kennenzulernen!, Guten Morgen!",
+          "Erstellen Sie eine Top 5 Möglichkeiten, sich zu verabschieden Karte mit Phrasen: Auf Wiedersehen!, Bis später!, Pass auf dich auf!, Tschüss für jetzt!, Bis bald!"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "Englisch Fehlerkorrekturkarten",
+    "description": "Generieren Sie zweisprachige Englisch Fehlerkorrekturkarten, die falsche vs. korrekte Sätze mit klaren Erklärungen und Bildern vergleichen.",
+    "title": "Nano Banana Prompt: Englisch Fehlerkorrektur Lernkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt zweisprachige Englisch Korrekturkarten, die häufige Lernfehler durch Seitenvergleiche hervorheben. Jede Karte kontrastiert visuell falsche und korrekte Sätze mit klarer Formatierung und kinderfreundlichen Illustrationen.",
+        "who": "Geeignet für ESL-Lernende, Lehrer, Eltern, Nachhilfezentren, Sprachlern-Schöpfer und Bildungsinhalte-Plattformen, die sich auf Grammatikverbesserung konzentrieren.",
+        "how": [
+          "Wählen Sie ein Grammatikthema wie Zeitformen, Präpositionen oder Satzstruktur.",
+          "Geben Sie falsche Beispielsätze an, die häufige Lernfehler widerspiegeln.",
+          "Schreiben Sie die korrigierten Versionen jedes Satzes.",
+          "Stellen Sie sicher, dass die Erklärungen einfach und intuitiv für Lernende sind.",
+          "Generieren Sie eine visuelle Karte mit klaren ❌ vs ✅ Vergleichen und unterstützenden Illustrationen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Englisch Fehlerkorrekturkarte für Zeitfehler: falsch 'Ich gehe gestern in den Park' vs korrekt 'Ich bin gestern in den Park gegangen'.",
+          "Generieren Sie eine Fragenfehlerkarte: falsch 'Sie sind ein Schüler?' vs korrekt 'Sind Sie ein Schüler?'.",
+          "Erstellen Sie eine Präpositionsfehlerkarte: falsch 'Ich komme in Montag an' vs korrekt 'Ich komme am Montag an'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "Englisch Dialogszene Karten",
+    "description": "Erstellen Sie zweisprachige Englisch Dialogszene Karten, die reale Gespräche mit illustrierten Kontexten und rollenbasierten Dialogen simulieren.",
+    "title": "Nano Banana Prompt: Englisch Dialogszene Lernkarten | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert zweisprachige Englisch Dialogkarten, die in alltäglichen Szenarien wie Restaurants, Schulen oder Geschäften angesiedelt sind. Jede Karte kombiniert eine zentrale illustrierte Szene mit strukturierten Gesprächsaustauschen zwischen Charakteren.",
+        "who": "Geeignet für ESL-Anfänger, Kinder, die Englisch lernen, Lehrer, Eltern, Sprach-Apps und Inhaltsanbieter, die sich auf das Üben von Konversationsenglisch konzentrieren.",
+        "how": [
+          "Wählen Sie ein reales Szenario wie Einkaufen, Begrüßung oder Essen.",
+          "Definieren Sie die Rollen von zwei Sprechern (z.B. Kellner und Kind).",
+          "Schreiben Sie 4–5 kurze Gesprächsaustausche auf Englisch.",
+          "Geben Sie klare chinesische Übersetzungen für jede Zeile an.",
+          "Generieren Sie die Karte mit einer zentralen Szenenillustration und farbcodierten Sprechblasen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Restaurantdialogkarte: Kellner und Kind Gespräch einschließlich Bestellung von Essen und Getränken.",
+          "Generieren Sie einen Einkaufsdialog: Kind und Verkäufer diskutieren Preis und Kauf.",
+          "Erstellen Sie einen Begrüßungsdialog: zwei Kinder treffen sich und stellen sich vor."
+        ]
+      }
+    }
+  },
+  "template-movie-poster": {
+    "category": "Film-Infografiken & Zusammenfassungs-Karten",
+    "description": "Erstellen Sie KI-generierte Film-Infografik-Poster mit Besetzung, Handlungszusammenfassung, Auszeichnungen und ikonischen Szenen. Perfekt für Filmzusammenfassungen, Filmkritiken und Inhalte für soziale Medien.",
+    "title": "KI-Filmplakat & Filmzusammenfassungs-Generator (Infografik-Stil) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Film-Infografik-Poster, die Handlungszusammenfassungen, Besetzungsdetails, Auszeichnungen und ikonische Szenen in einer visuell ansprechenden, teilbaren Karte kombinieren. Sie fungiert sowohl als Filmzusammenfassungs-Generator als auch als visuelles Erzählwerkzeug.",
+        "who": "Ideal für Filmfans, Filmblogger, YouTube-Rezensenten, TikTok-Creators, Pädagogen und Social-Media-Seiten, die Filmzusammenfassungen und Analysen teilen.",
+        "how": [
+          "Geben Sie einen Filmtitel und einen Untertitel ein.",
+          "Fügen Sie das Veröffentlichungsjahr, den Regisseur und die Hauptbesetzung hinzu.",
+          "Schreiben Sie eine kurze Handlungszusammenfassung.",
+          "Fügen Sie Auszeichnungen, Bewertungen oder Erfolge hinzu.",
+          "Heben Sie ikonische Szenen oder berühmte Zitate hervor.",
+          "Generieren Sie ein teilbares Film-Infografik-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Filmzusammenfassung von Titanic mit Besetzung und Auszeichnungen.",
+          "Generieren Sie ein Filmplakat zu La La Land mit Story- und Musik-Highlights.",
+          "Erstellen Sie eine Zusammenfassungskarte zu Forrest Gump mit Zitaten und Schlüsselszenen."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Reiseplaner & Reiseführer-Karten",
+    "description": "Generieren Sie KI-Reiseplanungen mit täglichen Zeitplänen, Karten, Essensempfehlungen und Attraktionen. Perfekt für Reiseplanung und Erstellung von Reiseinhalten.",
+    "title": "KI-Reiseplaner & Reiseführer-Generator (Tägliche Pläne) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Reiseplanungen, einschließlich Zielortführern, täglichen Zeitplänen, Karten, Essensempfehlungen und Transporttipps. Sie fungiert als vollständiger Reiseplaner und Reiseführer-Generator.",
+        "who": "Perfekt für Reisende, Reiseblogger, digitale Nomaden, Reiseplaner, Agenturen und Content-Creator, die Reiseführer teilen.",
+        "how": [
+          "Geben Sie ein Ziel und die Reisedauer ein.",
+          "Listen Sie beliebte Speisen und Sehenswürdigkeiten auf.",
+          "Definieren Sie Transportmöglichkeiten.",
+          "Planen Sie tägliche Aktivitäten (Morgen, Nachmittag, Abend).",
+          "Generieren Sie einen vollständigen Reiseplan mit visuellen Karten."
+        ],
+        "prompts": [
+          "Erstellen Sie einen 5-tägigen Reiseplan für Japan mit täglichen Plänen.",
+          "Generieren Sie einen 3-tägigen Reiseplan für Italien mit Essen und Attraktionen.",
+          "Erstellen Sie einen Reiseführer für Thailand mit Reiseverlauf und Transporttipps."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Gewichtsverlust & Fitnessplan-Karten",
+    "description": "Erstellen Sie KI-generierte 1-Wochen-Gewichtsverlustpläne mit Ernährungsplänen, Trainingsroutinen und Strategien zum Fettabbau. Ideal für Fitness-Anfänger und Gesundheitsüberwachung.",
+    "title": "KI 1-Wochen-Gewichtsverlustplan-Generator (Essen + Trainingsplan) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert personalisierte KI-Gewichtsverlustpläne, die Ernährungspläne, Trainingspläne, Hydrationsziele und Fitnesstipps in ein strukturiertes 7-tägiges Fettabbauprogramm kombinieren.",
+        "who": "Ideal für Anfänger, Fitnessbegeisterte, Fitnessstudiobesucher, Personal Trainer und Content-Creator, die Gewichtsverlustreisen teilen.",
+        "how": [
+          "Geben Sie Ihr Geschlecht, Ihre Größe und Ihr aktuelles Gewicht ein.",
+          "Setzen Sie ein Gewichtsverlustziel.",
+          "Passen Sie tägliche Mahlzeiten und Hydrationsziele an.",
+          "Fügen Sie wöchentliche Trainingsroutinen hinzu.",
+          "Generieren Sie einen strukturierten 7-tägigen Gewichtsverlustplan."
+        ],
+        "prompts": [
+          "Erstellen Sie einen 1-Wochen-Gewichtsverlustplan, um 6 kg zu verlieren.",
+          "Generieren Sie einen Anfänger-Ernährungs- und Trainingsplan.",
+          "Erstellen Sie einen Fettabbauplan mit Cardio- und Mahlzeitenplan."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Kinder Lernen & Fähigkeiten Entwicklungs-Karten",
+    "description": "Generieren Sie personalisierte Lernpläne für Kinder mit Hobbys und Ideen zur Fähigkeitenentwicklung nach Alter. Ideal für Eltern, frühkindliche Bildung und Planung der kindlichen Entwicklung.",
+    "title": "Beste Hobbys & Fähigkeiten für Kinder nach Alter (KI-Lernplaner) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Lern- und Entwicklungskarten für Kinder, die Hobbys und Fähigkeiten basierend auf dem Alter empfehlen. Sie hilft Eltern, frühkindliche Bildung und Aktivitäten zur Fähigkeitenentwicklung zu planen.",
+        "who": "Entwickelt für Eltern, Lehrer, homeschooling Familien, Bildungsplattformen und Content-Creator zur kindlichen Entwicklung.",
+        "how": [
+          "Geben Sie das Alter und Geschlecht des Kindes ein.",
+          "Wählen Sie empfohlene Hobbys aus.",
+          "Definieren Sie Schlüsselkompetenzen, die entwickelt werden sollen.",
+          "Fügen Sie Lernhinweise und Aktivitätsanleitungen hinzu.",
+          "Generieren Sie eine strukturierte Lernplan-Karte für Kinder."
+        ],
+        "prompts": [
+          "Beste Hobbys für einen 6-jährigen Jungen.",
+          "Plan zur Fähigkeitenentwicklung für Kinder nach Alter.",
+          "Lernaktivitäten für Kinder mit Vorteilen."
+        ]
+      }
+    }
   }
 }

@@ -4093,5 +4093,1102 @@
     },
     "og_image": "/images/nano_insp_preview/template-mbti-ghibli-ponyo-prev.jpg",
     "topics": "character"
-  }
+  },
+  {
+    "id": "template-vocabulary",
+    "locales": {
+        "zh": {
+            "base_prompt": "（英语单词卡设计师）你是一位专业的双语单词卡片设计师，擅长制作清新可爱的英语学习海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质主题英语单词卡，风格参考图中清新可爱、儿童友好的卡通插画质感。卡片布局：1. 顶部：标题为“{topic_name} | {topic_chinese}”，使用醒目可爱的字体，搭配主题匹配的柔和背景（如动物用浅绿色、咖啡用浅蓝色、太空用星空、天气用米黄色）。2. 网格布局：8个单词卡片以4×2或2×4网格排列，每张卡片包含：左侧：对应单词的可爱彩色卡通插画（动物、饮品、水果、太空、天气等图标）；右侧：大号英文单词 {word_1_en}、中文释义 {word_1_cn}、括号内标注拼音 ({pinyin_1})。3. 整体风格：卡片为圆角简洁设计，柔和马卡龙色系，友好卡通插画风格，文字清晰易读，高对比便于识别，无多余元素，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "Animals",
+                        "Food",
+                        "Fruits",
+                        "Weather",
+                        "Space",
+                        "Coffee"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "动物",
+                        "食物",
+                        "水果",
+                        "天气",
+                        "太空",
+                        "咖啡"
+                    ]
+                },
+                {
+                    "name": "word_1_en",
+                    "label": "单词1（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Cat",
+                        "Apple",
+                        "Sun",
+                        "Moon",
+                        "Latte"
+                    ]
+                },
+                {
+                    "name": "word_1_cn",
+                    "label": "单词1（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "猫",
+                        "苹果",
+                        "太阳",
+                        "月亮",
+                        "拿铁"
+                    ]
+                },
+                {
+                    "name": "pinyin_1",
+                    "label": "单词1（拼音）",
+                    "type": "text",
+                    "placeholder": [
+                        "māo",
+                        "píng guǒ",
+                        "tài yáng",
+                        "yuè liang",
+                        "ná tiě"
+                    ]
+                }
+            ]
+        },
+        "en": {
+        "base_prompt": "(English Vocabulary Card Designer) You are a professional bilingual vocabulary card designer specializing in creating clean and cute English learning posters. Based on the user-specified [{topic_name}], generate a high-quality vertical 3:4 themed English vocabulary card. The style should resemble fresh, cute, and child-friendly cartoon illustrations. Layout: 1. Top: Title \"{topic_name} | {topic_chinese}\" with playful typography and a soft background matching the theme (e.g., light green for animals, light blue for coffee, starry sky for space, beige for weather). 2. Grid layout: 8 vocabulary cards arranged in a 4×2 or 2×4 grid. Each card includes: Left: a cute colored cartoon illustration; Right: large English word {word_1_en}, Chinese meaning {word_1_cn}, and pinyin ({pinyin_1}). 3. Overall style: rounded corners, pastel colors, friendly illustrations, clear readable text, high contrast, no extra elements, Curify watermark on top-left. Vertical 3:4 format, 4K ultra HD.",
+        "parameters": [
+          {
+            "name": "topic_name",
+            "label": "English Topic",
+            "type": "text",
+            "placeholder": ["Animals", "Food", "Fruits", "Weather", "Space", "Coffee"]
+          },
+          {
+            "name": "topic_chinese",
+            "label": "Chinese Topic",
+            "type": "text",
+            "placeholder": ["Animals (CN)", "Food (CN)", "Fruits (CN)", "Weather (CN)", "Space (CN)", "Coffee (CN)"]
+          },
+          {
+            "name": "word_1_en",
+            "label": "Word 1 (English)",
+            "type": "text",
+            "placeholder": ["Cat", "Apple", "Sun", "Moon", "Latte"]
+          },
+          {
+            "name": "word_1_cn",
+            "label": "Word 1 (Chinese)",
+            "type": "text",
+            "placeholder": ["Cat (CN)", "Apple (CN)", "Sun (CN)", "Moon (CN)", "Latte (CN)"]
+          },
+          {
+            "name": "pinyin_1",
+            "label": "Word 1 (Pinyin)",
+            "type": "text",
+            "placeholder": ["mao", "ping guo", "tai yang", "yue liang", "na tie"]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
+    "topics": "learning"
+},
+  {
+    "id": "template-series-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Modular Infographic Designer) You are a top-tier modular infographic designer specializing in creating cohesive multi-card visual series. Based on the user-specified [{series_topic}], generate a complete set of vertical 3:4 high-quality infographic cards. Each card focuses on one core section while maintaining consistent visual language. Single card structure: 1. Top title bar: prominent title \"{section_title}\" with soft themed background and rounded corners. 2. Central visual: core illustration/diagram representing the concept (comparison, timeline, flowchart, character, or scene) in {art_style}. 3. Content modules: layout with sections containing \"icon + label + short description\". 4. Bottom summary: highlighted box with key takeaway. Style: clean rounded UI, soft colors, clear typography, no extra decoration, Curify watermark top-left, vertical 3:4, 4K ultra HD.",
+        "parameters": [
+          {
+            "name": "series_topic",
+            "label": "Series Topic",
+            "type": "text",
+            "placeholder": [
+              "Microsoft's AI Dilemma",
+              "Butterfly Life Cycle",
+              "Traditional Chinese Festivals",
+              "Solar System Guide",
+              "Emotion Management Guide"
+            ]
+          },
+          {
+            "name": "art_style",
+            "label": "Art Style",
+            "type": "text",
+            "placeholder": [
+              "Cute Cartoon Style",
+              "Flat Illustration Style",
+              "Vintage Chinese Style",
+              "Tech Line Art Style",
+              "Watercolor Style"
+            ]
+          },
+          {
+            "name": "section_title",
+            "label": "Section Title",
+            "type": "text",
+            "placeholder": [
+              "Overview: Core Conflict",
+              "Causes: Strategy Issues",
+              "Comparison: Two Models",
+              "Case Study",
+              "Solutions"
+            ]
+          },
+          {
+            "name": "overview_title",
+            "label": "Overview Title",
+            "type": "text",
+            "placeholder": [
+              "Core Conflict: Performance vs Growth",
+              "Life Cycle Overview",
+              "Cultural Calendar"
+            ]
+          },
+          {
+            "name": "section1_title",
+            "label": "Section 1 Title",
+            "type": "text",
+            "placeholder": [
+              "Problem 1: Short-term Strategy",
+              "Stage 1: Egg",
+              "Spring Festival"
+            ]
+          },
+          {
+            "name": "section2_title",
+            "label": "Section 2 Title",
+            "type": "text",
+            "placeholder": [
+              "Problem 2: Dependency Risk",
+              "Stage 2: Larva",
+              "Qingming Festival"
+            ]
+          },
+          {
+            "name": "comparison_title",
+            "label": "Comparison Section Title",
+            "type": "text",
+            "placeholder": [
+              "Comparison: AI Add-on vs Native",
+              "Butterfly vs Moth",
+              "Eastern vs Western Festivals"
+            ]
+          },
+          {
+            "name": "case_title",
+            "label": "Case Study Title",
+            "type": "text",
+            "placeholder": [
+              "Case: Google's Comeback",
+              "Case: Monarch Migration",
+              "Case: Dragon Boat Festival"
+            ]
+          },
+          {
+            "name": "solutions_title",
+            "label": "Solutions Title",
+            "type": "text",
+            "placeholder": [
+              "Future Strategy",
+              "Conservation Tips",
+              "Modern Adaptation"
+            ]
+          }
+        ]
+      },
+        "zh": {
+            "base_prompt": "（通用系列信息图设计师）你是一位顶级模块化信息图设计师，擅长创作系列主题组图，每张卡片聚焦一个核心章节，风格统一、叙事连贯。根据用户指定的【{series_topic}】，生成一套完整的竖版3:4高品质系列卡片，所有卡片保持一致的视觉语言与排版逻辑，仅替换内容即可适配不同主题（商业、科普、文化、教育等）。单张卡片通用结构：1. 顶部标题栏：醒目标题「{section_title}」，搭配主题匹配的柔和背景色，圆角边框设计。2. 中心视觉区：核心卡通/插画/示意图，直观呈现章节核心概念（如对比图、时间线、流程图、拟人化形象、场景插画），风格为{art_style}。3. 内容模块区：布局为左右分栏/上下堆叠/多图标网格，每个模块包含「图标+标签+简短说明」。4. 底部总结栏：高亮文本框，放置该章节的核心结论/标语/金句。整体风格：干净圆角UI，柔和配色，清晰易读的字体，无多余装饰，左上角带Curify水印，竖版3:4格式，4K超高清，直接出图。系列主题为【{series_topic}】。",
+            "parameters": [
+                {
+                    "name": "series_topic",
+                    "label": "系列主题",
+                    "type": "text",
+                    "placeholder": [
+                        "微软的AI困境",
+                        "蝴蝶的生命周期",
+                        "中国传统节日",
+                        "太阳系行星科普",
+                        "情绪管理指南"
+                    ]
+                },
+                {
+                    "name": "art_style",
+                    "label": "绘画风格",
+                    "type": "text",
+                    "placeholder": [
+                        "可爱卡通风格",
+                        "扁平插画风格",
+                        "复古国风插画",
+                        "科技感线稿风格",
+                        "水彩手绘风格"
+                    ]
+                },
+                {
+                    "name": "section_title",
+                    "label": "章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "概览：核心矛盾与现象",
+                        "原因篇：战略短视与依赖",
+                        "对比篇：两种模式差异",
+                        "案例篇：竞品成功经验",
+                        "方案篇：未来破局路径"
+                    ]
+                },
+                {
+                    "name": "overview_title",
+                    "label": "概览标题",
+                    "type": "text",
+                    "placeholder": [
+                        "核心矛盾：业绩与股价的撕裂",
+                        "生命循环：从卵到蝴蝶",
+                        "岁时节庆：中国人的时间美学"
+                    ]
+                },
+                {
+                    "name": "section1_title",
+                    "label": "第一章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "死局①：战略短视+选人失误",
+                        "阶段1：卵——生命的起点",
+                        "春节：辞旧迎新，阖家团圆"
+                    ]
+                },
+                {
+                    "name": "section2_title",
+                    "label": "第二章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "死局②：OpenAI合作悬顶之剑",
+                        "阶段2：幼虫——贪吃的成长",
+                        "清明：慎终追远，踏青寻春"
+                    ]
+                },
+                {
+                    "name": "comparison_title",
+                    "label": "对比章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "对比：AI外挂 vs AI原生Agent",
+                        "对比：蝴蝶与蛾的差异",
+                        "对比：中西节日文化差异"
+                    ]
+                },
+                {
+                    "name": "case_title",
+                    "label": "案例章节标题",
+                    "type": "text",
+                    "placeholder": [
+                        "案例启示：谷歌Gemini的逆袭",
+                        "案例：帝王蝶的迁徙奇迹",
+                        "案例：端午节的起源与流变"
+                    ]
+                },
+                {
+                    "name": "solutions_title",
+                    "label": "解决方案标题",
+                    "type": "text",
+                    "placeholder": [
+                        "未来出路：破局方案",
+                        "保护建议：蝴蝶栖息地保护",
+                        "传承路径：传统节日的当代活化"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-01-cover-prev.jpg",
+"topics": "learning"
+  },
+  {
+    "id": "template-english-top5-phrases",
+    "locales": {
+        "zh": {
+            "base_prompt": "（少儿英语Top 5表达卡设计师）你是一位专业的少儿英语启蒙卡片设计师，擅长制作清新可爱的双语表达清单海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质“Top 5 Ways to {topic_english}”表达卡片，风格参考图中可爱卡通、儿童友好的质感。卡片布局：1. 顶部标题：醒目标题「Top 5 Ways to {topic_english} / {topic_chinese}」，搭配柔和圆角边框，文字清晰易读。2. 条目列表：5个彩色圆角条目（从上到下依次为浅蓝、浅粉、浅黄、浅绿、浅紫），每个条目包含：左侧：序号（1. / 2. / 3. / 4. / 5.）；中间：大号英文表达（如 {phrase_1_en}）+ 下方中文释义（如 {phrase_1_cn}）；右侧：对应表达的可爱卡通插画（拟人化儿童形象，动作匹配语义）。3. 整体风格：干净圆角UI，柔和马卡龙色系，Q版卡通人物插画，文字清晰醒目，无多余装饰，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "主题名称",
+                    "type": "text",
+                    "placeholder": [
+                        "Say 'Thank You'",
+                        "Give Compliments",
+                        "Say 'Sorry'",
+                        "Greet Others",
+                        "Say Goodbye"
+                    ]
+                },
+                {
+                    "name": "topic_english",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "Say 'Thank You'",
+                        "Give Compliments",
+                        "Say 'Sorry'",
+                        "Greet Others",
+                        "Say Goodbye"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "5种说'谢谢'的方式",
+                        "5种赞美的方式",
+                        "5种说'对不起'的方式",
+                        "5种打招呼的方式",
+                        "5种说再见的方式"
+                    ]
+                },
+                {
+                    "name": "phrase_1_en",
+                    "label": "表达1（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Thank you!",
+                        "Good job!",
+                        "I'm sorry!",
+                        "Hello!",
+                        "Goodbye!"
+                    ]
+                },
+                {
+                    "name": "phrase_1_cn",
+                    "label": "表达1（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "谢谢！",
+                        "做得好！",
+                        "对不起！",
+                        "你好！",
+                        "再见！"
+                    ]
+                },
+                {
+                    "name": "phrase_2_en",
+                    "label": "表达2（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Thanks a lot!",
+                        "You're amazing!",
+                        "I apologize!",
+                        "Hi there!",
+                        "See you later!"
+                    ]
+                },
+                {
+                    "name": "phrase_2_cn",
+                    "label": "表达2（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "非常感谢！",
+                        "你太棒了！",
+                        "我道歉！",
+                        "嗨！",
+                        "待会儿见！"
+                    ]
+                },
+                {
+                    "name": "phrase_3_en",
+                    "label": "表达3（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "I appreciate it!",
+                        "Well done!",
+                        "My bad!",
+                        "How are you?",
+                        "Take care!"
+                    ]
+                },
+                {
+                    "name": "phrase_3_cn",
+                    "label": "表达3（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "我很感激！",
+                        "干得漂亮！",
+                        "我的错！",
+                        "你好吗？",
+                        "保重！"
+                    ]
+                },
+                {
+                    "name": "phrase_4_en",
+                    "label": "表达4（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "That's so kind of you!",
+                        "You're so smart!",
+                        "I'm so sorry!",
+                        "Nice to meet you!",
+                        "Bye for now!"
+                    ]
+                },
+                {
+                    "name": "phrase_4_cn",
+                    "label": "表达4（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "你真好！",
+                        "你真聪明！",
+                        "非常抱歉！",
+                        "很高兴认识你！",
+                        "先再见啦！"
+                    ]
+                },
+                {
+                    "name": "phrase_5_en",
+                    "label": "表达5（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "I'm grateful!",
+                        "I'm proud of you!",
+                        "Please forgive me!",
+                        "Good morning!",
+                        "See you soon!"
+                    ]
+                },
+                {
+                    "name": "phrase_5_cn",
+                    "label": "表达5（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "我很感恩！",
+                        "我为你骄傲！",
+                        "请原谅我！",
+                        "早上好！",
+                        "回头见！"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg",
+    "topics": "learning"
+},
+  {
+    "id": "template-english-error-correction",
+    "locales": {
+        "zh": {
+            "base_prompt": "（少儿英语纠错卡设计师）你是一位专业的少儿英语纠错卡片设计师，擅长制作清新可爱的双语正误对比学习海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质“{topic_english} / {topic_chinese}”英语纠错卡片，风格参考图中可爱卡通、儿童友好的质感。卡片布局：1. 顶部标题：醒目标题「{topic_english} / {topic_chinese}」，搭配柔和圆角边框，文字清晰易读。2. 内容模块：2组上下排列的正误对比单元，每组单元分为左右两栏：左侧（浅粉色背景）：红色叉号❌+错误英文句子{wrong_sentence} + 中文释义（错误）+ 困惑场景卡通插画；右侧（浅绿色背景）：绿色对号✅+正确英文句子{correct_sentence} + 中文释义（正确）+ 开心场景卡通插画；两组单元之间用虚线分隔，可添加子主题小标题。3. 整体风格：干净圆角UI，柔和马卡龙色系，Q版卡通人物插画，文字清晰醒目，无多余装饰，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "主题名称",
+                    "type": "text",
+                    "placeholder": [
+                        "Tense Mistakes",
+                        "Question Mistakes",
+                        "Preposition Mistakes",
+                        "Article Mistakes",
+                        "Subject-Verb Agreement Mistakes"
+                    ]
+                },
+                {
+                    "name": "topic_english",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "Tense Mistakes",
+                        "Question Mistakes",
+                        "Preposition Mistakes",
+                        "Article Mistakes",
+                        "Subject-Verb Agreement Mistakes"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "时态错误",
+                        "疑问句错误",
+                        "介词错误",
+                        "冠词错误",
+                        "主谓一致错误"
+                    ]
+                },
+                {
+                    "name": "wrong_sentence_1",
+                    "label": "错误句子1",
+                    "type": "text",
+                    "placeholder": [
+                        "I go to the park yesterday",
+                        "You are a student?",
+                        "I arrive in Monday",
+                        "I have a cat. Cat is black.",
+                        "He go to school every day"
+                    ]
+                },
+                {
+                    "name": "correct_sentence_1",
+                    "label": "正确句子1",
+                    "type": "text",
+                    "placeholder": [
+                        "I went to the park yesterday",
+                        "Are you a student?",
+                        "I arrive on Monday",
+                        "I have a cat. The cat is black.",
+                        "He goes to school every day"
+                    ]
+                },
+                {
+                    "name": "wrong_sentence_2",
+                    "label": "错误句子2",
+                    "type": "text",
+                    "placeholder": [
+                        "She is watch TV now",
+                        "What you want to eat?",
+                        "I'm good in English",
+                        "He is an honest man.",
+                        "They plays football on weekends"
+                    ]
+                },
+                {
+                    "name": "correct_sentence_2",
+                    "label": "正确句子2",
+                    "type": "text",
+                    "placeholder": [
+                        "She is watching TV now",
+                        "What do you want to eat?",
+                        "I'm good at English",
+                        "He is a honest man.",
+                        "They play football on weekends"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg",
+    "topics": "learning"
+},
+  {
+    "id": "template-english-dialogue-scene",
+    "locales": {
+        "zh": {
+            "base_prompt": "（少儿英语情景对话卡设计师）你是一位专业的少儿英语情景对话卡片设计师，擅长制作清新可爱的双语生活场景学习海报。根据用户指定的【{topic_name}】，生成一张竖版3:4的高品质“{topic_english} / {topic_chinese}”英语情景对话卡片，风格参考图中可爱卡通、儿童友好的质感。卡片布局：1. 顶部标题：醒目标题「{topic_english} / {topic_chinese}」，搭配柔和圆角边框，可点缀少量主题相关小装饰。2. 中心插画区：一幅完整的卡通场景插画，还原对话发生的生活场景（如餐厅、公园、商店、学校等），包含对话角色，画风Q版可爱，色彩明亮温暖。3. 对话区：4-5组对话气泡（交替颜色区分角色），每组对话包含：角色称呼（如{speaker_1}、{speaker_2}）+ 英文对话内容（如{dialogue_1_en}）+ 中文释义（如{dialogue_1_cn}），用不同底色区分说话人，排版清晰。4. 整体风格：干净圆角UI，柔和马卡龙色系，Q版卡通人物插画，文字醒目，无多余装饰，左上角带Curify水印。竖版3:4格式，4K超高清，画面清晰，直接出图。主题为【{topic_name}】。",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "主题名称",
+                    "type": "text",
+                    "placeholder": [
+                        "At the Restaurant",
+                        "Greeting",
+                        "Shopping",
+                        "At School",
+                        "At the Hospital"
+                    ]
+                },
+                {
+                    "name": "topic_english",
+                    "label": "英文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "At the Restaurant",
+                        "Greeting",
+                        "Shopping",
+                        "At School",
+                        "At the Hospital"
+                    ]
+                },
+                {
+                    "name": "topic_chinese",
+                    "label": "中文主题",
+                    "type": "text",
+                    "placeholder": [
+                        "在餐厅点餐",
+                        "打招呼",
+                        "在商店购物",
+                        "在学校",
+                        "在医院"
+                    ]
+                },
+                {
+                    "name": "speaker_1",
+                    "label": "说话人1",
+                    "type": "text",
+                    "placeholder": [
+                        "Waiter",
+                        "Child A",
+                        "Child",
+                        "Teacher",
+                        "Doctor"
+                    ]
+                },
+                {
+                    "name": "speaker_2",
+                    "label": "说话人2",
+                    "type": "text",
+                    "placeholder": [
+                        "Child",
+                        "Child B",
+                        "Shopkeeper",
+                        "Student",
+                        "Patient"
+                    ]
+                },
+                {
+                    "name": "dialogue_1_en",
+                    "label": "对话1（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "What would you like?",
+                        "Hello!",
+                        "Hello! I want an apple.",
+                        "Good morning, class!",
+                        "What's wrong with you?"
+                    ]
+                },
+                {
+                    "name": "dialogue_1_cn",
+                    "label": "对话1（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "你想要什么？",
+                        "你好！",
+                        "你好！我想要一个苹果。",
+                        "早上好，同学们！",
+                        "你哪里不舒服？"
+                    ]
+                },
+                {
+                    "name": "dialogue_2_en",
+                    "label": "对话2（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "I want noodles, please.",
+                        "Hi!",
+                        "Here you are.",
+                        "Good morning, teacher!",
+                        "I have a headache."
+                    ]
+                },
+                {
+                    "name": "dialogue_2_cn",
+                    "label": "对话2（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "我想要面条。",
+                        "嗨！",
+                        "给你。",
+                        "早上好，老师！",
+                        "我头疼。"
+                    ]
+                },
+                {
+                    "name": "dialogue_3_en",
+                    "label": "对话3（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Anything to drink?",
+                        "How are you?",
+                        "How much is it?",
+                        "May I go to the bathroom?",
+                        "Take this medicine three times a day."
+                    ]
+                },
+                {
+                    "name": "dialogue_3_cn",
+                    "label": "对话3（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "要喝的吗？",
+                        "你好吗？",
+                        "多少钱？",
+                        "我可以去洗手间吗？",
+                        "这个药一天吃三次。"
+                    ]
+                },
+                {
+                    "name": "dialogue_4_en",
+                    "label": "对话4（英文）",
+                    "type": "text",
+                    "placeholder": [
+                        "Orange juice, please.",
+                        "I'm fine, thank you!",
+                        "Two yuan.",
+                        "Sure, be quick.",
+                        "Thank you, doctor."
+                    ]
+                },
+                {
+                    "name": "dialogue_4_cn",
+                    "label": "对话4（中文）",
+                    "type": "text",
+                    "placeholder": [
+                        "橙汁，谢谢。",
+                        "我很好，谢谢！",
+                        "两元。",
+                        "可以，快点。",
+                        "谢谢你，医生。"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
+    "topics": "learning"
+},
+{
+  "id": "template-movie-poster",
+  "locales": {
+      "en": {
+          "base_prompt": "（Movie Infographic Illustrator）You are a professional movie infographic illustrator, specializing in creating cute cartoon-style movie information posters. Based on the user-specified {movie_name}, generate a vertical 3:4 premium movie introduction card, matching the Q-version cartoon, warm and healing aesthetic of the reference images. Card Layout: 1. Header Section: Large stylized title \"{movie_name}\", subtitle \"{movie_subtitle}\", release year {release_year} + core tag icons. 2. Central Illustration Area: A Q-version cartoon illustration recreating the movie's iconic scene and core characters, with a background matching the movie's atmosphere. 3. Content Modules (4 modules): DIRECTOR & CAST (director + starring actors & roles, director's chair icon), STORY (brief plot summary, book icon), AWARDS (awards & acclaim, trophy icon), ICONIC SCENES / FAMOUS QUOTES (classic scenes / famous quotes, camera / speech bubble icon). 4. Decorative Elements: Add movie-themed decorations around the card border (musical notes, film reels, feathers, waves, etc.). Overall Style: Clean rounded-corner UI, soft pastel/movie-themed color palette, Q-version cartoon character illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {movie_name}.",
+          "parameters": [
+              {
+                  "name": "movie_name",
+                  "label": "Movie Name",
+                  "type": "text",
+                  "placeholder": [
+                      "LA LA LAND",
+                      "FORREST GUMP",
+                      "TITANIC",
+                      "THE SHAWSHANK REDEMPTION"
+                  ]
+              },
+              {
+                  "name": "movie_subtitle",
+                  "label": "Movie Subtitle",
+                  "type": "text",
+                  "placeholder": [
+                      "A Musical Romance",
+                      "Life is Like a Box of Chocolates",
+                      "An Epic Romance",
+                      "Hope is a Good Thing"
+                  ]
+              },
+              {
+                  "name": "release_year",
+                  "label": "Release Year",
+                  "type": "text",
+                  "placeholder": [
+                      "2016",
+                      "1994",
+                      "1997",
+                      "1994"
+                  ]
+              },
+              {
+                  "name": "director",
+                  "label": "Director",
+                  "type": "text",
+                  "placeholder": [
+                      "Damien Chazelle",
+                      "Robert Zemeckis",
+                      "James Cameron",
+                      "Frank Darabont"
+                  ]
+              },
+              {
+                  "name": "cast",
+                  "label": "Starring & Roles",
+                  "type": "text",
+                  "placeholder": [
+                      "Ryan Gosling as Sebastian, Emma Stone as Mia",
+                      "Tom Hanks as Forrest Gump",
+                      "Leonardo DiCaprio as Jack, Kate Winslet as Rose",
+                      "Tim Robbins as Andy, Morgan Freeman as Red"
+                  ]
+              },
+              {
+                  "name": "story",
+                  "label": "Story Summary",
+                  "type": "text",
+                  "placeholder": [
+                      "Two dreamers in Los Angeles fall in love while pursuing their passions.",
+                      "A simple man witnesses 20th century American history while pursuing his love.",
+                      "A poor artist and a rich woman fall in love aboard the Titanic.",
+                      "A wrongfully convicted banker finds freedom and hope in prison."
+                  ]
+              },
+              {
+                  "name": "awards",
+                  "label": "Awards & Legacy",
+                  "type": "text",
+                  "placeholder": [
+                      "6 Academy Awards, 7 Golden Globe Awards",
+                      "6 Academy Awards including Best Picture",
+                      "11 Academy Awards (tied record)",
+                      "7 Oscar nominations, #1 on IMDb Top 250"
+                  ]
+              },
+              {
+                  "name": "iconic_scenes",
+                  "label": "Iconic Scenes / Famous Quotes",
+                  "type": "text",
+                  "placeholder": [
+                      "Griffith Observatory dance, City of Stars",
+                      "\"Life is like a box of chocolates...\", \"Run, Forrest, run!\"",
+                      "\"I'm the king of the world!\", flying pose",
+                      "\"Hope is a good thing...\", rain escape scene"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-movie-poster-la-la-land-prev.jpg",
+  "topics": "lifestyle"
+},
+{
+  "id": "template-series-travel",
+  "locales": {
+      "en": {
+          "base_prompt": "（Travel Infographic Designer）You are a professional travel infographic designer, specializing in creating cute cartoon-style travel map posters. Based on the user-specified {destination_name} and {trip_duration} days, generate a complete set of vertical 3:4 premium travel map cards, matching the kawaii, warm, and detailed aesthetic of the reference images. Set Structure: 1. Overview Card: Title \"{destination_name} Travel Guide\", divided into FOOD (5 local dishes with cartoon icons), ATTRACTIONS (4-5 landmarks on a map), TRANSPORT (4 transport types with icons), decorated with {destination}-themed elements. 2. Daily Itinerary Cards (one per day): Title \"DAY {day_number} - {date}\", split into Morning/Afternoon/Evening blocks, each with activity icon, description, cost label, and simplified route map background. Overall Style: Clean rounded-corner UI, soft pastel color palette, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {destination_name} {trip_duration}-day travel guide.",
+          "parameters": [
+              {
+                  "name": "destination_name",
+                  "label": "Destination Name",
+                  "type": "text",
+                  "placeholder": [
+                      "Netherlands",
+                      "Japan",
+                      "Italy",
+                      "Thailand"
+                  ]
+              },
+              {
+                  "name": "trip_duration",
+                  "label": "Trip Duration (days)",
+                  "type": "text",
+                  "placeholder": [
+                      "3",
+                      "5",
+                      "7",
+                      "10"
+                  ]
+              },
+              {
+                  "name": "day_number",
+                  "label": "Day Number",
+                  "type": "text",
+                  "placeholder": [
+                      "1",
+                      "2",
+                      "3"
+                  ]
+              },
+              {
+                  "name": "date",
+                  "label": "Date",
+                  "type": "text",
+                  "placeholder": [
+                      "May 1st",
+                      "May 2nd",
+                      "May 3rd"
+                  ]
+              },
+              {
+                  "name": "local_foods",
+                  "label": "Local Foods (5 items)",
+                  "type": "text",
+                  "placeholder": [
+                      "Stroopwafel, Bitterballen, Haring, Gouda cheese, Mini Poffertjes",
+                      "Sushi, Ramen, Tempura, Matcha, Takoyaki",
+                      "Pizza, Pasta, Gelato, Espresso, Tiramisu",
+                      "Pad Thai, Tom Yum, Green Curry, Mango Sticky Rice, Som Tum"
+                  ]
+              },
+              {
+                  "name": "attractions",
+                  "label": "Key Attractions (4-5 items)",
+                  "type": "text",
+                  "placeholder": [
+                      "Keukenhof tulip garden, Amsterdam canals, Giethoorn, Van Gogh Museum",
+                      "Tokyo Tower, Fushimi Inari, Osaka Castle, Mount Fuji",
+                      "Colosseum, Venice Canals, Pisa Tower, Amalfi Coast",
+                      "Grand Palace, Floating Markets, Ayutthaya Ruins, Phi Phi Islands"
+                  ]
+              },
+              {
+                  "name": "transport_types",
+                  "label": "Local Transport (4 types)",
+                  "type": "text",
+                  "placeholder": [
+                      "Bicycle, NS train, Tram, Canal boat",
+                      "Shinkansen, Bus, Subway, Bicycle",
+                      "Vaporetto, Train, Scooter, Walking",
+                      "Tuk-tuk, Bus, Train, Long-tail boat"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg",
+  "topics": "lifestyle"
+},
+{
+  "id": "template-fat-loss-plan",
+  "locales": {
+      "en": {
+          "base_prompt": "（Fitness Infographic Designer）You are a professional fitness infographic designer, specializing in creating cute cartoon-style 1-week fat loss plan posters. Based on the user's {gender}, {height}, {current_weight}, and {weight_loss_goal}, generate a vertical 3:4 premium 1-week fat loss plan card, matching the kawaii, warm, and clear aesthetic of the reference images. Card Layout: 1. Header: Title \"1-WEEK {fat_loss_type} FAT LOSS PLAN\", goal \"Lose {weight_loss_goal} kg in 7 Days!\", profile info \"Height: {height} | Weight: {current_weight} | {gender}\", gender-matching cartoon avatar. 2. Daily Meal Plan: 4 columns (Breakfast/Lunch/Snack/Dinner) with kawaii food icons + bullet-point meal details + water reminder \"DRINK {water_intake}L+ WATER DAILY!\". 3. Weekly Workout Plan: 4 columns (MON/WED/FRI, TUE/THU, SAT, SUN) with kawaii workout illustrations + activity descriptions. 4. Tips/Warnings: Checkbox list of advice + motivational slogan. Overall Style: Clean rounded-corner UI, soft pastel colors, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {gender}'s 1-week fat loss plan (lose {weight_loss_goal} kg).",
+          "parameters": [
+              {
+                  "name": "gender",
+                  "label": "Gender",
+                  "type": "text",
+                  "placeholder": [
+                      "Male",
+                      "Female"
+                  ]
+              },
+              {
+                  "name": "height",
+                  "label": "Height (cm)",
+                  "type": "text",
+                  "placeholder": [
+                      "180 cm",
+                      "172 cm"
+                  ]
+              },
+              {
+                  "name": "current_weight",
+                  "label": "Current Weight (kg)",
+                  "type": "text",
+                  "placeholder": [
+                      "100 kg",
+                      "63 kg"
+                  ]
+              },
+              {
+                  "name": "weight_loss_goal",
+                  "label": "Weight Loss Goal (kg)",
+                  "type": "text",
+                  "placeholder": [
+                      "6 kg",
+                      "1.5 kg"
+                  ]
+              },
+              {
+                  "name": "fat_loss_type",
+                  "label": "Fat Loss Type",
+                  "type": "text",
+                  "placeholder": [
+                      "EXTREME",
+                      "REGULAR"
+                  ]
+              },
+              {
+                  "name": "water_intake",
+                  "label": "Daily Water Intake (L)",
+                  "type": "text",
+                  "placeholder": [
+                      "3L",
+                      "2.5L"
+                  ]
+              },
+              {
+                  "name": "workout_type",
+                  "label": "Workout Plan Type",
+                  "type": "text",
+                  "placeholder": [
+                      "JOINT-FRIENDLY",
+                      "WEEKLY"
+                  ]
+              },
+              {
+                  "name": "workout_mon",
+                  "label": "Mon/Wed/Fri Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "45 min Elliptical/Bike + 3×45sec Plank Core",
+                      "30 min HIIT + 15 min Core Training"
+                  ]
+              },
+              {
+                  "name": "workout_tue",
+                  "label": "Tue/Thu Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "45 min Swimming OR 50 min Brisk Walking",
+                      "45 min Brisk Walking or Dancing"
+                  ]
+              },
+              {
+                  "name": "workout_sat",
+                  "label": "Saturday Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "8,000-10,000 Steps Walk",
+                      "30 min Yoga & Stretching"
+                  ]
+              },
+              {
+                  "name": "workout_sun",
+                  "label": "Sunday Workout",
+                  "type": "text",
+                  "placeholder": [
+                      "20 min Full Body Stretch + Rest & Recovery",
+                      "REST DAY - Recovery & Sleep"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-fat-loss-plan--male-extreme-6kg-prev.jpg",
+  "topics": "lifestyle"
+},
+{
+  "id": "template-child-hobby-skill",
+  "locales": {
+      "en": {
+          "base_prompt": "（Children's Education Infographic Designer）You are a professional children's education infographic designer, specializing in creating cute cartoon-style hobby & skill recommendation posters. Based on the user's {age} and {gender}, generate a vertical 3:4 premium \"Best Hobbies & Skills for {age}-Year-Old {gender}s\" card, matching the kawaii, warm, and clear aesthetic of the reference images. Card Layout: 1. Header: Title \"BEST HOBBIES & SKILLS FOR {age}-YEAR-OLD {gender}s\", subtitle \"Building Interests for Lifelong Growth\", circular {gender} child avatar + 4 hobby circular illustrations. 2. Main Modules: Left (Recommended Hobbies: 6 hobbies + 5-star ratings), Right (Skills Developed: 6 skill icons + labels). 3. Guidelines: 6 blocks (3 NO rules + 3 YES tips) with cartoon icons. 4. Bottom: Time Recommendation + Core Principle. Overall Style: Clean rounded-corner UI, soft pastel colors, kawaii cartoon illustrations, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: Best hobbies & skills for {age}-year-old {gender}s.",
+          "parameters": [
+              {
+                  "name": "age",
+                  "label": "Age",
+                  "type": "text",
+                  "placeholder": [
+                      "6",
+                      "5",
+                      "7"
+                  ]
+              },
+              {
+                  "name": "gender",
+                  "label": "Gender",
+                  "type": "text",
+                  "placeholder": [
+                      "BOY",
+                      "GIRL"
+                  ]
+              },
+              {
+                  "name": "hobbies_list",
+                  "label": "Recommended Hobbies",
+                  "type": "text",
+                  "placeholder": [
+                      "Piano, Basketball, Art & Drawing, LEGO & Coding, Swimming, Drums",
+                      "Violin, Ballet Dance, Art & Painting, Guzheng, Swimming, Drama & Theater"
+                  ]
+              },
+              {
+                  "name": "skills_list",
+                  "label": "Skills Developed",
+                  "type": "text",
+                  "placeholder": [
+                      "Musical Sense, Coordination, Creativity, Logic Thinking, Teamwork, Focus",
+                      "Musical Literacy, Graceful Posture, Artistic Taste, Expression, Confidence, Coordination"
+                  ]
+              }
+          ]
+      }
+  },
+  "og_image": "/images/nano_insp_preview/template-child-hobby-skill--6yo-boy-prev.jpg",
+    "topics": "learning"
+}
 ]

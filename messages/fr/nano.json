@@ -973,5 +973,213 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Catégorie de cartes de vocabulaire pour l'apprentissage des langues",
+    "description": "Créez des cartes de vocabulaire bilingues visuellement engageantes qui combinent des mots anglais, des significations chinoises et une prononciation dans un format éducatif clair.",
+    "title": "Nano Banana Prompt : Générateur de cartes de vocabulaire bilingues | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise des invites structurées de Nano Banana pour générer des cartes de vocabulaire bilingues de haute qualité. Chaque carte présente des mots anglais accompagnés de traductions chinoises et de pinyin, associés à des illustrations mignonnes et intuitives. La mise en page est conçue pour la clarté, la mémorabilité et l'attrait visuel, ce qui la rend idéale pour l'apprentissage des langues et le contenu éducatif.",
+        "who": "Convient aux apprenants en langues, aux éducateurs ESL, aux apprenants chinois, aux créateurs de contenu éducatif, aux parents enseignant aux enfants, aux concepteurs d'applications de vocabulaire et aux comptes de médias sociaux axés sur le contenu d'apprentissage.",
+        "how": [
+          "Choisissez un sujet (par exemple, Animaux, Nourriture, Météo, Espace).",
+          "Fournissez le titre en anglais et en chinois pour le sujet.",
+          "Définissez des mots de vocabulaire avec la traduction anglaise, la traduction chinoise et le pinyin.",
+          "Générez une carte de vocabulaire basée sur une grille avec des illustrations pour chaque mot.",
+          "Assurez-vous que le design utilise des couleurs douces, une mise en page arrondie et une typographie claire pour la lisibilité."
+        ],
+        "prompts": [
+          "Créez une carte de vocabulaire pour les Animaux : Chat (猫, māo), Chien (狗, gǒu), Oiseau (鸟, niǎo), Poisson (鱼, yú), Lapin (兔子, tù zi), Panda (熊猫, xióng māo), Tigre (老虎, lǎo hǔ), Éléphant (大象, dà xiàng).",
+          "Générez une carte de vocabulaire sur la Nourriture : Pomme (苹果, píng guǒ), Pain (面包, miàn bāo), Lait (牛奶, niú nǎi), Café (咖啡, kā fēi), Riz (米饭, mǐ fàn), Œuf (鸡蛋, jī dàn), Gâteau (蛋糕, dàn gāo), Jus (果汁, guǒ zhī).",
+          "Créez une carte de vocabulaire sur la Météo : Soleil (太阳, tài yáng), Pluie (雨, yǔ), Neige (雪, xuě), Vent (风, fēng), Nuage (云, yún), Tempête (暴风雨, bào fēng yǔ), Brouillard (雾, wù), Arc-en-ciel (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Catégorie d'infographie de série",
+    "description": "Créez des séries d'infographies modulaires et multi-cartes qui décomposent des sujets complexes en chapitres structurés et visuellement cohérents.",
+    "title": "Nano Banana Prompt : Générateur d'infographies de série | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une série cohérente de cartes d'infographie, chacune représentant un chapitre d'un sujet plus large. Le design suit un système visuel cohérent avec des sections structurées telles que le titre, l'illustration centrale, les blocs de contenu modulaires et les points forts du résumé. Il est optimisé pour raconter des histoires à travers plusieurs cartes avec clarté et continuité visuelle.",
+        "who": "Convient aux éducateurs, créateurs de contenu, narrateurs d'affaires, analystes de startups, explicateurs de produits, communicateurs scientifiques et créateurs de médias sociaux produisant du contenu éducatif ou narratif en plusieurs parties.",
+        "how": [
+          "Définissez un sujet de série (par exemple, tendances de l'IA, processus de cycle de vie, systèmes culturels).",
+          "Décomposez le sujet en sections ou chapitres structurés.",
+          "Attribuez un style visuel (par exemple, illustration plate, dessin animé, aquarelle, diagramme technique).",
+          "Concevez chaque carte avec un titre, un visuel central et des blocs d'explication modulaires.",
+          "Ajoutez un résumé ou un point à retenir en bas de chaque carte."
+        ],
+        "prompts": [
+          "Créez une infographie de série sur 'Le cycle de vie d'un papillon' avec des sections : Vue d'ensemble, Stade de l'œuf, Stade de la larve, Stade de la chrysalide, Stade adulte, et incluez des illustrations pastel douces.",
+          "Générez une infographie multi-cartes pour 'Les défis de la stratégie IA de Microsoft' avec des sections sur la stratégie, la concurrence, les partenariats, les risques et les perspectives futures dans un style d'illustration technologique propre.",
+          "Créez une infographie de série sur 'Guide de l'intelligence émotionnelle' avec des chapitres sur la conscience, la régulation, l'empathie, la communication et la croissance, en utilisant des visuels de dessin animé amicaux."
+        ]
+      }
+    }
+  },
+  "template-english-top5-phrases": {
+    "category": "Cartes d'expressions en anglais pour l'apprentissage",
+    "description": "Créez de jolies cartes bilingues des 5 meilleures phrases en anglais pour les enfants, combinant des expressions courantes avec des visuels clairs et des traductions.",
+    "title": "Nano Banana Prompt : Cartes d'apprentissage des 5 meilleures phrases en anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise les prompts de Nano Banana pour générer des cartes d'expressions bilingues 'Top 5' en anglais conçues pour les enfants. Chaque carte présente cinq phrases couramment utilisées avec du texte en anglais, des traductions en chinois et des illustrations de dessins animés assorties dans une mise en page propre et colorée.",
+        "who": "Convient aux parents, aux éducateurs de la petite enfance, aux enseignants d'anglais langue seconde, aux créateurs d'apprentissage des langues, aux familles qui font l'école à la maison et aux comptes de médias sociaux axés sur le contenu éducatif pour les enfants.",
+        "how": [
+          "Choisissez un sujet de communication pratique tel que les salutations, les excuses ou les compliments.",
+          "Écrivez un titre clair en anglais et son équivalent en chinois.",
+          "Fournissez cinq expressions anglaises couramment utilisées avec les traductions correspondantes en chinois.",
+          "Assurez-vous que chaque phrase est simple, naturelle et adaptée à l'âge.",
+          "Générez la carte avec des sections colorées et des illustrations de dessins animés assorties pour chaque phrase."
+        ],
+        "prompts": [
+          "Créez une carte des 5 façons de dire merci avec les phrases : Merci !, Merci beaucoup !, Je l'apprécie !, C'est très gentil de votre part !, Je suis reconnaissant !",
+          "Générez une carte des 5 façons de saluer les autres avec les phrases : Bonjour !, Salut !, Comment ça va ?, Enchanté de vous rencontrer !, Bonjour !",
+          "Créez une carte des 5 façons de dire au revoir avec les phrases : Au revoir !, À plus tard !, Prenez soin de vous !, À bientôt !, À très vite !"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "Cartes de correction d'erreurs en anglais",
+    "description": "Générez des cartes de correction d'erreurs en anglais bilingues qui comparent des phrases incorrectes et correctes avec des explications et des visuels clairs.",
+    "title": "Nano Banana Prompt : Cartes d'apprentissage de correction d'erreurs en anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée des cartes de correction en anglais bilingues qui mettent en évidence les erreurs courantes des apprenants à travers des comparaisons côte à côte. Chaque carte contraste visuellement les phrases incorrectes et correctes avec un formatage clair et des illustrations adaptées aux enfants.",
+        "who": "Convient aux apprenants d'anglais langue seconde, aux enseignants, aux parents, aux centres de tutorat, aux créateurs d'apprentissage des langues et aux plateformes de contenu éducatif axées sur l'amélioration de la grammaire.",
+        "how": [
+          "Sélectionnez un sujet de grammaire tel que le temps, les prépositions ou la structure de la phrase.",
+          "Fournissez des phrases d'exemple incorrectes qui reflètent les erreurs courantes des apprenants.",
+          "Écrivez les versions corrigées de chaque phrase.",
+          "Assurez-vous que les explications sont simples et intuitives pour les apprenants.",
+          "Générez une carte visuelle avec une comparaison claire ❌ vs ✅ et des illustrations de soutien."
+        ],
+        "prompts": [
+          "Créez une carte de correction d'erreurs en anglais pour les erreurs de temps : incorrect 'I go to the park yesterday' vs correct 'I went to the park yesterday'.",
+          "Générez une carte d'erreurs de questions : incorrect 'You are a student?' vs correct 'Are you a student?'.",
+          "Créez une carte d'erreurs de prépositions : incorrect 'I arrive in Monday' vs correct 'I arrive on Monday'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "Cartes de scènes de dialogue en anglais",
+    "description": "Créez des cartes de scènes de dialogue en anglais bilingues qui simulent des conversations réelles avec des contextes illustrés et des discours basés sur des rôles.",
+    "title": "Nano Banana Prompt : Cartes d'apprentissage de scènes de dialogue en anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes de dialogue en anglais bilingues situées dans des scénarios quotidiens tels que des restaurants, des écoles ou des magasins. Chaque carte combine une scène illustrée centrale avec des échanges conversationnels structurés entre les personnages.",
+        "who": "Convient aux débutants en anglais langue seconde, aux enfants apprenant l'anglais, aux enseignants, aux parents, aux applications linguistiques et aux créateurs de contenu axés sur la pratique de l'anglais conversationnel.",
+        "how": [
+          "Choisissez un scénario de la vie réelle tel que le shopping, les salutations ou le repas.",
+          "Définissez les rôles de deux interlocuteurs (par exemple, serveur et enfant).",
+          "Écrivez 4 à 5 courts échanges conversationnels en anglais.",
+          "Fournissez des traductions claires en chinois pour chaque ligne.",
+          "Générez la carte avec une illustration de scène centrale et des bulles de dialogue codées par couleur."
+        ],
+        "prompts": [
+          "Créez une carte de dialogue au restaurant : conversation entre le serveur et l'enfant incluant la commande de nourriture et de boissons.",
+          "Générez un dialogue de shopping : enfant et commerçant discutant du prix et de l'achat.",
+          "Créez un dialogue de salutation : deux enfants se rencontrant et se présentant."
+        ]
+      }
+    }
+  },
+  "template-movie-poster": {
+    "category": "Cartes Infographiques & Résumés de Films",
+    "description": "Créez des affiches infographiques de films générées par IA avec distribution, résumé de l'intrigue, récompenses et scènes emblématiques. Parfait pour les résumés de films, les critiques de films et le contenu sur les réseaux sociaux.",
+    "title": "Générateur d'Affiches de Films & Résumés de Films IA (Style Infographique) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des affiches infographiques de films alimentées par IA qui combinent des résumés d'intrigue, des détails sur la distribution, des récompenses et des scènes emblématiques en une carte visuellement engageante et partageable. Il fonctionne à la fois comme un générateur de résumés de films et un outil de narration visuelle.",
+        "who": "Idéal pour les fans de cinéma, les blogueurs de films, les critiques YouTube, les créateurs TikTok, les éducateurs et les pages de réseaux sociaux partageant des résumés et des analyses de films.",
+        "how": [
+          "Entrez un titre de film et un sous-titre.",
+          "Ajoutez l'année de sortie, le réalisateur et la distribution principale.",
+          "Écrivez un court résumé de l'intrigue du film.",
+          "Incluez des récompenses, des évaluations ou des réalisations.",
+          "Mettez en avant des scènes emblématiques ou des citations célèbres.",
+          "Générez une affiche infographique de film partageable."
+        ],
+        "prompts": [
+          "Créez un résumé infographique du film Titanic avec distribution et récompenses.",
+          "Générez une affiche du film La La Land avec des points forts de l'histoire et de la musique.",
+          "Créez une carte de résumé de Forrest Gump avec des citations et des scènes clés."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Cartes de Planification d'Itinéraire de Voyage & Guide",
+    "description": "Générez des plans d'itinéraire de voyage IA avec des horaires quotidiens, des cartes, des recommandations de nourriture et des attractions. Parfait pour la planification de voyages et la création de contenu de voyage.",
+    "title": "Générateur de Planificateur d'Itinéraire de Voyage IA & Guide de Voyage (Plans Quotidiens) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des plans d'itinéraire de voyage alimentés par IA incluant des guides de destination, des horaires quotidiens, des cartes, des recommandations de nourriture et des conseils de transport. Il agit comme un planificateur de voyage complet et un générateur de guides de voyage.",
+        "who": "Parfait pour les voyageurs, les blogueurs de voyage, les nomades numériques, les planificateurs de voyage, les agences et les créateurs de contenu partageant des guides de voyage.",
+        "how": [
+          "Entrez une destination et la durée du voyage.",
+          "Listez les plats populaires et les attractions incontournables.",
+          "Définissez les options de transport.",
+          "Planifiez des activités quotidiennes (matin, après-midi, soir).",
+          "Générez un itinéraire de voyage complet avec des cartes visuelles."
+        ],
+        "prompts": [
+          "Créez un itinéraire de voyage de 5 jours au Japon avec des plans quotidiens.",
+          "Générez un planificateur de voyage de 3 jours en Italie avec nourriture et attractions.",
+          "Créez un guide de voyage en Thaïlande avec itinéraire et conseils de transport."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Cartes de Plan de Perte de Poids & Fitness",
+    "description": "Créez des plans de perte de poids de 1 semaine générés par IA avec des plans de repas, des routines d'entraînement et des stratégies de perte de graisse. Idéal pour les débutants en fitness et le suivi de la santé.",
+    "title": "Générateur de Plan de Perte de Poids de 1 Semaine IA (Plan de Repas + Entraînement) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des plans de perte de poids personnalisés alimentés par IA combinant des plans de régime, des horaires d'entraînement, des objectifs d'hydratation et des conseils de fitness en un programme structuré de perte de graisse de 7 jours.",
+        "who": "Idéal pour les débutants, les passionnés de fitness, les utilisateurs de salle de sport, les entraîneurs personnels et les créateurs de contenu partageant des parcours de perte de poids.",
+        "how": [
+          "Entrez votre sexe, votre taille et votre poids actuel.",
+          "Définissez un objectif de perte de poids.",
+          "Personnalisez les repas quotidiens et les objectifs d'hydratation.",
+          "Ajoutez des routines d'entraînement hebdomadaires.",
+          "Générez un plan de perte de poids structuré de 7 jours."
+        ],
+        "prompts": [
+          "Créez un plan de perte de poids de 1 semaine pour perdre 6 kg.",
+          "Générez un plan de régime et d'entraînement pour débutants.",
+          "Créez un plan de perte de graisse avec cardio et emploi du temps des repas."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Cartes d'Apprentissage & Développement de Compétences pour Enfants",
+    "description": "Générez des plans d'apprentissage personnalisés pour enfants avec des idées de loisirs et de développement de compétences par âge. Idéal pour les parents, l'éducation précoce et la planification du développement de l'enfant.",
+    "title": "Meilleurs Loisirs & Compétences pour Enfants par Âge (Planificateur d'Apprentissage IA) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes d'apprentissage et de développement pour enfants alimentées par IA recommandant des loisirs et des compétences en fonction de l'âge. Il aide les parents à planifier l'éducation précoce et les activités de développement des compétences.",
+        "who": "Conçu pour les parents, les enseignants, les familles d'instruction à domicile, les plateformes éducatives et les créateurs de contenu sur le développement de l'enfant.",
+        "how": [
+          "Entrez l'âge et le sexe de l'enfant.",
+          "Sélectionnez des loisirs recommandés.",
+          "Définissez les compétences clés à développer.",
+          "Ajoutez des conseils d'apprentissage et des orientations d'activité.",
+          "Générez une carte de plan d'apprentissage structurée pour enfants."
+        ],
+        "prompts": [
+          "Meilleurs loisirs pour un garçon de 6 ans.",
+          "Plan de développement de compétences pour enfants par âge.",
+          "Activités d'apprentissage pour enfants avec avantages."
+        ]
+      }
+    }
   }
 }

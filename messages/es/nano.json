@@ -973,5 +973,213 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Categoría de Tarjetas de Aprendizaje de Idiomas",
+    "description": "Crea tarjetas de vocabulario bilingües visualmente atractivas que combinan palabras en inglés, significados en chino y pronunciación en un formato limpio y educativo.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Vocabulario Bilingüe | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza prompts estructurados de Nano Banana para generar tarjetas de vocabulario bilingües de alta calidad. Cada tarjeta presenta palabras en inglés junto a traducciones en chino y pinyin, acompañadas de ilustraciones lindas e intuitivas. El diseño está pensado para la claridad, la memorización y el atractivo visual, lo que la hace ideal para el aprendizaje de idiomas y contenido educativo.",
+        "who": "Adecuado para estudiantes de idiomas, educadores de ESL, estudiantes de chino, creadores de contenido educativo, padres que enseñan a sus hijos, diseñadores de aplicaciones de vocabulario y cuentas de redes sociales enfocadas en contenido de aprendizaje.",
+        "how": [
+          "Elige un tema (por ejemplo, Animales, Comida, Clima, Espacio).",
+          "Proporciona el título en inglés y chino para el tema.",
+          "Define palabras de vocabulario con traducción en inglés, chino y pinyin.",
+          "Genera una tarjeta de vocabulario basada en una cuadrícula con ilustraciones para cada palabra.",
+          "Asegúrate de que el diseño utilice colores suaves, un diseño redondeado y tipografía clara para la legibilidad."
+        ],
+        "prompts": [
+          "Crea una tarjeta de vocabulario para Animales: Gato (猫, māo), Perro (狗, gǒu), Pájaro (鸟, niǎo), Pez (鱼, yú), Conejo (兔子, tù zi), Panda (熊猫, xióng māo), Tigre (老虎, lǎo hǔ), Elefante (大象, dà xiàng).",
+          "Genera una tarjeta de vocabulario de Comida: Manzana (苹果, píng guǒ), Pan (面包, miàn bāo), Leche (牛奶, niú nǎi), Café (咖啡, kā fēi), Arroz (米饭, mǐ fàn), Huevo (鸡蛋, jī dàn), Pastel (蛋糕, dàn gāo), Jugo (果汁, guǒ zhī).",
+          "Crea una tarjeta de vocabulario de Clima: Sol (太阳, tài yáng), Lluvia (雨, yǔ), Nieve (雪, xuě), Viento (风, fēng), Nube (云, yún), Tormenta (暴风雨, bào fēng yǔ), Niebla (雾, wù), Arcoíris (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Categoría de Infografía de Series",
+    "description": "Crea series de infografías modulares y de múltiples tarjetas que descomponen temas complejos en capítulos estructurados y visualmente consistentes.",
+    "title": "Nano Banana Prompt: Generador de Infografías de Series | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una serie cohesiva de tarjetas infográficas, cada una representando un capítulo de un tema más grande. El diseño sigue un sistema visual consistente con secciones estructuradas como título, ilustración central, bloques de contenido modulares y resúmenes destacados. Está optimizado para contar historias a través de múltiples tarjetas con claridad y continuidad visual.",
+        "who": "Adecuado para educadores, creadores de contenido, narradores de negocios, analistas de startups, explicadores de productos, comunicadores científicos y creadores de redes sociales que producen contenido educativo o narrativo en múltiples partes.",
+        "how": [
+          "Define un tema de serie (por ejemplo, tendencias de IA, procesos de ciclo de vida, sistemas culturales).",
+          "Descompón el tema en secciones o capítulos estructurados.",
+          "Asigna un estilo visual (por ejemplo, ilustración plana, caricatura, acuarela, diagrama técnico).",
+          "Diseña cada tarjeta con un título, visual central y bloques de explicación modulares.",
+          "Agrega un resumen destacado o conclusión en la parte inferior de cada tarjeta."
+        ],
+        "prompts": [
+          "Crea una infografía de serie sobre 'El Ciclo de Vida de una Mariposa' con secciones: Visión General, Etapa de Huevo, Etapa de Larva, Etapa de Pupa, Etapa de Adulto, e incluye ilustraciones suaves en tonos pastel.",
+          "Genera una infografía de múltiples tarjetas para 'Desafíos de la Estrategia de IA de Microsoft' con secciones sobre estrategia, competencia, asociaciones, riesgos y perspectivas futuras en un estilo de ilustración técnica limpia.",
+          "Crea una infografía de serie sobre 'Guía de Inteligencia Emocional' con capítulos sobre conciencia, regulación, empatía, comunicación y crecimiento, utilizando visuales amigables de caricaturas."
+        ]
+      }
+    }
+  },
+  "template-english-top5-phrases": {
+    "category": "Tarjetas de Expresiones en Inglés",
+    "description": "Crea lindas tarjetas bilingües de las 5 mejores frases en inglés para niños, combinando expresiones cotidianas con visuales claras y traducciones.",
+    "title": "Nano Banana Prompt: Tarjetas de Aprendizaje de las 5 Mejores Frases en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza los prompts de Nano Banana para generar tarjetas bilingües de 'Top 5' expresiones en inglés diseñadas para niños. Cada tarjeta presenta cinco frases de uso común con texto en inglés, traducciones al chino e ilustraciones de dibujos animados que coinciden en un diseño limpio y colorido.",
+        "who": "Adecuado para padres, educadores de la primera infancia, maestros de ESL, creadores de aprendizaje de idiomas, familias que educan en casa y cuentas de redes sociales enfocadas en contenido educativo para niños.",
+        "how": [
+          "Elige un tema de comunicación práctico como saludos, disculpas o cumplidos.",
+          "Escribe un título claro en inglés y su equivalente en chino.",
+          "Proporciona cinco expresiones en inglés de uso común con sus traducciones correspondientes al chino.",
+          "Asegúrate de que cada frase sea simple, natural y apropiada para la edad.",
+          "Genera la tarjeta con secciones coloridas e ilustraciones de dibujos animados que coincidan para cada frase."
+        ],
+        "prompts": [
+          "Crea una tarjeta de las 5 maneras de decir gracias con frases: ¡Gracias!, ¡Muchas gracias!, ¡Lo aprecio!, ¡Es muy amable de tu parte!, ¡Estoy agradecido!",
+          "Genera una tarjeta de las 5 maneras de saludar a otros con frases: ¡Hola!, ¡Hola!, ¿Cómo estás?, ¡Encantado de conocerte!, ¡Buenos días!",
+          "Crea una tarjeta de las 5 maneras de despedirse con frases: ¡Adiós!, ¡Hasta luego!, ¡Cuídate!, ¡Hasta pronto!, ¡Nos vemos pronto!"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "Tarjetas de Corrección de Errores en Inglés",
+    "description": "Genera tarjetas bilingües de corrección de errores en inglés que comparan oraciones incorrectas vs correctas con explicaciones y visuales claras.",
+    "title": "Nano Banana Prompt: Tarjetas de Aprendizaje de Corrección de Errores en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea tarjetas de corrección en inglés bilingües que destacan errores comunes de los aprendices a través de comparaciones lado a lado. Cada tarjeta contrasta visualmente oraciones incorrectas y correctas con un formato claro e ilustraciones amigables para niños.",
+        "who": "Adecuado para aprendices de ESL, maestros, padres, centros de tutoría, creadores de aprendizaje de idiomas y plataformas de contenido educativo enfocadas en la mejora de la gramática.",
+        "how": [
+          "Selecciona un tema gramatical como tiempos, preposiciones o estructura de oraciones.",
+          "Proporciona oraciones de ejemplo incorrectas que reflejen errores comunes de los aprendices.",
+          "Escribe las versiones corregidas de cada oración.",
+          "Asegúrate de que las explicaciones sean simples e intuitivas para los aprendices.",
+          "Genera una tarjeta visual con una comparación clara ❌ vs ✅ y ilustraciones de apoyo."
+        ],
+        "prompts": [
+          "Crea una tarjeta de corrección de errores en inglés para errores de tiempo: incorrecto 'I go to the park yesterday' vs correcto 'I went to the park yesterday'.",
+          "Genera una tarjeta de errores de pregunta: incorrecto 'You are a student?' vs correcto 'Are you a student?'.",
+          "Crea una tarjeta de errores de preposición: incorrecto 'I arrive in Monday' vs correcto 'I arrive on Monday'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "Tarjetas de Escena de Diálogo en Inglés",
+    "description": "Crea tarjetas de escena de diálogo en inglés bilingües que simulan conversaciones de la vida real con contextos ilustrados y diálogos basados en roles.",
+    "title": "Nano Banana Prompt: Tarjetas de Aprendizaje de Escena de Diálogo en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de diálogo en inglés bilingües ambientadas en escenarios cotidianos como restaurantes, escuelas o tiendas. Cada tarjeta combina una escena ilustrada central con intercambios conversacionales estructurados entre personajes.",
+        "who": "Adecuado para principiantes de ESL, niños que aprenden inglés, maestros, padres, aplicaciones de idiomas y creadores de contenido que se enfocan en la práctica del inglés conversacional.",
+        "how": [
+          "Elige un escenario de la vida real como compras, saludos o cenas.",
+          "Define los roles de dos hablantes (por ejemplo, camarero y niño).",
+          "Escribe 4–5 intercambios conversacionales cortos en inglés.",
+          "Proporciona traducciones claras al chino para cada línea.",
+          "Genera la tarjeta con una ilustración de escena central y burbujas de diálogo codificadas por colores."
+        ],
+        "prompts": [
+          "Crea una tarjeta de diálogo en un restaurante: conversación entre el camarero y el niño incluyendo el pedido de comida y bebidas.",
+          "Genera un diálogo de compras: niño y tendero discutiendo precio y compra.",
+          "Crea un diálogo de saludo: dos niños encontrándose y presentándose."
+        ]
+      }
+    }
+  },
+  "template-movie-poster": {
+    "category": "Tarjetas de Infografía y Resumen de Películas",
+    "description": "Crea carteles de infografía de películas generados por IA con elenco, resumen de la trama, premios y escenas icónicas. Perfecto para resúmenes de películas, críticas de cine y contenido en redes sociales.",
+    "title": "Generador de Carteles de Películas y Resúmenes de Cine con IA (Estilo Infografía) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera carteles de infografía de películas impulsados por IA que combinan resúmenes de tramas, detalles del elenco, premios y escenas icónicas en una tarjeta visualmente atractiva y compartible. Funciona como generador de resúmenes de películas y herramienta de narración visual.",
+        "who": "Ideal para fanáticos del cine, bloggers de cine, revisores de YouTube, creadores de TikTok, educadores y páginas de redes sociales que comparten resúmenes y análisis de películas.",
+        "how": [
+          "Ingresa un título de película y un subtítulo.",
+          "Agrega el año de estreno, director y elenco principal.",
+          "Escribe un breve resumen de la trama de la película.",
+          "Incluye premios, calificaciones o logros.",
+          "Destaca escenas icónicas o citas famosas.",
+          "Genera un cartel de infografía de película compartible."
+        ],
+        "prompts": [
+          "Crea un resumen de infografía de la película Titanic con elenco y premios.",
+          "Genera un cartel de la película La La Land con historia y momentos musicales destacados.",
+          "Crea una tarjeta de resumen de Forrest Gump con citas y escenas clave."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Tarjetas de Planificador de Itinerarios de Viaje y Guía",
+    "description": "Genera planes de itinerarios de viaje con IA con horarios diarios, mapas, recomendaciones de comida y atracciones. Perfecto para la planificación de viajes y la creación de contenido de viaje.",
+    "title": "Generador de Planificador de Itinerarios de Viaje con IA y Guía de Viaje (Planes Diarios) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera planes de itinerarios de viaje impulsados por IA que incluyen guías de destinos, horarios diarios, mapas, recomendaciones de comida y consejos de transporte. Actúa como un planificador de viajes completo y generador de guías de viaje.",
+        "who": "Perfecto para viajeros, bloggers de viajes, nómadas digitales, planificadores de viajes, agencias y creadores de contenido que comparten guías de viaje.",
+        "how": [
+          "Ingresa un destino y la duración del viaje.",
+          "Enumera comidas populares y atracciones imprescindibles.",
+          "Define opciones de transporte.",
+          "Planifica actividades diarias (mañana, tarde, noche).",
+          "Genera un itinerario de viaje completo con tarjetas visuales."
+        ],
+        "prompts": [
+          "Crea un itinerario de viaje de 5 días a Japón con planes diarios.",
+          "Genera un planificador de viaje de 3 días a Italia con comida y atracciones.",
+          "Crea una guía de viaje a Tailandia con itinerario y consejos de transporte."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Tarjetas de Planes de Pérdida de Peso y Fitness",
+    "description": "Crea planes de pérdida de peso de 1 semana generados por IA con planes de comidas, rutinas de ejercicios y estrategias de pérdida de grasa. Ideal para principiantes en fitness y seguimiento de salud.",
+    "title": "Generador de Plan de Pérdida de Peso de 1 Semana con IA (Plan de Comidas + Ejercicio) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera planes de pérdida de peso personalizados con IA que combinan planes de dieta, horarios de ejercicios, objetivos de hidratación y consejos de fitness en un programa estructurado de pérdida de grasa de 7 días.",
+        "who": "Genial para principiantes, entusiastas del fitness, usuarios de gimnasio, entrenadores personales y creadores de contenido que comparten sus viajes de pérdida de peso.",
+        "how": [
+          "Ingresa tu género, altura y peso actual.",
+          "Establece un objetivo de pérdida de peso.",
+          "Personaliza las comidas diarias y los objetivos de hidratación.",
+          "Agrega rutinas de ejercicios semanales.",
+          "Genera un plan de pérdida de peso estructurado de 7 días."
+        ],
+        "prompts": [
+          "Crea un plan de pérdida de peso de 1 semana para perder 6 kg.",
+          "Genera un plan de dieta y ejercicio para principiantes.",
+          "Crea un plan de pérdida de grasa con horario de cardio y comidas."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Tarjetas de Aprendizaje y Desarrollo de Habilidades para Niños",
+    "description": "Genera planes de aprendizaje personalizados para niños con ideas de hobbies y desarrollo de habilidades por edad. Ideal para padres, educación temprana y planificación del desarrollo infantil.",
+    "title": "Mejores Hobbies y Habilidades para Niños por Edad (Planificador de Aprendizaje IA) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de aprendizaje y desarrollo para niños impulsadas por IA que recomiendan hobbies y habilidades según la edad. Ayuda a los padres a planificar actividades de educación temprana y desarrollo de habilidades.",
+        "who": "Diseñado para padres, maestros, familias que educan en casa, plataformas educativas y creadores de contenido sobre desarrollo infantil.",
+        "how": [
+          "Ingresa la edad y el género del niño.",
+          "Selecciona hobbies recomendados.",
+          "Define habilidades clave a desarrollar.",
+          "Agrega consejos de aprendizaje y orientación de actividades.",
+          "Genera una tarjeta de plan de aprendizaje estructurada para niños."
+        ],
+        "prompts": [
+          "Mejores hobbies para un niño de 6 años.",
+          "Plan de desarrollo de habilidades para niños por edad.",
+          "Actividades de aprendizaje para niños con beneficios."
+        ]
+      }
+    }
   }
 }

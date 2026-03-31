@@ -11,6 +11,8 @@ import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
 import { routing } from "@/i18n/routing";
+import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
+
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
 import EntryBar from "@/app/[locale]/_components/EntryBar";
@@ -42,13 +44,15 @@ export default async function AppLocaleLayout({
       </head>
 
       <body suppressHydrationWarning>
+      <GoogleAnalyticsInit />
+
         <GoogleAnalyticsTracker />
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppWrapper user={null}>
             <Header />
 
-            <main className="ml-[300px] min-h-screen">
+            <main className="min-h-screen lg:ml-[300px]">
               <TopUpModal />
               <SignDrawer />          
 

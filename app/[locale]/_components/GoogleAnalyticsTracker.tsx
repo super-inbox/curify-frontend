@@ -32,6 +32,14 @@ export default function GoogleAnalyticsTracker() {
       page_location: pageLocation,
       page_path: pagePath,
     });
+
+    if (process.env.NODE_ENV !== "production") {
+      console.log("[GA] page_view", {
+        page_title: document.title,
+        page_location: pageLocation,
+        page_path: pagePath,
+      });
+    }
   }, [pathname, searchParams]);
 
   return null;

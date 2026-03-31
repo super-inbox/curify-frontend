@@ -13,6 +13,8 @@ import TopUpModal from "../_componentForPage/TopUpModal";
 import SignDrawer from "../_componentForPage/drawer/SignDrawer";
 import AppWrapper from "../_layout_components/AppWrapper";
 import { Toaster } from "react-hot-toast";
+import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
+
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
@@ -67,6 +69,8 @@ export default async function PublicLocaleLayout({
       <head>{/* keep existing scripts */}</head>
 
       <body suppressHydrationWarning>
+      <GoogleAnalyticsInit />
+
         <GoogleAnalyticsTracker />
         <Script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" strategy="afterInteractive" />
         <Script id="init-mermaid" strategy="afterInteractive">
@@ -91,12 +95,12 @@ export default async function PublicLocaleLayout({
           <AppWrapper user={null}>
             <Header />
 
-            <main className="ml-[300px] min-h-screen">
+            <main className="min-h-screen lg:ml-[300px]">
               <TopUpModal />
               <SignDrawer />
             
               {!isBlogPage && (
-                <div className="sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
+                  <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
                   <div className="mx-auto max-w-[1280px] px-6 sm:px-10">
                     {/* ✅ Narrower EntryBar */}
                     <div className="w-full max-w-[900px]">

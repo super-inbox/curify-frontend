@@ -973,5 +973,213 @@
         ]
       }
     }
+  },
+  "template-vocabulary": {
+    "category": "Dil Öğrenme Kartı Kategorisi",
+    "description": "İngilizce kelimeleri, Çince anlamları ve telaffuzları temiz, eğitici bir formatta birleştiren görsel olarak etkileyici iki dilli kelime kartları oluşturun.",
+    "title": "Nano Banana Prompt: İki Dilli Kelime Kartı Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yüksek kaliteli iki dilli kelime kartları oluşturmak için yapılandırılmış Nano Banana istemlerini kullanır. Her kart, İngilizce kelimeleri Çince çevirileri ve pinyin ile birlikte sunar, sevimli ve sezgisel illüstrasyonlarla eşleştirilmiştir. Düzen, netlik, akılda kalıcılık ve görsel çekicilik için tasarlanmıştır, bu da dil öğrenimi ve eğitim içeriği için idealdir.",
+        "who": "Dil öğrenicileri, ESL eğitmenleri, Çince öğrenenler, eğitim içerik üreticileri, çocuklara öğretim yapan ebeveynler, kelime uygulaması tasarımcıları ve öğrenme içeriğine odaklanan sosyal medya hesapları için uygundur.",
+        "how": [
+          "Bir konu seçin (örn. Hayvanlar, Gıda, Hava Durumu, Uzay).",
+          "Konu için İngilizce ve Çince başlığı sağlayın.",
+          "İngilizce, Çince çeviri ve pinyin ile kelime dağarcığı kelimelerini tanımlayın.",
+          "Her kelime için illüstrasyonlarla birlikte ızgara tabanlı bir kelime kartı oluşturun.",
+          "Tasarımın okunabilirlik için yumuşak renkler, yuvarlak düzen ve net tipografi kullandığından emin olun."
+        ],
+        "prompts": [
+          "Hayvanlar için bir kelime kartı oluşturun: Kedi (猫, māo), Köpek (狗, gǒu), Kuş (鸟, niǎo), Balık (鱼, yú), Tavşan (兔子, tù zi), Panda (熊猫, xióng māo), Kaplan (老虎, lǎo hǔ), Fil (大象, dà xiàng).",
+          "Bir Gıda kelime kartı oluşturun: Elma (苹果, píng guǒ), Ekmek (面包, miàn bāo), Süt (牛奶, niú nǎi), Kahve (咖啡, kā fēi), Pirinç (米饭, mǐ fàn), Yumurta (鸡蛋, jī dàn), Kek (蛋糕, dàn gāo), Meyve Suyu (果汁, guǒ zhī).",
+          "Bir Hava Durumu kelime kartı oluşturun: Güneş (太阳, tài yáng), Yağmur (雨, yǔ), Kar (雪, xuě), Rüzgar (风, fēng), Bulut (云, yún), Fırtına (暴风雨, bào fēng yǔ), Sis (雾, wù), Gökkuşağı (彩虹, cǎi hóng)."
+        ]
+      }
+    }
+  },
+  "template-series-infographic": {
+    "category": "Seri İnfografik Kategorisi",
+    "description": "Karmaşık konuları yapılandırılmış, görsel olarak tutarlı bölümlere ayıran modüler, çok kartlı infografik serileri oluşturun.",
+    "title": "Nano Banana Prompt: Seri İnfografik Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her biri daha büyük bir konunun bir bölümünü temsil eden uyumlu bir infografik kartları serisi oluşturur. Tasarım, başlık, merkezi illüstrasyon, modüler içerik blokları ve özet vurguları gibi yapılandırılmış bölümlerle tutarlı bir görsel sistem izler. Birden fazla kartta hikaye anlatımı için netlik ve görsel süreklilik sağlamak üzere optimize edilmiştir.",
+        "who": "Eğitmenler, içerik üreticileri, iş hikaye anlatıcıları, girişim analistleri, ürün açıklayıcıları, bilim iletişimcileri ve çok parçalı eğitim veya anlatı içeriği üreten sosyal medya yaratıcıları için uygundur.",
+        "how": [
+          "Bir seri konusu tanımlayın (örn. AI trendleri, yaşam döngüsü süreçleri, kültürel sistemler).",
+          "Konuyu yapılandırılmış bölümlere veya bölümlere ayırın.",
+          "Bir görsel stil atayın (örn. düz illüstrasyon, karikatür, sulu boya, teknoloji diyagramı).",
+          "Her kartı bir başlık, merkezi görsel ve modüler açıklama blokları ile tasarlayın.",
+          "Her kartın altına vurgulanmış bir özet veya çıkarım ekleyin."
+        ],
+        "prompts": [
+          "'Bir Kelebeğin Yaşam Döngüsü' üzerine bir seri infografik oluşturun; bölümler: Genel Bakış, Yumurtlama Aşaması, Larva Aşaması, Pupa Aşaması, Yetişkin Aşaması ve yumuşak pastel illüstrasyonlar ekleyin.",
+          "'Microsoft'un AI Strateji Zorlukları' için strateji, rekabet, ortaklıklar, riskler ve gelecekteki görünüm üzerine bölümlerle temiz bir teknoloji illüstrasyon tarzında çok kartlı bir infografik oluşturun.",
+          "'Duygusal Zeka Rehberi' üzerine bir seri infografik oluşturun; bölümler: farkındalık, düzenleme, empati, iletişim ve büyüme, dostça karikatür görselleri kullanarak."
+        ]
+      }
+    }
+  },
+  "template-english-top5-phrases": {
+    "category": "İngilizce Öğrenme İfade Kartları",
+    "description": "Günlük ifadeleri net görseller ve çevirilerle birleştirerek çocuklar için sevimli iki dilli Top 5 İngilizce ifade kartları oluşturun.",
+    "title": "Nano Banana Prompt: Top 5 İngilizce İfadeler Öğrenme Kartları | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, çocuklar için tasarlanmış iki dilli 'Top 5' İngilizce ifade kartları oluşturmak için Nano Banana istemlerini kullanır. Her kart, İngilizce metin, Çince çeviriler ve uyumlu çizgi film illüstrasyonları ile temiz, renkli bir düzen içinde beş yaygın kullanılan ifadeyi sunar.",
+        "who": "Ebeveynler, erken çocukluk eğitmenleri, ESL öğretmenleri, dil öğrenme içerik üreticileri, evde eğitim yapan aileler ve çocuk eğitimi içeriğine odaklanan sosyal medya hesapları için uygundur.",
+        "how": [
+          "Selamlaşma, özür dileme veya iltifat gibi pratik bir iletişim konusu seçin.",
+          "Açık bir İngilizce başlık ve onun Çince karşılığını yazın.",
+          "Karşılık gelen Çince çevirilerle birlikte beş yaygın kullanılan İngilizce ifadeyi sağlayın.",
+          "Her ifadenin basit, doğal ve yaşa uygun olmasını sağlayın.",
+          "Her ifade için renkli bölümler ve uyumlu çizgi film illüstrasyonları ile kartı oluşturun."
+        ],
+        "prompts": [
+          "Teşekkür etmenin 5 Yolu kartını oluşturun: Teşekkür ederim!, Çok teşekkürler!, Bunu takdir ediyorum!, Ne kadar naziksiniz!, Minnettarım!",
+          "Başkalarını selamlamanın 5 Yolu kartını oluşturun: Merhaba!, Selam!, Nasılsın?, Tanıştığımıza memnun oldum!, Günaydın!",
+          "Hoşça kalmanın 5 Yolu kartını oluşturun: Hoşça kal!, Sonra görüşürüz!, Kendine iyi bak!, Şimdilik hoşça kal!, Görüşürüz!"
+        ]
+      }
+    }
+  },
+  "template-english-error-correction": {
+    "category": "İngilizce Hata Düzeltme Kartları",
+    "description": "Yanlış ve doğru cümleleri net açıklamalar ve görsellerle karşılaştıran iki dilli İngilizce hata düzeltme kartları oluşturun.",
+    "title": "Nano Banana Prompt: İngilizce Hata Düzeltme Öğrenme Kartları | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yaygın öğrenici hatalarını yan yana karşılaştırmalarla vurgulayan iki dilli İngilizce düzeltme kartları oluşturur. Her kart, yanlış ve doğru cümleleri net bir format ve çocuk dostu illüstrasyonlarla görsel olarak karşılaştırır.",
+        "who": "ESL öğrenicileri, öğretmenler, ebeveynler, özel ders merkezleri, dil öğrenme içerik üreticileri ve dil bilgisi geliştirmeye odaklanan eğitim içerik platformları için uygundur.",
+        "how": [
+          "Zaman, edatlar veya cümle yapısı gibi bir dil bilgisi konusu seçin.",
+          "Yaygın öğrenici hatalarını yansıtan yanlış örnek cümleler sağlayın.",
+          "Her cümlenin düzeltilmiş versiyonlarını yazın.",
+          "Açıklamaların öğreniciler için basit ve sezgisel olmasını sağlayın.",
+          "Açık bir ❌ vs ✅ karşılaştırması ve destekleyici illüstrasyonlarla görsel bir kart oluşturun."
+        ],
+        "prompts": [
+          "Zaman Hataları için bir İngilizce hata düzeltme kartı oluşturun: yanlış 'Ben dün parka gidiyorum' vs doğru 'Ben dün parka gittim'.",
+          "Soru Hataları kartını oluşturun: yanlış 'Sen bir öğrencisin?' vs doğru 'Sen bir öğrenci misin?'.",
+          "Edat Hataları kartını oluşturun: yanlış 'Ben pazartesi varıyorum' vs doğru 'Ben pazartesi varıyorum'."
+        ]
+      }
+    }
+  },
+  "template-english-dialogue-scene": {
+    "category": "İngilizce Diyalog Sahne Kartları",
+    "description": "Gerçek yaşam konuşmalarını simüle eden iki dilli İngilizce diyalog sahne kartları oluşturun, illüstrasyonlu bağlamlar ve rol tabanlı konuşmalar ile.",
+    "title": "Nano Banana Prompt: İngilizce Diyalog Sahne Öğrenme Kartları | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, restoranlar, okullar veya dükkanlar gibi günlük senaryolar içinde iki dilli İngilizce diyalog kartları oluşturur. Her kart, karakterler arasında yapılandırılmış konuşma alışverişleri ile merkezi bir illüstrasyonlu sahneyi birleştirir.",
+        "who": "ESL başlangıç seviyesindeki öğrenciler, İngilizce öğrenen çocuklar, öğretmenler, ebeveynler, dil uygulamaları ve konuşma pratiğine odaklanan içerik üreticileri için uygundur.",
+        "how": [
+          "Alışveriş, selamlaşma veya yemek yeme gibi gerçek yaşam senaryolarından birini seçin.",
+          "İki konuşmacının rollerini tanımlayın (örneğin, garson ve çocuk).",
+          "İngilizce 4-5 kısa konuşma alışverişi yazın.",
+          "Her satır için net Çince çeviriler sağlayın.",
+          "Merkezi bir sahne illüstrasyonu ve renk kodlu diyalog balonları ile kartı oluşturun."
+        ],
+        "prompts": [
+          "Bir restoran diyalog kartı oluşturun: Garson ve Çocuk arasında yemek ve içecek siparişi içeren bir konuşma.",
+          "Bir alışveriş diyalogu oluşturun: Çocuk ve Dükkan Sahibi fiyat ve satın alma hakkında konuşuyor.",
+          "Bir selamlaşma diyalogu oluşturun: iki çocuk tanışıyor ve kendilerini tanıtıyor."
+        ]
+      }
+    }
+  },
+  "template-movie-poster": {
+    "category": "Film İnfografiği ve Özet Kartları",
+    "description": "Kadro, konu özeti, ödüller ve ikonik sahnelerle AI tarafından üretilen film infografik posterleri oluşturun. Film özetleri, film incelemeleri ve sosyal medya içerikleri için mükemmel.",
+    "title": "AI Film Posteri ve Film Özeti Üretici (İnfografik Tarzı) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, konu özetleri, kadro detayları, ödüller ve ikonik sahneleri görsel olarak etkileyici, paylaşılabilir bir kartta birleştiren AI destekli film infografik posterleri üretir. Hem bir film özeti üretici hem de görsel hikaye anlatım aracı olarak işlev görür.",
+        "who": "Film hayranları, film blog yazarları, YouTube incelemecileri, TikTok içerik üreticileri, eğitimciler ve film özetleri ve analizleri paylaşan sosyal medya sayfaları için idealdir.",
+        "how": [
+          "Bir film başlığı ve alt başlık girin.",
+          "Çıkış yılı, yönetmen ve ana kadroyu ekleyin.",
+          "Kısa bir film konu özeti yazın.",
+          "Ödülleri, puanları veya başarıları ekleyin.",
+          "İkonik sahneleri veya ünlü alıntıları vurgulayın.",
+          "Paylaşılabilir bir film infografik posteri oluşturun."
+        ],
+        "prompts": [
+          "Kadro ve ödüllerle Titanic film özeti infografiği oluşturun.",
+          "Hikaye ve müzik vurgularıyla La La Land film posteri oluşturun.",
+          "Alıntılar ve ana sahnelerle Forrest Gump özet kartı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-series-travel": {
+    "category": "Seyahat Programı Planlayıcı ve Rehber Kartları",
+    "description": "Günlük programlar, haritalar, yemek önerileri ve cazibe merkezleri ile AI seyahat programı planları oluşturun. Seyahat planlaması ve seyahat içerik oluşturma için mükemmel.",
+    "title": "AI Seyahat Programı Planlayıcı ve Gezi Rehberi Üretici (Günlük Planlar) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, destinasyon rehberleri, günlük programlar, haritalar, yemek önerileri ve ulaşım ipuçları içeren AI destekli seyahat programı planları üretir. Tam bir seyahat planlayıcı ve rehber üretici olarak işlev görür.",
+        "who": "Seyahat edenler, seyahat blog yazarları, dijital göçebeler, seyahat planlayıcıları, ajanslar ve seyahat rehberleri paylaşan içerik oluşturucular için mükemmel.",
+        "how": [
+          "Bir destinasyon ve seyahat süresi girin.",
+          "Popüler yemekleri ve görülmesi gereken cazibe merkezlerini listeleyin.",
+          "Ulaşım seçeneklerini tanımlayın.",
+          "Günlük aktiviteleri planlayın (sabah, öğleden sonra, akşam).",
+          "Görsel kartlarla tam bir seyahat programı oluşturun."
+        ],
+        "prompts": [
+          "Günlük planlarla 5 günlük Japonya seyahat programı oluşturun.",
+          "Yemek ve cazibe merkezleri ile 3 günlük İtalya seyahat planlayıcısı oluşturun.",
+          "Güzergah ve ulaşım ipuçları ile Tayland seyahat rehberi oluşturun."
+        ]
+      }
+    }
+  },
+  "template-fat-loss-plan": {
+    "category": "Kilo Kaybı ve Fitness Plan Kartları",
+    "description": "Yemek planları, egzersiz rutinleri ve yağ kaybı stratejileri ile AI tarafından üretilen 1 haftalık kilo kaybı planları oluşturun. Fitness başlangıçları ve sağlık takibi için idealdir.",
+    "title": "AI 1 Haftalık Kilo Kaybı Planı Üretici (Yemek + Egzersiz Planı) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, diyet planları, egzersiz programları, su tüketim hedefleri ve fitness ipuçlarını bir araya getirerek yapılandırılmış 7 günlük yağ kaybı programı oluşturan kişiselleştirilmiş AI kilo kaybı planları üretir.",
+        "who": "Başlangıçlar, fitness tutkunları, spor salonu kullanıcıları, kişisel antrenörler ve kilo kaybı yolculuklarını paylaşan içerik oluşturucular için harika.",
+        "how": [
+          "Cinsiyetinizi, boyunuzu ve mevcut kilonuzu girin.",
+          "Bir kilo kaybı hedefi belirleyin.",
+          "Günlük yemekleri ve su tüketim hedeflerini özelleştirin.",
+          "Haftalık egzersiz rutinleri ekleyin.",
+          "Yapılandırılmış 7 günlük kilo kaybı planı oluşturun."
+        ],
+        "prompts": [
+          "6kg kaybetmek için 1 haftalık kilo kaybı planı oluşturun.",
+          "Başlangıç düzeyinde diyet ve egzersiz planı oluşturun.",
+          "Kardiyo ve yemek programı ile bir yağ kaybı planı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-child-hobby-skill": {
+    "category": "Çocuklar için Öğrenme ve Beceri Geliştirme Kartları",
+    "description": "Yaşa göre hobiler ve beceri geliştirme fikirleri ile kişiselleştirilmiş çocuk öğrenme planları oluşturun. Ebeveynler, erken eğitim ve çocuk gelişimi planlaması için idealdir.",
+    "title": "Yaşa Göre Çocuklar İçin En İyi Hobiler ve Beceriler (AI Öğrenme Planlayıcı) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yaşa göre hobiler ve beceriler öneren AI destekli çocuk öğrenme ve gelişim kartları üretir. Ebeveynlerin erken eğitim ve beceri geliştirme aktivitelerini planlamalarına yardımcı olur.",
+        "who": "Ebeveynler, öğretmenler, evde eğitim yapan aileler, eğitim platformları ve çocuk gelişimi içerik oluşturucuları için tasarlanmıştır.",
+        "how": [
+          "Çocuğun yaşını ve cinsiyetini girin.",
+          "Önerilen hobileri seçin.",
+          "Geliştirilecek ana becerileri tanımlayın.",
+          "Öğrenme ipuçları ve aktivite rehberliği ekleyin.",
+          "Yapılandırılmış bir çocuk öğrenme planı kartı oluşturun."
+        ],
+        "prompts": [
+          "6 yaşındaki bir erkek çocuk için en iyi hobiler.",
+          "Yaşa göre çocuk beceri geliştirme planı.",
+          "Faydalarıyla çocuklar için öğrenme aktiviteleri."
+        ]
+      }
+    }
   }
 }

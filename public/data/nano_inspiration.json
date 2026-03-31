@@ -13683,5 +13683,1377 @@
         "title": "rainy day"
       }
     }
+  },
+  {
+    "id": "template-costume-indian-sari",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-indian-sari.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-indian-sari-prev.jpg"
+    },
+    "params": {
+      "costume_style": "indian sari"
+    },
+    "locales": {
+      "zh": {
+        "title": "indian sari"
+      }
+    }
+  },
+  {
+    "id": "template-costume-korean-hanbok-mens",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-korean-hanbok-mens.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-korean-hanbok-mens-prev.jpg"
+    },
+    "params": {
+      "costume_style": "korean hanbok mens"
+    },
+    "locales": {
+      "zh": {
+        "title": "korean hanbok mens"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-druig",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-druig.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-druig-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "druig"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-gilgamesh",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-gilgamesh.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-gilgamesh-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "gilgamesh"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-ikaris",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-ikaris.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-ikaris-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "ikaris"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-phastos",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-phastos.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-phastos-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "phastos"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-01-cover",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-01-cover-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 01 cover"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-02-performance-vs-stock",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-02-performance-vs-stock.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-02-performance-vs-stock-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 02 performance vs stock"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-03-deadend-strategy",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-03-deadend-strategy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-03-deadend-strategy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 03 deadend strategy"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-04-deadend-openai",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-04-deadend-openai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-04-deadend-openai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 04 deadend openai"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-05-deadend-claude",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-05-deadend-claude.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-05-deadend-claude-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 05 deadend claude"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-06-ai-plugin-vs-agent",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-06-ai-plugin-vs-agent.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-06-ai-plugin-vs-agent-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 06 ai plugin vs agent"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-07-case-google-gemini",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-07-case-google-gemini.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-07-case-google-gemini-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 07 case google gemini"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-microsoft-ai-dilemma-08-future-path",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-08-future-path.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-microsoft-ai-dilemma-08-future-path-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "microsoft ai dilemma 08 future path"
+      }
+    }
+  },
+  {
+    "id": "template-travel-lhasa",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-lhasa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-lhasa-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "lhasa"
+      }
+    }
+  },
+  {
+    "id": "template-travel-mumbai",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-mumbai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-mumbai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "mumbai"
+      }
+    }
+  },
+  {
+    "id": "template-travel-phuket",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-phuket.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-phuket-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "phuket"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-animal-actions",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-animal-actions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-animal-actions-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "animal actions"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-banana-ripeness",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-banana-ripeness.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "banana ripeness"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-coffee-drinks",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-coffee-drinks.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-coffee-drinks-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "coffee drinks"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-space",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-space.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-space-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "space"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-weather",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-weather.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-weather-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "weather"
+      }
+    }
+  },
+  {
+    "id": "template-costume-greek-fustanella",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-greek-fustanella.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-greek-fustanella-prev.jpg"
+    },
+    "params": {
+      "costume_style": "greek fustanella"
+    },
+    "locales": {
+      "zh": {
+        "title": "greek fustanella"
+      }
+    }
+  },
+  {
+    "id": "template-costume-japanese-kimono-furisode",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-japanese-kimono-furisode.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-japanese-kimono-furisode-prev.jpg"
+    },
+    "params": {
+      "costume_style": "japanese kimono furisode"
+    },
+    "locales": {
+      "zh": {
+        "title": "japanese kimono furisode"
+      }
+    }
+  },
+  {
+    "id": "template-costume-korean-hanbok-choson-ot",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-korean-hanbok-choson-ot.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-korean-hanbok-choson-ot-prev.jpg"
+    },
+    "params": {
+      "costume_style": "korean hanbok choson ot"
+    },
+    "locales": {
+      "zh": {
+        "title": "korean hanbok choson ot"
+      }
+    }
+  },
+  {
+    "id": "template-costume-thai-silk-sari",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-thai-silk-sari.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-thai-silk-sari-prev.jpg"
+    },
+    "params": {
+      "costume_style": "thai silk sari"
+    },
+    "locales": {
+      "zh": {
+        "title": "thai silk sari"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-houzao-monkey-bezoar",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-houzao-monkey-bezoar.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-houzao-monkey-bezoar-prev.jpg"
+    },
+    "params": {
+      "herb_name": "houzao monkey bezoar"
+    },
+    "locales": {
+      "zh": {
+        "title": "houzao monkey bezoar"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-jinguolan-tinospora-root",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-jinguolan-tinospora-root.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-jinguolan-tinospora-root-prev.jpg"
+    },
+    "params": {
+      "herb_name": "jinguolan tinospora root"
+    },
+    "locales": {
+      "zh": {
+        "title": "jinguolan tinospora root"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-yesu-aeginetia",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-yesu-aeginetia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-yesu-aeginetia-prev.jpg"
+    },
+    "params": {
+      "herb_name": "yesu aeginetia"
+    },
+    "locales": {
+      "zh": {
+        "title": "yesu aeginetia"
+      }
+    }
+  },
+  {
+    "id": "template-herbal-yunzhi-turkey-tail",
+    "template_id": "template-herbal",
+    "asset": {
+      "image_url": "/images/nano_insp/template-herbal-yunzhi-turkey-tail.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-herbal-yunzhi-turkey-tail-prev.jpg"
+    },
+    "params": {
+      "herb_name": "yunzhi turkey tail"
+    },
+    "locales": {
+      "zh": {
+        "title": "yunzhi turkey tail"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-black-cat",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-black-cat.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-black-cat-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "black cat"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-cloak-and-dagger",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-cloak-and-dagger.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-cloak-and-dagger-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "cloak and dagger"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-elektra",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-elektra.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-elektra-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "elektra"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-shang-chi",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-shang-chi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-shang-chi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "shang chi"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-01-core-conflict",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-01-core-conflict.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-01-core-conflict-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 01 core conflict"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-02-three-overviews",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-02-three-overviews.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-02-three-overviews-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 02 three overviews"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-03-peace-efforts-detailed",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-03-peace-efforts-detailed.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-03-peace-efforts-detailed-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 03 peace efforts detailed"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-middle-east-conflict-04-military-actions-detailed",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-middle-east-conflict-04-military-actions-detailed.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-middle-east-conflict-04-military-actions-detailed-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "middle east conflict 04 military actions detailed"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-01-core-concept",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-01-core-concept.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-01-core-concept-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 01 core concept"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-02-more-for-less",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-02-more-for-less.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-02-more-for-less-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 02 more for less"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-03-more-for-more",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-03-more-for-more.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-03-more-for-more-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 03 more for more"
+      }
+    }
+  },
+  {
+    "id": "template-series-infographic-nvidia-strategy-04-complete-strategy",
+    "template_id": "template-series-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-infographic-nvidia-strategy-04-complete-strategy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-infographic-nvidia-strategy-04-complete-strategy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "nvidia strategy 04 complete strategy"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-desserts",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-desserts.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-desserts-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "desserts"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-musical-instruments",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-musical-instruments.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-musical-instruments-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "musical instruments"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-vegetables",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-vegetables.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-vegetables-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "vegetables"
+      }
+    }
+  },
+  {
+    "id": "template-costume-arabic-kandura-abaya",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-arabic-kandura-abaya.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-arabic-kandura-abaya-prev.jpg"
+    },
+    "params": {
+      "costume_style": "arabic kandura abaya"
+    },
+    "locales": {
+      "zh": {
+        "title": "arabic kandura abaya"
+      }
+    }
+  },
+  {
+    "id": "template-costume-chinese-qing-dragon-robe",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-chinese-qing-dragon-robe.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-chinese-qing-dragon-robe-prev.jpg"
+    },
+    "params": {
+      "costume_style": "chinese qing dragon robe"
+    },
+    "locales": {
+      "zh": {
+        "title": "chinese qing dragon robe"
+      }
+    }
+  },
+  {
+    "id": "template-costume-khmer-sampot-chong-kben",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-khmer-sampot-chong-kben.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-khmer-sampot-chong-kben-prev.jpg"
+    },
+    "params": {
+      "costume_style": "khmer sampot chong kben"
+    },
+    "locales": {
+      "zh": {
+        "title": "khmer sampot chong kben"
+      }
+    }
+  },
+  {
+    "id": "template-costume-north-african-djellaba-kaftan",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-north-african-djellaba-kaftan.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-north-african-djellaba-kaftan-prev.jpg"
+    },
+    "params": {
+      "costume_style": "north african djellaba kaftan"
+    },
+    "locales": {
+      "zh": {
+        "title": "north african djellaba kaftan"
+      }
+    }
+  },
+  {
+    "id": "template-english-dialogue-scene-greeting",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-greeting.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-greeting-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "greeting"
+      }
+    }
+  },
+  {
+    "id": "template-english-dialogue-scene-restaurant",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-restaurant-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "restaurant"
+      }
+    }
+  },
+  {
+    "id": "template-english-dialogue-scene-shopping",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-shopping.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "shopping"
+      }
+    }
+  },
+  {
+    "id": "template-english-error-correction-common-mistakes",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-common-mistakes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-common-mistakes-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "common mistakes"
+      }
+    }
+  },
+  {
+    "id": "template-english-error-correction-preposition-mistakes",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-preposition-mistakes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "preposition mistakes"
+      }
+    }
+  },
+  {
+    "id": "template-english-error-correction-question-mistakes",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-question-mistakes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-question-mistakes-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "question mistakes"
+      }
+    }
+  },
+  {
+    "id": "template-english-error-correction-tense-mistakes",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-tense-mistakes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-tense-mistakes-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "tense mistakes"
+      }
+    }
+  },
+  {
+    "id": "template-english-top5-phrases-compliments",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-compliments.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-compliments-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "compliments"
+      }
+    }
+  },
+  {
+    "id": "template-english-top5-phrases-greetings",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-greetings.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "greetings"
+      }
+    }
+  },
+  {
+    "id": "template-english-top5-phrases-thank-you",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-thank-you.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-thank-you-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "thank you"
+      }
+    }
+  },
+  {
+    "id": "template-hotspot-card-battle-of-the-claws",
+    "template_id": "template-hotspot-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-hotspot-card-battle-of-the-claws.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-hotspot-card-battle-of-the-claws-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "battle of the claws"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-high-evolutionary",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-high-evolutionary.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-high-evolutionary-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "high evolutionary"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-hyperion",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-hyperion.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-hyperion-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "hyperion"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-kang-the-conqueror",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-kang-the-conqueror.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-kang-the-conqueror-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "kang the conqueror"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-rama-tut",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-rama-tut.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-rama-tut-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "rama tut"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-marvel-time-keepers",
+    "template_id": "template-mbti-marvel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-marvel-time-keepers.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-marvel-time-keepers-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "time keepers"
+      }
+    }
+  },
+  {
+    "id": "template-travel-belgium-budget",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-belgium-budget.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-belgium-budget-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "belgium budget"
+      }
+    }
+  },
+  {
+    "id": "template-travel-belgium-overview",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-belgium-overview.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-belgium-overview-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "belgium overview"
+      }
+    }
+  },
+  {
+    "id": "template-travel-canada-5-day-itinerary",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-canada-5-day-itinerary.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-canada-5-day-itinerary-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "canada 5 day itinerary"
+      }
+    }
+  },
+  {
+    "id": "template-travel-canada-budget",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-canada-budget.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-canada-budget-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "canada budget"
+      }
+    }
+  },
+  {
+    "id": "template-travel-canada-overview",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-canada-overview.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-canada-overview-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "canada overview"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-landmarks",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-landmarks.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-landmarks-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "landmarks"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-music-symbols",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-music-symbols.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-music-symbols-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "music symbols"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-vehicles",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-vehicles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-vehicles-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "vehicles"
+      }
+    }
+  },
+  {
+    "id": "template-child-hobby-skill-6yo-boy",
+    "template_id": "template-child-hobby-skill",
+    "asset": {
+      "image_url": "/images/nano_insp/template-child-hobby-skill-6yo-boy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-child-hobby-skill-6yo-boy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "6yo boy"
+      }
+    }
+  },
+  {
+    "id": "template-child-hobby-skill-6yo-girl",
+    "template_id": "template-child-hobby-skill",
+    "asset": {
+      "image_url": "/images/nano_insp/template-child-hobby-skill-6yo-girl.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-child-hobby-skill-6yo-girl-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "6yo girl"
+      }
+    }
+  },
+  {
+    "id": "template-english-dialogue-scene-at-the-library",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-at-the-library.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-library-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "the library"
+      }
+    }
+  },
+  {
+    "id": "template-english-dialogue-scene-at-the-playground",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-at-the-playground.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-playground-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "the playground"
+      }
+    }
+  },
+  {
+    "id": "template-english-dialogue-scene-at-the-restaurant",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-at-the-restaurant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-restaurant-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "the restaurant"
+      }
+    }
+  },
+  {
+    "id": "template-fat-loss-plan-female-standard-1.5kg",
+    "template_id": "template-fat-loss-plan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fat-loss-plan-female-standard-1.5kg.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fat-loss-plan-female-standard-1.5kg-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "female standard 1.5kg"
+      }
+    }
+  },
+  {
+    "id": "template-fat-loss-plan-male-accelerated-4kg",
+    "template_id": "template-fat-loss-plan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fat-loss-plan-male-accelerated-4kg.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fat-loss-plan-male-accelerated-4kg-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "male accelerated 4kg"
+      }
+    }
+  },
+  {
+    "id": "template-fat-loss-plan-male-extreme-6kg",
+    "template_id": "template-fat-loss-plan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-fat-loss-plan-male-extreme-6kg.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-fat-loss-plan-male-extreme-6kg-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "male extreme 6kg"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-forrest-gump",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-forrest-gump.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-forrest-gump-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "forrest gump"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-la-la-land",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-la-la-land.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-la-la-land-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "la land"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-the-shawshank-redemption",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-the-shawshank-redemption.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-the-shawshank-redemption-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "the shawshank redemption"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-titanic",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-titanic.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-titanic-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "titanic"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-netherlands-01",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-netherlands-01.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-netherlands-01-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "netherlands 01"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-netherlands-02",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-netherlands-02.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-netherlands-02-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "netherlands 02"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-netherlands-03",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-netherlands-03.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-netherlands-03-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "netherlands 03"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-netherlands-04",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-netherlands-04.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-netherlands-04-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "netherlands 04"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-russia-01",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-russia-01.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "russia 01"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-russia-02",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-russia-02.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-russia-02-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "russia 02"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-russia-03",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-russia-03.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-russia-03-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "russia 03"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-russia-04",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-russia-04.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-russia-04-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "russia 04"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-biomes",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-biomes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-biomes-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "biomes"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-famous-bridges",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-famous-bridges.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-famous-bridges-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "famous bridges"
+      }
+    }
+  },
+  {
+    "id": "template-vocabulary-rocks-minerals",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-rocks-minerals.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-rocks-minerals-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "rocks minerals"
+      }
+    }
   }
 ]

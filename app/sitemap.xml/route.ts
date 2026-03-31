@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
 import { toSlug } from "@/lib/nano_utils";
 
@@ -36,6 +37,12 @@ function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
       route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
       locales: [...LOCALES],
     }));
+}
+
+function getTagRoutes(): string[] {
+  return nanoMetadata.metadata.tags.map(
+    (t) => `/nano-banana-pro-prompts/tag/${encodeURIComponent(t.tag)}`
+  );
 }
 
 function getToolRoutes(): string[] {
@@ -96,6 +103,7 @@ function generateUrlEntry(
 export async function GET() {
   const nanoTemplateRoutes = getNanoTemplateRoutes();
   const toolRoutes = getToolRoutes();
+  const tagRoutes = getTagRoutes();
 
   let urls = "";
 
@@ -117,6 +125,16 @@ export async function GET() {
         lastmod: STABLE_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
+      });
+    });
+  });
+
+  // Tag pages
+  tagRoutes.forEach((route) => {
+    LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        changefreq: "weekly",
+        priority: "0.7",
       });
     });
   });
