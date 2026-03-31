@@ -14,6 +14,7 @@ export type TemplateParameter = {
 export type RawTemplate = {
   id: string;
   topics?: string | string[];
+  rank_score?: number;
 
   locales?: Partial<
     Record<
@@ -26,6 +27,7 @@ export type RawTemplate = {
   >;
 
   cards?: Array<{ image_id: string; params: Record<string, any> }>;
+
 };
 
 export type RawNanoImageRecord = {
@@ -48,6 +50,7 @@ export type TemplateView = {
   category: string;
   description: string;
   topics: string[];
+  rank_score?: number;
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
@@ -70,6 +73,7 @@ export type NanoInspirationCardType = {
   language: PageLocale;
   category: string;
   topics: string[];
+  rank_score?: number;
   image_urls: string[];
   preview_image_urls: string[];
   description?: string;
@@ -239,6 +243,7 @@ export function getTemplateView(
     category: "",
     description: "",
     topics: getTemplateTopics(raw),
+    rank_score: raw.rank_score,
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],

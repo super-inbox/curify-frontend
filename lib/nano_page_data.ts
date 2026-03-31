@@ -126,7 +126,11 @@ export function buildNanoFeedCards(
 
   const out: NanoInspirationCardType[] = [];
 
-  for (const raw of reg.templates) {
+  const sortedTemplates = [...reg.templates].sort(
+    (a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1)
+  );
+  
+  for (const raw of sortedTemplates) {
     const tv = getTemplateView(reg, raw.id, locale);
     if (!tv) continue;
 
