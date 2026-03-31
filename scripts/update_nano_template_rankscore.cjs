@@ -147,7 +147,7 @@ async function fetchRankScores(client) {
         END
       ) AS rank_score
     FROM user_interactions
-    WHERE created_at >= NOW() - INTERVAL '3 days'
+    WHERE created_at >= NOW() - INTERVAL '7 days'
     GROUP BY content_id
     HAVING SUM(
       CASE

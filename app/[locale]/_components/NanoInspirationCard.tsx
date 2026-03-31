@@ -298,16 +298,25 @@ interface NanoInspirationRowProps {
   cards: NanoInspirationCardType[];
   requireAuth: (reason?: string) => boolean;
   onViewClick?: (card: NanoInspirationCardType) => void;
+  isRelated?: (card: NanoInspirationCardType) => boolean;
+  rankScoreRelatedShift?: number;
 }
 
 export function NanoInspirationRow({
   cards,
   requireAuth,
   onViewClick,
+  isRelated,
+  rankScoreRelatedShift = 40,
 }: NanoInspirationRowProps) {
-  const sortedCards = [...cards].sort(
-    (a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1)
-  );
+  const sortedCards = [...cards].sort((a, b) => {
+    const aScore =
+      (a.rank_score ?? 1) + (isRelated?.(a) ? rankScoreRelatedShift : 0);
+    const bScore =
+      (b.rank_score ?? 1) + (isRelated?.(b) ? rankScoreRelatedShift : 0);
+
+    return bScore - aScore;
+  });
 
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
