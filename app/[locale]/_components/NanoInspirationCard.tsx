@@ -305,9 +305,13 @@ export function NanoInspirationRow({
   requireAuth,
   onViewClick,
 }: NanoInspirationRowProps) {
+  const sortedCards = [...cards].sort(
+    (a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1)
+  );
+
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {cards.map((c) => (
+      {sortedCards.map((c) => (
         <NanoInspirationCard
           key={c.id}
           card={c}

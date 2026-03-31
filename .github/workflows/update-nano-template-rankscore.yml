@@ -1,0 +1,46 @@
+name: Update Nano Template Rank Score
+
+on:
+  schedule:
+    # Tue / Thu, 18:10 UTC
+    - cron: "10 18 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-rankscore:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+          npm install pg --no-save
+
+      - name: Update nano template rank scores
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: node scripts/update_nano_template_rankscore.cjs
+
+      - name: Commit updated nano_templates.json
+        run: |
+          if git diff --quiet -- public/data/nano_templates.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/nano_templates.json
+          git commit -m "chore: update nano template rank scores"
+          git push
