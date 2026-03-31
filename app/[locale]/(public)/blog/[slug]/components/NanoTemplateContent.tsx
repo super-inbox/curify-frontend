@@ -1,5 +1,9 @@
+"use client";
+
 import { getTemplateUrl } from "../utils/blog-helpers";
 import { formatNanoTemplateContent } from "../utils/content-formatters";
+import { useEffect } from "react";
+import Script from "next/script";
 
 interface NanoTemplateContentProps {
   slug: string;
@@ -8,9 +12,35 @@ interface NanoTemplateContentProps {
 }
 
 export default function NanoTemplateContent({ slug, t, locale }: NanoTemplateContentProps) {
+  useEffect(() => {
+    // Initialize mermaid diagrams after component mounts
+    const initMermaid = () => {
+      if (typeof window !== 'undefined' && (window as any).mermaid) {
+        (window as any).mermaid.initialize({ 
+          startOnLoad: true, 
+          theme: 'default',
+          flowchart: {
+            useMaxWidth: true,
+            htmlLabels: true
+          }
+        });
+        (window as any).mermaid.run();
+      }
+    };
+
+    // Try to initialize immediately
+    initMermaid();
+    
+    // Also try after a delay to ensure content is loaded
+    const timer = setTimeout(initMermaid, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="space-y-6">
-      <p className="text-lg font-semibold text-green-600 mb-4">
+      <Script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" strategy="afterInteractive" />
+      <p className="text-lg font-semibold text-green-600 mb-4 leading-relaxed">
         {t("intro")}
       </p>
       

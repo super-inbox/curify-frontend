@@ -8,7 +8,7 @@
     "image": "/images/platformai.webp",
     "category": "ds-ai-engineering",
     "relatedLinks": ["QA_Bot_to_Task", "age_AI"]
-    },
+  },
   {
     "slug": "QA_Bot_to_Task",
     "title": "From QA Bot to Task Agent: An Architecture Guide",
@@ -205,7 +205,7 @@
     "date": "March 12, 2026",
     "readTime": "10 min read",
     "tag": "Nano Banana Prompts",
-    "image": "/images/nanobannanapromptblog.png",
+    "image": "/images/nanobannanapromptblog.webp",
     "category": "nano-banana-prompts",
     "relatedLinks": ["chinese-herbal-medicine-visual-guide", "evolution-timelines-visualization", "creative-ai-tools-websites"]
   },
@@ -215,7 +215,7 @@
     "date": "March 19, 2026",
     "readTime": "8 min read",
     "tag": "Creator Tools",
-    "image": "/images/bussinesstranalayion.png",
+    "image": "/images/bussinesstranalayion.webp",
     "category": "creator-tools",
     "relatedLinks": ["translate-youtube-video", "video-enhancement"]
   },
@@ -225,7 +225,7 @@
     "date": "March 19, 2026",
     "readTime": "12 min read",
     "tag": "Creator Tools",
-    "image": "/mock-thumbnail.jpg",
+    "image": "images/TechicalTranslayion.webp",
     "category": "creator-tools",
     "relatedLinks": ["translate-youtube-video-to-english", "video-enhancement"]
   },
@@ -235,7 +235,7 @@
     "date": "March 23, 2026",
     "readTime": "8 min read",
     "tag": "Nano Banana Prompts",
-    "image": "/images/imaggenten.png",
+    "image": "/images/imaggenten.webp",
     "category": "nano-banana-prompts",
     "relatedLinks": ["nano-banana-prompt-ecosystem", "creative-ai-tools-websites"]
   },
@@ -245,8 +245,38 @@
     "date": "March 23, 2026",
     "readTime": "9 min read",
     "tag": "Creator Tools",
-    "image": "/images/tenvideogen.png",
+    "image": "/images/tenvideogen.webp",
     "category": "creator-tools",
     "relatedLinks": ["video-enhancement", "storyboard-to-pipeline"]
+  },
+  {
+    "slug": "image-generation-model-comparison",
+    "title": "Image Generation Model Comparison: DALL-E 3 vs Midjourney vs Stable Diffusion",
+    "date": "March 28, 2026",
+    "readTime": "12 min read",
+    "tag": "Creator Tools",
+    "image": "/images/Picturecompare.webp",
+    "category": "creator-tools",
+    "relatedLinks": ["10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+  },
+  {
+    "slug": "lip-sync-business-guide",
+    "title": "AI Lip Sync & Dubbing Guide: Business Applications and Tools",
+    "date": "March 29, 2026",
+    "readTime": "10 min read",
+    "tag": "Creator Tools",
+    "image": "/images/lip_syncbusiness_guide.webp",
+    "category": "creator-tools",
+    "relatedLinks": ["video-transcription-business-guide", "what-is-voice-cloning"]
+  },
+  {
+    "slug": "lip-sync-technical-deep-dive",
+    "title": "Inside AI Lip Sync Pipeline: MuseTalk, Sync.co, and Production Architecture",
+    "date": "March 29, 2026",
+    "readTime": "15 min read",
+    "tag": "Creator Tools",
+    "image": "/images/lipsynctechnicaldeepdive.webp",
+    "category": "creator-tools",
+    "relatedLinks": ["lip-sync-business-guide", "video-transcription-technical-deep-dive"]
   }
 ]
