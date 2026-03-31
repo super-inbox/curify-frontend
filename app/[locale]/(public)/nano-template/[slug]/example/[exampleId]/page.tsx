@@ -321,7 +321,7 @@ export default async function NanoExampleDetailPage({
 
         <NanoTemplateDetailClient
           locale={pageLocale}
-          template={{ template_id: templateId, base_prompt: "", parameters: [] }}
+          template={{ template_id: templateId, base_prompt: "", parameters: [] , topics: templateTopics}}
           otherNanoCards={otherNanoCards}
           showReproduce={false}
           showOtherTemplates={true}
