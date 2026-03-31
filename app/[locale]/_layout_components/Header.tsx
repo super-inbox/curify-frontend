@@ -48,7 +48,7 @@ function HeaderTrackedLink({
   icon,
   active = false,
 }: HeaderTrackedLinkProps) {
-  const trackClick = useClickTracking(contentId, "inspiration"); // Use "inspiration" until backend supports "menu_link"
+  const trackClick = useClickTracking(contentId, "menu_link"); // Use "inspiration" until backend supports "menu_link"
 
   return (
     <Link
