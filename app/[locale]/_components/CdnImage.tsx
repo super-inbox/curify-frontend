@@ -98,11 +98,6 @@ export default function CdnImage(props: ImageProps) {
 
   const finalSrc = toCdnUrl(trimmed);
 
-  if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
-    console.log("[CdnImage]", { rawSrc: src, finalSrc, CDN_BASE });
-  }
-
   // ✅ For CDN/remote strings: default to unoptimized=true to avoid Vercel transformations
   return render(finalSrc, true);
 }

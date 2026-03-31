@@ -150,6 +150,7 @@ export function buildNanoFeedCards(
       language: tv.locale,
       category,
       topics: tv.topics,
+      rank_score: tv.rank_score,
       description,
       base_prompt: tv.base_prompt,
       template_parameters: tv.parameters,

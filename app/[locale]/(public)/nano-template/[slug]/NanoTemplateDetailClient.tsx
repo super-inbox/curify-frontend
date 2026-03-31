@@ -15,14 +15,16 @@ function hasCommonTopic(a?: string[], b?: string[]) {
   return b.some((x) => setA.has(x.trim().toLowerCase()));
 }
 
+type NanoTemplateForDetail = {
+  template_id: string;
+  base_prompt: string;
+  parameters: TemplateParameter[];
+  topics?: string[];
+};
+
 export default function NanoTemplateDetailClient(props: {
   locale: string;
-  template: {
-    template_id: string;
-    base_prompt: string;
-    parameters: TemplateParameter[];
-    topics?: string[];
-  };
+  template?: NanoTemplateForDetail;
   otherNanoCards: NanoInspirationCardType[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
@@ -43,12 +45,15 @@ export default function NanoTemplateDetailClient(props: {
   const requireAuth = () => true;
   const onViewClick = () => {};
 
+  const shouldShowReproduce = showReproduce && !!template;
+  const currentTopics = template?.topics;
+
   return (
     <>
-      {showReproduce && <ReproduceTemplateSection template={template} />}
+      {shouldShowReproduce && <ReproduceTemplateSection template={template} />}
 
       {showOtherTemplates && (
-        <section className={showReproduce ? "mt-10" : ""}>
+        <section className={shouldShowReproduce ? "mt-10" : ""}>
           {showOtherTemplateTitle && (
             <div className="mb-3">
               <h2 className="text-lg font-bold text-neutral-900">
@@ -65,7 +70,11 @@ export default function NanoTemplateDetailClient(props: {
             requireAuth={requireAuth}
             onViewClick={onViewClick}
             rankScoreRelatedShift={rankScoreRelatedShift}
-            isRelated={(card) => hasCommonTopic(template.topics, card.topics)}
+            isRelated={(card) => {
+              const related = hasCommonTopic(currentTopics, card.topics);
+
+              return related;
+            }}
           />
         </section>
       )}

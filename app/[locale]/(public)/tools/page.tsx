@@ -94,8 +94,7 @@ export default async function Page({ params }: Props) {
 
       <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <NanoTemplateDetailClient
-          locale={localeStr}
-          template={{ template_id: "", base_prompt: "", parameters: [] }}
+          locale={localeStr}          
           otherNanoCards={nanoCards}
           showReproduce={false}
           showOtherTemplates={true}

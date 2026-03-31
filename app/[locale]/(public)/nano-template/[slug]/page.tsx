@@ -243,6 +243,7 @@ export default async function NanoTemplatePage({ params }: Props) {
             template_id: template.template_id,
             base_prompt: template.base_prompt || "",
             parameters: [],
+            topics: template.topics,
           }}
           otherNanoCards={otherNanoCards}
           showReproduce={false}
