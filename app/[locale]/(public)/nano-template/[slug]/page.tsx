@@ -159,21 +159,10 @@ export default async function NanoTemplatePage({ params }: Props) {
         </div>
       </div>
 
-      <NanoTemplateDetailClient
-        locale={pageLocale}
-        template={{
-          template_id: template.template_id,
-          base_prompt: template.base_prompt || "",
-          parameters: template.parameters || [],
-        }}
-        otherNanoCards={otherNanoCards}
-        showReproduce={true}
-        showOtherTemplates={false}
-      />
 
-<section className="mt-8">
+      <section className="mt-8">
 <h2 className="mb-4 text-lg font-bold text-neutral-900">
-              From this template
+              Example Images
             </h2>
 <ExampleImagesGrid
           items={section2Images}
@@ -181,12 +170,26 @@ export default async function NanoTemplatePage({ params }: Props) {
           maxRows={2}
         />
 </section>
+<section className="mt-8">
+  <NanoTemplateDetailClient
+    locale={pageLocale}
+    template={{
+      template_id: template.template_id,
+      base_prompt: template.base_prompt || "",
+      parameters: template.parameters || [],
+    }}
+    otherNanoCards={otherNanoCards}
+    showReproduce={true}
+    showOtherTemplates={false}
+  />
+</section>
+
       {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
-        <section className="mt-10 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
+        <section className="mt-10">
+                    <h2 className="text-lg font-bold text-neutral-900">About this template</h2>
 
           {h2What ? (
-            <div className="mt-5">
+            <div className="mt-4">
               <h3 className="text-base font-semibold text-neutral-900">
                 What is this template?
               </h3>

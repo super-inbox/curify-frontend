@@ -11,7 +11,8 @@ import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
-import { useClickTracking } from "@/services/useTracking";
+import PromptTagList from "./PromptTagList";
+import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
 const DEFAULT_CONTENT_LOCALE = "en";
 
 const buildPromptUrl = (locale: string, id: number | string) =>
@@ -168,19 +169,10 @@ export default async function PromptDetailPage({
             </h1>
 
             {prompt.tags.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {prompt.tags.map((tag) => (
-                  <Link
-                    onClick = {useClickTracking(`nano_prompt_tags:${tag}`, "tag_capsule")}
-                    key={tag}
-                    href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`}
-                    className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700 hover:bg-indigo-100"
-                  >
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-            )}
+  <PromptTagList tags={prompt.tags} locale={locale} />
+)}
+
+
           </div>
 
           {prompt.description && (
@@ -215,12 +207,15 @@ export default async function PromptDetailPage({
                 }}
               />
             </div>
-
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <pre className="whitespace-pre-wrap text-gray-800">
-                {promptText}
-              </pre>
-            </div>
+            <PromptPreviewBlock
+  text={promptText}
+  collapsedRows={6}
+  expandable={true}
+  containerClassName="rounded-lg border border-gray-200 bg-gray-50"
+  preClassName="text-gray-800"
+  expandLabel="Show full prompt"
+  collapseLabel="Show less"
+/>
           </div>
         </article>
 
