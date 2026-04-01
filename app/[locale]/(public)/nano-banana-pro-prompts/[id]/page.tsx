@@ -1,18 +1,16 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 import CdnImage from "../../../_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import { SITE_URL } from "@/lib/constants";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
-
+import PromptTagChips from "./PromptTagChips";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
-import PromptTagList from "./PromptTagList";
-import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
+
 const DEFAULT_CONTENT_LOCALE = "en";
 
 const buildPromptUrl = (locale: string, id: number | string) =>
@@ -122,37 +120,36 @@ export default async function PromptDetailPage({
       url: SITE_URL,
     },
   };
- 
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="bg-white shadow-sm">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <Link
-              href={`/${locale}/nano-banana-pro-prompts`}
-              className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
-            >
-              <ArrowLeft className="mr-1 h-4 w-4" />
-              Back to Gallery
-            </Link>
-
-            <span className="text-sm text-gray-500">
-              {new Date().toLocaleDateString()}
-            </span>
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-6xl py-4 sm:px-6 lg:px-8">
-        <article className="overflow-hidden rounded-lg bg-white shadow">
-          <div className="px-6 py-4">
-            <div className="relative flex h-96 w-full items-center justify-center bg-gray-50">
+      <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+        <ExamplePromptHero
+          title={prompt.title}
+          prompt={promptText}
+          promptVariant="preview"
+          description={prompt.description || undefined}
+          breadcrumbs={[
+            {
+              label: "Home",
+              href: `/${locale}`,
+            },
+            {
+              label: "Nano Banana Prompts",
+              href: `/${locale}/nano-banana-pro-prompts`,
+            },
+            {
+              label: prompt.title,
+            },
+          ]}
+          metaChips={<PromptTagChips tags={prompt.tags} locale={locale} size="small" />}
+          image={
+            <div className="relative h-full min-h-[360px] w-full lg:min-h-0">
               <CdnImage
                 src={imageUrl}
                 alt={prompt.title}
@@ -161,63 +158,27 @@ export default async function PromptDetailPage({
                 priority
               />
             </div>
-          </div>
-
-          <div className="border-b border-gray-200 px-6 py-5">
-            <h1 className="text-2xl font-bold text-gray-900">
-              {prompt.title}
-            </h1>
-
-            {prompt.tags.length > 0 && (
-  <PromptTagList tags={prompt.tags} locale={locale} />
-)}
-
-
-          </div>
-
-          {prompt.description && (
-            <div className="border-b border-gray-200 px-6 py-6">
-              <h2 className="mb-3 text-lg font-medium text-gray-900">
-                Description
-              </h2>
-              <p className="whitespace-pre-line text-gray-600">
-                {prompt.description}
-              </p>
-            </div>
-          )}
-
-          <div className="px-6 py-6">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-lg font-medium text-gray-900">Prompt</h2>
-
-              <UnifiedActionBar
-                tracking={{
-                  contentId: String(prompt.id),
-                  contentType: "nano_gallery",
-                  viewMode: "cards",
-                }}
-                copy={{
-                  enabled: true,
-                  text: promptText,
-                }}
-                share={{
-                  enabled: true,
-                  url: buildPromptUrl(locale, prompt.id),
-                  title: prompt.title,
-                }}
-              />
-            </div>
-            <PromptPreviewBlock
-  text={promptText}
-  collapsedRows={3}
-  expandable={true}
-  containerClassName="rounded-lg border border-gray-200 bg-gray-50"
-  preClassName="text-gray-800"
-  expandLabel="Show full prompt"
-  collapseLabel="Show less"
-/>
-          </div>
-        </article>
+          }
+          actionBar={
+            <UnifiedActionBar
+              className="pt-2"
+              tracking={{
+                contentId: String(prompt.id),
+                contentType: "nano_gallery",
+                viewMode: "cards",
+              }}
+              copy={{
+                enabled: true,
+                text: promptText,
+              }}
+              share={{
+                enabled: true,
+                url: buildPromptUrl(locale, prompt.id),
+                title: prompt.title,
+              }}
+            />
+          }
+        />
 
         {prompt.related.length > 0 && (
           <section className="mt-10">
