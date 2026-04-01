@@ -6,7 +6,7 @@ import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCa
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 
 import ReproduceTemplateSection from "./ReproduceTemplateSection";
-import type { TemplateParameter } from "@/lib/nano_prompt_utils";
+import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 
 function hasCommonTopic(a?: string[], b?: string[]) {
   if (!a?.length || !b?.length) return false;
@@ -14,13 +14,6 @@ function hasCommonTopic(a?: string[], b?: string[]) {
   const setA = new Set(a.map((x) => x.trim().toLowerCase()).filter(Boolean));
   return b.some((x) => setA.has(x.trim().toLowerCase()));
 }
-
-type NanoTemplateForDetail = {
-  template_id: string;
-  base_prompt: string;
-  parameters: TemplateParameter[];
-  topics?: string[];
-};
 
 export default function NanoTemplateDetailClient(props: {
   locale: string;

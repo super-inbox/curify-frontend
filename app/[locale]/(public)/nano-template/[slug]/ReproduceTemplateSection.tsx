@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-
+import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 
 import {
@@ -16,11 +16,7 @@ const COLLAPSED_PARAM_ROWS = 3;
 const COLLAPSED_PROMPT_ROWS = 3;
 
 export default function ReproduceTemplateSection(props: {
-  template: {
-    template_id: string;
-    base_prompt: string;
-    parameters: TemplateParameter[];
-  };
+  template: NanoTemplateForDetail
 }) {
   const { template } = props;
 
@@ -202,6 +198,10 @@ export default function ReproduceTemplateSection(props: {
           url: shareUrl,
           title: template.template_id,
           text: "Try this Nano Banana template",
+        }}
+        batchDownload={{
+          enabled: !!template.batch,
+          templateId: template.template_id,
         }}
       />
     </div>

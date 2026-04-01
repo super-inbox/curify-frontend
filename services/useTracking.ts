@@ -19,7 +19,8 @@ export type ActionType =
   | "favorite"
   | "share"
   | "generate"
-  | "remix";
+  | "remix"
+  | "download";
 
 export type ViewMode = "list" | "cards";
 
