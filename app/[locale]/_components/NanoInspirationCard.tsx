@@ -311,13 +311,13 @@ export function NanoInspirationRow({
 }: NanoInspirationRowProps) {
   const debug = true; // toggle if needed
 
-  if (debug) {
-    console.log("[NanoRow] Incoming cards:", cards.map(c => ({
-      id: c.id,
-      rank_score: c.rank_score,
-      topics: c.topics,
-    })));
-  }
+  // if (debug) {
+  //   console.log("[NanoRow] Incoming cards:", cards.map(c => ({
+  //     id: c.id,
+  //     rank_score: c.rank_score,
+  //     topics: c.topics,
+  //   })));
+  // }
 
   const scoredCards = cards.map((c) => {
     const related = isRelated?.(c) ?? false;
@@ -335,32 +335,32 @@ export function NanoInspirationRow({
     };
   });
 
-  if (debug) {
-    console.log(
-      "[NanoRow] Scoring:",
-      scoredCards.map((c) => ({
-        id: c.id,
-        base: c._debug.base,
-        related: c._debug.related,
-        shift: c._debug.shift,
-        final: c._debug.finalScore,
-      }))
-    );
-  }
+  // if (debug) {
+  //   console.log(
+  //     "[NanoRow] Scoring:",
+  //     scoredCards.map((c) => ({
+  //       id: c.id,
+  //       base: c._debug.base,
+  //       related: c._debug.related,
+  //       shift: c._debug.shift,
+  //       final: c._debug.finalScore,
+  //     }))
+  //   );
+  // }
 
   const sortedCards = [...scoredCards].sort(
     (a, b) => b._debug.finalScore - a._debug.finalScore
   );
 
-  if (debug) {
-    console.log(
-      "[NanoRow] Sorted order:",
-      sortedCards.map((c) => ({
-        id: c.id,
-        final: c._debug.finalScore,
-      }))
-    );
-  }
+  // if (debug) {
+  //   console.log(
+  //     "[NanoRow] Sorted order:",
+  //     sortedCards.map((c) => ({
+  //       id: c.id,
+  //       final: c._debug.finalScore,
+  //     }))
+  //   );
+  // }
 
   return (
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
