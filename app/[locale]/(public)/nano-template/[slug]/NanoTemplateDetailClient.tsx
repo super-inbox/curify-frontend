@@ -50,6 +50,7 @@ export default function NanoTemplateDetailClient(props: {
 
   return (
     <>
+    
       {shouldShowReproduce && <ReproduceTemplateSection template={template} />}
 
       {showOtherTemplates && (
