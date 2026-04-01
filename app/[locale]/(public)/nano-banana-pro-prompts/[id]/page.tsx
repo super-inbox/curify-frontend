@@ -209,7 +209,7 @@ export default async function PromptDetailPage({
             </div>
             <PromptPreviewBlock
   text={promptText}
-  collapsedRows={6}
+  collapsedRows={3}
   expandable={true}
   containerClassName="rounded-lg border border-gray-200 bg-gray-50"
   preClassName="text-gray-800"

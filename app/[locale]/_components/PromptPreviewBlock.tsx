@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 
 type PromptPreviewBlockProps = {
@@ -31,41 +31,52 @@ export default function PromptPreviewBlock({
   collapseLabel = "Show less",
 }: PromptPreviewBlockProps) {
   const [expanded, setExpanded] = useState(defaultExpanded);
-
   const promptText = (text || "").trim();
-  const lines = useMemo(() => {
-    return promptText ? promptText.split("\n") : [];
-  }, [promptText]);
 
-  const shouldFold = expandable && lines.length > collapsedRows;
+  if (!promptText) return null;
 
-  const displayText = useMemo(() => {
-    if (!shouldFold || expanded) return promptText;
-    return lines.slice(0, collapsedRows).join("\n");
-  }, [promptText, lines, collapsedRows, shouldFold, expanded]);
+  const isCollapsed = expandable && !expanded;
 
   return (
-    <div className={clsx("rounded-xl bg-neutral-50 p-4", containerClassName, className)}>
+    <div
+      className={clsx(
+        "rounded-xl bg-neutral-50 p-4",
+        containerClassName,
+        className
+      )}
+    >
       {label && (
         <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
           {label}
         </div>
       )}
 
-      <pre
-        className={clsx(
-          "whitespace-pre-wrap text-sm leading-relaxed text-neutral-800",
-          preClassName
+      <div className="relative">
+        <pre
+          className={clsx(
+            "text-sm leading-relaxed text-neutral-800 whitespace-pre-wrap break-words",
+            isCollapsed && "overflow-hidden",
+            preClassName
+          )}
+          style={
+            isCollapsed
+              ? {
+                  display: "-webkit-box",
+                  WebkitLineClamp: collapsedRows,
+                  WebkitBoxOrient: "vertical",
+                }
+              : undefined
+          }
+        >
+          {promptText}
+        </pre>
+
+        {isCollapsed && showFadeHint && (
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-neutral-50 to-transparent" />
         )}
-      >
-        {displayText}
-      </pre>
+      </div>
 
-      {!expanded && shouldFold && showFadeHint && (
-        <div className="mt-2 text-sm text-neutral-500">...</div>
-      )}
-
-      {shouldFold && (
+      {expandable && (
         <div className="mt-3 flex justify-end">
           <button
             type="button"
