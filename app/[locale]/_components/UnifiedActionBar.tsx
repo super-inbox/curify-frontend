@@ -94,7 +94,7 @@ export default function UnifiedActionBar({
         <Link
           href={remix.href}
           onClick={() => trackAction(tracking, "remix")}
-          className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50 cursor-pointer"
+          className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-purple-600 px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50 cursor-pointer"
         >
           <Sparkles className="h-4 w-4" />
           {t("remix")}
