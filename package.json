@@ -19,6 +19,7 @@
     "redis:sync:nanoprompts": "node scripts/sync_nanoprompts_to_redis.cjs"
   },
   "dependencies": {
+    "@azure/storage-blob": "^12.31.0",
     "@formatjs/icu-messageformat-parser": "^3.5.3",
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",

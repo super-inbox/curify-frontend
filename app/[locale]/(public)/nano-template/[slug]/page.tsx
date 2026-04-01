@@ -31,6 +31,7 @@ async function getPageData(localeStr: string, slug: string) {
   const data = buildNanoTemplateDetailData(
     ctx.reg,
     ctx.templateId,
+    
     ctx.contentLocale,
     ctx.translateNano
   );
@@ -178,6 +179,7 @@ export default async function NanoTemplatePage({ params }: Props) {
       template_id: template.template_id,
       base_prompt: template.base_prompt || "",
       parameters: template.parameters || [],
+      batch: !!template.batch
     }}
     otherNanoCards={otherNanoCards}
     showReproduce={true}
