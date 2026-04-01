@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import CdnImage from "../../../_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
-import { SITE_URL } from "@/lib/constants";
+import { getCanonicalPath } from "@/lib/canonical";
 import { toAbsUrlMaybe, buildProPromptMetadata } from "@/lib/nano_seo_utils";
 import PromptTagChips from "./PromptTagChips";
 import { nanoPromptsService } from "@/services/nanoPrompts";
@@ -13,8 +13,8 @@ import PromptCard from "../PromptCard";
 
 const DEFAULT_CONTENT_LOCALE = "en";
 
-const buildPromptUrl = (locale: string, id: number | string) =>
-  `${SITE_URL}/${locale}/nano-banana-pro-prompts/${id}`;
+const buildPromptPath = (locale: string, id: number | string) =>
+  getCanonicalPath(locale, `/nano-banana-pro-prompts/${id}`);
 
 const normalizeImageUrl = (raw: string | null | undefined): string => {
   if (!raw) return "/images/default-prompt-image.jpg";
@@ -55,8 +55,7 @@ export async function generateMetadata({
   const promptText = prompt.prompt;
 
   const absoluteImageUrl =
-    toAbsUrlMaybe(imageUrl) ??
-    `${SITE_URL}/images/default-prompt-image.jpg`;
+    toAbsUrlMaybe(imageUrl) ?? "/images/default-prompt-image.jpg";
 
   return buildProPromptMetadata(
     {
@@ -66,8 +65,8 @@ export async function generateMetadata({
         promptText.slice(0, 160) ||
         "Creative AI prompt from Nano Banana.",
       absoluteImageUrl,
-      pageUrl: buildPromptUrl(locale, prompt.id),
-      canonicalUrl: buildPromptUrl(DEFAULT_CONTENT_LOCALE, prompt.id),
+      pageUrl: buildPromptPath(locale, prompt.id),
+      canonicalUrl: buildPromptPath(DEFAULT_CONTENT_LOCALE, prompt.id),
       date: new Date().toISOString().split("T")[0],
       author: "Anonymous",
       keywords: [
@@ -77,7 +76,7 @@ export async function generateMetadata({
         ...prompt.tags,
       ].filter(Boolean),
     },
-    (l) => buildPromptUrl(l, prompt.id)
+    (l) => buildPromptPath(l, prompt.id)
   );
 }
 
@@ -94,19 +93,41 @@ export default async function PromptDetailPage({
   const imageUrl = normalizeImageUrl(prompt.imageURL);
   const promptText = prompt.prompt;
 
-  const canonicalUrl = buildPromptUrl(DEFAULT_CONTENT_LOCALE, prompt.id);
-  const absoluteImageUrl =
-    toAbsUrlMaybe(imageUrl) ??
-    `${SITE_URL}/images/default-prompt-image.jpg`;
+  const canonicalPath = buildPromptPath(DEFAULT_CONTENT_LOCALE, prompt.id);
+
+  const related = Array.isArray(prompt.related) ? prompt.related : [];
+
+  const nextPrompt = related.length > 0 ? related[0] : null;
+  const prevPrompt = related.length > 1 ? related[related.length - 1] : null;
+
+  const prevNext =
+    nextPrompt || prevPrompt
+      ? {
+          prev: {
+            href: buildPromptPath(
+              locale,
+              prevPrompt?.id ?? nextPrompt!.id
+            ),
+            label: prevPrompt?.title || "Previous",
+          },
+          next: {
+            href: buildPromptPath(
+              locale,
+              nextPrompt?.id ?? prevPrompt!.id
+            ),
+            label: nextPrompt?.title || "Next",
+          },
+        }
+      : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "@id": canonicalUrl,
-    url: canonicalUrl,
+    "@id": canonicalPath,
+    url: canonicalPath,
     name: prompt.title,
     description: prompt.description || promptText.slice(0, 200),
-    image: [absoluteImageUrl],
+    image: [imageUrl],
     datePublished: new Date().toISOString(),
     author: {
       "@type": "Person",
@@ -117,7 +138,6 @@ export default async function PromptDetailPage({
     publisher: {
       "@type": "Organization",
       name: "Curify",
-      url: SITE_URL,
     },
   };
 
@@ -134,20 +154,27 @@ export default async function PromptDetailPage({
           prompt={promptText}
           promptVariant="preview"
           description={prompt.description || undefined}
+          prevNext={prevNext}
           breadcrumbs={[
             {
               label: "Home",
-              href: `/${locale}`,
+              href: getCanonicalPath(locale),
             },
             {
               label: "Nano Banana Prompts",
-              href: `/${locale}/nano-banana-pro-prompts`,
+              href: getCanonicalPath(locale, "/nano-banana-pro-prompts"),
             },
             {
               label: prompt.title,
             },
           ]}
-          metaChips={<PromptTagChips tags={prompt.tags} locale={locale} size="small" />}
+          metaChips={
+            <PromptTagChips
+              tags={prompt.tags}
+              locale={locale}
+              size="small"
+            />
+          }
           image={
             <div className="relative h-full min-h-[360px] w-full lg:min-h-0">
               <CdnImage
@@ -173,21 +200,21 @@ export default async function PromptDetailPage({
               }}
               share={{
                 enabled: true,
-                url: buildPromptUrl(locale, prompt.id),
+                url: buildPromptPath(locale, prompt.id),
                 title: prompt.title,
               }}
             />
           }
         />
 
-        {prompt.related.length > 0 && (
+        {related.length > 0 && (
           <section className="mt-10">
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
               Related Images
             </h2>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {prompt.related.map((p) => (
+              {related.map((p) => (
                 <PromptCard key={p.id} prompt={p} />
               ))}
             </div>
