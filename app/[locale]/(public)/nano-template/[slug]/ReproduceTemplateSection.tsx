@@ -8,8 +8,7 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 
 import {
   fillPrompt,
-  normalizePrefills,
-  type TemplateParameter,
+  normalizePrefills,  
 } from "@/lib/nano_prompt_utils";
 
 const COLLAPSED_PARAM_ROWS = 3;
