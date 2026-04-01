@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 
+import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
 import { buildTopicHref } from "@/lib/locale_utils";
 import { useClickTracking } from "@/services/useTracking";
 import { getTopics, type TopicWithTemplates } from "@/lib/topicRegistry";
@@ -16,39 +16,32 @@ type Props = {
   size?: "default" | "small";
 };
 
-function getTrendingHref(locale: string) {
-  return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
-}
-
 function TopicLink({
   topic,
   href,
   label,
   isActive,
-  pillClassName,
+  size,
 }: {
   topic: TopicWithTemplates;
   href: string;
   label: string;
   isActive: boolean;
-  pillClassName: string;
+  size: "default" | "small";
 }) {
   const trackClick = useClickTracking(topic.id, "topic_capsule" as any);
 
   return (
-    <Link
+    <MetaChipLink
       href={href}
-      aria-current={isActive ? "page" : undefined}
-      className={[
-        pillClassName,
-        isActive
-          ? "border border-blue-200 bg-blue-600 text-white transition hover:bg-blue-700"
-          : "border border-blue-100 bg-blue-50 text-blue-700 transition hover:border-blue-200 hover:bg-blue-100",
-      ].join(" ")}
       onClick={trackClick}
+      isActive={isActive}
+      ariaCurrent={isActive ? "page" : undefined}
+      color="blue"
+      size={size}
     >
       {label}
-    </Link>
+    </MetaChipLink>
   );
 }
 
@@ -72,7 +65,7 @@ export default function TopicNavRow({
 
   if (!visibleTopics.length) return null;
 
-  const pillClassName =
+  const disabledClass =
     size === "small"
       ? "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
       : "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
@@ -95,7 +88,7 @@ export default function TopicNavRow({
             <span
               key={topic.id}
               className={[
-                pillClassName,
+                disabledClass,
                 "cursor-not-allowed border border-neutral-200 bg-neutral-100 text-neutral-400",
               ].join(" ")}
               title="Coming soon"
@@ -116,7 +109,7 @@ export default function TopicNavRow({
             href={href}
             label={label}
             isActive={isActive}
-            pillClassName={pillClassName}
+            size={size}
           />
         );
       })}
