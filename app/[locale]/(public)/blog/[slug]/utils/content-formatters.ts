@@ -140,10 +140,10 @@ export function formatVoiceCloningContent(content: string): string {
     // Handle code blocks first (before other markdown processing)
     .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
       const lang = language || 'text';
-      return `</p><pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm my-4"><code class="language-${lang}">${code.trim()}</code></pre><p>`;
+      return `</p><pre class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-6 border border-gray-700"><code class="language-${lang}">${code.trim()}</code></pre><p>`;
     })
     // Handle inline code
-    .replace(/`([^`]+)`/g, '<code class="bg-gray-200 px-2 py-1 rounded text-sm font-mono">$1</code>')
+    .replace(/`([^`]+)`/g, '<code class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-300">$1</code>')
     // Handle markdown tables first - support both with and without spaces
     // 4-column table header
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\|---?\|---?\|---?\|---?\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
@@ -169,7 +169,7 @@ export function formatVoiceCloningContent(content: string): string {
     // Handle bullet points after colon with space (like "calculator: - GPU")
     .replace(/: - (.+)$/gm, ':<ul class="list-disc pl-6 mb-4"><li>$1</li></ul>')
     // Convert consecutive list items to proper lists
-    .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4">$&</ul>')
+    .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4 space-y-1">$&</ul>')
     // Handle paragraph breaks (but avoid breaking within lists)
     .replace(/(<\/ul>)\s*\n\s*\n/g, '$1')
     .replace(/\n\n/g, '</p><p class="mb-4">')
@@ -183,7 +183,7 @@ export function formatAslContent(content: string): string {
     // Handle code blocks first
     .replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
       const lang = language || 'text';
-      return `</p><pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm my-4"><code class="language-${lang}">${code}</code></pre><p>`;
+      return `</p><pre class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-6 border border-gray-700"><code class="language-${lang}">${code}</code></pre><p>`;
     })
     // Handle markdown tables first
     .replace(/\| (.+?) \| (.+?) \| (.+?) \|\n\| :--- \| :--- \| :--- \|\n/g, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th></tr></thead><tbody>')
@@ -202,7 +202,7 @@ export function formatAslContent(content: string): string {
     // Handle regular bullet points
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     // Convert consecutive list items to proper lists
-    .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4">$&</ul>')
+    .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4 space-y-1">$&</ul>')
     // Handle paragraph breaks
     .replace(/\n\n/g, '</p><p class="mb-4">')
     // Handle remaining line breaks
@@ -211,9 +211,21 @@ export function formatAslContent(content: string): string {
 
 // Enhanced content formatter for Nano Template content
 export function formatNanoTemplateContent(content: string): string {
-  return content
+  // Process list items first to prevent <p> tags from breaking them
+  let processedContent = content
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)+/g, '<ul class="list-disc pl-6 mb-4 space-y-1">$&</ul>');
+
+  // Then apply other formatting
+  return processedContent
     // Handle image references [Image: url - alt text]
     .replace(/\[Image:\s*([^\]]+)\s*-\s*([^\]]+)\]/g, '<img src="$1" alt="$2" style="width: 100%; max-width: 600px; height: auto; margin: 20px 0; border-radius: 8px;" />')
+    // Handle bolded lines as headers (e.g., **Advanced Capabilities**)
+    .replace(/^\*\*(.*?)\*\*$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3 text-gray-900">$1</h3>')
+    // Handle markdown headers (e.g., ### Subheading)
+    .replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3 text-gray-900">$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold mt-8 mb-6 text-gray-900">$1</h1>')
     // Handle markdown tables first - support both with and without spaces
     // 4-column table header
     .replace(/^\| (.+?) \| (.+?) \| (.+?) \| (.+?) \|\n\|-+\s*\|[- ]+\s*\|[- ]+\s*\|[- ]+\s*\|\n/gm, '<table class="min-w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden mb-6"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$1</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$2</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$3</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">$4</th></tr></thead><tbody>')
@@ -228,29 +240,38 @@ export function formatNanoTemplateContent(content: string): string {
     .replace(/(<tr class="hover:bg-gray-50">[\s\S]*?<\/tr>)(\s*(?!<tr))/g, '$1</tbody></table>$2')
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
-    // Handle bold text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    // Handle mermaid diagrams - process before other formatting
+    .replace(/```mermaid\n([\s\S]*?)```/g, '<div class="mermaid">$1</div>')
+    // Handle bold text (but not headers)
+    .replace(/(?<!^)\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Handle bullet points with bold headers: **Header**: Description
     .replace(/^\*\*(.*?)\*\*:\s*(.+)$/gm, '<li><strong>$1:</strong> $2</li>')
-    // Handle regular bullet points
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    // Convert consecutive list items to proper lists
-    .replace(/(<li>[\s\S]*?<\/li>)(\s*<li>[\s\S]*?<\/li>)*/g, '<ul class="list-disc pl-6 mb-4">$&</ul>')
-    // Handle paragraph breaks
-    .replace(/\n\n/g, '</p><p className="mb-4">')
-    // Handle remaining line breaks
-    .replace(/\n/g, '<br/>');
+    // Handle paragraph breaks (but don't break lists or headers)
+    .replace(/(?:^|\n)(?!<[h|u]).+(?=\n\n|\n|$)/gm, (match) => {
+      if (!match.includes('<li>') && !match.includes('<h') && !match.includes('<ul>') && !match.includes('<table>')) {
+        return `<p class="mb-4 text-base leading-relaxed">${match.trim()}</p>`;
+      }
+      return match;
+    })
+    // Clean up extra line breaks
+    .replace(/\n+/g, '');
 }
 
-// Simple content formatter for Nano Banana content
+// Enhanced content formatter for Nano Banana content
 export function formatNanoBananaContent(content: string): string {
+  // Check if content contains HTML (like our tools section with background box)
+  if (content.includes('<div style=')) {
+    // Return content as-is for HTML sections to preserve styling
+    return content;
+  }
+  
   return content
     // Handle markdown links [text](url)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
     // Handle bold text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Handle paragraph breaks
-    .replace(/\n\n/g, '</p><p className="mb-4">')
+    .replace(/\n\n/g, '</p><p class="mb-4 text-base leading-relaxed">')
     // Handle remaining line breaks
     .replace(/\n/g, '<br/>');
 }
@@ -259,18 +280,40 @@ export function formatNanoBananaContent(content: string): string {
 export function formatContent(content: string): string {
   let processed = content;
   
-  // Handle tables first
+  // Handle code blocks FIRST to protect them from other processing
+  const codeBlocks: string[] = [];
+  processed = processed.replace(/```[\w]*\n([\s\S]*?)```/g, (match, code) => {
+    const index = codeBlocks.length;
+    codeBlocks.push(code.trim());
+    return `__CODE_BLOCK_${index}__`;
+  });
+  
+  // Handle inline code
+  processed = processed.replace(/`([^`]+)`/g, '<code class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border border-gray-300">$1</code>');
+  
+  // Handle tables next
   processed = parseMarkdownTable(processed);
   
-  // Then apply all inline formatting in one pass
+  // Then apply all inline formatting
   const result = `<p>${processed
+    .replace(/^\*\*(.*?)\*\*$/gm, '</p><h3 class="text-xl font-semibold mt-6 mb-3 text-gray-900">$1</h3><p>')
+    .replace(/^### (.+)$/gm, '</p><h3 class="text-xl font-semibold mt-6 mb-3 text-gray-900">$1</h3><p>')
+    .replace(/^## (.+)$/gm, '</p><h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">$1</h2><p>')
+    .replace(/^# (.+)$/gm, '</p><h1 class="text-3xl font-bold mt-8 mb-6 text-gray-900">$1</h1><p>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // bold LAST, inline
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" ...>$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)+/g, '<ul class="list-disc pl-6 mb-4">$&</ul>')
-    .replace(/\n\n/g, '</p><p class="mb-4">')
+    .replace(/(<li>.*<\/li>)+/g, '<ul class="list-disc pl-6 mb-4 space-y-1">$&</ul>')
+    .replace(/\n\n+/g, '</p><p class="mb-4">')
     .replace(/\n/g, '<br/>')
   }</p>`;
   
-  return result;
+  // Restore code blocks
+  let finalResult = result;
+  codeBlocks.forEach((code, index) => {
+    const lang = code.includes('python') ? 'python' : code.includes('javascript') || code.includes('js') ? 'javascript' : 'text';
+    finalResult = finalResult.replace(`__CODE_BLOCK_${index}__`, `</p><pre class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto text-sm font-mono leading-relaxed my-6 border border-gray-700"><code class="language-${lang}">${code}</code></pre><p>`);
+  });
+  
+  return finalResult;
 }
