@@ -1,11 +1,7 @@
-import topics from "@/public/data/topics.json";
 import nanoTemplates from "@/public/data/nano_templates.json";
 
 export type Topic = {
   id: string;
-  icon: string;
-  priority: number;
-  keywords: string[];
 };
 
 type TemplateLike = {
@@ -43,10 +39,23 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
+function deriveTopicsFromTemplates(
+  templates: TemplateLike[]
+): Topic[] {
+  const distinctTopicIds = Array.from(
+    new Set(
+      templates.flatMap((template) =>
+        normalizeTopicValues(template.topics)
+      )
+    )
+  ).sort((a, b) => a.localeCompare(b));
+
+  return distinctTopicIds.map((id) => ({ id }));
+}
+
 function buildTopicRegistry(): TopicRegistry {
-  const baseTopics = [...(topics as Topic[])].sort(
-    (a, b) => (a.priority ?? 999) - (b.priority ?? 999)
-  );
+  const templates = nanoTemplates as TemplateLike[];
+  const baseTopics = deriveTopicsFromTemplates(templates);
 
   const topicToTemplates = new Map<string, TemplateLike[]>();
   const templateToTopics = new Map<string, string[]>();
@@ -55,7 +64,7 @@ function buildTopicRegistry(): TopicRegistry {
     topicToTemplates.set(topic.id, []);
   }
 
-  for (const template of nanoTemplates as TemplateLike[]) {
+  for (const template of templates) {
     const topicIds = [...new Set(normalizeTopicValues(template.topics))].filter(
       (topicId) => topicToTemplates.has(topicId)
     );
@@ -68,12 +77,12 @@ function buildTopicRegistry(): TopicRegistry {
   }
 
   const enrichedTopics: TopicWithTemplates[] = baseTopics.map((topic) => {
-    const templates = topicToTemplates.get(topic.id) ?? [];
+    const topicTemplates = topicToTemplates.get(topic.id) ?? [];
     return {
       ...topic,
-      templates,
-      templateCount: templates.length,
-      isEnabled: templates.length > 0,
+      templates: topicTemplates,
+      templateCount: topicTemplates.length,
+      isEnabled: topicTemplates.length > 0,
     };
   });
 

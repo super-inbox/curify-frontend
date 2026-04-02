@@ -8,11 +8,15 @@ import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import ReproduceTemplateSection from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 
-function hasCommonTopic(a?: string[], b?: string[]) {
-  if (!a?.length || !b?.length) return false;
+function countCommonTopics(a?: string[], b?: string[]) {
+  if (!a?.length || !b?.length) return 0;
 
   const setA = new Set(a.map((x) => x.trim().toLowerCase()).filter(Boolean));
-  return b.some((x) => setA.has(x.trim().toLowerCase()));
+
+  return b.reduce((count, x) => {
+    const normalized = x.trim().toLowerCase();
+    return setA.has(normalized) ? count + 1 : count;
+  }, 0);
 }
 
 export default function NanoTemplateDetailClient(props: {
@@ -43,7 +47,6 @@ export default function NanoTemplateDetailClient(props: {
 
   return (
     <>
-    
       {shouldShowReproduce && <ReproduceTemplateSection template={template} />}
 
       {showOtherTemplates && (
@@ -64,10 +67,8 @@ export default function NanoTemplateDetailClient(props: {
             requireAuth={requireAuth}
             onViewClick={onViewClick}
             rankScoreRelatedShift={rankScoreRelatedShift}
-            isRelated={(card) => {
-              const related = hasCommonTopic(currentTopics, card.topics);
-
-              return related;
+            getRelatedScore={(card) => {
+              return countCommonTopics(currentTopics, card.topics);
             }}
           />
         </section>
