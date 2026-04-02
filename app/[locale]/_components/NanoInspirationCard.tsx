@@ -308,7 +308,7 @@ export function NanoInspirationRow({
   requireAuth,
   onViewClick,
   getRelatedScore,
-  rankScoreRelatedShift = 40,
+  rankScoreRelatedShift = 80,
 }: NanoInspirationRowProps) {
   const scoredCards = cards.map((c) => {
     const relatedScore = Math.max(0, getRelatedScore?.(c) ?? 0);

@@ -25,8 +25,7 @@ export default function NanoTemplateDetailClient(props: {
   otherNanoCards: NanoInspirationCardType[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
-  showOtherTemplateTitle?: boolean;
-  rankScoreRelatedShift?: number;
+  showOtherTemplateTitle?: boolean;  
 }) {
   const t = useTranslations("nanoTemplate");
 
@@ -35,8 +34,7 @@ export default function NanoTemplateDetailClient(props: {
     otherNanoCards,
     showReproduce = true,
     showOtherTemplates = true,
-    showOtherTemplateTitle = true,
-    rankScoreRelatedShift = 40,
+    showOtherTemplateTitle = true,    
   } = props;
 
   const requireAuth = () => true;
@@ -65,8 +63,7 @@ export default function NanoTemplateDetailClient(props: {
           <NanoInspirationRow
             cards={otherNanoCards}
             requireAuth={requireAuth}
-            onViewClick={onViewClick}
-            rankScoreRelatedShift={rankScoreRelatedShift}
+            onViewClick={onViewClick}            
             getRelatedScore={(card) => {
               return countCommonTopics(currentTopics, card.topics);
             }}
