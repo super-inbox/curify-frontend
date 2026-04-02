@@ -49,12 +49,11 @@ function hasTagOverlap(aTags, bTags) {
   return arrB.some((tag) => setA.has(tag));
 }
 
-function buildRelatedPrompts(currentPrompt, allPrompts, limit = 4) {
+function buildRelatedPrompts(currentPrompt, allPrompts) {
   return allPrompts
     .filter((p) => p.id !== currentPrompt.id)
     .filter((p) => hasTagOverlap(currentPrompt.tags, p.tags))
-    .sort((a, b) => scorePrompt(b) - scorePrompt(a))
-    .slice(0, limit)
+    .sort((a, b) => scorePrompt(b) - scorePrompt(a))    
     .map(toSummary);
 }
 
