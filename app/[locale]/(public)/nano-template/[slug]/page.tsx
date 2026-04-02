@@ -31,6 +31,7 @@ async function getPageData(localeStr: string, slug: string) {
   const data = buildNanoTemplateDetailData(
     ctx.reg,
     ctx.templateId,
+    
     ctx.contentLocale,
     ctx.translateNano
   );
@@ -170,6 +171,7 @@ export default async function NanoTemplatePage({ params }: Props) {
           maxRows={2}
         />
 </section>
+
 <section className="mt-8">
   <NanoTemplateDetailClient
     locale={pageLocale}
@@ -177,12 +179,30 @@ export default async function NanoTemplatePage({ params }: Props) {
       template_id: template.template_id,
       base_prompt: template.base_prompt || "",
       parameters: template.parameters || [],
+      batch: !!template.batch
     }}
     otherNanoCards={otherNanoCards}
     showReproduce={true}
     showOtherTemplates={false}
   />
 </section>
+
+      <section className="mt-8">
+       
+        <NanoTemplateDetailClient
+          locale={pageLocale}
+          template={{
+            template_id: template.template_id,
+            base_prompt: template.base_prompt || "",
+            parameters: [],
+            topics: template.topics,
+          }}
+          otherNanoCards={otherNanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+        />
+      </section>
+
 
       {h2What || h2Who || h2How.length > 0 || h2Prompts.length > 0 ? (
         <section className="mt-10">
@@ -238,21 +258,6 @@ export default async function NanoTemplatePage({ params }: Props) {
         </section>
       ) : null}
 
-      <section className="mt-8">
-       
-        <NanoTemplateDetailClient
-          locale={pageLocale}
-          template={{
-            template_id: template.template_id,
-            base_prompt: template.base_prompt || "",
-            parameters: [],
-            topics: template.topics,
-          }}
-          otherNanoCards={otherNanoCards}
-          showReproduce={false}
-          showOtherTemplates={true}
-        />
-      </section>
     </main>
   );
 }

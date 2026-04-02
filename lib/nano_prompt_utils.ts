@@ -6,6 +6,14 @@ export type TemplateParameter = {
   options?: string[];
 };
 
+export type NanoTemplateForDetail = {
+  template_id: string;
+  base_prompt: string;
+  parameters: TemplateParameter[];
+  topics?: string[];
+  batch?: boolean;
+};
+
 /**
  * Replace {param} placeholders in base prompt
  */

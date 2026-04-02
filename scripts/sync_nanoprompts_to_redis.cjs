@@ -49,11 +49,16 @@ function hasTagOverlap(aTags, bTags) {
   return arrB.some((tag) => setA.has(tag));
 }
 
-function buildRelatedPrompts(currentPrompt, allPrompts, limit = 4) {
-  return allPrompts
-    .filter((p) => p.id !== currentPrompt.id)
-    .filter((p) => hasTagOverlap(currentPrompt.tags, p.tags))
-    .sort((a, b) => scorePrompt(b) - scorePrompt(a))
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+function buildRelatedPrompts(currentPrompt, allPrompts, limit = 20) {
+  return shuffle(
+    allPrompts
+      .filter((p) => p.id !== currentPrompt.id)
+      .filter((p) => hasTagOverlap(currentPrompt.tags, p.tags))
+  )
     .slice(0, limit)
     .map(toSummary);
 }
@@ -122,7 +127,7 @@ async function main() {
       category: safeString(prompt.category),
       likes: Number(prompt.likes || 0),
       retweets: Number(prompt.retweets || 0),
-      related: buildRelatedPrompts(prompt, validPrompts, 4),
+      related: buildRelatedPrompts(prompt, validPrompts),
     };
 
     pipeline.set(`nano_prompt:${prompt.id}`, JSON.stringify(fullPrompt));
