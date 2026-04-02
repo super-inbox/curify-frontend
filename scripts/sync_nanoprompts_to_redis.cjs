@@ -127,7 +127,7 @@ async function main() {
       category: safeString(prompt.category),
       likes: Number(prompt.likes || 0),
       retweets: Number(prompt.retweets || 0),
-      related: buildRelatedPrompts(prompt, validPrompts, 4),
+      related: buildRelatedPrompts(prompt, validPrompts),
     };
 
     pipeline.set(`nano_prompt:${prompt.id}`, JSON.stringify(fullPrompt));

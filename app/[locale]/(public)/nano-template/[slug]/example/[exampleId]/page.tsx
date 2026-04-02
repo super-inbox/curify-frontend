@@ -41,6 +41,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const templateView = getTemplateView(ctx.reg, ctx.templateId, ctx.contentLocale);
   const templateTopics = templateView?.topics ?? [];
+  const templateBatch = templateView?.batch ?? false;
 
   const { title, category } = resolveLocalizedExampleCopy(
     example,
@@ -92,6 +93,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     prevNext,
     otherNanoCards,
     templateTopics,
+    templateBatch,
   };
 }
 
@@ -163,6 +165,7 @@ export default async function NanoExampleDetailPage({
     prevNext,
     otherNanoCards,
     templateTopics,
+    templateBatch,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
@@ -237,6 +240,10 @@ export default async function NanoExampleDetailPage({
               url: examplePageUrl,
               title,
               text: `Check out this Nano Banana example: ${title}`,
+            }}
+            batchDownload={{
+              enabled: templateBatch,
+              templateId: templateId,
             }}
           />
         }
