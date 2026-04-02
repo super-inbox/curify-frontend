@@ -60,9 +60,7 @@ export default async function InspirationHubPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-
-  const tTopicsRoot = await getTranslations({ locale });  
+  const { locale } = await params;  
 
   const rawData = await inspirationService.getCards({
     review_status: "APPROVED",

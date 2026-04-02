@@ -8,11 +8,15 @@ import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import ReproduceTemplateSection from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 
-function hasCommonTopic(a?: string[], b?: string[]) {
-  if (!a?.length || !b?.length) return false;
+function countCommonTopics(a?: string[], b?: string[]) {
+  if (!a?.length || !b?.length) return 0;
 
   const setA = new Set(a.map((x) => x.trim().toLowerCase()).filter(Boolean));
-  return b.some((x) => setA.has(x.trim().toLowerCase()));
+
+  return b.reduce((count, x) => {
+    const normalized = x.trim().toLowerCase();
+    return setA.has(normalized) ? count + 1 : count;
+  }, 0);
 }
 
 export default function NanoTemplateDetailClient(props: {
@@ -21,8 +25,7 @@ export default function NanoTemplateDetailClient(props: {
   otherNanoCards: NanoInspirationCardType[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
-  showOtherTemplateTitle?: boolean;
-  rankScoreRelatedShift?: number;
+  showOtherTemplateTitle?: boolean;  
 }) {
   const t = useTranslations("nanoTemplate");
 
@@ -31,8 +34,7 @@ export default function NanoTemplateDetailClient(props: {
     otherNanoCards,
     showReproduce = true,
     showOtherTemplates = true,
-    showOtherTemplateTitle = true,
-    rankScoreRelatedShift = 40,
+    showOtherTemplateTitle = true,    
   } = props;
 
   const requireAuth = () => true;
@@ -43,7 +45,6 @@ export default function NanoTemplateDetailClient(props: {
 
   return (
     <>
-    
       {shouldShowReproduce && <ReproduceTemplateSection template={template} />}
 
       {showOtherTemplates && (
@@ -62,12 +63,9 @@ export default function NanoTemplateDetailClient(props: {
           <NanoInspirationRow
             cards={otherNanoCards}
             requireAuth={requireAuth}
-            onViewClick={onViewClick}
-            rankScoreRelatedShift={rankScoreRelatedShift}
-            isRelated={(card) => {
-              const related = hasCommonTopic(currentTopics, card.topics);
-
-              return related;
+            onViewClick={onViewClick}            
+            getRelatedScore={(card) => {
+              return countCommonTopics(currentTopics, card.topics);
             }}
           />
         </section>
