@@ -34,8 +34,8 @@ export default function RelatedBlogs({ currentSlug, locale, maxRelated = 3 }: Re
   const currentCategory = currentBlog.category;
   
   // Get category display name
-  const categoryConfig = (categoriesData as any).categories[currentCategory];
-  const categoryName = categoryConfig?.name || currentCategory;
+  const categoryConfig = currentCategory ? (categoriesData as any).categories[currentCategory] : undefined;
+  const categoryName = categoryConfig?.name || currentCategory || 'Uncategorized';
 
   // First, try to use relatedLinks if they exist
   let relatedBlogs: BlogPost[] = [];
