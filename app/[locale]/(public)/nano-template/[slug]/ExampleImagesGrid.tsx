@@ -43,7 +43,7 @@ function ExampleImageCard({
   item: Item;
   locale: string;
 }) {
-  const trackClick = useClickTracking(item.id, "nano_inspiration", "cards");
+  const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration", "cards");
 
   return (
     <Link
