@@ -5,6 +5,7 @@ import { Copy, Check } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
+import { useCopyTracking, useClickTracking } from "@/services/useTracking";
 
 interface PromptCardProps {
   prompt: NanoPromptBase;
@@ -32,6 +33,10 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   const [hasImgError, setHasImgError] = useState(false);
 
   const normalizedUrl = normalizeCdnImageUrl(prompt.imageURL);
+  const trackingId = `nano_banana_prompts:${prompt.id}`;
+
+  const trackCopy = useCopyTracking(trackingId, 'nano_gallery');
+  const trackClick = useClickTracking(trackingId, 'nano_gallery');
 
   const copyToClipboard = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -39,6 +44,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
     try {
       await navigator.clipboard.writeText(prompt.prompt);
+      trackCopy();
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -49,6 +55,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   return (
     <Link
       href={`/nano-banana-pro-prompts/${prompt.id}`}
+      onClick={trackClick}
       className="group block overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       aria-label={`View details for ${prompt.title}`}
     >
@@ -99,7 +106,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
             <button
               type="button"
               onClick={copyToClipboard}
-              className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] font-medium text-indigo-600 hover:text-indigo-800"
+              className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] font-medium text-indigo-600 hover:text-indigo-800 cursor-pointer"
               aria-label={`Copy prompt: ${prompt.title}`}
             >
               {copied ? (

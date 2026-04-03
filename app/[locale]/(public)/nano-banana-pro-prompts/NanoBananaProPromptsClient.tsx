@@ -9,6 +9,7 @@ import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
 import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
 
+
 type Pagination = {
   total: number;
   hasNextPage: boolean;
