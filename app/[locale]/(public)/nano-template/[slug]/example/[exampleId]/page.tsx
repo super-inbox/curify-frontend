@@ -223,7 +223,7 @@ export default async function NanoExampleDetailPage({
           <UnifiedActionBar
             className="pt-2"
             tracking={{
-              contentId: example.id,
+              contentId: `${templateId}:${example.id}`,
               contentType: "nano_inspiration",
               viewMode: "cards",
             }}
