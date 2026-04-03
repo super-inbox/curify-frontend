@@ -5,6 +5,8 @@ import { Copy, Check } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
+import { useCopyTracking } from "@/services/useTracking";
+
 
 interface PromptCardProps {
   prompt: NanoPromptBase;
@@ -32,6 +34,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   const [hasImgError, setHasImgError] = useState(false);
 
   const normalizedUrl = normalizeCdnImageUrl(prompt.imageURL);
+  const trackCopy = useCopyTracking(`nano_banana_prompts:${prompt.id}`, 'nano_gallery');
 
   const copyToClipboard = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -39,6 +42,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
     try {
       await navigator.clipboard.writeText(prompt.prompt);
+      trackCopy();
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -99,7 +103,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
             <button
               type="button"
               onClick={copyToClipboard}
-              className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] font-medium text-indigo-600 hover:text-indigo-800"
+              className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] font-medium text-indigo-600 hover:text-indigo-800 cursor-pointer"
               aria-label={`Copy prompt: ${prompt.title}`}
             >
               {copied ? (
