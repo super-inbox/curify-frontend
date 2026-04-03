@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
@@ -13,68 +13,108 @@ import { jobTypeAtom } from "@/app/atoms/atoms";
 import { File } from "@/types/projects";
 
 export default function ProjectDetailsPage() {
-  const { locale } = useParams();
-  const router = useRouter(); 
+  const params = useParams();
+  const locale = Array.isArray(params.locale) ? params.locale[0] : params.locale;
+  const id = Array.isArray(params.id) ? params.id[0] : params.id;
+
+  const router = useRouter();
   const [projectDetails, setProjectDetails] = useState<ProjectDetails | null>(null);
   const [isExportDialogOpen, setIsExportDialogOpen] = useState(false);
   const [exportFiles, setExportFiles] = useState<File[]>([]);
   const [modifiedSegments, setModifiedSegments] = useState<Record<number, string>>({});
   const [statusMessage, setStatusMessage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const setJobType = useSetAtom(jobTypeAtom);
 
-  useEffect(() => {
-    const cached = localStorage.getItem("selectedProjectDetails");
-    if (!cached) return;
-
-    try {
-      const data = JSON.parse(cached) as ProjectDetails;
-      console.log("📦 Loaded cached project details:", data);
-
-      setProjectDetails(data);
-
-      const extractFileName = (url: string) => {
-        try {
-          return decodeURIComponent(new URL(url).pathname.split("/").pop() || "download");
-        } catch {
-          return "download";
-        }
-      };
-
-      const files: File[] = [];
-      if (data.final_video_signed_url) {
-        files.push({
-          name: extractFileName(data.final_video_signed_url),
-          type: "MP4",          
-          downloadUrl: data.final_video_signed_url,
-        });
+  const buildExportFiles = (data: ProjectDetails): File[] => {
+    const extractFileName = (url: string) => {
+      try {
+        return decodeURIComponent(new URL(url).pathname.split("/").pop() || "download");
+      } catch {
+        return "download";
       }
-      if (data.final_video_signed_url_withwatermark) {
-        files.push({
-          name: extractFileName(data.final_video_signed_url_withwatermark),
-          type: "MP4",          
-          downloadUrl: data.final_video_signed_url_withwatermark,
-        });
-      }
-      if (data.srt_signed_url) {
-        files.push({
-          name: extractFileName(data.srt_signed_url),
-          type: "SRT",          
-          downloadUrl: data.srt_signed_url,
-        });
-      }
-      setExportFiles(files);
-    } catch (err) {
-      console.error("Failed to parse project data from localStorage:", err);
+    };
+
+    const files: File[] = [];
+
+    if (data.final_video_signed_url) {
+      files.push({
+        name: extractFileName(data.final_video_signed_url),
+        type: "MP4",
+        downloadUrl: data.final_video_signed_url,
+      });
     }
-  }, []);
+
+    if (data.final_video_signed_url_withwatermark) {
+      files.push({
+        name: extractFileName(data.final_video_signed_url_withwatermark),
+        type: "MP4",
+        downloadUrl: data.final_video_signed_url_withwatermark,
+      });
+    }
+
+    if (data.srt_signed_url) {
+      files.push({
+        name: extractFileName(data.srt_signed_url),
+        type: "SRT",
+        downloadUrl: data.srt_signed_url,
+      });
+    }
+
+    return files;
+  };
+
+  useEffect(() => {
+    const loadProject = async () => {
+      if (!id || typeof id !== "string") {
+        console.error("Missing project id in route params");
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+
+        const data = await projectService.getProject(id);
+        setProjectDetails(data);
+        setExportFiles(buildExportFiles(data));
+
+        localStorage.setItem("selectedProjectDetails", JSON.stringify(data));
+      } catch (err) {
+        console.error("Failed to load project by id:", err);
+
+        // fallback to cache only if it matches the same project id
+        try {
+          const cached = localStorage.getItem("selectedProjectDetails");
+          if (cached) {
+            const parsed = JSON.parse(cached) as ProjectDetails;
+            if (parsed?.project_id === id) {
+              setProjectDetails(parsed);
+              setExportFiles(buildExportFiles(parsed));
+            }
+          }
+        } catch (cacheErr) {
+          console.error("Failed to parse project data from localStorage:", cacheErr);
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadProject();
+  }, [id]);
 
   const updateTranslation = (index: number, newText: string) => {
     if (!projectDetails) return;
 
     const updatedSegments = [...projectDetails.segments];
     updatedSegments[index].translated = newText;
-    setProjectDetails({ ...projectDetails, segments: updatedSegments });
+
+    setProjectDetails({
+      ...projectDetails,
+      segments: updatedSegments,
+    });
 
     setModifiedSegments((prev) => ({ ...prev, [index]: newText }));
   };
@@ -91,15 +131,15 @@ export default function ProjectDetailsPage() {
     const updatedSegments = Object.entries(modifiedSegments).map(
       ([index, translatedUpdated]) => {
         const seg = projectDetails.segments[Number(index)];
-    
+
         return {
           segment_id: seg.segment_id,
           line_number: seg.line_number,
           translated_updated: translatedUpdated,
-          original_updated: null        // do NOT send unchanged original
+          original_updated: null,
         };
       }
-    );   
+    );
 
     try {
       const res = await projectService.reprocessProjectWithSegments(
@@ -109,19 +149,51 @@ export default function ProjectDetailsPage() {
       const projectId = "data" in res ? res.data.project_id : (res as any).project_id;
 
       setModifiedSegments({});
-      setJobType("reprocessing"); // ✅ Set job type here
+      setJobType("reprocessing");
       router.push(`/${locale}/magic/${projectId}/`);
-
     } catch (err) {
       console.error("Failed to send reprocess request:", err);
       alert("Error submitting reprocess request.");
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
+        <div className="flex justify-between items-center mb-6">
+          <Link
+            href="/workspace"
+            className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors cursor-pointer"
+          >
+            <img src="/icons/arrow_left.svg" alt="Back" className="w-4 h-4" />
+            Return to Workspace
+          </Link>
+        </div>
+        <div className="text-gray-600">Loading project details...</div>
+      </div>
+    );
+  }
+
+  if (!projectDetails) {
+    return (
+      <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
+        <div className="flex justify-between items-center mb-6">
+          <Link
+            href="/workspace"
+            className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors cursor-pointer"
+          >
+            <img src="/icons/arrow_left.svg" alt="Back" className="w-4 h-4" />
+            Return to Workspace
+          </Link>
+        </div>
+        <div className="text-red-600">Unable to load project details.</div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="min-h-screen bg-white p-6 pt-20 flex flex-col">
-        {/* Top Bar */}
         <div className="flex justify-between items-center mb-6">
           <Link
             href="/workspace"
@@ -136,9 +208,7 @@ export default function ProjectDetailsPage() {
           </div>
         </div>
 
-        {/* Split Layout */}
         <div className="flex flex-col lg:flex-row gap-6 flex-grow">
-          {/* Left: Segments */}
           <div className="lg:w-2/3 w-full flex flex-col justify-between">
             <div>
               <div className="grid grid-cols-2 mb-2">
@@ -151,31 +221,31 @@ export default function ProjectDetailsPage() {
               </div>
 
               <div className="grid grid-cols-2 gap-y-2 bg-white text-sm">
-                {projectDetails?.segments
-                .sort((a, b) => a.segment_id - b.segment_id)
-                .map((seg, i) => {
-                  const modified = modifiedSegments[i] !== undefined;
-                  return (
-                    <React.Fragment key={seg.line_number}>
-                      <div className="px-4 py-1.5 whitespace-pre-line">{seg.original}</div>
-                      <div
-                        className={clsx(
-                          "px-4 py-1.5 whitespace-pre-line border rounded-md focus:outline-none",
-                          modified
-                            ? "border-yellow-400 bg-yellow-50"
-                            : "border-transparent hover:border-gray-300"
-                        )}
-                        contentEditable
-                        suppressContentEditableWarning
-                        onBlur={(e) => updateTranslation(i, e.currentTarget.textContent || "")}
-                      >
-                        {seg.translated}
-                      </div>
-                    </React.Fragment>
-                  );
-                })}
-              </div>
+                {projectDetails.segments
+                  .sort((a, b) => a.segment_id - b.segment_id)
+                  .map((seg, i) => {
+                    const modified = modifiedSegments[i] !== undefined;
 
+                    return (
+                      <React.Fragment key={seg.line_number}>
+                        <div className="px-4 py-1.5 whitespace-pre-line">{seg.original}</div>
+                        <div
+                          className={clsx(
+                            "px-4 py-1.5 whitespace-pre-line border rounded-md focus:outline-none",
+                            modified
+                              ? "border-yellow-400 bg-yellow-50"
+                              : "border-transparent hover:border-gray-300"
+                          )}
+                          contentEditable
+                          suppressContentEditableWarning
+                          onBlur={(e) => updateTranslation(i, e.currentTarget.textContent || "")}
+                        >
+                          {seg.translated}
+                        </div>
+                      </React.Fragment>
+                    );
+                  })}
+              </div>
             </div>
 
             <div className="flex flex-col items-center gap-2 mt-8">
@@ -193,6 +263,7 @@ export default function ProjectDetailsPage() {
                   Regenerate
                 </button>
               </div>
+
               <div className="text-sm text-gray-600 mt-1">
                 {Object.keys(modifiedSegments).length > 0
                   ? `${Object.keys(modifiedSegments).length} line(s) updated`
@@ -204,26 +275,23 @@ export default function ProjectDetailsPage() {
             </div>
           </div>
 
-          {/* Right: Video Preview */}
           <div className="lg:w-1/3 w-full flex flex-col justify-between">
             <Tab.Group>
               <Tab.List className="flex space-x-1 rounded-xl bg-gray-200 p-1">
                 <Tab
                   className={({ selected }) =>
-                    clsx(
-                      "w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg",
-                      { "bg-white shadow": selected }
-                    )
+                    clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
+                      "bg-white shadow": selected,
+                    })
                   }
                 >
                   Original Video
                 </Tab>
                 <Tab
                   className={({ selected }) =>
-                    clsx(
-                      "w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg",
-                      { "bg-white shadow": selected }
-                    )
+                    clsx("w-full py-2 text-sm font-medium leading-5 text-blue-700 rounded-lg", {
+                      "bg-white shadow": selected,
+                    })
                   }
                 >
                   Translated Video
@@ -232,7 +300,7 @@ export default function ProjectDetailsPage() {
 
               <Tab.Panels className="mt-4">
                 <Tab.Panel className="aspect-[16/9] relative bg-black rounded-xl overflow-hidden">
-                  {projectDetails?.original_video_signed_url ? (
+                  {projectDetails.original_video_signed_url ? (
                     <video
                       src={projectDetails.original_video_signed_url}
                       controls
@@ -246,7 +314,7 @@ export default function ProjectDetailsPage() {
                 </Tab.Panel>
 
                 <Tab.Panel className="aspect-[16/9] relative bg-black rounded-xl overflow-hidden">
-                  {projectDetails?.final_video_signed_url ? (
+                  {projectDetails.final_video_signed_url ? (
                     <video
                       src={projectDetails.final_video_signed_url}
                       controls
