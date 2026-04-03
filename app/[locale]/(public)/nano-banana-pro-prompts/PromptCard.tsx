@@ -5,8 +5,7 @@ import { Copy, Check } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import type { NanoPromptBase } from '@/types/nanoPrompts';
-import { useCopyTracking } from "@/services/useTracking";
-
+import { useCopyTracking, useClickTracking } from "@/services/useTracking";
 
 interface PromptCardProps {
   prompt: NanoPromptBase;
@@ -34,7 +33,10 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   const [hasImgError, setHasImgError] = useState(false);
 
   const normalizedUrl = normalizeCdnImageUrl(prompt.imageURL);
-  const trackCopy = useCopyTracking(`nano_banana_prompts:${prompt.id}`, 'nano_gallery');
+  const trackingId = `nano_banana_prompts:${prompt.id}`;
+
+  const trackCopy = useCopyTracking(trackingId, 'nano_gallery');
+  const trackClick = useClickTracking(trackingId, 'nano_gallery');
 
   const copyToClipboard = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -53,6 +55,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
   return (
     <Link
       href={`/nano-banana-pro-prompts/${prompt.id}`}
+      onClick={trackClick}
       className="group block overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       aria-label={`View details for ${prompt.title}`}
     >
