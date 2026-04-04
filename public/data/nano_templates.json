@@ -5325,5 +5325,298 @@
       "lifestyle"
     ],
     "rank_score": 2
-  }
+  },
+  {
+    "id": "template-detailed-vocab-flashcard",
+    "locales": {
+        "en": {
+            "base_prompt": "（Chinese-English Detailed Vocabulary Flashcard Designer）You are a professional Chinese-English bilingual vocabulary flashcard designer, specializing in creating clean, modern, minimalist educational posters. Based on the user-specified {chinese_word}, generate a horizontal 16:9 premium detailed vocabulary card, matching the flat illustration, warm minimalist aesthetic of the reference images. Card Layout: 1. Top Left: Pinyin \"{pinyin}\" (light blue, large font), Chinese character \"{chinese_word}\" (bold red, large font), yellow rounded label with part of speech \"{pos}\" + English translation \"{english_word}\". 2. Right: Cute, clear flat illustration of the word's meaning. 3. Bottom: \"eg:\" label, example sentence in pinyin \"{example_pinyin}\" (light blue), example sentence in Chinese \"{example_chinese}\" (red), example sentence in English \"{example_english}\" (light blue). Overall Style: Clean minimalist design, warm beige background with soft pink/orange circular decorations, flat vector illustration, clear typography, Curify watermark at top left, horizontal 16:9 format, 4K ultra HD, direct image generation. Subject: {chinese_word} detailed vocabulary card.",
+            "parameters": [
+                {
+                    "name": "chinese_word",
+                    "label": "Chinese Word",
+                    "type": "text",
+                    "placeholder": [
+                        "高铁",
+                        "狗",
+                        "苹果",
+                        "课程表"
+                    ]
+                },
+                {
+                    "name": "pinyin",
+                    "label": "Pinyin",
+                    "type": "text",
+                    "placeholder": [
+                        "gāo tiě",
+                        "gǒu",
+                        "píng guǒ",
+                        "kè chéng biǎo"
+                    ]
+                },
+                {
+                    "name": "english_word",
+                    "label": "English Translation",
+                    "type": "text",
+                    "placeholder": [
+                        "high-speed rail / bullet train",
+                        "dog",
+                        "apple",
+                        "school timetable"
+                    ]
+                },
+                {
+                    "name": "pos",
+                    "label": "Part of Speech",
+                    "type": "text",
+                    "placeholder": [
+                        "n.",
+                        "n.",
+                        "n.",
+                        "n."
+                    ]
+                },
+                {
+                    "name": "example_pinyin",
+                    "label": "Example Pinyin",
+                    "type": "text",
+                    "placeholder": [
+                        "wǒ dā gāo tiě qù Shàng hǎi .",
+                        "tā jué de gǒu hěn kě ài",
+                        "wǒ xǐ huān chī píng guǒ。",
+                        "xué shēng kàn kè chéng biǎo."
+                    ]
+                },
+                {
+                    "name": "example_chinese",
+                    "label": "Example Chinese",
+                    "type": "text",
+                    "placeholder": [
+                        "我搭高铁去上海。",
+                        "他觉得狗很可爱。",
+                        "我喜欢吃苹果。",
+                        "学生看课程表。"
+                    ]
+                },
+                {
+                    "name": "example_english",
+                    "label": "Example English",
+                    "type": "text",
+                    "placeholder": [
+                        "I take the high-speed rail to Shanghai.",
+                        "He thinks the dog is very cute",
+                        "I like to eat apples.",
+                        "Students read the school timetable."
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg",
+    "rank_score": 2,
+    "topics": [
+      "learning",
+      "language"
+    ]
+},
+ {
+    "id": "template-custom-character-card",
+    "locales": {
+        "en": {
+            "base_prompt": "（Custom Character Card Designer）You are a professional character card designer, specializing in creating vintage-style, tarot-inspired custom character profile posters. Based on the user's specified {gender}, {personality_traits}, and {character_archetype}, generate a vertical 3:4 premium custom character card, matching the dark fantasy, vintage aesthetic of the reference images. Card Layout: 1. Header: Large bold title \"{character_archetype} — {character_title} ({gender})\", ornate vintage decorative border. 2. Central Illustration: Cinematic hyper-detailed fantasy illustration of a {gender} character, visually embodying {personality_traits} and {character_archetype}, dark fantasy vintage oil painting style, cinematic lighting. 3. Bottom Text: TAGS (4-6 core trait keywords), NAME (thematic character name), DESCRIPTION (150-200 word vivid character profile elaborating on {personality_traits}). Overall Style: Vintage tarot card aesthetic, ornate borders, aged paper texture, warm vintage color grading, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: Custom character card for {gender} with {personality_traits}.",
+            "parameters": [
+                {
+                    "name": "gender",
+                    "label": "Gender",
+                    "type": "text",
+                    "placeholder": [
+                        "Male",
+                        "Female"
+                    ]
+                },
+                {
+                    "name": "personality_traits",
+                    "label": "Personality Traits",
+                    "type": "text",
+                    "placeholder": [
+                        "Gentle, empathetic, lonely guardian",
+                        "Rational, strategic, solitary genius",
+                        "Sunny, energetic, romantic, sincere",
+                        "Passionate, straightforward, vivid, authentic",
+                        "Quiet, aloof, practical, independent"
+                    ]
+                },
+                {
+                    "name": "character_archetype",
+                    "label": "Character Archetype",
+                    "type": "text",
+                    "placeholder": [
+                        "The Silent Night Watchman",
+                        "The Solitary Strategist",
+                        "Fiery Little Sun",
+                        "Radiant Fireworks Girl",
+                        "Cool and Wild Rose"
+                    ]
+                },
+                {
+                    "name": "character_title",
+                    "label": "Character Title",
+                    "type": "text",
+                    "placeholder": [
+                        "The Silent Night Watchman",
+                        "The Solitary Strategist",
+                        "Fiery Little Sun",
+                        "Radiant Fireworks Girl",
+                        "Cool and Wild Rose"
+                    ]
+                },
+                {
+                    "name": "tags",
+                    "label": "Character Tags",
+                    "type": "text",
+                    "placeholder": [
+                        "Gentle Divinity, Forbearance, Empathizer, Lonely Guardian",
+                        "Rational asceticism, cunning, controlling, solitary genius",
+                        "Sunny, Energetic, Romantic, Sincere",
+                        "Passionate, Straightforward, Vivid, Authentic, Joyful, Brave",
+                        "Cool, Taciturn, Wild, Cold on the Outside, Warm on the Inside"
+                    ]
+                },
+                {
+                    "name": "character_name",
+                    "label": "Character Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Alaric Vance",
+                        "Elias Thorne",
+                        "Cassian Vance",
+                        "Lyra Sparkfire",
+                        "Lyra Thorne"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-custom-character-card--prev.jpg",
+    "rank_score": 2,
+    "topics": [
+      "character",
+      "mbti"
+    ]
+},
+  {
+    "id": "template-detective-conan",
+    "locales": {
+        "en": {
+            "base_prompt": "（Detective Conan Character Card Designer）You are a professional Detective Conan character profile card designer, specializing in creating anime-style, detective-themed collectible cards. Based on the user-specified {character_name}, generate a vertical 3:4 premium Detective Conan character profile card, matching the official anime aesthetic, detective-themed design of the reference images. Card Layout: 1. Header: Large bold title \"DETECTIVE CONAN CHARACTER PROFILE CARD\", character name \"{character_name}\" (with alias if applicable), small headshot, police tape/magnifying glass/fingerprint border decorations. 2. Left Illustration: Full-body anime illustration of {character_name} in iconic outfit, official Detective Conan art style, character-themed background and icons. 3. Right MBTI Section: MBTI type \"{mbti_type}\", title \"{mbti_title}\", 4-letter breakdown, 4 core personality traits, detailed character description, themed icon. 4. Footer: \"CARD #XX / PROFILE SERIES\" + official copyright text. Overall Style: Official Detective Conan anime art, clean collectible card design, detective theme, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: Detective Conan {character_name} character profile card.",
+            "parameters": [
+                {
+                    "name": "character_name",
+                    "label": "Character Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Shinichi Kudo",
+                        "Conan Edogawa (Shinichi Kudo)",
+                        "Ai Haibara (Shiho Miyano)",
+                        "Hiroshi Agasa",
+                        "Kogoro Mouri",
+                        "Ran Mouri",
+                        "Shiho Miyano (Ai Haibara)"
+                    ]
+                },
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Type",
+                    "type": "text",
+                    "placeholder": [
+                        "INTJ",
+                        "ISTP",
+                        "INTJ",
+                        "INTP",
+                        "ESTP",
+                        "ESFJ",
+                        "INTP"
+                    ]
+                },
+                {
+                    "name": "mbti_title",
+                    "label": "MBTI Title",
+                    "type": "text",
+                    "placeholder": [
+                        "THE ARCHITECT",
+                        "THE VIRTUOSO",
+                        "THE ARCHITECT",
+                        "THE LOGICIAN",
+                        "THE DYNAMO",
+                        "THE CONSUL",
+                        "THE LOGICIAN"
+                    ]
+                },
+                {
+                    "name": "mbti_breakdown",
+                    "label": "MBTI Breakdown",
+                    "type": "text",
+                    "placeholder": [
+                        "Introverted • Intuitive • Thinking • Judging",
+                        "Introverted • Sensing • Thinking • Perceiving",
+                        "Introverted • Intuitive • Thinking • Judging",
+                        "Introverted • Intuitive • Thinking • Perceiving",
+                        "Extroverted • Sensing • Thinking • Perceiving",
+                        "Extroverted • Sensing • Feeling • Judging",
+                        "Introverted • Intuitive • Thinking • Perceiving"
+                    ]
+                },
+                {
+                    "name": "core_traits",
+                    "label": "4 Core Personality Traits",
+                    "type": "text",
+                    "placeholder": [
+                        "STRATEGIC, DECISIVE, VISIONARY, DEDUCTIVE",
+                        "LOGICAL, ADAPTABLE, PRACTICAL, OBSERVENT",
+                        "ANALYTICAL, STRATEGIC, PRIVATE, INSIGHTFUL",
+                        "INVENTIVE, ANALYTICAL, LOGICAL, KNOWLEDGEABLE",
+                        "ACTION-ORIENTED, ADAPTABLE, PERSUASIVE, SPONTANEOUS",
+                        "WARM, PROTECTIVE, DEPENDABLE, CARING",
+                        "ANALYTICAL, INDEPENDENT, STRATEGIC, RATIONAL"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-detective-conan-conan-edogawa-prev.jpg",
+    "rank_score": 2,
+    "topics": [
+      "character",
+      "film"
+    ]
+},
+  {
+    "id": "template-children-english-vocab-spelling",
+    "locales": {
+        "en": {
+            "base_prompt": "（Children's English Vocabulary Spelling Poster Designer）You are a professional children's English vocabulary spelling poster designer, specializing in creating cute, colorful, educational word spelling posters. Based on the user-specified {theme}, generate a vertical 3:4 premium vocabulary spelling poster, matching the kawaii cartoon, clear educational aesthetic of the reference images. Layout: 8 vocabulary cards in 4×2 grid, each with unique soft pastel border. Each card: Left = cute cartoon illustration of the word; Right = IPA pronunciation, bold English word (with horizontal line for spelling practice), Chinese translation. Style: Clean minimalist design, soft off-white background, kawaii cartoon, bright friendly colors, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} English vocabulary spelling poster.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Vocabulary Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Vegetables",
+                        "Fruits",
+                        "Weather",
+                        "Animals",
+                        "Vehicles",
+                        "Furniture"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-children-english-vocab-spelling-weather-prev.jpg",
+    "rank_score": 2,
+    "topics": [
+      "language",
+      "learning"
+    ]
+}
 ]

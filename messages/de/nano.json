@@ -1181,5 +1181,93 @@
         ]
       }
     }
+  },
+  "template-detailed-vocab-flashcard": {
+    "category": "Sprachlernen & Vokabelkarten",
+    "description": "Erstellen Sie detaillierte zweisprachige Vokabelkarten Chinesisch-Englisch mit Aussprache, Übersetzungen und Beispielsätzen. Ideal für Sprachlerner und Educatoren.",
+    "title": "Chinesisch-Englische Vokabelkarten mit Beispielen (AI Lernkarten) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte zweisprachige Vokabelkarten mit Pinyin, Übersetzungen und kontextuellen Beispielsätzen. Sie hilft Lernenden, Wörter effektiv zu verstehen und zu merken.",
+        "who": "Entwickelt für Sprachlerner, ESL-Studenten, Lehrer, Tutoren und Bildungsinhaltsanbieter.",
+        "how": [
+          "Geben Sie das chinesische Wort und sein Pinyin ein.",
+          "Fügen Sie die englische Übersetzung und die Wortart hinzu.",
+          "Geben Sie Beispielsätze in Chinesisch, Pinyin und Englisch an.",
+          "Generieren Sie eine strukturierte zweisprachige Vokabelkarte."
+        ],
+        "prompts": [
+          "Chinesisch-Englische Vokabelkarte mit Beispielen.",
+          "Lernen Sie chinesische Wörter mit Pinyin und Sätzen.",
+          "Zweisprachige Vokabelkarte für Anfänger."
+        ]
+      }
+    }
+  },
+  "template-custom-character-card": {
+    "category": "Charakterdesign & Persönlichkeitskarten",
+    "description": "Erstellen Sie benutzerdefinierte Charakterprofilkarten mit Persönlichkeitsmerkmalen, Archetypen und filmischen Fantasiebildern. Ideal für Geschichtenerzählen, Spiele und kreative Inhalte.",
+    "title": "Benutzerdefinierte Charakterkarten (AI Persönlichkeits- & Archetyp-Generator) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte benutzerdefinierte Charakterkarten, die Persönlichkeitsmerkmale, Archetypen und narrative Beschreibungen im filmischen Fantasystil kombinieren.",
+        "who": "Entwickelt für Schriftsteller, Spieldesigner, Künstler, Rollenspieler und Geschichtenerzähler.",
+        "how": [
+          "Geben Sie Geschlecht und Persönlichkeitsmerkmale an.",
+          "Wählen Sie einen Charakterarchetyp und Titel.",
+          "Definieren Sie Charaktertags und Namen.",
+          "Generieren Sie eine detaillierte Charakterprofilkarte mit Bildern und Erzählungen."
+        ],
+        "prompts": [
+          "Fantasie-Charakterkarte mit Persönlichkeitsmerkmalen.",
+          "Erstellen Sie ein Tarot-Stil Charakterprofil.",
+          "Benutzerdefiniertes Charakterdesign mit Hintergrundgeschichte."
+        ]
+      }
+    }
+  },
+  "template-detective-conan": {
+    "category": "Anime-Charakter & MBTI-Karten",
+    "description": "Generieren Sie Charakterprofilkarten von Detective Conan mit MBTI-Persönlichkeitsanalyse und -merkmalen. Ideal für Anime-Fans und Persönlichkeitsinhaltsanbieter.",
+    "title": "Detective Conan Charakter MBTI Karten (AI Anime-Profile) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Charakterkarten von Detective Conan mit MBTI-Analyse, Persönlichkeitsmerkmalen und sammelbaren Layouts.",
+        "who": "Entwickelt für Anime-Fans, MBTI-Enthusiasten, Fandom-Communities und Inhaltsanbieter.",
+        "how": [
+          "Geben Sie den Charakternamen ein.",
+          "Geben Sie den MBTI-Typ und Titel an.",
+          "Fügen Sie eine Persönlichkeitsanalyse und Kernmerkmale hinzu.",
+          "Generieren Sie eine sammelbare Anime-Charakterprofilkarte."
+        ],
+        "prompts": [
+          "Detective Conan MBTI Charakteranalyse.",
+          "Anime-Charakter-Persönlichkeitskarte.",
+          "Shinichi Kudo MBTI-Profil."
+        ]
+      }
+    }
+  },
+  "template-children-english-vocab-spelling": {
+    "category": "Kinderlernen & Vokabelposter",
+    "description": "Generieren Sie bunte englische Vokabel-Rechtschreibposter für Kinder mit Aussprache und Illustrationen. Ideal für frühkindliche Bildung und ESL-Lernen.",
+    "title": "Kinder Englisch Vokabel Rechtschreibposter (Spaß Lernkarten) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert KI-gestützte Vokabel-Rechtschreibposter für Kinder mit thematischen Wortsets, Aussprache und visuellen Illustrationen für ansprechendes Lernen.",
+        "who": "Entwickelt für Eltern, Lehrer, ESL-Lernende, homeschooling Familien und frühkindliche Bildungsplattformen.",
+        "how": [
+          "Wählen Sie ein Vokabelthema.",
+          "Generieren Sie ein Set von Vokabelwörtern.",
+          "Fügen Sie Aussprache und Übersetzungen hinzu.",
+          "Erstellen Sie ein buntes Bildungs-Rechtschreibposter."
+        ],
+        "prompts": [
+          "Englisches Vokabelposter für Kinder.",
+          "Lernen Sie englische Wörter mit Bildern.",
+          "Rechtschreibübung für Kinder nach Thema."
+        ]
+      }
+    }
   }
 }

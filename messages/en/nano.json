@@ -1181,5 +1181,94 @@
         ]
       }
     }
-  }
+  },  
+    "template-detailed-vocab-flashcard": {
+      "category": "Language Learning & Vocabulary Cards",
+      "description": "Generate detailed Chinese-English bilingual vocabulary flashcards with pronunciation, translations, and example sentences. Ideal for language learners and educators.",
+      "title": "Chinese-English Vocabulary Flashcards with Examples (AI Learning Cards) | Curify AI",
+      "content": {
+        "sections": {
+          "what": "This template generates AI-powered bilingual vocabulary flashcards with pinyin, translations, and contextual example sentences. It helps learners understand and memorize words effectively.",
+          "who": "Designed for language learners, ESL students, teachers, tutors, and educational content creators.",
+          "how": [
+            "Enter the Chinese word and its pinyin.",
+            "Add English translation and part of speech.",
+            "Provide example sentences in Chinese, pinyin, and English.",
+            "Generate a structured bilingual vocabulary flashcard."
+          ],
+          "prompts": [
+            "Chinese English vocabulary flashcard with examples.",
+            "Learn Chinese words with pinyin and sentences.",
+            "Bilingual vocabulary card for beginners."
+          ]
+        }
+      }
+    },
+  
+    "template-custom-character-card": {
+      "category": "Character Design & Personality Cards",
+      "description": "Create custom character profile cards with personality traits, archetypes, and cinematic fantasy visuals. Ideal for storytelling, games, and creative content.",
+      "title": "Custom Character Cards (AI Personality & Archetype Generator) | Curify AI",
+      "content": {
+        "sections": {
+          "what": "This template generates AI-powered custom character cards combining personality traits, archetypes, and narrative descriptions in a cinematic fantasy style.",
+          "who": "Designed for writers, game designers, artists, role-playing creators, and storytelling enthusiasts.",
+          "how": [
+            "Specify gender and personality traits.",
+            "Choose a character archetype and title.",
+            "Define character tags and name.",
+            "Generate a detailed character profile card with visuals and narrative."
+          ],
+          "prompts": [
+            "Fantasy character card with personality traits.",
+            "Create a tarot-style character profile.",
+            "Custom character design with backstory."
+          ]
+        }
+      }
+    },
+    "template-detective-conan": {
+      "category": "Anime Character & MBTI Cards",
+      "description": "Generate Detective Conan character profile cards with MBTI personality analysis and traits. Ideal for anime fans and personality content creators.",
+      "title": "Detective Conan Character MBTI Cards (AI Anime Profiles) | Curify AI",
+      "content": {
+        "sections": {
+          "what": "This template generates AI-powered Detective Conan character cards with MBTI analysis, personality traits, and collectible-style layouts.",
+          "who": "Designed for anime fans, MBTI enthusiasts, fandom communities, and content creators.",
+          "how": [
+            "Enter the character name.",
+            "Specify MBTI type and title.",
+            "Add personality breakdown and core traits.",
+            "Generate a collectible-style anime character profile card."
+          ],
+          "prompts": [
+            "Detective Conan MBTI character analysis.",
+            "Anime character personality card.",
+            "Shinichi Kudo MBTI profile."
+          ]
+        }
+      }
+    },
+    "template-children-english-vocab-spelling": {
+      "category": "Kids Learning & Vocabulary Posters",
+      "description": "Generate colorful English vocabulary spelling posters for kids with pronunciation and illustrations. Ideal for early education and ESL learning.",
+      "title": "Kids English Vocabulary Spelling Posters (Fun Learning Cards) | Curify AI",
+      "content": {
+        "sections": {
+          "what": "This template generates AI-powered children's vocabulary spelling posters with themed word sets, pronunciation, and visual illustrations for engaging learning.",
+          "who": "Designed for parents, teachers, ESL learners, homeschooling families, and early education platforms.",
+          "how": [
+            "Select a vocabulary theme.",
+            "Generate a set of vocabulary words.",
+            "Include pronunciation and translations.",
+            "Create a colorful educational spelling poster."
+          ],
+          "prompts": [
+            "English vocabulary poster for kids.",
+            "Learn English words with pictures.",
+            "Spelling practice for children by theme."
+          ]
+        }
+      }
+    }
 }
