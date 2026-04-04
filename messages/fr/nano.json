@@ -1181,5 +1181,93 @@
         ]
       }
     }
+  },
+  "template-detailed-vocab-flashcard": {
+    "category": "Apprentissage des langues et cartes de vocabulaire",
+    "description": "Générez des cartes de vocabulaire bilingues chinois-anglais détaillées avec prononciation, traductions et phrases d'exemple. Idéal pour les apprenants en langues et les éducateurs.",
+    "title": "Cartes de vocabulaire chinois-anglais avec exemples (Cartes d'apprentissage AI) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes de vocabulaire bilingues alimentées par l'IA avec pinyin, traductions et phrases d'exemple contextuelles. Il aide les apprenants à comprendre et mémoriser les mots efficacement.",
+        "who": "Conçu pour les apprenants en langues, les étudiants ESL, les enseignants, les tuteurs et les créateurs de contenu éducatif.",
+        "how": [
+          "Entrez le mot chinois et son pinyin.",
+          "Ajoutez la traduction anglaise et la partie du discours.",
+          "Fournissez des phrases d'exemple en chinois, pinyin et anglais.",
+          "Générez une carte de vocabulaire bilingue structurée."
+        ],
+        "prompts": [
+          "Carte de vocabulaire chinois-anglais avec exemples.",
+          "Apprenez des mots chinois avec pinyin et phrases.",
+          "Carte de vocabulaire bilingue pour débutants."
+        ]
+      }
+    }
+  },
+  "template-custom-character-card": {
+    "category": "Conception de personnages et cartes de personnalité",
+    "description": "Créez des cartes de profil de personnage personnalisées avec traits de personnalité, archétypes et visuels de fantasy cinématographique. Idéal pour la narration, les jeux et le contenu créatif.",
+    "title": "Cartes de personnages personnalisés (Générateur de personnalité et d'archétype AI) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes de personnages personnalisées alimentées par l'IA combinant traits de personnalité, archétypes et descriptions narratives dans un style de fantasy cinématographique.",
+        "who": "Conçu pour les écrivains, les concepteurs de jeux, les artistes, les créateurs de jeux de rôle et les passionnés de narration.",
+        "how": [
+          "Spécifiez le genre et les traits de personnalité.",
+          "Choisissez un archétype de personnage et un titre.",
+          "Définissez les tags de personnage et le nom.",
+          "Générez une carte de profil de personnage détaillée avec visuels et narration."
+        ],
+        "prompts": [
+          "Carte de personnage fantastique avec traits de personnalité.",
+          "Créez un profil de personnage de style tarot.",
+          "Conception de personnage personnalisée avec histoire."
+        ]
+      }
+    }
+  },
+  "template-detective-conan": {
+    "category": "Cartes de personnages d'anime et MBTI",
+    "description": "Générez des cartes de profil de personnage de Detective Conan avec analyse de personnalité MBTI et traits. Idéal pour les fans d'anime et les créateurs de contenu sur la personnalité.",
+    "title": "Cartes MBTI de personnage de Detective Conan (Profils d'anime AI) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des cartes de personnages de Detective Conan alimentées par l'IA avec analyse MBTI, traits de personnalité et mises en page de style collection.",
+        "who": "Conçu pour les fans d'anime, les passionnés de MBTI, les communautés de fandom et les créateurs de contenu.",
+        "how": [
+          "Entrez le nom du personnage.",
+          "Spécifiez le type MBTI et le titre.",
+          "Ajoutez la répartition de la personnalité et les traits principaux.",
+          "Générez une carte de profil de personnage d'anime de style collection."
+        ],
+        "prompts": [
+          "Analyse de personnage MBTI de Detective Conan.",
+          "Carte de personnalité de personnage d'anime.",
+          "Profil MBTI de Shinichi Kudo."
+        ]
+      }
+    }
+  },
+  "template-children-english-vocab-spelling": {
+    "category": "Affiches d'apprentissage et de vocabulaire pour enfants",
+    "description": "Générez des affiches colorées de vocabulaire anglais pour enfants avec prononciation et illustrations. Idéal pour l'éducation précoce et l'apprentissage ESL.",
+    "title": "Affiches de vocabulaire anglais pour enfants (Cartes d'apprentissage amusantes) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des affiches de vocabulaire pour enfants alimentées par l'IA avec des ensembles de mots thématiques, prononciation et illustrations visuelles pour un apprentissage engageant.",
+        "who": "Conçu pour les parents, les enseignants, les apprenants ESL, les familles d'enseignement à domicile et les plateformes d'éducation précoce.",
+        "how": [
+          "Sélectionnez un thème de vocabulaire.",
+          "Générez un ensemble de mots de vocabulaire.",
+          "Incluez la prononciation et les traductions.",
+          "Créez une affiche éducative colorée de vocabulaire."
+        ],
+        "prompts": [
+          "Affiche de vocabulaire anglais pour enfants.",
+          "Apprenez des mots anglais avec des images.",
+          "Pratique de l'orthographe pour les enfants par thème."
+        ]
+      }
+    }
   }
 }
