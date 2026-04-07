@@ -10,8 +10,7 @@ export type ContentType =
   | "nano_gallery"
   | "topic_capsule"
   | "tag_capsule"
-  | "menu_link"
-  | "use_case_capsule";
+  | "menu_link";
 
 export type ActionType =
   | "view"

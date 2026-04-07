@@ -51,7 +51,7 @@ function UseCaseBarItem({ slug }: { slug: string }) {
   const t = useTranslations("entryBar");
   const trackClick = useClickTracking(
     `use-case:${slug}`,
-    "use_case_capsule",
+    "topic_capsule",
     "cards"
   );
 
