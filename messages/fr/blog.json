@@ -252,7 +252,7 @@
         "date": "2 avril 2026",
         "readTime": "12 min de lecture",
         "tag": "Outils pour créateurs",
-        "image": "/images/bestools.webp"
+        "image": "/images/midjorney.webp"
       },
       {
         "slug": "nano-banana-dedicated",
@@ -260,7 +260,7 @@
         "date": "2 avril 2026",
         "readTime": "12 min de lecture",
         "tag": "Outils pour créateurs",
-        "image": "/images/banna.webp"
+        "image": "/images/lightsnano.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -1403,6 +1403,46 @@
             "Informations sur les points d'intérêt - Cliquez sur les éléments pour des explications détaillées",
             "Renvois croisés - Liez des concepts connexes à travers les diagrammes"
           ]
+        },
+        "herbExplodedSheets": {
+          "title": "Feuilles Explosées d'Herbes",
+          "description": "Générez des infographies verticales détaillées en 4K pour les herbes chinoises avec parties étiquetées, propriétés et formes modernes.",
+          "features": [
+            "Détails Botaniques - Parties et structures anatomiques étiquetées",
+            "Propriétés Traditionnelles - Propriétés et usages de la médecine chinoise",
+            "Applications Modernes - Formes et préparations contemporaines",
+            "Haute Résolution - Qualité 4K pour l'impression éducative"
+          ]
+        },
+        "scientificInfographics": {
+          "title": "Infographies Scientifiques",
+          "description": "Créez des infographies éducatives dans un style de dessin scientifique mignon ou de tableau noir pour des sujets complexes.",
+          "features": [
+            "Options de Style - Esthétiques scientifiques de dessin animé ou de tableau noir",
+            "Flexibilité des Sujets - Illustrations de l'hélice d'ADN aux espèces",
+            "Modules d'Information - Présentation structurée des données",
+            "Normes Éducatives - Précision scientifique adaptée à l'âge"
+          ]
+        },
+        "culturalHeritage": {
+          "title": "Métiers du Patrimoine Culturel",
+          "description": "Générez des infographies à haute densité expliquant le patrimoine culturel immatériel chinois avec un contexte historique.",
+          "features": [
+            "Contexte Historique - Contexte culturel et signification",
+            "Documentation des Processus - Techniques artisanales étape par étape",
+            "Analyse des Motifs - Motifs traditionnels et significations",
+            "Préservation Moderne - Efforts de conservation contemporains"
+          ]
+        },
+        "bilingualCards": {
+          "title": "Cartes d'Apprentissage Bilingues",
+          "description": "Créez des cartes de vocabulaire et de dialogue combinant l'anglais avec des traductions et des guides de prononciation en chinois.",
+          "features": [
+            "Langue Double - Anglais et chinois côte à côte",
+            "Guides de Prononciation - IPA et romanisation inclus",
+            "Contexte Visuel - Scènes illustrées pour les cartes de dialogue",
+            "Alignement Éducatif - Contenu approprié au programme"
+          ]
         }
       },
       "forStudents": {
@@ -1547,6 +1587,47 @@
           "Éducation numérique"
         ],
         "callToAction": "Prêt à transformer votre expérience éducative ? Visitez notre page d'apprentissage à https://www.curify-ai.com/topics/learning et commencez à explorer le pouvoir de l'apprentissage visuel dès aujourd'hui !"
+      },
+      "frontierAiTools": {
+        "title": "Outils AI de Pointe pour l'Apprentissage et l'Éducation Interactive",
+        "description": "Explorez les technologies AI de pointe qui transforment notre façon d'apprendre, d'enseigner et d'interagir avec le contenu éducatif grâce à la génération visuelle intelligente et aux systèmes d'apprentissage adaptatifs.",
+        "tools": [
+          {
+            "icon": "🤖",
+            "title": "Génération Visuelle Alimentée par AI",
+            "description": "Générez instantanément des visuels éducatifs personnalisés, des diagrammes et des infographies en utilisant des modèles AI avancés qui comprennent le contexte et les objectifs d'apprentissage.",
+            "useCase": "Enseignants créant des matériaux de cours, étudiants réalisant des aides à l'étude"
+          },
+          {
+            "icon": "🎯",
+            "title": "Systèmes d'Apprentissage Adaptatifs",
+            "description": "Parcours d'apprentissage personnalisés qui s'ajustent aux progrès individuels, aux styles d'apprentissage et aux lacunes de connaissances en temps réel.",
+            "useCase": "Éducation personnalisée, instruction différenciée"
+          },
+          {
+            "icon": "🎮",
+            "title": "Plateformes d'Apprentissage Gamifiées",
+            "description": "Jeux éducatifs interactifs qui rendent l'apprentissage engageant grâce à la compétition, aux réalisations et à des récits immersifs.",
+            "useCase": "Engagement des étudiants, motivation"
+          },
+          {
+            "icon": "🔍",
+            "title": "Analyse de Contenu Intelligent",
+            "description": "Outils AI qui analysent les matériaux d'apprentissage, extraient les concepts clés et génèrent automatiquement des résumés et des guides d'étude.",
+            "useCase": "Assistance à la recherche, compréhension du contenu"
+          }
+        ],
+        "interactiveLearning": {
+          "title": "Révolution de l'Apprentissage Interactif",
+          "description": "L'avenir de l'éducation est interactif, avec l'AI permettant des retours en temps réel, des environnements d'apprentissage collaboratifs et des expériences éducatives immersives.",
+          "features": [
+            "Retour AI en temps réel sur les devoirs et les questions",
+            "Expériences éducatives en réalité virtuelle et augmentée",
+            "Groupes d'étude et discussions alimentés par AI collaboratifs",
+            "Systèmes de tutorat intelligents disponibles 24/7",
+            "Évaluation automatisée avec recommandations d'apprentissage personnalisées"
+          ]
+        }
       }
     },
     "bestAiTools": {
@@ -1689,6 +1770,21 @@
             ],
             "pricing": "Niveau gratuit disponible, Essentiels à partir de 6 $/mois",
             "bestFor": "Gestionnaires de réseaux sociaux et petites entreprises"
+          },
+          {
+            "icon": "🎥",
+            "name": "Curify",
+            "category": "Traduction Vidéo & Contenu AI",
+            "description": "Plateforme AI complète pour la traduction vidéo, le doublage et la création de contenu avec des capacités avancées de clonage vocal et multimodal.",
+            "features": [
+              "Traduction vidéo AI",
+              "Clonage vocal",
+              "Technologie de synchronisation labiale",
+              "Génération de contenu multimodal",
+              "Doublage professionnel"
+            ],
+            "pricing": "Niveau gratuit disponible, plans Pro à partir de 29 $/mois",
+            "bestFor": "Créateurs de vidéos, spécialistes du marketing de contenu et entreprises mondiales"
           }
         ]
       },
@@ -1778,6 +1874,12 @@
             "category": "Médias Sociaux",
             "pricing": "6 $/mois",
             "difficulty": "Facile"
+          },
+          {
+            "tool": "Curify",
+            "category": "Traduction Vidéo",
+            "pricing": "29 $/mois",
+            "difficulty": "Moyenne"
           }
         ]
       },

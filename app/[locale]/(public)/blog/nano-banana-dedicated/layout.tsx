@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'What is Nano Banana AI? The Complete Guide to AI Structured Visual Generation',
     description: 'Nano Banana is an AI-powered visual content system that turns structured prompts into reusable image templates for education, storytelling, and content creation.',
-    images: ['/images/banna.webp'],
+    images: ['/images/lightsnano.webp'],
   },
 }
 

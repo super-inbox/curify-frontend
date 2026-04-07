@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '10 Best AI Tools for Content Creators in 2026',
     description: 'Discover the top AI tools for content creation in 2026. From note-taking to video production, find the perfect tools to enhance your creative workflow.',
-    images: ['/images/bestools.webp'],
+    images: ['/images/midjorney.webp'],
   },
 }
 

@@ -252,7 +252,7 @@
         "date": "2 Nisan 2026",
         "readTime": "12 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/bestools.webp"
+        "image": "/images/midjorney.webp"
       },
       {
         "slug": "nano-banana-ozel",
@@ -260,7 +260,7 @@
         "date": "2 Nisan 2026",
         "readTime": "12 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/banna.webp"
+        "image": "/images/lightsnano.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -1403,6 +1403,46 @@
             "Sıcak Nokta Bilgisi - Detaylı açıklamalar için öğelere tıklayın",
             "Çapraz Referanslar - Diyagramlar arasında ilgili kavramları bağlama"
           ]
+        },
+        "herbExplodedSheets": {
+          "title": "Bitki Patlatılmış Sayfalar",
+          "description": "Etiketli kısımlar, özellikler ve modern formlarla Çin otları için ayrıntılı 4K dikey infografikler oluşturun.",
+          "features": [
+            "Botanik Detaylar - Etiketli anatomik parçalar ve yapılar",
+            "Geleneksel Özellikler - Çin tıbbı özellikleri ve kullanımları",
+            "Modern Uygulamalar - Çağdaş formlar ve hazırlıklar",
+            "Yüksek Çözünürlük - Eğitimsel baskı için 4K kalitesi"
+          ]
+        },
+        "scientificInfographics": {
+          "title": "Bilimsel İnfografikler",
+          "description": "Karmaşık konular için sevimli karikatür veya tahta bilim skeci tarzında eğitim infografikleri oluşturun.",
+          "features": [
+            "Stil Seçenekleri - Karikatür veya tahta bilim estetiği",
+            "Konu Esnekliği - DNA sarmalı ile tür illüstrasyonları",
+            "Bilgi Modülleri - Yapılandırılmış veri sunumu",
+            "Eğitim Standartları - Yaşa uygun bilimsel doğruluk"
+          ]
+        },
+        "culturalHeritage": {
+          "title": "Kültürel Miras El Sanatları",
+          "description": "Tarihi bağlamla birlikte Çin soyut kültürel mirasını açıklayan yüksek yoğunlukta infografikler oluşturun.",
+          "features": [
+            "Tarihi Bağlam - Kültürel arka plan ve önemi",
+            "Süreç Belgelemesi - Adım adım el sanatları teknikleri",
+            "Motif Analizi - Geleneksel desenler ve anlamlar",
+            "Modern Koruma - Çağdaş koruma çabaları"
+          ]
+        },
+        "bilingualCards": {
+          "title": "İki Dilli Öğrenme Kartları",
+          "description": "İngilizce ile Çince çevirileri ve telaffuz kılavuzlarını birleştiren kelime dağarcığı ve diyalog kartları oluşturun.",
+          "features": [
+            "İki Dilli - İngilizce ve Çince yan yana",
+            "Telaffuz Kılavuzları - IPA ve romanizasyon dahil",
+            "Görsel Bağlam - Diyalog kartları için illüstrasyonlu sahneler",
+            "Eğitimsel Uyum - Müfredata uygun içerik"
+          ]
         }
       },
       "forStudents": {
@@ -1547,6 +1587,47 @@
           "Dijital Eğitim"
         ],
         "callToAction": "Eğitim deneyiminizi dönüştürmeye hazır mısınız? Görsel öğrenmenin gücünü keşfetmek için https://www.curify-ai.com/topics/learning adresindeki öğrenme sayfamızı ziyaret edin ve bugün başlayın!"
+      },
+      "frontierAiTools": {
+        "title": "Öğrenme ve Etkileşimli Eğitim için Sınır AI Araçları",
+        "description": "Eğitim içeriği ile nasıl öğrendiğimizi, öğrettiğimizi ve etkileşimde bulunduğumuzu dönüştüren en son AI teknolojilerini keşfedin.",
+        "tools": [
+          {
+            "icon": "🤖",
+            "title": "AI Destekli Görsel Üretim",
+            "description": "Bağlamı ve öğrenme hedeflerini anlayan gelişmiş AI modellerini kullanarak özel eğitim görselleri, diyagramlar ve infografikler anında oluşturun.",
+            "useCase": "Öğretmenlerin ders materyalleri oluşturması, öğrencilerin çalışma yardımları yapması"
+          },
+          {
+            "icon": "🎯",
+            "title": "Uyarlanabilir Öğrenme Sistemleri",
+            "description": "Bireysel ilerlemeye, öğrenme stillerine ve bilgi boşluklarına gerçek zamanlı olarak ayarlanan kişiselleştirilmiş öğrenme yolları.",
+            "useCase": "Kişiselleştirilmiş eğitim, farklılaştırılmış öğretim"
+          },
+          {
+            "icon": "🎮",
+            "title": "Oyunlaştırılmış Öğrenme Platformları",
+            "description": "Rekabet, başarılar ve sürükleyici hikaye anlatımı ile öğrenmeyi eğlenceli hale getiren etkileşimli eğitim oyunları.",
+            "useCase": "Öğrenci katılımı, motivasyon artırma"
+          },
+          {
+            "icon": "🔍",
+            "title": "Akıllı İçerik Analizi",
+            "description": "Öğrenme materyallerini analiz eden, anahtar kavramları çıkaran ve otomatik olarak özetler ve çalışma kılavuzları oluşturan AI araçları.",
+            "useCase": "Araştırma yardımı, içerik anlama"
+          }
+        ],
+        "interactiveLearning": {
+          "title": "Etkileşimli Öğrenme Devrimi",
+          "description": "Eğitimin geleceği etkileşimli, AI'nın gerçek zamanlı geri bildirim, işbirlikçi öğrenme ortamları ve sürükleyici eğitim deneyimleri sağlamasıyla.",
+          "features": [
+            "Görevler ve sorular üzerinde gerçek zamanlı AI geri bildirimi",
+            "Sanal gerçeklik ve artırılmış gerçeklik eğitim deneyimleri",
+            "İşbirlikçi AI destekli çalışma grupları ve tartışmalar",
+            "24/7 erişilebilir akıllı öğretim sistemleri",
+            "Kişiselleştirilmiş öğrenme önerileri ile otomatik değerlendirme"
+          ]
+        }
       }
     },
     "bestAiTools": {
@@ -1689,6 +1770,21 @@
             ],
             "pricing": "Ücretsiz katman mevcut, Temel $6/aydan itibaren",
             "bestFor": "Sosyal medya yöneticileri ve küçük işletmeler"
+          },
+          {
+            "icon": "🎥",
+            "name": "Curify",
+            "category": "Video Çeviri & AI İçeriği",
+            "description": "Gelişmiş ses klonlama ve çok modlu yeteneklerle video çevirisi, dublaj ve içerik oluşturma için kapsamlı AI platformu.",
+            "features": [
+              "AI video çevirisi",
+              "Ses klonlama",
+              "Dudak senkronizasyonu teknolojisi",
+              "Çok modlu içerik üretimi",
+              "Profesyonel dublaj"
+            ],
+            "pricing": "Ücretsiz katman mevcut, Pro planlar $29/aydan itibaren",
+            "bestFor": "Video yaratıcıları, içerik pazarlamacıları ve küresel işletmeler"
           }
         ]
       },
@@ -1778,6 +1874,12 @@
             "category": "Sosyal Medya",
             "pricing": "$6/ay",
             "difficulty": "Kolay"
+          },
+          {
+            "tool": "Curify",
+            "category": "Video Çeviri",
+            "pricing": "$29/ay",
+            "difficulty": "Orta"
           }
         ]
       },
