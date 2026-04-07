@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
+import { useClickTracking } from "@/services/useTracking";
 
 type PrevNextLink = {
   href: string;
@@ -36,6 +39,9 @@ type ExamplePromptHeroProps = {
 };
 
 function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
+  const trackPrev = useClickTracking("prevnext:prev", "prev_next");
+  const trackNext = useClickTracking("prevnext:next", "prev_next");
+
   if (!prevNext) return null;
 
   return (
@@ -44,6 +50,7 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
         <Link
           href={prevNext.prev.href}
           aria-label={prevNext.prev.label || "Previous"}
+          onClick={trackPrev}
           className="pointer-events-auto inline-flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
         >
           &lt;
@@ -54,6 +61,7 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
         <Link
           href={prevNext.next.href}
           aria-label={prevNext.next.label || "Next"}
+          onClick={trackNext}
           className="pointer-events-auto inline-flex h-10 w-10 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
         >
           &gt;
@@ -64,12 +72,16 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
 }
 
 function MobilePrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
+  const trackPrev = useClickTracking("prevnext:prev", "prev_next");
+  const trackNext = useClickTracking("prevnext:next", "prev_next");
+
   if (!prevNext) return null;
 
   return (
     <div className="mt-4 flex items-center justify-between gap-3 lg:hidden">
       <Link
         href={prevNext.prev.href}
+        onClick={trackPrev}
         className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
       >
         ← Prev
@@ -85,11 +97,21 @@ function MobilePrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
 
       <Link
         href={prevNext.next.href}
+        onClick={trackNext}
         className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
       >
         Next →
       </Link>
     </div>
+  );
+}
+
+function BreadcrumbLink({ item }: { item: BreadcrumbItem }) {
+  const trackClick = useClickTracking(item.href ?? "breadcrumb", "breadcrumb");
+  return (
+    <Link href={item.href!} onClick={trackClick} className="hover:text-neutral-800">
+      {item.label}
+    </Link>
   );
 }
 
@@ -104,9 +126,7 @@ function Breadcrumbs({ items }: { items?: BreadcrumbItem[] }) {
         return (
           <div key={idx} className="contents">
             {item.href && !isLast ? (
-              <Link href={item.href} className="hover:text-neutral-800">
-                {item.label}
-              </Link>
+              <BreadcrumbLink item={item} />
             ) : (
               <span
                 className={
