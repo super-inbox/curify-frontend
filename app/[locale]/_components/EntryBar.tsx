@@ -38,7 +38,7 @@ function EntryBarItem({ item, locale }: ItemProps) {
     <Link
       href={href}
       onClick={trackClick}
-      className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
+      className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm text-blue-800 transition hover:border-blue-400 hover:bg-blue-100"
     >
       {item.emoji ? <span aria-hidden="true">{item.emoji}</span> : null}
       <span>{t(`items.${item.id}`)}</span>
@@ -97,11 +97,10 @@ export default function EntryBar({ locale, className }: Props) {
           ))}
         </div>
 
-        <div className="text-sm font-medium text-neutral-800 sm:text-base">
-          {t("useCasesQuestion")}
-        </div>
-
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm font-medium text-neutral-800">
+            {t("useCasesQuestion")}
+          </span>
           {USE_CASES.map((uc) => (
             <UseCaseBarItem key={uc.slug} slug={uc.slug} locale={locale} />
           ))}
