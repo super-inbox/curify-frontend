@@ -118,11 +118,13 @@ export function buildNanoFeedCards(
     perTemplateMaxImages?: number;
     strictLocale?: boolean;
     translate?: TranslateFn;
+    useCaseSlugs?: string[];
   }
 ): NanoInspirationCardType[] {
   const perTemplateMaxImages = opts?.perTemplateMaxImages ?? 6;
   const strictLocale = opts?.strictLocale ?? true;
   const t = opts?.translate;
+  const useCaseSlugs = opts?.useCaseSlugs;
 
   const out: NanoInspirationCardType[] = [];
 
@@ -131,6 +133,11 @@ export function buildNanoFeedCards(
   );
   
   for (const raw of sortedTemplates) {
+    if (useCaseSlugs?.length) {
+      const rawUseCases: string[] = (raw as RawTemplate & { use_cases?: string[] }).use_cases ?? [];
+      if (!useCaseSlugs.some((uc) => rawUseCases.includes(uc))) continue;
+    }
+
     const tv = getTemplateView(reg, raw.id, locale);
     if (!tv) continue;
 

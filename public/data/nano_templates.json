@@ -622,7 +622,10 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8
+    "rank_score": 8,
+    "use_cases": [
+      "for-marketers"
+    ]
   },
   {
     "id": "template-hot-event-analysis",
@@ -695,7 +698,10 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 22
+    "rank_score": 22,
+    "use_cases": [
+      "for-marketers"
+    ]
   },
   {
     "id": "template-intangible-heritage",
@@ -777,7 +783,11 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 83
+    "rank_score": 83,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-costume",
@@ -860,7 +870,11 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8
+    "rank_score": 8,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-word-scene",
@@ -951,7 +965,11 @@
       "learning",
       "language"
     ],
-    "rank_score": 9
+    "rank_score": 9,
+    "use_cases": [
+      "for-parents",
+      "for-esl-learners"
+    ]
   },
   {
     "id": "template-cultural-relic-retro-infographic",
@@ -1472,7 +1490,10 @@
     "topics": [
       "character"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "use_cases": [
+      "for-creators"
+    ]
   },
   {
     "id": "template-mbti-animal",
@@ -2082,7 +2103,10 @@
       "character",
       "gaming"
     ],
-    "rank_score": 11
+    "rank_score": 11,
+    "use_cases": [
+      "for-creators"
+    ]
   },
   {
     "id": "template-fashion-ecommerce",
@@ -2540,7 +2564,11 @@
       "learning",
       "trending"
     ],
-    "rank_score": 29
+    "rank_score": 29,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-constellation-steampunk",
@@ -2732,7 +2760,11 @@
       "character",
       "mbti"
     ],
-    "rank_score": 9
+    "rank_score": 9,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-mbti-marvel",
@@ -3057,7 +3089,11 @@
       "mbti",
       "career"
     ],
-    "rank_score": 3
+    "rank_score": 3,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-mbti-breakingbad",
@@ -3809,7 +3845,11 @@
       "mbti",
       "gaming"
     ],
-    "rank_score": 8
+    "rank_score": 8,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-mbti-yellowstone",
@@ -4181,7 +4221,11 @@
       "mbti",
       "film"
     ],
-    "rank_score": 55
+    "rank_score": 55,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-vocabulary",
@@ -4351,7 +4395,11 @@
       "language"
     ],
     "batch": true,
-    "rank_score": 10
+    "rank_score": 10,
+    "use_cases": [
+      "for-parents",
+      "for-esl-learners"
+    ]
   },
   {
     "id": "template-series-infographic",
@@ -4563,7 +4611,11 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8
+    "rank_score": 8,
+    "use_cases": [
+      "for-marketers",
+      "for-creators"
+    ]
   },
   {
     "id": "template-english-top5-phrases",
@@ -4921,7 +4973,11 @@
       "language"
     ],
     "batch": true,
-    "rank_score": 1
+    "rank_score": 1,
+    "use_cases": [
+      "for-parents",
+      "for-esl-learners"
+    ]
   },
   {
     "id": "template-english-error-correction",
@@ -5135,7 +5191,11 @@
       "language"
     ],
     "batch": true,
-    "rank_score": 1
+    "rank_score": 1,
+    "use_cases": [
+      "for-parents",
+      "for-esl-learners"
+    ]
   },
   {
     "id": "template-english-dialogue-scene",
@@ -5492,7 +5552,11 @@
       "learning",
       "language"
     ],
-    "rank_score": 3
+    "rank_score": 3,
+    "use_cases": [
+      "for-parents",
+      "for-esl-learners"
+    ]
   },
   {
     "id": "template-movie-poster",
@@ -5855,7 +5919,10 @@
       "learning",
       "lifestyle"
     ],
-    "rank_score": 2
+    "rank_score": 2,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-detailed-vocab-flashcard",
@@ -5948,6 +6015,10 @@
     "topics": [
       "learning",
       "language"
+    ],
+    "use_cases": [
+      "for-parents",
+      "for-esl-learners"
     ]
   },
   {
@@ -6033,6 +6104,9 @@
     "topics": [
       "character",
       "mbti"
+    ],
+    "use_cases": [
+      "for-creators"
     ]
   },
   {
@@ -6148,6 +6222,9 @@
     "topics": [
       "language",
       "learning"
+    ],
+    "use_cases": [
+      "for-parents"
     ]
   }
 ]
