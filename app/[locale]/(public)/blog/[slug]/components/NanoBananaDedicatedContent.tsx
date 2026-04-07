@@ -23,7 +23,7 @@ export default function NanoBananaDedicatedContent() {
         </div>
         <div className="mt-6">
           <CdnImage
-            src="/images/banna.webp" 
+            src="/images/lightsnano.webp" 
             alt={t('heroImageAlt')}
             className="w-full rounded-lg shadow-lg"
           />

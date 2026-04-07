@@ -254,7 +254,7 @@
         "date": "2026年4月2日",
         "readTime": "12分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/bestools.webp"
+        "image": "/images/midjorney.webp"
       },
       {
         "slug": "nano-banana-dedicated",
@@ -262,7 +262,7 @@
         "date": "2026年4月2日",
         "readTime": "12分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/banna.webp"
+        "image": "/images/lightsnano.webp"
       }
     ],
     "voiceCloningTools": {
@@ -1401,6 +1401,46 @@
             "热点信息 - 点击元素获取详细解释",
             "交叉引用 - 在图表之间链接相关概念"
           ]
+        },
+        "herbExplodedSheets": {
+          "title": "草药解剖图",
+          "description": "生成详细的4K垂直信息图，展示中国草药的标注部位、特性和现代形式。",
+          "features": [
+            "植物细节 - 标注的解剖部位和结构",
+            "传统特性 - 中医特性和用途",
+            "现代应用 - 当代形式和制备",
+            "高分辨率 - 适合教育打印的4K质量"
+          ]
+        },
+        "scientificInfographics": {
+          "title": "科学信息图",
+          "description": "为复杂主题创建可爱的卡通或黑板科学草图风格的教育信息图。",
+          "features": [
+            "风格选项 - 卡通或黑板科学美学",
+            "主题灵活性 - 从DNA螺旋到物种插图",
+            "信息模块 - 结构化数据呈现",
+            "教育标准 - 适合年龄的科学准确性"
+          ]
+        },
+        "culturalHeritage": {
+          "title": "文化遗产工艺",
+          "description": "生成高密度信息图，解释中国非物质文化遗产及其历史背景。",
+          "features": [
+            "历史背景 - 文化背景和重要性",
+            "过程文档 - 步骤分解的工艺技术",
+            "图案分析 - 传统图案及其含义",
+            "现代保护 - 当代保护努力"
+          ]
+        },
+        "bilingualCards": {
+          "title": "双语学习卡片",
+          "description": "创建结合英语和中文翻译及发音指南的词汇和对话卡片。",
+          "features": [
+            "双语 - 英语和中文并排显示",
+            "发音指南 - 包含国际音标和罗马化",
+            "视觉上下文 - 对话卡片的插图场景",
+            "教育对齐 - 适合课程的内容"
+          ]
         }
       },
       "forStudents": {
@@ -1545,6 +1585,47 @@
           "数字教育"
         ],
         "callToAction": "准备好改变您的教育体验了吗？访问我们的学习页面 https://www.curify-ai.com/topics/learning，开始探索视觉学习的力量吧！"
+      },
+      "frontierAiTools": {
+        "title": "前沿AI工具用于学习与互动教育",
+        "description": "探索正在改变我们学习、教学和与教育内容互动的前沿AI技术，通过智能视觉生成和自适应学习系统。",
+        "tools": [
+          {
+            "icon": "🤖",
+            "title": "AI驱动的视觉生成",
+            "description": "使用理解上下文和学习目标的先进AI模型，立即生成自定义教育视觉、图表和信息图。",
+            "useCase": "教师创建课程材料，学生制作学习辅助工具"
+          },
+          {
+            "icon": "🎯",
+            "title": "自适应学习系统",
+            "description": "个性化学习路径，实时调整以适应个人进度、学习风格和知识差距。",
+            "useCase": "个性化教育，差异化教学"
+          },
+          {
+            "icon": "🎮",
+            "title": "游戏化学习平台",
+            "description": "通过竞争、成就和沉浸式故事讲述，使学习变得有趣的互动教育游戏。",
+            "useCase": "学生参与，激励提升"
+          },
+          {
+            "icon": "🔍",
+            "title": "智能内容分析",
+            "description": "分析学习材料的AI工具，提取关键概念，并自动生成摘要和学习指南。",
+            "useCase": "研究辅助，内容理解"
+          }
+        ],
+        "interactiveLearning": {
+          "title": "互动学习革命",
+          "description": "教育的未来是互动的，AI使实时反馈、协作学习环境和沉浸式教育体验成为可能。",
+          "features": [
+            "对作业和问题的实时AI反馈",
+            "虚拟现实和增强现实教育体验",
+            "协作的AI驱动学习小组和讨论",
+            "24/7可用的智能辅导系统",
+            "自动评估与个性化学习建议"
+          ]
+        }
       }
     },
     "bestAiTools": {
@@ -1687,6 +1768,21 @@
             ],
             "pricing": "提供免费层，Essentials 从 $6/月起",
             "bestFor": "社交媒体经理和小型企业"
+          },
+          {
+            "icon": "🎥",
+            "name": "Curify",
+            "category": "视频翻译与AI内容",
+            "description": "综合AI平台，用于视频翻译、配音和内容创作，具备先进的声音克隆和多模态能力。",
+            "features": [
+              "AI视频翻译",
+              "声音克隆",
+              "同步口型技术",
+              "多模态内容生成",
+              "专业配音"
+            ],
+            "pricing": "提供免费套餐，专业计划起价$29/月",
+            "bestFor": "视频创作者、内容营销人员和全球企业"
           }
         ]
       },
@@ -1776,6 +1872,12 @@
             "category": "社交媒体",
             "pricing": "$6/月",
             "difficulty": "简单"
+          },
+          {
+            "tool": "Curify",
+            "category": "视频翻译",
+            "pricing": "$29/月",
+            "difficulty": "中等"
           }
         ]
       },

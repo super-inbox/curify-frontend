@@ -22,7 +22,7 @@ export default function BestAiToolsContent() {
         </div>
         <div className="mt-6">
           <CdnImage
-            src="/images/bestools.webp" 
+            src="/images/midjorney.webp" 
             alt={t('heroImageAlt')}
             className="w-full rounded-lg shadow-lg"
           />

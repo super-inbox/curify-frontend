@@ -84,6 +84,46 @@ export default function BlogContent() {
               ))}
             </ul>
           </div>
+          
+          <div className="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">🌿 {t('whatWeOffer.herbExplodedSheets.title')}</h3>
+            <p className="mb-3">{t('whatWeOffer.herbExplodedSheets.description')}</p>
+            <ul className="space-y-2">
+              {t.raw('whatWeOffer.herbExplodedSheets.features').map((feature: string, index: number) => (
+                <li key={index}>• <strong>{feature.split(' - ')[0]}</strong> - {feature.split(' - ')[1]}</li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">🔬 {t('whatWeOffer.scientificInfographics.title')}</h3>
+            <p className="mb-3">{t('whatWeOffer.scientificInfographics.description')}</p>
+            <ul className="space-y-2">
+              {t.raw('whatWeOffer.scientificInfographics.features').map((feature: string, index: number) => (
+                <li key={index}>• <strong>{feature.split(' - ')[0]}</strong> - {feature.split(' - ')[1]}</li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">🎭 {t('whatWeOffer.culturalHeritage.title')}</h3>
+            <p className="mb-3">{t('whatWeOffer.culturalHeritage.description')}</p>
+            <ul className="space-y-2">
+              {t.raw('whatWeOffer.culturalHeritage.features').map((feature: string, index: number) => (
+                <li key={index}>• <strong>{feature.split(' - ')[0]}</strong> - {feature.split(' - ')[1]}</li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="bg-teal-50 dark:bg-teal-900/20 p-6 rounded-lg">
+            <h3 className="text-xl font-semibold mb-3">🗣️ {t('whatWeOffer.bilingualCards.title')}</h3>
+            <p className="mb-3">{t('whatWeOffer.bilingualCards.description')}</p>
+            <ul className="space-y-2">
+              {t.raw('whatWeOffer.bilingualCards.features').map((feature: string, index: number) => (
+                <li key={index}>• <strong>{feature.split(' - ')[0]}</strong> - {feature.split(' - ')[1]}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -222,6 +262,39 @@ export default function BlogContent() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-3xl font-semibold mb-4">{t('frontierAiTools.title')}</h2>
+        <p className="mb-6">
+          {t('frontierAiTools.description')}
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {t.raw('frontierAiTools.tools').map((tool: any, index: number) => (
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition">
+              <div className="text-3xl mb-3">{tool.icon}</div>
+              <h3 className="text-lg font-semibold mb-2">{tool.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-3">{tool.description}</p>
+              <div className="text-sm text-blue-600 dark:text-blue-400">
+                <strong>Best for:</strong> {tool.useCase}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-6 rounded-lg">
+          <h3 className="text-lg font-semibold mb-2">{t('frontierAiTools.interactiveLearning.title')}</h3>
+          <p className="mb-4">{t('frontierAiTools.interactiveLearning.description')}</p>
+          <ul className="space-y-2 text-sm">
+            {t.raw('frontierAiTools.interactiveLearning.features').map((feature: string, index: number) => (
+              <li key={index} className="flex items-start gap-2">
+                <span className="text-purple-600 mt-1">✓</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
