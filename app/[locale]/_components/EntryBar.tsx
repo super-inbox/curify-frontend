@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
 import { USE_CASES } from "@/lib/use-cases";
@@ -46,23 +47,22 @@ function EntryBarItem({ item, locale }: ItemProps) {
   );
 }
 
-function UseCaseBarItem({ slug, locale }: { slug: string; locale: string }) {
+function UseCaseBarItem({ slug }: { slug: string }) {
   const t = useTranslations("entryBar");
   const trackClick = useClickTracking(
     `use-case:${slug}`,
     "use_case_capsule",
     "cards"
   );
-  const href = getCanonicalPath(locale, `/use-cases/${slug}`);
 
   return (
-    <Link
-      href={href}
+    <IntlLink
+      href={`/use-cases/${slug}`}
       onClick={trackClick}
       className="inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-sm text-purple-800 transition hover:border-purple-400 hover:bg-purple-100"
     >
       {t(`useCases.${slug}`)}
-    </Link>
+    </IntlLink>
   );
 }
 
@@ -102,7 +102,7 @@ export default function EntryBar({ locale, className }: Props) {
             {t("useCasesQuestion")}
           </span>
           {USE_CASES.map((uc) => (
-            <UseCaseBarItem key={uc.slug} slug={uc.slug} locale={locale} />
+            <UseCaseBarItem key={uc.slug} slug={uc.slug} />
           ))}
         </div>
       </div>

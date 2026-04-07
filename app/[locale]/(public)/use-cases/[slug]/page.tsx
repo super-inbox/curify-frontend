@@ -19,13 +19,11 @@ import nanoImages from "@/public/data/nano_inspiration.json";
 
 import UseCaseClient from "./UseCaseClient";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
-
-export async function generateStaticParams() {
-  return USE_CASES.map((uc) => ({ slug: uc.slug }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
