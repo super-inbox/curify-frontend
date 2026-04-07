@@ -33,19 +33,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const useCase = getUseCaseBySlug(slug);
   if (!useCase) return {};
 
+  const t = await getTranslations({ locale, namespace: "useCasePage" });
+  const safeT = (key: string) => { try { return t(key as never) ?? ""; } catch { return ""; } };
+
+  const title = safeT(`${slug}.title`);
+  const description = safeT(`${slug}.description`);
+  const subtitle = safeT(`${slug}.subtitle`);
+
   const canonical = getCanonicalUrl(locale, `/use-cases/${slug}`);
   const languages = getLanguagesMap(`/use-cases/${slug}`);
 
   return {
-    title: `${useCase.title} — Curify AI`,
-    description: useCase.description,
-    alternates: {
-      canonical,
-      languages,
-    },
+    title: `${title} — Curify AI`,
+    description,
+    alternates: { canonical, languages },
     openGraph: {
-      title: `${useCase.title} | Curify AI`,
-      description: useCase.subtitle,
+      title: `${title} | Curify AI`,
+      description: subtitle,
       url: canonical,
     },
   };
@@ -95,9 +99,8 @@ export default async function UseCasePage({ params }: Props) {
 
   return (
     <UseCaseClient
-      useCase={useCase}
+      slug={useCase.slug}
       nanoCards={nanoCards}
-      locale={localeStr}
       toolCards={toolCards}
     />
   );

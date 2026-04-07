@@ -191,6 +191,53 @@
       "product": "제품 & 마케팅",
       "video": "비디오 & 자막",
       "lifestyle": "라이프스타일 & 장소"
+    },
+    "useCasesQuestion": "사용 사례별 탐색:",
+    "useCases": {
+      "for-marketers": "마케터용",
+      "for-parents": "부모용",
+      "for-esl-learners": "ESL 학습자용",
+      "for-creators": "크리에이터용"
+    }
+  },
+  "useCasePage": {
+    "toolsHeading": "도구",
+    "templatesHeading": "{title}을 위한 템플릿",
+    "for-marketers": {
+      "title": "마케터용",
+      "subtitle": "콘텐츠를 10배 빠르게 생성·확장·게시",
+      "description": "무엇이 효과적인지 추측하는 것을 멈추세요. 하나의 아이디어로 몇 분 안에 수십 개의 고성과 비주얼과 영상을 만드세요.",
+      "bullet0": "하나의 아이디어에서 콘텐츠 일괄 생성",
+      "bullet1": "이미지를 숏폼 영상으로 변환",
+      "bullet2": "플랫폼을 넘나들며 콘텐츠 재활용",
+      "bullet3": "바로 게시 가능한 콘텐츠 팩 다운로드"
+    },
+    "for-parents": {
+      "title": "부모용",
+      "subtitle": "하루 5분으로 자녀의 영어 학습 돕기",
+      "description": "AI로 생성된 단어 카드와 영상으로 학습을 쉽고 시각적으로 만드세요. 준비 없이. 검색 없이.",
+      "bullet0": "이중 언어 단어 카드",
+      "bullet1": "이미지를 활용한 시각적 학습",
+      "bullet2": "짧은 학습 영상",
+      "bullet3": "바로 쓸 수 있는 학습 팩"
+    },
+    "for-esl-learners": {
+      "title": "ESL 학습자용",
+      "subtitle": "시각적 대화 장면으로 실제 영어 배우기",
+      "description": "이중 언어 지원과 영상 기반 학습으로 실생활 대화를 연습하세요. 암기가 아닌 맥락으로 더 빠르게 배우세요.",
+      "bullet0": "실생활 대화 학습",
+      "bullet1": "시각적 맥락으로 연습",
+      "bullet2": "짧은 대화 영상 시청",
+      "bullet3": "이중 언어 자막 읽기"
+    },
+    "for-creators": {
+      "title": "크리에이터용",
+      "subtitle": "콘텐츠 아이디어가 고갈되지 않는다",
+      "description": "몇 초 만에 멋진 비주얼을 발견하고 리믹스하고 만드세요. 영감에서 창작까지 — 한 곳에서 모두.",
+      "bullet0": "Nano 영감 카드 탐색",
+      "bullet1": "캐릭터 & 스타일 템플릿으로 제작",
+      "bullet2": "이미지를 음성 & 자막 포함 영상으로 변환",
+      "bullet3": "콘텐츠 일괄 다운로드 및 리믹스"
     }
   }
 }
