@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
-import type { UseCaseDef } from "@/lib/use-cases";
 
 type ToolCard = {
   slug: string;
@@ -12,36 +12,39 @@ type ToolCard = {
   href: string;
 };
 
+const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
+
 export default function UseCaseClient({
-  useCase,
+  slug,
   nanoCards,
-  locale,
   toolCards,
 }: {
-  useCase: UseCaseDef;
+  slug: string;
   nanoCards: NanoInspirationCardType[];
-  locale: string;
   toolCards: ToolCard[];
 }) {
+  const t = useTranslations("useCasePage");
+  const title = t(`${slug}.title` as never);
+
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Hero */}
       <section className="mb-10">
         <h1 className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-          {useCase.title}
+          {title}
         </h1>
         <p className="mt-3 text-lg font-semibold text-purple-700">
-          {useCase.subtitle}
+          {t(`${slug}.subtitle` as never)}
         </p>
         <p className="mt-3 max-w-2xl text-base text-neutral-600">
-          {useCase.description}
+          {t(`${slug}.description` as never)}
         </p>
 
         <ul className="mt-5 space-y-2">
-          {useCase.bullets.map((bullet) => (
-            <li key={bullet} className="flex items-start gap-2 text-sm text-neutral-700">
+          {BULLET_KEYS.map((key) => (
+            <li key={key} className="flex items-start gap-2 text-sm text-neutral-700">
               <span className="mt-0.5 text-purple-500">✓</span>
-              {bullet}
+              {t(`${slug}.${key}` as never)}
             </li>
           ))}
         </ul>
@@ -50,7 +53,9 @@ export default function UseCaseClient({
       {/* Tools */}
       {toolCards.length > 0 && (
         <section className="mb-10">
-          <h2 className="mb-4 text-xl font-bold text-neutral-900">Tools</h2>
+          <h2 className="mb-4 text-xl font-bold text-neutral-900">
+            {t("toolsHeading")}
+          </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {toolCards.map((tool) => (
               <Link
@@ -72,7 +77,7 @@ export default function UseCaseClient({
       {nanoCards.length > 0 && (
         <section>
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
-            Templates for {useCase.title}
+            {t("templatesHeading", { title })}
           </h2>
           <NanoInspirationRow
             cards={nanoCards}
