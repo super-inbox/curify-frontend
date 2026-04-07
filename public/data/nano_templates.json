@@ -6229,5 +6229,29 @@
     "use_cases": [
       "for-parents"
     ]
-  }
+  },
+  {
+    "id": "template-daily-essentials-learning-card",
+    "locales": {
+        "en": {
+            "base_prompt": "You are a professional kids' educational card designer, specializing in making cute and clear daily items learning posters. Based on the user-given {theme}, create a vertical 3:4 high-quality \"Daily Essentials Learning Card\" in kawaii cartoon style. Layout: 1. Title area: Large title \"Daily Essentials Learning Card\" + theme name \"{theme}\". 2. Grid area: 6 cartoon cards in 2×3 layout. Each card includes cute cartoon illustration of the daily item, bold English word, simple Chinese translation. Style: Clean rounded UI, soft pastel colors, kawaii style, text easy to read. Add Curify watermark at top left, vertical 3:4 ratio, 4K ultra HD, clean and tidy. Subject: {theme} Daily Essentials Learning Card.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "School Supplies",
+                        "Kitchen Tools",
+                        "Toys",
+                        "Fruits",
+                        "Vegetables",
+                        "Toiletries"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-daily-essentials-learning-card-school-supplies-prev.jpg"
+}
 ]
