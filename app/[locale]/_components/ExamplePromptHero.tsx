@@ -29,6 +29,7 @@ type ExamplePromptHeroProps = {
   image: ReactNode;
   actionBar: ReactNode;
   prompt: string;
+  trackingId?: string;
   breadcrumbs?: BreadcrumbItem[];
   metaChips?: ReactNode;
   description?: string;
@@ -38,9 +39,9 @@ type ExamplePromptHeroProps = {
   className?: string;
 };
 
-function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
-  const trackPrev = useClickTracking("prevnext:prev", "prev_next");
-  const trackNext = useClickTracking("prevnext:next", "prev_next");
+function DesktopPrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
+  const trackPrev = useClickTracking(`${trackingId ?? "unknown"}:prev`, "prev_next");
+  const trackNext = useClickTracking(`${trackingId ?? "unknown"}:next`, "prev_next");
 
   if (!prevNext) return null;
 
@@ -71,9 +72,9 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
   );
 }
 
-function MobilePrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
-  const trackPrev = useClickTracking("prevnext:prev", "prev_next");
-  const trackNext = useClickTracking("prevnext:next", "prev_next");
+function MobilePrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
+  const trackPrev = useClickTracking(`${trackingId ?? "unknown"}:prev`, "prev_next");
+  const trackNext = useClickTracking(`${trackingId ?? "unknown"}:next`, "prev_next");
 
   if (!prevNext) return null;
 
@@ -152,6 +153,7 @@ export default function ExamplePromptHero({
   image,
   actionBar,
   prompt,
+  trackingId,
   breadcrumbs,
   metaChips,
   description,
@@ -165,7 +167,7 @@ export default function ExamplePromptHero({
       <Breadcrumbs items={breadcrumbs} />
 
       <section className={["relative", className].filter(Boolean).join(" ")}>
-        <DesktopPrevNext prevNext={prevNext} />
+        <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
           <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[520px]">
@@ -215,7 +217,7 @@ export default function ExamplePromptHero({
         </div>
       </section>
 
-      <MobilePrevNext prevNext={prevNext} />
+      <MobilePrevNext prevNext={prevNext} trackingId={trackingId} />
     </>
   );
 }

@@ -175,6 +175,7 @@ export default async function NanoExampleDetailPage({
       <ExamplePromptHero
         title={title}
         prompt={prompt}
+        trackingId={example.id}
         promptVariant="breakdown"
         promptParams={example.params ?? {}}
         prevNext={prevNext}
