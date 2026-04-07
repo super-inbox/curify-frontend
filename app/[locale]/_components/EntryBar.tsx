@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
 import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
+import { USE_CASES } from "@/lib/use-cases";
 import { getCanonicalPath } from "@/lib/canonical";
 import { useClickTracking } from "@/services/useTracking";
 
@@ -45,6 +46,26 @@ function EntryBarItem({ item, locale }: ItemProps) {
   );
 }
 
+function UseCaseBarItem({ slug, locale }: { slug: string; locale: string }) {
+  const t = useTranslations("entryBar");
+  const trackClick = useClickTracking(
+    `use-case:${slug}`,
+    "use_case_capsule",
+    "cards"
+  );
+  const href = getCanonicalPath(locale, `/use-cases/${slug}`);
+
+  return (
+    <Link
+      href={href}
+      onClick={trackClick}
+      className="inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-sm text-purple-800 transition hover:border-purple-400 hover:bg-purple-100"
+    >
+      {t(`useCases.${slug}`)}
+    </Link>
+  );
+}
+
 export default function EntryBar({ locale, className }: Props) {
   const t = useTranslations("entryBar");
   const pathname = usePathname();
@@ -73,6 +94,16 @@ export default function EntryBar({ locale, className }: Props) {
         <div className="flex flex-wrap gap-2">
           {ENTRY_BAR_ITEMS.map((item) => (
             <EntryBarItem key={item.id} item={item} locale={locale} />
+          ))}
+        </div>
+
+        <div className="text-sm font-medium text-neutral-800 sm:text-base">
+          {t("useCasesQuestion")}
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {USE_CASES.map((uc) => (
+            <UseCaseBarItem key={uc.slug} slug={uc.slug} locale={locale} />
           ))}
         </div>
       </div>
