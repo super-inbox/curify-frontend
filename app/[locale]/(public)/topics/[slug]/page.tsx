@@ -58,9 +58,18 @@ export default async function Page({ params }: Props) {
 
   const reg = buildNanoRegistry(filteredTemplates, filteredImages);
 
-  const gridItems = filteredTemplates.flatMap((t) =>
-    buildTemplateImageGridItems(getImageViewsForTemplate(reg, t.id, contentLocale))
-  );
+  const imagesByTemplate = filteredTemplates
+    .map((t) => buildTemplateImageGridItems(getImageViewsForTemplate(reg, t.id, contentLocale)))
+    .filter((imgs) => imgs.length > 0);
+
+  // Interleave: round-robin across templates for visual diversity
+  const gridItems: typeof imagesByTemplate[number] = [];
+  const maxLen = Math.max(0, ...imagesByTemplate.map((a) => a.length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const imgs of imagesByTemplate) {
+      if (i < imgs.length) gridItems.push(imgs[i]);
+    }
+  }
 
   const nanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
