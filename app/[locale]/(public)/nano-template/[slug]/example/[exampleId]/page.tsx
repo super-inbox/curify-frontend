@@ -197,7 +197,7 @@ export default async function NanoExampleDetailPage({
             {templateTopics.length > 0 ? (
               <TopicNavRow
                 locale={pageLocale}
-                topics={[templateTopics[0]]}
+                topics={templateTopics}
                 className="mb-0"
                 showDisabled={false}
                 size="small"
