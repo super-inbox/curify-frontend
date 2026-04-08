@@ -152,6 +152,7 @@ export default async function PromptDetailPage({
         <ExamplePromptHero
           title={prompt.title}
           prompt={promptText}
+          trackingId={String(prompt.id)}
           promptVariant="preview"
           description={prompt.description || undefined}
           prevNext={prevNext}
