@@ -205,9 +205,12 @@ export default async function NanoExampleDetailPage({
             ) : null}
 
             {category ? (
-              <span className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700">
+              <a
+                href={`/${rawLocale}/nano-template/${slug}`}
+                className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
+              >
                 {category}
-              </span>
+              </a>
             ) : null}
           </>
         }
