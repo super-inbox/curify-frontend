@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 
 import {
@@ -9,7 +10,8 @@ import {
   buildNanoRegistry,
 } from "@/lib/nano_utils";
 
-import { buildNanoFeedCards } from "@/lib/nano_page_data";
+import { buildNanoFeedCards, buildTemplateImageGridItems } from "@/lib/nano_page_data";
+import { getImageViewsForTemplate } from "@/lib/nano_example_utils";
 import {
   resolveContentLocale,
   makeSafeTranslator,
@@ -56,6 +58,10 @@ export default async function Page({ params }: Props) {
 
   const reg = buildNanoRegistry(filteredTemplates, filteredImages);
 
+  const gridItems = filteredTemplates.flatMap((t) =>
+    buildTemplateImageGridItems(getImageViewsForTemplate(reg, t.id, contentLocale))
+  );
+
   const nanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
@@ -91,9 +97,15 @@ export default async function Page({ params }: Props) {
         </div>
       </section>
 
+      {gridItems.length > 0 && (
+        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
+        </section>
+      )}
+
       <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
         <NanoTemplateDetailClient
-          locale={localeStr}          
+          locale={localeStr}
           otherNanoCards={nanoCards}
           showReproduce={false}
           showOtherTemplates={true}
