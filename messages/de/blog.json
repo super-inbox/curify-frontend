@@ -252,7 +252,7 @@
         "date": "2. April 2026",
         "readTime": "12 Min. Lesezeit",
         "tag": "Creator Tools",
-        "image": "/images/bestools.webp"
+        "image": "/images/midjorney.webp"
       },
       {
         "slug": "nano-banana-dedicated",
@@ -260,7 +260,7 @@
         "date": "2. April 2026",
         "readTime": "12 Min. Lesezeit",
         "tag": "Creator Tools",
-        "image": "/images/banna.webp"
+        "image": "/images/lightsnano.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -1405,6 +1405,46 @@
             "Hotspot-Informationen - Elemente für detaillierte Erklärungen anklicken",
             "Querverweise - Verknüpfung verwandter Konzepte über Diagramme hinweg"
           ]
+        },
+        "herbExplodedSheets": {
+          "title": "Kräuter Explodierte Blätter",
+          "description": "Erstellen Sie detaillierte 4K vertikale Infografiken für chinesische Kräuter mit beschrifteten Teilen, Eigenschaften und modernen Formen.",
+          "features": [
+            "Botanische Details - Beschriftete anatomische Teile und Strukturen",
+            "Traditionelle Eigenschaften - Eigenschaften und Anwendungen der chinesischen Medizin",
+            "Moderne Anwendungen - Zeitgenössische Formen und Zubereitungen",
+            "Hohe Auflösung - 4K-Qualität für Bildungsdruck"
+          ]
+        },
+        "scientificInfographics": {
+          "title": "Wissenschaftliche Infografiken",
+          "description": "Erstellen Sie Bildungsinfografiken im niedlichen Cartoon- oder Tafel-Stil für komplexe Themen.",
+          "features": [
+            "Stiloptionen - Cartoon- oder Tafel-wissenschaftliche Ästhetik",
+            "Themenflexibilität - DNA-Helix bis Artenillustrationen",
+            "Informationsmodule - Strukturierte Datenpräsentation",
+            "Bildungsstandards - Altersgerechte wissenschaftliche Genauigkeit"
+          ]
+        },
+        "culturalHeritage": {
+          "title": "Kulturelles Erbe Handwerk",
+          "description": "Erstellen Sie hochdichte Infografiken, die das chinesische immaterielle Kulturerbe mit historischem Kontext erklären.",
+          "features": [
+            "Historischer Kontext - Kultureller Hintergrund und Bedeutung",
+            "Prozessdokumentation - Schritt-für-Schritt-Handwerkstechniken",
+            "Motivanalyse - Traditionelle Muster und Bedeutungen",
+            "Moderne Erhaltung - Zeitgenössische Konservierungsbemühungen"
+          ]
+        },
+        "bilingualCards": {
+          "title": "Zweisprachige Lernkarten",
+          "description": "Erstellen Sie Vokabel- und Dialogkarten, die Englisch mit chinesischen Übersetzungen und Aussprachehilfen kombinieren.",
+          "features": [
+            "Zweisprachig - Englisch und Chinesisch nebeneinander",
+            "Aussprachehilfen - IPA und Romanisierung enthalten",
+            "Visueller Kontext - Illustrierte Szenen für Dialogkarten",
+            "Bildungsanpassung - Lehrplan-gerechte Inhalte"
+          ]
         }
       },
       "forStudents": {
@@ -1549,6 +1589,47 @@
           "Digitale Bildung"
         ],
         "callToAction": "Bereit, Ihr Bildungserlebnis zu transformieren? Besuchen Sie unsere Lernseite unter https://www.curify-ai.com/topics/learning und beginnen Sie noch heute, die Kraft des visuellen Lernens zu entdecken!"
+      },
+      "frontierAiTools": {
+        "title": "Frontier AI-Tools für Lernen & Interaktive Bildung",
+        "description": "Entdecken Sie modernste KI-Technologien, die transformieren, wie wir lernen, lehren und mit Bildungsinhalten durch intelligente visuelle Generierung und adaptive Lernsysteme interagieren.",
+        "tools": [
+          {
+            "icon": "🤖",
+            "title": "KI-gestützte visuelle Generierung",
+            "description": "Erstellen Sie benutzerdefinierte Bildungsvisualisierungen, Diagramme und Infografiken sofort mit fortschrittlichen KI-Modellen, die Kontext und Lernziele verstehen.",
+            "useCase": "Lehrer erstellen Unterrichtsmaterialien, Schüler erstellen Lernhilfen"
+          },
+          {
+            "icon": "🎯",
+            "title": "Adaptive Lernsysteme",
+            "description": "Personalisierte Lernpfade, die sich in Echtzeit an den individuellen Fortschritt, Lernstile und Wissenslücken anpassen.",
+            "useCase": "Personalisierte Bildung, differenzierter Unterricht"
+          },
+          {
+            "icon": "🎮",
+            "title": "Gamifizierte Lernplattformen",
+            "description": "Interaktive Bildungs spiele, die das Lernen durch Wettbewerb, Erfolge und fesselndes Geschichtenerzählen ansprechend gestalten.",
+            "useCase": "Schülerengagement, Motivationsaufbau"
+          },
+          {
+            "icon": "🔍",
+            "title": "Intelligente Inhaltsanalyse",
+            "description": "KI-Tools, die Lernmaterialien analysieren, Schlüsselkonzepte extrahieren und automatisch Zusammenfassungen und Lernhilfen erstellen.",
+            "useCase": "Forschungsunterstützung, Inhaltsverständnis"
+          }
+        ],
+        "interactiveLearning": {
+          "title": "Revolution des interaktiven Lernens",
+          "description": "Die Zukunft der Bildung ist interaktiv, mit KI, die Echtzeit-Feedback, kollaborative Lernumgebungen und immersive Bildungserlebnisse ermöglicht.",
+          "features": [
+            "Echtzeit-KI-Feedback zu Aufgaben und Fragen",
+            "Virtuelle Realität und erweiterte Realität Bildungserlebnisse",
+            "Kollaborative KI-gestützte Lerngruppen und Diskussionen",
+            "Intelligente Tutoringsysteme rund um die Uhr verfügbar",
+            "Automatisierte Bewertung mit personalisierten Lernempfehlungen"
+          ]
+        }
       }
     },
     "bestAiTools": {
@@ -1691,6 +1772,21 @@
             ],
             "pricing": "Kostenloser Tarif verfügbar, Essentials ab 6 $/Monat",
             "bestFor": "Social-Media-Manager und kleine Unternehmen"
+          },
+          {
+            "icon": "🎥",
+            "name": "Curify",
+            "category": "Videoübersetzung & KI-Inhalte",
+            "description": "Umfassende KI-Plattform für Videoübersetzung, Synchronisation und Inhaltserstellung mit fortschrittlicher Sprachklonung und multimodalen Fähigkeiten.",
+            "features": [
+              "KI-Videoübersetzung",
+              "Sprachklonung",
+              "Lippensynchronisationstechnologie",
+              "Multimodale Inhaltserstellung",
+              "Professionelle Synchronisation"
+            ],
+            "pricing": "Kostenloses Kontingent verfügbar, Pro-Pläne ab 29 $/Monat",
+            "bestFor": "Videoproduzenten, Content-Marketer und globale Unternehmen"
           }
         ]
       },
@@ -1780,6 +1876,12 @@
             "category": "Soziale Medien",
             "pricing": "$6/Monat",
             "difficulty": "Einfach"
+          },
+          {
+            "tool": "Curify",
+            "category": "Videoübersetzung",
+            "pricing": "$29/Monat",
+            "difficulty": "Mittel"
           }
         ]
       },

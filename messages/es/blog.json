@@ -254,7 +254,7 @@
         "date": "2 de abril de 2026",
         "readTime": "12 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/bestools.webp"
+        "image": "/images/midjorney.webp"
       },
       {
         "slug": "nano-banana-dedicado",
@@ -262,7 +262,7 @@
         "date": "2 de abril de 2026",
         "readTime": "12 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/banna.webp"
+        "image": "/images/lightsnano.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -1403,6 +1403,46 @@
             "Información de Puntos de Interés - Haz clic en elementos para explicaciones detalladas",
             "Referencias Cruzadas - Vincula conceptos relacionados entre diagramas"
           ]
+        },
+        "herbExplodedSheets": {
+          "title": "Hojas Explodidas de Hierbas",
+          "description": "Genera infografías verticales detalladas en 4K para hierbas chinas con partes etiquetadas, propiedades y formas modernas.",
+          "features": [
+            "Detalles Botánicos - Partes y estructuras anatómicas etiquetadas",
+            "Propiedades Tradicionales - Propiedades y usos de la medicina china",
+            "Aplicaciones Modernas - Formas y preparaciones contemporáneas",
+            "Alta Resolución - Calidad 4K para impresión educativa"
+          ]
+        },
+        "scientificInfographics": {
+          "title": "Infografías Científicas",
+          "description": "Crea infografías educativas en estilo de dibujo animado o pizarra científica para temas complejos.",
+          "features": [
+            "Opciones de Estilo - Estética científica de dibujo animado o pizarra",
+            "Flexibilidad Temática - Ilustraciones de hélices de ADN a especies",
+            "Módulos de Información - Presentación de datos estructurados",
+            "Estándares Educativos - Precisión científica adecuada para la edad"
+          ]
+        },
+        "culturalHeritage": {
+          "title": "Artesanías del Patrimonio Cultural",
+          "description": "Genera infografías de alta densidad que explican el patrimonio cultural inmaterial chino con contexto histórico.",
+          "features": [
+            "Contexto Histórico - Antecedentes culturales y significado",
+            "Documentación de Procesos - Técnicas de artesanía paso a paso",
+            "Análisis de Motivos - Patrones y significados tradicionales",
+            "Preservación Moderna - Esfuerzos de conservación contemporáneos"
+          ]
+        },
+        "bilingualCards": {
+          "title": "Tarjetas de Aprendizaje Bilingües",
+          "description": "Crea tarjetas de vocabulario y diálogo combinando inglés con traducciones al chino y guías de pronunciación.",
+          "features": [
+            "Idioma Dual - Inglés y chino lado a lado",
+            "Guías de Pronunciación - IPA y romanización incluidas",
+            "Contexto Visual - Escenas ilustradas para tarjetas de diálogo",
+            "Alineación Educativa - Contenido apropiado para el currículo"
+          ]
         }
       },
       "forStudents": {
@@ -1547,6 +1587,47 @@
           "Educación Digital"
         ],
         "callToAction": "¿Listo para transformar tu experiencia educativa? Visita nuestra página de aprendizaje en https://www.curify-ai.com/topics/learning y comienza a explorar el poder del aprendizaje visual hoy mismo!"
+      },
+      "frontierAiTools": {
+        "title": "Herramientas de IA de Frontera para Aprendizaje y Educación Interactiva",
+        "description": "Explora tecnologías de IA de vanguardia que están transformando la forma en que aprendemos, enseñamos e interactuamos con el contenido educativo a través de generación visual inteligente y sistemas de aprendizaje adaptativo.",
+        "tools": [
+          {
+            "icon": "🤖",
+            "title": "Generación Visual Potenciada por IA",
+            "description": "Genera visuales educativos personalizados, diagramas e infografías al instante utilizando modelos de IA avanzados que comprenden el contexto y los objetivos de aprendizaje.",
+            "useCase": "Profesores creando materiales de lección, estudiantes haciendo ayudas de estudio"
+          },
+          {
+            "icon": "🎯",
+            "title": "Sistemas de Aprendizaje Adaptativo",
+            "description": "Rutas de aprendizaje personalizadas que se ajustan al progreso individual, estilos de aprendizaje y brechas de conocimiento en tiempo real.",
+            "useCase": "Educación personalizada, instrucción diferenciada"
+          },
+          {
+            "icon": "🎮",
+            "title": "Plataformas de Aprendizaje Gamificadas",
+            "description": "Juegos educativos interactivos que hacen que el aprendizaje sea atractivo a través de la competencia, logros y narración inmersiva.",
+            "useCase": "Compromiso estudiantil, construcción de motivación"
+          },
+          {
+            "icon": "🔍",
+            "title": "Análisis de Contenido Inteligente",
+            "description": "Herramientas de IA que analizan materiales de aprendizaje, extraen conceptos clave y generan automáticamente resúmenes y guías de estudio.",
+            "useCase": "Asistencia en investigación, comprensión de contenido"
+          }
+        ],
+        "interactiveLearning": {
+          "title": "Revolución del Aprendizaje Interactivo",
+          "description": "El futuro de la educación es interactivo, con IA habilitando retroalimentación en tiempo real, entornos de aprendizaje colaborativos y experiencias educativas inmersivas.",
+          "features": [
+            "Retroalimentación de IA en tiempo real sobre tareas y preguntas",
+            "Experiencias educativas de realidad virtual y aumentada",
+            "Grupos de estudio y discusiones colaborativas potenciadas por IA",
+            "Sistemas de tutoría inteligentes disponibles 24/7",
+            "Evaluación automatizada con recomendaciones de aprendizaje personalizadas"
+          ]
+        }
       }
     },
     "bestAiTools": {
@@ -1689,6 +1770,21 @@
             ],
             "pricing": "Nivel gratuito disponible, Esenciales desde $6/mes",
             "bestFor": "Gestores de redes sociales y pequeñas empresas"
+          },
+          {
+            "icon": "🎥",
+            "name": "Curify",
+            "category": "Traducción de Video & Contenido de IA",
+            "description": "Plataforma de IA integral para traducción de video, doblaje y creación de contenido con capacidades avanzadas de clonación de voz y multimodal.",
+            "features": [
+              "Traducción de video por IA",
+              "Clonación de voz",
+              "Tecnología de sincronización labial",
+              "Generación de contenido multimodal",
+              "Doblaje profesional"
+            ],
+            "pricing": "Nivel gratuito disponible, planes Pro desde $29/mes",
+            "bestFor": "Creadores de video, especialistas en marketing de contenido y empresas globales"
           }
         ]
       },
@@ -1778,6 +1874,12 @@
             "category": "Redes Sociales",
             "pricing": "$6/mes",
             "difficulty": "Fácil"
+          },
+          {
+            "tool": "Curify",
+            "category": "Traducción de Video",
+            "pricing": "$29/mes",
+            "difficulty": "Medio"
           }
         ]
       },
