@@ -89,6 +89,11 @@ export default async function Page({ params }: Props) {
   const topicDescription =
     translateTopics(`topics.${slug}.description`) || "";
 
+  const exampleImagesHeading =
+    translateTopics("topicPage.exampleImagesHeading") || "Example Images";
+  const templatesHeading =
+    translateTopics("topicPage.templatesHeading") || "Templates";
+
   return (
     <main className="min-h-screen">
       <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
@@ -108,11 +113,17 @@ export default async function Page({ params }: Props) {
 
       {gridItems.length > 0 && (
         <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
+            {exampleImagesHeading}
+          </h2>
           <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
         </section>
       )}
 
       <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
+          {templatesHeading}
+        </h2>
         <NanoTemplateDetailClient
           locale={localeStr}
           otherNanoCards={nanoCards}
