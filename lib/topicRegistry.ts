@@ -20,6 +20,7 @@ export type TopicRegistry = {
   topicById: Map<string, TopicWithTemplates>;
   topicToTemplates: Map<string, TemplateLike[]>;
   templateToTopics: Map<string, string[]>;
+  relatedTopics: Map<string, string[]>;
 };
 
 function normalizeTopicValues(value: unknown): string[] {
@@ -90,11 +91,30 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((topic) => [topic.id, topic])
   );
 
+  // Build related topics for focus topics only, sharing >= 2 templates
+  const FOCUS_TOPICS = new Set(["learning", "character", "lifestyle", "product"]);
+  const MIN_OVERLAP = 2;
+  const relatedTopics = new Map<string, string[]>();
+  const topicIds = Array.from(topicToTemplates.keys());
+
+  for (const a of topicIds) {
+    if (!FOCUS_TOPICS.has(a)) continue;
+    const aIds = new Set(topicToTemplates.get(a)!.map((t) => t.id));
+    const related: string[] = [];
+    for (const b of topicIds) {
+      if (a === b) continue;
+      const overlap = topicToTemplates.get(b)!.filter((t) => aIds.has(t.id)).length;
+      if (overlap >= MIN_OVERLAP) related.push(b);
+    }
+    if (related.length > 0) relatedTopics.set(a, related);
+  }
+
   return {
     topics: enrichedTopics,
     topicById,
     topicToTemplates,
     templateToTopics,
+    relatedTopics,
   };
 }
 
@@ -114,6 +134,10 @@ export function getTemplatesForTopic(topicId: string): TemplateLike[] {
 
 export function getTopicIdsForTemplate(templateId: string): string[] {
   return registry.templateToTopics.get(templateId) ?? [];
+}
+
+export function getRelatedTopics(topicId: string): string[] {
+  return registry.relatedTopics.get(topicId) ?? [];
 }
 
 export function hasTopic(topicId: string): boolean {

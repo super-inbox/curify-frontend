@@ -111,7 +111,7 @@
     "logoAlt": "Curify Logo",
     "home": "Home",
     "discover": "Discover",
-    "trending": "Trending",
+    "trending": "Inspirations",
     "gallery": "Gallery",
     "tools": "Tools",
     "blogs": "Blogs",
@@ -135,10 +135,9 @@
     "generate": "Generate",
     "copied": "Copied",
     "remix": "Remix",
-
-  "downloadPack": "Download 5-Pack",
-  "downloadingPack": "Downloading...",
-  "batchDownloadFailed": "Failed to download pack. Please try again."
+    "downloadPack": "Download 5-Pack",
+    "downloadingPack": "Downloading...",
+    "batchDownloadFailed": "Failed to download pack. Please try again."
   },
   "dialogCloseButton": {
     "ariaLabel": "Close dialog"
@@ -161,6 +160,53 @@
       "product": "Product & Marketing",
       "video": "Videos",
       "lifestyle": "Lifestyle"
+    },
+    "useCasesQuestion": "Explore by Use Case:",
+    "useCases": {
+      "for-marketers": "For Marketers",
+      "for-parents": "For Parents",
+      "for-esl-learners": "For ESL Learners",
+      "for-creators": "For Creators"
+    }
+  },
+  "useCasePage": {
+    "toolsHeading": "Tools",
+    "templatesHeading": "Templates for {title}",
+    "for-marketers": {
+      "title": "For Marketers",
+      "subtitle": "Generate, scale, and publish content 10x faster",
+      "description": "Stop guessing what works. Turn one idea into dozens of high-performing visuals and videos in minutes — no design skills, no prompt engineering.",
+      "bullet0": "Generate content batches from a single idea",
+      "bullet1": "Turn images into short-form videos",
+      "bullet2": "Repurpose content across platforms",
+      "bullet3": "Download ready-to-post content packs"
+    },
+    "for-parents": {
+      "title": "For Parents",
+      "subtitle": "Help your child learn English in just 5 minutes a day",
+      "description": "Make learning simple, visual, and engaging with AI-generated vocabulary cards and videos. No prep. No searching. Just learn.",
+      "bullet0": "Bilingual vocabulary cards",
+      "bullet1": "Visual learning with images",
+      "bullet2": "Short learning videos",
+      "bullet3": "Ready-to-use learning packs"
+    },
+    "for-esl-learners": {
+      "title": "For ESL Learners",
+      "subtitle": "Learn real English through visual dialogue scenes",
+      "description": "Practice real-life conversations with bilingual support and video-based learning. Learn faster with context, not memorization.",
+      "bullet0": "Learn real-life conversations",
+      "bullet1": "Practice with visual context",
+      "bullet2": "Watch short dialogue videos",
+      "bullet3": "Read bilingual subtitles"
+    },
+    "for-creators": {
+      "title": "For Creators",
+      "subtitle": "Never run out of content ideas again",
+      "description": "Discover, remix, and create stunning visuals in seconds. From inspiration to creation — all in one place.",
+      "bullet0": "Browse Nano Inspiration Cards",
+      "bullet1": "Create from character & style templates",
+      "bullet2": "Turn images into videos with voice and subtitles",
+      "bullet3": "Batch download and remix content"
     }
   },
   "contentCreationSidebar": {
@@ -177,7 +223,7 @@
         "desc": "Automatically generate subtitles in two languages for free",
         "alt": "Subtitle"
       }
-    },    
+    },
     "nanoSidebar": {
       "badge": "Nano Banana",
       "wordCard": {

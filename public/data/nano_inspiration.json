@@ -1526,23 +1526,6 @@
     "legacy_template_id": "template-food"
   },
   {
-    "id": "template-food-vietnamese-spring-rolls",
-    "template_id": "template-food",
-    "asset": {
-      "image_url": "/images/nano_insp/template-food-zh-vietnamese-spring-rolls.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-food-zh-vietnamese-spring-rolls-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "category": "美食科普类",
-        "title": "vietnamese spring rolls"
-      }
-    },
-    "legacy_id": "template-food-vietnamese-spring-rolls",
-    "legacy_template_id": "template-food"
-  },
-  {
     "id": "template-food-wine-mussels",
     "template_id": "template-food",
     "asset": {
@@ -2408,23 +2391,6 @@
       }
     },
     "legacy_id": "template-food-en-beef-tartare",
-    "legacy_template_id": "template-food"
-  },
-  {
-    "id": "template-food-kangaroo-steak",
-    "template_id": "template-food",
-    "asset": {
-      "image_url": "/images/nano_insp/template-food-en-kangaroo-steak.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-food-en-kangaroo-steak-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "category": "Food Science Infographic",
-        "title": "kangaroo steak"
-      }
-    },
-    "legacy_id": "template-food-en-kangaroo-steak",
     "legacy_template_id": "template-food"
   },
   {
@@ -3503,23 +3469,6 @@
     },
     "legacy_id": "template-word-scene-zh-temple-fair 3",
     "legacy_template_id": "template-word-scene"
-  },
-  {
-    "id": "template-food-bak-kut-teh",
-    "template_id": "template-food",
-    "asset": {
-      "image_url": "/images/nano_insp/template-food-en-bak-kut-teh.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-food-en-bak-kut-teh-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "category": "Food Science Infographic",
-        "title": "bak kut teh"
-      }
-    },
-    "legacy_id": "template-food-en-bak-kut-teh",
-    "legacy_template_id": "template-food"
   },
   {
     "id": "template-food-banh-mi",
@@ -15809,6 +15758,1100 @@
     "locales": {
       "zh": {
         "title": "sora 08"
+      }
+    }
+  },
+  {
+    "id": "template-mbti-nba-tonyparker",
+    "template_id": "template-mbti-nba",
+    "asset": {
+      "image_url": "/images/nano_insp/template-mbti-nba-tonyparker.png",
+      "preview_image_url": "/images/nano_insp_preview/template-mbti-nba-tonyparker-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "tonyparker"
+      }
+    }
+  },
+  {
+    "id": "template-character-inuyasha",
+    "template_id": "template-character",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-inuyasha.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-inuyasha-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "inuyasha"
+      }
+    }
+  },
+  {
+    "id": "template-character-kaito-kid",
+    "template_id": "template-character",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-kaito-kid.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-kaito-kid-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "kaito kid"
+      }
+    }
+  },
+  {
+    "id": "template-character-monkey-d-luffy",
+    "template_id": "template-character",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-monkey-d-luffy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-monkey-d-luffy-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "monkey d luffy"
+      }
+    }
+  },
+  {
+    "id": "template-character-naruto-uzumaki",
+    "template_id": "template-character",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-naruto-uzumaki.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-naruto-uzumaki-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "naruto uzumaki"
+      }
+    }
+  },
+  {
+    "id": "template-character-sakura-haruno",
+    "template_id": "template-character",
+    "asset": {
+      "image_url": "/images/nano_insp/template-character-sakura-haruno.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-character-sakura-haruno-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "sakura haruno"
+      }
+    }
+  },
+  {
+    "id": "template-children-english-vocab-spelling-family-members",
+    "template_id": "template-children-english-vocab-spelling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-children-english-vocab-spelling-family-members.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-children-english-vocab-spelling-family-members-prev.jpg"
+    },
+    "params": {
+      "theme": "family members"
+    },
+    "locales": {
+      "en": {
+        "title": "family members"
+      }
+    }
+  },
+  {
+    "id": "template-children-english-vocab-spelling-fruits",
+    "template_id": "template-children-english-vocab-spelling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-children-english-vocab-spelling-fruits.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-children-english-vocab-spelling-fruits-prev.jpg"
+    },
+    "params": {
+      "theme": "fruits"
+    },
+    "locales": {
+      "en": {
+        "title": "fruits"
+      }
+    }
+  },
+  {
+    "id": "template-children-english-vocab-spelling-vegetables",
+    "template_id": "template-children-english-vocab-spelling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-children-english-vocab-spelling-vegetables.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-children-english-vocab-spelling-vegetables-prev.jpg"
+    },
+    "params": {
+      "theme": "vegetables"
+    },
+    "locales": {
+      "en": {
+        "title": "vegetables"
+      }
+    }
+  },
+  {
+    "id": "template-children-english-vocab-spelling-weather",
+    "template_id": "template-children-english-vocab-spelling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-children-english-vocab-spelling-weather.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-children-english-vocab-spelling-weather-prev.jpg"
+    },
+    "params": {
+      "theme": "weather"
+    },
+    "locales": {
+      "en": {
+        "title": "weather"
+      }
+    }
+  },
+  {
+    "id": "template-custom-character-card-enfp-fiery-little-sun-male",
+    "template_id": "template-custom-character-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-custom-character-card-enfp-fiery-little-sun-male.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-custom-character-card-enfp-fiery-little-sun-male-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "enfp fiery little sun male"
+      }
+    }
+  },
+  {
+    "id": "template-custom-character-card-esfp-radiant-fireworks-female",
+    "template_id": "template-custom-character-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-custom-character-card-esfp-radiant-fireworks-female.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-custom-character-card-esfp-radiant-fireworks-female-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "esfp radiant fireworks female"
+      }
+    }
+  },
+  {
+    "id": "template-custom-character-card-infj-ethereal-healer-female",
+    "template_id": "template-custom-character-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-custom-character-card-infj-ethereal-healer-female.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-custom-character-card-infj-ethereal-healer-female-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "infj ethereal healer female"
+      }
+    }
+  },
+  {
+    "id": "template-custom-character-card-infj-silent-night-watchman-male",
+    "template_id": "template-custom-character-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-custom-character-card-infj-silent-night-watchman-male.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-custom-character-card-infj-silent-night-watchman-male-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "infj silent night watchman male"
+      }
+    }
+  },
+  {
+    "id": "template-custom-character-card-intj-solitary-strategist-male",
+    "template_id": "template-custom-character-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-custom-character-card-intj-solitary-strategist-male.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-custom-character-card-intj-solitary-strategist-male-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "intj solitary strategist male"
+      }
+    }
+  },
+  {
+    "id": "template-custom-character-card-istp-cool-wild-rose-female",
+    "template_id": "template-custom-character-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-custom-character-card-istp-cool-wild-rose-female.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-custom-character-card-istp-cool-wild-rose-female-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "istp cool wild rose female"
+      }
+    }
+  },
+  {
+    "id": "template-detailed-vocab-flashcard-apple",
+    "template_id": "template-detailed-vocab-flashcard",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detailed-vocab-flashcard-apple.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detailed-vocab-flashcard-apple-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "apple"
+      }
+    }
+  },
+  {
+    "id": "template-detailed-vocab-flashcard-book",
+    "template_id": "template-detailed-vocab-flashcard",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detailed-vocab-flashcard-book.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detailed-vocab-flashcard-book-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "book"
+      }
+    }
+  },
+  {
+    "id": "template-detailed-vocab-flashcard-dog",
+    "template_id": "template-detailed-vocab-flashcard",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detailed-vocab-flashcard-dog.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "dog"
+      }
+    }
+  },
+  {
+    "id": "template-detailed-vocab-flashcard-high-speed-rail",
+    "template_id": "template-detailed-vocab-flashcard",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detailed-vocab-flashcard-high-speed-rail.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detailed-vocab-flashcard-high-speed-rail-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "high speed rail"
+      }
+    }
+  },
+  {
+    "id": "template-detailed-vocab-flashcard-school-timetable",
+    "template_id": "template-detailed-vocab-flashcard",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detailed-vocab-flashcard-school-timetable.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detailed-vocab-flashcard-school-timetable-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "school timetable"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-ai-haibara",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-ai-haibara.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-ai-haibara-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "haibara"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-conan-edogawa",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-conan-edogawa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-conan-edogawa-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "conan edogawa"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-hiroshi-agasa",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-hiroshi-agasa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-hiroshi-agasa-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "hiroshi agasa"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-kogoro-mouri",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-kogoro-mouri.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-kogoro-mouri-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "kogoro mouri"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-ran-mouri",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-ran-mouri.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-ran-mouri-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "ran mouri"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-shiho-miyano",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-shiho-miyano.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-shiho-miyano-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "shiho miyano"
+      }
+    }
+  },
+  {
+    "id": "template-detective-conan-shinichi-kudo",
+    "template_id": "template-detective-conan",
+    "asset": {
+      "image_url": "/images/nano_insp/template-detective-conan-shinichi-kudo.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-detective-conan-shinichi-kudo-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "shinichi kudo"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-courier-logistics",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-courier-logistics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-courier-logistics-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "courier logistics"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-gym",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-gym.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-gym-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "gym"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-swimming-pool",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-swimming-pool.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-swimming-pool-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "swimming pool"
+      }
+    }
+  },
+  {
+    "id": "template-costume-fijian-sulu",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-fijian-sulu.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-fijian-sulu-prev.jpg"
+    },
+    "params": {
+      "costume_style": "fijian sulu"
+    },
+    "locales": {
+      "zh": {
+        "title": "fijian sulu"
+      }
+    }
+  },
+  {
+    "id": "template-costume-maori-kakahu",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-maori-kakahu.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-maori-kakahu-prev.jpg"
+    },
+    "params": {
+      "costume_style": "maori kakahu"
+    },
+    "locales": {
+      "zh": {
+        "title": "maori kakahu"
+      }
+    }
+  },
+  {
+    "id": "template-costume-maori-piupiu",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-maori-piupiu.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-maori-piupiu-prev.jpg"
+    },
+    "params": {
+      "costume_style": "maori piupiu"
+    },
+    "locales": {
+      "zh": {
+        "title": "maori piupiu"
+      }
+    }
+  },
+  {
+    "id": "template-costume-samoan-lavalava",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-samoan-lavalava.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-samoan-lavalava-prev.jpg"
+    },
+    "params": {
+      "costume_style": "samoan lavalava"
+    },
+    "locales": {
+      "zh": {
+        "title": "samoan lavalava"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-baby-products",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-baby-products.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-baby-products-prev.jpg"
+    },
+    "params": {
+      "theme": "baby products"
+    },
+    "locales": {
+      "en": {
+        "title": "baby products"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-beauty-products",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-beauty-products.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-beauty-products-prev.jpg"
+    },
+    "params": {
+      "theme": "beauty products"
+    },
+    "locales": {
+      "en": {
+        "title": "beauty products"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-school-supplies",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-school-supplies.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-school-supplies-prev.jpg"
+    },
+    "params": {
+      "theme": "school supplies"
+    },
+    "locales": {
+      "en": {
+        "title": "school supplies"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-sports-equipment",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-sports-equipment.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-sports-equipment-prev.jpg"
+    },
+    "params": {
+      "theme": "sports equipment"
+    },
+    "locales": {
+      "en": {
+        "title": "sports equipment"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-coco",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-coco.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-coco-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "coco"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-crazy-stone",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-crazy-stone.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-crazy-stone-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "crazy stone"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-heidi",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-heidi.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-heidi-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "heidi"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-the-pursuit-of-happyness",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-the-pursuit-of-happyness.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-the-pursuit-of-happyness-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "the pursuit of happyness"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-adiantum-reniforme-var-sinense",
+    "template_id": "template-species-science",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-adiantum-reniforme-var-sinense.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-adiantum-reniforme-var-sinense-prev.jpg"
+    },
+    "params": {
+      "species_name": "adiantum reniforme var sinense"
+    },
+    "locales": {
+      "zh": {
+        "title": "adiantum reniforme var sinense"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-brachymystax-spp",
+    "template_id": "template-species-science",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-brachymystax-spp.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-brachymystax-spp-prev.jpg"
+    },
+    "params": {
+      "species_name": "brachymystax spp"
+    },
+    "locales": {
+      "zh": {
+        "title": "brachymystax spp"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-bretschneidera-sinensis",
+    "template_id": "template-species-science",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-bretschneidera-sinensis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-bretschneidera-sinensis-prev.jpg"
+    },
+    "params": {
+      "species_name": "bretschneidera sinensis"
+    },
+    "locales": {
+      "zh": {
+        "title": "bretschneidera sinensis"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-francois-langur",
+    "template_id": "template-species-science",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-francois-langur.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-francois-langur-prev.jpg"
+    },
+    "params": {
+      "species_name": "francois langur"
+    },
+    "locales": {
+      "zh": {
+        "title": "francois langur"
+      }
+    }
+  },
+  {
+    "id": "template-species-science-protobothrops-mangshanensis",
+    "template_id": "template-species-science",
+    "asset": {
+      "image_url": "/images/nano_insp/template-species-science-protobothrops-mangshanensis.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-species-science-protobothrops-mangshanensis-prev.jpg"
+    },
+    "params": {
+      "species_name": "protobothrops mangshanensis"
+    },
+    "locales": {
+      "zh": {
+        "title": "protobothrops mangshanensis"
+      }
+    }
+  },
+  {
+    "id": "template-costume-andean-poncho",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-andean-poncho.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-andean-poncho-prev.jpg"
+    },
+    "params": {
+      "costume_style": "andean poncho"
+    },
+    "locales": {
+      "zh": {
+        "title": "andean poncho"
+      }
+    }
+  },
+  {
+    "id": "template-costume-colombian-ruana",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-colombian-ruana.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-colombian-ruana-prev.jpg"
+    },
+    "params": {
+      "costume_style": "colombian ruana"
+    },
+    "locales": {
+      "zh": {
+        "title": "colombian ruana"
+      }
+    }
+  },
+  {
+    "id": "template-costume-cuban-guayabera",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-cuban-guayabera.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-cuban-guayabera-prev.jpg"
+    },
+    "params": {
+      "costume_style": "cuban guayabera"
+    },
+    "locales": {
+      "zh": {
+        "title": "cuban guayabera"
+      }
+    }
+  },
+  {
+    "id": "template-costume-mexican-charro-suit",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-mexican-charro-suit.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-mexican-charro-suit-prev.jpg"
+    },
+    "params": {
+      "costume_style": "mexican charro suit"
+    },
+    "locales": {
+      "zh": {
+        "title": "mexican charro suit"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "dunhuang mogao grottoes"
+    },
+    "locales": {
+      "zh": {
+        "title": "dunhuang mogao grottoes"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-four-sheep-square-zun",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-four-sheep-square-zun.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-four-sheep-square-zun-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "four sheep square zun"
+    },
+    "locales": {
+      "zh": {
+        "title": "four sheep square zun"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-simu-wu-ding",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-simu-wu-ding.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-simu-wu-ding-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "simu wu ding"
+    },
+    "locales": {
+      "zh": {
+        "title": "simu wu ding"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-terracotta-warriors",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-terracotta-warriors.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-terracotta-warriors-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "terracotta warriors"
+    },
+    "locales": {
+      "zh": {
+        "title": "terracotta warriors"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-yuewang-goujian-sword",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-yuewang-goujian-sword.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-yuewang-goujian-sword-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "yuewang goujian sword"
+    },
+    "locales": {
+      "zh": {
+        "title": "yuewang goujian sword"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-fruits",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-fruits.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-fruits-prev.jpg"
+    },
+    "params": {
+      "theme": "fruits"
+    },
+    "locales": {
+      "en": {
+        "title": "fruits"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-furniture",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-furniture.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-furniture-prev.jpg"
+    },
+    "params": {
+      "theme": "furniture"
+    },
+    "locales": {
+      "en": {
+        "title": "furniture"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-kitchen-utensils",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-kitchen-utensils.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-kitchen-utensils-prev.jpg"
+    },
+    "params": {
+      "theme": "kitchen utensils"
+    },
+    "locales": {
+      "en": {
+        "title": "kitchen utensils"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-vegetables",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-vegetables.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-vegetables-prev.jpg"
+    },
+    "params": {
+      "theme": "vegetables"
+    },
+    "locales": {
+      "en": {
+        "title": "vegetables"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-vehicles",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-vehicles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-vehicles-prev.jpg"
+    },
+    "params": {
+      "theme": "vehicles"
+    },
+    "locales": {
+      "en": {
+        "title": "vehicles"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-3-idiots",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-3-idiots.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-3-idiots-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "3 idiots"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-flipped",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-flipped.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-flipped-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "flipped"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-sing-street",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-sing-street.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-sing-street-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "sing street"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-the-grand-budapest-hotel",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-the-grand-budapest-hotel.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-the-grand-budapest-hotel-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "the grand budapest hotel"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-abbreviations-greetings",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-abbreviations-greetings.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-abbreviations-greetings-prev.jpg"
+    },
+    "params": {
+      "theme": "abbreviations greetings"
+    },
+    "locales": {
+      "en": {
+        "title": "abbreviations greetings"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-contractions",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-contractions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-contractions-prev.jpg"
+    },
+    "params": {
+      "theme": "contractions"
+    },
+    "locales": {
+      "en": {
+        "title": "contractions"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-interjections",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-interjections.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-interjections-prev.jpg"
+    },
+    "params": {
+      "theme": "interjections"
+    },
+    "locales": {
+      "en": {
+        "title": "interjections"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-short-phrases",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-short-phrases.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-short-phrases-prev.jpg"
+    },
+    "params": {
+      "theme": "short phrases"
+    },
+    "locales": {
+      "en": {
+        "title": "short phrases"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-time-related",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-time-related.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-time-related-prev.jpg"
+    },
+    "params": {
+      "theme": "time related"
+    },
+    "locales": {
+      "en": {
+        "title": "time related"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-house-structure-2",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-house-structure-2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-house-structure-2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "house structure 2"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-house-structure",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-house-structure.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-house-structure-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "house structure"
       }
     }
   }

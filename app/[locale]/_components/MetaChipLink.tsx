@@ -26,8 +26,8 @@ export default function MetaChipLink({
 }: MetaChipLinkProps) {
   const sizeClass =
     size === "small"
-      ? "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
-      : "inline-flex items-center rounded-full px-3 py-1 text-sm font-medium";
+      ? "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold"
+      : "inline-flex items-center rounded-full px-5 py-2 text-base font-medium";
 
   const colorClass = (() => {
     if (color === "blue") {

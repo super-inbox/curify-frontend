@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 
 import {
@@ -9,14 +10,15 @@ import {
   buildNanoRegistry,
 } from "@/lib/nano_utils";
 
-import { buildNanoFeedCards } from "@/lib/nano_page_data";
+import { buildNanoFeedCards, buildTemplateImageGridItems } from "@/lib/nano_page_data";
+import { getImageViewsForTemplate } from "@/lib/nano_example_utils";
 import {
   resolveContentLocale,
   makeSafeTranslator,
   titleCaseFromSlug,
 } from "@/lib/locale_utils";
 
-import { getTemplatesForTopic } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -56,6 +58,19 @@ export default async function Page({ params }: Props) {
 
   const reg = buildNanoRegistry(filteredTemplates, filteredImages);
 
+  const imagesByTemplate = filteredTemplates
+    .map((t) => buildTemplateImageGridItems(getImageViewsForTemplate(reg, t.id, contentLocale)))
+    .filter((imgs) => imgs.length > 0);
+
+  // Interleave: round-robin across templates for visual diversity
+  const gridItems: typeof imagesByTemplate[number] = [];
+  const maxLen = Math.max(0, ...imagesByTemplate.map((a) => a.length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const imgs of imagesByTemplate) {
+      if (i < imgs.length) gridItems.push(imgs[i]);
+    }
+  }
+
   const nanoCards = buildNanoFeedCards(reg, contentLocale, {
     perTemplateMaxImages: 2,
     strictLocale: false,
@@ -74,6 +89,13 @@ export default async function Page({ params }: Props) {
   const topicDescription =
     translateTopics(`topics.${slug}.description`) || "";
 
+  const exampleImagesHeading =
+    translateTopics("topicPage.exampleImagesHeading") || "Example Images";
+  const templatesHeading =
+    translateTopics("topicPage.templatesHeading") || "Templates";
+
+  const relatedTopicIds = getRelatedTopics(slug);
+
   return (
     <main className="min-h-screen">
       <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
@@ -88,18 +110,43 @@ export default async function Page({ params }: Props) {
               {topicDescription}
             </p>
           ) : null}
+
+          {relatedTopicIds.length > 0 && (
+            <div className="mt-4">
+              <TopicNavRow
+                locale={localeStr}
+                topics={relatedTopicIds}
+                activeTopic={slug}
+                showDisabled={false}
+                size="small"
+              />
+            </div>
+          )}
         </div>
       </section>
 
+      {gridItems.length > 0 && (
+        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
+            {exampleImagesHeading}
+          </h2>
+          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
+        </section>
+      )}
+
       <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
+          {templatesHeading}
+        </h2>
         <NanoTemplateDetailClient
-          locale={localeStr}          
+          locale={localeStr}
           otherNanoCards={nanoCards}
           showReproduce={false}
           showOtherTemplates={true}
           showOtherTemplateTitle={false}
         />
       </section>
+
     </main>
   );
 }

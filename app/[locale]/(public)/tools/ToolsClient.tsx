@@ -57,6 +57,7 @@ export default function ToolsClient() {
   const [activeLanguage, setActiveLanguage] = useState<"en" | "zh" | "es">("en");
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
+  const hasInteracted = useRef(false);
 
   const languages = {
     en: { flag: "🇺🇸", video: "/video/training_en.mp4", label: "EN" },
@@ -68,6 +69,7 @@ export default function ToolsClient() {
 
   const handleLanguageSwitch = (lang: "en" | "zh" | "es") => {
     if (videoRef.current) setCurrentTime(videoRef.current.currentTime);
+    hasInteracted.current = true;
     setActiveLanguage(lang);
   };
 
@@ -77,7 +79,7 @@ export default function ToolsClient() {
 
     const restoreAndPlay = () => {
       vid.currentTime = currentTime;
-      vid.play().catch(() => {});
+      if (hasInteracted.current) vid.play().catch(() => {});
     };
 
     vid.onloadeddata = restoreAndPlay;

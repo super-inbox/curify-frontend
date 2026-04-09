@@ -438,7 +438,7 @@
       "description": "시의적절한 주제, 빠르게 변화하는 대화, 바이럴 아이디어 및 새로운 테마에 대한 트렌딩 AI 비주얼, 템플릿 및 영감을 발견하세요."
     },
     "character": {
-      "displayName": "심리학",
+      "displayName": "캐릭터",
       "title": "심리학 비주얼 프롬프트, 템플릿 및 영감",
       "description": "MBTI, 성격 분석, 감정 및 자기 반성 콘텐츠를 위한 심리학 관련 AI 비주얼, 성격 템플릿 및 창의적 영감을 발견하세요."
     },
@@ -486,6 +486,15 @@
       "displayName": "스포츠",
       "title": "스포츠 비주얼 프롬프트, 템플릿 및 영감",
       "description": "경쟁, 팀, 성과 스토리텔링 및 팬 기반 콘텐츠를 위한 스포츠 테마 AI 비주얼, 운동선수 템플릿 및 영감을 찾아보세요."
+    },
+    "weather": {
+      "displayName": "날씨",
+      "title": "날씨 비주얼 프롬프트, 템플릿 및 영감",
+      "description": "계절, 기후, 자연 현상 및 대기 스토리텔링을 위한 날씨 테마 AI 비주얼과 템플릿을 탐색하세요."
     }
+  },
+  "topicPage": {
+    "exampleImagesHeading": "예시 이미지",
+    "templatesHeading": "템플릿"
   }
 }

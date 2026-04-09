@@ -3,6 +3,7 @@ import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
+import { USE_CASES } from "@/lib/use-cases";
 import { toSlug } from "@/lib/nano_utils";
 
 export const runtime = "nodejs";
@@ -49,6 +50,10 @@ function getToolRoutes(): string[] {
   return TOOL_REGISTRY
     .filter((t) => t.status !== "coming_soon")
     .map((t) => `/tools/${encodeURIComponent(t.slug)}`);
+}
+
+function getUseCaseRoutes(): string[] {
+  return USE_CASES.map((uc) => `/use-cases/${uc.slug}`);
 }
 
 function generateHreflangLinks(
@@ -104,6 +109,7 @@ export async function GET() {
   const nanoTemplateRoutes = getNanoTemplateRoutes();
   const toolRoutes = getToolRoutes();
   const tagRoutes = getTagRoutes();
+  const useCaseRoutes = getUseCaseRoutes();
 
   let urls = "";
 
@@ -114,6 +120,17 @@ export async function GET() {
         lastmod: STABLE_LASTMOD,
         changefreq: route === "" ? "daily" : "weekly",
         priority: route === "" && locale === "en" ? "1.0" : "0.8",
+      });
+    });
+  });
+
+  // Use case pages
+  useCaseRoutes.forEach((route) => {
+    LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        lastmod: STABLE_LASTMOD,
+        changefreq: "weekly",
+        priority: "0.8",
       });
     });
   });

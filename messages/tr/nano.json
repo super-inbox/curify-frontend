@@ -1181,5 +1181,137 @@
         ]
       }
     }
+  },
+  "template-detailed-vocab-flashcard": {
+    "category": "Dil Öğrenimi & Kelime Kartları",
+    "description": "Telaffuz, çeviriler ve örnek cümlelerle detaylı Çince-İngilizce iki dilli kelime kartları oluşturun. Dil öğrenenler ve eğitimciler için idealdir.",
+    "title": "Çince-İngilizce Kelime Kartları Örneklerle (AI Öğrenme Kartları) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, pinyin, çeviriler ve bağlamsal örnek cümlelerle AI destekli iki dilli kelime kartları oluşturur. Öğrenicilerin kelimeleri etkili bir şekilde anlamalarına ve ezberlemelerine yardımcı olur.",
+        "who": "Dil öğrenenler, ESL öğrencileri, öğretmenler, özel ders verenler ve eğitim içerik üreticileri için tasarlanmıştır.",
+        "how": [
+          "Çince kelimeyi ve pinyin'ini girin.",
+          "İngilizce çeviri ve sözcük türünü ekleyin.",
+          "Çince, pinyin ve İngilizce örnek cümleler sağlayın.",
+          "Yapılandırılmış bir iki dilli kelime kartı oluşturun."
+        ],
+        "prompts": [
+          "Örneklerle Çince İngilizce kelime kartı.",
+          "Pinyin ve cümlelerle Çince kelimeleri öğrenin.",
+          "Yeni başlayanlar için iki dilli kelime kartı."
+        ]
+      }
+    }
+  },
+  "template-custom-character-card": {
+    "category": "Karakter Tasarımı & Kişilik Kartları",
+    "description": "Kişilik özellikleri, arketipler ve sinematik fantezi görselleri ile özel karakter profil kartları oluşturun. Hikaye anlatımı, oyunlar ve yaratıcı içerikler için idealdir.",
+    "title": "Özel Karakter Kartları (AI Kişilik & Arketip Üretici) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, kişilik özellikleri, arketipler ve anlatı tanımları ile sinematik fantezi tarzında AI destekli özel karakter kartları oluşturur.",
+        "who": "Yazarlar, oyun tasarımcıları, sanatçılar, rol yapma yaratıcıları ve hikaye anlatımı meraklıları için tasarlanmıştır.",
+        "how": [
+          "Cinsiyet ve kişilik özelliklerini belirtin.",
+          "Bir karakter arketipi ve unvan seçin.",
+          "Karakter etiketlerini ve adını tanımlayın.",
+          "Görseller ve anlatımla detaylı bir karakter profil kartı oluşturun."
+        ],
+        "prompts": [
+          "Kişilik özellikleri ile fantezi karakter kartı.",
+          "Tarot tarzında bir karakter profili oluşturun.",
+          "Geçmiş hikayesi ile özel karakter tasarımı."
+        ]
+      }
+    }
+  },
+  "template-detective-conan": {
+    "category": "Anime Karakteri & MBTI Kartları",
+    "description": "Detective Conan karakter profil kartları oluşturun, MBTI kişilik analizi ve özellikleri ile. Anime hayranları ve kişilik içerik üreticileri için idealdir.",
+    "title": "Detective Conan Karakter MBTI Kartları (AI Anime Profilleri) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, MBTI analizi, kişilik özellikleri ve koleksiyon tarzı düzenlerle AI destekli Detective Conan karakter kartları oluşturur.",
+        "who": "Anime hayranları, MBTI meraklıları, fandom toplulukları ve içerik üreticileri için tasarlanmıştır.",
+        "how": [
+          "Karakter adını girin.",
+          "MBTI türünü ve unvanı belirtin.",
+          "Kişilik analizi ve temel özellikleri ekleyin.",
+          "Koleksiyon tarzında bir anime karakter profil kartı oluşturun."
+        ],
+        "prompts": [
+          "Detective Conan MBTI karakter analizi.",
+          "Anime karakter kişilik kartı.",
+          "Shinichi Kudo MBTI profili."
+        ]
+      }
+    }
+  },
+  "template-children-english-vocab-spelling": {
+    "category": "Çocuklar için Öğrenme & Kelime Posterleri",
+    "description": "Telaffuz ve illüstrasyonlarla çocuklar için renkli İngilizce kelime yazım posterleri oluşturun. Erken eğitim ve ESL öğrenimi için idealdir.",
+    "title": "Çocuklar için İngilizce Kelime Yazım Posterleri (Eğlenceli Öğrenme Kartları) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, temalı kelime setleri, telaffuz ve görsel illüstrasyonlarla AI destekli çocukların kelime yazım posterleri oluşturur.",
+        "who": "Ebeveynler, öğretmenler, ESL öğrenicileri, evde eğitim yapan aileler ve erken eğitim platformları için tasarlanmıştır.",
+        "how": [
+          "Bir kelime teması seçin.",
+          "Bir kelime seti oluşturun.",
+          "Telaffuz ve çevirileri ekleyin.",
+          "Renkli bir eğitim yazım posteri oluşturun."
+        ],
+        "prompts": [
+          "Çocuklar için İngilizce kelime posteri.",
+          "Resimlerle İngilizce kelimeleri öğrenin.",
+          "Temaya göre çocuklar için yazım pratiği."
+        ]
+      }
+    }
+  },
+  "template-daily-essentials-learning-card": {
+    "category": "Çocuklar için Öğrenme ve Eğitim Kartları",
+    "description": "Çocuklar için çizgi film illüstrasyonları, İngilizce kelimeler ve Çince çevirilerle kawaii tarzı günlük ihtiyaçlar öğrenme kartları oluşturun. İki dilli eğitim ve erken öğrenenler için mükemmel.",
+    "title": "Çocuklar için Günlük İhtiyaçlar Öğrenme Kartları (İki Dilli Kawaii Kartlar) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her kartta 6 günlük öğe içeren, sevimli çizgi film illüstrasyonları, İngilizce etiketler ve Çince çevirilerle 2×3 ızgara düzeninde kawaii tarzı öğrenme kartları oluşturur.",
+        "who": "Ebeveynler, öğretmenler, iki dilli eğitimciler, evde eğitim yapan aileler ve erken çocukluk öğrenme platformları için tasarlanmıştır.",
+        "how": [
+          "Bir günlük ihtiyaçlar teması girin (örneğin, Okul Malzemeleri, Mutfak Araçları).",
+          "2×3 ızgarada 6 illüstrasyonlu çizgi film kartı oluşturun.",
+          "Her kart, İngilizce kelime ve Çince çeviri içerir.",
+          "Çocuklar için renkli iki dilli öğrenme kartını indirin."
+        ],
+        "prompts": [
+          "Çocuklar için günlük ihtiyaçlar öğrenme kartı.",
+          "Kawaii iki dilli kelime kartı.",
+          "Çocuklar için okul malzemeleri öğrenme posteri."
+        ]
+      }
+    }
+  },
+  "template-native-english-expressions": {
+    "category": "Anadil İngilizce İfade Posterleri",
+    "description": "Konuşma dili İngilizce ifadeler, anlamlar ve örnek cümleler içeren renkli öğrenme posterleri oluşturun. İngilizce öğrenenler için mükemmel.",
+    "title": "Anadil İngilizce İfade Posterleri (Anadil gibi konuş) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, poster başına 9 konuşma dili ifadesi, anlamlar, çizimler ve örnek cümleler içeren yapay zeka destekli anadil İngilizce ifade posterleri oluşturur.",
+        "who": "İngilizce öğrenenler, İngilizce öğretmenleri, dil meraklıları ve daha doğal İngilizce konuşmak isteyenler için tasarlanmıştır.",
+        "how": [
+          "Bir ifade teması seçin.",
+          "9 konuşma dili ifadesi oluşturun.",
+          "Anlamlar ve örnek cümleler ekleyin.",
+          "Renkli eğitici bir poster oluşturun."
+        ],
+        "prompts": [
+          "Anadil İngilizce ifade posteri.",
+          "Anadil gibi İngilizce konuş.",
+          "Konuşma dili İngilizce ifadeler posteri."
+        ]
+      }
+    }
   }
 }

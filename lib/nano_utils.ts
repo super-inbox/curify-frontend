@@ -28,7 +28,7 @@ export type RawTemplate = {
   >;
 
   cards?: Array<{ image_id: string; params: Record<string, any> }>;
-
+  use_cases?: string[];
 };
 
 export type RawNanoImageRecord = {

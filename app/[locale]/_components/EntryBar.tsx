@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
+import { USE_CASES } from "@/lib/use-cases";
 import { getCanonicalPath } from "@/lib/canonical";
 import { useClickTracking } from "@/services/useTracking";
 
@@ -24,6 +26,7 @@ type ItemProps = {
 
 function EntryBarItem({ item, locale }: ItemProps) {
   const t = useTranslations("entryBar");
+  const pathname = usePathname();
 
   const trackClick = useClickTracking(
     `entry-bar:${item.id}`,
@@ -32,16 +35,49 @@ function EntryBarItem({ item, locale }: ItemProps) {
   );
 
   const href = getCanonicalPath(locale, item.path);
+  const isActive = pathname === href || pathname.startsWith(href + "/");
 
   return (
     <Link
       href={href}
       onClick={trackClick}
-      className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
+      className={
+        isActive
+          ? "inline-flex items-center gap-2 rounded-full border border-blue-500 bg-blue-200 px-4 py-2 text-sm font-semibold text-blue-900 transition"
+          : "inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm text-blue-800 transition hover:border-blue-400 hover:bg-blue-100"
+      }
     >
       {item.emoji ? <span aria-hidden="true">{item.emoji}</span> : null}
       <span>{t(`items.${item.id}`)}</span>
     </Link>
+  );
+}
+
+function UseCaseBarItem({ slug }: { slug: string }) {
+  const t = useTranslations("entryBar");
+  const pathname = usePathname();
+  const trackClick = useClickTracking(
+    `use-case:${slug}`,
+    "topic_capsule",
+    "cards"
+  );
+
+  const isActive =
+    pathname === `/use-cases/${slug}` ||
+    pathname.endsWith(`/use-cases/${slug}`);
+
+  return (
+    <IntlLink
+      href={`/use-cases/${slug}`}
+      onClick={trackClick}
+      className={
+        isActive
+          ? "inline-flex items-center rounded-full border border-purple-500 bg-purple-200 px-4 py-2 text-sm font-semibold text-purple-900 transition"
+          : "inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-sm text-purple-800 transition hover:border-purple-400 hover:bg-purple-100"
+      }
+    >
+      {t(`useCases.${slug}`)}
+    </IntlLink>
   );
 }
 
@@ -73,6 +109,15 @@ export default function EntryBar({ locale, className }: Props) {
         <div className="flex flex-wrap gap-2">
           {ENTRY_BAR_ITEMS.map((item) => (
             <EntryBarItem key={item.id} item={item} locale={locale} />
+          ))}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm font-medium text-neutral-800">
+            {t("useCasesQuestion")}
+          </span>
+          {USE_CASES.map((uc) => (
+            <UseCaseBarItem key={uc.slug} slug={uc.slug} />
           ))}
         </div>
       </div>

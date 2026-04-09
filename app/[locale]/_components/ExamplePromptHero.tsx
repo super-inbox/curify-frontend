@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
+import { useClickTracking } from "@/services/useTracking";
 
 type PrevNextLink = {
   href: string;
@@ -26,6 +29,7 @@ type ExamplePromptHeroProps = {
   image: ReactNode;
   actionBar: ReactNode;
   prompt: string;
+  trackingId?: string;
   breadcrumbs?: BreadcrumbItem[];
   metaChips?: ReactNode;
   description?: string;
@@ -35,7 +39,10 @@ type ExamplePromptHeroProps = {
   className?: string;
 };
 
-function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
+function DesktopPrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
+  const trackPrev = useClickTracking(`${trackingId ?? "unknown"}:prev`, "prev_next");
+  const trackNext = useClickTracking(`${trackingId ?? "unknown"}:next`, "prev_next");
+
   if (!prevNext) return null;
 
   return (
@@ -44,6 +51,7 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
         <Link
           href={prevNext.prev.href}
           aria-label={prevNext.prev.label || "Previous"}
+          onClick={trackPrev}
           className="pointer-events-auto inline-flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
         >
           &lt;
@@ -54,6 +62,7 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
         <Link
           href={prevNext.next.href}
           aria-label={prevNext.next.label || "Next"}
+          onClick={trackNext}
           className="pointer-events-auto inline-flex h-10 w-10 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200/80 bg-white/85 text-base text-neutral-600 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-neutral-900"
         >
           &gt;
@@ -63,13 +72,17 @@ function DesktopPrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
   );
 }
 
-function MobilePrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
+function MobilePrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
+  const trackPrev = useClickTracking(`${trackingId ?? "unknown"}:prev`, "prev_next");
+  const trackNext = useClickTracking(`${trackingId ?? "unknown"}:next`, "prev_next");
+
   if (!prevNext) return null;
 
   return (
     <div className="mt-4 flex items-center justify-between gap-3 lg:hidden">
       <Link
         href={prevNext.prev.href}
+        onClick={trackPrev}
         className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
       >
         ← Prev
@@ -85,11 +98,21 @@ function MobilePrevNext({ prevNext }: { prevNext?: PrevNextNav | null }) {
 
       <Link
         href={prevNext.next.href}
+        onClick={trackNext}
         className="inline-flex items-center rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-medium text-neutral-700 shadow-sm transition hover:bg-neutral-50"
       >
         Next →
       </Link>
     </div>
+  );
+}
+
+function BreadcrumbLink({ item }: { item: BreadcrumbItem }) {
+  const trackClick = useClickTracking(item.href ?? "breadcrumb", "breadcrumb");
+  return (
+    <Link href={item.href!} onClick={trackClick} className="hover:text-neutral-800">
+      {item.label}
+    </Link>
   );
 }
 
@@ -104,9 +127,7 @@ function Breadcrumbs({ items }: { items?: BreadcrumbItem[] }) {
         return (
           <div key={idx} className="contents">
             {item.href && !isLast ? (
-              <Link href={item.href} className="hover:text-neutral-800">
-                {item.label}
-              </Link>
+              <BreadcrumbLink item={item} />
             ) : (
               <span
                 className={
@@ -132,6 +153,7 @@ export default function ExamplePromptHero({
   image,
   actionBar,
   prompt,
+  trackingId,
   breadcrumbs,
   metaChips,
   description,
@@ -145,7 +167,7 @@ export default function ExamplePromptHero({
       <Breadcrumbs items={breadcrumbs} />
 
       <section className={["relative", className].filter(Boolean).join(" ")}>
-        <DesktopPrevNext prevNext={prevNext} />
+        <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
           <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[520px]">
@@ -195,7 +217,7 @@ export default function ExamplePromptHero({
         </div>
       </section>
 
-      <MobilePrevNext prevNext={prevNext} />
+      <MobilePrevNext prevNext={prevNext} trackingId={trackingId} />
     </>
   );
 }

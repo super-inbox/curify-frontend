@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import Image from "next/image";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
@@ -20,7 +20,6 @@ export default function WorkspaceClient() {
   const [, setDrawerState] = useAtom(drawerAtom);
   const [, setModalState] = useAtom(modalAtom);
   const [, setJobType] = useAtom(jobTypeAtom);
-  // ✅ Use atom instead of useState — stays true across navigations, no flash
   const [clientMounted] = useAtom(clientMountedAtom);
 
   const [projects, setProjects] = useState<Project[]>([]);
@@ -30,7 +29,6 @@ export default function WorkspaceClient() {
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
 
   const router = useRouter();
-  const { locale } = useParams();
 
   const refreshProjects = useCallback(async () => {
     try {
@@ -63,7 +61,6 @@ export default function WorkspaceClient() {
     [setJobType, setModalState]
   );
 
-  // ─── Pre-mount skeleton — matches SSR, shown only on very first page load ────
   if (!clientMounted) {
     return (
       <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
@@ -85,7 +82,6 @@ export default function WorkspaceClient() {
     );
   }
 
-  // ─── Logged-out view ─────────────────────────────────────────────────────────
   if (!user) {
     return (
       <div className="max-w-7xl mx-auto px-6 pt-28 py-10">
@@ -112,7 +108,6 @@ export default function WorkspaceClient() {
     );
   }
 
-  // ─── Logged-in view ──────────────────────────────────────────────────────────
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
       <h2 className="text-2xl font-bold mb-4">My Projects</h2>
@@ -147,18 +142,13 @@ export default function WorkspaceClient() {
           return (
             <div
               key={project.project_id}
-              onClick={async () => {
+              onClick={() => {
                 if (openMenuId) return;
+
                 if (project.status === "COMPLETED") {
-                  try {
-                    const fullProject = await projectService.getProject(project.project_id);
-                    localStorage.setItem("selectedProjectDetails", JSON.stringify(fullProject));
-                    router.push(`/${locale}/project_details/${project.project_id}`);
-                  } catch (err) {
-                    console.error("Failed to fetch full project:", err);
-                  }
+                  router.push(`/project_details/${project.project_id}`);
                 } else {
-                  router.push(`/${locale}/magic/${project.project_id}`);
+                  router.push(`/magic/${project.project_id}`);
                 }
               }}
               className="relative border border-gray-200 rounded-lg overflow-visible shadow-md bg-white cursor-pointer transform scale-[1.05] hover:scale-[1.08] transition"
@@ -171,7 +161,8 @@ export default function WorkspaceClient() {
                   className="object-cover"
                 />
                 <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
-                  {project.job_settings.target_language?.toUpperCase() ?? ""} · {formatStatus(project.status)}
+                  {project.job_settings.target_language?.toUpperCase() ?? ""} ·{" "}
+                  {formatStatus(project.status)}
                 </div>
                 <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
                   {duration}

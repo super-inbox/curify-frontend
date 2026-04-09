@@ -45,10 +45,6 @@ export function titleCaseFromSlug(slug: string): string {
 export function buildTopicHref(locale: string, topicId: string) {
   const normalized = topicId.trim().toLowerCase();
 
-  if (normalized === "trending") {
-    return locale === "en" ? "/inspiration-hub" : `/${locale}/inspiration-hub`;
-  }
-
   return locale === "en"
     ? `/topics/${normalized}`
     : `/${locale}/topics/${normalized}`;

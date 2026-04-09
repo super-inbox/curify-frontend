@@ -1181,5 +1181,137 @@
         ]
       }
     }
+  },
+  "template-detailed-vocab-flashcard": {
+    "category": "Aprendizaje de Idiomas y Tarjetas de Vocabulario",
+    "description": "Genera tarjetas de vocabulario bilingües chino-inglés detalladas con pronunciación, traducciones y oraciones de ejemplo. Ideal para estudiantes de idiomas y educadores.",
+    "title": "Tarjetas de Vocabulario Chino-Inglés con Ejemplos (Tarjetas de Aprendizaje AI) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de vocabulario bilingües impulsadas por IA con pinyin, traducciones y oraciones de ejemplo contextuales. Ayuda a los estudiantes a entender y memorizar palabras de manera efectiva.",
+        "who": "Diseñada para estudiantes de idiomas, estudiantes de ESL, profesores, tutores y creadores de contenido educativo.",
+        "how": [
+          "Ingresa la palabra en chino y su pinyin.",
+          "Agrega la traducción al inglés y la parte del discurso.",
+          "Proporciona oraciones de ejemplo en chino, pinyin e inglés.",
+          "Genera una tarjeta de vocabulario bilingüe estructurada."
+        ],
+        "prompts": [
+          "Tarjeta de vocabulario chino-inglés con ejemplos.",
+          "Aprende palabras chinas con pinyin y oraciones.",
+          "Tarjeta de vocabulario bilingüe para principiantes."
+        ]
+      }
+    }
+  },
+  "template-custom-character-card": {
+    "category": "Diseño de Personajes y Tarjetas de Personalidad",
+    "description": "Crea tarjetas de perfil de personajes personalizadas con rasgos de personalidad, arquetipos y visuales de fantasía cinematográfica. Ideal para narración de historias, juegos y contenido creativo.",
+    "title": "Tarjetas de Personajes Personalizados (Generador de Personalidad y Arquetipo AI) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de personajes personalizadas impulsadas por IA que combinan rasgos de personalidad, arquetipos y descripciones narrativas en un estilo de fantasía cinematográfica.",
+        "who": "Diseñada para escritores, diseñadores de juegos, artistas, creadores de rol y entusiastas de la narración.",
+        "how": [
+          "Especifica género y rasgos de personalidad.",
+          "Elige un arquetipo de personaje y un título.",
+          "Define etiquetas de personaje y nombre.",
+          "Genera una tarjeta de perfil de personaje detallada con visuales y narrativa."
+        ],
+        "prompts": [
+          "Tarjeta de personaje de fantasía con rasgos de personalidad.",
+          "Crea un perfil de personaje al estilo tarot.",
+          "Diseño de personaje personalizado con historia de fondo."
+        ]
+      }
+    }
+  },
+  "template-detective-conan": {
+    "category": "Tarjetas de Personajes de Anime y MBTI",
+    "description": "Genera tarjetas de perfil de personajes de Detective Conan con análisis de personalidad MBTI y rasgos. Ideal para fanáticos del anime y creadores de contenido de personalidad.",
+    "title": "Tarjetas MBTI de Personajes de Detective Conan (Perfiles de Anime AI) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de personajes de Detective Conan impulsadas por IA con análisis MBTI, rasgos de personalidad y diseños de estilo coleccionable.",
+        "who": "Diseñada para fanáticos del anime, entusiastas de MBTI, comunidades de fandom y creadores de contenido.",
+        "how": [
+          "Ingresa el nombre del personaje.",
+          "Especifica el tipo MBTI y el título.",
+          "Agrega desglose de personalidad y rasgos principales.",
+          "Genera una tarjeta de perfil de personaje de anime de estilo coleccionable."
+        ],
+        "prompts": [
+          "Análisis de personaje MBTI de Detective Conan.",
+          "Tarjeta de personalidad de personaje de anime.",
+          "Perfil MBTI de Shinichi Kudo."
+        ]
+      }
+    }
+  },
+  "template-children-english-vocab-spelling": {
+    "category": "Aprendizaje Infantil y Pósteres de Vocabulario",
+    "description": "Genera coloridos pósteres de ortografía de vocabulario en inglés para niños con pronunciación e ilustraciones. Ideal para educación temprana y aprendizaje de ESL.",
+    "title": "Pósteres de Ortografía de Vocabulario en Inglés para Niños (Tarjetas de Aprendizaje Divertido) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera pósteres de ortografía de vocabulario infantil impulsados por IA con conjuntos de palabras temáticas, pronunciación e ilustraciones visuales para un aprendizaje atractivo.",
+        "who": "Diseñada para padres, profesores, estudiantes de ESL, familias que educan en casa y plataformas de educación temprana.",
+        "how": [
+          "Selecciona un tema de vocabulario.",
+          "Genera un conjunto de palabras de vocabulario.",
+          "Incluye pronunciación y traducciones.",
+          "Crea un colorido póster educativo de ortografía."
+        ],
+        "prompts": [
+          "Póster de vocabulario en inglés para niños.",
+          "Aprende palabras en inglés con imágenes.",
+          "Práctica de ortografía para niños por tema."
+        ]
+      }
+    }
+  },
+  "template-daily-essentials-learning-card": {
+    "category": "Tarjetas de Aprendizaje y Educativas para Niños",
+    "description": "Genera tarjetas de aprendizaje de estilo kawaii para niños con ilustraciones de dibujos animados, palabras en inglés y traducciones al chino. Perfecto para la educación bilingüe y los aprendices tempranos.",
+    "title": "Tarjetas de Aprendizaje de Esenciales Diarios para Niños (Tarjetas Kawaii Bilingües) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera tarjetas de aprendizaje de estilo kawaii impulsadas por IA que presentan 6 elementos diarios por tarjeta con lindas ilustraciones de dibujos animados, etiquetas en inglés y traducciones al chino en un diseño de cuadrícula de 2×3.",
+        "who": "Diseñado para padres, maestros, educadores bilingües, familias que educan en casa y plataformas de aprendizaje infantil.",
+        "how": [
+          "Ingresa un tema de esenciales diarios (por ejemplo, Suministros Escolares, Herramientas de Cocina).",
+          "Genera 6 tarjetas ilustradas de dibujos animados en una cuadrícula de 2×3.",
+          "Cada tarjeta incluye la palabra en inglés y la traducción al chino.",
+          "Descarga una tarjeta de aprendizaje bilingüe colorida para niños."
+        ],
+        "prompts": [
+          "Tarjeta de aprendizaje de esenciales diarios para niños.",
+          "Tarjeta de vocabulario bilingüe kawaii.",
+          "Póster de aprendizaje de suministros escolares para niños."
+        ]
+      }
+    }
+  },
+  "template-native-english-expressions": {
+    "category": "Pósters de Expresiones Inglesas Nativas",
+    "description": "Genera coloridos pósters de aprendizaje con expresiones inglesas coloquiales, significados y oraciones de ejemplo. Perfecto para estudiantes de inglés.",
+    "title": "Pósters de Expresiones Inglesas Nativas (Habla como un nativo) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera pósters con expresiones inglesas nativas impulsados por IA, con 9 frases coloquiales por póster, significados, ilustraciones y oraciones de ejemplo.",
+        "who": "Diseñado para estudiantes de inglés, profesores, entusiastas del idioma y quienes quieren sonar más naturales en inglés.",
+        "how": [
+          "Elige un tema de expresiones.",
+          "Genera 9 expresiones coloquiales.",
+          "Incluye significados y oraciones de ejemplo.",
+          "Crea un colorido póster educativo."
+        ],
+        "prompts": [
+          "Póster de expresiones inglesas nativas.",
+          "Habla inglés como un nativo.",
+          "Póster de frases inglesas coloquiales."
+        ]
+      }
+    }
   }
 }

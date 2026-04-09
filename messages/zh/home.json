@@ -438,7 +438,7 @@
       "description": "发现与时事话题、快速发展的对话、病毒式创意和新兴主题相关的热门AI视觉、模板和灵感。"
     },
     "character": {
-      "displayName": "心理学",
+      "displayName": "角色",
       "title": "心理学视觉提示、模板和灵感",
       "description": "发现与心理学相关的AI视觉、个性模板和MBTI、角色分析、情感和自我反思内容的创意灵感。"
     },
@@ -486,6 +486,15 @@
       "displayName": "体育",
       "title": "体育视觉提示、模板和灵感",
       "description": "浏览以体育为主题的AI视觉、运动员模板和灵感，涵盖比赛、团队、表现叙事和粉丝驱动的内容。"
+    },
+    "weather": {
+      "displayName": "天气",
+      "title": "天气视觉提示、模板与灵感",
+      "description": "探索天气主题的AI视觉效果、模板和灵感，涵盖季节、气候、自然现象和大气叙事。"
     }
+  },
+  "topicPage": {
+    "exampleImagesHeading": "示例图片",
+    "templatesHeading": "模板"
   }
 }

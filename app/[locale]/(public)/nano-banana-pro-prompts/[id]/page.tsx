@@ -152,6 +152,7 @@ export default async function PromptDetailPage({
         <ExamplePromptHero
           title={prompt.title}
           prompt={promptText}
+          trackingId={String(prompt.id)}
           promptVariant="preview"
           description={prompt.description || undefined}
           prevNext={prevNext}
@@ -213,7 +214,7 @@ export default async function PromptDetailPage({
               Related Images
             </h2>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {related.map((p) => (
                 <PromptCard key={p.id} prompt={p} />
               ))}
