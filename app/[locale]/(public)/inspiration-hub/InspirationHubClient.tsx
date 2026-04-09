@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect, useCallback } from "react";
+import { useMemo, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
@@ -68,9 +68,8 @@ export default function InspirationHubClient({
 }: {
   cards: InspirationCardType[];
 }) {
-  const [query, setQuery] = useState("");
   const activeLang = usePageLanguage();
-  const filteredCards = useFilteredInspiration(cards, activeLang, query);
+  const filteredCards = useFilteredInspiration(cards, activeLang, "");
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
@@ -102,15 +101,6 @@ export default function InspirationHubClient({
 
   return (
     <section>
-      <div className="mb-6 flex flex-col gap-3">
-        <Filters
-          query={query}
-          setQuery={setQuery}
-          count={filteredCards.length}
-          total={cards.length}
-        />
-      </div>
-
       <ListView
         filteredCards={filteredCards}
         requireAuth={requireAuth}
@@ -133,39 +123,6 @@ export default function InspirationHubClient({
   );
 }
 
-function Filters({
-  query,
-  setQuery,
-  count,
-  total,
-}: {
-  query: string;
-  setQuery: (value: string) => void;
-  count: number;
-  total: number;
-}) {
-  return (
-    <>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div className="flex-1">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search signals, angles, hooks..."
-            className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm outline-none ring-0 focus:border-neutral-300"
-          />
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between text-xs text-neutral-500">
-        <span>
-          Showing <span className="font-medium text-neutral-700">{count}</span>{" "}
-          of {total} cards
-        </span>
-      </div>
-    </>
-  );
-}
 
 function ListView({
   filteredCards,
