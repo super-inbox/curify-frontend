@@ -1291,5 +1291,27 @@
         ]
       }
     }
+  },
+  "template-native-english-expressions": {
+    "category": "Posters d'Expressions Anglaises Natives",
+    "description": "Générez des posters d'apprentissage colorés avec des expressions anglaises familières, leurs significations et des phrases d'exemple. Idéal pour les apprenants d'anglais.",
+    "title": "Posters d'Expressions Anglaises Natives (Parler comme un natif) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère des posters d'expressions anglaises natives alimentés par l'IA, avec 9 phrases familières par poster, significations, illustrations et phrases d'exemple.",
+        "who": "Conçu pour les apprenants d'anglais, enseignants, passionnés de langues et toute personne souhaitant parler anglais plus naturellement.",
+        "how": [
+          "Choisissez un thème d'expressions.",
+          "Générez 9 expressions familières.",
+          "Incluez significations et phrases d'exemple.",
+          "Créez un poster éducatif coloré."
+        ],
+        "prompts": [
+          "Poster d'expressions anglaises natives.",
+          "Parler anglais comme un natif.",
+          "Poster de phrases anglaises familières."
+        ]
+      }
+    }
   }
 }
