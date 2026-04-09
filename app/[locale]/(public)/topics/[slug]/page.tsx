@@ -110,6 +110,18 @@ export default async function Page({ params }: Props) {
               {topicDescription}
             </p>
           ) : null}
+
+          {relatedTopicIds.length > 0 && (
+            <div className="mt-4">
+              <TopicNavRow
+                locale={localeStr}
+                topics={relatedTopicIds}
+                activeTopic={slug}
+                showDisabled={false}
+                size="small"
+              />
+            </div>
+          )}
         </div>
       </section>
 
@@ -135,19 +147,6 @@ export default async function Page({ params }: Props) {
         />
       </section>
 
-      {relatedTopicIds.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
-            Related Topics
-          </h2>
-          <TopicNavRow
-            locale={localeStr}
-            topics={relatedTopicIds}
-            activeTopic={slug}
-            showDisabled={false}
-          />
-        </section>
-      )}
     </main>
   );
 }
