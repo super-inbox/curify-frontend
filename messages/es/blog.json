@@ -182,7 +182,8 @@
         "date": "26 de febrero de 2026",
         "readTime": "15 min de lectura",
         "tag": "Patrimonio Cultural",
-        "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg"
+        "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg",
+        "thumbnailType": "video-transcripción-negocios"
       },
       {
         "slug": "10-prompting-tips-nano-banana",
@@ -190,7 +191,8 @@
         "date": "23 de marzo de 2026",
         "readTime": "8 min de lectura",
         "tag": "Prompts de Nano Banana",
-        "image": "/images/imaggenten.webp"
+        "image": "/images/book.webp",
+        "thumbnailType": "video-transcripción-pipeline"
       },
       {
         "slug": "10-prompting-tips-video-generation",
@@ -198,7 +200,7 @@
         "date": "23 de marzo de 2026",
         "readTime": "9 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/VideoGen.webp"
+        "image": "/images/tenprompt.webp"
       },
       {
         "slug": "10-consejos-de-prompting-generacion-de-video",
@@ -206,7 +208,7 @@
         "date": "23 de marzo de 2026",
         "readTime": "9 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/VideoGen.webp"
+        "image": "/images/tenprompt.webp"
       },
       {
         "slug": "comparacion-de-modelos-de-generacion-de-imagenes",
@@ -214,7 +216,7 @@
         "date": "28 de marzo de 2026",
         "readTime": "12 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/Picturecompare.webp"
+        "image": "/images/hardworker.webp"
       },
       {
         "slug": "guia-de-negocios-de-sincronizacion-lip",
@@ -222,7 +224,7 @@
         "date": "29 de marzo de 2026",
         "readTime": "10 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/lip_syncbusiness_guide.webp"
+        "image": "/images/office.webp"
       },
       {
         "slug": "profundizacion-tecnica-sincronizacion-lip",
@@ -263,6 +265,62 @@
         "readTime": "12 min de lectura",
         "tag": "Herramientas para Creadores",
         "image": "/images/lightsnano.webp"
+      },
+      {
+        "slug": "sistema-de-multiplicacion-de-contenido",
+        "title": "Cómo convertir 1 idea en 30 días de contenido (sin agotarte)",
+        "date": "6 de abril de 2026",
+        "readTime": "8 min de lectura",
+        "tag": "Estrategia de Contenido",
+        "image": "/images/thirtyday.webp",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "ecosistema-de-prompt-nano-banana",
+          "10-consejos-de-prompt-nano-banana",
+          "generador-de-prompt-de-personajes"
+        ]
+      },
+      {
+        "slug": "contenido-de-aprendizaje-viral",
+        "title": "Cómo crear contenido de aprendizaje viral (tarjetas didácticas, escenas de diálogo, conocimiento visual)",
+        "date": "6 de abril de 2026",
+        "readTime": "10 min de lectura",
+        "tag": "Contenido de Aprendizaje",
+        "image": "/images/learnContent.png",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "sistema-de-multiplicacion-de-contenido",
+          "generador-de-prompt-de-personajes",
+          "herramientas-de-aprendizaje-visual"
+        ]
+      },
+      {
+        "slug": "sistema-de-produccion-de-contenido-ai",
+        "title": "Cómo construimos un sistema de producción de contenido AI (no solo herramientas)",
+        "date": "8 de abril de 2026",
+        "readTime": "12 min de lectura",
+        "tag": "Arquitectura AI",
+        "image": "/images/aicontentproduction.webp",
+        "category": "ingenieria-ds-ai",
+        "relatedLinks": [
+          "aiPlatform",
+          "agentes-vs-flujos-de-trabajo",
+          "sistema-de-multiplicacion-de-contenido"
+        ]
+      },
+      {
+        "slug": "sistema-de-distribucion-de-contenido-ai",
+        "title": "Cómo construimos un sistema de distribución de contenido AI (X, Facebook y SEO)",
+        "date": "8 de abril de 2026",
+        "readTime": "10 min de lectura",
+        "tag": "Marketing de Contenido",
+        "image": "/images/contentdistributionsystem.webp",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "sistema-de-produccion-de-contenido-ai",
+          "sistema-de-multiplicacion-de-contenido",
+          "aiPlatform"
+        ]
       }
     ],
     "translateYoutubevideo": {
@@ -2218,6 +2276,341 @@
           ]
         }
       }
+    },
+    "contentMultiplicationSystem": {
+      "title": "Cómo convertir 1 idea en 30 días de contenido (sin agotarte)",
+      "publishedDate": "6 de abril de 2026",
+      "readTime": "8 min de lectura",
+      "category": "Estrategia de Contenido",
+      "introduction": {
+        "title": "El mayor mito en la creación de contenido",
+        "description": "El mayor mito en la creación de contenido es que necesitas un flujo constante de ideas \"nuevas\" para mantenerte relevante. ¿La verdad? No necesitas más ideas. Necesitas un sistema para multiplicar las que ya tienes. Ya seas un marketero escalando campañas, un creador construyendo tu marca, un padre creando contenido educativo, o un profesor de ESL desarrollando materiales, este marco transforma un concepto en 30 días de contenido valioso utilizando el Sistema de Plantillas Nano.",
+        "quote": "Estamos desglosando el marco exacto para tomar un solo concepto central y convertirlo en un mes completo de publicaciones de alto valor utilizando el Sistema de Plantillas Nano."
+      },
+      "problem": {
+        "title": "El Problema: La \"Cinta de Contenido Manual\"",
+        "manualTreadmill": {
+          "title": "La mayoría de los creadores de contenido lo abordan así:",
+          "description": "Esta es la ruta más rápida hacia el agotamiento. Es manual, es lenta, y es imposible de escalar—ya sea que estés creando campañas de marketing, contenido para redes sociales, materiales educativos, o recursos para aprender idiomas.",
+          "approach": "Despertar. Pensar en un tema. Pasar 2 horas escribiendo/diseñando una publicación. Repetir 30 veces al mes.",
+          "steps": [
+            "Despertar",
+            "Pensar en un tema",
+            "Pasar 2 horas escribiendo/diseñando una publicación",
+            "Repetir 30 veces al mes"
+          ],
+          "conclusion": "Esta es la ruta más rápida hacia el agotamiento. Es manual, es lenta, y es imposible de escalar."
+        }
+      },
+      "newWay": {
+        "title": "La Nueva Forma: 1 Idea → 10 Tarjetas → 30 Publicaciones",
+        "formula": "1 Idea → 10 Tarjetas → 30 Publicaciones",
+        "description": "En lugar de empezar desde cero cada día, utilizamos la atomización. Tienes una idea \"Macro\" (como una guía profunda o una visión única) y la descompones en activos \"Micro\".",
+        "idea": {
+          "title": "Idea Central",
+          "description": "Un concepto de alto valor"
+        },
+        "cards": {
+          "title": "Tarjetas de Plantilla",
+          "description": "Piezas de contenido atomizadas"
+        },
+        "posts": {
+          "title": "Publicaciones Diarias",
+          "description": "Contenido en múltiples formatos"
+        }
+      },
+      "step1": {
+        "title": "Paso 1: La Idea Central",
+        "subtitle": "Elige un tema de alto valor para tu audiencia.",
+        "description": "Elige algo que proporcione un valor genuino y que pueda descomponerse en componentes más pequeños. Este debe ser un tema que entiendas profundamente y del que puedas hablar con autoridad. Para los mercadólogos: una estrategia de campaña. Para los creadores: un tema distintivo. Para los padres: un concepto educativo. Para los profesores de ESL: un tema de aprendizaje de idiomas.",
+        "example": {
+          "title": "Ejemplos para diferentes audiencias:",
+          "content": "Mercadólogos: Estrategia de lanzamiento de producto | Creadores: Consejos de marca personal | Padres: Vocabulario en inglés para niños | Profesores de ESL: Frases de inglés comercial"
+        }
+      },
+      "step2": {
+        "title": "Paso 2: La Expansión de 10 Tarjetas",
+        "subtitle": "Usando nuestras Plantillas Nano, no solo escribes un tweet. Generas un \"Pack\".",
+        "description": "A partir de esa idea central, puedes crear instantáneamente múltiples tipos de tarjetas de contenido adaptadas a tu audiencia. Los mercadólogos pueden crear activos de campaña. Los creadores pueden construir contenido de marca. Los padres pueden desarrollar materiales de aprendizaje. Los profesores de ESL pueden diseñar lecciones de idiomas.",
+        "vocabularyCards": {
+          "title": "5 Tarjetas de Vocabulario",
+          "description": "Tarjetas visuales bilingües con definiciones y ejemplos"
+        },
+        "sentenceCards": {
+          "title": "3 Tarjetas de Oraciones en Contexto",
+          "description": "La palabra utilizada en escenarios de la vida real con el contexto adecuado"
+        },
+        "sceneCards": {
+          "title": "2 Tarjetas de \"Escena\"",
+          "description": "Múltiples palabras relacionadas con un entorno, como una oficina o cocina"
+        }
+      },
+      "step3": {
+        "title": "Paso 3: La Distribución de 30 Días",
+        "subtitle": "Al variar el formato—convirtiendo estas tarjetas en imágenes estáticas, videos bilingües y publicaciones en carrusel—ahora tienes un mes de contenido.",
+        "description": "Cada tarjeta puede transformarse en múltiples formatos de contenido, dándote variedad mientras mantienes la consistencia en tu mensaje central.",
+        "formats": {
+          "staticImages": {
+            "title": "Imágenes Estáticas",
+            "description": "Perfectas para Instagram, Pinterest y publicaciones de blog"
+          },
+          "bilingualVideos": {
+            "title": "Videos Bilingües",
+            "description": "Usando nuestra canalización de audio automatizada para TikTok y Reels"
+          },
+          "carouselPosts": {
+            "title": "Publicaciones en Carrusel",
+            "description": "Contenido de múltiples diapositivas para LinkedIn y Facebook"
+          }
+        }
+      },
+      "demo": {
+        "title": "Demostración: De Plantilla a Salida",
+        "description": "Mira cómo nuestra canalización automatizada maneja esto. Alimentas al sistema con una plantilla, y utiliza OCR y LLMs para reconocer el vocabulario, generar traducciones de audio bilingües y exportar un video listo para publicar.",
+        "placeholder": {
+          "title": "Marcador de Demostración de Video",
+          "description": "Mostrando una tarjeta de \"Volador/Nadador/Saltador\" convirtiéndose en un video con audio"
+        },
+        "quote": "El objetivo no es trabajar más duro; es hacer que tus activos trabajen más duro para ti."
+      },
+      "conclusion": {
+        "title": "Deja de Empezar desde Cero",
+        "subtitle": "La consistencia es el único \"hack\" que realmente funciona en marketing.",
+        "description1": "Pero la consistencia no debería costarte tu cordura. Al usar paquetes de plantillas, no solo estás haciendo \"publicaciones\"—estás construyendo un motor de contenido escalable.",
+        "description2": "Este enfoque transforma la creación de contenido de una rutina diaria en un proceso sistemático que se acumula con el tiempo.",
+        "finalThought": "Crea un motor de contenido escalable que trabaje para ti, no en tu contra."
+      },
+      "footer": {
+        "tags": [
+          "Estrategia de Contenido",
+          "Marketing de Contenido",
+          "Plantillas Nano",
+          "Automatización de Contenido",
+          "Marketing en Redes Sociales",
+          "Creación de Contenido",
+          "Sistemas de Marketing",
+          "Paquetes de Plantillas",
+          "Herramientas para Creadores",
+          "Contenido Educativo",
+          "Recursos para Padres",
+          "Enseñanza de ESL"
+        ],
+        "questions": "¿Tienes preguntas sobre la multiplicación de contenido? Contacta a nuestro equipo de soporte para asistencia personalizada."
+      }
+    },
+    "viralLearningContent": {
+      "title": "Cómo Crear Contenido Educativo Viral (Tarjetas, Escenas de Diálogo, Conocimiento Visual)",
+      "publishedDate": "6 de abril de 2026",
+      "readTime": "10 min de lectura",
+      "category": "Contenido Educativo",
+      "target": {
+        "title": "🎯 Audiencia Objetivo",
+        "description": "Esta estrategia de contenido está diseñada para cualquier persona que crea contenido educativo que necesita ser atractivo y viral—desde mercadólogos que desarrollan campañas educativas hasta creadores que construyen marcas de aprendizaje, padres que enseñan a sus hijos y educadores de ESL que ayudan a los estudiantes a aprender inglés.",
+        "marketers": {
+          "title": "Para Mercadólogos",
+          "description": "Crea campañas educativas que construyan autoridad y generen conversiones a través de contenido de aprendizaje valioso"
+        },
+        "creators": {
+          "title": "Para Creadores de Contenido",
+          "description": "Construye tu marca con contenido educativo que a las audiencias les encanta compartir y con el que interactúan"
+        },
+        "parents": {
+          "title": "Para Padres",
+          "description": "Ayuda a tus hijos a aprender con contenido visual y bilingüe que hace que la educación sea divertida y efectiva"
+        },
+        "eslLearners": {
+          "title": "Para Educadores de ESL",
+          "description": "Crea materiales de aprendizaje de idiomas atractivos que los estudiantes realmente quieran usar y compartir"
+        }
+      },
+      "whyMatters": {
+        "title": "🔥 Por Qué Esto Importa",
+        "alignment": {
+          "title": "Alineación Perfecta de Plantillas",
+          "description": "Se alinea con tu sistema de plantillas nano existente y herramientas de aprendizaje visual en todos los casos de uso: campañas de marketing, contenido de creadores, educación parental y enseñanza de ESL."
+        },
+        "searchIntent": {
+          "title": "Alta Intención de Búsqueda",
+          "keywords": [
+            "cómo enseñar vocabulario",
+            "ideas de contenido de ESL",
+            "tarjetas de aprendizaje",
+            "plantillas de aprendizaje visual",
+            "creación de contenido educativo",
+            "educación bilingüe",
+            "marketing de contenido educativo",
+            "recursos de enseñanza para padres",
+            "visuales de aprendizaje de idiomas"
+          ]
+        }
+      },
+      "coreAngle": {
+        "title": "🧠 Ángulo Central",
+        "headline": "El contenido de aprendizaje es aburrido → a menos que se visualice",
+        "description": "El contenido educativo tradicional falla porque es denso en texto y poco inspirador. ¿La solución? Transformar conceptos abstractos en experiencias visuales e interactivas que estudiantes, clientes, seguidores o niños realmente quieran compartir, ya sea que estés comercializando un producto, construyendo una marca de creador, enseñando a tus hijos o ayudando a estudiantes de ESL.",
+        "insight": "Las personas no comparten hojas de trabajo aburridas o contenido genérico. Comparten tarjetas de aprendizaje visuales y hermosas que hacen que los conceptos complejos sean simples y memorables, ya sea que se trate de información de marketing, consejos para creadores, orientación parental o lecciones de idiomas."
+      },
+      "structure": {
+        "title": "🧩 Estructura del Contenido",
+        "problem": {
+          "title": "Problema: El Contenido Educativo No Engancha",
+          "description": "La mayoría del contenido educativo adormece a los aprendices, ya sean clientes, seguidores, niños o estudiantes. El texto denso, los diseños aburridos y la falta de atractivo visual matan el compromiso antes de que el aprendizaje comience.",
+          "quote": "Pasé horas creando contenido que mi audiencia nunca miró dos veces."
+        },
+        "solution": {
+          "title": "Solución: Tarjetas Visuales + Plantillas Estructuradas",
+          "description": "Transforma el aprendizaje en contenido visualmente atractivo y fácil de digerir que tu audiencia, ya sean clientes, seguidores, niños o estudiantes, realmente quiera interactuar y compartir.",
+          "visualCards": {
+            "title": "Tarjetas de Aprendizaje Visual",
+            "description": "Convierte vocabulario y conceptos en tarjetas visuales compartibles con imágenes, ejemplos y contexto. Perfecto para educación en marketing, consejos para creadores, orientación parental o enseñanza de ESL."
+          },
+          "structuredTemplates": {
+            "title": "Plantillas Estructuradas",
+            "description": "Utiliza diseños probados que maximizan la retención de aprendizaje y el compartir social en todo tu contenido educativo: información de marketing, conocimiento de creadores, lecciones para padres o instrucción de idiomas."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos en Acción",
+          "vocabularyCards": {
+            "title": "Tarjetas de Vocabulario",
+            "description": "Tarjetas visuales con imágenes, definiciones y oraciones de ejemplo.",
+            "card": "Tarjeta"
+          },
+          "dialogueScenes": {
+            "title": "Escenas de Diálogo",
+            "description": "Escenarios de conversación interactivos con contexto visual e interacciones de personajes.",
+            "scene": "Escena"
+          }
+        },
+        "scaling": {
+          "title": "Escalado: Generación por Lotes",
+          "description": "Crea semanas de contenido en horas utilizando sistemas de plantillas que mantienen la calidad mientras maximizan la cantidad.",
+          "batchGeneration": {
+            "title": "Poder de Generación por Lotes",
+            "description": "Genera 50 tarjetas de vocabulario a partir de una plantilla, luego reutiliza en múltiples formatos y plataformas."
+          }
+        }
+      },
+      "whatNotToDo": {
+        "title": "❌ Lo Que NO Debes Hacer (Importante)",
+        "warning": "Evita estos errores comunes que matan tu estrategia de contenido educativo:",
+        "genericPosts": {
+          "title": "Publicaciones Genéricas de IA",
+          "description": "Deja de escribir publicaciones de \"Las 10 Mejores Herramientas de IA\" que todos los demás están creando. No convierten y no construyen tu autoridad."
+        },
+        "broadInspiration": {
+          "title": "Publicaciones de Inspiración Amplia",
+          "description": "Evita artículos sobre el Futuro del Contenido de IA que no estén vinculados a flujos de trabajo específicos que tu audiencia pueda implementar hoy."
+        },
+        "unrelatedContent": {
+          "title": "Cualquier Cosa No Vinculada a Tu Flujo de Trabajo de Producto",
+          "description": "Cada pieza de contenido debe demostrar cómo tus plantillas resuelven problemas educativos reales."
+        }
+      },
+      "finalRecommendation": {
+        "title": "🎯 Recomendación Final (Sé Implacable)",
+        "subtitle": "Si solo haces 2 publicaciones esta semana, haz estas:",
+        "description": "Enfócate en contenido de alto impacto que genere tráfico, conversiones y construya tu audiencia, ya sea que estés comercializando productos, creciendo una marca de creador, enseñando a tus hijos o ayudando a estudiantes de ESL.",
+        "priority1": {
+          "title": "Sistema de Contenido (Plantillas + Generación por Lotes)",
+          "description": "Muestra cómo crear contenido educativo escalable utilizando tu sistema de plantillas. Esto genera tráfico a largo plazo y valor SEO para marketers, creadores, padres y educadores por igual."
+        },
+        "priority2": {
+          "title": "Video Bilingüe (Traducción)",
+          "description": "Demuestra tus capacidades de traducción con contenido educativo. Esto genera conversiones y te diferencia de la competencia, perfecto para marketing multilingüe, contenido de creadores, educación parental o enseñanza de ESL."
+        },
+        "priority3": {
+          "title": "Contenido de Aprendizaje (Creadores de ESL)",
+          "description": "Si tienes capacidad para una tercera publicación, crea contenido específico para la audiencia: insights de marketing, consejos para creadores, orientación para padres o lecciones de ESL que capten a estas audiencias de alta intención."
+        }
+      },
+      "cta": {
+        "title": "Comienza a Crear Contenido de Aprendizaje Viral",
+        "description": "¿Listo para transformar tu contenido educativo? Obtén nuestro paquete de tarjetas de aprendizaje gratuito y comienza a crear contenido que los estudiantes realmente quieran compartir.",
+        "button": "Obtener Paquete de Tarjetas de Aprendizaje Gratis"
+      },
+      "footer": {
+        "tags": [
+          "Contenido de Aprendizaje",
+          "Educación ESL",
+          "Aprendizaje Visual",
+          "Plantillas Educativas",
+          "Estrategia de Contenido",
+          "Tarjetas Didácticas",
+          "Marketing Educativo",
+          "Compartición de Conocimientos",
+          "Educación en Marketing",
+          "Contenido de Creadores",
+          "Enseñanza a Padres",
+          "Aprendizaje de Idiomas"
+        ],
+        "questions": "¿Tienes preguntas sobre cómo crear contenido de aprendizaje viral? Contacta a nuestro equipo de soporte para asistencia personalizada."
+      }
+    },
+    "aiContentProductionSystem": {
+      "title": "Cómo Construimos un Sistema de Producción de Contenido AI (No Solo Herramientas)",
+      "date": "8 de abril de 2026",
+      "readTime": "12 min de lectura",
+      "intro": "La mayoría de los productos de IA hoy en día se detienen en la generación. Das un aviso. Obtienes una salida. Pero la creación de contenido real no funciona así. El contenido no es un solo paso, es un sistema. Construimos un sistema de producción de contenido impulsado por IA: de inspiración → generación → distribución.",
+      "whatIsTitle": "El Problema: La IA Puede Generar, Pero No Puede Escalar Contenido",
+      "whatIsContent": "Herramientas como ChatGPT, Midjourney y otros modelos generativos son poderosos. Pero si eres un creador, marketero o constructor, rápidamente te enfrentas a limitaciones: No hay una fuente consistente de ideas, las salidas son desestructuradas y difíciles de reutilizar, no hay una estrategia de distribución incorporada y no hay un bucle de retroalimentación para mejorar el contenido. Puedes generar una gran pieza, pero no puedes construir un sistema.",
+      "whyTitle": "Nuestro Enfoque: Construir un Sistema de Contenido, No una Herramienta",
+      "whyContent": "Diseñamos nuestro sistema como un bucle: Inspiración → Estructuración → Generación → Almacenamiento → Distribución → Retroalimentación (SEO). Esto no es un pipeline lineal. Es un sistema impulsado por retroalimentación que mejora con el tiempo.",
+      "step1Title": "1. Inspiración: Combinando RSS, Tendencias y Juicio Humano",
+      "step1Content": "Todo sistema de contenido comienza con ideas. Construimos una capa de inspiración ligera que extrae señales de feeds RSS, temas en tendencia y contenido existente de alto rendimiento. Luego usamos IA para resumir señales, extraer temas clave y sugerir posibles direcciones de contenido. Pero aquí está la clave: la IA sugiere. Los humanos deciden. Mantenemos un humano en el bucle para asegurar relevancia y calidad.",
+      "step2Title": "2. Estructuración: Transformando Contenido en Unidades Reutilizables",
+      "step2Content": "La mayoría de las herramientas de IA generan salidas en bruto. Nosotros no. Transformamos el contenido en formatos estructurados y reutilizables, como tarjetas de conocimiento visual, plantillas de diálogo, infografías educativas y guiones gráficos para video. Esto nos permite estandarizar el contenido, escalar la generación y mejorar la consistencia. No generamos contenido en bruto. Generamos unidades de contenido estructurado.",
+      "step3Title": "3. Generación: IA Multimodal a Través de Texto, Imagen y Video",
+      "step3Content": "Sobre plantillas estructuradas, aplicamos IA para generar contenido. Texto: expansión de contenido, traducción (soporte multilingüe), adaptación de tono/estilo. Imagen: generación visual basada en avisos, diseños impulsados por plantillas. Video (capa emergente): reconocimiento de voz, generación de subtítulos, traducción, síntesis de voz (TTS / clonación de voz), etiquetado de guiones gráficos. Aquí es donde la IA multimodal se vuelve crítica: texto + imagen + audio + video → pipeline de contenido unificado.",
+      "step4Title": "4. Almacenamiento y Etiquetado: Haciendo el Contenido Descubrible",
+      "step4Content": "Una vez que se genera el contenido, no solo lo almacenamos. Lo hacemos buscable y exploratorio: etiquetado (temas, estilos, casos de uso), asociaciones de plantillas, metadatos para SEO. Esto permite una mejor descubribilidad interna, bibliotecas de contenido escalables y indexación SEO.",
+      "step5Title": "5. Distribución: Asistida por IA, No Manual",
+      "step5Content": "La mayoría de los creadores subestiman la distribución. La tratamos como un sistema de primera clase. Distribuimos contenido a través de nuestro propio sitio web (SEO + feeds) y plataformas externas como X (Twitter) y grupos de Facebook. En lugar de publicar manualmente, utilizamos un enfoque híbrido: la IA redacta contenido, los humanos refinan, y los sistemas de publicación automatizados manejan la ejecución. La distribución ya no es manual. Es asistida por IA.",
+      "step6Title": "6. Bucle de Retroalimentación: SEO como Señal de Producto",
+      "step6Content": "Una de las partes más subestimadas de los sistemas de contenido es la retroalimentación. Usamos SEO no solo para tráfico, sino como un sistema de señales: las consultas de búsqueda revelan la intención del usuario, el rendimiento de la página identifica formatos ganadores, las brechas de palabras clave inspiran nuevas plantillas y herramientas. SEO no es solo adquisición. Es retroalimentación del producto. Esto cierra el bucle.",
+      "step7Title": "7. Pipeline Multimodal: La Capa Futura",
+      "step7Content": "Sobre este sistema, estamos construyendo un pipeline más avanzado: Video → Transcripción → Traducción → Voz → Video Reconstruido. Esto implica reconocimiento de voz, traducción automática, texto a voz, alineación y temporización, y salida multilingüe. El objetivo es simple: convertir cualquier contenido en medios distribuidos globalmente.",
+      "step8Title": "8. Cómo Trabajamos: Flujos de Trabajo + Agentes de IA",
+      "step8Content": "No solo construimos productos de IA. Usamos IA para construirlos. Nuestro flujo de trabajo interno combina sistemas basados en flujos de trabajo (herramientas modulares, pipelines impulsados por configuración, procesos repetibles) y desarrollo basado en agentes (por ejemplo, Claude Code) para generación de código, depuración e iteración rápida. La IA no está solo en el producto. Está en el proceso de desarrollo.",
+      "toolsTitle": "Los Componentes del Sistema",
+      "toolsContent": "**Capa de Inspiración**: feeds RSS, análisis de tendencias, métricas de rendimiento de contenido\n**Motor de Estructura**: sistema de plantillas, modularización de contenido, estandarización de formatos\n**Pipeline de Generación**: IA de texto, IA de imagen, IA de video, procesamiento de audio\n**Sistema de Almacenamiento**: etiquetado de metadatos, indexación de búsqueda, relaciones de contenido\n**Motor de Distribución**: publicación multiplataforma, programación automatizada, seguimiento de rendimiento\n**Bucle de Retroalimentación**: análisis SEO, análisis de comportamiento del usuario, optimización de contenido",
+      "curifyTitle": "Pruébalo Tú Mismo",
+      "curifyContent": "Si estás explorando contenido multilingüe, creación asistida por IA o flujos de trabajo de contenido escalables, puedes probar parte de nuestro sistema. Hemos construido herramientas que encarnan estos principios: desde la generación de contenido estructurado hasta flujos de trabajo de distribución automatizados.",
+      "ctaText": "¿Listo para transformar tu flujo de trabajo de contenido?",
+      "ctaLink": "Prueba el Sistema de Contenido AI de Curify",
+      "conclusionTitle": "Pensamientos Finales: El Futuro Son Sistemas, No Avisos",
+      "conclusionContent": "La próxima ola de IA no se definirá por mejores avisos o mejores modelos. Se definirá por mejores sistemas. Sistemas que capturan ideas, estructuran contenido, escalan generación, automatizan distribución y aprenden de la retroalimentación. Eso es lo que estamos construyendo."
+    },
+    "aiContentDistributionSystem": {
+      "title": "Cómo Construimos un Sistema de Distribución de Contenido AI (X, Facebook y SEO)",
+      "date": "8 de abril de 2026",
+      "readTime": "10 min de lectura",
+      "intro": "La mayoría de las personas piensan que la IA ha resuelto la creación de contenido. No lo ha hecho. Porque la creación ya no es el cuello de botella. La distribución lo es. Puedes generar 100 piezas de contenido con IA. Pero, ¿hacer que las personas realmente las vean? Eso sigue siendo manual, inconsistente y difícil de escalar. Así que en lugar de enfocarnos solo en la generación, construimos algo diferente: un sistema de distribución de contenido asistido por IA, a través de SEO, X y Facebook.",
+      "problemTitle": "El Verdadero Problema: La Distribución No Escala",
+      "problemContent": "Si eres un creador, marketero o constructor independiente, probablemente hayas experimentado esto: Publicas contenido → sin tracción, Pruebas diferentes formatos → resultados inconsistentes, Publicas manualmente en diferentes plataformas → consume tiempo, No sabes qué funcionará → sin bucle de retroalimentación. La IA nos ayudó a generar contenido más rápido. Pero no resolvió la distribución.",
+      "approachTitle": "Nuestro Enfoque: Tratar la Distribución como un Sistema",
+      "approachContent": "En lugar de 'publicar contenido', construimos un pipeline: Contenido → Formateo Específico de Plataforma → Borrador de IA → Refinamiento Humano → Distribución Programada. Esto convierte la distribución de: ❌ publicación manual en: ✅ un sistema repetible.",
+      "step1Title": "Paso 1: Formateo Específico de Plataforma",
+      "step1Content": "El mismo contenido no funciona en todas partes. Adaptamos el contenido a diferentes formatos: &lt;strong&gt;Sitio Web (SEO)&lt;/strong&gt; - Páginas estructuradas, Contenido impulsado por plantillas, Indexado y buscable. &lt;strong&gt;X (Twitter)&lt;/strong&gt; - Hilos de formato corto, Ganchos impulsados por insights, Iteración rápida. &lt;strong&gt;Grupos de Facebook&lt;/strong&gt; - Publicaciones contextuales, Impulsadas por discusión, Segmentación de audiencia de nicho. La distribución no es copiar y pegar. Es adaptación de formato.",
+      "step2Title": "Paso 2: Redacción AI (Pero No Totalmente Automatizada)",
+      "step2Content": "Usamos AI para generar: borradores de publicaciones, variaciones de ganchos, tono específico de la plataforma. Pero no automatizamos completamente. AI redacta. Los humanos refinan. Este bucle híbrido asegura: velocidad (AI) y calidad (humano).",
+      "step3Title": "Paso 3: La Distribución de Nicho Supera el Alcance Amplio",
+      "step3Content": "Una de nuestras mayores lecciones: distribución de nicho > distribución amplia. En lugar de publicar en todas partes, nos enfocamos en: grupos específicos de Facebook (por tema / IP / interés), audiencias específicas, relevancia contextual. Ejemplos: clips de películas → grupos de cine, subtítulos bilingües → aprendices de idiomas, herramientas de AI → comunidades de creadores. Esto mejora drásticamente: compromiso, tasa de clics, alcance orgánico.",
+      "step4Title": "Paso 4: SEO como la Base",
+      "step4Content": "Las plataformas sociales son volátiles. El SEO es acumulativo. Usamos SEO para: alojar contenido estructurado, capturar consultas de cola larga, construir una biblioteca de contenido. Cada pieza de contenido se convierte en: una página de destino, un punto de entrada para el descubrimiento. Las redes sociales generan picos. El SEO construye crecimiento a largo plazo.",
+      "learningsTitle": "Paso 5: Lo Que Realmente Funciona (Nuestras Lecciones)",
+      "learningsContent": "Después de ejecutar este sistema, esto es lo que hemos visto: &lt;b&gt;El contenido visual + estructurado gana&lt;/b&gt; - tarjetas, plantillas, infografías superan al texto crudo. &lt;b&gt;El contenido bilingüe tiene ventaja&lt;/b&gt; - expande la audiencia, aumenta la compartibilidad. &lt;b&gt;La repetición supera a la novedad&lt;/b&gt; - mismo formato, diferentes temas → escalable. &lt;b&gt;La distribución importa más que la generación&lt;/b&gt; - una buena distribución puede salvar contenido promedio, una mala distribución mata contenido excelente.",
+      "automationTitle": "Paso 6: Automatización (Aplicada con Cuidado)",
+      "automationContent": "Experimentamos con la automatización para: programar publicaciones, generar variaciones, seleccionar contenido. Pero la automatización total no funciona bien. En su lugar, usamos: selección determinista (rotación de contenido), redacción asistida por AI, bucles de aprobación humana. El objetivo no es la automatización total. Es apalancamiento escalable.",
+      "feedbackTitle": "Paso 7: Cerrando el Bucle con Retroalimentación",
+      "feedbackContent": "Una parte clave del sistema es la retroalimentación: datos de SEO → lo que la gente busca, datos de compromiso → lo que a la gente le gusta, rendimiento de la plataforma → qué formatos funcionan. Esto retroalimenta: creación de contenido, diseño de plantillas, desarrollo de herramientas. La distribución no es el final. Es parte del bucle.",
+      "conclusionTitle": "Reflexiones Finales: La Distribución Es la Nueva Diferenciación",
+      "conclusionContent": "La AI ha hecho que la generación de contenido sea barata. Así que la ventaja ya no es: quién puede generar más. Es: quién puede distribuir mejor. El futuro del contenido no es solo la generación de AI. Son los sistemas de distribución impulsados por AI.",
+      "tryItTitle": "Pruébalo Tú Mismo",
+      "tryItContent": "Si estás explorando: contenido multilingüe, creación asistida por AI, distribución escalable. Puedes probar parte de nuestro sistema aquí: 👉 https://www.curify-ai.com/tools/bilingual-subtitles",
+      "bonusTitle": "Bono: Para Quién Es Esto",
+      "bonusContent": "Este sistema es especialmente útil si eres: un creador de contenido que escala su producción, un comercializador que prueba formatos, un constructor independiente que crece solo, alguien que experimenta con contenido multilingüe.",
+      "seoKeywords": "sistema de distribución de contenido AI, automatización de marketing de contenido AI, estrategia de distribución de contenido AI, sistema de distribución SEO + social, automatización de redes sociales AI"
     }
   },
   "aeVsComfyUi": {

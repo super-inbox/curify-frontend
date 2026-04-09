@@ -215,7 +215,9 @@
     "date": "March 19, 2026",
     "readTime": "8 min read",
     "tag": "Creator Tools",
-    "image": "/images/bussinesstranalayion.webp",
+    "image": "/images/officebussinessGuide.webp",
+    "useMermaidThumbnail": true,
+    "thumbnailType": "video-transcription-business",
     "category": "creator-tools",
     "relatedLinks": ["translate-youtube-video", "video-enhancement"]
   },
@@ -225,7 +227,9 @@
     "date": "March 19, 2026",
     "readTime": "12 min read",
     "tag": "Creator Tools",
-    "image": "images/TechicalTranslayion.webp",
+    "image": "images/techicalpress.webp",
+    "useMermaidThumbnail": true,
+    "thumbnailType": "video-transcription-pipeline",
     "category": "creator-tools",
     "relatedLinks": ["translate-youtube-video-to-english", "video-enhancement"]
   },
@@ -235,7 +239,7 @@
     "date": "March 23, 2026",
     "readTime": "8 min read",
     "tag": "Nano Banana Prompts",
-    "image": "/images/imaggenten.webp",
+    "image": "/images/book.webp",
     "category": "nano-banana-prompts",
     "relatedLinks": ["nano-banana-prompt-ecosystem", "creative-ai-tools-websites"]
   },
@@ -245,7 +249,7 @@
     "date": "March 23, 2026",
     "readTime": "9 min read",
     "tag": "Creator Tools",
-    "image": "/images/tenvideogen.webp",
+    "image": "/images/tenprompt.webp",
     "category": "creator-tools",
     "relatedLinks": ["video-enhancement", "storyboard-to-pipeline"]
   },
@@ -255,7 +259,7 @@
     "date": "March 28, 2026",
     "readTime": "12 min read",
     "tag": "Creator Tools",
-    "image": "/images/Picturecompare.webp",
+    "image": "/images/hardworker.webp",
     "category": "creator-tools",
     "relatedLinks": ["10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
   },
@@ -265,7 +269,7 @@
     "date": "March 29, 2026",
     "readTime": "10 min read",
     "tag": "Creator Tools",
-    "image": "/images/lip_syncbusiness_guide.webp",
+    "image": "/images/office.webp",
     "category": "creator-tools",
     "relatedLinks": ["video-transcription-business-guide", "what-is-voice-cloning"]
   },
@@ -316,5 +320,45 @@
     "image": "/images/lightsnano.webp",
     "category": "creator-tools",
     "relatedLinks": ["nano-banana-prompt-ecosystem", "10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+  },
+  {
+    "slug": "content-multiplication-system",
+    "title": "How to Turn 1 Idea into 30 Days of Content (Without Burning Out)",
+    "date": "April 6, 2026",
+    "readTime": "8 min read",
+    "tag": "Content Strategy",
+    "image": "/images/thirtyday.webp",
+    "category": "creator-tools",
+    "relatedLinks": ["nano-banana-prompt-ecosystem", "10-prompting-tips-nano-banana", "character-prompt-generator"]
+  },
+  {
+    "slug": "viral-learning-content",
+    "title": "How to Create Viral Learning Content (Flashcards, Dialogue Scenes, Visual Knowledge)",
+    "date": "April 6, 2026",
+    "readTime": "10 min read",
+    "tag": "Learning Content",
+    "image": "/images/learnContent.webp",
+    "category": "creator-tools",
+    "relatedLinks": ["content-multiplication-system", "character-prompt-generator", "visual-learning-tools"]
+  },
+  {
+    "slug": "ai-content-production-system",
+    "title": "How We Built an AI Content Production System (Not Just Tools)",
+    "date": "April 8, 2026",
+    "readTime": "12 min read",
+    "tag": "AI Architecture",
+    "image": "/images/aicontentproduction.webp",
+    "category": "ds-ai-engineering",
+    "relatedLinks": ["aiPlatform", "agents-vs-workflows", "content-multiplication-system"]
+  },
+  {
+    "slug": "ai-content-distribution-system",
+    "title": "How We Built an AI Content Distribution System (X, Facebook & SEO)",
+    "date": "April 8, 2026",
+    "readTime": "10 min read",
+    "tag": "AI Architecture",
+    "image": "/images/contentdistributionsystem.webp",
+    "category": "ds-ai-engineering",
+    "relatedLinks": ["aiPlatform", "agents-vs-workflows", "content-multiplication-system"]
   }
 ]

@@ -2,7 +2,9 @@
 
 import Link from 'next/link';
 import CdnImage from './CdnImage';
+import { DynamicThumbnail } from '@/app/[locale]/(public)/blog/[slug]/components/DynamicThumbnail';
 import { useTranslations } from 'next-intl';
+import blogsData from '@/public/data/blogs.json';
 
 interface BlogPost {
   slug: string;
@@ -23,18 +25,41 @@ interface RelatedBlogCardProps {
 export default function RelatedBlogCard({ blog, locale, category }: RelatedBlogCardProps) {
   const t = useTranslations('blog');
   
+  // Find the full blog data to check for useMermaidThumbnail
+  const blogData = blogsData.find((b: any) => b.slug === blog.slug) as any;
+  const useMermaidThumbnail = blogData?.useMermaidThumbnail || false;
+  const thumbnailType = blogData?.thumbnailType || '';
+  
+  // Debug logging
+  console.log('Blog slug:', blog.slug);
+  console.log('Blog data:', blogData);
+  console.log('useMermaidThumbnail:', useMermaidThumbnail);
+  console.log('thumbnailType:', thumbnailType);
+  
   return (
     <Link
       href={`/${locale}/blog/${blog.slug}`}
       className="group block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 hover:border-blue-300"
     >
       <div className="relative h-48 w-full overflow-hidden">
-        <CdnImage
-          src={blog.image}
-          alt={blog.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
+        {useMermaidThumbnail ? (
+          <div className="w-full h-full">
+            <DynamicThumbnail
+              slug={thumbnailType || blog.slug}
+              title={blog.title}
+              category={blog.category || category || ''}
+              existingImage={blog.image}
+              forceType="mermaid"
+            />
+          </div>
+        ) : (
+          <CdnImage
+            src={blog.image}
+            alt={blog.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        )}
         <div className="absolute top-3 left-3">
           <span className="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full">
             {category}

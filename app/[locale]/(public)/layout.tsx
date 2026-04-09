@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import JotaiProvider from "@/app/[locale]/_components/JotaiProvider";
 import { routing } from "@/i18n/routing";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
@@ -91,9 +92,10 @@ export default async function PublicLocaleLayout({
           `}
         </Script>
 
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <AppWrapper user={null}>
-            <Header />
+        <JotaiProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <AppWrapper user={null}>
+              <Header />
 
             <main className="min-h-screen lg:ml-[300px]">
               <TopUpModal />
@@ -113,10 +115,11 @@ export default async function PublicLocaleLayout({
               {children}
 
               <Toaster />
+              </main>
               <Footer />
-            </main>
-          </AppWrapper>
-        </NextIntlClientProvider>
+            </AppWrapper>
+          </NextIntlClientProvider>
+        </JotaiProvider>
       </body>
     </html>
   );
