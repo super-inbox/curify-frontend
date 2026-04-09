@@ -16,7 +16,7 @@ type Item = {
 function getCols() {
   if (typeof window === "undefined") return 1;
   const w = window.innerWidth;
-  if (w >= 1024) return 3;
+  if (w >= 1024) return 4;
   if (w >= 640) return 2;
   return 1;
 }
@@ -92,7 +92,7 @@ export default function ExampleImagesGrid({
 
   return (
     <div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
       {visible.map((it) => (
   <ExampleImageCard
