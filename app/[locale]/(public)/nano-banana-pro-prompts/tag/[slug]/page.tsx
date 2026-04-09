@@ -154,7 +154,7 @@ export default async function TagPage({ params }: Props) {
               </h3>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {prompts.map((prompt) => (
                 <PromptCard key={prompt.id} prompt={prompt} />
               ))}
