@@ -273,7 +273,8 @@
     "legacy_id": "template-travel-zh",
     "topics": [
       "lifestyle",
-      "travel"
+      "travel",
+      "weather"
     ],
     "rank_score": 159,
     "batch": true
@@ -2456,7 +2457,7 @@
     "legacy_id": "template-city-miniature-zh",
     "topics": [
       "lifestyle",
-      "travel"
+      "weather"
     ],
     "rank_score": 2
   },
@@ -3847,7 +3848,8 @@
     "topics": [
       "character",
       "mbti",
-      "gaming"
+      "gaming",
+      "film"
     ],
     "rank_score": 8,
     "use_cases": [
@@ -5754,7 +5756,8 @@
     "og_image": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg",
     "topics": [
       "lifestyle",
-      "travel"
+      "travel",
+      "weather"
     ],
     "rank_score": 9
   },
@@ -6264,26 +6267,29 @@
   {
     "id": "template-native-english-expressions",
     "locales": {
-        "en": {
-            "base_prompt": "（Native English Expressions Poster Designer）You are a professional English learning infographic designer, specializing in creating cute, colorful, educational posters for native English expressions. Based on the user-specified {theme}, generate a vertical 3:4 premium \"Speak Like a Native (Not Like a Textbook)\" poster, matching the kawaii cartoon, clear educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"Speak Like a Native (Not Like a Textbook)\", Curify watermark at top left. 2. Grid: 9 expression cards in 3×3 grid, each with unique soft pastel background. Each card: Top = colloquial expression (large bold colorful font), Middle = formal/standard meaning + cute cartoon scenario illustration, Bottom = example sentence with green checkmark. Style: Clean minimalist design, soft off-white background, kawaii cartoon characters, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} native English expressions learning poster.",
-            "parameters": [
-                {
-                    "name": "theme",
-                    "label": "Expression Theme",
-                    "type": "text",
-                    "placeholder": [
-                        "Contractions & Informal Verbs",
-                        "Interjections & Reactions",
-                        "Casual Conversational Phrases",
-                        "Text & Chat Abbreviations",
-                        "Time & Schedule Slang"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Native English Expressions Poster Designer）You are a professional English learning infographic designer, specializing in creating cute, colorful, educational posters for native English expressions. Based on the user-specified {theme}, generate a vertical 3:4 premium \"Speak Like a Native (Not Like a Textbook)\" poster, matching the kawaii cartoon, clear educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"Speak Like a Native (Not Like a Textbook)\", Curify watermark at top left. 2. Grid: 9 expression cards in 3×3 grid, each with unique soft pastel background. Each card: Top = colloquial expression (large bold colorful font), Middle = formal/standard meaning + cute cartoon scenario illustration, Bottom = example sentence with green checkmark. Style: Clean minimalist design, soft off-white background, kawaii cartoon characters, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} native English expressions learning poster.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Expression Theme",
+            "type": "text",
+            "placeholder": [
+              "Contractions & Informal Verbs",
+              "Interjections & Reactions",
+              "Casual Conversational Phrases",
+              "Text & Chat Abbreviations",
+              "Time & Schedule Slang"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-native-english-expressions-time-related-preview.jpg",
     "rank_score": 50,
-    "topics": ["learning", "language"]
+    "topics": [
+      "learning",
+      "language"
+    ]
   }
 ]
