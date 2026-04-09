@@ -16466,5 +16466,393 @@
         "title": "protobothrops mangshanensis"
       }
     }
+  },
+  {
+    "id": "template-costume-andean-poncho",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-andean-poncho.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-andean-poncho-prev.jpg"
+    },
+    "params": {
+      "costume_style": "andean poncho"
+    },
+    "locales": {
+      "zh": {
+        "title": "andean poncho"
+      }
+    }
+  },
+  {
+    "id": "template-costume-colombian-ruana",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-colombian-ruana.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-colombian-ruana-prev.jpg"
+    },
+    "params": {
+      "costume_style": "colombian ruana"
+    },
+    "locales": {
+      "zh": {
+        "title": "colombian ruana"
+      }
+    }
+  },
+  {
+    "id": "template-costume-cuban-guayabera",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-cuban-guayabera.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-cuban-guayabera-prev.jpg"
+    },
+    "params": {
+      "costume_style": "cuban guayabera"
+    },
+    "locales": {
+      "zh": {
+        "title": "cuban guayabera"
+      }
+    }
+  },
+  {
+    "id": "template-costume-mexican-charro-suit",
+    "template_id": "template-costume",
+    "asset": {
+      "image_url": "/images/nano_insp/template-costume-mexican-charro-suit.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-costume-mexican-charro-suit-prev.jpg"
+    },
+    "params": {
+      "costume_style": "mexican charro suit"
+    },
+    "locales": {
+      "zh": {
+        "title": "mexican charro suit"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-dunhuang-mogao-grottoes-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "dunhuang mogao grottoes"
+    },
+    "locales": {
+      "zh": {
+        "title": "dunhuang mogao grottoes"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-four-sheep-square-zun",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-four-sheep-square-zun.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-four-sheep-square-zun-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "four sheep square zun"
+    },
+    "locales": {
+      "zh": {
+        "title": "four sheep square zun"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-simu-wu-ding",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-simu-wu-ding.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-simu-wu-ding-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "simu wu ding"
+    },
+    "locales": {
+      "zh": {
+        "title": "simu wu ding"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-terracotta-warriors",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-terracotta-warriors.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-terracotta-warriors-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "terracotta warriors"
+    },
+    "locales": {
+      "zh": {
+        "title": "terracotta warriors"
+      }
+    }
+  },
+  {
+    "id": "template-cultural-relic-retro-infographic-yuewang-goujian-sword",
+    "template_id": "template-cultural-relic-retro-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cultural-relic-retro-infographic-yuewang-goujian-sword.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cultural-relic-retro-infographic-yuewang-goujian-sword-prev.jpg"
+    },
+    "params": {
+      "cultural_relic": "yuewang goujian sword"
+    },
+    "locales": {
+      "zh": {
+        "title": "yuewang goujian sword"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-fruits",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-fruits.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-fruits-prev.jpg"
+    },
+    "params": {
+      "theme": "fruits"
+    },
+    "locales": {
+      "en": {
+        "title": "fruits"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-furniture",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-furniture.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-furniture-prev.jpg"
+    },
+    "params": {
+      "theme": "furniture"
+    },
+    "locales": {
+      "en": {
+        "title": "furniture"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-kitchen-utensils",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-kitchen-utensils.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-kitchen-utensils-prev.jpg"
+    },
+    "params": {
+      "theme": "kitchen utensils"
+    },
+    "locales": {
+      "en": {
+        "title": "kitchen utensils"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-vegetables",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-vegetables.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-vegetables-prev.jpg"
+    },
+    "params": {
+      "theme": "vegetables"
+    },
+    "locales": {
+      "en": {
+        "title": "vegetables"
+      }
+    }
+  },
+  {
+    "id": "template-daily-essentials-learning-card-vehicles",
+    "template_id": "template-daily-essentials-learning-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-daily-essentials-learning-card-vehicles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-daily-essentials-learning-card-vehicles-prev.jpg"
+    },
+    "params": {
+      "theme": "vehicles"
+    },
+    "locales": {
+      "en": {
+        "title": "vehicles"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-3-idiots",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-3-idiots.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-3-idiots-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "3 idiots"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-flipped",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-flipped.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-flipped-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "flipped"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-sing-street",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-sing-street.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-sing-street-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "sing street"
+      }
+    }
+  },
+  {
+    "id": "template-movie-poster-the-grand-budapest-hotel",
+    "template_id": "template-movie-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-movie-poster-the-grand-budapest-hotel.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-movie-poster-the-grand-budapest-hotel-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "the grand budapest hotel"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-abbreviations-greetings",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-abbreviations-greetings.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-abbreviations-greetings-prev.jpg"
+    },
+    "params": {
+      "theme": "abbreviations greetings"
+    },
+    "locales": {
+      "en": {
+        "title": "abbreviations greetings"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-contractions",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-contractions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-contractions-prev.jpg"
+    },
+    "params": {
+      "theme": "contractions"
+    },
+    "locales": {
+      "en": {
+        "title": "contractions"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-interjections",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-interjections.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-interjections-prev.jpg"
+    },
+    "params": {
+      "theme": "interjections"
+    },
+    "locales": {
+      "en": {
+        "title": "interjections"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-short-phrases",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-short-phrases.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-short-phrases-prev.jpg"
+    },
+    "params": {
+      "theme": "short phrases"
+    },
+    "locales": {
+      "en": {
+        "title": "short phrases"
+      }
+    }
+  },
+  {
+    "id": "template-native-english-expressions-time-related",
+    "template_id": "template-native-english-expressions",
+    "asset": {
+      "image_url": "/images/nano_insp/template-native-english-expressions-time-related.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-native-english-expressions-time-related-prev.jpg"
+    },
+    "params": {
+      "theme": "time related"
+    },
+    "locales": {
+      "en": {
+        "title": "time related"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-house-structure-2",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-house-structure-2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-house-structure-2-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "house structure 2"
+      }
+    }
+  },
+  {
+    "id": "template-word-scene-house-structure",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-house-structure.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-house-structure-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "zh": {
+        "title": "house structure"
+      }
+    }
   }
 ]
