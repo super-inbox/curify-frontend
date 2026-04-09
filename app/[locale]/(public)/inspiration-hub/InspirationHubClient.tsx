@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useCallback } from "react";
+import { useMemo, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
