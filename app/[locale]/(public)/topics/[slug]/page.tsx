@@ -18,7 +18,7 @@ import {
   titleCaseFromSlug,
 } from "@/lib/locale_utils";
 
-import { getTemplatesForTopic } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -94,6 +94,8 @@ export default async function Page({ params }: Props) {
   const templatesHeading =
     translateTopics("topicPage.templatesHeading") || "Templates";
 
+  const relatedTopicIds = getRelatedTopics(slug);
+
   return (
     <main className="min-h-screen">
       <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
@@ -108,6 +110,18 @@ export default async function Page({ params }: Props) {
               {topicDescription}
             </p>
           ) : null}
+
+          {relatedTopicIds.length > 0 && (
+            <div className="mt-4">
+              <TopicNavRow
+                locale={localeStr}
+                topics={relatedTopicIds}
+                activeTopic={slug}
+                showDisabled={false}
+                size="small"
+              />
+            </div>
+          )}
         </div>
       </section>
 
@@ -132,6 +146,7 @@ export default async function Page({ params }: Props) {
           showOtherTemplateTitle={false}
         />
       </section>
+
     </main>
   );
 }
