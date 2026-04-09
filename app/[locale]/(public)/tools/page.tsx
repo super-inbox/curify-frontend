@@ -92,7 +92,7 @@ export default async function Page({ params }: Props) {
     <main className="min-h-screen">
       <ToolsClient />
 
-      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
         <NanoTemplateDetailClient
           locale={localeStr}          
           otherNanoCards={nanoCards}
