@@ -82,7 +82,7 @@ export default async function InspirationHubPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="mx-auto max-w-6xl px-4 pt-4 pb-10">        
+      <main className="mx-auto max-w-[1280px] px-4 pt-4 pb-10 sm:px-6 lg:px-8">        
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight text-neutral-900">
             Daily Inspiration Hub

@@ -91,12 +91,14 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((topic) => [topic.id, topic])
   );
 
-  // Build related topics: pairs sharing >= 3 templates
-  const MIN_OVERLAP = 3;
+  // Build related topics for focus topics only, sharing >= 2 templates
+  const FOCUS_TOPICS = new Set(["learning", "character", "lifestyle", "product"]);
+  const MIN_OVERLAP = 2;
   const relatedTopics = new Map<string, string[]>();
   const topicIds = Array.from(topicToTemplates.keys());
 
   for (const a of topicIds) {
+    if (!FOCUS_TOPICS.has(a)) continue;
     const aIds = new Set(topicToTemplates.get(a)!.map((t) => t.id));
     const related: string[] = [];
     for (const b of topicIds) {
