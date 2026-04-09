@@ -6291,5 +6291,98 @@
       "learning",
       "language"
     ]
-  }
+  },
+  {
+    "id": "template-theme-overview-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "（Theme Overview Poster Designer）You are a professional infographic designer, specializing in creating clean, educational overview posters. Based on the user-specified {theme}, generate a vertical 3:4 premium overview poster, matching the minimalist, hand-drawn aesthetic of the reference images. Layout: 1. Header: Large elegant title \"{theme}\", Curify watermark at top left. 2. Grid: Items arranged in 4-column grid, each in soft circular background. Each item: Hand-drawn illustration, item name + scientific/alternative name, optional number label, decorative dashed lines connecting items. Style: Clean minimalist design, off-white background, hand-drawn watercolor illustrations, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} overview poster.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Poster Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Traditional Korean Foods for Health & Wellness",
+                        "Traditional Costumes of China's Ethnic Groups",
+                        "Traditional Chinese Foods for Health & Wellness",
+                        "Traditional Chinese Herbs for Clearing Heat",
+                        "Traditional Chinese Herbs for Nourishing Blood",
+                        "Traditional Costumes of Europe"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-theme-overview-poster-tcm-clearing-heat-herbs-prev.jpg"
+},
+  {
+    "id": "template-cuisine-food-vocab-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "（Cuisine Food Vocabulary Poster Designer）You are a professional food vocabulary poster designer, specializing in creating clean, high-quality food bilingual learning posters. Based on the user-specified {cuisine_theme}, generate a vertical 9:16 premium food vocabulary poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 4 food items arranged vertically, each with clean white background. Each item: Left = high-resolution photorealistic food photography of the dish; Right = pinyin pronunciation, large bold Chinese dish name, English translation. Style: Clean minimalist design, pure white background, professional food styling, vibrant colors, clear typography, Curify watermark at top left, vertical 9:16 format, 4K ultra HD, direct image generation. Subject: {cuisine_theme} food vocabulary poster.",
+            "parameters": [
+                {
+                    "name": "cuisine_theme",
+                    "label": "Cuisine Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Beijing Cuisine",
+                        "Korean Cuisine",
+                        "Thai Cuisine",
+                        "Singaporean Cuisine",
+                        "Yunnan Cuisine"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg"
+},
+  {
+    "id": "template-industrial-design-concept-sketch",
+    "locales": {
+        "en": {
+            "base_prompt": "（Industrial Design Concept Sketch Artist）You are a professional industrial design sketch artist, specializing in creating technical blueprint-style concept art for futuristic products. Based on the user-specified {product_name}, generate a vertical 3:4 premium industrial design concept sketch, matching the technical blueprint, black grid background aesthetic of the reference images. Layout: 1. Header: Large bold product title \"{product_name} Concept\" with technical project labels. 2. Main Illustration: Multiple views of the {product_name} (main perspective, side/top/front views, component close-ups), hand-drawn technical sketch, white/metallic lines on black grid background, technical callouts with arrows labeling key components. 3. Technical Specs: Performance parameters, material specifications, scale, design notes. Style: Technical industrial design sketch, blueprint aesthetic, detailed line art, realistic shading, clear callouts, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {product_name} industrial design concept sketch.",
+            "parameters": [
+                {
+                    "name": "product_name",
+                    "label": "Product Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Futuristic Electric Motorcycle",
+                        "Combat Humanoid Robot",
+                        "Futuristic VTOL UAV Drone",
+                        "Futuristic Wireless Headphones"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-industrial-design-concept-sketch-humanoid-robot-prev.jpg"
+},
+  {
+    "id": "template-varieties-food-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "（Food Varieties Poster Designer）You are a professional food photography infographic designer, specializing in creating clean, appetizing food variety posters. Based on the user-specified {food_theme}, generate a vertical 3:4 premium food varieties poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"{food_theme} VARIETIES\", clean off-white background. 2. Grid: 9 food items in 3×3 grid. Each item: Top = high-resolution photorealistic food photography of the dish; Bottom = bold dish name + short descriptive flavor/ingredient text. Style: Clean minimalist design, soft off-white background, professional food styling, natural lighting, vibrant appetizing colors, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {food_theme} varieties food poster.",
+            "parameters": [
+                {
+                    "name": "food_theme",
+                    "label": "Food Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Pasta",
+                        "Salad",
+                        "Mille Crepe Cakes",
+                        "High-Protein Egg Sandwich",
+                        "Coffee Drinks",
+                        "Ice Cream Flavors"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-varieties-food-poster-salad-prev.jpg"
+}
 ]
