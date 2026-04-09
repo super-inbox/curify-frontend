@@ -975,120 +975,120 @@
     }
   },
   "template-vocabulary": {
-  "category": "Language Learning Card Category",
-  "description": "Create visually engaging bilingual vocabulary cards that combine English words, Chinese meanings, and pronunciation in a clean, educational format.",
-  "title": "Nano Banana Prompt: Bilingual Vocabulary Card Generator | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template uses structured Nano Banana prompts to generate high-quality bilingual vocabulary cards. Each card presents English words alongside Chinese translations and pinyin, paired with cute, intuitive illustrations. The layout is designed for clarity, memorability, and visual appeal, making it ideal for language learning and educational content.",
-      "who": "Suitable for language learners, ESL educators, Chinese learners, educational content creators, parents teaching children, vocabulary app designers, and social media accounts focused on learning content.",
-      "how": [
-        "Choose a topic (e.g., Animals, Food, Weather, Space).",
-        "Provide the English and Chinese title for the topic.",
-        "Define vocabulary words with English, Chinese translation, and pinyin.",
-        "Generate a grid-based vocabulary card with illustrations for each word.",
-        "Ensure the design uses soft colors, rounded layout, and clear typography for readability."
-      ],
-      "prompts": [
-        "Create a vocabulary card for Animals: Cat (猫, māo), Dog (狗, gǒu), Bird (鸟, niǎo), Fish (鱼, yú), Rabbit (兔子, tù zi), Panda (熊猫, xióng māo), Tiger (老虎, lǎo hǔ), Elephant (大象, dà xiàng).",
-        "Generate a Food vocabulary card: Apple (苹果, píng guǒ), Bread (面包, miàn bāo), Milk (牛奶, niú nǎi), Coffee (咖啡, kā fēi), Rice (米饭, mǐ fàn), Egg (鸡蛋, jī dàn), Cake (蛋糕, dàn gāo), Juice (果汁, guǒ zhī).",
-        "Create a Weather vocabulary card: Sun (太阳, tài yáng), Rain (雨, yǔ), Snow (雪, xuě), Wind (风, fēng), Cloud (云, yún), Storm (暴风雨, bào fēng yǔ), Fog (雾, wù), Rainbow (彩虹, cǎi hóng)."
-      ]
+    "category": "Language Learning Card Category",
+    "description": "Create visually engaging bilingual vocabulary cards that combine English words, Chinese meanings, and pronunciation in a clean, educational format.",
+    "title": "Nano Banana Prompt: Bilingual Vocabulary Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses structured Nano Banana prompts to generate high-quality bilingual vocabulary cards. Each card presents English words alongside Chinese translations and pinyin, paired with cute, intuitive illustrations. The layout is designed for clarity, memorability, and visual appeal, making it ideal for language learning and educational content.",
+        "who": "Suitable for language learners, ESL educators, Chinese learners, educational content creators, parents teaching children, vocabulary app designers, and social media accounts focused on learning content.",
+        "how": [
+          "Choose a topic (e.g., Animals, Food, Weather, Space).",
+          "Provide the English and Chinese title for the topic.",
+          "Define vocabulary words with English, Chinese translation, and pinyin.",
+          "Generate a grid-based vocabulary card with illustrations for each word.",
+          "Ensure the design uses soft colors, rounded layout, and clear typography for readability."
+        ],
+        "prompts": [
+          "Create a vocabulary card for Animals: Cat (猫, māo), Dog (狗, gǒu), Bird (鸟, niǎo), Fish (鱼, yú), Rabbit (兔子, tù zi), Panda (熊猫, xióng māo), Tiger (老虎, lǎo hǔ), Elephant (大象, dà xiàng).",
+          "Generate a Food vocabulary card: Apple (苹果, píng guǒ), Bread (面包, miàn bāo), Milk (牛奶, niú nǎi), Coffee (咖啡, kā fēi), Rice (米饭, mǐ fàn), Egg (鸡蛋, jī dàn), Cake (蛋糕, dàn gāo), Juice (果汁, guǒ zhī).",
+          "Create a Weather vocabulary card: Sun (太阳, tài yáng), Rain (雨, yǔ), Snow (雪, xuě), Wind (风, fēng), Cloud (云, yún), Storm (暴风雨, bào fēng yǔ), Fog (雾, wù), Rainbow (彩虹, cǎi hóng)."
+        ]
+      }
     }
-  }
-},
-"template-series-infographic": {
-  "category": "Series Infographic Category",
-  "description": "Create modular, multi-card infographic series that break down complex topics into structured, visually consistent chapters.",
-  "title": "Nano Banana Prompt: Series Infographic Generator | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template generates a cohesive series of infographic cards, each representing a chapter of a larger topic. The design follows a consistent visual system with structured sections such as title, central illustration, modular content blocks, and summary highlights. It is optimized for storytelling across multiple cards with clarity and visual continuity.",
-      "who": "Suitable for educators, content creators, business storytellers, startup analysts, product explainers, science communicators, and social media creators producing multi-part educational or narrative content.",
-      "how": [
-        "Define a series topic (e.g., AI trends, lifecycle processes, cultural systems).",
-        "Break the topic into structured sections or chapters.",
-        "Assign a visual style (e.g., flat illustration, cartoon, watercolor, tech diagram).",
-        "Design each card with a title, central visual, and modular explanation blocks.",
-        "Add a highlighted summary or takeaway at the bottom of each card."
-      ],
-      "prompts": [
-        "Create a series infographic on 'The Lifecycle of a Butterfly' with sections: Overview, Egg Stage, Larva Stage, Pupa Stage, Adult Stage, and include soft pastel illustrations.",
-        "Generate a multi-card infographic for 'Microsoft's AI Strategy Challenges' with sections on strategy, competition, partnerships, risks, and future outlook in a clean tech illustration style.",
-        "Create a series infographic on 'Emotional Intelligence Guide' with chapters on awareness, regulation, empathy, communication, and growth, using friendly cartoon visuals."
-      ]
+  },
+  "template-series-infographic": {
+    "category": "Series Infographic Category",
+    "description": "Create modular, multi-card infographic series that break down complex topics into structured, visually consistent chapters.",
+    "title": "Nano Banana Prompt: Series Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a cohesive series of infographic cards, each representing a chapter of a larger topic. The design follows a consistent visual system with structured sections such as title, central illustration, modular content blocks, and summary highlights. It is optimized for storytelling across multiple cards with clarity and visual continuity.",
+        "who": "Suitable for educators, content creators, business storytellers, startup analysts, product explainers, science communicators, and social media creators producing multi-part educational or narrative content.",
+        "how": [
+          "Define a series topic (e.g., AI trends, lifecycle processes, cultural systems).",
+          "Break the topic into structured sections or chapters.",
+          "Assign a visual style (e.g., flat illustration, cartoon, watercolor, tech diagram).",
+          "Design each card with a title, central visual, and modular explanation blocks.",
+          "Add a highlighted summary or takeaway at the bottom of each card."
+        ],
+        "prompts": [
+          "Create a series infographic on 'The Lifecycle of a Butterfly' with sections: Overview, Egg Stage, Larva Stage, Pupa Stage, Adult Stage, and include soft pastel illustrations.",
+          "Generate a multi-card infographic for 'Microsoft's AI Strategy Challenges' with sections on strategy, competition, partnerships, risks, and future outlook in a clean tech illustration style.",
+          "Create a series infographic on 'Emotional Intelligence Guide' with chapters on awareness, regulation, empathy, communication, and growth, using friendly cartoon visuals."
+        ]
+      }
     }
-  }
-},
-"template-english-top5-phrases": {
-  "category": "English Learning Expression Cards",
-  "description": "Create cute bilingual Top 5 English phrase cards for kids, combining everyday expressions with clear visuals and translations.",
-  "title": "Nano Banana Prompt: Top 5 English Phrases Learning Cards | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template uses Nano Banana prompts to generate bilingual 'Top 5' English expression cards designed for children. Each card presents five commonly used phrases with English text, Chinese translations, and matching cartoon illustrations in a clean, colorful layout.",
-      "who": "Suitable for parents, early childhood educators, ESL teachers, language learning creators, homeschooling families, and social media accounts focused on kids education content.",
-      "how": [
-        "Choose a practical communication topic such as greetings, apologies, or compliments.",
-        "Write a clear English title and its Chinese equivalent.",
-        "Provide five commonly used English expressions with corresponding Chinese translations.",
-        "Ensure each phrase is simple, natural, and age-appropriate.",
-        "Generate the card with colorful sections and matching cartoon illustrations for each phrase."
-      ],
-      "prompts": [
-        "Create a Top 5 Ways to Say Thank You card with phrases: Thank you!, Thanks a lot!, I appreciate it!, That's so kind of you!, I'm grateful!",
-        "Generate a Top 5 Ways to Greet Others card with phrases: Hello!, Hi there!, How are you?, Nice to meet you!, Good morning!",
-        "Create a Top 5 Ways to Say Goodbye card with phrases: Goodbye!, See you later!, Take care!, Bye for now!, See you soon!"
-      ]
+  },
+  "template-english-top5-phrases": {
+    "category": "English Learning Expression Cards",
+    "description": "Create cute bilingual Top 5 English phrase cards for kids, combining everyday expressions with clear visuals and translations.",
+    "title": "Nano Banana Prompt: Top 5 English Phrases Learning Cards | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses Nano Banana prompts to generate bilingual 'Top 5' English expression cards designed for children. Each card presents five commonly used phrases with English text, Chinese translations, and matching cartoon illustrations in a clean, colorful layout.",
+        "who": "Suitable for parents, early childhood educators, ESL teachers, language learning creators, homeschooling families, and social media accounts focused on kids education content.",
+        "how": [
+          "Choose a practical communication topic such as greetings, apologies, or compliments.",
+          "Write a clear English title and its Chinese equivalent.",
+          "Provide five commonly used English expressions with corresponding Chinese translations.",
+          "Ensure each phrase is simple, natural, and age-appropriate.",
+          "Generate the card with colorful sections and matching cartoon illustrations for each phrase."
+        ],
+        "prompts": [
+          "Create a Top 5 Ways to Say Thank You card with phrases: Thank you!, Thanks a lot!, I appreciate it!, That's so kind of you!, I'm grateful!",
+          "Generate a Top 5 Ways to Greet Others card with phrases: Hello!, Hi there!, How are you?, Nice to meet you!, Good morning!",
+          "Create a Top 5 Ways to Say Goodbye card with phrases: Goodbye!, See you later!, Take care!, Bye for now!, See you soon!"
+        ]
+      }
     }
-  }
-},
-"template-english-error-correction": {
-  "category": "English Error Correction Cards",
-  "description": "Generate bilingual English mistake correction cards that compare wrong vs correct sentences with clear explanations and visuals.",
-  "title": "Nano Banana Prompt: English Error Correction Learning Cards | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template creates bilingual English correction cards that highlight common learner mistakes through side-by-side comparisons. Each card visually contrasts incorrect and correct sentences with clear formatting and child-friendly illustrations.",
-      "who": "Suitable for ESL learners, teachers, parents, tutoring centers, language learning creators, and educational content platforms focused on grammar improvement.",
-      "how": [
-        "Select a grammar topic such as tense, prepositions, or sentence structure.",
-        "Provide incorrect example sentences that reflect common learner mistakes.",
-        "Write the corrected versions of each sentence.",
-        "Ensure explanations are simple and intuitive for learners.",
-        "Generate a visual card with clear ❌ vs ✅ comparison and supportive illustrations."
-      ],
-      "prompts": [
-        "Create an English error correction card for Tense Mistakes: wrong 'I go to the park yesterday' vs correct 'I went to the park yesterday'.",
-        "Generate a Question Mistakes card: wrong 'You are a student?' vs correct 'Are you a student?'.",
-        "Create a Preposition Mistakes card: wrong 'I arrive in Monday' vs correct 'I arrive on Monday'."
-      ]
+  },
+  "template-english-error-correction": {
+    "category": "English Error Correction Cards",
+    "description": "Generate bilingual English mistake correction cards that compare wrong vs correct sentences with clear explanations and visuals.",
+    "title": "Nano Banana Prompt: English Error Correction Learning Cards | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates bilingual English correction cards that highlight common learner mistakes through side-by-side comparisons. Each card visually contrasts incorrect and correct sentences with clear formatting and child-friendly illustrations.",
+        "who": "Suitable for ESL learners, teachers, parents, tutoring centers, language learning creators, and educational content platforms focused on grammar improvement.",
+        "how": [
+          "Select a grammar topic such as tense, prepositions, or sentence structure.",
+          "Provide incorrect example sentences that reflect common learner mistakes.",
+          "Write the corrected versions of each sentence.",
+          "Ensure explanations are simple and intuitive for learners.",
+          "Generate a visual card with clear ❌ vs ✅ comparison and supportive illustrations."
+        ],
+        "prompts": [
+          "Create an English error correction card for Tense Mistakes: wrong 'I go to the park yesterday' vs correct 'I went to the park yesterday'.",
+          "Generate a Question Mistakes card: wrong 'You are a student?' vs correct 'Are you a student?'.",
+          "Create a Preposition Mistakes card: wrong 'I arrive in Monday' vs correct 'I arrive on Monday'."
+        ]
+      }
     }
-  }
-},
-"template-english-dialogue-scene": {
-  "category": "English Dialogue Scene Cards",
-  "description": "Create bilingual English dialogue scene cards that simulate real-life conversations with illustrated contexts and role-based speech.",
-  "title": "Nano Banana Prompt: English Dialogue Scene Learning Cards | Curify AI",
-  "content": {
-    "sections": {
-      "what": "This template generates bilingual English dialogue cards set in everyday scenarios such as restaurants, schools, or shops. Each card combines a central illustrated scene with structured conversational exchanges between characters.",
-      "who": "Suitable for ESL beginners, children learning English, teachers, parents, language apps, and content creators focusing on conversational English practice.",
-      "how": [
-        "Choose a real-life scenario such as shopping, greeting, or dining.",
-        "Define the roles of two speakers (e.g., waiter and child).",
-        "Write 4–5 short conversational exchanges in English.",
-        "Provide clear Chinese translations for each line.",
-        "Generate the card with a central scene illustration and color-coded dialogue bubbles."
-      ],
-      "prompts": [
-        "Create a restaurant dialogue card: Waiter and Child conversation including ordering food and drinks.",
-        "Generate a shopping dialogue: Child and Shopkeeper discussing price and purchase.",
-        "Create a greeting dialogue: two children meeting and introducing themselves."
-      ]
+  },
+  "template-english-dialogue-scene": {
+    "category": "English Dialogue Scene Cards",
+    "description": "Create bilingual English dialogue scene cards that simulate real-life conversations with illustrated contexts and role-based speech.",
+    "title": "Nano Banana Prompt: English Dialogue Scene Learning Cards | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates bilingual English dialogue cards set in everyday scenarios such as restaurants, schools, or shops. Each card combines a central illustrated scene with structured conversational exchanges between characters.",
+        "who": "Suitable for ESL beginners, children learning English, teachers, parents, language apps, and content creators focusing on conversational English practice.",
+        "how": [
+          "Choose a real-life scenario such as shopping, greeting, or dining.",
+          "Define the roles of two speakers (e.g., waiter and child).",
+          "Write 4–5 short conversational exchanges in English.",
+          "Provide clear Chinese translations for each line.",
+          "Generate the card with a central scene illustration and color-coded dialogue bubbles."
+        ],
+        "prompts": [
+          "Create a restaurant dialogue card: Waiter and Child conversation including ordering food and drinks.",
+          "Generate a shopping dialogue: Child and Shopkeeper discussing price and purchase.",
+          "Create a greeting dialogue: two children meeting and introducing themselves."
+        ]
+      }
     }
-  }
-},
+  },
   "template-movie-poster": {
     "category": "Movie Infographic & Summary Cards",
     "description": "Create AI-generated movie infographic posters with cast, plot summary, awards, and iconic scenes. Perfect for film summaries, movie reviews, and social media content.",
@@ -1181,116 +1181,137 @@
         ]
       }
     }
-  },  
-    "template-detailed-vocab-flashcard": {
-      "category": "Language Learning & Vocabulary Cards",
-      "description": "Generate detailed Chinese-English bilingual vocabulary flashcards with pronunciation, translations, and example sentences. Ideal for language learners and educators.",
-      "title": "Chinese-English Vocabulary Flashcards with Examples (AI Learning Cards) | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates AI-powered bilingual vocabulary flashcards with pinyin, translations, and contextual example sentences. It helps learners understand and memorize words effectively.",
-          "who": "Designed for language learners, ESL students, teachers, tutors, and educational content creators.",
-          "how": [
-            "Enter the Chinese word and its pinyin.",
-            "Add English translation and part of speech.",
-            "Provide example sentences in Chinese, pinyin, and English.",
-            "Generate a structured bilingual vocabulary flashcard."
-          ],
-          "prompts": [
-            "Chinese English vocabulary flashcard with examples.",
-            "Learn Chinese words with pinyin and sentences.",
-            "Bilingual vocabulary card for beginners."
-          ]
-        }
-      }
-    },
-  
-    "template-custom-character-card": {
-      "category": "Character Design & Personality Cards",
-      "description": "Create custom character profile cards with personality traits, archetypes, and cinematic fantasy visuals. Ideal for storytelling, games, and creative content.",
-      "title": "Custom Character Cards (AI Personality & Archetype Generator) | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates AI-powered custom character cards combining personality traits, archetypes, and narrative descriptions in a cinematic fantasy style.",
-          "who": "Designed for writers, game designers, artists, role-playing creators, and storytelling enthusiasts.",
-          "how": [
-            "Specify gender and personality traits.",
-            "Choose a character archetype and title.",
-            "Define character tags and name.",
-            "Generate a detailed character profile card with visuals and narrative."
-          ],
-          "prompts": [
-            "Fantasy character card with personality traits.",
-            "Create a tarot-style character profile.",
-            "Custom character design with backstory."
-          ]
-        }
-      }
-    },
-    "template-detective-conan": {
-      "category": "Anime Character & MBTI Cards",
-      "description": "Generate Detective Conan character profile cards with MBTI personality analysis and traits. Ideal for anime fans and personality content creators.",
-      "title": "Detective Conan Character MBTI Cards (AI Anime Profiles) | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates AI-powered Detective Conan character cards with MBTI analysis, personality traits, and collectible-style layouts.",
-          "who": "Designed for anime fans, MBTI enthusiasts, fandom communities, and content creators.",
-          "how": [
-            "Enter the character name.",
-            "Specify MBTI type and title.",
-            "Add personality breakdown and core traits.",
-            "Generate a collectible-style anime character profile card."
-          ],
-          "prompts": [
-            "Detective Conan MBTI character analysis.",
-            "Anime character personality card.",
-            "Shinichi Kudo MBTI profile."
-          ]
-        }
-      }
-    },
-    "template-daily-essentials-learning-card": {
-      "category": "Kids Learning & Educational Cards",
-      "description": "Generate kawaii-style daily essentials learning cards for kids with cartoon illustrations, English words, and Chinese translations. Perfect for bilingual education and early learners.",
-      "title": "Daily Essentials Learning Cards for Kids (Bilingual Kawaii Cards) | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates AI-powered kawaii-style learning cards featuring 6 daily items per card with cute cartoon illustrations, English labels, and Chinese translations in a 2×3 grid layout.",
-          "who": "Designed for parents, teachers, bilingual educators, homeschooling families, and early childhood learning platforms.",
-          "how": [
-            "Enter a daily essentials theme (e.g. School Supplies, Kitchen Tools).",
-            "Generate 6 illustrated cartoon cards in a 2×3 grid.",
-            "Each card includes the English word and Chinese translation.",
-            "Download a colorful bilingual learning card for kids."
-          ],
-          "prompts": [
-            "Daily essentials learning card for kids.",
-            "Kawaii bilingual vocabulary card.",
-            "School supplies learning poster for children."
-          ]
-        }
-      }
-    },
-    "template-children-english-vocab-spelling": {
-      "category": "Kids Learning & Vocabulary Posters",
-      "description": "Generate colorful English vocabulary spelling posters for kids with pronunciation and illustrations. Ideal for early education and ESL learning.",
-      "title": "Kids English Vocabulary Spelling Posters (Fun Learning Cards) | Curify AI",
-      "content": {
-        "sections": {
-          "what": "This template generates AI-powered children's vocabulary spelling posters with themed word sets, pronunciation, and visual illustrations for engaging learning.",
-          "who": "Designed for parents, teachers, ESL learners, homeschooling families, and early education platforms.",
-          "how": [
-            "Select a vocabulary theme.",
-            "Generate a set of vocabulary words.",
-            "Include pronunciation and translations.",
-            "Create a colorful educational spelling poster."
-          ],
-          "prompts": [
-            "English vocabulary poster for kids.",
-            "Learn English words with pictures.",
-            "Spelling practice for children by theme."
-          ]
-        }
+  },
+  "template-detailed-vocab-flashcard": {
+    "category": "Language Learning & Vocabulary Cards",
+    "description": "Generate detailed Chinese-English bilingual vocabulary flashcards with pronunciation, translations, and example sentences. Ideal for language learners and educators.",
+    "title": "Chinese-English Vocabulary Flashcards with Examples (AI Learning Cards) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered bilingual vocabulary flashcards with pinyin, translations, and contextual example sentences. It helps learners understand and memorize words effectively.",
+        "who": "Designed for language learners, ESL students, teachers, tutors, and educational content creators.",
+        "how": [
+          "Enter the Chinese word and its pinyin.",
+          "Add English translation and part of speech.",
+          "Provide example sentences in Chinese, pinyin, and English.",
+          "Generate a structured bilingual vocabulary flashcard."
+        ],
+        "prompts": [
+          "Chinese English vocabulary flashcard with examples.",
+          "Learn Chinese words with pinyin and sentences.",
+          "Bilingual vocabulary card for beginners."
+        ]
       }
     }
+  },
+  "template-custom-character-card": {
+    "category": "Character Design & Personality Cards",
+    "description": "Create custom character profile cards with personality traits, archetypes, and cinematic fantasy visuals. Ideal for storytelling, games, and creative content.",
+    "title": "Custom Character Cards (AI Personality & Archetype Generator) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered custom character cards combining personality traits, archetypes, and narrative descriptions in a cinematic fantasy style.",
+        "who": "Designed for writers, game designers, artists, role-playing creators, and storytelling enthusiasts.",
+        "how": [
+          "Specify gender and personality traits.",
+          "Choose a character archetype and title.",
+          "Define character tags and name.",
+          "Generate a detailed character profile card with visuals and narrative."
+        ],
+        "prompts": [
+          "Fantasy character card with personality traits.",
+          "Create a tarot-style character profile.",
+          "Custom character design with backstory."
+        ]
+      }
+    }
+  },
+  "template-detective-conan": {
+    "category": "Anime Character & MBTI Cards",
+    "description": "Generate Detective Conan character profile cards with MBTI personality analysis and traits. Ideal for anime fans and personality content creators.",
+    "title": "Detective Conan Character MBTI Cards (AI Anime Profiles) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered Detective Conan character cards with MBTI analysis, personality traits, and collectible-style layouts.",
+        "who": "Designed for anime fans, MBTI enthusiasts, fandom communities, and content creators.",
+        "how": [
+          "Enter the character name.",
+          "Specify MBTI type and title.",
+          "Add personality breakdown and core traits.",
+          "Generate a collectible-style anime character profile card."
+        ],
+        "prompts": [
+          "Detective Conan MBTI character analysis.",
+          "Anime character personality card.",
+          "Shinichi Kudo MBTI profile."
+        ]
+      }
+    }
+  },
+  "template-daily-essentials-learning-card": {
+    "category": "Kids Learning & Educational Cards",
+    "description": "Generate kawaii-style daily essentials learning cards for kids with cartoon illustrations, English words, and Chinese translations. Perfect for bilingual education and early learners.",
+    "title": "Daily Essentials Learning Cards for Kids (Bilingual Kawaii Cards) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered kawaii-style learning cards featuring 6 daily items per card with cute cartoon illustrations, English labels, and Chinese translations in a 2×3 grid layout.",
+        "who": "Designed for parents, teachers, bilingual educators, homeschooling families, and early childhood learning platforms.",
+        "how": [
+          "Enter a daily essentials theme (e.g. School Supplies, Kitchen Tools).",
+          "Generate 6 illustrated cartoon cards in a 2×3 grid.",
+          "Each card includes the English word and Chinese translation.",
+          "Download a colorful bilingual learning card for kids."
+        ],
+        "prompts": [
+          "Daily essentials learning card for kids.",
+          "Kawaii bilingual vocabulary card.",
+          "School supplies learning poster for children."
+        ]
+      }
+    }
+  },
+  "template-children-english-vocab-spelling": {
+    "category": "Kids Learning & Vocabulary Posters",
+    "description": "Generate colorful English vocabulary spelling posters for kids with pronunciation and illustrations. Ideal for early education and ESL learning.",
+    "title": "Kids English Vocabulary Spelling Posters (Fun Learning Cards) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered children's vocabulary spelling posters with themed word sets, pronunciation, and visual illustrations for engaging learning.",
+        "who": "Designed for parents, teachers, ESL learners, homeschooling families, and early education platforms.",
+        "how": [
+          "Select a vocabulary theme.",
+          "Generate a set of vocabulary words.",
+          "Include pronunciation and translations.",
+          "Create a colorful educational spelling poster."
+        ],
+        "prompts": [
+          "English vocabulary poster for kids.",
+          "Learn English words with pictures.",
+          "Spelling practice for children by theme."
+        ]
+      }
+    }
+  },
+  "template-native-english-expressions": {
+    "category": "Native English Expressions Posters",
+    "description": "Generate colorful native English expression posters with colloquial phrases, meanings, and example sentences. Perfect for ESL learners and anyone wanting to sound more natural.",
+    "title": "Native English Expressions Posters (Speak Like a Native) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates AI-powered native English expression posters featuring 9 colloquial phrases per poster with formal meanings, cartoon illustrations, and example sentences.",
+        "who": "Designed for ESL learners, English teachers, language enthusiasts, and anyone who wants to speak more naturally in English.",
+        "how": [
+          "Choose an expression theme.",
+          "Generate 9 native colloquial expressions.",
+          "Include meanings and example sentences.",
+          "Create a colorful educational poster."
+        ],
+        "prompts": [
+          "Native English expressions poster.",
+          "Speak like a native English speaker.",
+          "Casual English phrases learning poster."
+        ]
+      }
+    }
+  }
 }
