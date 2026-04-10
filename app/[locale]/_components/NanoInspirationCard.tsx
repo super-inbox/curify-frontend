@@ -248,19 +248,6 @@ export function NanoInspirationCard({
         )}
       </div>
 
-      {/* Description */}
-      <div className="mb-4 rounded-2xl border border-purple-100 bg-white/60 p-4 backdrop-blur-sm">
-        {card.description ? (
-          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-800 font-medium">
-            {card.description}
-          </p>
-        ) : (
-          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-700 font-medium">
-            Click to create with this template
-          </p>
-        )}
-      </div>
-
       {/* Actions */}
       <div className="mt-auto flex items-center">
         <ActionButtons
