@@ -98,7 +98,7 @@ export default function NanoBananaProPromptsClient({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-4">
+    <div className="min-h-screen px-4 py-4">
       <div className="mx-auto max-w-[1280px]">
         <header className="mb-10">
           <p className="mt-2 text-gray-600">
