@@ -99,9 +99,9 @@ export default function NanoBananaProPromptsClient({
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-4">
-      <div className="mx-auto max-w-7xl">
-        <header className="mb-10 text-center">
-          <p className="mx-auto mt-2 max-w-2xl text-gray-600">
+      <div className="mx-auto max-w-[1280px]">
+        <header className="mb-10">
+          <p className="mt-2 text-gray-600">
             {t.rich("description", {
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
