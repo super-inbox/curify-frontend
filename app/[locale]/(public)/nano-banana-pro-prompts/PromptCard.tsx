@@ -59,7 +59,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
       className="group block overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       aria-label={`View details for ${prompt.title}`}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+      <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
         <CdnImage
           src={hasImgError ? PLACEHOLDER_IMAGE : normalizedUrl}
           alt={prompt.title}
@@ -86,12 +86,6 @@ export default function PromptCard({ prompt }: PromptCardProps) {
         <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-gray-900">
           {prompt.title}
         </h3>
-
-        {prompt.description && (
-          <p className="line-clamp-2 text-xs text-gray-500">
-            {prompt.description}
-          </p>
-        )}
 
         {prompt.prompt && (
           <div
