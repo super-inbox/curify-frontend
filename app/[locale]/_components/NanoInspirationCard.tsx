@@ -155,11 +155,6 @@ export function NanoInspirationCard({
     normalized.imageUrls[currentImageIndex] ||
     "";
 
-  const paramSummary = useMemo(
-    () => buildParamSummary(card.sample_parameters, 2),
-    [card.sample_parameters]
-  );
-
   return (
     <div
       onClick={handleCardClick}
@@ -180,7 +175,7 @@ export function NanoInspirationCard({
       </div>
 
       {/* Image Carousel */}
-      <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-2xl border-2 border-purple-100 bg-white shadow-inner">
+      <div className="relative mb-4 aspect-[1/1] overflow-hidden rounded-2xl border-2 border-purple-100 bg-white shadow-inner">
         {displaySrc ? (
           <CdnImage
             src={displaySrc}
@@ -250,6 +245,19 @@ export function NanoInspirationCard({
               ))}
             </div>
           </>
+        )}
+      </div>
+
+      {/* Description */}
+      <div className="mb-4 rounded-2xl border border-purple-100 bg-white/60 p-4 backdrop-blur-sm">
+        {card.description ? (
+          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-800 font-medium">
+            {card.description}
+          </p>
+        ) : (
+          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-700 font-medium">
+            Click to create with this template
+          </p>
         )}
       </div>
 
