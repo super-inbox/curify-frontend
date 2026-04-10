@@ -1397,5 +1397,47 @@
         ]
       }
     }
+  },
+  "template-warmup-routine": {
+    "category": "Aufwärmübungs-Poster",
+    "description": "Erstelle niedliche Kawaii-Aufwärmübungsplakate mit 8 Übungskarten für jede Sportart.",
+    "title": "Sport-Aufwärmroutine-Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein 8-Übungs-Aufwärmplakat im Kawaii-Cartoon-Stil mit Illustration, Übungsname und Wiederholungen.",
+        "who": "Für Fitnesstrainer, Sportpädagogen und Wellness-Content-Ersteller.",
+        "how": [
+          "Sportart eingeben (z.B. GYM, YOGA, SCHWIMMEN).",
+          "Aufwärm-Poster mit 8 Karten generieren.",
+          "Als Fitnessguide teilen."
+        ],
+        "prompts": [
+          "Aufwärm-Poster für Fitnessstudio.",
+          "Kawaii Fitness-Infografik.",
+          "Sportspezifischer Aufwärmguide."
+        ]
+      }
+    }
+  },
+  "template-group-vocab-category": {
+    "category": "Vokabelkategorie-Poster",
+    "description": "Erstelle bunte englische Vokabelplakate mit 12 illustrierten Elementen nach Themen gruppiert.",
+    "title": "Englisches Vokabelkategorie-Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein 12-Element-Vokabelposter im Kawaii-Cartoon-Stil mit Illustrationen und fetten Beschriftungen.",
+        "who": "Für ESL-Lehrer, Kinderpädagogen und Sprachlern-Content-Ersteller.",
+        "how": [
+          "Vokabelthema eingeben (z.B. Tiergruppennamen, Sportarten).",
+          "Illustriertes Vokabelposter generieren.",
+          "Für Unterricht oder digitales Lernen nutzen."
+        ],
+        "prompts": [
+          "Englisches Vokabelkategorie-Poster.",
+          "Kawaii Wortgruppen-Poster für Kinder.",
+          "Themenbezogene Vokabel-Infografik."
+        ]
+      }
+    }
   }
 }

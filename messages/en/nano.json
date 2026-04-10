@@ -1397,5 +1397,47 @@
         ]
       }
     }
+  },
+  "template-warmup-routine": {
+    "category": "Warm-Up Routine Posters",
+    "description": "Generate cute kawaii-style warm-up routine posters with 8 exercise cards for any sport type.",
+    "title": "Sport Warm-Up Routine Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates an 8-exercise warm-up routine poster in a kawaii cartoon style, with each card showing an illustration, exercise name, and reps/duration.",
+        "who": "Designed for fitness coaches, gym creators, sports educators, and wellness content creators.",
+        "how": [
+          "Enter a sport type (e.g. GYM, YOGA, SWIMMING).",
+          "Generate an 8-card warm-up routine poster.",
+          "Share as a fitness guide or educational resource."
+        ],
+        "prompts": [
+          "Warm-up routine poster for gym.",
+          "Kawaii fitness infographic with exercise cards.",
+          "Sport-specific warm-up guide poster."
+        ]
+      }
+    }
+  },
+  "template-group-vocab-category": {
+    "category": "Vocabulary Category Posters",
+    "description": "Generate colorful English vocabulary posters with 12 illustrated items grouped by category for kids and language learners.",
+    "title": "English Vocabulary Category Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a 12-item English vocabulary poster in a kawaii cartoon style, organized by theme with cute illustrations and bold labels.",
+        "who": "Designed for ESL teachers, children's educators, language learning creators, and classroom resource designers.",
+        "how": [
+          "Enter a vocabulary theme (e.g. Group Names of Animals, Types of Sports).",
+          "Generate a 12-card illustrated vocabulary poster.",
+          "Use for classroom, digital learning, or social sharing."
+        ],
+        "prompts": [
+          "English vocabulary category poster.",
+          "Kawaii illustrated word group poster for kids.",
+          "Language learning infographic with themed vocabulary."
+        ]
+      }
+    }
   }
 }

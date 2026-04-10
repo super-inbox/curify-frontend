@@ -1397,5 +1397,47 @@
         ]
       }
     }
+  },
+  "template-warmup-routine": {
+    "category": "Pósters de Rutina de Calentamiento",
+    "description": "Genera pósters de rutina de calentamiento estilo kawaii con 8 tarjetas de ejercicios para cualquier deporte.",
+    "title": "Póster de Rutina de Calentamiento | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster de 8 ejercicios de calentamiento en estilo kawaii con ilustraciones, nombre del ejercicio y repeticiones.",
+        "who": "Para entrenadores de fitness, educadores deportivos y creadores de contenido de bienestar.",
+        "how": [
+          "Ingresa el tipo de deporte (ej. GYM, YOGA, NATACIÓN).",
+          "Genera un póster de calentamiento con 8 tarjetas.",
+          "Comparte como guía de fitness."
+        ],
+        "prompts": [
+          "Póster de calentamiento para gimnasio.",
+          "Infografía fitness kawaii.",
+          "Guía de calentamiento deportivo."
+        ]
+      }
+    }
+  },
+  "template-group-vocab-category": {
+    "category": "Pósters de Categorías de Vocabulario",
+    "description": "Genera pósters de vocabulario inglés con 12 elementos ilustrados agrupados por categoría.",
+    "title": "Póster de Categoría de Vocabulario en Inglés | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster de 12 elementos en estilo kawaii con ilustraciones y etiquetas en negrita por tema.",
+        "who": "Para profesores de inglés, educadores infantiles y creadores de recursos de idiomas.",
+        "how": [
+          "Ingresa un tema de vocabulario (ej. nombres de grupos de animales).",
+          "Genera un póster ilustrado de vocabulario.",
+          "Úsalo en clase o aprendizaje digital."
+        ],
+        "prompts": [
+          "Póster de categoría de vocabulario inglés.",
+          "Póster kawaii de grupos de palabras.",
+          "Infografía de vocabulario temático."
+        ]
+      }
+    }
   }
 }

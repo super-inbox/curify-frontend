@@ -1397,5 +1397,47 @@
         ]
       }
     }
+  },
+  "template-warmup-routine": {
+    "category": "Affiches de Routine d'Échauffement",
+    "description": "Génère des affiches d'échauffement style kawaii avec 8 cartes d'exercices pour tout type de sport.",
+    "title": "Affiche de Routine d'Échauffement | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche de 8 exercices d'échauffement en style kawaii avec illustrations, nom et répétitions.",
+        "who": "Pour les coachs fitness, éducateurs sportifs et créateurs de contenu bien-être.",
+        "how": [
+          "Entrez le type de sport (ex. GYM, YOGA, NATATION).",
+          "Générez une affiche avec 8 cartes d'échauffement.",
+          "Partagez comme guide fitness."
+        ],
+        "prompts": [
+          "Affiche d'échauffement pour la salle de sport.",
+          "Infographie fitness kawaii.",
+          "Guide d'échauffement sportif."
+        ]
+      }
+    }
+  },
+  "template-group-vocab-category": {
+    "category": "Affiches de Catégories de Vocabulaire",
+    "description": "Génère des affiches de vocabulaire anglais avec 12 éléments illustrés groupés par catégorie.",
+    "title": "Affiche de Catégorie de Vocabulaire Anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche de 12 éléments en style kawaii avec illustrations et étiquettes en gras par thème.",
+        "who": "Pour les enseignants d'anglais, éducateurs pour enfants et créateurs de ressources linguistiques.",
+        "how": [
+          "Entrez un thème de vocabulaire (ex. noms de groupes d'animaux).",
+          "Générez une affiche illustrée.",
+          "Utilisez pour la classe ou l'apprentissage numérique."
+        ],
+        "prompts": [
+          "Affiche de catégorie de vocabulaire anglais.",
+          "Affiche kawaii de groupes de mots.",
+          "Infographie de vocabulaire thématique."
+        ]
+      }
+    }
   }
 }
