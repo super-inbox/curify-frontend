@@ -14,6 +14,7 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import CdnImage from "../../../_components/CdnImage";
 import RelatedBlogs from "../../../_components/RelatedBlogs";
+import { VideoTranscriptionMermaid } from "./VideoTranscriptionMermaid";
 
 /**
  * Helper function to convert markdown to HTML
@@ -141,15 +142,11 @@ export default function VideoTranscriptionTechnicalDeepDivePost() {
     <article className="pt-10 pb-8">
       <h1 className="text-3xl md:text-4xl font-bold mb-6">{t("title")}</h1>
       
-      {/* Featured image with floating layout */}
+      {/* Featured Mermaid diagram with floating layout */}
       <div className="float-right ml-6 mb-4 w-1/2">
-        <CdnImage
-          src="/images/TechicalTranslayion.png"
-          alt={t("title")}
-          width={600}
-          height={400}
-          className="rounded-lg shadow-lg"
-        />
+        <div className="rounded-lg shadow-lg overflow-hidden">
+          <VideoTranscriptionMermaid />
+        </div>
       </div>
 
       {/* Introduction */}

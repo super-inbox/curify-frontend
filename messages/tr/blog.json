@@ -180,7 +180,8 @@
         "date": "10 Mart 2026",
         "readTime": "8 dk okuma",
         "tag": "AI Araçları",
-        "image": "/images/sevenimages.webp"
+        "image": "/images/sevenimages.webp",
+        "thumbnailType": "video-transkripsiyon-iş"
       },
       {
         "slug": "video-transkripsiyonu-teknik-derin-dalıs",
@@ -188,7 +189,8 @@
         "date": "19 Mart 2026",
         "readTime": "12 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/TechicalTranslayion.webp"
+        "image": "/images/techicalpress.webp",
+        "thumbnailType": "video-transkripsiyon-pipeline"
       },
       {
         "slug": "10-prompting-tips-nano-banana",
@@ -196,7 +198,7 @@
         "date": "23 Mart 2026",
         "readTime": "8 dk okuma",
         "tag": "Nano Banana İkna Edici İfadeleri",
-        "image": "/images/imaggenten.webp"
+        "image": "/images/book.webp"
       },
       {
         "slug": "10-prompting-tips-video-generation",
@@ -204,7 +206,7 @@
         "date": "23 Mart 2026",
         "readTime": "9 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/VideoGen.webp"
+        "image": "/images/tenprompt.webp"
       },
       {
         "slug": "image-generation-model-comparison",
@@ -212,7 +214,7 @@
         "date": "28 Mart 2026",
         "readTime": "12 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/Picturecompare.webp"
+        "image": "/images/hardworker.webp"
       },
       {
         "slug": "lip-sync-business-guide",
@@ -220,7 +222,7 @@
         "date": "29 Mart 2026",
         "readTime": "10 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/lip_syncbusiness_guide.webp"
+        "image": "/images/office.webp"
       },
       {
         "slug": "lip-sync-technical-deep-dive",
@@ -261,6 +263,62 @@
         "readTime": "12 dk okuma",
         "tag": "Yaratıcı Araçlar",
         "image": "/images/lightsnano.webp"
+      },
+      {
+        "slug": "içerik-çoğaltma-sistemi",
+        "title": "1 Fikri 30 Günlük İçeriğe Nasıl Dönüştürürsünüz (Tükenmeden)",
+        "date": "6 Nisan 2026",
+        "readTime": "8 dk okuma",
+        "tag": "İçerik Stratejisi",
+        "image": "/images/thirtyday.webp",
+        "category": "yaratıcı-araclar",
+        "relatedLinks": [
+          "nano-banana-prompt-ekosistemi",
+          "10-prompting-tips-nano-banana",
+          "karakter-prompt-jeneratörü"
+        ]
+      },
+      {
+        "slug": "viral-öğrenme-içeriği",
+        "title": "Viral Öğrenme İçeriği Nasıl Oluşturulur (Flashkartlar, Diyalog Sahnesi, Görsel Bilgi)",
+        "date": "6 Nisan 2026",
+        "readTime": "10 dk okuma",
+        "tag": "Öğrenme İçeriği",
+        "image": "/images/learnContent.png",
+        "category": "yaratıcı-araclar",
+        "relatedLinks": [
+          "içerik-çoğaltma-sistemi",
+          "karakter-prompt-jeneratörü",
+          "görsel-öğrenme-aracları"
+        ]
+      },
+      {
+        "slug": "ai-içerik-üretim-sistemi",
+        "title": "Bir AI İçerik Üretim Sistemi Nasıl Kurduk (Sadece Araçlar Değil)",
+        "date": "8 Nisan 2026",
+        "readTime": "12 dk okuma",
+        "tag": "AI Mimarisi",
+        "image": "/images/aicontentproduction.webp",
+        "category": "ds-ai-mühendislik",
+        "relatedLinks": [
+          "aiPlatform",
+          "ajanlar-vs-iş-akışları",
+          "içerik-çoğaltma-sistemi"
+        ]
+      },
+      {
+        "slug": "ai-içerik-dağıtım-sistemi",
+        "title": "Bir AI İçerik Dağıtım Sistemi Nasıl Kurduk (X, Facebook & SEO)",
+        "date": "8 Nisan 2026",
+        "readTime": "10 dk okuma",
+        "tag": "İçerik Pazarlama",
+        "image": "/images/contentdistributionsystem.webp",
+        "category": "yaratıcı-araclar",
+        "relatedLinks": [
+          "ai-içerik-üretim-sistemi",
+          "içerik-çoğaltma-sistemi",
+          "aiPlatform"
+        ]
       }
     ],
     "translateYoutubevideo": {
@@ -2218,6 +2276,341 @@
           ]
         }
       }
+    },
+    "contentMultiplicationSystem": {
+      "title": "1 Fikri 30 Günlük İçeriğe Nasıl Dönüştürürsünüz (Tükenmeden)",
+      "publishedDate": "6 Nisan 2026",
+      "readTime": "8 dk okuma",
+      "category": "İçerik Stratejisi",
+      "introduction": {
+        "title": "İçerik Üretimindeki En Büyük Efsane",
+        "description": "İçerik üretimindeki en büyük efsane, sürekli bir \"yeni\" fikir akışına ihtiyacınız olduğudur. Gerçek? Daha fazla fikre ihtiyacınız yok. Zaten sahip olduğunuz fikirleri çoğaltacak bir sisteme ihtiyacınız var. İster kampanyaları ölçeklendiren bir pazarlamacı, ister markasını oluşturan bir yaratıcı, ister eğitim içeriği oluşturan bir ebeveyn, ister malzeme geliştiren bir ESL öğretmeni olun, bu çerçeve bir konsepti 30 günlük değerli içeriğe dönüştürüyor, Nano Şablon Sistemi kullanarak.",
+        "quote": "Tek bir temel konsepti alıp Nano Şablon Sistemi kullanarak bir ay boyunca yüksek değerli gönderilere dönüştürmek için tam çerçeveyi açıklıyoruz."
+      },
+      "problem": {
+        "title": "Sorun: \"Manuel İçerik Koşusu\"",
+        "manualTreadmill": {
+          "title": "Çoğu içerik üreticisi buna şöyle yaklaşır:",
+          "description": "Bu, tükenmenin en hızlı yoludur. Manuel, yavaş ve ölçeklenmesi imkansızdır—ister pazarlama kampanyaları oluşturuyor olun, ister sosyal medya içeriği, eğitim materyalleri veya dil öğrenme kaynakları.",
+          "approach": "Uyan. Bir konu düşün. Bir gönderi yazmak/tasarlamak için 2 saat harca. Ayda 30 kez tekrarla.",
+          "steps": [
+            "Uyan",
+            "Bir konu düşün",
+            "Bir gönderi yazmak/tasarlamak için 2 saat harca",
+            "Ayda 30 kez tekrarla"
+          ],
+          "conclusion": "Bu, tükenmenin en hızlı yoludur. Manuel, yavaş ve ölçeklenmesi imkansızdır."
+        }
+      },
+      "newWay": {
+        "title": "Yeni Yol: 1 Fikir → 10 Kart → 30 Gönderi",
+        "formula": "1 Fikir → 10 Kart → 30 Gönderi",
+        "description": "Her gün sıfırdan başlamaktansa, atomizasyon kullanıyoruz. Bir \"Makro\" fikir (derinlemesine bir rehber veya benzersiz bir içgörü gibi) alıyorsunuz ve bunu \"Mikro\" varlıklara ayırıyorsunuz.",
+        "idea": {
+          "title": "Ana Fikir",
+          "description": "Bir yüksek değerli kavram"
+        },
+        "cards": {
+          "title": "Şablon Kartlar",
+          "description": "Atomize edilmiş içerik parçaları"
+        },
+        "posts": {
+          "title": "Günlük Gönderiler",
+          "description": "Çok formatlı içerik"
+        }
+      },
+      "step1": {
+        "title": "Adım 1: Ana Fikir",
+        "subtitle": "Hedef kitleniz için yüksek değerli bir konu seçin.",
+        "description": "Gerçek değer sağlayan ve daha küçük bileşenlere ayrılabilen bir şey seçin. Bu, derinlemesine anladığınız ve otoriteyle konuşabileceğiniz bir konu olmalıdır. Pazarlamacılar için: bir kampanya stratejisi. Yaratıcılar için: imza konusu. Ebeveynler için: eğitimsel bir kavram. ESL öğretmenleri için: dil öğrenme teması.",
+        "example": {
+          "title": "Farklı kitleler için örnekler:",
+          "content": "Pazarlamacılar: Ürün lansman stratejisi | Yaratıcılar: Kişisel marka ipuçları | Ebeveynler: Çocuklar için İngilizce kelime bilgisi | ESL Öğretmenleri: İş İngilizcesi ifadeleri"
+        }
+      },
+      "step2": {
+        "title": "Adım 2: 10 Kart Genişlemesi",
+        "subtitle": "Nano Şablonlarımızı kullanarak, sadece bir tweet yazmıyorsunuz. Bir \"Paket\" üretiyorsunuz.",
+        "description": "O bir ana fikirden, hedef kitlenize uygun çok çeşitli içerik kartları anında oluşturabilirsiniz. Pazarlamacılar kampanya varlıkları oluşturabilir. Yaratıcılar marka içeriği oluşturabilir. Ebeveynler öğrenme materyalleri geliştirebilir. ESL öğretmenleri dil dersleri tasarlayabilir.",
+        "vocabularyCards": {
+          "title": "5 Kelime Kartı",
+          "description": "Tanımlar ve örneklerle iki dilli görsel kartlar"
+        },
+        "sentenceCards": {
+          "title": "3 Cümle-içinde Kartı",
+          "description": "Gerçek yaşam senaryolarında uygun bağlamda kullanılan kelime"
+        },
+        "sceneCards": {
+          "title": "2 \"Sahne\" Kartı",
+          "description": "Bir ayar ile ilgili birden fazla kelime, örneğin bir ofis veya mutfak"
+        }
+      },
+      "step3": {
+        "title": "Adım 3: 30 Günlük Dağıtım",
+        "subtitle": "Formatı değiştirerek—bu kartları statik görüntülere, iki dilli videolara ve döngüsel gönderilere dönüştürerek—artık bir aylık içerik elde ettiniz.",
+        "description": "Her kart, ana mesajınızda tutarlılığı korurken, birden fazla içerik formatına dönüştürülebilir ve size çeşitlilik sunar.",
+        "formats": {
+          "staticImages": {
+            "title": "Statik Görüntüler",
+            "description": "Instagram, Pinterest ve blog gönderileri için mükemmel"
+          },
+          "bilingualVideos": {
+            "title": "İki Dilli Videolar",
+            "description": "TikTok ve Reels için otomatik ses akışımızı kullanarak"
+          },
+          "carouselPosts": {
+            "title": "Döngüsel Gönderiler",
+            "description": "LinkedIn ve Facebook için çoklu slayt içeriği"
+          }
+        }
+      },
+      "demo": {
+        "title": "Demo: Şablondan Çıktıya",
+        "description": "Otomatik akışımızın bunu nasıl yönettiğini kontrol edin. Sisteme bir şablon veriyorsunuz ve OCR ve LLM'leri kullanarak kelimeleri tanıyor, iki dilli sesli çeviriler üretiyor ve paylaşmaya hazır bir video ihraç ediyor.",
+        "placeholder": {
+          "title": "Video Demo Yer Tutucu",
+          "description": "Bir \"Uç/Yüz/Atla\" kartının sesli bir video haline dönüşümünü gösteriyor"
+        },
+        "quote": "Amaç daha fazla çalışmak değil; varlıklarınızı sizin için daha fazla çalıştırmaktır."
+      },
+      "conclusion": {
+        "title": "Sıfırdan Başlamayı Bırakın",
+        "subtitle": "Tutarlılık, pazarlamada gerçekten işe yarayan tek \"hack\"dir.",
+        "description1": "Ama tutarlılık, aklınızı kaybetmenize neden olmamalıdır. Şablon paketleri kullanarak, sadece \"gönderiler\" yapmıyorsunuz—ölçeklenebilir bir içerik motoru inşa ediyorsunuz.",
+        "description2": "Bu yaklaşım, içerik oluşturmayı günlük bir eziyetten, zamanla biriken sistematik bir sürece dönüştürüyor.",
+        "finalThought": "Sizin için değil, aleyhinize çalışan ölçeklenebilir bir içerik motoru oluşturun."
+      },
+      "footer": {
+        "tags": [
+          "İçerik Stratejisi",
+          "İçerik Pazarlaması",
+          "Nano Şablonlar",
+          "İçerik Otomasyonu",
+          "Sosyal Medya Pazarlaması",
+          "İçerik Oluşturma",
+          "Pazarlama Sistemleri",
+          "Şablon Paketleri",
+          "Yaratıcı Araçlar",
+          "Eğitim İçeriği",
+          "Ebeveyn Kaynakları",
+          "ESL Öğretimi"
+        ],
+        "questions": "İçerik çoğaltma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
+      }
+    },
+    "viralLearningContent": {
+      "title": "Viral Öğrenme İçeriği Nasıl Oluşturulur (Flashkartlar, Diyalog Sahne, Görsel Bilgi)",
+      "publishedDate": "6 Nisan 2026",
+      "readTime": "10 dk okuma",
+      "category": "Öğrenme İçeriği",
+      "target": {
+        "title": "🎯 Hedef Kitle",
+        "description": "Bu içerik stratejisi, eğitim içeriği oluşturan herkes için tasarlanmıştır; bu içerik, pazarlamacıların eğitim kampanyaları geliştirmesinden, yaratıcıların öğrenme markaları oluşturmasına, ebeveynlerin çocuklarını eğitmesine ve ESL eğitmenlerinin öğrencilerin İngilizce öğrenmesine yardımcı olmasına kadar ilgi çekici ve viral olmalıdır.",
+        "marketers": {
+          "title": "Pazarlamacılar İçin",
+          "description": "Otorite oluşturan ve değerli öğrenme içeriği ile dönüşümleri artıran eğitim kampanyaları oluşturun"
+        },
+        "creators": {
+          "title": "İçerik Üreticileri İçin",
+          "description": "Hedef kitlenin paylaşmayı ve etkileşimde bulunmayı sevdiği eğitim içeriği ile markanızı oluşturun"
+        },
+        "parents": {
+          "title": "Ebeveynler İçin",
+          "description": "Çocuklarınızın eğlenceli ve etkili bir şekilde öğrenmesini sağlayan görsel, iki dilli içerik ile yardımcı olun"
+        },
+        "eslLearners": {
+          "title": "ESL Eğitmenleri İçin",
+          "description": "Öğrencilerin gerçekten kullanmak ve paylaşmak istediği etkileyici dil öğrenme materyalleri oluşturun"
+        }
+      },
+      "whyMatters": {
+        "title": "🔥 Neden Önemli",
+        "alignment": {
+          "title": "Mükemmel Şablon Uyumu",
+          "description": "Mevcut nano şablon sisteminiz ve tüm kullanım senaryolarında—pazarlama kampanyaları, içerik üreticisi içeriği, ebeveyn eğitimi ve ESL öğretimi—görsel öğrenme araçları ile uyum sağlar."
+        },
+        "searchIntent": {
+          "title": "Yüksek Arama Niyeti",
+          "keywords": [
+            "kelime dağarcığı nasıl öğretilir",
+            "ESL içerik fikirleri",
+            "öğrenme kartları",
+            "görsel öğrenme şablonları",
+            "eğitim içeriği oluşturma",
+            "iki dilli eğitim",
+            "pazarlama eğitim içeriği",
+            "ebeveyn öğretim kaynakları",
+            "dil öğrenme görselleri"
+          ]
+        }
+      },
+      "coreAngle": {
+        "title": "🧠 Temel Açıklama",
+        "headline": "Öğrenme içeriği sıkıcıdır → görselleştirilmedikçe",
+        "description": "Geleneksel eğitim içeriği, metin ağırlıklı ve ilham verici olmadığı için başarısız olur. Çözüm? Soyut kavramları, öğrencilerin, müşterilerin, takipçilerin veya çocukların gerçekten paylaşmak istediği görsel, etkileşimli deneyimlere dönüştürmek—ister bir ürün pazarlıyor olun, ister bir içerik üretici markası oluşturun, ister çocuklarınıza öğretin, ister ESL öğrencilerine yardımcı olun.",
+        "insight": "İnsanlar sıkıcı çalışma sayfalarını veya genel içerikleri paylaşmaz. Karmaşık kavramları basit ve akılda kalıcı hale getiren güzel, görsel öğrenme kartlarını paylaşırlar—ister pazarlama içgörüleri, ister içerik üretici ipuçları, ister ebeveyn rehberliği, ister dil dersleri olsun."
+      },
+      "structure": {
+        "title": "🧩 İçerik Yapısı",
+        "problem": {
+          "title": "Sorun: Eğitim İçeriği Etkileşim Sağlamıyor",
+          "description": "Çoğu eğitim içeriği, öğrenicileri uyutuyor—ister müşteriler, ister takipçiler, ister çocuklar, ister öğrenciler olsun. Yoğun metin, sıkıcı düzenler ve görsel çekiciliğin olmaması, öğrenme başlamadan önce etkileşimi öldürüyor.",
+          "quote": "Hedef kitlemin bir kez bile bakmadığı içerikler oluşturmak için saatler harcadım."
+        },
+        "solution": {
+          "title": "Çözüm: Görsel Kartlar + Yapılandırılmış Şablonlar",
+          "description": "Öğrenmeyi, hedef kitlenizin—ister müşteriler, ister takipçiler, ister çocuklar, ister öğrenciler olsun—gerçekten etkileşimde bulunmak ve paylaşmak istediği, görsel olarak çekici içeriklere dönüştürün.",
+          "visualCards": {
+            "title": "Görsel Öğrenme Kartları",
+            "description": "Kelime dağarcığını ve kavramları, resimler, örnekler ve bağlam ile paylaşılabilir görsel kartlara dönüştürün. Pazarlama eğitimi, içerik üretici ipuçları, ebeveyn rehberliği veya ESL öğretimi için mükemmel."
+          },
+          "structuredTemplates": {
+            "title": "Yapılandırılmış Şablonlar",
+            "description": "Tüm eğitim içeriğiniz—pazarlama içgörüleri, içerik üretici bilgileri, ebeveyn dersleri veya dil eğitimi—üzerinde öğrenme kalıcılığını ve sosyal paylaşımı en üst düzeye çıkaran kanıtlanmış düzenleri kullanın."
+          }
+        },
+        "examples": {
+          "title": "Uygulamadaki Örnekler",
+          "vocabularyCards": {
+            "title": "Kelime Kartları",
+            "description": "Görseller, tanımlar ve örnek cümleler ile görsel flaş kartlar.",
+            "card": "Kart"
+          },
+          "dialogueScenes": {
+            "title": "Diyalog Sahne",
+            "description": "Görsel bağlam ve karakter etkileşimleri ile etkileşimli konuşma senaryoları.",
+            "scene": "Sahne"
+          }
+        },
+        "scaling": {
+          "title": "Ölçekleme: Parti Üretimi",
+          "description": "Kaliteyi korurken miktarı en üst düzeye çıkaran şablon sistemleri kullanarak saatler içinde haftalarca içerik oluşturun.",
+          "batchGeneration": {
+            "title": "Parti Üretim Gücü",
+            "description": "Bir şablondan 50 kelime kartı oluşturun, ardından bunları birden fazla format ve platformda yeniden kullanın."
+          }
+        }
+      },
+      "whatNotToDo": {
+        "title": "❌ Ne YAPMAMALISINIZ (Önemli)",
+        "warning": "Eğitim içeriği stratejinizi öldüren bu yaygın hatalardan kaçının:",
+        "genericPosts": {
+          "title": "Genel AI Gönderileri",
+          "description": "Herkesin oluşturduğu \"En İyi 10 AI Aracı\" gönderilerini yazmayı bırakın. Bunlar dönüşüm sağlamaz ve otoritenizi inşa etmez."
+        },
+        "broadInspiration": {
+          "title": "Geniş İlham Gönderileri",
+          "description": "Hedef kitlenizin bugün uygulayabileceği belirli iş akışlarına bağlı olmayan AI İçerik makalelerinden kaçının."
+        },
+        "unrelatedContent": {
+          "title": "Ürün İş Akışınıza Bağlı Olmayan Herhangi Bir Şey",
+          "description": "Her bir içerik parçası, şablonlarınızın gerçek eğitim problemlerini nasıl çözdüğünü göstermelidir."
+        }
+      },
+      "finalRecommendation": {
+        "title": "🎯 Son Tavsiye (Acımasız Olun)",
+        "subtitle": "Bu hafta sadece 2 gönderi yapacaksanız, bunları yapın:",
+        "description": "Trafiği artıran, dönüşümleri sağlayan ve hedef kitlenizi oluşturan yüksek etkili içeriklere odaklanın—ister ürün pazarlıyor olun, ister bir içerik üretici markası büyütüyor olun, ister çocuklarınıza öğretin, ister ESL öğrencilerine yardımcı olun.",
+        "priority1": {
+          "title": "İçerik Sistemi (Şablonlar + Parti Üretimi)",
+          "description": "Şablon sisteminizi kullanarak ölçeklenebilir eğitim içeriği oluşturmayı gösterin. Bu, pazarlamacılar, içerik üreticileri, ebeveynler ve eğitimciler için uzun vadeli trafik ve SEO değeri sağlar."
+        },
+        "priority2": {
+          "title": "İki Dilli Video (Çeviri)",
+          "description": "Eğitim içeriği ile çeviri yeteneklerinizi gösterin. Bu, dönüşümleri artırır ve sizi rakiplerinizden ayırır—çok dilli pazarlama, içerik üretici içeriği, ebeveyn eğitimi veya ESL öğretimi için mükemmel."
+        },
+        "priority3": {
+          "title": "Öğrenme İçeriği (ESL Yaratıcıları)",
+          "description": "Üçüncü bir gönderi için zamanınız varsa, kitleye özel içerikler oluşturun: pazarlama içgörüleri, yaratıcı ipuçları, ebeveyn rehberliği veya bu yüksek niyetli kitleleri yakalayan ESL dersleri."
+        }
+      },
+      "cta": {
+        "title": "Viral Öğrenme İçeriği Oluşturmaya Başlayın",
+        "description": "Eğitim içeriğinizi dönüştürmeye hazır mısınız? Ücretsiz öğrenme kartı paketimizi alın ve öğrencilerin gerçekten paylaşmak istediği içerikler oluşturmaya başlayın.",
+        "button": "Ücretsiz Öğrenme Kartı Paketini Al"
+      },
+      "footer": {
+        "tags": [
+          "Öğrenme İçeriği",
+          "ESL Eğitimi",
+          "Görsel Öğrenme",
+          "Eğitim Şablonları",
+          "İçerik Stratejisi",
+          "Flashkartlar",
+          "Eğitim Pazarlaması",
+          "Bilgi Paylaşımı",
+          "Pazarlama Eğitimi",
+          "Yaratıcı İçerik",
+          "Ebeveyn Eğitimi",
+          "Dil Öğrenimi"
+        ],
+        "questions": "Viral öğrenme içeriği oluşturma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
+      }
+    },
+    "aiContentProductionSystem": {
+      "title": "Bir AI İçerik Üretim Sistemi Nasıl Kurduk (Sadece Araçlar Değil)",
+      "date": "8 Nisan 2026",
+      "readTime": "12 dk okuma",
+      "intro": "Günümüzdeki çoğu AI ürünü, üretimle sınırlıdır. Bir istem verirsiniz. Bir çıktı alırsınız. Ama gerçek içerik oluşturma böyle çalışmaz. İçerik tek bir adım değildir — bir sistemdir. İlhamdan → üretime → dağıtıma kadar AI destekli bir içerik üretim sistemi kurduk.",
+      "whatIsTitle": "Sorun: AI Üretebilir, Ama İçeriği Ölçeklendiremez",
+      "whatIsContent": "ChatGPT, Midjourney ve diğer üretken modeller gibi araçlar güçlüdür. Ama eğer bir yaratıcı, pazarlamacı veya geliştiriciyseniz, hızla sınırlamalarla karşılaşırsınız: Fikirlerin tutarlı bir kaynağı yok, çıktılar yapısız ve yeniden kullanımı zor, yerleşik bir dağıtım stratejisi yok ve içeriği geliştirmek için bir geri bildirim döngüsü yok. Bir harika parça üretebilirsiniz, ama bir sistem kuramazsınız.",
+      "whyTitle": "Yaklaşımımız: Bir İçerik Sistemi Kurun, Araç Değil",
+      "whyContent": "Sistemimizi bir döngü olarak tasarladık: İlham → Yapılandırma → Üretim → Depolama → Dağıtım → Geri Bildirim (SEO). Bu, doğrusal bir boru hattı değildir. Zamanla gelişen geri bildirim odaklı bir sistemdir.",
+      "step1Title": "1. İlham: RSS, Trendler ve İnsan Yargısını Birleştirmek",
+      "step1Content": "Her içerik sistemi fikirlerle başlar. RSS beslemelerinden, trend konulardan ve mevcut yüksek performanslı içerikten sinyaller çeken hafif bir ilham katmanı oluşturduk. Sonra AI kullanarak sinyalleri özetliyoruz, ana temaları çıkarıyoruz ve potansiyel içerik yönlerini öneriyoruz. Ama işte anahtar: AI önerir. İnsanlar karar verir. Relevans ve kaliteyi sağlamak için insanı döngüde tutuyoruz.",
+      "step2Title": "2. Yapılandırma: İçeriği Yeniden Kullanılabilir Birimlere Dönüştürmek",
+      "step2Content": "Çoğu AI aracı ham çıktılar üretir. Biz üretmiyoruz. İçeriği görsel bilgi kartları, diyalog şablonları, eğitim infografikleri ve video için storyboardlar gibi yapılandırılmış, yeniden kullanılabilir formatlara dönüştürüyoruz. Bu, içeriği standartlaştırmamıza, üretimi ölçeklendirmemize ve tutarlılığı artırmamıza olanak tanır. Ham içerik üretmiyoruz. Yapılandırılmış içerik birimleri üretiyoruz.",
+      "step3Title": "3. Üretim: Metin, Görüntü ve Video Üzerinde Çok Modlu AI",
+      "step3Content": "Yapılandırılmış şablonların üzerine, içerik üretmek için AI uyguluyoruz. Metin: içerik genişletme, çeviri (çok dilli destek), ton/stil uyarlaması. Görüntü: istem tabanlı görsel üretim, şablon odaklı düzenler. Video (gelişen katman): konuşma tanıma, altyazı üretimi, çeviri, ses sentezi (TTS / ses klonlama), storyboard etiketleme. Çok modlu AI'nın kritik hale geldiği yer burasıdır: metin + görüntü + ses + video → birleşik içerik boru hattı.",
+      "step4Title": "4. Depolama ve Etiketleme: İçeriği Keşfedilebilir Hale Getirmek",
+      "step4Content": "İçerik üretildikten sonra, sadece depolamıyoruz. Aranabilir ve keşfedilebilir hale getiriyoruz: etiketleme (konular, stiller, kullanım durumları), şablon ilişkileri, SEO için meta veriler. Bu, daha iyi iç keşif, ölçeklenebilir içerik kütüphaneleri ve SEO dizinlemesi sağlar.",
+      "step5Title": "5. Dağıtım: AI Destekli, Manuel Değil",
+      "step5Content": "Çoğu yaratıcı dağıtımı küçümser. Biz bunu birinci sınıf bir sistem olarak ele alıyoruz. İçeriği kendi web sitemiz (SEO + beslemeler) ve X (Twitter) ve Facebook grupları gibi dış platformlarda dağıtıyoruz. Tamamen manuel paylaşım yerine, hibrit bir yaklaşım kullanıyoruz: AI içerik taslakları oluşturur, insanlar geliştirir, otomatik paylaşım sistemleri yürütmeyi üstlenir. Dağıtım artık manuel değil. AI desteklidir.",
+      "step6Title": "6. Geri Bildirim Döngüsü: SEO Bir Ürün Sinyali Olarak",
+      "step6Content": "İçerik sistemlerinin en az takdir edilen kısımlarından biri geri bildirimdir. SEO'yu sadece trafik için değil, aynı zamanda bir sinyal sistemi olarak kullanıyoruz: arama sorguları kullanıcı niyetini ortaya çıkarır, sayfa performansı kazanan formatları belirler, anahtar kelime boşlukları yeni şablonlar ve araçlar ilham verir. SEO sadece edinim değildir. Bu bir ürün geri bildirimidir. Bu döngüyü kapatır.",
+      "step7Title": "7. Çok Modlu Boru Hattı: Gelecek Katmanı",
+      "step7Content": "Bu sistemin üzerine, daha gelişmiş bir boru hattı inşa ediyoruz: Video → Transkripsiyon → Çeviri → Ses → Yeniden Yapılandırılmış Video. Bu, konuşma tanıma, makine çevirisi, metinden sese, hizalama ve zamanlama, çok dilli çıktı içerir. Amaç basit: Herhangi bir içeriği küresel olarak dağıtılabilir medya haline getirmek.",
+      "step8Title": "8. Nasıl Çalışıyoruz: İş Akışları + AI Ajanları",
+      "step8Content": "Sadece AI ürünleri inşa etmiyoruz. Onları inşa etmek için AI kullanıyoruz. İç iş akışımız, iş akışına dayalı sistemleri (modüler araçlar, yapılandırma odaklı boru hatları, tekrarlanabilir süreçler) ve kod üretimi, hata ayıklama ve hızlı yineleme için ajan tabanlı geliştirmeyi (örneğin, Claude Code) birleştirir. AI sadece üründe değil. Geliştirme sürecinde de var.",
+      "toolsTitle": "Sistem Bileşenleri",
+      "toolsContent": "**İlham Katmanı**: RSS beslemeleri, trend analizi, içerik performans metrikleri\n**Yapı Motoru**: Şablon sistemi, içerik modülerleştirme, format standartlaştırma\n**Üretim Boru Hattı**: Metin AI, görüntü AI, video AI, ses işleme\n**Depolama Sistemi**: Meta veri etiketleme, arama dizinleme, içerik ilişkileri\n**Dağıtım Motoru**: Çok platformlu yayınlama, otomatik programlama, performans takibi\n**Geri Bildirim Döngüsü**: SEO analitiği, kullanıcı davranışı analizi, içerik optimizasyonu",
+      "curifyTitle": "Kendiniz Deneyin",
+      "curifyContent": "Eğer çok dilli içerik, AI destekli oluşturma veya ölçeklenebilir içerik iş akışlarını keşfediyorsanız, sistemimizin bir kısmını deneyebilirsiniz. Bu ilkeleri somutlaştıran araçlar geliştirdik - yapılandırılmış içerik üretiminden otomatik dağıtım iş akışlarına kadar.",
+      "ctaText": "İçerik iş akışınızı dönüştürmeye hazır mısınız?",
+      "ctaLink": "Curify'nin AI İçerik Sistemini Deneyin",
+      "conclusionTitle": "Son Düşünceler: Gelecek Sistemlerdir, İstemler Değil",
+      "conclusionContent": "AI'nın bir sonraki dalgası, daha iyi istemler veya daha iyi modellerle tanımlanmayacak. Daha iyi sistemlerle tanımlanacak. Fikirleri yakalayan, içeriği yapılandıran, üretimi ölçeklendiren, dağıtımı otomatikleştiren ve geri bildirimden öğrenen sistemler. İşte biz bunu inşa ediyoruz."
+    },
+    "aiContentDistributionSystem": {
+      "title": "Bir AI İçerik Dağıtım Sistemi Nasıl Kurduk (X, Facebook ve SEO)",
+      "date": "8 Nisan 2026",
+      "readTime": "10 dk okuma",
+      "intro": "Çoğu insan AI'nın içerik oluşturmayı çözdüğünü düşünüyor. Ama çözmedi. Çünkü oluşturma artık darboğaz değil. Dağıtım. AI ile 100 parça içerik üretebilirsiniz. Ama insanların gerçekten onları görmesini sağlamak? Bu hala manuel, tutarsız ve ölçeklenmesi zor. Bu yüzden sadece üretime odaklanmak yerine, farklı bir şey inşa ettik: SEO, X ve Facebook arasında AI destekli bir içerik dağıtım sistemi.",
+      "problemTitle": "Gerçek Sorun: Dağıtım Ölçeklenmiyor",
+      "problemContent": "Eğer bir yaratıcı, pazarlamacı veya bağımsız geliştiriciyseniz, muhtemelen bunu deneyimlediniz: İçerik paylaşırsınız → traction yok, Farklı formatlar denersiniz → tutarsız sonuçlar, Platformlar arasında manuel paylaşım yaparsınız → zaman alıcı, Ne olacağını bilmezsiniz → geri bildirim döngüsü yok. AI, içerik üretimini daha hızlı hale getirmemize yardımcı oldu. Ama dağıtımı çözmedi.",
+      "approachTitle": "Yaklaşımımız: Dağıtımı Bir Sistem Olarak Ele Almak",
+      "approachContent": "İçerik paylaşmak yerine, bir boru hattı oluşturduk: İçerik → Platform Formatlama → AI Taslağı → İnsan Geliştirmesi → Planlı Dağıtım. Bu, dağıtımı: ❌ manuel paylaşım yerine: ✅ tekrarlanabilir bir sisteme dönüştürüyor.",
+      "step1Title": "Adım 1: Platforma Özel Formatlama",
+      "step1Content": "Aynı içerik her yerde işe yaramaz. İçeriği farklı formatlara uyarlıyoruz: &lt;strong&gt;Web Sitesi (SEO)&lt;/strong&gt; - Yapılandırılmış sayfalar, Şablon odaklı içerik, Dizine alınmış ve aranabilir. &lt;strong&gt;X (Twitter)&lt;/strong&gt; - Kısa biçimli diziler, İçgörü odaklı kancalar, Hızlı yineleme. &lt;strong&gt;Facebook Grupları&lt;/strong&gt; - Bağlamsal gönderiler, Tartışma odaklı, Niş kitle hedefleme. Dağıtım kopyala-yapıştır değildir. Bu format uyarlamasıdır.",
+      "step2Title": "Adım 2: AI Taslağı (Ama Tamamen Otomatik Değil)",
+      "step2Content": "Post taslakları, Kanca varyasyonları, Platforma özel ton oluşturmak için AI kullanıyoruz. Ama tamamen otomatikleştirmiyoruz. AI taslakları. İnsanlar rafine eder. Bu hibrit döngü, hız (AI) ve kaliteyi (insan) garanti eder.",
+      "step3Title": "Adım 3: Niş Dağıtım Geniş Erişimden Üstündür",
+      "step3Content": "En büyük öğrenimlerimizden biri: Niş dağıtım > geniş dağıtım. Her yerde paylaşmak yerine, belirli Facebook gruplarına (konu / IP / ilgiye göre), hedef kitlelere, bağlamsal alaka düzeyine odaklanıyoruz. Örnekler: film klipleri → film grupları, iki dilli altyazılar → dil öğrenenler, AI araçları → yapıcı topluluklar. Bu, etkileşimi, tıklama oranını, organik erişimi dramatik şekilde artırır.",
+      "step4Title": "Adım 4: SEO Temel Olarak",
+      "step4Content": "Sosyal platformlar değişken. SEO birikimli. SEO'yu kullanıyoruz: yapılandırılmış içerik barındırmak, uzun kuyruk sorgularını yakalamak, bir içerik kütüphanesi oluşturmak için. Her içerik parçası: bir açılış sayfası, bir keşif giriş noktası haline gelir. Sosyal, ani artışlar sağlar. SEO, uzun vadeli büyüme inşa eder.",
+      "learningsTitle": "Adım 5: Gerçekten Ne İşe Yarıyor (Öğrenimlerimiz)",
+      "learningsContent": "Bu sistemi çalıştırdıktan sonra gördüğümüz şeyler: &lt;b&gt;Görsel + yapılandırılmış içerik kazanır&lt;/b&gt; - kartlar, şablonlar, infografikler ham metni geride bırakır. &lt;b&gt;İki dilli içerik avantaj sağlar&lt;/b&gt; - kitleyi genişletir, paylaşılabilirliği artırır. &lt;b&gt;Tekrar, yenilikten üstündür&lt;/b&gt; - aynı format, farklı konular → ölçeklenebilir. &lt;b&gt;Dağıtım, üretimden daha önemlidir&lt;/b&gt; - iyi dağıtım ortalama içeriği kurtarabilir, kötü dağıtım harika içeriği öldürür.",
+      "automationTitle": "Adım 6: Otomasyon (Dikkatli Uygulama)",
+      "automationContent": "Gönderi zamanlaması, varyasyon oluşturma, içerik seçimi için otomasyon denemeleri yaptık. Ama tam otomasyon iyi çalışmıyor. Bunun yerine, deterministik seçim (içerik döngüsü), AI destekli taslak oluşturma, insan onay döngüleri kullanıyoruz. Amaç tam otomasyon değil. Ölçeklenebilir avantajdır.",
+      "feedbackTitle": "Adım 7: Geri Bildirim ile Döngüyü Tamamlama",
+      "feedbackContent": "Sistemin önemli bir parçası geri bildirimdir: SEO verileri → insanların ne aradığı, etkileşim verileri → insanların neyi sevdiği, platform performansı → hangi formatların işe yaradığı. Bu, içerik oluşturma, şablon tasarımı, araç geliştirme süreçlerine geri beslenir. Dağıtım son değil. Döngünün bir parçasıdır.",
+      "conclusionTitle": "Son Düşünceler: Dağıtım Yeni Farklılaştırmadır",
+      "conclusionContent": "AI, içerik üretimini ucuz hale getirdi. Bu nedenle avantaj artık: daha fazla üretebilen kim. Ama: daha iyi dağıtabilen kim. İçeriğin geleceği sadece AI üretimi değil. AI destekli dağıtım sistemleridir.",
+      "tryItTitle": "Kendin Deneyin",
+      "tryItContent": "Eğer: çok dilli içerik, AI destekli oluşturma, ölçeklenebilir dağıtım araştırıyorsanız. Sistemimizin bir kısmını burada deneyebilirsiniz: 👉 https://www.curify-ai.com/tools/bilingual-subtitles",
+      "bonusTitle": "Bonus: Bu Kime Yarar",
+      "bonusContent": "Bu sistem özellikle şunlar için faydalıdır: içerik üreticisi olarak çıktıyı ölçeklendirenler, formatları test eden pazarlamacılar, tek başına büyüme yapan bağımsız yapımcılar, çok dilli içerik deneyenler.",
+      "seoKeywords": "AI içerik dağıtım sistemi, AI içerik pazarlama otomasyonu, içerik dağıtım stratejisi AI, SEO + sosyal dağıtım sistemi, AI sosyal medya otomasyonu"
     }
   },
   "aeVsComfyUi": {

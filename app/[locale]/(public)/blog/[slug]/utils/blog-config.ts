@@ -42,7 +42,9 @@ export function createBlogPostsConfig() {
       'lip-sync-business-guide': 'lipSyncBusinessGuide',
       'lip-sync-technical-deep-dive': 'lipSyncTechnicalDeepDive',
       'character-prompt-generator': 'characterPromptGenerator',
-      'visual-learning-tools': 'visualLearningTools'
+      'visual-learning-tools': 'visualLearningTools',
+      'ai-content-distribution-system': 'aiContentDistributionSystem',
+      'ai-content-production-system': 'aiContentProductionSystem'
     };
     
     namespace = namespaceMap[slug] || namespace;
@@ -120,5 +122,6 @@ export const availableKeys: Record<string, string[]> = {
   'lipSyncTechnicalDeepDive': ['intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'howTitle', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent'],
   'characterPromptGenerator': ['title', 'publishedDate', 'readTime', 'category', 'heroImageAlt', 'whatWeHave', 'whoCanBenefit', 'howToUse', 'advancedFeatures', 'realWorldApplications', 'footer', 'questions'],
   'visualLearningTools': ['title', 'publishedDate', 'readTime', 'category', 'introduction', 'whatWeOffer', 'forStudents', 'forParents', 'forTeachers', 'howToGetStarted', 'successStories', 'footer'],
-  'bestAiTools': ['title', 'publishedDate', 'readTime', 'category', 'heroImageAlt', 'introduction', 'tools', 'features', 'pricing', 'bestFor', 'comparison', 'howToChoose', 'workflow', 'tips', 'future', 'footer']
+  'bestAiTools': ['title', 'publishedDate', 'readTime', 'category', 'heroImageAlt', 'introduction', 'tools', 'features', 'pricing', 'bestFor', 'comparison', 'howToChoose', 'workflow', 'tips', 'future', 'footer'],
+  'aiContentProductionSystem': ['title', 'date', 'readTime', 'intro', 'whatIsTitle', 'whatIsContent', 'whyTitle', 'whyContent', 'step1Title', 'step1Content', 'step2Title', 'step2Content', 'step3Title', 'step3Content', 'step4Title', 'step4Content', 'step5Title', 'step5Content', 'step6Title', 'step6Content', 'step7Title', 'step7Content', 'step8Title', 'step8Content', 'toolsTitle', 'toolsContent', 'curifyTitle', 'curifyContent', 'ctaText', 'ctaLink', 'conclusionTitle', 'conclusionContent']
 };

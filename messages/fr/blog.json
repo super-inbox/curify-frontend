@@ -180,7 +180,8 @@
         "date": "19 mars 2026",
         "readTime": "8 min de lecture",
         "tag": "Outils pour créateurs",
-        "image": "/images/bussinesstranalayion.webp"
+        "image": "/images/bussinesstranalayion.webp",
+        "thumbnailType": "vidéo-transcription-entreprise"
       },
       {
         "slug": "video-transcription-technical-deep-dive",
@@ -188,7 +189,8 @@
         "date": "19 mars 2026",
         "readTime": "12 min de lecture",
         "tag": "Outils pour créateurs",
-        "image": "/images/TechicalTranslayion.webp"
+        "image": "/images/techicalpress.webp",
+        "thumbnailType": "vidéo-transcription-pipeline"
       },
       {
         "slug": "10-prompting-tips-nano-banana",
@@ -196,7 +198,7 @@
         "date": "23 mars 2026",
         "readTime": "8 min de lecture",
         "tag": "Prompts Nano Banana",
-        "image": "/images/imaggenten.webp"
+        "image": "/images/book.webp"
       },
       {
         "slug": "10-prompting-tips-video-generation",
@@ -204,7 +206,7 @@
         "date": "23 mars 2026",
         "readTime": "9 min de lecture",
         "tag": "Outils pour créateurs",
-        "image": "/images/VideoGen.webp"
+        "image": "/images/tenprompt.webp"
       },
       {
         "slug": "comparaison-des-modeles-de-generation-dimage",
@@ -212,7 +214,7 @@
         "date": "28 mars 2026",
         "readTime": "12 min de lecture",
         "tag": "Outils pour Créateurs",
-        "image": "/images/Picturecompare.webp"
+        "image": "/images/hardworker.webp"
       },
       {
         "slug": "guide-des-affaires-de-synchronisation-lipsync",
@@ -220,7 +222,7 @@
         "date": "29 mars 2026",
         "readTime": "10 min de lecture",
         "tag": "Outils pour Créateurs",
-        "image": "/images/lip_syncbusiness_guide.webp"
+        "image": "/images/office.webp"
       },
       {
         "slug": "plongée-technique-sur-la-synchronisation-lipsync",
@@ -261,6 +263,62 @@
         "readTime": "12 min de lecture",
         "tag": "Outils pour créateurs",
         "image": "/images/lightsnano.webp"
+      },
+      {
+        "slug": "système-de-multiplication-de-contenu",
+        "title": "Comment transformer 1 idée en 30 jours de contenu (sans s'épuiser)",
+        "date": "6 avril 2026",
+        "readTime": "8 min de lecture",
+        "tag": "Stratégie de Contenu",
+        "image": "/images/thirtyday.webp",
+        "category": "outils-de-créateur",
+        "relatedLinks": [
+          "nano-banana-prompt-ecosystem",
+          "10-conseils-de-prompting-nano-banana",
+          "générateur-de-prompt-de-personnage"
+        ]
+      },
+      {
+        "slug": "contenu-d'apprentissage-viral",
+        "title": "Comment créer du contenu d'apprentissage viral (cartes mémoire, scènes de dialogue, connaissances visuelles)",
+        "date": "6 avril 2026",
+        "readTime": "10 min de lecture",
+        "tag": "Contenu d'Apprentissage",
+        "image": "/images/learnContent.png",
+        "category": "outils-de-créateur",
+        "relatedLinks": [
+          "système-de-multiplication-de-contenu",
+          "générateur-de-prompt-de-personnage",
+          "outils-d'apprentissage-visuels"
+        ]
+      },
+      {
+        "slug": "système-de-production-de-contenu-ai",
+        "title": "Comment nous avons construit un système de production de contenu AI (pas seulement des outils)",
+        "date": "8 avril 2026",
+        "readTime": "12 min de lecture",
+        "tag": "Architecture AI",
+        "image": "/images/aicontentproduction.webp",
+        "category": "ingénierie-ai-ds",
+        "relatedLinks": [
+          "aiPlatform",
+          "agents-vs-workflows",
+          "système-de-multiplication-de-contenu"
+        ]
+      },
+      {
+        "slug": "système-de-distribution-de-contenu-ai",
+        "title": "Comment nous avons construit un système de distribution de contenu AI (X, Facebook et SEO)",
+        "date": "8 avril 2026",
+        "readTime": "10 min de lecture",
+        "tag": "Marketing de Contenu",
+        "image": "/images/contentdistributionsystem.webp",
+        "category": "outils-de-créateur",
+        "relatedLinks": [
+          "système-de-production-de-contenu-ai",
+          "système-de-multiplication-de-contenu",
+          "aiPlatform"
+        ]
       }
     ],
     "translateYoutubevideo": {
@@ -2218,6 +2276,341 @@
           ]
         }
       }
+    },
+    "contentMultiplicationSystem": {
+      "title": "Comment transformer 1 idée en 30 jours de contenu (sans s'épuiser)",
+      "publishedDate": "6 avril 2026",
+      "readTime": "8 min de lecture",
+      "category": "Stratégie de Contenu",
+      "introduction": {
+        "title": "Le Plus Grand Mythe de la Création de Contenu",
+        "description": "Le plus grand mythe de la création de contenu est que vous avez besoin d'un flux constant d'idées \"nouvelles\" pour rester pertinent. La vérité ? Vous n'avez pas besoin de plus d'idées. Vous avez besoin d'un système pour multiplier celles que vous avez déjà. Que vous soyez un marketeur qui développe des campagnes, un créateur qui construit sa marque, un parent qui crée du contenu éducatif, ou un enseignant d'anglais langue seconde qui développe des matériaux, ce cadre transforme un concept en 30 jours de contenu précieux en utilisant le Système de Modèle Nano.",
+        "quote": "Nous décomposons le cadre exact pour prendre un seul concept central et le transformer en un mois complet de publications de grande valeur en utilisant le Système de Modèle Nano."
+      },
+      "problem": {
+        "title": "Le Problème : Le \"Tapis de Course de Contenu Manuel\"",
+        "manualTreadmill": {
+          "title": "La plupart des créateurs de contenu abordent cela comme suit :",
+          "description": "C'est le chemin le plus rapide vers l'épuisement. C'est manuel, c'est lent, et c'est impossible à échelle—que vous créiez des campagnes marketing, du contenu sur les réseaux sociaux, des matériaux éducatifs, ou des ressources d'apprentissage des langues.",
+          "approach": "Réveillez-vous. Pensez à un sujet. Passez 2 heures à écrire/concevoir un post. Répétez 30 fois par mois.",
+          "steps": [
+            "Réveillez-vous",
+            "Pensez à un sujet",
+            "Passez 2 heures à écrire/concevoir un post",
+            "Répétez 30 fois par mois"
+          ],
+          "conclusion": "C'est le chemin le plus rapide vers l'épuisement. C'est manuel, c'est lent, et c'est impossible à échelle."
+        }
+      },
+      "newWay": {
+        "title": "La Nouvelle Méthode : 1 Idée → 10 Cartes → 30 Publications",
+        "formula": "1 Idée → 10 Cartes → 30 Publications",
+        "description": "Au lieu de partir de zéro chaque jour, nous utilisons l'atomisation. Vous prenez une idée \"Macro\" (comme un guide approfondi ou une idée unique) et la décomposez en actifs \"Micro\".",
+        "idea": {
+          "title": "Idée Principale",
+          "description": "Un concept de grande valeur"
+        },
+        "cards": {
+          "title": "Cartes Modèle",
+          "description": "Pièces de contenu atomisées"
+        },
+        "posts": {
+          "title": "Publications Quotidiennes",
+          "description": "Contenu multi-format"
+        }
+      },
+      "step1": {
+        "title": "Étape 1 : L'Idée Principale",
+        "subtitle": "Choisissez un sujet de grande valeur pour votre audience.",
+        "description": "Choisissez quelque chose qui apporte une valeur réelle et peut être décomposé en composants plus petits. Cela devrait être un sujet que vous comprenez profondément et dont vous pouvez parler avec autorité. Pour les marketeurs : une stratégie de campagne. Pour les créateurs : un sujet signature. Pour les parents : un concept éducatif. Pour les enseignants d'ESL : un thème d'apprentissage des langues.",
+        "example": {
+          "title": "Exemples pour différents publics :",
+          "content": "Marketeurs : Stratégie de lancement de produit | Créateurs : Conseils sur le branding personnel | Parents : Vocabulaire anglais pour enfants | Enseignants d'ESL : Phrases en anglais des affaires"
+        }
+      },
+      "step2": {
+        "title": "Étape 2 : L'Expansion en 10 Cartes",
+        "subtitle": "En utilisant nos Nano Templates, vous ne vous contentez pas d'écrire un tweet. Vous générez un \"Pack\".",
+        "description": "À partir de cette idée principale, vous pouvez instantanément créer plusieurs types de cartes de contenu adaptées à votre audience. Les marketeurs peuvent créer des actifs de campagne. Les créateurs peuvent construire du contenu de marque. Les parents peuvent développer des matériaux d'apprentissage. Les enseignants d'ESL peuvent concevoir des leçons de langue.",
+        "vocabularyCards": {
+          "title": "5 Cartes de Vocabulaire",
+          "description": "Cartes visuelles bilingues avec définitions et exemples"
+        },
+        "sentenceCards": {
+          "title": "3 Cartes de Phrase en Contexte",
+          "description": "Le mot utilisé dans des scénarios réels avec un contexte approprié"
+        },
+        "sceneCards": {
+          "title": "2 Cartes \"Scène\"",
+          "description": "Mots multiples liés à un cadre, comme un bureau ou une cuisine"
+        }
+      },
+      "step3": {
+        "title": "Étape 3 : La Distribution sur 30 Jours",
+        "subtitle": "En variant le format—transformant ces cartes en images statiques, vidéos bilingues et publications en carrousel—vous avez maintenant un mois de contenu.",
+        "description": "Chaque carte peut être transformée en plusieurs formats de contenu, vous offrant de la variété tout en maintenant la cohérence de votre message principal.",
+        "formats": {
+          "staticImages": {
+            "title": "Images Statiques",
+            "description": "Parfait pour Instagram, Pinterest et les publications de blog"
+          },
+          "bilingualVideos": {
+            "title": "Vidéos Bilingues",
+            "description": "En utilisant notre pipeline audio automatisé pour TikTok et Reels"
+          },
+          "carouselPosts": {
+            "title": "Publications en Carrousel",
+            "description": "Contenu multi-diapositive pour LinkedIn et Facebook"
+          }
+        }
+      },
+      "demo": {
+        "title": "Démo : Du Modèle à la Sortie",
+        "description": "Découvrez comment notre pipeline automatisé gère cela. Vous fournissez au système un modèle, et il utilise l'OCR et les LLM pour reconnaître le vocabulaire, générer des traductions audio bilingues et exporter une vidéo prête à être publiée.",
+        "placeholder": {
+          "title": "Espace Réservé pour la Démo Vidéo",
+          "description": "Montrant une carte \"Voler/Nager/Sauter\" se transformant en vidéo avec audio"
+        },
+        "quote": "L'objectif n'est pas de travailler plus dur ; c'est de faire travailler vos actifs plus dur pour vous."
+      },
+      "conclusion": {
+        "title": "Arrêtez de Partir de Zéro",
+        "subtitle": "La cohérence est le seul \"hack\" qui fonctionne réellement en marketing.",
+        "description1": "Mais la cohérence ne devrait pas vous coûter votre santé mentale. En utilisant des packs de modèles, vous ne faites pas que créer des \"publications\"—vous construisez un moteur de contenu évolutif.",
+        "description2": "Cette approche transforme la création de contenu d'un travail quotidien en un processus systématique qui se cumule avec le temps.",
+        "finalThought": "Créez un moteur de contenu évolutif qui travaille pour vous, pas contre vous."
+      },
+      "footer": {
+        "tags": [
+          "Stratégie de Contenu",
+          "Marketing de Contenu",
+          "Nano Templates",
+          "Automatisation du Contenu",
+          "Marketing des Réseaux Sociaux",
+          "Création de Contenu",
+          "Systèmes de Marketing",
+          "Packs de Modèles",
+          "Outils pour Créateurs",
+          "Contenu Éducatif",
+          "Ressources pour Parents",
+          "Enseignement d'ESL"
+        ],
+        "questions": "Vous avez des questions sur la multiplication de contenu ? Contactez notre équipe de support pour une assistance personnalisée."
+      }
+    },
+    "viralLearningContent": {
+      "title": "Comment Créer du Contenu Éducatif Viral (Flashcards, Scènes de Dialogue, Connaissances Visuelles)",
+      "publishedDate": "6 avril 2026",
+      "readTime": "10 min de lecture",
+      "category": "Contenu Éducatif",
+      "target": {
+        "title": "🎯 Public Cible",
+        "description": "Cette stratégie de contenu est conçue pour quiconque crée du contenu éducatif qui doit être engageant et viral—des marketeurs développant des campagnes éducatives aux créateurs construisant des marques d'apprentissage, des parents enseignant à leurs enfants, et des éducateurs d'ESL aidant les étudiants à apprendre l'anglais.",
+        "marketers": {
+          "title": "Pour les Marketeurs",
+          "description": "Créez des campagnes éducatives qui renforcent l'autorité et génèrent des conversions grâce à un contenu d'apprentissage précieux"
+        },
+        "creators": {
+          "title": "Pour les Créateurs de Contenu",
+          "description": "Construisez votre marque avec un contenu éducatif que les audiences adorent partager et avec lequel elles s'engagent"
+        },
+        "parents": {
+          "title": "Pour les Parents",
+          "description": "Aidez vos enfants à apprendre avec un contenu visuel et bilingue qui rend l'éducation amusante et efficace"
+        },
+        "eslLearners": {
+          "title": "Pour les Éducateurs ESL",
+          "description": "Créez des matériaux d'apprentissage des langues engageants que les étudiants souhaitent réellement utiliser et partager"
+        }
+      },
+      "whyMatters": {
+        "title": "🔥 Pourquoi Cela Compte",
+        "alignment": {
+          "title": "Alignement Parfait des Modèles",
+          "description": "S'aligne avec votre système de modèles nano existant et vos outils d'apprentissage visuel dans tous les cas d'utilisation : campagnes marketing, contenu créateur, éducation parentale et enseignement ESL."
+        },
+        "searchIntent": {
+          "title": "Intention de Recherche Élevée",
+          "keywords": [
+            "comment enseigner le vocabulaire",
+            "idées de contenu ESL",
+            "cartes d'apprentissage",
+            "modèles d'apprentissage visuel",
+            "création de contenu éducatif",
+            "éducation bilingue",
+            "marketing de contenu éducatif",
+            "ressources d'enseignement pour les parents",
+            "visuels d'apprentissage des langues"
+          ]
+        }
+      },
+      "coreAngle": {
+        "title": "🧠 Angle Principal",
+        "headline": "Le contenu d'apprentissage est ennuyeux → à moins d'être visualisé",
+        "description": "Le contenu éducatif traditionnel échoue car il est trop chargé en texte et peu inspiré. La solution ? Transformer des concepts abstraits en expériences visuelles et interactives que les étudiants, clients, abonnés ou enfants souhaitent réellement partager—que vous commercialisiez un produit, construisiez une marque de créateur, enseigniez à vos enfants ou aidiez des étudiants ESL.",
+        "insight": "Les gens ne partagent pas de feuilles de travail ennuyeuses ou de contenu générique. Ils partagent de belles cartes d'apprentissage visuelles qui rendent des concepts complexes simples et mémorables—que ce soit des insights marketing, des conseils pour créateurs, des conseils parentaux ou des leçons de langue."
+      },
+      "structure": {
+        "title": "🧩 Structure du Contenu",
+        "problem": {
+          "title": "Problème : Le Contenu Éducatif N'engage Pas",
+          "description": "La plupart des contenus éducatifs endorment les apprenants—qu'ils soient clients, abonnés, enfants ou étudiants. Un texte dense, des mises en page ennuyeuses et aucune attrait visuel tuent l'engagement avant même que l'apprentissage ne commence.",
+          "quote": "J'ai passé des heures à créer du contenu que mon audience n'a jamais regardé deux fois."
+        },
+        "solution": {
+          "title": "Solution : Cartes Visuelles + Modèles Structurés",
+          "description": "Transformez l'apprentissage en contenu visuellement attrayant et facile à digérer que votre audience—qu'il s'agisse de clients, d'abonnés, d'enfants ou d'étudiants—souhaite réellement engager et partager.",
+          "visualCards": {
+            "title": "Cartes d'Apprentissage Visuelles",
+            "description": "Transformez le vocabulaire et les concepts en cartes visuelles partageables avec images, exemples et contexte. Parfait pour l'éducation marketing, les conseils pour créateurs, l'orientation parentale ou l'enseignement ESL."
+          },
+          "structuredTemplates": {
+            "title": "Modèles Structurés",
+            "description": "Utilisez des mises en page éprouvées qui maximisent la rétention d'apprentissage et le partage social dans tout votre contenu éducatif—insights marketing, connaissances pour créateurs, leçons parentales ou instruction linguistique."
+          }
+        },
+        "examples": {
+          "title": "Exemples en Action",
+          "vocabularyCards": {
+            "title": "Cartes de Vocabulaire",
+            "description": "Cartes visuelles avec images, définitions et phrases d'exemple.",
+            "card": "Carte"
+          },
+          "dialogueScenes": {
+            "title": "Scènes de Dialogue",
+            "description": "Scénarios de conversation interactifs avec contexte visuel et interactions entre personnages.",
+            "scene": "Scène"
+          }
+        },
+        "scaling": {
+          "title": "Mise à l'Échelle : Génération par Lots",
+          "description": "Créez des semaines de contenu en quelques heures en utilisant des systèmes de modèles qui maintiennent la qualité tout en maximisant la quantité.",
+          "batchGeneration": {
+            "title": "Puissance de Génération par Lots",
+            "description": "Générez 50 cartes de vocabulaire à partir d'un modèle, puis réutilisez-les sur plusieurs formats et plateformes."
+          }
+        }
+      },
+      "whatNotToDo": {
+        "title": "❌ Ce qu'il NE FAUT PAS faire (Important)",
+        "warning": "Évitez ces erreurs courantes qui tuent votre stratégie de contenu éducatif :",
+        "genericPosts": {
+          "title": "Publications Génériques AI",
+          "description": "Arrêtez d'écrire des publications \"Top 10 des Outils AI\" que tout le monde crée. Elles ne convertissent pas et ne renforcent pas votre autorité."
+        },
+        "broadInspiration": {
+          "title": "Publications d'Inspiration Générale",
+          "description": "Évitez les articles sur l'Avenir du Contenu AI qui ne sont pas liés à des flux de travail spécifiques que votre audience peut mettre en œuvre aujourd'hui."
+        },
+        "unrelatedContent": {
+          "title": "Tout Contenu Non Lié à Votre Flux de Travail Produit",
+          "description": "Chaque pièce de contenu doit démontrer comment vos modèles résolvent de réels problèmes éducatifs."
+        }
+      },
+      "finalRecommendation": {
+        "title": "🎯 Recommandation Finale (Soyez Impitoyable)",
+        "subtitle": "Si vous ne faites que 2 publications cette semaine, faites celles-ci :",
+        "description": "Concentrez-vous sur un contenu à fort impact qui génère du trafic, des conversions et construit votre audience—que vous commercialisiez des produits, développiez une marque de créateur, enseigniez à vos enfants ou aidiez des étudiants ESL.",
+        "priority1": {
+          "title": "Système de Contenu (Modèles + Génération par Lots)",
+          "description": "Montrez comment créer un contenu éducatif évolutif en utilisant votre système de modèles. Cela génère un trafic à long terme et une valeur SEO pour les marketeurs, créateurs, parents et éducateurs."
+        },
+        "priority2": {
+          "title": "Vidéo Bilingue (Traduction)",
+          "description": "Démontrez vos capacités de traduction avec du contenu éducatif. Cela génère des conversions et vous différencie de vos concurrents—parfait pour le marketing multilingue, le contenu créateur, l'éducation parentale ou l'enseignement ESL."
+        },
+        "priority3": {
+          "title": "Contenu d'apprentissage (Créateurs ESL)",
+          "description": "Si vous avez la capacité pour un troisième post, créez du contenu spécifique à votre audience : insights marketing, conseils pour créateurs, conseils parentaux ou leçons ESL qui captent ces audiences à forte intention."
+        }
+      },
+      "cta": {
+        "title": "Commencez à créer du contenu d'apprentissage viral",
+        "description": "Prêt à transformer votre contenu éducatif ? Obtenez notre pack de cartes d'apprentissage gratuit et commencez à créer du contenu que les étudiants veulent vraiment partager.",
+        "button": "Obtenez le pack de cartes d'apprentissage gratuit"
+      },
+      "footer": {
+        "tags": [
+          "Contenu d'apprentissage",
+          "Éducation ESL",
+          "Apprentissage visuel",
+          "Modèles éducatifs",
+          "Stratégie de contenu",
+          "Cartes mémoire",
+          "Marketing éducatif",
+          "Partage de connaissances",
+          "Éducation marketing",
+          "Contenu créateur",
+          "Enseignement parental",
+          "Apprentissage des langues"
+        ],
+        "questions": "Vous avez des questions sur la création de contenu d'apprentissage viral ? Contactez notre équipe de support pour une assistance personnalisée."
+      }
+    },
+    "aiContentProductionSystem": {
+      "title": "Comment nous avons construit un système de production de contenu AI (pas seulement des outils)",
+      "date": "8 avril 2026",
+      "readTime": "12 min de lecture",
+      "intro": "La plupart des produits AI d'aujourd'hui s'arrêtent à la génération. Vous donnez une invite. Vous obtenez une sortie. Mais la véritable création de contenu ne fonctionne pas comme ça. Le contenu n'est pas une étape unique — c'est un système. Nous avons construit un système de production de contenu alimenté par l'IA — de l'inspiration → génération → distribution.",
+      "whatIsTitle": "Le problème : l'IA peut générer, mais elle ne peut pas mettre à l'échelle le contenu",
+      "whatIsContent": "Des outils comme ChatGPT, Midjourney et d'autres modèles génératifs sont puissants. Mais si vous êtes un créateur, un marketeur ou un constructeur, vous rencontrez rapidement des limitations : pas de source d'idées cohérente, des sorties non structurées et difficiles à réutiliser, pas de stratégie de distribution intégrée, et pas de boucle de rétroaction pour améliorer le contenu. Vous pouvez générer une excellente pièce, mais vous ne pouvez pas construire un système.",
+      "whyTitle": "Notre approche : construire un système de contenu, pas un outil",
+      "whyContent": "Nous avons conçu notre système comme une boucle : Inspiration → Structuration → Génération → Stockage → Distribution → Rétroaction (SEO). Ce n'est pas un pipeline linéaire. C'est un système piloté par la rétroaction qui s'améliore avec le temps.",
+      "step1Title": "1. Inspiration : Combiner RSS, tendances et jugement humain",
+      "step1Content": "Chaque système de contenu commence par des idées. Nous avons construit une couche d'inspiration légère qui tire des signaux des flux RSS, des sujets tendance et du contenu existant performant. Ensuite, nous utilisons l'IA pour résumer les signaux, extraire les thèmes clés et suggérer des directions potentielles de contenu. Mais voici la clé : l'IA suggère. Les humains décident. Nous gardons un humain dans la boucle pour garantir la pertinence et la qualité.",
+      "step2Title": "2. Structuration : Transformer le contenu en unités réutilisables",
+      "step2Content": "La plupart des outils AI génèrent des sorties brutes. Nous ne le faisons pas. Nous transformons le contenu en formats structurés et réutilisables, tels que des cartes de connaissances visuelles, des modèles de dialogue, des infographies éducatives et des storyboards pour vidéo. Cela nous permet de standardiser le contenu, d'échelonner la génération et d'améliorer la cohérence. Nous ne générons pas de contenu brut. Nous générons des unités de contenu structurées.",
+      "step3Title": "3. Génération : IA multimodale à travers texte, image et vidéo",
+      "step3Content": "Sur des modèles structurés, nous appliquons l'IA pour générer du contenu. Texte : expansion de contenu, traduction (support multilingue), adaptation de ton/style. Image : génération visuelle basée sur des invites, mises en page pilotées par des modèles. Vidéo (couche émergente) : reconnaissance vocale, génération de sous-titres, traduction, synthèse vocale (TTS / clonage vocal), étiquetage de storyboard. C'est ici que l'IA multimodale devient critique : texte + image + audio + vidéo → pipeline de contenu unifié.",
+      "step4Title": "4. Stockage et étiquetage : Rendre le contenu découvrable",
+      "step4Content": "Une fois le contenu généré, nous ne nous contentons pas de le stocker. Nous le rendons searchable et exploratoire : étiquetage (sujets, styles, cas d'utilisation), associations de modèles, métadonnées pour le SEO. Cela permet une meilleure découverte interne, des bibliothèques de contenu évolutives et un indexage SEO.",
+      "step5Title": "5. Distribution : Assistée par l'IA, pas manuelle",
+      "step5Content": "La plupart des créateurs sous-estiment la distribution. Nous la considérons comme un système de première classe. Nous distribuons le contenu sur notre propre site web (SEO + flux) et sur des plateformes externes comme X (Twitter) et des groupes Facebook. Au lieu de publier entièrement manuellement, nous utilisons une approche hybride : l'IA rédige le contenu, les humains affinent, les systèmes de publication automatisés gèrent l'exécution. La distribution n'est plus manuelle. Elle est assistée par l'IA.",
+      "step6Title": "6. Boucle de rétroaction : SEO comme signal produit",
+      "step6Content": "Une des parties les plus sous-estimées des systèmes de contenu est la rétroaction. Nous utilisons le SEO non seulement pour le trafic, mais comme un système de signal : les requêtes de recherche révèlent l'intention des utilisateurs, la performance des pages identifie les formats gagnants, les lacunes de mots-clés inspirent de nouveaux modèles et outils. Le SEO n'est pas seulement acquisition. C'est un retour d'information produit. Cela ferme la boucle.",
+      "step7Title": "7. Pipeline multimodal : La couche future",
+      "step7Content": "Au-dessus de ce système, nous construisons un pipeline plus avancé : Vidéo → Transcription → Traduction → Voix → Vidéo reconstruit. Cela implique la reconnaissance vocale, la traduction automatique, la synthèse vocale, l'alignement et le timing, et la sortie multilingue. L'objectif est simple : transformer tout contenu en média distribuable à l'échelle mondiale.",
+      "step8Title": "8. Comment nous travaillons : Flux de travail + agents AI",
+      "step8Content": "Nous ne construisons pas seulement des produits AI. Nous utilisons l'IA pour les construire. Notre flux de travail interne combine des systèmes basés sur des flux de travail (outils modulaires, pipelines pilotés par configuration, processus répétables) et le développement basé sur des agents (par exemple, Claude Code) pour la génération de code, le débogage et l'itération rapide. L'IA n'est pas seulement dans le produit. Elle est dans le processus de développement.",
+      "toolsTitle": "Les composants du système",
+      "toolsContent": "**Couche d'inspiration** : flux RSS, analyse des tendances, métriques de performance du contenu\n**Moteur de structure** : système de modèles, modularisation du contenu, standardisation des formats\n**Pipeline de génération** : IA texte, IA image, IA vidéo, traitement audio\n**Système de stockage** : étiquetage des métadonnées, indexation de recherche, relations de contenu\n**Moteur de distribution** : publication multi-plateforme, planification automatisée, suivi de performance\n**Boucle de rétroaction** : analyses SEO, analyse du comportement des utilisateurs, optimisation du contenu",
+      "curifyTitle": "Essayez-le vous-même",
+      "curifyContent": "Si vous explorez le contenu multilingue, la création assistée par l'IA ou les flux de travail de contenu évolutifs, vous pouvez essayer une partie de notre système. Nous avons construit des outils qui incarnent ces principes - de la génération de contenu structuré aux flux de travail de distribution automatisés.",
+      "ctaText": "Prêt à transformer votre flux de travail de contenu ?",
+      "ctaLink": "Essayez le système de contenu AI de Curify",
+      "conclusionTitle": "Pensées finales : L'avenir est aux systèmes, pas aux invites",
+      "conclusionContent": "La prochaine vague de l'IA ne sera pas définie par de meilleures invites ou de meilleurs modèles. Elle sera définie par de meilleurs systèmes. Des systèmes qui capturent des idées, structurent le contenu, mettent à l'échelle la génération, automatisent la distribution et apprennent des retours. C'est ce que nous construisons."
+    },
+    "aiContentDistributionSystem": {
+      "title": "Comment nous avons construit un système de distribution de contenu AI (X, Facebook & SEO)",
+      "date": "8 avril 2026",
+      "readTime": "10 min de lecture",
+      "intro": "La plupart des gens pensent que l'IA a résolu la création de contenu. Ce n'est pas le cas. Parce que la création n'est plus le goulot d'étranglement. La distribution l'est. Vous pouvez générer 100 pièces de contenu avec l'IA. Mais amener les gens à les voir réellement ? C'est encore manuel, incohérent et difficile à mettre à l'échelle. Donc, au lieu de se concentrer uniquement sur la génération, nous avons construit quelque chose de différent : un système de distribution de contenu assisté par l'IA — à travers le SEO, X et Facebook.",
+      "problemTitle": "Le véritable problème : la distribution ne se met pas à l'échelle",
+      "problemContent": "Si vous êtes un créateur, un marketeur ou un constructeur indépendant, vous avez probablement vécu cela : Vous publiez du contenu → pas de traction, Vous essayez différents formats → résultats incohérents, Vous publiez manuellement sur plusieurs plateformes → chronophage, Vous ne savez pas ce qui fonctionnera → pas de boucle de rétroaction. L'IA nous a aidés à générer du contenu plus rapidement. Mais elle n'a pas résolu la distribution.",
+      "approachTitle": "Notre approche : traiter la distribution comme un système",
+      "approachContent": "Au lieu de 'publier du contenu', nous avons construit un pipeline : Contenu → Formatage spécifique à la plateforme → Brouillon AI → Affinement humain → Distribution programmée. Cela transforme la distribution de : ❌ publication manuelle en : ✅ un système répétable.",
+      "step1Title": "Étape 1 : Formatage spécifique à la plateforme",
+      "step1Content": "Le même contenu ne fonctionne pas partout. Nous adaptons le contenu en différents formats : &lt;strong&gt;Site web (SEO)&lt;/strong&gt; - Pages structurées, Contenu piloté par des modèles, Indexé et searchable. &lt;strong&gt;X (Twitter)&lt;/strong&gt; - Threads courts, Accroches basées sur des insights, Itération rapide. &lt;strong&gt;Groupes Facebook&lt;/strong&gt; - Publications contextuelles, Discussions, Ciblage d'audience de niche. La distribution n'est pas un copier-coller. C'est une adaptation de format.",
+      "step2Title": "Étape 2 : Rédaction IA (mais pas entièrement automatisée)",
+      "step2Content": "Nous utilisons l'IA pour générer : des brouillons de publications, des variations d'accroche, un ton spécifique à chaque plateforme. Mais nous n'automatisons pas entièrement. L'IA rédige. Les humains affinent. Ce cycle hybride garantit : rapidité (IA) et qualité (humaine).",
+      "step3Title": "Étape 3 : La distribution de niche surpasse la portée large",
+      "step3Content": "Une de nos plus grandes leçons : la distribution de niche > distribution large. Au lieu de publier partout, nous nous concentrons sur : des groupes Facebook spécifiques (par sujet / IP / intérêt), des audiences ciblées, la pertinence contextuelle. Exemples : extraits de films → groupes de films, sous-titres bilingues → apprenants de langues, outils IA → communautés de créateurs. Cela améliore considérablement : l'engagement, le taux de clics, la portée organique.",
+      "step4Title": "Étape 4 : Le SEO comme fondation",
+      "step4Content": "Les plateformes sociales sont volatiles. Le SEO est cumulatif. Nous utilisons le SEO pour : héberger du contenu structuré, capturer des requêtes de longue traîne, construire une bibliothèque de contenu. Chaque élément de contenu devient : une page d'atterrissage, un point d'entrée pour la découverte. Les réseaux sociaux provoquent des pics. Le SEO construit une croissance à long terme.",
+      "learningsTitle": "Étape 5 : Ce qui fonctionne réellement (nos leçons)",
+      "learningsContent": "Après avoir mis en place ce système, voici ce que nous avons constaté : &lt;b&gt;Le contenu visuel + structuré gagne&lt;/b&gt; - cartes, modèles, infographies surpassent le texte brut. &lt;b&gt;Le contenu bilingue a un effet de levier&lt;/b&gt; - élargit l'audience, augmente le partage. &lt;b&gt;La répétition surpasse la nouveauté&lt;/b&gt; - même format, sujets différents → évolutif. &lt;b&gt;La distribution compte plus que la génération&lt;/b&gt; - une bonne distribution peut sauver un contenu moyen, une mauvaise distribution tue un excellent contenu.",
+      "automationTitle": "Étape 6 : Automatisation (appliquée avec précaution)",
+      "automationContent": "Nous avons expérimenté l'automatisation pour : programmer des publications, générer des variations, sélectionner du contenu. Mais l'automatisation complète ne fonctionne pas bien. Au lieu de cela, nous utilisons : une sélection déterministe (rotation de contenu), une rédaction assistée par IA, des boucles d'approbation humaine. L'objectif n'est pas l'automatisation complète. C'est un levier évolutif.",
+      "feedbackTitle": "Étape 7 : Boucler avec des retours",
+      "feedbackContent": "Une partie clé du système est le retour d'information : données SEO → ce que les gens recherchent, données d'engagement → ce que les gens aiment, performance de la plateforme → quels formats fonctionnent. Cela alimente : la création de contenu, la conception de modèles, le développement d'outils. La distribution n'est pas la fin. C'est une partie du cycle.",
+      "conclusionTitle": "Réflexions finales : La distribution est la nouvelle différenciation",
+      "conclusionContent": "L'IA a rendu la génération de contenu peu coûteuse. Donc, l'avantage n'est plus : qui peut générer le plus. C'est : qui peut distribuer le mieux. L'avenir du contenu n'est pas seulement la génération par IA. Ce sont les systèmes de distribution alimentés par l'IA.",
+      "tryItTitle": "Essayez-le vous-même",
+      "tryItContent": "Si vous explorez : du contenu multilingue, une création assistée par IA, une distribution évolutive. Vous pouvez essayer une partie de notre système ici : 👉 https://www.curify-ai.com/tools/bilingual-subtitles",
+      "bonusTitle": "Bonus : Pour qui est-ce",
+      "bonusContent": "Ce système est particulièrement utile si vous êtes : un créateur de contenu augmentant sa production, un marketeur testant des formats, un constructeur indépendant faisant croître seul, quelqu'un expérimentant avec du contenu multilingue.",
+      "seoKeywords": "système de distribution de contenu IA, automatisation du marketing de contenu IA, stratégie de distribution de contenu IA, système de distribution SEO + social, automatisation des médias sociaux IA"
     }
   },
   "aeVsComfyUi": {

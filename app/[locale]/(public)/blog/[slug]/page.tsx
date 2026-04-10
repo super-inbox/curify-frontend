@@ -8,6 +8,7 @@ import NanoBananaExamples from "./NanoBananaExamples";
 import { blogPosts, availableKeys } from "./utils/blog-config";
 import { formatContent } from "./utils/content-formatters";
 import { getVideoDubbingUrl, getSubtitleGeneratorUrl } from "./utils/blog-helpers";
+import { DynamicThumbnail } from "./components/DynamicThumbnail";
 import YoutubeTranslationContent from "./components/YoutubeTranslationContent";
 import VoiceCloningContent from "./components/VoiceCloningContent";
 import AslTranslationContent from "./components/AslTranslationContent";
@@ -19,6 +20,8 @@ import TenPromptingTipsVideoGenerationContent from "./components/TenPromptingTip
 import LipSyncContent from "./components/LipSyncContent";
 import LipSyncTechnicalContent from "./components/LipSyncTechnicalContent";
 import ImageGenerationModelComparisonContent from "./components/ImageGenerationModelComparisonContent";
+import AiContentDistributionSystemContent from "./components/AiContentDistributionSystemContent";
+import blogsData from "@/public/data/blogs.json";
 
 // Force dynamic rendering to avoid static generation issues
 export const dynamic = 'force-dynamic';
@@ -43,10 +46,17 @@ export async function generateMetadata({
   try {
     const t = await getTranslations({ locale, namespace: `blog.${blogConfig.namespace}` });
     
-    console.log('Namespace:', `blog.${blogConfig.namespace}`);
-    console.log('TitleKey:', blogConfig.titleKey);
-    console.log('DescriptionKey:', blogConfig.descriptionKey);
-    console.log('Available keys:', Object.keys(t));
+    // Check if the namespace actually has the expected keys
+    const hasTitle = t.has(blogConfig.titleKey);
+    const hasDescription = t.has(blogConfig.descriptionKey);
+    
+    if (!hasTitle || !hasDescription) {
+      console.warn(`Missing translation keys in namespace blog.${blogConfig.namespace}:`, {
+        hasTitle,
+        hasDescription,
+        availableKeys: Object.keys(t).filter(k => !['rich', 'markup', 'raw', 'has'].includes(k))
+      });
+    }
     
     const metadata: Metadata = {
       title: t(blogConfig.titleKey),
@@ -107,6 +117,11 @@ export default async function BlogPostPage({
   if (!blogConfig) {
     notFound();
   }
+
+  // Find the full blog data to check for useMermaidThumbnail
+  const blogData = blogsData.find((blog: any) => blog.slug === slug) as any;
+  const useMermaidThumbnail = blogData?.useMermaidThumbnail || false;
+  const thumbnailType = blogData?.thumbnailType || '';
 
   const t = await getTranslations({ locale, namespace: `blog` });
 
@@ -217,13 +232,23 @@ export default async function BlogPostPage({
     <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
       <div className="mb-8">
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
-          <CdnImage
-            src={blogConfig.image}
-            alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-            width={400}
-            height={250}
-            className="rounded-lg object-cover"
-          />
+          {useMermaidThumbnail ? (
+            <DynamicThumbnail
+              slug={thumbnailType || slug}
+              title={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+              category={blogConfig.category}
+              existingImage={blogConfig.image}
+              forceType="mermaid"
+            />
+          ) : (
+            <CdnImage
+              src={blogConfig.image}
+              alt={tNamespace ? tNamespace(blogConfig.titleKey) : slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+              width={400}
+              height={250}
+              className="rounded-lg object-cover"
+            />
+          )}
         </div>
         
         <h1 className="text-4xl font-bold mb-4">
@@ -271,6 +296,9 @@ export default async function BlogPostPage({
         {slug === 'image-generation-model-comparison' && (
           <ImageGenerationModelComparisonContent slug={slug} t={safeT} locale={locale} />
         )}
+        {slug === 'ai-content-distribution-system' && (
+          <AiContentDistributionSystemContent slug={slug} t={tNamespace || safeT} locale={locale} />
+        )}
         
         
         {/* Original blog posts - use generic content renderer */}
@@ -289,7 +317,8 @@ export default async function BlogPostPage({
          slug !== '10-prompting-tips-video-generation' &&
          slug !== 'lip-sync-business-guide' &&
          slug !== 'lip-sync-technical-deep-dive' &&
-         slug !== 'image-generation-model-comparison' && (
+         slug !== 'image-generation-model-comparison' &&
+         slug !== 'ai-content-distribution-system' && (
           <div className="space-y-6">
             <p className="text-lg font-semibold text-blue-600 mb-4">
               {hasKey("intro") ? safeT("intro") : "Introduction"}

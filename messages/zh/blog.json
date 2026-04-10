@@ -182,7 +182,8 @@
         "date": "2026年3月19日",
         "readTime": "阅读时间8分钟",
         "tag": "创作者工具",
-        "image": "/images/bussinesstranalayion.webp"
+        "image": "/images/officebussinessGuide.webp",
+        "thumbnailType": "视频转录业务"
       },
       {
         "slug": "video-transcription-technical-deep-dive",
@@ -190,7 +191,8 @@
         "date": "2026年3月19日",
         "readTime": "阅读时间12分钟",
         "tag": "创作者工具",
-        "image": "/images/TechicalTranslayion.webp"
+        "image": "/images/techicalpress.webp",
+        "thumbnailType": "视频转录管道"
       },
       {
         "slug": "10-prompting-tips-nano-banana",
@@ -198,7 +200,7 @@
         "date": "2026年3月23日",
         "readTime": "8分钟阅读",
         "tag": "Nano Banana提示",
-        "image": "/images/imaggenten.webp"
+        "image": "/images/book.webp"
       },
       {
         "slug": "10-prompting-tips-video-generation",
@@ -206,7 +208,7 @@
         "date": "2026年3月23日",
         "readTime": "9分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/VideoGen.webp"
+        "image": "/images/tenprompt.webp"
       },
       {
         "slug": "image-generation-model-comparison",
@@ -214,7 +216,7 @@
         "date": "2026年3月28日",
         "readTime": "12分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/Picturecompare.webp"
+        "image": "/images/hardworker.webp"
       },
       {
         "slug": "lip-sync-business-guide",
@@ -222,7 +224,7 @@
         "date": "2026年3月29日",
         "readTime": "10分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/lip_syncbusiness_guide.webp"
+        "image": "/images/office.webp"
       },
       {
         "slug": "lip-sync-technical-deep-dive",
@@ -263,6 +265,62 @@
         "readTime": "12分钟阅读",
         "tag": "创作者工具",
         "image": "/images/lightsnano.webp"
+      },
+      {
+        "slug": "内容倍增系统",
+        "title": "如何将一个想法转化为30天的内容（不至于精疲力竭）",
+        "date": "2026年4月6日",
+        "readTime": "8分钟阅读",
+        "tag": "内容策略",
+        "image": "/images/thirtyday.webp",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "nano-banana-prompt-ecosystem",
+          "10-prompting-tips-nano-banana",
+          "character-prompt-generator"
+        ]
+      },
+      {
+        "slug": "病毒学习内容",
+        "title": "如何创建病毒式学习内容（闪卡、对话场景、视觉知识）",
+        "date": "2026年4月6日",
+        "readTime": "10分钟阅读",
+        "tag": "学习内容",
+        "image": "/images/learnContent.png",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "内容倍增系统",
+          "character-prompt-generator",
+          "visual-learning-tools"
+        ]
+      },
+      {
+        "slug": "ai内容生产系统",
+        "title": "我们如何构建一个AI内容生产系统（不仅仅是工具）",
+        "date": "2026年4月8日",
+        "readTime": "12分钟阅读",
+        "tag": "AI架构",
+        "image": "/images/aicontentproduction.webp",
+        "category": "ds-ai工程",
+        "relatedLinks": [
+          "aiPlatform",
+          "agents-vs-workflows",
+          "内容倍增系统"
+        ]
+      },
+      {
+        "slug": "ai内容分发系统",
+        "title": "我们如何构建一个AI内容分发系统（X、Facebook和SEO）",
+        "date": "2026年4月8日",
+        "readTime": "10分钟阅读",
+        "tag": "内容营销",
+        "image": "/images/contentdistributionsystem.webp",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "ai内容生产系统",
+          "内容倍增系统",
+          "aiPlatform"
+        ]
       }
     ],
     "voiceCloningTools": {
@@ -2216,6 +2274,341 @@
           ]
         }
       }
+    },
+    "contentMultiplicationSystem": {
+      "title": "如何将一个想法转化为30天的内容（不至于精疲力竭）",
+      "publishedDate": "2026年4月6日",
+      "readTime": "8分钟阅读",
+      "category": "内容策略",
+      "introduction": {
+        "title": "内容创作中的最大误区",
+        "description": "内容创作中的最大误区是你需要不断涌现“新”想法以保持相关性。真相是？你不需要更多的想法。你需要一个系统来倍增你已经拥有的想法。无论你是营销人员在扩展活动，创作者在建立品牌，家长在创作教育内容，还是ESL教师在开发材料，这个框架可以将一个概念转化为30天的有价值内容，使用Nano模板系统。",
+        "quote": "我们将详细拆解如何将一个核心概念转化为一个月的高价值帖子，使用Nano模板系统。"
+      },
+      "problem": {
+        "title": "问题：手动内容跑步机",
+        "manualTreadmill": {
+          "title": "大多数内容创作者是这样做的：",
+          "description": "这是通往精疲力竭的最快途径。它是手动的，缓慢的，无法扩展——无论你是在创建营销活动、社交媒体内容、教育材料，还是语言学习资源。",
+          "approach": "醒来。想一个主题。花2小时写/设计一篇帖子。每月重复30次。",
+          "steps": [
+            "醒来",
+            "想一个主题",
+            "花2小时写/设计一篇帖子",
+            "每月重复30次"
+          ],
+          "conclusion": "这是通往精疲力竭的最快途径。它是手动的，缓慢的，无法扩展。"
+        }
+      },
+      "newWay": {
+        "title": "新方法：1个想法 → 10张卡片 → 30篇帖子",
+        "formula": "1个想法 → 10张卡片 → 30篇帖子",
+        "description": "我们使用原子化，而不是每天从头开始。你从一个“宏观”想法（如深度指南或独特见解）开始，并将其拆分为“微观”资产。",
+        "idea": {
+          "title": "核心理念",
+          "description": "一个高价值的概念"
+        },
+        "cards": {
+          "title": "模板卡片",
+          "description": "原子化内容片段"
+        },
+        "posts": {
+          "title": "每日帖子",
+          "description": "多格式内容"
+        }
+      },
+      "step1": {
+        "title": "步骤 1：核心理念",
+        "subtitle": "为你的受众选择一个高价值的话题。",
+        "description": "选择一个提供真正价值并可以拆分为更小组件的主题。这应该是你深刻理解并能够权威发言的话题。对于市场营销者：一个活动策略。对于创作者：一个标志性话题。对于父母：一个教育概念。对于英语作为第二语言的教师：一个语言学习主题。",
+        "example": {
+          "title": "不同受众的示例：",
+          "content": "市场营销者：产品发布策略 | 创作者：个人品牌提示 | 父母：儿童英语词汇 | ESL 教师：商务英语短语"
+        }
+      },
+      "step2": {
+        "title": "步骤 2：10 张卡片扩展",
+        "subtitle": "使用我们的 Nano 模板，你不仅仅是写一条推文。你生成一个“包”。",
+        "description": "从那个核心理念出发，你可以立即创建多种类型的内容卡片，针对你的受众。市场营销者可以创建活动资产。创作者可以构建品牌内容。父母可以开发学习材料。ESL 教师可以设计语言课程。",
+        "vocabularyCards": {
+          "title": "5 张词汇闪卡",
+          "description": "带有定义和示例的双语视觉卡片"
+        },
+        "sentenceCards": {
+          "title": "3 张上下文句子卡",
+          "description": "在真实场景中使用的单词，带有适当的上下文"
+        },
+        "sceneCards": {
+          "title": "2 张“场景”卡",
+          "description": "与一个场景相关的多个单词，如办公室或厨房"
+        }
+      },
+      "step3": {
+        "title": "步骤 3：30 天分发",
+        "subtitle": "通过变化格式——将这些卡片转化为静态图像、双语视频和轮播帖子——你现在拥有一个月的内容。",
+        "description": "每张卡片可以转化为多种内容格式，给你带来多样性，同时保持核心信息的一致性。",
+        "formats": {
+          "staticImages": {
+            "title": "静态图像",
+            "description": "适合 Instagram、Pinterest 和博客帖子"
+          },
+          "bilingualVideos": {
+            "title": "双语视频",
+            "description": "使用我们的自动音频管道用于 TikTok 和 Reels"
+          },
+          "carouselPosts": {
+            "title": "轮播帖子",
+            "description": "适用于 LinkedIn 和 Facebook 的多幻灯片内容"
+          }
+        }
+      },
+      "demo": {
+        "title": "演示：从模板到输出",
+        "description": "查看我们的自动化管道如何处理这个。你给系统一个模板，它使用 OCR 和 LLM 识别词汇，生成双语音频翻译，并导出一个准备发布的视频。",
+        "placeholder": {
+          "title": "视频演示占位符",
+          "description": "展示一个“飞/游/跳”卡片转变为带音频的视频"
+        },
+        "quote": "目标不是更努力地工作，而是让你的资产为你更努力地工作。"
+      },
+      "conclusion": {
+        "title": "停止从零开始",
+        "subtitle": "一致性是营销中唯一真正有效的“黑客”。",
+        "description1": "但一致性不应该让你失去理智。通过使用模板包，你不仅仅是在制作“帖子”——你是在构建一个可扩展的内容引擎。",
+        "description2": "这种方法将内容创作从日常的繁重工作转变为一个随时间复合的系统化过程。",
+        "finalThought": "创建一个为你服务而不是对抗你的可扩展内容引擎。"
+      },
+      "footer": {
+        "tags": [
+          "内容策略",
+          "内容营销",
+          "Nano 模板",
+          "内容自动化",
+          "社交媒体营销",
+          "内容创作",
+          "营销系统",
+          "模板包",
+          "创作者工具",
+          "教育内容",
+          "家长资源",
+          "ESL 教学"
+        ],
+        "questions": "对内容倍增有疑问？请联系我们的支持团队以获得个性化帮助。"
+      }
+    },
+    "viralLearningContent": {
+      "title": "如何创建病毒式学习内容（闪卡、对话场景、视觉知识）",
+      "publishedDate": "2026年4月6日",
+      "readTime": "10分钟阅读",
+      "category": "学习内容",
+      "target": {
+        "title": "🎯 目标受众",
+        "description": "该内容策略旨在为任何创建需要引人入胜和病毒式传播的教育内容的人而设计——从开发教育活动的市场营销者到构建学习品牌的创作者、教孩子的父母，以及帮助学生学习英语的 ESL 教育工作者。",
+        "marketers": {
+          "title": "针对市场营销者",
+          "description": "创建教育活动，通过有价值的学习内容建立权威并推动转化"
+        },
+        "creators": {
+          "title": "针对内容创作者",
+          "description": "通过受众喜爱分享和参与的教育内容来建立您的品牌"
+        },
+        "parents": {
+          "title": "针对家长",
+          "description": "通过视觉双语内容帮助您的孩子学习，让教育变得有趣且有效"
+        },
+        "eslLearners": {
+          "title": "针对ESL教育工作者",
+          "description": "创建学生真正想要使用和分享的引人入胜的语言学习材料"
+        }
+      },
+      "whyMatters": {
+        "title": "🔥 这为什么重要",
+        "alignment": {
+          "title": "完美的模板对齐",
+          "description": "与您现有的纳米模板系统和视觉学习工具在所有用例中对齐——营销活动、创作者内容、家长教育和ESL教学。"
+        },
+        "searchIntent": {
+          "title": "高搜索意图",
+          "keywords": [
+            "如何教授词汇",
+            "ESL内容创意",
+            "学习卡片",
+            "视觉学习模板",
+            "教育内容创作",
+            "双语教育",
+            "营销教育内容",
+            "家长教学资源",
+            "语言学习视觉"
+          ]
+        }
+      },
+      "coreAngle": {
+        "title": "🧠 核心角度",
+        "headline": "学习内容很无聊 → 除非可视化",
+        "description": "传统教育内容失败，因为它文字繁重且缺乏灵感。解决方案？将抽象概念转化为视觉、互动的体验，让学生、客户、追随者或孩子真正想要分享——无论您是在营销产品、建立创作者品牌、教孩子，还是帮助ESL学生。",
+        "insight": "人们不会分享无聊的工作表或普通内容。他们分享美丽的、视觉的学习卡片，使复杂概念简单且令人难忘——无论是营销见解、创作者技巧、家长指导还是语言课程。"
+      },
+      "structure": {
+        "title": "🧩 内容结构",
+        "problem": {
+          "title": "问题：教育内容无法吸引",
+          "description": "大多数教育内容让学习者昏昏欲睡——无论他们是客户、追随者、孩子还是学生。密集的文本、无聊的布局和零视觉吸引力在学习开始之前就扼杀了参与感。",
+          "quote": "我花了几个小时创建的内容，我的受众从未认真看过。"
+        },
+        "solution": {
+          "title": "解决方案：视觉卡片 + 结构化模板",
+          "description": "将学习转化为小块、视觉吸引的内容，让您的受众——无论是客户、追随者、孩子还是学生——真正想要参与和分享。",
+          "visualCards": {
+            "title": "视觉学习卡片",
+            "description": "将词汇和概念转化为可分享的视觉卡片，配有图片、示例和上下文。非常适合营销教育、创作者技巧、家长指导或ESL教学。"
+          },
+          "structuredTemplates": {
+            "title": "结构化模板",
+            "description": "使用经过验证的布局，最大化学习保留和社交分享，适用于您所有的教育内容——营销见解、创作者知识、家长课程或语言教学。"
+          }
+        },
+        "examples": {
+          "title": "实际案例",
+          "vocabularyCards": {
+            "title": "词汇卡片",
+            "description": "带有图片、定义和示例句子的视觉闪卡。",
+            "card": "卡片"
+          },
+          "dialogueScenes": {
+            "title": "对话场景",
+            "description": "带有视觉上下文和角色互动的互动对话场景。",
+            "scene": "场景"
+          }
+        },
+        "scaling": {
+          "title": "扩展：批量生成",
+          "description": "通过使用保持质量的模板系统，在几个小时内创建数周的内容，同时最大化数量。",
+          "batchGeneration": {
+            "title": "批量生成能力",
+            "description": "从一个模板生成50个词汇卡片，然后在多个格式和平台上重新利用。"
+          }
+        }
+      },
+      "whatNotToDo": {
+        "title": "❌ 不要做的事情（重要）",
+        "warning": "避免这些常见错误，这些错误会扼杀您的教育内容策略：",
+        "genericPosts": {
+          "title": "普通AI帖子",
+          "description": "停止撰写“十大AI工具”帖子，这些帖子是其他人都在创建的。它们不会转化，也不会建立您的权威。"
+        },
+        "broadInspiration": {
+          "title": "广泛灵感帖子",
+          "description": "避免与您的受众今天可以实施的特定工作流程无关的未来AI内容文章。"
+        },
+        "unrelatedContent": {
+          "title": "与您的产品工作流程无关的任何内容",
+          "description": "每一篇内容都应该展示您的模板如何解决真实的教育问题。"
+        }
+      },
+      "finalRecommendation": {
+        "title": "🎯 最终建议（要果断）",
+        "subtitle": "如果您这周只做2篇帖子，请做这些：",
+        "description": "专注于高影响力的内容，推动流量、转化并建立您的受众——无论您是在营销产品、发展创作者品牌、教孩子，还是帮助ESL学生。",
+        "priority1": {
+          "title": "内容系统（模板 + 批量）",
+          "description": "展示如何使用您的模板系统创建可扩展的教育内容。这为营销人员、创作者、家长和教育工作者带来长期流量和SEO价值。"
+        },
+        "priority2": {
+          "title": "双语视频（翻译）",
+          "description": "通过教育内容展示您的翻译能力。这推动转化并使您与竞争对手区分开来——非常适合多语言营销、创作者内容、家长教育或ESL教学。"
+        },
+        "priority3": {
+          "title": "学习内容（ESL 创作者）",
+          "description": "如果你有时间发布第三篇文章，请创建针对特定受众的内容：市场洞察、创作者技巧、家长指导或能够吸引这些高意图受众的 ESL 课程。"
+        }
+      },
+      "cta": {
+        "title": "开始创建病毒式学习内容",
+        "description": "准备好转变你的教育内容了吗？获取我们的免费学习卡包，开始创建学生真正想分享的内容。",
+        "button": "获取免费学习卡包"
+      },
+      "footer": {
+        "tags": [
+          "学习内容",
+          "ESL 教育",
+          "视觉学习",
+          "教育模板",
+          "内容策略",
+          "闪卡",
+          "教育营销",
+          "知识共享",
+          "市场教育",
+          "创作者内容",
+          "家长教学",
+          "语言学习"
+        ],
+        "questions": "对创建病毒式学习内容有疑问吗？请联系我们的支持团队以获得个性化帮助。"
+      }
+    },
+    "aiContentProductionSystem": {
+      "title": "我们如何构建一个 AI 内容生产系统（不仅仅是工具）",
+      "date": "2026年4月8日",
+      "readTime": "12分钟阅读",
+      "intro": "如今大多数 AI 产品仅停留在生成阶段。你给出提示，得到输出。但真正的内容创作并不是这样的。内容不是单一步骤——它是一个系统。我们构建了一个 AI 驱动的内容生产系统——从灵感 → 生成 → 分发。",
+      "whatIsTitle": "问题：AI 可以生成，但无法扩展内容",
+      "whatIsContent": "像 ChatGPT、Midjourney 和其他生成模型这样的工具非常强大。但如果你是创作者、营销人员或构建者，你很快就会遇到限制：没有一致的创意来源，输出无结构且难以重用，没有内置的分发策略，也没有反馈循环来改进内容。你可以生成一件优秀的作品，但你无法建立一个系统。",
+      "whyTitle": "我们的做法：构建内容系统，而不是工具",
+      "whyContent": "我们将系统设计为一个循环：灵感 → 结构化 → 生成 → 存储 → 分发 → 反馈（SEO）。这不是一个线性管道。它是一个随着时间推移而改进的反馈驱动系统。",
+      "step1Title": "1. 灵感：结合 RSS、趋势和人类判断",
+      "step1Content": "每个内容系统都始于创意。我们构建了一个轻量级的灵感层，从 RSS 源、趋势话题和现有的高效内容中提取信号。然后我们使用 AI 来总结信号、提取关键主题并建议潜在的内容方向。但关键在于：AI 提出建议，人类做决定。我们保持人类参与，以确保相关性和质量。",
+      "step2Title": "2. 结构化：将内容转化为可重用单元",
+      "step2Content": "大多数 AI 工具生成原始输出。我们不这样做。我们将内容转化为结构化、可重用的格式，如视觉知识卡、对话模板、教育信息图和视频故事板。这使我们能够标准化内容、扩展生成并提高一致性。我们不生成原始内容。我们生成结构化内容单元。",
+      "step3Title": "3. 生成：跨文本、图像和视频的多模态 AI",
+      "step3Content": "在结构化模板的基础上，我们应用 AI 生成内容。文本：内容扩展、翻译（多语言支持）、语调/风格适应。图像：基于提示的视觉生成、模板驱动的布局。视频（新兴层）：语音识别、字幕生成、翻译、语音合成（TTS / 语音克隆）、故事板标记。这是多模态 AI 变得至关重要的地方：文本 + 图像 + 音频 + 视频 → 统一内容管道。",
+      "step4Title": "4. 存储与标记：使内容可发现",
+      "step4Content": "一旦生成内容，我们不仅仅是存储它。我们使其可搜索和可探索：标记（主题、风格、用例）、模板关联、SEO 元数据。这使得更好的内部发现、可扩展的内容库和 SEO 索引成为可能。",
+      "step5Title": "5. 分发：AI 辅助，而非手动",
+      "step5Content": "大多数创作者低估了分发。我们将其视为一流系统。我们在自己的网站（SEO + 源）和外部平台如 X（Twitter）和 Facebook 群组上分发内容。我们采用混合方法：AI 草拟内容，人类进行润色，自动发布系统处理执行。分发不再是手动的。它是 AI 辅助的。",
+      "step6Title": "6. 反馈循环：SEO 作为产品信号",
+      "step6Content": "内容系统中最被低估的部分之一是反馈。我们不仅将 SEO 用于流量，还作为信号系统：搜索查询揭示用户意图，页面性能识别成功格式，关键词差距激发新的模板和工具。SEO 不仅仅是获取。它是产品反馈。这闭合了循环。",
+      "step7Title": "7. 多模态管道：未来层",
+      "step7Content": "在这个系统之上，我们正在构建一个更先进的管道：视频 → 转录 → 翻译 → 语音 → 重建视频。这涉及语音识别、机器翻译、文本到语音、对齐和时序以及多语言输出。目标很简单：将任何内容转化为全球可分发的媒体。",
+      "step8Title": "8. 我们的工作方式：工作流程 + AI 代理",
+      "step8Content": "我们不仅仅构建 AI 产品。我们使用 AI 来构建它们。我们的内部工作流程结合了基于工作流程的系统（模块化工具、配置驱动的管道、可重复的过程）和基于代理的开发（例如，Claude Code）用于代码生成、调试和快速迭代。AI 不仅在产品中。它在开发过程中。",
+      "toolsTitle": "系统组件",
+      "toolsContent": "**灵感层**：RSS 源、趋势分析、内容表现指标\n**结构引擎**：模板系统、内容模块化、格式标准化\n**生成管道**：文本 AI、图像 AI、视频 AI、音频处理\n**存储系统**：元数据标记、搜索索引、内容关系\n**分发引擎**：多平台发布、自动调度、性能跟踪\n**反馈循环**：SEO 分析、用户行为分析、内容优化",
+      "curifyTitle": "亲自尝试",
+      "curifyContent": "如果你正在探索多语言内容、AI 辅助创作或可扩展的内容工作流程，你可以尝试我们系统的一部分。我们构建了体现这些原则的工具——从结构化内容生成到自动化分发工作流程。",
+      "ctaText": "准备好转变你的内容工作流程了吗？",
+      "ctaLink": "尝试 Curify 的 AI 内容系统",
+      "conclusionTitle": "最后的想法：未来是系统，而不是提示",
+      "conclusionContent": "下一波 AI 不会由更好的提示或更好的模型定义。它将由更好的系统定义。能够捕捉创意、结构内容、扩展生成、自动化分发并从反馈中学习的系统。这就是我们正在构建的。"
+    },
+    "aiContentDistributionSystem": {
+      "title": "我们如何构建一个 AI 内容分发系统（X、Facebook 和 SEO）",
+      "date": "2026年4月8日",
+      "readTime": "10分钟阅读",
+      "intro": "大多数人认为 AI 已经解决了内容创作。其实并没有。因为创作不再是瓶颈。分发才是。你可以用 AI 生成 100 件内容。但让人们真正看到它们？这仍然是手动的、不一致的，且难以扩展。因此，我们没有仅仅关注生成，而是构建了不同的东西：一个 AI 辅助的内容分发系统——跨越 SEO、X 和 Facebook。",
+      "problemTitle": "真正的问题：分发无法扩展",
+      "problemContent": "如果你是创作者、营销人员或独立构建者，你可能经历过这样的情况：你发布内容 → 没有反响，你尝试不同格式 → 结果不一致，你在各个平台上手动发布 → 耗时，你不知道什么会有效 → 没有反馈循环。AI 帮助我们更快地生成内容。但它并没有解决分发问题。",
+      "approachTitle": "我们的做法：将分发视为一个系统",
+      "approachContent": "我们构建了一个管道，而不是简单地“发布内容”：内容 → 平台格式化 → AI 草稿 → 人类润色 → 定时分发。这将分发从：❌ 手动发布转变为：✅ 可重复的系统。",
+      "step1Title": "步骤 1：平台特定格式化",
+      "step1Content": "相同的内容在不同地方并不适用。我们将内容调整为不同的格式：&lt;strong&gt;网站（SEO）&lt;/strong&gt; - 结构化页面、模板驱动内容、可索引和可搜索。&lt;strong&gt;X（Twitter）&lt;/strong&gt; - 短格式线程、洞察驱动的钩子、快速迭代。&lt;strong&gt;Facebook 群组&lt;/strong&gt; - 上下文帖子、讨论驱动、针对特定受众。分发不是复制粘贴。它是格式调整。",
+      "step2Title": "步骤 2：AI 草拟（但不是完全自动化）",
+      "step2Content": "我们使用 AI 生成：帖子草稿、钩子变体、平台特定的语气。但我们并不完全自动化。AI 草拟，人类精炼。这个混合循环确保了：速度（AI）和质量（人类）。",
+      "step3Title": "步骤 3：细分分发胜过广泛覆盖",
+      "step3Content": "我们最大的一个经验是：细分分发 > 广泛分发。我们不再到处发布，而是专注于：特定的 Facebook 群组（按主题/IP/兴趣）、目标受众、上下文相关性。例子：电影片段 → 电影群组，双语字幕 → 语言学习者，AI 工具 → 建设者社区。这显著提高了：参与度、点击率、有机覆盖。",
+      "step4Title": "步骤 4：SEO 作为基础",
+      "step4Content": "社交平台是波动的。SEO 是复合的。我们使用 SEO 来：托管结构化内容，捕捉长尾查询，建立内容库。每个内容片段都成为：一个着陆页，一个发现入口。社交驱动峰值。SEO 建立长期增长。",
+      "learningsTitle": "步骤 5：什么真正有效（我们的经验）",
+      "learningsContent": "在运行这个系统后，我们看到的结果是：&lt;b&gt;视觉 + 结构化内容胜出&lt;/b&gt; - 卡片、模板、信息图表的表现优于原始文本。&lt;b&gt;双语内容具有杠杆作用&lt;/b&gt; - 扩大受众，提高分享性。&lt;b&gt;重复胜过新颖&lt;/b&gt; - 相同格式，不同主题 → 可扩展。&lt;b&gt;分发比生成更重要&lt;/b&gt; - 良好的分发可以拯救普通内容，糟糕的分发会扼杀优秀内容。",
+      "automationTitle": "步骤 6：自动化（谨慎应用）",
+      "automationContent": "我们尝试了自动化来：安排帖子、生成变体、选择内容。但完全自动化效果不佳。相反，我们使用：确定性选择（内容轮换）、AI 辅助草拟、人类审批循环。目标不是完全自动化，而是可扩展的杠杆。",
+      "feedbackTitle": "步骤 7：通过反馈闭环",
+      "feedbackContent": "系统的一个关键部分是反馈：SEO 数据 → 人们搜索的内容，参与数据 → 人们喜欢的内容，平台表现 → 有效的格式。这反馈到：内容创建、模板设计、工具开发。分发不是终点，而是循环的一部分。",
+      "conclusionTitle": "最后思考：分发是新的差异化",
+      "conclusionContent": "AI 使内容生成变得便宜。因此，优势不再是：谁能生成更多内容。而是：谁能更好地分发。内容的未来不仅仅是 AI 生成，而是 AI 驱动的分发系统。",
+      "tryItTitle": "自己试试",
+      "tryItContent": "如果你正在探索：多语言内容、AI 辅助创作、可扩展分发。你可以在这里尝试我们系统的一部分：👉 https://www.curify-ai.com/tools/bilingual-subtitles",
+      "bonusTitle": "额外：适合谁",
+      "bonusContent": "如果你是：一个内容创作者在扩大产出，一个市场营销人员在测试格式，一个独立建设者独自进行增长，或者一个正在尝试多语言内容的人，这个系统尤其有用。",
+      "seoKeywords": "AI 内容分发系统，AI 内容营销自动化，内容分发策略 AI，SEO + 社交分发系统，AI 社交媒体自动化"
     }
   },
   "imageGenerationModelComparison": {
