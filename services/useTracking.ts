@@ -43,6 +43,36 @@ export interface TrackingTarget {
 const TRACK_ENDPOINT = "/interactions/track";
 const SESSION_KEY = "_curify_session_id";
 
+// Route patterns ordered most-specific first.
+// current_page_route is normalised for backend aggregation.
+const ROUTE_PATTERNS: [RegExp, string][] = [
+  [/^\/[a-z]{2}\/nano-template\/[^/]+\/example\/[^/]+$/, "/[locale]/nano-template/[slug]/example/[exampleId]"],
+  [/^\/nano-template\/[^/]+\/example\/[^/]+$/,           "/nano-template/[slug]/example/[exampleId]"],
+  [/^\/[a-z]{2}\/nano-template\/[^/]+$/,                 "/[locale]/nano-template/[slug]"],
+  [/^\/nano-template\/[^/]+$/,                           "/nano-template/[slug]"],
+  [/^\/[a-z]{2}\/nano-banana-pro-prompts\/tag\/[^/]+$/,  "/[locale]/nano-banana-pro-prompts/tag/[slug]"],
+  [/^\/nano-banana-pro-prompts\/tag\/[^/]+$/,            "/nano-banana-pro-prompts/tag/[slug]"],
+  [/^\/[a-z]{2}\/nano-banana-pro-prompts\/[^/]+$/,       "/[locale]/nano-banana-pro-prompts/[id]"],
+  [/^\/nano-banana-pro-prompts\/[^/]+$/,                 "/nano-banana-pro-prompts/[id]"],
+  [/^\/[a-z]{2}\/topics\/[^/]+$/,                        "/[locale]/topics/[slug]"],
+  [/^\/topics\/[^/]+$/,                                  "/topics/[slug]"],
+  [/^\/[a-z]{2}\/use-cases\/[^/]+$/,                     "/[locale]/use-cases/[slug]"],
+  [/^\/use-cases\/[^/]+$/,                               "/use-cases/[slug]"],
+  [/^\/[a-z]{2}\/tools\/[^/]+$/,                         "/[locale]/tools/[slug]"],
+  [/^\/tools\/[^/]+$/,                                   "/tools/[slug]"],
+  [/^\/[a-z]{2}\/blog\/[^/]+$/,                          "/[locale]/blog/[slug]"],
+  [/^\/blog\/[^/]+$/,                                    "/blog/[slug]"],
+  [/^\/[a-z]{2}\/magic\/[^/]+$/,                         "/[locale]/magic/[id]"],
+  [/^\/[a-z]{2}\/project_details\/[^/]+$/,               "/[locale]/project_details/[id]"],
+];
+
+function normalizeRoute(pathname: string): string {
+  for (const [pattern, normalized] of ROUTE_PATTERNS) {
+    if (pattern.test(pathname)) return normalized;
+  }
+  return pathname;
+}
+
 function getSessionId(): string {
   if (typeof window === "undefined") return "";
 
@@ -71,7 +101,10 @@ function buildPayload(options: TrackingOptions) {
       typeof document !== "undefined" ? document.referrer || undefined : undefined,
     current_page_url:
       typeof window !== "undefined" ? window.location.pathname || undefined : undefined,
-    current_page_route: options.currentPageRoute,
+    current_page_route:
+      typeof window !== "undefined"
+        ? options.currentPageRoute ?? normalizeRoute(window.location.pathname)
+        : undefined,
   };
 }
 
