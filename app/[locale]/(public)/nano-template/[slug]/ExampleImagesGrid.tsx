@@ -55,19 +55,13 @@ function ExampleImageCard({
         <CdnImage
           src={item.preview}
           alt={item.title || item.id}
-          className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           loading="lazy"
         />
         <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
           <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
             View prompt →
           </span>
-        </div>
-      </div>
-
-      <div className="p-4">
-        <div className="line-clamp-2 text-sm font-semibold text-neutral-900 transition-colors group-hover:text-purple-700">
-          {item.title || item.id}
         </div>
       </div>
     </Link>
