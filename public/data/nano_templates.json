@@ -2673,7 +2673,7 @@
     "og_image": "/images/nano_insp_preview/template-constellation-steampunk-zh-libra-prev.jpg",
     "legacy_id": "template-constellation-steampunk-zh",
     "topics": [
-      "learning",      
+      "learning",
       "design"
     ],
     "rank_score": 80,
@@ -6457,49 +6457,60 @@
   {
     "id": "template-warmup-routine",
     "locales": {
-        "en": {
-            "base_prompt": "（Sport Warm-Up Routine Poster Designer）You are a professional fitness infographic designer, specializing in creating clear, educational warm-up routine posters. Based on the user-specified {sport_type}, generate a vertical 3:4 premium warm-up routine poster, matching the cute cartoon, clean educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{sport_type} WARM-UP ROUTINE\", Curify watermark at top left, light blue gradient top background. 2. Grid: 8 exercise cards in 4×2 grid, each with unique soft pastel border. Each card: Top = cute cartoon illustration of the warm-up exercise with motion arrows; Bottom = bold exercise name + set/reps or duration instructions. Style: Clean minimalist design, soft off-white background, kawaii cartoon characters, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {sport_type} warm-up routine fitness poster.",
-            "parameters": [
-                {
-                    "name": "sport_type",
-                    "label": "Sport Type",
-                    "type": "text",
-                    "placeholder": [
-                        "GYM",
-                        "SWIMMING",
-                        "RUNNING",
-                        "YOGA",
-                        "BASKETBALL",
-                        "FOOTBALL"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Sport Warm-Up Routine Poster Designer）You are a professional fitness infographic designer, specializing in creating clear, educational warm-up routine posters. Based on the user-specified {sport_type}, generate a vertical 3:4 premium warm-up routine poster, matching the cute cartoon, clean educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{sport_type} WARM-UP ROUTINE\", Curify watermark at top left, light blue gradient top background. 2. Grid: 8 exercise cards in 4×2 grid, each with unique soft pastel border. Each card: Top = cute cartoon illustration of the warm-up exercise with motion arrows; Bottom = bold exercise name + set/reps or duration instructions. Style: Clean minimalist design, soft off-white background, kawaii cartoon characters, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {sport_type} warm-up routine fitness poster.",
+        "parameters": [
+          {
+            "name": "sport_type",
+            "label": "Sport Type",
+            "type": "text",
+            "placeholder": [
+              "GYM",
+              "SWIMMING",
+              "RUNNING",
+              "YOGA",
+              "BASKETBALL",
+              "FOOTBALL"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-warmup-routine-gym-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-warmup-routine-gym-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "lifestyle",
+      "fitness"
+    ]
+  },
   {
     "id": "template-group-vocab-category",
     "locales": {
-        "en": {
-            "base_prompt": "（English Vocabulary Category Poster Designer）You are a professional children's English vocabulary educational poster designer, specializing in creating cute, colorful, clear learning infographics. Based on the user-specified {theme}, generate a vertical 3:4 premium vocabulary poster, matching the kawaii cartoon, clean educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{theme}\", Curify watermark at top left. 2. Grid: 12 items in 4×3 grid. Each item: Top = cute clear cartoon illustration of the item; Bottom = bold English category/term name. Style: Clean minimalist design, pure white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} English vocabulary educational poster.",
-            "parameters": [
-                {
-                    "name": "theme",
-                    "label": "Vocabulary Theme",
-                    "type": "text",
-                    "placeholder": [
-                        "Group Names of Animals",
-                        "Types of Sports",
-                        "Types of Plants",
-                        "Categories of Food",
-                        "Types of Vehicles",
-                        "Types of Furniture"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（English Vocabulary Category Poster Designer）You are a professional children's English vocabulary educational poster designer, specializing in creating cute, colorful, clear learning infographics. Based on the user-specified {theme}, generate a vertical 3:4 premium vocabulary poster, matching the kawaii cartoon, clean educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{theme}\", Curify watermark at top left. 2. Grid: 12 items in 4×3 grid. Each item: Top = cute clear cartoon illustration of the item; Bottom = bold English category/term name. Style: Clean minimalist design, pure white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} English vocabulary educational poster.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Vocabulary Theme",
+            "type": "text",
+            "placeholder": [
+              "Group Names of Animals",
+              "Types of Sports",
+              "Types of Plants",
+              "Categories of Food",
+              "Types of Vehicles",
+              "Types of Furniture"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg"
-}
+    "og_image": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "language"
+    ]
+  }
 ]
