@@ -31,6 +31,7 @@ export interface TrackingOptions {
   contentType: ContentType;
   actionType: ActionType;
   viewMode?: ViewMode;
+  currentPageRoute?: string;
 }
 
 export interface TrackingTarget {
@@ -68,6 +69,9 @@ function buildPayload(options: TrackingOptions) {
     session_id: getSessionId() || undefined,
     referrer:
       typeof document !== "undefined" ? document.referrer || undefined : undefined,
+    current_page_url:
+      typeof window !== "undefined" ? window.location.pathname || undefined : undefined,
+    current_page_route: options.currentPageRoute,
   };
 }
 
