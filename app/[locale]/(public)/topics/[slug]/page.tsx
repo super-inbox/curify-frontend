@@ -101,10 +101,6 @@ export default async function Page({ params }: Props) {
       <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
 
         <div className="max-w-5xl">
-          <h1 className="text-5xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-            {topicTitle}
-          </h1>
-
           {topicDescription ? (
             <p className="mt-3 text-base leading-7 text-neutral-600">
               {topicDescription}
@@ -127,7 +123,7 @@ export default async function Page({ params }: Props) {
 
       {gridItems.length > 0 && (
         <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             {exampleImagesHeading}
           </h2>
           <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
@@ -135,7 +131,7 @@ export default async function Page({ params }: Props) {
       )}
 
       <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 mb-4">
+        <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
           {templatesHeading}
         </h2>
         <NanoTemplateDetailClient
