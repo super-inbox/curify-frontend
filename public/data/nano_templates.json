@@ -39,8 +39,9 @@
       "learning",
       "science"
     ],
-    "rank_score": 117,
-    "batch": true
+    "rank_score": 80,
+    "batch": true,
+    "base_rank_score": 80
   },
   {
     "id": "template-evolution",
@@ -215,7 +216,8 @@
       "learning",
       "science"
     ],
-    "rank_score": 48
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-travel",
@@ -276,8 +278,9 @@
       "travel",
       "weather"
     ],
-    "rank_score": 159,
-    "batch": true
+    "rank_score": 80,
+    "batch": true,
+    "base_rank_score": 80
   },
   {
     "id": "template-architecture",
@@ -316,7 +319,8 @@
       "learning",
       "architecture"
     ],
-    "rank_score": 11
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-species",
@@ -356,7 +360,8 @@
       "learning",
       "science"
     ],
-    "rank_score": 5
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-character",
@@ -414,7 +419,8 @@
       "character",
       "film"
     ],
-    "rank_score": 14
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-recipe",
@@ -454,7 +460,8 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 13
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-character-analysis",
@@ -547,7 +554,8 @@
     "topics": [
       "character"
     ],
-    "rank_score": 28
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-weather",
@@ -586,7 +594,8 @@
       "lifestyle",
       "science"
     ],
-    "rank_score": 22
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-education",
@@ -625,10 +634,11 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-hot-event-analysis",
@@ -702,10 +712,11 @@
       "learning",
       "trending"
     ],
-    "rank_score": 22,
+    "rank_score": 60,
     "use_cases": [
       "for-marketers"
-    ]
+    ],
+    "base_rank_score": 60
   },
   {
     "id": "template-intangible-heritage",
@@ -749,7 +760,8 @@
       "learning",
       "culture"
     ],
-    "rank_score": 26
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-education-card",
@@ -787,11 +799,12 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 83,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-costume",
@@ -834,8 +847,9 @@
       "culture",
       "design"
     ],
-    "rank_score": 14,
-    "batch": true
+    "rank_score": 80,
+    "batch": true,
+    "base_rank_score": 80
   },
   {
     "id": "template-book-series",
@@ -875,11 +889,12 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-word-scene",
@@ -969,11 +984,12 @@
     "topics": [
       "language"
     ],
-    "rank_score": 9,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-cultural-relic-retro-infographic",
@@ -1027,7 +1043,8 @@
       "learning",
       "culture"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-dog-breed-retro-infographic",
@@ -1114,7 +1131,8 @@
     "topics": [
       "lifestyle"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-food",
@@ -1267,7 +1285,8 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 54
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-solar-term",
@@ -1350,7 +1369,8 @@
       "learning",
       "culture"
     ],
-    "rank_score": 16
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-fruit",
@@ -1386,7 +1406,8 @@
       "food",
       "science"
     ],
-    "rank_score": 13
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-what-if-history",
@@ -1441,7 +1462,8 @@
       "learning",
       "history"
     ],
-    "rank_score": 21
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-character-comparison",
@@ -1497,7 +1519,8 @@
     "rank_score": 1,
     "use_cases": [
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 1
   },
   {
     "id": "template-mbti-animal",
@@ -1552,7 +1575,8 @@
       "character",
       "mbti"
     ],
-    "rank_score": 5
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-battle",
@@ -2107,10 +2131,11 @@
       "character",
       "gaming"
     ],
-    "rank_score": 11,
+    "rank_score": 80,
     "use_cases": [
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-fashion-ecommerce",
@@ -2155,7 +2180,8 @@
       "product",
       "design"
     ],
-    "rank_score": 37
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -2174,7 +2200,8 @@
       "product",
       "design"
     ],
-    "rank_score": 1
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-contrast",
@@ -2262,7 +2289,8 @@
       "character",
       "mbti"
     ],
-    "rank_score": 15
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-guofeng-scroll",
@@ -2304,7 +2332,8 @@
       "character",
       "culture"
     ],
-    "rank_score": 6
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-species-science",
@@ -2350,7 +2379,8 @@
       "learning",
       "science"
     ],
-    "rank_score": 70
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-city-miniature",
@@ -2458,7 +2488,8 @@
       "lifestyle",
       "weather"
     ],
-    "rank_score": 2
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-hotspot-card",
@@ -2568,11 +2599,12 @@
       "learning",
       "trending"
     ],
-    "rank_score": 29,
+    "rank_score": 70,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 70
   },
   {
     "id": "template-constellation-steampunk",
@@ -2647,7 +2679,8 @@
       "science",
       "design"
     ],
-    "rank_score": 29
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-generic",
@@ -2764,11 +2797,12 @@
       "character",
       "mbti"
     ],
-    "rank_score": 9,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-marvel",
@@ -2900,7 +2934,8 @@
       "mbti",
       "film"
     ],
-    "rank_score": 26
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-nba",
@@ -3021,7 +3056,8 @@
       "mbti",
       "sports"
     ],
-    "rank_score": 6
+    "rank_score": 100,
+    "base_rank_score": 100
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -3093,11 +3129,12 @@
       "mbti",
       "career"
     ],
-    "rank_score": 3,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-breakingbad",
@@ -3426,7 +3463,8 @@
       "mbti",
       "film"
     ],
-    "rank_score": 1
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-sports-battle",
@@ -3598,7 +3636,8 @@
       "character",
       "sports"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-mbti-naruto",
@@ -3854,7 +3893,8 @@
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 8
   },
   {
     "id": "template-mbti-yellowstone",
@@ -4053,7 +4093,8 @@
       "mbti",
       "film"
     ],
-    "rank_score": 2
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-mbti-ghibli",
@@ -4226,11 +4267,12 @@
       "mbti",
       "film"
     ],
-    "rank_score": 55,
+    "rank_score": 100,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 100
   },
   {
     "id": "template-vocabulary",
@@ -4399,11 +4441,12 @@
       "language"
     ],
     "batch": true,
-    "rank_score": 10,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-series-infographic",
@@ -4616,11 +4659,12 @@
       "learning",
       "trending"
     ],
-    "rank_score": 8,
+    "rank_score": 70,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 70
   },
   {
     "id": "template-english-top5-phrases",
@@ -4977,11 +5021,12 @@
       "language"
     ],
     "batch": true,
-    "rank_score": 1,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-english-error-correction",
@@ -5194,11 +5239,12 @@
       "language"
     ],
     "batch": true,
-    "rank_score": 1,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-english-dialogue-scene",
@@ -5554,11 +5600,12 @@
     "topics": [
       "language"
     ],
-    "rank_score": 3,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-movie-poster",
@@ -5662,7 +5709,8 @@
       "lifestyle",
       "film"
     ],
-    "rank_score": 1
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-series-travel",
@@ -5754,7 +5802,8 @@
       "travel",
       "weather"
     ],
-    "rank_score": 9
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-fat-loss-plan",
@@ -5869,7 +5918,8 @@
       "lifestyle",
       "fitness"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-child-hobby-skill",
@@ -5925,7 +5975,8 @@
     "rank_score": 2,
     "use_cases": [
       "for-parents"
-    ]
+    ],
+    "base_rank_score": 2
   },
   {
     "id": "template-detailed-vocab-flashcard",
@@ -6014,14 +6065,15 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg",
-    "rank_score": 2,
+    "rank_score": 80,
     "topics": [
       "language"
     ],
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-custom-character-card",
@@ -6109,7 +6161,8 @@
     ],
     "use_cases": [
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 2
   },
   {
     "id": "template-detective-conan",
@@ -6191,11 +6244,12 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-detective-conan-conan-edogawa-prev.jpg",
-    "rank_score": 2,
+    "rank_score": 80,
     "topics": [
       "character",
       "film"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-children-english-vocab-spelling",
@@ -6220,13 +6274,14 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-children-english-vocab-spelling-weather-prev.jpg",
-    "rank_score": 2,
+    "rank_score": 80,
     "topics": [
       "language"
     ],
     "use_cases": [
       "for-parents"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-daily-essentials-learning-card",
@@ -6251,10 +6306,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-daily-essentials-learning-card-school-supplies-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 80,
     "topics": [
       "language"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-native-english-expressions",
@@ -6281,7 +6337,8 @@
     "rank_score": 50,
     "topics": [
       "language"
-    ]
+    ],
+    "base_rank_score": 50
   },
   {
     "id": "template-theme-overview-poster",
@@ -6306,10 +6363,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-theme-overview-poster-tcm-clearing-heat-herbs-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 100,
     "topics": [
       "lifestyle"
-    ]
+    ],
+    "base_rank_score": 100
   },
   {
     "id": "template-cuisine-food-vocab-poster",
@@ -6333,11 +6391,12 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 100,
     "topics": [
       "language",
       "food"
-    ]
+    ],
+    "base_rank_score": 100
   },
   {
     "id": "template-industrial-design-concept-sketch",
@@ -6364,7 +6423,8 @@
     "topics": [
       "design",
       "learning"
-    ]
+    ],
+    "base_rank_score": 50
   },
   {
     "id": "template-varieties-food-poster",
@@ -6389,10 +6449,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-varieties-food-poster-salad-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 100,
     "topics": [
       "lifestyle",
       "food"
-    ]
+    ],
+    "base_rank_score": 100
   }
 ]
