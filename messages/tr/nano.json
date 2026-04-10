@@ -1397,5 +1397,47 @@
         ]
       }
     }
+  },
+  "template-warmup-routine": {
+    "category": "Isınma Rutini Posterleri",
+    "description": "Her spor türü için 8 egzersiz kartlı sevimli kawaii tarzı ısınma posterleri oluşturun.",
+    "title": "Spor Isınma Rutini Posteri | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, kawaii çizgi film tarzında 8 ısınma egzersizi posteri oluşturur.",
+        "who": "Fitness koçları, spor eğitimcileri ve wellness içerik üreticileri için.",
+        "how": [
+          "Spor türünü girin (örn. SPOR SALONU, YOGA, YÜZME).",
+          "8 kartlı ısınma posteri oluşturun.",
+          "Fitness rehberi olarak paylaşın."
+        ],
+        "prompts": [
+          "Spor salonu ısınma posteri.",
+          "Kawaii fitness infografik.",
+          "Spora özel ısınma rehber posteri."
+        ]
+      }
+    }
+  },
+  "template-group-vocab-category": {
+    "category": "Kelime Kategori Posterleri",
+    "description": "Kategoriye göre 12 illüstrasyonlu İngilizce kelime posteri oluşturun.",
+    "title": "İngilizce Kelime Kategori Posteri | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, kawaii çizgi film tarzında 12 öğeli İngilizce kelime posteri oluşturur.",
+        "who": "İngilizce öğretmenleri, çocuk eğitimcileri ve dil öğrenme içerik üreticileri için.",
+        "how": [
+          "Kelime teması girin (örn. hayvan grup adları).",
+          "İllüstrasyonlu kelime posteri oluşturun.",
+          "Sınıf veya dijital öğrenmede kullanın."
+        ],
+        "prompts": [
+          "İngilizce kelime kategori posteri.",
+          "Çocuklar için kawaii kelime grubu posteri.",
+          "Tematik kelime infografik."
+        ]
+      }
+    }
   }
 }
