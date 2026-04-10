@@ -180,7 +180,7 @@ export function NanoInspirationCard({
       </div>
 
       {/* Image Carousel */}
-      <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl border-2 border-purple-100 bg-white shadow-inner">
+      <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-2xl border-2 border-purple-100 bg-white shadow-inner">
         {displaySrc ? (
           <CdnImage
             src={displaySrc}
@@ -250,29 +250,6 @@ export function NanoInspirationCard({
               ))}
             </div>
           </>
-        )}
-      </div>
-
-      {/* Description / Param summary */}
-      <div className="mb-4 rounded-2xl border border-purple-100 bg-white/60 p-4 backdrop-blur-sm">
-        {card.description ? (
-          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-800 font-medium">
-            {card.description}
-          </p>
-        ) : paramSummary ? (
-          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-800 font-medium">
-            {paramSummary}
-          </p>
-        ) : (
-          <p className="line-clamp-2 text-[15px] leading-snug text-neutral-700 font-medium">
-            Click to create with this template
-          </p>
-        )}
-
-        {paramSummary && (
-          <p className="mt-1 line-clamp-1 text-[13px] text-neutral-500">
-            {paramSummary}
-          </p>
         )}
       </div>
 
