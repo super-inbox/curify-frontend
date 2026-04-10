@@ -102,10 +102,7 @@ export default async function PublicLocaleLayout({
               {!isBlogPage && (
                   <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
                   <div className="mx-auto max-w-[1280px] px-6 sm:px-10">
-                    {/* ✅ Narrower EntryBar */}
-                    <div className="w-full max-w-[900px]">
-                      <EntryBar locale={locale} />
-                    </div>
+                    <EntryBar locale={locale} />
                   </div>
                 </div>
               )}
