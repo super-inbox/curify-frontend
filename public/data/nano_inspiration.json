@@ -18655,5 +18655,757 @@
         "title": "fencing"
       }
     }
+  },
+  {
+    "id": "template-vocabulary-english-spanish-colors",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-spanish-colors.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-spanish-colors-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "topic_name": "Colors",
+      "topic_chinese": "Colores",
+      "word_1_en": "Blue",
+      "word_1_cn": "Azul",
+      "pinyin_1": "ah-SOOL"
+    },
+    "locales": {
+      "en": {
+        "title": "Colors"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-spanish-family-members",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-spanish-family-members.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-spanish-family-members-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "topic_name": "Family Members",
+      "topic_chinese": "Miembros de la Familia",
+      "word_1_en": "Brother",
+      "word_1_cn": "Hermano",
+      "pinyin_1": "ehr-MAH-noh"
+    },
+    "locales": {
+      "en": {
+        "title": "Family Members"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-spanish-food-drink",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-spanish-food-drink.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-spanish-food-drink-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "topic_name": "Food & Drink",
+      "topic_chinese": "Comida y Bebida",
+      "word_1_en": "Water",
+      "word_1_cn": "Agua",
+      "pinyin_1": "AH-gwah"
+    },
+    "locales": {
+      "en": {
+        "title": "Food & Drink"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-spanish-la-maestra-the-teacher",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-spanish-la-maestra-the-teacher.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-spanish-la-maestra-the-teacher-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "character_name": "La Maestra (The Teacher)",
+      "scene_type": "El Aula (The Classroom)"
+    },
+    "locales": {
+      "en": {
+        "title": "La Maestra (The Teacher)"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-spanish-el-cocinero-the-chef",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-spanish-el-cocinero-the-chef.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-spanish-el-cocinero-the-chef-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "character_name": "El Cocinero (The Chef)",
+      "scene_type": "El Restaurante Mexicano (The Mexican Restaurant)"
+    },
+    "locales": {
+      "en": {
+        "title": "El Cocinero (The Chef)"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-spanish-la-deportista-the-athlete",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-spanish-la-deportista-the-athlete.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-spanish-la-deportista-the-athlete-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "character_name": "La Deportista (The Athlete)",
+      "scene_type": "El Parque (The Park)"
+    },
+    "locales": {
+      "en": {
+        "title": "La Deportista (The Athlete)"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-spanish-el-bombero-the-firefighter",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-spanish-el-bombero-the-firefighter.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-spanish-el-bombero-the-firefighter-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "character_name": "El Bombero (The Firefighter)",
+      "scene_type": "La Estación de Bomberos (The Fire Station)"
+    },
+    "locales": {
+      "en": {
+        "title": "El Bombero (The Firefighter)"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-spanish-ordering-food",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-spanish-ordering-food.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-spanish-ordering-food-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "topic_name": "Ordering Food",
+      "topic_english": "Ordering Food at a Restaurant",
+      "topic_chinese": "Pedir comida en un restaurante",
+      "speaker_1": "Waiter",
+      "speaker_2": "Customer",
+      "dialogue_1_en": "Hello, what can I get for you?",
+      "dialogue_1_cn": "¿Hola, qué puedo ofrecerle?",
+      "dialogue_2_en": "I'd like the chicken tacos, please.",
+      "dialogue_2_cn": "Quisiera los tacos de pollo, por favor.",
+      "dialogue_3_en": "Excellent choice! And to drink?",
+      "dialogue_3_cn": "¡Excelente elección! ¿Y para beber?",
+      "dialogue_4_en": "A glass of water, please.",
+      "dialogue_4_cn": "Un vaso de agua, por favor."
+    },
+    "locales": {
+      "en": {
+        "title": "Ordering Food"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-spanish-asking-for-directions",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-spanish-asking-for-directions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-spanish-asking-for-directions-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "topic_name": "Asking for Directions",
+      "topic_english": "Asking for Directions in a City",
+      "topic_chinese": "Pedir direcciones en una ciudad",
+      "speaker_1": "Tourist",
+      "speaker_2": "Local Resident",
+      "dialogue_1_en": "Excuse me, how do I get to the main square?",
+      "dialogue_1_cn": "Disculpe, ¿cómo llego a la plaza principal?",
+      "dialogue_2_en": "Go straight for two blocks, then turn right.",
+      "dialogue_2_cn": "Vaya recto dos cuadras y luego gire a la derecha.",
+      "dialogue_3_en": "Is it far from here?",
+      "dialogue_3_cn": "¿Está lejos de aquí?",
+      "dialogue_4_en": "No, it's just a five-minute walk.",
+      "dialogue_4_cn": "No, está a solo cinco minutos a pie."
+    },
+    "locales": {
+      "en": {
+        "title": "Asking for Directions"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-spanish-shopping-for-clothes",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-spanish-shopping-for-clothes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-spanish-shopping-for-clothes-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Spanish",
+      "topic_name": "Shopping for Clothes",
+      "topic_english": "Shopping for Clothes at a Store",
+      "topic_chinese": "Comprar ropa en una tienda",
+      "speaker_1": "Shop Assistant",
+      "speaker_2": "Customer",
+      "dialogue_1_en": "Can I help you find anything?",
+      "dialogue_1_cn": "¿Puedo ayudarle a encontrar algo?",
+      "dialogue_2_en": "Yes, I'm looking for a blue shirt.",
+      "dialogue_2_cn": "Sí, estoy buscando una camisa azul.",
+      "dialogue_3_en": "What size do you need?",
+      "dialogue_3_cn": "¿Qué talla necesita?",
+      "dialogue_4_en": "I need a medium, please.",
+      "dialogue_4_cn": "Necesito una talla mediana, por favor."
+    },
+    "locales": {
+      "en": {
+        "title": "Shopping for Clothes"
+      }
+    },
+    "topics": [
+      "english-spanish"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-korean-colors",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-korean-colors.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-korean-colors-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "topic_name": "Colors",
+      "topic_chinese": "색깔 (Saekkal)",
+      "word_1_en": "Red",
+      "word_1_cn": "빨간색",
+      "pinyin_1": "ppalgansaek"
+    },
+    "locales": {
+      "en": {
+        "title": "Colors"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-korean-family-members",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-korean-family-members.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-korean-family-members-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "topic_name": "Family Members",
+      "topic_chinese": "가족 (Gajok)",
+      "word_1_en": "Mother",
+      "word_1_cn": "엄마",
+      "pinyin_1": "eomma"
+    },
+    "locales": {
+      "en": {
+        "title": "Family Members"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-korean-daily-objects",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-korean-daily-objects.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-korean-daily-objects-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "topic_name": "Daily Objects",
+      "topic_chinese": "일상 용품 (Ilsang Yongpum)",
+      "word_1_en": "Book",
+      "word_1_cn": "책",
+      "pinyin_1": "chaek"
+    },
+    "locales": {
+      "en": {
+        "title": "Daily Objects"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-korean-busy-student",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-korean-busy-student.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-korean-busy-student-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "character_name": "Busy Student (바쁜 학생)",
+      "scene_type": "School Cafeteria (학교 식당)",
+      "topic_name": "Daily Routines & Food (일상 루틴과 음식)"
+    },
+    "locales": {
+      "en": {
+        "title": "Busy Student (바쁜 학생)"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-korean-k-pop-fan-tourist",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-korean-k-pop-fan-tourist.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-korean-k-pop-fan-tourist-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "character_name": "K-Pop Fan Tourist (케이팝 팬 관광객)",
+      "scene_type": "Myeongdong Market (명동 시장)",
+      "topic_name": "Shopping & Travel (쇼핑과 여행)"
+    },
+    "locales": {
+      "en": {
+        "title": "K-Pop Fan Tourist (케이팝 팬 관광객)"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-korean-little-dragon",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-korean-little-dragon.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-korean-little-dragon-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "character_name": "Little Dragon (아기 용)",
+      "scene_type": "Enchanted Forest (마법의 숲)",
+      "topic_name": "Fantasy & Nature (환상과 자연)"
+    },
+    "locales": {
+      "en": {
+        "title": "Little Dragon (아기 용)"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-korean-robot-chef",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-korean-robot-chef.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-korean-robot-chef-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "character_name": "Robot Chef (로봇 요리사)",
+      "scene_type": "Smart Kitchen (스마트 주방)",
+      "topic_name": "Technology & Cooking (기술과 요리)"
+    },
+    "locales": {
+      "en": {
+        "title": "Robot Chef (로봇 요리사)"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-korean-ordering-coffee",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-korean-ordering-coffee.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-korean-ordering-coffee-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "topic_name": "Ordering Coffee",
+      "topic_english": "Ordering Coffee",
+      "topic_chinese": "커피 주문하기",
+      "speaker_1": "Barista",
+      "speaker_2": "Customer",
+      "dialogue_1_en": "Hello! What can I get for you today?",
+      "dialogue_1_cn": "안녕하세요! 오늘 무엇을 도와드릴까요?",
+      "dialogue_2_en": "Hi, I'd like an iced Americano, please.",
+      "dialogue_2_cn": "안녕하세요, 아이스 아메리카노 한 잔 주세요.",
+      "dialogue_3_en": "Would you like a small, medium, or large?",
+      "dialogue_3_cn": "스몰, 미디움, 라지 중에 어떤 사이즈로 드릴까요?",
+      "dialogue_4_en": "A medium, please. Thank you!",
+      "dialogue_4_cn": "미디움으로 주세요. 감사합니다!"
+    },
+    "locales": {
+      "en": {
+        "title": "Ordering Coffee"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-korean-asking-for-directions",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-korean-asking-for-directions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-korean-asking-for-directions-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "topic_name": "Asking for Directions",
+      "topic_english": "Asking for Directions",
+      "topic_chinese": "길 묻기",
+      "speaker_1": "Traveler",
+      "speaker_2": "Local",
+      "dialogue_1_en": "Excuse me, how do I get to the Seoul Tower?",
+      "dialogue_1_cn": "실례합니다, 서울 타워에 어떻게 가나요?",
+      "dialogue_2_en": "Go straight two blocks, then turn left. It'll be on your right.",
+      "dialogue_2_cn": "두 블록 직진한 다음, 왼쪽으로 도세요. 오른쪽에 있을 거예요.",
+      "dialogue_3_en": "Straight two blocks, then left. Got it. Thank you!",
+      "dialogue_3_cn": "두 블록 직진, 그리고 왼쪽. 알겠습니다. 감사합니다!",
+      "dialogue_4_en": "You're welcome. Have a good time!",
+      "dialogue_4_cn": "천만에요. 즐거운 시간 보내세요!"
+    },
+    "locales": {
+      "en": {
+        "title": "Asking for Directions"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-korean-making-plans-with-a-friend",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-korean-making-plans-with-a-friend.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-korean-making-plans-with-a-friend-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Korean",
+      "topic_name": "Making Plans with a Friend",
+      "topic_english": "Making Plans with a Friend",
+      "topic_chinese": "친구와 약속 잡기",
+      "speaker_1": "Friend A",
+      "speaker_2": "Friend B",
+      "dialogue_1_en": "Hey, what are you doing this Saturday?",
+      "dialogue_1_cn": "야, 이번 주 토요일에 뭐 해?",
+      "dialogue_2_en": "Not much, just relaxing. Why?",
+      "dialogue_2_cn": "별로 없어, 그냥 쉬고 있어. 왜?",
+      "dialogue_3_en": "Wanna watch a movie together? There's a new action film out.",
+      "dialogue_3_cn": "영화 같이 볼래? 새로운 액션 영화가 나왔어.",
+      "dialogue_4_en": "Sounds great! What time should we meet?",
+      "dialogue_4_cn": "좋다! 몇 시에 만날까?"
+    },
+    "locales": {
+      "en": {
+        "title": "Making Plans with a Friend"
+      }
+    },
+    "topics": [
+      "english-korean"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-japanese-fruits",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-japanese-fruits.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-japanese-fruits-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "topic_name": "Fruits",
+      "topic_chinese": "果物",
+      "word_1_en": "Apple",
+      "word_1_cn": "りんご",
+      "pinyin_1": "ringo"
+    },
+    "locales": {
+      "en": {
+        "title": "Fruits"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-japanese-stationery",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-japanese-stationery.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-japanese-stationery-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "topic_name": "Stationery",
+      "topic_chinese": "文房具",
+      "word_1_en": "Pencil",
+      "word_1_cn": "鉛筆",
+      "pinyin_1": "enpitsu"
+    },
+    "locales": {
+      "en": {
+        "title": "Stationery"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-japanese-family-members",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-japanese-family-members.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-japanese-family-members-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "topic_name": "Family Members",
+      "topic_chinese": "家族",
+      "word_1_en": "Mother",
+      "word_1_cn": "お母さん",
+      "pinyin_1": "okaasan"
+    },
+    "locales": {
+      "en": {
+        "title": "Family Members"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-japanese-daily-greetings",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-japanese-daily-greetings.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-japanese-daily-greetings-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "topic_name": "Daily Greetings",
+      "topic_chinese": "日常の挨拶",
+      "word_1_en": "Thank you",
+      "word_1_cn": "ありがとうございます",
+      "pinyin_1": "arigatou gozaimasu"
+    },
+    "locales": {
+      "en": {
+        "title": "Daily Greetings"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-japanese-mother",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-japanese-mother.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-japanese-mother-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "character_name": "お母さん (Mother)",
+      "scene_type": "台所 (Kitchen)"
+    },
+    "locales": {
+      "en": {
+        "title": "お母さん (Mother)"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-japanese-foreign-tourist",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-japanese-foreign-tourist.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-japanese-foreign-tourist-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "character_name": "外国人旅行者 (Foreign Tourist)",
+      "scene_type": "温泉 (Hot Spring)"
+    },
+    "locales": {
+      "en": {
+        "title": "外国人旅行者 (Foreign Tourist)"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-japanese-sushi-chef",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-japanese-sushi-chef.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-japanese-sushi-chef-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "character_name": "寿司職人 (Sushi Chef)",
+      "scene_type": "寿司屋 (Sushi Restaurant)"
+    },
+    "locales": {
+      "en": {
+        "title": "寿司職人 (Sushi Chef)"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-japanese-festival-participant",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-japanese-festival-participant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-japanese-festival-participant-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "character_name": "祭り参加者 (Festival Participant)",
+      "scene_type": "夏祭り (Summer Festival)"
+    },
+    "locales": {
+      "en": {
+        "title": "祭り参加者 (Festival Participant)"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-japanese-ordering-coffee",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-japanese-ordering-coffee.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-japanese-ordering-coffee-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "topic_name": "Ordering Coffee",
+      "topic_english": "Ordering Coffee",
+      "topic_chinese": "コーヒーを注文する",
+      "speaker_1": "Barista",
+      "speaker_2": "Customer",
+      "dialogue_1_en": "What can I get for you today?",
+      "dialogue_1_cn": "本日は何にされますか？",
+      "dialogue_2_en": "Can I get a medium latte, please?",
+      "dialogue_2_cn": "ミディアムラテをお願いします。",
+      "dialogue_3_en": "Anything else?",
+      "dialogue_3_cn": "他に何かございますか？",
+      "dialogue_4_en": "No, that's all. Thank you!",
+      "dialogue_4_cn": "いいえ、それだけです。ありがとうございます！"
+    },
+    "locales": {
+      "en": {
+        "title": "Ordering Coffee"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-japanese-asking-for-directions",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-japanese-asking-for-directions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-japanese-asking-for-directions-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-Japanese",
+      "topic_name": "Asking for Directions",
+      "topic_english": "Asking for Directions",
+      "topic_chinese": "道を尋ねる",
+      "speaker_1": "Passerby",
+      "speaker_2": "Tourist",
+      "dialogue_1_en": "Excuse me, how do I get to the station?",
+      "dialogue_1_cn": "すみません、駅へはどう行けばいいですか？",
+      "dialogue_2_en": "Go straight down this street.",
+      "dialogue_2_cn": "この道をまっすぐ行ってください。",
+      "dialogue_3_en": "Is it far from here?",
+      "dialogue_3_cn": "ここから遠いですか？",
+      "dialogue_4_en": "No, it's about a 5-minute walk.",
+      "dialogue_4_cn": "いいえ、徒歩5分くらいです。"
+    },
+    "locales": {
+      "en": {
+        "title": "Asking for Directions"
+      }
+    },
+    "topics": [
+      "english-japanese"
+    ]
   }
 ]
