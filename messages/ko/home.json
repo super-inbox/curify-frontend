@@ -503,20 +503,30 @@
     "templatesHeading": "템플릿"
   },
   "tags": {
-    "chinese-english": {
-      "displayName": "중국어-영어",
-      "title": "중국어-영어 시각적 학습 템플릿",
-      "description": "중국어-영어 이중 언어 학습을 위한 AI 비주얼 템플릿과 프롬프트 탐색."
+    "english-chinese": {
+      "displayName": "영어-중국어",
+      "title": "영어-중국어 시각적 학습 템플릿",
+      "description": "영어-중국어 이중 언어 학습을 위한 AI 템플릿."
     },
-    "spanish-english": {
-      "displayName": "스페인어-영어",
-      "title": "스페인어-영어 시각적 학습 템플릿",
-      "description": "스페인어-영어 이중 언어 학습자를 위한 AI 템플릿과 어휘 카드."
+    "english-spanish": {
+      "displayName": "영어-스페인어",
+      "title": "영어-스페인어 시각적 학습 템플릿",
+      "description": "영어-스페인어 이중 언어 학습자를 위한 AI 템플릿."
     },
-    "japanese-english": {
-      "displayName": "일본어-영어",
-      "title": "일본어-영어 시각적 학습 템플릿",
-      "description": "일본어-영어 이중 언어 교육을 위한 AI 템플릿과 언어 학습 자료."
+    "english-japanese": {
+      "displayName": "영어-일본어",
+      "title": "영어-일본어 시각적 학습 템플릿",
+      "description": "영어-일본어 이중 언어 교육을 위한 AI 템플릿."
+    },
+    "english-korean": {
+      "displayName": "영어-한국어",
+      "title": "영어-한국어 시각적 학습 템플릿",
+      "description": "영어-한국어 언어 학습을 위한 AI 템플릿."
+    },
+    "english": {
+      "displayName": "영어",
+      "title": "영어 학습 시각적 템플릿",
+      "description": "영어 학습 및 어휘를 위한 AI 비주얼 템플릿."
     }
   }
 }

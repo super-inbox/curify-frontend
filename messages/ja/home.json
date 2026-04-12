@@ -503,20 +503,30 @@
     "templatesHeading": "テンプレート"
   },
   "tags": {
-    "chinese-english": {
-      "displayName": "中国語-英語",
-      "title": "中国語-英語ビジュアル学習テンプレート",
-      "description": "中国語-英語バイリンガル学習向けAIビジュアルテンプレートとプロンプトを探索。"
+    "english-chinese": {
+      "displayName": "英語-中国語",
+      "title": "英語-中国語ビジュアル学習テンプレート",
+      "description": "英語-中国語バイリンガル学習向けAIテンプレート。"
     },
-    "spanish-english": {
-      "displayName": "スペイン語-英語",
-      "title": "スペイン語-英語ビジュアル学習テンプレート",
-      "description": "スペイン語-英語バイリンガル学習者向けAIテンプレートと語彙カード。"
+    "english-spanish": {
+      "displayName": "英語-スペイン語",
+      "title": "英語-スペイン語ビジュアル学習テンプレート",
+      "description": "英語-スペイン語バイリンガル学習者向けAIテンプレート。"
     },
-    "japanese-english": {
-      "displayName": "日本語-英語",
-      "title": "日本語-英語ビジュアル学習テンプレート",
-      "description": "日本語-英語バイリンガル教育向けAIテンプレートと言語学習リソース。"
+    "english-japanese": {
+      "displayName": "英語-日本語",
+      "title": "英語-日本語ビジュアル学習テンプレート",
+      "description": "英語-日本語バイリンガル教育向けAIテンプレート。"
+    },
+    "english-korean": {
+      "displayName": "英語-韓国語",
+      "title": "英語-韓国語ビジュアル学習テンプレート",
+      "description": "英語-韓国語言語学習向けAIテンプレート。"
+    },
+    "english": {
+      "displayName": "英語",
+      "title": "英語学習ビジュアルテンプレート",
+      "description": "英語学習と語彙向けAIビジュアルテンプレート。"
     }
   }
 }
