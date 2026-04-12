@@ -14,6 +14,7 @@ type Props = {
   className?: string;
   showDisabled?: boolean;
   size?: "default" | "small";
+  color?: "blue" | "purple";
 };
 
 function TopicLink({
@@ -22,12 +23,14 @@ function TopicLink({
   label,
   isActive,
   size,
+  color,
 }: {
   topic: TopicWithTemplates;
   href: string;
   label: string;
   isActive: boolean;
   size: "default" | "small";
+  color: "blue" | "purple";
 }) {
   const trackClick = useClickTracking(topic.id, "topic_capsule" as any);
 
@@ -37,7 +40,7 @@ function TopicLink({
       onClick={trackClick}
       isActive={isActive}
       ariaCurrent={isActive ? "page" : undefined}
-      color="blue"
+      color={color}
       size={size}
     >
       {label}
@@ -52,6 +55,7 @@ export default function TopicNavRow({
   className,
   showDisabled = true,
   size = "default",
+  color = "blue",
 }: Props) {
   const t = useTranslations("topics");
 
@@ -110,6 +114,7 @@ export default function TopicNavRow({
             label={label}
             isActive={isActive}
             size={size}
+            color={color}
           />
         );
       })}

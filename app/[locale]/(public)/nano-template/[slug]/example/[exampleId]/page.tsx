@@ -9,6 +9,8 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
+import { buildTopicHref } from "@/lib/locale_utils";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
 
@@ -80,6 +82,8 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     ctx.templateId
   );
 
+  const exampleTags: string[] = (example as any).tags ?? [];
+
   return {
     ...ctx,
     imageId,
@@ -88,6 +92,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     category,
     prompt,
     tags,
+    exampleTags,
     paramEntries,
     gridItems,
     prevNext,
@@ -160,6 +165,7 @@ export default async function NanoExampleDetailPage({
     title,
     category,
     prompt,
+    exampleTags,
     paramEntries,
     gridItems,
     prevNext,
@@ -203,6 +209,21 @@ export default async function NanoExampleDetailPage({
                 size="small"
               />
             ) : null}
+
+            {exampleTags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {exampleTags.map((tag) => (
+                  <MetaChipLink
+                    key={tag}
+                    href={buildTopicHref(rawLocale, tag)}
+                    color="purple"
+                    size="small"
+                  >
+                    {tag}
+                  </MetaChipLink>
+                ))}
+              </div>
+            )}
 
             {category ? (
               <a
