@@ -18,7 +18,7 @@ import {
   titleCaseFromSlug,
 } from "@/lib/locale_utils";
 
-import { getTemplatesForTopic, getRelatedTopics } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -52,9 +52,13 @@ export default async function Page({ params }: Props) {
       .filter((id): id is string => typeof id === "string" && id.length > 0)
   );
 
-  const filteredImages = allImages.filter((img: any) =>
-    allowedTemplateIds.has(img?.template_id)
-  );
+  const isChildTopic = !!getParentTopic(slug);
+
+  const filteredImages = allImages.filter((img: any) => {
+    if (!allowedTemplateIds.has(img?.template_id)) return false;
+    if (isChildTopic) return (img.topics ?? []).includes(slug);
+    return true;
+  });
 
   const reg = buildNanoRegistry(filteredTemplates, filteredImages);
 
