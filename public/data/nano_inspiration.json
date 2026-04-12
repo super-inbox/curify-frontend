@@ -18104,5 +18104,453 @@
         "title": "yoga"
       }
     }
+  },
+  {
+    "id": "template-city-mbti-bangkok",
+    "template_id": "template-city-mbti",
+    "asset": {
+      "image_url": "/images/nano_insp/template-city-mbti-bangkok.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-city-mbti-bangkok-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "bangkok"
+      }
+    }
+  },
+  {
+    "id": "template-city-mbti-beijing",
+    "template_id": "template-city-mbti",
+    "asset": {
+      "image_url": "/images/nano_insp/template-city-mbti-beijing.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-city-mbti-beijing-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "beijing"
+      }
+    }
+  },
+  {
+    "id": "template-city-mbti-chengdu",
+    "template_id": "template-city-mbti",
+    "asset": {
+      "image_url": "/images/nano_insp/template-city-mbti-chengdu.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-city-mbti-chengdu-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "chengdu"
+      }
+    }
+  },
+  {
+    "id": "template-city-mbti-seoul",
+    "template_id": "template-city-mbti",
+    "asset": {
+      "image_url": "/images/nano_insp/template-city-mbti-seoul.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-city-mbti-seoul-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "seoul"
+      }
+    }
+  },
+  {
+    "id": "template-city-mbti-shanghai",
+    "template_id": "template-city-mbti",
+    "asset": {
+      "image_url": "/images/nano_insp/template-city-mbti-shanghai.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-city-mbti-shanghai-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "shanghai"
+      }
+    }
+  },
+  {
+    "id": "template-clothing-evolution-poster-chinese",
+    "template_id": "template-clothing-evolution-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-clothing-evolution-poster-chinese.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-clothing-evolution-poster-chinese-prev.jpg"
+    },
+    "params": {
+      "region": "chinese"
+    },
+    "locales": {
+      "en": {
+        "title": "chinese"
+      }
+    }
+  },
+  {
+    "id": "template-clothing-evolution-poster-french",
+    "template_id": "template-clothing-evolution-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-clothing-evolution-poster-french.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-clothing-evolution-poster-french-prev.jpg"
+    },
+    "params": {
+      "region": "french"
+    },
+    "locales": {
+      "en": {
+        "title": "french"
+      }
+    }
+  },
+  {
+    "id": "template-clothing-evolution-poster-indian",
+    "template_id": "template-clothing-evolution-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-clothing-evolution-poster-indian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-clothing-evolution-poster-indian-prev.jpg"
+    },
+    "params": {
+      "region": "indian"
+    },
+    "locales": {
+      "en": {
+        "title": "indian"
+      }
+    }
+  },
+  {
+    "id": "template-clothing-evolution-poster-japanese",
+    "template_id": "template-clothing-evolution-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-clothing-evolution-poster-japanese.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-clothing-evolution-poster-japanese-prev.jpg"
+    },
+    "params": {
+      "region": "japanese"
+    },
+    "locales": {
+      "en": {
+        "title": "japanese"
+      }
+    }
+  },
+  {
+    "id": "template-clothing-evolution-poster-korean",
+    "template_id": "template-clothing-evolution-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-clothing-evolution-poster-korean.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-clothing-evolution-poster-korean-prev.jpg"
+    },
+    "params": {
+      "region": "korean"
+    },
+    "locales": {
+      "en": {
+        "title": "korean"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-australian",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-australian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-australian-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "australian"
+    },
+    "locales": {
+      "en": {
+        "title": "australian"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-french",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-french.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-french-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "french"
+    },
+    "locales": {
+      "en": {
+        "title": "french"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-henan",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-henan.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-henan-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "henan"
+    },
+    "locales": {
+      "en": {
+        "title": "henan"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-indian",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-indian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-indian-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "indian"
+    },
+    "locales": {
+      "en": {
+        "title": "indian"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-mongolian",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-mongolian.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-mongolian-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "mongolian"
+    },
+    "locales": {
+      "en": {
+        "title": "mongolian"
+      }
+    }
+  },
+  {
+    "id": "template-home-organization-before-after-closet",
+    "template_id": "template-home-organization-before-after",
+    "asset": {
+      "image_url": "/images/nano_insp/template-home-organization-before-after-closet.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-home-organization-before-after-closet-prev.jpg"
+    },
+    "params": {
+      "space_type": "closet"
+    },
+    "locales": {
+      "en": {
+        "title": "closet"
+      }
+    }
+  },
+  {
+    "id": "template-home-organization-before-after-desk",
+    "template_id": "template-home-organization-before-after",
+    "asset": {
+      "image_url": "/images/nano_insp/template-home-organization-before-after-desk.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-home-organization-before-after-desk-prev.jpg"
+    },
+    "params": {
+      "space_type": "desk"
+    },
+    "locales": {
+      "en": {
+        "title": "desk"
+      }
+    }
+  },
+  {
+    "id": "template-home-organization-before-after-kitchen",
+    "template_id": "template-home-organization-before-after",
+    "asset": {
+      "image_url": "/images/nano_insp/template-home-organization-before-after-kitchen.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-home-organization-before-after-kitchen-prev.jpg"
+    },
+    "params": {
+      "space_type": "kitchen"
+    },
+    "locales": {
+      "en": {
+        "title": "kitchen"
+      }
+    }
+  },
+  {
+    "id": "template-home-organization-before-after-living-room-shelf",
+    "template_id": "template-home-organization-before-after",
+    "asset": {
+      "image_url": "/images/nano_insp/template-home-organization-before-after-living-room-shelf.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg"
+    },
+    "params": {
+      "space_type": "living room shelf"
+    },
+    "locales": {
+      "en": {
+        "title": "living room shelf"
+      }
+    }
+  },
+  {
+    "id": "template-soft-decoration-design-guide-biophilic-living-room",
+    "template_id": "template-soft-decoration-design-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soft-decoration-design-guide-biophilic-living-room.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soft-decoration-design-guide-biophilic-living-room-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "biophilic living room"
+      }
+    }
+  },
+  {
+    "id": "template-soft-decoration-design-guide-bohemian-wabi-sabi-bedroom",
+    "template_id": "template-soft-decoration-design-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soft-decoration-design-guide-bohemian-wabi-sabi-bedroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soft-decoration-design-guide-bohemian-wabi-sabi-bedroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "bohemian wabi sabi bedroom"
+      }
+    }
+  },
+  {
+    "id": "template-soft-decoration-design-guide-natural-organic-bedroom",
+    "template_id": "template-soft-decoration-design-guide",
+    "asset": {
+      "image_url": "/images/nano_insp/template-soft-decoration-design-guide-natural-organic-bedroom.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-soft-decoration-design-guide-natural-organic-bedroom-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "natural organic bedroom"
+      }
+    }
+  },
+  {
+    "id": "template-stick-figure-vocab-body-movement-verbs-set1",
+    "template_id": "template-stick-figure-vocab",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stick-figure-vocab-body-movement-verbs-set1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set1-prev.jpg"
+    },
+    "params": {
+      "vocab_theme": "body movement verbs set1"
+    },
+    "locales": {
+      "en": {
+        "title": "body movement verbs set1"
+      }
+    }
+  },
+  {
+    "id": "template-stick-figure-vocab-body-movement-verbs-set2",
+    "template_id": "template-stick-figure-vocab",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stick-figure-vocab-body-movement-verbs-set2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set2-prev.jpg"
+    },
+    "params": {
+      "vocab_theme": "body movement verbs set2"
+    },
+    "locales": {
+      "en": {
+        "title": "body movement verbs set2"
+      }
+    }
+  },
+  {
+    "id": "template-stick-figure-vocab-body-movement-verbs-set3",
+    "template_id": "template-stick-figure-vocab",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stick-figure-vocab-body-movement-verbs-set3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set3-prev.jpg"
+    },
+    "params": {
+      "vocab_theme": "body movement verbs set3"
+    },
+    "locales": {
+      "en": {
+        "title": "body movement verbs set3"
+      }
+    }
+  },
+  {
+    "id": "template-stick-figure-vocab-body-movement-verbs-set4",
+    "template_id": "template-stick-figure-vocab",
+    "asset": {
+      "image_url": "/images/nano_insp/template-stick-figure-vocab-body-movement-verbs-set4.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set4-prev.jpg"
+    },
+    "params": {
+      "vocab_theme": "body movement verbs set4"
+    },
+    "locales": {
+      "en": {
+        "title": "body movement verbs set4"
+      }
+    }
+  },
+  {
+    "id": "template-warmup-routine-badminton",
+    "template_id": "template-warmup-routine",
+    "asset": {
+      "image_url": "/images/nano_insp/template-warmup-routine-badminton.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-warmup-routine-badminton-prev.jpg"
+    },
+    "params": {
+      "sport_type": "badminton"
+    },
+    "locales": {
+      "en": {
+        "title": "badminton"
+      }
+    }
+  },
+  {
+    "id": "template-warmup-routine-basketball",
+    "template_id": "template-warmup-routine",
+    "asset": {
+      "image_url": "/images/nano_insp/template-warmup-routine-basketball.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-warmup-routine-basketball-prev.jpg"
+    },
+    "params": {
+      "sport_type": "basketball"
+    },
+    "locales": {
+      "en": {
+        "title": "basketball"
+      }
+    }
+  },
+  {
+    "id": "template-warmup-routine-fencing",
+    "template_id": "template-warmup-routine",
+    "asset": {
+      "image_url": "/images/nano_insp/template-warmup-routine-fencing.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-warmup-routine-fencing-prev.jpg"
+    },
+    "params": {
+      "sport_type": "fencing"
+    },
+    "locales": {
+      "en": {
+        "title": "fencing"
+      }
+    }
   }
 ]
