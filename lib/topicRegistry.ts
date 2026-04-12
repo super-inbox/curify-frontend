@@ -1,4 +1,5 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoInspiration from "@/public/data/nano_inspiration.json";
 
 export type Topic = {
   id: string;
@@ -9,10 +10,17 @@ type TemplateLike = {
   topics?: string | string[];
 };
 
+type InspirationLike = {
+  id: string;
+  template_id: string;
+  topics?: string[];
+};
+
 export type TopicWithTemplates = Topic & {
   templates: TemplateLike[];
   templateCount: number;
   isEnabled: boolean;
+  parentTopic?: string;
 };
 
 export type TopicRegistry = {
@@ -21,6 +29,8 @@ export type TopicRegistry = {
   topicToTemplates: Map<string, TemplateLike[]>;
   templateToTopics: Map<string, string[]>;
   relatedTopics: Map<string, string[]>;
+  childTopics: Map<string, string[]>;
+  parentTopic: Map<string, string>;
 };
 
 function normalizeTopicValues(value: unknown): string[] {
@@ -54,8 +64,17 @@ function deriveTopicsFromTemplates(
   return distinctTopicIds.map((id) => ({ id }));
 }
 
+const HIERARCHY_FOCUS_TOPICS = new Set([
+  "lifestyle",
+  "language",
+  "character",
+  "product",
+  "learning",
+]);
+
 function buildTopicRegistry(): TopicRegistry {
   const templates = nanoTemplates as TemplateLike[];
+  const inspirations = nanoInspiration as InspirationLike[];
   const baseTopics = deriveTopicsFromTemplates(templates);
 
   const topicToTemplates = new Map<string, TemplateLike[]>();
@@ -77,6 +96,52 @@ function buildTopicRegistry(): TopicRegistry {
     }
   }
 
+  // Build child topics from nano_inspiration.topics for the 5 hierarchy focus topics
+  const childTopics = new Map<string, string[]>();
+  const parentTopic = new Map<string, string>();
+
+  // child topic id → Set of template ids that have examples tagged with it
+  const childToTemplateIds = new Map<string, Set<string>>();
+
+  for (const insp of inspirations) {
+    if (!insp.topics?.length) continue;
+
+    // Find which focus topics this inspiration's template belongs to
+    const templateFocusTopics = (templateToTopics.get(insp.template_id) ?? [])
+      .filter((t) => HIERARCHY_FOCUS_TOPICS.has(t));
+
+    if (!templateFocusTopics.length) continue;
+
+    for (const childId of insp.topics) {
+      // Skip if this is already a top-level topic
+      if (topicToTemplates.has(childId)) continue;
+
+      if (!childToTemplateIds.has(childId)) {
+        childToTemplateIds.set(childId, new Set());
+      }
+      childToTemplateIds.get(childId)!.add(insp.template_id);
+
+      // Assign parent (first focus topic found)
+      if (!parentTopic.has(childId)) {
+        parentTopic.set(childId, templateFocusTopics[0]);
+      }
+    }
+  }
+
+  // Group children by parent focus topic
+  for (const [childId, templateIds] of childToTemplateIds) {
+    const parent = parentTopic.get(childId)!;
+    if (!childTopics.has(parent)) childTopics.set(parent, []);
+    childTopics.get(parent)!.push(childId);
+
+    // Register child topic in topicToTemplates so pages can query it
+    const childTemplates = Array.from(templateIds)
+      .map((id) => templates.find((t) => t.id === id))
+      .filter((t): t is TemplateLike => Boolean(t));
+    topicToTemplates.set(childId, childTemplates);
+  }
+
+  // Build enriched topics including child topics
   const enrichedTopics: TopicWithTemplates[] = baseTopics.map((topic) => {
     const topicTemplates = topicToTemplates.get(topic.id) ?? [];
     return {
@@ -87,18 +152,35 @@ function buildTopicRegistry(): TopicRegistry {
     };
   });
 
+  // Add child topics to the topics list
+  for (const [childId, templateSet] of childToTemplateIds) {
+    const childTemplates = Array.from(templateSet)
+      .map((id) => templates.find((t) => t.id === id))
+      .filter((t): t is TemplateLike => Boolean(t));
+
+    enrichedTopics.push({
+      id: childId,
+      templates: childTemplates,
+      templateCount: childTemplates.length,
+      isEnabled: childTemplates.length > 0,
+      parentTopic: parentTopic.get(childId),
+    });
+  }
+
   const topicById = new Map<string, TopicWithTemplates>(
     enrichedTopics.map((topic) => [topic.id, topic])
   );
 
   // Build related topics for focus topics only, sharing >= 2 templates
-  const FOCUS_TOPICS = new Set(["learning", "character", "lifestyle", "product"]);
+  const RELATED_FOCUS_TOPICS = new Set(["learning", "character", "lifestyle", "product"]);
   const MIN_OVERLAP = 2;
   const relatedTopics = new Map<string, string[]>();
-  const topicIds = Array.from(topicToTemplates.keys());
+  const topicIds = Array.from(topicToTemplates.keys()).filter(
+    (id) => !parentTopic.has(id) // exclude child topics from related computation
+  );
 
   for (const a of topicIds) {
-    if (!FOCUS_TOPICS.has(a)) continue;
+    if (!RELATED_FOCUS_TOPICS.has(a)) continue;
     const aIds = new Set(topicToTemplates.get(a)!.map((t) => t.id));
     const related: string[] = [];
     for (const b of topicIds) {
@@ -115,6 +197,8 @@ function buildTopicRegistry(): TopicRegistry {
     topicToTemplates,
     templateToTopics,
     relatedTopics,
+    childTopics,
+    parentTopic,
   };
 }
 
@@ -138,6 +222,14 @@ export function getTopicIdsForTemplate(templateId: string): string[] {
 
 export function getRelatedTopics(topicId: string): string[] {
   return registry.relatedTopics.get(topicId) ?? [];
+}
+
+export function getChildTopics(topicId: string): string[] {
+  return registry.childTopics.get(topicId) ?? [];
+}
+
+export function getParentTopic(topicId: string): string | undefined {
+  return registry.parentTopic.get(topicId);
 }
 
 export function hasTopic(topicId: string): boolean {

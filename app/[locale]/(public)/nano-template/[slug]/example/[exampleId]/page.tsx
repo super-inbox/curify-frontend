@@ -82,7 +82,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     ctx.templateId
   );
 
-  const exampleTags: string[] = (example as any).tags ?? [];
+  const exampleTags: string[] = (example as any).topics ?? [];
 
   return {
     ...ctx,
