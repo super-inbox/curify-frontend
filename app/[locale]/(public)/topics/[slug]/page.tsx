@@ -18,7 +18,7 @@ import {
   titleCaseFromSlug,
 } from "@/lib/locale_utils";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -100,6 +100,22 @@ export default async function Page({ params }: Props) {
 
   const relatedTopicIds = getRelatedTopics(slug);
 
+  const CHILD_THRESHOLD = 2;
+  const parentTopicId = getParentTopic(slug);
+
+  // On a parent page: show its child topics. On a child page: show siblings.
+  const siblingOrChildIds = isChildTopic
+    ? getChildTopics(parentTopicId!).filter((id) => id !== slug)
+    : getChildTopics(slug);
+
+  const visibleSubTopics = siblingOrChildIds.filter(
+    (id) => (getTopicById(id)?.templateCount ?? 0) >= CHILD_THRESHOLD
+  );
+
+  const subTopicsHeading = isChildTopic
+    ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
+    : translateTopics("topicPage.subTopicsHeading") || "Browse by Category";
+
   return (
     <main className="min-h-screen">
       <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
@@ -146,6 +162,20 @@ export default async function Page({ params }: Props) {
           showOtherTemplateTitle={false}
         />
       </section>
+
+      {visibleSubTopics.length > 0 && (
+        <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
+            {subTopicsHeading}
+          </h2>
+          <TopicNavRow
+            locale={localeStr}
+            topics={visibleSubTopics}
+            showDisabled={false}
+            size="default"
+          />
+        </section>
+      )}
 
     </main>
   );
