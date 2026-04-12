@@ -216,7 +216,7 @@ export default async function NanoExampleDetailPage({
                   <MetaChipLink
                     key={tag}
                     href={buildTopicHref(rawLocale, tag)}
-                    color="purple"
+                    color="blue"
                     size="small"
                   >
                     {tag}
