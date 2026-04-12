@@ -6510,7 +6510,194 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "topics": [
-      "language"
+      "language",
+      "english"
+    ]
+  },
+  {
+    "id": "template-city-mbti",
+    "locales": {
+      "en": {
+        "base_prompt": "（City MBTI Personality Poster Designer）You are a professional city MBTI infographic designer, specializing in creating cute, colorful, kawaii-style city personality posters. Based on the user-specified {city_name}, generate a vertical 3:4 premium city MBTI poster, matching the cartoon, vibrant aesthetic of the reference images. Layout: 1. Header: Large bold red title \"{city_name}\", Curify watermark at top left, rainbow gradient banner with MBTI type \"{mbti_type} ({mbti_title})\". 2. Main Illustration: Kawaii cartoon cityscape of {city_name} with iconic landmarks, cute mascot, local signature food. 3. Description: 2-line text summarizing city's personality, culture and charm. Style: Clean minimalist design, soft off-white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {city_name} MBTI city personality poster.",
+        "parameters": [
+          {
+            "name": "city_name",
+            "label": "City Name",
+            "type": "text",
+            "placeholder": [
+              "Bangkok",
+              "Beijing",
+              "Chengdu",
+              "Seoul",
+              "Shanghai",
+              "Tokyo"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ENFP",
+              "ISTJ",
+              "ESFP",
+              "ENFJ",
+              "ENTJ",
+              "INTJ"
+            ]
+          },
+          {
+            "name": "mbti_title",
+            "label": "MBTI Title",
+            "type": "text",
+            "placeholder": [
+              "The Campaigner",
+              "The Inspector/Traditionalist",
+              "The Entertainer",
+              "The Protagonist",
+              "The Commander",
+              "The Architect"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-city-mbti-beijing-prev.jpg",
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "topics": [
+      "character",
+      "mbti"
+    ]
+  },
+  {
+    "id": "template-clothing-evolution-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "（Clothing Evolution Poster Designer）You are a professional fashion history infographic designer, specializing in creating cute, educational clothing evolution posters. Based on the user-specified {region}, generate a vertical 3:4 premium \"Evolution of {region} Clothing\" poster, matching the kawaii cartoon, clear historical aesthetic of the reference images. Layout: 1. Header: Large bold title \"EVOLUTION OF {region} CLOTHING\", Curify watermark at top left. 2. Timeline: 6 historical clothing eras with dotted connecting lines. Each era: Cute cartoon illustration of person in period clothing, era name/period, short style description, numbered label 1-6. Style: Clean minimalist design, soft off-white background, kawaii cartoon, accurate historical clothing details, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: Evolution of {region} Clothing historical fashion poster.",
+        "parameters": [
+          {
+            "name": "region",
+            "label": "Clothing Region",
+            "type": "text",
+            "placeholder": [
+              "FRENCH",
+              "KOREAN",
+              "JAPANESE",
+              "INDIAN",
+              "CHINESE"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-clothing-evolution-poster--prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "learning",
+      "culture"
+    ]
+  },
+  {
+    "id": "template-soft-decoration-design-guide",
+    "locales": {
+      "en": {
+        "base_prompt": "（Soft Decoration Design Guide Poster Designer）You are a professional interior design infographic designer, specializing in creating high-quality, aesthetic home soft decoration design guides. Based on the user-specified {space_type} and {decor_style}, generate a vertical 3:2 premium soft decoration design guide poster, matching the photorealistic, professional interior design aesthetic of the reference images. Layout: 1. Top: Full-width photorealistic render of a {space_type} in {decor_style} style, natural lighting, professional composition. 2. Bottom: Large title \"SOFT DECORATION DESIGN GUIDE\", subtitle \"{decor_style} {space_type}\", categorized breakdown of all furniture/decor with accurate English labels, photorealistic previews, plus Color Palette, Materials, Style Notes sections. Style: Clean professional design, photorealistic interior render, clear typography, vertical 3:2 aspect ratio, 4K ultra HD, direct image generation. Subject: {decor_style} {space_type} soft decoration design guide.",
+        "parameters": [
+          {
+            "name": "space_type",
+            "label": "Space Type",
+            "type": "text",
+            "placeholder": [
+              "Living Room",
+              "Bedroom",
+              "Kitchen",
+              "Bathroom",
+              "Home Office"
+            ]
+          },
+          {
+            "name": "decor_style",
+            "label": "Decoration Style",
+            "type": "text",
+            "placeholder": [
+              "Modern Biophilic",
+              "Bohemian Wabi-Sabi",
+              "Natural Organic",
+              "Minimalist Scandinavian",
+              "Japandi"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-soft-decoration-design-guide-poster-en-preview.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "design",
+      "interior",
+      "lifestyle"
+    ]
+  },
+  {
+    "id": "template-home-organization-before-after",
+    "locales": {
+      "en": {
+        "base_prompt": "（Home Organization Before & After Poster Designer）You are a professional home organization infographic designer, specializing in creating \"Before & After\" organization transformation posters. Based on the user-specified {space_type}, generate a horizontal 4:3 premium organization transformation poster, matching the clean, photorealistic, minimalist aesthetic of the reference images. Layout: Split-screen, left = \"BEFORE\" messy cluttered {space_type}, right = \"AFTER\" fully organized tidy {space_type} with clear English labels for all storage solutions. Style: Bright natural lighting, consistent perspective, photorealistic high-resolution, Curify watermark at bottom right, horizontal 4:3 aspect ratio, 4K ultra HD, direct image generation. Subject: {space_type} organization before & after transformation poster.",
+        "parameters": [
+          {
+            "name": "space_type",
+            "label": "Space Type",
+            "type": "text",
+            "placeholder": [
+              "Desk",
+              "Kitchen Counter",
+              "Living Room Shelf",
+              "Closet",
+              "Bathroom Vanity",
+              "Pantry"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "lifestyle",
+      "interior"
+    ]
+  },
+  {
+    "id": "template-stick-figure-vocab",
+    "locales": {
+      "en": {
+        "base_prompt": "（Stick Figure Vocabulary Poster Designer）You are a professional children's English vocabulary educational poster designer, specializing in creating cute, clear, kawaii-style learning infographics. Based on the user-specified {vocab_theme}, generate a vertical 3:4 premium vocabulary poster, matching the cartoon, educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{vocab_theme}\", Curify watermark at top left. 2. Grid: 9 vocabulary items in 3×3 grid, each in a clean white box. Each item: Top = cute cartoon yellow stick figure illustration; Middle = bold English vocabulary word; Bottom = simple easy-to-understand definition. Style: Clean minimalist design, pure white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {vocab_theme} English vocabulary educational poster.",
+        "parameters": [
+          {
+            "name": "vocab_theme",
+            "label": "Vocabulary Theme",
+            "type": "text",
+            "placeholder": [
+              "Body Movement Verbs",
+              "Action Verbs",
+              "Daily Verbs",
+              "Sports Verbs",
+              "Emotion Verbs"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set1-prev.jpg",
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "topics": [
+      "language",
+      "fitness"
     ]
   }
 ]
