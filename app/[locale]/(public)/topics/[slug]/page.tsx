@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
@@ -17,6 +18,7 @@ import {
   makeSafeTranslator,
   titleCaseFromSlug,
 } from "@/lib/locale_utils";
+import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById } from "@/lib/topicRegistry";
 
@@ -27,6 +29,31 @@ export const dynamic = "force-dynamic";
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  const t = await getTranslations({ locale });
+  const safeT = (key: string) => { try { return t(key as never) ?? ""; } catch { return ""; } };
+
+  const displayName = safeT(`topics.${slug}.displayName`) || titleCaseFromSlug(slug);
+  const title = safeT(`topics.${slug}.title`) || `${displayName} — Nano Banana AI Templates`;
+  const description = safeT(`topics.${slug}.description`) || `Explore ${displayName} AI visual templates and prompts on Nano Banana.`;
+
+  const canonical = getCanonicalUrl(locale, `/topics/${slug}`);
+  const languages = getLanguagesMap(`/topics/${slug}`);
+
+  return {
+    title,
+    description,
+    alternates: { canonical, languages },
+    openGraph: {
+      title: `${displayName} | Nano Banana`,
+      description,
+      url: canonical,
+    },
+  };
+}
 
 export default async function Page({ params }: Props) {
   const { locale: localeStr, slug } = await params;
