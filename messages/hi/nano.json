@@ -1546,5 +1546,110 @@
         ]
       }
     }
+  },
+  "template-nostalgic-first-item-poster": {
+    "category": "Nostalgic First Item Posters",
+    "description": "Generate retro-style 'What was your first?' collection posters celebrating iconic gadgets, toys, and objects from the past.",
+    "title": "Nostalgic First Item Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vertical retro collection poster asking 'What was your first {item}?' — featuring a grid of iconic era-defining objects with vintage styling, labels, and nostalgic color palettes.",
+        "who": "Perfect for lifestyle creators, pop culture accounts, nostalgia content creators, and anyone celebrating tech or toy history.",
+        "how": [
+          "Enter an item theme (e.g. phone, gaming console, sneakers, camera).",
+          "Generate a retro-style collection poster with iconic era items.",
+          "Share as nostalgia content or use for brand storytelling."
+        ],
+        "prompts": [
+          "Nostalgic first phone poster — from brick phones to flip phones.",
+          "First gaming console collection — NES, SEGA, PlayStation retro grid.",
+          "What was your first sneaker? Iconic classic kicks nostalgia poster."
+        ]
+      }
+    }
+  },
+  "template-tool-ai-category": {
+    "category": "AI Tool Category Posters",
+    "description": "Generate clean, modern posters showcasing AI tools organized by category — perfect for staying on top of the fast-moving AI landscape.",
+    "title": "AI Tool Category Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template produces a minimalist vertical poster organizing AI tools within a specified category — with tool names, logos, and brief descriptions in a premium grid layout.",
+        "who": "Ideal for tech content creators, AI enthusiasts, newsletter writers, and educators covering the AI tool ecosystem.",
+        "how": [
+          "Enter a category name (e.g. AI Writing Tools, AI Image Generators, AI Coding Assistants).",
+          "Generate a clean categorized poster of top tools in that space.",
+          "Share as educational content or a quick-reference guide."
+        ],
+        "prompts": [
+          "AI image generation tools category poster — Midjourney, DALL-E, Stable Diffusion.",
+          "AI writing assistants overview poster — top tools and use cases.",
+          "AI coding tools category guide — Copilot, Cursor, and more."
+        ]
+      }
+    }
+  },
+  "template-chinese-classic-character-mbti": {
+    "category": "Chinese Classic Character MBTI",
+    "description": "Generate elegant traditional Chinese-style MBTI personality posters for classic literary characters from Journey to the West, Dream of the Red Chamber, and more.",
+    "title": "Chinese Classic Character MBTI Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template pairs iconic Chinese classic literary characters with MBTI personality types, producing elegant posters in a traditional ink-and-brush style with character name, pinyin, MBTI label, and personality traits.",
+        "who": "Perfect for Chinese literature enthusiasts, culture content creators, MBTI fans, and educators teaching classical Chinese literature.",
+        "how": [
+          "Enter a character name, pinyin, MBTI type, and a personality title.",
+          "Generate an elegant traditional-style MBTI character poster.",
+          "Share as cultural content or use in literature education."
+        ],
+        "prompts": [
+          "Sun Wukong (Sun Wukong) ENTP MBTI poster — the clever trickster visionary.",
+          "Lin Daiyu INFP personality poster — the poetic dreamer.",
+          "Cao Cao INTJ character MBTI — the strategic mastermind."
+        ]
+      }
+    }
+  },
+  "template-friends-character-mbti": {
+    "category": "Friends Character MBTI Posters",
+    "description": "Generate kawaii-style MBTI personality posters for your favorite Friends TV show characters — Ross, Rachel, Monica, Chandler, Joey, and Phoebe.",
+    "title": "Friends Character MBTI Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a cute kawaii-style MBTI personality poster for a Friends character — featuring their name, MBTI type, key personality traits, and iconic show references in a fun colorful layout.",
+        "who": "Perfect for Friends fans, pop culture content creators, MBTI enthusiasts, and TV show personality type accounts.",
+        "how": [
+          "Enter a character name (e.g. Ross, Rachel, Chandler) and their MBTI type.",
+          "Generate a kawaii Friends character MBTI poster.",
+          "Share as fan content or use for personality type discussions."
+        ],
+        "prompts": [
+          "Ross Geller ISTJ MBTI poster — the detail-obsessed paleontologist.",
+          "Phoebe Buffay ENFP personality poster — the free-spirited optimist.",
+          "Chandler Bing ENTP character MBTI — the sarcastic problem-solver."
+        ]
+      }
+    }
+  },
+  "template-poetry-ink-wash-illustration": {
+    "category": "Chinese Poetry Ink Wash Illustrations",
+    "description": "Generate exquisite traditional Chinese ink wash paintings inspired by classic ancient poems — capturing the mood, imagery, and beauty of each verse.",
+    "title": "Chinese Poetry Ink Wash Illustration Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template transforms classic Chinese ancient poems into stunning ink wash illustrations — painting the scene, season, and emotion of the poem in a traditional brushwork style with atmospheric depth.",
+        "who": "Perfect for Chinese culture enthusiasts, classical literature fans, art content creators, educators, and anyone who wants to visualize the beauty of ancient poetry.",
+        "how": [
+          "Enter a poem or verse (e.g. a line from Li Bai, Du Fu, or Wang Wei).",
+          "Generate a traditional ink wash illustration capturing the poem's imagery.",
+          "Share as cultural art content or use for literary education."
+        ],
+        "prompts": [
+          "Ink wash illustration for 'Quiet Night Thoughts' by Li Bai — moonlight and homesickness.",
+          "Traditional painting of Du Fu's 'Spring View' — war-torn city with birds and flowers.",
+          "Wang Wei's 'Deer Enclosure' ink wash — empty mountains, deep forest, evening light."
+        ]
+      }
+    }
   }
 }
