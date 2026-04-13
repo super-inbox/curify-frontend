@@ -6700,190 +6700,213 @@
   {
     "id": "template-nostalgic-first-item-poster",
     "locales": {
-        "en": {
-            "base_prompt": "（Nostalgic First Item Poster Designer）You are a professional nostalgic tech evolution infographic designer, specializing in creating \"What was your first {item}?\" retro collection posters. Based on the user-specified {item_theme}, generate a vertical 3:4 premium nostalgic poster, matching the vintage, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"What was your first {item_theme}?\", Curify watermark at top left, dark green vintage banner, textured aged paper background. 2. Grid: 18 items in 3×6 grid, each with clear number label 1-18, items span from vintage/retro to modern models. Style: Vintage aged paper background, photorealistic product photography, accurate historical models, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: \"What was your first {item_theme}?\" nostalgic tech evolution poster.",
-            "parameters": [
-                {
-                    "name": "item_theme",
-                    "label": "Item Theme",
-                    "type": "text",
-                    "placeholder": [
-                        "computer",
-                        "TV",
-                        "camera",
-                        "music player",
-                        "game console",
-                        "phone",
-                        "headphone",
-                        "watch"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Nostalgic First Item Poster Designer）You are a professional nostalgic tech evolution infographic designer, specializing in creating \"What was your first {item}?\" retro collection posters. Based on the user-specified {item_theme}, generate a vertical 3:4 premium nostalgic poster, matching the vintage, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"What was your first {item_theme}?\", Curify watermark at top left, dark green vintage banner, textured aged paper background. 2. Grid: 18 items in 3×6 grid, each with clear number label 1-18, items span from vintage/retro to modern models. Style: Vintage aged paper background, photorealistic product photography, accurate historical models, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: \"What was your first {item_theme}?\" nostalgic tech evolution poster.",
+        "parameters": [
+          {
+            "name": "item_theme",
+            "label": "Item Theme",
+            "type": "text",
+            "placeholder": [
+              "computer",
+              "TV",
+              "camera",
+              "music player",
+              "game console",
+              "phone",
+              "headphone",
+              "watch"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg",
+    "topics": [
+      "lifestyle"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
   {
     "id": "template-tool-ai-category",
     "locales": {
-        "en": {
-            "base_prompt": "（AI Tool Category Poster Designer）You are a professional AI tool category infographic designer, specializing in creating clean, modern, minimalist AI tool collection posters. Based on the user-specified {category_name}, generate a vertical 3:4 premium AI tool category poster, matching the sleek, gradient aesthetic of the reference images. Layout: 1. Header: Large bold title \"{category_name}\", Curify watermark at top left, modern minimalist background with soft geometric/gradient accents. 2. Tool List: Vertical list of AI tools, each with accurate official app icon + bold tool name. 3. Bottom: Line of descriptive keywords summarizing the category's core functions. Style: Clean modern minimalist design, white background, accurate high-resolution icons, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {category_name} AI Tool Collection Poster.",
-            "parameters": [
-                {
-                    "name": "category_name",
-                    "label": "AI Tool Category",
-                    "type": "text",
-                    "placeholder": [
-                        "Productivity",
-                        "Content Creation",
-                        "Creativity",
-                        "Development/Programming",
-                        "General Assistants",
-                        "Data Analysis",
-                        "Marketing",
-                        "Design"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（AI Tool Category Poster Designer）You are a professional AI tool category infographic designer, specializing in creating clean, modern, minimalist AI tool collection posters. Based on the user-specified {category_name}, generate a vertical 3:4 premium AI tool category poster, matching the sleek, gradient aesthetic of the reference images. Layout: 1. Header: Large bold title \"{category_name}\", Curify watermark at top left, modern minimalist background with soft geometric/gradient accents. 2. Tool List: Vertical list of AI tools, each with accurate official app icon + bold tool name. 3. Bottom: Line of descriptive keywords summarizing the category's core functions. Style: Clean modern minimalist design, white background, accurate high-resolution icons, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {category_name} AI Tool Collection Poster.",
+        "parameters": [
+          {
+            "name": "category_name",
+            "label": "AI Tool Category",
+            "type": "text",
+            "placeholder": [
+              "Productivity",
+              "Content Creation",
+              "Creativity",
+              "Development/Programming",
+              "General Assistants",
+              "Data Analysis",
+              "Marketing",
+              "Design"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-tool-ai-category--prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-tool-ai-category--prev.jpg",
+    "topics": [
+      "ai",
+      "learning"
+    ],
+    "base_rank_score": 70,
+    "rank_score": 70
+  },
   {
     "id": "template-chinese-classic-character-mbti",
     "locales": {
-        "en": {
-            "base_prompt": "（Chinese Classic Character MBTI Poster Designer）You are a professional Chinese classic character MBTI infographic designer, specializing in creating elegant, traditional Chinese-style character personality posters. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the exquisite Chinese ink/watercolor aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name} ({character_pinyin})\", prominent MBTI type \"{mbti_type}\", MBTI title \"{mbti_title}\", traditional Chinese lattice border. 2. Main Illustration: Exquisite Chinese ink/watercolor style illustration of {character_name} with iconic story elements. 3. Bottom Information: 4 modules: 人物介绍 (Character Introduction), 性格特质 (Personality Traits), 经典语录 (Famous Quote), 人物结局/档案 (Character Ending/Profile). Style: Elegant traditional Chinese design, off-white background, delicate ink/watercolor art, clear typography, Curify watermark at bottom right, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Chinese classic literature.",
-            "parameters": [
-                {
-                    "name": "character_name",
-                    "label": "Character Name",
-                    "type": "text",
-                    "placeholder": [
-                        "薛宝钗",
-                        "郭嘉",
-                        "刘备",
-                        "王熙凤",
-                        "林黛玉",
-                        "诸葛亮",
-                        "曹操",
-                        "贾宝玉"
-                    ]
-                },
-                {
-                    "name": "character_pinyin",
-                    "label": "Character Pinyin",
-                    "type": "text",
-                    "placeholder": [
-                        "Xue Baochai",
-                        "Guo Jia",
-                        "Liu Bei",
-                        "Wang Xifeng",
-                        "Lin Daiyu",
-                        "Zhuge Liang",
-                        "Cao Cao",
-                        "Jia Baoyu"
-                    ]
-                },
-                {
-                    "name": "mbti_type",
-                    "label": "MBTI Type",
-                    "type": "text",
-                    "placeholder": [
-                        "ISFJ",
-                        "INTP",
-                        "INFJ",
-                        "ESTJ",
-                        "INFP",
-                        "INTJ",
-                        "ENTJ",
-                        "ENFP"
-                    ]
-                },
-                {
-                    "name": "mbti_title",
-                    "label": "MBTI Title",
-                    "type": "text",
-                    "placeholder": [
-                        "守卫者 · The Defender",
-                        "鬼才军师 / 奇谋策士",
-                        "蜀汉昭烈帝 / 仁德之君",
-                        "总经理 · The Executive",
-                        "调停者 · The Mediator",
-                        "建筑师 · The Architect",
-                        "指挥官 · The Commander",
-                        "竞选者 · The Campaigner"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Chinese Classic Character MBTI Poster Designer）You are a professional Chinese classic character MBTI infographic designer, specializing in creating elegant, traditional Chinese-style character personality posters. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the exquisite Chinese ink/watercolor aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name} ({character_pinyin})\", prominent MBTI type \"{mbti_type}\", MBTI title \"{mbti_title}\", traditional Chinese lattice border. 2. Main Illustration: Exquisite Chinese ink/watercolor style illustration of {character_name} with iconic story elements. 3. Bottom Information: 4 modules: 人物介绍 (Character Introduction), 性格特质 (Personality Traits), 经典语录 (Famous Quote), 人物结局/档案 (Character Ending/Profile). Style: Elegant traditional Chinese design, off-white background, delicate ink/watercolor art, clear typography, Curify watermark at bottom right, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Chinese classic literature.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Character Name",
+            "type": "text",
+            "placeholder": [
+              "薛宝钗",
+              "郭嘉",
+              "刘备",
+              "王熙凤",
+              "林黛玉",
+              "诸葛亮",
+              "曹操",
+              "贾宝玉"
             ]
-        }
+          },
+          {
+            "name": "character_pinyin",
+            "label": "Character Pinyin",
+            "type": "text",
+            "placeholder": [
+              "Xue Baochai",
+              "Guo Jia",
+              "Liu Bei",
+              "Wang Xifeng",
+              "Lin Daiyu",
+              "Zhuge Liang",
+              "Cao Cao",
+              "Jia Baoyu"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISFJ",
+              "INTP",
+              "INFJ",
+              "ESTJ",
+              "INFP",
+              "INTJ",
+              "ENTJ",
+              "ENFP"
+            ]
+          },
+          {
+            "name": "mbti_title",
+            "label": "MBTI Title",
+            "type": "text",
+            "placeholder": [
+              "守卫者 · The Defender",
+              "鬼才军师 / 奇谋策士",
+              "蜀汉昭烈帝 / 仁德之君",
+              "总经理 · The Executive",
+              "调停者 · The Mediator",
+              "建筑师 · The Architect",
+              "指挥官 · The Commander",
+              "竞选者 · The Campaigner"
+            ]
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-chinese-classic-character-mbti-guan-yu-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-chinese-classic-character-mbti-guan-yu-prev.jpg",
+    "topics": [
+      "mbti",
+      "culture"
+    ],
+    "base_rank_score": 70,
+    "rank_score": 70
+  },
   {
     "id": "template-friends-character-mbti",
     "locales": {
-        "en": {
-            "base_prompt": "（Friends Character MBTI Poster Designer）You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge \"{mbti_type}\", Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
-            "parameters": [
-                {
-                    "name": "character_name",
-                    "label": "Character Name",
-                    "type": "text",
-                    "placeholder": [
-                        "Gunther",
-                        "Richard Burke",
-                        "Janice Litman-Goralnik",
-                        "Mike Hannigan",
-                        "Monica Geller",
-                        "Phoebe Buffay",
-                        "Rachel Green",
-                        "Ross Geller",
-                        "Joey Tribbiani",
-                        "Chandler Bing"
-                    ]
-                },
-                {
-                    "name": "mbti_type",
-                    "label": "MBTI Type",
-                    "type": "text",
-                    "placeholder": [
-                        "ISFJ",
-                        "INFJ",
-                        "ESFJ",
-                        "ISFP",
-                        "ESTJ",
-                        "INFP",
-                        "ESFP",
-                        "INTJ",
-                        "ESFP",
-                        "ENTP"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Friends Character MBTI Poster Designer）You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge \"{mbti_type}\", Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Character Name",
+            "type": "text",
+            "placeholder": [
+              "Gunther",
+              "Richard Burke",
+              "Janice Litman-Goralnik",
+              "Mike Hannigan",
+              "Monica Geller",
+              "Phoebe Buffay",
+              "Rachel Green",
+              "Ross Geller",
+              "Joey Tribbiani",
+              "Chandler Bing"
             ]
-        }
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISFJ",
+              "INFJ",
+              "ESFJ",
+              "ISFP",
+              "ESTJ",
+              "INFP",
+              "ESFP",
+              "INTJ",
+              "ESFP",
+              "ENTP"
+            ]
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg",
+    "topics": [
+      "mbti",
+      "film"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
   {
     "id": "template-poetry-ink-wash-illustration",
     "locales": {
-        "en": {
-            "base_prompt": "（Chinese Ancient Poetry Ink Wash Illustration Designer）You are a professional Chinese ancient poetry illustration designer, specializing in creating exquisite traditional Chinese ink wash paintings for classic poems. Based on the user-specified {poem_content}, generate a vertical 9:16 premium Chinese ink wash painting, matching the elegant, traditional Chinese aesthetic of the reference images. Layout: 1. Artwork: Exquisite traditional Chinese ink wash painting vividly depicting the scene, mood and core imagery of the poem {poem_content}, with authentic Chinese landscape/figure style, delicate brushwork. 2. Calligraphy: Full text of the poem {poem_content} in elegant vertical calligraphy on the upper left, add author's name if available. Style: Pure traditional Chinese ink wash aesthetic, paper texture, natural ink rendering, harmonious integration of calligraphy and painting, vertical 9:16 aspect ratio, 4K ultra HD, direct image generation. Subject: Chinese ancient poetry illustration in traditional ink wash style.",
-            "parameters": [
-                {
-                    "name": "poem_content",
-                    "label": "Poetry Content",
-                    "type": "text",
-                    "placeholder": [
-                        "静夜思\n床前明月光，疑是地上霜。\n举头望明月，低头思故乡。\n——李白",
-                        "登鹳雀楼\n白日依山尽，黄河入海流。\n欲穷千里目，更上一层楼。\n——王之涣",
-                        "江雪\n千山鸟飞绝，万径人踪灭。\n孤舟蓑笠翁，独钓寒江雪。\n——柳宗元"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Chinese Ancient Poetry Ink Wash Illustration Designer）You are a professional Chinese ancient poetry illustration designer, specializing in creating exquisite traditional Chinese ink wash paintings for classic poems. Based on the user-specified {poem_content}, generate a vertical 9:16 premium Chinese ink wash painting, matching the elegant, traditional Chinese aesthetic of the reference images. Layout: 1. Artwork: Exquisite traditional Chinese ink wash painting vividly depicting the scene, mood and core imagery of the poem {poem_content}, with authentic Chinese landscape/figure style, delicate brushwork. 2. Calligraphy: Full text of the poem {poem_content} in elegant vertical calligraphy on the upper left, add author's name if available. Style: Pure traditional Chinese ink wash aesthetic, paper texture, natural ink rendering, harmonious integration of calligraphy and painting, vertical 9:16 aspect ratio, 4K ultra HD, direct image generation. Subject: Chinese ancient poetry illustration in traditional ink wash style.",
+        "parameters": [
+          {
+            "name": "poem_content",
+            "label": "Poetry Content",
+            "type": "text",
+            "placeholder": [
+              "静夜思\n床前明月光，疑是地上霜。\n举头望明月，低头思故乡。\n——李白",
+              "登鹳雀楼\n白日依山尽，黄河入海流。\n欲穷千里目，更上一层楼。\n——王之涣",
+              "江雪\n千山鸟飞绝，万径人踪灭。\n孤舟蓑笠翁，独钓寒江雪。\n——柳宗元"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-river-snow-prev.jpg"
-}
+  }
 ]
