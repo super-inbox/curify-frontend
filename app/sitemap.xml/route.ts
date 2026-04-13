@@ -56,6 +56,23 @@ function getUseCaseRoutes(): string[] {
   return USE_CASES.map((uc) => `/use-cases/${uc.slug}`);
 }
 
+function getTopicRoutes(): string[] {
+  // Collect topics that appear directly on templates (parent-level topics)
+  const templateLevelTopics = new Set<string>();
+  for (const t of nanoTemplates as unknown as Array<{ topics?: string | string[] }>) {
+    const raw = t.topics;
+    const topics = Array.isArray(raw)
+      ? raw
+      : typeof raw === "string"
+      ? raw.split(",").map((s) => s.trim())
+      : [];
+    for (const tp of topics) {
+      if (tp) templateLevelTopics.add(tp.toLowerCase());
+    }
+  }
+  return Array.from(templateLevelTopics).map((tp) => `/topics/${tp}`);
+}
+
 function generateHreflangLinks(
   route: string,
   availableLocales?: readonly string[]
@@ -110,6 +127,7 @@ export async function GET() {
   const toolRoutes = getToolRoutes();
   const tagRoutes = getTagRoutes();
   const useCaseRoutes = getUseCaseRoutes();
+  const topicRoutes = getTopicRoutes();
 
   let urls = "";
 
@@ -120,6 +138,17 @@ export async function GET() {
         lastmod: STABLE_LASTMOD,
         changefreq: route === "" ? "daily" : "weekly",
         priority: route === "" && locale === "en" ? "1.0" : "0.8",
+      });
+    });
+  });
+
+  // Topic pages
+  topicRoutes.forEach((route) => {
+    LOCALES.forEach((locale) => {
+      urls += generateUrlEntry(locale, route, {
+        lastmod: STABLE_LASTMOD,
+        changefreq: "weekly",
+        priority: "0.8",
       });
     });
   });
