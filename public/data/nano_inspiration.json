@@ -7624,22 +7624,6 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-friends-chandler",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-chandler.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-chandler-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends chandler"
-      }
-    },
-    "legacy_id": "template-mbti-generic-friends-chandler",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
     "id": "template-mbti-generic-friends-group-1",
     "template_id": "template-mbti-generic",
     "asset": {
@@ -7685,86 +7669,6 @@
       }
     },
     "legacy_id": "template-mbti-generic-friends-group-3",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-joey",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-joey.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-joey-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends joey"
-      }
-    },
-    "legacy_id": "template-mbti-generic-friends-joey",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-monica",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-monica.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-monica-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends monica"
-      }
-    },
-    "legacy_id": "template-mbti-generic-friends-monica",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-phoebe",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-phoebe.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-phoebe-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends phoebe"
-      }
-    },
-    "legacy_id": "template-mbti-generic-friends-phoebe",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-rachel",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-rachel.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-rachel-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends rachel"
-      }
-    },
-    "legacy_id": "template-mbti-generic-friends-rachel",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-ross",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-ross.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-ross-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends ross"
-      }
-    },
-    "legacy_id": "template-mbti-generic-friends-ross",
     "legacy_template_id": "template-mbti-generic"
   },
   {
@@ -9272,70 +9176,6 @@
       }
     },
     "legacy_id": "template-mbti-generic-en-breakingbad-tucosalamanca",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-gunther",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-friends-gunther.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-friends-gunther-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "friends gunther"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-friends-gunther",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-janicelitmangoralnik",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-friends-janicelitmangoralnik.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-friends-janicelitmangoralnik-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "friends janicelitmangoralnik"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-friends-janicelitmangoralnik",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-mike",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-friends-mike.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-friends-mike-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "friends mike"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-friends-mike",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-friends-richard",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-friends-richard.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-friends-richard-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "friends richard"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-friends-richard",
     "legacy_template_id": "template-mbti-generic"
   },
   {
