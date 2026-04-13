@@ -1720,5 +1720,1305 @@ module.exports = [
       destination: "/tools",
       permanent: true
     },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-CaoCao",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-cao-cao",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuanYu",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guan-yu",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-GuoJia",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-guo-jia",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LiuBei",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-liu-bei",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-LuXun",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lu-xun",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SimaYi",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sima-yi",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-SunQuan",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-sun-quan",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhouYu",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhou-yu",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ThreeKingdoms-ZhugeLiang",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-zhuge-liang",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaBaoyu",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-baoyu",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaTanchun",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-tanchun",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-JiaZheng",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-jia-zheng",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-LinDaiyu",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-lin-daiyu",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-Miaoyu",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-miaoyu",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-WangXifeng",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-wang-xifeng",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/zh/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/es/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/fr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/de/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/ja/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/ko/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/hi/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/tr/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-HongLouMeng-XueBaochai",
+    destination: "/ru/nano-template/chinese-classic-character-mbti/example/template-chinese-classic-character-mbti-xue-baochai",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-chandler",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-chandler-bing",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-joey",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-joey-tribbiani",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-monica",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-monica-geller",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-phoebe",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-phoebe-buffay",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-rachel-green",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-ross",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-ross-geller",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-gunther",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-gunther",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-janicelitmangoralnik",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-janice-litman-goralnik",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-mike",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-mike-hannigan",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/zh/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/es/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/fr/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/de/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/ja/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/ko/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/hi/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/tr/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-friends-richard",
+    destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
+    permanent: true
+  },
   ...toolRedirects
 ]
