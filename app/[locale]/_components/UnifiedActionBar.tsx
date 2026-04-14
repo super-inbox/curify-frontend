@@ -13,6 +13,8 @@ import { templatePacksService } from "@/services/templatePacks";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 
+const GENERATE_CREDITS_COST = 10;
+
 type GenerateConfig = {
   enabled: boolean;
   text: string;
@@ -103,6 +105,15 @@ export default function UnifiedActionBar({
       return;
     }
 
+    const remainingCredits =
+      ((user as any)?.non_expiring_credits ?? 0) +
+      ((user as any)?.expiring_credits ?? 0);
+
+    if (remainingCredits < GENERATE_CREDITS_COST) {
+      alert(t("insufficientCredits"));
+      return;
+    }
+
     try {
       setIsDirectGenerating(true);
       trackAction(tracking, "generate");
@@ -164,18 +175,25 @@ export default function UnifiedActionBar({
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       {visible(directGenerate) ? (
-        <button
-          onClick={handleDirectGenerate}
-          disabled={isDirectGenerating}
-          className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer disabled:opacity-60"
-          type="button"
-        >
-          <Wand2 className="h-4 w-4" />
-          {isDirectGenerating ? t("generating") : t("generate")}
-          {clientMounted && !user && (
-            <span className="ml-1 text-xs opacity-80">🔒</span>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleDirectGenerate}
+            disabled={isDirectGenerating}
+            className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer disabled:opacity-60"
+            type="button"
+          >
+            <Wand2 className="h-4 w-4" />
+            {isDirectGenerating ? t("generating") : t("generate")}
+            {clientMounted && !user && (
+              <span className="ml-1 text-xs opacity-80">🔒</span>
+            )}
+          </button>
+          {clientMounted && user && (
+            <span className="text-xs text-neutral-500">
+              {GENERATE_CREDITS_COST} credits
+            </span>
           )}
-        </button>
+        </div>
       ) : visible(generate) && (
         <button
           onClick={handleGenerate}
