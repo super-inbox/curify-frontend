@@ -10,6 +10,7 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { useTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
+import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 
 type GenerateConfig = {
@@ -39,10 +40,17 @@ type BatchDownloadConfig = {
   templateId: string;
 };
 
+type DirectGenerateConfig = {
+  enabled: boolean;
+  templateId: string;
+  params: Record<string, string>;
+};
+
 type Props = {
   tracking: TrackingTarget;
   className?: string;
   generate?: GenerateConfig;
+  directGenerate?: DirectGenerateConfig;
   remix?: RemixConfig;
   copy?: CopyConfig;
   share?: ShareConfig;
@@ -59,6 +67,7 @@ export default function UnifiedActionBar({
   tracking,
   className = "",
   generate,
+  directGenerate,
   remix,
   copy,
   share,
@@ -73,6 +82,7 @@ export default function UnifiedActionBar({
 
   const [generated, setGenerated] = useState(false);
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
+  const [isDirectGenerating, setIsDirectGenerating] = useState(false);
 
   const handleGenerate = async () => {
     if (!generate) return;
@@ -83,6 +93,36 @@ export default function UnifiedActionBar({
       setGenerated(true);
       setTimeout(() => setGenerated(false), 2500);
     } catch {}
+  };
+
+  const handleDirectGenerate = async () => {
+    if (!directGenerate || isDirectGenerating) return;
+
+    if (!user) {
+      setDrawerState("signin");
+      return;
+    }
+
+    try {
+      setIsDirectGenerating(true);
+      trackAction(tracking, "generate");
+
+      const res = await nanoGenerateService.generate({
+        template_id: directGenerate.templateId,
+        params: directGenerate.params,
+      });
+
+      if (!res?.success || !res?.signed_url) {
+        throw new Error(res?.message || "Generation failed");
+      }
+
+      window.open(res.signed_url, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error("Direct generate failed:", error);
+      alert(t("generateFailed"));
+    } finally {
+      setIsDirectGenerating(false);
+    }
   };
 
   const handleBatchDownload = async () => {
@@ -123,7 +163,20 @@ export default function UnifiedActionBar({
 
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
-      {visible(generate) && (
+      {visible(directGenerate) ? (
+        <button
+          onClick={handleDirectGenerate}
+          disabled={isDirectGenerating}
+          className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer disabled:opacity-60"
+          type="button"
+        >
+          <Wand2 className="h-4 w-4" />
+          {isDirectGenerating ? t("generating") : t("generate")}
+          {clientMounted && !user && (
+            <span className="ml-1 text-xs opacity-80">🔒</span>
+          )}
+        </button>
+      ) : visible(generate) && (
         <button
           onClick={handleGenerate}
           className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer"

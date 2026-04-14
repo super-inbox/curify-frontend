@@ -280,7 +280,8 @@
     ],
     "rank_score": 80,
     "batch": true,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-architecture",
@@ -3123,7 +3124,7 @@
     "topics": [
       "character",
       "mbti",
-      "career"
+      "ai"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -6392,7 +6393,8 @@
       "language",
       "food"
     ],
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-industrial-design-concept-sketch",
@@ -6510,7 +6512,8 @@
     "base_rank_score": 90,
     "topics": [
       "language"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-city-mbti",

@@ -184,10 +184,15 @@ export default function ReproduceTemplateSection(props: {
           contentType: "nano_inspiration",
           viewMode: "cards",
         }}
-        generate={{
+        generate={template.allow_generation ? undefined : {
           enabled: true,
           text: promptText,
         }}
+        directGenerate={template.allow_generation ? {
+          enabled: true,
+          templateId: template.template_id,
+          params: form as Record<string, string>,
+        } : undefined}
         copy={{
           enabled: true,
           text: promptText,

@@ -12,6 +12,7 @@ export type NanoTemplateForDetail = {
   parameters: TemplateParameter[];
   topics?: string[];
   batch?: boolean;
+  allow_generation?: boolean;
 };
 
 /**
