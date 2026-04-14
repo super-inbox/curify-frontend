@@ -3020,5 +3020,505 @@ module.exports = [
     destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
     permanent: true
   },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
   ...toolRedirects
 ]
