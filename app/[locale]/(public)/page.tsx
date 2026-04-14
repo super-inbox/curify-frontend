@@ -54,13 +54,16 @@ export async function generateMetadata({
 export default async function HomePage() {
   // 2. Fetch Data (Server-Side)
   // We reuse the same query as your Inspiration Hub to get the feed data
-  const rawData = await inspirationService.getCards({ 
-    review_status: "APPROVED", 
-    limit: 50 // You might want a smaller limit for Home vs the full Hub
-  });
-
-  // 3. Transform Data
-  const cards = rawData.map(mapDTOToUICard);
+  let cards: ReturnType<typeof mapDTOToUICard>[] = [];
+  try {
+    const rawData = await inspirationService.getCards({
+      review_status: "APPROVED",
+      limit: 50,
+    });
+    cards = rawData.map(mapDTOToUICard);
+  } catch (err) {
+    console.error("[HomePage] inspiration API failed, falling back to nano cards only:", err);
+  }
 
   // 4. Pass 'cards' prop to the Client Component
   return (

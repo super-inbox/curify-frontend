@@ -46,6 +46,8 @@ type DirectGenerateConfig = {
   enabled: boolean;
   templateId: string;
   params: Record<string, string>;
+  /** Return false to abort generation (e.g. duplicate check). */
+  onBeforeGenerate?: () => boolean | Promise<boolean>;
 };
 
 type Props = {
@@ -112,6 +114,11 @@ export default function UnifiedActionBar({
     if (remainingCredits < GENERATE_CREDITS_COST) {
       alert(t("insufficientCredits"));
       return;
+    }
+
+    if (directGenerate.onBeforeGenerate) {
+      const proceed = await directGenerate.onBeforeGenerate();
+      if (!proceed) return;
     }
 
     try {

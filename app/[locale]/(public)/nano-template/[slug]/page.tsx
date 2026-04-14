@@ -181,6 +181,9 @@ export default async function NanoTemplatePage({ params }: Props) {
       parameters: template.parameters || [],
       batch: !!template.batch,
       allow_generation: !!template.allow_generation,
+      existingExamples: imageViews
+        .filter((v) => v.params && Object.keys(v.params).length > 0)
+        .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),
     }}
     otherNanoCards={otherNanoCards}
     showReproduce={true}

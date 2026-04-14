@@ -64,7 +64,7 @@ function getWidth(filePath) {
 function overlayLogo(srcPath, destPath, logoPx, padding) {
   execSync(
     `magick "${srcPath}" ` +
-    `\\( "${LOGO_PATH}" -resize ${logoPx}x \\) ` +
+    `\\( -background none "${LOGO_PATH}" -resize ${logoPx}x \\) ` +
     `-gravity SouthEast -geometry +${padding}+${padding} ` +
     `-composite "${destPath}"`,
     { stdio: 'pipe' }

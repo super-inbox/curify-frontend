@@ -1,9 +1,14 @@
 export type TemplateParameter = {
   name: string;
   label: string;
-  type: "text" | "textarea" | "select";
+  type: "text" | "textarea" | "select" | "daterange";
   placeholder?: string | string[];
   options?: string[];
+};
+
+export type ExistingExample = {
+  id: string;
+  params: Record<string, string>;
 };
 
 export type NanoTemplateForDetail = {
@@ -13,6 +18,7 @@ export type NanoTemplateForDetail = {
   topics?: string[];
   batch?: boolean;
   allow_generation?: boolean;
+  existingExamples?: ExistingExample[];
 };
 
 /**
