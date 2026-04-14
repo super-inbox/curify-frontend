@@ -19445,576 +19445,466 @@
     }
   },
   {
-    "id": "template-mbti-generic-ThreeKingdoms-ZhouYu",
-    "template_id": "template-mbti-generic",
+    "id": "template-bilingual-object-structure-labeling-apple",
+    "template_id": "template-bilingual-object-structure-labeling",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-ZhouYu.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-ZhouYu-prev.jpg"
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-apple.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg"
     },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms en ZhouYu"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-CaoCao",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-CaoCao.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-CaoCao-prev.jpg"
+    "params": {
+      "object_name": "apple"
     },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh CaoCao"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-GuanYu",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-GuanYu.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-GuanYu-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh GuanYu"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-GuoJia",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-GuoJia.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-GuoJia-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh GuoJia"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-LiuBei",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-LiuBei.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-LiuBei-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh LiuBei"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-LuXun",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-LuXun.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-LuXun-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh LuXun"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-SimaYi",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-SimaYi.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-SimaYi-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh SimaYi"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-SunQuan",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-SunQuan.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-SunQuan-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh SunQuan"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-ZhouYu",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-ZhouYu.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-ZhouYu-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh ZhouYu"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-ThreeKingdoms-ZhugeLiang",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-ThreeKingdoms-ZhugeLiang.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ThreeKingdoms-ZhugeLiang-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "ThreeKingdoms zh ZhugeLiang"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-JiaBaoyu",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-JiaBaoyu.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-JiaBaoyu-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh JiaBaoyu"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-JiaTanchun",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-JiaTanchun.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-JiaTanchun-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh JiaTanchun"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-JiaZheng",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-JiaZheng.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-JiaZheng-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh JiaZheng"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-LinDaiyu",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-LinDaiyu.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-LinDaiyu-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh LinDaiyu"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-Miaoyu",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-Miaoyu.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-Miaoyu-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh Miaoyu"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-WangXifeng",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-WangXifeng.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-WangXifeng-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh WangXifeng"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-HongLouMeng-XueBaochai",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-HongLouMeng-XueBaochai.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-HongLouMeng-XueBaochai-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "HongLouMeng zh XueBaochai"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-friends-chandler",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-chandler.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-chandler-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends chandler"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-friends-joey",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-joey.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-joey-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends joey"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-friends-monica",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-monica.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-monica-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends monica"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-friends-phoebe",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-phoebe.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-phoebe-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends phoebe"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-friends-rachel",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-rachel.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-rachel-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends rachel"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-friends-ross",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-ross.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-ross-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "friends ross"
-      }
-    }
-  },
-  {
-    "id": "template-mbti-generic-breakingbad-howardhamlin",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breakingbad-howardhamlin.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breakingbad-howardhamlin-prev.jpg"
-    },
-    "params": {},
     "locales": {
       "en": {
-        "title": "breakingbad howardhamlin"
+        "title": "apple"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breakingbad-lalosalamanca",
-    "template_id": "template-mbti-generic",
+    "id": "template-bilingual-object-structure-labeling-bicycle",
+    "template_id": "template-bilingual-object-structure-labeling",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breakingbad-lalosalamanca.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breakingbad-lalosalamanca-prev.jpg"
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-bicycle.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-bicycle-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "object_name": "bicycle"
+    },
     "locales": {
       "en": {
-        "title": "breakingbad lalosalamanca"
+        "title": "bicycle"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breakingbad-lydiarodartequayle",
-    "template_id": "template-mbti-generic",
+    "id": "template-bilingual-object-structure-labeling-hamburger",
+    "template_id": "template-bilingual-object-structure-labeling",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breakingbad-lydiarodartequayle.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breakingbad-lydiarodartequayle-prev.jpg"
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-hamburger.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-hamburger-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "object_name": "hamburger"
+    },
     "locales": {
       "en": {
-        "title": "breakingbad lydiarodartequayle"
+        "title": "hamburger"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breakingbad-toddalquist",
-    "template_id": "template-mbti-generic",
+    "id": "template-bilingual-object-structure-labeling-lily-flower",
+    "template_id": "template-bilingual-object-structure-labeling",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breakingbad-toddalquist.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breakingbad-toddalquist-prev.jpg"
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-lily-flower.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-lily-flower-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "object_name": "lily flower"
+    },
     "locales": {
       "en": {
-        "title": "breakingbad toddalquist"
+        "title": "lily flower"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breakingbad-tucosalamanca",
-    "template_id": "template-mbti-generic",
+    "id": "template-bilingual-object-structure-labeling-monarch-butterfly",
+    "template_id": "template-bilingual-object-structure-labeling",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breakingbad-tucosalamanca.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breakingbad-tucosalamanca-prev.jpg"
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-monarch-butterfly.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-monarch-butterfly-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "object_name": "monarch butterfly"
+    },
     "locales": {
       "en": {
-        "title": "breakingbad tucosalamanca"
+        "title": "monarch butterfly"
       }
     }
   },
   {
-    "id": "template-mbti-generic-friends-gunther",
-    "template_id": "template-mbti-generic",
+    "id": "template-financial-habit-infographic-poster-debt-habits-part-1",
+    "template_id": "template-financial-habit-infographic-poster",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-gunther.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-gunther-prev.jpg"
+      "image_url": "/images/nano_insp/template-financial-habit-infographic-poster-debt-habits-part-1.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-1-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "topic_name": "debt habits part 1"
+    },
     "locales": {
       "en": {
-        "title": "friends gunther"
+        "title": "debt habits part 1"
       }
     }
   },
   {
-    "id": "template-mbti-generic-friends-janicelitmangoralnik",
-    "template_id": "template-mbti-generic",
+    "id": "template-financial-habit-infographic-poster-debt-habits-part-2",
+    "template_id": "template-financial-habit-infographic-poster",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-janicelitmangoralnik.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-janicelitmangoralnik-prev.jpg"
+      "image_url": "/images/nano_insp/template-financial-habit-infographic-poster-debt-habits-part-2.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-2-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "topic_name": "debt habits part 2"
+    },
     "locales": {
       "en": {
-        "title": "friends janicelitmangoralnik"
+        "title": "debt habits part 2"
       }
     }
   },
   {
-    "id": "template-mbti-generic-friends-mike",
-    "template_id": "template-mbti-generic",
+    "id": "template-financial-habit-infographic-poster-debt-habits-part-3",
+    "template_id": "template-financial-habit-infographic-poster",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-mike.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-mike-prev.jpg"
+      "image_url": "/images/nano_insp/template-financial-habit-infographic-poster-debt-habits-part-3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-3-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "topic_name": "debt habits part 3"
+    },
     "locales": {
       "en": {
-        "title": "friends mike"
+        "title": "debt habits part 3"
       }
     }
   },
   {
-    "id": "template-mbti-generic-friends-richard",
-    "template_id": "template-mbti-generic",
+    "id": "template-financial-habit-infographic-poster-debt-habits-part-4",
+    "template_id": "template-financial-habit-infographic-poster",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-friends-richard.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-friends-richard-prev.jpg"
+      "image_url": "/images/nano_insp/template-financial-habit-infographic-poster-debt-habits-part-4.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-4-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "topic_name": "debt habits part 4"
+    },
     "locales": {
       "en": {
-        "title": "friends richard"
+        "title": "debt habits part 4"
       }
     }
   },
   {
-    "id": "template-mbti-generic-siliconvalley-gates",
-    "template_id": "template-mbti-generic",
+    "id": "template-financial-habit-infographic-poster-debt-habits-part-5",
+    "template_id": "template-financial-habit-infographic-poster",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-siliconvalley-gates.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-siliconvalley-gates-prev.jpg"
+      "image_url": "/images/nano_insp/template-financial-habit-infographic-poster-debt-habits-part-5.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-5-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "topic_name": "debt habits part 5"
+    },
     "locales": {
       "en": {
-        "title": "siliconvalley gates"
+        "title": "debt habits part 5"
       }
     }
   },
   {
-    "id": "template-mbti-generic-siliconvalley-huang",
-    "template_id": "template-mbti-generic",
+    "id": "template-poetry-ink-wash-illustration-asking-the-boy",
+    "template_id": "template-poetry-ink-wash-illustration",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-siliconvalley-huang.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-siliconvalley-huang-prev.jpg"
+      "image_url": "/images/nano_insp/template-poetry-ink-wash-illustration-asking-the-boy.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-asking-the-boy-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "poem_content": "asking the boy"
+    },
     "locales": {
       "en": {
-        "title": "siliconvalley huang"
+        "title": "asking the boy"
       }
     }
   },
   {
-    "id": "template-mbti-generic-siliconvalley-jobs",
-    "template_id": "template-mbti-generic",
+    "id": "template-poetry-ink-wash-illustration-maple-bridge-night-mooring",
+    "template_id": "template-poetry-ink-wash-illustration",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-siliconvalley-jobs.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-siliconvalley-jobs-prev.jpg"
+      "image_url": "/images/nano_insp/template-poetry-ink-wash-illustration-maple-bridge-night-mooring.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-maple-bridge-night-mooring-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "poem_content": "maple bridge night mooring"
+    },
     "locales": {
       "en": {
-        "title": "siliconvalley jobs"
+        "title": "maple bridge night mooring"
       }
     }
   },
   {
-    "id": "template-mbti-generic-siliconvalley-zuckerberg",
-    "template_id": "template-mbti-generic",
+    "id": "template-poetry-ink-wash-illustration-mountain-walk",
+    "template_id": "template-poetry-ink-wash-illustration",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-siliconvalley-zuckerberg.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-siliconvalley-zuckerberg-prev.jpg"
+      "image_url": "/images/nano_insp/template-poetry-ink-wash-illustration-mountain-walk.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-mountain-walk-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "poem_content": "mountain walk"
+    },
     "locales": {
       "en": {
-        "title": "siliconvalley zuckerberg"
+        "title": "mountain walk"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breaking-bad-gus-fring",
-    "template_id": "template-mbti-generic",
+    "id": "template-poetry-ink-wash-illustration-spring-morning",
+    "template_id": "template-poetry-ink-wash-illustration",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-gus-fring.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-gus-fring-prev.jpg"
+      "image_url": "/images/nano_insp/template-poetry-ink-wash-illustration-spring-morning.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-spring-morning-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "poem_content": "spring morning"
+    },
     "locales": {
-      "zh": {
-        "title": "breaking bad en gus fring"
+      "en": {
+        "title": "spring morning"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breaking-bad-jesse-pinkman",
-    "template_id": "template-mbti-generic",
+    "id": "template-poetry-ink-wash-illustration-spring-walk-by-qiantang-lake",
+    "template_id": "template-poetry-ink-wash-illustration",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-jesse-pinkman.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-jesse-pinkman-prev.jpg"
+      "image_url": "/images/nano_insp/template-poetry-ink-wash-illustration-spring-walk-by-qiantang-lake.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-spring-walk-by-qiantang-lake-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "poem_content": "spring walk by qiantang lake"
+    },
     "locales": {
-      "zh": {
-        "title": "breaking bad en jesse pinkman"
+      "en": {
+        "title": "spring walk by qiantang lake"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breaking-bad-mike-ehrmantraut",
-    "template_id": "template-mbti-generic",
+    "id": "template-tool-ai-category-content-creation",
+    "template_id": "template-tool-ai-category",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-mike-ehrmantraut.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-mike-ehrmantraut-prev.jpg"
+      "image_url": "/images/nano_insp/template-tool-ai-category-content-creation.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-content-creation-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "category_name": "content creation"
+    },
     "locales": {
-      "zh": {
-        "title": "breaking bad en mike ehrmantraut"
+      "en": {
+        "title": "content creation"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breaking-bad-saul-goodman",
-    "template_id": "template-mbti-generic",
+    "id": "template-tool-ai-category-creativity",
+    "template_id": "template-tool-ai-category",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-saul-goodman.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-saul-goodman-prev.jpg"
+      "image_url": "/images/nano_insp/template-tool-ai-category-creativity.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-creativity-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "category_name": "creativity"
+    },
     "locales": {
-      "zh": {
-        "title": "breaking bad en saul goodman"
+      "en": {
+        "title": "creativity"
       }
     }
   },
   {
-    "id": "template-mbti-generic-breaking-bad-walter-white",
-    "template_id": "template-mbti-generic",
+    "id": "template-tool-ai-category-development-programming",
+    "template_id": "template-tool-ai-category",
     "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-walter-white.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-walter-white-prev.jpg"
+      "image_url": "/images/nano_insp/template-tool-ai-category-development-programming.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-development-programming-prev.jpg"
     },
-    "params": {},
+    "params": {
+      "category_name": "development programming"
+    },
     "locales": {
-      "zh": {
-        "title": "breaking bad en walter white"
+      "en": {
+        "title": "development programming"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-general-assistants",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-general-assistants.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-general-assistants-prev.jpg"
+    },
+    "params": {
+      "category_name": "general assistants"
+    },
+    "locales": {
+      "en": {
+        "title": "general assistants"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-productivity",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-productivity.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-productivity-prev.jpg"
+    },
+    "params": {
+      "category_name": "productivity"
+    },
+    "locales": {
+      "en": {
+        "title": "productivity"
+      }
+    }
+  },
+  {
+    "id": "template-varieties-food-poster-coffee",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-coffee.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-coffee-prev.jpg"
+    },
+    "params": {
+      "food_theme": "coffee"
+    },
+    "locales": {
+      "en": {
+        "title": "coffee"
+      }
+    }
+  },
+  {
+    "id": "template-varieties-food-poster-custard-tart",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-custard-tart.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-custard-tart-prev.jpg"
+    },
+    "params": {
+      "food_theme": "custard tart"
+    },
+    "locales": {
+      "en": {
+        "title": "custard tart"
+      }
+    }
+  },
+  {
+    "id": "template-varieties-food-poster-ice-cream",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-ice-cream.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-ice-cream-prev.jpg"
+    },
+    "params": {
+      "food_theme": "ice cream"
+    },
+    "locales": {
+      "en": {
+        "title": "ice cream"
+      }
+    }
+  },
+  {
+    "id": "template-varieties-food-poster-pizza",
+    "template_id": "template-varieties-food-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-varieties-food-poster-pizza.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-varieties-food-poster-pizza-prev.jpg"
+    },
+    "params": {
+      "food_theme": "pizza"
+    },
+    "locales": {
+      "en": {
+        "title": "pizza"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-content-creation",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-content-creation.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-content-creation-prev.jpg"
+    },
+    "params": {
+      "category_name": "content creation"
+    },
+    "locales": {
+      "en": {
+        "title": "content creation"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-creativity",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-creativity.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-creativity-prev.jpg"
+    },
+    "params": {
+      "category_name": "creativity"
+    },
+    "locales": {
+      "en": {
+        "title": "creativity"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-development-programming",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-development-programming.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-development-programming-prev.jpg"
+    },
+    "params": {
+      "category_name": "development programming"
+    },
+    "locales": {
+      "en": {
+        "title": "development programming"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-general-assistants",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-general-assistants.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-general-assistants-prev.jpg"
+    },
+    "params": {
+      "category_name": "general assistants"
+    },
+    "locales": {
+      "en": {
+        "title": "general assistants"
+      }
+    }
+  },
+  {
+    "id": "template-tool-ai-category-productivity",
+    "template_id": "template-tool-ai-category",
+    "asset": {
+      "image_url": "/images/nano_insp/template-tool-ai-category-productivity.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-productivity-prev.jpg"
+    },
+    "params": {
+      "category_name": "productivity"
+    },
+    "locales": {
+      "en": {
+        "title": "productivity"
       }
     }
   }
