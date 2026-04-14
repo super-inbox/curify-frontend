@@ -6,6 +6,11 @@ export type TemplateParameter = {
   options?: string[];
 };
 
+export type ExistingExample = {
+  id: string;
+  params: Record<string, string>;
+};
+
 export type NanoTemplateForDetail = {
   template_id: string;
   base_prompt: string;
@@ -13,6 +18,7 @@ export type NanoTemplateForDetail = {
   topics?: string[];
   batch?: boolean;
   allow_generation?: boolean;
+  existingExamples?: ExistingExample[];
 };
 
 /**

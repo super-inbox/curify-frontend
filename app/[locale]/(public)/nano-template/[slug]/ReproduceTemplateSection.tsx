@@ -4,13 +4,18 @@ import { useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { format } from "date-fns";
+import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import { similarity, paramsToKey } from "@/lib/editDistance";
+import { toSlug } from "@/lib/nano_utils";
 
 import {
   fillPrompt,
   normalizePrefills,
 } from "@/lib/nano_prompt_utils";
+
+const SIMILARITY_THRESHOLD = 0.85;
 
 const COLLAPSED_PARAM_ROWS = 3;
 const COLLAPSED_PROMPT_ROWS = 3;
@@ -29,6 +34,7 @@ export default function ReproduceTemplateSection(props: {
   const [dateRangeState, setDateRangeState] = useState<Record<string, { start: string; end: string }>>({});
   const [showAllParams, setShowAllParams] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
+  const [duplicateWarning, setDuplicateWarning] = useState<{ exampleId: string; score: number } | null>(null);
 
   useEffect(() => {
     const next: Record<string, any> = {};
@@ -74,6 +80,7 @@ export default function ReproduceTemplateSection(props: {
     : promptLines.slice(0, COLLAPSED_PROMPT_ROWS).join("\n");
 
   const onChange = (name: string, value: any) => {
+    setDuplicateWarning(null);
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -92,6 +99,31 @@ export default function ReproduceTemplateSection(props: {
       return next;
     });
   };
+
+  // Returns the most similar existing example above the threshold, or null.
+  const findDuplicate = (currentForm: Record<string, any>) => {
+    const existing = template.existingExamples ?? [];
+    if (existing.length === 0) return null;
+    const currentKey = paramsToKey(currentForm);
+    if (!currentKey) return null;
+    let best: { exampleId: string; score: number } | null = null;
+    for (const ex of existing) {
+      const score = similarity(currentKey, paramsToKey(ex.params));
+      if (score >= SIMILARITY_THRESHOLD && (!best || score > best.score)) {
+        best = { exampleId: ex.id, score };
+      }
+    }
+    return best;
+  };
+
+  // Locale prefix for building example URLs (en has no prefix)
+  const localePrefix = useMemo(() => {
+    const seg = pathname.split("/")[1];
+    return seg && seg.length === 2 && seg !== "na" ? `/${seg}` : "";
+  }, [pathname]);
+
+  const exampleUrl = (exampleId: string) =>
+    `${localePrefix}/nano-template/${toSlug(template.template_id)}/example/${encodeURIComponent(exampleId)}`;
 
   return (
 <section>
@@ -208,6 +240,31 @@ export default function ReproduceTemplateSection(props: {
         )}
       </div>
 
+      {duplicateWarning && (
+        <div className="mt-4 flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+          <span className="mt-0.5 shrink-0">⚠️</span>
+          <span>
+            A very similar image already exists ({Math.round(duplicateWarning.score * 100)}% match).{" "}
+            <Link
+              href={exampleUrl(duplicateWarning.exampleId)}
+              className="font-semibold underline hover:text-amber-900"
+              target="_blank"
+            >
+              View it
+            </Link>
+            {" — or "}
+            <button
+              type="button"
+              className="font-semibold underline hover:text-amber-900 cursor-pointer"
+              onClick={() => setDuplicateWarning(null)}
+            >
+              dismiss and generate anyway
+            </button>
+            .
+          </span>
+        </div>
+      )}
+
       <UnifiedActionBar
         className="mt-4"
         tracking={{
@@ -223,6 +280,15 @@ export default function ReproduceTemplateSection(props: {
           enabled: true,
           templateId: template.template_id,
           params: form as Record<string, string>,
+          onBeforeGenerate: () => {
+            if (duplicateWarning) return true; // user already dismissed
+            const dup = findDuplicate(form);
+            if (dup) {
+              setDuplicateWarning(dup);
+              return false;
+            }
+            return true;
+          },
         } : undefined}
         copy={{
           enabled: true,
