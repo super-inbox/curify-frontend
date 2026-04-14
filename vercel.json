@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "jwang/*": false,
+      "hongjie28-*": false,
+      "RS-RSSJobs": false,
+      "super-inbox/**": false,
+      "dependabot/**": false,
+      "renovate/**": false,
+      "*": false
+    }
+  }
+}
