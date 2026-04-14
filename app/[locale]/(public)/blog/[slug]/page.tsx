@@ -21,6 +21,9 @@ import LipSyncContent from "./components/LipSyncContent";
 import LipSyncTechnicalContent from "./components/LipSyncTechnicalContent";
 import ImageGenerationModelComparisonContent from "./components/ImageGenerationModelComparisonContent";
 import AiContentDistributionSystemContent from "./components/AiContentDistributionSystemContent";
+import InfographicContent from "./components/InfographicContent";
+import ImageToNarrativeVideoContent from "./components/ImageToNarrativeVideoContent";
+import SeriesInfographicVsNotebookLMContent from "./components/SeriesInfographicVsNotebookLMContent";
 import blogsData from "@/public/data/blogs.json";
 
 // Force dynamic rendering to avoid static generation issues
@@ -299,14 +302,23 @@ export default async function BlogPostPage({
         {slug === 'ai-content-distribution-system' && (
           <AiContentDistributionSystemContent slug={slug} t={tNamespace || safeT} locale={locale} />
         )}
-        
-        
+        {slug === 'what-is-infographics' && (
+          <InfographicContent slug={slug} t={safeT} locale={locale} arrayData={arrayData} />
+        )}
+        {slug === 'image-to-narrative-video' && (
+          <ImageToNarrativeVideoContent slug={slug} t={safeT} locale={locale} />
+        )}
+        {slug === 'series-infographic-vs-notebooklm' && (
+          <SeriesInfographicVsNotebookLMContent slug={slug} t={safeT} locale={locale} />
+        )}
+
+
         {/* Original blog posts - use generic content renderer */}
-        {!slug.startsWith('translate-youtube-video') && 
-         slug !== 'ai-youtube-video-translator' && 
-         !slug.startsWith('voice-cloning') && 
-         slug !== 'what-is-voice-cloning' && 
-         slug !== 'f5-tts-voice-cloning' && 
+        {!slug.startsWith('translate-youtube-video') &&
+         slug !== 'ai-youtube-video-translator' &&
+         !slug.startsWith('voice-cloning') &&
+         slug !== 'what-is-voice-cloning' &&
+         slug !== 'f5-tts-voice-cloning' &&
          !slug.includes('asl') &&
          slug !== 'chinese-herbal-medicine-visual-guide' &&
          slug !== 'evolution-timelines-visualization' &&
@@ -318,7 +330,10 @@ export default async function BlogPostPage({
          slug !== 'lip-sync-business-guide' &&
          slug !== 'lip-sync-technical-deep-dive' &&
          slug !== 'image-generation-model-comparison' &&
-         slug !== 'ai-content-distribution-system' && (
+         slug !== 'ai-content-distribution-system' &&
+         slug !== 'what-is-infographics' &&
+         slug !== 'image-to-narrative-video' &&
+         slug !== 'series-infographic-vs-notebooklm' && (
           <div className="space-y-6">
             <p className="text-lg font-semibold text-blue-600 mb-4">
               {hasKey("intro") ? safeT("intro") : "Introduction"}

@@ -1,8 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import CdnImage from "../../_components/CdnImage";
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { useState, useMemo } from "react";
 
 interface BlogPost {
   slug: string;
@@ -13,43 +14,44 @@ interface BlogPost {
   image: string;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "blog.metadata" });
-
-  let title = t.has("title") ? t("title") : undefined;
-  let description = t.has("description") ? t("description") : undefined;
-
-  if (!title || !description) {
-    const tEn = await getTranslations({
-      locale: "en",
-      namespace: "blog.metadata",
-    });
-    if (!title) title = tEn("title");
-    if (!description) description = tEn("description");
-  }
-
-  return {
-    title,
-    description,
-  };
-}
-
 export default function BlogListPage() {
   const t = useTranslations("blog");
   const blogPosts = t.raw("posts") as BlogPost[];
+  const [selectedTag, setSelectedTag] = useState<string>("All");
+
+  const uniqueTags = useMemo(() => {
+    const tags = new Set(blogPosts.map((post) => post.tag));
+    return ["All", ...Array.from(tags)];
+  }, [blogPosts]);
+
+  const filteredPosts = useMemo(() => {
+    if (selectedTag === "All") return blogPosts;
+    return blogPosts.filter((post) => post.tag === selectedTag);
+  }, [blogPosts, selectedTag]);
 
   return (
     <div className="pt-2 pb-8">
       <div className="mx-auto max-w-[1180px]">
-        <h1 className="mb-10 text-4xl font-bold">{t("latestArticles")}</h1>
+        <h1 className="mb-6 text-4xl font-bold">{t("latestArticles")}</h1>
+
+        <div className="mb-8 flex flex-wrap gap-2">
+          {uniqueTags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                selectedTag === tag
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {blogPosts.map((post) => (
+          {filteredPosts.map((post) => (
             <Link
               href={`/blog/${post.slug}`}
               key={post.slug}
