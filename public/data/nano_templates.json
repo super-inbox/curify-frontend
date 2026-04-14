@@ -6756,14 +6756,14 @@
         ]
       }
     },
-    {
     "og_image": "/images/nano_insp_preview/template-tool-ai-category--prev.jpg",
     "topics": [
       "ai",
       "learning"
     ],
     "base_rank_score": 70,
-    "rank_score": 70
+    "rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-chinese-classic-character-mbti",
@@ -6834,7 +6834,6 @@
         ]
       }
     },
-    {
     "og_image": "/images/nano_insp_preview/template-chinese-classic-character-mbti-guan-yu-prev.jpg",
     "topics": [
       "mbti",
