@@ -6753,6 +6753,7 @@
         ]
       }
     },
+    {
     "og_image": "/images/nano_insp_preview/template-tool-ai-category--prev.jpg",
     "topics": [
       "ai",
@@ -6830,6 +6831,7 @@
         ]
       }
     },
+    {
     "og_image": "/images/nano_insp_preview/template-chinese-classic-character-mbti-guan-yu-prev.jpg",
     "topics": [
       "mbti",
@@ -6915,5 +6917,51 @@
     ],
     "base_rank_score": 90,
     "rank_score": 90
-  }
+  },
+  {
+    "id": "template-financial-habit-infographic-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "（Financial Habit Infographic Poster Designer）You are a professional financial/self-improvement infographic designer, specializing in creating cute, watercolor-style educational posters. Based on the user-specified {topic_name}, generate a vertical 4:3 premium educational poster, matching the warm, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{topic_name}\" with key negative word highlighted in red, vintage watercolor ribbon banner, aged paper background. 2. Grid: 20 numbered items in 5-page × 2×2 grid, each with numbered label, bold habit title, explanatory text, cute watercolor cartoon illustration. Style: Warm soft watercolor cartoon, consistent character design, clear typography, vertical 4:3 format, 4K ultra HD, direct image generation. Subject: {topic_name} educational infographic poster.",
+            "parameters": [
+                {
+                    "name": "topic_name",
+                    "label": "Topic Name",
+                    "type": "text",
+                    "placeholder": [
+                        "HABITS THAT KEEP YOU IN DEBT",
+                        "HABITS THAT BUILD WEALTH",
+                        "HABITS THAT RUIN YOUR PRODUCTIVITY",
+                        "HABITS THAT IMPROVE YOUR MENTAL HEALTH"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-1-prev.jpg"
+},
+  {
+    "id": "template-bilingual-object-structure-labeling",
+    "locales": {
+        "en": {
+            "base_prompt": "（Bilingual Object Structure Labeling Poster Designer）You are a professional educational anatomy infographic designer, specializing in creating clear, bilingual (Chinese-English) object structure labeling posters. Based on the user-specified {object_name}, generate a vertical premium educational poster, matching the clean, minimalist aesthetic of the reference images. Layout: 1. Main Visual: High-resolution photorealistic image of {object_name} on pure white background, with all key components visible. 2. Labeling: Each component labeled with Pinyin, English term, and Chinese term, connected by thin clear leader lines. Style: Clean minimalist design, accurate terminology, consistent font, vertical format, 4K ultra HD, direct image generation. Subject: {object_name} Structure Bilingual Labeling Educational Poster.",
+            "parameters": [
+                {
+                    "name": "object_name",
+                    "label": "Object Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Bicycle",
+                        "Apple",
+                        "Lily Flower",
+                        "Human Body",
+                        "Car",
+                        "Tree"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg"
+}
 ]
