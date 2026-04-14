@@ -48,23 +48,28 @@ function getInterleavedData(
 ): InterleavedItem[] {
   const result: InterleavedItem[] = [];
 
-  if (nanoCards.length > 0) {
-    result.push({ type: "nano", cards: nanoCards.slice(0, 4) });
+  if (nanoCards.length === 0) {
+    mainCards.forEach((card) => result.push({ type: "inspiration", card }));
+    return result;
   }
 
-  mainCards.forEach((card, index) => {
-    result.push({ type: "inspiration", card });
+  let nanoRowIndex = 0;
+  let mainIndex = 0;
 
-    if ((index + 1) % 2 === 0 && nanoCards.length > 0) {
-      const blockIndex = Math.floor((index + 1) / 2);
-      const startIdx = (blockIndex * 4) % nanoCards.length;
-
+  while (mainIndex < mainCards.length) {
+    // 2 nano rows
+    for (let i = 0; i < 2; i++) {
+      const startIdx = (nanoRowIndex * 4) % nanoCards.length;
       const rowCards = nanoCards.slice(startIdx, startIdx + 4);
-      if (rowCards.length > 0) {
-        result.push({ type: "nano", cards: rowCards });
-      }
+      if (rowCards.length > 0) result.push({ type: "nano", cards: rowCards });
+      nanoRowIndex++;
     }
-  });
+
+    // 2 inspiration cards
+    for (let i = 0; i < 2 && mainIndex < mainCards.length; i++) {
+      result.push({ type: "inspiration", card: mainCards[mainIndex++] });
+    }
+  }
 
   return result;
 }

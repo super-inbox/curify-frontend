@@ -11,14 +11,14 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/character",
   },
   {
+    id: "language",
+    emoji: "🗣️",
+    path: "/topics/language",
+  },
+  {
     id: "learning",
     emoji: "📚",
     path: "/topics/learning",
-  },
-  {
-    id: "visual",
-    emoji: "🎨",
-    path: "/nano-banana-pro-prompts",
   },
   {
     id: "lifestyle",
@@ -29,6 +29,11 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     id: "product",
     emoji: "🛍️",
     path: "/topics/product",
+  },
+  {
+    id: "visual",
+    emoji: "🎨",
+    path: "/nano-banana-pro-prompts",
   },
   {
     id: "video",

@@ -383,7 +383,7 @@
   },
   "topics": {
     "learning": {
-      "displayName": "학습",
+      "displayName": "지식",
       "title": "학습 비주얼 프롬프트, 템플릿 및 영감",
       "description": "지식 공유, 설명서, 학습 콘텐츠 및 비주얼 요약을 위한 학습 중심 AI 비주얼, 교육 템플릿 및 영감 카드를 탐색하세요."
     },
@@ -491,10 +491,77 @@
       "displayName": "날씨",
       "title": "날씨 비주얼 프롬프트, 템플릿 및 영감",
       "description": "계절, 기후, 자연 현상 및 대기 스토리텔링을 위한 날씨 테마 AI 비주얼과 템플릿을 탐색하세요."
+    },
+    "interior": {
+      "displayName": "홈 데코",
+      "title": "홈 데코 및 인테리어 디자인 비주얼 프롬프트, 템플릿 및 영감",
+      "description": "룸 아이디어, 미적 공간, 가구 스타일링 및 현대적인 생활을 위한 홈 데코 및 인테리어 디자인 AI 비주얼, 템플릿 및 영감을 탐색하세요."
+    },
+    "english-chinese": {
+      "displayName": "영어-중국어",
+      "title": "영어-중국어 시각적 학습 템플릿",
+      "description": "영어-중국어 이중 언어 학습을 위한 AI 템플릿."
+    },
+    "english-spanish": {
+      "displayName": "영어-스페인어",
+      "title": "영어-스페인어 시각적 학습 템플릿",
+      "description": "영어-스페인어 이중 언어 학습자를 위한 AI 템플릿."
+    },
+    "english-japanese": {
+      "displayName": "영어-일본어",
+      "title": "영어-일본어 시각적 학습 템플릿",
+      "description": "영어-일본어 이중 언어 교육을 위한 AI 템플릿."
+    },
+    "english-korean": {
+      "displayName": "영어-한국어",
+      "title": "영어-한국어 시각적 학습 템플릿",
+      "description": "영어-한국어 언어 학습을 위한 AI 템플릿."
+    },
+    "english": {
+      "displayName": "영어",
+      "title": "영어 학습 시각적 템플릿",
+      "description": "영어 학습 및 어휘를 위한 AI 비주얼 템플릿."
+    },
+    "japan": {
+      "displayName": "일본",
+      "title": "일본 비주얼 템플릿 & 프롬프트",
+      "description": "일본을 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 도쿄부터 오사카까지 여행, 음식, 패션, 문화."
+    },
+    "korea": {
+      "displayName": "한국",
+      "title": "한국 비주얼 템플릿 & 프롬프트",
+      "description": "한국을 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 서울부터 부산까지 여행, 음식, 한복, 문화."
+    },
+    "thailand": {
+      "displayName": "태국",
+      "title": "태국 비주얼 템플릿",
+      "description": "태국을 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 방콕부터 푸켓까지 여행, 음식, 실크 패션, 문화."
+    },
+    "india": {
+      "displayName": "인도",
+      "title": "인도 비주얼 템플릿",
+      "description": "인도를 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 뭄바이부터 자이푸르까지 여행, 음식, 사리 패션, 문화."
+    },
+    "mexico": {
+      "displayName": "멕시코",
+      "title": "멕시코 비주얼 템플릿",
+      "description": "멕시코를 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 멕시코시티부터 오아하카까지 여행, 음식, 전통 의상, 문화."
+    },
+    "france": {
+      "displayName": "프랑스",
+      "title": "프랑스 비주얼 템플릿",
+      "description": "프랑스를 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 파리부터 프랑스 시골까지 음식, 패션 역사, 문화."
+    },
+    "nostalgia": {
+      "displayName": "노스탈지아",
+      "title": "노스탈지아 비주얼 템플릿",
+      "description": "노스탈지아를 주제로 한 AI 비주얼 템플릿을 탐색하세요 — 레트로 기기, 어린 시절 장난감, 아이코닉한 첫 경험과 한 세대를 정의한 유물들이 담겨 있습니다."
     }
   },
   "topicPage": {
     "exampleImagesHeading": "예시 이미지",
-    "templatesHeading": "템플릿"
+    "templatesHeading": "템플릿",
+    "subTopicsHeading": "카테고리별 탐색",
+    "exploreMoreHeading": "더 탐색하기"
   }
 }

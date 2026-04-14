@@ -39,8 +39,9 @@
       "learning",
       "science"
     ],
-    "rank_score": 117,
-    "batch": true
+    "rank_score": 80,
+    "batch": true,
+    "base_rank_score": 80
   },
   {
     "id": "template-evolution",
@@ -215,7 +216,8 @@
       "learning",
       "science"
     ],
-    "rank_score": 48
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-travel",
@@ -276,8 +278,9 @@
       "travel",
       "weather"
     ],
-    "rank_score": 159,
-    "batch": true
+    "rank_score": 80,
+    "batch": true,
+    "base_rank_score": 80
   },
   {
     "id": "template-architecture",
@@ -316,7 +319,8 @@
       "learning",
       "architecture"
     ],
-    "rank_score": 11
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-species",
@@ -356,7 +360,8 @@
       "learning",
       "science"
     ],
-    "rank_score": 5
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-character",
@@ -414,7 +419,8 @@
       "character",
       "film"
     ],
-    "rank_score": 14
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-recipe",
@@ -454,7 +460,8 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 13
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-character-analysis",
@@ -547,7 +554,8 @@
     "topics": [
       "character"
     ],
-    "rank_score": 28
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-weather",
@@ -586,7 +594,8 @@
       "lifestyle",
       "science"
     ],
-    "rank_score": 22
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-education",
@@ -625,10 +634,11 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-hot-event-analysis",
@@ -702,10 +712,11 @@
       "learning",
       "trending"
     ],
-    "rank_score": 22,
+    "rank_score": 60,
     "use_cases": [
       "for-marketers"
-    ]
+    ],
+    "base_rank_score": 60
   },
   {
     "id": "template-intangible-heritage",
@@ -749,7 +760,8 @@
       "learning",
       "culture"
     ],
-    "rank_score": 26
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-education-card",
@@ -787,11 +799,12 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 83,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-costume",
@@ -831,11 +844,11 @@
     "legacy_id": "template-costume-zh",
     "topics": [
       "learning",
-      "culture",
-      "design"
+      "culture"
     ],
-    "rank_score": 14,
-    "batch": true
+    "rank_score": 80,
+    "batch": true,
+    "base_rank_score": 80
   },
   {
     "id": "template-book-series",
@@ -875,11 +888,12 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 8,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-word-scene",
@@ -967,14 +981,14 @@
     },
     "og_image": "/images/nano_insp_preview/template-word-scene-zh-student-dinosaur-jungle-prev.jpg",
     "topics": [
-      "learning",
       "language"
     ],
-    "rank_score": 9,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-cultural-relic-retro-infographic",
@@ -1028,7 +1042,8 @@
       "learning",
       "culture"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-dog-breed-retro-infographic",
@@ -1115,7 +1130,8 @@
     "topics": [
       "lifestyle"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-food",
@@ -1268,7 +1284,8 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 54
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-solar-term",
@@ -1351,7 +1368,8 @@
       "learning",
       "culture"
     ],
-    "rank_score": 16
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-fruit",
@@ -1384,10 +1402,10 @@
     "og_image": "/images/nano_insp_preview/template-fruit-en-chilean-cherries-prev.jpg",
     "topics": [
       "lifestyle",
-      "food",
-      "science"
+      "food"
     ],
-    "rank_score": 13
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-what-if-history",
@@ -1442,7 +1460,8 @@
       "learning",
       "history"
     ],
-    "rank_score": 21
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-character-comparison",
@@ -1498,7 +1517,8 @@
     "rank_score": 1,
     "use_cases": [
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 1
   },
   {
     "id": "template-mbti-animal",
@@ -1553,7 +1573,8 @@
       "character",
       "mbti"
     ],
-    "rank_score": 5
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-battle",
@@ -2108,10 +2129,11 @@
       "character",
       "gaming"
     ],
-    "rank_score": 11,
+    "rank_score": 80,
     "use_cases": [
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-fashion-ecommerce",
@@ -2153,10 +2175,10 @@
     },
     "og_image": "/images/nano_insp_preview/template-fashion-ecommerce-zh-jeans-prev.jpg",
     "topics": [
-      "product",
-      "design"
+      "product"
     ],
-    "rank_score": 37
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -2175,7 +2197,8 @@
       "product",
       "design"
     ],
-    "rank_score": 1
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-contrast",
@@ -2263,7 +2286,8 @@
       "character",
       "mbti"
     ],
-    "rank_score": 15
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-guofeng-scroll",
@@ -2305,7 +2329,8 @@
       "character",
       "culture"
     ],
-    "rank_score": 6
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-species-science",
@@ -2351,7 +2376,8 @@
       "learning",
       "science"
     ],
-    "rank_score": 70
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-city-miniature",
@@ -2459,7 +2485,8 @@
       "lifestyle",
       "weather"
     ],
-    "rank_score": 2
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-hotspot-card",
@@ -2569,11 +2596,12 @@
       "learning",
       "trending"
     ],
-    "rank_score": 29,
+    "rank_score": 70,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 70
   },
   {
     "id": "template-constellation-steampunk",
@@ -2645,10 +2673,10 @@
     "legacy_id": "template-constellation-steampunk-zh",
     "topics": [
       "learning",
-      "science",
       "design"
     ],
-    "rank_score": 29
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-generic",
@@ -2765,11 +2793,12 @@
       "character",
       "mbti"
     ],
-    "rank_score": 9,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-marvel",
@@ -2901,7 +2930,8 @@
       "mbti",
       "film"
     ],
-    "rank_score": 26
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-nba",
@@ -3022,7 +3052,8 @@
       "mbti",
       "sports"
     ],
-    "rank_score": 6
+    "rank_score": 100,
+    "base_rank_score": 100
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -3094,11 +3125,12 @@
       "mbti",
       "career"
     ],
-    "rank_score": 3,
+    "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-mbti-breakingbad",
@@ -3427,7 +3459,8 @@
       "mbti",
       "film"
     ],
-    "rank_score": 1
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-sports-battle",
@@ -3599,7 +3632,8 @@
       "character",
       "sports"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-mbti-naruto",
@@ -3855,7 +3889,8 @@
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 8
   },
   {
     "id": "template-mbti-yellowstone",
@@ -4054,7 +4089,8 @@
       "mbti",
       "film"
     ],
-    "rank_score": 2
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-mbti-ghibli",
@@ -4227,11 +4263,12 @@
       "mbti",
       "film"
     ],
-    "rank_score": 55,
+    "rank_score": 100,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 100
   },
   {
     "id": "template-vocabulary",
@@ -4397,15 +4434,15 @@
     },
     "og_image": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
     "topics": [
-      "learning",
       "language"
     ],
     "batch": true,
-    "rank_score": 10,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-series-infographic",
@@ -4618,11 +4655,12 @@
       "learning",
       "trending"
     ],
-    "rank_score": 8,
+    "rank_score": 70,
     "use_cases": [
       "for-marketers",
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 70
   },
   {
     "id": "template-english-top5-phrases",
@@ -4976,15 +5014,15 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg",
     "topics": [
-      "learning",
       "language"
     ],
     "batch": true,
-    "rank_score": 1,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-english-error-correction",
@@ -5194,15 +5232,15 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg",
     "topics": [
-      "learning",
       "language"
     ],
     "batch": true,
-    "rank_score": 1,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-english-dialogue-scene",
@@ -5556,14 +5594,14 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
     "topics": [
-      "learning",
       "language"
     ],
-    "rank_score": 3,
+    "rank_score": 80,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-movie-poster",
@@ -5667,7 +5705,8 @@
       "lifestyle",
       "film"
     ],
-    "rank_score": 1
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-series-travel",
@@ -5759,7 +5798,8 @@
       "travel",
       "weather"
     ],
-    "rank_score": 9
+    "rank_score": 80,
+    "base_rank_score": 80
   },
   {
     "id": "template-fat-loss-plan",
@@ -5874,7 +5914,8 @@
       "lifestyle",
       "fitness"
     ],
-    "rank_score": 1
+    "rank_score": 1,
+    "base_rank_score": 1
   },
   {
     "id": "template-child-hobby-skill",
@@ -5930,7 +5971,8 @@
     "rank_score": 2,
     "use_cases": [
       "for-parents"
-    ]
+    ],
+    "base_rank_score": 2
   },
   {
     "id": "template-detailed-vocab-flashcard",
@@ -6019,15 +6061,15 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg",
-    "rank_score": 2,
+    "rank_score": 80,
     "topics": [
-      "learning",
       "language"
     ],
     "use_cases": [
       "for-parents",
       "for-esl-learners"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-custom-character-card",
@@ -6115,7 +6157,8 @@
     ],
     "use_cases": [
       "for-creators"
-    ]
+    ],
+    "base_rank_score": 2
   },
   {
     "id": "template-detective-conan",
@@ -6197,11 +6240,12 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-detective-conan-conan-edogawa-prev.jpg",
-    "rank_score": 2,
+    "rank_score": 80,
     "topics": [
       "character",
       "film"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-children-english-vocab-spelling",
@@ -6226,14 +6270,14 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-children-english-vocab-spelling-weather-prev.jpg",
-    "rank_score": 2,
+    "rank_score": 80,
     "topics": [
-      "language",
-      "learning"
+      "language"
     ],
     "use_cases": [
       "for-parents"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-daily-essentials-learning-card",
@@ -6258,11 +6302,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-daily-essentials-learning-card-school-supplies-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 80,
     "topics": [
-      "learning",
       "language"
-    ]
+    ],
+    "base_rank_score": 80
   },
   {
     "id": "template-native-english-expressions",
@@ -6288,8 +6332,588 @@
     "og_image": "/images/nano_insp_preview/template-native-english-expressions-time-related-preview.jpg",
     "rank_score": 50,
     "topics": [
-      "learning",
+      "language"
+    ],
+    "base_rank_score": 50
+  },
+  {
+    "id": "template-theme-overview-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "（Theme Overview Poster Designer）You are a professional infographic designer, specializing in creating clean, educational overview posters. Based on the user-specified {theme}, generate a vertical 3:4 premium overview poster, matching the minimalist, hand-drawn aesthetic of the reference images. Layout: 1. Header: Large elegant title \"{theme}\", Curify watermark at top left. 2. Grid: Items arranged in 4-column grid, each in soft circular background. Each item: Hand-drawn illustration, item name + scientific/alternative name, optional number label, decorative dashed lines connecting items. Style: Clean minimalist design, off-white background, hand-drawn watercolor illustrations, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} overview poster.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Poster Theme",
+            "type": "text",
+            "placeholder": [
+              "Traditional Korean Foods for Health & Wellness",
+              "Traditional Costumes of China's Ethnic Groups",
+              "Traditional Chinese Foods for Health & Wellness",
+              "Traditional Chinese Herbs for Clearing Heat",
+              "Traditional Chinese Herbs for Nourishing Blood",
+              "Traditional Costumes of Europe"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-theme-overview-poster-tcm-clearing-heat-herbs-prev.jpg",
+    "rank_score": 100,
+    "topics": [
+      "lifestyle"
+    ],
+    "base_rank_score": 100
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "（Cuisine Food Vocabulary Poster Designer）You are a professional food vocabulary poster designer, specializing in creating clean, high-quality food bilingual learning posters. Based on the user-specified {cuisine_theme}, generate a vertical 9:16 premium food vocabulary poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 4 food items arranged vertically, each with clean white background. Each item: Left = high-resolution photorealistic food photography of the dish; Right = pinyin pronunciation, large bold Chinese dish name, English translation. Style: Clean minimalist design, pure white background, professional food styling, vibrant colors, clear typography, Curify watermark at top left, vertical 9:16 format, 4K ultra HD, direct image generation. Subject: {cuisine_theme} food vocabulary poster.",
+        "parameters": [
+          {
+            "name": "cuisine_theme",
+            "label": "Cuisine Theme",
+            "type": "text",
+            "placeholder": [
+              "Beijing Cuisine",
+              "Korean Cuisine",
+              "Thai Cuisine",
+              "Singaporean Cuisine",
+              "Yunnan Cuisine"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg",
+    "rank_score": 100,
+    "topics": [
+      "language",
+      "food"
+    ],
+    "base_rank_score": 100
+  },
+  {
+    "id": "template-industrial-design-concept-sketch",
+    "locales": {
+      "en": {
+        "base_prompt": "（Industrial Design Concept Sketch Artist）You are a professional industrial design sketch artist, specializing in creating technical blueprint-style concept art for futuristic products. Based on the user-specified {product_name}, generate a vertical 3:4 premium industrial design concept sketch, matching the technical blueprint, black grid background aesthetic of the reference images. Layout: 1. Header: Large bold product title \"{product_name} Concept\" with technical project labels. 2. Main Illustration: Multiple views of the {product_name} (main perspective, side/top/front views, component close-ups), hand-drawn technical sketch, white/metallic lines on black grid background, technical callouts with arrows labeling key components. 3. Technical Specs: Performance parameters, material specifications, scale, design notes. Style: Technical industrial design sketch, blueprint aesthetic, detailed line art, realistic shading, clear callouts, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {product_name} industrial design concept sketch.",
+        "parameters": [
+          {
+            "name": "product_name",
+            "label": "Product Name",
+            "type": "text",
+            "placeholder": [
+              "Futuristic Electric Motorcycle",
+              "Combat Humanoid Robot",
+              "Futuristic VTOL UAV Drone",
+              "Futuristic Wireless Headphones"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-industrial-design-concept-sketch-humanoid-robot-prev.jpg",
+    "rank_score": 50,
+    "topics": [
+      "design",
+      "learning"
+    ],
+    "base_rank_score": 50
+  },
+  {
+    "id": "template-varieties-food-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "（Food Varieties Poster Designer）You are a professional food photography infographic designer, specializing in creating clean, appetizing food variety posters. Based on the user-specified {food_theme}, generate a vertical 3:4 premium food varieties poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"{food_theme} VARIETIES\", clean off-white background. 2. Grid: 9 food items in 3×3 grid. Each item: Top = high-resolution photorealistic food photography of the dish; Bottom = bold dish name + short descriptive flavor/ingredient text. Style: Clean minimalist design, soft off-white background, professional food styling, natural lighting, vibrant appetizing colors, clear typography, Curify watermark at top left, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {food_theme} varieties food poster.",
+        "parameters": [
+          {
+            "name": "food_theme",
+            "label": "Food Theme",
+            "type": "text",
+            "placeholder": [
+              "Pasta",
+              "Salad",
+              "Mille Crepe Cakes",
+              "High-Protein Egg Sandwich",
+              "Coffee Drinks",
+              "Ice Cream Flavors"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-varieties-food-poster-salad-prev.jpg",
+    "rank_score": 100,
+    "topics": [
+      "lifestyle",
+      "food",
+      "product"
+    ],
+    "base_rank_score": 100
+  },
+  {
+    "id": "template-warmup-routine",
+    "locales": {
+      "en": {
+        "base_prompt": "（Sport Warm-Up Routine Poster Designer）You are a professional fitness infographic designer, specializing in creating clear, educational warm-up routine posters. Based on the user-specified {sport_type}, generate a vertical 3:4 premium warm-up routine poster, matching the cute cartoon, clean educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{sport_type} WARM-UP ROUTINE\", Curify watermark at top left, light blue gradient top background. 2. Grid: 8 exercise cards in 4×2 grid, each with unique soft pastel border. Each card: Top = cute cartoon illustration of the warm-up exercise with motion arrows; Bottom = bold exercise name + set/reps or duration instructions. Style: Clean minimalist design, soft off-white background, kawaii cartoon characters, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {sport_type} warm-up routine fitness poster.",
+        "parameters": [
+          {
+            "name": "sport_type",
+            "label": "Sport Type",
+            "type": "text",
+            "placeholder": [
+              "GYM",
+              "SWIMMING",
+              "RUNNING",
+              "YOGA",
+              "BASKETBALL",
+              "FOOTBALL"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-warmup-routine-gym-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "lifestyle",
+      "fitness"
+    ]
+  },
+  {
+    "id": "template-group-vocab-category",
+    "locales": {
+      "en": {
+        "base_prompt": "（English Vocabulary Category Poster Designer）You are a professional children's English vocabulary educational poster designer, specializing in creating cute, colorful, clear learning infographics. Based on the user-specified {theme}, generate a vertical 3:4 premium vocabulary poster, matching the kawaii cartoon, clean educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{theme}\", Curify watermark at top left. 2. Grid: 12 items in 4×3 grid. Each item: Top = cute clear cartoon illustration of the item; Bottom = bold English category/term name. Style: Clean minimalist design, pure white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {theme} English vocabulary educational poster.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Vocabulary Theme",
+            "type": "text",
+            "placeholder": [
+              "Group Names of Animals",
+              "Types of Sports",
+              "Types of Plants",
+              "Categories of Food",
+              "Types of Vehicles",
+              "Types of Furniture"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
       "language"
     ]
+  },
+  {
+    "id": "template-city-mbti",
+    "locales": {
+      "en": {
+        "base_prompt": "（City MBTI Personality Poster Designer）You are a professional city MBTI infographic designer, specializing in creating cute, colorful, kawaii-style city personality posters. Based on the user-specified {city_name}, generate a vertical 3:4 premium city MBTI poster, matching the cartoon, vibrant aesthetic of the reference images. Layout: 1. Header: Large bold red title \"{city_name}\", Curify watermark at top left, rainbow gradient banner with MBTI type \"{mbti_type} ({mbti_title})\". 2. Main Illustration: Kawaii cartoon cityscape of {city_name} with iconic landmarks, cute mascot, local signature food. 3. Description: 2-line text summarizing city's personality, culture and charm. Style: Clean minimalist design, soft off-white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {city_name} MBTI city personality poster.",
+        "parameters": [
+          {
+            "name": "city_name",
+            "label": "City Name",
+            "type": "text",
+            "placeholder": [
+              "Bangkok",
+              "Beijing",
+              "Chengdu",
+              "Seoul",
+              "Shanghai",
+              "Tokyo"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ENFP",
+              "ISTJ",
+              "ESFP",
+              "ENFJ",
+              "ENTJ",
+              "INTJ"
+            ]
+          },
+          {
+            "name": "mbti_title",
+            "label": "MBTI Title",
+            "type": "text",
+            "placeholder": [
+              "The Campaigner",
+              "The Inspector/Traditionalist",
+              "The Entertainer",
+              "The Protagonist",
+              "The Commander",
+              "The Architect"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-city-mbti-beijing-prev.jpg",
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "topics": [
+      "character",
+      "mbti"
+    ]
+  },
+  {
+    "id": "template-clothing-evolution-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "（Clothing Evolution Poster Designer）You are a professional fashion history infographic designer, specializing in creating cute, educational clothing evolution posters. Based on the user-specified {region}, generate a vertical 3:4 premium \"Evolution of {region} Clothing\" poster, matching the kawaii cartoon, clear historical aesthetic of the reference images. Layout: 1. Header: Large bold title \"EVOLUTION OF {region} CLOTHING\", Curify watermark at top left. 2. Timeline: 6 historical clothing eras with dotted connecting lines. Each era: Cute cartoon illustration of person in period clothing, era name/period, short style description, numbered label 1-6. Style: Clean minimalist design, soft off-white background, kawaii cartoon, accurate historical clothing details, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: Evolution of {region} Clothing historical fashion poster.",
+        "parameters": [
+          {
+            "name": "region",
+            "label": "Clothing Region",
+            "type": "text",
+            "placeholder": [
+              "FRENCH",
+              "KOREAN",
+              "JAPANESE",
+              "INDIAN",
+              "CHINESE"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-clothing-evolution-poster--prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "learning",
+      "culture"
+    ]
+  },
+  {
+    "id": "template-soft-decoration-design-guide",
+    "locales": {
+      "en": {
+        "base_prompt": "（Soft Decoration Design Guide Poster Designer）You are a professional interior design infographic designer, specializing in creating high-quality, aesthetic home soft decoration design guides. Based on the user-specified {space_type} and {decor_style}, generate a vertical 3:2 premium soft decoration design guide poster, matching the photorealistic, professional interior design aesthetic of the reference images. Layout: 1. Top: Full-width photorealistic render of a {space_type} in {decor_style} style, natural lighting, professional composition. 2. Bottom: Large title \"SOFT DECORATION DESIGN GUIDE\", subtitle \"{decor_style} {space_type}\", categorized breakdown of all furniture/decor with accurate English labels, photorealistic previews, plus Color Palette, Materials, Style Notes sections. Style: Clean professional design, photorealistic interior render, clear typography, vertical 3:2 aspect ratio, 4K ultra HD, direct image generation. Subject: {decor_style} {space_type} soft decoration design guide.",
+        "parameters": [
+          {
+            "name": "space_type",
+            "label": "Space Type",
+            "type": "text",
+            "placeholder": [
+              "Living Room",
+              "Bedroom",
+              "Kitchen",
+              "Bathroom",
+              "Home Office"
+            ]
+          },
+          {
+            "name": "decor_style",
+            "label": "Decoration Style",
+            "type": "text",
+            "placeholder": [
+              "Modern Biophilic",
+              "Bohemian Wabi-Sabi",
+              "Natural Organic",
+              "Minimalist Scandinavian",
+              "Japandi"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-soft-decoration-design-guide-poster-en-preview.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "design",
+      "interior",
+      "lifestyle"
+    ]
+  },
+  {
+    "id": "template-home-organization-before-after",
+    "locales": {
+      "en": {
+        "base_prompt": "（Home Organization Before & After Poster Designer）You are a professional home organization infographic designer, specializing in creating \"Before & After\" organization transformation posters. Based on the user-specified {space_type}, generate a horizontal 4:3 premium organization transformation poster, matching the clean, photorealistic, minimalist aesthetic of the reference images. Layout: Split-screen, left = \"BEFORE\" messy cluttered {space_type}, right = \"AFTER\" fully organized tidy {space_type} with clear English labels for all storage solutions. Style: Bright natural lighting, consistent perspective, photorealistic high-resolution, Curify watermark at bottom right, horizontal 4:3 aspect ratio, 4K ultra HD, direct image generation. Subject: {space_type} organization before & after transformation poster.",
+        "parameters": [
+          {
+            "name": "space_type",
+            "label": "Space Type",
+            "type": "text",
+            "placeholder": [
+              "Desk",
+              "Kitchen Counter",
+              "Living Room Shelf",
+              "Closet",
+              "Bathroom Vanity",
+              "Pantry"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "topics": [
+      "lifestyle",
+      "interior"
+    ]
+  },
+  {
+    "id": "template-stick-figure-vocab",
+    "locales": {
+      "en": {
+        "base_prompt": "（Stick Figure Vocabulary Poster Designer）You are a professional children's English vocabulary educational poster designer, specializing in creating cute, clear, kawaii-style learning infographics. Based on the user-specified {vocab_theme}, generate a vertical 3:4 premium vocabulary poster, matching the cartoon, educational aesthetic of the reference images. Layout: 1. Header: Large bold title \"{vocab_theme}\", Curify watermark at top left. 2. Grid: 9 vocabulary items in 3×3 grid, each in a clean white box. Each item: Top = cute cartoon yellow stick figure illustration; Middle = bold English vocabulary word; Bottom = simple easy-to-understand definition. Style: Clean minimalist design, pure white background, kawaii cartoon, bright friendly colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {vocab_theme} English vocabulary educational poster.",
+        "parameters": [
+          {
+            "name": "vocab_theme",
+            "label": "Vocabulary Theme",
+            "type": "text",
+            "placeholder": [
+              "Body Movement Verbs",
+              "Action Verbs",
+              "Daily Verbs",
+              "Sports Verbs",
+              "Emotion Verbs"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-stick-figure-vocab-body-movement-verbs-set1-prev.jpg",
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "topics": [
+      "language"
+    ]
+  },
+  {
+    "id": "template-nostalgic-first-item-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "（Nostalgic First Item Poster Designer）You are a professional nostalgic tech evolution infographic designer, specializing in creating \"What was your first {item}?\" retro collection posters. Based on the user-specified {item_theme}, generate a vertical 3:4 premium nostalgic poster, matching the vintage, photorealistic aesthetic of the reference images. Layout: 1. Header: Large bold title \"What was your first {item_theme}?\", Curify watermark at top left, dark green vintage banner, textured aged paper background. 2. Grid: 18 items in 3×6 grid, each with clear number label 1-18, items span from vintage/retro to modern models. Style: Vintage aged paper background, photorealistic product photography, accurate historical models, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: \"What was your first {item_theme}?\" nostalgic tech evolution poster.",
+        "parameters": [
+          {
+            "name": "item_theme",
+            "label": "Item Theme",
+            "type": "text",
+            "placeholder": [
+              "computer",
+              "TV",
+              "camera",
+              "music player",
+              "game console",
+              "phone",
+              "headphone",
+              "watch"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "nostalgia"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-tool-ai-category",
+    "locales": {
+      "en": {
+        "base_prompt": "（AI Tool Category Poster Designer）You are a professional AI tool category infographic designer, specializing in creating clean, modern, minimalist AI tool collection posters. Based on the user-specified {category_name}, generate a vertical 3:4 premium AI tool category poster, matching the sleek, gradient aesthetic of the reference images. Layout: 1. Header: Large bold title \"{category_name}\", Curify watermark at top left, modern minimalist background with soft geometric/gradient accents. 2. Tool List: Vertical list of AI tools, each with accurate official app icon + bold tool name. 3. Bottom: Line of descriptive keywords summarizing the category's core functions. Style: Clean modern minimalist design, white background, accurate high-resolution icons, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {category_name} AI Tool Collection Poster.",
+        "parameters": [
+          {
+            "name": "category_name",
+            "label": "AI Tool Category",
+            "type": "text",
+            "placeholder": [
+              "Productivity",
+              "Content Creation",
+              "Creativity",
+              "Development/Programming",
+              "General Assistants",
+              "Data Analysis",
+              "Marketing",
+              "Design"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-tool-ai-category--prev.jpg",
+    "topics": [
+      "ai",
+      "learning"
+    ],
+    "base_rank_score": 70,
+    "rank_score": 70
+  },
+  {
+    "id": "template-chinese-classic-character-mbti",
+    "locales": {
+      "en": {
+        "base_prompt": "（Chinese Classic Character MBTI Poster Designer）You are a professional Chinese classic character MBTI infographic designer, specializing in creating elegant, traditional Chinese-style character personality posters. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the exquisite Chinese ink/watercolor aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name} ({character_pinyin})\", prominent MBTI type \"{mbti_type}\", MBTI title \"{mbti_title}\", traditional Chinese lattice border. 2. Main Illustration: Exquisite Chinese ink/watercolor style illustration of {character_name} with iconic story elements. 3. Bottom Information: 4 modules: 人物介绍 (Character Introduction), 性格特质 (Personality Traits), 经典语录 (Famous Quote), 人物结局/档案 (Character Ending/Profile). Style: Elegant traditional Chinese design, off-white background, delicate ink/watercolor art, clear typography, Curify watermark at bottom right, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Chinese classic literature.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Character Name",
+            "type": "text",
+            "placeholder": [
+              "薛宝钗",
+              "郭嘉",
+              "刘备",
+              "王熙凤",
+              "林黛玉",
+              "诸葛亮",
+              "曹操",
+              "贾宝玉"
+            ]
+          },
+          {
+            "name": "character_pinyin",
+            "label": "Character Pinyin",
+            "type": "text",
+            "placeholder": [
+              "Xue Baochai",
+              "Guo Jia",
+              "Liu Bei",
+              "Wang Xifeng",
+              "Lin Daiyu",
+              "Zhuge Liang",
+              "Cao Cao",
+              "Jia Baoyu"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISFJ",
+              "INTP",
+              "INFJ",
+              "ESTJ",
+              "INFP",
+              "INTJ",
+              "ENTJ",
+              "ENFP"
+            ]
+          },
+          {
+            "name": "mbti_title",
+            "label": "MBTI Title",
+            "type": "text",
+            "placeholder": [
+              "守卫者 · The Defender",
+              "鬼才军师 / 奇谋策士",
+              "蜀汉昭烈帝 / 仁德之君",
+              "总经理 · The Executive",
+              "调停者 · The Mediator",
+              "建筑师 · The Architect",
+              "指挥官 · The Commander",
+              "竞选者 · The Campaigner"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-classic-character-mbti-guan-yu-prev.jpg",
+    "topics": [
+      "mbti",
+      "culture"
+    ],
+    "base_rank_score": 70,
+    "rank_score": 70
+  },
+  {
+    "id": "template-friends-character-mbti",
+    "locales": {
+      "en": {
+        "base_prompt": "（Friends Character MBTI Poster Designer）You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge \"{mbti_type}\", Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Character Name",
+            "type": "text",
+            "placeholder": [
+              "Gunther",
+              "Richard Burke",
+              "Janice Litman-Goralnik",
+              "Mike Hannigan",
+              "Monica Geller",
+              "Phoebe Buffay",
+              "Rachel Green",
+              "Ross Geller",
+              "Joey Tribbiani",
+              "Chandler Bing"
+            ]
+          },
+          {
+            "name": "mbti_type",
+            "label": "MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISFJ",
+              "INFJ",
+              "ESFJ",
+              "ISFP",
+              "ESTJ",
+              "INFP",
+              "ESFP",
+              "INTJ",
+              "ESFP",
+              "ENTP"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg",
+    "topics": [
+      "mbti",
+      "film"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-poetry-ink-wash-illustration",
+    "locales": {
+      "en": {
+        "base_prompt": "（Chinese Ancient Poetry Ink Wash Illustration Designer）You are a professional Chinese ancient poetry illustration designer, specializing in creating exquisite traditional Chinese ink wash paintings for classic poems. Based on the user-specified {poem_content}, generate a vertical 9:16 premium Chinese ink wash painting, matching the elegant, traditional Chinese aesthetic of the reference images. Layout: 1. Artwork: Exquisite traditional Chinese ink wash painting vividly depicting the scene, mood and core imagery of the poem {poem_content}, with authentic Chinese landscape/figure style, delicate brushwork. 2. Calligraphy: Full text of the poem {poem_content} in elegant vertical calligraphy on the upper left, add author's name if available. Style: Pure traditional Chinese ink wash aesthetic, paper texture, natural ink rendering, harmonious integration of calligraphy and painting, vertical 9:16 aspect ratio, 4K ultra HD, direct image generation. Subject: Chinese ancient poetry illustration in traditional ink wash style.",
+        "parameters": [
+          {
+            "name": "poem_content",
+            "label": "Poetry Content",
+            "type": "text",
+            "placeholder": [
+              "静夜思\n床前明月光，疑是地上霜。\n举头望明月，低头思故乡。\n——李白",
+              "登鹳雀楼\n白日依山尽，黄河入海流。\n欲穷千里目，更上一层楼。\n——王之涣",
+              "江雪\n千山鸟飞绝，万径人踪灭。\n孤舟蓑笠翁，独钓寒江雪。\n——柳宗元"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-river-snow-prev.jpg",
+    "topics": [
+      "culture",
+      "lifestyle"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
   }
 ]

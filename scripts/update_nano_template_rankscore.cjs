@@ -147,7 +147,7 @@ async function fetchRankScores(client) {
         END
       ) AS rank_score
     FROM user_interactions
-    WHERE created_at >= NOW() - INTERVAL '7 days'
+    WHERE created_at >= NOW() - INTERVAL '3 days'
     GROUP BY content_id
     HAVING SUM(
       CASE
@@ -175,13 +175,17 @@ async function fetchRankScores(client) {
   return scoreMap;
 }
 
+const USER_SIGNAL_WEIGHT = 0.2;
+
 function mergeRankScoresIntoTemplates(templates, scoreMap) {
   let changedCount = 0;
   let defaultedCount = 0;
 
   const updated = templates.map((template) => {
+    const baseScore = Number(template.base_rank_score ?? template.rank_score ?? 1);
     const hasScore = scoreMap.has(template.id);
-    const nextScore = hasScore ? scoreMap.get(template.id) : 1;
+    const userSignal = hasScore ? scoreMap.get(template.id) : 0;
+    const nextScore = baseScore + USER_SIGNAL_WEIGHT * userSignal;
     const prevScore = Number(template.rank_score ?? 1);
 
     if (!hasScore) {
@@ -194,6 +198,7 @@ function mergeRankScoresIntoTemplates(templates, scoreMap) {
 
     return {
       ...template,
+      base_rank_score: baseScore,
       rank_score: nextScore,
     };
   });
