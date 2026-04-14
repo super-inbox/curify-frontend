@@ -3520,5 +3520,205 @@ module.exports = [
     destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
     permanent: true
   },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
   ...toolRedirects
 ]
