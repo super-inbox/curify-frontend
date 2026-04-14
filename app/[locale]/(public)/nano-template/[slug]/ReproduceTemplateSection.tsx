@@ -3,12 +3,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { format } from "date-fns";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 
 import {
   fillPrompt,
-  normalizePrefills,  
+  normalizePrefills,
 } from "@/lib/nano_prompt_utils";
 
 const COLLAPSED_PARAM_ROWS = 3;
@@ -25,6 +26,7 @@ export default function ReproduceTemplateSection(props: {
 
   const params = template.parameters || [];
   const [form, setForm] = useState<Record<string, any>>({});
+  const [dateRangeState, setDateRangeState] = useState<Record<string, { start: string; end: string }>>({});
   const [showAllParams, setShowAllParams] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
 
@@ -77,6 +79,18 @@ export default function ReproduceTemplateSection(props: {
 
   const onPickPrefill = (name: string, v: string) => {
     setForm((prev) => ({ ...prev, [name]: v }));
+  };
+
+  const onDateRangeChange = (name: string, field: "start" | "end", value: string) => {
+    setDateRangeState((prev) => {
+      const next = { ...prev, [name]: { ...(prev[name] ?? { start: "", end: "" }), [field]: value } };
+      const { start, end } = next[name];
+      if (start && end) {
+        const formatted = `${format(new Date(start + "T00:00:00"), "M/d")}-${format(new Date(end + "T00:00:00"), "M/d")}`;
+        setForm((f) => ({ ...f, [name]: formatted }));
+      }
+      return next;
+    });
   };
 
   return (
@@ -152,6 +166,23 @@ export default function ReproduceTemplateSection(props: {
                         </option>
                       ))}
                     </select>
+                  ) : p.type === "daterange" ? (
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="date"
+                        value={dateRangeState[p.name]?.start ?? ""}
+                        onChange={(e) => onDateRangeChange(p.name, "start", e.target.value)}
+                        className={common}
+                      />
+                      <span className="text-sm text-neutral-400">–</span>
+                      <input
+                        type="date"
+                        value={dateRangeState[p.name]?.end ?? ""}
+                        min={dateRangeState[p.name]?.start ?? ""}
+                        onChange={(e) => onDateRangeChange(p.name, "end", e.target.value)}
+                        className={common}
+                      />
+                    </div>
                   ) : (
                     <input
                       value={value}

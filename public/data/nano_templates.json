@@ -238,7 +238,7 @@
           {
             "name": "date_range",
             "label": "行程时段",
-            "type": "text",
+            "type": "daterange",
             "placeholder": [
               "1/19-1/25",
               "7/1-7/5"
@@ -261,7 +261,7 @@
           },
           {
             "name": "date_range",
-            "type": "text",
+            "type": "daterange",
             "label": "Travel Period",
             "placeholder": [
               "1/19-1/25",
