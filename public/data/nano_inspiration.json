@@ -1145,7 +1145,9 @@
     "template_id": "template-word-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-word-scene-zh-doctor-hospital.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-doctor-hospital-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-doctor-hospital-prev.jpg",
+      "audio_url": "/audio/template-word-scene-doctor-hospital.mp3",
+      "video_url": "/video/template-word-scene-doctor-hospital.mp4"
     },
     "params": {},
     "locales": {
@@ -1409,7 +1411,9 @@
     "template_id": "template-word-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-word-scene-zh-explorer-forest.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-explorer-forest-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-explorer-forest-prev.jpg",
+      "audio_url": "/audio/template-word-scene-explorer-forest.mp3",
+      "video_url": "/video/template-word-scene-explorer-forest.mp4"
     },
     "params": {},
     "locales": {
@@ -2049,7 +2053,9 @@
     "template_id": "template-word-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-word-scene-zh-astronaut-space.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-astronaut-space-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-zh-astronaut-space-prev.jpg",
+      "audio_url": "/audio/template-word-scene-astronaut-space.mp3",
+      "video_url": "/video/template-word-scene-astronaut-space.mp4"
     },
     "params": {},
     "locales": {
@@ -7337,7 +7343,7 @@
   },
   {
     "id": "template-mbti-generic-ai-chatgpt-enfp",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-chatgpt-enfp.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-chatgpt-enfp-prev.jpg"
@@ -7353,7 +7359,7 @@
   },
   {
     "id": "template-mbti-generic-ai-claude-infj",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-claude-infj.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-claude-infj-prev.jpg"
@@ -7369,7 +7375,7 @@
   },
   {
     "id": "template-mbti-generic-ai-copilot-istj",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-copilot-istj.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-copilot-istj-prev.jpg"
@@ -7385,7 +7391,7 @@
   },
   {
     "id": "template-mbti-generic-ai-gemini-entp",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-gemini-entp.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-gemini-entp-prev.jpg"
@@ -7401,7 +7407,7 @@
   },
   {
     "id": "template-mbti-generic-ai-midjourney-isfp",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-midjourney-isfp.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-midjourney-isfp-prev.jpg"
@@ -7417,7 +7423,7 @@
   },
   {
     "id": "template-mbti-generic-ai-perplexity-intp",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-perplexity-intp.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-perplexity-intp-prev.jpg"
@@ -7433,7 +7439,7 @@
   },
   {
     "id": "template-mbti-generic-ai-stable-diffusion-estp",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-en-stable-diffusion-estp.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-en-stable-diffusion-estp-prev.jpg"
@@ -7673,7 +7679,7 @@
   },
   {
     "id": "template-mbti-generic-ai-founders-dario",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-founders-en-dario.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-founders-en-dario-prev.jpg"
@@ -7689,7 +7695,7 @@
   },
   {
     "id": "template-mbti-generic-ai-founders-demis",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-founders-en-demis.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-founders-en-demis-prev.jpg"
@@ -7705,7 +7711,7 @@
   },
   {
     "id": "template-mbti-generic-ai-founders-elon",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-founders-en-elon.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-founders-en-elon-prev.jpg"
@@ -7721,7 +7727,7 @@
   },
   {
     "id": "template-mbti-generic-ai-founders-sam",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-founders-en-sam.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-founders-en-sam-prev.jpg"
@@ -7737,7 +7743,7 @@
   },
   {
     "id": "template-mbti-generic-ai-founders-satya",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-founders-en-satya.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-founders-en-satya-prev.jpg"
@@ -7753,7 +7759,7 @@
   },
   {
     "id": "template-mbti-generic-ai-founders-sundar",
-    "template_id": "template-mbti-generic",
+    "template_id": "template-mbti-siliconvalley",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-ai-founders-en-sundar.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-ai-founders-en-sundar-prev.jpg"
@@ -7893,86 +7899,6 @@
       }
     },
     "legacy_id": "template-mbti-generic-bbt-en-stuart",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breaking-bad-gus-fring",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-en-gus-fring.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-en-gus-fring-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "breaking bad en gus fring"
-      }
-    },
-    "legacy_id": "template-mbti-generic-breaking-bad-en-gus-fring",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breaking-bad-jesse-pinkman",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-en-jesse-pinkman.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-en-jesse-pinkman-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "breaking bad en jesse pinkman"
-      }
-    },
-    "legacy_id": "template-mbti-generic-breaking-bad-en-jesse-pinkman",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breaking-bad-mike-ehrmantraut",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-en-mike-ehrmantraut.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-en-mike-ehrmantraut-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "breaking bad en mike ehrmantraut"
-      }
-    },
-    "legacy_id": "template-mbti-generic-breaking-bad-en-mike-ehrmantraut",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breaking-bad-saul-goodman",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-en-saul-goodman.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-en-saul-goodman-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "breaking bad en saul goodman"
-      }
-    },
-    "legacy_id": "template-mbti-generic-breaking-bad-en-saul-goodman",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breaking-bad-walter-white",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-breaking-bad-en-walter-white.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-breaking-bad-en-walter-white-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "zh": {
-        "title": "breaking bad en walter white"
-      }
-    },
-    "legacy_id": "template-mbti-generic-breaking-bad-en-walter-white",
     "legacy_template_id": "template-mbti-generic"
   },
   {
@@ -8396,70 +8322,6 @@
       }
     },
     "legacy_id": "template-mbti-generic-en-marvel-spider-man",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-siliconvalley-gates",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-siliconvalley-gates.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-siliconvalley-gates-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "siliconvalley gates"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-siliconvalley-gates",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-siliconvalley-huang",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-siliconvalley-huang.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-siliconvalley-huang-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "siliconvalley huang"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-siliconvalley-huang",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-siliconvalley-jobs",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-siliconvalley-jobs.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-siliconvalley-jobs-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "siliconvalley jobs"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-siliconvalley-jobs",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-siliconvalley-zuckerberg",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-siliconvalley-zuckerberg.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-siliconvalley-zuckerberg-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "siliconvalley zuckerberg"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-siliconvalley-zuckerberg",
     "legacy_template_id": "template-mbti-generic"
   },
   {
@@ -9096,86 +8958,6 @@
       }
     },
     "legacy_id": "template-mbti-generic-en-bigbangtheory-marycooper",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breakingbad-howardhamlin",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-breakingbad-howardhamlin.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-breakingbad-howardhamlin-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "breakingbad howardhamlin"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-breakingbad-howardhamlin",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breakingbad-lalosalamanca",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-breakingbad-lalosalamanca.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-breakingbad-lalosalamanca-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "breakingbad lalosalamanca"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-breakingbad-lalosalamanca",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breakingbad-lydiarodartequayle",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-breakingbad-lydiarodartequayle.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-breakingbad-lydiarodartequayle-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "breakingbad lydiarodartequayle"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-breakingbad-lydiarodartequayle",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breakingbad-toddalquist",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-breakingbad-toddalquist.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-breakingbad-toddalquist-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "breakingbad toddalquist"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-breakingbad-toddalquist",
-    "legacy_template_id": "template-mbti-generic"
-  },
-  {
-    "id": "template-mbti-generic-breakingbad-tucosalamanca",
-    "template_id": "template-mbti-generic",
-    "asset": {
-      "image_url": "/images/nano_insp/template-mbti-generic-en-breakingbad-tucosalamanca.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-mbti-generic-en-breakingbad-tucosalamanca-prev.jpg"
-    },
-    "params": {},
-    "locales": {
-      "en": {
-        "title": "breakingbad tucosalamanca"
-      }
-    },
-    "legacy_id": "template-mbti-generic-en-breakingbad-tucosalamanca",
     "legacy_template_id": "template-mbti-generic"
   },
   {
@@ -14181,7 +13963,8 @@
     "template_id": "template-english-dialogue-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-english-dialogue-scene-greeting.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-greeting-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-greeting-prev.jpg",
+      "video_url": "/video/template-english-dialogue-scene-greeting.mp4"
     },
     "params": {},
     "locales": {
@@ -14198,7 +13981,8 @@
     "template_id": "template-english-dialogue-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-restaurant-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-restaurant-prev.jpg",
+      "video_url": "/video/template-english-dialogue-scene-restaurant.mp4"
     },
     "params": {},
     "locales": {
@@ -14215,7 +13999,8 @@
     "template_id": "template-english-dialogue-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-english-dialogue-scene-shopping.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
+      "video_url": "/video/template-english-dialogue-scene-shopping.mp4"
     },
     "params": {},
     "locales": {
@@ -14232,7 +14017,8 @@
     "template_id": "template-english-error-correction",
     "asset": {
       "image_url": "/images/nano_insp/template-english-error-correction-common-mistakes.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-common-mistakes-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-common-mistakes-prev.jpg",
+      "video_url": "/video/template-english-error-correction-common-mistakes.mp4"
     },
     "params": {},
     "locales": {
@@ -14249,7 +14035,8 @@
     "template_id": "template-english-error-correction",
     "asset": {
       "image_url": "/images/nano_insp/template-english-error-correction-preposition-mistakes.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg",
+      "video_url": "/video/template-english-error-correction-preposition-mistakes.mp4"
     },
     "params": {},
     "locales": {
@@ -14266,7 +14053,9 @@
     "template_id": "template-english-error-correction",
     "asset": {
       "image_url": "/images/nano_insp/template-english-error-correction-question-mistakes.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-question-mistakes-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-question-mistakes-prev.jpg",
+      "audio_url": "/audio/template-english-error-correction-question-mistakes.mp3",
+      "video_url": "/video/template-english-error-correction-question-mistakes.mp4"
     },
     "params": {},
     "locales": {
@@ -14283,7 +14072,9 @@
     "template_id": "template-english-error-correction",
     "asset": {
       "image_url": "/images/nano_insp/template-english-error-correction-tense-mistakes.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-tense-mistakes-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-tense-mistakes-prev.jpg",
+      "audio_url": "/audio/template-english-error-correction-tense-mistakes.mp3",
+      "video_url": "/video/template-english-error-correction-tense-mistakes.mp4"
     },
     "params": {},
     "locales": {
@@ -14300,7 +14091,9 @@
     "template_id": "template-english-top5-phrases",
     "asset": {
       "image_url": "/images/nano_insp/template-english-top5-phrases-compliments.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-compliments-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-compliments-prev.jpg",
+      "audio_url": "/audio/template-english-top5-phrases-compliments.mp3",
+      "video_url": "/video/template-english-top5-phrases-compliments.mp4"
     },
     "params": {},
     "locales": {
@@ -14317,7 +14110,8 @@
     "template_id": "template-english-top5-phrases",
     "asset": {
       "image_url": "/images/nano_insp/template-english-top5-phrases-greetings.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg",
+      "video_url": "/video/template-english-top5-phrases-greetings.mp4"
     },
     "params": {},
     "locales": {
@@ -14334,7 +14128,9 @@
     "template_id": "template-english-top5-phrases",
     "asset": {
       "image_url": "/images/nano_insp/template-english-top5-phrases-thank-you.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-thank-you-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-thank-you-prev.jpg",
+      "audio_url": "/audio/template-english-top5-phrases-thank-you.mp3",
+      "video_url": "/video/template-english-top5-phrases-thank-you.mp4"
     },
     "params": {},
     "locales": {
@@ -14584,7 +14380,8 @@
     "template_id": "template-english-dialogue-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-english-dialogue-scene-at-the-library.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-library-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-library-prev.jpg",
+      "video_url": "/video/template-english-dialogue-scene-at-the-library.mp4"
     },
     "params": {},
     "locales": {
@@ -14601,7 +14398,8 @@
     "template_id": "template-english-dialogue-scene",
     "asset": {
       "image_url": "/images/nano_insp/template-english-dialogue-scene-at-the-playground.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-playground-prev.jpg"
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-at-the-playground-prev.jpg",
+      "video_url": "/video/template-english-dialogue-scene-at-the-playground.mp4"
     },
     "params": {},
     "locales": {

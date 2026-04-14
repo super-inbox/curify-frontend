@@ -3021,6 +3021,1353 @@ module.exports = [
     permanent: true
   },
   {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-gus-fring",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-gus-fring",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-jesse-pinkman",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-jesse-pinkman",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-mike-ehrmantraut",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-mike-ehrmantraut",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-saul-goodman",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-saul-goodman",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breaking-bad-walter-white",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-walter-white",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-howardhamlin",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-howard-hamlin.jpg",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lalosalamanca",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lalo-salamanca",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-lydiarodartequayle",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-lydia-rodarte-quayle",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-toddalquist",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-todd-alquist",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/zh/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/es/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/fr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/de/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/ja/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/ko/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/hi/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/tr/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-breakingbad-tucosalamanca",
+    destination: "/ru/nano-template/mbti-breakingbad/example/template-mbti-breakingbad-tuco-salamanca",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-gates",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-gates",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-huang",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-huang",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-jobs",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-jobs",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-siliconvalley-zuckerberg",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-siliconvalley-zuckerberg",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-chatgpt-enfp",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-chatgpt-enfp",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-claude-infj",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-claude-infj",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-copilot-istj",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-copilot-istj",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-gemini-entp",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-gemini-entp",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-midjourney-isfp",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-midjourney-isfp",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-perplexity-intp",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-perplexity-intp",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-stable-diffusion-estp",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-stable-diffusion-estp",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-dario",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-dario",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-demis",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-demis",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-elon",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-elon",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sam",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sam",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-satya",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-satya",
+    permanent: true
+  },
+  {
+    source: "/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/zh/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/zh/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/es/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/es/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/fr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/fr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/de/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/de/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/ja/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/ja/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/ko/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/ko/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/hi/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/hi/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/tr/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/tr/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
+    permanent: true
+  },
+  {
+    source: "/ru/nano-template/mbti-generic/example/template-mbti-generic-ai-founders-sundar",
+    destination: "/ru/nano-template/mbti-siliconvalley/example/template-mbti-generic-ai-founders-sundar",
     source: "/de/blog/bild-zu-narrativem-video",
     destination: "/de/blog/image-to-narrative-video",
     permanent: true

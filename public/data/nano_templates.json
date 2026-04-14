@@ -247,7 +247,7 @@
         ]
       },
       "en": {
-        "base_prompt": "You are a travel illustrator skilled in a cute hand-drawn style. Create a hand-drawn travel map of 【{destination}】 that reflects the seasonal and time characteristics of 【{date_range}】. The overall style should be cute and hand-drawn, featuring the core attractions, local delicacies, accommodations, and transportation methods of the destination designed as chibi-style illustrations with rounded lines and bright, fresh colors. All text should be in simplified Chinese, accurately labeling the destination, attractions, food, accommodations, and itinerary content in a cute cartoon font that is clear and readable. Clearly indicate the routes between locations (using cute lines/footprints and other elements), and display the key activities for each day segmented by 【{date_range}】 with clear divisions. The aspect ratio should be fixed at 4:3, with a resolution that is double the basic size, accurately restoring the basic topographical outline of the destination (reflecting local terrain/coastline characteristics), incorporating representative elements of the corresponding season, and aligning with the regional characteristics of the destination. The image should be rich in detail, healing, and lively, balancing a cute visual appeal with practical itinerary use, suitable for printing and electronic display.",
+        "base_prompt": "You are a travel illustrator skilled in a cute hand-drawn style. Create a hand-drawn travel map of 【{destination}】 that reflects the seasonal and time characteristics of 【{date_range}】. The overall style should be cute and hand-drawn, featuring the core attractions, local delicacies, accommodations, and transportation methods of the destination designed as chibi-style illustrations with rounded lines and bright, fresh colors. All text should be in English, accurately labeling the destination, attractions, food, accommodations, and itinerary content in a cute cartoon font that is clear and readable. Clearly indicate the routes between locations (using cute lines/footprints and other elements), and display the key activities for each day segmented by 【{date_range}】 with clear divisions. The aspect ratio should be fixed at 4:3, with a resolution that is double the basic size, accurately restoring the basic topographical outline of the destination (reflecting local terrain/coastline characteristics), incorporating representative elements of the corresponding season, and aligning with the regional characteristics of the destination. The image should be rich in detail, healing, and lively, balancing a cute visual appeal with practical itinerary use, suitable for printing and electronic display.",
         "parameters": [
           {
             "name": "destination",
@@ -280,7 +280,8 @@
     ],
     "rank_score": 80,
     "batch": true,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-architecture",
@@ -3123,7 +3124,7 @@
     "topics": [
       "character",
       "mbti",
-      "career"
+      "ai"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -6369,7 +6370,7 @@
     "id": "template-cuisine-food-vocab-poster",
     "locales": {
       "en": {
-        "base_prompt": "（Cuisine Food Vocabulary Poster Designer）You are a professional food vocabulary poster designer, specializing in creating clean, high-quality food bilingual learning posters. Based on the user-specified {cuisine_theme}, generate a vertical 9:16 premium food vocabulary poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 4 food items arranged vertically, each with clean white background. Each item: Left = high-resolution photorealistic food photography of the dish; Right = pinyin pronunciation, large bold Chinese dish name, English translation. Style: Clean minimalist design, pure white background, professional food styling, vibrant colors, clear typography, Curify watermark at top left, vertical 9:16 format, 4K ultra HD, direct image generation. Subject: {cuisine_theme} food vocabulary poster.",
+        "base_prompt": "（Cuisine Food Vocabulary Poster Designer）You are a professional food vocabulary poster designer, specializing in creating clean, high-quality food bilingual learning posters (native language + English). Based on the user-specified {cuisine_theme}, generate a vertical 9:16 premium food vocabulary poster, matching the minimalist, photorealistic aesthetic of the reference images. Layout: 4 food items arranged vertically, each with clean white background. Each item: Left = high-resolution photorealistic food photography of the dish; Right = romanized pronunciation, large bold dish name in its native language, English translation. Style: Clean minimalist design, pure white background, professional food styling, vibrant colors, clear typography, Curify watermark at top left, vertical 9:16 format, 4K ultra HD, direct image generation. Subject: {cuisine_theme} food vocabulary poster.",
         "parameters": [
           {
             "name": "cuisine_theme",
@@ -6392,7 +6393,8 @@
       "language",
       "food"
     ],
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-industrial-design-concept-sketch",
@@ -6510,7 +6512,8 @@
     "base_rank_score": 90,
     "topics": [
       "language"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-city-mbti",

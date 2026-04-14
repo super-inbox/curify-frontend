@@ -16,6 +16,7 @@ export type RawTemplate = {
   topics?: string | string[];
   rank_score?: number;
   batch?: boolean;
+  allow_generation?: boolean;
 
   locales?: Partial<
     Record<
@@ -53,6 +54,7 @@ export type TemplateView = {
   topics: string[];
   rank_score?: number;
   batch?: boolean;
+  allow_generation?: boolean;
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
@@ -247,6 +249,7 @@ export function getTemplateView(
     topics: getTemplateTopics(raw),
     rank_score: raw.rank_score,
     batch: raw.batch,
+    allow_generation: raw.allow_generation,
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],
