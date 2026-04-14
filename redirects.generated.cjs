@@ -3020,5 +3020,120 @@ module.exports = [
     destination: "/ru/nano-template/friends-character-mbti/example/template-friends-character-mbti-richard-burke",
     permanent: true
   },
+  {
+    source: "/de/blog/bild-zu-narrativem-video",
+    destination: "/de/blog/image-to-narrative-video",
+    permanent: true
+  },
+  {
+    source: "/de/blog/inhalt-multiplikations-system",
+    destination: "/de/blog/content-multiplication-system",
+    permanent: true
+  },
+  {
+    source: "/de/blog/virales-lerninhalt",
+    destination: "/de/blog/viral-learning-content",
+    permanent: true
+  },
+  {
+    source: "/de/blog/ai-inhaltsproduktionssystem",
+    destination: "/de/blog/ai-content-production-system",
+    permanent: true
+  },
+  {
+    source: "/de/blog/ai-inhaltsverteilungssystem",
+    destination: "/de/blog/ai-content-distribution-system",
+    permanent: true
+  },
+  {
+    source: "/de/blog/was-sind-infografiken",
+    destination: "/de/blog/what-is-infographics",
+    permanent: true
+  },
+  {
+    source: "/de/blog/serien-infografik-vs-notebooklm",
+    destination: "/de/blog/series-infographic-vs-notebooklm",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/image-en-video-narrative",
+    destination: "/fr/blog/image-to-narrative-video",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/système-de-multiplication-de-contenu",
+    destination: "/fr/blog/content-multiplication-system",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/contenu-d-apprentissage-viral",
+    destination: "/fr/blog/viral-learning-content",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/système-de-production-de-contenu-ai",
+    destination: "/fr/blog/ai-content-production-system",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/système-de-distribution-de-contenu-ai",
+    destination: "/fr/blog/ai-content-distribution-system",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/qu-est-ce-que-les-infographies",
+    destination: "/fr/blog/what-is-infographics",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/series-infographie-vs-notebooklm",
+    destination: "/fr/blog/series-infographic-vs-notebooklm",
+    permanent: true
+  },
+  {
+    source: "/es/blog/guia-visual-de-medicina-herbal-china",
+    destination: "/es/blog/chinese-herbal-medicine-visual-guide",
+    permanent: true
+  },
+  {
+    source: "/es/blog/visualizacion-de-lineas-de-tiempo-evolutivas",
+    destination: "/es/blog/evolution-timelines-visualization",
+    permanent: true
+  },
+  {
+    source: "/es/blog/infografia-sobre-la-historia-del-vestuario-chino",
+    destination: "/es/blog/chinese-costume-history-infographic",
+    permanent: true
+  },
+  {
+    source: "/es/blog/sistema-de-multiplicacion-de-contenido",
+    destination: "/es/blog/content-multiplication-system",
+    permanent: true
+  },
+  {
+    source: "/es/blog/contenido-de-aprendizaje-viral",
+    destination: "/es/blog/viral-learning-content",
+    permanent: true
+  },
+  {
+    source: "/es/blog/sistema-de-produccion-de-contenido-ai",
+    destination: "/es/blog/ai-content-production-system",
+    permanent: true
+  },
+  {
+    source: "/es/blog/sistema-de-distribucion-de-contenido-ai",
+    destination: "/es/blog/ai-content-distribution-system",
+    permanent: true
+  },
+  {
+    source: "/es/blog/que-son-infografias",
+    destination: "/es/blog/what-is-infographics",
+    permanent: true
+  },
+  {
+    source: "/es/blog/imagen-a-video-narrativo",
+    destination: "/es/blog/image-to-narrative-video",
+    permanent: true
+  },
   ...toolRedirects
 ]

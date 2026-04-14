@@ -1,3 +1,32 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog.metadata" });
+
+  let title = t.has("title") ? t("title") : undefined;
+  let description = t.has("description") ? t("description") : undefined;
+
+  if (!title || !description) {
+    const tEn = await getTranslations({
+      locale: "en",
+      namespace: "blog.metadata",
+    });
+    if (!title) title = tEn("title");
+    if (!description) description = tEn("description");
+  }
+
+  return {
+    title,
+    description,
+  };
+}
+
 export default async function BlogLayout({
   children,
   params,

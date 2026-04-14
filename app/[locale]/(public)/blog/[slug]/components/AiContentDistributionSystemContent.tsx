@@ -1,3 +1,5 @@
+import { MermaidChart } from './MermaidChart';
+
 interface AiContentDistributionSystemContentProps {
   slug: string;
   t: any;
@@ -52,6 +54,42 @@ export default function AiContentDistributionSystemContent({ slug, t, locale }: 
         <h2 className="text-2xl font-bold mb-4">{t("approachTitle")}</h2>
         <div className="prose prose-lg max-w-none mb-4">
           {renderRichContent("approachContent")}
+        </div>
+        
+        <div className="bg-gray-50 p-6 rounded-lg mb-6">
+          <h3 className="text-lg font-semibold mb-4">AI Content Distribution Pipeline</h3>
+          <MermaidChart 
+            chart={`flowchart TD
+    A[Content Creation] --> B[Platform-Specific Formatting]
+    B --> C[AI Draft Generation]
+    C --> D[Human Refinement]
+    D --> E[Scheduled Distribution]
+    E --> F[Platform Channels]
+    
+    B --> B1[Website SEO]
+    B --> B2[X/Twitter]
+    B --> B3[Facebook Groups]
+    
+    F --> F1[SEO Content]
+    F --> F2[Social Media Posts]
+    F --> F3[Niche Communities]
+    
+    F1 --> G[Analytics & Feedback]
+    F2 --> G
+    F3 --> G
+    
+    G --> H[Content Optimization]
+    H --> A
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style G fill:#f1f8e9
+    style H fill:#e0f2f1`}
+            id="ai-content-distribution-pipeline"
+          />
         </div>
       </section>
 
