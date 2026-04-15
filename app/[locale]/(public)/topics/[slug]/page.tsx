@@ -129,8 +129,12 @@ export default async function Page({ params }: Props) {
 
   const parentTopicId = getParentTopic(slug);
 
-  // Navigational subtopics (explicit, shown at top of parent pages)
-  const navSubTopics = !isChildTopic ? getNavigationalChildren(slug) : [];
+  // Navigational subtopics shown at top:
+  // - Parent page: its own children
+  // - Child page: all siblings (children of parent), current one highlighted via activeTopic
+  const navSubTopics = isChildTopic && parentTopicId
+    ? getNavigationalChildren(parentTopicId)
+    : getNavigationalChildren(slug);
 
   // Tag-style subtopics: geo tags, language pairs — shown at bottom
   // Exclude navSubTopics to avoid duplication.
