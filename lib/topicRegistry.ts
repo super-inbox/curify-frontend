@@ -52,13 +52,19 @@ function normalizeTopicValues(value: unknown): string[] {
 
 
 const HIERARCHY_FOCUS_TOPICS = new Set([
-  "geo",
   "lifestyle",
   "language",
   "character",
   "product",
   "learning",
 ]);
+
+// Explicit sibling groups for topics that share a semantic category
+// but don't need a real parent topic page (e.g. geo countries, language pairs).
+const EXPLICIT_SIBLING_GROUPS: string[][] = [
+  ["spain", "france", "india", "japan", "korea", "thailand", "mexico"],
+  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+];
 
 // A single co-occurrence row: topics that appear together for a given template
 type TopicRow = {
@@ -210,6 +216,14 @@ function buildTopicRegistry(): TopicRegistry {
 
 const registry = buildTopicRegistry();
 
+// Build explicit sibling map from groups
+const explicitSiblingMap = new Map<string, string[]>();
+for (const group of EXPLICIT_SIBLING_GROUPS) {
+  for (const topic of group) {
+    explicitSiblingMap.set(topic, group.filter((t) => t !== topic));
+  }
+}
+
 export function getTopics(): TopicWithTemplates[] {
   return registry.topics;
 }
@@ -244,6 +258,10 @@ export function hasTopic(topicId: string): boolean {
 
 export function isTopicEnabled(topicId: string): boolean {
   return (registry.topicById.get(topicId)?.templateCount ?? 0) > 0;
+}
+
+export function getExplicitSiblings(topicId: string): string[] {
+  return explicitSiblingMap.get(topicId) ?? [];
 }
 
 export { normalizeTopicValues };
