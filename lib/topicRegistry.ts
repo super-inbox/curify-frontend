@@ -62,7 +62,7 @@ const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "film", "sports", "gaming", "ai", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   lifestyle: ["travel", "food", "finance", "interior", "fitness", "nostalgia", "city", "weather"],
-  learning:  ["science", "trending", "culture", "design", "architecture", "history"],
+  learning:  ["science", "trending", "culture", "architecture", "history"],
   product:   [],
 };
 
