@@ -29,8 +29,6 @@ export type TopicRegistry = {
   topicToTemplates: Map<string, TemplateLike[]>;
   templateToTopics: Map<string, string[]>;
   relatedTopics: Map<string, string[]>;
-  childTopics: Map<string, string[]>;
-  parentTopic: Map<string, string>;
 };
 
 function normalizeTopicValues(value: unknown): string[] {
@@ -50,93 +48,66 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-
-const HIERARCHY_FOCUS_TOPICS = new Set([
-  "lifestyle",
-  "language",
-  "character",
-  "product",
-  "learning",
-]);
-
-// Explicit sibling groups for topics that share a semantic category
-// but don't need a real parent topic page (e.g. geo countries, language pairs).
+// Explicit sibling groups for tag-style topics (geo, language pairs).
+// These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
 ];
 
-// Explicit parent→children for top-level topics that are semantically subtopics
-// but appear directly on templates (so co-occurrence detection won't catch them).
+// Full explicit parent→children hierarchy.
+// Tier 1 (entry bar): character, language, lifestyle, learning, product
+// Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  language: ["vocabulary", "dialogue", "expressions", "language-english"],
+  character: ["mbti", "film", "sports", "gaming", "ai", "comparison", "groups"],
+  language:  ["vocabulary", "dialogue", "expressions", "language-english"],
+  lifestyle: ["travel", "food", "finance", "interior", "fitness", "nostalgia", "city", "weather"],
+  learning:  ["science", "trending", "culture", "design", "architecture", "history"],
+  product:   [],
 };
 
-// A single co-occurrence row: topics that appear together for a given template
-type TopicRow = {
-  templateId: string;
-  topics: string[];
-};
-
-function buildRows(templates: TemplateLike[], inspirations: InspirationLike[]): TopicRow[] {
-  const rows: TopicRow[] = [];
-
-  // Map template id → its normalized topics for quick lookup
-  const templateTopicsMap = new Map<string, string[]>();
-  for (const t of templates) {
-    templateTopicsMap.set(t.id, normalizeTopicValues(t.topics));
+// Reverse map: child → parent
+const EXPLICIT_PARENT_TOPIC = new Map<string, string>();
+for (const [parent, children] of Object.entries(EXPLICIT_CHILD_TOPICS)) {
+  for (const child of children) {
+    EXPLICIT_PARENT_TOPIC.set(child, parent);
   }
-
-  // Row per template
-  for (const t of templates) {
-    const topics = templateTopicsMap.get(t.id) ?? [];
-    if (topics.length > 0) rows.push({ templateId: t.id, topics });
-  }
-
-  // Row per inspiration example that has topics — merged with template topics
-  for (const insp of inspirations) {
-    if (!insp.topics?.length) continue;
-    const templateTopics = templateTopicsMap.get(insp.template_id) ?? [];
-    if (!templateTopics.length) continue;
-    const merged = [...new Set([...templateTopics, ...insp.topics])];
-    rows.push({ templateId: insp.template_id, topics: merged });
-  }
-
-  return rows;
 }
 
 function buildTopicRegistry(): TopicRegistry {
   const templates = nanoTemplates as TemplateLike[];
   const inspirations = nanoInspiration as InspirationLike[];
 
-  // Set of topics that appear directly on templates (top-level)
-  const templateLevelTopics = new Set<string>();
+  // Map template id → its normalized topics
+  const templateTopicsMap = new Map<string, string[]>();
   for (const t of templates) {
-    for (const tp of normalizeTopicValues(t.topics)) templateLevelTopics.add(tp);
+    templateTopicsMap.set(t.id, normalizeTopicValues(t.topics));
   }
 
-  // Build unified rows
-  const rows = buildRows(templates, inspirations);
-
-  // Derive topic → Set<templateId> from all rows
+  // Derive topic → Set<templateId> from templates + examples
   const topicToTemplateIds = new Map<string, Set<string>>();
-  for (const row of rows) {
-    for (const tp of row.topics) {
-      if (!topicToTemplateIds.has(tp)) topicToTemplateIds.set(tp, new Set());
-      topicToTemplateIds.get(tp)!.add(row.templateId);
-    }
+  const addTopic = (tp: string, tid: string) => {
+    if (!topicToTemplateIds.has(tp)) topicToTemplateIds.set(tp, new Set());
+    topicToTemplateIds.get(tp)!.add(tid);
+  };
+
+  for (const t of templates) {
+    for (const tp of templateTopicsMap.get(t.id) ?? []) addTopic(tp, t.id);
+  }
+  for (const insp of inspirations) {
+    if (!insp.topics?.length) continue;
+    const tTps = templateTopicsMap.get(insp.template_id) ?? [];
+    if (!tTps.length) continue;
+    for (const tp of [...tTps, ...insp.topics]) addTopic(tp, insp.template_id);
   }
 
-  // Build topicToTemplates (resolved template objects) and templateToTopics
-  const topicToTemplates = new Map<string, TemplateLike[]>();
+  // Build topicToTemplates and templateToTopics
   const templateById = new Map<string, TemplateLike>(templates.map((t) => [t.id, t]));
-
+  const topicToTemplates = new Map<string, TemplateLike[]>();
   for (const [tp, ids] of topicToTemplateIds) {
     topicToTemplates.set(
       tp,
-      Array.from(ids)
-        .map((id) => templateById.get(id))
-        .filter((t): t is TemplateLike => Boolean(t))
+      Array.from(ids).map((id) => templateById.get(id)).filter((t): t is TemplateLike => Boolean(t))
     );
   }
 
@@ -145,35 +116,7 @@ function buildTopicRegistry(): TopicRegistry {
     templateToTopics.set(t.id, normalizeTopicValues(t.topics));
   }
 
-  // Separate top-level topics from child topics
-  const childTopics = new Map<string, string[]>();
-  const parentTopic = new Map<string, string>();
-
-  for (const tp of topicToTemplateIds.keys()) {
-    if (templateLevelTopics.has(tp)) continue; // top-level, skip
-
-    // Find the focus topic this child co-occurs with most
-    let bestParent: string | undefined;
-    let bestCount = 0;
-    for (const focusTp of HIERARCHY_FOCUS_TOPICS) {
-      if (!topicToTemplateIds.has(focusTp)) continue;
-      const focusIds = topicToTemplateIds.get(focusTp)!;
-      const childIds = topicToTemplateIds.get(tp)!;
-      const overlap = [...childIds].filter((id) => focusIds.has(id)).length;
-      if (overlap > bestCount) {
-        bestCount = overlap;
-        bestParent = focusTp;
-      }
-    }
-
-    if (bestParent) {
-      parentTopic.set(tp, bestParent);
-      if (!childTopics.has(bestParent)) childTopics.set(bestParent, []);
-      childTopics.get(bestParent)!.push(tp);
-    }
-  }
-
-  // Build enriched topic list
+  // Build enriched topic list (parentTopic from explicit map)
   const allTopicIds = Array.from(topicToTemplateIds.keys());
   const enrichedTopics: TopicWithTemplates[] = allTopicIds.map((id) => {
     const topicTemplates = topicToTemplates.get(id) ?? [];
@@ -182,7 +125,7 @@ function buildTopicRegistry(): TopicRegistry {
       templates: topicTemplates,
       templateCount: topicTemplates.length,
       isEnabled: topicTemplates.length > 0,
-      parentTopic: parentTopic.get(id),
+      parentTopic: EXPLICIT_PARENT_TOPIC.get(id),
     };
   });
 
@@ -190,10 +133,12 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((t) => [t.id, t])
   );
 
-  // Related topics: focus topics sharing >= 2 templates, top-level only
+  // Related topics: Tier 1 topics sharing >= 2 templates
   const RELATED_FOCUS = new Set(["learning", "character", "lifestyle", "product"]);
   const MIN_OVERLAP = 2;
   const relatedTopics = new Map<string, string[]>();
+  const templateLevelTopics = new Set<string>();
+  for (const t of templates) for (const tp of normalizeTopicValues(t.topics)) templateLevelTopics.add(tp);
   const topLevelIds = allTopicIds.filter((id) => templateLevelTopics.has(id));
 
   for (const a of topLevelIds) {
@@ -209,20 +154,12 @@ function buildTopicRegistry(): TopicRegistry {
     if (related.length > 0) relatedTopics.set(a, related);
   }
 
-  return {
-    topics: enrichedTopics,
-    topicById,
-    topicToTemplates,
-    templateToTopics,
-    relatedTopics,
-    childTopics,
-    parentTopic,
-  };
+  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics };
 }
 
 const registry = buildTopicRegistry();
 
-// Build explicit sibling map from groups
+// Build explicit sibling map
 const explicitSiblingMap = new Map<string, string[]>();
 for (const group of EXPLICIT_SIBLING_GROUPS) {
   for (const topic of group) {
@@ -250,14 +187,14 @@ export function getRelatedTopics(topicId: string): string[] {
   return registry.relatedTopics.get(topicId) ?? [];
 }
 
+/** All children (navigational) of a parent topic. */
 export function getChildTopics(topicId: string): string[] {
-  const auto = registry.childTopics.get(topicId) ?? [];
-  const explicit = EXPLICIT_CHILD_TOPICS[topicId] ?? [];
-  return [...new Set([...explicit, ...auto])];
+  return EXPLICIT_CHILD_TOPICS[topicId] ?? [];
 }
 
+/** Parent of a child topic (from explicit hierarchy). */
 export function getParentTopic(topicId: string): string | undefined {
-  return registry.parentTopic.get(topicId);
+  return EXPLICIT_PARENT_TOPIC.get(topicId);
 }
 
 export function hasTopic(topicId: string): boolean {
@@ -272,15 +209,14 @@ export function getExplicitSiblings(topicId: string): string[] {
   return explicitSiblingMap.get(topicId) ?? [];
 }
 
-/** Navigational subtopics explicitly defined for a parent topic (shown in top nav). */
+/** Navigational subtopics for a parent topic (shown at top of page). */
 export function getNavigationalChildren(topicId: string): string[] {
   return (EXPLICIT_CHILD_TOPICS[topicId] ?? []).filter((id) => isTopicEnabled(id));
 }
 
-/** Tag-style children: auto-detected via co-occurrence (e.g. geo tags, language pairs).
- *  Shown at the bottom of the page, not in top nav. */
+/** Tag-style children for bottom of page (geo siblings, language pairs). */
 export function getTagChildren(topicId: string): string[] {
-  return registry.childTopics.get(topicId) ?? [];
+  return [];
 }
 
 export { normalizeTopicValues };
