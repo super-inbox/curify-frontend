@@ -7003,48 +7003,59 @@
   {
     "id": "template-mood-board-interior-designgenerator",
     "locales": {
-        "en": {
-            "base_prompt": "（Interior Design Mood Board Generator）You are a professional interior design mood board creator. Based on the user-provided {space_type} interior design photo, generate a vertical 3:4 premium interior design mood board, matching the professional, minimalist aesthetic of the reference images. Layout: 1. Top: High-resolution photorealistic interior design render of {space_type}, Curify watermark at top left. 2. Bottom: Curated material swatches, fabric samples, color palettes, finish samples that exactly match the top design, each labeled with material/color name, plus a Design Legend/Color Palette box in bottom right. Style: Clean professional interior design aesthetic, accurate material matching, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {space_type} Interior Design Mood Board.",
-            "parameters": [
-                {
-                    "name": "space_type",
-                    "label": "Space Type",
-                    "type": "text",
-                    "placeholder": [
-                        "Bedroom",
-                        "Dining Area & Bar",
-                        "Home Office",
-                        "Living Room",
-                        "Kitchen",
-                        "Bathroom"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Interior Design Mood Board Generator）You are a professional interior design mood board creator. Based on the user-provided {space_type} interior design photo, generate a vertical 3:4 premium interior design mood board, matching the professional, minimalist aesthetic of the reference images. Layout: 1. Top: High-resolution photorealistic interior design render of {space_type}, Curify watermark at top left. 2. Bottom: Curated material swatches, fabric samples, color palettes, finish samples that exactly match the top design, each labeled with material/color name, plus a Design Legend/Color Palette box in bottom right. Style: Clean professional interior design aesthetic, accurate material matching, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {space_type} Interior Design Mood Board.",
+        "parameters": [
+          {
+            "name": "space_type",
+            "label": "Space Type",
+            "type": "text",
+            "placeholder": [
+              "Bedroom",
+              "Dining Area & Bar",
+              "Home Office",
+              "Living Room",
+              "Kitchen",
+              "Bathroom"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-mood-board--interior-designgenerator-living-room-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-mood-board--interior-designgenerator-living-room-prev.jpg",
+    "topics": [
+      "design",
+      "interior"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80
+  },
   {
     "id": "template-fashion-before-after-outfit-annotation-card",
     "locales": {
-        "en": {
-            "base_prompt": "（Fashion Before-After Outfit Annotation Card Designer）You are a professional fashion stylist and outfit annotation designer. Based on the user-provided single photo of a person's outfit, generate a horizontal premium \"BEFORE vs AFTER\" fashion styling infographic, matching the professional, clean aesthetic of the reference images. Layout: 1. Left: Original user photo with \"BEFORE\" in bold large font at top. 2. Right: Refined enhanced version of the same outfit, with \"AFTER\" in bold large font at top, multiple callout boxes with arrows labeling key styling elements (fabric, silhouette, accessories, design details). Style: Clean white background, consistent font, accurate natural outfit enhancement, Curify watermark at bottom right, horizontal format, 4K ultra HD, direct image generation. Subject: Fashion Styling \"BEFORE vs AFTER\" Outfit Annotation Card.",
-            "parameters": [
-                {
-                    "name": "outfit_type",
-                    "label": "Outfit Type",
-                    "type": "text",
-                    "placeholder": [
-                        "Evening Gown",
-                        "Wedding Dress",
-                        "Casual Street Style",
-                        "Jewelry Look",
-                        "Bridal Hairstyle"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Fashion Before-After Outfit Annotation Card Designer）You are a professional fashion stylist and outfit annotation designer. Based on the user-provided single photo of a person's outfit, generate a horizontal premium \"BEFORE vs AFTER\" fashion styling infographic, matching the professional, clean aesthetic of the reference images. Layout: 1. Left: Original user photo with \"BEFORE\" in bold large font at top. 2. Right: Refined enhanced version of the same outfit, with \"AFTER\" in bold large font at top, multiple callout boxes with arrows labeling key styling elements (fabric, silhouette, accessories, design details). Style: Clean white background, consistent font, accurate natural outfit enhancement, Curify watermark at bottom right, horizontal format, 4K ultra HD, direct image generation. Subject: Fashion Styling \"BEFORE vs AFTER\" Outfit Annotation Card.",
+        "parameters": [
+          {
+            "name": "outfit_type",
+            "label": "Outfit Type",
+            "type": "text",
+            "placeholder": [
+              "Evening Gown",
+              "Wedding Dress",
+              "Casual Street Style",
+              "Jewelry Look",
+              "Bridal Hairstyle"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-wedding-dress-prev.jpg"
-}
+    "og_image": "/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-wedding-dress-prev.jpg",
+    "topics": [
+      "lifestyle"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90
+  }
 ]
