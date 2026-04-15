@@ -133,15 +133,16 @@ export default async function Page({ params }: Props) {
   const navSubTopics = !isChildTopic ? getNavigationalChildren(slug) : [];
 
   // Tag-style subtopics: geo tags, language pairs — shown at bottom
-  // On a parent page: auto-detected children. On a child page: siblings (hierarchy + explicit groups).
+  // Exclude navSubTopics to avoid duplication.
+  const navSet = new Set(navSubTopics);
   const tagSubTopics = isChildTopic
     ? [
         ...new Set([
           ...getChildTopics(parentTopicId!).filter((id) => id !== slug && (getTopicById(id)?.templateCount ?? 0) >= 1),
           ...getExplicitSiblings(slug).filter((id) => isTopicEnabled(id)),
         ]),
-      ]
-    : getTagChildren(slug).filter((id) => (getTopicById(id)?.templateCount ?? 0) >= 2);
+      ].filter((id) => !navSet.has(id))
+    : getTagChildren(slug).filter((id) => (getTopicById(id)?.templateCount ?? 0) >= 2 && !navSet.has(id));
 
   const subTopicsHeading = isChildTopic
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
