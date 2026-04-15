@@ -2184,7 +2184,8 @@
       "product"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "requires_image_upload": true
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -2204,7 +2205,8 @@
       "design"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "requires_image_upload": true
   },
   {
     "id": "template-mbti-contrast",
@@ -6656,7 +6658,8 @@
     "topics": [
       "interior",
       "design"
-    ]
+    ],
+    "requires_image_upload": true
   },
   {
     "id": "template-home-organization-before-after",
@@ -6686,7 +6689,8 @@
     "topics": [
       "lifestyle",
       "interior"
-    ]
+    ],
+    "requires_image_upload": true
   },
   {
     "id": "template-stick-figure-vocab",
