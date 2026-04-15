@@ -273,4 +273,15 @@ export function getExplicitSiblings(topicId: string): string[] {
   return explicitSiblingMap.get(topicId) ?? [];
 }
 
+/** Navigational subtopics explicitly defined for a parent topic (shown in top nav). */
+export function getNavigationalChildren(topicId: string): string[] {
+  return (EXPLICIT_CHILD_TOPICS[topicId] ?? []).filter((id) => isTopicEnabled(id));
+}
+
+/** Tag-style children: auto-detected via co-occurrence (e.g. geo tags, language pairs).
+ *  Shown at the bottom of the page, not in top nav. */
+export function getTagChildren(topicId: string): string[] {
+  return registry.childTopics.get(topicId) ?? [];
+}
+
 export { normalizeTopicValues };

@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById, getExplicitSiblings, isTopicEnabled } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById, getExplicitSiblings, getNavigationalChildren, getTagChildren, isTopicEnabled } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -129,20 +129,19 @@ export default async function Page({ params }: Props) {
 
   const parentTopicId = getParentTopic(slug);
 
-  // On a parent page: show its child topics. On a child page: show siblings.
-  const siblingOrChildIds = isChildTopic
-    ? getChildTopics(parentTopicId!).filter((id) => id !== slug)
-    : getChildTopics(slug);
+  // Navigational subtopics (explicit, shown at top of parent pages)
+  const navSubTopics = !isChildTopic ? getNavigationalChildren(slug) : [];
 
-  // Siblings (e.g. other geo countries, other language pairs): threshold=1 so small topics still appear.
-  // Children of a parent page: threshold=2 to avoid showing stubs.
-  const subtopicThreshold = isChildTopic ? 1 : 2;
-  const hierarchySiblings = siblingOrChildIds.filter(
-    (id) => (getTopicById(id)?.templateCount ?? 0) >= subtopicThreshold
-  );
-  // Merge with explicit siblings (e.g. geo countries, language pairs grouped without a parent page)
-  const explicitSibs = getExplicitSiblings(slug).filter((id) => isTopicEnabled(id));
-  const visibleSubTopics = [...new Set([...hierarchySiblings, ...explicitSibs])];
+  // Tag-style subtopics: geo tags, language pairs — shown at bottom
+  // On a parent page: auto-detected children. On a child page: siblings (hierarchy + explicit groups).
+  const tagSubTopics = isChildTopic
+    ? [
+        ...new Set([
+          ...getChildTopics(parentTopicId!).filter((id) => id !== slug && (getTopicById(id)?.templateCount ?? 0) >= 1),
+          ...getExplicitSiblings(slug).filter((id) => isTopicEnabled(id)),
+        ]),
+      ]
+    : getTagChildren(slug).filter((id) => (getTopicById(id)?.templateCount ?? 0) >= 2);
 
   const subTopicsHeading = isChildTopic
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
@@ -171,11 +170,11 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          {!isChildTopic && visibleSubTopics.length > 0 && (
+          {navSubTopics.length > 0 && (
             <div className="mt-4">
               <TopicNavRow
                 locale={localeStr}
-                topics={visibleSubTopics}
+                topics={navSubTopics}
                 activeTopic={slug}
                 showDisabled={false}
                 size="small"
@@ -207,14 +206,14 @@ export default async function Page({ params }: Props) {
         />
       </section>
 
-      {visibleSubTopics.length > 0 && (
+      {tagSubTopics.length > 0 && (
         <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
             {subTopicsHeading}
           </h2>
           <TopicNavRow
             locale={localeStr}
-            topics={visibleSubTopics}
+            topics={tagSubTopics}
             showDisabled={false}
             size="default"
           />
