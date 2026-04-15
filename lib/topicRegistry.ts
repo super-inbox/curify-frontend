@@ -70,9 +70,6 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 // but appear directly on templates (so co-occurrence detection won't catch them).
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   language: ["vocabulary", "dialogue", "expressions", "language-english"],
-  character: ["comparison", "groups", "mbti", "film", "sports", "gaming", "ai"],
-  lifestyle: ["travel", "food", "finance", "interior", "fitness", "nostalgia"],
-  learning: ["culture", "architecture", "history", "science"],
 };
 
 // A single co-occurrence row: topics that appear together for a given template
