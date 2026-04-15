@@ -2201,7 +2201,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-portrait-retouching-blueprint-en 3-prev.jpg",
     "topics": [
-      "product",
+      "lifestyle",
+      "fashion",
       "design"
     ],
     "rank_score": 80,
@@ -6687,8 +6688,8 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "topics": [
-      "lifestyle",
-      "interior"
+      "interior",
+      "design"
     ],
     "requires_image_upload": true
   },
@@ -7028,7 +7029,8 @@
       "interior"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "requires_image_upload": true
   },
   {
     "id": "template-fashion-before-after-outfit-annotation-card",
@@ -7053,9 +7055,11 @@
     },
     "og_image": "/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-wedding-dress-prev.jpg",
     "topics": [
-      "lifestyle"
+      "lifestyle",
+      "fashion"
     ],
     "rank_score": 90,
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "requires_image_upload": true
   }
 ]

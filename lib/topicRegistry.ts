@@ -68,9 +68,10 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "film", "sports", "gaming", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  lifestyle: ["travel", "food", "interior", "fitness", "nostalgia", "city"],
+  lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion"],
   learning:  ["science", "trending", "culture", "architecture", "history", "ai", "finance"],
   product:   [],
+  design:    ["interior"],
 };
 
 // Reverse map: Tier 3 tag → Tier 1 parent
