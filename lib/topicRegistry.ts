@@ -66,6 +66,13 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
 ];
 
+// Explicit parent→children for top-level topics that are semantically subtopics
+// but appear directly on templates (so co-occurrence detection won't catch them).
+const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
+  language: ["vocabulary", "dialogue", "expressions", "language-english"],
+  character: ["comparison", "groups"],
+};
+
 // A single co-occurrence row: topics that appear together for a given template
 type TopicRow = {
   templateId: string;
@@ -245,7 +252,9 @@ export function getRelatedTopics(topicId: string): string[] {
 }
 
 export function getChildTopics(topicId: string): string[] {
-  return registry.childTopics.get(topicId) ?? [];
+  const auto = registry.childTopics.get(topicId) ?? [];
+  const explicit = EXPLICIT_CHILD_TOPICS[topicId] ?? [];
+  return [...new Set([...explicit, ...auto])];
 }
 
 export function getParentTopic(topicId: string): string | undefined {

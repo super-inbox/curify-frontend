@@ -170,6 +170,18 @@ export default async function Page({ params }: Props) {
               />
             </div>
           )}
+
+          {!isChildTopic && visibleSubTopics.length > 0 && (
+            <div className="mt-4">
+              <TopicNavRow
+                locale={localeStr}
+                topics={visibleSubTopics}
+                activeTopic={slug}
+                showDisabled={false}
+                size="small"
+              />
+            </div>
+          )}
         </div>
       </section>
 
