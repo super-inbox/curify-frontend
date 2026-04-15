@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById, getExplicitSiblings, getNavigationalChildren, getTagChildren, isTopicEnabled } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, isNavigationalTopic, getTier1Ancestor } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -83,7 +83,7 @@ export default async function Page({ params }: Props) {
 
   const filteredImages = allImages.filter((img: any) => {
     if (!allowedTemplateIds.has(img?.template_id)) return false;
-    if (isChildTopic) return (img.topics ?? []).includes(slug);
+    if (isChildTopic && !isNavigationalTopic(slug)) return (img.topics ?? []).includes(slug);
     return true;
   });
 
@@ -129,24 +129,16 @@ export default async function Page({ params }: Props) {
 
   const parentTopicId = getParentTopic(slug);
 
-  // Navigational subtopics shown at top:
-  // - Parent page: its own children
-  // - Child page: all siblings (children of parent), current one highlighted via activeTopic
-  const navSubTopics = isChildTopic && parentTopicId
-    ? getNavigationalChildren(parentTopicId)
-    : getNavigationalChildren(slug);
+  // Resolve the Tier 1 ancestor for this page (itself if Tier 1, parent if Tier 2, Tier 1 root if Tier 3 tag)
+  const tier1Ancestor = getTier1Ancestor(slug);
 
-  // Tag-style subtopics: geo tags, language pairs — shown at bottom
-  // Exclude navSubTopics to avoid duplication.
-  const navSet = new Set(navSubTopics);
-  const tagSubTopics = isChildTopic
-    ? [
-        ...new Set([
-          ...getChildTopics(parentTopicId!).filter((id) => id !== slug && (getTopicById(id)?.templateCount ?? 0) >= 1),
-          ...getExplicitSiblings(slug).filter((id) => isTopicEnabled(id)),
-        ]),
-      ].filter((id) => !navSet.has(id))
-    : getTagChildren(slug).filter((id) => (getTopicById(id)?.templateCount ?? 0) >= 2 && !navSet.has(id));
+  // Tier 2 navigational subtopics — shown at top on all tiers
+  const navSubTopics = tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [];
+
+  // Tier 3 tag subtopics — shown at bottom on all tiers
+  const tagSubTopics = tier1Ancestor
+    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug && isTopicEnabled(id))
+    : [];
 
   const subTopicsHeading = isChildTopic
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"

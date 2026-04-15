@@ -3311,25 +3311,6 @@
     "legacy_template_id": "template-herbal-zh"
   },
   {
-    "id": "template-herbal-goji",
-    "template_id": "template-herbal",
-    "asset": {
-      "image_url": "/images/nano_insp/template-herbal-zh-goji.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-herbal-zh-goji-prev.jpg"
-    },
-    "params": {
-      "herb_name": "goji"
-    },
-    "locales": {
-      "zh": {
-        "category": "中草药类",
-        "title": "goji"
-      }
-    },
-    "legacy_id": "template-herbal-zh-goji",
-    "legacy_template_id": "template-herbal-zh"
-  },
-  {
     "id": "template-herbal-jujube",
     "template_id": "template-herbal",
     "asset": {
@@ -4384,25 +4365,6 @@
       }
     },
     "legacy_id": "template-fashion-ecommerce-zh-necklace",
-    "legacy_template_id": "template-fashion-ecommerce"
-  },
-  {
-    "id": "template-fashion-ecommerce-scarf",
-    "template_id": "template-fashion-ecommerce",
-    "asset": {
-      "image_url": "/images/nano_insp/template-fashion-ecommerce-zh-scarf.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-fashion-ecommerce-zh-scarf-prev.jpg"
-    },
-    "params": {
-      "core_selling_point": "scarf"
-    },
-    "locales": {
-      "zh": {
-        "category": "服饰电商详情类",
-        "title": "scarf"
-      }
-    },
-    "legacy_id": "template-fashion-ecommerce-zh-scarf",
     "legacy_template_id": "template-fashion-ecommerce"
   },
   {
@@ -7454,7 +7416,7 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-employee-enfj",
+    "id": "template-mbti-generic-employee-en-enfj",
     "template_id": "template-mbti-generic",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-employee-en-enfj.jpg",
@@ -7470,7 +7432,7 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-employee-estp",
+    "id": "template-mbti-generic-employee-en-estp",
     "template_id": "template-mbti-generic",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-employee-en-estp.jpg",
@@ -7486,7 +7448,7 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-employee-group",
+    "id": "template-mbti-generic-employee-en-group",
     "template_id": "template-mbti-generic",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-employee-en-group.jpg",
@@ -7550,7 +7512,7 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-employee-enfj",
+    "id": "template-mbti-generic-employee-zh-enfj",
     "template_id": "template-mbti-generic",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-employee-zh-enfj.jpg",
@@ -7598,7 +7560,7 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-employee-estp",
+    "id": "template-mbti-generic-employee-zh-estp",
     "template_id": "template-mbti-generic",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-employee-zh-estp.jpg",
@@ -7614,7 +7576,7 @@
     "legacy_template_id": "template-mbti-generic"
   },
   {
-    "id": "template-mbti-generic-employee-group",
+    "id": "template-mbti-generic-employee-zh-group",
     "template_id": "template-mbti-generic",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-generic-employee-zh-group.jpg",
@@ -19828,86 +19790,6 @@
     "locales": {
       "en": {
         "title": "pizza"
-      }
-    }
-  },
-  {
-    "id": "template-tool-ai-category-content-creation",
-    "template_id": "template-tool-ai-category",
-    "asset": {
-      "image_url": "/images/nano_insp/template-tool-ai-category-content-creation.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-content-creation-prev.jpg"
-    },
-    "params": {
-      "category_name": "content creation"
-    },
-    "locales": {
-      "en": {
-        "title": "content creation"
-      }
-    }
-  },
-  {
-    "id": "template-tool-ai-category-creativity",
-    "template_id": "template-tool-ai-category",
-    "asset": {
-      "image_url": "/images/nano_insp/template-tool-ai-category-creativity.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-creativity-prev.jpg"
-    },
-    "params": {
-      "category_name": "creativity"
-    },
-    "locales": {
-      "en": {
-        "title": "creativity"
-      }
-    }
-  },
-  {
-    "id": "template-tool-ai-category-development-programming",
-    "template_id": "template-tool-ai-category",
-    "asset": {
-      "image_url": "/images/nano_insp/template-tool-ai-category-development-programming.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-development-programming-prev.jpg"
-    },
-    "params": {
-      "category_name": "development programming"
-    },
-    "locales": {
-      "en": {
-        "title": "development programming"
-      }
-    }
-  },
-  {
-    "id": "template-tool-ai-category-general-assistants",
-    "template_id": "template-tool-ai-category",
-    "asset": {
-      "image_url": "/images/nano_insp/template-tool-ai-category-general-assistants.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-general-assistants-prev.jpg"
-    },
-    "params": {
-      "category_name": "general assistants"
-    },
-    "locales": {
-      "en": {
-        "title": "general assistants"
-      }
-    }
-  },
-  {
-    "id": "template-tool-ai-category-productivity",
-    "template_id": "template-tool-ai-category",
-    "asset": {
-      "image_url": "/images/nano_insp/template-tool-ai-category-productivity.jpg",
-      "preview_image_url": "/images/nano_insp_preview/template-tool-ai-category-productivity-prev.jpg"
-    },
-    "params": {
-      "category_name": "productivity"
-    },
-    "locales": {
-      "en": {
-        "title": "productivity"
       }
     }
   }

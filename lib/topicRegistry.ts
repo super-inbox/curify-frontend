@@ -55,18 +55,33 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
 ];
 
+// Tier 1 → Tier 3 tag children mapping.
+// These tags appear at the bottom of the Tier 1 topic page.
+const TIER1_TAG_CHILDREN: Record<string, string[]> = {
+  lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico"],
+  language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+};
+
 // Full explicit parent→children hierarchy.
 // Tier 1 (entry bar): character, language, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "film", "sports", "gaming", "ai", "comparison", "groups"],
+  character: ["mbti", "film", "sports", "gaming", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  lifestyle: ["travel", "food", "finance", "interior", "fitness", "nostalgia", "city", "weather"],
-  learning:  ["science", "trending", "culture", "architecture", "history"],
+  lifestyle: ["travel", "food", "interior", "fitness", "nostalgia", "city"],
+  learning:  ["science", "trending", "culture", "architecture", "history", "ai", "finance"],
   product:   [],
 };
 
-// Reverse map: child → parent
+// Reverse map: Tier 3 tag → Tier 1 parent
+const TIER3_TAG_PARENT = new Map<string, string>();
+for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
+  for (const tag of tags) {
+    TIER3_TAG_PARENT.set(tag, tier1);
+  }
+}
+
+// Reverse map: Tier 2 child → Tier 1 parent
 const EXPLICIT_PARENT_TOPIC = new Map<string, string>();
 for (const [parent, children] of Object.entries(EXPLICIT_CHILD_TOPICS)) {
   for (const child of children) {
@@ -208,6 +223,12 @@ export function getExplicitSiblings(topicId: string): string[] {
   return explicitSiblingMap.get(topicId) ?? [];
 }
 
+/** Returns true for Tier 2 navigational topics (defined in EXPLICIT_CHILD_TOPICS).
+ *  Returns false for Tier 3 tag topics (geo, language pairs) which need example-level filtering. */
+export function isNavigationalTopic(topicId: string): boolean {
+  return EXPLICIT_PARENT_TOPIC.has(topicId);
+}
+
 /** Navigational subtopics for a parent topic (shown at top of page). */
 export function getNavigationalChildren(topicId: string): string[] {
   return (EXPLICIT_CHILD_TOPICS[topicId] ?? []).filter((id) => isTopicEnabled(id));
@@ -215,7 +236,15 @@ export function getNavigationalChildren(topicId: string): string[] {
 
 /** Tag-style children for bottom of page (geo siblings, language pairs). */
 export function getTagChildren(topicId: string): string[] {
-  return [];
+  return TIER1_TAG_CHILDREN[topicId] ?? [];
+}
+
+/** Returns the Tier 1 ancestor for any topic (Tier 1 → itself, Tier 2 → parent, Tier 3 → Tier 1 via tag map). */
+export function getTier1Ancestor(topicId: string): string | undefined {
+  if (TIER1_TAG_CHILDREN[topicId] !== undefined || EXPLICIT_CHILD_TOPICS[topicId] !== undefined) return topicId;
+  const tier2Parent = EXPLICIT_PARENT_TOPIC.get(topicId);
+  if (tier2Parent) return tier2Parent;
+  return TIER3_TAG_PARENT.get(topicId);
 }
 
 export { normalizeTopicValues };
