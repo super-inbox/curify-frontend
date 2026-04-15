@@ -133,19 +133,18 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((t) => [t.id, t])
   );
 
-  // Related topics: Tier 1 topics sharing >= 2 templates
+  // Related topics: only among true Tier 1 topics (entry bar)
+  const TIER1_TOPICS = new Set(["character", "language", "lifestyle", "learning", "product", "design"]);
   const RELATED_FOCUS = new Set(["learning", "character", "lifestyle", "product"]);
   const MIN_OVERLAP = 2;
   const relatedTopics = new Map<string, string[]>();
-  const templateLevelTopics = new Set<string>();
-  for (const t of templates) for (const tp of normalizeTopicValues(t.topics)) templateLevelTopics.add(tp);
-  const topLevelIds = allTopicIds.filter((id) => templateLevelTopics.has(id));
+  const tier1Ids = allTopicIds.filter((id) => TIER1_TOPICS.has(id));
 
-  for (const a of topLevelIds) {
+  for (const a of tier1Ids) {
     if (!RELATED_FOCUS.has(a)) continue;
     const aIds = topicToTemplateIds.get(a)!;
     const related: string[] = [];
-    for (const b of topLevelIds) {
+    for (const b of tier1Ids) {
       if (a === b) continue;
       const bIds = topicToTemplateIds.get(b)!;
       const overlap = [...aIds].filter((id) => bIds.has(id)).length;
