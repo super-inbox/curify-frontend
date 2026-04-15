@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById, getExplicitSiblings, isTopicEnabled } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -127,7 +127,6 @@ export default async function Page({ params }: Props) {
 
   const relatedTopicIds = getRelatedTopics(slug);
 
-  const CHILD_THRESHOLD = 2;
   const parentTopicId = getParentTopic(slug);
 
   // On a parent page: show its child topics. On a child page: show siblings.
@@ -135,9 +134,15 @@ export default async function Page({ params }: Props) {
     ? getChildTopics(parentTopicId!).filter((id) => id !== slug)
     : getChildTopics(slug);
 
-  const visibleSubTopics = siblingOrChildIds.filter(
-    (id) => (getTopicById(id)?.templateCount ?? 0) >= CHILD_THRESHOLD
+  // Siblings (e.g. other geo countries, other language pairs): threshold=1 so small topics still appear.
+  // Children of a parent page: threshold=2 to avoid showing stubs.
+  const subtopicThreshold = isChildTopic ? 1 : 2;
+  const hierarchySiblings = siblingOrChildIds.filter(
+    (id) => (getTopicById(id)?.templateCount ?? 0) >= subtopicThreshold
   );
+  // Merge with explicit siblings (e.g. geo countries, language pairs grouped without a parent page)
+  const explicitSibs = getExplicitSiblings(slug).filter((id) => isTopicEnabled(id));
+  const visibleSubTopics = [...new Set([...hierarchySiblings, ...explicitSibs])];
 
   const subTopicsHeading = isChildTopic
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"

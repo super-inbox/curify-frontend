@@ -982,7 +982,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-word-scene-zh-student-dinosaur-jungle-prev.jpg",
     "topics": [
-      "language"
+      "language",
+      "vocabulary"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -1513,7 +1514,8 @@
       }
     },
     "topics": [
-      "character"
+      "character",
+      "comparison"
     ],
     "rank_score": 1,
     "use_cases": [
@@ -1572,7 +1574,8 @@
     "og_image": "/images/nano_insp_preview/template-mbti-animal-zh-supermarket 4-prev.jpg",
     "topics": [
       "character",
-      "mbti"
+      "mbti",
+      "groups"
     ],
     "rank_score": 80,
     "base_rank_score": 80
@@ -2128,7 +2131,8 @@
     "og_image": "/images/nano_insp_preview/template-battle-zh-hanxin-baiqi.jpg 1-prev.jpg",
     "topics": [
       "character",
-      "gaming"
+      "gaming",
+      "comparison"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -2285,7 +2289,8 @@
     "legacy_id": "template-mbti-contrast-zh",
     "topics": [
       "character",
-      "mbti"
+      "mbti",
+      "comparison"
     ],
     "rank_score": 80,
     "base_rank_score": 80
@@ -2328,7 +2333,8 @@
     "legacy_id": "template-guofeng-scroll-zh",
     "topics": [
       "character",
-      "culture"
+      "culture",
+      "groups"
     ],
     "rank_score": 80,
     "base_rank_score": 80
@@ -2792,7 +2798,8 @@
     "og_image": "/images/nano_insp_preview/template-mbti-generic-employee-en-estp-prev.jpg",
     "topics": [
       "character",
-      "mbti"
+      "mbti",
+      "groups"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -3631,7 +3638,8 @@
     "og_image": "/images/nano_insp_preview/template-sports-battle-template-sports-battle-kobe-vs-rayallen-prev.jpg",
     "topics": [
       "character",
-      "sports"
+      "sports",
+      "comparison"
     ],
     "rank_score": 1,
     "base_rank_score": 1
@@ -4435,7 +4443,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
     "topics": [
-      "language"
+      "language",
+      "vocabulary"
     ],
     "batch": true,
     "rank_score": 80,
@@ -5015,7 +5024,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg",
     "topics": [
-      "language"
+      "language",
+      "expressions"
     ],
     "batch": true,
     "rank_score": 80,
@@ -5595,7 +5605,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
     "topics": [
-      "language"
+      "language",
+      "dialogue"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -6064,7 +6075,8 @@
     "og_image": "/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg",
     "rank_score": 80,
     "topics": [
-      "language"
+      "language",
+      "vocabulary"
     ],
     "use_cases": [
       "for-parents",
@@ -6244,6 +6256,7 @@
     "rank_score": 80,
     "topics": [
       "character",
+      "mbti",
       "film"
     ],
     "base_rank_score": 80
@@ -6273,7 +6286,8 @@
     "og_image": "/images/nano_insp_preview/template-children-english-vocab-spelling-weather-prev.jpg",
     "rank_score": 80,
     "topics": [
-      "language"
+      "language",
+      "vocabulary"
     ],
     "use_cases": [
       "for-parents"
@@ -6305,7 +6319,8 @@
     "og_image": "/images/nano_insp_preview/template-daily-essentials-learning-card-school-supplies-prev.jpg",
     "rank_score": 80,
     "topics": [
-      "language"
+      "language",
+      "vocabulary"
     ],
     "base_rank_score": 80
   },
@@ -6333,7 +6348,9 @@
     "og_image": "/images/nano_insp_preview/template-native-english-expressions-time-related-preview.jpg",
     "rank_score": 50,
     "topics": [
-      "language"
+      "language",
+      "expressions",
+      "language-english"
     ],
     "base_rank_score": 50
   },
@@ -6391,7 +6408,8 @@
     "rank_score": 100,
     "topics": [
       "language",
-      "food"
+      "food",
+      "vocabulary"
     ],
     "base_rank_score": 100,
     "allow_generation": true
@@ -6511,7 +6529,9 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "topics": [
-      "language"
+      "language",
+      "vocabulary",
+      "language-english"
     ],
     "allow_generation": true
   },
@@ -6637,9 +6657,9 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "topics": [
-      "design",
       "interior",
-      "lifestyle"
+      "lifestyle",
+      "design"
     ]
   },
   {
@@ -6697,7 +6717,9 @@
     "rank_score": 70,
     "base_rank_score": 70,
     "topics": [
-      "language"
+      "language",
+      "vocabulary",
+      "language-english"
     ]
   },
   {
@@ -6915,7 +6937,8 @@
     "og_image": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-river-snow-prev.jpg",
     "topics": [
       "culture",
-      "lifestyle"
+      "lifestyle",
+      "design"
     ],
     "base_rank_score": 90,
     "rank_score": 90
@@ -6972,7 +6995,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg",
     "topics": [
-      "language"
+      "language",
+      "vocabulary"
     ],
     "base_rank_score": 90,
     "rank_score": 90
