@@ -127,7 +127,6 @@ export default async function Page({ params }: Props) {
 
   const relatedTopicIds = getRelatedTopics(slug);
 
-  const CHILD_THRESHOLD = 2;
   const parentTopicId = getParentTopic(slug);
 
   // On a parent page: show its child topics. On a child page: show siblings.
@@ -135,8 +134,11 @@ export default async function Page({ params }: Props) {
     ? getChildTopics(parentTopicId!).filter((id) => id !== slug)
     : getChildTopics(slug);
 
+  // Siblings (e.g. other geo countries, other language pairs): threshold=1 so small topics still appear.
+  // Children of a parent page: threshold=2 to avoid showing stubs.
+  const subtopicThreshold = isChildTopic ? 1 : 2;
   const visibleSubTopics = siblingOrChildIds.filter(
-    (id) => (getTopicById(id)?.templateCount ?? 0) >= CHILD_THRESHOLD
+    (id) => (getTopicById(id)?.templateCount ?? 0) >= subtopicThreshold
   );
 
   const subTopicsHeading = isChildTopic

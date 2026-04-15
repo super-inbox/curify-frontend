@@ -52,6 +52,7 @@ function normalizeTopicValues(value: unknown): string[] {
 
 
 const HIERARCHY_FOCUS_TOPICS = new Set([
+  "geo",
   "lifestyle",
   "language",
   "character",
