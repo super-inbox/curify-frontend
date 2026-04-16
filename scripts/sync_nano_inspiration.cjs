@@ -6,6 +6,26 @@ const path = require("path");
 const os = require("os");
 const { execSync } = require("child_process");
 
+// --- Load .env.local (and .env as fallback) from repo root ---
+(function loadEnv() {
+  const REPO_ROOT = path.resolve(__dirname, "..");
+  for (const file of [".env.local", ".env"]) {
+    const envPath = path.join(REPO_ROOT, file);
+    if (!fs.existsSync(envPath)) continue;
+    const lines = fs.readFileSync(envPath, "utf-8").split("\n");
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const eq = trimmed.indexOf("=");
+      if (eq === -1) continue;
+      const key = trimmed.slice(0, eq).trim();
+      const val = trimmed.slice(eq + 1).trim().replace(/^['"]|['"]$/g, "");
+      if (!(key in process.env)) process.env[key] = val;
+    }
+    console.log(`Loaded env from ${file}`);
+  }
+})();
+
 // --- OPTIONAL dependency (required for preview generation) ---
 let sharp;
 try {
@@ -332,10 +352,14 @@ async function fetchSupabaseJobs(pgUrl, status) {
     console.error("❌ Missing dependency: pg\n  Install it first: npm i pg\n  Then rerun the script.");
     process.exit(1);
   }
-  const client = new pg.Client({ connectionString: pgUrl });
+  const client = new pg.Client({
+    connectionString: pgUrl,
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 10000,
+  });
   await client.connect();
   const res = await client.query(
-    `SELECT id, runtime_config FROM nano_template_generation WHERE status = $1`,
+    `SELECT project_id, runtime_config FROM project WHERE job_settings_raw->>'job_type' = 'nano_template_generation' AND status = $1`,
     [status]
   );
   await client.end();
@@ -345,7 +369,7 @@ async function fetchSupabaseJobs(pgUrl, status) {
 function buildSupabaseRecord(job, templatesById) {
   const cfg = job.runtime_config;
   if (!cfg || !cfg.example_id || !cfg.gcs_object_path || !cfg.preview_gcs_object_path || !cfg.template_id) {
-    console.warn(`  ⚠️ Skipping job ${job.id}: missing required runtime_config fields`);
+    console.warn(`  ⚠️ Skipping project ${job.project_id}: missing required runtime_config fields`);
     return null;
   }
 

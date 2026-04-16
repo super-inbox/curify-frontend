@@ -20190,5 +20190,38 @@
         "title": "dali spring"
       }
     }
+  },
+  {
+    "id": "template-travel-beijing-4-17-4-23",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-beijing-4-17-4-23.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-beijing-4-17-4-23-prev.jpg"
+    },
+    "params": {
+      "date_range": "4/17-4/23",
+      "destination": "Beijing"
+    },
+    "locales": {
+      "en": {
+        "title": "4/17-4/23"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-indian-cuisine",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-indian-cuisine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-indian-cuisine-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "Indian Cuisine"
+    },
+    "locales": {
+      "en": {
+        "title": "Indian Cuisine"
+      }
+    }
   }
 ]
