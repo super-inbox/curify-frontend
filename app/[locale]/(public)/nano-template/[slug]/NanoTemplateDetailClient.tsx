@@ -1,9 +1,12 @@
 "use client";
 
+import { useCallback } from "react";
 import { useTranslations } from "next-intl";
+import { useAtomValue, useSetAtom } from "jotai";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 import ReproduceTemplateSection, { type SampleImage } from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
@@ -39,7 +42,13 @@ export default function NanoTemplateDetailClient(props: {
     sampleImage,
   } = props;
 
-  const requireAuth = () => true;
+  const user = useAtomValue(userAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const requireAuth = useCallback(() => {
+    if (user) return true;
+    setDrawerState("signin");
+    return false;
+  }, [user, setDrawerState]);
   const onViewClick = () => {};
 
   const shouldShowReproduce = showReproduce && !!template;
