@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Wand2, Sparkles, Download } from "lucide-react";
+import { Wand2, Sparkles, Download, Bookmark } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useAtom } from "jotai";
 
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
-import { useTracking, type TrackingTarget } from "@/services/useTracking";
+import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
@@ -42,6 +42,16 @@ type BatchDownloadConfig = {
   templateId: string;
 };
 
+type SaveConfig = {
+  enabled: boolean;
+};
+
+type DownloadConfig = {
+  enabled: boolean;
+  url: string;
+  filename?: string;
+};
+
 type DirectGenerateConfig = {
   enabled: boolean;
   templateId: string;
@@ -62,6 +72,8 @@ type Props = {
   copy?: CopyConfig;
   share?: ShareConfig;
   batchDownload?: BatchDownloadConfig;
+  save?: SaveConfig;
+  download?: DownloadConfig;
 };
 
 function visible<T extends { enabled: boolean } | undefined>(
@@ -79,8 +91,11 @@ export default function UnifiedActionBar({
   copy,
   share,
   batchDownload,
+  save,
+  download,
 }: Props) {
   const { trackAction } = useTracking();
+  const trackSave = useSaveTracking(tracking.contentId, tracking.contentType, tracking.viewMode);
   const t = useTranslations("actionButtons");
 
   const [user] = useAtom(userAtom);
@@ -90,6 +105,17 @@ export default function UnifiedActionBar({
   const [generated, setGenerated] = useState(false);
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
   const [isDirectGenerating, setIsDirectGenerating] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    if (!save) return;
+    if (!user) {
+      setDrawerState("signin");
+      return;
+    }
+    trackSave();
+    setSaved((prev) => !prev);
+  };
 
   const handleGenerate = async () => {
     if (!generate) return;
@@ -260,6 +286,38 @@ export default function UnifiedActionBar({
             <span className="ml-1 text-xs opacity-80">🔒</span>
           )}
         </button>
+      )}
+
+      {visible(save) && (
+        <button
+          onClick={handleSave}
+          type="button"
+          className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold cursor-pointer transition-colors ${
+            saved
+              ? "border-purple-300 bg-purple-50 text-purple-700"
+              : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50"
+          }`}
+        >
+          <Bookmark className={`h-4 w-4 ${saved ? "fill-current" : ""}`} />
+          {saved ? t("saved") : t("save")}
+          {clientMounted && !user && (
+            <span className="ml-1 text-xs opacity-60">🔒</span>
+          )}
+        </button>
+      )}
+
+      {visible(download) && (
+        <a
+          href={download.url}
+          download={download.filename ?? true}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackAction(tracking, "download")}
+          className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 cursor-pointer"
+        >
+          <Download className="h-4 w-4" />
+          {t("download")}
+        </a>
       )}
     </div>
   );

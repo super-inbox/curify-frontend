@@ -44,6 +44,7 @@ export default function ReproduceTemplateSection(props: {
   const [showFullPrompt, setShowFullPrompt] = useState(false);
   const [duplicateWarning, setDuplicateWarning] = useState<{ exampleId: string; score: number } | null>(null);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
+  const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
 
   useEffect(() => {
     const next: Record<string, any> = {};
@@ -83,6 +84,7 @@ export default function ReproduceTemplateSection(props: {
   const onChange = (name: string, value: any) => {
     setDuplicateWarning(null);
     setGeneratedImageUrl(null);
+    setGeneratedExampleId(null);
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -264,51 +266,50 @@ export default function ReproduceTemplateSection(props: {
                   }
                   return true;
                 },
-                onGenerateSuccess: (signedUrl: string) => setGeneratedImageUrl(signedUrl),
+                onGenerateSuccess: (signedUrl: string) => {
+                  setGeneratedImageUrl(signedUrl);
+                  setGeneratedExampleId(buildExampleId(template.template_id, form as Record<string, string>));
+                },
               } : undefined}
-              copy={{
-                enabled: true,
-                text: promptText,
-              }}
-              share={{
-                enabled: true,
-                url: shareUrl,
-                title: template.template_id,
-                text: "Try this Nano Banana template",
-              }}
-              batchDownload={{
-                enabled: !!template.batch,
-                templateId: template.template_id,
-              }}
             />
           </div>
 
-          {/* Right: prompt preview, replaced by generated image after generation */}
-          <div className="lg:col-span-7">
+          {/* Right: prompt preview / generated image + action buttons */}
+          <div className="lg:col-span-7 flex flex-col gap-3">
             {generatedImageUrl ? (
-              <div>
+              <>
                 <CdnImage
                   src={generatedImageUrl}
                   alt="Generated result"
                   className="max-h-[400px] w-auto rounded-3xl border border-neutral-200 object-cover"
                 />
-                <div className="mt-2 flex justify-end">
-                  <a
-                    href={generatedImageUrl}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-purple-600 hover:text-purple-700"
-                  >
-                    Download
-                  </a>
-                </div>
-              </div>
+                <UnifiedActionBar
+                  tracking={{
+                    contentId: template.template_id,
+                    contentType: "nano_inspiration",
+                    viewMode: "cards",
+                  }}
+                  remix={generatedExampleId ? {
+                    enabled: true,
+                    href: exampleUrl(generatedExampleId),
+                  } : undefined}
+                  download={{
+                    enabled: true,
+                    url: generatedImageUrl,
+                  }}
+                  share={{
+                    enabled: true,
+                    url: shareUrl,
+                    title: template.template_id,
+                    text: "Try this Nano Banana template",
+                  }}
+                />
+              </>
             ) : (
               <>
                 {/* Block 1: empty parameters */}
                 {emptyParams.length > 0 && (
-                  <div className="mb-3 flex items-start gap-3 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700">
+                  <div className="flex items-start gap-3 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700">
                     <span className="mt-0.5 shrink-0">📝</span>
                     <span>
                       Please fill in{" "}
@@ -322,7 +323,7 @@ export default function ReproduceTemplateSection(props: {
 
                 {/* Block 2: duplicate warning */}
                 {duplicateWarning && (
-                  <div className="mb-3 flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                  <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
                     <span className="mt-0.5 shrink-0">⚠️</span>
                     <span>
                       A very similar image already exists ({Math.round(duplicateWarning.score * 100)}% match).{" "}
@@ -345,6 +346,7 @@ export default function ReproduceTemplateSection(props: {
                     </span>
                   </div>
                 )}
+
                 <div className="rounded-xl bg-neutral-50 p-4">
                   <div className="mb-2 text-xs font-bold uppercase tracking-wider text-neutral-600">
                     {t("reproduce.previewLabel")}
@@ -364,6 +366,29 @@ export default function ReproduceTemplateSection(props: {
                     </div>
                   )}
                 </div>
+
+                <UnifiedActionBar
+                  tracking={{
+                    contentId: template.template_id,
+                    contentType: "nano_inspiration",
+                    viewMode: "cards",
+                  }}
+                  copy={{
+                    enabled: true,
+                    text: promptText,
+                  }}
+                  save={{ enabled: true }}
+                  share={{
+                    enabled: true,
+                    url: shareUrl,
+                    title: template.template_id,
+                    text: "Try this Nano Banana template",
+                  }}
+                  batchDownload={{
+                    enabled: !!template.batch,
+                    templateId: template.template_id,
+                  }}
+                />
               </>
             )}
           </div>
