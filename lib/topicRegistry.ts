@@ -51,14 +51,14 @@ function normalizeTopicValues(value: unknown): string[] {
 // Explicit sibling groups for tag-style topics (geo, language pairs).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
-  ["spain", "france", "india", "japan", "korea", "thailand", "mexico"],
+  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico"],
+  lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
 };
 
