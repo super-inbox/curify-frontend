@@ -146,9 +146,9 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
+      <section className="mx-auto max-w-[1280px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-5xl">
+        <div>
           {topicDescription ? (
             <p className="mt-3 text-base leading-7 text-neutral-600">
               {topicDescription}
