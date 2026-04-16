@@ -3,6 +3,7 @@ import { apiClient } from "./api";
 export interface NanoGenerateRequest {
   template_id: string;
   params: Record<string, string>;
+  example_id: string;
 }
 
 export interface NanoGenerateResponse {

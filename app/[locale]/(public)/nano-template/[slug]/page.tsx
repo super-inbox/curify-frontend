@@ -185,6 +185,11 @@ export default async function NanoTemplatePage({ params }: Props) {
         .filter((v) => v.params && Object.keys(v.params).length > 0)
         .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),
     }}
+    sampleImage={imageViews[0] ? {
+      url: imageViews[0].image_url,
+      previewUrl: imageViews[0].preview_image_url ?? imageViews[0].image_url,
+      alt: template.template_id,
+    } : undefined}
     otherNanoCards={otherNanoCards}
     showReproduce={true}
     showOtherTemplates={false}

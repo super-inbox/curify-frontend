@@ -6382,7 +6382,8 @@
     "topics": [
       "lifestyle"
     ],
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-cuisine-food-vocab-poster",
@@ -6471,7 +6472,8 @@
       "food",
       "product"
     ],
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-warmup-routine",
@@ -6501,7 +6503,8 @@
     "topics": [
       "lifestyle",
       "fitness"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-group-vocab-category",
@@ -6618,7 +6621,8 @@
     "topics": [
       "learning",
       "culture"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-soft-decoration-design-guide",
@@ -6691,7 +6695,8 @@
       "interior",
       "design"
     ],
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-stick-figure-vocab",
@@ -6941,7 +6946,8 @@
       "design"
     ],
     "base_rank_score": 90,
-    "rank_score": 90
+    "rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-financial-habit-infographic-poster",
@@ -6969,7 +6975,8 @@
       "lifestyle"
     ],
     "base_rank_score": 90,
-    "rank_score": 90
+    "rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-bilingual-object-structure-labeling",
@@ -6999,7 +7006,8 @@
       "vocabulary"
     ],
     "base_rank_score": 90,
-    "rank_score": 90
+    "rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-mood-board-interior-designgenerator",

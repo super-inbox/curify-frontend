@@ -46,8 +46,11 @@ type DirectGenerateConfig = {
   enabled: boolean;
   templateId: string;
   params: Record<string, string>;
+  exampleId: string;
   /** Return false to abort generation (e.g. duplicate check). */
   onBeforeGenerate?: () => boolean | Promise<boolean>;
+  /** Called with the signed URL when generation succeeds. */
+  onGenerateSuccess?: (signedUrl: string) => void;
 };
 
 type Props = {
@@ -128,13 +131,18 @@ export default function UnifiedActionBar({
       const res = await nanoGenerateService.generate({
         template_id: directGenerate.templateId,
         params: directGenerate.params,
+        example_id: directGenerate.exampleId,
       });
 
       if (!res?.success || !res?.signed_url) {
         throw new Error(res?.message || "Generation failed");
       }
 
-      window.open(res.signed_url, "_blank", "noopener,noreferrer");
+      if (directGenerate.onGenerateSuccess) {
+        directGenerate.onGenerateSuccess(res.signed_url);
+      } else {
+        window.open(res.signed_url, "_blank", "noopener,noreferrer");
+      }
     } catch (error) {
       console.error("Direct generate failed:", error);
       alert(t("generateFailed"));
