@@ -7069,5 +7069,101 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "requires_image_upload": true
-  }
+  },
+  {
+    "id": "template-pain-relief-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "（Yoga Pain Relief Infographic Designer）You are a professional yoga and anatomy infographic designer, specializing in creating clear, educational yoga pose posters for pain relief. Based on the user-specified {pain_area}, generate a vertical premium yoga pain relief infographic, matching the professional, anatomical aesthetic of the reference images. Layout: 1. Header: Large bold title \"{pain_area} PAIN\", subtitle \"WITH THESE ✅ EASY YOGA POSES\", Curify watermark at top left, orange header bar. 2. Pose Grid: 6 yoga poses in 3×2 grid, each with bold pose name, clear rep/breath count, anatomical illustration with highlighted working muscles. 3. Background: Soft purple-to-orange gradient with subtle mandala patterns, central \"ARJUN YOGA\" watermark. Style: Accurate anatomical muscle highlighting, clear pose illustrations, consistent typography, vertical format, 4K ultra HD, direct image generation. Subject: {pain_area} Pain Relief Yoga Poses Infographic.",
+            "parameters": [
+                {
+                    "name": "pain_area",
+                    "label": "Pain Area",
+                    "type": "text",
+                    "placeholder": [
+                        "BACK",
+                        "KNEE",
+                        "LOWER BACK",
+                        "NECK",
+                        "SHOULDER",
+                        "HIP",
+                        "WRIST"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-pain-relief-infographic-back-pain-yoga-prev.jpg"
+},
+  {
+    "id": "template-equipment-muscle-guide",
+    "locales": {
+        "en": {
+            "base_prompt": "（Fitness Equipment Muscle Guide Designer）You are a professional fitness anatomy infographic designer, specializing in creating clear, educational gym equipment muscle activation guides. Based on the user-specified {equipment_name}, generate a premium fitness infographic, matching the professional, anatomical aesthetic of the reference images. Layout: 1. Structure: Clean white background, Curify watermark at bottom right, 2x2 grid layout. 2. Panel: Bold title \"{equipment_name}\", left: accurate vector illustration of the exercise, right: anatomical muscle diagram with target muscles highlighted, clear muscle labels. Style: Professional vector art, accurate muscle anatomy, clear typography, 4K ultra HD, direct image generation. Subject: {equipment_name} Fitness Equipment Muscle Activation Guide.",
+            "parameters": [
+                {
+                    "name": "equipment_name",
+                    "label": "Fitness Equipment Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Smith Machine Squat",
+                        "Leg Extension Machine",
+                        "Hack Squat Machine",
+                        "Leg Press Machine",
+                        "Lat Pulldown Machine"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-equipment-muscle-guide-leg-press-lat-pulldown-chest-press-cable-row-prev.jpg"
+},
+  {
+    "id": "template-kids-vocabulary-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "（Kids Educational Vocabulary Poster Designer）You are a professional educational vocabulary poster designer, specializing in creating clean, bilingual (English-Chinese) watercolor vocabulary charts for kids. Based on the user-specified {theme_name}, generate a vertical premium educational vocabulary poster, matching the soft, cute watercolor aesthetic of the reference images. Layout: 1. Header: Curify watermark at top left, clean white background. 2. Vocabulary Grid: Neatly arranged grid of vocabulary items, each with high-quality watercolor illustration, bold English word, IPA phonetic transcription, and Chinese translation. Style: Soft gentle watercolor style, bright friendly colors, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: {theme_name} Educational Vocabulary Poster.",
+            "parameters": [
+                {
+                    "name": "theme_name",
+                    "label": "Vocabulary Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Sea Animals",
+                        "Insects",
+                        "Vegetables",
+                        "Fruits",
+                        "Animals",
+                        "Clothes",
+                        "Food"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg"
+},
+  {
+    "id": "template-beauty-step-by-step-guide",
+    "locales": {
+        "en": {
+            "base_prompt": "（Beauty Step-by-Step Guide Poster Designer）You are a professional beauty and lifestyle step-by-step infographic designer. Based on the user-specified {tutorial_theme}, generate a vertical premium step-by-step guide poster, matching the soft, clean cartoon aesthetic of the reference images. Layout: 1. Header: Large elegant title \"{tutorial_theme} STEP BY STEP\", Curify watermark at bottom right. 2. Step Grid: 9 main steps in 3×3 grid, each with numbered label, bold step title, cartoon illustration of the step, and corresponding tools/items shown. 2 bonus steps at the bottom. Style: Soft pastel color palette, warm friendly cartoon illustrations, clean modern typography, light sparkly background, vertical format, 4K ultra HD, direct image generation. Subject: {tutorial_theme} Step-by-Step Guide Poster.",
+            "parameters": [
+                {
+                    "name": "tutorial_theme",
+                    "label": "Tutorial Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Skincare Routine",
+                        "Hairstyle Tutorial",
+                        "Nail Art",
+                        "Outfit Styling",
+                        "Makeup Tutorial"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-beauty-step-by-step-guide-hairstyle-tutorial-prev.jpg"
+}
 ]
