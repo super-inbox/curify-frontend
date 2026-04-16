@@ -272,6 +272,6 @@ export function useSaveTracking(
   const { trackAction } = useTracking();
 
   return useCallback(() => {
-    trackAction({ contentId, contentType, viewMode }, "save");
+    trackAction({ contentId, contentType, viewMode }, "favorite");
   }, [contentId, contentType, viewMode, trackAction]);
 }
