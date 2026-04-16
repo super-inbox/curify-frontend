@@ -22,7 +22,7 @@ export default function BlogContent() {
         </div>
         <div className="mt-6">
           <CdnImage 
-            src="/images/visuallearningtool.webp" 
+            src="/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg" 
             alt={t('heroImageAlt')}
             width={800}
             height={400}

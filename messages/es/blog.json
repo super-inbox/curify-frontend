@@ -232,7 +232,7 @@
         "date": "29 de marzo de 2026",
         "readTime": "15 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/lipsynctechnicaldeepdive.webp"
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
       },
       {
         "slug": "generador-de-sugerencias-de-personajes",
@@ -240,7 +240,7 @@
         "date": "29 de marzo de 2026",
         "readTime": "15 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/templatepage.webp"
+        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg"
       },
       {
         "slug": "herramientas-de-aprendizaje-visual",
@@ -248,7 +248,7 @@
         "date": "1 de abril de 2026",
         "readTime": "10 min de lectura",
         "tag": "Herramientas de Aprendizaje",
-        "image": "/images/visuallearningtool.webp"
+        "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
       },
       {
         "slug": "mejores-herramientas-ai",
@@ -342,7 +342,7 @@
         "date": "9 de abril de 2026",
         "readTime": "12 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/minitool.webp",
+        "image": "/images/iran.webp",
         "category": "creator-tools",
         "relatedLinks": [
           "sistema-de-produccion-de-contenido-ai",
@@ -363,6 +363,22 @@
           "ecosistema-de-prompts-nano-banana",
           "sitios-web-de-herramientas-ai-creativas"
         ]
+      },
+      {
+        "slug": "emotion-tts-movie",
+        "title": "Película Emotion TTS: Haz que tus narrativas suenen más emocionales",
+        "date": "13 de abril de 2026",
+        "readTime": "15 min de lectura",
+        "tag": "Herramientas para Creadores",
+        "image": "/images/voices2.webp"
+      },
+      {
+        "slug": "curify-ai-growth-engine",
+        "title": "El Motor de Crecimiento AI de Curify: Transformando la Creación de Contenido para Creadores de UGC y Marketers",
+        "date": "13 de abril de 2026",
+        "readTime": "12 min de lectura",
+        "tag": "Plataforma AI",
+        "image": "/images/growthengine.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -1227,7 +1243,7 @@
       "publishedDate": "",
       "readTime": "8 mins",
       "category": "herramientas-para-creadores",
-      "heroImageAlt": "/images/templatepage.webp",
+      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
       "whatWeHave": {
         "title": "Lo Que Tenemos",
         "description": "Un conjunto completo de herramientas de generación de personajes con profundidad psicológica y consistencia visual.",
@@ -2460,9 +2476,17 @@
           "title": "Para Padres",
           "description": "Ayuda a tus hijos a aprender con contenido visual y bilingüe que hace que la educación sea divertida y efectiva"
         },
-        "eslLearners": {
-          "title": "Para Educadores de ESL",
+        "eslCreators": {
+          "title": "Creadores de ESL",
           "description": "Crea materiales de aprendizaje de idiomas atractivos que los estudiantes realmente quieran usar y compartir"
+        },
+        "educationalCreators": {
+          "title": "Creadores Educativos",
+          "description": "Construye tu marca con contenido educativo que a la audiencia le encanta compartir y con el que interactuar"
+        },
+        "teachers": {
+          "title": "Maestros",
+          "description": "Ayuda a tus estudiantes a aprender con contenido visual y bilingüe que hace que la educación sea divertida y efectiva"
         }
       },
       "whyMatters": {
@@ -2769,7 +2793,218 @@
       "practice2Title": "Define Tu Audiencia",
       "practice2Content": "Especifica tu audiencia objetivo y el tono deseado para asegurar que la narrativa coincida con tus objetivos de comunicación.",
       "practice3Title": "Optimiza para la Plataforma",
-      "practice3Content": "Considera la plataforma de salida y los requisitos de formato para asegurar una experiencia de visualización óptima."
+      "practice3Content": "Considera la plataforma de salida y los requisitos de formato para asegurar una experiencia de visualización óptima.",
+      "publishedDate": "9 de abril de 2026",
+      "category": "Herramientas para Creadores",
+      "introTitle": "Transforma Imágenes Estáticas en Videos Narrativos Dinámicos",
+      "introContent": "Transforma imágenes estáticas en videos narrativos atractivos con narración impulsada por IA. Nuestra innovadora mini-herramienta analiza contenido visual y genera tramas coherentes, creando contenido de video atractivo que cierra la brecha entre imágenes estáticas y contenido de video dinámico. Perfecto para contenido educativo, campañas de marketing y proyectos creativos.",
+      "whatItDoes": {
+        "title": "Qué Hace Esta Herramienta de Video de Imagen a Narrativa",
+        "content": "Esta innovadora herramienta de IA transforma imágenes estáticas en videos narrativos atractivos al analizar contenido visual y generar tramas coherentes. Utiliza visión por computadora avanzada para identificar objetos, escenas y emociones, y luego crea narración natural y efectos visuales para dar vida a las imágenes fijas.",
+        "coreFeatures": {
+          "title": "Capacidades Clave",
+          "items": [
+            "🖼️: Análisis Visual - Visión por computadora avanzada para identificar objetos, escenas y emociones",
+            "📝: Generación de Narrativas - Creación de tramas impulsada por IA con flujo coherente",
+            "🎬: Composición de Video - Transiciones automáticas de escenas y efectos de movimiento",
+            "🎙️: Narración de Voz - Síntesis de voz natural con sincronización perfecta",
+            "⚡: Procesamiento con Un Clic - Transforma imágenes en videos en segundos"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "Cómo Funciona el Proceso de Video de Imagen a Narrativa",
+        "intro": "La herramienta sigue un sofisticado proceso de cuatro pasos que transforma imágenes estáticas en videos narrativos atractivos con narración impulsada por IA y calidad de producción profesional.",
+        "steps": [
+          {
+            "icon": "🖼️",
+            "title": "Análisis de Imagen",
+            "description": "La IA analiza las imágenes de entrada para identificar objetos, escenas, emociones y elementos contextuales que formarán la base narrativa.",
+            "technical": {
+              "title": "Procesamiento de Visión por Computadora",
+              "description": "Utiliza modelos avanzados de visión por computadora para detectar patrones visuales, relaciones espaciales y significado semántico dentro de las imágenes."
+            }
+          },
+          {
+            "icon": "📝",
+            "title": "Generación de Historia",
+            "description": "La IA crea un guion narrativo coherente que conecta los elementos visuales en una historia atractiva con flujo natural.",
+            "technical": {
+              "title": "Motor de IA Narrativa",
+              "description": "Aprovecha grandes modelos de lenguaje entrenados en técnicas de narración para generar narrativas contextualmente apropiadas."
+            }
+          },
+          {
+            "icon": "🎬",
+            "title": "Composición de Video",
+            "description": "Combina imágenes originales con efectos de movimiento, transiciones y temporización para crear secuencias de video dinámicas.",
+            "technical": {
+              "title": "Pipeline de Renderizado de Video",
+              "description": "Aplica técnicas cinematográficas que incluyen paneo, zoom y efectos de transición para dar vida a las imágenes estáticas."
+            }
+          },
+          {
+            "icon": "🎙️",
+            "title": "Integración de Audio",
+            "description": "Agrega narración de voz profesional, música de fondo y efectos de sonido sincronizados con la línea de tiempo visual.",
+            "technical": {
+              "title": "Síntesis de Audio",
+              "description": "Utiliza tecnología de texto a voz con entonación emocional y sincronización perfecta."
+            }
+          }
+        ]
+      },
+      "technicalBreakdown": {
+        "title": "Desglose Técnico",
+        "aiComponents": {
+          "title": "Componentes de IA",
+          "items": [
+            "Modelos de Visión por Computadora para análisis de imágenes",
+            "Procesamiento de Lenguaje Natural para generación de narrativas",
+            "Motores de Texto a Voz para síntesis de voz",
+            "Pipeline de renderizado de video para composición"
+          ]
+        },
+        "pipeline": {
+          "title": "Pipeline de Procesamiento",
+          "items": [
+            "Preprocesamiento y mejora de imágenes",
+            "Detección de objetos y escenas",
+            "Generación de guion narrativo",
+            "Composición y renderizado de video",
+            "Sincronización de audio y salida final"
+          ]
+        }
+      },
+      "useCases": {
+        "title": "Casos de Uso",
+        "educational": {
+          "title": "Contenido Educativo",
+          "description": "Transforma materiales educativos en lecciones en video atractivas",
+          "examples": [
+            "Videos de línea de tiempo histórica a partir de ilustraciones de libros de texto",
+            "Explicaciones de conceptos científicos a partir de diagramas",
+            "Aprendizaje de idiomas con narración visual",
+            "Guías de resolución de problemas matemáticos"
+          ]
+        },
+        "marketing": {
+          "title": "Marketing y Publicidad",
+          "description": "Crea contenido en video atractivo para campañas de marketing",
+          "examples": [
+            "Videos de presentación de productos con narración",
+            "Narrativas de la historia de la marca a partir de fotos de la empresa",
+            "Visualizaciones del viaje del cliente",
+            "Contenido promocional para redes sociales"
+          ]
+        },
+        "creative": {
+          "title": "Proyectos Creativos",
+          "description": "Creación de contenido en video artístico y creativo",
+          "examples": [
+            "Narración digital a partir de ilustraciones",
+            "Animaciones de tiras cómicas",
+            "Presentaciones de portafolios de arte",
+            "Videos de narración personal"
+          ]
+        }
+      },
+      "codeExample": {
+        "title": "Ejemplo de Código",
+        "intro": "Así es como usar la API de video de imagen a narrativa:",
+        "codeSnippet": "const result = await imageToNarrativeVideo({ imageUrl: \\\"path/to/image.jpg\\\", narrationStyle: \\\"educational\\\", outputFormat: \\\"mp4\\\" });",
+        "explanations": [
+          "Subir: Proporciona la URL o archivo de imagen",
+          "Configurar: Elige el estilo de narración y el formato de salida",
+          "Generar: La IA procesa y crea el video",
+          "Descargar: Obtén tu video narrativo final"
+        ]
+      },
+      "advantages": {
+        "title": "Ventajas",
+        "speed": {
+          "title": "Rápido como un rayo",
+          "description": "Genera videos en minutos, no en horas"
+        },
+        "intelligence": {
+          "title": "Impulsado por IA",
+          "description": "Generación de narrativas inteligentes con comprensión contextual"
+        },
+        "scalability": {
+          "title": "Ilimitado",
+          "description": "Procesa tantas imágenes como necesites"
+        },
+        "keyBenefits": {
+          "title": "Beneficios Clave",
+          "items": [
+            "No se requiere experiencia en edición de video",
+            "Calidad consistente en todos los videos",
+            "Soporte para múltiples idiomas",
+            "Estilos de narración personalizables",
+            "Salida de alta resolución",
+            "Tiempos de procesamiento rápidos"
+          ]
+        }
+      },
+      "gettingStarted": {
+        "title": "Comenzando",
+        "stepsTitle": "Pasos Rápidos para Comenzar",
+        "steps": [
+          "Subir: Elige tus archivos de imagen",
+          "Configurar: Establece preferencias de narración",
+          "Generar: Haz clic en crear y espera el procesamiento",
+          "Descargar: Obtén tu archivo de video"
+        ],
+        "prerequisites": {
+          "title": "Requisitos Previos",
+          "items": [
+            "Archivos de imagen (JPG, PNG, WebP)",
+            "Conexión a Internet",
+            "Cuenta válida o clave API",
+            "Espacio de almacenamiento suficiente"
+          ]
+        }
+      },
+      "results": {
+        "title": "Resultados",
+        "intro": "Ve lo que puedes crear con nuestra herramienta de video de imagen a narrativa:",
+        "output1": {
+          "title": "Salida de Video",
+          "description": "Video MP4 de alta calidad con narración",
+          "specs": "1080p, 30fps, codificación H.264"
+        },
+        "output2": {
+          "title": "Calidad de Audio",
+          "description": "Narración de voz profesional",
+          "specs": "44.1kHz, Estéreo, Voz clara"
+        },
+        "caption": "Salida de muestra de la herramienta de Video de Imagen a Narrativa"
+      },
+      "future": {
+        "title": "Desarrollos Futuros",
+        "content": "Estamos mejorando continuamente nuestra tecnología de video de imagen a narrativa con nuevas características y capacidades.",
+        "roadmap": {
+          "title": "Funciones Próximas",
+          "items": [
+            "Soporte para múltiples imágenes en videos más largos",
+            "Personalización avanzada de voz",
+            "Funcionalidad de vista previa en tiempo real",
+            "Integración con plataformas populares"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "Video AI",
+          "Procesamiento de Imágenes",
+          "Generación de Narrativas",
+          "Creación de Contenido",
+          "Automatización"
+        ],
+        "questions": "¿Tienes preguntas sobre videos de imagen a narrativa?",
+        "contactLink": "/contacto",
+        "contactText": "Contáctanos"
+      }
     },
     "whatIsInfographics": {
       "title": "¿Qué son las Infografías y Cómo se Pueden Usar las Tarjetas Infográficas?",
@@ -2924,6 +3159,483 @@
       "ctaText": "¿Listo para crear infografías de series impresionantes?",
       "ctaLink": "Prueba el Generador de Infografías de Series de Nano Banana",
       "seoKeywords": "infografías de series, Google NotebookLM, aprendizaje visual, aprendizaje de audio, creación de contenido, herramientas de IA, contenido educativo, diseño de infografías, generación de podcasts, estrategia de contenido"
+    },
+    "emotionTtsMovie": {
+      "title": "Película TTS Emocional: Haz que tus Narrativas Suenen Más Emocionales",
+      "publishedDate": "13 de abril de 2026",
+      "readTime": "15 min de lectura",
+      "category": "Herramientas para Creadores",
+      "introTitle": "Transforma Narrativas Planas en Obras Maestras Emocionales",
+      "introContent": "¿Y si tu narración en video pudiera transmitir no solo información, sino emoción genuina? Nuestra herramienta TTS mejorada por emociones toma contenido de video existente y lo potencia con síntesis de voz emocionalmente expresiva y de alta energía. Usando el marcado SSML avanzado de Azure Cognitive Services y la transcripción de ElevenLabs, esta herramienta transforma narraciones planas y monótonas en actuaciones cautivadoras y emocionalmente resonantes que cautivan al público.",
+      "whatItDoes": {
+        "title": "Qué Hace Esta Herramienta de Mejora Emocional",
+        "content": "Esta herramienta de Python representa un avance en la postproducción de audio: extrae audio de videos existentes, lo transcribe con precisión y luego re-sintetiza cada segmento con inteligencia emocional. El resultado es una nueva pista de audio que mantiene un perfecto lip-sync mientras añade expresión dramática, energía y matices emocionales que eran imposibles con sistemas TTS tradicionales.",
+        "coreFeatures": {
+          "title": "Capacidades Clave",
+          "items": [
+            "🎭: Generación de SSML Emocional - Marcado avanzado para síntesis de voz expresiva",
+            "🔊: Perfiles de Voz de Alta Energía - Entrega animada al estilo publicitario",
+            "🧠: Transcripción Inteligente - ElevenLabs Scribe con temporización a nivel de palabra",
+            "🎬: Perfecto Lip-Sync - Mantiene la sincronización y el tiempo originales del video",
+            "⚡: Procesamiento por Lotes - Maneja múltiples segmentos con emoción consistente"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "Cómo Funciona el Proceso Emocional",
+        "intro": "La herramienta sigue un sofisticado proceso de seis pasos que transforma narraciones planas en actuaciones emocionalmente atractivas mientras mantiene una perfecta sincronización técnica.",
+        "steps": [
+          {
+            "icon": "📥",
+            "title": "Extracción de Audio",
+            "description": "Extrae audio de alta calidad de videos MP4 existentes usando MoviePy, preservando el tiempo y la calidad originales.",
+            "technical": {
+              "title": "Proceso de Extracción de Audio",
+              "description": "Usa MoviePy para extraer audio PCM con configuraciones de códec adecuadas para máxima compatibilidad.",
+              "code": "clip = VideoFileClip(video_path)\nclip.audio.write_audiofile(audio_path, codec='pcm_s16le', logger=None)"
+            }
+          },
+          {
+            "icon": "📝",
+            "title": "Transcripción Inteligente",
+            "description": "ElevenLabs Scribe proporciona marcas de tiempo a nivel de palabra y detección de puntuación para una segmentación precisa.",
+            "technical": {
+              "title": "API de Transcripción",
+              "description": "Integración directa de API con temporización a nivel de palabra y detección automática de puntuación.",
+              "code": "resp = requests.post(ELEVENLABS_URL, headers={'xi-api-key': ELEVENLABS_KEY}, files={'file': ('audio.wav', f, 'audio/wav')}, data={'model_id': 'scribe_v1'})"
+            }
+          },
+          {
+            "icon": "🎭",
+            "title": "Construcción de SSML Emocional",
+            "description": "Convierte segmentos de texto en SSML con marcado expresivo para estilos de entrega de alta energía.",
+            "technical": {
+              "title": "Generación de SSML",
+              "description": "Construye SSML con estilo publicitario_optimista, controles de velocidad/tono/volumen para expresión emocional.",
+              "code": "def build_emotional_ssml(text: str) -> str:\n    return f'''&lt;speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'&gt;\n  &lt;voice name='{voice}'&gt;\n    &lt;mstts:express-as style='advertisement_upbeat' styledegree='2'&gt;\n      &lt;prosody rate='+15%' pitch='+8%' volume='+15%'&gt;\n        {escaped}\n      &lt;/prosody&gt;\n    &lt;/mstts:express-as&gt;\n  &lt;/voice&gt;\n&lt;/speak&gt;'''"
+            }
+          },
+          {
+            "icon": "🔊",
+            "title": "Síntesis TTS de Azure",
+            "description": "Azure Cognitive Services genera audio emocional de alta calidad con prosodia y expresión natural.",
+            "technical": {
+              "title": "API TTS de Azure",
+              "description": "Usa el TTS neural de Azure con soporte SSML para síntesis de voz expresiva.",
+              "code": "headers = {'Ocp-Apim-Subscription-Key': AZURE_API_KEY, 'Content-Type': 'application/ssml+xml', 'X-Microsoft-OutputFormat': 'riff-24khz-16bit-mono-pcm'}\nresp = requests.post(AZURE_TTS_URL, headers=headers, data=ssml.encode('utf-8'), timeout=30)"
+            }
+          },
+          {
+            "icon": "🔗",
+            "title": "Concatenación de Audio",
+            "description": "Combina segmentos emocionales individuales en una única pista de audio continua.",
+            "technical": {
+              "title": "Concatenación de WAV",
+              "description": "Preserva los parámetros de audio mientras concatena múltiples archivos WAV en la pista final.",
+              "code": "def concat_wavs(wav_paths: list[str], out_path: str) -> None:\n    params = None\n    frames = []\n    for p in wav_paths:\n        if not os.path.exists(p):\n            continue\n        with wave.open(p, 'rb') as wf:\n            if params is None:\n                params = wf.getparams()\n            frames.append(wf.readframes(wf.getnframes()))\n    if not frames:\n        logger.warning('No hay frames WAV para concatenar.')\n        return\n    with wave.open(out_path, 'wb') as out_wf:\n        out_wf.setparams(params)\n        for f in frames:\n            out_wf.writeframes(f)"
+            }
+          },
+          {
+            "icon": "🎬",
+            "title": "Muxing de Video",
+            "description": "Reemplaza el audio original con una pista emocional mientras se preserva la calidad del video.",
+            "technical": {
+              "title": "Integración de FFmpeg",
+              "description": "Utiliza FFmpeg para muxing profesional de video/audio con coincidencia automática de duración.",
+              "code": "cmd = ['ffmpeg', '-y', '-i', video_path, '-i', audio_path, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', out_path]"
+            }
+          }
+        ]
+      },
+      "emotionalEnhancement": {
+        "title": "La Ciencia del Discurso Emocional",
+        "content": "Los sistemas TTS tradicionales producen un discurso plano y monótono que no logra captar la atención del público. Nuestra mejora emocional utiliza un marcado SSML de vanguardia y TTS neural de Azure para crear actuaciones con variación emocional natural, rango dinámico y entrega expresiva que coincide con la actuación de voz profesional.",
+        "ssml": {
+          "title": "Marcado SSML para Expresión",
+          "example": "Estilo Publicitario Optimista",
+          "code": "&lt;speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'&gt;\n  &lt;voice name='en-US-AndrewNeural'&gt;\n    &lt;mstts:express-as style='advertisement_upbeat' styledegree='2'&gt;\n      &lt;prosody rate='+15%' pitch='+8%' volume='+15%'&gt;\n        Tu texto emocional aquí\n      &lt;/prosody&gt;\n    &lt;/mstts:express-as&gt;\n  &lt;/voice&gt;\n&lt;/speak&gt;",
+          "parameters": [
+            "styledegree: Controla el nivel de intensidad (0-2, mayor = más expresivo)",
+            "rate: Ajuste de velocidad del discurso (-100% a +100%)",
+            "pitch: Modificación de tono para énfasis emocional (-50% a +50%)",
+            "volume: Control de volumen para impacto (0% a +100%)"
+          ]
+        },
+        "voiceProfile": {
+          "title": "Andrew Neural - Voz de Alta Energía",
+          "features": [
+            "Tono naturalmente expresivo perfecto para anuncios y emoción",
+            "Soporta el estilo advertisement_upbeat para máxima energía",
+            "Controles de prosodia integrados para una entrega emocional ajustada",
+            "Optimizado para contenido atractivo y de alto impacto"
+          ]
+        }
+      },
+      "technicalBreakdown": {
+        "title": "Arquitectura Técnica",
+        "aiComponents": {
+          "title": "Componentes de IA",
+          "items": [
+            "Servicios Cognitivos de Azure TTS con soporte SSML",
+            "ElevenLabs Scribe para transcripción a nivel de palabra",
+            "Segmentación de texto inteligente con detección de límites",
+            "Generación de marcado emocional con controles de estilo",
+            "Procesamiento de audio profesional y concatenación"
+          ]
+        },
+        "pipeline": {
+          "title": "Pipeline de Procesamiento",
+          "items": [
+            "Extracción de audio con MoviePy y optimización de códec",
+            "Transcripción en tiempo real con marcas de tiempo a nivel de palabra",
+            "Construcción de SSML con controles de prosodia expresiva",
+            "Síntesis TTS de Azure con modelos de voz neural",
+            "Concatenación WAV preservando parámetros de audio",
+            "Muxing de video/audio con FFmpeg y coincidencia automática de duración"
+          ]
+        }
+      },
+      "useCases": {
+        "title": "Aplicaciones del Mundo Real",
+        "filmProduction": {
+          "title": "Producción de Cine y Video",
+          "description": "Transforma la narración de documentales de una entrega plana a actuaciones emocionalmente atractivas.",
+          "examples": [
+            "Mejora de voz en off para documentales con impacto dramático",
+            "Contenido educativo con entrega emocional atractiva",
+            "Videos de marketing con narración persuasiva de alta energía"
+          ]
+        },
+        "educational": {
+          "title": "Contenido Educativo",
+          "description": "Crea materiales de aprendizaje atractivos con narración expresiva y emocionalmente resonante.",
+          "examples": [
+            "Videos de cursos en línea con énfasis emocional dinámico",
+            "Contenido educativo para niños con narración expresiva",
+            "Videos de capacitación corporativa con variación emocional atractiva"
+          ]
+        },
+        "gaming": {
+          "title": "Juegos y Medios Interactivos",
+          "description": "Agrega profundidad emocional a la narración de juegos y voces de personajes.",
+          "examples": [
+            "Actuación de voz de personajes con rango emocional y expresión",
+            "Narración de historias interactivas con entrega emocional dinámica",
+            "Videos tutoriales de juegos con énfasis emocional atractiva"
+          ]
+        },
+        "storytelling": {
+          "title": "Narración Digital",
+          "description": "Crea audiolibros e historias con actuaciones emocionales profesionales.",
+          "examples": [
+            "Producción de audiolibros con expresión emocional de personajes",
+            "Mejora de podcast con entrega emocional atractiva",
+            "Narración digital con variación emocional dinámica"
+          ]
+        }
+      },
+      "codeExample": {
+        "title": "Ejemplo de Implementación Central",
+        "intro": "Aquí está la estructura de código esencial que potencia la mejora emocional:",
+        "codeSnippet": "def main():\n    if not AZURE_API_KEY:\n        logger.error('AZURE_AI_API_KEY no está configurado. Verifica curify_background/.env')\n        sys.exit(1)\n\n    # Paso 1: Extraer audio\n    if not os.path.exists(AUDIO_PATH):\n        if not extract_audio(VIDEO_PATH, AUDIO_PATH):\n            sys.exit(1)\n\n    # Paso 2: Transcribir\n    segments = transcribe(AUDIO_PATH)\n\n    # Paso 3: TTS por segmento\n    wav_paths: list[str] = []\n    for i, seg in enumerate(segments):\n        text = seg['text'].strip()\n        if not text:\n            continue\n        out_path = os.path.join(OUTPUT_DIR, f'segment_{i:03d}.wav')\n        if os.path.exists(out_path):\n            logger.info('[%02d] Segmento WAV ya existe, omitiendo TTS.', i)\n            wav_paths.append(out_path)\n            continue\n        ssml = build_emotional_ssml(text)\n        logger.info('[%02d] Generando TTS: %s…', i, text[:60])\n        if azure_tts(ssml, out_path):\n            wav_paths.append(out_path)\n\n    # Paso 4: Concatenar\n    if not wav_paths:\n        logger.error('No se sintetizaron segmentos.')\n        sys.exit(1)\n    concat_wavs(wav_paths, FULL_WAV)\n\n    # Paso 5: Mux en el video original\n    if not mux_audio_video(VIDEO_PATH, FULL_WAV, OUTPUT_MP4):\n        sys.exit(1)\n\n    logger.info('¡Todo listo!')",
+        "explanations": [
+          "Claves API: Gestión segura de claves API de Azure y ElevenLabs",
+          "Procesamiento de Audio: Extracción con MoviePy y optimización de códec",
+          "Transcripción: ElevenLabs Scribe con segmentación inteligente",
+          "Generación TTS: TTS neural de Azure con marcado SSML emocional",
+          "Ensamblaje de Audio: Concatenación profesional de WAV preservando parámetros",
+          "Multiplexión de Video: Integración de FFmpeg para la salida final"
+        ]
+      },
+      "advantages": {
+        "title": "Por qué funciona la mejora emocional",
+        "emotional": {
+          "title": "Impacto Emocional 3X",
+          "description": "Las audiencias se conectan con contenido emocionalmente expresivo a 3 veces la tasa de una narración plana"
+        },
+        "intelligent": {
+          "title": "Expresión Potenciada por IA",
+          "description": "Detección inteligente de emociones y síntesis expresiva adecuada"
+        },
+        "automation": {
+          "title": "Escalabilidad Infinita",
+          "description": "Procesa contenido ilimitado con calidad emocional consistente"
+        },
+        "keyBenefits": {
+          "title": "Beneficios Clave",
+          "items": [
+            "Sincronización labial perfecta con el tiempo del video original",
+            "Expresión emocional natural y variación",
+            "Síntesis TTS neural de alta calidad",
+            "Segmentación de texto inteligente y detección de límites",
+            "Pipeline de procesamiento de audio profesional",
+            "Procesamiento por lotes con entrega emocional consistente"
+          ]
+        }
+      },
+      "gettingStarted": {
+        "title": "Comenzando",
+        "stepsTitle": "Guía de Inicio Rápido",
+        "steps": [
+          "Configuración: Instala dependencias y configura claves API",
+          "Preparar: Extrae audio de tu contenido de video existente",
+          "Transcribir: Usa ElevenLabs Scribe para un tiempo preciso",
+          "Mejorar: Genera TTS emocional con marcado SSML de Azure",
+          "Ensamblar: Combina segmentos y multiplexa con el video original",
+          "Desplegar: Exporta tu video mejorado emocionalmente"
+        ],
+        "prerequisites": {
+          "title": "Requisitos del Sistema",
+          "items": [
+            "Clave API de Azure AI con acceso a Servicios Cognitivos",
+            "Clave API de ElevenLabs para servicios de transcripción",
+            "Python 3.7+ con bibliotecas MoviePy y requests",
+            "FFmpeg instalado y disponible en PATH",
+            "Video MP4 existente para extracción de audio",
+            "Almacenamiento suficiente para archivos de audio intermedios"
+          ]
+        }
+      },
+      "results": {
+        "title": "Resultados Esperados",
+        "intro": "La herramienta produce videos emocionalmente mejorados que mantienen una calidad técnica perfecta mientras añaden expresividad dramática.",
+        "emotional": {
+          "title": "Salida de Audio Emocional",
+          "description": "Audio expresivo de alta energía con prosodia natural y variación emocional",
+          "specs": "TTS neural de Azure, marcado SSML, formato WAV PCM 24kHz/16bit"
+        },
+        "technical": {
+          "title": "Especificaciones Técnicas",
+          "description": "Salida de video profesional con pista de audio mejorada y perfecta sincronización",
+          "specs": "Códec de video H.264, codificación de audio AAC, coincidencia automática de duración"
+        }
+      },
+      "future": {
+        "title": "Futuro de la Mejora Emocional",
+        "content": "Estamos expandiendo las capacidades emocionales con perfiles de voz avanzados, detección de emociones en tiempo real e integración con flujos de trabajo de edición de video para una creación de contenido fluida.",
+        "roadmap": {
+          "title": "Próximamente",
+          "items": [
+            "Detección avanzada de emociones a partir del contexto de audio",
+            "Múltiples perfiles de voz y estilos emocionales",
+            "Ajuste emocional en tiempo real durante la síntesis",
+            "Integración con flujos de trabajo de edición de video",
+            "Entrenamiento de emociones personalizado para tipos de contenido específicos",
+            "Procesamiento por lotes con controles de consistencia emocional"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "TTS Emocional",
+          "Mejora de Audio",
+          "Servicios Cognitivos de Azure",
+          "ElevenLabs Scribe",
+          "Post-Producción de Video",
+          "SSML",
+          "Actuación de Voz",
+          "Automatización de Contenido"
+        ],
+        "questions": "¿Listo para transformar tu narración plana en actuaciones emocionalmente atractivas?",
+        "contactText": "Comienza la Mejora Emocional",
+        "contactLink": "https://curify.ai/contact"
+      }
+    },
+    "curifyAiGrowthEngine": {
+      "title": "El Motor de Crecimiento AI de Curify: Transformando la Creación de Contenido para Creadores de UGC y Marketers",
+      "publishedDate": "13 de abril de 2026",
+      "readTime": "12 min de lectura",
+      "category": "Plataforma AI",
+      "introTitle": "Revolucionando la Creación de Contenido con Crecimiento Impulsado por AI",
+      "introContent": "En el panorama digital actual, los creadores de contenido y los marketers enfrentan un desafío sin precedentes: producir contenido de alta calidad y atractivo a gran escala mientras mantienen la autenticidad y generan resultados comerciales reales. El Motor de Crecimiento AI de Curify representa un cambio de paradigma en cómo abordamos la creación, distribución y optimización de contenido. Este sistema integral impulsado por AI está diseñado para amplificar la creatividad, optimizar flujos de trabajo y ofrecer un crecimiento medible tanto para creadores de UGC como para profesionales del marketing.",
+      "whatIsGrowthEngine": {
+        "title": "¿Qué es el Motor de Crecimiento AI de Curify?",
+        "content": "El Motor de Crecimiento AI de Curify es una plataforma integrada que combina inteligencia artificial, aprendizaje automático y automatización para transformar cada aspecto de la creación de contenido y marketing. No es solo otra herramienta de AI: es un ecosistema completo que aprende de tu contenido, entiende a tu audiencia y optimiza continuamente tu estrategia para un impacto máximo.",
+        "coreComponents": {
+          "title": "Componentes Clave",
+          "items": [
+            "🧠: Generación de Contenido Inteligente - Creación de texto, imágenes y video impulsada por AI",
+            "📊: Análisis de Rendimiento - Perspectivas en tiempo real y análisis predictivo",
+            "🎯: Inteligencia de Audiencia - Comprensión profunda de las preferencias y comportamientos de los espectadores",
+            "⚡: Suite de Automatización - Flujos de trabajo optimizados y programación inteligente",
+            "🔄: Motor de Optimización - Mejora continua a través del aprendizaje automático"
+          ]
+        }
+      },
+      "forUgcCreators": {
+        "title": "Empoderando a los Creadores de UGC",
+        "intro": "Para los creadores de contenido generado por el usuario, el Motor de Crecimiento AI de Curify es un cambio de juego. Aborda los desafíos únicos que enfrentan los creadores independientes que necesitan competir con estudios profesionales mientras mantienen su voz auténtica.",
+        "contentScaling": {
+          "title": "Escala Tu Contenido Sin Sacrificar Calidad",
+          "description": "Produce más contenido en menos tiempo mientras mantienes el estilo y la voz únicos que ama tu audiencia.",
+          "benefits": [
+            "Genera múltiples variaciones de contenido a partir de una sola idea",
+            "Automatiza tareas tediosas de postproducción",
+            "Mantén una calidad consistente en todas las plataformas",
+            "Crea contenido en múltiples idiomas automáticamente"
+          ]
+        },
+        "creativeEnhancement": {
+          "title": "Mejora Tu Proceso Creativo",
+          "description": "Herramientas impulsadas por AI que aumentan tu creatividad en lugar de reemplazarla.",
+          "features": [
+            "Generación de ideas inteligente basada en temas en tendencia",
+            "Optimización automática de miniaturas y vistas previas",
+            "Sugerencias de edición inteligentes para un mejor compromiso",
+            "Retroalimentación y recomendaciones de rendimiento en tiempo real"
+          ]
+        },
+        "monetization": {
+          "title": "Maximiza Tu Potencial de Ingresos",
+          "description": "Convierte tu pasión en un negocio sostenible con estrategias de monetización impulsadas por AI.",
+          "opportunities": [
+            "Optimiza el contenido para mejores ingresos publicitarios",
+            "Identifica oportunidades de patrocinio automáticamente",
+            "Crea variaciones de contenido premium para plataformas de pago",
+            "Predice el potencial viral antes de publicar"
+          ]
+        }
+      },
+      "forMarketers": {
+        "title": "Potenciando Equipos de Marketing",
+        "intro": "Los profesionales del marketing pueden aprovechar el Motor de Crecimiento AI de Curify para crear campañas que resuenen, conviertan y ofrezcan un ROI medible.",
+        "dataDriven": {
+          "title": "Toma de Decisiones Basada en Datos",
+          "description": "Toma decisiones informadas con perspectivas impulsadas por AI y análisis predictivo.",
+          "capabilities": [
+            "Predice el rendimiento de la campaña antes del lanzamiento",
+            "Identifica los mejores momentos y plataformas para publicar",
+            "Analiza estrategias de competidores automáticamente",
+            "Genera informes de rendimiento detallados al instante"
+          ]
+        },
+        "automation": {
+          "title": "Automatización Inteligente",
+          "description": "Libera el tiempo de tu equipo con una automatización inteligente que maneja tareas repetitivas.",
+          "features": [
+            "Pruebas A/B automatizadas y optimización",
+            "Personalización dinámica de contenido a gran escala",
+            "Asignación inteligente de presupuesto entre campañas",
+            "Ajustes de campaña en tiempo real basados en rendimiento"
+          ]
+        },
+        "personalization": {
+          "title": "Contenido Hiper-Personalizado",
+          "description": "Crea contenido que hable directamente a los segmentos de tu audiencia objetivo.",
+          "examples": [
+            "Generación dinámica de copias publicitarias para diferentes demografías",
+            "Campañas de correo electrónico personalizadas que convierten",
+            "Contenido en redes sociales adaptado a audiencias específicas de la plataforma",
+            "Optimización de páginas de destino para diferentes segmentos de usuarios"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "Cómo Funciona el Motor de Crecimiento",
+        "steps": [
+          {
+            "icon": "📥",
+            "title": "Entrada y Análisis",
+            "description": "El sistema ingiere tu contenido existente, pautas de marca, datos de audiencia objetivo y objetivos de rendimiento para entender tus necesidades únicas.",
+            "example": {
+              "title": "Ejemplo de Entrada",
+              "content": "Sube tu guía de estilo de marca, contenido de mejor rendimiento y demografía de audiencia objetivo. La AI analiza patrones y preferencias específicas de tu nicho."
+            }
+          },
+          {
+            "icon": "🧠",
+            "title": "Procesamiento de IA",
+            "description": "Nuestros modelos avanzados de IA procesan los datos, identifican oportunidades y generan recomendaciones estratégicas adaptadas a tus objetivos.",
+            "example": {
+              "title": "Perspectivas de IA",
+              "content": "El sistema identifica que tu audiencia se involucra mejor con contenido en video de menos de 60 segundos, publicado entre las 7 y 9 PM, con imágenes detrás de escena."
+            }
+          },
+          {
+            "icon": "🎨",
+            "title": "Generación de Contenido",
+            "description": "Crea variaciones de contenido optimizadas basadas en las perspectivas de IA, manteniendo la voz de tu marca mientras maximizas el potencial de participación.",
+            "example": {
+              "title": "Contenido Generado",
+              "content": "Genera automáticamente 5 variaciones de video, 10 publicaciones en redes sociales y 3 ideas de publicaciones de blog optimizadas para tus momentos de mayor participación."
+            }
+          },
+          {
+            "icon": "📊",
+            "title": "Seguimiento de Rendimiento",
+            "description": "Monitorea métricas de rendimiento en tiempo real y ajusta automáticamente las estrategias según la respuesta de la audiencia.",
+            "example": {
+              "title": "Optimización en Tiempo Real",
+              "content": "El sistema nota un mayor compromiso con subtítulos cargados de emojis y ajusta automáticamente las publicaciones programadas restantes para coincidir con este patrón."
+            }
+          }
+        ]
+      },
+      "realWorldResults": {
+        "title": "Resultados del Mundo Real",
+        "metric1": {
+          "title": "Producción de Contenido",
+          "description": "Aumento en la producción de contenido sin recursos adicionales"
+        },
+        "metric2": {
+          "title": "Tasa de Participación",
+          "description": "Aumento promedio en la participación de la audiencia en todas las plataformas"
+        },
+        "metric3": {
+          "title": "Ahorro de Tiempo",
+          "description": "Reducción en el tiempo dedicado a la creación y optimización de contenido"
+        },
+        "case1": {
+          "title": "Historia de Éxito de YouTuber de Tecnología",
+          "description": "Un revisor de tecnología con 100K suscriptores aumentó su producción de videos de 2 a 4 videos por semana mientras hacía crecer su canal en un 40% en 3 meses.",
+          "result": "Resultado: 250% de aumento en ingresos publicitarios y 3 acuerdos de patrocinio de marca"
+        },
+        "case2": {
+          "title": "Campaña de Marca de Comercio Electrónico",
+          "description": "Una marca de moda de comercio electrónico automatizó la creación de contenido en redes sociales, resultando en un mensaje de marca consistente en todas las plataformas.",
+          "result": "Resultado: 65% de aumento en la tasa de conversión y 30% de reducción en el gasto de marketing"
+        }
+      },
+      "gettingStarted": {
+        "title": "Comenzando con el Motor de Crecimiento de IA de Curify",
+        "stepsTitle": "Tu Viaje hacia el Crecimiento Potenciado por IA",
+        "steps": [
+          "Regístrate: Crea tu cuenta y completa el cuestionario de incorporación",
+          "Conecta: Vincula tus cuentas de redes sociales y plataformas de contenido",
+          "Personaliza: Configura tus pautas de marca y preferencias de contenido",
+          "Lanza: Comienza a generar contenido optimizado por IA de inmediato",
+          "Optimiza: Monitorea el rendimiento y refina tu estrategia con el tiempo"
+        ],
+        "ctaText": "Comienza tu Prueba Gratuita Hoy",
+        "ctaLink": "https://curify.ai/signup"
+      },
+      "future": {
+        "title": "El Futuro de la Creación de Contenido",
+        "content": "El Motor de Crecimiento de IA de Curify está en constante evolución. Estamos agregando continuamente nuevas características, mejorando nuestros modelos de IA y expandiendo integraciones de plataformas para mantenernos a la vanguardia.",
+        "roadmap": {
+          "title": "Próximamente",
+          "items": [
+            "Generación de video avanzada con avatares realistas",
+            "Funciones de colaboración en tiempo real para equipos",
+            "Integración con plataformas sociales emergentes",
+            "Análisis predictivo mejorado con aprendizaje automático",
+            "Sincronización de contenido entre plataformas",
+            "Análisis de sentimientos avanzado y segmentación emocional"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "Creación de Contenido con IA",
+          "Marketing de UGC",
+          "Automatización de Contenido",
+          "Marketing Digital",
+          "Economía de Creadores"
+        ],
+        "questions": "¿Tienes preguntas sobre cómo el Motor de Crecimiento de IA de Curify puede transformar tu estrategia de contenido?",
+        "contactText": "Contacta a Nuestro Equipo",
+        "contactLink": "https://curify.ai/contact"
+      }
     }
   },
   "aeVsComfyUi": {

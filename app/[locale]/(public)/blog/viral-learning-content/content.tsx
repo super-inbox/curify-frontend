@@ -21,7 +21,7 @@ export default function BlogContent() {
         </div>
         <div className="mt-6">
           <CdnImage 
-            src="images/learnContent.webp" 
+            src="images/contentai.webp" 
             className="w-full rounded-lg shadow-lg"
             alt="Viral Learning Content"
           />

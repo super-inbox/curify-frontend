@@ -232,7 +232,7 @@
         "date": "2026年3月29日",
         "readTime": "15分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/lipsynctechnicaldeepdive.webp"
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
       },
       {
         "slug": "character-prompt-generator",
@@ -240,7 +240,7 @@
         "date": "2026年3月29日",
         "readTime": "15分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/templatepage.webp"
+        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg"
       },
       {
         "slug": "visual-learning-tools",
@@ -248,7 +248,7 @@
         "date": "2026年4月1日",
         "readTime": "10分钟阅读",
         "tag": "学习工具",
-        "image": "/images/visuallearningtool.webp"
+        "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
       },
       {
         "slug": "best-ai-tools",
@@ -342,7 +342,7 @@
         "date": "2026年4月9日",
         "readTime": "12分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/minitool.webp",
+        "image": "/images/iran.webp",
         "category": "creator-tools",
         "relatedLinks": [
           "ai-content-production-system",
@@ -363,6 +363,22 @@
           "nano-banana-prompt-ecosystem",
           "creative-ai-tools-websites"
         ]
+      },
+      {
+        "slug": "emotion-tts-movie",
+        "title": "情感 TTS 电影：让您的叙述听起来更具情感",
+        "date": "2026年4月13日",
+        "readTime": "15分钟阅读",
+        "tag": "创作者工具",
+        "image": "/images/voices2.webp"
+      },
+      {
+        "slug": "curify-ai-growth-engine",
+        "title": "Curify AI 增长引擎：为 UGC 创作者和营销人员转变内容创作",
+        "date": "2026年4月13日",
+        "readTime": "12分钟阅读",
+        "tag": "AI 平台",
+        "image": "/images/growthengine.webp"
       }
     ],
     "voiceCloningTools": {
@@ -1225,7 +1241,7 @@
       "publishedDate": "",
       "readTime": "8分钟",
       "category": "creator-tools",
-      "heroImageAlt": "/images/templatepage.webp",
+      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
       "whatWeHave": {
         "title": "我们拥有的",
         "description": "一套全面的角色生成工具，具有心理深度和视觉一致性。",
@@ -2458,9 +2474,17 @@
           "title": "针对家长",
           "description": "通过视觉双语内容帮助您的孩子学习，让教育变得有趣且有效"
         },
-        "eslLearners": {
-          "title": "针对ESL教育工作者",
+        "eslCreators": {
+          "title": "ESL创作者",
           "description": "创建学生真正想要使用和分享的引人入胜的语言学习材料"
+        },
+        "educationalCreators": {
+          "title": "教育创作者",
+          "description": "通过受众喜爱分享和互动的教育内容来建立您的品牌"
+        },
+        "teachers": {
+          "title": "教师",
+          "description": "通过视觉双语内容帮助您的学生学习，让教育变得有趣且有效"
         }
       },
       "whyMatters": {
@@ -2767,7 +2791,218 @@
       "practice2Title": "定义你的受众",
       "practice2Content": "明确你的目标受众和期望语调，以确保叙事符合你的沟通目标。",
       "practice3Title": "为平台优化",
-      "practice3Content": "考虑输出平台和格式要求，以确保最佳观看体验。"
+      "practice3Content": "考虑输出平台和格式要求，以确保最佳观看体验。",
+      "publishedDate": "2026年4月9日",
+      "category": "创作者工具",
+      "introTitle": "将静态图像转化为动态叙事视频",
+      "introContent": "通过 AI 驱动的叙事，将静态图像转化为引人入胜的叙事视频。我们的创新迷你工具分析视觉内容并生成连贯的故事情节，创造出连接静态图像和动态视频内容的引人入胜的视频内容。非常适合教育内容、营销活动和创意项目。",
+      "whatItDoes": {
+        "title": "这个图像到叙事视频工具的功能",
+        "content": "这个创新的 AI 工具通过分析视觉内容并生成连贯的故事情节，将静态图像转化为引人入胜的叙事视频。它利用先进的计算机视觉技术识别物体、场景和情感，然后创建自然的旁白和视觉效果，使静态图像栩栩如生。",
+        "coreFeatures": {
+          "title": "核心功能",
+          "items": [
+            "🖼️: 视觉分析 - 先进的计算机视觉技术识别物体、场景和情感",
+            "📝: 叙事生成 - AI 驱动的连贯故事情节创建",
+            "🎬: 视频合成 - 自动场景切换和运动效果",
+            "🎙️: 语音旁白 - 自然的语音合成与完美的时机",
+            "⚡: 一键处理 - 几秒钟内将图像转化为视频"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "图像到叙事视频的工作流程",
+        "intro": "该工具遵循复杂的四步流程，将静态图像转化为引人入胜的叙事视频，结合 AI 驱动的叙事和专业的制作质量。",
+        "steps": [
+          {
+            "icon": "🖼️",
+            "title": "图像分析",
+            "description": "AI 分析输入图像，以识别将形成叙事基础的物体、场景、情感和上下文元素。",
+            "technical": {
+              "title": "计算机视觉处理",
+              "description": "使用先进的计算机视觉模型检测图像中的视觉模式、空间关系和语义含义。"
+            }
+          },
+          {
+            "icon": "📝",
+            "title": "故事生成",
+            "description": "AI 创建一个连贯的叙事脚本，将视觉元素连接成一个引人入胜的故事，流畅自然。",
+            "technical": {
+              "title": "叙事 AI 引擎",
+              "description": "利用在叙事技巧上训练的大型语言模型生成上下文适当的叙事。"
+            }
+          },
+          {
+            "icon": "🎬",
+            "title": "视频合成",
+            "description": "将原始图像与运动效果、切换和时机结合，创建动态视频序列。",
+            "technical": {
+              "title": "视频渲染管道",
+              "description": "应用电影技术，包括平移、缩放和切换效果，使静态图像栩栩如生。"
+            }
+          },
+          {
+            "icon": "🎙️",
+            "title": "音频集成",
+            "description": "添加专业的语音旁白、背景音乐和与视觉时间线同步的音效。",
+            "technical": {
+              "title": "音频合成",
+              "description": "使用具有情感语调和完美时机同步的文本转语音技术。"
+            }
+          }
+        ]
+      },
+      "technicalBreakdown": {
+        "title": "技术细分",
+        "aiComponents": {
+          "title": "AI 组件",
+          "items": [
+            "用于图像分析的计算机视觉模型",
+            "用于叙事生成的自然语言处理",
+            "用于语音合成的文本转语音引擎",
+            "用于合成的视频渲染管道"
+          ]
+        },
+        "pipeline": {
+          "title": "处理管道",
+          "items": [
+            "图像预处理和增强",
+            "物体和场景检测",
+            "叙事脚本生成",
+            "视频合成和渲染",
+            "音频同步和最终输出"
+          ]
+        }
+      },
+      "useCases": {
+        "title": "使用案例",
+        "educational": {
+          "title": "教育内容",
+          "description": "将教育材料转化为引人入胜的视频课程",
+          "examples": [
+            "来自教科书插图的历史时间线视频",
+            "来自图表的科学概念解释",
+            "通过视觉叙事进行语言学习",
+            "数学问题演示"
+          ]
+        },
+        "marketing": {
+          "title": "市场营销与广告",
+          "description": "为营销活动创建引人注目的视频内容",
+          "examples": [
+            "带有叙事的产品展示视频",
+            "来自公司照片的品牌故事叙述",
+            "客户旅程可视化",
+            "社交媒体推广内容"
+          ]
+        },
+        "creative": {
+          "title": "创意项目",
+          "description": "艺术和创意视频内容创作",
+          "examples": [
+            "来自插图的数字叙事",
+            "漫画动画",
+            "艺术作品集展示",
+            "个人叙事视频"
+          ]
+        }
+      },
+      "codeExample": {
+        "title": "代码示例",
+        "intro": "以下是如何使用图像到叙事视频API：",
+        "codeSnippet": "const result = await imageToNarrativeVideo({ imageUrl: \\\"path/to/image.jpg\\\", narrationStyle: \\\"educational\\\", outputFormat: \\\"mp4\\\" });",
+        "explanations": [
+          "上传：提供图像URL或文件",
+          "配置：选择叙事风格和输出格式",
+          "生成：AI处理并创建视频",
+          "下载：获取最终的叙事视频"
+        ]
+      },
+      "advantages": {
+        "title": "优势",
+        "speed": {
+          "title": "闪电般快速",
+          "description": "几分钟内生成视频，而不是几个小时"
+        },
+        "intelligence": {
+          "title": "人工智能驱动",
+          "description": "智能叙事生成，具备上下文理解"
+        },
+        "scalability": {
+          "title": "无限制",
+          "description": "处理任意数量的图像"
+        },
+        "keyBenefits": {
+          "title": "主要好处",
+          "items": [
+            "无需视频编辑经验",
+            "所有视频保持一致的质量",
+            "支持多种语言",
+            "可定制的叙事风格",
+            "高分辨率输出",
+            "快速处理时间"
+          ]
+        }
+      },
+      "gettingStarted": {
+        "title": "开始使用",
+        "stepsTitle": "快速入门步骤",
+        "steps": [
+          "上传：选择您的图像文件",
+          "配置：设置叙事偏好",
+          "生成：点击创建并等待处理",
+          "下载：获取您的视频文件"
+        ],
+        "prerequisites": {
+          "title": "前提条件",
+          "items": [
+            "图像文件（JPG，PNG，WebP）",
+            "互联网连接",
+            "有效的账户或API密钥",
+            "足够的存储空间"
+          ]
+        }
+      },
+      "results": {
+        "title": "结果",
+        "intro": "看看您可以使用我们的图像到叙事视频工具创建的内容：",
+        "output1": {
+          "title": "视频输出",
+          "description": "高质量的MP4视频，带有旁白",
+          "specs": "1080p，30fps，H.264编码"
+        },
+        "output2": {
+          "title": "音频质量",
+          "description": "专业的语音旁白",
+          "specs": "44.1kHz，立体声，清晰的语音"
+        },
+        "caption": "来自图像到叙事视频工具的示例输出"
+      },
+      "future": {
+        "title": "未来发展",
+        "content": "我们正在不断改进我们的图像到叙事视频技术，增加新功能和能力。",
+        "roadmap": {
+          "title": "即将推出的功能",
+          "items": [
+            "支持多图像的更长视频",
+            "高级语音定制",
+            "实时预览功能",
+            "与热门平台的集成"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "AI 视频",
+          "图像处理",
+          "叙事生成",
+          "内容创作",
+          "自动化"
+        ],
+        "questions": "对图像到叙事视频有疑问吗？",
+        "contactLink": "/contact",
+        "contactText": "联系我们"
+      }
     },
     "whatIsInfographics": {
       "title": "什么是信息图表，信息图卡如何使用？",
@@ -2922,6 +3157,483 @@
       "ctaText": "准备好创建令人惊叹的系列信息图了吗？",
       "ctaLink": "尝试 Nano Banana 系列信息图生成器",
       "seoKeywords": "系列信息图，谷歌 NotebookLM，视觉学习，音频学习，内容创作，AI 工具，教育内容，信息图设计，播客生成，内容策略"
+    },
+    "emotionTtsMovie": {
+      "title": "情感 TTS 电影：让您的叙事更具情感",
+      "publishedDate": "2026年4月13日",
+      "readTime": "15分钟阅读",
+      "category": "创作者工具",
+      "introTitle": "将平淡叙事转变为情感杰作",
+      "introContent": "如果您的视频叙述不仅能传达信息，还能传达真实的情感呢？我们的情感增强 TTS 工具将现有视频内容进行升级，赋予其高能量、情感丰富的语音合成。利用 Azure 认知服务的高级 SSML 标记和 ElevenLabs 转录，该工具将平淡、单调的叙述转变为引人入胜、情感共鸣的表演，吸引观众。",
+      "whatItDoes": {
+        "title": "这个情感增强工具的功能",
+        "content": "这个 Python 工具代表了音频后期制作的突破 - 它从现有视频中提取音频，精确转录，然后用情感智能重新合成每个片段。结果是一个新的音轨，保持完美的口型同步，同时增加戏剧性的表达、能量和传统 TTS 系统无法实现的情感细腻。",
+        "coreFeatures": {
+          "title": "核心功能",
+          "items": [
+            "🎭:情感 SSML 生成 - 用于表现性语音合成的高级标记",
+            "🔊:高能量语音配置 - 广告风格的轻快表达",
+            "🧠:智能转录 - ElevenLabs Scribe 提供逐字时间戳",
+            "🎬:完美口型同步 - 保持原始视频的时间和同步",
+            "⚡:批量处理 - 处理多个片段时保持一致的情感"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "情感管道的工作原理",
+        "intro": "该工具遵循一个复杂的六步流程，将平淡的叙述转变为情感丰富的表演，同时保持完美的技术同步。",
+        "steps": [
+          {
+            "icon": "📥",
+            "title": "音频提取",
+            "description": "使用 MoviePy 从现有的 MP4 视频中提取高质量音频，保留原始时间和质量。",
+            "technical": {
+              "title": "音频提取过程",
+              "description": "使用 MoviePy 提取 PCM 音频，设置适当的编解码器以实现最大兼容性。",
+              "code": "clip = VideoFileClip(video_path)\nclip.audio.write_audiofile(audio_path, codec='pcm_s16le', logger=None)"
+            }
+          },
+          {
+            "icon": "📝",
+            "title": "智能转录",
+            "description": "ElevenLabs Scribe 提供逐字时间戳和标点检测，以实现精确分段。",
+            "technical": {
+              "title": "转录 API",
+              "description": "直接 API 集成，提供逐字时间和自动标点检测。",
+              "code": "resp = requests.post(ELEVENLABS_URL, headers={'xi-api-key': ELEVENLABS_KEY}, files={'file': ('audio.wav', f, 'audio/wav')}, data={'model_id': 'scribe_v1'})"
+            }
+          },
+          {
+            "icon": "🎭",
+            "title": "情感 SSML 构建",
+            "description": "将文本片段转换为带有表现性标记的 SSML，以实现高能量的表达风格。",
+            "technical": {
+              "title": "SSML 生成",
+              "description": "构建带有广告风格的 SSML，控制速率/音调/音量以实现情感表达。",
+              "code": "def build_emotional_ssml(text: str) -> str:\n    return f'''&lt;speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'&gt;\n  &lt;voice name='{voice}'&gt;\n    &lt;mstts:express-as style='advertisement_upbeat' styledegree='2'&gt;\n      &lt;prosody rate='+15%' pitch='+8%' volume='+15%'&gt;\n        {escaped}\n      &lt;/prosody&gt;\n    &lt;/mstts:express-as&gt;\n  &lt;/voice&gt;\n&lt;/speak&gt;'''"
+            }
+          },
+          {
+            "icon": "🔊",
+            "title": "Azure TTS 合成",
+            "description": "Azure 认知服务生成高质量的情感音频，具有自然的韵律和表达。",
+            "technical": {
+              "title": "Azure TTS API",
+              "description": "使用 Azure 的神经 TTS，支持 SSML 进行表现性语音合成。",
+              "code": "headers = {'Ocp-Apim-Subscription-Key': AZURE_API_KEY, 'Content-Type': 'application/ssml+xml', 'X-Microsoft-OutputFormat': 'riff-24khz-16bit-mono-pcm'}\nresp = requests.post(AZURE_TTS_URL, headers=headers, data=ssml.encode('utf-8'), timeout=30)"
+            }
+          },
+          {
+            "icon": "🔗",
+            "title": "音频拼接",
+            "description": "将单个情感片段合并为一个连续的音轨。",
+            "technical": {
+              "title": "WAV 拼接",
+              "description": "在拼接多个 WAV 文件为最终音轨时保留音频参数。",
+              "code": "def concat_wavs(wav_paths: list[str], out_path: str) -> None:\n    params = None\n    frames = []\n    for p in wav_paths:\n        if not os.path.exists(p):\n            continue\n        with wave.open(p, 'rb') as wf:\n            if params is None:\n                params = wf.getparams()\n            frames.append(wf.readframes(wf.getnframes()))\n    if not frames:\n        logger.warning('没有可拼接的 WAV 帧。')\n        return\n    with wave.open(out_path, 'wb') as out_wf:\n        out_wf.setparams(params)\n        for f in frames:\n            out_wf.writeframes(f)"
+            }
+          },
+          {
+            "icon": "🎬",
+            "title": "视频复用",
+            "description": "在保持视频质量的同时，用情感音轨替换原始音频。",
+            "technical": {
+              "title": "FFmpeg 集成",
+              "description": "使用 FFmpeg 进行专业的视频/音频复用，并自动匹配时长。",
+              "code": "cmd = ['ffmpeg', '-y', '-i', video_path, '-i', audio_path, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', out_path]"
+            }
+          }
+        ]
+      },
+      "emotionalEnhancement": {
+        "title": "情感语音的科学",
+        "content": "传统的 TTS 系统产生平坦、单调的语音，无法吸引观众。我们的情感增强使用尖端的 SSML 标记和 Azure 的神经 TTS 创建具有自然情感变化、动态范围和与专业配音相匹配的表现。",
+        "ssml": {
+          "title": "表达的 SSML 标记",
+          "example": "广告活泼风格",
+          "code": "&lt;speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'&gt;\n  &lt;voice name='en-US-AndrewNeural'&gt;\n    &lt;mstts:express-as style='advertisement_upbeat' styledegree='2'&gt;\n      &lt;prosody rate='+15%' pitch='+8%' volume='+15%'&gt;\n        您的情感文本在这里\n      &lt;/prosody&gt;\n    &lt;/mstts:express-as&gt;\n  &lt;/voice&gt;\n&lt;/speak&gt;",
+          "parameters": [
+            "styledegree: 控制强度级别 (0-2，越高 = 越具表现力)",
+            "rate: 语速调整 (-100% 到 +100%)",
+            "pitch: 情感强调的音调修改 (-50% 到 +50%)",
+            "volume: 影响力的音量控制 (0% 到 +100%)"
+          ]
+        },
+        "voiceProfile": {
+          "title": "Andrew Neural - 高能量声音",
+          "features": [
+            "自然表现力的音调，完美适合广告和兴奋场合",
+            "支持广告活泼风格以获得最大能量",
+            "内置的韵律控制，精细调整情感表达",
+            "优化用于吸引人的高影响力内容"
+          ]
+        }
+      },
+      "technicalBreakdown": {
+        "title": "技术架构",
+        "aiComponents": {
+          "title": "AI 组件",
+          "items": [
+            "支持 SSML 的 Azure 认知服务 TTS",
+            "ElevenLabs Scribe 进行逐字转录",
+            "智能文本分段，带有边界检测",
+            "带有风格控制的情感标记生成",
+            "专业音频处理和连接"
+          ]
+        },
+        "pipeline": {
+          "title": "处理管道",
+          "items": [
+            "MoviePy 音频提取，带有编解码器优化",
+            "实时转录，带有逐字时间戳",
+            "带有表现力韵律控制的 SSML 构建",
+            "Azure TTS 合成，使用神经语音模型",
+            "保留音频参数的 WAV 连接",
+            "FFmpeg 视频/音频复用，自动匹配时长"
+          ]
+        }
+      },
+      "useCases": {
+        "title": "现实世界应用",
+        "filmProduction": {
+          "title": "电影与视频制作",
+          "description": "将纪录片旁白从平淡的表达转变为情感丰富的表演。",
+          "examples": [
+            "纪录片配音增强，带来戏剧性影响",
+            "具有吸引力的情感表达的教育内容",
+            "具有高能量说服力的营销视频旁白"
+          ]
+        },
+        "educational": {
+          "title": "教育内容",
+          "description": "创建具有表现力和情感共鸣的叙述的引人入胜的学习材料。",
+          "examples": [
+            "具有动态情感强调的在线课程视频",
+            "具有表现力讲故事的儿童教育内容",
+            "具有引人入胜的情感变化的企业培训视频"
+          ]
+        },
+        "gaming": {
+          "title": "游戏与互动媒体",
+          "description": "为游戏旁白和角色声音增添情感深度。",
+          "examples": [
+            "具有情感范围和表现的角色配音",
+            "具有动态情感表达的互动故事旁白",
+            "具有引人入胜的情感强调的游戏教程视频"
+          ]
+        },
+        "storytelling": {
+          "title": "数字讲故事",
+          "description": "创建具有专业情感表演的有声书和故事。",
+          "examples": [
+            "具有角色情感表达的有声书制作",
+            "具有引人入胜的情感表达的播客增强",
+            "具有动态情感变化的数字讲故事"
+          ]
+        }
+      },
+      "codeExample": {
+        "title": "核心实现示例",
+        "intro": "这是驱动情感增强的基本代码结构：",
+        "codeSnippet": "def main():\n    if not AZURE_API_KEY:\n        logger.error('AZURE_AI_API_KEY 未设置。检查 curify_background/.env')\n        sys.exit(1)\n\n    # 步骤 1: 提取音频\n    if not os.path.exists(AUDIO_PATH):\n        if not extract_audio(VIDEO_PATH, AUDIO_PATH):\n            sys.exit(1)\n\n    # 步骤 2: 转录\n    segments = transcribe(AUDIO_PATH)\n\n    # 步骤 3: 每个段落的 TTS\n    wav_paths: list[str] = []\n    for i, seg in enumerate(segments):\n        text = seg['text'].strip()\n        if not text:\n            continue\n        out_path = os.path.join(OUTPUT_DIR, f'segment_{i:03d}.wav')\n        if os.path.exists(out_path):\n            logger.info('[%02d] 段 WAV 已存在，跳过 TTS。', i)\n            wav_paths.append(out_path)\n            continue\n        ssml = build_emotional_ssml(text)\n        logger.info('[%02d] 生成 TTS: %s…', i, text[:60])\n        if azure_tts(ssml, out_path):\n            wav_paths.append(out_path)\n\n    # 步骤 4: 连接\n    if not wav_paths:\n        logger.error('没有合成的段落。')\n        sys.exit(1)\n    concat_wavs(wav_paths, FULL_WAV)\n\n    # 步骤 5: 复用到原始视频\n    if not mux_audio_video(VIDEO_PATH, FULL_WAV, OUTPUT_MP4):\n        sys.exit(1)\n\n    logger.info('全部完成！')",
+        "explanations": [
+          "API 密钥：安全的 Azure 和 ElevenLabs API 密钥管理",
+          "音频处理：MoviePy 提取，带有编解码器优化",
+          "转录：ElevenLabs Scribe 进行智能分段",
+          "TTS生成：带有情感SSML标记的Azure神经TTS",
+          "音频组装：专业的WAV拼接，保留参数",
+          "视频复用：用于最终输出的FFmpeg集成"
+        ]
+      },
+      "advantages": {
+        "title": "为什么情感增强有效",
+        "emotional": {
+          "title": "3倍情感影响",
+          "description": "观众与情感表达内容的连接速度是平淡叙述的3倍"
+        },
+        "intelligent": {
+          "title": "AI驱动的表达",
+          "description": "智能情感检测和适当的表达合成"
+        },
+        "automation": {
+          "title": "无限可扩展性",
+          "description": "处理无限内容，保持一致的情感质量"
+        },
+        "keyBenefits": {
+          "title": "主要优势",
+          "items": [
+            "与原始视频时序完美同步",
+            "自然的情感表达和变化",
+            "高质量的神经TTS合成",
+            "智能文本分段和边界检测",
+            "专业的音频处理管道",
+            "批量处理，保持一致的情感传递"
+          ]
+        }
+      },
+      "gettingStarted": {
+        "title": "开始使用",
+        "stepsTitle": "快速入门指南",
+        "steps": [
+          "设置：安装依赖项并配置API密钥",
+          "准备：从现有视频内容中提取音频",
+          "转录：使用ElevenLabs Scribe进行精确计时",
+          "增强：使用Azure SSML标记生成情感TTS",
+          "组装：组合片段并与原始视频复用",
+          "部署：导出您情感增强的视频"
+        ],
+        "prerequisites": {
+          "title": "系统要求",
+          "items": [
+            "具有认知服务访问权限的Azure AI API密钥",
+            "用于转录服务的ElevenLabs API密钥",
+            "Python 3.7+，带有MoviePy和requests库",
+            "已安装FFmpeg并可在PATH中使用",
+            "用于音频提取的现有MP4视频",
+            "足够的存储空间用于中间音频文件"
+          ]
+        }
+      },
+      "results": {
+        "title": "预期结果",
+        "intro": "该工具生成情感增强的视频，保持完美的技术质量，同时增加戏剧性的表现力。",
+        "emotional": {
+          "title": "情感音频输出",
+          "description": "高能量的表现音频，具有自然的韵律和情感变化",
+          "specs": "Azure神经TTS，SSML标记，24kHz/16bit PCM WAV格式"
+        },
+        "technical": {
+          "title": "技术规格",
+          "description": "专业的视频输出，带有增强的音轨和完美的同步",
+          "specs": "H.264视频编码，AAC音频编码，自动持续时间匹配"
+        }
+      },
+      "future": {
+        "title": "情感增强的未来",
+        "content": "我们正在通过先进的语音配置文件、实时情感检测和与视频编辑工作流程的集成来扩展情感能力，以实现无缝内容创建。",
+        "roadmap": {
+          "title": "即将推出",
+          "items": [
+            "基于音频上下文的高级情感检测",
+            "多个语音配置文件和情感风格",
+            "合成过程中的实时情感调整",
+            "与视频编辑工作流程的集成",
+            "针对特定内容类型的自定义情感训练",
+            "具有情感一致性控制的批量处理"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "情感TTS",
+          "音频增强",
+          "Azure认知服务",
+          "ElevenLabs Scribe",
+          "视频后期制作",
+          "SSML",
+          "配音",
+          "内容自动化"
+        ],
+        "questions": "准备好将您的平淡叙述转变为情感丰富的表演吗？",
+        "contactText": "开始情感增强",
+        "contactLink": "https://curify.ai/contact"
+      }
+    },
+    "curifyAiGrowthEngine": {
+      "title": "Curify AI增长引擎：为用户生成内容创作者和营销人员转变内容创作",
+      "publishedDate": "2026年4月13日",
+      "readTime": "12分钟阅读",
+      "category": "AI平台",
+      "introTitle": "用AI驱动的增长革命化内容创作",
+      "introContent": "在当今的数字环境中，内容创作者和营销人员面临前所未有的挑战：在保持真实性的同时大规模生产高质量、引人入胜的内容，并推动实际的商业成果。Curify AI增长引擎代表了我们在内容创作、分发和优化方面的范式转变。这个全面的AI驱动系统旨在增强创造力，简化工作流程，并为用户生成内容创作者和营销专业人士提供可衡量的增长。",
+      "whatIsGrowthEngine": {
+        "title": "什么是Curify AI增长引擎？",
+        "content": "Curify AI增长引擎是一个集成平台，结合了人工智能、机器学习和自动化，转变内容创作和营销的各个方面。它不仅仅是另一个AI工具——它是一个完整的生态系统，能够从您的内容中学习，理解您的受众，并不断优化您的策略以实现最大影响。",
+        "coreComponents": {
+          "title": "核心组件",
+          "items": [
+            "🧠:智能内容生成 - AI驱动的文本、图像和视频创作",
+            "📊:性能分析 - 实时洞察和预测分析",
+            "🎯:受众智能 - 深入了解观众偏好和行为",
+            "⚡:自动化套件 - 精简工作流程和智能调度",
+            "🔄:优化引擎 - 通过机器学习持续改进"
+          ]
+        }
+      },
+      "forUgcCreators": {
+        "title": "赋能用户生成内容创作者",
+        "intro": "对于用户生成内容创作者而言，Curify AI增长引擎是一个游戏规则改变者。它解决了独立创作者面临的独特挑战，他们需要在保持真实声音的同时与专业工作室竞争。",
+        "contentScaling": {
+          "title": "在不牺牲质量的情况下扩展您的内容",
+          "description": "在保持受众喜爱的独特风格和声音的同时，减少时间生产更多内容。",
+          "benefits": [
+            "从一个想法生成多个内容变体",
+            "自动化繁琐的后期制作任务",
+            "在所有平台上保持一致的质量",
+            "自动创建多语言内容"
+          ]
+        },
+        "creativeEnhancement": {
+          "title": "增强您的创作过程",
+          "description": "AI驱动的工具增强您的创造力，而不是取代它。",
+          "features": [
+            "基于热门话题的智能创意生成",
+            "自动缩略图和预览优化",
+            "智能编辑建议以提高参与度",
+            "实时性能反馈和建议"
+          ]
+        },
+        "monetization": {
+          "title": "最大化您的收入潜力",
+          "description": "通过AI驱动的货币化策略将您的热情转变为可持续的业务。",
+          "opportunities": [
+            "优化内容以获得更好的广告收入",
+            "自动识别赞助机会",
+            "为付费平台创建优质内容变体",
+            "在发布前预测病毒潜力"
+          ]
+        }
+      },
+      "forMarketers": {
+        "title": "为营销团队提供强大支持",
+        "intro": "营销专业人士可以利用Curify AI增长引擎创建引起共鸣、转化并提供可衡量投资回报的活动。",
+        "dataDriven": {
+          "title": "数据驱动的决策",
+          "description": "通过AI驱动的洞察和预测分析做出明智的决策。",
+          "capabilities": [
+            "在发布前预测活动表现",
+            "识别最佳发布时间和平台",
+            "自动分析竞争对手策略",
+            "即时生成详细的性能报告"
+          ]
+        },
+        "automation": {
+          "title": "智能自动化",
+          "description": "通过智能自动化释放团队的时间，处理重复性任务。",
+          "features": [
+            "自动化A/B测试和优化",
+            "大规模动态内容个性化",
+            "跨活动智能预算分配",
+            "基于性能的实时活动调整"
+          ]
+        },
+        "personalization": {
+          "title": "超个性化内容",
+          "description": "创建直接针对您的目标受众细分的内容。",
+          "examples": [
+            "针对不同人群的动态广告文案生成",
+            "转化率高的个性化电子邮件活动",
+            "针对平台特定受众的社交媒体内容",
+            "针对不同用户细分的着陆页优化"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "增长引擎如何工作",
+        "steps": [
+          {
+            "icon": "📥",
+            "title": "输入与分析",
+            "description": "系统摄取您现有的内容、品牌指南、目标受众数据和性能目标，以了解您的独特需求。",
+            "example": {
+              "title": "示例输入",
+              "content": "上传您的品牌风格指南、表现最佳的内容和目标受众人口统计数据。AI分析特定于您细分市场的模式和偏好。"
+            }
+          },
+          {
+            "icon": "🧠",
+            "title": "AI处理",
+            "description": "我们的先进AI模型处理数据，识别机会，并生成针对您目标的战略建议。",
+            "example": {
+              "title": "AI洞察",
+              "content": "系统识别到您的受众在晚上7-9点之间观看时长不超过60秒的视频内容时参与度最高，并展示幕后花絮。"
+            }
+          },
+          {
+            "icon": "🎨",
+            "title": "内容生成",
+            "description": "根据AI洞察创建优化的内容变体，保持您的品牌声音，同时最大化参与潜力。",
+            "example": {
+              "title": "生成的内容",
+              "content": "自动生成5个视频变体、10个社交媒体帖子和3个针对您最佳参与时间优化的博客文章创意。"
+            }
+          },
+          {
+            "icon": "📊",
+            "title": "性能跟踪",
+            "description": "实时监控性能指标，并根据受众反馈自动调整策略。",
+            "example": {
+              "title": "实时优化",
+              "content": "系统注意到使用表情符号的标题参与度更高，并自动调整剩余的计划帖子以匹配这一模式。"
+            }
+          }
+        ]
+      },
+      "realWorldResults": {
+        "title": "实际效果",
+        "metric1": {
+          "title": "内容输出",
+          "description": "在没有额外资源的情况下增加内容生产"
+        },
+        "metric2": {
+          "title": "参与率",
+          "description": "各平台受众参与的平均增长"
+        },
+        "metric3": {
+          "title": "时间节省",
+          "description": "减少内容创作和优化所花费的时间"
+        },
+        "case1": {
+          "title": "科技YouTuber成功案例",
+          "description": "一位拥有10万订阅者的科技评测者在3个月内将视频输出从每周2个增加到4个，同时使频道增长40%。",
+          "result": "结果：广告收入增加250%和3个品牌赞助协议"
+        },
+        "case2": {
+          "title": "电商品牌活动",
+          "description": "一家时尚电商品牌自动化其社交媒体内容创作，实现了所有平台的一致品牌信息传递。",
+          "result": "结果：转化率提高65%和市场营销支出减少30%"
+        }
+      },
+      "gettingStarted": {
+        "title": "开始使用Curify AI增长引擎",
+        "stepsTitle": "您的AI驱动增长之旅",
+        "steps": [
+          "注册：创建您的账户并完成入职问卷",
+          "连接：链接您的社交媒体账户和内容平台",
+          "自定义：设置您的品牌指南和内容偏好",
+          "启动：立即开始生成AI优化的内容",
+          "优化：监控性能并随着时间推移完善您的策略"
+        ],
+        "ctaText": "立即开始您的免费试用",
+        "ctaLink": "https://curify.ai/signup"
+      },
+      "future": {
+        "title": "内容创作的未来",
+        "content": "Curify AI增长引擎在不断发展。我们持续添加新功能，改进我们的AI模型，并扩展平台集成，以保持领先地位。",
+        "roadmap": {
+          "title": "即将推出",
+          "items": [
+            "具有真实头像的高级视频生成",
+            "团队的实时协作功能",
+            "与新兴社交平台的集成",
+            "增强的机器学习预测分析",
+            "跨平台内容同步",
+            "高级情感分析和情感定位"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "AI内容创作",
+          "用户生成内容营销",
+          "内容自动化",
+          "数字营销",
+          "创作者经济"
+        ],
+        "questions": "对Curify AI增长引擎如何改变您的内容策略有疑问吗？",
+        "contactText": "联系我们的团队",
+        "contactLink": "https://curify.ai/contact"
+      }
     }
   },
   "imageGenerationModelComparison": {
