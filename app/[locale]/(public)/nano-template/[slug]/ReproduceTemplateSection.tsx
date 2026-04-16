@@ -5,8 +5,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { format } from "date-fns";
 import Link from "next/link";
-import Image from "next/image";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import { similarity, paramsToKey } from "@/lib/editDistance";
 import { toSlug, buildExampleId } from "@/lib/nano_utils";
@@ -345,7 +345,7 @@ export default function ReproduceTemplateSection(props: {
                       Sample
                     </div>
                     <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50">
-                      <img
+                      <CdnImage
                         src={sampleImage.previewUrl}
                         alt={sampleImage.alt ?? "Sample"}
                         className="w-full object-contain max-h-[320px]"
@@ -357,7 +357,7 @@ export default function ReproduceTemplateSection(props: {
                       Generated
                     </div>
                     <div className="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50">
-                      <img
+                      <CdnImage
                         src={generatedImageUrl}
                         alt="Generated result"
                         className="w-full object-contain max-h-[320px]"
