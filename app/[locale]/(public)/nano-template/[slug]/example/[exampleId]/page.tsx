@@ -2,11 +2,12 @@
 
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import ReproduceTemplateSection from "../../ReproduceTemplateSection";
+import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
+import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
 import { buildTopicHref } from "@/lib/locale_utils";
@@ -25,7 +26,6 @@ import {
   buildOtherTemplateCards,
   getImageViewsForTemplate,
   resolveLocalizedExampleCopy,
-  buildNanoTemplateDetailData,
 } from "@/lib/nano_page_data";
 
 type PageParams = {
@@ -82,8 +82,6 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     ctx.templateId
   );
 
-  const templateDetail = buildNanoTemplateDetailData(ctx.reg, ctx.templateId, ctx.contentLocale, ctx.translateNano);
-
   const exampleTags: string[] = (example as any).topics ?? [];
 
   return {
@@ -101,8 +99,6 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     otherNanoCards,
     templateTopics,
     templateBatch,
-    templateDetail,
-    imageViews,
   };
 }
 
@@ -172,87 +168,110 @@ export default async function NanoExampleDetailPage({
     exampleTags,
     paramEntries,
     gridItems,
+    prevNext,
     otherNanoCards,
     templateTopics,
     templateBatch,
-    templateDetail,
-    imageViews,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
-  const templateForReproduce = {
-    template_id: templateId,
-    base_prompt: templateDetail?.template?.base_prompt || "",
-    parameters: templateDetail?.template?.parameters || [],
-    batch: templateBatch,
-    allow_generation: !!(templateDetail?.template as any)?.allow_generation,
-    topics: templateTopics,
-    existingExamples: imageViews
-      .filter((v) => v.params && Object.keys(v.params).length > 0)
-      .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),
-  };
-
   return (
-    <main className="mx-auto max-w-[1280px] px-4 py-4 sm:px-6 lg:px-8">
-      {/* Breadcrumbs */}
-      <nav className="mb-4 flex items-center gap-1.5 text-xs text-neutral-500">
-        <Link href={`/${rawLocale}`} className="hover:text-neutral-800">Home</Link>
-        <span>/</span>
-        <Link href={`/${rawLocale}/nano-template/${slug}`} className="hover:text-neutral-800">
-          {category || slug}
-        </Link>
-        <span>/</span>
-        <span className="line-clamp-1 font-medium text-neutral-800">{title}</span>
-      </nav>
+    <main className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
+      <ExamplePromptHero
+        title={title}
+        prompt={prompt}
+        trackingId={example.id}
+        promptVariant="breakdown"
+        promptParams={example.params ?? {}}
+        prevNext={prevNext}
+        breadcrumbs={[
+          {
+            label: "Home",
+            href: `/${rawLocale}`,
+          },
+          {
+            label: category || slug,
+            href: `/${rawLocale}/nano-template/${slug}`,
+          },
+          {
+            label: title,
+          },
+        ]}
+        metaChips={
+          <>
+            {templateTopics.length > 0 ? (
+              <TopicNavRow
+                locale={pageLocale}
+                topics={templateTopics}
+                className="mb-0"
+                showDisabled={false}
+                size="small"
+              />
+            ) : null}
 
-      {/* Title + topic tags */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-neutral-900">{title}</h1>
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          {templateTopics.length > 0 && (
-            <TopicNavRow
-              locale={pageLocale}
-              topics={templateTopics}
-              className="mb-0"
-              showDisabled={false}
-              size="small"
-            />
-          )}
-          {exampleTags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {exampleTags.map((tag) => (
-                <MetaChipLink
-                  key={tag}
-                  href={buildTopicHref(rawLocale, tag)}
-                  color="blue"
-                  size="small"
-                >
-                  {tag}
-                </MetaChipLink>
-              ))}
-            </div>
-          )}
-          {category && (
-            <Link
-              href={`/${rawLocale}/nano-template/${slug}`}
-              className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
-            >
-              {category}
-            </Link>
-          )}
-        </div>
-      </div>
+            {exampleTags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {exampleTags.map((tag) => (
+                  <MetaChipLink
+                    key={tag}
+                    href={buildTopicHref(rawLocale, tag)}
+                    color="blue"
+                    size="small"
+                  >
+                    {tag}
+                  </MetaChipLink>
+                ))}
+              </div>
+            )}
 
-      {/* Unified reproduce section */}
-      <ReproduceTemplateSection
-        template={templateForReproduce}
-        sampleImage={{
-          url: example.asset.image_url,
-          previewUrl: example.asset.preview_image_url,
-          alt: title,
-        }}
-        initialParams={paramEntries}
+            {category ? (
+              <a
+                href={`/${rawLocale}/nano-template/${slug}`}
+                className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
+              >
+                {category}
+              </a>
+            ) : null}
+          </>
+        }
+        image={
+          <ProgressiveCdnImage
+            previewSrc={example.asset.preview_image_url}
+            fullSrc={example.asset.image_url}
+            alt={title}
+            className="h-full w-full object-contain"
+            priority
+          />
+        }
+        actionBar={
+          <UnifiedActionBar
+            className="pt-2"
+            tracking={{
+              contentId: `${templateId}:${example.id}`,
+              contentType: "nano_inspiration",
+              viewMode: "cards",
+            }}
+            remix={{
+              enabled: true,
+              href: `/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}#reproduce`,
+            }}
+            copy={{
+              enabled: true,
+              text: prompt,
+            }}
+            share={{
+              enabled: true,
+              url: examplePageUrl,
+              title,
+              text: `Check out this Nano Banana example: ${title}`,
+            }}
+            batchDownload={{
+              enabled: templateBatch,
+              templateId: templateId,
+            }}
+          />
+        }
       />
 
       <section className="mt-8">
