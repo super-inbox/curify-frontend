@@ -104,6 +104,21 @@ export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
 }
 
+/** Builds a deterministic example ID from template_id + params.
+ *  Used for duplicate detection and as the example_id sent to the backend.
+ *  e.g. template-travel + {destination:"Kyoto", date_range:"4/16"} → "template-travel-kyoto-4-16"
+ */
+export function buildExampleId(templateId: string, params: Record<string, string>): string {
+  const suffix = Object.values(params)
+    .filter((v) => typeof v === "string" && v.trim())
+    .map((v) =>
+      v.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
+    )
+    .filter(Boolean)
+    .join("-");
+  return suffix ? `${templateId}-${suffix}` : templateId;
+}
+
 export function getLocaleFromPath(pathname?: string): PageLocale {
   if (!pathname) return "en";
 

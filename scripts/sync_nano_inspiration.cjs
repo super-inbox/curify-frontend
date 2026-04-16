@@ -3,6 +3,7 @@
 const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
+const os = require("os");
 const { execSync } = require("child_process");
 
 // --- OPTIONAL dependency (required for preview generation) ---
@@ -16,6 +17,14 @@ try {
       "Then rerun the script."
   );
   process.exit(1);
+}
+
+// --- OPTIONAL dependency (required for Supabase source) ---
+let pg;
+try {
+  pg = require("pg");
+} catch (e) {
+  pg = null; // only needed when --supabase flag is used
 }
 
 // ===================== CONFIG =====================
@@ -71,6 +80,9 @@ function stripLocaleSegmentFromStem(stem) {
 }
 
 function parseArgs(argv) {
+  const rawPgUrl = process.env.DATABASE_URL || "";
+  const defaultPgUrl = rawPgUrl.replace("postgresql+asyncpg://", "postgresql://");
+
   const out = {
     source: DEFAULT_SOURCE_DIR,
     imageDir: DEFAULT_IMAGE_DIR,
@@ -80,6 +92,9 @@ function parseArgs(argv) {
     sync: false,
     bucket: DEFAULT_BUCKET,
     dryRun: false,
+    supabase: false,
+    pgUrl: defaultPgUrl,
+    supabaseStatus: "COMPLETED",
   };
 
   for (const a of argv.slice(2)) {
@@ -91,6 +106,9 @@ function parseArgs(argv) {
     else if (a === "--sync") out.sync = true;
     else if (a.startsWith("--bucket=")) out.bucket = a.split("=").slice(1).join("=");
     else if (a === "--dry-run") out.dryRun = true;
+    else if (a === "--supabase") out.supabase = true;
+    else if (a.startsWith("--pg-url=")) out.pgUrl = a.split("=").slice(1).join("=");
+    else if (a.startsWith("--supabase-status=")) out.supabaseStatus = a.split("=").slice(1).join("=");
   }
   return out;
 }
@@ -307,6 +325,61 @@ function countByTemplate(items) {
   return m;
 }
 
+// ===================== SUPABASE SOURCE =====================
+
+async function fetchSupabaseJobs(pgUrl, status) {
+  if (!pg) {
+    console.error("❌ Missing dependency: pg\n  Install it first: npm i pg\n  Then rerun the script.");
+    process.exit(1);
+  }
+  const client = new pg.Client({ connectionString: pgUrl });
+  await client.connect();
+  const res = await client.query(
+    `SELECT id, runtime_config FROM nano_template_generation WHERE status = $1`,
+    [status]
+  );
+  await client.end();
+  return res.rows;
+}
+
+function buildSupabaseRecord(job, templatesById) {
+  const cfg = job.runtime_config;
+  if (!cfg || !cfg.example_id || !cfg.gcs_object_path || !cfg.preview_gcs_object_path || !cfg.template_id) {
+    console.warn(`  ⚠️ Skipping job ${job.id}: missing required runtime_config fields`);
+    return null;
+  }
+
+  const { example_id, gcs_object_path, preview_gcs_object_path, template_id, locale, params } = cfg;
+  const tpl = templatesById.get(template_id);
+  if (!tpl) {
+    console.warn(`  ⚠️ Skipping ${example_id}: unknown template_id "${template_id}"`);
+    return null;
+  }
+
+  const imageStem = path.posix.basename(gcs_object_path, path.posix.extname(gcs_object_path));
+  const title = pickTitle(params || {}, null, imageStem);
+  const localesOut = {};
+  if (locale) {
+    const category = getCategory(tpl, locale);
+    localesOut[locale] = {};
+    if (category) localesOut[locale].category = category;
+    localesOut[locale].title = title;
+  }
+
+  return {
+    id: example_id,
+    template_id,
+    asset: {
+      image_url: `/${gcs_object_path}`,
+      preview_image_url: `/${preview_gcs_object_path}`,
+    },
+    params: params || {},
+    ...(locale ? { locales: localesOut } : {}),
+  };
+}
+
+// ===========================================================
+
 async function main() {
   const args = parseArgs(process.argv);
 
@@ -323,6 +396,7 @@ async function main() {
   console.log("TEMPLATE_JSON:", TEMPLATE_JSON_PATH);
   console.log("NANO_INSP_JSON:", INSP_JSON_PATH);
   console.log("dryRun:", args.dryRun, "| sync:", args.sync, "| bucket:", args.bucket);
+  if (args.supabase) console.log("supabase: enabled | status filter:", args.supabaseStatus);
   console.log("");
 
   await ensureDir(IMAGE_DIR);
@@ -402,9 +476,40 @@ async function main() {
     addedRecords.push(record);
   }
 
+  // ---- Supabase source ----
+  const supabaseRecords = [];
+  if (args.supabase) {
+    console.log("\n=== Supabase source ===");
+    const existingIds = new Set(existingItems.map((it) => it.id).filter(Boolean));
+
+    let jobs;
+    try {
+      jobs = await fetchSupabaseJobs(args.pgUrl, args.supabaseStatus);
+      console.log(`📌 Found ${jobs.length} jobs with status="${args.supabaseStatus}"`);
+    } catch (e) {
+      console.error("❌ Failed to query Supabase:", e.message);
+      jobs = [];
+    }
+
+    for (const job of jobs) {
+      const cfg = job.runtime_config;
+      if (cfg?.example_id && existingIds.has(cfg.example_id)) continue;
+
+      const record = buildSupabaseRecord(job, templatesById);
+      if (record) {
+        supabaseRecords.push(record);
+        existingIds.add(record.id);
+      }
+    }
+
+    console.log(`✅ ${supabaseRecords.length} new records from Supabase`);
+  }
+
+  const allNewRecords = [...addedRecords, ...supabaseRecords];
+
   let finalNanoInsp;
-  if (addedRecords.length > 0) {
-    const newItems = existingItems.concat(addedRecords);
+  if (allNewRecords.length > 0) {
+    const newItems = existingItems.concat(allNewRecords);
     const outJson = Array.isArray(nanoInspJson) ? newItems : { ...nanoInspJson, items: newItems };
 
     if (!args.dryRun) {
@@ -412,10 +517,10 @@ async function main() {
     }
 
     finalNanoInsp = outJson;
-    console.log(`✅ Added ${addedRecords.length} new inspiration records to nano_inspiration.json`);
+    console.log(`\n✅ Added ${allNewRecords.length} new records total (${addedRecords.length} from files, ${supabaseRecords.length} from Supabase)`);
   } else {
     finalNanoInsp = nanoInspJson;
-    console.log("✅ No new images to add (all already present or unmatched).");
+    console.log("✅ No new records to add.");
   }
 
   console.log("");

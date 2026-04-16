@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 
-import ReproduceTemplateSection from "./ReproduceTemplateSection";
+import ReproduceTemplateSection, { type SampleImage } from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 
 function countCommonTopics(a?: string[], b?: string[]) {
@@ -25,7 +25,8 @@ export default function NanoTemplateDetailClient(props: {
   otherNanoCards: NanoInspirationCardType[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
-  showOtherTemplateTitle?: boolean;  
+  showOtherTemplateTitle?: boolean;
+  sampleImage?: SampleImage;
 }) {
   const t = useTranslations("nanoTemplate");
 
@@ -34,7 +35,8 @@ export default function NanoTemplateDetailClient(props: {
     otherNanoCards,
     showReproduce = true,
     showOtherTemplates = true,
-    showOtherTemplateTitle = true,    
+    showOtherTemplateTitle = true,
+    sampleImage,
   } = props;
 
   const requireAuth = () => true;
@@ -45,7 +47,7 @@ export default function NanoTemplateDetailClient(props: {
 
   return (
     <>
-      {shouldShowReproduce && <ReproduceTemplateSection template={template} />}
+      {shouldShowReproduce && <ReproduceTemplateSection template={template} sampleImage={sampleImage} />}
 
       {showOtherTemplates && (
         <section className={shouldShowReproduce ? "mt-10" : ""}>
