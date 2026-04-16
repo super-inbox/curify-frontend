@@ -6,6 +6,7 @@ import {
   useCopyTracking,
   useShareTracking,
   useClickTracking,
+  useSaveTracking,
 } from "@/services/useTracking";
 import { stableHashToInt } from "@/lib/hash_utils";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
@@ -194,7 +195,7 @@ function ListItemActions({
 
   const trackCopy = useCopyTracking(card.id, "inspiration", viewMode);
   const trackShare = useShareTracking(card.id, "inspiration", viewMode);
-  const trackSave = useClickTracking(card.id, "inspiration", viewMode);
+  const trackSave = useSaveTracking(card.id, "inspiration", viewMode);
 
   const getCanonicalUrl = () => {
     if (card?.actions?.share?.url) return card.actions.share.url;

@@ -16,6 +16,7 @@ export type RawTemplate = {
   topics?: string | string[];
   rank_score?: number;
   batch?: boolean;
+  allow_generation?: boolean;
 
   locales?: Partial<
     Record<
@@ -53,6 +54,7 @@ export type TemplateView = {
   topics: string[];
   rank_score?: number;
   batch?: boolean;
+  allow_generation?: boolean;
   base_prompt: string;
   parameters: TemplateParameter[];
   cards: Array<{ image_id: string; params: Record<string, any> }>;
@@ -100,6 +102,21 @@ export function nanoTemplateI18nKey(templateId: string, field: string): string {
 
 export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
+}
+
+/** Builds a deterministic example ID from template_id + params.
+ *  Used for duplicate detection and as the example_id sent to the backend.
+ *  e.g. template-travel + {destination:"Kyoto", date_range:"4/16"} → "template-travel-kyoto-4-16"
+ */
+export function buildExampleId(templateId: string, params: Record<string, string>): string {
+  const suffix = Object.values(params)
+    .filter((v) => typeof v === "string" && v.trim())
+    .map((v) =>
+      v.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
+    )
+    .filter(Boolean)
+    .join("-");
+  return suffix ? `${templateId}-${suffix}` : templateId;
 }
 
 export function getLocaleFromPath(pathname?: string): PageLocale {
@@ -247,6 +264,7 @@ export function getTemplateView(
     topics: getTemplateTopics(raw),
     rank_score: raw.rank_score,
     batch: raw.batch,
+    allow_generation: raw.allow_generation,
     base_prompt: value.base_prompt,
     parameters: value.parameters,
     cards: raw.cards ?? [],

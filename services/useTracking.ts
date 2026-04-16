@@ -263,3 +263,15 @@ export function useRemixTracking(
     trackAction({ contentId, contentType, viewMode }, "remix");
   }, [contentId, contentType, viewMode, trackAction]);
 }
+
+export function useSaveTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  return useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "favorite");
+  }, [contentId, contentType, viewMode, trackAction]);
+}

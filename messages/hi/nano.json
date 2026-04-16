@@ -1651,5 +1651,59 @@
         ]
       }
     }
+  },
+  "template-financial-habit-infographic-poster": {
+    "category": "वित्तीय आदतें",
+    "description": "20 वित्तीय आदतों को दर्शाने वाला सुंदर वॉटरकलर इन्फोग्राफिक पोस्टर बनाएं।",
+    "title": "Nano Banana Prompt: Financial Habit Infographic Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a warm, cartoon-style educational infographic poster featuring 20 numbered items on a financial or self-improvement topic. Each item includes a habit title, short explanation, and a cute watercolor illustration in a 5-page × 2×2 grid layout.",
+        "who": "Ideal for personal finance creators, financial educators, self-improvement bloggers, coaches, and anyone who wants to turn money habits or life tips into a shareable visual poster.",
+        "how": [
+          "Enter a topic name (e.g., \"20 Money Habits to Build Wealth\", \"20 Bad Financial Habits to Break\").",
+          "The prompt generates 20 numbered items, each with a bold habit title, short explanatory text, and a cute watercolor illustration.",
+          "Review the output: check that all 20 items are clearly legible and the grid layout is consistent.",
+          "Customize the topic to any financial, budgeting, or self-improvement theme."
+        ],
+        "prompts": [
+          "Generate a \"20 Bad Money Habits to Stop\" watercolor infographic poster: 20 numbered habits in a 5-section × 2×2 grid, each with a bold title, short explanation, and cute cartoon illustration, warm vintage paper background, 4K vertical.",
+          "Create a \"20 Wealth-Building Habits\" educational poster: numbered grid layout, watercolor cartoon style, aged paper texture, consistent character design, vertical 4:3 format.",
+          "Generate a \"20 Smart Saving Tips\" infographic: colorful watercolor icons, bold numbered labels, vintage ribbon header, clean readable typography, 4K vertical poster."
+        ]
+      }
+    }
+  },
+  "template-bilingual-object-structure-labeling": {
+    "category": "द्विभाषी संरचना लेबलिंग",
+    "description": "किसी भी वस्तु का स्पष्ट द्विभाषी (अंग्रेज़ी + चीनी) शारीरिक लेबलिंग पोस्टर बनाएं।",
+    "title": "Nano Banana Prompt: Bilingual Object Structure Labeling Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a minimalist educational poster featuring a photorealistic image of any object with all key components labeled in three languages: Pinyin, English, and Chinese. Clean leader lines connect each part to its label, making it ideal for vocabulary learning or product education.",
+        "who": "Perfect for language learners studying vocabulary through visuals, ESL/Chinese language teachers, educational content creators, product designers documenting components, and anyone building bilingual learning materials.",
+        "how": [
+          "Enter the name of the object you want to label (e.g., \"bicycle\", \"human eye\", \"coffee machine\").",
+          "The prompt generates a high-resolution image of the object on a white background with all key parts labeled in Pinyin, English, and Chinese.",
+          "Review the labels: check accuracy of terminology and clarity of leader lines.",
+          "Use for vocabulary flashcards, educational posters, or product documentation."
+        ],
+        "prompts": [
+          "Generate a bilingual structure labeling poster for a \"bicycle\": photorealistic image on white background, all key parts (frame, wheels, handlebars, brakes, gears) labeled with Pinyin, English, and Chinese terms, clean leader lines, vertical 4K format.",
+          "Create an \"acoustic guitar\" anatomy labeling poster: high-resolution front view, components labeled in Pinyin + English + Chinese (soundhole, bridge, frets, tuning pegs, nut), minimalist white background, vertical format.",
+          "Generate a \"coffee machine\" bilingual labeling poster: all visible components labeled with Pinyin, English, and Chinese, clean minimalist layout, 4K vertical educational poster."
+        ]
+      }
+    }
+  },
+  "template-mood-board-interior-designgenerator": {
+    "category": "इंटीरियर डिज़ाइन",
+    "description": "संदर्भ फ़ोटो से प्रीमियम 3:4 इंटीरियर डिज़ाइन मूड बोर्ड बनाएं, जिसमें रंग पैलेट, सामग्री स्वैच और स्टाइल्ड रेंडर शामिल हों।",
+    "title": "इंटीरियर डिज़ाइन मूड बोर्ड जेनरेटर | Curify AI"
+  },
+  "template-fashion-before-after-outfit-annotation-card": {
+    "category": "फ़ैशन",
+    "description": "एक आउटफिट फ़ोटो को विशेषज्ञ फ़ैशन टिप्स और लेबल्ड गार्मेंट विवरण के साथ प्रोफेशनल बिफोर vs आफ्टर स्टाइलिंग कार्ड में बदलें।",
+    "title": "फ़ैशन बिफोर और आफ्टर आउटफिट एनोटेशन कार्ड | Curify AI"
   }
 }

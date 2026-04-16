@@ -254,7 +254,7 @@ export default async function NanoExampleDetailPage({
             }}
             remix={{
               enabled: true,
-              href: `/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}`,
+              href: `/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}#reproduce`,
             }}
             copy={{
               enabled: true,

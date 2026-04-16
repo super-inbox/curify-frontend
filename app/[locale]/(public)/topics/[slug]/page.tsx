@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getChildTopics, getTopicById } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, isNavigationalTopic, getTier1Ancestor } from "@/lib/topicRegistry";
 
 import nanoImages from "@/public/data/nano_inspiration.json";
 
@@ -83,7 +83,7 @@ export default async function Page({ params }: Props) {
 
   const filteredImages = allImages.filter((img: any) => {
     if (!allowedTemplateIds.has(img?.template_id)) return false;
-    if (isChildTopic) return (img.topics ?? []).includes(slug);
+    if (isChildTopic && !isNavigationalTopic(slug)) return (img.topics ?? []).includes(slug);
     return true;
   });
 
@@ -127,17 +127,18 @@ export default async function Page({ params }: Props) {
 
   const relatedTopicIds = getRelatedTopics(slug);
 
-  const CHILD_THRESHOLD = 2;
   const parentTopicId = getParentTopic(slug);
 
-  // On a parent page: show its child topics. On a child page: show siblings.
-  const siblingOrChildIds = isChildTopic
-    ? getChildTopics(parentTopicId!).filter((id) => id !== slug)
-    : getChildTopics(slug);
+  // Resolve the Tier 1 ancestor for this page (itself if Tier 1, parent if Tier 2, Tier 1 root if Tier 3 tag)
+  const tier1Ancestor = getTier1Ancestor(slug);
 
-  const visibleSubTopics = siblingOrChildIds.filter(
-    (id) => (getTopicById(id)?.templateCount ?? 0) >= CHILD_THRESHOLD
-  );
+  // Tier 2 navigational subtopics — shown at top on all tiers
+  const navSubTopics = tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [];
+
+  // Tier 3 tag subtopics — shown at bottom on all tiers
+  const tagSubTopics = tier1Ancestor
+    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug && isTopicEnabled(id))
+    : [];
 
   const subTopicsHeading = isChildTopic
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
@@ -145,9 +146,9 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      <section className="mx-auto max-w-[1280px] px-4 pt-4 pb-4 sm:px-6 lg:px-8">        
+      <section className="mx-auto max-w-[1280px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-5xl">
+        <div>
           {topicDescription ? (
             <p className="mt-3 text-base leading-7 text-neutral-600">
               {topicDescription}
@@ -159,6 +160,18 @@ export default async function Page({ params }: Props) {
               <TopicNavRow
                 locale={localeStr}
                 topics={relatedTopicIds}
+                activeTopic={slug}
+                showDisabled={false}
+                size="small"
+              />
+            </div>
+          )}
+
+          {navSubTopics.length > 0 && (
+            <div className="mt-4">
+              <TopicNavRow
+                locale={localeStr}
+                topics={navSubTopics}
                 activeTopic={slug}
                 showDisabled={false}
                 size="small"
@@ -190,14 +203,14 @@ export default async function Page({ params }: Props) {
         />
       </section>
 
-      {visibleSubTopics.length > 0 && (
+      {tagSubTopics.length > 0 && (
         <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
             {subTopicsHeading}
           </h2>
           <TopicNavRow
             locale={localeStr}
-            topics={visibleSubTopics}
+            topics={tagSubTopics}
             showDisabled={false}
             size="default"
           />

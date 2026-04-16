@@ -1,11 +1,14 @@
 "use client";
 
+import { useCallback } from "react";
 import { useTranslations } from "next-intl";
+import { useAtomValue, useSetAtom } from "jotai";
 
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
-import ReproduceTemplateSection from "./ReproduceTemplateSection";
+import ReproduceTemplateSection, { type SampleImage } from "./ReproduceTemplateSection";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 
 function countCommonTopics(a?: string[], b?: string[]) {
@@ -25,7 +28,8 @@ export default function NanoTemplateDetailClient(props: {
   otherNanoCards: NanoInspirationCardType[];
   showReproduce?: boolean;
   showOtherTemplates?: boolean;
-  showOtherTemplateTitle?: boolean;  
+  showOtherTemplateTitle?: boolean;
+  sampleImage?: SampleImage;
 }) {
   const t = useTranslations("nanoTemplate");
 
@@ -34,10 +38,17 @@ export default function NanoTemplateDetailClient(props: {
     otherNanoCards,
     showReproduce = true,
     showOtherTemplates = true,
-    showOtherTemplateTitle = true,    
+    showOtherTemplateTitle = true,
+    sampleImage,
   } = props;
 
-  const requireAuth = () => true;
+  const user = useAtomValue(userAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const requireAuth = useCallback(() => {
+    if (user) return true;
+    setDrawerState("signin");
+    return false;
+  }, [user, setDrawerState]);
   const onViewClick = () => {};
 
   const shouldShowReproduce = showReproduce && !!template;
@@ -45,7 +56,7 @@ export default function NanoTemplateDetailClient(props: {
 
   return (
     <>
-      {shouldShowReproduce && <ReproduceTemplateSection template={template} />}
+      {shouldShowReproduce && <ReproduceTemplateSection template={template} sampleImage={sampleImage} />}
 
       {showOtherTemplates && (
         <section className={shouldShowReproduce ? "mt-10" : ""}>

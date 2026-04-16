@@ -179,8 +179,17 @@ export default async function NanoTemplatePage({ params }: Props) {
       template_id: template.template_id,
       base_prompt: template.base_prompt || "",
       parameters: template.parameters || [],
-      batch: !!template.batch
+      batch: !!template.batch,
+      allow_generation: !!template.allow_generation,
+      existingExamples: imageViews
+        .filter((v) => v.params && Object.keys(v.params).length > 0)
+        .map((v) => ({ id: v.id, params: v.params as Record<string, string> })),
     }}
+    sampleImage={imageViews[0] ? {
+      url: imageViews[0].image_url,
+      previewUrl: imageViews[0].preview_image_url ?? imageViews[0].image_url,
+      alt: template.template_id,
+    } : undefined}
     otherNanoCards={otherNanoCards}
     showReproduce={true}
     showOtherTemplates={false}

@@ -33,7 +33,7 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
   {
     id: "visual",
     emoji: "🎨",
-    path: "/nano-banana-pro-prompts",
+    path: "/topics/design",
   },
   {
     id: "video",

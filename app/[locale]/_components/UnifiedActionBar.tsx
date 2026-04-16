@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Wand2, Sparkles, Download } from "lucide-react";
+import { Wand2, Sparkles, Download, Bookmark } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useAtom } from "jotai";
 
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
-import { useTracking, type TrackingTarget } from "@/services/useTracking";
+import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
+import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
+
+const GENERATE_CREDITS_COST = 10;
 
 type GenerateConfig = {
   enabled: boolean;
@@ -39,14 +42,38 @@ type BatchDownloadConfig = {
   templateId: string;
 };
 
+type SaveConfig = {
+  enabled: boolean;
+};
+
+type DownloadConfig = {
+  enabled: boolean;
+  url: string;
+  filename?: string;
+};
+
+type DirectGenerateConfig = {
+  enabled: boolean;
+  templateId: string;
+  params: Record<string, string>;
+  exampleId: string;
+  /** Return false to abort generation (e.g. duplicate check). */
+  onBeforeGenerate?: () => boolean | Promise<boolean>;
+  /** Called with the signed URL when generation succeeds. */
+  onGenerateSuccess?: (signedUrl: string) => void;
+};
+
 type Props = {
   tracking: TrackingTarget;
   className?: string;
   generate?: GenerateConfig;
+  directGenerate?: DirectGenerateConfig;
   remix?: RemixConfig;
   copy?: CopyConfig;
   share?: ShareConfig;
   batchDownload?: BatchDownloadConfig;
+  save?: SaveConfig;
+  download?: DownloadConfig;
 };
 
 function visible<T extends { enabled: boolean } | undefined>(
@@ -59,12 +86,16 @@ export default function UnifiedActionBar({
   tracking,
   className = "",
   generate,
+  directGenerate,
   remix,
   copy,
   share,
   batchDownload,
+  save,
+  download,
 }: Props) {
   const { trackAction } = useTracking();
+  const trackSave = useSaveTracking(tracking.contentId, tracking.contentType, tracking.viewMode);
   const t = useTranslations("actionButtons");
 
   const [user] = useAtom(userAtom);
@@ -73,6 +104,18 @@ export default function UnifiedActionBar({
 
   const [generated, setGenerated] = useState(false);
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
+  const [isDirectGenerating, setIsDirectGenerating] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = () => {
+    if (!save) return;
+    if (!user) {
+      setDrawerState("signin");
+      return;
+    }
+    trackSave();
+    setSaved((prev) => !prev);
+  };
 
   const handleGenerate = async () => {
     if (!generate) return;
@@ -83,6 +126,55 @@ export default function UnifiedActionBar({
       setGenerated(true);
       setTimeout(() => setGenerated(false), 2500);
     } catch {}
+  };
+
+  const handleDirectGenerate = async () => {
+    if (!directGenerate || isDirectGenerating) return;
+
+    if (!user) {
+      setDrawerState("signin");
+      return;
+    }
+
+    const remainingCredits =
+      ((user as any)?.non_expiring_credits ?? 0) +
+      ((user as any)?.expiring_credits ?? 0);
+
+    if (remainingCredits < GENERATE_CREDITS_COST) {
+      alert(t("insufficientCredits"));
+      return;
+    }
+
+    if (directGenerate.onBeforeGenerate) {
+      const proceed = await directGenerate.onBeforeGenerate();
+      if (!proceed) return;
+    }
+
+    try {
+      setIsDirectGenerating(true);
+      trackAction(tracking, "generate");
+
+      const res = await nanoGenerateService.generate({
+        template_id: directGenerate.templateId,
+        params: directGenerate.params,
+        example_id: directGenerate.exampleId,
+      });
+
+      if (!res?.success || !res?.signed_url) {
+        throw new Error(res?.message || "Generation failed");
+      }
+
+      if (directGenerate.onGenerateSuccess) {
+        directGenerate.onGenerateSuccess(res.signed_url);
+      } else {
+        window.open(res.signed_url, "_blank", "noopener,noreferrer");
+      }
+    } catch (error) {
+      console.error("Direct generate failed:", error);
+      alert(t("generateFailed"));
+    } finally {
+      setIsDirectGenerating(false);
+    }
   };
 
   const handleBatchDownload = async () => {
@@ -123,7 +215,27 @@ export default function UnifiedActionBar({
 
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
-      {visible(generate) && (
+      {visible(directGenerate) ? (
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleDirectGenerate}
+            disabled={isDirectGenerating}
+            className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer disabled:opacity-60"
+            type="button"
+          >
+            <Wand2 className="h-4 w-4" />
+            {isDirectGenerating ? t("generating") : t("generate")}
+            {clientMounted && !user && (
+              <span className="ml-1 text-xs opacity-80">🔒</span>
+            )}
+          </button>
+          {clientMounted && user && (
+            <span className="text-xs text-neutral-500">
+              {GENERATE_CREDITS_COST} credits
+            </span>
+          )}
+        </div>
+      ) : visible(generate) && (
         <button
           onClick={handleGenerate}
           className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer"
@@ -174,6 +286,38 @@ export default function UnifiedActionBar({
             <span className="ml-1 text-xs opacity-80">🔒</span>
           )}
         </button>
+      )}
+
+      {visible(save) && (
+        <button
+          onClick={handleSave}
+          type="button"
+          className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold cursor-pointer transition-colors ${
+            saved
+              ? "border-purple-300 bg-purple-50 text-purple-700"
+              : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50"
+          }`}
+        >
+          <Bookmark className={`h-4 w-4 ${saved ? "fill-current" : ""}`} />
+          {saved ? t("saved") : t("save")}
+          {clientMounted && !user && (
+            <span className="ml-1 text-xs opacity-60">🔒</span>
+          )}
+        </button>
+      )}
+
+      {visible(download) && (
+        <a
+          href={download.url}
+          download={download.filename ?? true}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackAction(tracking, "download")}
+          className="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 cursor-pointer"
+        >
+          <Download className="h-4 w-4" />
+          {t("download")}
+        </a>
       )}
     </div>
   );
