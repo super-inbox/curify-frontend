@@ -140,7 +140,7 @@ export default function ReproduceTemplateSection(props: {
         {t("reproduce.subtitle")}
       </p>
 
-      <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5">
+      <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-3 sm:p-4">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
 
           {/* Left: params + prompt */}
@@ -348,7 +348,7 @@ export default function ReproduceTemplateSection(props: {
                       <img
                         src={sampleImage.previewUrl}
                         alt={sampleImage.alt ?? "Sample"}
-                        className="w-full h-auto object-contain"
+                        className="w-full object-contain max-h-[320px]"
                       />
                     </div>
                   </div>
@@ -360,7 +360,7 @@ export default function ReproduceTemplateSection(props: {
                       <img
                         src={generatedImageUrl}
                         alt="Generated result"
-                        className="w-full h-auto object-contain"
+                        className="w-full object-contain max-h-[320px]"
                       />
                     </div>
                     <div className="mt-2 flex justify-end">
@@ -386,7 +386,7 @@ export default function ReproduceTemplateSection(props: {
                     <img
                       src={generatedImageUrl}
                       alt="Generated result"
-                      className="w-full h-auto object-contain"
+                      className="w-full object-contain max-h-[320px]"
                     />
                   </div>
                   <div className="mt-2 flex justify-end">
@@ -407,7 +407,7 @@ export default function ReproduceTemplateSection(props: {
                   <img
                     src={sampleImage.previewUrl}
                     alt={sampleImage.alt ?? "Sample"}
-                    className="w-full h-auto object-contain"
+                    className="w-full object-contain max-h-[320px]"
                   />
                 </div>
               ) : null}
