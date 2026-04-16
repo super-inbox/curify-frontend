@@ -76,6 +76,10 @@ export default function ReproduceTemplateSection(props: {
   const promptLines = promptText ? promptText.split("\n") : [];
   const shouldFoldPrompt = promptLines.length > COLLAPSED_PROMPT_ROWS || promptText.length > 150;
 
+  const emptyParams = params.filter(
+    (p) => !form[p.name] || String(form[p.name]).trim() === ""
+  );
+
   const onChange = (name: string, value: any) => {
     setDuplicateWarning(null);
     setGeneratedImageUrl(null);
@@ -251,6 +255,7 @@ export default function ReproduceTemplateSection(props: {
                 params: form as Record<string, string>,
                 exampleId: buildExampleId(template.template_id, form as Record<string, string>),
                 onBeforeGenerate: () => {
+                  if (emptyParams.length > 0) return false;
                   if (duplicateWarning) return true;
                   const dup = findDuplicate(form);
                   if (dup) {
@@ -301,6 +306,21 @@ export default function ReproduceTemplateSection(props: {
               </div>
             ) : (
               <>
+                {/* Block 1: empty parameters */}
+                {emptyParams.length > 0 && (
+                  <div className="mb-3 flex items-start gap-3 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700">
+                    <span className="mt-0.5 shrink-0">📝</span>
+                    <span>
+                      Please fill in{" "}
+                      <span className="font-semibold">
+                        {emptyParams.map((p) => p.label || p.name).join(", ")}
+                      </span>{" "}
+                      before generating.
+                    </span>
+                  </div>
+                )}
+
+                {/* Block 2: duplicate warning */}
                 {duplicateWarning && (
                   <div className="mb-3 flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
                     <span className="mt-0.5 shrink-0">⚠️</span>

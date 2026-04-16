@@ -1,9 +1,13 @@
 "use client";
 
+import { useCallback } from "react";
+import { useAtomValue, useSetAtom } from "jotai";
+
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { PageLocale } from "@/lib/locale_utils";
 import blogToNanoTemplateMapping from "@/public/data/blog-to-nano-template-mapping.json";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 interface NanoBananaExamplesProps {
   locale: string;
@@ -11,7 +15,13 @@ interface NanoBananaExamplesProps {
 }
 
 export default function NanoBananaExamples({ locale, blogSlug }: NanoBananaExamplesProps) {
-  const requireAuth = () => true;
+  const user = useAtomValue(userAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const requireAuth = useCallback(() => {
+    if (user) return true;
+    setDrawerState("signin");
+    return false;
+  }, [user, setDrawerState]);
   const onViewClick = () => {};
 
   // Generate example cards from JSON mapping

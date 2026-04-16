@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback } from "react";
 import { useTranslations } from "next-intl";
+import { useAtomValue, useSetAtom } from "jotai";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 type ToolCard = {
   slug: string;
@@ -25,6 +28,13 @@ export default function UseCaseClient({
 }) {
   const t = useTranslations("useCasePage");
   const title = t(`${slug}.title` as never);
+  const user = useAtomValue(userAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const requireAuth = useCallback(() => {
+    if (user) return true;
+    setDrawerState("signin");
+    return false;
+  }, [user, setDrawerState]);
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -81,7 +91,7 @@ export default function UseCaseClient({
           </h2>
           <NanoInspirationRow
             cards={nanoCards}
-            requireAuth={() => true}
+            requireAuth={requireAuth}
             onViewClick={() => {}}
           />
         </section>

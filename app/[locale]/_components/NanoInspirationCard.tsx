@@ -9,6 +9,7 @@ import {
   useCopyTracking,
   useClickTracking,
   useShareTracking,
+  useSaveTracking,
 } from "@/services/useTracking";
 import { stableHashToInt } from "@/lib/hash_utils";
 import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
@@ -64,7 +65,7 @@ export function NanoInspirationCard({
   const trackCardClick = useClickTracking(card.id, "nano_inspiration", "list");
   const trackCopy = useCopyTracking(card.id, "nano_inspiration", "list");
   const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
-  const trackSave = useClickTracking(card.id, "nano_inspiration", "list");
+  const trackSave = useSaveTracking(card.id, "nano_inspiration", "list");
 
   const canonicalUrl = makeNanoTemplateUrl(card.template_id, pageLocale);
 
