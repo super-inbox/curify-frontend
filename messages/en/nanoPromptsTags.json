@@ -1,541 +1,1036 @@
 {
-  "snowy landscape": {
-    "title": "Snowy Landscape AI Image Prompts Gallery",
-    "description": "Explore our collection of AI prompts for creating stunning snowy landscape images. Perfect for artists and creators looking for inspiration!",
-    "keywords": [
-      "AI prompts",
-      "snowy landscape",
-      "image generation",
-      "art inspiration",
-      "winter scenery"
-    ]
-  },
   "woman": {
-    "title": "AI Image Prompts for Women",
-    "description": "Explore a diverse collection of AI image prompts featuring women. Discover unique ideas to inspire your creative projects.",
+    "title": "AI Prompts for Stunning Woman Images",
+    "description": "Explore curated AI prompts to create stunning woman images. Get inspired by diverse styles and unleash creativity with detailed AI prompts for women.",
     "keywords": [
-      "AI prompts",
-      "women",
-      "image generation",
-      "creative ideas",
-      "art prompts"
+      "woman AI prompts",
+      "AI female imagery",
+      "AI women art",
+      "female character prompts",
+      "AI woman portraits"
     ]
   },
-  "intimate": {
-    "title": "Intimate AI Image Prompts Gallery",
-    "description": "Explore our curated collection of intimate AI image prompts. Discover unique ideas to inspire your creative projects with AI tools.",
+  "portrait": {
+    "title": "Artistic AI Prompts for Portraits",
+    "description": "Explore AI prompts crafted for portrait art. Generate expressive portrait images, from lifelike to stylized, with detailed AI prompts for stunning results.",
     "keywords": [
-      "intimate prompts",
-      "AI image generation",
-      "creative prompts",
-      "art inspiration",
-      "AI tools"
+      "portrait AI prompts",
+      "AI portrait art",
+      "portrait generation",
+      "AI portrait ideas",
+      "human portrait prompts"
     ]
   },
-  "mirror selfie": {
-    "title": "Mirror Selfie AI Prompts Gallery",
-    "description": "Explore a curated collection of AI prompts for creating stunning mirror selfies. Unleash your creativity with unique ideas and categories.",
+  "confident": {
+    "title": "AI Prompts for Confident Imagery",
+    "description": "Discover AI prompts to generate confident characters and bold imagery. Enhance your AI art with prompts focused on strong poses, expressions, and empowering themes.",
     "keywords": [
-      "mirror selfie",
-      "AI prompts",
-      "image generation",
-      "creative selfies",
-      "artistic photography"
-    ]
-  },
-  "golden hour": {
-    "title": "Golden Hour AI Image Prompts Gallery",
-    "description": "Explore our curated collection of AI image prompts tagged 'golden hour' to inspire stunning visuals and creativity.",
-    "keywords": [
-      "golden hour",
-      "AI image prompts",
-      "image generation",
-      "creative prompts",
-      "art inspiration"
+      "confident AI prompts",
+      "AI strong characters",
+      "empowering AI art",
+      "bold imagery prompts",
+      "confident character design"
     ]
   },
   "playful": {
-    "title": "Playful AI Image Prompts Gallery",
-    "description": "Explore a vibrant collection of playful AI image prompts. Unleash your creativity and generate fun images with ease!",
+    "title": "Playful AI Prompts for Fun Images",
+    "description": "Explore playful AI prompts to create fun, whimsical images. Unleash cheerful scenes and lively characters using creative AI prompts designed for playful art.",
     "keywords": [
-      "playful prompts",
-      "AI image generation",
-      "creative prompts",
-      "fun images",
-      "art prompts"
+      "playful AI prompts",
+      "fun AI art",
+      "whimsical image prompts",
+      "lively AI scenes",
+      "playful character design"
     ]
   },
   "serene": {
-    "title": "Serene AI Image Prompts Gallery",
-    "description": "Explore a collection of serene AI image prompts to inspire your creativity. Discover tranquility through art with our curated selection.",
+    "title": "Serene AI Prompts for Calm Scenes",
+    "description": "Discover serene AI prompts to craft peaceful, calming images. Use detailed AI prompts to generate tranquil landscapes and soothing atmospheres with ease.",
     "keywords": [
-      "serene",
-      "AI prompts",
-      "image generation",
-      "art inspiration",
-      "tranquility"
+      "serene AI prompts",
+      "calm scene prompts",
+      "peaceful AI art",
+      "tranquil landscape AI",
+      "soothing image prompts"
+    ]
+  },
+  "cozy": {
+    "title": "Cozy AI Prompts for Warm Imagery",
+    "description": "Explore cozy AI prompts to design warm and inviting scenes. Create comforting atmospheres with detailed AI prompts for cozy interiors and snug environments.",
+    "keywords": [
+      "cozy AI prompts",
+      "warm scene AI",
+      "inviting image prompts",
+      "comfortable AI art",
+      "snug environment prompts"
+    ]
+  },
+  "cinematic": {
+    "title": "Cinematic AI Prompts for Film-Style Art",
+    "description": "Discover cinematic AI prompts to craft movie-like scenes. Generate dramatic, film-style imagery using detailed AI prompts for epic and immersive visuals.",
+    "keywords": [
+      "cinematic AI prompts",
+      "film-style imagery",
+      "dramatic scene prompts",
+      "epic AI art",
+      "movie-like visuals"
+    ]
+  },
+  "joyful": {
+    "title": "Joyful AI Prompts for Happy Scenes",
+    "description": "Explore joyful AI prompts to create uplifting scenes. Generate cheerful, vibrant images with detailed AI prompts focused on happiness and positive energy.",
+    "keywords": [
+      "joyful AI prompts",
+      "happy scene AI",
+      "uplifting image prompts",
+      "positive AI art",
+      "cheerful visuals"
+    ]
+  },
+  "elegant": {
+    "title": "Elegant AI Prompts for Stylish Art",
+    "description": "Discover elegant AI prompts to craft refined, stylish imagery. Generate graceful and sophisticated visuals with detailed AI prompts focused on elegance and poise.",
+    "keywords": [
+      "elegant AI prompts",
+      "stylish AI imagery",
+      "refined art prompts",
+      "sophisticated AI scenes",
+      "graceful visual prompts"
+    ]
+  },
+  "intimate": {
+    "title": "Intimate AI Prompts for Personal Moments",
+    "description": "Explore intimate AI prompts to capture personal, close-up scenes. Generate heartfelt and emotional images with detailed AI prompts for intimate artistry.",
+    "keywords": [
+      "intimate AI prompts",
+      "personal scene AI",
+      "close-up image prompts",
+      "emotional AI art",
+      "heartfelt visual prompts"
+    ]
+  },
+  "whimsical": {
+    "title": "Whimsical AI Prompts for Fantastical Art",
+    "description": "Discover whimsical AI prompts to create fantastical scenes. Generate imaginative, quirky images with detailed AI prompts focused on playful fantasy and wonder.",
+    "keywords": [
+      "whimsical AI prompts",
+      "fantastical AI art",
+      "quirky scene prompts",
+      "imaginative imagery",
+      "fairytale AI prompts"
+    ]
+  },
+  "vibrant": {
+    "title": "Vibrant AI Prompts for Colorful Imagery",
+    "description": "Explore vibrant AI prompts to craft bold, colorful images. Use detailed AI prompts to generate energetic scenes bursting with vivid hues and dynamic compositions.",
+    "keywords": [
+      "vibrant AI prompts",
+      "colorful AI art",
+      "bold imagery prompts",
+      "energetic scene AI",
+      "vivid visual prompts"
+    ]
+  },
+  "vintage": {
+    "title": "Vintage AI Prompts for Retro Art",
+    "description": "Discover vintage AI prompts to create classic, retro-style images. Generate nostalgic visuals with detailed AI prompts inspired by timeless vintage aesthetics.",
+    "keywords": [
+      "vintage AI prompts",
+      "retro AI art",
+      "nostalgic imagery",
+      "classic style prompts",
+      "timeless visual design"
+    ]
+  },
+  "man": {
+    "title": "AI Prompts for Realistic Man Images",
+    "description": "Explore curated AI prompts to generate realistic man images. Get inspired by diverse styles and detailed AI prompts for lifelike male characters.",
+    "keywords": [
+      "man AI prompts",
+      "male character art",
+      "AI man imagery",
+      "realistic man prompts",
+      "male portrait prompts"
+    ]
+  },
+  "photorealistic": {
+    "title": "Photorealistic AI Prompts for Ultra-Realistic Images",
+    "description": "Discover photorealistic AI prompts to render ultra-realistic images. Use precise AI prompts for lifelike details, textures, and lighting in stunning photorealistic art.",
+    "keywords": [
+      "photorealistic AI prompts",
+      "ultra-realistic images",
+      "lifelike AI art",
+      "detailed texture prompts",
+      "realistic scene generation"
     ]
   },
   "nostalgic": {
     "title": "Nostalgic AI Image Prompts Gallery",
-    "description": "Explore our collection of nostalgic AI image prompts. Unleash your creativity and generate stunning images that evoke memories.",
+    "description": "Explore our collection of nostalgic AI prompts to recreate vintage scenes, retro moods, and timeless memories in stunning image galleries.",
     "keywords": [
-      "nostalgic prompts",
-      "AI image generation",
-      "creative prompts",
-      "image inspiration",
-      "nostalgia art"
+      "nostalgic AI prompts",
+      "vintage image prompts",
+      "retro AI art",
+      "memory-driven visuals",
+      "throwback imagery"
     ]
   },
   "urban": {
     "title": "Urban AI Image Prompts Gallery",
-    "description": "Explore our curated collection of urban-themed AI image prompts. Discover creative ideas to inspire your next AI-generated artwork.",
+    "description": "Discover urban AI prompts for vibrant cityscapes, street art textures, and metropolitan vibes. Craft modern, dynamic images with endless city inspiration.",
     "keywords": [
-      "urban prompts",
-      "AI image generation",
-      "urban art",
-      "creative prompts",
-      "AI artwork"
-    ]
-  },
-  "minimalist": {
-    "title": "Minimalist AI Image Prompts Gallery",
-    "description": "Explore our curated collection of minimalist AI image prompts. Perfect for artists and creators seeking simplicity and elegance in their designs.",
-    "keywords": [
-      "minimalist",
-      "AI prompts",
-      "image generation",
-      "art prompts",
-      "design inspiration"
-    ]
-  },
-  "high fashion": {
-    "title": "High Fashion AI Prompts Gallery",
-    "description": "Explore our collection of high fashion AI image prompts to inspire your creative projects. Discover unique ideas and elevate your designs.",
-    "keywords": [
-      "high fashion",
-      "AI prompts",
-      "image generation",
-      "fashion design",
-      "creative inspiration"
-    ]
-  },
-  "vibrant colors": {
-    "title": "Vibrant Colors AI Image Prompts",
-    "description": "Explore our collection of AI image prompts featuring vibrant colors. Unleash your creativity with stunning visuals and unique themes.",
-    "keywords": [
-      "vibrant colors",
-      "AI image prompts",
-      "colorful art",
-      "creative visuals",
-      "image generation"
-    ]
-  },
-  "cozy": {
-    "title": "Cozy AI Image Prompts Gallery",
-    "description": "Explore our cozy AI image prompts to inspire warmth and comfort in your creations. Perfect for generating inviting visuals with AI tools.",
-    "keywords": [
-      "cozy",
-      "AI image prompts",
-      "warmth",
-      "comfort",
-      "image generation"
-    ]
-  },
-  "fashion": {
-    "title": "Fashion AI Image Prompts Gallery",
-    "description": "Explore a curated collection of AI image prompts in fashion. Discover creative ideas to inspire your next AI-generated fashion artwork.",
-    "keywords": [
-      "AI fashion prompts",
-      "image generation",
-      "fashion art",
-      "creative prompts",
-      "AI tools"
-    ]
-  },
-  "man": {
-    "title": "AI Image Prompts for Men | Nano Banana Pro",
-    "description": "Explore a diverse collection of AI image prompts tagged with 'man'. Unleash your creativity with unique ideas for generating stunning visuals.",
-    "keywords": [
-      "AI prompts",
-      "man",
-      "image generation",
-      "creative prompts",
-      "artificial intelligence"
-    ]
-  },
-  "vibrant": {
-    "title": "Vibrant AI Image Prompts Gallery",
-    "description": "Explore a colorful collection of vibrant AI image prompts. Unleash your creativity with vivid ideas for stunning visuals.",
-    "keywords": [
-      "vibrant prompts",
-      "AI image generation",
-      "colorful art",
-      "creative prompts",
-      "visual inspiration"
-    ]
-  },
-  "elegant": {
-    "title": "Elegant AI Image Prompts Gallery",
-    "description": "Explore our collection of elegant AI image prompts. Discover stunning ideas to inspire your next AI-generated masterpiece.",
-    "keywords": [
-      "elegant",
-      "AI prompts",
-      "image generation",
-      "art inspiration",
-      "creative ideas"
-    ]
-  },
-  "portrait": {
-    "title": "Explore AI Portrait Prompts | Nano Banana Pro",
-    "description": "Discover a variety of AI-generated portrait prompts to inspire your creativity. Browse our collection and start creating stunning images today!",
-    "keywords": [
-      "AI portrait prompts",
-      "image generation",
-      "art prompts",
-      "creative AI",
-      "portrait art"
-    ]
-  },
-  "whimsical": {
-    "title": "Whimsical AI Image Prompts Gallery",
-    "description": "Explore our whimsical AI image prompts to spark your creativity. Discover unique and playful ideas for your next AI-generated masterpiece.",
-    "keywords": [
-      "whimsical prompts",
-      "AI image generation",
-      "creative prompts",
-      "playful art",
-      "imaginative images"
-    ]
-  },
-  "vintage": {
-    "title": "Vintage AI Image Prompts Gallery",
-    "description": "Explore our curated collection of vintage-themed AI image prompts. Unleash your creativity with unique prompts for stunning vintage visuals.",
-    "keywords": [
-      "vintage prompts",
-      "AI image generation",
-      "retro art",
-      "creative prompts",
-      "vintage style"
-    ]
-  },
-  "confident": {
-    "title": "Confident AI Image Prompts Gallery",
-    "description": "Explore a curated collection of AI image prompts tagged 'confident'. Unleash creativity and generate stunning visuals with confidence.",
-    "keywords": [
-      "AI prompts",
-      "confident images",
-      "image generation",
-      "creative prompts",
-      "AI art"
-    ]
-  },
-  "chic": {
-    "title": "Chic AI Image Prompts Gallery",
-    "description": "Explore our curated collection of chic AI image prompts. Discover stylish and sophisticated ideas to inspire your next AI-generated masterpiece.",
-    "keywords": [
-      "chic prompts",
-      "AI image generation",
-      "stylish designs",
-      "sophisticated art",
-      "creative prompts"
-    ]
-  },
-  "cinematic": {
-    "title": "Cinematic AI Image Prompts | Nano Banana Pro",
-    "description": "Explore a curated collection of cinematic AI image prompts. Create stunning visuals with our categorized prompts for your next project.",
-    "keywords": [
-      "cinematic prompts",
-      "AI image generation",
-      "visual storytelling",
-      "film-inspired art",
-      "creative prompts"
+      "urban AI prompts",
+      "cityscape prompts",
+      "metropolitan art",
+      "street photography",
+      "modern visuals"
     ]
   },
   "luxurious": {
     "title": "Luxurious AI Image Prompts Gallery",
-    "description": "Explore our collection of luxurious AI image prompts. Discover creative ideas to generate stunning visuals with AI tools.",
+    "description": "Indulge in luxurious AI prompts that evoke opulence, gold accents, and high-end elegance. Create lavish, sophisticated images with top-tier visual flair.",
     "keywords": [
-      "luxurious",
-      "AI prompts",
-      "image generation",
-      "creative visuals",
-      "artistic inspiration"
+      "luxurious AI prompts",
+      "opulent visuals",
+      "elegant image art",
+      "high-end design",
+      "premium aesthetics"
     ]
   },
-  "joyful": {
-    "title": "Joyful AI Image Prompts - Nano Banana Pro",
-    "description": "Explore a vibrant collection of joyful AI image prompts. Unleash creativity and generate uplifting visuals with our curated prompts.",
+  "minimalist": {
+    "title": "Minimalist AI Image Prompts Gallery",
+    "description": "Embrace simplicity with minimalist AI prompts to craft clean, uncluttered compositions. Generate sleek, modern images focused on essential form and space.",
     "keywords": [
-      "joyful prompts",
-      "AI image generation",
-      "creative prompts",
-      "uplifting visuals",
-      "Nano Banana Pro"
+      "minimalist AI prompts",
+      "simple design",
+      "clean compositions",
+      "uncluttered visuals",
+      "modern minimalism"
     ]
   },
-  "bold": {
-    "title": "Bold AI Image Prompts for Creative Inspiration",
-    "description": "Explore our collection of bold AI image prompts to unleash your creativity. Perfect for artists and designers looking for inspiration.",
+  "dramatic": {
+    "title": "Dramatic AI Image Prompts Gallery",
+    "description": "Harness dramatic AI prompts to produce bold contrasts, intense lighting, and high-impact scenes. Create powerful, emotion-driven images that captivate.",
     "keywords": [
-      "AI prompts",
-      "bold images",
-      "creative prompts",
-      "image generation",
-      "art inspiration"
-    ]
-  },
-  "ethereal": {
-    "title": "Ethereal AI Image Prompts | Nano Banana Pro",
-    "description": "Explore our collection of ethereal AI image prompts. Unleash your creativity and generate stunning visuals with our curated selections.",
-    "keywords": [
-      "ethereal prompts",
-      "AI image generation",
-      "creative prompts",
-      "artistic inspiration",
-      "AI art"
-    ]
-  },
-  "festive": {
-    "title": "Festive AI Image Prompts Gallery",
-    "description": "Explore our collection of festive AI image prompts to inspire your creativity. Discover unique ideas for holiday-themed art and designs.",
-    "keywords": [
-      "festive prompts",
-      "AI image generation",
-      "holiday art",
-      "creative prompts",
-      "festive themes"
-    ]
-  },
-  "luxury": {
-    "title": "Luxury AI Image Prompts Gallery",
-    "description": "Explore a curated collection of luxury-themed AI image prompts. Discover creative ideas to generate stunning visuals with AI tools.",
-    "keywords": [
-      "luxury",
-      "AI prompts",
-      "image generation",
-      "creative visuals",
-      "artistic inspiration"
-    ]
-  },
-  "couple": {
-    "title": "AI Image Prompts for Couples",
-    "description": "Explore a curated collection of AI prompts for couples. Create stunning images that capture love, romance, and connection with our unique ideas.",
-    "keywords": [
-      "couple prompts",
-      "AI image generation",
-      "romantic images",
-      "love prompts",
-      "couples art"
-    ]
-  },
-  "selfie": {
-    "title": "Selfie AI Prompts Gallery",
-    "description": "Explore our collection of AI-generated selfie prompts to create stunning images. Discover unique ideas and unleash your creativity today!",
-    "keywords": [
-      "selfie prompts",
-      "AI image generation",
-      "creative selfies",
-      "AI art",
-      "image prompts"
-    ]
-  },
-  "glamorous": {
-    "title": "Glamorous AI Image Prompts - Nano Banana Pro",
-    "description": "Explore our collection of glamorous AI image prompts. Discover stunning ideas to create captivating visuals with AI tools.",
-    "keywords": [
-      "glamorous",
-      "AI prompts",
-      "image generation",
-      "creative visuals",
-      "Nano Banana Pro"
-    ]
-  },
-  "kpop": {
-    "title": "Kpop AI Image Prompts Gallery",
-    "description": "Explore a vibrant collection of Kpop-themed AI image prompts. Create stunning visuals inspired by your favorite Kpop stars and styles.",
-    "keywords": [
-      "Kpop",
-      "AI prompts",
-      "image generation",
-      "Kpop art",
-      "AI gallery"
-    ]
-  },
-  "tranquil": {
-    "title": "Tranquil AI Image Prompts Gallery",
-    "description": "Explore our tranquil AI image prompts to inspire calm and serene artwork. Discover categories and tags for your creative journey.",
-    "keywords": [
-      "tranquil",
-      "AI prompts",
-      "image generation",
-      "serene art",
-      "calm imagery"
-    ]
-  },
-  "stylish": {
-    "title": "Stylish AI Image Prompts - Nano Banana Pro",
-    "description": "Explore our collection of stylish AI image prompts to unleash your creativity. Discover unique ideas and elevate your AI art today!",
-    "keywords": [
-      "stylish prompts",
-      "AI image generation",
-      "creative prompts",
-      "art inspiration",
-      "fashionable designs"
-    ]
-  },
-  "bedroom": {
-    "title": "Explore AI Bedroom Image Prompts",
-    "description": "Discover a variety of AI image prompts related to bedrooms. Create stunning visuals with our curated bedroom-themed prompts.",
-    "keywords": [
-      "AI prompts",
-      "bedroom images",
-      "image generation",
-      "creative prompts",
-      "artistic bedroom"
-    ]
-  },
-  "confidence": {
-    "title": "Confidence AI Image Prompts Gallery",
-    "description": "Explore our curated collection of AI image prompts tagged with 'confidence'. Unleash your creativity and generate stunning visuals with confidence.",
-    "keywords": [
-      "AI prompts",
-      "image generation",
-      "confidence",
-      "creative prompts",
-      "artistic inspiration"
-    ]
-  },
-  "futuristic": {
-    "title": "Futuristic AI Image Prompts Gallery",
-    "description": "Explore a collection of futuristic AI image generation prompts. Unleash your creativity with cutting-edge ideas and themes.",
-    "keywords": [
-      "futuristic",
-      "AI prompts",
-      "image generation",
-      "creative ideas",
-      "technology"
-    ]
-  },
-  "neon lights": {
-    "title": "Neon Lights AI Image Prompts Gallery",
-    "description": "Explore our collection of AI image prompts featuring vibrant neon lights. Unleash your creativity with stunning visuals and unique concepts.",
-    "keywords": [
-      "neon lights",
-      "AI image prompts",
-      "creative visuals",
-      "digital art",
-      "image generation"
+      "dramatic AI prompts",
+      "bold contrasts",
+      "intense lighting",
+      "high-impact visuals",
+      "cinematic scenes"
     ]
   },
   "moody": {
     "title": "Moody AI Image Prompts Gallery",
-    "description": "Explore our collection of moody AI image prompts. Discover creative ideas to generate stunning visuals with AI tools.",
+    "description": "Explore moody AI prompts for atmospheric, brooding visuals. Generate emotion-rich, dark-toned images that convey depth, suspense, and evocative storytelling.",
     "keywords": [
-      "moody prompts",
-      "AI image generation",
-      "creative prompts",
-      "artistic inspiration",
-      "visual storytelling"
+      "moody AI prompts",
+      "atmospheric visuals",
+      "dark-toned images",
+      "emotive art",
+      "suspenseful scenes"
     ]
   },
-  "calm": {
-    "title": "Calm AI Image Prompts Gallery",
-    "description": "Explore a collection of AI image prompts tagged with 'calm' to inspire serene and peaceful creations. Perfect for your next artistic project.",
+  "stylish": {
+    "title": "Stylish AI Image Prompts Gallery",
+    "description": "Discover stylish AI prompts to craft chic, fashion-forward images. Elevate your visuals with modern trends, sleek design, and high-glam aesthetics.",
     "keywords": [
-      "calm",
-      "AI prompts",
-      "image generation",
-      "serene art",
-      "peaceful images"
+      "stylish AI prompts",
+      "chic visuals",
+      "fashion-forward design",
+      "modern aesthetics",
+      "sleek imagery"
+    ]
+  },
+  "artistic": {
+    "title": "Artistic AI Image Prompts Gallery",
+    "description": "Unlock your creativity with artistic AI prompts for painterly textures, bold strokes, and expressive compositions. Generate unique, gallery-worthy images.",
+    "keywords": [
+      "artistic AI prompts",
+      "creative visuals",
+      "painterly textures",
+      "expressive compositions",
+      "gallery-worthy images"
+    ]
+  },
+  "bold": {
+    "title": "Bold AI Image Prompts Gallery",
+    "description": "Make a statement with bold AI prompts that feature vivid colors, strong shapes, and fearless design. Create striking images that stand out.",
+    "keywords": [
+      "bold AI prompts",
+      "vivid colors",
+      "strong shapes",
+      "fearless design",
+      "striking visuals"
     ]
   },
   "contemplative": {
     "title": "Contemplative AI Image Prompts Gallery",
-    "description": "Explore our collection of contemplative AI image prompts. Discover unique ideas to inspire your creative projects and generate stunning visuals.",
+    "description": "Engage with contemplative AI prompts to craft introspective, reflective imagery. Generate serene, thought-provoking scenes with quiet elegance.",
     "keywords": [
-      "contemplative prompts",
-      "AI image generation",
-      "creative inspiration",
-      "art prompts",
-      "visual storytelling"
+      "contemplative AI prompts",
+      "reflective imagery",
+      "serene visuals",
+      "introspective scenes",
+      "thought-provoking art"
     ]
   },
-  "east asian": {
-    "title": "East Asian AI Image Prompts Gallery",
-    "description": "Explore our curated collection of AI image prompts tagged 'East Asian'. Unleash creativity with diverse themes and styles.",
+  "fashion": {
+    "title": "Fashion AI Image Prompts Gallery",
+    "description": "Explore fashion AI prompts to design runway-ready styles, bold outfits, and haute couture visuals. Create trendsetting, high-fashion images.",
     "keywords": [
-      "East Asian prompts",
-      "AI image generation",
-      "creative prompts",
-      "art inspiration",
-      "image creation"
+      "fashion AI prompts",
+      "runway designs",
+      "haute couture visuals",
+      "style inspiration",
+      "trendsetting art"
     ]
   },
-  "natural beauty": {
-    "title": "Natural Beauty AI Image Prompts Gallery",
-    "description": "Explore our collection of AI prompts focused on natural beauty. Discover inspiration for stunning images that celebrate the wonders of nature.",
+  "energetic": {
+    "title": "Energetic AI Image Prompts Gallery",
+    "description": "Ignite creativity with energetic AI prompts for dynamic compositions, vibrant motion, and lively scenes. Generate high-energy images full of life.",
     "keywords": [
-      "natural beauty",
-      "AI image prompts",
-      "nature photography",
-      "artistic inspiration",
-      "image generation"
+      "energetic AI prompts",
+      "dynamic compositions",
+      "vibrant motion",
+      "lively scenes",
+      "high-energy art"
     ]
   },
-  "closeup": {
-    "title": "Closeup AI Image Prompts | Nano Banana Pro",
-    "description": "Explore a curated collection of closeup AI image prompts to inspire your next creative project. Discover unique ideas and unleash your imagination!",
+  "selfie": {
+    "title": "Selfie AI Image Prompts Gallery",
+    "description": "Perfect your selfie style with AI prompts for ideal angles, flattering lighting, and personalized portraits. Create stunning self-portraits effortlessly.",
     "keywords": [
-      "AI image prompts",
-      "closeup photography",
-      "creative prompts",
-      "image generation",
-      "art inspiration"
-    ]
-  },
-  "sophisticated": {
-    "title": "Sophisticated AI Image Prompts Gallery",
-    "description": "Explore a curated collection of sophisticated AI image prompts to inspire your creative projects and elevate your artwork.",
-    "keywords": [
-      "sophisticated",
-      "AI prompts",
-      "image generation",
-      "creative inspiration",
-      "art prompts"
-    ]
-  },
-  "christmas": {
-    "title": "Christmas AI Image Prompts Gallery",
-    "description": "Explore our collection of AI image prompts tagged with Christmas. Create stunning holiday-themed images effortlessly with Nano Banana Pro.",
-    "keywords": [
-      "Christmas prompts",
-      "AI image generation",
-      "holiday images",
-      "festive prompts",
-      "AI art"
-    ]
-  },
-  "modern": {
-    "title": "Modern AI Image Prompts Gallery",
-    "description": "Explore a curated collection of modern AI image prompts. Discover innovative ideas to inspire your next creative project.",
-    "keywords": [
-      "modern",
-      "AI prompts",
-      "image generation",
-      "creative ideas",
-      "art prompts"
+      "selfie AI prompts",
+      "portrait lighting",
+      "flattering angles",
+      "personalized portraits",
+      "digital self-portraits"
     ]
   },
   "hyperrealistic": {
     "title": "Hyperrealistic AI Image Prompts Gallery",
-    "description": "Explore our collection of hyperrealistic AI image prompts. Discover stunning visuals and unleash your creativity with advanced AI tools.",
+    "description": "Achieve photorealism with hyperrealistic AI prompts for lifelike textures, detail-rich scenes, and immersive visuals. Create stunning, true-to-life images.",
     "keywords": [
-      "hyperrealistic",
+      "hyperrealistic AI prompts",
+      "photorealistic textures",
+      "lifelike images",
+      "detailed scenes",
+      "immersive visuals"
+    ]
+  },
+  "dynamic": {
+    "title": "Dynamic AI Image Prompts Gallery",
+    "description": "Power up with dynamic AI prompts for kinetic compositions, fluid motion, and engaging visuals. Generate action-packed, energetic images.",
+    "keywords": [
+      "dynamic AI prompts",
+      "kinetic compositions",
+      "fluid motion",
+      "action-packed visuals",
+      "engaging images"
+    ]
+  },
+  "golden hour": {
+    "title": "Golden Hour AI Art Prompts",
+    "description": "Explore captivating AI prompts for golden hour scenes, capturing warm sunlight, dramatic skies, and radiant tones ideal for landscape and portrait art.",
+    "keywords": [
+      "golden hour AI",
+      "sunset prompt",
+      "warm lighting",
+      "AI landscape",
+      "dramatic skies"
+    ]
+  },
+  "calm": {
+    "title": "Calm AI Prompts for Serenity",
+    "description": "Uncover serene AI prompts for calm visuals, blending soft hues, tranquil landscapes, and peaceful elements to evoke relaxation in digital art.",
+    "keywords": [
+      "calm AI",
+      "serene prompt",
+      "peaceful art",
+      "soft palette",
+      "relaxation imagery"
+    ]
+  },
+  "tranquil": {
+    "title": "Tranquil AI Image Prompts",
+    "description": "Discover tranquil AI prompts for serene imagery, featuring gentle waters, soft lighting, and peaceful compositions that inspire digital calmness.",
+    "keywords": [
+      "tranquil AI",
+      "peaceful scenery",
+      "serene prompt",
+      "digital calm",
+      "soft lighting"
+    ]
+  },
+  "ethereal": {
+    "title": "Ethereal AI Prompts for Dreamy Art",
+    "description": "Explore ethereal AI prompts to craft otherworldly scenes, with delicate light, misty textures, and mystical elements perfect for dreamlike art.",
+    "keywords": [
+      "ethereal AI",
+      "dreamy prompt",
+      "misty textures",
+      "otherworldly art",
+      "mystical imagery"
+    ]
+  },
+  "surreal": {
+    "title": "Surreal AI Prompts for Imaginative Art",
+    "description": "Dive into surreal AI prompts for imaginative visuals, blending unexpected elements, dreamlike distortions, and fantastical compositions.",
+    "keywords": [
+      "surreal AI",
+      "fantastical art",
+      "dreamlike prompt",
+      "unexpected elements",
+      "imaginative visuals"
+    ]
+  },
+  "chic": {
+    "title": "Chic AI Prompts for Stylish Designs",
+    "description": "Discover chic AI prompts for stylish designs, featuring modern aesthetics, elegant color palettes, and sophisticated compositions in digital art.",
+    "keywords": [
+      "chic AI",
+      "stylish design",
+      "elegant art",
+      "modern aesthetics",
+      "fashionable prompt"
+    ]
+  },
+  "festive": {
+    "title": "Festive AI Prompts for Holiday Art",
+    "description": "Find festive AI prompts to create cheerful holiday scenes, with vibrant colors, celebratory elements, and joyful compositions in digital art.",
+    "keywords": [
+      "festive AI",
+      "holiday prompt",
+      "celebratory art",
+      "vibrant colors",
+      "joyful design"
+    ]
+  },
+  "couple": {
+    "title": "Couple AI Prompts for Romantic Art",
+    "description": "Explore couple AI prompts to craft romantic scenes, highlighting intimate moments, soft lighting, and emotional compositions for digital lovers.",
+    "keywords": [
+      "couple AI",
+      "romantic prompt",
+      "intimate art",
+      "love scenes",
+      "soft lighting"
+    ]
+  },
+  "futuristic": {
+    "title": "Futuristic AI Prompts for Sci-Fi Art",
+    "description": "Discover futuristic AI prompts for sci-fi art, featuring advanced tech, neon-lit environments, and visionary concepts in digital design.",
+    "keywords": [
+      "futuristic AI",
+      "sci-fi prompt",
+      "neon lights",
+      "tech art",
+      "visionary design"
+    ]
+  },
+  "intense": {
+    "title": "Intense AI Prompts for Dramatic Art",
+    "description": "Uncover intense AI prompts for dramatic visuals, with bold contrasts, dynamic compositions, and emotionally charged aesthetics in digital art.",
+    "keywords": [
+      "intense AI",
+      "dramatic art",
+      "bold contrasts",
+      "dynamic composition",
+      "emotional visuals"
+    ]
+  },
+  "high fashion": {
+    "title": "High Fashion AI Prompts and Editorial Looks",
+    "description": "Explore high fashion AI prompts for editorial art, showcasing avant-garde designs, luxe styling, and runway-ready digital compositions.",
+    "keywords": [
+      "high fashion AI",
+      "editorial prompt",
+      "avant-garde design",
+      "runway art",
+      "luxe styling"
+    ]
+  },
+  "food": {
+    "title": "Food AI Prompts for Culinary Art",
+    "description": "Discover food AI prompts to create mouthwatering culinary art, featuring appetizing dishes, rich textures, and vibrant plating in digital form.",
+    "keywords": [
+      "food AI",
+      "culinary prompt",
+      "appetizing art",
+      "digital plating",
+      "food textures"
+    ]
+  },
+  "human portrait": {
+    "title": "Human Portrait AI Prompts for Realistic Faces",
+    "description": "Find human portrait AI prompts to generate lifelike faces, capturing realistic expressions, precise details, and nuanced lighting in digital art.",
+    "keywords": [
+      "human portrait AI",
+      "realistic faces",
+      "portrait prompt",
+      "facial details",
+      "nuanced lighting"
+    ]
+  },
+  "modern": {
+    "title": "Modern AI Prompts for Contemporary Art",
+    "description": "Explore modern AI prompts for contemporary art, featuring clean lines, minimal aesthetics, and sleek compositions in digital creations.",
+    "keywords": [
+      "modern AI",
+      "contemporary art",
+      "minimal aesthetics",
+      "clean lines",
+      "sleek design"
+    ]
+  },
+  "abstract": {
+    "title": "Abstract AI Prompts for Creative Art",
+    "description": "Discover abstract AI prompts to craft creative, non-representational art, using bold shapes, vivid colors, and expressive compositions.",
+    "keywords": [
+      "abstract AI",
+      "creative prompt",
+      "bold shapes",
+      "vivid colors",
+      "nonrepresentational art"
+    ]
+  },
+  "neon lights": {
+    "title": "Neon Lights AI Image Prompts",
+    "description": "Discover stunning neon lights image ideas with AI prompts. Spark futuristic designs, vibrant color schemes, and glowing cityscapes in our gallery.",
+    "keywords": [
+      "neon lights",
       "AI image prompts",
-      "image generation",
-      "art prompts",
-      "digital art"
+      "futuristic design",
+      "vibrant color",
+      "glowing cityscape"
+    ]
+  },
+  "landscape": {
+    "title": "Landscape AI Image Prompts Gallery",
+    "description": "Explore stunning landscape visuals with AI prompts. Unlock vibrant outdoor scenes, majestic vistas, and immersive nature compositions in our gallery.",
+    "keywords": [
+      "landscape photography",
+      "AI image prompts",
+      "nature scenes",
+      "scenic vistas",
+      "outdoor art"
+    ]
+  },
+  "sophisticated": {
+    "title": "Sophisticated AI Image Prompts",
+    "description": "Discover sophisticated AI prompts for elegant image creations. Elevate your visuals with refined textures, chic color palettes, and polished design touches.",
+    "keywords": [
+      "sophisticated design",
+      "elegant visuals",
+      "AI prompts",
+      "refined aesthetics",
+      "chic color palette"
+    ]
+  },
+  "glamorous": {
+    "title": "Glamorous AI Image Prompts",
+    "description": "Unleash glamorous AI prompts to craft stunning, high-fashion visuals. Spark luxury aesthetics, glitzy details, and red carpet vibes for show-stopping results.",
+    "keywords": [
+      "glamorous visuals",
+      "fashion prompts",
+      "luxury aesthetics",
+      "AI image prompts",
+      "red carpet design"
+    ]
+  },
+  "warm": {
+    "title": "Warm AI Image Prompts Gallery",
+    "description": "Discover warm AI prompts for inviting image creations. Infuse cozy color palettes, sunlit tones, and comforting atmospheres with our gallery.",
+    "keywords": [
+      "warm tones",
+      "cozy visuals",
+      "AI prompts",
+      "sunlit design",
+      "comforting images"
+    ]
+  },
+  "natural beauty": {
+    "title": "Natural Beauty AI Image Prompts",
+    "description": "Explore natural beauty with our AI prompts for authentic image creations. Capture serene landscapes, organic textures, and pure, unfiltered aesthetics.",
+    "keywords": [
+      "natural beauty",
+      "authentic visuals",
+      "nature AI prompts",
+      "organic textures",
+      "serene landscapes"
+    ]
+  },
+  "product": {
+    "title": "Product AI Image Prompts Gallery",
+    "description": "Elevate your product visuals with AI prompts for sleek, detailed images. Refine composition, highlight key features, and craft persuasive designs.",
+    "keywords": [
+      "product visuals",
+      "AI prompts",
+      "product photography",
+      "design composition",
+      "persuasive images"
+    ]
+  },
+  "introspective": {
+    "title": "Introspective AI Image Prompts",
+    "description": "Dive into introspective AI prompts for thought-provoking image art. Evoke deep emotions, reflective moods, and conceptual storytelling.",
+    "keywords": [
+      "introspective art",
+      "AI prompts",
+      "thought-provoking images",
+      "reflective mood",
+      "emotional visuals"
+    ]
+  },
+  "mysterious": {
+    "title": "Mysterious AI Image Prompts",
+    "description": "Unlock mysterious AI prompts for captivating and enigmatic image art. Inspire shadowy scenes, cryptic details, and suspenseful atmospheres.",
+    "keywords": [
+      "mysterious visuals",
+      "enigmatic art",
+      "AI prompts",
+      "shadowy scenes",
+      "suspenseful imagery"
+    ]
+  },
+  "romantic": {
+    "title": "Romantic AI Image Prompts Gallery",
+    "description": "Explore romantic AI prompts to create heartfelt and dreamy image art. Evoke love-filled scenes, soft lighting, and intimate moments.",
+    "keywords": [
+      "romantic art",
+      "dreamy visuals",
+      "AI prompts",
+      "love scenes",
+      "intimate lighting"
+    ]
+  },
+  "animal": {
+    "title": "Animal AI Image Prompts Gallery",
+    "description": "Unleash animal-themed AI prompts for captivating wildlife imagery. Discover majestic creatures, dynamic poses, and vivid textures in your creative projects.",
+    "keywords": [
+      "animal imagery",
+      "wildlife art",
+      "AI prompts",
+      "majestic creatures",
+      "dynamic poses"
+    ]
+  },
+  "dreamy": {
+    "title": "Dreamy AI Image Prompts Gallery",
+    "description": "Delve into dreamy AI prompts for ethereal and soft-focus image art. Create pastel landscapes, floating forms, and serene atmospheres and whimsical charm.",
+    "keywords": [
+      "dreamy visuals",
+      "ethereal art",
+      "AI prompts",
+      "soft-focus design",
+      "whimsical imagery"
+    ]
+  },
+  "eerie": {
+    "title": "Eerie AI Image Prompts Gallery",
+    "description": "Dive into eerie AI prompts for haunting and chilling image art. Craft ghostly scenes, unsettling shadows, and suspense-laden atmospheres.",
+    "keywords": [
+      "eerie imagery",
+      "haunting art",
+      "AI prompts",
+      "ghostly scenes",
+      "suspenseful visuals"
+    ]
+  },
+  "ultra realistic": {
+    "title": "Ultra Realistic AI Image Prompts",
+    "description": "Discover ultra realistic AI prompts for lifelike and hyper-detailed image creations. Achieve stunning clarity, texture depth, and believable scenes.",
+    "keywords": [
+      "ultra realistic",
+      "lifelike images",
+      "AI prompts",
+      "hyper-detailed art",
+      "photo-quality visuals"
+    ]
+  },
+  "architecture": {
+    "title": "Architecture AI Image Prompts Gallery",
+    "description": "Explore architecture-focused AI prompts for stunning building designs. Generate modern facades, intricate blueprints, and visionary structures.",
+    "keywords": [
+      "architecture design",
+      "AI prompts",
+      "building visuals",
+      "facade concepts",
+      "structural art"
+    ]
+  },
+  "snowy landscape": {
+    "title": "Snowy Landscape AI Image Prompts",
+    "description": "Explore a curated gallery of snowy landscape AI prompts to generate breathtaking winter scenes and frosty vistas with realistic details instantly.",
+    "keywords": [
+      "snowy landscape",
+      "AI prompts",
+      "winter scenes",
+      "frosty vistas",
+      "scenic art"
+    ]
+  },
+  "luxury": {
+    "title": "Luxury AI Image Prompts Gallery",
+    "description": "Discover premium luxury AI prompts for generating opulent interiors, high-end products, and elegant settings in stunning detail with ease.",
+    "keywords": [
+      "luxury design",
+      "AI prompts",
+      "opulent art",
+      "high-end imagery",
+      "luxurious scenes"
+    ]
+  },
+  "soft": {
+    "title": "Soft AI Image Prompts Collection",
+    "description": "Create delicate and gentle visuals with our soft AI prompts, perfect for pastel aesthetics, cozy atmospheres, and dreamy, muted color palettes.",
+    "keywords": [
+      "soft textures",
+      "AI prompts",
+      "dreamy visuals",
+      "pastel palette",
+      "gentle aesthetics"
+    ]
+  },
+  "informative": {
+    "title": "Informative AI Image Prompts",
+    "description": "Generate clear and educational visuals with informative AI prompts for presentations, ideal for diagrams, infographics, and data-driven illustrations.",
+    "keywords": [
+      "informative visuals",
+      "AI prompts",
+      "educational graphics",
+      "data illustration",
+      "diagram art"
+    ]
+  },
+  "kpop": {
+    "title": "Kpop AI Image Prompts",
+    "description": "Explore vibrant Kpop AI prompts to generate dynamic idol visuals, colorful stage scenes, and trendy fan art inspired by Korean pop culture.",
+    "keywords": [
+      "Kpop art",
+      "AI prompts",
+      "idol visuals",
+      "stage scenes",
+      "fan art"
+    ]
+  },
+  "girl": {
+    "title": "Girl AI Prompts Gallery",
+    "description": "Discover versatile girl AI prompts to create portraits, character designs, and lifestyle scenes featuring diverse styles, moods, and settings.",
+    "keywords": [
+      "girl portraits",
+      "AI prompts",
+      "character design",
+      "lifestyle imagery",
+      "female art"
+    ]
+  },
+  "vibrant colors": {
+    "title": "Vibrant Colors AI Image Prompts",
+    "description": "Generate striking visuals with vibrant colors AI prompts, perfect for bold artwork, energetic compositions, eye-catching designs, and dynamic themes.",
+    "keywords": [
+      "vibrant colors",
+      "AI prompts",
+      "bold artwork",
+      "energetic design",
+      "colorful imagery"
+    ]
+  },
+  "natural": {
+    "title": "Natural AI Image Prompts Collection",
+    "description": "Create lifelike natural scenes with AI prompts focusing on realism, organic textures, and serene outdoor settings for authentic visuals and subtle lighting.",
+    "keywords": [
+      "natural scenes",
+      "AI prompts",
+      "realistic art",
+      "organic textures",
+      "serene landscapes"
+    ]
+  },
+  "character": {
+    "title": "Character AI Image Prompts",
+    "description": "Bring unique characters to life with character AI prompts, ideal for concept art, game design, storytelling illustrations, and animation scenes.",
+    "keywords": [
+      "character design",
+      "AI prompts",
+      "concept art",
+      "storytelling visuals",
+      "game characters"
+    ]
+  },
+  "closeup": {
+    "title": "Closeup AI Image Prompts",
+    "description": "Generate detailed closeup visuals with AI prompts, perfect for facial portraits, macro photography styles, intricate texture studies, and editorial features.",
+    "keywords": [
+      "closeup shots",
+      "AI prompts",
+      "macro photography",
+      "detailed textures",
+      "portrait art"
+    ]
+  },
+  "monochrome": {
+    "title": "Monochrome AI Image Prompts",
+    "description": "Create elegant monochrome visuals with AI prompts, specializing in black-and-white art, contrast-rich compositions, minimalistic designs for dramatic effects.",
+    "keywords": [
+      "monochrome art",
+      "AI prompts",
+      "black and white",
+      "contrast design",
+      "minimalistic visuals"
+    ]
+  },
+  "mirror selfie": {
+    "title": "Mirror Selfie AI Prompts",
+    "description": "Generate stylish mirror selfie AI prompts to create fashionable outfit shots, reflective compositions, and realistic self-portrait scenes.",
+    "keywords": [
+      "mirror selfie",
+      "AI prompts",
+      "self portrait",
+      "fashion shots",
+      "reflective art"
+    ]
+  },
+  "editorial": {
+    "title": "Editorial AI Image Prompts",
+    "description": "Discover editorial AI prompts for generating magazine-style layouts, fashion spreads, and impactful visual narratives with professional flair and branded content.",
+    "keywords": [
+      "editorial design",
+      "AI prompts",
+      "magazine layout",
+      "fashion spread",
+      "visual narrative"
+    ]
+  },
+  "nature": {
+    "title": "Nature AI Image Prompts Gallery",
+    "description": "Explore nature AI prompts to generate lush landscapes, wildlife scenes, and serene outdoor vistas with realistic detail, natural beauty and environmental textures.",
+    "keywords": [
+      "nature scenes",
+      "AI prompts",
+      "wildlife art",
+      "landscape imagery",
+      "outdoor vistas"
+    ]
+  },
+  "collage": {
+    "title": "Collage AI Image Prompts",
+    "description": "Create dynamic collage visuals with AI prompts, combining mixed media elements, layered textures, experimental art compositions, and creative layouts.",
+    "keywords": [
+      "collage art",
+      "AI prompts",
+      "mixed media",
+      "layered composition",
+      "artistic collage"
+    ]
+  },
+  "documentary": {
+    "title": "Documentary AI Image Prompts Gallery",
+    "description": "Explore our documentary AI prompts gallery with realistic storytelling scenes. Discover inspiring documentary prompts for images showcasing authentic, candid moments.",
+    "keywords": [
+      "documentary AI",
+      "storytelling images",
+      "candid moments",
+      "AI prompts",
+      "realistic scenes"
+    ]
+  },
+  "anime": {
+    "title": "Anime AI Prompts Gallery",
+    "description": "Dive into our anime AI prompts gallery featuring dynamic characters and vibrant scenes. Generate stunning anime-style images with specialized AI prompts.",
+    "keywords": [
+      "anime AI",
+      "anime prompts",
+      "vibrant anime",
+      "character design",
+      "AI images"
+    ]
+  },
+  "model": {
+    "title": "AI Prompts for Model Photography",
+    "description": "Browse our AI prompts gallery dedicated to model photography. Create high-fashion model images with detailed AI prompts for runway, editorial, and portrait styles.",
+    "keywords": [
+      "model photography",
+      "AI model",
+      "fashion prompts",
+      "editorial images",
+      "portrait AI"
+    ]
+  },
+  "captivating": {
+    "title": "Captivating AI Image Prompts Collection",
+    "description": "Discover captivating AI prompts that spark imagination and art. Browse our gallery of captivating themes to create stunning, engaging AI-generated images.",
+    "keywords": [
+      "captivating AI",
+      "engaging images",
+      "imaginative prompts",
+      "AI gallery",
+      "artistic scenes"
+    ]
+  },
+  "relaxed": {
+    "title": "Relaxed AI Prompts Gallery",
+    "description": "Unwind with our relaxed AI prompts gallery featuring calming and serene image ideas. Generate soothing, relaxed scenes with simple yet effective AI prompts.",
+    "keywords": [
+      "relaxed AI",
+      "calming prompts",
+      "serene images",
+      "soothing AI",
+      "peaceful scenes"
+    ]
+  },
+  "alluring": {
+    "title": "Alluring AI Image Prompts Gallery",
+    "description": "Explore alluring AI prompts to craft mesmerizing and elegant images. Our gallery offers alluring themes and ideas for creating stunning AI-generated art.",
+    "keywords": [
+      "alluring AI",
+      "mesmerizing prompts",
+      "elegant images",
+      "AI art",
+      "creative themes"
+    ]
+  },
+  "natural light": {
+    "title": "Natural Light AI Prompts Collection",
+    "description": "Enhance your AI images with natural light AI prompts. Browse our gallery for ideas on creating bright, authentic scenes using soft, natural lighting prompts.",
+    "keywords": [
+      "natural light",
+      "AI prompts",
+      "soft lighting",
+      "authentic scenes",
+      "bright imagery"
+    ]
+  },
+  "casual": {
+    "title": "Casual AI Prompts for Everyday Scenes",
+    "description": "Browse our casual AI prompts gallery for everyday, laid-back image ideas. Create realistic, casual scenes with AI prompts designed for natural moments.",
+    "keywords": [
+      "casual AI",
+      "everyday scenes",
+      "laid-back prompts",
+      "realistic images",
+      "natural moments"
+    ]
+  },
+  "women": {
+    "title": "Women AI Prompts Gallery",
+    "description": "Discover women-focused AI prompts gallery featuring diverse portraits and empowering images. Generate creative female character designs with AI prompts.",
+    "keywords": [
+      "women AI",
+      "female portraits",
+      "empowering prompts",
+      "diverse characters",
+      "AI designs"
+    ]
+  },
+  "infographic": {
+    "title": "Infographic AI Prompts Collection",
+    "description": "Generate clear, informative visuals with our infographic AI prompts gallery. Discover structured AI prompts for creating data-driven, engaging infographic images.",
+    "keywords": [
+      "infographic AI",
+      "data visualization",
+      "informative prompts",
+      "AI graphics",
+      "engaging visuals"
+    ]
+  },
+  "carefree": {
+    "title": "Carefree AI Prompts Gallery",
+    "description": "Experience joy with carefree AI prompts for playful and lighthearted images. Browse our gallery to create fun, carefree scenes with AI-generated ideas.",
+    "keywords": [
+      "carefree AI",
+      "playful prompts",
+      "lighthearted images",
+      "joyful scenes",
+      "fun AI"
+    ]
+  },
+  "friends": {
+    "title": "Friends AI Prompts for Group Scenes",
+    "description": "Explore friends AI prompts gallery for dynamic group images. Generate warm, social scenes that capture friendship moments with specialized AI prompts.",
+    "keywords": [
+      "friends AI",
+      "group scenes",
+      "social prompts",
+      "friendship images",
+      "warm gatherings"
+    ]
+  },
+  "athletic": {
+    "title": "Athletic AI Prompts for Sports Scenes",
+    "description": "Power up your visuals with athletic AI prompts for dynamic sports and fitness images. Browse our gallery of athletic-themed prompts and action-packed ideas.",
+    "keywords": [
+      "athletic AI",
+      "sports prompts",
+      "fitness images",
+      "dynamic scenes",
+      "action shots"
+    ]
+  },
+  "intellectual": {
+    "title": "Intellectual AI Prompts Gallery",
+    "description": "Stimulate creativity with intellectual AI prompts for thoughtful, concept-driven images. Explore our gallery for ideas on academic and intelligent-themed visuals.",
+    "keywords": [
+      "intellectual AI",
+      "concept-driven images",
+      "academic prompts",
+      "thoughtful visuals",
+      "creative ideas"
+    ]
+  },
+  "seasonal": {
+    "title": "Seasonal AI Prompts Collection",
+    "description": "Celebrate seasons with our seasonal AI prompts gallery. Generate festive, seasonal image ideas for spring, summer, fall, and winter with tailored AI prompts.",
+    "keywords": [
+      "seasonal AI",
+      "festive prompts",
+      "seasonal imagery",
+      "holiday themes",
+      "season design"
+    ]
+  },
+  "professional": {
+    "title": "Professional AI Image Prompts | Gallery",
+    "description": "Explore professional AI prompts for stunning, high-quality images. Perfect for business, branding, and polished visuals and professional style.",
+    "keywords": [
+      "professional ai prompts",
+      "business image prompts",
+      "polished visuals",
+      "high-quality ai art",
+      "corporate ai images"
+    ]
+  },
+  "iconic": {
+    "title": "Iconic AI Image Prompts | Gallery",
+    "description": "Discover iconic AI prompts to create memorable, timeless images. Perfect for branding and standout visual storytelling and creative flair.",
+    "keywords": [
+      "iconic ai prompts",
+      "timeless ai images",
+      "memorable visuals",
+      "brand identity art",
+      "signature ai designs"
+    ]
+  },
+  "bright": {
+    "title": "Bright AI Image Prompts | Gallery",
+    "description": "Discover bright AI prompts for vibrant, colorful images. Perfect for eye-catching visuals and energetic designs. Boost your projects with luminous style.",
+    "keywords": [
+      "bright ai prompts",
+      "vibrant image prompts",
+      "colorful ai art",
+      "energetic visuals",
+      "lively ai designs"
+    ]
+  },
+  "boy": {
+    "title": "Boy AI Image Prompts | Gallery",
+    "description": "Explore boy-themed AI prompts to generate creative, playful images. Perfect for storytelling, children's art, and character design. Inspiring youth-centric creativity.",
+    "keywords": [
+      "boy ai prompts",
+      "child character art",
+      "kids illustration ai",
+      "playful ai images",
+      "youthful design prompts"
     ]
   }
 }
