@@ -159,7 +159,7 @@ export default async function Page({ params }: Props) {
     ? getTagChildren(tier1Ancestor).filter((id) => id !== slug && isTopicEnabled(id))
     : [];
 
-  const subTopicsHeading = isChildTopic
+  const subTopicsHeading = !!parentTopicId
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
     : translateTopics("topicPage.subTopicsHeading") || "Browse by Category";
 
