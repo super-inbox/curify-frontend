@@ -239,21 +239,8 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
-      <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
-          {templatesHeading}
-        </h2>
-        <NanoTemplateDetailClient
-          locale={localeStr}
-          otherNanoCards={nanoCards}
-          showReproduce={false}
-          showOtherTemplates={true}
-          showOtherTemplateTitle={false}
-        />
-      </section>
-
       {galleryPrompts.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Gallery
           </h2>
@@ -266,7 +253,7 @@ export default async function Page({ params }: Props) {
       )}
 
       {blogPosts.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Related Articles
           </h2>
@@ -277,6 +264,19 @@ export default async function Page({ params }: Props) {
           </div>
         </section>
       )}
+
+      <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
+          {templatesHeading}
+        </h2>
+        <NanoTemplateDetailClient
+          locale={localeStr}
+          otherNanoCards={nanoCards}
+          showReproduce={false}
+          showOtherTemplates={true}
+          showOtherTemplateTitle={false}
+        />
+      </section>
 
       {tagSubTopics.length > 0 && (
         <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
