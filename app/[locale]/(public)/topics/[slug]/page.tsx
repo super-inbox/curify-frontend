@@ -20,8 +20,9 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, isNavigationalTopic, getTier1Ancestor } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor } from "@/lib/topicRegistry";
 
+import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 
 export const dynamic = "force-dynamic";
@@ -66,26 +67,52 @@ export default async function Page({ params }: Props) {
   const tTopicsRoot = await getTranslations({ locale: localeStr });
   const translateTopics = makeSafeTranslator(tTopicsRoot);
 
-  const filteredTemplates = getTemplatesForTopic(slug) as RawTemplate[];
+  const allTemplates = nanoTemplates as unknown as RawTemplate[];
   const allImages = nanoImages as unknown as RawNanoImageRecord[];
 
-  if (!filteredTemplates.length) {
-    notFound();
-  }
-
-  const allowedTemplateIds = new Set(
-    filteredTemplates
+  // From nano_templates: templates that DIRECTLY have this topic in their topics field
+  const templateTaggedIds = new Set(
+    allTemplates
+      .filter((t: any) => {
+        const topics: string[] = Array.isArray(t.topics)
+          ? t.topics
+          : typeof t.topics === "string"
+          ? t.topics.split(",").map((s: string) => s.trim())
+          : [];
+        return topics.map((s: string) => s.trim().toLowerCase()).includes(slug.toLowerCase());
+      })
       .map((t: any) => t.id)
       .filter((id): id is string => typeof id === "string" && id.length > 0)
   );
 
-  const isChildTopic = !!getParentTopic(slug);
+  // From nano_inspiration: template IDs referenced by images tagged with this topic
+  const inspirationTaggedIds = new Set(
+    allImages
+      .filter((img: any) => (img.topics ?? []).includes(slug))
+      .map((img: any) => img.template_id)
+      .filter((id): id is string => typeof id === "string" && id.length > 0)
+  );
 
-  const filteredImages = allImages.filter((img: any) => {
-    if (!allowedTemplateIds.has(img?.template_id)) return false;
-    if (isChildTopic && !isNavigationalTopic(slug)) return (img.topics ?? []).includes(slug);
-    return true;
-  });
+  // Union of both sources
+  const allFilteredIds = new Set([...templateTaggedIds, ...inspirationTaggedIds]);
+
+  if (!allFilteredIds.size) notFound();
+
+  const filteredTemplates = allTemplates.filter((t: any) => allFilteredIds.has(t.id));
+
+  // Images: template-tagged → all its images; inspiration-tagged → only that image; deduplicated
+  const seenImageIds = new Set<string>();
+  const filteredImages: RawNanoImageRecord[] = [];
+  for (const img of allImages) {
+    const id = (img as any).id;
+    if (!img?.template_id || !id || seenImageIds.has(id)) continue;
+    const fromTemplate = templateTaggedIds.has(img.template_id);
+    const fromInspiration = ((img as any).topics ?? []).includes(slug);
+    if (fromTemplate || fromInspiration) {
+      seenImageIds.add(id);
+      filteredImages.push(img);
+    }
+  }
 
   const reg = buildNanoRegistry(filteredTemplates, filteredImages);
 
@@ -140,7 +167,7 @@ export default async function Page({ params }: Props) {
     ? getTagChildren(tier1Ancestor).filter((id) => id !== slug && isTopicEnabled(id))
     : [];
 
-  const subTopicsHeading = isChildTopic
+  const subTopicsHeading = !!parentTopicId
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
     : translateTopics("topicPage.subTopicsHeading") || "Browse by Category";
 
