@@ -70,9 +70,17 @@ export default async function Page({ params }: Props) {
   const allTemplates = nanoTemplates as unknown as RawTemplate[];
   const allImages = nanoImages as unknown as RawNanoImageRecord[];
 
-  // From nano_templates: template IDs tagged with this topic
+  // From nano_templates: templates that DIRECTLY have this topic in their topics field
   const templateTaggedIds = new Set(
-    (getTemplatesForTopic(slug) as RawTemplate[])
+    allTemplates
+      .filter((t: any) => {
+        const topics: string[] = Array.isArray(t.topics)
+          ? t.topics
+          : typeof t.topics === "string"
+          ? t.topics.split(",").map((s: string) => s.trim())
+          : [];
+        return topics.map((s: string) => s.trim().toLowerCase()).includes(slug.toLowerCase());
+      })
       .map((t: any) => t.id)
       .filter((id): id is string => typeof id === "string" && id.length > 0)
   );
