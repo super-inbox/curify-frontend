@@ -20,10 +20,15 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
+import blogsData from "@/public/data/blogs.json";
+import { nanoPromptsService } from "@/services/nanoPrompts";
+import type { NanoPromptBase } from "@/types/nanoPrompts";
+import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
+import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
 
 export const dynamic = "force-dynamic";
 
@@ -139,6 +144,23 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
+  // Gallery prompts for this topic (if configured)
+  const galleryTag = getGalleryTag(slug);
+  let galleryPrompts: NanoPromptBase[] = [];
+  if (galleryTag) {
+    try {
+      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(galleryTag);
+    } catch {
+      // gallery is non-critical; fail silently
+    }
+  }
+
+  // Blog posts for this topic (if configured)
+  const blogTag = getBlogTag(slug);
+  const blogPosts = blogTag
+    ? (blogsData as any[]).filter((b) => b.tag?.toLowerCase() === blogTag.toLowerCase())
+    : [];
+
   const topicTitle =
     translateTopics(`topics.${slug}.title`) ||
     translateTopics(`topics.${slug}.displayName`) ||
@@ -214,6 +236,32 @@ export default async function Page({ params }: Props) {
             {exampleImagesHeading}
           </h2>
           <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
+        </section>
+      )}
+
+      {galleryPrompts.length > 0 && (
+        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
+            Gallery
+          </h2>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {galleryPrompts.slice(0, 12).map((prompt) => (
+              <PromptCard key={prompt.id} prompt={prompt} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {blogPosts.length > 0 && (
+        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
+            Related Articles
+          </h2>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {blogPosts.slice(0, 6).map((blog: any) => (
+              <RelatedBlogCard key={blog.slug} blog={blog} locale={localeStr} category={blog.tag} />
+            ))}
+          </div>
         </section>
       )}
 
