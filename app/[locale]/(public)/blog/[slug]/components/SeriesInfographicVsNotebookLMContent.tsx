@@ -160,6 +160,73 @@ export default function SeriesInfographicVsNotebookLMContent({ slug, t, locale }
         </div>
       </section>
 
+      {/* Visual Comparison Diagram */}
+      <section>
+        <h3 className="text-2xl font-bold mb-4 text-gray-800">
+          {t("visualComparisonTitle", "Visual Comparison: Series Infographics vs NotebookLM")}
+        </h3>
+        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+          <div className="mermaid">
+            {`
+graph TD
+    A[Complex Information] --> B{Content Strategy Choice}
+    
+    B --> C[Series Infographics]
+    B --> D[Google NotebookLM]
+    
+    C --> C1[Visual Format]
+    C1 --> C1a[Structured Cards]
+    C1 --> C1b[Data Visualization]
+    C1 --> C1c[Visual Hierarchy]
+    
+    C --> C2[Best For]
+    C2 --> C2a[Social Media]
+    C2 --> C2b[Educational Materials]
+    C2 --> C2c[Business Presentations]
+    C2 --> C2d[Physical Artifacts]
+    
+    C --> C3[Strengths]
+    C3 --> C3a[Visual Impact]
+    C3 --> C3b[Shareability]
+    C3 --> C3c[Quick Scanning]
+    C3 --> C3d[Professional Design]
+    
+    D --> D1[Audio/Narrative Format]
+    D1 --> D1a[Podcast-Style Conversations]
+    D1 --> D1b[Text Summaries]
+    D1 --> D1c[Linear Narrative]
+    
+    D --> D2[Best For]
+    D2 --> D2a[Research Deep Dives]
+    D2 --> D2b[Audio Learning]
+    D2 --> D2c[Quick Summaries]
+    D2 --> D2d[Study Sessions]
+    
+    D --> D3[Strengths]
+    D3 --> D3a[Narrative Explanation]
+    D3 --> D3b[Accessibility]
+    D3 --> D3c[Deep Understanding]
+    D3 --> D3d[Multimodal Learning]
+    
+    C3a --> E[Visual Learners]
+    C3b --> F[Social Sharing]
+    D3a --> G[Auditory Learners]
+    D3b --> H[Accessibility]
+    
+    style C fill:#e3f2fd,stroke:#2196f3
+    style D fill:#e8f5e8,stroke:#4caf50
+    style E fill:#fff3e0,stroke:#ff9800
+    style F fill:#fff3e0,stroke:#ff9800
+    style G fill:#f3e5f5,stroke:#9c27b0
+    style H fill:#f3e5f5,stroke:#9c27b0
+            `}
+          </div>
+          <p className="text-sm text-gray-600 mt-4 text-center">
+            {t("diagramDescription", "This flowchart shows how complex information can be transformed using either visual (Series Infographics) or narrative (NotebookLM) approaches, each with distinct strengths and ideal use cases.")}
+          </p>
+        </div>
+      </section>
+
       {/* When to Use Series Infographics */}
       <section className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg">
         <h3 className="text-2xl font-bold mb-4 text-gray-800">
@@ -246,34 +313,26 @@ export default function SeriesInfographicVsNotebookLMContent({ slug, t, locale }
           {t("promptExampleTitle", "Nano Banana Prompt for Series Infographics")}
         </h3>
         <PromptBox
-          title={t("promptTitle", "Series Infographic: Microsoft AI Dilemma")}
-          promptText={`Create a series infographic about [TOPIC] with the following cards:
+          title={t("promptTitle", "Nano Banana Series Infographic Template")}
+          promptText={`(Modular Infographic Designer) You are a top-tier modular infographic designer specializing in creating cohesive multi-card visual series. Based on user-specified [{series_topic}], generate a complete set of vertical 3:4 high-quality infographic cards. Each card focuses on one core section while maintaining consistent visual language. 
 
-Card 1 - Cover:
-- Eye-catching title and subtitle
-- Key visual representing the core theme
-- Author/source attribution
-- Professional color scheme
+Single card structure:
+1. Top title bar: prominent title "{section_title}" with soft themed background and rounded corners
+2. Central visual: core illustration/diagram representing the concept (comparison, timeline, flowchart, character, or scene) in {art_style}
+3. Content modules: layout with sections containing "icon + label + short description"
+4. Bottom summary: highlighted box with key takeaway
 
-Card 2 - Problem Statement:
-- Clear definition of the issue
-- Data visualization showing scale
-- Key statistics and metrics
-- Visual hierarchy for easy scanning
+Style: clean rounded UI, soft colors, clear typography, no extra decoration, Curify watermark top-left, vertical 3:4, 4K ultra HD.
 
-Card 3 - Analysis/Comparison:
-- Side-by-side comparison layout
-- Performance metrics visualization
-- Market position indicators
-- Trend lines or charts
+Parameters:
+- series_topic: [e.g., "Microsoft's AI Dilemma", "Butterfly Life Cycle", "Traditional Chinese Festivals"]
+- art_style: [e.g., "Cute Cartoon Style", "Flat Illustration Style", "Tech Line Art Style"]
+- section_title: [e.g., "Overview: Core Conflict", "Problem 1: Short-term Strategy", "Comparison: AI Add-on vs Native"]
 
-Card 4 - Implications:
-- Future outlook visualization
-- Impact assessment
-- Key takeaways
-- Call to action
-
-Style: Professional, data-driven, consistent across all cards with cohesive branding`}
+Example usage:
+series_topic: "Microsoft's AI Dilemma"
+art_style: "Tech Line Art Style"
+section_title: "Overview: Core Conflict"`}
         >
           <div>
             <p>{t("promptDesc", "Use this prompt template to create series infographics for any complex topic, adapting the card structure to your specific needs.")}</p>

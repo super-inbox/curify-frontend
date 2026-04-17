@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Character Prompt Generator: Complete Guide to AI Character Design',
     description: 'Discover our comprehensive character prompt generator with nano banana templates. Learn how writers, artists, and creators can bring characters to life with AI.',
-    images: ['/images/templatepage.webp'],
+    images: ['/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg'],
   },
 }
 

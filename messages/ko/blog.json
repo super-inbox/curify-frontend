@@ -230,7 +230,7 @@
         "date": "2026년 3월 29일",
         "readTime": "15분 읽기",
         "tag": "크리에이터 도구",
-        "image": "/images/lipsynctechnicaldeepdive.webp"
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
       },
       {
         "slug": "character-prompt-generator",
@@ -238,7 +238,7 @@
         "date": "2026년 3월 29일",
         "readTime": "15분 읽기",
         "tag": "크리에이터 도구",
-        "image": "/images/templatepage.webp"
+        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg"
       },
       {
         "slug": "visual-learning-tools",
@@ -246,7 +246,7 @@
         "date": "2026년 4월 1일",
         "readTime": "10분 읽기",
         "tag": "학습 도구",
-        "image": "/images/visuallearningtool.webp"
+        "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
       },
       {
         "slug": "best-ai-tools",
@@ -340,7 +340,7 @@
         "date": "2026년 4월 9일",
         "readTime": "12분 읽기",
         "tag": "Creator Tools",
-        "image": "/images/minitool.webp",
+        "image": "/images/iran.webp",
         "category": "creator-tools",
         "relatedLinks": [
           "ai-content-production-system",
@@ -361,6 +361,22 @@
           "nano-banana-prompt-ecosystem",
           "creative-ai-tools-websites"
         ]
+      },
+      {
+        "slug": "emotion-tts-movie",
+        "title": "감정 TTS 영화: 내러티브를 더 감정적으로 만들어보세요",
+        "date": "2026년 4월 13일",
+        "readTime": "15분 읽기",
+        "tag": "크리에이터 도구",
+        "image": "/images/voices2.webp"
+      },
+      {
+        "slug": "curify-ai-growth-engine",
+        "title": "Curify AI 성장 엔진: UGC 제작자와 마케터를 위한 콘텐츠 제작 혁신",
+        "date": "2026년 4월 13일",
+        "readTime": "12분 읽기",
+        "tag": "AI 플랫폼",
+        "image": "/images/growthengine.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -1227,7 +1243,7 @@
       "publishedDate": "",
       "readTime": "8분",
       "category": "creator-tools",
-      "heroImageAlt": "/images/templatepage.webp",
+      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
       "whatWeHave": {
         "title": "우리가 가진 것",
         "description": "심리적 깊이와 시각적 일관성을 갖춘 포괄적인 캐릭터 생성 도구 모음입니다.",
@@ -2460,9 +2476,17 @@
           "title": "부모를 위한",
           "description": "교육을 재미있고 효과적으로 만드는 시각적 이중 언어 콘텐츠로 자녀의 학습을 도와주세요."
         },
-        "eslLearners": {
-          "title": "ESL 교육자를 위한",
+        "eslCreators": {
+          "title": "ESL 크리에이터",
           "description": "학생들이 실제로 사용하고 공유하고 싶어하는 매력적인 언어 학습 자료를 만드세요."
+        },
+        "educationalCreators": {
+          "title": "교육 크리에이터",
+          "description": "청중이 공유하고 참여하고 싶어하는 교육 콘텐츠로 브랜드를 구축"
+        },
+        "teachers": {
+          "title": "교사",
+          "description": "교육을 재미있고 효과적으로 만드는 시각적 이중 언어 콘텐츠로 학생들의 학습을 도와주세요."
         }
       },
       "whyMatters": {
@@ -2769,7 +2793,218 @@
       "practice2Title": "대상을 정의하세요",
       "practice2Content": "내러티브가 커뮤니케이션 목표에 맞도록 타겟 청중과 원하는 톤을 지정하세요.",
       "practice3Title": "플랫폼에 최적화하세요",
-      "practice3Content": "최적의 시청 경험을 보장하기 위해 출력 플랫폼 및 형식 요구 사항을 고려하세요."
+      "practice3Content": "최적의 시청 경험을 보장하기 위해 출력 플랫폼 및 형식 요구 사항을 고려하세요.",
+      "publishedDate": "2026년 4월 9일",
+      "category": "크리에이터 도구",
+      "introTitle": "정적 이미지를 동적 내러티브 비디오로 변환하기",
+      "introContent": "AI 기반 스토리텔링으로 정적 이미지를 매력적인 내러티브 비디오로 변환하세요. 우리의 혁신적인 미니 도구는 시각적 콘텐츠를 분석하고 일관된 스토리라인을 생성하여 정적 이미지와 동적 비디오 콘텐츠 간의 간극을 메우는 매력적인 비디오 콘텐츠를 만듭니다. 교육 콘텐츠, 마케팅 캠페인 및 창의적인 프로젝트에 적합합니다.",
+      "whatItDoes": {
+        "title": "이 이미지-내러티브 비디오 도구의 기능",
+        "content": "이 혁신적인 AI 도구는 시각적 콘텐츠를 분석하고 일관된 스토리라인을 생성하여 정적 이미지를 매력적인 내러티브 비디오로 변환합니다. 고급 컴퓨터 비전을 사용하여 객체, 장면 및 감정을 식별한 후, 자연스러운 내레이션과 시각 효과를 생성하여 정적 이미지를 생동감 있게 만듭니다.",
+        "coreFeatures": {
+          "title": "핵심 기능",
+          "items": [
+            "🖼️: 시각 분석 - 객체, 장면 및 감정을 식별하는 고급 컴퓨터 비전",
+            "📝: 내러티브 생성 - 일관된 흐름의 AI 기반 스토리라인 생성",
+            "🎬: 비디오 구성 - 자동 장면 전환 및 모션 효과",
+            "🎙️: 음성 내레이션 - 완벽한 타이밍의 자연스러운 음성 합성",
+            "⚡: 원클릭 처리 - 이미지를 몇 초 만에 비디오로 변환"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "이미지-내러티브 비디오 프로세스 작동 방식",
+        "intro": "이 도구는 정적 이미지를 매력적인 내러티브 비디오로 변환하는 정교한 4단계 프로세스를 따릅니다. AI 기반 스토리텔링과 전문적인 제작 품질을 제공합니다.",
+        "steps": [
+          {
+            "icon": "🖼️",
+            "title": "이미지 분석",
+            "description": "AI가 입력 이미지를 분석하여 내러티브의 기초가 될 객체, 장면, 감정 및 맥락 요소를 식별합니다.",
+            "technical": {
+              "title": "컴퓨터 비전 처리",
+              "description": "고급 컴퓨터 비전 모델을 사용하여 이미지 내의 시각적 패턴, 공간적 관계 및 의미를 감지합니다."
+            }
+          },
+          {
+            "icon": "📝",
+            "title": "스토리 생성",
+            "description": "AI가 시각적 요소를 연결하여 자연스러운 흐름의 매력적인 이야기로 이어지는 일관된 내러티브 스크립트를 생성합니다.",
+            "technical": {
+              "title": "내러티브 AI 엔진",
+              "description": "스토리텔링 기법에 대해 훈련된 대형 언어 모델을 활용하여 맥락에 적합한 내러티브를 생성합니다."
+            }
+          },
+          {
+            "icon": "🎬",
+            "title": "비디오 구성",
+            "description": "원본 이미지를 모션 효과, 전환 및 타이밍과 결합하여 동적인 비디오 시퀀스를 생성합니다.",
+            "technical": {
+              "title": "비디오 렌더링 파이프라인",
+              "description": "정적 이미지를 생동감 있게 만들기 위해 팬, 줌 및 전환 효과를 포함한 영화 기법을 적용합니다."
+            }
+          },
+          {
+            "icon": "🎙️",
+            "title": "오디오 통합",
+            "description": "전문적인 음성 내레이션, 배경 음악 및 시각적 타임라인과 동기화된 음향 효과를 추가합니다.",
+            "technical": {
+              "title": "오디오 합성",
+              "description": "감정적인 억양과 완벽한 타이밍 동기화를 갖춘 텍스트-음성 변환 기술을 사용합니다."
+            }
+          }
+        ]
+      },
+      "technicalBreakdown": {
+        "title": "기술 분석",
+        "aiComponents": {
+          "title": "AI 구성 요소",
+          "items": [
+            "이미지 분석을 위한 컴퓨터 비전 모델",
+            "내러티브 생성을 위한 자연어 처리",
+            "음성 합성을 위한 텍스트-음성 변환 엔진",
+            "구성을 위한 비디오 렌더링 파이프라인"
+          ]
+        },
+        "pipeline": {
+          "title": "처리 파이프라인",
+          "items": [
+            "이미지 전처리 및 향상",
+            "객체 및 장면 감지",
+            "내러티브 스크립트 생성",
+            "비디오 구성 및 렌더링",
+            "오디오 동기화 및 최종 출력"
+          ]
+        }
+      },
+      "useCases": {
+        "title": "사용 사례",
+        "educational": {
+          "title": "교육 콘텐츠",
+          "description": "교육 자료를 매력적인 비디오 수업으로 변환합니다.",
+          "examples": [
+            "교과서 삽화를 활용한 역사적 타임라인 비디오",
+            "다이어그램을 통한 과학 개념 설명",
+            "시각적 스토리텔링을 통한 언어 학습",
+            "수학 문제 해결 과정"
+          ]
+        },
+        "marketing": {
+          "title": "마케팅 및 광고",
+          "description": "마케팅 캠페인을 위한 매력적인 비디오 콘텐츠 생성",
+          "examples": [
+            "스토리텔링이 포함된 제품 쇼케이스 비디오",
+            "회사 사진을 활용한 브랜드 스토리 내러티브",
+            "고객 여정 시각화",
+            "소셜 미디어 홍보 콘텐츠"
+          ]
+        },
+        "creative": {
+          "title": "창의적인 프로젝트",
+          "description": "예술적이고 창의적인 비디오 콘텐츠 제작",
+          "examples": [
+            "삽화를 활용한 디지털 스토리텔링",
+            "만화 스트립 애니메이션",
+            "아트 포트폴리오 프레젠테이션",
+            "개인 내러티브 비디오"
+          ]
+        }
+      },
+      "codeExample": {
+        "title": "코드 예제",
+        "intro": "이미지-내러티브 비디오 API 사용 방법은 다음과 같습니다:",
+        "codeSnippet": "const result = await imageToNarrativeVideo({ imageUrl: \\\"path/to/image.jpg\\\", narrationStyle: \\\"educational\\\", outputFormat: \\\"mp4\\\" });",
+        "explanations": [
+          "업로드: 이미지 URL 또는 파일 제공",
+          "구성: 내레이션 스타일 및 출력 형식 선택",
+          "생성: AI가 비디오를 처리하고 생성합니다.",
+          "다운로드: 최종 내러티브 비디오 받기"
+        ]
+      },
+      "advantages": {
+        "title": "장점",
+        "speed": {
+          "title": "번개처럼 빠름",
+          "description": "몇 분 안에 비디오 생성, 몇 시간 필요 없음"
+        },
+        "intelligence": {
+          "title": "AI 기반",
+          "description": "맥락 이해를 통한 스마트 내러티브 생성"
+        },
+        "scalability": {
+          "title": "무제한",
+          "description": "필요한 만큼 많은 이미지 처리"
+        },
+        "keyBenefits": {
+          "title": "주요 이점",
+          "items": [
+            "비디오 편집 경험 불필요",
+            "모든 비디오에서 일관된 품질",
+            "다국어 지원",
+            "사용자 정의 가능한 내레이션 스타일",
+            "고해상도 출력",
+            "빠른 처리 시간"
+          ]
+        }
+      },
+      "gettingStarted": {
+        "title": "시작하기",
+        "stepsTitle": "빠른 시작 단계",
+        "steps": [
+          "업로드: 이미지 파일 선택",
+          "구성: 내레이션 기본 설정 설정",
+          "생성: 생성 클릭 후 처리 대기",
+          "다운로드: 비디오 파일 받기"
+        ],
+        "prerequisites": {
+          "title": "필수 조건",
+          "items": [
+            "이미지 파일 (JPG, PNG, WebP)",
+            "인터넷 연결",
+            "유효한 계정 또는 API 키",
+            "충분한 저장 공간"
+          ]
+        }
+      },
+      "results": {
+        "title": "결과",
+        "intro": "우리의 이미지-내러티브 비디오 도구로 생성할 수 있는 내용을 확인하세요:",
+        "output1": {
+          "title": "비디오 출력",
+          "description": "내레이션이 포함된 고품질 MP4 비디오",
+          "specs": "1080p, 30fps, H.264 인코딩"
+        },
+        "output2": {
+          "title": "오디오 품질",
+          "description": "전문적인 음성 내레이션",
+          "specs": "44.1kHz, 스테레오, 명확한 음성"
+        },
+        "caption": "이미지에서 내러티브 비디오 도구의 샘플 출력"
+      },
+      "future": {
+        "title": "미래 개발",
+        "content": "우리는 새로운 기능과 능력을 통해 이미지-내러티브 비디오 기술을 지속적으로 개선하고 있습니다.",
+        "roadmap": {
+          "title": "예정된 기능",
+          "items": [
+            "더 긴 비디오를 위한 다중 이미지 지원",
+            "고급 음성 사용자화",
+            "실시간 미리보기 기능",
+            "인기 플랫폼과의 통합"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "AI 비디오",
+          "이미지 처리",
+          "서사 생성",
+          "콘텐츠 생성",
+          "자동화"
+        ],
+        "questions": "이미지-서사 비디오에 대해 질문이 있으신가요?",
+        "contactLink": "/contact",
+        "contactText": "문의하기"
+      }
     },
     "whatIsInfographics": {
       "title": "인포그래픽이란 무엇이며 인포그래픽 카드의 사용 방법은?",
@@ -2924,6 +3159,483 @@
       "ctaText": "멋진 시리즈 인포그래픽을 만들 준비가 되셨나요?",
       "ctaLink": "Nano Banana 시리즈 인포그래픽 생성기 사용해보기",
       "seoKeywords": "시리즈 인포그래픽, 구글 노트북LM, 비주얼 학습, 오디오 학습, 콘텐츠 생성, AI 도구, 교육 콘텐츠, 인포그래픽 디자인, 팟캐스트 생성, 콘텐츠 전략"
+    },
+    "emotionTtsMovie": {
+      "title": "감정 TTS 영화: 당신의 서사를 더 감정적으로 만들어보세요",
+      "publishedDate": "2026년 4월 13일",
+      "readTime": "15분 읽기",
+      "category": "제작자 도구",
+      "introTitle": "평범한 서사를 감정적인 걸작으로 변환하기",
+      "introContent": "비디오 내레이션이 정보뿐만 아니라 진정한 감정을 전달할 수 있다면 어떨까요? 우리의 감정 강화 TTS 도구는 기존 비디오 콘텐츠를 가져와 고에너지, 감정적으로 표현된 음성 합성으로 강화합니다. Azure Cognitive Services의 고급 SSML 마크업과 ElevenLabs 전사를 사용하여 이 도구는 평범하고 단조로운 내레이션을 매력적이고 감정적으로 공감되는 공연으로 변환합니다.",
+      "whatItDoes": {
+        "title": "이 감정 강화 도구가 하는 일",
+        "content": "이 Python 도구는 오디오 후처리의 혁신을 나타냅니다 - 기존 비디오에서 오디오를 추출하고, 정밀하게 전사한 다음, 각 세그먼트를 감정 지능으로 재합성합니다. 결과는 완벽한 립싱크를 유지하면서 극적인 표현, 에너지 및 전통적인 TTS 시스템으로는 불가능했던 감정적 뉘앙스를 추가한 새로운 오디오 트랙입니다.",
+        "coreFeatures": {
+          "title": "핵심 기능",
+          "items": [
+            "🎭: 감정 SSML 생성 - 표현력 있는 음성 합성을 위한 고급 마크업",
+            "🔊: 고에너지 음성 프로필 - 광고 스타일의 경쾌한 전달",
+            "🧠: 스마트 전사 - 단어 수준 타이밍을 가진 ElevenLabs Scribe",
+            "🎬: 완벽한 립싱크 - 원본 비디오 타이밍과 동기화 유지",
+            "⚡: 배치 처리 - 일관된 감정으로 여러 세그먼트 처리"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "감정 파이프라인 작동 방식",
+        "intro": "이 도구는 평범한 내레이션을 감정적으로 매력적인 공연으로 변환하면서 완벽한 기술적 동기화를 유지하는 복잡한 6단계 프로세스를 따릅니다.",
+        "steps": [
+          {
+            "icon": "📥",
+            "title": "오디오 추출",
+            "description": "MoviePy를 사용하여 기존 MP4 비디오에서 고품질 오디오를 추출하고 원본 타이밍과 품질을 유지합니다.",
+            "technical": {
+              "title": "오디오 추출 프로세스",
+              "description": "최대 호환성을 위해 적절한 코덱 설정으로 PCM 오디오를 추출하기 위해 MoviePy를 사용합니다.",
+              "code": "clip = VideoFileClip(video_path)\nclip.audio.write_audiofile(audio_path, codec='pcm_s16le', logger=None)"
+            }
+          },
+          {
+            "icon": "📝",
+            "title": "지능형 전사",
+            "description": "ElevenLabs Scribe는 정밀한 세분화를 위한 단어 수준 타임스탬프와 구두점 감지를 제공합니다.",
+            "technical": {
+              "title": "전사 API",
+              "description": "단어 수준 타이밍과 자동 구두점 감지를 위한 직접 API 통합.",
+              "code": "resp = requests.post(ELEVENLABS_URL, headers={'xi-api-key': ELEVENLABS_KEY}, files={'file': ('audio.wav', f, 'audio/wav')}, data={'model_id': 'scribe_v1'})"
+            }
+          },
+          {
+            "icon": "🎭",
+            "title": "감정 SSML 구축",
+            "description": "텍스트 세그먼트를 고에너지 전달 스타일을 위한 표현력 있는 마크업으로 SSML로 변환합니다.",
+            "technical": {
+              "title": "SSML 생성",
+              "description": "감정 표현을 위한 광고_경쾌 스타일, 속도/음조/볼륨 제어로 SSML을 구축합니다.",
+              "code": "def build_emotional_ssml(text: str) -> str:\n    return f'''&lt;speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'&gt;\n  &lt;voice name='{voice}'&gt;\n    &lt;mstts:express-as style='advertisement_upbeat' styledegree='2'&gt;\n      &lt;prosody rate='+15%' pitch='+8%' volume='+15%'&gt;\n        {escaped}\n      &lt;/prosody&gt;\n    &lt;/mstts:express-as&gt;\n  &lt;/voice&gt;\n&lt;/speak&gt;'''"
+            }
+          },
+          {
+            "icon": "🔊",
+            "title": "Azure TTS 합성",
+            "description": "Azure Cognitive Services는 자연스러운 운율과 표현으로 고품질 감정 오디오를 생성합니다.",
+            "technical": {
+              "title": "Azure TTS API",
+              "description": "표현력 있는 음성 합성을 위한 SSML 지원과 함께 Azure의 신경 TTS를 사용합니다.",
+              "code": "headers = {'Ocp-Apim-Subscription-Key': AZURE_API_KEY, 'Content-Type': 'application/ssml+xml', 'X-Microsoft-OutputFormat': 'riff-24khz-16bit-mono-pcm'}\nresp = requests.post(AZURE_TTS_URL, headers=headers, data=ssml.encode('utf-8'), timeout=30)"
+            }
+          },
+          {
+            "icon": "🔗",
+            "title": "오디오 연결",
+            "description": "개별 감정 세그먼트를 하나의 연속 오디오 트랙으로 결합합니다.",
+            "technical": {
+              "title": "WAV 연결",
+              "description": "최종 트랙으로 여러 WAV 파일을 연결하면서 오디오 매개변수를 유지합니다.",
+              "code": "def concat_wavs(wav_paths: list[str], out_path: str) -> None:\n    params = None\n    frames = []\n    for p in wav_paths:\n        if not os.path.exists(p):\n            continue\n        with wave.open(p, 'rb') as wf:\n            if params is None:\n                params = wf.getparams()\n            frames.append(wf.readframes(wf.getnframes()))\n    if not frames:\n        logger.warning('연결할 WAV 프레임이 없습니다.')\n        return\n    with wave.open(out_path, 'wb') as out_wf:\n        out_wf.setparams(params)\n        for f in frames:\n            out_wf.writeframes(f)"
+            }
+          },
+          {
+            "icon": "🎬",
+            "title": "비디오 멀티플렉싱",
+            "description": "비디오 품질을 유지하면서 원본 오디오를 감정 트랙으로 교체합니다.",
+            "technical": {
+              "title": "FFmpeg 통합",
+              "description": "자동 지속 시간 일치를 통해 전문 비디오/오디오 멀티플렉싱을 위해 FFmpeg를 사용합니다.",
+              "code": "cmd = ['ffmpeg', '-y', '-i', video_path, '-i', audio_path, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', out_path]"
+            }
+          }
+        ]
+      },
+      "emotionalEnhancement": {
+        "title": "감정 음성의 과학",
+        "content": "전통적인 TTS 시스템은 청중을 사로잡지 못하는 평면적이고 단조로운 음성을 생성합니다. 우리의 감정 향상은 최첨단 SSML 마크업과 Azure의 신경 TTS를 사용하여 자연스러운 감정 변동, 동적 범위 및 전문 음성 연기에 맞는 표현력을 가진 성능을 만듭니다.",
+        "ssml": {
+          "title": "표현을 위한 SSML 마크업",
+          "example": "광고 경쾌한 스타일",
+          "code": "&lt;speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'&gt;\n  &lt;voice name='en-US-AndrewNeural'&gt;\n    &lt;mstts:express-as style='advertisement_upbeat' styledegree='2'&gt;\n      &lt;prosody rate='+15%' pitch='+8%' volume='+15%'&gt;\n        당신의 감정 텍스트 여기\n      &lt;/prosody&gt;\n    &lt;/mstts:express-as&gt;\n  &lt;/voice&gt;\n&lt;/speak&gt;",
+          "parameters": [
+            "styledegree: 강도 수준 조절 (0-2, 높을수록 더 표현적)",
+            "rate: 음성 속도 조정 (-100%에서 +100%까지)",
+            "pitch: 감정 강조를 위한 음조 수정 (-50%에서 +50%까지)",
+            "volume: 임팩트를 위한 음량 조절 (0%에서 +100%까지)"
+          ]
+        },
+        "voiceProfile": {
+          "title": "Andrew Neural - 고에너지 음성",
+          "features": [
+            "광고 및 흥분에 적합한 자연스럽게 표현적인 톤",
+            "최대 에너지를 위한 광고 경쾌한 스타일 지원",
+            "정교한 감정 전달을 위한 내장된 프로소디 제어",
+            "매력적이고 강력한 콘텐츠에 최적화됨"
+          ]
+        }
+      },
+      "technicalBreakdown": {
+        "title": "기술 아키텍처",
+        "aiComponents": {
+          "title": "AI 구성 요소",
+          "items": [
+            "SSML 지원을 갖춘 Azure Cognitive Services TTS",
+            "단어 수준 전사를 위한 ElevenLabs Scribe",
+            "경계 감지를 통한 지능형 텍스트 세분화",
+            "스타일 제어가 있는 감정 마크업 생성",
+            "전문 오디오 처리 및 연결"
+          ]
+        },
+        "pipeline": {
+          "title": "처리 파이프라인",
+          "items": [
+            "코덱 최적화가 포함된 MoviePy 오디오 추출",
+            "단어 수준 타임스탬프가 포함된 실시간 전사",
+            "표현적인 프로소디 제어가 포함된 SSML 빌딩",
+            "신경 음성 모델을 사용한 Azure TTS 합성",
+            "오디오 매개변수를 보존하는 WAV 연결",
+            "자동 지속 시간 일치가 포함된 FFmpeg 비디오/오디오 멀티플렉싱"
+          ]
+        }
+      },
+      "useCases": {
+        "title": "실제 적용 사례",
+        "filmProduction": {
+          "title": "영화 및 비디오 제작",
+          "description": "다큐멘터리 내레이션을 평면적인 전달에서 감정적으로 매력적인 성능으로 변환합니다.",
+          "examples": [
+            "극적인 임팩트를 위한 다큐멘터리 음성 향상",
+            "매력적인 감정 전달이 포함된 교육 콘텐츠",
+            "고에너지 설득력 있는 내레이션이 포함된 마케팅 비디오"
+          ]
+        },
+        "educational": {
+          "title": "교육 콘텐츠",
+          "description": "표현적이고 감정적으로 공감되는 내레이션으로 매력적인 학습 자료를 만듭니다.",
+          "examples": [
+            "동적 감정 강조가 포함된 온라인 강의 비디오",
+            "표현적인 스토리텔링이 포함된 아동 교육 콘텐츠",
+            "매력적인 감정 변화를 포함한 기업 교육 비디오"
+          ]
+        },
+        "gaming": {
+          "title": "게임 및 인터랙티브 미디어",
+          "description": "게임 내레이션과 캐릭터 음성에 감정적 깊이를 추가합니다.",
+          "examples": [
+            "감정 범위와 표현이 포함된 캐릭터 음성 연기",
+            "동적 감정 전달이 포함된 인터랙티브 스토리 내레이션",
+            "매력적인 감정 강조가 포함된 게임 튜토리얼 비디오"
+          ]
+        },
+        "storytelling": {
+          "title": "디지털 스토리텔링",
+          "description": "전문적인 감정 성능으로 오디오북과 이야기를 만듭니다.",
+          "examples": [
+            "캐릭터 감정 표현이 포함된 오디오북 제작",
+            "매력적인 감정 전달이 포함된 팟캐스트 향상",
+            "동적 감정 변동이 포함된 디지털 스토리텔링"
+          ]
+        }
+      },
+      "codeExample": {
+        "title": "핵심 구현 예제",
+        "intro": "감정 향상을 지원하는 필수 코드 구조입니다:",
+        "codeSnippet": "def main():\n    if not AZURE_API_KEY:\n        logger.error('AZURE_AI_API_KEY가 설정되지 않았습니다. curify_background/.env를 확인하세요')\n        sys.exit(1)\n\n    # Step 1: 오디오 추출\n    if not os.path.exists(AUDIO_PATH):\n        if not extract_audio(VIDEO_PATH, AUDIO_PATH):\n            sys.exit(1)\n\n    # Step 2: 전사\n    segments = transcribe(AUDIO_PATH)\n\n    # Step 3: 세그먼트별 TTS\n    wav_paths: list[str] = []\n    for i, seg in enumerate(segments):\n        text = seg['text'].strip()\n        if not text:\n            continue\n        out_path = os.path.join(OUTPUT_DIR, f'segment_{i:03d}.wav')\n        if os.path.exists(out_path):\n            logger.info('[%02d] 세그먼트 WAV가 이미 존재하므로 TTS를 건너뜁니다.', i)\n            wav_paths.append(out_path)\n            continue\n        ssml = build_emotional_ssml(text)\n        logger.info('[%02d] TTS 생성 중: %s…', i, text[:60])\n        if azure_tts(ssml, out_path):\n            wav_paths.append(out_path)\n\n    # Step 4: 연결\n    if not wav_paths:\n        logger.error('합성된 세그먼트가 없습니다.')\n        sys.exit(1)\n    concat_wavs(wav_paths, FULL_WAV)\n\n    # Step 5: 원본 비디오에 멀티플렉싱\n    if not mux_audio_video(VIDEO_PATH, FULL_WAV, OUTPUT_MP4):\n        sys.exit(1)\n\n    logger.info('모든 작업이 완료되었습니다!')",
+        "explanations": [
+          "API 키: 안전한 Azure 및 ElevenLabs API 키 관리",
+          "오디오 처리: MoviePy 추출 및 코덱 최적화",
+          "전사: 지능형 세분화를 갖춘 ElevenLabs Scribe",
+          "TTS 생성: 감정 SSML 마크업이 포함된 Azure 신경 TTS",
+          "오디오 조합: 매개변수를 유지하는 전문 WAV 연결",
+          "비디오 멀티플렉싱: 최종 출력을 위한 FFmpeg 통합"
+        ]
+      },
+      "advantages": {
+        "title": "감정 향상이 효과적인 이유",
+        "emotional": {
+          "title": "3배의 감정적 영향",
+          "description": "청중은 평범한 내레이션보다 감정적으로 표현된 콘텐츠에 3배 더 잘 연결됩니다."
+        },
+        "intelligent": {
+          "title": "AI 기반 표현",
+          "description": "지능적인 감정 감지 및 적절한 표현 합성"
+        },
+        "automation": {
+          "title": "무한 확장성",
+          "description": "일관된 감정 품질로 무제한 콘텐츠 처리"
+        },
+        "keyBenefits": {
+          "title": "주요 이점",
+          "items": [
+            "원본 비디오 타이밍과 완벽한 립싱크",
+            "자연스러운 감정 표현과 변주",
+            "고품질 신경 TTS 합성",
+            "지능적인 텍스트 분할 및 경계 감지",
+            "전문 오디오 처리 파이프라인",
+            "일관된 감정 전달로 배치 처리"
+          ]
+        }
+      },
+      "gettingStarted": {
+        "title": "시작하기",
+        "stepsTitle": "빠른 시작 가이드",
+        "steps": [
+          "설정: 종속성 설치 및 API 키 구성",
+          "준비: 기존 비디오 콘텐츠에서 오디오 추출",
+          "전사: 정확한 타이밍을 위해 ElevenLabs Scribe 사용",
+          "강화: Azure SSML 마크업으로 감정 TTS 생성",
+          "조합: 세그먼트를 결합하고 원본 비디오와 멀티플렉싱",
+          "배포: 감정적으로 향상된 비디오 내보내기"
+        ],
+        "prerequisites": {
+          "title": "시스템 요구 사항",
+          "items": [
+            "Cognitive Services 접근이 가능한 Azure AI API 키",
+            "전사 서비스용 ElevenLabs API 키",
+            "MoviePy 및 requests 라이브러리가 포함된 Python 3.7 이상",
+            "FFmpeg 설치 및 PATH에서 사용 가능",
+            "오디오 추출을 위한 기존 MP4 비디오",
+            "중간 오디오 파일을 위한 충분한 저장 공간"
+          ]
+        }
+      },
+      "results": {
+        "title": "예상 결과",
+        "intro": "이 도구는 완벽한 기술 품질을 유지하면서 극적인 표현력을 추가한 감정적으로 향상된 비디오를 생성합니다.",
+        "emotional": {
+          "title": "감정적 오디오 출력",
+          "description": "자연스러운 운율과 감정 변주가 있는 고에너지 표현 오디오",
+          "specs": "Azure 신경 TTS, SSML 마크업, 24kHz/16bit PCM WAV 형식"
+        },
+        "technical": {
+          "title": "기술 사양",
+          "description": "향상된 오디오 트랙과 완벽한 동기화를 갖춘 전문 비디오 출력",
+          "specs": "H.264 비디오 코덱, AAC 오디오 인코딩, 자동 지속 시간 일치"
+        }
+      },
+      "future": {
+        "title": "감정 향상의 미래",
+        "content": "우리는 고급 음성 프로필, 실시간 감정 감지 및 비디오 편집 워크플로와의 통합을 통해 감정적 기능을 확장하고 있습니다.",
+        "roadmap": {
+          "title": "곧 출시 예정",
+          "items": [
+            "오디오 맥락에서의 고급 감정 감지",
+            "다양한 음성 프로필 및 감정 스타일",
+            "합성 중 실시간 감정 조정",
+            "비디오 편집 워크플로와의 통합",
+            "특정 콘텐츠 유형을 위한 맞춤형 감정 훈련",
+            "감정 일관성 제어가 있는 배치 처리"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "감정 TTS",
+          "오디오 향상",
+          "Azure Cognitive Services",
+          "ElevenLabs Scribe",
+          "비디오 후반 작업",
+          "SSML",
+          "음성 연기",
+          "콘텐츠 자동화"
+        ],
+        "questions": "평범한 내레이션을 감정적으로 매력적인 공연으로 변환할 준비가 되셨나요?",
+        "contactText": "감정 향상 시작하기",
+        "contactLink": "https://curify.ai/contact"
+      }
+    },
+    "curifyAiGrowthEngine": {
+      "title": "Curify AI 성장 엔진: UGC 제작자 및 마케터를 위한 콘텐츠 제작 혁신",
+      "publishedDate": "2026년 4월 13일",
+      "readTime": "12분 읽기",
+      "category": "AI 플랫폼",
+      "introTitle": "AI 기반 성장으로 콘텐츠 제작 혁신하기",
+      "introContent": "오늘날의 디지털 환경에서 콘텐츠 제작자와 마케터는 고품질의 매력적인 콘텐츠를 대규모로 제작하면서 진정성을 유지하고 실제 비즈니스 결과를 이끌어내는 전례 없는 도전에 직면해 있습니다. Curify AI 성장 엔진은 콘텐츠 제작, 배포 및 최적화 접근 방식을 근본적으로 변화시키는 시스템입니다. 이 포괄적인 AI 기반 시스템은 창의성을 증대시키고, 워크플로우를 간소화하며, UGC 제작자와 마케팅 전문가 모두에게 측정 가능한 성장을 제공합니다.",
+      "whatIsGrowthEngine": {
+        "title": "Curify AI 성장 엔진이란?",
+        "content": "Curify AI 성장 엔진은 콘텐츠 제작과 마케팅의 모든 측면을 혁신하기 위해 인공지능, 머신러닝 및 자동화를 결합한 통합 플랫폼입니다. 단순한 AI 도구가 아니라, 귀하의 콘텐츠에서 학습하고, 청중을 이해하며, 최대의 효과를 위해 전략을 지속적으로 최적화하는 완전한 생태계입니다.",
+        "coreComponents": {
+          "title": "핵심 구성 요소",
+          "items": [
+            "🧠: 지능형 콘텐츠 생성 - 텍스트, 이미지 및 비디오의 AI 기반 제작",
+            "📊: 성과 분석 - 실시간 인사이트 및 예측 분석",
+            "🎯: 청중 인사이트 - 시청자의 선호도 및 행동에 대한 깊은 이해",
+            "⚡: 자동화 스위트 - 간소화된 워크플로우 및 스마트 일정 관리",
+            "🔄: 최적화 엔진 - 머신러닝을 통한 지속적인 개선"
+          ]
+        }
+      },
+      "forUgcCreators": {
+        "title": "UGC 제작자에게 힘을 실어주기",
+        "intro": "사용자 생성 콘텐츠 제작자에게 Curify AI 성장 엔진은 게임 체인저입니다. 이는 전문 스튜디오와 경쟁해야 하는 독립 제작자들이 직면한 고유한 도전 과제를 해결합니다.",
+        "contentScaling": {
+          "title": "품질을 희생하지 않고 콘텐츠 확장하기",
+          "description": "청중이 사랑하는 독특한 스타일과 목소리를 유지하면서 더 많은 콘텐츠를 더 짧은 시간에 제작하세요.",
+          "benefits": [
+            "단일 아이디어에서 여러 콘텐츠 변형 생성",
+            "지루한 후반 작업 자동화",
+            "모든 플랫폼에서 일관된 품질 유지",
+            "여러 언어로 자동 콘텐츠 생성"
+          ]
+        },
+        "creativeEnhancement": {
+          "title": "창의적 프로세스 향상하기",
+          "description": "AI 기반 도구가 귀하의 창의성을 대체하는 것이 아니라 보완합니다.",
+          "features": [
+            "트렌드 주제를 기반으로 한 지능형 아이디어 생성",
+            "자동 썸네일 및 미리보기 최적화",
+            "더 나은 참여를 위한 스마트 편집 제안",
+            "실시간 성과 피드백 및 추천"
+          ]
+        },
+        "monetization": {
+          "title": "수익 잠재력 극대화하기",
+          "description": "AI 기반 수익화 전략으로 귀하의 열정을 지속 가능한 비즈니스로 전환하세요.",
+          "opportunities": [
+            "더 나은 광고 수익을 위한 콘텐츠 최적화",
+            "자동으로 스폰서십 기회 식별",
+            "유료 플랫폼을 위한 프리미엄 콘텐츠 변형 생성",
+            "게시 전에 바이럴 잠재력 예측"
+          ]
+        }
+      },
+      "forMarketers": {
+        "title": "마케팅 팀 강화하기",
+        "intro": "마케팅 전문가는 Curify AI 성장 엔진을 활용하여 공감하고 전환하며 측정 가능한 ROI를 제공하는 캠페인을 생성할 수 있습니다.",
+        "dataDriven": {
+          "title": "데이터 기반 의사 결정",
+          "description": "AI 기반 인사이트 및 예측 분석으로 정보에 기반한 결정을 내리세요.",
+          "capabilities": [
+            "출시 전에 캠페인 성과 예측",
+            "최적의 게시 시간 및 플랫폼 식별",
+            "경쟁자 전략 자동 분석",
+            "즉시 상세 성과 보고서 생성"
+          ]
+        },
+        "automation": {
+          "title": "지능형 자동화",
+          "description": "반복 작업을 처리하는 스마트 자동화로 팀의 시간을 절약하세요.",
+          "features": [
+            "자동화된 A/B 테스트 및 최적화",
+            "대규모 동적 콘텐츠 개인화",
+            "캠페인 간 스마트 예산 할당",
+            "성과에 따른 실시간 캠페인 조정"
+          ]
+        },
+        "personalization": {
+          "title": "하이퍼 개인화된 콘텐츠",
+          "description": "타겟 청중 세그먼트에 직접 전달되는 콘텐츠를 생성하세요.",
+          "examples": [
+            "다양한 인구 통계를 위한 동적 광고 카피 생성",
+            "전환율이 높은 개인화된 이메일 캠페인",
+            "플랫폼별 청중에 맞춘 소셜 미디어 콘텐츠",
+            "다양한 사용자 세그먼트를 위한 랜딩 페이지 최적화"
+          ]
+        }
+      },
+      "howItWorks": {
+        "title": "성장 엔진 작동 방식",
+        "steps": [
+          {
+            "icon": "📥",
+            "title": "입력 및 분석",
+            "description": "시스템은 귀하의 기존 콘텐츠, 브랜드 가이드라인, 타겟 청중 데이터 및 성과 목표를 수집하여 귀하의 고유한 요구를 이해합니다.",
+            "example": {
+              "title": "예시 입력",
+              "content": "브랜드 스타일 가이드, 성과가 좋은 콘텐츠 및 타겟 청중 인구 통계를 업로드하세요. AI는 귀하의 틈새 시장에 특정한 패턴과 선호도를 분석합니다."
+            }
+          },
+          {
+            "icon": "🧠",
+            "title": "AI 처리",
+            "description": "우리의 고급 AI 모델이 데이터를 처리하고, 기회를 식별하며, 귀하의 목표에 맞춘 전략적 권장 사항을 생성합니다.",
+            "example": {
+              "title": "AI 통찰력",
+              "content": "시스템은 귀하의 청중이 60초 이하의 비디오 콘텐츠에 가장 잘 반응하며, 오후 7시에서 9시 사이에 게시된 비하인드 씬 영상을 선호한다는 것을 식별합니다."
+            }
+          },
+          {
+            "icon": "🎨",
+            "title": "콘텐츠 생성",
+            "description": "AI 통찰력을 기반으로 최적화된 콘텐츠 변형을 생성하여 브랜드 목소리를 유지하면서 참여 가능성을 극대화합니다.",
+            "example": {
+              "title": "생성된 콘텐츠",
+              "content": "자동으로 5개의 비디오 변형, 10개의 소셜 미디어 게시물 및 귀하의 최적 참여 시간에 맞춘 3개의 블로그 게시물 아이디어를 생성합니다."
+            }
+          },
+          {
+            "icon": "📊",
+            "title": "성과 추적",
+            "description": "실시간 성과 지표를 모니터링하고 청중 반응에 따라 전략을 자동으로 조정합니다.",
+            "example": {
+              "title": "실시간 최적화",
+              "content": "시스템은 이모지가 많은 캡션에 더 높은 참여가 있음을 감지하고 나머지 예정된 게시물을 이 패턴에 맞게 자동으로 조정합니다."
+            }
+          }
+        ]
+      },
+      "realWorldResults": {
+        "title": "실제 결과",
+        "metric1": {
+          "title": "콘텐츠 출력",
+          "description": "추가 자원 없이 콘텐츠 생산 증가"
+        },
+        "metric2": {
+          "title": "참여율",
+          "description": "플랫폼 전반에 걸친 청중 참여의 평균 증가"
+        },
+        "metric3": {
+          "title": "시간 절약",
+          "description": "콘텐츠 생성 및 최적화에 소요되는 시간 감소"
+        },
+        "case1": {
+          "title": "기술 유튜버 성공 사례",
+          "description": "100K 구독자를 보유한 기술 리뷰어가 주당 2개에서 4개의 비디오로 출력량을 늘리며 3개월 만에 채널을 40% 성장시켰습니다.",
+          "result": "결과: 광고 수익 250% 증가 및 3개의 브랜드 후원 계약"
+        },
+        "case2": {
+          "title": "전자상거래 브랜드 캠페인",
+          "description": "패션 전자상거래 브랜드가 소셜 미디어 콘텐츠 생성을 자동화하여 모든 플랫폼에서 일관된 브랜드 메시지를 전달했습니다.",
+          "result": "결과: 전환율 65% 증가 및 마케팅 비용 30% 감소"
+        }
+      },
+      "gettingStarted": {
+        "title": "Curify AI 성장 엔진 시작하기",
+        "stepsTitle": "AI 기반 성장으로의 여정",
+        "steps": [
+          "가입: 계정을 만들고 온보딩 질문지를 완료하세요.",
+          "연결: 소셜 미디어 계정 및 콘텐츠 플랫폼을 연결하세요.",
+          "맞춤 설정: 브랜드 가이드라인 및 콘텐츠 선호도를 설정하세요.",
+          "시작: 즉시 AI 최적화 콘텐츠 생성을 시작하세요.",
+          "최적화: 성과를 모니터링하고 전략을 지속적으로 개선하세요."
+        ],
+        "ctaText": "오늘 무료 체험 시작하기",
+        "ctaLink": "https://curify.ai/signup"
+      },
+      "future": {
+        "title": "콘텐츠 생성의 미래",
+        "content": "Curify AI 성장 엔진은 지속적으로 발전하고 있습니다. 우리는 새로운 기능을 지속적으로 추가하고, AI 모델을 개선하며, 플랫폼 통합을 확장하여 앞서 나가고 있습니다.",
+        "roadmap": {
+          "title": "곧 출시 예정",
+          "items": [
+            "실제 아바타를 활용한 고급 비디오 생성",
+            "팀을 위한 실시간 협업 기능",
+            "신흥 소셜 플랫폼과의 통합",
+            "기계 학습을 통한 향상된 예측 분석",
+            "크로스 플랫폼 콘텐츠 동기화",
+            "고급 감정 분석 및 감정 타겟팅"
+          ]
+        }
+      },
+      "footer": {
+        "tags": [
+          "AI 콘텐츠 생성",
+          "UGC 마케팅",
+          "콘텐츠 자동화",
+          "디지털 마케팅",
+          "크리에이터 경제"
+        ],
+        "questions": "Curify AI 성장 엔진이 귀하의 콘텐츠 전략을 어떻게 변화시킬 수 있는지에 대한 질문이 있으신가요?",
+        "contactText": "우리 팀에 문의하기",
+        "contactLink": "https://curify.ai/contact"
+      }
     }
   },
   "aeVsComfyUi": {

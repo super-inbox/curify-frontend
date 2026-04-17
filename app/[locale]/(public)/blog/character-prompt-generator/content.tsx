@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import RelatedBlogs from '@/app/[locale]/_components/RelatedBlogs'
-
+import CdnImage from '@/app/[locale]/_components/CdnImage'
 export default function BlogContent() {
   const t = useTranslations('blog.characterPromptGenerator')
 
@@ -20,9 +20,10 @@ export default function BlogContent() {
           <span>{t('category')}</span>
         </div>
         <div className="mt-6">
-          <img 
-            src="/images/templatepage.webp" 
+          <CdnImage 
+            src="/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg" 
             className="w-full rounded-lg shadow-lg"
+            alt="Character Prompt Generator Preview"
           />
         </div>
       </header>
