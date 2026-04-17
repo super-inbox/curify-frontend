@@ -16,6 +16,7 @@ import {
 import {
   getImageViewsForTemplate,
   getNanoExampleById,
+  getSimilarExamples,
 } from "@/lib/nano_example_utils";
 
 import {
@@ -91,6 +92,20 @@ export function buildTemplateImageGridItems(
       preview: img.preview_image_url || img.image_url,
       templateId: img.template_id,
     }));
+}
+
+export function buildSimilarExampleGridItems(
+  reg: ReturnType<typeof buildNanoRegistry>,
+  currentId: string,
+  opts?: { limit?: number; maxPerTemplate?: number }
+) {
+  const similar = getSimilarExamples(reg, currentId, opts);
+  return similar.map((img) => ({
+    id: img.id,
+    title: (img.locales?.["en"]?.title ?? img.locales?.["zh"]?.title ?? ""),
+    preview: img.asset.preview_image_url || img.asset.image_url,
+    templateId: img.template_id,
+  }));
 }
 
 export function buildOrderedTemplateImageGridItems(

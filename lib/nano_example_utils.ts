@@ -209,3 +209,47 @@ export function buildCircularExampleNav(params: {
     total: neighbors.total,
   };
 }
+
+/**
+ * Returns up to `limit` examples most similar to the given example by tag overlap.
+ * Scores by intersection count; breaks ties with rarer shared tags counting more.
+ * Caps at `maxPerTemplate` results per template to ensure cross-template diversity.
+ */
+export function getSimilarExamples(
+  reg: NanoRegistry,
+  currentId: string,
+  opts?: { limit?: number; maxPerTemplate?: number }
+): RawNanoImageRecord[] {
+  const limit = opts?.limit ?? 12;
+  const maxPerTemplate = opts?.maxPerTemplate ?? 2;
+
+  const current = reg.imageById.get(currentId);
+  if (!current) return [];
+
+  const currentTags = new Set<string>(current.tags ?? []);
+  if (currentTags.size === 0) return [];
+
+  // Score every other image
+  const scored = reg.images
+    .filter((img) => img.id !== currentId && img.asset?.image_url)
+    .map((img) => {
+      const sharedTags = (img.tags ?? []).filter((t) => currentTags.has(t));
+      return { img, score: sharedTags.length };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  // Pick top results capped per template
+  const perTemplateCount: Record<string, number> = {};
+  const results: RawNanoImageRecord[] = [];
+
+  for (const { img } of scored) {
+    if (results.length >= limit) break;
+    const count = perTemplateCount[img.template_id] ?? 0;
+    if (count >= maxPerTemplate) continue;
+    perTemplateCount[img.template_id] = count + 1;
+    results.push(img);
+  }
+
+  return results;
+}
