@@ -66,7 +66,7 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 // Tier 1 (entry bar): character, language, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "film", "sports", "gaming", "comparison", "groups"],
+  character: ["mbti", "film", "sports", "gaming", "comparison", "groups", "anime"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion"],
   learning:  ["science", "trending", "culture", "architecture", "history", "ai", "finance"],
@@ -87,6 +87,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   character: "character",
   nostalgia: "nostalgic",
   product:   "product",
+  anime:     "anime",
 };
 
 // Blog tag to pull posts for a topic page.
