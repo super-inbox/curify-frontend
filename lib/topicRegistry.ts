@@ -84,10 +84,12 @@ for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
 
 // Gallery tag to pull from nano-banana-pro-prompts for a topic page.
 const TOPIC_GALLERY_TAG: Record<string, string> = {
-  character: "character",
-  nostalgia: "nostalgic",
-  product:   "product",
-  anime:     "anime",
+  character:  "character",
+  nostalgia:  "nostalgic",
+  product:    "product",
+  anime:      "anime",
+  food:       "food",
+  fashion:    "fashion",
 };
 
 // Blog tag to pull posts for a topic page.
