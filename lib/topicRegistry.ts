@@ -68,8 +68,8 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "anime", "sports", "comparison", "groups", "film"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion"],
-  learning:  ["science", "trending", "culture", "architecture", "history", "ai", "finance"],
+  lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion", "finance"],
+  learning:  ["science", "trending", "culture", "architecture", "history", "ai"],
   product:   [],
   design:    ["interior"],
 };
