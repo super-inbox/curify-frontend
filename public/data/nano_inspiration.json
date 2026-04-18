@@ -6200,7 +6200,7 @@
   },
   {
     "id": "template-mbti-spring-festival--ESTJ-vs-INTP-high-speed-rail",
-    "template_id": "template-mbti-spring-festival",
+    "template_id": "template-mbti-contrast",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail-prev.jpg"
@@ -6224,7 +6224,7 @@
   },
   {
     "id": "template-mbti-spring-festival-INFJ-vs-ESFJ-high-speed-rail.JPG",
-    "template_id": "template-mbti-spring-festival",
+    "template_id": "template-mbti-contrast",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-high-speed-rail.JPG",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-high-speed-rail.JPG-prev.jpg"
@@ -6247,7 +6247,7 @@
   },
   {
     "id": "template-mbti-spring-festival-INFJ-vs-ESFJ-home",
-    "template_id": "template-mbti-spring-festival",
+    "template_id": "template-mbti-contrast",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-home.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-INFJ-vs-ESFJ-home-prev.jpg"
@@ -6269,7 +6269,7 @@
   },
   {
     "id": "template-mbti-spring-festival-INTJ-vs-ESTP-high-speed-rail",
-    "template_id": "template-mbti-spring-festival",
+    "template_id": "template-mbti-contrast",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-INTJ-vs-ESTP-high-speed-rail.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-INTJ-vs-ESTP-high-speed-rail-prev.jpg"
@@ -6293,7 +6293,7 @@
   },
   {
     "id": "template-mbti-spring-festival-ISFJ-vs-ENTP-farewell",
-    "template_id": "template-mbti-spring-festival",
+    "template_id": "template-mbti-contrast",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-ISFJ-vs-ENTP-farewell.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-ISFJ-vs-ENTP-farewell-prev.jpg"
@@ -6317,7 +6317,7 @@
   },
   {
     "id": "template-mbti-spring-festival-ISTJ-vs-ENFP-package",
-    "template_id": "template-mbti-spring-festival",
+    "template_id": "template-mbti-contrast",
     "asset": {
       "image_url": "/images/nano_insp/template-mbti-spring-festival-zh-ISTJ-vs-ENFP-package.jpg",
       "preview_image_url": "/images/nano_insp_preview/template-mbti-spring-festival-zh-ISTJ-vs-ENFP-package-prev.jpg"
@@ -28987,5 +28987,85 @@
     "tags": [
       "food"
     ]
+  },
+  {
+    "id": "template-pain-relief-infographic-back-pain-yoga",
+    "template_id": "template-pain-relief-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pain-relief-infographic-back-pain-yoga.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pain-relief-infographic-back-pain-yoga-prev.jpg"
+    },
+    "params": {
+      "pain_area": "back pain yoga"
+    },
+    "locales": {
+      "en": {
+        "title": "back pain yoga"
+      }
+    }
+  },
+  {
+    "id": "template-pain-relief-infographic-knee-pain-yoga",
+    "template_id": "template-pain-relief-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pain-relief-infographic-knee-pain-yoga.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pain-relief-infographic-knee-pain-yoga-prev.jpg"
+    },
+    "params": {
+      "pain_area": "knee pain yoga"
+    },
+    "locales": {
+      "en": {
+        "title": "knee pain yoga"
+      }
+    }
+  },
+  {
+    "id": "template-pain-relief-infographic-lower-back-pain-yoga",
+    "template_id": "template-pain-relief-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pain-relief-infographic-lower-back-pain-yoga.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pain-relief-infographic-lower-back-pain-yoga-prev.jpg"
+    },
+    "params": {
+      "pain_area": "lower back pain yoga"
+    },
+    "locales": {
+      "en": {
+        "title": "lower back pain yoga"
+      }
+    }
+  },
+  {
+    "id": "template-pain-relief-infographic-neck-pain-yoga",
+    "template_id": "template-pain-relief-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pain-relief-infographic-neck-pain-yoga.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pain-relief-infographic-neck-pain-yoga-prev.jpg"
+    },
+    "params": {
+      "pain_area": "neck pain yoga"
+    },
+    "locales": {
+      "en": {
+        "title": "neck pain yoga"
+      }
+    }
+  },
+  {
+    "id": "template-pain-relief-infographic-shoulder-pain-yoga",
+    "template_id": "template-pain-relief-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-pain-relief-infographic-shoulder-pain-yoga.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-pain-relief-infographic-shoulder-pain-yoga-prev.jpg"
+    },
+    "params": {
+      "pain_area": "shoulder pain yoga"
+    },
+    "locales": {
+      "en": {
+        "title": "shoulder pain yoga"
+      }
+    }
   }
 ]
