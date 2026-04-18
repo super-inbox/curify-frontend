@@ -3747,155 +3747,185 @@
   {
     "id": "template-3d-region-landmark-map",
     "locales": {
-        "en": {
-            "base_prompt": "（3D Relief Map Illustrator）You are a professional 3D relief map illustrator. Based on the user-specified {region_name}, generate a high-quality, photorealistic 3D topographical map of the region, matching the detailed, vibrant style of the reference images. Layout: 1. Map Base: Accurate 3D relief topography with realistic elevation shading, detailed rivers, lakes, and oceans, natural color gradients. 2. Landmark Overlays: Small detailed 3D models of major landmarks placed at correct locations, clear bold text labels for landmarks, cities, regions, and bodies of water. Style: Photorealistic high-resolution 3D map art, natural lighting, clean labeling, vertical format, 4K ultra HD, direct image generation. Subject: 3D Relief Topographical Map of {region_name} with Landmarks.",
-            "parameters": [
-                {
-                    "name": "region_name",
-                    "label": "Region/Country Name",
-                    "type": "text",
-                    "placeholder": [
-                        "China",
-                        "France",
-                        "Greece",
-                        "Japan",
-                        "United Kingdom",
-                        "United States"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（3D Relief Map Illustrator）You are a professional 3D relief map illustrator. Based on the user-specified {region_name}, generate a high-quality, photorealistic 3D topographical map of the region, matching the detailed, vibrant style of the reference images. Layout: 1. Map Base: Accurate 3D relief topography with realistic elevation shading, detailed rivers, lakes, and oceans, natural color gradients. 2. Landmark Overlays: Small detailed 3D models of major landmarks placed at correct locations, clear bold text labels for landmarks, cities, regions, and bodies of water. Style: Photorealistic high-resolution 3D map art, natural lighting, clean labeling, vertical format, 4K ultra HD, direct image generation. Subject: 3D Relief Topographical Map of {region_name} with Landmarks.",
+        "parameters": [
+          {
+            "name": "region_name",
+            "label": "Region/Country Name",
+            "type": "text",
+            "placeholder": [
+              "China",
+              "France",
+              "Greece",
+              "Japan",
+              "United Kingdom",
+              "United States"
             ]
-        }
+          }
+        ]
+      }
     },
     "og_image": "/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg"
-},
+  },
   {
     "id": "template-whimsical-travel-map",
     "locales": {
-        "en": {
-            "base_prompt": "（Whimsical Travel Map Illustrator）You are a professional travel-themed children's map illustrator. Based on the user-specified {country_name}, generate a vertical, whimsical hand-drawn travel map poster, matching the warm, vintage watercolor style of the reference images. Layout: 1. Header: Scroll banner title \"Explore {country_name}!\", Curify watermark at top left. 2. Map: Hand-drawn map with natural green/blue gradients, labeled cities/regions with text boxes and red pins, cute cartoon illustrations of landmarks, wildlife, and cultural symbols. 3. Decorations: Travel-themed illustrations (plane, camper van, luggage), magnifying glass landmark inset, bottom scroll banner with tagline. Style: Warm vintage watercolor texture, whimsical kid-friendly linework, vertical format, 4K ultra HD, direct image generation. Subject: Whimsical Travel Map of {country_name}.",
-            "parameters": [
-                {
-                    "name": "country_name",
-                    "label": "Country/Region Name",
-                    "type": "text",
-                    "placeholder": [
-                        "Australia",
-                        "France",
-                        "Italy",
-                        "Spain",
-                        "Thailand"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Whimsical Travel Map Illustrator）You are a professional travel-themed children's map illustrator. Based on the user-specified {country_name}, generate a vertical, whimsical hand-drawn travel map poster, matching the warm, vintage watercolor style of the reference images. Layout: 1. Header: Scroll banner title \"Explore {country_name}!\", Curify watermark at top left. 2. Map: Hand-drawn map with natural green/blue gradients, labeled cities/regions with text boxes and red pins, cute cartoon illustrations of landmarks, wildlife, and cultural symbols. 3. Decorations: Travel-themed illustrations (plane, camper van, luggage), magnifying glass landmark inset, bottom scroll banner with tagline. Style: Warm vintage watercolor texture, whimsical kid-friendly linework, vertical format, 4K ultra HD, direct image generation. Subject: Whimsical Travel Map of {country_name}.",
+        "parameters": [
+          {
+            "name": "country_name",
+            "label": "Country/Region Name",
+            "type": "text",
+            "placeholder": [
+              "Australia",
+              "France",
+              "Italy",
+              "Spain",
+              "Thailand"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "travel"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90
+  },
   {
     "id": "template-pop-culture-matching-chart",
     "locales": {
-        "en": {
-            "base_prompt": "（Pop Culture Matching Chart Designer）You are a professional pop culture-themed zodiac/birth month chart designer. Based on the user-specified {theme_name}, generate a vertical, whimsical character matching chart, matching the clean, playful aesthetic of the reference images. Layout: 1. Header: Bold stylized title \"YOUR {category} IS YOUR {theme_name} MATCH\", Curify watermark at bottom right. 2. Grid: 12-item grid (3×4 or 4×3) with category label, high-quality themed character illustration, and character name. Style: Subtle themed doodles in background, clean playful typography, consistent illustration style, vertical format, 4K ultra HD, direct image generation. Subject: {theme_name} Zodiac/Birth Month Matching Chart.",
-            "parameters": [
-                {
-                    "name": "theme_name",
-                    "label": "Pop Culture Theme",
-                    "type": "text",
-                    "placeholder": [
-                        "Ghibli",
-                        "Pokémon",
-                        "Harry Potter",
-                        "Disney",
-                        "Marvel"
-                    ]
-                }
+      "en": {
+        "base_prompt": "（Pop Culture Matching Chart Designer）You are a professional pop culture-themed zodiac/birth month chart designer. Based on the user-specified {theme_name}, generate a vertical, whimsical character matching chart, matching the clean, playful aesthetic of the reference images. Layout: 1. Header: Bold stylized title \"YOUR {category} IS YOUR {theme_name} MATCH\", Curify watermark at bottom right. 2. Grid: 12-item grid (3×4 or 4×3) with category label, high-quality themed character illustration, and character name. Style: Subtle themed doodles in background, clean playful typography, consistent illustration style, vertical format, 4K ultra HD, direct image generation. Subject: {theme_name} Zodiac/Birth Month Matching Chart.",
+        "parameters": [
+          {
+            "name": "theme_name",
+            "label": "Pop Culture Theme",
+            "type": "text",
+            "placeholder": [
+              "Ghibli",
+              "Pokémon",
+              "Harry Potter",
+              "Disney",
+              "Marvel"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-pop-culture-matching-chart-ghibli-birth-month-seasons-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-pop-culture-matching-chart-ghibli-birth-month-seasons-prev.jpg",
+    "topics": [
+      "character",
+      "film"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90
+  },
   {
     "id": "template-training-muscle-equipment",
     "locales": {
-        "en": {
-            "base_prompt": "(Training Equipment Guide Poster Designer) You are a professional training equipment guide poster designer. Based on the user-specified {muscle_group}, generate a vertical, anatomical training equipment guide poster, matching the clean, detailed style of the reference images. Layout: 1. Header: Large bold title \"ULTIMATE {muscle_group.upper()} TRAINING\", Curify watermark at top left. 2. Exercise Grid: 12 training movements with equipment in 4×3 grid, each with anatomical illustration of the move, highlighted target muscles, clear equipment and muscle labels, and movement name. Style: Professional anatomical illustration, subtle clean background, clean typography, vertical format, 4K ultra HD, direct image generation. Subject: {muscle_group} Training Equipment Guide Poster.",
-            "parameters": [
-                {
-                    "name": "muscle_group",
-                    "label": "Target Muscle Group",
-                    "type": "text",
-                    "placeholder": [
-                        "Arm",
-                        "Back",
-                        "Chest",
-                        "Core",
-                        "Full Body",
-                        "Leg",
-                        "Shoulder",
-                        "Glute"
-                    ]
-                }
+      "en": {
+        "base_prompt": "(Training Equipment Guide Poster Designer) You are a professional training equipment guide poster designer. Based on the user-specified {muscle_group}, generate a vertical, anatomical training equipment guide poster, matching the clean, detailed style of the reference images. Layout: 1. Header: Large bold title \"ULTIMATE {muscle_group.upper()} TRAINING\", Curify watermark at top left. 2. Exercise Grid: 12 training movements with equipment in 4×3 grid, each with anatomical illustration of the move, highlighted target muscles, clear equipment and muscle labels, and movement name. Style: Professional anatomical illustration, subtle clean background, clean typography, vertical format, 4K ultra HD, direct image generation. Subject: {muscle_group} Training Equipment Guide Poster.",
+        "parameters": [
+          {
+            "name": "muscle_group",
+            "label": "Target Muscle Group",
+            "type": "text",
+            "placeholder": [
+              "Arm",
+              "Back",
+              "Chest",
+              "Core",
+              "Full Body",
+              "Leg",
+              "Shoulder",
+              "Glute"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-training-muscle-equipment-arm-day-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-training-muscle-equipment-arm-day-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fitness"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70
+  },
   {
     "id": "template-posture-correctness-comparison",
     "locales": {
-        "en": {
-            "base_prompt": "(Posture & Form Comparison Illustrator) You are a professional anatomy and movement form guide designer. Based on the user-specified {exercise_posture}, generate a vertical, split-screen correct vs wrong posture comparison poster, matching the clean, detailed anatomical style of the reference images. Layout: 1. Header: Left panel labeled \"Wrong\" in red, right panel labeled \"Correct\" in green, Curify watermark at top left. 2. Split Layout: Left side shows the incorrect form with red arrows and labels pointing to common mistakes and strain points. Right side shows the correct form with green arrows and labels pointing to proper alignment, muscle engagement, and safe mechanics. Style: Professional anatomical muscle illustration, subtle parchment background, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: {exercise_posture} Form Guide - Wrong vs Correct Posture.",
-            "parameters": [
-                {
-                    "name": "exercise_posture",
-                    "label": "Exercise or Posture Name",
-                    "type": "text",
-                    "placeholder": [
-                        "Running",
-                        "Squat",
-                        "Lifting",
-                        "Sitting",
-                        "Push-up",
-                        "Standing",
-                        "Deadlift"
-                    ]
-                }
+      "en": {
+        "base_prompt": "(Posture & Form Comparison Illustrator) You are a professional anatomy and movement form guide designer. Based on the user-specified {exercise_posture}, generate a vertical, split-screen correct vs wrong posture comparison poster, matching the clean, detailed anatomical style of the reference images. Layout: 1. Header: Left panel labeled \"Wrong\" in red, right panel labeled \"Correct\" in green, Curify watermark at top left. 2. Split Layout: Left side shows the incorrect form with red arrows and labels pointing to common mistakes and strain points. Right side shows the correct form with green arrows and labels pointing to proper alignment, muscle engagement, and safe mechanics. Style: Professional anatomical muscle illustration, subtle parchment background, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: {exercise_posture} Form Guide - Wrong vs Correct Posture.",
+        "parameters": [
+          {
+            "name": "exercise_posture",
+            "label": "Exercise or Posture Name",
+            "type": "text",
+            "placeholder": [
+              "Running",
+              "Squat",
+              "Lifting",
+              "Sitting",
+              "Push-up",
+              "Standing",
+              "Deadlift"
             ]
-        }
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-posture-correctness-comparison-squat-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-posture-correctness-comparison-squat-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fitness"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70
+  },
   {
     "id": "template-personality-choice-quiz-card",
     "locales": {
-        "en": {
-            "base_prompt": "(Personality & Lifestyle Quiz Card Designer) You are a professional quiz card designer. Based on the user-specified {theme} and {gender}, generate a vertical personality/choice quiz poster, matching the clean, high-contrast style of the reference images. Layout: 1. Header: Large bold title \"WHICH {theme.upper()} SUITS YOU?\", with the theme keyword highlighted in orange. Curify watermark at top left. 2. Grid Layout: 6 character options arranged in 2×3 grid, each with a realistic photo-style portrait of a {gender} person in a theme-specific outfit/scenario. 3. Labels: Each option has a rounded label below with its name, using color-coded backgrounds (orange, gray, red). Style: Dark moody background with subtle city/setting details, professional lighting, high contrast text, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Personality Quiz Card for {gender}.",
-            "parameters": [
-                {
-                    "name": "theme",
-                    "label": "Quiz Theme",
-                    "type": "text",
-                    "placeholder": [
-                        "Career",
-                        "Body Type",
-                        "Personality",
-                        "Hobby",
-                        "Style",
-                        "Vibe"
-                    ]
-                },
-                {
-                    "name": "gender",
-                    "label": "Subject Gender",
-                    "type": "text",
-                    "placeholder": [
-                        "male",
-                        "female"
-                    ]
-                }
+      "en": {
+        "base_prompt": "(Personality & Lifestyle Quiz Card Designer) You are a professional quiz card designer. Based on the user-specified {theme} and {gender}, generate a vertical personality/choice quiz poster, matching the clean, high-contrast style of the reference images. Layout: 1. Header: Large bold title \"WHICH {theme.upper()} SUITS YOU?\", with the theme keyword highlighted in orange. Curify watermark at top left. 2. Grid Layout: 6 character options arranged in 2×3 grid, each with a realistic photo-style portrait of a {gender} person in a theme-specific outfit/scenario. 3. Labels: Each option has a rounded label below with its name, using color-coded backgrounds (orange, gray, red). Style: Dark moody background with subtle city/setting details, professional lighting, high contrast text, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Personality Quiz Card for {gender}.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Quiz Theme",
+            "type": "text",
+            "placeholder": [
+              "Career",
+              "Body Type",
+              "Personality",
+              "Hobby",
+              "Style",
+              "Vibe"
             ]
-        }
+          },
+          {
+            "name": "gender",
+            "label": "Subject Gender",
+            "type": "text",
+            "placeholder": [
+              "male",
+              "female"
+            ]
+          }
+        ]
+      }
     },
-    "og_image": "/images/nano_insp_preview/template-personality-choice-quiz-card-female-body-types-prev.jpg"
-}
+    "og_image": "/images/nano_insp_preview/template-personality-choice-quiz-card-female-body-types-prev.jpg",
+    "topics": [
+      "character",
+      "mbti"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70
+  }
 ]
