@@ -29737,5 +29737,633 @@
     "topics": [
       "thailand"
     ]
+  },
+  {
+    "id": "template-3d-region-landmark-map-australia",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-australia.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-australia-prev.jpg"
+    },
+    "params": {
+      "region_name": "australia"
+    },
+    "locales": {
+      "en": {
+        "title": "australia"
+      }
+    }
+  },
+  {
+    "id": "template-3d-region-landmark-map-brazil",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-brazil.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-brazil-prev.jpg"
+    },
+    "params": {
+      "region_name": "brazil"
+    },
+    "locales": {
+      "en": {
+        "title": "brazil"
+      }
+    }
+  },
+  {
+    "id": "template-3d-region-landmark-map-china",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-china.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-china-prev.jpg"
+    },
+    "params": {
+      "region_name": "china"
+    },
+    "locales": {
+      "en": {
+        "title": "china"
+      }
+    }
+  },
+  {
+    "id": "template-3d-region-landmark-map-germany",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-germany.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-germany-prev.jpg"
+    },
+    "params": {
+      "region_name": "germany"
+    },
+    "locales": {
+      "en": {
+        "title": "germany"
+      }
+    }
+  },
+  {
+    "id": "template-3d-region-landmark-map-india",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-india.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-india-prev.jpg"
+    },
+    "params": {
+      "region_name": "india"
+    },
+    "locales": {
+      "en": {
+        "title": "india"
+      }
+    }
+  },
+  {
+    "id": "template-3d-region-landmark-map-usa",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-usa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-usa-prev.jpg"
+    },
+    "params": {
+      "region_name": "usa"
+    },
+    "locales": {
+      "en": {
+        "title": "usa"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-camera",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-camera.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-camera-prev.jpg"
+    },
+    "params": {
+      "object_name": "camera"
+    },
+    "locales": {
+      "en": {
+        "title": "camera"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-coffee-machine",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-coffee-machine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-coffee-machine-prev.jpg"
+    },
+    "params": {
+      "object_name": "coffee machine"
+    },
+    "locales": {
+      "en": {
+        "title": "coffee machine"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-guitar",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-guitar.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-guitar-prev.jpg"
+    },
+    "params": {
+      "object_name": "guitar"
+    },
+    "locales": {
+      "en": {
+        "title": "guitar"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-human-body",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-human-body.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-human-body-prev.jpg"
+    },
+    "params": {
+      "object_name": "human body"
+    },
+    "locales": {
+      "en": {
+        "title": "human body"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-laptop",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-laptop.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-laptop-prev.jpg"
+    },
+    "params": {
+      "object_name": "laptop"
+    },
+    "locales": {
+      "en": {
+        "title": "laptop"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-shoe",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-shoe.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-shoe-prev.jpg"
+    },
+    "params": {
+      "object_name": "shoe"
+    },
+    "locales": {
+      "en": {
+        "title": "shoe"
+      }
+    }
+  },
+  {
+    "id": "template-bilingual-object-structure-labeling-watch",
+    "template_id": "template-bilingual-object-structure-labeling",
+    "asset": {
+      "image_url": "/images/nano_insp/template-bilingual-object-structure-labeling-watch.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-watch-prev.jpg"
+    },
+    "params": {
+      "object_name": "watch"
+    },
+    "locales": {
+      "en": {
+        "title": "watch"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-alexander-the-great",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-alexander-the-great.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-alexander-the-great-prev.jpg"
+    },
+    "params": {
+      "historical_event": "alexander the great"
+    },
+    "locales": {
+      "en": {
+        "title": "alexander the great"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-bering-land-bridge-migration",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-bering-land-bridge-migration.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-bering-land-bridge-migration-prev.jpg"
+    },
+    "params": {
+      "historical_event": "bering land bridge migration"
+    },
+    "locales": {
+      "en": {
+        "title": "bering land bridge migration"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-constantinople-siege",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-constantinople-siege.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-constantinople-siege-prev.jpg"
+    },
+    "params": {
+      "historical_event": "constantinople siege"
+    },
+    "locales": {
+      "en": {
+        "title": "constantinople siege"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-exodus",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-exodus.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-exodus-prev.jpg"
+    },
+    "params": {
+      "historical_event": "exodus"
+    },
+    "locales": {
+      "en": {
+        "title": "exodus"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-great-fire-of-rome",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-great-fire-of-rome.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-great-fire-of-rome-prev.jpg"
+    },
+    "params": {
+      "historical_event": "great fire of rome"
+    },
+    "locales": {
+      "en": {
+        "title": "great fire of rome"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-hannibal-crossing-alps",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-hannibal-crossing-alps.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-hannibal-crossing-alps-prev.jpg"
+    },
+    "params": {
+      "historical_event": "hannibal crossing alps"
+    },
+    "locales": {
+      "en": {
+        "title": "hannibal crossing alps"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-pompeii-eruption",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-pompeii-eruption.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-pompeii-eruption-prev.jpg"
+    },
+    "params": {
+      "historical_event": "pompeii eruption"
+    },
+    "locales": {
+      "en": {
+        "title": "pompeii eruption"
+      }
+    }
+  },
+  {
+    "id": "template-historical-event-map-illustration-trojan-war",
+    "template_id": "template-historical-event-map-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-historical-event-map-illustration-trojan-war.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-historical-event-map-illustration-trojan-war-prev.jpg"
+    },
+    "params": {
+      "historical_event": "trojan war"
+    },
+    "locales": {
+      "en": {
+        "title": "trojan war"
+      }
+    }
+  },
+  {
+    "id": "template-kids-vocabulary-poster-art-styles",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-art-styles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-art-styles-prev.jpg"
+    },
+    "params": {
+      "theme_name": "art styles"
+    },
+    "locales": {
+      "en": {
+        "title": "art styles"
+      }
+    }
+  },
+  {
+    "id": "template-kids-vocabulary-poster-birds",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-birds.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-birds-prev.jpg"
+    },
+    "params": {
+      "theme_name": "birds"
+    },
+    "locales": {
+      "en": {
+        "title": "birds"
+      }
+    }
+  },
+  {
+    "id": "template-kids-vocabulary-poster-food",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-food.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-food-prev.jpg"
+    },
+    "params": {
+      "theme_name": "food"
+    },
+    "locales": {
+      "en": {
+        "title": "food"
+      }
+    }
+  },
+  {
+    "id": "template-kids-vocabulary-poster-jobs",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-jobs.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-jobs-prev.jpg"
+    },
+    "params": {
+      "theme_name": "jobs"
+    },
+    "locales": {
+      "en": {
+        "title": "jobs"
+      }
+    }
+  },
+  {
+    "id": "template-kids-vocabulary-poster-numbers",
+    "template_id": "template-kids-vocabulary-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-kids-vocabulary-poster-numbers.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-kids-vocabulary-poster-numbers-prev.jpg"
+    },
+    "params": {
+      "theme_name": "numbers"
+    },
+    "locales": {
+      "en": {
+        "title": "numbers"
+      }
+    }
+  },
+  {
+    "id": "template-lifestyle-info-card-coffee-brewing-guide",
+    "template_id": "template-lifestyle-info-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-lifestyle-info-card-coffee-brewing-guide.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-lifestyle-info-card-coffee-brewing-guide-prev.jpg"
+    },
+    "params": {
+      "topic": "coffee brewing guide"
+    },
+    "locales": {
+      "en": {
+        "title": "coffee brewing guide"
+      }
+    }
+  },
+  {
+    "id": "template-lifestyle-info-card-dog-care-essentials",
+    "template_id": "template-lifestyle-info-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-lifestyle-info-card-dog-care-essentials.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-lifestyle-info-card-dog-care-essentials-prev.jpg"
+    },
+    "params": {
+      "topic": "dog care essentials"
+    },
+    "locales": {
+      "en": {
+        "title": "dog care essentials"
+      }
+    }
+  },
+  {
+    "id": "template-lifestyle-info-card-wine-tasting-notes",
+    "template_id": "template-lifestyle-info-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-lifestyle-info-card-wine-tasting-notes.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-lifestyle-info-card-wine-tasting-notes-prev.jpg"
+    },
+    "params": {
+      "topic": "wine tasting notes"
+    },
+    "locales": {
+      "en": {
+        "title": "wine tasting notes"
+      }
+    }
+  },
+  {
+    "id": "template-lifestyle-info-card-yoga-practice-basics",
+    "template_id": "template-lifestyle-info-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-lifestyle-info-card-yoga-practice-basics.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-lifestyle-info-card-yoga-practice-basics-prev.jpg"
+    },
+    "params": {
+      "topic": "yoga practice basics"
+    },
+    "locales": {
+      "en": {
+        "title": "yoga practice basics"
+      }
+    }
+  },
+  {
+    "id": "template-national-theme-map-infographic-made-in-china",
+    "template_id": "template-national-theme-map-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-national-theme-map-infographic-made-in-china.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-china-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "made in china"
+      }
+    }
+  },
+  {
+    "id": "template-national-theme-map-infographic-made-in-germany",
+    "template_id": "template-national-theme-map-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-national-theme-map-infographic-made-in-germany.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-germany-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "made in germany"
+      }
+    }
+  },
+  {
+    "id": "template-national-theme-map-infographic-made-in-india",
+    "template_id": "template-national-theme-map-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-national-theme-map-infographic-made-in-india.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-india-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "made in india"
+      }
+    }
+  },
+  {
+    "id": "template-national-theme-map-infographic-made-in-japan",
+    "template_id": "template-national-theme-map-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-national-theme-map-infographic-made-in-japan.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-japan-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "made in japan"
+      }
+    }
+  },
+  {
+    "id": "template-national-theme-map-infographic-made-in-south-korea",
+    "template_id": "template-national-theme-map-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-national-theme-map-infographic-made-in-south-korea.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-south-korea-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "made in south korea"
+      }
+    }
+  },
+  {
+    "id": "template-national-theme-map-infographic-made-in-usa",
+    "template_id": "template-national-theme-map-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-national-theme-map-infographic-made-in-usa.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-usa-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "made in usa"
+      }
+    }
+  },
+  {
+    "id": "template-posture-correctness-comparison-cycling",
+    "template_id": "template-posture-correctness-comparison",
+    "asset": {
+      "image_url": "/images/nano_insp/template-posture-correctness-comparison-cycling.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-posture-correctness-comparison-cycling-prev.jpg"
+    },
+    "params": {
+      "exercise_posture": "cycling"
+    },
+    "locales": {
+      "en": {
+        "title": "cycling"
+      }
+    }
+  },
+  {
+    "id": "template-posture-correctness-comparison-lunge",
+    "template_id": "template-posture-correctness-comparison",
+    "asset": {
+      "image_url": "/images/nano_insp/template-posture-correctness-comparison-lunge.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-posture-correctness-comparison-lunge-prev.jpg"
+    },
+    "params": {
+      "exercise_posture": "lunge"
+    },
+    "locales": {
+      "en": {
+        "title": "lunge"
+      }
+    }
+  },
+  {
+    "id": "template-posture-correctness-comparison-pushup",
+    "template_id": "template-posture-correctness-comparison",
+    "asset": {
+      "image_url": "/images/nano_insp/template-posture-correctness-comparison-pushup.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-posture-correctness-comparison-pushup-prev.jpg"
+    },
+    "params": {
+      "exercise_posture": "pushup"
+    },
+    "locales": {
+      "en": {
+        "title": "pushup"
+      }
+    }
+  },
+  {
+    "id": "template-posture-correctness-comparison-swimming",
+    "template_id": "template-posture-correctness-comparison",
+    "asset": {
+      "image_url": "/images/nano_insp/template-posture-correctness-comparison-swimming.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-posture-correctness-comparison-swimming-prev.jpg"
+    },
+    "params": {
+      "exercise_posture": "swimming"
+    },
+    "locales": {
+      "en": {
+        "title": "swimming"
+      }
+    }
   }
 ]
