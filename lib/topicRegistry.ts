@@ -90,6 +90,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   anime:      "anime",
   food:       "food",
   fashion:    "fashion",
+  fitness:    "fitness",
 };
 
 // Blog tag to pull posts for a topic page.
