@@ -191,7 +191,8 @@
       "architecture"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-species",
@@ -232,7 +233,8 @@
       "science"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-character",
@@ -1125,7 +1127,8 @@
       "food"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-what-if-history",
@@ -1181,7 +1184,8 @@
       "history"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-character-comparison",
@@ -1296,7 +1300,8 @@
       "groups"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-battle",
@@ -1622,7 +1627,8 @@
       "science"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-city-miniature",
@@ -1722,7 +1728,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-constellation-steampunk",
@@ -1902,7 +1909,8 @@
       "film"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-nba",
@@ -1931,7 +1939,8 @@
       "sports"
     ],
     "rank_score": 100,
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -1963,7 +1972,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-breakingbad",
@@ -1992,7 +2002,8 @@
       "film"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-sports-battle",
@@ -2069,7 +2080,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 8
+    "base_rank_score": 8,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-yellowstone",
@@ -2098,7 +2110,8 @@
       "film"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-ghibli",
@@ -2132,7 +2145,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-vocabulary",
@@ -2887,7 +2901,8 @@
       "film",
       "anime"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-children-english-vocab-spelling",
@@ -2920,7 +2935,8 @@
     "use_cases": [
       "for-parents"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-daily-essentials-learning-card",
@@ -2950,7 +2966,8 @@
       "language",
       "vocabulary"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-native-english-expressions",
@@ -2980,7 +2997,8 @@
       "expressions",
       "language-english"
     ],
-    "base_rank_score": 50
+    "base_rank_score": 50,
+    "allow_generation": true
   },
   {
     "id": "template-theme-overview-poster",
@@ -3068,7 +3086,8 @@
     "topics": [
       "design"
     ],
-    "base_rank_score": 50
+    "base_rank_score": 50,
+    "allow_generation": true
   },
   {
     "id": "template-varieties-food-poster",
@@ -3194,7 +3213,8 @@
     "topics": [
       "character",
       "mbti"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-clothing-evolution-poster",
@@ -3328,7 +3348,8 @@
       "language",
       "vocabulary",
       "language-english"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-nostalgic-first-item-poster",
@@ -3360,7 +3381,8 @@
       "nostalgia"
     ],
     "base_rank_score": 80,
-    "rank_score": 80
+    "rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-tool-ai-category",
@@ -3592,7 +3614,8 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-fashion-before-after-outfit-annotation-card",
@@ -3622,7 +3645,8 @@
     ],
     "rank_score": 90,
     "base_rank_score": 90,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-pain-relief-infographic",
@@ -3682,7 +3706,8 @@
     "topics": [
       "lifestyle",
       "fitness"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-kids-vocabulary-poster",
@@ -3713,7 +3738,8 @@
     "topics": [
       "language",
       "vocabulary"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-beauty-step-by-step-guide",
@@ -3742,7 +3768,8 @@
     "topics": [
       "lifestyle",
       "fashion"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-3d-region-landmark-map",
@@ -3773,7 +3800,8 @@
       "architecture"
     ],
     "rank_score": 90,
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-whimsical-travel-map",
@@ -3802,7 +3830,8 @@
       "travel"
     ],
     "rank_score": 90,
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-pop-culture-matching-chart",
@@ -3831,7 +3860,8 @@
       "film"
     ],
     "rank_score": 90,
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-training-muscle-equipment",
@@ -3863,7 +3893,8 @@
       "fitness"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-posture-correctness-comparison",
@@ -3894,7 +3925,8 @@
       "fitness"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-personality-choice-quiz-card",
