@@ -3927,5 +3927,91 @@
     ],
     "rank_score": 70,
     "base_rank_score": 70
-  }
+  },
+  {
+    "id": "template-lifestyle-info-card",
+    "locales": {
+        "en": {
+            "base_prompt": "(Lifestyle & Hobby Info Card Designer) You are a professional infographic designer. Based on the user-specified {topic}, generate a clean, modern horizontal info card, matching the flat, minimalist illustration style of the reference images. Layout: 1. Header: Large bold title \"{topic.upper()} GUIDE\" or \"{topic.upper()} BASICS\" at the top, with a colored accent line below. Curify watermark at bottom right. 2. Three-column layout: Left section for basic info (with icons), center section for main illustration, right section for tips/key details (with icons and text). Style: Flat vector illustration, soft color palette, clean typography, white background, high readability, 4K ultra HD, direct image generation. Subject: {topic} Essential Info Card.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Info Card Topic",
+                    "type": "text",
+                    "placeholder": [
+                        "Coffee Brewing",
+                        "Dog Care",
+                        "Wine Tasting",
+                        "Yoga Practice",
+                        "Baking",
+                        "Plant Care"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-lifestyle-info-card-coffee-brewing-guide-prev.jpg"
+},
+  {
+    "id": "template-historical-event-map-illustration",
+    "locales": {
+        "en": {
+            "base_prompt": "(Historical Event Map Illustrator) You are a professional historical infographic designer. Based on the user-specified {historical_event}, generate a vertical, two-part map and scene illustration, matching the watercolor/illustrative style of the reference images. Layout: 1. Top Section: Detailed map showing the event's route, key locations, and directional arrows, with clear labels for cities, regions, and bodies of water. 2. Bottom Section: Vivid, dramatic scene illustration depicting the key moment of the event (battle, march, disaster, etc.). 3. Header/Title: Bold title "{historical_event.upper()}" with a subtitle/date, Curify watermark at top left. Style: Warm, illustrative watercolor texture, historically accurate details, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: {historical_event} Illustrated Route & Scene Map.",
+            "parameters": [
+                {
+                    "name": "historical_event",
+                    "label": "Historical Event Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Alexander's Eastern Campaign",
+                        "Exodus from Egypt",
+                        "Fall of Constantinople",
+                        "Great Fire of Rome",
+                        "Hannibal Crossing the Alps",
+                        "Eruption of Mount Vesuvius",
+                        "Trojan War"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-historical-event-map-illustration-trojan-war-prev.jpg"
+},
+  {
+    "id": "template-national-theme-map-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(National Theme Map Infographic Designer) You are a professional map infographic designer. Based on the user-specified {country} and {theme}, generate a clean, modern infographic map. Layout: 1. Large title \"MADE IN {country.upper()}\" (or \"{theme.upper()} IN {country.upper()}\") at the top, with a subtitle describing the theme. Curify watermark at bottom right. 2. Map Base: Simplified, high-contrast map of {country} in solid yellow/gold, with clear regional borders. 3. Theme Overlays: Logos/icons/text representing {theme} elements placed at their correct locations on the map. 4. Footer: Short note about the theme, plus source information. Style: Minimalist flat design, bold colors, high readability, white text on a solid colored background, horizontal format, 4K ultra HD, direct image generation. Subject: {theme} Map of {country}.",
+            "parameters": [
+                {
+                    "name": "country",
+                    "label": "Country Name",
+                    "type": "text",
+                    "placeholder": [
+                        "China",
+                        "Germany",
+                        "India",
+                        "Japan",
+                        "South Korea",
+                        "USA"
+                    ]
+                },
+                {
+                    "name": "theme",
+                    "label": "Infographic Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Companies",
+                        "Brands",
+                        "Industries",
+                        "Languages",
+                        "Cultures",
+                        "Foods"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-china-prev.jpg"
+}
 ]
