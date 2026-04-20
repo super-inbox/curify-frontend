@@ -74,10 +74,13 @@ function ExampleImageCard({
         </div>
       </Link>
 
-      <div className="px-3 py-2">
+      <div className="flex justify-end px-3 py-2">
         <Link
           href={remixHref}
-          className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 hover:text-purple-800"
+          onClick={() => {
+            document.getElementById("reproduce")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
         >
           <Sparkles className="h-3.5 w-3.5" />
           Remix this

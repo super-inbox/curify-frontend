@@ -12,6 +12,7 @@ type TagEntry = {
   title?: string;
   description?: string;
   introText?: string;
+  keywords?: string[];
 };
 
 type Props = {
@@ -34,7 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     entry.description ?? `Browse AI prompts tagged with ${tag}.`;
 
-  const keywords = [tag, 'AI prompt', 'Nano Banana', 'prompt library'];
+  const keywords = entry.keywords?.length
+    ? entry.keywords
+    : [tag, 'AI prompt', 'Nano Banana', 'prompt library'];
 
   const canonicalUrl = getCanonicalUrl(
     locale,
