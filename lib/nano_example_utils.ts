@@ -221,7 +221,7 @@ export function getSimilarExamples(
   opts?: { limit?: number; maxPerTemplate?: number }
 ): RawNanoImageRecord[] {
   const limit = opts?.limit ?? 12;
-  const maxPerTemplate = opts?.maxPerTemplate ?? 2;
+  const maxPerTemplate = opts?.maxPerTemplate ?? 4;
 
   const current = reg.imageById.get(currentId);
   if (!current) return [];
@@ -229,12 +229,13 @@ export function getSimilarExamples(
   const currentTags = new Set<string>(current.tags ?? []);
   if (currentTags.size === 0) return [];
 
-  // Score every other image
+  // Score every other image; same-template examples get a base score of 2
   const scored = reg.images
     .filter((img) => img.id !== currentId && img.asset?.image_url)
     .map((img) => {
-      const sharedTags = (img.tags ?? []).filter((t) => currentTags.has(t));
-      return { img, score: sharedTags.length };
+      const tagScore = (img.tags ?? []).filter((t) => currentTags.has(t)).length;
+      const sameTemplate = img.template_id === current.template_id ? 2 : 0;
+      return { img, score: tagScore + sameTemplate };
     })
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score);
