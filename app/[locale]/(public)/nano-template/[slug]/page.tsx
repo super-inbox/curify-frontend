@@ -21,6 +21,8 @@ import {
   buildNanoTemplateDetailData,
 } from "@/lib/nano_page_data";
 
+import { getTagChildren, getTier1Ancestor, isTopicEnabled } from "@/lib/topicRegistry";
+
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
@@ -133,6 +135,16 @@ export default async function NanoTemplatePage({ params }: Props) {
     translateNano,
     template.template_id
   );
+
+  // Collect tag subtopics (geo tags for lifestyle, language pairs for language)
+  const tier1Ancestors = new Set<string>();
+  for (const tp of templateTopics) {
+    const ancestor = getTier1Ancestor(tp);
+    if (ancestor) tier1Ancestors.add(ancestor);
+  }
+  const tagSubTopics = [...tier1Ancestors]
+    .flatMap((id) => getTagChildren(id))
+    .filter((id, i, arr) => arr.indexOf(id) === i && isTopicEnabled(id));
 
   return (
     <main className="mx-auto max-w-[1280px] px-4 pt-4 pb-10 sm:px-6 lg:px-8">
@@ -266,6 +278,20 @@ export default async function NanoTemplatePage({ params }: Props) {
           ) : null}
         </section>
       ) : null}
+
+      {tagSubTopics.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
+            Explore More
+          </h2>
+          <TopicNavRow
+            locale={pageLocale}
+            topics={tagSubTopics}
+            showDisabled={false}
+            size="default"
+          />
+        </section>
+      )}
 
     </main>
   );
