@@ -91,6 +91,7 @@ export function buildTemplateImageGridItems(
       title: img.title || "",
       preview: img.preview_image_url || img.image_url,
       templateId: img.template_id,
+      params: img.params ?? {},
     }));
 }
 
@@ -105,6 +106,7 @@ export function buildSimilarExampleGridItems(
     title: (img.locales?.["en"]?.title ?? img.locales?.["zh"]?.title ?? ""),
     preview: img.asset.preview_image_url || img.asset.image_url,
     templateId: img.template_id,
+    params: img.params ?? {},
   }));
 }
 
@@ -123,6 +125,7 @@ export function buildOrderedTemplateImageGridItems(
       title: img.title || "",
       preview: img.preview_image_url || img.image_url,
       templateId: img.template_id,
+      params: img.params ?? {},
     }));
 }
 
