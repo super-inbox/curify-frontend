@@ -48,11 +48,12 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-// Explicit sibling groups for tag-style topics (geo, language pairs).
+// Explicit sibling groups for tag-style topics (geo, language pairs, visual styles).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  ["cartoon", "kawaii", "ink", "isometric", "photorealistic"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
@@ -60,6 +61,7 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic"],
 };
 
 // Full explicit parent→children hierarchy.
@@ -84,13 +86,14 @@ for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
 
 // Gallery tag to pull from nano-banana-pro-prompts for a topic page.
 const TOPIC_GALLERY_TAG: Record<string, string> = {
-  character:  "character",
-  nostalgia:  "nostalgic",
-  product:    "product",
-  anime:      "anime",
-  food:       "food",
-  fashion:    "fashion",
-  fitness:    "fitness",
+  character:      "character",
+  nostalgia:      "nostalgic",
+  product:        "product",
+  anime:          "anime",
+  food:           "food",
+  fashion:        "fashion",
+  fitness:        "fitness",
+  photorealistic: "photorealistic",
 };
 
 // Blog tag to pull posts for a topic page.
