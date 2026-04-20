@@ -4069,5 +4069,87 @@
     ],
     "rank_score": 70,
     "base_rank_score": 70
-  }
+  },
+  {
+    "id": "template-fandom-character-grid-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Fandom Character Grid Poster Designer) You are a professional pop culture character poster designer. Based on the user-specified {theme}, generate a vertical 3×3 grid character poster, matching the clean, high-quality portrait style of the reference images. Layout: 1. Curify watermark at top left. 2. 3×3 grid of 9 distinct characters from the {theme} universe, each in their iconic setting or with signature props. 3. Below each character, bold text showing the character name and their series/fandom name. Style: Consistent, cinematic portrait style, realistic or anime-style based on the theme, dark or themed background matching the fandom, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: Top {theme} Characters Grid Poster.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Fandom/Theme Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Anime",
+                        "Fantasy",
+                        "Superhero",
+                        "Video Game",
+                        "TV Show"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"
+},
+  {
+    "id": "template-cartoon-character-profile-card-kawaii-style",
+    "locales": {
+        "en": {
+            "base_prompt": "(Kawaii Character Profile Card Designer) You are a professional character profile card illustrator. Based on the user-specified {name}, {age}, {gender}, and {theme}, generate a vertical, app-style character profile card, matching the cozy, cute cartoon style of the reference images. Layout: 1. UI Frame: Smartphone screen layout with status bar, navigation icons, and app-style buttons at the bottom. 2. Left Section: Character info panel with profile picture, name, gender, age, personality traits, and theme-related stats/bar charts. 3. Right Section: Full-body character illustration in theme-appropriate outfit, with a \"Hi!\" speech bubble. 4. Decorative Elements: Stickers, doodles, and small icons matching the character's theme. Style: Warm pastel color palette, cozy watercolor cartoon art, clear typography, whimsical stickers, clean app UI, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Character Profile Card for {name}.",
+            "parameters": [
+                {
+                    "name": "name",
+                    "label": "Character Name",
+                    "type": "text",
+                    "placeholder": ["Luna", "Max", "Mia", "Oliver", "Zoe"]
+                },
+                {
+                    "name": "age",
+                    "label": "Character Age",
+                    "type": "text",
+                    "placeholder": ["8", "16", "19", "22", "35"]
+                },
+                {
+                    "name": "gender",
+                    "label": "Character Gender",
+                    "type": "text",
+                    "placeholder": ["Female", "Male"]
+                },
+                {
+                    "name": "theme",
+                    "label": "Character Theme/Style",
+                    "type": "text",
+                    "placeholder": ["Artist", "Adventurer", "Child", "Scholar", "Athlete"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-character-profile-card-kawaii-style-adventurer-max-prev.jpg"
+},
+  {
+    "id": "template-cute-english-vocabulary-flashcards",
+    "locales": {
+        "en": {
+            "base_prompt": "(Kids' English Vocabulary Flashcard Designer) You are a professional children's educational illustrator. Based on the user-specified {theme}, generate a vertical 3×3 grid of 9 vocabulary flashcards, matching the playful, colorful cartoon style of the reference images. Layout: 1. Each flashcard has a colorful border themed to the vocabulary (e.g., fruits, vehicles, weather). 2. Inside each card: - Top: The English word in large bold font, with phonetic transcription below. - Middle: A cheerful, kid-friendly cartoon illustration of the word (with anthropomorphic characters or simple scenes). - Bottom: The Chinese translation and part of speech. 3. Curify watermark at top left. Style: Bright, saturated colors, whimsical cartoon art, clear typography, playful borders, safe and positive for children, vertical format, 4K ultra HD, direct image generation. Subject: {theme} English Vocabulary Flashcards.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Vocabulary Theme",
+                    "type": "text",
+                    "placeholder": [
+                        "Verbs of Action",
+                        "Fruits",
+                        "Vehicles",
+                        "Weather",
+                        "Animals",
+                        "Colors"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+}
 ]
