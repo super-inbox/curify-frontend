@@ -1793,5 +1793,97 @@
         ]
       }
     }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Kawaii Karakter Profil Kartı",
+    "description": "İsim, yaş, cinsiyet ve tema ile kawaii tarzı karakter profil kartı oluşturun. Akıllı telefon UI düzeni, karakter istatistikleri, tam boy illüstrasyon ve dekoratif çıkartmalar içerir.",
+    "title": "Nano Banana Prompt: Kawaii Karakter Profil Kartı Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana promptları kullanarak sevimli kawaii karakter profil kartları oluşturur: dikey akıllı telefon UI stili, karakter bilgi paneli, tam boy illüstrasyon ve pastel suluboya karikatür tarzında dekoratif çıkartmalar.",
+        "who": "Karakter yaratıcıları, OC tasarımcıları, kawaii sanat hayranları ve sosyal medya içerik üreticileri için idealdir.",
+        "how": [
+          "Karakterin adını, yaşını ve cinsiyetini girin.",
+          "Karakterin temasını veya stilini belirtin (ör. Sanatçı, Maceracı, Bilgin).",
+          "Model UI çerçevesi, istatistikler ve illüstrasyon içeren dikey kart oluşturur.",
+          "Karakterin temasına uygun dekoratif çıkartmalar otomatik eklenir.",
+          "Oluşturma sonrası renk paleti veya kişilik özellikleri değiştirilebilir."
+        ],
+        "prompts": [
+          "Kawaii karakter profil kartı oluştur: Luna, 19 yaş, kadın, Sanatçı teması — pastel renkler, suluboya karikatür stili, istatistik çubukları ile akıllı telefon UI.",
+          "Kawaii profil kartı oluştur: Max, 16 yaş, erkek, Maceracı teması — sevimli karikatür stili, kişilik paneli, konuşma balonu ile tam boy illüstrasyon.",
+          "Kawaii kart tasarla: Zoe, 22 yaş, kadın, Bilgin teması — sıcak pastel palet, istatistikli uygulama UI, fantastik çıkartmalar, 4K dikey format."
+        ]
+      }
+    }
+  },
+  "template-figure-principles-infographic": {
+    "category": "Ünlü Figür İlkeleri İnfografiği",
+    "description": "Ünlü bir figürün temel ilkeleri hakkında eğitici bir infografik poster oluşturun. Suluboya portre ve yapılandırılmış ızgara düzeni içerir.",
+    "title": "Nano Banana Prompt: Ünlü Figür İlkeleri İnfografik Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon yapılandırılmış infografik poster oluşturur: kalın başlık, suluboya portre ve her ilke için ikon, başlık, açıklama ve madde işaretleri içeren ızgara, beyaz arka plan, 4K dikey format.",
+        "who": "Tarihsel veya çağdaş figürlerin yaşam felsefesini görselleştirmek isteyen eğitimciler, öğrenciler ve içerik üreticileri için idealdir.",
+        "how": [
+          "Ünlü figürün adını girin.",
+          "Model en ikonik ilkeleri belirler.",
+          "Suluboya portre ve ilkeler ızgarası oluşturulur.",
+          "Her ilke kartında ikon, başlık, açıklama ve maddeler bulunur.",
+          "Oluşturma sonrası farklı ilkeler veya renk paleti isteyebilirsiniz."
+        ],
+        "prompts": [
+          "Albert Einstein ilkeleri infografiği oluştur — suluboya portre, 6 fizik ve yaşam felsefesi ilkesi ızgarası, beyaz arka plan, 4K dikey.",
+          "Leonardo da Vinci infografiği oluştur — suluboya portre, sanat/bilim/icat ilkeleri ızgarası ve ikonlar.",
+          "Sun Tzu ilkeleri posteri tasarla — parşömen ile suluboya portre, Savaş Sanatı'ndan 6 strateji, minimalist düzen, 4K dikey."
+        ]
+      }
+    }
+  },
+  "template-book-recommendation-grid-poster": {
+    "category": "Kitap Tavsiye Izgara Posteri",
+    "description": "Herhangi bir kitap kategorisi için 4×4 ızgara kitap tavsiye posteri oluşturun. 16 kitap kartı, başlık, yazar, açıklama ve illüstrasyonlu kapak içerir.",
+    "title": "Nano Banana Prompt: Kitap Tavsiye Izgara Posteri Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon yapılandırılmış kitap listesi posteri oluşturur: kalın kategori başlığı, dört alt tür sekmesi ve her biri başlık, yazar, kısa açıklama ve illüstrasyonlu kapak içeren 16 numaralı kitap kartından oluşan 4×4 ızgara, beyaz arka plan, 4K dikey format.",
+        "who": "Kitapseverler, kütüphaneciler, eğitimciler ve seçilmiş okuma listelerini görsel olarak paylaşmak isteyen içerik üreticileri için idealdir.",
+        "how": [
+          "Kitap kategorisini girin.",
+          "Model 4 alt türde 16 temsili kitap seçer.",
+          "Her kart başlık, yazar, açıklama ve kapak illüstrasyonu gösterir.",
+          "Kitaplar mavi rozetlerle numaralandırılır.",
+          "Oluşturma sonrası belirli yazar veya dönem isteyebilirsiniz."
+        ],
+        "prompts": [
+          "'Bilim Kurgu Klasikleri' kitap tavsiye ızgara posteri oluştur — 4×4 ızgara 16 kitap, kategori sekmeleri, mavi rozetler, beyaz arka plan, 4K dikey.",
+          "'Kişisel Gelişim' kitap listesi posteri oluştur — başlık, yazar ve illüstrasyonlu kapak içeren 16 kitap, minimalist tasarım.",
+          "'Fantezi Maceraları' kitap posteri tasarla — 16 ikonik kitap ızgarası, illüstrasyonlu kapaklar, 4K dikey."
+        ]
+      }
+    }
+  },
+  "template-organ-health-food-guide-infographic": {
+    "category": "Organ Sağlığı Gıda Rehberi İnfografiği",
+    "description": "Herhangi bir organın sağlığı için vintage tarzı bölünmüş ekran gıda rehberi infografiği oluşturun. Zararlı ve faydalı yiyecekleri illüstrasyon ikonlar ve sevimli organ maskotlarıyla gösterir.",
+    "title": "Nano Banana Prompt: Organ Sağlığı Gıda Rehberi İnfografik Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon sıcak illüstrasyon gıda rehberi posteri oluşturur: solda organ için zararlı gıdalar (kırmızı etiket), sağda faydalı gıdalar (yeşil etiket), illüstrasyonlu gıda ikonları ve negatif/pozitif tepkiler gösteren iki karikatür organ maskotu, vintage parşömen stili, 4K dikey format.",
+        "who": "Sağlık eğitimcileri, diyetisyenler, wellness içerik üreticileri ve sosyal medya sağlık hesapları için idealdir.",
+        "how": [
+          "Hedef organ adını girin.",
+          "Model o organ için zararlı ve faydalı gıdaları belirler.",
+          "Kırmızı/yeşil etiketler ve ikonlarla bölünmüş ekran posteri oluşturulur.",
+          "Karikatür maskotlar gıda gruplarına duygusal tepkiler gösterir.",
+          "Oluşturma sonrası özel diyet koşulları isteyebilirsiniz."
+        ],
+        "prompts": [
+          "Karaciğer sağlığı gıda rehberi oluştur — karaciğere zararlı (kırmızı) ve faydalı (yeşil) gıdalar bölünmüş ekran, illüstrasyon ikonlar, karikatür maskotlar, vintage parşömen stili, 4K dikey.",
+          "Beyin sağlığı gıda rehberi infografiği oluştur — beyne zararlı vs faydalı gıdalar, illüstrasyonlu ikonlar, karikatür beyin maskotları.",
+          "Kalp sağlığı gıda posteri tasarla — kalbe zararlı ve sağlıklı gıdalar bölünmüş düzen, üzgün/mutlu maskotlar, vintage stili, 4K dikey."
+        ]
+      }
+    }
   }
 }

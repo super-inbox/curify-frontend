@@ -1793,5 +1793,97 @@
         ]
       }
     }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Tarjeta de Perfil Kawaii",
+    "description": "Genera una tarjeta de perfil de personaje estilo kawaii con nombre, edad, género y tema. Diseño UI de smartphone con estadísticas, ilustración de cuerpo completo y pegatinas decorativas.",
+    "title": "Prompt Nano Banana: Generador de Tarjetas de Perfil Kawaii | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una tarjeta de perfil de personaje kawaii acogedora usando prompts Nano Banana: UI vertical estilo smartphone con panel de información del personaje, ilustración de cuerpo completo y pegatinas decorativas en arte acuarela pastel.",
+        "who": "Ideal para creadores de personajes, diseñadores de OC, fans del arte kawaii y creadores de contenido en redes sociales.",
+        "how": [
+          "Ingresa el nombre, edad y género del personaje.",
+          "Especifica el tema o estilo del personaje (ej. Artista, Aventurero, Erudito).",
+          "El modelo genera una tarjeta vertical con marco UI, estadísticas e ilustración.",
+          "Se añaden pegatinas decorativas que combinan con el tema del personaje.",
+          "Puedes solicitar cambios de paleta de colores tras la generación."
+        ],
+        "prompts": [
+          "Genera una tarjeta de perfil kawaii para 'Luna', 19 años, femenino, tema Artista — colores pastel, estilo acuarela cartoon, UI smartphone con barras de estadísticas.",
+          "Crea una tarjeta de perfil kawaii para 'Max', 16 años, masculino, tema Aventurero — estilo cartoon acogedor, panel de personalidad, ilustración completa con burbuja de diálogo.",
+          "Diseña una tarjeta kawaii para 'Zoe', 22 años, femenino, tema Erudita — paleta pastel cálida, UI estilo app con estadísticas, pegatinas caprichosas, formato vertical 4K."
+        ]
+      }
+    }
+  },
+  "template-figure-principles-infographic": {
+    "category": "Infografía de Principios de Figuras Famosas",
+    "description": "Genera un póster infográfico educativo sobre los principios fundamentales de una figura famosa, con retrato en acuarela y diseño de cuadrícula estructurado.",
+    "title": "Prompt Nano Banana: Generador de Infografías de Principios | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster infográfico estructurado: título en negrita, retrato estilo acuarela de la figura famosa y cuadrícula de principios clave con ícono, título, descripción y puntos clave, fondo blanco, formato vertical 4K.",
+        "who": "Ideal para educadores, estudiantes y creadores de contenido que desean visualizar la filosofía de vida de figuras históricas o contemporáneas.",
+        "how": [
+          "Ingresa el nombre de la figura famosa.",
+          "El modelo identifica sus principios más icónicos.",
+          "Se genera un retrato en acuarela con cuadrícula de principios.",
+          "Cada tarjeta incluye ícono, título, descripción y puntos clave.",
+          "Puedes solicitar principios o paleta de colores diferentes."
+        ],
+        "prompts": [
+          "Genera una infografía de principios de Albert Einstein — retrato acuarela, 6 principios de física y filosofía de vida, fondo blanco, 4K vertical.",
+          "Crea una infografía de Leonardo da Vinci — retrato acuarela, cuadrícula de arte, ciencia e invención con íconos.",
+          "Diseña un póster de Sun Tzu — retrato acuarela con pergamino, 6 estrategias del Arte de la Guerra, layout minimalista, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-book-recommendation-grid-poster": {
+    "category": "Póster de Recomendaciones de Libros",
+    "description": "Genera un póster de recomendaciones de libros en cuadrícula 4×4, con 16 tarjetas de libros que incluyen título, autor, descripción y portada ilustrada.",
+    "title": "Prompt Nano Banana: Generador de Pósters de Recomendaciones de Libros | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster de lista de libros estructurado: título en negrita, cuatro pestañas de subgénero y una cuadrícula 4×4 de 16 tarjetas numeradas con título, autor, descripción corta y portada ilustrada, fondo blanco, 4K vertical.",
+        "who": "Ideal para amantes de los libros, bibliotecarios, educadores y creadores de contenido que desean compartir listas de lectura visualmente.",
+        "how": [
+          "Ingresa una categoría de libros.",
+          "El modelo selecciona 16 libros representativos en 4 subgéneros.",
+          "Cada tarjeta muestra título, autor, descripción e ilustración de portada.",
+          "Los libros están numerados con insignias azules.",
+          "Puedes solicitar autores o períodos específicos después de la generación."
+        ],
+        "prompts": [
+          "Genera un póster de recomendaciones de 'Clásicos de Ciencia Ficción' — 16 libros en cuadrícula 4×4, pestañas de categoría, insignias azules, fondo blanco, 4K vertical.",
+          "Crea un póster de libros de 'Superación Personal' — 16 libros con título, autor y portada ilustrada, 4 pestañas, diseño minimalista.",
+          "Diseña un póster de 'Aventuras de Fantasía' — 16 libros icónicos en cuadrícula, portadas ilustradas, tipografía en negrita, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-organ-health-food-guide-infographic": {
+    "category": "Guía de Alimentos para la Salud de Órganos",
+    "description": "Genera una infografía de guía alimentaria vintage con pantalla dividida para la salud de cualquier órgano, mostrando alimentos perjudiciales y beneficiosos con iconos ilustrados y mascotas del órgano.",
+    "title": "Prompt Nano Banana: Generador de Guías de Alimentos para Órganos | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster guía alimentaria ilustrado: pantalla dividida con alimentos perjudiciales (etiqueta roja) y beneficiosos (etiqueta verde), iconos de alimentos ilustrados y mascotas del órgano mostrando reacciones positivas y negativas, estilo pergamino vintage, 4K vertical.",
+        "who": "Ideal para educadores de salud, nutricionistas, creadores de contenido de bienestar y cuentas de salud en redes sociales.",
+        "how": [
+          "Ingresa el nombre del órgano objetivo.",
+          "El modelo identifica alimentos dañinos y beneficiosos para ese órgano.",
+          "Se genera un póster de pantalla dividida con etiquetas rojas/verdes e iconos.",
+          "Mascotas del órgano muestran reacciones emocionales a cada grupo alimenticio.",
+          "Puedes solicitar condiciones dietéticas específicas después de la generación."
+        ],
+        "prompts": [
+          "Genera una guía de alimentos para el hígado — pantalla dividida con alimentos dañinos (rojo) y beneficiosos (verde), iconos ilustrados, mascotas del hígado, estilo pergamino vintage, 4K vertical.",
+          "Crea una infografía de salud cerebral — alimentos que dañan vs benefician el cerebro, iconos ilustrados, mascotas cartoon del cerebro.",
+          "Diseña un póster de salud cardíaca — alimentos perjudiciales y saludables para el corazón, mascotas con reacciones triste/feliz, estilo vintage, 4K vertical."
+        ]
+      }
+    }
   }
 }
