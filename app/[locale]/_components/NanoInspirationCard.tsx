@@ -1,13 +1,15 @@
 // app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
 
-import { Layers } from "lucide-react";
+import { Layers, Sparkles } from "lucide-react";
 import React, { useMemo, useState } from "react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   useCopyTracking,
   useClickTracking,
+  useRemixTracking,
   useShareTracking,
   useSaveTracking,
 } from "@/services/useTracking";
@@ -66,8 +68,17 @@ export function NanoInspirationCard({
   const trackCopy = useCopyTracking(card.id, "nano_inspiration_template_card", "list");
   const trackShare = useShareTracking(card.id, "nano_inspiration_template_card", "list");
   const trackSave = useSaveTracking(card.id, "nano_inspiration_template_card", "list");
+  const trackRemix = useRemixTracking(card.id, "nano_inspiration_template_card", "list");
 
   const canonicalUrl = makeNanoTemplateUrl(card.template_id, pageLocale);
+
+  const remixHref = useMemo(() => {
+    if (!card.template_id) return null;
+    const qs = card.sample_parameters && Object.keys(card.sample_parameters).length > 0
+      ? `?${new URLSearchParams(card.sample_parameters as Record<string, string>).toString()}`
+      : "";
+    return `/${pageLocale}/nano-template/${toSlug(card.template_id)}${qs}#reproduce`;
+  }, [card.template_id, card.sample_parameters, pageLocale]);
 
   const normalized = useMemo(() => {
     return normalizeCarouselUrls(card.image_urls, card.preview_image_urls);
@@ -250,7 +261,7 @@ export function NanoInspirationCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-auto flex items-center">
+      <div className="mt-auto flex items-center justify-between">
         <ActionButtons
           saved={saved}
           copied={copied}
@@ -262,6 +273,19 @@ export function NanoInspirationCard({
           onCopy={handleCopy}
           onShare={handleShare}
         />
+        {remixHref && (
+          <Link
+            href={remixHref}
+            onClick={(e) => {
+              e.stopPropagation();
+              trackRemix();
+            }}
+            className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            Remix this
+          </Link>
+        )}
       </div>
     </div>
   );
