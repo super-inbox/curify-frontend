@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleGeneratePanel from "./ExampleGeneratePanel";
+import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
@@ -259,7 +260,7 @@ export default async function NanoExampleDetailPage({
           />
         }
         promptCollapsedMaxHeight={120}
-        actionBar={
+        beforePrompt={
           <ExampleGeneratePanel
             templateId={templateId}
             slug={slug}
@@ -269,9 +270,26 @@ export default async function NanoExampleDetailPage({
             initialParams={paramEntries}
             exampleId={example.id}
             promptText={prompt}
-            batchEnabled={templateBatch}
             examplePageUrl={examplePageUrl}
             title={title}
+          />
+        }
+        actionBar={
+          <UnifiedActionBar
+            className="pt-1"
+            tracking={{
+              contentId: `${templateId}:${example.id}`,
+              contentType: "nano_inspiration_reproduce_section",
+              viewMode: "cards",
+            }}
+            copy={{ enabled: true, text: prompt }}
+            share={{
+              enabled: true,
+              url: examplePageUrl,
+              title,
+              text: `Check out this Nano Banana example: ${title}`,
+            }}
+            batchDownload={{ enabled: templateBatch, templateId }}
           />
         }
       />

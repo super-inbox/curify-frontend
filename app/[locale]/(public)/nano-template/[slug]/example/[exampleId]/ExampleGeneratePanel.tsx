@@ -23,7 +23,6 @@ type Props = {
   initialParams: Record<string, string>;
   exampleId: string;
   promptText: string;
-  batchEnabled: boolean;
   examplePageUrl: string;
   title: string;
 };
@@ -37,7 +36,6 @@ export default function ExampleGeneratePanel({
   initialParams,
   exampleId,
   promptText,
-  batchEnabled,
   examplePageUrl,
   title,
 }: Props) {
@@ -45,6 +43,7 @@ export default function ExampleGeneratePanel({
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
@@ -58,7 +57,6 @@ export default function ExampleGeneratePanel({
     viewMode: "cards" as const,
   };
 
-  const remixHref = `/${locale}/nano-template/${slug}?${new URLSearchParams(form).toString()}#reproduce`;
   const exampleUrl = (id: string) =>
     `/${locale}/nano-template/${slug}/example/${encodeURIComponent(id)}`;
 
@@ -91,7 +89,6 @@ export default function ExampleGeneratePanel({
     }
   };
 
-  const [copied, setCopied] = useState(false);
   const handleCopyGenerate = async () => {
     try {
       await navigator.clipboard.writeText(promptText);
@@ -102,13 +99,16 @@ export default function ExampleGeneratePanel({
   };
 
   return (
-    <div className="mt-auto flex flex-col gap-3 pt-1">
-      {/* Param inputs — compact row layout */}
+    <div className="flex flex-col gap-3 rounded-xl border border-purple-100 bg-purple-50/50 px-3 py-2.5">
+      {/* Header */}
+      <p className="text-xs font-semibold text-purple-700">Generate your own</p>
+
+      {/* Param inputs */}
       {parameters.length > 0 && (
-        <div className="flex flex-col gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5">
+        <div className="flex flex-col gap-2">
           {parameters.map((p) => (
             <div key={p.name} className="flex items-center gap-2">
-              <span className="w-20 shrink-0 text-xs font-semibold text-neutral-500">
+              <span className="w-20 shrink-0 text-xs font-medium text-neutral-500">
                 {p.label || p.name}
               </span>
               {p.type === "select" ? (
@@ -167,19 +167,6 @@ export default function ExampleGeneratePanel({
             {copied ? t("copied") : t("generate")}
           </button>
         )}
-
-        <UnifiedActionBar
-          tracking={tracking}
-          remix={{ enabled: true, href: remixHref }}
-          copy={{ enabled: true, text: promptText }}
-          share={{
-            enabled: true,
-            url: examplePageUrl,
-            title,
-            text: `Check out this Nano Banana example: ${title}`,
-          }}
-          batchDownload={{ enabled: batchEnabled, templateId }}
-        />
       </div>
 
       {/* Generated image result */}

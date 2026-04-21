@@ -28,6 +28,7 @@ type ExamplePromptHeroProps = {
   title: string;
   image: ReactNode;
   actionBar: ReactNode;
+  beforePrompt?: ReactNode;
   prompt: string;
   trackingId?: string;
   breadcrumbs?: BreadcrumbItem[];
@@ -153,6 +154,7 @@ export default function ExamplePromptHero({
   title,
   image,
   actionBar,
+  beforePrompt,
   prompt,
   trackingId,
   breadcrumbs,
@@ -190,6 +192,8 @@ export default function ExamplePromptHero({
                 {description}
               </p>
             ) : null}
+
+            {beforePrompt}
 
             <section aria-labelledby="prompt-heading" className="flex flex-col">
               <h2
