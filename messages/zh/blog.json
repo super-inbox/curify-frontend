@@ -370,7 +370,13 @@
         "date": "2026年4月13日",
         "readTime": "15分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "人工智能内容生产系统",
+          "病毒式学习内容",
+          "视觉学习工具"
+        ]
       },
       {
         "slug": "curify-ai-growth-engine",
@@ -378,6 +384,28 @@
         "date": "2026年4月13日",
         "readTime": "12分钟阅读",
         "tag": "AI 平台",
+        "image": "/images/growthengine.webp",
+        "category": "纳米香蕉提示",
+        "relatedLinks": [
+          "什么是信息图",
+          "纳米香蕉提示生态系统",
+          "创意人工智能工具网站"
+        ]
+      },
+      {
+        "slug": "情感-tts-电影",
+        "title": "情感 TTS 电影：让你的叙述听起来更有情感",
+        "date": "2026年4月13日",
+        "readTime": "15分钟阅读",
+        "tag": "创作者工具",
+        "image": "/images/voices2.webp"
+      },
+      {
+        "slug": "curify-ai-growth-engine",
+        "title": "Curify AI 增长引擎：为用户生成内容创作者和营销人员转变内容创作",
+        "date": "2026年4月13日",
+        "readTime": "12分钟阅读",
+        "tag": "人工智能平台",
         "image": "/images/growthengine.webp"
       }
     ],
@@ -3633,6 +3661,454 @@
         "questions": "对Curify AI增长引擎如何改变您的内容策略有疑问吗？",
         "contactText": "联系我们的团队",
         "contactLink": "https://curify.ai/contact"
+      }
+    },
+    "mbtiCharacterGenerator": {
+      "title": "纳米香蕉 MBTI 角色生成器：在几秒钟内创建基于个性的角色",
+      "publishedDate": "2026年4月16日",
+      "readTime": "12分钟阅读",
+      "category": "创作者工具",
+      "intro": {
+        "title": "想把个性类型转化为视觉吸引力的角色吗？",
+        "description1": "使用纳米香蕉 MBTI 角色生成器，您可以在几秒钟内创建结构化的高质量角色视觉效果——无需从头编写复杂的提示。",
+        "description2": "您使用的是一个为规模设计的角色制作系统，而不是猜测提示。",
+        "example": {
+          "title": "尝试一个示例："
+        }
+      },
+      "whatIs": {
+        "title": "什么是纳米香蕉 MBTI 角色生成器？",
+        "description1": "纳米香蕉 MBTI 生成器是一个基于模板的角色提示系统，将个性类型（如 INFP、ESTJ）转化为丰富的视觉角色。",
+        "description2": "与传统的人工智能图像工具不同，这不仅仅是“输入提示并希望得到最佳结果”。相反，它为您提供结构化的提示、一致的视觉风格和可重复的输出。",
+        "thinkOfItAs": "把它看作是角色提示生成器 + 视觉系统的结合。",
+        "thinkOfItAsDescription": "这确保了一致性、更好的视觉质量和更快的生成速度。"
+      },
+      "examples": {
+        "title": "示例：将 MBTI 转化为角色",
+        "description": "以下是一些使用 MBTI 生成角色的方法：",
+        "nba": {
+          "title": "MBTI 与 NBA 球员",
+          "description": "看看个性类型如何映射到像凯文·杜兰特这样的标志性球员：",
+          "intj": "战略性，沉着",
+          "esfp": "表现力强，充满活力"
+        },
+        "animals": {
+          "title": "MBTI 与动物",
+          "description": "将个性类型转化为动物原型：",
+          "infp": "温柔的鹿",
+          "estp": "大胆的老虎"
+        },
+        "movies": {
+          "title": "MBTI 与电影角色",
+          "description": "将个性映射到叙事中：",
+          "enfp": "富有魅力的主角",
+          "istj": "严谨的战略家"
+        }
+      },
+      "howItWorks": {
+        "title": "它是如何工作的（幕后）",
+        "description": "纳米香蕉系统使用结构化的提示模板，而不是原始提示。",
+        "behindTheScenes": "每个角色的生成基于：",
+        "systemDescription": "这确保了一致性、更好的视觉质量和更快的生成速度。您使用的是一个为规模设计的角色制作系统，而不是猜测提示。",
+        "components": [
+          {
+            "icon": "ð§",
+            "title": "个性输入",
+            "description": "MBTI 类型"
+          },
+          {
+            "icon": "ð",
+            "title": "角色背景",
+            "description": "NBA、动物、电影等。"
+          },
+          {
+            "icon": "ð¨",
+            "title": "视觉风格 + 布局",
+            "description": "预定义的美学"
+          },
+          {
+            "icon": "â¡ï¸",
+            "title": "预定义提示逻辑",
+            "description": "结构化生成"
+          }
+        ],
+        "ensures": {
+          "title": "这确保了：",
+          "items": [
+            "一致性 - 可预测的输出",
+            "更好的视觉质量 - 优化的提示",
+            "更快的生成 - 无需反复试验"
+          ]
+        },
+        "conclusion": "与其猜测提示，不如使用一个为规模设计的角色生成系统。"
+      },
+      "whyNotRegular": {
+        "title": "为什么不直接使用常规的 AI 图像生成器？",
+        "description": "大多数工具，如 Midjourney 或 Stable Diffusion，需要反复试验的提示、手动调节和不一致的结果。使用 Nano Banana，提示是预先结构化的，输出是可预测的，您可以快速生成变体。",
+        "traditional": {
+          "title": "传统工具",
+          "items": [
+            "反复试验的提示",
+            "手动调节",
+            "不一致的结果"
+          ]
+        },
+        "nanoBanana": {
+          "title": "Nano Banana",
+          "items": [
+            "提示是预先结构化的",
+            "输出是可预测的",
+            "您可以快速生成变体"
+          ]
+        },
+        "conclusion": "这更接近于一个生产系统，而不仅仅是一个创意工具。"
+      },
+      "useCases": {
+        "title": "使用案例",
+        "description": "MBTI 角色生成器特别适用于：",
+        "socialMedia": {
+          "title": "社交媒体内容",
+          "items": [
+            "基于个性的帖子",
+            "病毒式 MBTI 内容",
+            "视觉叙事"
+          ]
+        },
+        "creative": {
+          "title": "创意项目",
+          "items": [
+            "角色构思",
+            "故事板制作",
+            "概念设计"
+          ]
+        },
+        "marketing": {
+          "title": "市场营销与品牌",
+          "items": [
+            "受众细分视觉",
+            "基于角色的活动"
+          ]
+        }
+      },
+      "tryNow": {
+        "title": "试用 MBTI 角色生成器",
+        "description": "与其从零开始编写提示，不如从一个结构化的系统开始：",
+        "explore": {
+          "title": "探索 MBTI 模板："
+        },
+        "browse": {
+          "title": "浏览更多 Nano Banana 提示："
+        }
+      },
+      "customize": {
+        "title": "附加：自定义您的角色",
+        "description": "想要超越 MBTI 吗？Nano Banana 也可以作为角色提示生成器，您可以：",
+        "bonus": {
+          "title": "附加：自定义您的角色",
+          "description": "想要超越 MBTI 吗？Nano Banana 也可以作为角色提示生成器，您可以：",
+          "features": [
+            "更换主题 - 体育、动物、文化",
+            "调整个性映射",
+            "将模板重新混合成新格式"
+          ],
+          "conclusion": "这使其成为创作者和营销人员的灵活角色生成器。"
+        }
+      },
+      "finalThoughts": {
+        "title": "最后的想法",
+        "description": "如果您曾经为不一致的提示或普通的 AI 输出而苦恼，Nano Banana 提供了一种不同的方法：",
+        "formula": "结构化提示 â 一致的角色 â 可扩展的内容",
+        "conclusion": "无论您是在创建 MBTI 内容、叙事视觉还是市场营销资产，这个系统都能帮助您更快地移动并产生更好的结果。"
+      },
+      "relatedReads": {
+        "title": "相关阅读",
+        "items": [
+          "角色提示生成器指南（即将推出）",
+          "使用模板的 AI 内容自动化",
+          "如何从一个想法生成 50 个社交帖子"
+        ]
+      },
+      "faq": {
+        "title": "常见问题（针对长尾关键词）",
+        "questions": [
+          {
+            "question": "什么是角色提示生成器？",
+            "answer": "角色提示生成器是一个帮助您创建结构化提示以生成一致的 AI 角色的系统。"
+          },
+          {
+            "question": "我可以使用 MBTI 创建角色吗？",
+            "answer": "可以 - MBTI 提供了一个可以映射到视觉或叙事角色特征的个性框架。"
+          },
+          {
+            "question": "Nano Banana 适合初学者吗？",
+            "answer": "是的 - 它消除了手动编写复杂提示的需要。"
+          }
+        ]
+      },
+      "footer": {
+        "tags": [
+          "MBTI",
+          "角色生成器",
+          "AI角色",
+          "人格类型",
+          "Nano Banana",
+          "角色设计",
+          "AI艺术",
+          "社交媒体内容",
+          "视觉叙事",
+          "营销工具",
+          "创作者工具"
+        ],
+        "questions": "对创建MBTI角色有疑问吗？请联系我们的支持团队以获得个性化帮助。"
+      }
+    },
+    "contentTaggingSystem": {
+      "title": "从4000张图片到50个有意义的标签：构建Pinterest风格的内容发现",
+      "publishedDate": "2026年4月16日",
+      "readTime": "10分钟阅读",
+      "category": "内容策略",
+      "intro": {
+        "title": "当你拥有数千张图片（和提示）时，生成一组干净的40-50个有意义的标签听起来很简单——但实际上却出乎意料地棘手。",
+        "description1": "这不仅仅是一个标记问题。这是一个产品问题。",
+        "productProblem": {
+          "title": "标签为何重要（用户价值）",
+          "description": "一个好的标记系统可以直接改善可搜索性、可发现性和内容重用。如果做得好，每个标签都可以成为用户真正想要探索的着陆页。"
+        }
+      },
+      "whyTagsMatter": {
+        "title": "标签为何重要（用户价值）",
+        "description": "一个好的标记系统可以直接改善：",
+        "searchability": {
+          "title": "可搜索性",
+          "description": "用户可以通过自然查询找到他们想要的内容"
+        },
+        "discoverability": {
+          "title": "可发现性",
+          "description": "浏览变得有条理且愉快"
+        },
+        "contentReuse": {
+          "title": "内容重用",
+          "description": "标签使分组、推荐和SEO页面成为可能"
+        },
+        "landingPageValue": "如果做得好，每个标签都可以成为用户真正想要探索的着陆页。"
+      },
+      "coreChallenges": {
+        "title": "核心挑战",
+        "nonDescriptive": {
+          "title": "非描述性标签",
+          "description": "一些标签听起来有效，但实际上无用：",
+          "examples": {
+            "tag1": "创意",
+            "tag2": "美丽",
+            "tag3": "现代"
+          },
+          "conclusion": "它们无法帮助用户理解他们将获得什么。"
+        },
+        "overlySpecific": {
+          "title": "过于具体（稀有）标签",
+          "description": "一些标签过于细化：",
+          "example": "红色霓虹雨夜赛博朋克小巷",
+          "issues": {
+            "issue1": "每个标签的图片太少",
+            "issue2": "浏览体验差",
+            "issue3": "搜索价值低"
+          }
+        },
+        "promptVsLanguage": {
+          "title": "提示 ≠ 自然语言",
+          "description": "提示不是用户搜索的方式。",
+          "promptTitle": "提示：",
+          "promptExample": "超详细的电影灯光8k杰作……",
+          "searchTitle": "用户搜索：",
+          "searchExample": "电影肖像",
+          "conclusion": "弥合这一差距至关重要。"
+        },
+        "traditionalMethods": {
+          "title": "传统方法不够有效",
+          "description": "TF-IDF / 关键词提取和图像聚类存在局限性：",
+          "tfIdf": {
+            "title": "TF-IDF / 关键词提取",
+            "good": "在频率上表现良好",
+            "bad": "在意义和分组上表现不佳"
+          },
+          "imageClustering": {
+            "title": "图像聚类",
+            "good": "捕捉全局相似性",
+            "bad": "错过具体的、面向用户的概念（例如，“猫”，“海报”，“动漫”）"
+          },
+          "summary": "简而言之：过于统计，过于抽象"
+        }
+      },
+      "threeLayerApproach": {
+        "title": "三层标记方法",
+        "description": "一个实用的解决方案是结合结构 + 语义 + 人工优化。",
+        "layer1": {
+          "title": "第一层 — 原始信号提取",
+          "description": "对于每张图片，提取结构化元数据：",
+          "metadata": {
+            "prompt": "提示文本",
+            "promptDesc": "原始AI提示",
+            "caption": "视觉标题",
+            "captionDesc": "通过视觉模型",
+            "objects": "对象/实体",
+            "objectsDesc": "例如，\"猫\"，\"城市\"，\"裙子\"",
+            "style": "风格",
+            "styleDesc": "例如，\"动漫\"，\"水彩\"",
+            "embeddings": "嵌入",
+            "embeddingsDesc": "用于相似性"
+          },
+          "conclusion": "这为每张图片提供了多视角的表示。"
+        },
+        "layer2": {
+          "title": "第2层 — 候选标签生成",
+          "description": "而不是直接跳到50个标签，首先生成数百个候选标签：",
+          "candidates": {
+            "nounPhrases": "名词短语",
+            "nounPhrasesDesc": "(\"霓虹城市\", \"传统服装\")",
+            "styleTerms": "风格术语",
+            "styleTermsDesc": "(\"电影感\", \"3D渲染\")",
+            "themes": "主题",
+            "themesDesc": "(\"幻想\", \"旅行\")",
+            "clusterLabels": "聚类标签",
+            "clusterLabelsDesc": "(来自嵌入聚类)",
+            "llmNormalized": "LLM标准化短语",
+            "llmNormalizedDesc": "(\"真实肖像\"而不是提示噪声)"
+          },
+          "conclusion": "在这个阶段，过度生成。"
+        },
+        "layer3": {
+          "title": "第3层 — 精炼与选择（关键）",
+          "description": "这是大部分价值来源的地方。根据以下标准过滤标签：",
+          "criteria": {
+            "coverage": "覆盖范围",
+            "coverageDesc": "不太稀有，也不太宽泛",
+            "clarity": "清晰度",
+            "clarityDesc": "瞬间可理解",
+            "distinctiveness": "独特性",
+            "distinctivenessDesc": "有意义的分组",
+            "searchIntent": "搜索意图",
+            "searchIntentDesc": "用户真的会输入这个吗？"
+          },
+          "organization": {
+            "title": "然后组织成一个平衡的系统：",
+            "subject": "主题",
+            "subjectDesc": "例如，动物，肖像",
+            "style": "风格",
+            "styleDesc": "例如，动漫，水彩",
+            "theme": "主题",
+            "themeDesc": "例如，幻想，旅行",
+            "useCase": "用例",
+            "useCaseDesc": "例如，海报，头像",
+            "mood": "情绪",
+            "moodDesc": "例如，舒适，黑暗"
+          }
+        }
+      },
+      "keyInsight": {
+        "title": "关键洞察",
+        "description": "没有单一的方法可以解决这个问题：",
+        "methods": {
+          "nlp": {
+            "title": "纯NLP",
+            "description": "太嘈杂"
+          },
+          "vision": {
+            "title": "纯视觉",
+            "description": "太抽象"
+          },
+          "clustering": {
+            "title": "纯聚类",
+            "description": "太粗糙"
+          }
+        },
+        "solution": "解决方案是一个混合管道，结合了人机协作的精炼。"
+      },
+      "pinterestPlatform": {
+        "title": "为Pinterest风格的灵感平台构建标签系统",
+        "description": "对于Pinterest风格的灵感平台，我们需要针对不同内容类型的专业标签方法：",
+        "galleryTags": {
+          "title": "画廊图片标签",
+          "description": "用于视觉内容发现和浏览：",
+          "examples": {
+            "subject": "主题",
+            "subjectDesc": "肖像，风景，动物，食物，建筑",
+            "style": "风格",
+            "styleDesc": "照片写实，动漫，水彩，油画，素描",
+            "medium": "媒介",
+            "mediumDesc": "数字艺术，摄影，插图，3D 渲染",
+            "mood": "情绪",
+            "moodDesc": "舒适，戏剧性，生动，极简，怀旧",
+            "composition": "构图",
+            "compositionDesc": "特写，广角，空中，对称，三分法则",
+            "color": "颜色",
+            "colorDesc": "单色，暖色调，冷色调，粉彩，霓虹"
+          }
+        },
+        "templateTags": {
+          "title": "模板和模板示例标签",
+          "description": "用于模板发现和用例匹配：",
+          "geoTags": {
+            "title": "地理标签",
+            "description": "地理标签，如不同国家的食物，服装，旅行行程：",
+            "examples": [
+              "法国",
+              "印度",
+              "墨西哥",
+              "日本",
+              "意大利",
+              "西班牙",
+              "中国",
+              "泰国"
+            ]
+          },
+          "languageTags": {
+            "title": "语言标签",
+            "description": "用于双语和多语言内容的语言标签：",
+            "examples": [
+              "英语-中文",
+              "英语-西班牙语",
+              "英语-法语",
+              "英语-日语",
+              "英语-韩语",
+              "英语-阿拉伯语",
+              "英语-葡萄牙语",
+              "英语-俄语"
+            ]
+          }
+        }
+      },
+      "ruleOfThumb": {
+        "title": "简单的经验法则",
+        "question": "对于每个标签，问自己：",
+        "description": "\"如果这是一个页面，用户会理解它，搜索它，并享受浏览它吗？\"",
+        "action": "如果不是，请删除它。"
+      },
+      "finalThought": {
+        "title": "最后的想法",
+        "description": "标签并不是完美描述图像。它是关于创建一个系统：",
+        "systems": {
+          "match": "与用户思维相匹配",
+          "group": "有意义地分组内容",
+          "scale": "扩展到搜索和发现"
+        },
+        "conclusion": "实际上，最佳标签系统并不是最复杂的，而是最符合意图的。"
+      },
+      "footer": {
+        "tags": [
+          "内容标记",
+          "标记系统",
+          "内容发现",
+          "Pinterest 风格",
+          "用户体验",
+          "搜索架构",
+          "内容策略",
+          "AI 内容",
+          "模板系统",
+          "画廊管理",
+          "内容组织",
+          "搜索优化"
+        ],
+        "questions": "对构建内容标记系统有疑问吗？请联系我们的支持团队以获得个性化帮助。"
       }
     }
   },

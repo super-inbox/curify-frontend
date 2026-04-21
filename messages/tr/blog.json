@@ -368,11 +368,39 @@
         "date": "13 Nisan 2026",
         "readTime": "15 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "yaratıcı araçlar",
+        "relatedLinks": [
+          "ai-içerik-üretim-sistemi",
+          "viral-öğrenme-içeriği",
+          "görsel-öğrenme-aracı"
+        ]
       },
       {
         "slug": "curify-ai-growth-engine",
         "title": "Curify AI Büyüme Motoru: UGC Yaratıcıları ve Pazarlamacılar için İçerik Oluşturmayı Dönüştürmek",
+        "date": "13 Nisan 2026",
+        "readTime": "12 dk okuma",
+        "tag": "AI Platformu",
+        "image": "/images/growthengine.webp",
+        "category": "nano-banana-prompts",
+        "relatedLinks": [
+          "infografikler-nedir",
+          "nano-banana-prompt-ekosistemi",
+          "yaratıcı-ai-aracları-websiteleri"
+        ]
+      },
+      {
+        "slug": "duygu-tts-filmi",
+        "title": "Duygu TTS Filmi: Anlatımlarınızı Daha Duygusal Hale Getirin",
+        "date": "13 Nisan 2026",
+        "readTime": "15 dk okuma",
+        "tag": "Yaratıcı Araçlar",
+        "image": "/images/voices2.webp"
+      },
+      {
+        "slug": "curify-ai-büyüme-makinesi",
+        "title": "Curify AI Büyüme Makinesi: UGC Yaratıcıları ve Pazarlamacılar için İçerik Üretimini Dönüştürmek",
         "date": "13 Nisan 2026",
         "readTime": "12 dk okuma",
         "tag": "AI Platformu",
@@ -3635,6 +3663,454 @@
         "questions": "Curify AI Büyüme Motoru'nun içerik stratejinizi nasıl dönüştürebileceği hakkında sorularınız mı var?",
         "contactText": "Ekibimizle İletişime Geçin",
         "contactLink": "https://curify.ai/contact"
+      }
+    },
+    "mbtiCharacterGenerator": {
+      "title": "Nano Banana MBTI Karakter Üretici: Kişilik Temelli Karakterleri Saniyeler İçinde Oluşturun",
+      "publishedDate": "16 Nisan 2026",
+      "readTime": "12 dk okuma",
+      "category": "Yaratıcı Araçlar",
+      "intro": {
+        "title": "Kişilik tiplerini görsel olarak etkileyici karakterlere dönüştürmek ister misiniz?",
+        "description1": "Nano Banana MBTI karakter üretici ile karmaşık promptlar yazmadan, saniyeler içinde yapılandırılmış, yüksek kaliteli karakter görselleri oluşturabilirsiniz.",
+        "description2": "Tahmin etmek yerine, ölçek için tasarlanmış bir karakter yapıcı sistemi kullanıyorsunuz.",
+        "example": {
+          "title": "Bir örnek deneyin:"
+        }
+      },
+      "whatIs": {
+        "title": "Nano Banana MBTI Karakter Üretici Nedir?",
+        "description1": "Nano Banana MBTI üretici, kişilik tiplerini (örneğin INFP, ESTJ) zengin, görsel karakterlere dönüştüren şablon tabanlı bir karakter prompt sistemidir.",
+        "description2": "Geleneksel AI görsel araçların aksine, bu sadece \"bir prompt yaz ve en iyisini um\" değil. Bunun yerine, size yapılandırılmış promptlar, tutarlı görsel stiller ve farklı karakterler arasında tekrarlanabilir çıktılar sunar.",
+        "thinkOfItAs": "Bunu bir karakter prompt üretici + görsel sistem olarak düşünün.",
+        "thinkOfItAsDescription": "Bu, tutarlılığı, daha iyi görsel kalitesini ve daha hızlı üretimi garanti eder."
+      },
+      "examples": {
+        "title": "Örnekler: MBTI'yi Karakterlere Dönüştürün",
+        "description": "MBTI'yi karakterler oluşturmak için kullanmanın birkaç yolu:",
+        "nba": {
+          "title": "MBTI ve NBA Oyuncuları",
+          "description": "Kişilik tiplerinin Kevin Durant gibi ikonik oyuncularla nasıl eşleştiğini görün:",
+          "intj": "stratejik, sakin",
+          "esfp": "ifadeci, enerjik"
+        },
+        "animals": {
+          "title": "MBTI ve Hayvanlar",
+          "description": "Kişilik tiplerini hayvan arketiplerine dönüştürün:",
+          "infp": "nazik geyik",
+          "estp": "cesur kaplan"
+        },
+        "movies": {
+          "title": "MBTI ve Film Karakterleri",
+          "description": "Kişiliği hikaye anlatımına dönüştürün:",
+          "enfp": "karizmatik başrol",
+          "istj": "disiplinli stratejist"
+        }
+      },
+      "howItWorks": {
+        "title": "Nasıl Çalışır (Kulis Arkası)",
+        "description": "Nano Banana sistemi, ham promptlar yerine yapılandırılmış prompt şablonları kullanır.",
+        "behindTheScenes": "Her karakter şunlara dayanarak oluşturulur:",
+        "systemDescription": "Bu, tutarlılığı, daha iyi görsel kalitesini ve daha hızlı üretimi garanti eder. Tahmin etmek yerine, ölçek için tasarlanmış bir karakter yapıcı sistemi kullanıyorsunuz.",
+        "components": [
+          {
+            "icon": "ð§",
+            "title": "Kişilik girişi",
+            "description": "MBTI tipi"
+          },
+          {
+            "icon": "ð",
+            "title": "Karakter bağlamı",
+            "description": "NBA, hayvan, film, vb."
+          },
+          {
+            "icon": "ð¨",
+            "title": "Görsel stil + düzen",
+            "description": "Önceden tanımlanmış estetikler"
+          },
+          {
+            "icon": "â¡ï¸",
+            "title": "Önceden tanımlanmış istem mantığı",
+            "description": "Yapılandırılmış üretim"
+          }
+        ],
+        "ensures": {
+          "title": "Bu şunları garanti eder:",
+          "items": [
+            "Tutarlılık - öngörülebilir çıktılar",
+            "Daha iyi görsel kalite - optimize edilmiş istemler",
+            "Daha hızlı üretim - deneme yanılma yok"
+          ]
+        },
+        "conclusion": "İstemleri tahmin etmek yerine, ölçek için tasarlanmış bir karakter oluşturucu sistemi kullanıyorsunuz."
+      },
+      "whyNotRegular": {
+        "title": "Neden Sadece Normal Bir AI Görüntü Üreticisi Kullanmayalım?",
+        "description": "Midjourney veya Stable Diffusion gibi çoğu araç, deneme-yanılma istemleri, manuel ayarlama ve tutarsız sonuçlar gerektirir. Nano Banana ile istemler önceden yapılandırılmıştır, çıktılar öngörülebilirdir ve varyasyonları hızlı bir şekilde üretebilirsiniz.",
+        "traditional": {
+          "title": "Geleneksel Araçlar",
+          "items": [
+            "Deneme-yanılma istemleri",
+            "Manuel ayarlama",
+            "Tutarsız sonuçlar"
+          ]
+        },
+        "nanoBanana": {
+          "title": "Nano Banana",
+          "items": [
+            "İstemler önceden yapılandırılmıştır",
+            "Çıktılar öngörülebilirdir",
+            "Varyasyonları hızlı bir şekilde üretebilirsiniz"
+          ]
+        },
+        "conclusion": "Bu, sadece yaratıcı bir araç değil, üretim sistemine daha yakındır."
+      },
+      "useCases": {
+        "title": "Kullanım Alanları",
+        "description": "MBTI karakter oluşturucu özellikle şunlar için faydalıdır:",
+        "socialMedia": {
+          "title": "Sosyal Medya İçeriği",
+          "items": [
+            "Kişilik temelli gönderiler",
+            "Viral MBTI içeriği",
+            "Görsel hikaye anlatımı"
+          ]
+        },
+        "creative": {
+          "title": "Yaratıcı Projeler",
+          "items": [
+            "Karakter fikirleri",
+            "Hikaye panoları",
+            "Kavram tasarımı"
+          ]
+        },
+        "marketing": {
+          "title": "Pazarlama & Markalaşma",
+          "items": [
+            "Hedef kitle segmentasyonu görselleri",
+            "Kişilik temelli kampanyalar"
+          ]
+        }
+      },
+      "tryNow": {
+        "title": "MBTI Karakter Oluşturucuyu Deneyin",
+        "description": "İstemleri sıfırdan yazmak yerine, yapılandırılmış bir sistemle başlayın:",
+        "explore": {
+          "title": "MBTI şablonlarını keşfedin:"
+        },
+        "browse": {
+          "title": "Daha fazla Nano Banana istemini göz atın:"
+        }
+      },
+      "customize": {
+        "title": "Bonus: Kendi Karakterinizi Özelleştirin",
+        "description": "MBTI'den öteye gitmek mi istiyorsunuz? Nano Banana, karakter istemi oluşturucu olarak da çalışır ve şunları yapabilirsiniz:",
+        "bonus": {
+          "title": "Bonus: Kendi Karakterinizi Özelleştirin",
+          "description": "MBTI'den öteye gitmek mi istiyorsunuz? Nano Banana, karakter istemi oluşturucu olarak da çalışır ve şunları yapabilirsiniz:",
+          "features": [
+            "Temaları değiştirin - spor, hayvanlar, kültür",
+            "Kişilik eşleştirmelerini ayarlayın",
+            "Şablonları yeni formatlara yeniden karıştırın"
+          ],
+          "conclusion": "Bu, yaratıcılar ve pazarlamacılar için esnek bir karakter oluşturucu yapar."
+        }
+      },
+      "finalThoughts": {
+        "title": "Son Düşünceler",
+        "description": "Tutarsız istemler veya genel AI çıktıları ile mücadele ettiyseniz, Nano Banana farklı bir yaklaşım sunar:",
+        "formula": "Yapılandırılmış istemler â tutarlı karakterler â ölçeklenebilir içerik",
+        "conclusion": "İster MBTI içeriği, ister hikaye anlatımı görselleri, ister pazarlama varlıkları oluşturuyor olun, bu sistem size daha hızlı hareket etme ve daha iyi sonuçlar üretme konusunda yardımcı olur."
+      },
+      "relatedReads": {
+        "title": "İlgili Okumalar",
+        "items": [
+          "Karakter İstem Oluşturucu Rehberi (yakında)",
+          "Şablonlarla AI İçerik Otomasyonu",
+          "Bir Fikirden 50 Sosyal Gönderi Nasıl Üretilir"
+        ]
+      },
+      "faq": {
+        "title": "SSS (uzun kuyruk anahtar kelimeleri için)",
+        "questions": [
+          {
+            "question": "Karakter istem oluşturucu nedir?",
+            "answer": "Karakter istem oluşturucu, tutarlı AI karakterleri oluşturmak için yapılandırılmış istemler oluşturmanıza yardımcı olan bir sistemdir."
+          },
+          {
+            "question": "MBTI kullanarak karakter oluşturabilir miyim?",
+            "answer": "Evet â MBTI, görsel veya anlatı karakter özelliklerine haritalanabilecek bir kişilik çerçevesi sağlar."
+          },
+          {
+            "question": "Nano Banana başlangıç seviyesindeki kullanıcılar için uygun mu?",
+            "answer": "Evet â karmaşık istemleri manuel olarak yazma ihtiyacını ortadan kaldırır."
+          }
+        ]
+      },
+      "footer": {
+        "tags": [
+          "MBTI",
+          "Karakter Üretici",
+          "Yapay Zeka Karakterleri",
+          "Kişilik Tipleri",
+          "Nano Banana",
+          "Karakter Tasarımı",
+          "Yapay Zeka Sanatı",
+          "Sosyal Medya İçeriği",
+          "Görsel Hikaye Anlatımı",
+          "Pazarlama Araçları",
+          "Yaratıcı Araçlar"
+        ],
+        "questions": "MBTI karakterleri oluşturma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
+      }
+    },
+    "contentTaggingSystem": {
+      "title": "4000 Görüntüden 50 Anlamlı Etikete: Pinterest Tarzı İçerik Keşfi Oluşturma",
+      "publishedDate": "16 Nisan 2026",
+      "readTime": "10 dk okuma",
+      "category": "İçerik Stratejisi",
+      "intro": {
+        "title": "Binlerce görüntü (ve istem) olduğunda, 40-50 anlamlı etiket oluşturmak basit görünüyor - ama aslında oldukça zor.",
+        "description1": "Bu sadece bir etiketleme sorunu değil. Bu bir ürün sorunu.",
+        "productProblem": {
+          "title": "Etiketler Neden Önemlidir (Kullanıcı Değeri)",
+          "description": "İyi bir etiketleme sistemi, doğrudan arama, keşfedilebilirlik ve içerik yeniden kullanımını artırır. İyi yapıldığında, her etiket kullanıcıların keşfetmek istediği bir açılış sayfası haline gelebilir."
+        }
+      },
+      "whyTagsMatter": {
+        "title": "Etiketler Neden Önemlidir (Kullanıcı Değeri)",
+        "description": "İyi bir etiketleme sistemi doğrudan şunları iyileştirir:",
+        "searchability": {
+          "title": "Aranabilirlik",
+          "description": "kullanıcılar doğal sorgularla istediklerini bulabilir"
+        },
+        "discoverability": {
+          "title": "Keşfedilebilirlik",
+          "description": "göz atma yapılandırılmış ve keyifli hale gelir"
+        },
+        "contentReuse": {
+          "title": "İçerik yeniden kullanımı",
+          "description": "etiketler gruplama, öneri ve SEO sayfalarını mümkün kılar"
+        },
+        "landingPageValue": "İyi yapıldığında, her etiket kullanıcıların keşfetmek istediği bir açılış sayfası haline gelebilir."
+      },
+      "coreChallenges": {
+        "title": "Temel Zorluklar",
+        "nonDescriptive": {
+          "title": "Tanımlayıcı Olmayan Etiketler",
+          "description": "Bazı etiketler geçerli gibi görünür ama işe yaramaz:",
+          "examples": {
+            "tag1": "yaratıcı",
+            "tag2": "güzel",
+            "tag3": "modern"
+          },
+          "conclusion": "Kullanıcıların ne alacaklarını anlamalarına yardımcı olmazlar."
+        },
+        "overlySpecific": {
+          "title": "Aşırı Spesifik (Nadir) Etiketler",
+          "description": "Bazı etiketler çok ayrıntılıdır:",
+          "example": "kırmızı neon yağmurlu siberpunk sokak gece",
+          "issues": {
+            "issue1": "etiket başına çok az görüntü",
+            "issue2": "kötü göz atma deneyimi",
+            "issue3": "düşük arama değeri"
+          }
+        },
+        "promptVsLanguage": {
+          "title": "İstem ≠ Doğal Dil",
+          "description": "İstemler, kullanıcıların arama şekli değildir.",
+          "promptTitle": "İstem:",
+          "promptExample": "ultra detaylı sinematik aydınlatma 8k başyapıt…",
+          "searchTitle": "Kullanıcı araması:",
+          "searchExample": "sinematik portre",
+          "conclusion": "Bu boşluğu kapatmak kritik öneme sahiptir."
+        },
+        "traditionalMethods": {
+          "title": "Geleneksel yöntemler yetersiz kalıyor",
+          "description": "TF-IDF / anahtar kelime çıkarımı ve görüntü kümeleme sınırlamalara sahiptir:",
+          "tfIdf": {
+            "title": "TF-IDF / anahtar kelime çıkarımı",
+            "good": "Frekans açısından iyi",
+            "bad": "Anlam ve gruplama açısından kötü"
+          },
+          "imageClustering": {
+            "title": "Görüntü kümeleme",
+            "good": "Küresel benzerliği yakalar",
+            "bad": "Somut, kullanıcıya yönelik kavramları (örn. \"kedi\", \"poster\", \"anime\") kaçırır"
+          },
+          "summary": "Kısacası: çok istatistiksel, çok soyut"
+        }
+      },
+      "threeLayerApproach": {
+        "title": "Üç Katmanlı Etiketleme Yaklaşımı",
+        "description": "Pratik bir çözüm, yapı + anlam + insan incelemesini birleştirmektir.",
+        "layer1": {
+          "title": "Katman 1 — Ham Sinyal Çıkartma",
+          "description": "Her bir görüntü için yapılandırılmış meta verileri çıkarın:",
+          "metadata": {
+            "prompt": "istek metni",
+            "promptDesc": "orijinal AI isteği",
+            "caption": "görsel başlık",
+            "captionDesc": "görüş modeli aracılığıyla",
+            "objects": "nesneler/varlıklar",
+            "objectsDesc": "örn., \"kedi\", \"şehir\", \"elbise\"",
+            "style": "stil",
+            "styleDesc": "örn., \"anime\", \"suluboya\"",
+            "embeddings": "gömme",
+            "embeddingsDesc": "benzerlik için"
+          },
+          "conclusion": "Bu, her görüntünün çoklu görünüm temsilini sağlar."
+        },
+        "layer2": {
+          "title": "Katman 2 — Aday Etiket Üretimi",
+          "description": "50 etikete atlamak yerine, önce yüzlerce aday oluşturun:",
+          "candidates": {
+            "nounPhrases": "isim öbekleri",
+            "nounPhrasesDesc": "(\"neon şehir\", \"geleneksel elbise\")",
+            "styleTerms": "stil terimleri",
+            "styleTermsDesc": "(\"sinema\", \"3D render\")",
+            "themes": "temalar",
+            "themesDesc": "(\"fantastik\", \"seyahat\")",
+            "clusterLabels": "küme etiketleri",
+            "clusterLabelsDesc": "(gömme kümeleme ile)",
+            "llmNormalized": "LLM-normalize edilmiş ifadeler",
+            "llmNormalizedDesc": "(\"gerçekçi portre\" yerine istek gürültüsü)"
+          },
+          "conclusion": "Bu aşamada, aşırı üretin."
+        },
+        "layer3": {
+          "title": "Katman 3 — İyileştirme ve Seçim (Kritik)",
+          "description": "Burada en fazla değer gelir. Etiketleri şu kriterlere göre filtreleyin:",
+          "criteria": {
+            "coverage": "Kapsama",
+            "coverageDesc": "çok nadir değil, çok geniş değil",
+            "clarity": "Açıklık",
+            "clarityDesc": "anında anlaşılır",
+            "distinctiveness": "Ayrıcalıklılık",
+            "distinctivenessDesc": "anlamlı gruplama",
+            "searchIntent": "Arama niyeti",
+            "searchIntentDesc": "bir kullanıcı gerçekten bunu yazar mı?"
+          },
+          "organization": {
+            "title": "Sonra dengeli bir sistem oluşturun:",
+            "subject": "Konu",
+            "subjectDesc": "örn., hayvanlar, portreler",
+            "style": "Stil",
+            "styleDesc": "örn., anime, suluboya",
+            "theme": "Tema",
+            "themeDesc": "örn., fantastik, seyahat",
+            "useCase": "Kullanım durumu",
+            "useCaseDesc": "örn., afiş, avatar",
+            "mood": "Ruh hali",
+            "moodDesc": "örn., rahat, karanlık"
+          }
+        }
+      },
+      "keyInsight": {
+        "title": "Ana İçgörü",
+        "description": "Tek bir yöntem bunu çözmez:",
+        "methods": {
+          "nlp": {
+            "title": "saf NLP",
+            "description": "çok gürültülü"
+          },
+          "vision": {
+            "title": "saf görüş",
+            "description": "çok soyut"
+          },
+          "clustering": {
+            "title": "saf kümeleme",
+            "description": "çok kaba"
+          }
+        },
+        "solution": "Çözüm, insan döngüsü ile iyileştirme içeren hibrit bir boru hattıdır."
+      },
+      "pinterestPlatform": {
+        "title": "Pinterest Benzeri İlham Platformları için Etiketleme Sistemleri Oluşturma",
+        "description": "Pinterest tarzı bir ilham platformu için, farklı içerik türleri için özel etiketleme yaklaşımlarına ihtiyacımız var:",
+        "galleryTags": {
+          "title": "Galeri Görüntü Etiketleri",
+          "description": "Görsel içerik keşfi ve taraması için:",
+          "examples": {
+            "subject": "Konu",
+            "subjectDesc": "portreler, manzaralar, hayvanlar, yiyecek, mimari",
+            "style": "Tarz",
+            "styleDesc": "fotoğraf gerçekçi, anime, sulu boya, yağlı boya, skeç",
+            "medium": "Orta",
+            "mediumDesc": "dijital sanat, fotoğrafçılık, illüstrasyon, 3D render",
+            "mood": "Ruh Hali",
+            "moodDesc": "sıcak, dramatik, canlı, minimalist, nostaljik",
+            "composition": "Kompozisyon",
+            "compositionDesc": "yakın plan, geniş açı, havadan, simetri, üçler kuralı",
+            "color": "Renk",
+            "colorDesc": "monokrom, sıcak tonlar, soğuk tonlar, pastel, neon"
+          }
+        },
+        "templateTags": {
+          "title": "Şablon & Şablon Örneği Etiketleri",
+          "description": "Şablon keşfi ve kullanım durumu eşleştirme için:",
+          "geoTags": {
+            "title": "Coğrafi Etiketler",
+            "description": "Farklı ülkelerle yiyecek, kostümler, seyahat planı gibi coğrafi etiketler:",
+            "examples": [
+              "Fransa",
+              "Hindistan",
+              "Meksika",
+              "Japonya",
+              "İtalya",
+              "İspanya",
+              "Çin",
+              "Tayland"
+            ]
+          },
+          "languageTags": {
+            "title": "Dil Etiketleri",
+            "description": "İki dilli ve çok dilli içerikler için dil etiketleri:",
+            "examples": [
+              "ingilizce-çince",
+              "ingilizce-ispanyolca",
+              "ingilizce-fransızca",
+              "ingilizce-japonca",
+              "ingilizce-korece",
+              "ingilizce-arapça",
+              "ingilizce-portekizce",
+              "ingilizce-rusça"
+            ]
+          }
+        }
+      },
+      "ruleOfThumb": {
+        "title": "Basit Bir Kural",
+        "question": "Her etiket için sorun:",
+        "description": "\"Bu bir sayfa olsaydı, kullanıcılar bunu anlar mı, arar mı ve gezmekten keyif alır mı?\"",
+        "action": "Eğer hayırsa, kaldırın."
+      },
+      "finalThought": {
+        "title": "Son Düşünce",
+        "description": "Etiketleme, görüntüleri mükemmel bir şekilde tanımlamakla ilgili değildir. Bu, bir sistem oluşturmakla ilgilidir ki:",
+        "systems": {
+          "match": "kullanıcıların düşünme şekliyle eşleşir",
+          "group": "içeriği anlamlı bir şekilde gruplar",
+          "scale": "arama ve keşif için ölçeklenir"
+        },
+        "conclusion": "Pratikte, en iyi etiket sistemleri en karmaşık olanlar değil — en niyet uyumlu olanlardır."
+      },
+      "footer": {
+        "tags": [
+          "İçerik Etiketleme",
+          "Etiketleme Sistemleri",
+          "İçerik Keşfi",
+          "Pinterest Tarzı",
+          "Kullanıcı Deneyimi",
+          "Arama Mimarisi",
+          "İçerik Stratejisi",
+          "AI İçeriği",
+          "Şablon Sistemleri",
+          "Galeri Yönetimi",
+          "İçerik Organizasyonu",
+          "Arama Optimizasyonu"
+        ],
+        "questions": "İçerik etiketleme sistemleri oluşturma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
       }
     }
   },
