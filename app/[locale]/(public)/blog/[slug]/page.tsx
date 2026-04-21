@@ -24,6 +24,9 @@ import AiContentDistributionSystemContent from "./components/AiContentDistributi
 import InfographicContent from "./components/InfographicContent";
 import ImageToNarrativeVideoContent from "./components/ImageToNarrativeVideoContent";
 import SeriesInfographicVsNotebookLMContent from "./components/SeriesInfographicVsNotebookLMContent";
+import GenericBlogContent from "./components/GenericBlogContent";
+import MBTICharacterGeneratorContent from "./components/MBTICharacterGeneratorContent";
+import ContentTaggingSystemContent from "./components/ContentTaggingSystemContent";
 import blogsData from "@/public/data/blogs.json";
 
 // Force dynamic rendering to avoid static generation issues
@@ -259,7 +262,7 @@ export default async function BlogPostPage({
         </h1>
         
         <div className="text-gray-600 mb-4">
-          {tNamespace ? tNamespace("date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
+          {tNamespace ? tNamespace(slug === 'mbti-character-generator' || slug === 'content-tagging-system' ? "publishedDate" : "date", { defaultValue: "Latest Article" }) : "Latest Article"} • {" "}
           {tNamespace ? tNamespace("readTime", { defaultValue: "5 min read" }) : "5 min read"}
         </div>
       </div>
@@ -311,6 +314,12 @@ export default async function BlogPostPage({
         {slug === 'series-infographic-vs-notebooklm' && (
           <SeriesInfographicVsNotebookLMContent slug={slug} t={safeT} locale={locale} />
         )}
+        {slug === 'mbti-character-generator' && (
+          <MBTICharacterGeneratorContent tNamespace={tNamespace} />
+        )}
+        {slug === 'content-tagging-system' && (
+          <ContentTaggingSystemContent tNamespace={tNamespace} />
+        )}
 
 
         {/* Original blog posts - use generic content renderer */}
@@ -333,184 +342,16 @@ export default async function BlogPostPage({
          slug !== 'ai-content-distribution-system' &&
          slug !== 'what-is-infographics' &&
          slug !== 'image-to-narrative-video' &&
-         slug !== 'series-infographic-vs-notebooklm' && (
-          <div className="space-y-6">
-            <p className="text-lg font-semibold text-blue-600 mb-4">
-              {hasKey("intro") ? safeT("intro") : "Introduction"}
-            </p>
-            
-            <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("whatIsTitle") ? safeT("whatIsTitle") : "What is this?"}</h2>
-              <p className="mb-4">{hasKey("whatIsContent") ? safeT("whatIsContent") : "Content description..."}</p>
-            </section>
-
-            {(hasKey("whyTitle") || hasKey("whyContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("whyTitle") ? safeT("whyTitle") : "Why This Matters"}</h2>
-                <p className="mb-4">{hasKey("whyContent") ? safeT("whyContent") : "Learn why this topic is important..."}</p>
-              </section>
-            )}
-
-            {(hasKey("howTitle") || hasKey("howContent") || hasKey("step1Title")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("howTitle") ? safeT("howTitle") : "How It Works"}</h2>
-                {hasKey("step1Title") ? (
-                  <div className="space-y-4">
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h3 className="font-semibold mb-2">{safeT("step1Title")}</h3>
-                      <p>{safeT("step1Content")}</p>
-                    </div>
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h3 className="font-semibold mb-2">{safeT("step2Title")}</h3>
-                      <p>{safeT("step2Content")}</p>
-                    </div>
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h3 className="font-semibold mb-2">{safeT("step3Title")}</h3>
-                      <p>{safeT("step3Content")}</p>
-                    </div>
-                    {hasKey("step4Title") && (
-                      <div className="p-4 bg-blue-50 rounded-lg">
-                        <h3 className="font-semibold mb-2">{safeT("step4Title")}</h3>
-                        <p>{safeT("step4Content")}</p>
-                      </div>
-                    )}
-                    {hasKey("step5Title") && (
-                      <div className="p-4 bg-blue-50 rounded-lg">
-                        <h3 className="font-semibold mb-2">{safeT("step5Title")}</h3>
-                        <p>{safeT("step5Content")}</p>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <p className="mb-4">{hasKey("howContent") ? safeT("howContent") : "Step-by-step process..."}</p>
-                )}
-              </section>
-            )}
-
-            {(hasKey("howWorksTitle") || hasKey("howWorksContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("howWorksTitle") ? safeT("howWorksTitle") : "How It Works"}</h2>
-                <p className="mb-4">{hasKey("howWorksContent") ? safeT("howWorksContent") : "Technical explanation..."}</p>
-              </section>
-            )}
-
-            {(hasKey("inspirationTitle") || hasKey("inspirationContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("inspirationTitle") ? safeT("inspirationTitle") : "Creative Inspiration"}</h2>
-                <p className="mb-4">{hasKey("inspirationContent") ? safeT("inspirationContent") : "Inspiration content..."}</p>
-              </section>
-            )}
-
-            {(hasKey("featuredTitle") || hasKey("featuredContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("featuredTitle") ? safeT("featuredTitle") : "Featured Inspiration Tools"}</h2>
-                <div 
-                  className="prose prose-lg max-w-none mb-4"
-                  dangerouslySetInnerHTML={{ 
-                    __html: hasKey("featuredContent") ? `<p>${safeT("featuredContent").replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '</p><p class="mb-4">').replace(/\n/g, '<br/>')}</p>` : "<p>Featured tools content...</p>"
-                  }} 
-                />
-              </section>
-            )}
-
-            {(hasKey("aiTitle") || hasKey("aiContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("aiTitle") ? safeT("aiTitle") : "AI Generation Tools"}</h2>
-                <p className="mb-4">{hasKey("aiContent") ? safeT("aiContent") : "AI tools content..."}</p>
-              </section>
-            )}
-
-            {(hasKey("aiFeaturedTitle") || hasKey("aiFeaturedContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("aiFeaturedTitle") ? safeT("aiFeaturedTitle") : "Featured AI Tools"}</h2>
-                <div 
-                  className="prose prose-lg max-w-none mb-4"
-                  dangerouslySetInnerHTML={{ 
-                    __html: hasKey("aiFeaturedContent") ? `<p>${safeT("aiFeaturedContent").replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '</p><p class="mb-4">').replace(/\n/g, '<br/>')}</p>` : "<p>Featured AI tools content...</p>"
-                  }} 
-                />
-              </section>
-            )}
-
-            {(hasKey("ecosystemTitle") || hasKey("ecosystemContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("ecosystemTitle") ? safeT("ecosystemTitle") : "Ecosystem"}</h2>
-                <p className="mb-4">{hasKey("ecosystemContent") ? safeT("ecosystemContent") : "Ecosystem content..."}</p>
-              </section>
-            )}
-
-            {(hasKey("seoTitle") || hasKey("seoContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("seoTitle") ? safeT("seoTitle") : "SEO & Optimization"}</h2>
-                <p className="mb-4">{hasKey("seoContent") ? safeT("seoContent") : "SEO content..."}</p>
-              </section>
-            )}
-
-            {(hasKey("generatorTitle") || hasKey("generatorContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("generatorTitle") ? safeT("generatorTitle") : "Generator"}</h2>
-                <p className="mb-4">{hasKey("generatorContent") ? safeT("generatorContent") : "Generator content..."}</p>
-              </section>
-            )}
-
-            {(hasKey("useCasesTitle") || hasKey("useCasesContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("useCasesTitle") ? safeT("useCasesTitle") : "Use Cases"}</h2>
-                <p className="mb-4">{hasKey("useCasesContent") ? safeT("useCasesContent") : "Common applications..."}</p>
-              </section>
-            )}
-
-            {(hasKey("ethicalTitle") || hasKey("ethicalContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("ethicalTitle") ? safeT("ethicalTitle") : "Ethical Considerations"}</h2>
-                <p className="mb-4">{hasKey("ethicalContent") ? safeT("ethicalContent") : "Important ethical guidelines..."}</p>
-              </section>
-            )}
-
-            {(hasKey("challengesTitle") || hasKey("challengesContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("challengesTitle") ? safeT("challengesTitle") : "Technical Challenges"}</h2>
-                <p className="mb-4">{hasKey("challengesContent") ? safeT("challengesContent") : "Challenges and solutions..."}</p>
-              </section>
-            )}
-
-            {(hasKey("productionTitle") || hasKey("productionContent")) && (
-              <section>
-                <h2 className="text-2xl font-bold mb-4">{hasKey("productionTitle") ? safeT("productionTitle") : "Production System Design"}</h2>
-                <p className="mb-4">{hasKey("productionContent") ? safeT("productionContent") : "Production considerations..."}</p>
-              </section>
-            )}
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("toolsTitle") ? safeT("toolsTitle") : "Tools & Resources"}</h2>
-              <div 
-                className="prose prose-lg max-w-none mb-4"
-                dangerouslySetInnerHTML={{ 
-                  __html: hasKey("toolsContent") ? formatContent(safeT("toolsContent")) : "<p>Learn about the best tools available...</p>"
-                }} 
-              />
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("curifyTitle") ? safeT("curifyTitle") : "How Curify Can Help"}</h2>
-              <div 
-                className="prose prose-lg max-w-none mb-4"
-                dangerouslySetInnerHTML={{ 
-                  __html: hasKey("curifyContent") ? formatContent(safeT("curifyContent")) : "<p>Curify offers comprehensive solutions for content creators...</p>"
-                }} 
-              />
-              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                <p className="text-green-800">
-                  🎯 {hasKey("ctaText") ? safeT("ctaText") : "Ready to get started?"} <a href={getVideoDubbingUrl(locale)} className="text-blue-600 hover:underline font-semibold">{hasKey("ctaLink") ? safeT("ctaLink") : "Try Curify's Tools"}</a>
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold mb-4">{hasKey("conclusionTitle") ? safeT("conclusionTitle") : "Conclusion"}</h2>
-              <p>{hasKey("conclusionContent") ? safeT("conclusionContent") : "Start your journey with AI-powered content creation tools today."}</p>
-            </section>
-          </div>
+         slug !== 'series-infographic-vs-notebooklm' &&
+         slug !== 'mbti-character-generator' &&
+         slug !== 'content-tagging-system' && (
+          <GenericBlogContent 
+            hasKey={hasKey}
+            safeT={safeT}
+            formatContent={formatContent}
+            getVideoDubbingUrl={getVideoDubbingUrl}
+            locale={locale}
+          />
         )}
       </div>
 

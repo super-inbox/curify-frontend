@@ -368,11 +368,39 @@
         "date": "13 avril 2026",
         "readTime": "15 min de lecture",
         "tag": "Outils pour créateurs",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "outils-de-création",
+        "relatedLinks": [
+          "système-de-production-de-contenu-ai",
+          "contenu-d'apprentissage-viral",
+          "outils-d'apprentissage-visuels"
+        ]
       },
       {
         "slug": "curify-ai-growth-engine",
         "title": "Le moteur de croissance AI de Curify : Transformer la création de contenu pour les créateurs UGC et les marketeurs",
+        "date": "13 avril 2026",
+        "readTime": "12 min de lecture",
+        "tag": "Plateforme AI",
+        "image": "/images/growthengine.webp",
+        "category": "prompts-nano-banana",
+        "relatedLinks": [
+          "qu'est-ce-que-les-infographies",
+          "écosystème-des-prompts-nano-banana",
+          "sites-web-des-outils-ai-créatifs"
+        ]
+      },
+      {
+        "slug": "emotion-tts-movie",
+        "title": "Emotion TTS Movie : Rendez vos récits plus émotionnels",
+        "date": "13 avril 2026",
+        "readTime": "15 min de lecture",
+        "tag": "Outils de Création",
+        "image": "/images/voices2.webp"
+      },
+      {
+        "slug": "curify-ai-growth-engine",
+        "title": "Le moteur de croissance AI de Curify : Transformer la création de contenu pour les créateurs et les marketeurs UGC",
         "date": "13 avril 2026",
         "readTime": "12 min de lecture",
         "tag": "Plateforme AI",
@@ -3635,6 +3663,454 @@
         "questions": "Vous avez des questions sur la façon dont le Curify AI Growth Engine peut transformer votre stratégie de contenu ?",
         "contactText": "Contactez Notre Équipe",
         "contactLink": "https://curify.ai/contact"
+      }
+    },
+    "mbtiCharacterGenerator": {
+      "title": "Générateur de Personnages MBTI Nano Banana : Créez des personnages basés sur la personnalité en quelques secondes",
+      "publishedDate": "16 avril 2026",
+      "readTime": "12 min de lecture",
+      "category": "Outils de Création",
+      "intro": {
+        "title": "Vous voulez transformer les types de personnalité en personnages visuellement captivants ?",
+        "description1": "Avec le générateur de personnages MBTI Nano Banana, vous pouvez créer des visuels de personnages structurés et de haute qualité en quelques secondes — sans écrire de prompts complexes depuis zéro.",
+        "description2": "Au lieu de deviner des prompts, vous utilisez un système de création de personnages conçu pour l'échelle.",
+        "example": {
+          "title": "Essayez un exemple :"
+        }
+      },
+      "whatIs": {
+        "title": "Qu'est-ce qu'un Générateur de Personnages MBTI Nano Banana ?",
+        "description1": "Le générateur MBTI Nano Banana est un système de prompts de personnages basé sur des modèles qui transforme les types de personnalité (comme INFP, ESTJ) en personnages visuels riches.",
+        "description2": "Contrairement aux outils d'image AI traditionnels, ce n'est pas juste \"tapez un prompt et espérez le meilleur.\" Au lieu de cela, il vous fournit des prompts structurés, des styles visuels cohérents et des résultats répétables à travers différents personnages.",
+        "thinkOfItAs": "Pensez-y comme à un générateur de prompts de personnages + un système visuel combiné.",
+        "thinkOfItAsDescription": "Cela garantit la cohérence, une meilleure qualité visuelle et une génération plus rapide."
+      },
+      "examples": {
+        "title": "Exemples : Transformez MBTI en Personnages",
+        "description": "Voici quelques façons d'utiliser MBTI pour générer des personnages :",
+        "nba": {
+          "title": "MBTI Ã Joueurs NBA",
+          "description": "Voyez comment les types de personnalité correspondent à des joueurs emblématiques comme Kevin Durant :",
+          "intj": "stratégique, posé",
+          "esfp": "expressif, énergique"
+        },
+        "animals": {
+          "title": "MBTI Ã Animaux",
+          "description": "Transformez les types de personnalité en archétypes d'animaux :",
+          "infp": "cerf doux",
+          "estp": "tigre audacieux"
+        },
+        "movies": {
+          "title": "MBTI Ã Personnages de Films",
+          "description": "Mappez la personnalité dans la narration :",
+          "enfp": "protagoniste charismatique",
+          "istj": "stratégiste discipliné"
+        }
+      },
+      "howItWorks": {
+        "title": "Comment ça marche (Dans les coulisses)",
+        "description": "Le système Nano Banana utilise des modèles de prompts structurés au lieu de prompts bruts.",
+        "behindTheScenes": "Chaque personnage est généré en fonction de :",
+        "systemDescription": "Cela garantit la cohérence, une meilleure qualité visuelle et une génération plus rapide. Au lieu de deviner des prompts, vous utilisez un système de création de personnages conçu pour l'échelle.",
+        "components": [
+          {
+            "icon": "ð§",
+            "title": "Entrée de personnalité",
+            "description": "type MBTI"
+          },
+          {
+            "icon": "ð",
+            "title": "Contexte du personnage",
+            "description": "NBA, animal, film, etc."
+          },
+          {
+            "icon": "ð¨",
+            "title": "Style visuel + mise en page",
+            "description": "Esthétiques prédéfinies"
+          },
+          {
+            "icon": "â¡ï¸",
+            "title": "Logique de prompt prédéfinie",
+            "description": "Génération structurée"
+          }
+        ],
+        "ensures": {
+          "title": "Cela garantit :",
+          "items": [
+            "Cohérence - résultats prévisibles",
+            "Meilleure qualité visuelle - prompts optimisés",
+            "Génération plus rapide - pas d'essais et erreurs"
+          ]
+        },
+        "conclusion": "Au lieu de deviner des prompts, vous utilisez un système de création de personnages conçu pour l'échelle."
+      },
+      "whyNotRegular": {
+        "title": "Pourquoi ne pas simplement utiliser un générateur d'images AI classique ?",
+        "description": "La plupart des outils comme Midjourney ou Stable Diffusion nécessitent des prompts d'essai-erreur, un réglage manuel et des résultats incohérents. Avec Nano Banana, les prompts sont pré-structurés, les résultats sont prévisibles et vous pouvez générer des variations rapidement.",
+        "traditional": {
+          "title": "Outils traditionnels",
+          "items": [
+            "Prompts d'essai-erreur",
+            "Réglage manuel",
+            "Résultats incohérents"
+          ]
+        },
+        "nanoBanana": {
+          "title": "Nano Banana",
+          "items": [
+            "Les prompts sont pré-structurés",
+            "Les résultats sont prévisibles",
+            "Vous pouvez générer des variations rapidement"
+          ]
+        },
+        "conclusion": "C'est plus proche d'un système de production, pas seulement d'un outil créatif."
+      },
+      "useCases": {
+        "title": "Cas d'utilisation",
+        "description": "Le générateur de personnages MBTI est particulièrement utile pour :",
+        "socialMedia": {
+          "title": "Contenu pour les réseaux sociaux",
+          "items": [
+            "Publications basées sur la personnalité",
+            "Contenu MBTI viral",
+            "Narration visuelle"
+          ]
+        },
+        "creative": {
+          "title": "Projets créatifs",
+          "items": [
+            "Idéation de personnages",
+            "Storyboard",
+            "Conception de concepts"
+          ]
+        },
+        "marketing": {
+          "title": "Marketing & Branding",
+          "items": [
+            "Visuels de segmentation d'audience",
+            "Campagnes basées sur des personas"
+          ]
+        }
+      },
+      "tryNow": {
+        "title": "Essayez le générateur de personnages MBTI",
+        "description": "Au lieu d'écrire des prompts de zéro, commencez avec un système structuré :",
+        "explore": {
+          "title": "Explorez les modèles MBTI :"
+        },
+        "browse": {
+          "title": "Parcourez plus de prompts Nano Banana :"
+        }
+      },
+      "customize": {
+        "title": "Bonus : Personnalisez votre propre personnage",
+        "description": "Vous voulez aller au-delà du MBTI ? Nano Banana fonctionne également comme un générateur de prompts de personnages où vous pouvez :",
+        "bonus": {
+          "title": "Bonus : Personnalisez votre propre personnage",
+          "description": "Vous voulez aller au-delà du MBTI ? Nano Banana fonctionne également comme un générateur de prompts de personnages où vous pouvez :",
+          "features": [
+            "Changer de thèmes - sports, animaux, culture",
+            "Ajuster les mappages de personnalité",
+            "Remixer des modèles en nouveaux formats"
+          ],
+          "conclusion": "Cela en fait un créateur de personnages flexible pour les créateurs et les marketeurs."
+        }
+      },
+      "finalThoughts": {
+        "title": "Dernières réflexions",
+        "description": "Si vous avez déjà eu du mal avec des prompts incohérents ou des résultats AI génériques, Nano Banana offre une approche différente :",
+        "formula": "Prompts structurés â personnages cohérents â contenu évolutif",
+        "conclusion": "Que vous créiez du contenu MBTI, des visuels narratifs ou des actifs marketing, ce système vous aide à avancer plus vite â et à produire de meilleurs résultats."
+      },
+      "relatedReads": {
+        "title": "Lectures connexes",
+        "items": [
+          "Guide du générateur de prompts de personnages (à venir bientôt)",
+          "Automatisation de contenu AI avec des modèles",
+          "Comment générer 50 publications sociales à partir d'une idée"
+        ]
+      },
+      "faq": {
+        "title": "FAQ (pour des mots-clés longue traîne)",
+        "questions": [
+          {
+            "question": "Qu'est-ce qu'un générateur de prompts de personnages ?",
+            "answer": "Un générateur de prompts de personnages est un système qui vous aide à créer des prompts structurés pour générer des personnages AI cohérents."
+          },
+          {
+            "question": "Puis-je utiliser le MBTI pour créer des personnages ?",
+            "answer": "Oui â le MBTI fournit un cadre de personnalité qui peut être mappé en traits de caractère visuels ou narratifs."
+          },
+          {
+            "question": "Nano Banana est-il adapté aux débutants ?",
+            "answer": "Oui â il supprime le besoin d'écrire des prompts complexes manuellement."
+          }
+        ]
+      },
+      "footer": {
+        "tags": [
+          "MBTI",
+          "Générateur de Personnages",
+          "Personnages IA",
+          "Types de Personnalité",
+          "Nano Banana",
+          "Conception de Personnages",
+          "Art IA",
+          "Contenu pour les Réseaux Sociaux",
+          "Narration Visuelle",
+          "Outils de Marketing",
+          "Outils pour Créateurs"
+        ],
+        "questions": "Vous avez des questions sur la création de personnages MBTI ? Contactez notre équipe de support pour une assistance personnalisée."
+      }
+    },
+    "contentTaggingSystem": {
+      "title": "De 4000 Images à 50 Étiquettes Significatives : Construire une Découverte de Contenu de Style Pinterest",
+      "publishedDate": "16 avril 2026",
+      "readTime": "10 min de lecture",
+      "category": "Stratégie de Contenu",
+      "intro": {
+        "title": "Lorsque vous avez des milliers d'images (et de prompts), générer un ensemble propre de 40 à 50 étiquettes significatives semble simple — mais c'est étonnamment délicat.",
+        "description1": "Ce n'est pas seulement un problème d'étiquetage. C'est un problème de produit.",
+        "productProblem": {
+          "title": "Pourquoi les Étiquettes Comptent (Valeur Utilisateur)",
+          "description": "Un bon système d'étiquetage améliore directement la recherche, la découvrabilité et la réutilisation du contenu. S'il est bien fait, chaque étiquette peut devenir une page d'atterrissage que les utilisateurs souhaitent réellement explorer."
+        }
+      },
+      "whyTagsMatter": {
+        "title": "Pourquoi les Étiquettes Comptent (Valeur Utilisateur)",
+        "description": "Un bon système d'étiquetage améliore directement :",
+        "searchability": {
+          "title": "Recherche",
+          "description": "les utilisateurs peuvent trouver ce qu'ils veulent avec des requêtes naturelles"
+        },
+        "discoverability": {
+          "title": "Découvrabilité",
+          "description": "la navigation devient structurée et agréable"
+        },
+        "contentReuse": {
+          "title": "Réutilisation de Contenu",
+          "description": "les étiquettes permettent le regroupement, la recommandation et les pages SEO"
+        },
+        "landingPageValue": "S'il est bien fait, chaque étiquette peut devenir une page d'atterrissage que les utilisateurs souhaitent réellement explorer."
+      },
+      "coreChallenges": {
+        "title": "Les Défis Principaux",
+        "nonDescriptive": {
+          "title": "Étiquettes Non Descriptives",
+          "description": "Certaines étiquettes semblent valides mais sont inutiles :",
+          "examples": {
+            "tag1": "créatif",
+            "tag2": "beau",
+            "tag3": "moderne"
+          },
+          "conclusion": "Elles n'aident pas les utilisateurs à comprendre ce qu'ils obtiendront."
+        },
+        "overlySpecific": {
+          "title": "Étiquettes Trop Spécifiques (Rares)",
+          "description": "Certaines étiquettes sont trop granulaires :",
+          "example": "allée cyberpunk pluvieuse néon rouge la nuit",
+          "issues": {
+            "issue1": "trop peu d'images par étiquette",
+            "issue2": "mauvaise expérience de navigation",
+            "issue3": "faible valeur de recherche"
+          }
+        },
+        "promptVsLanguage": {
+          "title": "Prompt ≠ Langage Naturel",
+          "description": "Les prompts ne sont pas la façon dont les utilisateurs recherchent.",
+          "promptTitle": "Prompt :",
+          "promptExample": "éclairage cinématographique ultra détaillé chef-d'œuvre 8k…",
+          "searchTitle": "Recherche Utilisateur :",
+          "searchExample": "portrait cinématographique",
+          "conclusion": "Combler cet écart est crucial."
+        },
+        "traditionalMethods": {
+          "title": "Les Méthodes Traditionnelles Sont Insuffisantes",
+          "description": "TF-IDF / extraction de mots-clés et regroupement d'images ont des limitations :",
+          "tfIdf": {
+            "title": "TF-IDF / extraction de mots-clés",
+            "good": "Bon pour la fréquence",
+            "bad": "Mauvais pour le sens et le regroupement"
+          },
+          "imageClustering": {
+            "title": "Regroupement d'Images",
+            "good": "Capture la similarité globale",
+            "bad": "Manque des concepts concrets orientés utilisateur (par exemple, \"chat\", \"affiche\", \"anime\")"
+          },
+          "summary": "En résumé : trop statistique, trop abstrait"
+        }
+      },
+      "threeLayerApproach": {
+        "title": "Une Approche de Tagging en Trois Couches",
+        "description": "Une solution pratique est de combiner structure + sémantique + raffinement humain.",
+        "layer1": {
+          "title": "Couche 1 — Extraction de Signal Brut",
+          "description": "Pour chaque image, extraire des métadonnées structurées :",
+          "metadata": {
+            "prompt": "texte d'invite",
+            "promptDesc": "l'invite AI originale",
+            "caption": "légende visuelle",
+            "captionDesc": "via le modèle de vision",
+            "objects": "objets/entités",
+            "objectsDesc": "par exemple, \"chat\", \"ville\", \"robe\"",
+            "style": "style",
+            "styleDesc": "par exemple, \"anime\", \"aquarelle\"",
+            "embeddings": "embeddings",
+            "embeddingsDesc": "pour la similarité"
+          },
+          "conclusion": "Cela vous donne une représentation multi-vues de chaque image."
+        },
+        "layer2": {
+          "title": "Couche 2 — Génération de Tags Candidats",
+          "description": "Au lieu de passer directement à 50 tags, générez d'abord des centaines de candidats :",
+          "candidates": {
+            "nounPhrases": "phrases nominales",
+            "nounPhrasesDesc": "(\"ville néon\", \"robe traditionnelle\")",
+            "styleTerms": "termes de style",
+            "styleTermsDesc": "(\"cinématographique\", \"rendu 3D\")",
+            "themes": "thèmes",
+            "themesDesc": "(\"fantaisie\", \"voyage\")",
+            "clusterLabels": "étiquettes de cluster",
+            "clusterLabelsDesc": "(à partir du clustering d'embeddings)",
+            "llmNormalized": "phrases normalisées LLM",
+            "llmNormalizedDesc": "(\"portrait réaliste\" au lieu de bruit d'invite)"
+          },
+          "conclusion": "À ce stade, sur-générez."
+        },
+        "layer3": {
+          "title": "Couche 3 — Affinage & Sélection (Critique)",
+          "description": "C'est là que la plupart de la valeur provient. Filtrer les tags en fonction de :",
+          "criteria": {
+            "coverage": "Couverture",
+            "coverageDesc": "ni trop rare, ni trop large",
+            "clarity": "Clarté",
+            "clarityDesc": "instantanément compréhensible",
+            "distinctiveness": "Distinctivité",
+            "distinctivenessDesc": "groupement significatif",
+            "searchIntent": "Intention de recherche",
+            "searchIntentDesc": "un utilisateur taperait-il réellement cela ?"
+          },
+          "organization": {
+            "title": "Puis organisez en un système équilibré :",
+            "subject": "Sujet",
+            "subjectDesc": "par exemple, animaux, portraits",
+            "style": "Style",
+            "styleDesc": "par exemple, anime, aquarelle",
+            "theme": "Thème",
+            "themeDesc": "par exemple, fantaisie, voyage",
+            "useCase": "Cas d'utilisation",
+            "useCaseDesc": "par exemple, affiche, avatar",
+            "mood": "Humeur",
+            "moodDesc": "par exemple, confortable, sombre"
+          }
+        }
+      },
+      "keyInsight": {
+        "title": "L'Insight Clé",
+        "description": "Aucune méthode unique ne résout cela :",
+        "methods": {
+          "nlp": {
+            "title": "NLP pur",
+            "description": "trop bruyant"
+          },
+          "vision": {
+            "title": "vision pure",
+            "description": "trop abstrait"
+          },
+          "clustering": {
+            "title": "clustering pur",
+            "description": "trop grossier"
+          }
+        },
+        "solution": "La solution est un pipeline hybride avec un affinage humain."
+      },
+      "pinterestPlatform": {
+        "title": "Construire des Systèmes de Tagging pour une Plateforme d'Inspiration de Type Pinterest",
+        "description": "Pour une plateforme d'inspiration de style Pinterest, nous avons besoin d'approches de tagging spécialisées pour différents types de contenu :",
+        "galleryTags": {
+          "title": "Tags d'Images de Galerie",
+          "description": "Pour la découverte et la navigation de contenu visuel :",
+          "examples": {
+            "subject": "Sujet",
+            "subjectDesc": "portraits, paysages, animaux, nourriture, architecture",
+            "style": "Style",
+            "styleDesc": "photorealiste, anime, aquarelle, peinture à l'huile, croquis",
+            "medium": "Média",
+            "mediumDesc": "art numérique, photographie, illustration, rendu 3D",
+            "mood": "Ambiance",
+            "moodDesc": "cocooning, dramatique, vibrant, minimaliste, nostalgique",
+            "composition": "Composition",
+            "compositionDesc": "gros plan, grand angle, aérien, symétrie, règle des tiers",
+            "color": "Couleur",
+            "colorDesc": "monochrome, tons chauds, tons froids, pastel, néon"
+          }
+        },
+        "templateTags": {
+          "title": "Tags de Modèle & Exemples de Modèle",
+          "description": "Pour la découverte de modèles et l'adéquation des cas d'utilisation :",
+          "geoTags": {
+            "title": "Tags Géographiques",
+            "description": "Tags géographiques comme différents pays avec nourriture, costumes, itinéraires de voyage :",
+            "examples": [
+              "France",
+              "Inde",
+              "Mexique",
+              "Japon",
+              "Italie",
+              "Espagne",
+              "Chine",
+              "Thaïlande"
+            ]
+          },
+          "languageTags": {
+            "title": "Tags de Langue",
+            "description": "Tags de langue pour du contenu bilingue et multilingue :",
+            "examples": [
+              "anglais-chinois",
+              "anglais-espagnol",
+              "anglais-français",
+              "anglais-japonais",
+              "anglais-coréen",
+              "anglais-arabe",
+              "anglais-portugais",
+              "anglais-russe"
+            ]
+          }
+        }
+      },
+      "ruleOfThumb": {
+        "title": "Une Règle de Base Simple",
+        "question": "Pour chaque tag, demandez-vous :",
+        "description": "\"Si c'était une page, les utilisateurs comprendraient-ils, chercheraient-ils et apprécieraient-ils la navigation ?\"",
+        "action": "Sinon, supprimez-le."
+      },
+      "finalThought": {
+        "title": "Pensée Finale",
+        "description": "Le tagging ne consiste pas à décrire parfaitement les images. Il s'agit de créer un système qui :",
+        "systems": {
+          "match": "correspond à la façon dont les utilisateurs pensent",
+          "group": "groupe le contenu de manière significative",
+          "scale": "s'étend à la recherche et à la découverte"
+        },
+        "conclusion": "En pratique, les meilleurs systèmes de tags ne sont pas les plus complexes — ils sont les plus alignés sur l'intention."
+      },
+      "footer": {
+        "tags": [
+          "Tagging de Contenu",
+          "Systèmes de Tagging",
+          "Découverte de Contenu",
+          "Style Pinterest",
+          "Expérience Utilisateur",
+          "Architecture de Recherche",
+          "Stratégie de Contenu",
+          "Contenu IA",
+          "Systèmes de Modèle",
+          "Gestion de Galerie",
+          "Organisation de Contenu",
+          "Optimisation de Recherche"
+        ],
+        "questions": "Vous avez des questions sur la création de systèmes de tagging de contenu ? Contactez notre équipe de support pour une assistance personnalisée."
       }
     }
   },
