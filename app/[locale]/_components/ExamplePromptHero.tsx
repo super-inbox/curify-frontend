@@ -35,6 +35,7 @@ type ExamplePromptHeroProps = {
   description?: string;
   promptVariant?: "breakdown" | "preview";
   promptParams?: Record<string, string | number | boolean | null | undefined>;
+  promptCollapsedMaxHeight?: number;
   prevNext?: PrevNextNav | null;
   className?: string;
 };
@@ -159,6 +160,7 @@ export default function ExamplePromptHero({
   description,
   promptVariant = "preview",
   promptParams,
+  promptCollapsedMaxHeight,
   prevNext,
   className,
 }: ExamplePromptHeroProps) {
@@ -198,7 +200,7 @@ export default function ExamplePromptHero({
               </h2>
 
               {promptVariant === "breakdown" ? (
-                <PromptBreakdown prompt={prompt} params={promptParams ?? {}} />
+                <PromptBreakdown prompt={prompt} params={promptParams ?? {}} collapsedMaxHeight={promptCollapsedMaxHeight} />
               ) : (
                 <PromptPreviewBlock
                   text={prompt}

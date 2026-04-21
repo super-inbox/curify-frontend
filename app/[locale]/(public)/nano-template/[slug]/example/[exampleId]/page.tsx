@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import ExampleGeneratePanel from "./ExampleGeneratePanel";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
@@ -45,6 +45,8 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   const templateView = getTemplateView(ctx.reg, ctx.templateId, ctx.contentLocale);
   const templateTopics = templateView?.topics ?? [];
   const templateBatch = templateView?.batch ?? false;
+  const templateParameters = templateView?.parameters ?? [];
+  const templateAllowGeneration = templateView?.allow_generation ?? false;
 
   const { title, category } = resolveLocalizedExampleCopy(
     example,
@@ -106,6 +108,8 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     otherNanoCards,
     templateTopics,
     templateBatch,
+    templateParameters,
+    templateAllowGeneration,
   };
 }
 
@@ -180,6 +184,8 @@ export default async function NanoExampleDetailPage({
     otherNanoCards,
     templateTopics,
     templateBatch,
+    templateParameters,
+    templateAllowGeneration,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
@@ -252,32 +258,20 @@ export default async function NanoExampleDetailPage({
             priority
           />
         }
+        promptCollapsedMaxHeight={120}
         actionBar={
-          <UnifiedActionBar
-            className="pt-2"
-            tracking={{
-              contentId: `${templateId}:${example.id}`,
-              contentType: "nano_inspiration_reproduce_section",
-              viewMode: "cards",
-            }}
-            remix={{
-              enabled: true,
-              href: `/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}#reproduce`,
-            }}
-            copy={{
-              enabled: true,
-              text: prompt,
-            }}
-            share={{
-              enabled: true,
-              url: examplePageUrl,
-              title,
-              text: `Check out this Nano Banana example: ${title}`,
-            }}
-            batchDownload={{
-              enabled: templateBatch,
-              templateId: templateId,
-            }}
+          <ExampleGeneratePanel
+            templateId={templateId}
+            slug={slug}
+            locale={rawLocale}
+            parameters={templateParameters}
+            allowGeneration={templateAllowGeneration}
+            initialParams={paramEntries}
+            exampleId={example.id}
+            promptText={prompt}
+            batchEnabled={templateBatch}
+            examplePageUrl={examplePageUrl}
+            title={title}
           />
         }
       />

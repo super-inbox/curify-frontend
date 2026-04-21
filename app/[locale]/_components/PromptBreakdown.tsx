@@ -5,9 +5,11 @@ import { useMemo, useState } from "react";
 export default function PromptBreakdown({
   prompt,
   params,
+  collapsedMaxHeight = 220,
 }: {
   prompt: string;
   params: Record<string, any>;
+  collapsedMaxHeight?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -42,10 +44,9 @@ export default function PromptBreakdown({
         <div
           className={[
             "rounded-2xl border border-neutral-100 bg-white p-4 font-mono text-sm leading-7 transition-all",
-            expanded
-              ? "h-auto"
-              : "h-full max-h-[220px] overflow-hidden",
+            expanded ? "h-auto" : "h-full overflow-hidden",
           ].join(" ")}
+          style={expanded ? undefined : { maxHeight: collapsedMaxHeight }}
         >
           {parts.map((part, i) => {
             const match = part.match(/^\{(.+)\}$/);
