@@ -1793,5 +1793,28 @@
         ]
       }
     }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Carte de Profil Kawaii",
+    "description": "Générez une carte de profil de personnage kawaii avec nom, âge, genre et thème. Mise en page UI de smartphone avec statistiques, illustration plein corps et autocollants décoratifs.",
+    "title": "Prompt Nano Banana : Générateur de Cartes de Profil Kawaii | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une carte de profil de personnage kawaii en utilisant les prompts Nano Banana : interface smartphone verticale avec panneau d'informations, illustration plein corps et autocollants décoratifs en aquarelle pastel.",
+        "who": "Idéal pour les créateurs de personnages, designers d'OC, fans d'art kawaii et créateurs de contenu sur les réseaux sociaux.",
+        "how": [
+          "Entrez le nom, l'âge et le genre du personnage.",
+          "Spécifiez le thème ou le style du personnage (ex. Artiste, Aventurier, Érudit).",
+          "Le modèle génère une carte verticale avec cadre UI, statistiques et illustration.",
+          "Des autocollants décoratifs assortis au thème sont ajoutés automatiquement.",
+          "Vous pouvez demander des changements de palette de couleurs après la génération."
+        ],
+        "prompts": [
+          "Génère une carte de profil kawaii pour 'Luna', 19 ans, féminin, thème Artiste — couleurs pastel, style aquarelle cartoon, UI smartphone avec barres de statistiques.",
+          "Crée une carte de profil kawaii pour 'Max', 16 ans, masculin, thème Aventurier — style cartoon chaleureux, panneau de personnalité, illustration complète avec bulle de dialogue.",
+          "Conçois une carte kawaii pour 'Zoe', 22 ans, féminin, thème Érudite — palette pastel chaleureuse, UI style app avec statistiques, autocollants fantaisistes, format vertical 4K."
+        ]
+      }
+    }
   }
 }

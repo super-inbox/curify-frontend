@@ -1793,5 +1793,28 @@
         ]
       }
     }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Kawaii Karakter Profil Kartı",
+    "description": "İsim, yaş, cinsiyet ve tema ile kawaii tarzı karakter profil kartı oluşturun. Akıllı telefon UI düzeni, karakter istatistikleri, tam boy illüstrasyon ve dekoratif çıkartmalar içerir.",
+    "title": "Nano Banana Prompt: Kawaii Karakter Profil Kartı Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana promptları kullanarak sevimli kawaii karakter profil kartları oluşturur: dikey akıllı telefon UI stili, karakter bilgi paneli, tam boy illüstrasyon ve pastel suluboya karikatür tarzında dekoratif çıkartmalar.",
+        "who": "Karakter yaratıcıları, OC tasarımcıları, kawaii sanat hayranları ve sosyal medya içerik üreticileri için idealdir.",
+        "how": [
+          "Karakterin adını, yaşını ve cinsiyetini girin.",
+          "Karakterin temasını veya stilini belirtin (ör. Sanatçı, Maceracı, Bilgin).",
+          "Model UI çerçevesi, istatistikler ve illüstrasyon içeren dikey kart oluşturur.",
+          "Karakterin temasına uygun dekoratif çıkartmalar otomatik eklenir.",
+          "Oluşturma sonrası renk paleti veya kişilik özellikleri değiştirilebilir."
+        ],
+        "prompts": [
+          "Kawaii karakter profil kartı oluştur: Luna, 19 yaş, kadın, Sanatçı teması — pastel renkler, suluboya karikatür stili, istatistik çubukları ile akıllı telefon UI.",
+          "Kawaii profil kartı oluştur: Max, 16 yaş, erkek, Maceracı teması — sevimli karikatür stili, kişilik paneli, konuşma balonu ile tam boy illüstrasyon.",
+          "Kawaii kart tasarla: Zoe, 22 yaş, kadın, Bilgin teması — sıcak pastel palet, istatistikli uygulama UI, fantastik çıkartmalar, 4K dikey format."
+        ]
+      }
+    }
   }
 }

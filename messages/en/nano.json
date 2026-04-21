@@ -1857,5 +1857,28 @@
         ]
       }
     }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Kawaii Character Profile Card",
+    "description": "Generate a cute kawaii-style character profile card with name, age, gender, and theme. Features a smartphone UI layout with character stats, full-body illustration, and whimsical stickers.",
+    "title": "Nano Banana Prompt: Kawaii Character Profile Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a cozy kawaii character profile card using Nano Banana prompts: a vertical smartphone-style UI with a character info panel (profile picture, name, age, gender, personality traits), a full-body character illustration in theme-appropriate outfit, and decorative stickers and doodles — all in warm pastel watercolor cartoon art.",
+        "who": "Perfect for character creators, OC (original character) designers, kawaii art fans, social media content creators, and anyone who wants to visualize a character with a fun profile card format.",
+        "how": [
+          "Enter the character's name, age, and gender.",
+          "Specify the character's theme or style (e.g. Artist, Adventurer, Scholar, Athlete).",
+          "The model generates a vertical profile card with a UI frame, character stats, and matching full-body illustration.",
+          "Decorative stickers and icons are added to match the character's theme.",
+          "You can request color palette changes or additional personality traits after generation."
+        ],
+        "prompts": [
+          "Generate a kawaii character profile card for 'Luna', age 19, Female, Artist theme — pastel colors, watercolor cartoon style, smartphone UI layout with stat bars and full-body illustration.",
+          "Create a kawaii character profile card for 'Max', age 16, Male, Adventurer theme — cozy cartoon style, profile panel with personality traits, full-body character with speech bubble.",
+          "Design a kawaii profile card for 'Zoe', age 22, Female, Scholar theme — warm pastel palette, app-style UI with stats, whimsical sticker decorations, 4K vertical format."
+        ]
+      }
+    }
   }
 }
