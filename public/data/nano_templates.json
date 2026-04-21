@@ -41,7 +41,8 @@
     ],
     "rank_score": 80,
     "batch": true,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-evolution",
@@ -447,7 +448,8 @@
       "isometric"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-education",
@@ -491,7 +493,8 @@
     "use_cases": [
       "for-marketers"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-hot-event-analysis",
@@ -614,7 +617,8 @@
       "culture"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-education-card",
@@ -659,7 +663,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-costume",
@@ -703,7 +708,8 @@
     ],
     "rank_score": 80,
     "batch": true,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-book-series",
@@ -748,7 +754,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-word-scene",
@@ -877,7 +884,8 @@
       "culture"
     ],
     "rank_score": 1,
-    "base_rank_score": 1
+    "base_rank_score": 1,
+    "allow_generation": true
   },
   {
     "id": "template-dog-breed-retro-infographic",
@@ -1096,7 +1104,8 @@
       "culture"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-fruit",
@@ -1249,7 +1258,8 @@
     "use_cases": [
       "for-creators"
     ],
-    "base_rank_score": 1
+    "base_rank_score": 1,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-animal",
@@ -1432,7 +1442,8 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -1588,7 +1599,8 @@
       "culture"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-species-science",
@@ -2803,7 +2815,8 @@
       "for-parents",
       "for-esl-learners"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-custom-character-card",
@@ -3486,7 +3499,8 @@
       "ink"
     ],
     "base_rank_score": 70,
-    "rank_score": 70
+    "rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-friends-character-mbti",
@@ -3725,7 +3739,8 @@
     "topics": [
       "lifestyle",
       "fitness"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-equipment-muscle-guide",
@@ -4120,7 +4135,8 @@
       "learning"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-fandom-character-grid-poster",
@@ -4149,7 +4165,8 @@
       "film",
       "cartoon"
     ],
-    "rank_score": 70
+    "rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-cartoon-character-profile-card-kawaii-style",
@@ -4242,6 +4259,7 @@
       "cartoon",
       "kawaii"
     ],
-    "rank_score": 70
+    "rank_score": 70,
+    "allow_generation": true
   }
 ]

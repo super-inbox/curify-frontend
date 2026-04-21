@@ -62,10 +62,10 @@ export function NanoInspirationCard({
     Math.floor(seedNum * 0.7) % 50 + 20
   );
 
-  const trackCardClick = useClickTracking(card.id, "nano_inspiration", "list");
-  const trackCopy = useCopyTracking(card.id, "nano_inspiration", "list");
-  const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
-  const trackSave = useSaveTracking(card.id, "nano_inspiration", "list");
+  const trackCardClick = useClickTracking(card.id, "nano_inspiration_template_card", "list");
+  const trackCopy = useCopyTracking(card.id, "nano_inspiration_template_card", "list");
+  const trackShare = useShareTracking(card.id, "nano_inspiration_template_card", "list");
+  const trackSave = useSaveTracking(card.id, "nano_inspiration_template_card", "list");
 
   const canonicalUrl = makeNanoTemplateUrl(card.template_id, pageLocale);
 

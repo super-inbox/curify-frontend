@@ -1770,5 +1770,28 @@
     "category": "Mapa Tematico Nacional",
     "description": "Genera un mapa infografico minimalista para cualquier pais y tema — desde Hecho en China hasta Marcas de Alemania, con logos y superposiciones de ubicacion.",
     "title": "Infografia de Mapa Tematico Nacional | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Póster de Cuadrícula de Personajes de Fandom",
+    "description": "Genera un póster vertical 4K en cuadrícula 3×3 con 9 personajes icónicos de cualquier fandom — anime, fantasía, superhéroes, videojuegos o series de TV.",
+    "title": "Nano Banana Prompt: Generador de Póster de Cuadrícula de Fandom | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster premium de cuadrícula de personajes de fandom: 9 personajes distintos en diseño 3×3, cada uno en estilo retrato cinematográfico con escenarios icónicos, nombre del personaje y etiqueta de serie, en 4K ultra HD.",
+        "who": "Ideal para creadores de contenido de fandom, entusiastas del anime y la cultura pop, diseñadores de redes sociales y páginas de fans.",
+        "how": [
+          "Especifica el nombre del fandom o tema (ej. Naruto, Marvel, Harry Potter).",
+          "El modelo seleccionará 9 personajes icónicos y los renderizará en estilo retrato consistente.",
+          "Cada personaje aparece con sus accesorios característicos y etiqueta de nombre en negrita.",
+          "El estilo se adapta al fandom — anime para temáticas de anime, realista para franquicias de acción real.",
+          "Después de la generación, puedes solicitar sustituciones de personajes o ajustes de estilo."
+        ],
+        "prompts": [
+          "Genera un 'Póster de Personajes de Naruto' con 9 personajes icónicos en cuadrícula 3×3, estilo retrato anime cinematográfico, fondo oscuro temático, 4K vertical.",
+          "Crea un 'Póster de Superhéroes Marvel' con 9 Vengadores en cuadrícula 3×3, estilo retrato realista, tipografía en negrita, fondo oscuro, 4K vertical.",
+          "Genera una 'Cuadrícula de Campeones de League of Legends' con 9 campeones populares, arte retrato fiel al juego, etiquetas de nombre y rol, fondo oscuro, 4K vertical."
+        ]
+      }
+    }
   }
 }

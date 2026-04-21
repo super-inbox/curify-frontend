@@ -1834,5 +1834,28 @@
     "category": "National Theme Map",
     "description": "Generate a minimalist infographic map for any country and theme — from Made in China to Brands of Germany, with logos and location overlays.",
     "title": "National Theme Map Infographic | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Fandom Character Grid Poster",
+    "description": "Generate a 4K vertical 3×3 grid poster featuring 9 iconic characters from any fandom — anime, fantasy, superhero, video game, or TV show — with cinematic portrait style and bold typography.",
+    "title": "Nano Banana Prompt: Fandom Character Grid Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium fandom character grid poster using Nano Banana prompts: a 3×3 layout of 9 distinct characters from a chosen universe, each rendered in cinematic portrait style with their iconic settings, signature props, character name, and series label — in 4K ultra HD.",
+        "who": "Suitable for fandom content creators, anime and pop culture enthusiasts, social media designers, fan pages, and users creating shareable character showcase visuals for any series, franchise, or game universe.",
+        "how": [
+          "Specify the fandom or theme name (e.g. Naruto, Marvel, Harry Potter, League of Legends).",
+          "The model will select 9 iconic characters from that universe and render each in a consistent portrait style.",
+          "Each character appears with their signature props or iconic setting and bold name/series label below.",
+          "The style adapts to the fandom — anime-style for anime themes, realistic for live-action franchises.",
+          "After generation, you can request specific character substitutions or style adjustments while keeping the grid layout."
+        ],
+        "prompts": [
+          "Generate a 'Naruto Characters Grid Poster' with 9 iconic Naruto characters in a 3×3 layout, each in cinematic anime portrait style with signature weapons and bold name labels, dark themed background, 4K vertical.",
+          "Create a 'Marvel Superheroes Grid Poster' featuring 9 Avengers characters in a 3×3 grid, realistic portrait style, each with iconic costume and power effects, bold typography, dark background, 4K vertical.",
+          "Generate a 'League of Legends Champions Grid' with 9 popular champions in a 3×3 poster layout, game-accurate portrait art, champion name and role labels, atmospheric dark background, 4K vertical."
+        ]
+      }
+    }
   }
 }

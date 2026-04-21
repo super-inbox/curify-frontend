@@ -257,7 +257,7 @@ export default async function NanoExampleDetailPage({
             className="pt-2"
             tracking={{
               contentId: `${templateId}:${example.id}`,
-              contentType: "nano_inspiration",
+              contentType: "nano_inspiration_reproduce_section",
               viewMode: "cards",
             }}
             remix={{

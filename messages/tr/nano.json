@@ -1770,5 +1770,28 @@
     "category": "Ulusal Tema Haritasi",
     "description": "Her ulke ve tema icin minimalist infografik harita olusturun — Cin Mallarindan Almanya Markalarina kadar, logolar ve konum katlanlariyla.",
     "title": "Ulusal Tema Haritasi Infografigi | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Fandom Karakter Izgara Posteri",
+    "description": "Herhangi bir fandomdan 9 ikonik karakteri içeren 4K dikey 3×3 ızgara posteri oluşturun — anime, fantezi, süper kahraman, video oyunu veya TV dizisi.",
+    "title": "Nano Banana Prompt: Fandom Karakter Izgara Posteri Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana promptları kullanarak premium fandom karakter ızgara posteri oluşturur: seçilen evrenden 9 farklı karakter, 3×3 düzeninde sinematik portre stiliyle ikonik ortamlar, karakter adı ve seri etiketi ile 4K ultra HD kalitesinde.",
+        "who": "Fandom içerik üreticileri, anime ve pop kültür meraklıları, sosyal medya tasarımcıları ve hayran sayfası operatörleri için uygundur.",
+        "how": [
+          "Fandom veya tema adını belirtin (örn. Naruto, Marvel, Harry Potter).",
+          "Model, o evrenden 9 ikonik karakter seçer ve tutarlı portre stilinde render eder.",
+          "Her karakter imza aksesuarları ile görünür ve altında kalın isim/seri etiketi bulunur.",
+          "Stil fandoma göre uyarlanır — anime temalar için anime stili, gerçek aksiyon için gerçekçi stil.",
+          "Oluşturma sonrası karakter değişimi veya stil ayarlamaları talep edebilirsiniz."
+        ],
+        "prompts": [
+          "9 ikonik Naruto karakteriyle 3×3 düzeninde 'Naruto Karakter Izgara Posteri', sinematik anime portre stili, koyu temalı arka plan, 4K dikey oluşturun.",
+          "9 Avengers karakteriyle 3×3 ızgarada 'Marvel Süper Kahraman Izgara Posteri', gerçekçi portre stili, kalın tipografi, koyu arka plan, 4K dikey oluşturun.",
+          "9 popüler şampiyonla 'League of Legends Şampiyon Izgarası', oyuna sadık portre sanatı, şampiyon adı ve rol etiketleri, 4K dikey oluşturun."
+        ]
+      }
+    }
   }
 }
