@@ -4261,5 +4261,75 @@
     ],
     "rank_score": 70,
     "allow_generation": true
-  }
+  },
+  {
+    "id": "template-figure-principles-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Famous Figure Principles Infographic Designer) You are a professional educational infographic designer. Based on the user-specified {famous_figure}, generate a clean, structured infographic poster about their core principles or key concepts, matching the watercolor portrait style of the reference images. Layout: 1. Large bold title \"{famous_figure.upper()}'S [THEME]\" at the top, with Curify watermark at top left. 2. Left/Top section: Watercolor-style portrait of {famous_figure} with their signature object. 3. Grid layout of key principles/concepts, each with a simple line icon, title, description, and bullet points. Style: Clean minimalist layout, white background, professional typography, watercolor illustration style, high readability, vertical format, 4K ultra HD, direct image generation. Subject: {famous_figure} Core Principles Infographic.",
+            "parameters": [
+                {
+                    "name": "famous_figure",
+                    "label": "Famous Figure Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Albert Einstein",
+                        "Leonardo da Vinci",
+                        "Marie Curie",
+                        "William Shakespeare",
+                        "Steve Jobs",
+                        "Sun Tzu"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-figure-principles-infographic-albert-einstein-prev.jpg"
+},
+  {
+    "id": "template-book-recommendation-grid-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Book Recommendation Poster Designer) You are a professional book list infographic designer. Based on the user-specified {book_category}, generate a clean, structured 4×4 grid book recommendation poster, matching the reference style. Layout: 1. Large bold title \"{book_category.upper()}\" at the top, with Curify watermark at top left. 2. Four category tabs at the top (e.g., subgenres). 3. 4×4 grid of 16 book cards, each with book title, author, short description, and small book cover illustration. 4. Numbered blue badges for each book. Style: Clean minimalist design, white background, clear typography, subtle icons, vertical format, 4K ultra HD, direct image generation. Subject: {book_category} Recommended Books Grid Poster.",
+            "parameters": [
+                {
+                    "name": "book_category",
+                    "label": "Book Category",
+                    "type": "text",
+                    "placeholder": [
+                        "Science Fiction Classics",
+                        "Self-Improvement",
+                        "Fantasy Adventures",
+                        "Historical Fiction",
+                        "Mystery & Thriller"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-book-recommendation-grid-poster-fantasy-adventures-prev.jpg"
+},
+  {
+    "id": "template-organ-health-food-guide-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Organ Health Food Guide Infographic Designer) You are a professional health infographic designer. Based on the user-specified {organ}, generate a vertical, split-screen food guide poster for {organ} health, matching the warm, illustrated style of the reference images. Layout: 1. Header: Banner title \"{organ.upper()} HEALTH & FUNCTION\" with an illustration of the organ. Curify watermark at top left. 2. Split Layout: Left side labeled \"{organ.upper()}-STRAIN FOODS\" (red label) showing foods that harm {organ} with icons. Right side labeled \"{organ.upper()}-SUPPORT FOODS\" (green label) showing foods that benefit {organ} with icons. 3. Bottom: Two cartoon mascots of {organ}, one showing negative effects (sad/stressed) and one showing positive effects (happy/strong). Style: Vintage parchment background, warm illustrated icons, clear labels, vertical format, 4K ultra HD, direct image generation. Subject: {organ} Health Food Guide.",
+            "parameters": [
+                {
+                    "name": "organ",
+                    "label": "Target Organ Name",
+                    "type": "text",
+                    "placeholder": [
+                        "Brain",
+                        "Heart",
+                        "Liver",
+                        "Lung",
+                        "Stomach"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-organ-health-food-guide-infographic-stomach-prev.jpg"
+}
 ]
