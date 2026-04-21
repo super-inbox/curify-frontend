@@ -1770,5 +1770,28 @@
     "category": "Carte Thematique Nationale",
     "description": "Generez une carte infographique minimaliste pour tout pays et theme — de Fabrique en Chine aux Marques d'Allemagne, avec logos et superpositions de localisation.",
     "title": "Infographie de Carte Thematique Nationale | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Poster Grille de Personnages Fandom",
+    "description": "Générez un poster vertical 4K en grille 3×3 avec 9 personnages iconiques de n'importe quel fandom — anime, fantasy, super-héros, jeux vidéo ou séries TV.",
+    "title": "Nano Banana Prompt: Générateur de Poster Grille Fandom | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée un poster premium de grille de personnages fandom : 9 personnages distincts en disposition 3×3, chacun dans un style portrait cinématographique avec décors iconiques, nom du personnage et étiquette de série, en 4K ultra HD.",
+        "who": "Idéal pour les créateurs de contenu fandom, les passionnés d'anime et de culture pop, les designers de réseaux sociaux et les pages de fans.",
+        "how": [
+          "Précisez le nom du fandom ou thème (ex. Naruto, Marvel, Harry Potter).",
+          "Le modèle sélectionnera 9 personnages iconiques et les rendra dans un style portrait cohérent.",
+          "Chaque personnage apparaît avec ses accessoires signature et une étiquette de nom en gras.",
+          "Le style s'adapte au fandom — anime pour les thèmes anime, réaliste pour les franchises en prises de vues réelles.",
+          "Après génération, vous pouvez demander des substitutions de personnages ou des ajustements de style."
+        ],
+        "prompts": [
+          "Génère un 'Poster Personnages Naruto' avec 9 personnages iconiques en grille 3×3, style portrait anime cinématographique, fond sombre, 4K vertical.",
+          "Crée un 'Poster Super-Héros Marvel' avec 9 Avengers en grille 3×3, style portrait réaliste, typographie en gras, fond sombre, 4K vertical.",
+          "Génère une 'Grille de Champions League of Legends' avec 9 champions populaires, art portrait fidèle au jeu, étiquettes nom et rôle, fond sombre atmosphérique, 4K vertical."
+        ]
+      }
+    }
   }
 }

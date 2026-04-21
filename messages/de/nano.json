@@ -1770,5 +1770,28 @@
     "category": "Nationales Thema Karte",
     "description": "Erstelle eine minimalistische Infografikkarte fuer jedes Land und Thema — von Made in China bis Marken Deutschlands, mit Logos und Standortmarkierungen.",
     "title": "Nationales Thema Karten-Infografik | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Fandom-Charaktergitter-Poster",
+    "description": "Erstellen Sie ein vertikales 4K 3×3-Raster-Poster mit 9 ikonischen Charakteren aus jedem Fandom — Anime, Fantasy, Superheldenfilm, Videospiel oder TV-Serie.",
+    "title": "Nano Banana Prompt: Fandom-Charaktergitter-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein Premium-Fandom-Charaktergitter-Poster: 9 verschiedene Charaktere im 3×3-Layout, jeder im kinematografischen Porträtstil mit ikonischen Settings, Signatur-Requisiten, Charakternamen und Serienbezeichnung, in 4K Ultra HD.",
+        "who": "Geeignet für Fandom-Content-Creator, Anime- und Popkultur-Enthusiasten, Social-Media-Designer und Fan-Seiten.",
+        "how": [
+          "Geben Sie den Fandom- oder Themenname an (z. B. Naruto, Marvel, Harry Potter).",
+          "Das Modell wählt 9 ikonische Charaktere aus und rendert sie in einem konsistenten Porträtstil.",
+          "Jeder Charakter erscheint mit Signatur-Requisiten und fettem Namen/Serientext.",
+          "Der Stil passt sich dem Fandom an — Anime für Anime-Themen, realistisch für Real-Life-Franchises.",
+          "Nach der Generierung können Sie Charaktersubstitutionen oder Stilanpassungen anfordern."
+        ],
+        "prompts": [
+          "Erstelle ein 'Naruto-Charaktergitter-Poster' mit 9 ikonischen Naruto-Charakteren im 3×3-Layout, kinematografischer Anime-Porträtstil, dunkler Hintergrund, 4K vertikal.",
+          "Erstelle ein 'Marvel-Superheldenraster-Poster' mit 9 Avengers im 3×3-Raster, realistischer Porträtstil, fette Typografie, dunkler Hintergrund, 4K vertikal.",
+          "Erstelle ein 'League of Legends Champions Grid' mit 9 populären Champions, spielgetreue Porträtkunst, Champion-Namen und Rollenbeschriftungen, atmosphärischer dunkler Hintergrund, 4K vertikal."
+        ]
+      }
+    }
   }
 }
