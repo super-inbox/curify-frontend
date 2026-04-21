@@ -84,7 +84,8 @@
     "og_image": "/images/nano_insp_preview/template-evolution-zh-currency-forms-prev.jpg",
     "topics": [
       "learning",
-      "science"
+      "science",
+      "isometric"
     ],
     "rank_score": 80,
     "base_rank_score": 80,
@@ -146,7 +147,8 @@
     "legacy_id": "template-travel-zh",
     "topics": [
       "lifestyle",
-      "travel"
+      "travel",
+      "cartoon"
     ],
     "rank_score": 80,
     "batch": true,
@@ -191,7 +193,8 @@
       "architecture"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-species",
@@ -232,7 +235,8 @@
       "science"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-character",
@@ -438,7 +442,9 @@
       "lifestyle",
       "science",
       "travel",
-      "city"
+      "city",
+      "cartoon",
+      "isometric"
     ],
     "rank_score": 80,
     "base_rank_score": 80
@@ -478,7 +484,8 @@
     "og_image": "/images/nano_insp_preview/template-education-zh-conservation-of-energy-prev.jpg",
     "legacy_id": "template-education-zh",
     "topics": [
-      "learning"
+      "learning",
+      "cartoon"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -644,7 +651,8 @@
     "og_image": "/images/nano_insp_preview/template-education-card-zh-resource-environmental-carrying-capacity-prev.jpg",
     "topics": [
       "learning",
-      "science"
+      "science",
+      "cartoon"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -1124,7 +1132,8 @@
       "food"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-what-if-history",
@@ -1177,10 +1186,12 @@
     "og_image": "/images/nano_insp_preview/template-what-if-history-zh-ming-renaissance-prev.jpg",
     "topics": [
       "learning",
-      "history"
+      "history",
+      "ink"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-character-comparison",
@@ -1295,7 +1306,8 @@
       "groups"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-battle",
@@ -1367,7 +1379,8 @@
     "topics": [
       "character",
       "gaming",
-      "comparison"
+      "comparison",
+      "ink"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -1528,7 +1541,8 @@
     "topics": [
       "character",
       "mbti",
-      "comparison"
+      "comparison",
+      "cartoon"
     ],
     "rank_score": 80,
     "base_rank_score": 80
@@ -1621,7 +1635,8 @@
       "science"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-city-miniature",
@@ -1721,7 +1736,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-constellation-steampunk",
@@ -1863,7 +1879,8 @@
     "topics": [
       "character",
       "mbti",
-      "groups"
+      "groups",
+      "cartoon"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -1898,10 +1915,12 @@
     "topics": [
       "character",
       "mbti",
-      "film"
+      "film",
+      "isometric"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-nba",
@@ -1930,7 +1949,8 @@
       "sports"
     ],
     "rank_score": 100,
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -1955,14 +1975,17 @@
     "og_image": "/images/nano_insp_preview/template-mbti-siliconvalley-en-jobs-prev.jpg",
     "topics": [
       "character",
-      "mbti"
+      "mbti",
+      "ai",
+      "isometric"
     ],
     "rank_score": 80,
     "use_cases": [
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-breakingbad",
@@ -1988,10 +2011,12 @@
     "topics": [
       "character",
       "mbti",
-      "film"
+      "film",
+      "isometric"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-sports-battle",
@@ -2067,7 +2092,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 8
+    "base_rank_score": 8,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-yellowstone",
@@ -2096,7 +2122,8 @@
       "film"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-ghibli",
@@ -2129,7 +2156,8 @@
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 100
+    "base_rank_score": 100,
+    "allow_generation": true
   },
   {
     "id": "template-vocabulary",
@@ -2194,7 +2222,8 @@
     "og_image": "/images/nano_insp_preview/template-vocabulary-banana-ripeness-prev.jpg",
     "topics": [
       "language",
-      "vocabulary"
+      "vocabulary",
+      "cartoon"
     ],
     "batch": true,
     "rank_score": 80,
@@ -2341,7 +2370,8 @@
     "og_image": "/images/nano_insp_preview/template-english-top5-phrases-greetings-prev.jpg",
     "topics": [
       "language",
-      "expressions"
+      "expressions",
+      "cartoon"
     ],
     "batch": true,
     "rank_score": 80,
@@ -2411,7 +2441,8 @@
     },
     "og_image": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg",
     "topics": [
-      "language"
+      "language",
+      "cartoon"
     ],
     "batch": true,
     "rank_score": 80,
@@ -2484,7 +2515,8 @@
     "og_image": "/images/nano_insp_preview/template-english-dialogue-scene-shopping-prev.jpg",
     "topics": [
       "language",
-      "dialogue"
+      "dialogue",
+      "cartoon"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -2516,7 +2548,8 @@
     "og_image": "/images/nano_insp_preview/template-movie-poster-la-la-land-prev.jpg",
     "topics": [
       "lifestyle",
-      "film"
+      "film",
+      "cartoon"
     ],
     "rank_score": 80,
     "base_rank_score": 80,
@@ -2556,7 +2589,9 @@
     "og_image": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg",
     "topics": [
       "lifestyle",
-      "travel"
+      "travel",
+      "cartoon",
+      "kawaii"
     ],
     "rank_score": 80,
     "base_rank_score": 80
@@ -2672,7 +2707,9 @@
     "og_image": "/images/nano_insp_preview/template-fat-loss-plan--male-extreme-6kg-prev.jpg",
     "topics": [
       "lifestyle",
-      "fitness"
+      "fitness",
+      "cartoon",
+      "kawaii"
     ],
     "rank_score": 1,
     "base_rank_score": 1
@@ -2726,7 +2763,8 @@
     "og_image": "/images/nano_insp_preview/template-child-hobby-skill--6yo-boy-prev.jpg",
     "topics": [
       "learning",
-      "lifestyle"
+      "cartoon",
+      "kawaii"
     ],
     "rank_score": 2,
     "use_cases": [
@@ -2883,7 +2921,8 @@
       "mbti",
       "film"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-children-english-vocab-spelling",
@@ -2911,12 +2950,15 @@
     "rank_score": 80,
     "topics": [
       "language",
-      "vocabulary"
+      "vocabulary",
+      "cartoon",
+      "kawaii"
     ],
     "use_cases": [
       "for-parents"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-daily-essentials-learning-card",
@@ -2944,9 +2986,12 @@
     "rank_score": 80,
     "topics": [
       "language",
-      "vocabulary"
+      "vocabulary",
+      "cartoon",
+      "kawaii"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-native-english-expressions",
@@ -2974,9 +3019,12 @@
     "topics": [
       "language",
       "expressions",
-      "language-english"
+      "language-english",
+      "cartoon",
+      "kawaii"
     ],
-    "base_rank_score": 50
+    "base_rank_score": 50,
+    "allow_generation": true
   },
   {
     "id": "template-theme-overview-poster",
@@ -3034,7 +3082,8 @@
     "topics": [
       "language",
       "food",
-      "vocabulary"
+      "vocabulary",
+      "photorealistic"
     ],
     "base_rank_score": 100,
     "allow_generation": true
@@ -3064,7 +3113,8 @@
     "topics": [
       "design"
     ],
-    "base_rank_score": 50
+    "base_rank_score": 50,
+    "allow_generation": true
   },
   {
     "id": "template-varieties-food-poster",
@@ -3093,7 +3143,8 @@
     "topics": [
       "lifestyle",
       "food",
-      "product"
+      "product",
+      "photorealistic"
     ],
     "base_rank_score": 100,
     "allow_generation": true
@@ -3125,7 +3176,9 @@
     "base_rank_score": 90,
     "topics": [
       "lifestyle",
-      "fitness"
+      "fitness",
+      "cartoon",
+      "kawaii"
     ],
     "allow_generation": true
   },
@@ -3157,7 +3210,9 @@
     "topics": [
       "language",
       "vocabulary",
-      "language-english"
+      "language-english",
+      "cartoon",
+      "kawaii"
     ],
     "allow_generation": true
   },
@@ -3189,8 +3244,11 @@
     "base_rank_score": 70,
     "topics": [
       "character",
-      "mbti"
-    ]
+      "mbti",
+      "cartoon",
+      "kawaii"
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-clothing-evolution-poster",
@@ -3218,7 +3276,9 @@
     "base_rank_score": 90,
     "topics": [
       "learning",
-      "culture"
+      "culture",
+      "cartoon",
+      "kawaii"
     ],
     "allow_generation": true
   },
@@ -3260,7 +3320,8 @@
     "base_rank_score": 90,
     "topics": [
       "interior",
-      "design"
+      "design",
+      "photorealistic"
     ],
     "requires_image_upload": true
   },
@@ -3291,7 +3352,8 @@
     "base_rank_score": 90,
     "topics": [
       "interior",
-      "design"
+      "design",
+      "photorealistic"
     ],
     "requires_image_upload": true,
     "allow_generation": true
@@ -3323,8 +3385,11 @@
     "topics": [
       "language",
       "vocabulary",
-      "language-english"
-    ]
+      "language-english",
+      "cartoon",
+      "kawaii"
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-nostalgic-first-item-poster",
@@ -3353,10 +3418,12 @@
     "og_image": "/images/nano_insp_preview/template-nostalgic-first-item-poster-camera-prev.jpg",
     "topics": [
       "lifestyle",
-      "nostalgia"
+      "nostalgia",
+      "photorealistic"
     ],
     "base_rank_score": 80,
-    "rank_score": 80
+    "rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-tool-ai-category",
@@ -3415,7 +3482,8 @@
     "og_image": "/images/nano_insp_preview/template-chinese-classic-character-mbti-guan-yu-prev.jpg",
     "topics": [
       "mbti",
-      "culture"
+      "culture",
+      "ink"
     ],
     "base_rank_score": 70,
     "rank_score": 70
@@ -3466,7 +3534,9 @@
     "og_image": "/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg",
     "topics": [
       "mbti",
-      "film"
+      "film",
+      "cartoon",
+      "kawaii"
     ],
     "base_rank_score": 90,
     "rank_score": 90
@@ -3493,7 +3563,8 @@
     "og_image": "/images/nano_insp_preview/template-poetry-ink-wash-illustration-river-snow-prev.jpg",
     "topics": [
       "culture",
-      "design"
+      "design",
+      "ink"
     ],
     "base_rank_score": 90,
     "rank_score": 90,
@@ -3522,7 +3593,8 @@
     "og_image": "/images/nano_insp_preview/template-financial-habit-infographic-poster-debt-habits-part-1-prev.jpg",
     "topics": [
       "finance",
-      "lifestyle"
+      "lifestyle",
+      "cartoon"
     ],
     "base_rank_score": 90,
     "rank_score": 90,
@@ -3553,7 +3625,8 @@
     "og_image": "/images/nano_insp_preview/template-bilingual-object-structure-labeling-apple-prev.jpg",
     "topics": [
       "language",
-      "vocabulary"
+      "vocabulary",
+      "photorealistic"
     ],
     "base_rank_score": 90,
     "rank_score": 90,
@@ -3584,11 +3657,13 @@
     "og_image": "/images/nano_insp_preview/template-mood-board--interior-designgenerator-living-room-prev.jpg",
     "topics": [
       "design",
-      "interior"
+      "interior",
+      "photorealistic"
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-fashion-before-after-outfit-annotation-card",
@@ -3618,7 +3693,8 @@
     ],
     "rank_score": 90,
     "base_rank_score": 90,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-pain-relief-infographic",
@@ -3678,7 +3754,8 @@
     "topics": [
       "lifestyle",
       "fitness"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-kids-vocabulary-poster",
@@ -3709,7 +3786,8 @@
     "topics": [
       "language",
       "vocabulary"
-    ]
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-beauty-step-by-step-guide",
@@ -3737,7 +3815,433 @@
     "base_rank_score": 80,
     "topics": [
       "lifestyle",
-      "fashion"
-    ]
+      "fashion",
+      "cartoon"
+    ],
+    "allow_generation": true
+  },
+  {
+    "id": "template-3d-region-landmark-map",
+    "locales": {
+      "en": {
+        "base_prompt": "（3D Relief Map Illustrator）You are a professional 3D relief map illustrator. Based on the user-specified {region_name}, generate a high-quality, photorealistic 3D topographical map of the region, matching the detailed, vibrant style of the reference images. Layout: 1. Map Base: Accurate 3D relief topography with realistic elevation shading, detailed rivers, lakes, and oceans, natural color gradients. 2. Landmark Overlays: Small detailed 3D models of major landmarks placed at correct locations, clear bold text labels for landmarks, cities, regions, and bodies of water. Style: Photorealistic high-resolution 3D map art, natural lighting, clean labeling, vertical format, 4K ultra HD, direct image generation. Subject: 3D Relief Topographical Map of {region_name} with Landmarks.",
+        "parameters": [
+          {
+            "name": "region_name",
+            "label": "Region/Country Name",
+            "type": "text",
+            "placeholder": [
+              "China",
+              "France",
+              "Greece",
+              "Japan",
+              "United Kingdom",
+              "United States"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "travel",
+      "architecture",
+      "photorealistic"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
+  },
+  {
+    "id": "template-whimsical-travel-map",
+    "locales": {
+      "en": {
+        "base_prompt": "（Whimsical Travel Map Illustrator）You are a professional travel-themed children's map illustrator. Based on the user-specified {country_name}, generate a vertical, whimsical hand-drawn travel map poster, matching the warm, vintage watercolor style of the reference images. Layout: 1. Header: Scroll banner title \"Explore {country_name}!\", Curify watermark at top left. 2. Map: Hand-drawn map with natural green/blue gradients, labeled cities/regions with text boxes and red pins, cute cartoon illustrations of landmarks, wildlife, and cultural symbols. 3. Decorations: Travel-themed illustrations (plane, camper van, luggage), magnifying glass landmark inset, bottom scroll banner with tagline. Style: Warm vintage watercolor texture, whimsical kid-friendly linework, vertical format, 4K ultra HD, direct image generation. Subject: Whimsical Travel Map of {country_name}.",
+        "parameters": [
+          {
+            "name": "country_name",
+            "label": "Country/Region Name",
+            "type": "text",
+            "placeholder": [
+              "Australia",
+              "France",
+              "Italy",
+              "Spain",
+              "Thailand"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "travel",
+      "cartoon"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
+  },
+  {
+    "id": "template-pop-culture-matching-chart",
+    "locales": {
+      "en": {
+        "base_prompt": "（Pop Culture Matching Chart Designer）You are a professional pop culture-themed zodiac/birth month chart designer. Based on the user-specified {theme_name}, generate a vertical, whimsical character matching chart, matching the clean, playful aesthetic of the reference images. Layout: 1. Header: Bold stylized title \"YOUR {category} IS YOUR {theme_name} MATCH\", Curify watermark at bottom right. 2. Grid: 12-item grid (3×4 or 4×3) with category label, high-quality themed character illustration, and character name. Style: Subtle themed doodles in background, clean playful typography, consistent illustration style, vertical format, 4K ultra HD, direct image generation. Subject: {theme_name} Zodiac/Birth Month Matching Chart.",
+        "parameters": [
+          {
+            "name": "theme_name",
+            "label": "Pop Culture Theme",
+            "type": "text",
+            "placeholder": [
+              "Ghibli",
+              "Pokémon",
+              "Harry Potter",
+              "Disney",
+              "Marvel"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-pop-culture-matching-chart-ghibli-birth-month-seasons-prev.jpg",
+    "topics": [
+      "character",
+      "film"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
+  },
+  {
+    "id": "template-training-muscle-equipment",
+    "locales": {
+      "en": {
+        "base_prompt": "(Training Equipment Guide Poster Designer) You are a professional training equipment guide poster designer. Based on the user-specified {muscle_group}, generate a vertical, anatomical training equipment guide poster, matching the clean, detailed style of the reference images. Layout: 1. Header: Large bold title \"ULTIMATE {muscle_group.upper()} TRAINING\", Curify watermark at top left. 2. Exercise Grid: 12 training movements with equipment in 4×3 grid, each with anatomical illustration of the move, highlighted target muscles, clear equipment and muscle labels, and movement name. Style: Professional anatomical illustration, subtle clean background, clean typography, vertical format, 4K ultra HD, direct image generation. Subject: {muscle_group} Training Equipment Guide Poster.",
+        "parameters": [
+          {
+            "name": "muscle_group",
+            "label": "Target Muscle Group",
+            "type": "text",
+            "placeholder": [
+              "Arm",
+              "Back",
+              "Chest",
+              "Core",
+              "Full Body",
+              "Leg",
+              "Shoulder",
+              "Glute"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-training-muscle-equipment-arm-day-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fitness"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "allow_generation": true
+  },
+  {
+    "id": "template-posture-correctness-comparison",
+    "locales": {
+      "en": {
+        "base_prompt": "(Posture & Form Comparison Illustrator) You are a professional anatomy and movement form guide designer. Based on the user-specified {exercise_posture}, generate a vertical, split-screen correct vs wrong posture comparison poster, matching the clean, detailed anatomical style of the reference images. Layout: 1. Header: Left panel labeled \"Wrong\" in red, right panel labeled \"Correct\" in green, Curify watermark at top left. 2. Split Layout: Left side shows the incorrect form with red arrows and labels pointing to common mistakes and strain points. Right side shows the correct form with green arrows and labels pointing to proper alignment, muscle engagement, and safe mechanics. Style: Professional anatomical muscle illustration, subtle parchment background, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: {exercise_posture} Form Guide - Wrong vs Correct Posture.",
+        "parameters": [
+          {
+            "name": "exercise_posture",
+            "label": "Exercise or Posture Name",
+            "type": "text",
+            "placeholder": [
+              "Running",
+              "Squat",
+              "Lifting",
+              "Sitting",
+              "Push-up",
+              "Standing",
+              "Deadlift"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-posture-correctness-comparison-squat-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fitness"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "allow_generation": true
+  },
+  {
+    "id": "template-personality-choice-quiz-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Personality & Lifestyle Quiz Card Designer) You are a professional quiz card designer. Based on the user-specified {theme} and {gender}, generate a vertical personality/choice quiz poster, matching the clean, high-contrast style of the reference images. Layout: 1. Header: Large bold title \"WHICH {theme.upper()} SUITS YOU?\", with the theme keyword highlighted in orange. Curify watermark at top left. 2. Grid Layout: 6 character options arranged in 2×3 grid, each with a realistic photo-style portrait of a {gender} person in a theme-specific outfit/scenario. 3. Labels: Each option has a rounded label below with its name, using color-coded backgrounds (orange, gray, red). Style: Dark moody background with subtle city/setting details, professional lighting, high contrast text, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Personality Quiz Card for {gender}.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Quiz Theme",
+            "type": "text",
+            "placeholder": [
+              "Career",
+              "Body Type",
+              "Personality",
+              "Hobby",
+              "Style",
+              "Vibe"
+            ]
+          },
+          {
+            "name": "gender",
+            "label": "Subject Gender",
+            "type": "text",
+            "placeholder": [
+              "male",
+              "female"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-personality-choice-quiz-card-female-body-types-prev.jpg",
+    "topics": [
+      "character",
+      "mbti"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70
+  },
+  {
+    "id": "template-lifestyle-info-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Lifestyle & Hobby Info Card Designer) You are a professional infographic designer. Based on the user-specified {topic}, generate a clean, modern horizontal info card, matching the flat, minimalist illustration style of the reference images. Layout: 1. Header: Large bold title \"{topic.upper()} GUIDE\" or \"{topic.upper()} BASICS\" at the top, with a colored accent line below. Curify watermark at bottom right. 2. Three-column layout: Left section for basic info (with icons), center section for main illustration, right section for tips/key details (with icons and text). Style: Flat vector illustration, soft color palette, clean typography, white background, high readability, 4K ultra HD, direct image generation. Subject: {topic} Essential Info Card.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Info Card Topic",
+            "type": "text",
+            "placeholder": [
+              "Coffee Brewing",
+              "Dog Care",
+              "Wine Tasting",
+              "Yoga Practice",
+              "Baking",
+              "Plant Care"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-lifestyle-info-card-coffee-brewing-guide-prev.jpg",
+    "topics": [
+      "lifestyle"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "allow_generation": true
+  },
+  {
+    "id": "template-historical-event-map-illustration",
+    "locales": {
+      "en": {
+        "base_prompt": "(Historical Event Map Illustrator) You are a professional historical infographic designer. Based on the user-specified {historical_event}, generate a vertical, two-part map and scene illustration, matching the watercolor/illustrative style of the reference images. Layout: 1. Top Section: Detailed map showing the event's route, key locations, and directional arrows, with clear labels for cities, regions, and bodies of water. 2. Bottom Section: Vivid, dramatic scene illustration depicting the key moment of the event (battle, march, disaster, etc.). 3. Header/Title: Bold title \"{historical_event.upper()}\" with a subtitle/date, Curify watermark at top left. Style: Warm, illustrative watercolor texture, historically accurate details, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: {historical_event} Illustrated Route & Scene Map.",
+        "parameters": [
+          {
+            "name": "historical_event",
+            "label": "Historical Event Name",
+            "type": "text",
+            "placeholder": [
+              "Alexander's Eastern Campaign",
+              "Exodus from Egypt",
+              "Fall of Constantinople",
+              "Great Fire of Rome",
+              "Hannibal Crossing the Alps",
+              "Eruption of Mount Vesuvius",
+              "Trojan War"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-historical-event-map-illustration-trojan-war-prev.jpg",
+    "topics": [
+      "learning",
+      "history"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70,
+    "allow_generation": true
+  },
+  {
+    "id": "template-national-theme-map-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(National Theme Map Infographic Designer) You are a professional map infographic designer. Based on the user-specified {country} and {theme}, generate a clean, modern infographic map. Layout: 1. Large title \"MADE IN {country.upper()}\" (or \"{theme.upper()} IN {country.upper()}\") at the top, with a subtitle describing the theme. Curify watermark at bottom right. 2. Map Base: Simplified, high-contrast map of {country} in solid yellow/gold, with clear regional borders. 3. Theme Overlays: Logos/icons/text representing {theme} elements placed at their correct locations on the map. 4. Footer: Short note about the theme, plus source information. Style: Minimalist flat design, bold colors, high readability, white text on a solid colored background, horizontal format, 4K ultra HD, direct image generation. Subject: {theme} Map of {country}.",
+        "parameters": [
+          {
+            "name": "country",
+            "label": "Country Name",
+            "type": "text",
+            "placeholder": [
+              "China",
+              "Germany",
+              "India",
+              "Japan",
+              "South Korea",
+              "USA"
+            ]
+          },
+          {
+            "name": "theme",
+            "label": "Infographic Theme",
+            "type": "text",
+            "placeholder": [
+              "Companies",
+              "Brands",
+              "Industries",
+              "Languages",
+              "Cultures",
+              "Foods"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-national-theme-map-infographic-made-in-china-prev.jpg",
+    "topics": [
+      "learning"
+    ],
+    "rank_score": 70,
+    "base_rank_score": 70
+  },
+  {
+    "id": "template-fandom-character-grid-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Fandom Character Grid Poster Designer) You are a professional pop culture character poster designer. Based on the user-specified {theme}, generate a vertical 3×3 grid character poster, matching the clean, high-quality portrait style of the reference images. Layout: 1. Curify watermark at top left. 2. 3×3 grid of 9 distinct characters from the {theme} universe, each in their iconic setting or with signature props. 3. Below each character, bold text showing the character name and their series/fandom name. Style: Consistent, cinematic portrait style, realistic or anime-style based on the theme, dark or themed background matching the fandom, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: Top {theme} Characters Grid Poster.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Fandom/Theme Name",
+            "type": "text",
+            "placeholder": [
+              "Anime",
+              "Fantasy",
+              "Superhero",
+              "Video Game",
+              "TV Show"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg",
+    "topics": [
+      "character",
+      "film",
+      "cartoon"
+    ],
+    "rank_score": 70
+  },
+  {
+    "id": "template-cartoon-character-profile-card-kawaii-style",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kawaii Character Profile Card Designer) You are a professional character profile card illustrator. Based on the user-specified {name}, {age}, {gender}, and {theme}, generate a vertical, app-style character profile card, matching the cozy, cute cartoon style of the reference images. Layout: 1. UI Frame: Smartphone screen layout with status bar, navigation icons, and app-style buttons at the bottom. 2. Left Section: Character info panel with profile picture, name, gender, age, personality traits, and theme-related stats/bar charts. 3. Right Section: Full-body character illustration in theme-appropriate outfit, with a \"Hi!\" speech bubble. 4. Decorative Elements: Stickers, doodles, and small icons matching the character's theme. Style: Warm pastel color palette, cozy watercolor cartoon art, clear typography, whimsical stickers, clean app UI, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Character Profile Card for {name}.",
+        "parameters": [
+          {
+            "name": "name",
+            "label": "Character Name",
+            "type": "text",
+            "placeholder": [
+              "Luna",
+              "Max",
+              "Mia",
+              "Oliver",
+              "Zoe"
+            ]
+          },
+          {
+            "name": "age",
+            "label": "Character Age",
+            "type": "text",
+            "placeholder": [
+              "8",
+              "16",
+              "19",
+              "22",
+              "35"
+            ]
+          },
+          {
+            "name": "gender",
+            "label": "Character Gender",
+            "type": "text",
+            "placeholder": [
+              "Female",
+              "Male"
+            ]
+          },
+          {
+            "name": "theme",
+            "label": "Character Theme/Style",
+            "type": "text",
+            "placeholder": [
+              "Artist",
+              "Adventurer",
+              "Child",
+              "Scholar",
+              "Athlete"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-character-profile-card-kawaii-style-adventurer-max-prev.jpg",
+    "topics": [
+      "character",
+      "cartoon",
+      "kawaii"
+    ],
+    "rank_score": 70
+  },
+  {
+    "id": "template-cute-english-vocabulary-flashcards",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids' English Vocabulary Flashcard Designer) You are a professional children's educational illustrator. Based on the user-specified {theme}, generate a vertical 3×3 grid of 9 vocabulary flashcards, matching the playful, colorful cartoon style of the reference images. Layout: 1. Each flashcard has a colorful border themed to the vocabulary (e.g., fruits, vehicles, weather). 2. Inside each card: - Top: The English word in large bold font, with phonetic transcription below. - Middle: A cheerful, kid-friendly cartoon illustration of the word (with anthropomorphic characters or simple scenes). - Bottom: The Chinese translation and part of speech. 3. Curify watermark at top left. Style: Bright, saturated colors, whimsical cartoon art, clear typography, playful borders, safe and positive for children, vertical format, 4K ultra HD, direct image generation. Subject: {theme} English Vocabulary Flashcards.",
+        "parameters": [
+          {
+            "name": "theme",
+            "label": "Vocabulary Theme",
+            "type": "text",
+            "placeholder": [
+              "Verbs of Action",
+              "Fruits",
+              "Vehicles",
+              "Weather",
+              "Animals",
+              "Colors"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "cartoon",
+      "kawaii"
+    ],
+    "rank_score": 70
   }
 ]

@@ -14,8 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -32,7 +41,7 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: node scripts/update_nano_template_rankscore.cjs
 
-      - name: Commit updated nano_templates.json
+      - name: Commit and push directly to main
         run: |
           if git diff --quiet -- public/data/nano_templates.json; then
             echo "No changes to commit."

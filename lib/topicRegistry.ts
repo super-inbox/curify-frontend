@@ -48,28 +48,30 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-// Explicit sibling groups for tag-style topics (geo, language pairs).
+// Explicit sibling groups for tag-style topics (geo, language pairs, visual styles).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
-  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam"],
+  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  ["cartoon", "kawaii", "ink", "isometric", "photorealistic"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam"],
+  lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic"],
 };
 
 // Full explicit parent→children hierarchy.
 // Tier 1 (entry bar): character, language, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "film", "sports", "gaming", "comparison", "groups"],
+  character: ["mbti", "anime", "sports", "comparison", "groups", "film"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion"],
-  learning:  ["science", "trending", "culture", "architecture", "history", "ai", "finance"],
+  lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion", "finance"],
+  learning:  ["science", "trending", "culture", "architecture", "history", "ai"],
   product:   [],
   design:    ["interior"],
 };
@@ -81,6 +83,23 @@ for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
     TIER3_TAG_PARENT.set(tag, tier1);
   }
 }
+
+// Gallery tag to pull from nano-banana-pro-prompts for a topic page.
+const TOPIC_GALLERY_TAG: Record<string, string> = {
+  character:      "character",
+  nostalgia:      "nostalgic",
+  product:        "product",
+  anime:          "anime",
+  food:           "food",
+  fashion:        "fashion",
+  fitness:        "fitness",
+  photorealistic: "photorealistic",
+};
+
+// Blog tag to pull posts for a topic page.
+const TOPIC_BLOG_TAG: Record<string, string> = {
+  ai: "Creator Tools",
+};
 
 // Reverse map: Tier 2 child → Tier 1 parent
 const EXPLICIT_PARENT_TOPIC = new Map<string, string>();
@@ -246,6 +265,16 @@ export function getTier1Ancestor(topicId: string): string | undefined {
   const tier2Parent = EXPLICIT_PARENT_TOPIC.get(topicId);
   if (tier2Parent) return tier2Parent;
   return TIER3_TAG_PARENT.get(topicId);
+}
+
+/** Gallery tag for nano-banana-pro-prompts to show on this topic page, if any. */
+export function getGalleryTag(topicId: string): string | undefined {
+  return TOPIC_GALLERY_TAG[topicId];
+}
+
+/** Blog tag to filter blog posts for this topic page, if any. */
+export function getBlogTag(topicId: string): string | undefined {
+  return TOPIC_BLOG_TAG[topicId];
 }
 
 export { normalizeTopicValues };

@@ -45,32 +45,28 @@ const SESSION_KEY = "_curify_session_id";
 
 // Route patterns ordered most-specific first.
 // current_page_route is normalised for backend aggregation.
+const LOCALE_PREFIX = /^\/[a-z]{2}(?=\/|$)/;
+
 const ROUTE_PATTERNS: [RegExp, string][] = [
-  [/^\/[a-z]{2}\/nano-template\/[^/]+\/example\/[^/]+$/, "/[locale]/nano-template/[slug]/example/[exampleId]"],
-  [/^\/nano-template\/[^/]+\/example\/[^/]+$/,           "/nano-template/[slug]/example/[exampleId]"],
-  [/^\/[a-z]{2}\/nano-template\/[^/]+$/,                 "/[locale]/nano-template/[slug]"],
-  [/^\/nano-template\/[^/]+$/,                           "/nano-template/[slug]"],
-  [/^\/[a-z]{2}\/nano-banana-pro-prompts\/tag\/[^/]+$/,  "/[locale]/nano-banana-pro-prompts/tag/[slug]"],
-  [/^\/nano-banana-pro-prompts\/tag\/[^/]+$/,            "/nano-banana-pro-prompts/tag/[slug]"],
-  [/^\/[a-z]{2}\/nano-banana-pro-prompts\/[^/]+$/,       "/[locale]/nano-banana-pro-prompts/[id]"],
-  [/^\/nano-banana-pro-prompts\/[^/]+$/,                 "/nano-banana-pro-prompts/[id]"],
-  [/^\/[a-z]{2}\/topics\/[^/]+$/,                        "/[locale]/topics/[slug]"],
-  [/^\/topics\/[^/]+$/,                                  "/topics/[slug]"],
-  [/^\/[a-z]{2}\/use-cases\/[^/]+$/,                     "/[locale]/use-cases/[slug]"],
-  [/^\/use-cases\/[^/]+$/,                               "/use-cases/[slug]"],
-  [/^\/[a-z]{2}\/tools\/[^/]+$/,                         "/[locale]/tools/[slug]"],
-  [/^\/tools\/[^/]+$/,                                   "/tools/[slug]"],
-  [/^\/[a-z]{2}\/blog\/[^/]+$/,                          "/[locale]/blog/[slug]"],
-  [/^\/blog\/[^/]+$/,                                    "/blog/[slug]"],
-  [/^\/[a-z]{2}\/magic\/[^/]+$/,                         "/[locale]/magic/[id]"],
-  [/^\/[a-z]{2}\/project_details\/[^/]+$/,               "/[locale]/project_details/[id]"],
+  [/\/nano-template\/[^/]+\/example\/[^/]+$/, "/nano-template/[slug]/example/[exampleId]"],
+  [/\/nano-template\/[^/]+$/,                 "/nano-template/[slug]"],
+  [/\/nano-banana-pro-prompts\/tag\/[^/]+$/,  "/nano-banana-pro-prompts/tag/[slug]"],
+  [/\/nano-banana-pro-prompts\/[^/]+$/,       "/nano-banana-pro-prompts/[id]"],
+  [/\/topics\/[^/]+$/,                        "/topics/[slug]"],
+  [/\/use-cases\/[^/]+$/,                     "/use-cases/[slug]"],
+  [/\/tools\/[^/]+$/,                         "/tools/[slug]"],
+  [/\/blog\/[^/]+$/,                          "/blog/[slug]"],
+  [/\/magic\/[^/]+$/,                         "/magic/[id]"],
+  [/\/project_details\/[^/]+$/,               "/project_details/[id]"],
 ];
 
 function normalizeRoute(pathname: string): string {
+  // Strip locale prefix (e.g. /zh, /fr) — en has no prefix so this is a no-op for en
+  const stripped = pathname.replace(LOCALE_PREFIX, "");
   for (const [pattern, normalized] of ROUTE_PATTERNS) {
-    if (pattern.test(pathname)) return normalized;
+    if (pattern.test(stripped)) return normalized;
   }
-  return pathname;
+  return stripped;
 }
 
 function getSessionId(): string {

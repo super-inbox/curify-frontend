@@ -43,6 +43,7 @@ export type RawNanoImageRecord = {
 
   params: Record<string, any>;
   locales?: Partial<Record<PageLocale, { category?: string; title?: string }>>;
+  tags?: string[];
 };
 
 export type TemplateView = {

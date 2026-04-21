@@ -23,6 +23,7 @@ import {
 import {
   buildNanoPageContext,
   buildTemplateImageGridItems,
+  buildSimilarExampleGridItems,
   buildOtherTemplateCards,
   getImageViewsForTemplate,
   resolveLocalizedExampleCopy,
@@ -66,6 +67,11 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const gridItems = buildTemplateImageGridItems(imageViews, imageId);
 
+  const similarItems = buildSimilarExampleGridItems(ctx.reg, imageId, {
+    limit: 12,
+    maxPerTemplate: 2,
+  });
+
   const prevNext = buildCircularExampleNav({
     reg: ctx.reg,
     templateId: ctx.templateId,
@@ -95,6 +101,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     exampleTags,
     paramEntries,
     gridItems,
+    similarItems,
     prevNext,
     otherNanoCards,
     templateTopics,
@@ -168,6 +175,7 @@ export default async function NanoExampleDetailPage({
     exampleTags,
     paramEntries,
     gridItems,
+    similarItems,
     prevNext,
     otherNanoCards,
     templateTopics,
@@ -275,7 +283,15 @@ export default async function NanoExampleDetailPage({
       />
 
       <section className="mt-8">
-        {gridItems.length > 0 && (
+        {similarItems.length > 0 && (
+          <>
+            <h2 className="mb-4 text-lg font-bold text-neutral-900">
+              More like this
+            </h2>
+            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} />
+          </>
+        )}
+        {similarItems.length === 0 && gridItems.length > 0 && (
           <>
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template

@@ -133,7 +133,7 @@ export default function ReproduceTemplateSection(props: {
     `${localePrefix}/nano-template/${toSlug(template.template_id)}/example/${encodeURIComponent(exampleId)}`;
 
   return (
-    <section id="reproduce">
+    <section id="reproduce" className="scroll-mt-24">
       <h2 className="mb-4 text-lg font-bold text-neutral-900">
         {t("reproduce.title")}
       </h2>

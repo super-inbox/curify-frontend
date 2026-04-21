@@ -1705,5 +1705,134 @@
     "category": "Fashion",
     "description": "Turn a single outfit photo into a professional horizontal Before vs After styling annotation card with expert fashion tips and labeled garment details.",
     "title": "Fashion Before & After Outfit Annotation Card | Curify AI"
+  },
+  "template-equipment-muscle-guide": {
+    "category": "Fitness & Anatomy Guides",
+    "description": "Generate professional gym equipment muscle activation guides showing exercise illustrations and anatomical muscle diagrams with highlighted target muscles.",
+    "title": "Fitness Equipment Muscle Guide | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium fitness infographic with a clean 2×2 grid layout — pairing a vector exercise illustration with an anatomical muscle diagram showing which muscles are activated.",
+        "who": "Ideal for personal trainers, gym content creators, fitness educators, and health & wellness accounts.",
+        "how": [
+          "Enter a fitness equipment name (e.g. Leg Press Machine, Lat Pulldown Machine).",
+          "Generate a professional anatomy guide with labeled muscle activation.",
+          "Share on social media, use in training programs, or print for gym displays."
+        ],
+        "prompts": [
+          "Leg Press Machine muscle activation guide with anatomical diagram.",
+          "Lat Pulldown Machine — targeted muscle groups illustrated.",
+          "Smith Machine Squat anatomy infographic with highlighted muscles."
+        ]
+      }
+    }
+  },
+  "template-pain-relief-infographic": {
+    "category": "Yoga & Wellness Infographics",
+    "description": "Generate professional yoga pain relief infographics featuring 6 targeted poses with anatomical muscle highlights for specific pain areas.",
+    "title": "Yoga Pain Relief Infographic | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium vertical yoga infographic with 6 poses in a 3×2 grid, each with pose name, rep/breath count, and anatomical illustration highlighting the working muscles.",
+        "who": "Perfect for yoga instructors, wellness creators, physical therapists, and health & fitness content accounts.",
+        "how": [
+          "Enter a pain area (e.g. Back, Knee, Neck, Shoulder).",
+          "Generate a professional yoga pain relief poster with anatomical illustrations.",
+          "Share as educational wellness content or use in yoga studio materials."
+        ],
+        "prompts": [
+          "Back pain relief yoga poses infographic with muscle highlights.",
+          "Knee pain yoga routine — 6 poses with breath counts.",
+          "Neck and shoulder pain relief yoga infographic."
+        ]
+      }
+    }
+  },
+  "template-kids-vocabulary-poster": {
+    "category": "Kids Educational Vocabulary Posters",
+    "description": "Generate soft watercolor bilingual vocabulary posters for kids with English words, IPA phonetics, Chinese translations, and charming illustrations.",
+    "title": "Kids Vocabulary Poster Generator (Bilingual Watercolor) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vertical bilingual vocabulary poster in a gentle watercolor style — each item features a high-quality illustration, bold English word, IPA phonetic transcription, and Chinese translation.",
+        "who": "Designed for early childhood educators, ESL teachers, bilingual parents, and kids content creators.",
+        "how": [
+          "Enter a vocabulary theme (e.g. Sea Animals, Vegetables, Fruits).",
+          "Generate a beautiful watercolor vocabulary poster.",
+          "Print for classrooms, use in digital learning apps, or share as educational content."
+        ],
+        "prompts": [
+          "Sea animals vocabulary poster with watercolor illustrations and phonetics.",
+          "Fruits bilingual poster — English, IPA, and Chinese for kids.",
+          "Insects vocabulary chart with cute watercolor art."
+        ]
+      }
+    }
+  },
+  "template-beauty-step-by-step-guide": {
+    "category": "Beauty & Lifestyle Step-by-Step Guides",
+    "description": "Generate soft pastel step-by-step beauty tutorial posters with 9 illustrated steps, perfect for skincare routines, hairstyle tutorials, nail art, and more.",
+    "title": "Beauty Step-by-Step Guide Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vertical beauty guide poster with 9 main steps in a 3×3 grid — each step has a numbered label, bold title, cartoon illustration, and corresponding tools or products shown.",
+        "who": "Perfect for beauty creators, lifestyle influencers, skincare brands, and tutorial content accounts.",
+        "how": [
+          "Enter a tutorial theme (e.g. Skincare Routine, Hairstyle Tutorial, Nail Art).",
+          "Generate a professional step-by-step beauty guide poster.",
+          "Share on social media, embed in blog posts, or use in brand marketing materials."
+        ],
+        "prompts": [
+          "Skincare routine step-by-step guide with cartoon illustrations.",
+          "Hairstyle tutorial poster — 9 steps with tools and tips.",
+          "Nail art step-by-step guide in soft pastel style."
+        ]
+      }
+    }
+  },
+  "template-whimsical-travel-map": {
+    "category": "Travel Map",
+    "description": "Generate a whimsical illustrated travel map poster for any country or region, featuring landmarks, culture, and local highlights.",
+    "title": "Whimsical Travel Map Generator | Nano Banana"
+  },
+  "template-pop-culture-matching-chart": {
+    "category": "Pop Culture Chart",
+    "description": "Generate a fun zodiac/birth month matching chart for any pop culture theme — Ghibli, Pokémon, Marvel, Harry Potter, and more.",
+    "title": "Pop Culture Matching Chart Generator | Nano Banana"
+  },
+  "template-training-muscle-equipment": {
+    "category": "Training Guide",
+    "description": "Generate a professional training equipment guide poster for any muscle group, with illustrated exercises and equipment recommendations.",
+    "title": "Training Muscle & Equipment Guide | Nano Banana"
+  },
+  "template-posture-correctness-comparison": {
+    "category": "Posture Guide",
+    "description": "Generate a before/after posture and form comparison illustration for any exercise or movement, showing correct vs incorrect technique.",
+    "title": "Posture Correctness Comparison Guide | Nano Banana"
+  },
+  "template-personality-choice-quiz-card": {
+    "category": "Personality Quiz",
+    "description": "Generate a visual personality or lifestyle quiz card for any theme — career, style, body type, vibe, and more.",
+    "title": "Personality Choice Quiz Card Generator | Nano Banana"
+  },
+  "template-3d-region-landmark-map": {
+    "category": "3D Landmark Map",
+    "description": "Generate a photorealistic 3D relief map of any country or region with landmark overlays, elevation shading, and detailed labels.",
+    "title": "3D Region Landmark Map Generator | Nano Banana"
+  },
+  "template-lifestyle-info-card": {
+    "category": "Lifestyle Info Card",
+    "description": "Generate a clean, modern horizontal info card for any lifestyle topic — coffee brewing, yoga, plant care — with icons and minimalist flat illustration style.",
+    "title": "Lifestyle Info Card Generator | Nano Banana"
+  },
+  "template-historical-event-map-illustration": {
+    "category": "Historical Event Map",
+    "description": "Generate a detailed illustrated map and scene for any historical event — watercolor-style artwork, route maps, and dramatic moment illustrations.",
+    "title": "Historical Event Map Illustration | Nano Banana"
+  },
+  "template-national-theme-map-infographic": {
+    "category": "National Theme Map",
+    "description": "Generate a minimalist infographic map for any country and theme — from Made in China to Brands of Germany, with logos and location overlays.",
+    "title": "National Theme Map Infographic | Nano Banana"
   }
 }
