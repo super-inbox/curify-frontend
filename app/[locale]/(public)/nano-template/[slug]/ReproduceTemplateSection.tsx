@@ -244,7 +244,7 @@ export default function ReproduceTemplateSection(props: {
               className="mt-auto pt-1"
               tracking={{
                 contentId: template.template_id,
-                contentType: "nano_inspiration",
+                contentType: "nano_inspiration_reproduce_section",
                 viewMode: "cards",
               }}
               generate={template.allow_generation ? undefined : {
@@ -286,7 +286,7 @@ export default function ReproduceTemplateSection(props: {
                 <UnifiedActionBar
                   tracking={{
                     contentId: template.template_id,
-                    contentType: "nano_inspiration",
+                    contentType: "nano_inspiration_reproduce_section",
                     viewMode: "cards",
                   }}
                   remix={generatedExampleId ? {
@@ -370,7 +370,7 @@ export default function ReproduceTemplateSection(props: {
                 <UnifiedActionBar
                   tracking={{
                     contentId: template.template_id,
-                    contentType: "nano_inspiration",
+                    contentType: "nano_inspiration_reproduce_section",
                     viewMode: "cards",
                   }}
                   copy={{

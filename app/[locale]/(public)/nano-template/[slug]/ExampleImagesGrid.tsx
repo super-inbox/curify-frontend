@@ -45,7 +45,7 @@ function ExampleImageCard({
   item: Item;
   locale: string;
 }) {
-  const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration", "cards");
+  const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
 
   const remixHref = (() => {
     const qs = item.params && Object.keys(item.params).length > 0
