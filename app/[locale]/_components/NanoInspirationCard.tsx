@@ -21,6 +21,7 @@ import {
   makeNanoTemplateUrl,
   normalizeCarouselUrls,
   getLocaleFromPath,
+  toSlug,
 } from "@/lib/nano_utils";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
