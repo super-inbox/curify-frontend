@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import ExampleRightColumn from "./ExampleRightColumn";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
@@ -45,6 +45,8 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   const templateView = getTemplateView(ctx.reg, ctx.templateId, ctx.contentLocale);
   const templateTopics = templateView?.topics ?? [];
   const templateBatch = templateView?.batch ?? false;
+  const templateParameters = templateView?.parameters ?? [];
+  const templateAllowGeneration = templateView?.allow_generation ?? false;
 
   const { title, category } = resolveLocalizedExampleCopy(
     example,
@@ -52,6 +54,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     ctx.localizedEntry
   );
 
+  const basePrompt = templateView?.base_prompt || example.base_prompt || "";
   const prompt = example.filled_prompt || example.base_prompt || "";
   const tags = [category, "nano banana", "prompt generator", "ai image"].filter(Boolean);
 
@@ -90,6 +93,8 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const exampleTags: string[] = (example as any).topics ?? [];
 
+  const existingExamples = imageViews.map((v) => ({ id: v.id, params: v.params }));
+
   return {
     ...ctx,
     imageId,
@@ -106,6 +111,10 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     otherNanoCards,
     templateTopics,
     templateBatch,
+    templateParameters,
+    templateAllowGeneration,
+    basePrompt,
+    existingExamples,
   };
 }
 
@@ -180,6 +189,10 @@ export default async function NanoExampleDetailPage({
     otherNanoCards,
     templateTopics,
     templateBatch,
+    templateParameters,
+    templateAllowGeneration,
+    basePrompt,
+    existingExamples,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
@@ -190,59 +203,12 @@ export default async function NanoExampleDetailPage({
         title={title}
         prompt={prompt}
         trackingId={example.id}
-        promptVariant="breakdown"
-        promptParams={example.params ?? {}}
         prevNext={prevNext}
         breadcrumbs={[
-          {
-            label: "Home",
-            href: `/${rawLocale}`,
-          },
-          {
-            label: category || slug,
-            href: `/${rawLocale}/nano-template/${slug}`,
-          },
-          {
-            label: title,
-          },
+          { label: "Home", href: `/${rawLocale}` },
+          { label: category || slug, href: `/${rawLocale}/nano-template/${slug}` },
+          { label: title },
         ]}
-        metaChips={
-          <>
-            {templateTopics.length > 0 ? (
-              <TopicNavRow
-                locale={pageLocale}
-                topics={templateTopics}
-                className="mb-0"
-                showDisabled={false}
-                size="small"
-              />
-            ) : null}
-
-            {exampleTags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {exampleTags.map((tag) => (
-                  <MetaChipLink
-                    key={tag}
-                    href={buildTopicHref(rawLocale, tag)}
-                    color="blue"
-                    size="small"
-                  >
-                    {tag}
-                  </MetaChipLink>
-                ))}
-              </div>
-            )}
-
-            {category ? (
-              <a
-                href={`/${rawLocale}/nano-template/${slug}`}
-                className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
-              >
-                {category}
-              </a>
-            ) : null}
-          </>
-        }
         image={
           <ProgressiveCdnImage
             previewSrc={example.asset.preview_image_url}
@@ -252,32 +218,50 @@ export default async function NanoExampleDetailPage({
             priority
           />
         }
-        actionBar={
-          <UnifiedActionBar
-            className="pt-2"
-            tracking={{
-              contentId: `${templateId}:${example.id}`,
-              contentType: "nano_inspiration_reproduce_section",
-              viewMode: "cards",
-            }}
-            remix={{
-              enabled: true,
-              href: `/${rawLocale}/nano-template/${slug}?${new URLSearchParams(paramEntries).toString()}#reproduce`,
-            }}
-            copy={{
-              enabled: true,
-              text: prompt,
-            }}
-            share={{
-              enabled: true,
-              url: examplePageUrl,
-              title,
-              text: `Check out this Nano Banana example: ${title}`,
-            }}
-            batchDownload={{
-              enabled: templateBatch,
-              templateId: templateId,
-            }}
+        rightColumnContent={
+          <ExampleRightColumn
+            metaChips={
+              <>
+                {templateTopics.length > 0 && (
+                  <TopicNavRow
+                    locale={pageLocale}
+                    topics={templateTopics}
+                    className="mb-0"
+                    showDisabled={false}
+                    size="small"
+                  />
+                )}
+                {exampleTags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {exampleTags.map((tag) => (
+                      <MetaChipLink key={tag} href={buildTopicHref(rawLocale, tag)} color="blue" size="small">
+                        {tag}
+                      </MetaChipLink>
+                    ))}
+                  </div>
+                )}
+                {category && (
+                  <a
+                    href={`/${rawLocale}/nano-template/${slug}`}
+                    className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
+                  >
+                    {category}
+                  </a>
+                )}
+              </>
+            }
+            title={title}
+            templateId={templateId}
+            slug={slug}
+            locale={rawLocale}
+            parameters={templateParameters}
+            allowGeneration={templateAllowGeneration}
+            initialParams={paramEntries}
+            exampleId={example.id}
+            basePrompt={basePrompt}
+            batchEnabled={templateBatch}
+            examplePageUrl={examplePageUrl}
+            existingExamples={existingExamples}
           />
         }
       />

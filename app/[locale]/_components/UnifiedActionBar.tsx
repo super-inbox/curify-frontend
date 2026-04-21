@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Wand2, Sparkles, Download, Bookmark } from "lucide-react";
+
+const GENERATE_CREDITS_COST = 10;
 import { useTranslations } from "next-intl";
 import { useAtom } from "jotai";
 
@@ -10,10 +12,7 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
-import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
-
-const GENERATE_CREDITS_COST = 10;
 
 type GenerateConfig = {
   enabled: boolean;
@@ -52,22 +51,17 @@ type DownloadConfig = {
   filename?: string;
 };
 
-type DirectGenerateConfig = {
+type ExternalGenerateConfig = {
   enabled: boolean;
-  templateId: string;
-  params: Record<string, string>;
-  exampleId: string;
-  /** Return false to abort generation (e.g. duplicate check). */
-  onBeforeGenerate?: () => boolean | Promise<boolean>;
-  /** Called with the signed URL when generation succeeds. */
-  onGenerateSuccess?: (signedUrl: string) => void;
+  onGenerate: () => void | Promise<void>;
+  isGenerating?: boolean;
 };
 
 type Props = {
   tracking: TrackingTarget;
   className?: string;
   generate?: GenerateConfig;
-  directGenerate?: DirectGenerateConfig;
+  externalGenerate?: ExternalGenerateConfig;
   remix?: RemixConfig;
   copy?: CopyConfig;
   share?: ShareConfig;
@@ -86,7 +80,7 @@ export default function UnifiedActionBar({
   tracking,
   className = "",
   generate,
-  directGenerate,
+  externalGenerate,
   remix,
   copy,
   share,
@@ -104,7 +98,6 @@ export default function UnifiedActionBar({
 
   const [generated, setGenerated] = useState(false);
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
-  const [isDirectGenerating, setIsDirectGenerating] = useState(false);
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
@@ -126,55 +119,6 @@ export default function UnifiedActionBar({
       setGenerated(true);
       setTimeout(() => setGenerated(false), 2500);
     } catch {}
-  };
-
-  const handleDirectGenerate = async () => {
-    if (!directGenerate || isDirectGenerating) return;
-
-    if (!user) {
-      setDrawerState("signin");
-      return;
-    }
-
-    const remainingCredits =
-      ((user as any)?.non_expiring_credits ?? 0) +
-      ((user as any)?.expiring_credits ?? 0);
-
-    if (remainingCredits < GENERATE_CREDITS_COST) {
-      alert(t("insufficientCredits"));
-      return;
-    }
-
-    if (directGenerate.onBeforeGenerate) {
-      const proceed = await directGenerate.onBeforeGenerate();
-      if (!proceed) return;
-    }
-
-    try {
-      setIsDirectGenerating(true);
-      trackAction(tracking, "generate");
-
-      const res = await nanoGenerateService.generate({
-        template_id: directGenerate.templateId,
-        params: directGenerate.params,
-        example_id: directGenerate.exampleId,
-      });
-
-      if (!res?.success || !res?.signed_url) {
-        throw new Error(res?.message || "Generation failed");
-      }
-
-      if (directGenerate.onGenerateSuccess) {
-        directGenerate.onGenerateSuccess(res.signed_url);
-      } else {
-        window.open(res.signed_url, "_blank", "noopener,noreferrer");
-      }
-    } catch (error) {
-      console.error("Direct generate failed:", error);
-      alert(t("generateFailed"));
-    } finally {
-      setIsDirectGenerating(false);
-    }
   };
 
   const handleBatchDownload = async () => {
@@ -215,16 +159,16 @@ export default function UnifiedActionBar({
 
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
-      {visible(directGenerate) ? (
+      {visible(externalGenerate) ? (
         <div className="flex items-center gap-2">
           <button
-            onClick={handleDirectGenerate}
-            disabled={isDirectGenerating}
+            onClick={externalGenerate.onGenerate}
+            disabled={externalGenerate.isGenerating}
             className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 cursor-pointer disabled:opacity-60"
             type="button"
           >
             <Wand2 className="h-4 w-4" />
-            {isDirectGenerating ? t("generating") : t("generate")}
+            {externalGenerate.isGenerating ? t("generating") : t("generate")}
             {clientMounted && !user && (
               <span className="ml-1 text-xs opacity-80">🔒</span>
             )}

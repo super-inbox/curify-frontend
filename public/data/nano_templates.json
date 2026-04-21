@@ -3506,40 +3506,23 @@
     "id": "template-friends-character-mbti",
     "locales": {
       "en": {
-        "base_prompt": "（Friends Character MBTI Poster Designer）You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge \"{mbti_type}\", Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
+        "base_prompt": "(Friends Character MBTI Poster Designer) You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, first determine their MBTI personality type from their well-known traits, behaviors, and storylines from the show. Include a brief 1-2 sentence reasoning that explains why this MBTI type fits the character. Then generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge with the determined type, short MBTI reasoning line below the badge, Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
         "parameters": [
           {
             "name": "character_name",
             "label": "Character Name",
             "type": "text",
             "placeholder": [
+              "Chandler Bing",
+              "Joey Tribbiani",
+              "Ross Geller",
+              "Monica Geller",
+              "Rachel Green",
+              "Phoebe Buffay",
               "Gunther",
-              "Richard Burke",
               "Janice Litman-Goralnik",
               "Mike Hannigan",
-              "Monica Geller",
-              "Phoebe Buffay",
-              "Rachel Green",
-              "Ross Geller",
-              "Joey Tribbiani",
-              "Chandler Bing"
-            ]
-          },
-          {
-            "name": "mbti_type",
-            "label": "MBTI Type",
-            "type": "text",
-            "placeholder": [
-              "ISFJ",
-              "INFJ",
-              "ESFJ",
-              "ISFP",
-              "ESTJ",
-              "INFP",
-              "ESFP",
-              "INTJ",
-              "ESFP",
-              "ENTP"
+              "Richard Burke"
             ]
           }
         ]
@@ -3553,7 +3536,8 @@
       "kawaii"
     ],
     "base_rank_score": 90,
-    "rank_score": 90
+    "rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-poetry-ink-wash-illustration",
