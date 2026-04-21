@@ -10,11 +10,11 @@ import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
-import { buildExampleId, fillPrompt } from "@/lib/nano_utils";
-import { findDuplicate, type ExistingExampleRef } from "@/lib/editDistance";
+import { fillPrompt } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
-import { nanoGenerateService } from "@/services/nanoGenerate";
-import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
+import type { ExistingExampleRef } from "@/lib/editDistance";
+import { useDirectGenerate } from "@/services/useDirectGenerate";
+import { userAtom, clientMountedAtom } from "@/app/atoms/atoms";
 import { useTracking } from "@/services/useTracking";
 
 const CREDITS_COST = 10;
@@ -51,19 +51,14 @@ export default function ExampleRightColumn({
   existingExamples = [],
 }: Props) {
   const [form, setForm] = useState<Record<string, string>>(initialParams);
-  const [isGenerating, setIsGenerating] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
-  const [duplicateWarning, setDuplicateWarning] = useState<{ exampleId: string; score: number } | null>(null);
 
   const [user] = useAtom(userAtom);
-  const [, setDrawerState] = useAtom(drawerAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
   const t = useTranslations("actionButtons");
   const { trackAction } = useTracking();
-
-  const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
 
   const tracking = {
     contentId: `${templateId}:${exampleId}`,
@@ -71,31 +66,26 @@ export default function ExampleRightColumn({
     viewMode: "cards" as const,
   };
 
+  const { generate, dismissAndGenerate, isGenerating, duplicateWarning, clearWarning } =
+    useDirectGenerate({
+      templateId,
+      params: form,
+      existingExamples,
+      tracking,
+      onSuccess: (signedUrl, exId) => {
+        setGeneratedImageUrl(signedUrl);
+        setGeneratedExampleId(exId);
+      },
+    });
+
+  const filledPrompt = useMemo(() => fillPrompt(basePrompt, form), [basePrompt, form]);
+
   const exampleUrl = (id: string) =>
     `/${locale}/nano-template/${slug}/example/${encodeURIComponent(id)}`;
 
-  const handleDirectGenerate = async () => {
-    if (isGenerating) return;
-    if (!user) { setDrawerState("signin"); return; }
-    const credits = ((user as any)?.non_expiring_credits ?? 0) + ((user as any)?.expiring_credits ?? 0);
-    if (credits < CREDITS_COST) { alert(t("insufficientCredits")); return; }
-
-    if (!duplicateWarning) {
-      const dup = findDuplicate(templateId, form, existingExamples);
-      if (dup) { setDuplicateWarning(dup); return; }
-    }
-
-    setDuplicateWarning(null);
-    try {
-      setIsGenerating(true);
-      trackAction(tracking, "generate");
-      const newExId = buildExampleId(templateId, form);
-      const res = await nanoGenerateService.generate({ template_id: templateId, params: form, example_id: newExId });
-      if (!res?.success || !res?.signed_url) throw new Error(res?.message || "Generation failed");
-      setGeneratedImageUrl(res.signed_url);
-      setGeneratedExampleId(newExId);
-    } catch { alert(t("generateFailed")); }
-    finally { setIsGenerating(false); }
+  const onFormChange = (name: string, value: string) => {
+    clearWarning();
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleCopyGenerate = async () => {
@@ -131,7 +121,7 @@ export default function ExampleRightColumn({
               {p.type === "select" ? (
                 <select
                   value={form[p.name] ?? ""}
-                  onChange={(e) => { setDuplicateWarning(null); setForm((prev) => ({ ...prev, [p.name]: e.target.value })); }}
+                  onChange={(e) => onFormChange(p.name, e.target.value)}
                   className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
                 >
                   {(p.options ?? []).map((opt) => (
@@ -141,7 +131,7 @@ export default function ExampleRightColumn({
               ) : (
                 <input
                   value={form[p.name] ?? ""}
-                  onChange={(e) => { setDuplicateWarning(null); setForm((prev) => ({ ...prev, [p.name]: e.target.value })); }}
+                  onChange={(e) => onFormChange(p.name, e.target.value)}
                   className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
                 />
               )}
@@ -183,7 +173,7 @@ export default function ExampleRightColumn({
             <button
               type="button"
               className="font-semibold underline hover:text-amber-900 cursor-pointer"
-              onClick={handleDirectGenerate}
+              onClick={dismissAndGenerate}
             >
               dismiss and generate anyway
             </button>
@@ -197,7 +187,7 @@ export default function ExampleRightColumn({
         {allowGeneration ? (
           <>
             <button
-              onClick={handleDirectGenerate}
+              onClick={generate}
               disabled={isGenerating}
               type="button"
               className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60 cursor-pointer"

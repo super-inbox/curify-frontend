@@ -8,8 +8,8 @@ import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
-import { findDuplicate } from "@/lib/editDistance";
-import { toSlug, buildExampleId } from "@/lib/nano_utils";
+import { toSlug } from "@/lib/nano_utils";
+import { useDirectGenerate } from "@/services/useDirectGenerate";
 
 import {
   fillPrompt,
@@ -41,7 +41,6 @@ export default function ReproduceTemplateSection(props: {
   const [dateRangeState, setDateRangeState] = useState<Record<string, { start: string; end: string }>>({});
   const [showAllParams, setShowAllParams] = useState(false);
   const [showFullPrompt, setShowFullPrompt] = useState(false);
-  const [duplicateWarning, setDuplicateWarning] = useState<{ exampleId: string; score: number } | null>(null);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
 
@@ -58,6 +57,28 @@ export default function ReproduceTemplateSection(props: {
     }
     setForm(next);
   }, [template.template_id, params, searchParams, initialParams]);
+
+  const tracking = {
+    contentId: template.template_id,
+    contentType: "nano_inspiration_reproduce_section" as const,
+    viewMode: "cards" as const,
+  };
+
+  const { generate, dismissAndGenerate, isGenerating, duplicateWarning, clearWarning } = useDirectGenerate({
+    templateId: template.template_id,
+    params: form as Record<string, string>,
+    existingExamples: template.existingExamples,
+    tracking,
+    onSuccess: (signedUrl, exId) => {
+      setGeneratedImageUrl(signedUrl);
+      setGeneratedExampleId(exId);
+    },
+  });
+
+  const handleGenerate = () => {
+    if (emptyParams.length > 0) return;
+    generate();
+  };
 
   const filledPrompt = useMemo(
     () => fillPrompt(template.base_prompt || "", form),
@@ -81,7 +102,7 @@ export default function ReproduceTemplateSection(props: {
   );
 
   const onChange = (name: string, value: any) => {
-    setDuplicateWarning(null);
+    clearWarning();
     setGeneratedImageUrl(null);
     setGeneratedExampleId(null);
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -102,9 +123,6 @@ export default function ReproduceTemplateSection(props: {
       return next;
     });
   };
-
-  const checkDuplicate = (currentForm: Record<string, any>) =>
-    findDuplicate(template.template_id, currentForm, template.existingExamples ?? []);
 
   const localePrefix = useMemo(() => {
     const seg = pathname.split("/")[1];
@@ -224,34 +242,15 @@ export default function ReproduceTemplateSection(props: {
 
             <UnifiedActionBar
               className="mt-auto pt-1"
-              tracking={{
-                contentId: template.template_id,
-                contentType: "nano_inspiration_reproduce_section",
-                viewMode: "cards",
-              }}
+              tracking={tracking}
               generate={template.allow_generation ? undefined : {
                 enabled: true,
                 text: promptText,
               }}
-              directGenerate={template.allow_generation ? {
+              externalGenerate={template.allow_generation ? {
                 enabled: true,
-                templateId: template.template_id,
-                params: form as Record<string, string>,
-                exampleId: buildExampleId(template.template_id, form as Record<string, string>),
-                onBeforeGenerate: () => {
-                  if (emptyParams.length > 0) return false;
-                  if (duplicateWarning) return true;
-                  const dup = checkDuplicate(form);
-                  if (dup) {
-                    setDuplicateWarning(dup);
-                    return false;
-                  }
-                  return true;
-                },
-                onGenerateSuccess: (signedUrl: string) => {
-                  setGeneratedImageUrl(signedUrl);
-                  setGeneratedExampleId(buildExampleId(template.template_id, form as Record<string, string>));
-                },
+                onGenerate: handleGenerate,
+                isGenerating,
               } : undefined}
             />
           </div>
@@ -320,7 +319,7 @@ export default function ReproduceTemplateSection(props: {
                       <button
                         type="button"
                         className="font-semibold underline hover:text-amber-900 cursor-pointer"
-                        onClick={() => setDuplicateWarning(null)}
+                        onClick={dismissAndGenerate}
                       >
                         dismiss and generate anyway
                       </button>
