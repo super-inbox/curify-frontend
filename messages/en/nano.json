@@ -1880,5 +1880,74 @@
         ]
       }
     }
+  },
+  "template-figure-principles-infographic": {
+    "category": "Famous Figure Principles Infographic",
+    "description": "Generate a clean educational infographic poster about a famous figure's core principles or key concepts, featuring a watercolor portrait and structured grid layout.",
+    "title": "Nano Banana Prompt: Famous Figure Principles Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a structured infographic poster using Nano Banana prompts: a bold title header, a watercolor-style portrait of the famous figure with their signature object, and a grid of key principles — each with a line icon, title, description, and bullet points — on a clean white background in 4K vertical format.",
+        "who": "Perfect for educators, students, content creators, and anyone who wants to visualize the life philosophy or intellectual contributions of a historical or contemporary figure.",
+        "how": [
+          "Enter the name of a famous figure (e.g. Albert Einstein, Marie Curie, Sun Tzu).",
+          "The model identifies their most iconic principles or key concepts.",
+          "A watercolor portrait is rendered alongside a structured principles grid.",
+          "Each principle card includes an icon, title, description, and supporting bullet points.",
+          "You can request a different set of principles or a specific color palette after generation."
+        ],
+        "prompts": [
+          "Generate a principles infographic for Albert Einstein — watercolor portrait, grid of 6 core physics and life philosophy principles, clean white background, 4K vertical.",
+          "Create a key concepts infographic for Leonardo da Vinci — watercolor style portrait, grid layout of his art, science, and invention principles with icons and descriptions.",
+          "Design a principles poster for Sun Tzu — watercolor portrait with scroll, grid of 6 Art of War strategies with bullet points, minimalist layout, 4K vertical format."
+        ]
+      }
+    }
+  },
+  "template-book-recommendation-grid-poster": {
+    "category": "Book Recommendation Grid Poster",
+    "description": "Generate a clean 4×4 grid book recommendation poster for any book category, featuring 16 book cards with titles, authors, descriptions, and illustrated covers.",
+    "title": "Nano Banana Prompt: Book Recommendation Grid Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a structured book list poster using Nano Banana prompts: a bold category title, four subgenre tabs, and a 4×4 grid of 16 numbered book cards — each with book title, author, short description, and a small illustrated cover — on a clean white background in 4K vertical format.",
+        "who": "Perfect for book lovers, librarians, educators, social media book communities, and content creators who want to share curated reading lists visually.",
+        "how": [
+          "Enter a book category (e.g. Science Fiction Classics, Self-Improvement, Fantasy Adventures).",
+          "The model selects 16 representative books and organizes them into 4 subgenre groups.",
+          "Each book card shows the title, author, a 1–2 sentence description, and a small cover illustration.",
+          "Books are numbered with blue badges for easy reference.",
+          "You can request specific authors, time periods, or reading levels after generation."
+        ],
+        "prompts": [
+          "Generate a book recommendation grid poster for 'Science Fiction Classics' — 16 books in 4×4 grid, category tabs, numbered blue badges, clean white background, 4K vertical.",
+          "Create a 'Self-Improvement' book list poster — 16 books with title, author, short description and illustrated cover, 4 subgenre tabs, minimalist design, 4K vertical.",
+          "Design a 'Fantasy Adventures' book recommendation poster — 16 iconic fantasy books in grid layout, illustrated covers, bold typography, clean white background, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-organ-health-food-guide-infographic": {
+    "category": "Organ Health Food Guide",
+    "description": "Generate a vintage-style split-screen food guide infographic for any organ's health, showing harmful and beneficial foods with illustrated icons and cute cartoon organ mascots.",
+    "title": "Nano Banana Prompt: Organ Health Food Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a warm illustrated food guide poster using Nano Banana prompts: a split-screen layout with organ-strain foods on the left (red label) and organ-support foods on the right (green label), illustrated food icons, and two cartoon mascots of the organ showing negative and positive effects — all in a vintage parchment style, 4K vertical format.",
+        "who": "Perfect for health educators, nutritionists, wellness content creators, social media health accounts, and anyone who wants to share practical dietary guidance in a visually engaging way.",
+        "how": [
+          "Enter the target organ name (e.g. Brain, Heart, Liver, Lung, Stomach).",
+          "The model identifies foods that harm and foods that benefit that organ.",
+          "A split-screen poster is generated with clear red/green labels and illustrated food icons.",
+          "Cute cartoon mascots of the organ show emotional reactions to each food group.",
+          "You can request specific dietary conditions (e.g. diabetic-friendly, vegan) after generation."
+        ],
+        "prompts": [
+          "Generate a liver health food guide — split-screen with liver-strain foods (red) and liver-support foods (green), illustrated icons, cartoon liver mascots, vintage parchment style, 4K vertical.",
+          "Create a brain health food guide infographic — foods that harm vs benefit the brain, illustrated icons, cartoon brain mascots, warm illustrated style, vertical format.",
+          "Design a heart health food poster — split layout with heart-harmful and heart-healthy foods, organ mascots showing sad/happy reactions, vintage style, 4K vertical."
+        ]
+      }
+    }
   }
 }

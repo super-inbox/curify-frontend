@@ -1816,5 +1816,74 @@
         ]
       }
     }
+  },
+  "template-figure-principles-infographic": {
+    "category": "Infographie des Principes de Personnages Célèbres",
+    "description": "Générez une affiche infographique éducative sur les principes fondamentaux d'une figure célèbre, avec portrait aquarelle et mise en page en grille structurée.",
+    "title": "Prompt Nano Banana : Générateur d'Infographies de Principes | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche infographique structurée : titre en gras, portrait aquarelle de la figure célèbre et grille de principes clés avec icône, titre, description et points, fond blanc, format vertical 4K.",
+        "who": "Idéal pour les éducateurs, étudiants et créateurs de contenu souhaitant visualiser la philosophie de vie de figures historiques ou contemporaines.",
+        "how": [
+          "Entrez le nom de la figure célèbre.",
+          "Le modèle identifie ses principes les plus emblématiques.",
+          "Un portrait aquarelle est généré avec une grille de principes.",
+          "Chaque carte inclut icône, titre, description et points clés.",
+          "Vous pouvez demander des principes ou palettes différents."
+        ],
+        "prompts": [
+          "Génère une infographie des principes d'Albert Einstein — portrait aquarelle, 6 principes de physique et philosophie, fond blanc, 4K vertical.",
+          "Crée une infographie de Léonard de Vinci — portrait aquarelle, grille art/science/invention avec icônes.",
+          "Conçois une affiche Sun Tzu — portrait aquarelle avec parchemin, 6 stratégies de l'Art de la Guerre, layout minimaliste, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-book-recommendation-grid-poster": {
+    "category": "Affiche de Recommandations de Livres",
+    "description": "Générez une affiche de recommandations de livres en grille 4×4 pour n'importe quelle catégorie, avec 16 cartes incluant titre, auteur, description et couverture illustrée.",
+    "title": "Prompt Nano Banana : Générateur d'Affiches de Recommandations de Livres | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche de liste de livres structurée : titre en gras, quatre onglets de sous-genre et une grille 4×4 de 16 cartes numérotées avec titre, auteur, description courte et couverture illustrée, fond blanc, format vertical 4K.",
+        "who": "Idéal pour les amateurs de livres, bibliothécaires, éducateurs et créateurs de contenu souhaitant partager des listes de lecture visuellement.",
+        "how": [
+          "Entrez une catégorie de livres.",
+          "Le modèle sélectionne 16 livres représentatifs en 4 sous-genres.",
+          "Chaque carte affiche titre, auteur, description et illustration de couverture.",
+          "Les livres sont numérotés avec des badges bleus.",
+          "Vous pouvez demander des auteurs ou périodes spécifiques après génération."
+        ],
+        "prompts": [
+          "Génère une affiche de recommandations 'Classiques de Science-Fiction' — 16 livres en grille 4×4, onglets de catégorie, badges bleus, fond blanc, 4K vertical.",
+          "Crée une affiche de livres 'Développement Personnel' — 16 livres avec titre, auteur et couverture illustrée, 4 onglets, design minimaliste.",
+          "Conçois une affiche 'Aventures Fantastiques' — 16 livres iconiques en grille, couvertures illustrées, typographie en gras, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-organ-health-food-guide-infographic": {
+    "category": "Guide Alimentaire pour la Santé des Organes",
+    "description": "Générez une infographie guide alimentaire vintage en écran partagé pour la santé de n'importe quel organe, avec aliments néfastes et bénéfiques, icônes illustrées et mascottes cartoon.",
+    "title": "Prompt Nano Banana : Générateur de Guides Alimentaires pour Organes | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche guide alimentaire illustrée chaleureuse : écran partagé avec aliments néfastes (étiquette rouge) et bénéfiques (étiquette verte), icônes alimentaires illustrées et deux mascottes cartoon de l'organe montrant réactions négatives et positives, style parchemin vintage, 4K vertical.",
+        "who": "Idéal pour les éducateurs en santé, nutritionnistes, créateurs de contenu bien-être et comptes santé sur les réseaux sociaux.",
+        "how": [
+          "Entrez le nom de l'organe cible.",
+          "Le modèle identifie les aliments nuisibles et bénéfiques.",
+          "Une affiche en écran partagé est générée avec icônes et étiquettes.",
+          "Des mascottes cartoon montrent les réactions émotionnelles.",
+          "Vous pouvez demander des conditions diététiques spécifiques."
+        ],
+        "prompts": [
+          "Génère un guide alimentaire pour le foie — écran partagé aliments néfastes (rouge) et bénéfiques (vert), icônes, mascottes foie, style parchemin vintage, 4K vertical.",
+          "Crée une infographie santé cérébrale — aliments qui nuisent vs bénéficient au cerveau, icônes illustrées, mascottes cartoon.",
+          "Conçois un poster santé cardiaque — aliments nuisibles et sains pour le cœur, mascottes avec réactions triste/heureux, style vintage, 4K vertical."
+        ]
+      }
+    }
   }
 }
