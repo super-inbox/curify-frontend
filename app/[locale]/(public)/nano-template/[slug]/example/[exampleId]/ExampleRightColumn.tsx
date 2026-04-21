@@ -11,6 +11,7 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import { buildExampleId, fillPrompt } from "@/lib/nano_utils";
+import { findDuplicate, type ExistingExampleRef } from "@/lib/editDistance";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import { nanoGenerateService } from "@/services/nanoGenerate";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
@@ -31,6 +32,7 @@ type Props = {
   basePrompt: string;
   batchEnabled: boolean;
   examplePageUrl: string;
+  existingExamples?: ExistingExampleRef[];
 };
 
 export default function ExampleRightColumn({
@@ -46,12 +48,14 @@ export default function ExampleRightColumn({
   basePrompt,
   batchEnabled,
   examplePageUrl,
+  existingExamples = [],
 }: Props) {
   const [form, setForm] = useState<Record<string, string>>(initialParams);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [duplicateWarning, setDuplicateWarning] = useState<{ exampleId: string; score: number } | null>(null);
 
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
@@ -75,6 +79,13 @@ export default function ExampleRightColumn({
     if (!user) { setDrawerState("signin"); return; }
     const credits = ((user as any)?.non_expiring_credits ?? 0) + ((user as any)?.expiring_credits ?? 0);
     if (credits < CREDITS_COST) { alert(t("insufficientCredits")); return; }
+
+    if (!duplicateWarning) {
+      const dup = findDuplicate(templateId, form, existingExamples);
+      if (dup) { setDuplicateWarning(dup); return; }
+    }
+
+    setDuplicateWarning(null);
     try {
       setIsGenerating(true);
       trackAction(tracking, "generate");
@@ -120,7 +131,7 @@ export default function ExampleRightColumn({
               {p.type === "select" ? (
                 <select
                   value={form[p.name] ?? ""}
-                  onChange={(e) => setForm((prev) => ({ ...prev, [p.name]: e.target.value }))}
+                  onChange={(e) => { setDuplicateWarning(null); setForm((prev) => ({ ...prev, [p.name]: e.target.value })); }}
                   className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
                 >
                   {(p.options ?? []).map((opt) => (
@@ -130,7 +141,7 @@ export default function ExampleRightColumn({
               ) : (
                 <input
                   value={form[p.name] ?? ""}
-                  onChange={(e) => setForm((prev) => ({ ...prev, [p.name]: e.target.value }))}
+                  onChange={(e) => { setDuplicateWarning(null); setForm((prev) => ({ ...prev, [p.name]: e.target.value })); }}
                   className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
                 />
               )}
@@ -153,6 +164,33 @@ export default function ExampleRightColumn({
           collapsedMaxHeight={80}
         />
       </section>
+
+      {/* Duplicate warning */}
+      {duplicateWarning && (
+        <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+          <span className="mt-0.5 shrink-0">⚠️</span>
+          <span>
+            A very similar image already exists ({Math.round(duplicateWarning.score * 100)}% match).{" "}
+            <a
+              href={`/${locale}/nano-template/${slug}/example/${encodeURIComponent(duplicateWarning.exampleId)}`}
+              className="font-semibold underline hover:text-amber-900"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View it
+            </a>
+            {" — or "}
+            <button
+              type="button"
+              className="font-semibold underline hover:text-amber-900 cursor-pointer"
+              onClick={handleDirectGenerate}
+            >
+              dismiss and generate anyway
+            </button>
+            .
+          </span>
+        </div>
+      )}
 
       {/* Action row: generate + copy + share + batch */}
       <div className="mt-auto flex flex-wrap items-center gap-2 pt-1">

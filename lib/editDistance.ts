@@ -1,3 +1,37 @@
+import { buildExampleId } from "@/lib/nano_utils";
+
+export const SIMILARITY_THRESHOLD = 0.92;
+
+export type ExistingExampleRef = { id: string; params: Record<string, any> };
+
+/**
+ * Returns the best duplicate match for the given form, or null if none exceeds the threshold.
+ */
+export function findDuplicate(
+  templateId: string,
+  currentForm: Record<string, any>,
+  existingExamples: ExistingExampleRef[],
+  threshold = SIMILARITY_THRESHOLD
+): { exampleId: string; score: number } | null {
+  if (existingExamples.length === 0) return null;
+
+  const currentExampleId = buildExampleId(templateId, currentForm as Record<string, string>);
+  const exactMatch = existingExamples.find((ex) => ex.id === currentExampleId);
+  if (exactMatch) return { exampleId: exactMatch.id, score: 1 };
+
+  const currentKey = paramsToKey(currentForm);
+  if (!currentKey) return null;
+
+  let best: { exampleId: string; score: number } | null = null;
+  for (const ex of existingExamples) {
+    const score = similarity(currentKey, paramsToKey(ex.params));
+    if (score >= threshold && (!best || score > best.score)) {
+      best = { exampleId: ex.id, score };
+    }
+  }
+  return best;
+}
+
 /**
  * Levenshtein edit distance between two strings.
  */

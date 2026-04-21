@@ -93,6 +93,8 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
 
   const exampleTags: string[] = (example as any).topics ?? [];
 
+  const existingExamples = imageViews.map((v) => ({ id: v.id, params: v.params }));
+
   return {
     ...ctx,
     imageId,
@@ -112,6 +114,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateParameters,
     templateAllowGeneration,
     basePrompt,
+    existingExamples,
   };
 }
 
@@ -189,6 +192,7 @@ export default async function NanoExampleDetailPage({
     templateParameters,
     templateAllowGeneration,
     basePrompt,
+    existingExamples,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
@@ -257,6 +261,7 @@ export default async function NanoExampleDetailPage({
             basePrompt={basePrompt}
             batchEnabled={templateBatch}
             examplePageUrl={examplePageUrl}
+            existingExamples={existingExamples}
           />
         }
       />

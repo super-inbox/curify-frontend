@@ -8,7 +8,7 @@ import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
-import { similarity, paramsToKey } from "@/lib/editDistance";
+import { findDuplicate } from "@/lib/editDistance";
 import { toSlug, buildExampleId } from "@/lib/nano_utils";
 
 import {
@@ -16,7 +16,6 @@ import {
   normalizePrefills,
 } from "@/lib/nano_prompt_utils";
 
-const SIMILARITY_THRESHOLD = 0.85;
 const COLLAPSED_PARAM_ROWS = 3;
 const COLLAPSED_PROMPT_ROWS = 3;
 
@@ -104,25 +103,8 @@ export default function ReproduceTemplateSection(props: {
     });
   };
 
-  const findDuplicate = (currentForm: Record<string, any>) => {
-    const existing = template.existingExamples ?? [];
-    if (existing.length === 0) return null;
-
-    const currentExampleId = buildExampleId(template.template_id, currentForm as Record<string, string>);
-    const exactMatch = existing.find((ex) => ex.id === currentExampleId);
-    if (exactMatch) return { exampleId: exactMatch.id, score: 1 };
-
-    const currentKey = paramsToKey(currentForm);
-    if (!currentKey) return null;
-    let best: { exampleId: string; score: number } | null = null;
-    for (const ex of existing) {
-      const score = similarity(currentKey, paramsToKey(ex.params));
-      if (score >= SIMILARITY_THRESHOLD && (!best || score > best.score)) {
-        best = { exampleId: ex.id, score };
-      }
-    }
-    return best;
-  };
+  const checkDuplicate = (currentForm: Record<string, any>) =>
+    findDuplicate(template.template_id, currentForm, template.existingExamples ?? []);
 
   const localePrefix = useMemo(() => {
     const seg = pathname.split("/")[1];
@@ -259,7 +241,7 @@ export default function ReproduceTemplateSection(props: {
                 onBeforeGenerate: () => {
                   if (emptyParams.length > 0) return false;
                   if (duplicateWarning) return true;
-                  const dup = findDuplicate(form);
+                  const dup = checkDuplicate(form);
                   if (dup) {
                     setDuplicateWarning(dup);
                     return false;
