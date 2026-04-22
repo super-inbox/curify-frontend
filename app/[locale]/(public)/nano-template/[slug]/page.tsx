@@ -21,7 +21,7 @@ import {
   buildNanoTemplateDetailData,
 } from "@/lib/nano_page_data";
 
-import { getTagChildren, getTier1Ancestor, isTopicEnabled } from "@/lib/topicRegistry";
+import { getTagChildren, getPrimaryTagTier1 } from "@/lib/topicRegistry";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -136,15 +136,9 @@ export default async function NanoTemplatePage({ params }: Props) {
     template.template_id
   );
 
-  // Collect tag subtopics (geo tags for lifestyle, language pairs for language)
-  const tier1Ancestors = new Set<string>();
-  for (const tp of templateTopics) {
-    const ancestor = getTier1Ancestor(tp);
-    if (ancestor) tier1Ancestors.add(ancestor);
-  }
-  const tagSubTopics = [...tier1Ancestors]
-    .flatMap((id) => getTagChildren(id))
-    .filter((id, i, arr) => arr.indexOf(id) === i && isTopicEnabled(id));
+  // Tier 3 tag row: geo tags for lifestyle, language pairs for language, visual tags for design
+  const primaryTagTier1 = getPrimaryTagTier1(templateTopics);
+  const tagSubTopics = primaryTagTier1 ? getTagChildren(primaryTagTier1) : [];
 
   return (
     <main className="mx-auto max-w-[1280px] px-4 pt-4 pb-10 sm:px-6 lg:px-8">
