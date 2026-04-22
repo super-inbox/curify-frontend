@@ -53,22 +53,23 @@ function normalizeTopicValues(value: unknown): string[] {
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  ["cartoon", "kawaii", "ink", "isometric", "photorealistic"],
+  ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
+  character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome"],
   lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic"],
+  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome"],
 };
 
 // Full explicit parent→children hierarchy.
 // Tier 1 (entry bar): character, language, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "anime", "sports", "comparison", "groups", "film"],
+  character: ["mbti", "anime", "sports", "comparison", "groups", "film", "portrait"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion", "finance", "guides"],
   learning:  ["science", "trending", "culture", "architecture", "history", "ai", "reading"],
@@ -267,6 +268,20 @@ export function getTier1Ancestor(topicId: string): string | undefined {
   const tier2Parent = EXPLICIT_PARENT_TOPIC.get(topicId);
   if (tier2Parent) return tier2Parent;
   return TIER3_TAG_PARENT.get(topicId);
+}
+
+/**
+ * Returns the single tier 1 topic that has tier 3 tag children for a given
+ * template's topic list. Used to determine which tag row to show on template
+ * pages (geo tags for lifestyle, language pairs for language, visual tags for
+ * design). Returns undefined when no tier 1 with tag children is found.
+ */
+export function getPrimaryTagTier1(topicIds: string[]): string | undefined {
+  for (const tp of topicIds) {
+    const ancestor = getTier1Ancestor(tp);
+    if (ancestor && TIER1_TAG_CHILDREN[ancestor] !== undefined) return ancestor;
+  }
+  return undefined;
 }
 
 /** Gallery tag for nano-banana-pro-prompts to show on this topic page, if any. */
