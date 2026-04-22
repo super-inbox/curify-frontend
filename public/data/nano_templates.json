@@ -296,7 +296,8 @@
       "film"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-recipe",
@@ -404,7 +405,8 @@
       "character"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-weather",
@@ -1390,14 +1392,14 @@
       "character",
       "gaming",
       "comparison",
-      "ink",
-      "monochrome"
+      "ink"
     ],
     "rank_score": 80,
     "use_cases": [
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-fashion-ecommerce",
@@ -2071,7 +2073,8 @@
       "comparison"
     ],
     "rank_score": 1,
-    "base_rank_score": 1
+    "base_rank_score": 1,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-naruto",
@@ -2606,7 +2609,8 @@
       "kawaii"
     ],
     "rank_score": 80,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-fat-loss-plan",
@@ -3119,7 +3123,8 @@
     "og_image": "/images/nano_insp_preview/template-industrial-design-concept-sketch-humanoid-robot-prev.jpg",
     "rank_score": 50,
     "topics": [
-      "design"
+      "design",
+      "monochrome"
     ],
     "base_rank_score": 50,
     "allow_generation": true
@@ -4011,7 +4016,8 @@
       "groups"
     ],
     "rank_score": 70,
-    "base_rank_score": 70
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-lifestyle-info-card",

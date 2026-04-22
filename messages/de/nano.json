@@ -1747,9 +1747,27 @@
     "title": "Haltungskorrektur-Vergleich | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Persönlichkeitsquiz",
-    "description": "Erstelle eine visuelle Persönlichkeits- oder Lifestyle-Quiz-Karte für jedes Thema.",
-    "title": "Persönlichkeitsquiz-Karte Generator | Nano Banana"
+    "category": "Persönlichkeits-Quiz-Karte",
+    "description": "Erstelle eine vertikale Persönlichkeits- oder Lifestyle-Quiz-Karte mit 6 fotorealistischen Charakteroptionen im 2x3-Raster für Themen wie Karriere, Stil, Körpertyp oder Vibe.",
+    "title": "Nano Banana Prompt: Persönlichkeits-Quiz-Karten-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein auffälliges vertikales Persönlichkeits-Quiz-Poster mit Nano Banana Prompts. Wähle ein Thema und Geschlecht, um ein 2x3-Raster mit 6 realistischen Charakterporträts zu generieren. Das Design umfasst dunklen Hintergrund, orangefarbene Titelhervorhebung, farbkodierte Etiketten und hochauflösende 4K-Typografie.",
+        "who": "Ideal für Lifestyle-Content-Creator, Social-Media-Influencer, MBTI- und Psychologie-Enthusiasten, Quiz-App-Designer und alle, die virale Posts für Instagram, TikTok oder Pinterest erstellen.",
+        "how": [
+          "Gib ein Quiz-Thema ein (z. B. Karriere, Körpertyp, Stil, Vibe, Hobby, Persönlichkeit).",
+          "Gib das Geschlecht des Subjekts an (männlich oder weiblich), um die Portraits anzupassen.",
+          "Die Vorlage generiert 6 verschiedene Charakteroptionen im 2x3-Raster mit fotorealistischen Portraits.",
+          "Jede Option erhält ein fettes abgerundetes Etikett mit farbkodierten Hintergründen (Orange, Grau, Rot).",
+          "Der dunkle Hintergrund und das Kino-Licht schaffen einen hochengagierten Social-Media-Post."
+        ],
+        "prompts": [
+          "Erstelle eine Karriere-Quiz-Karte mit 6 weiblichen Charakteroptionen (CEO, Künstlerin, Athletin, Köchin, Lehrerin, Wissenschaftlerin) im 2x3-Raster, dunkler Hintergrund, orangefarbener Titel, farbige Etiketten, 4K vertikal.",
+          "Erstelle eine Stil-Quiz-Karte mit 6 männlichen Charakteroptionen (Streetwear, Formal, Casual, Vintage, Sportlich, Minimalistisch) im 2x3-Raster, Kino-Beleuchtung, fette Etiketten, 4K vertikal.",
+          "Entwirf eine Vibe-Quiz-Karte mit 6 weiblichen Charakteroptionen (Ästhetisch, Dark Academia, Cottagecore, Y2K, Boho, Klassisch) im 2x3-Raster, hoher Kontrast, orangefarbener Titel, 4K vertikal."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "3D Landkarte",
@@ -1882,6 +1900,29 @@
           "Erstelle einen Leber-Ernährungsratgeber — Split-Screen mit leberschädigenden (rot) und leberstärkenden (grün) Lebensmitteln, illustrierte Icons, Cartoon-Maskottchen, Vintage-Pergament-Stil, 4K Hochformat.",
           "Erstelle eine Gehirn-Gesundheits-Infografik — Lebensmittel die das Gehirn schaden vs. nützen, illustrierte Icons, Cartoon-Maskottchen.",
           "Designe einen Herz-Gesundheits-Poster — herzschädliche und herzgesunde Lebensmittel, Maskottchen mit traurig/glücklich Reaktionen, Vintage-Stil, 4K Hochformat."
+        ]
+      }
+    }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Englisch-Vokabelkarten für Kinder",
+    "description": "Generiere ein buntes 3×3-Raster mit 9 Cartoon-Vokabelkarten auf Englisch für Kinder, mit Wort, Lautschrift, Illustration und chinesischer Übersetzung.",
+    "title": "Nano Banana Prompt: Kinder-Englisch-Vokabelkarten-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt 9 Englisch-Vokabelkarten für Kinder im 3×3-Raster. Jede Karte enthält das englische Wort fett, Lautschrift, eine kawaii-Cartoon-Illustration und die chinesische Übersetzung — bunt, verspielt und lernfreundlich.",
+        "who": "Ideal für Eltern, die Kindern Englisch beibringen, ESL-Lehrer für Jungschüler, Bildungs-Content-Ersteller und App-Designer für Kinder von 4–12 Jahren.",
+        "how": [
+          "Wähle ein Vokabelthema (Früchte, Tiere, Fahrzeuge, Wetter, Farben).",
+          "9 Karten im 3×3-Raster mit Wort, Lautschrift, Illustration und Übersetzung werden generiert.",
+          "Jede Karte hat einen farbigen Themenrand.",
+          "Thema oder Schwierigkeitsgrad ändern.",
+          "Für Druck oder digitale Nutzung herunterladen."
+        ],
+        "prompts": [
+          "Generiere ein Früchte-Vokabelkarten-Raster — 9 Karten mit englischem Wort, Lautschrift, Kawaii-Illustration und chinesischer Übersetzung, 4K Hochformat.",
+          "Erstelle ein Tier-Vokabelkarten-Raster — 9 Tierkarten mit englischen Namen, Lautschrift, Cartoon-Illustrationen und Übersetzungen, 4K Hochformat.",
+          "Designe ein Wetter-Vokabelkarten-Raster — 9 Wetterwörter mit Lautschrift, Kawaii-Illustrationen und chinesischen Übersetzungen, 4K Hochformat."
         ]
       }
     }

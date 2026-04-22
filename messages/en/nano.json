@@ -1811,9 +1811,27 @@
     "title": "Posture Correctness Comparison Guide | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Personality Quiz",
-    "description": "Generate a visual personality or lifestyle quiz card for any theme — career, style, body type, vibe, and more.",
-    "title": "Personality Choice Quiz Card Generator | Nano Banana"
+    "category": "Personality Quiz Card",
+    "description": "Generate a vertical personality or lifestyle quiz card featuring 6 photo-realistic character options in a 2×3 grid — for any theme like career, style, body type, or vibe.",
+    "title": "Nano Banana Prompt: Personality Choice Quiz Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a bold vertical personality quiz poster using Nano Banana prompts. Choose a theme and subject gender to generate a 2×3 grid of 6 realistic character portraits, each representing a distinct personality type or lifestyle. The design features a dark moody background, orange-highlighted title, color-coded option labels, and high-contrast 4K typography — perfect for viral social media content.",
+        "who": "Ideal for lifestyle content creators, social media influencers, psychology and MBTI enthusiasts, quiz app designers, and anyone creating engaging 'which one are you?' shareable posts for Instagram, TikTok, or Pinterest.",
+        "how": [
+          "Enter a quiz theme (e.g. Career, Body Type, Style, Vibe, Hobby, Personality).",
+          "Specify the subject gender (male or female) to match the character portraits.",
+          "The template generates 6 distinct character options in a 2×3 grid with photo-realistic portraits.",
+          "Each option gets a bold rounded label in color-coded backgrounds (orange, gray, red).",
+          "The moody dark background and cinematic lighting create a high-engagement social post ready to share."
+        ],
+        "prompts": [
+          "Generate a Career personality quiz card — 6 female character options (CEO, Artist, Athlete, Chef, Teacher, Scientist) in a 2×3 grid, dark background, orange highlighted title 'WHICH CAREER SUITS YOU?', color-coded labels, 4K vertical.",
+          "Create a Style personality quiz card — 6 male character options (Streetwear, Formal, Casual, Vintage, Sporty, Minimalist) in a 2×3 grid, moody cinematic lighting, bold color-coded labels, 4K vertical.",
+          "Design a Vibe personality quiz card — 6 female character options (Aesthetic, Dark Academia, Cottagecore, Y2K, Boho, Classic) in a 2×3 grid, high-contrast dark background, orange title highlight, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "3D Landmark Map",
@@ -1946,6 +1964,29 @@
           "Generate a liver health food guide — split-screen with liver-strain foods (red) and liver-support foods (green), illustrated icons, cartoon liver mascots, vintage parchment style, 4K vertical.",
           "Create a brain health food guide infographic — foods that harm vs benefit the brain, illustrated icons, cartoon brain mascots, warm illustrated style, vertical format.",
           "Design a heart health food poster — split layout with heart-harmful and heart-healthy foods, organ mascots showing sad/happy reactions, vintage style, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Kids' English Vocabulary Flashcards",
+    "description": "Generate a colorful 3×3 grid of 9 cartoon-style English vocabulary flashcards for children, each with the word, phonetic transcription, a cheerful illustration, and Chinese translation.",
+    "title": "Nano Banana Prompt: Kids' English Vocabulary Flashcard Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vibrant 3×3 grid of 9 children's English vocabulary flashcards using Nano Banana prompts. Each card features the English word in bold, its phonetic transcription, a kawaii cartoon illustration, and the Chinese translation — all in a bright, playful style designed to make vocabulary learning fun and memorable for kids.",
+        "who": "Perfect for parents teaching children English, ESL teachers for young learners, children's educational content creators, language learning app designers, and anyone creating vocabulary materials for kids aged 4–12.",
+        "how": [
+          "Choose a vocabulary theme (e.g. Fruits, Animals, Vehicles, Weather, Colors).",
+          "The template generates 9 flashcards in a 3×3 grid, each with the English word, phonetic transcription, cartoon illustration, and Chinese translation.",
+          "Each card gets a colorful themed border matching the vocabulary category.",
+          "Request a different theme or age range to adjust the vocabulary difficulty.",
+          "Download and use the flashcard grid for print, classroom display, or digital learning."
+        ],
+        "prompts": [
+          "Generate a Fruits vocabulary flashcard grid — 9 cards with English word, phonetic transcription, cartoon fruit illustration, and Chinese translation. Bright colors, kawaii style, 4K vertical.",
+          "Create an Animals vocabulary flashcard grid — 9 animal cards with English names, phonetic transcription, cheerful cartoon illustrations, and Chinese translations. Playful bordered cards, 4K vertical.",
+          "Design a Weather vocabulary flashcard grid — 9 weather words with phonetic transcription, cute cartoon illustrations (sun, rain, snow, wind, cloud, storm, fog, rainbow, thunder), Chinese translations, 4K vertical."
         ]
       }
     }

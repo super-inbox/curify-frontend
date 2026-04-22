@@ -1747,9 +1747,27 @@
     "title": "Duruş Doğruluğu Karşılaştırma Kılavuzu | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Kişilik Testi",
-    "description": "Herhangi bir tema için görsel kişilik veya yaşam tarzı test kartı oluşturun.",
-    "title": "Kişilik Seçim Testi Kartı | Nano Banana"
+    "category": "Kişilik Testi Kartı",
+    "description": "Kariyer, stil, vücut tipi veya vibe gibi temalar için 2x3 ızgarada 6 fotorealistik karakter seçeneğiyle dikey bir kişilik testi kartı oluşturun.",
+    "title": "Nano Banana Prompt: Kişilik Seçim Testi Kartı Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana promptlarıyla çarpıcı bir dikey kişilik testi posteri oluşturur. Bir tema ve cinsiyet seçin; her biri farklı bir kişilik tipini veya yaşam tarzını temsil eden 6 gerçekçi karakter portresinin yer aldığı 2x3 ızgara oluşturulur. Koyu arka plan, turuncu vurgulu başlık, renk kodlu etiketler ve 4K tipografi ile viral sosyal medya içeriği üretin.",
+        "who": "Yaşam tarzı içerik üreticileri, sosyal medya influencerları, MBTI ve psikoloji tutkunları, test uygulama tasarımcıları ve Instagram, TikTok veya Pinterest için paylaşımlar oluşturmak isteyenler için idealdir.",
+        "how": [
+          "Bir test teması girin (örn. Kariyer, Vücut Tipi, Stil, Vibe, Hobi, Kişilik).",
+          "Karakter portreleri için cinsiyeti belirtin (erkek veya kadın).",
+          "Şablon, fotorealistik portrelere sahip 6 farklı karakter seçeneğini 2x3 ızgarada oluşturur.",
+          "Her seçenek renk kodlu arka planlarla (turuncu, gri, kırmızı) kalın yuvarlak etiket alır.",
+          "Koyu arka plan ve sinematik ışıklandırma, paylaşıma hazır yüksek etkileşimli gönderi oluşturur."
+        ],
+        "prompts": [
+          "Kariyer kişilik testi kartı oluştur: 6 kadın karakter seçeneği (CEO, Sanatçı, Atlet, Şef, Öğretmen, Bilim İnsanı) 2x3 ızgarada, koyu arka plan, turuncu başlık, renkli etiketler, 4K dikey.",
+          "Stil kişilik testi kartı oluştur: 6 erkek karakter seçeneği (Sokak Stili, Resmi, Günlük, Vintage, Sportif, Minimalist) 2x3 ızgarada, sinematik ışıklandırma, kalın etiketler, 4K dikey.",
+          "Vibe kişilik testi kartı tasarla: 6 kadın karakter seçeneği (Estetik, Dark Academia, Cottagecore, Y2K, Boho, Klasik) 2x3 ızgarada, yüksek kontrastlı koyu arka plan, turuncu başlık, 4K dikey."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "3D Harita",
@@ -1882,6 +1900,29 @@
           "Karaciğer sağlığı gıda rehberi oluştur — karaciğere zararlı (kırmızı) ve faydalı (yeşil) gıdalar bölünmüş ekran, illüstrasyon ikonlar, karikatür maskotlar, vintage parşömen stili, 4K dikey.",
           "Beyin sağlığı gıda rehberi infografiği oluştur — beyne zararlı vs faydalı gıdalar, illüstrasyonlu ikonlar, karikatür beyin maskotları.",
           "Kalp sağlığı gıda posteri tasarla — kalbe zararlı ve sağlıklı gıdalar bölünmüş düzen, üzgün/mutlu maskotlar, vintage stili, 4K dikey."
+        ]
+      }
+    }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Çocuklar için İngilizce Kelime Kartları",
+    "description": "Çocuklar için 3×3 ızgara düzeninde 9 karikatür tarzı İngilizce kelime kartı oluşturun. Her kartta kelime, fonetik transkripsiyon, sevimli illüstrasyon ve Çince çeviri yer alır.",
+    "title": "Nano Banana Prompt: Çocuklar için İngilizce Kelime Kartı Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 3×3 ızgarada 9 çocuk İngilizce kelime kartı oluşturur. Her kartta kalın İngilizce kelime, fonetik transkripsiyon, kawaii karikatür illüstrasyonu ve Çince çeviri bulunur.",
+        "who": "Çocuklarına İngilizce öğreten ebeveynler, genç öğrenciler için ESL öğretmenleri, çocuk eğitim içeriği oluşturucuları ve 4-12 yaş arası çocuklar için kelime materyali hazırlayanlar için idealdir.",
+        "how": [
+          "Kelime teması seçin (meyveler, hayvanlar, araçlar, hava, renkler).",
+          "3×3 ızgarada 9 kart kelime, fonetik, illüstrasyon ve çeviri ile oluşturulur.",
+          "Her kartın renkli kenarlığı temaya uygun tasarlanır.",
+          "Tema veya zorluk seviyesini değiştirin.",
+          "Yazdırma veya dijital kullanım için indirin."
+        ],
+        "prompts": [
+          "Meyve İngilizce kelime kartı ızgarası oluştur — 9 kart, İngilizce kelime, fonetik, kawaii illüstrasyon ve Çince çeviri, 4K dikey.",
+          "Hayvan İngilizce kelime kartı ızgarası oluştur — 9 kart, İngilizce isimler, fonetik, karikatür illüstrasyonlar ve çeviriler, 4K dikey.",
+          "Hava durumu İngilizce kelime kartı ızgarası tasarla — 9 hava kelimesi, fonetik, kawaii illüstrasyonlar ve Çince çeviriler, 4K dikey."
         ]
       }
     }

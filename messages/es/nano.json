@@ -1747,9 +1747,27 @@
     "title": "Guía de comparación de postura | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Quiz de personalidad",
-    "description": "Genera una tarjeta de quiz visual de personalidad o estilo de vida para cualquier tema.",
-    "title": "Generador de quiz de personalidad | Nano Banana"
+    "category": "Tarjeta de Quiz de Personalidad",
+    "description": "Genera una tarjeta vertical de quiz de personalidad o estilo de vida con 6 opciones de personajes fotorrealistas en una cuadrícula 2x3 para temas como carrera, estilo, tipo de cuerpo o vibra.",
+    "title": "Nano Banana Prompt: Generador de Tarjeta de Quiz de Elección de Personalidad | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un llamativo póster vertical de quiz de personalidad usando prompts de Nano Banana. Elige un tema y el género del sujeto para generar una cuadrícula 2x3 de 6 retratos realistas de personajes, cada uno representando un tipo de personalidad distinto. El diseño incluye fondo oscuro dramático, título con resaltado naranja, etiquetas codificadas por color y tipografía 4K de alto contraste.",
+        "who": "Ideal para creadores de contenido de estilo de vida, influencers de redes sociales, entusiastas de MBTI y psicología, diseñadores de apps de quiz, y quienes crean publicaciones virales para Instagram, TikTok o Pinterest.",
+        "how": [
+          "Ingresa un tema de quiz (p. ej. Carrera, Tipo de cuerpo, Estilo, Vibra, Hobby, Personalidad).",
+          "Especifica el género del sujeto (masculino o femenino) para ajustar los retratos.",
+          "La plantilla genera 6 opciones de personajes distintos en cuadrícula 2x3 con retratos fotorrealistas.",
+          "Cada opción tiene una etiqueta redondeada en negrita con fondos codificados por color (naranja, gris, rojo).",
+          "El fondo oscuro cinématico y la iluminación crean una publicación social de alto engagement lista para compartir."
+        ],
+        "prompts": [
+          "Genera una tarjeta de quiz de Carrera con 6 opciones femeninas (CEO, Artista, Atleta, Chef, Maestra, Científica) en cuadrícula 2x3, fondo oscuro, título naranja, etiquetas de color, 4K vertical.",
+          "Crea una tarjeta de quiz de Estilo con 6 opciones masculinas (Streetwear, Formal, Casual, Vintage, Deportivo, Minimalista) en cuadrícula 2x3, iluminación cinematográfica, etiquetas en negrita, 4K vertical.",
+          "Diseña una tarjeta de quiz de Vibra con 6 opciones femeninas (Estético, Dark Academia, Cottagecore, Y2K, Boho, Clásico) en cuadrícula 2x3, fondo oscuro de alto contraste, título naranja, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "Mapa 3D",
@@ -1882,6 +1900,29 @@
           "Genera una guía de alimentos para el hígado — pantalla dividida con alimentos dañinos (rojo) y beneficiosos (verde), iconos ilustrados, mascotas del hígado, estilo pergamino vintage, 4K vertical.",
           "Crea una infografía de salud cerebral — alimentos que dañan vs benefician el cerebro, iconos ilustrados, mascotas cartoon del cerebro.",
           "Diseña un póster de salud cardíaca — alimentos perjudiciales y saludables para el corazón, mascotas con reacciones triste/feliz, estilo vintage, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Tarjetas de Vocabulario Inglés para Niños",
+    "description": "Genera una cuadrícula 3×3 de 9 tarjetas de vocabulario inglés estilo caricatura para niños, con palabra, transcripción fonética, ilustración y traducción al chino.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Vocabulario Inglés para Niños | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea 9 tarjetas de vocabulario inglés para niños en cuadrícula 3×3. Cada tarjeta incluye la palabra en inglés en negrita, transcripción fonética, ilustración kawaii y traducción al chino, en estilo colorido y divertido.",
+        "who": "Ideal para padres que enseñan inglés, profesores de ESL para niños, creadores de contenido educativo infantil y diseñadores de apps de idiomas para niños de 4-12 años.",
+        "how": [
+          "Elige un tema de vocabulario (frutas, animales, vehículos, clima, colores).",
+          "La plantilla genera 9 tarjetas en cuadrícula 3×3 con palabra, fonética, ilustración y traducción.",
+          "Cada tarjeta tiene un borde de color temático.",
+          "Solicita otro tema o nivel de dificultad.",
+          "Descarga para imprimir o uso digital."
+        ],
+        "prompts": [
+          "Genera una cuadrícula de tarjetas de vocabulario de Frutas — 9 tarjetas con palabra en inglés, fonética, ilustración kawaii y traducción al chino, 4K vertical.",
+          "Crea una cuadrícula de tarjetas de Animales — 9 tarjetas con nombres en inglés, fonética, ilustraciones cartoon y traducciones, 4K vertical.",
+          "Diseña una cuadrícula de tarjetas del Clima — 9 palabras meteorológicas con fonética, ilustraciones kawaii y traducción al chino, 4K vertical."
         ]
       }
     }

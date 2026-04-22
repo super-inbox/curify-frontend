@@ -33,6 +33,7 @@ export function useDirectGenerate({
   const t = useTranslations("actionButtons");
 
   const [isGenerating, setIsGenerating] = useState(false);
+  const isGeneratingRef = useRef(false);
   const [duplicateWarning, setDuplicateWarning] = useState<{
     exampleId: string;
     score: number;
@@ -40,7 +41,8 @@ export function useDirectGenerate({
   const bypassRef = useRef(false);
 
   const generate = async () => {
-    if (isGenerating) return;
+    if (isGeneratingRef.current) return;
+    isGeneratingRef.current = true;
     if (!user) { setDrawerState("signin"); return; }
 
     const credits =
@@ -57,6 +59,7 @@ export function useDirectGenerate({
 
     try {
       setIsGenerating(true);
+      isGeneratingRef.current = true;
       trackAction(tracking, "generate");
       const exId = buildExampleId(templateId, params);
       const res = await nanoGenerateService.generate({
@@ -71,6 +74,7 @@ export function useDirectGenerate({
       alert(t("generateFailed"));
     } finally {
       setIsGenerating(false);
+      isGeneratingRef.current = false;
     }
   };
 
