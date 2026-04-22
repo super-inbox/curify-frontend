@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -41,6 +41,7 @@ export default function ExampleGeneratePanel({
 }: Props) {
   const [form, setForm] = useState<Record<string, string>>(initialParams);
   const [isGenerating, setIsGenerating] = useState(false);
+  const isGeneratingRef = useRef(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -61,7 +62,8 @@ export default function ExampleGeneratePanel({
     `/${locale}/nano-template/${slug}/example/${encodeURIComponent(id)}`;
 
   const handleDirectGenerate = async () => {
-    if (isGenerating) return;
+    if (isGeneratingRef.current) return;
+    isGeneratingRef.current = true;
     if (!user) { setDrawerState("signin"); return; }
 
     const credits =
@@ -71,6 +73,7 @@ export default function ExampleGeneratePanel({
 
     try {
       setIsGenerating(true);
+      isGeneratingRef.current = true;
       trackAction(tracking, "generate");
       const newExId = buildExampleId(templateId, form);
       const res = await nanoGenerateService.generate({
@@ -86,6 +89,7 @@ export default function ExampleGeneratePanel({
       alert(t("generateFailed"));
     } finally {
       setIsGenerating(false);
+      isGeneratingRef.current = false;
     }
   };
 
