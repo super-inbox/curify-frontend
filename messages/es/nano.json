@@ -1747,9 +1747,27 @@
     "title": "Guía de comparación de postura | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Quiz de personalidad",
-    "description": "Genera una tarjeta de quiz visual de personalidad o estilo de vida para cualquier tema.",
-    "title": "Generador de quiz de personalidad | Nano Banana"
+    "category": "Tarjeta de Quiz de Personalidad",
+    "description": "Genera una tarjeta vertical de quiz de personalidad o estilo de vida con 6 opciones de personajes fotorrealistas en una cuadrícula 2x3 para temas como carrera, estilo, tipo de cuerpo o vibra.",
+    "title": "Nano Banana Prompt: Generador de Tarjeta de Quiz de Elección de Personalidad | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un llamativo póster vertical de quiz de personalidad usando prompts de Nano Banana. Elige un tema y el género del sujeto para generar una cuadrícula 2x3 de 6 retratos realistas de personajes, cada uno representando un tipo de personalidad distinto. El diseño incluye fondo oscuro dramático, título con resaltado naranja, etiquetas codificadas por color y tipografía 4K de alto contraste.",
+        "who": "Ideal para creadores de contenido de estilo de vida, influencers de redes sociales, entusiastas de MBTI y psicología, diseñadores de apps de quiz, y quienes crean publicaciones virales para Instagram, TikTok o Pinterest.",
+        "how": [
+          "Ingresa un tema de quiz (p. ej. Carrera, Tipo de cuerpo, Estilo, Vibra, Hobby, Personalidad).",
+          "Especifica el género del sujeto (masculino o femenino) para ajustar los retratos.",
+          "La plantilla genera 6 opciones de personajes distintos en cuadrícula 2x3 con retratos fotorrealistas.",
+          "Cada opción tiene una etiqueta redondeada en negrita con fondos codificados por color (naranja, gris, rojo).",
+          "El fondo oscuro cinématico y la iluminación crean una publicación social de alto engagement lista para compartir."
+        ],
+        "prompts": [
+          "Genera una tarjeta de quiz de Carrera con 6 opciones femeninas (CEO, Artista, Atleta, Chef, Maestra, Científica) en cuadrícula 2x3, fondo oscuro, título naranja, etiquetas de color, 4K vertical.",
+          "Crea una tarjeta de quiz de Estilo con 6 opciones masculinas (Streetwear, Formal, Casual, Vintage, Deportivo, Minimalista) en cuadrícula 2x3, iluminación cinematográfica, etiquetas en negrita, 4K vertical.",
+          "Diseña una tarjeta de quiz de Vibra con 6 opciones femeninas (Estético, Dark Academia, Cottagecore, Y2K, Boho, Clásico) en cuadrícula 2x3, fondo oscuro de alto contraste, título naranja, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "Mapa 3D",

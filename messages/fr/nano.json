@@ -1747,9 +1747,27 @@
     "title": "Guide de comparaison de posture | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Quiz de personnalité",
-    "description": "Générez une carte de quiz visuel sur la personnalité ou le style de vie pour n'importe quel thème.",
-    "title": "Générateur de quiz de personnalité | Nano Banana"
+    "category": "Carte Quiz de Personnalité",
+    "description": "Générez une carte quiz verticale de personnalité ou de style de vie avec 6 options de personnages photoréalistes en grille 2x3 pour des thèmes comme la carrière, le style, le type de corps ou l'ambiance.",
+    "title": "Nano Banana Prompt: Générateur de Carte Quiz de Choix de Personnalité | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche quiz de personnalité verticale percutante avec des prompts Nano Banana. Choisissez un thème et le genre du sujet pour générer une grille 2x3 de 6 portraits réalistes de personnages. Le design présente un fond sombre dramatique, un titre surligné en orange, des étiquettes colorées et une typographie 4K haute résolution.",
+        "who": "Idéal pour les créateurs de contenu lifestyle, les influenceurs, les passionnés de MBTI et psychologie, les designers d'applications quiz, et ceux qui créent des publications virales pour Instagram, TikTok ou Pinterest.",
+        "how": [
+          "Entrez un thème de quiz (p. ex. Carrière, Type de corps, Style, Ambiance, Passe-temps, Personnalité).",
+          "Spécifiez le genre du sujet (masculin ou féminin) pour correspondre aux portraits.",
+          "Le modèle génère 6 options de personnages distincts en grille 2x3 avec des portraits photoréalistes.",
+          "Chaque option reçoit une étiquette arrondie en gras avec des fonds codés par couleur (orange, gris, rouge).",
+          "Le fond sombre cinématique et l'éclairage professionnel créent une publication sociale à fort engagement."
+        ],
+        "prompts": [
+          "Générez une carte quiz Carrière avec 6 options féminines (PDG, Artiste, Athlète, Chef, Enseignante, Scientifique) en grille 2x3, fond sombre, titre orange, étiquettes colorées, 4K vertical.",
+          "Créez une carte quiz Style avec 6 options masculines (Streetwear, Formel, Décontracté, Vintage, Sportif, Minimaliste) en grille 2x3, éclairage cinématique, étiquettes en gras, 4K vertical.",
+          "Concevez une carte quiz Ambiance avec 6 options féminines (Esthétique, Dark Academia, Cottagecore, Y2K, Boho, Classique) en grille 2x3, fond sombre haute résolution, titre orange, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "Carte 3D",

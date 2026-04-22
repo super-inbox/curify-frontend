@@ -1811,9 +1811,27 @@
     "title": "Posture Correctness Comparison Guide | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Personality Quiz",
-    "description": "Generate a visual personality or lifestyle quiz card for any theme — career, style, body type, vibe, and more.",
-    "title": "Personality Choice Quiz Card Generator | Nano Banana"
+    "category": "Personality Quiz Card",
+    "description": "Generate a vertical personality or lifestyle quiz card featuring 6 photo-realistic character options in a 2×3 grid — for any theme like career, style, body type, or vibe.",
+    "title": "Nano Banana Prompt: Personality Choice Quiz Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a bold vertical personality quiz poster using Nano Banana prompts. Choose a theme and subject gender to generate a 2×3 grid of 6 realistic character portraits, each representing a distinct personality type or lifestyle. The design features a dark moody background, orange-highlighted title, color-coded option labels, and high-contrast 4K typography — perfect for viral social media content.",
+        "who": "Ideal for lifestyle content creators, social media influencers, psychology and MBTI enthusiasts, quiz app designers, and anyone creating engaging 'which one are you?' shareable posts for Instagram, TikTok, or Pinterest.",
+        "how": [
+          "Enter a quiz theme (e.g. Career, Body Type, Style, Vibe, Hobby, Personality).",
+          "Specify the subject gender (male or female) to match the character portraits.",
+          "The template generates 6 distinct character options in a 2×3 grid with photo-realistic portraits.",
+          "Each option gets a bold rounded label in color-coded backgrounds (orange, gray, red).",
+          "The moody dark background and cinematic lighting create a high-engagement social post ready to share."
+        ],
+        "prompts": [
+          "Generate a Career personality quiz card — 6 female character options (CEO, Artist, Athlete, Chef, Teacher, Scientist) in a 2×3 grid, dark background, orange highlighted title 'WHICH CAREER SUITS YOU?', color-coded labels, 4K vertical.",
+          "Create a Style personality quiz card — 6 male character options (Streetwear, Formal, Casual, Vintage, Sporty, Minimalist) in a 2×3 grid, moody cinematic lighting, bold color-coded labels, 4K vertical.",
+          "Design a Vibe personality quiz card — 6 female character options (Aesthetic, Dark Academia, Cottagecore, Y2K, Boho, Classic) in a 2×3 grid, high-contrast dark background, orange title highlight, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "3D Landmark Map",

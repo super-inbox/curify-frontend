@@ -1747,9 +1747,27 @@
     "title": "Haltungskorrektur-Vergleich | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Persönlichkeitsquiz",
-    "description": "Erstelle eine visuelle Persönlichkeits- oder Lifestyle-Quiz-Karte für jedes Thema.",
-    "title": "Persönlichkeitsquiz-Karte Generator | Nano Banana"
+    "category": "Persönlichkeits-Quiz-Karte",
+    "description": "Erstelle eine vertikale Persönlichkeits- oder Lifestyle-Quiz-Karte mit 6 fotorealistischen Charakteroptionen im 2x3-Raster für Themen wie Karriere, Stil, Körpertyp oder Vibe.",
+    "title": "Nano Banana Prompt: Persönlichkeits-Quiz-Karten-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein auffälliges vertikales Persönlichkeits-Quiz-Poster mit Nano Banana Prompts. Wähle ein Thema und Geschlecht, um ein 2x3-Raster mit 6 realistischen Charakterporträts zu generieren. Das Design umfasst dunklen Hintergrund, orangefarbene Titelhervorhebung, farbkodierte Etiketten und hochauflösende 4K-Typografie.",
+        "who": "Ideal für Lifestyle-Content-Creator, Social-Media-Influencer, MBTI- und Psychologie-Enthusiasten, Quiz-App-Designer und alle, die virale Posts für Instagram, TikTok oder Pinterest erstellen.",
+        "how": [
+          "Gib ein Quiz-Thema ein (z. B. Karriere, Körpertyp, Stil, Vibe, Hobby, Persönlichkeit).",
+          "Gib das Geschlecht des Subjekts an (männlich oder weiblich), um die Portraits anzupassen.",
+          "Die Vorlage generiert 6 verschiedene Charakteroptionen im 2x3-Raster mit fotorealistischen Portraits.",
+          "Jede Option erhält ein fettes abgerundetes Etikett mit farbkodierten Hintergründen (Orange, Grau, Rot).",
+          "Der dunkle Hintergrund und das Kino-Licht schaffen einen hochengagierten Social-Media-Post."
+        ],
+        "prompts": [
+          "Erstelle eine Karriere-Quiz-Karte mit 6 weiblichen Charakteroptionen (CEO, Künstlerin, Athletin, Köchin, Lehrerin, Wissenschaftlerin) im 2x3-Raster, dunkler Hintergrund, orangefarbener Titel, farbige Etiketten, 4K vertikal.",
+          "Erstelle eine Stil-Quiz-Karte mit 6 männlichen Charakteroptionen (Streetwear, Formal, Casual, Vintage, Sportlich, Minimalistisch) im 2x3-Raster, Kino-Beleuchtung, fette Etiketten, 4K vertikal.",
+          "Entwirf eine Vibe-Quiz-Karte mit 6 weiblichen Charakteroptionen (Ästhetisch, Dark Academia, Cottagecore, Y2K, Boho, Klassisch) im 2x3-Raster, hoher Kontrast, orangefarbener Titel, 4K vertikal."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "3D Landkarte",
