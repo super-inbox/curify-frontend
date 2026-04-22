@@ -1949,5 +1949,28 @@
         ]
       }
     }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Kids' English Vocabulary Flashcards",
+    "description": "Generate a colorful 3×3 grid of 9 cartoon-style English vocabulary flashcards for children, each with the word, phonetic transcription, a cheerful illustration, and Chinese translation.",
+    "title": "Nano Banana Prompt: Kids' English Vocabulary Flashcard Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vibrant 3×3 grid of 9 children's English vocabulary flashcards using Nano Banana prompts. Each card features the English word in bold, its phonetic transcription, a kawaii cartoon illustration, and the Chinese translation — all in a bright, playful style designed to make vocabulary learning fun and memorable for kids.",
+        "who": "Perfect for parents teaching children English, ESL teachers for young learners, children's educational content creators, language learning app designers, and anyone creating vocabulary materials for kids aged 4–12.",
+        "how": [
+          "Choose a vocabulary theme (e.g. Fruits, Animals, Vehicles, Weather, Colors).",
+          "The template generates 9 flashcards in a 3×3 grid, each with the English word, phonetic transcription, cartoon illustration, and Chinese translation.",
+          "Each card gets a colorful themed border matching the vocabulary category.",
+          "Request a different theme or age range to adjust the vocabulary difficulty.",
+          "Download and use the flashcard grid for print, classroom display, or digital learning."
+        ],
+        "prompts": [
+          "Generate a Fruits vocabulary flashcard grid — 9 cards with English word, phonetic transcription, cartoon fruit illustration, and Chinese translation. Bright colors, kawaii style, 4K vertical.",
+          "Create an Animals vocabulary flashcard grid — 9 animal cards with English names, phonetic transcription, cheerful cartoon illustrations, and Chinese translations. Playful bordered cards, 4K vertical.",
+          "Design a Weather vocabulary flashcard grid — 9 weather words with phonetic transcription, cute cartoon illustrations (sun, rain, snow, wind, cloud, storm, fog, rainbow, thunder), Chinese translations, 4K vertical."
+        ]
+      }
+    }
   }
 }

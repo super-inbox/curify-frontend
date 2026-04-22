@@ -1885,5 +1885,28 @@
         ]
       }
     }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Flashcards de Vocabulaire Anglais pour Enfants",
+    "description": "Génère une grille 3×3 de 9 flashcards de vocabulaire anglais style dessin animé pour enfants, avec le mot, la transcription phonétique, une illustration et la traduction chinoise.",
+    "title": "Nano Banana Prompt : Générateur de Flashcards de Vocabulaire Anglais Enfants | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée 9 flashcards de vocabulaire anglais pour enfants en grille 3×3. Chaque carte comporte le mot anglais en gras, la transcription phonétique, une illustration kawaii et la traduction chinoise, dans un style coloré et ludique.",
+        "who": "Idéal pour les parents enseignant l'anglais, les enseignants ESL pour jeunes apprenants, les créateurs de contenu éducatif et les concepteurs d'apps de langues pour enfants de 4 à 12 ans.",
+        "how": [
+          "Choisissez un thème de vocabulaire (fruits, animaux, véhicules, météo, couleurs).",
+          "La grille 3×3 de 9 cartes est générée avec mot, phonétique, illustration et traduction.",
+          "Chaque carte a une bordure colorée thématique.",
+          "Changez de thème ou de niveau.",
+          "Téléchargez pour impression ou usage numérique."
+        ],
+        "prompts": [
+          "Génère une grille de flashcards Fruits — 9 cartes avec mot anglais, phonétique, illustration kawaii et traduction chinoise, 4K vertical.",
+          "Crée une grille de flashcards Animaux — 9 cartes avec noms anglais, phonétique, illustrations cartoon et traductions, 4K vertical.",
+          "Conçois une grille de flashcards Météo — 9 mots météo avec phonétique, illustrations kawaii et traductions chinoises, 4K vertical."
+        ]
+      }
+    }
   }
 }
