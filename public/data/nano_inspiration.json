@@ -30480,7 +30480,10 @@
       "en": {
         "title": "british clothing"
       }
-    }
+    },
+    "topics": [
+      "uk"
+    ]
   },
   {
     "id": "template-clothing-evolution-poster-egyptian-clothing",
@@ -30496,7 +30499,10 @@
       "en": {
         "title": "egyptian clothing"
       }
-    }
+    },
+    "topics": [
+      "egypt"
+    ]
   },
   {
     "id": "template-clothing-evolution-poster-russian-clothing",
@@ -30824,7 +30830,10 @@
       "en": {
         "title": "italian clothing"
       }
-    }
+    },
+    "topics": [
+      "italy"
+    ]
   },
   {
     "id": "template-clothing-evolution-poster-mexican-clothing",
@@ -30840,7 +30849,10 @@
       "en": {
         "title": "mexican clothing"
       }
-    }
+    },
+    "topics": [
+      "mexico"
+    ]
   },
   {
     "id": "template-figure-principles-infographic-albert-einstein",
@@ -31871,5 +31883,69 @@
       "city",
       "egypt"
     ]
+  },
+  {
+    "id": "template-cartoon-english-vocabulary-flashcards-fruits",
+    "template_id": "template-cartoon-english-vocabulary-flashcards",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-english-vocabulary-flashcards-fruits.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-fruits-prev.jpg"
+    },
+    "params": {
+      "theme": "fruits"
+    },
+    "locales": {
+      "en": {
+        "title": "fruits"
+      }
+    }
+  },
+  {
+    "id": "template-cartoon-english-vocabulary-flashcards-vehicles",
+    "template_id": "template-cartoon-english-vocabulary-flashcards",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-english-vocabulary-flashcards-vehicles.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-vehicles-prev.jpg"
+    },
+    "params": {
+      "theme": "vehicles"
+    },
+    "locales": {
+      "en": {
+        "title": "vehicles"
+      }
+    }
+  },
+  {
+    "id": "template-cartoon-english-vocabulary-flashcards-verbs",
+    "template_id": "template-cartoon-english-vocabulary-flashcards",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-english-vocabulary-flashcards-verbs.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-verbs-prev.jpg"
+    },
+    "params": {
+      "theme": "verbs"
+    },
+    "locales": {
+      "en": {
+        "title": "verbs"
+      }
+    }
+  },
+  {
+    "id": "template-cartoon-english-vocabulary-flashcards-weather",
+    "template_id": "template-cartoon-english-vocabulary-flashcards",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cartoon-english-vocabulary-flashcards-weather.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cartoon-english-vocabulary-flashcards-weather-prev.jpg"
+    },
+    "params": {
+      "theme": "weather"
+    },
+    "locales": {
+      "en": {
+        "title": "weather"
+      }
+    }
   }
 ]
