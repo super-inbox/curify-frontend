@@ -95,6 +95,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   fitness:        "fitness",
   photorealistic: "photorealistic",
   architecture:   "architecture",
+  travel:         "landscape",
 };
 
 // Blog tag to pull posts for a topic page.
