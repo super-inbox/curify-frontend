@@ -97,6 +97,8 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   photorealistic: "photorealistic",
   architecture:   "architecture",
   travel:         "landscape",
+  portrait:       "portrait",
+  monochrome:     "monochrome",
 };
 
 // Blog tag to pull posts for a topic page.
