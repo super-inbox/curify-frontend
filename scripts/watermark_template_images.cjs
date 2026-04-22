@@ -31,9 +31,10 @@ const PADDING_FULL     = 20;
 const PADDING_PREVIEW  = 10;
 
 // Tiled mode config
-const TILE_LOGO_PCT  = 0.12;  // logo width as % of image width
-const TILE_OPACITY   = 0.15;  // 0–1, opacity of each tile
-const TILE_ROTATE    = -30;   // degrees
+const TILE_LOGO_PCT      = 0.22;  // logo width as % of image width
+const TILE_SPACING_FACTOR = 1.8;  // canvas extended to this multiple of logo size for spacing
+const TILE_OPACITY        = 0.15;  // 0–1, opacity of each tile
+const TILE_ROTATE         = -30;   // degrees
 
 // ── Args ──────────────────────────────────────────────────────────────────────
 
@@ -94,6 +95,16 @@ function overlayLogoTiled(srcPath, destPath, logoPx) {
       `magick -background none "${LOGO_PATH}" -resize ${logoPx}x ` +
       `-rotate ${TILE_ROTATE} -alpha set -channel A -evaluate multiply ${TILE_OPACITY} +channel ` +
       `"${tmpLogo}"`,
+      { stdio: 'pipe' }
+    );
+
+    // Step 1.5: extend canvas for spacing between tiles
+    const logoDims = execSync(`magick identify -format "%wx%h" "${tmpLogo}"`).toString().trim();
+    const [lw, lh] = logoDims.split('x').map(Number);
+    const paddedW = Math.round(lw * TILE_SPACING_FACTOR);
+    const paddedH = Math.round(lh * TILE_SPACING_FACTOR);
+    execSync(
+      `magick "${tmpLogo}" -gravity center -background none -extent ${paddedW}x${paddedH} "${tmpLogo}"`,
       { stdio: 'pipe' }
     );
 
