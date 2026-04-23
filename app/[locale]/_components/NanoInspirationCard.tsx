@@ -1,15 +1,20 @@
 // app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
 
-import { Layers, Sparkles } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Download, Layers, Sparkles } from "lucide-react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useAtom } from "jotai";
+import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
   useClickTracking,
   useRemixTracking,
+  useTracking,
 } from "@/services/useTracking";
+import { templatePacksService } from "@/services/templatePacks";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
   makeNanoTemplateUrl,
   normalizeCarouselUrls,
@@ -45,6 +50,43 @@ export function NanoInspirationCard({
 
   const trackCardClick = useClickTracking(card.id, "nano_inspiration_template_card", "list");
   const trackRemix = useRemixTracking(card.id, "nano_inspiration_template_card", "list");
+  const { trackAction } = useTracking();
+  const t = useTranslations("actionButtons");
+  const [user] = useAtom(userAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const isDownloadingRef = useRef(false);
+
+  const batchTracking = {
+    contentId: card.id,
+    contentType: "nano_inspiration_template_card" as const,
+    viewMode: "list" as const,
+  };
+
+  const handleDownload = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (isDownloadingRef.current) return;
+    isDownloadingRef.current = true;
+    if (!user) { setDrawerState("signin"); isDownloadingRef.current = false; return; }
+
+    try {
+      setIsDownloading(true);
+      const res = await templatePacksService.downloadPack({ template_id: card.template_id });
+      if (!res?.success || !res?.download_url) throw new Error(res?.message || "Missing download_url");
+      const a = document.createElement("a");
+      a.href = res.download_url;
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      trackAction(batchTracking, "download");
+    } catch {
+      alert(t("batchDownloadFailed"));
+    } finally {
+      setIsDownloading(false);
+      isDownloadingRef.current = false;
+    }
+  };
 
   const canonicalUrl = makeNanoTemplateUrl(card.template_id, pageLocale);
 
@@ -184,14 +226,25 @@ export function NanoInspirationCard({
 
       {/* Actions */}
       {remixHref && (
-        <div className="mt-auto">
+        <div className={`mt-auto flex items-center gap-2 ${card.batch ? "justify-between" : "justify-end"}`}>
+          {card.batch && (
+            <button
+              type="button"
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
+            >
+              <Download className="h-3.5 w-3.5" />
+              {isDownloading ? t("downloadingPack") : t("downloadPack")}
+            </button>
+          )}
           <Link
             href={remixHref}
             onClick={(e) => {
               e.stopPropagation();
               trackRemix();
             }}
-            className="flex w-full items-center justify-center gap-1.5 rounded-full bg-purple-50 px-3 py-2 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
+            className="flex items-center justify-center gap-1.5 rounded-full bg-purple-50 px-3 py-2 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
           >
             <Sparkles className="h-3.5 w-3.5" />
             Remix this
