@@ -175,6 +175,7 @@ export default async function NanoTemplatePage({ params }: Props) {
           items={section2Images}
           locale={pageLocale}
           maxRows={2}
+          batch={!!template.batch}
         />
 </section>
 

@@ -616,7 +616,8 @@
     "legacy_id": "template-intangible-heritage-zh",
     "topics": [
       "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
     "rank_score": 70,
     "base_rank_score": 70,
@@ -706,7 +707,8 @@
     "legacy_id": "template-costume-zh",
     "topics": [
       "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
     "rank_score": 80,
     "batch": true,
@@ -883,7 +885,8 @@
     },
     "topics": [
       "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
     "rank_score": 1,
     "base_rank_score": 1,
@@ -972,7 +975,8 @@
       }
     },
     "topics": [
-      "lifestyle"
+      "learning",
+      "science"
     ],
     "rank_score": 1,
     "base_rank_score": 1
@@ -1103,7 +1107,8 @@
     "og_image": "/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg",
     "topics": [
       "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
     "rank_score": 80,
     "base_rank_score": 80,
@@ -1599,7 +1604,8 @@
     "legacy_id": "template-guofeng-scroll-zh",
     "topics": [
       "lifestyle",
-      "culture"
+      "culture",
+      "travel"
     ],
     "rank_score": 80,
     "base_rank_score": 80,
@@ -3288,7 +3294,8 @@
     "topics": [
       "learning",
       "culture",
-      "kawaii"
+      "kawaii",
+      "travel"
     ],
     "allow_generation": true
   },
@@ -3492,7 +3499,8 @@
     "topics": [
       "mbti",
       "culture",
-      "ink"
+      "ink",
+      "travel"
     ],
     "base_rank_score": 70,
     "rank_score": 70,
@@ -3558,7 +3566,8 @@
     "topics": [
       "culture",
       "design",
-      "ink"
+      "ink",
+      "travel"
     ],
     "base_rank_score": 90,
     "rank_score": 90,
@@ -4253,7 +4262,7 @@
     "id": "template-figure-principles-infographic",
     "locales": {
       "en": {
-        "base_prompt": "(Famous Figure Principles Infographic Designer) You are a professional educational infographic designer. Based on the user-specified {famous_figure}, generate a clean, structured infographic poster about their core principles or key concepts, matching the watercolor portrait style of the reference images. Layout: 1. Large bold title \"{famous_figure.upper()}'S [THEME]\" at the top, with Curify watermark at top left. 2. Left/Top section: Watercolor-style portrait of {famous_figure} with their signature object. 3. Grid layout of key principles/concepts, each with a simple line icon, title, description, and bullet points. Style: Clean minimalist layout, white background, professional typography, watercolor illustration style, high readability, vertical format, 4K ultra HD, direct image generation. Subject: {famous_figure} Core Principles Infographic.",
+        "base_prompt": "(Famous Figure Principles Infographic Designer) You are a professional educational infographic designer. Based on the user-specified {famous_figure}, generate a clean, structured infographic poster about their core principles or key concepts, matching the watercolor portrait style of the reference images. Layout: 1. Large bold title \"{famous_figure}'S [THEME]\" at the top, with Curify watermark at top left. 2. Left/Top section: Watercolor-style portrait of {famous_figure} with their signature object. 3. Grid layout of key principles/concepts, each with a simple line icon, title, description, and bullet points. Style: Clean minimalist layout, white background, professional typography, watercolor illustration style, high readability, vertical format, 4K ultra HD, direct image generation. Subject: {famous_figure} Core Principles Infographic.",
         "parameters": [
           {
             "name": "famous_figure",
@@ -4306,7 +4315,8 @@
     "topics": [
       "learning",
       "culture",
-      "reading"
+      "reading",
+      "travel"
     ],
     "rank_score": 90,
     "base_rank_score": 90
@@ -4437,7 +4447,8 @@
     "og_image": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-wedding-traditions-prev.jpg",
     "topics": [
       "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
     "rank_score": 90,
     "base_rank_score": 90
@@ -4466,7 +4477,8 @@
     "og_image": "/images/nano_insp_preview/template-watercolor-painting-tutorial-guide-mushrooms-prev.jpg",
     "topics": [
       "learning",
-      "design"
+      "design",
+      "watercolor"
     ],
     "rank_score": 90,
     "base_rank_score": 90
