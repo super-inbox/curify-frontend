@@ -224,6 +224,7 @@ export default async function NanoExampleDetailPage({
               <>
                 {templateTopics.length > 0 && (
                   <TopicNavRow
+                    key="topics"
                     locale={pageLocale}
                     topics={templateTopics}
                     className="mb-0"
@@ -232,7 +233,7 @@ export default async function NanoExampleDetailPage({
                   />
                 )}
                 {exampleTags.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
+                  <div key="tags" className="flex flex-wrap gap-2">
                     {exampleTags.map((tag) => (
                       <MetaChipLink key={tag} href={buildTopicHref(rawLocale, tag)} color="blue" size="small">
                         {tag}
@@ -242,6 +243,7 @@ export default async function NanoExampleDetailPage({
                 )}
                 {category && (
                   <a
+                    key="category"
                     href={`/${rawLocale}/nano-template/${slug}`}
                     className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
                   >
