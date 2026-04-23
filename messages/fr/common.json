@@ -54,7 +54,13 @@
     "termsOfService": "Conditions d'utilisation",
     "and": "et",
     "privacyPolicy": "politique de confidentialité",
-    "logoAlt": "logo"
+    "logoAlt": "logo",
+    "sending": "Sending...",
+    "verifying": "Verifying...",
+    "emailNotFound": "No account found with this email.",
+    "sendOtpFailed": "Failed to send code. Please try again.",
+    "otpExpired": "Verification code has expired. Please request a new one.",
+    "noOtpIssued": "No code was issued for this email. Please start over."
   },
   "paymentProcessingModal": {
     "processingTitle": "Traitement des paiements",

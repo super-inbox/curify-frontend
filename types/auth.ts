@@ -14,8 +14,8 @@ export interface User {
   created_at: string;
   updated_at: string;
   projects: Project[];
-  saved_ids?: string[];
-  copied_ids?: string[];
+  saved_content_ids?: string[];
+  copied_content_ids?: string[];
   emailVerified?: Date | null;
 }
 

@@ -8,9 +8,4 @@ export const savedItemsService = {
     });
   },
 
-  async unsave(contentId: string): Promise<void> {
-    await apiClient.request(`/user/saved-items/${encodeURIComponent(contentId)}`, {
-      method: 'DELETE',
-    });
-  },
 };

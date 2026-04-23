@@ -94,8 +94,8 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
 
   const router = useRouter();
 
-  const savedCards = resolveIds(user && "saved_ids" in user ? (user as any).saved_ids ?? [] : [], locale);
-  const copiedCards = resolveIds(user && "copied_ids" in user ? (user as any).copied_ids ?? [] : [], locale);
+  const savedCards = resolveIds((user as any)?.saved_content_ids ?? [], locale);
+  const copiedCards = resolveIds((user as any)?.copied_content_ids ?? [], locale);
 
   const refreshProjects = useCallback(async () => {
     try {

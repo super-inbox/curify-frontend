@@ -102,22 +102,17 @@ export default function UnifiedActionBar({
   const [saved, setSaved] = useState(false);
 
   const handleSave = async () => {
-    if (!save) return;
+    if (!save || saved) return;
     if (!user) {
       setDrawerState("signin");
       return;
     }
-    const next = !saved;
-    setSaved(next);
+    setSaved(true);
     trackSave();
     try {
-      if (next) {
-        await savedItemsService.save(tracking.contentId, tracking.contentType);
-      } else {
-        await savedItemsService.unsave(tracking.contentId);
-      }
+      await savedItemsService.save(tracking.contentId, tracking.contentType);
     } catch {
-      setSaved(!next);
+      setSaved(false);
     }
   };
 
