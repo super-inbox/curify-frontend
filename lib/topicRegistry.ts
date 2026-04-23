@@ -60,19 +60,20 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
+  travel:    ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
   design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 };
 
 // Full explicit parent→children hierarchy.
-// Tier 1 (entry bar): character, language, lifestyle, learning, product
+// Tier 1 (entry bar): character, language, travel, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "anime", "sports", "comparison", "groups", "film", "portrait"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  lifestyle: ["travel", "food", "fitness", "nostalgia", "city", "fashion", "finance", "guides"],
-  learning:  ["science", "trending", "culture", "architecture", "history", "ai", "reading"],
+  travel:    ["culture", "food", "city"],
+  lifestyle: ["fitness", "nostalgia", "fashion", "finance", "guides"],
+  learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
   product:   [],
   design:    ["interior"],
 };
@@ -175,8 +176,8 @@ function buildTopicRegistry(): TopicRegistry {
   );
 
   // Related topics: only among true Tier 1 topics (entry bar)
-  const TIER1_TOPICS = new Set(["character", "language", "lifestyle", "learning", "product", "design"]);
-  const RELATED_FOCUS = new Set(["learning", "character", "lifestyle", "product"]);
+  const TIER1_TOPICS = new Set(["character", "language", "travel", "lifestyle", "learning", "product", "design"]);
+  const RELATED_FOCUS = new Set(["learning", "character", "travel", "lifestyle", "product"]);
   const MIN_OVERLAP = 2;
   const relatedTopics = new Map<string, string[]>();
   const tier1Ids = allTopicIds.filter((id) => TIER1_TOPICS.has(id));
