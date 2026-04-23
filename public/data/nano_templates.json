@@ -90,7 +90,10 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-travel",
@@ -661,7 +664,8 @@
     "rank_score": 80,
     "use_cases": [
       "for-marketers",
-      "for-creators"
+      "for-creators",
+      "for-parents"
     ],
     "base_rank_score": 80,
     "allow_generation": true
@@ -1143,7 +1147,10 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-what-if-history",
@@ -1650,7 +1657,10 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-city-miniature",
@@ -3095,7 +3105,10 @@
       "photorealistic"
     ],
     "base_rank_score": 100,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-industrial-design-concept-sketch",
@@ -3190,7 +3203,10 @@
       "kawaii",
       "guides"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-group-vocab-category",
@@ -3783,7 +3799,10 @@
       "language",
       "vocabulary"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-beauty-step-by-step-guide",
@@ -3973,7 +3992,10 @@
     ],
     "rank_score": 70,
     "base_rank_score": 70,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-personality-choice-quiz-card",
@@ -4244,7 +4266,10 @@
       "kawaii"
     ],
     "rank_score": 70,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-figure-principles-infographic",
@@ -4466,6 +4491,9 @@
       "watercolor"
     ],
     "rank_score": 90,
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-parents"
+    ]
   }
 ]
