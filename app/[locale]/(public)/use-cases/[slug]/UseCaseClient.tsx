@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useAtomValue, useSetAtom } from "jotai";
+import { Download } from "lucide-react";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import { templatePacksService } from "@/services/templatePacks";
+import { useTracking } from "@/services/useTracking";
 
 type ToolCard = {
   slug: string;
@@ -15,16 +18,73 @@ type ToolCard = {
   href: string;
 };
 
+type LearningMaterial = {
+  templateId: string;
+  title: string;
+  description: string;
+};
+
 const BULLET_KEYS = ["bullet0", "bullet1", "bullet2", "bullet3"] as const;
+
+function LearningMaterialCard({ material }: { material: LearningMaterial }) {
+  const t = useTranslations("actionButtons");
+  const user = useAtomValue(userAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const { trackAction } = useTracking();
+  const [isDownloading, setIsDownloading] = useState(false);
+  const isDownloadingRef = useRef(false);
+
+  const handleDownload = async () => {
+    if (isDownloadingRef.current) return;
+    isDownloadingRef.current = true;
+    if (!user) { setDrawerState("signin"); isDownloadingRef.current = false; return; }
+
+    try {
+      setIsDownloading(true);
+      const res = await templatePacksService.downloadPack({ template_id: material.templateId });
+      if (!res?.success || !res?.download_url) throw new Error(res?.message || "Missing download_url");
+      const a = document.createElement("a");
+      a.href = res.download_url;
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      trackAction({ contentId: material.templateId, contentType: "nano_inspiration_template_card" as const, viewMode: "list" as const }, "download");
+    } catch {
+      alert(t("batchDownloadFailed"));
+    } finally {
+      setIsDownloading(false);
+      isDownloadingRef.current = false;
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-3 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
+      <div className="text-base font-bold text-neutral-900">{material.title}</div>
+      <div className="text-sm text-neutral-500">{material.description}</div>
+      <button
+        type="button"
+        onClick={handleDownload}
+        disabled={isDownloading}
+        className="mt-auto inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-bold text-white hover:bg-purple-700 disabled:opacity-60"
+      >
+        <Download className="h-4 w-4" />
+        {isDownloading ? t("downloadingPack") : t("downloadPack")}
+      </button>
+    </div>
+  );
+}
 
 export default function UseCaseClient({
   slug,
   nanoCards,
   toolCards,
+  learningMaterials,
 }: {
   slug: string;
   nanoCards: NanoInspirationCardType[];
   toolCards: ToolCard[];
+  learningMaterials?: LearningMaterial[];
 }) {
   const t = useTranslations("useCasePage");
   const title = t(`${slug}.title` as never);
@@ -60,8 +120,19 @@ export default function UseCaseClient({
         </ul>
       </section>
 
-      {/* Tools */}
-      {toolCards.length > 0 && (
+      {/* Learning Materials (for-parents) or Tools (other use cases) */}
+      {learningMaterials && learningMaterials.length > 0 ? (
+        <section className="mb-10">
+          <h2 className="mb-4 text-xl font-bold text-neutral-900">
+            {t("learningMaterialsHeading")}
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {learningMaterials.map((m) => (
+              <LearningMaterialCard key={m.templateId} material={m} />
+            ))}
+          </div>
+        </section>
+      ) : toolCards.length > 0 && (
         <section className="mb-10">
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("toolsHeading")}

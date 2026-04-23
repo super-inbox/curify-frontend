@@ -85,6 +85,7 @@ export type NanoInspirationCardType = {
   base_prompt?: string;
   template_parameters?: TemplateParameter[];
   sample_parameters?: Record<string, any>;
+  batch?: boolean;
 };
 
 export type NanoRegistry = {

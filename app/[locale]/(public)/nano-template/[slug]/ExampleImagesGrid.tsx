@@ -116,7 +116,7 @@ function ExampleImageCard({
         </div>
       </Link>
 
-      <div className={`flex items-center px-3 py-2 ${item.batch ? "justify-between" : "justify-end"}`}>
+      <div className={`flex items-center px-3 py-2 ${item.batch ? "justify-between" : "justify-center"}`}>
         {item.batch && (
           <button
             type="button"
