@@ -4341,5 +4341,134 @@
     ],
     "rank_score": 90,
     "base_rank_score": 90
+  },
+  {
+    "id": "template-language-word-comparison-educational-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Language Learning Word Comparison Poster Designer) You are a fun educational poster illustrator. Based on the user-specified pair {word1} vs {word2}, generate a cute, kid-friendly comparison poster explaining their usage differences, matching the reference style. Layout: 1. Large title \"{word1.upper()} vs {word2.uclean()}\" at the top, with a short subtitle explaining their core difference. 2. Two-column layout, each column with a distinct pastel color. 3. Each column includes: large character/pinyin, part of speech label, usage rule, example sentence with translation, and a matching cute animal illustration. 4. Bottom row of speech bubble examples with simple icons. Style: Warm cream background, whimsical cartoon animals, clear bilingual text, colorful frames, sparkles and star decorations, vertical format, 4K ultra HD, direct image generation. Subject: {word1} vs {word2} Usage Comparison Poster.",
+        "parameters": [
+          {
+            "name": "word1",
+            "label": "First Word to Compare",
+            "type": "text",
+            "placeholder": [
+              "的",
+              "就",
+              "在",
+              "都",
+              "会"
+            ]
+          },
+          {
+            "name": "word2",
+            "label": "Second Word to Compare",
+            "type": "text",
+            "placeholder": [
+              "得",
+              "才",
+              "正在",
+              "也",
+              "能"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-language-word-comparison-educational-poster-dou-ye-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "kawaii"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80
+  },
+  {
+    "id": "template-world-travel-map-illustration-en",
+    "locales": {
+      "en": {
+        "base_prompt": "(Country Travel Map Illustrator) You are a professional travel map illustrator. Based on the user-specified {country}, generate a colorful, hand-drawn travel guide map of {country}, matching the reference style. Layout: 1. Header: Decorative title with {country} nickname, country name, and \"Travel Guide\" banner. Curify watermark at top left. 2. Map: Simplified illustrated map of {country}, with state/region borders, key cities marked with dotted lines, and small text labels. 3. Icons: Scattered illustrations of iconic landmarks, local food, wildlife, and culture relevant to {country}. Style: Soft watercolor background, cute cartoon icons, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: Illustrated Travel Map of {country}.",
+        "parameters": [
+          {
+            "name": "country",
+            "label": "Country Name",
+            "type": "text",
+            "placeholder": [
+              "United States",
+              "China",
+              "Egypt",
+              "Germany",
+              "Greece",
+              "Russia"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-world-travel-map-illustration-united-states-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "travel"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(East Asian Culture Comparison Infographic Designer) You are a professional cross-cultural etiquette illustrator. Based on the user-specified {topic}, generate a 3-column comparison infographic of {topic} traditions in Japan, Korea, and China, matching the clean, educational cartoon style of the reference images. Layout: 1. Header: Bold title \"{topic.upper()} TRADITIONS\" with Curify watermark at top left. 2. Three-column layout, each column for one country (Japan in blue, Korea in green, China in red). 3. Each column has 3 rows of illustrations and text explaining key steps/elements of the tradition, with bilingual labels. 4. Footer: A short summary about shared cultural values. Style: Simple flat cartoon illustrations, clear typography, distinct color coding for each country, vertical format, 4K ultra HD, direct image generation. Subject: {topic} Traditions in Japan, Korea, and China.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Cultural Topic/Tradition",
+            "type": "text",
+            "placeholder": [
+              "Business Card Exchange Etiquette",
+              "Gift Giving Traditions",
+              "Tea Culture Traditions",
+              "Wedding Traditions"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-wedding-traditions-prev.jpg",
+    "topics": [
+      "learning",
+      "culture"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-watercolor-painting-tutorial-guide",
+    "locales": {
+      "en": {
+        "base_prompt": "(Watercolor Painting Tutorial Designer) You are a professional watercolor artist and art instructor. Based on the user-specified {subject}, generate a 4-step watercolor painting tutorial guide, matching the clean, educational style of the reference images. Layout: 1. Curify watermark at top left. 2. Four-step grid layout (2×2) showing the painting process: Step 1 (Base Wash/Light Base), Step 2 (Building Form/Texture), Step 3 (Adding Depth/Details), Step 4 (Final Touches/Complete Scene). 3. Central sketch diagram showing key form/shadow anatomy. 4. Small color swatches with paint names for each step. Style: White textured watercolor paper background, soft watercolor illustrations, clear labels and arrows, vertical format, 4K ultra HD, direct image generation. Subject: Watercolor Painting Tutorial for {subject}.",
+        "parameters": [
+          {
+            "name": "subject",
+            "label": "Object/Subject Name",
+            "type": "text",
+            "placeholder": [
+              "Rose",
+              "Butterfly",
+              "Lemon",
+              "Mushrooms",
+              "Peach"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-watercolor-painting-tutorial-guide-mushrooms-prev.jpg",
+    "topics": [
+      "learning",
+      "design"
+    ],
+    "rank_score": 90,
+    "base_rank_score": 90
   }
 ]
