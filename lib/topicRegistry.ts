@@ -53,16 +53,16 @@ function normalizeTopicValues(value: unknown): string[] {
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome"],
+  ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome"],
+  character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   lifestyle: ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome"],
+  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 };
 
 // Full explicit parent→children hierarchy.
@@ -99,6 +99,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   travel:         "landscape",
   portrait:       "portrait",
   monochrome:     "monochrome",
+  watercolor:     "watercolor",
 };
 
 // Blog tag to pull posts for a topic page.
