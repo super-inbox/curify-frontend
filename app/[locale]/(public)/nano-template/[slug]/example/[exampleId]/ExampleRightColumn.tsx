@@ -21,7 +21,7 @@ const CREDITS_COST = 10;
 
 type Props = {
   chipTopics?: string[];
-  chipTags?: string[];
+  chipExampleTopics?: string[];
   chipCategory?: string;
   title: string;
   templateId: string;
@@ -39,7 +39,7 @@ type Props = {
 
 export default function ExampleRightColumn({
   chipTopics,
-  chipTags,
+  chipExampleTopics,
   chipCategory,
   title,
   templateId,
@@ -101,7 +101,7 @@ export default function ExampleRightColumn({
     } catch {}
   };
 
-  const mergedTopics = [...new Set([...(chipTopics ?? []), ...(chipTags ?? [])])];
+  const mergedTopics = [...new Set([...(chipTopics ?? []), ...(chipExampleTopics ?? [])])];
 
   return (
     <div className="flex flex-col gap-3 lg:min-h-[520px]">
