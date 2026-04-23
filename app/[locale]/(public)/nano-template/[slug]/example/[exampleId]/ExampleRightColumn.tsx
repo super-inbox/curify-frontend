@@ -4,12 +4,14 @@ import { useState, useMemo } from "react";
 import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
-import type { ReactNode } from "react";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
+import { buildTopicHref } from "@/lib/locale_utils";
 import { fillPrompt } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
@@ -20,7 +22,9 @@ import { useTracking } from "@/services/useTracking";
 const CREDITS_COST = 10;
 
 type Props = {
-  metaChips?: ReactNode;
+  chipTopics?: string[];
+  chipTags?: string[];
+  chipCategory?: string;
   title: string;
   templateId: string;
   slug: string;
@@ -36,7 +40,9 @@ type Props = {
 };
 
 export default function ExampleRightColumn({
-  metaChips,
+  chipTopics,
+  chipTags,
+  chipCategory,
   title,
   templateId,
   slug,
@@ -100,9 +106,36 @@ export default function ExampleRightColumn({
   return (
     <div className="flex flex-col gap-3 lg:min-h-[520px]">
       {/* Meta chips */}
-      {metaChips && (
-        <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
-      )}
+      {(chipTopics?.length || chipTags?.length || chipCategory) ? (
+        <div className="flex flex-wrap items-center gap-2">
+          {chipTopics && chipTopics.length > 0 && (
+            <TopicNavRow
+              locale={locale}
+              topics={chipTopics}
+              className="mb-0"
+              showDisabled={false}
+              size="small"
+            />
+          )}
+          {chipTags && chipTags.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {chipTags.map((tag) => (
+                <MetaChipLink key={tag} href={buildTopicHref(locale, tag)} color="blue" size="small">
+                  {tag}
+                </MetaChipLink>
+              ))}
+            </div>
+          )}
+          {chipCategory && (
+            <a
+              href={`/${locale}/nano-template/${slug}`}
+              className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
+            >
+              {chipCategory}
+            </a>
+          )}
+        </div>
+      ) : null}
 
       {/* Title */}
       <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
