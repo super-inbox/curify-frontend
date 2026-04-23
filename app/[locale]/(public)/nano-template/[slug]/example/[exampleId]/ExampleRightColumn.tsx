@@ -10,8 +10,6 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
-import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
-import { buildTopicHref } from "@/lib/locale_utils";
 import { fillPrompt } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
@@ -23,7 +21,7 @@ const CREDITS_COST = 10;
 
 type Props = {
   chipTopics?: string[];
-  chipTags?: string[];
+  chipExampleTopics?: string[];
   chipCategory?: string;
   title: string;
   templateId: string;
@@ -41,7 +39,7 @@ type Props = {
 
 export default function ExampleRightColumn({
   chipTopics,
-  chipTags,
+  chipExampleTopics,
   chipCategory,
   title,
   templateId,
@@ -103,28 +101,21 @@ export default function ExampleRightColumn({
     } catch {}
   };
 
+  const mergedTopics = [...new Set([...(chipTopics ?? []), ...(chipExampleTopics ?? [])])];
+
   return (
     <div className="flex flex-col gap-3 lg:min-h-[520px]">
       {/* Meta chips */}
-      {(chipTopics?.length || chipTags?.length || chipCategory) ? (
+      {(mergedTopics.length > 0 || chipCategory) ? (
         <div className="flex flex-wrap items-center gap-2">
-          {chipTopics && chipTopics.length > 0 && (
+          {mergedTopics.length > 0 && (
             <TopicNavRow
               locale={locale}
-              topics={chipTopics}
+              topics={mergedTopics}
               className="mb-0"
               showDisabled={false}
               size="small"
             />
-          )}
-          {chipTags && chipTags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {chipTags.map((tag) => (
-                <MetaChipLink key={tag} href={buildTopicHref(locale, tag)} color="blue" size="small">
-                  {tag}
-                </MetaChipLink>
-              ))}
-            </div>
           )}
           {chipCategory && (
             <a

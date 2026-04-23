@@ -88,7 +88,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     ctx.templateId
   );
 
-  const exampleTags: string[] = (example as any).topics ?? [];
+  const exampleTopics: string[] = example.topics ?? [];
 
   const existingExamples = imageViews.map((v) => ({ id: v.id, params: v.params }));
 
@@ -100,7 +100,7 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     category,
     prompt,
     tags,
-    exampleTags,
+    exampleTopics,
     paramEntries,
     gridItems,
     similarItems,
@@ -178,7 +178,7 @@ export default async function NanoExampleDetailPage({
     title,
     category,
     prompt,
-    exampleTags,
+    exampleTopics,
     paramEntries,
     gridItems,
     similarItems,
@@ -218,7 +218,7 @@ export default async function NanoExampleDetailPage({
         rightColumnContent={
           <ExampleRightColumn
             chipTopics={templateTopics}
-            chipTags={exampleTags}
+            chipExampleTopics={exampleTopics}
             chipCategory={category}
             title={title}
             templateId={templateId}
