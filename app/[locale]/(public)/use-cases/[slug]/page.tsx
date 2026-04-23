@@ -95,11 +95,28 @@ export default async function UseCasePage({ params }: Props) {
       href: localeStr === "en" ? `/tools/${tool!.slug}` : `/${localeStr}/tools/${tool!.slug}`,
     }));
 
+  const learningMaterials =
+    slug === "for-parents"
+      ? (nanoTemplates as unknown as RawTemplate[])
+          .filter((t) => {
+            const topics = Array.isArray(t.topics)
+              ? t.topics
+              : (t.topics ?? "").split(",").map((x: string) => x.trim());
+            return t.batch === true && topics.includes("language");
+          })
+          .map((t) => ({
+            templateId: t.id,
+            title: translateNano(`${t.id}.category`),
+            description: translateNano(`${t.id}.description`),
+          }))
+      : undefined;
+
   return (
     <UseCaseClient
       slug={useCase.slug}
       nanoCards={nanoCards}
       toolCards={toolCards}
+      learningMaterials={learningMaterials}
     />
   );
 }

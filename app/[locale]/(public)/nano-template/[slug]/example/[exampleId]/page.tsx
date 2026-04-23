@@ -8,9 +8,6 @@ import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleRightColumn from "./ExampleRightColumn";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
-import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
-import MetaChipLink from "@/app/[locale]/_components/MetaChipLink";
-import { buildTopicHref } from "@/lib/locale_utils";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
 import { SITE_URL } from "@/lib/constants";
 
@@ -220,36 +217,9 @@ export default async function NanoExampleDetailPage({
         }
         rightColumnContent={
           <ExampleRightColumn
-            metaChips={
-              <>
-                {templateTopics.length > 0 && (
-                  <TopicNavRow
-                    locale={pageLocale}
-                    topics={templateTopics}
-                    className="mb-0"
-                    showDisabled={false}
-                    size="small"
-                  />
-                )}
-                {exampleTags.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {exampleTags.map((tag) => (
-                      <MetaChipLink key={tag} href={buildTopicHref(rawLocale, tag)} color="blue" size="small">
-                        {tag}
-                      </MetaChipLink>
-                    ))}
-                  </div>
-                )}
-                {category && (
-                  <a
-                    href={`/${rawLocale}/nano-template/${slug}`}
-                    className="inline-flex items-center rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-semibold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
-                  >
-                    {category}
-                  </a>
-                )}
-              </>
-            }
+            chipTopics={templateTopics}
+            chipTags={exampleTags}
+            chipCategory={category}
             title={title}
             templateId={templateId}
             slug={slug}
