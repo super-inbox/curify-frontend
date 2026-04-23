@@ -226,7 +226,7 @@ export function NanoInspirationCard({
 
       {/* Actions */}
       {remixHref && (
-        <div className={`mt-auto flex items-center gap-2 ${card.batch ? "justify-between" : "justify-end"}`}>
+        <div className={`mt-auto flex items-center gap-2 ${card.batch ? "justify-between" : "justify-center"}`}>
           {card.batch && (
             <button
               type="button"
