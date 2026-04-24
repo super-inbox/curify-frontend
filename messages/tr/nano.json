@@ -1709,22 +1709,86 @@
   "template-equipment-muscle-guide": {
     "category": "Fitness ve Anatomi Rehberleri",
     "description": "Egzersiz çizimleri ve anatomik kas diyagramlarıyla spor salonu ekipmanları için profesyonel kas aktivasyon rehberleri oluşturun.",
-    "title": "Fitness Ekipmanı Kas Rehberi | Curify AI"
+    "title": "Fitness Ekipmanı Kas Rehberi | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, vektör egzersiz illüstrasyonu ile hangi kasların aktive olduğunu gösteren anatomik kas diyagramını eşleştirerek temiz bir 2×2 ızgara düzeninde premium bir fitness infografiği oluşturur.",
+        "who": "Kişisel antrenörler, spor salonu içerik üreticileri, fitness eğitmenleri ve sağlık & wellness hesapları için idealdir.",
+        "how": [
+          "Bir fitness ekipmanı adı girin (örn. Leg Press Machine, Lat Pulldown Machine).",
+          "Etiketli kas aktivasyonu ile profesyonel bir anatomi kılavuzu oluşturun.",
+          "Sosyal medyada paylaşın, antrenman programlarında kullanın veya spor salonu sergileri için yazdırın."
+        ],
+        "prompts": [
+          "Leg Press Machine kas aktivasyonu kılavuzu ile anatomik diyagram.",
+          "Lat Pulldown Machine — hedeflenen kas grupları gösterilmiştir.",
+          "Smith Machine Squat anatomi infografiği ile vurgulanan kaslar."
+        ]
+      }
+    }
   },
   "template-pain-relief-infographic": {
     "category": "Yoga ve Wellness İnfografikleri",
     "description": "Belirli ağrı bölgeleri için 6 poz ve anatomik kas vurgulamalarıyla profesyonel yoga ağrı giderme infografikleri oluşturun.",
-    "title": "Yoga Ağrı Giderme İnfografik | Curify AI"
+    "title": "Yoga Ağrı Giderme İnfografik | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her biri poz adı, tekrar/nefes sayısı ve çalışan kasları vurgulayan anatomik illüstrasyon ile 6 poz içeren 3×2 ızgara düzeninde premium bir dikey yoga infografiği oluşturur.",
+        "who": "Yoga eğitmenleri, wellness içerik üreticileri, fizik tedavi uzmanları ve sağlık & fitness içerik hesapları için mükemmeldir.",
+        "how": [
+          "Bir ağrı bölgesi girin (örn. Sırt, Diz, Boyun, Omuz).",
+          "Anatomik illüstrasyonlarla profesyonel bir yoga ağrı giderme posteri oluşturun.",
+          "Eğitici wellness içeriği olarak paylaşın veya yoga stüdyosu materyallerinde kullanın."
+        ],
+        "prompts": [
+          "Sırt ağrısı giderici yoga pozları infografiği ile kas vurguları.",
+          "Diz ağrısı yoga rutini — 6 poz ile nefes sayıları.",
+          "Boyun ve omuz ağrısı giderici yoga infografiği."
+        ]
+      }
+    }
   },
   "template-kids-vocabulary-poster": {
     "category": "Çocuklar için Eğitici Kelime Posterleri",
     "description": "Çocuklar için İngilizce kelimeler, IPA fonetik ve Çince çeviri içeren yumuşak suluboya iki dilli kelime posterleri oluşturun.",
-    "title": "Çocuk Kelime Posteri (İki Dilli Suluboya) | Curify AI"
+    "title": "Çocuk Kelime Posteri (İki Dilli Suluboya) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her bir öğenin yüksek kaliteli bir illüstrasyon, kalın İngilizce kelime, IPA fonetik transkripsiyonu ve Çince çeviri içerdiği nazik bir suluboya tarzında dikey iki dilli bir kelime dağarcığı posteri oluşturur.",
+        "who": "Erken çocukluk eğitmenleri, ESL öğretmenleri, iki dilli ebeveynler ve çocuk içerik üreticileri için tasarlanmıştır.",
+        "how": [
+          "Bir kelime dağarcığı teması girin (örn. Deniz Hayvanları, Sebzeler, Meyveler).",
+          "Güzel bir suluboya kelime dağarcığı posteri oluşturun.",
+          "Sınıflar için yazdırın, dijital öğrenme uygulamalarında kullanın veya eğitici içerik olarak paylaşın."
+        ],
+        "prompts": [
+          "Suluboya illüstrasyonları ve fonetiklerle deniz hayvanları kelime dağarcığı posteri.",
+          "Meyveler iki dilli posteri — çocuklar için İngilizce, IPA ve Çince.",
+          "Sevimli suluboya sanatı ile böcekler kelime grafiği."
+        ]
+      }
+    }
   },
   "template-beauty-step-by-step-guide": {
     "category": "Güzellik ve Yaşam Tarzı Adım Adım Rehberleri",
     "description": "Cilt bakımı, saç stilleri, tırnak sanatı ve daha fazlası için 9 resimli adımla yumuşak pastel tonlarında güzellik tutorial posterleri oluşturun.",
-    "title": "Güzellik Adım Adım Rehber Posteri | Curify AI"
+    "title": "Güzellik Adım Adım Rehber Posteri | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her adımın numaralı etiketi, kalın başlığı, karikatür illüstrasyonu ve ilgili araçlar veya ürünlerin gösterildiği 3×3 ızgara düzeninde 9 ana adım içeren dikey bir güzellik kılavuzu posteri oluşturur.",
+        "who": "Güzellik içerik üreticileri, yaşam tarzı influencerları, cilt bakım markaları ve eğitim içerik hesapları için mükemmeldir.",
+        "how": [
+          "Bir eğitim teması girin (örn. Cilt Bakım Rutini, Saç Modeli Eğitimi, Oje Sanatı).",
+          "Profesyonel bir adım adım güzellik kılavuzu posteri oluşturun.",
+          "Sosyal medyada paylaşın, blog yazılarına gömün veya marka pazarlama materyallerinde kullanın."
+        ],
+        "prompts": [
+          "Karikatür illüstrasyonları ile cilt bakım rutini adım adım kılavuzu.",
+          "Saç modeli eğitimi posteri — araçlar ve ipuçları ile 9 adım.",
+          "Yumuşak pastel tarzında oje sanatı adım adım kılavuzu."
+        ]
+      }
+    }
   },
   "template-whimsical-travel-map": {
     "category": "Seyahat Haritası",

@@ -184,7 +184,7 @@ export default function BlogContent() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {t('whyNotRegular.traditional.title')}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {t('whyNotRegular.traditional.title')}</h3>
             <ul className="space-y-2">
               {t.raw('whyNotRegular.traditional.items').map((item: string, index: number) => (
                 <li key={index}>• {item}</li>
@@ -193,7 +193,7 @@ export default function BlogContent() {
           </div>
 
           <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {t('whyNotRegular.nanoBanana.title')}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {t('whyNotRegular.nanoBanana.title')}</h3>
             <ul className="space-y-2">
               {t.raw('whyNotRegular.nanoBanana.items').map((item: string, index: number) => (
                 <li key={index}>• {item}</li>

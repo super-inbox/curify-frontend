@@ -105,9 +105,9 @@ export default function BlogContent() {
                 "{t('coreChallenges.overlySpecific.example')}"
               </p>
               <div className="mt-3 space-y-1">
-                <p>â {t('coreChallenges.overlySpecific.issues.issue1')}</p>
-                <p>â {t('coreChallenges.overlySpecific.issues.issue2')}</p>
-                <p>â {t('coreChallenges.overlySpecific.issues.issue3')}</p>
+                <p> {t('coreChallenges.overlySpecific.issues.issue1')}</p>
+                <p> {t('coreChallenges.overlySpecific.issues.issue2')}</p>
+                <p> {t('coreChallenges.overlySpecific.issues.issue3')}</p>
               </div>
             </div>
           </div>
@@ -178,13 +178,13 @@ export default function BlogContent() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <p><strong>â {t('threeLayerApproach.layer1.metadata.prompt')}</strong> - {t('threeLayerApproach.layer1.metadata.promptDesc')}</p>
-                <p><strong>â {t('threeLayerApproach.layer1.metadata.caption')}</strong> - {t('threeLayerApproach.layer1.metadata.captionDesc')}</p>
-                <p><strong>â {t('threeLayerApproach.layer1.metadata.objects')}</strong> - {t('threeLayerApproach.layer1.metadata.objectsDesc')}</p>
+                <p><strong> {t('threeLayerApproach.layer1.metadata.prompt')}</strong> - {t('threeLayerApproach.layer1.metadata.promptDesc')}</p>
+                <p><strong> {t('threeLayerApproach.layer1.metadata.caption')}</strong> - {t('threeLayerApproach.layer1.metadata.captionDesc')}</p>
+                <p><strong> {t('threeLayerApproach.layer1.metadata.objects')}</strong> - {t('threeLayerApproach.layer1.metadata.objectsDesc')}</p>
               </div>
               <div className="space-y-2">
-                <p><strong>â {t('threeLayerApproach.layer1.metadata.style')}</strong> - {t('threeLayerApproach.layer1.metadata.styleDesc')}</p>
-                <p><strong>â {t('threeLayerApproach.layer1.metadata.embeddings')}</strong> - {t('threeLayerApproach.layer1.metadata.embeddingsDesc')}</p>
+                <p><strong> {t('threeLayerApproach.layer1.metadata.style')}</strong> - {t('threeLayerApproach.layer1.metadata.styleDesc')}</p>
+                <p><strong> {t('threeLayerApproach.layer1.metadata.embeddings')}</strong> - {t('threeLayerApproach.layer1.metadata.embeddingsDesc')}</p>
               </div>
             </div>
             <p className="mt-4 text-center font-semibold text-green-600 dark:text-green-400">
@@ -198,11 +198,11 @@ export default function BlogContent() {
               {t('threeLayerApproach.layer2.description')}
             </p>
             <div className="space-y-3">
-              <p><strong>â {t('threeLayerApproach.layer2.candidates.nounPhrases')}</strong> - {t('threeLayerApproach.layer2.candidates.nounPhrasesDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer2.candidates.styleTerms')}</strong> - {t('threeLayerApproach.layer2.candidates.styleTermsDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer2.candidates.themes')}</strong> - {t('threeLayerApproach.layer2.candidates.themesDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer2.candidates.clusterLabels')}</strong> - {t('threeLayerApproach.layer2.candidates.clusterLabelsDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer2.candidates.llmNormalized')}</strong> - {t('threeLayerApproach.layer2.candidates.llmNormalizedDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer2.candidates.nounPhrases')}</strong> - {t('threeLayerApproach.layer2.candidates.nounPhrasesDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer2.candidates.styleTerms')}</strong> - {t('threeLayerApproach.layer2.candidates.styleTermsDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer2.candidates.themes')}</strong> - {t('threeLayerApproach.layer2.candidates.themesDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer2.candidates.clusterLabels')}</strong> - {t('threeLayerApproach.layer2.candidates.clusterLabelsDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer2.candidates.llmNormalized')}</strong> - {t('threeLayerApproach.layer2.candidates.llmNormalizedDesc')}</p>
             </div>
             <p className="mt-4 text-center font-semibold text-blue-600 dark:text-blue-400">
               {t('threeLayerApproach.layer2.conclusion')}
@@ -215,23 +215,23 @@ export default function BlogContent() {
               {t('threeLayerApproach.layer3.description')}
             </p>
             <div className="space-y-3">
-              <p><strong>â {t('threeLayerApproach.layer3.criteria.coverage')}</strong> - {t('threeLayerApproach.layer3.criteria.coverageDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer3.criteria.clarity')}</strong> - {t('threeLayerApproach.layer3.criteria.clarityDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer3.criteria.distinctiveness')}</strong> - {t('threeLayerApproach.layer3.criteria.distinctivenessDesc')}</p>
-              <p><strong>â {t('threeLayerApproach.layer3.criteria.searchIntent')}</strong> - {t('threeLayerApproach.layer3.criteria.searchIntentDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer3.criteria.coverage')}</strong> - {t('threeLayerApproach.layer3.criteria.coverageDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer3.criteria.clarity')}</strong> - {t('threeLayerApproach.layer3.criteria.clarityDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer3.criteria.distinctiveness')}</strong> - {t('threeLayerApproach.layer3.criteria.distinctivenessDesc')}</p>
+              <p><strong> {t('threeLayerApproach.layer3.criteria.searchIntent')}</strong> - {t('threeLayerApproach.layer3.criteria.searchIntentDesc')}</p>
             </div>
             
             <div className="mt-6 bg-white dark:bg-gray-800 p-4 rounded border">
               <h4 className="font-semibold mb-3">{t('threeLayerApproach.layer3.organization.title')}</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <p><strong>â {t('threeLayerApproach.layer3.organization.subject')}</strong> - {t('threeLayerApproach.layer3.organization.subjectDesc')}</p>
-                  <p><strong>â {t('threeLayerApproach.layer3.organization.style')}</strong> - {t('threeLayerApproach.layer3.organization.styleDesc')}</p>
-                  <p><strong>â {t('threeLayerApproach.layer3.organization.theme')}</strong> - {t('threeLayerApproach.layer3.organization.themeDesc')}</p>
+                  <p><strong> {t('threeLayerApproach.layer3.organization.subject')}</strong> - {t('threeLayerApproach.layer3.organization.subjectDesc')}</p>
+                  <p><strong> {t('threeLayerApproach.layer3.organization.style')}</strong> - {t('threeLayerApproach.layer3.organization.styleDesc')}</p>
+                  <p><strong> {t('threeLayerApproach.layer3.organization.theme')}</strong> - {t('threeLayerApproach.layer3.organization.themeDesc')}</p>
                 </div>
                 <div className="space-y-2">
-                  <p><strong>â {t('threeLayerApproach.layer3.organization.useCase')}</strong> - {t('threeLayerApproach.layer3.organization.useCaseDesc')}</p>
-                  <p><strong>â {t('threeLayerApproach.layer3.organization.mood')}</strong> - {t('threeLayerApproach.layer3.organization.moodDesc')}</p>
+                  <p><strong> {t('threeLayerApproach.layer3.organization.useCase')}</strong> - {t('threeLayerApproach.layer3.organization.useCaseDesc')}</p>
+                  <p><strong> {t('threeLayerApproach.layer3.organization.mood')}</strong> - {t('threeLayerApproach.layer3.organization.moodDesc')}</p>
                 </div>
               </div>
             </div>
@@ -281,14 +281,14 @@ export default function BlogContent() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <p><strong>â {t('pinterestPlatform.galleryTags.examples.subject')}</strong> - {t('pinterestPlatform.galleryTags.examples.subjectDesc')}</p>
-                <p><strong>â {t('pinterestPlatform.galleryTags.examples.style')}</strong> - {t('pinterestPlatform.galleryTags.examples.styleDesc')}</p>
-                <p><strong>â {t('pinterestPlatform.galleryTags.examples.medium')}</strong> - {t('pinterestPlatform.galleryTags.examples.mediumDesc')}</p>
+                <p><strong> {t('pinterestPlatform.galleryTags.examples.subject')}</strong> - {t('pinterestPlatform.galleryTags.examples.subjectDesc')}</p>
+                <p><strong> {t('pinterestPlatform.galleryTags.examples.style')}</strong> - {t('pinterestPlatform.galleryTags.examples.styleDesc')}</p>
+                <p><strong> {t('pinterestPlatform.galleryTags.examples.medium')}</strong> - {t('pinterestPlatform.galleryTags.examples.mediumDesc')}</p>
               </div>
               <div className="space-y-2">
-                <p><strong>â {t('pinterestPlatform.galleryTags.examples.mood')}</strong> - {t('pinterestPlatform.galleryTags.examples.moodDesc')}</p>
-                <p><strong>â {t('pinterestPlatform.galleryTags.examples.composition')}</strong> - {t('pinterestPlatform.galleryTags.examples.compositionDesc')}</p>
-                <p><strong>â {t('pinterestPlatform.galleryTags.examples.color')}</strong> - {t('pinterestPlatform.galleryTags.examples.colorDesc')}</p>
+                <p><strong> {t('pinterestPlatform.galleryTags.examples.mood')}</strong> - {t('pinterestPlatform.galleryTags.examples.moodDesc')}</p>
+                <p><strong> {t('pinterestPlatform.galleryTags.examples.composition')}</strong> - {t('pinterestPlatform.galleryTags.examples.compositionDesc')}</p>
+                <p><strong> {t('pinterestPlatform.galleryTags.examples.color')}</strong> - {t('pinterestPlatform.galleryTags.examples.colorDesc')}</p>
               </div>
             </div>
           </div>
@@ -346,9 +346,9 @@ export default function BlogContent() {
         
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
           <div className="space-y-3">
-            <p>â {t('finalThought.systems.match')}</p>
-            <p>â {t('finalThought.systems.group')}</p>
-            <p>â {t('finalThought.systems.scale')}</p>
+            <p> {t('finalThought.systems.match')}</p>
+            <p> {t('finalThought.systems.group')}</p>
+            <p> {t('finalThought.systems.scale')}</p>
           </div>
         </div>
 

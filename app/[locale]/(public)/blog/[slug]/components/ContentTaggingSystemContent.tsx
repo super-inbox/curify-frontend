@@ -41,7 +41,7 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
         
         <div className="space-y-6">
           <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("coreChallenges.nonDescriptive.title") : "Non-descriptive tags"}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("coreChallenges.nonDescriptive.title") : "Non-descriptive tags"}</h3>
             <p className="mb-4">{tNamespace ? tNamespace("coreChallenges.nonDescriptive.description") : ""}</p>
             <div className="space-y-2">
               {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('coreChallenges.nonDescriptive.examples')).map(([key, value]: [string, any]) => (
@@ -52,18 +52,18 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
           </div>
 
           <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("coreChallenges.overlySpecific.title") : "Overly specific (rare) tags"}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("coreChallenges.overlySpecific.title") : "Overly specific (rare) tags"}</h3>
             <p className="mb-4">{tNamespace ? tNamespace("coreChallenges.overlySpecific.description") : ""}</p>
             <p className="italic mb-4">"{tNamespace ? tNamespace("coreChallenges.overlySpecific.example") : ""}"</p>
             <ul className="space-y-1">
               {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('coreChallenges.overlySpecific.issues')).map(([key, value]: [string, any]) => (
-                <li key={key}>â {value}</li>
+                <li key={key}> {value}</li>
               )) : null}
             </ul>
           </div>
 
           <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("coreChallenges.promptVsLanguage.title") : "Prompt â Natural Language"}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("coreChallenges.promptVsLanguage.title") : "Prompt  Natural Language"}</h3>
             <p className="mb-4">{tNamespace ? tNamespace("coreChallenges.promptVsLanguage.description") : ""}</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -79,18 +79,18 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
           </div>
 
           <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("coreChallenges.traditionalMethods.title") : "Traditional methods fall short"}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("coreChallenges.traditionalMethods.title") : "Traditional methods fall short"}</h3>
             <p className="mb-4">{tNamespace ? tNamespace("coreChallenges.traditionalMethods.description") : ""}</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <p className="font-semibold">{tNamespace ? tNamespace("coreChallenges.traditionalMethods.tfIdf.title") : ""}</p>
-                <p>â {tNamespace ? tNamespace("coreChallenges.traditionalMethods.tfIdf.good") : ""}</p>
-                <p>â {tNamespace ? tNamespace("coreChallenges.traditionalMethods.tfIdf.bad") : ""}</p>
+                <p> {tNamespace ? tNamespace("coreChallenges.traditionalMethods.tfIdf.good") : ""}</p>
+                <p> {tNamespace ? tNamespace("coreChallenges.traditionalMethods.tfIdf.bad") : ""}</p>
               </div>
               <div>
                 <p className="font-semibold">{tNamespace ? tNamespace("coreChallenges.traditionalMethods.imageClustering.title") : ""}</p>
-                <p>â {tNamespace ? tNamespace("coreChallenges.traditionalMethods.imageClustering.good") : ""}</p>
-                <p>â {tNamespace ? tNamespace("coreChallenges.traditionalMethods.imageClustering.bad") : ""}</p>
+                <p> {tNamespace ? tNamespace("coreChallenges.traditionalMethods.imageClustering.good") : ""}</p>
+                <p> {tNamespace ? tNamespace("coreChallenges.traditionalMethods.imageClustering.bad") : ""}</p>
               </div>
             </div>
             <p className="mt-4 font-semibold">{tNamespace ? tNamespace("coreChallenges.traditionalMethods.summary") : ""}</p>
@@ -104,7 +104,7 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
         
         <div className="space-y-6">
           <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Layer 1 â Raw Signal Extraction</h3>
+            <h3 className="text-xl font-semibold mb-3">Layer 1  Raw Signal Extraction</h3>
             <p className="mb-4">{tNamespace ? tNamespace("threeLayerApproach.layer1.description") : ""}</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -132,7 +132,7 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
           </div>
 
           <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Layer 2 â Candidate Tag Generation</h3>
+            <h3 className="text-xl font-semibold mb-3">Layer 2  Candidate Tag Generation</h3>
             <p className="mb-4">{tNamespace ? tNamespace("threeLayerApproach.layer2.description") : ""}</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -160,7 +160,7 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
           </div>
 
           <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Layer 3 â Refinement & Selection (Critical)</h3>
+            <h3 className="text-xl font-semibold mb-3">Layer 3  Refinement & Selection (Critical)</h3>
             <p className="mb-4">{tNamespace ? tNamespace("threeLayerApproach.layer3.description") : ""}</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -314,7 +314,7 @@ export default function ContentTaggingSystemContent({ tNamespace }: ContentTaggi
         
         <div className="space-y-2">
           {tNamespace && tNamespace.raw ? Object.entries(tNamespace.raw('finalThought.systems')).map(([key, value]: [string, any]) => (
-            <p key={key}>â {value}</p>
+            <p key={key}> {value}</p>
           )) : null}
         </div>
         

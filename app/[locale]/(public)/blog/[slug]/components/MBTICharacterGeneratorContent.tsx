@@ -39,8 +39,8 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
                 https://www.curify-ai.com/nano-template/mbti-nba/example/template-mbti-nba-kevendurant
               </a>
               <div className="mt-3 space-y-2">
-                <p><strong>INTJ</strong> â¢ {tNamespace ? tNamespace("examples.nba.intj") : ""}</p>
-                <p><strong>ESFP</strong> â¢ {tNamespace ? tNamespace("examples.nba.esfp") : ""}</p>
+                <p><strong>INTJ</strong> ¢ {tNamespace ? tNamespace("examples.nba.intj") : ""}</p>
+                <p><strong>ESFP</strong> ¢ {tNamespace ? tNamespace("examples.nba.esfp") : ""}</p>
               </div>
             </div>
           </div>
@@ -58,8 +58,8 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
                 https://www.curify-ai.com/nano-template/mbti-animal/example/template-mbti-animal-amusement-park%206
               </a>
               <div className="mt-3 space-y-2">
-                <p><strong>INFP</strong> â¢ {tNamespace ? tNamespace("examples.animals.infp") : ""}</p>
-                <p><strong>ESTP</strong> â¢ {tNamespace ? tNamespace("examples.animals.estp") : ""}</p>
+                <p><strong>INFP</strong> ¢ {tNamespace ? tNamespace("examples.animals.infp") : ""}</p>
+                <p><strong>ESTP</strong> ¢ {tNamespace ? tNamespace("examples.animals.estp") : ""}</p>
               </div>
             </div>
           </div>
@@ -77,8 +77,8 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
                 https://www.curify-ai.com/nano-template/mbti-generic/example/template-mbti-generic-friends-rachel
               </a>
               <div className="mt-3 space-y-2">
-                <p><strong>ENFP</strong> â¢ {tNamespace ? tNamespace("examples.movies.enfp") : ""}</p>
-                <p><strong>ISTJ</strong> â¢ {tNamespace ? tNamespace("examples.movies.istj") : ""}</p>
+                <p><strong>ENFP</strong> ¢ {tNamespace ? tNamespace("examples.movies.enfp") : ""}</p>
+                <p><strong>ISTJ</strong> ¢ {tNamespace ? tNamespace("examples.movies.istj") : ""}</p>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
             <h4 className="font-semibold mb-2">{tNamespace ? tNamespace("howItWorks.ensures.title") : ""}</h4>
             <ul className="space-y-1">
               {tNamespace && tNamespace.raw ? tNamespace.raw('howItWorks.ensures.items').map((item: string, index: number) => (
-                <li key={index}>â <strong>{item.split(' - ')[0]}</strong> - {item.split(' - ')[1]}</li>
+                <li key={index}> <strong>{item.split(' - ')[0]}</strong> - {item.split(' - ')[1]}</li>
               )) : null}
             </ul>
           </div>
@@ -125,19 +125,19 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("whyNotRegular.traditional.title") : ""}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("whyNotRegular.traditional.title") : ""}</h3>
             <ul className="space-y-2">
               {tNamespace && tNamespace.raw ? tNamespace.raw('whyNotRegular.traditional.items').map((item: string, index: number) => (
-                <li key={index}>â {item}</li>
+                <li key={index}> {item}</li>
               )) : null}
             </ul>
           </div>
 
           <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("whyNotRegular.nanoBanana.title") : ""}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("whyNotRegular.nanoBanana.title") : ""}</h3>
             <ul className="space-y-2">
               {tNamespace && tNamespace.raw ? tNamespace.raw('whyNotRegular.nanoBanana.items').map((item: string, index: number) => (
-                <li key={index}>â {item}</li>
+                <li key={index}> {item}</li>
               )) : null}
             </ul>
           </div>
@@ -159,7 +159,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
             <h3 className="text-xl font-semibold mb-2">ð {tNamespace ? tNamespace("useCases.socialMedia.title") : ""}</h3>
             <ul className="space-y-1">
               {tNamespace && tNamespace.raw ? tNamespace.raw('useCases.socialMedia.items').map((item: string, index: number) => (
-                <li key={index}>â {item}</li>
+                <li key={index}> {item}</li>
               )) : null}
             </ul>
           </div>
@@ -168,7 +168,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
             <h3 className="text-xl font-semibold mb-2">ð¨ {tNamespace ? tNamespace("useCases.creative.title") : ""}</h3>
             <ul className="space-y-1">
               {tNamespace && tNamespace.raw ? tNamespace.raw('useCases.creative.items').map((item: string, index: number) => (
-                <li key={index}>â {item}</li>
+                <li key={index}> {item}</li>
               )) : null}
             </ul>
           </div>
@@ -177,7 +177,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
             <h3 className="text-xl font-semibold mb-2">ð {tNamespace ? tNamespace("useCases.marketing.title") : ""}</h3>
             <ul className="space-y-1">
               {tNamespace && tNamespace.raw ? tNamespace.raw('useCases.marketing.items').map((item: string, index: number) => (
-                <li key={index}>â {item}</li>
+                <li key={index}> {item}</li>
               )) : null}
             </ul>
           </div>
@@ -190,7 +190,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
 
         <div className="space-y-4">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("tryNow.explore.title") : ""}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("tryNow.explore.title") : ""}</h3>
             <a 
               href="https://www.curify-ai.com/nano-template/mbti-nba/example/template-mbti-nba-kevendurant"
               className="text-blue-600 hover:text-blue-800 underline"
@@ -202,7 +202,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
           </div>
 
           <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">â {tNamespace ? tNamespace("tryNow.browse.title") : ""}</h3>
+            <h3 className="text-xl font-semibold mb-3"> {tNamespace ? tNamespace("tryNow.browse.title") : ""}</h3>
             <a 
               href="https://www.curify-ai.com/nano-banana-pro-prompts"
               className="text-green-600 hover:text-green-800 underline"
@@ -224,7 +224,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
           <p className="mb-4">{tNamespace ? tNamespace("customize.bonus.description") : ""}</p>
           <ul className="space-y-2">
             {tNamespace && tNamespace.raw ? tNamespace.raw('customize.bonus.features').map((feature: string, index: number) => (
-              <li key={index}>â <strong>{feature.split(' - ')[0]}</strong> - {feature.split(' - ')[1]}</li>
+              <li key={index}> <strong>{feature.split(' - ')[0]}</strong> - {feature.split(' - ')[1]}</li>
             )) : null}
           </ul>
           <p className="mt-4 italic">
@@ -252,7 +252,7 @@ export default function MBTICharacterGeneratorContent({ tNamespace }: MBTICharac
         <h2 className="text-2xl font-bold mb-4">{tNamespace ? tNamespace("relatedReads.title") : "Related Reads"}</h2>
         <ul className="space-y-2">
           {tNamespace && tNamespace.raw ? tNamespace.raw('relatedReads.items').map((item: string, index: number) => (
-            <li key={index}>â {item}</li>
+            <li key={index}> {item}</li>
           )) : null}
         </ul>
       </section>
