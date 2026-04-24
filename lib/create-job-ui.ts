@@ -89,6 +89,18 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     ratePerMinute: 0,
     ctaLabel: "Start",
   },
+  nano_template_generation: {
+    title: "Generate Image",
+    allowUpload: false,
+    allowYoutube: false,
+    showSourceLang: false,
+    showTargetLang: false,
+    allowVoiceover: false,
+    allowSubtitles: false,
+    subtitleOptions: ["None"],
+    ratePerMinute: 0,
+    ctaLabel: "Generate",
+  },
 };
 
 export function getJobUiConfig(jobType: BackendJobType): UiConfig {

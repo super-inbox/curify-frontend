@@ -59,6 +59,7 @@ function ExampleImageCard({
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
   const [saved, setSaved] = useState(false);
+  const [showSavedToast, setShowSavedToast] = useState(false);
 
   const handleSave = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -67,6 +68,8 @@ function ExampleImageCard({
     setSaved(true);
     try {
       await savedItemsService.save(item.id, "nano_inspiration");
+      setShowSavedToast(true);
+      setTimeout(() => setShowSavedToast(false), 3000);
     } catch {
       setSaved(false);
     }
@@ -142,18 +145,25 @@ function ExampleImageCard({
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
           </button>
         ) : (
-          <button
-            type="button"
-            onClick={handleSave}
-            className={`flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
-              saved
-                ? "bg-purple-100 text-purple-700"
-                : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
-            }`}
-          >
-            <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
-            {saved ? t("saved") : t("save")}
-          </button>
+          <div className="relative">
+            <button
+              type="button"
+              onClick={handleSave}
+              className={`flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
+                saved
+                  ? "bg-purple-100 text-purple-700"
+                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+              }`}
+            >
+              <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
+              {saved ? t("saved") : t("save")}
+            </button>
+            {showSavedToast && (
+              <div className="absolute bottom-full left-0 mb-2 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-1.5 text-xs text-white shadow-lg">
+                Saved! View in your workspace →
+              </div>
+            )}
+          </div>
         )}
         <Link
           href={remixHref}

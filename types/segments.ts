@@ -20,6 +20,10 @@ export interface ProjectDetails {
   final_video_signed_url_withwatermark: string | null;
   srt_signed_url: string | null;
   segments: Segment[];
+  // nano_template_generation projects
+  image_path?: string | null;
+  preview_image_path?: string | null;
+  job_type?: string | null;
 }
 
 export interface SegmentUpdate {
