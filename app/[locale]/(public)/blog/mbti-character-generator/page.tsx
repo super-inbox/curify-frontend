@@ -4,15 +4,16 @@
  * The Ultimate AI MBTI Character Generator Guide (Featuring Yellowstone Examples)
  * 
  * Transform your creative process with AI-powered MBTI character generation.
- * This comprehensive guide shows how creators, writers, and RPG players can use
- * Curify's Nano Banana to generate highly accurate character personas based on
- * MBTI types, using Yellowstone characters as practical examples.
+ * This comprehensive guide shows creators, writers, and RPG players how to use
+ * Curify's Nano Banana to generate highly accurate, context-aware character 
+ * personas based on MBTI types, using Yellowstone characters as practical examples.
  * 
  * Features:
- * - Detailed MBTI type analysis and prompts
- * - Yellowstone character case studies (Beth Dutton as ESTP, Rip Wheeler as ISTJ)
- * - Step-by-step AI character generation tutorials
+ * - Detailed MBTI type analysis and prompts aligned with specific user intent
+ * - Yellowstone character case studies (Beth Dutton as ENTJ, Rip Wheeler as ISTP)
+ * - Step-by-step AI character generation tutorials for applied character modeling
  * - Advanced prompting techniques for realistic character development
+ * - Focus on reverse-engineering personalities users already understand
  */
 
 import { useTranslations, useLocale } from 'next-intl';
@@ -26,6 +27,16 @@ import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
+
+// Helper function to decode HTML entities (server-safe)
+function decodeHTMLEntities(text: string): string {
+  return text
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
 
 // Helper component for rendering lists from translations
 function ListPoints({ points }: { points: string[] }) {
@@ -135,14 +146,12 @@ export default function MBTICharacterGeneratorPage() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none mb-12">
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100 mb-8">
-            <p className="text-lg text-gray-600 mb-4">
-              {t.rich('introduction.paragraph1', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              {t('introduction.paragraph2')}
-            </p>
+            <p className="text-lg text-gray-600 mb-4"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
+            />
+            <p className="text-lg text-gray-700 mb-4"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
+            />
             <div className="flex flex-wrap gap-4 mt-6">
               <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
                 {t('tags.mbtiGenerator')}
@@ -281,14 +290,14 @@ export default function MBTICharacterGeneratorPage() {
             <div className="space-y-8">
               <MBTICharacterCard
                 character="Beth Dutton"
-                type="ESTP"
+                type="ENTJ"
                 traits={t.raw('yellowstone.beth.traits')}
                 prompt={t('yellowstone.beth.prompt')}
               />
               
               <MBTICharacterCard
                 character="Rip Wheeler"
-                type="ISTJ"
+                type="ISTP"
                 traits={t.raw('yellowstone.rip.traits')}
                 prompt={t('yellowstone.rip.prompt')}
               />
