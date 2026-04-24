@@ -208,7 +208,8 @@
         "date": "2026年3月23日",
         "readTime": "9分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/tenprompt.webp"
+        "image": "/images/tenprompt.webp",
+        "thumbnailType": "视频转录业务"
       },
       {
         "slug": "image-generation-model-comparison",
@@ -216,7 +217,8 @@
         "date": "2026年3月28日",
         "readTime": "12分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/hardworker.webp"
+        "image": "/images/hardworker.webp",
+        "thumbnailType": "视频转录管道"
       },
       {
         "slug": "lip-sync-business-guide",
@@ -398,15 +400,35 @@
         "date": "2026年4月13日",
         "readTime": "15分钟阅读",
         "tag": "创作者工具",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "人工智能内容生产系统",
+          "病毒学习内容",
+          "视觉学习工具"
+        ]
       },
       {
-        "slug": "curify-ai-growth-engine",
-        "title": "Curify AI 增长引擎：为用户生成内容创作者和营销人员转变内容创作",
+        "slug": "系列信息图与NotebookLM",
+        "title": "系列信息图与Google NotebookLM：视觉与叙事内容",
+        "date": "2026年4月10日",
+        "readTime": "10分钟阅读",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
+        "category": "nano-banana-prompts",
+        "relatedLinks": [
+          "什么是信息图",
+          "nano-banana-prompt-生态系统",
+          "创意AI工具网站"
+        ]
+      },
+      {
+        "slug": "情感TTS电影",
+        "title": "情感TTS电影：让你的叙述听起来更有情感",
         "date": "2026年4月13日",
-        "readTime": "12分钟阅读",
-        "tag": "人工智能平台",
-        "image": "/images/growthengine.webp"
+        "readTime": "15分钟阅读",
+        "tag": "创作者工具",
+        "image": "/images/voices2.webp"
       }
     ],
     "voiceCloningTools": {
@@ -3727,7 +3749,7 @@
             "description": "预定义的美学"
           },
           {
-            "icon": "â¡ï¸",
+            "icon": "¡ï¸",
             "title": "预定义提示逻辑",
             "description": "结构化生成"
           }
@@ -3817,7 +3839,7 @@
       "finalThoughts": {
         "title": "最后的想法",
         "description": "如果您曾经为不一致的提示或普通的 AI 输出而苦恼，Nano Banana 提供了一种不同的方法：",
-        "formula": "结构化提示 â 一致的角色 â 可扩展的内容",
+        "formula": "结构化提示  一致的角色  可扩展的内容",
         "conclusion": "无论您是在创建 MBTI 内容、叙事视觉还是市场营销资产，这个系统都能帮助您更快地移动并产生更好的结果。"
       },
       "relatedReads": {
@@ -4109,6 +4131,78 @@
           "搜索优化"
         ],
         "questions": "对构建内容标记系统有疑问吗？请联系我们的支持团队以获得个性化帮助。"
+      }
+    },
+    "UltimateDirectoryOfNanoBananaPrompts": {
+      "title": "Nano Banana Prompts终极目录",
+      "description": "一个策划的数字画册，展示Nano Banana的图像生成与精确提示、视觉示例和无缝Curify集成。",
+      "hero": {
+        "title": "Nano Banana Prompts终极目录",
+        "subtitle": "掌握AI图像生成，使用50多个专家精心制作的提示。将你的创意愿景转化为惊艳的视觉效果，运用专业创作者的验证技巧。"
+      },
+      "introduction": {
+        "title": "画册格式",
+        "paragraph1": "欢迎来到一种<strong>革命性的AI提示方法</strong>。与传统教程不同，这本策划的数字画册通过惊艳的视觉示例展示Nano Banana的力量。每个条目都包括使用的确切提示，让你能够立即复制专业质量的结果。",
+        "paragraph2": "我们的系统格式——<strong>视觉结果 → 风格分析 → 精确提示 → 技术解析</strong>——创造了直观的学习体验。你将发现微妙的提示变化如何显著影响输出质量，从角色设计到建筑可视化。",
+        "paragraph3": "无论你是内容创作者、市场营销人员还是AI爱好者，这本画册都弥合了理论知识与实际应用之间的差距。每个示例都经过测试、优化，并准备好立即在你的创意工作流程中使用。"
+      },
+      "tableOfContents": {
+        "title": "跳转到章节",
+        "character": "角色与个性（高参与度）",
+        "lifestyle": "生活方式与全球美学",
+        "learning": "学习与语言（病毒实用性）",
+        "design": "设计与产品（专业优势）"
+      },
+      "characterSection": {
+        "title": "角色与个性（高参与度）",
+        "description": "角色驱动着巨大的情感连接和分享性。这些示例展示了如何创建引人注目的个性，立即吸引注意力。",
+        "mbtiTitle": "MBTI角色原型",
+        "mbtiDescription": "展示从INTJ建筑师到ESFP娱乐者的超详细个性类型。",
+        "styleTitle": "风格比较",
+        "styleDescription": "在不同艺术风格中渲染的完全相同的角色提示。",
+        "groupTitle": "群体动态",
+        "groupDescription": "用于生成凝聚团队、运动阵容和社交群体的提示。"
+      },
+      "lifestyleSection": {
+        "title": "生活方式与全球美学（“Pinterest”滚动）",
+        "description": "这直接切入了愿望和怀旧市场，展示了Nano Banana处理高度特定文化和地理细微差别的能力。",
+        "geoTitle": "地理特定氛围",
+        "geoDescription": "应用于不同国家和文化背景的怀旧滤镜。",
+        "foodTitle": "食物与城市景观",
+        "foodDescription": "高端编辑食品摄影和舒适的咖啡馆环境。"
+      },
+      "learningSection": {
+        "title": "学习与语言（病毒实用性）",
+        "description": "从纯美学过渡到实用的病毒内容创作。这向教育者和创作者证明了Curify是一个严肃的生产引擎。",
+        "languageTitle": "语言对",
+        "languageDescription": "展示双语设置和文本在图像中能力的视觉对话场景。",
+        "educationTitle": "科学与历史",
+        "educationDescription": "用于教育内容和视觉学习工具的信息图样式提示。"
+      },
+      "designSection": {
+        "title": "设计与产品（专业优势）",
+        "description": "吸引工业设计师、市场营销人员和产品经理的高意图专业用例。",
+        "productTitle": "产品模型",
+        "productDescription": "干净、简约的产品模型，适用于电子商务和品牌推广。",
+        "styleTitle": "设计风格",
+        "styleDescription": "使用等轴矢量、墨水草图和照片级真实感渲染展示三级修饰符。"
+      },
+      "lookbookComponent": {
+        "resultingImage": "生成的图像",
+        "coreTags": "核心标签",
+        "exactPrompt": "确切提示",
+        "remixCta": "重混此提示",
+        "copyPrompt": "复制提示",
+        "startGenerating": "开始生成",
+        "promptDescription": "点击将此确切提示复制到剪贴板，并在Nano Banana中使用。",
+        "remixDescription": "在Curify中打开此提示，以立即开始使用图像到图像生成。"
+      },
+      "examples": {
+        "description": "示例提示",
+        "promptTitle": "提示示例",
+        "promptDescription": "这是一个精心设计的提示示例，可以生成高质量的结果。",
+        "promptBoxTitle": "完整提示",
+        "promptBoxDescription": "复制此确切提示以在Nano Banana中使用："
       }
     }
   },
@@ -5721,5 +5815,387 @@
     "seoKeywords": "ai唇同步管道，musetalk教程，sync.co api，视频配音架构，面部动画ai，唇同步神经网络，视频处理管道，gans唇同步，扩散模型视频",
     "metaDescription": "AI唇同步管道架构的技术深度探讨。MuseTalk、Sync.co、面部动画和生产系统设计的完整指南，面向开发人员和AI工程师。",
     "updated": true
+  },
+  "MBTICharacterGenerator": {
+    "title": "终极AI MBTI角色生成器指南（包含黄石示例）| Curify",
+    "description": "了解如何使用AI生成准确的MBTI角色个性，使用黄石示例。发现角色发展的高级提示技术。"
+  },
+  "MBTICharacterGeneratorGuide": {
+    "title": "终极AI MBTI角色生成器指南（包含黄石示例）| Curify",
+    "description": "了解如何使用AI生成准确的MBTI角色个性，使用黄石示例。发现角色发展的高级提示技术。",
+    "hero": {
+      "title": "终极AI MBTI角色生成器指南",
+      "subtitle": "利用AI驱动的角色发展，使用黄石的标志性个性作为蓝图，转变您的创作过程"
+    },
+    "introduction": {
+      "paragraph1": "虽然您已经发布了Nano Banana MBTI角色生成器，但下一步是&lt;strong&gt;使工具与特定用户意图对齐&lt;/strong&gt;。搜索者不仅仅在寻找通用的MBTI生成器——他们想要分析、重建或角色扮演他们已经知道的角色，通常以“Rip Wheeler是什么MBTI？”或“Beth Dutton个性类型”等查询开始。这表明从抽象的个性探索转向&lt;strong&gt;应用角色建模&lt;/strong&gt;，用户期望输出感觉可识别、准确且立即可用。黄石提供了一个完美的切入点：一个高参与度的系列，具有独特的、心理丰富的角色，与MBTI原型清晰对应。例如，Beth的强烈和战略性攻击与ENTJ特征紧密相连，而Kayce的内心冲突和道德敏感性反映了ISFP的特征。这些强烈的个性信号使用户更容易根据自己的解释验证生成的输出，从而增加对工具的信任。通过将Nano Banana的生成能力锚定在这些熟悉的角色上，您减少了用户的认知负担——他们不必从头开始想象抽象特征。相反，他们可以&lt;strong&gt;逆向工程他们已经理解的个性&lt;/strong&gt;，然后将其扩展到新的场景、原创角色或RPG设置。这将工具从一个新奇的生成器转变为&lt;strong&gt;实用的创意助手&lt;/strong&gt;，用于讲故事、粉丝理论创作和角色驱动的世界构建。",
+      "paragraph2": "本综合指南向创作者、作家和RPG玩家展示如何利用Curify的Nano Banana生成&lt;strong&gt;高度准确、上下文感知的角色个性&lt;/strong&gt;，基于MBTI类型。该指南不仅停留在表面标签，而是逐步讲解如何将每个MBTI档案转化为可操作的特征——决策模式、对话风格、情感触发和人际动态——以便生成的角色在不同场景中感觉一致且可信。使用黄石角色作为实际示例，我们展示了如何&lt;strong&gt;将MBTI输出锚定在可识别的个性中&lt;/strong&gt;，然后将这些模式扩展到原创角色创作、粉丝小说或桌面RPG活动中。例如，用户可以从Beth Dutton风格的ENTJ原型开始，并将其改编为企业反派，或将Rip Wheeler风格的ISTP档案发展为道德复杂的RPG伙伴。通过将逐步生成工作流程与已经吸引搜索兴趣的流行文化参考相结合，本指南旨在&lt;strong&gt;捕捉高意图的长尾流量&lt;/strong&gt;，同时提供即时的创意价值。读者不仅了解MBTI类型的含义——他们还学习如何将其操作化为可以在故事、游戏或内容创作管道中使用的完全实现的角色。"
+    },
+    "tags": {
+      "mbtiGenerator": "MBTI生成器",
+      "yellowstoneMBTI": "黄石MBTI",
+      "characterDevelopment": "角色发展"
+    },
+    "protip": "从特定的MBTI类型和真实角色示例开始，以训练AI的个性模式，然后生成原创角色。",
+    "tabs": {
+      "basics": "MBTI基础",
+      "yellowstone": "黄石示例",
+      "techniques": "高级技术",
+      "advanced": "专业使用",
+      "faq": "常见问题"
+    },
+    "basics": {
+      "title": "理解MBTI以生成角色",
+      "whatIsMBTI": {
+        "title": "什么是MBTI？",
+        "description": "迈尔斯-布里格斯类型指标是一种个性框架，根据四个关键维度将人们分类为16种不同的个性类型。该系统为创建一致、可信的角色提供了极好的基础。"
+      },
+      "aiGeneration": {
+        "title": "AI驱动的MBTI角色生成",
+        "description": "使用Curify的Nano Banana，您可以生成详细的角色档案，准确反映MBTI个性特征，包括行为、对话模式和决策倾向。",
+        "basicPrompt": {
+          "title": "基本角色提示结构",
+          "example": "为[MBTI_TYPE]个性类型生成角色档案。包括他们的核心特征、沟通风格、决策过程和在[CONTEXT]中的典型行为。",
+          "explanation": "这个简单的结构为AI提供了创建一致角色个性所需的基本信息。"
+        }
+      }
+    },
+    "yellowstone": {
+      "title": "黄石角色作为MBTI模板",
+      "beth": {
+        "traits": [
+          "大胆",
+          "果断",
+          "竞争性",
+          "快速反应",
+          "足智多谋",
+          "直接沟通"
+        ],
+        "prompt": "生成一个30多岁、在高风险商业环境中工作的ESTP女性角色。包括敏锐的机智、战略思维和保护家庭的忠诚。她应该自信，偶尔无情，但有隐藏的脆弱。"
+      },
+      "rip": {
+        "traits": [
+          "忠诚",
+          "有条理",
+          "负责任",
+          "传统",
+          "保护性",
+          "行动导向"
+        ],
+        "prompt": "创建一个ISTJ男性角色，他是一个忠诚的保护者和执行者。包括强烈的责任感、实用的问题解决能力和坚定的忠诚。他应该安静但强大，拥有严格的道德准则和保护本能。"
+      },
+      "john": {
+        "traits": [
+          "自然领导者",
+          "战略性",
+          "果断",
+          "有远见",
+          "权威",
+          "家庭导向"
+        ],
+        "prompt": "生成一个ENTJ角色，作为一个强大的家庭家长和商业领袖。包括战略思维、指挥气场和复杂的家庭动态。他应该果断、有远见，但背负着责任和遗产的重担。"
+      },
+      "kayce": {
+        "traits": [
+          "以价值为导向",
+          "适应能力强",
+          "忠诚",
+          "避免冲突",
+          "有原则",
+          "情感深度"
+        ],
+        "prompt": "创建一个ISFP角色，夹在家庭忠诚和个人价值之间。包括强烈的道德指南针、情感敏感性和内心冲突。他应该有技能、深思熟虑，但在竞争优先事项中挣扎。"
+      },
+      "analysis": {
+        "title": "为什么这些例子有效",
+        "description": "《黄石》中的角色提供了完美的MBTI原型，因为他们在高风险情况下体现了明确的人格特征，使他们成为AI角色生成的理想模板。",
+        "points": [
+          "每个角色在不同场景中表现出一致的MBTI行为",
+          "他们的动机和决策模式清晰可见",
+          "该剧为压力下的人格表达提供了丰富的背景",
+          "这些原型在各种类型和环境中表现良好"
+        ]
+      }
+    },
+    "techniques": {
+      "title": "高级提示技术",
+      "detailedPrompts": {
+        "title": "创建详细的角色档案",
+        "description": "通过结合详细的人格框架和上下文元素来提升角色生成。",
+        "structure": {
+          "title": "全面的提示结构",
+          "elements": [
+            "核心MBTI类型和认知功能",
+            "背景和生活经历",
+            "当前的上下文和环境",
+            "具体场景和挑战",
+            "关系动态和沟通风格"
+          ]
+        },
+        "example": "为一个最近创办可持续时尚品牌的ENFP企业家生成详细的角色档案。包括他们的创作过程、如何应对商业挑战、他们的社交风格以及在工作与生活平衡中的个人挣扎。展示他们在趋势识别中的外向直觉和在道德决策中的内向情感。包括对话示例和内心独白片段。"
+      },
+      "iterativeRefinement": {
+        "title": "迭代角色发展",
+        "description": "使用多步骤方法来完善和提升您的AI生成角色。",
+        "steps": {
+          "step1": {
+            "title": "生成基础档案",
+            "description": "从一个广泛的MBTI聚焦提示开始，以建立角色的核心个性。"
+          },
+          "step2": {
+            "title": "添加具体上下文",
+            "description": "通过添加具体场景、关系和环境因素来完善角色。"
+          },
+          "step3": {
+            "title": "测试和完善",
+            "description": "将角色置于各种情境中以测试一致性并完善人格特征。"
+          }
+        }
+      }
+    },
+    "advanced": {
+      "title": "专业应用",
+      "useCases": {
+        "title": "专业用例",
+        "writers": {
+          "title": "小说作家",
+          "description": "创建一致的、多维的角色，推动引人入胜的叙事"
+        },
+        "rpg": {
+          "title": "RPG游戏主持人",
+          "description": "生成具有独特个性的NPC，以实现沉浸式角色扮演体验"
+        },
+        "marketing": {
+          "title": "市场营销团队",
+          "description": "为目标活动开发品牌角色和客户画像"
+        },
+        "psychology": {
+          "title": "心理学学生",
+          "description": "通过基于角色的学习场景探索人格类型"
+        }
+      },
+      "bestPractices": {
+        "title": "AI角色生成的最佳实践",
+        "points": [
+          "始终指定角色所处的上下文和环境",
+          "包括强项和弱项，以实现真实的人格",
+          "使用具体场景测试角色一致性",
+          "根据生成的结果进行迭代和完善",
+          "结合多个MBTI见解以创造复杂角色",
+          "在不同上下文中保持角色一致性"
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "为什么选择AI驱动的MBTI生成",
+      "title": "AI MBTI角色生成的关键好处",
+      "accuracy": {
+        "title": "心理准确性",
+        "description": "基于大量人格数据训练的AI模型生成的人物与既定的MBTI框架始终保持一致"
+      },
+      "efficiency": {
+        "title": "时间效率",
+        "description": "在几秒钟内生成详细的角色档案，而不是花费数小时进行手动角色开发和研究"
+      },
+      "consistency": {
+        "title": "角色一致性",
+        "description": "在所有故事场景和上下文中保持一致的人格特征、行为和决策模式"
+      },
+      "creativity": {
+        "title": "增强创造力",
+        "description": "探索新的角色可能性和人格组合，激发新的叙事方法和故事"
+      }
+    },
+    "conclusion": {
+      "title": "今天就开始创造引人入胜的角色",
+      "description": "借助Curify的Nano Banana和这些MBTI角色生成技术，您拥有创建丰富、一致角色所需的一切，能够吸引观众。无论您是在写小说、开发RPG活动，还是创建市场营销角色，AI驱动的角色生成将改变您的创作过程。",
+      "cta": {
+        "primary": "尝试Nano Banana角色生成器",
+        "secondary": "探索更多AI工具"
+      }
+    }
+  },
+  "HowToDubVideosNaturally": {
+    "title": "如何在2026年自然配音视频：修复AI语音克隆伪影",
+    "description": "一份全面的指南，解决使用AI工具时常见的配音挑战。学习针对机械节奏、缺乏情感和口型同步问题的实用解决方案。",
+    "hero": {
+      "title": "如何在2026年自然配音视频：修复AI语音克隆伪影",
+      "subtitle": "一份全面的指南，解决使用AI工具时常见的配音挑战。关注机械节奏、缺乏情感和口型同步等痛点。"
+    },
+    "protip": "从高质量的源音频开始，并始终与母语者测试您的配音内容，以捕捉AI可能遗漏的微妙伪影。",
+    "tabs": {
+      "problems": "常见问题",
+      "solutions": "实用解决方案",
+      "tools": "推荐工具",
+      "workflow": "逐步工作流程",
+      "advanced": "高级技术",
+      "automation": "自动化策略",
+      "conclusion": "结论"
+    },
+    "introduction": {
+      "paragraph1": "AI视频配音彻底改变了内容创作，但<strong>机械伪影</strong>和<strong>不自然的节奏</strong>仍然困扰着许多制作。在2026年，我们拥有更好的工具和技术来克服这些挑战。核心问题在于大多数配音流程将语音视为纯粹的技术层，而非表演。许多系统仍然生成音频，具有平坦的韵律、不一致的重音和时机不当的停顿，即使声音本身听起来真实，也会破坏沉浸感。观众对时机不匹配非常敏感——当情感节拍、微停顿或句子重音与视觉表演不一致时，结果会显得微妙“偏离”，即使他们无法清楚表达原因。现代方法通过关注<strong>韵律控制和时间对齐</strong>来解决这个问题。新模型不再线性生成语音，而是采用节奏感知合成，使创作者能够在短语和音节层面控制节奏。这使得匹配口型动作、保留戏剧性停顿以及在不同语言中保持原演员意图成为可能。像强制对齐、音素级时机和参考音频调节等技术现在已成为高质量流程的标准。另一个重大改进来自于<strong>上下文感知语音建模</strong>。先进系统不再孤立生成每一行，而是保持对话记忆——跟踪语调、情感状态和说话者动态。这减少了音调漂移，并确保角色在低声细语、争论或讲解时听起来一致。对于叙事内容，这一转变显著提高了感知的真实感。最后，<strong>人机协作工作流程</strong>的兴起缩小了自动化与质量之间的差距。创作者现在将AI生成与轻量级编辑层结合——微调停顿、调整重音或重新生成特定片段，而不是整个剪辑。这种混合方法在效率与创作控制之间取得了平衡，使制作团队能够在实现工作室级结果的同时扩大配音规模。所有这些进展使AI配音从便利工具转变为<strong>生产级解决方案</strong>，能够在不牺牲速度或可扩展性的情况下，提供自然、情感共鸣的表演。",
+      "paragraph2": "本指南将向您展示如何使用尖端AI工具，如MuseTalk、Emotion TTS和先进的后处理技术，<strong>修复常见的配音问题</strong>。我们超越基本的语音生成，解决AI配音工作流程中最持久的故障点——口型同步漂移、单调的表达、时机不匹配和情感平淡。您将学习如何使用MuseTalk进行精确的视觉音频对齐，确保生成的语音与口型动作和面部表情紧密匹配，即使在快节奏或对话密集的场景中。在音频方面，我们将分解如何利用Emotion TTS系统为生成的声音注入<strong>受控的表现力</strong>。而不是依赖于通用预设，指南将逐步讲解如何调整音调轮廓、节奏和重音以反映意图——无论是紧张、讽刺还是单行中的微妙情感变化。这使您能够从“技术上正确”的音频转变为感觉人性化且具有上下文基础的表演。我们还涵盖了<strong>先进的后处理工作流程</strong>，这些工作流程对最终输出质量产生了关键影响。这包括音素级时机调整、静音修剪和延长、呼吸和停顿插入，以及音频母带处理技术，如EQ匹配和响度标准化，以将配音声音无缝融入原始音轨。通过将这些工具和技术结合成一个连贯的流程，您将能够系统地诊断和修复配音问题，而不是依赖于反复试验——将不一致的AI输出转变为精致、准备好的对话。"
+    },
+    "problems": {
+      "title": "常见AI配音问题",
+      "issues": [
+        {
+          "icon": "🤖",
+          "title": "机械节奏",
+          "description": "AI生成的语音通常缺乏自然的节奏和时机，听起来机械且脱离。",
+          "impact": "观众脱离",
+          "impactDescription": "不自然的节奏破坏沉浸感，导致观众保留率下降多达40%。"
+        },
+        {
+          "icon": "😐",
+          "title": "缺乏情感细腻",
+          "description": "AI声音难以传达细微情感，使戏剧场景显得平淡。",
+          "impact": "情感脱节",
+          "impactDescription": "缺失的情感线索使观众无法与角色和故事建立联系。"
+        },
+        {
+          "icon": "👄",
+          "title": "口型同步不匹配",
+          "description": "音频与视觉口型动作之间的对齐不良，造成了不自然的效果。",
+          "impact": "不真实的外观",
+          "impactDescription": "可见的口型同步错误立即破坏自然语音的幻觉。"
+        }
+      ]
+    },
+    "solutions": {
+      "title": "实用解决方案",
+      "methods": [
+        {
+          "icon": "🎭",
+          "title": "情感增强TTS",
+          "description": "使用情感感知的文本转语音模型，可以将适当的情感注入声音中。",
+          "benefit": "自然情感表达",
+          "benefitDescription": "与标准TTS相比，实现85%的更自然情感表达。",
+          "promptTitle": "情感增强提示",
+          "promptDescription": "使用此提示引导AI生成情感细腻的语音：",
+          "prompt": "生成语音，带有[情感：关心、温暖、紧急]的语调。逗号后暂停0.3秒，强调关键情感词，音调变化±20%以实现自然节奏。"
+        },
+        {
+          "icon": "⚡",
+          "title": "节奏修正",
+          "description": "应用AI驱动的时机调整，以匹配自然人类语音模式。",
+          "benefit": "类人时机",
+          "benefitDescription": "通过智能节奏调整减少70%的机械伪影。",
+          "promptTitle": "节奏修正提示",
+          "promptDescription": "使用此提示修复机械节奏：",
+          "prompt": "分析语音节奏并插入自然停顿：句号后0.5秒，逗号后0.2秒，单词间距变化±10%以实现自然流畅。"
+        }
+      ]
+    },
+    "tools": {
+      "title": "推荐工具",
+      "cta": "尝试工具",
+      "recommendations": [
+        {
+          "icon": "🎙️",
+          "title": "MuseTalk",
+          "description": "先进的语音克隆，保留情感和自然时机。",
+          "useCase": "最佳角色声音",
+          "useCaseDescription": "非常适合在长篇内容中保持一致的角色声音。",
+          "link": "https://musetalk.ai"
+        },
+        {
+          "icon": "🎭",
+          "title": "情感TTS",
+          "description": "专业的情感控制和自然韵律的文本转语音。",
+          "useCase": "情感内容",
+          "useCaseDescription": "适用于需要细微情感变化的戏剧性内容。",
+          "link": "https://emotiontts.ai"
+        },
+        {
+          "icon": "🎬",
+          "title": "LipSync Pro",
+          "description": "AI驱动的逐帧精准口型同步修正。",
+          "useCase": "完美的口型对齐",
+          "useCaseDescription": "为专业视频制作实现像素完美的口型同步。",
+          "link": "https://lipsyncpro.ai"
+        }
+      ]
+    },
+    "workflow": {
+      "title": "逐步工作流程",
+      "steps": [
+        {
+          "title": "准备源音频",
+          "description": "开始时使用高质量、干净的目标声音录音。",
+          "action": "音频质量检查",
+          "actionDescription": "确保48kHz采样率，最小背景噪音和一致的声音表现。",
+          "promptTitle": "音频准备提示",
+          "promptDescription": "使用此提示准备声音克隆的音频：",
+          "prompt": "清洁音频：去除背景噪音，归一化至-6dB，确保声音音调一致，导出为WAV 48kHz 24位。"
+        },
+        {
+          "title": "克隆带情感的声音",
+          "description": "使用MuseTalk创建一个情感意识的声音模型。",
+          "action": "声音模型训练",
+          "actionDescription": "使用情感标签和时间参考样本训练模型。",
+          "promptTitle": "声音克隆提示",
+          "promptDescription": "使用此提示进行声音克隆：",
+          "prompt": "克隆带情感保留的声音：分析声音模式，提取情感标记，创建时间配置文件。"
+        },
+        {
+          "title": "生成配音音频",
+          "description": "使用增强情感的声音模型生成语音。",
+          "action": "音频生成",
+          "actionDescription": "生成多种情感强度不同的音频，以获得最佳效果。",
+          "promptTitle": "音频生成提示",
+          "promptDescription": "使用此提示进行自然音频生成：",
+          "prompt": "生成语音：应用情感配置文件[快乐、担忧、兴奋]，插入自然停顿，变化说话速度±15%。"
+        }
+      ]
+    },
+    "advanced": {
+      "title": "高级技术",
+      "techniques": [
+        {
+          "icon": "🧠",
+          "title": "神经韵律转移",
+          "description": "将参考音频中的自然语音模式转移到AI生成的语音中。",
+          "benefit": "真实的语音模式",
+          "benefitDescription": "在语音节奏和语调上实现95%的自然度。",
+          "promptTitle": "韵律转移提示",
+          "promptDescription": "使用此提示进行韵律转移：",
+          "prompt": "提取韵律模式：分析音高轮廓、时间模式、重音强调，应用于目标语音。"
+        },
+        {
+          "icon": "🎯",
+          "title": "上下文感知情感",
+          "description": "理解场景上下文并相应调整情感的AI。",
+          "benefit": "场景适当的情感",
+          "benefitDescription": "自动将情感语调与视频内容和对话上下文匹配。",
+          "promptTitle": "上下文感知提示",
+          "promptDescription": "使用此提示进行上下文感知情感：",
+          "prompt": "分析场景上下文：识别情感语调、角色关系、戏剧时刻，相应调整声音。"
+        }
+      ]
+    },
+    "automation": {
+      "title": "自动化策略",
+      "strategies": [
+        {
+          "icon": "⚙️",
+          "title": "批处理处理管道",
+          "description": "自动化工作流程，用于处理多个视频文件，确保质量一致。",
+          "result": "大规模一致的质量",
+          "resultDescription": "处理100多个视频，确保声音质量和情感传递一致。"
+        },
+        {
+          "icon": "🔄",
+          "title": "质量控制自动化",
+          "description": "AI驱动的质量检查，自动检测和标记配音问题。",
+          "result": "减少人工审核",
+          "resultDescription": "在人工审核之前捕捉90%的配音问题，节省70%的质量控制时间。"
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "用AI转变您的视频配音",
+      "description": "通过结合这些先进的技术和工具，您可以创建自然、情感丰富的配音内容，吸引观众。AI配音的未来已经到来，它比以往任何时候都更具人性化。"
+    }
   }
 }

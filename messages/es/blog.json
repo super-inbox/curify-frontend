@@ -208,7 +208,8 @@
         "date": "23 de marzo de 2026",
         "readTime": "9 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/tenprompt.webp"
+        "image": "/images/tenprompt.webp",
+        "thumbnailType": "transcripción-de-video-negocios"
       },
       {
         "slug": "comparacion-de-modelos-de-generacion-de-imagenes",
@@ -216,7 +217,8 @@
         "date": "28 de marzo de 2026",
         "readTime": "12 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/hardworker.webp"
+        "image": "/images/hardworker.webp",
+        "thumbnailType": "transcripción-de-video-pipeline"
       },
       {
         "slug": "guia-de-negocios-de-sincronizacion-lip",
@@ -398,15 +400,35 @@
         "date": "13 de abril de 2026",
         "readTime": "15 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "sistema-de-producción-de-contenido-ai",
+          "contenido-de-aprendizaje-viral",
+          "herramientas-de-aprendizaje-visual"
+        ]
       },
       {
-        "slug": "curify-ai-growth-engine",
-        "title": "El Motor de Crecimiento AI de Curify: Transformando la Creación de Contenido para Creadores y Marketers de UGC",
+        "slug": "series-infographic-vs-notebooklm",
+        "title": "Infografías de Series vs Google NotebookLM: Contenido Visual vs Narrativo",
+        "date": "10 de abril de 2026",
+        "readTime": "10 min de lectura",
+        "tag": "Nano Banana Prompts",
+        "image": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
+        "category": "nano-banana-prompts",
+        "relatedLinks": [
+          "qué-son-las-infografías",
+          "ecosistema-de-prompts-nano-banana",
+          "herramientas-web-ai-creativas"
+        ]
+      },
+      {
+        "slug": "emotion-tts-movie",
+        "title": "Película Emotion TTS: Haz que tus Narrativas Suenen Más Emocionales",
         "date": "13 de abril de 2026",
-        "readTime": "12 min de lectura",
-        "tag": "Plataforma AI",
-        "image": "/images/growthengine.webp"
+        "readTime": "15 min de lectura",
+        "tag": "Herramientas para Creadores",
+        "image": "/images/voices2.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -3729,7 +3751,7 @@
             "description": "Estéticas predefinidas"
           },
           {
-            "icon": "â¡ï¸",
+            "icon": " - ",
             "title": "Lógica de aviso predefinida",
             "description": "Generación estructurada"
           }
@@ -3819,8 +3841,8 @@
       "finalThoughts": {
         "title": "Pensamientos Finales",
         "description": "Si alguna vez has tenido problemas con avisos inconsistentes o resultados genéricos de AI, Nano Banana ofrece un enfoque diferente:",
-        "formula": "Avisos estructurados â personajes consistentes â contenido escalable",
-        "conclusion": "Ya sea que estés creando contenido MBTI, visuales de narración o activos de marketing, este sistema te ayuda a moverte más rápido â y producir mejores resultados."
+        "formula": "Avisos estructurados  personajes consistentes  contenido escalable",
+        "conclusion": "Ya sea que estés creando contenido MBTI, visuales de narración o activos de marketing, este sistema te ayuda a moverte más rápido  y producir mejores resultados."
       },
       "relatedReads": {
         "title": "Lecturas Relacionadas",
@@ -3839,11 +3861,11 @@
           },
           {
             "question": "¿Puedo usar MBTI para crear personajes?",
-            "answer": "Sí â MBTI proporciona un marco de personalidad que puede ser mapeado en rasgos de personajes visuales o narrativos."
+            "answer": "Sí  MBTI proporciona un marco de personalidad que puede ser mapeado en rasgos de personajes visuales o narrativos."
           },
           {
             "question": "¿Es Nano Banana adecuado para principiantes?",
-            "answer": "Sí â elimina la necesidad de escribir avisos complejos manualmente."
+            "answer": "Sí  elimina la necesidad de escribir avisos complejos manualmente."
           }
         ]
       },
@@ -4111,6 +4133,78 @@
           "Optimización de Búsqueda"
         ],
         "questions": "¿Tienes preguntas sobre la construcción de sistemas de etiquetado de contenido? Contacta a nuestro equipo de soporte para asistencia personalizada."
+      }
+    },
+    "UltimateDirectoryOfNanoBananaPrompts": {
+      "title": "Directorio Definitivo de Nano Banana Prompts",
+      "description": "Un lookbook digital curado que muestra la generación de imagen a imagen de Nano Banana con prompts exactos, ejemplos visuales y una integración perfecta con Curify.",
+      "hero": {
+        "title": "Directorio Definitivo de Nano Banana Prompts",
+        "subtitle": "Domina la generación de imágenes AI con más de 50 prompts elaborados por expertos. Transforma tu visión creativa en visuales impresionantes con técnicas probadas de creadores profesionales."
+      },
+      "introduction": {
+        "title": "El Formato del Lookbook",
+        "paragraph1": "Bienvenido a un <strong>enfoque revolucionario para el prompting AI</strong>. En lugar de tutoriales tradicionales, este lookbook digital curado demuestra el poder de Nano Banana a través de ejemplos visuales impresionantes. Cada entrada incluye el prompt exacto utilizado, permitiéndote replicar resultados de calidad profesional al instante.",
+        "paragraph2": "Nuestro formato sistemático—<strong>Resultado Visual → Análisis de Estilo → Prompt Exacto → Desglose Técnico</strong>—crea una experiencia de aprendizaje intuitiva. Descubrirás cómo variaciones sutiles en los prompts impactan drásticamente la calidad de salida, desde el diseño de personajes hasta la visualización arquitectónica.",
+        "paragraph3": "Ya seas un creador de contenido, un comercializador o un entusiasta de la AI, este lookbook cierra la brecha entre el conocimiento teórico y la aplicación práctica. Cada ejemplo está probado, optimizado y listo para su uso inmediato en tu flujo de trabajo creativo."
+      },
+      "tableOfContents": {
+        "title": "Saltar a la Sección",
+        "character": "Personaje & Persona (Alta Participación)",
+        "lifestyle": "Estilo de Vida & Estéticas Globales",
+        "learning": "Aprendizaje & Lenguaje (Utilidad Viral)",
+        "design": "Diseño & Producto (Ventaja Profesional)"
+      },
+      "characterSection": {
+        "title": "Personaje & Persona (Alta Participación)",
+        "description": "Los personajes generan una conexión emocional masiva y compartibilidad. Estos ejemplos muestran cómo crear personas atractivas que capturan la atención de inmediato.",
+        "mbtiTitle": "Arquetipos de Personaje MBTI",
+        "mbtiDescription": "Muestra tipos de personalidad hiper-detallados desde Arquitectos INTJ hasta Entretenedores ESFP.",
+        "styleTitle": "Comparaciones de Estilo",
+        "styleDescription": "El mismo prompt de personaje renderizado en diferentes estilos artísticos.",
+        "groupTitle": "Dinámicas de Grupo",
+        "groupDescription": "Prompts para generar equipos cohesivos, listas deportivas y grupos sociales."
+      },
+      "lifestyleSection": {
+        "title": "Estilo de Vida & Estéticas Globales (El Desplazamiento \"Pinterest\")",
+        "description": "Esto se conecta directamente con los mercados de aspiración y nostalgia, demostrando la capacidad de Nano Banana para manejar matices culturales y geográficos altamente específicos.",
+        "geoTitle": "Atmósferas Específicas por Geo",
+        "geoDescription": "Filtros de nostalgia aplicados a diferentes países y contextos culturales.",
+        "foodTitle": "Comida & Paisajes Urbanos",
+        "foodDescription": "Fotografía de comida editorial de alta gama y entornos de cafetería acogedores."
+      },
+      "learningSection": {
+        "title": "Aprendizaje & Lenguaje (La Utilidad Viral)",
+        "description": "Transición de la pura estética a la creación de contenido práctico y viral. Esto demuestra a educadores y creadores que Curify es un motor de producción serio.",
+        "languageTitle": "Pares de Idiomas",
+        "languageDescription": "Escenas de diálogo visual que muestran configuraciones bilingües y capacidades de texto en imagen.",
+        "educationTitle": "Ciencia & Historia",
+        "educationDescription": "Prompts estilo infografía para contenido educativo y herramientas de aprendizaje visual."
+      },
+      "designSection": {
+        "title": "Diseño & Producto (La Ventaja Profesional)",
+        "description": "Casos de uso profesional de alta intención que atraen a diseñadores industriales, comercializadores y gerentes de producto.",
+        "productTitle": "Mockups de Producto",
+        "productDescription": "Mockups de producto limpios y minimalistas para comercio electrónico y branding.",
+        "styleTitle": "Estilos de Diseño",
+        "styleDescription": "Demuestra modificadores de nivel 3 con vectores isométricos, bocetos a tinta y renders fotorrealistas."
+      },
+      "lookbookComponent": {
+        "resultingImage": "Imagen Resultante",
+        "coreTags": "Etiquetas Principales",
+        "exactPrompt": "Prompt Exacto",
+        "remixCta": "Remixa Este Prompt",
+        "copyPrompt": "Copia el Prompt",
+        "startGenerating": "Comienza a Generar",
+        "promptDescription": "Haz clic para copiar este prompt exacto a tu portapapeles y úsalo en Nano Banana.",
+        "remixDescription": "Abre este prompt en Curify para comenzar a generar de inmediato con imagen a imagen."
+      },
+      "examples": {
+        "description": "Ejemplo de prompt para",
+        "promptTitle": "Ejemplo de Prompt",
+        "promptDescription": "Este es un ejemplo de un prompt bien elaborado que genera resultados de alta calidad.",
+        "promptBoxTitle": "Prompt Completo",
+        "promptBoxDescription": "Copia este prompt exacto para usar en Nano Banana:"
       }
     }
   },
@@ -5520,5 +5614,387 @@
     "conclusionContent": "La tecnología de transcripción de video ha evolucionado de sistemas básicos de reconocimiento de voz a sofisticadas canalizaciones de múltiples etapas que combinan avances en redes neuronales, procesamiento de audio y técnicas de optimización. Sistemas modernos como la canalización de Curify demuestran cómo Conv-TasNet para separación de audio, WhisperX para transcripción y aseguramiento de calidad avanzado pueden integrarse en flujos de trabajo de grado de producción.\n\nPara equipos técnicos y desarrolladores, la conclusión clave es que la transcripción de video ya no es un problema de investigación, sino un desafío de ingeniería resuelto. Las oportunidades restantes radican en la optimización, los casos extremos y la integración, en lugar de limitaciones tecnológicas fundamentales. A medida que estos sistemas continúan mejorando a través de mejores arquitecturas de modelos y conjuntos de datos de entrenamiento más grandes, nos estamos acercando a un futuro donde la transcripción perfecta está disponible a gran escala para cualquier tipo de contenido.\n\nLa arquitectura técnica descrita aquí representa el estado del arte actual en 2026, pero el campo continúa evolucionando rápidamente. La transcripción en tiempo real, la identificación de hablantes en cero disparos y la resumación automatizada de contenido son capacidades emergentes que transformarán aún más nuestra forma de abordar el procesamiento y análisis de contenido de video.",
     "seoKeywords": "canalización de transcripción de video, canalización de reconocimiento de voz, procesamiento de video asr, canalización de voz a texto, diarización de hablantes en video, alineación forzada de transcripción, canalización de transcripción whisper, segmentación de audio en transcripción, transcripción multilingüe ai",
     "metaDescription": "Profundización técnica en la arquitectura de canalización de transcripción de video AI. Guía completa sobre ASR, alineación forzada, diarización de hablantes y diseño de sistemas de producción para desarrolladores e ingenieros de IA."
+  },
+  "MBTICharacterGenerator": {
+    "title": "La Guía Definitiva del Generador de Personajes MBTI con IA (Con Ejemplos de Yellowstone) | Curify",
+    "description": "Aprende a usar la IA para generar personas de personajes MBTI precisas utilizando ejemplos de Yellowstone. Descubre técnicas avanzadas de prompting para el desarrollo de personajes."
+  },
+  "MBTICharacterGeneratorGuide": {
+    "title": "La Guía Definitiva del Generador de Personajes MBTI con IA (Con Ejemplos de Yellowstone) | Curify",
+    "description": "Aprende a usar la IA para generar personas de personajes MBTI precisas utilizando ejemplos de Yellowstone. Descubre técnicas avanzadas de prompting para el desarrollo de personajes.",
+    "hero": {
+      "title": "La Guía Definitiva del Generador de Personajes MBTI con IA",
+      "subtitle": "Transforma tu proceso creativo con el desarrollo de personajes impulsado por IA utilizando las personalidades icónicas de Yellowstone como tu modelo"
+    },
+    "introduction": {
+      "paragraph1": "Mientras ya has publicado el Generador de Personajes MBTI de Nano Banana, el siguiente paso es &lt;strong&gt;alinear la herramienta con la intención específica del usuario&lt;/strong&gt;. Los buscadores no solo buscan un generador MBTI genérico; quieren analizar, recrear o interpretar personajes que ya conocen, a menudo comenzando con consultas como “¿Qué MBTI es Rip Wheeler?” o “tipo de personalidad de Beth Dutton.” Esto señala un cambio de la exploración abstracta de la personalidad a &lt;strong&gt;modelado de personajes aplicado&lt;/strong&gt;, donde los usuarios esperan resultados que se sientan reconocibles, precisos y utilizables de inmediato. Yellowstone proporciona un punto de entrada perfecto: una serie de alta participación con personajes distintos y psicológicamente ricos que se mapean limpiamente a los arquetipos MBTI. Por ejemplo, la intensidad y agresión estratégica de Beth se alinean estrechamente con los rasgos ENTJ, mientras que el conflicto interno y la sensibilidad moral de Kayce reflejan un perfil ISFP. Estas señales de personalidad fuertes facilitan a los usuarios validar los resultados generados contra sus propias interpretaciones, aumentando la confianza en la herramienta. Al anclar las capacidades de generación de Nano Banana a estos personajes familiares, reduces la carga cognitiva para los usuarios; no tienen que imaginar rasgos abstractos desde cero. En cambio, pueden &lt;strong&gt;ingeniería inversa de personalidades que ya entienden&lt;/strong&gt; y luego extenderlas a nuevos escenarios, personajes originales o configuraciones de RPG. Esto transforma la herramienta de un generador de novedad a un &lt;strong&gt;asistente creativo práctico&lt;/strong&gt; para la narración, la elaboración de teorías de fans y la construcción de mundos impulsados por personajes.",
+      "paragraph2": "Esta guía completa muestra a creadores, escritores y jugadores de RPG cómo aprovechar Nano Banana de Curify para generar &lt;strong&gt;personas de personajes altamente precisas y conscientes del contexto&lt;/strong&gt; basadas en tipos MBTI. En lugar de detenerse en etiquetas superficiales, la guía explica cómo traducir cada perfil MBTI en rasgos accionables: patrones de toma de decisiones, estilo de diálogo, desencadenantes emocionales y dinámicas interpersonales, para que los personajes generados se sientan consistentes y creíbles en diferentes escenarios. Usando personajes de Yellowstone como ejemplos prácticos, demostramos cómo &lt;strong&gt;anclar las salidas de MBTI en personalidades reconocibles&lt;/strong&gt;, y luego extender esos patrones a la creación de personajes originales, fan fiction o campañas de RPG de mesa. Por ejemplo, los usuarios pueden comenzar con un arquetipo ENTJ al estilo de Beth Dutton y adaptarlo a un anti-héroe corporativo, o tomar un perfil ISTP similar a Rip Wheeler y evolucionarlo en un compañero de RPG moralmente complejo. Al combinar flujos de trabajo de generación paso a paso con referencias de cultura pop que ya atraen interés de búsqueda, esta guía está diseñada para &lt;strong&gt;capturar tráfico de cola larga de alta intención&lt;/strong&gt; mientras entrega valor creativo inmediato. Los lectores no solo aprenden lo que significa un tipo MBTI; aprenden cómo operacionalizarlo en personajes completamente realizados que pueden usar en historias, juegos o pipelines de creación de contenido."
+    },
+    "tags": {
+      "mbtiGenerator": "Generador MBTI",
+      "yellowstoneMBTI": "MBTI de Yellowstone",
+      "characterDevelopment": "Desarrollo de Personajes"
+    },
+    "protip": "Comienza con tipos MBTI específicos y ejemplos de personajes reales para entrenar a la IA en patrones de personalidad antes de generar personajes originales.",
+    "tabs": {
+      "basics": "Conceptos Básicos de MBTI",
+      "yellowstone": "Ejemplos de Yellowstone",
+      "techniques": "Técnicas Avanzadas",
+      "advanced": "Uso Profesional",
+      "faq": "FAQ"
+    },
+    "basics": {
+      "title": "Entendiendo MBTI para la Generación de Personajes",
+      "whatIsMBTI": {
+        "title": "¿Qué es MBTI?",
+        "description": "El Indicador de Tipo Myers-Briggs es un marco de personalidad que categoriza a las personas en 16 tipos de personalidad distintos basados en cuatro dimensiones clave. Este sistema proporciona una excelente base para crear personajes consistentes y creíbles."
+      },
+      "aiGeneration": {
+        "title": "Generación de Personajes MBTI Impulsada por IA",
+        "description": "Usando Nano Banana de Curify, puedes generar perfiles de personajes detallados que reflejan con precisión los rasgos de personalidad MBTI, completos con comportamientos, patrones de diálogo y tendencias de toma de decisiones.",
+        "basicPrompt": {
+          "title": "Estructura Básica del Prompt de Personaje",
+          "example": "Genera un perfil de personaje para un tipo de personalidad [MBTI_TYPE]. Incluye sus rasgos principales, estilo de comunicación, proceso de toma de decisiones y comportamientos típicos en [CONTEXT].",
+          "explanation": "Esta estructura simple proporciona a la IA la información esencial necesaria para crear una personalidad de personaje consistente."
+        }
+      }
+    },
+    "yellowstone": {
+      "title": "Personajes de Yellowstone como Plantillas de MBTI",
+      "beth": {
+        "traits": [
+          "Audaz",
+          "Decisiva",
+          "Competitiva",
+          "Rápida de pensamiento",
+          "Ingeniosa",
+          "Comunicación directa"
+        ],
+        "prompt": "Genera un personaje femenino ESTP en sus 30, trabajando en un entorno empresarial de alto riesgo. Incluye ingenio agudo, pensamiento estratégico y lealtad familiar protectora. Debe ser segura de sí misma, ocasionalmente despiadada, pero con vulnerabilidades ocultas."
+      },
+      "rip": {
+        "traits": [
+          "Leal",
+          "Metódico",
+          "Responsable",
+          "Tradicional",
+          "Protector",
+          "Orientado a la acción"
+        ],
+        "prompt": "Crea un personaje masculino ISTJ que sirva como un protector leal y ejecutor. Incluye un fuerte sentido del deber, habilidades prácticas para resolver problemas y lealtad inquebrantable. Debe ser callado pero formidable, con un estricto código moral e instintos protectores."
+      },
+      "john": {
+        "traits": [
+          "Líder natural",
+          "Estratégico",
+          "Decisivo",
+          "Visionario",
+          "Autoritario",
+          "Enfocado en la familia"
+        ],
+        "prompt": "Genera un personaje ENTJ como un poderoso patriarca familiar y líder empresarial. Incluye pensamiento estratégico, presencia dominante y dinámicas familiares complejas. Debe ser decisivo, visionario, pero agobiado por la responsabilidad y el legado."
+      },
+      "kayce": {
+        "traits": [
+          "Impulsado por valores",
+          "Adaptable",
+          "Leal",
+          "Reacio al conflicto",
+          "Principista",
+          "Profundidad emocional"
+        ],
+        "prompt": "Crea un personaje ISFP atrapado entre la lealtad familiar y los valores personales. Incluye un fuerte sentido moral, sensibilidad emocional y conflicto interno. Debe ser hábil, reflexivo, pero luchando con prioridades en competencia."
+      },
+      "analysis": {
+        "title": "Por qué estos ejemplos funcionan",
+        "description": "Los personajes de Yellowstone proporcionan arquetipos MBTI perfectos porque encarnan rasgos de personalidad claros en situaciones de alto riesgo, lo que los convierte en plantillas ideales para la generación de personajes de IA.",
+        "points": [
+          "Cada personaje muestra comportamientos MBTI consistentes en diferentes escenarios",
+          "Sus motivaciones y patrones de toma de decisiones son claramente visibles",
+          "El programa proporciona un contexto rico para la expresión de la personalidad bajo presión",
+          "Estos arquetipos se traducen bien a varios géneros y entornos"
+        ]
+      }
+    },
+    "techniques": {
+      "title": "Técnicas Avanzadas de Prompts",
+      "detailedPrompts": {
+        "title": "Creando Perfiles de Personajes Detallados",
+        "description": "Eleva tu generación de personajes incorporando marcos de personalidad detallados y elementos contextuales.",
+        "structure": {
+          "title": "Estructura de Prompt Integral",
+          "elements": [
+            "Tipo MBTI central y funciones cognitivas",
+            "Antecedentes y experiencias de vida",
+            "Contexto y entorno actuales",
+            "Escenarios y desafíos específicos",
+            "Dinámicas de relación y estilo de comunicación"
+          ]
+        },
+        "example": "Genera un perfil de personaje detallado para un emprendedor ENFP que recientemente inició una marca de moda sostenible. Incluye su proceso creativo, cómo maneja los desafíos empresariales, su estilo de networking y luchas personales con el equilibrio entre trabajo y vida. Muestra su intuición extrovertida en la detección de tendencias y su sentimiento introvertido en la toma de decisiones éticas. Incluye ejemplos de diálogos y fragmentos de monólogos internos."
+      },
+      "iterativeRefinement": {
+        "title": "Desarrollo Iterativo de Personajes",
+        "description": "Utiliza un enfoque de múltiples pasos para refinar y perfeccionar tus personajes generados por IA.",
+        "steps": {
+          "step1": {
+            "title": "Generar Perfil Base",
+            "description": "Comienza con un prompt amplio centrado en MBTI para establecer la personalidad central del personaje."
+          },
+          "step2": {
+            "title": "Agregar Contexto Específico",
+            "description": "Refina el personaje añadiendo escenarios específicos, relaciones y factores ambientales."
+          },
+          "step3": {
+            "title": "Probar y Refinar",
+            "description": "Coloca al personaje en varias situaciones para probar la consistencia y refinar los rasgos de personalidad."
+          }
+        }
+      }
+    },
+    "advanced": {
+      "title": "Aplicaciones Profesionales",
+      "useCases": {
+        "title": "Casos de Uso Profesional",
+        "writers": {
+          "title": "Escritores de Ficción",
+          "description": "Crea personajes consistentes y multidimensionales que impulsen narrativas atractivas"
+        },
+        "rpg": {
+          "title": "Maestros de Juegos de RPG",
+          "description": "Genera NPCs con personalidades distintas para experiencias de juego de rol inmersivas"
+        },
+        "marketing": {
+          "title": "Equipos de Marketing",
+          "description": "Desarrolla personas de marca y avatares de clientes para campañas dirigidas"
+        },
+        "psychology": {
+          "title": "Estudiantes de Psicología",
+          "description": "Explora tipos de personalidad a través de escenarios de aprendizaje basados en personajes"
+        }
+      },
+      "bestPractices": {
+        "title": "Mejores Prácticas para la Generación de Personajes de IA",
+        "points": [
+          "Siempre especifica el contexto y el entorno donde opera el personaje",
+          "Incluye tanto fortalezas como debilidades para personalidades realistas",
+          "Utiliza escenarios específicos para probar la consistencia del personaje",
+          "Itera y refina según los resultados generados",
+          "Combina múltiples perspectivas MBTI para personajes complejos",
+          "Mantén la consistencia del personaje en diferentes contextos"
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "POR QUÉ ELEGIR LA GENERACIÓN MBTI IMPULSADA POR IA",
+      "title": "Beneficios Clave de la Generación de Personajes MBTI con IA",
+      "accuracy": {
+        "title": "Precisión Psicológica",
+        "description": "Los modelos de IA entrenados con datos extensos de personalidad generan personajes que se alinean consistentemente con los marcos MBTI establecidos"
+      },
+      "efficiency": {
+        "title": "Eficiencia en el Tiempo",
+        "description": "Genera perfiles de personajes detallados en segundos en lugar de horas dedicadas al desarrollo y la investigación manual de personajes"
+      },
+      "consistency": {
+        "title": "Consistencia del Personaje",
+        "description": "Mantén rasgos de personalidad, comportamientos y patrones de toma de decisiones consistentes en todos los escenarios y contextos de la historia"
+      },
+      "creativity": {
+        "title": "Creatividad Mejorada",
+        "description": "Explora nuevas posibilidades de personajes y combinaciones de personalidad que inspiran enfoques narrativos frescos"
+      }
+    },
+    "conclusion": {
+      "title": "Comienza a Crear Personajes Atractivos Hoy",
+      "description": "Con Nano Banana de Curify y estas técnicas de generación de personajes MBTI, tienes todo lo que necesitas para crear personajes ricos y consistentes que cautiven a las audiencias. Ya sea que estés escribiendo ficción, desarrollando campañas de RPG o creando personas de marketing, la generación de personajes impulsada por IA transformará tu proceso creativo.",
+      "cta": {
+        "primary": "Prueba el Generador de Personajes Nano Banana",
+        "secondary": "Explora Más Herramientas de IA"
+      }
+    }
+  },
+  "HowToDubVideosNaturally": {
+    "title": "Cómo Duplicar Videos de Forma Natural en 2026: Solucionando Artefactos de Clonación de Voz de IA",
+    "description": "Una guía completa para resolver desafíos comunes de doblaje con herramientas de IA. Aprende soluciones prácticas para el ritmo robótico, la falta de emoción y los problemas de sincronización labial.",
+    "hero": {
+      "title": "Cómo Duplicar Videos de Forma Natural en 2026: Solucionando Artefactos de Clonación de Voz de IA",
+      "subtitle": "Una guía completa para resolver desafíos comunes de doblaje con herramientas de IA. Enfócate en puntos críticos como el ritmo robótico, la falta de emoción y los problemas de sincronización labial."
+    },
+    "protip": "Comienza con audio fuente de alta calidad y siempre prueba tu contenido doblado con hablantes nativos para detectar artefactos sutiles que la IA podría pasar por alto.",
+    "tabs": {
+      "problems": "Problemas Comunes",
+      "solutions": "Soluciones Prácticas",
+      "tools": "Herramientas Recomendadas",
+      "workflow": "Flujo de Trabajo Paso a Paso",
+      "advanced": "Técnicas Avanzadas",
+      "automation": "Estrategias de Automatización",
+      "conclusion": "Conclusión"
+    },
+    "introduction": {
+      "paragraph1": "El doblaje de videos con IA ha revolucionado la creación de contenido, pero los <strong>artefactos robóticos</strong> y el <strong>ritmo antinatural</strong> aún afectan muchas producciones. En 2026, tenemos mejores herramientas y técnicas para superar estos desafíos. El problema central radica en cómo la mayoría de los flujos de trabajo de doblaje tratan el habla como una capa puramente técnica en lugar de una actuación. Muchos sistemas aún generan audio con prosodia plana, énfasis inconsistente y pausas mal cronometradas, lo que rompe la inmersión incluso cuando la voz en sí suena realista. Los espectadores son muy sensibles a los desajustes de tiempo: cuando los momentos emocionales, micro-pausas o el estrés de las oraciones no se alinean con la actuación visual, el resultado se siente sutilmente “fuera de lugar”, incluso si no pueden articular por qué. Los enfoques modernos abordan esto al centrarse en el <strong>control de prosodia y la alineación temporal</strong>. En lugar de generar el habla de manera lineal, los modelos más nuevos incorporan síntesis consciente del ritmo, permitiendo a los creadores controlar el ritmo a nivel de frase y sílaba. Esto hace posible igualar los movimientos labiales, preservar las pausas dramáticas y mantener la intención original del actor en diferentes idiomas. Técnicas como la alineación forzada, el cronometraje a nivel de fonema y la acondicionamiento de audio de referencia se están convirtiendo en estándar en flujos de trabajo de alta calidad. Otra mejora importante proviene del <strong>modelado de voz consciente del contexto</strong>. En lugar de generar cada línea de forma aislada, los sistemas avanzados mantienen memoria conversacional, rastreando el tono, el estado emocional y la dinámica del hablante a través de las escenas. Esto reduce la deriva tonal y asegura que un personaje suene consistente ya sea que esté susurrando, discutiendo o entregando una exposición. Para contenido con mucha narrativa, este cambio por sí solo mejora drásticamente el realismo percibido. Finalmente, el auge de los <strong>flujos de trabajo con humanos en el circuito</strong> ha cerrado la brecha entre la automatización y la calidad. Los creadores ahora combinan la generación de IA con capas de edición ligeras, ajustando pausas, modificando énfasis o regenerando segmentos específicos en lugar de clips enteros. Este enfoque híbrido equilibra la eficiencia con el control creativo, permitiendo a los equipos de producción escalar el doblaje mientras logran resultados de nivel de estudio. Juntos, estos avances mueven el doblaje de IA de una herramienta de conveniencia a una <strong>solución de grado de producción</strong>, capaz de ofrecer actuaciones naturales y emocionalmente resonantes en diferentes idiomas sin sacrificar velocidad o escalabilidad.",
+      "paragraph2": "Esta guía te mostrará cómo <strong>solucionar problemas comunes de doblaje</strong> utilizando herramientas de IA de vanguardia como MuseTalk, Emotion TTS y técnicas avanzadas de post-procesamiento. Vamos más allá de la generación de voz básica para abordar los puntos de falla más persistentes en los flujos de trabajo de doblaje de IA: desajuste de sincronización labial, entrega monótona, desajustes de tiempo y planitud emocional. Aprenderás a utilizar MuseTalk para una alineación visual-audio precisa, asegurando que las pistas de habla generadas coincidan estrechamente con los movimientos de la boca y las expresiones faciales, incluso en escenas rápidas o con mucho diálogo. En el lado del audio, desglosamos cómo aprovechar los sistemas Emotion TTS para inyectar <strong>expresividad controlada</strong> en las voces generadas. En lugar de depender de ajustes genéricos, la guía explica cómo ajustar los contornos de tono, el ritmo y el énfasis para reflejar la intención, ya sea tensión, sarcasmo o cambios emocionales sutiles dentro de una sola línea. Esto te permite pasar de audio “técnicamente correcto” a actuaciones que se sienten humanas y contextualizadas. También cubrimos <strong>flujos de trabajo avanzados de post-procesamiento</strong> que marcan una diferencia crítica en la calidad de salida final. Esto incluye ajustes de tiempo a nivel de fonema, recorte y extensión de silencios, inserción de respiraciones y pausas, y técnicas de masterización de audio como igualación de EQ y normalización de volumen para mezclar voces dobladas sin problemas en la banda sonora original. Al combinar estas herramientas y técnicas en un flujo de trabajo cohesivo, podrás diagnosticar y solucionar sistemáticamente problemas de doblaje en lugar de depender de prueba y error, convirtiendo salidas inconsistentes de IA en diálogos pulidos y listos para producción."
+    },
+    "problems": {
+      "title": "Problemas Comunes de Doblaje con IA",
+      "issues": [
+        {
+          "icon": "🤖",
+          "title": "Ritmo Robótico",
+          "description": "El habla generada por IA a menudo carece de ritmo y tiempo natural, sonando mecánica y distante.",
+          "impact": "Desconexión del Espectador",
+          "impactDescription": "Un ritmo antinatural rompe la inmersión y reduce la retención del espectador hasta en un 40%."
+        },
+        {
+          "icon": "😐",
+          "title": "Falta de Matiz Emocional",
+          "description": "Las voces de IA luchan por transmitir emociones sutiles, haciendo que las escenas dramáticas se sientan planas.",
+          "impact": "Desconexión Emocional",
+          "impactDescription": "La falta de señales emocionales impide que los espectadores se conecten con los personajes y la historia."
+        },
+        {
+          "icon": "👄",
+          "title": "Desajustes de Sincronización Labial",
+          "description": "Una mala alineación entre el audio y los movimientos labiales visuales crea un efecto de valle inquietante.",
+          "impact": "Apariencia Irrealista",
+          "impactDescription": "Los errores visibles de sincronización labial rompen inmediatamente la ilusión del habla natural."
+        }
+      ]
+    },
+    "solutions": {
+      "title": "Soluciones Prácticas",
+      "methods": [
+        {
+          "icon": "🎭",
+          "title": "TTS Mejorado por Emoción",
+          "description": "Utiliza modelos de texto a voz conscientes de la emoción que pueden inyectar sentimientos apropiados en la voz.",
+          "benefit": "Entrega Emocional Natural",
+          "benefitDescription": "Logra un 85% más de expresión emocional natural en comparación con TTS estándar.",
+          "promptTitle": "Prompt de Mejora Emocional",
+          "promptDescription": "Utiliza este prompt para guiar a la IA en la generación de habla emocionalmente matizada:",
+          "prompt": "Genera habla con tono [emoción: preocupado, cálido, urgente]. Pausa 0.3s después de las comas, enfatiza las palabras emocionales clave, varía el tono en ±20% para una cadencia natural."
+        },
+        {
+          "icon": "⚡",
+          "title": "Corrección de Ritmo",
+          "description": "Aplica ajustes de tiempo impulsados por IA para igualar los patrones de habla humana natural.",
+          "benefit": "Temporización similar a la humana",
+          "benefitDescription": "Reduce los artefactos robóticos en un 70% mediante ajustes de ritmo inteligentes.",
+          "promptTitle": "Sugerencia de Corrección de Ritmo",
+          "promptDescription": "Utiliza esta sugerencia para corregir el ritmo robótico:",
+          "prompt": "Analiza el ritmo del habla e inserta pausas naturales: 0.5s después de los puntos, 0.2s después de las comas, varía el espaciado de palabras en ±10% para un flujo orgánico."
+        }
+      ]
+    },
+    "tools": {
+      "title": "Herramientas Recomendadas",
+      "cta": "Probar Herramienta",
+      "recommendations": [
+        {
+          "icon": "🎙️",
+          "title": "MuseTalk",
+          "description": "Clonación de voz avanzada con preservación de emociones y temporización natural.",
+          "useCase": "Mejor para Voces de Personajes",
+          "useCaseDescription": "Perfecto para mantener voces de personajes consistentes en contenido de formato largo.",
+          "link": "https://musetalk.ai"
+        },
+        {
+          "icon": "🎭",
+          "title": "Emotion TTS",
+          "description": "Texto a voz especializado con control emocional y prosodia natural.",
+          "useCase": "Contenido Emocional",
+          "useCaseDescription": "Ideal para contenido dramático que requiere variaciones emocionales sutiles.",
+          "link": "https://emotiontts.ai"
+        },
+        {
+          "icon": "🎬",
+          "title": "LipSync Pro",
+          "description": "Corrección de sincronización labial impulsada por IA con precisión a nivel de fotograma.",
+          "useCase": "Alineación Labial Perfecta",
+          "useCaseDescription": "Logra sincronización labial perfecta para producción de video profesional.",
+          "link": "https://lipsyncpro.ai"
+        }
+      ]
+    },
+    "workflow": {
+      "title": "Flujo de Trabajo Paso a Paso",
+      "steps": [
+        {
+          "title": "Preparar Audio de Origen",
+          "description": "Comienza con una grabación de audio de alta calidad y limpia de la voz objetivo.",
+          "action": "Verificación de Calidad de Audio",
+          "actionDescription": "Asegúrate de una frecuencia de muestreo de 48kHz, ruido de fondo mínimo y rendimiento vocal consistente.",
+          "promptTitle": "Sugerencia de Preparación de Audio",
+          "promptDescription": "Utiliza esta sugerencia para preparar audio para la clonación de voz:",
+          "prompt": "Audio limpio: elimina el ruido de fondo, normaliza a -6dB, asegura un tono vocal consistente, exporta como WAV 48kHz 24-bit."
+        },
+        {
+          "title": "Clonar Voz con Emoción",
+          "description": "Utiliza MuseTalk para crear un modelo de voz consciente emocionalmente.",
+          "action": "Entrenamiento del Modelo de Voz",
+          "actionDescription": "Entrena el modelo con etiquetas emocionales y muestras de referencia de temporización.",
+          "promptTitle": "Sugerencia de Clonación de Voz",
+          "promptDescription": "Utiliza esta sugerencia para la clonación de voz:",
+          "prompt": "Clona la voz con preservación de emociones: analiza patrones vocales, extrae marcadores emocionales, crea un perfil de temporización."
+        },
+        {
+          "title": "Generar Audio Doblado",
+          "description": "Genera habla utilizando el modelo de voz mejorado por emociones.",
+          "action": "Generación de Audio",
+          "actionDescription": "Genera múltiples tomas con diferentes intensidades emocionales para obtener los mejores resultados.",
+          "promptTitle": "Sugerencia de Generación de Audio",
+          "promptDescription": "Utiliza esta sugerencia para la generación de audio natural:",
+          "prompt": "Genera habla: aplica perfil emocional [feliz, preocupado, emocionado], inserta pausas naturales, varía la velocidad de habla ±15%."
+        }
+      ]
+    },
+    "advanced": {
+      "title": "Técnicas Avanzadas",
+      "techniques": [
+        {
+          "icon": "🧠",
+          "title": "Transferencia de Prosodia Neural",
+          "description": "Transfiere patrones de habla natural del audio de referencia al habla generada por IA.",
+          "benefit": "Patrones de Habla Auténticos",
+          "benefitDescription": "Logra un 95% de naturalidad en el ritmo y la entonación del habla.",
+          "promptTitle": "Sugerencia de Transferencia de Prosodia",
+          "promptDescription": "Utiliza esta sugerencia para la transferencia de prosodia:",
+          "prompt": "Extrae patrones de prosodia: analiza contornos de tono, patrones de temporización, énfasis de estrés, aplica al habla objetivo."
+        },
+        {
+          "icon": "🎯",
+          "title": "Emoción Consciente del Contexto",
+          "description": "IA que entiende el contexto de la escena y ajusta las emociones en consecuencia.",
+          "benefit": "Emociones Apropiadas para la Escena",
+          "benefitDescription": "Coincide automáticamente el tono emocional con el contenido del video y el contexto del diálogo.",
+          "promptTitle": "Prompt Consciente del Contexto",
+          "promptDescription": "Utiliza este prompt para emoción consciente del contexto:",
+          "prompt": "Analiza el contexto de la escena: identifica el tono emocional, las relaciones entre personajes, el momento dramático, ajusta la voz en consecuencia."
+        }
+      ]
+    },
+    "automation": {
+      "title": "Estrategias de Automatización",
+      "strategies": [
+        {
+          "icon": "⚙️",
+          "title": "Pipeline de Procesamiento por Lotes",
+          "description": "Flujo de trabajo automatizado para procesar múltiples archivos de video con calidad consistente.",
+          "result": "Calidad Consistente a Escala",
+          "resultDescription": "Procesa más de 100 videos con calidad de voz consistente y entrega emocional."
+        },
+        {
+          "icon": "🔄",
+          "title": "Automatización del Control de Calidad",
+          "description": "Controles de calidad impulsados por IA para detectar y señalar problemas de doblaje automáticamente.",
+          "result": "Revisión Manual Reducida",
+          "resultDescription": "Detecta el 90% de los problemas de doblaje antes de la revisión humana, ahorrando el 70% del tiempo de control de calidad."
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Transforma tu Doblaje de Video con IA",
+      "description": "Al combinar estas técnicas y herramientas avanzadas, puedes crear contenido doblado natural y emocionalmente atractivo que cautive a las audiencias. El futuro del doblaje con IA está aquí, y es más humano que nunca."
+    }
   }
 }

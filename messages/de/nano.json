@@ -1709,22 +1709,86 @@
   "template-equipment-muscle-guide": {
     "category": "Fitness & Anatomie-Guides",
     "description": "Erstelle professionelle Fitness-Muskelaktivierungs-Guides für Gym-Geräte mit Übungsillustration und anatomischem Muskeldiagramm.",
-    "title": "Fitness-Geräte Muskelguide | Curify AI"
+    "title": "Fitness-Geräte Muskelguide | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine hochwertige Fitness-Infografik mit einem klaren 2×2-Rasterlayout – kombiniert eine Vektor-Übungsillustration mit einem anatomischen Muskel-Diagramm, das zeigt, welche Muskeln aktiviert werden.",
+        "who": "Ideal für Personal Trainer, Fitness-Inhalte-Ersteller, Fitnesspädagogen und Gesundheits- & Wellness-Konten.",
+        "how": [
+          "Geben Sie einen Fitnessgeräte-Namen ein (z. B. Beinpresse, Latziehen).",
+          "Erstellen Sie einen professionellen Anatomie-Leitfaden mit beschrifteter Muskelaktivierung.",
+          "Teilen Sie in sozialen Medien, verwenden Sie in Trainingsprogrammen oder drucken Sie für Fitnessstudio-Anzeigen."
+        ],
+        "prompts": [
+          "Beinpresse Muskelaktivierungsleitfaden mit anatomischem Diagramm.",
+          "Latziehen – gezielte Muskelgruppen illustriert.",
+          "Smith Machine Squat Anatomie-Infografik mit hervorgehobenen Muskeln."
+        ]
+      }
+    }
   },
   "template-pain-relief-infographic": {
     "category": "Yoga & Wellness-Infografiken",
     "description": "Erstelle professionelle Yoga-Schmerzlinderungs-Infografiken mit 6 Posen und anatomischen Muskel-Highlights.",
-    "title": "Yoga Schmerzlinderungs-Infografik | Curify AI"
+    "title": "Yoga Schmerzlinderungs-Infografik | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine hochwertige vertikale Yoga-Infografik mit 6 Posen in einem 3×2-Raster, jede mit Pose-Namen, Wiederholungs-/Atemanzahl und anatomischer Illustration, die die arbeitenden Muskeln hervorhebt.",
+        "who": "Perfekt für Yoga-Lehrer, Wellness-Ersteller, Physiotherapeuten und Gesundheits- & Fitness-Inhaltskonten.",
+        "how": [
+          "Geben Sie einen Schmerzbereich ein (z. B. Rücken, Knie, Nacken, Schulter).",
+          "Erstellen Sie ein professionelles Yoga-Schmerzlinderungsplakat mit anatomischen Illustrationen.",
+          "Teilen Sie als Bildungsinhalt für Wellness oder verwenden Sie in Materialien für Yoga-Studios."
+        ],
+        "prompts": [
+          "Rücken-Schmerzlinderungs-Yoga-Posen-Infografik mit Muskelhervorhebungen.",
+          "Knie-Schmerz-Yoga-Routine – 6 Posen mit Atemzahlen.",
+          "Nacken- und Schulterschmerzlinderungs-Yoga-Infografik."
+        ]
+      }
+    }
   },
   "template-kids-vocabulary-poster": {
     "category": "Kinder-Vokabelplakate",
     "description": "Erstelle sanfte Aquarell-Vokabelplakate für Kinder mit englischen Wörtern, IPA-Lautschrift und chinesischer Übersetzung.",
-    "title": "Kinder-Vokabelplakat (Bilingual Aquarell) | Curify AI"
+    "title": "Kinder-Vokabelplakat (Bilingual Aquarell) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales zweisprachiges Vokabelplakat im sanften Aquarellstil – jedes Element verfügt über eine hochwertige Illustration, ein fettgedrucktes englisches Wort, eine IPA-phonemische Transkription und eine chinesische Übersetzung.",
+        "who": "Entwickelt für frühkindliche Erzieher, ESL-Lehrer, zweisprachige Eltern und Kinderinhalts-Ersteller.",
+        "how": [
+          "Geben Sie ein Vokabelthema ein (z. B. Meereslebewesen, Gemüse, Früchte).",
+          "Erstellen Sie ein schönes Aquarell-Vokabelplakat.",
+          "Drucken Sie für Klassenzimmer, verwenden Sie in digitalen Lern-Apps oder teilen Sie als Bildungsinhalt."
+        ],
+        "prompts": [
+          "Vokabelplakat für Meereslebewesen mit Aquarellillustrationen und Phonetik.",
+          "Zweisprachiges Plakat für Früchte – Englisch, IPA und Chinesisch für Kinder.",
+          "Vokabeldiagramm für Insekten mit süßer Aquarellkunst."
+        ]
+      }
+    }
   },
   "template-beauty-step-by-step-guide": {
     "category": "Beauty & Lifestyle Schritt-für-Schritt-Guides",
     "description": "Erstelle sanfte Pastell-Beauty-Tutorial-Poster mit 9 illustrierten Schritten für Hautpflege, Frisuren, Nagelkunst und mehr.",
-    "title": "Beauty Schritt-für-Schritt Poster | Curify AI"
+    "title": "Beauty Schritt-für-Schritt Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Schönheitshandbuch-Plakat mit 9 Hauptschritten in einem 3×3-Raster – jeder Schritt hat ein nummeriertes Label, einen fettgedruckten Titel, eine Cartoon-Illustration und die entsprechenden Werkzeuge oder Produkte.",
+        "who": "Perfekt für Beauty-Ersteller, Lifestyle-Influencer, Hautpflege-Marken und Tutorial-Inhaltskonten.",
+        "how": [
+          "Geben Sie ein Tutorial-Thema ein (z. B. Hautpflegeroutine, Frisuren-Tutorial, Nagelkunst).",
+          "Erstellen Sie ein professionelles Schritt-für-Schritt-Schönheitsleitfaden-Plakat.",
+          "Teilen Sie in sozialen Medien, betten Sie in Blogbeiträge ein oder verwenden Sie in Marketingmaterialien der Marke."
+        ],
+        "prompts": [
+          "Hautpflegeroutine Schritt-für-Schritt-Leitfaden mit Cartoon-Illustrationen.",
+          "Frisuren-Tutorial-Plakat – 9 Schritte mit Werkzeugen und Tipps.",
+          "Nagelkunst Schritt-für-Schritt-Leitfaden im sanften Pastellstil."
+        ]
+      }
+    }
   },
   "template-whimsical-travel-map": {
     "category": "Reisekarte",
