@@ -1,0 +1,60 @@
+{
+  "mode": "in-place",
+  "backups_enabled": true,
+  "input": {
+    "templatesPath": "public/data/nano_templates.json",
+    "inspirationPath": "public/data/nano_inspiration.json",
+    "messagesDir": "messages",
+    "tsvPath": "public/data/curify_Page_Performance.tsv"
+  },
+  "output": {
+    "redirectsJsonPath": "redirects.generated.json",
+    "redirectsCjsPath": "redirects.generated.cjs",
+    "auditJsonPath": "example_redirects_from_tsv.json",
+    "summaryPath": "migration_summary.json",
+    "backups": [
+      "public/data/nano_templates.json.bak",
+      "public/data/nano_inspiration.json.bak",
+      "messages/de/nano.json.bak",
+      "messages/en/nano.json.bak",
+      "messages/es/nano.json.bak",
+      "messages/fr/nano.json.bak",
+      "messages/hi/nano.json.bak",
+      "messages/ja/nano.json.bak",
+      "messages/ko/nano.json.bak",
+      "messages/ru/nano.json.bak",
+      "messages/tr/nano.json.bak",
+      "messages/zh/nano.json.bak"
+    ]
+  },
+  "stats": {
+    "changedTemplates": 16,
+    "changedExampleIds": 191,
+    "changedExampleTemplateRefs": 191,
+    "messageFilesProcessed": 10,
+    "messageFilesChanged": 10,
+    "templateRedirects": 176,
+    "exampleRedirectsFromTsv": 17,
+    "totalRedirects": 193,
+    "locales": [
+      "",
+      "de",
+      "en",
+      "es",
+      "fr",
+      "hi",
+      "ja",
+      "ko",
+      "ru",
+      "tr",
+      "zh"
+    ]
+  },
+  "notes": [
+    "JSON files are overwritten in place by default.",
+    "Backups are created once as .bak files unless --no-backup is passed.",
+    "Template redirects are generated for all discovered locales plus root.",
+    "Example redirects are generated only for example URLs found in the TSV.",
+    "Image asset paths are intentionally unchanged."
+  ]
+}

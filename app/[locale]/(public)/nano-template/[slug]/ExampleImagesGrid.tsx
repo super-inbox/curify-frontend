@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Download, Sparkles } from "lucide-react";
+import { Bookmark, Download, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
 import { useClickTracking, useTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
+import { savedItemsService } from "@/services/savedItemsService";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 type Item = {
@@ -57,6 +58,19 @@ function ExampleImageCard({
   const [, setDrawerState] = useAtom(drawerAtom);
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (saved) return;
+    if (!user) { setDrawerState("signin"); return; }
+    setSaved(true);
+    try {
+      await savedItemsService.save(item.id, "nano_inspiration");
+    } catch {
+      setSaved(false);
+    }
+  };
 
   const tracking = {
     contentId: `${item.templateId}:${item.id}`,
@@ -116,8 +130,8 @@ function ExampleImageCard({
         </div>
       </Link>
 
-      <div className={`flex items-center px-3 py-2 ${item.batch ? "justify-between" : "justify-center"}`}>
-        {item.batch && (
+      <div className="flex items-center justify-between px-3 py-2">
+        {item.batch ? (
           <button
             type="button"
             onClick={handleDownload}
@@ -126,6 +140,19 @@ function ExampleImageCard({
           >
             <Download className="h-3.5 w-3.5" />
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={handleSave}
+            className={`flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
+              saved
+                ? "bg-purple-100 text-purple-700"
+                : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+            }`}
+          >
+            <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
+            {saved ? t("saved") : t("save")}
           </button>
         )}
         <Link

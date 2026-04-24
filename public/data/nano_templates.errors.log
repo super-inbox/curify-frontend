@@ -1,0 +1,56 @@
+[2026-04-01T03:50:21.337Z] template-sports-battle
+Error: OpenAI error: {
+  "error": {
+    "message": "Error while downloading https://cdn.curify-ai.com/images/nano_insp_preview/template-sports-battle-template-sports-battle-kobe-vs-rayallen-prev.jpg. Upstream status code: 404.",
+    "type": "invalid_request_error",
+    "param": "url",
+    "code": "invalid_value"
+  }
+}
+    at callOpenAI (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:161:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async withRetry (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:125:12)
+    at async main (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:202:22)
+
+[2026-04-01T03:50:26.275Z] template-mbti-naruto
+Error: OpenAI error: {
+  "error": {
+    "message": "Error while downloading https://cdn.curify-ai.com/images/nano_insp_preview/template-mbti-naruto-narutouzumaki-prev.jpg. Upstream status code: 404.",
+    "type": "invalid_request_error",
+    "param": "url",
+    "code": "invalid_value"
+  }
+}
+    at callOpenAI (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:161:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async withRetry (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:125:12)
+    at async main (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:202:22)
+
+[2026-04-01T03:50:57.258Z] template-fat-loss-plan
+Error: OpenAI error: {
+  "error": {
+    "message": "Error while downloading https://cdn.curify-ai.com/images/nano_insp_preview/template-fat-loss-plan--male-extreme-6kg-prev.jpg. Upstream status code: 404.",
+    "type": "invalid_request_error",
+    "param": "url",
+    "code": "invalid_value"
+  }
+}
+    at callOpenAI (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:161:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async withRetry (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:125:12)
+    at async main (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:202:22)
+
+[2026-04-01T03:51:01.615Z] template-child-hobby-skill
+Error: OpenAI error: {
+  "error": {
+    "message": "Error while downloading https://cdn.curify-ai.com/images/nano_insp_preview/template-child-hobby-skill--6yo-boy-prev.jpg. Upstream status code: 404.",
+    "type": "invalid_request_error",
+    "param": "url",
+    "code": "invalid_value"
+  }
+}
+    at callOpenAI (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:161:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async withRetry (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:125:12)
+    at async main (/Users/qqwjq/curify-frontend/scripts/analyze_template_capabilities.cjs:202:22)
+

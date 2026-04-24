@@ -1,8 +1,8 @@
 // app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
 
-import { Download, Layers, Sparkles } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
+import { Bookmark, Download, Layers, Sparkles } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAtom } from "jotai";
@@ -14,6 +14,7 @@ import {
   useTracking,
 } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
+import { savedItemsService } from "@/services/savedItemsService";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
   makeNanoTemplateUrl,
@@ -56,6 +57,19 @@ export function NanoInspirationCard({
   const [, setDrawerState] = useAtom(drawerAtom);
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
+  const [saved, setSaved] = useState(false);
+
+  const handleSave = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (saved) return;
+    if (!user) { setDrawerState("signin"); return; }
+    setSaved(true);
+    try {
+      await savedItemsService.save(card.id, "nano_inspiration");
+    } catch {
+      setSaved(false);
+    }
+  };
 
   const batchTracking = {
     contentId: card.id,
@@ -126,10 +140,19 @@ export function NanoInspirationCard({
     onViewClick?.(card);
   };
 
-  const displaySrc =
-    normalized.previewUrls[currentImageIndex] ||
-    normalized.imageUrls[currentImageIndex] ||
-    "";
+  const [displaySrc, setDisplaySrc] = useState(
+    normalized.previewUrls[0] || normalized.imageUrls[0] || ""
+  );
+
+  useEffect(() => {
+    const preview = normalized.previewUrls[currentImageIndex] || normalized.imageUrls[currentImageIndex] || "";
+    const full = normalized.imageUrls[currentImageIndex] || preview;
+    setDisplaySrc(preview);
+    if (!full || full === preview) return;
+    const img = new Image();
+    img.src = full;
+    img.onload = () => setDisplaySrc(full);
+  }, [currentImageIndex, normalized]);
 
   return (
     <div
@@ -226,8 +249,8 @@ export function NanoInspirationCard({
 
       {/* Actions */}
       {remixHref && (
-        <div className={`mt-auto flex items-center gap-2 ${card.batch ? "justify-between" : "justify-center"}`}>
-          {card.batch && (
+        <div className="mt-auto flex items-center justify-between gap-2">
+          {card.batch ? (
             <button
               type="button"
               onClick={handleDownload}
@@ -236,6 +259,19 @@ export function NanoInspirationCard({
             >
               <Download className="h-3.5 w-3.5" />
               {isDownloading ? t("downloadingPack") : t("downloadPack")}
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleSave}
+              className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+                saved
+                  ? "bg-purple-100 text-purple-700"
+                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+              }`}
+            >
+              <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
+              {saved ? t("saved") : t("save")}
             </button>
           )}
           <Link

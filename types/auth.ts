@@ -13,7 +13,9 @@ export interface User {
   current_cycle_end: string;
   created_at: string;
   updated_at: string;
-  projects: Project[];  
+  projects: Project[];
+  saved_content_ids?: string[];
+  copied_content_ids?: string[];
   emailVerified?: Date | null;
 }
 

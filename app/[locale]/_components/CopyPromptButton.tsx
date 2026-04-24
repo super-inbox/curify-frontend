@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { Copy } from "lucide-react";
+import { useAtom } from "jotai";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import { canCopyAnonymously, incrementAnonymousCopyCount } from "@/lib/copyGating";
 
 export default function CopyPromptButton({
   text,
@@ -11,8 +14,18 @@ export default function CopyPromptButton({
   onCopied?: () => void;
 }) {
   const [copied, setCopied] = useState(false);
+  const [user] = useAtom(userAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
 
   const handle = async () => {
+    if (!user) {
+      if (!canCopyAnonymously()) {
+        setDrawerState("signin");
+        return;
+      }
+      incrementAnonymousCopyCount();
+    }
+
     try {
       await navigator.clipboard.writeText(text);
       onCopied?.();
@@ -28,6 +41,7 @@ export default function CopyPromptButton({
     >
       <Copy className="h-4 w-4" />
       {copied ? "Copied" : "Copy"}
+      {!user && <span className="ml-0.5 text-xs opacity-60">🔒</span>}
     </button>
   );
 }
