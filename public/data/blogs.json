@@ -4,50 +4,69 @@
     "title": "Ultimate Directory of Nano Banana Prompts",
     "date": "April 20, 2026",
     "readTime": "20 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Nano Template",
     "image": "/images/logbook.webp",
-    "category": "nano-banana-prompts",
-    "relatedLinks": ["nano-banana-prompt-ecosystem", "10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+    "category": "nano-template",
+    "relatedLinks": [
+      "nano-banana-prompt-ecosystem",
+      "10-prompting-tips-nano-banana",
+      "creative-ai-tools-websites"
+    ]
   },
   {
     "slug": "mbti-character-generator",
     "title": "The Ultimate AI MBTI Character Generator Guide (Featuring Yellowstone Examples)",
     "date": "April 20, 2026",
     "readTime": "12 min read",
-    "tag": "MBTI Generator",
+    "tag": "Nano Template",
     "image": "/images/advi.webp",
-    "category": "nano-banana-prompts",
-    "relatedLinks": ["nano-banana-prompt-ecosystem", "10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts",
+      "nano-banana-prompt-ecosystem",
+      "10-prompting-tips-nano-banana"
+    ]
   },
   {
     "slug": "series-infographic-vs-notebooklm",
     "title": "Series Infographics vs Google NotebookLM: Visual vs Narrative Content",
     "date": "April 10, 2026",
     "readTime": "10 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Learning & Education",
     "image": "/images/nano_insp/template-series-infographic-microsoft-ai-dilemma-01-cover.jpg",
-    "category": "nano-banana-prompts",
-    "relatedLinks": ["what-is-infographics", "nano-banana-prompt-ecosystem", "creative-ai-tools-websites"]
+    "category": "learning-education",
+    "relatedLinks": [
+      "visual-learning-tools",
+      "what-is-infographics",
+      "nano-banana-prompt-ecosystem"
+    ]
   },
   {
     "slug": "aiPlatform",
     "title": "实用的 AI 平台：中型科技公司如何用 AI 获胜",
     "date": "March 17, 2026",
     "readTime": "15 min read",
-    "tag": "AI 平台",
+    "tag": "DS & AI Engineering",
     "image": "/images/platformai.webp",
     "category": "ds-ai-engineering",
-    "relatedLinks": ["QA_Bot_to_Task", "age_AI"]
+    "relatedLinks": [
+      "QA_Bot_to_Task",
+      "age_AI"
+    ]
   },
   {
     "slug": "how-to-dub-videos-naturally",
     "title": "How to Dub Videos Naturally in 2026: Fixing AI Voice Cloning Artifacts",
     "date": "April 20, 2026",
     "readTime": "15 min read",
-    "tag": "AI Dubbing",
+    "tag": "Video Dubbing",
     "image": "/images/photoshoot.webp",
-    "category": "video-enhancement",
-    "relatedLinks": ["lip-sync-technical-deep-dive", "emotion-tts-movie", "video-enhancement"]
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator",
+      "lip-sync-technical-deep-dive",
+      "emotion-tts-movie"
+    ]
   },
   {
     "slug": "QA_Bot_to_Task",
@@ -57,7 +76,11 @@
     "tag": "DS & AI Engineering",
     "image": "/images/qa-bot-architecture.jpg",
     "category": "ds-ai-engineering",
-    "relatedLinks": ["aiPlatform", "age_AI"]
+    "relatedLinks": [
+      "ai-content-production-system",
+      "aiPlatform",
+      "age_AI"
+    ]
   },
   {
     "slug": "age_AI",
@@ -67,7 +90,11 @@
     "tag": "DS & AI Engineering",
     "image": "/images/data-science-ai-era.jpg",
     "category": "ds-ai-engineering",
-    "relatedLinks": ["aiPlatform", "QA_Bot_to_Task"]
+    "relatedLinks": [
+      "ai-content-production-system",
+      "aiPlatform",
+      "QA_Bot_to_Task"
+    ]
   },
   {
     "slug": "storyboard-labeling",
@@ -77,7 +104,10 @@
     "tag": "Creator Tools",
     "image": "/images/storyboard-labeling-with-ai.jpg",
     "category": "creator-tools",
-    "relatedLinks": ["video-enhancement", "storyboard-to-pipeline"]
+    "relatedLinks": [
+      "video-enhancement",
+      "storyboard-to-pipeline"
+    ]
   },
   {
     "slug": "video-enhancement",
@@ -87,17 +117,24 @@
     "tag": "Creator Tools",
     "image": "/images/video-enhancement-pipeline.png",
     "category": "creator-tools",
-    "relatedLinks": ["storyboard-labeling", "video-evaluation"]
+    "relatedLinks": [
+      "storyboard-labeling",
+      "video-evaluation"
+    ]
   },
   {
     "slug": "video-evaluation",
     "title": "Evaluating AI Video Translation: Metrics that Actually Matter",
     "date": "November 14, 2025",
     "readTime": "6 min read",
-    "tag": "Video Translation",
+    "tag": "Video Dubbing",
     "image": "/images/video-translation-eval.jpg",
-    "category": "video-translation",
-    "relatedLinks": ["translate-youtube-video", "video-enhancement"]
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator",
+      "translate-youtube-video",
+      "video-enhancement"
+    ]
   },
   {
     "slug": "storyboard-to-pipeline",
@@ -107,7 +144,11 @@
     "tag": "Creator Tools",
     "image": "/images/ai-animation-pipeline.jpg",
     "category": "creator-tools",
-    "relatedLinks": ["storyboard-labeling", "agents-vs-workflows"]
+    "relatedLinks": [
+      "best-ai-tools",
+      "storyboard-labeling",
+      "agents-vs-workflows"
+    ]
   },
   {
     "slug": "agents-vs-workflows",
@@ -117,7 +158,10 @@
     "tag": "Creator Tools",
     "image": "/images/agents-vs-workflows.jpg",
     "category": "creator-tools",
-    "relatedLinks": ["storyboard-to-pipeline", "ae-vs-comfyui"]
+    "relatedLinks": [
+      "storyboard-to-pipeline",
+      "ae-vs-comfyui"
+    ]
   },
   {
     "slug": "ae-vs-comfyui",
@@ -127,127 +171,156 @@
     "tag": "Creator Tools",
     "image": "/images/ae-vs-comfyui.jpg",
     "category": "creator-tools",
-    "relatedLinks": ["agents-vs-workflows", "video-enhancement"]
+    "relatedLinks": [
+      "agents-vs-workflows",
+      "video-enhancement"
+    ]
   },
   {
     "slug": "translate-youtube-video",
     "title": "How to Translate YouTube Videos: Complete Step-by-Step Guide",
     "date": "March 4, 2026",
     "readTime": "12 min read",
-    "tag": "Video Translation",
+    "tag": "Video Dubbing",
     "image": "/images/youtubev2.webp",
-    "category": "video-translation",
-    "relatedLinks": []
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator"
+    ]
   },
   {
     "slug": "translate-youtube-video-to-english",
     "title": "Inside Curify's Video Translation Pipeline: A Technical Deep-Dive",
     "date": "March 17, 2026",
     "readTime": "15 min read",
-    "tag": "Video Translation",
+    "tag": "DS & AI Engineering",
     "image": "/images/youtubev1.webp",
-    "category": "video-translation",
-    "relatedLinks": ["video-evaluation", "what-is-voice-cloning", "f5-tts-voice-cloning"]
+    "category": "ds-ai-engineering",
+    "relatedLinks": [
+      "ai-content-production-system",
+      "video-evaluation",
+      "what-is-voice-cloning"
+    ]
   },
   {
     "slug": "ai-youtube-video-translator",
     "title": "AI YouTube Video Translator: Best Tools & Methods 2026",
     "date": "March 4, 2026",
     "readTime": "11 min read",
-    "tag": "Video Translation",
+    "tag": "Video Dubbing",
     "image": "/images/youtube3.webp",
-    "category": "video-translation",
+    "category": "video-translation-dubbing",
     "relatedLinks": []
   },
   {
     "slug": "what-is-voice-cloning",
-    "title": "What is Voice Cloning in 2026? The Future of AI Voice Technology Explained",
+    "title": "What is AI Voice Cloning? How to Fix Dubbing Artifacts in 2026",
     "date": "March 10, 2026",
     "readTime": "9 min read",
-    "tag": "Creator Tools",
+    "tag": "Video Dubbing",
     "image": "/images/voiceclone.webp",
-    "category": "creator-tools",
-    "relatedLinks": []
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator"
+    ]
   },
   {
     "slug": "voice-cloning-tools",
     "title": "Best Voice Cloning Tools: F5-TTS, ElevenLabs & More",
     "date": "March 4, 2026",
     "readTime": "8 min read",
-    "tag": "Creator Tools",
+    "tag": "Video Dubbing",
     "image": "/images/voiceclone3.webp",
-    "category": "creator-tools",
-    "relatedLinks": []
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator"
+    ]
   },
   {
     "slug": "f5-tts-voice-cloning",
     "title": "F5-TTS Voice Cloning: Professional AI Voice Solutions",
     "date": "March 4, 2026",
     "readTime": "7 min read",
-    "tag": "Creator Tools",
+    "tag": "Video Dubbing",
     "image": "/images/bea9f86a7e2ae4df3497a4241bc71a1d_thumb_1765977242819.jpg",
-    "category": "creator-tools",
-    "relatedLinks": []
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator"
+    ]
   },
   {
     "slug": "asl-video-translator",
     "title": "ASL Video Translator: Complete Guide to Sign Language Translation",
     "date": "March 4, 2026",
     "readTime": "10 min read",
-    "tag": "Video Translation",
+    "tag": "Video Dubbing",
     "image": "/images/aslvideov11.webp",
-    "category": "video-translation",
-    "relatedLinks": []
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator"
+    ]
   },
-    {
+  {
     "slug": "chinese-herbal-medicine-visual-guide",
     "title": "Chinese Herbal Medicine: A Complete Visual Guide to Traditional Remedies",
     "date": "February 24, 2026",
     "readTime": "12 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Nano Template",
     "image": "/images/nano_insp/template-herbal-zh-ginseng.jpg",
-    "category": "nano-banana-prompts",
-    "relatedLinks": []
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts"
+    ]
   },
   {
     "slug": "evolution-timelines-visualization",
     "title": "Evolution Timelines: How to Visualize Historical Progression with AI",
     "date": "February 25, 2026",
     "readTime": "10 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Nano Template",
     "image": "/images/nano_insp/template-evolution-zh-chinese-social-changes.jpg",
-    "category": "nano-banana-prompts",
-    "relatedLinks": []
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts"
+    ]
   },
   {
     "slug": "chinese-costume-history-infographic",
     "title": "Chinese Costume History: From Tang Dynasty to Modern Fashion",
     "date": "February 26, 2026",
     "readTime": "15 min read",
-    "tag": "Culture",
+    "tag": "Nano Template",
     "image": "/images/nano_insp/template-costume-zh-tang-qixiong.jpg",
-    "category": "culture",
-    "relatedLinks": []
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts"
+    ]
   },
   {
     "slug": "creative-ai-tools-websites",
     "title": "告别灵感枯竭｜6个真实可访问的创意与AI工具网站",
     "date": "March 10, 2026",
     "readTime": "8 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Nano Template",
     "image": "/images/sevenimages.webp",
-    "category": "nano-banana-prompts",
-    "relatedLinks": []
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts"
+    ]
   },
   {
     "slug": "nano-banana-prompt-ecosystem",
     "title": "Nano Banana Prompt Ecosystem",
     "date": "March 12, 2026",
     "readTime": "10 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Nano Template",
     "image": "/images/nanobannanapromptblog.webp",
-    "category": "nano-banana-prompts",
-    "relatedLinks": ["chinese-herbal-medicine-visual-guide", "evolution-timelines-visualization", "creative-ai-tools-websites"]
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts",
+      "chinese-herbal-medicine-visual-guide",
+      "evolution-timelines-visualization"
+    ]
   },
   {
     "slug": "video-transcription-business-guide",
@@ -259,29 +332,40 @@
     "useMermaidThumbnail": true,
     "thumbnailType": "video-transcription-business",
     "category": "creator-tools",
-    "relatedLinks": ["translate-youtube-video", "video-enhancement"]
+    "relatedLinks": [
+      "translate-youtube-video",
+      "video-enhancement"
+    ]
   },
   {
     "slug": "video-transcription-technical-deep-dive",
     "title": "Inside an AI Video Transcription Pipeline: ASR, Alignment, and Speaker Diarization",
     "date": "March 19, 2026",
     "readTime": "12 min read",
-    "tag": "Creator Tools",
+    "tag": "DS & AI Engineering",
     "image": "images/techicalpress.webp",
     "useMermaidThumbnail": true,
     "thumbnailType": "video-transcription-pipeline",
-    "category": "creator-tools",
-    "relatedLinks": ["translate-youtube-video-to-english", "video-enhancement"]
+    "category": "ds-ai-engineering",
+    "relatedLinks": [
+      "ai-content-production-system",
+      "translate-youtube-video-to-english",
+      "video-enhancement"
+    ]
   },
   {
     "slug": "10-prompting-tips-nano-banana",
-    "title": "10 Prompting Tips for Nano Banana: Master AI Content Generation",
+    "title": "How to Write Prompts for Nano Banana: 10 Tips for Creators",
     "date": "March 23, 2026",
     "readTime": "8 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Nano Template",
     "image": "/images/book.webp",
-    "category": "nano-banana-prompts",
-    "relatedLinks": ["nano-banana-prompt-ecosystem", "creative-ai-tools-websites"]
+    "category": "nano-template",
+    "relatedLinks": [
+      "ultimate-directory-of-nano-banana-prompts",
+      "nano-banana-prompt-ecosystem",
+      "creative-ai-tools-websites"
+    ]
   },
   {
     "slug": "10-prompting-tips-video-generation",
@@ -291,7 +375,10 @@
     "tag": "Creator Tools",
     "image": "/images/tenprompt.webp",
     "category": "creator-tools",
-    "relatedLinks": ["video-enhancement", "storyboard-to-pipeline"]
+    "relatedLinks": [
+      "video-enhancement",
+      "storyboard-to-pipeline"
+    ]
   },
   {
     "slug": "image-generation-model-comparison",
@@ -301,27 +388,39 @@
     "tag": "Creator Tools",
     "image": "/images/hardworker.webp",
     "category": "creator-tools",
-    "relatedLinks": ["10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+    "relatedLinks": [
+      "best-ai-tools",
+      "10-prompting-tips-nano-banana",
+      "creative-ai-tools-websites"
+    ]
   },
   {
     "slug": "lip-sync-business-guide",
     "title": "AI Lip Sync & Dubbing Guide: Business Applications and Tools",
     "date": "March 29, 2026",
     "readTime": "10 min read",
-    "tag": "Creator Tools",
+    "tag": "Video Dubbing",
     "image": "/images/office.webp",
-    "category": "creator-tools",
-    "relatedLinks": ["video-transcription-business-guide", "what-is-voice-cloning"]
+    "category": "video-translation-dubbing",
+    "relatedLinks": [
+      "ai-youtube-video-translator",
+      "video-transcription-business-guide",
+      "what-is-voice-cloning"
+    ]
   },
   {
     "slug": "lip-sync-technical-deep-dive",
     "title": "Inside AI Lip Sync Pipeline: MuseTalk, Sync.co, and Production Architecture",
     "date": "March 29, 2026",
     "readTime": "15 min read",
-    "tag": "Creator Tools",
+    "tag": "DS & AI Engineering",
     "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
-    "category": "creator-tools",
-    "relatedLinks": ["lip-sync-business-guide", "video-transcription-technical-deep-dive"]
+    "category": "ds-ai-engineering",
+    "relatedLinks": [
+      "ai-content-production-system",
+      "lip-sync-business-guide",
+      "video-transcription-technical-deep-dive"
+    ]
   },
   {
     "slug": "character-prompt-generator",
@@ -331,15 +430,21 @@
     "tag": "Creator Tools",
     "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
     "category": "creator-tools",
-    "relatedLinks": ["10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+    "relatedLinks": [
+      "best-ai-tools",
+      "10-prompting-tips-nano-banana",
+      "creative-ai-tools-websites"
+    ]
   },
   {
     "slug": "visual-learning-tools",
     "title": "Visual Learning Tools: How Students, Parents, and Teachers Can Transform Education",
     "date": "April 1, 2026",
     "readTime": "10 min read",
-    "tag": "Learning Tools",
-    "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
+    "tag": "Learning & Education",
+    "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg",
+    "category": "learning-education",
+    "relatedLinks": []
   },
   {
     "slug": "best-ai-tools",
@@ -349,67 +454,95 @@
     "tag": "Creator Tools",
     "image": "/images/midjorney.webp",
     "category": "creator-tools",
-    "relatedLinks": ["creative-ai-tools-websites", "10-prompting-tips-nano-banana", "character-prompt-generator"]
+    "relatedLinks": [
+      "creative-ai-tools-websites",
+      "10-prompting-tips-nano-banana",
+      "character-prompt-generator"
+    ]
   },
   {
     "slug": "nano-banana-dedicated",
     "title": "What is Nano Banana AI? The Complete Guide to AI Structured Visual Generation",
     "date": "April 2, 2026",
     "readTime": "8 min read",
-    "tag": "AI Tools", 
+    "tag": "Creator Tools",
     "image": "/images/lightsnano.webp",
     "category": "creator-tools",
-    "relatedLinks": ["nano-banana-prompt-ecosystem", "10-prompting-tips-nano-banana", "creative-ai-tools-websites"]
+    "relatedLinks": [
+      "nano-banana-prompt-ecosystem",
+      "10-prompting-tips-nano-banana",
+      "creative-ai-tools-websites"
+    ]
   },
   {
     "slug": "content-multiplication-system",
     "title": "How to Turn 1 Idea into 30 Days of Content (Without Burning Out)",
     "date": "April 6, 2026",
     "readTime": "8 min read",
-    "tag": "Content Strategy",
+    "tag": "Content Automation",
     "image": "/images/thirtyday.webp",
-    "category": "creator-tools",
-    "relatedLinks": ["nano-banana-prompt-ecosystem", "10-prompting-tips-nano-banana", "character-prompt-generator"]
+    "category": "content-automation",
+    "relatedLinks": [
+      "curify-ai-growth-engine",
+      "nano-banana-prompt-ecosystem",
+      "10-prompting-tips-nano-banana"
+    ]
   },
   {
     "slug": "viral-learning-content",
     "title": "How to Create Viral Learning Content (Flashcards, Dialogue Scenes, Visual Knowledge)",
     "date": "April 6, 2026",
     "readTime": "10 min read",
-    "tag": "Learning Content",
+    "tag": "Learning & Education",
     "image": "/images/contentai.webp",
-    "category": "creator-tools",
-    "relatedLinks": ["content-multiplication-system", "character-prompt-generator", "visual-learning-tools"]
+    "category": "learning-education",
+    "relatedLinks": [
+      "content-multiplication-system",
+      "character-prompt-generator",
+      "visual-learning-tools"
+    ]
   },
   {
     "slug": "ai-content-production-system",
     "title": "How We Built an AI Content Production System (Not Just Tools)",
     "date": "April 8, 2026",
     "readTime": "12 min read",
-    "tag": "AI Architecture",
+    "tag": "DS & AI Engineering",
     "image": "/images/contentai.webp",
     "category": "ds-ai-engineering",
-    "relatedLinks": ["aiPlatform", "agents-vs-workflows", "content-multiplication-system"]
+    "relatedLinks": [
+      "aiPlatform",
+      "agents-vs-workflows",
+      "content-multiplication-system"
+    ]
   },
   {
     "slug": "ai-content-distribution-system",
     "title": "How We Built an AI Content Distribution System (X, Facebook & SEO)",
     "date": "April 8, 2026",
     "readTime": "10 min read",
-    "tag": "AI Architecture",
+    "tag": "Content Automation",
     "image": "/images/mermaigrapj.webp",
-    "category": "ds-ai-engineering",
-    "relatedLinks": ["aiPlatform", "agents-vs-workflows", "content-multiplication-system"]
+    "category": "content-automation",
+    "relatedLinks": [
+      "curify-ai-growth-engine",
+      "aiPlatform",
+      "agents-vs-workflows"
+    ]
   },
   {
     "slug": "what-is-infographics",
     "title": "What is Infographics and How Can Infographic Cards Be Used?",
     "date": "April 9, 2026",
     "readTime": "12 min read",
-    "tag": "Nano Banana Prompts",
+    "tag": "Learning & Education",
     "image": "/images/infogragiccard.webp",
-    "category": "nano-banana-prompts",
-    "relatedLinks": ["nano-banana-prompt-ecosystem", "chinese-herbal-medicine-visual-guide", "evolution-timelines-visualization"]
+    "category": "learning-education",
+    "relatedLinks": [
+      "visual-learning-tools",
+      "nano-banana-prompt-ecosystem",
+      "chinese-herbal-medicine-visual-guide"
+    ]
   },
   {
     "slug": "emotion-tts-movie",
@@ -419,7 +552,11 @@
     "tag": "Creator Tools",
     "image": "/images/voices2.webp",
     "category": "creator-tools",
-    "relatedLinks": ["image-to-narrative-video", "curify-ai-growth-engine", "ai-content-production-system"]
+    "relatedLinks": [
+      "image-to-narrative-video",
+      "curify-ai-growth-engine",
+      "ai-content-production-system"
+    ]
   },
   {
     "slug": "image-to-narrative-video",
@@ -429,24 +566,35 @@
     "tag": "Creator Tools",
     "image": "/images/iran.webp",
     "category": "creator-tools",
-    "relatedLinks": ["ai-content-production-system", "viral-learning-content", "visual-learning-tools"]
+    "relatedLinks": [
+      "ai-content-production-system",
+      "viral-learning-content",
+      "visual-learning-tools"
+    ]
   },
   {
     "slug": "curify-ai-growth-engine",
     "title": "The Curify AI Growth Engine: Transforming Content Creation for UGC Creators and Marketers",
     "date": "April 13, 2026",
     "readTime": "12 min read",
-    "tag": "AI Platform",
+    "tag": "Content Automation",
     "image": "/images/growthengine.webp",
-    "category": "ai-platform",
-    "relatedLinks": ["aiPlatform", "character-prompt-generator"]
+    "category": "content-automation",
+    "relatedLinks": [
+      "aiPlatform",
+      "character-prompt-generator"
+    ]
   },
-    {
-        "slug": "content-tagging-system",
-        "title": "From 4000 Images to 50 Meaningful Tags: Building Pinterest-Style Content Discovery",
-        "date": "April 16, 2026",
-        "readTime": "10 min read",
-        "tag": "Content Strategy",
-        "image": "/images/jay.webp"
+  {
+    "slug": "content-tagging-system",
+    "title": "From 4000 Images to 50 Meaningful Tags: Building Pinterest-Style Content Discovery",
+    "date": "April 16, 2026",
+    "readTime": "10 min read",
+    "tag": "Content Automation",
+    "image": "/images/jay.webp",
+    "category": "content-automation",
+    "relatedLinks": [
+      "curify-ai-growth-engine"
+    ]
   }
 ]
