@@ -1709,22 +1709,86 @@
   "template-equipment-muscle-guide": {
     "category": "Guías de Fitness y Anatomía",
     "description": "Genera guías profesionales de activación muscular para equipos de gimnasio con ilustraciones de ejercicios y diagramas anatómicos.",
-    "title": "Guía Muscular de Equipos de Fitness | Curify AI"
+    "title": "Guía Muscular de Equipos de Fitness | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una infografía de fitness premium con un diseño limpio de cuadrícula 2×2, combinando una ilustración vectorial de ejercicio con un diagrama anatómico que muestra qué músculos se activan.",
+        "who": "Ideal para entrenadores personales, creadores de contenido de gimnasio, educadores de fitness y cuentas de salud y bienestar.",
+        "how": [
+          "Ingresa un nombre de equipo de fitness (por ejemplo, Máquina de Prensa de Piernas, Máquina de Jalón de Espalda).",
+          "Genera una guía de anatomía profesional con activación muscular etiquetada.",
+          "Comparte en redes sociales, usa en programas de entrenamiento o imprime para exhibiciones en el gimnasio."
+        ],
+        "prompts": [
+          "Guía de activación muscular de la Máquina de Prensa de Piernas con diagrama anatómico.",
+          "Máquina de Jalón de Espalda: grupos musculares objetivo ilustrados.",
+          "Infografía de anatomía de sentadilla en Máquina Smith con músculos destacados."
+        ]
+      }
+    }
   },
   "template-pain-relief-infographic": {
     "category": "Infografías de Yoga y Bienestar",
     "description": "Genera infografías profesionales de alivio del dolor con yoga con 6 posturas y destacados musculares anatómicos.",
-    "title": "Infografía de Yoga para Alivio del Dolor | Curify AI"
+    "title": "Infografía de Yoga para Alivio del Dolor | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea una infografía vertical de yoga premium con 6 posturas en una cuadrícula 3×2, cada una con el nombre de la postura, conteo de repeticiones/respiraciones e ilustración anatómica que resalta los músculos trabajados.",
+        "who": "Perfecto para instructores de yoga, creadores de bienestar, terapeutas físicos y cuentas de contenido de salud y fitness.",
+        "how": [
+          "Ingresa un área de dolor (por ejemplo, Espalda, Rodilla, Cuello, Hombro).",
+          "Genera un cartel profesional de yoga para alivio del dolor con ilustraciones anatómicas.",
+          "Comparte como contenido educativo de bienestar o usa en materiales de estudio de yoga."
+        ],
+        "prompts": [
+          "Infografía de posturas de yoga para alivio del dolor de espalda con destacados musculares.",
+          "Rutina de yoga para dolor de rodilla: 6 posturas con conteos de respiración.",
+          "Infografía de yoga para alivio del dolor de cuello y hombros."
+        ]
+      }
+    }
   },
   "template-kids-vocabulary-poster": {
     "category": "Pósters de Vocabulario Infantil",
     "description": "Genera pósters de vocabulario bilingüe en acuarela para niños con palabras en inglés, fonética IPA y traducción al chino.",
-    "title": "Póster de Vocabulario Infantil (Acuarela Bilingüe) | Curify AI"
+    "title": "Póster de Vocabulario Infantil (Acuarela Bilingüe) | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un cartel de vocabulario bilingüe vertical en un estilo de acuarela suave: cada elemento presenta una ilustración de alta calidad, una palabra en inglés en negrita, transcripción fonética IPA y traducción al chino.",
+        "who": "Diseñado para educadores de educación infantil, maestros de ESL, padres bilingües y creadores de contenido para niños.",
+        "how": [
+          "Ingresa un tema de vocabulario (por ejemplo, Animales Marinos, Verduras, Frutas).",
+          "Genera un hermoso cartel de vocabulario en acuarela.",
+          "Imprime para aulas, usa en aplicaciones de aprendizaje digital o comparte como contenido educativo."
+        ],
+        "prompts": [
+          "Cartel de vocabulario de animales marinos con ilustraciones en acuarela y fonética.",
+          "Cartel bilingüe de frutas: inglés, IPA y chino para niños.",
+          "Tabla de vocabulario de insectos con arte de acuarela adorable."
+        ]
+      }
+    }
   },
   "template-beauty-step-by-step-guide": {
     "category": "Guías de Belleza Paso a Paso",
     "description": "Genera pósters de tutoriales de belleza en colores pastel con 9 pasos ilustrados para rutinas de cuidado de piel, peinados, nail art y más.",
-    "title": "Póster de Guía de Belleza Paso a Paso | Curify AI"
+    "title": "Póster de Guía de Belleza Paso a Paso | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un cartel de guía de belleza vertical con 9 pasos principales en una cuadrícula 3×3: cada paso tiene una etiqueta numerada, un título en negrita, una ilustración de caricatura y herramientas o productos correspondientes mostrados.",
+        "who": "Perfecto para creadores de belleza, influencers de estilo de vida, marcas de cuidado de la piel y cuentas de contenido de tutoriales.",
+        "how": [
+          "Ingresa un tema de tutorial (por ejemplo, Rutina de Cuidado de la Piel, Tutorial de Peinado, Arte de Uñas).",
+          "Genera un cartel profesional de guía de belleza paso a paso.",
+          "Comparte en redes sociales, incrusta en publicaciones de blog o usa en materiales de marketing de marca."
+        ],
+        "prompts": [
+          "Guía de rutina de cuidado de la piel paso a paso con ilustraciones de caricatura.",
+          "Cartel de tutorial de peinado: 9 pasos con herramientas y consejos.",
+          "Guía de arte de uñas paso a paso en estilo suave de pastel."
+        ]
+      }
+    }
   },
   "template-whimsical-travel-map": {
     "category": "Mapa de viaje",

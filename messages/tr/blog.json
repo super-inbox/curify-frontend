@@ -206,7 +206,8 @@
         "date": "23 Mart 2026",
         "readTime": "9 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/tenprompt.webp"
+        "image": "/images/tenprompt.webp",
+        "thumbnailType": "video-transkripsiyon-iş"
       },
       {
         "slug": "image-generation-model-comparison",
@@ -214,7 +215,8 @@
         "date": "28 Mart 2026",
         "readTime": "12 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/hardworker.webp"
+        "image": "/images/hardworker.webp",
+        "thumbnailType": "video-transkripsiyon-pipeline"
       },
       {
         "slug": "lip-sync-business-guide",
@@ -396,7 +398,13 @@
         "date": "13 Nisan 2026",
         "readTime": "15 dk okuma",
         "tag": "Yaratıcı Araçlar",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "yaratıcı-araçlar",
+        "relatedLinks": [
+          "ai-içerik-üretim-sistemi",
+          "viral-öğrenme-içeriği",
+          "görsel-öğrenme-araçları"
+        ]
       },
       {
         "slug": "curify-ai-büyüme-makinesi",
@@ -404,7 +412,21 @@
         "date": "13 Nisan 2026",
         "readTime": "12 dk okuma",
         "tag": "AI Platformu",
-        "image": "/images/growthengine.webp"
+        "image": "/images/growthengine.webp",
+        "category": "nano-banana-promtları",
+        "relatedLinks": [
+          "infografikler-nedir",
+          "nano-banana-prompt-ekosistemi",
+          "yaratıcı-ai-araçları-websiteleri"
+        ]
+      },
+      {
+        "slug": "duygu-tts-film",
+        "title": "Duygu TTS Filmi: Anlatımlarınızı Daha Duygusal Hale Getirin",
+        "date": "13 Nisan 2026",
+        "readTime": "15 dakikalık okuma",
+        "tag": "Yaratıcı Araçlar",
+        "image": "/images/voices2.webp"
       }
     ],
     "translateYoutubevideo": {
@@ -937,7 +959,7 @@
       "tip1Example": "Metal mavi yüzeye sahip, parlayan mavi devrelerle donatılmış bir geleceğe ait robotik el, havada yüzen bir holografik panelin önünde duruyor. El uzanıyor ve paneli dokunarak, dalga etkileri yaratıyor. 'Karakter Oluşturucu' arayüzü, 'Tat: Vanilya', 'Boyut: Nano', 'Köken: Siber-Tarım', 'Mod: Oynak Gelecekçilik' kaydırıcılarıyla birlikte beliriyor. Her kaydırıcı etkinleştirildiğinde cam mavisi parlıyor. 3D alanda yavaşça beliren bir Nano Banana simgesi, dokusu pürüzsüzden metalik hale geçiyor ve etrafında holografik parçacıklar dönüyor. Parçacıkların arkasında, özellikler ve semboller arasında bağlantı çizgileriyle dijital bir kimlik haritası oluşuyor. Sinematik aydınlatma, derinlik alanı, 8K çözünürlük.",
       "tip2Example": "Atmosferik sis ve mavi ortam aydınlatması ile karanlık bir sahne. Üç kristal kaide, zeminle pürüzsüz mekanik hareketle yükseliyor. İlk kaide 'BESLENME' altın ışıkla parlıyor, kristalin içinde lif benzeri damarlar ritmik olarak atıyor. İkinci kaide 'SÜRDÜRÜLEBİLİRLİK' yeşil sis yayıyor ve dönen yaprak parçacıkları vortex desenleri oluşturuyor. Üçüncü kaide 'KOLAYLIK' beyaz strob ışıklarıyla yanıp sönüyor. Metalik bir robotik el, çerçeveye giriyor, bir Nano Banana'yı hassas zamanlama ile alıyor, yavaş çekim efekti anı hareket bulanıklığı ve lens parlaması ile yakalıyor. Dinamik aydınlatma, her kaide etkinleştirildiğinde değişiyor, parçacık efektleri süzülüyor ve drift ediyor, sinematik derinlik alanı, ön plan ve arka plan unsurları arasında geçiş yapıyor.",
       "tip3Example": "Kamera, karanlık bir uzayda dev bir holografik küre radar tarayıcısını ortaya çıkarmak için yakın plandan uzaklaşıyor. Küre, dışa doğru genişleyen mavi konsantrik dalga halkaları yayıyor. 'GENÇLER' (mor), 'YEMEKSEVERLER' (turuncu), 'ANNELER' (yeşil), 'TEKNOLOJİ YENİLİKÇİLERİ' (cam göbeği) gibi yüzen holografik etiketler beliriyor. Etiketler, farklı mesafelerde merkezi bir Nano Banana logosunun etrafında dönüyor. Renkli veri iplikleri etiketleri bağlıyor, veri akışı animasyonu ile yanıp sönüyor. Derinlik alanı efekti, belirli etiketlere odaklanırken arka plan unsurlarını bulanıklaştırıyor. Dalga darbesi 'YEMEKSEVERLER' etiketine çarptığında, genişliyor ve etrafında 5 örnek kullanıcı avatar simgesi beliriyor. Radar etrafında pürüzsüz kamera dönüşü, sinematik aydınlatma ile dalga darbesi etkilerinde lens parlamaları.",
-      "tip4Example": "Neon parlayan kaydırıcılarla dolu bir geleceğe ait karıştırma konsolu beliriyor: 'ZEKÂ' (pembe), 'NETLİK' (mavi), 'SICAKLIK' (turuncu), 'ENERJİ AKIŞI' (yeşil). 'ZEKÂ' kaydırıcısı yukarı hareket ettikçe, renkli dijital konfeti parçacıkları ekranda yukarı doğru hareket ediyor. 'PROFESYONELLİK' baskın hale geldiğinde, arka plan düşük doygunlukta mavi-griye geçiyor, temiz hareketli grafiklerle resmi tipografi beliriyor. Sahne aydınlatması, kaydırıcı ayarlarına bağlı olarak sıcak turuncudan soğuk maviye değişiyor. Parçacık efektleri, eğlenceli konfeti görünümünden ciddi geometrik desenlere geçiyor. Farklı ruh halleri arasında pürüzsüz geçişler, ortam parçacıkları mevcut duygusal tonu yansıtıyor. Sinematik kamera açıları, ruh hali ayarına bağlı olarak dinamikten statik hale geçiyor.",
+      "tip4Example": "Neon parlayan kaydırıcılarla dolu bir geleceğe ait karıştırma konsolu beliriyor: 'ZEK' (pembe), 'NETLİK' (mavi), 'SICAKLIK' (turuncu), 'ENERJİ AKIŞI' (yeşil). 'ZEK' kaydırıcısı yukarı hareket ettikçe, renkli dijital konfeti parçacıkları ekranda yukarı doğru hareket ediyor. 'PROFESYONELLİK' baskın hale geldiğinde, arka plan düşük doygunlukta mavi-griye geçiyor, temiz hareketli grafiklerle resmi tipografi beliriyor. Sahne aydınlatması, kaydırıcı ayarlarına bağlı olarak sıcak turuncudan soğuk maviye değişiyor. Parçacık efektleri, eğlenceli konfeti görünümünden ciddi geometrik desenlere geçiyor. Farklı ruh halleri arasında pürüzsüz geçişler, ortam parçacıkları mevcut duygusal tonu yansıtıyor. Sinematik kamera açıları, ruh hali ayarına bağlı olarak dinamikten statik hale geçiyor.",
       "tip5Example": "Havada altın ışık efektleriyle patlayan bir holografik kitap açılıyor. Sayfa 1, pikselize edilmiş atıştırmalık engellerle dolu dijital bir ormana dönüşüyor. Nano Banana, hareket bulanıklığı ile ormanda hızla geçiyor, yüzen şeker engellerinden kaçıyor. Sayfa 2, muzun aşırı boyutlu brokoli engelleri ve dijital bozulma efektleri arasında yol aldığını gösteriyor, hızlı kesimlerle gerilim artıran neşeli müzik çalıyor. Sayfa 3, muzun insan ellerinde zaferle indiği parlak bir mutfak şehir manzarasını ortaya çıkarıyor. Sayfalar arasında pürüzsüz parçacık geçişleri, sahneleri bağlayan parlayan ışık izleri. Karanlık ormandan parlak mutfağa ilerleyen aydınlatma, kamera hareketleri kaotik bir durumdan zaferli bir duruma geçiyor. Kahramanın yolculuğu, net bir başlangıç, zorluk ve çözüm ile beliriyor.",
       "tip6Example": "Çerçevenin ortasında parlayan kenarları olan bir şeffaf terazi süzülüyor. Sol platformda bir Nano Banana, sağ platformda 'VERİMLİLİK' etiketli bir antika saat var. Saat yavaşça tik tak ediyor, dişliler yavaşça toz parçacıklarına dönüşüyor. Nano Banana parlak enerji ile parlıyor, terazi kesin bir şekilde muz tarafına eğiliyor. Ek metaforlar için hızlı kesimler: 'HIZ' için afterburner'lı jet motoru, 'AKILLI TASARIM' için devre desenli parlayan mikroçip. Her metaforun etrafında hafif bir vignette karartması var. Metaforlar arasında pürüzsüz geçişler, parçacık efektleri kavramları bağlıyor. Sinematik aydınlatma, her metaforu vurguluyor, derinlik alanı dikkati odaklıyor. Soyut kavramlar, görsel karşılaştırma ile somut hale getiriliyor.",
       "tip7Example": "Nano Banana'nın kabuğu yavaşça yukarı kalkarken aşırı yakın çekim. Parlayan aroma dalgaları, ısı distorsiyonu efektleri gibi dışarı doğru dalgalanıyor. Mikro parıltılar, kabuğun kıvrımlı yüzeyinde dans ediyor ve doku parlaklığını gösteriyor. Arka planda hafif bir ses humu yükseliyor, kabuk tamamen kalktığında senkronize 'snap' ses efekti duyuluyor. Yavaş çekim kamera geçişi, detaylı dokuyu ortaya çıkarıyor, ardından dinamik kamera geri çekilerek tam muz görünümünü gösteriyor. Muzdan yayılan görsel ses dalgaları, akışkan parçacıklar olarak görselleştirilen koku çizgileriyle beliriyor. Taktiksel detaylar vurgulanıyor: nem damlaları, kabuk yüzeyindeki ışık yansımaları. Sinematik aydınlatma derinlik yaratıyor, yakın çekimlerde sığ derinlik alanı. Ses, koku ve dokunun görsel temsili ile çok duyusal bir deneyim.",
@@ -3729,7 +3751,7 @@
             "description": "Önceden tanımlanmış estetikler"
           },
           {
-            "icon": "â¡ï¸",
+            "icon": "¡ï¸",
             "title": "Önceden tanımlanmış istem mantığı",
             "description": "Yapılandırılmış üretim"
           }
@@ -3819,7 +3841,7 @@
       "finalThoughts": {
         "title": "Son Düşünceler",
         "description": "Tutarsız istemler veya genel AI çıktıları ile mücadele ettiyseniz, Nano Banana farklı bir yaklaşım sunar:",
-        "formula": "Yapılandırılmış istemler â tutarlı karakterler â ölçeklenebilir içerik",
+        "formula": "Yapılandırılmış istemler  tutarlı karakterler  ölçeklenebilir içerik",
         "conclusion": "İster MBTI içeriği, ister hikaye anlatımı görselleri, ister pazarlama varlıkları oluşturuyor olun, bu sistem size daha hızlı hareket etme ve daha iyi sonuçlar üretme konusunda yardımcı olur."
       },
       "relatedReads": {
@@ -3839,11 +3861,11 @@
           },
           {
             "question": "MBTI kullanarak karakter oluşturabilir miyim?",
-            "answer": "Evet â MBTI, görsel veya anlatı karakter özelliklerine haritalanabilecek bir kişilik çerçevesi sağlar."
+            "answer": "Evet  MBTI, görsel veya anlatı karakter özelliklerine haritalanabilecek bir kişilik çerçevesi sağlar."
           },
           {
             "question": "Nano Banana başlangıç seviyesindeki kullanıcılar için uygun mu?",
-            "answer": "Evet â karmaşık istemleri manuel olarak yazma ihtiyacını ortadan kaldırır."
+            "answer": "Evet  karmaşık istemleri manuel olarak yazma ihtiyacını ortadan kaldırır."
           }
         ]
       },
@@ -4111,6 +4133,78 @@
           "Arama Optimizasyonu"
         ],
         "questions": "İçerik etiketleme sistemleri oluşturma hakkında sorularınız mı var? Kişiselleştirilmiş yardım için destek ekibimizle iletişime geçin."
+      }
+    },
+    "UltimateDirectoryOfNanoBananaPrompts": {
+      "title": "Nano Banana Promtlarının Nihai Dizini",
+      "description": "Nano Banana'nın tam promptlarla görüntüden görüntüye üretimini, görsel örneklerle ve sorunsuz Curify entegrasyonu ile sergileyen bir küratör dijital lookbook.",
+      "hero": {
+        "title": "Nano Banana Promtlarının Nihai Dizini",
+        "subtitle": "50'den fazla uzman tarafından hazırlanmış prompt ile AI görüntü üretimini ustalaşın. Yaratıcı vizyonunuzu, profesyonel yaratıcıların kanıtlanmış teknikleriyle muhteşem görsellere dönüştürün."
+      },
+      "introduction": {
+        "title": "Lookbook Formatı",
+        "paragraph1": "AI prompting'e <strong>devrim niteliğinde bir yaklaşım</strong> ile hoş geldiniz. Geleneksel eğitimlerin yerine, bu küratör dijital lookbook, Nano Banana'nın gücünü çarpıcı görsel örneklerle gösteriyor. Her giriş, kullanılan tam promptu içeriyor, böylece profesyonel kalitede sonuçları anında tekrarlayabilirsiniz.",
+        "paragraph2": "Sistematik formatımız—<strong>Görsel Sonuç → Stil Analizi → Tam Prompt → Teknik Analiz</strong>—sezgisel bir öğrenme deneyimi yaratıyor. Karakter tasarımından mimari görselleştirmeye kadar, ince prompt varyasyonlarının çıktı kalitesini nasıl etkilediğini keşfedeceksiniz.",
+        "paragraph3": "İster bir içerik üreticisi, pazarlamacı veya AI meraklısı olun, bu lookbook teorik bilgi ile pratik uygulama arasında köprü kuruyor. Her örnek test edilmiş, optimize edilmiş ve yaratıcı iş akışınızda anında kullanıma hazır."
+      },
+      "tableOfContents": {
+        "title": "Bölüme Atlama",
+        "character": "Karakter & Persona (Yüksek Etkileşim)",
+        "lifestyle": "Yaşam Tarzı & Küresel Estetikler",
+        "learning": "Öğrenme & Dil (Viral Kullanım)",
+        "design": "Tasarım & Ürün (Profesyonel Avantaj)"
+      },
+      "characterSection": {
+        "title": "Karakter & Persona (Yüksek Etkileşim)",
+        "description": "Karakterler büyük duygusal bağ ve paylaşılabilirlik sağlar. Bu örnekler, dikkat çekici persona'lar oluşturmanın yollarını sergiliyor.",
+        "mbtiTitle": "MBTI Karakter Arketipleri",
+        "mbtiDescription": "INTJ Mimarlarından ESFP Eğlendiricilerine kadar hiper-detaylı kişilik türlerini sergileyin.",
+        "styleTitle": "Stil Karşılaştırmaları",
+        "styleDescription": "Tamamen aynı karakter promptu, farklı sanatsal stillerde sunulmuştur.",
+        "groupTitle": "Grup Dinamikleri",
+        "groupDescription": "Kapsamlı ekipler, spor kadroları ve sosyal gruplar oluşturmak için promptlar."
+      },
+      "lifestyleSection": {
+        "title": "Yaşam Tarzı & Küresel Estetikler (\"Pinterest\" Kaydırması)",
+        "description": "Bu, doğrudan özlem ve nostalji pazarlarına hitap ediyor ve Nano Banana'nın son derece spesifik kültürel ve coğrafi nüansları ele alma yeteneğini gösteriyor.",
+        "geoTitle": "Coğrafi Özel Atmosferler",
+        "geoDescription": "Farklı ülkeler ve kültürel bağlamlara uygulanan nostalji filtreleri.",
+        "foodTitle": "Yiyecek & Şehir Manzaraları",
+        "foodDescription": "Yüksek kaliteli editoryal yiyecek fotoğrafları ve samimi kafe ortamları."
+      },
+      "learningSection": {
+        "title": "Öğrenme & Dil (Viral Kullanım)",
+        "description": "Tam estetikten pratik, viral içerik üretimine geçiş. Bu, eğitimcilere ve yaratıcılarına Curify'nin ciddi bir üretim motoru olduğunu kanıtlıyor.",
+        "languageTitle": "Dil Çiftleri",
+        "languageDescription": "İki dilli kurulumları ve metin-görüntü yeteneklerini gösteren görsel diyalog sahneleri.",
+        "educationTitle": "Bilim & Tarih",
+        "educationDescription": "Eğitim içeriği ve görsel öğrenme araçları için infografik tarzı promptlar."
+      },
+      "designSection": {
+        "title": "Tasarım & Ürün (Profesyonel Avantaj)",
+        "description": "Endüstriyel tasarımcılar, pazarlamacılar ve ürün yöneticilerini çeken yüksek niyetli profesyonel kullanım durumları.",
+        "productTitle": "Ürün Mockupları",
+        "productDescription": "E-ticaret ve markalaşma için temiz, minimalist ürün mockupları.",
+        "styleTitle": "Tasarım Stilleri",
+        "styleDescription": "Izometrik vektörler, mürekkep çizimleri ve fotogerçekçi renderlar ile Seviye 3 modifikatörlerini gösterin."
+      },
+      "lookbookComponent": {
+        "resultingImage": "Sonuç Görseli",
+        "coreTags": "Temel Etiketler",
+        "exactPrompt": "Tam Prompt",
+        "remixCta": "Bu Promptu Remixle",
+        "copyPrompt": "Promptu Kopyala",
+        "startGenerating": "Üretmeye Başla",
+        "promptDescription": "Bu tam istemi panonuza kopyalamak için tıklayın ve Nano Banana'da kullanın.",
+        "remixDescription": "Bu istemi Curify'de açarak hemen görüntüden görüntüye üretmeye başlayın."
+      },
+      "examples": {
+        "description": "Örnek istem için",
+        "promptTitle": "İstem Örneği",
+        "promptDescription": "Bu, yüksek kaliteli sonuçlar üreten iyi hazırlanmış bir istem örneğidir.",
+        "promptBoxTitle": "Tam İstem",
+        "promptBoxDescription": "Nano Banana'da kullanmak için bu tam istemi kopyalayın:"
       }
     }
   },
@@ -5520,5 +5614,387 @@
     "conclusionContent": "Video transkripsiyon teknolojisi, temel konuşma tanıma sistemlerinden, sinir ağları, ses işleme ve optimizasyon tekniklerindeki ilerlemeleri birleştiren sofistike çok aşamalı pipeline'lara evrildi. Curify'nin pipeline'ı gibi modern sistemler, ses ayrımı için Conv-TasNet, transkripsiyon için WhisperX ve gelişmiş kalite güvencesinin üretim sınıfı iş akışlarına nasıl entegre edilebileceğini göstermektedir.\n\nTeknik ekipler ve geliştiriciler için ana çıkarım, video transkripsiyonunun artık bir araştırma problemi değil, çözülmüş bir mühendislik zorluğu olduğudur. Kalan fırsatlar, temel teknoloji sınırlamaları yerine optimizasyon, kenar durumları ve entegrasyon üzerinedir. Bu sistemler, daha iyi model mimarileri ve daha büyük eğitim veri setleri aracılığıyla sürekli olarak geliştikçe, her içerik türü için ölçeklenebilir mükemmel transkripsiyonun mevcut olduğu bir geleceğe yaklaşıyoruz.\n\nBurada tanımlanan teknik mimari, 2026'daki en son durumu temsil etmektedir, ancak alan hızla evrim geçirmeye devam etmektedir. Gerçek zamanlı transkripsiyon, sıfır atış konuşmacı tanımlama ve otomatik içerik özetleme, video içerik işleme ve analizine yaklaşımımızı daha da dönüştürecek yeni yetenekler olarak ortaya çıkmaktadır.",
     "seoKeywords": "video transkripsiyon pipeline'ı, konuşma tanıma pipeline'ı, asr video işleme, konuşmadan metne pipeline'ı, konuşmacı diarizasyonu video, zorunlu hizalama transkripsiyonu, whisper transkripsiyon pipeline'ı, ses segmentasyonu transkripsiyonu, çok dilli transkripsiyon ai",
     "metaDescription": "AI video transkripsiyon pipeline mimarisine teknik derin dalış. Geliştiriciler ve AI mühendisleri için ASR, zorunlu hizalama, konuşmacı diarizasyonu ve üretim sistemi tasarımı hakkında kapsamlı bir rehber."
+  },
+  "MBTICharacterGenerator": {
+    "title": "En İyi AI MBTI Karakter Üretici Rehberi (Yellowstone Örnekleri ile) | Curify",
+    "description": "Yellowstone örneklerini kullanarak doğru MBTI karakter kişiliklerini oluşturmak için AI'yi nasıl kullanacağınızı öğrenin. Karakter geliştirme için ileri düzey istem tekniklerini keşfedin."
+  },
+  "MBTICharacterGeneratorGuide": {
+    "title": "En İyi AI MBTI Karakter Üretici Rehberi (Yellowstone Örnekleri ile) | Curify",
+    "description": "Yellowstone örneklerini kullanarak doğru MBTI karakter kişiliklerini oluşturmak için AI'yi nasıl kullanacağınızı öğrenin. Karakter geliştirme için ileri düzey istem tekniklerini keşfedin.",
+    "hero": {
+      "title": "En İyi AI MBTI Karakter Üretici Rehberi",
+      "subtitle": "Yellowstone'un ikonik kişiliklerini temel alarak AI destekli karakter geliştirme ile yaratıcı sürecinizi dönüştürün"
+    },
+    "introduction": {
+      "paragraph1": "Nano Banana MBTI Karakter Üreticisini zaten yayımladınız, bir sonraki adım &lt;strong&gt;aracı belirli kullanıcı niyeti ile hizalamak&lt;/strong&gt;tır. Arayanlar sadece genel bir MBTI üretici aramıyorlar—zaten bildikleri karakterleri analiz etmek, yeniden yaratmak veya rol oynamak istiyorlar, genellikle “Rip Wheeler'ın MBTI'si nedir?” veya “Beth Dutton kişilik tipi.” gibi sorgularla başlıyorlar. Bu, soyut kişilik keşfinden &lt;strong&gt;uygulamalı karakter modellemesine&lt;/strong&gt; bir geçişi işaret ediyor; burada kullanıcılar tanınabilir, doğru ve hemen kullanılabilir sonuçlar bekliyor. Yellowstone mükemmel bir giriş noktası sağlıyor: MBTI arketiplerine temiz bir şekilde uyan, belirgin, psikolojik olarak zengin karakterlerle yüksek etkileşimli bir dizi. Örneğin, Beth’in yoğunluğu ve stratejik agresyonu ENTJ özellikleriyle yakından örtüşüyor, Kayce’in içsel çatışması ve ahlaki hassasiyeti ise bir ISFP profilini yansıtıyor. Bu güçlü kişilik sinyalleri, kullanıcıların üretilen çıktıları kendi yorumlarıyla doğrulamalarını kolaylaştırarak araca olan güveni artırıyor. Nano Banana’nın üretim yeteneklerini bu tanıdık karakterlere bağlayarak, kullanıcıların bilişsel yükünü azaltıyorsunuz—soyut özellikleri sıfırdan hayal etmek zorunda kalmıyorlar. Bunun yerine, &lt;strong&gt;zaten anladıkları kişilikleri tersine mühendislik yapabilirler&lt;/strong&gt; ve ardından bunları yeni senaryolar, orijinal karakterler veya RPG ortamlarına genişletebilirler. Bu, aracı bir yenilikçi üreticiden &lt;strong&gt;pratik bir yaratıcı asistana&lt;/strong&gt; dönüştürüyor.",
+      "paragraph2": "Bu kapsamlı rehber, yaratıcılar, yazarlar ve RPG oyuncularına Curify'nin Nano Banana'sını kullanarak &lt;strong&gt;son derece doğru, bağlama duyarlı karakter kişilikleri&lt;/strong&gt; oluşturmayı nasıl kullanacaklarını gösteriyor. Yüzeysel etiketlerle durmak yerine, rehber her MBTI profilini eyleme geçirilebilir özelliklere—karar verme kalıpları, diyalog tarzı, duygusal tetikleyiciler ve kişilerarası dinamikler—çevirmeyi anlatıyor, böylece üretilen karakterler farklı senaryolar arasında tutarlı ve inandırıcı hissediyor. Yellowstone karakterlerini pratik örnekler olarak kullanarak, &lt;strong&gt;MBTI çıktıları tanınabilir kişiliklere nasıl bağlanır&lt;/strong&gt; gösteriyoruz, ardından bu kalıpları orijinal karakter yaratımı, hayran kurgusu veya masaüstü RPG kampanyalarına genişletiyoruz. Örneğin, kullanıcılar bir Beth Dutton tarzı ENTJ arketipi ile başlayabilir ve bunu bir kurumsal anti-kahramana dönüştürebilir veya bir Rip Wheeler benzeri ISTP profilini alıp onu ahlaki olarak karmaşık bir RPG arkadaşına dönüştürebilirler. Adım adım üretim iş akışlarını pop kültürü referanslarıyla birleştirerek, bu rehber &lt;strong&gt;yüksek niyetli uzun kuyruk trafiğini yakalamak&lt;/strong&gt; için tasarlanmıştır ve hemen yaratıcı değer sunar. Okuyucular sadece bir MBTI türünün ne anlama geldiğini öğrenmekle kalmaz—bunu hikayelerde, oyunlarda veya içerik oluşturma süreçlerinde kullanabilecekleri tam olarak gerçekleştirilmiş karakterlere nasıl dönüştüreceklerini de öğrenirler."
+    },
+    "tags": {
+      "mbtiGenerator": "MBTI Üretici",
+      "yellowstoneMBTI": "Yellowstone MBTI",
+      "characterDevelopment": "Karakter Geliştirme"
+    },
+    "protip": "AI'yi kişilik kalıpları üzerinde eğitmek için belirli MBTI türleri ve gerçek karakter örnekleri ile başlayın, ardından orijinal karakterler üretin.",
+    "tabs": {
+      "basics": "MBTI Temelleri",
+      "yellowstone": "Yellowstone Örnekleri",
+      "techniques": "İleri Düzey Teknikler",
+      "advanced": "Profesyonel Kullanım",
+      "faq": "SSS"
+    },
+    "basics": {
+      "title": "Karakter Üretimi için MBTI'yi Anlamak",
+      "whatIsMBTI": {
+        "title": "MBTI Nedir?",
+        "description": "Myers-Briggs Tip Göstergesi, insanları dört ana boyuta dayalı olarak 16 farklı kişilik tipine kategorize eden bir kişilik çerçevesidir. Bu sistem, tutarlı ve inandırıcı karakterler oluşturmak için mükemmel bir temel sağlar."
+      },
+      "aiGeneration": {
+        "title": "AI Destekli MBTI Karakter Üretimi",
+        "description": "Curify'nin Nano Banana'sını kullanarak, MBTI kişilik özelliklerini doğru bir şekilde yansıtan ayrıntılı karakter profilleri oluşturabilirsiniz; davranışlar, diyalog kalıpları ve karar verme eğilimleri ile birlikte.",
+        "basicPrompt": {
+          "title": "Temel Karakter İstem Yapısı",
+          "example": "[MBTI_TYPE] kişilik tipi için bir karakter profili oluşturun. Temel özelliklerini, iletişim tarzını, karar verme sürecini ve [KONTEKST] içindeki tipik davranışlarını dahil edin.",
+          "explanation": "Bu basit yapı, AI'ye tutarlı bir karakter kişiliği oluşturmak için gerekli temel bilgileri sağlar."
+        }
+      }
+    },
+    "yellowstone": {
+      "title": "Yellowstone Karakterleri MBTI Şablonları Olarak",
+      "beth": {
+        "traits": [
+          "Cesur",
+          "Kararlı",
+          "Rekabetçi",
+          "Hızlı düşünen",
+          "Kaynakları iyi kullanan",
+          "Açık iletişim"
+        ],
+        "prompt": "30'lu yaşlarında, yüksek riskli bir iş ortamında çalışan bir ESTP kadın karakteri oluşturun. Keskin espri anlayışına, stratejik düşünmeye ve koruyucu bir aile sadakatine sahip olmalı. Kendine güvenen, zaman zaman acımasız ama gizli zayıflıkları olan biri olmalı."
+      },
+      "rip": {
+        "traits": [
+          "Sadık",
+          "Metotlu",
+          "Sorumlu",
+          "Geleneksel",
+          "Koruyucu",
+          "Eylem odaklı"
+        ],
+        "prompt": "Sadık bir koruyucu ve uygulayıcı olarak görev yapan bir ISTJ erkek karakter oluşturun. Güçlü bir görev duygusu, pratik problem çözme becerileri ve sarsılmaz sadakat içermelidir. Sessiz ama etkileyici olmalı, katı bir ahlaki kod ve koruyucu içgüdülere sahip olmalıdır."
+      },
+      "john": {
+        "traits": [
+          "Doğal lider",
+          "Stratejik",
+          "Kararlı",
+          "Vizyoner",
+          "Otoriter",
+          "Aile odaklı"
+        ],
+        "prompt": "Güçlü bir aile patriği ve iş lideri olarak bir ENTJ karakter oluşturun. Stratejik düşünme, komuta edici varlık ve karmaşık aile dinamikleri içermelidir. Kararlı, vizyoner olmalı, ancak sorumluluk ve miras yükü altında olmalıdır."
+      },
+      "kayce": {
+        "traits": [
+          "Değer odaklı",
+          "Uyumlu",
+          "Sadık",
+          "Çatışmadan kaçınan",
+          "İlkeli",
+          "Duygusal derinlik"
+        ],
+        "prompt": "Aile sadakati ile kişisel değerler arasında sıkışmış bir ISFP karakter oluşturun. Güçlü bir ahlaki pusula, duygusal hassasiyet ve içsel çatışma içermelidir. Yetenekli, düşünceli olmalı, ancak rekabet eden önceliklerle mücadele etmelidir."
+      },
+      "analysis": {
+        "title": "Bu Örnekler Neden İşe Yarıyor",
+        "description": "Yellowstone karakterleri, yüksek riskli durumlarda net kişilik özelliklerini somutlaştırdıkları için mükemmel MBTI arketipleri sunar ve AI karakter üretimi için ideal şablonlar oluşturur.",
+        "points": [
+          "Her karakter, farklı senaryolar arasında tutarlı MBTI davranışları sergiler",
+          "Motivasyonları ve karar verme kalıpları net bir şekilde görünür",
+          "Dizi, baskı altında kişilik ifadesi için zengin bir bağlam sağlar",
+          "Bu arketipler, çeşitli türler ve ortamlar için iyi bir şekilde çevrilebilir"
+        ]
+      }
+    },
+    "techniques": {
+      "title": "Gelişmiş İkna Teknikleri",
+      "detailedPrompts": {
+        "title": "Ayrıntılı Karakter Profilleri Oluşturma",
+        "description": "Ayrıntılı kişilik çerçeveleri ve bağlamsal unsurlar ekleyerek karakter üretiminizi yükseltin.",
+        "structure": {
+          "title": "Kapsamlı İkna Yapısı",
+          "elements": [
+            "Temel MBTI türü ve bilişsel işlevler",
+            "Geçmiş ve yaşam deneyimleri",
+            "Mevcut bağlam ve çevre",
+            "Belirli senaryolar ve zorluklar",
+            "İlişki dinamikleri ve iletişim tarzı"
+          ]
+        },
+        "example": "Son zamanlarda sürdürülebilir bir moda markası kurmuş bir ENFP girişimci için ayrıntılı bir karakter profili oluşturun. Yaratıcı süreçlerini, iş zorluklarıyla nasıl başa çıktıklarını, ağ kurma stillerini ve iş-yaşam dengesi ile ilgili kişisel mücadelelerini içermelidir. Trendleri belirlemedeki dışa dönük sezgilerini ve etik karar verme konusundaki içe dönük hislerini gösterin. Diyalog örnekleri ve iç monolog kesitleri ekleyin."
+      },
+      "iterativeRefinement": {
+        "title": "Tekrarlı Karakter Geliştirme",
+        "description": "AI tarafından üretilen karakterlerinizi rafine etmek ve mükemmelleştirmek için çok aşamalı bir yaklaşım kullanın.",
+        "steps": {
+          "step1": {
+            "title": "Temel Profil Oluştur",
+            "description": "Karakterin temel kişiliğini belirlemek için geniş bir MBTI odaklı ikna ile başlayın."
+          },
+          "step2": {
+            "title": "Belirli Bağlam Ekleyin",
+            "description": "Karakteri belirli senaryolar, ilişkiler ve çevresel faktörler ekleyerek rafine edin."
+          },
+          "step3": {
+            "title": "Test Et ve Rafine Et",
+            "description": "Karakteri çeşitli durumlarda yerleştirerek tutarlılığı test edin ve kişilik özelliklerini rafine edin."
+          }
+        }
+      }
+    },
+    "advanced": {
+      "title": "Profesyonel Uygulamalar",
+      "useCases": {
+        "title": "Profesyonel Kullanım Senaryoları",
+        "writers": {
+          "title": "Kurgu Yazarları",
+          "description": "İkna edici anlatıları yönlendiren tutarlı, çok boyutlu karakterler oluşturun"
+        },
+        "rpg": {
+          "title": "RPG Oyun Yöneticileri",
+          "description": "Etkileyici rol yapma deneyimleri için belirgin kişiliklere sahip NPC'ler oluşturun"
+        },
+        "marketing": {
+          "title": "Pazarlama Ekipleri",
+          "description": "Hedeflenmiş kampanyalar için marka kişilikleri ve müşteri avatarları geliştirin"
+        },
+        "psychology": {
+          "title": "Psikoloji Öğrencileri",
+          "description": "Karakter temelli öğrenme senaryoları aracılığıyla kişilik türlerini keşfedin"
+        }
+      },
+      "bestPractices": {
+        "title": "AI Karakter Üretimi için En İyi Uygulamalar",
+        "points": [
+          "Karakterin çalıştığı bağlam ve çevreyi her zaman belirtin",
+          "Gerçekçi kişilikler için hem güçlü hem de zayıf yönleri dahil edin",
+          "Karakter tutarlılığını test etmek için belirli senaryolar kullanın",
+          "Üretilen sonuçlara göre yineleyin ve rafine edin",
+          "Karmaşık karakterler için birden fazla MBTI içgörüsünü birleştirin",
+          "Farklı bağlamlar arasında karakter tutarlılığını koruyun"
+        ]
+      }
+    },
+    "benefits": {
+      "subtitle": "NEDEN AI DESTEKLİ MBTI ÜRETİMİNİ SEÇMELİSİNİZ",
+      "title": "AI MBTI Karakter Üretiminin Ana Faydaları",
+      "accuracy": {
+        "title": "Psikolojik Doğruluk",
+        "description": "Geniş kişilik verileri üzerinde eğitilmiş AI modelleri, belirlenmiş MBTI çerçeveleriyle tutarlı bir şekilde uyumlu karakterler oluşturur."
+      },
+      "efficiency": {
+        "title": "Zaman Verimliliği",
+        "description": "Manuel karakter geliştirme ve araştırma için harcanan saatler yerine, saniyeler içinde detaylı karakter profilleri oluşturun."
+      },
+      "consistency": {
+        "title": "Karakter Tutarlılığı",
+        "description": "Tüm hikaye senaryoları ve bağlamlar boyunca tutarlı kişilik özelliklerini, davranışları ve karar verme kalıplarını koruyun."
+      },
+      "creativity": {
+        "title": "Gelişmiş Yaratıcılık",
+        "description": "Yeni karakter olasılıklarını ve taze hikaye yaklaşımlarını ilham veren kişilik kombinasyonlarını keşfedin."
+      }
+    },
+    "conclusion": {
+      "title": "Bugün Çarpıcı Karakterler Oluşturmaya Başlayın",
+      "description": "Curify'nin Nano Banana'sı ve bu MBTI karakter oluşturma teknikleri ile, izleyicileri etkileyen zengin, tutarlı karakterler yaratmak için ihtiyacınız olan her şeye sahipsiniz. İster kurgu yazıyor olun, ister RPG kampanyaları geliştiriyor olun, ister pazarlama kişilikleri oluşturuyor olun, AI destekli karakter oluşturma yaratıcı sürecinizi dönüştürecektir.",
+      "cta": {
+        "primary": "Nano Banana Karakter Oluşturucuyu Deneyin",
+        "secondary": "Daha Fazla AI Aracı Keşfedin"
+      }
+    }
+  },
+  "HowToDubVideosNaturally": {
+    "title": "2026'da Videoları Doğal Olarak Dublajlama: AI Ses Klonlama Artefaktlarını Düzeltme",
+    "description": "AI araçlarıyla yaygın dublaj zorluklarını çözmek için kapsamlı bir rehber. Robotik tempo, duygu eksikliği ve dudak senkronizasyonu sorunları için pratik çözümler öğrenin.",
+    "hero": {
+      "title": "2026'da Videoları Doğal Olarak Dublajlama: AI Ses Klonlama Artefaktlarını Düzeltme",
+      "subtitle": "AI araçlarıyla yaygın dublaj zorluklarını çözmek için kapsamlı bir rehber. Robotik tempo, duygu eksikliği ve dudak senkronizasyonu sorunları gibi acı noktalarına odaklanın."
+    },
+    "protip": "Yüksek kaliteli kaynak sesle başlayın ve her zaman dublajlı içeriğinizi yerel konuşmacılarla test edin, böylece AI'nın atlayabileceği ince artefaktları yakalayın.",
+    "tabs": {
+      "problems": "Yaygın Sorunlar",
+      "solutions": "Pratik Çözümler",
+      "tools": "Tavsiye Edilen Araçlar",
+      "workflow": "Adım Adım İş Akışı",
+      "advanced": "Gelişmiş Teknikler",
+      "automation": "Otomasyon Stratejileri",
+      "conclusion": "Sonuç"
+    },
+    "introduction": {
+      "paragraph1": "AI video dublajı içerik oluşturmayı devrim niteliğinde değiştirdi, ancak <strong>robotik artefaktlar</strong> ve <strong>doğal olmayan tempo</strong> birçok prodüksiyonu hala rahatsız ediyor. 2026'da bu zorlukların üstesinden gelmek için daha iyi araçlar ve tekniklerimiz var. Temel sorun, çoğu dublaj hattının konuşmayı tamamen teknik bir katman olarak ele almasıdır, performans olarak değil. Birçok sistem hala düz prosodi, tutarsız vurgu ve kötü zamanlanmış duraklamalarla ses üretmektedir, bu da sesin kendisi gerçekçi olsa bile, sürükleyiciliği bozar. İzleyiciler zamanlama uyumsuzluklarına son derece duyarlıdır—duygusal vurgular, mikro-duraklamalar veya cümle vurguları görsel performansla uyumlu olmadığında, sonuç ince bir şekilde “yanlış” hissedilir, hatta nedenini ifade edemeseler bile. Modern yaklaşımlar, <strong>prosodi kontrolü ve zamansal hizalama</strong> üzerine odaklanarak bunu ele alır. Konuşmayı lineer olarak üretmek yerine, daha yeni modeller ritim farkındalığına sahip sentez kullanarak, yaratıcıların tempo kontrolünü ifade ve hece düzeyinde sağlamasına olanak tanır. Bu, dudak hareketlerini eşleştirmeyi, dramatik duraklamaları korumayı ve orijinal aktörün niyetini diller arasında sürdürmeyi mümkün kılar. Zorlanmış hizalama, fonem düzeyinde zamanlama ve referans ses koşullandırması gibi teknikler artık yüksek kaliteli hatlarda standart hale geliyor. Bir diğer büyük iyileşme ise <strong>bağlam farkındalığına sahip ses modellemesi</strong> ile geliyor. Her satırı izole bir şekilde üretmek yerine, gelişmiş sistemler konuşma belleğini korur—ton, duygusal durum ve sahneler arasındaki konuşmacı dinamiklerini takip eder. Bu, ton kaymasını azaltır ve bir karakterin fısıldarken, tartışırken veya anlatım yaparken tutarlı ses çıkmasını sağlar. Anlatı ağırlıklı içerikler için bu değişim tek başına algılanan gerçekçiliği önemli ölçüde artırır. Son olarak, <strong>insan döngüsünde iş akışlarının</strong> artışı, otomasyon ve kalite arasındaki boşluğu kapatmıştır. Yaratıcılar artık AI üretimini hafif düzenleme katmanlarıyla birleştiriyor—duraklamaları ince ayar yapma, vurguları ayarlama veya belirli bölümleri yeniden üretme yerine tüm klipleri yeniden üretme. Bu hibrit yaklaşım, verimlilik ile yaratıcı kontrolü dengeleyerek prodüksiyon ekiplerinin dublajı ölçeklendirmesine olanak tanırken, stüdyo seviyesinde sonuçlar elde etmelerini sağlar. Birlikte, bu ilerlemeler AI dublajını bir rahatlık aracından <strong>üretim kalitesinde bir çözüme</strong> dönüştürür, hız veya ölçeklenebilirlikten ödün vermeden diller arasında doğal, duygusal olarak etkileyici performanslar sunabilir.",
+      "paragraph2": "Bu rehber, en son AI araçları olan MuseTalk, Emotion TTS ve gelişmiş son işleme teknikleri kullanarak <strong>yaygın dublaj sorunlarını düzeltmeyi</strong> gösterecektir. Temel ses üretiminin ötesine geçerek, AI dublaj iş akışlarındaki en kalıcı başarısızlık noktalarını ele alıyoruz—dudak senkronizasyonu kayması, tekdüze teslimat, zamanlama uyumsuzlukları ve duygusal düzeysizlik. MuseTalk'ı, üretilen konuşma parçalarının ağız hareketleri ve yüz ifadeleriyle yakından eşleşmesini sağlamak için kesin görsel-audio hizalaması için nasıl kullanacağınızı öğreneceksiniz, hatta hızlı tempolu veya diyalog ağırlıklı sahnelerde bile. Ses tarafında, üretilen seslere <strong>kontrollü ifade</strong> eklemek için Emotion TTS sistemlerini nasıl kullanacağınızı açıklıyoruz. Genel ayarları kullanmak yerine, rehber, niyeti yansıtacak şekilde ton konturları, tempo ve vurguyu nasıl ayarlayacağınızı adım adım anlatıyor—ister gerginlik, ister alaycılık, ister tek bir cümle içinde ince duygusal değişimler olsun. Bu, “teknik olarak doğru” seslerden, insan gibi hisseden ve bağlamsal olarak köklü performanslara geçmenizi sağlar. Ayrıca, nihai çıktı kalitesinde kritik bir fark yaratan <strong>gelişmiş son işleme iş akışlarını</strong> da ele alıyoruz. Bu, fonem düzeyinde zamanlama ayarlamaları, sessizlik kesme ve uzatma, nefes ve durak ekleme ve dublajlı sesleri orijinal ses parçasına sorunsuz bir şekilde harmanlamak için EQ eşleştirme ve ses seviyesi normalizasyonu gibi ses mastering tekniklerini içerir. Bu araçları ve teknikleri bir araya getirerek, dublaj sorunlarını sistematik olarak teşhis edip düzeltmek için deneme yanılma yöntemine güvenmek yerine, tutarsız AI çıktılarınızı cilalı, üretime hazır diyaloglara dönüştürebileceksiniz."
+    },
+    "problems": {
+      "title": "Yaygın AI Dublaj Sorunları",
+      "issues": [
+        {
+          "icon": "🤖",
+          "title": "Robotik Tempo",
+          "description": "AI tarafından üretilen konuşma genellikle doğal ritim ve zamanlamadan yoksundur, bu da mekanik ve kopuk bir ses çıkmasına neden olur.",
+          "impact": "İzleyici Bağlantısızlığı",
+          "impactDescription": "Doğal olmayan tempo, sürükleyiciliği bozar ve izleyici tutumunu %40'a kadar azaltır."
+        },
+        {
+          "icon": "😐",
+          "title": "Duygusal Nuanstan Yoksunluk",
+          "description": "AI sesleri ince duyguları iletmekte zorlanır, bu da dramatik sahnelerin etkisini azaltır.",
+          "impact": "Duygusal Bağlantısızlık",
+          "impactDescription": "Duygusal ipuçlarının eksikliği, izleyicilerin karakterlerle ve hikaye ile bağlantı kurmasını engeller."
+        },
+        {
+          "icon": "👄",
+          "title": "Dudak Senkronizasyonu Uyumsuzlukları",
+          "description": "Ses ve görsel dudak hareketleri arasındaki kötü hizalama, tuhaf bir vadi etkisi yaratır.",
+          "impact": "Gerçekçi Görünüm",
+          "impactDescription": "Görünür dudak senkronizasyonu hataları, doğal konuşma illüzyonunu hemen bozar."
+        }
+      ]
+    },
+    "solutions": {
+      "title": "Pratik Çözümler",
+      "methods": [
+        {
+          "icon": "🎭",
+          "title": "Duygu-Artırılmış TTS",
+          "description": "Sese uygun duyguları ekleyebilen duygu farkındalığına sahip metinden sese modelleri kullanın.",
+          "benefit": "Doğal Duygusal Teslimat",
+          "benefitDescription": "Standart TTS'ye kıyasla %85 daha doğal duygusal ifade sağlar.",
+          "promptTitle": "Duygu Artırma İsteği",
+          "promptDescription": "AI'yi duygusal olarak nüanslı konuşma üretmesi için yönlendirmek üzere bu isteği kullanın:",
+          "prompt": "Duygu: endişeli, sıcak, acil tonuyla konuşma üretin. Virgülden sonra 0.3s duraklayın, anahtar duygusal kelimeleri vurgulayın, doğal ritim için tonlamayı ±%20 değiştirin."
+        },
+        {
+          "icon": "⚡",
+          "title": "Ritim Düzeltme",
+          "description": "Doğal insan konuşma kalıplarına uyması için AI destekli zamanlama ayarlamaları uygulayın.",
+          "benefit": "İnsan Benzeri Zamanlama",
+          "benefitDescription": "Zeki tempo ayarlamaları ile robotik artefaktları %70 oranında azaltır.",
+          "promptTitle": "Ritim Düzeltme İsteği",
+          "promptDescription": "Robotik tempoyu düzeltmek için bu isteği kullanın:",
+          "prompt": "Konuşma ritmini analiz edin ve doğal duraklamalar ekleyin: Noktalardan sonra 0.5s, virgüllerden sonra 0.2s duraklayın, organik akış için kelime aralığını ±%10 değiştirin."
+        }
+      ]
+    },
+    "tools": {
+      "title": "Tavsiye Edilen Araçlar",
+      "cta": "Aracı Deneyin",
+      "recommendations": [
+        {
+          "icon": "🎙️",
+          "title": "MuseTalk",
+          "description": "Duygu koruma ve doğal zamanlama ile gelişmiş ses klonlama.",
+          "useCase": "Karakter Sesleri İçin En İyisi",
+          "useCaseDescription": "Uzun içeriklerde tutarlı karakter seslerini korumak için mükemmel.",
+          "link": "https://musetalk.ai"
+        },
+        {
+          "icon": "🎭",
+          "title": "Emotion TTS",
+          "description": "Duygu kontrolü ve doğal prosodi ile özel metinden konuşmaya.",
+          "useCase": "Duygusal İçerik",
+          "useCaseDescription": "İnce duygusal varyasyonlar gerektiren dramatik içerikler için idealdir.",
+          "link": "https://emotiontts.ai"
+        },
+        {
+          "icon": "🎬",
+          "title": "LipSync Pro",
+          "description": "Kare düzeyinde hassasiyetle AI destekli dudak senkronizasyonu düzeltme.",
+          "useCase": "Mükemmel Dudak Hizalaması",
+          "useCaseDescription": "Profesyonel video prodüksiyonu için piksel mükemmel dudak senkronizasyonu sağlar.",
+          "link": "https://lipsyncpro.ai"
+        }
+      ]
+    },
+    "workflow": {
+      "title": "Adım Adım İş Akışı",
+      "steps": [
+        {
+          "title": "Kaynak Ses Hazırlama",
+          "description": "Hedef sesin yüksek kaliteli, temiz ses kaydı ile başlayın.",
+          "action": "Ses Kalitesi Kontrolü",
+          "actionDescription": "48kHz örnekleme hızı, minimum arka gürültü ve tutarlı vokal performansı sağlamak.",
+          "promptTitle": "Ses Hazırlama İsteği",
+          "promptDescription": "Ses klonlama için sesi hazırlamak üzere bu isteği kullanın:",
+          "prompt": "Temiz ses: arka gürültüyü kaldırın, -6dB'ye normalize edin, tutarlı vokal tonunu sağlayın, WAV 48kHz 24-bit olarak dışa aktarın."
+        },
+        {
+          "title": "Duygu ile Sesi Klonla",
+          "description": "Duygusal olarak farkında bir ses modeli oluşturmak için MuseTalk'ı kullanın.",
+          "action": "Ses Modeli Eğitimi",
+          "actionDescription": "Duygu etiketleri ve zamanlama referans örnekleri ile modeli eğitin.",
+          "promptTitle": "Ses Klonlama İsteği",
+          "promptDescription": "Ses klonlama için bu isteği kullanın:",
+          "prompt": "Duygu koruma ile sesi klonlayın: vokal desenleri analiz edin, duygusal işaretleri çıkarın, zamanlama profili oluşturun."
+        },
+        {
+          "title": "Dublajlı Ses Üret",
+          "description": "Duygu artırılmış ses modelini kullanarak konuşma üretin.",
+          "action": "Ses Üretimi",
+          "actionDescription": "En iyi sonuçlar için farklı duygusal yoğunluklarla birden fazla deneme üretin.",
+          "promptTitle": "Ses Üretim İsteği",
+          "promptDescription": "Doğal ses üretimi için bu isteği kullanın:",
+          "prompt": "Konuşma üretin: duygu profili [mutlu, endişeli, heyecanlı] uygulayın, doğal duraklamalar ekleyin, konuşma hızını ±%15 değiştirin."
+        }
+      ]
+    },
+    "advanced": {
+      "title": "Gelişmiş Teknikler",
+      "techniques": [
+        {
+          "icon": "🧠",
+          "title": "Nöral Prosodi Transferi",
+          "description": "Referans ses kaydından AI tarafından üretilen konuşmaya doğal konuşma kalıplarını aktarın.",
+          "benefit": "Gerçekçi Konuşma Kalıpları",
+          "benefitDescription": "Konuşma ritmi ve tonlamasında %95 doğal olma sağlar.",
+          "promptTitle": "Prosodi Transfer İsteği",
+          "promptDescription": "Prosodi transferi için bu isteği kullanın:",
+          "prompt": "Prosodi kalıplarını çıkarın: ton konturlarını, zamanlama kalıplarını, vurgu vurgusunu analiz edin, hedef konuşmaya uygulayın."
+        },
+        {
+          "icon": "🎯",
+          "title": "Bağlam Farkında Duygu",
+          "description": "Sahne bağlamını anlayan ve duyguları buna göre ayarlayan AI.",
+          "benefit": "Sahneye Uygun Duygular",
+          "benefitDescription": "Duygusal tonu video içeriğine ve diyalog bağlamına otomatik olarak eşleştirir.",
+          "promptTitle": "Bağlam Farkında İstek",
+          "promptDescription": "Bağlam farkında duygu için bu isteği kullanın:",
+          "prompt": "Sahne bağlamını analiz edin: duygusal tonu, karakter ilişkilerini, dramatik anı belirleyin, sesi buna göre ayarlayın."
+        }
+      ]
+    },
+    "automation": {
+      "title": "Otomasyon Stratejileri",
+      "strategies": [
+        {
+          "icon": "⚙️",
+          "title": "Toplu İşleme Pipeline'ı",
+          "description": "Tutarlı kalite ile birden fazla video dosyasını işlemek için otomatik iş akışı.",
+          "result": "Ölçeklenebilir Tutarlı Kalite",
+          "resultDescription": "Tutarlı ses kalitesi ve duygusal aktarım ile 100'den fazla videoyu işleyin."
+        },
+        {
+          "icon": "🔄",
+          "title": "Kalite Kontrol Otomasyonu",
+          "description": "Dublaj sorunlarını otomatik olarak tespit etmek ve işaretlemek için AI destekli kalite kontrolleri.",
+          "result": "Azaltılmış Manuel İnceleme",
+          "resultDescription": "İnsan incelemesinden önce dublaj sorunlarının %90'ını yakalayarak QC zamanının %70'ini tasarruf edin."
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Videolarınızı AI ile Dönüştürün",
+      "description": "Bu gelişmiş teknikleri ve araçları birleştirerek, izleyicileri etkileyen doğal, duygusal olarak ilgi çekici dublajlı içerikler oluşturabilirsiniz. AI dublajının geleceği burada ve her zamankinden daha insani."
+    }
   }
 }
