@@ -2082,5 +2082,71 @@
         ]
       }
     }
+  },
+  "template-personal-journey-wolf-path-illustration": {
+    "category": "Motivational Illustration",
+    "description": "Create gritty pen-and-ink motivational illustrations of a wolf-person protagonist overcoming obstacles on their journey toward a personal goal.",
+    "title": "Nano Banana Prompt: Personal Journey Wolf Path Illustrator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates powerful black-and-white pen-and-ink illustrations showing a wolf-person walking a stone path toward a goal. Obstacles appear as wolf characters with labeled signs, creating a visceral motivational visual perfect for fitness, career, wellness, or any personal challenge.",
+        "who": "Suitable for fitness coaches, life coaches, motivational content creators, wellness brands, productivity communities, and anyone creating inspirational social media content.",
+        "how": [
+          "Choose a theme (e.g., Fitness, Career, Finance, Wellness).",
+          "The protagonist walks a path labeled with the core value toward the end goal.",
+          "Obstacle wolf characters are auto-labeled based on your theme.",
+          "Generate a vertical 4K pen-and-ink illustration with gritty cross-hatching style."
+        ],
+        "prompts": [
+          "Generate a Fitness journey illustration: protagonist walks a 'DISCIPLINE' path toward 'WELLNESS', obstacles labeled 'LAZINESS', 'JUNK FOOD', 'STRESS'.",
+          "Create a Career path illustration: protagonist walks 'PERSISTENCE' toward 'DREAM JOB', wolf obstacles labeled 'SELF-DOUBT', 'REJECTION', 'BURNOUT'.",
+          "Generate a Finance journey: protagonist walks 'CONSISTENCY' toward 'FINANCIAL FREEDOM', obstacles labeled 'IMPULSE BUYING', 'DEBT', 'FEAR'."
+        ]
+      }
+    }
+  },
+  "template-multilingual-vocabulary-poster-watercolor": {
+    "category": "Multilingual Education Poster",
+    "description": "Create charming watercolor 5x5 grid vocabulary posters in up to three languages, perfect for multilingual classrooms and kids' language learning.",
+    "title": "Nano Banana Prompt: Multilingual Vocabulary Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean 5x5 grid vocabulary poster in soft watercolor style. Each cell features a hand-painted illustration of the vocabulary item with its name in up to three languages, including phonetic pronunciation where needed.",
+        "who": "Suitable for multilingual educators, international schools, language app designers, parents raising bilingual or trilingual children, ESL teachers, and educational content creators.",
+        "how": [
+          "Choose a vocabulary theme (e.g., Animals, Jobs, Fruits, Vehicles).",
+          "Specify up to three languages (e.g., English, Chinese, Spanish).",
+          "Each cell renders a watercolor illustration with all three language labels.",
+          "Generate a vertical 4K poster with gentle watercolor washes and child-friendly typography."
+        ],
+        "prompts": [
+          "Create an Animals poster in English, Chinese, and Spanish with 25 animals.",
+          "Generate a Fruits poster in English, Japanese, and French with 25 items.",
+          "Create a Jobs poster in English, Korean, and German with 25 professions."
+        ]
+      }
+    }
+  },
+  "template-premium-recipe-card-infographic": {
+    "category": "Recipe Infographic",
+    "description": "Create professional recipe card infographics with hero food photography, ingredient grids, and step-by-step cooking instructions in a warm, rustic style.",
+    "title": "Nano Banana Prompt: Premium Recipe Card Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a complete premium recipe card infographic featuring a hero shot of the finished dish, an info bar with prep time and difficulty, a grid of ingredient photos, and a 6-step cooking guide with photos. The warm rustic wooden background and realistic food photography make every recipe look professionally styled.",
+        "who": "Suitable for food bloggers, recipe creators, restaurant marketers, cooking influencers, meal prep brands, food app designers, and anyone creating appetizing culinary content.",
+        "how": [
+          "Enter the recipe name (e.g., Honey Glazed Salmon, Margherita Pizza).",
+          "The template auto-generates a hero photo, ingredient grid, and 6-step cooking guide.",
+          "Warm rustic wooden background and realistic food photography style are applied automatically.",
+          "Generate a vertical 4K recipe infographic ready for social media or print."
+        ],
+        "prompts": [
+          "Generate a Honey Glazed Salmon recipe card with prep time 20 min, 2 servings, medium difficulty.",
+          "Create a Classic Margherita Pizza recipe infographic: 30 min, 4 servings, easy.",
+          "Generate a Chocolate Lava Cake recipe card: 25 min, 4 servings, medium difficulty."
+        ]
+      }
+    }
   }
 }

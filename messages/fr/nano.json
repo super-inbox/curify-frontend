@@ -2082,5 +2082,71 @@
         ]
       }
     }
+  },
+  "template-personal-journey-wolf-path-illustration": {
+    "category": "Illustration Motivationnelle",
+    "description": "Creez des illustrations motivationnelles en encre d'un protagoniste-loup surmontant des obstacles sur le chemin vers son objectif personnel.",
+    "title": "Nano Banana Prompt: Illustrateur du Chemin du Loup | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere des illustrations puissantes en noir et blanc a la plume, montrant un loup marchant sur un chemin de pierre vers son objectif, entoure de loups-obstacles.",
+        "who": "Convient aux coachs de fitness, coachs de vie, createurs de contenu motivationnel et marques de bien-etre.",
+        "how": [
+          "Choisissez un theme (ex. Fitness, Carriere, Finances).",
+          "Le protagoniste marche sur un sentier etiquete vers l'objectif.",
+          "Les loups-obstacles sont etiquetes automatiquement.",
+          "Generez une illustration verticale 4K a l'encre."
+        ],
+        "prompts": [
+          "Parcours fitness: chemin DISCIPLINE vers BIEN-ETRE, obstacles PARESSE, STRESS.",
+          "Parcours carriere: chemin PERSEVERANCE vers EMPLOI DE REVE.",
+          "Parcours financier: chemin REGULARITE vers LIBERTE FINANCIERE."
+        ]
+      }
+    }
+  },
+  "template-multilingual-vocabulary-poster-watercolor": {
+    "category": "Affiche Educative Multilingue",
+    "description": "Creez de charmantes affiches de vocabulaire en grille 5x5 en aquarelle dans jusqu'a trois langues, ideales pour les classes multilingues.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche de Vocabulaire Multilingue | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche de vocabulaire en grille 5x5 en doux style aquarelle avec des illustrations peintes a la main et des etiquettes dans jusqu'a trois langues.",
+        "who": "Convient aux educateurs multilingues, ecoles internationales, concepteurs d'applications linguistiques et parents elevant des enfants bilingues.",
+        "how": [
+          "Choisissez un theme de vocabulaire.",
+          "Specifiez jusqu'a trois langues.",
+          "Chaque cellule affiche une illustration aquarelle avec etiquettes.",
+          "Generez une affiche verticale 4K."
+        ],
+        "prompts": [
+          "Affiche animaux en anglais, chinois et espagnol avec 25 animaux.",
+          "Affiche fruits en anglais, japonais et francais.",
+          "Affiche metiers en anglais, coreen et allemand."
+        ]
+      }
+    }
+  },
+  "template-premium-recipe-card-infographic": {
+    "category": "Infographie de Recette",
+    "description": "Creez des infographies de fiches recette professionnelles avec photographie culinaire, grille d'ingredients et instructions etape par etape dans un style rustique.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie de Recette Premium | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une fiche recette premium complete avec photo principale, barre d'informations, grille d'ingredients et guide de cuisine en 6 etapes dans un style rustique chaleureux.",
+        "who": "Convient aux blogueurs culinaires, createurs de recettes, influenceurs de cuisine et toute personne creant du contenu culinaire appetissant.",
+        "how": [
+          "Entrez le nom de la recette.",
+          "Le modele genere automatiquement photo, grille et guide 6 etapes.",
+          "Fond en bois rustique applique automatiquement.",
+          "Generez une infographie verticale 4K."
+        ],
+        "prompts": [
+          "Fiche saumon glace au miel, 20 min, 2 portions, difficulte moyenne.",
+          "Infographie pizza Margherita classique, 30 min, 4 portions, facile.",
+          "Gateau moelleux au chocolat, 25 min, 4 portions, difficulte moyenne."
+        ]
+      }
+    }
   }
 }
