@@ -3,10 +3,11 @@ import WorkspaceClient from "./WorkspaceClientPage";
 
 export const dynamic = "force-dynamic";
 
-export default function Page() {
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <main className="min-h-screen">
-      <WorkspaceClient />
+      <WorkspaceClient locale={locale} />
     </main>
   );
 }

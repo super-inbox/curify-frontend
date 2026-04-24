@@ -54,7 +54,13 @@
     "termsOfService": "सेवा की शर्तें",
     "and": "और",
     "privacyPolicy": "गोपनीयता नीति",
-    "logoAlt": "प्रतीक चिन्ह"
+    "logoAlt": "प्रतीक चिन्ह",
+    "sending": "Sending...",
+    "verifying": "Verifying...",
+    "emailNotFound": "No account found with this email.",
+    "sendOtpFailed": "Failed to send code. Please try again.",
+    "otpExpired": "Verification code has expired. Please request a new one.",
+    "noOtpIssued": "No code was issued for this email. Please start over."
   },
   "paymentProcessingModal": {
     "processingTitle": "भुगतान प्रसंस्करण",

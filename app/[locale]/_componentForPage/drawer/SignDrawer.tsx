@@ -1,8 +1,8 @@
 'use client';
 
 import Drawer from "../../_components/Drawer";
-import { useAtom } from "jotai";
-import { drawerAtom, authLoadingAtom } from "@/app/atoms/atoms";
+import { useAtom, useSetAtom } from "jotai";
+import { drawerAtom, authLoadingAtom, userAtom } from "@/app/atoms/atoms";
 import Image from "next/image";
 import Input from "../../_components/Input";
 import { useState } from "react";
@@ -12,10 +12,14 @@ import GoogleLoginButton from "../../_components/button/GoogleLoginButton";
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { authService } from "@/services/auth";
+import { resetAnonymousCopyCount } from "@/lib/copyGating";
 
 export default function SignDrawer() {
   const [state] = useAtom(drawerAtom);
   const [authLoading] = useAtom(authLoadingAtom);
+  const setDrawerState = useSetAtom(drawerAtom);
+  const setUser = useSetAtom(userAtom);
   const safeState = state || "signup";
   const { locale } = useParams();
   const t = useTranslations("signDrawer");
@@ -26,34 +30,60 @@ export default function SignDrawer() {
   const [otpValid, setOtpValid] = useState(false);
   const [step, setStep] = useState(1);
   const [errorMsg, setErrorMsg] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   const messages: Record<string, Record<string, string>> = {
-    signup: {
-      welcome: t("welcomeSignup"),
-      button: t("signUp"),
-    },
-    signin: {
-      welcome: t("welcomeSignin"),
-      button: t("signIn"),
-    }
+    signup: { welcome: t("welcomeSignup"), button: t("signUp") },
+    signin: { welcome: t("welcomeSignin"), button: t("signIn") },
   };
 
   const effectiveState = messages[safeState] ? safeState : "signup";
   const content = messages[effectiveState];
 
-  const handleEmailSubmit = () => {
-    if (emailValid) {
-      setErrorMsg("");
-      console.log("OTP sent to:", email);
+  const handleEmailSubmit = async () => {
+    if (!emailValid || isSending) return;
+    setErrorMsg("");
+    setIsSending(true);
+    try {
+      await authService.sendOtp(email);
       setStep(2);
+    } catch (err: any) {
+      const msg = err?.message ?? "";
+      if (msg.includes("404") || msg.includes("does not exist")) {
+        setErrorMsg(t("emailNotFound"));
+      } else {
+        setErrorMsg(t("sendOtpFailed"));
+      }
+    } finally {
+      setIsSending(false);
     }
   };
 
-  const handleOtpSubmit = () => {
-    if (otpValid) {
-      setErrorMsg("");
-      console.log("OTP verified:", otp);
-      setErrorMsg(t("invalidOtp"));
+  const handleOtpSubmit = async () => {
+    if (!otpValid || isVerifying) return;
+    setErrorMsg("");
+    setIsVerifying(true);
+    try {
+      const result = await authService.verifyOtp(email, otp);
+      localStorage.setItem("access_token", result.data.access_token);
+      localStorage.setItem("refresh_token", result.data.refresh_token);
+      setUser(result.data.user);
+      resetAnonymousCopyCount();
+      setDrawerState(null);
+    } catch (err: any) {
+      const msg = err?.message ?? "";
+      if (msg.includes("expired")) {
+        setErrorMsg(t("otpExpired"));
+      } else if (msg.includes("Incorrect") || msg.includes("incorrect")) {
+        setErrorMsg(t("invalidOtp"));
+      } else if (msg.includes("No OTP")) {
+        setErrorMsg(t("noOtpIssued"));
+      } else {
+        setErrorMsg(t("invalidOtp"));
+      }
+    } finally {
+      setIsVerifying(false);
     }
   };
 
@@ -65,22 +95,14 @@ export default function SignDrawer() {
   };
 
   return (
-    <Drawer
-      size="medium"
-      open={state === "signin" || state === "signup"}
-    >
-      {/* ✅ Loading overlay — shown while Google login is in flight */}
+    <Drawer size="medium" open={state === "signin" || state === "signup"}>
       {authLoading && (
         <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm rounded-xl">
-          {/* Spinner */}
           <div className="relative w-12 h-12 mb-5">
             <div className="absolute inset-0 rounded-full border-4 border-blue-100" />
             <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-blue-500 animate-spin" />
           </div>
-
-          {/* Google logo + message */}
           <div className="flex items-center gap-2 mb-2">
-            {/* Inline Google G SVG so we don't need an extra file */}
             <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.84l6.08-6.08C34.36 3.05 29.46 1 24 1 14.82 1 7.02 6.48 3.64 14.26l7.1 5.51C12.4 13.67 17.73 9.5 24 9.5z"/>
               <path fill="#4285F4" d="M46.52 24.5c0-1.64-.15-3.22-.42-4.75H24v9h12.68c-.55 2.96-2.2 5.47-4.67 7.15l7.18 5.57C43.27 37.27 46.52 31.36 46.52 24.5z"/>
@@ -89,17 +111,13 @@ export default function SignDrawer() {
             </svg>
             <span className="text-sm font-medium text-gray-700">Signing in with Google…</span>
           </div>
-
           <p className="text-xs text-gray-400">This only takes a moment</p>
         </div>
       )}
 
       <div className="relative">
         {step === 2 && (
-          <button
-            onClick={resetFlow}
-            className="absolute left-0 top-0 p-1 text-gray-500 hover:text-gray-700"
-          >
+          <button onClick={resetFlow} className="absolute left-0 top-0 p-1 text-gray-500 hover:text-gray-700">
             <ChevronLeftIcon className="h-6 w-6" />
           </button>
         )}
@@ -118,32 +136,21 @@ export default function SignDrawer() {
             <div className="w-full">
               <GoogleLoginButton variant="drawer" />
             </div>
-
             <div className="text-sm text-gray-500">{t("or")}</div>
-
             <Input
               value={email}
               placeholder={t("emailPlaceholder")}
               onChange={setEmail}
               setValid={setEmailValid}
-              rules={[
-                {
-                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  errorMsg: t("invalidEmail"),
-                },
-              ]}
-              disabled={true}
+              rules={[{ pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, errorMsg: t("invalidEmail") }]}
             />
-            {errorMsg && (
-              <p className="text-red-500 text-xs text-center">{errorMsg}</p>
-            )}
-
+            {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
             <BtnN
               className="w-full py-3 text-base"
-              disabled={true}
+              disabled={!emailValid || isSending}
               onClick={handleEmailSubmit}
             >
-              {content.button}
+              {isSending ? t("sending") : content.button}
             </BtnN>
           </>
         ) : (
@@ -156,22 +163,20 @@ export default function SignDrawer() {
               placeholder={t("verificationCodePlaceholder")}
               onChange={setOtp}
               setValid={setOtpValid}
-              rules={[]}
-              disabled={true}
+              rules={[{ pattern: /^\d{4,8}$/, errorMsg: t("invalidOtp") }]}
             />
-            {errorMsg && (
-              <p className="text-red-500 text-xs text-center">{errorMsg}</p>
-            )}
+            {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
             <BtnN
               className="w-full py-3 text-base"
-              disabled={true}
+              disabled={!otpValid || isVerifying}
               onClick={handleOtpSubmit}
             >
-              {t("verifyCode")}
+              {isVerifying ? t("verifying") : t("verifyCode")}
             </BtnN>
             <button
-              className="text-xs text-blue-600 hover:underline mt-2 cursor-not-allowed opacity-50"
-              disabled
+              className="text-xs text-blue-600 hover:underline mt-2"
+              onClick={resetFlow}
+              type="button"
             >
               {t("resendCode")}
             </button>
@@ -182,13 +187,9 @@ export default function SignDrawer() {
       <p className="text-[var(--c4)] text-center mt-10 text-xs">
         {t("agreePrefix")}
         <br />
-        <Link className="underline" href={`/${locale}/agreement`}>
-          {t("termsOfService")}
-        </Link>{" "}
+        <Link className="underline" href={`/${locale}/agreement`}>{t("termsOfService")}</Link>{" "}
         {t("and")}{" "}
-        <Link className="underline" href={`/${locale}/privacy`}>
-          {t("privacyPolicy")}
-        </Link>
+        <Link className="underline" href={`/${locale}/privacy`}>{t("privacyPolicy")}</Link>
       </p>
     </Drawer>
   );
