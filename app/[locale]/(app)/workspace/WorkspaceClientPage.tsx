@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "@/i18n/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { useAtom } from "jotai";
@@ -16,9 +15,11 @@ import { projectService } from "@/services/projects";
 import { authService } from "@/services/auth";
 import GalleryGrid from "../../_componentForPage/GalleryGrid";
 import { toSlug } from "@/lib/nano_utils";
+import CdnImage from "@/app/[locale]/_components/CdnImage";
 import nanoImages from "@/public/data/nano_inspiration.json";
+import { CDN_BASE } from "@/lib/constants";
 
-type Tab = "generated" | "saved" | "copied";
+type Tab = "generated" | "saved";
 
 type ResolvedCard = {
   id: string;
@@ -55,7 +56,7 @@ function ImageCard({ card, locale }: { card: ResolvedCard; locale: string }) {
       className="group block overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm hover:shadow-md transition"
     >
       <div className="relative aspect-square bg-neutral-100">
-        <Image
+        <CdnImage
           src={card.preview_image_url || card.image_url}
           alt={card.title}
           fill
@@ -94,8 +95,11 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
 
   const router = useRouter();
 
-  const savedCards = resolveIds((user as any)?.saved_content_ids ?? [], locale);
-  const copiedCards = resolveIds((user as any)?.copied_content_ids ?? [], locale);
+  const savedIds: string[] = (user as any)?.saved_content_ids ?? [];
+  const copiedIds: string[] = (user as any)?.copied_content_ids ?? [];
+  // Merge saved + copied, deduped, saved items first
+  const mergedIds = [...new Set([...savedIds, ...copiedIds])];
+  const savedCards = resolveIds(mergedIds, locale);
 
   const refreshProjects = useCallback(async () => {
     try {
@@ -159,8 +163,14 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
   const TABS: { id: Tab; label: string; count?: number }[] = [
     { id: "generated", label: "Generated", count: projects.length || undefined },
     { id: "saved", label: "Saved", count: savedCards.length || undefined },
-    { id: "copied", label: "Copied", count: copiedCards.length || undefined },
   ];
+
+  const videoProjects = projects.filter(
+    (p) => p.job_settings.job_type !== "nano_template_generation"
+  );
+  const imageProjects = projects.filter(
+    (p) => p.job_settings.job_type === "nano_template_generation"
+  );
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-20 py-10">
@@ -194,102 +204,141 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
         <>
           {isRefreshing && (
             <div className="mb-4 inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">
-              🔄 Refreshing...
+              Refreshing...
             </div>
           )}
+
+          {/* Image projects */}
+          {imageProjects.length > 0 && (
+            <section className="mb-8">
+              <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-3">Images</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                {imageProjects.map((project) => {
+                  const previewSrc = project.preview_image_path
+                    ? `${CDN_BASE}/${project.preview_image_path}`
+                    : project.image_path
+                    ? `${CDN_BASE}/${project.image_path}`
+                    : null;
+                  return (
+                    <div
+                      key={project.project_id}
+                      onClick={() => router.push(`/image-project/${project.project_id}`)}
+                      className="group relative overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm cursor-pointer hover:shadow-md transition"
+                    >
+                      <div className="relative aspect-square bg-neutral-100">
+                        {previewSrc ? (
+                          <CdnImage
+                            src={previewSrc}
+                            alt={project.project_name}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center text-neutral-300 text-xs">
+                            No preview
+                          </div>
+                        )}
+                      </div>
+                      <div className="px-3 py-2">
+                        <p className="truncate text-xs font-medium text-neutral-700">{project.project_name}</p>
+                        <p className="text-[11px] text-neutral-400">
+                          {format(new Date(project.created_at), "yyyy/MM/dd")}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          {/* Video projects */}
+          {videoProjects.length > 0 && (
+            <section>
+              {imageProjects.length > 0 && (
+                <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-3">Videos</h3>
+              )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                {videoProjects.map((project) => {
+                  const duration = formatDuration(project.video_duration_seconds);
+                  const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
+                  return (
+                    <div
+                      key={project.project_id}
+                      onClick={() => {
+                        if (openMenuId) return;
+                        if (project.status === "COMPLETED") {
+                          router.push(`/project_details/${project.project_id}`);
+                        } else {
+                          router.push(`/magic/${project.project_id}`);
+                        }
+                      }}
+                      className="relative border border-gray-200 rounded-xl overflow-visible shadow-sm bg-white cursor-pointer hover:shadow-md transition"
+                    >
+                      <div className="relative w-full aspect-video bg-gray-100">
+                        <CdnImage
+                          src={project.thumbnail_signed_url || "/mock-thumbnail.jpg"}
+                          alt={project.project_name}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
+                          {project.job_settings.target_language?.toUpperCase() ?? ""} · {formatStatus(project.status)}
+                        </div>
+                        <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
+                          {duration}
+                        </div>
+                      </div>
+                      <div className="p-3 relative z-10">
+                        <p className="font-semibold text-[15px] truncate">{project.project_name}</p>
+                        <p className="text-sm text-gray-500">{createdAt}</p>
+                        <div
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setOpenMenuId(openMenuId === project.project_id ? null : project.project_id);
+                          }}
+                          className="absolute bottom-2 right-2 z-50"
+                        >
+                          <EllipsisHorizontalIcon className="h-5 w-5 text-gray-400 hover:text-gray-700 cursor-pointer" />
+                          {openMenuId === project.project_id && (
+                            <div className="absolute right-0 mt-2 bg-white border rounded-md shadow-md z-[9999] text-sm">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setProjectToDelete(project);
+                                  setIsDeleteDialogOpen(true);
+                                  setOpenMenuId(null);
+                                }}
+                                className="block w-full text-left px-4 py-2 hover:bg-red-50 text-red-600"
+                                type="button"
+                              >
+                                Delete project
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
           {!isRefreshing && projects.length === 0 && (
             <EmptyState icon="📂" text="No generated projects yet. Create your first to get started." />
           )}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {projects.map((project) => {
-              const duration = formatDuration(project.video_duration_seconds);
-              const createdAt = format(new Date(project.created_at), "yyyy/MM/dd hh:mm a");
-              return (
-                <div
-                  key={project.project_id}
-                  onClick={() => {
-                    if (openMenuId) return;
-                    if (project.status === "COMPLETED") {
-                      router.push(`/project_details/${project.project_id}`);
-                    } else {
-                      router.push(`/magic/${project.project_id}`);
-                    }
-                  }}
-                  className="relative border border-gray-200 rounded-xl overflow-visible shadow-sm bg-white cursor-pointer hover:shadow-md transition"
-                >
-                  <div className="relative w-full aspect-video bg-gray-100">
-                    <Image
-                      src={project.thumbnail_signed_url || "/mock-thumbnail.jpg"}
-                      alt={project.project_name}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-1 left-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
-                      {project.job_settings.target_language?.toUpperCase() ?? ""} · {formatStatus(project.status)}
-                    </div>
-                    <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[11px] px-1.5 py-0.5 rounded">
-                      {duration}
-                    </div>
-                  </div>
-                  <div className="p-3 relative z-10">
-                    <p className="font-semibold text-[15px] truncate">{project.project_name}</p>
-                    <p className="text-sm text-gray-500">{createdAt}</p>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setOpenMenuId(openMenuId === project.project_id ? null : project.project_id);
-                      }}
-                      className="absolute bottom-2 right-2 z-50"
-                    >
-                      <EllipsisHorizontalIcon className="h-5 w-5 text-gray-400 hover:text-gray-700 cursor-pointer" />
-                      {openMenuId === project.project_id && (
-                        <div className="absolute right-0 mt-2 bg-white border rounded-md shadow-md z-[9999] text-sm">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setProjectToDelete(project);
-                              setIsDeleteDialogOpen(true);
-                              setOpenMenuId(null);
-                            }}
-                            className="block w-full text-left px-4 py-2 hover:bg-red-50 text-red-600"
-                            type="button"
-                          >
-                            Delete project
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </>
       )}
 
-      {/* Saved Tab */}
+      {/* Saved Tab (saved + copied merged) */}
       {tab === "saved" && (
         <>
           {savedCards.length === 0 ? (
-            <EmptyState icon="🔖" text="No saved items yet. Browse templates and tap Save to collect ones you like." />
+            <EmptyState icon="🔖" text="No saved or copied items yet. Browse templates and tap Save to collect ones you like." />
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {savedCards.map((card) => (
-                <ImageCard key={card.id} card={card} locale={locale} />
-              ))}
-            </div>
-          )}
-        </>
-      )}
-
-      {/* Copied Tab */}
-      {tab === "copied" && (
-        <>
-          {copiedCards.length === 0 ? (
-            <EmptyState icon="📋" text="No copied prompts yet. Copy prompts from templates to see them here." />
-          ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-              {copiedCards.map((card) => (
                 <ImageCard key={card.id} card={card} locale={locale} />
               ))}
             </div>

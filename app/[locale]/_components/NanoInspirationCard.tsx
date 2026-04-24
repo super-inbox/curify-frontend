@@ -58,6 +58,7 @@ export function NanoInspirationCard({
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
   const [saved, setSaved] = useState(false);
+  const [showSavedToast, setShowSavedToast] = useState(false);
 
   const handleSave = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -66,6 +67,8 @@ export function NanoInspirationCard({
     setSaved(true);
     try {
       await savedItemsService.save(card.id, "nano_inspiration");
+      setShowSavedToast(true);
+      setTimeout(() => setShowSavedToast(false), 3000);
     } catch {
       setSaved(false);
     }
@@ -261,18 +264,25 @@ export function NanoInspirationCard({
               {isDownloading ? t("downloadingPack") : t("downloadPack")}
             </button>
           ) : (
-            <button
-              type="button"
-              onClick={handleSave}
-              className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
-                saved
-                  ? "bg-purple-100 text-purple-700"
-                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
-              }`}
-            >
-              <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
-              {saved ? t("saved") : t("save")}
-            </button>
+            <div className="relative">
+              <button
+                type="button"
+                onClick={handleSave}
+                className={`flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+                  saved
+                    ? "bg-purple-100 text-purple-700"
+                    : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                }`}
+              >
+                <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
+                {saved ? t("saved") : t("save")}
+              </button>
+              {showSavedToast && (
+                <div className="absolute bottom-full left-0 mb-2 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-1.5 text-xs text-white shadow-lg">
+                  Saved! View in your workspace →
+                </div>
+              )}
+            </div>
           )}
           <Link
             href={remixHref}
