@@ -1,24 +1,25 @@
 // app/[locale]/_components/NanoInspirationCard.tsx
 "use client";
 
-import { Layers } from "lucide-react";
-import React, { useMemo, useState } from "react";
+import { Download, Layers, Sparkles } from "lucide-react";
+import { useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useAtom } from "jotai";
+import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import {
-  useCopyTracking,
   useClickTracking,
-  useShareTracking,
-  useSaveTracking,
+  useRemixTracking,
+  useTracking,
 } from "@/services/useTracking";
-import { stableHashToInt } from "@/lib/hash_utils";
-import { ActionButtons } from "@/app/[locale]/_components/button/ActionButtons";
+import { templatePacksService } from "@/services/templatePacks";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
-  buildParamSummary,
-  fillPrompt,
   makeNanoTemplateUrl,
   normalizeCarouselUrls,
   getLocaleFromPath,
+  toSlug,
 } from "@/lib/nano_utils";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
@@ -42,32 +43,60 @@ export function NanoInspirationCard({
   const pathname = usePathname();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [saved, setSaved] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const [shared, setShared] = useState(false);
-
   // Use actual page locale:
   // - /zh/... => zh
   // - everything else => en
   const pageLocale = getLocaleFromPath(pathname);
 
-  // Mock engagement numbers (Deterministic)
-  const seedNum = useMemo(() => stableHashToInt(card.id), [card.id]);
+  const trackCardClick = useClickTracking(card.id, "nano_inspiration_template_card", "list");
+  const trackRemix = useRemixTracking(card.id, "nano_inspiration_template_card", "list");
+  const { trackAction } = useTracking();
+  const t = useTranslations("actionButtons");
+  const [user] = useAtom(userAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const isDownloadingRef = useRef(false);
 
-  const [saveCount, setSaveCount] = useState(seedNum % 100 + 50);
-  const [copyCount, setCopyCount] = useState(
-    Math.floor(seedNum * 1.3) % 150 + 100
-  );
-  const [shareCount, setShareCount] = useState(
-    Math.floor(seedNum * 0.7) % 50 + 20
-  );
+  const batchTracking = {
+    contentId: card.id,
+    contentType: "nano_inspiration_template_card" as const,
+    viewMode: "list" as const,
+  };
 
-  const trackCardClick = useClickTracking(card.id, "nano_inspiration", "list");
-  const trackCopy = useCopyTracking(card.id, "nano_inspiration", "list");
-  const trackShare = useShareTracking(card.id, "nano_inspiration", "list");
-  const trackSave = useSaveTracking(card.id, "nano_inspiration", "list");
+  const handleDownload = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (isDownloadingRef.current) return;
+    isDownloadingRef.current = true;
+    if (!user) { setDrawerState("signin"); isDownloadingRef.current = false; return; }
+
+    try {
+      setIsDownloading(true);
+      const res = await templatePacksService.downloadPack({ template_id: card.template_id });
+      if (!res?.success || !res?.download_url) throw new Error(res?.message || "Missing download_url");
+      const a = document.createElement("a");
+      a.href = res.download_url;
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      trackAction(batchTracking, "download");
+    } catch {
+      alert(t("batchDownloadFailed"));
+    } finally {
+      setIsDownloading(false);
+      isDownloadingRef.current = false;
+    }
+  };
 
   const canonicalUrl = makeNanoTemplateUrl(card.template_id, pageLocale);
+
+  const remixHref = useMemo(() => {
+    if (!card.template_id) return null;
+    const qs = card.sample_parameters && Object.keys(card.sample_parameters).length > 0
+      ? `?${new URLSearchParams(card.sample_parameters as Record<string, string>).toString()}`
+      : "";
+    return `/${pageLocale}/nano-template/${toSlug(card.template_id)}${qs}#reproduce`;
+  }, [card.template_id, card.sample_parameters, pageLocale]);
 
   const normalized = useMemo(() => {
     return normalizeCarouselUrls(card.image_urls, card.preview_image_urls);
@@ -95,60 +124,6 @@ export function NanoInspirationCard({
     }
 
     onViewClick?.(card);
-  };
-
-  const handleSave = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (!requireAuth("save_nano_inspiration")) return;
-
-    trackSave();
-
-    if (saved) {
-      setSaved(false);
-      setSaveCount((prev) => prev - 1);
-    } else {
-      setSaved(true);
-      setSaveCount((prev) => prev + 1);
-    }
-  };
-
-  const handleCopy = async (e: React.MouseEvent) => {
-    e.stopPropagation();
-    try {
-      const filled = fillPrompt(card.base_prompt, card.sample_parameters);
-
-      const payload =
-        filled?.trim() ||
-        buildParamSummary(card.sample_parameters, 4) ||
-        canonicalUrl;
-
-      await navigator.clipboard.writeText(payload);
-      trackCopy();
-
-      if (!copied) {
-        setCopied(true);
-        setCopyCount((prev) => prev + 1);
-        setTimeout(() => setCopied(false), 1500);
-      }
-    } catch (err) {
-      console.error("Failed to copy:", err);
-    }
-  };
-
-  const handleShare = async (e: React.MouseEvent) => {
-    e.stopPropagation();
-    try {
-      await navigator.clipboard.writeText(canonicalUrl);
-      trackShare();
-
-      if (!shared) {
-        setShared(true);
-        setShareCount((prev) => prev + 1);
-        setTimeout(() => setShared(false), 1500);
-      }
-    } catch (err) {
-      console.error("Failed to share:", err);
-    }
   };
 
   const displaySrc =
@@ -250,19 +225,32 @@ export function NanoInspirationCard({
       </div>
 
       {/* Actions */}
-      <div className="mt-auto flex items-center">
-        <ActionButtons
-          saved={saved}
-          copied={copied}
-          shared={shared}
-          saveCount={saveCount}
-          copyCount={copyCount}
-          shareCount={shareCount}
-          onSave={handleSave}
-          onCopy={handleCopy}
-          onShare={handleShare}
-        />
-      </div>
+      {remixHref && (
+        <div className={`mt-auto flex items-center gap-2 ${card.batch ? "justify-between" : "justify-center"}`}>
+          {card.batch && (
+            <button
+              type="button"
+              onClick={handleDownload}
+              disabled={isDownloading}
+              className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
+            >
+              <Download className="h-3.5 w-3.5" />
+              {isDownloading ? t("downloadingPack") : t("downloadPack")}
+            </button>
+          )}
+          <Link
+            href={remixHref}
+            onClick={(e) => {
+              e.stopPropagation();
+              trackRemix();
+            }}
+            className="flex items-center justify-center gap-1.5 rounded-full bg-purple-50 px-3 py-2 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            Remix this
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

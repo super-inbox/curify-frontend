@@ -30,11 +30,26 @@ const LOGO_PCT_PREVIEW = 0.20;
 const PADDING_FULL     = 20;
 const PADDING_PREVIEW  = 10;
 
+// Tiled mode config
+const TILE_LOGO_PCT      = 0.22;  // logo width as % of image width
+const TILE_SPACING_FACTOR = 1.8;  // canvas extended to this multiple of logo size for spacing
+const TILE_OPACITY        = 0.15;  // 0–1, opacity of each tile
+const TILE_ROTATE         = -30;   // degrees
+
 // ── Args ──────────────────────────────────────────────────────────────────────
 
-const templateId = process.argv[2];
+const args = process.argv.slice(2);
+const modeArg = args.find(a => a.startsWith('--mode='));
+const mode = modeArg ? modeArg.split('=')[1] : 'corner';
+
+if (!['corner', 'tiled'].includes(mode)) {
+  console.error('--mode must be "corner" or "tiled"');
+  process.exit(1);
+}
+
+const templateId = args.find(a => !a.startsWith('--'));
 if (!templateId) {
-  console.error('Usage: node scripts/watermark_template_images.cjs <template-id>');
+  console.error('Usage: node scripts/watermark_template_images.cjs <template-id> [--mode=corner|tiled]');
   process.exit(1);
 }
 
@@ -71,6 +86,47 @@ function overlayLogo(srcPath, destPath, logoPx, padding) {
   );
 }
 
+function overlayLogoTiled(srcPath, destPath, logoPx) {
+  const tmpLogo    = destPath + '_tile_logo.png';
+  const tmpOverlay = destPath + '_overlay.png';
+  try {
+    // Step 1: resize, rotate, and set opacity on the logo
+    execSync(
+      `magick -background none "${LOGO_PATH}" -resize ${logoPx}x ` +
+      `-rotate ${TILE_ROTATE} -alpha set -channel A -evaluate multiply ${TILE_OPACITY} +channel ` +
+      `"${tmpLogo}"`,
+      { stdio: 'pipe' }
+    );
+
+    // Step 1.5: extend canvas for spacing between tiles
+    const logoDims = execSync(`magick identify -format "%wx%h" "${tmpLogo}"`).toString().trim();
+    const [lw, lh] = logoDims.split('x').map(Number);
+    const paddedW = Math.round(lw * TILE_SPACING_FACTOR);
+    const paddedH = Math.round(lh * TILE_SPACING_FACTOR);
+    execSync(
+      `magick "${tmpLogo}" -gravity center -background none -extent ${paddedW}x${paddedH} "${tmpLogo}"`,
+      { stdio: 'pipe' }
+    );
+
+    // Step 2: tile the prepared logo to match source image dimensions
+    const dims = execSync(`magick identify -format "%wx%h" "${srcPath}"`).toString().trim();
+    execSync(
+      `magick -size ${dims} tile:"${tmpLogo}" "${tmpOverlay}"`,
+      { stdio: 'pipe' }
+    );
+
+    // Step 3: composite overlay onto source
+    execSync(
+      `magick "${srcPath}" "${tmpOverlay}" -composite "${destPath}"`,
+      { stdio: 'pipe' }
+    );
+  } finally {
+    for (const f of [tmpLogo, tmpOverlay]) {
+      try { fs.unlinkSync(f); } catch (_) {}
+    }
+  }
+}
+
 function uploadToGcs(localPath, gcsPath) {
   execSync(`gsutil cp "${localPath}" "${gcsPath}"`, { stdio: 'inherit' });
 }
@@ -78,6 +134,7 @@ function uploadToGcs(localPath, gcsPath) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), `watermark-${templateId}-`));
+console.log(`Mode: ${mode}`);
 console.log(`Working directory: ${tmpDir}\n`);
 
 let success = 0;
@@ -100,10 +157,15 @@ for (const record of images) {
       downloadImage(fullUrl, srcFile);
 
       const w      = getWidth(srcFile);
-      const logoPx = Math.round(w * (isPreview ? LOGO_PCT_PREVIEW : LOGO_PCT_FULL));
-      const pad    = isPreview ? PADDING_PREVIEW : PADDING_FULL;
 
-      overlayLogo(srcFile, destFile, logoPx, pad);
+      if (mode === 'tiled') {
+        const logoPx = Math.round(w * TILE_LOGO_PCT);
+        overlayLogoTiled(srcFile, destFile, logoPx);
+      } else {
+        const logoPx = Math.round(w * (isPreview ? LOGO_PCT_PREVIEW : LOGO_PCT_FULL));
+        const pad    = isPreview ? PADDING_PREVIEW : PADDING_FULL;
+        overlayLogo(srcFile, destFile, logoPx, pad);
+      }
       uploadToGcs(destFile, gcsTarget);
 
       console.log('✓');

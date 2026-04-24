@@ -71,7 +71,8 @@ async function main() {
   const raw = fs.readFileSync(SOURCE_PATH, "utf-8");
   const parsed = JSON.parse(raw);
 
-  const prompts = Array.isArray(parsed.prompts) ? parsed.prompts : [];
+  // Support both flat array and { prompts: [...] } wrapper formats
+  const prompts = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.prompts) ? parsed.prompts : []);
   const validPrompts = prompts.filter(validatePrompt);
 
   console.log(`Loaded ${prompts.length} prompts, ${validPrompts.length} valid.`);

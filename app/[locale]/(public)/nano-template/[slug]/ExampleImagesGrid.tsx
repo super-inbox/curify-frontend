@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Download, Sparkles } from "lucide-react";
+import { useAtom } from "jotai";
+import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
-import { useClickTracking } from "@/services/useTracking";
+import { useClickTracking, useTracking } from "@/services/useTracking";
+import { templatePacksService } from "@/services/templatePacks";
+import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 type Item = {
   id: string;
@@ -13,6 +17,7 @@ type Item = {
   preview: string;
   templateId: string;
   params?: Record<string, string>;
+  batch?: boolean;
 };
 
 function getCols() {
@@ -45,7 +50,19 @@ function ExampleImageCard({
   item: Item;
   locale: string;
 }) {
-  const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration", "cards");
+  const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
+  const { trackAction } = useTracking();
+  const t = useTranslations("actionButtons");
+  const [user] = useAtom(userAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const isDownloadingRef = useRef(false);
+
+  const tracking = {
+    contentId: `${item.templateId}:${item.id}`,
+    contentType: "nano_inspiration_example_grid" as const,
+    viewMode: "cards" as const,
+  };
 
   const remixHref = (() => {
     const qs = item.params && Object.keys(item.params).length > 0
@@ -53,6 +70,31 @@ function ExampleImageCard({
       : "";
     return `/${locale}/nano-template/${toSlug(item.templateId)}${qs}#reproduce`;
   })();
+
+  const handleDownload = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isDownloadingRef.current) return;
+    isDownloadingRef.current = true;
+    if (!user) { setDrawerState("signin"); isDownloadingRef.current = false; return; }
+
+    try {
+      setIsDownloading(true);
+      const res = await templatePacksService.downloadPack({ template_id: item.templateId });
+      if (!res?.success || !res?.download_url) throw new Error(res?.message || "Missing download_url");
+      const a = document.createElement("a");
+      a.href = res.download_url;
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      trackAction(tracking, "download");
+    } catch {
+      alert(t("batchDownloadFailed"));
+    } finally {
+      setIsDownloading(false);
+      isDownloadingRef.current = false;
+    }
+  };
 
   return (
     <div className="group overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
@@ -74,7 +116,18 @@ function ExampleImageCard({
         </div>
       </Link>
 
-      <div className="flex justify-end px-3 py-2">
+      <div className={`flex items-center px-3 py-2 ${item.batch ? "justify-between" : "justify-center"}`}>
+        {item.batch && (
+          <button
+            type="button"
+            onClick={handleDownload}
+            disabled={isDownloading}
+            className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
+          >
+            <Download className="h-3.5 w-3.5" />
+            {isDownloading ? t("downloadingPack") : t("downloadPack")}
+          </button>
+        )}
         <Link
           href={remixHref}
           onClick={() => {
@@ -94,10 +147,12 @@ export default function ExampleImagesGrid({
   items,
   maxRows = 3,
   locale = "en",
+  batch = false,
 }: {
   items: Item[];
   maxRows?: number;
   locale?: string;
+  batch?: boolean;
 }) {
   const cols = useCols();
   const limit = cols * maxRows;
@@ -113,7 +168,7 @@ export default function ExampleImagesGrid({
       {visible.map((it) => (
   <ExampleImageCard
     key={it.id}
-    item={it}
+    item={{ ...it, batch }}
     locale={locale}
   />
 ))}

@@ -27,7 +27,9 @@ type BreadcrumbItem = {
 type ExamplePromptHeroProps = {
   title: string;
   image: ReactNode;
-  actionBar: ReactNode;
+  actionBar?: ReactNode;
+  beforePrompt?: ReactNode;
+  rightColumnContent?: ReactNode;
   prompt: string;
   trackingId?: string;
   breadcrumbs?: BreadcrumbItem[];
@@ -35,6 +37,7 @@ type ExamplePromptHeroProps = {
   description?: string;
   promptVariant?: "breakdown" | "preview";
   promptParams?: Record<string, string | number | boolean | null | undefined>;
+  promptCollapsedMaxHeight?: number;
   prevNext?: PrevNextNav | null;
   className?: string;
 };
@@ -152,6 +155,8 @@ export default function ExamplePromptHero({
   title,
   image,
   actionBar,
+  beforePrompt,
+  rightColumnContent,
   prompt,
   trackingId,
   breadcrumbs,
@@ -159,6 +164,7 @@ export default function ExamplePromptHero({
   description,
   promptVariant = "preview",
   promptParams,
+  promptCollapsedMaxHeight,
   prevNext,
   className,
 }: ExamplePromptHeroProps) {
@@ -175,44 +181,53 @@ export default function ExamplePromptHero({
           </div>
 
           <div className="flex flex-col gap-4 lg:min-h-[520px]">
-            {metaChips ? (
-              <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
-            ) : null}
+            {rightColumnContent ?? (
+              <>
+                {metaChips ? (
+                  <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
+                ) : null}
 
-            <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-              {title}
-            </h1>
+                <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+                  {title}
+                </h1>
 
-            {description ? (
-              <p className="whitespace-pre-line text-sm leading-6 text-neutral-600">
-                {description}
-              </p>
-            ) : null}
+                {description ? (
+                  <p className="whitespace-pre-line text-sm leading-6 text-neutral-600">
+                    {description}
+                  </p>
+                ) : null}
 
-            <section aria-labelledby="prompt-heading" className="flex flex-col">
-              <h2
-                id="prompt-heading"
-                className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
-              >
-                Prompt
-              </h2>
+                {beforePrompt}
+              </>
+            )}
 
-              {promptVariant === "breakdown" ? (
-                <PromptBreakdown prompt={prompt} params={promptParams ?? {}} />
-              ) : (
-                <PromptPreviewBlock
-                  text={prompt}
-                  collapsedRows={3}
-                  expandable={true}
-                  containerClassName="rounded-2xl border border-neutral-200 bg-neutral-50"
-                  preClassName="text-neutral-800"
-                  expandLabel="Show full prompt"
-                  collapseLabel="Show less"
-                />
-              )}
-            </section>
+            {!rightColumnContent && (
+              <>
+                <section aria-labelledby="prompt-heading" className="flex flex-col">
+                  <h2
+                    id="prompt-heading"
+                    className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500"
+                  >
+                    Prompt
+                  </h2>
 
-            <div className="mt-auto">{actionBar}</div>
+                  {promptVariant === "breakdown" ? (
+                    <PromptBreakdown prompt={prompt} params={promptParams ?? {}} collapsedMaxHeight={promptCollapsedMaxHeight} />
+                  ) : (
+                    <PromptPreviewBlock
+                      text={prompt}
+                      collapsedRows={3}
+                      expandable={true}
+                      containerClassName="rounded-2xl border border-neutral-200 bg-neutral-50"
+                      preClassName="text-neutral-800"
+                      expandLabel="Show full prompt"
+                      collapseLabel="Show less"
+                    />
+                  )}
+                </section>
+                <div className="mt-auto">{actionBar}</div>
+              </>
+            )}
           </div>
         </div>
       </section>

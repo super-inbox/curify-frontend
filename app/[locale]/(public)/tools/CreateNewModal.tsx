@@ -32,6 +32,7 @@ export default function CreateNewModal() {
   const [cost, setCost] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
   const [isStarting, setIsStarting] = useState(false);
+  const isStartingRef = useRef(false);
 
   const [source, setSource] = useState("Auto Detect");
   const [transto, setTransto] = useState("Select Language");
@@ -105,7 +106,8 @@ export default function CreateNewModal() {
   };
 
   const handleStart = async () => {
-    if (isStarting) return;
+    if (isStartingRef.current) return;
+    isStartingRef.current = true;
 
     if (job_type === "youtube_subtitles") {
       if (!videoId) return;
@@ -125,6 +127,7 @@ export default function CreateNewModal() {
 
     try {
       setIsStarting(true);
+      isStartingRef.current = true;
 
       const isRemoveSubtitle = subtitle === "Source" && job_type === "subtitle_only";
 
@@ -178,7 +181,8 @@ export default function CreateNewModal() {
     } catch (error) {
       alert("Failed to create project.");
       console.error(error);
-      setIsStarting(false); // only reset on error; on success we navigate away
+      setIsStarting(false);
+      isStartingRef.current = false;
     }
   };
 

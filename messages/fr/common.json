@@ -135,7 +135,7 @@
     "generate": "Générer",
     "copied": "Copié",
     "remix": "Remixer",
-    "downloadPack": "Télécharger le pack de 5",
+    "downloadPack": "Télécharger les packs",
     "downloadingPack": "Téléchargement en cours...",
     "batchDownloadFailed": "Échec du téléchargement du pack. Veuillez réessayer.",
     "generating": "Génération...",
@@ -196,7 +196,8 @@
       "product": "Produit & Marketing",
       "video": "Vidéo & Sous-titres",
       "lifestyle": "Style de vie & lieux",
-      "language": "Langue"
+      "language": "Langue",
+      "travel": "Voyages et Culture"
     },
     "useCasesQuestion": "Explorer par cas d'usage :",
     "useCases": {
@@ -220,12 +221,12 @@
     },
     "for-parents": {
       "title": "Pour les Parents",
-      "subtitle": "Aidez votre enfant à apprendre l'anglais en 5 minutes par jour",
-      "description": "Rendez l'apprentissage simple, visuel et engageant avec des cartes de vocabulaire et des vidéos générées par IA. Sans préparation. Sans recherche.",
-      "bullet0": "Cartes de vocabulaire bilingues",
-      "bullet1": "Apprentissage visuel avec des images",
-      "bullet2": "Courtes vidéos d'apprentissage",
-      "bullet3": "Packs d'apprentissage prêts à l'emploi"
+      "subtitle": "Soutenez l'apprentissage de votre enfant avec des visuels IA variés",
+      "description": "Des langues et du vocabulaire aux sciences, à l'art et aux habitudes saines — des modèles visuels prêts à l'emploi pour les enfants de tout âge. Sans préparation.",
+      "bullet0": "Cartes de langues et de vocabulaire",
+      "bullet1": "Sciences, nature et histoire",
+      "bullet2": "Art, dessin et compétences créatives",
+      "bullet3": "Fitness, alimentation et habitudes saines"
     },
     "for-esl-learners": {
       "title": "Pour les Apprenants ESL",
@@ -244,6 +245,7 @@
       "bullet1": "Créez à partir de modèles de personnages et de styles",
       "bullet2": "Convertissez des images en vidéos avec voix et sous-titres",
       "bullet3": "Téléchargez et remixez du contenu en lot"
-    }
+    },
+    "learningMaterialsHeading": "Matériaux Pédagogiques"
   }
 }

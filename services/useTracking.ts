@@ -7,6 +7,9 @@ import { API_BASE } from "@/lib/constants";
 export type ContentType =
   | "inspiration"
   | "nano_inspiration"
+  | "nano_inspiration_example_grid"
+  | "nano_inspiration_template_card"
+  | "nano_inspiration_reproduce_section"
   | "nano_gallery"
   | "topic_capsule"
   | "tag_capsule"

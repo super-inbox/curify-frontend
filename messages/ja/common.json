@@ -135,7 +135,7 @@
     "generate": "生成",
     "copied": "コピーしました",
     "remix": "リミックス",
-    "downloadPack": "5パックをダウンロード",
+    "downloadPack": "パックをダウンロード",
     "downloadingPack": "ダウンロード中...",
     "batchDownloadFailed": "パックのダウンロードに失敗しました。もう一度お試しください。",
     "generating": "生成中...",
@@ -196,7 +196,8 @@
       "product": "製品 & マーケティング",
       "video": "ビデオ & 字幕",
       "lifestyle": "ライフスタイル & 場所",
-      "language": "言語"
+      "language": "言語",
+      "travel": "旅行＆文化"
     },
     "useCasesQuestion": "ユースケースで探す：",
     "useCases": {
@@ -220,12 +221,12 @@
     },
     "for-parents": {
       "title": "保護者向け",
-      "subtitle": "1日5分で子供が英語を学べる",
-      "description": "AI生成の単語カードとビデオで、学習をシンプル・ビジュアル・楽しいものにしましょう。準備不要。検索不要。",
-      "bullet0": "バイリンガル単語カード",
-      "bullet1": "画像を使ったビジュアル学習",
-      "bullet2": "短い学習動画",
-      "bullet3": "すぐに使える学習パック"
+      "subtitle": "言語から科学・アートまで — AIビジュアルカードで学ぼう",
+      "description": "言語・語彙から科学、アート、健康習慣まで — あらゆる年齢のお子さんにすぐ使えるビジュアル学習テンプレートです。準備不要。",
+      "bullet0": "言語・語彙カード",
+      "bullet1": "科学・自然・歴史のビジュアル",
+      "bullet2": "アート・絵画・創造スキル",
+      "bullet3": "フィットネス・食育・健康習慣"
     },
     "for-esl-learners": {
       "title": "ESL学習者向け",
@@ -244,6 +245,7 @@
       "bullet1": "キャラクター&スタイルテンプレートで作成",
       "bullet2": "画像を音声&字幕付き動画に変換",
       "bullet3": "コンテンツを一括ダウンロード&リミックス"
-    }
+    },
+    "learningMaterialsHeading": "学習教材"
   }
 }

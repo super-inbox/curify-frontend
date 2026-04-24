@@ -1811,9 +1811,27 @@
     "title": "Posture Correctness Comparison Guide | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Personality Quiz",
-    "description": "Generate a visual personality or lifestyle quiz card for any theme — career, style, body type, vibe, and more.",
-    "title": "Personality Choice Quiz Card Generator | Nano Banana"
+    "category": "Personality Quiz Card",
+    "description": "Generate a vertical personality or lifestyle quiz card featuring 6 photo-realistic character options in a 2×3 grid — for any theme like career, style, body type, or vibe.",
+    "title": "Nano Banana Prompt: Personality Choice Quiz Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a bold vertical personality quiz poster using Nano Banana prompts. Choose a theme and subject gender to generate a 2×3 grid of 6 realistic character portraits, each representing a distinct personality type or lifestyle. The design features a dark moody background, orange-highlighted title, color-coded option labels, and high-contrast 4K typography — perfect for viral social media content.",
+        "who": "Ideal for lifestyle content creators, social media influencers, psychology and MBTI enthusiasts, quiz app designers, and anyone creating engaging 'which one are you?' shareable posts for Instagram, TikTok, or Pinterest.",
+        "how": [
+          "Enter a quiz theme (e.g. Career, Body Type, Style, Vibe, Hobby, Personality).",
+          "Specify the subject gender (male or female) to match the character portraits.",
+          "The template generates 6 distinct character options in a 2×3 grid with photo-realistic portraits.",
+          "Each option gets a bold rounded label in color-coded backgrounds (orange, gray, red).",
+          "The moody dark background and cinematic lighting create a high-engagement social post ready to share."
+        ],
+        "prompts": [
+          "Generate a Career personality quiz card — 6 female character options (CEO, Artist, Athlete, Chef, Teacher, Scientist) in a 2×3 grid, dark background, orange highlighted title 'WHICH CAREER SUITS YOU?', color-coded labels, 4K vertical.",
+          "Create a Style personality quiz card — 6 male character options (Streetwear, Formal, Casual, Vintage, Sporty, Minimalist) in a 2×3 grid, moody cinematic lighting, bold color-coded labels, 4K vertical.",
+          "Design a Vibe personality quiz card — 6 female character options (Aesthetic, Dark Academia, Cottagecore, Y2K, Boho, Classic) in a 2×3 grid, high-contrast dark background, orange title highlight, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "3D Landmark Map",
@@ -1834,5 +1852,235 @@
     "category": "National Theme Map",
     "description": "Generate a minimalist infographic map for any country and theme — from Made in China to Brands of Germany, with logos and location overlays.",
     "title": "National Theme Map Infographic | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Fandom Character Grid Poster",
+    "description": "Generate a 4K vertical 3×3 grid poster featuring 9 iconic characters from any fandom — anime, fantasy, superhero, video game, or TV show — with cinematic portrait style and bold typography.",
+    "title": "Nano Banana Prompt: Fandom Character Grid Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a premium fandom character grid poster using Nano Banana prompts: a 3×3 layout of 9 distinct characters from a chosen universe, each rendered in cinematic portrait style with their iconic settings, signature props, character name, and series label — in 4K ultra HD.",
+        "who": "Suitable for fandom content creators, anime and pop culture enthusiasts, social media designers, fan pages, and users creating shareable character showcase visuals for any series, franchise, or game universe.",
+        "how": [
+          "Specify the fandom or theme name (e.g. Naruto, Marvel, Harry Potter, League of Legends).",
+          "The model will select 9 iconic characters from that universe and render each in a consistent portrait style.",
+          "Each character appears with their signature props or iconic setting and bold name/series label below.",
+          "The style adapts to the fandom — anime-style for anime themes, realistic for live-action franchises.",
+          "After generation, you can request specific character substitutions or style adjustments while keeping the grid layout."
+        ],
+        "prompts": [
+          "Generate a 'Naruto Characters Grid Poster' with 9 iconic Naruto characters in a 3×3 layout, each in cinematic anime portrait style with signature weapons and bold name labels, dark themed background, 4K vertical.",
+          "Create a 'Marvel Superheroes Grid Poster' featuring 9 Avengers characters in a 3×3 grid, realistic portrait style, each with iconic costume and power effects, bold typography, dark background, 4K vertical.",
+          "Generate a 'League of Legends Champions Grid' with 9 popular champions in a 3×3 poster layout, game-accurate portrait art, champion name and role labels, atmospheric dark background, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Kawaii Character Profile Card",
+    "description": "Generate a cute kawaii-style character profile card with name, age, gender, and theme. Features a smartphone UI layout with character stats, full-body illustration, and whimsical stickers.",
+    "title": "Nano Banana Prompt: Kawaii Character Profile Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a cozy kawaii character profile card using Nano Banana prompts: a vertical smartphone-style UI with a character info panel (profile picture, name, age, gender, personality traits), a full-body character illustration in theme-appropriate outfit, and decorative stickers and doodles — all in warm pastel watercolor cartoon art.",
+        "who": "Perfect for character creators, OC (original character) designers, kawaii art fans, social media content creators, and anyone who wants to visualize a character with a fun profile card format.",
+        "how": [
+          "Enter the character's name, age, and gender.",
+          "Specify the character's theme or style (e.g. Artist, Adventurer, Scholar, Athlete).",
+          "The model generates a vertical profile card with a UI frame, character stats, and matching full-body illustration.",
+          "Decorative stickers and icons are added to match the character's theme.",
+          "You can request color palette changes or additional personality traits after generation."
+        ],
+        "prompts": [
+          "Generate a kawaii character profile card for 'Luna', age 19, Female, Artist theme — pastel colors, watercolor cartoon style, smartphone UI layout with stat bars and full-body illustration.",
+          "Create a kawaii character profile card for 'Max', age 16, Male, Adventurer theme — cozy cartoon style, profile panel with personality traits, full-body character with speech bubble.",
+          "Design a kawaii profile card for 'Zoe', age 22, Female, Scholar theme — warm pastel palette, app-style UI with stats, whimsical sticker decorations, 4K vertical format."
+        ]
+      }
+    }
+  },
+  "template-figure-principles-infographic": {
+    "category": "Famous Figure Principles Infographic",
+    "description": "Generate a clean educational infographic poster about a famous figure's core principles or key concepts, featuring a watercolor portrait and structured grid layout.",
+    "title": "Nano Banana Prompt: Famous Figure Principles Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a structured infographic poster using Nano Banana prompts: a bold title header, a watercolor-style portrait of the famous figure with their signature object, and a grid of key principles — each with a line icon, title, description, and bullet points — on a clean white background in 4K vertical format.",
+        "who": "Perfect for educators, students, content creators, and anyone who wants to visualize the life philosophy or intellectual contributions of a historical or contemporary figure.",
+        "how": [
+          "Enter the name of a famous figure (e.g. Albert Einstein, Marie Curie, Sun Tzu).",
+          "The model identifies their most iconic principles or key concepts.",
+          "A watercolor portrait is rendered alongside a structured principles grid.",
+          "Each principle card includes an icon, title, description, and supporting bullet points.",
+          "You can request a different set of principles or a specific color palette after generation."
+        ],
+        "prompts": [
+          "Generate a principles infographic for Albert Einstein — watercolor portrait, grid of 6 core physics and life philosophy principles, clean white background, 4K vertical.",
+          "Create a key concepts infographic for Leonardo da Vinci — watercolor style portrait, grid layout of his art, science, and invention principles with icons and descriptions.",
+          "Design a principles poster for Sun Tzu — watercolor portrait with scroll, grid of 6 Art of War strategies with bullet points, minimalist layout, 4K vertical format."
+        ]
+      }
+    }
+  },
+  "template-book-recommendation-grid-poster": {
+    "category": "Book Recommendation Grid Poster",
+    "description": "Generate a clean 4×4 grid book recommendation poster for any book category, featuring 16 book cards with titles, authors, descriptions, and illustrated covers.",
+    "title": "Nano Banana Prompt: Book Recommendation Grid Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a structured book list poster using Nano Banana prompts: a bold category title, four subgenre tabs, and a 4×4 grid of 16 numbered book cards — each with book title, author, short description, and a small illustrated cover — on a clean white background in 4K vertical format.",
+        "who": "Perfect for book lovers, librarians, educators, social media book communities, and content creators who want to share curated reading lists visually.",
+        "how": [
+          "Enter a book category (e.g. Science Fiction Classics, Self-Improvement, Fantasy Adventures).",
+          "The model selects 16 representative books and organizes them into 4 subgenre groups.",
+          "Each book card shows the title, author, a 1–2 sentence description, and a small cover illustration.",
+          "Books are numbered with blue badges for easy reference.",
+          "You can request specific authors, time periods, or reading levels after generation."
+        ],
+        "prompts": [
+          "Generate a book recommendation grid poster for 'Science Fiction Classics' — 16 books in 4×4 grid, category tabs, numbered blue badges, clean white background, 4K vertical.",
+          "Create a 'Self-Improvement' book list poster — 16 books with title, author, short description and illustrated cover, 4 subgenre tabs, minimalist design, 4K vertical.",
+          "Design a 'Fantasy Adventures' book recommendation poster — 16 iconic fantasy books in grid layout, illustrated covers, bold typography, clean white background, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-organ-health-food-guide-infographic": {
+    "category": "Organ Health Food Guide",
+    "description": "Generate a vintage-style split-screen food guide infographic for any organ's health, showing harmful and beneficial foods with illustrated icons and cute cartoon organ mascots.",
+    "title": "Nano Banana Prompt: Organ Health Food Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a warm illustrated food guide poster using Nano Banana prompts: a split-screen layout with organ-strain foods on the left (red label) and organ-support foods on the right (green label), illustrated food icons, and two cartoon mascots of the organ showing negative and positive effects — all in a vintage parchment style, 4K vertical format.",
+        "who": "Perfect for health educators, nutritionists, wellness content creators, social media health accounts, and anyone who wants to share practical dietary guidance in a visually engaging way.",
+        "how": [
+          "Enter the target organ name (e.g. Brain, Heart, Liver, Lung, Stomach).",
+          "The model identifies foods that harm and foods that benefit that organ.",
+          "A split-screen poster is generated with clear red/green labels and illustrated food icons.",
+          "Cute cartoon mascots of the organ show emotional reactions to each food group.",
+          "You can request specific dietary conditions (e.g. diabetic-friendly, vegan) after generation."
+        ],
+        "prompts": [
+          "Generate a liver health food guide — split-screen with liver-strain foods (red) and liver-support foods (green), illustrated icons, cartoon liver mascots, vintage parchment style, 4K vertical.",
+          "Create a brain health food guide infographic — foods that harm vs benefit the brain, illustrated icons, cartoon brain mascots, warm illustrated style, vertical format.",
+          "Design a heart health food poster — split layout with heart-harmful and heart-healthy foods, organ mascots showing sad/happy reactions, vintage style, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Kids' English Vocabulary Flashcards",
+    "description": "Generate a colorful 3×3 grid of 9 cartoon-style English vocabulary flashcards for children, each with the word, phonetic transcription, a cheerful illustration, and Chinese translation.",
+    "title": "Nano Banana Prompt: Kids' English Vocabulary Flashcard Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vibrant 3×3 grid of 9 children's English vocabulary flashcards using Nano Banana prompts. Each card features the English word in bold, its phonetic transcription, a kawaii cartoon illustration, and the Chinese translation — all in a bright, playful style designed to make vocabulary learning fun and memorable for kids.",
+        "who": "Perfect for parents teaching children English, ESL teachers for young learners, children's educational content creators, language learning app designers, and anyone creating vocabulary materials for kids aged 4–12.",
+        "how": [
+          "Choose a vocabulary theme (e.g. Fruits, Animals, Vehicles, Weather, Colors).",
+          "The template generates 9 flashcards in a 3×3 grid, each with the English word, phonetic transcription, cartoon illustration, and Chinese translation.",
+          "Each card gets a colorful themed border matching the vocabulary category.",
+          "Request a different theme or age range to adjust the vocabulary difficulty.",
+          "Download and use the flashcard grid for print, classroom display, or digital learning."
+        ],
+        "prompts": [
+          "Generate a Fruits vocabulary flashcard grid — 9 cards with English word, phonetic transcription, cartoon fruit illustration, and Chinese translation. Bright colors, kawaii style, 4K vertical.",
+          "Create an Animals vocabulary flashcard grid — 9 animal cards with English names, phonetic transcription, cheerful cartoon illustrations, and Chinese translations. Playful bordered cards, 4K vertical.",
+          "Design a Weather vocabulary flashcard grid — 9 weather words with phonetic transcription, cute cartoon illustrations (sun, rain, snow, wind, cloud, storm, fog, rainbow, thunder), Chinese translations, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-language-word-comparison-educational-poster": {
+    "category": "Language Word Comparison Poster",
+    "description": "Generate a cute, kid-friendly educational poster comparing two similar words or grammar patterns with illustrated examples and clear explanations.",
+    "title": "Nano Banana Prompt: Language Word Comparison Educational Poster | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a fun, kawaii-style educational poster that compares two similar words or grammar points side by side. Using Nano Banana prompts, each card shows the word, its meaning, illustrated usage examples, and key differences — perfect for making confusing word pairs easy to understand.",
+        "who": "Ideal for language teachers, ESL educators, Chinese/Japanese/Korean language learners, educational content creators, and parents helping children distinguish similar vocabulary or grammar patterns.",
+        "how": [
+          "Enter the first word or grammar pattern (e.g. 的, just, their).",
+          "Enter the second word or grammar pattern to compare (e.g. 得, only, there).",
+          "The template generates a colorful side-by-side comparison poster with illustrated examples for each word.",
+          "Each panel shows usage rules, example sentences, and visual cues to reinforce the difference.",
+          "Download and use for classroom display, study materials, or social media educational posts."
+        ],
+        "prompts": [
+          "Create a word comparison poster for 的 vs 得 — side-by-side kawaii illustrations showing correct usage with example sentences, color-coded panels, 4K vertical.",
+          "Generate a grammar comparison poster for 'just' vs 'only' — illustrated examples with cute characters demonstrating each word's usage, bold labels, 4K vertical.",
+          "Design a vocabulary comparison poster for 'their' vs 'there' vs 'they're' — three-panel kawaii style, example sentences with visual highlights, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-world-travel-map-illustration-en": {
+    "category": "World Travel Map Illustration",
+    "description": "Generate a colorful, hand-drawn style travel guide map of any country, featuring landmarks, local cuisine, culture icons, and illustrated regions.",
+    "title": "Nano Banana Prompt: World Travel Map Illustration Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a stunning hand-drawn travel map illustration of any country using Nano Banana prompts. The map features regional highlights, famous landmarks, local food icons, cultural symbols, and illustrated terrain — styled like a vintage travel poster with rich colors and playful illustrations.",
+        "who": "Perfect for travel bloggers, tourism content creators, geography educators, social media influencers, travel agencies, and anyone creating beautiful country guides or travel inspiration posts.",
+        "how": [
+          "Enter the country name (e.g. Japan, Egypt, Brazil, United States).",
+          "The template generates a colorful hand-drawn map with regional landmarks, cuisine, and cultural icons.",
+          "Famous sites, natural wonders, and local specialties are illustrated across the map.",
+          "The style resembles a vintage travel illustration — warm colors, hand-lettered labels, decorative borders.",
+          "Download and use for travel blogs, social posts, classroom maps, or decorative prints."
+        ],
+        "prompts": [
+          "Generate a hand-drawn travel map of Japan — featuring Mount Fuji, cherry blossoms, sushi, temples, shinkansen, and regional landmarks, vintage illustration style, 4K vertical.",
+          "Create a colorful travel map of Egypt — pyramids, Nile River, pharaoh icons, local food, desert terrain, hand-drawn vintage style, 4K vertical.",
+          "Design a travel guide map of Brazil — Amazon rainforest, Rio de Janeiro, Carnival icons, local cuisine, football, vibrant illustrated style, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-east-asian-culture-comparison-infographic": {
+    "category": "East Asian Culture Comparison",
+    "description": "Generate a 3-column infographic comparing Chinese, Japanese, and Korean cultural etiquette or traditions for any topic — business, food, festivals, and more.",
+    "title": "Nano Banana Prompt: East Asian Culture Comparison Infographic | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a detailed 3-column cross-cultural comparison infographic using Nano Banana prompts. For any given topic, it compares Chinese, Japanese, and Korean customs side by side — covering etiquette rules, visual illustrations, cultural nuances, and practical tips. Great for education, travel prep, and cultural awareness content.",
+        "who": "Perfect for cultural educators, Asia travel content creators, international business professionals, students studying East Asian cultures, expats, and anyone creating cross-cultural comparison content for social media or educational use.",
+        "how": [
+          "Enter a cultural topic to compare (e.g. Business Card Exchange, Gift Giving, Tea Ceremony, Table Manners).",
+          "The template generates a 3-column layout comparing Chinese, Japanese, and Korean customs for that topic.",
+          "Each column features illustrated examples, key etiquette rules, and cultural context.",
+          "Color-coded columns and clear typography make differences easy to grasp at a glance.",
+          "Use for educational posts, travel prep, cultural sensitivity training, or social media infographics."
+        ],
+        "prompts": [
+          "Generate a 3-column East Asian etiquette comparison for Business Card Exchange — Chinese, Japanese, Korean customs illustrated side by side, cultural icons, 4K vertical.",
+          "Create a cultural comparison infographic for Gift Giving Traditions — how China, Japan, and Korea approach gift-giving, taboos and tips, illustrated, 4K vertical.",
+          "Design a Tea Culture comparison infographic — Chinese gongfu tea, Japanese matcha ceremony, Korean traditional tea, illustrated 3-column layout, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-watercolor-painting-tutorial-guide": {
+    "category": "Watercolor Painting Tutorial",
+    "description": "Generate a beautiful 4-step watercolor painting tutorial guide for any subject — roses, butterflies, landscapes — with illustrated steps and professional tips.",
+    "title": "Nano Banana Prompt: Watercolor Painting Tutorial Guide Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a stunning 4-step watercolor painting tutorial guide using Nano Banana prompts. Choose any subject and receive a professional step-by-step visual guide showing wet-on-wet techniques, color mixing, layering, and finishing details — all illustrated in authentic watercolor style with clear annotations.",
+        "who": "Perfect for watercolor enthusiasts, art teachers, beginner and intermediate painters, art journalers, craft content creators, and anyone sharing painting tutorials on Instagram, Pinterest, or YouTube.",
+        "how": [
+          "Enter the painting subject (e.g. Rose, Butterfly, Lemon, Sunset, Mountain).",
+          "The template generates a 4-step watercolor tutorial showing the progression from initial wash to finished painting.",
+          "Each step is illustrated with authentic watercolor textures and annotated with technique tips.",
+          "Color palettes, brush recommendations, and layering guidance are included.",
+          "Download and use as a tutorial post, art class handout, or inspiration for your own painting practice."
+        ],
+        "prompts": [
+          "Generate a 4-step watercolor tutorial for painting a Rose — initial sketch, first wash, petal layering, finishing details with color palette and technique tips, 4K vertical.",
+          "Create a watercolor painting tutorial for a Butterfly — wing pattern wash, color layering, veining details, background softening, illustrated steps, 4K vertical.",
+          "Design a watercolor tutorial for a Lemon — base wash, shadow glazing, highlight preservation, texture details, color palette annotations, 4K vertical."
+        ]
+      }
+    }
   }
 }

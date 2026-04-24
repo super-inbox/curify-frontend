@@ -1811,9 +1811,27 @@
     "title": "Guide de comparaison de posture | Nano Banana"
   },
   "template-personality-choice-quiz-card": {
-    "category": "Quiz de personnalité",
-    "description": "Générez une carte de quiz visuel sur la personnalité ou le style de vie pour n'importe quel thème.",
-    "title": "Générateur de quiz de personnalité | Nano Banana"
+    "category": "Carte Quiz de Personnalité",
+    "description": "Générez une carte quiz verticale de personnalité ou de style de vie avec 6 options de personnages photoréalistes en grille 2x3 pour des thèmes comme la carrière, le style, le type de corps ou l'ambiance.",
+    "title": "Nano Banana Prompt: Générateur de Carte Quiz de Choix de Personnalité | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche quiz de personnalité verticale percutante avec des prompts Nano Banana. Choisissez un thème et le genre du sujet pour générer une grille 2x3 de 6 portraits réalistes de personnages. Le design présente un fond sombre dramatique, un titre surligné en orange, des étiquettes colorées et une typographie 4K haute résolution.",
+        "who": "Idéal pour les créateurs de contenu lifestyle, les influenceurs, les passionnés de MBTI et psychologie, les designers d'applications quiz, et ceux qui créent des publications virales pour Instagram, TikTok ou Pinterest.",
+        "how": [
+          "Entrez un thème de quiz (p. ex. Carrière, Type de corps, Style, Ambiance, Passe-temps, Personnalité).",
+          "Spécifiez le genre du sujet (masculin ou féminin) pour correspondre aux portraits.",
+          "Le modèle génère 6 options de personnages distincts en grille 2x3 avec des portraits photoréalistes.",
+          "Chaque option reçoit une étiquette arrondie en gras avec des fonds codés par couleur (orange, gris, rouge).",
+          "Le fond sombre cinématique et l'éclairage professionnel créent une publication sociale à fort engagement."
+        ],
+        "prompts": [
+          "Générez une carte quiz Carrière avec 6 options féminines (PDG, Artiste, Athlète, Chef, Enseignante, Scientifique) en grille 2x3, fond sombre, titre orange, étiquettes colorées, 4K vertical.",
+          "Créez une carte quiz Style avec 6 options masculines (Streetwear, Formel, Décontracté, Vintage, Sportif, Minimaliste) en grille 2x3, éclairage cinématique, étiquettes en gras, 4K vertical.",
+          "Concevez une carte quiz Ambiance avec 6 options féminines (Esthétique, Dark Academia, Cottagecore, Y2K, Boho, Classique) en grille 2x3, fond sombre haute résolution, titre orange, 4K vertical."
+        ]
+      }
+    }
   },
   "template-3d-region-landmark-map": {
     "category": "Carte 3D",
@@ -1834,5 +1852,235 @@
     "category": "Carte Thematique Nationale",
     "description": "Generez une carte infographique minimaliste pour tout pays et theme — de Fabrique en Chine aux Marques d'Allemagne, avec logos et superpositions de localisation.",
     "title": "Infographie de Carte Thematique Nationale | Nano Banana"
+  },
+  "template-fandom-character-grid-poster": {
+    "category": "Poster Grille de Personnages Fandom",
+    "description": "Générez un poster vertical 4K en grille 3×3 avec 9 personnages iconiques de n'importe quel fandom — anime, fantasy, super-héros, jeux vidéo ou séries TV.",
+    "title": "Nano Banana Prompt: Générateur de Poster Grille Fandom | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée un poster premium de grille de personnages fandom : 9 personnages distincts en disposition 3×3, chacun dans un style portrait cinématographique avec décors iconiques, nom du personnage et étiquette de série, en 4K ultra HD.",
+        "who": "Idéal pour les créateurs de contenu fandom, les passionnés d'anime et de culture pop, les designers de réseaux sociaux et les pages de fans.",
+        "how": [
+          "Précisez le nom du fandom ou thème (ex. Naruto, Marvel, Harry Potter).",
+          "Le modèle sélectionnera 9 personnages iconiques et les rendra dans un style portrait cohérent.",
+          "Chaque personnage apparaît avec ses accessoires signature et une étiquette de nom en gras.",
+          "Le style s'adapte au fandom — anime pour les thèmes anime, réaliste pour les franchises en prises de vues réelles.",
+          "Après génération, vous pouvez demander des substitutions de personnages ou des ajustements de style."
+        ],
+        "prompts": [
+          "Génère un 'Poster Personnages Naruto' avec 9 personnages iconiques en grille 3×3, style portrait anime cinématographique, fond sombre, 4K vertical.",
+          "Crée un 'Poster Super-Héros Marvel' avec 9 Avengers en grille 3×3, style portrait réaliste, typographie en gras, fond sombre, 4K vertical.",
+          "Génère une 'Grille de Champions League of Legends' avec 9 champions populaires, art portrait fidèle au jeu, étiquettes nom et rôle, fond sombre atmosphérique, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-cartoon-character-profile-card-kawaii-style": {
+    "category": "Carte de Profil Kawaii",
+    "description": "Générez une carte de profil de personnage kawaii avec nom, âge, genre et thème. Mise en page UI de smartphone avec statistiques, illustration plein corps et autocollants décoratifs.",
+    "title": "Prompt Nano Banana : Générateur de Cartes de Profil Kawaii | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une carte de profil de personnage kawaii en utilisant les prompts Nano Banana : interface smartphone verticale avec panneau d'informations, illustration plein corps et autocollants décoratifs en aquarelle pastel.",
+        "who": "Idéal pour les créateurs de personnages, designers d'OC, fans d'art kawaii et créateurs de contenu sur les réseaux sociaux.",
+        "how": [
+          "Entrez le nom, l'âge et le genre du personnage.",
+          "Spécifiez le thème ou le style du personnage (ex. Artiste, Aventurier, Érudit).",
+          "Le modèle génère une carte verticale avec cadre UI, statistiques et illustration.",
+          "Des autocollants décoratifs assortis au thème sont ajoutés automatiquement.",
+          "Vous pouvez demander des changements de palette de couleurs après la génération."
+        ],
+        "prompts": [
+          "Génère une carte de profil kawaii pour 'Luna', 19 ans, féminin, thème Artiste — couleurs pastel, style aquarelle cartoon, UI smartphone avec barres de statistiques.",
+          "Crée une carte de profil kawaii pour 'Max', 16 ans, masculin, thème Aventurier — style cartoon chaleureux, panneau de personnalité, illustration complète avec bulle de dialogue.",
+          "Conçois une carte kawaii pour 'Zoe', 22 ans, féminin, thème Érudite — palette pastel chaleureuse, UI style app avec statistiques, autocollants fantaisistes, format vertical 4K."
+        ]
+      }
+    }
+  },
+  "template-figure-principles-infographic": {
+    "category": "Infographie des Principes de Personnages Célèbres",
+    "description": "Générez une affiche infographique éducative sur les principes fondamentaux d'une figure célèbre, avec portrait aquarelle et mise en page en grille structurée.",
+    "title": "Prompt Nano Banana : Générateur d'Infographies de Principes | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche infographique structurée : titre en gras, portrait aquarelle de la figure célèbre et grille de principes clés avec icône, titre, description et points, fond blanc, format vertical 4K.",
+        "who": "Idéal pour les éducateurs, étudiants et créateurs de contenu souhaitant visualiser la philosophie de vie de figures historiques ou contemporaines.",
+        "how": [
+          "Entrez le nom de la figure célèbre.",
+          "Le modèle identifie ses principes les plus emblématiques.",
+          "Un portrait aquarelle est généré avec une grille de principes.",
+          "Chaque carte inclut icône, titre, description et points clés.",
+          "Vous pouvez demander des principes ou palettes différents."
+        ],
+        "prompts": [
+          "Génère une infographie des principes d'Albert Einstein — portrait aquarelle, 6 principes de physique et philosophie, fond blanc, 4K vertical.",
+          "Crée une infographie de Léonard de Vinci — portrait aquarelle, grille art/science/invention avec icônes.",
+          "Conçois une affiche Sun Tzu — portrait aquarelle avec parchemin, 6 stratégies de l'Art de la Guerre, layout minimaliste, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-book-recommendation-grid-poster": {
+    "category": "Affiche de Recommandations de Livres",
+    "description": "Générez une affiche de recommandations de livres en grille 4×4 pour n'importe quelle catégorie, avec 16 cartes incluant titre, auteur, description et couverture illustrée.",
+    "title": "Prompt Nano Banana : Générateur d'Affiches de Recommandations de Livres | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche de liste de livres structurée : titre en gras, quatre onglets de sous-genre et une grille 4×4 de 16 cartes numérotées avec titre, auteur, description courte et couverture illustrée, fond blanc, format vertical 4K.",
+        "who": "Idéal pour les amateurs de livres, bibliothécaires, éducateurs et créateurs de contenu souhaitant partager des listes de lecture visuellement.",
+        "how": [
+          "Entrez une catégorie de livres.",
+          "Le modèle sélectionne 16 livres représentatifs en 4 sous-genres.",
+          "Chaque carte affiche titre, auteur, description et illustration de couverture.",
+          "Les livres sont numérotés avec des badges bleus.",
+          "Vous pouvez demander des auteurs ou périodes spécifiques après génération."
+        ],
+        "prompts": [
+          "Génère une affiche de recommandations 'Classiques de Science-Fiction' — 16 livres en grille 4×4, onglets de catégorie, badges bleus, fond blanc, 4K vertical.",
+          "Crée une affiche de livres 'Développement Personnel' — 16 livres avec titre, auteur et couverture illustrée, 4 onglets, design minimaliste.",
+          "Conçois une affiche 'Aventures Fantastiques' — 16 livres iconiques en grille, couvertures illustrées, typographie en gras, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-organ-health-food-guide-infographic": {
+    "category": "Guide Alimentaire pour la Santé des Organes",
+    "description": "Générez une infographie guide alimentaire vintage en écran partagé pour la santé de n'importe quel organe, avec aliments néfastes et bénéfiques, icônes illustrées et mascottes cartoon.",
+    "title": "Prompt Nano Banana : Générateur de Guides Alimentaires pour Organes | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche guide alimentaire illustrée chaleureuse : écran partagé avec aliments néfastes (étiquette rouge) et bénéfiques (étiquette verte), icônes alimentaires illustrées et deux mascottes cartoon de l'organe montrant réactions négatives et positives, style parchemin vintage, 4K vertical.",
+        "who": "Idéal pour les éducateurs en santé, nutritionnistes, créateurs de contenu bien-être et comptes santé sur les réseaux sociaux.",
+        "how": [
+          "Entrez le nom de l'organe cible.",
+          "Le modèle identifie les aliments nuisibles et bénéfiques.",
+          "Une affiche en écran partagé est générée avec icônes et étiquettes.",
+          "Des mascottes cartoon montrent les réactions émotionnelles.",
+          "Vous pouvez demander des conditions diététiques spécifiques."
+        ],
+        "prompts": [
+          "Génère un guide alimentaire pour le foie — écran partagé aliments néfastes (rouge) et bénéfiques (vert), icônes, mascottes foie, style parchemin vintage, 4K vertical.",
+          "Crée une infographie santé cérébrale — aliments qui nuisent vs bénéficient au cerveau, icônes illustrées, mascottes cartoon.",
+          "Conçois un poster santé cardiaque — aliments nuisibles et sains pour le cœur, mascottes avec réactions triste/heureux, style vintage, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-cartoon-english-vocabulary-flashcards": {
+    "category": "Flashcards de Vocabulaire Anglais pour Enfants",
+    "description": "Génère une grille 3×3 de 9 flashcards de vocabulaire anglais style dessin animé pour enfants, avec le mot, la transcription phonétique, une illustration et la traduction chinoise.",
+    "title": "Nano Banana Prompt : Générateur de Flashcards de Vocabulaire Anglais Enfants | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée 9 flashcards de vocabulaire anglais pour enfants en grille 3×3. Chaque carte comporte le mot anglais en gras, la transcription phonétique, une illustration kawaii et la traduction chinoise, dans un style coloré et ludique.",
+        "who": "Idéal pour les parents enseignant l'anglais, les enseignants ESL pour jeunes apprenants, les créateurs de contenu éducatif et les concepteurs d'apps de langues pour enfants de 4 à 12 ans.",
+        "how": [
+          "Choisissez un thème de vocabulaire (fruits, animaux, véhicules, météo, couleurs).",
+          "La grille 3×3 de 9 cartes est générée avec mot, phonétique, illustration et traduction.",
+          "Chaque carte a une bordure colorée thématique.",
+          "Changez de thème ou de niveau.",
+          "Téléchargez pour impression ou usage numérique."
+        ],
+        "prompts": [
+          "Génère une grille de flashcards Fruits — 9 cartes avec mot anglais, phonétique, illustration kawaii et traduction chinoise, 4K vertical.",
+          "Crée une grille de flashcards Animaux — 9 cartes avec noms anglais, phonétique, illustrations cartoon et traductions, 4K vertical.",
+          "Conçois une grille de flashcards Météo — 9 mots météo avec phonétique, illustrations kawaii et traductions chinoises, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-language-word-comparison-educational-poster": {
+    "category": "Affiche de Comparaison de Mots",
+    "description": "Générez une affiche éducative kawaii comparant deux mots similaires ou des points de grammaire avec des exemples illustrés.",
+    "title": "Nano Banana Prompt: Affiche Éducative de Comparaison de Mots | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche éducative style kawaii qui compare deux mots ou points de grammaire côte à côte. Chaque panneau montre le sens, des exemples illustrés et les différences clés.",
+        "who": "Idéal pour les professeurs de langues, les éducateurs ESL, les apprenants de chinois/japonais/coréen, les créateurs de contenu éducatif et les parents.",
+        "how": [
+          "Entrez le premier mot ou schéma grammatical.",
+          "Entrez le deuxième mot ou schéma à comparer.",
+          "Le modèle génère une affiche colorée de comparaison côte à côte avec des exemples illustrés.",
+          "Chaque panneau montre les règles d'utilisation et des exemples visuels.",
+          "Téléchargez pour l'affichage en classe ou les médias sociaux éducatifs."
+        ],
+        "prompts": [
+          "Créez une affiche de comparaison pour '的' vs '得' — illustrations kawaii côte à côte, phrases d'exemple, 4K vertical.",
+          "Générez une affiche de comparaison pour 'just' vs 'only' — personnages illustrés, étiquettes en gras, 4K vertical.",
+          "Concevez une affiche pour 'their' vs 'there' vs 'they're' — trois panneaux kawaii avec exemples visuels, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-world-travel-map-illustration-en": {
+    "category": "Illustration de Carte de Voyage Mondiale",
+    "description": "Générez une carte illustrée colorée style dessin à la main de n'importe quel pays avec des monuments, gastronomie locale et icônes culturelles.",
+    "title": "Nano Banana Prompt: Générateur d'Illustration de Carte de Voyage Mondiale | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une superbe illustration de carte de voyage dessinée à la main de n'importe quel pays. La carte présente des sites régionaux, monuments célèbres, icônes culinaires locales et symboles culturels dans un style d'affiche de voyage vintage.",
+        "who": "Parfait pour les blogueurs de voyage, créateurs de contenu touristique, éducateurs en géographie, influenceurs, agences de voyage et créateurs de guides de pays.",
+        "how": [
+          "Entrez le nom du pays (p. ex. Japon, Égypte, Brésil, États-Unis).",
+          "Le modèle génère une carte colorée avec monuments régionaux et icônes culturelles.",
+          "Sites célèbres et spécialités locales sont illustrés sur la carte.",
+          "Le style ressemble aux affiches de voyage vintage avec des couleurs chaudes.",
+          "Téléchargez pour blogs de voyage, posts sociaux ou impressions décoratives."
+        ],
+        "prompts": [
+          "Générez une carte de voyage du Japon — Mont Fuji, cerisiers, sushis, temples, shinkansen, style illustration vintage, 4K vertical.",
+          "Créez une carte colorée de l'Égypte — pyramides, Nil, pharaons, cuisine locale, désert, style vintage, 4K vertical.",
+          "Concevez une carte guide du Brésil — Amazonie, Rio, Carnaval, gastronomie, football, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-east-asian-culture-comparison-infographic": {
+    "category": "Infographie de Comparaison Culturelle d'Asie de l'Est",
+    "description": "Générez une infographie à 3 colonnes comparant l'étiquette ou les traditions culturelles chinoises, japonaises et coréennes pour n'importe quel sujet.",
+    "title": "Nano Banana Prompt: Infographie de Comparaison Culturelle d'Asie de l'Est | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une infographie de comparaison transculturelle à 3 colonnes. Pour tout sujet donné, il compare les coutumes chinoises, japonaises et coréennes côte à côte avec illustrations et conseils pratiques.",
+        "who": "Parfait pour les éducateurs culturels, créateurs de contenu sur l'Asie, professionnels des affaires internationales, étudiants des cultures est-asiatiques et créateurs de contenu de comparaison culturelle.",
+        "how": [
+          "Entrez un sujet culturel à comparer (p. ex. Échange de cartes de visite, Cadeaux, Cérémonie du thé).",
+          "Le modèle génère 3 colonnes comparant les coutumes chinoises, japonaises et coréennes.",
+          "Chaque colonne présente exemples illustrés et règles d'étiquette clés.",
+          "Les colonnes codées par couleur facilitent la compréhension.",
+          "Utilisez pour des posts éducatifs, préparation de voyage ou infographies sociales."
+        ],
+        "prompts": [
+          "Générez une comparaison d'étiquette pour l'échange de cartes de visite — coutumes chinoises, japonaises et coréennes, 4K vertical.",
+          "Créez une infographie des traditions de cadeaux — comparaison Chine, Japon, Corée, tabous et conseils, 4K vertical.",
+          "Concevez une infographie sur la culture du thé — thé chinois, matcha japonais, thé coréen, 3 colonnes illustrées, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-watercolor-painting-tutorial-guide": {
+    "category": "Guide Tutoriel de Peinture à l'Aquarelle",
+    "description": "Générez un beau guide tutoriel de peinture à l'aquarelle en 4 étapes pour n'importe quel sujet — roses, papillons, paysages — avec des étapes illustrées et des conseils professionnels.",
+    "title": "Nano Banana Prompt: Générateur de Guide Tutoriel de Peinture à l'Aquarelle | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée un superbe guide tutoriel de peinture à l'aquarelle en 4 étapes. Choisissez n'importe quel sujet et obtenez un guide visuel professionnel étape par étape avec techniques mouillé sur mouillé, mélange de couleurs et détails finaux.",
+        "who": "Parfait pour les amateurs d'aquarelle, professeurs d'art, peintres débutants et intermédiaires, créateurs de contenu artistique et tutoriels de peinture sur réseaux sociaux.",
+        "how": [
+          "Entrez le sujet à peindre (p. ex. Rose, Papillon, Citron, Coucher de soleil, Montagne).",
+          "Le modèle génère un tutoriel en 4 étapes de l'aquarelle initiale au tableau fini.",
+          "Chaque étape est illustrée avec de vraies textures d'aquarelle et des conseils de technique.",
+          "Palettes de couleurs et recommandations de pinceaux incluses.",
+          "Téléchargez pour des posts tutoriels, supports de cours ou inspiration picturale."
+        ],
+        "prompts": [
+          "Générez un tutoriel aquarelle en 4 étapes pour une Rose — esquisse, lavis initial, couches de pétales, détails finaux, 4K vertical.",
+          "Créez un tutoriel aquarelle pour un Papillon — lavis des ailes, couches de couleur, détails des nervures, 4K vertical.",
+          "Concevez un tutoriel aquarelle pour un Citron — lavis de base, glacis d'ombre, préservation des reflets, 4K vertical."
+        ]
+      }
+    }
   }
 }

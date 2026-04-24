@@ -135,7 +135,7 @@
     "generate": "生成",
     "copied": "已复制",
     "remix": "重混",
-    "downloadPack": "下载5包",
+    "downloadPack": "下载合集",
     "downloadingPack": "正在下载...",
     "batchDownloadFailed": "下载包失败。请再试一次。",
     "generating": "生成中...",
@@ -196,7 +196,8 @@
       "product": "产品与营销",
       "video": "视频",
       "lifestyle": "生活方式",
-      "language": "语言"
+      "language": "语言",
+      "travel": "旅行与文化"
     },
     "useCasesQuestion": "按使用场景探索：",
     "useCases": {
@@ -220,12 +221,12 @@
     },
     "for-parents": {
       "title": "家长",
-      "subtitle": "每天只需5分钟，帮助孩子学英语",
-      "description": "通过AI生成的词汇卡片和视频，让学习变得简单、直观、有趣。无需备课，无需搜索，直接学习。",
-      "bullet0": "双语词汇卡片",
-      "bullet1": "图文结合的视觉学习",
-      "bullet2": "短小的学习视频",
-      "bullet3": "即用型学习包"
+      "subtitle": "用有趣的AI视觉卡片，支持孩子全面成长",
+      "description": "从语言词汇到科学、艺术和健康习惯，探索适合各年龄段孩子的即用型视觉模板，让学习更有趣。无需备课。",
+      "bullet0": "语言与词汇卡片",
+      "bullet1": "科学、自然与历史视觉图",
+      "bullet2": "艺术、绘画与创意技能",
+      "bullet3": "运动、饮食与健康习惯"
     },
     "for-esl-learners": {
       "title": "ESL学习者",
@@ -244,6 +245,7 @@
       "bullet1": "使用角色与风格模板创作",
       "bullet2": "将图片配音配字幕转为视频",
       "bullet3": "批量下载并复用内容"
-    }
+    },
+    "learningMaterialsHeading": "学习资料"
   }
 }

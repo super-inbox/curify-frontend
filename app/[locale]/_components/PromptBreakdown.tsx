@@ -5,9 +5,11 @@ import { useMemo, useState } from "react";
 export default function PromptBreakdown({
   prompt,
   params,
+  collapsedMaxHeight = 220,
 }: {
   prompt: string;
   params: Record<string, any>;
+  collapsedMaxHeight?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -28,24 +30,13 @@ export default function PromptBreakdown({
 
   return (
     <div className="flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-      <div className="mb-4">
-        <p className="text-sm text-neutral-600">
-          Variables in{" "}
-          <span className="rounded border border-amber-200 bg-amber-50 px-1 py-0.5 font-mono text-xs text-amber-800">
-            {"{curly braces}"}
-          </span>{" "}
-          are replaced with your inputs.
-        </p>
-      </div>
-
-      <div className="flex-1 min-h-0">
+<div className="flex-1 min-h-0">
         <div
           className={[
             "rounded-2xl border border-neutral-100 bg-white p-4 font-mono text-sm leading-7 transition-all",
-            expanded
-              ? "h-auto"
-              : "h-full max-h-[220px] overflow-hidden",
+            expanded ? "h-auto" : "h-full overflow-hidden",
           ].join(" ")}
+          style={expanded ? undefined : { maxHeight: collapsedMaxHeight }}
         >
           {parts.map((part, i) => {
             const match = part.match(/^\{(.+)\}$/);

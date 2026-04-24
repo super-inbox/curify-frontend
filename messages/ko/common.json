@@ -135,7 +135,7 @@
     "generate": "생성",
     "copied": "복사됨",
     "remix": "리믹스",
-    "downloadPack": "5팩 다운로드",
+    "downloadPack": "팩 다운로드",
     "downloadingPack": "다운로드 중...",
     "batchDownloadFailed": "팩 다운로드에 실패했습니다. 다시 시도해 주세요.",
     "generating": "생성 중...",
@@ -196,7 +196,8 @@
       "product": "제품 & 마케팅",
       "video": "비디오 & 자막",
       "lifestyle": "라이프스타일 & 장소",
-      "language": "언어"
+      "language": "언어",
+      "travel": "여행 & 문화"
     },
     "useCasesQuestion": "사용 사례별 탐색:",
     "useCases": {
@@ -220,12 +221,12 @@
     },
     "for-parents": {
       "title": "부모용",
-      "subtitle": "하루 5분으로 자녀의 영어 학습 돕기",
-      "description": "AI로 생성된 단어 카드와 영상으로 학습을 쉽고 시각적으로 만드세요. 준비 없이. 검색 없이.",
-      "bullet0": "이중 언어 단어 카드",
-      "bullet1": "이미지를 활용한 시각적 학습",
-      "bullet2": "짧은 학습 영상",
-      "bullet3": "바로 쓸 수 있는 학습 팩"
+      "subtitle": "언어부터 과학, 예술까지 — AI 비주얼 카드로 배우세요",
+      "description": "언어와 어휘부터 과학, 미술, 건강 습관까지 — 모든 연령의 아이들을 위한 즉시 사용 가능한 비주얼 학습 템플릿을 탐색하세요. 준비 불필요.",
+      "bullet0": "언어 및 어휘 카드",
+      "bullet1": "과학, 자연, 역사 비주얼",
+      "bullet2": "미술, 드로잉, 창의 스킬",
+      "bullet3": "피트니스, 식습관, 건강 습관"
     },
     "for-esl-learners": {
       "title": "ESL 학습자용",
@@ -244,6 +245,7 @@
       "bullet1": "캐릭터 & 스타일 템플릿으로 제작",
       "bullet2": "이미지를 음성 & 자막 포함 영상으로 변환",
       "bullet3": "콘텐츠 일괄 다운로드 및 리믹스"
-    }
+    },
+    "learningMaterialsHeading": "학습 자료"
   }
 }

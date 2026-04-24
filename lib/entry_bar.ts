@@ -21,8 +21,13 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     path: "/topics/learning",
   },
   {
+    id: "travel",
+    emoji: "✈️",
+    path: "/topics/travel",
+  },
+  {
     id: "lifestyle",
-    emoji: "🌍",
+    emoji: "🌿",
     path: "/topics/lifestyle",
   },
   {
@@ -34,10 +39,5 @@ export const ENTRY_BAR_ITEMS: EntryBarItem[] = [
     id: "visual",
     emoji: "🎨",
     path: "/topics/design",
-  },
-  {
-    id: "video",
-    emoji: "🎬",
-    path: "/tools",
   },
 ];

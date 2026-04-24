@@ -39,9 +39,10 @@
       "learning",
       "science"
     ],
-    "rank_score": 80,
+    "rank_score": 82,
     "batch": true,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-evolution",
@@ -87,9 +88,12 @@
       "science",
       "isometric"
     ],
-    "rank_score": 80,
+    "rank_score": 81.4,
     "base_rank_score": 80,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-travel",
@@ -146,11 +150,10 @@
     "og_image": "/images/nano_insp_preview/template-travel-zh-xishuangbanna-prev.jpg",
     "legacy_id": "template-travel-zh",
     "topics": [
-      "lifestyle",
       "travel",
-      "cartoon"
+      "kawaii"
     ],
-    "rank_score": 80,
+    "rank_score": 80.4,
     "batch": true,
     "base_rank_score": 80,
     "allow_generation": true
@@ -192,7 +195,7 @@
       "learning",
       "architecture"
     ],
-    "rank_score": 80,
+    "rank_score": 80.4,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -294,8 +297,9 @@
       "character",
       "film"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80
+    "rank_score": 80.4,
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-recipe",
@@ -335,7 +339,7 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 80,
+    "rank_score": 80.8,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -402,8 +406,9 @@
     "topics": [
       "character"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80
+    "rank_score": 80.4,
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-weather",
@@ -439,15 +444,15 @@
     },
     "og_image": "/images/nano_insp_preview/template-weather-zh-beijing-prev.jpg",
     "topics": [
-      "lifestyle",
       "science",
       "travel",
       "city",
       "cartoon",
       "isometric"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80
+    "rank_score": 81,
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-education",
@@ -491,7 +496,8 @@
     "use_cases": [
       "for-marketers"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-hot-event-analysis",
@@ -565,7 +571,7 @@
       "learning",
       "trending"
     ],
-    "rank_score": 60,
+    "rank_score": 60.4,
     "use_cases": [
       "for-marketers"
     ],
@@ -610,11 +616,12 @@
     "og_image": "/images/nano_insp_preview/template-intangible-heritage-zh-anshun-opera-prev.jpg",
     "legacy_id": "template-intangible-heritage-zh",
     "topics": [
-      "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
-    "rank_score": 70,
-    "base_rank_score": 70
+    "rank_score": 70.2,
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-education-card",
@@ -654,12 +661,14 @@
       "science",
       "cartoon"
     ],
-    "rank_score": 80,
+    "rank_score": 80.6,
     "use_cases": [
       "for-marketers",
-      "for-creators"
+      "for-creators",
+      "for-parents"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-costume",
@@ -698,12 +707,13 @@
     "og_image": "/images/nano_insp_preview/template-costume-zh-ming-dynasty-dragon-robe-prev.jpg",
     "legacy_id": "template-costume-zh",
     "topics": [
-      "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
-    "rank_score": 80,
+    "rank_score": 80.8,
     "batch": true,
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-book-series",
@@ -743,12 +753,13 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 80,
+    "rank_score": 80.6,
     "use_cases": [
       "for-marketers",
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-word-scene",
@@ -817,7 +828,7 @@
       "language",
       "vocabulary"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
@@ -873,11 +884,12 @@
       }
     },
     "topics": [
-      "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
-    "rank_score": 1,
-    "base_rank_score": 1
+    "rank_score": 1.4,
+    "base_rank_score": 1,
+    "allow_generation": true
   },
   {
     "id": "template-dog-breed-retro-infographic",
@@ -962,9 +974,10 @@
       }
     },
     "topics": [
-      "lifestyle"
+      "learning",
+      "science"
     ],
-    "rank_score": 1,
+    "rank_score": 1.2,
     "base_rank_score": 1
   },
   {
@@ -1010,7 +1023,7 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 80,
+    "rank_score": 80.8,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1092,11 +1105,12 @@
     },
     "og_image": "/images/nano_insp_preview/template-solar-term-zh-dongzhi-prev.jpg",
     "topics": [
-      "learning",
-      "culture"
+      "culture",
+      "travel"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80
+    "rank_score": 81.6,
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-fruit",
@@ -1131,9 +1145,12 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 80,
+    "rank_score": 80.4,
     "base_rank_score": 80,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-what-if-history",
@@ -1249,7 +1266,8 @@
     "use_cases": [
       "for-creators"
     ],
-    "base_rank_score": 1
+    "base_rank_score": 1,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-animal",
@@ -1305,7 +1323,7 @@
       "mbti",
       "groups"
     ],
-    "rank_score": 80,
+    "rank_score": 80.4,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1382,11 +1400,12 @@
       "comparison",
       "ink"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "use_cases": [
       "for-creators"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-fashion-ecommerce",
@@ -1432,7 +1451,8 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "requires_image_upload": true
+    "requires_image_upload": true,
+    "allow_generation": true
   },
   {
     "id": "template-portrait-retouching-blueprint",
@@ -1544,7 +1564,7 @@
       "comparison",
       "cartoon"
     ],
-    "rank_score": 80,
+    "rank_score": 80.8,
     "base_rank_score": 80
   },
   {
@@ -1584,11 +1604,12 @@
     "og_image": "/images/nano_insp_preview/template-guofeng-scroll-zh-chinese-figure-water-margin-prev.jpg",
     "legacy_id": "template-guofeng-scroll-zh",
     "topics": [
-      "lifestyle",
-      "culture"
+      "culture",
+      "travel"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80
+    "rank_score": 80.4,
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-species-science",
@@ -1636,7 +1657,10 @@
     ],
     "rank_score": 80,
     "base_rank_score": 80,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-city-miniature",
@@ -1679,11 +1703,10 @@
     "og_image": "/images/nano_insp_preview/template-city-miniature-zh-shanghai-prev.jpg",
     "legacy_id": "template-city-miniature-zh",
     "topics": [
-      "lifestyle",
       "travel",
       "city"
     ],
-    "rank_score": 80,
+    "rank_score": 81.2,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1731,7 +1754,7 @@
       "learning",
       "trending"
     ],
-    "rank_score": 70,
+    "rank_score": 70.4,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -1882,7 +1905,7 @@
       "groups",
       "cartoon"
     ],
-    "rank_score": 80,
+    "rank_score": 81.6,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -1918,7 +1941,7 @@
       "film",
       "isometric"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1948,7 +1971,7 @@
       "mbti",
       "sports"
     ],
-    "rank_score": 100,
+    "rank_score": 102.8,
     "base_rank_score": 100,
     "allow_generation": true
   },
@@ -1979,7 +2002,7 @@
       "ai",
       "isometric"
     ],
-    "rank_score": 80,
+    "rank_score": 80.4,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -2058,7 +2081,8 @@
       "comparison"
     ],
     "rank_score": 1,
-    "base_rank_score": 1
+    "base_rank_score": 1,
+    "allow_generation": true
   },
   {
     "id": "template-mbti-naruto",
@@ -2121,7 +2145,7 @@
       "mbti",
       "film"
     ],
-    "rank_score": 70,
+    "rank_score": 70.4,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -2151,7 +2175,7 @@
       "mbti",
       "film"
     ],
-    "rank_score": 100,
+    "rank_score": 101.2,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -2223,7 +2247,7 @@
     "topics": [
       "language",
       "vocabulary",
-      "cartoon"
+      "kawaii"
     ],
     "batch": true,
     "rank_score": 80,
@@ -2300,7 +2324,7 @@
       "learning",
       "trending"
     ],
-    "rank_score": 70,
+    "rank_score": 70.6,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -2371,7 +2395,7 @@
     "topics": [
       "language",
       "expressions",
-      "cartoon"
+      "kawaii"
     ],
     "batch": true,
     "rank_score": 80,
@@ -2442,7 +2466,7 @@
     "og_image": "/images/nano_insp_preview/template-english-error-correction-preposition-mistakes-prev.jpg",
     "topics": [
       "language",
-      "cartoon"
+      "kawaii"
     ],
     "batch": true,
     "rank_score": 80,
@@ -2516,7 +2540,7 @@
     "topics": [
       "language",
       "dialogue",
-      "cartoon"
+      "kawaii"
     ],
     "rank_score": 80,
     "use_cases": [
@@ -2549,9 +2573,9 @@
     "topics": [
       "lifestyle",
       "film",
-      "cartoon"
+      "kawaii"
     ],
-    "rank_score": 80,
+    "rank_score": 80.8,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -2588,13 +2612,12 @@
     },
     "og_image": "/images/nano_insp_preview/template-series-travel-russia-01-prev.jpg",
     "topics": [
-      "lifestyle",
       "travel",
-      "cartoon",
       "kawaii"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80
+    "rank_score": 80.4,
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-fat-loss-plan",
@@ -2708,10 +2731,9 @@
     "topics": [
       "lifestyle",
       "fitness",
-      "cartoon",
       "kawaii"
     ],
-    "rank_score": 1,
+    "rank_score": 1.2,
     "base_rank_score": 1
   },
   {
@@ -2763,7 +2785,6 @@
     "og_image": "/images/nano_insp_preview/template-child-hobby-skill--6yo-boy-prev.jpg",
     "topics": [
       "learning",
-      "cartoon",
       "kawaii"
     ],
     "rank_score": 2,
@@ -2794,7 +2815,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-detailed-vocab-flashcard-dog-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "topics": [
       "language",
       "vocabulary"
@@ -2803,7 +2824,8 @@
       "for-parents",
       "for-esl-learners"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-custom-character-card",
@@ -2884,7 +2906,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-custom-character-card--prev.jpg",
-    "rank_score": 2,
+    "rank_score": 2.4,
     "topics": [
       "character",
       "mbti"
@@ -2947,11 +2969,10 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-children-english-vocab-spelling-weather-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.4,
     "topics": [
       "language",
       "vocabulary",
-      "cartoon",
       "kawaii"
     ],
     "use_cases": [
@@ -2983,11 +3004,10 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-daily-essentials-learning-card-school-supplies-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "topics": [
       "language",
       "vocabulary",
-      "cartoon",
       "kawaii"
     ],
     "base_rank_score": 80,
@@ -3015,12 +3035,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-native-english-expressions-time-related-preview.jpg",
-    "rank_score": 50,
+    "rank_score": 50.2,
     "topics": [
       "language",
       "expressions",
       "language-english",
-      "cartoon",
       "kawaii"
     ],
     "base_rank_score": 50,
@@ -3049,7 +3068,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-theme-overview-poster-tcm-clearing-heat-herbs-prev.jpg",
-    "rank_score": 100,
+    "rank_score": 101.6,
     "topics": [
       "lifestyle"
     ],
@@ -3078,7 +3097,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg",
-    "rank_score": 100,
+    "rank_score": 104,
     "topics": [
       "language",
       "food",
@@ -3086,7 +3105,10 @@
       "photorealistic"
     ],
     "base_rank_score": 100,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-industrial-design-concept-sketch",
@@ -3109,9 +3131,10 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-industrial-design-concept-sketch-humanoid-robot-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 50.2,
     "topics": [
-      "design"
+      "design",
+      "monochrome"
     ],
     "base_rank_score": 50,
     "allow_generation": true
@@ -3139,7 +3162,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-varieties-food-poster-salad-prev.jpg",
-    "rank_score": 100,
+    "rank_score": 101.2,
     "topics": [
       "lifestyle",
       "food",
@@ -3172,15 +3195,18 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-warmup-routine-gym-prev.jpg",
-    "rank_score": 90,
+    "rank_score": 90.4,
     "base_rank_score": 90,
     "topics": [
       "lifestyle",
       "fitness",
-      "cartoon",
-      "kawaii"
+      "kawaii",
+      "guides"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-group-vocab-category",
@@ -3205,13 +3231,12 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg",
-    "rank_score": 90,
+    "rank_score": 90.8,
     "base_rank_score": 90,
     "topics": [
       "language",
       "vocabulary",
       "language-english",
-      "cartoon",
       "kawaii"
     ],
     "allow_generation": true
@@ -3240,12 +3265,11 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-city-mbti-beijing-prev.jpg",
-    "rank_score": 70,
+    "rank_score": 70.8,
     "base_rank_score": 70,
     "topics": [
       "character",
       "mbti",
-      "cartoon",
       "kawaii"
     ],
     "allow_generation": true
@@ -3272,13 +3296,12 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-clothing-evolution-poster--prev.jpg",
-    "rank_score": 90,
+    "rank_score": 91.6,
     "base_rank_score": 90,
     "topics": [
-      "learning",
       "culture",
-      "cartoon",
-      "kawaii"
+      "kawaii",
+      "travel"
     ],
     "allow_generation": true
   },
@@ -3316,7 +3339,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-soft-decoration-design-guide-poster-en-preview.jpg",
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "topics": [
       "interior",
@@ -3348,7 +3371,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-home-organization-before-after-living-room-shelf-prev.jpg",
-    "rank_score": 90,
+    "rank_score": 91.4,
     "base_rank_score": 90,
     "topics": [
       "interior",
@@ -3386,7 +3409,6 @@
       "language",
       "vocabulary",
       "language-english",
-      "cartoon",
       "kawaii"
     ],
     "allow_generation": true
@@ -3422,7 +3444,7 @@
       "photorealistic"
     ],
     "base_rank_score": 80,
-    "rank_score": 80,
+    "rank_score": 82,
     "allow_generation": true
   },
   {
@@ -3455,7 +3477,7 @@
       "learning"
     ],
     "base_rank_score": 70,
-    "rank_score": 70,
+    "rank_score": 70.2,
     "allow_generation": true
   },
   {
@@ -3483,49 +3505,34 @@
     "topics": [
       "mbti",
       "culture",
-      "ink"
+      "ink",
+      "travel"
     ],
     "base_rank_score": 70,
-    "rank_score": 70
+    "rank_score": 70.4,
+    "allow_generation": true
   },
   {
     "id": "template-friends-character-mbti",
     "locales": {
       "en": {
-        "base_prompt": "（Friends Character MBTI Poster Designer）You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge \"{mbti_type}\", Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
+        "base_prompt": "(Friends Character MBTI Poster Designer) You are a professional Friends character MBTI infographic designer, specializing in creating cute, kawaii-style character personality posters for the TV show Friends. Based on the user-specified {character_name}, first determine their MBTI personality type from their well-known traits, behaviors, and storylines from the show. Include a brief 1-2 sentence reasoning that explains why this MBTI type fits the character. Then generate a vertical 3:4 premium character MBTI poster, matching the vibrant, cartoon aesthetic of the reference images. Layout: 1. Header: Large bold title \"{character_name}\", prominent MBTI type badge with the determined type, short MBTI reasoning line below the badge, Curify watermark at bottom right. 2. Main Illustration: Cute chibi cartoon of {character_name} with signature props, iconic items, and famous quote speech bubbles. 3. Bottom: Personality title banner, character description paragraph, key personality trait tags. Style: Vibrant theme-matching background, kawaii chibi art, bright colors, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {character_name} MBTI personality poster for Friends TV show.",
         "parameters": [
           {
             "name": "character_name",
             "label": "Character Name",
             "type": "text",
             "placeholder": [
+              "Chandler Bing",
+              "Joey Tribbiani",
+              "Ross Geller",
+              "Monica Geller",
+              "Rachel Green",
+              "Phoebe Buffay",
               "Gunther",
-              "Richard Burke",
               "Janice Litman-Goralnik",
               "Mike Hannigan",
-              "Monica Geller",
-              "Phoebe Buffay",
-              "Rachel Green",
-              "Ross Geller",
-              "Joey Tribbiani",
-              "Chandler Bing"
-            ]
-          },
-          {
-            "name": "mbti_type",
-            "label": "MBTI Type",
-            "type": "text",
-            "placeholder": [
-              "ISFJ",
-              "INFJ",
-              "ESFJ",
-              "ISFP",
-              "ESTJ",
-              "INFP",
-              "ESFP",
-              "INTJ",
-              "ESFP",
-              "ENTP"
+              "Richard Burke"
             ]
           }
         ]
@@ -3533,13 +3540,14 @@
     },
     "og_image": "/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg",
     "topics": [
+      "character",
       "mbti",
       "film",
-      "cartoon",
       "kawaii"
     ],
     "base_rank_score": 90,
-    "rank_score": 90
+    "rank_score": 93.4,
+    "allow_generation": true
   },
   {
     "id": "template-poetry-ink-wash-illustration",
@@ -3564,10 +3572,11 @@
     "topics": [
       "culture",
       "design",
-      "ink"
+      "ink",
+      "travel"
     ],
     "base_rank_score": 90,
-    "rank_score": 90,
+    "rank_score": 91.2,
     "allow_generation": true
   },
   {
@@ -3594,10 +3603,10 @@
     "topics": [
       "finance",
       "lifestyle",
-      "cartoon"
+      "kawaii"
     ],
     "base_rank_score": 90,
-    "rank_score": 90,
+    "rank_score": 90.8,
     "allow_generation": true
   },
   {
@@ -3629,7 +3638,7 @@
       "photorealistic"
     ],
     "base_rank_score": 90,
-    "rank_score": 90,
+    "rank_score": 91,
     "allow_generation": true
   },
   {
@@ -3720,12 +3729,14 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-pain-relief-infographic-back-pain-yoga-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "topics": [
       "lifestyle",
-      "fitness"
-    ]
+      "fitness",
+      "guides"
+    ],
+    "allow_generation": true
   },
   {
     "id": "template-equipment-muscle-guide",
@@ -3753,7 +3764,8 @@
     "base_rank_score": 90,
     "topics": [
       "lifestyle",
-      "fitness"
+      "fitness",
+      "guides"
     ],
     "allow_generation": true
   },
@@ -3781,13 +3793,16 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "topics": [
       "language",
       "vocabulary"
     ],
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-beauty-step-by-step-guide",
@@ -3811,12 +3826,13 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-beauty-step-by-step-guide-hairstyle-tutorial-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "topics": [
       "lifestyle",
       "fashion",
-      "cartoon"
+      "cartoon",
+      "guides"
     ],
     "allow_generation": true
   },
@@ -3844,12 +3860,11 @@
     },
     "og_image": "/images/nano_insp_preview/template-3d-region-landmark-map-egypt-prev.jpg",
     "topics": [
-      "lifestyle",
       "travel",
       "architecture",
       "photorealistic"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -3876,11 +3891,10 @@
     },
     "og_image": "/images/nano_insp_preview/template-whimsical-travel-map-thailand-prev.jpg",
     "topics": [
-      "lifestyle",
       "travel",
       "cartoon"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -3910,7 +3924,7 @@
       "character",
       "film"
     ],
-    "rank_score": 90,
+    "rank_score": 90.4,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -3941,7 +3955,8 @@
     "og_image": "/images/nano_insp_preview/template-training-muscle-equipment-arm-day-prev.jpg",
     "topics": [
       "lifestyle",
-      "fitness"
+      "fitness",
+      "guides"
     ],
     "rank_score": 70,
     "base_rank_score": 70,
@@ -3975,15 +3990,18 @@
       "lifestyle",
       "fitness"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ]
   },
   {
     "id": "template-personality-choice-quiz-card",
     "locales": {
       "en": {
-        "base_prompt": "(Personality & Lifestyle Quiz Card Designer) You are a professional quiz card designer. Based on the user-specified {theme} and {gender}, generate a vertical personality/choice quiz poster, matching the clean, high-contrast style of the reference images. Layout: 1. Header: Large bold title \"WHICH {theme.upper()} SUITS YOU?\", with the theme keyword highlighted in orange. Curify watermark at top left. 2. Grid Layout: 6 character options arranged in 2×3 grid, each with a realistic photo-style portrait of a {gender} person in a theme-specific outfit/scenario. 3. Labels: Each option has a rounded label below with its name, using color-coded backgrounds (orange, gray, red). Style: Dark moody background with subtle city/setting details, professional lighting, high contrast text, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Personality Quiz Card for {gender}.",
+        "base_prompt": "(Personality & Lifestyle Quiz Card Designer) You are a professional quiz card designer. Based on the user-specified {theme} and {gender}, generate a vertical personality/choice quiz poster, matching the clean, high-contrast style of the reference images. Layout: 1. Header: Large bold title \"WHICH {theme} SUITS YOU?\", with the theme keyword highlighted in orange. Curify watermark at top left. 2. Grid Layout: 6 character options arranged in 2×3 grid, each with a realistic photo-style portrait of a {gender} person in a theme-specific outfit/scenario. 3. Labels: Each option has a rounded label below with its name, using color-coded backgrounds (orange, gray, red). Style: Dark moody background with subtle city/setting details, professional lighting, high contrast text, vertical format, 4K ultra HD, direct image generation. Subject: {theme} Personality Quiz Card for {gender}.",
         "parameters": [
           {
             "name": "theme",
@@ -4013,10 +4031,12 @@
     "og_image": "/images/nano_insp_preview/template-personality-choice-quiz-card-female-body-types-prev.jpg",
     "topics": [
       "character",
-      "mbti"
+      "mbti",
+      "groups"
     ],
-    "rank_score": 70,
-    "base_rank_score": 70
+    "rank_score": 72.6,
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-lifestyle-info-card",
@@ -4042,9 +4062,10 @@
     },
     "og_image": "/images/nano_insp_preview/template-lifestyle-info-card-coffee-brewing-guide-prev.jpg",
     "topics": [
-      "lifestyle"
+      "lifestyle",
+      "guides"
     ],
-    "rank_score": 70,
+    "rank_score": 71.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -4076,7 +4097,7 @@
       "learning",
       "history"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -4119,8 +4140,9 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 70,
-    "base_rank_score": 70
+    "rank_score": 70.8,
+    "base_rank_score": 70,
+    "allow_generation": true
   },
   {
     "id": "template-fandom-character-grid-poster",
@@ -4147,9 +4169,12 @@
     "topics": [
       "character",
       "film",
-      "cartoon"
+      "cartoon",
+      "groups"
     ],
-    "rank_score": 70
+    "rank_score": 70.6,
+    "allow_generation": true,
+    "base_rank_score": 70
   },
   {
     "id": "template-cartoon-character-profile-card-kawaii-style",
@@ -4208,13 +4233,14 @@
     "og_image": "/images/nano_insp_preview/template-cartoon-character-profile-card-kawaii-style-adventurer-max-prev.jpg",
     "topics": [
       "character",
-      "cartoon",
-      "kawaii"
+      "kawaii",
+      "portrait"
     ],
-    "rank_score": 70
+    "rank_score": 70.6,
+    "base_rank_score": 70
   },
   {
-    "id": "template-cute-english-vocabulary-flashcards",
+    "id": "template-cartoon-english-vocabulary-flashcards",
     "locales": {
       "en": {
         "base_prompt": "(Kids' English Vocabulary Flashcard Designer) You are a professional children's educational illustrator. Based on the user-specified {theme}, generate a vertical 3×3 grid of 9 vocabulary flashcards, matching the playful, colorful cartoon style of the reference images. Layout: 1. Each flashcard has a colorful border themed to the vocabulary (e.g., fruits, vehicles, weather). 2. Inside each card: - Top: The English word in large bold font, with phonetic transcription below. - Middle: A cheerful, kid-friendly cartoon illustration of the word (with anthropomorphic characters or simple scenes). - Bottom: The Chinese translation and part of speech. 3. Curify watermark at top left. Style: Bright, saturated colors, whimsical cartoon art, clear typography, playful borders, safe and positive for children, vertical format, 4K ultra HD, direct image generation. Subject: {theme} English Vocabulary Flashcards.",
@@ -4239,9 +4265,238 @@
     "topics": [
       "language",
       "vocabulary",
-      "cartoon",
       "kawaii"
     ],
-    "rank_score": 70
+    "rank_score": 70.4,
+    "allow_generation": true,
+    "use_cases": [
+      "for-parents"
+    ],
+    "base_rank_score": 70
+  },
+  {
+    "id": "template-figure-principles-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Famous Figure Principles Infographic Designer) You are a professional educational infographic designer. Based on the user-specified {famous_figure}, generate a clean, structured infographic poster about their core principles or key concepts, matching the watercolor portrait style of the reference images. Layout: 1. Large bold title \"{famous_figure}'S [THEME]\" at the top, with Curify watermark at top left. 2. Left/Top section: Watercolor-style portrait of {famous_figure} with their signature object. 3. Grid layout of key principles/concepts, each with a simple line icon, title, description, and bullet points. Style: Clean minimalist layout, white background, professional typography, watercolor illustration style, high readability, vertical format, 4K ultra HD, direct image generation. Subject: {famous_figure} Core Principles Infographic.",
+        "parameters": [
+          {
+            "name": "famous_figure",
+            "label": "Famous Figure Name",
+            "type": "text",
+            "placeholder": [
+              "Albert Einstein",
+              "Leonardo da Vinci",
+              "Marie Curie",
+              "William Shakespeare",
+              "Steve Jobs",
+              "Sun Tzu"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-figure-principles-infographic-albert-einstein-prev.jpg",
+    "topics": [
+      "history",
+      "science",
+      "learning",
+      "reading"
+    ],
+    "rank_score": 90.6,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-book-recommendation-grid-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Book Recommendation Poster Designer) You are a professional book list infographic designer. Based on the user-specified {book_category}, generate a clean, structured 4×4 grid book recommendation poster, matching the reference style. Layout: 1. Large bold title \"{book_category.upper()}\" at the top, with Curify watermark at top left. 2. Four category tabs at the top (e.g., subgenres). 3. 4×4 grid of 16 book cards, each with book title, author, short description, and small book cover illustration. 4. Numbered blue badges for each book. Style: Clean minimalist design, white background, clear typography, subtle icons, vertical format, 4K ultra HD, direct image generation. Subject: {book_category} Recommended Books Grid Poster.",
+        "parameters": [
+          {
+            "name": "book_category",
+            "label": "Book Category",
+            "type": "text",
+            "placeholder": [
+              "Science Fiction Classics",
+              "Self-Improvement",
+              "Fantasy Adventures",
+              "Historical Fiction",
+              "Mystery & Thriller"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-book-recommendation-grid-poster-fantasy-adventures-prev.jpg",
+    "topics": [
+      "culture",
+      "reading",
+      "travel"
+    ],
+    "rank_score": 91.2,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-organ-health-food-guide-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Organ Health Food Guide Infographic Designer) You are a professional health infographic designer. Based on the user-specified {organ}, generate a vertical, split-screen food guide poster for {organ} health, matching the warm, illustrated style of the reference images. Layout: 1. Header: Banner title \"{organ.upper()} HEALTH & FUNCTION\" with an illustration of the organ. Curify watermark at top left. 2. Split Layout: Left side labeled \"{organ.upper()}-STRAIN FOODS\" (red label) showing foods that harm {organ} with icons. Right side labeled \"{organ.upper()}-SUPPORT FOODS\" (green label) showing foods that benefit {organ} with icons. 3. Bottom: Two cartoon mascots of {organ}, one showing negative effects (sad/stressed) and one showing positive effects (happy/strong). Style: Vintage parchment background, warm illustrated icons, clear labels, vertical format, 4K ultra HD, direct image generation. Subject: {organ} Health Food Guide.",
+        "parameters": [
+          {
+            "name": "organ",
+            "label": "Target Organ Name",
+            "type": "text",
+            "placeholder": [
+              "Brain",
+              "Heart",
+              "Liver",
+              "Lung",
+              "Stomach"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-organ-health-food-guide-infographic-stomach-prev.jpg",
+    "topics": [
+      "fitness",
+      "lifestyle",
+      "science",
+      "guides"
+    ],
+    "rank_score": 91,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-language-word-comparison-educational-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Language Learning Word Comparison Poster Designer) You are a fun educational poster illustrator. Based on the user-specified pair {word1} vs {word2}, generate a cute, kid-friendly comparison poster explaining their usage differences, matching the reference style. Layout: 1. Large title \"{word1.upper()} vs {word2.uclean()}\" at the top, with a short subtitle explaining their core difference. 2. Two-column layout, each column with a distinct pastel color. 3. Each column includes: large character/pinyin, part of speech label, usage rule, example sentence with translation, and a matching cute animal illustration. 4. Bottom row of speech bubble examples with simple icons. Style: Warm cream background, whimsical cartoon animals, clear bilingual text, colorful frames, sparkles and star decorations, vertical format, 4K ultra HD, direct image generation. Subject: {word1} vs {word2} Usage Comparison Poster.",
+        "parameters": [
+          {
+            "name": "word1",
+            "label": "First Word to Compare",
+            "type": "text",
+            "placeholder": [
+              "的",
+              "就",
+              "在",
+              "都",
+              "会"
+            ]
+          },
+          {
+            "name": "word2",
+            "label": "Second Word to Compare",
+            "type": "text",
+            "placeholder": [
+              "得",
+              "才",
+              "正在",
+              "也",
+              "能"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-language-word-comparison-educational-poster-dou-ye-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "kawaii"
+    ],
+    "rank_score": 80.2,
+    "base_rank_score": 80
+  },
+  {
+    "id": "template-world-travel-map-illustration-en",
+    "locales": {
+      "en": {
+        "base_prompt": "(Country Travel Map Illustrator) You are a professional travel map illustrator. Based on the user-specified {country}, generate a colorful, hand-drawn travel guide map of {country}, matching the reference style. Layout: 1. Header: Decorative title with {country} nickname, country name, and \"Travel Guide\" banner. Curify watermark at top left. 2. Map: Simplified illustrated map of {country}, with state/region borders, key cities marked with dotted lines, and small text labels. 3. Icons: Scattered illustrations of iconic landmarks, local food, wildlife, and culture relevant to {country}. Style: Soft watercolor background, cute cartoon icons, clear typography, vertical format, 4K ultra HD, direct image generation. Subject: Illustrated Travel Map of {country}.",
+        "parameters": [
+          {
+            "name": "country",
+            "label": "Country Name",
+            "type": "text",
+            "placeholder": [
+              "United States",
+              "China",
+              "Egypt",
+              "Germany",
+              "Greece",
+              "Russia"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-world-travel-map-illustration-united-states-prev.jpg",
+    "topics": [
+      "travel"
+    ],
+    "rank_score": 80,
+    "base_rank_score": 80
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(East Asian Culture Comparison Infographic Designer) You are a professional cross-cultural etiquette illustrator. Based on the user-specified {topic}, generate a 3-column comparison infographic of {topic} traditions in Japan, Korea, and China, matching the clean, educational cartoon style of the reference images. Layout: 1. Header: Bold title \"{topic.upper()} TRADITIONS\" with Curify watermark at top left. 2. Three-column layout, each column for one country (Japan in blue, Korea in green, China in red). 3. Each column has 3 rows of illustrations and text explaining key steps/elements of the tradition, with bilingual labels. 4. Footer: A short summary about shared cultural values. Style: Simple flat cartoon illustrations, clear typography, distinct color coding for each country, vertical format, 4K ultra HD, direct image generation. Subject: {topic} Traditions in Japan, Korea, and China.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Cultural Topic/Tradition",
+            "type": "text",
+            "placeholder": [
+              "Business Card Exchange Etiquette",
+              "Gift Giving Traditions",
+              "Tea Culture Traditions",
+              "Wedding Traditions"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-wedding-traditions-prev.jpg",
+    "topics": [
+      "culture",
+      "travel"
+    ],
+    "rank_score": 91.8,
+    "base_rank_score": 90
+  },
+  {
+    "id": "template-watercolor-painting-tutorial-guide",
+    "locales": {
+      "en": {
+        "base_prompt": "(Watercolor Painting Tutorial Designer) You are a professional watercolor artist and art instructor. Based on the user-specified {subject}, generate a 4-step watercolor painting tutorial guide, matching the clean, educational style of the reference images. Layout: 1. Curify watermark at top left. 2. Four-step grid layout (2×2) showing the painting process: Step 1 (Base Wash/Light Base), Step 2 (Building Form/Texture), Step 3 (Adding Depth/Details), Step 4 (Final Touches/Complete Scene). 3. Central sketch diagram showing key form/shadow anatomy. 4. Small color swatches with paint names for each step. Style: White textured watercolor paper background, soft watercolor illustrations, clear labels and arrows, vertical format, 4K ultra HD, direct image generation. Subject: Watercolor Painting Tutorial for {subject}.",
+        "parameters": [
+          {
+            "name": "subject",
+            "label": "Object/Subject Name",
+            "type": "text",
+            "placeholder": [
+              "Rose",
+              "Butterfly",
+              "Lemon",
+              "Mushrooms",
+              "Peach"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-watercolor-painting-tutorial-guide-mushrooms-prev.jpg",
+    "topics": [
+      "learning",
+      "design",
+      "watercolor"
+    ],
+    "rank_score": 90.4,
+    "base_rank_score": 90,
+    "use_cases": [
+      "for-parents"
+    ]
   }
 ]
