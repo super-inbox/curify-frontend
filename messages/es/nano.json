@@ -2082,5 +2082,71 @@
         ]
       }
     }
+  },
+  "template-personal-journey-wolf-path-illustration": {
+    "category": "Ilustracion Motivacional",
+    "description": "Crea ilustraciones motivacionales en tinta de un protagonista-lobo superando obstaculos en su camino hacia una meta personal.",
+    "title": "Nano Banana Prompt: Ilustrador del Camino del Lobo | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera poderosas ilustraciones en blanco y negro en estilo pluma y tinta, mostrando un lobo caminando por un camino de piedra hacia su meta, rodeado de lobos-obstaculo.",
+        "who": "Adecuado para entrenadores de fitness, coaches de vida, creadores de contenido motivacional y marcas de bienestar.",
+        "how": [
+          "Elige un tema (p. ej., Fitness, Carrera, Finanzas).",
+          "El protagonista camina por un sendero etiquetado hacia la meta.",
+          "Los lobos-obstaculo se etiquetan automaticamente.",
+          "Genera una ilustracion vertical 4K en estilo tinta con tramado cruzado."
+        ],
+        "prompts": [
+          "Viaje de fitness: camino DISCIPLINA hacia BIENESTAR, obstaculos PEREZA, ESTRES.",
+          "Viaje de carrera: camino PERSISTENCIA hacia TRABAJO SONADO.",
+          "Viaje financiero: camino CONSISTENCIA hacia LIBERTAD FINANCIERA."
+        ]
+      }
+    }
+  },
+  "template-multilingual-vocabulary-poster-watercolor": {
+    "category": "Poster Educativo Multilingue",
+    "description": "Crea hermosos posters de vocabulario en cuadricula 5x5 en estilo acuarela en hasta tres idiomas, ideales para aulas multilingues.",
+    "title": "Nano Banana Prompt: Generador de Poster de Vocabulario Multilingue | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster de vocabulario en cuadricula 5x5 en suave estilo acuarela con ilustraciones pintadas a mano y etiquetas en hasta tres idiomas.",
+        "who": "Adecuado para educadores multilingues, escuelas internacionales, disenadores de apps de idiomas y padres criando hijos bilingues.",
+        "how": [
+          "Elige un tema de vocabulario.",
+          "Especifica hasta tres idiomas.",
+          "Cada celda muestra una ilustracion acuarela con etiquetas trilingues.",
+          "Genera un poster vertical 4K."
+        ],
+        "prompts": [
+          "Poster de animales en ingles, chino y espanol con 25 animales.",
+          "Poster de frutas en ingles, japones y frances.",
+          "Poster de profesiones en ingles, coreano y aleman."
+        ]
+      }
+    }
+  },
+  "template-premium-recipe-card-infographic": {
+    "category": "Infografia de Receta",
+    "description": "Crea infografias de tarjetas de receta profesionales con fotografia de comida, cuadricula de ingredientes e instrucciones paso a paso en estilo rustico.",
+    "title": "Nano Banana Prompt: Generador de Infografia de Receta Premium | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta de receta premium completa con foto principal, barra de informacion, cuadricula de ingredientes y guia de coccion de 6 pasos en estilo rustico calido.",
+        "who": "Adecuado para bloggers de comida, creadores de recetas, influencers de cocina y cualquiera que cree contenido culinario apetitoso.",
+        "how": [
+          "Ingresa el nombre de la receta.",
+          "La plantilla genera automaticamente foto principal, cuadricula y guia de 6 pasos.",
+          "Se aplica automaticamente fondo de madera rustica.",
+          "Genera una infografia vertical 4K."
+        ],
+        "prompts": [
+          "Tarjeta de salmon glaseado con miel, 20 min, 2 porciones, dificultad media.",
+          "Infografia de pizza Margherita clasica, 30 min, 4 porciones, facil.",
+          "Pastel de lava de chocolate, 25 min, 4 porciones, dificultad media."
+        ]
+      }
+    }
   }
 }
