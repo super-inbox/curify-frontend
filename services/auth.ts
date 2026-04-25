@@ -40,9 +40,9 @@ export const authService = {
   async verifyOtp(email: string, otp: string): Promise<AuthResponse> {
     return apiClient.request<AuthResponse>('/auth/verify-otp', {
       method: 'POST',
-      body: JSON.stringify({ email, otp }),
+      body: JSON.stringify({ email, code: otp }),  // Send as "code"
     });
-  },
+},
 
   async getProfile(): Promise<User> {
     const res = await apiClient.request<{ data: User }>('/user/profile');
