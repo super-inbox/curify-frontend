@@ -4638,7 +4638,11 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-zhenhuan-mbti-character-analysis-infj-zhenhuan-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-zhenhuan-mbti-character-analysis-infj-zhenhuan-prev.jpg",
+    "topics": ["character", "mbti", "culture"],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "allow_generation": true
 },
   {
     "id": "template-quote-poster-generator",
@@ -4659,7 +4663,11 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-quote-poster-generator-shawshank-redemption-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-quote-poster-generator-shawshank-redemption-prev.jpg",
+    "topics": ["learning", "reading"],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
 },
   {
     "id": "template-science-education-infographic",
@@ -4676,6 +4684,10 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-science-education-infographic-ocean-zones-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-science-education-infographic-ocean-zones-prev.jpg",
+    "topics": ["learning", "science"],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
 }
 ]

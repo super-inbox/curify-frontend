@@ -2148,5 +2148,72 @@
         ]
       }
     }
+  },
+  "template-zhenhuan-mbti-character-analysis": {
+    "category": "Karakter MBTI Posteri",
+    "description": "Zhen Huan Zhuan dramasi karakterleri icin antik Cin Q-versiyon tarzinda MBTI kisilik analiz posterleri olusturun.",
+    "title": "Nano Banana Prompt: Zhen Huan Karakter MBTI Poster Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon, Zhen Huan Zhuan karakterleri icin antik Cin Q-versiyon tarzinda dikey 4K MBTI kisilik analiz posteri olusturur. Kisilik ozellikleri ve kader anahtar kelimeleri icermektedir.",
+        "who": "Drama fanlari, MBTI meraklilari ve Cin kulturu severler icin uygundur.",
+        "how": [
+          "Zhen Huan Zhuan karakter adini girin.",
+          "Q-versiyon portre ve MBTI tipi otomatik olusturulur.",
+          "Kisilik ozellikleri ve 5 kader anahtar kelimesi otomatik olusturulur.",
+          "Cin tarzinda cerceveli dikey 4K poster olusturun."
+        ],
+        "prompts": [
+          "Zhen Huan icin MBTI posteri olusturun.",
+          "Hua Fei icin karakter posteri yarayin.",
+          "Imparatice Yi Xiu icin MBTI posteri olusturun."
+        ]
+      }
+    }
+  },
+  "template-quote-poster-generator": {
+    "category": "Alintilik Posteri",
+    "description": "Film ve kitap alintilar icin gorselin etkileyici sinematik posterler olusturun, her alintiinin ton ve atmosferini mukemmel sekilde yansiting.",
+    "title": "Nano Banana Prompt: Film Alintisi Poster Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon, secilen alintiyi merkeze alan dikey 4K sinematik poster olusturur. Arka plan sahnesi ve renk paleti alintiinin temasinden ilham alir.",
+        "who": "Film meraklilari, okuyucular, icerik ureticileri ve favori alintilerini gorsellestirmek isteyenler icin uygundur.",
+        "how": [
+          "Seciminizi yaptiginiz alintiyi veya metni girin.",
+          "Alintiinin temasina gore arka plan sahnesi otomatik olusturulur.",
+          "Zarif serif tipografi ve sinematik renk duzeltmesi uygulanir.",
+          "Film tanecigi ve kagit dokusuyla dikey 4K poster olusturun."
+        ],
+        "prompts": [
+          "Titanic'ten 'Sen atlasan ben de atlarim' icin sinematik poster.",
+          "Shawshank Redemption'dan alintilik poster.",
+          "Yasam uzerine motivasyon alintisi posteri."
+        ]
+      }
+    }
+  },
+  "template-science-education-infographic": {
+    "category": "Bilim Egitim Infografigi",
+    "description": "Bilim konularini 6 resimli bolumde kapsayan, cocuklar ve ogrenciler icin ideal, net ve renkli egitim infografikleri olusturun.",
+    "title": "Nano Banana Prompt: Bilim Egitim Infografigi Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon, 6 bolumden olusan cocuk bilim infografiklerini dikey 4K formatinda olusturur. Her bolum renkli cartoon illustrasyon, baslik ve onemli bilgiler icerir.",
+        "who": "Fen bilimleri ogretmenleri, egitim icerigi ureticileri, ebeveynler ve bilim ogrenme materyali olusturmak isteyenler icin uygundur.",
+        "how": [
+          "Bilim konusunu secin (orn. Okyanus Zonlari, Atmosfer Katmanlari, Jeolojik Caglar).",
+          "6 bolum otomatik olusturulur.",
+          "Her bolumde ilustrasyon, baslik ve onemli bilgiler bulunur.",
+          "Yumusak renkler ve cocuk dostu tipografi ile dikey 4K infografik olusturun."
+        ],
+        "prompts": [
+          "6 derinlik bolumuyle Okyanus Zonlari egitim infografigi.",
+          "Atmosfer Katmanlari infografigi.",
+          "Dunyanin Jeolojik Caglari infografigi.",
+          "Insan Evrimi infografigi."
+        ]
+      }
+    }
   }
 }

@@ -2148,5 +2148,72 @@
         ]
       }
     }
+  },
+  "template-zhenhuan-mbti-character-analysis": {
+    "category": "Poster MBTI Personazha",
+    "description": "Sozdavajte postery analiza lichnosti MBTI v stile drevnekitajskogo Q-version dlya personazhej dramy Zhen Huan Zhuan.",
+    "title": "Nano Banana Prompt: Generator Postera MBTI Personazha Zhen Huan | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet vertikal'nyj 4K poster v stile drevnekitajskogo Q-version s analizom MBTI dlya personazhej Zhen Huan Zhuan, vklyuchaya cherty lichnosti i klyuchevye slova sud'by.",
+        "who": "Podkhodit dlya poklonnikov dramy, entuziastov MBTI i lyubitelej kitajskoj kul'tury.",
+        "how": [
+          "Vvedite imya personazha iz Zhen Huan Zhuan.",
+          "Shableon generiruet Q-version portret s tipom MBTI i psevdonimom.",
+          "Cherty lichnosti i 5 klyuchevyh slov sud'by generiruyutsya avtomaticheski.",
+          "Sozdajte vertikal'nyj 4K poster v stile kitajskoj akvareli s klassicheskoj ramkoj."
+        ],
+        "prompts": [
+          "Sgenerirovat' poster MBTI dlya Zhen Huan.",
+          "Sozdat' poster personazha dlya Hua Fei.",
+          "Sgenerirovat' poster MBTI dlya Imperatricy Yi Xiu."
+        ]
+      }
+    }
+  },
+  "template-quote-poster-generator": {
+    "category": "Poster s Citatoj",
+    "description": "Sozdavajte vizual'no potryasayushchie kinematicheskie postery dlya citat iz fil'mov i knig.",
+    "title": "Nano Banana Prompt: Generator Postera s Citatoj iz Fil'ma | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet vertikal'nyj 4K kinematograficheskij poster s vybrannoj citatoj v centre. Fonovaya scena i cvetovaya palitra vdokhnovleny temoj citaty.",
+        "who": "Podkhodit dlya kinomanov, chitatelej, sozdatelej kontenta i vsekh, kto khochet vizualizirovat' lyubimye citaty.",
+        "how": [
+          "Vvedite vybrannoyu citatu ili tekst.",
+          "Fonovaya scena vdokhnovlennaya temoj citaty generiruyetsya avtomaticheski.",
+          "Elegantnyj shrift i kinematograficheskaya tsvetokorrekciya primenyayutsya.",
+          "Sozdajte vertikal'nyj 4K poster s kinozern'yu i teksturoj bumagi."
+        ],
+        "prompts": [
+          "Kinoposter dlya 'Ty prygazh - ya prygazhu' iz Titanika.",
+          "Poster s citatoj iz Pobega iz Shoushanka.",
+          "Poster dlya motivacionnoj citaty o zhizni."
+        ]
+      }
+    }
+  },
+  "template-science-education-infographic": {
+    "category": "Nauchnaya Obrazovatel'naya Infografika",
+    "description": "Generirujte chistye, yarkie obrazovatel'nye infografiki po nauchnym temam v 6 illyustrirovannykh razdelakh dlya detej i studentov.",
+    "title": "Nano Banana Prompt: Generator Nauchnoj Obrazovatel'noj Infografiki | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet detskuyu nauchnuyu infografiku v vertikal'nom formate 4K s 6 razdelami. Kazhdyj razdel soderzhit mul'tiplikatsionnuyu illyustraciyu, zagolovok i klyuchevye fakty.",
+        "who": "Podkhodit dlya uchitelej nauki, sozdatelej obrazovatel'nogo kontenta, roditelej i vsekh, kto sozdaet uchebnye materialy.",
+        "how": [
+          "Vyberite nauchnuyu temu (naprimer: zony okeana, sloi atmosfery, geologicheskie epohi).",
+          "6 razdelov generiruyutsya avtomaticheski.",
+          "Kazhdyj razdel soderzhit illyustraciyu, zagolovok i klyuchevye fakty.",
+          "Sozdajte vertikal'nuyu 4K infografiku s myagkimi cvetami."
+        ],
+        "prompts": [
+          "Infografika zon okeana s 6 zonami glubiny.",
+          "Infografika sloev atmosfery.",
+          "Infografika geologicheskikh epoh Zemli.",
+          "Infografika evolyucii cheloveka."
+        ]
+      }
+    }
   }
 }

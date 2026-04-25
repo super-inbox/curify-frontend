@@ -2148,5 +2148,72 @@
         ]
       }
     }
+  },
+  "template-zhenhuan-mbti-character-analysis": {
+    "category": "Character MBTI Poster",
+    "description": "Generate ancient Chinese style Q-version MBTI personality analysis posters for characters from the drama Zhen Huan Zhuan.",
+    "title": "Nano Banana Prompt: Zhen Huan MBTI Character Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K ancient Chinese style Q-version MBTI personality analysis poster for your chosen character from Zhen Huan Zhuan. The poster includes the character's MBTI type, personality traits, fate keywords with classical motifs, and iconic quotes.",
+        "who": "Suitable for fans of the drama Zhen Huan Zhuan, MBTI enthusiasts, Chinese culture lovers, and anyone interested in character analysis content.",
+        "how": [
+          "Enter the character name from Zhen Huan Zhuan (e.g., Zhen Huan, Hua Fei).",
+          "The template generates a Q-version ancient style portrait with the character's MBTI type and alias.",
+          "Personality traits and 5 fate/plot keywords with classical motifs are auto-generated.",
+          "Generate a vertical 4K brush-watercolor style poster with classical Chinese border patterns."
+        ],
+        "prompts": [
+          "Generate an MBTI analysis poster for Zhen Huan (甄嬛).",
+          "Create an MBTI character poster for Hua Fei Nian Shilan (华妃·年世兰).",
+          "Generate an MBTI analysis poster for Empress Yi Xiu (皇后·宜修)."
+        ]
+      }
+    }
+  },
+  "template-quote-poster-generator": {
+    "category": "Quote Poster",
+    "description": "Create visually stunning cinematic posters for movie and book quotes, perfectly matching the tone and mood of each quote.",
+    "title": "Nano Banana Prompt: Movie Quote Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K cinematic poster centered on your chosen quote. The background scene and color palette are directly inspired by the quote's theme, with elegant serif typography and cinematic lighting.",
+        "who": "Suitable for movie enthusiasts, book lovers, content creators, social media designers, and anyone wanting to visualize their favorite quotes.",
+        "how": [
+          "Enter your chosen quote or text.",
+          "A background scene inspired by the quote's theme and mood is auto-generated.",
+          "Elegant serif typography and cinematic color grading are applied.",
+          "Generate a vertical 4K poster with film grain and paper texture details."
+        ],
+        "prompts": [
+          "Create a cinematic poster for 'You jump, I jump' from Titanic.",
+          "Generate a quote poster for 'Hope is a good thing, maybe the best of things, and no good thing ever dies' from The Shawshank Redemption.",
+          "Create a poster for 'People live for living itself, not for anything other than living'."
+        ]
+      }
+    }
+  },
+  "template-science-education-infographic": {
+    "category": "Science Education Infographic",
+    "description": "Generate clean, colorful educational infographics covering science topics in 6 illustrated sections, perfect for children and students.",
+    "title": "Nano Banana Prompt: Science Education Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K children's science infographic with 6 horizontal sections. Each section features a colorful cartoon illustration, title, and short description with key facts about a different stage or zone of the topic.",
+        "who": "Suitable for science teachers, educational content creators, parents, children's book illustrators, curriculum designers, and anyone creating engaging science learning materials.",
+        "how": [
+          "Choose a science topic (e.g., Ocean Zones, Atmosphere Layers, Earth's Geological Ages).",
+          "The template auto-generates 6 sections covering different stages or zones of the topic.",
+          "Each section includes a cute cartoon illustration, title, and key facts.",
+          "Generate a vertical 4K infographic with soft colors and child-friendly typography."
+        ],
+        "prompts": [
+          "Generate an Ocean Zones educational infographic with 6 depth zones.",
+          "Create an Atmosphere Layers infographic covering all atmospheric layers.",
+          "Generate an Earth's Geological Ages infographic from Precambrian to present.",
+          "Create a Human Evolution infographic showing key evolutionary stages."
+        ]
+      }
+    }
   }
 }

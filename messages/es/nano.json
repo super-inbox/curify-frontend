@@ -2148,5 +2148,72 @@
         ]
       }
     }
+  },
+  "template-zhenhuan-mbti-character-analysis": {
+    "category": "Poster MBTI de Personaje",
+    "description": "Genera posters de analisis de personalidad MBTI en estilo chino antiguo Q-version para personajes del drama Zhen Huan Zhuan.",
+    "title": "Nano Banana Prompt: Generador de Poster MBTI de Personaje Zhen Huan | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K en estilo chino antiguo Q-version con analisis MBTI para personajes de Zhen Huan Zhuan, incluyendo rasgos de personalidad y palabras clave del destino.",
+        "who": "Adecuado para fans del drama, entusiastas de MBTI y amantes de la cultura china.",
+        "how": [
+          "Ingresa el nombre del personaje de Zhen Huan Zhuan.",
+          "La plantilla genera un retrato Q-version con tipo MBTI y alias.",
+          "Los rasgos de personalidad y 5 palabras clave del destino se generan automaticamente.",
+          "Genera un poster vertical 4K en estilo acuarela tradicional china."
+        ],
+        "prompts": [
+          "Generar poster MBTI para Zhen Huan.",
+          "Crear poster de personaje para Hua Fei.",
+          "Generar poster MBTI para la Emperatriz Yi Xiu."
+        ]
+      }
+    }
+  },
+  "template-quote-poster-generator": {
+    "category": "Poster de Cita",
+    "description": "Crea posters cinematograficos visualmente impresionantes para citas de peliculas y libros, capturando perfectamente el tono y ambiente de cada cita.",
+    "title": "Nano Banana Prompt: Generador de Poster de Cita de Pelicula | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster cinematografico vertical 4K centrado en tu cita elegida. La escena de fondo y la paleta de colores se inspiran directamente en el tema de la cita.",
+        "who": "Adecuado para entusiastas del cine, lectores, creadores de contenido y cualquiera que quiera visualizar sus citas favoritas.",
+        "how": [
+          "Ingresa tu cita o texto elegido.",
+          "La escena de fondo inspirada en el tema de la cita se genera automaticamente.",
+          "Se aplican tipografia serif elegante y gradacion de color cinematografico.",
+          "Genera un poster vertical 4K con grano de pelicula y textura de papel."
+        ],
+        "prompts": [
+          "Poster cinematografico para 'Tu saltas, yo salto' de Titanic.",
+          "Poster de cita de La Redencion de Shawshank.",
+          "Poster para una cita motivacional sobre la vida."
+        ]
+      }
+    }
+  },
+  "template-science-education-infographic": {
+    "category": "Infografia Educativa de Ciencias",
+    "description": "Genera infografias educativas limpias y coloridas sobre temas de ciencia en 6 secciones ilustradas, perfectas para ninos y estudiantes.",
+    "title": "Nano Banana Prompt: Generador de Infografia Educativa de Ciencias | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografia vertical 4K de ciencias para ninos con 6 secciones horizontales. Cada seccion tiene una ilustracion animada colorida, titulo y hechos clave.",
+        "who": "Adecuado para maestros de ciencias, creadores de contenido educativo, padres y cualquiera que cree materiales de aprendizaje de ciencias.",
+        "how": [
+          "Elige un tema cientifico (ej. Zonas Oceanicas, Capas de la Atmosfera, Eras Geologicas).",
+          "6 secciones se generan automaticamente.",
+          "Cada seccion incluye ilustracion animada, titulo y hechos clave.",
+          "Genera una infografia vertical 4K con colores suaves y tipografia amigable para ninos."
+        ],
+        "prompts": [
+          "Infografia de Zonas Oceanicas con 6 zonas de profundidad.",
+          "Infografia de Capas de la Atmosfera.",
+          "Infografia de Eras Geologicas de la Tierra.",
+          "Infografia de Evolucion Humana."
+        ]
+      }
+    }
   }
 }
