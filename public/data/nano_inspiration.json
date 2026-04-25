@@ -34867,5 +34867,443 @@
       "nature",
       "health"
     ]
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic-education-values",
+    "template_id": "template-east-asian-culture-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-east-asian-culture-comparison-infographic-education-values.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-education-values-prev.jpg"
+    },
+    "params": {
+      "topic": "education values"
+    },
+    "locales": {
+      "en": {
+        "title": "education values"
+      }
+    }
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic-family-values-structure",
+    "template_id": "template-east-asian-culture-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-east-asian-culture-comparison-infographic-family-values-structure.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-family-values-structure-prev.jpg"
+    },
+    "params": {
+      "topic": "family values structure"
+    },
+    "locales": {
+      "en": {
+        "title": "family values structure"
+      }
+    }
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic-festival-celebrations",
+    "template_id": "template-east-asian-culture-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-east-asian-culture-comparison-infographic-festival-celebrations.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-festival-celebrations-prev.jpg"
+    },
+    "params": {
+      "topic": "festival celebrations"
+    },
+    "locales": {
+      "en": {
+        "title": "festival celebrations"
+      }
+    }
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic-greeting-customs",
+    "template_id": "template-east-asian-culture-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-east-asian-culture-comparison-infographic-greeting-customs.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-greeting-customs-prev.jpg"
+    },
+    "params": {
+      "topic": "greeting customs"
+    },
+    "locales": {
+      "en": {
+        "title": "greeting customs"
+      }
+    }
+  },
+  {
+    "id": "template-east-asian-culture-comparison-infographic-workplace-culture",
+    "template_id": "template-east-asian-culture-comparison-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-east-asian-culture-comparison-infographic-workplace-culture.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-east-asian-culture-comparison-infographic-workplace-culture-prev.jpg"
+    },
+    "params": {
+      "topic": "workplace culture"
+    },
+    "locales": {
+      "en": {
+        "title": "workplace culture"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-healthy-eating",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-healthy-eating.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-healthy-eating-prev.jpg"
+    },
+    "params": {
+      "topic": "healthy eating"
+    },
+    "locales": {
+      "zh": {
+        "title": "healthy eating"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-human-body",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-human-body.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-human-body-prev.jpg"
+    },
+    "params": {
+      "topic": "human body"
+    },
+    "locales": {
+      "zh": {
+        "title": "human body"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-ocean-animals",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-ocean-animals.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-ocean-animals-prev.jpg"
+    },
+    "params": {
+      "topic": "ocean animals"
+    },
+    "locales": {
+      "zh": {
+        "title": "ocean animals"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-seasons-weather",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-seasons-weather.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-seasons-weather-prev.jpg"
+    },
+    "params": {
+      "topic": "seasons weather"
+    },
+    "locales": {
+      "zh": {
+        "title": "seasons weather"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-solar-system",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-solar-system.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-solar-system-prev.jpg"
+    },
+    "params": {
+      "topic": "solar system"
+    },
+    "locales": {
+      "zh": {
+        "title": "solar system"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-space-exploration",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-space-exploration.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-space-exploration-prev.jpg"
+    },
+    "params": {
+      "topic": "space exploration"
+    },
+    "locales": {
+      "zh": {
+        "title": "space exploration"
+      }
+    }
+  },
+  {
+    "id": "template-education-card-water-cycle",
+    "template_id": "template-education-card",
+    "asset": {
+      "image_url": "/images/nano_insp/template-education-card-water-cycle.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-education-card-water-cycle-prev.jpg"
+    },
+    "params": {
+      "topic": "water cycle"
+    },
+    "locales": {
+      "zh": {
+        "title": "water cycle"
+      }
+    }
+  },
+  {
+    "id": "template-multilingual-vocabulary-poster-watercolor-animals-pinyin",
+    "template_id": "template-multilingual-vocabulary-poster-watercolor",
+    "asset": {
+      "image_url": "/images/nano_insp/template-multilingual-vocabulary-poster-watercolor-animals-pinyin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-multilingual-vocabulary-poster-watercolor-animals-pinyin-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "animals pinyin"
+      }
+    }
+  },
+  {
+    "id": "template-multilingual-vocabulary-poster-watercolor-fruits-pinyin",
+    "template_id": "template-multilingual-vocabulary-poster-watercolor",
+    "asset": {
+      "image_url": "/images/nano_insp/template-multilingual-vocabulary-poster-watercolor-fruits-pinyin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-multilingual-vocabulary-poster-watercolor-fruits-pinyin-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "fruits pinyin"
+      }
+    }
+  },
+  {
+    "id": "template-multilingual-vocabulary-poster-watercolor-jobs-pinyin",
+    "template_id": "template-multilingual-vocabulary-poster-watercolor",
+    "asset": {
+      "image_url": "/images/nano_insp/template-multilingual-vocabulary-poster-watercolor-jobs-pinyin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-multilingual-vocabulary-poster-watercolor-jobs-pinyin-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "jobs pinyin"
+      }
+    }
+  },
+  {
+    "id": "template-multilingual-vocabulary-poster-watercolor-transportation-py",
+    "template_id": "template-multilingual-vocabulary-poster-watercolor",
+    "asset": {
+      "image_url": "/images/nano_insp/template-multilingual-vocabulary-poster-watercolor-transportation-py.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-multilingual-vocabulary-poster-watercolor-transportation-py-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "transportation py"
+      }
+    }
+  },
+  {
+    "id": "template-multilingual-vocabulary-poster-watercolor-weather-pinyin",
+    "template_id": "template-multilingual-vocabulary-poster-watercolor",
+    "asset": {
+      "image_url": "/images/nano_insp/template-multilingual-vocabulary-poster-watercolor-weather-pinyin.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-multilingual-vocabulary-poster-watercolor-weather-pinyin-prev.jpg"
+    },
+    "params": {},
+    "locales": {
+      "en": {
+        "title": "weather pinyin"
+      }
+    }
+  },
+  {
+    "id": "template-personal-journey-wolf-path-illustration-career",
+    "template_id": "template-personal-journey-wolf-path-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-personal-journey-wolf-path-illustration-career.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-career-prev.jpg"
+    },
+    "params": {
+      "theme": "career"
+    },
+    "locales": {
+      "en": {
+        "title": "career"
+      }
+    }
+  },
+  {
+    "id": "template-personal-journey-wolf-path-illustration-dreams",
+    "template_id": "template-personal-journey-wolf-path-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-personal-journey-wolf-path-illustration-dreams.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-dreams-prev.jpg"
+    },
+    "params": {
+      "theme": "dreams"
+    },
+    "locales": {
+      "en": {
+        "title": "dreams"
+      }
+    }
+  },
+  {
+    "id": "template-personal-journey-wolf-path-illustration-finance",
+    "template_id": "template-personal-journey-wolf-path-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-personal-journey-wolf-path-illustration-finance.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-finance-prev.jpg"
+    },
+    "params": {
+      "theme": "finance"
+    },
+    "locales": {
+      "en": {
+        "title": "finance"
+      }
+    }
+  },
+  {
+    "id": "template-personal-journey-wolf-path-illustration-growth",
+    "template_id": "template-personal-journey-wolf-path-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-personal-journey-wolf-path-illustration-growth.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-growth-prev.jpg"
+    },
+    "params": {
+      "theme": "growth"
+    },
+    "locales": {
+      "en": {
+        "title": "growth"
+      }
+    }
+  },
+  {
+    "id": "template-personal-journey-wolf-path-illustration-love",
+    "template_id": "template-personal-journey-wolf-path-illustration",
+    "asset": {
+      "image_url": "/images/nano_insp/template-personal-journey-wolf-path-illustration-love.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-love-prev.jpg"
+    },
+    "params": {
+      "theme": "love"
+    },
+    "locales": {
+      "en": {
+        "title": "love"
+      }
+    }
+  },
+  {
+    "id": "template-premium-recipe-card-infographic-cheesy-bacon-burger-bites",
+    "template_id": "template-premium-recipe-card-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-premium-recipe-card-infographic-cheesy-bacon-burger-bites.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-premium-recipe-card-infographic-cheesy-bacon-burger-bites-prev.jpg"
+    },
+    "params": {
+      "recipe_name": "cheesy bacon burger bites"
+    },
+    "locales": {
+      "en": {
+        "title": "cheesy bacon burger bites"
+      }
+    }
+  },
+  {
+    "id": "template-premium-recipe-card-infographic-chocolate-lava-cake",
+    "template_id": "template-premium-recipe-card-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-premium-recipe-card-infographic-chocolate-lava-cake.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-premium-recipe-card-infographic-chocolate-lava-cake-prev.jpg"
+    },
+    "params": {
+      "recipe_name": "chocolate lava cake"
+    },
+    "locales": {
+      "en": {
+        "title": "chocolate lava cake"
+      }
+    }
+  },
+  {
+    "id": "template-premium-recipe-card-infographic-classic-margherita-pizza",
+    "template_id": "template-premium-recipe-card-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-premium-recipe-card-infographic-classic-margherita-pizza.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-premium-recipe-card-infographic-classic-margherita-pizza-prev.jpg"
+    },
+    "params": {
+      "recipe_name": "classic margherita pizza"
+    },
+    "locales": {
+      "en": {
+        "title": "classic margherita pizza"
+      }
+    }
+  },
+  {
+    "id": "template-premium-recipe-card-infographic-creamy-mushroom-pasta",
+    "template_id": "template-premium-recipe-card-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-premium-recipe-card-infographic-creamy-mushroom-pasta.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-premium-recipe-card-infographic-creamy-mushroom-pasta-prev.jpg"
+    },
+    "params": {
+      "recipe_name": "creamy mushroom pasta"
+    },
+    "locales": {
+      "en": {
+        "title": "creamy mushroom pasta"
+      }
+    }
+  },
+  {
+    "id": "template-premium-recipe-card-infographic-duck-and-egg-fried-rice",
+    "template_id": "template-premium-recipe-card-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-premium-recipe-card-infographic-duck-and-egg-fried-rice.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-premium-recipe-card-infographic-duck-and-egg-fried-rice-prev.jpg"
+    },
+    "params": {
+      "recipe_name": "duck and egg fried rice"
+    },
+    "locales": {
+      "en": {
+        "title": "duck and egg fried rice"
+      }
+    }
+  },
+  {
+    "id": "template-premium-recipe-card-infographic-honey-glazed-salmon",
+    "template_id": "template-premium-recipe-card-infographic",
+    "asset": {
+      "image_url": "/images/nano_insp/template-premium-recipe-card-infographic-honey-glazed-salmon.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-premium-recipe-card-infographic-honey-glazed-salmon-prev.jpg"
+    },
+    "params": {
+      "recipe_name": "honey glazed salmon"
+    },
+    "locales": {
+      "en": {
+        "title": "honey glazed salmon"
+      }
+    }
   }
 ]

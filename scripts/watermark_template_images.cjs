@@ -23,6 +23,8 @@ const CDN_BASE      = 'https://cdn.curify-ai.com';
 const GCS_BUCKET    = 'gs://curify-static';
 const LOGO_PATH     = path.join(__dirname, '../public/logo.svg');
 const INSP_JSON     = path.join(__dirname, '../public/data/nano_inspiration.json');
+const LOCAL_INSP_DIR    = path.join(__dirname, '../public/images/nano_insp');
+const LOCAL_PREVIEW_DIR = path.join(__dirname, '../public/images/nano_insp_preview');
 
 // Logo width as % of image width for full and preview sizes
 const LOGO_PCT_FULL    = 0.20;
@@ -128,7 +130,7 @@ function overlayLogoTiled(srcPath, destPath, logoPx) {
 }
 
 function uploadToGcs(localPath, gcsPath) {
-  execSync(`gsutil cp "${localPath}" "${gcsPath}"`, { stdio: 'inherit' });
+  execSync(`gsutil -o "GSUtil:parallel_process_count=1" cp "${localPath}" "${gcsPath}"`, { stdio: 'inherit' });
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -167,6 +169,12 @@ for (const record of images) {
         overlayLogo(srcFile, destFile, logoPx, pad);
       }
       uploadToGcs(destFile, gcsTarget);
+
+      // Keep local copy in sync so future --sync runs don't overwrite CDN
+      const localDir = isPreview ? LOCAL_PREVIEW_DIR : LOCAL_INSP_DIR;
+      const localDest = path.join(localDir, filename);
+      fs.mkdirSync(localDir, { recursive: true });
+      fs.copyFileSync(destFile, localDest);
 
       console.log('✓');
       success++;

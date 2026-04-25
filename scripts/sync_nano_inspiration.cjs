@@ -584,12 +584,13 @@ async function main() {
 
     console.log(`\n⏫ Syncing nano_insp + nano_insp_preview to ${args.bucket} ...`);
 
+    const gsutilFlags = `-m -o "GSUtil:parallel_process_count=1"`;
     execSync(
-      `gsutil -m rsync -r "${path.join(REPO_ROOT, "public/images/nano_insp")}" "${args.bucket}/images/nano_insp"`,
+      `gsutil ${gsutilFlags} rsync -r "${path.join(REPO_ROOT, "public/images/nano_insp")}" "${args.bucket}/images/nano_insp"`,
       { stdio: "inherit" }
     );
     execSync(
-      `gsutil -m rsync -r "${path.join(REPO_ROOT, "public/images/nano_insp_preview")}" "${args.bucket}/images/nano_insp_preview"`,
+      `gsutil ${gsutilFlags} rsync -r "${path.join(REPO_ROOT, "public/images/nano_insp_preview")}" "${args.bucket}/images/nano_insp_preview"`,
       { stdio: "inherit" }
     );
 
