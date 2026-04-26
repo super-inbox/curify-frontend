@@ -214,7 +214,7 @@ export default async function PromptDetailPage({
               Related Images
             </h2>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {related.map((p) => (
                 <PromptCard key={p.id} prompt={p} />
               ))}
