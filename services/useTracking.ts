@@ -83,7 +83,7 @@ function getSessionId(): string {
   return sessionId;
 }
 
-function getUserId(): string | null {
+function getUserId(): number | null {
   if (typeof window === "undefined") return null;
   try {
     const stored = localStorage.getItem("curifyUser");
