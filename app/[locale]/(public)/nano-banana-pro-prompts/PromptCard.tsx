@@ -70,9 +70,9 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
         {prompt.tags?.length > 0 && (
           <div className="absolute left-2 right-2 top-2 flex flex-wrap justify-end gap-1">
-            {prompt.tags.slice(0, 2).map((tag) => (
+            {prompt.tags.slice(0, 2).map((tag, i) => (
               <span
-                key={tag}
+                key={`${tag}-${i}`}
                 className="rounded-full bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm"
               >
                 {tag}
