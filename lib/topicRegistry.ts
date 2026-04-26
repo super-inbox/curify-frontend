@@ -71,8 +71,8 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  travel:    ["culture", "food", "city"],
-  lifestyle: ["fitness", "nostalgia", "fashion", "finance", "guides"],
+  travel:    ["culture", "food", "city", "itinerary"],
+  lifestyle: ["fashion", "animal", "fitness", "finance", "nostalgia", "guides"],
   learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
   product:   [],
   design:    ["interior"],
@@ -101,6 +101,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   portrait:       "portrait",
   monochrome:     "monochrome",
   watercolor:     "watercolor",
+  animal:         "animal",
 };
 
 // Blog tag to pull posts for a topic page.
