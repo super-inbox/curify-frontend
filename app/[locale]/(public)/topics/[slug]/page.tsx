@@ -121,7 +121,8 @@ export default async function Page({ params }: Props) {
 
   const reg = buildNanoRegistry(filteredTemplates, filteredImages);
 
-  const imagesByTemplate = filteredTemplates
+  const imagesByTemplate = [...filteredTemplates]
+    .sort((a, b) => (b.rank_score ?? 1) - (a.rank_score ?? 1))
     .map((t) => buildTemplateImageGridItems(getImageViewsForTemplate(reg, t.id, contentLocale)))
     .filter((imgs) => imgs.length > 0);
 

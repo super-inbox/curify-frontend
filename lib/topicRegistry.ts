@@ -69,7 +69,7 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 // Tier 1 (entry bar): character, language, travel, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "anime", "sports", "comparison", "groups", "film", "portrait"],
+  character: ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   travel:    ["culture", "food", "city"],
   lifestyle: ["fitness", "nostalgia", "fashion", "finance", "guides"],
