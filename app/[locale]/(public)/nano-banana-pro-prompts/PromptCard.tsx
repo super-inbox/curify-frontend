@@ -56,7 +56,7 @@ export default function PromptCard({ prompt }: PromptCardProps) {
     <Link
       href={`/nano-banana-pro-prompts/${prompt.id}`}
       onClick={trackClick}
-      className="group block overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      className="group block overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
       aria-label={`View details for ${prompt.title}`}
     >
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
@@ -70,9 +70,9 @@ export default function PromptCard({ prompt }: PromptCardProps) {
 
         {prompt.tags?.length > 0 && (
           <div className="absolute left-2 right-2 top-2 flex flex-wrap justify-end gap-1">
-            {prompt.tags.slice(0, 2).map((tag) => (
+            {prompt.tags.slice(0, 2).map((tag, i) => (
               <span
-                key={tag}
+                key={`${tag}-${i}`}
                 className="rounded-full bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm"
               >
                 {tag}
@@ -82,40 +82,24 @@ export default function PromptCard({ prompt }: PromptCardProps) {
         )}
       </div>
 
-      <div className="flex flex-col gap-3 p-4">
-        <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-gray-900">
+      <div className="flex items-center justify-between gap-2 px-3 py-2">
+        <h3 className="min-w-0 flex-1 truncate text-xs font-semibold text-gray-900">
           {prompt.title}
         </h3>
 
         {prompt.prompt && (
-          <div
-            className="relative rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 pr-16"
-            onClick={(e) => e.preventDefault()}
+          <button
+            type="button"
+            onClick={copyToClipboard}
+            className="flex shrink-0 items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold text-indigo-600 transition-colors hover:bg-indigo-100 cursor-pointer"
+            aria-label={`Copy prompt: ${prompt.title}`}
           >
-            <p className="line-clamp-2 text-xs text-gray-500">
-              {prompt.prompt.slice(0, 80)}
-              {prompt.prompt.length > 80 ? '…' : ''}
-            </p>
-
-            <button
-              type="button"
-              onClick={copyToClipboard}
-              className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 text-[10px] font-medium text-indigo-600 hover:text-indigo-800 cursor-pointer"
-              aria-label={`Copy prompt: ${prompt.title}`}
-            >
-              {copied ? (
-                <>
-                  <Check className="h-3 w-3 text-green-500" />
-                  <span>Copied</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="h-3 w-3" />
-                  <span>Copy</span>
-                </>
-              )}
-            </button>
-          </div>
+            {copied ? (
+              <><Check className="h-3 w-3 text-green-500" /><span>Copied</span></>
+            ) : (
+              <><Copy className="h-3 w-3" /><span>Copy</span></>
+            )}
+          </button>
         )}
       </div>
     </Link>

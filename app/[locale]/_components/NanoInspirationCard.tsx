@@ -155,11 +155,11 @@ export function NanoInspirationCard({
   return (
     <div
       onClick={handleCardClick}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-5 shadow-md transition-all duration-300 cursor-pointer hover:border-purple-300 hover:shadow-2xl"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 p-3 shadow-md transition-all duration-300 cursor-pointer hover:border-purple-300 hover:shadow-2xl"
     >
       {/* Category Badge */}
-      <div className="mb-4 flex items-center justify-between gap-2">
-        <span className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-sm font-bold text-purple-700 shadow-sm">
+      <div className="mb-2 flex items-center justify-between gap-2">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 to-pink-100 px-3 py-1 text-xs font-bold text-purple-700 shadow-sm">
           <span className="text-base">💡</span>
           {card.category}
         </span>
@@ -172,7 +172,7 @@ export function NanoInspirationCard({
       </div>
 
       {/* Image Carousel */}
-      <div className="relative mb-4 aspect-[1/1] overflow-hidden rounded-2xl border-2 border-purple-100 bg-white shadow-inner">
+      <div className="relative mb-2 aspect-[1/1] overflow-hidden rounded-xl border border-purple-100 bg-white shadow-inner">
         {displaySrc ? (
           <CdnImage
             src={displaySrc}
@@ -247,13 +247,13 @@ export function NanoInspirationCard({
 
       {/* Actions */}
       {remixHref && (
-        <div className="mt-auto flex items-center justify-between gap-2">
+        <div className="mt-auto flex items-center justify-between gap-1.5">
           {card.batch ? (
             <button
               type="button"
               onClick={handleDownload}
               disabled={isDownloading}
-              className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
+              className="flex items-center gap-1 rounded-full bg-neutral-100 px-2.5 py-1.5 text-xs font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
             >
               <Download className="h-3.5 w-3.5" />
               {isDownloading ? t("downloadingPack") : t("downloadPack")}
@@ -263,7 +263,7 @@ export function NanoInspirationCard({
               <button
                 type="button"
                 onClick={handleSave}
-                className={`flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+                className={`flex cursor-pointer items-center gap-1 rounded-full px-2.5 py-1.5 text-xs font-semibold transition-colors ${
                   saved
                     ? "bg-purple-100 text-purple-700"
                     : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
@@ -285,7 +285,7 @@ export function NanoInspirationCard({
               e.stopPropagation();
               trackRemix();
             }}
-            className="flex items-center justify-center gap-1.5 rounded-full bg-purple-50 px-3 py-2 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
+            className="flex items-center justify-center gap-1 rounded-full bg-purple-50 px-2.5 py-1.5 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
           >
             <Sparkles className="h-3.5 w-3.5" />
             Remix this
@@ -334,7 +334,7 @@ export function NanoInspirationRow({
   );
 
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
       {sortedCards.map((c) => (
         <NanoInspirationCard
           key={c.id}

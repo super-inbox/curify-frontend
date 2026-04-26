@@ -26,6 +26,15 @@ interface Props {
   staticCategories: TagCategory[];
 }
 
+function dedupeById(prompts: NanoPromptBase[]): NanoPromptBase[] {
+  const seen = new Set<string | number>();
+  return prompts.filter((p) => {
+    if (seen.has(p.id)) return false;
+    seen.add(p.id);
+    return true;
+  });
+}
+
 export default function NanoBananaProPromptsClient({
   initialData,
   error,
@@ -34,7 +43,7 @@ export default function NanoBananaProPromptsClient({
   const t = useTranslations("nanoGallery");
 
   const [allPrompts, setAllPrompts] = useState<NanoPromptBase[]>(
-    initialData || []
+    dedupeById(initialData || [])
   );
   const [isLoading, setIsLoading] = useState(!initialData);
   const [displayedCount, setDisplayedCount] = useState(20);
@@ -51,9 +60,9 @@ export default function NanoBananaProPromptsClient({
         const nanoPrompts =
           await nanoPromptsService.getMostPopularNanoPrompts();
         setAllPrompts(
-          nanoPrompts.filter(
+          dedupeById(nanoPrompts.filter(
             (p) => p && typeof p.id === "number" && typeof p.title === "string"
-          )
+          ))
         );
       } catch (err) {
         console.error("Error loading prompts:", err);
@@ -99,7 +108,7 @@ export default function NanoBananaProPromptsClient({
 
   return (
     <div className="min-h-screen px-4 py-4">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1400px]">
         <header className="mb-10">
           <p className="mt-2 text-gray-600">
             {t.rich("description", {
@@ -114,9 +123,9 @@ export default function NanoBananaProPromptsClient({
           <EmptyState />
         ) : (
           <>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {prompts.map((prompt) => (
-                <PromptCard key={prompt.id} prompt={prompt} />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              {prompts.map((prompt, i) => (
+                <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
               ))}
             </div>
 

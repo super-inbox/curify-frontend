@@ -196,7 +196,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <main className="min-h-screen">
-      <section className="mx-auto max-w-[1280px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1400px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
         <div>
           {topicDescription ? (
@@ -232,7 +232,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       {gridItems.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             {exampleImagesHeading}
           </h2>
@@ -241,20 +241,20 @@ export default async function Page({ params }: Props) {
       )}
 
       {galleryPrompts.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Gallery
           </h2>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {galleryPrompts.slice(0, 12).map((prompt) => (
-              <PromptCard key={prompt.id} prompt={prompt} />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            {galleryPrompts.slice(0, 10).map((prompt, i) => (
+              <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
             ))}
           </div>
         </section>
       )}
 
       {blogPosts.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Related Articles
           </h2>
@@ -266,7 +266,7 @@ export default async function Page({ params }: Props) {
         </section>
       )}
 
-      <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
           {templatesHeading}
         </h2>
@@ -280,7 +280,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       {tagSubTopics.length > 0 && (
-        <section className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
             {subTopicsHeading}
           </h2>

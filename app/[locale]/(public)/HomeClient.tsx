@@ -4,16 +4,12 @@ import { useMemo, useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
-import { Search } from "lucide-react";
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
 
-import {
-  InspirationListItem,
-  type InspirationCardType,
-} from "@/app/[locale]/_components/InspirationCard";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
+import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
 import { resolveContentLocale } from "@/lib/locale_utils";
@@ -34,44 +30,9 @@ const inter = Inter({
 });
 
 type Lang = "en" | "zh";
-type InterleavedItem =
-  | { type: "inspiration"; card: InspirationCardType }
-  | { type: "nano"; cards: NanoInspirationCardType[] };
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
-}
-
-function getInterleavedData(
-  mainCards: InspirationCardType[],
-  nanoCards: NanoInspirationCardType[]
-): InterleavedItem[] {
-  const result: InterleavedItem[] = [];
-
-  if (nanoCards.length === 0) {
-    mainCards.forEach((card) => result.push({ type: "inspiration", card }));
-    return result;
-  }
-
-  let nanoRowIndex = 0;
-  let mainIndex = 0;
-
-  while (mainIndex < mainCards.length) {
-    // 2 nano rows
-    for (let i = 0; i < 2; i++) {
-      const startIdx = (nanoRowIndex * 4) % nanoCards.length;
-      const rowCards = nanoCards.slice(startIdx, startIdx + 4);
-      if (rowCards.length > 0) result.push({ type: "nano", cards: rowCards });
-      nanoRowIndex++;
-    }
-
-    // 2 inspiration cards
-    for (let i = 0; i < 2 && mainIndex < mainCards.length; i++) {
-      result.push({ type: "inspiration", card: mainCards[mainIndex++] });
-    }
-  }
-
-  return result;
 }
 
 function useNanoCards(activeLang: Lang, translate: (key: string) => string) {
@@ -171,7 +132,6 @@ export default function HomeClient({
   );
 
   const nanoCards = useNanoCards(effectiveLang, translateNano);
-  const filteredCards = useFilteredInspiration(cards, effectiveLang, "");
 
   const requireAuth = useCallback(() => {
     if (user) return true;
@@ -181,19 +141,12 @@ export default function HomeClient({
 
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    card: InspirationCardType | NanoInspirationCardType | null;
-    type: "inspiration" | "nano";
-  }>({ isOpen: false, card: null, type: "inspiration" });
+    card: NanoInspirationCardType | null;
+  }>({ isOpen: false, card: null });
 
-  const handleOpenModal = useCallback(
-    (
-      card: InspirationCardType | NanoInspirationCardType,
-      type: "inspiration" | "nano"
-    ) => {
-      setModalState({ isOpen: true, card, type });
-    },
-    []
-  );
+  const handleOpenModal = useCallback((card: NanoInspirationCardType) => {
+    setModalState({ isOpen: true, card });
+  }, []);
 
   const handleCloseModal = useCallback(() => {
     setModalState((prev) => ({ ...prev, isOpen: false }));
@@ -201,13 +154,7 @@ export default function HomeClient({
   }, []);
 
   return (
-    <div
-      className={classNames(
-        inter.className,
-        "w-full bg-[#FDFDFD] px-4 pb-10 pt-0 md:px-6 lg:px-10"
-      )}
-    >
-
+    <div className={classNames(inter.className, "w-full bg-[#FDFDFD] px-4 pb-10 pt-0 md:px-6 lg:px-10")}>
       <div className="w-full max-w-[1400px]">
         <div className="w-full max-w-[1400px] pb-6 pl-3">
           <h1 className="text-[28px] font-semibold tracking-tight text-neutral-900 md:text-4xl">
@@ -217,77 +164,20 @@ export default function HomeClient({
             {tHero("description")}
           </p>
         </div>
-  
-        <div className="w-full">
-          <ListView
-            filteredMainCards={filteredCards}
-            nanoCards={nanoCards}
-            requireAuth={requireAuth}
-            onOpenModal={handleOpenModal}
-          />
-  
-          {filteredCards.length === 0 && (
-            <div className="flex flex-col items-center justify-center py-20 text-neutral-400">
-              <Search className="mb-4 h-10 w-10 opacity-20" />
-              <p>No results found for your search.</p>
-            </div>
-          )}
-        </div>
+
+        <NanoInspirationRow
+          cards={nanoCards}
+          requireAuth={requireAuth}
+          onViewClick={handleOpenModal}
+        />
       </div>
-  
+
       <CardViewModal
         card={modalState.card}
         isOpen={modalState.isOpen}
         onClose={handleCloseModal}
-        cardType={modalState.type}
+        cardType="nano"
       />
     </div>
   );
-  }
-  
-  function ListView({
-    filteredMainCards,
-    nanoCards,
-    requireAuth,
-    onOpenModal,
-  }: {
-    filteredMainCards: InspirationCardType[];
-    nanoCards: NanoInspirationCardType[];
-    requireAuth: () => boolean;
-    onOpenModal: (
-      card: InspirationCardType | NanoInspirationCardType,
-      type: "inspiration" | "nano"
-    ) => void;
-  }) {
-    const data = useMemo(
-      () => getInterleavedData(filteredMainCards, nanoCards),
-      [filteredMainCards, nanoCards]
-    );
-  
-    return (
-      <div className="space-y-6">
-        {data.map((item, index) => {
-          if (item.type === "inspiration") {
-            return (
-              <InspirationListItem
-                key={`insp-${item.card.id}`}
-                card={item.card}
-                viewMode="list"
-                requireAuth={requireAuth}
-                onViewClick={() => onOpenModal(item.card, "inspiration")}
-              />
-            );
-          }
-  
-          return (
-            <NanoInspirationRow
-              key={`nano-row-${index}`}
-              cards={item.cards}
-              requireAuth={requireAuth}
-              onViewClick={(c) => onOpenModal(c, "nano")}
-            />
-          );
-        })}
-      </div>
-    );
-  }
+}
