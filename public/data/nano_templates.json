@@ -4622,5 +4622,72 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true
-  }
+  },
+  {
+    "id": "template-zhenhuan-mbti-character-analysis",
+    "locales": {
+        "zh": {
+            "base_prompt": "(Zhen Huan MBTI Character Poster Designer) 你是一位古风插画师。根据用户指定的甄嬛传角色 {character_name}，生成一张同款古风Q版MBTI人格分析海报。布局：1. 顶部标题「MBTI人格分析」，Curify水印在左上角。2. 主视觉：角色的Q版古风插画，搭配其MBTI类型、别称、名字和身份。3. 板块：「性格特点」部分列出角色核心特质，「命运/剧情关键词」部分用5个带说明的古风元素图标呈现。4. 底部：角色的经典台词。风格：工笔水彩质感，角色配色与MBTI气质匹配，国风花纹边框，背景融入角色标志性元素，竖版格式，4K超清，直接生成图片。主题：《甄嬛传》{character_name} 角色MBTI分析海报。",
+            "parameters": [
+                {
+                    "name": "character_name",
+                    "label": "甄嬛传角色名称",
+                    "type": "text",
+                    "placeholder": ["甄嬛", "安陵容", "端妃", "华妃·年世兰", "皇后·宜修", "雍正皇帝"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-zhenhuan-mbti-character-analysis-infj-zhenhuan-prev.jpg",
+    "topics": ["character", "mbti", "culture"],
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "allow_generation": true
+},
+  {
+    "id": "template-quote-poster-generator",
+    "locales": {
+        "en": {
+            "base_prompt": "(Movie Quote Poster Designer) You are a professional cinematic poster artist. Based on the user-provided text {quote_text}, generate a visually stunning poster that perfectly matches the tone, mood, and context of the quote. Layout: 1. Curify watermark at the top left. 2. The quote text is the central focus, styled with elegant typography (serif fonts, subtle decorative elements). 3. Background is a scene or visual motif directly inspired by the quote's theme, color palette, and atmosphere. 4. The source (movie/book name) is included at the bottom in a smaller, refined font. Style: Cinematic lighting, high contrast, moody color grading, textured details (film grain, paper texture), vertical format, 4K ultra HD, direct image generation. Subject: Custom quote poster for \"{quote_text}\".",
+            "parameters": [
+                {
+                    "name": "quote_text",
+                    "label": "Quote or Text",
+                    "type": "text",
+                    "placeholder": [
+                        "You jump, I jump",
+                        "Hope is a good thing, maybe the best of things, and no good thing ever dies",
+                        "People live for living itself, not for anything other than living"
+                    ]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-quote-poster-generator-shawshank-redemption-prev.jpg",
+    "topics": ["learning", "reading"],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
+},
+  {
+    "id": "template-science-education-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Science Education Infographic Designer) You are a children's science illustrator. Based on the user-specified {topic}, generate a clean, educational infographic with 6 horizontal sections, each showing a different stage or zone of the topic. Layout: 1. Curify watermark at top left. 2. Each section has a colorful cartoon illustration, title, and short description with key facts (depth, features, organisms). 3. Consistent style across all sections. Style: Cute, friendly cartoon art, soft colors, clear labels, white background, vertical format, 4K ultra HD, direct image generation. Subject: {topic} Educational Infographic.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Science Topic",
+                    "type": "text",
+                    "placeholder": ["Ocean Zones", "Atmosphere Layers", "Earth's Geological Ages", "Human Evolution"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-science-education-infographic-ocean-zones-prev.jpg",
+    "topics": ["learning", "science"],
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true
+}
 ]

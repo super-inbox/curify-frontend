@@ -2148,5 +2148,72 @@
         ]
       }
     }
+  },
+  "template-zhenhuan-mbti-character-analysis": {
+    "category": "Charakter-MBTI-Poster",
+    "description": "Erstelle MBTI-Persoenlichkeitsanalyse-Poster im antiken chinesischen Q-Version-Stil fuer Charaktere aus dem Drama Zhen Huan Zhuan.",
+    "title": "Nano Banana Prompt: Zhen Huan MBTI Charakter-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert ein vertikales 4K-Poster im antiken chinesischen Q-Version-Stil mit MBTI-Analyse fuer Charaktere aus Zhen Huan Zhuan, einschliesslich Persoenlichkeitsmerkmalen und Schicksalsschlagwoertern.",
+        "who": "Geeignet fuer Fans des Dramas, MBTI-Enthusiasten und Liebhaber chinesischer Kultur.",
+        "how": [
+          "Charakternamen aus Zhen Huan Zhuan eingeben.",
+          "Vorlage generiert Q-Version-Portraet mit MBTI-Typ und Alias.",
+          "Persoenlichkeitsmerkmale und 5 Schicksalsschlagwoerter werden automatisch generiert.",
+          "Vertikales 4K-Poster im Tusche-Aquarell-Stil mit klassischer chinesischer Umrandung generieren."
+        ],
+        "prompts": [
+          "MBTI-Poster fuer Zhen Huan generieren.",
+          "Charakter-Poster fuer Hua Fei erstellen.",
+          "MBTI-Poster fuer Kaiserin Yi Xiu generieren."
+        ]
+      }
+    }
+  },
+  "template-quote-poster-generator": {
+    "category": "Zitat-Poster",
+    "description": "Erstelle visuell beeindruckende Kino-Poster fuer Film- und Buchzitate, die den Ton und die Stimmung jedes Zitats perfekt widerspiegeln.",
+    "title": "Nano Banana Prompt: Film-Zitat-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert ein vertikales 4K-Kinoposter mit dem gewaehlten Zitat im Mittelpunkt. Hintergrundszene und Farbpalette sind vom Thema des Zitats inspiriert.",
+        "who": "Geeignet fuer Filmliebhaber, Buchliebhaber, Content-Creator und alle, die ihre Lieblingszitate visualisieren moechten.",
+        "how": [
+          "Gib dein gewaehltes Zitat oder Text ein.",
+          "Hintergrundszene wird vom Thema des Zitats inspiriert automatisch generiert.",
+          "Elegante Schriftgestaltung und Film-Farbgebung werden angewendet.",
+          "Generiere ein vertikales 4K-Poster mit Filmkorn und Papiertextur."
+        ],
+        "prompts": [
+          "Kinoposter fuer 'Du springst, ich springe' aus Titanic.",
+          "Zitat-Poster fuer das Shawshank-Redemption-Zitat.",
+          "Poster fuer ein Lebens-Motivations-Zitat erstellen."
+        ]
+      }
+    }
+  },
+  "template-science-education-infographic": {
+    "category": "Wissenschaftliche Bildungsinfografik",
+    "description": "Erstelle klare, bunte Bildungsinfografiken zu Wissenschaftsthemen in 6 illustrierten Abschnitten, ideal fuer Kinder und Schueler.",
+    "title": "Nano Banana Prompt: Wissenschaftliche Bildungsinfografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert eine vertikale 4K-Kinderinfografik mit 6 Abschnitten. Jeder Abschnitt hat eine bunte Cartoon-Illustration, Titel und Schluesselfakten zu einer anderen Phase oder Zone des Themas.",
+        "who": "Geeignet fuer Naturwissenschaftslehrer, Bildungscontent-Ersteller, Eltern und alle, die ansprechende Lernmaterialien erstellen.",
+        "how": [
+          "Wissenschaftsthema waehlen (z. B. Meereszonen, Atmosphaerenschichten, Geologische Zeitalter).",
+          "6 Abschnitte werden automatisch generiert.",
+          "Jeder Abschnitt hat Cartoon-Illustration, Titel und Schluesselfakten.",
+          "Vertikale 4K-Infografik mit sanften Farben und kinderfreundlicher Typografie generieren."
+        ],
+        "prompts": [
+          "Infografik zu Meereszonen mit 6 Tiefenzonen.",
+          "Atmosphaerenschichten-Infografik erstellen.",
+          "Geologische Zeitalter der Erde-Infografik generieren.",
+          "Menschliche Evolution-Infografik erstellen."
+        ]
+      }
+    }
   }
 }

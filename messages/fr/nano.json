@@ -2148,5 +2148,72 @@
         ]
       }
     }
+  },
+  "template-zhenhuan-mbti-character-analysis": {
+    "category": "Affiche MBTI de Personnage",
+    "description": "Generez des affiches d'analyse de personnalite MBTI en style Q-version chinois ancien pour les personnages du drama Zhen Huan Zhuan.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche MBTI Personnage Zhen Huan | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K en style Q-version chinois ancien avec analyse MBTI pour les personnages de Zhen Huan Zhuan, incluant traits de personnalite et mots-cles du destin.",
+        "who": "Convient aux fans du drama, enthousiastes du MBTI et amateurs de culture chinoise.",
+        "how": [
+          "Entrez le nom du personnage de Zhen Huan Zhuan.",
+          "Le modele genere un portrait Q-version avec type MBTI et alias.",
+          "Les traits de personnalite et 5 mots-cles du destin sont generes automatiquement.",
+          "Generez une affiche verticale 4K en style aquarelle traditionnel chinois."
+        ],
+        "prompts": [
+          "Generer une affiche MBTI pour Zhen Huan.",
+          "Creer une affiche de personnage pour Hua Fei.",
+          "Generer une affiche MBTI pour l'Imperatrice Yi Xiu."
+        ]
+      }
+    }
+  },
+  "template-quote-poster-generator": {
+    "category": "Affiche de Citation",
+    "description": "Creez des affiches cinematographiques visuellement saisissantes pour des citations de films et de livres, capturant parfaitement le ton et l'ambiance.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche de Citation de Film | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche cinematographique verticale 4K centree sur la citation choisie. La scene de fond et la palette de couleurs sont directement inspirees du theme de la citation.",
+        "who": "Convient aux passionnes de cinema, lecteurs, createurs de contenu et toute personne souhaitant visualiser ses citations preferees.",
+        "how": [
+          "Entrez votre citation ou texte choisi.",
+          "La scene de fond inspiree du theme de la citation est generee automatiquement.",
+          "Typographie serif elegante et etalonnage cinematographique sont appliques.",
+          "Generez une affiche verticale 4K avec grain de film et texture papier."
+        ],
+        "prompts": [
+          "Affiche cinematographique pour 'Tu sautes, je saute' de Titanic.",
+          "Affiche de citation de The Shawshank Redemption.",
+          "Affiche pour une citation motivationnelle sur la vie."
+        ]
+      }
+    }
+  },
+  "template-science-education-infographic": {
+    "category": "Infographie Educative Scientifique",
+    "description": "Generez des infographies educatives claires et colorees sur des sujets scientifiques en 6 sections illustrees, parfaites pour les enfants et les etudiants.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie Educative Scientifique | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une infographie scientifique enfantine verticale 4K avec 6 sections horizontales. Chaque section comporte une illustration animee coloree, un titre et des faits cles.",
+        "who": "Convient aux enseignants de sciences, createurs de contenu educatif, parents et toute personne creant du materiel d'apprentissage scientifique.",
+        "how": [
+          "Choisissez un sujet scientifique (ex. Zones Oceaniques, Couches Atmospheriques, Ages Geologiques).",
+          "6 sections sont generees automatiquement.",
+          "Chaque section inclut illustration, titre et faits cles.",
+          "Generez une infographie verticale 4K avec couleurs douces et typographie adaptee aux enfants."
+        ],
+        "prompts": [
+          "Infographie des Zones Oceaniques avec 6 zones de profondeur.",
+          "Infographie des Couches Atmospheriques.",
+          "Infographie des Ages Geologiques de la Terre.",
+          "Infographie de l'Evolution Humaine."
+        ]
+      }
+    }
   }
 }
