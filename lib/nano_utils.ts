@@ -71,6 +71,7 @@ export type ImageView = {
   params: Record<string, any>;
   image_url: string;
   preview_image_url?: string;
+  rank_score?: number;
 };
 
 export type NanoInspirationCardType = {

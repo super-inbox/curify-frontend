@@ -60,6 +60,7 @@ export function getImageViewsForTemplate(
   locale: PageLocale
 ): ImageView[] {
   const imgs = reg.imagesByTemplateId.get(templateId) ?? [];
+  const rankScore = reg.templates.find((t) => t.id === templateId)?.rank_score;
 
   return imgs.map((img) => {
     const loc =
@@ -77,6 +78,7 @@ export function getImageViewsForTemplate(
       params: img.params ?? {},
       image_url: imageUrl,
       preview_image_url: previewUrl,
+      rank_score: rankScore,
     };
   });
 }
