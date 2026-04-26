@@ -114,19 +114,43 @@ export function buildOrderedTemplateImageGridItems(
   imageViews: NanoImageView[],
   orderedImageIds?: string[]
 ) {
-  const imageMap = new Map(imageViews.map((x) => [x.id, x] as const));
-  const ids = orderedImageIds?.length ? orderedImageIds : imageViews.map((x) => x.id);
+  const toItem = (img: NanoImageView) => ({
+    id: img.id,
+    title: img.title || "",
+    preview: img.preview_image_url || img.image_url,
+    templateId: img.template_id,
+    params: img.params ?? {},
+  });
 
-  return ids
-    .map((id) => imageMap.get(id))
-    .filter((img): img is NanoImageView => Boolean(img))
-    .map((img) => ({
-      id: img.id,
-      title: img.title || "",
-      preview: img.preview_image_url || img.image_url,
-      templateId: img.template_id,
-      params: img.params ?? {},
-    }));
+  if (orderedImageIds?.length) {
+    const imageMap = new Map(imageViews.map((x) => [x.id, x] as const));
+    return orderedImageIds
+      .map((id) => imageMap.get(id))
+      .filter((img): img is NanoImageView => Boolean(img))
+      .map(toItem);
+  }
+
+  // Group by template, sort groups by rank_score desc, then interleave round-robin
+  const groups = new Map<string, NanoImageView[]>();
+  for (const img of imageViews) {
+    const arr = groups.get(img.template_id) ?? [];
+    arr.push(img);
+    groups.set(img.template_id, arr);
+  }
+
+  const sortedGroups = Array.from(groups.values()).sort(
+    (a, b) => (b[0].rank_score ?? 1) - (a[0].rank_score ?? 1)
+  );
+
+  const result: NanoImageView[] = [];
+  const maxLen = Math.max(0, ...sortedGroups.map((g) => g.length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const group of sortedGroups) {
+      if (i < group.length) result.push(group[i]);
+    }
+  }
+
+  return result.map(toItem);
 }
 
 export function buildNanoFeedCards(

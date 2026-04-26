@@ -175,27 +175,7 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((t) => [t.id, t])
   );
 
-  // Related topics: only among true Tier 1 topics (entry bar)
-  const TIER1_TOPICS = new Set(["character", "language", "travel", "lifestyle", "learning", "product", "design"]);
-  const RELATED_FOCUS = new Set(["learning", "character", "travel", "lifestyle", "product"]);
-  const MIN_OVERLAP = 2;
-  const relatedTopics = new Map<string, string[]>();
-  const tier1Ids = allTopicIds.filter((id) => TIER1_TOPICS.has(id));
-
-  for (const a of tier1Ids) {
-    if (!RELATED_FOCUS.has(a)) continue;
-    const aIds = topicToTemplateIds.get(a)!;
-    const related: string[] = [];
-    for (const b of tier1Ids) {
-      if (a === b) continue;
-      const bIds = topicToTemplateIds.get(b)!;
-      const overlap = [...aIds].filter((id) => bIds.has(id)).length;
-      if (overlap >= MIN_OVERLAP) related.push(b);
-    }
-    if (related.length > 0) relatedTopics.set(a, related);
-  }
-
-  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics };
+  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics: new Map() };
 }
 
 const registry = buildTopicRegistry();
