@@ -67,6 +67,7 @@ export function NanoInspirationCard({
     setSaved(true);
     try {
       await savedItemsService.save(card.id, "nano_inspiration");
+      trackAction(batchTracking, "favorite");
       setShowSavedToast(true);
       setTimeout(() => setShowSavedToast(false), 3000);
     } catch {
