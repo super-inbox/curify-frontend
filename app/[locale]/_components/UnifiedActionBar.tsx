@@ -12,7 +12,6 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import { useTracking, useSaveTracking, type TrackingTarget } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
-import { savedItemsService } from "@/services/savedItemsService";
 import { userAtom, drawerAtom, clientMountedAtom } from "@/app/atoms/atoms";
 
 type GenerateConfig = {
@@ -101,7 +100,7 @@ export default function UnifiedActionBar({
   const [isBatchDownloading, setIsBatchDownloading] = useState(false);
   const [saved, setSaved] = useState(false);
 
-  const handleSave = async () => {
+  const handleSave = () => {
     if (!save || saved) return;
     if (!user) {
       setDrawerState("signin");
@@ -109,11 +108,6 @@ export default function UnifiedActionBar({
     }
     setSaved(true);
     trackSave();
-    try {
-      await savedItemsService.save(tracking.contentId, tracking.contentType);
-    } catch {
-      setSaved(false);
-    }
   };
 
   const handleGenerate = async () => {
