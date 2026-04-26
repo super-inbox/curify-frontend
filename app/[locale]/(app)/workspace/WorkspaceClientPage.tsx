@@ -124,6 +124,7 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
     try {
       setIsRefreshing(true);
       const profile = await authService.getProfile();
+      console.log('[workspace] profile:', profile);
       setUser(profile);
       setProjects(Array.isArray(profile?.projects) ? profile.projects : []);
     } catch {
