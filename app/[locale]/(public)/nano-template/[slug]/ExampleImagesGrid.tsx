@@ -23,9 +23,9 @@ type Item = {
 function getCols() {
   if (typeof window === "undefined") return 1;
   const w = window.innerWidth;
-  if (w >= 1024) return 4;
-  if (w >= 640) return 2;
-  return 1;
+  if (w >= 1024) return 5;
+  if (w >= 640) return 3;
+  return 2;
 }
 
 function useCols() {
