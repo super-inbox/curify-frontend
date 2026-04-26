@@ -80,7 +80,7 @@ function EmptyState({ icon, text }: { icon: string; text: string }) {
 }
 
 export default function WorkspaceClient({ locale }: { locale: string }) {
-  const [user] = useAtom(userAtom);
+  const [user, setUser] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
   const [, setModalState] = useAtom(modalAtom);
   const [, setJobType] = useAtom(jobTypeAtom);
@@ -105,17 +105,14 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
     try {
       setIsRefreshing(true);
       const profile = await authService.getProfile();
-      if (Array.isArray(profile?.projects)) {
-        setProjects(profile.projects);
-      } else {
-        setProjects([]);
-      }
+      setUser(profile);
+      setProjects(Array.isArray(profile?.projects) ? profile.projects : []);
     } catch {
       setProjects([]);
     } finally {
       setIsRefreshing(false);
     }
-  }, []);
+  }, [setUser]);
 
   useEffect(() => {
     if (clientMounted && user) {
