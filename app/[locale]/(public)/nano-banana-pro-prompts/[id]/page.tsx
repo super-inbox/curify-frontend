@@ -148,7 +148,7 @@ export default async function PromptDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-[1400px] px-4 py-4 sm:px-6 lg:px-8">
         <ExamplePromptHero
           title={prompt.title}
           prompt={promptText}
