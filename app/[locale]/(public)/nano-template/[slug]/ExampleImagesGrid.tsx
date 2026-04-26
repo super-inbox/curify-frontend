@@ -68,6 +68,7 @@ function ExampleImageCard({
     setSaved(true);
     try {
       await savedItemsService.save(item.id, "nano_inspiration");
+      trackAction(tracking, "favorite");
       setShowSavedToast(true);
       setTimeout(() => setShowSavedToast(false), 3000);
     } catch {
