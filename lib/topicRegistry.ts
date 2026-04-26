@@ -101,6 +101,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   portrait:       "portrait",
   monochrome:     "monochrome",
   watercolor:     "watercolor",
+  animal:         "animal",
 };
 
 // Blog tag to pull posts for a topic page.
