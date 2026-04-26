@@ -179,8 +179,8 @@ export default function Header() {
       </div>
 
       {/* Sidebar */}
-      <header className="hidden lg:fixed lg:left-0 lg:top-0 lg:z-50 lg:flex lg:h-screen lg:w-[300px] lg:flex-col lg:bg-[#f7f7f7] lg:px-5 lg:py-5">
-  {/* Logo */} <div className="mb-2 flex items-center justify-center"> <div className="relative h-24 w-24"> <Image src="/logo.svg" alt={t("logoAlt")} fill sizes="96px" className="object-contain" priority /> </div> </div>
+      <header className="hidden lg:fixed lg:left-0 lg:top-0 lg:z-50 lg:flex lg:h-screen lg:w-[150px] lg:flex-col lg:bg-[#f7f7f7] lg:px-3 lg:py-5">
+  {/* Logo */} <div className="mb-2 flex items-center justify-center"> <div className="relative h-12 w-full"> <Image src="/logo.svg" alt={t("logoAlt")} fill sizes="120px" className="object-contain" priority /> </div> </div>
 
         {(headerState === "out" || headerState === "in") && (
           <nav className="flex flex-col gap-2 text-[#333]">

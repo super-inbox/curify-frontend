@@ -245,7 +245,7 @@ export default async function Page({ params }: Props) {
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             Gallery
           </h2>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {galleryPrompts.slice(0, 12).map((prompt) => (
               <PromptCard key={prompt.id} prompt={prompt} />
             ))}
