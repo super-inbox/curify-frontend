@@ -137,7 +137,10 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
     if (clientMounted && user) {
       refreshProjects();
     }
-  }, [clientMounted, user, refreshProjects]);
+    // intentionally exclude user and refreshProjects — refreshProjects calls setUser,
+    // which would change user and cause an infinite re-fetch loop
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clientMounted]);
 
   if (!clientMounted) {
     return (
