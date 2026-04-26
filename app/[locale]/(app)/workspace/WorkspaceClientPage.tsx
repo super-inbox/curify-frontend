@@ -32,10 +32,29 @@ type ResolvedCard = {
 
 function resolveIds(ids: string[], locale: string): ResolvedCard[] {
   const imageMap = new Map((nanoImages as any[]).map((r) => [r.id, r]));
+
+  // template ID → first image (for template-level saves from NanoInspirationCard)
+  const templateFirstImageMap = new Map<string, any>();
+  for (const r of nanoImages as any[]) {
+    if (!templateFirstImageMap.has(r.template_id)) {
+      templateFirstImageMap.set(r.template_id, r);
+    }
+  }
+
   return ids
     .map((id) => {
-      const r = imageMap.get(id);
+      // Case 1: compound "templateId:imageId" from ExampleImagesGrid
+      let r: any = null;
+      if (id.includes(":")) {
+        const imageId = id.split(":").slice(1).join(":");
+        r = imageMap.get(imageId);
+      }
+      // Case 2: plain image ID
+      if (!r) r = imageMap.get(id);
+      // Case 3: template ID → first image
+      if (!r) r = templateFirstImageMap.get(id);
       if (!r) return null;
+
       const loc = r.locales?.[locale] ?? r.locales?.en ?? r.locales?.zh ?? {};
       return {
         id: r.id,
