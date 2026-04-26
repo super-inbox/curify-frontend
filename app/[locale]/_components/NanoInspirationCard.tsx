@@ -14,7 +14,6 @@ import {
   useTracking,
 } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
-import { savedItemsService } from "@/services/savedItemsService";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import {
   makeNanoTemplateUrl,
@@ -60,19 +59,14 @@ export function NanoInspirationCard({
   const [saved, setSaved] = useState(false);
   const [showSavedToast, setShowSavedToast] = useState(false);
 
-  const handleSave = async (e: React.MouseEvent) => {
+  const handleSave = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (saved) return;
     if (!user) { setDrawerState("signin"); return; }
     setSaved(true);
-    try {
-      await savedItemsService.save(card.id, "nano_inspiration");
-      trackAction(batchTracking, "favorite");
-      setShowSavedToast(true);
-      setTimeout(() => setShowSavedToast(false), 3000);
-    } catch {
-      setSaved(false);
-    }
+    trackAction(batchTracking, "favorite");
+    setShowSavedToast(true);
+    setTimeout(() => setShowSavedToast(false), 3000);
   };
 
   const batchTracking = {

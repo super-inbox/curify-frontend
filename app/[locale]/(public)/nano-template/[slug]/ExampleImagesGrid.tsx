@@ -9,7 +9,6 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
 import { useClickTracking, useTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
-import { savedItemsService } from "@/services/savedItemsService";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 type Item = {
@@ -61,19 +60,14 @@ function ExampleImageCard({
   const [saved, setSaved] = useState(false);
   const [showSavedToast, setShowSavedToast] = useState(false);
 
-  const handleSave = async (e: React.MouseEvent) => {
+  const handleSave = (e: React.MouseEvent) => {
     e.preventDefault();
     if (saved) return;
     if (!user) { setDrawerState("signin"); return; }
     setSaved(true);
-    try {
-      await savedItemsService.save(item.id, "nano_inspiration");
-      trackAction(tracking, "favorite");
-      setShowSavedToast(true);
-      setTimeout(() => setShowSavedToast(false), 3000);
-    } catch {
-      setSaved(false);
-    }
+    trackAction(tracking, "favorite");
+    setShowSavedToast(true);
+    setTimeout(() => setShowSavedToast(false), 3000);
   };
 
   const tracking = {
