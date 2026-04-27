@@ -2261,5 +2261,28 @@
         ]
       }
     }
+  },
+  "template-world-travel-map-illustration": {
+    "category": "Illustration de Carte de Voyage Mondiale",
+    "description": "Générez une carte illustrée colorée style dessin à la main de n'importe quel pays avec des monuments, gastronomie locale et icônes culturelles.",
+    "title": "Nano Banana Prompt: Générateur d'Illustration de Carte de Voyage Mondiale | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une superbe illustration de carte de voyage dessinée à la main de n'importe quel pays. La carte présente des sites régionaux, monuments célèbres, icônes culinaires locales et symboles culturels dans un style d'affiche de voyage vintage.",
+        "who": "Parfait pour les blogueurs de voyage, créateurs de contenu touristique, éducateurs en géographie, influenceurs, agences de voyage et créateurs de guides de pays.",
+        "how": [
+          "Entrez le nom du pays (p. ex. Japon, Égypte, Brésil, États-Unis).",
+          "Le modèle génère une carte colorée avec monuments régionaux et icônes culturelles.",
+          "Sites célèbres et spécialités locales sont illustrés sur la carte.",
+          "Le style ressemble aux affiches de voyage vintage avec des couleurs chaudes.",
+          "Téléchargez pour blogs de voyage, posts sociaux ou impressions décoratives."
+        ],
+        "prompts": [
+          "Générez une carte de voyage du Japon — Mont Fuji, cerisiers, sushis, temples, shinkansen, style illustration vintage, 4K vertical.",
+          "Créez une carte colorée de l'Égypte — pyramides, Nil, pharaons, cuisine locale, désert, style vintage, 4K vertical.",
+          "Concevez une carte guide du Brésil — Amazonie, Rio, Carnaval, gastronomie, football, 4K vertical."
+        ]
+      }
+    }
   }
 }

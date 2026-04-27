@@ -2261,5 +2261,28 @@
         ]
       }
     }
+  },
+  "template-world-travel-map-illustration": {
+    "category": "Dünya Seyahat Haritası İllüstrasyonu",
+    "description": "Herhangi bir ülkenin simgeleri, yerel mutfağı ve kültür ikonlarıyla renkli, el çizimi tarzı bir seyahat rehber haritası oluşturun.",
+    "title": "Nano Banana Prompt: Dünya Seyahat Haritası İllüstrasyon Oluşturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, Nano Banana promptlarıyla herhangi bir ülkenin çarpıcı el çizimi seyahat haritası illüstrasyonunu oluşturur. Harita, bölgesel öne çıkanlar, ünlü simgeler, yerel yemek ikonları ve kültürel semboller içerir — vintage seyahat posteri tarzında.",
+        "who": "Seyahat blogcuları, turizm içerik üreticileri, coğrafya eğitimcileri, influencer'lar, seyahat acenteleri ve ülke rehberleri oluşturmak isteyenler için mükemmel.",
+        "how": [
+          "Ülke adını girin (örn. Japonya, Mısır, Brezilya, ABD).",
+          "Şablon bölgesel simgeler, yemekler ve kültürel ikonlarla renkli el çizimi harita oluşturur.",
+          "Ünlü yerler ve yerel lezzetler harita üzerinde illüstre edilir.",
+          "Stil vintage seyahat posterleri gibi sıcak renkler ve dekoratif kenarlıklar içerir.",
+          "Seyahat blogları, sosyal medya veya dekoratif baskılar için indirin."
+        ],
+        "prompts": [
+          "Japonya'nın el çizimi seyahat haritasını oluştur: Fuji, kiraz çiçekleri, suşi, tapınaklar, Shinkansen, vintage illüstrasyon stili, 4K dikey.",
+          "Mısır'ın renkli seyahat haritasını oluştur: piramitler, Nil, firavunlar, yerel yemekler, çöl, vintage stil, 4K dikey.",
+          "Brezilya'nın seyahat rehber haritasını tasarla: Amazon, Rio, Karnaval, gastronomiye, futbol, 4K dikey."
+        ]
+      }
+    }
   }
 }

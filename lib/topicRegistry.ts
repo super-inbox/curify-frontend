@@ -51,7 +51,7 @@ function normalizeTopicValues(value: unknown): string[] {
 // Explicit sibling groups for tag-style topics (geo, language pairs, visual styles).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
-  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
+  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 ];
@@ -60,7 +60,7 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  travel:    ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
+  travel:    ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
   design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 };
@@ -72,10 +72,10 @@ const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   travel:    ["culture", "food", "city", "itinerary"],
-  lifestyle: ["fashion", "animal", "fitness", "finance", "nostalgia", "guides"],
+  lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],
   learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
   product:   [],
-  design:    ["interior"],
+  design:    ["posters", "digital-canvas", "mockups"],
 };
 
 // Reverse map: Tier 3 tag → Tier 1 parent
@@ -105,6 +105,8 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   city:           "urban",
   film:           "cinematic",
   ai:             "futuristic",
+  posters:        "vintage",
+  "digital-canvas": "artistic",
 };
 
 // Blog tag to pull posts for a topic page.
