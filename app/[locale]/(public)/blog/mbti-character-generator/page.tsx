@@ -21,7 +21,7 @@ import { useState } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
-import SocialShare from "@/app/[locale]/(public)/blog/[slug]/components/SocialShare";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
@@ -186,10 +186,9 @@ export default function MBTICharacterGeneratorPage() {
         />
 
         {/* Social Share */}
-        <SocialShare 
+        <ShareButton
+          url="/blog/mbti-character-generator"
           title={t('hero.title')}
-          description={t('hero.subtitle')}
-          url={`/blog/mbti-character-generator`}
         />
 
         {/* Pro Tip Section */}

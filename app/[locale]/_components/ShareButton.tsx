@@ -146,7 +146,7 @@ export default function ShareButton({
   const handleMainClick = async () => {
     if (prefersNativeShare) {
       try {
-        await navigator.share({ title, text, url });
+        await navigator.share({ title, text, url: `https://www.curify-ai.com${url}` });
         onShared?.();
         setStatus("shared");
         resetStatusLater();

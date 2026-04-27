@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import BlogShareBar from "./BlogShareBar";
 
 export async function generateMetadata({
   params,
@@ -39,7 +40,10 @@ export default async function BlogLayout({
   return (
     <main className="min-h-screen bg-[#FDFDFD] px-4 pt-4 pb-10 md:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-[1280px]">
-        <div className="min-w-0">{children}</div>
+        <div className="min-w-0">
+          {children}
+          <BlogShareBar />
+        </div>
       </div>
     </main>
   );
