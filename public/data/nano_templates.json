@@ -3662,7 +3662,7 @@
     "allow_generation": true
   },
   {
-    "id": "template-mood-board-interior-designgenerator",
+    "id": "template-interior-design-mood-board-generator",
     "locales": {
       "en": {
         "base_prompt": "（Interior Design Mood Board Generator）You are a professional interior design mood board creator. Based on the user-provided {space_type} interior design photo, generate a vertical 3:4 premium interior design mood board, matching the professional, minimalist aesthetic of the reference images. Layout: 1. Top: High-resolution photorealistic interior design render of {space_type}, Curify watermark at top left. 2. Bottom: Curated material swatches, fabric samples, color palettes, finish samples that exactly match the top design, each labeled with material/color name, plus a Design Legend/Color Palette box in bottom right. Style: Clean professional interior design aesthetic, accurate material matching, clear typography, vertical 3:4 format, 4K ultra HD, direct image generation. Subject: {space_type} Interior Design Mood Board.",
@@ -3683,15 +3683,15 @@
         ]
       }
     },
-    "og_image": "/images/nano_insp_preview/template-mood-board--interior-designgenerator-living-room-prev.jpg",
+    "og_image": "/images/nano_insp_preview/template-interior-design-mood-board-generator-living-room-prev.jpg",
     "topics": [
       "design",
       "mockups",
       "interior",
       "photorealistic"
     ],
-    "rank_score": 80,
-    "base_rank_score": 80,
+    "rank_score": 90,
+    "base_rank_score": 90,
     "requires_image_upload": true,
     "allow_generation": true
   },
@@ -4800,5 +4800,135 @@
     "rank_score": 80,
     "base_rank_score": 80,
     "allow_generation": true
+  },
+  {
+    "id": "template-CVC-english-word-coloring-flower-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids' English Word Family Coloring Worksheet Designer) Create a clean, black-and-white line art worksheet for the {word_family} word family, in a flower shape layout. Layout: 1. Central flower petal with the word family {word_family}. 2. 5 surrounding petals each containing a different word from the family, paired with a simple line art illustration of the word. 3. Curify watermark at top left, with 'Name' and 'Date' lines at the bottom. Style: Child-friendly, bold outlines, no shading, educational coloring page, vertical format, 4K ultra HD, direct image generation. Subject: {word_family} Word Family Coloring Flower Worksheet.",
+        "parameters": [
+          {
+            "name": "word_family",
+            "label": "Word Family",
+            "type": "text",
+            "placeholder": [
+              "un",
+              "ig",
+              "at",
+              "am",
+              "ap",
+              "og"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-CVC-english-word-coloring-flower-card-ap-prev.jpg",
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "allow_generation": true,
+    "topics": [
+      "learning",
+      "language-english"
+    ]
+  },
+  {
+    "id": "template-weird-cold-knowledge-popular-science-card",
+    "locales": {
+      "en": {
+        "base_prompt": "(Kids' Fun Science Fact Card Designer) Create a vibrant, educational infographic poster about {science_topic}, in the style of a fun fact for children. Layout: 1. Large, bold title at the top stating the fact. 2. Central cartoon illustration explaining the fact. 3. Additional text/numbers/arrows to clarify details. 4. Colorful background themed to the topic (ocean, space, jungle, etc.). Style: Bright neon colors, friendly cartoon art, simple explanations, high contrast text, vertical format, 4K ultra HD, direct image generation. Subject: {science_topic} Fun Science Fact Card.",
+        "parameters": [
+          {
+            "name": "science_topic",
+            "label": "Science Topic",
+            "type": "text",
+            "placeholder": [
+              "Blue Whale's Heart",
+              "Desert Snow",
+              "Lightning Temperature",
+              "Sloth Poop Schedule",
+              "Tardigrades in Space",
+              "Octopus Hearts",
+              "Rainbow Circles",
+              "Brain Electricity",
+              "Earth's Spin Speed"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-weird-cold-knowledge-popular-science-card-tardigrades-prev.jpg",
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "allow_generation": true,
+    "topics": [
+      "learning",
+      "science"
+    ]
+  },
+  {
+    "id": "template-country-top10-travel-destinations",
+    "locales": {
+      "en": {
+        "base_prompt": "(Travel Watercolor Poster Designer) Create a travel infographic poster for {country_name}, showcasing the 'Top 10 Must-Visit Destinations'. Layout: 1. Large title with the country name at the top, subtitle 'Top 10 Must-Visit Destinations'. 2. 10 numbered watercolor illustrations of famous landmarks/places, each paired with a short description. 3. Light, textured paper background. Style: Soft watercolor art style, warm muted colors, simple linework, clean grid layout, educational travel guide aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: {country_name} Top 10 Travel Destinations Watercolor Poster.",
+        "parameters": [
+          {
+            "name": "country_name",
+            "label": "Country Name",
+            "type": "text",
+            "placeholder": [
+              "South Korea",
+              "France",
+              "India",
+              "Italy",
+              "Thailand",
+              "Japan"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-country-top10-travel-destinations-france-prev.jpg",
+    "rank_score": 80,
+    "base_rank_score": 80,
+    "allow_generation": true,
+    "topics": [
+      "travel",
+      "watercolor",
+      "posters"
+    ]
+  },
+  {
+    "id": "template-book-minimalist",
+    "locales": {
+      "en": {
+        "base_prompt": "(Minimalist Book Recommendation Poster Designer) Create a curated reading list poster for {book_theme}, showcasing a selection of hand-picked titles. Layout: 1. Large elegant title at the top, formatted as '{book_theme}: Your Curated Reading Guide'. 2. A clean 2×4 grid of 8 realistic book covers, each with clear titles, authors, and theme-matching cover art. 3. Under each book cover, a simple checkmark (✓) followed by the book title in a clean sans-serif font. 4. At the bottom, additional recommended titles listed with checkmarks (✓). Background: Soft neutral beige with subtle green leaf and dried flower botanical accents in the corners, matte slightly textured paper. Style: Warm minimalist aesthetic, cozy calm tone, cohesive balanced design, high readability, vertical format, 4K ultra HD, direct image generation. Subject: {book_theme} Curated Reading List Poster.",
+        "parameters": [
+          {
+            "name": "book_theme",
+            "label": "Book Theme",
+            "type": "text",
+            "placeholder": [
+              "Gardening for Beginners",
+              "Productivity & Focus",
+              "Personal Growth & Wellness",
+              "Plant Lovers",
+              "Creative Writing",
+              "Mental Health Self-Care"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-book-minimalist-gardening-beginners-prev.jpg",
+    "rank_score": 90,
+    "base_rank_score": 90,
+    "allow_generation": true,
+    "topics": [
+      "learning",
+      "reading",
+      "design",
+      "posters"
+    ]
   }
 ]
