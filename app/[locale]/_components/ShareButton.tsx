@@ -67,7 +67,7 @@ const PLATFORMS: Platform[] = [
     bg: "#1877F2",
     Icon: FacebookIcon,
     getUrl: (url) =>
-      `https://www.facebook.com/sharer/sharer.php?u=https://www.curify-ai.com${encodeURIComponent(url)}`,
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
   },
   {
     id: "twitter",
@@ -75,7 +75,7 @@ const PLATFORMS: Platform[] = [
     bg: "#000000",
     Icon: XIcon,
     getUrl: (url, title) =>
-      `https://twitter.com/intent/tweet?url=https://www.curify-ai.com${encodeURIComponent(url)}${title ? `&text=${encodeURIComponent(title)}` : ""}`,
+      `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}${title ? `&text=${encodeURIComponent(title)}` : ""}`,
   },
   {
     id: "linkedin",
@@ -83,7 +83,7 @@ const PLATFORMS: Platform[] = [
     bg: "#0077B5",
     Icon: LinkedInIcon,
     getUrl: (url) =>
-      `https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://www.curify-ai.com${encodeURIComponent(url)}`,
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
   },
   {
     id: "whatsapp",
@@ -101,7 +101,7 @@ const PLATFORMS: Platform[] = [
     bg: "#E6162D",
     Icon: WeiboIcon,
     getUrl: (url, title) =>
-      `https://service.weibo.com/share/share.php?url=https://www.curify-ai.com${encodeURIComponent(url)}${title ? `&title=${encodeURIComponent(title)}` : ""}`,
+      `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}${title ? `&title=${encodeURIComponent(title)}` : ""}`,
   },
 ];
 
@@ -136,8 +136,10 @@ export default function ShareButton({
     window.setTimeout(() => setStatus("idle"), 2500);
   };
 
+  const fullUrl = url.startsWith("http") ? url : `https://www.curify-ai.com${url}`;
+
   const copyLink = async () => {
-    await navigator.clipboard.writeText(`https://www.curify-ai.com${url}`);
+    await navigator.clipboard.writeText(fullUrl);
     onShared?.();
     setStatus("copied");
     resetStatusLater();
@@ -146,7 +148,7 @@ export default function ShareButton({
   const handleMainClick = async () => {
     if (prefersNativeShare) {
       try {
-        await navigator.share({ title, text, url: `https://www.curify-ai.com${url}` });
+        await navigator.share({ title, text, url: fullUrl });
         onShared?.();
         setStatus("shared");
         resetStatusLater();
@@ -159,7 +161,7 @@ export default function ShareButton({
   };
 
   const handleSocialClick = (platform: Platform) => {
-    window.open(platform.getUrl(url, title, text), "_blank", "noopener,noreferrer");
+    window.open(platform.getUrl(fullUrl, title, text), "_blank", "noopener,noreferrer");
     onShared?.();
     setIsOpen(false);
   };

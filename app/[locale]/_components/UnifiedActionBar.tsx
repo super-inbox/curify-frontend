@@ -208,15 +208,6 @@ export default function UnifiedActionBar({
         />
       )}
 
-      {visible(share) && (
-        <ShareButton
-          url={share.url}
-          title={share.title}
-          text={share.text}
-          onShared={() => trackAction(tracking, "share")}
-        />
-      )}
-
       {visible(batchDownload) && (
         <button
           onClick={handleBatchDownload}
@@ -262,6 +253,15 @@ export default function UnifiedActionBar({
           <Download className="h-4 w-4" />
           {t("download")}
         </a>
+      )}
+
+      {visible(share) && (
+        <ShareButton
+          url={share.url}
+          title={share.title}
+          text={share.text}
+          onShared={() => trackAction(tracking, "share")}
+        />
       )}
     </div>
   );
