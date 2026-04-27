@@ -72,10 +72,10 @@ const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character: ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   travel:    ["culture", "food", "city", "itinerary"],
-  lifestyle: ["fashion", "animal", "fitness", "finance", "nostalgia", "guides"],
+  lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],
   learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
   product:   [],
-  design:    ["interior"],
+  design:    ["posters", "digital-canvas", "mockups"],
 };
 
 // Reverse map: Tier 3 tag → Tier 1 parent
