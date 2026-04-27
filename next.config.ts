@@ -83,6 +83,16 @@ const nextConfig: NextConfig = {
         destination: "/tools/:path*",
         permanent: true,
       },
+      {
+        source: "/nano-template/world-travel-map-illustration-en",
+        destination: "/nano-template/world-travel-map-illustration",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${LOCALE_RE})/nano-template/world-travel-map-illustration-en`,
+        destination: "/:locale/nano-template/world-travel-map-illustration",
+        permanent: true,
+      },
     ];
 
     const safeGeneratedRedirects = generatedRedirects.filter(
