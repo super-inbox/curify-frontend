@@ -235,7 +235,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="max-w-5xl pt-20 mx-auto px-6 pb-12 text-[18px] leading-8">
+    <article className="pt-20 px-0 pb-12 text-[18px] leading-8">
       <div className="mb-8">
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
