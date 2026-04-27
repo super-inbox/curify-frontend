@@ -12,6 +12,8 @@ import { useSetAtom } from "jotai";
 import { jobTypeAtom } from "@/app/atoms/atoms";
 import { File } from "@/types/projects";
 
+const TEXT_ONLY_JOB_TYPES = new Set(["video_transcript", "video_summarizer"]);
+
 export default function ProjectDetailsPage() {
   const params = useParams();
   const locale = Array.isArray(params.locale) ? params.locale[0] : params.locale;
@@ -195,6 +197,59 @@ export default function ProjectDetailsPage() {
           </Link>
         </div>
         <div className="text-red-600">Unable to load project details.</div>
+      </div>
+    );
+  }
+
+  // Text-only result page for transcript and summarizer jobs
+  if (TEXT_ONLY_JOB_TYPES.has(projectDetails.job_type ?? "")) {
+    const isTranscript = projectDetails.job_type === "video_transcript";
+    const label = isTranscript ? "Transcript" : "Summary";
+
+    return (
+      <div className="min-h-screen bg-white p-6 pt-20 max-w-3xl mx-auto">
+        <Link
+          href="/workspace"
+          className="inline-flex items-center gap-2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition-colors cursor-pointer mb-8"
+        >
+          <img src="/icons/arrow_left.svg" alt="Back" className="w-4 h-4" />
+          Return to Workspace
+        </Link>
+
+        <h1 className="text-2xl font-bold mb-1">{projectDetails.name}</h1>
+        <p className="text-sm text-gray-500 mb-8">{label} ready</p>
+
+        <div className="flex flex-col gap-4">
+          {projectDetails.srt_signed_url && (
+            <a
+              href={projectDetails.srt_signed_url}
+              download
+              className="inline-flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-5 py-4 shadow-sm hover:shadow-md transition"
+            >
+              <span className="text-2xl">📄</span>
+              <div>
+                <p className="font-semibold text-neutral-800">Download SRT</p>
+                <p className="text-xs text-neutral-500">Timestamped transcript file</p>
+              </div>
+            </a>
+          )}
+          {projectDetails.txt_signed_url && (
+            <a
+              href={projectDetails.txt_signed_url}
+              download
+              className="inline-flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-5 py-4 shadow-sm hover:shadow-md transition"
+            >
+              <span className="text-2xl">📝</span>
+              <div>
+                <p className="font-semibold text-neutral-800">Download TXT</p>
+                <p className="text-xs text-neutral-500">Plain text {label.toLowerCase()}</p>
+              </div>
+            </a>
+          )}
+          {!projectDetails.srt_signed_url && !projectDetails.txt_signed_url && (
+            <p className="text-gray-500">No files available yet. Please check back shortly.</p>
+          )}
+        </div>
       </div>
     );
   }
