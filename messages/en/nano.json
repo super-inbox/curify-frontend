@@ -2215,5 +2215,50 @@
         ]
       }
     }
+  },
+  "template-world-landmark-vintage-info-poster": {
+    "category": "World Landmark Vintage Poster",
+    "description": "Generate a vintage travel-style info poster for any world landmark, featuring hand-drawn watercolor illustrations, key facts, and decorative antique typography.",
+    "title": "Nano Banana Prompt: World Landmark Vintage Info Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vintage parchment-style educational info poster for any world landmark. A central hand-drawn watercolor illustration is surrounded by key facts — construction date, architectural style, height, purpose, and UNESCO status — framed by decorative borders, compass motifs, and sepia handwritten typography.",
+        "who": "Perfect for travel enthusiasts, geography and history educators, tourism content creators, and anyone who wants beautiful vintage-style landmark posters for social media or print.",
+        "how": [
+          "Enter a landmark name (e.g. Taj Mahal, Eiffel Tower, Colosseum).",
+          "The template generates an aged parchment-style poster with a central watercolor illustration.",
+          "Key facts surround the illustration: construction, style, height, purpose, UNESCO status.",
+          "Decorative vintage borders, compass motifs, and handwritten-style fonts complete the look.",
+          "Download for travel blogs, educational posts, or decorative prints."
+        ],
+        "prompts": [
+          "Generate a vintage info poster for the Taj Mahal — watercolor illustration, key facts, parchment background, decorative borders, 4K vertical.",
+          "Create a vintage landmark poster for the Colosseum — sepia tones, architectural facts, hand-drawn style, 4K vertical.",
+          "Design a vintage info poster for the Pyramids of Giza — illustrated landmark, historical facts, antique typography, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-princess-pearl-mbti-character-card": {
+    "category": "Princess Pearl MBTI Character Card",
+    "description": "Generate Q-version ancient Chinese style MBTI character cards for characters from the classic drama Princess Pearl (还珠格格).",
+    "title": "Nano Banana Prompt: Princess Pearl MBTI Character Card Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K Q-version ancient Chinese style MBTI character card for characters from the classic Chinese drama Princess Pearl (还珠格格). Each card features the character's MBTI type, personality keywords, iconic quotes, and a soft watercolor chibi illustration with traditional Chinese decorative borders.",
+        "who": "Perfect for fans of Princess Pearl, MBTI enthusiasts, Chinese culture lovers, and character card content creators.",
+        "how": [
+          "Enter a character name from Princess Pearl (e.g. Ziwei, Xiao Yanzi, Yongqi).",
+          "The template generates a chibi ancient-style portrait with MBTI type and character identity.",
+          "Personality keywords and iconic quotes are auto-generated.",
+          "A vertical 4K soft watercolor card with traditional Chinese cloud and floral borders is produced."
+        ],
+        "prompts": [
+          "Generate an MBTI character card for Ziwei (紫薇).",
+          "Create an MBTI character card for Xiao Yanzi (小燕子).",
+          "Generate an MBTI character card for Prince Yongqi (五阿哥永琪)."
+        ]
+      }
+    }
   }
 }
