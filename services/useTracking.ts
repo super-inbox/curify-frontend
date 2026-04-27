@@ -83,9 +83,13 @@ function getSessionId(): string {
   return sessionId;
 }
 
-function getUserId(): string | null {
+function getUserId(): number | null {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("user_id");
+  try {
+    const stored = localStorage.getItem("curifyUser");
+    if (stored) return (JSON.parse(stored) as any)?.user_id ?? null;
+  } catch {}
+  return null;
 }
 
 function buildPayload(options: TrackingOptions) {

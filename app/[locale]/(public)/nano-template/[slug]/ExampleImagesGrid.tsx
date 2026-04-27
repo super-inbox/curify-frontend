@@ -9,7 +9,6 @@ import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
 import { useClickTracking, useTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
-import { savedItemsService } from "@/services/savedItemsService";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
 type Item = {
@@ -24,9 +23,9 @@ type Item = {
 function getCols() {
   if (typeof window === "undefined") return 1;
   const w = window.innerWidth;
-  if (w >= 1024) return 4;
-  if (w >= 640) return 2;
-  return 1;
+  if (w >= 1024) return 5;
+  if (w >= 640) return 3;
+  return 2;
 }
 
 function useCols() {
@@ -59,17 +58,16 @@ function ExampleImageCard({
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
   const [saved, setSaved] = useState(false);
+  const [showSavedToast, setShowSavedToast] = useState(false);
 
-  const handleSave = async (e: React.MouseEvent) => {
+  const handleSave = (e: React.MouseEvent) => {
     e.preventDefault();
     if (saved) return;
     if (!user) { setDrawerState("signin"); return; }
     setSaved(true);
-    try {
-      await savedItemsService.save(item.id, "nano_inspiration");
-    } catch {
-      setSaved(false);
-    }
+    trackAction(tracking, "favorite");
+    setShowSavedToast(true);
+    setTimeout(() => setShowSavedToast(false), 3000);
   };
 
   const tracking = {
@@ -142,18 +140,25 @@ function ExampleImageCard({
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
           </button>
         ) : (
-          <button
-            type="button"
-            onClick={handleSave}
-            className={`flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
-              saved
-                ? "bg-purple-100 text-purple-700"
-                : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
-            }`}
-          >
-            <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
-            {saved ? t("saved") : t("save")}
-          </button>
+          <div className="relative">
+            <button
+              type="button"
+              onClick={handleSave}
+              className={`flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
+                saved
+                  ? "bg-purple-100 text-purple-700"
+                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+              }`}
+            >
+              <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
+              {saved ? t("saved") : t("save")}
+            </button>
+            {showSavedToast && (
+              <div className="absolute bottom-full left-0 mb-2 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-1.5 text-xs text-white shadow-lg">
+                Saved! View in your workspace →
+              </div>
+            )}
+          </div>
         )}
         <Link
           href={remixHref}
@@ -190,7 +195,7 @@ export default function ExampleImagesGrid({
 
   return (
     <div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
 
       {visible.map((it) => (
   <ExampleImageCard

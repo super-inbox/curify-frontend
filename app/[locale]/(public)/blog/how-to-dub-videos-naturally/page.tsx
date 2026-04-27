@@ -20,7 +20,7 @@ import { useState } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
-import SocialShare from "@/app/[locale]/(public)/blog/[slug]/components/SocialShare";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
 import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
@@ -123,10 +123,9 @@ export default function HowToDubVideosNaturallyPage() {
         />
 
         {/* Social Share */}
-        <SocialShare 
+        <ShareButton
+          url="/blog/how-to-dub-videos-naturally"
           title={t('hero.title')}
-          description={t('hero.subtitle')}
-          url={`/blog/how-to-dub-videos-naturally`}
         />
 
         {/* Pro Tip Section */}

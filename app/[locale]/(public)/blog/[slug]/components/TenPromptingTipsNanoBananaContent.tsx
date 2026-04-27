@@ -1,7 +1,6 @@
 import { formatNanoBananaContent } from "../utils/content-formatters";
 import PromptBox from "./PromptBox";
 import TableOfContents from "./TableOfContents";
-import SocialShare from "./SocialShare";
 import FAQSection from "./FAQSection";
 import StructuredData from "./StructuredData";
 import Head from 'next/head';
@@ -318,14 +317,6 @@ export default function TenPromptingTipsNanoBananaContent({ slug, t, locale }: T
       </section>
 
       <FAQSection faqs={faqs} />
-
-      <div className="mt-12 pt-8 border-t">
-        <SocialShare 
-          title={t('title')}
-          url={`${t("baseUrl")}${slug}`}
-          description={t('metaDescription')}
-        />
-      </div>
     </div>
     
     <TableOfContents headings={headings} />

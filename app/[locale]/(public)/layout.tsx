@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import JotaiProvider from "@/app/[locale]/_components/JotaiProvider";
 import { routing } from "@/i18n/routing";
-import { headers } from "next/headers";
 import type { Metadata } from "next";
 
 import Header from "../_layout_components/Header";
@@ -18,6 +17,7 @@ import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
 
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
+import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import EntryBar from "@/app/[locale]/_components/EntryBar";
 
@@ -60,11 +60,6 @@ export default async function PublicLocaleLayout({
 
   const messages = await getMessages();
 
-  const headerList = await headers();
-  const pathname = headerList.get("x-pathname") || "";
-
-  const isBlogPage = pathname.includes("/blog");
-
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>{/* keep existing scripts */}</head>
@@ -97,19 +92,11 @@ export default async function PublicLocaleLayout({
             <AppWrapper user={null}>
               <Header />
 
-            <main className="min-h-screen lg:ml-[300px]">
+            <main className="min-h-screen lg:ml-[225px]">
               <TopUpModal />
               <SignDrawer />
             
-              {!isBlogPage && (
-                  <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
-                  <div className="mx-auto max-w-[1280px] px-6 sm:px-10">
-                    <div className="w-full max-w-[1080px]">
-                      <EntryBar locale={locale} />
-                    </div>
-                  </div>
-                </div>
-              )}
+              <EntryBar locale={locale} />
 
               {children}
 

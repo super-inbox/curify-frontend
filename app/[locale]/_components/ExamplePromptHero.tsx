@@ -181,7 +181,7 @@ export default function ExamplePromptHero({
           </div>
 
           <div className="flex flex-col gap-4 lg:min-h-[520px]">
-            {rightColumnContent ?? (
+            {rightColumnContent ? rightColumnContent : (
               <>
                 {metaChips ? (
                   <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
@@ -198,11 +198,7 @@ export default function ExamplePromptHero({
                 ) : null}
 
                 {beforePrompt}
-              </>
-            )}
 
-            {!rightColumnContent && (
-              <>
                 <section aria-labelledby="prompt-heading" className="flex flex-col">
                   <h2
                     id="prompt-heading"

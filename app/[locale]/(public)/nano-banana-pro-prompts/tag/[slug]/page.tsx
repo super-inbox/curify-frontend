@@ -127,7 +127,7 @@ export default async function TagPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="min-h-screen bg-gray-50 px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1400px]">
           <header className="mb-12 text-center">
             <h1 className="mb-2 text-4xl font-bold text-gray-900">{title}</h1>
 
@@ -157,9 +157,9 @@ export default async function TagPage({ params }: Props) {
               </h3>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {prompts.map((prompt) => (
-                <PromptCard key={prompt.id} prompt={prompt} />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              {prompts.map((prompt, i) => (
+                <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
               ))}
             </div>
           )}

@@ -157,11 +157,11 @@ export default function CreateNewModal() {
             : "auto",
           target_language,
           subtitles_enabled: subtitles_enabled as SubtitleFormat,
-          audio_option: (ui.allowVoiceover
+          audio_option: (ui.forceAudioOption ?? (ui.allowVoiceover
             ? voiceover === "Yes"
               ? "dubbed"
               : "original"
-            : "original") as AudioOption,
+            : "original")) as AudioOption,
           erase_original_subtitles: isRemoveSubtitle,
           allow_lip_syncing: false,
         },

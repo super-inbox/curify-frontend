@@ -5,8 +5,7 @@ import { useAtom, useSetAtom } from "jotai";
 import { drawerAtom, authLoadingAtom, userAtom } from "@/app/atoms/atoms";
 import Image from "next/image";
 import Input from "../../_components/Input";
-import { useState } from "react";
-import BtnN from "../../_components/button/ButtonNormal";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import GoogleLoginButton from "../../_components/button/GoogleLoginButton";
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
@@ -14,6 +13,75 @@ import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { authService } from "@/services/auth";
 import { resetAnonymousCopyCount } from "@/lib/copyGating";
+
+const OTP_LENGTH = 6;
+
+function OtpBoxes({
+  value,
+  onChange,
+  onComplete,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  onComplete: () => void;
+}) {
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+
+  const digits = value.split("").slice(0, OTP_LENGTH);
+  while (digits.length < OTP_LENGTH) digits.push("");
+
+  const focus = (i: number) => inputRefs.current[i]?.focus();
+
+  const handleChange = (i: number, raw: string) => {
+    const ch = raw.replace(/\D/g, "").slice(-1);
+    const next = digits.map((d, idx) => (idx === i ? ch : d)).join("");
+    onChange(next);
+    if (ch && i < OTP_LENGTH - 1) focus(i + 1);
+    if (next.replace(/\s/g, "").length === OTP_LENGTH && ch) onComplete();
+  };
+
+  const handleKeyDown = (i: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace" && !digits[i] && i > 0) focus(i - 1);
+  };
+
+  const handlePaste = (e: React.ClipboardEvent) => {
+    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, OTP_LENGTH);
+    if (!pasted) return;
+    e.preventDefault();
+    onChange(pasted.padEnd(OTP_LENGTH, "").slice(0, OTP_LENGTH));
+    focus(Math.min(pasted.length, OTP_LENGTH - 1));
+    if (pasted.length === OTP_LENGTH) onComplete();
+  };
+
+  useEffect(() => {
+    focus(0);
+  }, []);
+
+  return (
+    <div className="flex gap-2 justify-center" onPaste={handlePaste}>
+      {digits.map((d, i) => (
+        <input
+          key={i}
+          ref={(el) => { inputRefs.current[i] = el; }}
+          type="text"
+          inputMode="numeric"
+          maxLength={1}
+          value={d}
+          onChange={(e) => handleChange(i, e.target.value)}
+          onKeyDown={(e) => handleKeyDown(i, e)}
+          className={`
+            w-11 h-13 text-center text-xl font-semibold rounded-xl border-2 outline-none transition-all
+            ${d
+              ? "border-purple-500 bg-purple-50 text-purple-700"
+              : "border-neutral-200 bg-white text-neutral-800 focus:border-purple-400"
+            }
+          `}
+          style={{ height: "3.25rem" }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function SignDrawer() {
   const [state] = useAtom(drawerAtom);
@@ -27,7 +95,6 @@ export default function SignDrawer() {
   const [email, setEmail] = useState("");
   const [emailValid, setEmailValid] = useState(false);
   const [otp, setOtp] = useState("");
-  const [otpValid, setOtpValid] = useState(false);
   const [step, setStep] = useState(1);
   const [errorMsg, setErrorMsg] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -41,12 +108,15 @@ export default function SignDrawer() {
   const effectiveState = messages[safeState] ? safeState : "signup";
   const content = messages[effectiveState];
 
+  const otpComplete = otp.replace(/\D/g, "").length === OTP_LENGTH;
+
   const handleEmailSubmit = async () => {
     if (!emailValid || isSending) return;
     setErrorMsg("");
     setIsSending(true);
     try {
       await authService.sendOtp(email);
+      setOtp("");
       setStep(2);
     } catch (err: any) {
       const msg = err?.message ?? "";
@@ -61,7 +131,7 @@ export default function SignDrawer() {
   };
 
   const handleOtpSubmit = async () => {
-    if (!otpValid || isVerifying) return;
+    if (!otpComplete || isVerifying) return;
     setErrorMsg("");
     setIsVerifying(true);
     try {
@@ -115,6 +185,7 @@ export default function SignDrawer() {
         </div>
       )}
 
+      {/* Header */}
       <div className="relative">
         {step === 2 && (
           <button onClick={resetFlow} className="absolute left-0 top-0 p-1 text-gray-500 hover:text-gray-700">
@@ -126,17 +197,15 @@ export default function SignDrawer() {
         </div>
       </div>
 
-      <p className="mt-3 mb-10 w-full text-center text-lg font-medium">
-        {step === 1 ? content.welcome : t("enterVerificationCode")}
-      </p>
+      {step === 1 ? (
+        <>
+          <p className="mt-3 mb-8 w-full text-center text-lg font-medium">{content.welcome}</p>
 
-      <div className="flex flex-col gap-5 items-center w-full max-w-sm mx-auto px-2">
-        {step === 1 ? (
-          <>
+          <div className="flex flex-col gap-4 items-center w-full max-w-sm mx-auto px-2">
             <div className="w-full">
               <GoogleLoginButton variant="drawer" />
             </div>
-            <div className="text-sm text-gray-500">{t("or")}</div>
+            <div className="text-sm text-gray-400">{t("or")}</div>
             <Input
               value={email}
               placeholder={t("emailPlaceholder")}
@@ -145,44 +214,68 @@ export default function SignDrawer() {
               rules={[{ pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, errorMsg: t("invalidEmail") }]}
             />
             {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
-            <BtnN
-              className="w-full py-3 text-base"
-              disabled={!emailValid || isSending}
+
+            <button
               onClick={handleEmailSubmit}
+              disabled={isSending}
+              className={`
+                w-full py-3 rounded-lg text-base font-semibold transition-all duration-200
+                ${emailValid
+                  ? "bg-[var(--p-blue)] text-white hover:bg-[var(--p-blue-hover)] cursor-pointer shadow-sm"
+                  : "bg-neutral-100 text-neutral-400 cursor-not-allowed"
+                }
+              `}
             >
               {isSending ? t("sending") : content.button}
-            </BtnN>
-          </>
-        ) : (
-          <>
-            <p className="text-sm text-gray-700 text-center">
-              {t("otpSentTo")} <span className="font-semibold">{email}</span>.
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          {/* OTP step */}
+          <div className="mt-4 mb-6 flex flex-col items-center gap-1">
+            <div className="text-4xl mb-2">📬</div>
+            <h2 className="text-lg font-semibold text-neutral-900">Check your inbox</h2>
+            <p className="text-sm text-neutral-500 text-center max-w-xs">
+              We sent a <span className="font-medium text-neutral-700">{OTP_LENGTH}-digit code</span> to{" "}
+              <span className="font-medium text-neutral-700">{email}</span>
             </p>
-            <Input
+            <p className="text-xs text-neutral-400 mt-1">Check spam if you don't see it</p>
+          </div>
+
+          <div className="flex flex-col gap-5 items-center w-full max-w-sm mx-auto px-2">
+            <OtpBoxes
               value={otp}
-              placeholder={t("verificationCodePlaceholder")}
               onChange={setOtp}
-              setValid={setOtpValid}
-              rules={[{ pattern: /^\d{4,8}$/, errorMsg: t("invalidOtp") }]}
+              onComplete={handleOtpSubmit}
             />
-            {errorMsg && <p className="text-red-500 text-xs text-center">{errorMsg}</p>}
-            <BtnN
-              className="w-full py-3 text-base"
-              disabled={!otpValid || isVerifying}
+
+            {errorMsg && <p className="text-red-500 text-sm text-center">{errorMsg}</p>}
+
+            <button
               onClick={handleOtpSubmit}
+              disabled={isVerifying}
+              className={`
+                w-full py-3 rounded-lg text-base font-semibold transition-all duration-200
+                ${otpComplete
+                  ? "bg-[var(--p-blue)] text-white hover:bg-[var(--p-blue-hover)] cursor-pointer shadow-sm"
+                  : "bg-neutral-100 text-neutral-400 cursor-not-allowed"
+                }
+              `}
             >
               {isVerifying ? t("verifying") : t("verifyCode")}
-            </BtnN>
+            </button>
+
             <button
-              className="text-xs text-blue-600 hover:underline mt-2"
+              className="text-xs text-neutral-500 hover:text-purple-600 underline underline-offset-2 transition-colors"
               onClick={resetFlow}
               type="button"
             >
-              {t("resendCode")}
+              {t("resendCode")} or use a different email
             </button>
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
 
       <p className="text-[var(--c4)] text-center mt-10 text-xs">
         {t("agreePrefix")}

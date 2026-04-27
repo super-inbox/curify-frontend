@@ -51,7 +51,7 @@ function normalizeTopicValues(value: unknown): string[] {
 // Explicit sibling groups for tag-style topics (geo, language pairs, visual styles).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
-  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
+  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 ];
@@ -60,7 +60,7 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  travel:    ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east"],
+  travel:    ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran"],
   language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
   design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
 };
@@ -69,13 +69,13 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 // Tier 1 (entry bar): character, language, travel, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "anime", "sports", "comparison", "groups", "film", "portrait"],
+  character: ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  travel:    ["culture", "food", "city"],
-  lifestyle: ["fitness", "nostalgia", "fashion", "finance", "guides"],
+  travel:    ["culture", "food", "city", "itinerary"],
+  lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],
   learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
   product:   [],
-  design:    ["interior"],
+  design:    ["posters", "digital-canvas", "mockups"],
 };
 
 // Reverse map: Tier 3 tag → Tier 1 parent
@@ -101,6 +101,12 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   portrait:       "portrait",
   monochrome:     "monochrome",
   watercolor:     "watercolor",
+  animal:         "animal",
+  city:           "urban",
+  film:           "cinematic",
+  ai:             "futuristic",
+  posters:        "vintage",
+  "digital-canvas": "artistic",
 };
 
 // Blog tag to pull posts for a topic page.
@@ -175,27 +181,7 @@ function buildTopicRegistry(): TopicRegistry {
     enrichedTopics.map((t) => [t.id, t])
   );
 
-  // Related topics: only among true Tier 1 topics (entry bar)
-  const TIER1_TOPICS = new Set(["character", "language", "travel", "lifestyle", "learning", "product", "design"]);
-  const RELATED_FOCUS = new Set(["learning", "character", "travel", "lifestyle", "product"]);
-  const MIN_OVERLAP = 2;
-  const relatedTopics = new Map<string, string[]>();
-  const tier1Ids = allTopicIds.filter((id) => TIER1_TOPICS.has(id));
-
-  for (const a of tier1Ids) {
-    if (!RELATED_FOCUS.has(a)) continue;
-    const aIds = topicToTemplateIds.get(a)!;
-    const related: string[] = [];
-    for (const b of tier1Ids) {
-      if (a === b) continue;
-      const bIds = topicToTemplateIds.get(b)!;
-      const overlap = [...aIds].filter((id) => bIds.has(id)).length;
-      if (overlap >= MIN_OVERLAP) related.push(b);
-    }
-    if (related.length > 0) relatedTopics.set(a, related);
-  }
-
-  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics };
+  return { topics: enrichedTopics, topicById, topicToTemplates, templateToTopics, relatedTopics: new Map() };
 }
 
 const registry = buildTopicRegistry();

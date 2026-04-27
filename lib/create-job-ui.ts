@@ -1,5 +1,5 @@
 // lib/create-job-ui.ts
-import type { BackendJobType } from "@/types/projects";
+import type { AudioOption, BackendJobType } from "@/types/projects";
 
 export type UiConfig = {
   title: string;
@@ -19,6 +19,9 @@ export type UiConfig = {
 
   // Subtitle-only special toggle
   allowRequireTranslationToggle?: boolean;
+
+  // Override audio_option regardless of voiceover toggle
+  forceAudioOption?: AudioOption;
 
   // pricing (per minute)
   ratePerMinute: number;
@@ -88,6 +91,43 @@ export const JOB_UI_CONFIG: Record<BackendJobType, UiConfig> = {
     subtitleOptions: ["None"],
     ratePerMinute: 0,
     ctaLabel: "Start",
+  },
+  video_summarizer: {
+    title: "Summarize Video",
+    allowUpload: true,
+    allowYoutube: true,
+    showSourceLang: true,
+    showTargetLang: false,
+    allowVoiceover: false,
+    allowSubtitles: false,
+    subtitleOptions: ["None"],
+    ratePerMinute: 0,
+    ctaLabel: "Start",
+  },
+  speech_translator: {
+    title: "Translate Speech",
+    allowUpload: true,
+    allowYoutube: true,
+    showSourceLang: true,
+    showTargetLang: true,
+    allowVoiceover: false,
+    allowSubtitles: false,
+    subtitleOptions: ["None"],
+    forceAudioOption: "dubbed",
+    ratePerMinute: 5,
+    ctaLabel: "Start Translation",
+  },
+  nano_template_generation: {
+    title: "Generate Image",
+    allowUpload: false,
+    allowYoutube: false,
+    showSourceLang: false,
+    showTargetLang: false,
+    allowVoiceover: false,
+    allowSubtitles: false,
+    subtitleOptions: ["None"],
+    ratePerMinute: 0,
+    ctaLabel: "Generate",
   },
 };
 

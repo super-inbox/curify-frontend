@@ -18,7 +18,10 @@ export type BackendJobType =
 | "full_translation"
 | "srt_translator"
 | "video_transcript"
-| "youtube_subtitles";
+| "video_summarizer"
+| "speech_translator"
+| "youtube_subtitles"
+| "nano_template_generation";
 
 
 // Job settings interface aligned with backend
@@ -45,6 +48,10 @@ export interface Project {
   final_video_signed_url_withwatermark?: string | null;
   thumbnail_signed_url?: string | null;
   srt_signed_url?: string | null;
+  txt_signed_url?: string | null;
+  // nano_template_generation projects
+  image_path?: string | null;
+  preview_image_path?: string | null;
 }
 
 // For creating new projects via API

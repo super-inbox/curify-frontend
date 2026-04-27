@@ -193,5 +193,41 @@
     "tag": "egypt",
     "template_id": "template-city-miniature",
     "params": { "City Name": "Cairo" }
+  },
+
+  {
+    "tag": "portugal",
+    "template_id": "template-whimsical-travel-map",
+    "params": { "country_name": "Portugal" }
+  },
+  {
+    "tag": "portugal",
+    "template_id": "template-country-top10-travel-destinations",
+    "params": { "country_name": "Portugal" }
+  },
+  {
+    "tag": "portugal",
+    "template_id": "template-3d-region-landmark-map",
+    "params": { "region_name": "Lisbon, Portugal" }
+  },
+  {
+    "tag": "portugal",
+    "template_id": "template-city-miniature",
+    "params": { "City Name": "Lisbon" }
+  },
+  {
+    "tag": "portugal",
+    "template_id": "template-food",
+    "params": { "food_name": "Pastel de Nata" }
+  },
+  {
+    "tag": "portugal",
+    "template_id": "template-travel",
+    "params": { "destination": "Algarve, Portugal", "date_range": "6/1-6/8" }
+  },
+  {
+    "tag": "portugal",
+    "template_id": "template-sports-battle",
+    "params": { "player_left": "Cristiano Ronaldo", "player_right": "Lionel Messi" }
   }
 ]
