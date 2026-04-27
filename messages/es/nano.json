@@ -2215,5 +2215,51 @@
         ]
       }
     }
+  },
+  "template-world-landmark-vintage-info-poster": {
+    "category": "Póster Vintage de Monumentos Mundiales",
+    "description": "Genera un póster informativo estilo vintage para cualquier monumento mundial con ilustraciones en acuarela y tipografía decorativa.",
+    "title": "Nano Banana Prompt: Generador de Póster Vintage de Monumentos Mundiales | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster educativo estilo pergamino vintage para cualquier monumento mundial, con ilustración central en acuarela y datos clave.",
+        "who": "Ideal para entusiastas de viajes, educadores, creadores de contenido turístico y cualquiera que quiera pósters vintage de monumentos.",
+        "how": [
+          "Ingresa el nombre del monumento.",
+          "Se genera un póster pergamino con ilustración en acuarela.",
+          "Datos clave rodean la ilustración.",
+          "Bordes decorativos y tipografía manuscrita completan el diseño.",
+          "Descarga para blogs, redes sociales o impresión."
+        ],
+        "prompts": [
+          "Póster vintage del Taj Mahal, 4K vertical.",
+          "Póster vintage del Coliseo, 4K vertical.",
+          "Póster vintage de las Pirámides de Guiza, 4K vertical."
+        ]
+      }
+    }
+  },
+  "template-princess-pearl-mbti-character-card": {
+    "category": "Tarjeta MBTI de Princesa Perla",
+    "description": "Genera tarjetas de personaje MBTI estilo Q-version chino antiguo para personajes del drama Princesa Perla.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas MBTI de Princesa Perla | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea tarjetas de personaje MBTI estilo Q-version chino antiguo para personajes de Princesa Perla.",
+        "who": "Para fans de Princesa Perla, entusiastas de MBTI y amantes de la cultura china.",
+        "how": [
+          "Ingresa el nombre del personaje.",
+          "Se genera un retrato chibi con tipo MBTI.",
+          "Palabras clave de personalidad y citas icónicas.",
+          "Bordes decorativos chinos tradicionales.",
+          "Descarga la tarjeta."
+        ],
+        "prompts": [
+          "Tarjeta MBTI de Ziwei, 4K.",
+          "Tarjeta MBTI de Xiao Yanzi, 4K.",
+          "Tarjeta MBTI del Príncipe Yongqi, 4K."
+        ]
+      }
+    }
   }
 }
