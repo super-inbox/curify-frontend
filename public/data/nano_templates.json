@@ -4719,5 +4719,39 @@
     "rank_score": 90,
     "base_rank_score": 90,
     "allow_generation": true
-  }
+  },
+  {
+    "id": "template-world-landmark-vintage-info-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Vintage Landmark Info Poster Designer) You are a vintage travel illustrator. Based on the user-specified {landmark_name}, generate an educational infographic poster in the reference style. Layout: 1. Header: Landmark name, subtitle/nickname, and country flag. 2. Central illustration: Detailed hand-drawn watercolor of the landmark. 3. Surrounding info boxes: Key facts (construction, architectural style, height, purpose, UNESCO status) with decorative dividers. 4. Small inset illustrations: Details of the landmark or surrounding area. Style: Aged parchment background, warm sepia tones, handwritten-style typography, decorative vintage borders, compass/ornate motifs, vertical format, 4K ultra HD, direct image generation. Subject: {landmark_name} Vintage Info Poster.",
+            "parameters": [
+                {
+                    "name": "landmark_name",
+                    "label": "Landmark Name",
+                    "type": "text",
+                    "placeholder": ["Taj Mahal", "The Great Wall of China", "The Eiffel Tower", "Colosseum", "Pyramids of Giza"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-world-landmark-vintage-info-poster-eiffel-tower-prev.jpg"
+},
+  {
+    "id": "template-princess-pearl-mbti-character-card",
+    "locales": {
+        "zh": {
+            "base_prompt": "(还珠格格MBTI角色卡片设计师) 你是一位古风插画师。根据用户指定的《还珠格格》角色 {character_name}，生成一张同款古风Q版MBTI角色卡片。布局：1. 顶部：角色的MBTI类型、别称，搭配角色主色调。2. 主视觉：Q版古风插画，还原角色造型与气质。3. 板块：角色名+拼音、性格关键词、经典台词，搭配角色相关的古风元素图标。4. 整体背景融入国风元素（祥云、花枝、传统纹样），Curify水印在右下角。风格：软萌Q版水彩质感，配色贴合角色人设，国风边框装饰，竖版格式，4K超清，直接生成图片。主题：《还珠格格》{character_name} MBTI角色卡片。",
+            "parameters": [
+                {
+                    "name": "character_name",
+                    "label": "还珠格格角色名称",
+                    "type": "text",
+                    "placeholder": ["紫薇", "小燕子", "五阿哥永琪", "皇后", "尔康", "晴儿"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-princess-pearl-mbti-character-card-infj-ziwei-prev.jpg"
+}
 ]
