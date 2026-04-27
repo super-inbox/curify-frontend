@@ -62,6 +62,14 @@ export default function ProjectDetailsPage() {
       });
     }
 
+    if (data.txt_signed_url) {
+      files.push({
+        name: extractFileName(data.txt_signed_url),
+        type: "TXT",
+        downloadUrl: data.txt_signed_url,
+      });
+    }
+
     return files;
   };
 
