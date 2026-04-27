@@ -105,6 +105,8 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   city:           "urban",
   film:           "cinematic",
   ai:             "futuristic",
+  posters:        "vintage",
+  "digital-canvas": "artistic",
 };
 
 // Blog tag to pull posts for a topic page.
