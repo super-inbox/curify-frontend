@@ -16,7 +16,8 @@ export type ContentType =
   | "menu_link"
   | "breadcrumb"
   | "prev_next"
-  | "mbti_quiz";
+  | "mbti_quiz"
+  | "search";
 
 export type ActionType =
   | "view"
@@ -26,7 +27,8 @@ export type ActionType =
   | "share"
   | "generate"
   | "remix"
-  | "download";
+  | "download"
+  | "search";
 
 export type ViewMode = "list" | "cards";
 

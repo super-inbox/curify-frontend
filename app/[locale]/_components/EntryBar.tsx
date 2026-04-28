@@ -9,6 +9,7 @@ import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
 import { USE_CASES } from "@/lib/use-cases";
 import { getCanonicalPath } from "@/lib/canonical";
 import { useClickTracking } from "@/services/useTracking";
+import SearchBar from "./SearchBar";
 
 type Props = {
   locale: string;
@@ -105,9 +106,7 @@ export default function EntryBar({ locale, className }: Props) {
             aria-label={t("question")}
           >
             <div className="flex flex-col gap-3">
-              <div className="text-sm font-medium text-neutral-800 sm:text-base">
-                {t("question")}
-              </div>
+              <SearchBar locale={locale} />
 
               <div className="flex flex-wrap gap-2">
                 {ENTRY_BAR_ITEMS.map((item) => (
