@@ -314,11 +314,16 @@ function ExampleImageCard({
 
   return (
     <div className="group overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-      <button
-        type="button"
-        onClick={() => { trackClick(); onOpenLightbox(); }}
-        className="block relative overflow-hidden w-full"
-        aria-label={item.title || item.id}
+      <Link
+        href={`/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`}
+        onClick={(e) => {
+          trackClick();
+          if (window.matchMedia("(pointer: coarse)").matches) {
+            e.preventDefault();
+            onOpenLightbox();
+          }
+        }}
+        className="block relative overflow-hidden"
       >
         <CdnImage
           src={item.preview}
@@ -331,7 +336,7 @@ function ExampleImageCard({
             View prompt →
           </span>
         </div>
-      </button>
+      </Link>
 
       <div className="flex items-center justify-between px-3 py-2">
         {item.batch ? (
