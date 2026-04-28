@@ -279,10 +279,11 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
           >
             <div className="flex items-center justify-between px-6 pt-5 pb-3">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-purple-500">Visual Personality Test</p>
-                <p className="text-lg font-bold text-neutral-900">
-                  {mbti ? "Your result" : `Question ${step + 1} of ${QUESTIONS.length}`}
-                </p>
+                {!mbti && (
+                  <p className="text-lg font-bold text-neutral-900">
+                    {`Question ${step + 1} of ${QUESTIONS.length}`}
+                  </p>
+                )}
               </div>
               <button
                 type="button"
