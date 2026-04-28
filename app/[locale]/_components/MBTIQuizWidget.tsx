@@ -212,6 +212,13 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
+  const [buttonVisible, setButtonVisible] = useState(true);
+
+  // Hide floating button after 1 minute
+  useEffect(() => {
+    const t = setTimeout(() => setButtonVisible(false), 60_000);
+    return () => clearTimeout(t);
+  }, []);
 
   // Read ?personality=TYPE from URL on mount — kept for backwards-compat
   useEffect(() => {
@@ -245,15 +252,17 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
 
   return (
     <div className="hidden lg:block">
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-purple-200 transition-transform hover:scale-105 hover:shadow-xl active:scale-100"
-        aria-label="Take MBTI personality quiz"
-      >
-        <Sparkles className="h-4 w-4" />
-        What's your MBTI?
-      </button>
+      {buttonVisible && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-purple-200 transition-transform hover:scale-105 hover:shadow-xl active:scale-100"
+          aria-label="Take MBTI personality quiz"
+        >
+          <Sparkles className="h-4 w-4" />
+          What's your MBTI?
+        </button>
+      )}
 
       {open && (
         <div
