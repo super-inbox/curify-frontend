@@ -179,13 +179,15 @@ function Lightbox({
               style={{ width: `${100 / items.length}%` }}
             >
               {Math.abs(i - index) <= 1 && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={it.preview}
-                  alt={it.title || it.id}
-                  className="max-h-full max-w-full object-contain select-none"
-                  draggable={false}
-                />
+                <div className="relative h-full w-full">
+                  <CdnImage
+                    src={it.preview}
+                    alt={it.title || it.id}
+                    fill
+                    className="object-contain select-none"
+                    draggable={false}
+                  />
+                </div>
               )}
             </div>
           ))}
