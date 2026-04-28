@@ -128,22 +128,20 @@ export default async function TagPage({ params }: Props) {
       />
       <div className="min-h-screen bg-gray-50 px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1400px]">
-          <header className="mb-12 text-center">
-            <h1 className="mb-2 text-4xl font-bold text-gray-900">{title}</h1>
-
+          <header className="mb-8">
             {description && (
-              <p className="mx-auto mb-4 max-w-2xl text-lg text-gray-600">
+              <p className="mb-3 text-lg text-gray-600">
                 {description}
               </p>
             )}
 
             {introText && (
-              <p className="mx-auto max-w-2xl text-base text-gray-500">
+              <p className="text-base text-gray-500">
                 {introText}
               </p>
             )}
 
-            <p className="mt-3 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-gray-400">
               {prompts.length} prompt{prompts.length !== 1 ? 's' : ''}
             </p>
           </header>
