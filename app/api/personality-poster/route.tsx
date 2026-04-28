@@ -36,19 +36,42 @@ const PALETTE: Record<string, { bg: string; typeColor: string; accent: string; b
   ESFP: { bg:"#fff7ed", typeColor:"#7c2d12", accent:"#ea580c", badgeBg:"#ffedd5", badgeBorder:"#fb923c" },
 };
 
-// Pre-compute watermark tile positions (tiled at -30deg like the watermark script)
+// Watermark tile positions — same spacing/angle as the ImageMagick watermark script (-30deg, tiled)
 const WATERMARK_TILES = (() => {
-  const tiles: { left: number; top: number }[] = [];
+  const tiles: { left: number; top: number; colorIndex: number }[] = [];
   for (let row = -1; row < 9; row++) {
     for (let col = -1; col < 6; col++) {
-      tiles.push({
-        left: col * 220 + (row % 2) * 110,
-        top:  row * 160,
-      });
+      tiles.push({ left: col * 220 + (row % 2) * 110, top: row * 160, colorIndex: (row + col) % 2 });
     }
   }
   return tiles;
 })();
+
+// Slightly-darker blue/purple alternating watermark colours
+const WATERMARK_COLORS = ["#1d4ed8", "#5b21b6"] as const; // blue-700, purple-800
+
+function renderWatermarkTiles() {
+  return WATERMARK_TILES.map((tile, i) => (
+    <div
+      key={i}
+      style={{
+        position: "absolute",
+        left: tile.left,
+        top: tile.top,
+        transform: "rotate(-30deg)",
+        opacity: 0.10,
+        fontSize: 30,
+        fontWeight: 700,
+        color: WATERMARK_COLORS[tile.colorIndex],
+        display: "flex",
+        whiteSpace: "nowrap",
+        pointerEvents: "none",
+      }}
+    >
+      curify
+    </div>
+  ));
+}
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -85,26 +108,7 @@ export async function GET(req: NextRequest) {
         }}
       >
         {/* ── Tiled "curify" watermark layer (behind content) ── */}
-        {WATERMARK_TILES.map((tile, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              left: tile.left,
-              top: tile.top,
-              transform: "rotate(-30deg)",
-              opacity: 0.07,
-              fontSize: 30,
-              fontWeight: 700,
-              color: pal.accent,
-              display: "flex",
-              whiteSpace: "nowrap",
-              pointerEvents: "none",
-            }}
-          >
-            curify
-          </div>
-        ))}
+        {renderWatermarkTiles()}
 
         {/* ── Content (above watermark) ── */}
         <div
