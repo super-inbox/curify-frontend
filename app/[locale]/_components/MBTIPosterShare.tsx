@@ -34,40 +34,42 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
   const namePrefix = name.trim() ? `${name.trim()} got` : "I got";
   const caption = `${namePrefix} ${mbti} — ${meta.tagline}!\n\n${CAPTIONS[mbti] ?? ""}\n\nFind out your personality type 👉 curify.ai/${locale}/personality/${mbti}`;
 
-  const handleShare = async () => {
-    setStatus("loading");
-    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
-
-    try {
-      const nameParam = name.trim() ? `&name=${encodeURIComponent(name.trim())}` : "";
-      const res = await fetch(`/api/personality-poster?type=${mbti}${nameParam}`);
-      if (!res.ok) throw new Error(`Poster API returned ${res.status}`);
-      const blob = await res.blob();
-      const file = new File([blob], `${mbti}-personality.png`, { type: "image/png" });
-
-      if (typeof navigator !== "undefined" && navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: `I'm ${mbti} — ${meta.tagline}`, text: caption });
-      } else {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `${mbti}-personality-card.png`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      }
-      setStatus("done");
-      setTimeout(() => setStatus("idle"), 3000);
-    } catch {
-      setStatus("error");
-      setTimeout(() => setStatus("idle"), 3000);
-    }
-  };
-
-  const previewUrl = name.trim()
+  const posterUrl = name.trim()
     ? `/api/personality-poster?type=${mbti}&name=${encodeURIComponent(name.trim())}`
     : `/api/personality-poster?type=${mbti}`;
+
+  const handleShare = async () => {
+    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
+
+    // Mobile: use native share sheet with blob
+    if (typeof navigator !== "undefined" && navigator.canShare) {
+      setStatus("loading");
+      try {
+        const res = await fetch(posterUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const blob = await res.blob();
+        const file = new File([blob], `${mbti}-personality.png`, { type: "image/png" });
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({ files: [file], title: `I'm ${mbti} — ${meta.tagline}`, text: caption });
+          setStatus("done");
+          setTimeout(() => setStatus("idle"), 3000);
+          return;
+        }
+      } catch {
+        // fall through to direct download
+      }
+    }
+
+    // Desktop: direct anchor download — no fetch needed
+    const a = document.createElement("a");
+    a.href = posterUrl;
+    a.download = `${mbti}-personality-card.png`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setStatus("done");
+    setTimeout(() => setStatus("idle"), 3000);
+  };
 
   return (
     <div className="rounded-xl border border-dashed border-purple-300 bg-purple-50/60 p-4">
@@ -76,7 +78,7 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
         <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-100 shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={previewUrl}
+            src={posterUrl}
             alt="Your personality poster"
             className="h-full w-full object-cover"
           />
@@ -101,11 +103,9 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
         className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-purple-600 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-purple-700 disabled:opacity-60"
       >
         {status === "loading" ? (
-          <><Loader2 className="h-4 w-4 animate-spin" /> Generating…</>
+          <><Loader2 className="h-4 w-4 animate-spin" /> Preparing…</>
         ) : status === "done" ? (
-          <><Download className="h-4 w-4" /> Saved!</>
-        ) : status === "error" ? (
-          <>Failed — try again</>
+          <><Download className="h-4 w-4" /> Downloading!</>
         ) : (
           <><ImageIcon className="h-4 w-4" /> Save &amp; Share Poster</>
         )}
