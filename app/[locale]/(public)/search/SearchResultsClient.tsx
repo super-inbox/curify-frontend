@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { filterSuggestions } from "@/lib/searchIndex";
 
@@ -26,6 +27,15 @@ const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE ?? "https://cdn.curify-ai.com"
 export default function SearchResultsClient({ query, locale, inspirations }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
+  const t = useTranslations("topics");
+  const localize = useCallback(
+    (slug: string) => (t.has(`${slug}.displayName`) ? t(`${slug}.displayName`) : undefined),
+    [t]
+  );
+  const renderLabel = useCallback(
+    (slug: string, fallback: string) => localize(slug) ?? fallback,
+    [localize]
+  );
 
   // Deduplicate: one card per template_id
   const cards = useMemo(() => {
@@ -37,8 +47,11 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
     });
   }, [inspirations]);
 
-  // Related topic suggestions
-  const relatedTopics = useMemo(() => filterSuggestions(query, 6), [query]);
+  // Related topic suggestions (locale-aware)
+  const relatedTopics = useMemo(
+    () => filterSuggestions(query, 6, localize),
+    [query, localize]
+  );
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,8 +62,8 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-      {/* Search input */}
-      <form onSubmit={handleSearch} className="mb-8 flex gap-2">
+      {/* Search input — hidden on desktop where SiteTopBar's SearchBar handles it */}
+      <form onSubmit={handleSearch} className="lg:hidden mb-8 flex gap-2">
         <div className="relative flex-1">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
           <input
@@ -79,7 +92,7 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
             >
               {s.emoji && <span>{s.emoji}</span>}
-              {s.label}
+              {renderLabel(s.slug, s.label)}
             </Link>
           ))}
         </div>
@@ -102,7 +115,7 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
                 href={`/${locale}/topics/${s.slug}`}
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
               >
-                {s.emoji} {s.label}
+                {s.emoji} {renderLabel(s.slug, s.label)}
               </Link>
             ))}
           </div>

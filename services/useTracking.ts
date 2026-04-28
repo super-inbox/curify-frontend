@@ -16,8 +16,7 @@ export type ContentType =
   | "menu_link"
   | "breadcrumb"
   | "prev_next"
-  | "mbti_quiz"
-  | "search";
+  | "mbti_quiz";
 
 export type ActionType =
   | "view"

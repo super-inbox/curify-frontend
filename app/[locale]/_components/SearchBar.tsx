@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { filterSuggestions, TIER2_SUGGESTIONS } from "@/lib/searchIndex";
+import { useTranslations } from "next-intl";
+import { filterSuggestions, DEFAULT_FOCUS_SUGGESTIONS } from "@/lib/searchIndex";
 import { useTracking } from "@/services/useTracking";
 
 type Props = { locale: string };
@@ -15,14 +16,26 @@ export default function SearchBar({ locale }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const { track } = useTracking();
+  const t = useTranslations("topics");
+
+  // Localized label resolver — returns the locale's displayName or undefined.
+  // Used for both rendering chips and matching user queries in the user's language.
+  const localize = useCallback(
+    (slug: string) => (t.has(`${slug}.displayName`) ? t(`${slug}.displayName`) : undefined),
+    [t]
+  );
+  const renderLabel = useCallback(
+    (slug: string, fallback: string) => localize(slug) ?? fallback,
+    [localize]
+  );
 
   const suggestions = query.trim()
-    ? filterSuggestions(query)
-    : TIER2_SUGGESTIONS.slice(0, 12);
+    ? filterSuggestions(query, 8, localize)
+    : DEFAULT_FOCUS_SUGGESTIONS;
 
   const navigate = useCallback((slug: string, label: string) => {
     const q = slug || query.trim();
-    track({ contentId: label || q, contentType: "search", actionType: "search" });
+    track({ contentId: label || q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
     setQuery("");
     router.push(`/${locale}/topics/${q}`);
@@ -32,12 +45,13 @@ export default function SearchBar({ locale }: Props) {
     e.preventDefault();
     const q = query.trim().toLowerCase();
     if (!q) return;
-    track({ contentId: q, contentType: "search", actionType: "search" });
+    track({ contentId: q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
     setQuery("");
     // Try to match a known topic slug; fall back to search results page
-    const exact = filterSuggestions(q, 1)[0];
-    if (exact && (exact.slug === q || exact.label.toLowerCase() === q)) {
+    const exact = filterSuggestions(q, 1, localize)[0];
+    const exactLocalized = exact ? localize(exact.slug)?.toLowerCase() : undefined;
+    if (exact && (exact.slug === q || exact.label.toLowerCase() === q || exactLocalized === q)) {
       router.push(`/${locale}/topics/${exact.slug}`);
     } else {
       router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
@@ -94,11 +108,11 @@ export default function SearchBar({ locale }: Props) {
               <button
                 key={s.slug}
                 type="button"
-                onClick={() => navigate(s.slug, s.label)}
+                onClick={() => navigate(s.slug, renderLabel(s.slug, s.label))}
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
               >
                 {s.emoji && <span aria-hidden="true">{s.emoji}</span>}
-                {s.label}
+                {renderLabel(s.slug, s.label)}
               </button>
             ))}
           </div>

@@ -57,14 +57,14 @@ const TIER1_SUGGESTIONS: SuggestionEntry[] = [
 ];
 
 // Tier 3 — geo tags
-const TIER3_GEO: SuggestionEntry[] = [
+export const TIER3_GEO: SuggestionEntry[] = [
   "japan","korea","china","india","france","spain","italy","germany",
   "mexico","brazil","thailand","vietnam","singapore","egypt","australia",
   "greece","russia","portugal","uk","middle-east","united-states","iran",
 ].map(slug => ({ slug, label: slug.split("-").map(w => w[0].toUpperCase()+w.slice(1)).join(" "), tier: 3 as const }));
 
 // Tier 3 — style tags
-const TIER3_STYLE: SuggestionEntry[] = [
+export const TIER3_STYLE: SuggestionEntry[] = [
   { slug: "cartoon",       label: "Cartoon",       emoji: "🎨", tier: 3 },
   { slug: "photorealistic",label: "Photorealistic",emoji: "📷", tier: 3 },
   { slug: "watercolor",    label: "Watercolor",    emoji: "🎨", tier: 3 },
@@ -80,6 +80,17 @@ const TIER3_MBTI: SuggestionEntry[] = [
   "ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP",
 ].map(type => ({ slug: `mbti-${type.toLowerCase()}`, label: type, emoji: "🧠", tier: 3 as const }));
 
+// Default suggestions shown on search focus — top Tier 2 + selected geo + style picks
+export const DEFAULT_FOCUS_SUGGESTIONS: SuggestionEntry[] = [
+  ...TIER2_SUGGESTIONS.slice(0, 10),
+  { slug: "japan",          label: "Japan",          emoji: "🇯🇵", tier: 3 },
+  { slug: "korea",          label: "Korea",          emoji: "🇰🇷", tier: 3 },
+  { slug: "china",          label: "China",          emoji: "🇨🇳", tier: 3 },
+  { slug: "photorealistic", label: "Photorealistic", emoji: "📷",   tier: 3 },
+  { slug: "watercolor",     label: "Watercolor",     emoji: "🎨",   tier: 3 },
+  { slug: "cartoon",        label: "Cartoon",        emoji: "🖌️",   tier: 3 },
+];
+
 export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER2_SUGGESTIONS,
   ...TIER1_SUGGESTIONS,
@@ -88,19 +99,32 @@ export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER3_MBTI,
 ];
 
-/** Simple substring match — returns suggestions ranked by tier then match position. */
-export function filterSuggestions(query: string, limit = 8): SuggestionEntry[] {
+/**
+ * Simple substring match — returns suggestions ranked by tier then match position.
+ * Pass `localize(slug)` to also match the user's locale displayName (e.g. zh "动漫"
+ * resolves to slug "anime"). Falls back to English label/slug when undefined.
+ */
+export function filterSuggestions(
+  query: string,
+  limit = 8,
+  localize?: (slug: string) => string | undefined
+): SuggestionEntry[] {
   if (!query.trim()) return TIER2_SUGGESTIONS.slice(0, 12);
   const q = query.toLowerCase().trim();
   return ALL_SUGGESTIONS
-    .filter(s => s.label.toLowerCase().includes(q) || s.slug.includes(q))
+    .filter((s) => {
+      if (s.label.toLowerCase().includes(q)) return true;
+      if (s.slug.includes(q)) return true;
+      const localized = localize?.(s.slug)?.toLowerCase();
+      return !!localized && localized.includes(q);
+    })
     .sort((a, b) => {
       // exact slug match first
       if (a.slug === q) return -1;
       if (b.slug === q) return 1;
       // then by tier (lower tier = more prominent)
       if (a.tier !== b.tier) return a.tier - b.tier;
-      // then by position of match
+      // then by position of match (English label only — keeps ranking stable)
       return a.label.toLowerCase().indexOf(q) - b.label.toLowerCase().indexOf(q);
     })
     .slice(0, limit);
