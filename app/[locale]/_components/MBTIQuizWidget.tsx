@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { X, Sparkles, RotateCcw, Share2, Check, Lock } from "lucide-react";
+import { X, Sparkles, RotateCcw, Lock } from "lucide-react";
 import { useAtom } from "jotai";
 import CdnImage from "./CdnImage";
-import { userAtom, drawerAtom } from "@/app/atoms/atoms";
+import ShareButton from "./ShareButton";
+import { userAtom, drawerAtom, mbtiQuizOpenAtom } from "@/app/atoms/atoms";
 import { MBTI_META, CHARACTER_POOL, IP_COLORS, MBTI_TYPES } from "@/lib/mbti-data";
 import type { MBTIType } from "@/lib/mbti-data";
 import { useTracking } from "@/services/useTracking";
@@ -112,7 +113,6 @@ function QuizStep({ step, answers, onAnswer }: {
 function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string; onReset: () => void }) {
   const [user] = useAtom(userAtom);
   const [, setDrawer] = useAtom(drawerAtom);
-  const [copied, setCopied] = useState(false);
   const { track } = useTracking();
 
   const meta = MBTI_META[mbti];
@@ -120,14 +120,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
   const shown = chars.slice(0, 3);
   const ips = [...new Set(chars.map((c) => c.ip))].slice(0, 4);
 
-  const shareUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/${locale}/personality/${mbti}`;
-
-  const handleShare = async () => {
-    await navigator.clipboard.writeText(shareUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
-  };
+  const shareUrl = `/${locale}/personality/${mbti}`;
 
   const handleGenerate = (slug: string) => {
     track({ contentId: mbti, contentType: "mbti_quiz", actionType: "generate" });
@@ -189,14 +182,11 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
 
       {/* Share + retake */}
       <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={handleShare}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 transition-colors"
-        >
-          {copied ? <Check className="h-4 w-4 text-green-500" /> : <Share2 className="h-4 w-4" />}
-          {copied ? "Copied!" : "Share result"}
-        </button>
+        <ShareButton
+          url={shareUrl}
+          title={`I'm ${mbti} — ${meta.tagline}`}
+          onShared={() => track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" })}
+        />
         <button
           type="button"
           onClick={onReset}
@@ -213,7 +203,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
 // ── Main widget ───────────────────────────────────────────────────────────────
 
 export default function MBTIQuizWidget({ locale }: { locale: string }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useAtom(mbtiQuizOpenAtom);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [buttonVisible, setButtonVisible] = useState(true);
@@ -234,7 +224,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
       setStep(QUESTIONS.length);
       setOpen(true);
     }
-  }, []);
+  }, [setOpen]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -255,9 +245,11 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
     setAnswers({});
   }, []);
 
+  const handleClose = useCallback(() => { setOpen(false); reset(); }, [setOpen, reset]);
+
   return (
     <div className="hidden lg:block">
-      {buttonVisible && (
+      {buttonVisible && !open && (
         <button
           type="button"
           onClick={() => { setOpen(true); track({ contentId: "widget", contentType: "mbti_quiz", actionType: "click" }); }}
@@ -272,7 +264,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
       {open && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
-          onClick={() => { setOpen(false); reset(); }}
+          onClick={handleClose}
         >
           <div
             className="relative w-[560px] max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
@@ -287,7 +279,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
               </div>
               <button
                 type="button"
-                onClick={() => { setOpen(false); reset(); }}
+                onClick={handleClose}
                 className="rounded-full p-1.5 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600"
                 aria-label="Close"
               >

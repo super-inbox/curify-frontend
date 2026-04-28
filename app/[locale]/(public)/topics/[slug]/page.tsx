@@ -28,7 +28,7 @@ import blogsData from "@/public/data/blogs.json";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
-import MBTIQuizInline from "@/app/[locale]/_components/MBTIQuizInline";
+import MBTIQuizCapsule from "@/app/[locale]/_components/MBTIQuizCapsule";
 import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
 
 export const dynamic = "force-dynamic";
@@ -233,8 +233,8 @@ export default async function Page({ params }: Props) {
       </section>
 
       {tier1Ancestor === 'character' && (
-        <section className="mx-auto max-w-2xl px-4 pb-8 sm:px-6 lg:px-8">
-          <MBTIQuizInline locale={localeStr} />
+        <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
+          <MBTIQuizCapsule />
         </section>
       )}
 
