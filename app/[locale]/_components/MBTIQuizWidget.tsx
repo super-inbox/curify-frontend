@@ -74,8 +74,8 @@ function QuizStep({ step, answers, onAnswer }: {
   const q = QUESTIONS[step];
   return (
     <div className="p-6">
-      <p className="mb-5 text-center text-lg font-semibold text-neutral-900">{q.q}</p>
-      <div className="grid grid-cols-2 gap-3">
+      <p className="mb-5 text-center text-xl font-semibold text-neutral-900">{q.q}</p>
+      <div className="grid grid-cols-2 gap-4">
         {q.options.map((opt) => {
           const selected = answers[q.key] === opt.value;
           return (
@@ -83,7 +83,7 @@ function QuizStep({ step, answers, onAnswer }: {
               key={opt.value}
               type="button"
               onClick={() => onAnswer(q.key, opt.value)}
-              className={`group relative overflow-hidden rounded-2xl border-2 text-left transition-all duration-150 ${
+              className={`group relative cursor-pointer overflow-hidden rounded-2xl border-2 text-left transition-all duration-150 ${
                 selected ? "border-purple-500 shadow-md shadow-purple-100" : "border-neutral-200 hover:border-purple-300"
               }`}
             >
@@ -91,13 +91,13 @@ function QuizStep({ step, answers, onAnswer }: {
                 <CdnImage
                   src={opt.img}
                   alt={opt.label}
-                  width={260}
-                  height={195}
+                  width={300}
+                  height={225}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
                 />
               </div>
               {selected && <div className="absolute inset-0 bg-purple-500/10" />}
-              <div className={`px-3 py-2.5 text-sm font-medium transition-colors ${
+              <div className={`px-3 py-3 text-base font-medium transition-colors ${
                 selected ? "bg-purple-50 text-purple-700" : "bg-white text-neutral-700"
               }`}>
                 {opt.label}
@@ -181,7 +181,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
       </div>
 
       {/* Share + retake */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between">
         <ShareButton
           url={shareUrl}
           title={`I'm ${mbti} — ${meta.tagline}`}
@@ -190,7 +190,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
         <button
           type="button"
           onClick={onReset}
-          className="flex items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-500 hover:bg-neutral-50 transition-colors"
+          className="flex cursor-pointer items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-500 hover:bg-neutral-50 transition-colors"
         >
           <RotateCcw className="h-4 w-4" />
           Retake
@@ -253,7 +253,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
         <button
           type="button"
           onClick={() => { setOpen(true); track({ contentId: "widget", contentType: "mbti_quiz", actionType: "click" }); }}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-purple-200 transition-transform hover:scale-105 hover:shadow-xl active:scale-100"
+          className="fixed bottom-6 right-6 z-40 flex cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-purple-200 transition-transform hover:scale-105 hover:shadow-xl active:scale-100"
           aria-label="Take MBTI personality quiz"
         >
           <Sparkles className="h-4 w-4" />
@@ -267,7 +267,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
           onClick={handleClose}
         >
           <div
-            className="relative w-[560px] max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
+            className="relative w-[620px] max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between px-6 pt-5 pb-3">
