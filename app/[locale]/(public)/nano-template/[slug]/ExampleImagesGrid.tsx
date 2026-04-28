@@ -416,7 +416,7 @@ export default function ExampleImagesGrid({
             key={it.id}
             item={{ ...it, batch }}
             locale={locale}
-            onOpenLightbox={() => setLightboxIndex(expanded ? i : i)}
+            onOpenLightbox={() => setLightboxIndex(i)}
           />
         ))}
       </div>

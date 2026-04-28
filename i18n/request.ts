@@ -1,5 +1,6 @@
 import { getRequestConfig } from "next-intl/server";
 import { hasLocale } from "next-intl";
+import { headers } from "next/headers";
 import { routing } from "./routing";
 
 export default getRequestConfig(async ({ requestLocale }) => {
@@ -8,11 +9,19 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requested
     : routing.defaultLocale;
 
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const isBlogPage = pathname.includes("/blog");
+
   const common = (await import(`../messages/${locale}/common.json`)).default;
   const home = (await import(`../messages/${locale}/home.json`)).default;
-  const blog = (await import(`../messages/${locale}/blog.json`)).default;
   const pricing = (await import(`../messages/${locale}/pricing.json`)).default;
   const nano = (await import(`../messages/${locale}/nano.json`)).default;
+
+  // blog.json is 500 KB — only load it on blog routes
+  const blog = isBlogPage
+    ? (await import(`../messages/${locale}/blog.json`)).default
+    : {};
+
   let nanoPromptsTags: Record<string, unknown>;
   try {
     nanoPromptsTags = (await import(`../messages/${locale}/nanoPromptsTags.json`)).default;
@@ -28,8 +37,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ...pricing,
       ...blog,
       // Nested under "nano" so useTranslations("nano") resolves correctly.
-      // Do NOT spread nano flat — its template IDs would collide with other
-      // top-level keys and "nano" namespace would never exist.
       nano,
       nanoPromptsTags,
     },
