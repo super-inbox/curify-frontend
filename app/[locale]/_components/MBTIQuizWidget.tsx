@@ -7,6 +7,7 @@ import CdnImage from "./CdnImage";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import { MBTI_META, CHARACTER_POOL, IP_COLORS, MBTI_TYPES } from "@/lib/mbti-data";
 import type { MBTIType } from "@/lib/mbti-data";
+import { useTracking } from "@/services/useTracking";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -112,6 +113,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
   const [user] = useAtom(userAtom);
   const [, setDrawer] = useAtom(drawerAtom);
   const [copied, setCopied] = useState(false);
+  const { track } = useTracking();
 
   const meta = MBTI_META[mbti];
   const chars = CHARACTER_POOL[mbti] ?? [];
@@ -124,9 +126,11 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
     await navigator.clipboard.writeText(shareUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
   };
 
   const handleGenerate = (slug: string) => {
+    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "generate" });
     if (!user) { setDrawer("signin"); return; }
     window.open(`/${locale}/nano-template/${slug}`, "_blank");
   };
@@ -213,6 +217,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [buttonVisible, setButtonVisible] = useState(true);
+  const { track } = useTracking();
 
   // Hide floating button after 1 minute
   useEffect(() => {
@@ -255,7 +260,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
       {buttonVisible && (
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={() => { setOpen(true); track({ contentId: "widget", contentType: "mbti_quiz", actionType: "click" }); }}
           className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-purple-200 transition-transform hover:scale-105 hover:shadow-xl active:scale-100"
           aria-label="Take MBTI personality quiz"
         >

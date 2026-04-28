@@ -15,7 +15,8 @@ export type ContentType =
   | "tag_capsule"
   | "menu_link"
   | "breadcrumb"
-  | "prev_next";
+  | "prev_next"
+  | "mbti_quiz";
 
 export type ActionType =
   | "view"

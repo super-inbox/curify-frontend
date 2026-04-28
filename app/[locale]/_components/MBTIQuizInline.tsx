@@ -6,6 +6,7 @@ import { Sparkles, ChevronRight, RotateCcw } from "lucide-react";
 import CdnImage from "./CdnImage";
 import { MBTI_META, CHARACTER_POOL, IP_COLORS } from "@/lib/mbti-data";
 import type { MBTIType } from "@/lib/mbti-data";
+import { useTracking } from "@/services/useTracking";
 
 type EI = "E" | "I";
 type SN = "S" | "N";
@@ -51,6 +52,7 @@ const QUESTIONS = [
 export default function MBTIQuizInline({ locale }: { locale: string }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
+  const { track } = useTracking();
 
   const done = step === QUESTIONS.length;
   const mbti = done
@@ -58,6 +60,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
     : null;
 
   const handleAnswer = (key: keyof Answers, value: string) => {
+    if (step === 0) track({ contentId: "inline", contentType: "mbti_quiz", actionType: "click" });
     setAnswers((prev) => ({ ...prev, [key]: value }));
     setTimeout(() => setStep((s) => s + 1), 240);
   };
@@ -159,6 +162,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
             <div className="mt-3 flex flex-wrap gap-2">
               <Link
                 href={`/${locale}/personality/${mbti}`}
+                onClick={() => track({ contentId: mbti!, contentType: "mbti_quiz", actionType: "share" })}
                 className="flex items-center gap-1 rounded-full bg-purple-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-purple-700 transition-colors"
               >
                 See full result
