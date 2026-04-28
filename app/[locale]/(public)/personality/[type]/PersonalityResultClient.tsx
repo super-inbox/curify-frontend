@@ -70,7 +70,7 @@ export default function PersonalityResultClient({
       <MBTIPosterShare mbti={mbti as MBTIType} locale={locale} />
 
       {/* Share + retake */}
-      <div className="flex gap-3">
+      <div className="flex items-center justify-between">
         <ShareButton
           url={typeof window !== "undefined" ? window.location.pathname : `/${locale}/personality/${mbti}`}
           title={`I'm ${mbti} — find out your personality type`}
