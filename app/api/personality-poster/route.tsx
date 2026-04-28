@@ -96,12 +96,12 @@ export async function GET(req: NextRequest) {
         {/* Rarity */}
         <div style={{
           display: "flex",
+          alignSelf: "flex-start",
           marginTop: 28,
           background: "rgba(167,139,250,0.15)",
           border: "1px solid rgba(167,139,250,0.3)",
           borderRadius: 999,
           padding: "8px 20px",
-          width: "fit-content",
         }}>
           <span style={{ color: "#a78bfa", fontSize: 16, fontWeight: 600 }}>
             ✦ Only {pct}% of people share this personality type
