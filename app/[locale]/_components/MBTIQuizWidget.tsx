@@ -75,8 +75,8 @@ function QuizStep({ step, answers, onAnswer }: {
 }) {
   const q = QUESTIONS[step];
   return (
-    <div className="p-6">
-      <p className="mb-5 text-center text-xl font-semibold text-neutral-900">{q.q}</p>
+    <div className="px-6 pb-6 pt-4">
+      <p className="mb-4 text-center text-xl font-semibold text-neutral-900">{q.q}</p>
       <div className="grid grid-cols-2 gap-4">
         {q.options.map((opt) => {
           const selected = answers[q.key] === opt.value;
@@ -89,12 +89,12 @@ function QuizStep({ step, answers, onAnswer }: {
                 selected ? "border-purple-500 shadow-md shadow-purple-100" : "border-neutral-200 hover:border-purple-300"
               }`}
             >
-              <div className="aspect-[4/3] w-full overflow-hidden">
+              <div className="aspect-[3/4] w-full overflow-hidden">
                 <CdnImage
                   src={opt.img}
                   alt={opt.label}
-                  width={300}
-                  height={225}
+                  width={320}
+                  height={427}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
                 />
               </div>
