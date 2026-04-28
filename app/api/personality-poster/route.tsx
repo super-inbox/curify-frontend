@@ -41,11 +41,8 @@ export async function GET(req: NextRequest) {
   const [g1, g2] = GRADIENTS[type] ?? ["#1a0533", "#2d1b69"];
   const pct = RARITY[type] ?? 4;
 
-  // Fetch Inter Bold from Google Fonts for the edge runtime
-  const fontRes = await fetch(
-    "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZ9hiJ-Ek-_EeA.woff"
-  );
-  const fontData = await fontRes.arrayBuffer();
+  const origin = req.nextUrl.origin;
+  const fontData = await fetch(`${origin}/fonts/Inter-Bold.ttf`).then((r) => r.arrayBuffer());
 
   return new ImageResponse(
     (
