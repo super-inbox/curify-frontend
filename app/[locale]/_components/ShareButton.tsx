@@ -44,13 +44,7 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const WeiboIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-    <path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443zm6.748-9.754a1.08 1.08 0 01-.791-.144c-.362-.094-.448-.371-.216-.576.232-.205.538-.397.873-.516.335-.118.671-.143 1.006-.143.335 0 .694.031 1.021.094.327.063.664.183.933.348.27.165.427.376.427.578 0 .201-.157.38-.427.493-.27.112-.606.158-.933.147-.327-.01-.664-.048-1.021-.117a3.779 3.779 0 01-.872-.164zm-1.047-2.828c-.179.096-.389.14-.589.12-.2-.02-.379-.1-.488-.223a.7.7 0 01-.159-.445c.01-.164.068-.33.177-.472.109-.142.261-.254.437-.308.175-.054.358-.05.527.014.169.064.31.181.397.328.087.147.107.318.058.48-.049.161-.157.3-.36.504zm2.85-1.43c.269.12.47.322.55.562.08.24.037.497-.117.714a1.48 1.48 0 01-.629.509c-.259.107-.544.143-.815.097-.27-.046-.509-.169-.66-.345a.858.858 0 01-.164-.619c.047-.23.177-.44.374-.593a1.576 1.576 0 01.65-.294c.27-.054.542-.029.811.087zm-1.36-3.23C14.409.506 10.433-.28 7.124 1.56 3.814 3.402 2.529 7.027 3.907 9.999c.276.59.636 1.124 1.065 1.593-.503.44-.926.97-1.235 1.566-.586 1.129-.586 2.359 0 3.488.586 1.13 1.666 2.044 3.088 2.64 1.422.596 3.06.838 4.719.68 1.659-.158 3.201-.709 4.435-1.558 1.234-.849 2.076-1.98 2.383-3.216.307-1.236.054-2.542-.716-3.679a6.1 6.1 0 00-.657-.796c.296-.31.55-.661.748-1.044.566-1.116.566-2.329 0-3.44-.273-.537-.682-1.006-1.196-1.376z" />
-  </svg>
-);
-
-const BUTTON_GAP = 50;
+const BUTTON_GAP = 44;
 
 type Platform = {
   id: string;
@@ -95,14 +89,6 @@ const PLATFORMS: Platform[] = [
       return `https://api.whatsapp.com/send?text=${encodeURIComponent(parts)}`;
     },
   },
-  {
-    id: "weibo",
-    label: "Weibo",
-    bg: "#E6162D",
-    Icon: WeiboIcon,
-    getUrl: (url, title) =>
-      `https://service.weibo.com/share/share.php?url=${encodeURIComponent(url)}${title ? `&title=${encodeURIComponent(title)}` : ""}`,
-  },
 ];
 
 export default function ShareButton({
@@ -115,6 +101,7 @@ export default function ShareButton({
   const [status, setStatus] = useState<"idle" | "shared" | "copied">("idle");
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const mainButtonRef = useRef<HTMLButtonElement>(null);
 
   const prefersNativeShare = useMemo(() => {
     if (typeof window === "undefined") return false;
@@ -175,9 +162,15 @@ export default function ShareButton({
     status === "shared" ? "Shared" : status === "copied" ? "Copied!" : "Share";
 
   return (
-    <div ref={containerRef} className={`relative inline-flex items-center ${className}`}>
+    <div
+      ref={containerRef}
+      className={`relative inline-flex items-center ${className}`}
+      onMouseEnter={() => !prefersNativeShare && setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       {}
       <button
+        ref={mainButtonRef}
         type="button"
         onClick={handleMainClick}
         style={{ position: "relative", zIndex: 20 }}
@@ -196,7 +189,8 @@ export default function ShareButton({
 
       {/* Social platform buttons — burst out to the right */}
       {PLATFORMS.map((platform, index) => {
-        const offset = (index + 1) * BUTTON_GAP;
+        const baseX = (mainButtonRef.current?.offsetWidth ?? 100) + 8;
+        const offset = baseX + index * BUTTON_GAP;
         const delay = index * 50;
         const closeDelay = (PLATFORMS.length - index) * 35;
         return (
@@ -229,9 +223,9 @@ export default function ShareButton({
 
       {/* Copy link button */}
       {(() => {
-        const index = PLATFORMS.length;
-        const offset = (index + 1) * BUTTON_GAP;
-        const delay = index * 50;
+        const baseX = (mainButtonRef.current?.offsetWidth ?? 100) + 8;
+        const offset = baseX + PLATFORMS.length * BUTTON_GAP;
+        const delay = PLATFORMS.length * 50;
         const closeDelay = 0;
         return (
           <button
@@ -251,7 +245,7 @@ export default function ShareButton({
               transition: isOpen
                 ? `transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}ms, opacity 200ms ease ${delay}ms`
                 : `transform 200ms ease ${closeDelay}ms, opacity 150ms ease ${closeDelay}ms`,
-              zIndex: 10 - index,
+              zIndex: 10 - PLATFORMS.length,
             }}
             className="inline-flex h-[34px] w-[34px] items-center justify-center rounded-full bg-neutral-700 text-white shadow-md hover:brightness-110 active:scale-95"
           >
