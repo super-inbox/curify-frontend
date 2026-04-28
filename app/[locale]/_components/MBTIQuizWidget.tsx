@@ -257,7 +257,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
           aria-label="Take MBTI personality quiz"
         >
           <Sparkles className="h-4 w-4" />
-          Take your MBTI personality quiz today →
+          What's your MBTI?
         </button>
       )}
 
