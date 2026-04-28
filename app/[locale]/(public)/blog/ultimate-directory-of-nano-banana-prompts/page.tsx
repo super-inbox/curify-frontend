@@ -18,13 +18,24 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
+import nanoTemplatesData from '../../../../../public/data/nano_templates.json';
+
+// Helper function to decode HTML entities (server-safe)
+function decodeHTMLEntities(text: string): string {
+  return text
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
 
 // Helper component for rendering prompt examples
 function PromptExample({ 
@@ -70,179 +81,170 @@ function PromptExample({
   );
 }
 
+// Helper function to extract real templates from nano templates data
+function getRealTemplates(locale: string) {
+  const templates = nanoTemplatesData as any[];
+  
+  // Define category mappings based on template topics
+  const categoryMappings = {
+    character: ['character', 'mbti', 'film', 'psychology'],
+    lifestyle: ['lifestyle', 'travel', 'food', 'fashion'],
+    learning: ['learning', 'science', 'education', 'history'],
+    design: ['design', 'architecture', 'product', 'commerce']
+  };
+
+  // Function to determine style from template
+  function determineStyle(template: any): 'Anime' | 'Film' | 'Ink' | 'Photorealistic' | 'Isometric' | 'Product' {
+    const topics = template.topics || [];
+    const id = template.id || '';
+    
+    if (topics.includes('film') || id.includes('film') || id.includes('character')) return 'Film';
+    if (topics.includes('design') || id.includes('product') || id.includes('fashion')) return 'Product';
+    if (topics.includes('learning') || topics.includes('education') || id.includes('evolution') || id.includes('education-card')) return 'Isometric';
+    if (topics.includes('history') || id.includes('heritage') || id.includes('costume')) return 'Ink';
+    return 'Anime'; // Default style
+  }
+
+  // Function to determine tier from template
+  function determineTier(template: any): 'Tier 2' | 'Tier 3' {
+    const rankScore = template.rank_score || 0;
+    return rankScore >= 81 ? 'Tier 2' : 'Tier 3';
+  }
+
+  // Function to generate tags from template
+  function generateTags(template: any): string[] {
+    const tags: string[] = [];
+    const topics = template.topics || [];
+    const id = template.id || '';
+    
+    // Add topic-based tags
+    if (topics.includes('mbti')) tags.push('MBTI', 'Personality');
+    if (topics.includes('character')) tags.push('Character-Design');
+    if (topics.includes('learning')) tags.push('Education');
+    if (topics.includes('history')) tags.push('Historical');
+    if (topics.includes('design')) tags.push('Design');
+    if (topics.includes('film')) tags.push('Film');
+    if (id.includes('zh') || id.includes('chinese')) tags.push('Chinese');
+    if (id.includes('anime')) tags.push('Anime');
+    
+    return tags.slice(0, 3); // Limit to 3 tags
+  }
+
+  // Function to extract example prompt from template
+  function extractExamplePrompt(template: any): string {
+    const localeData = template.locales?.[locale] || template.locales?.en || template.locales?.zh;
+    if (!localeData?.base_prompt) return 'Template prompt not available';
+    
+    // Extract a cleaner version of the prompt for display
+    let prompt = localeData.base_prompt;
+    
+    // Replace parameter placeholders with example values
+    if (localeData.parameters) {
+      localeData.parameters.forEach((param: any) => {
+        const placeholder = param.placeholder?.[0] || param.name;
+        prompt = prompt.replace(new RegExp(`{${param.name}}`, 'g'), placeholder);
+      });
+    }
+    
+    // Truncate very long prompts
+    if (prompt.length > 300) {
+      prompt = prompt.substring(0, 297) + '...';
+    }
+    
+    return prompt;
+  }
+
+  // Build categories from real templates
+  const categories = [
+    {
+      id: 'character' as const,
+      name: 'Character & Persona (High Engagement)',
+      description: 'Characters drive massive emotional connection and shareability. Start directory here to grab attention immediately.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.character.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 8)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Character Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template)
+        }))
+    },
+    {
+      id: 'lifestyle' as const,
+      name: 'Lifestyle & Global Aesthetics (The "Pinterest" Scroll)',
+      description: 'This taps directly into aspiration and nostalgia markets. It demonstrates Nano Banana\'s ability to handle highly specific cultural and geographical nuances.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.lifestyle.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 8)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Lifestyle Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template)
+        }))
+    },
+    {
+      id: 'learning' as const,
+      name: 'Learning & Language (The Viral Utility)',
+      description: 'Transition from pure aesthetics to practical, viral content creation. This proves to educators and creators that Curify is a serious production engine.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.learning.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 8)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Learning Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template)
+        }))
+    },
+    {
+      id: 'design' as const,
+      name: 'Design & Product (The Professional Edge)',
+      description: 'Close the directory with high-intent professional use cases. This attracts industrial designers, marketers, and product managers.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.design.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 8)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Design Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template)
+        }))
+    }
+  ];
+
+  return categories;
+}
+
 // Main component
 export default function UltimateDirectoryOfNanoBananaPromptsPage() {
   const [activeCategory, setActiveCategory] = useState<'character' | 'lifestyle' | 'learning' | 'design'>('character');
   const t = useTranslations('blog.UltimateDirectoryOfNanoBananaPrompts');
   const locale = useLocale();
 
-  const categories: Array<{
-    id: 'character' | 'lifestyle' | 'learning' | 'design';
-    name: string;
-    description: string;
-    examples: Array<{
-      title: string;
-      prompt: string;
-      style: 'Anime' | 'Film' | 'Ink' | 'Photorealistic' | 'Isometric' | 'Product';
-      tier: 'Tier 2' | 'Tier 3';
-      tags: string[];
-    }>;
-  }> = [
-    {
-      id: 'character',
-      name: 'Character & Persona (High Engagement)',
-      description: 'Characters drive massive emotional connection and shareability. Start directory here to grab attention immediately.',
-      examples: [
-        {
-          title: 'MBTI Character Archetypes',
-          prompt: 'Generate a detailed character profile for an INTJ architect CEO type. Include career background, personality traits, decision-making patterns, and how they handle stress situations.',
-          style: 'Anime',
-          tier: 'Tier 2',
-          tags: ['Anime', 'Kawaii', 'English-Japanese']
-        },
-        {
-          title: 'Style Comparisons',
-          prompt: 'Create the same INTJ architect character rendered in both Anime and Film styles to showcase artistic versatility.',
-          style: 'Film',
-          tier: 'Tier 2',
-          tags: ['Film', 'Realism', 'Character-Design']
-        },
-        {
-          title: 'Group Dynamics',
-          prompt: 'Generate a cohesive team of 5 professionals with different MBTI types working in a modern office environment.',
-          style: 'Photorealistic',
-          tier: 'Tier 2',
-          tags: ['Professional', 'Team-Dynamics', 'Office-Scene']
-        },
-        {
-          title: 'Fantasy Character Parties',
-          prompt: 'Create a diverse party of 5 fantasy characters with different MBTI types. Show how they interact and complement each other in social settings.',
-          style: 'Anime',
-          tier: 'Tier 2',
-          tags: ['Fantasy', 'Party', 'Social-Interaction']
-        },
-        {
-          title: 'Sports Team Roster',
-          prompt: 'Design a complete sports team roster with players of different MBTI types. Include their positions, playing styles, and team chemistry.',
-          style: 'Photorealistic',
-          tier: 'Tier 2',
-          tags: ['Sports', 'Team', 'Roster', 'Athletic']
-        }
-      ]
-    },
-    {
-      id: 'lifestyle',
-      name: 'Lifestyle & Global Aesthetics (The "Pinterest" Scroll)',
-      description: 'This taps directly into aspiration and nostalgia markets. It demonstrates Nano Banana\'s ability to handle highly specific cultural and geographical nuances.',
-      examples: [
-        {
-          title: 'Retro Tokyo Street Scene',
-          prompt: 'Generate a nostalgic 1990s Tokyo street scene at sunset. Include detailed environmental descriptions, fashion elements, and cultural atmosphere.',
-          style: 'Anime',
-          tier: 'Tier 3',
-          tags: ['Nostalgia', 'Japan', 'Urban', '90s']
-        },
-        {
-          title: 'Parisian Cafe Interior',
-          prompt: 'Create an elegant Parisian cafe with ornate decor, soft ambient lighting, and patrons enjoying coffee and pastries.',
-          style: 'Ink',
-          tier: 'Tier 3',
-          tags: ['Paris', 'Cafe', 'Elegant', 'European']
-        },
-        {
-          title: 'Mexican Food Market',
-          prompt: 'Design a vibrant Mexican food market scene with colorful displays, traditional elements, and rich cultural details. Emphasize authenticity and sensory appeal.',
-          style: 'Photorealistic',
-          tier: 'Tier 3',
-          tags: ['Mexico', 'Food', 'Cultural', 'Market']
-        },
-        {
-          title: 'Spanish Architecture Tour',
-          prompt: 'Generate a comprehensive architectural tour of Spanish landmarks. Include historical context, lighting conditions, and cultural significance.',
-          style: 'Photorealistic',
-          tier: 'Tier 3',
-          tags: ['Spain', 'Architecture', 'Historical', 'Culture']
-        },
-        {
-          title: 'Moroccan Souk',
-          prompt: 'Create a bustling Moroccan souk with intricate textiles, spices, traditional lanterns, and merchants negotiating prices.',
-          style: 'Photorealistic',
-          tier: 'Tier 3',
-          tags: ['Morocco', 'Souk', 'Textiles', 'Cultural']
-        }
-      ]
-    },
-    {
-      id: 'learning',
-      name: 'Learning & Language (The Viral Utility)',
-      description: 'Transition from pure aesthetics to practical, viral content creation. This proves to educators and creators that Curify is a serious production engine.',
-      examples: [
-        {
-          title: 'Language Learning Cards',
-          prompt: 'Create visual vocabulary cards showing English-Spanish word pairs with contextual images and pronunciation guides.',
-          style: 'Isometric',
-          tier: 'Tier 3',
-          tags: ['Education', 'Bilingual', 'English-Spanish', 'Vocabulary']
-        },
-        {
-          title: 'Historical Timeline',
-          prompt: 'Generate an illustrated timeline showing major events from World War II with dates, key figures, and historical context.',
-          style: 'Isometric',
-          tier: 'Tier 3',
-          tags: ['History', 'Timeline', 'Education', 'World-War-II']
-        },
-        {
-          title: 'Science Infographic',
-          prompt: 'Generate an infographic showing the water cycle with detailed labels, scientific accuracy, and educational clarity.',
-          style: 'Isometric',
-          tier: 'Tier 3',
-          tags: ['Science', 'Education', 'Infographic', 'Environment']
-        },
-        {
-          title: 'Mathematical Concepts',
-          prompt: 'Create visual explanations of calculus concepts including derivatives, integrals, and real-world applications.',
-          style: 'Isometric',
-          tier: 'Tier 3',
-          tags: ['Mathematics', 'Calculus', 'Education', 'STEM']
-        }
-      ]
-    },
-    {
-      id: 'design',
-      name: 'Design & Product (The Professional Edge)',
-      description: 'Close the directory with high-intent professional use cases. This attracts industrial designers, marketers, and product managers.',
-      examples: [
-        {
-          title: 'Product Mockups',
-          prompt: 'Create clean, minimalist product mockups for a luxury smartwatch with multiple angles and studio lighting.',
-          style: 'Product',
-          tier: 'Tier 3',
-          tags: ['Product', 'Mockup', 'Minimalist', 'Luxury']
-        },
-        {
-          title: 'Interior Design Styles',
-          prompt: 'Show the same modern living room rendered in Isometric vector, Ink sketch, and Photorealistic 3D styles.',
-          style: 'Isometric',
-          tier: 'Tier 3',
-          tags: ['Interior-Design', 'Style-Comparison', 'Isometric', '3D']
-        },
-        {
-          title: 'Fashion Collection',
-          prompt: 'Design a complete fashion collection lookbook with runway models, fabric textures, and seasonal color palettes.',
-          style: 'Photorealistic',
-          tier: 'Tier 3',
-          tags: ['Fashion', 'Collection', 'Runway', 'Style-Book']
-        },
-        {
-          title: 'Architectural Blueprints',
-          prompt: 'Create detailed architectural blueprints for a sustainable eco-home with technical specifications and material annotations.',
-          style: 'Isometric',
-          tier: 'Tier 3',
-          tags: ['Architecture', 'Blueprints', 'Sustainable', 'Technical']
-        }
-      ]
-    }
-  ];
+  // Get real templates from data
+  const categories = useMemo(() => getRealTemplates(locale), [locale]);
 
   const filteredExamples = categories.find(cat => cat.id === activeCategory)?.examples || [];
 
@@ -304,21 +306,15 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
         <section className="prose prose-lg max-w-none mb-12">
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('introduction.title')}</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              {t.rich('introduction.paragraph1', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              {t.rich('introduction.paragraph2', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              {t.rich('introduction.paragraph3', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
+            <p className="text-lg text-gray-700 mb-4"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
+            />
+            <p className="text-lg text-gray-700 mb-4"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
+            />
+            <p className="text-lg text-gray-700 mb-4"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph3')) }}
+            />
           </div>
         </section>
 

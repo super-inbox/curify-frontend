@@ -27,6 +27,9 @@ import SeriesInfographicVsNotebookLMContent from "./components/SeriesInfographic
 import GenericBlogContent from "./components/GenericBlogContent";
 import MBTICharacterGeneratorContent from "./components/MBTICharacterGeneratorContent";
 import ContentTaggingSystemContent from "./components/ContentTaggingSystemContent";
+import BilingualFlashcardsContent from "./components/BilingualFlashcardsContent";
+import UGCVideoTranslationContent from "./components/UGCVideoTranslationContent";
+import AIFacelessChannelPipelineWrapper from './components/AIFacelessChannelPipelineWrapper';
 import blogsData from "@/public/data/blogs.json";
 
 // Force dynamic rendering to avoid static generation issues
@@ -320,7 +323,24 @@ export default async function BlogPostPage({
         {slug === 'content-tagging-system' && (
           <ContentTaggingSystemContent tNamespace={tNamespace} />
         )}
-
+        {slug === 'bilingual-ai-flashcards-early-childhood-education' && (
+          <BilingualFlashcardsContent 
+            hasKey={hasKey}
+            safeT={safeT}
+            formatContent={formatContent}
+            getVideoDubbingUrl={getVideoDubbingUrl}
+            locale={locale}
+          />
+        )}
+        {slug === 'ugc-video-translation-scaling-tiktoks-shorts-global-markets' && (
+          <UGCVideoTranslationContent 
+            hasKey={hasKey}
+            safeT={safeT}
+            formatContent={formatContent}
+            getVideoDubbingUrl={getVideoDubbingUrl}
+            locale={locale}
+          />
+        )}
 
         {/* Original blog posts - use generic content renderer */}
         {!slug.startsWith('translate-youtube-video') &&
@@ -336,6 +356,9 @@ export default async function BlogPostPage({
          slug !== 'video-transcription-business-guide' &&
          slug !== '10-prompting-tips-nano-banana' &&
          slug !== '10-prompting-tips-video-generation' &&
+         slug !== 'ai-faceless-channel-pipeline' &&
+         slug !== 'bilingual-ai-flashcards-early-childhood-education' &&
+         slug !== 'ugc-video-translation-scaling-tiktoks-shorts-global-markets' &&
          slug !== 'lip-sync-business-guide' &&
          slug !== 'lip-sync-technical-deep-dive' &&
          slug !== 'image-generation-model-comparison' &&
