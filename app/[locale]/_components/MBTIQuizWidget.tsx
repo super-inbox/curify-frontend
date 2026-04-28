@@ -27,32 +27,32 @@ const QUESTIONS = [
     key: "EI" as const,
     q: "Where do you feel most alive?",
     options: [
-      { value: "E" as EI, label: "Out with the crowd", img: "/images/nano_insp/template-group-vocab-category-animals.jpg" },
-      { value: "I" as EI, label: "Alone in my own world", img: "/images/nano_insp/template-interior-design-mood-board-generator-bedroom.jpg" },
+      { value: "E" as EI, label: "Out with the crowd", img: "/images/nano_insp_preview/template-group-vocab-category-animals-prev.jpg" },
+      { value: "I" as EI, label: "Alone in my own world", img: "/images/nano_insp_preview/template-interior-design-mood-board-generator-bedroom-prev.jpg" },
     ],
   },
   {
     key: "SN" as const,
     q: "What excites you on a new trip?",
     options: [
-      { value: "S" as SN, label: "Discovering real local flavors", img: "/images/nano_insp/template-food-zh-italian-pasta.jpg" },
-      { value: "N" as SN, label: "The thrill of the unknown", img: "/images/nano_insp/template-travel-zh-xishuangbanna.jpg" },
+      { value: "S" as SN, label: "Discovering real local flavors", img: "/images/nano_insp_preview/template-food-en-paella-prev.jpg" },
+      { value: "N" as SN, label: "The thrill of the unknown", img: "/images/nano_insp_preview/template-travel-italy-amalfi-coast-italy-prev.jpg" },
     ],
   },
   {
     key: "TF" as const,
     q: "What guides your toughest calls?",
     options: [
-      { value: "T" as TF, label: "Logic & clear reasoning", img: "/images/nano_insp/template-figure-principles-infographic-albert-einstein.jpg" },
-      { value: "F" as TF, label: "Gut feeling & what's right", img: "/images/nano_insp/template-fashion-before-after-outfit-annotation-card-emerald-jewelry.jpg" },
+      { value: "T" as TF, label: "Logic & clear reasoning", img: "/images/nano_insp_preview/template-figure-principles-infographic-albert-einstein-prev.jpg" },
+      { value: "F" as TF, label: "Gut feeling & what's right", img: "/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-emerald-jewelry-prev.jpg" },
     ],
   },
   {
     key: "JP" as const,
     q: "Your ideal Friday night plan?",
     options: [
-      { value: "J" as JP, label: "Reserved, researched, ready", img: "/images/nano_insp/template-travel-zh-beijing.jpg" },
-      { value: "P" as JP, label: "Wing it & see what happens", img: "/images/nano_insp/template-mbti-animal-zh-cafe.jpg" },
+      { value: "J" as JP, label: "Reserved, researched, ready", img: "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-dreams-prev.jpg" },
+      { value: "P" as JP, label: "Wing it & see what happens", img: "/images/nano_insp_preview/template-mbti-animal-zh-cafe-prev.jpg" },
     ],
   },
 ];
