@@ -4,8 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { Sparkles, ChevronRight, RotateCcw } from "lucide-react";
 import CdnImage from "./CdnImage";
-import { MBTI_META, CHARACTER_POOL, IP_COLORS } from "@/lib/mbti-data";
-import type { MBTIType } from "@/lib/mbti-data";
+import { MBTI_META, IP_COLORS } from "@/lib/mbti-meta";
+import type { MBTIType } from "@/lib/mbti-meta";
+import mbtiCharacters from "@/public/data/mbti_characters.json";
 import { useTracking } from "@/services/useTracking";
 
 type EI = "E" | "I";
@@ -69,7 +70,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
 
   const q = !done ? QUESTIONS[step] : null;
   const meta = mbti ? MBTI_META[mbti] : null;
-  const chars = mbti ? (CHARACTER_POOL[mbti] ?? []).slice(0, 3) : [];
+  const chars = mbti ? ((mbtiCharacters as Record<string, typeof mbtiCharacters.INTJ>)[mbti] ?? []).slice(0, 3) : [];
 
   return (
     <div className="rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 p-6">

@@ -48,30 +48,32 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-// Explicit sibling groups for tag-style topics (geo, language pairs, visual styles, subjects).
+// Explicit sibling groups for tag-style topics (geo, language pairs, visual styles, subjects, personality).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   ["animals", "nature", "biology", "space", "weather"],
+  ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  character: ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  travel:    ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  language:  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  design:    ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  learning:  ["animals", "nature", "biology", "space", "weather"],
+  personality: ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
+  travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
+  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  design:      ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
+  learning:    ["animals", "nature", "biology", "space", "weather"],
 };
 
 // Full explicit parent→children hierarchy.
 // Tier 1 (entry bar): character, language, travel, lifestyle, learning, product
 // Tier 2 (navigational subtopics, shown at top of parent page)
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character: ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
+  character:   ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
+  personality: [],
   language:  ["vocabulary", "dialogue", "expressions", "language-english"],
   travel:    ["culture", "food", "city", "itinerary"],
   lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],

@@ -5,7 +5,8 @@ import { Lock, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
-import type { CharCard } from "@/lib/mbti-data";
+
+type CharCard = { name: string; img: string; ip: string; templateSlug: string };
 
 export default function PersonalityResultClient({
   mbti,

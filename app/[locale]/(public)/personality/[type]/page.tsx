@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL, CDN_BASE } from "@/lib/constants";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
-import { MBTI_TYPES, MBTI_META, CHARACTER_POOL, IP_COLORS } from "@/lib/mbti-data";
+import { MBTI_TYPES, MBTI_META, IP_COLORS } from "@/lib/mbti-meta";
+import mbtiCharacters from "@/public/data/mbti_characters.json";
 import PersonalityResultClient from "./PersonalityResultClient";
 
 type Props = { params: Promise<{ locale: string; type: string }> };
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonicalUrl = getCanonicalUrl(locale, `/personality/${mbti}`);
 
   // Use the first character's image as OG image
-  const firstChar = CHARACTER_POOL[mbti as keyof typeof CHARACTER_POOL]?.[0];
+  const firstChar = (mbtiCharacters as Record<string, Array<{name:string;img:string;ip:string;templateSlug:string}>>) [mbti]?.[0];
   const ogImage = firstChar
     ? `${CDN_BASE}${firstChar.img}`
     : `${SITE_URL}/images/og-prompts.jpg`;
@@ -60,7 +61,7 @@ export default async function PersonalityTypePage({ params }: Props) {
   const meta = MBTI_META[mbti as keyof typeof MBTI_META];
   if (!meta) notFound();
 
-  const chars = CHARACTER_POOL[mbti as keyof typeof CHARACTER_POOL] ?? [];
+  const chars = (mbtiCharacters as Record<string, Array<{name:string;img:string;ip:string;templateSlug:string}>>) [mbti] ?? [];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">

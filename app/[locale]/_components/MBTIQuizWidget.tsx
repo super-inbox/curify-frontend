@@ -6,8 +6,9 @@ import { useAtom } from "jotai";
 import CdnImage from "./CdnImage";
 import ShareButton from "./ShareButton";
 import { userAtom, drawerAtom, mbtiQuizOpenAtom } from "@/app/atoms/atoms";
-import { MBTI_META, CHARACTER_POOL, IP_COLORS, MBTI_TYPES } from "@/lib/mbti-data";
-import type { MBTIType } from "@/lib/mbti-data";
+import { MBTI_META, IP_COLORS, MBTI_TYPES } from "@/lib/mbti-meta";
+import type { MBTIType } from "@/lib/mbti-meta";
+import mbtiCharacters from "@/public/data/mbti_characters.json";
 import { useTracking } from "@/services/useTracking";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -116,7 +117,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
   const { track } = useTracking();
 
   const meta = MBTI_META[mbti];
-  const chars = CHARACTER_POOL[mbti] ?? [];
+  const chars = (mbtiCharacters as Record<string, typeof mbtiCharacters.INTJ>)[mbti] ?? [];
   const shown = chars.slice(0, 3);
   const ips = [...new Set(chars.map((c) => c.ip))].slice(0, 4);
 
