@@ -2393,5 +2393,115 @@
         ]
       }
     }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Action Verb Learning Cards",
+    "description": "Create a 3x3 grid of cartoon action verb learning cards with friendly illustrations and bold typography for any vocabulary theme.",
+    "title": "Nano Banana Prompt: Action Verb Learning Cards Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean 3x3 grid of 9 individual learning cards on a white background. Each card shows a cartoon-style person performing an action paired with the corresponding verb in bold sans-serif. Warm muted colors and consistent character design make it ideal for ESL classrooms and kids' vocabulary practice.",
+        "who": "Suitable for ESL teachers, language learning app designers, early childhood educators, parents teaching vocabulary, content creators making educational flashcards, and tutors preparing classroom materials.",
+        "how": [
+          "Choose a learning theme (e.g., Basic Verbs & Actions, Everyday Activities, Emotions).",
+          "9 cards are auto-laid out in a 3x3 grid with consistent character design.",
+          "Each cell pairs a cartoon illustration with the verb in bold sans-serif typography.",
+          "Generate a vertical 4K children's-book-style flashcard poster."
+        ],
+        "prompts": [
+          "Generate Basic Verbs & Actions cards: run, jump, eat, sleep, read, write, walk, swim, dance.",
+          "Create Emotions & Expressions cards: happy, sad, angry, surprised, tired, excited, calm, confused, proud.",
+          "Generate Movement & Sports cards: kick, throw, catch, climb, ride, run, stretch, swim, jump."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Pet Care Infographic",
+    "description": "Generate a complete 5-section pet care guide infographic for any pet type and age, with cartoon illustrations and emoji-driven bullet points.",
+    "title": "Nano Banana Prompt: Pet Care Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template produces a vertical pastel-background infographic poster covering Diet & Nutrition, Exercise, Health Care, Grooming, and Training & Socialization for any pet. Each section gets its own color, cartoon illustration, and emoji-driven bullet text — clean rounded section cards keep it scannable.",
+        "who": "Suitable for pet adoption agencies, breeder accounts, veterinary clinics, pet supply brands, pet bloggers, new pet owners, and educational content creators.",
+        "how": [
+          "Choose a pet type (e.g., British Shorthair Cat, Corgi Puppy, Labrador Dog).",
+          "Specify the age (e.g., 5-Month-Old, 1-Year-Old, Senior).",
+          "Five color-coded sections auto-fill with care advice tailored to type and age.",
+          "Generate a vertical 4K pastel infographic with cartoon illustrations."
+        ],
+        "prompts": [
+          "Generate a 5-Month-Old British Shorthair Cat care guide infographic.",
+          "Create a Senior Labrador Dog complete care guide poster.",
+          "Generate a 2-Month-Old Corgi Puppy care guide with all 5 sections."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "9-Traits Infographic",
+    "description": "Create a clean 3x3 trait grid infographic on any topic, each cell pairing a cartoon trait illustration with a bold title and short subtitle.",
+    "title": "Nano Banana Prompt: 9-Traits Information Grid Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a square infographic poster titled '9 Traits of [Topic]' with 9 minimalist cartoon trait illustrations in a 3x3 grid. Each cell pairs a friendly illustration with a bold trait title and short descriptive subtitle — great for personal development, leadership, and self-help content.",
+        "who": "Suitable for personal development creators, life coaches, leadership trainers, self-help authors, motivational social media accounts, HR teams, and content marketers.",
+        "how": [
+          "Enter the infographic topic (e.g., Quality Partner, Leadership, Self-Improvement).",
+          "9 trait cells are auto-generated with cartoon illustrations and bold titles.",
+          "Minimalist line art on a white background keeps the layout clean and shareable.",
+          "Generate a square 4K infographic ready for Instagram, Pinterest, or LinkedIn."
+        ],
+        "prompts": [
+          "Generate '9 Traits of a Quality Partner' infographic with cartoon illustrations.",
+          "Create '9 Traits of Leadership' grid poster with trait titles and subtitles.",
+          "Generate '9 Traits of Self-Improvement' infographic for motivational sharing."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "English Phrasal Verb Poster",
+    "description": "Generate an 8-phrase phrasal verb learning poster around any core verb, with example sentences and flat icons in a vertical list layout.",
+    "title": "Nano Banana Prompt: English Phrasal Verb Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vertical educational poster titled '8 Phrases with [Verb]' on a light cream background. Each list item pairs a flat icon, the phrasal verb in bold blue, and a clear example sentence with the verb highlighted — ideal for ESL classrooms and self-study printables.",
+        "who": "Suitable for ESL teachers, language tutors, language learning app designers, content creators making English learning printables, students preparing for English exams, and bilingual content creators.",
+        "how": [
+          "Choose a core verb (e.g., BREAK, TAKE, GO, PUT).",
+          "8 phrasal verbs are auto-generated as a vertical list.",
+          "Each item shows an icon, the bold phrasal verb, and an example sentence.",
+          "Generate a vertical 4K cream-background printable poster."
+        ],
+        "prompts": [
+          "Generate '8 Phrases with BREAK' poster (break down, break up, break in, etc.).",
+          "Create '8 Phrases with TAKE' learning poster with example sentences.",
+          "Generate '8 Phrases with PUT' poster for ESL classroom display."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Hairstyle Recommendation Infographic",
+    "description": "Use a reference portrait to generate a beauty guide poster showing 6 personalized hairstyle and hair-color recommendations in circular preview tiles.",
+    "title": "Nano Banana Prompt: Hairstyle and Color Recommendation Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses a reference portrait to generate a beauty consultation poster. The original photo sits on the left at full size; the right shows 6 circular previews in a 2x3 grid, each rendering a different hairstyle and color inspired by the subject. Clean white background and consistent skin tone across all variants keep the focus on the styling.",
+        "who": "Suitable for hairstylists, salon owners, beauty content creators, personal stylists, beauty app designers, anyone planning a hair makeover, and beauty consultants.",
+        "how": [
+          "Upload a reference portrait of yourself or a client.",
+          "The template auto-generates 6 personalized hairstyle and color combinations.",
+          "Each preview is labeled with the hairstyle name and matching hair color.",
+          "Generate a high-resolution beauty consultation poster."
+        ],
+        "prompts": [
+          "Generate a hairstyle recommendation poster for an oval face shape with 6 styles.",
+          "Create a hairstyle and color guide for a round face with warm-toned recommendations.",
+          "Generate a beauty makeover poster with 6 trendy hairstyle options."
+        ]
+      }
+    }
   }
 }

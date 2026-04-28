@@ -26,6 +26,16 @@ import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/Struc
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 
+// Helper function to decode HTML entities (server-safe)
+function decodeHTMLEntities(text: string): string {
+  return text
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
 // Helper component for rendering lists from translations
 function ListPoints({ points }: { points: string[] }) {
   return (
@@ -90,16 +100,12 @@ export default function HowToDubVideosNaturallyPage() {
         {/* Introduction */}
         <section className="prose prose-lg max-w-none mb-12">
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 mb-8">
-            <p className="text-lg text-gray-700 mb-4">
-              {t.rich('introduction.paragraph1', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
-            <p className="text-lg text-gray-700">
-              {t.rich('introduction.paragraph2', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
+            <p className="text-lg text-gray-700 mb-4"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
+            />
+            <p className="text-lg text-gray-700"
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
+            />
           </div>
         </section>
 

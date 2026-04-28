@@ -22,7 +22,13 @@
         "date": "30 de enero de 2026",
         "readTime": "6 min de lectura",
         "tag": "DS & AI Engineering",
-        "image": "/images/qa-bot-architecture.jpg"
+        "image": "/images/qa-bot-architecture.jpg",
+        "category": "aprendizaje-educación",
+        "relatedLinks": [
+          "herramientas-de-aprendizaje-visual",
+          "contenido-de-aprendizaje-viral",
+          "ecosistema-de-prompts-nano-banana"
+        ]
       },
       {
         "slug": "age_AI",
@@ -30,7 +36,13 @@
         "date": "30 de enero de 2026",
         "readTime": "8 min de lectura",
         "tag": "DS & AI Engineering",
-        "image": "/images/data-science-ai-era.jpg"
+        "image": "/images/data-science-ai-era.jpg",
+        "category": "traducción-y-doblaje-de-video",
+        "relatedLinks": [
+          "traductor-de-video-de-youtube-ai",
+          "cómo-doblar-videos-de-manera-natural",
+          "qué-es-clonación-de-voz"
+        ]
       },
       {
         "slug": "storyboard-labeling",
@@ -38,7 +50,13 @@
         "date": "11 de diciembre de 2025",
         "readTime": "10 min de lectura",
         "tag": "Creator Tools",
-        "image": "/images/storyboard-labeling-with-ai.jpg"
+        "image": "/images/storyboard-labeling-with-ai.jpg",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "motor-de-crecimiento-curify-ai",
+          "ecosistema-de-prompts-nano-banana",
+          "sistema-de-producción-de-contenido-ai"
+        ]
       },
       {
         "slug": "video-enhancement",
@@ -234,7 +252,8 @@
         "date": "29 de marzo de 2026",
         "readTime": "15 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg",
+        "thumbnailType": "negocio-de-transcripción-de-video"
       },
       {
         "slug": "generador-de-sugerencias-de-personajes",
@@ -242,7 +261,8 @@
         "date": "29 de marzo de 2026",
         "readTime": "15 min de lectura",
         "tag": "Herramientas para Creadores",
-        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg"
+        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
+        "thumbnailType": "pipeline-de-transcripción-de-video"
       },
       {
         "slug": "herramientas-de-aprendizaje-visual",
@@ -428,7 +448,193 @@
         "date": "13 de abril de 2026",
         "readTime": "15 min de lectura",
         "tag": "Creator Tools",
-        "image": "/images/voices2.webp"
+        "image": "/images/voices2.webp",
+        "category": "prompts-nano-banana",
+        "relatedLinks": [
+          "ecosistema-de-prompts-nano-banana",
+          "guía-visual-de-medicina-herbal-china",
+          "visualización-de-líneas-de-tiempo-evolutivas"
+        ]
+      },
+      {
+        "slug": "how-to-dub-videos-naturally",
+        "title": "How to Dub Videos Naturally in 2026: Fixing AI Voice Cloning Artifacts",
+        "date": "April 20, 2026",
+        "readTime": "15 min read",
+        "tag": "Video Dubbing",
+        "image": "/images/photoshoot.webp",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "sistema-de-producción-de-contenido-ai",
+          "contenido-de-aprendizaje-viral",
+          "herramientas-de-aprendizaje-visual"
+        ]
+      },
+      {
+        "slug": "mbti-character-generator",
+        "title": "Generador de Personajes MBTI de Nano Banana: Crea Personajes Basados en Personalidades en Segundos",
+        "date": "April 20, 2026",
+        "readTime": "12 min read",
+        "tag": "Nano Template",
+        "image": "/images/advi.webp",
+        "category": "prompts-nano-banana",
+        "relatedLinks": [
+          "qué-son-infografías",
+          "ecosistema-de-prompts-nano-banana",
+          "sitios-web-de-herramientas-ai-creativas"
+        ]
+      },
+      {
+        "slug": "ultimate-directory-of-nano-banana-prompts",
+        "title": "Ultimate Directory of Nano Banana Prompts",
+        "date": "April 20, 2026",
+        "readTime": "20 min read",
+        "tag": "Nano Template",
+        "image": "/images/logbook.webp"
+      },
+      {
+        "slug": "content-tagging-system",
+        "title": "De 4000 Imágenes a 50 Etiquetas Significativas: Construyendo un Descubrimiento de Contenido al Estilo Pinterest",
+        "date": "April 16, 2026",
+        "readTime": "10 min read",
+        "tag": "Content Automation",
+        "image": "/images/jay.webp"
+      },
+      {
+        "slug": "image-to-narrative-video",
+        "title": "Mini-Herramienta: Convierte Imágenes en Videos Narrativos",
+        "date": "April 9, 2026",
+        "readTime": "12 min read",
+        "tag": "Creator Tools",
+        "image": "/images/iran.webp"
+      },
+      {
+        "slug": "what-is-infographics",
+        "title": "¿Qué son las Infografías y Cómo se Pueden Usar las Tarjetas Infográficas?",
+        "date": "April 9, 2026",
+        "readTime": "12 min read",
+        "tag": "Learning & Education",
+        "image": "/images/infogragiccard.webp"
+      },
+      {
+        "slug": "ai-content-distribution-system",
+        "title": "Cómo Construimos un Sistema de Distribución de Contenido AI (X, Facebook y SEO)",
+        "date": "April 8, 2026",
+        "readTime": "10 min read",
+        "tag": "Content Automation",
+        "image": "/images/mermaigrapj.webp"
+      },
+      {
+        "slug": "ai-content-production-system",
+        "title": "Cómo Construimos un Sistema de Producción de Contenido AI (No Solo Herramientas)",
+        "date": "April 8, 2026",
+        "readTime": "12 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/contentai.webp"
+      },
+      {
+        "slug": "content-multiplication-system",
+        "title": "Cómo convertir 1 idea en 30 días de contenido (sin agotarte)",
+        "date": "April 6, 2026",
+        "readTime": "8 min read",
+        "tag": "Content Automation",
+        "image": "/images/thirtyday.webp"
+      },
+      {
+        "slug": "viral-learning-content",
+        "title": "Cómo Crear Contenido Educativo Viral (Tarjetas, Escenas de Diálogo, Conocimiento Visual)",
+        "date": "April 6, 2026",
+        "readTime": "10 min read",
+        "tag": "Learning & Education",
+        "image": "/images/learnContent.png"
+      },
+      {
+        "slug": "best-ai-tools",
+        "title": "10 Mejores Herramientas de IA para Creadores de Contenido en 2026",
+        "date": "April 2, 2026",
+        "readTime": "12 min read",
+        "tag": "Creator Tools",
+        "image": "/images/midjorney.webp"
+      },
+      {
+        "slug": "nano-banana-dedicated",
+        "title": "¿Qué es Nano Banana AI? La Guía Completa de Generación Visual Estructurada con AI",
+        "date": "April 2, 2026",
+        "readTime": "12 min read",
+        "tag": "Creator Tools",
+        "image": "/images/lightsnano.webp"
+      },
+      {
+        "slug": "visual-learning-tools",
+        "title": "Herramientas de Aprendizaje Visual: Cómo Estudiantes, Padres y Maestros Pueden Transformar la Educación",
+        "date": "April 1, 2026",
+        "readTime": "10 min read",
+        "tag": "Learning & Education",
+        "image": "/images/nano_insp_preview/template-word-scene-zh-student-wizard-school-prev.jpg"
+      },
+      {
+        "slug": "character-prompt-generator",
+        "title": "Generador de Sugerencias de Personajes: Crea Personajes AI con Psicología y Personalidad",
+        "date": "March 29, 2026",
+        "readTime": "15 min read",
+        "tag": "Creator Tools",
+        "image": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg"
+      },
+      {
+        "slug": "lip-sync-business-guide",
+        "title": "Guía de Sincronización Labial y Doblaje AI: Aplicaciones y Herramientas Empresariales",
+        "date": "March 29, 2026",
+        "readTime": "10 min read",
+        "tag": "Video Dubbing",
+        "image": "/images/office.webp"
+      },
+      {
+        "slug": "lip-sync-technical-deep-dive",
+        "title": "Dentro del Pipeline de Sincronización Labial AI: MuseTalk, Sync.co y Arquitectura de Producción",
+        "date": "March 29, 2026",
+        "readTime": "15 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/nano_insp/template-english-dialogue-scene-restaurant.jpg"
+      },
+      {
+        "slug": "image-generation-model-comparison",
+        "title": "Comparación de Modelos de Generación de Imágenes: DALL-E 3 vs Midjourney vs Stable Diffusion",
+        "date": "March 28, 2026",
+        "readTime": "12 min read",
+        "tag": "Creator Tools",
+        "image": "/images/hardworker.webp"
+      },
+      {
+        "slug": "video-transcription-business-guide",
+        "title": "Cómo transcribir video a texto (Herramientas de IA para YouTube, reuniones y creadores de contenido)",
+        "date": "March 19, 2026",
+        "readTime": "8 min read",
+        "tag": "Creator Tools",
+        "image": "/images/officebussinessGuide.webp"
+      },
+      {
+        "slug": "video-transcription-technical-deep-dive",
+        "title": "Profundización: Visión técnica de la transcripción",
+        "date": "March 19, 2026",
+        "readTime": "12 min read",
+        "tag": "DS & AI Engineering",
+        "image": "/images/techicalpress.webp"
+      },
+      {
+        "slug": "nano-banana-prompt-ecosystem",
+        "title": "Ecosistema de Prompts de Nano Banana",
+        "date": "March 12, 2026",
+        "readTime": "10 min read",
+        "tag": "Nano Template",
+        "image": "/images/nanobannanapromptblog.webp"
+      },
+      {
+        "slug": "chinese-herbal-medicine-visual-guide",
+        "title": "Medicina Herbal China: Una Guía Visual Completa de Remedios Tradicionales",
+        "date": "February 24, 2026",
+        "readTime": "12 min read",
+        "tag": "Nano Template",
+        "image": "/images/nano_insp/template-herbal-zh-ginseng.jpg"
       }
     ],
     "translateYoutubevideo": {
@@ -3705,7 +3911,33 @@
         "description1": "El generador MBTI de Nano Banana es un sistema de prompts de personajes basado en plantillas que transforma tipos de personalidad (como INFP, ESTJ) en personajes visuales ricos.",
         "description2": "A diferencia de las herramientas de imagen AI tradicionales, esto no es solo \"escribe un prompt y espera lo mejor.\" En su lugar, te proporciona prompts estructurados, estilos visuales consistentes y resultados repetibles en diferentes personajes.",
         "thinkOfItAs": "Piénsalo como un generador de prompts de personajes + sistema visual combinado.",
-        "thinkOfItAsDescription": "Esto asegura consistencia, mejor calidad visual y generación más rápida."
+        "thinkOfItAsDescription": "Esto asegura consistencia, mejor calidad visual y generación más rápida.",
+        "mbtiBasics": {
+          "title": "Las Cuatro Dimensiones MBTI",
+          "description": "Cada tipo de personalidad se define por preferencias en cuatro dimensiones clave:",
+          "dimensions": [
+            {
+              "letter": "E/I",
+              "title": "Extraversión/Introversión",
+              "description": "Cómo los personajes dirigen y reciben energía"
+            },
+            {
+              "letter": "S/N",
+              "title": "Sensación/Intuición",
+              "description": "Cómo los personajes reciben información"
+            },
+            {
+              "letter": "T/F",
+              "title": "Pensamiento/Sentimiento",
+              "description": "Cómo los personajes toman decisiones"
+            },
+            {
+              "letter": "J/P",
+              "title": "Juicio/Percepción",
+              "description": "Cómo los personajes se acercan al mundo exterior"
+            }
+          ]
+        }
       },
       "examples": {
         "title": "Ejemplos: Convierte MBTI en Personajes",
@@ -3727,6 +3959,37 @@
           "description": "Relaciona la personalidad con la narración:",
           "enfp": "protagonista carismático",
           "istj": "estratega disciplinado"
+        },
+        "yellowstone": {
+          "title": "🏔️ Análisis de Personajes de Yellowstone",
+          "description": "Estos personajes psicológicamente complejos demuestran cómo se manifiestan los rasgos MBTI en personalidades atractivas:",
+          "beth": {
+            "type": "Beth Dutton - ENTJ",
+            "traits": "Estratega, asertiva, leal, comunicadora directa, líder natural",
+            "analysis": "La intensidad y agresividad estratégica de Beth se alinean perfectamente con los rasgos ENTJ. Su naturaleza decisiva y su capacidad para ganar respeto la convierten en un tipo Comandante clásico que prospera en entornos de alta presión."
+          },
+          "rip": {
+            "type": "Rip Wheeler - ISTP",
+            "traits": "Práctico, orientado a la acción, leal, observador, solucionador de problemas práctico",
+            "analysis": "La competencia silenciosa y las habilidades prácticas de Rip reflejan las características ISTP. Es el clásico Artesano que muestra en lugar de contar, prefiriendo la acción sobre las palabras y sobresaliendo en situaciones de crisis."
+          },
+          "kayce": {
+            "type": "Kayce Dutton - ISFP",
+            "traits": "Impulsado por valores, conflictuado, empático, conectado con la naturaleza, auténtico",
+            "analysis": "El conflicto interno y la sensibilidad moral de Kayce muestran rasgos ISFP. Como Aventurero, lucha entre valores personales y obligaciones familiares, creando una profundidad de carácter atractiva."
+          }
+        },
+        "mbtiFramework": {
+          "title": "📋 Marco de Desarrollo de Personajes MBTI",
+          "description": "Utiliza este enfoque estructurado para desarrollar cualquier personaje:",
+          "steps": [
+            "1. Identificar el tipo MBTI central",
+            "2. Definir rasgos de personalidad clave",
+            "3. Establecer motivaciones y conflictos",
+            "4. Crear patrones de comportamiento",
+            "5. Desarrollar estilo de diálogo",
+            "6. Añadir características visuales"
+          ]
         }
       },
       "howItWorks": {
@@ -3774,7 +4037,9 @@
           "items": [
             "Avisos de prueba y error",
             "Ajuste manual",
-            "Resultados inconsistentes"
+            "Resultados inconsistentes",
+            "Proceso de iteración que consume tiempo",
+            "Profundidad de carácter limitada"
           ]
         },
         "nanoBanana": {
@@ -3782,7 +4047,9 @@
           "items": [
             "Los avisos están preestructurados",
             "Los resultados son predecibles",
-            "Puedes generar variaciones rápidamente"
+            "Puedes generar variaciones rápidamente",
+            "Capacidad de prototipado rápido",
+            "Aplicación en múltiples escenarios"
           ]
         },
         "conclusion": "Está más cerca de un sistema de producción, no solo de una herramienta creativa."
@@ -3810,7 +4077,36 @@
           "title": "Marketing y Branding",
           "items": [
             "Visuales de segmentación de audiencia",
-            "Campañas basadas en personas"
+            "Campañas basadas en personas",
+            "Campañas de personajes en redes sociales",
+            "Personajes para estrategia de contenido"
+          ]
+        },
+        "storytelling": {
+          "title": "📚 Narración y Escritura",
+          "items": [
+            "Desarrollo de personajes de novela",
+            "Consistencia de personajes en guiones",
+            "Personajes de RPG de mesa",
+            "Diseño de narrativas interactivas"
+          ]
+        },
+        "education": {
+          "title": "🎓 Educación y Capacitación",
+          "items": [
+            "Herramientas de enseñanza de psicología",
+            "Escenarios de aprendizaje basados en personajes",
+            "Ejemplos de capacitación en liderazgo",
+            "Talleres de comunicación"
+          ]
+        },
+        "gaming": {
+          "title": "🎮 Juegos y Entretenimiento",
+          "items": [
+            "Diseño de personajes para videojuegos",
+            "Narración interactiva",
+            "Habitantes de mundos virtuales",
+            "Personalización de avatares de jugador"
           ]
         }
       },
@@ -3822,6 +4118,21 @@
         },
         "browse": {
           "title": "Explora más avisos de Nano Banana:"
+        },
+        "yellowstoneExample": {
+          "title": "🏔️ Prueba la Generación de Personajes de Yellowstone",
+          "description": "Comienza con nuestro ejemplo más popular: Beth Dutton como ENTJ:",
+          "link": "https://www.curify-ai.com/nano-template/mbti-yellowstone/example/template-mbti-yellowstone-beth-dutton"
+        },
+        "customCreation": {
+          "title": "🎨 Crea Personajes MBTI Personalizados",
+          "description": "Crea tus propios personajes utilizando nuestro marco MBTI:",
+          "link": "https://www.curify-ai.com/nano-banana-pro-prompts"
+        },
+        "framework": {
+          "title": "📋 Marco de Personajes MBTI",
+          "description": "Accede a nuestro sistema completo de desarrollo de personajes:",
+          "link": "https://www.curify-ai.com/blog/ultimate-directory-of-nano-banana-prompts"
         }
       },
       "customize": {
@@ -3836,13 +4147,44 @@
             "Remixar plantillas en nuevos formatos"
           ],
           "conclusion": "Esto lo convierte en un creador de personajes flexible para creadores y marketers."
+        },
+        "personalityDepth": {
+          "title": "🧠 Capas de Personalidad",
+          "features": [
+            "Fundamento del tipo MBTI principal",
+            "Rasgos de personalidad secundarios",
+            "Defectos que generan conflicto",
+            "Arcos de potencial de crecimiento",
+            "Dinámicas de relación"
+          ]
+        },
+        "visualConsistency": {
+          "title": "🎨 Sistema Visual",
+          "features": [
+            "Apariencia en múltiples escenarios",
+            "Rango de expresión emocional",
+            "Opciones de progresión de edad",
+            "Adaptación de estilo",
+            "Variaciones de accesorios"
+          ]
+        },
+        "narrativeIntegration": {
+          "title": "📚 Integración de Historia",
+          "features": [
+            "Generación de antecedentes",
+            "Creación de patrones de diálogo",
+            "Modelado de toma de decisiones",
+            "Mapeo de relaciones",
+            "Desarrollo de arcos de personajes"
+          ]
         }
       },
       "finalThoughts": {
         "title": "Pensamientos Finales",
         "description": "Si alguna vez has tenido problemas con avisos inconsistentes o resultados genéricos de AI, Nano Banana ofrece un enfoque diferente:",
         "formula": "Avisos estructurados  personajes consistentes  contenido escalable",
-        "conclusion": "Ya sea que estés creando contenido MBTI, visuales de narración o activos de marketing, este sistema te ayuda a moverte más rápido  y producir mejores resultados."
+        "conclusion": "Ya sea que estés creando contenido MBTI, visuales de narración o activos de marketing, este sistema te ayuda a moverte más rápido  y producir mejores resultados.",
+        "keyInsight": "🎯 La Perspectiva Clave"
       },
       "relatedReads": {
         "title": "Lecturas Relacionadas",
@@ -3866,6 +4208,14 @@
           {
             "question": "¿Es Nano Banana adecuado para principiantes?",
             "answer": "Sí  elimina la necesidad de escribir avisos complejos manualmente."
+          },
+          {
+            "question": "¿Cómo aseguro la consistencia de los personajes en diferentes escenas?",
+            "answer": "Utiliza hojas de personajes estructuradas que definan rasgos principales, patrones de comportamiento y características visuales. Los sistemas de IA como Nano Banana mantienen estos parámetros en todo el contenido generado."
+          },
+          {
+            "question": "¿Se pueden usar personajes MBTI para proyectos profesionales?",
+            "answer": "¡Sí! Los personajes MBTI se utilizan ampliamente en marketing, educación, juegos y creación de contenido. El marco proporciona profundidad psicológica con la que las audiencias se conectan a través de varios medios."
           }
         ]
       },
@@ -4206,6 +4556,146 @@
         "promptBoxTitle": "Prompt Completo",
         "promptBoxDescription": "Copia este prompt exacto para usar en Nano Banana:"
       }
+    },
+    "bilingual-ai-flashcards-early-childhood-education": {
+      "title": "Generación de Tarjetas de Flash AI Bilingües para la Educación Infantil",
+      "date": "23 de abril de 2026",
+      "readTime": "12 min de lectura",
+      "tag": "Aprendizaje y Educación",
+      "image": "/images/flashcard.webp",
+      "category": "learning-education",
+      "intro": "Aprende a generar tarjetas de flash AI bilingües altamente visuales para la educación infantil utilizando Nano Banana. Esta guía muestra a padres y educadores cómo crear \"tarjetas de conocimiento\" atractivas que combinan ilustraciones amigables con vocabulario bilingüe, haciendo que el aprendizaje temprano sea más intuitivo, visual y divertido.",
+      "whatIsTitle": "¿Qué Son las Tarjetas de Flash AI Bilingües?",
+      "whatIsContent": "Las tarjetas de flash bilingües con IA son herramientas de aprendizaje visual que combinan ilustraciones claras con vocabulario en dos idiomas, ayudando a los niños a desarrollar habilidades lingüísticas a través del contexto. A diferencia de las tarjetas de flash tradicionales, las tarjetas generadas por IA se pueden personalizar instantáneamente para temas como animales, datos sobre dinosaurios o vocabulario básico, lo que las hace adaptables a diferentes etapas y entornos de aprendizaje.",
+      "whyTitle": "Por qué esto es importante para el aprendizaje en la primera infancia",
+      "whyContent": "La mayoría de las herramientas educativas de IA se centran en casos de uso con mucho texto, como la resumición o la toma de notas. En contraste, el aprendizaje en la primera infancia es visual, interactivo y basado en el contexto. Crear \"tarjetas de conocimiento\" ilustradas y bilingües llena un vacío real: los padres y educadores buscan activamente formas simples y atractivas de enseñar vocabulario, especialmente en hogares bilingües.",
+      "howTitle": "Cómo crear tarjetas de flash bilingües con Nano Banana",
+      "step1Title": "Paso 1: Elige un tema de aprendizaje visual",
+      "step1Content": "Comienza con temas concretos apropiados para la edad, como animales, comida, colores, formas u objetos cotidianos. Los temas basados en el contexto del mundo real ayudan a los niños a formar asociaciones más fuertes y a retener el vocabulario de manera más efectiva.",
+      "step2Title": "Paso 2: Define un estilo de ilustración consistente",
+      "step2Content": "Usa Nano Banana para establecer un estilo visual repetible: formas suaves, colores brillantes y personajes amigables. La consistencia en las tarjetas mejora el reconocimiento y reduce la carga cognitiva para los jóvenes aprendices.",
+      "step3Title": "Paso 3: Estructura el vocabulario bilingüe de manera clara",
+      "step3Content": "Diseña cada tarjeta para presentar claramente ambos idiomas. Esto puede incluir inglés + español, inglés + chino u otros pares, junto con guías de pronunciación opcionales. Mantén el diseño simple para que lo visual siga siendo el ancla principal del significado.",
+      "step4Title": "Paso 4: Indica la combinación de visual + contexto",
+      "step4Content": "La clave es indicar escenas, no solo objetos. En lugar de elementos aislados, genera visuales que muestren el concepto en contexto (por ejemplo, un niño comiendo una manzana). Esto fortalece la comprensión y hace que el vocabulario sea más memorable.",
+      "step5Title": "Paso 5: Revisa para precisión y claridad",
+      "step5Content": "Valida traducciones, relevancia cultural y adecuación a la edad. La IA acelera la creación, pero la revisión humana asegura que las tarjetas sean correctas, claras y efectivas para escenarios de aprendizaje reales.",
+      "templatesTitle": "Plantillas de tarjetas de flash para copiar y pegar",
+      "templatesIntro": "Usa estas plantillas para generar tarjetas de flash bilingües consistentes y de alta calidad con un fuerte contexto visual:",
+      "template1Title": "Tarjetas de conocimiento sobre animales",
+      "template1Prompt": "Crea 10 tarjetas de flash para preescolar (edades 3–5) con animales en escenas naturales. Cada tarjeta incluye: un animal ilustrado amigable, la palabra en inglés, la traducción al español y un hecho simple. Usa colores brillantes y formas suaves. Estilo: libro ilustrado para niños.",
+      "template2Title": "Fundamentos de color y forma",
+      "template2Prompt": "Genera 12 tarjetas de flash para niños pequeños (edades 2–4) mostrando formas en escenas del mundo real (por ejemplo, bola roja, bloque cuadrado azul). Incluye la palabra en inglés, la traducción al francés y la pronunciación opcional. Estilo: visuales limpias, inspiradas en Montessori, con colores pastel.",
+      "template3Title": "Vocabulario cotidiano en contexto",
+      "template3Prompt": "Crea 15 tarjetas de flash para jardín de infantes (edades 4–6) mostrando objetos cotidianos en uso (por ejemplo, cepillándose los dientes, comiendo, mochila escolar). Incluye etiqueta en inglés, caracteres chinos y pinyin. Estilo: escenas simples y realistas con poco desorden de fondo.",
+      "benefitsTitle": "Beneficios de las tarjetas de aprendizaje generadas por IA",
+      "benefitsContent": "Las tarjetas de flash generadas por IA permiten la creación rápida de conjuntos de aprendizaje visualmente consistentes, fácil cambio de idioma y producción de contenido escalable. Son especialmente efectivas para aprendices visuales y familias bilingües porque conectan palabras con imágenes y contexto del mundo real.",
+      "toolsTitle": "Herramientas y recursos de apoyo",
+      "toolsContent": "Mejora tus tarjetas de flash con herramientas de pronunciación, validación de hablantes nativos y sistemas simples de seguimiento de progreso. Estas adiciones ayudan a garantizar precisión y apoyan el aprendizaje estructurado a lo largo del tiempo.",
+      "bestPracticesTitle": "Mejores prácticas para jóvenes aprendices",
+      "bestPracticesContent": "Mantén las tarjetas simples y enfocadas: limita el texto, usa visuales claras y evita el desorden. Prioriza imágenes de alto contraste, diseños consistentes y repetición a través de temas. Rota las tarjetas regularmente para reforzar el aprendizaje sin abrumar al niño.",
+      "conclusionTitle": "Construye sistemas de aprendizaje visual con IA",
+      "conclusionContent": "La IA hace que sea práctico crear materiales de aprendizaje de alta calidad, centrados en lo visual, adaptados a la educación en la primera infancia. Al combinar indicaciones sólidas con un diseño consistente, puedes generar tarjetas de flash bilingües que no solo son escalables, sino genuinamente efectivas para cómo aprenden los niños."
+    },
+    "ugc-video-translation-scaling-tiktoks-shorts-global-markets": {
+      "title": "Traducción de videos UGC: Escalando TikToks y Shorts para mercados globales",
+      "date": "23 de abril de 2026",
+      "readTime": "15 min de lectura",
+      "tag": "Doblaje y traducción de video",
+      "image": "/images/tiktok.webp",
+      "category": "video-translation-dubbing",
+      "hub": "ai-youtube-video-translator",
+      "architecture": {
+        "pillar": "Pilar 3: Doblaje y traducción de video",
+        "status": "Rayo",
+        "related_spokes": [
+          "translate-youtube-video",
+          "how-to-dub-videos-naturally",
+          "voice-cloning-tools",
+          "f5-tts-voice-cloning",
+          "asl-video-translator",
+          "lip-sync-business-guide"
+        ]
+      },
+      "content_architecture_plan": "Curify AI: Arquitectura de contenido Hub y Spoke\n\nAquí está el plan completo de reestructuración, formateado para una fácil integración en tu CMS y calendario de contenido.\nPilar 1: Indicaciones de Nano Banana (El núcleo visual)\nLa página principal (Pilar): ultimate-directory-of-nano-banana-prompts\nAcción: Establecer esto como el \"Lookbook\" visual maestro. Todas las demás publicaciones relacionadas con indicaciones deben enlazar de nuevo a esta URL para consolidar la autoridad.\nCategoría y enrutamiento de URL: nano-template\nAcción: Cambiar el slug de categoría de nano-banana-prompts a nano-template. Esto asegura la alineación con el enrutamiento de URL del sistema para la consistencia SEO.\nPivotes de blog y cambios de título:\nArtículo objetivo: 10-prompting-tips-nano-banana\nTítulo anterior: 10 Consejos de Indicación para Nano Banana: Domina la Generación de Contenido con IA\nNuevo título optimizado: Cómo escribir indicaciones para Nano Banana: 10 consejos para creadores\nRazonamiento del pivote: Apunta directamente a la consulta de cola larga exacta sobre cómo escribir indicaciones para nano banana para captar usuarios de alta intención en lugar de luchar por el término principal con un KD del 97%.\nSpokes asignados (enlace al Hub):\nmbti-character-generator\nchinese-herbal-medicine-visual-guide\nevolution-timelines-visualization\nchinese-costume-history-infographic (Acción: Reetiquetar de \"Cultura\" a \"nano-template\")\n\nPilar 2: Herramientas para creadores\nLa página principal (Pilar): best-ai-tools\nAcción: Mejorar \"10 Mejores Herramientas de IA para Creadores de Contenido en 2026\" de un artículo de lista a una página pilar integral. Agrupar herramientas por modalidad (Imagen, Video, Audio) y enlazar a reseñas individuales en profundidad.\nEstandarización de categorías: creator-tools\nAcción: Consolidar etiquetas rebeldes como AI Tools y MBTI Generator en esta categoría unificada.\nPivotes de blog y cambios de título:\nArtículo objetivo: storyboard-labeling\nTítulo anterior: De metraje en bruto a guiones gráficos: Análisis de video impulsado por IA\nNuevo pivote: Reescribir los metadatos y la introducción para centrarse en la eficiencia del flujo de trabajo. Posicionar el contenido en torno a acelerar el proceso del creador desde la ideación hasta la generación de guiones gráficos.\nSpokes asignados (enlace al Hub):\ncharacter-prompt-generator\nimage-generation-model-comparison\nstoryboard-to-pipeline\ncreative-ai-tools-websites\n\nPilar 3: Doblaje y traducción de video\nLa página principal (Pilar): ai-youtube-video-translator\nAcción: Expandir \"Traductor de Video de YouTube con IA: Mejores Herramientas y Métodos 2026\" en el hub central que cubre todo el ecosistema de traducción de video, clonación y doblaje.\nEstandarización de categorías: video-translation-dubbing\nAcción: Fusionar Traducción de Video, Doblaje de IA y Mejora de Video bajo este único slug.\nPivotes de blog y cambios de título:\nArtículo objetivo: what-is-voice-cloning\nTítulo anterior: ¿Qué es la clonación de voz en 2026? El futuro de la tecnología de voz de IA explicado\nNuevo título optimizado: ¿Qué es la clonación de voz de IA? Cómo arreglar artefactos de doblaje en 2026\nRazonamiento del pivote: Cambia la pieza de puramente informativa a resolver problemas, abordando directamente los puntos de dolor comunes de los creadores.\nSpokes asignados (enlace al Hub):\ntranslate-youtube-video\nhow-to-dub-videos-naturally\nvoice-cloning-tools\nf5-tts-voice-cloning\nasl-video-translator\nlip-sync-business-guide\n\nPilar 4: Marketing de contenido y sistemas de automatización\nLa página principal (Pilar): curify-ai-growth-engine\nAcción: Reposicionar \"El Motor de Crecimiento de Curify AI\" como la guía definitiva para aprovechar la IA para el marketing de contenido y la escalabilidad multicanal.\nEstandarización de categorías: content-automation\nAcción: Mover publicaciones aplicables fuera de Estrategia de Contenido y Plataforma de IA a esta etiqueta unificada.\nPivotes de blog y cambios de título:\nArtículo objetivo: content-tagging-system\nTítulo anterior: De 4000 imágenes a 50 etiquetas significativas: Construyendo un descubrimiento de contenido al estilo Pinterest\nNuevo pivote: Enmarcar la narrativa en torno al valor empresarial y el crecimiento SEO. Enfatizar cómo implementar un sistema de etiquetado estructurado de 3 capas (Extracción de Señales, Generación de Candidatos, Refinamiento Humano) impulsa directamente el descubrimiento orgánico y el compromiso con el feed visual.\nSpokes asignados (enlace al Hub):\ncontent-multiplication-system\nai-content-distribution-system\n\nPilar 5: Aprendizaje y educación\nLa página principal (Pilar): visual-learning-tools\nAcción: Expandir \"Herramientas de Aprendizaje Visual: Cómo Estudiantes, Padres y Maestros Pueden Transformar la Educación\" para servir como la guía maestra para aplicaciones educativas de IA.\nEstandarización de categorías: learning-education\nAcción: Crear este nuevo slug de categoría para captar tráfico educativo de alta intención.\nPivotes de blog y cambios de título:\nArtículo objetivo: viral-learning-content\nTítulo anterior: Cómo Crear Contenido de Aprendizaje Viral (Tarjetas de Flash, Escenas de Diálogo, Conocimiento Visual)\nNuevo pivote: Centrarse específicamente en aplicaciones de educación en la primera infancia. Detallar el proceso de usar IA para generar \"tarjetas de conocimiento\" de vocabulario en inglés (cubriendo temas como animales, dinosaurios y temas escolares) para la enseñanza en casa interactiva y altamente visual.\nSpokes asignados (enlace al Hub):\nwhat-is-infographics\nseries-infographic-vs-notebooklm\n\nPilar 6: Ingeniería de DS y IA, Plataforma\nLa página principal (Pilar): ai-content-production-system\nAcción: Utilizar \"Cómo Construimos un Sistema de Producción de Contenido con IA (No Solo Herramientas)\" como el manifiesto central de ingeniería, enlazando a todas las profundidades técnicas altamente técnicas.\nEstandarización de categorías: ds-ai-engineering\nAcción: Retener esta categoría. Auditar la etiqueta de herramientas para creadores y mover cualquier publicación de arquitectura excesivamente técnica aquí.\nPivotes de blog y cambios de título:\nArtículo objetivo: aiPlatform\nTítulo anterior: 实用的 AI 平台：中型科技公司如何用 AI 获胜\nNuevo pivote: Actualizar los metadatos y el contenido para centrarse en la necesidad de una infraestructura determinista al tratar con modelos de IA probabilísticos. Detallar implementaciones específicas, como la validación de esquemas, almacenamiento en caché semántico a través de Redis para contenido localizado y manejo de programación de GPU en múltiples nubes utilizando Ray.",
+      "intro": "Si bien existe contenido excelente para traducir videos de YouTube de formato largo, la economía actual de creadores está impulsada en gran medida por contenido generado por usuarios (UGC) de formato corto. Las marcas y los creadores están desesperados por llevar sus Shorts y Reels de mejor rendimiento a los mercados de habla española, japonesa y portuguesa sin perder el ritmo energético del creador original.",
+      "whatIsTitle": "¿Qué es la traducción de videos UGC?",
+      "whatIsContent": "La traducción de videos UGC es el proceso de localizar contenido de formato corto (TikToks, Instagram Reels, YouTube Shorts) para audiencias globales mientras se preserva la energía, el ritmo y la entrega emocional del creador original. A diferencia de la traducción de contenido de formato largo, el formato corto requiere una preservación precisa del tiempo, adaptación cultural de tendencias y mantener el ADN viral que hizo exitoso el contenido original.",
+      "whyTitle": "¿Por qué centrarse en contenido de formato corto?",
+      "whyContent": "La economía de creadores ha cambiado drásticamente. Si bien el contenido de formato largo sigue siendo importante, el motor de crecimiento ahora es el UGC de formato corto. Los creadores que traducen con éxito sus TikToks y Shorts virales a múltiples idiomas pueden multiplicar por 10 su alcance y potencial de monetización. El desafío técnico es mantener la voz auténtica del creador y la inflexión emocional en clips de 15 a 60 segundos.",
+      "howTitle": "Matices técnicos de la traducción de formato corto",
+      "step1Title": "Paso 1: Analiza el ADN del contenido original",
+      "step1Content": "Antes de la traducción, identifica los elementos virales: patrones de ritmo, momentos emocionales, cortes rápidos, puntos de sincronización de sonido y referencias culturales. Usa análisis de IA para extraer marcadores de tiempo, niveles de energía y transiciones emocionales que hacen que el contenido original sea atractivo. Este ADN se convierte en tu plano de traducción.",
+      "step2Title": "Paso 2: Clonación de voz para autenticidad del creador",
+      "step2Content": "Genera un clon de voz que capture las características vocales únicas del creador: rango de tono, ritmo del habla, inflexión emocional y patrones de acento. Para contenido de formato corto, enfócate en patrones de entrega de alta energía y cambios emocionales rápidos. El modelo de voz debe manejar el ritmo rápido y los cambios de energía súbitos sin sonar robótico.",
+      "step3Title": "Paso 3: Precisión de sincronización labial para clips cortos",
+      "step3Content": "Implementa sincronización labial cuadro por cuadro que coincida con los movimientos y expresiones de la boca del creador original. El contenido de formato corto requiere precisión subcuadro debido a cortes rápidos y tomas de cerca. Usa el pipeline de sincronización labial mejorado de Curify para mantener movimientos naturales de la boca durante segmentos de ritmo rápido y momentos emocionales.",
+      "step4Title": "Paso 4: Adaptación cultural de tendencias",
+      "step4Content": "Localiza no solo el idioma, sino el contexto cultural: sonidos de tendencia, referencias de memes, significados de gestos y comportamientos específicos de la plataforma. Lo que es viral en EE. UU. puede no resonar en Japón o Brasil. Adapta las referencias culturales mientras mantienes el mensaje central y el valor de entretenimiento que impulsó el éxito del original.",
+      "step5Title": "Paso 5: Aseguramiento de Calidad para Potencial Viral",
+      "step5Content": "Prueba el contenido traducido con hablantes nativos del mercado objetivo. Verifica el impacto emocional, el tiempo cómico y la resonancia cultural. Utiliza pruebas A/B para comparar diferentes entregas emocionales y variaciones de ritmo. Asegúrate de que el contenido traducido mantenga el potencial de compartición y compromiso del original.",
+      "technicalTitle": "Consideraciones Técnicas Avanzadas",
+      "timingTitle": "Preservando Micro-Expresiones",
+      "timingContent": "El contenido de formato corto depende de micro-expresiones y cambios emocionales en fracciones de segundo. Tu pipeline de traducción debe capturar estas sutilezas: levantamientos de cejas, sonrisas sutiles, movimientos oculares y miradas rápidas que transmiten significado. Utiliza procesamiento a alta velocidad de fotogramas (60fps+) para mantener la precisión del tiempo.",
+      "emotionTitle": "Mapeo de Inflecciones Emocionales",
+      "emotionContent": "Mapea el viaje emocional del creador original: acumulación, clímax, resolución. Aplica TTS emocional para preservar estos momentos emocionales en el idioma objetivo. El desafío es mantener una entrega emocional auténtica mientras se adaptan patrones lingüísticos que pueden tener diferentes normas de expresión emocional.",
+      "platformTitle": "Optimización Específica de la Plataforma",
+      "platformContent": "Cada plataforma tiene requisitos únicos: la relación de aspecto 9:16 de TikTok, el formato vertical de Instagram Reels, las preferencias del algoritmo de YouTube Shorts. Optimiza el contenido traducido para las especificaciones técnicas y patrones de comportamiento de la audiencia de cada plataforma.",
+      "toolsTitle": "Herramientas Esenciales para la Traducción de UGC",
+      "toolsContent": "El pipeline de traducción de UGC especializado de Curify combina clonación de voz, sincronización labial y TTS emocional diseñado específicamente para contenido de formato corto. El sistema maneja un ritmo rápido, preserva la autenticidad del creador y produce formatos optimizados para la plataforma automáticamente.",
+      "monetizationTitle": "Escalando Flujos de Ingresos Globales",
+      "monetizationContent": "El UGC traducido abre múltiples canales de monetización: acuerdos de marca internacionales, patrocinios localizados, ingresos publicitarios globales y crecimiento de audiencia en múltiples plataformas. Los creadores pueden exigir tarifas premium por contenido multilingüe que mantenga el potencial viral en todos los mercados.",
+      "caseStudiesTitle": "Historias de Éxito: Impacto de la Traducción de UGC",
+      "caseStudy1Title": "Creador de Moda: 10x Alcance con Doblajes en Español",
+      "caseStudy1Content": "Un creador de moda con 500K seguidores tradujo sus 10 mejores TikToks al español, alcanzando 5M de espectadores adicionales. La clave fue mantener su entrega enérgica y adaptar las referencias de moda para los mercados de América Latina.",
+      "caseStudy2Title": "Creador de Comedia: Avance en el Mercado Japonés",
+      "caseStudy2Content": "Un creador de comedia especializado en contenido de sketch logró un éxito viral en Japón al traducir sus Reels con adaptación cultural. El contenido traducido preservó el tiempo cómico mientras incorporaba patrones de humor japonés y referencias culturales.",
+      "bestPracticesTitle": "Mejores Prácticas para la Traducción de UGC",
+      "bestPracticesContent": "Enfócate en la preservación de la autenticidad del creador: mantén los niveles de energía originales, respeta el contexto cultural, prueba con audiencias objetivo, optimiza para los requisitos técnicos de cada plataforma e itera según las métricas de rendimiento. El objetivo es hacer que el contenido traducido se sienta nativo para cada mercado mientras se preserva el ADN viral.",
+      "conclusionTitle": "Transforma Tu Estrategia de Contenido Global",
+      "conclusionContent": "La Traducción de Video UGC representa la próxima frontera en la expansión de la economía de creadores. Al combinar traducción avanzada de IA con inteligencia cultural y preservación de la autenticidad del creador, puedes escalar tu contenido globalmente mientras mantienes el potencial viral que hizo que tu contenido original fuera exitoso."
+    },
+    "aifacelesschannelpipeline": {
+      "title": "Cómo Construir un Pipeline de Canal Sin Rostro de IA en 2026",
+      "date": "23 de abril de 2026",
+      "readTime": "18 min de lectura",
+      "category": "Herramientas para Creadores",
+      "tag": "Herramientas para Creadores",
+      "image": "/images/facelesyoutube.webp",
+      "metaDescription": "Aprende cómo construir un pipeline escalable de canal sin rostro de IA en 2026. Genera visuales consistentes, automatiza la escritura de guiones y agiliza la producción de videos con Curify.",
+      "seoKeywords": "canal sin rostro de IA, herramientas de IA para canal de youtube sin rostro, automatizar videos de tiktok, automatización de contenido de IA, producción de video sin rostro",
+      "intro": "Los canales sin rostro impulsados por IA están transformando la forma en que se crea y escala el contenido. En 2026, combinar la generación visual consistente, la escritura estructurada y la automatización permite a los creadores producir contenido de alta calidad sin aparecer en cámara. Esta guía describe cómo construir un pipeline práctico de extremo a extremo utilizando el ecosistema de Curify, incluyendo Nano Banana para visuales, herramientas narrativas y flujos de trabajo de automatización.",
+      "whatIsTitle": "¿Qué es un Pipeline de Canal Sin Rostro de IA?",
+      "whatIsContent": "Un pipeline de canal sin rostro de IA es un flujo de trabajo estructurado que agiliza la creación de contenido, desde la generación visual hasta la salida final del video, sin requerir presencia en cámara. En lugar de producción manual, estos pipelines utilizan herramientas de IA para estandarizar la marca, generar variaciones de manera eficiente y aumentar la producción mientras mantienen la consistencia.",
+      "whyTitle": "Por Qué los Canales Sin Rostro Están Creciendo en 2026",
+      "whyContent": "Los canales sin rostro están ganando popularidad porque reducen cuellos de botella comunes como el tiempo de producción, el costo y los requisitos de presencia en cámara. Las herramientas de IA ayudan a los creadores a aumentar la producción y mantener la consistencia, lo que se alinea bien con los algoritmos de las plataformas que recompensan la publicación regular. Aunque no son completamente automáticos, estos sistemas facilitan mantener un ritmo constante de contenido.",
+      "howTitle": "Construyendo Tu Pipeline Completo: Paso a Paso",
+      "step1Title": "Paso 1: Establece Tu Identidad Visual con Nano Banana",
+      "step1Content": "Una identidad visual consistente es crítica para el reconocimiento. Usa Nano Banana para definir el estilo visual de tu marca: paleta de colores, tono y composición. Desarrolla prompts y plantillas reutilizables que generen variaciones mientras preservan elementos centrales, asegurando que tu contenido se mantenga cohesivo en todas las publicaciones.",
+      "step2Title": "Paso 2: Desarrolla Sistemas de Escritura Automatizados",
+      "step2Content": "Narrativas sólidas impulsan el compromiso. Crea plantillas de escritura estructuradas para diferentes formatos: educativos, narrativos o de noticias. Usa IA para ayudar con borradores, investigar tendencias y generar ideas de temas, mientras refinas los resultados para mantener la voz y precisión de tu marca.",
+      "step3Title": "Paso 3: Implementa Generación de Voz de IA y Producción de Audio",
+      "step3Content": "La voz define el tono de tu canal. Selecciona herramientas de voz de IA que ofrezcan entrega natural y flexibilidad. Crea perfiles de voz alineados con el estilo de tu contenido y mejora el audio con música de fondo y herramientas de limpieza para mantener una calidad profesional.",
+      "step4Title": "Paso 4: Automatiza el Ensamblaje y Edición de Videos",
+      "step4Content": "Utiliza herramientas de video impulsadas por IA para ensamblar visuales, sincronizar narraciones y aplicar branding. Crea plantillas reutilizables para diferentes formatos como contenido de formato corto y largo. La automatización puede ayudar con el ritmo, transiciones y formateo, aunque la revisión manual sigue siendo importante para el control de calidad.",
+      "step5Title": "Paso 5: Escala con Automatización de Distribución",
+      "step5Content": "La distribución es clave para el crecimiento. Usa herramientas de programación para publicar en múltiples plataformas y optimizar el tiempo. La IA puede ayudar a analizar el rendimiento y sugerir mejoras, pero el compromiso, especialmente las respuestas e interacción comunitaria, debe ser monitoreado para evitar automatización de baja calidad.",
+      "toolsTitle": "Herramientas Esenciales para Tu Pipeline",
+      "toolsContent": "Un pipeline funcional combina múltiples herramientas: Nano Banana para visuales consistentes, las herramientas narrativas de Curify para la escritura de guiones, plataformas de voz de IA para audio, herramientas de automatización de video para ensamblaje y sistemas de programación para distribución. La eficiencia proviene de integrar estos componentes en un flujo de trabajo cohesivo.",
+      "curifyTitle": "Por Qué Curify Funciona Bien para Canales Sin Rostro",
+      "curifyContent": "Curify reúne generación visual, escritura y automatización en un sistema unificado. Nano Banana apoya visuales consistentes a gran escala, mientras que las herramientas narrativas ayudan a mantener una voz de marca estable. La TTS integrada y la automatización del flujo de trabajo reducen la fricción, facilitando la gestión de la producción sin tener que lidiar con múltiples herramientas desconectadas.",
+      "monetizationTitle": "Estrategias de Monetización para Canales Sin Rostro",
+      "monetizationContent": "Los canales sin rostro ofrecen opciones de monetización flexibles. Puedes dirigirte a múltiples nichos, producir contenido atemporal y escalar inventario para anuncios, patrocinios, afiliados y productos digitales. El éxito depende de alinear el contenido con la demanda de la audiencia y construir una distribución confiable.",
+      "examplesTitle": "Ejemplos de Canales Sin Rostro Exitosos",
+      "examplesContent": "Los canales sin rostro de mejor rendimiento a menudo se centran en formatos claros: explicaciones animadas, noticias curadas o narración de historias. Combinan visuales consistentes, escritura sólida y publicación disciplinada. Su éxito proviene de la calidad de ejecución en lugar de la ausencia de un creador visible.",
+      "metricsTitle": "Indicadores Clave de Rendimiento a Monitorear",
+      "metricsContent": "Enfócate en métricas como la tasa de compromiso, retención, producción de contenido y eficiencia de producción. Monitorea cómo los cambios en el formato o la frecuencia afectan el rendimiento y rastrea cuánto esfuerzo manual se requiere por video publicado para evaluar la efectividad del pipeline.",
+      "scalingTitle": "Estrategias Avanzadas de Escalado",
+      "scalingContent": "Una vez que tu pipeline esté estable, expande estratégicamente. Aumenta la inversión en temas de alto rendimiento, experimenta con nuevos formatos y considera contenido en múltiples idiomas. Usa datos para guiar decisiones en lugar de depender únicamente de la automatización, y mantén supervisión a medida que aumenta la complejidad.",
+      "ctaText": "¿Listo para Construir Tu Sistema de Canal Sin Rostro?",
+      "ctaLink": "/nano-banana",
+      "conclusionTitle": "El Futuro de la Creación de Contenido Es Impulsado por Sistemas",
+      "conclusionContent": "Los canales sin rostro impulsados por IA destacan un cambio hacia la producción de contenido impulsada por sistemas. Al combinar flujos de trabajo estructurados con las herramientas adecuadas, los creadores pueden aumentar la producción manteniendo la calidad. La ventaja proviene de la consistencia, la iteración y el uso inteligente de la automatización, no de una operación completamente desatendida."
     }
   },
   "aeVsComfyUi": {

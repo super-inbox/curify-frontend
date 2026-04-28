@@ -2394,5 +2394,115 @@
         ]
       }
     }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Eylem Fiili Ogrenim Kartlari",
+    "description": "Herhangi bir kelime temasi icin dostane illustrasyonlar ve kalin tipografi ile karikatur eylem fiili ogrenim kartlarinin 3x3 izgarasini olusturun.",
+    "title": "Nano Banana Prompt: Eylem Fiili Ogrenim Karti Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon beyaz arka plan uzerinde 9 ayri ogrenim kartindan olusan temiz bir 3x3 izgara olusturur.",
+        "who": "ESL ogretmenleri, dil ogrenim uygulamasi tasarimcilari, erken cocukluk egitimcileri ve egitim icerik ureticileri icin uygundur.",
+        "how": [
+          "Bir ogrenim temasi secin (orn. Temel Fiiller, Gunluk Aktiviteler, Duygular).",
+          "9 kart 3x3 izgara duzeninde otomatik olarak yerlestirilir.",
+          "Her hucre karikatur illustrasyon ve kalin yazitipi ile fiili eslestirir.",
+          "Dikey 4K cocuk kitabi tarzi flashcard posteri olusturun."
+        ],
+        "prompts": [
+          "Temel fiil kartlari: kosmak, ziplamak, yemek, uyumak, okumak, yazmak.",
+          "Duygu kartlari: mutlu, uzgun, kizgin, sasirmis, yorgun.",
+          "Hareket kartlari: tekme atmak, atmak, yakalamak, tirmanmak."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Evcil Hayvan Bakim Infografigi",
+    "description": "Her evcil hayvan turu ve yasi icin karikatur illustrasyonlu tam 5 bolumlu evcil hayvan bakim rehberi infografigi olusturun.",
+    "title": "Nano Banana Prompt: Evcil Hayvan Bakim Infografigi Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon Beslenme, Egzersiz, Saglik, Bakim ve Egitim olmak uzere 5 bolumlu dikey pastel arka planli bir infografik posteri uretir.",
+        "who": "Evcil hayvan sahiplendirme kuruluslari, breederlar, veteriner klinikleri, evcil hayvan markalari ve yeni sahipler icin uygundur.",
+        "how": [
+          "Evcil hayvan turunu secin (orn. Britanya Kisa Tuylu Kedi, Corgi Yavrusu, Labrador).",
+          "Yas belirtin (orn. 5 Aylik, 1 Yasinda, Yasli).",
+          "5 renk kodlu bolum tur ve yasa gore otomatik doldurulur.",
+          "Dikey 4K pastel infografik olusturun."
+        ],
+        "prompts": [
+          "5 aylik Britanya Kisa Tuylu Kedi bakim rehberi.",
+          "Yasli Labrador tam bakim rehberi posteri.",
+          "2 aylik Corgi yavrusu bakim rehberi."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "9 Ozellik Infografigi",
+    "description": "Herhangi bir konuda 3x3 ozellik izgarasi infografigi olusturun, her hucre karikatur illustrasyon, kalin baslik ve kisa altbaslik icerir.",
+    "title": "Nano Banana Prompt: 9 Ozellik Bilgi Izgarasi Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon '[Konu]nun 9 Ozelligi' baslikli kare infografik posteri uretir, 3x3 izgarada 9 minimal karikatur ozellik illustrasyonu ile.",
+        "who": "Kisisel gelisim icerik ureticileri, yasam koclari, liderlik egitmenleri, kisisel gelisim yazarlari ve icerik pazarlamacilari icin uygundur.",
+        "how": [
+          "Infografik konusunu girin (orn. Kaliteli Partner, Liderlik, Kisisel Gelisim).",
+          "9 ozellik hucresi otomatik olusturulur.",
+          "Beyaz arka plan uzerinde minimalist cizgi sanati.",
+          "Sosyal medya icin kare 4K infografik olusturun."
+        ],
+        "prompts": [
+          "'Kaliteli Bir Partnerin 9 Ozelligi' infografigi.",
+          "'Liderligin 9 Ozelligi' izgara posteri.",
+          "'Kisisel Gelisimin 9 Ozelligi' infografigi."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Ingilizce Phrasal Verb Posteri",
+    "description": "Bir cekirdek fiil etrafinda 8 phrasal verb ogrenim posteri olusturun, ornek cumleler ve dikey liste duzeniyle.",
+    "title": "Nano Banana Prompt: Ingilizce Phrasal Verb Ogrenim Posteri Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon acik krem arka planli '[Fiil] ile 8 Ifade' baslikli dikey egitim posteri olusturur.",
+        "who": "ESL ogretmenleri, dil tutorlari ve Ingilizce ogrenenler icin uygundur.",
+        "how": [
+          "Bir cekirdek fiil secin (orn. BREAK, TAKE, GO, PUT).",
+          "8 phrasal verb dikey liste olarak otomatik olusturulur.",
+          "Her oge ikon, kalin phrasal verb ve ornek cumle gosterir.",
+          "Dikey 4K yazdirilabilir poster olusturun."
+        ],
+        "prompts": [
+          "'BREAK ile 8 Ifade' posteri.",
+          "'TAKE ile 8 Ifade' ogrenim posteri.",
+          "'PUT ile 8 Ifade' posteri."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Sac Modeli ve Renk Onerisi Infografigi",
+    "description": "Referans portre kullanarak dairesel onizleme karelerinde 6 kisisellestirilmis sac modeli ve renk onerisi gosteren bir guzellik rehberi posteri olusturun.",
+    "title": "Nano Banana Prompt: Sac Modeli ve Renk Onerisi Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon referans portre kullanarak guzellik danismanligi posteri olusturur. Orijinal fotograf solda tam boy, sagda 2x3 izgarada 6 dairesel onizleme.",
+        "who": "Sac stilistleri, salon sahipleri, guzellik icerik ureticileri, kisisel stilistler ve guzellik danismanlari icin uygundur.",
+        "how": [
+          "Kendinizin veya musterinin referans portresini yukleyin.",
+          "Sablon 6 kisisellestirilmis sac modeli ve renk kombinasyonu uretir.",
+          "Her onizleme sac modeli adi ve uygun renkle etiketlenir.",
+          "Yuksek cozunurluklu guzellik danismanligi posteri olusturun."
+        ],
+        "prompts": [
+          "Oval yuz icin 6 stilli sac modeli onerisi posteri.",
+          "Yuvarlak yuz icin sicak tonlu sac modeli ve renk rehberi.",
+          "6 trend sac modeli secenekli guzellik makyaji posteri."
+        ]
+      }
+    }
   }
 }

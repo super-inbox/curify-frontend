@@ -2394,5 +2394,115 @@
         ]
       }
     }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Cartes d'Apprentissage de Verbes d'Action",
+    "description": "Creez une grille 3x3 de cartes d'apprentissage de verbes d'action avec illustrations amicales et typographie en gras.",
+    "title": "Nano Banana Prompt: Generateur de Cartes de Verbes d'Action | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une grille 3x3 de 9 cartes d'apprentissage individuelles sur fond blanc. Chaque carte montre un personnage cartoon executant une action avec le verbe en gras.",
+        "who": "Convient aux enseignants ESL, concepteurs d'applications linguistiques, educateurs prescolaires et createurs de contenu educatif.",
+        "how": [
+          "Choisissez un theme (p. ex. Verbes de base, Activites quotidiennes, Emotions).",
+          "9 cartes s'organisent automatiquement en grille 3x3.",
+          "Chaque cellule associe illustration et verbe en gras.",
+          "Generez une affiche verticale 4K style livre pour enfants."
+        ],
+        "prompts": [
+          "Cartes de verbes de base: courir, sauter, manger, dormir, lire.",
+          "Cartes d'emotions: heureux, triste, en colere, surpris, fatigue.",
+          "Cartes de mouvements: lancer, attraper, grimper, monter, etirer."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Infographie de Soins pour Animaux",
+    "description": "Generez une infographie complete de soins en 5 sections pour tout type et age d'animal de compagnie.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie de Soins pour Animaux | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele produit une affiche verticale en pastel avec 5 sections: Alimentation, Exercice, Sante, Toilettage et Education.",
+        "who": "Convient aux agences d'adoption, eleveurs, cliniques veterinaires, marques d'animalerie et nouveaux proprietaires.",
+        "how": [
+          "Choisissez le type d'animal (p. ex. British Shorthair, Corgi, Labrador).",
+          "Specifiez l'age (p. ex. 5 mois, 1 an, senior).",
+          "5 sections se remplissent automatiquement.",
+          "Generez une infographie verticale 4K pastel."
+        ],
+        "prompts": [
+          "Guide pour British Shorthair de 5 mois.",
+          "Guide pour Labrador senior.",
+          "Guide pour Corgi de 2 mois."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "Infographie 9 Traits",
+    "description": "Creez une infographie 3x3 de traits sur n'importe quel theme avec illustrations, titres et sous-titres.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie 9 Traits | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche carree '9 Traits de [Theme]' avec 9 illustrations minimalistes en grille 3x3.",
+        "who": "Convient aux createurs de developpement personnel, coachs de vie, auteurs et marketeurs.",
+        "how": [
+          "Entrez le theme (p. ex. Partenaire Ideal, Leadership).",
+          "9 cellules sont generees automatiquement.",
+          "Art au trait minimaliste sur fond blanc.",
+          "Generez une infographie carree 4K."
+        ],
+        "prompts": [
+          "Infographie '9 Traits du Partenaire Ideal'.",
+          "Affiche '9 Traits du Leadership'.",
+          "Infographie '9 Traits de l'Amelioration Personnelle'."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Affiche de Verbes a Particule Anglais",
+    "description": "Generez une affiche d'apprentissage de 8 expressions de verbes a particule autour d'un verbe principal.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche de Verbes a Particule Anglais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele cree une affiche verticale '8 Phrases avec [Verbe]' sur fond creme avec icones plats et phrases d'exemple.",
+        "who": "Convient aux professeurs ESL, tuteurs et apprenants d'anglais.",
+        "how": [
+          "Choisissez un verbe (p. ex. BREAK, TAKE, GO, PUT).",
+          "8 verbes a particule sont generes en liste verticale.",
+          "Chaque element affiche icone, verbe et phrase.",
+          "Generez une affiche verticale 4K imprimable."
+        ],
+        "prompts": [
+          "Affiche '8 Phrases avec BREAK'.",
+          "Affiche '8 Phrases avec TAKE'.",
+          "Affiche '8 Phrases avec PUT'."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Infographie de Recommandation Coiffure et Couleur",
+    "description": "Utilisez un portrait de reference pour generer une affiche beaute avec 6 recommandations personnalisees de coiffure et couleur.",
+    "title": "Nano Banana Prompt: Generateur de Recommandation Coiffure et Couleur | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele utilise un portrait pour generer une affiche de consultation beaute avec photo originale a gauche et 6 apercus circulaires a droite.",
+        "who": "Convient aux coiffeurs, proprietaires de salons, createurs de contenu beaute et stylistes.",
+        "how": [
+          "Telechargez un portrait de reference.",
+          "Le modele genere 6 combinaisons de coiffure et couleur.",
+          "Chaque apercu est etiquete avec le nom et la couleur.",
+          "Generez une affiche de consultation beaute haute resolution."
+        ],
+        "prompts": [
+          "Affiche pour visage ovale avec 6 styles.",
+          "Guide pour visage rond en tons chauds.",
+          "Affiche relooking avec 6 coiffures tendances."
+        ]
+      }
+    }
   }
 }

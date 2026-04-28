@@ -92,11 +92,9 @@ export default function SceneDetectionPage() {
         {/* Introduction */}
         <div className="prose prose-lg max-w-none mb-12">
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100 mb-8">
-            <p className="text-lg text-gray-600 mb-4">
-              {t.rich('introduction.paragraph1', {
-                strong: (chunks) => <strong>{chunks}</strong>
-              })}
-            </p>
+            <p className="text-lg text-gray-600 mb-4"
+              dangerouslySetInnerHTML={{ __html: t('introduction.paragraph1') }}
+            />
             <p className="text-lg text-gray-700 mb-4">
               {t('introduction.paragraph2')}
             </p>

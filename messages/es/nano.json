@@ -2394,5 +2394,115 @@
         ]
       }
     }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Tarjetas de Aprendizaje de Verbos de Accion",
+    "description": "Crea una cuadricula 3x3 de tarjetas de aprendizaje de verbos de accion con ilustraciones amigables y tipografia en negrita para cualquier tema de vocabulario.",
+    "title": "Nano Banana Prompt: Generador de Tarjetas de Verbos de Accion | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una cuadricula limpia 3x3 de 9 tarjetas individuales sobre fondo blanco. Cada tarjeta muestra un personaje de dibujos animados realizando una accion con el verbo en negrita.",
+        "who": "Adecuado para profesores de ESL, disenadores de apps de idiomas, educadores infantiles, padres y creadores de contenido educativo.",
+        "how": [
+          "Elige un tema de aprendizaje (p. ej., Verbos Basicos, Actividades Diarias, Emociones).",
+          "9 tarjetas se disponen automaticamente en cuadricula 3x3.",
+          "Cada celda combina ilustracion y verbo en tipografia destacada.",
+          "Genera un poster vertical 4K estilo libro infantil."
+        ],
+        "prompts": [
+          "Tarjetas de verbos basicos: correr, saltar, comer, dormir, leer, escribir.",
+          "Tarjetas de emociones: feliz, triste, enojado, sorprendido, cansado.",
+          "Tarjetas de movimiento: patear, lanzar, trepar, montar, estirar."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Infografia de Cuidado de Mascotas",
+    "description": "Genera una infografia completa de cuidado de mascotas en 5 secciones para cualquier tipo y edad de mascota.",
+    "title": "Nano Banana Prompt: Generador de Infografia de Cuidado de Mascotas | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla produce un poster vertical de fondo pastel con 5 secciones: Dieta, Ejercicio, Salud, Aseo y Entrenamiento.",
+        "who": "Adecuado para agencias de adopcion, criadores, clinicas veterinarias, marcas de mascotas y nuevos duenos.",
+        "how": [
+          "Elige el tipo de mascota (p. ej., Gato Britanico, Cachorro Corgi, Labrador).",
+          "Especifica la edad (p. ej., 5 meses, 1 ano, adulto mayor).",
+          "5 secciones se rellenan automaticamente con consejos.",
+          "Genera una infografia vertical 4K en pastel."
+        ],
+        "prompts": [
+          "Guia de cuidado para Gato Britanico de 5 meses.",
+          "Guia para Labrador adulto mayor.",
+          "Guia para Cachorro Corgi de 2 meses."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "Infografia de 9 Rasgos",
+    "description": "Crea una infografia de cuadricula 3x3 sobre cualquier tema, cada celda con ilustracion, titulo y subtitulo.",
+    "title": "Nano Banana Prompt: Generador de Infografia de 9 Rasgos | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster cuadrado '9 Rasgos de [Tema]' con 9 ilustraciones minimalistas en cuadricula 3x3.",
+        "who": "Adecuado para creadores de desarrollo personal, life coaches, autores de autoayuda y marketers.",
+        "how": [
+          "Ingresa el tema (p. ej., Pareja Ideal, Liderazgo, Mejora Personal).",
+          "9 celdas se generan automaticamente.",
+          "Arte de linea minimalista sobre fondo blanco.",
+          "Genera una infografia cuadrada 4K para redes sociales."
+        ],
+        "prompts": [
+          "Infografia '9 Rasgos de una Pareja Ideal'.",
+          "Poster '9 Rasgos del Liderazgo'.",
+          "Infografia '9 Rasgos de la Mejora Personal'."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Poster de Verbos Compuestos en Ingles",
+    "description": "Genera un poster de aprendizaje de 8 frases de verbos compuestos en torno a cualquier verbo principal con frases de ejemplo.",
+    "title": "Nano Banana Prompt: Generador de Poster de Verbos Compuestos en Ingles | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un poster vertical '8 Frases con [Verbo]' sobre fondo crema con iconos planos y frases de ejemplo.",
+        "who": "Adecuado para profesores de ESL, tutores de idiomas y estudiantes de ingles.",
+        "how": [
+          "Elige un verbo principal (p. ej., BREAK, TAKE, GO, PUT).",
+          "Se generan 8 verbos compuestos en lista vertical.",
+          "Cada item muestra icono, verbo y frase de ejemplo.",
+          "Genera un poster vertical 4K imprimible."
+        ],
+        "prompts": [
+          "Poster '8 Frases con BREAK'.",
+          "Poster '8 Frases con TAKE'.",
+          "Poster '8 Frases con PUT' para aulas de ESL."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Infografia de Recomendacion de Peinado y Color",
+    "description": "Usa un retrato de referencia para generar un poster con 6 recomendaciones de peinado y color personalizadas en vistas circulares.",
+    "title": "Nano Banana Prompt: Generador de Recomendacion de Peinado y Color | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla usa un retrato para generar un poster de consulta de belleza con la foto original a la izquierda y 6 vistas circulares con peinados y colores diferentes a la derecha.",
+        "who": "Adecuado para estilistas, propietarios de salones, creadores de contenido de belleza y consultores de imagen.",
+        "how": [
+          "Sube un retrato de referencia.",
+          "La plantilla genera 6 combinaciones de peinado y color.",
+          "Cada vista muestra el nombre del peinado y color.",
+          "Genera un poster de consulta de belleza en alta resolucion."
+        ],
+        "prompts": [
+          "Poster para rostro ovalado con 6 estilos.",
+          "Guia de peinado y color para rostro redondo en tonos calidos.",
+          "Poster de cambio de imagen con 6 peinados de moda."
+        ]
+      }
+    }
   }
 }
