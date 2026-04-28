@@ -20,6 +20,7 @@ import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import EntryBar from "@/app/[locale]/_components/EntryBar";
+import MBTIQuizWidget from "@/app/[locale]/_components/MBTIQuizWidget";
 
 export async function generateMetadata({
   params,
@@ -100,6 +101,7 @@ export default async function PublicLocaleLayout({
 
               {children}
 
+              <MBTIQuizWidget locale={locale} />
               <Toaster />
               </main>
               <Footer />
