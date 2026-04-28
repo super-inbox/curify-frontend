@@ -30,7 +30,7 @@ export default function PersonalityResultClient({
   const ips = [...new Set(chars.map((c) => c.ip))].slice(0, 4);
 
   return (
-    <div className="mx-auto max-w-2xl px-6 pb-16 space-y-4">
+    <div className="space-y-4">
       {/* Generate CTA */}
       <div className="rounded-2xl border border-dashed border-purple-200 bg-purple-50 p-4">
         <p className="mb-3 text-sm font-semibold text-purple-700">
