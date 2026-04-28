@@ -5,6 +5,7 @@ import { X, Sparkles, RotateCcw, Lock } from "lucide-react";
 import { useAtom } from "jotai";
 import CdnImage from "./CdnImage";
 import ShareButton from "./ShareButton";
+import MBTIPosterShare from "./MBTIPosterShare";
 import { userAtom, drawerAtom, mbtiQuizOpenAtom } from "@/app/atoms/atoms";
 import { MBTI_META, IP_COLORS, MBTI_TYPES } from "@/lib/mbti-meta";
 import type { MBTIType } from "@/lib/mbti-meta";
@@ -179,6 +180,11 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
             );
           })}
         </div>
+      </div>
+
+      {/* Viral poster */}
+      <div className="mb-3">
+        <MBTIPosterShare mbti={mbti} locale={locale} />
       </div>
 
       {/* Share + retake */}

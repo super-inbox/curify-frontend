@@ -5,6 +5,8 @@ import { Lock, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
+import MBTIPosterShare from "@/app/[locale]/_components/MBTIPosterShare";
+import type { MBTIType } from "@/lib/mbti-meta";
 
 type CharCard = { name: string; img: string; ip: string; templateSlug: string };
 
@@ -63,6 +65,9 @@ export default function PersonalityResultClient({
           </p>
         )}
       </div>
+
+      {/* Viral poster */}
+      <MBTIPosterShare mbti={mbti as MBTIType} locale={locale} />
 
       {/* Share + retake */}
       <div className="flex gap-3">
