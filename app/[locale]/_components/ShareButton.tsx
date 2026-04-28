@@ -172,7 +172,7 @@ export default function ShareButton({
         setIsOpen(true);
       }}
       onMouseLeave={() => {
-        closeTimer.current = setTimeout(() => setIsOpen(false), 120);
+        closeTimer.current = setTimeout(() => setIsOpen(false), 1500);
       }}
     >
       {}
