@@ -19,7 +19,7 @@ import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
 
 import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
-import EntryBar from "@/app/[locale]/_components/EntryBar";
+import SiteTopBar from "../_layout_components/SiteTopBar";
 import MBTIQuizWidget from "@/app/[locale]/_components/MBTIQuizWidget";
 
 export async function generateMetadata({
@@ -96,8 +96,8 @@ export default async function PublicLocaleLayout({
             <main className="min-h-screen lg:ml-[225px]">
               <TopUpModal />
               <SignDrawer />
-            
-              <EntryBar locale={locale} />
+
+              <SiteTopBar locale={locale} />
 
               {children}
 

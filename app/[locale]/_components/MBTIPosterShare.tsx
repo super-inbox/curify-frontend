@@ -39,8 +39,6 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
     : `/api/personality-poster?type=${mbti}`;
 
   const handleShare = async () => {
-    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
-
     // Mobile: use native share sheet with blob
     if (typeof navigator !== "undefined" && navigator.canShare) {
       setStatus("loading");
@@ -51,6 +49,7 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
         const file = new File([blob], `${mbti}-personality.png`, { type: "image/png" });
         if (navigator.canShare({ files: [file] })) {
           await navigator.share({ files: [file], title: `I'm ${mbti} — ${meta.tagline}`, text: caption });
+          track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
           setStatus("done");
           setTimeout(() => setStatus("idle"), 3000);
           return;
@@ -60,7 +59,8 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
       }
     }
 
-    // Desktop: direct anchor download — no fetch needed
+    // Desktop: direct anchor download
+    track({ contentId: mbti, contentType: "mbti_quiz", actionType: "download" });
     const a = document.createElement("a");
     a.href = posterUrl;
     a.download = `${mbti}-personality-card.png`;

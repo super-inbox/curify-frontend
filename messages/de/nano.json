@@ -2394,5 +2394,115 @@
         ]
       }
     }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Aktionsverb-Lernkarten",
+    "description": "Erstelle ein 3x3-Raster mit Cartoon-Aktionsverb-Lernkarten mit freundlichen Illustrationen und fetter Typografie fuer jedes Vokabelthema.",
+    "title": "Nano Banana Prompt: Aktionsverb-Lernkarten-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erzeugt ein 3x3-Raster mit 9 Lernkarten auf weissem Hintergrund. Jede Karte zeigt eine Cartoon-Person, die eine Aktion ausfuehrt, mit dem Verb in fetter Sans-Serif-Schrift.",
+        "who": "Geeignet fuer ESL-Lehrer, Sprachlern-App-Designer, Paedagogen im Vorschulbereich, Eltern und Tutoren.",
+        "how": [
+          "Waehle ein Lernthema (z. B. Grundverben, Alltagsaktivitaeten, Emotionen).",
+          "9 Karten werden automatisch im 3x3-Raster angeordnet.",
+          "Jede Zelle kombiniert Cartoon-Illustration und fettgedrucktes Verb.",
+          "Generiere ein vertikales 4K-Lernkartenposter im Kinderbuchstil."
+        ],
+        "prompts": [
+          "Grundverben-Karten: laufen, springen, essen, schlafen, lesen, schreiben, gehen, schwimmen, tanzen.",
+          "Emotionen-Karten: gluecklich, traurig, wuetend, ueberrascht, muede, aufgeregt, ruhig, verwirrt, stolz.",
+          "Bewegungs-Karten: treten, werfen, fangen, klettern, reiten, laufen, dehnen, schwimmen, springen."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Haustier-Pflegeinfografik",
+    "description": "Erstelle eine vollstaendige 5-Abschnitt-Haustier-Pflegeinfografik fuer jeden Tiertyp und jedes Alter mit Cartoon-Illustrationen.",
+    "title": "Nano Banana Prompt: Haustier-Pflege-Infografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Pastell-Infografik-Poster mit 5 Abschnitten: Ernaehrung, Bewegung, Gesundheit, Pflege und Training & Sozialisation.",
+        "who": "Geeignet fuer Tieradoptionsstellen, Zuechter, Tierkliniken, Heimtierbedarf-Marken, Tier-Blogger und neue Tierhalter.",
+        "how": [
+          "Waehle den Tiertyp (z. B. Britisch Kurzhaar, Corgi-Welpe, Labrador).",
+          "Gib das Alter an (z. B. 5 Monate, 1 Jahr, Senior).",
+          "5 farbcodierte Abschnitte fuellen sich automatisch mit Pflegehinweisen.",
+          "Generiere eine vertikale 4K-Pastell-Infografik mit Cartoon-Illustrationen."
+        ],
+        "prompts": [
+          "Pflegeinfografik fuer eine 5 Monate alte Britisch Kurzhaar.",
+          "Pflegeinfografik fuer einen Senior Labrador.",
+          "Pflegeinfografik fuer einen 2 Monate alten Corgi-Welpen."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "9-Eigenschaften Infografik",
+    "description": "Erstelle eine 3x3-Eigenschaften-Rasterinfografik zu jedem Thema mit Cartoon-Illustrationen und fetten Titeln pro Zelle.",
+    "title": "Nano Banana Prompt: 9-Eigenschaften-Infografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erzeugt ein quadratisches Infografik-Poster '9 Eigenschaften von [Thema]' mit 9 minimalistischen Cartoon-Illustrationen in einem 3x3-Raster.",
+        "who": "Geeignet fuer Personal-Development-Creator, Life-Coaches, Fuehrungstrainer, Selbsthilfeautoren und Content-Marketer.",
+        "how": [
+          "Gib das Thema ein (z. B. Qualitaetspartner, Fuehrung, Selbstverbesserung).",
+          "9 Eigenschaftszellen werden automatisch generiert.",
+          "Minimalistische Linienkunst auf weissem Hintergrund.",
+          "Generiere eine quadratische 4K-Infografik fuer Social Media."
+        ],
+        "prompts": [
+          "9 Eigenschaften eines Qualitaetspartners-Infografik.",
+          "9 Eigenschaften der Fuehrung-Rasterposter.",
+          "9 Eigenschaften der Selbstverbesserung-Infografik."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Englisches Phrasal-Verb-Poster",
+    "description": "Generiere ein 8-Phrasen-Phrasal-Verb-Lernposter um jedes Kernverb mit Beispielsaetzen und flachen Icons in vertikaler Liste.",
+    "title": "Nano Banana Prompt: Englisches Phrasal-Verb-Lernposter-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Lernposter '8 Phrasen mit [Verb]' auf hellem Cremehintergrund mit flachen Icons und Beispielsaetzen.",
+        "who": "Geeignet fuer ESL-Lehrer, Sprachtutoren, Sprachlern-App-Designer und Englisch-Lernende.",
+        "how": [
+          "Waehle ein Kernverb (z. B. BREAK, TAKE, GO, PUT).",
+          "8 Phrasal Verbs werden als vertikale Liste generiert.",
+          "Jeder Eintrag zeigt Icon, Phrasal Verb und Beispielsatz.",
+          "Generiere ein vertikales 4K-Druckposter."
+        ],
+        "prompts": [
+          "8 Phrasen mit BREAK Poster.",
+          "8 Phrasen mit TAKE Lernposter.",
+          "8 Phrasen mit PUT Klassenzimmerposter."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Frisuren- und Farbempfehlungs-Infografik",
+    "description": "Verwende ein Referenzportraet, um ein Beauty-Guide-Poster mit 6 personalisierten Frisur- und Farbempfehlungen in runden Vorschau-Kacheln zu erzeugen.",
+    "title": "Nano Banana Prompt: Frisuren- und Farbempfehlungs-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt ein Referenzportraet, um ein Beauty-Beratungsposter zu generieren. Links Originalfoto, rechts 6 runde Vorschauen in einem 2x3-Raster mit unterschiedlichen Frisuren und Farben.",
+        "who": "Geeignet fuer Friseure, Salonbesitzer, Beauty-Content-Creator, Personal Stylists und Beauty-Berater.",
+        "how": [
+          "Lade ein Referenzportraet hoch.",
+          "Die Vorlage generiert 6 personalisierte Frisur- und Farbkombinationen.",
+          "Jede Vorschau wird mit Frisurname und Haarfarbe beschriftet.",
+          "Generiere ein hochaufloesendes Beauty-Beratungsposter."
+        ],
+        "prompts": [
+          "Frisurempfehlungsposter fuer ovales Gesicht mit 6 Stilen.",
+          "Frisur- und Farbguide fuer rundes Gesicht mit Warmton-Empfehlungen.",
+          "Beauty-Makeover-Poster mit 6 angesagten Frisuren."
+        ]
+      }
+    }
   }
 }

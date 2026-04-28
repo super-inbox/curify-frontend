@@ -2394,5 +2394,115 @@
         ]
       }
     }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Uchebnye Kartochki Glagolov Dejstviya",
+    "description": "Sozdajte setku 3x3 multiplikatsionnykh uchebnykh kartochek glagolov dejstviya s druzhelyubnymi illyustratsiyami i zhirnoj tipografiej.",
+    "title": "Nano Banana Prompt: Generator Kartochek Glagolov Dejstviya | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet chistuyu setku 3x3 iz 9 otdel'nykh uchebnykh kartochek na belom fone.",
+        "who": "Podkhodit dlya prepodavatelej ESL, dizajnerov yazykovyh prilozhenij, pedagogov rannego detstva i sozdatelej obrazovatel'nogo kontenta.",
+        "how": [
+          "Vyberite temu obucheniya (naprimer: bazovye glagoly, povsednevnye dejstviya, emocii).",
+          "9 kartochek avtomaticheski raspolagayutsya v setke 3x3.",
+          "Kazhdaya yachejka sochetaet illyustratsiyu i glagol zhirnym shriftom.",
+          "Generiruetsya vertikal'nyj 4K poster v stile detskoj knigi."
+        ],
+        "prompts": [
+          "Bazovye glagoly: bezhat', prygat', est', spat', chitat', pisat'.",
+          "Emotsii: schastlivyj, grustnyj, serdityj, udivlennyj, ustalyj.",
+          "Dvizheniya: brosat', lovit', lazat', katat'sya, tyanut'sya."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Infografika po Ukhodu za Pitomtsem",
+    "description": "Generiruet polnuyu infografiku po ukhodu za pitomtsem v 5 sekciyah dlya lyubogo tipa i vozrasta.",
+    "title": "Nano Banana Prompt: Generator Infografiki Ukhoda za Pitomtsami | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon proizvodit vertikal'nyj postel'nyj poster s 5 sekciyami: pitanie, fizicheskaya aktivnost', zdorov'e, ukhod, vospitanie.",
+        "who": "Podkhodit dlya organizacij po peredache zhivotnykh, zavodchikov, veterinarnyh klinik, brendov tovarov dlya pitomtsev i novykh vladel'tsev.",
+        "how": [
+          "Vyberite tip pitomtsa (naprimer: britanskaya korotkosherstnaya, korgi, labrador).",
+          "Ukazhite vozrast (naprimer: 5 mesyacev, 1 god, senior).",
+          "5 cvetnyh sekcij avtomaticheski zapolnyayutsya.",
+          "Generiruetsya vertikal'naya 4K postel'naya infografika."
+        ],
+        "prompts": [
+          "Rukovodstvo po ukhodu za 5-mesyachnoj britanskoj koshkoj.",
+          "Polnoe rukovodstvo po ukhodu za pozhilym labradorom.",
+          "Rukovodstvo po ukhodu za 2-mesyachnym shenkom korgi."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "Infografika 9 Kachestv",
+    "description": "Sozdajte chistuyu infografiku 3x3 kachestv po lyuboj teme s illyustratsiyami i zhirnymi zagolovkami.",
+    "title": "Nano Banana Prompt: Generator Infografiki 9 Kachestv | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet kvadratnyj poster '9 Kachestv [Temy]' s 9 minimalisticheskimi illyustratsiyami v setke 3x3.",
+        "who": "Podkhodit dlya sozdatelej kontenta lichnostnogo rosta, lajf-kouchej, avtorov literatury samopomoshchi i marketologov.",
+        "how": [
+          "Vvedite temu (naprimer: idealnyj partner, liderstvo, samosovershenstvovanie).",
+          "9 yacheyek kachestv generiruyutsya avtomaticheski.",
+          "Minimalisticheskoe linejnoe iskusstvo na belom fone.",
+          "Generiruetsya kvadratnaya 4K infografika dlya socsetej."
+        ],
+        "prompts": [
+          "Infografika '9 Kachestv Idealnogo Partnera'.",
+          "Poster '9 Kachestv Liderstva'.",
+          "Infografika '9 Kachestv Samosovershenstvovaniya'."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Poster Anglijskih Frazovykh Glagolov",
+    "description": "Generiruet poster s 8 frazami frazovykh glagolov vokrug osnovnogo glagola s primerami predlozhenij.",
+    "title": "Nano Banana Prompt: Generator Postera Anglijskih Frazovykh Glagolov | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon sozdaet vertikal'nyj poster '8 Fraz s [Glagolom]' na svetlom kremovom fone s ploskimi ikonkami.",
+        "who": "Podkhodit dlya prepodavatelej ESL, yazykovyh tutorov i izuchayushchih anglijskij yazyk.",
+        "how": [
+          "Vyberite glagol (naprimer: BREAK, TAKE, GO, PUT).",
+          "8 frazovykh glagolov generiruyutsya v vertikal'nom spiske.",
+          "Kazhdyj punkt soderjit ikonku, glagol i primer.",
+          "Generiruetsya vertikal'nyj 4K poster dlya pechati."
+        ],
+        "prompts": [
+          "Poster '8 Fraz s BREAK'.",
+          "Poster '8 Fraz s TAKE'.",
+          "Poster '8 Fraz s PUT'."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Infografika Rekomendacij Pricheski i Tsveta",
+    "description": "Ispol'zuet referensnyj portret dlya generacii beauty-postera s 6 personalizovannymi rekomendaciyami pricheski i tsveta.",
+    "title": "Nano Banana Prompt: Generator Rekomendacij Pricheski i Tsveta | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon ispol'zuet referensnyj portret dlya sozdaniya beauty-konsul'tacionnogo postera. Originalnoe foto sleva, sprava 6 kruglykh prosmotrov v setke 2x3.",
+        "who": "Podkhodit dlya parikmaherov, vladel'tsev salonov, sozdatelej beauty-kontenta i stilistov.",
+        "how": [
+          "Zagruzite referensnyj portret.",
+          "Shableon generiruet 6 kombinacij pricheski i tsveta.",
+          "Kazhdyj prosmotr podpisyvaetsya nazvaniem pricheski i tsvetom.",
+          "Generiruetsya beauty-konsul'tacionnyj poster vysokogo razresheniya."
+        ],
+        "prompts": [
+          "Poster dlya ovalnogo lica s 6 stilyami.",
+          "Rukovodstvo po pricheskam dlya kruglogo lica v teplyh tonah.",
+          "Beauty-poster s 6 trendovymi pricheskami."
+        ]
+      }
+    }
   }
 }

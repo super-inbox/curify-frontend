@@ -26,7 +26,8 @@ export type ActionType =
   | "share"
   | "generate"
   | "remix"
-  | "download";
+  | "download"
+  | "search";
 
 export type ViewMode = "list" | "cards";
 
