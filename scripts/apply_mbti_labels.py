@@ -26,7 +26,41 @@ UNIVERSE_TEMPLATES = {
     "template-mbti-nba":               "NBA",
 }
 
-def get_ip(template_id: str) -> str | None:
+# Proper display names for entries that lack params.character_name
+KNOWN_NAMES: dict = {
+    "template-mbti-nba-lebronjames":       "LeBron James",
+    "template-mbti-nba-kobebryant":        "Kobe Bryant",
+    "template-mbti-nba-michaeljordan":     "Michael Jordan",
+    "template-mbti-nba-magicjohnson":      "Magic Johnson",
+    "template-mbti-nba-timduncan":         "Tim Duncan",
+    "template-mbti-nba-alleniverson":      "Allen Iverson",
+    "template-mbti-nba-shaquilleoneal":    "Shaquille O'Neal",
+    "template-mbti-nba-stephencurry":      "Stephen Curry",
+    "template-mbti-nba-kevendurant":       "Kevin Durant",
+    "template-mbti-nba-derrickrose":       "Derrick Rose",
+    "template-mbti-nba-manuginobili":      "Manu Ginobili",
+    "template-mbti-nba-stevenash":         "Steve Nash",
+    "template-mbti-nba-nikola-jokic":      "Nikola Jokic",
+    "template-mbti-nba-luka-doncic":       "Luka Doncic",
+    "template-mbti-nba-kareem-abdul-jabbar": "Kareem Abdul-Jabbar",
+    "template-mbti-nba-larry-bird":        "Larry Bird",
+    "template-mbti-nba-tonyparker":        "Tony Parker",
+    "template-mbti-nba-yaoming":           "Yao Ming",
+    "template-mbti-nba-erling-haaland":    "Erling Haaland",
+    "template-mbti-nba-kylianmbappe":      "Kylian Mbappé",
+    "template-mbti-nba-lionelmessi":       "Lionel Messi",
+    "template-mbti-nba-cristianoronaldo":  "Cristiano Ronaldo",
+    "template-mbti-nba-neymarjr":          "Neymar Jr",
+    "template-mbti-nba-vinicius-jr":       "Vinícius Jr",
+    "template-mbti-nba-lamine-yamal":      "Lamine Yamal",
+    "template-mbti-nba-jude":              "Jude Bellingham",
+    "template-mbti-nba-alexia-putellas":   "Alexia Putellas",
+    "template-mbti-nba-marta":             "Marta",
+    "template-mbti-nba-megan-rapinoe":     "Megan Rapinoe",
+    "template-mbti-nba-sun-wen":           "Sun Wen",
+}
+
+def get_ip(template_id: str):
     for prefix, ip in UNIVERSE_TEMPLATES.items():
         if template_id == prefix or template_id.startswith(prefix + "-"):
             return ip
@@ -72,7 +106,11 @@ def main():
         if not ip:
             continue
         preview = entry.get("asset", {}).get("preview_image_url")
-        name    = entry.get("params", {}).get("character_name") or entry["id"]
+        name = (
+            entry.get("params", {}).get("character_name")
+            or KNOWN_NAMES.get(entry["id"])
+            or entry["id"]
+        )
         slug    = entry.get("template_id", "")
 
         dedup_key = f"{mbti}:{ip}:{name}"
