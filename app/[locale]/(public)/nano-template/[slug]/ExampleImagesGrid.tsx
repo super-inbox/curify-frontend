@@ -391,7 +391,7 @@ function ExampleImageCard({
 
 export default function ExampleImagesGrid({
   items,
-  maxRows = 4,
+  maxRows = 3,
   locale = "en",
   batch = false,
 }: {

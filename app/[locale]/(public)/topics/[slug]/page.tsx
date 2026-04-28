@@ -236,7 +236,7 @@ export default async function Page({ params }: Props) {
           <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
             {exampleImagesHeading}
           </h2>
-          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={4} />
+          <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
         </section>
       )}
 
