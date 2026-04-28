@@ -411,18 +411,14 @@ export default function ExampleImagesGrid({
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-        {visible.map((it, i) => {
-          // visible is always a prefix of items, so visible[i] === items[i]
-          const globalIndex = expanded ? i : i;
-          return (
-            <ExampleImageCard
-              key={it.id}
-              item={{ ...it, batch }}
-              locale={locale}
-              onOpenLightbox={() => setLightboxIndex(globalIndex)}
-            />
-          );
-        })}
+        {visible.map((it, i) => (
+          <ExampleImageCard
+            key={it.id}
+            item={{ ...it, batch }}
+            locale={locale}
+            onOpenLightbox={() => setLightboxIndex(i)}
+          />
+        ))}
       </div>
 
       {items.length > limit && (
@@ -439,7 +435,7 @@ export default function ExampleImagesGrid({
 
       {lightboxIndex !== null && (
         <Lightbox
-          items={items}
+          items={visible}
           initialIndex={lightboxIndex}
           locale={locale}
           onClose={() => setLightboxIndex(null)}
