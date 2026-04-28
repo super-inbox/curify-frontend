@@ -26,7 +26,7 @@ const CAPTIONS: Record<string, string> = {
 };
 
 export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; locale: string }) {
-  const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [name, setName] = useState("");
   const { track } = useTracking();
 
@@ -41,24 +41,27 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
     try {
       const nameParam = name.trim() ? `&name=${encodeURIComponent(name.trim())}` : "";
       const res = await fetch(`/api/personality-poster?type=${mbti}${nameParam}`);
+      if (!res.ok) throw new Error(`Poster API returned ${res.status}`);
       const blob = await res.blob();
       const file = new File([blob], `${mbti}-personality.png`, { type: "image/png" });
 
       if (typeof navigator !== "undefined" && navigator.canShare?.({ files: [file] })) {
         await navigator.share({ files: [file], title: `I'm ${mbti} — ${meta.tagline}`, text: caption });
       } else {
-        // Desktop fallback: download the image
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
         a.download = `${mbti}-personality-card.png`;
+        document.body.appendChild(a);
         a.click();
+        document.body.removeChild(a);
         URL.revokeObjectURL(url);
       }
       setStatus("done");
       setTimeout(() => setStatus("idle"), 3000);
     } catch {
-      setStatus("idle");
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
     }
   };
 
@@ -101,6 +104,8 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
           <><Loader2 className="h-4 w-4 animate-spin" /> Generating…</>
         ) : status === "done" ? (
           <><Download className="h-4 w-4" /> Saved!</>
+        ) : status === "error" ? (
+          <>Failed — try again</>
         ) : (
           <><ImageIcon className="h-4 w-4" /> Save &amp; Share Poster</>
         )}
