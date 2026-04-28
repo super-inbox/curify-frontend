@@ -102,6 +102,7 @@ export default function ShareButton({
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const mainButtonRef = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const prefersNativeShare = useMemo(() => {
     if (typeof window === "undefined") return false;
@@ -165,8 +166,14 @@ export default function ShareButton({
     <div
       ref={containerRef}
       className={`relative inline-flex items-center ${className}`}
-      onMouseEnter={() => !prefersNativeShare && setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={() => {
+        if (prefersNativeShare) return;
+        if (closeTimer.current) clearTimeout(closeTimer.current);
+        setIsOpen(true);
+      }}
+      onMouseLeave={() => {
+        closeTimer.current = setTimeout(() => setIsOpen(false), 120);
+      }}
     >
       {}
       <button
