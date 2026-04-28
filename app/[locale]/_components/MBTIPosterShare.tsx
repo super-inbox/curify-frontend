@@ -27,17 +27,20 @@ const CAPTIONS: Record<string, string> = {
 
 export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; locale: string }) {
   const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
+  const [name, setName] = useState("");
   const { track } = useTracking();
 
   const meta = MBTI_META[mbti];
-  const caption = `I got ${mbti} — ${meta.tagline}!\n\n${CAPTIONS[mbti] ?? ""}\n\nFind out your personality type 👉 curify.ai/${locale}/personality/${mbti}`;
+  const namePrefix = name.trim() ? `${name.trim()} got` : "I got";
+  const caption = `${namePrefix} ${mbti} — ${meta.tagline}!\n\n${CAPTIONS[mbti] ?? ""}\n\nFind out your personality type 👉 curify.ai/${locale}/personality/${mbti}`;
 
   const handleShare = async () => {
     setStatus("loading");
     track({ contentId: mbti, contentType: "mbti_quiz", actionType: "share" });
 
     try {
-      const res = await fetch(`/api/personality-poster?type=${mbti}`);
+      const nameParam = name.trim() ? `&name=${encodeURIComponent(name.trim())}` : "";
+      const res = await fetch(`/api/personality-poster?type=${mbti}${nameParam}`);
       const blob = await res.blob();
       const file = new File([blob], `${mbti}-personality.png`, { type: "image/png" });
 
@@ -59,23 +62,32 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
     }
   };
 
+  const previewUrl = name.trim()
+    ? `/api/personality-poster?type=${mbti}&name=${encodeURIComponent(name.trim())}`
+    : `/api/personality-poster?type=${mbti}`;
+
   return (
     <div className="rounded-xl border border-dashed border-purple-300 bg-purple-50/60 p-4">
-      {/* Poster preview — small thumbnail */}
+      {/* Poster preview + name input row */}
       <div className="mb-3 flex items-center gap-3">
         <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-100 shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`/api/personality-poster?type=${mbti}`}
+            src={previewUrl}
             alt="Your personality poster"
             className="h-full w-full object-cover"
           />
         </div>
-        <div>
-          <p className="text-sm font-semibold text-neutral-800">Your shareable poster is ready</p>
-          <p className="text-xs text-neutral-500 leading-snug mt-0.5">
-            Save &amp; share to Facebook, Moments, or anywhere
-          </p>
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-semibold text-neutral-800 mb-1.5">Your shareable poster is ready</p>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Add your name (optional)"
+            maxLength={30}
+            className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 placeholder:text-neutral-400 focus:border-purple-400 focus:outline-none focus:ring-1 focus:ring-purple-300"
+          />
         </div>
       </div>
 

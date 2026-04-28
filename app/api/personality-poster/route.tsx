@@ -33,6 +33,7 @@ const GRADIENTS: Record<string, [string, string]> = {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const type = (searchParams.get("type") ?? "INTJ").toUpperCase();
+  const name = (searchParams.get("name") ?? "").trim().slice(0, 30);
 
   if (!(MBTI_TYPES as readonly string[]).includes(type)) {
     return new Response("Invalid type", { status: 400 });
@@ -74,6 +75,11 @@ export async function GET(req: NextRequest) {
 
         {/* MBTI */}
         <div style={{ display: "flex", flexDirection: "column", marginTop: 48 }}>
+          {name && (
+            <div style={{ fontSize: 28, color: "#d8b4fe", fontWeight: 600, marginBottom: 12, letterSpacing: 0.5 }}>
+              {name} is
+            </div>
+          )}
           <div style={{ fontSize: 156, fontWeight: 900, color: "white", lineHeight: 0.9, letterSpacing: -4 }}>
             {type}
           </div>
