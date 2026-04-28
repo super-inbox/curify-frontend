@@ -10,7 +10,6 @@ export const runtime = "nodejs";
 
 const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE ?? "https://cdn.curify-ai.com";
 
-// Rarity stats (population %)
 const RARITY: Record<string, number> = {
   INTJ:2, INTP:3, ENTJ:2, ENTP:3,
   INFJ:2, INFP:4, ENFJ:3, ENFP:8,
@@ -18,7 +17,6 @@ const RARITY: Record<string, number> = {
   ISTP:5, ISFP:9, ESTP:4, ESFP:9,
 };
 
-// Gradient pairs per type
 const GRADIENTS: Record<string, [string, string]> = {
   INTJ:["#0f0c29","#302b63"], INTP:["#1a1a2e","#16213e"],
   ENTJ:["#200122","#6f0000"], ENTP:["#0f2027","#203a43"],
@@ -45,9 +43,11 @@ export async function GET(req: NextRequest) {
   const [g1, g2] = GRADIENTS[type] ?? ["#1a0533", "#2d1b69"];
   const pct = RARITY[type] ?? 4;
 
-  // ✅ Load font from local file system
   const fontPath = path.join(process.cwd(), "public/fonts/Inter-Bold.ttf");
   const fontData = await readFile(fontPath);
+
+  // Image height for character cards (explicit, no aspectRatio)
+  const IMG_H = 280;
 
   return new ImageResponse(
     (
@@ -60,7 +60,6 @@ export async function GET(req: NextRequest) {
           background: `linear-gradient(150deg, ${g1} 0%, ${g2} 100%)`,
           padding: "56px 60px 48px",
           fontFamily: "Inter",
-          position: "relative",
         }}
       >
         {/* Top bar */}
@@ -73,27 +72,29 @@ export async function GET(req: NextRequest) {
           </span>
         </div>
 
-        {/* MBTI */}
-        <div style={{ display: "flex", flexDirection: "column", marginTop: 48 }}>
-          {name && (
-            <div style={{ fontSize: 28, color: "#d8b4fe", fontWeight: 600, marginBottom: 12, letterSpacing: 0.5 }}>
-              {name} is
-            </div>
-          )}
-          <div style={{ fontSize: 156, fontWeight: 900, color: "white", lineHeight: 0.9, letterSpacing: -4 }}>
+        {/* Name line (only when provided) */}
+        {name ? (
+          <div style={{ display: "flex", marginTop: 48, fontSize: 28, color: "#d8b4fe", fontWeight: 600, letterSpacing: 0.5 }}>
+            {name} is
+          </div>
+        ) : (
+          <div style={{ display: "flex", marginTop: 48 }} />
+        )}
+
+        {/* MBTI type + tagline + description */}
+        <div style={{ display: "flex", flexDirection: "column", marginTop: name ? 12 : 0 }}>
+          <div style={{ display: "flex", fontSize: 156, fontWeight: 900, color: "white", lineHeight: 0.9, letterSpacing: -4 }}>
             {type}
           </div>
-
-          <div style={{ fontSize: 34, color: "#c4b5fd", fontWeight: 700, marginTop: 16 }}>
+          <div style={{ display: "flex", fontSize: 34, color: "#c4b5fd", fontWeight: 700, marginTop: 16 }}>
             {meta.tagline}
           </div>
-
-          <div style={{ fontSize: 20, color: "#9ca3af", marginTop: 14, lineHeight: 1.5, maxWidth: 540 }}>
+          <div style={{ display: "flex", fontSize: 20, color: "#9ca3af", marginTop: 14, lineHeight: 1.5, maxWidth: 540 }}>
             {meta.description}
           </div>
         </div>
 
-        {/* Rarity */}
+        {/* Rarity badge */}
         <div style={{
           display: "flex",
           alignSelf: "flex-start",
@@ -108,14 +109,14 @@ export async function GET(req: NextRequest) {
           </span>
         </div>
 
-        {/* Characters */}
+        {/* Characters row */}
         <div style={{ display: "flex", gap: 16, marginTop: "auto", paddingTop: 32 }}>
           {shown.map((char) => (
             <div key={char.name} style={{ display: "flex", flexDirection: "column", flex: 1 }}>
               <div style={{
                 display: "flex",
                 width: "100%",
-                aspectRatio: "3/4",
+                height: IMG_H,
                 borderRadius: 16,
                 overflow: "hidden",
                 border: "2px solid rgba(167,139,250,0.3)",
@@ -126,18 +127,16 @@ export async function GET(req: NextRequest) {
                   alt={char.name}
                 />
               </div>
-
-              <div style={{ color: "white", fontSize: 15, fontWeight: 700, marginTop: 10 }}>
+              <div style={{ display: "flex", color: "white", fontSize: 15, fontWeight: 700, marginTop: 10 }}>
                 {char.name}
               </div>
-
-              <div style={{ color: "#a78bfa", fontSize: 13, marginTop: 2 }}>
+              <div style={{ display: "flex", color: "#a78bfa", fontSize: 13, marginTop: 2 }}>
                 {char.ip}
               </div>
             </div>
           ))}
 
-          {/* CTA */}
+          {/* CTA column */}
           <div style={{
             display: "flex",
             flexDirection: "column",
@@ -145,10 +144,10 @@ export async function GET(req: NextRequest) {
             flex: 1,
             paddingLeft: 8,
           }}>
-            <div style={{ color: "#e5e7eb", fontSize: 19, fontWeight: 700 }}>
+            <div style={{ display: "flex", color: "#e5e7eb", fontSize: 19, fontWeight: 700 }}>
               Which personality type are you?
             </div>
-            <div style={{ color: "#a78bfa", fontSize: 17, marginTop: 8, fontWeight: 600 }}>
+            <div style={{ display: "flex", color: "#a78bfa", fontSize: 17, marginTop: 8, fontWeight: 600 }}>
               curify.ai →
             </div>
           </div>
@@ -158,14 +157,7 @@ export async function GET(req: NextRequest) {
     {
       width: 1080,
       height: 1080,
-      fonts: [
-        {
-          name: "Inter",
-          data: fontData,
-          style: "normal",
-          weight: 700,
-        },
-      ],
+      fonts: [{ name: "Inter", data: fontData, style: "normal", weight: 700 }],
     }
   );
 }
