@@ -233,9 +233,6 @@ export default async function Page({ params }: Props) {
 
       {gridItems.length > 0 && (
         <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
-            {exampleImagesHeading}
-          </h2>
           <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
         </section>
       )}

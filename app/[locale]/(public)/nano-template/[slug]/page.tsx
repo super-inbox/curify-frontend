@@ -168,9 +168,6 @@ export default async function NanoTemplatePage({ params }: Props) {
 
 
       <section className="mt-8">
-<h2 className="mb-4 text-lg font-bold text-neutral-900">
-              Example Images
-            </h2>
 <ExampleImagesGrid
           items={section2Images}
           locale={pageLocale}
