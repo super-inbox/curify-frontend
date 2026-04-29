@@ -2504,5 +2504,93 @@
         ]
       }
     }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Hediyelik Esya Suluboya Posteri",
+    "description": "Herhangi bir ulkenin en guzel 10 hediyelik esyasini, ikonik yapilar ve hediye onerileriyle birlikte sicak ve nostaljik bir suluboya seyahat infografigi posterinde olusturun.",
+    "title": "Nano Banana Prompt: Ulke Hediyelik Esya Suluboya Poster Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon 'Top 10 Beautiful Souvenirs from {country_name}' baslikli dikey 4K suluboya seyahat posteri uretir. Ust kisimda ikonik yapilar, ulke bayragi ve alt baslik; ana bolumde 10 numaralandirilmis hediyelik esya iki sutunlu suluboya izgaraya yerlestirilir, her biri suluboya cizim ve kisa aciklama icerir; alt seritte hediyelik onerileri yer alir. Yumusak donuk renkler ve dokulu kagit arka plan vintage seyahat posteri havasi katar.",
+        "who": "Seyahat blog yazarlari, turizm ofisleri, kulturel hediye rehberi yazarlari, Pinterest icerik ureticileri, gocmen kanallari, hediyelik esya magazasi sahipleri ve ulke temali seyahat icerigi hazirlayanlar icin uygundur.",
+        "how": [
+          "{country_name} alanina ulke adi girin (orn. Brezilya, Meksika, Japonya, Italya).",
+          "Ust bolum ikonik yapilari, bayragi ve basligi otomatik olusturur.",
+          "On numaralandirilmis hediyelik esya iki sutunlu suluboya izgaraya aciklamalarla yerlesir.",
+          "Vintage seyahat posteri tarzinda dikey 4K suluboya poster olusturulur."
+        ],
+        "prompts": [
+          "'Meksika'nin En Iyi 10 Hediyelik Esyasi' suluboya seyahat posteri olusturun.",
+          "Geleneksel el sanatlariyla 'Japonya'nin En Iyi 10 Hediyelik Esyasi' posteri.",
+          "'Italya'nin En Iyi 10 Hediyelik Esyasi' suluboya infografigi olusturun."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Evcil Hayvan Guvenli Yemek Infografigi",
+    "description": "Beyaz mermer arka plan uzerinde, hangi insan yiyeceklerinin evcil hayvan icin guvenli, hangilerinin zehirli oldugunu gosteren temiz, foto-gerceklci bir infografik olusturun.",
+    "title": "Nano Banana Prompt: Evcil Hayvanlara Guvenli Insan Yiyecekleri Infografigi Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon 'Human Foods {pet_name} Can Safely Eat' baslikli dikey 4K egitici poster uretir. Ust kosede evcil hayvanin gercekci fotografi yer alir; gercekci yiyecek fotograflarindan olusan izgara guvenli meyve, sebze, et ve tahillari etiketler; alt kisimdaki kirmizi seritli bolum zehirli yiyecekler hakkinda uyarir. Beyaz mermer arka plan ve yuksek cozunurluklu yiyecek fotograflari guvenilir bir evcil hayvan rehberi havasi verir.",
+        "who": "Evcil hayvan sahipleri, veterinerler, evcil hayvan beslenme markalari, hayvan barinaklari, evcil hayvan bloggerlari, veteriner teknisyenleri ve evcil hayvan egitim icerigi ureticileri icin uygundur.",
+        "how": [
+          "{pet_name} alanindan evcil hayvan turunu secin (orn. Kediler, Kopekler, Tavsanlar, Papaganlar).",
+          "Evcil hayvan fotografi baslikla birlikte ust kosede gosterilir.",
+          "Gercekci yiyecek fotograflari guvenli yiyecekleri ustte, zehirli olanlari kirmizi alanda otomatik dizer.",
+          "Foto-gerceklci etiketlerle dikey 4K beyaz mermer infografik olusturulur."
+        ],
+        "prompts": [
+          "'Kediler icin Guvenli Insan Yiyecekleri' mermer arka planli infografik.",
+          "'Kopekler icin Guvenli Insan Yiyecekleri' posteri, zehirli yiyecek uyari bolumuyle.",
+          "'Tavsanlar icin Guvenli Insan Yiyecekleri' foto-gerceklci infografik."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Fonik Ogrenim Posteri",
+    "description": "Herhangi bir unsuz harf birlesimi icin 6-8 ornek kelime, karikatur illustrasyon ve gokyuzu mavisi arka planli cocuk dostu fonik ogrenim posteri olusturun.",
+    "title": "Nano Banana Prompt: Unsuz Harf Birlesimi Fonik Ogrenim Posteri Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon {phonics_blend} unsuz harf birlesimi icin dikey 4K fonik ogrenim posteri uretir. Ustte buyuk ve kalin bir baslik yer alir; beyaz cerceveli alanda 6-8 ornek kelime karikatur illustrasyonlarla birlikte gosterilir, birlesim harfleri kirmizi, geri kalan harfler mavi renktedir. Gokyuzu mavisi arka plan, beyaz bulutlar ve altta yesil cimen yeni okumaya baslayan cocuklar icin sicak bir hava yaratir.",
+        "who": "ESL ogretmenleri, ilkokul ogretmenleri, evde egitim veren ebeveynler, erken cocukluk icerik ureticileri, okuma egitmenleri, okur-yazarlik uygulamasi tasarimcilari ve fonik calisan dil terapistleri icin uygundur.",
+        "how": [
+          "{phonics_blend} alanina unsuz birlesimi girin (orn. gr, bl, ch, sh, th, tr).",
+          "Birlesim posterin ustunde buyuk kalin baslik olarak gosterilir.",
+          "6 ila 8 ornek kelime karikatur illustrasyon ve renkli harflerle otomatik uretilir.",
+          "Dikey 4K karikatur tarzinda gokyuzu mavisi fonik ogrenim posteri olusturulur."
+        ],
+        "prompts": [
+          "'gr' unsuz birlesimi fonik posteri (grape, green, grass, grin).",
+          "8 ornek kelimeyle 'sh' unsuz birlesimi ogrenim posteri.",
+          "Yeni okumaya baslayan cocuklar icin 'tr' unsuz birlesimi posteri."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Medya Temali Duvar Kagidi Posteri",
+    "description": "Herhangi bir film, anime veya dizi evreni icin orijinal sanat tarzina sadik, atmosferik ve stilize bir duvar kagidi veya poster olusturun.",
+    "title": "Nano Banana Prompt: Medya Temali Duvar Kagidi ve Poster Olusturucu | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu sablon {media_topic} icin yuksek cozunurluklu stilize duvar kagidi veya poster uretir. Kompozisyon en ikonik karakterleri veya sahneleri detayli ve atmosferik bir arka plan onunde merkeze alir; baslik temaya uygun bir fontla gosterilir. Tarz orijinal eserin estetigine sadik kalir — Studio Ghibli'nin resimsel havasi, Friends'in sitcom tonu — canli renkler ve sinematik isiklandirmayla guclendirilir.",
+        "who": "Hayranlar, fan-art ureticileri, dekorasyon markalari, sosyal medya tasarimcilari, telefon duvar kagidi hesaplari, film ve anime kulubu organizatorleri ve temali urun mockuplari yapanlar icin uygundur.",
+        "how": [
+          "{media_topic} alanina medya evrenini girin (orn. Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Ikonik karakter ve sahneler atmosferik arka plan uzerinde otomatik kompoze edilir.",
+          "Baslik orijinal estetige uyan tematik fontla gosterilir.",
+          "Yuksek cozunurluklu dikey veya kare sinematik duvar kagidi posteri olusturulur."
+        ],
+        "prompts": [
+          "Komsum Totoro icin Studio Ghibli tarzi duvar kagidi posteri olusturun.",
+          "Ponyo icin orijinal suluboya estetigiyle temali duvar kagidi olusturun.",
+          "Hayran dekorasyonu icin Friends TV Show stilize posteri olusturun."
+        ]
+      }
+    }
   }
 }

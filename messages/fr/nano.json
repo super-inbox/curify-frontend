@@ -2504,5 +2504,93 @@
         ]
       }
     }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Affiche Aquarelle de Souvenirs",
+    "description": "Genere une affiche infographique de voyage a l'aquarelle, chaleureuse et nostalgique, presentant les 10 plus beaux souvenirs d'un pays, avec monuments iconiques et conseils cadeaux.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche Aquarelle de Souvenirs de Pays | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K a l'aquarelle intitulee 'Top 10 Beautiful Souvenirs from {country_name}'. Le haut presente les monuments iconiques, le drapeau et un sous-titre; une grille numerotee a 2 colonnes presente 10 souvenirs avec illustrations a l'aquarelle et descriptions; un bandeau inferieur donne des conseils cadeaux. Couleurs douces et fond papier texture pour un look d'affiche de voyage vintage.",
+        "who": "Convient aux blogueurs voyage, offices de tourisme, auteurs de guides cadeaux culturels, createurs Pinterest, chaines d'expatries, boutiques de souvenirs et createurs de contenu sur les pays.",
+        "how": [
+          "Saisissez un pays dans {country_name} (p. ex. Bresil, Mexique, Japon, Italie).",
+          "Le haut genere automatiquement les monuments, le drapeau et le titre.",
+          "Dix souvenirs numerotes s'affichent en grille aquarelle a 2 colonnes avec descriptions.",
+          "Genere une affiche verticale 4K aquarelle au style affiche de voyage vintage."
+        ],
+        "prompts": [
+          "Affiche aquarelle 'Top 10 Souvenirs du Mexique'.",
+          "Affiche 'Top 10 Souvenirs du Japon' avec artisanat traditionnel.",
+          "Infographie aquarelle 'Top 10 Souvenirs d'Italie'."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Infographie d'Aliments Surs pour Animaux",
+    "description": "Cree une infographie photo-realiste indiquant quels aliments humains sont surs et lesquels sont toxiques pour un animal, sur fond de marbre blanc.",
+    "title": "Nano Banana Prompt: Generateur d'Infographie d'Aliments Humains Surs pour Animaux | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche pedagogique verticale 4K intitulee 'Human Foods {pet_name} Can Safely Eat'. Une photo de l'animal est placee dans le coin superieur; une grille de photos d'aliments realistes etiquette fruits, legumes, viandes et cereales surs; une section rouge en bas alerte sur les aliments toxiques. Le fond de marbre blanc donne un rendu pro et rassurant.",
+        "who": "Convient aux proprietaires d'animaux, veterinaires, marques d'alimentation animale, refuges, blogueurs animaliers, auxiliaires veterinaires et createurs de contenu educatif.",
+        "how": [
+          "Choisissez un type d'animal dans {pet_name} (p. ex. Chats, Chiens, Lapins, Perroquets).",
+          "La photo de l'animal apparait dans le coin superieur sous le titre.",
+          "Des photos realistes remplissent les aliments surs en haut et toxiques dans la zone rouge.",
+          "Genere une infographie verticale 4K sur marbre avec etiquettes photo-realistes."
+        ],
+        "prompts": [
+          "Infographie 'Aliments humains surs pour chats' fond marbre.",
+          "Affiche 'Aliments humains surs pour chiens' avec section toxiques.",
+          "Infographie 'Aliments humains surs pour lapins' photo-realiste."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Affiche Phonics",
+    "description": "Genere une affiche de phonics ludique pour toute combinaison consonantique, avec 6-8 mots d'exemple, illustrations cartoon et fond bleu ciel.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche Phonics de Combinaisons Consonantiques | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere une affiche verticale 4K de phonics pour la combinaison {phonics_blend}. Un grand titre en gras coiffe l'affiche; dans un cadre blanc, 6 a 8 mots d'exemple s'accompagnent d'illustrations cartoon, la combinaison en rouge et le reste en bleu. Fond bleu ciel avec nuages et herbe verte pour une ambiance accueillante.",
+        "who": "Convient aux enseignants ESL, maitres du primaire, parents IEF, createurs de contenu petite enfance, tuteurs en lecture, designers d'apps d'alphabetisation et orthophonistes.",
+        "how": [
+          "Saisissez une combinaison dans {phonics_blend} (p. ex. gr, bl, ch, sh, th, tr).",
+          "La combinaison apparait en grand titre en gras en haut de l'affiche.",
+          "Six a huit mots d'exemple sont generes avec illustrations et lettres coloree.",
+          "Genere une affiche verticale 4K cartoon de phonics sur fond bleu ciel."
+        ],
+        "prompts": [
+          "Affiche combinaison 'gr' (grape, green, grass, grin).",
+          "Affiche combinaison 'sh' avec 8 mots d'exemple.",
+          "Affiche combinaison 'tr' pour jeunes lecteurs."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Affiche Fond d'Ecran Thematique",
+    "description": "Cree un fond d'ecran ou poster stylise et atmospherique pour tout univers de cinema, anime ou serie TV, fidele au style original.",
+    "title": "Nano Banana Prompt: Generateur d'Affiche et Fond d'Ecran Thematique Medias | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modele genere un fond d'ecran ou poster stylise haute resolution pour {media_topic}. La composition centre les personnages ou scenes iconiques sur un fond detaille et atmospherique; le titre apparait dans une typographie thematique. Le style reste fidele a l'oeuvre originale — du rendu peint Studio Ghibli a l'ambiance sitcom de Friends — sublime par des couleurs vives et un eclairage cinematographique.",
+        "who": "Convient aux fans, createurs de fan-art, marques de decoration, designers reseaux sociaux, comptes de fonds d'ecran mobiles, organisateurs de cine-clubs anime et createurs de mockups thematiques.",
+        "how": [
+          "Saisissez un univers dans {media_topic} (p. ex. Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Les personnages ou scenes iconiques sont composes sur un fond atmospherique.",
+          "Le titre apparait dans une typographie qui reflete le style de l'oeuvre.",
+          "Genere un fond d'ecran ou poster vertical/carre haute resolution."
+        ],
+        "prompts": [
+          "Fond d'ecran style Studio Ghibli pour Mon Voisin Totoro.",
+          "Fond d'ecran Ponyo avec l'esthetique aquarelle originale.",
+          "Affiche stylisee Friends pour decoration de fans."
+        ]
+      }
+    }
   }
 }

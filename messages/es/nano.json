@@ -2504,5 +2504,93 @@
         ]
       }
     }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Poster Acuarela de Souvenirs",
+    "description": "Genera un poster infografico de viaje en acuarela calido y nostalgico con los 10 souvenirs mas hermosos de cualquier pais, incluyendo monumentos y consejos de regalo.",
+    "title": "Nano Banana Prompt: Generador de Poster Acuarela de Souvenirs por Pais | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K de acuarela titulado 'Top 10 Beautiful Souvenirs from {country_name}'. La parte superior muestra monumentos iconicos, la bandera y un subtitulo; una cuadricula numerada de 2 columnas presenta 10 souvenirs con ilustraciones en acuarela y descripciones cortas; una banda inferior ofrece consejos de regalo. Colores suaves y fondo de papel texturizado dan el aire vintage de poster de viaje.",
+        "who": "Adecuado para blogueros de viaje, oficinas de turismo, autores de guias de regalos culturales, creadores de Pinterest, canales de expatriados, tiendas de souvenirs y creadores de contenido sobre paises.",
+        "how": [
+          "Introduce un pais en {country_name} (p. ej., Brasil, Mexico, Japon, Italia).",
+          "La parte superior genera monumentos iconicos, bandera y titulo automaticamente.",
+          "Diez souvenirs numerados se distribuyen en una cuadricula de acuarela de 2 columnas.",
+          "Genera un poster vertical 4K en acuarela con estilo vintage de viaje."
+        ],
+        "prompts": [
+          "Generar poster acuarela 'Top 10 Souvenirs de Mexico'.",
+          "Crear poster 'Top 10 Souvenirs de Japon' con artesania tradicional.",
+          "Generar infografia acuarela 'Top 10 Souvenirs de Italia'."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Infografia de Comida Segura para Mascotas",
+    "description": "Crea una infografia clara y foto-realista que muestra que alimentos humanos son seguros y cuales toxicos para una mascota, sobre fondo de marmol blanco.",
+    "title": "Nano Banana Prompt: Generador de Infografia de Comida Segura para Mascotas | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster educativo vertical 4K titulado 'Human Foods {pet_name} Can Safely Eat'. Una foto de la mascota va en la esquina superior; una cuadricula de fotos realistas etiqueta frutas, verduras, carnes y granos seguros; una seccion roja inferior advierte sobre alimentos toxicos. El fondo de marmol blanco aporta un aire de guia profesional confiable.",
+        "who": "Adecuado para duenos de mascotas, veterinarios, marcas de nutricion animal, refugios, blogueros de mascotas, auxiliares veterinarios y creadores de contenido educativo.",
+        "how": [
+          "Elige un tipo de mascota en {pet_name} (p. ej., Gatos, Perros, Conejos, Loros).",
+          "La foto de la mascota aparece en la esquina superior junto al titulo.",
+          "Las fotos realistas autocompletan los alimentos seguros y los toxicos en la zona roja.",
+          "Genera una infografia vertical 4K de marmol con etiquetas foto-realistas."
+        ],
+        "prompts": [
+          "Infografia 'Alimentos Humanos Seguros para Gatos' con fondo de marmol.",
+          "Poster 'Alimentos Humanos Seguros para Perros' con seccion de toxicos.",
+          "Infografia 'Alimentos Humanos Seguros para Conejos' foto-realista."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Poster de Fonetica",
+    "description": "Genera un poster de fonetica amigable para ninos sobre cualquier combinacion consonantica, con 6-8 palabras de ejemplo, ilustraciones y fondo azul cielo.",
+    "title": "Nano Banana Prompt: Generador de Poster de Fonetica de Combinaciones Consonanticas | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un poster vertical 4K para la combinacion consonantica {phonics_blend}. Un titular grande y en negrita encabeza el poster; dentro de un marco blanco, 6-8 palabras de ejemplo se acompanan de ilustraciones de dibujos animados, con la combinacion en rojo y el resto de las letras en azul. El fondo azul cielo con nubes y cesped verde lo hace acogedor para lectores principiantes.",
+        "who": "Adecuado para profesores de ESL, maestros de primaria, padres de homeschool, creadores de contenido educativo, tutores de lectura, disenadores de apps de alfabetizacion y logopedas que trabajan fonetica.",
+        "how": [
+          "Introduce una combinacion en {phonics_blend} (p. ej., gr, bl, ch, sh, th, tr).",
+          "La combinacion se muestra como titular grande y en negrita en la parte superior.",
+          "De 6 a 8 palabras de ejemplo se generan con ilustraciones y letras coloreadas.",
+          "Genera un poster vertical 4K de fonetica de estilo dibujos animados con fondo azul cielo."
+        ],
+        "prompts": [
+          "Poster de combinacion 'gr' (grape, green, grass, grin).",
+          "Poster de combinacion 'sh' con 8 palabras de ejemplo.",
+          "Poster de combinacion 'tr' para lectores principiantes."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Poster Wallpaper Tematico",
+    "description": "Crea un wallpaper o poster estilizado y atmosferico para cualquier universo de cine, anime o TV, fiel al estilo artistico original.",
+    "title": "Nano Banana Prompt: Generador de Wallpaper y Poster con Tematica de Medios | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un wallpaper o poster estilizado de alta resolucion para {media_topic}. La composicion centra a los personajes o escenas mas iconicas en un fondo detallado y atmosferico, con el titulo en una tipografia tematica. El estilo se mantiene fiel a la estetica original — desde la pintura de Studio Ghibli hasta el aire de sitcom de Friends — realzado con colores vibrantes y luz cinematografica.",
+        "who": "Adecuado para fans, creadores de fan-art, marcas de decoracion, disenadores de redes sociales, cuentas de wallpapers de movil, organizadores de clubes de cine y anime, y creadores de mockups tematicos.",
+        "how": [
+          "Introduce un universo en {media_topic} (p. ej., Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Los personajes o escenas iconicas se componen sobre un fondo atmosferico.",
+          "El titulo aparece en una tipografia que refleja el estilo original.",
+          "Genera un wallpaper o poster vertical o cuadrado de alta resolucion."
+        ],
+        "prompts": [
+          "Wallpaper estilo Studio Ghibli para Mi Vecino Totoro.",
+          "Wallpaper de Ponyo con la estetica original en acuarela.",
+          "Poster estilizado de Friends para decoracion de fans."
+        ]
+      }
+    }
   }
 }

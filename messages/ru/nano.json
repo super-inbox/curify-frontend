@@ -2504,5 +2504,93 @@
         ]
       }
     }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Akvarelnyj Poster Suvenirov",
+    "description": "Generiruet teplyj nostalgicheskij akvarelnyj travel-poster s 10 luchshimi suvenirami lyuboj strany, vklyuchaya dostoprimechatel'nosti i sovety po vyboru podarkov.",
+    "title": "Nano Banana Prompt: Generator Akvarelnogo Postera Suvenirov Stran | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vertikal'nyj 4K akvarelnyj travel-poster s zagolovkom 'Top 10 Beautiful Souvenirs from {country_name}'. V verkhnej chasti raspolagayutsya kul'tovye dostoprimechatel'nosti, flag i podzagolovok; v centralnoj chasti — setka iz dvukh kolonok s 10 prоnumerovannymi suvenirami, kazhdyj s akvarelnoj illyustraciej i kratkim opisaniem; vnizu — 'Sovety po vyboru suvenirov' s akvarelnymi ikonami. Myagkie priglushennye cveta i tekstura bumazhnogo fona dayut effekt vintazhnogo travel-postera.",
+        "who": "Podkhodit dlya travel-blogerov, turisticheskikh agentstv, avtorov gajdov po podarkam, Pinterest-kreatorov, kanalov ob ehmigracii, vladelcev suvenirnykh magazinov i sozdatelej travel-kontenta o stranakh.",
+        "how": [
+          "Vvedite stranu v {country_name} (naprimer, Brazilya, Meksika, Yaponiya, Italiya).",
+          "Verkhnyaya chast' avtomaticheski generiruet dostoprimechatel'nosti, flag i zagolovok.",
+          "Desyat' suvenirov razmeshchayutsya v dvukh kolonkakh s opisaniyami.",
+          "Generiruetsya vertikal'nyj 4K akvarelnyj poster v stile vintazh."
+        ],
+        "prompts": [
+          "Akvarelnyj travel-poster 'Top 10 Suvenirov iz Meksiki'.",
+          "Poster 'Top 10 Suvenirov iz Yaponii' s tradicionnymi remyoslami.",
+          "Akvarelnaya infografika 'Top 10 Suvenirov iz Italii'."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Infografika Bezopasnoj Edy dlya Pitomtsev",
+    "description": "Sozdaet chistuyu foto-realistichnuyu infografiku, pokazyvayushchuyu, kakie chelovecheskie produkty bezopasny, a kakie tokichny dlya pitomtsa, na fone belogo mramora.",
+    "title": "Nano Banana Prompt: Generator Infografiki Bezopasnyh Chelovecheskikh Produktov dlya Pitomtsev | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vertikal'nyj 4K obrazovatel'nyj poster 'Human Foods {pet_name} Can Safely Eat'. V verkhnem uglu — realistichnoe foto pitomtsa; setka realistichnyh foto produktov pomechaet bezopasnye frukty, ovoshchi, myaso i krupy; nizhnyaya krasnaya zona preduprezhdaet o tokichnyh produktakh. Belyj mramornyj fon i yarkaya foto-fotografiya sozdayut effekt nadyozhnogo gida po ukhodu.",
+        "who": "Podkhodit dlya vladel'cev pitomtsev, veterinarov, brendov pitaniya, priyutov, blogerov o pitomtsakh, vetassistentov i sozdatelej obrazovatel'nogo kontenta.",
+        "how": [
+          "Vyberite tip pitomtsa v {pet_name} (naprimer, Koshki, Sobaki, Kroliki, Popugai).",
+          "Foto pitomtsa pojavlyaetsya v verkhnem uglu vmeste s zagolovkom.",
+          "Realistichnye foto avtomaticheski raspolagayut bezopasnye produkty sverkhu, tokichnye — v krasnoj zone vnizu.",
+          "Generiruetsya vertikal'naya 4K mramornaya infografika s foto-realistichnymi metkami."
+        ],
+        "prompts": [
+          "Infografika 'Bezopasnye chelovecheskie produkty dlya koshek' na mramore.",
+          "Poster 'Bezopasnye chelovecheskie produkty dlya sobak' s zonoj tokichnyh produktov.",
+          "Infografika 'Bezopasnye chelovecheskie produkty dlya krolikov' v foto-realistichnom stile."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Poster po Fonike",
+    "description": "Generiruet detskij obuchayushchij poster po fonike dlya lyubogo soglasnogo sochetaniya, s 6-8 primernymi slovami, multyashnymi illyustraciyami i nebesno-golubym fonom.",
+    "title": "Nano Banana Prompt: Generator Postera po Fonike Soglasnyh Sochetanij | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vertikal'nyj 4K obuchayushchij poster po fonike dlya soglasnogo sochetaniya {phonics_blend}. Sverkhu — krupnyj zhirnyj zagolovok-sochetanie; v belom obramlenii pokazany 6-8 primernyh slov s yarkimi multyashnymi illyustraciyami, bukvy sochetaniya — krasnym, ostalnye — sinim. Nebesno-goluboj fon s belymi oblakami i zelyonoj travoj snizu sozdayot druzheljubnuyu atmosferu dlya nachinayushchikh chitatelej.",
+        "who": "Podkhodit dlya ESL-uchitelej, uchitelej nachalnoj shkoly, roditelej na semejnom obuchenii, sozdatelej kontenta dlya rannego razvitiya, repetitorov po chteniyu, dizajnerov obrazovatel'nykh prilozhenij i logopedov.",
+        "how": [
+          "Vvedite soglasnoe sochetanie v {phonics_blend} (naprimer, gr, bl, ch, sh, th, tr).",
+          "Sochetanie pojavlyaetsya krupnym zhirnym zagolovkom v verkhnej chasti.",
+          "Ot 6 do 8 primernyh slov generiruyutsya s multyashnymi illyustraciyami i cvetovoj kodirovkoj bukv.",
+          "Generiruetsya vertikal'nyj 4K multyashnyj poster po fonike na nebesno-golubom fone."
+        ],
+        "prompts": [
+          "Poster sochetaniya 'gr' (grape, green, grass, grin).",
+          "Obuchayushchij poster sochetaniya 'sh' s 8 primernymi slovami.",
+          "Poster sochetaniya 'tr' dlya nachinayushchikh chitatelej."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Tematicheskie Oboi Postery",
+    "description": "Sozdaet stilizovannye atmosfernye oboi ili poster dlya lyuboj filmnoj, anime ili TV-vselennoj, verno peredayushchij original'nyj khudozhestvennyj stil'.",
+    "title": "Nano Banana Prompt: Generator Tematicheskikh Oboev i Posterov po Mediavselennym | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vysokokachestvennye stilizovannye oboi ili poster dlya {media_topic}. Kompoziciya stroitsya vokrug kul'tovykh personazhej ili scen na detalizirovannom atmosfernom fone; zagolovok pokazyvaetsya v tematicheskom shrifte. Stil' veren original'noj estetike — ot zhivopisnogo Studio Ghibli do sitkomnoj atmosfery 'Friends' — usilen yarkimi cvetami i kinematograficheskim svetom.",
+        "who": "Podkhodit dlya fanatov, fan-art khudozhnikov, brendov dekora, dizajnerov socsetej, akkauntov mobil'nykh oboev, organizatorov kino- i anime-klubov i sozdatelej tematicheskikh mokapov merch.",
+        "how": [
+          "Vvedite mediavselennuyu v {media_topic} (naprimer, Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Kul'tovye personazhi ili sceny avtomaticheski raspolagayutsya na atmosfernom fone.",
+          "Zagolovok pojavlyaetsya v shrifte, sootvetstvuyushchem original'noj estetike.",
+          "Generiruyutsya vysokokachestvennye vertikal'nye ili kvadratnye kinematograficheskie oboi."
+        ],
+        "prompts": [
+          "Oboi v stile Studio Ghibli dlya 'Moj sosed Totoro'.",
+          "Tematicheskie oboi 'Ponyo' s original'noj akvarelnoj estetikoj.",
+          "Stilizovannyj poster 'Friends TV Show' dlya fanatskogo dekora."
+        ]
+      }
+    }
   }
 }
