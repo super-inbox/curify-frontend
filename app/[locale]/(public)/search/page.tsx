@@ -1,8 +1,28 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
-import { ALL_SUGGESTIONS } from "@/lib/searchIndex";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import {
+  ALL_SUGGESTIONS,
+  TIER2_SUGGESTIONS,
+  type SuggestionEntry,
+} from "@/lib/searchIndex";
 import SearchResultsClient from "./SearchResultsClient";
+
+// Build once per request — small enough to recompute, big enough we don't want
+// to do it inside the inspiration loop.
+const SUGGESTION_BY_SLUG = new Map<string, SuggestionEntry>(
+  ALL_SUGGESTIONS.map((s) => [s.slug, s])
+);
+const TIER_2_3_SLUGS = new Set(
+  ALL_SUGGESTIONS.filter((s) => s.tier !== 1).map((s) => s.slug)
+);
+const TEMPLATE_TOPICS = new Map<string, string[]>();
+for (const t of nanoTemplates as any[]) {
+  if (typeof t?.id === "string" && Array.isArray(t.topics)) {
+    TEMPLATE_TOPICS.set(t.id, t.topics);
+  }
+}
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -77,11 +97,34 @@ export default async function SearchPage({ params, searchParams }: Props) {
     })
     .slice(0, 80);
 
+  // Related queries: aggregate Tier-2/3 topics across matched templates,
+  // sort by frequency, fall back to popular Tier-2 if nothing matched.
+  const matchedTemplateIds = new Set(inspirations.map((r) => r.template_id));
+  const topicCounts = new Map<string, number>();
+  for (const tid of matchedTemplateIds) {
+    for (const slug of TEMPLATE_TOPICS.get(tid) ?? []) {
+      if (!TIER_2_3_SLUGS.has(slug)) continue;
+      if (slug === query) continue; // don't suggest the query back to the user
+      topicCounts.set(slug, (topicCounts.get(slug) ?? 0) + 1);
+    }
+  }
+
+  let relatedTopics: SuggestionEntry[] = [...topicCounts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([slug]) => SUGGESTION_BY_SLUG.get(slug))
+    .filter((s): s is SuggestionEntry => !!s);
+
+  if (relatedTopics.length === 0) {
+    relatedTopics = TIER2_SUGGESTIONS.filter((s) => s.slug !== query).slice(0, 8);
+  }
+
   return (
     <SearchResultsClient
       query={query}
       locale={locale}
       inspirations={inspirations}
+      relatedTopics={relatedTopics}
     />
   );
 }

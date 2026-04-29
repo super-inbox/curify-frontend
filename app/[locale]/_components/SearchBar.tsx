@@ -73,7 +73,7 @@ export default function SearchBar({ locale }: Props) {
     <div ref={containerRef} className="relative w-full">
       <form onSubmit={handleSubmit}>
         <div className="relative flex items-center">
-          <Search className="absolute left-3.5 h-4 w-4 text-neutral-400 pointer-events-none" />
+          <Search className="absolute left-4 h-5 w-5 text-blue-500 pointer-events-none" />
           <input
             ref={inputRef}
             type="text"
@@ -81,15 +81,15 @@ export default function SearchBar({ locale }: Props) {
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setOpen(true)}
             placeholder="Search templates, styles, topics…"
-            className="w-full rounded-xl border border-neutral-200 bg-white py-2.5 pl-10 pr-9 text-sm text-neutral-800 placeholder:text-neutral-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all"
+            className="w-full rounded-2xl border-2 border-blue-200 bg-white py-3.5 pl-12 pr-10 text-base text-neutral-900 placeholder:text-neutral-500 shadow-sm hover:border-blue-300 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
           />
           {query && (
             <button
               type="button"
               onClick={() => { setQuery(""); inputRef.current?.focus(); }}
-              className="absolute right-3 text-neutral-400 hover:text-neutral-600"
+              className="absolute right-3.5 rounded-full p-0.5 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-700"
             >
-              <X className="h-3.5 w-3.5" />
+              <X className="h-4 w-4" />
             </button>
           )}
         </div>
