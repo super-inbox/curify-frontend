@@ -5087,5 +5087,73 @@
     ],
     "base_rank_score": 90,
     "rank_score": 90
-  }
+  },
+  {
+    "id": "template-country-souvenirs-watercolor",
+    "locales": {
+        "en": {
+            "base_prompt": "(Country Souvenir Watercolor Poster Designer) Create a warm, nostalgic travel infographic poster titled 'Top 10 Beautiful Souvenirs from {country_name}'. Layout: 1. Top section: Watercolor illustration of iconic landmarks and cultural symbols from {country_name}, with the country flag and subtitle 'Elegant, Cultural & Easy to Gift'. 2. Main section: 2-column grid of 10 numbered souvenirs, each with a watercolor illustration of the item, its name, and short descriptive bullet points. 3. Bottom section: 'Pro Souvenir Tips' with small watercolor icons and practical advice. Style: Soft watercolor art style, warm muted colors, textured paper background, vintage travel poster aesthetic, clear handwritten-style fonts, vertical format, 4K ultra HD, direct image generation. Subject: {country_name} Top 10 Souvenirs Watercolor Infographic Poster.",
+            "parameters": [
+                {
+                    "name": "country_name",
+                    "label": "Country Name",
+                    "type": "text",
+                    "placeholder": ["Brazil", "Korea", "Mexico", "India", "Italy", "Thailand", "Japan", "France"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-country-souvenirs-watercolor-mexico-prev.jpg"
+},
+  {
+    "id": "template-pet-safe-human-food-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Pet Safe Food Infographic Designer) Create a clean, informative infographic poster titled 'Human Foods {pet_name} Can Safely Eat'. Layout: 1. Large bold title at the top, with a realistic photo of the {pet_name} in the top-right corner. 2. Main section: Grid of realistic food photos (fruits, vegetables, meats, grains) with clear labels, showing safe human foods for the pet. 3. Bottom section: Red-labeled 'Not Safe' section with photos of toxic foods and their names. Background: Clean white marble texture. Style: Bright, high-resolution food photography, minimalist layout, educational pet care guide aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: Safe & Unsafe Human Foods for {pet_name} Infographic.",
+            "parameters": [
+                {
+                    "name": "pet_name",
+                    "label": "Pet Type",
+                    "type": "text",
+                    "placeholder": ["Cats", "Dogs", "Rabbits", "Parrots", "Guinea Pigs", "Ducks"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-pet-safe-human-food-infographic-cat-prev.jpg"
+},
+  {
+    "id": "template-phonics-consonant-blend",
+    "locales": {
+        "en": {
+            "base_prompt": "(Phonics Learning Poster Designer) Create a vibrant, educational phonics poster for the {phonics_blend} consonant blend. Layout: 1. Large, bold ' {phonics_blend} ' text at the top of the poster. 2. Inside a white bordered frame, display 6-8 words starting with '{phonics_blend}', each paired with a colorful cartoon illustration of the word. 3. Each word has the '{phonics_blend}' part in red and the rest of the letters in blue. 4. The background is a cheerful sky-blue with white clouds and green grass at the bottom. Style: Friendly, simple cartoon style, bright kid-friendly colors, clear sans-serif font, educational early learning aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{phonics_blend}' Consonant Blend Phonics Learning Poster.",
+            "parameters": [
+                {
+                    "name": "phonics_blend",
+                    "label": "Phonics Consonant Blend",
+                    "type": "text",
+                    "placeholder": ["gr", "bl", "ch", "sh", "th", "pr", "tr", "cr"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-phonics-consonant-blend-gr-prev.jpg"
+},
+  {
+    "id": "template-media-theme-wallpaper-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Media Themed Wallpaper & Poster Designer) Create a stylized poster/wallpaper for {media_topic} in a cohesive, visually striking art style. Layout: 1. The composition centers on the most iconic characters or scenes from {media_topic}, set in a detailed, atmospheric background. 2. The title '{media_topic}' is prominently displayed in a thematic font at the top or bottom of the image. 3. The style is consistent with the original work's aesthetic, enhanced with vibrant colors, soft lighting, and high detail for a cinematic, immersive feel. 4. High resolution, clean composition, vertical or square format, direct image generation. Subject: {media_topic} stylized wallpaper poster.",
+            "parameters": [
+                {
+                    "name": "media_topic",
+                    "label": "Media Theme",
+                    "type": "text",
+                    "placeholder": ["Ponyo", "Shin-chan", "Friends TV Show", "Howl's Moving Castle", "My Neighbor Totoro", "Studio Ghibli Film"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-media-theme-wallpaper-poster-friends-prev.jpg"
+}
 ]
