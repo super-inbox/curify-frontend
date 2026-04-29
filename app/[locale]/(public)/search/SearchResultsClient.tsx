@@ -6,7 +6,7 @@ import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import { filterSuggestions } from "@/lib/searchIndex";
+import type { SuggestionEntry } from "@/lib/searchIndex";
 
 type InspRecord = {
   id: string;
@@ -20,11 +20,17 @@ type Props = {
   query: string;
   locale: string;
   inspirations: InspRecord[];
+  relatedTopics: SuggestionEntry[];
 };
 
 const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE ?? "https://cdn.curify-ai.com";
 
-export default function SearchResultsClient({ query, locale, inspirations }: Props) {
+export default function SearchResultsClient({
+  query,
+  locale,
+  inspirations,
+  relatedTopics,
+}: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
   const t = useTranslations("topics");
@@ -48,12 +54,6 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
       return true;
     });
   }, [inspirations]);
-
-  // Related topic suggestions (locale-aware)
-  const relatedTopics = useMemo(
-    () => filterSuggestions(query, 6, localize),
-    [query, localize]
-  );
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
