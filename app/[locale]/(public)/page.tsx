@@ -6,6 +6,42 @@ import { inspirationService } from "@/services/inspiration";
 import { mapDTOToUICard } from "@/services/inspirationMapper";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 import { SITE_URL } from "@/lib/constants";
+import {
+  buildNanoRegistry,
+  type RawTemplate,
+  type RawNanoImageRecord,
+  type NanoInspirationCardType,
+} from "@/lib/nano_utils";
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
+import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoInspiration from "@/public/data/nano_inspiration.json";
+
+// Nano cards on the home page are intentionally locale-agnostic for now —
+// always built from the en content + en translations regardless of URL locale.
+// Surrounding page chrome (hero copy, header) still respects URL locale via i18n.
+async function buildHomeNanoCards(): Promise<NanoInspirationCardType[]> {
+  try {
+    const t = await getTranslations({ locale: "en", namespace: "nano" });
+    const reg = buildNanoRegistry(
+      nanoTemplates as unknown as RawTemplate[],
+      nanoInspiration as unknown as RawNanoImageRecord[]
+    );
+    return buildNanoFeedCards(reg, "en", {
+      perTemplateMaxImages: 2,
+      strictLocale: true,
+      translate: (key: string) => {
+        try {
+          return (t as any)(key) ?? "";
+        } catch {
+          return "";
+        }
+      },
+    }) as NanoInspirationCardType[];
+  } catch (err) {
+    console.error("[nano] failed to build nano cards on server:", err);
+    return [];
+  }
+}
 
 export async function generateMetadata({
   params,
@@ -65,6 +101,9 @@ export default async function HomePage() {
     console.error("[HomePage] inspiration API failed, falling back to nano cards only:", err);
   }
 
+  // Build nano cards on the server so the client bundle stays slim.
+  const nanoCards = await buildHomeNanoCards();
+
   // 4. Pass 'cards' prop to the Client Component
   return (
     <>
@@ -88,7 +127,7 @@ export default async function HomePage() {
     })
   }}
 />
-      <HomeClient cards={cards} />
+      <HomeClient cards={cards} nanoCards={nanoCards} />
     </>
   );
 }

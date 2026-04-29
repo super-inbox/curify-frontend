@@ -61,7 +61,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
     : null;
 
   const handleAnswer = (key: keyof Answers, value: string) => {
-    if (step === 0) track({ contentId: "inline", contentType: "mbti_quiz", actionType: "click" });
+    if (step === 0) track({ contentId: "mbti_quiz", contentType: "mbti_quiz", actionType: "click" });
     setAnswers((prev) => ({ ...prev, [key]: value }));
     setTimeout(() => setStep((s) => s + 1), 240);
   };

@@ -11,7 +11,7 @@ export default function MBTIQuizCapsule() {
 
   const handleClick = () => {
     setOpen(true);
-    track({ contentId: "capsule", contentType: "mbti_quiz", actionType: "click" });
+    track({ contentId: "mbti_quiz", contentType: "mbti_quiz", actionType: "click" });
   };
 
   return (
