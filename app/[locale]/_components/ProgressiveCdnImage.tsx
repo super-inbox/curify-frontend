@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CdnImage from "@/app/[locale]/_components/CdnImage";
+import CdnImage, { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 
 export default function ProgressiveCdnImage({
   previewSrc,
@@ -25,7 +25,7 @@ export default function ProgressiveCdnImage({
     if (!fullSrc || fullSrc === previewSrc) return;
 
     const img = new Image();
-    img.src = fullSrc;
+    img.src = toCdnUrl(fullSrc);
     img.onload = () => setSrc(fullSrc);
   }, [previewSrc, fullSrc]);
 

@@ -138,19 +138,13 @@ export function NanoInspirationCard({
     onViewClick?.(card);
   };
 
-  const [displaySrc, setDisplaySrc] = useState(
-    normalized.previewUrls[0] || normalized.imageUrls[0] || ""
-  );
-
-  useEffect(() => {
-    const preview = normalized.previewUrls[currentImageIndex] || normalized.imageUrls[currentImageIndex] || "";
-    const full = normalized.imageUrls[currentImageIndex] || preview;
-    setDisplaySrc(preview);
-    if (!full || full === preview) return;
-    const img = new Image();
-    img.src = full;
-    img.onload = () => setDisplaySrc(full);
-  }, [currentImageIndex, normalized]);
+  // Show only the preview on list pages — no full-res preload.
+  // Full-res preload lives on the example detail page (ProgressiveCdnImage),
+  // where the user is intentionally zoomed in on one image.
+  const displaySrc =
+    normalized.previewUrls[currentImageIndex] ||
+    normalized.imageUrls[currentImageIndex] ||
+    "";
 
   return (
     <div

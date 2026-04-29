@@ -8,7 +8,7 @@ import { CDN_BASE } from "@/lib/constants";
  * - src should be a relative path starting with "/images/..."
  * - If src is absolute ("http(s)://"), we keep it as-is.
  */
-function toCdnUrl(src: string): string {
+export function toCdnUrl(src: string): string {
   // Already absolute
   if (src.startsWith("http://") || src.startsWith("https://")) return src;
 

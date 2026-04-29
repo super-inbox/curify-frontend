@@ -37,12 +37,14 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
     [localize]
   );
 
-  // Deduplicate: one card per template_id
+  // Cap at 3 examples per template_id — keeps results diverse without
+  // crowding the grid with near-duplicate variants of the same template.
   const cards = useMemo(() => {
-    const seen = new Set<string>();
+    const counts = new Map<string, number>();
     return inspirations.filter((r) => {
-      if (seen.has(r.template_id)) return false;
-      seen.add(r.template_id);
+      const n = counts.get(r.template_id) ?? 0;
+      if (n >= 3) return false;
+      counts.set(r.template_id, n + 1);
       return true;
     });
   }, [inspirations]);
@@ -125,7 +127,7 @@ export default function SearchResultsClient({ query, locale, inspirations }: Pro
           {cards.map((card) => (
             <Link
               key={card.id}
-              href={`/${locale}/nano-template/${card.template_id}`}
+              href={`/${locale}/nano-template/${card.template_id}/example/${card.id}`}
               className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm hover:border-blue-300 hover:shadow-md transition-all"
             >
               <div className="aspect-[3/4] overflow-hidden bg-neutral-100">

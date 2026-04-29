@@ -259,7 +259,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
       {buttonVisible && !open && (
         <button
           type="button"
-          onClick={() => { setOpen(true); track({ contentId: "widget", contentType: "mbti_quiz", actionType: "click" }); }}
+          onClick={() => { setOpen(true); track({ contentId: "mbti_quiz", contentType: "mbti_quiz", actionType: "click" }); }}
           className="fixed bottom-6 right-6 z-40 flex cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-purple-200 transition-transform hover:scale-105 hover:shadow-xl active:scale-100"
           aria-label="Take MBTI personality quiz"
         >
