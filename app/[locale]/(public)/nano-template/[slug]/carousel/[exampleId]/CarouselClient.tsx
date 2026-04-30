@@ -179,10 +179,15 @@ export default function CarouselClient({
     });
   };
 
+  const onBackdropClick = () => {
+    trackViewPrompt();
+    close();
+  };
+
   return (
     // Click anywhere outside an interactive element or media → go to prompt page.
     // Internal media + buttons stop propagation so they keep their own behavior.
-    <div className="fixed inset-0 z-50 flex flex-col bg-black" onClick={close}>
+    <div className="fixed inset-0 z-50 flex flex-col bg-black" onClick={onBackdropClick}>
       {/* Header */}
       <div className="flex shrink-0 items-center justify-between px-4 py-3">
         <span className="text-sm text-white/60">
@@ -192,6 +197,7 @@ export default function CarouselClient({
           type="button"
           onClick={(e) => {
             e.stopPropagation();
+            trackViewPrompt();
             close();
           }}
           className="rounded-full p-2 text-white/80 hover:bg-white/10 hover:text-white"
