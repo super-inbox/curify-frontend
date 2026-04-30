@@ -55,6 +55,7 @@ const SESSION_KEY = "_curify_session_id";
 const LOCALE_PREFIX = /^\/[a-z]{2}(?=\/|$)/;
 
 const ROUTE_PATTERNS: [RegExp, string][] = [
+  [/\/nano-template\/[^/]+\/carousel\/[^/]+$/, "/nano-template/[slug]/carousel/[exampleId]"],
   [/\/nano-template\/[^/]+\/example\/[^/]+$/, "/nano-template/[slug]/example/[exampleId]"],
   [/\/nano-template\/[^/]+$/,                 "/nano-template/[slug]"],
   [/\/nano-banana-pro-prompts\/tag\/[^/]+$/,  "/nano-banana-pro-prompts/tag/[slug]"],
