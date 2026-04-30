@@ -9,12 +9,14 @@ export default function ProgressiveCdnImage({
   alt,
   className = "",
   priority = false,
+  noZoom = false,
 }: {
   previewSrc?: string;
   fullSrc: string;
   alt: string;
   className?: string;
   priority?: boolean;
+  noZoom?: boolean;
 }) {
   const [src, setSrc] = useState(previewSrc || fullSrc);
   const [open, setOpen] = useState(false);
@@ -29,6 +31,19 @@ export default function ProgressiveCdnImage({
     img.onload = () => setSrc(fullSrc);
   }, [previewSrc, fullSrc]);
 
+  const inner = (
+    <CdnImage
+      src={src}
+      alt={alt}
+      className={className}
+      priority={priority}
+    />
+  );
+
+  if (noZoom) {
+    return <div className="block h-full w-full">{inner}</div>;
+  }
+
   return (
     <>
       <button
@@ -37,12 +52,7 @@ export default function ProgressiveCdnImage({
         className="block h-full w-full cursor-zoom-in"
         aria-label="Open full image"
       >
-        <CdnImage
-          src={src}
-          alt={alt}
-          className={className}
-          priority={priority}
-        />
+        {inner}
       </button>
 
       {open && (
