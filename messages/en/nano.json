@@ -2503,5 +2503,93 @@
         ]
       }
     }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Souvenir Watercolor Poster",
+    "description": "Generate a warm, nostalgic watercolor travel infographic poster of the top 10 beautiful souvenirs from any country, complete with iconic landmarks and pro gifting tips.",
+    "title": "Nano Banana Prompt: Country Souvenirs Watercolor Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K watercolor travel poster titled 'Top 10 Beautiful Souvenirs from {country_name}'. The top section showcases iconic landmarks, the country flag, and a tagline; a numbered 2-column grid presents 10 souvenirs with watercolor illustrations and short descriptions; a bottom band offers pro souvenir tips. Soft muted colors, textured paper background, and handwritten-style fonts deliver a vintage travel poster aesthetic.",
+        "who": "Suitable for travel bloggers, tourism boards, cultural gift-guide writers, Pinterest creators, expat content channels, souvenir shop owners, and anyone producing country-themed travel content.",
+        "how": [
+          "Enter a country name in {country_name} (e.g., Brazil, Mexico, Japan, Italy).",
+          "The top section auto-generates iconic landmarks, the flag, and the title.",
+          "Ten numbered souvenirs are laid out in a 2-column watercolor grid with descriptions.",
+          "Generate a vertical 4K watercolor poster with vintage travel-poster styling."
+        ],
+        "prompts": [
+          "Generate a 'Top 10 Beautiful Souvenirs from Mexico' watercolor travel poster.",
+          "Create a 'Top 10 Beautiful Souvenirs from Japan' poster with traditional crafts.",
+          "Generate a 'Top 10 Beautiful Souvenirs from Italy' watercolor infographic."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Pet Safe Food Infographic",
+    "description": "Create a clean, photo-realistic infographic showing which human foods are safe and which are toxic for any pet, on a white marble background.",
+    "title": "Nano Banana Prompt: Pet-Safe Human Food Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K educational poster titled 'Human Foods {pet_name} Can Safely Eat'. A photo of the chosen pet sits in the top corner; a grid of realistic food photographs labels safe fruits, vegetables, meats, and grains; a red-banded bottom section warns about toxic foods. The clean white marble background and bright photography give it a trustworthy pet-care guide feel.",
+        "who": "Suitable for pet owners, veterinarians, pet nutrition brands, animal shelters, pet-care bloggers, vet techs, and content creators making pet education posts.",
+        "how": [
+          "Choose a pet type in {pet_name} (e.g., Cats, Dogs, Rabbits, Parrots).",
+          "The pet's photo appears in the top corner with the bold title above the food grid.",
+          "Realistic food photos auto-fill safe foods on top and toxic foods in the red zone.",
+          "Generate a vertical 4K white-marble infographic with photo-realistic food labels."
+        ],
+        "prompts": [
+          "Generate 'Human Foods Cats Can Safely Eat' infographic with marble background.",
+          "Create 'Human Foods Dogs Can Safely Eat' poster with toxic-food warning section.",
+          "Generate 'Human Foods Rabbits Can Safely Eat' photo-realistic infographic."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Phonics Learning Poster",
+    "description": "Generate a kid-friendly phonics poster for any consonant blend, featuring 6-8 example words with cartoon illustrations on a sky-blue background.",
+    "title": "Nano Banana Prompt: Phonics Consonant Blend Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K phonics learning poster for the {phonics_blend} consonant blend. A large bold blend headline sits at the top; inside a white bordered frame, 6-8 example words are paired with cheerful cartoon illustrations, the blend letters in red and the rest in blue. Cheerful sky-blue background with white clouds and green grass keeps it friendly for early readers.",
+        "who": "Suitable for ESL teachers, primary school educators, homeschool parents, early childhood content creators, reading tutors, literacy app designers, and SLPs working on phonics.",
+        "how": [
+          "Enter a consonant blend in {phonics_blend} (e.g., gr, bl, ch, sh, th, tr).",
+          "The blend appears in a large bold headline at the top of the poster.",
+          "Six to eight example words auto-generate with cartoon illustrations and color-coded letters.",
+          "Generate a vertical 4K cartoon-style sky-blue phonics learning poster."
+        ],
+        "prompts": [
+          "Generate a 'gr' consonant blend phonics poster (grape, green, grass, grin, etc.).",
+          "Create an 'sh' consonant blend learning poster with 8 example words.",
+          "Generate a 'tr' consonant blend phonics poster for early readers."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Media-Themed Wallpaper Poster",
+    "description": "Create a stylized, atmospheric wallpaper or poster for any movie, anime, or TV universe, faithful to the original work's art style.",
+    "title": "Nano Banana Prompt: Media-Themed Wallpaper and Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a high-resolution stylized wallpaper or poster for {media_topic}. The composition centers iconic characters or scenes against a detailed atmospheric background, with the title displayed in a thematic font. The art style stays faithful to the original work — Studio Ghibli's painterly look, the sitcom photography of Friends, the cel-shaded charm of Shin-chan — enhanced with vibrant colors and cinematic lighting.",
+        "who": "Suitable for fans, fan-art creators, decoration brands, social media designers, phone-wallpaper accounts, film and anime club organizers, and content creators making themed merchandise mockups.",
+        "how": [
+          "Enter a media universe in {media_topic} (e.g., Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "The most iconic characters or scenes are auto-composed against an atmospheric background.",
+          "The title appears in a thematic font matching the original work's aesthetic.",
+          "Generate a high-resolution vertical or square cinematic wallpaper poster."
+        ],
+        "prompts": [
+          "Generate a Studio Ghibli-style wallpaper poster for My Neighbor Totoro.",
+          "Create a Ponyo themed wallpaper with the original watercolor aesthetic.",
+          "Generate a Friends TV Show stylized poster for fan decoration."
+        ]
+      }
+    }
   }
 }

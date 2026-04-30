@@ -39,6 +39,8 @@ export type RawNanoImageRecord = {
   asset: {
     image_url: string;
     preview_image_url: string;
+    audio_url?: string;
+    video_url?: string;
   };
 
   params: Record<string, any>;
@@ -71,6 +73,8 @@ export type ImageView = {
   params: Record<string, any>;
   image_url: string;
   preview_image_url?: string;
+  audio_url?: string;
+  video_url?: string;
   rank_score?: number;
 };
 

@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import { Bookmark, Download, Sparkles, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Bookmark, Download, Play, Sparkles, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
-import { useClickTracking, useTracking } from "@/services/useTracking";
+import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
@@ -18,6 +18,7 @@ type Item = {
   templateId: string;
   params?: Record<string, string>;
   batch?: boolean;
+  videoUrl?: string;
 };
 
 function getCols() {
@@ -133,6 +134,11 @@ function Lightbox({
 
   const item = items[index];
   const exampleHref = `/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`;
+  const lightboxVideoTracking = useVideoTracking(
+    `${item.templateId}:${item.id}`,
+    "nano_inspiration_example_grid",
+    "cards"
+  );
 
   return (
     <div
@@ -236,6 +242,9 @@ function Lightbox({
         )}
         <Link
           href={exampleHref}
+          onClick={() => {
+            if (item.videoUrl) lightboxVideoTracking.trackVideoClick();
+          }}
           className="rounded-full bg-white/90 px-5 py-2 text-sm font-bold text-neutral-900 shadow backdrop-blur-sm hover:bg-white"
         >
           View prompt →
@@ -257,7 +266,9 @@ function ExampleImageCard({
   onOpenLightbox: () => void;
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
+  const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackAction } = useTracking();
+  const hasVideo = Boolean(item.videoUrl);
   const t = useTranslations("actionButtons");
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
@@ -320,6 +331,7 @@ function ExampleImageCard({
         href={`/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`}
         onClick={(e) => {
           trackClick();
+          if (hasVideo) trackVideoClick();
           if (window.matchMedia("(pointer: coarse)").matches) {
             e.preventDefault();
             onOpenLightbox();
@@ -333,6 +345,14 @@ function ExampleImageCard({
           className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           loading="lazy"
         />
+        {hasVideo && (
+          <span
+            aria-label="Has video"
+            className="pointer-events-none absolute left-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black/55 text-white shadow-sm backdrop-blur-sm"
+          >
+            <Play className="h-3.5 w-3.5 fill-current" />
+          </span>
+        )}
         <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
           <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
             View prompt →

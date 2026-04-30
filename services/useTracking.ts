@@ -27,7 +27,9 @@ export type ActionType =
   | "generate"
   | "remix"
   | "download"
-  | "search";
+  | "search"
+  | "video_click"
+  | "video_play";
 
 export type ViewMode = "list" | "cards";
 
@@ -279,4 +281,22 @@ export function useSaveTracking(
   return useCallback(() => {
     trackAction({ contentId, contentType, viewMode }, "favorite");
   }, [contentId, contentType, viewMode, trackAction]);
+}
+
+export function useVideoTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  const trackVideoClick = useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "video_click");
+  }, [contentId, contentType, viewMode, trackAction]);
+
+  const trackVideoPlay = useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "video_play");
+  }, [contentId, contentType, viewMode, trackAction]);
+
+  return { trackVideoClick, trackVideoPlay };
 }

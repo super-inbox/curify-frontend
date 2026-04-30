@@ -2504,5 +2504,93 @@
         ]
       }
     }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Souvenir-Aquarell-Poster",
+    "description": "Erstelle ein warmes, nostalgisches Aquarell-Reiseinfografik-Poster mit den 10 schoensten Souvenirs eines Landes, inklusive Wahrzeichen und Geschenk-Tipps.",
+    "title": "Nano Banana Prompt: Laender-Souvenir-Aquarell-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales 4K-Aquarell-Reiseposter mit dem Titel 'Top 10 Beautiful Souvenirs from {country_name}'. Der obere Bereich zeigt Wahrzeichen, Flagge und Untertitel; ein nummeriertes 2-Spalten-Raster praesentiert 10 Souvenirs mit Aquarell-Illustrationen und kurzen Beschreibungen; ein unteres Band mit Insider-Tipps rundet das Layout ab. Sanfte gedaempfte Farben und strukturierter Papierhintergrund liefern den Vintage-Reiseposter-Look.",
+        "who": "Geeignet fuer Reiseblogger, Tourismusbueros, Autoren von Geschenkfuehrern, Pinterest-Creator, Auswanderer-Kanaele, Souvenir-Shopbesitzer und alle, die laenderbezogene Reiseinhalte erstellen.",
+        "how": [
+          "Gib in {country_name} einen Laendernamen ein (z. B. Brasilien, Mexiko, Japan, Italien).",
+          "Der obere Bereich generiert automatisch Wahrzeichen, Flagge und Titel.",
+          "Zehn nummerierte Souvenirs erscheinen im 2-Spalten-Aquarell-Raster mit Beschreibungen.",
+          "Generiere ein vertikales 4K-Aquarell-Poster im Vintage-Reiseposter-Stil."
+        ],
+        "prompts": [
+          "Top 10 Souvenirs aus Mexiko als Aquarell-Reiseposter generieren.",
+          "Top 10 Souvenirs aus Japan mit traditionellem Kunsthandwerk erstellen.",
+          "Top 10 Souvenirs aus Italien als Aquarell-Infografik generieren."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Haustier-Lebensmittel-Infografik",
+    "description": "Erstelle eine klare, fotorealistische Infografik darueber, welche menschlichen Lebensmittel fuer ein Haustier sicher und welche giftig sind, auf weissem Marmor-Hintergrund.",
+    "title": "Nano Banana Prompt: Haustier-sichere Lebensmittel-Infografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert ein vertikales 4K-Lehrposter mit dem Titel 'Human Foods {pet_name} Can Safely Eat'. Ein Foto des Tieres sitzt in der oberen Ecke; ein Raster aus realistischen Lebensmittelfotos kennzeichnet sichere Fruechte, Gemuese, Fleisch und Getreide; ein rot eingefasster Bereich unten warnt vor giftigen Lebensmitteln. Der weisse Marmorhintergrund verleiht der Infografik einen vertrauenswuerdigen Pflege-Ratgeber-Look.",
+        "who": "Geeignet fuer Tierhalter, Tieraerzte, Tiernahrungsmarken, Tierheime, Pet-Blogger, Tierarzthelfer und alle, die Aufklaerungsinhalte rund um Haustiere erstellen.",
+        "how": [
+          "Waehle in {pet_name} einen Tiertyp (z. B. Katzen, Hunde, Kaninchen, Papageien).",
+          "Das Tierfoto erscheint in der oberen Ecke ueber dem Lebensmittelraster.",
+          "Realistische Lebensmittelfotos fuellen sichere Lebensmittel oben und giftige unten.",
+          "Generiere eine vertikale 4K-Marmor-Infografik mit fotorealistischen Labels."
+        ],
+        "prompts": [
+          "Infografik 'Sichere Lebensmittel fuer Katzen' auf Marmorhintergrund.",
+          "Infografik 'Sichere Lebensmittel fuer Hunde' inklusive giftiger Lebensmittel.",
+          "Infografik 'Sichere Lebensmittel fuer Kaninchen' im fotorealistischen Stil."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Phonics-Lernposter",
+    "description": "Generiere ein kinderfreundliches Phonics-Poster fuer eine beliebige Konsonantenverbindung mit 6-8 Beispielwoertern und Cartoon-Illustrationen auf himmelblauem Hintergrund.",
+    "title": "Nano Banana Prompt: Konsonantenverbindung-Phonics-Lernposter-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales 4K-Phonics-Lernposter fuer die Konsonantenverbindung {phonics_blend}. Eine grosse fette Ueberschrift sitzt oben; in einem weiss umrandeten Rahmen zeigen 6-8 Beispielwoerter mit froehlichen Cartoon-Illustrationen die Buchstabenverbindung in Rot und den Rest in Blau. Himmelblauer Hintergrund mit Wolken und gruener Wiese unten haelt das Layout kindgerecht.",
+        "who": "Geeignet fuer ESL-Lehrer, Grundschullehrkraefte, Homeschool-Eltern, Early-Learning-Creator, Lese-Tutoren, Designer von Lernapps und Logopaeden, die mit Phonics arbeiten.",
+        "how": [
+          "Gib in {phonics_blend} eine Konsonantenverbindung ein (z. B. gr, bl, ch, sh, th, tr).",
+          "Die Verbindung erscheint als grosse fette Ueberschrift oben am Poster.",
+          "Sechs bis acht Beispielwoerter werden mit Cartoon-Illustrationen automatisch erzeugt.",
+          "Generiere ein vertikales 4K-Cartoon-Phonics-Poster auf himmelblauem Hintergrund."
+        ],
+        "prompts": [
+          "'gr'-Konsonantenverbindung-Phonics-Poster (grape, green, grass, grin).",
+          "'sh'-Konsonantenverbindung-Lernposter mit 8 Beispielwoertern.",
+          "'tr'-Konsonantenverbindung-Phonics-Poster fuer junge Leser."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Medien-Wallpaper-Poster",
+    "description": "Erstelle ein stilisiertes, atmosphaerisches Wallpaper oder Poster fuer ein beliebiges Film-, Anime- oder TV-Universum, treu dem Originalstil.",
+    "title": "Nano Banana Prompt: Medien-Themen-Wallpaper-und-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert ein hochaufloesendes stilisiertes Wallpaper oder Poster fuer {media_topic}. Die Komposition stellt ikonische Charaktere oder Szenen vor einen detailreichen, atmosphaerischen Hintergrund; der Titel erscheint in einer thematischen Schrift. Der Stil bleibt der Aesthetik des Originals treu — von der gemalten Studio-Ghibli-Optik bis zum Sitcom-Look von Friends — verstaerkt durch lebendige Farben und filmische Beleuchtung.",
+        "who": "Geeignet fuer Fans, Fanart-Creator, Dekomarken, Social-Media-Designer, Handy-Wallpaper-Accounts, Film- und Anime-Club-Organisatoren und Creator, die thematische Merchandise-Mockups erstellen.",
+        "how": [
+          "Gib in {media_topic} ein Medien-Universum ein (z. B. Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Ikonische Charaktere oder Szenen werden vor atmosphaerischem Hintergrund komponiert.",
+          "Der Titel erscheint in einer Schriftart, die zum Originalstil passt.",
+          "Generiere ein hochaufloesendes vertikales oder quadratisches Wallpaper-Poster."
+        ],
+        "prompts": [
+          "Studio-Ghibli-Stil Wallpaper-Poster fuer Mein Nachbar Totoro.",
+          "Ponyo-Wallpaper im originalen Aquarellstil.",
+          "Stilisiertes Friends-Poster fuer Fan-Dekoration."
+        ]
+      }
+    }
   }
 }

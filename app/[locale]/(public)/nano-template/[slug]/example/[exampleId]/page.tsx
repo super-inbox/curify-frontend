@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleRightColumn from "./ExampleRightColumn";
+import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
@@ -207,13 +208,23 @@ export default async function NanoExampleDetailPage({
           { label: title },
         ]}
         image={
-          <ProgressiveCdnImage
-            previewSrc={example.asset.preview_image_url}
-            fullSrc={example.asset.image_url}
-            alt={title}
-            className="h-full w-full object-contain"
-            priority
-          />
+          example.asset.video_url ? (
+            <ExampleVideoPlayer
+              templateId={templateId}
+              exampleId={example.id}
+              videoUrl={example.asset.video_url}
+              posterUrl={example.asset.preview_image_url ?? example.asset.image_url}
+              title={title}
+            />
+          ) : (
+            <ProgressiveCdnImage
+              previewSrc={example.asset.preview_image_url}
+              fullSrc={example.asset.image_url}
+              alt={title}
+              className="h-full w-full object-contain"
+              priority
+            />
+          )
         }
         rightColumnContent={
           <ExampleRightColumn
