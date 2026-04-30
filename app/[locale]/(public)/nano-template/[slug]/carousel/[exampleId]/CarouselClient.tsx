@@ -162,6 +162,22 @@ export default function CarouselClient({
 
   const exampleHref = `/${locale}/nano-template/${slug}/example/${encodeURIComponent(slide.id)}`;
   const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
+  const trackBrowse = (suffix: "prev" | "next" | "dot") => {
+    track({
+      contentId: `${slide.templateId}:${slide.id}:${suffix}`,
+      contentType: "prev_next",
+      actionType: "click",
+      viewMode: "cards",
+    });
+  };
+  const trackViewPrompt = () => {
+    track({
+      contentId: `${slide.templateId}:${slide.id}`,
+      contentType: "nano_inspiration_example_grid",
+      actionType: "click",
+      viewMode: "cards",
+    });
+  };
 
   return (
     // Click anywhere outside an interactive element or media → go to prompt page.
@@ -252,6 +268,7 @@ export default function CarouselClient({
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
+                trackBrowse("prev");
                 goTo(index - 1);
               }}
               className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 sm:flex"
@@ -263,6 +280,7 @@ export default function CarouselClient({
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
+                trackBrowse("next");
                 goTo(index + 1);
               }}
               className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 sm:flex"
@@ -284,6 +302,7 @@ export default function CarouselClient({
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (i !== index) trackBrowse("dot");
                   goTo(i);
                 }}
                 className={`h-1.5 rounded-full transition-all ${
@@ -296,7 +315,10 @@ export default function CarouselClient({
         )}
         <Link
           href={exampleHref}
-          onClick={stopPropagation}
+          onClick={(e) => {
+            e.stopPropagation();
+            trackViewPrompt();
+          }}
           className="rounded-full bg-white/90 px-5 py-2 text-sm font-bold text-neutral-900 shadow backdrop-blur-sm hover:bg-white"
         >
           View prompt →
