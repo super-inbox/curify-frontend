@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { cdn } from "@/lib/cdn";
 import { useVideoTracking } from "@/services/useTracking";
 
 type Props = {
@@ -21,14 +22,14 @@ export default function ExampleVideoPlayer({
   const playFired = useRef(false);
   const { trackVideoPlay } = useVideoTracking(
     `${templateId}:${exampleId}`,
-    "nano_inspiration_example_page",
+    "nano_inspiration_example_grid",
     "cards"
   );
 
   return (
     <video
-      src={videoUrl}
-      poster={posterUrl}
+      src={cdn(videoUrl)}
+      poster={posterUrl ? cdn(posterUrl) : undefined}
       controls
       preload="metadata"
       playsInline
