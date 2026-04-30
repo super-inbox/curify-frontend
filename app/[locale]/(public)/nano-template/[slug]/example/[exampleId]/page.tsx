@@ -1,6 +1,7 @@
 // app/[locale]/nano-template/[slug]/example/[exampleId]/page.tsx
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
@@ -217,13 +218,20 @@ export default async function NanoExampleDetailPage({
               title={title}
             />
           ) : (
-            <ProgressiveCdnImage
-              previewSrc={example.asset.preview_image_url}
-              fullSrc={example.asset.image_url}
-              alt={title}
-              className="h-full w-full object-contain"
-              priority
-            />
+            <Link
+              href={`/${rawLocale}/nano-template/${slug}/carousel/${rawExampleId}?media=image`}
+              className="block h-full w-full cursor-zoom-in"
+              aria-label="Open image in carousel"
+            >
+              <ProgressiveCdnImage
+                previewSrc={example.asset.preview_image_url}
+                fullSrc={example.asset.image_url}
+                alt={title}
+                className="h-full w-full object-contain"
+                priority
+                noZoom
+              />
+            </Link>
           )
         }
         rightColumnContent={
