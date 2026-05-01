@@ -2592,5 +2592,93 @@
         ]
       }
     }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "AI Kıyafet Deneme Afişi",
+    "description": "Referans karakteri, tam kıyafetin düz yerleştirilmiş halini ve yeni kıyafeti giyen aynı karakteri gerçekçi uyum ve aydınlatma ile gösteren temiz bir üç panelli moda deneme afişi oluşturun.",
+    "title": "Nano Banana Prompt: AI Kıyafet Deneme Afişi Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, temiz bir stüdyo arka planında üç panelli bir moda deneme afişi oluşturmak için Nano Banana'yı kullanır. Sol panel, 'Karakter' olarak etiketlenmiş orijinal referans karakter portresini gösterir; orta panel, 'Kıyafet' olarak etiketlenmiş tam kıyafeti (kıyafetler, ayakkabılar, aksesuarlar) düz yerleştirilmiş olarak sergiler; sağ panel, 'Sonuç' olarak etiketlenmiş yeni kıyafeti giyen aynı karakteri tutarlı aydınlatma, poz ve gerçekçi uyum ile gösterir — keskin detaylar ve ticari estetik ile yüksek moda fotoğrafçılığı tarzı.",
+        "who": "Moda markaları, e-ticaret mağazaları, kişisel stilistler, lookbook tasarımcıları, moda içerik üreticileri, sanal stil uygulamaları ve bir kıyafeti belirli bir karakter üzerinde görselleştirmek isteyen herkes için uygundur.",
+        "how": [
+          "Sol panel için referans karakter portresini sağlayın veya tanımlayın.",
+          "Orta panelde düz yerleştirilmiş olarak görmek istediğiniz tam kıyafeti (kıyafetler, ayakkabılar, aksesuarlar) belirtin.",
+          "Şablon, sağ paneli aynı karakterin kıyafeti giydiği şekilde, poz ve aydınlatmayı eşleştirerek oluşturur.",
+          "Yatay 4K üç panelli bir moda deneme afişi oluşturun."
+        ],
+        "prompts": [
+          "Gündelik sokak giyimi kıyafeti (büyük beden kapüşonlu, bol pantolon, spor ayakkabılar) için bir deneme afişi oluşturun.",
+          "İş gündelik kıyafeti (blazer, pantolon, loafer) için bir deneme afişi oluşturun.",
+          "Aynı karakter üzerinde bir yaz kıyafeti (keten gömlek, şort, sandalet) deneyin."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Çin Karakteri Öğrenme Afişi",
+    "description": "Herhangi bir Çin karakteri için pinyin ve 5-6 dalga bileşik kelime dalı ile sevimli çizgi film illüstrasyonları içeren Günlük Karakter (每日一字) öğrenme afişi oluşturun.",
+    "title": "Nano Banana Prompt: Çin Karakteri Öğrenme Afişi Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, tek bir Çin karakteri için dikey bir eğitim 'Günlük Karakter' (每日一字) afişi oluşturur. Ortada büyük karakter ve pinyin gösterilir; merkez etrafında 5-6 dalga, yaygın bileşik kelimeleri sevimli çizgi film illüstrasyonları ve pinyin etiketleri ile eşleştirir — temiz beyaz arka plan, yumuşak sulu boya veya çizgi film sanat tarzı, çocuk dostu eğitim estetiği.",
+        "who": "Mandarin öğretmenleri, Çince dil öğrenenler, ESL/CSL eğitmenleri, Çinceyi evde öğreten ebeveynler, dil öğrenme uygulaması tasarımcıları ve sınıflar veya sosyal medya için Çince öğrenme materyalleri üreten içerik oluşturucular için uygundur.",
+        "how": [
+          "Hedef bir Çin karakteri girin (örneğin, 山, 火, 木, 水, 日, 月).",
+          "O karakter için pinyin sağlayın (örneğin, shān, huǒ, mù).",
+          "Afiş, başlık 每日一字, merkez karakter ve pinyin ile 5-6 dalga bileşik kelime dalını otomatik olarak yerleştirir.",
+          "Dikey 4K çocuk dostu bir Çin karakteri öğrenme afişi oluşturun."
+        ],
+        "prompts": [
+          "山 (shān) için dağ temalı bileşik kelimelerle bir Günlük Karakter afişi oluşturun.",
+          "火 (huǒ) için ateşle ilgili bileşik kelimeler ve illüstrasyonlar içeren bir öğrenme afişi oluşturun.",
+          "水 (shuǐ) için su temalı dallarla bir Günlük Karakter afişi oluşturun."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Çin Fiil Zıtları Bilgilendirme Grafiği",
+    "description": "Pinyin, İngilizce açıklamalar ve yatay sıralarda zıt çizgi film illüstrasyonları ile zıt Çin fiil çiftlerinin eğitim bilgilendirme grafiği oluşturun.",
+    "title": "Nano Banana Prompt: Çin Fiil Zıtları Bilgilendirme Grafiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, zıt Çin fiillerinin yatay bir eğitim dil öğrenme bilgilendirme grafiği afişini oluşturur. Her satır, yan yana iki zıt fiili eşleştirir: solda ve sağda fiil, pinyin ve İngilizce açıklama ile gösterilir, merkezde zıt eylemlerin çizgi film illüstrasyonu ve bir renkli ok veya altıgen şekil çifti bir araya getirir — temiz açık arka plan, dostça çizgi film illüstrasyonları, yumuşak pastel renkler.",
+        "who": "Mandarin öğretmenleri, Çince dil öğrenenler, ESL/CSL eğitmenleri, kelime bilgisi materyalleri üreten içerik oluşturucular, iki dilli sınıflar ve dil öğrenmeye odaklanan sosyal medya hesapları için uygundur.",
+        "how": [
+          "Grafik konusunu girin (örneğin, 'Çin Fiil Zıtları', 'Temel Çin Zıt Fiilleri').",
+          "Bilgilendirme grafiği, zıt fiil çiftlerinin yatay sıralarını otomatik olarak yerleştirir.",
+          "Her satır, soldaki ve sağdaki fiilleri pinyin ve İngilizce açıklamalarla birlikte merkezde zıt bir illüstrasyon ile eşleştirir.",
+          "Yatay 4K eğitim fiil zıtları afişi oluşturun."
+        ],
+        "prompts": [
+          "8 yaygın fiil çifti ile 'Çin Fiil Zıtları' bilgilendirme grafiği oluşturun.",
+          "Başlangıç seviyesindeki öğrenciler için 'Temel Çin Zıt Fiilleri' öğrenme grafiği oluşturun.",
+          "'Günlük Çin Eylem Kelimeleri' zıtları bilgilendirme grafiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "MBTI İlişki Bilgilendirme Grafiği",
+    "description": "Herhangi iki MBTI türü için özellikler, alıntılar ve uyumluluk özeti ile yan yana canlı bir MBTI çift bilgilendirme grafiği oluşturun.",
+    "title": "Nano Banana Prompt: MBTI İlişki Bilgilendirme Grafiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir ilişkide iki MBTI türünü karşılaştıran canlı yatay bir bilgilendirme grafiği afişi oluşturur. İki düşük poligon çizgi film karakteri, imza renklerinde ortada durur; sol ve sağ paneller her türün özelliklerini ve alıntılarını eşleşen simgelerle gösterir; alt bölüm, madde işaretleri ve emojilerle bir uyumluluk özeti sunar — temiz beyaz arka plan, renkli düşük poligon geometrik sanat tarzı, dostça eğitim tonu.",
+        "who": "MBTI içerik oluşturucuları, kişilik meraklıları, flört uygulaması pazarlama ekipleri, ilişki koçları, kişilik odaklı sosyal medya hesapları ve paylaşılabilir MBTI çift içerikleri üreten herkes için uygundur.",
+        "how": [
+          "İlk MBTI türünü girin (örneğin, INTJ, ENFP, ISFJ).",
+          "Karşılaştırmak için ikinci MBTI türünü girin.",
+          "Afiş, iki çizgi film karakterini, özellikler ve alıntılar için yan panelleri ve alt uyumluluk özetini otomatik olarak yerleştirir.",
+          "Yatay 4K renkli düşük poligon ilişki bilgilendirme grafiği oluşturun."
+        ],
+        "prompts": [
+          "INTJ ve ENFP ilişkisi için özellikler ve uyumluluk özeti ile bir bilgilendirme grafiği oluşturun.",
+          "ISFJ ve ESTP MBTI çift uyumluluk afişi oluşturun.",
+          "INFP ve ENTJ ilişkisi için alıntılar ve uyumluluk analizi ile bir bilgilendirme grafiği oluşturun."
+        ]
+      }
+    }
   }
 }

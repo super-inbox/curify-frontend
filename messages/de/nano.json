@@ -2592,5 +2592,93 @@
         ]
       }
     }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "AI Outfit Try-On Poster",
+    "description": "Erstellen Sie ein sauberes dreiteiliges Mode-Anprobe-Poster, das einen Referenzcharakter, eine flache Ansicht des gesamten Outfits und denselben Charakter zeigt, der das neue Outfit mit realistischer Passform und Beleuchtung trägt.",
+    "title": "Nano Banana Prompt: AI Outfit Try-On Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana, um ein dreiteiliges Mode-Anprobe-Poster auf einem sauberen Studiohintergrund zu erstellen. Das linke Panel zeigt das ursprüngliche Referenzcharakter-Porträt mit der Bezeichnung 'Charakter'; das mittlere Panel zeigt das gesamte Outfit (Kleidung, Schuhe, Accessoires) als flache Ansicht mit der Bezeichnung 'Outfit'; das rechte Panel zeigt denselben Charakter, der das neue Outfit mit konsistenter Beleuchtung, Pose und realistischer Passform trägt, mit der Bezeichnung 'Ergebnis' – Hochmodische Fotografie mit scharfen Details und kommerziälem Ästhetik.",
+        "who": "Geeignet für Modemarken, E-Commerce-Shops, persönliche Stylisten, Lookbook-Designer, Mode-Content-Ersteller, virtuelle Styling-Apps und alle, die ein Outfit an einem bestimmten Charakter visualisieren möchten, bevor sie produzieren oder kaufen.",
+        "how": [
+          "Geben Sie das Referenzcharakter-Porträt für das linke Panel an oder beschreiben Sie es.",
+          "Geben Sie das gesamte Outfit (Kleidung, Schuhe, Accessoires) an, das Sie im mittleren Panel als flache Ansicht zeigen möchten.",
+          "Die Vorlage rendert das rechte Panel mit demselben Charakter, der das Outfit trägt, mit passender Pose und Beleuchtung.",
+          "Erstellen Sie ein horizontales 4K dreiteiliges Mode-Anprobe-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Anprobe-Poster für ein lässiges Streetwear-Outfit (übergroßer Hoodie, baggy Jeans, Sneakers).",
+          "Erstellen Sie ein Anprobe-Poster für ein Business-Casual-Outfit (Blazer, Stoffhose, Loafers).",
+          "Probieren Sie ein Sommeroutfit (Leinenhemd, Shorts, Sandalen) am selben Charakter aus."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Chinesisches Zeichen Lernposter",
+    "description": "Erstellen Sie ein Daily Character (每日一字) Lernposter für jedes chinesische Zeichen mit Pinyin und 5-6 radialen Wortverzweigungen mit niedlichen Cartoon-Illustrationen.",
+    "title": "Nano Banana Prompt: Chinese Character Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Bildungs-Poster 'Daily Character' (每日一字) für ein einzelnes chinesisches Zeichen. In der Mitte wird das große Zeichen mit seinem Pinyin angezeigt; 5-6 radiale Verzweigungen um die Mitte kombinieren gängige zusammengesetzte Wörter mit niedlichen Cartoon-Illustrationen und Pinyin-Labels – sauberer weißer Hintergrund, sanfter Aquarell- oder Cartoon-Kunststil, kinderfreundliche Bildungsästhetik.",
+        "who": "Geeignet für Mandarin-Lehrer, Chinesisch-Lernende, ESL/CSL-Pädagogen, Eltern, die Chinesisch unterrichten, Designer von Sprachlern-Apps und Content-Ersteller, die Druckmaterialien für das Chinesisch-Lernen für Klassenzimmer oder soziale Medien produzieren.",
+        "how": [
+          "Geben Sie ein Ziel-Chinesisches Zeichen ein (z.B. 山, 火, 木, 水, 日, 月).",
+          "Geben Sie das Pinyin für dieses Zeichen an (z.B. shān, huǒ, mù).",
+          "Das Poster legt automatisch den Titel 每日一字, das zentrale Zeichen mit Pinyin und 5-6 radiale zusammengesetzte Wortverzweigungen an.",
+          "Erstellen Sie ein vertikales 4K kinderfreundliches Lernposter für chinesische Zeichen."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Daily Character-Poster für 山 (shān) mit bergbezogenen zusammengesetzten Wörtern.",
+          "Erstellen Sie ein 火 (huǒ) Lernposter mit feuerbezogenen zusammengesetzten Wörtern und Illustrationen.",
+          "Erstellen Sie ein 水 (shuǐ) Daily Character-Poster mit wasserbezogenen Verzweigungen."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Chinesische Verbgegensätze Infografik",
+    "description": "Erstellen Sie ein Bildungsinfografik-Poster mit gegensätzlichen chinesischen Verb-Paaren mit Pinyin, englischen Erklärungen und kontrastierenden Cartoon-Illustrationen in horizontalen Reihen.",
+    "title": "Nano Banana Prompt: Chinese Verb Opposites Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein horizontales Bildungs-Infografik-Poster mit gegensätzlichen chinesischen Verben. Jede Reihe kombiniert zwei gegensätzliche Verben nebeneinander: links und rechts wird das Verb mit Pinyin und englischer Erklärung angezeigt, in der Mitte wird eine Cartoon-Illustration der gegensätzlichen Aktionen gezeigt, und ein farbiger Pfeil oder ein Sechseck verbindet das Paar – sauberer heller Hintergrund, freundliche Cartoon-Illustrationen, sanfte Pastellfarben.",
+        "who": "Geeignet für Mandarin-Lehrer, Chinesisch-Lernende, ESL/CSL-Pädagogen, Content-Ersteller, die Vokabel-Druckmaterialien erstellen, zweisprachige Klassenzimmer und Social-Media-Konten, die sich auf das Sprachenlernen konzentrieren.",
+        "how": [
+          "Geben Sie das Thema der Grafik ein (z.B. 'Chinesische Verbgegensätze', 'Grundlegende chinesische Antonym-Verben').",
+          "Die Infografik legt automatisch eine Reihe horizontaler Reihen von gegensätzlichen Verb-Paaren an.",
+          "Jede Reihe kombiniert linke und rechte Verben mit Pinyin und englischen Erklärungen sowie einer mittleren kontrastierenden Illustration.",
+          "Erstellen Sie ein horizontales 4K Bildungs-Poster mit Verbgegensätzen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik 'Chinesische Verbgegensätze' mit 8 gängigen Verb-Paaren.",
+          "Erstellen Sie ein Lernplakat 'Grundlegende chinesische Antonym-Verben' für Anfänger.",
+          "Erstellen Sie eine Infografik zu 'Alltäglichen chinesischen Aktionswörtern' mit Gegensätzen."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "MBTI Beziehung Infografik",
+    "description": "Erstellen Sie eine lebendige nebeneinander stehende MBTI-Paar-Infografik mit Eigenschaften, Zitaten und einer Kompatibilitätszusammenfassung für zwei MBTI-Typen.",
+    "title": "Nano Banana Prompt: MBTI Relationship Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebendiges horizontales Infografik-Poster, das zwei MBTI-Typen in einer Beziehung vergleicht. Zwei Low-Poly-Cartoon-Charaktere in ihren charakteristischen Farben stehen in der Mitte; linke und rechte Panels zeigen die Eigenschaften und Zitate jedes Typs mit passenden Symbolen; ein unterer Abschnitt gibt eine Kompatibilitätszusammenfassung mit Aufzählungspunkten und Emojis – sauberer weißer Hintergrund, bunte Low-Poly geometrische Kunst, freundlicher Bildungsstil.",
+        "who": "Geeignet für MBTI-Content-Ersteller, Persönlichkeitsenthusiasten, Marketingteams von Dating-Apps, Beziehungscoaches, Social-Media-Konten, die sich auf Persönlichkeiten konzentrieren, und alle, die teilbare MBTI-Paar-Inhalte erstellen.",
+        "how": [
+          "Geben Sie den ersten MBTI-Typ ein (z.B. INTJ, ENFP, ISFJ).",
+          "Geben Sie den zweiten MBTI-Typ ein, mit dem verglichen werden soll.",
+          "Das Poster legt automatisch zwei Cartoon-Charaktere, Seitenpanels mit Eigenschaften und Zitaten sowie eine untere Kompatibilitätszusammenfassung an.",
+          "Erstellen Sie eine horizontale 4K bunte Low-Poly-Beziehungsinfografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik über die Beziehung zwischen INTJ und ENFP mit Eigenschaften und Kompatibilitätszusammenfassung.",
+          "Erstellen Sie ein Plakat zur MBTI-Paar-Kompatibilität zwischen ISFJ und ESTP.",
+          "Erstellen Sie eine Infografik über die Beziehung zwischen INFP und ENTJ mit Zitaten und Kompatibilitätsanalyse."
+        ]
+      }
+    }
   }
 }
