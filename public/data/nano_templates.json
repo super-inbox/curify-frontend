@@ -5244,8 +5244,15 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-chinese-character-learning-poster-shan-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-chinese-character-learning-poster-shan-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
   {
     "id": "template-mbti-relationship-infographic",
     "locales": {
@@ -5267,8 +5274,16 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-mbti-relationship-infographic-intj-enfp-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-mbti-relationship-infographic-intj-enfp-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
   {
     "id": "template-chinese-verb-opposite-infographic",
     "locales": {
@@ -5284,8 +5299,15 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-chinese-adjective-opposite-infographic-easy-words-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-chinese-adjective-opposite-infographic-easy-words-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
   {
     "id": "template-ai-outfit-try-on-poster",
     "locales": {
@@ -5294,6 +5316,13 @@
             "parameters": []
         }
     },
-    "og_image": "/images/nano_insp_preview/template-education-card-prev.jpg"
-}
+    "og_image": "/images/nano_insp_preview/template-education-card-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fashion",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  }
 ]
