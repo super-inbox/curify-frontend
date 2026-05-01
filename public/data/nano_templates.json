@@ -5222,5 +5222,78 @@
     ],
     "base_rank_score": 90,
     "rank_score": 90
-  }
+  },
+  {
+    "id": "template-chinese-character-learning-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Chinese Character Learning Poster Designer) Create an educational 'Daily Character' learning poster for the Chinese character '{target_char}'. Layout: 1. Title '每日一字' at the top in bold Chinese characters. 2. Center: A large version of the character '{target_char}' with its pinyin '{pinyin}'. 3. Around the center, 5-6 radial branches each showing a common compound word with the character, paired with a cute cartoon illustration and pinyin. 4. Clean white background, soft watercolor/cartoon art style, kid-friendly educational aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{target_char}' Chinese Character Learning Poster.",
+            "parameters": [
+                {
+                    "name": "target_char",
+                    "label": "Chinese Character",
+                    "type": "text",
+                    "placeholder": ["山", "火", "木", "天", "水", "日", "月", "人"]
+                },
+                {
+                    "name": "pinyin",
+                    "label": "Character Pinyin",
+                    "type": "text",
+                    "placeholder": ["shān", "huǒ", "mù", "tiān", "shuǐ", "rì", "yuè", "rén"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-character-learning-poster-shan-prev.jpg"
+},
+  {
+    "id": "template-mbti-relationship-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(MBTI Relationship Infographic Designer) Create a vibrant infographic poster titled '{mbti_type_a} and {mbti_type_b} relationship'. Layout: 1. Center: Two low-poly cartoon characters representing each MBTI type, each in their signature color. 2. Left side: Traits and quotes for {mbti_type_a}, with matching icons and text style. 3. Right side: Traits and quotes for {mbti_type_b}, with matching icons and text style. 4. Bottom section: Compatibility summary with bullet points and emojis. Style: Clean white background, colorful low-poly geometric art style, friendly educational tone, consistent character design, high readability, horizontal format, 4K ultra HD, direct image generation. Subject: {mbti_type_a} & {mbti_type_b} Relationship Compatibility Infographic.",
+            "parameters": [
+                {
+                    "name": "mbti_type_a",
+                    "label": "First MBTI Type",
+                    "type": "text",
+                    "placeholder": ["ENTP", "ENTJ", "ISTP", "INFP", "INTJ", "ISFJ", "INFJ"]
+                },
+                {
+                    "name": "mbti_type_b",
+                    "label": "Second MBTI Type",
+                    "type": "text",
+                    "placeholder": ["ISFJ", "INFP", "ESFJ", "ESTJ", "ENFP", "ENTP", "ESTP"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-relationship-infographic-intj-enfp-prev.jpg"
+},
+  {
+    "id": "template-chinese-verb-opposite-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Chinese Verb Opposite Learning Chart Designer) Create an educational infographic poster titled '{chart_title}'. Layout: 1. Clean, light-colored background with the main title at the top. 2. A series of horizontal rows, each showing a pair of opposite Chinese verbs: left word with pinyin/English, center cartoon illustration pair, and right word with pinyin/English. 3. Each row has a colored arrow/hexagon shape background, clearly showing the contrast between the two actions. Style: Simple, friendly cartoon illustrations, clear sans-serif font, soft pastel colors, educational language-learning aesthetic, horizontal format, 4K ultra HD, direct image generation. Subject: {chart_title} Infographic.",
+            "parameters": [
+                {
+                    "name": "chart_title",
+                    "label": "Chart Topic",
+                    "type": "text",
+                    "placeholder": ["Chinese Verb Opposite Pairs", "Basic Chinese Antonym Verbs", "Everyday Chinese Action Words", "Common Chinese Verb Opposites"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-adjective-opposite-infographic-easy-words-prev.jpg"
+},
+  {
+    "id": "template-ai-outfit-try-on-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(AI Outfit Try-On Poster Designer) Create a three-panel fashion try-on poster. Layout: 1. Left panel: The original reference character portrait labeled 'Character'. 2. Middle panel: Flat-lay display of the full outfit (clothes, shoes, accessories) labeled 'Outfit'. 3. Right panel: The same character wearing the new outfit, with perfect lighting, pose consistency, and realistic fit, labeled 'Result'. Style: Clean studio background, high-fashion photography style, consistent lighting across all panels, sharp details, realistic textures, commercial fashion aesthetic, horizontal format, 4K ultra HD, direct image generation. Subject: AI Outfit Try-On Comparison Poster.",
+            "parameters": []
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-education-card-prev.jpg"
+}
 ]
