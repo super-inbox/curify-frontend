@@ -2592,5 +2592,93 @@
         ]
       }
     }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "Affiche d'essayage de vêtements AI",
+    "description": "Générez une affiche d'essayage de mode propre à trois panneaux montrant un personnage de référence, une vue à plat de l'ensemble de la tenue, et le même personnage portant la nouvelle tenue avec un ajustement et un éclairage réalistes.",
+    "title": "Nano Banana Prompt : Générateur d'affiche d'essayage de vêtements AI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise Nano Banana pour générer une affiche d'essayage de mode à trois panneaux sur un fond de studio propre. Le panneau de gauche montre le portrait du personnage de référence étiqueté 'Personnage' ; le panneau du milieu affiche l'ensemble de la tenue (vêtements, chaussures, accessoires) en vue à plat étiqueté 'Tenue' ; le panneau de droite rend le même personnage portant la nouvelle tenue avec un éclairage, une pose et un ajustement cohérents, étiqueté 'Résultat' — style photographie de mode haut de gamme avec des détails nets et une esthétique commerciale.",
+        "who": "Convient aux marques de mode, aux boutiques en ligne, aux stylistes personnels, aux designers de lookbooks, aux créateurs de contenu de mode, aux applications de stylisme virtuel, et à quiconque souhaitant visualiser une tenue sur un personnage spécifique avant de produire ou d'acheter.",
+        "how": [
+          "Fournissez ou décrivez le portrait du personnage de référence pour le panneau de gauche.",
+          "Spécifiez l'ensemble de la tenue (vêtements, chaussures, accessoires) que vous souhaitez afficher en vue à plat dans le panneau du milieu.",
+          "Le modèle rend le panneau de droite avec le même personnage portant la tenue, en faisant correspondre la pose et l'éclairage.",
+          "Générez une affiche d'essayage de mode horizontale en 4K à trois panneaux."
+        ],
+        "prompts": [
+          "Générez une affiche d'essayage d'une tenue streetwear décontractée (sweat à capuche oversize, jeans baggy, baskets).",
+          "Créez une affiche d'essayage pour une tenue business casual (blazer, pantalon, mocassins).",
+          "Essayez une tenue d'été (chemise en lin, shorts, sandales) sur le même personnage."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Affiche d'apprentissage des caractères chinois",
+    "description": "Générez une affiche d'apprentissage de caractère quotidien (每日一字) pour n'importe quel caractère chinois avec pinyin et 5-6 branches de mots composés radiaux avec des illustrations de dessins animés mignonnes.",
+    "title": "Nano Banana Prompt : Générateur d'affiche d'apprentissage des caractères chinois | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative verticale 'Caractère quotidien' (每日一字) pour un seul caractère chinois. Le centre montre le grand caractère avec son pinyin ; 5-6 branches radiales autour du centre associent des mots composés courants avec des illustrations de dessins animés mignonnes et des étiquettes pinyin — fond blanc propre, style artistique aquarelle douce ou dessins animés, esthétique éducative adaptée aux enfants.",
+        "who": "Convient aux enseignants de mandarin, aux apprenants de la langue chinoise, aux éducateurs ESL/CSL, aux parents qui enseignent le chinois à domicile, aux concepteurs d'applications d'apprentissage des langues, et aux créateurs de contenu produisant des imprimables d'apprentissage du chinois pour les salles de classe ou les réseaux sociaux.",
+        "how": [
+          "Entrez un caractère chinois cible (par exemple, 山, 火, 木, 水, 日, 月).",
+          "Fournissez le pinyin pour ce caractère (par exemple, shān, huǒ, mù).",
+          "L'affiche dispose automatiquement le titre 每日一字, le caractère central avec pinyin, et 5-6 branches de mots composés radiaux.",
+          "Générez une affiche d'apprentissage des caractères chinois verticale en 4K adaptée aux enfants."
+        ],
+        "prompts": [
+          "Générez une affiche de caractère quotidien pour 山 (shān) avec des mots composés sur le thème de la montagne.",
+          "Créez une affiche d'apprentissage pour 火 (huǒ) avec des mots composés et des illustrations liés au feu.",
+          "Générez une affiche de caractère quotidien 水 (shuǐ) avec des branches sur le thème de l'eau."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Infographie des verbes opposés chinois",
+    "description": "Générez une affiche infographique éducative de paires de verbes chinois opposés avec pinyin, traductions en anglais, et illustrations de dessins animés contrastées en rangées horizontales.",
+    "title": "Nano Banana Prompt : Générateur d'infographie des verbes opposés chinois | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche infographique éducative horizontale de verbes chinois opposés. Chaque rangée associe deux verbes opposés côte à côte : à gauche et à droite, le verbe avec pinyin et traduction anglaise, au centre une illustration de dessins animés des actions contrastées, et une flèche colorée ou une forme hexagonale relie la paire — fond clair, illustrations de dessins animés amicales, couleurs pastel douces.",
+        "who": "Convient aux enseignants de mandarin, aux apprenants de la langue chinoise, aux éducateurs ESL/CSL, aux créateurs de contenu réalisant des imprimables de vocabulaire, aux salles de classe bilingues, et aux comptes de réseaux sociaux axés sur l'apprentissage des langues.",
+        "how": [
+          "Entrez le sujet du tableau (par exemple, 'Paires de verbes opposés chinois', 'Verbes antonymes chinois de base').",
+          "L'infographie dispose automatiquement une série de rangées horizontales de paires de verbes opposés.",
+          "Chaque rangée associe des verbes à gauche et à droite avec pinyin et traductions anglaises plus une illustration contrastante au centre.",
+          "Générez une affiche éducative des verbes opposés horizontale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie 'Paires de verbes opposés chinois' avec 8 paires de verbes courants.",
+          "Créez un tableau d'apprentissage 'Verbes antonymes chinois de base' pour les débutants.",
+          "Générez une infographie des opposés 'Mots d'action chinois quotidiens'."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "Infographie des relations MBTI",
+    "description": "Générez une infographie vibrante côte à côte des paires MBTI avec traits, citations, et un résumé de compatibilité pour n'importe quel deux types MBTI.",
+    "title": "Nano Banana Prompt : Générateur d'infographie des relations MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle crée une affiche infographique horizontale vibrante comparant deux types MBTI dans une relation. Deux personnages de dessins animés en low-poly dans leurs couleurs emblématiques se tiennent au centre ; les panneaux de gauche et de droite montrent les traits et les citations de chaque type avec des icônes correspondantes ; une section inférieure donne un résumé de compatibilité avec des points de balle et des emojis — fond blanc propre, style artistique géométrique coloré en low-poly, ton éducatif amical.",
+        "who": "Convient aux créateurs de contenu MBTI, aux passionnés de personnalité, aux équipes de marketing d'applications de rencontres, aux coachs en relations, aux comptes de réseaux sociaux axés sur la personnalité, et à quiconque créant du contenu partageable sur les paires MBTI.",
+        "how": [
+          "Entrez le premier type MBTI (par exemple, INTJ, ENFP, ISFJ).",
+          "Entrez le deuxième type MBTI à comparer.",
+          "L'affiche dispose automatiquement deux personnages de dessins animés, des panneaux latéraux de traits et de citations, et un résumé de compatibilité en bas.",
+          "Générez une infographie de relation colorée en low-poly horizontale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie de relation INTJ et ENFP avec traits et résumé de compatibilité.",
+          "Créez une affiche de compatibilité MBTI pour ISFJ et ESTP.",
+          "Générez une infographie de relation INFP et ENTJ avec citations et analyse de compatibilité."
+        ]
+      }
+    }
   }
 }

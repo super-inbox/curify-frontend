@@ -2592,5 +2592,93 @@
         ]
       }
     }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "Póster de Prueba de Atuendo AI",
+    "description": "Genera un póster limpio de prueba de atuendo de tres paneles que muestra un personaje de referencia, una vista plana del atuendo completo y el mismo personaje vistiendo el nuevo atuendo con ajuste y iluminación realistas.",
+    "title": "Nano Banana Prompt: Generador de Póster de Prueba de Atuendo AI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza Nano Banana para generar un póster de prueba de atuendo de tres paneles sobre un fondo de estudio limpio. El panel izquierdo muestra el retrato del personaje de referencia original etiquetado como 'Personaje'; el panel del medio muestra el atuendo completo (ropa, zapatos, accesorios) como una vista plana etiquetada como 'Atuendo'; el panel derecho renderiza al mismo personaje vistiendo el nuevo atuendo con iluminación, pose y ajuste realistas, etiquetado como 'Resultado' — estilo de fotografía de alta moda con detalles nítidos y estética comercial.",
+        "who": "Adecuado para marcas de moda, tiendas de comercio electrónico, estilistas personales, diseñadores de lookbooks, creadores de contenido de moda, aplicaciones de estilismo virtual y cualquier persona que quiera visualizar un atuendo en un personaje específico antes de producir o comprar.",
+        "how": [
+          "Proporciona o describe el retrato del personaje de referencia para el panel izquierdo.",
+          "Especifica el atuendo completo (ropa, zapatos, accesorios) que deseas mostrar en la vista plana del panel del medio.",
+          "La plantilla renderiza el panel derecho con el mismo personaje vistiendo el atuendo, coincidiendo en pose e iluminación.",
+          "Genera un póster de prueba de atuendo de tres paneles en horizontal en 4K."
+        ],
+        "prompts": [
+          "Genera un póster de prueba de un atuendo de streetwear casual (sudadera oversized, jeans holgados, zapatillas).",
+          "Crea un póster de prueba para un atuendo de negocio casual (blazer, pantalones, mocasines).",
+          "Prueba un atuendo de verano (camisa de lino, pantalones cortos, sandalias) en el mismo personaje."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Póster de Aprendizaje de Caracteres Chinos",
+    "description": "Genera un póster de aprendizaje de Caracteres Diarios (每日一字) para cualquier carácter chino con pinyin y 5-6 ramas de palabras compuestas radiales con ilustraciones de dibujos animados adorables.",
+    "title": "Nano Banana Prompt: Generador de Póster de Aprendizaje de Caracteres Chinos | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo vertical 'Caracter Diario' (每日一字) para un solo carácter chino. El centro muestra el carácter grande con su pinyin; 5-6 ramas radiales alrededor del centro emparejan palabras compuestas comunes con ilustraciones de dibujos animados adorables y etiquetas de pinyin — fondo blanco limpio, estilo artístico de acuarela suave o dibujos animados, estética educativa amigable para niños.",
+        "who": "Adecuado para maestros de mandarín, estudiantes de chino, educadores de ESL/CSL, padres que educan en casa en chino, diseñadores de aplicaciones de aprendizaje de idiomas y creadores de contenido que producen materiales imprimibles de aprendizaje de chino para aulas o redes sociales.",
+        "how": [
+          "Ingresa un carácter chino objetivo (por ejemplo, 山, 火, 木, 水, 日, 月).",
+          "Proporciona el pinyin para ese carácter (por ejemplo, shān, huǒ, mù).",
+          "El póster organiza automáticamente el título 每日一字, el carácter central con pinyin y 5-6 ramas de palabras compuestas radiales.",
+          "Genera un póster de aprendizaje de caracteres chinos vertical en 4K amigable para niños."
+        ],
+        "prompts": [
+          "Genera un póster de Caracter Diario para 山 (shān) con palabras compuestas relacionadas con montañas.",
+          "Crea un póster de aprendizaje para 火 (huǒ) con palabras compuestas relacionadas con el fuego e ilustraciones.",
+          "Genera un póster de Caracter Diario para 水 (shuǐ) con ramas relacionadas con el agua."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Infografía de Verbos Opuestos Chinos",
+    "description": "Genera un póster infográfico educativo de pares de verbos chinos opuestos con pinyin, traducciones al inglés e ilustraciones de dibujos animados contrastantes en filas horizontales.",
+    "title": "Nano Banana Prompt: Generador de Infografía de Verbos Opuestos Chinos | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster infográfico educativo horizontal de verbos chinos opuestos. Cada fila empareja dos verbos opuestos uno al lado del otro: la izquierda y la derecha muestran el verbo con pinyin y traducción al inglés, el centro muestra una ilustración de dibujos animados de las acciones contrastantes, y una flecha de color o forma hexagonal une el par — fondo claro limpio, ilustraciones de dibujos animados amigables, colores pastel suaves.",
+        "who": "Adecuado para maestros de mandarín, estudiantes de chino, educadores de ESL/CSL, creadores de contenido que hacen materiales imprimibles de vocabulario, aulas bilingües y cuentas de redes sociales enfocadas en el aprendizaje de idiomas.",
+        "how": [
+          "Ingresa el tema del gráfico (por ejemplo, 'Pares de Verbos Opuestos Chinos', 'Verbos Antónimos Básicos en Chino').",
+          "La infografía organiza automáticamente una serie de filas horizontales de pares de verbos opuestos.",
+          "Cada fila empareja verbos de la izquierda y la derecha con pinyin y traducciones al inglés más una ilustración central contrastante.",
+          "Genera un póster educativo de verbos opuestos en horizontal en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía de 'Pares de Verbos Opuestos Chinos' con 8 pares de verbos comunes.",
+          "Crea un gráfico de aprendizaje de 'Verbos Antónimos Básicos en Chino' para principiantes.",
+          "Genera una infografía de opuestos de 'Palabras de Acción Cotidianas en Chino'."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "Infografía de Relaciones MBTI",
+    "description": "Genera una infografía vibrante lado a lado de pares MBTI con rasgos, citas y un resumen de compatibilidad para cualquier par de tipos MBTI.",
+    "title": "Nano Banana Prompt: Generador de Infografía de Relaciones MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla crea un póster infográfico horizontal vibrante comparando dos tipos MBTI en una relación. Dos personajes de dibujos animados de baja poligonación en sus colores característicos están en el centro; los paneles izquierdo y derecho muestran los rasgos y citas de cada tipo con íconos coincidentes; una sección inferior proporciona un resumen de compatibilidad con viñetas y emojis — fondo blanco limpio, estilo artístico geométrico de baja poligonación colorido, tono educativo amigable.",
+        "who": "Adecuado para creadores de contenido MBTI, entusiastas de la personalidad, equipos de marketing de aplicaciones de citas, coaches de relaciones, cuentas de redes sociales enfocadas en la personalidad y cualquier persona que haga contenido compartible sobre pares MBTI.",
+        "how": [
+          "Ingresa el primer tipo MBTI (por ejemplo, INTJ, ENFP, ISFJ).",
+          "Ingresa el segundo tipo MBTI para comparar.",
+          "El póster organiza automáticamente dos personajes de dibujos animados, paneles laterales de rasgos y citas, y un resumen de compatibilidad en la parte inferior.",
+          "Genera una infografía de relaciones colorida de baja poligonación en horizontal en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía de relación entre INTJ y ENFP con rasgos y resumen de compatibilidad.",
+          "Crea un póster de compatibilidad de pares MBTI ISFJ y ESTP.",
+          "Genera una infografía de relación entre INFP y ENTJ con citas y análisis de compatibilidad."
+        ]
+      }
+    }
   }
 }

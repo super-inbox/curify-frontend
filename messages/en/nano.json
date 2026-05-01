@@ -2591,5 +2591,93 @@
         ]
       }
     }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "AI Outfit Try-On Poster",
+    "description": "Generate a clean three-panel fashion try-on poster showing a reference character, a flat-lay of the full outfit, and the same character wearing the new outfit with realistic fit and lighting.",
+    "title": "Nano Banana Prompt: AI Outfit Try-On Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses Nano Banana to generate a three-panel fashion try-on poster on a clean studio background. The left panel shows the original reference character portrait labeled 'Character'; the middle panel displays the full outfit (clothes, shoes, accessories) as a flat-lay labeled 'Outfit'; the right panel renders the same character wearing the new outfit with consistent lighting, pose, and realistic fit, labeled 'Result' — high-fashion photography style with sharp details and commercial aesthetic.",
+        "who": "Suitable for fashion brands, e-commerce stores, personal stylists, lookbook designers, fashion content creators, virtual styling apps, and anyone who wants to visualize an outfit on a specific character before producing or buying.",
+        "how": [
+          "Provide or describe the reference character portrait for the left panel.",
+          "Specify the full outfit (clothes, shoes, accessories) you want to flat-lay in the middle panel.",
+          "The template renders the right panel with the same character wearing the outfit, matching pose and lighting.",
+          "Generate a horizontal 4K three-panel fashion try-on poster."
+        ],
+        "prompts": [
+          "Generate a try-on poster of a casual streetwear outfit (oversized hoodie, baggy jeans, sneakers).",
+          "Create a try-on poster for a business casual outfit (blazer, slacks, loafers).",
+          "Try on a summer outfit (linen shirt, shorts, sandals) on the same character."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Chinese Character Learning Poster",
+    "description": "Generate a Daily Character (每日一字) learning poster for any Chinese character with pinyin and 5-6 radial compound-word branches with cute cartoon illustrations.",
+    "title": "Nano Banana Prompt: Chinese Character Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical educational 'Daily Character' (每日一字) poster for a single Chinese character. The center shows the large character with its pinyin; 5-6 radial branches around the center pair common compound words with cute cartoon illustrations and pinyin labels — clean white background, soft watercolor or cartoon art style, kid-friendly educational aesthetic.",
+        "who": "Suitable for Mandarin teachers, Chinese language learners, ESL/CSL educators, parents homeschooling Chinese, language-learning app designers, and content creators producing Chinese learning printables for classrooms or social media.",
+        "how": [
+          "Enter a target Chinese character (e.g., 山, 火, 木, 水, 日, 月).",
+          "Provide the pinyin for that character (e.g., shān, huǒ, mù).",
+          "The poster auto-lays out the title 每日一字, the center character with pinyin, and 5-6 radial compound-word branches.",
+          "Generate a vertical 4K kid-friendly Chinese character learning poster."
+        ],
+        "prompts": [
+          "Generate a Daily Character poster for 山 (shān) with mountain-themed compound words.",
+          "Create a 火 (huǒ) learning poster with fire-related compound words and illustrations.",
+          "Generate a 水 (shuǐ) Daily Character poster with water-themed branches."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Chinese Verb Opposites Infographic",
+    "description": "Generate an educational infographic poster of opposite Chinese verb pairs with pinyin, English glosses, and contrasting cartoon illustrations in horizontal rows.",
+    "title": "Nano Banana Prompt: Chinese Verb Opposites Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template builds a horizontal educational language-learning infographic poster of opposite Chinese verbs. Each row pairs two opposite verbs side by side: left and right show the verb with pinyin and English gloss, the center shows a cartoon illustration of the contrasting actions, and a colored arrow or hexagon shape ties the pair together — clean light background, friendly cartoon illustrations, soft pastel colors.",
+        "who": "Suitable for Mandarin teachers, Chinese language learners, ESL/CSL educators, content creators making vocabulary printables, bilingual classrooms, and social media accounts focused on language learning.",
+        "how": [
+          "Enter the chart topic (e.g., 'Chinese Verb Opposite Pairs', 'Basic Chinese Antonym Verbs').",
+          "The infographic auto-lays out a series of horizontal rows of opposite verb pairs.",
+          "Each row pairs left and right verbs with pinyin and English glosses plus a center contrasting illustration.",
+          "Generate a horizontal 4K educational verb-opposites poster."
+        ],
+        "prompts": [
+          "Generate a 'Chinese Verb Opposite Pairs' infographic with 8 common verb pairs.",
+          "Create a 'Basic Chinese Antonym Verbs' learning chart for beginners.",
+          "Generate an 'Everyday Chinese Action Words' opposites infographic."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "MBTI Relationship Infographic",
+    "description": "Generate a vibrant side-by-side MBTI pair infographic with traits, quotes, and a compatibility summary for any two MBTI types.",
+    "title": "Nano Banana Prompt: MBTI Relationship Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vibrant horizontal infographic poster comparing two MBTI types in a relationship. Two low-poly cartoon characters in their signature colors stand at the center; left and right panels show each type's traits and quotes with matching icons; a bottom section gives a compatibility summary with bullet points and emojis — clean white background, colorful low-poly geometric art style, friendly educational tone.",
+        "who": "Suitable for MBTI content creators, personality enthusiasts, dating-app marketing teams, relationship coaches, social media accounts focused on personality, and anyone making shareable MBTI-pair content.",
+        "how": [
+          "Enter the first MBTI type (e.g., INTJ, ENFP, ISFJ).",
+          "Enter the second MBTI type to compare against.",
+          "The poster auto-lays out two cartoon characters, side panels of traits and quotes, and a bottom compatibility summary.",
+          "Generate a horizontal 4K colorful low-poly relationship infographic."
+        ],
+        "prompts": [
+          "Generate an INTJ and ENFP relationship infographic with traits and compatibility summary.",
+          "Create an ISFJ and ESTP MBTI pair compatibility poster.",
+          "Generate an INFP and ENTJ relationship infographic with quotes and compatibility analysis."
+        ]
+      }
+    }
   }
 }
