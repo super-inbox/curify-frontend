@@ -5,17 +5,55 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExampleVideoPlayer from "../../example/[exampleId]/ExampleVideoPlayer";
+import ExampleRightColumn from "../../example/[exampleId]/ExampleRightColumn";
 import { useTracking } from "@/services/useTracking";
+import { cdn } from "@/lib/cdn";
+import type { TemplateParameter } from "@/lib/nano_utils";
+import type { ExistingExampleRef } from "@/lib/editDistance";
+
+// Plain <img> with preview→full progressive swap. We avoid next/image
+// here because the carousel needs the rendered <img>'s bounding box to
+// match the visible image (so clicking on dark padding bubbles to the
+// backdrop close handler rather than being captured by the img element).
+function ProgressiveSlideImage({
+  previewSrc,
+  fullSrc,
+  alt,
+}: {
+  previewSrc?: string;
+  fullSrc: string;
+  alt: string;
+}) {
+  const [src, setSrc] = useState<string>(previewSrc || fullSrc);
+  useEffect(() => {
+    setSrc(previewSrc || fullSrc);
+    if (!fullSrc || fullSrc === previewSrc) return;
+    const img = new window.Image();
+    img.src = cdn(fullSrc);
+    img.onload = () => setSrc(fullSrc);
+  }, [previewSrc, fullSrc]);
+
+  return (
+    <img
+      src={cdn(src)}
+      alt={alt}
+      draggable={false}
+      className="max-h-full max-w-full select-none"
+    />
+  );
+}
 
 type Slide = {
   id: string;
   title: string;
+  category: string;
   templateId: string;
   imageUrl: string;
   previewImageUrl?: string;
   videoUrl?: string;
+  params: Record<string, string>;
+  topics: string[];
 };
 
 type Props = {
@@ -24,6 +62,13 @@ type Props = {
   locale: string;
   slug: string;
   media: "image" | "video";
+  templateTopics: string[];
+  templateParameters: TemplateParameter[];
+  templateAllowGeneration: boolean;
+  templateBatch: boolean;
+  basePrompt: string;
+  existingExamples: ExistingExampleRef[];
+  siteUrl: string;
 };
 
 export default function CarouselClient({
@@ -32,6 +77,13 @@ export default function CarouselClient({
   locale,
   slug,
   media,
+  templateTopics,
+  templateParameters,
+  templateAllowGeneration,
+  templateBatch,
+  basePrompt,
+  existingExamples,
+  siteUrl,
 }: Props) {
   const router = useRouter();
   const [index, setIndex] = useState(initialIndex);
@@ -111,12 +163,21 @@ export default function CarouselClient({
     });
   }, [slide, track]);
 
-  // Keyboard navigation
+  // Keyboard navigation. Ignore arrow keys while focus is in an editable
+  // field (the reproduce sidebar's inputs/selects) so the user can move
+  // the cursor without flipping slides. Escape always closes.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      const editable =
+        !!t &&
+        (t.tagName === "INPUT" ||
+          t.tagName === "TEXTAREA" ||
+          t.tagName === "SELECT" ||
+          t.isContentEditable);
       if (e.key === "Escape") close();
-      else if (e.key === "ArrowRight") goTo(index + 1);
-      else if (e.key === "ArrowLeft") goTo(index - 1);
+      else if (!editable && e.key === "ArrowRight") goTo(index + 1);
+      else if (!editable && e.key === "ArrowLeft") goTo(index - 1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -184,10 +245,13 @@ export default function CarouselClient({
     close();
   };
 
+  const examplePageUrl = `${siteUrl}/${locale}/nano-template/${slug}/example/${encodeURIComponent(slide.id)}`;
+
   return (
     // Click anywhere outside an interactive element or media → go to prompt page.
     // Internal media + buttons stop propagation so they keep their own behavior.
-    <div className="fixed inset-0 z-50 flex flex-col bg-black" onClick={onBackdropClick}>
+    <div className="fixed inset-0 z-50 flex bg-black" onClick={onBackdropClick}>
+      <div className="flex min-w-0 flex-1 flex-col">
       {/* Header */}
       <div className="flex shrink-0 items-center justify-between px-4 py-3">
         <span className="text-sm text-white/60">
@@ -237,7 +301,13 @@ export default function CarouselClient({
                 {Math.abs(i - index) <= 1 && (
                   <div
                     className="relative flex h-full w-full items-center justify-center p-2"
-                    onClick={stopPropagation}
+                    onClick={(e) => {
+                      // Only stop propagation when the click hit the media
+                      // itself (a child element). Clicks on the padding
+                      // around the media should still bubble to the
+                      // backdrop and route to the prompt page.
+                      if (e.target !== e.currentTarget) e.stopPropagation();
+                    }}
                   >
                     {media === "video" && s.videoUrl ? (
                       <ExampleVideoPlayer
@@ -251,13 +321,10 @@ export default function CarouselClient({
                         autoPlay
                       />
                     ) : (
-                      <ProgressiveCdnImage
+                      <ProgressiveSlideImage
                         previewSrc={s.previewImageUrl}
                         fullSrc={s.imageUrl}
                         alt={s.title || s.id}
-                        className="h-full w-full object-contain select-none"
-                        priority={isActive}
-                        noZoom
                       />
                     )}
                   </div>
@@ -330,6 +397,34 @@ export default function CarouselClient({
           View prompt →
         </Link>
       </div>
+      </div>
+
+      {/* Right: reproduce sidebar — desktop only, ~25% width */}
+      <aside
+        className="hidden lg:flex lg:w-80 xl:w-96 shrink-0 flex-col overflow-y-auto bg-white text-neutral-900"
+        onClick={stopPropagation}
+      >
+        <div className="px-4 py-4">
+          <ExampleRightColumn
+            key={slide.id}
+            chipTopics={templateTopics}
+            chipExampleTopics={slide.topics}
+            chipCategory={slide.category}
+            title={slide.title}
+            templateId={slide.templateId}
+            slug={slug}
+            locale={locale}
+            parameters={templateParameters}
+            allowGeneration={templateAllowGeneration}
+            initialParams={slide.params}
+            exampleId={slide.id}
+            basePrompt={basePrompt}
+            batchEnabled={templateBatch}
+            examplePageUrl={examplePageUrl}
+            existingExamples={existingExamples}
+          />
+        </div>
+      </aside>
     </div>
   );
 }
