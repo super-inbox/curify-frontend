@@ -2679,5 +2679,71 @@
         ]
       }
     }
+  },
+  "template-ethnic-costume-deconstruction-board": {
+    "category": "Ethnic Costume Deconstruction Board",
+    "description": "Generate a high-fashion deconstruction-style flat-lay board for any ethnic group's traditional costume, with a full-body portrait and labeled component callouts on either side.",
+    "title": "Nano Banana Prompt: Ethnic Costume Deconstruction Board Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses Nano Banana to generate a professional cultural-heritage flat-lay board for a chosen ethnic group's traditional costume. The center features a full-body portrait of a model wearing the complete costume against a dark wooden backdrop; the left and right rails deconstruct the look into silver jewelry, embroidered textiles, accessories, and cultural artifacts, each labeled with Chinese characters. High-fashion studio photography aesthetic with warm dramatic lighting, sharp details, and rich textures.",
+        "who": "Suitable for cultural-heritage brands, museum and exhibition designers, fashion editors, ethnographic researchers, travel publications, costume designers, and creators making content about traditional dress and minority cultures.",
+        "how": [
+          "Enter an ethnic group name (e.g., Tibetan, Miao, Bai, Yi, Dai, Mongolian).",
+          "The template auto-lays out a center full-body portrait of the costume.",
+          "Left and right deconstruct the costume into labeled jewelry, textiles, and accessories.",
+          "Generate a vertical 4K cultural deconstruction board in a high-fashion studio style."
+        ],
+        "prompts": [
+          "Generate a Tibetan traditional costume deconstruction board with silver jewelry callouts.",
+          "Create a Miao traditional costume flat-lay with embroidered textiles labeled.",
+          "Generate a Mongolian costume deconstruction board with cultural accessories highlighted."
+        ]
+      }
+    }
+  },
+  "template-gardening-how-to-infographic": {
+    "category": "Gardening How-To Infographic",
+    "description": "Generate a clean step-by-step gardening infographic titled 'HOW TO GROW <plant>' with six numbered photo steps and helpful icons for any plant.",
+    "title": "Nano Banana Prompt: Gardening How-To Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical educational gardening infographic titled 'HOW TO GROW <plant>'. A bold main title sits at the top with a plant subtitle; a 2x3 grid of six numbered steps fills the body, each with a realistic photo illustration of the gardening action, a clear step title, descriptive text, and helpful small icons. Clean white background, sharp product photography aesthetic, professional educational style.",
+        "who": "Suitable for gardening bloggers, urban-farming brands, seed and tool retailers, sustainable-living content creators, home-and-garden educators, schools running gardening programs, and parents teaching kids about growing food.",
+        "how": [
+          "Enter a plant name (e.g., Tomatoes, Bell Peppers, Lettuce, Strawberries).",
+          "The template auto-lays out a 2x3 grid of six numbered growing steps.",
+          "Each cell pairs a photo of the action with a step title, instructions, and icons.",
+          "Generate a vertical 4K printable gardening how-to infographic."
+        ],
+        "prompts": [
+          "Generate a 'HOW TO GROW Tomatoes' infographic with six numbered photo steps.",
+          "Create a 'HOW TO GROW Bell Peppers' gardening guide poster.",
+          "Generate a 'HOW TO GROW Strawberries' step-by-step infographic."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-watercolor-infographic": {
+    "category": "Lifestyle Watercolor Infographic",
+    "description": "Generate a warm, whimsical watercolor lifestyle infographic on any topic with a numbered title, a soft central illustration, and tip icons on a textured paper background.",
+    "title": "Nano Banana Prompt: Lifestyle Watercolor Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template builds a vertical warm-toned watercolor infographic poster around a chosen lifestyle topic. The top features a ribbon banner with a gentle quote above a large numbered title (e.g., '10 Self-Care Ideas'); a soft watercolor central illustration anchors the composition, surrounded by smaller watercolor icons each paired with a short tip label. Light beige textured paper background with hearts, stars, and confetti accents in a cozy self-care aesthetic.",
+        "who": "Suitable for wellness creators, self-care brands, mindfulness coaches, journal and planner designers, Pinterest creators, mental-health writers, and content creators making cozy printable lifestyle content.",
+        "how": [
+          "Enter the infographic topic (e.g., 'Self-Care Ideas', 'Morning Routine Ideas').",
+          "Enter the number of tips you want listed (e.g., 8, 10, 12).",
+          "The template generates a numbered watercolor poster with central illustration and tip icons.",
+          "Generate a vertical 4K cozy watercolor lifestyle infographic."
+        ],
+        "prompts": [
+          "Generate a '10 Self-Care Ideas' watercolor infographic with cozy tips.",
+          "Create a '8 Morning Routine Ideas' lifestyle watercolor poster.",
+          "Generate a '12 Mindfulness Practices' warm watercolor infographic."
+        ]
+      }
+    }
   }
 }
