@@ -2680,5 +2680,71 @@
         ]
       }
     }
+  },
+  "template-ethnic-costume-deconstruction-board": {
+    "category": "Tablero de Deconstrucción de Trajes Étnicos",
+    "description": "Genera un tablero plano de estilo deconstrucción de alta moda para el traje tradicional de cualquier grupo étnico, con un retrato de cuerpo completo y etiquetas de componentes a cada lado.",
+    "title": "Nano Banana Prompt: Generador de Tablero de Deconstrucción de Trajes Étnicos | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla utiliza Nano Banana para generar un tablero plano profesional de patrimonio cultural para el traje tradicional de un grupo étnico elegido. El centro presenta un retrato de cuerpo completo de un modelo vistiendo el traje completo contra un fondo de madera oscura; los rieles izquierdo y derecho deconstruyen el look en joyería de plata, textiles bordados, accesorios y artefactos culturales, cada uno etiquetado con caracteres chinos. Estética de fotografía de estudio de alta moda con iluminación dramática cálida, detalles nítidos y texturas ricas.",
+        "who": "Adecuado para marcas de patrimonio cultural, diseñadores de museos y exposiciones, editores de moda, investigadores etnográficos, publicaciones de viajes, diseñadores de trajes y creadores que hacen contenido sobre vestimenta tradicional y culturas minoritarias.",
+        "how": [
+          "Ingresa el nombre de un grupo étnico (por ejemplo, Tibetano, Miao, Bai, Yi, Dai, Mongol).",
+          "La plantilla organiza automáticamente un retrato de cuerpo completo del traje en el centro.",
+          "Izquierda y derecha deconstruyen el traje en joyería, textiles y accesorios etiquetados.",
+          "Genera un tablero de deconstrucción cultural vertical en estilo de estudio de alta moda en 4K."
+        ],
+        "prompts": [
+          "Genera un tablero de deconstrucción de traje tradicional tibetano con etiquetas de joyería de plata.",
+          "Crea un plano de traje tradicional Miao con textiles bordados etiquetados.",
+          "Genera un tablero de deconstrucción de traje mongol con accesorios culturales destacados."
+        ]
+      }
+    }
+  },
+  "template-gardening-how-to-infographic": {
+    "category": "Infografía de Cómo Hacer Jardinería",
+    "description": "Genera una infografía limpia paso a paso sobre jardinería titulada 'CÓMO CRECER <planta>' con seis pasos fotográficos numerados e íconos útiles para cualquier planta.",
+    "title": "Nano Banana Prompt: Generador de Infografía de Cómo Hacer Jardinería | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa vertical sobre jardinería titulada 'CÓMO CRECER <planta>'. Un título principal en negrita se sitúa en la parte superior con un subtítulo de planta; una cuadrícula de 2x3 de seis pasos numerados llena el cuerpo, cada uno con una ilustración fotográfica realista de la acción de jardinería, un título claro del paso, texto descriptivo e íconos útiles. Fondo blanco limpio, estética de fotografía de producto nítida, estilo educativo profesional.",
+        "who": "Adecuado para bloggers de jardinería, marcas de agricultura urbana, minoristas de semillas y herramientas, creadores de contenido de vida sostenible, educadores de hogar y jardín, escuelas que realizan programas de jardinería y padres que enseñan a los niños sobre el cultivo de alimentos.",
+        "how": [
+          "Ingresa el nombre de una planta (por ejemplo, Tomates, Pimientos, Lechuga, Fresas).",
+          "La plantilla organiza automáticamente una cuadrícula de 2x3 de seis pasos de crecimiento numerados.",
+          "Cada celda empareja una foto de la acción con un título del paso, instrucciones e íconos.",
+          "Genera una infografía imprimible vertical de cómo hacer jardinería en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía 'CÓMO CRECER Tomates' con seis pasos fotográficos numerados.",
+          "Crea un cartel de guía de jardinería 'CÓMO CRECER Pimientos'.",
+          "Genera una infografía paso a paso 'CÓMO CRECER Fresas'."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-watercolor-infographic": {
+    "category": "Infografía Acuarela de Estilo de Vida",
+    "description": "Genera una infografía de estilo de vida en acuarela cálida y caprichosa sobre cualquier tema con un título numerado, una suave ilustración central y íconos de consejos sobre un fondo de papel texturizado.",
+    "title": "Nano Banana Prompt: Generador de Infografía Acuarela de Estilo de Vida | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla construye un cartel infográfico vertical en acuarela de tonos cálidos alrededor de un tema de estilo de vida elegido. La parte superior presenta una pancarta con una cita suave sobre un gran título numerado (por ejemplo, '10 Ideas de Cuidado Personal'); una suave ilustración central en acuarela ancla la composición, rodeada de íconos más pequeños en acuarela, cada uno emparejado con una breve etiqueta de consejo. Fondo de papel texturizado beige claro con corazones, estrellas y acentos de confeti en una estética acogedora de cuidado personal.",
+        "who": "Adecuado para creadores de bienestar, marcas de cuidado personal, entrenadores de mindfulness, diseñadores de diarios y planificadores, creadores de Pinterest, escritores de salud mental y creadores de contenido que hacen contenido de estilo de vida imprimible acogedor.",
+        "how": [
+          "Ingresa el tema de la infografía (por ejemplo, 'Ideas de Cuidado Personal', 'Ideas de Rutina Matutina').",
+          "Ingresa el número de consejos que deseas listar (por ejemplo, 8, 10, 12).",
+          "La plantilla genera un cartel en acuarela numerado con ilustración central e íconos de consejos.",
+          "Genera una infografía de estilo de vida acogedora en acuarela vertical en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía en acuarela '10 Ideas de Cuidado Personal' con consejos acogedores.",
+          "Crea un cartel de acuarela de estilo de vida '8 Ideas de Rutina Matutina'.",
+          "Genera una infografía cálida en acuarela '12 Prácticas de Mindfulness'."
+        ]
+      }
+    }
   }
 }

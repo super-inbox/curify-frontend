@@ -2680,5 +2680,71 @@
         ]
       }
     }
+  },
+  "template-ethnic-costume-deconstruction-board": {
+    "category": "Tableau de Déconstruction de Costume Ethnique",
+    "description": "Générez un tableau à plat de style déconstruction haute couture pour le costume traditionnel de n'importe quel groupe ethnique, avec un portrait en pied et des étiquettes des composants de chaque côté.",
+    "title": "Nano Banana Prompt : Générateur de Tableau de Déconstruction de Costume Ethnique | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle utilise Nano Banana pour générer un tableau à plat professionnel sur le patrimoine culturel pour le costume traditionnel d'un groupe ethnique choisi. Le centre présente un portrait en pied d'un modèle portant le costume complet sur un fond en bois sombre ; les rails gauche et droit décomposent le look en bijoux en argent, textiles brodés, accessoires et artefacts culturels, chacun étiqueté avec des caractères chinois. Esthétique de photographie de studio haute couture avec un éclairage dramatique chaud, des détails nets et des textures riches.",
+        "who": "Convient aux marques de patrimoine culturel, aux designers de musées et d'expositions, aux rédacteurs de mode, aux chercheurs ethnographiques, aux publications de voyage, aux costumiers et aux créateurs de contenu sur les vêtements traditionnels et les cultures minoritaires.",
+        "how": [
+          "Entrez le nom d'un groupe ethnique (par exemple, Tibétain, Miao, Bai, Yi, Dai, Mongole).",
+          "Le modèle dispose automatiquement un portrait en pied du costume au centre.",
+          "À gauche et à droite, décomposez le costume en bijoux, textiles et accessoires étiquetés.",
+          "Générez un tableau de déconstruction culturelle vertical en 4K dans un style de studio haute couture."
+        ],
+        "prompts": [
+          "Générez un tableau de déconstruction de costume traditionnel tibétain avec des étiquettes de bijoux en argent.",
+          "Créez un tableau à plat de costume traditionnel Miao avec des textiles brodés étiquetés.",
+          "Générez un tableau de déconstruction de costume mongole avec des accessoires culturels mis en avant."
+        ]
+      }
+    }
+  },
+  "template-gardening-how-to-infographic": {
+    "category": "Infographie Comment Faire en Jardinage",
+    "description": "Générez une infographie de jardinage claire étape par étape intitulée 'COMMENT FAIRE POUSSER <plant>' avec six étapes photo numérotées et des icônes utiles pour n'importe quelle plante.",
+    "title": "Nano Banana Prompt : Générateur d'Infographie Comment Faire en Jardinage | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative verticale sur le jardinage intitulée 'COMMENT FAIRE POUSSER <plant>'. Un titre principal en gras se trouve en haut avec un sous-titre de plante ; une grille 2x3 de six étapes numérotées remplit le corps, chacune avec une illustration photo réaliste de l'action de jardinage, un titre d'étape clair, un texte descriptif et de petites icônes utiles. Fond blanc propre, esthétique de photographie de produit nette, style éducatif professionnel.",
+        "who": "Convient aux blogueurs de jardinage, aux marques d'agriculture urbaine, aux détaillants de semences et d'outils, aux créateurs de contenu sur la vie durable, aux éducateurs en maison et jardin, aux écoles ayant des programmes de jardinage, et aux parents enseignant aux enfants à faire pousser des aliments.",
+        "how": [
+          "Entrez un nom de plante (par exemple, Tomates, Poivrons, Laitue, Fraises).",
+          "Le modèle dispose automatiquement une grille 2x3 de six étapes de croissance numérotées.",
+          "Chaque cellule associe une photo de l'action avec un titre d'étape, des instructions et des icônes.",
+          "Générez une infographie de jardinage imprimable verticale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie 'COMMENT FAIRE POUSSER des Tomates' avec six étapes photo numérotées.",
+          "Créez une affiche de guide de jardinage 'COMMENT FAIRE POUSSER des Poivrons'.",
+          "Générez une infographie étape par étape 'COMMENT FAIRE POUSSER des Fraises'."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-watercolor-infographic": {
+    "category": "Infographie Aquarelle de Style de Vie",
+    "description": "Générez une infographie de style de vie aquarelle chaleureuse et fantaisiste sur n'importe quel sujet avec un titre numéroté, une illustration centrale douce et des icônes de conseils sur un fond en papier texturé.",
+    "title": "Nano Banana Prompt : Générateur d'Infographie Aquarelle de Style de Vie | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle construit une affiche d'infographie aquarelle verticale aux tons chauds autour d'un sujet de style de vie choisi. Le haut présente une bannière en ruban avec une citation douce au-dessus d'un grand titre numéroté (par exemple, '10 Idées de Prendre Soin de Soi') ; une douce illustration aquarelle centrale ancre la composition, entourée de petites icônes aquarelles chacune associée à un court label de conseil. Fond en papier texturé beige clair avec des cœurs, des étoiles et des accents de confettis dans une esthétique de soin de soi confortable.",
+        "who": "Convient aux créateurs de bien-être, aux marques de soin de soi, aux coachs de pleine conscience, aux designers de journaux et de planificateurs, aux créateurs Pinterest, aux écrivains sur la santé mentale, et aux créateurs de contenu produisant du contenu de style de vie imprimable confortable.",
+        "how": [
+          "Entrez le sujet de l'infographie (par exemple, 'Idées de Prendre Soin de Soi', 'Idées de Routine Matinale').",
+          "Entrez le nombre de conseils que vous souhaitez lister (par exemple, 8, 10, 12).",
+          "Le modèle génère une affiche aquarelle numérotée avec illustration centrale et icônes de conseils.",
+          "Générez une infographie de style de vie aquarelle confortable verticale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie aquarelle '10 Idées de Prendre Soin de Soi' avec des conseils confortables.",
+          "Créez une affiche aquarelle de style de vie '8 Idées de Routine Matinale'.",
+          "Générez une infographie aquarelle chaude '12 Pratiques de Pleine Conscience'."
+        ]
+      }
+    }
   }
 }
