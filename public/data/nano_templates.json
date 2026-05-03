@@ -5324,5 +5324,62 @@
     ],
     "base_rank_score": 90,
     "rank_score": 90
-  }
+  },
+  {
+    "id": "template-lifestyle-watercolor-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Lifestyle Watercolor Infographic Designer) Create a warm, whimsical infographic poster for the topic '{infographic_topic}'. Layout: 1. Top section: A ribbon banner with a gentle quote related to the theme, above a large number and title like '{number} {infographic_topic}'. 2. Center: A soft watercolor illustration representing the theme, surrounded by smaller watercolor icons for each tip. 3. Each icon is paired with a short text label describing the tip. 4. Background: A light beige textured paper with subtle hearts, stars, and confetti accents. Style: Soft watercolor art style, warm earthy colors, hand-drawn elements, cozy self-care aesthetic, clear friendly font, vertical format, 4K ultra HD, direct image generation. Subject: '{infographic_topic}' Watercolor Infographic Poster.",
+            "parameters": [
+                {
+                    "name": "infographic_topic",
+                    "label": "Infographic Topic",
+                    "type": "text",
+                    "placeholder": ["Productivity Tips", "Self-Care Ideas", "Healthy Habits", "Mindfulness Practices", "Morning Routine Ideas", "Stress Relief Ideas"]
+                },
+                {
+                    "name": "number",
+                    "label": "Number of Tips",
+                    "type": "text",
+                    "placeholder": ["10", "8", "9", "12"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-lifestyle-watercolor-infographic-morning-routine-prev.jpg"
+},
+  {
+    "id": "template-gardening-how-to-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Gardening How-To Infographic Designer) Create a clean, practical step-by-step infographic titled 'HOW TO GROW {plant_name}'. Layout: 1. Bold main title at the top, with a subtitle about the plant. 2. A 2×3 grid of 6 numbered steps, each with a realistic photo illustration of the gardening action, a clear step title, descriptive text, and small helpful icons. 3. Clean white background, professional educational style, sharp product photography aesthetic, clear sans-serif font, vertical format, 4K ultra HD, direct image generation. Subject: '{plant_name} Growing Guide Infographic.",
+            "parameters": [
+                {
+                    "name": "plant_name",
+                    "label": "Plant Name",
+                    "type": "text",
+                    "placeholder": ["Lettuce", "Pineapple", "Bell Peppers", "Carrots", "Tomatoes", "Strawberries", "Herbs", "Potatoes"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg"
+},
+  {
+    "id": "template-ethnic-costume-deconstruction-board",
+    "locales": {
+        "en": {
+            "base_prompt": "(Ethnic Costume Deconstruction Board Designer) Create a professional deconstruction-style flat-lay board for the {ethnic_group} traditional costume. Layout: 1. Center: A full-body portrait of a woman wearing the complete {ethnic_group} traditional costume, standing against a dark wooden background. 2. Left and right: Deconstructed components including silver jewelry, embroidered textiles, accessories, and cultural artifacts, each labeled with Chinese characters. 3. Style: High-fashion studio photography, warm dramatic lighting, sharp details, rich textures, clean composition, cultural heritage aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: {ethnic_group} Traditional Costume Deconstruction Board.",
+            "parameters": [
+                {
+                    "name": "ethnic_group",
+                    "label": "Ethnic Group Name",
+                    "type": "text",
+                    "placeholder": ["Tibetan", "Miao", "Bai", "Buyi", "Tujia", "Yi", "Dai", "Mongolian"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-ethnic-costume-deconstruction-board-yi-prev.jpg"
+}
 ]
