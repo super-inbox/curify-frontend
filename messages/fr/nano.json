@@ -2705,11 +2705,11 @@
   },
   "template-gardening-how-to-infographic": {
     "category": "Infographie Comment Faire en Jardinage",
-    "description": "Générez une infographie de jardinage claire étape par étape intitulée 'COMMENT FAIRE POUSSER <plant>' avec six étapes photo numérotées et des icônes utiles pour n'importe quelle plante.",
+    "description": "Générez une infographie de jardinage claire étape par étape intitulée 'COMMENT FAIRE POUSSER [plant]' avec six étapes photo numérotées et des icônes utiles pour n'importe quelle plante.",
     "title": "Nano Banana Prompt : Générateur d'Infographie Comment Faire en Jardinage | Curify AI",
     "content": {
       "sections": {
-        "what": "Ce modèle génère une infographie éducative verticale sur le jardinage intitulée 'COMMENT FAIRE POUSSER <plant>'. Un titre principal en gras se trouve en haut avec un sous-titre de plante ; une grille 2x3 de six étapes numérotées remplit le corps, chacune avec une illustration photo réaliste de l'action de jardinage, un titre d'étape clair, un texte descriptif et de petites icônes utiles. Fond blanc propre, esthétique de photographie de produit nette, style éducatif professionnel.",
+        "what": "Ce modèle génère une infographie éducative verticale sur le jardinage intitulée 'COMMENT FAIRE POUSSER [plant]'. Un titre principal en gras se trouve en haut avec un sous-titre de plante ; une grille 2x3 de six étapes numérotées remplit le corps, chacune avec une illustration photo réaliste de l'action de jardinage, un titre d'étape clair, un texte descriptif et de petites icônes utiles. Fond blanc propre, esthétique de photographie de produit nette, style éducatif professionnel.",
         "who": "Convient aux blogueurs de jardinage, aux marques d'agriculture urbaine, aux détaillants de semences et d'outils, aux créateurs de contenu sur la vie durable, aux éducateurs en maison et jardin, aux écoles ayant des programmes de jardinage, et aux parents enseignant aux enfants à faire pousser des aliments.",
         "how": [
           "Entrez un nom de plante (par exemple, Tomates, Poivrons, Laitue, Fraises).",
@@ -2743,6 +2743,116 @@
           "Générez une infographie aquarelle '10 Idées de Prendre Soin de Soi' avec des conseils confortables.",
           "Créez une affiche aquarelle de style de vie '8 Idées de Routine Matinale'.",
           "Générez une infographie aquarelle chaude '12 Pratiques de Pleine Conscience'."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Infographie de comparaison des studios d'animation",
+    "description": "Générez une affiche vibrante 'AFFRONTEMENT DES STUDIOS ANIMÉS' comparant deux studios d'animation côte à côte, avec logos, année de création, style artistique, œuvres notables et héritage.",
+    "title": "Nano Banana Prompt : Générateur d'infographie de comparaison des studios d'animation | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie vibrante intitulée 'COMPARAISON DES STUDIOS ANIMÉS'. Une bannière de titre se trouve en haut ; le corps se divise à gauche/droite entre les deux studios choisis, chaque côté couvrant le logo du studio, l'année de création, le style artistique avec des exemples d'art, les œuvres notables avec des images, et l'héritage/l'impact avec des icônes. L'arrière-plan utilise une texture de bureau en bois avec des gribouillis et figurines sur le thème de l'anime pour une esthétique de fandom chaleureuse, avec des palettes de couleurs distinctes par studio.",
+        "who": "Convient aux fans d'anime, publications d'animation, créateurs de fan-art, éducateurs en histoire de l'animation, comptes de médias sociaux axés sur l'anime, et créateurs de contenu réalisant des résumés de studios partageables.",
+        "how": [
+          "Entrez le nom du premier studio (par exemple, Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Entrez le nom du deuxième studio à comparer (par exemple, MAPPA, Ufotable, DreamWorks).",
+          "L'affiche se divise automatiquement à gauche/droite avec logos, année de création, style artistique, œuvres notables et héritage.",
+          "Générez une infographie de comparaison informative verticale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison d'affrontement entre Studio Ghibli et MAPPA.",
+          "Créez une affiche de comparaison de studios d'animation entre Pixar et DreamWorks.",
+          "Générez une infographie d'affrontement entre Kyoto Animation et Ufotable."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "Infographie de chronologie historique",
+    "description": "Générez une affiche de chronologie d'évolution visuellement époustouflante sur n'importe quel sujet historique avec une chronologie centrale fluide, des événements marquants, des dates, des descriptions et des illustrations thématiques.",
+    "title": "Nano Banana Prompt : Générateur d'infographie de chronologie historique | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie verticale visuellement époustouflante intitulée '[sujet] : Évolution à travers le temps'. Une chronologie centrale fluide avec des jalons annuels numérotés court sur toute la longueur de l'affiche ; chaque jalon présente un événement clé, une date, une courte description et une illustration pertinente. La palette de couleurs, les icônes et le design de fond s'adaptent au thème choisi (rétro, futuriste, vintage, etc.) pour un langage de design cohérent.",
+        "who": "Convient aux enseignants d'histoire, concepteurs de musées et d'expositions, spécialistes du marketing de contenu, publications sur l'histoire des marques, écrivains de science populaire, éducateurs sur les réseaux sociaux, et créateurs réalisant des affiches partageables sur l'histoire de X.",
+        "how": [
+          "Entrez un sujet de chronologie (par exemple, 'Histoire d'Apple Inc.', 'Évolution des jeux vidéo', 'Histoire de la photographie').",
+          "L'infographie se dispose automatiquement avec une chronologie centrale fluide et des jalons numérotés.",
+          "Chaque jalon montre un événement clé, une date, une courte description et une illustration thématique.",
+          "Générez une affiche de chronologie d'évolution verticale en 4K sur le thème choisi."
+        ],
+        "prompts": [
+          "Générez une infographie de chronologie 'Histoire d'Apple Inc. : Évolution à travers le temps'.",
+          "Créez une affiche de chronologie 'Évolution des jeux vidéo'.",
+          "Générez une infographie de chronologie d'évolution 'Exploration spatiale' avec des événements marquants."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "Infographie de comparaison Avant vs Maintenant",
+    "description": "Générez une affiche de comparaison claire AVANT-VS-MAINTENANT sur n'importe quel sujet, avec un tableau à trois colonnes contrastant les équivalents vintage et modernes à l'aide de photos réalistes.",
+    "title": "Nano Banana Prompt : Générateur d'infographie de comparaison Avant vs Maintenant | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison verticale claire intitulée '[sujet] AVANT VS MAINTENANT'. Un titre de thème se trouve en haut ; le corps est un tableau à trois colonnes avec des lignes Catégorie / Avant / Maintenant, chacune montrant un produit vintage à gauche et son équivalent moderne à droite à l'aide de photos réalistes. L'arrière-plan et les icônes correspondent au sujet pour une esthétique nostalgique mais moderne.",
+        "who": "Convient aux créateurs de contenu nostalgique, publications rétrospectives, spécialistes du marketing de marque montrant l'évolution des produits, pages éducatives, et comptes de médias sociaux axés sur les comparaisons générationnelles.",
+        "how": [
+          "Entrez un sujet de comparaison (par exemple, 'Collations d'enfance', 'Divertissement', 'Fournitures scolaires').",
+          "L'affiche se dispose automatiquement avec un tableau à trois colonnes Catégorie / Avant / Maintenant.",
+          "Chaque ligne associe un article vintage à gauche avec son équivalent moderne à droite à l'aide de photos réalistes.",
+          "Générez une infographie de comparaison nostalgique-vs-moderne verticale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison 'Collations d'enfance Avant vs Maintenant'.",
+          "Créez une affiche de comparaison 'Divertissement Avant vs Maintenant'.",
+          "Générez une infographie de comparaison 'Fournitures scolaires Avant vs Maintenant'."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Infographie de guide de préparation de voyage",
+    "description": "Générez une affiche de guide de préparation vibrante pour n'importe quelle destination, durée de séjour et sexe avec contenus de bagages à main, essentiels, idées de tenues, indispensables et conseils d'experts.",
+    "title": "Nano Banana Prompt : Générateur d'infographie de guide de préparation de voyage | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche de guide de préparation vibrante adaptée à une destination, à la durée du voyage et au sexe. La bannière de titre indique '[N]-JOUR [destination] Guide de préparation' sur des graphiques sur le thème du voyage ; le corps couvre 'Ce que vous pouvez emporter dans un bagage à main', 'Essentiels de préparation', '[N]-Idées de tenues', 'Indispensables', et 'Conseils d'experts' — chaque section utilise des photos de produits réalistes avec des étiquettes claires dans une palette de thème coordonnée.",
+        "who": "Convient aux blogueurs de voyage, planificateurs d'itinéraires, créateurs de style de vie, détaillants d'équipement de voyage, concepteurs d'applications de listes de préparation, et créateurs de contenu réalisant des guides partageables spécifiques à une destination.",
+        "how": [
+          "Entrez la destination (par exemple, 'Vacances à la plage', 'Aventure de randonnée', 'Voyage d'affaires').",
+          "Entrez le nombre de jours (par exemple, '3-Jours', '5-Jours', '7-Jours').",
+          "Entrez le sexe (par exemple, 'Femme', 'Homme', 'Unisexe').",
+          "Générez une affiche de guide de préparation thématique verticale en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie de guide de préparation pour les femmes pour des vacances à la plage de 5 jours.",
+          "Créez une affiche de guide de préparation pour les hommes pour une aventure de randonnée de 7 jours.",
+          "Générez une infographie de guide de préparation unisexe pour un week-end de 3 jours."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Infographie de carte des origines des mots",
+    "description": "Générez une infographie éducative de carte du monde sur n'importe quel sujet montrant des mots connectés par des lignes colorées à leurs pays d'origine avec étymologies et icônes thématiques.",
+    "title": "Nano Banana Prompt : Générateur d'infographie de carte des origines des mots | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative horizontale intitulée 'ORIGINES DES MOTS : [sujet]'. Une carte du monde simplifiée se trouve au centre ; les mots sont placés sur la carte et connectés par des lignes colorées à leurs pays d'origine, chacun marqué par le drapeau du pays. Chaque mot est annoté avec son étymologie et une brève signification accompagnée d'une petite icône thématique, dans un design moderne coloré et pastel.",
+        "who": "Convient aux enseignants de langues, passionnés d'étymologie, éducateurs ESL/CSL, écrivains en linguistique, concepteurs d'applications d'apprentissage du vocabulaire, et créateurs de contenu réalisant des infographies d'étymologie partageables.",
+        "how": [
+          "Entrez le sujet (par exemple, 'Nourriture & Cuisine', 'Animaux & Nature', 'Science & Technologie').",
+          "L'infographie place automatiquement des mots thématiques sur une carte du monde avec des lignes d'origine et des drapeaux.",
+          "Chaque mot est annoté avec son étymologie, sa brève signification et une icône thématique.",
+          "Générez une infographie éducative horizontale en 4K sur les origines des mots."
+        ],
+        "prompts": [
+          "Générez une infographie de carte des origines des mots 'Nourriture & Cuisine'.",
+          "Créez une affiche de carte des origines des mots 'Animaux & Nature'.",
+          "Générez une infographie de carte des origines des mots 'Science & Technologie'."
         ]
       }
     }
