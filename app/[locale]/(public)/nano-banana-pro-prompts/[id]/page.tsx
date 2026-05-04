@@ -11,6 +11,12 @@ import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPrompt } from "@/types/nanoPrompts";
 import PromptCard from "../PromptCard";
 
+// Cache the prompt detail page for 4 hours with ISR. Prompts rarely
+// change and the page does a backend fetch per render, so caching
+// keeps Vercel execution time and Azure API load down — particularly
+// useful against bot crawls.
+export const revalidate = 14400;
+
 const DEFAULT_CONTENT_LOCALE = "en";
 
 const buildPromptPath = (locale: string, id: number | string) =>

@@ -8,6 +8,7 @@ import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { toSlug } from "@/lib/nano_utils";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
 
@@ -199,6 +200,12 @@ export default function ReproduceTemplateSection(props: {
                             <option key={opt} value={opt}>{opt}</option>
                           ))}
                         </select>
+                      ) : p.type === "language_pair" ? (
+                        <LanguagePairSelector
+                          value={value}
+                          onChange={(v) => onChange(p.name, v)}
+                          className={common}
+                        />
                       ) : p.type === "daterange" ? (
                         <div className="flex items-center gap-2">
                           <input

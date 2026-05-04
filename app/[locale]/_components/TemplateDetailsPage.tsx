@@ -3,13 +3,14 @@
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { toSlug } from "@/lib/nano_utils";
 
 // Updated types matching new schema
 export type TemplateParameter = {
   name: string;
   label: string;
-  type: "text" | "textarea" | "select";
+  type: "text" | "textarea" | "select" | "language_pair";
   placeholder?: string;
   options?: string[];
 };
@@ -160,6 +161,12 @@ export function TemplateDetailPage({ template, templateCards, allTemplates, loca
                         </option>
                       ))}
                     </select>
+                  ) : param.type === "language_pair" ? (
+                    <LanguagePairSelector
+                      value={selectedParams[param.name]}
+                      onChange={(v) => handleParamChange(param.name, v)}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all"
+                    />
                   ) : (
                     <input
                       type="text"
