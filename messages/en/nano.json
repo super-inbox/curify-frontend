@@ -2704,11 +2704,11 @@
   },
   "template-gardening-how-to-infographic": {
     "category": "Gardening How-To Infographic",
-    "description": "Generate a clean step-by-step gardening infographic titled 'HOW TO GROW <plant>' with six numbered photo steps and helpful icons for any plant.",
+    "description": "Generate a clean step-by-step gardening infographic titled 'HOW TO GROW [plant]' with six numbered photo steps and helpful icons for any plant.",
     "title": "Nano Banana Prompt: Gardening How-To Infographic Generator | Curify AI",
     "content": {
       "sections": {
-        "what": "This template generates a vertical educational gardening infographic titled 'HOW TO GROW <plant>'. A bold main title sits at the top with a plant subtitle; a 2x3 grid of six numbered steps fills the body, each with a realistic photo illustration of the gardening action, a clear step title, descriptive text, and helpful small icons. Clean white background, sharp product photography aesthetic, professional educational style.",
+        "what": "This template generates a vertical educational gardening infographic titled 'HOW TO GROW [plant]'. A bold main title sits at the top with a plant subtitle; a 2x3 grid of six numbered steps fills the body, each with a realistic photo illustration of the gardening action, a clear step title, descriptive text, and helpful small icons. Clean white background, sharp product photography aesthetic, professional educational style.",
         "who": "Suitable for gardening bloggers, urban-farming brands, seed and tool retailers, sustainable-living content creators, home-and-garden educators, schools running gardening programs, and parents teaching kids about growing food.",
         "how": [
           "Enter a plant name (e.g., Tomatoes, Bell Peppers, Lettuce, Strawberries).",
@@ -2742,6 +2742,116 @@
           "Generate a '10 Self-Care Ideas' watercolor infographic with cozy tips.",
           "Create a '8 Morning Routine Ideas' lifestyle watercolor poster.",
           "Generate a '12 Mindfulness Practices' warm watercolor infographic."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Animation Studio Comparison Infographic",
+    "description": "Generate a vibrant 'ANIME STUDIO SHOWDOWN' poster comparing two animation studios side by side, with logos, founding year, art style, notable works, and legacy.",
+    "title": "Nano Banana Prompt: Animation Studio Comparison Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vibrant 'ANIME STUDIO SHOWDOWN COMPARISON' infographic poster. A title banner sits at the top; the body splits left/right between the two chosen studios, each side covering studio logo, founding year, artistic style with example art, notable works with images, and legacy/impact with icons. The background uses a wooden desk texture with anime-themed doodles and figurines for a cozy fandom aesthetic, with distinct color palettes per studio.",
+        "who": "Suitable for anime fans, animation publications, fan-art creators, animation history educators, social media accounts focused on anime, and content creators making shareable studio rundowns.",
+        "how": [
+          "Enter the first studio name (e.g., Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Enter the second studio name to compare against (e.g., MAPPA, Ufotable, DreamWorks).",
+          "The poster auto-lays out a left/right split with logos, founding year, art style, notable works, and legacy.",
+          "Generate a vertical 4K bright informational comparison infographic."
+        ],
+        "prompts": [
+          "Generate a Studio Ghibli vs MAPPA showdown comparison infographic.",
+          "Create a Pixar vs DreamWorks animation studio comparison poster.",
+          "Generate a Kyoto Animation vs Ufotable studio showdown infographic."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "History Timeline Infographic",
+    "description": "Generate a visually stunning evolution timeline poster on any historical topic with a flowing central timeline, milestone events, dates, descriptions, and themed illustrations.",
+    "title": "Nano Banana Prompt: History Timeline Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a visually stunning vertical infographic titled '[topic]: Evolution Through Time'. A central flowing timeline with numbered yearly milestones runs the length of the poster; each milestone features a key event, date, short description, and a relevant illustration. The color palette, icons, and background design adapt to the chosen theme (retro, futuristic, vintage, etc.) for a consistent design language.",
+        "who": "Suitable for history teachers, museum and exhibition designers, content marketers, brand-history publications, popular-science writers, social media educators, and creators making shareable history-of-X posters.",
+        "how": [
+          "Enter a timeline topic (e.g., 'Apple Inc. History', 'Evolution of Video Games', 'History of Photography').",
+          "The infographic auto-lays out a central flowing timeline with numbered milestones.",
+          "Each milestone shows a key event, date, short description, and themed illustration.",
+          "Generate a vertical 4K themed evolution timeline poster."
+        ],
+        "prompts": [
+          "Generate an 'Apple Inc. History: Evolution Through Time' timeline infographic.",
+          "Create an 'Evolution of Video Games' history timeline poster.",
+          "Generate a 'Space Exploration' evolution timeline infographic with milestone events."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "Then vs Now Comparison Infographic",
+    "description": "Generate a clean THEN-VS-NOW comparison poster on any topic, with a three-column table contrasting vintage and modern equivalents using realistic photos.",
+    "title": "Nano Banana Prompt: Then vs Now Comparison Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a clear vertical comparison infographic titled '[topic] THEN VS NOW'. A theme title sits at the top; the body is a three-column table with Category / Then / Now rows, each showing a vintage product on the left and its modern equivalent on the right using realistic photos. The background and icons match the topic for a nostalgic-yet-modern aesthetic.",
+        "who": "Suitable for nostalgia content creators, retrospective publications, brand marketers showing product evolution, educational pages, and social media accounts focused on generational comparisons.",
+        "how": [
+          "Enter a comparison topic (e.g., 'Childhood Snacks', 'Entertainment', 'School Supplies').",
+          "The poster auto-lays out a three-column Category / Then / Now table.",
+          "Each row pairs a vintage item on the left with its modern equivalent on the right using realistic photos.",
+          "Generate a vertical 4K clean nostalgic-vs-modern comparison infographic."
+        ],
+        "prompts": [
+          "Generate a 'Childhood Snacks Then vs Now' comparison infographic.",
+          "Create an 'Entertainment Then vs Now' nostalgia comparison poster.",
+          "Generate a 'School Supplies Then vs Now' comparison infographic."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Travel Packing Guide Infographic",
+    "description": "Generate a vibrant packing guide poster for any destination, day count, and gender focus with carry-on contents, essentials, outfit ideas, must-haves, and pro tips.",
+    "title": "Nano Banana Prompt: Travel Packing Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vibrant packing guide poster tailored to a destination, trip length, and gender focus. The title banner reads '[N]-DAY [destination] Packing Guide' over travel-themed graphics; the body covers 'What you can fit in a carry-on', 'Packing Essentials', '[N]-Day Outfit Ideas', 'Extra Must-Haves', and 'Pro Tips' — each section uses realistic product photos with clear labels in a coordinated theme palette.",
+        "who": "Suitable for travel bloggers, itinerary planners, lifestyle creators, travel-gear retailers, packing-list app designers, and content creators making destination-specific shareable guides.",
+        "how": [
+          "Enter the destination (e.g., 'Beach Vacation', 'Hiking Adventure', 'Business Trip').",
+          "Enter the number of days (e.g., '3-Day', '5-Day', '7-Day').",
+          "Enter the gender focus (e.g., 'Women's', 'Men's', 'Unisex').",
+          "Generate a vertical 4K bright themed packing guide poster."
+        ],
+        "prompts": [
+          "Generate a Women's 5-Day Beach Vacation packing guide infographic.",
+          "Create a Men's 7-Day Hiking Adventure packing guide poster.",
+          "Generate a Unisex 3-Day Weekend Getaway packing guide infographic."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Word Origins Map Infographic",
+    "description": "Generate an educational world-map infographic on any topic showing words connected by colored lines to their countries of origin with etymologies and thematic icons.",
+    "title": "Nano Banana Prompt: Word Origins Map Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates an educational horizontal infographic titled 'WORD ORIGINS: [topic]'. A simplified world map sits at the center; words are placed across the map and connected by colored lines to their countries of origin, each marked with the country flag. Each word is annotated with its etymology and brief meaning alongside a small thematic icon, in a clean modern colorful pastel design.",
+        "who": "Suitable for language teachers, etymology enthusiasts, ESL/CSL educators, linguistics writers, vocabulary-learning app designers, and content creators making shareable etymology infographics.",
+        "how": [
+          "Enter the topic (e.g., 'Food & Cuisine', 'Animals & Nature', 'Science & Technology').",
+          "The infographic auto-places topical words on a world map with origin lines and flags.",
+          "Each word is annotated with etymology, brief meaning, and a thematic icon.",
+          "Generate a horizontal 4K educational word-origins map infographic."
+        ],
+        "prompts": [
+          "Generate a 'Food & Cuisine' word origins map infographic.",
+          "Create an 'Animals & Nature' word origins map poster.",
+          "Generate a 'Science & Technology' word origins map infographic."
         ]
       }
     }

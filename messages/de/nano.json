@@ -2705,11 +2705,11 @@
   },
   "template-gardening-how-to-infographic": {
     "category": "Gartenbau Anleitung Infografik",
-    "description": "Erstellen Sie eine saubere Schritt-für-Schritt-Gartenbau-Infografik mit dem Titel 'WIE MAN <pflanze> ANBAUT' mit sechs nummerierten Fotostufen und hilfreichen Symbolen für jede Pflanze.",
+    "description": "Erstellen Sie eine saubere Schritt-für-Schritt-Gartenbau-Infografik mit dem Titel 'WIE MAN [pflanze] ANBAUT' mit sechs nummerierten Fotostufen und hilfreichen Symbolen für jede Pflanze.",
     "title": "Nano Banana Prompt: Gartenbau Anleitung Infografik Generator | Curify AI",
     "content": {
       "sections": {
-        "what": "Diese Vorlage erstellt eine vertikale Bildungs-Gartenbau-Infografik mit dem Titel 'WIE MAN <pflanze> ANBAUT'. Ein fetter Haupttitel steht oben mit einem Pflanzensubtitel; ein 2x3-Raster mit sechs nummerierten Schritten füllt den Körper, jeder mit einer realistischen Fotoillustration der Gartenaktion, einem klaren Schritt-Titel, beschreibendem Text und hilfreichen kleinen Symbolen. Sauberer weißer Hintergrund, scharfe Produktfotografie-Ästhetik, professioneller Bildungsstil.",
+        "what": "Diese Vorlage erstellt eine vertikale Bildungs-Gartenbau-Infografik mit dem Titel 'WIE MAN [pflanze] ANBAUT'. Ein fetter Haupttitel steht oben mit einem Pflanzensubtitel; ein 2x3-Raster mit sechs nummerierten Schritten füllt den Körper, jeder mit einer realistischen Fotoillustration der Gartenaktion, einem klaren Schritt-Titel, beschreibendem Text und hilfreichen kleinen Symbolen. Sauberer weißer Hintergrund, scharfe Produktfotografie-Ästhetik, professioneller Bildungsstil.",
         "who": "Geeignet für Gartenblogger, Marken für urbanes Gärtnern, Einzelhändler für Samen und Werkzeuge, Content Creator für nachhaltiges Leben, Bildungsanbieter für Haus und Garten, Schulen mit Gartenprogrammen und Eltern, die Kindern den Anbau von Lebensmitteln beibringen.",
         "how": [
           "Geben Sie einen Pflanzennamen ein (z.B. Tomaten, Paprika, Salat, Erdbeeren).",
@@ -2743,6 +2743,116 @@
           "Erstellen Sie eine Aquarell-Infografik '10 Ideen zur Selbstfürsorge' mit gemütlichen Tipps.",
           "Erstellen Sie ein Plakat '8 Ideen zur Morgenroutine' im Aquarell-Lifestyle-Stil.",
           "Erstellen Sie eine warme Aquarell-Infografik '12 Achtsamkeitspraktiken'."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Infografik zum Vergleich von Animationsstudios",
+    "description": "Erstellen Sie ein lebendiges Poster 'ANIME STUDIO SHOWDOWN', das zwei Animationsstudios nebeneinander vergleicht, mit Logos, Gründungsjahr, Kunststil, bemerkenswerten Werken und Vermächtnis.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zum Vergleich von Animationsstudios | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebendiges Infografik-Poster 'ANIME STUDIO SHOWDOWN COMPARISON'. Ein Titelbanner befindet sich oben; der Körper ist links/rechts zwischen den beiden gewählten Studios aufgeteilt, wobei jede Seite das Studio-Logo, Gründungsjahr, künstlerischen Stil mit Beispielkunst, bemerkenswerte Werke mit Bildern und Vermächtnis/Einfluss mit Symbolen abdeckt. Der Hintergrund verwendet eine Holzschreibtischtextur mit anime-inspirierten Kritzeleien und Figuren für eine gemütliche Fandom-Ästhetik, mit unterschiedlichen Farbpaletten pro Studio.",
+        "who": "Geeignet für Anime-Fans, Animationspublikationen, Fan-Art-Kreatoren, Lehrer für Animationsgeschichte, Social-Media-Accounts, die sich auf Anime konzentrieren, und Content-Ersteller, die teilbare Studioübersichten erstellen.",
+        "how": [
+          "Geben Sie den Namen des ersten Studios ein (z. B. Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Geben Sie den Namen des zweiten Studios ein, um einen Vergleich zu ziehen (z. B. MAPPA, Ufotable, DreamWorks).",
+          "Das Poster wird automatisch mit einer links/rechts Aufteilung mit Logos, Gründungsjahr, Kunststil, bemerkenswerten Werken und Vermächtnis angeordnet.",
+          "Erstellen Sie eine vertikale 4K helle Informationsinfografik zum Vergleich."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zum Vergleich von Studio Ghibli vs MAPPA.",
+          "Erstellen Sie ein Poster zum Vergleich von Pixar vs DreamWorks Animationsstudios.",
+          "Erstellen Sie eine Infografik zum Vergleich von Kyoto Animation vs Ufotable Studios."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "Infografik zur Geschichtszeitleiste",
+    "description": "Erstellen Sie ein visuell beeindruckendes Evolutionszeitleisten-Poster zu jedem historischen Thema mit einer fließenden zentralen Zeitleiste, Meilensteinereignissen, Daten, Beschreibungen und thematischen Illustrationen.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zur Geschichtszeitleiste | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine visuell beeindruckende vertikale Infografik mit dem Titel '[Thema]: Evolution durch die Zeit'. Eine zentrale fließende Zeitleiste mit nummerierten jährlichen Meilensteinen verläuft über die gesamte Länge des Posters; jeder Meilenstein zeigt ein wichtiges Ereignis, Datum, kurze Beschreibung und eine relevante Illustration. Die Farbpalette, Symbole und das Hintergrunddesign passen sich dem gewählten Thema (retro, futuristisch, vintage usw.) für eine konsistente Designsprache an.",
+        "who": "Geeignet für Geschichtslehrer, Museums- und Ausstellungsdesigner, Content-Marketer, Publikationen zur Markengeschichte, populärwissenschaftliche Autoren, Social-Media-Pädagogen und Kreatoren, die teilbare Geschichts-Poster erstellen.",
+        "how": [
+          "Geben Sie ein Zeitleistenthema ein (z. B. 'Geschichte von Apple Inc.', 'Evolution der Videospiele', 'Geschichte der Fotografie').",
+          "Die Infografik wird automatisch mit einer zentralen fließenden Zeitleiste und nummerierten Meilensteinen angeordnet.",
+          "Jeder Meilenstein zeigt ein wichtiges Ereignis, Datum, kurze Beschreibung und thematische Illustration.",
+          "Erstellen Sie ein vertikales 4K thematisches Evolutionszeitleisten-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Zeitleiste 'Geschichte von Apple Inc.: Evolution durch die Zeit'.",
+          "Erstellen Sie ein Poster zur Geschichtszeitleiste 'Evolution der Videospiele'.",
+          "Erstellen Sie eine Infografik zur Evolutionszeitleiste 'Weltraumforschung' mit Meilensteinereignissen."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "Dann vs Jetzt Vergleichsinfografik",
+    "description": "Erstellen Sie ein sauberes THEN-VS-NOW Vergleichs-Poster zu jedem Thema, mit einem dreispaltigen Tisch, der Vintage- und moderne Äquivalente mit realistischen Fotos vergleicht.",
+    "title": "Nano Banana Prompt: Generator für Dann vs Jetzt Vergleichsinfografiken | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine klare vertikale Vergleichsinfografik mit dem Titel '[Thema] DANN VS JETZT'. Ein Titelthema befindet sich oben; der Körper ist ein dreispaltiger Tisch mit Kategorien / Dann / Jetzt, wobei jede Zeile ein Vintage-Produkt links und sein modernes Äquivalent rechts mit realistischen Fotos zeigt. Der Hintergrund und die Symbole passen zum Thema für eine nostalgische, aber moderne Ästhetik.",
+        "who": "Geeignet für Nostalgie-Content-Ersteller, retrospektive Publikationen, Markenmarketer, die die Produktentwicklung zeigen, Bildungsseiten und Social-Media-Accounts, die sich auf generationsübergreifende Vergleiche konzentrieren.",
+        "how": [
+          "Geben Sie ein Vergleichsthema ein (z. B. 'Kindersnacks', 'Unterhaltung', 'Schulbedarf').",
+          "Das Poster wird automatisch mit einem dreispaltigen Tisch für Kategorie / Dann / Jetzt angeordnet.",
+          "Jede Zeile kombiniert einen Vintage-Artikel links mit seinem modernen Äquivalent rechts mit realistischen Fotos.",
+          "Erstellen Sie eine vertikale 4K saubere nostalgische-vs-moderne Vergleichsinfografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik 'Kindersnacks Dann vs Jetzt'.",
+          "Erstellen Sie ein Nostalgie-Vergleichs-Poster 'Unterhaltung Dann vs Jetzt'.",
+          "Erstellen Sie eine Infografik 'Schulbedarf Dann vs Jetzt'."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Infografik zur Reisepackliste",
+    "description": "Erstellen Sie ein lebendiges Packleitfaden-Poster für jedes Reiseziel, jede Anzahl von Tagen und Geschlechterfokus mit Handgepäckinhalten, Essentials, Outfit-Ideen, Must-Haves und Profi-Tipps.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zur Reisepackliste | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebendiges Packleitfaden-Poster, das auf ein Reiseziel, die Reisedauer und den Geschlechterfokus zugeschnitten ist. Das Titelbanner lautet '[N]-TAG [Ziel] Packliste' über reisebezogenen Grafiken; der Körper behandelt 'Was Sie in einem Handgepäck unterbringen können', 'Pack-Essentials', '[N]-Tage Outfit-Ideen', 'Zusätzliche Must-Haves' und 'Profi-Tipps' – jeder Abschnitt verwendet realistische Produktfotos mit klaren Beschriftungen in einer koordinierten Themenpalette.",
+        "who": "Geeignet für Reiseblogger, Reiseplaner, Lifestyle-Kreatoren, Einzelhändler für Reiseausrüstung, Designer von Packlisten-Apps und Content-Ersteller, die zielgerichtete, teilbare Leitfäden erstellen.",
+        "how": [
+          "Geben Sie das Reiseziel ein (z. B. 'Strandurlaub', 'Wanderabenteuer', 'Geschäftsreise').",
+          "Geben Sie die Anzahl der Tage ein (z. B. '3-Tage', '5-Tage', '7-Tage').",
+          "Geben Sie den Geschlechterfokus ein (z. B. 'Damen', 'Herren', 'Unisex').",
+          "Erstellen Sie ein vertikales 4K helles thematisches Packleitfaden-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Packliste für Damen für einen 5-Tage Strandurlaub.",
+          "Erstellen Sie ein Poster zur Packliste für Herren für ein 7-Tage Wanderabenteuer.",
+          "Erstellen Sie eine Infografik zur Packliste für Unisex für einen 3-Tage Wochenendausflug."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Infografik zur Herkunft von Wörtern",
+    "description": "Erstellen Sie eine lehrreiche Weltkarten-Infografik zu jedem Thema, die Wörter zeigt, die durch farbige Linien mit ihren Herkunftsländern verbunden sind, mit Etymologien und thematischen Symbolen.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zur Herkunft von Wörtern | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine lehrreiche horizontale Infografik mit dem Titel 'WORTHERKUNFTEN: [Thema]'. Eine vereinfachte Weltkarte befindet sich in der Mitte; Wörter sind über die Karte verteilt und durch farbige Linien mit ihren Herkunftsländern verbunden, die jeweils mit der Landesflagge gekennzeichnet sind. Jedes Wort ist mit seiner Etymologie und einer kurzen Bedeutung sowie einem kleinen thematischen Symbol versehen, in einem sauberen modernen bunten Pastell-Design.",
+        "who": "Geeignet für Sprachlehrer, Etymologie-Enthusiasten, ESL/CSL-Pädagogen, Linguistik-Autoren, Designer von Vokabel-Lern-Apps und Content-Ersteller, die teilbare Etymologie-Infografiken erstellen.",
+        "how": [
+          "Geben Sie das Thema ein (z. B. 'Essen & Küche', 'Tiere & Natur', 'Wissenschaft & Technologie').",
+          "Die Infografik platziert automatisch thematische Wörter auf einer Weltkarte mit Herkunftslinien und Flaggen.",
+          "Jedes Wort ist mit Etymologie, kurzer Bedeutung und einem thematischen Symbol versehen.",
+          "Erstellen Sie eine horizontale 4K lehrreiche Infografik zur Herkunft von Wörtern."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Herkunft von Wörtern 'Essen & Küche'.",
+          "Erstellen Sie ein Poster zur Herkunft von Wörtern 'Tiere & Natur'.",
+          "Erstellen Sie eine Infografik zur Herkunft von Wörtern 'Wissenschaft & Technologie'."
         ]
       }
     }

@@ -2705,11 +2705,11 @@
   },
   "template-gardening-how-to-infographic": {
     "category": "Bahçecilik Nasıl Yapılır İnfografiği",
-    "description": "'<bitki> NASIL YETİŞTİRİLİR' başlıklı temiz adım adım bahçecilik infografiği oluşturun; her bitki için altı numaralı fotoğraf adımı ve yardımcı simgeler ile.",
+    "description": "'[bitki] NASIL YETİŞTİRİLİR' başlıklı temiz adım adım bahçecilik infografiği oluşturun; her bitki için altı numaralı fotoğraf adımı ve yardımcı simgeler ile.",
     "title": "Nano Banana Prompt: Bahçecilik Nasıl Yapılır İnfografiği Üretici | Curify AI",
     "content": {
       "sections": {
-        "what": "Bu şablon, '<bitki> NASIL YETİŞTİRİLİR' başlıklı dikey eğitim bahçecilik infografiği oluşturur. Üstte cesur bir ana başlık ve bir bitki alt başlığı bulunur; gövdeyi dolduran altı numaralı adımın yer aldığı 2x3 ızgara, her biri bahçecilik eyleminin gerçekçi bir fotoğraf illüstrasyonu, net bir adım başlığı, açıklayıcı metin ve yardımcı küçük simgeler ile doldurulur. Temiz beyaz arka plan, keskin ürün fotoğrafçılığı estetiği, profesyonel eğitim tarzı.",
+        "what": "Bu şablon, '[bitki] NASIL YETİŞTİRİLİR' başlıklı dikey eğitim bahçecilik infografiği oluşturur. Üstte cesur bir ana başlık ve bir bitki alt başlığı bulunur; gövdeyi dolduran altı numaralı adımın yer aldığı 2x3 ızgara, her biri bahçecilik eyleminin gerçekçi bir fotoğraf illüstrasyonu, net bir adım başlığı, açıklayıcı metin ve yardımcı küçük simgeler ile doldurulur. Temiz beyaz arka plan, keskin ürün fotoğrafçılığı estetiği, profesyonel eğitim tarzı.",
         "who": "Bahçecilik blog yazarları, kentsel tarım markaları, tohum ve alet perakendecileri, sürdürülebilir yaşam içerik üreticileri, ev ve bahçe eğitmenleri, bahçecilik programları yürüten okullar ve çocuklara gıda yetiştirmeyi öğreten ebeveynler için uygundur.",
         "how": [
           "Bir bitki adı girin (örn. Domates, Dolmalık Biber, Marul, Çilek).",
@@ -2743,6 +2743,116 @@
           "'10 Kendine Bakım Fikri' sulu boya infografiği oluşturun; rahat ipuçları ile.",
           "'8 Sabah Rutini Fikri' yaşam tarzı sulu boya posterini oluşturun.",
           "'12 Farkındalık Uygulamaları' sıcak sulu boya infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Animasyon Stüdyosu Karşılaştırma Infografiği",
+    "description": "'ANİME STÜDYOSU KARŞILAŞMASI' posterini, iki animasyon stüdyosunu yan yana karşılaştırarak, logolar, kuruluş yılı, sanat tarzı, dikkat çekici eserler ve miras ile birlikte oluşturun.",
+    "title": "Nano Banana Prompt: Animasyon Stüdyosu Karşılaştırma Infografiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, '[stüdyo1] ve [stüdyo2] Karşılaştırması' başlıklı canlı bir infografik poster oluşturur. Üstte bir başlık bandı bulunur; gövde, seçilen iki stüdyo arasında sol/sağ olarak bölünür, her taraf stüdyonun logosu, kuruluş yılı, örnek sanat ile sanat tarzı, resimlerle dikkat çekici eserler ve simgelerle miras/etkiyi kapsar. Arka plan, anime temalı çizimler ve figürlerle birlikte ahşap masa dokusu kullanarak sıcak bir fandom estetiği sunar ve her stüdyo için belirgin renk paletleri vardır.",
+        "who": "Anime hayranları, animasyon yayınları, fan-art yaratıcıları, animasyon tarihi eğitmenleri, anime odaklı sosyal medya hesapları ve paylaşılabilir stüdyo özetleri oluşturan içerik üreticileri için uygundur.",
+        "how": [
+          "İlk stüdyo adını girin (örn. Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Karşılaştırmak için ikinci stüdyo adını girin (örn. MAPPA, Ufotable, DreamWorks).",
+          "Poster, logolar, kuruluş yılı, sanat tarzı, dikkat çekici eserler ve miras ile sol/sağ bölünmüş olarak otomatik yerleştirilir.",
+          "Dikey 4K parlak bilgilendirici karşılaştırma infografiği oluşturun."
+        ],
+        "prompts": [
+          "Studio Ghibli ile MAPPA karşılaştırması infografiği oluşturun.",
+          "Pixar ile DreamWorks animasyon stüdyosu karşılaştırma posteri oluşturun.",
+          "Kyoto Animation ile Ufotable stüdyo karşılaştırması infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "Tarih Zaman Çizgisi Infografiği",
+    "description": "Herhangi bir tarihi konu hakkında akıcı bir merkezi zaman çizgisi, dönüm noktası olayları, tarihler, açıklamalar ve temalı illüstrasyonlar ile görsel olarak etkileyici bir evrim zaman çizgisi posteri oluşturun.",
+    "title": "Nano Banana Prompt: Tarih Zaman Çizgisi Infografiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, '[konu]: Zaman İçinde Evrim' başlıklı görsel olarak etkileyici bir dikey infografik oluşturur. Merkezde akıcı bir zaman çizgisi, numaralı yıllık dönüm noktalarıyla posterin uzunluğunu kaplar; her dönüm noktası, bir ana olay, tarih, kısa açıklama ve ilgili bir illüstrasyon içerir. Renk paleti, simgeler ve arka plan tasarımı, seçilen tema (retro, futuristik, vintage vb.) ile uyumlu bir tasarım dili için uyum sağlar.",
+        "who": "Tarih öğretmenleri, müze ve sergi tasarımcıları, içerik pazarlamacıları, marka-tarih yayınları, popüler bilim yazarları, sosyal medya eğitmenleri ve paylaşılabilir tarih-X posterleri oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir zaman çizgisi konusu girin (örn. 'Apple Inc. Tarihi', 'Video Oyunlarının Evrimi', 'Fotoğrafçılığın Tarihi').",
+          "Infografik, numaralı dönüm noktaları ile merkezi akıcı bir zaman çizgisi otomatik olarak yerleştirir.",
+          "Her dönüm noktası, bir ana olay, tarih, kısa açıklama ve temalı illüstrasyon gösterir.",
+          "Dikey 4K temalı evrim zaman çizgisi posteri oluşturun."
+        ],
+        "prompts": [
+          "'Apple Inc. Tarihi: Zaman İçinde Evrim' zaman çizgisi infografiği oluşturun.",
+          "'Video Oyunlarının Evrimi' tarih zaman çizgisi posteri oluşturun.",
+          "'Uzay Keşfi' evrim zaman çizgisi infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "O Zaman vs Şimdi Karşılaştırma Infografiği",
+    "description": "Herhangi bir konu hakkında temiz bir O-ZAMAN-VS-ŞİMDİ karşılaştırma posteri oluşturun, gerçekçi fotoğraflar kullanarak vintage ve modern eşdeğerleri karşılaştıran üç sütunlu bir tablo ile.",
+    "title": "Nano Banana Prompt: O Zaman vs Şimdi Karşılaştırma Infografiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, '[konu] O ZAMAN VS ŞİMDİ' başlıklı net bir dikey karşılaştırma infografiği oluşturur. Üstte bir tema başlığı bulunur; gövde, Kategori / O Zaman / Şimdi satırları ile üç sütunlu bir tablo içerir, her biri solda bir vintage ürünü ve sağda modern eşdeğerini gerçekçi fotoğraflarla gösterir. Arka plan ve simgeler, nostaljik ama modern bir estetik için konuya uyum sağlar.",
+        "who": "Nostalji içerik üreticileri, retrospektif yayınlar, ürün evrimini gösteren marka pazarlamacıları, eğitim sayfaları ve nesil karşılaştırmalarına odaklanan sosyal medya hesapları için uygundur.",
+        "how": [
+          "Bir karşılaştırma konusu girin (örn. 'Çocukluk Atıştırmalıkları', 'Eğlence', 'Okul Malzemeleri').",
+          "Poster, üç sütunlu Kategori / O Zaman / Şimdi tablosunu otomatik olarak yerleştirir.",
+          "Her satır, solda bir vintage öğeyi ve sağda modern eşdeğerini gerçekçi fotoğraflarla eşleştirir.",
+          "Dikey 4K temiz nostaljik-vs-modern karşılaştırma infografiği oluşturun."
+        ],
+        "prompts": [
+          "'Çocukluk Atıştırmalıkları O Zaman vs Şimdi' karşılaştırma infografiği oluşturun.",
+          "'Eğlence O Zaman vs Şimdi' nostalji karşılaştırma posteri oluşturun.",
+          "'Okul Malzemeleri O Zaman vs Şimdi' karşılaştırma infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Seyahat Paketleme Rehberi Infografiği",
+    "description": "Herhangi bir destinasyon, gün sayısı ve cinsiyet odaklı olarak canlı bir paketleme rehberi posteri oluşturun; el bagajı içeriği, temel gereksinimler, kıyafet fikirleri, olmazsa olmazlar ve profesyonel ipuçları ile.",
+    "title": "Nano Banana Prompt: Seyahat Paketleme Rehberi Infografiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir destinasyona, seyahat süresine ve cinsiyet odaklı olarak canlı bir paketleme rehberi posteri oluşturur. Başlık bandı, seyahat temalı grafiklerin üzerinde '[N]-GÜNLÜK [destinasyon] Paketleme Rehberi' olarak görünür; gövde, 'El bagajına sığdırabileceğiniz şeyler', 'Paketleme Temel Gereksinimleri', '[N]-Günlük Kıyafet Fikirleri', 'Ek Olmazsa Olmazlar' ve 'Profesyonel İpuçları' bölümlerini kapsar — her bölüm, uyumlu bir tema paletinde net etiketlerle gerçekçi ürün fotoğrafları kullanır.",
+        "who": "Seyahat blog yazarları, gezi planlayıcıları, yaşam tarzı yaratıcıları, seyahat ekipmanı perakendecileri, paketleme listesi uygulama tasarımcıları ve destinasyona özel paylaşılabilir rehberler oluşturan içerik üreticileri için uygundur.",
+        "how": [
+          "Destinasyonu girin (örn. 'Plaj Tatili', 'Dağ Yürüyüşü', 'İş Seyahati').",
+          "Gün sayısını girin (örn. '3-Günlük', '5-Günlük', '7-Günlük').",
+          "Cinsiyet odaklı olarak girin (örn. 'Kadın', 'Erkek', 'Unisex').",
+          "Dikey 4K parlak temalı paketleme rehberi posteri oluşturun."
+        ],
+        "prompts": [
+          "Kadınlar için 5-Günlük Plaj Tatili paketleme rehberi infografiği oluşturun.",
+          "Erkekler için 7-Günlük Dağ Yürüyüşü paketleme rehberi posteri oluşturun.",
+          "Unisex 3-Günlük Hafta Sonu Kaçamağı paketleme rehberi infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Kelime Kökenleri Haritası Infografiği",
+    "description": "Herhangi bir konu hakkında kelimeleri, köken ülkelerine bağlı renkli çizgilerle gösteren eğitici bir dünya haritası infografiği oluşturun; etimolojiler ve temalı simgeler ile.",
+    "title": "Nano Banana Prompt: Kelime Kökenleri Haritası Infografiği Üretici | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 'KELİME KÖKENLERİ: [konu]' başlıklı eğitici bir yatay infografik oluşturur. Basitleştirilmiş bir dünya haritası merkezde bulunur; kelimeler harita üzerinde yer alır ve köken ülkelerine bağlı renkli çizgilerle bağlanır, her biri ülke bayrağı ile işaretlenir. Her kelime, etimolojisi ve kısa anlamı ile birlikte küçük bir temalı simge ile anot edilir, temiz modern renkli pastel tasarımda.",
+        "who": "Dil öğretmenleri, etimoloji meraklıları, ESL/CSL eğitmenleri, dilbilim yazarları, kelime öğrenme uygulama tasarımcıları ve paylaşılabilir etimoloji infografikleri oluşturan içerik üreticileri için uygundur.",
+        "how": [
+          "Konuyu girin (örn. 'Yiyecek ve Mutfak', 'Hayvanlar ve Doğa', 'Bilim ve Teknoloji').",
+          "Infografik, köken çizgileri ve bayraklarla konusal kelimeleri dünya haritasına otomatik olarak yerleştirir.",
+          "Her kelime, etimoloji, kısa anlam ve temalı simge ile anot edilir.",
+          "Yatay 4K eğitici kelime kökenleri haritası infografiği oluşturun."
+        ],
+        "prompts": [
+          "'Yiyecek ve Mutfak' kelime kökenleri haritası infografiği oluşturun.",
+          "'Hayvanlar ve Doğa' kelime kökenleri haritası posteri oluşturun.",
+          "'Bilim ve Teknoloji' kelime kökenleri haritası infografiği oluşturun."
         ]
       }
     }
