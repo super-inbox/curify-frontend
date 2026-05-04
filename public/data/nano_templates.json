@@ -5402,5 +5402,108 @@
     ],
     "base_rank_score": 90,
     "rank_score": 90
-  }
+  },
+  {
+    "id": "template-animation-studio-comparison-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Animation Studio Comparison Infographic Designer) Create a vibrant 'ANIME STUDIO SHOWDOWN COMPARISON' infographic poster. Layout: 1. Top section: Title banner with the comparison theme. 2. Split layout, left side for {studio_a} and right side for {studio_b}. Each side includes: studio logo/name, founding year, artistic style section with example art, notable works with images, and legacy & impact description with icons. 3. Background: Wooden desk texture with anime-themed doodles and figurines, giving a cozy fandom aesthetic. Style: Bright, clear, informational graphic design with distinct color palettes for each studio, high readability, clean vector elements, vertical format, 4K ultra HD, direct image generation. Subject: {studio_a} vs {studio_b} Animation Studio Comparison Infographic.",
+            "parameters": [
+                {
+                    "name": "studio_a",
+                    "label": "First Studio Name",
+                    "type": "text",
+                    "placeholder": ["Studio Ghibli", "Wit Studio", "Kyoto Animation", "Pixar"]
+                },
+                {
+                    "name": "studio_b",
+                    "label": "Second Studio Name",
+                    "type": "text",
+                    "placeholder": ["MAPPA", "Ufotable", "DreamWorks"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-animation-studio-comparison-infographic-pixar-vs-dreamworks-prev.jpg"
+},
+  {
+    "id": "template-travel-packing-guide-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Travel Packing Guide Infographic Designer) Create a vibrant packing guide poster for a {gender} {day_count}-day trip to {destination}. Layout: 1. Top: The title '{day_count}-DAY {destination} Packing Guide' with travel-themed graphics. 2. Sections: 'What you can fit in a carry-on', 'Packing Essentials', '{day_count}-Day Outfit Ideas', 'Extra Must-Haves', and 'Pro Tips'. 3. Each section features realistic product photos/illustrations, clear labels, and a color palette matching the trip theme. Style: Bright, friendly, informational design, clean layout, themed icons, pastel/coordinated colors, vertical format, 4K ultra HD, direct image generation. Subject: {gender} {day_count}-Day {destination} Travel Packing Guide Infographic.",
+            "parameters": [
+                {
+                    "name": "destination",
+                    "label": "Travel Destination",
+                    "type": "text",
+                    "placeholder": ["Snow Mountain", "Beach Vacation", "Coastal Vacation", "Hiking Adventure", "Business Trip", "Weekend Getaway"]
+                },
+                {
+                    "name": "day_count",
+                    "label": "Number of Days",
+                    "type": "text",
+                    "placeholder": ["3-Day", "5-Day", "7-Day"]
+                },
+                {
+                    "name": "gender",
+                    "label": "Gender Focus",
+                    "type": "text",
+                    "placeholder": ["Women's", "Men's", "Unisex"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-travel-packing-guide-infographic-3day-weekend-getaway-prev.jpg"
+},
+  {
+    "id": "template-history-timeline-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(History Timeline Infographic Designer) Create a visually stunning infographic titled '{timeline_topic}: Evolution Through Time'. Layout: 1. A central, flowing timeline with numbered/yearly milestones. 2. Each milestone features a key event, date, short description, and relevant illustration. 3. The theme is reflected in the color palette, icons, and background design. Style: Themed aesthetic (e.g., retro, futuristic, vintage), clean layout, detailed illustrations, high readability, consistent design language, vertical format, 4K ultra HD, direct image generation. Subject: '{timeline_topic}' Evolution Timeline Infographic.",
+            "parameters": [
+                {
+                    "name": "timeline_topic",
+                    "label": "Timeline Topic",
+                    "type": "text",
+                    "placeholder": ["Apple Inc. History", "Evolution of Video Games", "History of Photography", "Space Exploration", "Coffee Evolution", "Vintage Fashion Evolution"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-history-timeline-infographic-prev.jpg"
+},
+  {
+    "id": "template-word-origins-map-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Word Origins Map Infographic Designer) Create an educational infographic titled 'WORD ORIGINS: {topic}'. Layout: 1. Center: A simplified world map. 2. Words are placed on the map, connected by colored lines to their countries of origin, with each country marked by its flag. 3. Each word includes its etymology and brief meaning, paired with a small thematic icon. Style: Clean, modern, and colorful design, educational aesthetic, soft pastel colors, clear sans-serif font, horizontal format, 4K ultra HD, direct image generation. Subject: '{topic}' Word Origins Map Infographic.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Topic",
+                    "type": "text",
+                    "placeholder": ["Science & Technology", "Animals & Nature", "Everyday Vocabulary", "Food & Cuisine"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-word-origins-map-infographic-animals-nature-prev.jpg"
+},
+  {
+    "id": "template-then-vs-now-comparison-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Then vs Now Comparison Infographic Designer) Create a clear comparison infographic titled '{topic} THEN VS NOW'. Layout: 1. Top title with the theme. 2. A table with three columns: Category, Then, Now. 3. Each row shows a category with a vintage/old product on the left and its modern equivalent on the right, using realistic photos. 4. The background and icons match the theme. Style: Clean, minimal design, easy-to-read layout, theme-matching colors, nostalgic yet modern aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{topic} Then vs Now Comparison Infographic.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Comparison Topic",
+                    "type": "text",
+                    "placeholder": ["Childhood Snacks", "Entertainment", "School Supplies", "Tech Products", "Fashion Trends", "Travel"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/emplate-then-vs-now-comparison-infographic-childhood-snacks-prev.jpg"
+}
 ]
