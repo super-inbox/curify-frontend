@@ -22,6 +22,10 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
 
+// Cache topic listing pages for 4 hours with ISR — keeps the
+// gallery / prompt fetches off the hot path on every request.
+export const revalidate = 14400;
+
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import blogsData from "@/public/data/blogs.json";

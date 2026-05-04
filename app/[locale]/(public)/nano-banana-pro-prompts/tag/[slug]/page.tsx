@@ -8,6 +8,11 @@ import type { NanoPromptBase } from '@/types/nanoPrompts';
 import { toOgLocale } from '@/lib/locale_utils';
 import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 import CategoriesSection from "@/app/[locale]/_components/NanoBananaPromptsTags";
+
+// Cache tag listing pages for 4 hours with ISR — listings rarely
+// change and bot crawls hit these often.
+export const revalidate = 14400;
+
 type TagEntry = {
   title?: string;
   description?: string;
