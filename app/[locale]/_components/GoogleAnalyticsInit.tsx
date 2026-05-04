@@ -1,9 +1,26 @@
+"use client";
+
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-23QXSJ8HS7";
+// Skip GA for crawler/bot user agents so their visits don't pollute
+// real-user analytics. Pattern matches the typical "bot/spider/crawler"
+// signatures Amazonbot, Googlebot, Bingbot, etc. all advertise.
+const BOT_UA_RE = /bot|spider|crawl|slurp|screenshot/i;
 
 export default function GoogleAnalyticsInit() {
-  if (!GA_ID) return null;
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    if (!GA_ID) return;
+    const ua =
+      typeof navigator !== "undefined" ? navigator.userAgent || "" : "";
+    if (BOT_UA_RE.test(ua)) return;
+    setShouldLoad(true);
+  }, []);
+
+  if (!shouldLoad) return null;
 
   return (
     <>
