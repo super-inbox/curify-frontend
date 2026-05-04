@@ -135,8 +135,8 @@ export default function Header() {
 
   return (
     <>
-      {/* Language Switch */}
-      <div className="fixed right-6 top-4 z-[60] flex items-center gap-2">
+      {/* Language Switch — mobile/tablet only; desktop uses SiteTopBar's LocaleSwitcher */}
+      <div className="lg:hidden fixed right-6 top-4 z-[60] flex items-center gap-2">
         {primaryLanguages.map((lang) => (
           <button
             key={lang.locale}

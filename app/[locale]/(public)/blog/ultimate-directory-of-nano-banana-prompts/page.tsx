@@ -307,10 +307,10 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('introduction.title')}</h2>
             <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1', { strong: '<strong>' })) }}
             />
             <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2', { strong: '<strong>' })) }}
             />
             <p className="text-lg text-gray-700 mb-4"
               dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph3')) }}

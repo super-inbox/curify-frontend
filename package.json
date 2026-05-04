@@ -7,7 +7,7 @@
     "predev": "node scripts/nextauth-secret.js",
     "sync:cdn": "if [ \"$NEXT_PUBLIC_ENV\" = \"local\" ]; then bash scripts/sync_large_assets.sh; else echo 'Skipping CDN sync (not local dev)'; fi",
     "prebuild": "npm run sync:cdn",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

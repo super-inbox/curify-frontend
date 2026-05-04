@@ -773,5 +773,152 @@
     "templatesHeading": "Vorlagen",
     "subTopicsHeading": "Nach Kategorie browsen",
     "exploreMoreHeading": "Mehr entdecken"
+  },
+  "videoTranscriptGenerator": {
+    "metadata": {
+      "title": "AI Video-Transkriptgenerator | Curify AI",
+      "description": "Generieren Sie in wenigen Minuten genaue Transkripte aus jedem Video. Curifys KI-Transkriptionstool unterstützt über 170 Sprachen und exportiert in SRT und TXT."
+    },
+    "title": "AI Video-Transkriptgenerator",
+    "description": "Laden Sie ein Video hoch oder fügen Sie einen YouTube-Link ein und erhalten Sie in Sekunden ein vollständiges, genaues Transkript. Exportieren Sie als SRT oder im Klartext — bereit für Untertitel, Wiederverwendung oder Suchindexierung.",
+    "example": "Beispiel: Eine 10-minütige Vorlesung, transkribiert mit sprechergenauem Text und Zeitstempeln.",
+    "cta": "Transkript generieren",
+    "why": {
+      "title": "Warum Curify für Video-Transkription nutzen?",
+      "point1": "Hochgenaue Transkription, unterstützt von fortschrittlichen Spracherkennungsmodellen.",
+      "point2": "Unterstützt über 170 Sprachen mit automatischer Spracherkennung.",
+      "point3": "Exportieren Sie vollständige Transkripte als SRT (mit Zeitstempeln) oder im Klartext.",
+      "point4": "Funktioniert mit hochgeladenen Videos und YouTube-Links — keine zusätzliche Software erforderlich."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Welche Videoformate unterstützt der Transkriptgenerator?",
+      "a1": "Curify unterstützt alle gängigen Videoformate, einschließlich MP4, MOV und AVI, sowie direkte YouTube-URLs. Laden Sie einfach hoch oder fügen Sie ein, und die Transkription beginnt automatisch.",
+      "q2": "Kann ich das Transkript nach der Erstellung bearbeiten?",
+      "a2": "Ja. Nach der Erstellung können Sie das Transkript überprüfen und herunterladen. SRT-Dateien enthalten Zeitstempel zur Verwendung in Video-Editoren oder Untertitel-Tools."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist ein KI-Video-Transkript?",
+        "p1": "Ein Video-Transkript ist eine Textversion von allem, was in einem Video gesprochen wird — einschließlich Sprecherdialogen, Erzählungen und wichtigen Audiohinweisen. Transkripte sind die Grundlage für Untertitel, durchsuchbare Inhalte, wiederverwendbare Artikel und die Einhaltung von Barrierefreiheit.",
+        "p2": "KI-Transkriptgeneratoren automatisieren diesen Prozess mithilfe von Spracherkennungsmodellen, die auf Millionen von Stunden Audio in Dutzenden von Sprachen trainiert wurden. Das Ergebnis ist ein zeitlich abgestimmtes Textdokument — viel schneller und skalierbarer als manuelle Transkription.",
+        "p3": "Curifys Transkriptionstool ist auf Geschwindigkeit und Genauigkeit ausgelegt: einmal hochladen, ein sauberes, bearbeitbares Transkript erhalten, bereit zum Export oder zur Verwendung in Ihrem Inhaltsworkflow."
+      },
+      "how": {
+        "title": "Wie Curify genaue Transkripte generiert",
+        "p1": "Curifys Transkriptpipeline basiert auf produktionsreifer Spracherkennung mit Nachbearbeitung, die auf reale Video-Audioquellen abgestimmt ist — einschließlich Hintergrundgeräuschen, mehreren Sprechern und akzentuiertem Sprechen.",
+        "p2": "Schritt 1: Audio wird aus Ihrem Video extrahiert und vorverarbeitet, um die Lautstärke zu normalisieren und Hintergrundinterferenzen zu reduzieren.",
+        "p3": "Schritt 2: Unser Spracherkennungsmodell segmentiert das Audio in Sprecherwechsel und wandelt jedes Segment mit hoher Genauigkeit in Text um.",
+        "p4": "Schritt 3: Die Nachbearbeitung fügt Interpunktion hinzu, kapitalisiert Eigennamen und stimmt jeden Satz mit seinem Zeitstempel im Originalvideo ab.",
+        "p5": "Schritt 4: Sie erhalten eine saubere Transkriptdatei — SRT für zeitgestempelte Untertitel oder TXT für die Verwendung im Klartext in Dokumenten, Artikeln oder zur Suchindexierung."
+      },
+      "usecases": {
+        "title": "Wer nutzt Video-Transkription?",
+        "creatorsTitle": "Für Content-Ersteller",
+        "creatorsBody": "Ersteller nutzen Transkripte, um Videoinhalte in Blogbeiträge, soziale Untertitel, Newsletter und Skripte umzuwandeln. Ein einzelnes langes Video kann, einmal transkribiert, eine Woche lang Inhalte liefern.",
+        "educationTitle": "Für Pädagogen und Trainer",
+        "educationBody": "Transkripte machen Vorlesungen, Webinare und Schulungen zugänglich und durchsuchbar. Studenten können Materialien in Textform überprüfen und wichtige Momente finden, ohne das gesamte Video erneut anzusehen.",
+        "businessTitle": "Für Unternehmen und Medienteams",
+        "businessBody": "Rechts-, Compliance- und Medienteams nutzen Transkripte, um Besprechungsaufzeichnungen, Interviewmaterial und Kundenanrufe zu archivieren. Durchsuchbare Transkripte sparen Stunden manueller Überprüfungszeit."
+      }
+    }
+  },
+  "videoSummarizer": {
+    "metadata": {
+      "title": "AI Video-Zusammenfasser | Curify AI",
+      "description": "Erhalten Sie eine sofortige, KI-generierte Zusammenfassung eines Videos. Curify extrahiert die wichtigsten Punkte und spart Ihnen Stunden an Betrachtungszeit."
+    },
+    "title": "AI Video-Zusammenfasser",
+    "description": "Laden Sie ein Video hoch oder fügen Sie einen YouTube-Link ein und erhalten Sie in Sekunden eine prägnante, strukturierte Zusammenfassung der wichtigsten Punkte — perfekt für Besprechungen, Vorlesungen, Interviews und lange Inhalte.",
+    "example": "Beispiel: Eine 45-minütige Podcast-Episode, die in 5 wichtige Erkenntnisse zusammengefasst wird.",
+    "cta": "Video zusammenfassen",
+    "why": {
+      "title": "Warum Curify zur Zusammenfassung von Videos nutzen?",
+      "point1": "KI-generierte Zusammenfassungen, die die wichtigsten Punkte erfassen, nicht nur ein Transkript.",
+      "point2": "Funktioniert mit hochgeladenen Videos und YouTube-Links.",
+      "point3": "Exportieren Sie die Zusammenfassung als Klartextdokument, bereit zum Teilen.",
+      "point4": "Unterstützt über 170 Sprachen mit automatischer Quellspracherkennung."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Wie lange dauert die Zusammenfassung?",
+      "a1": "Die meisten Videos werden innerhalb weniger Minuten zusammengefasst, abhängig von der Länge. Sie sehen einen Fortschrittsindikator, während Curify Ihr Video verarbeitet.",
+      "q2": "Wie genau sind die Zusammenfassungen?",
+      "a2": "Curify fasst basierend auf dem tatsächlich gesprochenen Inhalt zusammen, nicht auf Metadaten oder Beschreibungen. Die Genauigkeit hängt von der Audioqualität ab. Sie können die Zusammenfassung als TXT-Datei herunterladen und nach Bedarf bearbeiten."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist eine KI-Video-Zusammenfassung?",
+        "p1": "Eine KI-Video-Zusammenfassung verdichtet die wichtigsten Ideen, Argumente oder Erkenntnisse aus einem Video in ein kurzes, lesbares Format — ohne dass Sie den gesamten Inhalt ansehen müssen. Sie wird aus dem gesprochenen Audio generiert, nicht aus Videotiteln oder Beschreibungen.",
+        "p2": "Im Gegensatz zu einem Transkript (das eine wortwörtliche Aufzeichnung ist) identifiziert eine Zusammenfassung die wichtigsten Punkte, filtert Füllmaterial heraus und präsentiert sie in einem strukturierten, scannbaren Format. Dies ist besonders nützlich für lange Aufzeichnungen, bei denen wichtige Momente über Stunden von Inhalten verteilt sind.",
+        "p3": "Curify generiert Zusammenfassungen direkt aus Sprache, wodurch sie genau auf den tatsächlichen Inhalt abgestimmt sind, anstatt sich auf Metadaten zu verlassen, die möglicherweise nicht widerspiegeln, was gesagt wurde."
+      },
+      "how": {
+        "title": "Wie Curify Video-Inhalte zusammenfasst",
+        "p1": "Curifys Zusammenfassungs-Pipeline transkribiert zunächst das gesamte gesprochene Audio und wendet dann Sprachmodelle an, um die wichtigsten Inhalte zu extrahieren und zu strukturieren.",
+        "p2": "Schritt 1: Die vollständige Transkription erfasst alles, was im Video gesprochen wird, einschließlich Sprecherwechsel und Segmenttiming.",
+        "p3": "Schritt 2: Das Transkript wird durch ein Zusammenfassungsmodell geleitet, das wichtige Themen, Argumente und Schlussfolgerungen identifiziert.",
+        "p4": "Schritt 3: Das Ergebnis wird in eine lesbare Zusammenfassung strukturiert — mit wichtigen Punkten, Abschnittsüberschriften, wo relevant, und einer prägnanten Schlussfolgerung.",
+        "p5": "Schritt 4: Die Zusammenfassung wird als Klartextdatei exportiert, die bereit für die Verteilung, Notizen oder die Produktion von Inhalten ist."
+      },
+      "usecases": {
+        "title": "Wer nutzt KI-Video-Zusammenfassungen?",
+        "creatorsTitle": "Für Forscher und Studenten",
+        "creatorsBody": "Forscher nutzen Zusammenfassungen, um schnell zu beurteilen, ob ein Vortrag, Interview oder eine Konferenzrede relevantes Material enthält, bevor sie sich entscheiden, das gesamte Video anzusehen.",
+        "educationTitle": "Für Fachleute und Teams",
+        "educationBody": "Besprechungsaufzeichnungen, Verkaufsgespräche und Webinar-Wiederholungen sind lang. KI-Zusammenfassungen ermöglichen es Teammitgliedern, sich über wichtige Entscheidungen und Maßnahmen zu informieren, ohne die gesamte Aufzeichnung anzusehen.",
+        "businessTitle": "Für Inhaltsanbieter",
+        "businessBody": "Videozusammenfassungen bieten sofortiges Quellenmaterial für Newsletter, Artikel, Show-Notizen und soziale Beiträge – und verwandeln ein langes Video in ein veröffentlichungsbereites Textdokument."
+      }
+    }
+  },
+  "speechTranslator": {
+    "metadata": {
+      "title": "KI-Sprachübersetzer – Audio in jede Sprache übersetzen | Curify AI",
+      "description": "Übersetzen Sie gesprochene Audios in über 170 Sprachen mit einer natürlichen KI-Stimme. Curifys Sprachübersetzer produziert ein synchronisiertes Video mit der übersetzten Sprachspur."
+    },
+    "title": "KI-Sprachübersetzer",
+    "description": "Laden Sie eine Video- oder Audiodatei hoch und übersetzen Sie den gesprochenen Inhalt in eine andere Sprache mit einer natürlichen KI-Stimme. Erhalten Sie ein vollständig synchronisiertes Video, das bereit zur Veröffentlichung ist – kein Aufnahmestudio erforderlich.",
+    "example": "Beispiel: Eine Produktdemonstration, die auf Englisch aufgenommen wurde, übersetzt und synchronisiert in Spanisch und Japanisch.",
+    "cta": "Sprache übersetzen",
+    "why": {
+      "title": "Warum Curify für Sprachübersetzungen verwenden?",
+      "point1": "Übersetzt gesprochene Audios in über 170 Sprachen mit natürlicher KI-Stimmensynthese.",
+      "point2": "Produziert ein vollständig synchronisiertes Video – nicht nur Untertitel – mit der übersetzten Sprachspur.",
+      "point3": "Bewahrt den Ton, das Tempo und die emotionale Übermittlung des Sprechers in der Zielsprache.",
+      "point4": "Funktioniert mit hochgeladenen Videos und YouTube-Links."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "q1": "Was ist der Unterschied zwischen Sprachübersetzung und Video-Synchronisation?",
+      "a1": "Die Sprachübersetzung konzentriert sich auf die Übersetzung der Audiospur eines Videos und ersetzt sie durch eine natürliche KI-Stimme in der Zielsprache. Die Video-Synchronisation kann zusätzlich die Lippenbewegungen anpassen. Curifys Sprachübersetzer produziert ein synchronisiertes Video mit der übersetzten Sprachspur.",
+      "q2": "Welche Sprachen werden unterstützt?",
+      "a2": "Curify unterstützt über 170 Sprachen, darunter Englisch, Spanisch, Französisch, Deutsch, Chinesisch, Japanisch, Koreanisch, Arabisch, Hindi und viele mehr. Die Spracherkennung erfolgt automatisch."
+    },
+    "deep": {
+      "what": {
+        "title": "Was ist KI-Sprachübersetzung?",
+        "p1": "Die KI-Sprachübersetzung wandelt gesprochene Wörter in einer Ausgangssprache in natürliche gesprochene Wörter in einer Zielsprache um – und erzeugt eine neue Audiospur in der übersetzten Sprache, anstatt Textuntertitel anzuzeigen.",
+        "p2": "Das Ergebnis ist ein synchronisiertes Video: das Originalvideo, dessen Audio durch eine übersetzte, KI-synthetisierte Stimme ersetzt wurde. Dies ist der schnellste Weg, Videoinhalte nativ für internationale Zielgruppen zugänglich zu machen, ohne ein Aufnahmestudio zu benötigen.",
+        "p3": "Curifys Sprachübersetzer ist für reale Videoinhalte konzipiert – er verarbeitet Hintergrundgeräusche, mehrere Sprecher, Fachvokabular und natürliche Gesprächsgeschwindigkeit in über 170 Sprachen."
+      },
+      "how": {
+        "title": "Wie Curify Sprache übersetzt",
+        "p1": "Curifys Sprachübersetzungs-Pipeline kombiniert hochgenaue Transkription, kontextbewusste Übersetzung und natürliche Stimmensynthese in einem einzigen automatisierten Workflow.",
+        "p2": "Schritt 1: Die Sprache wird aus dem Quell-Audio mit einer Produktionsqualität-Spracherkennung transkribiert, die Akzente, Fachvokabular und Dialoge mit mehreren Sprechern verarbeitet.",
+        "p3": "Schritt 2: Das Transkript wird mit kontextbewussten Modellen übersetzt, die Bedeutung, Ton und Absicht bewahren – nicht nur wörtliche Wortsubstitution.",
+        "p4": "Schritt 3: Eine natürliche KI-Stimme synthetisiert den übersetzten Text in der Zielsprache und passt das ursprüngliche Tempo und die emotionale Übermittlung, wo möglich, an.",
+        "p5": "Schritt 4: Die synthetisierte Sprachspur ersetzt das ursprüngliche Audio im Video, und Sie erhalten eine vollständig synchronisierte Videodatei, die bereit zur Veröffentlichung ist."
+      },
+      "usecases": {
+        "title": "Wer nutzt KI-Sprachübersetzung?",
+        "creatorsTitle": "Für globale Inhaltsanbieter",
+        "creatorsBody": "Inhaltsanbieter nutzen die Sprachübersetzung, um Zielgruppen in neuen Sprachmärkten zu erreichen, ohne ihre Inhalte neu aufzunehmen. Ein Upload erzeugt mehrsprachige synchronisierte Versionen, die für verschiedene regionale Kanäle bereit sind.",
+        "educationTitle": "Für Unternehmensschulungen und E-Learning",
+        "educationBody": "Schulungsabteilungen übersetzen Einarbeitungsvideos, Sicherheitsbriefings und Produktschulungen in die Landessprachen. Eine natürliche Sprachspur verbessert das Behalten und die Engagement im Vergleich zu Untertiteln allein.",
+        "businessTitle": "Für internationale Marketingteams",
+        "businessBody": "Marketingteams übersetzen Demovideos, Kundenreferenzen und Veranstaltungsaufzeichnungen in die Zielmarktsprache – und ermöglichen konsistente Botschaften über Regionen hinweg, ohne marktbezogene Produktionskosten."
+      }
+    }
   }
 }

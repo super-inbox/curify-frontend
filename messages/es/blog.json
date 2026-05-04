@@ -14,7 +14,13 @@
         "date": "30 de enero de 2026",
         "readTime": "9 min de lectura",
         "tag": "DS & AI Engineering",
-        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "directorio-ultimate-de-prompts-de-nano-banana",
+          "generador-de-personajes-mbti",
+          "generador-de-prompts-de-personajes"
+        ]
       },
       {
         "slug": "QA_Bot_to_Task",
@@ -64,7 +70,13 @@
         "date": "18 de noviembre de 2025",
         "readTime": "7 min de lectura",
         "tag": "Creator Tools",
-        "image": "/images/video-enhancement-pipeline.png"
+        "image": "/images/video-enhancement-pipeline.png",
+        "category": "traduccion-y-doblaje-de-video",
+        "relatedLinks": [
+          "traductor-de-video-de-youtube-ai",
+          "como-doblar-videos-de-manera-natural",
+          "que-es-clonacion-de-voz"
+        ]
       },
       {
         "slug": "video-evaluation",
@@ -72,7 +84,13 @@
         "date": "14 de noviembre de 2025",
         "readTime": "6 min de lectura",
         "tag": "Video Dubbing",
-        "image": "/images/video-translation-eval.jpg"
+        "image": "/images/video-translation-eval.jpg",
+        "category": "herramientas-para-creadores",
+        "relatedLinks": [
+          "curify-ai-growth-engine",
+          "ecosistema-de-prompts-de-nano-banana",
+          "sistema-de-produccion-de-contenido-ai"
+        ]
       },
       {
         "slug": "storyboard-to-pipeline",
@@ -1125,7 +1143,16 @@
       "storytellingTemplateContent": "Crea una narrativa de Nano Banana con:\n\nEstructura de la Historia:\n- Personaje: [descripción del protagonista]\n- Configuración: [entorno/contexto]\n- Conflicto: [desafío/problema]\n- Viaje: [proceso/transformación]\n- Resolución: [resultado/solución]\n- Tema: [mensaje central]\n\nElementos Narrativos:\n- Historia de fondo: [historia/motivación del personaje]\n- Detalles sensoriales: [descripciones visuales/auditivas/táctiles]\n- Arco emocional: [progresión de sentimientos]\n- Diálogo: [interacciones/discurso del personaje]\n- Simbolismo: [elementos metafóricos]\n- Ritmo: [tempos de tensión y liberación]\n\nDesarrollo de Personajes:\n- Protagonista: [perfil del personaje principal]\n- Personajes secundarios: [roles secundarios]\n- Arco del personaje: [viaje de transformación]\n- Relaciones: [dinámicas interpersonales]\n- Motivaciones: [fuerzas impulsoras]\n- Defectos/Fortalezas: [complejidad del personaje]\n\nDetalles de la Configuración:\n- Período de tiempo: [histórico/futuro/fantasía]\n- Ubicación: [entorno específico]\n- Atmósfera: [estado de ánimo y sentimiento]\n- Construcción del mundo: [contexto y reglas]\n- Entorno sensorial: [sonidos, olores, texturas]\n\nMarco de la Trama:\n\"[Gancho de apertura que presenta a [personaje] en [configuración] enfrentando [conflicto]. A través de [eventos del viaje], descubren [elemento de Nano Banana] que conduce a [resolución]. La historia explora [tema] mientras mantiene [tono] y [ritmo].\"",
       "identityTemplateContent": "Crea una descripción detallada de la identidad de Nano Banana que incluya:\n- Contexto de origen (biotecnología, agricultura alienígena, marca artesanal)\n- Cualidades funcionales (auto maduración, vitaminas, características especiales)\n- Especificaciones visuales (proporciones de tamaño, detalles de forma, gradientes de color)\n- Propiedades materiales (textura, acabado, perfil de aroma)\n- Significado simbólico o metafórico\n\nVerificación de C.C.: ¿Alguien visualizaría inmediatamente Nano Banana sin una imagen?\n\n**Plantilla Básica**:\n\"Describe Nano Banana como una fruta tropical [diseñada biotecnológicamente/cultivada biotecnológicamente/cultivada alienígenamente/creada artesanalmente] que mide [especificación de tamaño], con [descripción de color] y [detalles de textura] y [perfil de aroma]. Su [característica única] la hace [beneficio principal].\"",
       "storytellingTemplateDisplay": "<strong>Crea una narrativa de Nano Banana con:</strong>\n\n<strong>Estructura de la Historia:</strong>\n- <strong>Personaje:</strong> [descripción del protagonista]\n- <strong>Configuración:</strong> [entorno/contexto]\n- <strong>Conflicto:</strong> [desafío/problema]\n- <strong>Viaje:</strong> [proceso/transformación]\n- <strong>Resolución:</strong> [resultado/solución]\n- <strong>Tema:</strong> [mensaje central]\n\n<strong>Elementos Narrativos:</strong>\n- <strong>Historia de fondo:</strong> [historia/motivación del personaje]\n- <strong>Detalles sensoriales:</strong> [descripciones visuales/auditivas/táctiles]\n- <strong>Arco emocional:</strong> [progresión de sentimientos]\n- <strong>Diálogo:</strong> [interacciones/discurso del personaje]\n- <strong>Simbolismo:</strong> [elementos metafóricos]\n- <strong>Ritmo:</strong> [tempos de tensión y liberación]\n\n<strong>Desarrollo de Personajes:</strong>\n- <strong>Protagonista:</strong> [perfil del personaje principal]\n- <strong>Personajes secundarios:</strong> [roles secundarios]\n- <strong>Arco del personaje:</strong> [viaje de transformación]\n- <strong>Relaciones:</strong> [dinámicas interpersonales]\n- <strong>Motivaciones:</strong> [fuerzas impulsoras]\n- <strong>Defectos/Fortalezas:</strong> [complejidad del personaje]\n\n<strong>Detalles de la Configuración:</strong>\n- <strong>Período de tiempo:</strong> [histórico/futuro/fantasía]\n- <strong>Ubicación:</strong> [entorno específico]\n- <strong>Atmósfera:</strong> [estado de ánimo y sentimiento]\n- <strong>Construcción del mundo:</strong> [contexto y reglas]\n- <strong>Entorno sensorial:</strong> [sonidos, olores, texturas]\n\n<strong>Marco de la Trama:</strong>\n\"[Gancho de apertura que presenta a [personaje] en [configuración] enfrentando [conflicto]. A través de [eventos del viaje], descubren [elemento de Nano Banana] que conduce a [resolución]. La historia explora [tema] mientras mantiene [tono] y [ritmo].\"",
-      "identityTemplateDisplay": "<strong>Crea una descripción detallada de la identidad de Nano Banana que incluya:</strong>\n- <strong>Contexto de origen</strong> (biotecnología, agricultura alienígena, marca artesanal)\n- <strong>Cualidades funcionales</strong> (auto maduración, vitaminas, características especiales)\n- <strong>Especificaciones visuales</strong> (proporciones de tamaño, detalles de forma, gradientes de color)\n- <strong>Propiedades materiales</strong> (textura, acabado, perfil de aroma)\n- <strong>Significado simbólico o metafórico</strong>\n\n<strong>Verificación de C.C.:</strong> ¿Alguien visualizaría inmediatamente Nano Banana sin una imagen?\n\n<strong>Plantilla Básica:</strong>\n\"Describe Nano Banana como una fruta tropical [diseñada biotecnológicamente/cultivada biotecnológicamente/cultivada alienígenamente/creada artesanalmente] que mide [especificación de tamaño], con [descripción de color] y [detalles de textura] y [perfil de aroma]. Su [característica única] la hace [beneficio principal].\""
+      "identityTemplateDisplay": "<strong>Crea una descripción detallada de la identidad de Nano Banana que incluya:</strong>\n- <strong>Contexto de origen</strong> (biotecnología, agricultura alienígena, marca artesanal)\n- <strong>Cualidades funcionales</strong> (auto maduración, vitaminas, características especiales)\n- <strong>Especificaciones visuales</strong> (proporciones de tamaño, detalles de forma, gradientes de color)\n- <strong>Propiedades materiales</strong> (textura, acabado, perfil de aroma)\n- <strong>Significado simbólico o metafórico</strong>\n\n<strong>Verificación de C.C.:</strong> ¿Alguien visualizaría inmediatamente Nano Banana sin una imagen?\n\n<strong>Plantilla Básica:</strong>\n\"Describe Nano Banana como una fruta tropical [diseñada biotecnológicamente/cultivada biotecnológicamente/cultivada alienígenamente/creada artesanalmente] que mide [especificación de tamaño], con [descripción de color] y [detalles de textura] y [perfil de aroma]. Su [característica única] la hace [beneficio principal].\"",
+      "tip2Example": "En cualquier página de plantilla, encuentra un ejemplo en la galería de inspiración cuya composición te guste. Haz clic en \"Remix this.\" Verás los valores de parámetros exactos que produjeron esa imagen. Ahora cambia solo los parámetros específicos del sujeto (nombre, tema, palabra) mientras mantienes todo lo demás igual. Genera — obtendrás la misma calidad con tu contenido.",
+      "tip3Example": "Plantilla: tarjeta de receta. Débil: \"plato de pasta, italiano, cremoso\". Fuerte: \"tagliatelle al tartufo — pasta de huevo hecha a mano con virutas de trufa negra, parmigiano y una salsa de mantequilla marrón, de Umbría, Italia\". La segunda versión le da al modelo suficiente especificidad para producir un resultado preciso y apetitoso.",
+      "tip4Example": "Si la identidad de tu marca utiliza un estilo de ilustración de tinta limpia, filtra las plantillas por la etiqueta de tema `ink`. Todas las plantillas en ese grupo producirán salidas de estilo de arte lineal, dando a tu serie de contenido un tratamiento visual consistente incluso a través de diferentes plantillas de sujeto.",
+      "tip5Example": "En una plantilla de cartel de vocabulario, intenta cambiar solo el parámetro de \"categoría de palabra\" de \"animales\" a \"herramientas de cocina\" sin cambiar nada más. Si el estilo de diseño se mantiene igual pero el sujeto cambia, ese parámetro es un parámetro de contenido puro. Si el diseño también cambia, está actuando como un parámetro de estilo también — algo útil de saber.",
+      "tip6Example": "Estás probando si \"acuarela\" o \"tinta\" produce mejores resultados para tus publicaciones educativas. Crea dos generaciones con todos los parámetros idénticos excepto el parámetro de estilo. Compara — ahora tienes datos claros sobre qué estilo se adapta mejor a tu contenido.",
+      "tip7Example": "Después de navegar por una plantilla de cartel de vocabulario, guarda los 3 ejemplos que encuentres más visualmente atractivos. Más tarde, cuando necesites crear una nueva publicación de vocabulario, abre tu Espacio de Trabajo, encuentra uno de esos ejemplos guardados, haz clic en su página de ejemplo y Remix para comenzar desde parámetros que ya sabes que funcionan.",
+      "tip8Example": "¿Buscas 6 ilustraciones de personajes MBTI para un artículo sobre tipos de personalidad? Verifica si existe una plantilla MBTI habilitada para lotes. Si es así, usa Descargar Paquete para obtener todos los tipos en un estilo coincidente al instante — no se necesitan créditos de generación.",
+      "tip9Example": "Para una lección sobre vocabulario del clima, usa una plantilla de cartel de vocabulario etiquetada `vocabulary` y `learning`. Establece el grupo de palabras en \"términos meteorológicos,\" el idioma objetivo en español y el idioma de origen en inglés. La plantilla produce un cartel visual de vocabulario con ilustraciones de cada término — listo para publicar o imprimir.",
+      "tip10Example": "Antes de generar un tema muy específico (por ejemplo, \"pan georgiano\" en una plantilla de comida), busca en los ejemplos existentes cualquier cocina de Europa del Este. Si la galería solo muestra comida occidental, esta plantilla podría no manejar tu tema tan bien — prueba con una generación antes de comprometerte a una serie completa."
     },
     "tenPromptingTipsVideoGeneration": {
       "title": "10 Consejos de Prompts para Generación de Video: Crea Videos AI Impresionantes",
@@ -3663,7 +3690,13 @@
         "technical": {
           "title": "Especificaciones Técnicas",
           "description": "Salida de video profesional con pista de audio mejorada y perfecta sincronización",
-          "specs": "Códec de video H.264, codificación de audio AAC, coincidencia automática de duración"
+          "specs": "Códec de video H.264, codificación de audio AAC, coincidencia automática de duración",
+          "features": [
+            "Ajuste emocional en tiempo real durante la síntesis",
+            "Integración con flujos de trabajo de edición de video",
+            "Entrenamiento emocional personalizado para tipos de contenido específicos",
+            "Procesamiento por lotes con controles de consistencia emocional"
+          ]
         }
       },
       "future": {
@@ -4375,7 +4408,19 @@
             "useCaseDesc": "p. ej., cartel, avatar",
             "mood": "Estado de ánimo",
             "moodDesc": "p. ej., acogedor, oscuro"
-          }
+          },
+          "finalVerdict": "Para el doblaje y la traducción de videos en 2026, ElevenLabs gana en calidad, soporte multilingüe y facilidad de uso. F5-TTS ofrece un valor increíble para usuarios técnicos que trabajan dentro de restricciones presupuestarias o que requieren generación ilimitada sin restricciones comerciales.",
+          "gettingStarted": "Recursos para Comenzar",
+          "f5TtsSetup": "Configuración de F5-TTS",
+          "f5TtsSetupDesc": "Repositorio oficial de GitHub, requisitos, instalación e interfaz de CLI",
+          "elevenLabsSetup": "Configuración de ElevenLabs",
+          "elevenLabsSetupDesc": "Panel web, acceso a API y guía de inicio rápido",
+          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
+          "themeDesc": "p.ej., fantasía, viaje",
+          "useCase": "Caso de uso",
+          "useCaseDesc": "p.ej., cartel, avatar",
+          "mood": "Estado de ánimo",
+          "moodDesc": "p.ej., acogedor, oscuro"
         }
       },
       "keyInsight": {
@@ -4696,6 +4741,928 @@
       "ctaLink": "/nano-banana",
       "conclusionTitle": "El Futuro de la Creación de Contenido Es Impulsado por Sistemas",
       "conclusionContent": "Los canales sin rostro impulsados por IA destacan un cambio hacia la producción de contenido impulsada por sistemas. Al combinar flujos de trabajo estructurados con las herramientas adecuadas, los creadores pueden aumentar la producción manteniendo la calidad. La ventaja proviene de la consistencia, la iteración y el uso inteligente de la automatización, no de una operación completamente desatendida."
+    },
+    "f5TtsVsElevenlabs": {
+      "title": "F5-TTS vs. ElevenLabs: ¿Cuál herramienta de clonación de voz es mejor en 2026?",
+      "description": "Una guía completa para resolver desafíos comunes de doblaje con herramientas de IA. Aprende soluciones prácticas para el ritmo robótico, la falta de emoción y los problemas de sincronización labial.",
+      "hero": {
+        "title": "Cómo doblar videos de manera natural en 2026: Corrigiendo artefactos de clonación de voz de IA",
+        "subtitle": "Una guía completa para resolver desafíos comunes de doblaje con herramientas de IA. Enfócate en puntos críticos como el ritmo robótico, la falta de emoción y los problemas de sincronización labial."
+      },
+      "protip": "Comienza con audio de origen de alta calidad y siempre prueba tu contenido doblado con hablantes nativos para detectar artefactos sutiles que la IA podría pasar por alto.",
+      "tabs": {
+        "problems": "Problemas Comunes",
+        "solutions": "Soluciones Prácticas",
+        "tools": "Herramientas Recomendadas",
+        "workflow": "Flujo de Trabajo Paso a Paso",
+        "advanced": "Técnicas Avanzadas",
+        "automation": "Estrategias de Automatización",
+        "conclusion": "Conclusión"
+      },
+      "introduction": {
+        "paragraph1": "El doblaje de video con IA ha revolucionado la creación de contenido, pero los &lt;strong&gt;artefactos robóticos&lt;/strong&gt; y el &lt;strong&gt;ritmo antinatural&lt;/strong&gt; aún afectan muchas producciones. En 2026, tenemos mejores herramientas y técnicas para superar estos desafíos. El problema central radica en cómo la mayoría de los flujos de trabajo de doblaje tratan el habla como una capa puramente técnica en lugar de una actuación. Muchos sistemas aún generan audio con prosodia plana, énfasis inconsistente y pausas mal cronometradas, lo que rompe la inmersión incluso cuando la voz en sí suena realista. Los espectadores son muy sensibles a los desajustes de tiempo: cuando los momentos emocionales, micro-pausas o el estrés de la oración no se alinean con la actuación visual, el resultado se siente sutilmente “fuera de lugar”, incluso si no pueden articular por qué. Los enfoques modernos abordan esto al centrarse en el &lt;strong&gt;control de prosodia y la alineación temporal&lt;/strong&gt;. En lugar de generar el habla de manera lineal, los modelos más nuevos incorporan síntesis consciente del ritmo, permitiendo a los creadores controlar el ritmo a nivel de frase y sílaba. Esto hace posible igualar los movimientos labiales, preservar pausas dramáticas y mantener la intención original del actor a través de los idiomas. Técnicas como la alineación forzada, el cronometrado a nivel de fonema y la acondicionamiento de audio de referencia se están convirtiendo en estándar en flujos de trabajo de alta calidad. Otra mejora importante proviene de la &lt;strong&gt;modelización de voz consciente del contexto&lt;/strong&gt;. En lugar de generar cada línea de forma aislada, los sistemas avanzados mantienen memoria conversacional, rastreando el tono, el estado emocional y la dinámica del hablante a través de las escenas. Esto reduce la deriva tonal y asegura que un personaje suene consistente, ya sea susurrando, discutiendo o entregando exposición. Para contenido con mucha narrativa, este cambio por sí solo mejora drásticamente el realismo percibido. Finalmente, el auge de los &lt;strong&gt;flujos de trabajo con humanos en el circuito&lt;/strong&gt; ha cerrado la brecha entre la automatización y la calidad. Los creadores ahora combinan la generación de IA con capas de edición ligeras, ajustando pausas, enfatizando o regenerando segmentos específicos en lugar de clips enteros. Este enfoque híbrido equilibra la eficiencia con el control creativo, permitiendo a los equipos de producción escalar el doblaje mientras logran resultados de nivel de estudio. Juntos, estos avances mueven el doblaje de IA de una herramienta de conveniencia a una &lt;strong&gt;solución de grado de producción&lt;/strong&gt;, capaz de ofrecer actuaciones naturales y emocionalmente resonantes a través de los idiomas sin sacrificar velocidad o escalabilidad.",
+        "paragraph2": "Esta guía te mostrará cómo &lt;strong&gt;solucionar problemas comunes de doblaje&lt;/strong&gt; utilizando herramientas de IA de vanguardia como MuseTalk, Emotion TTS y técnicas avanzadas de post-procesamiento. Vamos más allá de la generación básica de voz para abordar los puntos de falla más persistentes en los flujos de trabajo de doblaje de IA: desajustes de sincronización labial, entrega monótona, desajustes de tiempo y falta de emoción. Aprenderás a usar MuseTalk para una alineación visual-audio precisa, asegurando que las pistas de habla generadas coincidan estrechamente con los movimientos labiales y las expresiones faciales, incluso en escenas de ritmo rápido o con mucho diálogo. En el lado del audio, desglosamos cómo aprovechar los sistemas Emotion TTS para inyectar &lt;strong&gt;expresividad controlada&lt;/strong&gt; en las voces generadas. En lugar de depender de ajustes genéricos, la guía explica cómo ajustar contornos de tono, ritmo y énfasis para reflejar la intención, ya sea tensión, sarcasmo o cambios emocionales sutiles dentro de una sola línea. Esto te permite pasar de audio “técnicamente correcto” a actuaciones que se sienten humanas y contextualizadas. También cubrimos &lt;strong&gt;flujos de trabajo avanzados de post-procesamiento&lt;/strong&gt; que marcan una diferencia crítica en la calidad de salida final. Esto incluye ajustes de tiempo a nivel de fonema, recorte y extensión de silencios, inserción de respiraciones y pausas, y técnicas de masterización de audio como igualación de EQ y normalización de volumen para mezclar voces dobladas sin problemas en la banda sonora original. Al combinar estas herramientas y técnicas en un flujo de trabajo cohesivo, podrás diagnosticar y solucionar sistemáticamente problemas de doblaje en lugar de depender de prueba y error, convirtiendo salidas inconsistentes de IA en diálogos pulidos y listos para producción."
+      },
+      "problems": {
+        "title": "Problemas Comunes de Doblaje con IA",
+        "issues": [
+          {
+            "icon": "🤖",
+            "title": "Ritmo Robótico",
+            "description": "El habla generada por IA a menudo carece de ritmo y tiempo natural, sonando mecánica y distante.",
+            "impact": "Desconexión del Espectador",
+            "impactDescription": "El ritmo antinatural rompe la inmersión y reduce la retención del espectador hasta en un 40%."
+          },
+          {
+            "icon": "😐",
+            "title": "Falta de Matices Emocionales",
+            "description": "Las voces de IA luchan por transmitir emociones sutiles, haciendo que las escenas dramáticas se sientan planas.",
+            "impact": "Desconexión Emocional",
+            "impactDescription": "La falta de señales emocionales impide que los espectadores se conecten con los personajes y la historia."
+          },
+          {
+            "icon": "👄",
+            "title": "Desajustes de Sincronización Labial",
+            "description": "Una mala alineación entre el audio y los movimientos labiales visuales crea un efecto de valle inquietante.",
+            "impact": "Apariencia Irrealista",
+            "impactDescription": "Los errores visibles de sincronización labial rompen inmediatamente la ilusión del habla natural."
+          }
+        ]
+      },
+      "solutions": {
+        "title": "Soluciones Prácticas",
+        "methods": [
+          {
+            "icon": "🎭",
+            "title": "TTS Mejorado por Emoción",
+            "description": "Utiliza modelos de texto a voz conscientes de la emoción que pueden inyectar sentimientos apropiados en la voz.",
+            "benefit": "Entrega Emocional Natural",
+            "benefitDescription": "Logra un 85% más de expresión emocional natural en comparación con TTS estándar.",
+            "promptTitle": "Prompt de Mejora Emocional",
+            "promptDescription": "Utiliza este prompt para guiar a la IA en la generación de habla emocionalmente matizada:",
+            "prompt": "Genera habla con tono [emoción: preocupado, cálido, urgente]. Pausa 0.3s después de comas, enfatiza palabras emocionales clave, varía el tono en ±20% para un ritmo natural."
+          },
+          {
+            "icon": "⚡",
+            "title": "Corrección de Ritmo",
+            "description": "Aplica ajustes de tiempo impulsados por IA para igualar los patrones de habla humana natural.",
+            "benefit": "Ritmo Humano",
+            "benefitDescription": "Reduce los artefactos robóticos en un 70% mediante ajustes de ritmo inteligentes.",
+            "promptTitle": "Prompt de Corrección de Ritmo",
+            "promptDescription": "Utiliza este prompt para corregir el ritmo robótico:",
+            "prompt": "Analiza el ritmo del habla e inserta pausas naturales: 0.5s después de puntos, 0.2s después de comas, varía el espaciado de palabras en ±10% para un flujo orgánico."
+          }
+        ]
+      },
+      "tools": {
+        "title": "Herramientas Recomendadas",
+        "cta": "Prueba la herramienta",
+        "recommendations": [
+          {
+            "icon": "🎙️",
+            "title": "MuseTalk",
+            "description": "Clonación de voz avanzada con preservación de emoción y temporización natural.",
+            "useCase": "Mejor para voces de personajes",
+            "useCaseDescription": "Perfecto para mantener voces de personajes consistentes en contenido de larga duración.",
+            "link": "https://musetalk.ai"
+          },
+          {
+            "icon": "🎭",
+            "title": "Emotion TTS",
+            "description": "Texto a voz especializado con control emocional y prosodia natural.",
+            "useCase": "Contenido emocional",
+            "useCaseDescription": "Ideal para contenido dramático que requiere variaciones emocionales sutiles.",
+            "link": "https://emotiontts.ai"
+          },
+          {
+            "icon": "🎬",
+            "title": "LipSync Pro",
+            "description": "Corrección de sincronización labial impulsada por IA con precisión a nivel de fotograma.",
+            "useCase": "Alineación labial perfecta",
+            "useCaseDescription": "Logra sincronización labial perfecta para producción de video profesional.",
+            "link": "https://lipsyncpro.ai"
+          }
+        ]
+      },
+      "workflow": {
+        "title": "Flujo de trabajo paso a paso",
+        "steps": [
+          {
+            "title": "Preparar audio fuente",
+            "description": "Comienza con una grabación de audio de alta calidad y limpia de la voz objetivo.",
+            "action": "Verificación de calidad de audio",
+            "actionDescription": "Asegúrate de que la tasa de muestreo sea de 48kHz, con ruido de fondo mínimo y un rendimiento vocal consistente.",
+            "promptTitle": "Sugerencia de preparación de audio",
+            "promptDescription": "Usa esta sugerencia para preparar audio para la clonación de voz:",
+            "prompt": "Audio limpio: eliminar ruido de fondo, normalizar a -6dB, asegurar tono vocal consistente, exportar como WAV 48kHz 24-bit."
+          },
+          {
+            "title": "Clonar voz con emoción",
+            "description": "Usa MuseTalk para crear un modelo de voz consciente de la emoción.",
+            "action": "Entrenamiento del modelo de voz",
+            "actionDescription": "Entrena el modelo con etiquetas emocionales y muestras de referencia de temporización.",
+            "promptTitle": "Sugerencia de clonación de voz",
+            "promptDescription": "Usa esta sugerencia para la clonación de voz:",
+            "prompt": "Clona voz con preservación de emoción: analiza patrones vocales, extrae marcadores emocionales, crea perfil de temporización."
+          },
+          {
+            "title": "Generar audio doblado",
+            "description": "Genera habla utilizando el modelo de voz mejorado por emoción.",
+            "action": "Generación de audio",
+            "actionDescription": "Genera múltiples tomas con diferentes intensidades emocionales para obtener los mejores resultados.",
+            "promptTitle": "Sugerencia de generación de audio",
+            "promptDescription": "Usa esta sugerencia para la generación de audio natural:",
+            "prompt": "Genera habla: aplica perfil emocional [feliz, preocupado, emocionado], inserta pausas naturales, varía la velocidad de habla ±15%."
+          }
+        ]
+      },
+      "advanced": {
+        "title": "Técnicas avanzadas",
+        "techniques": [
+          {
+            "icon": "🧠",
+            "title": "Transferencia de prosodia neural",
+            "description": "Transfiere patrones de habla natural desde el audio de referencia a la voz generada por IA.",
+            "benefit": "Patrones de habla auténticos",
+            "benefitDescription": "Logra un 95% de naturalidad en el ritmo y la entonación del habla.",
+            "promptTitle": "Sugerencia de transferencia de prosodia",
+            "promptDescription": "Usa esta sugerencia para la transferencia de prosodia:",
+            "prompt": "Extraer patrones de prosodia: analizar contornos de tono, patrones de temporización, énfasis de estrés, aplicar al habla objetivo."
+          },
+          {
+            "icon": "🎯",
+            "title": "Emoción consciente del contexto",
+            "description": "IA que entiende el contexto de la escena y ajusta las emociones en consecuencia.",
+            "benefit": "Emociones apropiadas para la escena",
+            "benefitDescription": "Iguala automáticamente el tono emocional al contenido del video y al contexto del diálogo.",
+            "promptTitle": "Sugerencia consciente del contexto",
+            "promptDescription": "Usa esta sugerencia para la emoción consciente del contexto:",
+            "prompt": "Analiza el contexto de la escena: identifica el tono emocional, las relaciones entre personajes, el momento dramático, ajusta la voz en consecuencia."
+          }
+        ]
+      },
+      "automation": {
+        "title": "Estrategias de automatización",
+        "strategies": [
+          {
+            "icon": "⚙️",
+            "title": "Pipeline de Procesamiento por Lotes",
+            "description": "Flujo de trabajo automatizado para procesar múltiples archivos de video con calidad consistente.",
+            "result": "Calidad Consistente a Gran Escala",
+            "resultDescription": "Procesa más de 100 videos con calidad de voz consistente y entrega emocional."
+          },
+          {
+            "icon": "🔄",
+            "title": "Automatización del Control de Calidad",
+            "description": "Controles de calidad impulsados por IA para detectar y marcar problemas de doblaje automáticamente.",
+            "result": "Revisión Manual Reducida",
+            "resultDescription": "Detecta el 90% de los problemas de doblaje antes de la revisión humana, ahorrando el 70% del tiempo de control de calidad."
+          }
+        ]
+      },
+      "conclusion": {
+        "title": "Transforma Tu Doblaje de Video con IA",
+        "description": "Al combinar estas técnicas y herramientas avanzadas, puedes crear contenido doblado natural y emocionalmente atractivo que cautive a las audiencias. El futuro del doblaje con IA está aquí, y es más humano que nunca."
+      },
+      "publishedDate": "27 de abril de 2026",
+      "readTime": "12 min de lectura",
+      "category": "Doblaje de Video",
+      "altText": "Comparación de F5-TTS vs ElevenLabs para clonación de voz y doblaje",
+      "ultimateShowdown": "El Enfrentamiento Definitivo: F5-TTS vs ElevenLabs",
+      "ultimateShowdownIntro": "En el mundo en rápida evolución de la clonación de voz con IA, dos nombres destacan en 2026: F5-TTS, la revolucionaria solución de código abierto, y ElevenLabs, la potencia comercial establecida. Pero, ¿cuál merece realmente tu atención para proyectos de doblaje de video?",
+      "whyVoiceCloningIntro": "La tecnología de clonación de voz ha transformado la creación de contenido, permitiendo a los creadores producir contenido multilingüe, mantener una marca consistente en todos los idiomas y reducir drásticamente los costos de producción. Profundicemos en estas dos soluciones líderes.",
+      "quickComparisonTable": "Tabla de Comparación Rápida",
+      "feature": "Característica",
+      "f5Tts": "F5-TTS",
+      "elevenLabs": "ElevenLabs",
+      "costModel": "Modelo de Costos",
+      "f5TtsCost": "Gratis (Código Abierto)",
+      "elevenLabsCost": "$5-1,320/mes",
+      "voiceQuality": "Calidad de Voz",
+      "f5TtsQuality": "85-90% Natural",
+      "elevenLabsQuality": "92-96% Natural",
+      "emotionRendering": "Renderizado Emocional",
+      "f5TtsEmotion": "Bueno (Coincidencia de Flujo)",
+      "elevenLabsEmotion": "Excelente (Etiquetas de Audio v3)",
+      "latency": "Latencia",
+      "f5TtsLatency": "2-5 segundos",
+      "elevenLabsLatency": "0.5-2 segundos (Flash)",
+      "setupComplexity": "Complejidad de Configuración",
+      "f5TtsSetup": "Alta (Técnica)",
+      "elevenLabsSetup": "Baja (Interfaz Web)",
+      "commercialRights": "Derechos Comerciales",
+      "f5TtsRights": "Completo (Licencia MIT)",
+      "elevenLabsRights": "Requiere Plan de Pago",
+      "f5TtsChampion": "F5-TTS: El Campeón de Código Abierto",
+      "technicalArchitecture": "Arquitectura Técnica",
+      "f5TtsDescription": "F5-TTS (Fairytaler que Finge Habla Fluida y Fiel con Coincidencia de Flujo) representa un avance en la síntesis de voz de código abierto. Construido sobre un Transformador de Difusión con arquitectura ConvNeXt V2, ofrece una calidad impresionante sin el precio comercial.",
+      "keyStrengths": "Fortalezas Clave",
+      "zeroCostOperation": "Operación Sin Costo:",
+      "zeroCostDesc": "Completamente gratis con licencia MIT, perfecto para creadores con presupuesto limitado",
+      "flowMatchingTech": "Tecnología de Coincidencia de Flujo:",
+      "flowMatchingDesc": "El muestreo de pasos de flujo en tiempo de inferencia avanzado mejora el rendimiento",
+      "zeroShotCloning": "Clonación Sin Ejemplos:",
+      "zeroShotDesc": "Clona voces a partir de clips de referencia cortos sin ajuste fino",
+      "fullControl": "Control Total:",
+      "fullControlDesc": "Acceso completo a los pesos del modelo y opciones de personalización",
+      "noUsageLimits": "Sin Límites de Uso:",
+      "noUsageDesc": "Genera contenido ilimitado sin créditos ni restricciones",
+      "limitationsDubbing": "Limitaciones para el Doblaje de Video",
+      "criticalConsiderations": "⚠️ Consideraciones Críticas",
+      "higherLatency": "Mayor Latencia:",
+      "higherLatencyDesc": "El tiempo de generación de 2-5 segundos afecta los flujos de trabajo en tiempo real",
+      "technicalSetup": "Configuración Técnica:",
+      "technicalSetupDesc": "Requiere entorno Python, GPU y experiencia técnica",
+      "limitedMultilingual": "Soporte Multilingüe Limitado:",
+      "limitedMultilingualDesc": "Principalmente optimizado para inglés",
+      "artifactingIssues": "Problemas de Artefactos:",
+      "artifactingDesc": "Artefactos robóticos ocasionales en pasajes más largos",
+      "noDubbingFeatures": "Sin Funciones de Doblaje Integradas:",
+      "noDubbingDesc": "Debe integrarse con herramientas de traducción separadas",
+      "bestUseCases": "Mejores Casos de Uso",
+      "f5TtsUseCases": "F5-TTS destaca para creadores técnicos, investigadores y proyectos donde el costo es la principal limitación. Es ideal para prototipos, contenido educativo y creadores que tienen las habilidades técnicas para gestionar su infraestructura.",
+      "elevenLabsPowerhouse": "ElevenLabs: La Potencia Comercial",
+      "technicalExcellence": "Excelencia Técnica",
+      "elevenLabsDescription": "ElevenLabs ha evolucionado de ser una herramienta TTS amigable para creadores a una plataforma integral de infraestructura de audio. Sus modelos propietarios (eleven_flash_v2_5, eleven_multilingual_v2, eleven_v3) establecen el estándar de la industria para la calidad y naturalidad de la voz.",
+      "superiorQuality": "Calidad de Voz Superior:",
+      "superiorQualityDesc": "Calificación de naturalidad del 92-96% con artefactos mínimos",
+      "advancedEmotion": "Control Avanzado de Emoción:",
+      "advancedEmotionDesc": "Etiquetas de Audio v3 para expresión emocional precisa",
+      "subSecondLatency": "Latencia de Menos de un Segundo:",
+      "subSecondDesc": "Los modelos Flash permiten aplicaciones en tiempo real",
+      "comprehensiveLanguage": "Soporte de Idiomas Integral:",
+      "comprehensiveLanguageDesc": "Más de 29 idiomas con variantes regionales",
+      "integratedDubbing": "Pipeline de Doblaje Integrado:",
+      "integratedDubbingDesc": "Traducción y preservación de voz integradas",
+      "professionalCloning": "Clonación de Voz Profesional:",
+      "professionalCloningDesc": "PVC (Clonación de Voz Profesional) para calidad de estudio",
+      "pricingBreakdown": "Desglose de Precios para Creadores de Video",
+      "costAnalysis": "💰 Análisis de Costos (2026)",
+      "starterPlan": "Plan Inicial ($5/mes):",
+      "starterDesc": "30,000 créditos (~30 minutos TTS) - Punto de entrada para uso comercial",
+      "creatorPlan": "Plan Creador ($22/mes):",
+      "creatorDesc": "100,000 créditos (~100 minutos) + Clonación de Voz Profesional",
+      "proPlan": "Pro ($99/mes):",
+      "proDesc": "500,000 créditos (~500 minutos) + salida de audio a 44.1kHz",
+      "scalePlan": "Escala ($330/mes):",
+      "scaleDesc": "2M créditos (~2000 minutos) + Tiempo real de baja latencia",
+      "creditNote": "Nota: 1 crédito = 1 carácter (Multilingüe v2), 0.5 créditos para modelos Flash",
+      "elevenLabsUseCases": "ElevenLabs es perfecto para creadores de contenido profesionales, agencias y empresas donde la calidad y la facilidad de uso superan las consideraciones de costo. Particularmente valioso para proyectos de doblaje de alto volumen y aplicaciones comerciales.",
+      "headToHead": "Comparación Técnica Cara a Cara",
+      "emotionQuality": "Calidad de Renderizado Emocional",
+      "elevenLabsWins": "ElevenLabs gana de manera decisiva",
+      "emotionControlDesc": "en el control emocional. Su sistema de Etiquetas de Audio v3 permite un control preciso sobre el contexto narrativo, el tono emocional y los patrones de expresión. Puedes especificar felicidad, tristeza, ira o matices sutiles con etiquetas de marcado simples.",
+      "f5TtsEmotionDesc": "F5-TTS se basa en el Emparejamiento de Flujo para la expresión emocional, que funciona bien para emociones básicas pero carece del control granular necesario para contenido dramático o actuaciones matizadas.",
+      "latencyPerformance": "Rendimiento de Latencia",
+      "elevenLabsFlash": "Modelos Flash de ElevenLabs",
+      "flashDesc": "ofrecen tiempos de generación de 0.5-2 segundos, lo que los hace adecuados para aplicaciones en tiempo real y flujos de trabajo interactivos. Esto es crucial para el doblaje de video donde la sincronización de tiempos es esencial.",
+      "f5TtsLatencyDesc": "F5-TTS generalmente requiere de 2 a 5 segundos por generación, lo que puede interrumpir los flujos de trabajo creativos y hacer que la vista previa en tiempo real sea imposible.",
+      "audioArtifacting": "Artefactos de Audio",
+      "elevenLabsArtifacting": "ElevenLabs muestra artefactos mínimos incluso en pasajes más largos, con transiciones suaves y características de voz consistentes. Su clonación de voz profesional mantiene la calidad a lo largo de contenido extenso.",
+      "f5TtsArtifacting": "F5-TTS puede producir artefactos robóticos ocasionales, especialmente con oraciones complejas o combinaciones fonéticas desconocidas. Estos se vuelven más notorios en proyectos de doblaje más largos.",
+      "multilingualCapabilities": "Capacidades Multilingües",
+      "elevenLabsDominates": "ElevenLabs domina",
+      "multilingualDesc": "para contenido internacional con más de 29 idiomas, variantes regionales y capacidades de cambio de código. Su pipeline de doblaje preserva las características de voz a través de los idiomas.",
+      "f5TtsMultilingualDesc": "F5-TTS tiene soporte multilingüe limitado, principalmente optimizado para inglés con soporte experimental para otros idiomas. No es ideal para proyectos de doblaje internacional.",
+      "bottomLine": "La Conclusión: ¿Cuál Deberías Elegir?",
+      "chooseF5Tts": "🎯 Elige F5-TTS Si:",
+      "f5TtsReason1": "El presupuesto es tu principal limitación",
+      "f5TtsReason2": "Tienes experiencia técnica e infraestructura",
+      "f5TtsReason3": "Estás trabajando principalmente en inglés",
+      "f5TtsReason4": "Necesitas generación ilimitada sin créditos",
+      "f5TtsReason5": "Quieres personalizar y modificar el modelo",
+      "f5TtsReason6": "Estás construyendo una solución propietaria",
+      "chooseElevenLabs": "🚀 Elige ElevenLabs Si:",
+      "elevenLabsReason1": "La calidad y naturalidad son prioridades máximas",
+      "elevenLabsReason2": "Necesitas capacidades de doblaje multilingüe",
+      "elevenLabsReason3": "Requieres generación en tiempo real o de baja latencia",
+      "elevenLabsReason4": "Quieres control profesional de emociones",
+      "elevenLabsReason5": "Prefieres una solución gestionada y sin complicaciones",
+      "elevenLabsReason6": "Proyectos comerciales con plazos ajustados",
+      "hybridApproach": "El Enfoque Híbrido: Lo Mejor de Ambos Mundos",
+      "hybridApproachDesc": "Para estudios profesionales con necesidades diversas, considera usar ambos: F5-TTS para prototipos y pruebas, ElevenLabs para producción final y proyectos comerciales. Este enfoque maximiza la eficiencia de costos mientras mantiene los estándares de calidad.",
+      "decisionFactors": "Tu elección depende en última instancia de tu caso de uso específico, restricciones presupuestarias, experiencia técnica y requisitos de calidad. Ambas herramientas representan la vanguardia de la tecnología de clonación de voz, cada una sobresaliendo en diferentes escenarios.",
+      "f5TtsSetupTitle": "Introducción a F5-TTS",
+      "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
+      "f5TtsRequirements": "Python 3.8+, GPU con 8GB+ de VRAM recomendado",
+      "f5TtsInstallation": "pip install f5-tts",
+      "f5TtsInterface": "Interfaces de línea de comandos y API de Python",
+      "elevenLabsSetupTitle": "Introducción a ElevenLabs",
+      "elevenLabsWebsite": "https://elevenlabs.io",
+      "elevenLabsFreeTier": "Nivel gratuito disponible (10,000 caracteres/mes)",
+      "elevenLabsWebApi": "Acceso a interfaz web y API REST",
+      "elevenLabsProfessionalPlan": "Los planes profesionales comienzan en $5/mes",
+      "finalRecommendation": "Recomendación Final",
+      "f5TtsFinalNote": "Tanto F5-TTS como ElevenLabs representan la cúspide de la tecnología moderna de clonación de voz. Tu elección debe alinearse con tus necesidades específicas, capacidades técnicas y consideraciones presupuestarias. La democratización de la tecnología de voz significa que los creadores ahora tienen acceso sin precedentes a herramientas de calidad profesional.",
+      "comparisonNote": "Esta comparación refleja el estado de la tecnología de clonación de voz a partir de abril de 2026. Los avances rápidos en IA pueden cambiar significativamente el panorama en los próximos meses."
+    },
+    "preserveFacialFeaturesAiGeneration": {
+      "title": "Cómo Preservar Características Faciales en la Generación de IA: La Guía Definitiva para Personajes Consistentes",
+      "publishedDate": "27 de abril de 2026",
+      "readTime": "15 min de lectura",
+      "category": "Herramientas para Creadores",
+      "altText": "Consistencia de Personajes de IA - Preservando Características Faciales",
+      "biggestChallenge": "El Mayor Desafío en la Creación de Personajes de IA",
+      "biggestChallengeIntro": "Si alguna vez has intentado crear cómics de IA, guiones gráficos o activos de marca cohesivos, te has encontrado con un obstáculo: generar el mismo personaje de manera consistente en diferentes escenas y ángulos. Este es el mayor punto de dolor para los creadores que trabajan con generación de imágenes de IA.",
+      "biggestChallengeOutro": "Hoy, aprenderás técnicas de clase magistral para fijar las características faciales de tu personaje en cualquier entorno, ángulo o estilo artístico. No se trata solo de indicaciones, sino de construir un marco sistemático para la consistencia del personaje que funcione cada vez.",
+      "whyConsistencyFails": "Por Qué Falla la Consistencia del Personaje (Y Cómo Solucionarlo)",
+      "rootProblem": "El Problema Raíz",
+      "rootProblemDesc": "Los modelos de IA no \"recuerdan\" a tu personaje. Cada generación es una nueva interpretación basada en tu indicación. Sin un anclaje preciso de características faciales, obtendrás variaciones que parecen primos, no gemelos.",
+      "consistencyKillers": "Asesinos Comunes de la Consistencia",
+      "vagueDescriptions": "Descripciones Vagas",
+      "vagueExample": "\"Una mujer con cabello castaño\" vs \"Una mujer con cabello castaño claro hasta los hombros, ojos avellana cálidos y una pequeña marca de belleza sobre su labio izquierdo\"",
+      "missingAnchors": "Anclajes de Características Faltantes",
+      "missingAnchorsDesc": "No especificar identificadores únicos como cicatrices, lunares o proporciones faciales distintivas",
+      "inconsistentStyling": "Estilo Inconsistente",
+      "inconsistentStylingDesc": "Cambiar el cabello, el maquillaje o la iluminación entre generaciones",
+      "modelDrift": "Desviación del Modelo",
+      "modelDriftDesc": "Usar diferentes modelos de IA o configuraciones para el mismo personaje",
+      "nanoBananaSolution": "La Solución Nano Banana",
+      "nanoBananaSolutionDesc": "Las técnicas de indicación de Nano Banana resuelven esto creando planos detallados de características faciales que actúan como ADN para tu personaje. Desglosaremos el marco.",
+      "facialFeatureLock": "El Marco de Bloqueo de Características Faciales",
+      "facialFeatureLockFramework": "El Marco de Bloqueo de Características Faciales",
+      "coreArchitecture": "Arquitectura Facial Central",
+      "coreArchitectureDesc": "Comienza con una estructura fundamental. Este es el marco esquelético de tu personaje que nunca cambia.",
+      "coreTemplate": "Plantilla de Arquitectura Central",
+      "coreTemplateDesc": "Esta plantilla establece la estructura facial fundamental. Incluye forma de la cara, posición de los ojos, puente de la nariz y fundamentos de la línea de la mandíbula.",
+      "uniqueIdentifiers": "Identificadores Únicos de Características",
+      "uniqueIdentifiersDesc": "Estas son marcas distintivas que hacen que tu personaje sea reconocible incluso en silueta.",
+      "uniqueTemplate": "Plantilla de Identificadores Únicos",
+      "uniqueTemplateDesc": "Agrega características distintivas como marcas de belleza, cicatrices, pecas o proporciones únicas que hagan que tu personaje sea instantáneamente reconocible.",
+      "expressionRules": "Reglas de Consistencia de Expresión",
+      "expressionRulesDesc": "Define cómo se mueve la cara de tu personaje y expresa emociones. Esto previene el problema de \"persona diferente\" al cambiar expresiones.",
+      "expressionTemplate": "Plantilla de Reglas de Expresión",
+      "expressionTemplateDesc": "Define cómo se mueven características faciales específicas durante las expresiones. Esto asegura que tu personaje se vea como la misma persona ya sea sonriendo, frunciendo el ceño o sorprendido.",
+      "nanoBananaTechniques": "Técnicas de Indicación de Nano Banana",
+      "nanoBananaPromptingTechniques": "Técnicas de Indicación de Nano Banana",
+      "layerMethod": "El Método de Capas",
+      "layerMethodDesc": "Construye tus prompts en capas, comenzando con la cara principal y añadiendo contexto. Esto asegura que la IA priorice la consistencia facial sobre los detalles del entorno.",
+      "wrongApproach": "Enfoque Incorrecto",
+      "wrongApproachExample": "\"Una mujer en una cafetería,\\nvistiendo un vestido rojo,\\nsentada junto a la ventana,\\nluz de la mañana entrando\"",
+      "wrongApproachNote": "El entorno domina, la cara es secundaria",
+      "nanoBananaMethod": "Método Nano Banana",
+      "nanoBananaMethodExample": "\"[CHARACTER_FACE_BLUEPRINT],\\nexpresando [emotion],\\nen [environment context],\\n[lighting conditions]\"",
+      "nanoBananaMethodNote": "Cara primero, entorno segundo",
+      "referenceChain": "La Cadena de Imágenes de Referencia",
+      "referenceChainDesc": "Usa tu mejor generación como referencia para la siguiente, creando una cadena de consistencia.",
+      "referenceImageChain": "La Cadena de Imágenes de Referencia",
+      "referenceImageChainDesc": "Usa tu mejor generación como referencia para la siguiente, creando una cadena de consistencia.",
+      "referenceChainProcess": "Proceso de Cadena de Referencia",
+      "referenceChainStep1": "Generación 1: Crea un retrato base del personaje con el máximo detalle",
+      "referenceChainStep2": "Generación 2: Usa Gen 1 como referencia, añade un nuevo ángulo/expresión",
+      "referenceChainStep3": "Generación 3: Usa Gen 2 como referencia, cambia el entorno",
+      "referenceChainStep4": "Continúa: Cada generación se basa en la consistencia anterior",
+      "angleAdaptation": "La Fórmula de Adaptación de Ángulo",
+      "angleAdaptationFormula": "La Fórmula de Adaptación de Ángulo",
+      "angleAdaptationDesc": "Diferentes ángulos requieren diferentes ajustes en los prompts. Aquí te mostramos cómo mantener la consistencia a través de las vistas.",
+      "angleTable": {
+        "angle": "Ángulo",
+        "adjustments": "Ajustes Clave",
+        "priority": "Prioridad de Consistencia"
+      },
+      "frontView": "Vista Frontal",
+      "frontViewAdjustments": "Énfasis en la simetría, alineación de ojos",
+      "frontViewPriority": "Distancia entre ojos, centro de la nariz",
+      "profileView": "Vista de Perfil",
+      "profileViewAdjustments": "Puente de la nariz, curva de la mandíbula",
+      "profileViewPriority": "Proyección de la barbilla, arco de la ceja",
+      "threeQuarterView": "Vista 3/4",
+      "threeQuarterViewAdjustments": "Perspectiva de los ojos, profundidad facial",
+      "threeQuarterViewPriority": "Proporción del tamaño de los ojos, volumen de mejillas",
+      "visualExamples": "Ejemplos Visuales: Mismo Personaje, Diferentes Escenas",
+      "characterBase": "Retrato Base del Personaje",
+      "characterBaseDesc": "Vista frontal, expresión neutral",
+      "referenceImage": "Imagen de Referencia",
+      "referenceImageDesc": "Vista frontal, expresión neutral",
+      "environmentScene": "Escena del Entorno",
+      "environmentSceneDesc": "Vista 3/4, sonriendo",
+      "dynamicPose": "Pose Dinámica",
+      "dynamicPoseDesc": "Vista de perfil, expresión decidida",
+      "whatMakesWork": "Qué Hace que Esto Funcione",
+      "whatMakesTheseWork": "Qué Hace que Esto Funcione",
+      "consistentEyeShape": "Forma de Ojos Consistente",
+      "consistentEyeShapeDesc": "Misma forma de almendra, misma distancia entre ojos",
+      "noseRecognition": "Reconocimiento de Nariz",
+      "noseRecognitionDesc": "Curva del puente y forma de las fosas nasales idénticas",
+      "jawlineContinuity": "Continuidad de la Mandíbula",
+      "jawlineContinuityDesc": "Misma definición angular en todos los ángulos",
+      "expressionRulesConsistency": "Reglas de Expresión",
+      "expressionRulesConsistencyDesc": "Las sonrisas siguen el mismo patrón de levantamiento de esquinas",
+      "advancedTechniques": "Técnicas Avanzadas de Consistencia",
+      "styleTransferMethod": "El Método de Transferencia de Estilo",
+      "styleTransferMethodDesc": "Mantén las características faciales mientras cambias los estilos artísticos. Perfecto para adaptación de marca o variaciones de cómic.",
+      "styleTransfer": "El Método de Transferencia de Estilo",
+      "styleTransferDesc": "Mantén las características faciales mientras cambias los estilos artísticos. Perfecto para adaptación de marca o variaciones de cómic.",
+      "styleTransferFormula": "Fórmula de Transferencia de Estilo",
+      "styleTransferExample": "\"El plano facial de Sarah, renderizado en estilo anime, manteniendo su distintiva marca de belleza y ojos avellana, con arte de líneas limpias y colores vibrantes\"",
+      "ageProgression": "El Sistema de Progresión de Edad",
+      "ageProgressionSystem": "El Sistema de Progresión de Edad",
+      "ageProgressionSystemDesc": "Muestra a tu personaje en diferentes edades mientras mantienes intacto el ADN facial básico.",
+      "ageProgressionDesc": "Muestra a tu personaje en diferentes edades mientras mantienes intacto el ADN facial básico.",
+      "ageProgressionRules": "Reglas de Progresión de Edad",
+      "ageChildToTeen": "De Niño a Adolescente: Suaviza la línea de la mandíbula, agranda ligeramente los ojos, mantiene la forma de los ojos",
+      "ageTeenToAdult": "De Adolescente a Adulto: Define la línea de la mandíbula, añade líneas sutiles, mantiene la distancia entre los ojos",
+      "ageAdultToElder": "De Adulto a Anciano: Añade arrugas a lo largo de las líneas de expresión naturales, mantiene la estructura básica",
+      "emotionalRange": "La Biblioteca de Rangos Emocionales",
+      "emotionalRangeDesc": "Crea una biblioteca de las expresiones de tu personaje. Esto se convierte en tu biblia de consistencia.",
+      "basicExpressions": "Expresiones Básicas",
+      "neutral": "Neutral (referencia)",
+      "happy": "Feliz (sonrisa con levantamiento de esquinas)",
+      "sad": "Triste (labios hacia abajo, ojos suaves)",
+      "angry": "Enojado (ceño fruncido, mandíbula tensa)",
+      "surprised": "Sorprendido (ojos abiertos, boca abierta)",
+      "complexExpressions": "Expresiones Complejas",
+      "confident": "Confiado (sonrisa ligera, mirada directa)",
+      "thoughtful": "Reflexivo (ceño suave, ojos distantes)",
+      "amused": "Divertido (sonrisa de un lado, ojos arrugados)",
+      "determined": "Determinado (mandíbula firme, ojos enfocados)",
+      "worried": "Preocupado (ceño fruncido, labio mordido)",
+      "pitfalls": "Errores Comunes y Soluciones",
+      "featureDrift": "Desviación de Características",
+      "featureDriftDesc": "El personaje cambia gradualmente sus características a lo largo de múltiples generaciones.",
+      "featureDriftSolution": "Solución: Siempre referencia tu plano original, no la generación más reciente.",
+      "styleOverwriting": "Sobrescritura de Estilo",
+      "styleOverwritingDesc": "El estilo artístico cambia las características faciales de manera demasiado drástica.",
+      "styleOverwritingSolution": "Solución: Indica explícitamente a la IA que mantenga características específicas a pesar de los cambios de estilo.",
+      "lightingConfusion": "Confusión de Iluminación",
+      "lightingConfusionDesc": "Diferente iluminación hace que la cara parezca diferente.",
+      "lightingConfusionSolution": "Solución: Describe cómo la iluminación interactúa con características faciales específicas.",
+      "checklist": "Tu Lista de Verificación de Consistencia del Personaje",
+      "preGenerationChecklist": "Lista de Verificación Pre-Generación",
+      "facialBlueprint": "Plano Facial",
+      "faceShapeDefined": "Forma de cara definida",
+      "eyeShapeColor": "Forma y color de ojos especificados",
+      "eyeShapeColorSpecified": "Forma y color de ojos especificados",
+      "noseShapeDetailed": "Forma de nariz detallada",
+      "mouthLipCharacteristics": "Características de boca y labios",
+      "uniqueMarksScars": "Marcas/ cicatrices únicas identificadas",
+      "uniqueMarksScarsIdentified": "Marcas/ cicatrices únicas identificadas",
+      "expressionRulesChecklist": "Reglas de Expresión",
+      "expressionRules2": "Reglas de Expresión",
+      "smilePatternDefined": "Patrón de sonrisa definido",
+      "eyeMovementCharacteristics": "Características del movimiento ocular",
+      "browBehaviorSpecified": "Comportamiento de cejas especificado",
+      "jawTensionPatterns": "Patrones de tensión de mandíbula",
+      "asymmetricalDetails": "Detalles asimétricos anotados",
+      "asymmetricalDetailsNoted": "Detalles asimétricos anotados",
+      "postGenerationValidation": "Validación Post-Generación",
+      "eyeDistanceCheck": "Verificación de Distancia Ocular: Mide la distancia entre las pupilas - debe ser consistente",
+      "noseBridgeTest": "Prueba de Puente Nasal: Sigue la línea desde la ceja hasta la punta - ¿mismo arco?",
+      "jawlineComparison": "Comparación de Línea de Mandíbula: ¿Mismo ángulo y definición?",
+      "jawlineComparisonDesc": "Misma definición angular en todos los ángulos",
+      "uniqueFeatureVerification": "Verificación de Características Únicas: ¿Lunares, cicatrices, hoyuelos en el mismo lugar?",
+      "uniqueFeatureVerificationDesc": "¿Lunares, cicatrices, hoyuelos en el mismo lugar?",
+      "expressionConsistencyCheck": "Consistencia de Expresión: ¿Sigue tus reglas definidas?",
+      "expressionConsistencyValidation": "Consistencia de Expresión: ¿Sigue tus reglas definidas?",
+      "expressionConsistencyValidationDesc": "¿Sigue tus reglas definidas?",
+      "readyToBuild": "¿Listo para Construir Tu Marco de Consistencia?",
+      "readyToBuildDesc": "Ahora tienes un sistema completo para mantener la consistencia del personaje a través de cualquier generación de IA. Pero, ¿por qué empezar desde cero cuando puedes usar nuestras plantillas probadas?",
+      "readyToBuildIntro": "Ahora tienes un sistema completo para mantener la consistencia de los personajes en cualquier generación de IA. Pero, ¿por qué empezar desde cero cuando puedes usar nuestras plantillas probadas?",
+      "useTemplateTitle": "Usar Plantilla: Consistencia Instantánea de Personajes",
+      "useTemplateDesc": "Obtén nuestras plantillas preconstruidas de Nano Banana con planos de características faciales, reglas de expresión y marcos de consistencia. Solo completa los detalles de tu personaje y comienza a generar resultados consistentes de inmediato.",
+      "whatYouGet": "Lo Que Obtienes:",
+      "completeBlueprints": "Plantillas de planos faciales completas",
+      "expressionLibraries": "Bibliotecas de reglas de expresión",
+      "adaptationFormulas": "Fórmulas de adaptación de ángulos",
+      "transferMethods": "Métodos de transferencia de estilo",
+      "validationChecklists": "Listas de verificación de validación",
+      "useTemplateButton": "Usar Plantilla Ahora →",
+      "stopStruggling": "Deja de luchar con la consistencia de los personajes. Comienza a construir cómics, guiones gráficos y activos de marca cohesivos que mantengan un reconocimiento facial perfecto en cada escena.",
+      "nextSteps": "Próximos Pasos en Tu Viaje de Personaje",
+      "expressionMastery": "Maestría en Expresión de Personajes",
+      "expressionMasteryDesc": "Aprende técnicas avanzadas de rango emocional para personajes verdaderamente dinámicos.",
+      "readExpressionGuide": "Leer Guía de Expresión →",
+      "styleTransferSecrets": "Secretos de Transferencia de Estilo",
+      "styleTransferSecretsDesc": "Domina el arte de mantener rostros a través de diferentes estilos artísticos.",
+      "exploreStyleTransfer": "Explorar Transferencia de Estilo →",
+      "footer": "Construir personajes consistentes es una habilidad que separa a los creadores amateurs de los profesionales. Con estas técnicas de Nano Banana, tienes el marco para crear personajes reconocibles y memorables que mantienen su identidad en cualquier escena o estilo.",
+      "expressionConsistencyRulesTitle": "3. Reglas de Consistencia de Expresión",
+      "expressionConsistencyRulesDesc": "Define cómo se mueve la cara de tu personaje y expresa emociones. Esto previene el problema de \"persona diferente\" al cambiar expresiones.",
+      "characterBasePortrait": "Retrato Base del Personaje",
+      "characterInCoffeeShop": "Personaje en la Cafetería",
+      "characterActionScene": "Escena de Acción del Personaje",
+      "advancedConsistencyTechniques": "Técnicas Avanzadas de Consistencia",
+      "emotionalRangeLibrary": "La Biblioteca de Rango Emocional",
+      "emotionalRangeLibraryDesc": "Crea una biblioteca de las expresiones de tu personaje. Esto se convierte en tu biblia de consistencia.",
+      "characterConsistencyChecklist": "Tu Lista de Verificación de Consistencia de Personajes",
+      "preGenerationChecklistTitle": "✅ Lista de Verificación Pre-Generación",
+      "postGenerationValidationTitle": "🔍 Validación Post-Generación",
+      "commonPitfallsSolutions": "Trampas Comunes y Soluciones",
+      "nextStepsCharacterJourney": "Próximos Pasos en Tu Viaje de Personaje",
+      "characterExpressionMastery": "Maestría en Expresión de Personajes",
+      "characterExpressionMasteryDesc": "Aprende técnicas avanzadas de rango emocional para personajes verdaderamente dinámicos que mantienen su identidad en cualquier expresión o estado de ánimo."
+    },
+    "ugcVideoTranslationScalingTiktoksShortsGlobalMarkets": {
+      "title": "Traducción de Video UGC: Escalando TikToks y Shorts para Mercados Globales",
+      "date": "27 de abril de 2026",
+      "readTime": "12 min de lectura",
+      "tag": "Traducción de Video",
+      "image": "/images/ugc-video-translation.webp",
+      "category": "video-translation",
+      "intro": "Aprende cómo escalar tus videos de UGC (Contenido Generado por el Usuario) para mercados globales utilizando traducción de IA. Traduce TikToks, Shorts y Reels para alcanzar audiencias internacionales mientras mantienes autenticidad y compromiso.",
+      "whatIsTitle": "¿Qué es la Traducción de Video UGC?",
+      "whatIsContent": "La traducción de video UGC es el proceso de adaptar contenido generado por usuarios en formato corto para audiencias internacionales. Implica traducir audio, subtítulos y referencias culturales mientras se preserva la sensación auténtica y cruda que hace que el UGC sea efectivo. Las herramientas de IA ahora hacen posible traducir cientos de videos de manera asequible.",
+      "whyTitle": "¿Por Qué Traducir Contenido UGC?",
+      "whyContent": "El contenido UGC genera tasas de clic 4 veces más altas que el contenido creado por marcas. Al traducir UGC, puedes: alcanzar a más de 2 mil millones de hablantes no nativos, entrar en nuevos mercados sin crear contenido nuevo, aumentar el ROAS en asociaciones existentes con creadores y construir conexiones auténticas con audiencias globales que confían en el contenido en su idioma nativo.",
+      "howTitle": "Cómo Traducir Videos UGC a Gran Escala",
+      "step1Title": "Paso 1: Curar y Organizar Contenido",
+      "step1Content": "Identifica UGC de alto rendimiento basado en métricas de compromiso (vistas, compartidos, CTR). Organiza el contenido por categoría de producto, creador y nivel de rendimiento. Etiqueta los videos con el idioma original y el potencial de mercado objetivo. Prioriza contenido atemporal sobre publicaciones sensibles al tiempo para obtener el máximo ROI de traducción.",
+      "step2Title": "Paso 2: Extraer y Preparar Activos",
+      "step2Content": "Descarga videos fuente en la mejor calidad disponible. Separa el audio del video utilizando herramientas como FFmpeg o Descript. Extrae el texto en pantalla y los subtítulos. Crea un documento de resumen de traducción que capture el tono, contexto y notas culturales para cada pieza de contenido.",
+      "step3Title": "Paso 3: Traducción de IA y Clonación de Voz",
+      "step3Content": "Utiliza la clonación de voz AI para mantener la autenticidad del creador en diferentes idiomas. Herramientas como Curify pueden clonar la voz original del creador y traducir a más de 50 idiomas. Para obtener los mejores resultados, proporciona más de 30 segundos de audio limpio para la clonación de voz. Siempre revisa las traducciones de AI con hablantes nativos para asegurar la precisión cultural.",
+      "step4Title": "Paso 4: Sincronización de Labios y Adaptación Visual",
+      "step4Content": "Aplica tecnología de sincronización de labios AI para hacer coincidir el audio traducido con los movimientos de los labios del hablante. Ajusta los superposiciones de texto en pantalla y los subtítulos para el idioma objetivo. Considera re-editar por sensibilidades culturales (eliminando referencias específicas de la región que no se traducen bien).",
+      "step5Title": "Paso 5: Localización y Cumplimiento",
+      "step5Content": "Adapta los CTA para los mercados locales (diferentes plataformas de comercio electrónico, moneda, etc.). Asegúrate de cumplir con las regulaciones publicitarias locales y los requisitos de divulgación. Agrega hashtags y palabras clave localizadas. Prueba con hablantes nativos antes del lanzamiento completo de la campaña.",
+      "technicalTitle": "Consideraciones Técnicas",
+      "timingTitle": "Tiempo y Ritmo",
+      "timingContent": "El audio traducido puede ser un 15-30% más largo o más corto que el original. Ajusta el ritmo del video: recortando pausas, acelerando/reduciendo secciones, o agregando B-roll para llenar los huecos de tiempo. TikToks y Shorts tienen límites de duración estrictos: asegúrate de que las versiones traducidas se ajusten a las restricciones de la plataforma.",
+      "emotionTitle": "Preservación de Emoción y Tono",
+      "emotionContent": "El UGC depende en gran medida de la emoción auténtica. Al traducir: preserva el nivel de energía y entusiasmo original, mantén el humor y las referencias culturales (o adáptalas adecuadamente), y conserva el tono informal y conversacional que define el UGC. La detección de emoción AI puede ayudar a igualar el sentimiento original.",
+      "platformTitle": "Requisitos Específicos de la Plataforma",
+      "platformContent": "Cada plataforma tiene consideraciones únicas: TikTok requiere formato vertical 9:16 con zonas de texto seguras, YouTube Shorts necesita los primeros 3 segundos atractivos y miniaturas optimizadas para móviles, Instagram Reels se beneficia de la integración de audio en tendencia y estrategia de hashtags. Adapta el contenido traducido a las preferencias del algoritmo de cada plataforma.",
+      "toolsTitle": "Herramientas Recomendadas",
+      "toolsContent": "Curify: Traducción UGC todo en uno con clonación de voz, sincronización de labios y procesamiento por lotes. ElevenLabs: Clonación de voz profesional con control de emoción. HeyGen: Avatar AI y sincronización de labios para UGC sin rostro. Descript: Edición de audio y flujo de trabajo de transcripción. CapCut: Edición amigable para móviles con subtítulos automáticos en más de 20 idiomas.",
+      "monetizationTitle": "Estrategias de Monetización",
+      "monetizationContent": "Monetiza el UGC traducido a través de: programas de afiliados internacionales (Amazon Associates, redes globales de ShareASale), lanzamientos de productos localizados y pre-pedidos, asociaciones y patrocinios de marcas regionales, y bibliotecas de UGC pagadas para que otras marcas las licencien. Rastrea el rendimiento por mercado para enfocarte en las regiones de alta conversión.",
+      "caseStudiesTitle": "Historias de Éxito",
+      "caseStudy1Title": "Marca de Belleza: 3x ROAS en Mercados Europeos",
+      "caseStudy1Content": "Una marca de belleza DTC tradujo 50 TikToks UGC de mejor rendimiento al francés, alemán y español. Usando la clonación de voz de Curify para mantener las voces de los creadores, vieron un retorno de 3x en el gasto publicitario en mercados europeos en 60 días. La energía auténtica del creador se tradujo mejor que el contenido doblado tradicional.",
+      "caseStudy2Title": "App de Fitness: 500K Descargas de Shorts Traducidos",
+      "caseStudy2Content": "Una app de fitness tradujo UGC en inglés al portugués, japonés y árabe. Al localizar la terminología de ejercicios y adaptar referencias culturales, lograron más de 500K descargas de la app en mercados no angloparlantes en 90 días. El contenido traducido superó a los anuncios creados localmente en un 40%.",
+      "bestPracticesTitle": "Mejores Prácticas para la Traducción de UGC",
+      "bestPracticesContent": "Elige creadores con un habla clara y acento neutral para mejores resultados en la clonación de voz. Prueba de 5 a 10 videos por mercado antes de escalar a bibliotecas completas. Mantén un glosario de traducción para términos específicos de la marca y nombres de productos. Realiza pruebas A/B de miniaturas y subtítulos traducidos vs. originales. Monitorea comentarios en idiomas objetivo para obtener retroalimentación cultural. Actualiza las traducciones cuando cambien los productos o mensajes.",
+      "conclusionTitle": "Escala Globalmente con la Traducción de UGC",
+      "conclusionContent": "La traducción de videos UGC es la forma más rentable de entrar en mercados globales. Al aprovechar herramientas de AI para la clonación de voz, sincronización de labios y procesamiento por lotes, puedes escalar contenido existente de alto rendimiento para alcanzar miles de millones de nuevos clientes potenciales. Comienza con tus 10 mejores videos UGC, tradúcelos a 2-3 mercados prometedores y mide los resultados antes de un despliegue a gran escala."
+    },
+    "keyInsight": {
+      "title": "La Perspectiva Clave",
+      "description": "Ningún método único resuelve esto:",
+      "methods": {
+        "nlp": {
+          "title": "NLP puro",
+          "description": "demasiado ruidoso"
+        },
+        "vision": {
+          "title": "visión pura",
+          "description": "demasiado abstracto"
+        },
+        "clustering": {
+          "title": "agrupamiento puro",
+          "description": "demasiado burdo"
+        }
+      },
+      "solution": "La solución es un pipeline híbrido con refinamiento humano en el bucle."
+    },
+    "pinterestPlatform": {
+      "title": "Construyendo Sistemas de Etiquetado para una Plataforma de Inspiración al Estilo Pinterest",
+      "description": "Para una plataforma de inspiración al estilo Pinterest, necesitamos enfoques de etiquetado especializados para diferentes tipos de contenido:",
+      "galleryTags": {
+        "title": "Etiquetas de Imágenes de Galería",
+        "description": "Para el descubrimiento y navegación de contenido visual:",
+        "examples": {
+          "subject": "Sujeto",
+          "subjectDesc": "retratos, paisajes, animales, comida, arquitectura",
+          "style": "Estilo",
+          "styleDesc": "fotorealista, anime, acuarela, pintura al óleo, boceto",
+          "medium": "Medio",
+          "mediumDesc": "arte digital, fotografía, ilustración, renderizado 3D",
+          "mood": "Estado de ánimo",
+          "moodDesc": "acogedor, dramático, vibrante, minimalista, nostálgico",
+          "composition": "Composición",
+          "compositionDesc": "primer plano, gran angular, aéreo, simetría, regla de tercios",
+          "color": "Color",
+          "colorDesc": "monocromático, tonos cálidos, tonos fríos, pastel, neón"
+        }
+      },
+      "templateTags": {
+        "title": "Etiquetas de Plantilla y Ejemplo de Plantilla",
+        "description": "Para el descubrimiento de plantillas y la coincidencia de casos de uso:",
+        "geoTags": {
+          "title": "Etiquetas Geográficas",
+          "description": "Etiquetas geográficas como diferentes países con comida, disfraces, itinerarios de viaje:",
+          "examples": [
+            "Francia",
+            "India",
+            "México",
+            "Japón",
+            "Italia",
+            "España",
+            "China",
+            "Tailandia"
+          ]
+        },
+        "languageTags": {
+          "title": "Etiquetas de Idioma",
+          "description": "Etiquetas de idioma para contenido bilingüe y multilingüe:",
+          "examples": [
+            "inglés-chino",
+            "inglés-español",
+            "inglés-francés",
+            "inglés-japonés",
+            "inglés-coreano",
+            "inglés-árabe",
+            "inglés-portugués",
+            "inglés-ruso"
+          ]
+        }
+      }
+    },
+    "ruleOfThumb": {
+      "title": "Una Regla Simple",
+      "question": "Para cada etiqueta, pregúntate:",
+      "description": "\"Si esta fuera una página, ¿los usuarios la entenderían, la buscarían y disfrutarían navegando por ella?\"",
+      "action": "Si no, elimínala."
+    },
+    "finalThought": {
+      "title": "Pensamiento Final",
+      "description": "Etiquetar no se trata de describir imágenes perfectamente. Se trata de crear un sistema que:",
+      "systems": {
+        "match": "coincida con cómo piensan los usuarios",
+        "group": "agrupe el contenido de manera significativa",
+        "scale": "escalable en búsqueda y descubrimiento"
+      },
+      "conclusion": "En la práctica, los mejores sistemas de etiquetas no son los más complejos; son los más alineados con la intención."
+    },
+    "footer": {
+      "tags": [
+        "Etiquetado de Contenido",
+        "Sistemas de Etiquetado",
+        "Descubrimiento de Contenido",
+        "Estilo Pinterest",
+        "Experiencia del Usuario",
+        "Arquitectura de Búsqueda",
+        "Estrategia de Contenido",
+        "Contenido AI",
+        "Sistemas de Plantillas",
+        "Gestión de Galerías",
+        "Organización de Contenido",
+        "Optimización de Búsqueda"
+      ],
+      "questions": "¿Tienes preguntas sobre la construcción de sistemas de etiquetado de contenido? Contacta a nuestro equipo de soporte para asistencia personalizada."
+    },
+    "aeVsComfyUi": {
+      "title": "Parte 3: AE vs ComfyUI – Diseño de Movimiento vs Pipelines de Difusión",
+      "heading": "AE vs ComfyUI",
+      "images": {
+        "guideCoverAlt": "Imagen de portada de la guía completa de ComfyUI",
+        "workflowFullAlt": "Flujo de trabajo completo de ComfyUI: de entrada a salida",
+        "caseFeltAlt": "Estudio de caso de ComfyUI: mundo en miniatura de fieltro de lana (flujo de trabajo de nodos)"
+      },
+      "intro1": "A menudo nos preguntan: ¿por qué no usar solo After Effects (AE)? O, ¿por qué molestarse con ComfyUI? Ambos son esenciales: uno proporciona control preciso, el otro proporciona creatividad generativa.",
+      "intro2": "AE ofrece precisión en la línea de tiempo y control sobre transiciones, iluminación y efectos. ComfyUI trae flujos de trabajo nativos de IA, combinando difusión, texto y orquestación multimodal.",
+      "sections": {
+        "s1": {
+          "title": "I. ¿Qué es ComfyUI?",
+          "p1": "ComfyUI es un editor de flujo de trabajo basado en nodos diseñado para contenido generado por IA, así como una poderosa herramienta frontend para modelos de difusión como Stable Diffusion. A través de un gráfico de nodos visual, puedes combinar modelos libremente, controlar la lógica de generación y dominar todo el proceso, desde la generación de imágenes simples hasta creaciones multimodales complejas.",
+          "p2": "En el ecosistema de curify-ai.com, ComfyUI es nuestro motor principal para la producción eficiente de contenido de IA."
+        },
+        "s2": {
+          "title": "II. Tutorial Básico de ComfyUI: De 0 a 1",
+          "sub1": {
+            "title": "1) Configuración del Entorno y Primer Lanzamiento",
+            "b1Strong": "Despliegue local vs ejecución en la nube:",
+            "b1": "El despliegue local es adecuado para una personalización profunda y necesidades de privacidad, mientras que la ejecución en la nube es más conveniente sin requerir una configuración de entorno compleja.",
+            "b2Strong": "Gestión de modelos:",
+            "b2": "Los modelos principales (Checkpoint), el ajuste de estilo (LoRA) y el control preciso (ControlNet) son tres componentes esenciales, disponibles con un clic en la biblioteca de plantillas de curify-ai.com.",
+            "b3Strong": "Problemas comunes:",
+            "b3": "CUDA no habilitado, VRAM insuficiente, dependencias faltantes son problemas frecuentes al iniciar, puedes consultar nuestra guía de solución de problemas para resolverlos rápidamente."
+          },
+          "sub2": {
+            "title": "2) Desglose de Conceptos Clave",
+            "b1Strong": "Gráfico de Nodos:",
+            "b1": "Cada nodo representa un módulo funcional (como cargar un modelo, generar una imagen, aplicar un estilo), definiendo el flujo de datos a través de conexiones, haciéndolo intuitivo y controlable.",
+            "b2Strong": "Flujo de Trabajo:",
+            "b2": "Un proceso de generación completo que se puede guardar, importar y exportar, curify-ai.com ofrece muchas plantillas preestablecidas que cubren los principales escenarios de creación.",
+            "b3Strong": "Muestreador y Programador:",
+            "b3": "Elegir el muestreador adecuado (como Euler, DPM++) afecta directamente la calidad y velocidad de generación, nuestras plantillas ya están optimizadas para ti."
+          },
+          "sub3": {
+            "title": "3) Casos Prácticos de Inicio Rápido",
+            "b1Strong": "Texto a imagen:",
+            "b1": "Ingresa indicaciones de estilo de curify-ai y genera imágenes creativas de alta calidad con un clic.",
+            "b2Strong": "Imagen a imagen:",
+            "b2": "Sube una imagen de referencia, bloquea la composición a través del nodo ControlNet, luego redibuja en el estilo objetivo con el nodo LoRA.",
+            "b3Strong": "Generación de video:",
+            "b3": "Combina nodos como AnimateDiff para transformar imágenes estáticas en contenido dinámico suave."
+          }
+        },
+        "s3": {
+          "title": "III. Configuración de Nodos y Técnicas Avanzadas: Haciendo la Generación Más Precisa",
+          "sub1": {
+            "title": "1) Combinaciones Comunes de Nodos",
+            "b1Strong": "Nodo ControlNet:",
+            "b1": "Control preciso de poses de personajes, contornos y profundidad, clave para lograr composiciones complejas.",
+            "b2Strong": "Nodo de mezcla LoRA:",
+            "b2": "Superponer múltiples LoRAs de estilo para lograr fusión de estilos y ajustes de detalles.",
+            "b3Strong": "Nodo de control condicional:",
+            "b3": "Al ajustar los pesos de las indicaciones positivas y negativas, refuerza o debilita los detalles generados, haciendo que el trabajo esté más alineado con tu creatividad."
+          },
+          "sub2": {
+            "title": "2) Optimización del Rendimiento",
+            "b1Strong": "Optimización de VRAM:",
+            "b1": "Habilita la decodificación por bloques y la cuantización del modelo para generar imágenes de mayor resolución con VRAM limitada.",
+            "b2Strong": "Generación por lotes:",
+            "b2": "Utiliza la función de gestión de colas para generar en lote recursos que cumplan con los estándares de curify-ai, mejorando la eficiencia de creación.",
+            "b3Strong": "Simplificación del flujo de trabajo:",
+            "b3": "Agrupa combinaciones comunes de nodos en subgráficos para reutilización con un clic, evitando configuraciones repetitivas."
+          },
+          "sub3": {
+            "title": "3) Solución de Problemas y Depuración",
+            "b1Strong": "Errores de conexión de nodos:",
+            "b1": "Asegúrate de que los tipos de datos coincidan (por ejemplo, la salida de imagen se conecta a la entrada de imagen).",
+            "b2Strong": "Baja calidad de generación:",
+            "b2": "Verifica si las indicaciones son precisas, si los pasos de muestreo son suficientes y si el modelo es adecuado para la tarea actual."
+          }
+        },
+        "s4": {
+          "title": "IV. curify-ai.com × ComfyUI: Escenarios de Aplicación Exclusivos",
+          "sub1": {
+            "title": "1) Plantillas de Flujo de Trabajo de Pintura AI",
+            "p1": "curify-ai.com ofrece muchas plantillas de flujo de trabajo de ComfyUI que se pueden importar directamente, cubriendo estilos principales como animación, estilo nacional y realismo, mientras proporciona tamaños y formatos de recursos que cumplen con los estándares de la plataforma."
+          },
+          "sub2": {
+            "title": "2) Herramientas de Creación Eficientes",
+            "b1": "Combina las plantillas de indicaciones de curify-ai para lograr producción por lotes de contenido estilizado, mejorando significativamente la eficiencia de creación.",
+            "b2": "Proporcionamos soluciones de configuración de nodos dedicadas para generar imágenes de alta calidad que cumplan con los estándares de la plataforma con un clic."
+          },
+          "sub3": {
+            "title": "3) Flujo de Trabajo Colaborativo AE + ComfyUI",
+            "b1Strong": "Generación de IA:",
+            "b1": "Utiliza ComfyUI para generar recursos de IA, completando la iteración de estilo y contenido.",
+            "b2Strong": "Composición de postproducción:",
+            "b2": "Importa recursos generados en After Effects, utilizando su control de precisión a nivel de línea de tiempo para lograr transiciones, superposiciones y composición de efectos especiales.",
+            "b3Strong": "Producto final:",
+            "b3": "Produce videos de alta calidad o imágenes animadas que cumplan con las necesidades comerciales y creativas."
+          }
+        },
+        "s5": {
+          "title": "V. ComfyUI vs After Effects: Complementarios en Lugar de Sustitutos",
+          "conclusionTitle": "Conclusión Clave",
+          "conclusion": "En el flujo de trabajo de curify-ai, ComfyUI es responsable de la generación e iteración de IA, mientras que AE se utiliza para el acabado final, transiciones, superposiciones y composición, los dos son complementarios en lugar de sustitutivos.",
+          "table": {
+            "dimension": "Dimensión",
+            "ae": "After Effects (AE)",
+            "comfy": "ComfyUI",
+            "row1": {
+              "dim": "Posicionamiento Clave",
+              "ae": "Software profesional de postproducción de cine, composición y efectos especiales",
+              "comfy": "Motor de razonamiento generativo nativo de IA y editor de flujo de trabajo"
+            },
+            "row2": {
+              "dim": "Método de Control",
+              "ae": "Control manual preciso basado en la línea de tiempo y capas",
+              "comfy": "Generación semi-random basada en gráfico de nodos, dependiente de modelos y parámetros"
+            },
+            "row3": {
+              "dim": "Capacidad de Salida",
+              "ae": "Animaciones de alta calidad, VFX, cómics animados",
+              "comfy": "Generación de imágenes/videos por IA, soportando orquestación multimodal"
+            },
+            "row4": {
+              "dim": "Flujo de Trabajo",
+              "ae": "Proceso lineal manual o impulsado por plugins",
+              "comfy": "Flujo de trabajo basado en nodos con modelo de difusión + LLM + multimodal"
+            },
+            "row5": {
+              "dim": "Mejor Escenario",
+              "ae": "Composición final, transiciones, superposiciones, efectos especiales finos",
+              "comfy": "Generación de contenido por IA, iteración, creación estilizada"
+            }
+          }
+        },
+        "s6": {
+          "title": "VI. Próximos Pasos",
+          "b1": "Visita curify-ai.com para descargar nuestra plantilla de flujo de trabajo ComfyUI personalizada para ti.",
+          "b2": "Sigue el tutorial para completar tu primera generación y experimentar la creación eficiente de IA.",
+          "b3": "Únete a nuestra comunidad y intercambia consejos de configuración de nodos y experiencias de optimización de flujo de trabajo con otros creadores."
+        }
+      },
+      "table": {
+        "colAE": "AE",
+        "colComfy": "ComfyUI",
+        "row1a": "Control preciso de VFX y movimiento",
+        "row1b": "Generación de video nativa de IA",
+        "row2a": "Edición basada en la línea de tiempo",
+        "row2b": "Renderizado basado en flujo de trabajo/nodos",
+        "row3a": "Flujo de trabajo manual/impulsado por plugins",
+        "row3b": "Difusión + LLM + orquestación multimodal"
+      },
+      "outro": "En nuestro flujo de trabajo, ComfyUI maneja la generación y iteración de IA, mientras que AE refina la apariencia final: transiciones, superposiciones y composición.",
+      "cta": {
+        "primary": "Ve a curify-ai.com para ver plantillas",
+        "secondary": "Volver a la lista de blogs"
+      }
+    },
+    "video_translation_eval": {
+      "title": "Evaluando la Calidad de Traducción de Video por IA",
+      "subtitle": "Métricas que Importan",
+      "description": "Descubre las métricas esenciales para evaluar la calidad de traducción de video por IA, desde la transcripción hasta la síntesis de voz.",
+      "intro": "Traducir videos entre idiomas no es una tarea fácil: implica transcripción, traducción, síntesis de voz, sincronización y más. En Curify, hemos construido un robusto pipeline de evaluación para asegurar que cada pieza cumpla con los estándares de la industria.",
+      "section1_title": "1. Calidad de Transcripción",
+      "section1_engine": "Motor: WhisperX",
+      "section1_metrics": [
+        "WER (Tasa de Error de Palabras)",
+        "Puntuación F1 (para expresividad y legibilidad)"
+      ],
+      "section2_title": "2. Calidad de Traducción",
+      "section2_engine": "Motores: Helsinki, MarianMT",
+      "section2_metrics": [
+        "BLEU (métrica estándar)",
+        "COMET / chrF++ (similitud semántica)",
+        "Revisión humana: fluidez + adecuación"
+      ],
+      "section3_title": "3. Calidad de Síntesis de Voz",
+      "section3_engine": "Motores: XTTS / YourTTS",
+      "section3_metrics": [
+        "MOS (Naturalidad, similitud, expresividad)",
+        "Precisión de verificación de hablante"
+      ],
+      "section4_title": "4. Alineación y Sincronización Labial",
+      "section4_metrics": [
+        "Desajuste de duración de segmento",
+        "Confianza de sincronización Wav2Lip",
+        "Análisis de deriva temporal"
+      ],
+      "section5_title": "5. Preservación Semántica",
+      "section5_method": "Usamos LLMs (como GPT-4) para juzgar si el discurso traducido preserva el significado, tono y emoción originales. Ejemplo de prompt:",
+      "section5_prompt": "Compara esta transcripción en mandarín con la voz en inglés. ¿Coinciden el tono, la intención y el contenido? Califica del 1 al 5 y explica.",
+      "section6_title": "6. Retroalimentación de Usuarios y Validación GTM",
+      "section6_metrics": [
+        "Calidad de voz adecuada para la categoría de producto",
+        "Mejora en la retención de espectadores",
+        "Disposición a adoptar de los primeros usuarios (por ejemplo, vendedores de 1688)"
+      ],
+      "closing": "En Curify, no solo traducimos: preservamos la narración, la emoción y la claridad a través de los idiomas. Si estás listo para llevar tu voz a nivel global, contáctanos.",
+      "available_locales": "Publicación disponible en: [EN] [ZH] [ES] [DE]"
+    },
+    "qaBotToTaskAgent": {
+      "heading": "🏗️ De QA Bot a Task Agent: Una Guía de Arquitectura",
+      "description": "Aprende a construir agentes de tareas confiables que van más allá de simples respuestas a preguntas.",
+      "taskAgentImageAlt": "Ilustración de una arquitectura de sistema de agente de tareas mostrando la interacción entre diferentes componentes.",
+      "tldr": "TL;DR: Deja de construir chatbots que solo responden preguntas. Comienza a construir agentes de tareas que realmente hagan el trabajo.",
+      "intro": "Esta guía explica el cambio arquitectónico de bots QA monolíticos a Agentes de Tareas utilizando Reglas Estáticas, Habilidades Dinámicas y Ganchos Deterministas, con ejemplos de código concretos y referencias de código abierto.",
+      "coreShift": {
+        "title": "1. El Cambio Central: QA Bot → Task Agent",
+        "content": [
+          "La mayoría de los sistemas de IA hoy en día son todavía bots QA llenos de contexto:",
+          "• Responden preguntas bien",
+          "• Alucinan bajo presión",
+          "• Carecen de garantías sobre ejecución, seguridad y consistencia"
+        ],
+        "keyInsight": "La clave: No escales el contexto. Estructúralo."
+      },
+      "threeLayerArch": {
+        "title": "2. La Arquitectura de Tres Capas",
+        "layers": [
+          {
+            "title": "🧱 1. Contexto Estático — Reglas (Siempre Activas)",
+            "points": [
+              "Modelo mental: Manual del empleado",
+              "Siempre cargado",
+              "Define identidad, estándares de codificación, restricciones de comportamiento",
+              "Previene alucinaciones y desviaciones de estilo",
+              "Pequeño, estable, editable por humanos"
+            ]
+          },
+          {
+            "title": "🛠️ 2. Contexto Dinámico — Habilidades (Bajo Demanda)",
+            "points": [
+              "Modelo mental: Caja de herramientas",
+              "Cargado solo cuando es necesario",
+              "Cada habilidad es una capacidad autónoma",
+              "Mantiene la ventana de contexto limpia"
+            ]
+          },
+          {
+            "title": "⚓ 3. Ganchos Deterministas — Barandillas",
+            "points": [
+              "Modelo mental: Capa de Seguridad + Cumplimiento",
+              "No probabilístico",
+              "Se ejecuta antes / después del razonamiento LLM",
+              "Aplica reglas que nunca deben fallar"
+            ]
+          }
+        ]
+      },
+      "projectStructure": {
+        "title": "3. Estructura de Proyecto Recomendada",
+        "structure": "my-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+      },
+      "staticContextExample": {
+        "title": "4. Ejemplo de Contexto Estático: .cursorrules",
+        "content": "# ROL\nEres un Ingeniero Python Senior enfocado en sistemas de calidad de producción.\n\n# REGLAS\n- NUNCA uses print() para depuración\n- SIEMPRE indica tipos en las funciones\n- Propón un plan si tocas más de 3 archivos\n\n# COMPORTAMIENTO\n- Sé conciso\n- Haz preguntas aclaratorias si es necesario\n\nReferencia: https://github.com/PatrickJS/awesome-cursorrules"
+      },
+      "dynamicSkillExample": {
+        "title": "5. Ejemplo de Habilidad Dinámica (MCP)",
+        "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Creado ticket {ticket_id} con prioridad={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\nReferencia: https://github.com/modelcontextprotocol/python-sdk"
+      },
+      "deterministicHookExample": {
+        "title": "6. Ejemplo de Gancho Determinista",
+        "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Violación de seguridad detectada\"}\n    return agent_node(state)\n\nReferencia: https://langchain-ai.github.io/langgraph/"
+      },
+      "finalThought": "Si tu agente solo responde preguntas, es un chatbot. Si ejecuta trabajo de manera confiable, es un Agente de Tareas."
     }
   },
   "aeVsComfyUi": {
