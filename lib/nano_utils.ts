@@ -6,7 +6,7 @@ import { PageLocale } from "@/lib/locale_utils";
 export type TemplateParameter = {
   name: string;
   label: string;
-  type: "text" | "textarea" | "select";
+  type: "text" | "textarea" | "select" | "language_pair";
   placeholder?: string;
   options?: string[];
 };

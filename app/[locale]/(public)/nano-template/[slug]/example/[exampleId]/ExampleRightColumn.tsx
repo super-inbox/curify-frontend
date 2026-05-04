@@ -10,6 +10,7 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { fillPrompt } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
@@ -152,6 +153,12 @@ export default function ExampleRightColumn({
                     <option key={opt} value={opt}>{opt}</option>
                   ))}
                 </select>
+              ) : p.type === "language_pair" ? (
+                <LanguagePairSelector
+                  value={form[p.name]}
+                  onChange={(v) => onFormChange(p.name, v)}
+                  className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                />
               ) : (
                 <input
                   value={form[p.name] ?? ""}

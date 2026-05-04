@@ -6,6 +6,7 @@ import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { buildExampleId } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import { nanoGenerateService } from "@/services/nanoGenerate";
@@ -127,6 +128,14 @@ export default function ExampleGeneratePanel({
                     <option key={opt} value={opt}>{opt}</option>
                   ))}
                 </select>
+              ) : p.type === "language_pair" ? (
+                <LanguagePairSelector
+                  value={form[p.name]}
+                  onChange={(v) =>
+                    setForm((prev) => ({ ...prev, [p.name]: v }))
+                  }
+                  className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                />
               ) : (
                 <input
                   value={form[p.name] ?? ""}
