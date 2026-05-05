@@ -202,7 +202,7 @@ export default async function NanoExampleDetailPage({
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-[1400px] px-4 py-2 sm:px-6 lg:px-8">
       <ExamplePromptHero
         title={title}
         prompt={prompt}
