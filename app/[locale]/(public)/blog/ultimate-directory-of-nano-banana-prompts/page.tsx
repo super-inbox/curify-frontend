@@ -276,7 +276,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
         {/* Blog Post Image */}
         <div className="mb-8">
           <CdnImage
-            src="/images/logbook.webp"
+            src="/images/45658b99d089618b244c024b1ea93cc9_thumb_1762921242171.jpg"
             alt={t('hero.title')}
             width={1200}
             height={675}
@@ -417,7 +417,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
           description={t('hero.subtitle')}
           publishDate="2026-04-20"
           author="Curify AI Team"
-          image="/images/logbook.webp"
+          image="/images/45658b99d089618b244c024b1ea93cc9_thumb_1762921242171.jpg"
           url="/blog/ultimate-directory-of-nano-banana-prompts"
           readTime="20 min read"
         />
