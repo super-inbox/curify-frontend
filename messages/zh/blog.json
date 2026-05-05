@@ -14,7 +14,13 @@
         "date": "2026年1月30日",
         "readTime": "9 分钟阅读",
         "tag": "DS & AI Engineering",
-        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "纳米香蕉提示的终极目录",
+          "mbti角色生成器",
+          "角色提示生成器"
+        ]
       },
       {
         "slug": "QA_Bot_to_Task",
@@ -64,7 +70,13 @@
         "date": "2025年11月18日",
         "readTime": "7 分钟阅读",
         "tag": "Creator Tools",
-        "image": "/images/video-enhancement-pipeline.png"
+        "image": "/images/video-enhancement-pipeline.png",
+        "category": "视频翻译配音",
+        "relatedLinks": [
+          "ai youtube视频翻译器",
+          "如何自然配音视频",
+          "什么是声音克隆"
+        ]
       },
       {
         "slug": "video-evaluation",
@@ -72,7 +84,13 @@
         "date": "2025年11月14日",
         "readTime": "6 分钟阅读",
         "tag": "Video Dubbing",
-        "image": "/images/video-translation-eval.jpg"
+        "image": "/images/video-translation-eval.jpg",
+        "category": "创作者工具",
+        "relatedLinks": [
+          "curify-ai增长引擎",
+          "纳米香蕉提示生态系统",
+          "ai内容生产系统"
+        ]
       },
       {
         "slug": "storyboard-to-pipeline",
@@ -811,192 +829,192 @@
       "seoKeywords": "如何翻译youtube视频，翻译youtube视频，AI视频翻译器，youtube视频翻译，视频字幕翻译，多语言视频内容，youtube视频配音，全球视频策略，Curify视频翻译器",
       "metaDescription": "学习如何使用AI工具翻译YouTube视频。逐步指南涵盖视频翻译、字幕、配音以及最佳工具，以便用您的内容接触全球观众。"
     },
-  "f5TtsVsElevenlabs": {
-    "title": "如何在2026年自然地为视频配音：修复AI语音克隆伪影",
-    "description": "使用AI工具解决常见配音挑战的综合指南。学习机器人节奏、缺乏情感和唇形同步问题的实用解决方案。",
-    "hero": {
+    "f5TtsVsElevenlabs": {
       "title": "如何在2026年自然地为视频配音：修复AI语音克隆伪影",
-      "subtitle": "使用AI工具解决常见配音挑战的综合指南。专注于机器人节奏、缺乏情感和唇形同步问题等痛点。"
-    },
-    "protip": "从高质量源音频开始，并始终与母语者一起测试您的配音内容，以捕捉AI可能遗漏的细微伪影。",
-    "tabs": {
-      "problems": "常见问题",
-      "solutions": "实用解决方案",
-      "tools": "推荐工具",
-      "workflow": "分步工作流",
-      "advanced": "高级技术",
-      "automation": "自动化策略",
-      "conclusion": "结论"
-    },
-    "introduction": {
-      "paragraph1": "AI视频配音已经彻底改变了内容创作，但\\u003cstrong\\u003e机器人伪影\\u003c/strong\\u003e和\\u003cstrong\\u003e不自然的节奏\\u003c/strong\\u003e仍然困扰着许多制作。在2026年，我们有更好的工具和技术来克服这些挑战。核心问题在于大多数配音管道将语音视为纯粹的技术层而不是表演。许多系统仍然生成具有平坦韵律、不一致重音和时间不当停顿的音频，即使声音本身听起来很真实，也会破坏沉浸感。观众对时间不匹配非常敏感——当情感节拍、微停顿或句子重音与视觉表演不一致时，结果会让人感觉微妙地不对劲，即使他们无法说出原因。现代方法通过专注于\\u003cstrong\\u003e韵律控制和时序对齐\\u003c/strong\\u003e来解决这个问题。不是线性生成语音，较新的模型采用节奏感知合成，允许创作者在短语和音节级别控制节奏。这使得匹配唇部动作、保持戏剧性停顿和跨语言维护原始演员意图成为可能。强制对齐、音素级时间和参考音频条件等技术现在正在成为高质量管道的标准。另一个重大改进来自\\u003cstrong\\u003e上下文感知语音建模\\u003c/strong\\u003e。不是孤立地生成每一行，高级系统维护对话记忆——跨场景跟踪语调、情感状态和说话者动态。这减少了音调漂移，确保角色无论是低语、争论还是进行解说都听起来一致。对于叙事内容，这一转变本身就显著提高了感知的真实感。最后，\\u003cstrong\\u003e人在环工作流\\u003c/strong\\u003e的兴起缩小了自动化和质量之间的差距。创作者现在将AI生成与轻量级人工审查相结合，在保持效率的同时实现专业质量。",
-      "paragraph2": "本指南将向您展示如何使用MuseTalk、Emotion TTS和高级后处理技术等尖端AI工具\\u003cstrong\\u003e修复常见配音问题\\u003c/strong\\u003e。我们超越基本的语音生成，解决AI配音工作流中最持久的失败点——唇形同步漂移、单调表达、时间不匹配和情感平淡。您将学习如何使用MuseTalk进行精确的视觉-音频对齐，确保生成的语音轨道紧密匹配嘴部动作和面部表情，即使在快节奏或对话密集的场景中也是如此。在音频方面，我们分解如何利用Emotion TTS系统向生成的语音注入\\u003cstrong\\u003e受控的表现力\\u003c/strong\\u003e。本指南不是依赖通用预设，而是指导如何调整音高轮廓、节奏和重音以反映意图——无论是紧张、讽刺还是单行内的微妙情感变化。这使您能够从技术上正确的音频转向感觉人性化且上下文相关的表演。我们还涵盖了对最终输出质量至关重要的\\u003cstrong\\u003e高级后处理工作流\\u003c/strong\\u003e。这包括音素级时间调整、静音修剪和扩展、呼吸和停顿插入，以及音频母带制作技术，如EQ匹配和响度标准化，以将配音声音无缝混合到原声带中。通过将这些工具和技术组合成一个有凝聚力的管道，您将能够系统性地诊断和修复配音问题，而不是依赖试错——将不一致的AI输出转化为精良、制作就绪的对话。"
-    },
-    "problems": {
-      "title": "常见AI配音问题",
-      "issues": [
-        {
-          "icon": "🤖",
-          "title": "机器人节奏",
-          "description": "AI生成的语音通常缺乏自然的节奏和时间，使其听起来机械和脱离。",
-          "impact": "观众脱离",
-          "impactDescription": "不自然的节奏破坏沉浸感，将观众保留率降低多达40%。"
-        },
-        {
-          "icon": "😐",
-          "title": "缺乏情感细微差别",
-          "description": "AI语音难以传达微妙情感，使戏剧性场景显得平淡。",
-          "impact": "情感脱节",
-          "impactDescription": "缺少情感线索阻止观众与角色和故事建立联系。"
-        },
-        {
-          "icon": "👄",
-          "title": "唇形同步不匹配",
-          "description": "音频和视觉唇部动作之间的对齐不佳产生恐怖谷效应。",
-          "impact": "不真实的外观",
-          "impactDescription": "可见的唇形同步错误立即打破自然语音的幻觉。"
-        }
-      ]
-    },
-    "solutions": {
-      "title": "实用解决方案",
-      "methods": [
-        {
-          "icon": "🎭",
-          "title": "情感增强TTS",
-          "description": "使用能够向语音注入适当情感的感知情文字转语音模型。",
-          "benefit": "自然情感表达",
-          "benefitDescription": "与标准TTS相比，实现85%更自然的情感表达。",
-          "promptTitle": "情感增强提示",
-          "promptDescription": "使用此提示指导AI生成情感细微的语音：",
-          "prompt": "以[情感：关心、温暖、紧急]语调生成语音。逗号后暂停0.3秒，强调关键情感词，音高变化±20%以获得自然韵律。"
-        },
-        {
-          "icon": "⚡",
-          "title": "节奏校正",
-          "description": "应用AI驱动的时间调整以匹配自然人类语音模式。",
-          "benefit": "类人时间",
-          "benefitDescription": "通过智能节奏调整减少70%的机器人伪影。",
-          "promptTitle": "节奏校正提示",
-          "promptDescription": "使用此提示修复机器人节奏：",
-          "prompt": "分析语音节奏并插入自然停顿：句号后0.5秒，逗号后0.2秒，词间距变化±10%以获得有机流动。"
-        }
-      ]
-    },
-    "tools": {
-      "title": "推荐工具",
-      "cta": "尝试工具",
-      "recommendations": [
-        {
-          "icon": "🎙️",
-          "title": "MuseTalk",
-          "description": "具有情感保持和自然时间的高级语音克隆。",
-          "useCase": "最适合角色语音",
-          "useCaseDescription": "非常适合在长篇内容中保持一致的角色语音。",
-          "link": "https://musetalk.ai"
-        },
-        {
-          "icon": "🎭",
-          "title": "Emotion TTS",
-          "description": "具有情感控制和自然韵律的专业文字转语音。",
-          "useCase": "情感内容",
-          "useCaseDescription": "非常适合需要微妙情感变化的戏剧性内容。",
-          "link": "https://emotiontts.ai"
-        },
-        {
-          "icon": "🎬",
-          "title": "LipSync Pro",
-          "description": "具有帧级精度的AI驱动唇形同步校正。",
-          "useCase": "完美唇形对齐",
-          "useCaseDescription": "为专业视频制作实现像素级唇形同步。",
-          "link": "https://lipsyncpro.ai"
-        }
-      ]
-    },
-    "workflow": {
-      "title": "分步工作流",
-      "steps": [
-        {
-          "title": "准备源音频",
-          "description": "从目标语音的高质量、清晰音频录制开始。",
-          "action": "音频质量检查",
-          "actionDescription": "确保48kHz采样率、最小背景噪音和一致的声乐表演。",
-          "promptTitle": "音频准备提示",
-          "promptDescription": "使用此提示准备语音克隆的音频：",
-          "prompt": "清理音频：去除背景噪音，标准化到-6dB，确保一致的声乐音调，导出为WAV 48kHz 24位。"
-        },
-        {
-          "title": "用情感克隆语音",
-          "description": "使用MuseTalk创建情感感知语音模型。",
-          "action": "语音模型训练",
-          "actionDescription": "用情感标签和时间参考样本训练模型。",
-          "promptTitle": "语音克隆提示",
-          "promptDescription": "使用此提示进行语音克隆：",
-          "prompt": "克隆具有情感保持的语音：分析声乐模式，提取情感标记，创建时间配置文件。"
-        },
-        {
-          "title": "生成配音音频",
-          "description": "使用情感增强语音模型生成语音。",
-          "action": "音频生成",
-          "actionDescription": "生成具有不同情感强度的多个版本以获得最佳结果。",
-          "promptTitle": "音频生成提示",
-          "promptDescription": "使用此提示进行自然音频生成：",
-          "prompt": "生成语音：应用情感配置文件[快乐、关心、兴奋]，插入自然停顿，说话速度变化±15%。"
-        }
-      ]
-    },
-    "advanced": {
-      "title": "高级技术",
-      "techniques": [
-        {
-          "icon": "🧠",
-          "title": "神经韵律转移",
-          "description": "将自然语音模式从参考音频转移到AI生成的语音。",
-          "benefit": "真实语音模式",
-          "benefitDescription": "在语音节奏和语调方面实现95%的自然度。",
-          "promptTitle": "韵律转移提示",
-          "promptDescription": "使用此提示进行韵律转移：",
-          "prompt": "提取韵律模式：分析音高轮廓、时间模式、重音强调，应用到目标语音。"
-        },
-        {
-          "icon": "🎯",
-          "title": "上下文感知情感",
-          "description": "理解场景上下文并相应调整情感的AI。",
-          "benefit": "场景适当情感",
-          "benefitDescription": "自动将情感基调与视频内容和对话上下文匹配。",
-          "promptTitle": "上下文感知提示",
-          "promptDescription": "使用此提示进行上下文感知情感：",
-          "prompt": "分析场景上下文：识别情感基调、角色关系、戏剧性时刻，相应调整语音。"
-        }
-      ]
-    },
-    "automation": {
-      "title": "自动化策略",
-      "strategies": [
-        {
-          "icon": "⚙️",
-          "title": "批处理管道",
-          "description": "以一致质量处理多个视频文件的自动化工作流。",
-          "result": "大规模一致质量",
-          "resultDescription": "处理100+视频，保持一致的语音质量和情感表达。"
-        },
-        {
-          "icon": "🔄",
-          "title": "质量控制自动化",
-          "description": "AI驱动的质量检查，自动检测和标记配音问题。",
-          "result": "减少人工审查",
-          "resultDescription": "在人工审查前捕获90%的配音问题，节省70%的QC时间。"
-        }
-      ]
-    },
-    "conclusion": {
-      "title": "用AI转换您的视频配音",
-      "description": "通过结合这些高级技术和工具，您可以创建自然、情感吸引人的配音内容，吸引观众。AI配音的未来就在这里，它比以往任何时候都更加人性化。"
-    },
-    "publishedDate": "2026年4月27日",
-    "readTime": "12分钟阅读",
-    "category": "视频配音",
-    "altText": "F5-TTS vs ElevenLabs语音克隆和配音比较",
+      "description": "使用AI工具解决常见配音挑战的综合指南。学习机器人节奏、缺乏情感和唇形同步问题的实用解决方案。",
+      "hero": {
+        "title": "如何在2026年自然地为视频配音：修复AI语音克隆伪影",
+        "subtitle": "使用AI工具解决常见配音挑战的综合指南。专注于机器人节奏、缺乏情感和唇形同步问题等痛点。"
+      },
+      "protip": "从高质量源音频开始，并始终与母语者一起测试您的配音内容，以捕捉AI可能遗漏的细微伪影。",
+      "tabs": {
+        "problems": "常见问题",
+        "solutions": "实用解决方案",
+        "tools": "推荐工具",
+        "workflow": "分步工作流",
+        "advanced": "高级技术",
+        "automation": "自动化策略",
+        "conclusion": "结论"
+      },
+      "introduction": {
+        "paragraph1": "AI视频配音已经彻底改变了内容创作，但\\u003cstrong\\u003e机器人伪影\\u003c/strong\\u003e和\\u003cstrong\\u003e不自然的节奏\\u003c/strong\\u003e仍然困扰着许多制作。在2026年，我们有更好的工具和技术来克服这些挑战。核心问题在于大多数配音管道将语音视为纯粹的技术层而不是表演。许多系统仍然生成具有平坦韵律、不一致重音和时间不当停顿的音频，即使声音本身听起来很真实，也会破坏沉浸感。观众对时间不匹配非常敏感——当情感节拍、微停顿或句子重音与视觉表演不一致时，结果会让人感觉微妙地不对劲，即使他们无法说出原因。现代方法通过专注于\\u003cstrong\\u003e韵律控制和时序对齐\\u003c/strong\\u003e来解决这个问题。不是线性生成语音，较新的模型采用节奏感知合成，允许创作者在短语和音节级别控制节奏。这使得匹配唇部动作、保持戏剧性停顿和跨语言维护原始演员意图成为可能。强制对齐、音素级时间和参考音频条件等技术现在正在成为高质量管道的标准。另一个重大改进来自\\u003cstrong\\u003e上下文感知语音建模\\u003c/strong\\u003e。不是孤立地生成每一行，高级系统维护对话记忆——跨场景跟踪语调、情感状态和说话者动态。这减少了音调漂移，确保角色无论是低语、争论还是进行解说都听起来一致。对于叙事内容，这一转变本身就显著提高了感知的真实感。最后，\\u003cstrong\\u003e人在环工作流\\u003c/strong\\u003e的兴起缩小了自动化和质量之间的差距。创作者现在将AI生成与轻量级人工审查相结合，在保持效率的同时实现专业质量。",
+        "paragraph2": "本指南将向您展示如何使用MuseTalk、Emotion TTS和高级后处理技术等尖端AI工具\\u003cstrong\\u003e修复常见配音问题\\u003c/strong\\u003e。我们超越基本的语音生成，解决AI配音工作流中最持久的失败点——唇形同步漂移、单调表达、时间不匹配和情感平淡。您将学习如何使用MuseTalk进行精确的视觉-音频对齐，确保生成的语音轨道紧密匹配嘴部动作和面部表情，即使在快节奏或对话密集的场景中也是如此。在音频方面，我们分解如何利用Emotion TTS系统向生成的语音注入\\u003cstrong\\u003e受控的表现力\\u003c/strong\\u003e。本指南不是依赖通用预设，而是指导如何调整音高轮廓、节奏和重音以反映意图——无论是紧张、讽刺还是单行内的微妙情感变化。这使您能够从技术上正确的音频转向感觉人性化且上下文相关的表演。我们还涵盖了对最终输出质量至关重要的\\u003cstrong\\u003e高级后处理工作流\\u003c/strong\\u003e。这包括音素级时间调整、静音修剪和扩展、呼吸和停顿插入，以及音频母带制作技术，如EQ匹配和响度标准化，以将配音声音无缝混合到原声带中。通过将这些工具和技术组合成一个有凝聚力的管道，您将能够系统性地诊断和修复配音问题，而不是依赖试错——将不一致的AI输出转化为精良、制作就绪的对话。"
+      },
+      "problems": {
+        "title": "常见AI配音问题",
+        "issues": [
+          {
+            "icon": "🤖",
+            "title": "机器人节奏",
+            "description": "AI生成的语音通常缺乏自然的节奏和时间，使其听起来机械和脱离。",
+            "impact": "观众脱离",
+            "impactDescription": "不自然的节奏破坏沉浸感，将观众保留率降低多达40%。"
+          },
+          {
+            "icon": "😐",
+            "title": "缺乏情感细微差别",
+            "description": "AI语音难以传达微妙情感，使戏剧性场景显得平淡。",
+            "impact": "情感脱节",
+            "impactDescription": "缺少情感线索阻止观众与角色和故事建立联系。"
+          },
+          {
+            "icon": "👄",
+            "title": "唇形同步不匹配",
+            "description": "音频和视觉唇部动作之间的对齐不佳产生恐怖谷效应。",
+            "impact": "不真实的外观",
+            "impactDescription": "可见的唇形同步错误立即打破自然语音的幻觉。"
+          }
+        ]
+      },
+      "solutions": {
+        "title": "实用解决方案",
+        "methods": [
+          {
+            "icon": "🎭",
+            "title": "情感增强TTS",
+            "description": "使用能够向语音注入适当情感的感知情文字转语音模型。",
+            "benefit": "自然情感表达",
+            "benefitDescription": "与标准TTS相比，实现85%更自然的情感表达。",
+            "promptTitle": "情感增强提示",
+            "promptDescription": "使用此提示指导AI生成情感细微的语音：",
+            "prompt": "以[情感：关心、温暖、紧急]语调生成语音。逗号后暂停0.3秒，强调关键情感词，音高变化±20%以获得自然韵律。"
+          },
+          {
+            "icon": "⚡",
+            "title": "节奏校正",
+            "description": "应用AI驱动的时间调整以匹配自然人类语音模式。",
+            "benefit": "类人时间",
+            "benefitDescription": "通过智能节奏调整减少70%的机器人伪影。",
+            "promptTitle": "节奏校正提示",
+            "promptDescription": "使用此提示修复机器人节奏：",
+            "prompt": "分析语音节奏并插入自然停顿：句号后0.5秒，逗号后0.2秒，词间距变化±10%以获得有机流动。"
+          }
+        ]
+      },
+      "tools": {
+        "title": "推荐工具",
+        "cta": "尝试工具",
+        "recommendations": [
+          {
+            "icon": "🎙️",
+            "title": "MuseTalk",
+            "description": "具有情感保持和自然时间的高级语音克隆。",
+            "useCase": "最适合角色语音",
+            "useCaseDescription": "非常适合在长篇内容中保持一致的角色语音。",
+            "link": "https://musetalk.ai"
+          },
+          {
+            "icon": "🎭",
+            "title": "Emotion TTS",
+            "description": "具有情感控制和自然韵律的专业文字转语音。",
+            "useCase": "情感内容",
+            "useCaseDescription": "非常适合需要微妙情感变化的戏剧性内容。",
+            "link": "https://emotiontts.ai"
+          },
+          {
+            "icon": "🎬",
+            "title": "LipSync Pro",
+            "description": "具有帧级精度的AI驱动唇形同步校正。",
+            "useCase": "完美唇形对齐",
+            "useCaseDescription": "为专业视频制作实现像素级唇形同步。",
+            "link": "https://lipsyncpro.ai"
+          }
+        ]
+      },
+      "workflow": {
+        "title": "分步工作流",
+        "steps": [
+          {
+            "title": "准备源音频",
+            "description": "从目标语音的高质量、清晰音频录制开始。",
+            "action": "音频质量检查",
+            "actionDescription": "确保48kHz采样率、最小背景噪音和一致的声乐表演。",
+            "promptTitle": "音频准备提示",
+            "promptDescription": "使用此提示准备语音克隆的音频：",
+            "prompt": "清理音频：去除背景噪音，标准化到-6dB，确保一致的声乐音调，导出为WAV 48kHz 24位。"
+          },
+          {
+            "title": "用情感克隆语音",
+            "description": "使用MuseTalk创建情感感知语音模型。",
+            "action": "语音模型训练",
+            "actionDescription": "用情感标签和时间参考样本训练模型。",
+            "promptTitle": "语音克隆提示",
+            "promptDescription": "使用此提示进行语音克隆：",
+            "prompt": "克隆具有情感保持的语音：分析声乐模式，提取情感标记，创建时间配置文件。"
+          },
+          {
+            "title": "生成配音音频",
+            "description": "使用情感增强语音模型生成语音。",
+            "action": "音频生成",
+            "actionDescription": "生成具有不同情感强度的多个版本以获得最佳结果。",
+            "promptTitle": "音频生成提示",
+            "promptDescription": "使用此提示进行自然音频生成：",
+            "prompt": "生成语音：应用情感配置文件[快乐、关心、兴奋]，插入自然停顿，说话速度变化±15%。"
+          }
+        ]
+      },
+      "advanced": {
+        "title": "高级技术",
+        "techniques": [
+          {
+            "icon": "🧠",
+            "title": "神经韵律转移",
+            "description": "将自然语音模式从参考音频转移到AI生成的语音。",
+            "benefit": "真实语音模式",
+            "benefitDescription": "在语音节奏和语调方面实现95%的自然度。",
+            "promptTitle": "韵律转移提示",
+            "promptDescription": "使用此提示进行韵律转移：",
+            "prompt": "提取韵律模式：分析音高轮廓、时间模式、重音强调，应用到目标语音。"
+          },
+          {
+            "icon": "🎯",
+            "title": "上下文感知情感",
+            "description": "理解场景上下文并相应调整情感的AI。",
+            "benefit": "场景适当情感",
+            "benefitDescription": "自动将情感基调与视频内容和对话上下文匹配。",
+            "promptTitle": "上下文感知提示",
+            "promptDescription": "使用此提示进行上下文感知情感：",
+            "prompt": "分析场景上下文：识别情感基调、角色关系、戏剧性时刻，相应调整语音。"
+          }
+        ]
+      },
+      "automation": {
+        "title": "自动化策略",
+        "strategies": [
+          {
+            "icon": "⚙️",
+            "title": "批处理管道",
+            "description": "以一致质量处理多个视频文件的自动化工作流。",
+            "result": "大规模一致质量",
+            "resultDescription": "处理100+视频，保持一致的语音质量和情感表达。"
+          },
+          {
+            "icon": "🔄",
+            "title": "质量控制自动化",
+            "description": "AI驱动的质量检查，自动检测和标记配音问题。",
+            "result": "减少人工审查",
+            "resultDescription": "在人工审查前捕获90%的配音问题，节省70%的QC时间。"
+          }
+        ]
+      },
+      "conclusion": {
+        "title": "用AI转换您的视频配音",
+        "description": "通过结合这些高级技术和工具，您可以创建自然、情感吸引人的配音内容，吸引观众。AI配音的未来就在这里，它比以往任何时候都更加人性化。"
+      },
+      "publishedDate": "2026年4月27日",
+      "readTime": "12分钟阅读",
+      "category": "视频配音",
+      "altText": "F5-TTS vs ElevenLabs语音克隆和配音比较",
       "ultimateShowdown": "终极对决：F5-TTS vs ElevenLabs",
       "ultimateShowdownIntro": "在快速发展的AI语音克隆世界中，2026年有两个名字脱颖而出：F5-TTS，革命性的开源解决方案，和ElevenLabs，成熟的商业巨头。但对于视频配音项目，哪一个真正值得您关注？",
       "whyVoiceCloningIntro": "语音克隆技术已经改变了内容创作，使创作者能够制作多语言内容，跨语言保持一致的品牌形象，并显著降低制作成本。让我们深入研究这两个领先的解决方案。",
@@ -1124,203 +1142,203 @@
       "finalRecommendation": "最终建议",
       "f5TtsFinalNote": "F5-TTS和ElevenLabs都代表了现代语音克隆技术的顶峰。您的选择应与您的特定需求、技术能力和预算考虑保持一致。语音技术的民主化意味着创作者现在可以无与伦比地访问专业级工具。",
       "comparisonNote": "此比较反映了截至2026年4月的语音克隆技术状态。AI的快速发展可能会在未来几个月显著改变格局。"
-  },
+    },
     "preserveFacialFeaturesAiGeneration": {
-        "title": "如何在AI生成中保持面部特征：终极一致性角色指南",
-        "publishedDate": "2026年4月27日",
-        "readTime": "15分钟阅读",
-        "category": "创作者工具",
-        "altText": "AI角色一致性 - 保持面部特征",
-        "biggestChallenge": "AI角色创作中的最大挑战",
-        "biggestChallengeIntro": "如果你曾经尝试创建AI漫画、故事板或 cohesive 品牌资产，你就会遇到这个障碍：在不同场景和角度中生成相同的角色。这是使用AI图像生成的创作者最大的痛点。",
-        "biggestChallengeOutro": "今天，你将学习大师级技术来锁定你角色的面部特征，无论环境、角度或艺术风格如何。这不仅仅是关于提示词——这是关于构建一个系统化的角色一致性框架，每次都有效。",
-        "whyConsistencyFails": "为什么角色一致性失败（以及如何修复）",
-        "rootProblem": "根本问题",
-        "rootProblemDesc": "AI模型不会\"记住\"你的角色。每次生成都是基于你的提示词的新解释。没有精确的面部特征锚定，你会得到看起来像表兄弟而不是双胞胎的变体。",
-        "consistencyKillers": "常见一致性杀手",
-        "vagueDescriptions": "模糊描述",
-        "vagueExample": "一个有棕色头发的女人\" vs \"一个有及肩栗色棕色头发、温暖榛色眼睛、左唇上方有小美人痣的女人",
-        "missingAnchors": "缺少特征锚点",
-        "missingAnchorsDesc": "没有指定独特的标识符，如疤痕、痣或独特的面部比例",
-        "inconsistentStyling": "不一致的样式",
-        "inconsistentStylingDesc": "在生成之间改变发型、化妆或灯光",
-        "modelDrift": "模型漂移",
-        "modelDriftDesc": "对同一角色使用不同的AI模型或设置",
-        "nanoBananaSolution": "Nano Banana解决方案",
-        "nanoBananaSolutionDesc": "Nano Banana提示技术通过创建详细的面部特征蓝图来解决此问题，这些蓝图作为你角色的DNA。让我们分解这个框架。",
-        "facialFeatureLock": "面部特征锁定框架",
-        "facialFeatureLockFramework": "面部特征锁定框架",
-        "coreArchitecture": "核心面部架构",
-        "coreArchitectureDesc": "从基础结构开始。这是你角色永不改变的骨骼框架。",
-        "coreTemplate": "核心架构模板",
-        "coreTemplateDesc": "这个模板建立了基本的面部结构。包括脸型、眼睛位置、鼻梁和下颌线基础。",
-        "uniqueIdentifiers": "独特特征标识符",
-        "uniqueIdentifiersDesc": "这些是使你的角色即使在剪影中也可识别的 distinguishing 标记。",
-        "uniqueTemplate": "独特标识符模板",
-        "uniqueTemplateDesc": "添加独特特征，如美人痣、疤痕、雀斑或独特的比例，使你的角色瞬间可识别。",
-        "expressionRules": "表情一致性规则",
-        "expressionRulesDesc": "定义你角色的面部如何移动和表达情感。这可以防止在改变表情时出现\"不同人\"的问题。",
-        "expressionTemplate": "表情规则模板",
-        "expressionTemplateDesc": "定义特定面部特征在表情期间的移动方式。这确保你的角色在微笑、皱眉或惊讶时看起来是同一个人。",
-        "nanoBananaTechniques": "Nano Banana提示技术",
-        "nanoBananaPromptingTechniques": "Nano Banana提示技术",
-        "layerMethod": "分层方法",
-        "layerMethodDesc": "分层构建你的提示词，从核心面部开始添加上下文。这确保AI优先考虑面部一致性而不是环境细节。",
-        "wrongApproach": "错误方法",
-        "wrongApproachExample": "一个在咖啡店的女人，\n穿着红色连衣裙，\n坐在窗边，\n早晨光线照射进来",
-        "wrongApproachNote": "环境主导，面部是次要的",
-        "nanoBananaMethod": "Nano Banana方法",
-        "nanoBananaMethodExample": "[角色面部蓝图]，\n表达[情感]，\n在[环境上下文中]，\n[灯光条件]",
-        "nanoBananaMethodNote": "面部优先，环境其次",
-        "referenceChain": "参考图像链",
-        "referenceImageChain": "参考图像链",
-        "referenceChainDesc": "使用你最好的生成作为下一个的参考，创建一个一致性链。",
-        "referenceImageChainDesc": "使用你最好的生成作为下一个的参考，创建一个一致性链。",
-        "referenceChainProcess": "参考链过程",
-        "referenceChainStep1": "生成1：创建具有最大细节的基础角色肖像",
-        "referenceChainStep2": "生成2：使用生成1作为参考，添加新角度/表情",
-        "referenceChainStep3": "生成3：使用生成2作为参考，改变环境",
-        "referenceChainStep4": "继续：每次生成都建立在之前的一致性上",
-        "angleAdaptation": "角度适应公式",
-        "angleAdaptationFormula": "角度适应公式",
-        "angleAdaptationDesc": "不同角度需要不同的提示词调整。这是如何在视图中保持一致性的方法。",
-        "angleTable": {
-          "angle": "角度",
-          "adjustments": "关键调整",
-          "priority": "一致性优先级"
-        },
-        "frontView": "正面视图",
-        "frontViewAdjustments": "对称强调，眼睛对齐",
-        "frontViewPriority": "眼睛距离，鼻子中心",
-        "profileView": "侧面视图",
-        "profileViewAdjustments": "鼻梁，下颌线曲线",
-        "profileViewPriority": "下巴突出，眉脊",
-        "threeQuarterView": "3/4视图",
-        "threeQuarterViewAdjustments": "眼睛透视，面部深度",
-        "threeQuarterViewPriority": "眼睛大小比例，脸颊体积",
-        "visualExamples": "视觉示例：相同角色，不同场景",
-        "characterBase": "角色基础肖像",
-        "characterBaseDesc": "正面视图，中性表情",
-        "referenceImage": "参考图像",
-        "referenceImageDesc": "正面视图，中性表情",
-        "environmentScene": "环境场景",
-        "environmentSceneDesc": "3/4视图，微笑",
-        "dynamicPose": "动态姿势",
-        "dynamicPoseDesc": "侧面视图，坚定表情",
-        "whatMakesWork": "什么使这些有效",
-        "whatMakesTheseWork": "什么使这些有效",
-        "consistentEyeShape": "一致的眼睛形状",
-        "consistentEyeShapeDesc": "相同的杏仁形状，眼睛之间相同距离",
-        "noseRecognition": "鼻子识别",
-        "noseRecognitionDesc": "相同的鼻梁曲线和鼻孔形状",
-        "jawlineContinuity": "下颌线连续性",
-        "jawlineContinuityDesc": "所有角度相同的角定义",
-        "expressionRulesConsistency": "表情规则",
-        "expressionRulesConsistencyDesc": "微笑遵循相同的角落提升模式",
-        "advancedTechniques": "高级一致性技术",
-        "styleTransferMethod": "风格转换方法",
-        "styleTransferMethodDesc": "在改变艺术风格时保持面部特征。完美适用于品牌适应或漫画变体。",
-        "styleTransfer": "风格转换方法",
-        "styleTransferDesc": "在改变艺术风格时保持面部特征。完美适用于品牌适应或漫画变体。",
-        "styleTransferFormula": "风格转换公式",
-        "styleTransferExample": "莎拉的面部蓝图，以动漫风格渲染，保持她独特的美人痣和榛色眼睛，具有干净的线条艺术和鲜艳的颜色",
-        "ageProgression": "年龄进展系统",
-        "ageProgressionSystem": "年龄进展系统",
-        "ageProgressionSystemDesc": "在不同年龄展示你的角色，同时保持核心面部DNA完整。",
-        "ageProgressionDesc": "在不同年龄展示你的角色，同时保持核心面部DNA完整。",
-        "ageProgressionRules": "年龄进展规则",
-        "ageChildToTeen": "儿童到青少年：软化下颌线，稍微放大眼睛，保持眼睛形状",
-        "ageTeenToAdult": "青少年到成人：定义下颌线，添加细微线条，保持眼睛距离",
-        "ageAdultToElder": "成人到老人：沿着自然表情线添加皱纹，保持核心结构",
-        "emotionalRange": "情感范围库",
-        "emotionalRangeDesc": "创建你角色表情的库。这成为你的一致性圣经。",
-        "basicExpressions": "基本表情",
-        "neutral": "中性（参考）",
-        "happy": "快乐（角落提升微笑）",
-        "sad": "悲伤（下垂的嘴唇，柔软的眼睛）",
-        "angry": "愤怒（皱起的眉头，紧绷的下颌）",
-        "surprised": "惊讶（睁大的眼睛，张开嘴巴）",
-        "complexExpressions": "复杂表情",
-        "confident": "自信（轻微微笑，直接凝视）",
-        "thoughtful": "深思（柔软的眉毛，遥远的眼睛）",
-        "amused": "被逗乐（单侧微笑，皱起的眼睛）",
-        "determined": "坚定（设定的下颌，专注的眼睛）",
-        "worried": "担心（皱起的眉头，咬住的嘴唇）",
-        "pitfalls": "常见陷阱和解决方案",
-        "featureDrift": "特征漂移",
-        "featureDriftDesc": "角色在多次生成中逐渐改变特征。",
-        "featureDriftSolution": "解决方案：始终参考你的原始蓝图，而不是最近的生成。",
-        "styleOverwriting": "风格覆盖",
-        "styleOverwritingDesc": "艺术风格过于戏剧性地改变面部特征。",
-        "styleOverwritingSolution": "解决方案：明确告诉AI尽管风格改变也要保持特定特征。",
-        "lightingConfusion": "灯光混淆",
-        "lightingConfusionDesc": "不同的灯光使面部看起来不同。",
-        "lightingConfusionSolution": "解决方案：描述灯光如何与特定面部特征互动。",
-        "checklist": "你的角色一致性检查表",
-        "preGenerationChecklist": "生成前检查表",
-        "facialBlueprint": "面部蓝图",
-        "faceShapeDefined": "脸型已定义",
-        "eyeShapeColor": "眼睛形状和颜色已指定",
-        "eyeShapeColorSpecified": "眼睛形状和颜色已指定",
-        "noseShapeDetailed": "鼻子形状详细",
-        "mouthLipCharacteristics": "嘴巴和嘴唇特征",
-        "uniqueMarksScars": "独特标记/疤痕已识别",
-        "uniqueMarksScarsIdentified": "独特标记/疤痕已识别",
-        "expressionRulesChecklist": "表情规则",
-        "expressionRules2": "表情规则",
-        "smilePatternDefined": "微笑模式已定义",
-        "eyeMovementCharacteristics": "眼睛移动特征",
-        "browBehaviorSpecified": "眉毛行为已指定",
-        "jawTensionPatterns": "下颌紧张模式",
-        "asymmetricalDetails": "不对称细节已注意",
-        "asymmetricalDetailsNoted": "不对称细节已注意",
-        "postGenerationValidation": "生成后验证",
-        "eyeDistanceCheck": "眼睛距离检查：测量瞳孔之间距离 - 应该一致",
-        "noseBridgeTest": "鼻梁测试：从眉到尖的线 - 相同曲线？",
-        "jawlineComparison": "下颌线比较：相同角度和定义？",
-        "jawlineComparisonDesc": "所有角度相同的角定义",
-        "uniqueFeatureVerification": "独特特征验证：美人痣、疤痕、酒窝在相同位置？",
-        "uniqueFeatureVerificationDesc": "美人痣、疤痕、酒窝在相同位置？",
-        "expressionConsistencyCheck": "表情一致性：遵循你定义的规则？",
-        "expressionConsistencyValidation": "表情一致性：遵循你定义的规则？",
-        "expressionConsistencyValidationDesc": "遵循你定义的规则？",
-        "readyToBuild": "准备构建你的一致性框架？",
-        "readyToBuildDesc": "你现在有一个完整的系统来在任何AI生成中保持角色一致性。但为什么要从头开始，当你使用我们经过验证的模板？",
-        "readyToBuildIntro": "你现在有一个完整的系统来在任何AI生成中保持角色一致性。但为什么要从头开始，当你使用我们经过验证的模板？",
-        "useTemplateTitle": "使用模板：即时角色一致性",
-        "useTemplateDesc": "获取我们预构建的Nano Banana模板，包括面部特征蓝图、表情规则和一致性框架。只需填写你的角色细节，立即开始生成一致的结果。",
-        "whatYouGet": "你得到什么：",
-        "completeBlueprints": "完整的面部蓝图模板",
-        "expressionLibraries": "表情规则库",
-        "adaptationFormulas": "角度适应公式",
-        "transferMethods": "风格转换方法",
-        "validationChecklists": "验证检查表",
-        "useTemplateButton": "立即使用模板→",
-        "stopStruggling": "停止为角色一致性而挣扎。开始构建在每个场景中保持完美面部识别的cohesive漫画、故事板和品牌资产。",
-        "nextSteps": "你角色旅程的下一步",
-        "expressionMastery": "角色表情掌握",
-        "expressionMasteryDesc": "学习高级情感范围技术，创造真正动态的角色。",
-        "readExpressionGuide": "阅读表情指南→",
-        "styleTransferSecrets": "风格转换秘密",
-        "styleTransferSecretsDesc": "掌握在不同艺术风格中保持面部的艺术。",
-        "exploreStyleTransfer": "探索风格转换→",
-        "footer": "构建一致的角色是区分业余创作者和专业人员的技能。有了这些Nano Banana技术，你有框架来创建可识别、难忘的角色，在任何场景或风格中保持他们的身份。",
-        "expressionConsistencyRulesTitle": "3. 表情一致性规则",
-        "expressionConsistencyRulesDesc": "定义你角色的面部如何移动和表达情感。这可以防止在改变表情时出现\"不同人\"的问题。",
-        "characterBasePortrait": "角色基础肖像",
-        "characterInCoffeeShop": "在咖啡店的角色",
-        "characterActionScene": "角色动作场景",
-        "advancedConsistencyTechniques": "高级一致性技术",
-        "emotionalRangeLibrary": "情感范围库",
-        "emotionalRangeLibraryDesc": "创建你角色表情的库。这成为你的一致性圣经。",
-        "characterConsistencyChecklist": "你的角色一致性检查表",
-        "preGenerationChecklistTitle": "✅ 生成前检查表",
-        "postGenerationValidationTitle": "🔍 生成后验证",
-        "commonPitfallsSolutions": "常见陷阱和解决方案",
-        "nextStepsCharacterJourney": "你角色旅程的下一步",
-        "characterExpressionMastery": "角色表情掌握",
-        "characterExpressionMasteryDesc": "学习高级情感范围技术，创造真正动态的角色，在任何表情或情绪中保持他们的身份。"
+      "title": "如何在AI生成中保持面部特征：终极一致性角色指南",
+      "publishedDate": "2026年4月27日",
+      "readTime": "15分钟阅读",
+      "category": "创作者工具",
+      "altText": "AI角色一致性 - 保持面部特征",
+      "biggestChallenge": "AI角色创作中的最大挑战",
+      "biggestChallengeIntro": "如果你曾经尝试创建AI漫画、故事板或 cohesive 品牌资产，你就会遇到这个障碍：在不同场景和角度中生成相同的角色。这是使用AI图像生成的创作者最大的痛点。",
+      "biggestChallengeOutro": "今天，你将学习大师级技术来锁定你角色的面部特征，无论环境、角度或艺术风格如何。这不仅仅是关于提示词——这是关于构建一个系统化的角色一致性框架，每次都有效。",
+      "whyConsistencyFails": "为什么角色一致性失败（以及如何修复）",
+      "rootProblem": "根本问题",
+      "rootProblemDesc": "AI模型不会\"记住\"你的角色。每次生成都是基于你的提示词的新解释。没有精确的面部特征锚定，你会得到看起来像表兄弟而不是双胞胎的变体。",
+      "consistencyKillers": "常见一致性杀手",
+      "vagueDescriptions": "模糊描述",
+      "vagueExample": "一个有棕色头发的女人\" vs \"一个有及肩栗色棕色头发、温暖榛色眼睛、左唇上方有小美人痣的女人",
+      "missingAnchors": "缺少特征锚点",
+      "missingAnchorsDesc": "没有指定独特的标识符，如疤痕、痣或独特的面部比例",
+      "inconsistentStyling": "不一致的样式",
+      "inconsistentStylingDesc": "在生成之间改变发型、化妆或灯光",
+      "modelDrift": "模型漂移",
+      "modelDriftDesc": "对同一角色使用不同的AI模型或设置",
+      "nanoBananaSolution": "Nano Banana解决方案",
+      "nanoBananaSolutionDesc": "Nano Banana提示技术通过创建详细的面部特征蓝图来解决此问题，这些蓝图作为你角色的DNA。让我们分解这个框架。",
+      "facialFeatureLock": "面部特征锁定框架",
+      "facialFeatureLockFramework": "面部特征锁定框架",
+      "coreArchitecture": "核心面部架构",
+      "coreArchitectureDesc": "从基础结构开始。这是你角色永不改变的骨骼框架。",
+      "coreTemplate": "核心架构模板",
+      "coreTemplateDesc": "这个模板建立了基本的面部结构。包括脸型、眼睛位置、鼻梁和下颌线基础。",
+      "uniqueIdentifiers": "独特特征标识符",
+      "uniqueIdentifiersDesc": "这些是使你的角色即使在剪影中也可识别的 distinguishing 标记。",
+      "uniqueTemplate": "独特标识符模板",
+      "uniqueTemplateDesc": "添加独特特征，如美人痣、疤痕、雀斑或独特的比例，使你的角色瞬间可识别。",
+      "expressionRules": "表情一致性规则",
+      "expressionRulesDesc": "定义你角色的面部如何移动和表达情感。这可以防止在改变表情时出现\"不同人\"的问题。",
+      "expressionTemplate": "表情规则模板",
+      "expressionTemplateDesc": "定义特定面部特征在表情期间的移动方式。这确保你的角色在微笑、皱眉或惊讶时看起来是同一个人。",
+      "nanoBananaTechniques": "Nano Banana提示技术",
+      "nanoBananaPromptingTechniques": "Nano Banana提示技术",
+      "layerMethod": "分层方法",
+      "layerMethodDesc": "分层构建你的提示词，从核心面部开始添加上下文。这确保AI优先考虑面部一致性而不是环境细节。",
+      "wrongApproach": "错误方法",
+      "wrongApproachExample": "一个在咖啡店的女人，\n穿着红色连衣裙，\n坐在窗边，\n早晨光线照射进来",
+      "wrongApproachNote": "环境主导，面部是次要的",
+      "nanoBananaMethod": "Nano Banana方法",
+      "nanoBananaMethodExample": "[角色面部蓝图]，\n表达[情感]，\n在[环境上下文中]，\n[灯光条件]",
+      "nanoBananaMethodNote": "面部优先，环境其次",
+      "referenceChain": "参考图像链",
+      "referenceImageChain": "参考图像链",
+      "referenceChainDesc": "使用你最好的生成作为下一个的参考，创建一个一致性链。",
+      "referenceImageChainDesc": "使用你最好的生成作为下一个的参考，创建一个一致性链。",
+      "referenceChainProcess": "参考链过程",
+      "referenceChainStep1": "生成1：创建具有最大细节的基础角色肖像",
+      "referenceChainStep2": "生成2：使用生成1作为参考，添加新角度/表情",
+      "referenceChainStep3": "生成3：使用生成2作为参考，改变环境",
+      "referenceChainStep4": "继续：每次生成都建立在之前的一致性上",
+      "angleAdaptation": "角度适应公式",
+      "angleAdaptationFormula": "角度适应公式",
+      "angleAdaptationDesc": "不同角度需要不同的提示词调整。这是如何在视图中保持一致性的方法。",
+      "angleTable": {
+        "angle": "角度",
+        "adjustments": "关键调整",
+        "priority": "一致性优先级"
       },
+      "frontView": "正面视图",
+      "frontViewAdjustments": "对称强调，眼睛对齐",
+      "frontViewPriority": "眼睛距离，鼻子中心",
+      "profileView": "侧面视图",
+      "profileViewAdjustments": "鼻梁，下颌线曲线",
+      "profileViewPriority": "下巴突出，眉脊",
+      "threeQuarterView": "3/4视图",
+      "threeQuarterViewAdjustments": "眼睛透视，面部深度",
+      "threeQuarterViewPriority": "眼睛大小比例，脸颊体积",
+      "visualExamples": "视觉示例：相同角色，不同场景",
+      "characterBase": "角色基础肖像",
+      "characterBaseDesc": "正面视图，中性表情",
+      "referenceImage": "参考图像",
+      "referenceImageDesc": "正面视图，中性表情",
+      "environmentScene": "环境场景",
+      "environmentSceneDesc": "3/4视图，微笑",
+      "dynamicPose": "动态姿势",
+      "dynamicPoseDesc": "侧面视图，坚定表情",
+      "whatMakesWork": "什么使这些有效",
+      "whatMakesTheseWork": "什么使这些有效",
+      "consistentEyeShape": "一致的眼睛形状",
+      "consistentEyeShapeDesc": "相同的杏仁形状，眼睛之间相同距离",
+      "noseRecognition": "鼻子识别",
+      "noseRecognitionDesc": "相同的鼻梁曲线和鼻孔形状",
+      "jawlineContinuity": "下颌线连续性",
+      "jawlineContinuityDesc": "所有角度相同的角定义",
+      "expressionRulesConsistency": "表情规则",
+      "expressionRulesConsistencyDesc": "微笑遵循相同的角落提升模式",
+      "advancedTechniques": "高级一致性技术",
+      "styleTransferMethod": "风格转换方法",
+      "styleTransferMethodDesc": "在改变艺术风格时保持面部特征。完美适用于品牌适应或漫画变体。",
+      "styleTransfer": "风格转换方法",
+      "styleTransferDesc": "在改变艺术风格时保持面部特征。完美适用于品牌适应或漫画变体。",
+      "styleTransferFormula": "风格转换公式",
+      "styleTransferExample": "莎拉的面部蓝图，以动漫风格渲染，保持她独特的美人痣和榛色眼睛，具有干净的线条艺术和鲜艳的颜色",
+      "ageProgression": "年龄进展系统",
+      "ageProgressionSystem": "年龄进展系统",
+      "ageProgressionSystemDesc": "在不同年龄展示你的角色，同时保持核心面部DNA完整。",
+      "ageProgressionDesc": "在不同年龄展示你的角色，同时保持核心面部DNA完整。",
+      "ageProgressionRules": "年龄进展规则",
+      "ageChildToTeen": "儿童到青少年：软化下颌线，稍微放大眼睛，保持眼睛形状",
+      "ageTeenToAdult": "青少年到成人：定义下颌线，添加细微线条，保持眼睛距离",
+      "ageAdultToElder": "成人到老人：沿着自然表情线添加皱纹，保持核心结构",
+      "emotionalRange": "情感范围库",
+      "emotionalRangeDesc": "创建你角色表情的库。这成为你的一致性圣经。",
+      "basicExpressions": "基本表情",
+      "neutral": "中性（参考）",
+      "happy": "快乐（角落提升微笑）",
+      "sad": "悲伤（下垂的嘴唇，柔软的眼睛）",
+      "angry": "愤怒（皱起的眉头，紧绷的下颌）",
+      "surprised": "惊讶（睁大的眼睛，张开嘴巴）",
+      "complexExpressions": "复杂表情",
+      "confident": "自信（轻微微笑，直接凝视）",
+      "thoughtful": "深思（柔软的眉毛，遥远的眼睛）",
+      "amused": "被逗乐（单侧微笑，皱起的眼睛）",
+      "determined": "坚定（设定的下颌，专注的眼睛）",
+      "worried": "担心（皱起的眉头，咬住的嘴唇）",
+      "pitfalls": "常见陷阱和解决方案",
+      "featureDrift": "特征漂移",
+      "featureDriftDesc": "角色在多次生成中逐渐改变特征。",
+      "featureDriftSolution": "解决方案：始终参考你的原始蓝图，而不是最近的生成。",
+      "styleOverwriting": "风格覆盖",
+      "styleOverwritingDesc": "艺术风格过于戏剧性地改变面部特征。",
+      "styleOverwritingSolution": "解决方案：明确告诉AI尽管风格改变也要保持特定特征。",
+      "lightingConfusion": "灯光混淆",
+      "lightingConfusionDesc": "不同的灯光使面部看起来不同。",
+      "lightingConfusionSolution": "解决方案：描述灯光如何与特定面部特征互动。",
+      "checklist": "你的角色一致性检查表",
+      "preGenerationChecklist": "生成前检查表",
+      "facialBlueprint": "面部蓝图",
+      "faceShapeDefined": "脸型已定义",
+      "eyeShapeColor": "眼睛形状和颜色已指定",
+      "eyeShapeColorSpecified": "眼睛形状和颜色已指定",
+      "noseShapeDetailed": "鼻子形状详细",
+      "mouthLipCharacteristics": "嘴巴和嘴唇特征",
+      "uniqueMarksScars": "独特标记/疤痕已识别",
+      "uniqueMarksScarsIdentified": "独特标记/疤痕已识别",
+      "expressionRulesChecklist": "表情规则",
+      "expressionRules2": "表情规则",
+      "smilePatternDefined": "微笑模式已定义",
+      "eyeMovementCharacteristics": "眼睛移动特征",
+      "browBehaviorSpecified": "眉毛行为已指定",
+      "jawTensionPatterns": "下颌紧张模式",
+      "asymmetricalDetails": "不对称细节已注意",
+      "asymmetricalDetailsNoted": "不对称细节已注意",
+      "postGenerationValidation": "生成后验证",
+      "eyeDistanceCheck": "眼睛距离检查：测量瞳孔之间距离 - 应该一致",
+      "noseBridgeTest": "鼻梁测试：从眉到尖的线 - 相同曲线？",
+      "jawlineComparison": "下颌线比较：相同角度和定义？",
+      "jawlineComparisonDesc": "所有角度相同的角定义",
+      "uniqueFeatureVerification": "独特特征验证：美人痣、疤痕、酒窝在相同位置？",
+      "uniqueFeatureVerificationDesc": "美人痣、疤痕、酒窝在相同位置？",
+      "expressionConsistencyCheck": "表情一致性：遵循你定义的规则？",
+      "expressionConsistencyValidation": "表情一致性：遵循你定义的规则？",
+      "expressionConsistencyValidationDesc": "遵循你定义的规则？",
+      "readyToBuild": "准备构建你的一致性框架？",
+      "readyToBuildDesc": "你现在有一个完整的系统来在任何AI生成中保持角色一致性。但为什么要从头开始，当你使用我们经过验证的模板？",
+      "readyToBuildIntro": "你现在有一个完整的系统来在任何AI生成中保持角色一致性。但为什么要从头开始，当你使用我们经过验证的模板？",
+      "useTemplateTitle": "使用模板：即时角色一致性",
+      "useTemplateDesc": "获取我们预构建的Nano Banana模板，包括面部特征蓝图、表情规则和一致性框架。只需填写你的角色细节，立即开始生成一致的结果。",
+      "whatYouGet": "你得到什么：",
+      "completeBlueprints": "完整的面部蓝图模板",
+      "expressionLibraries": "表情规则库",
+      "adaptationFormulas": "角度适应公式",
+      "transferMethods": "风格转换方法",
+      "validationChecklists": "验证检查表",
+      "useTemplateButton": "立即使用模板→",
+      "stopStruggling": "停止为角色一致性而挣扎。开始构建在每个场景中保持完美面部识别的cohesive漫画、故事板和品牌资产。",
+      "nextSteps": "你角色旅程的下一步",
+      "expressionMastery": "角色表情掌握",
+      "expressionMasteryDesc": "学习高级情感范围技术，创造真正动态的角色。",
+      "readExpressionGuide": "阅读表情指南→",
+      "styleTransferSecrets": "风格转换秘密",
+      "styleTransferSecretsDesc": "掌握在不同艺术风格中保持面部的艺术。",
+      "exploreStyleTransfer": "探索风格转换→",
+      "footer": "构建一致的角色是区分业余创作者和专业人员的技能。有了这些Nano Banana技术，你有框架来创建可识别、难忘的角色，在任何场景或风格中保持他们的身份。",
+      "expressionConsistencyRulesTitle": "3. 表情一致性规则",
+      "expressionConsistencyRulesDesc": "定义你角色的面部如何移动和表达情感。这可以防止在改变表情时出现\"不同人\"的问题。",
+      "characterBasePortrait": "角色基础肖像",
+      "characterInCoffeeShop": "在咖啡店的角色",
+      "characterActionScene": "角色动作场景",
+      "advancedConsistencyTechniques": "高级一致性技术",
+      "emotionalRangeLibrary": "情感范围库",
+      "emotionalRangeLibraryDesc": "创建你角色表情的库。这成为你的一致性圣经。",
+      "characterConsistencyChecklist": "你的角色一致性检查表",
+      "preGenerationChecklistTitle": "✅ 生成前检查表",
+      "postGenerationValidationTitle": "🔍 生成后验证",
+      "commonPitfallsSolutions": "常见陷阱和解决方案",
+      "nextStepsCharacterJourney": "你角色旅程的下一步",
+      "characterExpressionMastery": "角色表情掌握",
+      "characterExpressionMasteryDesc": "学习高级情感范围技术，创造真正动态的角色，在任何表情或情绪中保持他们的身份。"
+    },
     "translateYoutubeVideoToEnglish": {
       "title": "如何将YouTube视频翻译成英语：AI指南2026",
       "date": "2026年3月10日",
@@ -1529,7 +1547,16 @@
       "storytellingTemplateContent": "创建一个Nano Banana叙事，包含：\n\n故事结构：\n- 角色：[主角描述]\n- 背景：[环境/上下文]\n- 冲突：[挑战/问题]\n- 旅程：[过程/转变]\n- 解决方案：[结果/解决方案]\n- 主题：[核心信息]\n\n叙事元素：\n- 背景故事：[角色历史/动机]\n- 感官细节：[视觉/听觉/触觉描述]\n- 情感弧：[情感进展]\n- 对话：[角色互动/对话]\n- 象征主义：[隐喻元素]\n- 节奏：[紧张和释放的时机]\n\n角色发展：\n- 主角：[主要角色档案]\n- 配角：[次要角色]\n- 角色弧：[转变旅程]\n- 关系：[人际动态]\n- 动机：[驱动因素]\n- 缺陷/优点：[角色复杂性]\n\n背景细节：\n- 时间段：[历史/未来/幻想]\n- 地点：[特定环境]\n- 氛围：[情绪和感觉]\n- 世界构建：[背景和规则]\n- 感官环境：[声音、气味、质地]\n\n情节框架：\n\"[开场钩子，介绍[角色]在[背景]中面临[冲突]。通过[旅程事件]，他们发现了[Nano Banana元素]，导致[解决方案]。故事探讨了[主题]，同时保持[语调]和[节奏]。\"",
       "identityTemplateContent": "创建一个详细的Nano Banana身份描述，包括：\n- 起源背景（生物技术、外星农业、手工品牌）\n- 功能特性（自熟、维生素、特殊功能）\n- 视觉规格（尺寸比例、形状细节、颜色渐变）\n- 材料特性（质地、表面处理、香气特征）\n- 象征或隐喻意义\n\n质量检查：没有图像的情况下，是否有人能立即想象出Nano Banana？\n\n**基本模板**：\n\"将Nano Banana描述为一种[生物技术工程/生物技术种植/外星栽培/手工制作]的热带水果，长度为[尺寸规格]，具有[颜色描述]和[质地细节]以及[香气特征]。它的[独特特征]使其[主要好处]。\"",
       "storytellingTemplateDisplay": "<strong>创建一个Nano Banana叙事，包含：</strong>\n\n<strong>故事结构：</strong>\n- <strong>角色：</strong>[主角描述]\n- <strong>背景：</strong>[环境/上下文]\n- <strong>冲突：</strong>[挑战/问题]\n- <strong>旅程：</strong>[过程/转变]\n- <strong>解决方案：</strong>[结果/解决方案]\n- <strong>主题：</strong>[核心信息]\n\n<strong>叙事元素：</strong>\n- <strong>背景故事：</strong>[角色历史/动机]\n- <strong>感官细节：</strong>[视觉/听觉/触觉描述]\n- <strong>情感弧：</strong>[情感进展]\n- <strong>对话：</strong>[角色互动/对话]\n- <strong>象征主义：</strong>[隐喻元素]\n- <strong>节奏：</strong>[紧张和释放的时机]\n\n<strong>角色发展：</strong>\n- <strong>主角：</strong>[主要角色档案]\n- <strong>配角：</strong>[次要角色]\n- <strong>角色弧：</strong>[转变旅程]\n- <strong>关系：</strong>[人际动态]\n- <strong>动机：</strong>[驱动因素]\n- <strong>缺陷/优点：</strong>[角色复杂性]\n\n<strong>背景细节：</strong>\n- <strong>时间段：</strong>[历史/未来/幻想]\n- <strong>地点：</strong>[特定环境]\n- <strong>氛围：</strong>[情绪和感觉]\n- <strong>世界构建：</strong>[背景和规则]\n- <strong>感官环境：</strong>[声音、气味、质地]\n\n<strong>情节框架：</strong>\n\"[开场钩子，介绍[角色]在[背景]中面临[冲突]。通过[旅程事件]，他们发现了[Nano Banana元素]，导致[解决方案]。故事探讨了[主题]，同时保持[语调]和[节奏]。\"",
-      "identityTemplateDisplay": "<strong>创建一个详细的Nano Banana身份描述，包括：</strong>\n- <strong>起源背景</strong>（生物技术、外星农业、手工品牌）\n- <strong>功能特性</strong>（自熟、维生素、特殊功能）\n- <strong>视觉规格</strong>（尺寸比例、形状细节、颜色渐变）\n- <strong>材料特性</strong>（质地、表面处理、香气特征）\n- <strong>象征或隐喻意义</strong>\n\n<strong>质量检查：</strong>没有图像的情况下，是否有人能立即想象出Nano Banana？\n\n<strong>基本模板：</strong>\n\"将Nano Banana描述为一种[生物技术工程/生物技术种植/外星栽培/手工制作]的热带水果，长度为[尺寸规格]，具有[颜色描述]和[质地细节]以及[香气特征]。它的[独特特征]使其[主要好处]。\""
+      "identityTemplateDisplay": "<strong>创建一个详细的Nano Banana身份描述，包括：</strong>\n- <strong>起源背景</strong>（生物技术、外星农业、手工品牌）\n- <strong>功能特性</strong>（自熟、维生素、特殊功能）\n- <strong>视觉规格</strong>（尺寸比例、形状细节、颜色渐变）\n- <strong>材料特性</strong>（质地、表面处理、香气特征）\n- <strong>象征或隐喻意义</strong>\n\n<strong>质量检查：</strong>没有图像的情况下，是否有人能立即想象出Nano Banana？\n\n<strong>基本模板：</strong>\n\"将Nano Banana描述为一种[生物技术工程/生物技术种植/外星栽培/手工制作]的热带水果，长度为[尺寸规格]，具有[颜色描述]和[质地细节]以及[香气特征]。它的[独特特征]使其[主要好处]。\"",
+      "tip2Example": "在任何模板页面上，找到一个你喜欢的灵感画廊中的示例。点击“重混这个”。你将看到生成该图像的确切参数值。现在只更改主题特定参数（名称、主题、单词），保持其他一切不变。生成——你将获得与内容相同的质量。",
+      "tip3Example": "模板：食谱卡。弱：\"意大利奶油意面\"。强：\"松露意大利面——手工卷制的鸡蛋面，配有黑松露片、帕尔马干酪和棕色黄油酱，来自意大利翁布里亚\"。第二个版本为模型提供了足够的具体性，以生成准确、诱人的结果。",
+      "tip4Example": "如果你的品牌形象使用干净的墨水插图风格，通过`ink`主题标签过滤模板。该组中的所有模板将生成线条艺术风格的输出，使你的内容系列即使在不同主题模板之间也能保持一致的视觉效果。",
+      "tip5Example": "在一个词汇海报模板上，尝试仅将“单词类别”参数从“动物”更改为“厨房工具”，而不更改其他任何内容。如果布局风格保持不变但主题发生变化，则该参数是纯内容参数。如果布局也发生变化，则它也作为样式参数——这是有用的信息。",
+      "tip6Example": "你正在测试“水彩”或“墨水”是否为你的教育帖子产生更好的结果。创建两个生成，所有参数相同，除了样式参数。比较——现在你有了明确的数据，知道哪种风格更适合你的内容。",
+      "tip7Example": "在浏览一个词汇海报模板后，保存你认为视觉上最吸引人的3个示例。稍后，当你需要创建一个新的词汇帖子时，打开你的工作区，找到其中一个保存的示例，点击其示例页面，然后重混它，以从你已经知道有效的参数开始。",
+      "tip8Example": "在寻找6个MBTI角色插图用于个性类型文章？检查是否存在批量启用的MBTI模板。如果存在，使用下载包立即获取所有类型的匹配风格——无需生成积分。",
+      "tip9Example": "对于天气词汇的课程，使用标记为`vocabulary`和`learning`的词汇海报模板。将单词组设置为“天气术语”，目标语言设置为西班牙语，源语言设置为英语。该模板生成带有每个术语插图的视觉词汇海报——准备发布或打印。",
+      "tip10Example": "在生成非常具体的主题（例如，在食品模板上生成“格鲁吉亚面包”）之前，搜索现有示例以查找任何东欧菜肴。如果画廊仅显示西方食物，则该模板可能无法很好地处理你的主题——在承诺完整系列之前先测试一次生成。"
     },
     "tenPromptingTipsVideoGeneration": {
       "title": "视频生成的10个提示：创建惊艳的AI视频",
@@ -4067,7 +4094,13 @@
         "technical": {
           "title": "技术规格",
           "description": "专业的视频输出，带有增强的音轨和完美的同步",
-          "specs": "H.264视频编码，AAC音频编码，自动持续时间匹配"
+          "specs": "H.264视频编码，AAC音频编码，自动持续时间匹配",
+          "features": [
+            "合成过程中的实时情感调整",
+            "与视频编辑工作流程的集成",
+            "针对特定内容类型的自定义情感训练",
+            "具有情感一致性控制的批处理"
+          ]
         }
       },
       "future": {
@@ -4779,7 +4812,19 @@
             "useCaseDesc": "例如，海报，头像",
             "mood": "情绪",
             "moodDesc": "例如，舒适，黑暗"
-          }
+          },
+          "finalVerdict": "在2026年的视频配音和翻译中，ElevenLabs在质量、多语言支持和易用性方面胜出。F5-TTS为在预算限制内工作的技术用户或需要无限生成而不受商业限制的用户提供了令人难以置信的价值。",
+          "gettingStarted": "入门资源",
+          "f5TtsSetup": "F5-TTS设置",
+          "f5TtsSetupDesc": "官方GitHub存储库、要求、安装和CLI接口",
+          "elevenLabsSetup": "ElevenLabs设置",
+          "elevenLabsSetupDesc": "Web仪表板、API访问和快速入门指南",
+          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
+          "themeDesc": "例如，幻想，旅行",
+          "useCase": "用例",
+          "useCaseDesc": "例如，海报，头像",
+          "mood": "心情",
+          "moodDesc": "例如，舒适，黑暗"
         }
       },
       "keyInsight": {
@@ -5144,6 +5189,374 @@
       "ctaLink": "/nano-banana",
       "conclusionTitle": "内容创作的未来是系统驱动的",
       "conclusionContent": "AI 无面孔频道突显了向系统驱动内容生产的转变。通过将结构化工作流程与合适的工具结合，创作者可以在保持质量的同时扩大产出。优势来自于一致性、迭代和智能化的自动化使用，而不是完全的放手操作。"
+    },
+    "keyInsight": {
+      "title": "关键见解",
+      "description": "没有单一的方法可以解决这个问题：",
+      "methods": {
+        "nlp": {
+          "title": "纯 NLP",
+          "description": "太嘈杂"
+        },
+        "vision": {
+          "title": "纯视觉",
+          "description": "太抽象"
+        },
+        "clustering": {
+          "title": "纯聚类",
+          "description": "太粗糙"
+        }
+      },
+      "solution": "解决方案是一个带有人类参与的混合管道进行精细化。"
+    },
+    "pinterestPlatform": {
+      "title": "为类似 Pinterest 的灵感平台构建标记系统",
+      "description": "对于类似 Pinterest 的灵感平台，我们需要针对不同内容类型的专业标记方法：",
+      "galleryTags": {
+        "title": "画廊图像标签",
+        "description": "用于视觉内容发现和浏览：",
+        "examples": {
+          "subject": "主题",
+          "subjectDesc": "肖像，风景，动物，食物，建筑",
+          "style": "风格",
+          "styleDesc": "照片写实，动漫，水彩，油画，素描",
+          "medium": "媒介",
+          "mediumDesc": "数字艺术，摄影，插图，3D 渲染",
+          "mood": "心情",
+          "moodDesc": "舒适，戏剧性，生动，极简，怀旧",
+          "composition": "构图",
+          "compositionDesc": "特写，广角，空中，对称，三分之一法则",
+          "color": "颜色",
+          "colorDesc": "单色，暖色调，冷色调，粉彩，霓虹"
+        }
+      },
+      "templateTags": {
+        "title": "模板和模板示例标签",
+        "description": "用于模板发现和用例匹配：",
+        "geoTags": {
+          "title": "地理标签",
+          "description": "地理标签，如不同国家的食物、服装、旅行行程：",
+          "examples": [
+            "法国",
+            "印度",
+            "墨西哥",
+            "日本",
+            "意大利",
+            "西班牙",
+            "中国",
+            "泰国"
+          ]
+        },
+        "languageTags": {
+          "title": "语言标签",
+          "description": "用于双语和多语言内容的语言标签：",
+          "examples": [
+            "英语-中文",
+            "英语-西班牙语",
+            "英语-法语",
+            "英语-日语",
+            "英语-韩语",
+            "英语-阿拉伯语",
+            "英语-葡萄牙语",
+            "英语-俄语"
+          ]
+        }
+      }
+    },
+    "ruleOfThumb": {
+      "title": "简单的经验法则",
+      "question": "对于每个标签，问：",
+      "description": "\"如果这是一个页面，用户会理解它、搜索它并享受浏览它吗？\"",
+      "action": "如果不是，请删除它。"
+    },
+    "finalThought": {
+      "title": "最后的想法",
+      "description": "标签并不是完美描述图像。它是关于创建一个系统：",
+      "systems": {
+        "match": "与用户思维相匹配",
+        "group": "有意义地分组内容",
+        "scale": "扩展到搜索和发现"
+      },
+      "conclusion": "实际上，最佳标签系统并不是最复杂的，而是最符合意图的。"
+    },
+    "footer": {
+      "tags": [
+        "内容标记",
+        "标记系统",
+        "内容发现",
+        "Pinterest 风格",
+        "用户体验",
+        "搜索架构",
+        "内容策略",
+        "AI 内容",
+        "模板系统",
+        "画廊管理",
+        "内容组织",
+        "搜索优化"
+      ],
+      "questions": "对构建内容标记系统有疑问吗？请联系我们的支持团队以获得个性化帮助。"
+    },
+    "aeVsComfyUi": {
+      "title": "第 3 部分：AE 与 ComfyUI – 动态设计与扩散管道",
+      "heading": "AE 与 ComfyUI",
+      "images": {
+        "guideCoverAlt": "ComfyUI 完整指南封面图",
+        "workflowFullAlt": "ComfyUI 完整工作流程：从输入到输出",
+        "caseFeltAlt": "ComfyUI 案例研究：羊毛毡微型世界（节点工作流程）"
+      },
+      "intro1": "我们经常被问到：为什么不直接使用 After Effects (AE)？或者为什么要使用 ComfyUI？两者都是必不可少的：一个提供精确控制，另一个提供生成性创意。",
+      "intro2": "AE 提供时间线精度和对过渡、照明和效果的控制。ComfyUI 带来了 AI 原生工作流程，结合了扩散、文本和多模态编排。",
+      "sections": {
+        "s1": {
+          "title": "I. 什么是 ComfyUI？",
+          "p1": "ComfyUI 是一个基于节点的工作流程编辑器，旨在用于 AI 生成内容，同时也是一个强大的前端工具，适用于像 Stable Diffusion 这样的扩散模型。通过可视化节点图，您可以自由组合模型，控制生成逻辑，掌握整个过程，从简单的图像生成到复杂的多模态创作。",
+          "p2": "在 curify-ai.com 生态系统中，ComfyUI 是我们高效 AI 内容生产的核心引擎。"
+        },
+        "s2": {
+          "title": "II. ComfyUI 基础教程：从 0 到 1",
+          "sub1": {
+            "title": "1) 环境设置和首次启动",
+            "b1Strong": "本地部署与云执行：",
+            "b1": "本地部署适合深度定制和隐私需求，而云执行则更方便，无需复杂的环境设置。",
+            "b2Strong": "模型管理：",
+            "b2": "核心模型（检查点）、风格微调（LoRA）和精确控制（ControlNet）是三个基本组件，可以在curify-ai.com的模板库中一键获取。",
+            "b3Strong": "常见问题：",
+            "b3": "CUDA未启用、显存不足、缺少依赖项是常见的启动问题，您可以参考我们的故障排除指南快速解决这些问题。"
+          },
+          "sub2": {
+            "title": "2) 关键概念解析",
+            "b1Strong": "节点图：",
+            "b1": "每个节点代表一个功能模块（如加载模型、生成图像、应用风格），通过连接定义数据流，使其直观且可控。",
+            "b2Strong": "工作流程：",
+            "b2": "一个完整的生成过程，可以保存、导入和导出，curify-ai.com提供许多预设模板，涵盖主要创作场景。",
+            "b3Strong": "采样器和调度器：",
+            "b3": "选择合适的采样器（如Euler、DPM++）直接影响生成质量和速度，我们的模板已经为您优化。"
+          },
+          "sub3": {
+            "title": "3) 快速开始实用案例",
+            "b1Strong": "文本到图像：",
+            "b1": "输入curify-ai风格提示，一键生成高质量创意图像。",
+            "b2Strong": "图像到图像：",
+            "b2": "上传参考图像，通过ControlNet节点锁定构图，然后使用LoRA节点在目标风格中重新绘制。",
+            "b3Strong": "视频生成：",
+            "b3": "结合AnimateDiff等节点，将静态图像转变为流畅的动态内容。"
+          }
+        },
+        "s3": {
+          "title": "III. 节点配置与高级技术：让生成更精确",
+          "sub1": {
+            "title": "1) 常见节点组合",
+            "b1Strong": "ControlNet节点：",
+            "b1": "对角色姿势、轮廓和深度的精确控制，是实现复杂构图的关键。",
+            "b2Strong": "LoRA混合节点：",
+            "b2": "叠加多个风格LoRA以实现风格融合和细节调整。",
+            "b3Strong": "条件控制节点：",
+            "b3": "通过调整正负提示的权重，加强或削弱生成的细节，使作品更符合您的创意。"
+          },
+          "sub2": {
+            "title": "2) 性能优化",
+            "b1Strong": "显存优化：",
+            "b1": "启用块解码和模型量化，以在有限的显存下生成更高分辨率的图像。",
+            "b2Strong": "批量生成：",
+            "b2": "使用队列管理功能批量生成符合curify-ai标准的资源，提高创作效率。",
+            "b3Strong": "工作流程简化：",
+            "b3": "将常见节点组合分组为子图，实现一键重用，避免重复配置。"
+          },
+          "sub3": {
+            "title": "3) 故障排除与调试",
+            "b1Strong": "节点连接错误：",
+            "b1": "确保数据类型匹配（例如，图像输出连接到图像输入）。",
+            "b2Strong": "生成质量差：",
+            "b2": "检查提示是否准确，采样步骤是否足够，以及模型是否适合当前任务。"
+          }
+        },
+        "s4": {
+          "title": "IV. curify-ai.com × ComfyUI：独特应用场景",
+          "sub1": {
+            "title": "1) AI绘画工作流程模板",
+            "p1": "curify-ai.com提供许多可直接导入的ComfyUI工作流程模板，涵盖动画、民族风格和现实主义等主要风格，同时提供符合平台标准的资源大小和格式。"
+          },
+          "sub2": {
+            "title": "2) 高效创作工具",
+            "b1": "结合curify-ai的提示模板，实现风格化内容的批量生产，显著提高创作效率。",
+            "b2": "我们提供专用节点配置解决方案，一键生成符合平台标准的高质量图像。"
+          },
+          "sub3": {
+            "title": "3) AE + ComfyUI协作工作流程",
+            "b1Strong": "AI生成：",
+            "b1": "使用ComfyUI生成AI资源，完成风格和内容迭代。",
+            "b2Strong": "后期制作合成：",
+            "b2": "将生成的资源导入After Effects，利用其时间线级精确控制实现过渡、叠加和特效合成。",
+            "b3Strong": "最终产品：",
+            "b3": "制作符合商业和创意需求的高质量视频或动画图像。"
+          }
+        },
+        "s5": {
+          "title": "V. ComfyUI与After Effects：互补而非替代",
+          "conclusionTitle": "关键结论",
+          "conclusion": "在curify-ai工作流程中，ComfyUI负责AI生成和迭代，而AE用于最终修饰、过渡、叠加和合成，两者是互补关系而非替代关系。",
+          "table": {
+            "dimension": "维度",
+            "ae": "After Effects (AE)",
+            "comfy": "ComfyUI",
+            "row1": {
+              "dim": "关键定位",
+              "ae": "专业电影后期制作合成和特效软件",
+              "comfy": "AI原生生成推理引擎和工作流编辑器"
+            },
+            "row2": {
+              "dim": "控制方式",
+              "ae": "基于时间线和图层的精确手动控制",
+              "comfy": "基于节点图的半随机生成，依赖于模型和参数"
+            },
+            "row3": {
+              "dim": "输出能力",
+              "ae": "高质量动画、特效、动画漫画",
+              "comfy": "AI图像/视频生成，支持多模态编排"
+            },
+            "row4": {
+              "dim": "工作流",
+              "ae": "手动或插件驱动的线性过程",
+              "comfy": "基于节点的工作流，结合扩散模型 + LLM + 多模态"
+            },
+            "row5": {
+              "dim": "最佳场景",
+              "ae": "最终合成、过渡、叠加、精细特效",
+              "comfy": "AI内容生成、迭代、风格化创作"
+            }
+          }
+        },
+        "s6": {
+          "title": "VI. 下一步",
+          "b1": "访问curify-ai.com下载我们为您定制的ComfyUI工作流模板。",
+          "b2": "按照教程完成您的第一次生成，体验高效的AI创作。",
+          "b3": "加入我们的社区，与其他创作者交流节点配置技巧和工作流优化经验。"
+        }
+      },
+      "table": {
+        "colAE": "AE",
+        "colComfy": "ComfyUI",
+        "row1a": "精确的特效和运动控制",
+        "row1b": "AI原生视频生成",
+        "row2a": "基于时间线的编辑",
+        "row2b": "工作流/基于节点的渲染",
+        "row3a": "手动/插件驱动的工作流",
+        "row3b": "扩散 + LLM + 多模态编排"
+      },
+      "outro": "在我们的工作流中，ComfyUI处理AI生成和迭代，而AE则优化最终外观：过渡、叠加和合成。",
+      "cta": {
+        "primary": "前往curify-ai.com查看模板",
+        "secondary": "返回博客列表"
+      }
+    },
+    "video_translation_eval": {
+      "title": "评估AI视频翻译质量",
+      "subtitle": "重要的指标",
+      "description": "发现评估AI视频翻译质量的基本指标，从转录到语音合成。",
+      "intro": "跨语言翻译视频并非易事——它涉及转录、翻译、语音合成、时间同步等。在Curify，我们建立了一个强大的评估流程，以确保每个作品符合行业标准。",
+      "section1_title": "1. 转录质量",
+      "section1_engine": "引擎：WhisperX",
+      "section1_metrics": [
+        "WER（字错误率）",
+        "标点F1（用于表现力和可读性）"
+      ],
+      "section2_title": "2. 翻译质量",
+      "section2_engine": "引擎：Helsinki, MarianMT",
+      "section2_metrics": [
+        "BLEU（标准指标）",
+        "COMET / chrF++（语义相似性）",
+        "人工审核：流畅性 + 适当性"
+      ],
+      "section3_title": "3. 语音合成质量",
+      "section3_engine": "引擎：XTTS / YourTTS",
+      "section3_metrics": [
+        "MOS（自然度、相似性、表现力）",
+        "说话人验证准确性"
+      ],
+      "section4_title": "4. 对齐与口型同步",
+      "section4_metrics": [
+        "片段时长不匹配",
+        "Wav2Lip同步置信度",
+        "时间漂移分析"
+      ],
+      "section5_title": "5. 语义保留",
+      "section5_method": "我们使用LLMs（如GPT-4）来判断翻译后的语音是否保留了原始的意义、语气和情感。示例提示：",
+      "section5_prompt": "将此普通话转录与英语配音进行比较。语气、意图和内容是否匹配？评分1-5并解释。",
+      "section6_title": "6. 用户反馈与GTM验证",
+      "section6_metrics": [
+        "适合产品类别的语音质量",
+        "观众留存率提升",
+        "早期用户（例如1688卖家）的接受意愿"
+      ],
+      "closing": "在Curify，我们不仅仅是翻译——我们在不同语言间保留故事、情感和清晰度。如果您准备好将您的声音扩展到全球，请与我们联系。",
+      "available_locales": "帖子可用语言：[EN] [ZH] [ES] [DE]"
+    },
+    "qaBotToTaskAgent": {
+      "heading": "🏗️ 从QA机器人到任务代理：架构指南",
+      "description": "了解如何构建超越简单问答的可靠任务代理",
+      "taskAgentImageAlt": "任务代理系统架构的插图，展示不同组件之间的交互",
+      "tldr": "TL;DR: 停止构建仅能回答问题的聊天机器人。开始构建能够实际完成工作的任务代理。",
+      "intro": "本指南解释了从单体QA机器人到使用静态规则、动态技能和确定性钩子的任务代理的架构转变——并提供具体的代码示例和开源参考。",
+      "coreShift": {
+        "title": "1. 核心转变：QA机器人 → 任务代理",
+        "content": [
+          "如今大多数AI系统仍然是上下文填充的QA机器人：",
+          "• 它们能够很好地回答问题",
+          "• 在压力下会产生幻觉",
+          "• 在执行、安全性和一致性方面缺乏保证"
+        ],
+        "keyInsight": "关键见解：不要扩展上下文。要结构化它。"
+      },
+      "threeLayerArch": {
+        "title": "2. 三层架构",
+        "layers": [
+          {
+            "title": "🧱 1. 静态上下文 — 规则（始终开启）",
+            "points": [
+              "心理模型：员工手册",
+              "始终加载",
+              "定义身份、编码标准、行为约束",
+              "防止幻觉和风格漂移",
+              "小型、稳定、可人工编辑"
+            ]
+          },
+          {
+            "title": "🛠️ 2. 动态上下文 — 技能（按需）",
+            "points": [
+              "心理模型：工具箱",
+              "仅在需要时加载",
+              "每个技能都是一个自包含的能力",
+              "保持上下文窗口清晰"
+            ]
+          },
+          {
+            "title": "⚓ 3. 确定性钩子 — 保护措施",
+            "points": [
+              "心理模型：安全 + 合规层",
+              "不是概率性的",
+              "在LLM推理之前/之后运行",
+              "强制执行绝不能失败的规则"
+            ]
+          }
+        ]
+      },
+      "projectStructure": {
+        "title": "3. 推荐项目结构",
+        "structure": "my-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+      },
+      "staticContextExample": {
+        "title": "4. 静态上下文示例：.cursorrules",
+        "content": "# 角色\n您是一名专注于生产级系统的高级Python工程师。\n\n# 规则\n- 永远不要使用print()进行调试\n- 始终为函数添加类型提示\n- 如果修改超过3个文件，请提出计划\n\n# 行为\n- 简明扼要\n- 如有需要，请提出澄清问题\n\n参考：https://github.com/PatrickJS/awesome-cursorrules"
+      },
+      "dynamicSkillExample": {
+        "title": "5. 动态技能示例 (MCP)",
+        "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"创建了优先级为={priority} 的票据 {ticket_id}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\n参考: https://github.com/modelcontextprotocol/python-sdk"
+      },
+      "deterministicHookExample": {
+        "title": "6. 确定性钩子示例",
+        "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"检测到安全违规\"}\n    return agent_node(state)\n\n参考: https://langchain-ai.github.io/langgraph/"
+      },
+      "finalThought": "如果您的代理仅回答问题，那它就是一个聊天机器人。如果它可靠地执行工作，那它就是一个任务代理。"
     }
   },
   "imageGenerationModelComparison": {
