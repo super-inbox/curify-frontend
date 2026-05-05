@@ -238,7 +238,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="pt-20 px-0 pb-12 text-[18px] leading-8">
+    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       <div className="mb-8">
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           {useMermaidThumbnail ? (
@@ -333,13 +333,16 @@ export default async function BlogPostPage({
           />
         )}
         {slug === 'ugc-video-translation-scaling-tiktoks-shorts-global-markets' && (
-          <UGCVideoTranslationContent 
+          <UGCVideoTranslationContent
             hasKey={hasKey}
             safeT={safeT}
             formatContent={formatContent}
             getVideoDubbingUrl={getVideoDubbingUrl}
             locale={locale}
           />
+        )}
+        {slug === 'ai-faceless-channel-pipeline' && (
+          <AIFacelessChannelPipelineWrapper slug={slug} t={safeT} locale={locale} />
         )}
 
         {/* Original blog posts - use generic content renderer */}

@@ -64,7 +64,7 @@ export default function HowToDubVideosNaturallyPage() {
   const locale = useLocale();
 
   return (
-    <div className="pt-10 pb-8">
+    <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
       {/* Breadcrumb Navigation */}
       <BreadcrumbNavigation 
         items={[
@@ -74,7 +74,7 @@ export default function HowToDubVideosNaturallyPage() {
         ]}
       />
       
-      <article className="prose prose-base md:prose-lg">
+      <div className="prose prose-base md:prose-lg">
         {/* Hero Section */}
         <div className="relative mb-8">
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl blur opacity-20"></div>
@@ -101,10 +101,10 @@ export default function HowToDubVideosNaturallyPage() {
         <section className="prose prose-lg max-w-none mb-12">
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 mb-8">
             <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1')) }}
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t.raw('introduction.paragraph1')) }}
             />
             <p className="text-lg text-gray-700"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2')) }}
+              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t.raw('introduction.paragraph2')) }}
             />
           </div>
         </section>
@@ -357,7 +357,7 @@ export default function HowToDubVideosNaturallyPage() {
             <p className="text-lg">{t('conclusion.description')}</p>
           </div>
         </section>
-      </article>
+      </div>
 
       {/* Related Blogs */}
       <RelatedBlogs currentSlug="how-to-dub-videos-naturally" locale={locale} />
@@ -372,6 +372,6 @@ export default function HowToDubVideosNaturallyPage() {
         url="/blog/how-to-dub-videos-naturally"
         readTime="15 min read"
       />
-    </div>
+    </article>
   );
 }

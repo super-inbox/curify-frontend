@@ -27,6 +27,7 @@
  *   node scripts/i18n_autotranslate.cjs --base en --write
  *   node scripts/i18n_autotranslate.cjs --base en --dry-run
  *   node scripts/i18n_autotranslate.cjs --base en --only zh es de --write
+ *   node scripts/i18n_autotranslate.cjs --base en --skip hi fr es de --write
  *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
  *   node scripts/i18n_autotranslate.cjs --base en --files nano --write
  *
@@ -51,9 +52,10 @@ function parseArgs(argv) {
     dir: "messages",
     base: "en",
     only: null, // array or null
+    skip: null, // array or null
     files: null, // array of basenames (without .json) or null -> discover from base folder
     model: "gpt-4o-mini",
-    chunkSize: 60,
+    chunkSize: 30,
     write: false,
     dryRun: false,
   };
@@ -70,6 +72,10 @@ function parseArgs(argv) {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
       args.only = list.length ? list : null;
+    } else if (a === "--skip") {
+      const list = [];
+      while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
+      args.skip = list.length ? list : null;
     } else if (a === "--files") {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
@@ -113,9 +119,15 @@ if (!locales.includes(args.base)) {
   process.exit(1);
 }
 
-const targetLocales = (args.only ? locales.filter((l) => args.only.includes(l)) : locales).filter(
-  (l) => l !== args.base
-);
+let targetLocales = locales.filter((l) => l !== args.base);
+  
+if (args.only) {
+  targetLocales = targetLocales.filter((l) => args.only.includes(l));
+}
+  
+if (args.skip) {
+  targetLocales = targetLocales.filter((l) => !args.skip.includes(l));
+}
 
 function localeDir(locale) {
   return path.join(messagesDir, locale);
@@ -260,7 +272,8 @@ function mergeMissing(targetObj, patchMap) {
  * ---------------------- */
 function extractPlaceholders(s) {
   if (typeof s !== "string") return [];
-  const m = s.match(/\{[^{}]+\}/g);
+  // Match simple placeholders like {label}, {count}, {name} but not JSON objects
+  const m = s.match(/\{[a-zA-Z_][a-zA-Z0-9_]*\}/g);
   return m ? m : [];
 }
 
@@ -268,8 +281,13 @@ function samePlaceholders(src, dst) {
   const a = extractPlaceholders(src);
   const b = extractPlaceholders(dst);
   if (a.length !== b.length) return false;
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] !== b[i]) return false;
+  
+  // Sort placeholders to compare content regardless of order
+  const aSorted = [...a].sort();
+  const bSorted = [...b].sort();
+  
+  for (let i = 0; i < aSorted.length; i++) {
+    if (aSorted[i] !== bSorted[i]) return false;
   }
   return true;
 }
@@ -306,7 +324,9 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     "- Preserve placeholders exactly (e.g., {label}, {count}, {name}). Do NOT translate or alter them.",
     "- Do not translate product names like Curify or Curify Studio or Nano Banana.",
     "- Keep tone concise, natural, product/marketing friendly.",
-    "- Return a valid JSON object ONLY (no markdown, no code fences).",
+    "- CRITICAL: Return ONLY a valid JSON object. No markdown, no code fences, no explanations.",
+    "- Ensure all JSON syntax is correct: commas between properties, no trailing commas, proper quotes.",
+    "- Double-check your JSON output before returning.",
   ].join("\n");
 
   const user = [
@@ -319,7 +339,7 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     JSON.stringify(items, null, 2),
   ].join("\n");
 
-  const resp = await client.chat.completions.create({
+  let resp = await client.chat.completions.create({
     model: args.model,
     temperature: 0.2,
     messages: [
@@ -328,12 +348,41 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     ],
   });
 
-  const raw = stripCodeFence(resp.choices?.[0]?.message?.content || "");
   let parsed;
-  try {
-    parsed = JSON.parse(raw);
-  } catch (e) {
-    throw new Error(`Model did not return valid JSON.\nError: ${e.message}\nRaw:\n${raw}`);
+  let retryCount = 0;
+  const maxRetries = 3;
+  
+  while (retryCount < maxRetries) {
+    const raw = stripCodeFence(resp.choices?.[0]?.message?.content || "");
+    
+    try {
+      parsed = JSON.parse(raw);
+      break;
+    } catch (e) {
+      retryCount++;
+      
+      if (retryCount >= maxRetries) {
+        throw new Error(`Model did not return valid JSON after ${maxRetries} attempts.\nError: ${e.message}\nRaw:\n${raw}`);
+      }
+      
+      console.log(`[WARN] JSON parse failed, retrying API call... (${retryCount}/${maxRetries})`);
+      
+      // Wait before retrying
+      await new Promise(resolve => setTimeout(resolve, 2000 * retryCount));
+      
+      // Make a new API call with stricter instructions
+      resp = await client.chat.completions.create({
+        model: args.model,
+        temperature: 0.1, // Lower temperature for more deterministic output
+        messages: [
+          { 
+            role: "system", 
+            content: system + "\n\nCRITICAL: Your previous response had JSON syntax errors. Please ensure PERFECT JSON formatting this time. Double-check all commas and quotes."
+          },
+          { role: "user", content: user },
+        ],
+      });
+    }
   }
 
   const inKeys = new Set(Object.keys(items));

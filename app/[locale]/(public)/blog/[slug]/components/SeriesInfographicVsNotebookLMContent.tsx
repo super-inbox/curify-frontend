@@ -1,4 +1,5 @@
 import PromptBox from './PromptBox';
+import { MermaidChart } from './MermaidChart';
 
 interface SeriesInfographicVsNotebookLMContentProps {
   slug: string;
@@ -166,9 +167,8 @@ export default function SeriesInfographicVsNotebookLMContent({ slug, t, locale }
           {t("visualComparisonTitle", "Visual Comparison: Series Infographics vs NotebookLM")}
         </h3>
         <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-          <div className="mermaid">
-            {`
-graph TD
+          <MermaidChart
+            chart={`graph TD
     A[Complex Information] --> B{Content Strategy Choice}
     
     B --> C[Series Infographics]
@@ -218,9 +218,9 @@ graph TD
     style E fill:#fff3e0,stroke:#ff9800
     style F fill:#fff3e0,stroke:#ff9800
     style G fill:#f3e5f5,stroke:#9c27b0
-    style H fill:#f3e5f5,stroke:#9c27b0
-            `}
-          </div>
+    style H fill:#f3e5f5,stroke:#9c27b0`}
+            id="series-infographic-vs-notebooklm"
+          />
           <p className="text-sm text-gray-600 mt-4 text-center">
             {t("diagramDescription", "This flowchart shows how complex information can be transformed using either visual (Series Infographics) or narrative (NotebookLM) approaches, each with distinct strengths and ideal use cases.")}
           </p>

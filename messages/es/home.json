@@ -873,5 +873,152 @@
     "templatesHeading": "Plantillas",
     "subTopicsHeading": "Explorar por categoría",
     "exploreMoreHeading": "Explorar más"
+  },
+  "videoTranscriptGenerator": {
+    "metadata": {
+      "title": "Generador de Transcripciones de Video AI | Curify AI",
+      "description": "Genera transcripciones precisas de cualquier video en minutos. La herramienta de transcripción AI de Curify admite más de 170 idiomas y exporta a SRT y TXT."
+    },
+    "title": "Generador de Transcripciones de Video AI",
+    "description": "Sube un video o pega un enlace de YouTube y obtén una transcripción completa y precisa en segundos. Exporta como SRT o texto plano — listo para subtítulos, reutilización o indexación de búsqueda.",
+    "example": "Ejemplo: Una conferencia de 10 minutos transcrita con texto preciso del hablante y marcas de tiempo.",
+    "cta": "Generar Transcripción",
+    "why": {
+      "title": "¿Por qué usar Curify para la transcripción de video?",
+      "point1": "Transcripción de alta precisión impulsada por modelos avanzados de reconocimiento de voz.",
+      "point2": "Admite más de 170 idiomas con detección automática de idioma.",
+      "point3": "Exporta transcripciones completas como SRT (con marcas de tiempo) o TXT plano.",
+      "point4": "Funciona con videos subidos y enlaces de YouTube — no se necesita software adicional."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Qué formatos de video admite el generador de transcripciones?",
+      "a1": "Curify admite todos los formatos de video comunes, incluidos MP4, MOV y AVI, así como URLs directas de YouTube. Solo sube o pega y la transcripción comienza automáticamente.",
+      "q2": "¿Puedo editar la transcripción después de que se genere?",
+      "a2": "Sí. Después de la generación, puedes revisar y descargar la transcripción. Los archivos SRT incluyen marcas de tiempo para su uso en editores de video o herramientas de subtítulos."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es una Transcripción de Video AI?",
+        "p1": "Una transcripción de video es una versión en texto de todo lo hablado en un video — incluyendo diálogos de hablantes, narración y señales de audio clave. Las transcripciones son la base para subtítulos, contenido buscable, artículos reutilizados y cumplimiento de accesibilidad.",
+        "p2": "Los generadores de transcripciones AI automatizan este proceso utilizando modelos de reconocimiento de voz entrenados en millones de horas de audio en docenas de idiomas. La salida es un documento de texto alineado en el tiempo — mucho más rápido y escalable que la transcripción manual.",
+        "p3": "La herramienta de transcripción de Curify está diseñada para velocidad y precisión: sube una vez, obtén una transcripción limpia y editable lista para exportar o usar en tu flujo de trabajo de contenido."
+      },
+      "how": {
+        "title": "Cómo Curify Genera Transcripciones Precisas",
+        "p1": "El pipeline de transcripción de Curify se basa en reconocimiento de voz de calidad de producción con post-procesamiento ajustado para audio de video del mundo real — incluyendo ruido de fondo, múltiples hablantes y habla acentuada.",
+        "p2": "Paso 1: Se extrae el audio de tu video y se preprocesa para normalizar los niveles de volumen y reducir la interferencia de fondo.",
+        "p3": "Paso 2: Nuestro modelo de reconocimiento de voz segmenta el audio en turnos de hablantes y convierte cada segmento a texto con alta precisión.",
+        "p4": "Paso 3: El post-procesamiento añade puntuación, capitaliza nombres propios y alinea cada oración con su marca de tiempo en el video original.",
+        "p5": "Paso 4: Recibes un archivo de transcripción limpio — SRT para subtítulos con marcas de tiempo o TXT para uso en documentos, artículos o indexación de búsqueda."
+      },
+      "usecases": {
+        "title": "¿Quién Usa la Transcripción de Video?",
+        "creatorsTitle": "Para Creadores de Contenido",
+        "creatorsBody": "Los creadores utilizan transcripciones para reutilizar contenido de video en publicaciones de blogs, subtítulos en redes sociales, boletines y guiones. Un solo video largo puede generar una semana de contenido una vez transcrito.",
+        "educationTitle": "Para Educadores y Entrenadores",
+        "educationBody": "Las transcripciones hacen que las conferencias, seminarios web y sesiones de capacitación sean accesibles y buscables. Los estudiantes pueden revisar el material en forma de texto y encontrar momentos clave sin volver a ver el video completo.",
+        "businessTitle": "Para Empresas y Equipos de Medios",
+        "businessBody": "Los equipos legales, de cumplimiento y de medios utilizan transcripciones para archivar grabaciones de reuniones, material de entrevistas y llamadas de clientes. Las transcripciones buscables ahorran horas de tiempo de revisión manual."
+      }
+    }
+  },
+  "videoSummarizer": {
+    "metadata": {
+      "title": "Resumidor de Video AI | Curify AI",
+      "description": "Obtén un resumen instantáneo generado por AI de cualquier video. Curify extrae los puntos clave y te ahorra horas de tiempo de visualización."
+    },
+    "title": "Resumidor de Video AI",
+    "description": "Sube un video o pega un enlace de YouTube y obtén un resumen conciso y estructurado de los puntos clave — en segundos. Perfecto para reuniones, conferencias, entrevistas y contenido largo.",
+    "example": "Ejemplo: Un episodio de podcast de 45 minutos resumido en 5 puntos clave.",
+    "cta": "Resumir Video",
+    "why": {
+      "title": "¿Por qué usar Curify para resumir videos?",
+      "point1": "Resúmenes generados por AI que capturan los puntos clave, no solo una transcripción.",
+      "point2": "Funciona con videos subidos y enlaces de YouTube.",
+      "point3": "Exporta el resumen como un documento de texto plano listo para compartir.",
+      "point4": "Admite más de 170 idiomas con detección automática del idioma de origen."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Cuánto tiempo toma la resumición?",
+      "a1": "La mayoría de los videos se resumen en unos pocos minutos dependiendo de la longitud. Verás un indicador de progreso mientras Curify procesa tu video.",
+      "q2": "¿Qué tan precisos son los resúmenes?",
+      "a2": "Curify resume basándose en el contenido hablado real, no en metadatos o descripciones. La precisión depende de la claridad del audio. Puedes descargar el resumen como un archivo TXT y editarlo según sea necesario."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué es un Resumen de Video AI?",
+        "p1": "Un resumen de video AI condensa las ideas clave, argumentos o conclusiones de un video en un formato corto y legible — sin requerir que veas el contenido completo. Se genera a partir del audio hablado, no de títulos o descripciones de video.",
+        "p2": "A diferencia de una transcripción (que es un registro palabra por palabra), un resumen identifica los puntos más importantes, filtra el contenido innecesario y los presenta en un formato estructurado y escaneable. Esto es especialmente útil para grabaciones largas donde los momentos clave están dispersos a lo largo de horas de contenido.",
+        "p3": "Curify genera resúmenes directamente del habla, haciéndolos precisos en relación con el contenido real en lugar de depender de metadatos que pueden no reflejar lo que se dijo."
+      },
+      "how": {
+        "title": "Cómo Curify Resume el Contenido de Video",
+        "p1": "El pipeline de resumición de Curify primero transcribe el audio hablado completo, luego aplica modelos de lenguaje para extraer y estructurar el contenido más importante.",
+        "p2": "Paso 1: La transcripción completa captura todo lo hablado en el video, incluyendo turnos de hablantes y temporización de segmentos.",
+        "p3": "Paso 2: La transcripción se pasa a través de un modelo de resumición que identifica temas clave, argumentos y conclusiones.",
+        "p4": "Paso 3: La salida se estructura en un resumen legible — con puntos clave, encabezados de sección donde sea relevante, y una conclusión concisa.",
+        "p5": "Paso 4: El resumen se exporta como un archivo de texto plano listo para distribución, toma de notas o producción de contenido posterior."
+      },
+      "usecases": {
+        "title": "¿Quién Usa la Resumición de Video AI?",
+        "creatorsTitle": "Para Investigadores y Estudiantes",
+        "creatorsBody": "Los investigadores utilizan resúmenes para evaluar rápidamente si una conferencia, entrevista o charla contiene material relevante antes de comprometerse a ver el video completo.",
+        "educationTitle": "Para Profesionales y Equipos",
+        "educationBody": "Las grabaciones de reuniones, llamadas de ventas y repeticiones de seminarios web son largas. Los resúmenes de IA permiten a los miembros del equipo ponerse al día sobre decisiones clave y elementos de acción sin ver la grabación completa.",
+        "businessTitle": "Para Creadores de Contenido",
+        "businessBody": "Los resúmenes de video proporcionan material fuente instantáneo para boletines, artículos, notas de programas y publicaciones en redes sociales, convirtiendo un video largo en un activo de texto listo para publicar."
+      }
+    }
+  },
+  "speechTranslator": {
+    "metadata": {
+      "title": "Traductor de Voz AI — Traduce Audio a Cualquier Idioma | Curify AI",
+      "description": "Traduce audio hablado a más de 170 idiomas con una voz AI natural. El traductor de voz de Curify produce un video doblado con la pista de voz traducida."
+    },
+    "title": "Traductor de Voz AI",
+    "description": "Sube un video o archivo de audio y traduce el contenido hablado a otro idioma con una voz AI natural. Recibe un video completamente doblado listo para publicar, sin necesidad de estudio de grabación.",
+    "example": "Ejemplo: Una demostración de producto grabada en inglés, traducida y doblada en español y japonés.",
+    "cta": "Traducir Voz",
+    "why": {
+      "title": "¿Por Qué Usar Curify para la Traducción de Voz?",
+      "point1": "Traduce audio hablado a más de 170 idiomas con síntesis de voz AI natural.",
+      "point2": "Produce un video completamente doblado, no solo subtítulos, con la pista de voz traducida.",
+      "point3": "Preserva el tono, el ritmo y la entrega emocional del hablante en el idioma de destino.",
+      "point4": "Funciona con videos subidos y enlaces de YouTube."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Cuál es la diferencia entre traducción de voz y doblaje de video?",
+      "a1": "La traducción de voz se centra en traducir la pista de audio de un video y reemplazarla con una voz AI natural en el idioma de destino. El doblaje de video puede incluir además la sincronización de labios. El traductor de voz de Curify produce un video doblado con la pista de voz traducida.",
+      "q2": "¿Qué idiomas son compatibles?",
+      "a2": "Curify admite más de 170 idiomas, incluidos inglés, español, francés, alemán, chino, japonés, coreano, árabe, hindi y muchos más. La detección de idioma es automática."
+    },
+    "deep": {
+      "what": {
+        "title": "¿Qué Es la Traducción de Voz AI?",
+        "p1": "La traducción de voz AI convierte palabras habladas en un idioma fuente en palabras habladas naturales en un idioma de destino, generando una nueva pista de audio en el idioma traducido en lugar de mostrar subtítulos de texto.",
+        "p2": "La salida es un video doblado: el video original con su audio reemplazado por una voz sintetizada por IA traducida. Esta es la forma más rápida de hacer que el contenido de video sea accesible de manera nativa a audiencias internacionales sin requerir un estudio de grabación.",
+        "p3": "El traductor de voz de Curify está diseñado para contenido de video del mundo real, manejando ruido de fondo, múltiples hablantes, vocabulario técnico y ritmo conversacional natural en más de 170 idiomas."
+      },
+      "how": {
+        "title": "Cómo Curify Traduce la Voz",
+        "p1": "El pipeline de traducción de voz de Curify combina transcripción de alta precisión, traducción consciente del contexto y síntesis de voz natural en un solo flujo de trabajo automatizado.",
+        "p2": "Paso 1: La voz se transcribe del audio fuente utilizando un reconocimiento de voz de calidad de producción que maneja acentos, vocabulario de dominio y diálogos de múltiples hablantes.",
+        "p3": "Paso 2: La transcripción se traduce utilizando modelos conscientes del contexto que preservan el significado, el tono y la intención, no solo la sustitución literal de palabras.",
+        "p4": "Paso 3: Una voz AI natural sintetiza el texto traducido en el idioma de destino, coincidiendo con el ritmo original y la entrega emocional cuando sea posible.",
+        "p5": "Paso 4: La pista de voz sintetizada reemplaza el audio original en el video, y recibes un archivo de video completamente doblado listo para publicar."
+      },
+      "usecases": {
+        "title": "¿Quién Usa la Traducción de Voz AI?",
+        "creatorsTitle": "Para Creadores de Contenido Globales",
+        "creatorsBody": "Los creadores utilizan la traducción de voz para alcanzar audiencias en nuevos mercados lingüísticos sin volver a grabar su contenido. Una carga produce versiones dobladas multilingües listas para diferentes canales regionales.",
+        "educationTitle": "Para Capacitación Corporativa y E-Learning",
+        "educationBody": "Los departamentos de capacitación traducen videos de inducción, breves de seguridad y educación sobre productos a idiomas locales. Una pista de voz natural mejora la retención y el compromiso en comparación con solo subtítulos.",
+        "businessTitle": "Para Equipos de Marketing Internacionales",
+        "businessBody": "Los equipos de marketing traducen videos de demostración, testimonios de clientes y grabaciones de eventos a los idiomas del mercado objetivo, lo que permite un mensaje consistente en todas las regiones sin costos de producción por mercado."
+      }
+    }
   }
 }
