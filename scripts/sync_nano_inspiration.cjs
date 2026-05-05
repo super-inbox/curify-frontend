@@ -5,6 +5,7 @@ const fsp = require("fs/promises");
 const path = require("path");
 const os = require("os");
 const { execSync } = require("child_process");
+const { applyTiledWatermark } = require("./lib/watermark.cjs");
 
 // --- Load .env.local (and .env as fallback) from repo root ---
 (function loadEnv() {
@@ -281,6 +282,10 @@ async function copyFileIfNeeded(src, dst, dryRun) {
   await ensureDir(path.dirname(dst));
   if (dryRun) return;
   await fsp.copyFile(src, dst);
+  // Apply slanted curify watermark to the full image in place. The preview
+  // is generated from this file later, so it inherits the watermark too —
+  // no separate preview-watermark call needed.
+  applyTiledWatermark(dst, dst);
 }
 
 async function generatePreviewWithSizeCap(srcPath, outPath, dryRun) {

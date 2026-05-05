@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect, useCallback } from "react";
-import { usePathname } from "next/navigation";
+import { useCallback, useState } from "react";
 import { useAtomValue, useSetAtom } from "jotai";
 import { drawerAtom, userAtom } from "@/app/atoms/atoms";
 import { Inter } from "next/font/google";
@@ -10,128 +9,28 @@ import { useTranslations } from "next-intl";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
 import { CardViewModal } from "@/app/[locale]/_components/CardViewModal";
 import type { InspirationCardType } from "@/app/[locale]/_components/InspirationCard";
-
-import { NanoInspirationCardType } from "@/lib/nano_utils";
-import { resolveContentLocale } from "@/lib/locale_utils";
-
-import {
-  buildNanoRegistry,
-  type RawTemplate,
-  type RawNanoImageRecord,
-} from "@/lib/nano_utils";
-
-import { buildNanoFeedCards } from "@/lib/nano_page_data";
-import nanoTemplates from "@/public/data/nano_templates.json";
-import nanoInspiration from "@/public/data/nano_inspiration.json";
+import type { NanoInspirationCardType } from "@/lib/nano_utils";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
 
-type Lang = "en" | "zh";
-
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-function useNanoCards(activeLang: Lang, translate: (key: string) => string) {
-  return useMemo(() => {
-    try {
-      const reg = buildNanoRegistry(
-        nanoTemplates as unknown as RawTemplate[],
-        nanoInspiration as unknown as RawNanoImageRecord[]
-      );
-
-      const locale = resolveContentLocale(activeLang);
-
-      return buildNanoFeedCards(reg, locale, {
-        perTemplateMaxImages: 2,
-        strictLocale: true,
-        translate,
-      }) as NanoInspirationCardType[];
-    } catch (err) {
-      console.error("[nano] failed to build nano cards:", err);
-      return [];
-    }
-  }, [activeLang, translate]);
-}
-
-function useFilteredInspiration(
-  cards: InspirationCardType[],
-  activeLang: Lang,
-  query: string
-) {
-  return useMemo(() => {
-    const q = query.trim().toLowerCase();
-
-    let result = cards.filter((c) => {
-      const l = (c.lang || "zh").toLowerCase();
-      return activeLang === "en" ? l.startsWith("en") : l.startsWith("zh");
-    });
-
-    if (q) {
-      result = result.filter((c) => {
-        const searchableText = [
-          c?.signal?.summary,
-          c?.translation?.tag,
-          ...(c?.translation?.angles || []),
-          c?.hook?.text,
-          c?.production?.format,
-          ...(c?.production?.beats || []),
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase();
-
-        return searchableText.includes(q);
-      });
-    }
-
-    return result;
-  }, [cards, query, activeLang]);
-}
-
-function useLanguageSync() {
-  const pathname = usePathname();
-
-  const urlLang: Lang = useMemo(
-    () => (pathname?.startsWith("/zh") ? "zh" : "en"),
-    [pathname]
-  );
-  const [activeLang, setActiveLang] = useState<Lang>(urlLang);
-
-  useEffect(() => setActiveLang(urlLang), [urlLang]);
-
-  return { activeLang };
-}
-
 export default function HomeClient({
   cards = [],
+  nanoCards = [],
 }: {
   cards?: InspirationCardType[];
+  nanoCards?: NanoInspirationCardType[];
 }) {
-  const { activeLang } = useLanguageSync();
   const user = useAtomValue(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
 
-  const effectiveLang: Lang = user ? activeLang : "en";
-
   const tHero = useTranslations("home.hero");
-  const tNano = useTranslations("nano");
-
-  const translateNano = useCallback(
-    (key: string): string => {
-      try {
-        return tNano(key as any) ?? "";
-      } catch {
-        return "";
-      }
-    },
-    [tNano]
-  );
-
-  const nanoCards = useNanoCards(effectiveLang, translateNano);
 
   const requireAuth = useCallback(() => {
     if (user) return true;

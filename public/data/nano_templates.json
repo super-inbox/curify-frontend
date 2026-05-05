@@ -39,7 +39,7 @@
       "learning",
       "science"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "batch": true,
     "base_rank_score": 80,
     "allow_generation": true
@@ -154,7 +154,7 @@
       "kawaii",
       "itinerary"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "batch": true,
     "base_rank_score": 80,
     "allow_generation": true
@@ -196,7 +196,7 @@
       "learning",
       "architecture"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -663,7 +663,7 @@
       "science",
       "cartoon"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "use_cases": [
       "for-marketers",
       "for-creators",
@@ -830,7 +830,7 @@
       "language",
       "vocabulary"
     ],
-    "rank_score": 80,
+    "rank_score": 87.6,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
@@ -1026,7 +1026,7 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 80,
+    "rank_score": 80.6,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1148,7 +1148,7 @@
       "lifestyle",
       "food"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "allow_generation": true,
     "use_cases": [
@@ -1327,7 +1327,7 @@
       "groups",
       "animal"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1478,7 +1478,7 @@
       "fashion",
       "design"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "requires_image_upload": true
   },
@@ -1913,7 +1913,7 @@
       "groups",
       "cartoon"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -1949,7 +1949,7 @@
       "film",
       "isometric"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -1979,7 +1979,7 @@
       "mbti",
       "sports"
     ],
-    "rank_score": 100,
+    "rank_score": 101.4,
     "base_rank_score": 100,
     "allow_generation": true
   },
@@ -2010,7 +2010,7 @@
       "ai",
       "isometric"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -2045,7 +2045,7 @@
       "film",
       "isometric"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -2185,7 +2185,7 @@
       "film",
       "anime"
     ],
-    "rank_score": 100,
+    "rank_score": 101.6,
     "use_cases": [
       "for-marketers",
       "for-creators"
@@ -2202,7 +2202,7 @@
           {
             "name": "language_pair",
             "label": "Language Pair",
-            "type": "text",
+            "type": "language_pair",
             "placeholder": [
               "en-zh",
               "en-es",
@@ -2230,7 +2230,7 @@
           {
             "name": "language_pair",
             "label": "Language Pair",
-            "type": "text",
+            "type": "language_pair",
             "placeholder": [
               "en-zh",
               "en-es",
@@ -2260,12 +2260,13 @@
       "kawaii"
     ],
     "batch": true,
-    "rank_score": 80,
+    "rank_score": 81.6,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
     ],
-    "base_rank_score": 80
+    "base_rank_score": 80,
+    "allow_generation": true
   },
   {
     "id": "template-series-infographic",
@@ -2408,7 +2409,7 @@
       "kawaii"
     ],
     "batch": true,
-    "rank_score": 80,
+    "rank_score": 80.2,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
@@ -2479,7 +2480,7 @@
       "kawaii"
     ],
     "batch": true,
-    "rank_score": 80,
+    "rank_score": 81.2,
     "use_cases": [
       "for-parents",
       "for-esl-learners"
@@ -2627,7 +2628,7 @@
       "kawaii",
       "itinerary"
     ],
-    "rank_score": 80,
+    "rank_score": 82.4,
     "base_rank_score": 80,
     "allow_generation": true
   },
@@ -2918,7 +2919,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-custom-character-card--prev.jpg",
-    "rank_score": 2,
+    "rank_score": 3,
     "topics": [
       "character",
       "mbti"
@@ -3081,7 +3082,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-theme-overview-poster-tcm-clearing-heat-herbs-prev.jpg",
-    "rank_score": 100,
+    "rank_score": 104.8,
     "topics": [
       "design",
       "posters",
@@ -3112,7 +3113,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-beijing-prev.jpg",
-    "rank_score": 100,
+    "rank_score": 102,
     "topics": [
       "language",
       "food",
@@ -3146,7 +3147,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-industrial-design-concept-sketch-humanoid-robot-prev.jpg",
-    "rank_score": 50,
+    "rank_score": 50.2,
     "topics": [
       "design",
       "mockups",
@@ -3178,9 +3179,9 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-varieties-food-poster-salad-prev.jpg",
-    "rank_score": 100,
+    "rank_score": 100.6,
     "topics": [
-      "travel",
+      "lifestyle",
       "food",
       "posters",
       "photorealistic"
@@ -3211,7 +3212,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-warmup-routine-gym-prev.jpg",
-    "rank_score": 90,
+    "rank_score": 90.8,
     "base_rank_score": 90,
     "topics": [
       "lifestyle",
@@ -3247,7 +3248,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-group-vocab-category-sports-prev.jpg",
-    "rank_score": 90,
+    "rank_score": 91.8,
     "base_rank_score": 90,
     "topics": [
       "language",
@@ -3312,7 +3313,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-clothing-evolution-poster--prev.jpg",
-    "rank_score": 90,
+    "rank_score": 92.2,
     "base_rank_score": 90,
     "topics": [
       "design",
@@ -3497,7 +3498,7 @@
       "learning"
     ],
     "base_rank_score": 70,
-    "rank_score": 70,
+    "rank_score": 70.2,
     "allow_generation": true
   },
   {
@@ -3595,7 +3596,7 @@
       "ink"
     ],
     "base_rank_score": 90,
-    "rank_score": 90,
+    "rank_score": 90.6,
     "allow_generation": true
   },
   {
@@ -3626,7 +3627,7 @@
       "kawaii"
     ],
     "base_rank_score": 90,
-    "rank_score": 90,
+    "rank_score": 90.2,
     "allow_generation": true
   },
   {
@@ -3658,7 +3659,7 @@
       "photorealistic"
     ],
     "base_rank_score": 90,
-    "rank_score": 90,
+    "rank_score": 91.2,
     "allow_generation": true
   },
   {
@@ -3750,7 +3751,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-pain-relief-infographic-back-pain-yoga-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "topics": [
       "lifestyle",
@@ -3814,7 +3815,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-kids-vocabulary-poster-vegetables-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80,
     "topics": [
       "language",
@@ -3885,7 +3886,7 @@
       "architecture",
       "photorealistic"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -3915,7 +3916,7 @@
       "travel",
       "cartoon"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -4011,7 +4012,7 @@
       "lifestyle",
       "fitness"
     ],
-    "rank_score": 70,
+    "rank_score": 70.6,
     "base_rank_score": 70,
     "allow_generation": true,
     "use_cases": [
@@ -4055,7 +4056,7 @@
       "mbti",
       "groups"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -4086,7 +4087,7 @@
       "lifestyle",
       "guides"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -4118,7 +4119,7 @@
       "learning",
       "history"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -4161,7 +4162,7 @@
     "topics": [
       "learning"
     ],
-    "rank_score": 70,
+    "rank_score": 70.2,
     "base_rank_score": 70,
     "allow_generation": true
   },
@@ -4195,8 +4196,9 @@
       "cartoon",
       "groups"
     ],
-    "rank_score": 70,
-    "allow_generation": true
+    "rank_score": 70.2,
+    "allow_generation": true,
+    "base_rank_score": 70
   },
   {
     "id": "template-cartoon-character-profile-card-kawaii-style",
@@ -4258,7 +4260,8 @@
       "kawaii",
       "portrait"
     ],
-    "rank_score": 70
+    "rank_score": 70,
+    "base_rank_score": 70
   },
   {
     "id": "template-cartoon-english-vocabulary-flashcards",
@@ -4292,7 +4295,8 @@
     "allow_generation": true,
     "use_cases": [
       "for-parents"
-    ]
+    ],
+    "base_rank_score": 70
   },
   {
     "id": "template-figure-principles-infographic",
@@ -4324,7 +4328,8 @@
       "reading"
     ],
     "rank_score": 90,
-    "base_rank_score": 90
+    "base_rank_score": 90,
+    "allow_generation": true
   },
   {
     "id": "template-book-recommendation-grid-poster",
@@ -4456,7 +4461,7 @@
     "topics": [
       "travel"
     ],
-    "rank_score": 80,
+    "rank_score": 80.2,
     "base_rank_score": 80
   },
   {
@@ -4484,7 +4489,7 @@
       "culture",
       "travel"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90
   },
   {
@@ -4514,7 +4519,7 @@
       "design",
       "watercolor"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "use_cases": [
       "for-parents"
@@ -4548,7 +4553,6 @@
       "digital-canvas",
       "lifestyle",
       "fitness",
-      "ink",
       "monochrome"
     ],
     "rank_score": 90,
@@ -4643,7 +4647,7 @@
       "design",
       "guides"
     ],
-    "rank_score": 90,
+    "rank_score": 90.4,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -4733,7 +4737,7 @@
       "learning",
       "science"
     ],
-    "rank_score": 90,
+    "rank_score": 91.8,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -4765,7 +4769,7 @@
       "travel",
       "history"
     ],
-    "rank_score": 90,
+    "rank_score": 90.2,
     "base_rank_score": 90,
     "allow_generation": true
   },
@@ -4824,7 +4828,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-CVC-english-word-coloring-flower-card-ap-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.4,
     "base_rank_score": 80,
     "allow_generation": true,
     "topics": [
@@ -4858,7 +4862,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-weird-cold-knowledge-popular-science-card-tardigrades-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.8,
     "base_rank_score": 80,
     "allow_generation": true,
     "topics": [
@@ -4889,7 +4893,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-country-top10-travel-destinations-france-prev.jpg",
-    "rank_score": 80,
+    "rank_score": 80.8,
     "base_rank_score": 80,
     "allow_generation": true,
     "topics": [
@@ -4921,7 +4925,7 @@
       }
     },
     "og_image": "/images/nano_insp_preview/template-book-minimalist-gardening-beginners-prev.jpg",
-    "rank_score": 90,
+    "rank_score": 90.4,
     "base_rank_score": 90,
     "allow_generation": true,
     "topics": [
@@ -4930,5 +4934,728 @@
       "design",
       "posters"
     ]
+  },
+  {
+    "id": "template-verb-action-learning-cards",
+    "locales": {
+      "en": {
+        "base_prompt": "(Educational Action Verb Card Designer) Create a clean, cohesive set of learning cards for {card_theme}, featuring simple human illustrations. Layout: 1. A 3×3 grid of 9 individual cards on a plain white background. 2. Each card shows a clear, friendly cartoon-style illustration of a person performing the action/expression. 3. Below each illustration, the corresponding verb/word is displayed in a bold, easy-to-read sans-serif font. Style: Warm, approachable children's book art style, soft muted colors, simple linework, consistent character design (same diverse characters across all cards), flat 2D illustration with subtle shading, no harsh shadows, educational flashcard aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: {card_theme} Action Verb Learning Cards Illustration Set.",
+        "parameters": [
+          {
+            "name": "card_theme",
+            "label": "Learning Card Theme",
+            "type": "text",
+            "placeholder": [
+              "Basic Verbs & Actions",
+              "Everyday Activities",
+              "Emotions & Expressions",
+              "Movement & Sports",
+              "Household Tasks",
+              "Communication Actions"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-verb-action-learning-cards-body-expressions-prev.jpg",
+    "topics": [
+      "vocabulary",
+      "language",
+      "expressions"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 91.2
+  },
+  {
+    "id": "template-pet-care-guide",
+    "locales": {
+      "en": {
+        "base_prompt": "(Pet Care Infographic Designer) Create a complete care guide infographic poster for your {pet_age} {pet_type}, following a structured 5-section layout. Layout: 1. Main title at the top: 'Complete Care Guide for Your {pet_age} {pet_type}'. 2. 5 color-coded sections: Diet & Nutrition, Exercise/Activities, Health Care, Grooming/Hygiene, Training & Socialization. 3. Each section includes a matching cartoon-style illustration (e.g., pet eating, playing, at the vet) + bullet-point text with simple emoji icons. 4. Light pastel background, clear sans-serif text, clean white section cards with rounded corners. Style: Cute, friendly cartoon illustration style, soft muted colors, educational pet care guide aesthetic, vertical infographic format, 4K ultra HD, direct image generation. Subject: {pet_age} {pet_type} Complete Care Guide Infographic.",
+        "parameters": [
+          {
+            "name": "pet_type",
+            "label": "Pet Type",
+            "type": "text",
+            "placeholder": [
+              "British Shorthair Cat",
+              "Corgi Puppy",
+              "Labrador Dog",
+              "Budgerigar Bird",
+              "Rabbit",
+              "Hamster"
+            ]
+          },
+          {
+            "name": "pet_age",
+            "label": "Pet Age",
+            "type": "text",
+            "placeholder": [
+              "5-Month-Old",
+              "2-Month-Old",
+              "1-Year-Old",
+              "3-Year-Old",
+              "Senior"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-pet-care-guide-labrador-3yo-prev.jpg",
+    "topics": [
+      "animal",
+      "lifestyle",
+      "guides"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-9-traits-info-grid",
+    "locales": {
+      "en": {
+        "base_prompt": "(9-Traits Info Grid Designer) Create a clean infographic poster titled '9 Traits of {topic_title}' at the top, using a 3×3 grid layout. Each grid cell contains: 1. A friendly, cartoon-style illustration representing the trait. 2. A bold title for the trait (e.g., 'Trustworthiness'). 3. A short descriptive subtitle explaining the trait. Style: Minimalist line art with soft flat colors, white background, clean sans-serif text, consistent character design, educational infographic aesthetic, square format, 4K ultra HD, direct image generation. Subject: 9 Traits of {topic_title} Infographic.",
+        "parameters": [
+          {
+            "name": "topic_title",
+            "label": "Infographic Topic",
+            "type": "text",
+            "placeholder": [
+              "Quality Partner",
+              "Emotional Stability",
+              "Natural Elegance",
+              "The World's Richest",
+              "Wealthy Women",
+              "Leadership",
+              "Self-Improvement"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-9-traits-info-grid-wealthy-women-prev.jpg",
+    "topics": [
+      "character",
+      "comparison"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-english-phrasal-verb",
+    "locales": {
+      "en": {
+        "base_prompt": "(English Phrasal Verb Learning Poster Designer) Create a clean, educational infographic poster titled '8 Phrases with {verb_word}' at the top, following a vertical list layout. Layout: 1. Light cream-colored background with large, bold dark blue title text. 2. 8 vertical list items, each containing: a. A simple, cute icon/illustration representing the phrasal verb; b. The phrasal verb title in bold blue text; c. A clear example sentence with the phrasal verb highlighted in bold. Style: Minimalist flat illustration style, friendly educational aesthetic, clean sans-serif font, high readability, vertical format, 4K ultra HD, direct image generation. Subject: {verb_word} Phrasal Verb Learning Poster.",
+        "parameters": [
+          {
+            "name": "verb_word",
+            "label": "Core Verb Word",
+            "type": "text",
+            "placeholder": [
+              "BREAK",
+              "TURN",
+              "TAKE",
+              "LOOK",
+              "GO",
+              "GET",
+              "MAKE",
+              "PUT"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-phrasal-verb-look-prev.jpg",
+    "topics": [
+      "language",
+      "language-english",
+      "expressions"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "allow_generation": true
+  },
+  {
+    "id": "template-hairstyle-color-recommendation",
+    "locales": {
+      "en": {
+        "base_prompt": "(Hairstyle Recommendation Infographic Designer) Create a clean, modern hairstyle and color recommendation poster using the provided reference portrait. Layout: 1. Large bold title at the top: 'HAIRSTYLE & COLOR RECOMMENDATIONS FOR [FACE_SHAPE]'. 2. Left side: Full-size original portrait labeled 'Original Portrait'. 3. Right side: 6 circular portrait previews arranged in a 2×3 grid, each showing a different hairstyle and hair color inspired by the reference person. 4. Below each preview, a clear label with the hairstyle name and corresponding hair color. Style: Minimalist white background, clean sans-serif text, consistent lighting and skin tone across all portraits, professional beauty guide aesthetic, high resolution, direct image generation. Subject: Custom Hairstyle & Color Recommendation Poster.",
+        "parameters": []
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-hairstyle-color-recommendation-oval-face-women-prev.jpg",
+    "topics": [
+      "beauty",
+      "fashion",
+      "portrait"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-country-souvenirs-watercolor",
+    "locales": {
+      "en": {
+        "base_prompt": "(Country Souvenir Watercolor Poster Designer) Create a warm, nostalgic travel infographic poster titled 'Top 10 Beautiful Souvenirs from {country_name}'. Layout: 1. Top section: Watercolor illustration of iconic landmarks and cultural symbols from {country_name}, with the country flag and subtitle 'Elegant, Cultural & Easy to Gift'. 2. Main section: 2-column grid of 10 numbered souvenirs, each with a watercolor illustration of the item, its name, and short descriptive bullet points. 3. Bottom section: 'Pro Souvenir Tips' with small watercolor icons and practical advice. Style: Soft watercolor art style, warm muted colors, textured paper background, vintage travel poster aesthetic, clear handwritten-style fonts, vertical format, 4K ultra HD, direct image generation. Subject: {country_name} Top 10 Souvenirs Watercolor Infographic Poster.",
+        "parameters": [
+          {
+            "name": "country_name",
+            "label": "Country Name",
+            "type": "text",
+            "placeholder": [
+              "Brazil",
+              "Korea",
+              "Mexico",
+              "India",
+              "Italy",
+              "Thailand",
+              "Japan",
+              "France"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-country-souvenirs-watercolor-mexico-prev.jpg",
+    "topics": [
+      "travel",
+      "culture",
+      "design",
+      "watercolor",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90.2,
+    "allow_generation": true
+  },
+  {
+    "id": "template-pet-safe-human-food-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Pet Safe Food Infographic Designer) Create a clean, informative infographic poster titled 'Human Foods {pet_name} Can Safely Eat'. Layout: 1. Large bold title at the top, with a realistic photo of the {pet_name} in the top-right corner. 2. Main section: Grid of realistic food photos (fruits, vegetables, meats, grains) with clear labels, showing safe human foods for the pet. 3. Bottom section: Red-labeled 'Not Safe' section with photos of toxic foods and their names. Background: Clean white marble texture. Style: Bright, high-resolution food photography, minimalist layout, educational pet care guide aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: Safe & Unsafe Human Foods for {pet_name} Infographic.",
+        "parameters": [
+          {
+            "name": "pet_name",
+            "label": "Pet Type",
+            "type": "text",
+            "placeholder": [
+              "Cats",
+              "Dogs",
+              "Rabbits",
+              "Parrots",
+              "Guinea Pigs",
+              "Ducks"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-pet-safe-human-food-infographic-cat-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "animal",
+      "guides",
+      "learning",
+      "animals"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-phonics-consonant-blend",
+    "locales": {
+      "en": {
+        "base_prompt": "(Phonics Learning Poster Designer) Create a vibrant, educational phonics poster for the {phonics_blend} consonant blend. Layout: 1. Large, bold ' {phonics_blend} ' text at the top of the poster. 2. Inside a white bordered frame, display 6-8 words starting with '{phonics_blend}', each paired with a colorful cartoon illustration of the word. 3. Each word has the '{phonics_blend}' part in red and the rest of the letters in blue. 4. The background is a cheerful sky-blue with white clouds and green grass at the bottom. Style: Friendly, simple cartoon style, bright kid-friendly colors, clear sans-serif font, educational early learning aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{phonics_blend}' Consonant Blend Phonics Learning Poster.",
+        "parameters": [
+          {
+            "name": "phonics_blend",
+            "label": "Phonics Consonant Blend",
+            "type": "text",
+            "placeholder": [
+              "gr",
+              "bl",
+              "ch",
+              "sh",
+              "th",
+              "pr",
+              "tr",
+              "cr"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-phonics-consonant-blend-gr-prev.jpg",
+    "topics": [
+      "reading",
+      "language",
+      "vocabulary",
+      "language-english"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90.2
+  },
+  {
+    "id": "template-media-theme-wallpaper-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Media Themed Wallpaper & Poster Designer) Create a stylized poster/wallpaper for {media_topic} in a cohesive, visually striking art style. Layout: 1. The composition centers on the most iconic characters or scenes from {media_topic}, set in a detailed, atmospheric background. 2. The title '{media_topic}' is prominently displayed in a thematic font at the top or bottom of the image. 3. The style is consistent with the original work's aesthetic, enhanced with vibrant colors, soft lighting, and high detail for a cinematic, immersive feel. 4. High resolution, clean composition, vertical or square format, direct image generation. Subject: {media_topic} stylized wallpaper poster.",
+        "parameters": [
+          {
+            "name": "media_topic",
+            "label": "Media Theme",
+            "type": "text",
+            "placeholder": [
+              "Ponyo",
+              "Shin-chan",
+              "Friends TV Show",
+              "Howl's Moving Castle",
+              "My Neighbor Totoro",
+              "Studio Ghibli Film"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-media-theme-wallpaper-poster-friends-prev.jpg",
+    "topics": [
+      "character",
+      "anime",
+      "film",
+      "design",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-chinese-character-learning-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(Chinese Character Learning Poster Designer) Create an educational 'Daily Character' learning poster for the Chinese character '{target_char}'. Layout: 1. Title '每日一字' at the top in bold Chinese characters. 2. Center: A large version of the character '{target_char}' with its pinyin '{pinyin}'. 3. Around the center, 5-6 radial branches each showing a common compound word with the character, paired with a cute cartoon illustration and pinyin. 4. Clean white background, soft watercolor/cartoon art style, kid-friendly educational aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{target_char}' Chinese Character Learning Poster.",
+        "parameters": [
+          {
+            "name": "target_char",
+            "label": "Chinese Character",
+            "type": "text",
+            "placeholder": [
+              "山",
+              "火",
+              "木",
+              "天",
+              "水",
+              "日",
+              "月",
+              "人"
+            ]
+          },
+          {
+            "name": "pinyin",
+            "label": "Character Pinyin",
+            "type": "text",
+            "placeholder": [
+              "shān",
+              "huǒ",
+              "mù",
+              "tiān",
+              "shuǐ",
+              "rì",
+              "yuè",
+              "rén"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-character-learning-poster-shan-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-mbti-relationship-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(MBTI Relationship Infographic Designer) Create a vibrant infographic poster titled '{mbti_type_a} and {mbti_type_b} relationship'. Layout: 1. Center: Two low-poly cartoon characters representing each MBTI type, each in their signature color. 2. Left side: Traits and quotes for {mbti_type_a}, with matching icons and text style. 3. Right side: Traits and quotes for {mbti_type_b}, with matching icons and text style. 4. Bottom section: Compatibility summary with bullet points and emojis. Style: Clean white background, colorful low-poly geometric art style, friendly educational tone, consistent character design, high readability, horizontal format, 4K ultra HD, direct image generation. Subject: {mbti_type_a} & {mbti_type_b} Relationship Compatibility Infographic.",
+        "parameters": [
+          {
+            "name": "mbti_type_a",
+            "label": "First MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ENTP",
+              "ENTJ",
+              "ISTP",
+              "INFP",
+              "INTJ",
+              "ISFJ",
+              "INFJ"
+            ]
+          },
+          {
+            "name": "mbti_type_b",
+            "label": "Second MBTI Type",
+            "type": "text",
+            "placeholder": [
+              "ISFJ",
+              "INFP",
+              "ESFJ",
+              "ESTJ",
+              "ENFP",
+              "ENTP",
+              "ESTP"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-relationship-infographic-intj-enfp-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "personality",
+      "comparison"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-chinese-verb-opposite-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Chinese Verb Opposite Learning Chart Designer) Create an educational infographic poster titled '{chart_title}'. Layout: 1. Clean, light-colored background with the main title at the top. 2. A series of horizontal rows, each showing a pair of opposite Chinese verbs: left word with pinyin/English, center cartoon illustration pair, and right word with pinyin/English. 3. Each row has a colored arrow/hexagon shape background, clearly showing the contrast between the two actions. Style: Simple, friendly cartoon illustrations, clear sans-serif font, soft pastel colors, educational language-learning aesthetic, horizontal format, 4K ultra HD, direct image generation. Subject: {chart_title} Infographic.",
+        "parameters": [
+          {
+            "name": "chart_title",
+            "label": "Chart Topic",
+            "type": "text",
+            "placeholder": [
+              "Chinese Verb Opposite Pairs",
+              "Basic Chinese Antonym Verbs",
+              "Everyday Chinese Action Words",
+              "Common Chinese Verb Opposites"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-adjective-opposite-infographic-easy-words-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90,
+    "allow_generation": true
+  },
+  {
+    "id": "template-ai-outfit-try-on-poster",
+    "locales": {
+      "en": {
+        "base_prompt": "(AI Outfit Try-On Poster Designer) Create a three-panel fashion try-on poster. Layout: 1. Left panel: The original reference character portrait labeled 'Character'. 2. Middle panel: Flat-lay display of the full outfit (clothes, shoes, accessories) labeled 'Outfit'. 3. Right panel: The same character wearing the new outfit, with perfect lighting, pose consistency, and realistic fit, labeled 'Result'. Style: Clean studio background, high-fashion photography style, consistent lighting across all panels, sharp details, realistic textures, commercial fashion aesthetic, horizontal format, 4K ultra HD, direct image generation. Subject: AI Outfit Try-On Comparison Poster.",
+        "parameters": []
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-education-card-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fashion",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-lifestyle-watercolor-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Lifestyle Watercolor Infographic Designer) Create a warm, whimsical infographic poster for the topic '{infographic_topic}'. Layout: 1. Top section: A ribbon banner with a gentle quote related to the theme, above a large number and title like '{number} {infographic_topic}'. 2. Center: A soft watercolor illustration representing the theme, surrounded by smaller watercolor icons for each tip. 3. Each icon is paired with a short text label describing the tip. 4. Background: A light beige textured paper with subtle hearts, stars, and confetti accents. Style: Soft watercolor art style, warm earthy colors, hand-drawn elements, cozy self-care aesthetic, clear friendly font, vertical format, 4K ultra HD, direct image generation. Subject: '{infographic_topic}' Watercolor Infographic Poster.",
+        "parameters": [
+          {
+            "name": "infographic_topic",
+            "label": "Infographic Topic",
+            "type": "text",
+            "placeholder": [
+              "Productivity Tips",
+              "Self-Care Ideas",
+              "Healthy Habits",
+              "Mindfulness Practices",
+              "Morning Routine Ideas",
+              "Stress Relief Ideas"
+            ]
+          },
+          {
+            "name": "number",
+            "label": "Number of Tips",
+            "type": "text",
+            "placeholder": [
+              "10",
+              "8",
+              "9",
+              "12"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-lifestyle-watercolor-infographic-morning-routine-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "watercolor",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-gardening-how-to-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Gardening How-To Infographic Designer) Create a clean, practical step-by-step infographic titled 'HOW TO GROW {plant_name}'. Layout: 1. Bold main title at the top, with a subtitle about the plant. 2. A 2×3 grid of 6 numbered steps, each with a realistic photo illustration of the gardening action, a clear step title, descriptive text, and small helpful icons. 3. Clean white background, professional educational style, sharp product photography aesthetic, clear sans-serif font, vertical format, 4K ultra HD, direct image generation. Subject: '{plant_name} Growing Guide Infographic.",
+        "parameters": [
+          {
+            "name": "plant_name",
+            "label": "Plant Name",
+            "type": "text",
+            "placeholder": [
+              "Lettuce",
+              "Pineapple",
+              "Bell Peppers",
+              "Carrots",
+              "Tomatoes",
+              "Strawberries",
+              "Herbs",
+              "Potatoes"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-gardening-how-to-infographic-bell-peppers-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "guides",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-ethnic-costume-deconstruction-board",
+    "locales": {
+      "en": {
+        "base_prompt": "(Ethnic Costume Deconstruction Board Designer) Create a professional deconstruction-style flat-lay board for the {ethnic_group} traditional costume. Layout: 1. Center: A full-body portrait of a woman wearing the complete {ethnic_group} traditional costume, standing against a dark wooden background. 2. Left and right: Deconstructed components including silver jewelry, embroidered textiles, accessories, and cultural artifacts, each labeled with Chinese characters. 3. Style: High-fashion studio photography, warm dramatic lighting, sharp details, rich textures, clean composition, cultural heritage aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: {ethnic_group} Traditional Costume Deconstruction Board.",
+        "parameters": [
+          {
+            "name": "ethnic_group",
+            "label": "Ethnic Group Name",
+            "type": "text",
+            "placeholder": [
+              "Tibetan",
+              "Miao",
+              "Bai",
+              "Buyi",
+              "Tujia",
+              "Yi",
+              "Dai",
+              "Mongolian"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-ethnic-costume-deconstruction-board-yi-prev.jpg",
+    "topics": [
+      "travel",
+      "culture",
+      "fashion"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
+  {
+    "id": "template-animation-studio-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Animation Studio Comparison Infographic Designer) Create a vibrant 'ANIME STUDIO SHOWDOWN COMPARISON' infographic poster. Layout: 1. Top section: Title banner with the comparison theme. 2. Split layout, left side for {studio_a} and right side for {studio_b}. Each side includes: studio logo/name, founding year, artistic style section with example art, notable works with images, and legacy & impact description with icons. 3. Background: Wooden desk texture with anime-themed doodles and figurines, giving a cozy fandom aesthetic. Style: Bright, clear, informational graphic design with distinct color palettes for each studio, high readability, clean vector elements, vertical format, 4K ultra HD, direct image generation. Subject: {studio_a} vs {studio_b} Animation Studio Comparison Infographic.",
+        "parameters": [
+          {
+            "name": "studio_a",
+            "label": "First Studio Name",
+            "type": "text",
+            "placeholder": [
+              "Studio Ghibli",
+              "Wit Studio",
+              "Kyoto Animation",
+              "Pixar"
+            ]
+          },
+          {
+            "name": "studio_b",
+            "label": "Second Studio Name",
+            "type": "text",
+            "placeholder": [
+              "MAPPA",
+              "Ufotable",
+              "DreamWorks"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-animation-studio-comparison-infographic-pixar-vs-dreamworks-prev.jpg",
+    "topics": [
+      "character",
+      "anime",
+      "comparison"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-travel-packing-guide-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Travel Packing Guide Infographic Designer) Create a vibrant packing guide poster for a {gender} {day_count}-day trip to {destination}. Layout: 1. Top: The title '{day_count}-DAY {destination} Packing Guide' with travel-themed graphics. 2. Sections: 'What you can fit in a carry-on', 'Packing Essentials', '{day_count}-Day Outfit Ideas', 'Extra Must-Haves', and 'Pro Tips'. 3. Each section features realistic product photos/illustrations, clear labels, and a color palette matching the trip theme. Style: Bright, friendly, informational design, clean layout, themed icons, pastel/coordinated colors, vertical format, 4K ultra HD, direct image generation. Subject: {gender} {day_count}-Day {destination} Travel Packing Guide Infographic.",
+        "parameters": [
+          {
+            "name": "destination",
+            "label": "Travel Destination",
+            "type": "text",
+            "placeholder": [
+              "Snow Mountain",
+              "Beach Vacation",
+              "Coastal Vacation",
+              "Hiking Adventure",
+              "Business Trip",
+              "Weekend Getaway"
+            ]
+          },
+          {
+            "name": "day_count",
+            "label": "Number of Days",
+            "type": "text",
+            "placeholder": [
+              "3-Day",
+              "5-Day",
+              "7-Day"
+            ]
+          },
+          {
+            "name": "gender",
+            "label": "Gender Focus",
+            "type": "text",
+            "placeholder": [
+              "Women's",
+              "Men's",
+              "Unisex"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-travel-packing-guide-infographic-3day-weekend-getaway-prev.jpg",
+    "topics": [
+      "travel",
+      "itinerary",
+      "guides"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-history-timeline-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(History Timeline Infographic Designer) Create a visually stunning infographic titled '{timeline_topic}: Evolution Through Time'. Layout: 1. A central, flowing timeline with numbered/yearly milestones. 2. Each milestone features a key event, date, short description, and relevant illustration. 3. The theme is reflected in the color palette, icons, and background design. Style: Themed aesthetic (e.g., retro, futuristic, vintage), clean layout, detailed illustrations, high readability, consistent design language, vertical format, 4K ultra HD, direct image generation. Subject: '{timeline_topic}' Evolution Timeline Infographic.",
+        "parameters": [
+          {
+            "name": "timeline_topic",
+            "label": "Timeline Topic",
+            "type": "text",
+            "placeholder": [
+              "Apple Inc. History",
+              "Evolution of Video Games",
+              "History of Photography",
+              "Space Exploration",
+              "Coffee Evolution",
+              "Vintage Fashion Evolution"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-history-timeline-infographic-prev.jpg",
+    "topics": [
+      "learning",
+      "history",
+      "posters"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-word-origins-map-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Word Origins Map Infographic Designer) Create an educational infographic titled 'WORD ORIGINS: {topic}'. Layout: 1. Center: A simplified world map. 2. Words are placed on the map, connected by colored lines to their countries of origin, with each country marked by its flag. 3. Each word includes its etymology and brief meaning, paired with a small thematic icon. Style: Clean, modern, and colorful design, educational aesthetic, soft pastel colors, clear sans-serif font, horizontal format, 4K ultra HD, direct image generation. Subject: '{topic}' Word Origins Map Infographic.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Topic",
+            "type": "text",
+            "placeholder": [
+              "Science & Technology",
+              "Animals & Nature",
+              "Everyday Vocabulary",
+              "Food & Cuisine"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-word-origins-map-infographic-animals-nature-prev.jpg",
+    "topics": [
+      "language",
+      "vocabulary",
+      "posters"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
+  },
+  {
+    "id": "template-then-vs-now-comparison-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Then vs Now Comparison Infographic Designer) Create a clear comparison infographic titled '{topic} THEN VS NOW'. Layout: 1. Top title with the theme. 2. A table with three columns: Category, Then, Now. 3. Each row shows a category with a vintage/old product on the left and its modern equivalent on the right, using realistic photos. 4. The background and icons match the theme. Style: Clean, minimal design, easy-to-read layout, theme-matching colors, nostalgic yet modern aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{topic} Then vs Now Comparison Infographic.",
+        "parameters": [
+          {
+            "name": "topic",
+            "label": "Comparison Topic",
+            "type": "text",
+            "placeholder": [
+              "Childhood Snacks",
+              "Entertainment",
+              "School Supplies",
+              "Tech Products",
+              "Fashion Trends",
+              "Travel"
+            ]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-then-vs-now-comparison-infographic-childhood-snacks-prev.jpg",
+    "topics": [
+      "learning",
+      "comparison",
+      "posters"
+    ],
+    "base_rank_score": 80,
+    "rank_score": 80
   }
 ]

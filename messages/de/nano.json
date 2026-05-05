@@ -2286,7 +2286,7 @@
     }
   },
   "template-book-minimalist": {
-    "category": "Books & Learning",
+    "category": "Minimalistisches Buchzusammenfassung",
     "description": "Generate a stunning minimalist book summary poster with key insights, quotes, and visual hierarchy.",
     "title": "Nano Banana Prompt: Minimalist Book Summary Poster Generator | Curify AI",
     "content": {
@@ -2308,7 +2308,7 @@
     }
   },
   "template-country-top10-travel-destinations": {
-    "category": "Travel",
+    "category": "Top 10 Reiseziele des Landes",
     "description": "Generate a beautiful watercolor-style top 10 travel destinations poster for any country.",
     "title": "Nano Banana Prompt: Country Top 10 Travel Destinations Poster Generator | Curify AI",
     "content": {
@@ -2330,7 +2330,7 @@
     }
   },
   "template-weird-cold-knowledge-popular-science-card": {
-    "category": "Science & Knowledge",
+    "category": "Populärwissenschaftskarte",
     "description": "Generate eye-catching popular science cards featuring fascinating and unexpected facts.",
     "title": "Nano Banana Prompt: Weird & Fascinating Facts Science Card Generator | Curify AI",
     "content": {
@@ -2352,7 +2352,7 @@
     }
   },
   "template-CVC-english-word-coloring-flower-card": {
-    "category": "Education",
+    "category": "CVC-Wort Ausmalbluemenkarte",
     "description": "Generate adorable CVC word coloring flower cards for early childhood English learning.",
     "title": "Nano Banana Prompt: CVC English Word Coloring Flower Card Generator | Curify AI",
     "content": {
@@ -2391,6 +2391,468 @@
           "Create a Japandi-style living room mood board. Color palette: warm white, soft sage green, natural wood tones, matte black accents. Materials: oak wood, linen upholstery, ceramic pottery, woven baskets. Furniture: low-profile sofa, minimalist coffee table, floor cushions. Mood: calm, uncluttered, natural light. Professional grid layout, 4:3 format.",
           "Generate a moody industrial bedroom mood board. Colors: charcoal, exposed brick red, aged brass, forest green. Elements: concrete ceiling, steel bed frame, Edison bulb lighting, vintage leather, distressed wood flooring. Atmosphere: raw, sophisticated, masculine. Collage style presentation.",
           "Design a coastal bohemian home office mood board. Palette: ocean blue, sandy beige, terracotta, natural white. Textures: rattan furniture, macrame wall hanging, sea grass rug, linen curtains, driftwood accents. Lighting: natural and warm pendant lights. Creative and inspiring workspace aesthetic."
+        ]
+      }
+    }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Aktionsverb-Lernkarten",
+    "description": "Erstelle ein 3x3-Raster mit Cartoon-Aktionsverb-Lernkarten mit freundlichen Illustrationen und fetter Typografie fuer jedes Vokabelthema.",
+    "title": "Nano Banana Prompt: Aktionsverb-Lernkarten-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erzeugt ein 3x3-Raster mit 9 Lernkarten auf weissem Hintergrund. Jede Karte zeigt eine Cartoon-Person, die eine Aktion ausfuehrt, mit dem Verb in fetter Sans-Serif-Schrift.",
+        "who": "Geeignet fuer ESL-Lehrer, Sprachlern-App-Designer, Paedagogen im Vorschulbereich, Eltern und Tutoren.",
+        "how": [
+          "Waehle ein Lernthema (z. B. Grundverben, Alltagsaktivitaeten, Emotionen).",
+          "9 Karten werden automatisch im 3x3-Raster angeordnet.",
+          "Jede Zelle kombiniert Cartoon-Illustration und fettgedrucktes Verb.",
+          "Generiere ein vertikales 4K-Lernkartenposter im Kinderbuchstil."
+        ],
+        "prompts": [
+          "Grundverben-Karten: laufen, springen, essen, schlafen, lesen, schreiben, gehen, schwimmen, tanzen.",
+          "Emotionen-Karten: gluecklich, traurig, wuetend, ueberrascht, muede, aufgeregt, ruhig, verwirrt, stolz.",
+          "Bewegungs-Karten: treten, werfen, fangen, klettern, reiten, laufen, dehnen, schwimmen, springen."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Haustier-Pflegeinfografik",
+    "description": "Erstelle eine vollstaendige 5-Abschnitt-Haustier-Pflegeinfografik fuer jeden Tiertyp und jedes Alter mit Cartoon-Illustrationen.",
+    "title": "Nano Banana Prompt: Haustier-Pflege-Infografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Pastell-Infografik-Poster mit 5 Abschnitten: Ernaehrung, Bewegung, Gesundheit, Pflege und Training & Sozialisation.",
+        "who": "Geeignet fuer Tieradoptionsstellen, Zuechter, Tierkliniken, Heimtierbedarf-Marken, Tier-Blogger und neue Tierhalter.",
+        "how": [
+          "Waehle den Tiertyp (z. B. Britisch Kurzhaar, Corgi-Welpe, Labrador).",
+          "Gib das Alter an (z. B. 5 Monate, 1 Jahr, Senior).",
+          "5 farbcodierte Abschnitte fuellen sich automatisch mit Pflegehinweisen.",
+          "Generiere eine vertikale 4K-Pastell-Infografik mit Cartoon-Illustrationen."
+        ],
+        "prompts": [
+          "Pflegeinfografik fuer eine 5 Monate alte Britisch Kurzhaar.",
+          "Pflegeinfografik fuer einen Senior Labrador.",
+          "Pflegeinfografik fuer einen 2 Monate alten Corgi-Welpen."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "9-Eigenschaften Infografik",
+    "description": "Erstelle eine 3x3-Eigenschaften-Rasterinfografik zu jedem Thema mit Cartoon-Illustrationen und fetten Titeln pro Zelle.",
+    "title": "Nano Banana Prompt: 9-Eigenschaften-Infografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erzeugt ein quadratisches Infografik-Poster '9 Eigenschaften von [Thema]' mit 9 minimalistischen Cartoon-Illustrationen in einem 3x3-Raster.",
+        "who": "Geeignet fuer Personal-Development-Creator, Life-Coaches, Fuehrungstrainer, Selbsthilfeautoren und Content-Marketer.",
+        "how": [
+          "Gib das Thema ein (z. B. Qualitaetspartner, Fuehrung, Selbstverbesserung).",
+          "9 Eigenschaftszellen werden automatisch generiert.",
+          "Minimalistische Linienkunst auf weissem Hintergrund.",
+          "Generiere eine quadratische 4K-Infografik fuer Social Media."
+        ],
+        "prompts": [
+          "9 Eigenschaften eines Qualitaetspartners-Infografik.",
+          "9 Eigenschaften der Fuehrung-Rasterposter.",
+          "9 Eigenschaften der Selbstverbesserung-Infografik."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Englisches Phrasal-Verb-Poster",
+    "description": "Generiere ein 8-Phrasen-Phrasal-Verb-Lernposter um jedes Kernverb mit Beispielsaetzen und flachen Icons in vertikaler Liste.",
+    "title": "Nano Banana Prompt: Englisches Phrasal-Verb-Lernposter-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Lernposter '8 Phrasen mit [Verb]' auf hellem Cremehintergrund mit flachen Icons und Beispielsaetzen.",
+        "who": "Geeignet fuer ESL-Lehrer, Sprachtutoren, Sprachlern-App-Designer und Englisch-Lernende.",
+        "how": [
+          "Waehle ein Kernverb (z. B. BREAK, TAKE, GO, PUT).",
+          "8 Phrasal Verbs werden als vertikale Liste generiert.",
+          "Jeder Eintrag zeigt Icon, Phrasal Verb und Beispielsatz.",
+          "Generiere ein vertikales 4K-Druckposter."
+        ],
+        "prompts": [
+          "8 Phrasen mit BREAK Poster.",
+          "8 Phrasen mit TAKE Lernposter.",
+          "8 Phrasen mit PUT Klassenzimmerposter."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Frisuren- und Farbempfehlungs-Infografik",
+    "description": "Verwende ein Referenzportraet, um ein Beauty-Guide-Poster mit 6 personalisierten Frisur- und Farbempfehlungen in runden Vorschau-Kacheln zu erzeugen.",
+    "title": "Nano Banana Prompt: Frisuren- und Farbempfehlungs-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage nutzt ein Referenzportraet, um ein Beauty-Beratungsposter zu generieren. Links Originalfoto, rechts 6 runde Vorschauen in einem 2x3-Raster mit unterschiedlichen Frisuren und Farben.",
+        "who": "Geeignet fuer Friseure, Salonbesitzer, Beauty-Content-Creator, Personal Stylists und Beauty-Berater.",
+        "how": [
+          "Lade ein Referenzportraet hoch.",
+          "Die Vorlage generiert 6 personalisierte Frisur- und Farbkombinationen.",
+          "Jede Vorschau wird mit Frisurname und Haarfarbe beschriftet.",
+          "Generiere ein hochaufloesendes Beauty-Beratungsposter."
+        ],
+        "prompts": [
+          "Frisurempfehlungsposter fuer ovales Gesicht mit 6 Stilen.",
+          "Frisur- und Farbguide fuer rundes Gesicht mit Warmton-Empfehlungen.",
+          "Beauty-Makeover-Poster mit 6 angesagten Frisuren."
+        ]
+      }
+    }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Souvenir-Aquarell-Poster",
+    "description": "Erstelle ein warmes, nostalgisches Aquarell-Reiseinfografik-Poster mit den 10 schoensten Souvenirs eines Landes, inklusive Wahrzeichen und Geschenk-Tipps.",
+    "title": "Nano Banana Prompt: Laender-Souvenir-Aquarell-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales 4K-Aquarell-Reiseposter mit dem Titel 'Top 10 Beautiful Souvenirs from {country_name}'. Der obere Bereich zeigt Wahrzeichen, Flagge und Untertitel; ein nummeriertes 2-Spalten-Raster praesentiert 10 Souvenirs mit Aquarell-Illustrationen und kurzen Beschreibungen; ein unteres Band mit Insider-Tipps rundet das Layout ab. Sanfte gedaempfte Farben und strukturierter Papierhintergrund liefern den Vintage-Reiseposter-Look.",
+        "who": "Geeignet fuer Reiseblogger, Tourismusbueros, Autoren von Geschenkfuehrern, Pinterest-Creator, Auswanderer-Kanaele, Souvenir-Shopbesitzer und alle, die laenderbezogene Reiseinhalte erstellen.",
+        "how": [
+          "Gib in {country_name} einen Laendernamen ein (z. B. Brasilien, Mexiko, Japan, Italien).",
+          "Der obere Bereich generiert automatisch Wahrzeichen, Flagge und Titel.",
+          "Zehn nummerierte Souvenirs erscheinen im 2-Spalten-Aquarell-Raster mit Beschreibungen.",
+          "Generiere ein vertikales 4K-Aquarell-Poster im Vintage-Reiseposter-Stil."
+        ],
+        "prompts": [
+          "Top 10 Souvenirs aus Mexiko als Aquarell-Reiseposter generieren.",
+          "Top 10 Souvenirs aus Japan mit traditionellem Kunsthandwerk erstellen.",
+          "Top 10 Souvenirs aus Italien als Aquarell-Infografik generieren."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Haustier-Lebensmittel-Infografik",
+    "description": "Erstelle eine klare, fotorealistische Infografik darueber, welche menschlichen Lebensmittel fuer ein Haustier sicher und welche giftig sind, auf weissem Marmor-Hintergrund.",
+    "title": "Nano Banana Prompt: Haustier-sichere Lebensmittel-Infografik-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert ein vertikales 4K-Lehrposter mit dem Titel 'Human Foods {pet_name} Can Safely Eat'. Ein Foto des Tieres sitzt in der oberen Ecke; ein Raster aus realistischen Lebensmittelfotos kennzeichnet sichere Fruechte, Gemuese, Fleisch und Getreide; ein rot eingefasster Bereich unten warnt vor giftigen Lebensmitteln. Der weisse Marmorhintergrund verleiht der Infografik einen vertrauenswuerdigen Pflege-Ratgeber-Look.",
+        "who": "Geeignet fuer Tierhalter, Tieraerzte, Tiernahrungsmarken, Tierheime, Pet-Blogger, Tierarzthelfer und alle, die Aufklaerungsinhalte rund um Haustiere erstellen.",
+        "how": [
+          "Waehle in {pet_name} einen Tiertyp (z. B. Katzen, Hunde, Kaninchen, Papageien).",
+          "Das Tierfoto erscheint in der oberen Ecke ueber dem Lebensmittelraster.",
+          "Realistische Lebensmittelfotos fuellen sichere Lebensmittel oben und giftige unten.",
+          "Generiere eine vertikale 4K-Marmor-Infografik mit fotorealistischen Labels."
+        ],
+        "prompts": [
+          "Infografik 'Sichere Lebensmittel fuer Katzen' auf Marmorhintergrund.",
+          "Infografik 'Sichere Lebensmittel fuer Hunde' inklusive giftiger Lebensmittel.",
+          "Infografik 'Sichere Lebensmittel fuer Kaninchen' im fotorealistischen Stil."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Phonics-Lernposter",
+    "description": "Generiere ein kinderfreundliches Phonics-Poster fuer eine beliebige Konsonantenverbindung mit 6-8 Beispielwoertern und Cartoon-Illustrationen auf himmelblauem Hintergrund.",
+    "title": "Nano Banana Prompt: Konsonantenverbindung-Phonics-Lernposter-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales 4K-Phonics-Lernposter fuer die Konsonantenverbindung {phonics_blend}. Eine grosse fette Ueberschrift sitzt oben; in einem weiss umrandeten Rahmen zeigen 6-8 Beispielwoerter mit froehlichen Cartoon-Illustrationen die Buchstabenverbindung in Rot und den Rest in Blau. Himmelblauer Hintergrund mit Wolken und gruener Wiese unten haelt das Layout kindgerecht.",
+        "who": "Geeignet fuer ESL-Lehrer, Grundschullehrkraefte, Homeschool-Eltern, Early-Learning-Creator, Lese-Tutoren, Designer von Lernapps und Logopaeden, die mit Phonics arbeiten.",
+        "how": [
+          "Gib in {phonics_blend} eine Konsonantenverbindung ein (z. B. gr, bl, ch, sh, th, tr).",
+          "Die Verbindung erscheint als grosse fette Ueberschrift oben am Poster.",
+          "Sechs bis acht Beispielwoerter werden mit Cartoon-Illustrationen automatisch erzeugt.",
+          "Generiere ein vertikales 4K-Cartoon-Phonics-Poster auf himmelblauem Hintergrund."
+        ],
+        "prompts": [
+          "'gr'-Konsonantenverbindung-Phonics-Poster (grape, green, grass, grin).",
+          "'sh'-Konsonantenverbindung-Lernposter mit 8 Beispielwoertern.",
+          "'tr'-Konsonantenverbindung-Phonics-Poster fuer junge Leser."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Medien-Wallpaper-Poster",
+    "description": "Erstelle ein stilisiertes, atmosphaerisches Wallpaper oder Poster fuer ein beliebiges Film-, Anime- oder TV-Universum, treu dem Originalstil.",
+    "title": "Nano Banana Prompt: Medien-Themen-Wallpaper-und-Poster-Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert ein hochaufloesendes stilisiertes Wallpaper oder Poster fuer {media_topic}. Die Komposition stellt ikonische Charaktere oder Szenen vor einen detailreichen, atmosphaerischen Hintergrund; der Titel erscheint in einer thematischen Schrift. Der Stil bleibt der Aesthetik des Originals treu — von der gemalten Studio-Ghibli-Optik bis zum Sitcom-Look von Friends — verstaerkt durch lebendige Farben und filmische Beleuchtung.",
+        "who": "Geeignet fuer Fans, Fanart-Creator, Dekomarken, Social-Media-Designer, Handy-Wallpaper-Accounts, Film- und Anime-Club-Organisatoren und Creator, die thematische Merchandise-Mockups erstellen.",
+        "how": [
+          "Gib in {media_topic} ein Medien-Universum ein (z. B. Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Ikonische Charaktere oder Szenen werden vor atmosphaerischem Hintergrund komponiert.",
+          "Der Titel erscheint in einer Schriftart, die zum Originalstil passt.",
+          "Generiere ein hochaufloesendes vertikales oder quadratisches Wallpaper-Poster."
+        ],
+        "prompts": [
+          "Studio-Ghibli-Stil Wallpaper-Poster fuer Mein Nachbar Totoro.",
+          "Ponyo-Wallpaper im originalen Aquarellstil.",
+          "Stilisiertes Friends-Poster fuer Fan-Dekoration."
+        ]
+      }
+    }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "AI Outfit Try-On Poster",
+    "description": "Erstellen Sie ein sauberes dreiteiliges Mode-Anprobe-Poster, das einen Referenzcharakter, eine flache Ansicht des gesamten Outfits und denselben Charakter zeigt, der das neue Outfit mit realistischer Passform und Beleuchtung trägt.",
+    "title": "Nano Banana Prompt: AI Outfit Try-On Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana, um ein dreiteiliges Mode-Anprobe-Poster auf einem sauberen Studiohintergrund zu erstellen. Das linke Panel zeigt das ursprüngliche Referenzcharakter-Porträt mit der Bezeichnung 'Charakter'; das mittlere Panel zeigt das gesamte Outfit (Kleidung, Schuhe, Accessoires) als flache Ansicht mit der Bezeichnung 'Outfit'; das rechte Panel zeigt denselben Charakter, der das neue Outfit mit konsistenter Beleuchtung, Pose und realistischer Passform trägt, mit der Bezeichnung 'Ergebnis' – Hochmodische Fotografie mit scharfen Details und kommerziälem Ästhetik.",
+        "who": "Geeignet für Modemarken, E-Commerce-Shops, persönliche Stylisten, Lookbook-Designer, Mode-Content-Ersteller, virtuelle Styling-Apps und alle, die ein Outfit an einem bestimmten Charakter visualisieren möchten, bevor sie produzieren oder kaufen.",
+        "how": [
+          "Geben Sie das Referenzcharakter-Porträt für das linke Panel an oder beschreiben Sie es.",
+          "Geben Sie das gesamte Outfit (Kleidung, Schuhe, Accessoires) an, das Sie im mittleren Panel als flache Ansicht zeigen möchten.",
+          "Die Vorlage rendert das rechte Panel mit demselben Charakter, der das Outfit trägt, mit passender Pose und Beleuchtung.",
+          "Erstellen Sie ein horizontales 4K dreiteiliges Mode-Anprobe-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Anprobe-Poster für ein lässiges Streetwear-Outfit (übergroßer Hoodie, baggy Jeans, Sneakers).",
+          "Erstellen Sie ein Anprobe-Poster für ein Business-Casual-Outfit (Blazer, Stoffhose, Loafers).",
+          "Probieren Sie ein Sommeroutfit (Leinenhemd, Shorts, Sandalen) am selben Charakter aus."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Chinesisches Zeichen Lernposter",
+    "description": "Erstellen Sie ein Daily Character (每日一字) Lernposter für jedes chinesische Zeichen mit Pinyin und 5-6 radialen Wortverzweigungen mit niedlichen Cartoon-Illustrationen.",
+    "title": "Nano Banana Prompt: Chinese Character Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales Bildungs-Poster 'Daily Character' (每日一字) für ein einzelnes chinesisches Zeichen. In der Mitte wird das große Zeichen mit seinem Pinyin angezeigt; 5-6 radiale Verzweigungen um die Mitte kombinieren gängige zusammengesetzte Wörter mit niedlichen Cartoon-Illustrationen und Pinyin-Labels – sauberer weißer Hintergrund, sanfter Aquarell- oder Cartoon-Kunststil, kinderfreundliche Bildungsästhetik.",
+        "who": "Geeignet für Mandarin-Lehrer, Chinesisch-Lernende, ESL/CSL-Pädagogen, Eltern, die Chinesisch unterrichten, Designer von Sprachlern-Apps und Content-Ersteller, die Druckmaterialien für das Chinesisch-Lernen für Klassenzimmer oder soziale Medien produzieren.",
+        "how": [
+          "Geben Sie ein Ziel-Chinesisches Zeichen ein (z.B. 山, 火, 木, 水, 日, 月).",
+          "Geben Sie das Pinyin für dieses Zeichen an (z.B. shān, huǒ, mù).",
+          "Das Poster legt automatisch den Titel 每日一字, das zentrale Zeichen mit Pinyin und 5-6 radiale zusammengesetzte Wortverzweigungen an.",
+          "Erstellen Sie ein vertikales 4K kinderfreundliches Lernposter für chinesische Zeichen."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Daily Character-Poster für 山 (shān) mit bergbezogenen zusammengesetzten Wörtern.",
+          "Erstellen Sie ein 火 (huǒ) Lernposter mit feuerbezogenen zusammengesetzten Wörtern und Illustrationen.",
+          "Erstellen Sie ein 水 (shuǐ) Daily Character-Poster mit wasserbezogenen Verzweigungen."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Chinesische Verbgegensätze Infografik",
+    "description": "Erstellen Sie ein Bildungsinfografik-Poster mit gegensätzlichen chinesischen Verb-Paaren mit Pinyin, englischen Erklärungen und kontrastierenden Cartoon-Illustrationen in horizontalen Reihen.",
+    "title": "Nano Banana Prompt: Chinese Verb Opposites Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein horizontales Bildungs-Infografik-Poster mit gegensätzlichen chinesischen Verben. Jede Reihe kombiniert zwei gegensätzliche Verben nebeneinander: links und rechts wird das Verb mit Pinyin und englischer Erklärung angezeigt, in der Mitte wird eine Cartoon-Illustration der gegensätzlichen Aktionen gezeigt, und ein farbiger Pfeil oder ein Sechseck verbindet das Paar – sauberer heller Hintergrund, freundliche Cartoon-Illustrationen, sanfte Pastellfarben.",
+        "who": "Geeignet für Mandarin-Lehrer, Chinesisch-Lernende, ESL/CSL-Pädagogen, Content-Ersteller, die Vokabel-Druckmaterialien erstellen, zweisprachige Klassenzimmer und Social-Media-Konten, die sich auf das Sprachenlernen konzentrieren.",
+        "how": [
+          "Geben Sie das Thema der Grafik ein (z.B. 'Chinesische Verbgegensätze', 'Grundlegende chinesische Antonym-Verben').",
+          "Die Infografik legt automatisch eine Reihe horizontaler Reihen von gegensätzlichen Verb-Paaren an.",
+          "Jede Reihe kombiniert linke und rechte Verben mit Pinyin und englischen Erklärungen sowie einer mittleren kontrastierenden Illustration.",
+          "Erstellen Sie ein horizontales 4K Bildungs-Poster mit Verbgegensätzen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik 'Chinesische Verbgegensätze' mit 8 gängigen Verb-Paaren.",
+          "Erstellen Sie ein Lernplakat 'Grundlegende chinesische Antonym-Verben' für Anfänger.",
+          "Erstellen Sie eine Infografik zu 'Alltäglichen chinesischen Aktionswörtern' mit Gegensätzen."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "MBTI Beziehung Infografik",
+    "description": "Erstellen Sie eine lebendige nebeneinander stehende MBTI-Paar-Infografik mit Eigenschaften, Zitaten und einer Kompatibilitätszusammenfassung für zwei MBTI-Typen.",
+    "title": "Nano Banana Prompt: MBTI Relationship Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebendiges horizontales Infografik-Poster, das zwei MBTI-Typen in einer Beziehung vergleicht. Zwei Low-Poly-Cartoon-Charaktere in ihren charakteristischen Farben stehen in der Mitte; linke und rechte Panels zeigen die Eigenschaften und Zitate jedes Typs mit passenden Symbolen; ein unterer Abschnitt gibt eine Kompatibilitätszusammenfassung mit Aufzählungspunkten und Emojis – sauberer weißer Hintergrund, bunte Low-Poly geometrische Kunst, freundlicher Bildungsstil.",
+        "who": "Geeignet für MBTI-Content-Ersteller, Persönlichkeitsenthusiasten, Marketingteams von Dating-Apps, Beziehungscoaches, Social-Media-Konten, die sich auf Persönlichkeiten konzentrieren, und alle, die teilbare MBTI-Paar-Inhalte erstellen.",
+        "how": [
+          "Geben Sie den ersten MBTI-Typ ein (z.B. INTJ, ENFP, ISFJ).",
+          "Geben Sie den zweiten MBTI-Typ ein, mit dem verglichen werden soll.",
+          "Das Poster legt automatisch zwei Cartoon-Charaktere, Seitenpanels mit Eigenschaften und Zitaten sowie eine untere Kompatibilitätszusammenfassung an.",
+          "Erstellen Sie eine horizontale 4K bunte Low-Poly-Beziehungsinfografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik über die Beziehung zwischen INTJ und ENFP mit Eigenschaften und Kompatibilitätszusammenfassung.",
+          "Erstellen Sie ein Plakat zur MBTI-Paar-Kompatibilität zwischen ISFJ und ESTP.",
+          "Erstellen Sie eine Infografik über die Beziehung zwischen INFP und ENTJ mit Zitaten und Kompatibilitätsanalyse."
+        ]
+      }
+    }
+  },
+  "template-ethnic-costume-deconstruction-board": {
+    "category": "Ethnisches Kostüm Dekonstruktionsbrett",
+    "description": "Erstellen Sie ein hochmodisches Dekonstruktions-Flat-Lay-Brett für das traditionelle Kostüm einer ethnischen Gruppe, mit einem Ganzkörperporträt und beschrifteten Komponenten auf beiden Seiten.",
+    "title": "Nano Banana Prompt: Ethnisches Kostüm Dekonstruktionsbrett Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage verwendet Nano Banana, um ein professionelles kulturelles Erbe Flat-Lay-Brett für das traditionelle Kostüm einer gewählten ethnischen Gruppe zu erstellen. In der Mitte befindet sich ein Ganzkörperporträt eines Modells, das das vollständige Kostüm vor einem dunklen Holz-Hintergrund trägt; die linken und rechten Schienen dekonstruiert den Look in silberne Schmuckstücke, bestickte Textilien, Accessoires und kulturelle Artefakte, die jeweils mit chinesischen Zeichen beschriftet sind. Hochmodische Studiofotografie-Ästhetik mit warmem dramatischem Licht, scharfen Details und reichen Texturen.",
+        "who": "Geeignet für Marken des kulturellen Erbes, Museums- und Ausstellungsdesigner, Mode-Redakteure, ethnografische Forscher, Reiseverlage, Kostümdesigner und Kreatoren, die Inhalte über traditionelle Kleidung und Minderheitenkulturen erstellen.",
+        "how": [
+          "Geben Sie den Namen einer ethnischen Gruppe ein (z.B. Tibeter, Miao, Bai, Yi, Dai, Mongolen).",
+          "Die Vorlage legt automatisch ein zentrales Ganzkörperporträt des Kostüms an.",
+          "Links und rechts wird das Kostüm in beschrifteten Schmuck, Textilien und Accessoires dekonstruiert.",
+          "Erstellen Sie ein vertikales 4K kulturelles Dekonstruktionsbrett im hochmodischen Studio-Stil."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Dekonstruktionsbrett für ein tibetisches traditionelles Kostüm mit beschrifteten silbernen Schmuckstücken.",
+          "Erstellen Sie ein Flat-Lay für ein traditionelles Miao-Kostüm mit beschrifteten bestickten Textilien.",
+          "Erstellen Sie ein Dekonstruktionsbrett für ein mongolisches Kostüm mit hervorgehobenen kulturellen Accessoires."
+        ]
+      }
+    }
+  },
+  "template-gardening-how-to-infographic": {
+    "category": "Gartenbau Anleitung Infografik",
+    "description": "Erstellen Sie eine saubere Schritt-für-Schritt-Gartenbau-Infografik mit dem Titel 'WIE MAN [pflanze] ANBAUT' mit sechs nummerierten Fotostufen und hilfreichen Symbolen für jede Pflanze.",
+    "title": "Nano Banana Prompt: Gartenbau Anleitung Infografik Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine vertikale Bildungs-Gartenbau-Infografik mit dem Titel 'WIE MAN [pflanze] ANBAUT'. Ein fetter Haupttitel steht oben mit einem Pflanzensubtitel; ein 2x3-Raster mit sechs nummerierten Schritten füllt den Körper, jeder mit einer realistischen Fotoillustration der Gartenaktion, einem klaren Schritt-Titel, beschreibendem Text und hilfreichen kleinen Symbolen. Sauberer weißer Hintergrund, scharfe Produktfotografie-Ästhetik, professioneller Bildungsstil.",
+        "who": "Geeignet für Gartenblogger, Marken für urbanes Gärtnern, Einzelhändler für Samen und Werkzeuge, Content Creator für nachhaltiges Leben, Bildungsanbieter für Haus und Garten, Schulen mit Gartenprogrammen und Eltern, die Kindern den Anbau von Lebensmitteln beibringen.",
+        "how": [
+          "Geben Sie einen Pflanzennamen ein (z.B. Tomaten, Paprika, Salat, Erdbeeren).",
+          "Die Vorlage legt automatisch ein 2x3-Raster mit sechs nummerierten Wachstumsstufen an.",
+          "Jede Zelle kombiniert ein Foto der Aktion mit einem Schritt-Titel, Anweisungen und Symbolen.",
+          "Erstellen Sie eine vertikale 4K druckbare Gartenbau-Anleitungs-Infografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik 'WIE MAN Tomaten ANBAUT' mit sechs nummerierten Fotostufen.",
+          "Erstellen Sie ein Plakat für den Gartenführer 'WIE MAN Paprika ANBAUT'.",
+          "Erstellen Sie eine Schritt-für-Schritt-Infografik 'WIE MAN Erdbeeren ANBAUT'."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-watercolor-infographic": {
+    "category": "Lifestyle Aquarell Infografik",
+    "description": "Erstellen Sie eine warme, verspielte Aquarell-Lifestyle-Infografik zu jedem Thema mit einem nummerierten Titel, einer sanften zentralen Illustration und Tipp-Symbolen auf einem strukturierten Papierhintergrund.",
+    "title": "Nano Banana Prompt: Lifestyle Aquarell Infografik Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein vertikales, warmtoniges Aquarell-Infografikplakat zu einem gewählten Lifestyle-Thema. Oben befindet sich ein Banner mit einem sanften Zitat über einem großen nummerierten Titel (z.B. '10 Ideen zur Selbstfürsorge'); eine sanfte Aquarell-Zentralillustration verankert die Komposition, umgeben von kleineren Aquarellsymbolen, die jeweils mit einem kurzen Tipp-Label kombiniert sind. Heller beige strukturierter Papierhintergrund mit Herzen, Sternen und Konfetti-Akzenten in einer gemütlichen Selbstfürsorge-Ästhetik.",
+        "who": "Geeignet für Wellness-Kreatoren, Marken für Selbstfürsorge, Achtsamkeits-Coaches, Designer von Journalen und Planern, Pinterest-Kreatoren, Autoren für psychische Gesundheit und Content Creator, die gemütliche druckbare Lifestyle-Inhalte erstellen.",
+        "how": [
+          "Geben Sie das Thema der Infografik ein (z.B. 'Ideen zur Selbstfürsorge', 'Ideen zur Morgenroutine').",
+          "Geben Sie die Anzahl der Tipps ein, die Sie auflisten möchten (z.B. 8, 10, 12).",
+          "Die Vorlage erstellt ein nummeriertes Aquarellplakat mit zentraler Illustration und Tipp-Symbolen.",
+          "Erstellen Sie eine vertikale 4K gemütliche Aquarell-Lifestyle-Infografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Aquarell-Infografik '10 Ideen zur Selbstfürsorge' mit gemütlichen Tipps.",
+          "Erstellen Sie ein Plakat '8 Ideen zur Morgenroutine' im Aquarell-Lifestyle-Stil.",
+          "Erstellen Sie eine warme Aquarell-Infografik '12 Achtsamkeitspraktiken'."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Infografik zum Vergleich von Animationsstudios",
+    "description": "Erstellen Sie ein lebendiges Poster 'ANIME STUDIO SHOWDOWN', das zwei Animationsstudios nebeneinander vergleicht, mit Logos, Gründungsjahr, Kunststil, bemerkenswerten Werken und Vermächtnis.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zum Vergleich von Animationsstudios | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebendiges Infografik-Poster 'ANIME STUDIO SHOWDOWN COMPARISON'. Ein Titelbanner befindet sich oben; der Körper ist links/rechts zwischen den beiden gewählten Studios aufgeteilt, wobei jede Seite das Studio-Logo, Gründungsjahr, künstlerischen Stil mit Beispielkunst, bemerkenswerte Werke mit Bildern und Vermächtnis/Einfluss mit Symbolen abdeckt. Der Hintergrund verwendet eine Holzschreibtischtextur mit anime-inspirierten Kritzeleien und Figuren für eine gemütliche Fandom-Ästhetik, mit unterschiedlichen Farbpaletten pro Studio.",
+        "who": "Geeignet für Anime-Fans, Animationspublikationen, Fan-Art-Kreatoren, Lehrer für Animationsgeschichte, Social-Media-Accounts, die sich auf Anime konzentrieren, und Content-Ersteller, die teilbare Studioübersichten erstellen.",
+        "how": [
+          "Geben Sie den Namen des ersten Studios ein (z. B. Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Geben Sie den Namen des zweiten Studios ein, um einen Vergleich zu ziehen (z. B. MAPPA, Ufotable, DreamWorks).",
+          "Das Poster wird automatisch mit einer links/rechts Aufteilung mit Logos, Gründungsjahr, Kunststil, bemerkenswerten Werken und Vermächtnis angeordnet.",
+          "Erstellen Sie eine vertikale 4K helle Informationsinfografik zum Vergleich."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zum Vergleich von Studio Ghibli vs MAPPA.",
+          "Erstellen Sie ein Poster zum Vergleich von Pixar vs DreamWorks Animationsstudios.",
+          "Erstellen Sie eine Infografik zum Vergleich von Kyoto Animation vs Ufotable Studios."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "Infografik zur Geschichtszeitleiste",
+    "description": "Erstellen Sie ein visuell beeindruckendes Evolutionszeitleisten-Poster zu jedem historischen Thema mit einer fließenden zentralen Zeitleiste, Meilensteinereignissen, Daten, Beschreibungen und thematischen Illustrationen.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zur Geschichtszeitleiste | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine visuell beeindruckende vertikale Infografik mit dem Titel '[Thema]: Evolution durch die Zeit'. Eine zentrale fließende Zeitleiste mit nummerierten jährlichen Meilensteinen verläuft über die gesamte Länge des Posters; jeder Meilenstein zeigt ein wichtiges Ereignis, Datum, kurze Beschreibung und eine relevante Illustration. Die Farbpalette, Symbole und das Hintergrunddesign passen sich dem gewählten Thema (retro, futuristisch, vintage usw.) für eine konsistente Designsprache an.",
+        "who": "Geeignet für Geschichtslehrer, Museums- und Ausstellungsdesigner, Content-Marketer, Publikationen zur Markengeschichte, populärwissenschaftliche Autoren, Social-Media-Pädagogen und Kreatoren, die teilbare Geschichts-Poster erstellen.",
+        "how": [
+          "Geben Sie ein Zeitleistenthema ein (z. B. 'Geschichte von Apple Inc.', 'Evolution der Videospiele', 'Geschichte der Fotografie').",
+          "Die Infografik wird automatisch mit einer zentralen fließenden Zeitleiste und nummerierten Meilensteinen angeordnet.",
+          "Jeder Meilenstein zeigt ein wichtiges Ereignis, Datum, kurze Beschreibung und thematische Illustration.",
+          "Erstellen Sie ein vertikales 4K thematisches Evolutionszeitleisten-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Zeitleiste 'Geschichte von Apple Inc.: Evolution durch die Zeit'.",
+          "Erstellen Sie ein Poster zur Geschichtszeitleiste 'Evolution der Videospiele'.",
+          "Erstellen Sie eine Infografik zur Evolutionszeitleiste 'Weltraumforschung' mit Meilensteinereignissen."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "Dann vs Jetzt Vergleichsinfografik",
+    "description": "Erstellen Sie ein sauberes THEN-VS-NOW Vergleichs-Poster zu jedem Thema, mit einem dreispaltigen Tisch, der Vintage- und moderne Äquivalente mit realistischen Fotos vergleicht.",
+    "title": "Nano Banana Prompt: Generator für Dann vs Jetzt Vergleichsinfografiken | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine klare vertikale Vergleichsinfografik mit dem Titel '[Thema] DANN VS JETZT'. Ein Titelthema befindet sich oben; der Körper ist ein dreispaltiger Tisch mit Kategorien / Dann / Jetzt, wobei jede Zeile ein Vintage-Produkt links und sein modernes Äquivalent rechts mit realistischen Fotos zeigt. Der Hintergrund und die Symbole passen zum Thema für eine nostalgische, aber moderne Ästhetik.",
+        "who": "Geeignet für Nostalgie-Content-Ersteller, retrospektive Publikationen, Markenmarketer, die die Produktentwicklung zeigen, Bildungsseiten und Social-Media-Accounts, die sich auf generationsübergreifende Vergleiche konzentrieren.",
+        "how": [
+          "Geben Sie ein Vergleichsthema ein (z. B. 'Kindersnacks', 'Unterhaltung', 'Schulbedarf').",
+          "Das Poster wird automatisch mit einem dreispaltigen Tisch für Kategorie / Dann / Jetzt angeordnet.",
+          "Jede Zeile kombiniert einen Vintage-Artikel links mit seinem modernen Äquivalent rechts mit realistischen Fotos.",
+          "Erstellen Sie eine vertikale 4K saubere nostalgische-vs-moderne Vergleichsinfografik."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik 'Kindersnacks Dann vs Jetzt'.",
+          "Erstellen Sie ein Nostalgie-Vergleichs-Poster 'Unterhaltung Dann vs Jetzt'.",
+          "Erstellen Sie eine Infografik 'Schulbedarf Dann vs Jetzt'."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Infografik zur Reisepackliste",
+    "description": "Erstellen Sie ein lebendiges Packleitfaden-Poster für jedes Reiseziel, jede Anzahl von Tagen und Geschlechterfokus mit Handgepäckinhalten, Essentials, Outfit-Ideen, Must-Haves und Profi-Tipps.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zur Reisepackliste | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein lebendiges Packleitfaden-Poster, das auf ein Reiseziel, die Reisedauer und den Geschlechterfokus zugeschnitten ist. Das Titelbanner lautet '[N]-TAG [Ziel] Packliste' über reisebezogenen Grafiken; der Körper behandelt 'Was Sie in einem Handgepäck unterbringen können', 'Pack-Essentials', '[N]-Tage Outfit-Ideen', 'Zusätzliche Must-Haves' und 'Profi-Tipps' – jeder Abschnitt verwendet realistische Produktfotos mit klaren Beschriftungen in einer koordinierten Themenpalette.",
+        "who": "Geeignet für Reiseblogger, Reiseplaner, Lifestyle-Kreatoren, Einzelhändler für Reiseausrüstung, Designer von Packlisten-Apps und Content-Ersteller, die zielgerichtete, teilbare Leitfäden erstellen.",
+        "how": [
+          "Geben Sie das Reiseziel ein (z. B. 'Strandurlaub', 'Wanderabenteuer', 'Geschäftsreise').",
+          "Geben Sie die Anzahl der Tage ein (z. B. '3-Tage', '5-Tage', '7-Tage').",
+          "Geben Sie den Geschlechterfokus ein (z. B. 'Damen', 'Herren', 'Unisex').",
+          "Erstellen Sie ein vertikales 4K helles thematisches Packleitfaden-Poster."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Packliste für Damen für einen 5-Tage Strandurlaub.",
+          "Erstellen Sie ein Poster zur Packliste für Herren für ein 7-Tage Wanderabenteuer.",
+          "Erstellen Sie eine Infografik zur Packliste für Unisex für einen 3-Tage Wochenendausflug."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Infografik zur Herkunft von Wörtern",
+    "description": "Erstellen Sie eine lehrreiche Weltkarten-Infografik zu jedem Thema, die Wörter zeigt, die durch farbige Linien mit ihren Herkunftsländern verbunden sind, mit Etymologien und thematischen Symbolen.",
+    "title": "Nano Banana Prompt: Generator für Infografiken zur Herkunft von Wörtern | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine lehrreiche horizontale Infografik mit dem Titel 'WORTHERKUNFTEN: [Thema]'. Eine vereinfachte Weltkarte befindet sich in der Mitte; Wörter sind über die Karte verteilt und durch farbige Linien mit ihren Herkunftsländern verbunden, die jeweils mit der Landesflagge gekennzeichnet sind. Jedes Wort ist mit seiner Etymologie und einer kurzen Bedeutung sowie einem kleinen thematischen Symbol versehen, in einem sauberen modernen bunten Pastell-Design.",
+        "who": "Geeignet für Sprachlehrer, Etymologie-Enthusiasten, ESL/CSL-Pädagogen, Linguistik-Autoren, Designer von Vokabel-Lern-Apps und Content-Ersteller, die teilbare Etymologie-Infografiken erstellen.",
+        "how": [
+          "Geben Sie das Thema ein (z. B. 'Essen & Küche', 'Tiere & Natur', 'Wissenschaft & Technologie').",
+          "Die Infografik platziert automatisch thematische Wörter auf einer Weltkarte mit Herkunftslinien und Flaggen.",
+          "Jedes Wort ist mit Etymologie, kurzer Bedeutung und einem thematischen Symbol versehen.",
+          "Erstellen Sie eine horizontale 4K lehrreiche Infografik zur Herkunft von Wörtern."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zur Herkunft von Wörtern 'Essen & Küche'.",
+          "Erstellen Sie ein Poster zur Herkunft von Wörtern 'Tiere & Natur'.",
+          "Erstellen Sie eine Infografik zur Herkunft von Wörtern 'Wissenschaft & Technologie'."
         ]
       }
     }

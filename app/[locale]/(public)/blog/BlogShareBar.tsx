@@ -7,7 +7,7 @@ export default function BlogShareBar() {
   const pathname = usePathname();
 
   // Strip locale prefix: /en/blog/... → /blog/...
-  const path = pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, "");
+  const path = pathname.replace(/^\/[a-z]{2}(-[A-Z]{2})?(?=\/|$)/, "");
 
   // Only show on individual blog posts, not the blog index
   if (path === "/blog" || path === "/blog/") return null;

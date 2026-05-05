@@ -83,50 +83,31 @@ function UseCaseBarItem({ slug }: { slug: string }) {
 
 export default function EntryBar({ locale, className }: Props) {
   const t = useTranslations("entryBar");
-  const pathname = usePathname();
-
-  const isBlogPage =
-    pathname === "/blog" ||
-    pathname.startsWith("/blog/") ||
-    pathname === `/${locale}/blog` ||
-    pathname.startsWith(`/${locale}/blog/`);
-
-  if (isBlogPage) return null;
 
   return (
-    <div className="hidden lg:block sticky top-0 z-40 bg-[#FDFDFD]/95 px-4 pt-3 pb-4 backdrop-blur md:px-6 lg:px-8">
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10">
-        <div className="w-full max-w-[1080px]">
-          <section
-            className={[
-              "w-full rounded-2xl border border-neutral-200 bg-white px-4 py-4 shadow-sm",
-              className ?? "",
-            ].join(" ")}
-            aria-label={t("question")}
-          >
-            <div className="flex flex-col gap-3">
-              <div className="text-sm font-medium text-neutral-800 sm:text-base">
-                {t("question")}
-              </div>
+    <section
+      className={[
+        "w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 shadow-sm",
+        className ?? "",
+      ].join(" ")}
+      aria-label={t("question")}
+    >
+      <div className="flex flex-col gap-2">
+        <div className="flex flex-wrap gap-2">
+          {ENTRY_BAR_ITEMS.map((item) => (
+            <EntryBarItem key={item.id} item={item} locale={locale} />
+          ))}
+        </div>
 
-              <div className="flex flex-wrap gap-2">
-                {ENTRY_BAR_ITEMS.map((item) => (
-                  <EntryBarItem key={item.id} item={item} locale={locale} />
-                ))}
-              </div>
-
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm font-medium text-neutral-800">
-                  {t("useCasesQuestion")}
-                </span>
-                {USE_CASES.map((uc) => (
-                  <UseCaseBarItem key={uc.slug} slug={uc.slug} />
-                ))}
-              </div>
-            </div>
-          </section>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm font-medium text-neutral-800">
+            {t("useCasesQuestion")}
+          </span>
+          {USE_CASES.map((uc) => (
+            <UseCaseBarItem key={uc.slug} slug={uc.slug} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

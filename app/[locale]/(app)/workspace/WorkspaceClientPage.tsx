@@ -14,59 +14,11 @@ import { formatDuration } from "@/lib/format_utils";
 import { projectService } from "@/services/projects";
 import { authService } from "@/services/auth";
 import GalleryGrid from "../../_componentForPage/GalleryGrid";
-import { toSlug } from "@/lib/nano_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import nanoImages from "@/public/data/nano_inspiration.json";
 import { CDN_BASE } from "@/lib/constants";
+import { resolveNanoIds, type ResolvedCard } from "./actions";
 
 type Tab = "generated" | "saved";
-
-type ResolvedCard = {
-  id: string;
-  image_url: string;
-  preview_image_url: string;
-  title: string;
-  slug: string;
-  locale: string;
-};
-
-function resolveIds(ids: string[], locale: string): ResolvedCard[] {
-  const imageMap = new Map((nanoImages as any[]).map((r) => [r.id, r]));
-
-  // template ID → first image (for template-level saves from NanoInspirationCard)
-  const templateFirstImageMap = new Map<string, any>();
-  for (const r of nanoImages as any[]) {
-    if (!templateFirstImageMap.has(r.template_id)) {
-      templateFirstImageMap.set(r.template_id, r);
-    }
-  }
-
-  return ids
-    .map((id) => {
-      // Case 1: compound "templateId:imageId" from ExampleImagesGrid
-      let r: any = null;
-      if (id.includes(":")) {
-        const imageId = id.split(":").slice(1).join(":");
-        r = imageMap.get(imageId);
-      }
-      // Case 2: plain image ID
-      if (!r) r = imageMap.get(id);
-      // Case 3: template ID → first image
-      if (!r) r = templateFirstImageMap.get(id);
-      if (!r) return null;
-
-      const loc = r.locales?.[locale] ?? r.locales?.en ?? r.locales?.zh ?? {};
-      return {
-        id: r.id,
-        image_url: r.asset.image_url,
-        preview_image_url: r.asset.preview_image_url,
-        title: loc.title || loc.category || id,
-        slug: toSlug(r.template_id),
-        locale,
-      };
-    })
-    .filter(Boolean) as ResolvedCard[];
-}
 
 function ImageCard({ card, locale }: { card: ResolvedCard; locale: string }) {
   return (
@@ -116,9 +68,25 @@ export default function WorkspaceClient({ locale }: { locale: string }) {
 
   const savedIds: string[] = (user as any)?.saved_content_ids ?? [];
   const copiedIds: string[] = (user as any)?.copied_content_ids ?? [];
-  // Merge saved + copied, deduped, saved items first
-  const mergedIds = [...new Set([...savedIds, ...copiedIds])];
-  const savedCards = resolveIds(mergedIds, locale);
+  // Merge saved + copied, deduped, saved items first.
+  // Stable key for the effect dep so we don't refetch on every render.
+  const mergedIdsKey = [...new Set([...savedIds, ...copiedIds])].join("|");
+
+  const [savedCards, setSavedCards] = useState<ResolvedCard[]>([]);
+  useEffect(() => {
+    const ids = mergedIdsKey ? mergedIdsKey.split("|") : [];
+    if (ids.length === 0) {
+      setSavedCards([]);
+      return;
+    }
+    let cancelled = false;
+    resolveNanoIds(ids, locale).then((cards) => {
+      if (!cancelled) setSavedCards(cards);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [mergedIdsKey, locale]);
 
   const refreshProjects = useCallback(async () => {
     try {

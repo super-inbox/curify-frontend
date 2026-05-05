@@ -6,7 +6,7 @@ import { PageLocale } from "@/lib/locale_utils";
 export type TemplateParameter = {
   name: string;
   label: string;
-  type: "text" | "textarea" | "select";
+  type: "text" | "textarea" | "select" | "language_pair";
   placeholder?: string;
   options?: string[];
 };
@@ -39,6 +39,8 @@ export type RawNanoImageRecord = {
   asset: {
     image_url: string;
     preview_image_url: string;
+    audio_url?: string;
+    video_url?: string;
   };
 
   params: Record<string, any>;
@@ -71,6 +73,8 @@ export type ImageView = {
   params: Record<string, any>;
   image_url: string;
   preview_image_url?: string;
+  audio_url?: string;
+  video_url?: string;
   rank_score?: number;
 };
 

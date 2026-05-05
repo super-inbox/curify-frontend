@@ -404,8 +404,8 @@
     },
     "nature": {
       "displayName": "Doğa",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Doğa",
-      "description": "Hayvanlar, bitkiler, manzaralar, ekosistemler ve bilim odaklı görsel hikaye anlatımı içeren doğa ilhamlı AI görselleri, şablonlar ve ilham arayın."
+      "title": "Doğa Görsel Şablonları | Curify AI",
+      "description": "Doğadan ilham alan AI görsel şablonlarını keşfedin — manzaralar, bitkiler, ekosistemler ve hava olayları."
     },
     "travel": {
       "displayName": "Seyahat",
@@ -489,8 +489,8 @@
     },
     "weather": {
       "displayName": "Hava Durumu",
-      "title": "Hava Durumu Görsel İstemleri, Şablonlar ve İlham",
-      "description": "Mevsimler, iklim, doğa olayları ve atmosferik hikaye anlatımı için hava durumu temalı AI görseller ve şablonlar keşfedin."
+      "title": "Hava Durumu Görsel Şablonları | Curify AI",
+      "description": "Hava durumu hakkında AI görsel şablonları — şimşek, gökkuşağı, kar, fırtına ve atmosfer bilimi."
     },
     "interior": {
       "displayName": "Ev Dekorasyonu",
@@ -766,6 +766,106 @@
       "displayName": "Portekiz",
       "title": "Portekiz Seyahat Görsel Şablonları | Curify AI",
       "description": "Portekiz'den ilham alan AI görsel şablonlarını keşfedin — seyahat haritaları, Pastel de Nata, Lizbon simgeleri ve Cristiano Ronaldo."
+    },
+    "animals": {
+      "displayName": "Hayvanlar",
+      "title": "Hayvan Görsel Şablonları | Curify AI",
+      "description": "Hayvan temalı AI görsel şablonlarını keşfedin — yaban hayatı çizimleri, evcil hayvan portreleri ve eğitim kartları."
+    },
+    "biology": {
+      "displayName": "Biyoloji",
+      "title": "Biyoloji Görsel Şablonları | Curify AI",
+      "description": "Biyoloji için AI görsel şablonları — hücre diyagramları, insan anatomisi, ekosistemler ve eğitim kartları."
+    },
+    "space": {
+      "displayName": "Uzay",
+      "title": "Uzay & Astronomi Görsel Şablonları | Curify AI",
+      "description": "Uzay hakkında AI görsel şablonları — gezegenler, galaksiler, güneş sistemleri ve astronomik olaylar."
+    },
+    "personality": {
+      "displayName": "Kişilik",
+      "title": "MBTI Kişilik Tipleri — Görsel Şablonlar ve Karakter Kartları",
+      "description": "Ghibli, Marvel, Breaking Bad, Friends ve spor evrenlerinde AI tarafından üretilen karakter kartları aracılığıyla 16 MBTI kişilik tipini keşfedin."
+    },
+    "mbti-intj": {
+      "displayName": "INTJ",
+      "title": "INTJ — Yalnız Stratejist | MBTI Karakter Kartları",
+      "description": "Uzun vadeli planları gerçeğe dönüştüren nadir vizyonerler. Ghibli, Marvel, Breaking Bad ve daha fazlasındaki INTJ karakterlerini keşfedin."
+    },
+    "mbti-intp": {
+      "displayName": "INTP",
+      "title": "INTP — Fikirlerin Sessiz Mimar | MBTI Karakter Kartları",
+      "description": "Karmaşık sistemleri analiz etmeyi seven sonsuz meraklı düşünürler. Ghibli, Marvel ve daha fazlasındaki INTP karakterlerini keşfedin."
+    },
+    "mbti-entj": {
+      "displayName": "ENTJ",
+      "title": "ENTJ — Durdurulamaz Komutan | MBTI Karakter Kartları",
+      "description": "Verimsizliği gören ve onu düzelten doğal liderler. Marvel, Breaking Bad ve spor evrenlerindeki ENTJ karakterlerini keşfedin."
+    },
+    "mbti-entp": {
+      "displayName": "ENTP",
+      "title": "ENTP — Şeytanın Avukatı | MBTI Karakter Kartları",
+      "description": "Her varsayımı sorgulamayı seven yaratıcı tartışmacılar. Ghibli, Marvel, Friends ve daha fazlasındaki ENTP karakterlerini keşfedin."
+    },
+    "mbti-infj": {
+      "displayName": "INFJ",
+      "title": "INFJ — Vizyoner Şifacı | MBTI Karakter Kartları",
+      "description": "Nadir bir amaç netliğine sahip, derin empatik idealistler. Ghibli, Marvel, Friends ve spor evrenlerindeki INFJ karakterlerini keşfedin."
+    },
+    "mbti-infp": {
+      "displayName": "INFP",
+      "title": "INFP — Dünyaları Değiştiren Rüya Gören | MBTI Karakter Kartları",
+      "description": "Zengin içsel bir ahlaki pusula tarafından yönlendirilen sessiz tutkulu ruhlar. Ghibli, Marvel, Friends ve daha fazlasındaki INFP karakterlerini keşfedin."
+    },
+    "mbti-enfj": {
+      "displayName": "ENFJ",
+      "title": "ENFJ — Manyetik Hikaye Anlatıcı | MBTI Karakter Kartları",
+      "description": "Odanın içinde sadece bulunarak diğerlerine ilham veren karizmatik ve empatik liderler. Breaking Bad, Marvel ve spor dünyalarındaki ENFJ karakterlerini keşfedin."
+    },
+    "mbti-enfp": {
+      "displayName": "ENFP",
+      "title": "ENFP — Durmaksızın Güneş Işığı | MBTI Karakter Kartları",
+      "description": "Son derece hevesli ve sonsuz meraklı. Ghibli, Marvel, Breaking Bad ve daha fazlasındaki ENFP karakterlerini keşfedin."
+    },
+    "mbti-istj": {
+      "displayName": "ISTJ",
+      "title": "ISTJ — Sarsılmaz Kaya | MBTI Karakter Kartları",
+      "description": "Güvenilir ve metodik, kalıcı olan şeyler inşa ederler. Breaking Bad, Marvel ve spor evrenlerindeki ISTJ karakterlerini keşfedin."
+    },
+    "mbti-isfj": {
+      "displayName": "ISFJ",
+      "title": "ISFJ — Sessiz Koruyucu | MBTI Karakter Kartları",
+      "description": "Eylemlerle sevgi gösteren sıcak koruyucular. Ghibli, Marvel, Breaking Bad ve Friends'teki ISFJ karakterlerini keşfedin."
+    },
+    "mbti-estj": {
+      "displayName": "ESTJ",
+      "title": "ESTJ — Düzenin Mimar | MBTI Karakter Kartları",
+      "description": "Net kurallar ve iyi tanımlı rollerle büyüyen pratik organizatörler. Ghibli, Breaking Bad ve Friends'teki ESTJ karakterlerini keşfedin."
+    },
+    "mbti-esfj": {
+      "displayName": "ESFJ",
+      "title": "ESFJ — Herkesin İhtiyaç Duyduğu Sıcaklık | MBTI Karakter Kartları",
+      "description": "Doğum günlerini hatırlayan, ruh hallerini fark eden ve herkesi bir arada tutan topluluk kurucuları. Breaking Bad, Friends ve spor dünyalarındaki ESFJ karakterlerini keşfedin."
+    },
+    "mbti-istp": {
+      "displayName": "ISTP",
+      "title": "ISTP — Soğukkanlı Bağımsız | MBTI Karakter Kartları",
+      "description": "Herhangi bir kriz anında sakin, pratik ve etkili. Ghibli, Marvel ve spor evrenlerindeki ISTP karakterlerini keşfedin."
+    },
+    "mbti-isfp": {
+      "displayName": "ISFP",
+      "title": "ISFP — Gizli Sanatçı | MBTI Karakter Kartları",
+      "description": "Nazik ve son derece yaratıcı, ürettikleriyle duyguların dünyasını ifade ederler. Ghibli, Marvel, Breaking Bad ve spordaki ISFP karakterlerini keşfedin."
+    },
+    "mbti-estp": {
+      "displayName": "ESTP",
+      "title": "ESTP — Heyecan Arayan | MBTI Karakter Kartları",
+      "description": "Cesur, hızlı düşünen ve aksiyon odaklı. Breaking Bad, Marvel ve spor evrenlerindeki ESTP karakterlerini keşfedin."
+    },
+    "mbti-esfp": {
+      "displayName": "ESFP",
+      "title": "ESFP — Her Ortamın Canıdır | MBTI Karakter Kartları",
+      "description": "Gittikleri her yere enerji getiren spontane eğlenceliler. Ghibli, Breaking Bad, Friends ve spor dünyalarındaki ESFP karakterlerini keşfedin."
     }
   },
   "topicPage": {

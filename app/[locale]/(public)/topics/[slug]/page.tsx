@@ -22,12 +22,17 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
 
+// Cache topic listing pages for 4 hours with ISR — keeps the
+// gallery / prompt fetches off the hot path on every request.
+export const revalidate = 14400;
+
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
 import blogsData from "@/public/data/blogs.json";
 import { nanoPromptsService } from "@/services/nanoPrompts";
 import type { NanoPromptBase } from "@/types/nanoPrompts";
 import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
+import MBTIQuizCapsule from "@/app/[locale]/_components/MBTIQuizCapsule";
 import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
 
 export const dynamic = "force-dynamic";
@@ -231,11 +236,14 @@ export default async function Page({ params }: Props) {
         </div>
       </section>
 
+      {tier1Ancestor === 'character' && (
+        <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
+          <MBTIQuizCapsule />
+        </section>
+      )}
+
       {gridItems.length > 0 && (
         <section className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 mb-4">
-            {exampleImagesHeading}
-          </h2>
           <ExampleImagesGrid items={gridItems} locale={localeStr} maxRows={3} />
         </section>
       )}

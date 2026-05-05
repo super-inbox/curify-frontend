@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Bookmark, Download, Sparkles } from "lucide-react";
+import { Bookmark, Download, Play, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import { toSlug } from "@/lib/nano_utils";
-import { useClickTracking, useTracking } from "@/services/useTracking";
+import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 
@@ -18,6 +18,7 @@ type Item = {
   templateId: string;
   params?: Record<string, string>;
   batch?: boolean;
+  videoUrl?: string;
 };
 
 function getCols() {
@@ -43,6 +44,8 @@ function useCols() {
   return cols;
 }
 
+// ── Card ────────────────────────────────────────────────────────────────────
+
 function ExampleImageCard({
   item,
   locale,
@@ -51,7 +54,9 @@ function ExampleImageCard({
   locale: string;
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
+  const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackAction } = useTracking();
+  const hasVideo = Boolean(item.videoUrl);
   const t = useTranslations("actionButtons");
   const [user] = useAtom(userAtom);
   const [, setDrawerState] = useAtom(drawerAtom);
@@ -59,6 +64,12 @@ function ExampleImageCard({
   const isDownloadingRef = useRef(false);
   const [saved, setSaved] = useState(false);
   const [showSavedToast, setShowSavedToast] = useState(false);
+
+  const tracking = {
+    contentId: `${item.templateId}:${item.id}`,
+    contentType: "nano_inspiration_example_grid" as const,
+    viewMode: "cards" as const,
+  };
 
   const handleSave = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -70,18 +81,14 @@ function ExampleImageCard({
     setTimeout(() => setShowSavedToast(false), 3000);
   };
 
-  const tracking = {
-    contentId: `${item.templateId}:${item.id}`,
-    contentType: "nano_inspiration_example_grid" as const,
-    viewMode: "cards" as const,
-  };
-
   const remixHref = (() => {
     const qs = item.params && Object.keys(item.params).length > 0
       ? `?${new URLSearchParams(item.params).toString()}`
       : "";
     return `/${locale}/nano-template/${toSlug(item.templateId)}${qs}#reproduce`;
   })();
+
+  const carouselHref = `/${locale}/nano-template/${toSlug(item.templateId)}/carousel/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}`;
 
   const handleDownload = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -111,8 +118,11 @@ function ExampleImageCard({
   return (
     <div className="group overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <Link
-        href={`/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`}
-        onClick={trackClick}
+        href={carouselHref}
+        onClick={() => {
+          trackClick();
+          if (hasVideo) trackVideoClick();
+        }}
         className="block relative overflow-hidden"
       >
         <CdnImage
@@ -121,9 +131,17 @@ function ExampleImageCard({
           className="aspect-[3/4] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           loading="lazy"
         />
+        {hasVideo && (
+          <span
+            aria-label="Has video"
+            className="pointer-events-none absolute left-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-black/55 text-white shadow-sm backdrop-blur-sm"
+          >
+            <Play className="h-3.5 w-3.5 fill-current" />
+          </span>
+        )}
         <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-4 opacity-0 transition-colors duration-200 group-hover:bg-black/20 group-hover:opacity-100">
           <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-bold text-neutral-900 shadow backdrop-blur-sm">
-            View prompt →
+            {hasVideo ? "Play video →" : "View prompt →"}
           </span>
         </div>
       </Link>
@@ -175,6 +193,8 @@ function ExampleImageCard({
   );
 }
 
+// ── Grid ────────────────────────────────────────────────────────────────────
+
 export default function ExampleImagesGrid({
   items,
   maxRows = 3,
@@ -196,15 +216,13 @@ export default function ExampleImagesGrid({
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-
-      {visible.map((it) => (
-  <ExampleImageCard
-    key={it.id}
-    item={{ ...it, batch }}
-    locale={locale}
-  />
-))}
-
+        {visible.map((it) => (
+          <ExampleImageCard
+            key={it.id}
+            item={{ ...it, batch }}
+            locale={locale}
+          />
+        ))}
       </div>
 
       {items.length > limit && (

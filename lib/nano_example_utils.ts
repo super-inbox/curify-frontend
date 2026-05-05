@@ -78,6 +78,8 @@ export function getImageViewsForTemplate(
       params: img.params ?? {},
       image_url: imageUrl,
       preview_image_url: previewUrl,
+      audio_url: img.asset.audio_url,
+      video_url: img.asset.video_url,
       rank_score: rankScore,
     };
   });
@@ -162,6 +164,8 @@ export function getNanoExampleDetail(
     params: raw.params ?? {},
     image_url: raw.asset.image_url,
     preview_image_url: raw.asset.preview_image_url ?? raw.asset.image_url,
+    audio_url: raw.asset.audio_url,
+    video_url: raw.asset.video_url,
   };
 
   const filled_prompt = fillPrompt(template.base_prompt, raw.params);

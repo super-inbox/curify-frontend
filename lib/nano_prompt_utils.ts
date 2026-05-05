@@ -1,7 +1,7 @@
 export type TemplateParameter = {
   name: string;
   label: string;
-  type: "text" | "textarea" | "select" | "daterange";
+  type: "text" | "textarea" | "select" | "daterange" | "language_pair";
   placeholder?: string | string[];
   options?: string[];
 };

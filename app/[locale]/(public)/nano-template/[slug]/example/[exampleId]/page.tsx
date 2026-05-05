@@ -1,11 +1,13 @@
 // app/[locale]/nano-template/[slug]/example/[exampleId]/page.tsx
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
 import ExampleRightColumn from "./ExampleRightColumn";
+import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
 import ExamplePromptHero from "@/app/[locale]/_components/ExamplePromptHero";
 import { toAbsUrlMaybe } from "@/lib/nano_seo_utils";
@@ -25,6 +27,11 @@ import {
   getImageViewsForTemplate,
   resolveLocalizedExampleCopy,
 } from "@/lib/nano_page_data";
+
+// Cache example detail pages for 4 hours with ISR — example data
+// rarely changes after publication and the page builds a heavy data
+// graph (template view, prevNext, similar items, etc.) per render.
+export const revalidate = 14400;
 
 type PageParams = {
   locale: string;
@@ -207,13 +214,30 @@ export default async function NanoExampleDetailPage({
           { label: title },
         ]}
         image={
-          <ProgressiveCdnImage
-            previewSrc={example.asset.preview_image_url}
-            fullSrc={example.asset.image_url}
-            alt={title}
-            className="h-full w-full object-contain"
-            priority
-          />
+          example.asset.video_url ? (
+            <ExampleVideoPlayer
+              templateId={templateId}
+              exampleId={example.id}
+              videoUrl={example.asset.video_url}
+              posterUrl={example.asset.preview_image_url ?? example.asset.image_url}
+              title={title}
+            />
+          ) : (
+            <Link
+              href={`/${rawLocale}/nano-template/${slug}/carousel/${rawExampleId}?media=image`}
+              className="block h-full w-full cursor-zoom-in"
+              aria-label="Open image in carousel"
+            >
+              <ProgressiveCdnImage
+                previewSrc={example.asset.preview_image_url}
+                fullSrc={example.asset.image_url}
+                alt={title}
+                className="h-full w-full object-contain"
+                priority
+                noZoom
+              />
+            </Link>
+          )
         }
         rightColumnContent={
           <ExampleRightColumn

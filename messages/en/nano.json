@@ -2285,7 +2285,7 @@
     }
   },
   "template-book-minimalist": {
-    "category": "Books & Learning",
+    "category": "Minimalist Book Summary",
     "description": "Generate a stunning minimalist book summary poster with key insights, quotes, and visual hierarchy.",
     "title": "Nano Banana Prompt: Minimalist Book Summary Poster Generator | Curify AI",
     "content": {
@@ -2307,7 +2307,7 @@
     }
   },
   "template-country-top10-travel-destinations": {
-    "category": "Travel",
+    "category": "Country Top 10 Destinations",
     "description": "Generate a beautiful watercolor-style top 10 travel destinations poster for any country.",
     "title": "Nano Banana Prompt: Country Top 10 Travel Destinations Poster Generator | Curify AI",
     "content": {
@@ -2329,7 +2329,7 @@
     }
   },
   "template-weird-cold-knowledge-popular-science-card": {
-    "category": "Science & Knowledge",
+    "category": "Popular Science Card",
     "description": "Generate eye-catching popular science cards featuring fascinating and unexpected facts.",
     "title": "Nano Banana Prompt: Weird & Fascinating Facts Science Card Generator | Curify AI",
     "content": {
@@ -2351,7 +2351,7 @@
     }
   },
   "template-CVC-english-word-coloring-flower-card": {
-    "category": "Education",
+    "category": "CVC Word Coloring Flower Card",
     "description": "Generate adorable CVC word coloring flower cards for early childhood English learning.",
     "title": "Nano Banana Prompt: CVC English Word Coloring Flower Card Generator | Curify AI",
     "content": {
@@ -2390,6 +2390,468 @@
           "Create a Japandi-style living room mood board. Color palette: warm white, soft sage green, natural wood tones, matte black accents. Materials: oak wood, linen upholstery, ceramic pottery, woven baskets. Furniture: low-profile sofa, minimalist coffee table, floor cushions. Mood: calm, uncluttered, natural light. Professional grid layout, 4:3 format.",
           "Generate a moody industrial bedroom mood board. Colors: charcoal, exposed brick red, aged brass, forest green. Elements: concrete ceiling, steel bed frame, Edison bulb lighting, vintage leather, distressed wood flooring. Atmosphere: raw, sophisticated, masculine. Collage style presentation.",
           "Design a coastal bohemian home office mood board. Palette: ocean blue, sandy beige, terracotta, natural white. Textures: rattan furniture, macrame wall hanging, sea grass rug, linen curtains, driftwood accents. Lighting: natural and warm pendant lights. Creative and inspiring workspace aesthetic."
+        ]
+      }
+    }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Action Verb Learning Cards",
+    "description": "Create a 3x3 grid of cartoon action verb learning cards with friendly illustrations and bold typography for any vocabulary theme.",
+    "title": "Nano Banana Prompt: Action Verb Learning Cards Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean 3x3 grid of 9 individual learning cards on a white background. Each card shows a cartoon-style person performing an action paired with the corresponding verb in bold sans-serif. Warm muted colors and consistent character design make it ideal for ESL classrooms and kids' vocabulary practice.",
+        "who": "Suitable for ESL teachers, language learning app designers, early childhood educators, parents teaching vocabulary, content creators making educational flashcards, and tutors preparing classroom materials.",
+        "how": [
+          "Choose a learning theme (e.g., Basic Verbs & Actions, Everyday Activities, Emotions).",
+          "9 cards are auto-laid out in a 3x3 grid with consistent character design.",
+          "Each cell pairs a cartoon illustration with the verb in bold sans-serif typography.",
+          "Generate a vertical 4K children's-book-style flashcard poster."
+        ],
+        "prompts": [
+          "Generate Basic Verbs & Actions cards: run, jump, eat, sleep, read, write, walk, swim, dance.",
+          "Create Emotions & Expressions cards: happy, sad, angry, surprised, tired, excited, calm, confused, proud.",
+          "Generate Movement & Sports cards: kick, throw, catch, climb, ride, run, stretch, swim, jump."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Pet Care Infographic",
+    "description": "Generate a complete 5-section pet care guide infographic for any pet type and age, with cartoon illustrations and emoji-driven bullet points.",
+    "title": "Nano Banana Prompt: Pet Care Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template produces a vertical pastel-background infographic poster covering Diet & Nutrition, Exercise, Health Care, Grooming, and Training & Socialization for any pet. Each section gets its own color, cartoon illustration, and emoji-driven bullet text — clean rounded section cards keep it scannable.",
+        "who": "Suitable for pet adoption agencies, breeder accounts, veterinary clinics, pet supply brands, pet bloggers, new pet owners, and educational content creators.",
+        "how": [
+          "Choose a pet type (e.g., British Shorthair Cat, Corgi Puppy, Labrador Dog).",
+          "Specify the age (e.g., 5-Month-Old, 1-Year-Old, Senior).",
+          "Five color-coded sections auto-fill with care advice tailored to type and age.",
+          "Generate a vertical 4K pastel infographic with cartoon illustrations."
+        ],
+        "prompts": [
+          "Generate a 5-Month-Old British Shorthair Cat care guide infographic.",
+          "Create a Senior Labrador Dog complete care guide poster.",
+          "Generate a 2-Month-Old Corgi Puppy care guide with all 5 sections."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "9-Traits Infographic",
+    "description": "Create a clean 3x3 trait grid infographic on any topic, each cell pairing a cartoon trait illustration with a bold title and short subtitle.",
+    "title": "Nano Banana Prompt: 9-Traits Information Grid Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a square infographic poster titled '9 Traits of [Topic]' with 9 minimalist cartoon trait illustrations in a 3x3 grid. Each cell pairs a friendly illustration with a bold trait title and short descriptive subtitle — great for personal development, leadership, and self-help content.",
+        "who": "Suitable for personal development creators, life coaches, leadership trainers, self-help authors, motivational social media accounts, HR teams, and content marketers.",
+        "how": [
+          "Enter the infographic topic (e.g., Quality Partner, Leadership, Self-Improvement).",
+          "9 trait cells are auto-generated with cartoon illustrations and bold titles.",
+          "Minimalist line art on a white background keeps the layout clean and shareable.",
+          "Generate a square 4K infographic ready for Instagram, Pinterest, or LinkedIn."
+        ],
+        "prompts": [
+          "Generate '9 Traits of a Quality Partner' infographic with cartoon illustrations.",
+          "Create '9 Traits of Leadership' grid poster with trait titles and subtitles.",
+          "Generate '9 Traits of Self-Improvement' infographic for motivational sharing."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "English Phrasal Verb Poster",
+    "description": "Generate an 8-phrase phrasal verb learning poster around any core verb, with example sentences and flat icons in a vertical list layout.",
+    "title": "Nano Banana Prompt: English Phrasal Verb Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vertical educational poster titled '8 Phrases with [Verb]' on a light cream background. Each list item pairs a flat icon, the phrasal verb in bold blue, and a clear example sentence with the verb highlighted — ideal for ESL classrooms and self-study printables.",
+        "who": "Suitable for ESL teachers, language tutors, language learning app designers, content creators making English learning printables, students preparing for English exams, and bilingual content creators.",
+        "how": [
+          "Choose a core verb (e.g., BREAK, TAKE, GO, PUT).",
+          "8 phrasal verbs are auto-generated as a vertical list.",
+          "Each item shows an icon, the bold phrasal verb, and an example sentence.",
+          "Generate a vertical 4K cream-background printable poster."
+        ],
+        "prompts": [
+          "Generate '8 Phrases with BREAK' poster (break down, break up, break in, etc.).",
+          "Create '8 Phrases with TAKE' learning poster with example sentences.",
+          "Generate '8 Phrases with PUT' poster for ESL classroom display."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Hairstyle Recommendation Infographic",
+    "description": "Use a reference portrait to generate a beauty guide poster showing 6 personalized hairstyle and hair-color recommendations in circular preview tiles.",
+    "title": "Nano Banana Prompt: Hairstyle and Color Recommendation Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses a reference portrait to generate a beauty consultation poster. The original photo sits on the left at full size; the right shows 6 circular previews in a 2x3 grid, each rendering a different hairstyle and color inspired by the subject. Clean white background and consistent skin tone across all variants keep the focus on the styling.",
+        "who": "Suitable for hairstylists, salon owners, beauty content creators, personal stylists, beauty app designers, anyone planning a hair makeover, and beauty consultants.",
+        "how": [
+          "Upload a reference portrait of yourself or a client.",
+          "The template auto-generates 6 personalized hairstyle and color combinations.",
+          "Each preview is labeled with the hairstyle name and matching hair color.",
+          "Generate a high-resolution beauty consultation poster."
+        ],
+        "prompts": [
+          "Generate a hairstyle recommendation poster for an oval face shape with 6 styles.",
+          "Create a hairstyle and color guide for a round face with warm-toned recommendations.",
+          "Generate a beauty makeover poster with 6 trendy hairstyle options."
+        ]
+      }
+    }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Souvenir Watercolor Poster",
+    "description": "Generate a warm, nostalgic watercolor travel infographic poster of the top 10 beautiful souvenirs from any country, complete with iconic landmarks and pro gifting tips.",
+    "title": "Nano Banana Prompt: Country Souvenirs Watercolor Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K watercolor travel poster titled 'Top 10 Beautiful Souvenirs from {country_name}'. The top section showcases iconic landmarks, the country flag, and a tagline; a numbered 2-column grid presents 10 souvenirs with watercolor illustrations and short descriptions; a bottom band offers pro souvenir tips. Soft muted colors, textured paper background, and handwritten-style fonts deliver a vintage travel poster aesthetic.",
+        "who": "Suitable for travel bloggers, tourism boards, cultural gift-guide writers, Pinterest creators, expat content channels, souvenir shop owners, and anyone producing country-themed travel content.",
+        "how": [
+          "Enter a country name in {country_name} (e.g., Brazil, Mexico, Japan, Italy).",
+          "The top section auto-generates iconic landmarks, the flag, and the title.",
+          "Ten numbered souvenirs are laid out in a 2-column watercolor grid with descriptions.",
+          "Generate a vertical 4K watercolor poster with vintage travel-poster styling."
+        ],
+        "prompts": [
+          "Generate a 'Top 10 Beautiful Souvenirs from Mexico' watercolor travel poster.",
+          "Create a 'Top 10 Beautiful Souvenirs from Japan' poster with traditional crafts.",
+          "Generate a 'Top 10 Beautiful Souvenirs from Italy' watercolor infographic."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Pet Safe Food Infographic",
+    "description": "Create a clean, photo-realistic infographic showing which human foods are safe and which are toxic for any pet, on a white marble background.",
+    "title": "Nano Banana Prompt: Pet-Safe Human Food Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K educational poster titled 'Human Foods {pet_name} Can Safely Eat'. A photo of the chosen pet sits in the top corner; a grid of realistic food photographs labels safe fruits, vegetables, meats, and grains; a red-banded bottom section warns about toxic foods. The clean white marble background and bright photography give it a trustworthy pet-care guide feel.",
+        "who": "Suitable for pet owners, veterinarians, pet nutrition brands, animal shelters, pet-care bloggers, vet techs, and content creators making pet education posts.",
+        "how": [
+          "Choose a pet type in {pet_name} (e.g., Cats, Dogs, Rabbits, Parrots).",
+          "The pet's photo appears in the top corner with the bold title above the food grid.",
+          "Realistic food photos auto-fill safe foods on top and toxic foods in the red zone.",
+          "Generate a vertical 4K white-marble infographic with photo-realistic food labels."
+        ],
+        "prompts": [
+          "Generate 'Human Foods Cats Can Safely Eat' infographic with marble background.",
+          "Create 'Human Foods Dogs Can Safely Eat' poster with toxic-food warning section.",
+          "Generate 'Human Foods Rabbits Can Safely Eat' photo-realistic infographic."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Phonics Learning Poster",
+    "description": "Generate a kid-friendly phonics poster for any consonant blend, featuring 6-8 example words with cartoon illustrations on a sky-blue background.",
+    "title": "Nano Banana Prompt: Phonics Consonant Blend Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical 4K phonics learning poster for the {phonics_blend} consonant blend. A large bold blend headline sits at the top; inside a white bordered frame, 6-8 example words are paired with cheerful cartoon illustrations, the blend letters in red and the rest in blue. Cheerful sky-blue background with white clouds and green grass keeps it friendly for early readers.",
+        "who": "Suitable for ESL teachers, primary school educators, homeschool parents, early childhood content creators, reading tutors, literacy app designers, and SLPs working on phonics.",
+        "how": [
+          "Enter a consonant blend in {phonics_blend} (e.g., gr, bl, ch, sh, th, tr).",
+          "The blend appears in a large bold headline at the top of the poster.",
+          "Six to eight example words auto-generate with cartoon illustrations and color-coded letters.",
+          "Generate a vertical 4K cartoon-style sky-blue phonics learning poster."
+        ],
+        "prompts": [
+          "Generate a 'gr' consonant blend phonics poster (grape, green, grass, grin, etc.).",
+          "Create an 'sh' consonant blend learning poster with 8 example words.",
+          "Generate a 'tr' consonant blend phonics poster for early readers."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Media-Themed Wallpaper Poster",
+    "description": "Create a stylized, atmospheric wallpaper or poster for any movie, anime, or TV universe, faithful to the original work's art style.",
+    "title": "Nano Banana Prompt: Media-Themed Wallpaper and Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a high-resolution stylized wallpaper or poster for {media_topic}. The composition centers iconic characters or scenes against a detailed atmospheric background, with the title displayed in a thematic font. The art style stays faithful to the original work — Studio Ghibli's painterly look, the sitcom photography of Friends, the cel-shaded charm of Shin-chan — enhanced with vibrant colors and cinematic lighting.",
+        "who": "Suitable for fans, fan-art creators, decoration brands, social media designers, phone-wallpaper accounts, film and anime club organizers, and content creators making themed merchandise mockups.",
+        "how": [
+          "Enter a media universe in {media_topic} (e.g., Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "The most iconic characters or scenes are auto-composed against an atmospheric background.",
+          "The title appears in a thematic font matching the original work's aesthetic.",
+          "Generate a high-resolution vertical or square cinematic wallpaper poster."
+        ],
+        "prompts": [
+          "Generate a Studio Ghibli-style wallpaper poster for My Neighbor Totoro.",
+          "Create a Ponyo themed wallpaper with the original watercolor aesthetic.",
+          "Generate a Friends TV Show stylized poster for fan decoration."
+        ]
+      }
+    }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "AI Outfit Try-On Poster",
+    "description": "Generate a clean three-panel fashion try-on poster showing a reference character, a flat-lay of the full outfit, and the same character wearing the new outfit with realistic fit and lighting.",
+    "title": "Nano Banana Prompt: AI Outfit Try-On Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses Nano Banana to generate a three-panel fashion try-on poster on a clean studio background. The left panel shows the original reference character portrait labeled 'Character'; the middle panel displays the full outfit (clothes, shoes, accessories) as a flat-lay labeled 'Outfit'; the right panel renders the same character wearing the new outfit with consistent lighting, pose, and realistic fit, labeled 'Result' — high-fashion photography style with sharp details and commercial aesthetic.",
+        "who": "Suitable for fashion brands, e-commerce stores, personal stylists, lookbook designers, fashion content creators, virtual styling apps, and anyone who wants to visualize an outfit on a specific character before producing or buying.",
+        "how": [
+          "Provide or describe the reference character portrait for the left panel.",
+          "Specify the full outfit (clothes, shoes, accessories) you want to flat-lay in the middle panel.",
+          "The template renders the right panel with the same character wearing the outfit, matching pose and lighting.",
+          "Generate a horizontal 4K three-panel fashion try-on poster."
+        ],
+        "prompts": [
+          "Generate a try-on poster of a casual streetwear outfit (oversized hoodie, baggy jeans, sneakers).",
+          "Create a try-on poster for a business casual outfit (blazer, slacks, loafers).",
+          "Try on a summer outfit (linen shirt, shorts, sandals) on the same character."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Chinese Character Learning Poster",
+    "description": "Generate a Daily Character (每日一字) learning poster for any Chinese character with pinyin and 5-6 radial compound-word branches with cute cartoon illustrations.",
+    "title": "Nano Banana Prompt: Chinese Character Learning Poster Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical educational 'Daily Character' (每日一字) poster for a single Chinese character. The center shows the large character with its pinyin; 5-6 radial branches around the center pair common compound words with cute cartoon illustrations and pinyin labels — clean white background, soft watercolor or cartoon art style, kid-friendly educational aesthetic.",
+        "who": "Suitable for Mandarin teachers, Chinese language learners, ESL/CSL educators, parents homeschooling Chinese, language-learning app designers, and content creators producing Chinese learning printables for classrooms or social media.",
+        "how": [
+          "Enter a target Chinese character (e.g., 山, 火, 木, 水, 日, 月).",
+          "Provide the pinyin for that character (e.g., shān, huǒ, mù).",
+          "The poster auto-lays out the title 每日一字, the center character with pinyin, and 5-6 radial compound-word branches.",
+          "Generate a vertical 4K kid-friendly Chinese character learning poster."
+        ],
+        "prompts": [
+          "Generate a Daily Character poster for 山 (shān) with mountain-themed compound words.",
+          "Create a 火 (huǒ) learning poster with fire-related compound words and illustrations.",
+          "Generate a 水 (shuǐ) Daily Character poster with water-themed branches."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Chinese Verb Opposites Infographic",
+    "description": "Generate an educational infographic poster of opposite Chinese verb pairs with pinyin, English glosses, and contrasting cartoon illustrations in horizontal rows.",
+    "title": "Nano Banana Prompt: Chinese Verb Opposites Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template builds a horizontal educational language-learning infographic poster of opposite Chinese verbs. Each row pairs two opposite verbs side by side: left and right show the verb with pinyin and English gloss, the center shows a cartoon illustration of the contrasting actions, and a colored arrow or hexagon shape ties the pair together — clean light background, friendly cartoon illustrations, soft pastel colors.",
+        "who": "Suitable for Mandarin teachers, Chinese language learners, ESL/CSL educators, content creators making vocabulary printables, bilingual classrooms, and social media accounts focused on language learning.",
+        "how": [
+          "Enter the chart topic (e.g., 'Chinese Verb Opposite Pairs', 'Basic Chinese Antonym Verbs').",
+          "The infographic auto-lays out a series of horizontal rows of opposite verb pairs.",
+          "Each row pairs left and right verbs with pinyin and English glosses plus a center contrasting illustration.",
+          "Generate a horizontal 4K educational verb-opposites poster."
+        ],
+        "prompts": [
+          "Generate a 'Chinese Verb Opposite Pairs' infographic with 8 common verb pairs.",
+          "Create a 'Basic Chinese Antonym Verbs' learning chart for beginners.",
+          "Generate an 'Everyday Chinese Action Words' opposites infographic."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "MBTI Relationship Infographic",
+    "description": "Generate a vibrant side-by-side MBTI pair infographic with traits, quotes, and a compatibility summary for any two MBTI types.",
+    "title": "Nano Banana Prompt: MBTI Relationship Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template creates a vibrant horizontal infographic poster comparing two MBTI types in a relationship. Two low-poly cartoon characters in their signature colors stand at the center; left and right panels show each type's traits and quotes with matching icons; a bottom section gives a compatibility summary with bullet points and emojis — clean white background, colorful low-poly geometric art style, friendly educational tone.",
+        "who": "Suitable for MBTI content creators, personality enthusiasts, dating-app marketing teams, relationship coaches, social media accounts focused on personality, and anyone making shareable MBTI-pair content.",
+        "how": [
+          "Enter the first MBTI type (e.g., INTJ, ENFP, ISFJ).",
+          "Enter the second MBTI type to compare against.",
+          "The poster auto-lays out two cartoon characters, side panels of traits and quotes, and a bottom compatibility summary.",
+          "Generate a horizontal 4K colorful low-poly relationship infographic."
+        ],
+        "prompts": [
+          "Generate an INTJ and ENFP relationship infographic with traits and compatibility summary.",
+          "Create an ISFJ and ESTP MBTI pair compatibility poster.",
+          "Generate an INFP and ENTJ relationship infographic with quotes and compatibility analysis."
+        ]
+      }
+    }
+  },
+  "template-ethnic-costume-deconstruction-board": {
+    "category": "Ethnic Costume Deconstruction Board",
+    "description": "Generate a high-fashion deconstruction-style flat-lay board for any ethnic group's traditional costume, with a full-body portrait and labeled component callouts on either side.",
+    "title": "Nano Banana Prompt: Ethnic Costume Deconstruction Board Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template uses Nano Banana to generate a professional cultural-heritage flat-lay board for a chosen ethnic group's traditional costume. The center features a full-body portrait of a model wearing the complete costume against a dark wooden backdrop; the left and right rails deconstruct the look into silver jewelry, embroidered textiles, accessories, and cultural artifacts, each labeled with Chinese characters. High-fashion studio photography aesthetic with warm dramatic lighting, sharp details, and rich textures.",
+        "who": "Suitable for cultural-heritage brands, museum and exhibition designers, fashion editors, ethnographic researchers, travel publications, costume designers, and creators making content about traditional dress and minority cultures.",
+        "how": [
+          "Enter an ethnic group name (e.g., Tibetan, Miao, Bai, Yi, Dai, Mongolian).",
+          "The template auto-lays out a center full-body portrait of the costume.",
+          "Left and right deconstruct the costume into labeled jewelry, textiles, and accessories.",
+          "Generate a vertical 4K cultural deconstruction board in a high-fashion studio style."
+        ],
+        "prompts": [
+          "Generate a Tibetan traditional costume deconstruction board with silver jewelry callouts.",
+          "Create a Miao traditional costume flat-lay with embroidered textiles labeled.",
+          "Generate a Mongolian costume deconstruction board with cultural accessories highlighted."
+        ]
+      }
+    }
+  },
+  "template-gardening-how-to-infographic": {
+    "category": "Gardening How-To Infographic",
+    "description": "Generate a clean step-by-step gardening infographic titled 'HOW TO GROW [plant]' with six numbered photo steps and helpful icons for any plant.",
+    "title": "Nano Banana Prompt: Gardening How-To Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vertical educational gardening infographic titled 'HOW TO GROW [plant]'. A bold main title sits at the top with a plant subtitle; a 2x3 grid of six numbered steps fills the body, each with a realistic photo illustration of the gardening action, a clear step title, descriptive text, and helpful small icons. Clean white background, sharp product photography aesthetic, professional educational style.",
+        "who": "Suitable for gardening bloggers, urban-farming brands, seed and tool retailers, sustainable-living content creators, home-and-garden educators, schools running gardening programs, and parents teaching kids about growing food.",
+        "how": [
+          "Enter a plant name (e.g., Tomatoes, Bell Peppers, Lettuce, Strawberries).",
+          "The template auto-lays out a 2x3 grid of six numbered growing steps.",
+          "Each cell pairs a photo of the action with a step title, instructions, and icons.",
+          "Generate a vertical 4K printable gardening how-to infographic."
+        ],
+        "prompts": [
+          "Generate a 'HOW TO GROW Tomatoes' infographic with six numbered photo steps.",
+          "Create a 'HOW TO GROW Bell Peppers' gardening guide poster.",
+          "Generate a 'HOW TO GROW Strawberries' step-by-step infographic."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-watercolor-infographic": {
+    "category": "Lifestyle Watercolor Infographic",
+    "description": "Generate a warm, whimsical watercolor lifestyle infographic on any topic with a numbered title, a soft central illustration, and tip icons on a textured paper background.",
+    "title": "Nano Banana Prompt: Lifestyle Watercolor Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template builds a vertical warm-toned watercolor infographic poster around a chosen lifestyle topic. The top features a ribbon banner with a gentle quote above a large numbered title (e.g., '10 Self-Care Ideas'); a soft watercolor central illustration anchors the composition, surrounded by smaller watercolor icons each paired with a short tip label. Light beige textured paper background with hearts, stars, and confetti accents in a cozy self-care aesthetic.",
+        "who": "Suitable for wellness creators, self-care brands, mindfulness coaches, journal and planner designers, Pinterest creators, mental-health writers, and content creators making cozy printable lifestyle content.",
+        "how": [
+          "Enter the infographic topic (e.g., 'Self-Care Ideas', 'Morning Routine Ideas').",
+          "Enter the number of tips you want listed (e.g., 8, 10, 12).",
+          "The template generates a numbered watercolor poster with central illustration and tip icons.",
+          "Generate a vertical 4K cozy watercolor lifestyle infographic."
+        ],
+        "prompts": [
+          "Generate a '10 Self-Care Ideas' watercolor infographic with cozy tips.",
+          "Create a '8 Morning Routine Ideas' lifestyle watercolor poster.",
+          "Generate a '12 Mindfulness Practices' warm watercolor infographic."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Animation Studio Comparison Infographic",
+    "description": "Generate a vibrant 'ANIME STUDIO SHOWDOWN' poster comparing two animation studios side by side, with logos, founding year, art style, notable works, and legacy.",
+    "title": "Nano Banana Prompt: Animation Studio Comparison Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vibrant 'ANIME STUDIO SHOWDOWN COMPARISON' infographic poster. A title banner sits at the top; the body splits left/right between the two chosen studios, each side covering studio logo, founding year, artistic style with example art, notable works with images, and legacy/impact with icons. The background uses a wooden desk texture with anime-themed doodles and figurines for a cozy fandom aesthetic, with distinct color palettes per studio.",
+        "who": "Suitable for anime fans, animation publications, fan-art creators, animation history educators, social media accounts focused on anime, and content creators making shareable studio rundowns.",
+        "how": [
+          "Enter the first studio name (e.g., Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Enter the second studio name to compare against (e.g., MAPPA, Ufotable, DreamWorks).",
+          "The poster auto-lays out a left/right split with logos, founding year, art style, notable works, and legacy.",
+          "Generate a vertical 4K bright informational comparison infographic."
+        ],
+        "prompts": [
+          "Generate a Studio Ghibli vs MAPPA showdown comparison infographic.",
+          "Create a Pixar vs DreamWorks animation studio comparison poster.",
+          "Generate a Kyoto Animation vs Ufotable studio showdown infographic."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "History Timeline Infographic",
+    "description": "Generate a visually stunning evolution timeline poster on any historical topic with a flowing central timeline, milestone events, dates, descriptions, and themed illustrations.",
+    "title": "Nano Banana Prompt: History Timeline Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a visually stunning vertical infographic titled '[topic]: Evolution Through Time'. A central flowing timeline with numbered yearly milestones runs the length of the poster; each milestone features a key event, date, short description, and a relevant illustration. The color palette, icons, and background design adapt to the chosen theme (retro, futuristic, vintage, etc.) for a consistent design language.",
+        "who": "Suitable for history teachers, museum and exhibition designers, content marketers, brand-history publications, popular-science writers, social media educators, and creators making shareable history-of-X posters.",
+        "how": [
+          "Enter a timeline topic (e.g., 'Apple Inc. History', 'Evolution of Video Games', 'History of Photography').",
+          "The infographic auto-lays out a central flowing timeline with numbered milestones.",
+          "Each milestone shows a key event, date, short description, and themed illustration.",
+          "Generate a vertical 4K themed evolution timeline poster."
+        ],
+        "prompts": [
+          "Generate an 'Apple Inc. History: Evolution Through Time' timeline infographic.",
+          "Create an 'Evolution of Video Games' history timeline poster.",
+          "Generate a 'Space Exploration' evolution timeline infographic with milestone events."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "Then vs Now Comparison Infographic",
+    "description": "Generate a clean THEN-VS-NOW comparison poster on any topic, with a three-column table contrasting vintage and modern equivalents using realistic photos.",
+    "title": "Nano Banana Prompt: Then vs Now Comparison Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a clear vertical comparison infographic titled '[topic] THEN VS NOW'. A theme title sits at the top; the body is a three-column table with Category / Then / Now rows, each showing a vintage product on the left and its modern equivalent on the right using realistic photos. The background and icons match the topic for a nostalgic-yet-modern aesthetic.",
+        "who": "Suitable for nostalgia content creators, retrospective publications, brand marketers showing product evolution, educational pages, and social media accounts focused on generational comparisons.",
+        "how": [
+          "Enter a comparison topic (e.g., 'Childhood Snacks', 'Entertainment', 'School Supplies').",
+          "The poster auto-lays out a three-column Category / Then / Now table.",
+          "Each row pairs a vintage item on the left with its modern equivalent on the right using realistic photos.",
+          "Generate a vertical 4K clean nostalgic-vs-modern comparison infographic."
+        ],
+        "prompts": [
+          "Generate a 'Childhood Snacks Then vs Now' comparison infographic.",
+          "Create an 'Entertainment Then vs Now' nostalgia comparison poster.",
+          "Generate a 'School Supplies Then vs Now' comparison infographic."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Travel Packing Guide Infographic",
+    "description": "Generate a vibrant packing guide poster for any destination, day count, and gender focus with carry-on contents, essentials, outfit ideas, must-haves, and pro tips.",
+    "title": "Nano Banana Prompt: Travel Packing Guide Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates a vibrant packing guide poster tailored to a destination, trip length, and gender focus. The title banner reads '[N]-DAY [destination] Packing Guide' over travel-themed graphics; the body covers 'What you can fit in a carry-on', 'Packing Essentials', '[N]-Day Outfit Ideas', 'Extra Must-Haves', and 'Pro Tips' — each section uses realistic product photos with clear labels in a coordinated theme palette.",
+        "who": "Suitable for travel bloggers, itinerary planners, lifestyle creators, travel-gear retailers, packing-list app designers, and content creators making destination-specific shareable guides.",
+        "how": [
+          "Enter the destination (e.g., 'Beach Vacation', 'Hiking Adventure', 'Business Trip').",
+          "Enter the number of days (e.g., '3-Day', '5-Day', '7-Day').",
+          "Enter the gender focus (e.g., 'Women's', 'Men's', 'Unisex').",
+          "Generate a vertical 4K bright themed packing guide poster."
+        ],
+        "prompts": [
+          "Generate a Women's 5-Day Beach Vacation packing guide infographic.",
+          "Create a Men's 7-Day Hiking Adventure packing guide poster.",
+          "Generate a Unisex 3-Day Weekend Getaway packing guide infographic."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Word Origins Map Infographic",
+    "description": "Generate an educational world-map infographic on any topic showing words connected by colored lines to their countries of origin with etymologies and thematic icons.",
+    "title": "Nano Banana Prompt: Word Origins Map Infographic Generator | Curify AI",
+    "content": {
+      "sections": {
+        "what": "This template generates an educational horizontal infographic titled 'WORD ORIGINS: [topic]'. A simplified world map sits at the center; words are placed across the map and connected by colored lines to their countries of origin, each marked with the country flag. Each word is annotated with its etymology and brief meaning alongside a small thematic icon, in a clean modern colorful pastel design.",
+        "who": "Suitable for language teachers, etymology enthusiasts, ESL/CSL educators, linguistics writers, vocabulary-learning app designers, and content creators making shareable etymology infographics.",
+        "how": [
+          "Enter the topic (e.g., 'Food & Cuisine', 'Animals & Nature', 'Science & Technology').",
+          "The infographic auto-places topical words on a world map with origin lines and flags.",
+          "Each word is annotated with etymology, brief meaning, and a thematic icon.",
+          "Generate a horizontal 4K educational word-origins map infographic."
+        ],
+        "prompts": [
+          "Generate a 'Food & Cuisine' word origins map infographic.",
+          "Create an 'Animals & Nature' word origins map poster.",
+          "Generate a 'Science & Technology' word origins map infographic."
         ]
       }
     }

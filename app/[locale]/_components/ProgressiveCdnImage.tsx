@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CdnImage from "@/app/[locale]/_components/CdnImage";
+import CdnImage, { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 
 export default function ProgressiveCdnImage({
   previewSrc,
@@ -9,12 +9,14 @@ export default function ProgressiveCdnImage({
   alt,
   className = "",
   priority = false,
+  noZoom = false,
 }: {
   previewSrc?: string;
   fullSrc: string;
   alt: string;
   className?: string;
   priority?: boolean;
+  noZoom?: boolean;
 }) {
   const [src, setSrc] = useState(previewSrc || fullSrc);
   const [open, setOpen] = useState(false);
@@ -25,9 +27,22 @@ export default function ProgressiveCdnImage({
     if (!fullSrc || fullSrc === previewSrc) return;
 
     const img = new Image();
-    img.src = fullSrc;
+    img.src = toCdnUrl(fullSrc);
     img.onload = () => setSrc(fullSrc);
   }, [previewSrc, fullSrc]);
+
+  const inner = (
+    <CdnImage
+      src={src}
+      alt={alt}
+      className={className}
+      priority={priority}
+    />
+  );
+
+  if (noZoom) {
+    return <div className="block h-full w-full">{inner}</div>;
+  }
 
   return (
     <>
@@ -37,12 +52,7 @@ export default function ProgressiveCdnImage({
         className="block h-full w-full cursor-zoom-in"
         aria-label="Open full image"
       >
-        <CdnImage
-          src={src}
-          alt={alt}
-          className={className}
-          priority={priority}
-        />
+        {inner}
       </button>
 
       {open && (

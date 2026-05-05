@@ -16,27 +16,19 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const os = require('os');
+const {
+  applyTiledWatermark,
+  applyCornerWatermark,
+  CORNER_DEFAULTS,
+} = require('./lib/watermark.cjs');
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const CDN_BASE      = 'https://cdn.curify-ai.com';
 const GCS_BUCKET    = 'gs://curify-static';
-const LOGO_PATH     = path.join(__dirname, '../public/logo.svg');
 const INSP_JSON     = path.join(__dirname, '../public/data/nano_inspiration.json');
 const LOCAL_INSP_DIR    = path.join(__dirname, '../public/images/nano_insp');
 const LOCAL_PREVIEW_DIR = path.join(__dirname, '../public/images/nano_insp_preview');
-
-// Logo width as % of image width for full and preview sizes
-const LOGO_PCT_FULL    = 0.20;
-const LOGO_PCT_PREVIEW = 0.20;
-const PADDING_FULL     = 20;
-const PADDING_PREVIEW  = 10;
-
-// Tiled mode config
-const TILE_LOGO_PCT      = 0.22;  // logo width as % of image width
-const TILE_SPACING_FACTOR = 1.8;  // canvas extended to this multiple of logo size for spacing
-const TILE_OPACITY        = 0.15;  // 0–1, opacity of each tile
-const TILE_ROTATE         = -30;   // degrees
 
 // ── Args ──────────────────────────────────────────────────────────────────────
 
@@ -73,62 +65,6 @@ function downloadImage(url, dest) {
   execSync(`curl -sf "${url}" -o "${dest}"`, { stdio: 'pipe' });
 }
 
-function getWidth(filePath) {
-  const out = execSync(`magick identify -format "%w" "${filePath}"`).toString().trim();
-  return parseInt(out, 10);
-}
-
-function overlayLogo(srcPath, destPath, logoPx, padding) {
-  execSync(
-    `magick "${srcPath}" ` +
-    `\\( -background none "${LOGO_PATH}" -resize ${logoPx}x \\) ` +
-    `-gravity SouthEast -geometry +${padding}+${padding} ` +
-    `-composite "${destPath}"`,
-    { stdio: 'pipe' }
-  );
-}
-
-function overlayLogoTiled(srcPath, destPath, logoPx) {
-  const tmpLogo    = destPath + '_tile_logo.png';
-  const tmpOverlay = destPath + '_overlay.png';
-  try {
-    // Step 1: resize, rotate, and set opacity on the logo
-    execSync(
-      `magick -background none "${LOGO_PATH}" -resize ${logoPx}x ` +
-      `-rotate ${TILE_ROTATE} -alpha set -channel A -evaluate multiply ${TILE_OPACITY} +channel ` +
-      `"${tmpLogo}"`,
-      { stdio: 'pipe' }
-    );
-
-    // Step 1.5: extend canvas for spacing between tiles
-    const logoDims = execSync(`magick identify -format "%wx%h" "${tmpLogo}"`).toString().trim();
-    const [lw, lh] = logoDims.split('x').map(Number);
-    const paddedW = Math.round(lw * TILE_SPACING_FACTOR);
-    const paddedH = Math.round(lh * TILE_SPACING_FACTOR);
-    execSync(
-      `magick "${tmpLogo}" -gravity center -background none -extent ${paddedW}x${paddedH} "${tmpLogo}"`,
-      { stdio: 'pipe' }
-    );
-
-    // Step 2: tile the prepared logo to match source image dimensions
-    const dims = execSync(`magick identify -format "%wx%h" "${srcPath}"`).toString().trim();
-    execSync(
-      `magick -size ${dims} tile:"${tmpLogo}" "${tmpOverlay}"`,
-      { stdio: 'pipe' }
-    );
-
-    // Step 3: composite overlay onto source
-    execSync(
-      `magick "${srcPath}" "${tmpOverlay}" -composite "${destPath}"`,
-      { stdio: 'pipe' }
-    );
-  } finally {
-    for (const f of [tmpLogo, tmpOverlay]) {
-      try { fs.unlinkSync(f); } catch (_) {}
-    }
-  }
-}
-
 function uploadToGcs(localPath, gcsPath) {
   execSync(`gsutil -o "GSUtil:parallel_process_count=1" cp "${localPath}" "${gcsPath}"`, { stdio: 'inherit' });
 }
@@ -158,15 +94,13 @@ for (const record of images) {
 
       downloadImage(fullUrl, srcFile);
 
-      const w      = getWidth(srcFile);
-
       if (mode === 'tiled') {
-        const logoPx = Math.round(w * TILE_LOGO_PCT);
-        overlayLogoTiled(srcFile, destFile, logoPx);
+        applyTiledWatermark(srcFile, destFile);
       } else {
-        const logoPx = Math.round(w * (isPreview ? LOGO_PCT_PREVIEW : LOGO_PCT_FULL));
-        const pad    = isPreview ? PADDING_PREVIEW : PADDING_FULL;
-        overlayLogo(srcFile, destFile, logoPx, pad);
+        applyCornerWatermark(srcFile, destFile, {
+          logoPct: isPreview ? CORNER_DEFAULTS.logoPctPreview : CORNER_DEFAULTS.logoPctFull,
+          padding: isPreview ? CORNER_DEFAULTS.paddingPreview : CORNER_DEFAULTS.paddingFull,
+        });
       }
       uploadToGcs(destFile, gcsTarget);
 

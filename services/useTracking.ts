@@ -15,7 +15,8 @@ export type ContentType =
   | "tag_capsule"
   | "menu_link"
   | "breadcrumb"
-  | "prev_next";
+  | "prev_next"
+  | "mbti_quiz";
 
 export type ActionType =
   | "view"
@@ -25,7 +26,10 @@ export type ActionType =
   | "share"
   | "generate"
   | "remix"
-  | "download";
+  | "download"
+  | "search"
+  | "video_click"
+  | "video_play";
 
 export type ViewMode = "list" | "cards";
 
@@ -51,6 +55,7 @@ const SESSION_KEY = "_curify_session_id";
 const LOCALE_PREFIX = /^\/[a-z]{2}(?=\/|$)/;
 
 const ROUTE_PATTERNS: [RegExp, string][] = [
+  [/\/nano-template\/[^/]+\/carousel\/[^/]+$/, "/nano-template/[slug]/carousel/[exampleId]"],
   [/\/nano-template\/[^/]+\/example\/[^/]+$/, "/nano-template/[slug]/example/[exampleId]"],
   [/\/nano-template\/[^/]+$/,                 "/nano-template/[slug]"],
   [/\/nano-banana-pro-prompts\/tag\/[^/]+$/,  "/nano-banana-pro-prompts/tag/[slug]"],
@@ -277,4 +282,22 @@ export function useSaveTracking(
   return useCallback(() => {
     trackAction({ contentId, contentType, viewMode }, "favorite");
   }, [contentId, contentType, viewMode, trackAction]);
+}
+
+export function useVideoTracking(
+  contentId: string,
+  contentType: ContentType,
+  viewMode?: ViewMode
+) {
+  const { trackAction } = useTracking();
+
+  const trackVideoClick = useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "video_click");
+  }, [contentId, contentType, viewMode, trackAction]);
+
+  const trackVideoPlay = useCallback(() => {
+    trackAction({ contentId, contentType, viewMode }, "video_play");
+  }, [contentId, contentType, viewMode, trackAction]);
+
+  return { trackVideoClick, trackVideoPlay };
 }

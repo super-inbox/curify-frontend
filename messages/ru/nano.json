@@ -2286,7 +2286,7 @@
     }
   },
   "template-book-minimalist": {
-    "category": "Books & Learning",
+    "category": "Минималистичный обзор книги",
     "description": "Generate a stunning minimalist book summary poster with key insights, quotes, and visual hierarchy.",
     "title": "Nano Banana Prompt: Minimalist Book Summary Poster Generator | Curify AI",
     "content": {
@@ -2308,7 +2308,7 @@
     }
   },
   "template-country-top10-travel-destinations": {
-    "category": "Travel",
+    "category": "Топ-10 направлений страны",
     "description": "Generate a beautiful watercolor-style top 10 travel destinations poster for any country.",
     "title": "Nano Banana Prompt: Country Top 10 Travel Destinations Poster Generator | Curify AI",
     "content": {
@@ -2330,7 +2330,7 @@
     }
   },
   "template-weird-cold-knowledge-popular-science-card": {
-    "category": "Science & Knowledge",
+    "category": "Научно-популярная карточка",
     "description": "Generate eye-catching popular science cards featuring fascinating and unexpected facts.",
     "title": "Nano Banana Prompt: Weird & Fascinating Facts Science Card Generator | Curify AI",
     "content": {
@@ -2352,7 +2352,7 @@
     }
   },
   "template-CVC-english-word-coloring-flower-card": {
-    "category": "Education",
+    "category": "Раскраска цветка со словами CVC",
     "description": "Generate adorable CVC word coloring flower cards for early childhood English learning.",
     "title": "Nano Banana Prompt: CVC English Word Coloring Flower Card Generator | Curify AI",
     "content": {
@@ -2391,6 +2391,468 @@
           "Create a Japandi-style living room mood board. Color palette: warm white, soft sage green, natural wood tones, matte black accents. Materials: oak wood, linen upholstery, ceramic pottery, woven baskets. Furniture: low-profile sofa, minimalist coffee table, floor cushions. Mood: calm, uncluttered, natural light. Professional grid layout, 4:3 format.",
           "Generate a moody industrial bedroom mood board. Colors: charcoal, exposed brick red, aged brass, forest green. Elements: concrete ceiling, steel bed frame, Edison bulb lighting, vintage leather, distressed wood flooring. Atmosphere: raw, sophisticated, masculine. Collage style presentation.",
           "Design a coastal bohemian home office mood board. Palette: ocean blue, sandy beige, terracotta, natural white. Textures: rattan furniture, macrame wall hanging, sea grass rug, linen curtains, driftwood accents. Lighting: natural and warm pendant lights. Creative and inspiring workspace aesthetic."
+        ]
+      }
+    }
+  },
+  "template-verb-action-learning-cards": {
+    "category": "Uchebnye Kartochki Glagolov Dejstviya",
+    "description": "Sozdajte setku 3x3 multiplikatsionnykh uchebnykh kartochek glagolov dejstviya s druzhelyubnymi illyustratsiyami i zhirnoj tipografiej.",
+    "title": "Nano Banana Prompt: Generator Kartochek Glagolov Dejstviya | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet chistuyu setku 3x3 iz 9 otdel'nykh uchebnykh kartochek na belom fone.",
+        "who": "Podkhodit dlya prepodavatelej ESL, dizajnerov yazykovyh prilozhenij, pedagogov rannego detstva i sozdatelej obrazovatel'nogo kontenta.",
+        "how": [
+          "Vyberite temu obucheniya (naprimer: bazovye glagoly, povsednevnye dejstviya, emocii).",
+          "9 kartochek avtomaticheski raspolagayutsya v setke 3x3.",
+          "Kazhdaya yachejka sochetaet illyustratsiyu i glagol zhirnym shriftom.",
+          "Generiruetsya vertikal'nyj 4K poster v stile detskoj knigi."
+        ],
+        "prompts": [
+          "Bazovye glagoly: bezhat', prygat', est', spat', chitat', pisat'.",
+          "Emotsii: schastlivyj, grustnyj, serdityj, udivlennyj, ustalyj.",
+          "Dvizheniya: brosat', lovit', lazat', katat'sya, tyanut'sya."
+        ]
+      }
+    }
+  },
+  "template-pet-care-guide": {
+    "category": "Infografika po Ukhodu za Pitomtsem",
+    "description": "Generiruet polnuyu infografiku po ukhodu za pitomtsem v 5 sekciyah dlya lyubogo tipa i vozrasta.",
+    "title": "Nano Banana Prompt: Generator Infografiki Ukhoda za Pitomtsami | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon proizvodit vertikal'nyj postel'nyj poster s 5 sekciyami: pitanie, fizicheskaya aktivnost', zdorov'e, ukhod, vospitanie.",
+        "who": "Podkhodit dlya organizacij po peredache zhivotnykh, zavodchikov, veterinarnyh klinik, brendov tovarov dlya pitomtsev i novykh vladel'tsev.",
+        "how": [
+          "Vyberite tip pitomtsa (naprimer: britanskaya korotkosherstnaya, korgi, labrador).",
+          "Ukazhite vozrast (naprimer: 5 mesyacev, 1 god, senior).",
+          "5 cvetnyh sekcij avtomaticheski zapolnyayutsya.",
+          "Generiruetsya vertikal'naya 4K postel'naya infografika."
+        ],
+        "prompts": [
+          "Rukovodstvo po ukhodu za 5-mesyachnoj britanskoj koshkoj.",
+          "Polnoe rukovodstvo po ukhodu za pozhilym labradorom.",
+          "Rukovodstvo po ukhodu za 2-mesyachnym shenkom korgi."
+        ]
+      }
+    }
+  },
+  "template-9-traits-info-grid": {
+    "category": "Infografika 9 Kachestv",
+    "description": "Sozdajte chistuyu infografiku 3x3 kachestv po lyuboj teme s illyustratsiyami i zhirnymi zagolovkami.",
+    "title": "Nano Banana Prompt: Generator Infografiki 9 Kachestv | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon generiruet kvadratnyj poster '9 Kachestv [Temy]' s 9 minimalisticheskimi illyustratsiyami v setke 3x3.",
+        "who": "Podkhodit dlya sozdatelej kontenta lichnostnogo rosta, lajf-kouchej, avtorov literatury samopomoshchi i marketologov.",
+        "how": [
+          "Vvedite temu (naprimer: idealnyj partner, liderstvo, samosovershenstvovanie).",
+          "9 yacheyek kachestv generiruyutsya avtomaticheski.",
+          "Minimalisticheskoe linejnoe iskusstvo na belom fone.",
+          "Generiruetsya kvadratnaya 4K infografika dlya socsetej."
+        ],
+        "prompts": [
+          "Infografika '9 Kachestv Idealnogo Partnera'.",
+          "Poster '9 Kachestv Liderstva'.",
+          "Infografika '9 Kachestv Samosovershenstvovaniya'."
+        ]
+      }
+    }
+  },
+  "template-english-phrasal-verb": {
+    "category": "Poster Anglijskih Frazovykh Glagolov",
+    "description": "Generiruet poster s 8 frazami frazovykh glagolov vokrug osnovnogo glagola s primerami predlozhenij.",
+    "title": "Nano Banana Prompt: Generator Postera Anglijskih Frazovykh Glagolov | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon sozdaet vertikal'nyj poster '8 Fraz s [Glagolom]' na svetlom kremovom fone s ploskimi ikonkami.",
+        "who": "Podkhodit dlya prepodavatelej ESL, yazykovyh tutorov i izuchayushchih anglijskij yazyk.",
+        "how": [
+          "Vyberite glagol (naprimer: BREAK, TAKE, GO, PUT).",
+          "8 frazovykh glagolov generiruyutsya v vertikal'nom spiske.",
+          "Kazhdyj punkt soderjit ikonku, glagol i primer.",
+          "Generiruetsya vertikal'nyj 4K poster dlya pechati."
+        ],
+        "prompts": [
+          "Poster '8 Fraz s BREAK'.",
+          "Poster '8 Fraz s TAKE'.",
+          "Poster '8 Fraz s PUT'."
+        ]
+      }
+    }
+  },
+  "template-hairstyle-color-recommendation": {
+    "category": "Infografika Rekomendacij Pricheski i Tsveta",
+    "description": "Ispol'zuet referensnyj portret dlya generacii beauty-postera s 6 personalizovannymi rekomendaciyami pricheski i tsveta.",
+    "title": "Nano Banana Prompt: Generator Rekomendacij Pricheski i Tsveta | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shableon ispol'zuet referensnyj portret dlya sozdaniya beauty-konsul'tacionnogo postera. Originalnoe foto sleva, sprava 6 kruglykh prosmotrov v setke 2x3.",
+        "who": "Podkhodit dlya parikmaherov, vladel'tsev salonov, sozdatelej beauty-kontenta i stilistov.",
+        "how": [
+          "Zagruzite referensnyj portret.",
+          "Shableon generiruet 6 kombinacij pricheski i tsveta.",
+          "Kazhdyj prosmotr podpisyvaetsya nazvaniem pricheski i tsvetom.",
+          "Generiruetsya beauty-konsul'tacionnyj poster vysokogo razresheniya."
+        ],
+        "prompts": [
+          "Poster dlya ovalnogo lica s 6 stilyami.",
+          "Rukovodstvo po pricheskam dlya kruglogo lica v teplyh tonah.",
+          "Beauty-poster s 6 trendovymi pricheskami."
+        ]
+      }
+    }
+  },
+  "template-country-souvenirs-watercolor": {
+    "category": "Akvarelnyj Poster Suvenirov",
+    "description": "Generiruet teplyj nostalgicheskij akvarelnyj travel-poster s 10 luchshimi suvenirami lyuboj strany, vklyuchaya dostoprimechatel'nosti i sovety po vyboru podarkov.",
+    "title": "Nano Banana Prompt: Generator Akvarelnogo Postera Suvenirov Stran | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vertikal'nyj 4K akvarelnyj travel-poster s zagolovkom 'Top 10 Beautiful Souvenirs from {country_name}'. V verkhnej chasti raspolagayutsya kul'tovye dostoprimechatel'nosti, flag i podzagolovok; v centralnoj chasti — setka iz dvukh kolonok s 10 prоnumerovannymi suvenirami, kazhdyj s akvarelnoj illyustraciej i kratkim opisaniem; vnizu — 'Sovety po vyboru suvenirov' s akvarelnymi ikonami. Myagkie priglushennye cveta i tekstura bumazhnogo fona dayut effekt vintazhnogo travel-postera.",
+        "who": "Podkhodit dlya travel-blogerov, turisticheskikh agentstv, avtorov gajdov po podarkam, Pinterest-kreatorov, kanalov ob ehmigracii, vladelcev suvenirnykh magazinov i sozdatelej travel-kontenta o stranakh.",
+        "how": [
+          "Vvedite stranu v {country_name} (naprimer, Brazilya, Meksika, Yaponiya, Italiya).",
+          "Verkhnyaya chast' avtomaticheski generiruet dostoprimechatel'nosti, flag i zagolovok.",
+          "Desyat' suvenirov razmeshchayutsya v dvukh kolonkakh s opisaniyami.",
+          "Generiruetsya vertikal'nyj 4K akvarelnyj poster v stile vintazh."
+        ],
+        "prompts": [
+          "Akvarelnyj travel-poster 'Top 10 Suvenirov iz Meksiki'.",
+          "Poster 'Top 10 Suvenirov iz Yaponii' s tradicionnymi remyoslami.",
+          "Akvarelnaya infografika 'Top 10 Suvenirov iz Italii'."
+        ]
+      }
+    }
+  },
+  "template-pet-safe-human-food-infographic": {
+    "category": "Infografika Bezopasnoj Edy dlya Pitomtsev",
+    "description": "Sozdaet chistuyu foto-realistichnuyu infografiku, pokazyvayushchuyu, kakie chelovecheskie produkty bezopasny, a kakie tokichny dlya pitomtsa, na fone belogo mramora.",
+    "title": "Nano Banana Prompt: Generator Infografiki Bezopasnyh Chelovecheskikh Produktov dlya Pitomtsev | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vertikal'nyj 4K obrazovatel'nyj poster 'Human Foods {pet_name} Can Safely Eat'. V verkhnem uglu — realistichnoe foto pitomtsa; setka realistichnyh foto produktov pomechaet bezopasnye frukty, ovoshchi, myaso i krupy; nizhnyaya krasnaya zona preduprezhdaet o tokichnyh produktakh. Belyj mramornyj fon i yarkaya foto-fotografiya sozdayut effekt nadyozhnogo gida po ukhodu.",
+        "who": "Podkhodit dlya vladel'cev pitomtsev, veterinarov, brendov pitaniya, priyutov, blogerov o pitomtsakh, vetassistentov i sozdatelej obrazovatel'nogo kontenta.",
+        "how": [
+          "Vyberite tip pitomtsa v {pet_name} (naprimer, Koshki, Sobaki, Kroliki, Popugai).",
+          "Foto pitomtsa pojavlyaetsya v verkhnem uglu vmeste s zagolovkom.",
+          "Realistichnye foto avtomaticheski raspolagayut bezopasnye produkty sverkhu, tokichnye — v krasnoj zone vnizu.",
+          "Generiruetsya vertikal'naya 4K mramornaya infografika s foto-realistichnymi metkami."
+        ],
+        "prompts": [
+          "Infografika 'Bezopasnye chelovecheskie produkty dlya koshek' na mramore.",
+          "Poster 'Bezopasnye chelovecheskie produkty dlya sobak' s zonoj tokichnyh produktov.",
+          "Infografika 'Bezopasnye chelovecheskie produkty dlya krolikov' v foto-realistichnom stile."
+        ]
+      }
+    }
+  },
+  "template-phonics-consonant-blend": {
+    "category": "Poster po Fonike",
+    "description": "Generiruet detskij obuchayushchij poster po fonike dlya lyubogo soglasnogo sochetaniya, s 6-8 primernymi slovami, multyashnymi illyustraciyami i nebesno-golubym fonom.",
+    "title": "Nano Banana Prompt: Generator Postera po Fonike Soglasnyh Sochetanij | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vertikal'nyj 4K obuchayushchij poster po fonike dlya soglasnogo sochetaniya {phonics_blend}. Sverkhu — krupnyj zhirnyj zagolovok-sochetanie; v belom obramlenii pokazany 6-8 primernyh slov s yarkimi multyashnymi illyustraciyami, bukvy sochetaniya — krasnym, ostalnye — sinim. Nebesno-goluboj fon s belymi oblakami i zelyonoj travoj snizu sozdayot druzheljubnuyu atmosferu dlya nachinayushchikh chitatelej.",
+        "who": "Podkhodit dlya ESL-uchitelej, uchitelej nachalnoj shkoly, roditelej na semejnom obuchenii, sozdatelej kontenta dlya rannego razvitiya, repetitorov po chteniyu, dizajnerov obrazovatel'nykh prilozhenij i logopedov.",
+        "how": [
+          "Vvedite soglasnoe sochetanie v {phonics_blend} (naprimer, gr, bl, ch, sh, th, tr).",
+          "Sochetanie pojavlyaetsya krupnym zhirnym zagolovkom v verkhnej chasti.",
+          "Ot 6 do 8 primernyh slov generiruyutsya s multyashnymi illyustraciyami i cvetovoj kodirovkoj bukv.",
+          "Generiruetsya vertikal'nyj 4K multyashnyj poster po fonike na nebesno-golubom fone."
+        ],
+        "prompts": [
+          "Poster sochetaniya 'gr' (grape, green, grass, grin).",
+          "Obuchayushchij poster sochetaniya 'sh' s 8 primernymi slovami.",
+          "Poster sochetaniya 'tr' dlya nachinayushchikh chitatelej."
+        ]
+      }
+    }
+  },
+  "template-media-theme-wallpaper-poster": {
+    "category": "Tematicheskie Oboi Postery",
+    "description": "Sozdaet stilizovannye atmosfernye oboi ili poster dlya lyuboj filmnoj, anime ili TV-vselennoj, verno peredayushchij original'nyj khudozhestvennyj stil'.",
+    "title": "Nano Banana Prompt: Generator Tematicheskikh Oboev i Posterov po Mediavselennym | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Etot shablon generiruet vysokokachestvennye stilizovannye oboi ili poster dlya {media_topic}. Kompoziciya stroitsya vokrug kul'tovykh personazhej ili scen na detalizirovannom atmosfernom fone; zagolovok pokazyvaetsya v tematicheskom shrifte. Stil' veren original'noj estetike — ot zhivopisnogo Studio Ghibli do sitkomnoj atmosfery 'Friends' — usilen yarkimi cvetami i kinematograficheskim svetom.",
+        "who": "Podkhodit dlya fanatov, fan-art khudozhnikov, brendov dekora, dizajnerov socsetej, akkauntov mobil'nykh oboev, organizatorov kino- i anime-klubov i sozdatelej tematicheskikh mokapov merch.",
+        "how": [
+          "Vvedite mediavselennuyu v {media_topic} (naprimer, Ponyo, My Neighbor Totoro, Friends TV Show).",
+          "Kul'tovye personazhi ili sceny avtomaticheski raspolagayutsya na atmosfernom fone.",
+          "Zagolovok pojavlyaetsya v shrifte, sootvetstvuyushchem original'noj estetike.",
+          "Generiruyutsya vysokokachestvennye vertikal'nye ili kvadratnye kinematograficheskie oboi."
+        ],
+        "prompts": [
+          "Oboi v stile Studio Ghibli dlya 'Moj sosed Totoro'.",
+          "Tematicheskie oboi 'Ponyo' s original'noj akvarelnoj estetikoj.",
+          "Stilizovannyj poster 'Friends TV Show' dlya fanatskogo dekora."
+        ]
+      }
+    }
+  },
+  "template-ai-outfit-try-on-poster": {
+    "category": "Постер для примерки одежды с ИИ",
+    "description": "Создайте чистый трехпанельный постер для примерки одежды, показывающий референсного персонажа, плоское изображение полного наряда и того же персонажа в новом наряде с реалистичной посадкой и освещением.",
+    "title": "Nano Banana Prompt: Генератор постеров для примерки одежды с ИИ | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон использует Nano Banana для создания трехпанельного постера для примерки одежды на чистом студийном фоне. Левая панель показывает оригинальный портрет референсного персонажа с подписью 'Персонаж'; средняя панель отображает полный наряд (одежда, обувь, аксессуары) в виде плоского изображения с подписью 'Наряд'; правая панель изображает того же персонажа в новом наряде с согласованным освещением, позой и реалистичной посадкой, с подписью 'Результат' — стиль высокой моды с четкими деталями и коммерческой эстетикой.",
+        "who": "Подходит для модных брендов, интернет-магазинов, персональных стилистов, дизайнеров лукбуков, создателей модного контента, приложений виртуального стайлинга и всех, кто хочет визуализировать наряд на конкретном персонаже перед производством или покупкой.",
+        "how": [
+          "Предоставьте или опишите портрет референсного персонажа для левой панели.",
+          "Укажите полный наряд (одежда, обувь, аксессуары), который вы хотите изобразить на средней панели.",
+          "Шаблон отображает правую панель с тем же персонажем в наряде, совпадающей позой и освещением.",
+          "Создайте горизонтальный 4K трехпанельный постер для примерки одежды."
+        ],
+        "prompts": [
+          "Создайте постер для примерки повседневного уличного наряда (объемный худи, мешковатые джинсы, кроссовки).",
+          "Создайте постер для примерки делового наряда (пиджак, брюки, лоферы).",
+          "Попробуйте летний наряд (льняная рубашка, шорты, сандалии) на том же персонаже."
+        ]
+      }
+    }
+  },
+  "template-chinese-character-learning-poster": {
+    "category": "Постер для изучения китайских иероглифов",
+    "description": "Создайте постер для изучения ежедневного иероглифа (每日一字) для любого китайского иероглифа с пиньинем и 5-6 радиальными ветвями составных слов с милыми мультяшными иллюстрациями.",
+    "title": "Nano Banana Prompt: Генератор постеров для изучения китайских иероглифов | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон создает вертикальный образовательный постер 'Ежедневный иероглиф' (每日一字) для одного китайского иероглифа. В центре показан большой иероглиф с его пиньинем; 5-6 радиальных ветвей вокруг центра связывают распространенные составные слова с милыми мультяшными иллюстрациями и подписями на пиньине — чистый белый фон, мягкий акварельный или мультяшный художественный стиль, дружелюбная образовательная эстетика.",
+        "who": "Подходит для учителей мандаринского, изучающих китайский язык, преподавателей ESL/CSL, родителей, обучающих китайскому языку, дизайнеров приложений для изучения языков и создателей контента, производящих печатные материалы для изучения китайского языка для классов или социальных сетей.",
+        "how": [
+          "Введите целевой китайский иероглиф (например, 山, 火, 木, 水, 日, 月).",
+          "Укажите пиньинь для этого иероглифа (например, shān, huǒ, mù).",
+          "Постер автоматически размещает заголовок 每日一字, центральный иероглиф с пиньинем и 5-6 радиальных ветвей составных слов.",
+          "Создайте вертикальный 4K дружелюбный к детям постер для изучения китайских иероглифов."
+        ],
+        "prompts": [
+          "Создайте постер для ежедневного иероглифа 山 (shān) с составными словами на тему гор.",
+          "Создайте постер для изучения 火 (huǒ) с составными словами и иллюстрациями на тему огня.",
+          "Создайте постер для ежедневного иероглифа 水 (shuǐ) с ветвями на тему воды."
+        ]
+      }
+    }
+  },
+  "template-chinese-verb-opposite-infographic": {
+    "category": "Инфографика противоположных китайских глаголов",
+    "description": "Создайте образовательный постер-инфографику с противоположными парами китайских глаголов с пиньинем, английскими переводами и контрастными мультяшными иллюстрациями в горизонтальных рядах.",
+    "title": "Nano Banana Prompt: Генератор инфографики противоположных китайских глаголов | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон создает горизонтальный образовательный постер-инфографику с противоположными китайскими глаголами. Каждый ряд связывает две противоположные глагольные пары: слева и справа показывается глагол с пиньинем и английским переводом, в центре — мультяшная иллюстрация противоположных действий, а цветная стрелка или шестиугольная форма связывает пару вместе — чистый светлый фон, дружелюбные мультяшные иллюстрации, мягкие пастельные цвета.",
+        "who": "Подходит для учителей мандаринского, изучающих китайский язык, преподавателей ESL/CSL, создателей контента, производящих печатные материалы по словарному запасу, двуязычных классов и аккаунтов в социальных сетях, сосредоточенных на изучении языков.",
+        "how": [
+          "Введите тему таблицы (например, 'Противоположные пары китайских глаголов', 'Основные антонимы китайских глаголов').",
+          "Инфографика автоматически размещает ряд горизонтальных рядов противоположных пар глаголов.",
+          "Каждый ряд связывает левые и правые глаголы с пиньинем и английскими переводами, плюс центральная контрастная иллюстрация.",
+          "Создайте горизонтальный 4K образовательный постер с противоположными глаголами."
+        ],
+        "prompts": [
+          "Создайте инфографику 'Противоположные пары китайских глаголов' с 8 распространенными парами глаголов.",
+          "Создайте таблицу 'Основные антонимы китайских глаголов' для начинающих.",
+          "Создайте инфографику 'Повседневные китайские действия' с противоположностями."
+        ]
+      }
+    }
+  },
+  "template-mbti-relationship-infographic": {
+    "category": "Инфографика отношений MBTI",
+    "description": "Создайте яркую инфографику пар MBTI рядом с характеристиками, цитатами и сводкой совместимости для любых двух типов MBTI.",
+    "title": "Nano Banana Prompt: Генератор инфографики отношений MBTI | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон создает яркий горизонтальный постер-инфографику, сравнивающий два типа MBTI в отношениях. Два мультяшных персонажа в их фирменных цветах стоят в центре; левые и правые панели показывают характеристики и цитаты каждого типа с соответствующими иконками; нижний раздел дает сводку совместимости с пунктами и эмодзи — чистый белый фон, красочный низкополигональный геометрический художественный стиль, дружелюбный образовательный тон.",
+        "who": "Подходит для создателей контента MBTI, энтузиастов личности, маркетинговых команд приложений для знакомств, коучей по отношениям, аккаунтов в социальных сетях, сосредоточенных на личности, и всех, кто создает контент о парах MBTI для обмена.",
+        "how": [
+          "Введите первый тип MBTI (например, INTJ, ENFP, ISFJ).",
+          "Введите второй тип MBTI для сравнения.",
+          "Постер автоматически размещает двух мультяшных персонажей, боковые панели характеристик и цитат, а также нижнюю сводку совместимости.",
+          "Создайте горизонтальную 4K красочную низкополигональную инфографику о отношениях."
+        ],
+        "prompts": [
+          "Создайте инфографику о отношениях INTJ и ENFP с характеристиками и сводкой совместимости.",
+          "Создайте постер совместимости пар ISFJ и ESTP.",
+          "Создайте инфографику о отношениях INFP и ENTJ с цитатами и анализом совместимости."
+        ]
+      }
+    }
+  },
+  "template-ethnic-costume-deconstruction-board": {
+    "category": "Доска деконструкции этнического костюма",
+    "description": "Создайте модную доску в стиле деконструкции для традиционного костюма любой этнической группы с портретом в полный рост и пометками компонентов по обе стороны.",
+    "title": "Nano Banana Prompt: Генератор доски деконструкции этнического костюма | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон использует Nano Banana для создания профессиональной доски культурного наследия для традиционного костюма выбранной этнической группы. В центре находится портрет модели в полном костюме на фоне темного дерева; левые и правые рельсы деконструируют образ на серебряные украшения, вышитые текстили, аксессуары и культурные артефакты, каждый из которых помечен китайскими иероглифами. Эстетика модной студийной фотографии с теплым драматическим освещением, четкими деталями и богатыми текстурами.",
+        "who": "Подходит для брендов культурного наследия, дизайнеров музеев и выставок, модных редакторов, этнографических исследователей, туристических изданий, дизайнеров костюмов и создателей контента о традиционной одежде и культурах меньшинств.",
+        "how": [
+          "Введите название этнической группы (например, тибетцы, мяо, бай, и, дай, монголы).",
+          "Шаблон автоматически размещает центральный портрет в полный рост костюма.",
+          "Слева и справа деконструируются костюм на помеченные украшения, текстили и аксессуары.",
+          "Создайте вертикальную 4K доску культурной деконструкции в стиле модной студии."
+        ],
+        "prompts": [
+          "Создайте доску деконструкции тибетского традиционного костюма с пометками серебряных украшений.",
+          "Создайте плоскую композицию традиционного костюма мяо с помеченными вышитыми текстилями.",
+          "Создайте доску деконструкции монгольского костюма с выделенными культурными аксессуарами."
+        ]
+      }
+    }
+  },
+  "template-gardening-how-to-infographic": {
+    "category": "Инфографика по садоводству",
+    "description": "Создайте чистую пошаговую инфографику по садоводству с заголовком 'КАК ВЫРАСТИТЬ <растение>' с шестью пронумерованными фотоэтапами и полезными иконками для любого растения.",
+    "title": "Nano Banana Prompt: Генератор инфографики по садоводству | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон создает вертикальную образовательную инфографику по садоводству с заголовком 'КАК ВЫРАСТИТЬ <растение>'. Жирный основной заголовок находится вверху с подзаголовком о растении; сетка 2x3 из шести пронумерованных шагов заполняет тело, каждый с реалистичной фотоиллюстрацией садоводческого действия, четким заголовком шага, описательным текстом и полезными маленькими иконками. Чистый белый фон, четкая эстетика продуктовой фотографии, профессиональный образовательный стиль.",
+        "who": "Подходит для блогеров по садоводству, брендов городского фермерства, розничных продавцов семян и инструментов, создателей контента о устойчивом образе жизни, educators по домашнему и садоводству, школ, проводящих программы по садоводству, и родителей, обучающих детей выращиванию пищи.",
+        "how": [
+          "Введите название растения (например, помидоры, болгарский перец, салат, клубника).",
+          "Шаблон автоматически размещает сетку 2x3 из шести пронумерованных шагов по выращиванию.",
+          "Каждая ячейка сочетает фото действия с заголовком шага, инструкциями и иконками.",
+          "Создайте вертикальную 4K распечатываемую инфографику по садоводству."
+        ],
+        "prompts": [
+          "Создайте инфографику 'КАК ВЫРАСТИТЬ помидоры' с шестью пронумерованными фотоэтапами.",
+          "Создайте постер-руководство по садоводству 'КАК ВЫРАСТИТЬ болгарский перец'.",
+          "Создайте пошаговую инфографику 'КАК ВЫРАСТИТЬ клубнику'."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-watercolor-infographic": {
+    "category": "Инфографика в акварельном стиле",
+    "description": "Создайте теплую, игривую акварельную инфографику на любую тему с пронумерованным заголовком, мягкой центральной иллюстрацией и иконками советов на текстурированном бумажном фоне.",
+    "title": "Nano Banana Prompt: Генератор акварельной инфографики о стиле жизни | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон создает вертикальный постер акварельной инфографики теплых тонов вокруг выбранной темы стиля жизни. Вверху находится лента с мягкой цитатой над большим пронумерованным заголовком (например, '10 идей по уходу за собой'); мягкая акварельная центральная иллюстрация закрепляет композицию, окруженная меньшими акварельными иконками, каждая из которых сопровождается короткой меткой совета. Светло-бежевый текстурированный бумажный фон с сердцами, звездами и конфетти в уютной эстетике ухода за собой.",
+        "who": "Подходит для создателей контента о здоровье, брендов по уходу за собой, коучей по внимательности, дизайнеров журналов и планировщиков, создателей контента на Pinterest, авторов о психическом здоровье и создателей контента, создающих уютный распечатываемый контент о стиле жизни.",
+        "how": [
+          "Введите тему инфографики (например, 'Идеи по уходу за собой', 'Идеи утреннего распорядка').",
+          "Введите количество советов, которые вы хотите перечислить (например, 8, 10, 12).",
+          "Шаблон генерирует пронумерованный акварельный постер с центральной иллюстрацией и иконками советов.",
+          "Создайте вертикальную 4K уютную акварельную инфографику о стиле жизни."
+        ],
+        "prompts": [
+          "Создайте акварельную инфографику '10 идей по уходу за собой' с уютными советами.",
+          "Создайте постер акварельного стиля '8 идей утреннего распорядка'.",
+          "Создайте теплую акварельную инфографику '12 практик внимательности'."
+        ]
+      }
+    }
+  },
+  "template-animation-studio-comparison-infographic": {
+    "category": "Инфографика сравнения анимационных студий",
+    "description": "Создайте яркий постер 'СРАЖЕНИЕ АНИМЕ СТУДИЙ', сравнивающий две анимационные студии бок о бок, с логотипами, годом основания, художественным стилем, известными работами и наследием.",
+    "title": "Nano Banana Prompt: Генератор инфографики сравнения анимационных студий | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон генерирует яркий постер инфографики 'СРАВНЕНИЕ АНИМЕ СТУДИЙ'. Заголовок располагается вверху; тело делится на левую и правую стороны между двумя выбранными студиями, каждая сторона охватывает логотип студии, год основания, художественный стиль с примерами искусства, известные работы с изображениями и наследие/влияние с иконками. Фон использует текстуру деревянного стола с аниме-дудлами и фигурками для уютной эстетики фанатов, с различными цветовыми палитрами для каждой студии.",
+        "who": "Подходит для фанатов аниме, публикаций об анимации, создателей фан-арта, преподавателей истории анимации, аккаунтов в социальных сетях, сосредоточенных на аниме, и создателей контента, создающих делимые обзоры студий.",
+        "how": [
+          "Введите название первой студии (например, Studio Ghibli, Wit Studio, Kyoto Animation, Pixar).",
+          "Введите название второй студии для сравнения (например, MAPPA, Ufotable, DreamWorks).",
+          "Постер автоматически делит на левую и правую стороны с логотипами, годом основания, художественным стилем, известными работами и наследием.",
+          "Создайте вертикальную 4K яркую информационную инфографику сравнения."
+        ],
+        "prompts": [
+          "Создайте инфографику сравнения 'Studio Ghibli против MAPPA'.",
+          "Создайте постер сравнения анимационных студий 'Pixar против DreamWorks'.",
+          "Создайте инфографику сражения студий 'Kyoto Animation против Ufotable'."
+        ]
+      }
+    }
+  },
+  "template-history-timeline-infographic": {
+    "category": "Инфографика временной шкалы истории",
+    "description": "Создайте визуально потрясающий постер временной шкалы эволюции по любой исторической теме с текущей временной шкалой, ключевыми событиями, датами, описаниями и тематическими иллюстрациями.",
+    "title": "Nano Banana Prompt: Генератор инфографики временной шкалы истории | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон генерирует визуально потрясающую вертикальную инфографику с заголовком '[тема]: Эволюция во времени'. Центральная текущая временная шкала с пронумерованными годовыми вехами проходит по длине постера; каждая веха содержит ключевое событие, дату, краткое описание и соответствующую иллюстрацию. Цветовая палитра, иконки и дизайн фона адаптируются к выбранной теме (ретро, футуристический, винтажный и т.д.) для согласованного языкового дизайна.",
+        "who": "Подходит для преподавателей истории, дизайнеров музеев и выставок, контент-маркетологов, публикаций о истории брендов, писателей популярной науки, педагогов в социальных сетях и создателей, создающих делимые постеры о истории-X.",
+        "how": [
+          "Введите тему временной шкалы (например, 'История Apple Inc.', 'Эволюция видеоигр', 'История фотографии').",
+          "Инфографика автоматически размещает центральную текущую временную шкалу с пронумерованными вехами.",
+          "Каждая веха показывает ключевое событие, дату, краткое описание и тематическую иллюстрацию.",
+          "Создайте вертикальный 4K тематический постер временной шкалы эволюции."
+        ],
+        "prompts": [
+          "Создайте инфографику временной шкалы 'История Apple Inc.: Эволюция во времени'.",
+          "Создайте постер временной шкалы 'Эволюция видеоигр'.",
+          "Создайте инфографику временной шкалы 'Исследование космоса' с ключевыми событиями."
+        ]
+      }
+    }
+  },
+  "template-then-vs-now-comparison-infographic": {
+    "category": "Инфографика сравнения Тогда и Сейчас",
+    "description": "Создайте чистый постер сравнения ТОГДА-И-СЕЙЧАС по любой теме, с трехколоночной таблицей, контрастирующей винтажные и современные эквиваленты с использованием реалистичных фотографий.",
+    "title": "Nano Banana Prompt: Генератор инфографики сравнения Тогда и Сейчас | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон генерирует четкую вертикальную инфографику сравнения с заголовком '[тема] ТОГДА И СЕЙЧАС'. Заголовок темы располагается вверху; тело представляет собой трехколоночную таблицу с категориями / Тогда / Сейчас, каждая из которых показывает винтажный продукт слева и его современный эквивалент справа с использованием реалистичных фотографий. Фон и иконки соответствуют теме для ностальгической, но современной эстетики.",
+        "who": "Подходит для создателей контента о ностальгии, ретроспективных публикаций, маркетологов брендов, показывающих эволюцию продуктов, образовательных страниц и аккаунтов в социальных сетях, сосредоточенных на поколенческих сравнениях.",
+        "how": [
+          "Введите тему сравнения (например, 'Закуски из детства', 'Развлечения', 'Школьные принадлежности').",
+          "Постер автоматически размещает трехколоночную таблицу Категория / Тогда / Сейчас.",
+          "Каждая строка сопоставляет винтажный предмет слева с его современным эквивалентом справа с использованием реалистичных фотографий.",
+          "Создайте вертикальную 4K чистую ностальгическую-вс-modern инфографику сравнения."
+        ],
+        "prompts": [
+          "Создайте инфографику сравнения 'Закуски из детства Тогда и Сейчас'.",
+          "Создайте постер ностальгического сравнения 'Развлечения Тогда и Сейчас'.",
+          "Создайте инфографику сравнения 'Школьные принадлежности Тогда и Сейчас'."
+        ]
+      }
+    }
+  },
+  "template-travel-packing-guide-infographic": {
+    "category": "Инфографика руководства по упаковке для путешествий",
+    "description": "Создайте яркий постер руководства по упаковке для любой цели, количества дней и фокуса на пол, с содержимым ручной клади, необходимыми вещами, идеями для нарядов, обязательными предметами и советами профессионалов.",
+    "title": "Nano Banana Prompt: Генератор инфографики руководства по упаковке для путешествий | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон генерирует яркий постер руководства по упаковке, адаптированный к месту назначения, продолжительности поездки и фокусу на пол. Заголовок постера гласит '[N]-ДЕНЬ [место назначения] Руководство по упаковке' над графикой на тему путешествий; тело охватывает 'Что можно положить в ручную кладь', 'Необходимые вещи', '[N]-Дневные идеи для нарядов', 'Дополнительные обязательные вещи' и 'Советы профессионалов' — каждый раздел использует реалистичные фотографии продуктов с четкими метками в согласованной цветовой палитре.",
+        "who": "Подходит для блогеров о путешествиях, планировщиков маршрутов, создателей стиля жизни, ритейлеров туристического снаряжения, дизайнеров приложений для списков упаковки и создателей контента, создающих делимые руководства по конкретным направлениям.",
+        "how": [
+          "Введите место назначения (например, 'Пляжный отпуск', 'Поход', 'Деловая поездка').",
+          "Введите количество дней (например, '3-дневный', '5-дневный', '7-дневный').",
+          "Введите фокус на пол (например, 'Женский', 'Мужской', 'Унисекс').",
+          "Создайте вертикальный 4K яркий тематический постер руководства по упаковке."
+        ],
+        "prompts": [
+          "Создайте инфографику руководства по упаковке для Женского 5-дневного пляжного отпуска.",
+          "Создайте постер руководства по упаковке для Мужского 7-дневного похода.",
+          "Создайте инфографику руководства по упаковке для Унисекс 3-дневного уикенда."
+        ]
+      }
+    }
+  },
+  "template-word-origins-map-infographic": {
+    "category": "Инфографика карты происхождения слов",
+    "description": "Создайте образовательную инфографику карты мира по любой теме, показывающую слова, соединенные цветными линиями с их странами происхождения, с этимологиями и тематическими иконками.",
+    "title": "Nano Banana Prompt: Генератор инфографики карты происхождения слов | Curify AI",
+    "content": {
+      "sections": {
+        "what": "Этот шаблон генерирует образовательную горизонтальную инфографику с заголовком 'ПОХОДЖДЕНИЯ СЛОВ: [тема]'. Упрощенная карта мира располагается в центре; слова размещаются по карте и соединяются цветными линиями с их странами происхождения, каждая из которых отмечена флагом страны. Каждое слово аннотируется его этимологией и кратким значением рядом с небольшой тематической иконкой, в чистом современном красочном пастельном дизайне.",
+        "who": "Подходит для преподавателей языков, энтузиастов этимологии, преподавателей ESL/CSL, писателей лингвистики, дизайнеров приложений для изучения словарного запаса и создателей контента, создающих делимые инфографики этимологии.",
+        "how": [
+          "Введите тему (например, 'Еда и кухня', 'Животные и природа', 'Наука и технологии').",
+          "Инфографика автоматически размещает тематические слова на карте мира с линиями происхождения и флагами.",
+          "Каждое слово аннотируется этимологией, кратким значением и тематической иконкой.",
+          "Создайте горизонтальную 4K образовательную инфографику карты происхождения слов."
+        ],
+        "prompts": [
+          "Создайте инфографику карты происхождения слов 'Еда и кухня'.",
+          "Создайте постер карты происхождения слов 'Животные и природа'.",
+          "Создайте инфографику карты происхождения слов 'Наука и технологии'."
         ]
       }
     }
