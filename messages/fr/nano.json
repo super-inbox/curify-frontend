@@ -2856,5 +2856,49 @@
     },
     "description": "Un guide visuel de carte du monde montrant les mots liés à leurs pays d'origine avec étymologies et significations. Utilisez l'invite AI pour générer votre propre affiche de carte étymologique.",
     "title": "Origines des Mots à Travers le Monde : Infographie de Carte Étymologique"
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Infographie du Guide Ultime Vintage",
+    "description": "Un guide visuel détaillé au style vintage pour n'importe quel sujet — café, fromage, plantes d'intérieur, steak — avec une typographie rétro, des illustrations dessinées à la main et des mises en page intemporelles. Utilisez l'invite AI pour générer votre propre affiche de guide ultime.",
+    "title": "Affiches du Guide Ultime Vintage : Infographies Visuelles Rétro pour N'importe Quel Sujet",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie détaillée au style vintage intitulée 'LE GUIDE ULTIME [sujet]'. Un titre en gras avec une police rétro se trouve en haut ; le corps est divisé en sections structurées (Types, Méthodes, Conseils, Faits) avec des sous-titres étiquetés, des illustrations vintage dessinées à la main, des bandes de transformation, des graphiques de comparaison et des systèmes correspondants. Papier texturé beige chaud, palette sépia/terre dans des tons de marron et de crème, avec une bande de conclusions clés.",
+        "who": "Convient aux blogueurs culinaires, créateurs de style de vie, comptes Pinterest à esthétique vintage, chaînes de contenu pour les amateurs, marques de cuisine et de maison, et toute personne créant des affiches de style 'guide ultime' nostalgiques.",
+        "how": [
+          "Entrez un sujet de guide (par exemple, 'Café', 'Fromage', 'Entretien des Plantes d'Intérieur', 'Dégustation de Vin').",
+          "L'affiche dispose automatiquement un titre en police rétro et des sections structurées Types/Méthodes/Conseils/Faits.",
+          "Chaque section utilise des illustrations vintage dessinées à la main avec des étiquettes et des encadrés.",
+          "Générez une affiche verticale 4K au style vintage de guide ultime."
+        ],
+        "prompts": [
+          "Générez une infographie vintage 'Le Guide Ultime du Café' avec des méthodes de préparation.",
+          "Créez une affiche rétro 'Le Guide Ultime du Fromage' avec des types et des accords.",
+          "Générez une infographie vintage 'Le Guide Ultime de l'Entretien des Plantes d'Intérieur'."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Infographie des Faits Scientifiques Étranges",
+    "description": "Un guide visuel éducatif mignon et coloré sur des faits scientifiques étranges sur n'importe quel thème — animaux, plantes, espace, météo. Utilisez l'invite AI pour générer votre propre affiche de faits scientifiques originaux.",
+    "title": "Guide Visuel des Faits Scientifiques Étranges : Infographies Éducatives Mignonnes pour N'importe Quel Thème",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative mignonne et colorée intitulée 'FAITS SCIENTIFIQUES ÉTRANGES : [thème] !'. Le corps est rempli de faits scientifiques illustrés originaux sur le thème choisi, chacun associé à une illustration de style cartoon amicale et une courte explication surprenante, dans une esthétique adaptée aux enfants avec une palette de couleurs vives et une typographie sans-serif claire.",
+        "who": "Convient aux enseignants de sciences, clubs de sciences pour enfants, créateurs d'éducatif, rédacteurs de newsletters scolaires, parents enseignant les sciences à domicile, et créateurs de contenu réalisant des affiches éducatives partageables.",
+        "how": [
+          "Entrez un thème scientifique (par exemple, 'Animaux', 'Plantes', 'Espace', 'Corps Humain').",
+          "L'affiche dispose automatiquement des cartes illustrées mignonnes de faits étranges sur ce thème.",
+          "Chaque fait associe une illustration de cartoon avec une courte explication surprenante.",
+          "Générez une infographie verticale 4K de faits scientifiques étranges adaptée aux enfants."
+        ],
+        "prompts": [
+          "Générez une infographie 'Faits Scientifiques Étranges : Animaux !' avec des illustrations mignonnes.",
+          "Créez une affiche colorée 'Faits Scientifiques Étranges : Espace !' pour les enfants.",
+          "Générez une infographie éducative 'Faits Scientifiques Étranges : Plantes !'."
+        ]
+      }
+    }
   }
 }
