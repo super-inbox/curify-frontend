@@ -27,6 +27,7 @@
  *   node scripts/i18n_autotranslate.cjs --base en --write
  *   node scripts/i18n_autotranslate.cjs --base en --dry-run
  *   node scripts/i18n_autotranslate.cjs --base en --only zh es de --write
+ *   node scripts/i18n_autotranslate.cjs --base en --skip hi fr es de --write
  *   node scripts/i18n_autotranslate.cjs --base en --files common home --write
  *   node scripts/i18n_autotranslate.cjs --base en --files nano --write
  *
@@ -51,6 +52,7 @@ function parseArgs(argv) {
     dir: "messages",
     base: "en",
     only: null, // array or null
+    skip: null, // array or null
     files: null, // array of basenames (without .json) or null -> discover from base folder
     model: "gpt-4o-mini",
     chunkSize: 30,
@@ -70,6 +72,10 @@ function parseArgs(argv) {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
       args.only = list.length ? list : null;
+    } else if (a === "--skip") {
+      const list = [];
+      while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
+      args.skip = list.length ? list : null;
     } else if (a === "--files") {
       const list = [];
       while (argv[i + 1] && !argv[i + 1].startsWith("--")) list.push(argv[++i]);
@@ -113,9 +119,15 @@ if (!locales.includes(args.base)) {
   process.exit(1);
 }
 
-const targetLocales = (args.only ? locales.filter((l) => args.only.includes(l)) : locales).filter(
-  (l) => l !== args.base
-);
+let targetLocales = locales.filter((l) => l !== args.base);
+  
+if (args.only) {
+  targetLocales = targetLocales.filter((l) => args.only.includes(l));
+}
+  
+if (args.skip) {
+  targetLocales = targetLocales.filter((l) => !args.skip.includes(l));
+}
 
 function localeDir(locale) {
   return path.join(messagesDir, locale);

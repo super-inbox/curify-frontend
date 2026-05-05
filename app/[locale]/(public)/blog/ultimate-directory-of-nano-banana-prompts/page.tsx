@@ -258,8 +258,8 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
           { name: t('hero.title'), href: `/blog/ultimate-directory-of-nano-banana-prompts` }
         ]}
       />
-      
-      <article className="prose prose-base md:prose-lg max-w-none mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+      <article className="prose prose-base md:prose-lg max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="relative mb-12">
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl blur opacity-20"></div>
@@ -307,14 +307,14 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('introduction.title')}</h2>
             <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph1', { strong: '<strong>' })) }}
+              dangerouslySetInnerHTML={{ __html: t.raw('introduction.paragraph1').includes('{strong}') ? t.raw('introduction.paragraph1').replace(/\{strong\}(.*?)\{strong\}/g, '<strong>$1</strong>') : t.raw('introduction.paragraph1') }}
             />
             <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph2', { strong: '<strong>' })) }}
+              dangerouslySetInnerHTML={{ __html: t.raw('introduction.paragraph2').includes('{strong}') ? t.raw('introduction.paragraph2').replace(/\{strong\}(.*?)\{strong\}/g, '<strong>$1</strong>') : t.raw('introduction.paragraph2') }}
             />
-            <p className="text-lg text-gray-700 mb-4"
-              dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(t('introduction.paragraph3')) }}
-            />
+            <p className="text-lg text-gray-700 mb-4">
+              {t('introduction.paragraph3')}
+            </p>
           </div>
         </section>
 
@@ -339,7 +339,7 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
         </div>
 
         {/* Examples Grid */}
-        <div className="space-y-12">
+        <section className="space-y-12 mb-16">
           {filteredExamples.map((example, index) => (
             <PromptExample
               key={index}
@@ -367,11 +367,9 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
               </div>
             </PromptExample>
           ))}
-        </div>
+        </section>
 
-              </article>
-
-      {/* Related Tools & Resources */}
+        {/* Related Tools & Resources */}
         <section className="my-16">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border border-blue-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Related Tools & Resources</h2>
@@ -410,19 +408,20 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
           </div>
         </section>
 
-      {/* Related Blogs */}
-      <RelatedBlogs currentSlug="ultimate-directory-of-nano-banana-prompts" locale={locale} />
-      
-      {/* Structured Data for SEO */}
-      <StructuredData
-        title={t('hero.title')}
-        description={t('hero.subtitle')}
-        publishDate="2026-04-20"
-        author="Curify AI Team"
-        image="/images/logbook.webp"
-        url="/blog/ultimate-directory-of-nano-banana-prompts"
-        readTime="20 min read"
-      />
+        {/* Related Blogs */}
+        <RelatedBlogs currentSlug="ultimate-directory-of-nano-banana-prompts" locale={locale} />
+
+        {/* Structured Data for SEO */}
+        <StructuredData
+          title={t('hero.title')}
+          description={t('hero.subtitle')}
+          publishDate="2026-04-20"
+          author="Curify AI Team"
+          image="/images/logbook.webp"
+          url="/blog/ultimate-directory-of-nano-banana-prompts"
+          readTime="20 min read"
+        />
+      </article>
     </div>
   );
 }
