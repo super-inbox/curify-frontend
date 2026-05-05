@@ -12,7 +12,13 @@
         "date": "2026년 1월 30일",
         "readTime": "9분 읽기",
         "tag": "DS & AI Engineering",
-        "image": "https://storage.googleapis.com/curify-static/platformai.webp"
+        "image": "https://storage.googleapis.com/curify-static/platformai.webp",
+        "category": "크리에이터 도구",
+        "relatedLinks": [
+          "나노 바나나 프롬프트의 궁극적인 디렉토리",
+          "MBTI 캐릭터 생성기",
+          "캐릭터 프롬프트 생성기"
+        ]
       },
       {
         "slug": "QA_Bot_to_Task",
@@ -62,7 +68,13 @@
         "date": "2025년 11월 18일",
         "readTime": "7분 읽기",
         "tag": "Creator Tools",
-        "image": "/images/video-enhancement-pipeline.png"
+        "image": "/images/video-enhancement-pipeline.png",
+        "category": "비디오 번역 더빙",
+        "relatedLinks": [
+          "AI 유튜브 비디오 번역기",
+          "자연스럽게 비디오 더빙하는 방법",
+          "음성 클로닝이란 무엇인가"
+        ]
       },
       {
         "slug": "video-evaluation",
@@ -70,7 +82,13 @@
         "date": "2025년 11월 14일",
         "readTime": "6분 읽기",
         "tag": "Video Dubbing",
-        "image": "/images/video-translation-eval.jpg"
+        "image": "/images/video-translation-eval.jpg",
+        "category": "크리에이터 도구",
+        "relatedLinks": [
+          "Curify AI 성장 엔진",
+          "나노 바나나 프롬프트 생태계",
+          "AI 콘텐츠 제작 시스템"
+        ]
       },
       {
         "slug": "storyboard-to-pipeline",
@@ -559,201 +577,201 @@
       "metaDescription": "AI 도구를 사용하여 YouTube 비디오를 번역하는 방법을 배우세요. 단계별 가이드는 비디오 번역, 자막, 더빙 및 콘텐츠로 글로벌 청중에게 도달하기 위한 최고의 도구를 다룹니다."
     },
     "preserveFacialFeaturesAiGeneration": {
-        "title": "AI 생성에서 얼굴 특징 유지하기: 궁극의 일관성 캐릭터 가이드",
-        "publishedDate": "2026년 4월 27일",
-        "readTime": "15분 읽기",
-        "category": "크리에이터 도구",
-        "altText": "AI 캐릭터 일관성 - 얼굴 특징 유지",
-        "biggestChallenge": "AI 캐릭터 생성에서 가장 큰 단일 과제",
-        "biggestChallengeIntro": "AI 코믹스, 스토리보드, 또는 일관된 브랜드 자산을 만들려고 시도해 본 적이 있다면, 벽에 부딪혔을 것입니다: 다른 장면과 각도에서 동일한 캐릭터를 일관되게 생성하는 것. 이것은 AI 이미지 생성으로 작업하는 크리에이터들에게 가장 큰 고통 지점입니다.",
-        "biggestChallengeOutro": "오늘, 당신은 어떤 환경, 각도, 또는 예술적 스타일에서든 당신의 캐릭터 얼굴 특징을 고정하는 마스터클래스 기술을 배우게 될 것입니다. 이것은 단순히 프롬프트에 관한 것이 아니라 - 매번 작동하는 캐릭터 일관성을 위한 체계적인 프레임워크를 구축하는 것입니다.",
-        "whyConsistencyFails": "캐릭터 일관성이 실패하는 이유 (그리고 해결 방법)",
-        "rootProblem": "근본적인 문제",
-        "rootProblemDesc": "AI 모델은 당신의 캐릭터를 '기억'하지 않습니다. 각 생성은 당신의 프롬프트에 기반한 새로운 해석입니다. 정확한 얼굴 특징 고정이 없으면, 쌍둥이가 아닌 사촌처럼 보이는 변형을 얻게 될 것입니다.",
-        "consistencyKillers": "일반적인 일관성 파괴 요인",
-        "vagueDescriptions": "모호한 설명",
-        "vagueExample": "\"갈색 머리를 가진 여성\" vs \"어깨 길이의 밤색 갈색 머리, 따뜻한 헤이즐 눈, 왼쪽 입술 위의 작은 점을 가진 여성\"",
-        "missingAnchors": "누락된 특징 고정점",
-        "missingAnchorsDesc": "흉터, 점, 또는 독특한 얼굴 비율과 같은 고유 식별자를 지정하지 않음",
-        "inconsistentStyling": "일관되지 않은 스타일링",
-        "inconsistentStylingDesc": "생성 간에 머리, 메이크업, 또는 조명 변경",
-        "modelDrift": "모델 드리프트",
-        "modelDriftDesc": "동일한 캐릭터에 대해 다른 AI 모델 또는 설정 사용",
-        "nanoBananaSolution": "나노 바나나 솔루션",
-        "nanoBananaSolutionDesc": "나노 바나나 프롬프팅 기술은 당신의 캐릭터의 DNA 역할을 하는 상세한 얼굴 특징 청사진을 만들어 이 문제를 해결합니다. 프레임워크를 분해해 봅시다.",
-        "facialFeatureLock": "얼굴 특징 잠금 프레임워크",
-        "facialFeatureLockFramework": "얼굴 특징 잠금 프레임워크",
-        "coreArchitecture": "핵심 얼굴 아키텍처",
-        "coreArchitectureDesc": "기초 구조로 시작하세요. 이것은 결코 변하지 않는 당신의 캐릭터의 골격 프레임워크입니다.",
-        "coreTemplate": "핵심 아키텍처 템플릿",
-        "coreTemplateDesc": "이 템플릿은 기본적인 얼굴 구조를 확립합니다. 얼굴 모양, 눈 위치, 코 다리, 턱선 기본을 포함하세요.",
-        "uniqueIdentifiers": "고유 특징 식별자",
-        "uniqueIdentifiersDesc": "이것들은 당신의 캐릭터를 실루엣에서도 인식 가능하게 만드는 구별되는 표시입니다.",
-        "uniqueTemplate": "고유 식별자 템플릿",
-        "uniqueTemplateDesc": "당신의 캐릭터를 즉시 인식 가능하게 만드는 점, 흉터, 주근깨, 또는 독특한 비율과 같은 독특한 특징을 추가하세요.",
-        "expressionRules": "표현 일관성 규칙",
-        "expressionRulesDesc": "당신의 캐릭터 얼굴이 움직이고 감정을 표현하는 방식을 정의하세요. 이것은 표현을 바꿀 때 '다른 사람' 문제를 방지합니다.",
-        "expressionTemplate": "표현 규칙 템플릿",
-        "expressionTemplateDesc": "표현 중에 특정 얼굴 특징이 움직이는 방식을 정의하세요. 이것은 당신의 캐릭터가 미소, 찡그림, 또는 놀랐을 때 동일한 사람처럼 보이도록 보장합니다.",
-        "nanoBananaTechniques": "나노 바나나 프롬프팅 기술",
-        "nanoBananaPromptingTechniques": "나노 바나나 프롬프팅 기술",
-        "layerMethod": "레이어 방법",
-        "layerMethodDesc": "레이어로 프롬프트를 구축하세요, 핵심 얼굴로 시작하고 맥락을 추가하세요. 이것은 AI가 환경 세부사항보다 얼굴 일관성을 우선시하도록 보장합니다.",
-        "wrongApproach": "잘못된 접근",
-        "wrongApproachExample": "\"커피숍의 여성,\\n빨간 드레스 착용,\\n창가에 앉아,\\n아침 햇살이 들어와\"",
-        "wrongApproachNote": "환경이 지배적, 얼굴은 부차적",
-        "nanoBananaMethod": "나노 바나나 방법",
-        "nanoBananaMethodExample": "\"[캐릭터_얼굴_청사진],\\n[감정] 표현,\\n[환경 맥락]에서,\\n[조명 조건]\"",
-        "nanoBananaMethodNote": "얼굴 먼저, 환경 두 번째",
-        "referenceChain": "참조 이미지 체인",
-        "referenceChainDesc": "최고의 생성을 다음 것을 위한 참조로 사용하여 일관성 체인을 만드세요.",
-        "referenceImageChain": "참조 이미지 체인",
-        "referenceImageChainDesc": "최고의 생성을 다음 것을 위한 참조로 사용하여 일관성 체인을 만드세요.",
-        "referenceChainProcess": "참조 체인 과정",
-        "referenceChainStep1": "생성 1: 최대 상세로 기본 캐릭터 초상화 만들기",
-        "referenceChainStep2": "생성 2: 생성 1을 참조로 사용, 새로운 각도/표현 추가",
-        "referenceChainStep3": "생성 3: 생성 2를 참조로 사용, 환경 변경",
-        "referenceChainStep4": "계속: 각 생성은 이전 일관성을 기반으로 구축",
-        "angleAdaptation": "각도 적응 공식",
-        "angleAdaptationFormula": "각도 적응 공식",
-        "angleAdaptationDesc": "다른 각도는 다른 프롬프트 조정이 필요합니다. 뷰 간에 일관성을 유지하는 방법입니다.",
-        "angleTable": {
-          "angle": "각도",
-          "adjustments": "핵심 조정",
-          "priority": "일관성 우선순위"
-        },
-        "frontView": "정면 뷰",
-        "frontViewAdjustments": "대칭 강조, 눈 정렬",
-        "frontViewPriority": "눈 거리, 코 중심",
-        "profileView": "측면 뷰",
-        "profileViewAdjustments": "코 다리, 턱선 곡선",
-        "profileViewPriority": "턱 돌출, 눈썹 마루",
-        "threeQuarterView": "3/4 뷰",
-        "threeQuarterViewAdjustments": "눈 원근, 얼굴 깊이",
-        "threeQuarterViewPriority": "눈 크기 비율, 뺨 부피",
-        "visualExamples": "시각적 예제: 동일한 캐릭터, 다른 장면",
-        "characterBase": "캐릭터 기본 초상화",
-        "characterBaseDesc": "정면 뷰, 중립적 표현",
-        "referenceImage": "참조 이미지",
-        "referenceImageDesc": "정면 뷰, 중립적 표현",
-        "environmentScene": "환경 장면",
-        "environmentSceneDesc": "3/4 뷰, 미소",
-        "dynamicPose": "동적 포즈",
-        "dynamicPoseDesc": "측면 뷰, 결심된 표현",
-        "whatMakesWork": "이것들이 작동하는 이유",
-        "whatMakesTheseWork": "이것들이 작동하는 이유",
-        "consistentEyeShape": "일관된 눈 모양",
-        "consistentEyeShapeDesc": "동일한 아몬드 모양, 눈 사이의 동일한 거리",
-        "noseRecognition": "코 인식",
-        "noseRecognitionDesc": "동일한 다리 곡선과 콧구멍 모양",
-        "jawlineContinuity": "턱선 연속성",
-        "jawlineContinuityDesc": "모든 각도에서 동일한 각도 정의",
-        "expressionRulesConsistency": "표현 규칙",
-        "expressionRulesConsistencyDesc": "미소는 동일한 구석-들림 패턴을 따릅니다",
-        "advancedTechniques": "고급 일관성 기술",
-        "styleTransferMethod": "스타일 전송 방법",
-        "styleTransferMethodDesc": "예술적 스타일을 바꾸면서 얼굴 특징을 유지하세요. 브랜드 적응이나 코믹스 변형에 완벽합니다.",
-        "styleTransfer": "스타일 전송 방법",
-        "styleTransferDesc": "예술적 스타일을 바꾸면서 얼굴 특징을 유지하세요. 브랜드 적응이나 코믹스 변형에 완벽합니다.",
-        "styleTransferFormula": "스타일 전송 공식",
-        "styleTransferExample": "\"사라의 얼굴 청사진, 애니메이션 스타일로 렌더링, 그녀의 독특한 점과 헤이즐 눈을 유지하며, 깨끗한 라인 아트와 선명한 색상으로\"",
-        "ageProgression": "나이 진행 시스템",
-        "ageProgressionSystem": "나이 진행 시스템",
-        "ageProgressionSystemDesc": "핵심 얼굴 DNA를 그대로 유지하면서 다른 나이의 당신 캐릭터를 보여주세요.",
-        "ageProgressionDesc": "핵심 얼굴 DNA를 그대로 유지하면서 다른 나이의 당신 캐릭터를 보여주세요.",
-        "ageProgressionRules": "나이 진행 규칙",
-        "ageChildToTeen": "아이에서 십대로: 턱선 부드럽게, 눈을 약간 키우기, 눈 모양 유지",
-        "ageTeenToAdult": "십대에서 성인으로: 턱선 정의, 미세한 선 추가, 눈 거리 유지",
-        "ageAdultToElder": "성인에서 노인으로: 자연스러운 표현 선을 따라 주름 추가, 핵심 구조 유지",
-        "emotionalRange": "감정적 범위 라이브러리",
-        "emotionalRangeDesc": "당신 캐릭터의 표현 라이브러리를 만드세요. 이것은 당신의 일관성 바이블이 됩니다.",
-        "basicExpressions": "기본 표현",
-        "neutral": "중립적 (참조)",
-        "happy": "행복 (구석-들림 미소)",
-        "sad": "슬픔 (내려간 입술, 부드러운 눈)",
-        "angry": "분노 (찡그린 눈썹, 긴장한 턱)",
-        "surprised": "놀람 (넓은 눈, 열린 입)",
-        "complexExpressions": "복잡한 표현",
-        "confident": "자신감 (미세한 미소, 직접적인 시선)",
-        "thoughtful": "사려깊음 (부드러운 눈썹, 먼 눈)",
-        "amused": "즐거움 (한쪽 미소, 찌푸린 눈)",
-        "determined": "결심 (고정된 턱, 집중된 눈)",
-        "worried": "걱정 (찡그린 눈썹, 물린 입술)",
-        "pitfalls": "일반적인 함정과 해결책",
-        "featureDrift": "특징 드리프트",
-        "featureDriftDesc": "캐릭터가 여러 생성에 걸쳐 점진적으로 특징을 변경합니다.",
-        "featureDriftSolution": "해결책: 항상 가장 최근 생성이 아닌 원래 청사진을 참조하세요.",
-        "styleOverwriting": "스타일 덮어쓰기",
-        "styleOverwritingDesc": "예술 스타일이 얼굴 특징을 너무 극적으로 변경합니다.",
-        "styleOverwritingSolution": "해결책: 스타일 변경에도 불구하고 특정 특징을 유지하도록 AI에 명시적으로 말하세요.",
-        "lightingConfusion": "조명 혼란",
-        "lightingConfusionDesc": "다른 조명이 얼굴을 다르게 보이게 만듭니다.",
-        "lightingConfusionSolution": "해결책: 조명이 특정 얼굴 특징과 상호작용하는 방식을 설명하세요.",
-        "checklist": "당신의 캐릭터 일관성 체크리스트",
-        "preGenerationChecklist": "생성 전 체크리스트",
-        "facialBlueprint": "얼굴 청사진",
-        "faceShapeDefined": "얼굴 모양 정의됨",
-        "eyeShapeColor": "눈 모양과 색상 지정됨",
-        "eyeShapeColorSpecified": "눈 모양과 색상 지정됨",
-        "noseShapeDetailed": "코 모양 상세함",
-        "mouthLipCharacteristics": "입과 입술 특징",
-        "uniqueMarksScars": "독특한 표시/흉터 식별됨",
-        "uniqueMarksScarsIdentified": "독특한 표시/흉터 식별됨",
-        "expressionRulesChecklist": "표현 규칙",
-        "expressionRules2": "표현 규칙",
-        "smilePatternDefined": "미소 패턴 정의됨",
-        "eyeMovementCharacteristics": "눈 움직임 특징",
-        "browBehaviorSpecified": "눈썹 행동 지정됨",
-        "jawTensionPatterns": "턱 긴장 패턴",
-        "asymmetricalDetails": "비대칭적 세부사항 기록됨",
-        "asymmetricalDetailsNoted": "비대칭적 세부사항 기록됨",
-        "postGenerationValidation": "생성 후 검증",
-        "eyeDistanceCheck": "눈 거리 확인: 동공 사이의 거리 측정 - 일관적이어야 함",
-        "noseBridgeTest": "코 다리 테스트: 눈썹에서 끝까지 선 따르기 - 동일한 곡선?",
-        "jawlineComparison": "턱선 비교: 동일한 각도와 정의?",
-        "jawlineComparisonDesc": "모든 각도에서 동일한 각도 정의",
-        "uniqueFeatureVerification": "독특한 특징 검증: 점, 흉터, 보조개가 동일한 위치에?",
-        "uniqueFeatureVerificationDesc": "점, 흉터, 보조개가 동일한 위치에?",
-        "expressionConsistencyCheck": "표현 일관성: 정의된 규칙을 따르나요?",
-        "expressionConsistencyValidation": "표현 일관성: 정의된 규칙을 따르나요?",
-        "expressionConsistencyValidationDesc": "정의된 규칙을 따르나요?",
-        "readyToBuild": "일관성 프레임워크를 구축할 준비가 되셨나요?",
-        "readyToBuildDesc": "이제 당신은 어떤 AI 생성에서든 캐릭터 일관성을 유지하기 위한 완전한 시스템을 가지고 있습니다. 하지만 증명된 템플릿을 사용할 수 있는데 왜 처음부터 시작하나요?",
-        "readyToBuildIntro": "이제 당신은 어떤 AI 생성에서든 캐릭터 일관성을 유지하기 위한 완전한 시스템을 가지고 있습니다. 하지만 증명된 템플릿을 사용할 수 있는데 왜 처음부터 시작하나요?",
-        "useTemplateTitle": "템플릿 사용: 즉각적인 캐릭터 일관성",
-        "useTemplateDesc": "얼굴 특징 청사진, 표현 규칙, 일관성 프레임워크가 포함된 사전 구축된 나노 바나나 템플릿을 가져보세요. 당신의 캐릭터 세부사항을 채우기만 하면 즉시 일관된 결과를 생성하기 시작하세요.",
-        "whatYouGet": "당신이 얻는 것:",
-        "completeBlueprints": "완전한 얼굴 청사진 템플릿",
-        "expressionLibraries": "표현 규칙 라이브러리",
-        "adaptationFormulas": "각도 적응 공식",
-        "transferMethods": "스타일 전송 방법",
-        "validationChecklists": "검증 체크리스트",
-        "useTemplateButton": "지금 템플릿 사용 →",
-        "stopStruggling": "캐릭터 일관성으로 고생하지 마세요. 모든 장면에서 완벽한 얼굴 인식을 유지하는 일관된 코믹스, 스토리보드, 브랜드 자산을 구축하기 시작하세요.",
-        "nextSteps": "당신의 캐릭터 여정에서 다음 단계",
-        "expressionMastery": "캐릭터 표현 마스터리",
-        "expressionMasteryDesc": "진정으로 역동적인 캐릭터를 위한 고급 감정적 범위 기술을 배우세요.",
-        "readExpressionGuide": "표현 가이드 읽기 →",
-        "styleTransferSecrets": "스타일 전송 비밀",
-        "styleTransferSecretsDesc": "다른 예술적 스타일 간에 얼굴을 유지하는 기술을 마스터하세요.",
-        "exploreStyleTransfer": "스타일 전송 탐색 →",
-        "footer": "일관된 캐릭터 구축은 아마추어 크리에이터와 전문가를 구분하는 기술입니다. 이러한 나노 바나나 기술로, 당신은 어떤 장면이나 스타일에서든 그들의 정체성을 유지하는 인식 가능하고 기억에 남는 캐릭터를 만들기 위한 프레임워크를 가지고 있습니다.",
-        "expressionConsistencyRulesTitle": "3. 표현 일관성 규칙",
-        "expressionConsistencyRulesDesc": "당신의 캐릭터 얼굴이 움직이고 감정을 표현하는 방식을 정의하세요. 이것은 표현을 바꿀 때 '다른 사람' 문제를 방지합니다.",
-        "characterBasePortrait": "캐릭터 기본 초상화",
-        "characterInCoffeeShop": "커피숍의 캐릭터",
-        "characterActionScene": "캐릭터 액션 장면",
-        "advancedConsistencyTechniques": "고급 일관성 기술",
-        "emotionalRangeLibrary": "감정적 범위 라이브러리",
-        "emotionalRangeLibraryDesc": "당신 캐릭터의 표현 라이브러리를 만드세요. 이것은 당신의 일관성 바이블이 됩니다.",
-        "characterConsistencyChecklist": "당신의 캐릭터 일관성 체크리스트",
-        "preGenerationChecklistTitle": "✅ 생성 전 체크리스트",
-        "postGenerationValidationTitle": "🔍 생성 후 검증",
-        "commonPitfallsSolutions": "일반적인 함정 & 해결책",
-        "nextStepsCharacterJourney": "당신의 캐릭터 여정에서 다음 단계",
-        "characterExpressionMastery": "캐릭터 표현 마스터리",
-        "characterExpressionMasteryDesc": "모든 표현이나 기분에서 그들의 정체성을 유지하는 진정으로 역동적인 캐릭터를 위한 고급 감정적 범위 기술을 배우세요."
+      "title": "AI 생성에서 얼굴 특징 유지하기: 궁극의 일관성 캐릭터 가이드",
+      "publishedDate": "2026년 4월 27일",
+      "readTime": "15분 읽기",
+      "category": "크리에이터 도구",
+      "altText": "AI 캐릭터 일관성 - 얼굴 특징 유지",
+      "biggestChallenge": "AI 캐릭터 생성에서 가장 큰 단일 과제",
+      "biggestChallengeIntro": "AI 코믹스, 스토리보드, 또는 일관된 브랜드 자산을 만들려고 시도해 본 적이 있다면, 벽에 부딪혔을 것입니다: 다른 장면과 각도에서 동일한 캐릭터를 일관되게 생성하는 것. 이것은 AI 이미지 생성으로 작업하는 크리에이터들에게 가장 큰 고통 지점입니다.",
+      "biggestChallengeOutro": "오늘, 당신은 어떤 환경, 각도, 또는 예술적 스타일에서든 당신의 캐릭터 얼굴 특징을 고정하는 마스터클래스 기술을 배우게 될 것입니다. 이것은 단순히 프롬프트에 관한 것이 아니라 - 매번 작동하는 캐릭터 일관성을 위한 체계적인 프레임워크를 구축하는 것입니다.",
+      "whyConsistencyFails": "캐릭터 일관성이 실패하는 이유 (그리고 해결 방법)",
+      "rootProblem": "근본적인 문제",
+      "rootProblemDesc": "AI 모델은 당신의 캐릭터를 '기억'하지 않습니다. 각 생성은 당신의 프롬프트에 기반한 새로운 해석입니다. 정확한 얼굴 특징 고정이 없으면, 쌍둥이가 아닌 사촌처럼 보이는 변형을 얻게 될 것입니다.",
+      "consistencyKillers": "일반적인 일관성 파괴 요인",
+      "vagueDescriptions": "모호한 설명",
+      "vagueExample": "\"갈색 머리를 가진 여성\" vs \"어깨 길이의 밤색 갈색 머리, 따뜻한 헤이즐 눈, 왼쪽 입술 위의 작은 점을 가진 여성\"",
+      "missingAnchors": "누락된 특징 고정점",
+      "missingAnchorsDesc": "흉터, 점, 또는 독특한 얼굴 비율과 같은 고유 식별자를 지정하지 않음",
+      "inconsistentStyling": "일관되지 않은 스타일링",
+      "inconsistentStylingDesc": "생성 간에 머리, 메이크업, 또는 조명 변경",
+      "modelDrift": "모델 드리프트",
+      "modelDriftDesc": "동일한 캐릭터에 대해 다른 AI 모델 또는 설정 사용",
+      "nanoBananaSolution": "나노 바나나 솔루션",
+      "nanoBananaSolutionDesc": "나노 바나나 프롬프팅 기술은 당신의 캐릭터의 DNA 역할을 하는 상세한 얼굴 특징 청사진을 만들어 이 문제를 해결합니다. 프레임워크를 분해해 봅시다.",
+      "facialFeatureLock": "얼굴 특징 잠금 프레임워크",
+      "facialFeatureLockFramework": "얼굴 특징 잠금 프레임워크",
+      "coreArchitecture": "핵심 얼굴 아키텍처",
+      "coreArchitectureDesc": "기초 구조로 시작하세요. 이것은 결코 변하지 않는 당신의 캐릭터의 골격 프레임워크입니다.",
+      "coreTemplate": "핵심 아키텍처 템플릿",
+      "coreTemplateDesc": "이 템플릿은 기본적인 얼굴 구조를 확립합니다. 얼굴 모양, 눈 위치, 코 다리, 턱선 기본을 포함하세요.",
+      "uniqueIdentifiers": "고유 특징 식별자",
+      "uniqueIdentifiersDesc": "이것들은 당신의 캐릭터를 실루엣에서도 인식 가능하게 만드는 구별되는 표시입니다.",
+      "uniqueTemplate": "고유 식별자 템플릿",
+      "uniqueTemplateDesc": "당신의 캐릭터를 즉시 인식 가능하게 만드는 점, 흉터, 주근깨, 또는 독특한 비율과 같은 독특한 특징을 추가하세요.",
+      "expressionRules": "표현 일관성 규칙",
+      "expressionRulesDesc": "당신의 캐릭터 얼굴이 움직이고 감정을 표현하는 방식을 정의하세요. 이것은 표현을 바꿀 때 '다른 사람' 문제를 방지합니다.",
+      "expressionTemplate": "표현 규칙 템플릿",
+      "expressionTemplateDesc": "표현 중에 특정 얼굴 특징이 움직이는 방식을 정의하세요. 이것은 당신의 캐릭터가 미소, 찡그림, 또는 놀랐을 때 동일한 사람처럼 보이도록 보장합니다.",
+      "nanoBananaTechniques": "나노 바나나 프롬프팅 기술",
+      "nanoBananaPromptingTechniques": "나노 바나나 프롬프팅 기술",
+      "layerMethod": "레이어 방법",
+      "layerMethodDesc": "레이어로 프롬프트를 구축하세요, 핵심 얼굴로 시작하고 맥락을 추가하세요. 이것은 AI가 환경 세부사항보다 얼굴 일관성을 우선시하도록 보장합니다.",
+      "wrongApproach": "잘못된 접근",
+      "wrongApproachExample": "\"커피숍의 여성,\\n빨간 드레스 착용,\\n창가에 앉아,\\n아침 햇살이 들어와\"",
+      "wrongApproachNote": "환경이 지배적, 얼굴은 부차적",
+      "nanoBananaMethod": "나노 바나나 방법",
+      "nanoBananaMethodExample": "\"[캐릭터_얼굴_청사진],\\n[감정] 표현,\\n[환경 맥락]에서,\\n[조명 조건]\"",
+      "nanoBananaMethodNote": "얼굴 먼저, 환경 두 번째",
+      "referenceChain": "참조 이미지 체인",
+      "referenceChainDesc": "최고의 생성을 다음 것을 위한 참조로 사용하여 일관성 체인을 만드세요.",
+      "referenceImageChain": "참조 이미지 체인",
+      "referenceImageChainDesc": "최고의 생성을 다음 것을 위한 참조로 사용하여 일관성 체인을 만드세요.",
+      "referenceChainProcess": "참조 체인 과정",
+      "referenceChainStep1": "생성 1: 최대 상세로 기본 캐릭터 초상화 만들기",
+      "referenceChainStep2": "생성 2: 생성 1을 참조로 사용, 새로운 각도/표현 추가",
+      "referenceChainStep3": "생성 3: 생성 2를 참조로 사용, 환경 변경",
+      "referenceChainStep4": "계속: 각 생성은 이전 일관성을 기반으로 구축",
+      "angleAdaptation": "각도 적응 공식",
+      "angleAdaptationFormula": "각도 적응 공식",
+      "angleAdaptationDesc": "다른 각도는 다른 프롬프트 조정이 필요합니다. 뷰 간에 일관성을 유지하는 방법입니다.",
+      "angleTable": {
+        "angle": "각도",
+        "adjustments": "핵심 조정",
+        "priority": "일관성 우선순위"
       },
+      "frontView": "정면 뷰",
+      "frontViewAdjustments": "대칭 강조, 눈 정렬",
+      "frontViewPriority": "눈 거리, 코 중심",
+      "profileView": "측면 뷰",
+      "profileViewAdjustments": "코 다리, 턱선 곡선",
+      "profileViewPriority": "턱 돌출, 눈썹 마루",
+      "threeQuarterView": "3/4 뷰",
+      "threeQuarterViewAdjustments": "눈 원근, 얼굴 깊이",
+      "threeQuarterViewPriority": "눈 크기 비율, 뺨 부피",
+      "visualExamples": "시각적 예제: 동일한 캐릭터, 다른 장면",
+      "characterBase": "캐릭터 기본 초상화",
+      "characterBaseDesc": "정면 뷰, 중립적 표현",
+      "referenceImage": "참조 이미지",
+      "referenceImageDesc": "정면 뷰, 중립적 표현",
+      "environmentScene": "환경 장면",
+      "environmentSceneDesc": "3/4 뷰, 미소",
+      "dynamicPose": "동적 포즈",
+      "dynamicPoseDesc": "측면 뷰, 결심된 표현",
+      "whatMakesWork": "이것들이 작동하는 이유",
+      "whatMakesTheseWork": "이것들이 작동하는 이유",
+      "consistentEyeShape": "일관된 눈 모양",
+      "consistentEyeShapeDesc": "동일한 아몬드 모양, 눈 사이의 동일한 거리",
+      "noseRecognition": "코 인식",
+      "noseRecognitionDesc": "동일한 다리 곡선과 콧구멍 모양",
+      "jawlineContinuity": "턱선 연속성",
+      "jawlineContinuityDesc": "모든 각도에서 동일한 각도 정의",
+      "expressionRulesConsistency": "표현 규칙",
+      "expressionRulesConsistencyDesc": "미소는 동일한 구석-들림 패턴을 따릅니다",
+      "advancedTechniques": "고급 일관성 기술",
+      "styleTransferMethod": "스타일 전송 방법",
+      "styleTransferMethodDesc": "예술적 스타일을 바꾸면서 얼굴 특징을 유지하세요. 브랜드 적응이나 코믹스 변형에 완벽합니다.",
+      "styleTransfer": "스타일 전송 방법",
+      "styleTransferDesc": "예술적 스타일을 바꾸면서 얼굴 특징을 유지하세요. 브랜드 적응이나 코믹스 변형에 완벽합니다.",
+      "styleTransferFormula": "스타일 전송 공식",
+      "styleTransferExample": "\"사라의 얼굴 청사진, 애니메이션 스타일로 렌더링, 그녀의 독특한 점과 헤이즐 눈을 유지하며, 깨끗한 라인 아트와 선명한 색상으로\"",
+      "ageProgression": "나이 진행 시스템",
+      "ageProgressionSystem": "나이 진행 시스템",
+      "ageProgressionSystemDesc": "핵심 얼굴 DNA를 그대로 유지하면서 다른 나이의 당신 캐릭터를 보여주세요.",
+      "ageProgressionDesc": "핵심 얼굴 DNA를 그대로 유지하면서 다른 나이의 당신 캐릭터를 보여주세요.",
+      "ageProgressionRules": "나이 진행 규칙",
+      "ageChildToTeen": "아이에서 십대로: 턱선 부드럽게, 눈을 약간 키우기, 눈 모양 유지",
+      "ageTeenToAdult": "십대에서 성인으로: 턱선 정의, 미세한 선 추가, 눈 거리 유지",
+      "ageAdultToElder": "성인에서 노인으로: 자연스러운 표현 선을 따라 주름 추가, 핵심 구조 유지",
+      "emotionalRange": "감정적 범위 라이브러리",
+      "emotionalRangeDesc": "당신 캐릭터의 표현 라이브러리를 만드세요. 이것은 당신의 일관성 바이블이 됩니다.",
+      "basicExpressions": "기본 표현",
+      "neutral": "중립적 (참조)",
+      "happy": "행복 (구석-들림 미소)",
+      "sad": "슬픔 (내려간 입술, 부드러운 눈)",
+      "angry": "분노 (찡그린 눈썹, 긴장한 턱)",
+      "surprised": "놀람 (넓은 눈, 열린 입)",
+      "complexExpressions": "복잡한 표현",
+      "confident": "자신감 (미세한 미소, 직접적인 시선)",
+      "thoughtful": "사려깊음 (부드러운 눈썹, 먼 눈)",
+      "amused": "즐거움 (한쪽 미소, 찌푸린 눈)",
+      "determined": "결심 (고정된 턱, 집중된 눈)",
+      "worried": "걱정 (찡그린 눈썹, 물린 입술)",
+      "pitfalls": "일반적인 함정과 해결책",
+      "featureDrift": "특징 드리프트",
+      "featureDriftDesc": "캐릭터가 여러 생성에 걸쳐 점진적으로 특징을 변경합니다.",
+      "featureDriftSolution": "해결책: 항상 가장 최근 생성이 아닌 원래 청사진을 참조하세요.",
+      "styleOverwriting": "스타일 덮어쓰기",
+      "styleOverwritingDesc": "예술 스타일이 얼굴 특징을 너무 극적으로 변경합니다.",
+      "styleOverwritingSolution": "해결책: 스타일 변경에도 불구하고 특정 특징을 유지하도록 AI에 명시적으로 말하세요.",
+      "lightingConfusion": "조명 혼란",
+      "lightingConfusionDesc": "다른 조명이 얼굴을 다르게 보이게 만듭니다.",
+      "lightingConfusionSolution": "해결책: 조명이 특정 얼굴 특징과 상호작용하는 방식을 설명하세요.",
+      "checklist": "당신의 캐릭터 일관성 체크리스트",
+      "preGenerationChecklist": "생성 전 체크리스트",
+      "facialBlueprint": "얼굴 청사진",
+      "faceShapeDefined": "얼굴 모양 정의됨",
+      "eyeShapeColor": "눈 모양과 색상 지정됨",
+      "eyeShapeColorSpecified": "눈 모양과 색상 지정됨",
+      "noseShapeDetailed": "코 모양 상세함",
+      "mouthLipCharacteristics": "입과 입술 특징",
+      "uniqueMarksScars": "독특한 표시/흉터 식별됨",
+      "uniqueMarksScarsIdentified": "독특한 표시/흉터 식별됨",
+      "expressionRulesChecklist": "표현 규칙",
+      "expressionRules2": "표현 규칙",
+      "smilePatternDefined": "미소 패턴 정의됨",
+      "eyeMovementCharacteristics": "눈 움직임 특징",
+      "browBehaviorSpecified": "눈썹 행동 지정됨",
+      "jawTensionPatterns": "턱 긴장 패턴",
+      "asymmetricalDetails": "비대칭적 세부사항 기록됨",
+      "asymmetricalDetailsNoted": "비대칭적 세부사항 기록됨",
+      "postGenerationValidation": "생성 후 검증",
+      "eyeDistanceCheck": "눈 거리 확인: 동공 사이의 거리 측정 - 일관적이어야 함",
+      "noseBridgeTest": "코 다리 테스트: 눈썹에서 끝까지 선 따르기 - 동일한 곡선?",
+      "jawlineComparison": "턱선 비교: 동일한 각도와 정의?",
+      "jawlineComparisonDesc": "모든 각도에서 동일한 각도 정의",
+      "uniqueFeatureVerification": "독특한 특징 검증: 점, 흉터, 보조개가 동일한 위치에?",
+      "uniqueFeatureVerificationDesc": "점, 흉터, 보조개가 동일한 위치에?",
+      "expressionConsistencyCheck": "표현 일관성: 정의된 규칙을 따르나요?",
+      "expressionConsistencyValidation": "표현 일관성: 정의된 규칙을 따르나요?",
+      "expressionConsistencyValidationDesc": "정의된 규칙을 따르나요?",
+      "readyToBuild": "일관성 프레임워크를 구축할 준비가 되셨나요?",
+      "readyToBuildDesc": "이제 당신은 어떤 AI 생성에서든 캐릭터 일관성을 유지하기 위한 완전한 시스템을 가지고 있습니다. 하지만 증명된 템플릿을 사용할 수 있는데 왜 처음부터 시작하나요?",
+      "readyToBuildIntro": "이제 당신은 어떤 AI 생성에서든 캐릭터 일관성을 유지하기 위한 완전한 시스템을 가지고 있습니다. 하지만 증명된 템플릿을 사용할 수 있는데 왜 처음부터 시작하나요?",
+      "useTemplateTitle": "템플릿 사용: 즉각적인 캐릭터 일관성",
+      "useTemplateDesc": "얼굴 특징 청사진, 표현 규칙, 일관성 프레임워크가 포함된 사전 구축된 나노 바나나 템플릿을 가져보세요. 당신의 캐릭터 세부사항을 채우기만 하면 즉시 일관된 결과를 생성하기 시작하세요.",
+      "whatYouGet": "당신이 얻는 것:",
+      "completeBlueprints": "완전한 얼굴 청사진 템플릿",
+      "expressionLibraries": "표현 규칙 라이브러리",
+      "adaptationFormulas": "각도 적응 공식",
+      "transferMethods": "스타일 전송 방법",
+      "validationChecklists": "검증 체크리스트",
+      "useTemplateButton": "지금 템플릿 사용 →",
+      "stopStruggling": "캐릭터 일관성으로 고생하지 마세요. 모든 장면에서 완벽한 얼굴 인식을 유지하는 일관된 코믹스, 스토리보드, 브랜드 자산을 구축하기 시작하세요.",
+      "nextSteps": "당신의 캐릭터 여정에서 다음 단계",
+      "expressionMastery": "캐릭터 표현 마스터리",
+      "expressionMasteryDesc": "진정으로 역동적인 캐릭터를 위한 고급 감정적 범위 기술을 배우세요.",
+      "readExpressionGuide": "표현 가이드 읽기 →",
+      "styleTransferSecrets": "스타일 전송 비밀",
+      "styleTransferSecretsDesc": "다른 예술적 스타일 간에 얼굴을 유지하는 기술을 마스터하세요.",
+      "exploreStyleTransfer": "스타일 전송 탐색 →",
+      "footer": "일관된 캐릭터 구축은 아마추어 크리에이터와 전문가를 구분하는 기술입니다. 이러한 나노 바나나 기술로, 당신은 어떤 장면이나 스타일에서든 그들의 정체성을 유지하는 인식 가능하고 기억에 남는 캐릭터를 만들기 위한 프레임워크를 가지고 있습니다.",
+      "expressionConsistencyRulesTitle": "3. 표현 일관성 규칙",
+      "expressionConsistencyRulesDesc": "당신의 캐릭터 얼굴이 움직이고 감정을 표현하는 방식을 정의하세요. 이것은 표현을 바꿀 때 '다른 사람' 문제를 방지합니다.",
+      "characterBasePortrait": "캐릭터 기본 초상화",
+      "characterInCoffeeShop": "커피숍의 캐릭터",
+      "characterActionScene": "캐릭터 액션 장면",
+      "advancedConsistencyTechniques": "고급 일관성 기술",
+      "emotionalRangeLibrary": "감정적 범위 라이브러리",
+      "emotionalRangeLibraryDesc": "당신 캐릭터의 표현 라이브러리를 만드세요. 이것은 당신의 일관성 바이블이 됩니다.",
+      "characterConsistencyChecklist": "당신의 캐릭터 일관성 체크리스트",
+      "preGenerationChecklistTitle": "✅ 생성 전 체크리스트",
+      "postGenerationValidationTitle": "🔍 생성 후 검증",
+      "commonPitfallsSolutions": "일반적인 함정 & 해결책",
+      "nextStepsCharacterJourney": "당신의 캐릭터 여정에서 다음 단계",
+      "characterExpressionMastery": "캐릭터 표현 마스터리",
+      "characterExpressionMasteryDesc": "모든 표현이나 기분에서 그들의 정체성을 유지하는 진정으로 역동적인 캐릭터를 위한 고급 감정적 범위 기술을 배우세요."
+    },
     "translateYoutubeVideoToEnglish": {
       "title": "YouTube 동영상을 영어로 번역하기: AI 기반 솔루션",
       "date": "2026년 3월 4일",
@@ -1217,7 +1235,16 @@
       "storytellingTemplateContent": "Nano Banana 내러티브를 생성하세요:\n\n스토리 구조:\n- 캐릭터: [주인공 설명]\n- 설정: [환경/맥락]\n- 갈등: [도전/문제]\n- 여정: [과정/변화]\n- 해결: [결과/해결]\n- 주제: [핵심 메시지]\n\n내러티브 요소:\n- 배경 이야기: [캐릭터 역사/동기]\n- 감각적 세부사항: [시각/청각/촉각 설명]\n- 감정적 아크: [감정의 진행]\n- 대화: [캐릭터 상호작용/발언]\n- 상징성: [은유적 요소]\n- 페이싱: [긴장과 해소 타이밍]\n\n캐릭터 개발:\n- 주인공: [주요 캐릭터 프로필]\n- 보조 캐릭터: [2차 역할]\n- 캐릭터 아크: [변화 여정]\n- 관계: [대인 역학]\n- 동기: [구동력]\n- 결점/강점: [캐릭터 복잡성]\n\n설정 세부사항:\n- 시간대: [역사적/미래/판타지]\n- 위치: [특정 환경]\n- 분위기: [기분과 느낌]\n- 세계 구축: [맥락과 규칙]\n- 감각적 환경: [소리, 냄새, 질감]\n\n플롯 프레임워크:\n\"[캐릭터]가 [설정]에서 [갈등]에 직면하는 [오프닝 훅]. [여정 사건]을 통해 그들은 [Nano Banana 요소]를 발견하고 [해결]로 이어집니다. 이야기는 [주제]를 탐구하며 [톤]과 [페이싱]을 유지합니다.\"",
       "identityTemplateContent": "자세한 Nano Banana 정체성 설명을 생성하세요:\n- 기원 맥락 (생명공학, 외계 농업, 장인 브랜드)\n- 기능적 특성 (자체 성숙, 비타민, 특별한 기능)\n- 시각적 사양 (크기 비율, 형태 세부사항, 색상 그라데이션)\n- 물질적 특성 (질감, 마감, 향 프로필)\n- 상징적 또는 은유적 의미\n\nQ.C. 체크: 누군가 이미지 없이 즉시 Nano Banana를 시각화할 수 있을까요?\n\n**기본 템플릿**:\n\"Nano Banana를 [생명공학으로 설계된/생명공학으로 재배된/외계에서 재배된/장인 제작된] 열대 과일로 설명하세요. [크기 사양]을 특징으로 하며, [색상 설명]과 [질감 세부사항] 및 [향 프로필]을 가지고 있습니다. [독특한 특성]이 [주요 이점]을 만듭니다.\"",
       "storytellingTemplateDisplay": "<strong>Nano Banana 내러티브를 생성하세요:</strong>\n\n<strong>스토리 구조:</strong>\n- <strong>캐릭터:</strong> [주인공 설명]\n- <strong>설정:</strong> [환경/맥락]\n- <strong>갈등:</strong> [도전/문제]\n- <strong>여정:</strong> [과정/변화]\n- <strong>해결:</strong> [결과/해결]\n- <strong>주제:</strong> [핵심 메시지]\n\n<strong>내러티브 요소:</strong>\n- <strong>배경 이야기:</strong> [캐릭터 역사/동기]\n- <strong>감각적 세부사항:</strong> [시각/청각/촉각 설명]\n- <strong>감정적 아크:</strong> [감정의 진행]\n- <strong>대화:</strong> [캐릭터 상호작용/발언]\n- <strong>상징성:</strong> [은유적 요소]\n- <strong>페이싱:</strong> [긴장과 해소 타이밍]\n\n<strong>캐릭터 개발:</strong>\n- <strong>주인공:</strong> [주요 캐릭터 프로필]\n- <strong>보조 캐릭터:</strong> [2차 역할]\n- <strong>캐릭터 아크:</strong> [변화 여정]\n- <strong>관계:</strong> [대인 역학]\n- <strong>동기:</strong> [구동력]\n- <strong>결점/강점:</strong> [캐릭터 복잡성]\n\n<strong>설정 세부사항:</strong>\n- <strong>시간대:</strong> [역사적/미래/판타지]\n- <strong>위치:</strong> [특정 환경]\n- <strong>분위기:</strong> [기분과 느낌]\n- <strong>세계 구축:</strong> [맥락과 규칙]\n- <strong>감각적 환경:</strong> [소리, 냄새, 질감]\n\n<strong>플롯 프레임워크:</strong>\n\"[캐릭터]가 [설정]에서 [갈등]에 직면하는 [오프닝 훅]. [여정 사건]을 통해 그들은 [Nano Banana 요소]를 발견하고 [해결]로 이어집니다. 이야기는 [주제]를 탐구하며 [톤]과 [페이싱]을 유지합니다.\"",
-      "identityTemplateDisplay": "<strong>자세한 Nano Banana 정체성 설명을 생성하세요:</strong>\n- <strong>기원 맥락</strong> (생명공학, 외계 농업, 장인 브랜드)\n- <strong>기능적 특성</strong> (자체 성숙, 비타민, 특별한 기능)\n- <strong>시각적 사양</strong> (크기 비율, 형태 세부사항, 색상 그라데이션)\n- <strong>물질적 특성</strong> (질감, 마감, 향 프로필)\n- <strong>상징적 또는 은유적 의미</strong>\n\n<strong>Q.C. 체크:</strong> 누군가 이미지 없이 즉시 Nano Banana를 시각화할 수 있을까요?\n\n<strong>기본 템플릿:</strong>\n\"Nano Banana를 [생명공학으로 설계된/생명공학으로 재배된/외계에서 재배된/장인 제작된] 열대 과일로 설명하세요. [크기 사양]을 특징으로 하며, [색상 설명]과 [질감 세부사항] 및 [향 프로필]을 가지고 있습니다. [독특한 특성]이 [주요 이점]을 만듭니다.\""
+      "identityTemplateDisplay": "<strong>자세한 Nano Banana 정체성 설명을 생성하세요:</strong>\n- <strong>기원 맥락</strong> (생명공학, 외계 농업, 장인 브랜드)\n- <strong>기능적 특성</strong> (자체 성숙, 비타민, 특별한 기능)\n- <strong>시각적 사양</strong> (크기 비율, 형태 세부사항, 색상 그라데이션)\n- <strong>물질적 특성</strong> (질감, 마감, 향 프로필)\n- <strong>상징적 또는 은유적 의미</strong>\n\n<strong>Q.C. 체크:</strong> 누군가 이미지 없이 즉시 Nano Banana를 시각화할 수 있을까요?\n\n<strong>기본 템플릿:</strong>\n\"Nano Banana를 [생명공학으로 설계된/생명공학으로 재배된/외계에서 재배된/장인 제작된] 열대 과일로 설명하세요. [크기 사양]을 특징으로 하며, [색상 설명]과 [질감 세부사항] 및 [향 프로필]을 가지고 있습니다. [독특한 특성]이 [주요 이점]을 만듭니다.\"",
+      "tip2Example": "어떤 템플릿 페이지에서든, 마음에 드는 구성의 예제를 영감 갤러리에서 찾으세요. \"이것을 리믹스하세요.\" 클릭하면 해당 이미지를 생성한 정확한 매개변수 값을 볼 수 있습니다. 이제 주제별 매개변수(이름, 주제, 단어)만 변경하고 나머지는 그대로 두세요. 생성하면 — 귀하의 콘텐츠로 동일한 품질을 얻을 수 있습니다.",
+      "tip3Example": "템플릿: 레시피 카드. 약한 예: \"파스타 요리, 이탈리아, 크리미\". 강한 예: \"타글리아텔레 알 타르투포 — 손으로 만든 계란 파스타에 블랙 트러플 조각, 파르미지아노, 갈색 버터 소스, 이탈리아 움브리아에서\". 두 번째 버전은 모델이 정확하고 식욕을 돋우는 결과를 생성할 수 있도록 충분한 구체성을 제공합니다.",
+      "tip4Example": "브랜드 아이덴티티가 깔끔한 잉크 일러스트 스타일을 사용한다면, `ink` 주제 태그로 템플릿을 필터링하세요. 해당 그룹의 모든 템플릿은 선화 스타일 출력을 생성하여 서로 다른 주제 템플릿 간에도 콘텐츠 시리즈에 일관된 시각적 처리를 제공합니다.",
+      "tip5Example": "어휘 포스터 템플릿에서 \"단어 범주\" 매개변수를 \"동물\"에서 \"주방 도구\"로 변경해 보세요. 다른 것은 변경하지 않고. 레이아웃 스타일이 동일하게 유지되지만 주제가 변경된다면, 해당 매개변수는 순수 콘텐츠 매개변수입니다. 레이아웃도 변경된다면, 스타일 매개변수로 작용하고 있는 것입니다 — 유용한 정보입니다.",
+      "tip6Example": "귀하의 교육 게시물에 대해 \"수채화\" 또는 \"잉크\"가 더 나은 결과를 생성하는지 테스트하고 있습니다. 스타일 매개변수를 제외하고 모든 매개변수가 동일한 두 개의 생성을 만드세요. 비교해 보세요 — 이제 어떤 스타일이 귀하의 콘텐츠에 더 적합한지에 대한 명확한 데이터를 얻었습니다.",
+      "tip7Example": "어휘 포스터 템플릿을 탐색한 후, 가장 시각적으로 매력적인 3개의 예제를 저장하세요. 나중에 새로운 어휘 게시물을 만들어야 할 때, 작업 공간을 열고 저장한 예제 중 하나를 찾아 해당 예제 페이지로 이동하여 리믹스하여 이미 작동하는 매개변수에서 시작하세요.",
+      "tip8Example": "성격 유형 기사를 위한 6개의 MBTI 캐릭터 일러스트를 찾고 있나요? 배치 가능 MBTI 템플릿이 있는지 확인하세요. 있다면, 다운로드 팩을 사용하여 모든 유형을 즉시 일치하는 스타일로 가져오세요 — 생성 크레딧이 필요 없습니다.",
+      "tip9Example": "날씨 어휘에 대한 수업을 위해, `vocabulary` 및 `learning` 태그가 있는 어휘 포스터 템플릿을 사용하세요. 단어 그룹을 \"날씨 용어\"로 설정하고, 목표 언어를 스페인어로, 출처 언어를 영어로 설정하세요. 템플릿은 각 용어의 일러스트가 포함된 시각적 어휘 포스터를 생성합니다 — 게시하거나 인쇄할 준비가 되어 있습니다.",
+      "tip10Example": "매우 구체적인 주제를 생성하기 전에(예: 음식 템플릿의 \"조지아 빵\"), 기존의 동유럽 요리 예제를 검색하세요. 갤러리에 서양 음식만 표시된다면, 이 템플릿이 귀하의 주제를 잘 처리하지 못할 수 있습니다 — 전체 시리즈에 적용하기 전에 한 번 생성해 보세요."
     },
     "tenPromptingTipsVideoGeneration": {
       "title": "비디오 생성을 위한 10가지 프롬프트 팁: 멋진 AI 비디오 만들기",
@@ -3755,7 +3782,13 @@
         "technical": {
           "title": "기술 사양",
           "description": "향상된 오디오 트랙과 완벽한 동기화를 갖춘 전문 비디오 출력",
-          "specs": "H.264 비디오 코덱, AAC 오디오 인코딩, 자동 지속 시간 일치"
+          "specs": "H.264 비디오 코덱, AAC 오디오 인코딩, 자동 지속 시간 일치",
+          "features": [
+            "합성 중 실시간 감정 조정",
+            "비디오 편집 워크플로와의 통합",
+            "특정 콘텐츠 유형에 대한 맞춤형 감정 훈련",
+            "감정 일관성 제어가 있는 배치 처리"
+          ]
         }
       },
       "future": {
@@ -4467,7 +4500,19 @@
             "useCaseDesc": "예: 포스터, 아바타",
             "mood": "무드",
             "moodDesc": "예: 아늑한, 어두운"
-          }
+          },
+          "finalVerdict": "2026년 비디오 더빙 및 번역에서 ElevenLabs는 품질, 다국어 지원 및 사용 용이성에서 우승합니다. F5-TTS는 예산 제약이 있거나 상업적 제한 없이 무제한 생성을 요구하는 기술 사용자에게 놀라운 가치를 제공합니다.",
+          "gettingStarted": "시작하기 리소스",
+          "f5TtsSetup": "F5-TTS 설정",
+          "f5TtsSetupDesc": "공식 GitHub 저장소, 요구 사항, 설치 및 CLI 인터페이스",
+          "elevenLabsSetup": "ElevenLabs 설정",
+          "elevenLabsSetupDesc": "웹 대시보드, API 접근 및 빠른 시작 가이드",
+          "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
+          "themeDesc": "예: 판타지, 여행",
+          "useCase": "사용 사례",
+          "useCaseDesc": "예: 포스터, 아바타",
+          "mood": "무드",
+          "moodDesc": "예: 아늑한, 어두운"
         }
       },
       "keyInsight": {
@@ -4832,6 +4877,688 @@
       "ctaLink": "/nano-banana",
       "conclusionTitle": "콘텐츠 제작의 미래는 시스템 주도형입니다",
       "conclusionContent": "AI 페이스리스 채널은 시스템 주도형 콘텐츠 제작으로의 전환을 강조합니다. 구조화된 워크플로우와 적절한 도구를 결합함으로써, 제작자는 품질을 유지하면서 출력 규모를 확장할 수 있습니다. 이점은 일관성, 반복, 그리고 스마트한 자동화 사용에서 나오며, 완전한 손쉬운 운영은 아닙니다."
+    },
+    "f5TtsVsElevenlabs": {
+      "title": "F5-TTS vs. ElevenLabs: 2026년 어떤 음성 클로닝 도구가 더 나은가?",
+      "description": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제에 대한 실용적인 솔루션을 배워보세요.",
+      "hero": {
+        "title": "2026년 자연스럽게 비디오 더빙하는 방법: AI 음성 클로닝 아티팩트 수정하기",
+        "subtitle": "AI 도구를 사용하여 일반적인 더빙 문제를 해결하는 포괄적인 가이드입니다. 로봇 같은 속도, 감정 부족, 립싱크 문제와 같은 고통 지점에 집중하세요."
+      },
+      "protip": "고품질 소스 오디오로 시작하고 항상 원어민과 함께 더빙된 콘텐츠를 테스트하여 AI가 놓칠 수 있는 미세한 아티팩트를 잡아내세요.",
+      "tabs": {
+        "problems": "일반적인 문제",
+        "solutions": "실용적인 솔루션",
+        "tools": "추천 도구",
+        "workflow": "단계별 워크플로우",
+        "advanced": "고급 기술",
+        "automation": "자동화 전략",
+        "conclusion": "결론"
+      },
+      "introduction": {
+        "paragraph1": "AI 비디오 더빙은 콘텐츠 제작에 혁신을 가져왔지만 &lt;strong&gt;로봇 아티팩트&lt;/strong&gt;와 &lt;strong&gt;부자연스러운 속도&lt;/strong&gt;는 여전히 많은 제작물에 문제를 일으킵니다. 2026년에는 이러한 문제를 극복할 수 있는 더 나은 도구와 기술이 있습니다. 핵심 문제는 대부분의 더빙 파이프라인이 음성을 단순한 기술적 레이어로 취급하는 데 있습니다. 많은 시스템이 여전히 평면적인 프로소디, 일관되지 않은 강조 및 잘못된 타이밍의 정지를 생성하여 음성이 현실적으로 들리더라도 몰입감을 깨뜨립니다. 시청자는 타이밍 불일치에 매우 민감합니다. 감정적 비트, 미세한 정지 또는 문장 강조가 시각적 퍼포먼스와 일치하지 않을 때 결과는 미세하게 '어색하게' 느껴지며, 그 이유를 설명할 수 없더라도 그렇습니다. 현대적인 접근 방식은 &lt;strong&gt;프로소디 제어 및 시간 정렬&lt;/strong&gt;에 집중하여 이 문제를 해결합니다. 음성을 선형적으로 생성하는 대신, 최신 모델은 리듬 인식 합성을 통합하여 제작자가 구와 음절 수준에서 속도를 제어할 수 있도록 합니다. 이를 통해 립 동작을 일치시키고, 극적인 정지를 유지하며, 원래 배우의 의도를 여러 언어에서 유지할 수 있습니다. 강제 정렬, 음소 수준 타이밍 및 참조 오디오 조건화와 같은 기술이 이제 고품질 파이프라인에서 표준이 되고 있습니다. 또 다른 주요 개선 사항은 &lt;strong&gt;맥락 인식 음성 모델링&lt;/strong&gt;에서 비롯됩니다. 각 라인을 고립적으로 생성하는 대신, 고급 시스템은 대화 기억을 유지하여 장면 간의 톤, 감정 상태 및 화자 역학을 추적합니다. 이는 톤 드리프트를 줄이고 캐릭터가 속삭이든, 논쟁하든, 설명하든 일관되게 들리도록 보장합니다. 내러티브 중심 콘텐츠의 경우, 이러한 변화만으로도 인식된 현실감이 크게 향상됩니다. 마지막으로 &lt;strong&gt;인간-루프 워크플로우&lt;/strong&gt;의 부상은 자동화와 품질 간의 격차를 좁혔습니다. 제작자는 이제 AI 생성과 경량 편집 레이어를 결합하여 정지를 미세 조정하고, 강조를 조정하거나 전체 클립 대신 특정 세그먼트를 재생성합니다. 이 하이브리드 접근 방식은 효율성과 창의적 제어의 균형을 맞추어 제작 팀이 더빙을 확장하면서도 스튜디오 수준의 결과를 달성할 수 있도록 합니다. 이러한 발전은 AI 더빙을 편리한 도구에서 &lt;strong&gt;제작 품질 솔루션&lt;/strong&gt;으로 이동시켜, 속도나 확장성을 희생하지 않고 여러 언어에서 자연스럽고 감정적으로 공감되는 퍼포먼스를 제공할 수 있게 합니다.",
+        "paragraph2": "이 가이드는 MuseTalk, Emotion TTS 및 고급 후처리 기술과 같은 최첨단 AI 도구를 사용하여 &lt;strong&gt;일반적인 더빙 문제를 수정하는 방법&lt;/strong&gt;을 보여줍니다. 우리는 기본 음성 생성 이상의 것을 다루어 AI 더빙 워크플로우에서 가장 지속적인 실패 지점을 해결합니다. 립싱크 드리프트, 단조로운 전달, 타이밍 불일치 및 감정적 평탄함을 다룹니다. MuseTalk를 사용하여 생성된 음성이 입술 움직임 및 얼굴 표정과 밀접하게 일치하도록 정확한 시각-오디오 정렬을 보장하는 방법을 배웁니다. 오디오 측면에서는 Emotion TTS 시스템을 활용하여 생성된 음성에 &lt;strong&gt;제어된 표현력&lt;/strong&gt;을 주입하는 방법을 설명합니다. 일반적인 프리셋에 의존하는 대신, 이 가이드는 긴장감, 빈정거림 또는 단일 라인 내의 미세한 감정 변화와 같은 의도를 반영하기 위해 피치 윤곽, 속도 및 강조를 조정하는 방법을 안내합니다. 이를 통해 '기술적으로 올바른' 오디오에서 인간적이고 맥락적으로 기반이 있는 퍼포먼스로 이동할 수 있습니다. 우리는 또한 최종 출력 품질에 중요한 차이를 만드는 &lt;strong&gt;고급 후처리 워크플로우&lt;/strong&gt;를 다룹니다. 여기에는 음소 수준 타이밍 조정, 정지 잘라내기 및 연장, 호흡 및 정지 삽입, EQ 매칭 및 음량 정상화와 같은 오디오 마스터링 기술이 포함되어 있어 더빙된 음성을 원래 사운드트랙에 원활하게 혼합할 수 있습니다. 이러한 도구와 기술을 통합하여 일관된 파이프라인을 구축함으로써, 시행착오에 의존하지 않고 더빙 문제를 체계적으로 진단하고 수정할 수 있습니다. 이는 일관되지 않은 AI 출력을 다듬고 제작 준비가 완료된 대화로 전환하는 데 도움이 됩니다."
+      },
+      "problems": {
+        "title": "일반적인 AI 더빙 문제",
+        "issues": [
+          {
+            "icon": "🤖",
+            "title": "로봇 같은 속도",
+            "description": "AI 생성 음성은 종종 자연스러운 리듬과 타이밍이 부족하여 기계적이고 분리된 느낌을 줍니다.",
+            "impact": "시청자 이탈",
+            "impactDescription": "부자연스러운 속도가 몰입을 방해하고 시청자 유지율을 최대 40%까지 감소시킵니다."
+          },
+          {
+            "icon": "😐",
+            "title": "감정의 미세한 차이 부족",
+            "description": "AI 음성은 미묘한 감정을 전달하는 데 어려움을 겪어 극적인 장면이 생동감이 떨어집니다.",
+            "impact": "감정적 단절",
+            "impactDescription": "감정적 신호가 부족하여 시청자가 캐릭터와 이야기와 연결되지 못합니다."
+          },
+          {
+            "icon": "👄",
+            "title": "입 모양 동기 불일치",
+            "description": "오디오와 시각적 입 움직임 간의 불일치가 불쾌한 계곡 효과를 만듭니다.",
+            "impact": "비현실적인 외관",
+            "impactDescription": "눈에 보이는 입 모양 동기 오류는 자연스러운 말의 환상을 즉시 깨뜨립니다."
+          }
+        ]
+      },
+      "solutions": {
+        "title": "실용적인 솔루션",
+        "methods": [
+          {
+            "icon": "🎭",
+            "title": "감정 강화 TTS",
+            "description": "적절한 감정을 음성에 주입할 수 있는 감정 인식 텍스트-음성 변환 모델을 사용합니다.",
+            "benefit": "자연스러운 감정 전달",
+            "benefitDescription": "표준 TTS에 비해 85% 더 자연스러운 감정 표현을 달성합니다.",
+            "promptTitle": "감정 강화 프롬프트",
+            "promptDescription": "AI가 감정적으로 미세한 음성을 생성하도록 안내하는 이 프롬프트를 사용하세요:",
+            "prompt": "[감정: 걱정, 따뜻함, 긴급] 톤으로 음성을 생성하세요. 쉼표 후 0.3초 일시 정지하고, 주요 감정 단어를 강조하며, 자연스러운 리듬을 위해 피치를 ±20% 변동시킵니다."
+          },
+          {
+            "icon": "⚡",
+            "title": "리듬 수정",
+            "description": "자연스러운 인간의 말 패턴에 맞추기 위해 AI 기반 타이밍 조정을 적용합니다.",
+            "benefit": "인간 같은 타이밍",
+            "benefitDescription": "지능적인 속도 조정을 통해 로봇 같은 아티팩트를 70% 줄입니다.",
+            "promptTitle": "리듬 수정 프롬프트",
+            "promptDescription": "로봇 같은 속도를 수정하기 위해 이 프롬프트를 사용하세요:",
+            "prompt": "음성 리듬을 분석하고 자연스러운 일시 정지를 삽입하세요: 마침표 후 0.5초, 쉼표 후 0.2초, 유기적인 흐름을 위해 단어 간격을 ±10% 변동시킵니다."
+          }
+        ]
+      },
+      "tools": {
+        "title": "추천 도구",
+        "cta": "도구 사용해보기",
+        "recommendations": [
+          {
+            "icon": "🎙️",
+            "title": "MuseTalk",
+            "description": "감정을 보존하고 자연스러운 타이밍을 가진 고급 음성 클로닝.",
+            "useCase": "캐릭터 음성에 최적",
+            "useCaseDescription": "장기 콘텐츠에서 일관된 캐릭터 음성을 유지하는 데 완벽합니다.",
+            "link": "https://musetalk.ai"
+          },
+          {
+            "icon": "🎭",
+            "title": "Emotion TTS",
+            "description": "감정 조절과 자연스러운 운율을 갖춘 전문 텍스트 음성 변환.",
+            "useCase": "감정 콘텐츠",
+            "useCaseDescription": "미세한 감정 변화를 요구하는 극적인 콘텐츠에 이상적입니다.",
+            "link": "https://emotiontts.ai"
+          },
+          {
+            "icon": "🎬",
+            "title": "LipSync Pro",
+            "description": "프레임 수준의 정밀도로 AI 기반 립싱크 수정.",
+            "useCase": "완벽한 입 맞춤",
+            "useCaseDescription": "전문 비디오 제작을 위한 픽셀 완벽 립싱크를 달성합니다.",
+            "link": "https://lipsyncpro.ai"
+          }
+        ]
+      },
+      "workflow": {
+        "title": "단계별 워크플로우",
+        "steps": [
+          {
+            "title": "소스 오디오 준비",
+            "description": "대상 음성의 고품질, 깨끗한 오디오 녹음으로 시작합니다.",
+            "action": "오디오 품질 검사",
+            "actionDescription": "48kHz 샘플링 주파수, 최소한의 배경 소음 및 일관된 음성 성능을 보장합니다.",
+            "promptTitle": "오디오 준비 프롬프트",
+            "promptDescription": "음성 클로닝을 위한 오디오 준비에 이 프롬프트를 사용하세요:",
+            "prompt": "깨끗한 오디오: 배경 소음 제거, -6dB로 정규화, 일관된 음성 톤 보장, WAV 48kHz 24비트로 내보내기."
+          },
+          {
+            "title": "감정을 담은 음성 클로닝",
+            "description": "MuseTalk를 사용하여 감정 인식 음성 모델을 생성합니다.",
+            "action": "음성 모델 훈련",
+            "actionDescription": "감정 태그와 타이밍 참조 샘플로 모델을 훈련합니다.",
+            "promptTitle": "음성 클로닝 프롬프트",
+            "promptDescription": "음성 클로닝을 위해 이 프롬프트를 사용하세요:",
+            "prompt": "감정 보존으로 음성을 클론합니다: 음성 패턴 분석, 감정 마커 추출, 타이밍 프로파일 생성."
+          },
+          {
+            "title": "더빙 오디오 생성",
+            "description": "감정이 강화된 음성 모델을 사용하여 음성을 생성합니다.",
+            "action": "오디오 생성",
+            "actionDescription": "최고의 결과를 위해 다양한 감정 강도로 여러 번 녹음합니다.",
+            "promptTitle": "오디오 생성 프롬프트",
+            "promptDescription": "자연스러운 오디오 생성을 위해 이 프롬프트를 사용하세요:",
+            "prompt": "음성을 생성합니다: 감정 프로파일 [행복, 걱정, 흥분] 적용, 자연스러운 일시 정지 삽입, 말하기 속도 ±15% 변동."
+          }
+        ]
+      },
+      "advanced": {
+        "title": "고급 기술",
+        "techniques": [
+          {
+            "icon": "🧠",
+            "title": "신경 프로소디 전이",
+            "description": "참조 오디오에서 자연스러운 음성 패턴을 AI 생성 음성으로 전이합니다.",
+            "benefit": "진정한 음성 패턴",
+            "benefitDescription": "음성 리듬과 억양에서 95% 자연스러움을 달성합니다.",
+            "promptTitle": "프로소디 전이 프롬프트",
+            "promptDescription": "프로소디 전이를 위해 이 프롬프트를 사용하세요:",
+            "prompt": "프로소디 패턴 추출: 피치 윤곽, 타이밍 패턴, 강세 강조 분석, 대상 음성에 적용."
+          },
+          {
+            "icon": "🎯",
+            "title": "맥락 인식 감정",
+            "description": "장면 맥락을 이해하고 감정을 조정하는 AI.",
+            "benefit": "장면에 적합한 감정",
+            "benefitDescription": "감정 톤을 비디오 콘텐츠와 대화 맥락에 자동으로 맞춥니다.",
+            "promptTitle": "맥락 인식 프롬프트",
+            "promptDescription": "맥락 인식 감정을 위해 이 프롬프트를 사용하세요:",
+            "prompt": "장면 맥락 분석: 감정 톤, 캐릭터 관계, 극적인 순간 식별, 음성을 조정합니다."
+          }
+        ]
+      },
+      "automation": {
+        "title": "자동화 전략",
+        "strategies": [
+          {
+            "icon": "⚙️",
+            "title": "배치 처리 파이프라인",
+            "description": "일관된 품질로 여러 비디오 파일을 처리하는 자동화된 워크플로우입니다.",
+            "result": "확대된 일관된 품질",
+            "resultDescription": "일관된 음성 품질과 감정 전달로 100개 이상의 비디오를 처리합니다."
+          },
+          {
+            "icon": "🔄",
+            "title": "품질 관리 자동화",
+            "description": "AI 기반 품질 검사로 더빙 문제를 자동으로 감지하고 표시합니다.",
+            "result": "수동 검토 감소",
+            "resultDescription": "인간 검토 전에 90%의 더빙 문제를 잡아내어 QC 시간을 70% 절약합니다."
+          }
+        ]
+      },
+      "conclusion": {
+        "title": "AI로 비디오 더빙을 혁신하세요",
+        "description": "이러한 고급 기술과 도구를 결합함으로써, 자연스럽고 감정적으로 매력적인 더빙 콘텐츠를 제작하여 관객을 사로잡을 수 있습니다. AI 더빙의 미래가 여기에 있으며, 그 어느 때보다 인간적입니다."
+      },
+      "publishedDate": "2026년 4월 27일",
+      "readTime": "12분 읽기",
+      "category": "비디오 더빙",
+      "altText": "음성 클로닝 및 더빙을 위한 F5-TTS와 ElevenLabs 비교",
+      "ultimateShowdown": "궁극의 대결: F5-TTS vs ElevenLabs",
+      "ultimateShowdownIntro": "AI 음성 클로닝의 빠르게 진화하는 세계에서 2026년 두 개의 이름이 두드러집니다: 혁신적인 오픈 소스 솔루션 F5-TTS와 확립된 상업적 강자 ElevenLabs. 하지만 비디오 더빙 프로젝트를 위해 진정으로 주목할 가치가 있는 것은 무엇일까요?",
+      "whyVoiceCloningIntro": "음성 클로닝 기술은 콘텐츠 제작을 혁신하여 제작자가 다국어 콘텐츠를 제작하고, 언어 간 일관된 브랜딩을 유지하며, 제작 비용을 획기적으로 줄일 수 있게 합니다. 이 두 가지 선도적인 솔루션을 깊이 살펴보겠습니다.",
+      "quickComparisonTable": "빠른 비교 표",
+      "feature": "특징",
+      "f5Tts": "F5-TTS",
+      "elevenLabs": "ElevenLabs",
+      "costModel": "비용 모델",
+      "f5TtsCost": "무료 (오픈 소스)",
+      "elevenLabsCost": "$5-1,320/월",
+      "voiceQuality": "음성 품질",
+      "f5TtsQuality": "85-90% 자연스러움",
+      "elevenLabsQuality": "92-96% 자연스러움",
+      "emotionRendering": "감정 표현",
+      "f5TtsEmotion": "우수 (흐름 일치)",
+      "elevenLabsEmotion": "우수한 (v3 오디오 태그)",
+      "latency": "지연 시간",
+      "f5TtsLatency": "2-5초",
+      "elevenLabsLatency": "0.5-2초 (플래시)",
+      "setupComplexity": "설치 복잡성",
+      "f5TtsSetup": "높음 (기술적)",
+      "elevenLabsSetup": "낮음 (웹 인터페이스)",
+      "commercialRights": "상업적 권리",
+      "f5TtsRights": "전체 (MIT 라이선스)",
+      "elevenLabsRights": "유료 플랜 필요",
+      "f5TtsChampion": "F5-TTS: 오픈 소스 챔피언",
+      "technicalArchitecture": "기술 아키텍처",
+      "f5TtsDescription": "F5-TTS (유창하고 충실한 음성을 흐름 일치로 모방하는 Fairytaler)는 오픈 소스 음성 합성의 혁신을 나타냅니다. ConvNeXt V2 아키텍처를 갖춘 확산 변환기 기반으로 구축되어 상업적 가격 없이 인상적인 품질을 제공합니다.",
+      "keyStrengths": "주요 강점",
+      "zeroCostOperation": "제로 비용 운영:",
+      "zeroCostDesc": "MIT 라이선스로 완전히 무료, 예산에 민감한 제작자에게 완벽",
+      "flowMatchingTech": "흐름 일치 기술:",
+      "flowMatchingDesc": "고급 추론 시간 흐름 단계 샘플링으로 성능 향상",
+      "zeroShotCloning": "제로 샷 클로닝:",
+      "zeroShotDesc": "미세 조정 없이 짧은 참조 클립에서 음성을 복제",
+      "fullControl": "전체 제어:",
+      "fullControlDesc": "모델 가중치 및 사용자 정의 옵션에 대한 완전한 접근",
+      "noUsageLimits": "사용 제한 없음:",
+      "noUsageDesc": "크레딧이나 제한 없이 무제한 콘텐츠 생성",
+      "limitationsDubbing": "비디오 더빙의 한계",
+      "criticalConsiderations": "⚠️ 중요한 고려 사항",
+      "higherLatency": "더 높은 지연 시간:",
+      "higherLatencyDesc": "2-5초 생성 시간이 실시간 워크플로에 영향을 미침",
+      "technicalSetup": "기술 설정:",
+      "technicalSetupDesc": "Python 환경, GPU 및 기술 전문 지식 필요",
+      "limitedMultilingual": "제한된 다국어 지원:",
+      "limitedMultilingualDesc": "주로 영어에 최적화됨",
+      "artifactingIssues": "아티팩트 문제:",
+      "artifactingDesc": "긴 구문에서 가끔 발생하는 로봇 아티팩트",
+      "noDubbingFeatures": "내장 더빙 기능 없음:",
+      "noDubbingDesc": "별도의 번역 도구와 통합해야 함",
+      "bestUseCases": "최고의 사용 사례",
+      "f5TtsUseCases": "F5-TTS는 기술 창작자, 연구자 및 비용이 주요 제약인 프로젝트에 적합합니다. 프로토타입 제작, 교육 콘텐츠 및 인프라를 관리할 기술적 능력이 있는 창작자에게 이상적입니다.",
+      "elevenLabsPowerhouse": "ElevenLabs: 상업적 강자",
+      "technicalExcellence": "기술적 우수성",
+      "elevenLabsDescription": "ElevenLabs는 창작자 친화적인 TTS 도구에서 포괄적인 오디오 인프라 플랫폼으로 발전했습니다. 그들의 독점 모델(eleven_flash_v2_5, eleven_multilingual_v2, eleven_v3)은 음성 품질과 자연스러움의 산업 표준을 설정합니다.",
+      "superiorQuality": "우수한 음성 품질:",
+      "superiorQualityDesc": "최소한의 아티팩트로 92-96% 자연스러움 평가",
+      "advancedEmotion": "고급 감정 제어:",
+      "advancedEmotionDesc": "정확한 감정 표현을 위한 v3 오디오 태그",
+      "subSecondLatency": "서브 세컨드 지연:",
+      "subSecondDesc": "Flash 모델로 실시간 애플리케이션 가능",
+      "comprehensiveLanguage": "포괄적인 언어 지원:",
+      "comprehensiveLanguageDesc": "29개 이상의 언어와 지역 변형",
+      "integratedDubbing": "통합 더빙 파이프라인:",
+      "integratedDubbingDesc": "내장된 번역 및 음성 보존",
+      "professionalCloning": "전문 음성 클로닝:",
+      "professionalCloningDesc": "스튜디오 품질을 위한 PVC(전문 음성 클로닝)",
+      "pricingBreakdown": "비디오 제작자를 위한 가격 분석",
+      "costAnalysis": "💰 비용 분석 (2026)",
+      "starterPlan": "스타터 ($5/월):",
+      "starterDesc": "30,000 크레딧 (~30분 TTS) - 상업적 사용을 위한 진입점",
+      "creatorPlan": "창작자 ($22/월):",
+      "creatorDesc": "100,000 크레딧 (~100분) + 전문 음성 클로닝",
+      "proPlan": "프로 ($99/월):",
+      "proDesc": "500,000 크레딧 (~500분) + 44.1kHz 오디오 출력",
+      "scalePlan": "스케일 ($330/월):",
+      "scaleDesc": "2M 크레딧 (~2000분) + 저지연 실시간",
+      "creditNote": "참고: 1 크레딧 = 1 문자 (다국어 v2), 플래시 모델의 경우 0.5 크레딧",
+      "elevenLabsUseCases": "ElevenLabs는 품질과 사용 용이성이 비용 고려 사항보다 중요한 전문 콘텐츠 제작자, 에이전시 및 비즈니스에 적합합니다. 특히 대량 더빙 프로젝트 및 상업적 응용 프로그램에 유용합니다.",
+      "headToHead": "정면 대 정면 기술 비교",
+      "emotionQuality": "감정 렌더링 품질",
+      "elevenLabsWins": "ElevenLabs가 결정적으로 승리합니다",
+      "emotionControlDesc": "감정 제어에서. 그들의 v3 오디오 태그 시스템은 내러티브 맥락, 감정 톤 및 표현 패턴에 대한 정밀한 제어를 허용합니다. 행복, 슬픔, 분노 또는 미세한 뉘앙스를 간단한 마크업 태그로 지정할 수 있습니다.",
+      "f5TtsEmotionDesc": "F5-TTS는 감정 표현을 위해 흐름 일치를 사용하며, 이는 기본 감정에는 잘 작동하지만 극적인 콘텐츠나 미세한 표현을 위한 세밀한 제어가 부족합니다.",
+      "latencyPerformance": "지연 성능",
+      "elevenLabsFlash": "ElevenLabs 플래시 모델",
+      "flashDesc": "0.5-2초의 생성 시간을 제공하여 실시간 응용 프로그램 및 대화형 워크플로에 적합합니다. 이는 타이밍 동기화가 필수적인 비디오 더빙에 중요합니다.",
+      "f5TtsLatencyDesc": "F5-TTS는 일반적으로 생성당 2-5초가 필요하여 창의적인 워크플로를 방해하고 실시간 미리보기를 불가능하게 만들 수 있습니다.",
+      "audioArtifacting": "오디오 아티팩트",
+      "elevenLabsArtifacting": "ElevenLabs는 긴 구간에서도 최소한의 아티팩트를 보여주며, 부드러운 전환과 일관된 음성 특성을 유지합니다. 그들의 전문 음성 클로닝은 확장된 콘텐츠 전반에 걸쳐 품질을 유지합니다.",
+      "f5TtsArtifacting": "F5-TTS는 복잡한 문장이나 익숙하지 않은 음성 조합에서 특히 가끔 로봇 같은 아티팩트를 생성할 수 있습니다. 이는 긴 더빙 프로젝트에서 더 눈에 띄게 됩니다.",
+      "multilingualCapabilities": "다국어 기능",
+      "elevenLabsDominates": "ElevenLabs가 지배합니다",
+      "multilingualDesc": "29개 이상의 언어, 지역 변형 및 코드 스위칭 기능을 갖춘 국제 콘텐츠를 위해. 그들의 더빙 파이프라인은 언어 간 음성 특성을 유지합니다.",
+      "f5TtsMultilingualDesc": "F5-TTS는 제한된 다국어 지원을 제공하며, 주로 영어에 최적화되어 있고 다른 언어에 대한 실험적 지원이 있습니다. 국제 더빙 프로젝트에는 적합하지 않습니다.",
+      "bottomLine": "결론: 어떤 것을 선택해야 할까요?",
+      "chooseF5Tts": "🎯 F5-TTS를 선택하세요:",
+      "f5TtsReason1": "예산이 주요 제약입니다",
+      "f5TtsReason2": "기술 전문 지식과 인프라가 있습니다",
+      "f5TtsReason3": "주로 영어로 작업하고 있습니다",
+      "f5TtsReason4": "크레딧 없이 무제한 생성을 원합니다",
+      "f5TtsReason5": "모델을 사용자 정의하고 수정하고 싶습니다",
+      "f5TtsReason6": "독점 솔루션을 구축하고 있습니다",
+      "chooseElevenLabs": "🚀 ElevenLabs를 선택하세요:",
+      "elevenLabsReason1": "품질과 자연스러움이 최우선입니다",
+      "elevenLabsReason2": "다국어 더빙 기능이 필요합니다",
+      "elevenLabsReason3": "실시간 또는 저지연 생성이 필요합니다",
+      "elevenLabsReason4": "전문적인 감정 조절을 원합니다",
+      "elevenLabsReason5": "관리되는 번거로움 없는 솔루션을 선호합니다",
+      "elevenLabsReason6": "빠듯한 기한이 있는 상업 프로젝트",
+      "hybridApproach": "하이브리드 접근법: 두 세계의 장점",
+      "hybridApproachDesc": "다양한 요구를 가진 전문 스튜디오를 위해, 프로토타입 및 테스트에는 F5-TTS를, 최종 제작 및 상업 프로젝트에는 ElevenLabs를 사용하는 것을 고려하세요. 이 접근법은 품질 기준을 유지하면서 비용 효율성을 극대화합니다.",
+      "decisionFactors": "귀하의 선택은 궁극적으로 특정 사용 사례, 예산 제약, 기술 전문성 및 품질 요구 사항에 따라 달라집니다. 두 도구 모두 음성 클로닝 기술의 최첨단을 대표하며, 각각 다른 시나리오에서 뛰어납니다.",
+      "f5TtsSetupTitle": "F5-TTS 시작하기",
+      "f5TtsGithub": "https://github.com/SWivid/F5-TTS",
+      "f5TtsRequirements": "Python 3.8+, 8GB+ VRAM을 가진 GPU 권장",
+      "f5TtsInstallation": "pip install f5-tts",
+      "f5TtsInterface": "명령줄 및 Python API 인터페이스",
+      "elevenLabsSetupTitle": "ElevenLabs 시작하기",
+      "elevenLabsWebsite": "https://elevenlabs.io",
+      "elevenLabsFreeTier": "무료 요금제 제공 (10,000자/월)",
+      "elevenLabsWebApi": "웹 인터페이스 및 REST API 접근",
+      "elevenLabsProfessionalPlan": "전문 요금제는 월 $5부터 시작합니다",
+      "finalRecommendation": "최종 추천",
+      "f5TtsFinalNote": "F5-TTS와 ElevenLabs는 현대 음성 클로닝 기술의 정점을 나타냅니다. 귀하의 선택은 특정 요구, 기술 능력 및 예산 고려 사항에 맞춰야 합니다. 음성 기술의 민주화는 창작자들이 이제 전문급 도구에 전례 없는 접근을 할 수 있게 합니다.",
+      "comparisonNote": "이 비교는 2026년 4월 기준 음성 클로닝 기술의 상태를 반영합니다. AI의 빠른 발전은 향후 몇 달 동안 경관을 크게 변화시킬 수 있습니다."
+    },
+    "keyInsight": {
+      "title": "핵심 통찰",
+      "description": "단일 방법으로는 해결할 수 없습니다:",
+      "methods": {
+        "nlp": {
+          "title": "순수 NLP",
+          "description": "너무 시끄럽습니다"
+        },
+        "vision": {
+          "title": "순수 비전",
+          "description": "너무 추상적입니다"
+        },
+        "clustering": {
+          "title": "순수 클러스터링",
+          "description": "너무 거칠다"
+        }
+      },
+      "solution": "해결책은 인간이 개입하는 하이브리드 파이프라인입니다."
+    },
+    "pinterestPlatform": {
+      "title": "Pinterest와 같은 영감 플랫폼을 위한 태깅 시스템 구축",
+      "description": "Pinterest 스타일의 영감 플랫폼을 위해서는 다양한 콘텐츠 유형에 대한 전문 태깅 접근 방식이 필요합니다:",
+      "galleryTags": {
+        "title": "갤러리 이미지 태그",
+        "description": "시각적 콘텐츠 발견 및 탐색을 위해:",
+        "examples": {
+          "subject": "주제",
+          "subjectDesc": "초상화, 풍경, 동물, 음식, 건축",
+          "style": "스타일",
+          "styleDesc": "포토리얼리스틱, 애니메이션, 수채화, 유화, 스케치",
+          "medium": "미디엄",
+          "mediumDesc": "디지털 아트, 사진, 일러스트, 3D 렌더링",
+          "mood": "무드",
+          "moodDesc": "아늑한, 드라마틱한, 생동감 있는, 미니멀리스트, 향수",
+          "composition": "구성",
+          "compositionDesc": "클로즈업, 광각, 공중 촬영, 대칭, 삼등분법",
+          "color": "색상",
+          "colorDesc": "모노크롬, 따뜻한 톤, 차가운 톤, 파스텔, 네온"
+        }
+      },
+      "templateTags": {
+        "title": "템플릿 및 템플릿 예제 태그",
+        "description": "템플릿 발견 및 사용 사례 매칭을 위해:",
+        "geoTags": {
+          "title": "지리적 태그",
+          "description": "음식, 의상, 여행 일정이 포함된 다양한 국가와 같은 지리 태그:",
+          "examples": [
+            "프랑스",
+            "인도",
+            "멕시코",
+            "일본",
+            "이탈리아",
+            "스페인",
+            "중국",
+            "태국"
+          ]
+        },
+        "languageTags": {
+          "title": "언어 태그",
+          "description": "이중 언어 및 다국어 콘텐츠를 위한 언어 태그:",
+          "examples": [
+            "영어-중국어",
+            "영어-스페인어",
+            "영어-프랑스어",
+            "영어-일본어",
+            "영어-한국어",
+            "영어-아랍어",
+            "영어-포르투갈어",
+            "영어-러시아어"
+          ]
+        }
+      }
+    },
+    "ruleOfThumb": {
+      "title": "간단한 규칙",
+      "question": "각 태그에 대해 물어보세요:",
+      "description": "\"이것이 페이지라면, 사용자가 이해하고, 검색하고, 탐색하는 것을 즐길까요?\"",
+      "action": "그렇지 않다면, 제거하세요."
+    },
+    "finalThought": {
+      "title": "마지막 생각",
+      "description": "태깅은 이미지를 완벽하게 설명하는 것이 아닙니다. 그것은 다음과 같은 시스템을 만드는 것입니다:",
+      "systems": {
+        "match": "사용자가 생각하는 방식과 일치합니다",
+        "group": "의미 있게 콘텐츠를 그룹화합니다",
+        "scale": "검색 및 발견으로 확장됩니다"
+      },
+      "conclusion": "실제로, 최고의 태그 시스템은 가장 복잡한 것이 아니라 — 가장 의도에 맞는 것입니다."
+    },
+    "footer": {
+      "tags": [
+        "콘텐츠 태깅",
+        "태깅 시스템",
+        "콘텐츠 발견",
+        "핀터레스트 스타일",
+        "사용자 경험",
+        "검색 아키텍처",
+        "콘텐츠 전략",
+        "AI 콘텐츠",
+        "템플릿 시스템",
+        "갤러리 관리",
+        "콘텐츠 조직",
+        "검색 최적화"
+      ],
+      "questions": "콘텐츠 태깅 시스템 구축에 대한 질문이 있습니까? 개인화된 지원을 위해 지원 팀에 문의하세요."
+    },
+    "aeVsComfyUi": {
+      "title": "3부: AE vs ComfyUI – 모션 디자인 vs 확산 파이프라인",
+      "heading": "AE vs ComfyUI",
+      "images": {
+        "guideCoverAlt": "ComfyUI 완벽 가이드 표지 이미지",
+        "workflowFullAlt": "ComfyUI 전체 워크플로우: 입력에서 출력까지",
+        "caseFeltAlt": "ComfyUI 사례 연구: 양모 펠트 미니어처 세계 (노드 워크플로우)"
+      },
+      "intro1": "우리는 종종 질문을 받습니다: 왜 After Effects (AE)만 사용하지 않나요? 아니면 왜 ComfyUI를 사용할까요? 두 가지 모두 필수적입니다: 하나는 정밀한 제어를 제공하고, 다른 하나는 생성적 창의성을 제공합니다.",
+      "intro2": "AE는 타임라인 정밀도와 전환, 조명 및 효과에 대한 제어를 제공합니다. ComfyUI는 확산, 텍스트 및 다중 모드 오케스트레이션을 결합한 AI 네이티브 워크플로우를 제공합니다.",
+      "sections": {
+        "s1": {
+          "title": "I. ComfyUI란 무엇인가요?",
+          "p1": "ComfyUI는 AI 생성 콘텐츠를 위해 설계된 노드 기반 워크플로우 편집기이자 Stable Diffusion과 같은 확산 모델을 위한 강력한 프론트엔드 도구입니다. 시각적 노드 그래프를 통해 모델을 자유롭게 결합하고, 생성 논리를 제어하며, 간단한 이미지 생성부터 복잡한 다중 모드 창작까지 전체 프로세스를 마스터할 수 있습니다.",
+          "p2": "curify-ai.com 생태계에서 ComfyUI는 효율적인 AI 콘텐츠 생산을 위한 핵심 엔진입니다."
+        },
+        "s2": {
+          "title": "II. ComfyUI 기본 튜토리얼: 0에서 1로",
+          "sub1": {
+            "title": "1) 환경 설정 및 첫 실행",
+            "b1Strong": "로컬 배포 vs 클라우드 실행:",
+            "b1": "로컬 배포는 깊은 사용자 정의 및 개인 정보 보호 요구에 적합하며, 클라우드 실행은 복잡한 환경 설정 없이 더 편리합니다.",
+            "b2Strong": "모델 관리:",
+            "b2": "핵심 모델(체크포인트), 스타일 미세 조정(LoRA), 정밀 제어(ControlNet)는 세 가지 필수 구성 요소로, curify-ai.com의 템플릿 라이브러리에서 한 번의 클릭으로 사용할 수 있습니다.",
+            "b3Strong": "일반적인 문제:",
+            "b3": "CUDA가 활성화되지 않음, VRAM 부족, 누락된 종속성은 자주 발생하는 시작 문제이며, 문제 해결 가이드를 참조하여 빠르게 해결할 수 있습니다."
+          },
+          "sub2": {
+            "title": "2) 주요 개념 분석",
+            "b1Strong": "노드 그래프:",
+            "b1": "각 노드는 기능 모듈(모델 로드, 이미지 생성, 스타일 적용 등)을 나타내며, 연결을 통해 데이터 흐름을 정의하여 직관적이고 제어 가능하게 만듭니다.",
+            "b2Strong": "워크플로우:",
+            "b2": "저장, 가져오기 및 내보내기가 가능한 완전한 생성 프로세스이며, curify-ai.com은 주요 생성 시나리오를 다루는 많은 사전 설정 템플릿을 제공합니다.",
+            "b3Strong": "샘플러 및 스케줄러:",
+            "b3": "적절한 샘플러(예: Euler, DPM++)를 선택하면 생성 품질과 속도에 직접적인 영향을 미치며, 우리의 템플릿은 이미 최적화되어 있습니다."
+          },
+          "sub3": {
+            "title": "3) 빠른 시작 실용 사례",
+            "b1Strong": "텍스트에서 이미지:",
+            "b1": "curify-ai 스타일 프롬프트를 입력하고 한 번의 클릭으로 고품질 창의적 이미지를 생성합니다.",
+            "b2Strong": "이미지에서 이미지:",
+            "b2": "참조 이미지를 업로드하고 ControlNet 노드를 통해 구성을 잠그고, LoRA 노드를 사용하여 목표 스타일로 다시 그립니다.",
+            "b3Strong": "비디오 생성:",
+            "b3": "AnimateDiff와 같은 노드를 결합하여 정적 이미지를 부드러운 동적 콘텐츠로 변환합니다."
+          }
+        },
+        "s3": {
+          "title": "III. 노드 구성 및 고급 기술: 생성의 정밀도 높이기",
+          "sub1": {
+            "title": "1) 일반적인 노드 조합",
+            "b1Strong": "ControlNet 노드:",
+            "b1": "캐릭터 포즈, 윤곽선 및 깊이를 정밀하게 제어하여 복잡한 구성을 달성하는 데 핵심입니다.",
+            "b2Strong": "LoRA 혼합 노드:",
+            "b2": "여러 스타일의 LoRA를 오버레이하여 스타일 융합 및 세부 조정을 달성합니다.",
+            "b3Strong": "조건부 제어 노드:",
+            "b3": "긍정적 및 부정적 프롬프트의 가중치를 조정하여 생성된 세부 사항을 강화하거나 약화시켜 작업이 창의성과 더 잘 일치하도록 합니다."
+          },
+          "sub2": {
+            "title": "2) 성능 최적화",
+            "b1Strong": "VRAM 최적화:",
+            "b1": "블록 디코딩 및 모델 양자화를 활성화하여 제한된 VRAM으로 더 높은 해상도의 이미지를 생성합니다.",
+            "b2Strong": "배치 생성:",
+            "b2": "큐 관리 기능을 사용하여 curify-ai 기준에 맞는 리소스를 배치 생성하여 생성 효율성을 향상시킵니다.",
+            "b3Strong": "워크플로우 단순화:",
+            "b3": "일반적인 노드 조합을 서브그래프로 그룹화하여 원클릭 재사용을 가능하게 하고 반복적인 구성을 피합니다."
+          },
+          "sub3": {
+            "title": "3) 문제 해결 및 디버깅",
+            "b1Strong": "노드 연결 오류:",
+            "b1": "데이터 유형이 일치하는지 확인하세요 (예: 이미지 출력이 이미지 입력에 연결됨).",
+            "b2Strong": "저조한 생성 품질:",
+            "b2": "프롬프트가 정확한지, 샘플링 단계가 충분한지, 모델이 현재 작업에 적합한지 확인하세요."
+          }
+        },
+        "s4": {
+          "title": "IV. curify-ai.com × ComfyUI: 독점 애플리케이션 시나리오",
+          "sub1": {
+            "title": "1) AI 페인팅 워크플로우 템플릿",
+            "p1": "curify-ai.com은 애니메이션, 민족 스타일 및 사실주의와 같은 주요 스타일을 포함하여 직접 가져올 수 있는 ComfyUI 워크플로우 템플릿을 많이 제공합니다. 플랫폼 기준에 맞는 리소스 크기 및 형식을 제공합니다."
+          },
+          "sub2": {
+            "title": "2) 효율적인 생성 도구",
+            "b1": "curify-ai의 프롬프트 템플릿을 결합하여 스타일화된 콘텐츠의 배치 생산을 달성하여 생성 효율성을 크게 향상시킵니다.",
+            "b2": "플랫폼 기준에 맞는 고품질 이미지를 원클릭으로 생성하기 위한 전용 노드 구성 솔루션을 제공합니다."
+          },
+          "sub3": {
+            "title": "3) AE + ComfyUI 협업 워크플로우",
+            "b1Strong": "AI 생성:",
+            "b1": "ComfyUI를 사용하여 AI 리소스를 생성하고 스타일 및 콘텐츠 반복을 완료합니다.",
+            "b2Strong": "후반 작업 구성:",
+            "b2": "생성된 리소스를 After Effects에 가져와 타임라인 수준의 정밀 제어를 사용하여 전환, 오버레이 및 특수 효과 구성을 달성합니다.",
+            "b3Strong": "최종 제품:",
+            "b3": "비즈니스 및 창의적 요구를 충족하는 고품질 비디오 또는 애니메이션 이미지를 제작합니다."
+          }
+        },
+        "s5": {
+          "title": "V. ComfyUI 대 After Effects: 대체가 아닌 보완",
+          "conclusionTitle": "주요 결론",
+          "conclusion": "curify-ai 워크플로우에서 ComfyUI는 AI 생성 및 반복을 담당하고, AE는 최종 마무리, 전환, 오버레이 및 합성을 위해 사용되며, 두 가지는 대체가 아닌 보완적입니다.",
+          "table": {
+            "dimension": "차원",
+            "ae": "After Effects (AE)",
+            "comfy": "ComfyUI",
+            "row1": {
+              "dim": "핵심 포지셔닝",
+              "ae": "전문 영화 후반 작업 합성 및 특수 효과 소프트웨어",
+              "comfy": "AI 네이티브 생성 추론 엔진 및 워크플로우 편집기"
+            },
+            "row2": {
+              "dim": "제어 방법",
+              "ae": "타임라인 및 레이어 기반의 정밀 수동 제어",
+              "comfy": "모델 및 매개변수에 의존하는 노드 그래프 기반의 반무작위 생성"
+            },
+            "row3": {
+              "dim": "출력 능력",
+              "ae": "고품질 애니메이션, VFX, 애니메이션 만화",
+              "comfy": "AI 이미지/비디오 생성, 다중 모드 오케스트레이션 지원"
+            },
+            "row4": {
+              "dim": "워크플로우",
+              "ae": "수동 또는 플러그인 기반의 선형 프로세스",
+              "comfy": "확산 모델 + LLM + 다중 모드의 노드 기반 워크플로우"
+            },
+            "row5": {
+              "dim": "최고의 시나리오",
+              "ae": "최종 합성, 전환, 오버레이, 세밀한 특수 효과",
+              "comfy": "AI 콘텐츠 생성, 반복, 스타일화된 창작"
+            }
+          }
+        },
+        "s6": {
+          "title": "VI. 다음 단계",
+          "b1": "curify-ai.com을 방문하여 맞춤형 ComfyUI 워크플로우 템플릿을 다운로드하세요.",
+          "b2": "튜토리얼을 따라 첫 번째 생성을 완료하고 효율적인 AI 생성을 경험하세요.",
+          "b3": "우리 커뮤니티에 참여하여 다른 제작자와 노드 구성 팁 및 워크플로우 최적화 경험을 교환하세요."
+        }
+      },
+      "table": {
+        "colAE": "AE",
+        "colComfy": "ComfyUI",
+        "row1a": "정밀 VFX 및 모션 제어",
+        "row1b": "AI 네이티브 비디오 생성",
+        "row2a": "타임라인 기반 편집",
+        "row2b": "워크플로우/노드 기반 렌더링",
+        "row3a": "수동/플러그인 기반 워크플로우",
+        "row3b": "확산 + LLM + 다중 모드 오케스트레이션"
+      },
+      "outro": "우리의 워크플로우에서 ComfyUI는 AI 생성 및 반복을 처리하고, AE는 최종 외관을 다듬습니다: 전환, 오버레이 및 합성.",
+      "cta": {
+        "primary": "템플릿을 보려면 curify-ai.com으로 이동하세요",
+        "secondary": "블로그 목록으로 돌아가기"
+      }
+    },
+    "video_translation_eval": {
+      "title": "AI 비디오 번역 품질 평가",
+      "subtitle": "중요한 메트릭",
+      "description": "전사에서 음성 합성에 이르기까지 AI 비디오 번역 품질을 평가하기 위한 필수 메트릭을 발견하세요.",
+      "intro": "언어 간 비디오 번역은 작은 일이 아닙니다 — 전사, 번역, 음성 합성, 타이밍 등이 포함됩니다. Curify에서는 각 요소가 업계 표준을 충족하도록 보장하는 강력한 평가 파이프라인을 구축했습니다.",
+      "section1_title": "1. 전사 품질",
+      "section1_engine": "엔진: WhisperX",
+      "section1_metrics": [
+        "WER (단어 오류율)",
+        "구두점 F1 (표현력 및 가독성)"
+      ],
+      "section2_title": "2. 번역 품질",
+      "section2_engine": "엔진: Helsinki, MarianMT",
+      "section2_metrics": [
+        "BLEU (표준 메트릭)",
+        "COMET / chrF++ (의미적 유사성)",
+        "인간 리뷰: 유창성 + 적합성"
+      ],
+      "section3_title": "3. 음성 합성 품질",
+      "section3_engine": "엔진: XTTS / YourTTS",
+      "section3_metrics": [
+        "MOS (자연스러움, 유사성, 표현력)",
+        "화자 검증 정확도"
+      ],
+      "section4_title": "4. 정렬 및 립 싱크",
+      "section4_metrics": [
+        "세그먼트 지속 시간 불일치",
+        "Wav2Lip 싱크 신뢰도",
+        "시간적 드리프트 분석"
+      ],
+      "section5_title": "5. 의미 보존",
+      "section5_method": "우리는 LLM(예: GPT-4)을 사용하여 번역된 음성이 원래의 의미, 톤 및 감정을 유지하는지 판단합니다. 예시 프롬프트:",
+      "section5_prompt": "이 만다린 전사를 영어 음성 해설과 비교하세요. 톤, 의도 및 내용이 일치합니까? 1-5로 평가하고 설명하세요.",
+      "section6_title": "6. 사용자 피드백 및 GTM 검증",
+      "section6_metrics": [
+        "제품 카테고리에 적합한 음성 품질",
+        "시청자 유지 개선",
+        "초기 사용자(예: 1688 판매자)의 채택 의사"
+      ],
+      "closing": "Curify에서는 단순히 번역하는 것이 아니라, 언어 간의 스토리텔링, 감정 및 명확성을 보존합니다. 글로벌하게 목소리를 확장할 준비가 되었다면, 연락주세요.",
+      "available_locales": "게시물 사용 가능 언어: [EN] [ZH] [ES] [DE]"
+    },
+    "qaBotToTaskAgent": {
+      "heading": "🏗️ QA 봇에서 작업 에이전트로: 아키텍처 가이드",
+      "description": "단순한 질문 응답을 넘어 신뢰할 수 있는 작업 에이전트를 구축하는 방법을 배우세요.",
+      "taskAgentImageAlt": "다양한 구성 요소 간의 상호 작용을 보여주는 작업 에이전트 시스템 아키텍처의 일러스트레이션",
+      "tldr": "TL;DR: 질문에만 답하는 챗봇을 만들지 마세요. 실제로 작업을 수행하는 작업 에이전트를 구축하세요.",
+      "intro": "이 가이드는 정적 규칙, 동적 기술 및 결정론적 후크를 사용하여 단일 QA 봇에서 작업 에이전트로의 아키텍처 변화를 설명합니다. 구체적인 코드 예제와 오픈 소스 참조가 포함되어 있습니다.",
+      "coreShift": {
+        "title": "1. 핵심 변화: QA 봇 → 작업 에이전트",
+        "content": [
+          "오늘날 대부분의 AI 시스템은 여전히 맥락이 가득한 QA 봇입니다:",
+          "• 질문에 잘 답변합니다.",
+          "• 압박을 받을 때 환각을 일으킵니다.",
+          "• 실행, 안전 및 일관성에 대한 보장이 부족합니다."
+        ],
+        "keyInsight": "핵심 통찰: 맥락을 확장하지 마세요. 구조화하세요."
+      },
+      "threeLayerArch": {
+        "title": "2. 3계층 아키텍처",
+        "layers": [
+          {
+            "title": "🧱 1. 정적 맥락 — 규칙 (항상 켜짐)",
+            "points": [
+              "정신 모델: 직원 핸드북",
+              "항상 로드됨",
+              "정체성, 코딩 표준, 행동 제약 정의",
+              "환각 및 스타일 드리프트 방지",
+              "작고, 안정적이며, 인간이 편집 가능"
+            ]
+          },
+          {
+            "title": "🛠️ 2. 동적 맥락 — 기술 (필요 시)",
+            "points": [
+              "정신 모델: 도구 상자",
+              "필요할 때만 로드됨",
+              "각 기술은 독립적인 기능입니다.",
+              "컨텍스트 창을 깔끔하게 유지합니다"
+            ]
+          },
+          {
+            "title": "⚓ 3. 결정론적 훅 — 가드레일",
+            "points": [
+              "정신 모델: 보안 + 컴플라이언스 레이어",
+              "확률적이지 않음",
+              "LLM 추론 전후에 실행됨",
+              "결코 실패해서는 안 되는 규칙을 시행합니다"
+            ]
+          }
+        ]
+      },
+      "projectStructure": {
+        "title": "3. 권장 프로젝트 구조",
+        "structure": "my-task-agent/\n├── .cursorrules\n├── main.py\n├── tools/\n│   └── linear_mcp.py\n└── README.md"
+      },
+      "staticContextExample": {
+        "title": "4. 정적 컨텍스트 예제: .cursorrules",
+        "content": "# 역할\n당신은 프로덕션급 시스템에 집중하는 시니어 파이썬 엔지니어입니다.\n\n# 규칙\n- 디버깅을 위해 절대 print()를 사용하지 마세요\n- 항상 함수에 타입 힌트를 추가하세요\n- 3개 이상의 파일을 수정할 경우 계획을 제안하세요\n\n# 행동\n- 간결하게 작성하세요\n- 필요시 명확한 질문을 하세요\n\n참고: https://github.com/PatrickJS/awesome-cursorrules"
+      },
+      "dynamicSkillExample": {
+        "title": "5. 동적 기술 예제 (MCP)",
+        "content": "from mcp.server.fastmcp import FastMCP\n\nmcp = FastMCP(\"DevTools\")\n\n@mcp.tool()\ndef create_linear_ticket(title: str, priority: str = \"low\") -> str:\n    ticket_id = f\"LIN-{hash(title) % 10000}\"\n    return f\"Created ticket {ticket_id} with priority={priority}\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n\n참고: https://github.com/modelcontextprotocol/python-sdk"
+      },
+      "deterministicHookExample": {
+        "title": "6. 결정론적 훅 예제",
+        "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"보안 위반이 감지되었습니다\"}\n    return agent_node(state)\n\n참고: https://langchain-ai.github.io/langgraph/"
+      },
+      "finalThought": "당신의 에이전트가 질문에만 답한다면, 그것은 챗봇입니다. 신뢰할 수 있게 작업을 수행한다면, 그것은 작업 에이전트입니다."
     }
   },
   "aeVsComfyUi": {
