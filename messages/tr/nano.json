@@ -2856,5 +2856,49 @@
     },
     "description": "Kelimelerin köken ülkeleriyle bağlantılarını, etimolojileri ve anlamlarıyla birlikte gösteren dünya haritası görsel rehberi. Kendi etimoloji haritası posterinizi oluşturmak için AI istemini kullanın.",
     "title": "Dünyada Kelime Kökenleri: Etimoloji Haritası Infografiği"
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Vintage Nihai Rehber İnfografiği",
+    "description": "Kahve, peynir, iç mekan bitkileri, biftek gibi herhangi bir konu için detaylı vintage tarzı görsel rehber — retro tipografi, el çizimi illüstrasyonlar ve zamansız düzenlerle. Kendi nihai rehber posterinizi oluşturmak için AI istemini kullanın.",
+    "title": "Vintage Nihai Rehber Posterleri: Herhangi Bir Konu için Retro Görsel İnfografikler",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 'THE ULTIMATE [topic] GUIDE' başlıklı detaylı bir vintage tarzı infografik oluşturur. Üstte cesur bir retro-serif başlık yer alır; gövde, etiketli alt başlıklarla yapılandırılmış bölümlere (Türler, Yöntemler, İpuçları, Gerçekler) ayrılmıştır; el çizimi vintage tarzı illüstrasyonlar, dönüşüm şeritleri, karşılaştırma grafikler ve eşleştirme sistemleri içerir. Sıcak bej dokulu kağıt, kahverengi ve krem tonlarında sepya/toprak paleti ile kapanış anahtar noktaları şeridi.",
+        "who": "Yiyecek blog yazarları, yaşam tarzı yaratıcıları, vintage estetik Pinterest hesapları, hobi içerik kanalları, mutfak ve ev markaları ve nostaljik 'nihai rehber' tarzı posterler yapan herkes için uygundur.",
+        "how": [
+          "Bir rehber konusu girin (örn. 'Kahve', 'Peynir', 'İç Mekan Bitkileri Bakımı', 'Şarap Tadımı').",
+          "Poster, retro-serif başlık ve yapılandırılmış Türler/Yöntemler/İpuçları/Gerçekler bölümlerini otomatik olarak düzenler.",
+          "Her bölüm, etiketler ve açıklamalarla el çizimi vintage illüstrasyonlar kullanır.",
+          "Dikey 4K vintage tarzı nihai rehber posteri oluşturun."
+        ],
+        "prompts": [
+          "'Nihai Kahve Rehberi' vintage infografiğini demleme yöntemleri ile oluşturun.",
+          "'Nihai Peynir Rehberi' retro tarzı posterini türler ve eşleşmeler ile oluşturun.",
+          "'Nihai İç Mekan Bitkileri Bakım Rehberi' vintage infografiğini oluşturun."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Garip Bilim Gerçekleri İnfografiği",
+    "description": "Herhangi bir tema üzerine garip bilim gerçeklerinin sevimli, renkli eğitimsel görsel rehberi — hayvanlar, bitkiler, uzay, hava durumu. Kendi tuhaf bilim gerçekleri posterinizi oluşturmak için AI istemini kullanın.",
+    "title": "Garip Bilim Gerçekleri Görsel Rehberi: Herhangi Bir Tema için Sevimli Eğitimsel İnfografikler",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 'GARİP BİLİM GERÇEKLERİ: [theme]!' başlıklı sevimli, renkli eğitimsel bir infografik oluşturur. Gövde, seçilen tema üzerine tuhaf illüstrasyonlarla dolu bilim gerçekleri ile doldurulur; her biri dostça bir karikatür tarzı illüstrasyon ve kısa sürpriz bir açıklama ile eşleştirilmiştir, çocuk dostu bir estetikte parlak bir renk paleti ve net sans-serif tipografi ile.",
+        "who": "Bilim öğretmenleri, çocukların bilim kulüpleri, eğitim eğlence yaratıcıları, okul bülteni editörleri, evde bilim eğitimi veren ebeveynler ve paylaşılabilir eğitimsel gerçekler posterleri yapan içerik yaratıcıları için uygundur.",
+        "how": [
+          "Bir bilim teması girin (örn. 'Hayvanlar', 'Bitkiler', 'Uzay', 'İnsan Vücudu').",
+          "Poster, o tema üzerindeki garip gerçeklerin sevimli illüstrasyon kartlarını otomatik olarak düzenler.",
+          "Her gerçek, kısa, sürpriz bir açıklama ile karikatür illüstrasyonunu eşleştirir.",
+          "Dikey 4K çocuk dostu garip bilim gerçekleri infografiğini oluşturun."
+        ],
+        "prompts": [
+          "'Garip Bilim Gerçekleri: Hayvanlar!' sevimli illüstrasyonlarla infografiğini oluşturun.",
+          "'Garip Bilim Gerçekleri: Uzay!' renkli çocukların bilim posterini oluşturun.",
+          "'Garip Bilim Gerçekleri: Bitkiler!' eğitimsel infografiğini oluşturun."
+        ]
+      }
+    }
   }
 }

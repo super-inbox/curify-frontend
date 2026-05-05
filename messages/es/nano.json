@@ -2856,5 +2856,49 @@
     },
     "description": "Una guía visual de mapa mundial que muestra palabras conectadas a sus países de origen con etimologías y significados. Usa el aviso de IA para generar tu propio cartel de mapa etimológico.",
     "title": "Orígenes de Palabras en Todo el Mundo: Infografía de Mapa Etimológico"
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Infografía de la Guía Definitiva Vintage",
+    "description": "Una guía visual detallada de estilo vintage para cualquier tema — café, queso, plantas de interior, carne — con tipografía retro, ilustraciones dibujadas a mano y diseños atemporales. Usa el aviso de IA para generar tu propio póster de guía definitiva.",
+    "title": "Pósters de la Guía Definitiva Vintage: Infografías Visuales Retro para Cualquier Tema",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía detallada de estilo vintage titulada 'LA GUÍA DEFINITIVA DE [tema]'. Un título en negrita con serifas retro se sitúa en la parte superior; el cuerpo se divide en secciones estructuradas (Tipos, Métodos, Consejos, Hechos) con subtítulos etiquetados, ilustraciones de estilo vintage dibujadas a mano, tiras de transformación, gráficos de comparación y sistemas de coincidencia. Papel texturizado beige cálido, paleta sepia/terrosa en marrones y cremas, con una tira de conclusiones clave al final.",
+        "who": "Adecuado para bloggers de comida, creadores de estilo de vida, cuentas de Pinterest de estética vintage, canales de contenido de aficionados, marcas de cocina y hogar, y cualquier persona que haga pósters de estilo 'guía definitiva' nostálgicos.",
+        "how": [
+          "Ingresa un tema de guía (por ejemplo, 'Café', 'Queso', 'Cuidado de Plantas de Interior', 'Cata de Vinos').",
+          "El póster organiza automáticamente un título con serifas retro y secciones estructuradas de Tipos/Métodos/Consejos/Hechos.",
+          "Cada sección utiliza ilustraciones vintage dibujadas a mano con etiquetas y llamadas.",
+          "Genera un póster vertical de guía definitiva de estilo vintage en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía vintage 'La Guía Definitiva del Café' con métodos de preparación.",
+          "Crea un póster de estilo retro 'La Guía Definitiva del Queso' con tipos y maridajes.",
+          "Genera una infografía vintage 'La Guía Definitiva del Cuidado de Plantas de Interior'."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Infografía de Hechos Científicos Raros",
+    "description": "Una guía visual educativa colorida y divertida de hechos científicos raros sobre cualquier tema — animales, plantas, espacio, clima. Usa el aviso de IA para generar tu propio póster de hechos científicos peculiares.",
+    "title": "Guía Visual de Hechos Científicos Raros: Infografías Educativas Divertidas para Cualquier Tema",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa colorida y divertida titulada 'HECHOS CIENTÍFICOS RAROS: [tema]!'. El cuerpo está lleno de hechos científicos ilustrados peculiares sobre el tema elegido, cada uno emparejado con una ilustración de estilo caricatura amigable y una breve explicación sorprendente, en una estética amigable para niños con una paleta de colores brillante y tipografía clara sin serifas.",
+        "who": "Adecuado para profesores de ciencias, clubes de ciencia para niños, creadores de edutainment, editores de boletines escolares, padres que educan en casa ciencias, y creadores de contenido que hacen pósters educativos compartibles.",
+        "how": [
+          "Ingresa un tema científico (por ejemplo, 'Animales', 'Plantas', 'Espacio', 'Cuerpo Humano').",
+          "El póster organiza automáticamente tarjetas ilustradas de hechos raros sobre ese tema.",
+          "Cada hecho empareja una ilustración de caricatura con una breve explicación sorprendente.",
+          "Genera una infografía vertical de hechos científicos raros amigable para niños en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía 'Hechos Científicos Raros: ¡Animales!' con ilustraciones divertidas.",
+          "Crea un póster colorido de ciencia para niños 'Hechos Científicos Raros: ¡Espacio!'.",
+          "Genera una infografía educativa 'Hechos Científicos Raros: ¡Plantas!'."
+        ]
+      }
+    }
   }
 }

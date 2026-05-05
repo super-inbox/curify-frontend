@@ -2855,5 +2855,49 @@
         ]
       }
     }
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Vintage Ultimate Guide Infographic",
+    "description": "A detailed vintage-style visual guide for any topic — coffee, cheese, indoor plants, steak — with retro typography, hand-drawn illustrations, and timeless layouts. Use the AI prompt to generate your own ultimate guide poster.",
+    "title": "Vintage Ultimate Guide Posters: Retro Visual Infographics for Any Topic",
+    "content": {
+      "sections": {
+        "what": "This template generates a detailed vintage-style infographic titled 'THE ULTIMATE [topic] GUIDE'. A bold retro-serif title sits at the top; the body is divided into structured sections (Types, Methods, Tips, Facts) with labeled subheadings, hand-drawn vintage-style illustrations, transformation strips, comparison charts, and matching systems. Warm beige textured paper, sepia/earthy palette in browns and creams, with a closing key-takeaways strip.",
+        "who": "Suitable for food bloggers, lifestyle creators, vintage-aesthetic Pinterest accounts, hobbyist content channels, kitchen and home brands, and anyone making nostalgic 'ultimate guide' style posters.",
+        "how": [
+          "Enter a guide topic (e.g., 'Coffee', 'Cheese', 'Indoor Plant Care', 'Wine Tasting').",
+          "The poster auto-lays out a retro-serif title and structured Types/Methods/Tips/Facts sections.",
+          "Each section uses hand-drawn vintage illustrations with labels and callouts.",
+          "Generate a vertical 4K vintage-style ultimate guide poster."
+        ],
+        "prompts": [
+          "Generate a 'The Ultimate Coffee Guide' vintage infographic with brewing methods.",
+          "Create a 'The Ultimate Cheese Guide' retro-style poster with types and pairings.",
+          "Generate a 'The Ultimate Indoor Plant Care Guide' vintage infographic."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Weird Science Facts Infographic",
+    "description": "A cute, colorful educational visual guide of weird science facts on any theme — animals, plants, space, weather. Use the AI prompt to generate your own quirky science facts poster.",
+    "title": "Weird Science Facts Visual Guide: Cute Educational Infographics for Any Theme",
+    "content": {
+      "sections": {
+        "what": "This template generates a cute, colorful educational infographic titled 'WEIRD SCIENCE FACTS: [theme]!'. The body is filled with quirky illustrated science facts on the chosen theme, each paired with a friendly cartoon-style illustration and a short surprising explanation, in a kid-friendly aesthetic with a bright color palette and clear sans-serif typography.",
+        "who": "Suitable for science teachers, kids' science clubs, edutainment creators, school newsletter editors, parents homeschooling science, and content creators making shareable educational facts posters.",
+        "how": [
+          "Enter a science theme (e.g., 'Animals', 'Plants', 'Space', 'Human Body').",
+          "The poster auto-lays out cute illustrated cards of weird facts on that theme.",
+          "Each fact pairs a cartoon illustration with a short, surprising explanation.",
+          "Generate a vertical 4K kid-friendly weird science facts infographic."
+        ],
+        "prompts": [
+          "Generate a 'Weird Science Facts: Animals!' infographic with cute illustrations.",
+          "Create a 'Weird Science Facts: Space!' colorful kids' science poster.",
+          "Generate a 'Weird Science Facts: Plants!' educational infographic."
+        ]
+      }
+    }
   }
 }

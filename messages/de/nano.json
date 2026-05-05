@@ -2856,5 +2856,49 @@
     },
     "description": "Ein Weltkarten visueller Leitfaden, der Wörter zeigt, die mit ihren Herkunftsländern verbunden sind, mit Etymologien und Bedeutungen. Verwenden Sie den KI-Prompt, um Ihr eigenes Etymologie-Karten-Poster zu erstellen.",
     "title": "Wortursprünge weltweit: Etymologie-Karten-Infografik"
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Vintage Ultimativer Leitfaden Infografik",
+    "description": "Ein detaillierter visuelle Leitfaden im Vintage-Stil für jedes Thema — Kaffee, Käse, Zimmerpflanzen, Steak — mit retro Typografie, handgezeichneten Illustrationen und zeitlosen Layouts. Verwenden Sie den KI-Prompt, um Ihr eigenes ultimativen Leitfaden-Poster zu erstellen.",
+    "title": "Vintage Ultimative Leitfaden Poster: Retro Visuelle Infografiken für Jedes Thema",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert eine detaillierte Infografik im Vintage-Stil mit dem Titel 'DER ULTIMATIVE [Thema] LEITFADEN'. Ein fetter Retro-Serif-Titel steht oben; der Text ist in strukturierte Abschnitte (Typen, Methoden, Tipps, Fakten) mit beschrifteten Unterüberschriften, handgezeichneten Illustrationen im Vintage-Stil, Transformationsstreifen, Vergleichsdiagrammen und passenden Systemen unterteilt. Warmes beiges strukturiertes Papier, sepia/erdige Palette in Brauntönen und Cremetönen, mit einem abschließenden Schlüsselerkenntnisse-Streifen.",
+        "who": "Geeignet für Food-Blogger, Lifestyle-Kreatoren, Vintage-Ästhetik Pinterest-Konten, Hobby-Inhaltskanäle, Küchen- und Wohnmarken sowie für alle, die nostalgische 'ultimative Leitfaden'-Stil-Poster erstellen.",
+        "how": [
+          "Geben Sie ein Leitfaden-Thema ein (z.B. 'Kaffee', 'Käse', 'Pflege von Zimmerpflanzen', 'Weinverkostung').",
+          "Das Poster legt automatisch einen Retro-Serif-Titel und strukturierte Abschnitte für Typen/Methoden/Tipps/Fakten an.",
+          "Jeder Abschnitt verwendet handgezeichnete Vintage-Illustrationen mit Beschriftungen und Hervorhebungen.",
+          "Generieren Sie ein vertikales 4K Vintage-Stil ultimativen Leitfaden-Poster."
+        ],
+        "prompts": [
+          "Generieren Sie eine 'Der Ultimative Kaffee Leitfaden' Vintage-Infografik mit Brühmethoden.",
+          "Erstellen Sie ein 'Der Ultimative Käse Leitfaden' Retro-Stil-Poster mit Typen und Kombinationen.",
+          "Generieren Sie eine 'Der Ultimative Pflege von Zimmerpflanzen Leitfaden' Vintage-Infografik."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Seltsame Wissenschafts Fakten Infografik",
+    "description": "Ein niedlicher, bunter edukativer visueller Leitfaden zu seltsamen Wissenschafts Fakten zu jedem Thema — Tiere, Pflanzen, Weltraum, Wetter. Verwenden Sie den KI-Prompt, um Ihr eigenes skurriles Wissenschafts Fakten-Poster zu erstellen.",
+    "title": "Seltsame Wissenschafts Fakten Visueller Leitfaden: Niedliche Bildungsinfografiken für Jedes Thema",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage generiert eine niedliche, bunte edukative Infografik mit dem Titel 'SELTSAME WISSENSCHAFTSFAKTEN: [Thema]!'. Der Text ist gefüllt mit skurrilen illustrierten Wissenschafts Fakten zum gewählten Thema, jeweils kombiniert mit einer freundlichen Cartoon-Illustration und einer kurzen überraschenden Erklärung, in einer kinderfreundlichen Ästhetik mit einer hellen Farbpalette und klarer Sans-Serif-Typografie.",
+        "who": "Geeignet für Wissenschaftslehrer, Kinder-Wissenschaftsclubs, Edutainment-Kreatoren, Redakteure von Schulnachrichten, Eltern, die Wissenschaft unterrichten, und Inhaltskreatoren, die teilbare Bildungsfakten-Poster erstellen.",
+        "how": [
+          "Geben Sie ein Wissenschaftsthema ein (z.B. 'Tiere', 'Pflanzen', 'Weltraum', 'Menschlicher Körper').",
+          "Das Poster legt automatisch niedliche illustrierte Karten mit seltsamen Fakten zu diesem Thema an.",
+          "Jeder Fakt kombiniert eine Cartoon-Illustration mit einer kurzen, überraschenden Erklärung.",
+          "Generieren Sie eine vertikale 4K kinderfreundliche seltsame Wissenschafts Fakten Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine 'Seltsame Wissenschafts Fakten: Tiere!' Infografik mit niedlichen Illustrationen.",
+          "Erstellen Sie ein 'Seltsame Wissenschafts Fakten: Weltraum!' Buntes Kinderwissenschafts-Poster.",
+          "Generieren Sie eine 'Seltsame Wissenschafts Fakten: Pflanzen!' edukative Infografik."
+        ]
+      }
+    }
   }
 }
