@@ -221,7 +221,6 @@ export default function CarouselClient({
 
   if (!slide) return null;
 
-  const exampleHref = `/${locale}/nano-template/${slug}/example/${encodeURIComponent(slide.id)}`;
   const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
   const trackBrowse = (suffix: "prev" | "next" | "dot") => {
     track({
@@ -387,14 +386,14 @@ export default function CarouselClient({
           </div>
         )}
         <Link
-          href={exampleHref}
+          href={`/${locale}/nano-template/${slug}`}
           onClick={(e) => {
             e.stopPropagation();
             trackViewPrompt();
           }}
-          className="rounded-full bg-white/90 px-5 py-2 text-sm font-bold text-neutral-900 shadow backdrop-blur-sm hover:bg-white"
+          className="rounded-full border-2 border-purple-500 bg-white/90 px-5 py-2 text-sm font-bold text-purple-700 shadow backdrop-blur-sm hover:bg-white hover:border-purple-600"
         >
-          View prompt →
+          Visit template →
         </Link>
       </div>
       </div>
