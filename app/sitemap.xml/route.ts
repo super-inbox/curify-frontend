@@ -5,6 +5,10 @@ import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
 import { TOOL_REGISTRY } from "@/lib/tools-registry";
 import { USE_CASES } from "@/lib/use-cases";
 import { toSlug } from "@/lib/nano_utils";
+import {
+  SEO_RETITLED_LASTMOD,
+  SEO_RETITLED_TEMPLATE_IDS,
+} from "@/lib/seo_retitled_templates";
 
 export const runtime = "nodejs";
 
@@ -29,7 +33,11 @@ const STATIC_ROUTES = [
   "/inspiration-hub",
 ];
 
-function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
+function getNanoTemplateRoutes(): Array<{
+  route: string;
+  locales: string[];
+  lastmod: string;
+}> {
   const raws = nanoTemplates as unknown as Array<{ id: string }>;
 
   return raws
@@ -37,6 +45,9 @@ function getNanoTemplateRoutes(): Array<{ route: string; locales: string[] }> {
     .map((t) => ({
       route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
       locales: [...LOCALES],
+      lastmod: SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim())
+        ? SEO_RETITLED_LASTMOD
+        : NANO_TEMPLATES_LASTMOD,
     }));
 }
 
@@ -186,10 +197,10 @@ export async function GET() {
   });
 
   // Nano template detail pages
-  nanoTemplateRoutes.forEach(({ route, locales: availableLocales }) => {
+  nanoTemplateRoutes.forEach(({ route, locales: availableLocales, lastmod }) => {
     availableLocales.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: NANO_TEMPLATES_LASTMOD,
+        lastmod,
         changefreq: "weekly",
         priority: "0.6",
         availableLocales,
