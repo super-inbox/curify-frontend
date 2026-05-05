@@ -5656,5 +5656,39 @@
     ],
     "base_rank_score": 80,
     "rank_score": 80
-  }
+  },
+  {
+    "id": "template-weird-science-facts-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Weird Science Facts Infographic Designer) Create a cute, colorful educational infographic titled \"WEIRD SCIENCE FACTS: {theme}!\". Layout: 1. Top title in playful, rounded rainbow-colored letters, with a matching pastel banner underneath. 2. 3 equal vertical panels, each containing one fun science fact. 3. Each panel includes: a numbered pastel circle icon (1/2/3), a bold fun title for the fact, a kawaii-style cartoon illustration visualizing the fact (anthropomorphic characters with big sparkly eyes, soft gradients), and a short kid-friendly description in a rounded pastel text box at the bottom. Style: Soft pastel color palette with bright accents, whimsical background decorated with tiny stars/hearts/sparkles/confetti, clean vector art with thick outlines, easy-to-read playful text, cheerful magical mood for kids learning, no watermarks/logos, 4K ultra HD, direct image generation. Subject: '{theme} Weird Science Facts Infographic.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Science Theme",
+                    "type": "text",
+                    "placeholder": ["Mind-Blowing Space Facts", "Crazy Plant Facts", "Wacky Human Body Facts", "Surprising Ocean Secrets", "Bizarre Insect Facts", "Weird Animal Relatives"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-weird-science-facts-infographic-plant-facts-prev.jpg"
+},
+  {
+    "id": "template-vintage-ultimate-guide-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Vintage Ultimate Guide Infographic Designer) Create a detailed vintage-style infographic titled \"THE ULTIMATE {topic} GUIDE\". Layout: 1. Large bold title at the top with a retro serif font. 2. Multiple structured sections (e.g., Types, Methods, Tips, Facts) with labeled subheadings. 3. Each section uses hand-drawn vintage-style illustrations (like coffee beans, cheese platters, plants, steak cuts) with detailed labels and callouts. 4. Step-by-step visuals, comparison charts, and infographic-style diagrams (e.g., transformation strips, matching systems). 5. Bottom section with key takeaways or a simple rule strip. Style: Warm beige paper background with subtle texture, sepia/earthy color palette (browns, creams, muted tones), retro illustration style, clear text hierarchy, 4K ultra HD, direct image generation. Subject: 'The Ultimate {topic} Guide Infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Guide Topic",
+                    "type": "text",
+                    "placeholder": ["Coffee", "Cheese", "Indoor Plant Care", "Steak Cooking", "Baking", "Wine Tasting"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-vintage-ultimate-guide-infographic-coffee-brewing-prev.jpg"
+}
 ]
