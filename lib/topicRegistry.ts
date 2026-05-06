@@ -59,14 +59,30 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
 ];
 
+// Subject Tier 3 tags shared by `learning` and `language` so common
+// subjects (animals, nature, weather, etc.) cross-link between the two.
+// Update this list to refresh both Tier 1 pages at once.
+const SUBJECT_TAGS = [
+  // World / science (kids-learning)
+  "animals", "nature", "biology", "space", "weather",
+  // Change over long timescales — dinosaurs, hominids, tech, products
+  "evolution",
+  // Everyday / language scenes (kids-learning + vocabulary)
+  "food-and-drink", "family", "school", "transportation",
+  "celebration", "shopping", "body", "emotions",
+];
+
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   personality: ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
   travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
+  // language pairs (english-chinese etc.) were promoted to Tier 2 so they
+  // sit alongside vocabulary/dialogue/expressions/language-english as
+  // navigational tabs. Tier 3 here mirrors learning's subject tags.
+  language:    SUBJECT_TAGS,
   design:      ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  learning:    ["animals", "nature", "biology", "space", "weather"],
+  learning:    SUBJECT_TAGS,
   lifestyle:   ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
 };
 
@@ -76,7 +92,7 @@ const TIER1_TAG_CHILDREN: Record<string, string[]> = {
 const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
   character:   ["mbti", "anime", "sports", "film", "relationship", "portrait", "comparison", "groups"],
   personality: [],
-  language:  ["vocabulary", "dialogue", "expressions", "language-english"],
+  language:  ["vocabulary", "dialogue", "expressions", "language-english", "english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   travel:    ["culture", "food", "city", "itinerary"],
   lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],
   learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
