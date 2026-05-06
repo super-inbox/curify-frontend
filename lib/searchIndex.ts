@@ -109,7 +109,6 @@ export const TIER3_SUBJECT: SuggestionEntry[] = [
   { slug: "school",          label: "School",          emoji: "🏫", tier: 3, aliases: ["classroom", "student", "education", "library"] },
   { slug: "transportation",  label: "Transportation",  emoji: "🚆", tier: 3, aliases: ["transport", "vehicle", "vehicles", "transit"] },
   { slug: "celebration",     label: "Celebration",     emoji: "🎉", tier: 3, aliases: ["festival", "party", "holiday"] },
-  { slug: "shopping",        label: "Shopping",        emoji: "🛒", tier: 3, aliases: ["store", "market", "supermarket", "shop"] },
   { slug: "body",            label: "Body",            emoji: "🧍", tier: 3, aliases: ["body parts", "anatomy", "health"] },
   { slug: "emotions",        label: "Emotions",        emoji: "😊", tier: 3, aliases: ["feelings", "mood", "emotional"] },
 ];

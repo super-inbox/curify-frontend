@@ -70,7 +70,7 @@ const SUBJECT_TAGS = [
   "evolution",
   // Everyday / language scenes (kids-learning + vocabulary)
   "food-and-drink", "family", "school", "transportation",
-  "celebration", "shopping", "body", "emotions",
+  "celebration", "body", "emotions",
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
