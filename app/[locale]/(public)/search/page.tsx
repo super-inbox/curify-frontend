@@ -56,6 +56,49 @@ export default async function SearchPage({ params, searchParams }: Props) {
     localizedTopics = (home as any).topics ?? {};
   }
 
+  // Load template-level i18n so non-Latin queries (e.g. zh "反义词") and locale-
+  // specific terms can match against template titles / categories / descriptions
+  // that don't appear in inspiration data. Always include the user's locale plus
+  // en + zh: most templates are zh-authored so zh has the source-of-truth strings,
+  // and en is the universal fallback.
+  const localesToScan = Array.from(new Set([locale, "en", "zh"]));
+  type NanoTemplateMessages = Record<
+    string,
+    {
+      category?: string;
+      title?: string;
+      description?: string;
+      content?: { sections?: { what?: string; who?: string } };
+    }
+  >;
+  const templateSearchBlob = new Map<string, string>(); // template_id -> blob
+  for (const loc of localesToScan) {
+    let entries: NanoTemplateMessages = {};
+    try {
+      entries = (await import(`../../../../messages/${loc}/nano.json`)).default as NanoTemplateMessages;
+    } catch {
+      continue;
+    }
+    for (const [tid, e] of Object.entries(entries)) {
+      const parts = [
+        e?.category,
+        e?.title,
+        e?.description,
+        e?.content?.sections?.what,
+        e?.content?.sections?.who,
+      ].filter((v): v is string => typeof v === "string" && v.length > 0);
+      if (parts.length === 0) continue;
+      templateSearchBlob.set(
+        tid,
+        (templateSearchBlob.get(tid) ?? "") + " " + parts.join(" ").toLowerCase()
+      );
+    }
+  }
+  const matchedTemplateIdsByI18n = new Set<string>();
+  for (const [tid, blob] of templateSearchBlob) {
+    if (blob.includes(query)) matchedTemplateIdsByI18n.add(tid);
+  }
+
   // Exact topic slug match → go straight to the topic page (reuses all existing infrastructure)
   const exactSlug = ALL_SUGGESTIONS.find((s) => {
     if (s.slug === query) return true;
@@ -77,8 +120,12 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // Free-text match across id, template_id, tags, params (e.g. character_name,
   // art_style), and per-locale title/category — covers long-tail terms like
   // "wukong" or "paper cutting" that exist in the data but not in tags.
+  // Also include inspirations whose parent template's i18n matched the query
+  // (so e.g. zh "反义词" surfaces all examples under the chinese-verb-opposite
+  // template even though the inspiration records themselves have no zh tags).
   const inspirations = (nanoInspiration as InspRecord[])
     .filter((r) => {
+      if (matchedTemplateIdsByI18n.has(r.template_id)) return true;
       const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [
         l?.title,
         l?.category,
