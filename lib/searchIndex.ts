@@ -103,6 +103,7 @@ export const TIER3_SUBJECT: SuggestionEntry[] = [
   { slug: "biology",         label: "Biology",         emoji: "🧬", tier: 3, aliases: ["biological", "life science"] },
   { slug: "space",           label: "Space",           emoji: "🚀", tier: 3, aliases: ["astronomy", "cosmos", "universe"] },
   { slug: "weather",         label: "Weather",         emoji: "🌦️", tier: 3, aliases: ["climate", "forecast"] },
+  { slug: "evolution",       label: "Dinosaur & Evolution", emoji: "🦕", tier: 3, aliases: ["dinosaur", "dinosaurs", "prehistoric", "fossil", "human evolution", "hominid"] },
   // Everyday / language scenes
   { slug: "food-and-drink",  label: "Food & Drink",    emoji: "🍎", tier: 3, aliases: ["meal", "kitchen", "eating", "drink"] },
   { slug: "family",          label: "Family",          emoji: "👨‍👩‍👧‍👦", tier: 3, aliases: ["parents", "siblings", "relatives"] },

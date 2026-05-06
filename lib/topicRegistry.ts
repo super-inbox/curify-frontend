@@ -65,6 +65,8 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 const SUBJECT_TAGS = [
   // World / science (kids-learning)
   "animals", "nature", "biology", "space", "weather",
+  // Change over long timescales — dinosaurs, hominids, tech, products
+  "evolution",
   // Everyday / language scenes (kids-learning + vocabulary)
   "food-and-drink", "family", "school", "transportation",
   "celebration", "shopping", "body", "emotions",
