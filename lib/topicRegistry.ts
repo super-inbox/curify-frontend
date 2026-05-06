@@ -52,10 +52,11 @@ function normalizeTopicValues(value: unknown): string[] {
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   ["animals", "nature", "biology", "space", "weather"],
   ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
+  ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
@@ -63,9 +64,10 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   personality: ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
   travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   design:      ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   learning:    ["animals", "nature", "biology", "space", "weather"],
+  lifestyle:   ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
 };
 
 // Full explicit parent→children hierarchy.
@@ -111,6 +113,17 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   ai:             "futuristic",
   posters:        "vintage",
   "digital-canvas": "artistic",
+  relationship:   "couple",
+  // Fashion-style Tier 3 tags under lifestyle
+  minimalist:     "minimalist",
+  "soft-girl":    "soft",
+  edgy:           "edgy",
+  athleisure:     "athletic",
+  chic:           "chic",
+  "vintage-retro": "vintage",
+  elegant:        "elegant",
+  casual:         "casual",
+  "high-fashion": "high fashion",
 };
 
 // Blog tag to pull posts for a topic page.
