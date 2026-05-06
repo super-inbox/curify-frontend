@@ -49,6 +49,13 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "mockups",        label: "Mockups",           emoji: "📱", tier: 2, aliases: ["mockup", "mock-up", "prototype", "preview"] },
   { slug: "guides",         label: "Guides",            emoji: "📋", tier: 2, aliases: ["how to", "how-to", "tutorial", "walkthrough", "guide"] },
   { slug: "language-english", label: "English Learning", emoji: "🇬🇧", tier: 2, aliases: ["english", "esl", "learn english"] },
+  // Language pairs — promoted from Tier 3 to Tier 2 so they appear as
+  // navigational tabs alongside vocabulary / dialogue / etc.
+  { slug: "english-chinese",  label: "English ↔ Chinese",  emoji: "🇨🇳", tier: 2, aliases: ["en-zh", "chinese english", "english chinese"] },
+  { slug: "english-spanish",  label: "English ↔ Spanish",  emoji: "🇪🇸", tier: 2, aliases: ["en-es", "spanish english", "english spanish"] },
+  { slug: "english-korean",   label: "English ↔ Korean",   emoji: "🇰🇷", tier: 2, aliases: ["en-ko", "korean english", "english korean"] },
+  { slug: "english-japanese", label: "English ↔ Japanese", emoji: "🇯🇵", tier: 2, aliases: ["en-ja", "japanese english", "english japanese"] },
+  { slug: "english-french",   label: "English ↔ French",   emoji: "🇫🇷", tier: 2, aliases: ["en-fr", "french english", "english french"] },
 ];
 
 // Tier 1 — entry bar categories
@@ -87,6 +94,16 @@ const TIER3_MBTI: SuggestionEntry[] = [
   "ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP",
 ].map(type => ({ slug: `mbti-${type.toLowerCase()}`, label: type, emoji: "🧠", tier: 3 as const }));
 
+// Subject Tier 3 tags — shared by learning and language Tier 1s.
+// Keep in sync with SUBJECT_TAGS in topicRegistry.ts.
+export const TIER3_SUBJECT: SuggestionEntry[] = [
+  { slug: "animals",  label: "Animals",  emoji: "🐾", tier: 3, aliases: ["pet", "wildlife"] },
+  { slug: "nature",   label: "Nature",   emoji: "🌿", tier: 3, aliases: ["outdoor", "natural"] },
+  { slug: "biology",  label: "Biology",  emoji: "🧬", tier: 3, aliases: ["biological", "life science"] },
+  { slug: "space",    label: "Space",    emoji: "🚀", tier: 3, aliases: ["astronomy", "cosmos", "universe"] },
+  { slug: "weather",  label: "Weather",  emoji: "🌦️", tier: 3, aliases: ["climate", "forecast"] },
+];
+
 // Default suggestions shown on search focus — top Tier 2 + selected geo + style picks
 export const DEFAULT_FOCUS_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER2_SUGGESTIONS.slice(0, 10),
@@ -104,6 +121,7 @@ export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER3_GEO,
   ...TIER3_STYLE,
   ...TIER3_MBTI,
+  ...TIER3_SUBJECT,
 ];
 
 // ── Fuzzy matching ──────────────────────────────────────────────────────────
