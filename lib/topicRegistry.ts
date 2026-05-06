@@ -54,7 +54,7 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
   ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  ["animals", "nature", "biology", "space", "weather"],
+  ["animals", "nature", "space", "weather"],
   ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
   ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
 ];
@@ -63,13 +63,14 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 // subjects (animals, nature, weather, etc.) cross-link between the two.
 // Update this list to refresh both Tier 1 pages at once.
 const SUBJECT_TAGS = [
-  // World / science (kids-learning)
-  "animals", "nature", "biology", "space", "weather",
+  // World / science (kids-learning) — biology dropped because it overlapped
+  // with animals + nature; biology-flavored entries retagged accordingly.
+  "animals", "nature", "space", "weather",
   // Change over long timescales — dinosaurs, hominids, tech, products
   "evolution",
   // Everyday / language scenes (kids-learning + vocabulary)
   "food-and-drink", "family", "school", "transportation",
-  "celebration", "shopping", "body", "emotions",
+  "celebration", "body", "emotions",
 ];
 
 // Tier 1 → Tier 3 tag children mapping.
