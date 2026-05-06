@@ -62,7 +62,13 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 // Subject Tier 3 tags shared by `learning` and `language` so common
 // subjects (animals, nature, weather, etc.) cross-link between the two.
 // Update this list to refresh both Tier 1 pages at once.
-const SUBJECT_TAGS = ["animals", "nature", "biology", "space", "weather"];
+const SUBJECT_TAGS = [
+  // World / science (kids-learning)
+  "animals", "nature", "biology", "space", "weather",
+  // Everyday / language scenes (kids-learning + vocabulary)
+  "food-and-drink", "family", "school", "transportation",
+  "celebration", "shopping", "body", "emotions",
+];
 
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.

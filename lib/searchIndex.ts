@@ -97,11 +97,21 @@ const TIER3_MBTI: SuggestionEntry[] = [
 // Subject Tier 3 tags — shared by learning and language Tier 1s.
 // Keep in sync with SUBJECT_TAGS in topicRegistry.ts.
 export const TIER3_SUBJECT: SuggestionEntry[] = [
-  { slug: "animals",  label: "Animals",  emoji: "🐾", tier: 3, aliases: ["pet", "wildlife"] },
-  { slug: "nature",   label: "Nature",   emoji: "🌿", tier: 3, aliases: ["outdoor", "natural"] },
-  { slug: "biology",  label: "Biology",  emoji: "🧬", tier: 3, aliases: ["biological", "life science"] },
-  { slug: "space",    label: "Space",    emoji: "🚀", tier: 3, aliases: ["astronomy", "cosmos", "universe"] },
-  { slug: "weather",  label: "Weather",  emoji: "🌦️", tier: 3, aliases: ["climate", "forecast"] },
+  // World / science
+  { slug: "animals",         label: "Animals",         emoji: "🐾", tier: 3, aliases: ["pet", "wildlife"] },
+  { slug: "nature",          label: "Nature",          emoji: "🌿", tier: 3, aliases: ["outdoor", "natural"] },
+  { slug: "biology",         label: "Biology",         emoji: "🧬", tier: 3, aliases: ["biological", "life science"] },
+  { slug: "space",           label: "Space",           emoji: "🚀", tier: 3, aliases: ["astronomy", "cosmos", "universe"] },
+  { slug: "weather",         label: "Weather",         emoji: "🌦️", tier: 3, aliases: ["climate", "forecast"] },
+  // Everyday / language scenes
+  { slug: "food-and-drink",  label: "Food & Drink",    emoji: "🍎", tier: 3, aliases: ["meal", "kitchen", "eating", "drink"] },
+  { slug: "family",          label: "Family",          emoji: "👨‍👩‍👧‍👦", tier: 3, aliases: ["parents", "siblings", "relatives"] },
+  { slug: "school",          label: "School",          emoji: "🏫", tier: 3, aliases: ["classroom", "student", "education", "library"] },
+  { slug: "transportation",  label: "Transportation",  emoji: "🚆", tier: 3, aliases: ["transport", "vehicle", "vehicles", "transit"] },
+  { slug: "celebration",     label: "Celebration",     emoji: "🎉", tier: 3, aliases: ["festival", "party", "holiday"] },
+  { slug: "shopping",        label: "Shopping",        emoji: "🛒", tier: 3, aliases: ["store", "market", "supermarket", "shop"] },
+  { slug: "body",            label: "Body",            emoji: "🧍", tier: 3, aliases: ["body parts", "anatomy", "health"] },
+  { slug: "emotions",        label: "Emotions",        emoji: "😊", tier: 3, aliases: ["feelings", "mood", "emotional"] },
 ];
 
 // Default suggestions shown on search focus — top Tier 2 + selected geo + style picks
