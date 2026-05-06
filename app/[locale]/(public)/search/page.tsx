@@ -99,14 +99,30 @@ export default async function SearchPage({ params, searchParams }: Props) {
     if (blob.includes(query)) matchedTemplateIdsByI18n.add(tid);
   }
 
-  // Exact topic slug match → go straight to the topic page (reuses all existing infrastructure)
-  const exactSlug = ALL_SUGGESTIONS.find((s) => {
+  // Topic slug match → go straight to the topic page (reuses all existing
+  // infrastructure). Exact match first; if nothing exact, fall back to a
+  // single-unambiguous-substring/alias match so query "emotion" resolves
+  // to the "emotions" topic and "love" resolves to "relationship" (via
+  // its alias) instead of bouncing to the generic search-results page.
+  let target = ALL_SUGGESTIONS.find((s) => {
     if (s.slug === query) return true;
     if (s.label.toLowerCase() === query) return true;
+    if ((s.aliases ?? []).some((a) => a.toLowerCase() === query)) return true;
     const localized = localizedTopics[s.slug]?.displayName?.toLowerCase();
     return !!localized && localized === query;
   });
-  if (exactSlug) redirect(`/${locale}/topics/${exactSlug.slug}`);
+  if (!target) {
+    const containsQuery = ALL_SUGGESTIONS.filter((s) => {
+      if (s.slug.includes(query)) return true;
+      if (s.label.toLowerCase().includes(query)) return true;
+      if ((s.aliases ?? []).some((a) => a.toLowerCase().includes(query))) return true;
+      const localized = localizedTopics[s.slug]?.displayName?.toLowerCase();
+      return !!localized && localized.includes(query);
+    });
+    // Only redirect when the substring match is unambiguous (single hit).
+    if (containsQuery.length === 1) target = containsQuery[0];
+  }
+  if (target) redirect(`/${locale}/topics/${target.slug}`);
 
   type InspRecord = {
     id: string;
