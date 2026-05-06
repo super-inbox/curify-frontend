@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
 
 // Cache topic listing pages for 4 hours with ISR — keeps the
 // gallery / prompt fetches off the hot path on every request.
@@ -190,9 +190,14 @@ export default async function Page({ params }: Props) {
   // Tier 2 navigational subtopics — shown at top on all tiers
   const navSubTopics = tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [];
 
-  // Tier 3 tag subtopics — shown at bottom on all tiers
+  // Tier 3 tag subtopics — shown at bottom on all tiers.
+  // Don't filter by isTopicEnabled: subject Tier 3 tags (animals, evolution,
+  // food-and-drink, family, etc.) are intentionally surfaced even before they
+  // have tagged content so the navigation is discoverable while content gets
+  // curated. The destination topic page falls back to the gallery section
+  // (TOPIC_GALLERY_TAG) when there's no template grid yet.
   const tagSubTopics = tier1Ancestor
-    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug && isTopicEnabled(id))
+    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug)
     : [];
 
   const subTopicsHeading = !!parentTopicId
