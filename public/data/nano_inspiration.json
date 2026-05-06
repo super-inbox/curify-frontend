@@ -40886,5 +40886,437 @@
         "title": "space facts"
       }
     }
+  },
+  {
+    "id": "template-vocabulary-english-french-daily-routines",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-french-daily-routines.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-french-daily-routines-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Daily Routines"
+    },
+    "locales": {
+      "en": {
+        "title": "Daily Routines"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-french-travel-tourism-phrases",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-french-travel-tourism-phrases.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-french-travel-tourism-phrases-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Travel & Tourism Phrases"
+    },
+    "locales": {
+      "en": {
+        "title": "Travel & Tourism Phrases"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-french-french-culinary-terms",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-french-french-culinary-terms.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-french-french-culinary-terms-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "French Culinary Terms"
+    },
+    "locales": {
+      "en": {
+        "title": "French Culinary Terms"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-vocabulary-english-french-office-workplace-vocabulary",
+    "template_id": "template-vocabulary",
+    "asset": {
+      "image_url": "/images/nano_insp/template-vocabulary-english-french-office-workplace-vocabulary.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-vocabulary-english-french-office-workplace-vocabulary-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Office & Workplace Vocabulary"
+    },
+    "locales": {
+      "en": {
+        "title": "Office & Workplace Vocabulary"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-french-at-the-market",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-french-at-the-market.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-french-at-the-market-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "scene_type": "At the Market"
+    },
+    "locales": {
+      "en": {
+        "title": "At the Market"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-french-at-the-airport",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-french-at-the-airport.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-french-at-the-airport-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "scene_type": "At the Airport"
+    },
+    "locales": {
+      "en": {
+        "title": "At the Airport"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-french-in-a-restaurant",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-french-in-a-restaurant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-french-in-a-restaurant-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "scene_type": "In a Restaurant"
+    },
+    "locales": {
+      "en": {
+        "title": "In a Restaurant"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-word-scene-english-french-at-the-museum",
+    "template_id": "template-word-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-word-scene-english-french-at-the-museum.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-word-scene-english-french-at-the-museum-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "scene_type": "At the Museum"
+    },
+    "locales": {
+      "en": {
+        "title": "At the Museum"
+      }
+    },
+    "topics": [
+      "vocabulary",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-french-ordering-at-a-caf",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-french-ordering-at-a-caf.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-french-ordering-at-a-caf-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Ordering at a Café"
+    },
+    "locales": {
+      "en": {
+        "title": "Ordering at a Café"
+      }
+    },
+    "topics": [
+      "dialogue",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-french-asking-for-directions-in-paris",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-french-asking-for-directions-in-paris.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-french-asking-for-directions-in-paris-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Asking for Directions in Paris"
+    },
+    "locales": {
+      "en": {
+        "title": "Asking for Directions in Paris"
+      }
+    },
+    "topics": [
+      "dialogue",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-french-buying-clothes-at-a-boutique",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-french-buying-clothes-at-a-boutique.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-french-buying-clothes-at-a-boutique-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Buying Clothes at a Boutique"
+    },
+    "locales": {
+      "en": {
+        "title": "Buying Clothes at a Boutique"
+      }
+    },
+    "topics": [
+      "dialogue",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-dialogue-scene-english-french-meeting-new-friends-at-a-party",
+    "template_id": "template-english-dialogue-scene",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-dialogue-scene-english-french-meeting-new-friends-at-a-party.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-dialogue-scene-english-french-meeting-new-friends-at-a-party-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Meeting New Friends at a Party"
+    },
+    "locales": {
+      "en": {
+        "title": "Meeting New Friends at a Party"
+      }
+    },
+    "topics": [
+      "dialogue",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-top5-phrases-english-french-asking-for-directions",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-english-french-asking-for-directions.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-english-french-asking-for-directions-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Asking for Directions"
+    },
+    "locales": {
+      "en": {
+        "title": "Asking for Directions"
+      }
+    },
+    "topics": [
+      "expressions",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-top5-phrases-english-french-ordering-food-at-a-restaurant",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-english-french-ordering-food-at-a-restaurant.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-english-french-ordering-food-at-a-restaurant-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Ordering Food at a Restaurant"
+    },
+    "locales": {
+      "en": {
+        "title": "Ordering Food at a Restaurant"
+      }
+    },
+    "topics": [
+      "expressions",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-top5-phrases-english-french-talking-about-hobbies",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-english-french-talking-about-hobbies.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-english-french-talking-about-hobbies-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Talking About Hobbies"
+    },
+    "locales": {
+      "en": {
+        "title": "Talking About Hobbies"
+      }
+    },
+    "topics": [
+      "expressions",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-top5-phrases-english-french-at-the-train-station",
+    "template_id": "template-english-top5-phrases",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-top5-phrases-english-french-at-the-train-station.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-top5-phrases-english-french-at-the-train-station-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "At the Train Station"
+    },
+    "locales": {
+      "en": {
+        "title": "At the Train Station"
+      }
+    },
+    "topics": [
+      "expressions",
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-error-correction-english-french-faux-amis-false-friends-in-english-frenc",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-english-french-faux-amis-false-friends-in-english-frenc.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-english-french-faux-amis-false-friends-in-english-frenc-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Faux Amis (False Friends) in English-French"
+    },
+    "locales": {
+      "en": {
+        "title": "Faux Amis (False Friends) in English-French"
+      }
+    },
+    "topics": [
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-error-correction-english-french-preposition-errors-with-location-and-tim",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-english-french-preposition-errors-with-location-and-tim.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-english-french-preposition-errors-with-location-and-tim-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Preposition Errors with Location and Time"
+    },
+    "locales": {
+      "en": {
+        "title": "Preposition Errors with Location and Time"
+      }
+    },
+    "topics": [
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-error-correction-english-french-gender-and-number-agreement-of-adjective",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-english-french-gender-and-number-agreement-of-adjective.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-english-french-gender-and-number-agreement-of-adjective-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Gender and Number Agreement of Adjectives"
+    },
+    "locales": {
+      "en": {
+        "title": "Gender and Number Agreement of Adjectives"
+      }
+    },
+    "topics": [
+      "kawaii",
+      "english-french"
+    ]
+  },
+  {
+    "id": "template-english-error-correction-english-french-distinguishing-pass-compos-and-imparfait",
+    "template_id": "template-english-error-correction",
+    "asset": {
+      "image_url": "/images/nano_insp/template-english-error-correction-english-french-distinguishing-pass-compos-and-imparfait.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-english-error-correction-english-french-distinguishing-pass-compos-and-imparfait-prev.jpg"
+    },
+    "params": {
+      "language_pair": "English-French",
+      "topic_name": "Distinguishing Passé Composé and Imparfait"
+    },
+    "locales": {
+      "en": {
+        "title": "Distinguishing Passé Composé and Imparfait"
+      }
+    },
+    "topics": [
+      "kawaii",
+      "english-french"
+    ]
   }
 ]

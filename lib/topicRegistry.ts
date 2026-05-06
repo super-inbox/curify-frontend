@@ -52,7 +52,7 @@ function normalizeTopicValues(value: unknown): string[] {
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   ["animals", "nature", "biology", "space", "weather"],
   ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
@@ -63,7 +63,7 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
   personality: ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
   travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
+  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   design:      ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   learning:    ["animals", "nature", "biology", "space", "weather"],
 };
