@@ -98,9 +98,8 @@ const TIER3_MBTI: SuggestionEntry[] = [
 // Keep in sync with SUBJECT_TAGS in topicRegistry.ts.
 export const TIER3_SUBJECT: SuggestionEntry[] = [
   // World / science
-  { slug: "animals",         label: "Animals",         emoji: "🐾", tier: 3, aliases: ["pet", "wildlife"] },
-  { slug: "nature",          label: "Nature",          emoji: "🌿", tier: 3, aliases: ["outdoor", "natural"] },
-  { slug: "biology",         label: "Biology",         emoji: "🧬", tier: 3, aliases: ["biological", "life science"] },
+  { slug: "animals",         label: "Animals",         emoji: "🐾", tier: 3, aliases: ["pet", "wildlife", "creature"] },
+  { slug: "nature",          label: "Nature",          emoji: "🌿", tier: 3, aliases: ["outdoor", "natural", "biology", "ecosystem"] },
   { slug: "space",           label: "Space",           emoji: "🚀", tier: 3, aliases: ["astronomy", "cosmos", "universe"] },
   { slug: "weather",         label: "Weather",         emoji: "🌦️", tier: 3, aliases: ["climate", "forecast"] },
   { slug: "evolution",       label: "Dinosaur & Evolution", emoji: "🦕", tier: 3, aliases: ["dinosaur", "dinosaurs", "prehistoric", "fossil", "human evolution", "hominid"] },

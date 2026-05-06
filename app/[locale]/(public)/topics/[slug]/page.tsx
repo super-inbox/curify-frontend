@@ -106,7 +106,12 @@ export default async function Page({ params }: Props) {
   // Union of both sources
   const allFilteredIds = new Set([...templateTaggedIds, ...inspirationTaggedIds]);
 
-  if (!allFilteredIds.size) notFound();
+  // 404 only for completely unknown slugs. If the slug is a declared topic
+  // in the registry (Tier 1, Tier 2, or Tier 3 tag) but currently has no
+  // tagged content, render the page anyway — it will still surface
+  // navigation, gallery, and Tier 3 chips while content gets curated.
+  const isDeclaredTopic = !!getTopicById(slug);
+  if (!allFilteredIds.size && !isDeclaredTopic) notFound();
 
   const filteredTemplates = allTemplates.filter((t: any) => allFilteredIds.has(t.id));
 
@@ -146,7 +151,7 @@ export default async function Page({ params }: Props) {
     translate: translateNano,
   });
 
-  if (!nanoCards.length) {
+  if (!nanoCards.length && !isDeclaredTopic) {
     notFound();
   }
 
