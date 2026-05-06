@@ -197,18 +197,42 @@ function buildTopicRegistry(): TopicRegistry {
     templateToTopics.set(t.id, normalizeTopicValues(t.topics));
   }
 
-  // Build enriched topic list (parentTopic from explicit map)
-  const allTopicIds = Array.from(topicToTemplateIds.keys());
-  const enrichedTopics: TopicWithTemplates[] = allTopicIds.map((id) => {
-    const topicTemplates = topicToTemplates.get(id) ?? [];
-    return {
-      id,
-      templates: topicTemplates,
-      templateCount: topicTemplates.length,
-      isEnabled: topicTemplates.length > 0,
-      parentTopic: EXPLICIT_PARENT_TOPIC.get(id),
-    };
-  });
+  // Collect every explicitly-declared topic id (Tier 1 keys, Tier 2
+  // navigational children, and Tier 3 tag children). Topics declared in
+  // these constants must surface in the registry — and be navigable —
+  // even before any template / inspiration has been tagged with them, so
+  // newly-added tags (e.g. food-and-drink, evolution) appear as
+  // discoverable chips on parent pages while content gets curated.
+  const declaredTopicIds = new Set<string>();
+  for (const [tier1, children] of Object.entries(EXPLICIT_CHILD_TOPICS)) {
+    declaredTopicIds.add(tier1);
+    for (const child of children) declaredTopicIds.add(child);
+  }
+  for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
+    declaredTopicIds.add(tier1);
+    for (const tag of tags) declaredTopicIds.add(tag);
+  }
+
+  // Build enriched topic list — union of data-derived + declared topics.
+  const allTopicIds = new Set<string>([
+    ...topicToTemplateIds.keys(),
+    ...declaredTopicIds,
+  ]);
+  const enrichedTopics: TopicWithTemplates[] = Array.from(allTopicIds).map(
+    (id) => {
+      const topicTemplates = topicToTemplates.get(id) ?? [];
+      return {
+        id,
+        templates: topicTemplates,
+        templateCount: topicTemplates.length,
+        // Declared topics are clickable even when empty — the destination
+        // page can still surface gallery prompts via TOPIC_GALLERY_TAG and
+        // sibling chips, and SEO-wise we want the chip discoverable.
+        isEnabled: topicTemplates.length > 0 || declaredTopicIds.has(id),
+        parentTopic: EXPLICIT_PARENT_TOPIC.get(id),
+      };
+    }
+  );
 
   const topicById = new Map<string, TopicWithTemplates>(
     enrichedTopics.map((t) => [t.id, t])
