@@ -111,6 +111,7 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   ai:             "futuristic",
   posters:        "vintage",
   "digital-canvas": "artistic",
+  relationship:   "couple",
 };
 
 // Blog tag to pull posts for a topic page.
