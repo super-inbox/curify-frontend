@@ -866,6 +866,11 @@
       "displayName": "ESFP",
       "title": "ESFP — Her Ortamın Canıdır | MBTI Karakter Kartları",
       "description": "Gittikleri her yere enerji getiren spontane eğlenceliler. Ghibli, Breaking Bad, Friends ve spor dünyalarındaki ESFP karakterlerini keşfedin."
+    },
+    "relationship": {
+      "displayName": "İlişkiler",
+      "title": "İlişki Görsel İpuçları, Şablonlar ve İlham",
+      "description": "İlişki odaklı AI görselleri, MBTI uyumluluk infografikleri ve çiftler, flört, arkadaşlık ve aile içeriği için şablonları keşfedin."
     }
   },
   "topicPage": {
@@ -873,5 +878,152 @@
     "templatesHeading": "Şablonlar",
     "subTopicsHeading": "Kategoriye göre gözat",
     "exploreMoreHeading": "Daha fazla keşfet"
+  },
+  "videoTranscriptGenerator": {
+    "metadata": {
+      "title": "AI Video Transkript Üretici | Curify AI",
+      "description": "Herhangi bir videodan dakikalar içinde doğru transkriptler oluşturun. Curify'nin AI transkript aracı 170'ten fazla dili destekler ve SRT ve TXT formatlarına aktarır."
+    },
+    "title": "AI Video Transkript Üretici",
+    "description": "Bir video yükleyin veya bir YouTube bağlantısı yapıştırın ve saniyeler içinde tam, doğru bir transkript alın. SRT veya düz metin olarak dışa aktarın — altyazılar, yeniden kullanım veya arama dizinleme için hazır.",
+    "example": "Örnek: 10 dakikalık bir dersin konuşmacıya uygun metin ve zaman damgaları ile transkripti.",
+    "cta": "Transkripti Oluştur",
+    "why": {
+      "title": "Video Transkripsiyonu İçin Neden Curify Kullanmalısınız?",
+      "point1": "Gelişmiş konuşma tanıma modelleri ile desteklenen yüksek doğrulukta transkripsiyon.",
+      "point2": "Otomatik dil tespiti ile 170'ten fazla dili destekler.",
+      "point3": "Tam transkriptleri SRT (zaman damgaları ile) veya düz TXT olarak dışa aktarın.",
+      "point4": "Yüklenen videolar ve YouTube bağlantıları ile çalışır — ek yazılım gerekmez."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Transkript üretici hangi video formatlarını destekliyor?",
+      "a1": "Curify, MP4, MOV ve AVI dahil olmak üzere tüm yaygın video formatlarını ve doğrudan YouTube URL'lerini destekler. Sadece yükleyin veya yapıştırın ve transkripsiyon otomatik olarak başlar.",
+      "q2": "Transkript oluşturulduktan sonra düzenleyebilir miyim?",
+      "a2": "Evet. Oluşturduktan sonra transkripti gözden geçirebilir ve indirebilirsiniz. SRT dosyaları, video editörleri veya altyazı araçları için kullanılmak üzere zaman damgalarını içerir."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Transkripti Nedir?",
+        "p1": "Bir video transkripti, bir videoda konuşulan her şeyin — konuşmacı diyalogları, anlatım ve önemli ses ipuçları dahil — metin versiyonudur. Transkriptler, altyazılar, aranabilir içerik, yeniden kullanılan makaleler ve erişilebilirlik uyumu için temeldir.",
+        "p2": "AI transkript üreticileri, birçok dilde milyonlarca saatlik ses üzerinde eğitilmiş konuşma tanıma modellerini kullanarak bu süreci otomatikleştirir. Çıktı, zamanla hizalanmış bir metin belgesidir — manuel transkripsiyondan çok daha hızlı ve ölçeklenebilir.",
+        "p3": "Curify'nin transkript aracı hız ve doğruluk için tasarlanmıştır: bir kez yükleyin, temiz, düzenlenebilir bir transkripti dışa aktarmaya veya içerik iş akışınızda kullanmaya hazır hale getirin."
+      },
+      "how": {
+        "title": "Curify Doğru Transkriptleri Nasıl Oluşturur",
+        "p1": "Curify'nin transkript hattı, arka plan gürültüsü, birden fazla konuşmacı ve aksanlı konuşma dahil olmak üzere gerçek dünya video sesine göre ayarlanmış üretim kalitesinde konuşma tanıma üzerine kuruludur.",
+        "p2": "Adım 1: Ses, videonuzdan çıkarılır ve ses seviyelerini normalleştirmek ve arka plan müdahalesini azaltmak için ön işleme tabi tutulur.",
+        "p3": "Adım 2: Konuşma tanıma modelimiz, sesi konuşmacı dönüşlerine böler ve her segmenti yüksek doğrulukla metne dönüştürür.",
+        "p4": "Adım 3: Son işlem, noktalama işaretleri ekler, özel isimleri büyük harfle başlatır ve her cümleyi orijinal videodaki zaman damgası ile hizalar.",
+        "p5": "Adım 4: Temiz bir transkript dosyası alırsınız — zaman damgalı altyazılar için SRT veya belgelerde, makalelerde veya arama dizinlemede kullanılmak üzere TXT."
+      },
+      "usecases": {
+        "title": "Video Transkripsiyonunu Kim Kullanır?",
+        "creatorsTitle": "İçerik Üreticileri İçin",
+        "creatorsBody": "Üreticiler, videoları blog yazılarına, sosyal medya paylaşımlarına, bültenlere ve senaryolara dönüştürmek için transkriptleri kullanır. Tek bir uzun video, transkribe edildikten sonra bir haftalık içerik sağlayabilir.",
+        "educationTitle": "Eğitmenler ve Eğitmenler İçin",
+        "educationBody": "Transkriptler, dersleri, web seminerlerini ve eğitim oturumlarını erişilebilir ve aranabilir hale getirir. Öğrenciler, materyali metin formatında gözden geçirebilir ve tam videoyu yeniden izlemeye gerek kalmadan önemli anları bulabilir.",
+        "businessTitle": "İşletmeler ve Medya Ekipleri İçin",
+        "businessBody": "Hukuk, uyum ve medya ekipleri, toplantı kayıtlarını, röportaj görüntülerini ve müşteri çağrılarını arşivlemek için transkriptleri kullanır. Aranabilir transkriptler, manuel inceleme süresinden saatler kazandırır."
+      }
+    }
+  },
+  "videoSummarizer": {
+    "metadata": {
+      "title": "AI Video Özeti | Curify AI",
+      "description": "Herhangi bir videonun anlık AI tarafından oluşturulmuş özetini alın. Curify, ana noktaları çıkarır ve size saatlerce izleme süresinden tasarruf ettirir."
+    },
+    "title": "AI Video Özeti",
+    "description": "Bir video yükleyin veya bir YouTube bağlantısı yapıştırın ve ana noktaların kısa, yapılandırılmış bir özetini - saniyeler içinde - alın. Toplantılar, dersler, röportajlar ve uzun içerikler için mükemmel.",
+    "example": "Örnek: 45 dakikalık bir podcast bölümü 5 ana noktaya özetlenmiştir.",
+    "cta": "Videoyu Özelle",
+    "why": {
+      "title": "Videoları Özellemek İçin Neden Curify Kullanmalısınız?",
+      "point1": "Ana noktaları yakalayan AI tarafından oluşturulmuş özetler, sadece bir transkript değil.",
+      "point2": "Yüklenen videolar ve YouTube bağlantıları ile çalışır.",
+      "point3": "Özeti paylaşmaya hazır düz metin belgesi olarak dışa aktarın.",
+      "point4": "Otomatik kaynak dil tespiti ile 170'den fazla dili destekler."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Özelleştirme ne kadar sürer?",
+      "a1": "Çoğu video, uzunluğuna bağlı olarak birkaç dakika içinde özetlenir. Curify videonuzu işlerken bir ilerleme göstergesi göreceksiniz.",
+      "q2": "Özetler ne kadar doğru?",
+      "a2": "Curify, gerçek konuşulan içeriğe dayanarak özetler, meta veriler veya açıklamalar değil. Doğruluk, ses netliğine bağlıdır. Özeti bir TXT dosyası olarak indirebilir ve gerektiğinde düzenleyebilirsiniz."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Özeti Nedir?",
+        "p1": "AI video özeti, bir videodan ana fikirleri, argümanları veya çıkarımları kısa, okunabilir bir formata sıkıştırır - tam içeriği izlemenizi gerektirmeden. Bu, konuşulan seslerden üretilir, video başlıkları veya açıklamalardan değil.",
+        "p2": "Bir transkriptten (kelime kelime kayıt) farklı olarak, bir özet en önemli noktaları belirler, gereksiz kısımları filtreler ve bunları yapılandırılmış, taranabilir bir formatta sunar. Bu, ana noktaların saatlerce içerik arasında yayıldığı uzun kayıtlar için özellikle faydalıdır.",
+        "p3": "Curify, özetleri doğrudan konuşmadan üretir, böylece bunlar, söylenenleri yansıtmayabilecek meta verilere dayanmak yerine gerçek içeriğe doğru olur."
+      },
+      "how": {
+        "title": "Curify Videoları Nasıl Özelleştirir",
+        "p1": "Curify'nin özetleme süreci önce tam konuşulan sesi transkribe eder, ardından en önemli içeriği çıkarmak ve yapılandırmak için dil modelleri uygular.",
+        "p2": "Adım 1: Tam transkripsiyon, videoda konuşulan her şeyi, konuşmacı dönüşlerini ve segment zamanlamasını yakalar.",
+        "p3": "Adım 2: Transkript, ana temaları, argümanları ve sonuçları belirleyen bir özetleme modeline geçirilir.",
+        "p4": "Adım 3: Çıktı, ana noktalar, ilgili yerlerde bölüm başlıkları ve özlü bir sonuç ile okunabilir bir özet haline getirilir.",
+        "p5": "Adım 4: Özet, dağıtım, not alma veya sonraki içerik üretimi için hazır bir düz metin dosyası olarak dışa aktarılır."
+      },
+      "usecases": {
+        "title": "AI Video Özeti Kimler Kullanır?",
+        "creatorsTitle": "Araştırmacılar ve Öğrenciler İçin",
+        "creatorsBody": "Araştırmacılar, bir dersin, röportajın veya konferans konuşmasının ilgili materyal içerip içermediğini hızlıca değerlendirmek için özetleri kullanır.",
+        "educationTitle": "Profesyoneller ve Takımlar İçin",
+        "educationBody": "Toplantı kayıtları, satış görüşmeleri ve web semineri tekrarları uzundur. AI özetleri, ekip üyelerinin tam kaydı izlemeye gerek kalmadan önemli kararları ve eylem maddelerini takip etmelerini sağlar.",
+        "businessTitle": "İçerik Üreticileri İçin",
+        "businessBody": "Video özetleri, bültenler, makaleler, program notları ve sosyal medya paylaşımları için anında kaynak materyal sağlar — bir uzun videoyu yayınlamaya hazır bir metin varlığına dönüştürür."
+      }
+    }
+  },
+  "speechTranslator": {
+    "metadata": {
+      "title": "AI Konuşma Çevirmeni — Sesli İçeriği Herhangi Bir Dile Çevir | Curify AI",
+      "description": "Konuşulan sesi 170'ten fazla dile doğal bir AI sesiyle çevirin. Curify'nin konuşma çevirmeni, çevrilmiş ses parçasıyla dublajlı bir video üretir."
+    },
+    "title": "AI Konuşma Çevirmeni",
+    "description": "Bir video veya ses dosyası yükleyin ve konuşulan içeriği doğal bir AI sesiyle başka bir dile çevirin. Yayınlamaya hazır tamamen dublajlı bir video alın — kayıt stüdyosuna gerek yok.",
+    "example": "Örnek: İngilizce kaydedilmiş bir ürün tanıtımı, İspanyolca ve Japonca'ya çevrilip dublajlanmıştır.",
+    "cta": "Konuşmayı Çevir",
+    "why": {
+      "title": "Neden Curify'yi Konuşma Çevirisi İçin Kullanmalısınız?",
+      "point1": "Konuşulan sesi 170'ten fazla dile doğal AI ses sentezi ile çevirir.",
+      "point2": "Tamamen dublajlı bir video üretir — sadece altyazılar değil — çevrilmiş ses parçasıyla.",
+      "point3": "Hedef dilde konuşmacının tonu, temposu ve duygusal ifadesini korur.",
+      "point4": "Yüklenen videolar ve YouTube bağlantıları ile çalışır."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Konuşma çevirisi ile video dublajı arasındaki fark nedir?",
+      "a1": "Konuşma çevirisi, bir videonun ses parçasını çevirmeye odaklanır ve bunu hedef dilde doğal bir AI sesi ile değiştirir. Video dublajı ayrıca dudak senkronizasyonu ayarlamayı da içerebilir. Curify'nin konuşma çevirmeni, çevrilmiş ses parçasıyla dublajlı bir video üretir.",
+      "q2": "Hangi diller destekleniyor?",
+      "a2": "Curify, İngilizce, İspanyolca, Fransızca, Almanca, Çince, Japonca, Korece, Arapça, Hintçe ve daha birçok dili içeren 170'ten fazla dili destekler. Dil tespiti otomatik olarak yapılır."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Konuşma Çevirisi Nedir?",
+        "p1": "AI konuşma çevirisi, bir kaynak dildeki konuşulan kelimeleri hedef dilde doğal konuşulan kelimelere dönüştürür — çevrilen dilde yeni bir ses parçası oluşturarak metin altyazıları göstermeden.",
+        "p2": "Çıktı, dublajlı bir videodur: orijinal video, sesi çevrilmiş, AI sentezli bir sesle değiştirilmiş olarak. Bu, video içeriğini uluslararası izleyicilere yerel olarak erişilebilir hale getirmenin en hızlı yoludur, kayıt stüdyosuna ihtiyaç duymadan.",
+        "p3": "Curify'nin konuşma çevirmeni, gerçek dünya video içeriği için tasarlanmıştır — arka plan gürültüsü, birden fazla konuşmacı, teknik kelime dağarcığı ve doğal konuşma temposunu 170'ten fazla dilde yönetir."
+      },
+      "how": {
+        "title": "Curify Konuşmayı Nasıl Çevirir",
+        "p1": "Curify'nin konuşma çeviri süreci, yüksek doğrulukta transkripsiyon, bağlama duyarlı çeviri ve doğal ses sentezini tek bir otomatik iş akışında birleştirir.",
+        "p2": "Adım 1: Konuşma, aksanları, alan kelime dağarcığını ve çoklu konuşmacı diyaloglarını yönetebilen üretim kalitesinde konuşma tanıma kullanılarak kaynak ses kaydından transkribe edilir.",
+        "p3": "Adım 2: Transkript, anlamı, tonu ve niyeti koruyan bağlama duyarlı modeller kullanılarak çevrilir - sadece kelime değiştirme değil.",
+        "p4": "Adım 3: Doğal bir AI sesi, çevrilen metni hedef dilde sentezler, mümkün olduğunda orijinal tempoyu ve duygusal aktarımı eşleştirir.",
+        "p5": "Adım 4: Sentezlenmiş ses parçası, videodaki orijinal sesi değiştirir ve yayınlamaya hazır tamamen dublajlı bir video dosyası alırsınız."
+      },
+      "usecases": {
+        "title": "AI Konuşma Çevirisini Kim Kullanıyor?",
+        "creatorsTitle": "Küresel İçerik Üreticileri İçin",
+        "creatorsBody": "Üreticiler, içeriklerini yeniden kaydetmeden yeni dil pazarlarında kitlelere ulaşmak için konuşma çevirisini kullanır. Tek bir yükleme, farklı bölgesel kanallar için hazır çok dilli dublajlı versiyonlar üretir.",
+        "educationTitle": "Kurumsal Eğitim ve E-Öğrenme İçin",
+        "educationBody": "Eğitim departmanları, oryantasyon videolarını, güvenlik brifinglerini ve ürün eğitimini yerel dillere çevirir. Doğal bir ses parçası, yalnızca altyazılara kıyasla bilgi tutma ve katılımı artırır.",
+        "businessTitle": "Uluslararası Pazarlama Ekipleri İçin",
+        "businessBody": "Pazarlama ekipleri, demo videolarını, müşteri referanslarını ve etkinlik kayıtlarını hedef pazar dillerine çevirir - bu da bölgeler arasında tutarlı mesajlaşmayı sağlar ve pazar başına üretim maliyetlerini ortadan kaldırır."
+      }
+    }
   }
 }

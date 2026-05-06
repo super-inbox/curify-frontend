@@ -27,6 +27,7 @@ export const TIER2_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "vocabulary",     label: "Vocabulary Cards",  emoji: "📖", tier: 2, aliases: ["words", "vocab", "lexicon", "flashcard"] },
   { slug: "city",           label: "City & Travel",     emoji: "🏙️", tier: 2, aliases: ["town", "urban", "skyline"] },
   { slug: "film",           label: "Film & Cinema",     emoji: "🎬", tier: 2, aliases: ["movie", "movies", "cinema", "tv show"] },
+  { slug: "relationship",   label: "Relationships",     emoji: "💞", tier: 2, aliases: ["couple", "dating", "romance", "partnership", "compatibility", "love"] },
   { slug: "ai",             label: "AI & Technology",   emoji: "🤖", tier: 2, aliases: ["artificial intelligence", "ml", "machine learning", "llm", "tech"] },
   { slug: "sports",         label: "Sports",            emoji: "⚽", tier: 2, aliases: ["athletic", "athletics", "game", "soccer", "football"] },
   { slug: "architecture",   label: "Architecture",      emoji: "🏛️", tier: 2, aliases: ["building", "buildings", "structure", "landmark"] },
