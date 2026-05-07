@@ -17,7 +17,9 @@ import { toSlug, getTemplateView, type RawNanoImageRecord } from "@/lib/nano_uti
 import {
   getNanoExampleById,
   buildCircularExampleNav,
+  getExampleI18n,
 } from "@/lib/nano_example_utils";
+import { routing } from "@/i18n/routing";
 
 import {
   buildNanoPageContext,
@@ -52,11 +54,24 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   const templateParameters = templateView?.parameters ?? [];
   const templateAllowGeneration = templateView?.allow_generation ?? false;
 
-  const { title, category } = resolveLocalizedExampleCopy(
+  const fallbackCopy = resolveLocalizedExampleCopy(
     example,
     ctx.contentLocale,
     ctx.localizedEntry
   );
+  const category = fallbackCopy.category;
+
+  // allow_i18n entries get example-specific localized SEO copy from
+  // messages/<locale>/example.json. Other entries use the template-level
+  // i18n fallback (which renders the template's title for every example
+  // and is fine for non-indexed locales).
+  const allowI18n = !!example.allow_i18n;
+  const exampleI18n = allowI18n
+    ? await getExampleI18n(example.id, ctx.contentLocale)
+    : null;
+  const title = exampleI18n?.title || fallbackCopy.title;
+  const bodyDescription = exampleI18n?.description || null;
+  const metaDescription = exampleI18n?.metaDescription || null;
 
   const basePrompt = templateView?.base_prompt || example.base_prompt || "";
   const prompt = example.filled_prompt || example.base_prompt || "";
@@ -119,6 +134,9 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
     templateAllowGeneration,
     basePrompt,
     existingExamples,
+    allowI18n,
+    bodyDescription,
+    metaDescription,
   };
 }
 
@@ -148,23 +166,50 @@ export async function generateMetadata({
   const pageData = await getPageData(rawLocale, slug, rawExampleId);
   if (!pageData) return {};
 
-  const { title, category, example, templateTopics } = pageData;
+  const { title, category, example, templateTopics, allowI18n, metaDescription } = pageData;
   const ogImage = toAbsUrlMaybe(example.asset.preview_image_url);
 
   const topicText = templateTopics?.length ? templateTopics[0] : "";
   const categoryText = category || topicText || "nano banana";
 
+  // Use locale-specific metaDescription when available; fall back to a
+  // generic template-derived sentence for non-allow_i18n / not-yet-translated.
+  const description =
+    metaDescription ||
+    `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${categoryText} template.`;
+
+  // Build hreflang alternates for allow_i18n entries (10 locales) so Google
+  // groups the localized URLs together. For other entries, only en + zh
+  // (the locales they actually have meaningful content in).
+  const route = `/nano-template/${slug}/example/${rawExampleId}`;
+  const hreflangLocales: readonly string[] = allowI18n
+    ? routing.locales
+    : ["en", "zh"];
+  const languages: Record<string, string> = {};
+  for (const lng of hreflangLocales) {
+    const prefix = lng === "en" ? "" : `/${lng}`;
+    languages[lng] = `${prefix}${route}`;
+  }
+  // x-default mirrors the canonical (root-domain English path).
+  languages["x-default"] = route;
+
+  // Non-allow_i18n entries on non-en/zh locales render with template-level
+  // fallbacks (thin) — noindex them to avoid SEO penalties for thin content.
+  const noindex = !allowI18n && rawLocale !== "en" && rawLocale !== "zh";
+
   return {
     title: `${title} — Nano Banana Prompt Generator`,
-    description: `Generate images like "${title}" with Nano Banana. See the full prompt, breakdown, and use cases for this ${categoryText} template.`,
+    description,
     openGraph: {
       title: `${title} | Nano Banana`,
-      description: `Nano Banana ${categoryText.toLowerCase()} prompt — see the exact prompt and how to recreate this image.`,
+      description,
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
-      canonical: `/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`,
+      canonical: `/${rawLocale}${route}`,
+      languages,
     },
+    robots: noindex ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -197,6 +242,7 @@ export default async function NanoExampleDetailPage({
     templateAllowGeneration,
     basePrompt,
     existingExamples,
+    bodyDescription,
   } = pageData;
 
   const examplePageUrl = `${SITE_URL}/${rawLocale}/nano-template/${slug}/example/${rawExampleId}`;
@@ -206,6 +252,7 @@ export default async function NanoExampleDetailPage({
       <ExamplePromptHero
         title={title}
         prompt={prompt}
+        description={bodyDescription ?? undefined}
         trackingId={example.id}
         prevNext={prevNext}
         breadcrumbs={[

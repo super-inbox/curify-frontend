@@ -47,6 +47,14 @@ export type RawNanoImageRecord = {
   locales?: Partial<Record<PageLocale, { category?: string; title?: string }>>;
   topics?: string[];
   tags?: string[];
+  /**
+   * When true, this example renders with locale-specific
+   * title/description/metaDescription from messages/<locale>/example.json
+   * for all 10 locales, and gets a full 10-locale entry in the sitemap.
+   * When false / absent, the example uses template-level i18n fallback and
+   * non-en/zh locale renders are noindex'd to avoid thin-content penalties.
+   */
+  allow_i18n?: boolean;
 };
 
 export type TemplateView = {

@@ -26,6 +26,7 @@ type NanoExample = {
   updated_at?: string;
   lastmod?: string;
   date?: string;
+  allow_i18n?: boolean;
 };
 
 // templateId -> available locales
@@ -106,11 +107,16 @@ export async function GET() {
     const templateId = String(ex.template_id).trim();
     const exampleId = String(ex.id).trim();
 
+    // allow_i18n entries surface in all 10 locales (their per-locale SEO
+    // copy lives in messages/<locale>/example.json). Other entries stick
+    // with whatever locales they actually have data for, falling back to
+    // the parent template's locale set.
     const exampleLocales = ex.locales ? Object.keys(ex.locales) : [];
-    const availableLocales: readonly string[] =
-      (exampleLocales.length
-        ? exampleLocales
-        : templateLocalesMap.get(templateId)) || LOCALES;
+    const availableLocales: readonly string[] = ex.allow_i18n
+      ? LOCALES
+      : (exampleLocales.length
+          ? exampleLocales
+          : templateLocalesMap.get(templateId)) || LOCALES;
 
     const route = `/nano-template/${encodeURIComponent(
       toSlug(templateId)
