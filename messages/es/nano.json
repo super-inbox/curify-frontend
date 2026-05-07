@@ -2900,5 +2900,49 @@
         ]
       }
     }
+  },
+  "template-artist-biography-infographic": {
+    "category": "Infografía de Biografía de Artista",
+    "description": "Una biografía visual temática de cualquier artista famoso con su estilo icónico como fondo, línea de tiempo de su vida, datos curiosos y citas — Monet, Picasso, Van Gogh, da Vinci y más.",
+    "title": "Guía Visual de Biografía de Artista Famoso: Infografías Temáticas para Cualquier Pintor",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de biografía vertical visualmente cohesiva sobre un artista elegido. El fondo utiliza el estilo de pintura icónico del artista (lirios de agua de Monet, noche estrellada de Van Gogh, etc.) con un retrato estilizado superpuesto; el diseño incluye un nombre estilizado + fecha de nacimiento, un breve párrafo introductorio sobre su movimiento y legado, una línea de tiempo de 'Viaje de Vida' con eventos y años clave, una caja de 'Dato Curioso' y una cita famosa — todo en una paleta de colores completamente temática que coincide con la estética del artista.",
+        "who": "Adecuado para profesores de arte, educadores de museos, bloggers de historia del arte, diseñadores de carteles para aulas, cuentas de podcasts de historia del arte y creadores que hacen biografías visuales compartibles de pintores famosos.",
+        "how": [
+          "Ingresa el nombre de un artista (por ejemplo, Claude Monet, Pablo Picasso, Andy Warhol, Leonardo da Vinci, Vincent van Gogh, Frida Kahlo).",
+          "El cartel auto-tematiza el fondo y la paleta para coincidir con el estilo icónico del artista.",
+          "El diseño incluye una línea de tiempo de eventos de vida, caja de dato curioso y una cita famosa.",
+          "Genera una infografía de biografía de artista vertical en 4K con la estética visual característica del artista."
+        ],
+        "prompts": [
+          "Genera una infografía de biografía de Claude Monet con fondo temático de lirios de agua.",
+          "Crea un cartel de biografía visual de Vincent van Gogh con estilo de noche estrellada.",
+          "Genera una infografía de biografía temática de Frida Kahlo con paleta de arte popular mexicano."
+        ]
+      }
+    }
+  },
+  "template-celebrity-filmography-infographic": {
+    "category": "Infografía de Filmografía de Celebridades",
+    "description": "Una filmografía visual profesional y limpia para cualquier celebridad — retrato, 6 películas icónicas con carteles y un banner de premios y logros.",
+    "title": "Guía Visual de Filmografía de Celebridades: Carteles de Películas Icónicas y Logros",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía vertical profesional y limpia titulada '<celebrity>: Filmografía y Logros'. La sección superior empareja un retrato de alta calidad en un marco temático con el nombre de la celebridad en negrita, año de nacimiento e íconos de rol (Actor, Productor, Director). El medio es una cuadrícula de 6 películas icónicas con imagen de cartel, título, año de estreno y director. La parte inferior es un banner horizontal de logros clave — Oscars, premios, colaboraciones famosas, apodos — con íconos simples.",
+        "who": "Adecuado para bloggers de cine, marcas de decoración de carteles de películas, creadores de cuentas de fans, canales de historia del cine, creadores de contenido de temporada de premios y creadores que hacen carteles de filmografía de celebridades compartibles.",
+        "how": [
+          "Ingresa el nombre de una celebridad (por ejemplo, Brad Pitt, Johnny Depp, Leonardo DiCaprio, Meryl Streep).",
+          "El cartel auto-organiza un retrato, íconos de rol y año de nacimiento en la parte superior.",
+          "Se presentan seis películas icónicas como una cuadrícula con cartel, título, año y director.",
+          "Genera una infografía de filmografía moderna y limpia vertical en 4K con acentos temáticos."
+        ],
+        "prompts": [
+          "Genera una infografía de filmografía de Brad Pitt con películas icónicas y menciones de Oscar.",
+          "Crea un cartel de filmografía visual de Leonardo DiCaprio con colaboraciones de directores.",
+          "Genera una infografía de filmografía de Meryl Streep con banner de premios."
+        ]
+      }
+    }
   }
 }

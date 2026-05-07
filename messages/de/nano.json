@@ -2900,5 +2900,49 @@
         ]
       }
     }
+  },
+  "template-artist-biography-infographic": {
+    "category": "Künstlerbiografie-Infografik",
+    "description": "Eine thematische visuelle Biografie eines berühmten Künstlers mit ihrem ikonischen Stil als Hintergrund, Lebensweg-Zeitachse, interessanten Fakten und Zitaten – Monet, Picasso, Van Gogh, da Vinci und mehr.",
+    "title": "Visueller Leitfaden zur Biografie berühmter Künstler: Thematische Infografiken für jeden Maler",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine visuell kohärente vertikale Biografie-Infografik über einen gewählten Künstler. Der Hintergrund verwendet den ikonischen Malstil des Künstlers (Monets Seerosen, Van Goghs Sternennacht usw.) mit einem stilisierten Porträt; das Layout umfasst einen stilisierten Namen + Geburtsdatum, einen kurzen Einleitungstext über ihre Bewegung und ihr Erbe, eine 'Lebensreise'-Zeitachse mit wichtigen Ereignissen und Jahren, eine 'Interessante Tatsache'-Box und ein berühmtes Zitat – alles in einer vollständig thematischen Farbpalette, die mit der Ästhetik des Künstlers übereinstimmt.",
+        "who": "Geeignet für Kunstlehrer, Museumspädagogen, Kunstgeschichts-Blogger, Designer von Klassenraum-Postern, Konten von Kunstgeschichts-Podcasts und Kreatoren, die teilbare visuelle Biografien berühmter Maler erstellen.",
+        "how": [
+          "Geben Sie einen Künstlernamen ein (z. B. Claude Monet, Pablo Picasso, Andy Warhol, Leonardo da Vinci, Vincent van Gogh, Frida Kahlo).",
+          "Das Poster passt automatisch den Hintergrund und die Farbpalette an den ikonischen Stil des Künstlers an.",
+          "Das Layout umfasst eine Zeitachse der Lebensereignisse, eine interessante Fakten-Box und ein berühmtes Zitat.",
+          "Erstellen Sie eine vertikale 4K-Künstlerbiografie-Infografik im charakteristischen visuellen Stil des Künstlers."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Claude Monet Biografie-Infografik mit einem Hintergrund im Seerosen-Stil.",
+          "Erstellen Sie ein visuelles Biografie-Poster von Vincent van Gogh mit Sternennacht-Stil.",
+          "Erstellen Sie eine Frida Kahlo thematische Biografie-Infografik mit einer Palette aus mexikanischer Volkskunst."
+        ]
+      }
+    }
+  },
+  "template-celebrity-filmography-infographic": {
+    "category": "Promi-Filmografie-Infografik",
+    "description": "Eine saubere, professionelle visuelle Filmografie für jeden Promi – Porträt, die 6 ikonischsten Filme mit Postern und ein Banner von Auszeichnungen und Erfolgen.",
+    "title": "Visueller Leitfaden zur Promi-Filmografie: Ikonische Filme und Auszeichnungen-Poster",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine saubere, professionelle vertikale Infografik mit dem Titel '<celebrity>: Filmografie & Erfolge'. Der obere Abschnitt kombiniert ein hochwertiges Porträt in einem thematischen Rahmen mit dem Namen des Promis in Fettdruck, Geburtsjahr und Rollen-Icons (Schauspieler, Produzent, Regisseur). In der Mitte befindet sich ein Raster von 6 ikonischen Filmen mit Posterbild, Titel, Erscheinungsjahr und Regisseur. Unten befindet sich ein horizontales Banner mit wichtigen Erfolgen – Oscars, Auszeichnungen, berühmte Kooperationen, Spitznamen – mit einfachen Icons.",
+        "who": "Geeignet für Film-Blogger, Marken für Filmplakat-Dekor, Fan-Account-Kreatoren, Kino-Geschichte-Kanäle, Inhalte zur Awards-Saison und Kreatoren, die teilbare Promi-Filmografie-Poster erstellen.",
+        "how": [
+          "Geben Sie einen Prominennamen ein (z. B. Brad Pitt, Johnny Depp, Leonardo DiCaprio, Meryl Streep).",
+          "Das Poster legt automatisch ein Porträt, Rollen-Icons und Geburtsjahr oben an.",
+          "Sechs ikonische Filme werden als Raster mit Poster, Titel, Jahr und Regisseur angezeigt.",
+          "Erstellen Sie eine vertikale 4K saubere moderne Filmografie-Infografik mit thematischen Akzenten."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Brad Pitt Filmografie-Infografik mit ikonischen Filmen und Oscar-Erwähnungen.",
+          "Erstellen Sie ein visuelles Filmografie-Poster von Leonardo DiCaprio mit Regisseur-Kooperationen.",
+          "Erstellen Sie eine Meryl Streep Filmografie-Infografik mit Auszeichnungsbanner."
+        ]
+      }
+    }
   }
 }

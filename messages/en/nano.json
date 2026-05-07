@@ -2899,5 +2899,49 @@
         ]
       }
     }
+  },
+  "template-artist-biography-infographic": {
+    "category": "Artist Biography Infographic",
+    "description": "A themed visual biography of any famous artist with their iconic style as background, life-journey timeline, fun facts, and quotes — Monet, Picasso, Van Gogh, da Vinci, and more.",
+    "title": "Famous Artist Biography Visual Guide: Themed Infographics for Any Painter",
+    "content": {
+      "sections": {
+        "what": "This template generates a visually cohesive vertical biography infographic about a chosen artist. The background uses the artist's iconic painting style (Monet's water lilies, Van Gogh's starry night, etc.) with a stylized portrait overlaid; the layout includes a stylized name + birth date, a short intro paragraph about their movement and legacy, a 'Life Journey' timeline of key events and years, a 'Fun Fact' box, and a famous quote — all in a fully themed color palette matching the artist's aesthetic.",
+        "who": "Suitable for art teachers, museum educators, art-history bloggers, classroom poster designers, art-history podcast accounts, and creators making shareable visual biographies of famous painters.",
+        "how": [
+          "Enter an artist name (e.g., Claude Monet, Pablo Picasso, Andy Warhol, Leonardo da Vinci, Vincent van Gogh, Frida Kahlo).",
+          "The poster auto-themes the background and palette to match the artist's iconic style.",
+          "Layout includes timeline of life events, fun fact box, and a famous quote.",
+          "Generate a vertical 4K artist biography infographic in the artist's signature visual aesthetic."
+        ],
+        "prompts": [
+          "Generate a Claude Monet biography infographic with water-lilies-themed background.",
+          "Create a Vincent van Gogh visual biography poster with starry-night styling.",
+          "Generate a Frida Kahlo themed biography infographic with Mexican folk-art palette."
+        ]
+      }
+    }
+  },
+  "template-celebrity-filmography-infographic": {
+    "category": "Celebrity Filmography Infographic",
+    "description": "A clean professional visual filmography for any celebrity — portrait, top 6 iconic movies with posters, and a banner of awards and achievements.",
+    "title": "Celebrity Filmography Visual Guide: Iconic Movies and Achievements Posters",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean professional vertical infographic titled '<celebrity>: Filmography & Achievements'. The top section pairs a high-quality portrait in a themed frame with the celebrity's name in bold, birth year, and role icons (Actor, Producer, Director). The middle is a grid of 6 iconic movies with poster image, title, release year, and director. The bottom is a horizontal banner of key achievements — Oscars, awards, famous collaborations, nicknames — with simple icons.",
+        "who": "Suitable for film bloggers, movie-poster decor brands, fan-account creators, cinema-history channels, awards-season content makers, and creators making shareable celebrity-filmography posters.",
+        "how": [
+          "Enter a celebrity name (e.g., Brad Pitt, Johnny Depp, Leonardo DiCaprio, Meryl Streep).",
+          "The poster auto-lays out a portrait, role icons, and birth year at the top.",
+          "Six iconic movies are surfaced as a grid with poster, title, year, and director.",
+          "Generate a vertical 4K clean modern filmography infographic with themed accents."
+        ],
+        "prompts": [
+          "Generate a Brad Pitt filmography infographic with iconic movies and Oscar mentions.",
+          "Create a Leonardo DiCaprio visual filmography poster with director collaborations.",
+          "Generate a Meryl Streep filmography infographic with awards banner."
+        ]
+      }
+    }
   }
 }
