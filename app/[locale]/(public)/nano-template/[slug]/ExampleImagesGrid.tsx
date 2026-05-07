@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Bookmark, Download, Play, Sparkles } from "lucide-react";
+import { Download, Play, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import ShareButton from "@/app/[locale]/_components/ShareButton";
+import { SITE_URL } from "@/lib/constants";
 import { toSlug } from "@/lib/nano_utils";
 import { useClickTracking, useTracking, useVideoTracking } from "@/services/useTracking";
 import { templatePacksService } from "@/services/templatePacks";
@@ -62,23 +64,11 @@ function ExampleImageCard({
   const [, setDrawerState] = useAtom(drawerAtom);
   const [isDownloading, setIsDownloading] = useState(false);
   const isDownloadingRef = useRef(false);
-  const [saved, setSaved] = useState(false);
-  const [showSavedToast, setShowSavedToast] = useState(false);
 
   const tracking = {
     contentId: `${item.templateId}:${item.id}`,
     contentType: "nano_inspiration_example_grid" as const,
     viewMode: "cards" as const,
-  };
-
-  const handleSave = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (saved) return;
-    if (!user) { setDrawerState("signin"); return; }
-    setSaved(true);
-    trackAction(tracking, "favorite");
-    setShowSavedToast(true);
-    setTimeout(() => setShowSavedToast(false), 3000);
   };
 
   const remixHref = (() => {
@@ -89,6 +79,8 @@ function ExampleImageCard({
   })();
 
   const carouselHref = `/${locale}/nano-template/${toSlug(item.templateId)}/carousel/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}`;
+
+  const shareUrl = `${SITE_URL}/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`;
 
   const handleDownload = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -116,14 +108,14 @@ function ExampleImageCard({
   };
 
   return (
-    <div className="group overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+    <div className="group rounded-3xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <Link
         href={carouselHref}
         onClick={() => {
           trackClick();
           if (hasVideo) trackVideoClick();
         }}
-        className="block relative overflow-hidden"
+        className="block relative overflow-hidden rounded-t-3xl"
       >
         <CdnImage
           src={item.preview}
@@ -158,36 +150,24 @@ function ExampleImageCard({
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
           </button>
         ) : (
-          <div className="relative">
-            <button
-              type="button"
-              onClick={handleSave}
-              className={`flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
-                saved
-                  ? "bg-purple-100 text-purple-700"
-                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
-              }`}
-            >
-              <Bookmark className={`h-3.5 w-3.5 ${saved ? "fill-current" : ""}`} />
-              {saved ? t("saved") : t("save")}
-            </button>
-            {showSavedToast && (
-              <div className="absolute bottom-full left-0 mb-2 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-1.5 text-xs text-white shadow-lg">
-                Saved! View in your workspace →
-              </div>
-            )}
-          </div>
+          <Link
+            href={remixHref}
+            onClick={() => {
+              document.getElementById("reproduce")?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            Remix this
+          </Link>
         )}
-        <Link
-          href={remixHref}
-          onClick={() => {
-            document.getElementById("reproduce")?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
-        >
-          <Sparkles className="h-3.5 w-3.5" />
-          Remix this
-        </Link>
+        <ShareButton
+          compact
+          url={shareUrl}
+          title={item.title || item.id}
+          text={`Check out this Nano Banana example: ${item.title || item.id}`}
+          onShared={() => trackAction(tracking, "share")}
+        />
       </div>
     </div>
   );
