@@ -5722,5 +5722,39 @@
     ],
     "base_rank_score": 80,
     "rank_score": 80
-  }
+  },
+  {
+    "id": "template-artist-biography-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Artist Biography Infographic Designer) Create a visually cohesive artist biography infographic titled \"{artist_name}\". Layout: 1. Top right: Artist's name in large, stylized serif font, with birth date below. 2. Top left: Short introductory paragraph about the artist's movement and legacy. 3. Center: Background uses the artist's iconic painting style (Monet's water lilies, Van Gogh's starry night, etc.) with a stylized portrait of the artist overlaid. 4. Middle: Timeline-style \"Life Journey\" with key events and years, themed to match the artist's style. 5. Bottom left: \"Fun Fact\" box with interesting trivia about the artist. 6. Bottom right: \"Quote\" box with a famous quote from the artist. Style: Fully themed color palette and illustrations matching the artist's signature aesthetic, clear typography hierarchy, vintage/retro infographic feel, no watermarks, 4K ultra HD, direct image generation. Subject: '{artist_name} Biography Infographic'.",
+            "parameters": [
+                {
+                    "name": "artist_name",
+                    "label": "Artist Name",
+                    "type": "text",
+                    "placeholder": ["Claude Monet", "Pablo Picasso", "Andy Warhol", "Leonardo da Vinci", "Vincent van Gogh", "Frida Kahlo"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-artist-biography-infographic-claude-monet-prev.jpg"
+},
+  {
+    "id": "template-celebrity-filmography-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Celebrity Filmography Infographic Designer) Create a clean, professional infographic titled \"{celebrity_name}: Filmography & Achievements\". Layout: 1. Top section: Left side has a high-quality portrait of the celebrity in a themed colored frame; right side has the celebrity's name in large bold font, birth year, and simple icons representing their roles (Actor, Producer, Director, etc.). 2. Middle section: A grid of 6 iconic movies the celebrity starred in, each with a poster image, movie title, release year, and director name. 3. Bottom section: A horizontal banner with key achievements (Oscars, awards, famous collaborations, nicknames) with simple icons. Style: Clean modern design, minimalist geometric background accents, color palette themed to the celebrity's brand, gold/neutral accents, clear typography, no watermarks, 4K ultra HD, direct image generation. Subject: '{celebrity_name} Filmography Infographic'.",
+            "parameters": [
+                {
+                    "name": "celebrity_name",
+                    "label": "Celebrity Name",
+                    "type": "text",
+                    "placeholder": ["Brad Pitt", "Johnny Depp", "Leonardo DiCaprio", "Robert De Niro", "Tom Hanks", "Meryl Streep"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-celebrity-filmography-infographic-brad-pitt-prev.jpg"
+}
 ]
