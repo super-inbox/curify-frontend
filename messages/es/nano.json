@@ -2944,5 +2944,89 @@
         ]
       }
     }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Infografía MBTI de Harry Potter",
+    "description": "Tarjetas de personajes MBTI con temática mágica de Hogwarts: tipo, rasgos principales, fortalezas, desafíos, citas famosas y roles ideales en el mundo mágico.",
+    "title": "Tarjetas MBTI de Harry Potter: Perfiles de Personalidad para Personajes de Hogwarts",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía vibrante y caprichosa que perfila a un personaje de Harry Potter a través del lente MBTI. El diseño comienza con un banner superior que muestra el tipo MBTI y el título del personaje (por ejemplo, 'ENTP — El Debatidor'), una ilustración central del personaje en sus túnicas de Hogwarts rodeado de objetos y criaturas icónicas, y luego secciones para Rasgos Principales, Fortalezas, Desafíos, Citas Famosas y Roles Ideales en el Mundo Mágico.",
+        "who": "Adecuado para creadores de cuentas de fans de Harry Potter, bloggers de personalidad MBTI, diseñadores de merchandising de fandom, creadores de BookTok y educadores que utilizan la ficción para enseñar marcos de personalidad.",
+        "how": [
+          "Ingresa un personaje de Harry Potter (por ejemplo, Harry, Hermione, Snape, Luna, Fred y George).",
+          "La infografía se organiza automáticamente con un banner MBTI, una ilustración temática de Hogwarts y secciones en viñetas.",
+          "Genera una infografía caprichosa de fantasía en 4K con los colores de la casa del personaje."
+        ],
+        "prompts": [
+          "Genera una infografía MBTI de Harry Potter ENFJ con efectos de varita mágica.",
+          "Crea una tarjeta MBTI ESTJ de Hermione Granger con elementos de biblioteca y estudio.",
+          "Genera una infografía MBTI de Luna Lovegood INFP con criaturas mágicas soñadoras."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Infografía de Tema Educativo",
+    "description": "Infografías de cuatro paneles amigables para niños: elige cualquier tema educativo (espacio, océanos, civilizaciones, vida salvaje) y obtén un cartel explicativo colorido con ilustraciones temáticas y cajas de hechos.",
+    "title": "Creador de Infografías de Temas Educativos: Explicaciones de Cuatro Paneles para Niños",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa vibrante y amigable para niños. El diseño tiene un título en degradado rojo en la parte superior, seguido de 4 paneles rectangulares horizontales, cada uno con un encabezado de subtema, una caja de hechos central, ilustraciones temáticas a ambos lados (animales, planetas, escenas históricas) y flechas visuales o diagramas. El estilo es un cartoon caprichoso con una paleta suave temática al tema.",
+        "who": "Adecuado para maestros de primaria, padres de educación en casa, YouTubers de contenido para niños, educadores de museos y creadores que hacen carteles explicativos compartibles sobre temas de ciencia / historia / naturaleza.",
+        "how": [
+          "Ingresa un tema educativo (por ejemplo, Civilizaciones Antiguas, Hechos del Espacio, Misterios del Océano, Maravillas de la Vida Salvaje).",
+          "La infografía se construye automáticamente con 4 paneles con encabezados de subtemas e ilustraciones temáticas.",
+          "Genera un cartel educativo de cartoon caprichoso en 4K con cajas de texto limpias."
+        ],
+        "prompts": [
+          "Genera una infografía educativa sobre Misterios del Océano para niños con ilustraciones de criaturas marinas.",
+          "Crea una infografía de Hechos Asombrosos del Espacio con planetas, estrellas y cohetes.",
+          "Genera una infografía para niños sobre Maravillas de la Vida Salvaje con animales de safari y paneles de hábitat."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Hoja de Diseño de Moda",
+    "description": "Hoja de diseño estilo alta costura: elige un tema de la naturaleza (orquídea, ala de mariposa, ola del océano) y obtén una ilustración de vestido de moda con boceto técnico y notas de diseño escritas a mano.",
+    "title": "Generador de Hoja de Diseño de Vestido de Alta Costura Inspirado en la Naturaleza",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una hoja de diseño de moda profesional que presenta un vestido de alta costura inspirado en un tema elegido. El diseño centra una ilustración de modelo de cuerpo completo en el vestido, con el tema de inspiración (hojas, pétalos, alas de mariposa) esbozado en la parte superior izquierda, una silueta técnica en blanco y negro a la derecha con notas de diseño estilo manuscrito, y garabatos sutiles sobre un fondo blanco limpio: una hibridación de ilustración digital y acuarela suave.",
+        "who": "Adecuado para estudiantes de diseño de moda, diseñadores de vestuario, marcas de taller, educadores de diseño, portafolios de ilustradores de moda y creadores que construyen tableros de inspiración para conceptos de alta costura.",
+        "how": [
+          "Ingresa un tema de inspiración (por ejemplo, Orquídea Púrpura, Mariposa Arcoíris, Flor de Cerezo, Pluma de Pavo Real, Olas del Océano).",
+          "La hoja organiza automáticamente una ilustración de vestido de cuerpo completo, boceto de inspiración, silueta técnica y notas de diseño.",
+          "Genera una hoja de diseño de moda en 4K con acuarela y digital con anotaciones escritas a mano."
+        ],
+        "prompts": [
+          "Genera una hoja de diseño de vestido de alta costura Cherry Blossom con tul rosa en capas.",
+          "Crea una hoja de diseño de moda de plumas de pavo real con bocetos técnicos iridiscentes.",
+          "Genera una hoja de diseño de vestido Ocean Waves con paneles de organza azul fluido."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Figura Histórica VS Infografía",
+    "description": "Tarjetas de comparación lado a lado para dos figuras históricas: años de nacimiento, logros, rasgos, legado y una cita de cierre estilo meme en el estilo de su época.",
+    "title": "Figura Histórica VS: Creador de Infografías de Comparación Lado a Lado",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación lado a lado de dos figuras históricas. Cada lado recibe un color temático, un encabezado con nombre y fechas de vida, un retrato estilo caricatura en vestimenta icónica con elementos de fondo temáticos de la época (rayos para Tesla, pirámides para Cleopatra), logros y rasgos en viñetas, y un wojak estilo meme con una cita irónica de cierre. Una insignia central sostiene el título del tema de comparación.",
+        "who": "Adecuado para profesores de historia, YouTubers de edutainment, creadores de memes históricos, creadores de contenido para museos y aprendices curiosos que construyen carteles VS compartibles para cualquier par de figuras históricas.",
+        "how": [
+          "Elige dos figuras históricas para comparar (por ejemplo, Tesla vs Edison, Napoleón vs Alejandro, Cleopatra vs Himiko).",
+          "La infografía se construye automáticamente con paneles de colores divididos lado a lado con retratos, fechas, rasgos y un cierre estilo meme.",
+          "Genera una infografía de comparación en 4K con un estilo de caricatura audaz y el tema de la época de cada figura."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación Tesla vs Edison con temas de rayos y bombillas.",
+          "Crea una infografía VS de Napoleón vs Alejandro Magno con paneles divididos en colores de imperio.",
+          "Genera un cartel de comparación Cleopatra vs Reina Himiko con motivos de civilizaciones antiguas."
+        ]
+      }
+    }
   }
 }

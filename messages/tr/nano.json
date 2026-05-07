@@ -2944,5 +2944,89 @@
         ]
       }
     }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Harry Potter MBTI Infografiği",
+    "description": "Büyülü Hogwarts temalı MBTI karakter kartları — tip, temel özellikler, güçlü yönler, zorluklar, ünlü alıntılar ve ideal büyücülük dünyası rolleri.",
+    "title": "Harry Potter MBTI Kartları: Hogwarts Karakterleri için Kişilik Profilleri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir Harry Potter karakterini MBTI perspektifinden profilleyen canlı, hayalperest bir infografik oluşturur. Düzen, karakterin MBTI tipini ve unvanını (örneğin, 'ENTP — Tartışmacı') gösteren üst bir afişle başlar, ardından Hogwarts cübbeleri içinde karakterin bir illüstrasyonu ve ikonik nesneler ve yaratıklarla çevrili bir merkez illüstrasyon gelir, ardından Temel Özellikler, Güçlü Yönler, Zorluklar, Ünlü Alıntılar ve Büyücülük Dünyasındaki İdeal Roller için bölümler gelir.",
+        "who": "Harry Potter hayran hesabı yaratıcıları, MBTI kişilik blog yazarları, fandom ürün tasarımcıları, BookTok yaratıcıları ve kişilik çerçevelerini öğretmek için kurguyu kullanan eğitimciler için uygundur.",
+        "how": [
+          "Bir Harry Potter karakteri girin (örneğin, Harry, Hermione, Snape, Luna, Fred & George).",
+          "İnfografik otomatik olarak bir MBTI afişi, temalı Hogwarts illüstrasyonu ve madde bölümleri oluşturur.",
+          "Karakterin ev rengiyle 4K hayalperest bir fantastik infografik oluşturun."
+        ],
+        "prompts": [
+          "Büyülü asa efektleri ile bir ENFJ Harry Potter MBTI infografiği oluşturun.",
+          "Kütüphane ve çalışma unsurları ile bir Hermione Granger ESTJ MBTI kartı oluşturun.",
+          "Hayalperest büyülü yaratıklarla bir Luna Lovegood INFP MBTI infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Eğitim Konusu Infografiği",
+    "description": "Çocuk dostu dört panelli infografikler — herhangi bir eğitim konusunu seçin (uzay, okyanuslar, medeniyetler, yaban hayat) ve temalı illüstrasyonlar ve bilgi kutuları ile renkli bir açıklayıcı poster alın.",
+    "title": "Eğitim Konusu Infografiği Oluşturucu: Çocuklar için Dört Panelli Açıklayıcılar",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, canlı çocuk dostu bir eğitim infografiği oluşturur. Düzen, üstte cesur bir kırmızı gradyan başlık ile başlar, ardından her biri bir alt konu başlığı, merkezi bilgi kutusu, her iki tarafta temalı illüstrasyonlar (hayvanlar, gezegenler, tarihi sahneler) ve görsel oklar veya diyagramlar içeren 4 yatay dikdörtgen panel gelir. Stil, konuya uygun yumuşak bir paletle hayalperest bir karikatür tarzındadır.",
+        "who": "İlkokul öğretmenleri, evde eğitim yapan ebeveynler, çocuk içerikli YouTuberlar, müze eğitimcileri ve bilim / tarih / doğa konuları için paylaşılabilir açıklayıcı posterler oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir eğitim konusu girin (örneğin, Antik Medeniyetler, Uzay Gerçekleri, Okyanus Gizemleri, Yaban Hayatı Harikaları).",
+          "İnfografik otomatik olarak alt konu başlıkları ve temalı illüstrasyonlarla 4 panel oluşturur.",
+          "Temiz metin kutuları ile 4K hayalperest bir karikatür eğitim posteri oluşturun."
+        ],
+        "prompts": [
+          "Çocuklar için deniz canlıları illüstrasyonları ile bir Okyanus Gizemleri eğitim infografiği oluşturun.",
+          "Gezegenler, yıldızlar ve roketlerle bir Harika Uzay Gerçekleri infografiği oluşturun.",
+          "Safari hayvanları ve habitat panelleri ile bir Yaban Hayatı Harikaları çocuk infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Moda Tasarım Sayfası",
+    "description": "Couture tarzı tasarım sayfası — bir doğa konusu seçin (orkide, kelebek kanadı, okyanus dalgası) ve teknik çizim ve el yazısı tasarım notları ile bir moda elbisesi illüstrasyonu alın.",
+    "title": "Doğa İlhamlı Couture Elbise Tasarım Sayfası Oluşturucu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir konuya ilham veren bir couture elbise içeren profesyonel bir moda tasarım sayfası oluşturur. Düzen, elbise içinde tam boy bir model illüstrasyonu ile merkezlenir, ilham kaynağı (yapraklar, taç yaprakları, kelebek kanatları) sol üstte çizilir, sağda el yazısı tarzında tasarım notları ile siyah-beyaz teknik bir siluet ve temiz beyaz bir arka planda hafif karalamalar bulunur — yumuşak bir suluboya / dijital illüstrasyon hibidi.",
+        "who": "Moda tasarım öğrencileri, kostüm tasarımcıları, atölye markaları, tasarım eğitimcileri, moda illüstratör portföyleri ve couture konseptleri için ilham panoları oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir ilham kaynağı girin (örneğin, Mor Orkide, Gökkuşağı Kelebeği, Kiraz Çiçeği, Tavus Kuşu Tüyü, Okyanus Dalgaları).",
+          "Sayfa otomatik olarak tam boy bir elbise illüstrasyonu, ilham skeci, teknik siluet ve tasarım notları oluşturur.",
+          "El yazısı notları ile 4K suluboya ve dijital moda tasarım sayfası oluşturun."
+        ],
+        "prompts": [
+          "Pembe katmanlı tül ile bir Kiraz Çiçeği haute couture elbise tasarım sayfası oluşturun.",
+          "Iridesan teknik çizimlerle bir Tavus Kuşu Tüyü moda tasarım sayfası oluşturun.",
+          "Akışkan mavi organza paneller ile bir Okyanus Dalgaları elbise tasarım sayfası oluşturun."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Tarihsel Figür VS Bilgi Grafiği",
+    "description": "İki tarihsel figür için yan yana karşılaştırma kartları — doğum yılları, başarılar, özellikler, miras ve dönemlerine ait tarzda bir meme tarzı kapanış alıntısı.",
+    "title": "Tarihsel Figür VS: Yan Yana Karşılaştırma Bilgi Grafiği Oluşturucu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, iki tarihsel figürün yan yana karşılaştırma bilgi grafiğini oluşturur. Her taraf bir tema rengi, bir isim ve yaşam tarihleri başlığı, ikonik kıyafetlerle bir karikatür tarzı portre ve dönem temalı arka plan unsurları (Tesla için yıldırımlar, Kleopatra için piramitler), madde işaretli başarılar ve özellikler ile bir meme tarzı wojak ve ironik bir kapanış alıntısı içerir. Ortada bir rozet karşılaştırma tema başlığını taşır.",
+        "who": "Tarih öğretmenleri, eğlenceli eğitim YouTuber'ları, tarih meme yaratıcıları, müze içerik üreticileri ve iki tarihsel figür için paylaşılabilir VS posterleri oluşturan meraklı öğreniciler için uygundur.",
+        "how": [
+          "Karşılaştırmak için iki tarihsel figür seçin (örneğin, Tesla vs Edison, Napolyon vs İskender, Kleopatra vs Himiko).",
+          "Bilgi grafiği, portreler, tarihler, özellikler ve bir meme tarzı kapanış ile bölünmüş renkli yan yana paneller oluşturur.",
+          "Her figürün dönem temasına sahip 4K kalın karikatür karşılaştırma bilgi grafiği oluşturun."
+        ],
+        "prompts": [
+          "Yıldırım ve ampul temaları ile bir Tesla vs Edison karşılaştırma bilgi grafiği oluşturun.",
+          "İmparatorluk rengi bölünmüş paneller ile bir Napolyon vs Büyük İskender VS bilgi grafiği oluşturun.",
+          "Antik medeniyet motifleri ile bir Kleopatra vs Kraliçe Himiko karşılaştırma posteri oluşturun."
+        ]
+      }
+    }
   }
 }

@@ -5904,12 +5904,26 @@
             "name": "character_name",
             "label": "Harry Potter Character Name",
             "type": "text",
-            "placeholder": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Fred & George Weasley", "Severus Snape", "Luna Lovegood"]
+            "placeholder": [
+              "Harry Potter",
+              "Ron Weasley",
+              "Hermione Granger",
+              "Fred & George Weasley",
+              "Severus Snape",
+              "Luna Lovegood"
+            ]
           }
         ]
       }
     },
-    "og_image": "/images/nano_insp_preview/template-harry-potter-mbti-infographic-enfj-harry-potter-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-harry-potter-mbti-infographic-enfj-harry-potter-prev.jpg",
+    "topics": [
+      "character",
+      "mbti",
+      "film"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
   },
   {
     "id": "template-educational-topic-infographic",
@@ -5921,12 +5935,25 @@
             "name": "topic_title",
             "label": "Infographic Topic",
             "type": "text",
-            "placeholder": ["Ancient Civilizations", "Amazing Space Facts", "Ocean Mysteries", "Wildlife Wonders", "History Time Warps", "Plant Kingdom Secrets"]
+            "placeholder": [
+              "Ancient Civilizations",
+              "Amazing Space Facts",
+              "Ocean Mysteries",
+              "Wildlife Wonders",
+              "History Time Warps",
+              "Plant Kingdom Secrets"
+            ]
           }
         ]
       }
     },
-    "og_image": "/images/nano_insp_preview/template-educational-topic-infographic-ocean-mysteries-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-educational-topic-infographic-ocean-mysteries-prev.jpg",
+    "topics": [
+      "learning",
+      "science"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
   },
   {
     "id": "template-fashion-inspired-gown-design-sheet",
@@ -5938,12 +5965,26 @@
             "name": "inspiration_subject",
             "label": "Design Inspiration Subject",
             "type": "text",
-            "placeholder": ["Bamboo Leaf Zongzi", "Purple Orchid", "Rainbow Butterfly", "Cherry Blossom", "Peacock Feather", "Ocean Waves"]
+            "placeholder": [
+              "Bamboo Leaf Zongzi",
+              "Purple Orchid",
+              "Rainbow Butterfly",
+              "Cherry Blossom",
+              "Peacock Feather",
+              "Ocean Waves"
+            ]
           }
         ]
       }
     },
-    "og_image": "/images/nano_insp_preview/template-fashion-inspired-gown-design-sheet-ice-crystal-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-fashion-inspired-gown-design-sheet-ice-crystal-prev.jpg",
+    "topics": [
+      "lifestyle",
+      "fashion",
+      "design"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
   },
   {
     "id": "template-historical-figure-vs-infographic",
@@ -5955,17 +5996,38 @@
             "name": "figure_a",
             "label": "First Historical Figure",
             "type": "text",
-            "placeholder": ["Napoleon Bonaparte", "Cleopatra VII", "Nikola Tesla", "Galileo Galilei", "Wright Brothers", "Genghis Khan"]
+            "placeholder": [
+              "Napoleon Bonaparte",
+              "Cleopatra VII",
+              "Nikola Tesla",
+              "Galileo Galilei",
+              "Wright Brothers",
+              "Genghis Khan"
+            ]
           },
           {
             "name": "figure_b",
             "label": "Second Historical Figure",
             "type": "text",
-            "placeholder": ["Alexander the Great", "Queen Himiko", "Thomas Edison", "Nicolaus Copernicus", "Alberto Santos-Dumont", "Attila the Hun"]
+            "placeholder": [
+              "Alexander the Great",
+              "Queen Himiko",
+              "Thomas Edison",
+              "Nicolaus Copernicus",
+              "Alberto Santos-Dumont",
+              "Attila the Hun"
+            ]
           }
         ]
       }
     },
-    "og_image": "/images/nano_insp_preview/template-historical-figure-vs-infographic-wright-brothers-vs-alberto-santos-dumont-prev.jpg"
+    "og_image": "/images/nano_insp_preview/template-historical-figure-vs-infographic-wright-brothers-vs-alberto-santos-dumont-prev.jpg",
+    "topics": [
+      "character",
+      "comparison",
+      "history"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
   }
 ]

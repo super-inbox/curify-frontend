@@ -2944,5 +2944,89 @@
         ]
       }
     }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Infographie MBTI Harry Potter",
+    "description": "Cartes de personnage MBTI sur le thème de Poudlard — type, traits principaux, forces, défis, citations célèbres et rôles idéaux dans le monde des sorciers.",
+    "title": "Cartes MBTI Harry Potter : Profils de personnalité pour les personnages de Poudlard",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie vibrante et fantaisiste profilant un personnage de Harry Potter à travers le prisme du MBTI. La mise en page s'ouvre avec une bannière en haut montrant le type MBTI et le titre du personnage (par exemple, 'ENTP — Le Débatteur'), une illustration centrale du personnage dans sa robe de Poudlard entouré d'objets et de créatures emblématiques, puis des sections pour Traits Principaux, Forces, Défis, Citations Célèbres et Rôles Idéaux dans le Monde des Sorciers.",
+        "who": "Convient aux créateurs de comptes de fans de Harry Potter, aux blogueurs de personnalité MBTI, aux designers de produits dérivés de fandom, aux créateurs de BookTok et aux éducateurs utilisant la fiction pour enseigner des cadres de personnalité.",
+        "how": [
+          "Entrez un personnage de Harry Potter (par exemple, Harry, Hermione, Snape, Luna, Fred & George).",
+          "L'infographie génère automatiquement une bannière MBTI, une illustration sur le thème de Poudlard et des sections à puces.",
+          "Générez une infographie fantaisiste en 4K dans les couleurs de la maison du personnage."
+        ],
+        "prompts": [
+          "Générez une infographie MBTI Harry Potter ENFJ avec des effets de baguette magique.",
+          "Créez une carte MBTI ESTJ d'Hermione Granger avec des éléments de bibliothèque et d'étude.",
+          "Générez une infographie MBTI INFP de Luna Lovegood avec des créatures magiques rêveuses."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Infographie sur un sujet éducatif",
+    "description": "Infographies en quatre panneaux adaptées aux enfants — choisissez n'importe quel sujet éducatif (espace, océans, civilisations, faune) et obtenez une affiche explicative colorée avec des illustrations thématiques et des encadrés de faits.",
+    "title": "Créateur d'infographies sur des sujets éducatifs : Explications en quatre panneaux pour enfants",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative vibrante et adaptée aux enfants. La mise en page a un titre en dégradé rouge audacieux en haut, suivi de 4 panneaux rectangulaires horizontaux — chacun avec un titre de sous-thème, une boîte de faits centrale, des illustrations thématiques de chaque côté (animaux, planètes, scènes historiques) et des flèches ou diagrammes visuels. Le style est fantaisiste et cartoon avec une palette douce thématique au sujet.",
+        "who": "Convient aux enseignants d'école élémentaire, aux parents d'école à la maison, aux YouTubers de contenu pour enfants, aux éducateurs de musées et aux créateurs réalisant des affiches explicatives partageables sur des sujets de science / histoire / nature.",
+        "how": [
+          "Entrez un sujet éducatif (par exemple, Civilisations anciennes, Faits sur l'espace, Mystères de l'océan, Merveilles de la faune).",
+          "L'infographie construit automatiquement 4 panneaux avec des titres de sous-thème et des illustrations thématiques.",
+          "Générez une affiche éducative en cartoon fantaisiste en 4K avec des zones de texte claires."
+        ],
+        "prompts": [
+          "Générez une infographie éducative sur les Mystères de l'océan pour enfants avec des illustrations de créatures marines.",
+          "Créez une infographie sur les Faits incroyables de l'espace avec des planètes, des étoiles et des fusées.",
+          "Générez une infographie pour enfants sur les Merveilles de la faune avec des animaux de safari et des panneaux d'habitat."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Fiche de design de mode",
+    "description": "Fiche de design de style couture — choisissez un sujet de la nature (orchidée, aile de papillon, vague océanique) et obtenez une illustration de robe de mode avec un croquis technique et des notes de design manuscrites.",
+    "title": "Générateur de fiche de design de robe couture inspirée de la nature",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une fiche de design de mode professionnelle présentant une robe de couture inspirée d'un sujet choisi. La mise en page centre une illustration de modèle en pleine longueur dans la robe, avec le sujet d'inspiration (feuilles, pétales, ailes de papillon) esquissé en haut à gauche, une silhouette technique en noir et blanc à droite avec des notes de design de style manuscrit, et des gribouillis subtils sur un fond blanc propre — un hybride d'illustration aquarelle / numérique.",
+        "who": "Convient aux étudiants en design de mode, aux designers de costumes, aux marques d'atelier, aux éducateurs en design, aux portfolios d'illustrateurs de mode et aux créateurs construisant des mood boards d'inspiration pour des concepts de couture.",
+        "how": [
+          "Entrez un sujet d'inspiration (par exemple, Orchidée violette, Papillon arc-en-ciel, Fleur de cerisier, Plume de paon, Vagues océaniques).",
+          "La fiche génère automatiquement une illustration de robe en pleine longueur, un croquis d'inspiration, une silhouette technique et des notes de design.",
+          "Générez une fiche de design de mode aquarelle et numérique en 4K avec des annotations manuscrites."
+        ],
+        "prompts": [
+          "Générez une fiche de design de robe de couture Cherry Blossom avec du tulle rose en couches.",
+          "Créez une fiche de design de mode Plume de Paon avec des croquis techniques irisés.",
+          "Générez une fiche de design de robe Océan Waves avec des panneaux en organza bleu fluide."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Personnage Historique VS Infographie",
+    "description": "Cartes de comparaison côte à côte pour deux personnages historiques — années de naissance, réalisations, traits, héritage, et une citation de style mème en clôture dans le style de leur époque.",
+    "title": "Personnage Historique VS : Créateur d'Infographie de Comparaison Côte à Côte",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison côte à côte de deux personnages historiques. Chaque côté reçoit une couleur thématique, un en-tête avec le nom et les dates de vie, un portrait de style cartoon en tenue iconique avec des éléments de fond thématiques de l'époque (éclairs pour Tesla, pyramides pour Cléopâtre), des réalisations et traits en points, et un wojak de style mème avec une citation ironique en clôture. Un badge central porte le titre du thème de comparaison.",
+        "who": "Convient aux enseignants d'histoire, aux YouTubers d'éducation, aux créateurs de mèmes historiques, aux producteurs de contenu de musée, et aux apprenants curieux construisant des affiches VS partageables pour deux personnages historiques.",
+        "how": [
+          "Choisissez deux personnages historiques à comparer (par exemple, Tesla vs Edison, Napoléon vs Alexandre, Cléopâtre vs Himiko).",
+          "L'infographie se construit automatiquement avec des panneaux côte à côte de couleur divisée avec des portraits, des dates, des traits, et une clôture de style mème.",
+          "Générez une infographie de comparaison cartoon audacieuse en 4K avec le thème de l'époque de chaque personnage."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison Tesla vs Edison avec des thèmes d'éclairs et d'ampoules.",
+          "Créez une infographie VS Napoléon vs Alexandre le Grand avec des panneaux de couleur d'empire divisés.",
+          "Générez une affiche de comparaison Cléopâtre vs Reine Himiko avec des motifs de civilisations anciennes."
+        ]
+      }
+    }
   }
 }
