@@ -8,8 +8,8 @@ const BASE_URL = "https://www.curify-ai.com";
 // Google re-fetches that child sitemap. Each child sitemap also carries
 // its own per-URL lastmods inside, which Google trusts more than this.
 const CHILD_SITEMAPS: Array<{ path: string; lastmod: string }> = [
-  { path: "/sitemap.xml",          lastmod: "2026-05-08T00:00:00.000Z" },
-  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-08T00:00:00.000Z" },
+  { path: "/sitemap.xml",          lastmod: "2026-05-07T00:00:00.000Z" },
+  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-04T00:00:00.000Z" },
   // Bumped 2026-05-07 — 260 example pages gained per-locale SEO copy
   // (title / description / metaDescription) and 8 new locale URL variants.
   { path: "/sitemap-examples.xml", lastmod: "2026-05-07T00:00:00.000Z" },
