@@ -74,6 +74,22 @@ function ZoomableSlideImage({
   const [fullLoaded, setFullLoaded] = useState(false);
   const handleFullLoaded = useCallback(() => setFullLoaded(true), []);
 
+  // Track scale locally so we can keep panning disabled at scale=1.
+  // Without this, the library swallows 1-finger drags as no-op panning
+  // and the parent's slide-swipe handler never sees the gesture, making
+  // it hard to flip slides on mobile.
+  const [scale, setScale] = useState(1);
+
+  const handleTransform = useCallback(
+    (_ref: unknown, state: { scale: number }) => {
+      setScale(state.scale);
+      onScaleChange(state.scale);
+    },
+    [onScaleChange]
+  );
+
+  const isZoomed = scale > 1.001;
+
   return (
     <TransformWrapper
       initialScale={1}
@@ -83,8 +99,11 @@ function ZoomableSlideImage({
       doubleClick={{ mode: "toggle", step: 1.5, disabled: !fullLoaded }}
       pinch={{ disabled: !fullLoaded }}
       wheel={{ step: 0.2, disabled: !fullLoaded }}
-      onTransform={(_ref, state) => onScaleChange(state.scale)}
-      panning={{ disabled: !fullLoaded, velocityDisabled: true }}
+      onTransform={handleTransform}
+      // Panning is what consumes 1-finger drags. Keep it off at scale=1 so
+      // horizontal swipes flow through to the parent slide-swipe handler;
+      // re-enable once the user has actually zoomed in.
+      panning={{ disabled: !fullLoaded || !isZoomed, velocityDisabled: true }}
     >
       <TransformComponent
         wrapperClass="!h-full !w-full !flex !items-center !justify-center"
