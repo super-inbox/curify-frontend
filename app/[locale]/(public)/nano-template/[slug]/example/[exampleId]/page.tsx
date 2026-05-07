@@ -252,7 +252,6 @@ export default async function NanoExampleDetailPage({
       <ExamplePromptHero
         title={title}
         prompt={prompt}
-        description={bodyDescription ?? undefined}
         trackingId={example.id}
         prevNext={prevNext}
         breadcrumbs={[
@@ -292,6 +291,7 @@ export default async function NanoExampleDetailPage({
             chipExampleTopics={exampleTopics}
             chipCategory={category}
             title={title}
+            description={bodyDescription ?? undefined}
             templateId={templateId}
             slug={slug}
             locale={rawLocale}

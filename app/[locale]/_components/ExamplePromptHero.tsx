@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import DescriptionClamp from "@/app/[locale]/_components/DescriptionClamp";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
 import { useClickTracking } from "@/services/useTracking";
@@ -192,9 +193,7 @@ export default function ExamplePromptHero({
                 </h1>
 
                 {description ? (
-                  <p className="whitespace-pre-line text-sm leading-6 text-neutral-600">
-                    {description}
-                  </p>
+                  <DescriptionClamp text={description} lines={2} />
                 ) : null}
 
                 {beforePrompt}
