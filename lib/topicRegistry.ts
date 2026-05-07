@@ -48,6 +48,13 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
+const MBTI_TYPE_TAGS = [
+  "mbti-intj","mbti-intp","mbti-entj","mbti-entp",
+  "mbti-infj","mbti-infp","mbti-enfj","mbti-enfp",
+  "mbti-istj","mbti-isfj","mbti-estj","mbti-esfj",
+  "mbti-istp","mbti-isfp","mbti-estp","mbti-esfp",
+];
+
 // Explicit sibling groups for tag-style topics (geo, language pairs, visual styles, subjects, personality).
 // These appear at the bottom of topic pages as related tags.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
@@ -55,7 +62,7 @@ const EXPLICIT_SIBLING_GROUPS: string[][] = [
   ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
   ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
   ["animals", "nature", "space", "weather"],
-  ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
+  MBTI_TYPE_TAGS,
   ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
 ];
 
@@ -76,7 +83,11 @@ const SUBJECT_TAGS = [
 // Tier 1 → Tier 3 tag children mapping.
 // These tags appear at the bottom of the Tier 1 topic page.
 const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  personality: ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
+  personality: MBTI_TYPE_TAGS,
+  // character also surfaces the 16 MBTI types as bottom-row tag chips
+  // (in addition to its Tier 2 nav children), since MBTI character cards
+  // are one of the strongest entry points for the character Tier 1.
+  character:   MBTI_TYPE_TAGS,
   travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
   // language pairs (english-chinese etc.) were promoted to Tier 2 so they
   // sit alongside vocabulary/dialogue/expressions/language-english as
