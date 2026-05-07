@@ -5738,8 +5738,15 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-artist-biography-infographic-claude-monet-prev.jpg"
-},
+    "og_image": "/images/nano_insp_preview/template-artist-biography-infographic-claude-monet-prev.jpg",
+    "topics": [
+      "character",
+      "history",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  },
   {
     "id": "template-celebrity-filmography-infographic",
     "locales": {
@@ -5755,6 +5762,13 @@
             ]
         }
     },
-    "og_image": "/images/nano_insp_preview/template-celebrity-filmography-infographic-brad-pitt-prev.jpg"
-}
+    "og_image": "/images/nano_insp_preview/template-celebrity-filmography-infographic-brad-pitt-prev.jpg",
+    "topics": [
+      "character",
+      "film",
+      "posters"
+    ],
+    "base_rank_score": 90,
+    "rank_score": 90
+  }
 ]

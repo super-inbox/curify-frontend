@@ -2900,5 +2900,49 @@
         ]
       }
     }
+  },
+  "template-artist-biography-infographic": {
+    "category": "Infographie de Biographie d'Artiste",
+    "description": "Une biographie visuelle thématique de tout artiste célèbre avec leur style iconique en arrière-plan, une chronologie de leur parcours de vie, des anecdotes et des citations — Monet, Picasso, Van Gogh, da Vinci, et plus.",
+    "title": "Guide Visuel de Biographie d'Artiste Célèbre : Infographies Thématiques pour Tout Peintre",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de biographie verticale visuellement cohérente sur un artiste choisi. L'arrière-plan utilise le style de peinture iconique de l'artiste (nénuphars de Monet, nuit étoilée de Van Gogh, etc.) avec un portrait stylisé superposé ; la mise en page comprend un nom stylisé + date de naissance, un court paragraphe d'introduction sur leur mouvement et leur héritage, une chronologie 'Parcours de Vie' des événements clés et des années, une boîte 'Anecdote', et une citation célèbre — le tout dans une palette de couleurs entièrement thématique correspondant à l'esthétique de l'artiste.",
+        "who": "Convient aux enseignants d'art, éducateurs de musées, blogueurs d'histoire de l'art, designers d'affiches en classe, comptes de podcasts sur l'histoire de l'art, et créateurs réalisant des biographies visuelles partageables de peintres célèbres.",
+        "how": [
+          "Entrez un nom d'artiste (par exemple, Claude Monet, Pablo Picasso, Andy Warhol, Léonard de Vinci, Vincent van Gogh, Frida Kahlo).",
+          "L'affiche auto-thématise l'arrière-plan et la palette pour correspondre au style iconique de l'artiste.",
+          "La mise en page comprend une chronologie des événements de la vie, une boîte d'anecdotes, et une citation célèbre.",
+          "Générez une infographie de biographie d'artiste verticale en 4K dans l'esthétique visuelle signature de l'artiste."
+        ],
+        "prompts": [
+          "Générez une infographie de biographie de Claude Monet avec un arrière-plan thématique de nénuphars.",
+          "Créez une affiche de biographie visuelle de Vincent van Gogh avec un style de nuit étoilée.",
+          "Générez une infographie de biographie thématique de Frida Kahlo avec une palette d'art populaire mexicain."
+        ]
+      }
+    }
+  },
+  "template-celebrity-filmography-infographic": {
+    "category": "Infographie de Filmographie de Célébrité",
+    "description": "Une filmographie visuelle professionnelle et épurée pour toute célébrité — portrait, 6 films iconiques avec affiches, et une bannière des récompenses et réalisations.",
+    "title": "Guide Visuel de Filmographie de Célébrité : Affiches de Films Iconiques et Réalisations",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie verticale professionnelle et épurée intitulée '<célébrité> : Filmographie & Réalisations'. La section supérieure associe un portrait de haute qualité dans un cadre thématique avec le nom de la célébrité en gras, l'année de naissance, et des icônes de rôle (Acteur, Producteur, Réalisateur). Le milieu est une grille de 6 films iconiques avec image d'affiche, titre, année de sortie, et réalisateur. Le bas est une bannière horizontale des réalisations clés — Oscars, récompenses, collaborations célèbres, surnoms — avec des icônes simples.",
+        "who": "Convient aux blogueurs de cinéma, marques de décoration d'affiches de films, créateurs de comptes de fans, chaînes d'histoire du cinéma, créateurs de contenu pour la saison des récompenses, et créateurs réalisant des affiches de filmographie de célébrités partageables.",
+        "how": [
+          "Entrez un nom de célébrité (par exemple, Brad Pitt, Johnny Depp, Leonardo DiCaprio, Meryl Streep).",
+          "L'affiche dispose automatiquement un portrait, des icônes de rôle, et l'année de naissance en haut.",
+          "Six films iconiques sont présentés sous forme de grille avec affiche, titre, année, et réalisateur.",
+          "Générez une infographie de filmographie verticale moderne et épurée en 4K avec des accents thématiques."
+        ],
+        "prompts": [
+          "Générez une infographie de filmographie de Brad Pitt avec des films iconiques et des mentions aux Oscars.",
+          "Créez une affiche de filmographie visuelle de Leonardo DiCaprio avec des collaborations de réalisateurs.",
+          "Générez une infographie de filmographie de Meryl Streep avec une bannière de récompenses."
+        ]
+      }
+    }
   }
 }

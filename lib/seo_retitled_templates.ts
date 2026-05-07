@@ -35,4 +35,6 @@ export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-herbal",
   "template-vintage-ultimate-guide-infographic",
   "template-weird-science-facts-infographic",
+  "template-artist-biography-infographic",
+  "template-celebrity-filmography-infographic",
 ]);
