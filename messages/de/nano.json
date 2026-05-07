@@ -2944,5 +2944,89 @@
         ]
       }
     }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Harry Potter MBTI Infografik",
+    "description": "Magische Hogwarts-Themen MBTI Charakterkarten — Typ, Kernmerkmale, Stärken, Herausforderungen, berühmte Zitate und ideale Rollen in der Zaubererwelt.",
+    "title": "Harry Potter MBTI Karten: Persönlichkeitsprofile für Hogwarts-Charaktere",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine lebendige, verspielte Infografik, die einen Harry Potter Charakter durch die MBTI-Linse profiliert. Das Layout beginnt mit einem oberen Banner, das den MBTI-Typ und Titel des Charakters zeigt (z.B. 'ENTP — Der Debattierer'), einer zentralen Illustration des Charakters in seinen Hogwarts-Roben, umgeben von ikonischen Gegenständen und Kreaturen, gefolgt von Abschnitten für Kernmerkmale, Stärken, Herausforderungen, berühmte Zitate und ideale Rollen in der Zaubererwelt.",
+        "who": "Geeignet für Harry Potter Fan-Account-Ersteller, MBTI Persönlichkeitsblogger, Fandom-Merch-Designer, BookTok-Ersteller und Pädagogen, die Fiktion nutzen, um Persönlichkeitsrahmen zu lehren.",
+        "how": [
+          "Geben Sie einen Harry Potter Charakter ein (z.B. Harry, Hermine, Snape, Luna, Fred & George).",
+          "Die Infografik erstellt automatisch ein MBTI-Banner, eine thematische Hogwarts-Illustration und Aufzählungsabschnitte.",
+          "Erstellen Sie eine 4K verspielte Fantasy-Infografik in den Hausfarben des Charakters."
+        ],
+        "prompts": [
+          "Erstellen Sie eine ENFJ Harry Potter MBTI Infografik mit magischen Zauberstab-Effekten.",
+          "Erstellen Sie eine Hermine Granger ESTJ MBTI Karte mit Bibliotheks- und Studienelementen.",
+          "Erstellen Sie eine Luna Lovegood INFP MBTI Infografik mit traumhaften magischen Kreaturen."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Bildungsthema Infografik",
+    "description": "Kinderfreundliche Vier-Panel-Infografiken — wählen Sie ein beliebiges Bildungsthema (Weltraum, Ozeane, Zivilisationen, Tierwelt) und erhalten Sie ein buntes Erklärposter mit thematischen Illustrationen und Faktenkästen.",
+    "title": "Bildungsthema Infografik-Generator: Vier-Panel-Erklärungen für Kinder",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine lebendige, kinderfreundliche Bildungsinfografik. Das Layout hat einen kräftigen rot-verlaufenden Titel oben, gefolgt von 4 horizontalen rechteckigen Panels — jedes mit einer Unterthemenüberschrift, einem zentralen Faktenkasten, thematischen Illustrationen auf beiden Seiten (Tiere, Planeten, historische Szenen) und visuellen Pfeilen oder Diagrammen. Der Stil ist verspielt cartoonhaft mit einer sanften Palette, die auf das Thema abgestimmt ist.",
+        "who": "Geeignet für Grundschullehrer, Homeschool-Eltern, Kinderinhalts-YouTuber, Museumspädagogen und Ersteller, die teilbare Erklärposter für Wissenschafts-/Geschichts-/Naturthemen erstellen.",
+        "how": [
+          "Geben Sie ein Bildungsthema ein (z.B. Alte Zivilisationen, Weltraumfakten, Ozeanrätsel, Wunder der Tierwelt).",
+          "Die Infografik erstellt automatisch 4 Panels mit Unterthemenüberschriften und thematischen Illustrationen.",
+          "Erstellen Sie ein 4K verspieltes Cartoon-Bildungsplakat mit klaren Textkästen."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Bildungsinfografik über Ozeanrätsel für Kinder mit Illustrationen von Meereslebewesen.",
+          "Erstellen Sie eine erstaunliche Weltraumfakten-Infografik mit Planeten, Sternen und Raketen.",
+          "Erstellen Sie eine Kinderinfografik über Wunder der Tierwelt mit Safari-Tieren und Lebensraum-Panels."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Mode-Design-Blatt",
+    "description": "Couture-Stil Designblatt — wählen Sie ein Naturthema (Orchidee, Schmetterlingsflügel, Meereswelle) und erhalten Sie eine Modekleid-Illustration mit technischem Entwurf und handschriftlichen Designnotizen.",
+    "title": "Natur-inspiriertes Couture Kleid Designblatt Generator",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein professionelles Mode-Designblatt mit einem Couture-Kleid, das von einem gewählten Thema inspiriert ist. Das Layout zentriert eine Ganzkörpermodell-Illustration im Kleid, mit dem Inspirationsobjekt (Blätter, Blütenblätter, Schmetterlingsflügel) oben links skizziert, einer schwarz-weißen technischen Silhouette rechts mit handschriftlichen Designnotizen und subtilen Kritzeleien auf einem sauberen weißen Hintergrund — eine sanfte Aquarell-/digitale Illustrationshybride.",
+        "who": "Geeignet für Modedesign-Studenten, Kostümbildner, Ateliermarken, Designpädagogen, Modeillustratoren-Portfolios und Ersteller, die Inspirations-Stimmungsboards für Couture-Konzepte erstellen.",
+        "how": [
+          "Geben Sie ein Inspirationsobjekt ein (z.B. Lila Orchidee, Regenbogen-Schmetterling, Kirschblüte, Pfauenfeder, Meereswellen).",
+          "Das Blatt erstellt automatisch eine Ganzkörper-Illustration des Kleides, eine Inspirationsskizze, eine technische Silhouette und Designnotizen.",
+          "Erstellen Sie ein 4K Aquarell-und-digital Mode-Designblatt mit handschriftlichen Anmerkungen."
+        ],
+        "prompts": [
+          "Erstelle ein Designblatt für ein Cherry Blossom Couture Kleid mit rosa geschichtetem Tüll.",
+          "Erstelle ein Designblatt für ein Pfauenfeder-Mode mit schillernden technischen Skizzen.",
+          "Erstelle ein Designblatt für ein Ocean Waves Kleid mit fließenden blauen Organza-Panels."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Historische Figur VS Infografik",
+    "description": "Nebeneinander Vergleichskarten für zwei historische Figuren — Geburtsjahre, Errungenschaften, Eigenschaften, Vermächtnis und ein meme-artiges Abschlusszitat im Stil ihrer Epoche.",
+    "title": "Historische Figur VS: Nebeneinander Vergleichs-Infografik-Generator",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine nebeneinander Vergleichs-Infografik von zwei historischen Figuren. Jede Seite erhält eine thematische Farbe, eine Überschrift mit Namen und Lebensdaten, ein cartoonhaftes Porträt in ikonischer Kleidung mit epochebezogenen Hintergrundelementen (Blitze für Tesla, Pyramiden für Cleopatra), stichpunktartige Errungenschaften und Eigenschaften sowie ein meme-artiger Wojak mit einem ironischen Abschlusszitat. Ein zentrales Abzeichen trägt den Titel des Vergleichsthemas.",
+        "who": "Geeignet für Geschichtslehrer, Edutainment-YouTuber, Geschichts-Meme-Ersteller, Museum-Inhaltsersteller und neugierige Lernende, die teilbare VS-Poster für beliebige zwei historische Figuren erstellen.",
+        "how": [
+          "Wähle zwei historische Figuren zum Vergleichen (z.B. Tesla vs Edison, Napoleon vs Alexander, Cleopatra vs Himiko).",
+          "Die Infografik wird automatisch mit geteilten Farbseiten, Porträts, Daten, Eigenschaften und einem meme-artigen Abschluss erstellt.",
+          "Erstelle eine 4K fette cartoonhafte Vergleichs-Infografik mit dem Thema jeder Figur."
+        ],
+        "prompts": [
+          "Erstelle eine Tesla vs Edison Vergleichs-Infografik mit Blitz- und Glühbirnen-Themen.",
+          "Erstelle eine Napoleon vs Alexander der Große VS Infografik mit geteilten Panels in den Farben der Reiche.",
+          "Erstelle ein Vergleichs-Poster von Cleopatra vs Königin Himiko mit Motiven antiker Zivilisationen."
+        ]
+      }
+    }
   }
 }

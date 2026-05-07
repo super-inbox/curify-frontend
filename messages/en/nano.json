@@ -2943,5 +2943,89 @@
         ]
       }
     }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Harry Potter MBTI Infographic",
+    "description": "Magical Hogwarts-themed MBTI character cards — type, core traits, strengths, challenges, famous quotes, and ideal wizarding-world roles.",
+    "title": "Harry Potter MBTI Cards: Personality Profiles for Hogwarts Characters",
+    "content": {
+      "sections": {
+        "what": "This template generates a vibrant, whimsical infographic profiling a Harry Potter character through the MBTI lens. The layout opens with a top banner showing the character's MBTI type and title (e.g., 'ENTP — The Debater'), a centerpiece illustration of the character in their Hogwarts robes surrounded by iconic items and creatures, then sections for Core Traits, Strengths, Challenges, Famous Quotes, and Ideal Roles in the Wizarding World.",
+        "who": "Suitable for Harry Potter fan-account creators, MBTI personality bloggers, fandom merch designers, BookTok creators, and educators using fiction to teach personality frameworks.",
+        "how": [
+          "Enter a Harry Potter character (e.g., Harry, Hermione, Snape, Luna, Fred & George).",
+          "The infographic auto-lays out an MBTI banner, themed Hogwarts illustration, and bullet sections.",
+          "Generate a 4K whimsical fantasy infographic in the character's house colors."
+        ],
+        "prompts": [
+          "Generate an ENFJ Harry Potter MBTI infographic with magical wand effects.",
+          "Create a Hermione Granger ESTJ MBTI card with library and study elements.",
+          "Generate a Luna Lovegood INFP MBTI infographic with dreamy magical creatures."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Educational Topic Infographic",
+    "description": "Kid-friendly four-panel infographics — pick any educational topic (space, oceans, civilizations, wildlife) and get a colorful explainer poster with themed illustrations and fact boxes.",
+    "title": "Educational Topic Infographic Maker: Four-Panel Explainers for Kids",
+    "content": {
+      "sections": {
+        "what": "This template generates a vibrant kid-friendly educational infographic. The layout has a bold red-gradient title at the top, followed by 4 horizontal rectangular panels — each with a subtopic heading, central fact box, themed illustrations on both sides (animals, planets, historical scenes), and visual arrows or diagrams. The style is whimsical cartoon with a soft palette themed to the topic.",
+        "who": "Suitable for elementary teachers, homeschool parents, kids-content YouTubers, museum educators, and creators making shareable explainer posters for science / history / nature topics.",
+        "how": [
+          "Enter an educational topic (e.g., Ancient Civilizations, Space Facts, Ocean Mysteries, Wildlife Wonders).",
+          "The infographic auto-builds 4 panels with subtopic headings and themed illustrations.",
+          "Generate a 4K whimsical cartoon educational poster with clean text boxes."
+        ],
+        "prompts": [
+          "Generate an Ocean Mysteries educational infographic for kids with sea creature illustrations.",
+          "Create an Amazing Space Facts infographic with planets, stars, and rockets.",
+          "Generate a Wildlife Wonders kids infographic with safari animals and habitat panels."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Fashion Design Sheet",
+    "description": "Couture-style design sheet — pick a nature subject (orchid, butterfly wing, ocean wave) and get a fashion gown illustration with technical sketch and handwritten design notes.",
+    "title": "Nature-Inspired Couture Gown Design Sheet Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a professional fashion design sheet featuring a couture gown inspired by a chosen subject. The layout centers a full-body model illustration in the gown, with the inspiration subject (leaves, petals, butterfly wings) sketched at the top left, a black-and-white technical silhouette on the right with handwritten-style design notes, and subtle scribbles on a clean white background — a soft watercolor / digital illustration hybrid.",
+        "who": "Suitable for fashion design students, costume designers, atelier brands, design educators, fashion-illustrator portfolios, and creators building inspiration mood boards for couture concepts.",
+        "how": [
+          "Enter an inspiration subject (e.g., Purple Orchid, Rainbow Butterfly, Cherry Blossom, Peacock Feather, Ocean Waves).",
+          "The sheet auto-lays out a full-body gown illustration, inspiration sketch, technical silhouette, and design notes.",
+          "Generate a 4K watercolor-and-digital fashion design sheet with handwritten annotations."
+        ],
+        "prompts": [
+          "Generate a Cherry Blossom couture gown design sheet with pink layered tulle.",
+          "Create a Peacock Feather fashion design sheet with iridescent technical sketches.",
+          "Generate an Ocean Waves gown design sheet with flowing blue organza panels."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Historical Figure VS Infographic",
+    "description": "Side-by-side comparison cards for two historical figures — birth years, achievements, traits, legacy, and a meme-style closing quote in their era's style.",
+    "title": "Historical Figure VS: Side-by-Side Comparison Infographic Maker",
+    "content": {
+      "sections": {
+        "what": "This template generates a side-by-side comparison infographic of two historical figures. Each side gets a themed color, a name and life dates header, a cartoon-style portrait in iconic attire with era-themed background elements (lightning for Tesla, pyramids for Cleopatra), bullet-pointed achievements and traits, and a meme-style wojak with an ironic closing quote. A central badge holds the comparison theme title.",
+        "who": "Suitable for history teachers, edutainment YouTubers, history meme creators, museum content makers, and curious learners building shareable VS posters for any two historical figures.",
+        "how": [
+          "Pick two historical figures to compare (e.g., Tesla vs Edison, Napoleon vs Alexander, Cleopatra vs Himiko).",
+          "The infographic auto-builds split-color side-by-side panels with portraits, dates, traits, and a meme-style closing.",
+          "Generate a 4K bold cartoon comparison infographic with each figure's era theme."
+        ],
+        "prompts": [
+          "Generate a Tesla vs Edison comparison infographic with lightning and lightbulb themes.",
+          "Create a Napoleon vs Alexander the Great VS infographic with empire-color split panels.",
+          "Generate a Cleopatra vs Queen Himiko comparison poster with ancient civilization motifs."
+        ]
+      }
+    }
   }
 }
