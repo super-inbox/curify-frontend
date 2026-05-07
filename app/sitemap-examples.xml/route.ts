@@ -6,6 +6,7 @@ import { toSlug } from "@/lib/nano_utils";
 import {
   SEO_RETITLED_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
+  I18N_DESCRIPTIONS_LASTMOD,
 } from "@/lib/seo_retitled_templates";
 
 export const runtime = "nodejs";
@@ -122,10 +123,16 @@ export async function GET() {
       toSlug(templateId)
     )}/example/${encodeURIComponent(exampleId)}`;
 
-    // If the parent template was retitled in the SEO pass, bump the
-    // lastmod for every one of its examples so Google recrawls the
-    // example pages too (they render the same i18n title as the h1).
-    const lastmod = SEO_RETITLED_TEMPLATE_IDS.has(templateId)
+    // Lastmod priority:
+    //  1. allow_i18n examples — bumped to the i18n descriptions ship date
+    //     so Google re-crawls and picks up the new per-locale copy + the
+    //     8 added locale URL variants.
+    //  2. Examples whose parent template was retitled in the SEO pass —
+    //     bumped to that pass's date so the new h1 is recrawled.
+    //  3. Fallback to the example's own updated_at / lastmod, or STABLE.
+    const lastmod = ex.allow_i18n
+      ? I18N_DESCRIPTIONS_LASTMOD
+      : SEO_RETITLED_TEMPLATE_IDS.has(templateId)
       ? SEO_RETITLED_LASTMOD
       : pickLastmod(ex) ?? STABLE_LASTMOD;
 

@@ -4,26 +4,23 @@ export const runtime = "nodejs";
 
 const BASE_URL = "https://www.curify-ai.com";
 
-// Children — every sitemap registered here is auto-discovered by search
-// engines that read /sitemap-index.xml. Update this list when new sitemap
-// files are added under app/sitemap-*.xml/route.ts.
-const CHILD_SITEMAPS = [
-  "/sitemap.xml",
-  "/sitemap-blogs.xml",
-  "/sitemap-examples.xml",
+// Per-child lastmod — bump the entry whose contents materially changed so
+// Google re-fetches that child sitemap. Each child sitemap also carries
+// its own per-URL lastmods inside, which Google trusts more than this.
+const CHILD_SITEMAPS: Array<{ path: string; lastmod: string }> = [
+  { path: "/sitemap.xml",          lastmod: "2026-05-08T00:00:00.000Z" },
+  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-08T00:00:00.000Z" },
+  // Bumped 2026-05-07 — 260 example pages gained per-locale SEO copy
+  // (title / description / metaDescription) and 8 new locale URL variants.
+  { path: "/sitemap-examples.xml", lastmod: "2026-05-07T00:00:00.000Z" },
 ];
-
-// Static lastmod for the index. The child sitemaps each carry their own
-// per-URL lastmods (which Google trusts more), so this is just a coarse
-// hint that the index itself was reviewed recently. Bump as needed.
-const INDEX_LASTMOD = "2026-05-08T00:00:00.000Z";
 
 export async function GET() {
   const entries = CHILD_SITEMAPS.map(
-    (path) => `
+    ({ path, lastmod }) => `
     <sitemap>
       <loc>${BASE_URL}${path}</loc>
-      <lastmod>${INDEX_LASTMOD}</lastmod>
+      <lastmod>${lastmod}</lastmod>
     </sitemap>`
   ).join("");
 
