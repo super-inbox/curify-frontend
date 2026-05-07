@@ -5893,5 +5893,79 @@
     "base_rank_score": 90,
     "rank_score": 90,
     "intro_video_url": "/video/template_intro/template-celebrity-filmography-infographic.mp4"
+  },
+  {
+    "id": "template-harry-potter-mbti-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Harry Potter Character MBTI Infographic Designer) Create a magical, whimsical infographic for a Harry Potter character. Layout: 1. Top banner with the character's MBTI type and title (e.g., 'ENTP - The Debater'). 2. Center illustration: The character in their Hogwarts robes, surrounded by iconic items, creatures, and magical symbols from their story. 3. Banner with the character's name and nickname (e.g., 'Fred & George Weasley - The Weasley Twins'). 4. Section: 'Core Traits' with bullet points describing their personality. 5. Section: 'Strengths' with themed icons representing their strengths. 6. Section: 'Challenges' listing their struggles. 7. 'Famous Quotes' section with iconic lines from the character. 8. Bottom banner: 'Ideal Roles in Wizarding World' with career options and icons. Style: Whimsical fantasy art style, vibrant colors matching the character's Hogwarts house theme, glowing magical effects, detailed line art, no watermarks, 4K ultra HD, direct image generation. Subject: '{character_name} Harry Potter MBTI Infographic'.",
+        "parameters": [
+          {
+            "name": "character_name",
+            "label": "Harry Potter Character Name",
+            "type": "text",
+            "placeholder": ["Harry Potter", "Ron Weasley", "Hermione Granger", "Fred & George Weasley", "Severus Snape", "Luna Lovegood"]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-harry-potter-mbti-infographic-enfj-harry-potter-prev.jpg"
+  },
+  {
+    "id": "template-educational-topic-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Educational Topic Infographic Designer) Create a vibrant, kid-friendly educational infographic titled \"{topic_title}\". Layout: 1. Large bold title at the top in red gradient text on a light beige background. 2. 4 horizontal rectangular panels, each representing a key subtopic. 3. Each panel includes: a subtopic title, a central fact box with key details, themed illustrations on both sides (e.g., animals, planets, historical scenes), and visual arrows/diagrams explaining the fact. Style: Whimsical cartoon illustration style, soft color palette themed to the topic, clean text boxes, clear labels, no watermarks, 4K ultra HD, direct image generation. Subject: '{topic_title} Educational Infographic'.",
+        "parameters": [
+          {
+            "name": "topic_title",
+            "label": "Infographic Topic",
+            "type": "text",
+            "placeholder": ["Ancient Civilizations", "Amazing Space Facts", "Ocean Mysteries", "Wildlife Wonders", "History Time Warps", "Plant Kingdom Secrets"]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-educational-topic-infographic-ocean-mysteries-prev.jpg"
+  },
+  {
+    "id": "template-fashion-inspired-gown-design-sheet",
+    "locales": {
+      "en": {
+        "base_prompt": "(Nature-Inspired Gown Design Sheet Creator) Create a professional fashion design illustration featuring a couture gown inspired by '{inspiration_subject}'. Layout: 1. Center: A full-body illustration of an elegant model wearing the gown, which incorporates the colors, shapes, and textures of the inspiration subject (e.g., leaves, petals, butterfly wings). 2. Top left: A detailed sketch or illustration of the inspiration subject itself, placed next to the design. 3. Right side: A simple black-and-white technical sketch of the gown's silhouette, plus handwritten-style text notes describing key design elements (fabric, layers, details). 4. Background: Clean white with subtle handwritten signature-style scribbles and design notes. Style: Soft watercolor and digital illustration hybrid, clean fashion sketch aesthetic, detailed fabric rendering (satin, tulle, organza), no harsh shadows, 4K ultra HD, direct image generation. Subject: 'Fashion design sheet for a gown inspired by {inspiration_subject}'.",
+        "parameters": [
+          {
+            "name": "inspiration_subject",
+            "label": "Design Inspiration Subject",
+            "type": "text",
+            "placeholder": ["Bamboo Leaf Zongzi", "Purple Orchid", "Rainbow Butterfly", "Cherry Blossom", "Peacock Feather", "Ocean Waves"]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-fashion-inspired-gown-design-sheet-ice-crystal-prev.jpg"
+  },
+  {
+    "id": "template-historical-figure-vs-infographic",
+    "locales": {
+      "en": {
+        "base_prompt": "(Historical Figure vs Infographic Creator) Create a side-by-side comparison infographic of two historical figures: '{figure_a}' and '{figure_b}'. Layout: 1. Split vertical layout with themed colors for each side. 2. Top: Figure name, title, and birth/death years. 3. Center: Cartoon-style portrait of the figure in their iconic attire, with themed background elements (e.g., lightning for Tesla, pyramids for Cleopatra). 4. Below portrait: Bullet-point list of key achievements, traits, and legacy. 5. Bottom: A meme-style character (e.g., wojak) with a final ironic quote about their fate. 6. Middle: A central badge with the comparison theme title. Style: Clean, bold cartoon illustration style, vibrant color palettes matching each figure's era/brand, easy-to-read text, no watermarks, 4K ultra HD, direct image generation. Subject: '{figure_a} vs {figure_b} Historical Comparison Infographic'.",
+        "parameters": [
+          {
+            "name": "figure_a",
+            "label": "First Historical Figure",
+            "type": "text",
+            "placeholder": ["Napoleon Bonaparte", "Cleopatra VII", "Nikola Tesla", "Galileo Galilei", "Wright Brothers", "Genghis Khan"]
+          },
+          {
+            "name": "figure_b",
+            "label": "Second Historical Figure",
+            "type": "text",
+            "placeholder": ["Alexander the Great", "Queen Himiko", "Thomas Edison", "Nicolaus Copernicus", "Alberto Santos-Dumont", "Attila the Hun"]
+          }
+        ]
+      }
+    },
+    "og_image": "/images/nano_insp_preview/template-historical-figure-vs-infographic-wright-brothers-vs-alberto-santos-dumont-prev.jpg"
   }
 ]
