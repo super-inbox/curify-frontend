@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 // scripts/generate_example_i18n_seeds.cjs
 //
-// Generates the EN seed entries in messages/en/example.json for inspirations
-// flagged with `allow_i18n: true` in public/data/nano_inspiration.json. Each
-// entry produces three SEO fields via Gemini:
+// Generates EN seed entries in messages/en/example.json for inspirations
+// flagged with `allow_i18n: true` in public/data/nano_inspiration.json.
+// Each entry has three SEO fields:
 //
 //   {
 //     title:           string  // <= 80 chars, SEO-rich H1
 //     description:     string  // ~150-word body paragraph (Trojan-horse copy)
 //     metaDescription: string  // <= 155 chars meta description
 //   }
+//
+// Partial entries are supported: if a hand-authored description (or any
+// other field) is already present in messages/en/example.json, the script
+// generates ONLY the missing fields and preserves the rest.
 //
 // After running this, fan out the other 9 locales with:
 //
@@ -20,19 +24,19 @@
 //   node scripts/generate_example_i18n_seeds.cjs --dry-run      # show prompt + sample
 //   node scripts/generate_example_i18n_seeds.cjs --limit=20     # only first 20 missing
 //   node scripts/generate_example_i18n_seeds.cjs --ids=a,b,c    # specific example ids
+//   node scripts/generate_example_i18n_seeds.cjs --model=gpt-4o # higher-quality output
 //
-// Requires GEMINI_API_KEY in .env.local.
+// Requires OPENAI_API_KEY in .env.local.
 
 "use strict";
 
 const fs = require("fs");
-const fsp = require("fs/promises");
 const path = require("path");
 
 let dotenv;
 try { dotenv = require("dotenv"); dotenv.config({ path: ".env.local" }); } catch {}
 
-const { GoogleGenAI } = require("@google/genai");
+const OpenAI = require("openai");
 
 const ROOT = path.resolve(__dirname, "..");
 const INSP_JSON = path.join(ROOT, "public/data/nano_inspiration.json");
@@ -40,17 +44,18 @@ const TEMPLATE_JSON = path.join(ROOT, "public/data/nano_templates.json");
 const EXAMPLE_I18N_EN = path.join(ROOT, "messages/en/example.json");
 const NANO_I18N_EN = path.join(ROOT, "messages/en/nano.json");
 
-const GEMINI_TEXT_MODEL = "gemini-2.5-flash";
+const DEFAULT_MODEL = "gpt-4o-mini";
 
 // ── Args ──────────────────────────────────────────────────────────────────────
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const out = { dryRun: false, limit: Infinity, idsFilter: null };
+  const out = { dryRun: false, limit: Infinity, idsFilter: null, model: DEFAULT_MODEL };
   for (const a of args) {
     if (a === "--dry-run") out.dryRun = true;
     else if (a.startsWith("--limit=")) out.limit = parseInt(a.split("=")[1], 10);
     else if (a.startsWith("--ids=")) out.idsFilter = new Set(a.split("=")[1].split(","));
+    else if (a.startsWith("--model=")) out.model = a.split("=")[1];
   }
   return out;
 }
@@ -67,34 +72,68 @@ function writeJson(p, data) {
   fs.writeFileSync(p, JSON.stringify(data, null, 2) + "\n", "utf-8");
 }
 
-// ── Gemini ────────────────────────────────────────────────────────────────────
+// ── OpenAI ────────────────────────────────────────────────────────────────────
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-if (!GEMINI_API_KEY) {
-  console.error("❌ Missing GEMINI_API_KEY in environment / .env.local");
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+if (!OPENAI_API_KEY) {
+  console.error("❌ Missing OPENAI_API_KEY in environment / .env.local");
   process.exit(1);
 }
-const gemini = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
-async function geminiJson(prompt) {
-  const response = await gemini.models.generateContent({
-    model: GEMINI_TEXT_MODEL,
-    contents: [{ role: "user", parts: [{ text: prompt }] }],
+async function openaiJson(prompt, model) {
+  const response = await openai.chat.completions.create({
+    model,
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: "You are an SEO copywriter. Always return valid JSON." },
+      { role: "user", content: prompt },
+    ],
+    temperature: 0.7,
   });
-  const parts = response?.candidates?.[0]?.content?.parts || response?.parts || [];
-  const text = parts.map((p) => p.text || "").join("").trim();
-  // Extract first JSON object
-  const m = text.match(/\{[\s\S]*\}/);
-  if (!m) throw new Error(`Gemini returned no JSON: ${text.slice(0, 200)}`);
-  return JSON.parse(m[0]);
+  const text = response.choices?.[0]?.message?.content || "";
+  return JSON.parse(text);
 }
 
 // ── Prompt ────────────────────────────────────────────────────────────────────
 
-function buildPrompt({ exampleId, templateId, templateCategory, templateTitle, params, tags, fallbackTitle }) {
-  return `You are an SEO copywriter for a creative AI templates marketplace. Generate
-search-optimized English copy for one example image under a parameterized
-template. The example will be displayed at /nano-template/<slug>/example/<id>
+function buildPrompt({
+  exampleId,
+  templateId,
+  templateCategory,
+  templateTitle,
+  params,
+  tags,
+  fallbackTitle,
+  existingDescription,
+  fieldsNeeded,
+}) {
+  const fieldDescriptions = {
+    title: `"title": ≤ 80 chars. SEO-rich H1. Lead with the topic-intent
+    keyword (e.g. "Magic Johnson — ESFJ Floor General MBTI Card",
+    not "Nano Banana Prompt: Magic Johnson"). No brand/site suffix.`,
+    metaDescription: `"metaDescription": ≤ 155 chars. Suitable for the
+    <meta name="description"> tag and SERP snippet. Hook the searcher
+    with the content benefit, end with a soft CTA mentioning AI prompt
+    or generator.`,
+    description: `"description": 130–170 words. On-page body paragraph
+    (2–3 short sentences or one rich paragraph). Open by describing
+    what this example visually shows. Naturally include the topic-intent
+    keyword 1–2 times. Mention 1–2 audiences who'd benefit (creators,
+    language learners, designers, educators, fans, etc — pick whichever
+    fit). End with a soft CTA pointing to the prompt or generator.`,
+  };
+
+  const wantList = fieldsNeeded.map((f) => `  - ${fieldDescriptions[f]}`).join("\n");
+  const returnKeys = fieldsNeeded.map((f) => `"${f}"`).join(", ");
+
+  const existingBlock = existingDescription
+    ? `EXISTING DESCRIPTION (already authored — keep tone consistent, do NOT regenerate):\n${existingDescription}\n`
+    : "";
+
+  return `You are an SEO copywriter for a creative AI templates marketplace.
+Generate search-optimized English copy for one example image under a
+parameterized template. The example is shown at /nano-template/<slug>/example/<id>
 and needs to attract users searching for the underlying topic — not just
 "AI prompt" buyers.
 
@@ -105,29 +144,12 @@ CONTEXT:
 - Template title: ${templateTitle || "(none)"}
 - Example params: ${JSON.stringify(params)}
 - Example tags: ${JSON.stringify(tags || [])}
-- Fallback title (if any): ${fallbackTitle || "(none)"}
+- Fallback title: ${fallbackTitle || "(none)"}
+${existingBlock}
+GENERATE THESE FIELDS:
+${wantList}
 
-REQUIREMENTS — return ONLY a single JSON object with these three keys:
-
-  "title":           ≤ 80 chars. SEO-rich H1. Lead with the topic-intent
-                     keyword (e.g. "Banana Ripeness Visual Vocabulary
-                     Card", not "Nano Banana Prompt: Banana Ripeness").
-                     No brand/site suffix.
-
-  "metaDescription": ≤ 155 chars. Suitable for the <meta name="description">
-                     tag and SERP snippet. Hook the searcher with the
-                     content benefit, end with a soft CTA mentioning AI
-                     prompt / generator.
-
-  "description":     130–170 words. On-page body paragraph (2–3 short
-                     sentences or one rich paragraph). Open by describing
-                     what this example visually shows. Naturally include
-                     the topic-intent keyword 1–2 times. Mention 1–2
-                     audiences who'd benefit (creators, language learners,
-                     designers, educators — pick whichever fit). End
-                     with a soft CTA pointing to the prompt / generator.
-
-Output: a single valid JSON object, no markdown fences, no commentary.`;
+Return ONLY a JSON object with keys ${returnKeys}. No markdown, no commentary.`;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -138,25 +160,26 @@ async function main() {
   const inspirations = readJson(INSP_JSON) || [];
   const templates = readJson(TEMPLATE_JSON) || [];
   const templatesById = new Map(templates.map((t) => [t.id, t]));
-
-  // Template-level EN i18n (category/title) — provides extra context for the prompt
   const nanoEn = readJson(NANO_I18N_EN) || {};
-
   const existing = readJson(EXAMPLE_I18N_EN) || {};
 
-  const candidates = inspirations.filter((d) => {
-    if (!d.allow_i18n) return false;
-    if (existing[d.id] && existing[d.id].title) return false;
-    if (args.idsFilter && !args.idsFilter.has(d.id)) return false;
-    return true;
-  });
+  const allowed = inspirations.filter((d) => d.allow_i18n);
+  const REQUIRED = ["title", "metaDescription", "description"];
+
+  const candidates = allowed
+    .filter((d) => {
+      if (args.idsFilter && !args.idsFilter.has(d.id)) return false;
+      const e = existing[d.id] || {};
+      return REQUIRED.some((f) => !e[f]);
+    });
 
   console.log(`Total inspirations: ${inspirations.length}`);
-  console.log(`allow_i18n: true: ${inspirations.filter((d) => d.allow_i18n).length}`);
-  console.log(`Existing EN entries: ${Object.keys(existing).length}`);
-  console.log(`Missing entries to generate: ${candidates.length}`);
+  console.log(`allow_i18n: true: ${allowed.length}`);
+  console.log(`Existing entries (any field): ${Object.keys(existing).length}`);
+  console.log(`Entries needing generation: ${candidates.length}`);
+  console.log(`Model: ${args.model}`);
   if (args.limit !== Infinity) console.log(`Limit: ${args.limit}`);
-  if (args.dryRun) console.log("(dry-run — no API calls, sample first)");
+  if (args.dryRun) console.log("(dry-run — no API calls; sample first prompt only)");
   console.log("");
 
   const target = candidates.slice(0, args.limit);
@@ -166,11 +189,15 @@ async function main() {
   }
 
   let written = 0;
-  for (const ex of target) {
+  let failed = 0;
+  for (let i = 0; i < target.length; i++) {
+    const ex = target[i];
     const tpl = templatesById.get(ex.template_id);
     const tplI18n = nanoEn[ex.template_id] || {};
     const fallbackTitle =
       (ex.locales && (ex.locales.en?.title || ex.locales.zh?.title)) || "";
+    const e = existing[ex.id] || {};
+    const fieldsNeeded = REQUIRED.filter((f) => !e[f]);
 
     const prompt = buildPrompt({
       exampleId: ex.id,
@@ -180,32 +207,39 @@ async function main() {
       params: ex.params || {},
       tags: ex.tags || [],
       fallbackTitle,
+      existingDescription: e.description || null,
+      fieldsNeeded,
     });
 
     if (args.dryRun) {
       console.log(`-- ${ex.id} --`);
-      console.log(`prompt:\n${prompt.slice(0, 500)}…\n`);
-      // For dry-run, only show first prompt, then bail
+      console.log(`Fields needed: ${fieldsNeeded.join(", ")}`);
+      console.log(`Prompt:\n${prompt}\n`);
       break;
     }
 
-    process.stdout.write(`  → ${ex.id} ... `);
+    process.stdout.write(`  [${i + 1}/${target.length}] ${ex.id} (need: ${fieldsNeeded.join(",")}) ... `);
     try {
-      const result = await geminiJson(prompt);
-      const { title, description, metaDescription } = result || {};
-      if (!title || !description || !metaDescription) {
-        throw new Error(`Missing field(s). Got keys: ${Object.keys(result || {}).join(", ")}`);
+      const result = await openaiJson(prompt, args.model);
+      // Merge generated fields into existing entry
+      existing[ex.id] = { ...e };
+      for (const f of fieldsNeeded) {
+        if (typeof result?.[f] === "string" && result[f].trim()) {
+          existing[ex.id][f] = result[f].trim();
+        } else {
+          throw new Error(`Missing or empty field: ${f}`);
+        }
       }
-      existing[ex.id] = { title, description, metaDescription };
-      writeJson(EXAMPLE_I18N_EN, existing); // checkpoint after each — resumable
+      writeJson(EXAMPLE_I18N_EN, existing); // checkpoint after each
       written++;
       console.log("✓");
     } catch (e) {
       console.log(`✗ ${e.message}`);
+      failed++;
     }
   }
 
-  console.log(`\n${written} entries written to messages/en/example.json`);
+  console.log(`\n${written} entries written, ${failed} failed.`);
   console.log(`Run \`node scripts/i18n_autotranslate.cjs --base en --files example --write\` to fan out 9 other locales.`);
 }
 

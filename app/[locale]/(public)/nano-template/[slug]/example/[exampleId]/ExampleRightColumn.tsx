@@ -5,6 +5,7 @@ import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
+import DescriptionClamp from "@/app/[locale]/_components/DescriptionClamp";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
@@ -26,6 +27,7 @@ type Props = {
   chipExampleTopics?: string[];
   chipCategory?: string;
   title: string;
+  description?: string;
   templateId: string;
   slug: string;
   locale: string;
@@ -44,6 +46,7 @@ export default function ExampleRightColumn({
   chipExampleTopics,
   chipCategory,
   title,
+  description,
   templateId,
   slug,
   locale,
@@ -134,6 +137,8 @@ export default function ExampleRightColumn({
       <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
         {title}
       </h1>
+
+      {description ? <DescriptionClamp text={description} lines={2} /> : null}
 
       {/* Generate your own — param inputs */}
       {parameters.length > 0 && (
