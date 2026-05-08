@@ -37,12 +37,65 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   };
 }
 
+// Build a token list for the query that handles three cases:
+//   1. Whitespace-separated multi-word queries — each word is a token
+//      and we require ALL of them in a blob (AND match).
+//   2. Atomic queries (no whitespace) — the whole string is a token.
+//   3. CJK queries with no whitespace and >2 chars — fall back to
+//      character-bigrams since Chinese isn't space-segmented (e.g. the
+//      query "穿搭拆解提示词" produces bigrams 穿搭 / 搭拆 / 拆解 /
+//      解提 / 提示 / 示词 that we can match against template blobs).
+function buildSearchTokens(query: string): {
+  primary: string[];
+  bigrams: string[];
+} {
+  const primary = query
+    .split(/[\s,，、。.]+/)
+    .map((w) => w.trim())
+    .filter(Boolean);
+
+  const bigrams: string[] = [];
+  if (
+    primary.length === 1 &&
+    /[一-龥]/.test(primary[0]) &&
+    primary[0].length > 2
+  ) {
+    const w = primary[0];
+    for (let i = 0; i < w.length - 1; i++) {
+      const bg = w.slice(i, i + 2);
+      if (/^[一-龥]{2}$/.test(bg)) bigrams.push(bg);
+    }
+  }
+  return { primary, bigrams };
+}
+
+// Returns: { primaryHits, bigramHits, allPrimary }
+//   allPrimary  → true when every primary token appears in the blob
+//   bigramHits  → number of CJK bigrams that appear (only set when the
+//                 primary-token search yielded nothing useful)
+function scoreBlob(
+  blob: string,
+  tokens: { primary: string[]; bigrams: string[] }
+): { primaryHits: number; bigramHits: number; allPrimary: boolean } {
+  let primaryHits = 0;
+  for (const t of tokens.primary) if (blob.includes(t)) primaryHits++;
+  let bigramHits = 0;
+  for (const t of tokens.bigrams) if (blob.includes(t)) bigramHits++;
+  return {
+    primaryHits,
+    bigramHits,
+    allPrimary: primaryHits === tokens.primary.length,
+  };
+}
+
 export default async function SearchPage({ params, searchParams }: Props) {
   const { locale } = await params;
   const { q = "" } = await searchParams;
   const query = q.trim().toLowerCase();
 
   if (!query) redirect(`/${locale}`);
+
+  const tokens = buildSearchTokens(query);
 
   // Pull localized topic displayNames for this locale so e.g. zh "动漫" still
   // resolves to slug "anime". Mirrors the relative-path import style used in
@@ -94,9 +147,20 @@ export default async function SearchPage({ params, searchParams }: Props) {
       );
     }
   }
+  // A template's i18n blob matches when either:
+  //  - all whitespace-split primary tokens are present (covers "spain
+  //    travel"), or
+  //  - at least 2 CJK bigrams are present (covers "穿搭拆解提示词" → its
+  //    bigrams 穿搭, 拆解, 提示 spread across multiple zh templates).
   const matchedTemplateIdsByI18n = new Set<string>();
   for (const [tid, blob] of templateSearchBlob) {
-    if (blob.includes(query)) matchedTemplateIdsByI18n.add(tid);
+    const s = scoreBlob(blob, tokens);
+    if (
+      s.allPrimary ||
+      s.bigramHits >= (tokens.bigrams.length >= 4 ? 3 : 2)
+    ) {
+      matchedTemplateIdsByI18n.add(tid);
+    }
   }
 
   // Topic slug match → go straight to the topic page (reuses all existing
@@ -121,6 +185,26 @@ export default async function SearchPage({ params, searchParams }: Props) {
     });
     // Only redirect when the substring match is unambiguous (single hit).
     if (containsQuery.length === 1) target = containsQuery[0];
+  }
+  // If the full-query topic match was ambiguous or empty, try resolving
+  // a single primary token (e.g. "spain travel" → tokens [spain, travel],
+  // each is a topic — ambiguous, so fall through to free-text). But if
+  // exactly one token resolves to a topic, redirect there.
+  if (!target && tokens.primary.length > 1) {
+    const tokenMatches = tokens.primary
+      .map((tok) =>
+        ALL_SUGGESTIONS.find((s) => {
+          if (s.slug === tok) return true;
+          if (s.label.toLowerCase() === tok) return true;
+          if ((s.aliases ?? []).some((a) => a.toLowerCase() === tok)) return true;
+          const localized = localizedTopics[s.slug]?.displayName?.toLowerCase();
+          return !!localized && localized === tok;
+        })
+      )
+      .filter((s): s is SuggestionEntry => !!s);
+    // Multi-topic match (e.g. spain + travel): leave both out of redirect
+    // and let the free-text path show a results page that surfaces both.
+    if (tokenMatches.length === 1) target = tokenMatches[0];
   }
   if (target) redirect(`/${locale}/topics/${target.slug}`);
 
@@ -156,7 +240,13 @@ export default async function SearchPage({ params, searchParams }: Props) {
         .filter((v): v is string => typeof v === "string" && v.length > 0)
         .join(" ")
         .toLowerCase();
-      return blob.includes(query);
+      // Same matcher as the i18n template scan: all primary tokens
+      // present, or enough CJK bigrams as a fuzzier fallback.
+      const s = scoreBlob(blob, tokens);
+      return (
+        s.allPrimary ||
+        s.bigramHits >= (tokens.bigrams.length >= 4 ? 3 : 2)
+      );
     })
     .slice(0, 80);
 
