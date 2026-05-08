@@ -15,8 +15,11 @@ export const runtime = "nodejs";
 const BASE_URL = "https://www.curify-ai.com";
 const LOCALES = routing.locales;
 
-// Bump this only when nano template pages materially change
-const NANO_TEMPLATES_LASTMOD = "2026-03-11T00:00:00.000Z";
+// Bump this only when nano template pages materially change. Bumped
+// 2026-05-08 to recrawl after restricting hreflang/canonical to the
+// locales each template actually localizes (fixes "Duplicate without
+// user-selected canonical" reports for non-en/zh template URLs).
+const NANO_TEMPLATES_LASTMOD = "2026-05-08T00:00:00.000Z";
 
 // Keep unchanged pages stable
 const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
@@ -38,17 +41,31 @@ function getNanoTemplateRoutes(): Array<{
   locales: string[];
   lastmod: string;
 }> {
-  const raws = nanoTemplates as unknown as Array<{ id: string }>;
+  const raws = nanoTemplates as unknown as Array<{
+    id: string;
+    locales?: Record<string, unknown>;
+  }>;
 
   return raws
     .filter((t) => t?.id && typeof t.id === "string")
-    .map((t) => ({
-      route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
-      locales: [...LOCALES],
-      lastmod: SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim())
-        ? SEO_RETITLED_LASTMOD
-        : NANO_TEMPLATES_LASTMOD,
-    }));
+    .map((t) => {
+      // Only emit URLs for locales the template actually has content
+      // for (typically "en", sometimes "en"+"zh"). Including all 10
+      // locales here told Google about duplicate URLs that all rendered
+      // the same fallback content, triggering "Duplicate without
+      // user-selected canonical" deindex reports.
+      const tplLocales = t.locales ? Object.keys(t.locales) : [];
+      const localized = tplLocales.filter((l) =>
+        (LOCALES as readonly string[]).includes(l)
+      );
+      return {
+        route: `/nano-template/${encodeURIComponent(toSlug(t.id.trim()))}`,
+        locales: localized.length > 0 ? localized : ["en"],
+        lastmod: SEO_RETITLED_TEMPLATE_IDS.has(t.id.trim())
+          ? SEO_RETITLED_LASTMOD
+          : NANO_TEMPLATES_LASTMOD,
+      };
+    });
 }
 
 function getTagRoutes(): string[] {
