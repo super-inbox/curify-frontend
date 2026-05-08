@@ -95,19 +95,47 @@ function buildTopicRows(locale: string) {
   const templateById = new Map(templates.map((t) => [t.id, t]));
 
   return TOPIC_ROWS.map((topic) => {
-    const matched = inspirations.filter((insp) => {
+    // Group matched inspirations by template so the row showcases
+    // multiple templates instead of being dominated by whichever
+    // template happens to have the most examples tagged with this topic.
+    const buckets = new Map<string, Inspiration[]>();
+    for (const insp of inspirations) {
       const own = insp.topics ?? [];
       const parent = templateById.get(insp.template_id)?.topics ?? [];
-      return own.includes(topic) || parent.includes(topic);
-    });
+      if (!own.includes(topic) && !parent.includes(topic)) continue;
+      const arr = buckets.get(insp.template_id);
+      if (arr) arr.push(insp);
+      else buckets.set(insp.template_id, [insp]);
+    }
 
-    matched.sort((a, b) => {
-      const ar = templateById.get(a.template_id)?.rank_score ?? 0;
-      const br = templateById.get(b.template_id)?.rank_score ?? 0;
+    // Sort templates by rank_score desc, then take 1 inspiration per
+    // template (the first one — already in input order). If we hit the
+    // row limit before exhausting templates, stop. If we run out of
+    // unique templates and still have room, do a second pass picking
+    // additional examples from the highest-ranked templates.
+    const sortedTemplateIds = [...buckets.keys()].sort((a, b) => {
+      const ar = templateById.get(a)?.rank_score ?? 0;
+      const br = templateById.get(b)?.rank_score ?? 0;
       return br - ar;
     });
 
-    const items = matched.slice(0, ROW_LIMIT).map((x) => ({
+    const picked: Inspiration[] = [];
+    for (const tid of sortedTemplateIds) {
+      if (picked.length >= ROW_LIMIT) break;
+      picked.push(buckets.get(tid)![0]);
+    }
+    if (picked.length < ROW_LIMIT) {
+      for (const tid of sortedTemplateIds) {
+        const rest = (buckets.get(tid) ?? []).slice(1);
+        for (const insp of rest) {
+          if (picked.length >= ROW_LIMIT) break;
+          picked.push(insp);
+        }
+        if (picked.length >= ROW_LIMIT) break;
+      }
+    }
+
+    const items = picked.map((x) => ({
       id: x.id,
       title:
         x.locales?.[locale]?.title ||
