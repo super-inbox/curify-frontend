@@ -38,3 +38,23 @@ export function useIsMobileLikeDevice(): boolean {
   }, []);
   return isMobile;
 }
+
+/**
+ * Column count for the standard `grid-cols-2 sm:grid-cols-3 lg:grid-cols-5`
+ * card grid used across the site (NanoInspirationRow, ExampleImagesGrid).
+ * Returns a desktop-default during SSR; updates on resize after mount.
+ */
+export function useGridCols(): number {
+  const [cols, setCols] = useState(5);
+  useEffect(() => {
+    const update = () => {
+      if (typeof window === "undefined") return;
+      const w = window.innerWidth;
+      setCols(w >= 1024 ? 5 : w >= 640 ? 3 : 2);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return cols;
+}

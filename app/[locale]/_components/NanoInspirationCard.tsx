@@ -21,6 +21,7 @@ import {
   getLocaleFromPath,
   toSlug,
 } from "@/lib/nano_utils";
+import { useGridCols } from "@/lib/device";
 
 import { NanoInspirationCardType } from "@/lib/nano_utils";
 
@@ -296,6 +297,8 @@ interface NanoInspirationRowProps {
   onViewClick?: (card: NanoInspirationCardType) => void;
   getRelatedScore?: (card: NanoInspirationCardType) => number;
   rankScoreRelatedShift?: number;
+  /** Cap visible rows by default; toggle the rest via See more / See less. */
+  maxRows?: number;
 }
 
 
@@ -305,7 +308,11 @@ export function NanoInspirationRow({
   onViewClick,
   getRelatedScore,
   rankScoreRelatedShift = 80,
+  maxRows = 4,
 }: NanoInspirationRowProps) {
+  const cols = useGridCols();
+  const [expanded, setExpanded] = useState(false);
+
   const scoredCards = cards.map((c) => {
     const relatedScore = Math.max(0, getRelatedScore?.(c) ?? 0);
     const base = c.rank_score ?? 1;
@@ -327,16 +334,34 @@ export function NanoInspirationRow({
     (a, b) => b._debug.finalScore - a._debug.finalScore
   );
 
+  const limit = cols * maxRows;
+  const visibleCards = expanded ? sortedCards : sortedCards.slice(0, limit);
+  const hiddenCount = Math.max(0, sortedCards.length - limit);
+
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-      {sortedCards.map((c) => (
-        <NanoInspirationCard
-          key={c.id}
-          card={c}
-          requireAuth={requireAuth}
-          onViewClick={onViewClick}
-        />
-      ))}
+    <div>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {visibleCards.map((c) => (
+          <NanoInspirationCard
+            key={c.id}
+            card={c}
+            requireAuth={requireAuth}
+            onViewClick={onViewClick}
+          />
+        ))}
+      </div>
+
+      {hiddenCount > 0 && (
+        <div className="mt-5 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-50"
+          >
+            {expanded ? "See less" : `See more (${hiddenCount})`}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
