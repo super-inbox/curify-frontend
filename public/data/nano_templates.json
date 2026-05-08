@@ -6170,5 +6170,94 @@
     "base_rank_score": 90,
     "rank_score": 130,
     "creation_date": "2026-05-07"
-  }
+  },
+  {
+    "id": "template-relationship-advice-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Relationship Advice Infographic Designer) Create a warm, professional infographic titled \"{relationship_type} ADVICE FOR {focus}\". Layout: 1. Top: Bold main title with a heart icon, followed by a decorative subtitle banner. 2. Left side: A warm photo of people representing the relationship type (e.g., couple, colleagues, family) within a soft pink-gold frame. 3. Center-left: A circular quote box with a key message about the relationship. 4. Right side: A list of 6 tips, each with a themed icon and short description. 5. Bottom: A footer quote summarizing the core message. Style: Soft pastel color palette (navy blue, blush pink, gold accents), clean typography, minimalist botanical decorations, warm and uplifting mood, no watermarks, 4K ultra HD, direct image generation. Subject: '{relationship_type} Advice Infographic'.",
+            "parameters": [
+                {
+                    "name": "relationship_type",
+                    "label": "Relationship Type",
+                    "type": "text",
+                    "placeholder": ["Partnership", "Marriage", "Colleague", "Classmate", "Parenting", "Teacher-Student", "Friendship", "Mentorship"]
+                },
+                {
+                    "name": "focus",
+                    "label": "Infographic Focus",
+                    "type": "text",
+                    "placeholder": ["Business Success", "Newlyweds", "Professionals", "Student Success", "Loving Families", "Educational Growth", "Healthy Bonds", "Career Growth"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-relationship-advice-infographic-teacher-student-prev.jpg"
+},
+  {
+    "id": "template-fashion-nail-art-design",
+    "locales": {
+        "en": {
+            "base_prompt": "(Themed Nail Art Designer) Create a photorealistic close-up of a hand with manicured nails inspired by '{theme}'. Layout: 1. Fingers with nails featuring the theme: solid base colors, delicate hand-painted designs, and glitter/foil accents matching the theme. 2. Alternating designs: some nails with the motif, others with solid color + glitter tips. 3. Soft, natural lighting, shallow depth of field, focus on nail details. 4. Background: subtle, blurred scene that complements the theme (e.g., flower field, beach, cherry blossom vase). Style: Glossy gel polish finish, clean and elegant aesthetic, no harsh shadows, 4K ultra HD, direct image generation. Subject: '{theme} themed nail art design'.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Nail Art Theme",
+                    "type": "text",
+                    "placeholder": ["Sunflower", "Cherry Blossom", "Ocean Waves", "Lavender Fields", "Vintage Roses", "Butterfly Wings"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-fashion-nail-art-design-tropical-flower-prev.jpg"
+},
+  {
+    "id": "template-room-vocabulary-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Room Vocabulary Infographic Designer) Create a clean, educational vocabulary infographic titled \"{room_type} VOCABULARY\". Layout: 1. Top title in playful hand-drawn font with small doodles matching the theme. 2. Center: A detailed line-art illustration of the room, with key objects labeled. 3. Smaller labeled doodles of related items grouped at the bottom. 4. All labels are in simple, clear text with arrows pointing to the objects. Style: Minimalist black-and-white line art with subtle pastel accents, cute and educational aesthetic, no shading, 4K ultra HD, direct image generation. Subject: '{room_type} vocabulary infographic for language learning'.",
+            "parameters": [
+                {
+                    "name": "room_type",
+                    "label": "Room/Topic Type",
+                    "type": "text",
+                    "placeholder": ["Garden", "Kitchen", "Bathroom", "Living Room", "Office", "Bedroom", "Classroom", "Restaurant"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-room-vocabulary-infographic-bathroom-prev.jpg"
+},
+  {
+    "id": "template-english-word-difference-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Word Difference Infographic Creator) Create a clean educational infographic titled \"What's the Difference?\" about {topic}. Layout: 1. Top header with the title in a light blue banner. 2. A grid of word pairs, each with two green highlighted words, a quote-style text box explaining their difference, and a simple example sentence. 3. Minimalist design with white background, black text, and light green/red accents. Style: Simple, modern, easy-to-read educational infographic, no clutter, clear typography, 4K ultra HD, direct image generation. Subject: '{topic} commonly confused words infographic'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Topic",
+                    "type": "text",
+                    "placeholder": ["Common English Confusions", "Emotion Vocabulary", "Tech Terms", "Business Jargon", "Homophones & Homonyms"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-word-difference-infographic-preview.jpg"
+},
+  {
+    "id": "template-personal-fashion-outfit-style-variations",
+    "locales": {
+        "en": {
+            "base_prompt": "(Outfit Style Variation Creator) Create a fashion lookbook-style composite image. On the left: the original reference photo of a person in a neutral pose. On the right: four identical full-body shots of the same person, each styled in a different outfit: {style1}, {style2}, {style3}, {style4}. Each look is labeled below with the style name. All images have a clean white background, natural lighting, and maintain the person's facial features, hair, and body shape. Style: Realistic fashion photography, high resolution, consistent lighting, 4K ultra HD, direct image generation. Subject: '{person} in four different fashion styles'.",
+            "parameters": {
+                "style1": "First Outfit Style",
+                "style2": "Second Outfit Style",
+                "style3": "Third Outfit Style",
+                "style4": "Fourth Outfit Style"
+            }
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-personal-fashion-outfit-style-variations-women-1-prev.jpg"
+}
 ]
