@@ -44,10 +44,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? entry.keywords
     : [tag, 'AI prompt', 'Nano Banana', 'prompt library'];
 
-  const canonicalUrl = getCanonicalUrl(
-    locale,
-    `/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`
-  );
+  const path = `/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`;
+
+  // Tag pages list prompts that are en-only — non-en locales differ
+  // only in a 1-line title/description while the rest of the body is
+  // identical. Google treated those as duplicates ("Crawled - currently
+  // not indexed"). Keep only the en page indexable and canonical the
+  // others to en.
+  const isCanonicalLocale = locale === "en";
+  const canonicalUrl = isCanonicalLocale
+    ? getCanonicalUrl(locale, path)
+    : getCanonicalUrl("en", path);
 
   return {
     title,
@@ -76,22 +83,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [`${SITE_URL}/images/og-prompts.jpg`],
       creator: '@nanobanana',
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    robots: isCanonicalLocale
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+          },
+        }
+      : { index: false, follow: true },
     alternates: {
       canonical: canonicalUrl,
-      languages: getLanguagesMap(
-        `/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`
-      ),
+      // Only en is indexable; hreflang only references en.
+      languages: {
+        en: getCanonicalUrl("en", path),
+        "x-default": getCanonicalUrl("en", path),
+      },
     },
   };
 }

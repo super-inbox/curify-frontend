@@ -41,6 +41,7 @@ export type NanoMessagesDict = Record<string, NanoLocaleMessageEntry>;
 export type NanoTemplateCore = {
   id: string;
   og_image?: string;
+  locales?: Record<string, unknown>;
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -142,10 +143,29 @@ export function buildNanoTemplateMetadata(opts: {
   const message = resolveLocaleMessage(templateId, nanoMessages);
 
   const path = `/nano-template/${slug}`;
-  const canonicalUrl = getCanonicalUrl(localeStr, path);
+
+  // Templates only have content in the locales listed under `locales`
+  // in nano_templates.json (typically just "en", sometimes "en"+"zh").
+  // Pages rendered for any other locale fall back to that content,
+  // producing identical output across many URLs — Google then flags them
+  // as "Duplicate without user-selected canonical". To prevent that:
+  //   - hreflang lists ONLY the localized locales (not all 10)
+  //   - locales without their own content canonical to the primary one
+  //     and are noindex'd
+  const localizedLocales = (
+    templateCore?.locales ? Object.keys(templateCore.locales) : ["en"]
+  ).filter((l) => SUPPORTED_LOCALES.includes(l as (typeof SUPPORTED_LOCALES)[number]));
+  const primaryLocale = localizedLocales.includes("en")
+    ? "en"
+    : localizedLocales[0] ?? "en";
+  const isLocalized = localizedLocales.includes(localeStr);
+
+  const canonicalUrl = isLocalized
+    ? getCanonicalUrl(localeStr, path)
+    : getCanonicalUrl(primaryLocale, path);
 
   const languages = Object.fromEntries(
-    SUPPORTED_LOCALES.map((locale) => [locale, getCanonicalUrl(locale, path)])
+    localizedLocales.map((locale) => [locale, getCanonicalUrl(locale, path)])
   );
 
   const title = normalizeText(message?.title) || fallbackTitle;
@@ -159,10 +179,12 @@ export function buildNanoTemplateMetadata(opts: {
       canonical: canonicalUrl,
       languages: {
         ...languages,
-        "x-default": getCanonicalUrl("en", path),
+        "x-default": getCanonicalUrl(primaryLocale, path),
       },
     },
-    robots: { index: true, follow: true },
+    robots: isLocalized
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     openGraph: {
       type: "website",
       title,
@@ -252,6 +274,8 @@ export type ProPromptMetadataInput = {
   author?: string;
   authorHandle?: string;
   keywords: string[];
+  /** Current page locale; used to noindex non-en variants (prompts are en-only). */
+  locale?: string;
 };
 
 /**
@@ -273,9 +297,16 @@ export function buildProPromptMetadata(
     author,
     authorHandle,
     keywords,
+    locale,
   } = input;
 
   const fullTitle = `${title} | Nano Banana Pro Prompts`;
+
+  // Prompt content (title/description/promptText) is en-only — even when
+  // rendered under /zh/, /de/, etc., the body is the same English text.
+  // Noindex non-en locales so they don't show up as "Crawled - not
+  // indexed" duplicates competing with the en canonical.
+  const isCanonicalLocale = !locale || locale === "en";
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -285,10 +316,14 @@ export function buildProPromptMetadata(
 
     alternates: {
       canonical: canonicalUrl,
-      languages: buildProPromptAlternates(buildUrl),
+      // Hreflang only points to the en canonical — there are no real
+      // localized variants to alternate between.
+      languages: { en: buildUrl("en"), "x-default": buildUrl("en") },
     },
 
-    robots: { index: true, follow: true },
+    robots: isCanonicalLocale
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
 
     authors: author
       ? [
