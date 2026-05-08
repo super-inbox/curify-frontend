@@ -5,7 +5,6 @@ import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import DescriptionClamp from "@/app/[locale]/_components/DescriptionClamp";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
@@ -138,7 +137,12 @@ export default function ExampleRightColumn({
         {title}
       </h1>
 
-      {description ? <DescriptionClamp text={description} lines={2} /> : null}
+      {/* Localized description kept in DOM (sr-only) for SEO + screen
+          readers but invisible visually — matches the topic page pattern.
+          Removes the bulky paragraph from the right column without losing
+          the per-locale text Google needs to differentiate the 10
+          allow_i18n locale pages. */}
+      {description ? <p className="sr-only whitespace-pre-line">{description}</p> : null}
 
       {/* Generate your own — param inputs */}
       {parameters.length > 0 && (
