@@ -52,7 +52,9 @@ const IMAGE_URL_PREFIX   = "/images/nano_insp/";
 const PREVIEW_URL_PREFIX = "/images/nano_insp_preview/";
 
 const GEMINI_TEXT_MODEL  = "gemini-2.5-flash";
-const GEMINI_IMAGE_MODEL = "gemini-2.5-flash-image";
+// "Nano Banana Pro" — higher fidelity for per-template image generation
+// (matches generate_template_examples.cjs default).
+const GEMINI_IMAGE_MODEL = "gemini-3-pro-image-preview";
 
 const MAX_PREVIEW_SIZE = 512;
 const MAX_PREVIEW_KB   = 250;
