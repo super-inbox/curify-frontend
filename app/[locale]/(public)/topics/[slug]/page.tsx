@@ -225,16 +225,16 @@ export default async function Page({ params }: Props) {
       <section className="mx-auto max-w-[1400px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
         <div>
+          {/* Localized description + intro are kept in the DOM (so Google
+              and screen readers see them) but visually hidden via sr-only.
+              They're our main per-locale prose used to differentiate
+              topic pages across the 10 supported languages. */}
           {topicDescription ? (
-            <p className="mt-3 text-base leading-7 text-neutral-600">
-              {topicDescription}
-            </p>
+            <p className="sr-only">{topicDescription}</p>
           ) : null}
 
           {topicIntro ? (
-            <p className="mt-3 text-sm leading-7 text-neutral-700 whitespace-pre-line">
-              {topicIntro}
-            </p>
+            <p className="sr-only whitespace-pre-line">{topicIntro}</p>
           ) : null}
 
           {relatedTopicIds.length > 0 && (
