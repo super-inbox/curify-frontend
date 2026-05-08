@@ -5,7 +5,7 @@
  *
  *   rank_score = base_rank_score + freshness_bonus + engagement_bonus
  *
- *   freshness_bonus  = max(0, round(40 × (1 − days_old / 14)))   // 0–40
+ *   freshness_bonus  = max(0, round(20 × (1 − days_old / 14)))   // 0–20
  *   engagement_bonus = min(60, 0.2 × engagement_signal)          // 0–60
  *
  * where days_old comes from each template's creation_date (backfilled
@@ -198,7 +198,7 @@ async function fetchRankScores(client) {
 
 // Final rank_score = base_rank_score + freshness_bonus + engagement_bonus,
 // where each bonus is capped at 40 so neither component dominates.
-const FRESHNESS_BONUS_MAX = 40;
+const FRESHNESS_BONUS_MAX = 20;
 const FRESHNESS_WINDOW_DAYS = 14;
 const ENGAGEMENT_WEIGHT = 0.2;
 const ENGAGEMENT_BONUS_MAX = 60;
