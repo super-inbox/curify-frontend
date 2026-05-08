@@ -3,6 +3,7 @@
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Share2, Link2, Check } from "lucide-react";
+import { isMobileLikeDevice } from "@/lib/device";
 
 type ShareButtonProps = {
   url: string;
@@ -23,15 +24,6 @@ type ShareButtonProps = {
    */
   onOpenChange?: (open: boolean) => void;
 };
-
-function isMobileLikeDevice() {
-  if (typeof window === "undefined") return false;
-  const ua = navigator.userAgent || "";
-  const coarsePointer =
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(pointer: coarse)").matches;
-  return /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || coarsePointer;
-}
 
 const FacebookIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">

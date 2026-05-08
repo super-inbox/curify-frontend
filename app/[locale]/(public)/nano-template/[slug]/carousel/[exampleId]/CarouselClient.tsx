@@ -10,6 +10,7 @@ import ExampleVideoPlayer from "../../example/[exampleId]/ExampleVideoPlayer";
 import ExampleRightColumn from "../../example/[exampleId]/ExampleRightColumn";
 import { useTracking } from "@/services/useTracking";
 import { cdn } from "@/lib/cdn";
+import { useIsMobileLikeDevice } from "@/lib/device";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
 
@@ -162,6 +163,7 @@ export default function CarouselClient({
   siteUrl,
 }: Props) {
   const router = useRouter();
+  const isMobileDevice = useIsMobileLikeDevice();
   const [index, setIndex] = useState(initialIndex);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -412,7 +414,7 @@ export default function CarouselClient({
                         active={isActive}
                         autoPlay
                       />
-                    ) : isActive ? (
+                    ) : isActive && isMobileDevice ? (
                       <ZoomableSlideImage
                         key={s.id}
                         previewSrc={s.previewImageUrl}
