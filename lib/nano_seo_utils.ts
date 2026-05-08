@@ -274,6 +274,8 @@ export type ProPromptMetadataInput = {
   author?: string;
   authorHandle?: string;
   keywords: string[];
+  /** Current page locale; used to noindex non-en variants (prompts are en-only). */
+  locale?: string;
 };
 
 /**
@@ -295,9 +297,16 @@ export function buildProPromptMetadata(
     author,
     authorHandle,
     keywords,
+    locale,
   } = input;
 
   const fullTitle = `${title} | Nano Banana Pro Prompts`;
+
+  // Prompt content (title/description/promptText) is en-only — even when
+  // rendered under /zh/, /de/, etc., the body is the same English text.
+  // Noindex non-en locales so they don't show up as "Crawled - not
+  // indexed" duplicates competing with the en canonical.
+  const isCanonicalLocale = !locale || locale === "en";
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -307,10 +316,14 @@ export function buildProPromptMetadata(
 
     alternates: {
       canonical: canonicalUrl,
-      languages: buildProPromptAlternates(buildUrl),
+      // Hreflang only points to the en canonical — there are no real
+      // localized variants to alternate between.
+      languages: { en: buildUrl("en"), "x-default": buildUrl("en") },
     },
 
-    robots: { index: true, follow: true },
+    robots: isCanonicalLocale
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
 
     authors: author
       ? [

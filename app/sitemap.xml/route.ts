@@ -21,6 +21,11 @@ const LOCALES = routing.locales;
 // user-selected canonical" reports for non-en/zh template URLs).
 const NANO_TEMPLATES_LASTMOD = "2026-05-08T00:00:00.000Z";
 
+// Bumped 2026-05-08 — topic pages got per-locale `intro` paragraphs +
+// keywords (fixes "Crawled - currently not indexed" for non-en/zh
+// topic URLs that previously rendered near-identical content).
+const TOPICS_LASTMOD = "2026-05-08T00:00:00.000Z";
+
 // Keep unchanged pages stable
 const STABLE_LASTMOD = "2026-03-01T00:00:00.000Z";
 
@@ -174,7 +179,7 @@ export async function GET() {
   topicRoutes.forEach((route) => {
     LOCALES.forEach((locale) => {
       urls += generateUrlEntry(locale, route, {
-        lastmod: STABLE_LASTMOD,
+        lastmod: TOPICS_LASTMOD,
         changefreq: "weekly",
         priority: "0.8",
       });

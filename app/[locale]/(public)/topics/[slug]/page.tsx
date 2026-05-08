@@ -46,10 +46,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const t = await getTranslations({ locale });
   const safeT = (key: string) => { try { return t(key as never) ?? ""; } catch { return ""; } };
+  const safeRaw = <T,>(key: string): T | null => {
+    try { return (t as { raw: (k: string) => T }).raw(key) ?? null; } catch { return null; }
+  };
 
   const displayName = safeT(`topics.${slug}.displayName`) || titleCaseFromSlug(slug);
   const title = safeT(`topics.${slug}.title`) || `${displayName} — Nano Banana AI Templates`;
   const description = safeT(`topics.${slug}.description`) || `Explore ${displayName} AI visual templates and prompts on Nano Banana.`;
+  const keywordsRaw = safeRaw<string[]>(`topics.${slug}.keywords`);
+  const keywords = Array.isArray(keywordsRaw) && keywordsRaw.length > 0 ? keywordsRaw : undefined;
 
   const canonical = getCanonicalUrl(locale, `/topics/${slug}`);
   const languages = getLanguagesMap(`/topics/${slug}`);
@@ -57,6 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords,
     alternates: { canonical, languages },
     openGraph: {
       title: `${displayName} | Nano Banana`,
@@ -180,6 +186,11 @@ export default async function Page({ params }: Props) {
   const topicDescription =
     translateTopics(`topics.${slug}.description`) || "";
 
+  // Longer 3-4 sentence intro paragraph rendered under the title — gives
+  // each locale enough unique localized prose for Google to treat it as
+  // its own page rather than a duplicate of the en version.
+  const topicIntro = translateTopics(`topics.${slug}.intro`) || "";
+
   const exampleImagesHeading =
     translateTopics("topicPage.exampleImagesHeading") || "Example Images";
   const templatesHeading =
@@ -217,6 +228,12 @@ export default async function Page({ params }: Props) {
           {topicDescription ? (
             <p className="mt-3 text-base leading-7 text-neutral-600">
               {topicDescription}
+            </p>
+          ) : null}
+
+          {topicIntro ? (
+            <p className="mt-3 text-sm leading-7 text-neutral-700 whitespace-pre-line">
+              {topicIntro}
             </p>
           ) : null}
 

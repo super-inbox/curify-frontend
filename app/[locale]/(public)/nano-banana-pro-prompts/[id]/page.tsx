@@ -81,6 +81,7 @@ export async function generateMetadata({
         "prompt library",
         ...prompt.tags,
       ].filter(Boolean),
+      locale,
     },
     (l) => buildPromptPath(l, prompt.id)
   );
