@@ -41,23 +41,38 @@ if (!['corner', 'tiled'].includes(mode)) {
   process.exit(1);
 }
 
+// Optional --ids=id1,id2,... filter to limit processing to specific
+// record ids (avoids re-watermarking already-stamped CDN copies).
+const idsArg = args.find(a => a.startsWith('--ids='));
+const idFilter = idsArg
+  ? new Set(idsArg.split('=')[1].split(',').map(s => s.trim()).filter(Boolean))
+  : null;
+
+// --local: read source images from public/images/ instead of downloading
+// from the CDN. Useful for fresh-generated images that haven't been
+// synced to GCS yet.
+const useLocalSource = args.includes('--local');
+
 const templateId = args.find(a => !a.startsWith('--'));
 if (!templateId) {
-  console.error('Usage: node scripts/watermark_template_images.cjs <template-id> [--mode=corner|tiled]');
+  console.error('Usage: node scripts/watermark_template_images.cjs <template-id> [--mode=corner|tiled] [--ids=id1,id2,...]');
   process.exit(1);
 }
 
 // ── Load inspiration JSON ─────────────────────────────────────────────────────
 
 const records = JSON.parse(fs.readFileSync(INSP_JSON, 'utf-8'));
-const images = records.filter(r => r.template_id === templateId);
+let images = records.filter(r => r.template_id === templateId);
+if (idFilter) {
+  images = images.filter(r => idFilter.has(r.id));
+}
 
 if (images.length === 0) {
-  console.error(`No images found for template_id "${templateId}"`);
+  console.error(`No images found for template_id "${templateId}"${idFilter ? ` (after --ids filter)` : ''}`);
   process.exit(1);
 }
 
-console.log(`Found ${images.length} images for "${templateId}"`);
+console.log(`Found ${images.length} images for "${templateId}"${idFilter ? ` (filtered)` : ''}`);
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -92,7 +107,16 @@ for (const record of images) {
     try {
       process.stdout.write(`  [${label}] ${filename} ... `);
 
-      downloadImage(fullUrl, srcFile);
+      if (useLocalSource) {
+        const localDir = isPreview ? LOCAL_PREVIEW_DIR : LOCAL_INSP_DIR;
+        const localSrc = path.join(localDir, filename);
+        if (!fs.existsSync(localSrc)) {
+          throw new Error(`local source missing: ${localSrc}`);
+        }
+        fs.copyFileSync(localSrc, srcFile);
+      } else {
+        downloadImage(fullUrl, srcFile);
+      }
 
       if (mode === 'tiled') {
         applyTiledWatermark(srcFile, destFile);
