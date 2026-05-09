@@ -58,7 +58,7 @@ function buildSearchTokens(query: string): {
   if (
     primary.length === 1 &&
     /[一-龥]/.test(primary[0]) &&
-    primary[0].length > 2
+    primary[0].length >= 2
   ) {
     const w = primary[0];
     for (let i = 0; i < w.length - 1; i++) {
@@ -67,6 +67,16 @@ function buildSearchTokens(query: string): {
     }
   }
   return { primary, bigrams };
+}
+
+// "Enough bigrams matched" threshold, scaled by how many bigrams the
+// query produced. 1-bigram (2-char) queries require their single bigram;
+// 2-3-bigram queries require 2; 4+-bigram queries require 3 to filter
+// trivial overlap matches (e.g. 提示 + 示词 from a "提示词" suffix).
+function bigramHitThreshold(n: number): number {
+  if (n <= 1) return 1;
+  if (n <= 3) return 2;
+  return 3;
 }
 
 // Returns: { primaryHits, bigramHits, allPrimary }
@@ -100,13 +110,16 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // Pull localized topic displayNames for this locale so e.g. zh "动漫" still
   // resolves to slug "anime". Mirrors the relative-path import style used in
   // i18n/request.ts (the @/ alias doesn't always resolve in dynamic imports).
+  // Topic translations live in messages/<locale>/topics.json since the move
+  // out of home.json (commit 79776fc) — falling back to the en topics file
+  // if the requested locale's file is missing.
   let localizedTopics: Record<string, { displayName?: string }> = {};
   try {
-    const home = (await import(`../../../../messages/${locale}/home.json`)).default;
-    localizedTopics = (home as any).topics ?? {};
+    const topicsFile = (await import(`../../../../messages/${locale}/topics.json`)).default;
+    localizedTopics = (topicsFile as any).topics ?? {};
   } catch {
-    const home = (await import(`../../../../messages/en/home.json`)).default;
-    localizedTopics = (home as any).topics ?? {};
+    const topicsFile = (await import(`../../../../messages/en/topics.json`)).default;
+    localizedTopics = (topicsFile as any).topics ?? {};
   }
 
   // Load template-level i18n so non-Latin queries (e.g. zh "反义词") and locale-
@@ -152,13 +165,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
   //    travel"), or
   //  - at least 2 CJK bigrams are present (covers "穿搭拆解提示词" → its
   //    bigrams 穿搭, 拆解, 提示 spread across multiple zh templates).
+  const bigramThreshold = bigramHitThreshold(tokens.bigrams.length);
   const matchedTemplateIdsByI18n = new Set<string>();
   for (const [tid, blob] of templateSearchBlob) {
     const s = scoreBlob(blob, tokens);
-    if (
-      s.allPrimary ||
-      s.bigramHits >= (tokens.bigrams.length >= 4 ? 3 : 2)
-    ) {
+    if (s.allPrimary || s.bigramHits >= bigramThreshold) {
       matchedTemplateIdsByI18n.add(tid);
     }
   }
@@ -243,10 +254,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       // Same matcher as the i18n template scan: all primary tokens
       // present, or enough CJK bigrams as a fuzzier fallback.
       const s = scoreBlob(blob, tokens);
-      return (
-        s.allPrimary ||
-        s.bigramHits >= (tokens.bigrams.length >= 4 ? 3 : 2)
-      );
+      return s.allPrimary || s.bigramHits >= bigramThreshold;
     })
     .slice(0, 80);
 
