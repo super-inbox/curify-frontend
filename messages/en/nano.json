@@ -3027,5 +3027,107 @@
         ]
       }
     }
+  },
+  "template-relationship-advice-infographic": {
+    "category": "Relationship Advice Infographic",
+    "description": "Warm pastel infographics with practical relationship tips — pick a relationship type and focus, get six tips with themed icons and a closing quote.",
+    "title": "Relationship Advice Infographic Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a soft pastel relationship-advice infographic. The layout opens with a heart-iconed title 'X ADVICE FOR Y', a warm photo of the relationship type on the left in a blush-and-gold frame, a circular pull-quote, six tip cards with themed icons, and a closing footer quote. Design language is navy + blush + gold with minimalist botanicals.",
+        "who": "Suitable for relationship coaches, parenting bloggers, HR / team-building content creators, classroom teachers building rapport posters, and creators making shareable couples or workplace advice cards.",
+        "how": [
+          "Pick a relationship type (Marriage, Mentorship, Colleague, Parenting, Friendship, etc.).",
+          "Pick a focus angle (Newlyweds, Career Growth, Educational Growth, Healthy Bonds…).",
+          "Generate a 4K warm pastel relationship-advice infographic with photo, six tips, and footer quote."
+        ],
+        "prompts": [
+          "Generate a Marriage advice infographic for newlyweds with pastel pink and gold accents.",
+          "Create a Teacher-Student advice infographic focused on educational growth.",
+          "Generate a Mentorship advice infographic for career growth with warm photo framing."
+        ]
+      }
+    }
+  },
+  "template-fashion-nail-art-design": {
+    "category": "Themed Nail Art",
+    "description": "Photorealistic close-up of manicured nails in any theme — sunflower, cherry blossom, ocean waves — with glossy gel finish and soft natural lighting.",
+    "title": "Themed Nail Art Design Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a glossy gel-finish photorealistic nail art close-up. Each nail alternates between a hand-painted thematic motif and a solid color with glitter or foil tip. Soft natural light with shallow depth of field foregrounds the nail detail; a subtly blurred background ties to the theme.",
+        "who": "Suitable for nail-art studios, beauty bloggers, ecommerce nail-polish brands, nail-tech educators making moodboards, and TikTok/Reels creators showcasing seasonal nail trends.",
+        "how": [
+          "Pick a theme (Sunflower, Cherry Blossom, Ocean Waves, Lavender Fields, Vintage Roses, Butterfly Wings…).",
+          "Generate a photorealistic close-up with glossy gel finish, motif + solid alternating designs, and a subtle thematic background blur."
+        ],
+        "prompts": [
+          "Generate a Cherry Blossom themed nail art with pink ombré base and gold foil tips.",
+          "Create an Ocean Waves nail art design with iridescent blue gel and white wave details.",
+          "Generate a Lavender Fields nail art design with soft purple gradient and glitter accents."
+        ]
+      }
+    }
+  },
+  "template-room-vocabulary-infographic": {
+    "category": "Room Vocabulary Infographic",
+    "description": "Cute black-and-white line-art vocabulary posters labeling objects in any room — kitchen, bedroom, bathroom, classroom — with pastel accents.",
+    "title": "Room Vocabulary Infographic Maker",
+    "content": {
+      "sections": {
+        "what": "This template generates a minimalist line-art vocabulary infographic for any room. The layout has a hand-drawn title with theme doodles, a central detailed line illustration of the room with key items labeled, and a bottom strip of related smaller doodles also labeled. Subtle pastel accents on otherwise black-on-white lines.",
+        "who": "Suitable for ESL teachers, vocabulary-card creators, kids language-learning brands, parents homeschooling young learners, and Pinterest creators making aesthetic study posters.",
+        "how": [
+          "Pick a room or scene (Kitchen, Bathroom, Bedroom, Office, Classroom, Garden, Restaurant…).",
+          "Generate a 4K cute line-art vocabulary infographic with labeled objects and a doodle strip."
+        ],
+        "prompts": [
+          "Generate a Kitchen vocabulary infographic with labeled appliances and ingredients.",
+          "Create a Classroom vocabulary infographic with desks, books, and supplies labeled.",
+          "Generate a Garden vocabulary infographic with plants, tools, and outdoor items."
+        ]
+      }
+    }
+  },
+  "template-english-word-difference-infographic": {
+    "category": "English Word Difference Infographic",
+    "description": "Educational 'What's the Difference?' poster comparing commonly-confused English word pairs with definitions and example sentences.",
+    "title": "English Word Difference Infographic Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean educational infographic clarifying commonly-confused English words. The layout opens with a light blue banner header, then a grid of word pairs — each cell shows two green-highlighted words, a quote-style explanation of their difference, and an example sentence. White background, black text, light green/red accents.",
+        "who": "Suitable for ESL teachers, English-learning content creators, language-learning app marketers, vocabulary blog writers, and parents helping kids with confusing English pairs.",
+        "how": [
+          "Pick a topic (Common English Confusions, Homophones & Homonyms, Emotion Vocabulary, Tech Terms, Business Jargon…).",
+          "Generate a 4K minimalist 'What's the Difference?' infographic with word-pair grids."
+        ],
+        "prompts": [
+          "Generate a Common English Confusions infographic comparing affect/effect, then/than, your/you're.",
+          "Create an Emotion Vocabulary difference infographic explaining anxious vs nervous, sad vs depressed.",
+          "Generate a Homophones & Homonyms infographic with their/there/they're."
+        ]
+      }
+    }
+  },
+  "template-personal-fashion-outfit-style-variations": {
+    "category": "Outfit Style Variations Lookbook",
+    "description": "Fashion lookbook composite — your reference photo on the left, four full-body shots on the right styled in different outfits.",
+    "title": "Personal Outfit Style Variations Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a fashion lookbook-style composite. The left half shows the original reference photo of the person in a neutral pose. The right half shows four full-body shots of the same person each styled in a different outfit, labeled below with the style name. Clean white background, natural lighting, identical face/hair/body across the four variations.",
+        "who": "Suitable for personal stylists, fashion bloggers, ecommerce shoppers visualizing wardrobe builds, dating-profile photographers, and creators making 'styled X different ways' Reels.",
+        "how": [
+          "Provide a reference photo of the person (used as input).",
+          "Pick four outfit styles to compare (Streetwear, Old Money, Cottagecore, Y2K, Office Chic, Athleisure, etc.).",
+          "Generate a 4K lookbook composite with the reference + four labeled style variations."
+        ],
+        "prompts": [
+          "Generate an outfit style variations lookbook with Streetwear, Old Money, Cottagecore, Y2K.",
+          "Create a fashion lookbook variation with Office Chic, Athleisure, Date Night, Vacation.",
+          "Generate four-style outfit variations: Boho, Minimalist, Preppy, Edgy."
+        ]
+      }
+    }
   }
 }
