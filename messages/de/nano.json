@@ -3028,5 +3028,107 @@
         ]
       }
     }
+  },
+  "template-relationship-advice-infographic": {
+    "category": "Infografik für Beziehungsratgeber",
+    "description": "Warme Pastell-Infografiken mit praktischen Beziehungstipps – wähle einen Beziehungstyp und Fokus, erhalte sechs Tipps mit thematischen Icons und einem abschließenden Zitat.",
+    "title": "Generator für Beziehungsratgeber-Infografiken",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine sanfte Pastell-Infografik für Beziehungsratgeber. Das Layout beginnt mit einem herz-iconisierten Titel 'X RAT FÜR Y', einem warmen Foto des Beziehungstyps links in einem Blush- und Goldrahmen, einem kreisförmigen Zitat, sechs Tippkarten mit thematischen Icons und einem abschließenden Fußzeilen-Zitat. Die Design-Sprache ist Marineblau + Blush + Gold mit minimalistischen botanischen Elementen.",
+        "who": "Geeignet für Beziehungscoaches, Elternblogger, HR-/Teambuilding-Inhaltsersteller, Lehrer, die Rapport-Poster erstellen, und Kreatoren, die teilbare Ratschläge für Paare oder am Arbeitsplatz erstellen.",
+        "how": [
+          "Wähle einen Beziehungstyp (Ehe, Mentoring, Kollege, Elternschaft, Freundschaft usw.).",
+          "Wähle einen Fokuswinkel (Frischverheiratete, Karrierewachstum, Bildung, gesunde Bindungen…).",
+          "Erstelle eine 4K warme Pastell-Infografik für Beziehungsratgeber mit Foto, sechs Tipps und Fußzeilen-Zitat."
+        ],
+        "prompts": [
+          "Erstelle eine Infografik für Ehe-Ratschläge für frisch Verheiratete mit pastellrosa und goldenen Akzenten.",
+          "Erstelle eine Infografik für Lehrer-Schüler-Ratschläge mit Fokus auf Bildung.",
+          "Erstelle eine Infografik für Mentoring-Ratschläge für Karrierewachstum mit warmem Foto-Rahmen."
+        ]
+      }
+    }
+  },
+  "template-fashion-nail-art-design": {
+    "category": "Themen-Nageldesign",
+    "description": "Fotorealistisches Close-up von manikürten Nägeln in jedem Thema – Sonnenblume, Kirschblüte, Ozeanwellen – mit glänzendem Gel-Finish und sanfter natürlicher Beleuchtung.",
+    "title": "Generator für Themen-Nageldesign",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein glänzendes Gel-Finish fotorealistisches Nageldesign-Close-up. Jeder Nagel wechselt zwischen einem handgemalten thematischen Motiv und einer einfarbigen Gestaltung mit Glitzer oder Folientipp. Sanftes natürliches Licht mit geringer Schärfentiefe hebt die Nageldetails hervor; ein subtil verschwommener Hintergrund passt zum Thema.",
+        "who": "Geeignet für Nagelkunststudios, Beauty-Blogger, E-Commerce-Nagellackmarken, Nageltechnik-Ausbilder, die Moodboards erstellen, und TikTok/Reels-Kreatoren, die saisonale Nageltrends präsentieren.",
+        "how": [
+          "Wähle ein Thema (Sonnenblume, Kirschblüte, Ozeanwellen, Lavendelfelder, Vintage-Rosen, Schmetterlingsflügel…).",
+          "Erstelle ein fotorealistisches Close-up mit glänzendem Gel-Finish, Motiv + einfarbigen abwechselnden Designs und einem subtilen thematischen Hintergrundunschärfe."
+        ],
+        "prompts": [
+          "Erstelle ein Nageldesign mit Kirschblüten-Thema mit pinkem Ombre-Grund und goldenen Folientipps.",
+          "Erstelle ein Nageldesign mit Ozeanwellen mit irisierendem blauen Gel und weißen Wellen-Details.",
+          "Erstelle ein Nageldesign mit Lavendelfeldern mit sanftem lila Farbverlauf und Glitzerakzenten."
+        ]
+      }
+    }
+  },
+  "template-room-vocabulary-infographic": {
+    "category": "Infografik zum Raumvokabular",
+    "description": "Niedliche schwarz-weiße Linienstil-Vokabelposter, die Objekte in jedem Raum beschriften – Küche, Schlafzimmer, Badezimmer, Klassenzimmer – mit pastellfarbenen Akzenten.",
+    "title": "Raumvokabular-Infografik-Generator",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine minimalistische Linienstil-Vokabel-Infografik für jeden Raum. Das Layout hat einen handgezeichneten Titel mit thematischen Kritzeleien, eine zentrale detaillierte Linienillustration des Raumes mit beschrifteten Schlüsselpunkten und einen unteren Streifen mit verwandten kleineren Kritzeleien, die ebenfalls beschriftet sind. Subtile pastellfarbene Akzente auf ansonsten schwarz-weißen Linien.",
+        "who": "Geeignet für ESL-Lehrer, Vokabelkarten-Ersteller, Marken für Sprachlernen bei Kindern, Eltern, die junge Lernende unterrichten, und Pinterest-Kreatoren, die ästhetische Lernposter erstellen.",
+        "how": [
+          "Wähle einen Raum oder eine Szene (Küche, Badezimmer, Schlafzimmer, Büro, Klassenzimmer, Garten, Restaurant…).",
+          "Erstelle eine 4K niedliche Linienstil-Vokabel-Infografik mit beschrifteten Objekten und einem Kritzelstreifen."
+        ],
+        "prompts": [
+          "Erstelle eine Infografik zum Küchensvokabular mit beschrifteten Geräten und Zutaten.",
+          "Erstelle eine Infografik zum Klassenzimmervokabular mit beschrifteten Tischen, Büchern und Materialien.",
+          "Erstellen Sie eine Infografik mit Gartenvokabular zu Pflanzen, Werkzeugen und Outdoor-Artikeln."
+        ]
+      }
+    }
+  },
+  "template-english-word-difference-infographic": {
+    "category": "Infografik zu Unterschieden im Englischen",
+    "description": "Bildungsplakat 'Was ist der Unterschied?' zum Vergleich häufig verwechselter englischer Wortpaare mit Definitionen und Beispielsätzen.",
+    "title": "Generator für Infografiken zu Unterschieden im Englischen",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine saubere Bildungsinfografik, die häufig verwechselte englische Wörter klärt. Das Layout beginnt mit einem hellblauen Bannerkopf, gefolgt von einem Raster von Wortpaaren – jede Zelle zeigt zwei grün hervorgehobene Wörter, eine erklärende Erklärung ihres Unterschieds im Zitatstil und einen Beispielsatz. Weißer Hintergrund, schwarzer Text, hellgrüne/rote Akzente.",
+        "who": "Geeignet für ESL-Lehrer, Content-Ersteller für das Englischlernen, Vermarkter von Sprachlern-Apps, Autoren von Vokabularblogs und Eltern, die Kindern bei verwirrenden englischen Paaren helfen.",
+        "how": [
+          "Wählen Sie ein Thema (Häufige englische Verwirrungen, Homophone & Homonyme, Emotionen, technische Begriffe, Geschäftsjargon…).",
+          "Erstellen Sie eine 4K-minimalistische Infografik 'Was ist der Unterschied?' mit Wortpaar-Rastern."
+        ],
+        "prompts": [
+          "Erstellen Sie eine Infografik zu häufigen englischen Verwirrungen, die affect/effect, then/than, your/you're vergleicht.",
+          "Erstellen Sie eine Infografik zu Emotionen, die den Unterschied zwischen anxious und nervous, sad und depressed erklärt.",
+          "Erstellen Sie eine Infografik zu Homophonen & Homonymen mit their/there/they're."
+        ]
+      }
+    }
+  },
+  "template-personal-fashion-outfit-style-variations": {
+    "category": "Lookbook für Outfit-Stilvariationen",
+    "description": "Mode-Lookbook-Komposit – Ihr Referenzfoto links, vier Ganzkörperaufnahmen rechts, die in verschiedenen Outfits gestylt sind.",
+    "title": "Generator für persönliche Outfit-Stilvariationen",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein Mode-Lookbook-Stilkomposit. Die linke Hälfte zeigt das ursprüngliche Referenzfoto der Person in einer neutralen Pose. Die rechte Hälfte zeigt vier Ganzkörperaufnahmen derselben Person, die jeweils in einem anderen Outfit gestylt sind, darunter mit dem Stilnamen beschriftet. Sauberer weißer Hintergrund, natürliches Licht, identisches Gesicht/Haar/Körper über die vier Variationen.",
+        "who": "Geeignet für persönliche Stylisten, Modeblogger, Online-Shopper, die ihre Garderobe visualisieren, Fotografen für Dating-Profile und Ersteller von 'gestylten X auf verschiedene Arten' Reels.",
+        "how": [
+          "Stellen Sie ein Referenzfoto der Person zur Verfügung (als Eingabe verwendet).",
+          "Wählen Sie vier Outfit-Stile zum Vergleichen (Streetwear, Old Money, Cottagecore, Y2K, Office Chic, Athleisure usw.).",
+          "Erstellen Sie ein 4K-Lookbook-Komposit mit dem Referenzfoto + vier beschrifteten Stilvariationen."
+        ],
+        "prompts": [
+          "Erstellen Sie ein Lookbook für Outfit-Stilvariationen mit Streetwear, Old Money, Cottagecore, Y2K.",
+          "Erstellen Sie eine Mode-Lookbook-Variation mit Office Chic, Athleisure, Date Night, Urlaub.",
+          "Erstellen Sie vier Stilvariationen für Outfits: Boho, Minimalistisch, Preppy, Edgy."
+        ]
+      }
+    }
   }
 }
