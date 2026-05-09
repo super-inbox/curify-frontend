@@ -16,6 +16,7 @@ import { Toaster } from "react-hot-toast";
 import GoogleAnalyticsInit from "../_components/GoogleAnalyticsInit";
 
 import GoogleAnalyticsTracker from "../_components/GoogleAnalyticsTracker";
+import SessionStartTracker from "../_components/SessionStartTracker";
 
 import { headers } from "next/headers";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
@@ -69,6 +70,7 @@ export default async function PublicLocaleLayout({
       <GoogleAnalyticsInit />
 
         <GoogleAnalyticsTracker />
+        <SessionStartTracker />
         <Script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" strategy="afterInteractive" />
         <Script id="init-mermaid" strategy="afterInteractive">
           {`
