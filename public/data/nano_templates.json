@@ -6321,12 +6321,60 @@
     "locales": {
       "en": {
         "base_prompt": "(Outfit Style Variation Creator) Create a fashion lookbook-style composite image. On the left: the original reference photo of a person in a neutral pose. On the right: four identical full-body shots of the same person, each styled in a different outfit: {style1}, {style2}, {style3}, {style4}. Each look is labeled below with the style name. All images have a clean white background, natural lighting, and maintain the person's facial features, hair, and body shape. Style: Realistic fashion photography, high resolution, consistent lighting, 4K ultra HD, direct image generation. Subject: '{person} in four different fashion styles'.",
-        "parameters": {
-          "style1": "First Outfit Style",
-          "style2": "Second Outfit Style",
-          "style3": "Third Outfit Style",
-          "style4": "Fourth Outfit Style"
-        }
+        "parameters": [
+          {
+            "name": "style1",
+            "label": "First Outfit Style",
+            "type": "text",
+            "placeholder": [
+              "Streetwear",
+              "Old Money",
+              "Cottagecore",
+              "Y2K",
+              "Office Chic",
+              "Athleisure"
+            ]
+          },
+          {
+            "name": "style2",
+            "label": "Second Outfit Style",
+            "type": "text",
+            "placeholder": [
+              "Streetwear",
+              "Old Money",
+              "Cottagecore",
+              "Y2K",
+              "Office Chic",
+              "Athleisure"
+            ]
+          },
+          {
+            "name": "style3",
+            "label": "Third Outfit Style",
+            "type": "text",
+            "placeholder": [
+              "Streetwear",
+              "Old Money",
+              "Cottagecore",
+              "Y2K",
+              "Office Chic",
+              "Athleisure"
+            ]
+          },
+          {
+            "name": "style4",
+            "label": "Fourth Outfit Style",
+            "type": "text",
+            "placeholder": [
+              "Streetwear",
+              "Old Money",
+              "Cottagecore",
+              "Y2K",
+              "Office Chic",
+              "Athleisure"
+            ]
+          }
+        ]
       }
     },
     "og_image": "/images/nano_insp_preview/template-personal-fashion-outfit-style-variations-women-1-prev.jpg",
