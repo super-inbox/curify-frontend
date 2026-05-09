@@ -48,6 +48,39 @@ try {
   pg = null; // only needed when --supabase flag is used
 }
 
+// --- OPTIONAL dependency (required for --auto-tag) ---
+let OpenAI;
+try {
+  OpenAI = require("openai");
+} catch {
+  OpenAI = null;
+}
+
+// Single source of truth for Tier 1 → Tier 3 tag children +
+// Tier 1 → Tier 2 children. Same JSON imported by lib/topicRegistry.ts.
+const topicTagMappings = require("../lib/topic_tag_mappings.json");
+const TIER1_TAG_CHILDREN = topicTagMappings.TIER1_TAG_CHILDREN;
+const EXPLICIT_CHILD_TOPICS = topicTagMappings.EXPLICIT_CHILD_TOPICS;
+const TIER2_TO_TIER1 = {};
+for (const [t1, t2s] of Object.entries(EXPLICIT_CHILD_TOPICS)) {
+  for (const t2 of t2s) TIER2_TO_TIER1[t2] = t1;
+}
+
+// Find the first Tier 1 in the template's topics list that has Tier 3
+// tag children. Walks template topics in order: direct Tier 1 hits
+// first, then Tier 2 → Tier 1 lookup.
+function findTier1WithTagChildren(templateTopics) {
+  if (!Array.isArray(templateTopics)) return null;
+  for (const t of templateTopics) {
+    if (TIER1_TAG_CHILDREN[t]) return t;
+  }
+  for (const t of templateTopics) {
+    const t1 = TIER2_TO_TIER1[t];
+    if (t1 && TIER1_TAG_CHILDREN[t1]) return t1;
+  }
+  return null;
+}
+
 // ===================== CONFIG =====================
 const REPO_ROOT = path.resolve(__dirname, "..");
 
@@ -116,6 +149,8 @@ function parseArgs(argv) {
     supabase: false,
     pgUrl: defaultPgUrl,
     supabaseStatus: "COMPLETED",
+    autoTag: false,
+    autoTagModel: "gpt-4o-mini",
   };
 
   for (const a of argv.slice(2)) {
@@ -130,6 +165,8 @@ function parseArgs(argv) {
     else if (a === "--supabase") out.supabase = true;
     else if (a.startsWith("--pg-url=")) out.pgUrl = a.split("=").slice(1).join("=");
     else if (a.startsWith("--supabase-status=")) out.supabaseStatus = a.split("=").slice(1).join("=");
+    else if (a === "--auto-tag") out.autoTag = true;
+    else if (a.startsWith("--auto-tag-model=")) out.autoTagModel = a.split("=").slice(1).join("=");
   }
   return out;
 }
@@ -371,6 +408,74 @@ async function fetchSupabaseJobs(pgUrl, status) {
   return res.rows;
 }
 
+// ── Auto-tag: pick a Tier 3 tag for each new inspiration via gpt-4o-mini ───
+
+async function autoTagInspirations(records, templatesById, openai, model) {
+  if (records.length === 0) return { tagged: 0, skipped: 0, failed: 0 };
+
+  let tagged = 0, skipped = 0, failed = 0;
+
+  for (const record of records) {
+    const tpl = templatesById.get(record.template_id);
+    const templateTopics = Array.isArray(tpl?.topics) ? tpl.topics : [];
+    const tier1 = findTier1WithTagChildren(templateTopics);
+    if (!tier1) { skipped++; continue; }
+
+    const candidates = TIER1_TAG_CHILDREN[tier1] || [];
+    if (candidates.length === 0) { skipped++; continue; }
+
+    const titleEn = record.locales?.en?.title || record.locales?.zh?.title || "";
+    const paramsStr = JSON.stringify(record.params || {});
+
+    const prompt = `Pick the single best Tier 3 topic tag for the inspiration below.
+
+Inspiration:
+  template_id: ${record.template_id}
+  template topics: ${templateTopics.join(", ")}
+  title: ${titleEn}
+  params: ${paramsStr}
+  id: ${record.id}
+
+Tier 1 ancestor: ${tier1}
+Allowed Tier 3 tags: ${JSON.stringify(candidates)}
+
+Rules:
+- Choose exactly one tag from the allowed list, or null if none cleanly applies.
+- Prefer the most specific match using all signals (title, params, id slug).
+- Output JSON: {"tag": "<one of the allowed strings>" or null}`;
+
+    process.stdout.write(`  → ${record.id} (${tier1}) ... `);
+    try {
+      const res = await openai.chat.completions.create({
+        model,
+        response_format: { type: "json_object" },
+        temperature: 0.1,
+        messages: [
+          { role: "system", content: "You are a precise topic classifier. Always return valid JSON." },
+          { role: "user", content: prompt },
+        ],
+      });
+      const text = res.choices?.[0]?.message?.content || "{}";
+      const parsed = JSON.parse(text);
+      const chosen = parsed?.tag;
+      if (typeof chosen === "string" && candidates.includes(chosen)) {
+        const existing = Array.isArray(record.topics) ? record.topics : [];
+        record.topics = [...new Set([...existing, chosen])];
+        console.log(`✓ ${chosen}`);
+        tagged++;
+      } else {
+        console.log("(no match)");
+        skipped++;
+      }
+    } catch (err) {
+      console.log(`✗ ${err.message}`);
+      failed++;
+    }
+  }
+
+  return { tagged, skipped, failed };
+}
+
 function buildSupabaseRecord(job, templatesById) {
   const cfg = job.runtime_config;
   if (!cfg || !cfg.example_id || !cfg.gcs_object_path || !cfg.preview_gcs_object_path || !cfg.template_id) {
@@ -535,6 +640,25 @@ async function main() {
   }
 
   const allNewRecords = [...addedRecords, ...supabaseRecords];
+
+  // ---- Auto-tag (gpt-4o-mini → pick a Tier 3 tag per record) ----
+  if (args.autoTag && allNewRecords.length > 0 && !args.dryRun) {
+    if (!OpenAI) {
+      console.warn("⚠️  --auto-tag requested but `openai` package not installed; skipping.");
+    } else if (!process.env.OPENAI_API_KEY) {
+      console.warn("⚠️  --auto-tag requested but OPENAI_API_KEY not set; skipping.");
+    } else {
+      console.log(`\n🏷️  Auto-tagging ${allNewRecords.length} new records (model=${args.autoTagModel}) ...`);
+      const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, timeout: 60000 });
+      const stats = await autoTagInspirations(
+        allNewRecords,
+        templatesById,
+        openai,
+        args.autoTagModel
+      );
+      console.log(`Tagged: ${stats.tagged} | Skipped: ${stats.skipped} | Failed: ${stats.failed}`);
+    }
+  }
 
   let finalNanoInsp;
   if (allNewRecords.length > 0) {

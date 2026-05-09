@@ -1,5 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
+import topicTagMappings from "./topic_tag_mappings.json";
 
 export type Topic = {
   id: string;
@@ -48,69 +49,24 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-const MBTI_TYPE_TAGS = [
-  "mbti-intj","mbti-intp","mbti-entj","mbti-entp",
-  "mbti-infj","mbti-infp","mbti-enfj","mbti-enfp",
-  "mbti-istj","mbti-isfj","mbti-estj","mbti-esfj",
-  "mbti-istp","mbti-isfp","mbti-estp","mbti-esfp",
-];
+// Source-of-truth data lives in lib/topic_tag_mappings.json so .cjs
+// scripts (e.g. scripts/sync_nano_inspiration.cjs auto-tagger) can
+// require the same mappings without duplicating them.
+const MBTI_TYPE_TAGS = topicTagMappings.MBTI_TYPE_TAGS;
+const TIER1_TAG_CHILDREN: Record<string, string[]> = topicTagMappings.TIER1_TAG_CHILDREN;
+const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = topicTagMappings.EXPLICIT_CHILD_TOPICS;
 
-// Explicit sibling groups for tag-style topics (geo, language pairs, visual styles, subjects, personality).
-// These appear at the bottom of topic pages as related tags.
+// Sibling groups for tag-style topics (shown as related tag chips at
+// the bottom of topic pages). Mirrors the per-Tier-1 tag lists since
+// Tier 3 tags share scope with their Tier 1 ancestor.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
-  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
+  TIER1_TAG_CHILDREN.travel,
   ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
-  ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
+  TIER1_TAG_CHILDREN.design,
   ["animals", "nature", "space", "weather"],
   MBTI_TYPE_TAGS,
-  ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
+  TIER1_TAG_CHILDREN.lifestyle,
 ];
-
-// Subject Tier 3 tags shared by `learning` and `language` so common
-// subjects (animals, nature, weather, etc.) cross-link between the two.
-// Update this list to refresh both Tier 1 pages at once.
-const SUBJECT_TAGS = [
-  // World / science (kids-learning) — biology dropped because it overlapped
-  // with animals + nature; biology-flavored entries retagged accordingly.
-  "animals", "nature", "space", "weather",
-  // Change over long timescales — dinosaurs, hominids, tech, products
-  "evolution",
-  // Everyday / language scenes (kids-learning + vocabulary)
-  "food-and-drink", "family", "school", "transportation",
-  "celebration", "body", "emotions",
-];
-
-// Tier 1 → Tier 3 tag children mapping.
-// These tags appear at the bottom of the Tier 1 topic page.
-const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  personality: MBTI_TYPE_TAGS,
-  // character also surfaces the 16 MBTI types as bottom-row tag chips
-  // (in addition to its Tier 2 nav children), since MBTI character cards
-  // are one of the strongest entry points for the character Tier 1.
-  character:   MBTI_TYPE_TAGS,
-  travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  // language pairs (english-chinese etc.) were promoted to Tier 2 so they
-  // sit alongside vocabulary/dialogue/expressions/language-english as
-  // navigational tabs. Tier 3 here mirrors learning's subject tags.
-  language:    SUBJECT_TAGS,
-  design:      ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  learning:    SUBJECT_TAGS,
-  lifestyle:   ["minimalist", "soft-girl", "edgy", "athleisure", "chic", "vintage-retro", "elegant", "casual", "high-fashion"],
-};
-
-// Full explicit parent→children hierarchy.
-// Tier 1 (entry bar): character, language, travel, lifestyle, learning, product
-// Tier 2 (navigational subtopics, shown at top of parent page)
-const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character:   ["mbti", "anime", "sports", "film", "relationship", "portrait", "comparison", "groups"],
-  personality: [],
-  language:  ["vocabulary", "dialogue", "expressions", "language-english", "english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
-  travel:    ["culture", "food", "city", "itinerary"],
-  lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],
-  learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
-  product:   [],
-  design:    ["posters", "digital-canvas", "mockups"],
-};
 
 // Reverse map: Tier 3 tag → Tier 1 parent
 const TIER3_TAG_PARENT = new Map<string, string>();
