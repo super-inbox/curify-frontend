@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import {
@@ -7,6 +8,9 @@ import {
   TIER2_SUGGESTIONS,
   type SuggestionEntry,
 } from "@/lib/searchIndex";
+import { buildNanoFeedCards } from "@/lib/nano_page_data";
+import { nanoRegistry } from "@/lib/nano_utils";
+import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Build once per request — small enough to recompute, big enough we don't want
@@ -280,12 +284,34 @@ export default async function SearchPage({ params, searchParams }: Props) {
     relatedTopics = TIER2_SUGGESTIONS.filter((s) => s.slug !== query).slice(0, 8);
   }
 
+  // Build the matched-templates rail (rendered under the example grid via
+  // NanoTemplateDetailClient → NanoInspirationRow). Union of:
+  //   - templates whose i18n blob matched the query
+  //   - templates that own one of the matched inspirations
+  // Same locale-aware feed cards used elsewhere on topic / template pages.
+  const matchedTemplateIdsAll = new Set<string>([
+    ...matchedTemplateIdsByI18n,
+    ...matchedTemplateIds,
+  ]);
+  const contentLocale = resolveContentLocale(locale);
+  const tNano = await getTranslations({ locale, namespace: "nano" });
+  const translateNano = makeSafeTranslator(tNano);
+  const allFeedCards = buildNanoFeedCards(nanoRegistry, contentLocale, {
+    perTemplateMaxImages: 2,
+    strictLocale: false,
+    translate: translateNano,
+  });
+  const matchedTemplates = allFeedCards.filter((c) =>
+    matchedTemplateIdsAll.has(c.template_id)
+  );
+
   return (
     <SearchResultsClient
       query={query}
       locale={locale}
       inspirations={inspirations}
       relatedTopics={relatedTopics}
+      matchedTemplates={matchedTemplates}
     />
   );
 }
