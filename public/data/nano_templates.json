@@ -6385,5 +6385,120 @@
     "base_rank_score": 90,
     "rank_score": 110,
     "creation_date": "2026-05-09"
-  }
+  },
+  {
+    "id": "template-chinese-idiom-learning-card",
+    "locales": {
+        "en": {
+            "base_prompt": "(Chinese Idiom Learning Card Creator) Create a clean educational flashcard for the Chinese idiom '{idiom}'. Layout: 1. Left: A cute cartoon-style illustration depicting the idiom's story. 2. Right: Pinyin pronunciation, large bold Chinese characters, and a simple English definition. 3. Bottom: A '例句' (Example Sentence) section with a Chinese sentence and its English translation. Style: Minimalist white background, friendly hand-drawn cartoon art, clear typography, no clutter, 4K ultra HD, direct image generation. Subject: 'Chinese idiom learning card for {idiom}'.",
+            "parameters": [
+                {
+                    "name": "idiom",
+                    "label": "Chinese Idiom/Word",
+                    "type": "text",
+                    "placeholder": ["画蛇添足", "对牛弹琴", "守株待兔", "井底之蛙", "吃干饭"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-chinese-idiom-learning-card-jing-di-zhi-wa-prev.jpg"
+},
+  {
+    "id": "template-weather-education-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Kids Weather Education Infographic Creator) Create a cheerful, kid-friendly educational poster about the weather type '{weather_type}'. Layout: 1. Large bold title at the top with a simple subtitle. 2. 4 organized boxes covering key sections: Formation, Causes, Effects, and Measurement/Temperature/Types. Each section has icons and simple bullet points. 3. A cute, colorful watercolor-style illustration at the bottom depicting the weather. 4. A short, catchy tagline at the bottom. Style: Soft watercolor illustrations, pastel color scheme matching the weather theme, friendly hand-drawn icons, easy-to-read font, no clutter, 4K ultra HD, direct image generation. Subject: 'Kids educational infographic about {weather_type} weather'.",
+            "parameters": [
+                {
+                    "name": "weather_type",
+                    "label": "Weather Type",
+                    "type": "text",
+                    "placeholder": ["Snow", "Rain", "Windy", "Sunny", "Cloudy", "Foggy"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-weather-education-infographic-cloudy-prev.jpg"
+},
+  {
+    "id": "template-product-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Home Appliance Product Poster Creator) Create a warm, cozy product advertisement poster for the '{product_name}'. Layout: 1. Top: Large bold headline + handwritten-style tagline, with a short keyword list below. 2. Center: The appliance itself in a lifestyle setting, styled with matching decor (flowers, candles, accessories). 3. Left/Right: A circular badge highlighting a key feature, plus 4-5 feature icons with descriptions. 4. Bottom: The product name/label. Style: Soft warm lighting, cozy aesthetic, pastel color scheme matching the product, clean typography, 4K ultra HD, direct image generation. Subject: 'Product poster for {product_name}'",
+            "parameters": [
+                {
+                    "name": "product_name",
+                    "label": "Home Appliance",
+                    "type": "text",
+                    "placeholder": ["Label Printer", "Coffee Maker", "Desk Lamp", "Bluetooth Speaker", "Portable Blender"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-product-poster-aroma-diffuser-prev.jpg"
+},
+  {
+    "id": "template-mbti-stereotype-vs-reality-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(MBTI Stereotype vs Reality Infographic Creator) Create a side-by-side comparison infographic for the MBTI type '{mbti_type}'. Layout: 1. Top center: The four-letter MBTI title in cut-out newspaper-style text. 2. Left side: Low-poly illustration representing stereotypes, plus a list titled '{mbti_type} stereotypes'. 3. Right side: Low-poly illustration representing reality, plus a list titled '{mbti_type}s reality'. Style: Simple white background, flat low-poly art style, bold clear text, no clutter, 4K ultra HD, direct image generation. Subject: '{mbti_type} stereotypes vs reality MBTI infographic'.",
+            "parameters": [
+                {
+                    "name": "mbti_type",
+                    "label": "MBTI Personality Type",
+                    "type": "text",
+                    "placeholder": ["INFJ", "ENTJ", "ENTP", "ESTP", "INTJ", "ISFP"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-mbti-stereotype-vs-reality-infographic-isfj-prev.jpg"
+},
+  {
+    "id": "template-space-planet-fact-infographic",
+    "locales": {
+        "en": {
+            "base_prompt": "(Planet Fact Infographic Creator) Create a detailed educational infographic poster about the planet '{planet_name}'. Layout: 1. Top: Large glowing title with the planet name. 2. Center: A photorealistic image of the planet set against a starry space background. 3. Multiple labeled sections covering key facts: general statistics, atmosphere, surface features, moons, rotation, and more. 4. Small diagrams and icons explaining phenomena like axial tilt, storms, or ring systems. Style: Cinematic sci-fi aesthetic, high contrast, bold futuristic typography, vibrant colors matching the planet's theme, 4K ultra HD, direct image generation. Subject: 'Educational infographic about {planet_name}'",
+            "parameters": [
+                {
+                    "name": "planet_name",
+                    "label": "Planet Name",
+                    "type": "text",
+                    "placeholder": ["Uranus", "Venus", "Neptune", "Mars", "Jupiter", "The Moon", "Saturn"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-space-planet-fact-infographic-saturn-prev.jpg"
+},
+  {
+    "id": "template-emotion-vs-emotion-illustration",
+    "locales": {
+        "en": {
+            "base_prompt": "(Emotion vs Emotion Infographic Creator) Create a clean educational poster comparing '{emotion1}' and '{emotion2}'. Layout: 1. Large title '{emotion1} vs {emotion2}' at the top, with a short descriptive subtitle. 2. Left side: Two simple flat cartoon illustrations showing each emotion, with matching body language and expressions. 3. Right side: Two labeled sections with yellow highlight boxes for each emotion, each containing a short definition. Style: Minimalist white background, friendly cartoon art style, clear typography, no clutter, 4K ultra HD, direct image generation. Subject: '{emotion1} vs {emotion2} comparison infographic'.",
+            "parameters": {
+                "emotion1": "First Emotion/Behavior",
+                "emotion2": "Second Emotion/Behavior"
+            }
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-emotion-vs-emotion-illustration-anxious-excited-prev.jpg"
+},
+  {
+    "id": "template-ielts-3-to-9-vocabulary-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(IELTS Vocabulary Upgrade Poster Creator) Create a clean, humorous educational poster comparing basic vs advanced vocabulary for IELTS. Layout: 1. Top: Two purple rounded labels reading 'IELTS 3.0' and 'IELTS 9.0'. 2. A two-column list with simple left-aligned text, pairing basic words with their advanced synonyms. 3. A cute, simple cartoon illustration at the bottom matching the 'basic vs advanced' theme. Style: Minimalist white background, clear sans-serif font, soft colors, no clutter, 4K ultra HD, direct image generation. Subject: 'IELTS vocabulary upgrade poster for {topic} words'.",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Vocabulary Topic",
+                    "type": "text",
+                    "placeholder": ["Verbs", "Adverbs & Connectors", "Common Verbs", "Adjectives"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-ielts-3-to-9-vocabulary-poster-adverbs-conjunctions-prev.jpg"
+}
 ]
