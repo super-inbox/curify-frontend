@@ -29,6 +29,7 @@ export type ActionType =
   | "remix"
   | "download"
   | "search"
+  | "search_noresult"
   | "video_click"
   | "video_play";
 
