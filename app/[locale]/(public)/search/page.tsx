@@ -49,14 +49,28 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 //      character-bigrams since Chinese isn't space-segmented (e.g. the
 //      query "穿搭拆解提示词" produces bigrams 穿搭 / 搭拆 / 拆解 /
 //      解提 / 提示 / 示词 that we can match against template blobs).
+// Stopwords filtered out before matching so they don't inflate the
+// token-count denominator. Conservative — keeps content words like "is".
+const STOPWORDS = new Set([
+  "the", "a", "an", "of", "in", "on", "is", "are", "and", "or",
+  "to", "for", "with", "by", "at", "as", "be", "this", "that",
+  "的", "了", "和", "及",
+]);
+
+// Normalize for substring matching: lowercase + replace × with x so
+// queries like "3x3" find blobs that wrote "3×3".
+function normalizeForSearch(s: string): string {
+  return s.toLowerCase().replace(/×/g, "x");
+}
+
 function buildSearchTokens(query: string): {
   primary: string[];
   bigrams: string[];
 } {
-  const primary = query
+  const primary = normalizeForSearch(query)
     .split(/[\s,，、。.]+/)
     .map((w) => w.trim())
-    .filter(Boolean);
+    .filter((w) => w && !STOPWORDS.has(w));
 
   const bigrams: string[] = [];
   if (
@@ -71,6 +85,12 @@ function buildSearchTokens(query: string): {
     }
   }
   return { primary, bigrams };
+}
+
+// Relaxed-mode threshold — only used when strict-AND finds zero hits.
+function relaxedPrimaryThreshold(n: number): number {
+  if (n <= 1) return 1;
+  return Math.ceil(n / 2);
 }
 
 // "Enough bigrams matched" threshold, scaled by how many bigrams the
@@ -160,23 +180,32 @@ export default async function SearchPage({ params, searchParams }: Props) {
       if (parts.length === 0) continue;
       templateSearchBlob.set(
         tid,
-        (templateSearchBlob.get(tid) ?? "") + " " + parts.join(" ").toLowerCase()
+        (templateSearchBlob.get(tid) ?? "") + " " + normalizeForSearch(parts.join(" "))
       );
     }
   }
-  // A template's i18n blob matches when either:
-  //  - all whitespace-split primary tokens are present (covers "spain
-  //    travel"), or
-  //  - at least 2 CJK bigrams are present (covers "穿搭拆解提示词" → its
-  //    bigrams 穿搭, 拆解, 提示 spread across multiple zh templates).
+  // Two-pass match: strict-AND on primary tokens first (preserves
+  // precision for queries like "spain travel"). If that finds zero
+  // templates, fall back to relaxed-OR — require ⌈N/2⌉ primary tokens to
+  // be present, which catches multi-concept queries where no single blob
+  // contains every word ("3x3 grid collage", "the psychology of self
+  // discipline", "动物 词汇"). CJK bigram path stays as the fuzzy fallback
+  // for unsegmented queries.
   const bigramThreshold = bigramHitThreshold(tokens.bigrams.length);
-  const matchedTemplateIdsByI18n = new Set<string>();
+  const relaxedThreshold = relaxedPrimaryThreshold(tokens.primary.length);
+
+  const strictTemplateMatches = new Set<string>();
+  const relaxedTemplateMatches = new Set<string>();
   for (const [tid, blob] of templateSearchBlob) {
     const s = scoreBlob(blob, tokens);
     if (s.allPrimary || s.bigramHits >= bigramThreshold) {
-      matchedTemplateIdsByI18n.add(tid);
+      strictTemplateMatches.add(tid);
+    } else if (s.primaryHits >= relaxedThreshold && relaxedThreshold > 0) {
+      relaxedTemplateMatches.add(tid);
     }
   }
+  const matchedTemplateIdsByI18n =
+    strictTemplateMatches.size > 0 ? strictTemplateMatches : relaxedTemplateMatches;
 
   // Topic slug match → go straight to the topic page (reuses all existing
   // infrastructure). Exact match first; if nothing exact, fall back to a
@@ -238,14 +267,22 @@ export default async function SearchPage({ params, searchParams }: Props) {
   // Also include inspirations whose parent template's i18n matched the query
   // (so e.g. zh "反义词" surfaces all examples under the chinese-verb-opposite
   // template even though the inspiration records themselves have no zh tags).
-  const inspirations = (nanoInspiration as InspRecord[])
-    .filter((r) => {
-      if (matchedTemplateIdsByI18n.has(r.template_id)) return true;
-      const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [
-        l?.title,
-        l?.category,
-      ]);
-      const blob = [
+  // Score every inspiration once; bucket into strict and relaxed pools.
+  // Surface strict alone if it's non-empty (precision); otherwise fall
+  // back to the relaxed pool. Mirrors the template-i18n two-pass.
+  type ScoredInspiration = { rec: InspRecord; score: number; strict: boolean };
+  const allScored: ScoredInspiration[] = [];
+  for (const r of nanoInspiration as InspRecord[]) {
+    if (matchedTemplateIdsByI18n.has(r.template_id)) {
+      allScored.push({ rec: r, score: 100, strict: true });
+      continue;
+    }
+    const localeFields = Object.values(r.locales ?? {}).flatMap((l) => [
+      l?.title,
+      l?.category,
+    ]);
+    const blob = normalizeForSearch(
+      [
         r.id,
         r.template_id,
         ...(r.tags ?? []),
@@ -254,13 +291,20 @@ export default async function SearchPage({ params, searchParams }: Props) {
       ]
         .filter((v): v is string => typeof v === "string" && v.length > 0)
         .join(" ")
-        .toLowerCase();
-      // Same matcher as the i18n template scan: all primary tokens
-      // present, or enough CJK bigrams as a fuzzier fallback.
-      const s = scoreBlob(blob, tokens);
-      return s.allPrimary || s.bigramHits >= bigramThreshold;
-    })
-    .slice(0, 80);
+    );
+    const s = scoreBlob(blob, tokens);
+    if (s.allPrimary || s.bigramHits >= bigramThreshold) {
+      allScored.push({ rec: r, score: s.primaryHits + s.bigramHits, strict: true });
+    } else if (s.primaryHits >= relaxedThreshold && relaxedThreshold > 0) {
+      allScored.push({ rec: r, score: s.primaryHits, strict: false });
+    }
+  }
+  const hasStrict = allScored.some((x) => x.strict);
+  const inspirations = allScored
+    .filter((x) => (hasStrict ? x.strict : true))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 80)
+    .map((x) => x.rec);
 
   // Related queries: aggregate Tier-2/3 topics across matched templates,
   // sort by frequency, fall back to popular Tier-2 if nothing matched.
