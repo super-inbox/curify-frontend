@@ -6,7 +6,7 @@
  *   rank_score = base_rank_score + freshness_bonus + engagement_bonus
  *
  *   freshness_bonus  = max(0, round(20 × (1 − days_old / 14)))   // 0–20
- *   engagement_bonus = min(60, 0.2 × engagement_signal)          // 0–60
+ *   engagement_bonus = min(35, 0.15 × engagement_signal)         // 0–35
  *
  * where days_old comes from each template's creation_date (backfilled
  * here at ~4 templates/day from the end of the file if missing) and
@@ -169,7 +169,7 @@ async function fetchRankScores(client) {
         5  * SUM(CASE WHEN action_type = 'SHARE'    THEN 1 ELSE 0 END)
       ) AS score
     FROM user_interactions
-    WHERE created_at >= NOW() - INTERVAL '3 days'
+    WHERE created_at >= NOW() - INTERVAL '14 days'
       AND content_type NOT IN ('MENU_LINK', 'TOPIC_CAPSULE')
     GROUP BY template_id
     HAVING SUM(
@@ -200,8 +200,8 @@ async function fetchRankScores(client) {
 // where each bonus is capped at 40 so neither component dominates.
 const FRESHNESS_BONUS_MAX = 20;
 const FRESHNESS_WINDOW_DAYS = 14;
-const ENGAGEMENT_WEIGHT = 0.2;
-const ENGAGEMENT_BONUS_MAX = 60;
+const ENGAGEMENT_WEIGHT = 0.15;
+const ENGAGEMENT_BONUS_MAX = 35;
 
 // Used when backfilling creation_date for templates that don't have one.
 // Walks from the end of the file, ~4 templates per day = today, today-1, etc.
