@@ -3130,5 +3130,145 @@
         ]
       }
     }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Chinesische Redewendung Lernkarte",
+    "description": "Niedliche handgezeichnete Lernkarten für chinesische Redewendungen (成语) – Pinyin, Schriftzeichen, englische Definition und ein Beispielsatz pro Karte.",
+    "title": "Generator für chinesische Redewendung Lernkarten",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine saubere, lehrreiche Lernkarte für jede chinesische Redewendung (chengyu). Das Layout kombiniert eine niedliche Cartoon-Illustration der Geschichte der Redewendung links mit Pinyin, großen fetten chinesischen Schriftzeichen und einer einfachen englischen Definition rechts. Ein unterer Abschnitt '例句' fügt einen Beispielsatz mit englischer Übersetzung hinzu.",
+        "who": "Geeignet für Chinesischlerner (CSL), HSK-Vorbereitungsstudenten, Sprachlehrer, Kinder, die Sprachinhalte erstellen, und Marken der bilingualen Bildung.",
+        "how": [
+          "Wählen Sie eine chinesische Redewendung (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴 usw.).",
+          "Generieren Sie eine 4K minimalistische Cartoon-Lernkarte mit Pinyin + Schriftzeichen + Definition + Beispielsatz."
+        ],
+        "prompts": [
+          "Generieren Sie eine 画蛇添足 Redewendung Lernkarte mit Schlangenillustration und englischer Definition.",
+          "Erstellen Sie eine 守株待兔 Lernkarte, die die Geschichte von Kaninchen und Baumstumpf zeigt.",
+          "Generieren Sie eine 井底之蛙 Lernkarte mit der Cartoon-Illustration des Frosches im Brunnen und einem Beispielsatz."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Kinder Wetter Infografik",
+    "description": "Fröhliches Aquarell-Lehrplakat über jede Wetterart – Entstehung, Ursachen, Auswirkungen und Messung, in 4 kinderfreundlichen Panels.",
+    "title": "Generator für Kinder Wetter Bildungsinfografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein fröhliches, kinderfreundliches Lehrplakat über eine Wetterart. Das Layout hat einen auffälligen Titel, vier Panels (Entstehung, Ursachen, Auswirkungen, Messung) mit Symbolen und einfachen Aufzählungen, eine sanfte Aquarellillustration des Wetters am unteren Rand und einen einprägsamen Slogan. Pastellpalette, die auf das Wetter abgestimmt ist.",
+        "who": "Geeignet für Grundschullehrer, Eltern von Homeschoolern, Kinder-Content-YouTuber, Pinterest-Ersteller mit Wetter-Themen und Museumspädagogen, die saisonale Plakate erstellen.",
+        "how": [
+          "Wählen Sie eine Wetterart (Schnee, Regen, Windig, Sonnig, Bewölkt, Nebelig).",
+          "Generieren Sie eine 4K Aquarell-Kinder-Wetterinfografik mit 4 Panels und einem Slogan."
+        ],
+        "prompts": [
+          "Generieren Sie eine Schnee Wetterinfografik für Kinder mit Schneeflockenillustrationen.",
+          "Erstellen Sie ein bewölktes Wetterplakat mit Panels zur Wolkenbildung.",
+          "Generieren Sie eine neblige Wetter-Kinderinfografik mit Aquarellszenen des Nebels."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Gemütliches Produktplakat",
+    "description": "Warme, gemütliche Lifestyle-Produktanzeige – Ihr Haushaltsgerät in einer stilvollen Szene mit handgeschriebenem Slogan und Feature-Abzeichen.",
+    "title": "Generator für gemütliche Haushaltsgeräte Produktplakate",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein warm beleuchtetes Lifestyle-Produktplakat. Das Layout hat eine auffällige Überschrift + handgeschriebenen Slogan oben, das Gerät in einer gemütlichen, stilvollen Umgebung (Blumen, Kerzen, Accessoires) zentriert, ein kreisförmiges Feature-Abzeichen plus 4-5 Feature-Symbole und das Produktlabel am unteren Rand. Pastellpalette, die auf das Produkt abgestimmt ist.",
+        "who": "Geeignet für E-Commerce-Verkäufer, Haushaltsgeräte-Marken, Etsy/Shopify-Shop-Besitzer, Produktfotografen, die Prototypen erstellen, und Lifestyle-Ersteller.",
+        "how": [
+          "Geben Sie ein Haushaltsgerät ein (Kaffeemaschine, Schreibtischlampe, Bluetooth-Lautsprecher, Aroma-Diffusor, tragbarer Mixer).",
+          "Generieren Sie ein 4K gemütliches Produktplakat mit Lifestyle-Einstellung + Feature-Abzeichen."
+        ],
+        "prompts": [
+          "Generieren Sie ein gemütliches Produktplakat für eine Kaffeemaschine mit handgeschriebenem Slogan und floraler Gestaltung.",
+          "Erstellen Sie ein warmes Produktplakat für eine Schreibtischlampe mit Feature-Abzeichen und pastellfarbener Palette.",
+          "Generieren Sie ein Lifestyle-Plakat für einen tragbaren Mixer mit kreisförmigem Abzeichen und Symbolliste."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "MBTI Stereotyp vs Realität",
+    "description": "Vergleichskarten für Stereotypen und Realität nebeneinander für jeden MBTI-Typ – Low-Poly-Illustrationen und Aufzählungslisten.",
+    "title": "MBTI Stereotyp vs Realität Infografik-Generator",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine Infografik mit einem Vergleich nebeneinander für jeden MBTI-Typ. Das Layout hat einen ausgeschnittenen Zeitungsstil-Titel oben in der Mitte, eine Low-Poly-Stereotyp-Illustration + Aufzählungsliste auf der linken Seite und eine Low-Poly-Realitätsillustration + Aufzählungsliste auf der rechten Seite. Flacher Low-Poly-Kunststil, weißer Hintergrund.",
+        "who": "Geeignet für MBTI-Inhaltsanbieter, Persönlichkeitsblogger, Social-Media-Meme-Konten, MBTI-Fans und Pädagogen, die Persönlichkeitsrahmen lehren.",
+        "how": [
+          "Wählen Sie einen MBTI-Typ (INTJ, ENTP, INFJ, ESFP usw.).",
+          "Generieren Sie eine 4K Low-Poly-Stereotyp-vs-Reality-Vergleichsinformation."
+        ],
+        "prompts": [
+          "Generieren Sie eine INTJ-Stereotyp-vs-Reality-MBTI-Infografik mit Low-Poly-Illustrationen.",
+          "Erstellen Sie einen ENFP-Stereotyp-vs-Reality-Vergleich mit ausgeschnittenem Zeitungsstil-Titel.",
+          "Generieren Sie ein ESTP-Stereotyp-vs-Reality-MBTI-Poster."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Planet Fakten Infografik",
+    "description": "Kinematisches Planet Fakten-Poster – fotorealistische Planetenbilder, leuchtender Titel und beschriftete Abschnitte zu Atmosphäre, Oberfläche, Monden, Rotation.",
+    "title": "Space Planet Fakten Infografik-Generator",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt eine kinematische Bildungsinfografik über einen Planeten. Das Layout hat einen leuchtenden Titel + fotorealistisches Planetenbild vor einem Sternenhimmel, dann beschriftete Faktenabschnitte (allgemeine Statistiken, Atmosphäre, Oberflächenmerkmale, Monde, Rotation) plus kleine Diagramme für axiale Neigung, Stürme, Ringsysteme. Sci-Fi-Ästhetik mit lebendigen Farben, die zum Planeten passen.",
+        "who": "Geeignet für Astronomie-Pädagogen, Weltraum-Themen-Pinterest-Ersteller, Kinderwissenschafts-Inhaltsersteller, Museums-Ausstellungsdesigner und Weltraum-Nachrichten-Blogger.",
+        "how": [
+          "Geben Sie einen Planeten ein (Saturn, Mars, Jupiter, Neptun, Venus, Uranus, Der Mond).",
+          "Generieren Sie eine 4K kinematische Sci-Fi-Planet Fakten-Infografik."
+        ],
+        "prompts": [
+          "Generieren Sie eine Saturn-Planet Fakten-Infografik mit Diagrammen des Ringsystems und atmosphärischen Statistiken.",
+          "Erstellen Sie ein Mars-Planet Fakten-Poster mit Oberflächenmerkmalen und Mondhinweisen.",
+          "Generieren Sie eine Jupiter-Planet Fakten-Infografik mit dem Großen Roten Fleck und einem Atmosphärenpanel."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Emotion vs Emotion Infografik",
+    "description": "Vergleichs-Poster für zwei verwechselbare Emotionen – flache Cartoon-Illustrationen und gelb hervorgehobene Definitionen.",
+    "title": "Emotion vs Emotion Vergleichs-Infografik",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein sauberes Bildungs-Poster, das zwei Emotionen oder Verhaltensweisen vergleicht. Das Layout hat einen 'X vs Y'-Titel oben, zwei einfache flache Cartoon-Illustrationen auf der linken Seite, die die Körpersprache jeder Emotion zeigen, und zwei beschriftete Definitionskästen mit gelben Hervorhebungen auf der rechten Seite. Minimalistischer weißer Hintergrund, freundlicher Cartoon-Stil.",
+        "who": "Geeignet für ESL-Lehrer, die Emotionen-Vokabelkarten erstellen, Schulberater, Marken für soziale-emotionale Lerninhalte für Kinder und Sprachinhaltsersteller.",
+        "how": [
+          "Geben Sie zwei Emotionen zum Vergleichen ein (Ängstlich vs Aufgeregt, Traurig vs Depressiv, Schüchtern vs Introvertiert).",
+          "Generieren Sie eine 4K minimalistische Vergleichs-Infografik mit flachen Cartoon-Illustrationen."
+        ],
+        "prompts": [
+          "Generieren Sie eine Ängstlich vs Aufgeregt Emotionen-Vergleichs-Infografik.",
+          "Erstellen Sie ein Schüchtern vs Introvertiert Vergleichs-Poster mit Cartoon-Illustrationen.",
+          "Generieren Sie eine Wütend vs Frustriert Emotion vs Emotion Infografik."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "IELTS Wortschatz Upgrade",
+    "description": "Zweispaltiges Grund-gegen-advanced Wortschatzplakat für die IELTS-Vorbereitung – Paare von Synonymen, organisiert nach Thema, mit einer niedlichen Abschlussillustration.",
+    "title": "IELTS 3.0 → 9.0 Wortschatz Upgrade Plakat",
+    "content": {
+      "sections": {
+        "what": "Diese Vorlage erstellt ein humorvolles Bildungsplakat, das grundlegenden und fortgeschrittenen englischen Wortschatz vergleicht. Das Layout hat oben lila abgerundete Etiketten 'IELTS 3.0' und 'IELTS 9.0', eine zweispaltige Liste, die grundlegende Wörter mit fortgeschrittenen Synonymen paart, und einen niedlichen Cartoon am unteren Ende, der zum Thema passt.",
+        "who": "Geeignet für IELTS-Vorbereitungsstudenten, Englischlehrer, ESL-Blogger, Vermarkter von Sprachlern-Apps und Tutoren für akademisches Schreiben.",
+        "how": [
+          "Wählen Sie ein Wortschatzthema (Verben, Adjektive, Adverbien & Verbindungswörter, Häufige Verben).",
+          "Erstellen Sie ein 4K minimalistisches IELTS Wortschatz Upgrade Plakat."
+        ],
+        "prompts": [
+          "Erstellen Sie ein IELTS Verben Wortschatz Upgrade Plakat (grundlegend → fortgeschritten).",
+          "Erstellen Sie ein IELTS Adjektive 3.0 vs 9.0 Wortschatzplakat mit niedlicher Illustration.",
+          "Erstellen Sie ein IELTS Adverbien & Verbindungswörter Wortschatz Upgrade Plakat."
+        ]
+      }
+    }
   }
 }

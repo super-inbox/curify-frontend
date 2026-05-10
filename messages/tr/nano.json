@@ -3130,5 +3130,145 @@
         ]
       }
     }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Çin Deyimi Kartı",
+    "description": "Çin deyimleri için sevimli el çizimi kartlar (成语) — pinyin, karakterler, İngilizce tanım ve her kart için bir örnek cümle.",
+    "title": "Çin Deyimi Öğrenme Kartı Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, herhangi bir Çin deyimi (chengyu) için temiz bir eğitim kartı oluşturur. Düzen, deyimin hikayesinin sevimli bir karikatür illüstrasyonunu solda, pinyin, büyük kalın Çin karakterleri ve sağda basit bir İngilizce tanım ile eşleştirir. Alt kısımda '例句' bölümü, İngilizce çevirisi ile bir örnek cümle ekler.",
+        "who": "Çin öğrenicileri (CSL), HSK hazırlık öğrencileri, dil öğretmenleri, çocuk dil içerik üreticileri ve iki dilli eğitim markaları için uygundur.",
+        "how": [
+          "Bir Çin deyimi seçin (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴, vb.).",
+          "Pinyin + karakterler + tanım + örnek cümle ile 4K minimalist karikatür kartı oluşturun."
+        ],
+        "prompts": [
+          "Yılan illüstrasyonu ve İngilizce tanım ile bir 画蛇添足 deyimi kartı oluşturun.",
+          "Tavşan ve ağaç kütüğü hikayesini gösteren bir 守株待兔 kartı oluşturun.",
+          "Kuyu kurbağası karikatürü ve bir cümle örneği ile bir 井底之蛙 kartı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Çocuklar için Hava Bilgisi İnfografiği",
+    "description": "Herhangi bir hava türü hakkında neşeli suluboya eğitim posteri — oluşum, nedenler, etkiler ve ölçüm, 4 çocuk dostu panelde.",
+    "title": "Çocuklar için Hava Eğitimi İnfografiği Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir hava türü hakkında neşeli, çocuk dostu bir eğitim posteri oluşturur. Düzen, kalın bir başlık, ikonlar ve basit madde işaretleri ile dört panel (Oluşum, Nedenler, Etkiler, Ölçüm), altta yumuşak bir suluboya hava illüstrasyonu ve dikkat çekici bir slogan içerir. Hava türüne uygun pastel palet.",
+        "who": "İlkokul öğretmenleri, evde eğitim yapan ebeveynler, çocuk içerikli YouTuber'lar, hava temalı Pinterest yaratıcıları ve mevsimlik posterler yapan müze eğitmenleri için uygundur.",
+        "how": [
+          "Bir hava türü seçin (Kar, Yağmur, Rüzgarlı, Güneşli, Bulutlu, Sisli).",
+          "4 panel ve bir slogan ile 4K suluboya çocuk-hava infografiği oluşturun."
+        ],
+        "prompts": [
+          "Kar tanesi illüstrasyonları ile çocuklar için bir Kar hava infografiği oluşturun.",
+          "Bulut oluşum panelleri ile bir Bulutlu hava posteri oluşturun.",
+          "Sisli hava çocuk infografiği ile sis suluboya sahneleri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Sıcak Ürün Posteri",
+    "description": "Sıcak, rahat yaşam tarzı ürün reklamı — ev aletinizin stilize edilmiş bir sahnede el yazısı sloganı ve özellik rozetleri ile.",
+    "title": "Rahat Ev Aleti Ürün Posteri Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, sıcak ışıkta bir yaşam tarzı ürün posteri oluşturur. Düzen, üstte kalın bir başlık + el yazısı sloganı, aletin rahat bir stilize edilmiş ortamda (çiçekler, mumlar, aksesuarlar) ortalanması, dairesel bir özellik rozeti ve 4-5 özellik simgesi ile birlikte ürün etiketini altta içerir. Ürüne uygun pastel palet.",
+        "who": "E-ticaret satıcıları, ev aleti markaları, Etsy/Shopify mağaza sahipleri, ürün fotoğrafçıları prototip çekimleri için ve yaşam tarzı yaratıcıları için uygundur.",
+        "how": [
+          "Bir ev aleti girin (Kahve Makinesi, Masa Lambası, Bluetooth Hoparlör, Aroma Difüzörü, Taşınabilir Karıştırıcı).",
+          "Yaşam tarzı ortamı + özellik rozetleri ile 4K rahat ürün posteri oluşturun."
+        ],
+        "prompts": [
+          "El yazısı sloganı ve çiçek stilizasyonu ile bir Kahve Makinesi için rahat bir ürün posteri oluşturun.",
+          "Özellik rozetleri ve pastel paleti ile sıcak bir Masa Lambası ürün posteri oluşturun.",
+          "Dairesel rozet ve simge listesi ile bir Taşınabilir Karıştırıcı yaşam tarzı posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "MBTI Stereotipi vs Gerçeklik",
+    "description": "Herhangi bir MBTI türü için yan yana stereotip-gerçeklik karşılaştırma kartları — düşük poli çizimler ve madde listeleri.",
+    "title": "MBTI Stereotipi vs Gerçeklik İnfografik Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her MBTI türü için yan yana karşılaştırma infografiği oluşturur. Düzen, üst ortada kesilmiş gazete tarzı bir başlık, solda düşük poli stereotip illüstrasyonu + madde listesi ve sağda düşük poli gerçeklik illüstrasyonu + madde listesi içerir. Düz düşük poli sanat tarzı, beyaz arka plan.",
+        "who": "MBTI içerik üreticileri, kişilik blog yazarları, sosyal medya meme hesapları, fandom MBTI hayranları ve kişilik çerçevelerini öğreten eğitimciler için uygundur.",
+        "how": [
+          "Bir MBTI türü seçin (INTJ, ENTP, INFJ, ESFP, vb.).",
+          "4K düşük poli stereotip-gerçeklik karşılaştırma infografiği oluşturun."
+        ],
+        "prompts": [
+          "Düşük poli illüstrasyonlarla bir INTJ stereotipi vs gerçeklik MBTI infografiği oluşturun.",
+          "Kesilmiş gazete tarzı başlıkla bir ENFP stereotipi vs gerçeklik karşılaştırması oluşturun.",
+          "Bir ESTP stereotipi vs gerçeklik MBTI posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Gezegen Gerçekleri İnfografiği",
+    "description": "Sinema tarzı gezegen gerçekleri posteri — foto-gerçekçi gezegen görüntüsü, parlayan başlık ve atmosfer, yüzey, uydular, dönüşü kapsayan etiketli bölümler.",
+    "title": "Uzay Gezegen Gerçekleri İnfografik Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir gezegen hakkında sinematik eğitim infografiği oluşturur. Düzen, parlayan başlık + yıldız alanı karşısında foto-gerçekçi gezegen görüntüsü, ardından etiketli gerçekler bölümleri (genel istatistikler, atmosfer, yüzey özellikleri, uydular, dönüş) ve eksenel eğim, fırtınalar, halka sistemleri için küçük diyagramlar içerir. Gezegenle eşleşen canlı renklerle bilim kurgu estetiği.",
+        "who": "Astronomi eğitimcileri, uzay temalı Pinterest içerik üreticileri, çocuk bilim içerik üreticileri, müze sergi tasarımcıları ve uzay haber blog yazarları için uygundur.",
+        "how": [
+          "Bir gezegen girin (Satürn, Mars, Jüpiter, Neptün, Venüs, Uranüs, Ay).",
+          "4K sinematik bilim kurgu gezegen gerçekleri infografiği oluşturun."
+        ],
+        "prompts": [
+          "Halka sistemi diyagramları ve atmosfer istatistikleri ile bir Satürn gezegen gerçekleri infografiği oluşturun.",
+          "Yüzey özellikleri ve uydu vurguları ile bir Mars gezegen gerçekleri posteri oluşturun.",
+          "Büyük Kırmızı Leke ve atmosfer paneli ile bir Jüpiter gezegen gerçekleri infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Duygu vs Duygu İnfografiği",
+    "description": "İki karıştırılabilir duygu için yan yana karşılaştırma posteri — düz çizgi film illüstrasyonları ve sarı vurgulu tanımlar.",
+    "title": "Duygu vs Duygu Karşılaştırma İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, iki duygu veya davranışı karşılaştıran temiz bir eğitim posteri oluşturur. Düzen, üstte 'X vs Y' başlığı, solda her duygunun beden dilini gösteren iki basit düz çizgi film illüstrasyonu ve sağda sarı vurgulu iki etiketli tanım kutusu içerir. Minimalist beyaz arka plan, dostça çizgi film tarzı.",
+        "who": "Duygu kelime dağarcığı kartları oluşturan ESL öğretmenleri, okul danışmanları, çocuk sosyal-duygusal öğrenme markaları ve dil içerik üreticileri için uygundur.",
+        "how": [
+          "Karşılaştırmak için iki duygu girin (Kaygılı vs Heyecanlı, Üzgün vs Depresif, Çekingen vs İçe Dönük).",
+          "Düz çizgi film illüstrasyonları ile 4K minimalist karşılaştırma infografiği oluşturun."
+        ],
+        "prompts": [
+          "Kaygılı vs Heyecanlı duygu karşılaştırma infografiği oluşturun.",
+          "Çizgi film illüstrasyonları ile Çekingen vs İçe Dönük karşılaştırma posteri oluşturun.",
+          "Kızgın vs Hayal Kırıklığına Uğramış duygu vs duygu infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "IELTS Kelime Dağıtımı",
+    "description": "IELTS hazırlığı için iki sütunlu temel-ileri kelime dağıtım posteri - konuya göre düzenlenmiş eş anlamlı çiftleri ile sevimli bir kapanış illüstrasyonu.",
+    "title": "IELTS 3.0 → 9.0 Kelime Dağıtımı Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, temel ve ileri İngilizce kelimeleri karşılaştıran eğlenceli bir eğitim posteri oluşturur. Düzen, üstte 'IELTS 3.0' ve 'IELTS 9.0' mor yuvarlak etiketler, temel kelimeleri ileri eş anlamlılarla eşleştiren iki sütunlu bir liste ve konuyla eşleşen sevimli bir karikatür içerir.",
+        "who": "IELTS hazırlık öğrencileri, İngilizce öğretmenleri, ESL blog yazarları, dil öğrenme uygulama pazarlamacıları ve akademik yazım eğitmenleri için uygundur.",
+        "how": [
+          "Bir kelime konusu seçin (Fiiller, Sıfatlar, Zarflar & Bağlayıcılar, Yaygın Fiiller).",
+          "4K minimalist bir IELTS kelime dağıtımı posteri oluşturun."
+        ],
+        "prompts": [
+          "Bir IELTS Fiiller kelime dağıtımı posteri oluşturun (temel → ileri).",
+          "Sevimli bir illüstrasyon ile bir IELTS Sıfatları 3.0 vs 9.0 kelime posteri oluşturun.",
+          "Bir IELTS Zarflar & Bağlayıcılar kelime dağıtımı posteri oluşturun."
+        ]
+      }
+    }
   }
 }

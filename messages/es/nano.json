@@ -3130,5 +3130,145 @@
         ]
       }
     }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Tarjeta de Memoria de Modismos Chinos",
+    "description": "Tarjetas de memoria dibujadas a mano para modismos chinos (成语) — pinyin, caracteres, definición en inglés y una frase de ejemplo por tarjeta.",
+    "title": "Generador de Tarjetas de Memoria de Modismos Chinos",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta educativa limpia para cualquier modismo chino (chengyu). El diseño empareja una ilustración de caricatura linda de la historia del modismo a la izquierda con pinyin, caracteres chinos grandes y en negrita, y una definición simple en inglés a la derecha. Una sección inferior '例句' añade una frase de ejemplo con traducción al inglés.",
+        "who": "Adecuado para estudiantes de chino (CSL), estudiantes de preparación para HSK, profesores de idiomas, creadores de contenido para niños y marcas de educación bilingüe.",
+        "how": [
+          "Elige un modismo chino (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴, etc.).",
+          "Genera una tarjeta de memoria de caricatura minimalista en 4K con pinyin + caracteres + definición + frase de ejemplo."
+        ],
+        "prompts": [
+          "Genera una tarjeta de memoria del modismo 画蛇添足 con ilustración de serpiente y definición en inglés.",
+          "Crea una tarjeta de memoria 守株待兔 mostrando la historia del conejo y el tocón de árbol.",
+          "Genera una tarjeta de memoria 井底之蛙 con la caricatura de la rana del pozo y un ejemplo de frase."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Infografía Educativa sobre el Clima para Niños",
+    "description": "Cartel educativo alegre en acuarela sobre cualquier tipo de clima — formación, causas, efectos y medición, en 4 paneles amigables para niños.",
+    "title": "Generador de Infografía Educativa sobre el Clima para Niños",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel educativo alegre y amigable para niños sobre un tipo de clima. El diseño tiene un título en negrita, cuatro paneles (Formación, Causas, Efectos, Medición) con íconos y viñetas simples, una suave ilustración en acuarela del clima en la parte inferior y un eslogan atractivo. Paleta de colores pastel temática según el clima.",
+        "who": "Adecuado para profesores de primaria, padres de educación en casa, YouTubers de contenido para niños, creadores de Pinterest sobre clima y educadores de museos que hacen carteles estacionales.",
+        "how": [
+          "Elige un tipo de clima (Nieve, Lluvia, Ventoso, Soleado, Nublado, Nebuloso).",
+          "Genera una infografía sobre el clima para niños en acuarela en 4K con 4 paneles y un eslogan."
+        ],
+        "prompts": [
+          "Genera una infografía sobre el clima de Nieve para niños con ilustraciones de copos de nieve.",
+          "Crea un cartel sobre el clima Nublado con paneles de formación de nubes.",
+          "Genera una infografía sobre el clima Nebuloso para niños con escenas en acuarela de niebla."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Cartel de Producto Acogedor",
+    "description": "Anuncio de producto de estilo de vida cálido y acogedor — tu electrodoméstico en una escena estilizada con eslogan manuscrito y distintivos de características.",
+    "title": "Generador de Cartel de Producto de Electrodoméstico Acogedor",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel de producto de estilo de vida iluminado cálidamente. El diseño tiene un titular en negrita + eslogan manuscrito en la parte superior, el electrodoméstico centrado en un entorno acogedor (flores, velas, accesorios), un distintivo circular de características más 4-5 íconos de características, y la etiqueta del producto en la parte inferior. Paleta de colores pastel combinada con el producto.",
+        "who": "Adecuado para vendedores de comercio electrónico, marcas de electrodomésticos, propietarios de tiendas en Etsy/Shopify, fotógrafos de productos prototipando tomas y creadores de estilo de vida.",
+        "how": [
+          "Ingresa un electrodoméstico (Cafetera, Lámpara de Escritorio, Altavoz Bluetooth, Difusor de Aromas, Licuadora Portátil).",
+          "Genera un cartel de producto acogedor en 4K con entorno de estilo de vida + distintivos de características."
+        ],
+        "prompts": [
+          "Genera un cartel de producto acogedor para una Cafetera con eslogan manuscrito y estilo floral.",
+          "Crea un cálido cartel de producto de Lámpara de Escritorio con distintivos de características y paleta pastel.",
+          "Genera un cartel de estilo de vida para una Licuadora Portátil con distintivo circular y lista de íconos."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "Estereotipo MBTI vs Realidad",
+    "description": "Tarjetas de comparación estereotipo vs realidad lado a lado para cualquier tipo MBTI — ilustraciones de bajo polígono y listas con viñetas.",
+    "title": "Generador de Infografía Estereotipo MBTI vs Realidad",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación lado a lado por tipo MBTI. El diseño tiene un título estilo periódico recortado en la parte superior central, una ilustración de estereotipo de bajo polígono + lista con viñetas a la izquierda, y una ilustración de realidad de bajo polígono + lista con viñetas a la derecha. Estilo artístico de bajo polígono plano, fondo blanco.",
+        "who": "Adecuado para creadores de contenido MBTI, bloggers de personalidad, cuentas de memes en redes sociales, fans de MBTI y educadores que enseñan marcos de personalidad.",
+        "how": [
+          "Elige un tipo MBTI (INTJ, ENTP, INFJ, ESFP, etc.).",
+          "Genera una infografía de comparación estereotipo vs realidad en 4K de bajo polígono."
+        ],
+        "prompts": [
+          "Genera una infografía MBTI de estereotipo vs realidad INTJ con ilustraciones de bajo polígono.",
+          "Crea una comparación de estereotipo vs realidad ENFP con título estilo periódico recortado.",
+          "Genera un póster MBTI de estereotipo vs realidad ESTP."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Infografía de Datos del Planeta",
+    "description": "Póster cinematográfico de datos del planeta — imagen fotorealista del planeta, título brillante y secciones etiquetadas que cubren atmósfera, superficie, lunas, rotación.",
+    "title": "Generador de Infografía de Datos del Planeta Espacial",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa cinematográfica sobre un planeta. El diseño tiene un título brillante + imagen fotorealista del planeta contra un campo estelar, luego secciones de datos etiquetadas (estadísticas generales, atmósfera, características de la superficie, lunas, rotación) más pequeños diagramas para inclinación axial, tormentas, sistemas de anillos. Estética de ciencia ficción con colores vibrantes que coinciden con el planeta.",
+        "who": "Adecuado para educadores de astronomía, creadores de Pinterest con temática espacial, creadores de contenido de ciencia para niños, diseñadores de exhibiciones de museos y bloggers de noticias espaciales.",
+        "how": [
+          "Ingresa un planeta (Saturno, Marte, Júpiter, Neptuno, Venus, Urano, La Luna).",
+          "Genera una infografía de datos del planeta cinematográfica en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía de datos del planeta Saturno con diagramas del sistema de anillos y estadísticas atmosféricas.",
+          "Crea un póster de datos del planeta Marte con características de la superficie y llamadas a lunas.",
+          "Genera una infografía de datos del planeta Júpiter con la Gran Mancha Roja y panel de atmósfera."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Infografía Emoción vs Emoción",
+    "description": "Póster de comparación lado a lado para dos emociones confusas — ilustraciones de dibujos animados planas y definiciones resaltadas en amarillo.",
+    "title": "Infografía de Comparación Emoción vs Emoción",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo limpio que compara dos emociones o comportamientos. El diseño tiene un título 'X vs Y' en la parte superior, dos ilustraciones de dibujos animados planas simples a la izquierda mostrando el lenguaje corporal de cada emoción, y dos cajas de definición etiquetadas con resaltados amarillos a la derecha. Fondo blanco minimalista, estilo de dibujos animados amigable.",
+        "who": "Adecuado para profesores de ESL que construyen tarjetas de vocabulario emocional, consejeros escolares, marcas de aprendizaje social-emocional para niños y creadores de contenido de idiomas.",
+        "how": [
+          "Ingresa dos emociones para comparar (Ansioso vs Emocionado, Triste vs Deprimido, Tímido vs Introvertido).",
+          "Genera una infografía de comparación minimalista en 4K con ilustraciones de dibujos animados planas."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación de emociones Ansioso vs Emocionado.",
+          "Crea un póster de comparación Tímido vs Introvertido con ilustraciones de dibujos animados.",
+          "Genera una infografía de emoción vs emoción Enojado vs Frustrado."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "Mejora de Vocabulario IELTS",
+    "description": "Póster de vocabulario básico vs avanzado en dos columnas para la preparación del IELTS: pares de sinónimos organizados por tema con una linda ilustración de cierre.",
+    "title": "Póster de Mejora de Vocabulario IELTS 3.0 → 9.0",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo humorístico que compara el vocabulario básico con el avanzado en inglés. El diseño tiene etiquetas redondeadas moradas 'IELTS 3.0' y 'IELTS 9.0' en la parte superior, una lista en dos columnas que empareja palabras básicas con sinónimos avanzados, y un lindo dibujo animado en la parte inferior que coincide con el tema.",
+        "who": "Adecuado para estudiantes que se preparan para el IELTS, profesores de inglés, bloggers de ESL, comercializadores de aplicaciones de aprendizaje de idiomas y tutores de redacción académica.",
+        "how": [
+          "Elige un tema de vocabulario (Verbos, Adjetivos, Adverbios y Conectores, Verbos Comunes).",
+          "Genera un póster de mejora de vocabulario IELTS minimalista en 4K."
+        ],
+        "prompts": [
+          "Genera un póster de mejora de vocabulario de Verbos IELTS (básico → avanzado).",
+          "Crea un póster de vocabulario de Adjetivos IELTS 3.0 vs 9.0 con una linda ilustración.",
+          "Genera un póster de mejora de vocabulario de Adverbios y Conectores IELTS."
+        ]
+      }
+    }
   }
 }
