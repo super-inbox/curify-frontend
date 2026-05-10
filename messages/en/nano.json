@@ -3129,5 +3129,145 @@
         ]
       }
     }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Chinese Idiom Flashcard",
+    "description": "Cute hand-drawn flashcards for Chinese idioms (成语) — pinyin, characters, English definition, and an example sentence per card.",
+    "title": "Chinese Idiom Learning Card Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean educational flashcard for any Chinese idiom (chengyu). The layout pairs a cute cartoon illustration of the idiom's story on the left with pinyin, large bold Chinese characters, and a simple English definition on the right. A bottom '例句' section adds an example sentence with English translation.",
+        "who": "Suitable for Chinese learners (CSL), HSK prep students, language teachers, kids language-content creators, and bilingual education brands.",
+        "how": [
+          "Pick a Chinese idiom (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴, etc.).",
+          "Generate a 4K minimalist cartoon flashcard with pinyin + characters + definition + example sentence."
+        ],
+        "prompts": [
+          "Generate a 画蛇添足 idiom flashcard with snake illustration and English definition.",
+          "Create a 守株待兔 flashcard showing the rabbit-and-tree-stump story.",
+          "Generate a 井底之蛙 flashcard with the well-frog cartoon and a sentence example."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Kids Weather Infographic",
+    "description": "Cheerful watercolor educational poster about any weather type — formation, causes, effects, and measurement, in 4 kid-friendly panels.",
+    "title": "Kids Weather Education Infographic Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a cheerful kid-friendly educational poster about a weather type. The layout has a bold title, four panels (Formation, Causes, Effects, Measurement) with icons and simple bullets, a soft watercolor illustration of the weather at the bottom, and a catchy tagline. Pastel palette themed to the weather.",
+        "who": "Suitable for elementary teachers, homeschool parents, kids-content YouTubers, weather-themed Pinterest creators, and museum educators making seasonal posters.",
+        "how": [
+          "Pick a weather type (Snow, Rain, Windy, Sunny, Cloudy, Foggy).",
+          "Generate a 4K watercolor kids-weather infographic with 4 panels and a tagline."
+        ],
+        "prompts": [
+          "Generate a Snow weather infographic for kids with snowflake illustrations.",
+          "Create a Cloudy weather poster with cloud-formation panels.",
+          "Generate a Foggy weather kids infographic with mist watercolor scenes."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Cozy Product Poster",
+    "description": "Warm cozy lifestyle product ad — your home appliance in a styled scene with handwritten tagline and feature badges.",
+    "title": "Cozy Home Appliance Product Poster Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a warm-lit lifestyle product poster. The layout has a bold headline + handwritten tagline up top, the appliance centered in a cozy styled setting (flowers, candles, accessories), a circular feature badge plus 4-5 feature icons, and the product label at the bottom. Pastel palette matched to the product.",
+        "who": "Suitable for ecommerce sellers, home-appliance brands, Etsy/Shopify shop owners, product photographers prototyping shots, and lifestyle creators.",
+        "how": [
+          "Enter a home appliance (Coffee Maker, Desk Lamp, Bluetooth Speaker, Aroma Diffuser, Portable Blender).",
+          "Generate a 4K cozy product poster with lifestyle setting + feature badges."
+        ],
+        "prompts": [
+          "Generate a cozy product poster for a Coffee Maker with handwritten tagline and floral styling.",
+          "Create a warm Desk Lamp product poster with feature badges and pastel palette.",
+          "Generate a Portable Blender lifestyle poster with circular badge and icon list."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "MBTI Stereotype vs Reality",
+    "description": "Side-by-side stereotype-vs-reality comparison cards for any MBTI type — low-poly illustrations and bullet lists.",
+    "title": "MBTI Stereotype vs Reality Infographic Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a side-by-side comparison infographic per MBTI type. The layout has a cut-out newspaper-style title at the top center, a low-poly stereotype illustration + bullet list on the left, and a low-poly reality illustration + bullet list on the right. Flat low-poly art style, white background.",
+        "who": "Suitable for MBTI content creators, personality bloggers, social-media meme accounts, fandom MBTI fans, and educators teaching personality frameworks.",
+        "how": [
+          "Pick an MBTI type (INTJ, ENTP, INFJ, ESFP, etc.).",
+          "Generate a 4K low-poly stereotype-vs-reality comparison infographic."
+        ],
+        "prompts": [
+          "Generate an INTJ stereotype vs reality MBTI infographic with low-poly illustrations.",
+          "Create an ENFP stereotype vs reality comparison with cut-out newspaper-style title.",
+          "Generate an ESTP stereotype vs reality MBTI poster."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Planet Fact Infographic",
+    "description": "Cinematic planet fact poster — photorealistic planet image, glowing title, and labeled sections covering atmosphere, surface, moons, rotation.",
+    "title": "Space Planet Fact Infographic Generator",
+    "content": {
+      "sections": {
+        "what": "This template generates a cinematic educational infographic about a planet. The layout has a glowing title + photorealistic planet image against a starfield, then labeled fact sections (general stats, atmosphere, surface features, moons, rotation) plus small diagrams for axial tilt, storms, ring systems. Sci-fi aesthetic with vibrant colors matched to the planet.",
+        "who": "Suitable for astronomy educators, space-themed Pinterest creators, kids-science content makers, museum exhibit designers, and space-news bloggers.",
+        "how": [
+          "Enter a planet (Saturn, Mars, Jupiter, Neptune, Venus, Uranus, The Moon).",
+          "Generate a 4K cinematic sci-fi planet fact infographic."
+        ],
+        "prompts": [
+          "Generate a Saturn planet fact infographic with ring system diagrams and atmospheric stats.",
+          "Create a Mars planet fact poster with surface features and moon callouts.",
+          "Generate a Jupiter planet fact infographic with the Great Red Spot and atmosphere panel."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Emotion vs Emotion Infographic",
+    "description": "Side-by-side comparison poster for two confusable emotions — flat cartoon illustrations and yellow-highlighted definitions.",
+    "title": "Emotion vs Emotion Comparison Infographic",
+    "content": {
+      "sections": {
+        "what": "This template generates a clean educational poster comparing two emotions or behaviors. The layout has a 'X vs Y' title up top, two simple flat cartoon illustrations on the left showing each emotion's body language, and two labeled definition boxes with yellow highlights on the right. Minimalist white background, friendly cartoon style.",
+        "who": "Suitable for ESL teachers building emotion-vocabulary cards, school counselors, kids social-emotional learning brands, and language-content creators.",
+        "how": [
+          "Enter two emotions to compare (Anxious vs Excited, Sad vs Depressed, Shy vs Introverted).",
+          "Generate a 4K minimalist comparison infographic with flat cartoon illustrations."
+        ],
+        "prompts": [
+          "Generate an Anxious vs Excited emotion comparison infographic.",
+          "Create a Shy vs Introverted comparison poster with cartoon illustrations.",
+          "Generate an Angry vs Frustrated emotion vs emotion infographic."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "IELTS Vocabulary Upgrade",
+    "description": "Two-column basic-vs-advanced vocabulary poster for IELTS prep — pairs of synonyms organized by topic with a cute closing illustration.",
+    "title": "IELTS 3.0 → 9.0 Vocabulary Upgrade Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a humorous educational poster comparing basic vs advanced English vocabulary. The layout has 'IELTS 3.0' and 'IELTS 9.0' purple rounded labels at the top, a two-column list pairing basic words with advanced synonyms, and a cute cartoon at the bottom matching the topic.",
+        "who": "Suitable for IELTS prep students, English teachers, ESL bloggers, language-learning app marketers, and academic-writing tutors.",
+        "how": [
+          "Pick a vocabulary topic (Verbs, Adjectives, Adverbs & Connectors, Common Verbs).",
+          "Generate a 4K minimalist IELTS vocabulary upgrade poster."
+        ],
+        "prompts": [
+          "Generate an IELTS Verbs vocabulary upgrade poster (basic → advanced).",
+          "Create an IELTS Adjectives 3.0 vs 9.0 vocabulary poster with cute illustration.",
+          "Generate an IELTS Adverbs & Connectors vocabulary upgrade poster."
+        ]
+      }
+    }
   }
 }

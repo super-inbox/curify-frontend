@@ -3130,5 +3130,145 @@
         ]
       }
     }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Carte de Flashcards d'Idiomes Chinois",
+    "description": "Jolies flashcards dessinées à la main pour les idiomes chinois (成语) — pinyin, caractères, définition en anglais et une phrase d'exemple par carte.",
+    "title": "Générateur de Cartes d'Apprentissage d'Idiomes Chinois",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une flashcard éducative propre pour tout idiome chinois (chengyu). La mise en page associe une illustration de dessin animé mignonne de l'histoire de l'idiome à gauche avec le pinyin, de grands caractères chinois en gras, et une définition simple en anglais à droite. Une section '例句' en bas ajoute une phrase d'exemple avec traduction en anglais.",
+        "who": "Convient aux apprenants de chinois (CSL), aux étudiants préparant le HSK, aux enseignants de langues, aux créateurs de contenu linguistique pour enfants et aux marques d'éducation bilingue.",
+        "how": [
+          "Choisissez un idiome chinois (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴, etc.).",
+          "Générez une flashcard cartoon minimaliste 4K avec pinyin + caractères + définition + phrase d'exemple."
+        ],
+        "prompts": [
+          "Générez une flashcard d'idiome 画蛇添足 avec illustration de serpent et définition en anglais.",
+          "Créez une flashcard 守株待兔 montrant l'histoire du lapin et de la souche d'arbre.",
+          "Générez une flashcard 井底之蛙 avec le dessin animé de la grenouille du puits et un exemple de phrase."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Infographie Météo pour Enfants",
+    "description": "Affiche éducative joyeuse en aquarelle sur tout type de météo — formation, causes, effets et mesure, en 4 panneaux adaptés aux enfants.",
+    "title": "Générateur d'Infographie Éducative sur la Météo pour Enfants",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative joyeuse et adaptée aux enfants sur un type de météo. La mise en page a un titre en gras, quatre panneaux (Formation, Causes, Effets, Mesure) avec des icônes et des puces simples, une illustration douce en aquarelle de la météo en bas, et un slogan accrocheur. Palette pastel thématique selon la météo.",
+        "who": "Convient aux enseignants d'école élémentaire, aux parents d'école à la maison, aux YouTubers de contenu pour enfants, aux créateurs Pinterest sur le thème de la météo et aux éducateurs de musées réalisant des affiches saisonnières.",
+        "how": [
+          "Choisissez un type de météo (Neige, Pluie, Venteux, Ensoleillé, Nuageux, Brumeux).",
+          "Générez une infographie sur la météo pour enfants en aquarelle 4K avec 4 panneaux et un slogan."
+        ],
+        "prompts": [
+          "Générez une infographie sur la météo Neige pour enfants avec des illustrations de flocons de neige.",
+          "Créez une affiche sur la météo Nuageuse avec des panneaux de formation des nuages.",
+          "Générez une infographie sur la météo Brumeuse pour enfants avec des scènes en aquarelle de brouillard."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Affiche de Produit Conviviale",
+    "description": "Annonce de produit de style de vie chaleureuse et conviviale — votre appareil électroménager dans une scène stylisée avec un slogan manuscrit et des badges de caractéristiques.",
+    "title": "Générateur d'Affiche de Produit Électroménager Conviviale",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche de produit de style de vie chaleureusement éclairée. La mise en page a un titre en gras + un slogan manuscrit en haut, l'appareil centré dans un cadre stylisé chaleureux (fleurs, bougies, accessoires), un badge de caractéristiques circulaire plus 4-5 icônes de caractéristiques, et l'étiquette du produit en bas. Palette pastel assortie au produit.",
+        "who": "Convient aux vendeurs en ligne, aux marques d'appareils électroménagers, aux propriétaires de boutiques Etsy/Shopify, aux photographes de produits réalisant des prises de vue, et aux créateurs de style de vie.",
+        "how": [
+          "Entrez un appareil électroménager (Machine à Café, Lampe de Bureau, Haut-Parleur Bluetooth, Diffuseur d'Aromas, Mixeur Portable).",
+          "Générez une affiche de produit conviviale 4K avec cadre de style de vie + badges de caractéristiques."
+        ],
+        "prompts": [
+          "Générez une affiche de produit conviviale pour une Machine à Café avec slogan manuscrit et style floral.",
+          "Créez une affiche de produit pour une Lampe de Bureau chaleureuse avec badges de caractéristiques et palette pastel.",
+          "Générez une affiche de style de vie pour un Mixeur Portable avec badge circulaire et liste d'icônes."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "Stéréotype MBTI vs Réalité",
+    "description": "Cartes de comparaison stéréotype-vs-réalité côte à côte pour tout type MBTI — illustrations low-poly et listes à puces.",
+    "title": "Générateur d'Infographie Stéréotype MBTI vs Réalité",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie de comparaison côte à côte par type MBTI. La mise en page a un titre découpé de style journal en haut au centre, une illustration de stéréotype low-poly + liste à puces à gauche, et une illustration de réalité low-poly + liste à puces à droite. Style artistique low-poly plat, fond blanc.",
+        "who": "Convient aux créateurs de contenu MBTI, blogueurs de personnalité, comptes de mèmes sur les réseaux sociaux, fans de fandom MBTI et éducateurs enseignant des cadres de personnalité.",
+        "how": [
+          "Choisissez un type MBTI (INTJ, ENTP, INFJ, ESFP, etc.).",
+          "Générez une infographie de comparaison stéréotype-vs-réalité en 4K low-poly."
+        ],
+        "prompts": [
+          "Générez une infographie MBTI stéréotype vs réalité INTJ avec des illustrations low-poly.",
+          "Créez une comparaison stéréotype vs réalité ENFP avec un titre découpé de style journal.",
+          "Générez une affiche MBTI stéréotype vs réalité ESTP."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Infographie sur les Faits des Planètes",
+    "description": "Affiche cinématographique sur les faits des planètes — image de planète photoréaliste, titre lumineux et sections étiquetées couvrant l'atmosphère, la surface, les lunes, la rotation.",
+    "title": "Générateur d'Infographie sur les Faits des Planètes",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une infographie éducative cinématographique sur une planète. La mise en page a un titre lumineux + image de planète photoréaliste contre un champ d'étoiles, puis des sections de faits étiquetées (statistiques générales, atmosphère, caractéristiques de surface, lunes, rotation) plus de petits diagrammes pour l'inclinaison axiale, les tempêtes, les systèmes d'anneaux. Esthétique sci-fi avec des couleurs vives assorties à la planète.",
+        "who": "Convient aux éducateurs en astronomie, créateurs de contenu sur Pinterest à thème spatial, créateurs de contenu scientifique pour enfants, concepteurs d'expositions de musées et blogueurs d'actualités spatiales.",
+        "how": [
+          "Entrez une planète (Saturne, Mars, Jupiter, Neptune, Vénus, Uranus, La Lune).",
+          "Générez une infographie cinématographique sur les faits des planètes en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie sur les faits de la planète Saturne avec des diagrammes du système d'anneaux et des statistiques atmosphériques.",
+          "Créez une affiche sur les faits de la planète Mars avec des caractéristiques de surface et des appels de lunes.",
+          "Générez une infographie sur les faits de la planète Jupiter avec la Grande Tache Rouge et un panneau atmosphérique."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Infographie Émotion vs Émotion",
+    "description": "Affiche de comparaison côte à côte pour deux émotions confondables — illustrations de dessins animés plates et définitions surlignées en jaune.",
+    "title": "Infographie de Comparaison Émotion vs Émotion",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative propre comparant deux émotions ou comportements. La mise en page a un titre 'X vs Y' en haut, deux illustrations de dessins animés plates simples à gauche montrant le langage corporel de chaque émotion, et deux boîtes de définition étiquetées avec des surlignages jaunes à droite. Fond blanc minimaliste, style de dessin animé amical.",
+        "who": "Convient aux enseignants d'ESL construisant des cartes de vocabulaire émotionnel, conseillers scolaires, marques d'apprentissage social-émotionnel pour enfants et créateurs de contenu linguistique.",
+        "how": [
+          "Entrez deux émotions à comparer (Anxieux vs Excité, Triste vs Déprimé, Timide vs Introverti).",
+          "Générez une infographie de comparaison minimaliste en 4K avec des illustrations de dessins animés plates."
+        ],
+        "prompts": [
+          "Générez une infographie de comparaison émotionnelle Anxieux vs Excité.",
+          "Créez une affiche de comparaison Timide vs Introverti avec des illustrations de dessins animés.",
+          "Générez une infographie émotion vs émotion Colérique vs Frustré."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "Amélioration du vocabulaire IELTS",
+    "description": "Affiche de vocabulaire basique vs avancé en deux colonnes pour la préparation à l'IELTS — paires de synonymes organisées par sujet avec une illustration de clôture mignonne.",
+    "title": "Affiche d'amélioration du vocabulaire IELTS 3.0 → 9.0",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative humoristique comparant le vocabulaire anglais basique et avancé. La mise en page a des étiquettes rondes violettes 'IELTS 3.0' et 'IELTS 9.0' en haut, une liste en deux colonnes associant des mots basiques à des synonymes avancés, et un dessin animé mignon en bas correspondant au sujet.",
+        "who": "Convient aux étudiants préparant l'IELTS, aux enseignants d'anglais, aux blogueurs ESL, aux marketeurs d'applications d'apprentissage des langues et aux tuteurs en rédaction académique.",
+        "how": [
+          "Choisissez un sujet de vocabulaire (Verbes, Adjectifs, Adverbes & Connecteurs, Verbes courants).",
+          "Générez une affiche d'amélioration du vocabulaire IELTS minimaliste en 4K."
+        ],
+        "prompts": [
+          "Générez une affiche d'amélioration du vocabulaire des verbes IELTS (basique → avancé).",
+          "Créez une affiche de vocabulaire des adjectifs IELTS 3.0 vs 9.0 avec une illustration mignonne.",
+          "Générez une affiche d'amélioration du vocabulaire des adverbes & connecteurs IELTS."
+        ]
+      }
+    }
   }
 }
