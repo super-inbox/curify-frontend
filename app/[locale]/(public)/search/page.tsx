@@ -11,6 +11,7 @@ import {
 import { buildNanoFeedCards } from "@/lib/nano_page_data";
 import { nanoRegistry } from "@/lib/nano_utils";
 import { resolveContentLocale, makeSafeTranslator } from "@/lib/locale_utils";
+import { tsToSc } from "@/lib/zh_normalize";
 import SearchResultsClient from "./SearchResultsClient";
 
 // Build once per request — small enough to recompute, big enough we don't want
@@ -57,10 +58,13 @@ const STOPWORDS = new Set([
   "的", "了", "和", "及",
 ]);
 
-// Normalize for substring matching: lowercase + replace × with x so
-// queries like "3x3" find blobs that wrote "3×3".
+// Normalize for substring matching:
+//  - lowercase
+//  - × (multiplication sign) → x  (so "3x3" finds "3×3")
+//  - Traditional Chinese → Simplified  (so "菜單" / "動物 詞彙" find
+//    blobs that use the simplified form templates author with)
 function normalizeForSearch(s: string): string {
-  return s.toLowerCase().replace(/×/g, "x");
+  return tsToSc(s.toLowerCase().replace(/×/g, "x"));
 }
 
 function buildSearchTokens(query: string): {
