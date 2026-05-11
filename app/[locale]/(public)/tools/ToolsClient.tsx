@@ -102,7 +102,7 @@ export default function ToolsClient() {
     <>
       <BgParticle />
 
-      <div className="relative flex flex-col items-center mt-0 lg:mt-0 mb-18 mx-auto px-6 sm:px-10 max-w-[1280px]">
+      <div className="relative flex flex-col items-center mt-0 lg:mt-0 mb-18 mx-auto px-6 sm:px-10 max-w-[1400px]">
         <h1 className="sr-only">{t("tools.meta.title")}</h1>
 
         {/* Tools hub (grouped) */}
