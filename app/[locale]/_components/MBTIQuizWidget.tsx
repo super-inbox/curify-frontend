@@ -7,7 +7,7 @@ import CdnImage from "./CdnImage";
 import ShareButton from "./ShareButton";
 import MBTIPosterShare from "./MBTIPosterShare";
 import { userAtom, drawerAtom, mbtiQuizOpenAtom } from "@/app/atoms/atoms";
-import { MBTI_META, IP_COLORS, MBTI_TYPES } from "@/lib/mbti-meta";
+import { MBTI_META, IP_COLORS, MBTI_TYPES, getMbtiMeta } from "@/lib/mbti-meta";
 import type { MBTIType } from "@/lib/mbti-meta";
 import mbtiCharacters from "@/public/data/mbti_characters.json";
 import { useTracking } from "@/services/useTracking";
@@ -117,7 +117,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
   const [, setDrawer] = useAtom(drawerAtom);
   const { track } = useTracking();
 
-  const meta = MBTI_META[mbti];
+  const meta = getMbtiMeta(mbti, locale);
   const chars = (mbtiCharacters as Record<string, typeof mbtiCharacters.INTJ>)[mbti] ?? [];
   const shown = chars.slice(0, 3);
   const ips = [...new Set(chars.map((c) => c.ip))].slice(0, 4);

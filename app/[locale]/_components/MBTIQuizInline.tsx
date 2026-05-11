@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Sparkles, ChevronRight, RotateCcw } from "lucide-react";
 import CdnImage from "./CdnImage";
-import { MBTI_META, IP_COLORS } from "@/lib/mbti-meta";
-import type { MBTIType } from "@/lib/mbti-meta";
+import { getMbtiMeta, getMbtiUi, pickLang, IP_COLORS } from "@/lib/mbti-meta";
+import type { MBTIType, Localized } from "@/lib/mbti-meta";
 import mbtiCharacters from "@/public/data/mbti_characters.json";
 import { useTracking } from "@/services/useTracking";
 
@@ -15,37 +15,123 @@ type TF = "T" | "F";
 type JP = "J" | "P";
 type Answers = { EI?: EI; SN?: SN; TF?: TF; JP?: JP };
 
-const QUESTIONS = [
+type QuestionDef = {
+  key: "EI" | "SN" | "TF" | "JP";
+  q: Localized;
+  options: Array<{ value: string; label: Localized; img: string }>;
+};
+
+const QUESTIONS: QuestionDef[] = [
   {
-    key: "EI" as const,
-    q: "Where do you feel most alive?",
+    key: "EI",
+    q: {
+      en: "Where do you feel most alive?",
+      zh: "你在哪里最有活力？",
+      es: "¿Dónde te sientes más vivo?",
+    },
     options: [
-      { value: "E" as EI, label: "Out with the crowd",    img: "/images/nano_insp/template-group-vocab-category-animals.jpg" },
-      { value: "I" as EI, label: "Alone in my own world", img: "/images/nano_insp/template-interior-design-mood-board-generator-bedroom.jpg" },
+      {
+        value: "E",
+        label: {
+          en: "Out with the crowd",
+          zh: "和大伙儿一起热闹",
+          es: "Saliendo con la multitud",
+        },
+        img: "/images/nano_insp/template-group-vocab-category-animals.jpg",
+      },
+      {
+        value: "I",
+        label: {
+          en: "Alone in my own world",
+          zh: "独自待在自己的世界",
+          es: "A solas en mi propio mundo",
+        },
+        img: "/images/nano_insp/template-interior-design-mood-board-generator-bedroom.jpg",
+      },
     ],
   },
   {
-    key: "SN" as const,
-    q: "What excites you on a new trip?",
+    key: "SN",
+    q: {
+      en: "What excites you on a new trip?",
+      zh: "出门旅行，最让你期待的是什么？",
+      es: "¿Qué te emociona en un viaje nuevo?",
+    },
     options: [
-      { value: "S" as SN, label: "Discovering real local flavors", img: "/images/nano_insp/template-food-zh-italian-pasta.jpg" },
-      { value: "N" as SN, label: "The thrill of the unknown",      img: "/images/nano_insp/template-travel-zh-xishuangbanna.jpg" },
+      {
+        value: "S",
+        label: {
+          en: "Discovering real local flavors",
+          zh: "寻找地道的当地风味",
+          es: "Descubrir sabores locales auténticos",
+        },
+        img: "/images/nano_insp/template-food-zh-italian-pasta.jpg",
+      },
+      {
+        value: "N",
+        label: {
+          en: "The thrill of the unknown",
+          zh: "探索未知的刺激",
+          es: "La emoción de lo desconocido",
+        },
+        img: "/images/nano_insp/template-travel-zh-xishuangbanna.jpg",
+      },
     ],
   },
   {
-    key: "TF" as const,
-    q: "What guides your toughest calls?",
+    key: "TF",
+    q: {
+      en: "What guides your toughest calls?",
+      zh: "做艰难决定时，你靠什么指引？",
+      es: "¿Qué te guía en tus decisiones más difíciles?",
+    },
     options: [
-      { value: "T" as TF, label: "Logic & clear reasoning",   img: "/images/nano_insp/template-figure-principles-infographic-albert-einstein.jpg" },
-      { value: "F" as TF, label: "Gut feeling & what's right", img: "/images/nano_insp/template-fashion-before-after-outfit-annotation-card-emerald-jewelry.jpg" },
+      {
+        value: "T",
+        label: {
+          en: "Logic & clear reasoning",
+          zh: "逻辑与清晰的推理",
+          es: "Lógica y razonamiento claro",
+        },
+        img: "/images/nano_insp/template-figure-principles-infographic-albert-einstein.jpg",
+      },
+      {
+        value: "F",
+        label: {
+          en: "Gut feeling & what's right",
+          zh: "直觉与内心的正义",
+          es: "La intuición y lo que es correcto",
+        },
+        img: "/images/nano_insp/template-fashion-before-after-outfit-annotation-card-emerald-jewelry.jpg",
+      },
     ],
   },
   {
-    key: "JP" as const,
-    q: "Your ideal Friday night plan?",
+    key: "JP",
+    q: {
+      en: "Your ideal Friday night plan?",
+      zh: "你理想的周五夜晚是什么样的？",
+      es: "¿Cuál es tu plan ideal para un viernes por la noche?",
+    },
     options: [
-      { value: "J" as JP, label: "Reserved, researched, ready", img: "/images/nano_insp/template-travel-zh-beijing.jpg" },
-      { value: "P" as JP, label: "Wing it & see what happens",  img: "/images/nano_insp/template-mbti-animal-zh-cafe.jpg" },
+      {
+        value: "J",
+        label: {
+          en: "Reserved, researched, ready",
+          zh: "预定好、研究好、准备好",
+          es: "Reservado, investigado, listo",
+        },
+        img: "/images/nano_insp/template-travel-zh-beijing.jpg",
+      },
+      {
+        value: "P",
+        label: {
+          en: "Wing it & see what happens",
+          zh: "随心而动，看会发生什么",
+          es: "Improvisar y ver qué pasa",
+        },
+        img: "/images/nano_insp/template-mbti-animal-zh-cafe.jpg",
+      },
     ],
   },
 ];
@@ -54,6 +140,8 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const { track } = useTracking();
+  const lang = pickLang(locale);
+  const ui = getMbtiUi(locale);
 
   const done = step === QUESTIONS.length;
   const mbti = done
@@ -69,7 +157,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
   const reset = () => { setStep(0); setAnswers({}); };
 
   const q = !done ? QUESTIONS[step] : null;
-  const meta = mbti ? MBTI_META[mbti] : null;
+  const meta = mbti ? getMbtiMeta(mbti, locale) : null;
   const chars = mbti ? ((mbtiCharacters as Record<string, typeof mbtiCharacters.INTJ>)[mbti] ?? []).slice(0, 3) : [];
 
   return (
@@ -78,7 +166,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="h-4 w-4 text-purple-500" />
         <span className="text-xs font-semibold uppercase tracking-widest text-purple-500">
-          Visual Personality Test
+          {ui.testHeader}
         </span>
       </div>
 
@@ -96,11 +184,12 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
             ))}
           </div>
 
-          <p className="text-base font-semibold text-neutral-900 mb-4">{q!.q}</p>
+          <p className="text-base font-semibold text-neutral-900 mb-4">{q!.q[lang]}</p>
 
           <div className="grid grid-cols-2 gap-3">
             {q!.options.map((opt) => {
               const selected = answers[q!.key] === opt.value;
+              const label = opt.label[lang];
               return (
                 <button
                   key={opt.value}
@@ -113,7 +202,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
                   <div className="aspect-[4/3] overflow-hidden">
                     <CdnImage
                       src={opt.img}
-                      alt={opt.label}
+                      alt={label}
                       width={220}
                       height={165}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
@@ -121,7 +210,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
                   </div>
                   {selected && <div className="absolute inset-0 bg-purple-500/10" />}
                   <div className={`px-3 py-2 text-xs font-semibold ${selected ? "bg-purple-50 text-purple-700" : "bg-white text-neutral-700"}`}>
-                    {opt.label}
+                    {label}
                   </div>
                 </button>
               );
@@ -156,7 +245,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
 
           {/* Type + CTA */}
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-widest text-purple-500 mb-0.5">You are</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-purple-500 mb-0.5">{ui.youAre}</p>
             <p className="text-4xl font-black tracking-tight text-neutral-900 leading-none">{mbti}</p>
             <p className="mt-1 text-sm text-neutral-600 leading-snug">{meta?.tagline}</p>
 
@@ -166,7 +255,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
                 onClick={() => track({ contentId: mbti!, contentType: "mbti_quiz", actionType: "share" })}
                 className="flex items-center gap-1 rounded-full bg-purple-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-purple-700 transition-colors"
               >
-                See full result
+                {ui.seeFullResult}
                 <ChevronRight className="h-3 w-3" />
               </Link>
               <button
@@ -175,7 +264,7 @@ export default function MBTIQuizInline({ locale }: { locale: string }) {
                 className="flex items-center gap-1 rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-500 hover:bg-neutral-50 transition-colors"
               >
                 <RotateCcw className="h-3 w-3" />
-                Retake
+                {ui.retake}
               </button>
             </div>
           </div>
