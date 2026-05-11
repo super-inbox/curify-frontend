@@ -11,15 +11,25 @@ on:
       - ".github/workflows/sync_nanoprompts_to_redis.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync-nanoprompts:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -33,17 +43,18 @@ jobs:
       - name: Regenerate nanobanana metadata
         run: node scripts/regen_nanobanana_metadata.cjs
 
-      - name: Commit regenerated metadata if changed
+      - name: Commit and push directly to main
         run: |
-          if [ -n "$(git status --porcelain lib/generated/nanobanana_prompts_metadata.json)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add lib/generated/nanobanana_prompts_metadata.json
-            git commit -m "chore: auto-update nanobanana_prompts_metadata.json"
-            git push
-          else
+          if git diff --quiet -- lib/generated/nanobanana_prompts_metadata.json; then
             echo "No metadata changes to commit."
+            exit 0
           fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lib/generated/nanobanana_prompts_metadata.json
+          git commit -m "chore: auto-update nanobanana_prompts_metadata.json"
+          git push
 
       - name: Sync nanoprompts to Redis
         env:
