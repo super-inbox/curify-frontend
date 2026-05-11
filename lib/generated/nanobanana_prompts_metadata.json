@@ -1,36 +1,5 @@
 {
   "metadata": {
-    "sources": [
-      "eweek",
-      "github",
-      "promptgather"
-    ],
-    "layoutCategories": [
-      {
-        "category": "Multi-Panel",
-        "count": 2602
-      },
-      {
-        "category": "Grid Layout",
-        "count": 1091
-      },
-      {
-        "category": "Single Image",
-        "count": 5
-      },
-      {
-        "category": "Infographic",
-        "count": 3
-      },
-      {
-        "category": "Collage",
-        "count": 2
-      },
-      {
-        "category": "Step-by-Step",
-        "count": 1
-      }
-    ],
     "domainCategories": [
       {
         "category": "Graphic Design",
@@ -85,12 +54,12 @@
         "count": 16
       },
       {
-        "category": "Character Design",
-        "count": 12
-      },
-      {
         "category": "Gaming",
         "count": 13
+      },
+      {
+        "category": "Character Design",
+        "count": 12
       },
       {
         "category": "Storytelling",
@@ -177,8 +146,39 @@
         "count": 1
       }
     ],
-    "total": 3703,
-    "lastUpdated": "2026-05-08T01:46:51.979Z",
+    "lastUpdated": "2026-05-11T07:55:10.516Z",
+    "layoutCategories": [
+      {
+        "category": "Multi-Panel",
+        "count": 2602
+      },
+      {
+        "category": "Grid Layout",
+        "count": 1091
+      },
+      {
+        "category": "Single Image",
+        "count": 5
+      },
+      {
+        "category": "Infographic",
+        "count": 3
+      },
+      {
+        "category": "Collage",
+        "count": 2
+      },
+      {
+        "category": "Step-by-Step",
+        "count": 1
+      }
+    ],
+    "sources": [
+      "eweek",
+      "github",
+      "promptgather",
+      "twitter"
+    ],
     "tags": [
       {
         "tag": "photorealistic",
@@ -210,7 +210,7 @@
       },
       {
         "tag": "cozy",
-        "count": 331
+        "count": 322
       },
       {
         "tag": "joyful",
@@ -218,15 +218,15 @@
       },
       {
         "tag": "elegant",
-        "count": 317
+        "count": 314
       },
       {
         "tag": "intimate",
-        "count": 296
+        "count": 289
       },
       {
         "tag": "whimsical",
-        "count": 283
+        "count": 266
       },
       {
         "tag": "man",
@@ -234,19 +234,27 @@
       },
       {
         "tag": "vibrant",
-        "count": 259
+        "count": 258
+      },
+      {
+        "tag": "night",
+        "count": 257
       },
       {
         "tag": "vintage",
         "count": 195
       },
       {
-        "tag": "artistic",
-        "count": 184
+        "tag": "winter",
+        "count": 192
       },
       {
         "tag": "dramatic",
         "count": 182
+      },
+      {
+        "tag": "artistic",
+        "count": 178
       },
       {
         "tag": "fitness",
@@ -257,16 +265,16 @@
         "count": 169
       },
       {
-        "tag": "moody",
-        "count": 168
-      },
-      {
         "tag": "luxurious",
         "count": 168
       },
       {
         "tag": "stylish",
         "count": 167
+      },
+      {
+        "tag": "moody",
+        "count": 166
       },
       {
         "tag": "minimalist",
@@ -277,12 +285,20 @@
         "count": 147
       },
       {
-        "tag": "bold",
-        "count": 131
+        "tag": "soft-light",
+        "count": 138
+      },
+      {
+        "tag": "neon",
+        "count": 135
       },
       {
         "tag": "contemplative",
         "count": 128
+      },
+      {
+        "tag": "bold",
+        "count": 126
       },
       {
         "tag": "energetic",
@@ -293,12 +309,12 @@
         "count": 123
       },
       {
-        "tag": "dynamic",
-        "count": 121
-      },
-      {
         "tag": "fashion",
         "count": 118
+      },
+      {
+        "tag": "dynamic",
+        "count": 113
       },
       {
         "tag": "selfie",
@@ -309,8 +325,20 @@
         "count": 103
       },
       {
+        "tag": "collage",
+        "count": 102
+      },
+      {
         "tag": "golden hour",
         "count": 92
+      },
+      {
+        "tag": "snowy",
+        "count": 92
+      },
+      {
+        "tag": "pastel",
+        "count": 90
       },
       {
         "tag": "surreal",
@@ -322,15 +350,15 @@
       },
       {
         "tag": "ethereal",
-        "count": 87
+        "count": 85
       },
       {
         "tag": "festive",
-        "count": 87
+        "count": 84
       },
       {
         "tag": "intense",
-        "count": 86
+        "count": 83
       },
       {
         "tag": "chic",
@@ -345,6 +373,30 @@
         "count": 78
       },
       {
+        "tag": "car",
+        "count": 78
+      },
+      {
+        "tag": "sunset",
+        "count": 75
+      },
+      {
+        "tag": "morning",
+        "count": 73
+      },
+      {
+        "tag": "y2k",
+        "count": 73
+      },
+      {
+        "tag": "summer",
+        "count": 72
+      },
+      {
+        "tag": "christmas",
+        "count": 71
+      },
+      {
         "tag": "human portrait",
         "count": 70
       },
@@ -353,32 +405,52 @@
         "count": 69
       },
       {
-        "tag": "informative",
-        "count": 65
+        "tag": "grid",
+        "count": 68
       },
       {
         "tag": "landscape",
         "count": 64
       },
       {
-        "tag": "product",
-        "count": 62
+        "tag": "glossy",
+        "count": 63
       },
       {
         "tag": "abstract",
         "count": 61
       },
       {
+        "tag": "product",
+        "count": 61
+      },
+      {
+        "tag": "informative",
+        "count": 60
+      },
+      {
         "tag": "modern",
-        "count": 59
+        "count": 58
       },
       {
         "tag": "food",
-        "count": 59
+        "count": 57
       },
       {
         "tag": "neon lights",
         "count": 56
+      },
+      {
+        "tag": "silver",
+        "count": 53
+      },
+      {
+        "tag": "natural-light",
+        "count": 51
+      },
+      {
+        "tag": "beach",
+        "count": 50
       },
       {
         "tag": "sophisticated",
@@ -393,6 +465,14 @@
         "count": 45
       },
       {
+        "tag": "gold",
+        "count": 44
+      },
+      {
+        "tag": "japanese",
+        "count": 44
+      },
+      {
         "tag": "character",
         "count": 44
       },
@@ -401,24 +481,52 @@
         "count": 43
       },
       {
-        "tag": "urban",
+        "tag": "autumn",
         "count": 41
       },
       {
-        "tag": "romantic",
-        "count": 39
+        "tag": "urban",
+        "count": 40
+      },
+      {
+        "tag": "bokeh",
+        "count": 40
       },
       {
         "tag": "mysterious",
         "count": 39
       },
       {
+        "tag": "romantic",
+        "count": 38
+      },
+      {
         "tag": "natural beauty",
         "count": 38
       },
       {
+        "tag": "rainy",
+        "count": 37
+      },
+      {
+        "tag": "forest",
+        "count": 37
+      },
+      {
         "tag": "dreamy",
         "count": 37
+      },
+      {
+        "tag": "silhouette",
+        "count": 33
+      },
+      {
+        "tag": "twilight",
+        "count": 32
+      },
+      {
+        "tag": "ocean",
+        "count": 30
       },
       {
         "tag": "ultra realistic",
@@ -437,12 +545,28 @@
         "count": 28
       },
       {
+        "tag": "transformation",
+        "count": 27
+      },
+      {
         "tag": "architecture",
         "count": 27
       },
       {
+        "tag": "garden",
+        "count": 26
+      },
+      {
+        "tag": "cat",
+        "count": 26
+      },
+      {
         "tag": "relaxed",
         "count": 26
+      },
+      {
+        "tag": "metallic",
+        "count": 25
       },
       {
         "tag": "snowy landscape",
@@ -457,11 +581,11 @@
         "count": 25
       },
       {
-        "tag": "soft",
-        "count": 15
+        "tag": "kpop",
+        "count": 23
       },
       {
-        "tag": "kpop",
+        "tag": "poster",
         "count": 23
       },
       {
@@ -473,7 +597,15 @@
         "count": 22
       },
       {
+        "tag": "macro",
+        "count": 22
+      },
+      {
         "tag": "anime",
+        "count": 22
+      },
+      {
+        "tag": "fairy",
         "count": 22
       },
       {
@@ -481,24 +613,24 @@
         "count": 21
       },
       {
-        "tag": "closeup",
-        "count": 20
-      },
-      {
         "tag": "monochrome",
         "count": 20
       },
       {
-        "tag": "futuristic",
-        "count": 19
+        "tag": "sunglasses",
+        "count": 20
       },
       {
-        "tag": "collage",
-        "count": 19
+        "tag": "closeup",
+        "count": 20
       },
       {
         "tag": "mirror selfie",
         "count": 19
+      },
+      {
+        "tag": "infographic",
+        "count": 18
       },
       {
         "tag": "nature",
@@ -513,15 +645,19 @@
         "count": 16
       },
       {
+        "tag": "soft",
+        "count": 15
+      },
+      {
+        "tag": "futuristic",
+        "count": 14
+      },
+      {
         "tag": "casual",
         "count": 14
       },
       {
         "tag": "alluring",
-        "count": 13
-      },
-      {
-        "tag": "infographic",
         "count": 13
       },
       {
@@ -589,6 +725,10 @@
         "count": 2
       },
       {
+        "tag": "before-after",
+        "count": 1
+      },
+      {
         "tag": "exhausted",
         "count": 1
       },
@@ -644,6 +784,7 @@
         "tag": "subject",
         "count": 1
       }
-    ]
+    ],
+    "total": 4117
   }
 }

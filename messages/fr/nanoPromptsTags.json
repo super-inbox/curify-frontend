@@ -1309,5 +1309,379 @@
       "mode rock",
       "visuels rebelles"
     ]
+  },
+  "autumn": {
+    "title": "Prompts d'Image AI d'Automne",
+    "description": "Créez des prompts AI d'automne chaleureux avec un feuillage doré, des feuilles tombantes, des textures confortables et des palettes saisonnières riches.",
+    "keywords": [
+      "AI d'automne",
+      "feuillage d'automne",
+      "feuilles",
+      "tons chauds",
+      "saison confortable"
+    ]
+  },
+  "beach": {
+    "title": "Prompts d'Image AI de Plage",
+    "description": "Générez des prompts AI de plage ensoleillés mettant en vedette des rivages sablonneux, des vagues océaniques, des palmiers et des ambiances côtières parfaites pour des visuels de voyage, de style de vie et éditoriaux.",
+    "keywords": [
+      "AI de plage",
+      "scène côtière",
+      "prompts tropicaux",
+      "rivage océanique",
+      "plage d'été"
+    ]
+  },
+  "before-after": {
+    "title": "Prompts de Transformation AI Avant & Après",
+    "description": "Générez des prompts AI convaincants avant et après qui mettent en évidence des relookings, des rénovations, des modifications et des transformations visuelles dramatiques côte à côte.",
+    "keywords": [
+      "avant après",
+      "transformation",
+      "côte à côte",
+      "relooking",
+      "comparaison AI"
+    ]
+  },
+  "bokeh": {
+    "title": "Prompts d'Image AI Bokeh",
+    "description": "Générez des prompts AI bokeh oniriques avec des mises en valeur de fond flou, des points scintillants hors de la mise au point et une esthétique cinématographique de profondeur de champ.",
+    "keywords": [
+      "AI bokeh",
+      "fond flou",
+      "profondeur de champ",
+      "lumières oniriques",
+      "cinématographique"
+    ]
+  },
+  "car": {
+    "title": "Prompts d'Image AI de Voiture",
+    "description": "Générez des prompts AI de voiture cinématographiques mettant en vedette des véhicules de luxe, des voitures vintage, des voitures de sport et des prises de vue en mouvement dynamique pour des visuels automobiles et éditoriaux.",
+    "keywords": [
+      "IA de voiture",
+      "automobile",
+      "véhicule",
+      "voiture de sport",
+      "voiture de luxe"
+    ]
+  },
+  "cat": {
+    "title": "Prompts d'image IA de chat",
+    "description": "Générez des prompts IA de chat adorables mettant en vedette des chatons joueurs, des races élégantes, des portraits expressifs et des moments félins charmants.",
+    "keywords": [
+      "IA de chat",
+      "chaton",
+      "félin",
+      "portrait d'animal de compagnie",
+      "animal mignon"
+    ]
+  },
+  "fairy": {
+    "title": "Prompts d'image IA de fée",
+    "description": "Créez des prompts IA de fée fantaisistes avec des ailes magiques, des forêts lumineuses, des jardins enchantés et des esthétiques de rêve.",
+    "keywords": [
+      "IA de fée",
+      "magique",
+      "enchanté",
+      "prompts de fantaisie",
+      "fantaisiste"
+    ]
+  },
+  "forest": {
+    "title": "Prompts d'image IA de forêt",
+    "description": "Créez des prompts IA de forêt immersifs avec des arbres majestueux, une lumière tamisée, des créatures des bois et une ambiance atmosphérique — idéaux pour l'art de la fantaisie, de la nature et du récit.",
+    "keywords": [
+      "IA de forêt",
+      "prompts de bois",
+      "scène de nature",
+      "arbres",
+      "forêt enchantée"
+    ]
+  },
+  "garden": {
+    "title": "Prompts d'image IA de jardin",
+    "description": "Générez des prompts IA de jardin luxuriants mettant en vedette des fleurs en fleurs, des paysages soignés, des chemins secrets et des cadres extérieurs sereins.",
+    "keywords": [
+      "IA de jardin",
+      "prompts de fleurs",
+      "paysage",
+      "extérieur",
+      "scène botanique"
+    ]
+  },
+  "glossy": {
+    "title": "Prompts d'Image AI Brillants",
+    "description": "Créez des prompts AI brillants avec des surfaces réfléchissantes, des finitions polies et une esthétique de produit haute brillance pour des images éditoriales et publicitaires.",
+    "keywords": [
+      "AI brillant",
+      "réfléchissant",
+      "brillance",
+      "poli",
+      "photographie de produit"
+    ]
+  },
+  "gold": {
+    "title": "Prompts d'Image AI Dorés",
+    "description": "Créez des prompts AI dorés opulents avec des accents métalliques luxueux, des finitions lumineuses et des tons riches pour des visuels de marque premium et éditoriaux.",
+    "keywords": [
+      "AI doré",
+      "or métallique",
+      "luxe",
+      "opulent",
+      "esthétique premium"
+    ]
+  },
+  "grid": {
+    "title": "Prompts d'Image AI en Grille",
+    "description": "Créez des prompts AI en grille frappants 3x3 et 9 panneaux qui présentent plusieurs variations, comparaisons et expériences de design dans un seul visuel.",
+    "keywords": [
+      "grille 3x3",
+      "mise en page en grille",
+      "multi-panneau",
+      "prompts de grille AI",
+      "collage d'images"
+    ]
+  },
+  "japanese": {
+    "title": "Prompts d'Image AI Esthétique Japonaise",
+    "description": "Créez des prompts AI raffinés japonais capturant des cérémonies de thé, des jardins zen, la culture anime, la mode kimono et la beauté minimaliste wabi-sabi.",
+    "keywords": [
+      "esthétique japonaise",
+      "AI japon",
+      "zen",
+      "wabi-sabi",
+      "kimono"
+    ]
+  },
+  "macro": {
+    "title": "Prompts d'Image AI Macro",
+    "description": "Créez des prompts AI macro hyper-détaillés révélant des textures, des mondes minuscules et la beauté en gros plan dans des sujets quotidiens.",
+    "keywords": [
+      "AI macro",
+      "gros plan",
+      "détail",
+      "monde minuscule",
+      "hyper-réaliste"
+    ]
+  },
+  "metallic": {
+    "title": "Prompts d'Image AI Métalliques",
+    "description": "Générez des prompts AI métalliques élégants mettant en avant des finitions en chrome, argent, or et iridescentes pour des images futuristes et luxueuses.",
+    "keywords": [
+      "AI métallique",
+      "chrome",
+      "iridescent",
+      "brillance",
+      "finition moderne"
+    ]
+  },
+  "morning": {
+    "title": "Prompts d'Image AI Lumière du Matin",
+    "description": "Générez des prompts AI du matin frais capturant la douce lumière du lever de soleil, des scènes rosées, des débuts paisibles et des commencements à l'heure dorée.",
+    "keywords": [
+      "AI du matin",
+      "prompts de lever de soleil",
+      "aube",
+      "lumière douce",
+      "lumière matinale"
+    ]
+  },
+  "natural-light": {
+    "title": "Prompts d'Image AI Lumière Naturelle",
+    "description": "Créez des prompts AI de lumière naturelle authentiques mettant en avant des intérieurs ensoleillés, des scènes extérieures dorées et une ambiance non filtrée pour un réalisme quotidien.",
+    "keywords": [
+      "lumière naturelle",
+      "AI lumière du jour",
+      "ambiance",
+      "ensoleillé",
+      "éclairage extérieur"
+    ]
+  },
+  "neon": {
+    "title": "Prompts d'Image AI Néon",
+    "description": "Générez des invites AI néon électrisantes avec des enseignes lumineuses, des rues cyberpunk, des teintes vives et des atmosphères urbaines nocturnes.",
+    "keywords": [
+      "AI néon",
+      "lumières néon",
+      "cyberpunk",
+      "lueur",
+      "ville nocturne"
+    ]
+  },
+  "night": {
+    "title": "Invites d'Image AI Scène Nocturne",
+    "description": "Générez des invites AI nocturnes atmosphériques avec des lumières de ville, des ciels étoilés, des rues néon et des ambiances éclairées par la lune pour des visuels nocturnes dramatiques.",
+    "keywords": [
+      "scène nocturne",
+      "AI nocturne",
+      "lumières de ville",
+      "éclairé par la lune",
+      "invites du soir"
+    ]
+  },
+  "ocean": {
+    "title": "Invites d'Image AI Océan",
+    "description": "Capturez des invites AI océaniques vastes avec des vagues déferlantes, des horizons bleu profond, de la vie marine et un drame côtier pour une imagerie cinématographique et éditoriale.",
+    "keywords": [
+      "AI océan",
+      "invites de mer",
+      "marin",
+      "vagues",
+      "art côtier"
+    ]
+  },
+  "pastel": {
+    "title": "Invites d'Image AI Pastel",
+    "description": "Générez des invites AI pastel douces avec des palettes crémeuses, des teintes délicates et des esthétiques rêveuses parfaites pour des imageries fantaisistes, romantiques et de style de vie.",
+    "keywords": [
+      "AI pastel",
+      "couleurs douces",
+      "palette rêveuse",
+      "fantaisiste",
+      "romantique"
+    ]
+  },
+  "poster": {
+    "title": "Invites d'Image AI Affiche",
+    "description": "Générez des invites AI d'affiche audacieuses avec une typographie frappante, des graphiques vifs, des compositions de style cinéma et des esthétiques d'art mural partageables.",
+    "keywords": [
+      "AI affiche",
+      "affiche de film",
+      "typographie",
+      "art mural",
+      "design graphique"
+    ]
+  },
+  "rainy": {
+    "title": "Prompts d'Image AI Scène Pluvieuse",
+    "description": "Créez des prompts AI pluvieux atmosphériques avec des rues mouillées, des flaques réfléchissantes, des ciels d'humeur et des pluies cinématographiques pour des images émouvantes.",
+    "keywords": [
+      "AI pluvieux",
+      "prompts de pluie",
+      "rues mouillées",
+      "temps maussade",
+      "pluie"
+    ]
+  },
+  "silhouette": {
+    "title": "Prompts d'Image AI Silhouette",
+    "description": "Générez des prompts AI silhouette dramatiques avec des figures sombres contre des ciels vifs, des formes rétroéclairées et des compositions de contraste minimalistes.",
+    "keywords": [
+      "AI silhouette",
+      "rétroéclairé",
+      "contraste",
+      "figure sombre",
+      "silhouette au coucher de soleil"
+    ]
+  },
+  "silver": {
+    "title": "Prompts d'Image AI Argent",
+    "description": "Générez des prompts AI argentés élégants avec des surfaces chromées, des accents métalliques, des finitions futuristes et des palettes modernes luxueuses.",
+    "keywords": [
+      "AI argent",
+      "chrome",
+      "métallique",
+      "futuriste",
+      "luxe"
+    ]
+  },
+  "snowy": {
+    "title": "Prompts d'Image AI Scène Neigeuse",
+    "description": "Générez des prompts AI neigeux sereins avec des paysages enneigés, des flocons tombants, des villages d'hiver et des atmosphères tranquilles par temps froid.",
+    "keywords": [
+      "AI neigeux",
+      "scène neigeuse",
+      "paysage d'hiver",
+      "chute de neige",
+      "gelé"
+    ]
+  },
+  "soft-light": {
+    "title": "Prompts d'Image AI Lumière Douce",
+    "description": "Créez des prompts AI lumière douce avec des ombres diffusées, une lueur rêveuse et des portraits flatteurs pour des images éditoriales, de mode et de style de vie.",
+    "keywords": [
+      "lumière douce",
+      "éclairage diffus",
+      "AI rêveur",
+      "éclairage de portrait",
+      "lueur douce"
+    ]
+  },
+  "summer": {
+    "title": "Prompts d'Image AI Été",
+    "description": "Capturez des prompts AI d'été vibrants avec des ciels ensoleillés, des ambiances de plage, une végétation luxuriante et des esthétiques saisonnières énergiques.",
+    "keywords": [
+      "AI été",
+      "prompts ensoleillés",
+      "saison chaude",
+      "vibrant",
+      "extérieur"
+    ]
+  },
+  "sunglasses": {
+    "title": "Prompts d'Image AI Lunettes de Soleil",
+    "description": "Créez des prompts AI lunettes de soleil stylés mettant en avant des lunettes tendance, des looks de mode estivale et des gros plans d'accessoires audacieux pour des images éditoriales et de style de vie.",
+    "keywords": [
+      "AI lunettes de soleil",
+      "lunettes",
+      "accessoire de mode",
+      "style d'été",
+      "lunettes"
+    ]
+  },
+  "sunset": {
+    "title": "Prompts d'Image AI Coucher de Soleil",
+    "description": "Générez des prompts AI coucher de soleil à couper le souffle avec des ciels dorés, des teintes chaudes, des horizons en silhouette et des atmosphères romantiques au crépuscule.",
+    "keywords": [
+      "AI coucher de soleil",
+      "heure dorée",
+      "prompts de crépuscule",
+      "ciel chaud",
+      "horizon"
+    ]
+  },
+  "transformation": {
+    "title": "Prompts d'Image AI de Transformation",
+    "description": "Explorez des prompts AI qui visualisent le changement — des échanges de tenues et des rénovations de pièces aux personnages, environnements et concepts créatifs en évolution.",
+    "keywords": [
+      "transformation",
+      "évolution",
+      "relooking AI",
+      "avant après",
+      "métamorphose"
+    ]
+  },
+  "twilight": {
+    "title": "Prompts d'Image AI de Crépuscule",
+    "description": "Générez des prompts AI de crépuscule d'humeur avec des ciels violets, une lumière douce qui s'estompe, des atmosphères magiques et des transitions oniriques entre le jour et la nuit.",
+    "keywords": [
+      "AI crépuscule",
+      "prompts de crépuscule",
+      "ciel violet",
+      "lumière qui s'estompe",
+      "heure magique"
+    ]
+  },
+  "winter": {
+    "title": "Prompts d'Image AI d'Hiver",
+    "description": "Créez des prompts AI d'hiver confortables avec des paysages enneigés, des atmosphères glaciales, la chaleur des fêtes et des esthétiques saisonnières nettes.",
+    "keywords": [
+      "AI hiver",
+      "prompts de neige",
+      "confortable",
+      "glacial",
+      "saison des fêtes"
+    ]
+  },
+  "y2k": {
+    "title": "Prompts d'Image AI Esthétique Y2K",
+    "description": "Créez des prompts AI nostalgiques Y2K avec des accents chromés, des motifs de papillons, des finitions holographiques et des esthétiques pop numériques des années 2000.",
+    "keywords": [
+      "esthétique y2k",
+      "début des années 2000",
+      "chrome",
+      "holographique",
+      "numérique rétro"
+    ]
   }
 }

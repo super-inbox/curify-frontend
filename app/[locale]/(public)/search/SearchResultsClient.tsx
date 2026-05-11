@@ -8,8 +8,10 @@ import { useTranslations } from "next-intl";
 
 import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import type { SuggestionEntry } from "@/lib/searchIndex";
+import type { NanoPromptBase } from "@/types/nanoPrompts";
 import { useTracking } from "@/services/useTracking";
 
 type InspRecord = {
@@ -32,7 +34,20 @@ type Props = {
   inspirations: InspRecord[];
   relatedTopics: SuggestionEntry[];
   matchedTemplates: NanoInspirationCardType[];
+  galleryPrompts: NanoPromptBase[];
 };
+
+// Compute the href for a SuggestionEntry chip — honors `href` overrides
+// for non-topic destinations and routes `searchFallback` entries (nano-tag
+// suggestions) through /search?q= so they re-render this same page.
+function chipHref(s: SuggestionEntry, locale: string): string {
+  if (s.href) return `/${locale}${s.href}`;
+  if (s.searchFallback) {
+    const q = s.aliases?.[0] ?? s.slug;
+    return `/${locale}/search?q=${encodeURIComponent(q)}`;
+  }
+  return `/${locale}/topics/${s.slug}`;
+}
 
 export default function SearchResultsClient({
   query,
@@ -40,6 +55,7 @@ export default function SearchResultsClient({
   inspirations,
   relatedTopics,
   matchedTemplates,
+  galleryPrompts,
 }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
@@ -88,7 +104,8 @@ export default function SearchResultsClient({
     router.push(`/${locale}/search?q=${encodeURIComponent(q.toLowerCase())}`);
   };
 
-  const hasResults = gridItems.length > 0 || matchedTemplates.length > 0;
+  const hasResults =
+    gridItems.length > 0 || matchedTemplates.length > 0 || galleryPrompts.length > 0;
 
   const { track } = useTracking();
   useEffect(() => {
@@ -130,7 +147,7 @@ export default function SearchResultsClient({
           {relatedTopics.map((s) => (
             <Link
               key={s.slug}
-              href={s.href ? `/${locale}${s.href}` : `/${locale}/topics/${s.slug}`}
+              href={chipHref(s, locale)}
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
             >
               {s.emoji && <span>{s.emoji}</span>}
@@ -153,7 +170,7 @@ export default function SearchResultsClient({
             {relatedTopics.map((s) => (
               <Link
                 key={s.slug}
-                href={s.href ? `/${locale}${s.href}` : `/${locale}/topics/${s.slug}`}
+                href={chipHref(s, locale)}
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
               >
                 {s.emoji} {renderLabel(s.slug, s.label)}
@@ -179,7 +196,7 @@ export default function SearchResultsClient({
             </section>
           )}
 
-          {/* Templates rail (bottom): renders the matched template cards
+          {/* Templates rail (middle): renders the matched template cards
               with the same component the topic page uses. */}
           {matchedTemplates.length > 0 && (
             <section className="mt-12">
@@ -193,6 +210,30 @@ export default function SearchResultsClient({
                 showOtherTemplates={true}
                 showOtherTemplateTitle={false}
               />
+            </section>
+          )}
+
+          {/* Gallery prompts (bottom): Redis-backed nano-banana prompts
+              matching the query as an exact tag. Renders with the same
+              PromptCard used on /nano-banana-pro-prompts/tag/[slug]. */}
+          {galleryPrompts.length > 0 && (
+            <section className="mt-12">
+              <div className="mb-3 flex items-end justify-between gap-2">
+                <h2 className="text-lg font-bold text-neutral-900">
+                  Gallery Prompts
+                </h2>
+                <Link
+                  href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(query)}`}
+                  className="text-sm font-semibold text-blue-600 hover:text-blue-700"
+                >
+                  Browse all →
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {galleryPrompts.slice(0, 12).map((p) => (
+                  <PromptCard key={p.id} prompt={p} />
+                ))}
+              </div>
             </section>
           )}
         </>

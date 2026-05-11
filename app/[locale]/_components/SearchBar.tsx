@@ -33,12 +33,20 @@ export default function SearchBar({ locale }: Props) {
     ? filterSuggestions(query, 8, localize)
     : DEFAULT_FOCUS_SUGGESTIONS;
 
-  const navigate = useCallback((slug: string, label: string, href?: string) => {
+  const navigate = useCallback((
+    slug: string,
+    label: string,
+    href?: string,
+    searchFallback?: boolean,
+    queryStr?: string,
+  ) => {
     const q = slug || query.trim();
     track({ contentId: label || q, contentType: "topic_capsule", actionType: "search" });
     setOpen(false);
     setQuery("");
-    router.push(href ? `/${locale}${href}` : `/${locale}/topics/${q}`);
+    if (href) router.push(`/${locale}${href}`);
+    else if (searchFallback) router.push(`/${locale}/search?q=${encodeURIComponent(queryStr ?? slug)}`);
+    else router.push(`/${locale}/topics/${q}`);
   }, [locale, query, router, track]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -52,7 +60,11 @@ export default function SearchBar({ locale }: Props) {
     const exact = filterSuggestions(q, 1, localize)[0];
     const exactLocalized = exact ? localize(exact.slug)?.toLowerCase() : undefined;
     if (exact && (exact.slug === q || exact.label.toLowerCase() === q || exactLocalized === q)) {
-      router.push(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`);
+      if (exact.searchFallback) {
+        router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
+      } else {
+        router.push(exact.href ? `/${locale}${exact.href}` : `/${locale}/topics/${exact.slug}`);
+      }
     } else {
       router.push(`/${locale}/search?q=${encodeURIComponent(q)}`);
     }
@@ -108,7 +120,7 @@ export default function SearchBar({ locale }: Props) {
               <button
                 key={s.slug}
                 type="button"
-                onClick={() => navigate(s.slug, renderLabel(s.slug, s.label), s.href)}
+                onClick={() => navigate(s.slug, renderLabel(s.slug, s.label), s.href, s.searchFallback, s.aliases?.[0])}
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
               >
                 {s.emoji && <span aria-hidden="true">{s.emoji}</span>}
