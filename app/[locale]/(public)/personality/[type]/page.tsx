@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL, CDN_BASE } from "@/lib/constants";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
-import { MBTI_TYPES, MBTI_META, IP_COLORS } from "@/lib/mbti-meta";
+import { MBTI_TYPES, MBTI_META, IP_COLORS, getMbtiMeta } from "@/lib/mbti-meta";
+import type { MBTIType } from "@/lib/mbti-meta";
 import mbtiCharacters from "@/public/data/mbti_characters.json";
 import PersonalityResultClient from "./PersonalityResultClient";
 
@@ -18,8 +19,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, type } = await params;
   const mbti = type.toUpperCase();
-  const meta = MBTI_META[mbti as keyof typeof MBTI_META];
-  if (!meta) return {};
+  if (!MBTI_META[mbti as keyof typeof MBTI_META]) return {};
+  const meta = getMbtiMeta(mbti as MBTIType, locale);
 
   const title = `${mbti} — ${meta.tagline}`;
   const description = meta.description;
@@ -58,8 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PersonalityTypePage({ params }: Props) {
   const { locale, type } = await params;
   const mbti = type.toUpperCase();
-  const meta = MBTI_META[mbti as keyof typeof MBTI_META];
-  if (!meta) notFound();
+  if (!MBTI_META[mbti as keyof typeof MBTI_META]) notFound();
+  const meta = getMbtiMeta(mbti as MBTIType, locale);
 
   const chars = (mbtiCharacters as Record<string, Array<{name:string;img:string;ip:string;templateSlug:string}>>) [mbti] ?? [];
 

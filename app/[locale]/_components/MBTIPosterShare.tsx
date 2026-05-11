@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ImageIcon, Download, Loader2 } from "lucide-react";
 import type { MBTIType } from "@/lib/mbti-meta";
-import { MBTI_META } from "@/lib/mbti-meta";
+import { getMbtiMeta } from "@/lib/mbti-meta";
 import { useTracking } from "@/services/useTracking";
 
 const CAPTIONS: Record<string, string> = {
@@ -30,13 +30,13 @@ export default function MBTIPosterShare({ mbti, locale }: { mbti: MBTIType; loca
   const [name, setName] = useState("");
   const { track } = useTracking();
 
-  const meta = MBTI_META[mbti];
+  const meta = getMbtiMeta(mbti, locale);
   const namePrefix = name.trim() ? `${name.trim()} got` : "I got";
   const caption = `${namePrefix} ${mbti} — ${meta.tagline}!\n\n${CAPTIONS[mbti] ?? ""}\n\nFind out your personality type 👉 curify.ai/${locale}/personality/${mbti}`;
 
   const posterUrl = name.trim()
-    ? `/api/personality-poster?type=${mbti}&name=${encodeURIComponent(name.trim())}`
-    : `/api/personality-poster?type=${mbti}`;
+    ? `/api/personality-poster?type=${mbti}&locale=${locale}&name=${encodeURIComponent(name.trim())}`
+    : `/api/personality-poster?type=${mbti}&locale=${locale}`;
 
   const handleShare = async () => {
     // Mobile: use native share sheet with blob
