@@ -7,8 +7,8 @@ import CdnImage from "./CdnImage";
 import ShareButton from "./ShareButton";
 import MBTIPosterShare from "./MBTIPosterShare";
 import { userAtom, drawerAtom, mbtiQuizOpenAtom } from "@/app/atoms/atoms";
-import { MBTI_META, IP_COLORS, MBTI_TYPES, getMbtiMeta } from "@/lib/mbti-meta";
-import type { MBTIType } from "@/lib/mbti-meta";
+import { MBTI_META, IP_COLORS, MBTI_TYPES, getMbtiMeta, pickLang } from "@/lib/mbti-meta";
+import type { MBTIType, Localized, QuizLang } from "@/lib/mbti-meta";
 import mbtiCharacters from "@/public/data/mbti_characters.json";
 import { useTracking } from "@/services/useTracking";
 
@@ -22,40 +22,137 @@ type Answers = { EI?: EI; SN?: SN; TF?: TF; JP?: JP };
 
 // ── Quiz questions ────────────────────────────────────────────────────────────
 
-const QUESTIONS = [
+type QuestionDef = {
+  key: "EI" | "SN" | "TF" | "JP";
+  q: Localized;
+  options: Array<{ value: string; label: Localized; img: string }>;
+};
+
+const QUESTIONS: QuestionDef[] = [
   {
-    key: "EI" as const,
-    q: "Where do you feel most alive?",
+    key: "EI",
+    q: {
+      en: "Where do you feel most alive?",
+      zh: "你在哪里最有活力？",
+      es: "¿Dónde te sientes más vivo?",
+    },
     options: [
-      { value: "E" as EI, label: "Out with the crowd", img: "/images/nano_insp_preview/template-group-vocab-category-animals-prev.jpg" },
-      { value: "I" as EI, label: "Alone in my own world", img: "/images/nano_insp_preview/template-interior-design-mood-board-generator-bedroom-prev.jpg" },
+      {
+        value: "E",
+        label: { en: "Out with the crowd", zh: "和大伙儿一起热闹", es: "Saliendo con la multitud" },
+        img: "/images/nano_insp_preview/template-group-vocab-category-animals-prev.jpg",
+      },
+      {
+        value: "I",
+        label: { en: "Alone in my own world", zh: "独自待在自己的世界", es: "A solas en mi propio mundo" },
+        img: "/images/nano_insp_preview/template-interior-design-mood-board-generator-bedroom-prev.jpg",
+      },
     ],
   },
   {
-    key: "SN" as const,
-    q: "What excites you on a new trip?",
+    key: "SN",
+    q: {
+      en: "What excites you on a new trip?",
+      zh: "出门旅行，最让你期待的是什么？",
+      es: "¿Qué te emociona en un viaje nuevo?",
+    },
     options: [
-      { value: "S" as SN, label: "Discovering real local flavors", img: "/images/nano_insp_preview/template-food-en-paella-prev.jpg" },
-      { value: "N" as SN, label: "The thrill of the unknown", img: "/images/nano_insp_preview/template-travel-italy-amalfi-coast-italy-prev.jpg" },
+      {
+        value: "S",
+        label: { en: "Discovering real local flavors", zh: "寻找地道的当地风味", es: "Descubrir sabores locales auténticos" },
+        img: "/images/nano_insp_preview/template-food-en-paella-prev.jpg",
+      },
+      {
+        value: "N",
+        label: { en: "The thrill of the unknown", zh: "探索未知的刺激", es: "La emoción de lo desconocido" },
+        img: "/images/nano_insp_preview/template-travel-italy-amalfi-coast-italy-prev.jpg",
+      },
     ],
   },
   {
-    key: "TF" as const,
-    q: "What guides your toughest calls?",
+    key: "TF",
+    q: {
+      en: "What guides your toughest calls?",
+      zh: "做艰难决定时，你靠什么指引？",
+      es: "¿Qué te guía en tus decisiones más difíciles?",
+    },
     options: [
-      { value: "T" as TF, label: "Logic & clear reasoning", img: "/images/nano_insp_preview/template-figure-principles-infographic-albert-einstein-prev.jpg" },
-      { value: "F" as TF, label: "Gut feeling & what's right", img: "/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-emerald-jewelry-prev.jpg" },
+      {
+        value: "T",
+        label: { en: "Logic & clear reasoning", zh: "逻辑与清晰的推理", es: "Lógica y razonamiento claro" },
+        img: "/images/nano_insp_preview/template-figure-principles-infographic-albert-einstein-prev.jpg",
+      },
+      {
+        value: "F",
+        label: { en: "Gut feeling & what's right", zh: "直觉与内心的正义", es: "La intuición y lo que es correcto" },
+        img: "/images/nano_insp_preview/template-fashion-before-after-outfit-annotation-card-emerald-jewelry-prev.jpg",
+      },
     ],
   },
   {
-    key: "JP" as const,
-    q: "Your ideal Friday night plan?",
+    key: "JP",
+    q: {
+      en: "Your ideal Friday night plan?",
+      zh: "你理想的周五夜晚是什么样的？",
+      es: "¿Cuál es tu plan ideal para un viernes por la noche?",
+    },
     options: [
-      { value: "J" as JP, label: "Reserved, researched, ready", img: "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-dreams-prev.jpg" },
-      { value: "P" as JP, label: "Wing it & see what happens", img: "/images/nano_insp_preview/template-mbti-animal-zh-cafe-prev.jpg" },
+      {
+        value: "J",
+        label: { en: "Reserved, researched, ready", zh: "预定好、研究好、准备好", es: "Reservado, investigado, listo" },
+        img: "/images/nano_insp_preview/template-personal-journey-wolf-path-illustration-dreams-prev.jpg",
+      },
+      {
+        value: "P",
+        label: { en: "Wing it & see what happens", zh: "随心而动，看会发生什么", es: "Improvisar y ver qué pasa" },
+        img: "/images/nano_insp_preview/template-mbti-animal-zh-cafe-prev.jpg",
+      },
     ],
   },
 ];
+
+// Widget-only chrome strings (not in MBTI_UI since they're widget-specific).
+// Use {n}/{total}/{type} placeholders — replaced at render time.
+const CHROME: Record<
+  "buttonCTA" | "questionOf" | "yourType" | "typeAcrossUniverses" | "generateCard" | "unlockCard" | "retake",
+  Localized
+> = {
+  buttonCTA: {
+    en: "What's your MBTI?",
+    zh: "你的 MBTI 是什么？",
+    es: "¿Cuál es tu MBTI?",
+  },
+  questionOf: {
+    en: "Question {n} of {total}",
+    zh: "第 {n} 题 / 共 {total} 题",
+    es: "Pregunta {n} de {total}",
+  },
+  yourType: {
+    en: "Your personality type",
+    zh: "你的人格类型",
+    es: "Tu tipo de personalidad",
+  },
+  typeAcrossUniverses: {
+    en: "Your type across universes",
+    zh: "你在不同宇宙中的形象",
+    es: "Tu tipo en distintos universos",
+  },
+  generateCard: {
+    en: "Generate your {type} card in any universe →",
+    zh: "在任意宇宙中生成你的 {type} 卡片 →",
+    es: "Genera tu tarjeta {type} en cualquier universo →",
+  },
+  unlockCard: {
+    en: "Unlock your {type} character card →",
+    zh: "解锁你的 {type} 角色卡片 →",
+    es: "Desbloquea tu tarjeta de personaje {type} →",
+  },
+  retake: {
+    en: "Retake",
+    zh: "重新测试",
+    es: "Volver a hacer",
+  },
+};
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
@@ -70,21 +167,22 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
   );
 }
 
-function QuizStep({ step, answers, onAnswer }: {
-  step: number; answers: Answers; onAnswer: (key: keyof Answers, value: string) => void;
+function QuizStep({ step, answers, onAnswer, lang }: {
+  step: number; answers: Answers; onAnswer: (key: keyof Answers, value: string) => void; lang: QuizLang;
 }) {
   const q = QUESTIONS[step];
   return (
     <div className="px-6 pb-6 pt-4">
-      <p className="mb-5 text-center text-2xl font-bold text-neutral-900">{q.q}</p>
+      <p className="mb-5 text-center text-2xl font-bold text-neutral-900">{q.q[lang]}</p>
       <div className="grid grid-cols-2 gap-4">
         {q.options.map((opt) => {
-          const selected = answers[q.key] === opt.value;
+          const selected = answers[q.key as keyof Answers] === opt.value;
+          const label = opt.label[lang];
           return (
             <button
               key={opt.value}
               type="button"
-              onClick={() => onAnswer(q.key, opt.value)}
+              onClick={() => onAnswer(q.key as keyof Answers, opt.value)}
               className={`group cursor-pointer overflow-hidden rounded-2xl border-2 text-left transition-all duration-150 ${
                 selected ? "border-purple-500 shadow-md shadow-purple-100" : "border-neutral-200 hover:border-purple-300"
               }`}
@@ -92,12 +190,12 @@ function QuizStep({ step, answers, onAnswer }: {
               <div className={`px-3 py-3 text-lg font-semibold transition-colors ${
                 selected ? "bg-purple-50 text-purple-700" : "bg-white text-neutral-700"
               }`}>
-                {opt.label}
+                {label}
               </div>
               <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <CdnImage
                   src={opt.img}
-                  alt={opt.label}
+                  alt={label}
                   width={320}
                   height={427}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
@@ -117,6 +215,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
   const [, setDrawer] = useAtom(drawerAtom);
   const { track } = useTracking();
 
+  const lang = pickLang(locale);
   const meta = getMbtiMeta(mbti, locale);
   const chars = (mbtiCharacters as Record<string, typeof mbtiCharacters.INTJ>)[mbti] ?? [];
   const shown = chars.slice(0, 3);
@@ -135,14 +234,14 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
       {/* Type + tagline */}
       <div className="mb-5 flex items-end gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-purple-500 mb-0.5">Your personality type</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-purple-500 mb-0.5">{CHROME.yourType[lang]}</p>
           <p className="text-5xl font-black tracking-tight text-neutral-900 leading-none">{mbti}</p>
         </div>
         <p className="mb-1 text-base font-medium text-neutral-500 leading-snug">{meta.tagline}</p>
       </div>
 
       {/* Character gallery */}
-      <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-400">Your type across universes</p>
+      <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-400">{CHROME.typeAcrossUniverses[lang]}</p>
       <div className="grid grid-cols-3 gap-2 mb-4">
         {shown.map((char) => (
           <div key={char.name} className="relative overflow-hidden rounded-xl">
@@ -162,7 +261,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
       {/* Generate CTA */}
       <div className="mb-3 rounded-xl border border-dashed border-purple-200 bg-purple-50 p-3">
         <p className="mb-2 text-xs font-semibold text-purple-700">
-          {user ? `Generate your ${mbti} card in any universe →` : `Unlock your ${mbti} character card →`}
+          {(user ? CHROME.generateCard[lang] : CHROME.unlockCard[lang]).replace("{type}", mbti)}
         </p>
         <div className="flex flex-wrap gap-1.5">
           {ips.map((ip) => {
@@ -200,7 +299,7 @@ function ResultStep({ mbti, locale, onReset }: { mbti: MBTIType; locale: string;
           className="flex cursor-pointer items-center gap-1.5 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm font-semibold text-neutral-500 hover:bg-neutral-50 transition-colors"
         >
           <RotateCcw className="h-4 w-4" />
-          Retake
+          {CHROME.retake[lang]}
         </button>
       </div>
     </div>
@@ -215,6 +314,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
   const [answers, setAnswers] = useState<Answers>({});
   const [buttonVisible, setButtonVisible] = useState(true);
   const { track } = useTracking();
+  const lang = pickLang(locale);
 
   // Hide floating button after 1 minute
   useEffect(() => {
@@ -264,7 +364,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
           aria-label="Take MBTI personality quiz"
         >
           <Sparkles className="h-4 w-4" />
-          What's your MBTI?
+          {CHROME.buttonCTA[lang]}
         </button>
       )}
 
@@ -281,7 +381,9 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
               <div>
                 {!mbti && (
                   <p className="text-lg font-bold text-neutral-900">
-                    {`Question ${step + 1} of ${QUESTIONS.length}`}
+                    {CHROME.questionOf[lang]
+                      .replace("{n}", String(step + 1))
+                      .replace("{total}", String(QUESTIONS.length))}
                   </p>
                 )}
               </div>
@@ -304,7 +406,7 @@ export default function MBTIQuizWidget({ locale }: { locale: string }) {
             {mbti ? (
               <ResultStep mbti={mbti} locale={locale} onReset={reset} />
             ) : (
-              <QuizStep step={step} answers={answers} onAnswer={handleAnswer} />
+              <QuizStep step={step} answers={answers} onAnswer={handleAnswer} lang={lang} />
             )}
           </div>
         </div>
