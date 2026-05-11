@@ -3269,5 +3269,85 @@
         ]
       }
     }
+  },
+  "template-kids-opposite-concept-education": {
+    "category": "Kids Educational Posters",
+    "description": "Cheerful children's learning poster pairing simple cartoon illustrations to teach concepts like opposites, comparisons, and basic verbs.",
+    "title": "Kids Educational Concept Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a kid-friendly educational poster on a chosen concept topic. The layout features a bold banner title and a grid of paired cartoon illustrations connected by arrows, labeled with the corresponding words. Bright friendly colors, simple sans-serif font, and clean white background make it easy for early learners to read.",
+        "who": "Suitable for preschool teachers, kindergarten curriculum designers, parent bloggers, ESL educators, and educational publishers building visual learning materials.",
+        "how": [
+          "Pick a learning topic (Opposites, Comparison Concepts, Before and After, Verbs, Animals).",
+          "Generate a 4K cartoon educational poster for the chosen topic."
+        ],
+        "prompts": [
+          "Generate a kids educational poster about Opposites with cute paired cartoon illustrations.",
+          "Create a Before-and-After children's learning poster in cartoon style.",
+          "Generate a kids comparison concepts poster with simple paired illustrations."
+        ]
+      }
+    }
+  },
+  "template-celebrity-movie-group-poster": {
+    "category": "Celebrity & Movie Group Posters",
+    "description": "High-end official-style character poster collage featuring multiple iconic figures with cinematic lighting, soft gradient backgrounds, and luxury minimalist typography.",
+    "title": "Celebrity & Movie Group Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a modern commercial movie poster featuring a group of celebrities or movie characters. The layout uses an elegant dynamic composition of independent portraits with subtle overlap, dramatic cinematic lighting, soft gradient background, light flares and star particles, and the group name in a luxury minimalist font.",
+        "who": "Suitable for fan account creators, K-pop and movie communities, entertainment marketers, fan-art designers, and shareable social-media collages.",
+        "how": [
+          "Enter a group name (Marvel Avengers, Blackpink, Harry Potter Cast, etc.).",
+          "Generate a 4K photorealistic group character poster."
+        ],
+        "prompts": [
+          "Generate a Marvel Avengers official group character poster in cinematic style.",
+          "Create a Blackpink character poster collage with luxe minimalist typography.",
+          "Generate a Harry Potter cast group poster with cinematic color grading."
+        ]
+      }
+    }
+  },
+  "template-english-vocabulary-upgrade": {
+    "category": "English Vocabulary Upgrade",
+    "description": "Clean two-column vocabulary poster pairing basic English words with advanced upgraded synonyms — ideal for academic writing prep and ESL learning.",
+    "title": "English Vocabulary Upgrade Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a neat academic poster on a vocabulary theme. The layout features a decorative title banner, a basic-words column on the left, an advanced-synonyms column on the right, neat row-by-row comparison, a soft gradient background, and minimalist line decoration for a fresh academic look.",
+        "who": "Suitable for ESL students, English teachers, IELTS/TOEFL tutors, academic-writing instructors, and language-learning content creators.",
+        "how": [
+          "Pick a vocabulary theme (Adjectives Upgrade, Verb Upgrade, Very Replacement Words, Informal to Formal, Daily Word Upgrade).",
+          "Generate a 4K minimalist two-column vocabulary upgrade poster."
+        ],
+        "prompts": [
+          "Generate an English adjectives basic-to-advanced upgrade poster.",
+          "Create a Very-replacement-words vocabulary upgrade poster.",
+          "Generate an informal-to-formal English vocabulary comparison poster."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-photo-grid": {
+    "category": "Lifestyle Photo Grids",
+    "description": "Photorealistic 3×3 lifestyle photo collage with consistent palette and golden-hour lighting — close-ups, full-body shots, candid moments, and detail shots in one aesthetic.",
+    "title": "Seasonal Lifestyle Photo Grid",
+    "content": {
+      "sections": {
+        "what": "This template generates a 3×3 grid of lifestyle photographs themed around a season or setting. The 9 square images include close-up portraits, full-body shots, candid moments, and detail shots of props or backgrounds, all sharing a consistent warm color palette and natural golden-hour lighting for a cohesive editorial aesthetic.",
+        "who": "Suitable for lifestyle photographers, Instagram creators, fashion bloggers, brand photo-shoot planners, and creators building cohesive seasonal aesthetic boards.",
+        "how": [
+          "Pick a theme or season (Summer Beach, Autumn Park, Spring Meadow, Urban City, Winter Snow).",
+          "Generate a 4K photorealistic 3×3 lifestyle photo grid."
+        ],
+        "prompts": [
+          "Generate a Summer Beach lifestyle 3×3 photo grid in golden-hour light.",
+          "Create an Autumn Park lifestyle photo collage with warm palette.",
+          "Generate a Winter Snow lifestyle 3×3 grid with consistent cinematic mood."
+        ]
+      }
+    }
   }
 }
