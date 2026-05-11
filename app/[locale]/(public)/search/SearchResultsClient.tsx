@@ -130,7 +130,7 @@ export default function SearchResultsClient({
           {relatedTopics.map((s) => (
             <Link
               key={s.slug}
-              href={`/${locale}/topics/${s.slug}`}
+              href={s.href ? `/${locale}${s.href}` : `/${locale}/topics/${s.slug}`}
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
             >
               {s.emoji && <span>{s.emoji}</span>}
@@ -153,7 +153,7 @@ export default function SearchResultsClient({
             {relatedTopics.map((s) => (
               <Link
                 key={s.slug}
-                href={`/${locale}/topics/${s.slug}`}
+                href={s.href ? `/${locale}${s.href}` : `/${locale}/topics/${s.slug}`}
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
               >
                 {s.emoji} {renderLabel(s.slug, s.label)}

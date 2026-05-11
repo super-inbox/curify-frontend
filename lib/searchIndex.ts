@@ -12,6 +12,12 @@ export type SuggestionEntry = {
    * Keep these short and lowercase.
    */
   aliases?: readonly string[];
+  /**
+   * Optional URL override (without locale prefix, leading slash required).
+   * When set, the search UI navigates here instead of `/topics/<slug>`.
+   * Used for entries that point at non-topic destinations like /tools.
+   */
+  href?: string;
 };
 
 // Tier 2 — primary navigational topics (shown by default on focus)
@@ -124,6 +130,78 @@ export const DEFAULT_FOCUS_SUGGESTIONS: SuggestionEntry[] = [
   { slug: "cartoon",        label: "Cartoon",        emoji: "🖌️",   tier: 3 },
 ];
 
+// Tools — overall /tools page + each tool with status === "create" in
+// lib/tools-registry.ts. Use `href` so navigation goes to the tool route
+// instead of /topics/<slug>. Keep slugs in sync with tools-registry.
+export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
+  {
+    slug: "tools",
+    href: "/tools",
+    label: "AI Tools",
+    emoji: "🛠️",
+    tier: 2,
+    aliases: ["tool", "ai tools", "studio tools", "utilities", "工具", "ai 工具", "herramientas"],
+  },
+  {
+    slug: "video-dubbing",
+    href: "/tools/video-dubbing",
+    label: "Video Dubbing",
+    emoji: "🎙️",
+    tier: 3,
+    aliases: [
+      "dub", "dubbing", "voice over", "translate video", "video translation",
+      "配音", "视频配音", "doblaje", "doblar video",
+    ],
+  },
+  {
+    slug: "bilingual-subtitles",
+    href: "/tools/bilingual-subtitles",
+    label: "Bilingual Subtitles",
+    emoji: "💬",
+    tier: 3,
+    aliases: [
+      "subtitle", "subtitles", "captions", "captioner", "srt",
+      "bilingual subtitles", "subtitle captioner",
+      "字幕", "双语字幕", "subtítulos", "subtítulos bilingües",
+    ],
+  },
+  {
+    slug: "video-transcript-generator",
+    href: "/tools/video-transcript-generator",
+    label: "Video Transcript",
+    emoji: "📝",
+    tier: 3,
+    aliases: [
+      "transcript", "transcribe", "transcription", "video to text",
+      "speech to text", "stt",
+      "转录", "视频转文字", "transcripción", "transcribir video",
+    ],
+  },
+  {
+    slug: "video-summarizer",
+    href: "/tools/video-summarizer",
+    label: "Video Summarizer",
+    emoji: "🎬",
+    tier: 3,
+    aliases: [
+      "summarize", "summarize video", "video summary", "summary", "tldr",
+      "视频总结", "视频摘要", "resumen", "resumen de video",
+    ],
+  },
+  {
+    slug: "speech-translator",
+    href: "/tools/speech-translator",
+    label: "Speech Translator",
+    emoji: "🗣️",
+    tier: 3,
+    aliases: [
+      "speech translation", "voice translator", "translate audio",
+      "audio translator", "real time translation",
+      "语音翻译", "实时翻译", "traductor de voz", "traducir voz",
+    ],
+  },
+];
+
 export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER2_SUGGESTIONS,
   ...TIER1_SUGGESTIONS,
@@ -131,6 +209,7 @@ export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER3_STYLE,
   ...TIER3_MBTI,
   ...TIER3_SUBJECT,
+  ...TOOL_SUGGESTIONS,
 ];
 
 // ── Fuzzy matching ──────────────────────────────────────────────────────────

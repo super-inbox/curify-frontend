@@ -254,7 +254,9 @@ export default async function SearchPage({ params, searchParams }: Props) {
     // and let the free-text path show a results page that surfaces both.
     if (tokenMatches.length === 1) target = tokenMatches[0];
   }
-  if (target) redirect(`/${locale}/topics/${target.slug}`);
+  if (target) {
+    redirect(target.href ? `/${locale}${target.href}` : `/${locale}/topics/${target.slug}`);
+  }
 
   type InspRecord = {
     id: string;
