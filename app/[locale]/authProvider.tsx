@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useAtom } from 'jotai';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { userAtom, authLoadingAtom } from "@/app/atoms/atoms";
+import { userAtom, authLoadingAtom, drawerAtom } from "@/app/atoms/atoms";
 import { authService } from '@/services/auth';
 
 const PROTECTED_PREFIXES = ["/workspace", "/magic", "/project_details"];
@@ -21,6 +21,7 @@ export function AuthProvider({
 }) {
   const [user, setUser] = useAtom(userAtom);
   const [, setAuthLoading] = useAtom(authLoadingAtom);
+  const [, setDrawerState] = useAtom(drawerAtom);
   const [mounted, setMounted] = useState(false);
 
   const pathname = usePathname();
@@ -84,6 +85,17 @@ export function AuthProvider({
 
     return () => { cancelled = true; };
   }, [initialUser, isProtected, refresh, setUser, setAuthLoading]);
+
+  // Listen for centralized 401 from apiClient: clear in-memory user
+  // and prompt re-sign-in. The apiClient already cleared localStorage.
+  useEffect(() => {
+    const handler = () => {
+      setUser(null);
+      setDrawerState("signin");
+    };
+    window.addEventListener("auth:expired", handler);
+    return () => window.removeEventListener("auth:expired", handler);
+  }, [setUser, setDrawerState]);
 
   if (!mounted) return null;
   return <>{children}</>;
