@@ -2,6 +2,7 @@
 // Tier 2 entries are shown by default on focus; all entries are searched on keystroke.
 
 import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
+import topicMapping from "./topic_tag_mappings.json";
 
 export type SuggestionEntry = {
   slug: string;
@@ -204,13 +205,54 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
   },
 ];
 
+const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+
+// ── Topic-mapping destinations ─────────────────────────────────────────────
+// Tags listed as Tier-3 children in lib/topic_tag_mappings.json that aren't
+// already represented in the static tier arrays above. These get
+// SuggestionEntries that route to /topics/<slug> (default routing — no href
+// override) so search bounces straight to the richer topic page, not to a
+// gallery image grid. Derived from the mapping file so adding new mapped
+// tags later auto-surfaces them in search.
+const _EXISTING_SLUGS = new Set<string>();
+for (const s of [
+  ...TIER2_SUGGESTIONS,
+  ...TIER1_SUGGESTIONS,
+  ...TIER3_GEO,
+  ...TIER3_STYLE,
+  ...TIER3_MBTI,
+  ...TIER3_SUBJECT,
+  ...TOOL_SUGGESTIONS,
+]) _EXISTING_SLUGS.add(s.slug.toLowerCase());
+
+const _MAPPED_DEST_TAGS = new Set<string>();
+for (const list of Object.values(topicMapping.TIER1_TAG_CHILDREN as Record<string, string[]>)) {
+  for (const tag of list) _MAPPED_DEST_TAGS.add(tag.toLowerCase());
+}
+
+export const TIER3_TOPIC_MAPPED: SuggestionEntry[] = [..._MAPPED_DEST_TAGS]
+  .filter((slug) => !_EXISTING_SLUGS.has(slug))
+  .map((slug) => {
+    const spaced = slug.replace(/-/g, " ");
+    return {
+      slug,
+      label: titleCase(spaced),
+      tier: 3 as const,
+      // Include both dash- and space-form so nano-tag dedupe and free-text
+      // user queries both hit (`high-fashion` query AND `high fashion` query).
+      aliases: spaced === slug ? undefined : [spaced],
+    };
+  });
+
 // ── Nano-banana prompt tags ────────────────────────────────────────────────
 // 4k+ gallery prompts at /nano-banana-pro-prompts have their own tag pages
 // (/nano-banana-pro-prompts/tag/<encoded>). The metadata snapshot in
 // lib/generated/ ships only the tag→count table (~10KB), regenerated daily.
 // We surface tags with count ≥ 5 that aren't already represented elsewhere
 // in the index, so a query like "kpop" / "golden hour" / "mirror selfie"
-// routes straight to the prompt-tag page instead of dead-ending.
+// routes straight to the prompt-tag page instead of dead-ending. Tags that
+// ARE mapped to a topic (TIER3_TOPIC_MAPPED above) drop out — those go to
+// the richer topic page instead.
 const NANO_TAG_THRESHOLD = 5;
 
 type NanoTagEntry = { tag: string; count: number };
@@ -225,13 +267,12 @@ for (const s of [
   ...TIER3_MBTI,
   ...TIER3_SUBJECT,
   ...TOOL_SUGGESTIONS,
+  ...TIER3_TOPIC_MAPPED,
 ]) {
   _COVERED_TOKENS.add(s.slug.toLowerCase());
   _COVERED_TOKENS.add(s.label.toLowerCase());
   for (const a of s.aliases ?? []) _COVERED_TOKENS.add(a.toLowerCase());
 }
-
-const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
 export const PROMPT_TAG_SUGGESTIONS: SuggestionEntry[] = NANO_TAGS
   .filter(({ count }) => count >= NANO_TAG_THRESHOLD)
@@ -252,6 +293,7 @@ export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER3_MBTI,
   ...TIER3_SUBJECT,
   ...TOOL_SUGGESTIONS,
+  ...TIER3_TOPIC_MAPPED,
   ...PROMPT_TAG_SUGGESTIONS,
 ];
 
