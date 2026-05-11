@@ -5458,53 +5458,20 @@
   {
     "id": "template-chinese-character-learning-poster",
     "locales": {
-      "en": {
-        "base_prompt": "(Chinese Character Learning Poster Designer) Create an educational 'Daily Character' learning poster for the Chinese character '{target_char}'. Layout: 1. Title '每日一字' at the top in bold Chinese characters. 2. Center: A large version of the character '{target_char}' with its pinyin '{pinyin}'. 3. Around the center, 5-6 radial branches each showing a common compound word with the character, paired with a cute cartoon illustration and pinyin. 4. Clean white background, soft watercolor/cartoon art style, kid-friendly educational aesthetic, vertical format, 4K ultra HD, direct image generation. Subject: '{target_char}' Chinese Character Learning Poster.",
-        "parameters": [
-          {
-            "name": "target_char",
-            "label": "Chinese Character",
-            "type": "text",
-            "placeholder": [
-              "山",
-              "火",
-              "木",
-              "天",
-              "水",
-              "日",
-              "月",
-              "人"
+        "en": {
+            "base_prompt": "(Chinese Daily Character Learning Poster Creator) Create a cute educational infographic for the Chinese character '{chinese_character}'. Layout: 1. Top: Title '每日一字' (Daily Character) with Pinyin. 2. Center: Large Chinese character '{chinese_character}' in a circle, with its meaning below. 3. 5 radial branches from the center, each showing a common compound word with Pinyin, English translation, and a simple matching cartoon illustration. Style: Clean white background, friendly watercolor cartoon art, soft colors, clear kid-friendly fonts, no clutter, 4K ultra HD, direct image generation. Subject: 'Chinese character learning poster for {chinese_character}'",
+            "parameters": [
+                {
+                    "name": "chinese_character",
+                    "label": "Chinese Character",
+                    "type": "text",
+                    "placeholder": ["木", "开", "天", "人", "水"]
+                }
             ]
-          },
-          {
-            "name": "pinyin",
-            "label": "Character Pinyin",
-            "type": "text",
-            "placeholder": [
-              "shān",
-              "huǒ",
-              "mù",
-              "tiān",
-              "shuǐ",
-              "rì",
-              "yuè",
-              "rén"
-            ]
-          }
-        ]
-      }
+        }
     },
-    "og_image": "/images/nano_insp_preview/template-chinese-character-learning-poster-shan-prev.jpg",
-    "topics": [
-      "language",
-      "vocabulary",
-      "posters"
-    ],
-    "base_rank_score": 80,
-    "rank_score": 93,
-    "intro_video_url": "/video/template_intro/template-chinese-character-learning-poster.mp4",
-    "creation_date": "2026-05-03"
-  },
+    "og_image": "/images/nano_insp_preview/template-chinese-character-learning-poster-ren-en-poster.jpg"
+},
   {
     "id": "template-mbti-relationship-infographic",
     "locales": {
@@ -6653,5 +6620,73 @@
     "rank_score": 110.15,
     "creation_date": "2026-05-10",
     "allow_generation": true
-  }
+  },
+  {
+    "id": "template-kids-opposite-concept-education",
+    "locales": {
+        "en": {
+            "base_prompt": "(Kids Educational Concept Poster Creator) Create a cheerful children's learning poster about '{topic}'. Layout: 1. Top: Bold title on a light blue banner. 2. Grid of pairs, each with two simple cartoon illustrations connected by an arrow, labeled with the corresponding words. 3. Minimalist white background, bright and friendly colors, simple sans-serif font. Style: Clean, colorful educational infographic, cute cartoon art style, easy-to-read text, no clutter, 4K ultra HD, direct image generation. Subject: 'Kids educational poster about {topic}'",
+            "parameters": [
+                {
+                    "name": "topic",
+                    "label": "Learning Topic",
+                    "type": "text",
+                    "placeholder": ["Comparison Concepts", "Opposites", "Before and After", "Verbs", "Animals"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-kids-opposite-concept-education-comparison-concepts-prev.jpg"
+},
+  {
+    "id": "template-celebrity-movie-group-poster",
+    "locales": {
+        "en": {
+            "base_prompt": "(Celebrity & Movie Group Poster Designer) Create a high-end official character poster collage for {star_movie_group}. Layout: Multiple iconic figures arranged in elegant dynamic composition, independent character portraits with subtle overlapping layout, dramatic cinematic lighting, soft gradient background, delicate light flare and star particle effect, character name and themed title text in luxury minimalist font, clean layout no clutter. Style: Modern commercial movie poster aesthetic, high definition, sharp focus, photorealistic, fashion magazine texture, cinematic color grading, 4K ultra detailed, no watermarks, direct image generation. Subject: Official character poster of {star_movie_group}.",
+            "parameters": [
+                {
+                    "name": "star_movie_group",
+                    "label": "Movie / Drama / Celebrity Group",
+                    "type": "text",
+                    "placeholder": ["Marvel Avengers", "Blackpink", "Harry Potter Cast", "Anime Hero Group", "K-pop Boy Group", "Classic TV Drama Cast"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-celebrity-movie-group-poster-basketball-legends-1-prev.jpg"
+},
+  {
+    "id": "template-english-vocabulary-upgrade",
+    "locales": {
+        "en": {
+            "base_prompt": "(English Vocabulary Upgrade Infographic Creator) Create a neat educational two-column poster themed '{vocab_theme}'. Layout: Top decorative title banner, left column labeled basic simple English words, right column labeled advanced upgraded synonyms, neat row-by-row word comparison layout, soft gradient background, minimalist line decoration, clear readable font, no extra messy elements. Style: Fresh academic minimalist style, high definition, clean layout, 4K ultra detailed, no watermarks, direct image generation. Subject: English vocabulary upgrade poster about {vocab_theme}.",
+            "parameters": [
+                {
+                    "name": "vocab_theme",
+                    "label": "Vocabulary Theme",
+                    "type": "text",
+                    "placeholder": ["Adjectives Upgrade", "Verb Upgrade", "Very Replacement Words", "Informal to Formal", "Daily Word Upgrade"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-english-vocabulary-upgrade-informal-to-formal-prev.jpg"
+},
+  {
+    "id": "template-lifestyle-photo-grid",
+    "locales": {
+        "en": {
+            "base_prompt": "(Seasonal Lifestyle Photo Grid Creator) Create a 3×3 collage of lifestyle photos themed '{theme}'. Layout: 9 square images arranged in a grid, including close-up portraits, full-body shots, candid moments, and detail shots of props/backgrounds. All images share a consistent warm color palette, natural lighting, and the same aesthetic style. Style: Photorealistic lifestyle photography, soft golden-hour lighting, natural skin tones, authentic candid moments, 4K ultra HD, no text, direct image generation. Subject: '{theme} lifestyle photo collage'.",
+            "parameters": [
+                {
+                    "name": "theme",
+                    "label": "Theme/Season",
+                    "type": "text",
+                    "placeholder": ["Summer Beach", "Autumn Park", "Spring Meadow", "Urban City", "Winter Snow"]
+                }
+            ]
+        }
+    },
+    "og_image": "/images/nano_insp_preview/template-lifestyle-photo-grid-city-fashion-prev.jpg"
+}
 ]
