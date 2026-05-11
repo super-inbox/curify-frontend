@@ -22,7 +22,10 @@ import {
   Menu,
   Video,
   BookOpen,
+  Search,
+  X,
 } from "lucide-react";
+import SearchBar from "@/app/[locale]/_components/SearchBar";
 import {
   primaryLanguages,
   moreLanguages,
@@ -83,6 +86,7 @@ export default function Header() {
   const [moreLanguagesOpen, setMoreLanguagesOpen] = useState(false);
   const [isHistoryDialogOpen, setIsHistoryDialogOpen] = useState(false);
   const [avatarError, setAvatarError] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
   const moreDropdownRef = useRef<HTMLDivElement>(null);
   const menuDropdownRef = useRef<HTMLDivElement>(null);
@@ -117,6 +121,13 @@ export default function Header() {
     setAvatarError(false);
   }, [user?.avatar_url]);
 
+  // Mobile search panel auto-closes whenever the route changes (the
+  // SearchBar inside it triggers router.push on submit/suggestion-click,
+  // so this also covers the success path).
+  useEffect(() => {
+    setMobileSearchOpen(false);
+  }, [pathname]);
+
   const currentLanguage = getLanguageByCode(locale);
   const isCurrentMoreLang = isMoreLanguage(locale);
   const isLoggedIn = clientMounted && !!user;
@@ -135,8 +146,37 @@ export default function Header() {
 
   return (
     <>
+      {/* Mobile search overlay — opened by the magnifier icon below. */}
+      {mobileSearchOpen && (
+        <div className="lg:hidden fixed inset-0 z-[70] bg-black/40 backdrop-blur-sm" onClick={() => setMobileSearchOpen(false)}>
+          <div className="fixed left-0 right-0 top-0 bg-white px-4 pt-4 pb-5 shadow-md" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center gap-2">
+              <div className="flex-1 min-w-0">
+                <SearchBar locale={locale} />
+              </div>
+              <button
+                type="button"
+                onClick={() => setMobileSearchOpen(false)}
+                className="shrink-0 rounded-full p-2 text-neutral-500 hover:bg-neutral-100"
+                aria-label="Close search"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Language Switch — mobile/tablet only; desktop uses SiteTopBar's LocaleSwitcher */}
       <div className="lg:hidden fixed right-6 top-4 z-[60] flex items-center gap-2">
+        <button
+          onClick={() => setMobileSearchOpen(true)}
+          className="flex h-[34px] w-[34px] cursor-pointer items-center justify-center rounded-md bg-white text-gray-600 shadow-sm transition-colors hover:bg-gray-50"
+          aria-label="Search"
+        >
+          <Search className="h-4 w-4" />
+        </button>
+
         {primaryLanguages.map((lang) => (
           <button
             key={lang.locale}
