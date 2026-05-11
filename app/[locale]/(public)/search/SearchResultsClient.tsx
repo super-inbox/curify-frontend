@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -10,6 +10,7 @@ import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/Exam
 import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
 import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import type { SuggestionEntry } from "@/lib/searchIndex";
+import { useTracking } from "@/services/useTracking";
 
 type InspRecord = {
   id: string;
@@ -88,6 +89,18 @@ export default function SearchResultsClient({
   };
 
   const hasResults = gridItems.length > 0 || matchedTemplates.length > 0;
+
+  const { track } = useTracking();
+  useEffect(() => {
+    const q = query.trim();
+    if (q && !hasResults) {
+      track({
+        contentId: q,
+        contentType: "topic_capsule",
+        actionType: "search_noresult",
+      });
+    }
+  }, [query, hasResults, track]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8">
