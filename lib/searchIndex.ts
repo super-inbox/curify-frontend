@@ -21,6 +21,13 @@ export type SuggestionEntry = {
    * Used for entries that point at non-topic destinations like /tools.
    */
   href?: string;
+  /**
+   * When true, the entry is *autocomplete-only* — clicking it or pressing
+   * Enter routes to `/search?q=<alias|slug>` (the unified results page)
+   * instead of any direct destination. Used for nano-banana prompt tags
+   * so the user sees templates, examples, and gallery prompts side-by-side.
+   */
+  searchFallback?: boolean;
 };
 
 // Tier 2 — primary navigational topics (shown by default on focus)
@@ -279,7 +286,11 @@ export const PROMPT_TAG_SUGGESTIONS: SuggestionEntry[] = NANO_TAGS
   .filter(({ tag }) => !_COVERED_TOKENS.has(tag.toLowerCase()))
   .map(({ tag }) => ({
     slug: `nano-tag-${tag.toLowerCase().replace(/\s+/g, "-")}`,
-    href: `/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`,
+    // No href: searchFallback routes the user to /search?q=<tag> so they
+    // see the gallery prompts alongside templates and template examples.
+    // The /nano-banana-pro-prompts/tag/<tag> page still exists for SEO
+    // and is linked from /search results.
+    searchFallback: true,
     label: titleCase(tag),
     tier: 3 as const,
     aliases: [tag.toLowerCase()],

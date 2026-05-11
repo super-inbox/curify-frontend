@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import nanoTemplates from "@/public/data/nano_templates.json";
+import nanoPromptsMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
+import { nanoPromptsService } from "@/services/nanoPrompts";
+import type { NanoPromptBase } from "@/types/nanoPrompts";
 import {
   ALL_SUGGESTIONS,
   TIER2_SUGGESTIONS,
@@ -28,6 +31,13 @@ for (const t of nanoTemplates as any[]) {
     TEMPLATE_TOPICS.set(t.id, t.topics);
   }
 }
+
+// Set of known nano-banana prompt tags (lowercased). Used to decide
+// whether to fetch gallery prompts from Redis for the current query.
+const NANO_PROMPT_TAG_SET = new Set(
+  (nanoPromptsMetadata as { metadata: { tags: { tag: string }[] } }).metadata.tags
+    .map((t) => t.tag.toLowerCase())
+);
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -254,7 +264,10 @@ export default async function SearchPage({ params, searchParams }: Props) {
     // and let the free-text path show a results page that surfaces both.
     if (tokenMatches.length === 1) target = tokenMatches[0];
   }
-  if (target) {
+  // searchFallback entries (nano-banana prompt tags) intentionally do NOT
+  // redirect — they should land on this page so the user sees templates,
+  // template examples, and gallery prompts side-by-side.
+  if (target && !target.searchFallback) {
     redirect(target.href ? `/${locale}${target.href}` : `/${locale}/topics/${target.slug}`);
   }
 
@@ -355,6 +368,18 @@ export default async function SearchPage({ params, searchParams }: Props) {
     matchedTemplateIdsAll.has(c.template_id)
   );
 
+  // Gallery prompts: fetch from Redis when the query exactly matches a
+  // known nano-banana tag. Free-text queries skip this — we don't have
+  // a full-text search over gallery prompts yet.
+  let galleryPrompts: NanoPromptBase[] = [];
+  if (NANO_PROMPT_TAG_SET.has(query)) {
+    try {
+      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(query);
+    } catch (err) {
+      console.error("Failed to fetch gallery prompts for tag", query, err);
+    }
+  }
+
   return (
     <SearchResultsClient
       query={query}
@@ -362,6 +387,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
       inspirations={inspirations}
       relatedTopics={relatedTopics}
       matchedTemplates={matchedTemplates}
+      galleryPrompts={galleryPrompts}
     />
   );
 }
