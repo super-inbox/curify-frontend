@@ -1,6 +1,8 @@
 // Pre-built static suggestion index — used by SearchBar for client-side fuzzy suggestions.
 // Tier 2 entries are shown by default on focus; all entries are searched on keystroke.
 
+import nanoMetadata from "@/lib/generated/nanobanana_prompts_metadata.json";
+
 export type SuggestionEntry = {
   slug: string;
   label: string;
@@ -202,6 +204,46 @@ export const TOOL_SUGGESTIONS: SuggestionEntry[] = [
   },
 ];
 
+// ── Nano-banana prompt tags ────────────────────────────────────────────────
+// 4k+ gallery prompts at /nano-banana-pro-prompts have their own tag pages
+// (/nano-banana-pro-prompts/tag/<encoded>). The metadata snapshot in
+// lib/generated/ ships only the tag→count table (~10KB), regenerated daily.
+// We surface tags with count ≥ 5 that aren't already represented elsewhere
+// in the index, so a query like "kpop" / "golden hour" / "mirror selfie"
+// routes straight to the prompt-tag page instead of dead-ending.
+const NANO_TAG_THRESHOLD = 5;
+
+type NanoTagEntry = { tag: string; count: number };
+const NANO_TAGS = (nanoMetadata as { metadata: { tags: NanoTagEntry[] } }).metadata.tags;
+
+const _COVERED_TOKENS = new Set<string>();
+for (const s of [
+  ...TIER2_SUGGESTIONS,
+  ...TIER1_SUGGESTIONS,
+  ...TIER3_GEO,
+  ...TIER3_STYLE,
+  ...TIER3_MBTI,
+  ...TIER3_SUBJECT,
+  ...TOOL_SUGGESTIONS,
+]) {
+  _COVERED_TOKENS.add(s.slug.toLowerCase());
+  _COVERED_TOKENS.add(s.label.toLowerCase());
+  for (const a of s.aliases ?? []) _COVERED_TOKENS.add(a.toLowerCase());
+}
+
+const titleCase = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
+
+export const PROMPT_TAG_SUGGESTIONS: SuggestionEntry[] = NANO_TAGS
+  .filter(({ count }) => count >= NANO_TAG_THRESHOLD)
+  .filter(({ tag }) => !_COVERED_TOKENS.has(tag.toLowerCase()))
+  .map(({ tag }) => ({
+    slug: `nano-tag-${tag.toLowerCase().replace(/\s+/g, "-")}`,
+    href: `/nano-banana-pro-prompts/tag/${encodeURIComponent(tag)}`,
+    label: titleCase(tag),
+    tier: 3 as const,
+    aliases: [tag.toLowerCase()],
+  }));
+
 export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER2_SUGGESTIONS,
   ...TIER1_SUGGESTIONS,
@@ -210,6 +252,7 @@ export const ALL_SUGGESTIONS: SuggestionEntry[] = [
   ...TIER3_MBTI,
   ...TIER3_SUBJECT,
   ...TOOL_SUGGESTIONS,
+  ...PROMPT_TAG_SUGGESTIONS,
 ];
 
 // ── Fuzzy matching ──────────────────────────────────────────────────────────
