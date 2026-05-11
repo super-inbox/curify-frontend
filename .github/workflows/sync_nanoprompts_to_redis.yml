@@ -7,12 +7,15 @@ on:
     paths:
       - "public/data/nanobanana.json"
       - "scripts/sync_nanoprompts_to_redis.cjs"
+      - "scripts/regen_nanobanana_metadata.cjs"
       - ".github/workflows/sync_nanoprompts_to_redis.yml"
   workflow_dispatch:
 
 jobs:
   sync-nanoprompts:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -26,6 +29,21 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Regenerate nanobanana metadata
+        run: node scripts/regen_nanobanana_metadata.cjs
+
+      - name: Commit regenerated metadata if changed
+        run: |
+          if [ -n "$(git status --porcelain lib/generated/nanobanana_prompts_metadata.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add lib/generated/nanobanana_prompts_metadata.json
+            git commit -m "chore: auto-update nanobanana_prompts_metadata.json"
+            git push
+          else
+            echo "No metadata changes to commit."
+          fi
 
       - name: Sync nanoprompts to Redis
         env:
