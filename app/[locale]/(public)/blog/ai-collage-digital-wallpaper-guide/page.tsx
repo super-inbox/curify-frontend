@@ -34,13 +34,13 @@ export default function AICollageWallpaperGuide() {
         publishDate={t('date')}
         url="/blog/ai-collage-digital-wallpaper-guide"
         readTime={t('readTime')}
-        image="/images/collage-grid.webp"
+        image="/images/45658b99d089618b244c024b1ea93cc9_thumb_1762921242171.jpg"
       />
       
       <div className="mb-8">
         <div className="float-left mr-6 mb-4 max-w-sm rounded-lg overflow-hidden shadow">
           <CdnImage
-            src="/images/collage-grid.webp"
+            src="/images/45658b99d089618b244c024b1ea93cc9_thumb_1762921242171.jpg"
             alt={t('title')}
             width={400}
             height={250}

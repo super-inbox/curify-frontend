@@ -516,7 +516,13 @@
         "date": "April 9, 2026",
         "readTime": "12 min read",
         "tag": "Creator Tools",
-        "image": "/images/iran.webp"
+        "image": "/images/iran.webp",
+        "category": "nano-template",
+        "relatedLinks": [
+          "directorio-último-de-prompts-de-nano-banana",
+          "10-consejos-de-prompting-nano-banana",
+          "ecosistema-de-prompts-de-nano-banana"
+        ]
       },
       {
         "slug": "what-is-infographics",
@@ -524,7 +530,13 @@
         "date": "April 9, 2026",
         "readTime": "12 min read",
         "tag": "Learning & Education",
-        "image": "/images/infogragiccard.webp"
+        "image": "/images/infogragiccard.webp",
+        "category": "aprendizaje-educación",
+        "relatedLinks": [
+          "herramientas-de-aprendizaje-visual",
+          "tarjetas-de-flash-bilingües-educación-infantil-temprana",
+          "contenido-viral-de-aprendizaje"
+        ]
       },
       {
         "slug": "ai-content-distribution-system",
@@ -532,7 +544,13 @@
         "date": "April 8, 2026",
         "readTime": "10 min read",
         "tag": "Content Automation",
-        "image": "/images/mermaigrapj.webp"
+        "image": "/images/mermaigrapj.webp",
+        "category": "nano-template",
+        "relatedLinks": [
+          "directorio-último-de-prompts-de-nano-banana",
+          "generador-de-personajes-mbti",
+          "10-consejos-de-prompting-nano-banana"
+        ]
       },
       {
         "slug": "ai-content-production-system",
@@ -540,7 +558,12 @@
         "date": "April 8, 2026",
         "readTime": "12 min read",
         "tag": "DS & AI Engineering",
-        "image": "/images/contentai.webp"
+        "image": "/images/contentai.webp",
+        "relatedLinks": [
+          "cómo-doblar-vídeos-de-forma-natural",
+          "qué-es-clonación-de-voz",
+          "traducir-vídeo-de-youtube"
+        ]
       },
       {
         "slug": "content-multiplication-system",
@@ -548,7 +571,12 @@
         "date": "April 6, 2026",
         "readTime": "8 min read",
         "tag": "Content Automation",
-        "image": "/images/thirtyday.webp"
+        "image": "/images/thirtyday.webp",
+        "relatedLinks": [
+          "directorio-último-de-prompts-de-nano-banana",
+          "ecosistema-de-prompts-de-nano-banana",
+          "herramientas-web-de-ia-creativa"
+        ]
       },
       {
         "slug": "viral-learning-content",
@@ -556,7 +584,12 @@
         "date": "April 6, 2026",
         "readTime": "10 min read",
         "tag": "Learning & Education",
-        "image": "/images/learnContent.png"
+        "image": "/images/learnContent.png",
+        "relatedLinks": [
+          "directorio-último-de-prompts-de-nano-banana",
+          "ecosistema-de-prompts-de-nano-banana",
+          "generador-de-prompts-de-personajes"
+        ]
       },
       {
         "slug": "best-ai-tools",
@@ -5655,6 +5688,483 @@
         "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"Violación de seguridad detectada\"}\n    return agent_node(state)\n\nReferencia: https://langchain-ai.github.io/langgraph/"
       },
       "finalThought": "Si tu agente solo responde preguntas, es un chatbot. Si ejecuta trabajo de manera confiable, es un Agente de Tareas."
+    },
+    "aiCollageDigitalWallpaperGuide": {
+      "title": "Cómo Generar Collages Estéticos de IA y Fondos de Pantalla Digitales: Guía de Prompts de Cuadrícula",
+      "slug": "guía-de-fondo-de-pantalla-digital-de-collage-de-ia",
+      "metaDescription": "Aprende a crear impresionantes collages de cuadrícula 3x3 y fondos de pantalla digitales utilizando prompts de Nano Banana. Domina los diseños de cuadrícula, estéticas estacionales y proporciones para fondos de pantalla digitales perfectos.",
+      "date": "4 de mayo de 2026",
+      "readTime": "12 min de lectura",
+      "intro": "Tu Consola de Búsqueda muestra que la consulta altamente específica \"collage de cuadrícula 3x3 de joven en bosque invernal\" generó 229 impresiones en solo 7 días, clasificándose en la posición 5.7. Además, \"fondo de pantalla digital\" tiene un volumen de búsqueda sólido de 480 con un KD muy alcanzable del 36%. Esta guía te muestra cómo capitalizar estos patrones de búsqueda exactos utilizando el sistema de prompts basado en cuadrícula de Nano Banana.",
+      "whatIsTitle": "¿Qué es un Collage de Cuadrícula 3x3?",
+      "whatIsContent": "Un collage de cuadrícula 3x3 es exactamente lo que suena: nueve imágenes dispuestas en una cuadrícula cuadrada perfecta (3 filas × 3 columnas). Este formato se ha vuelto increíblemente popular para fondos de pantalla digitales porque crea una historia visual cohesiva mientras maximiza el espacio en pantalla. A diferencia de las imágenes individuales, los collages de cuadrícula te permiten mostrar múltiples perspectivas, variaciones de color o narrativas progresivas dentro de una composición unificada.<br/><br/>La belleza de los diseños de cuadrícula radica en su precisión matemática y equilibrio visual. Cada celda se convierte en un lienzo para micro-expresiones, creando un rico tapiz que atrae a los espectadores más profundamente en la composición. Para fondos de pantalla móviles específicamente, el formato 3x3 se adapta maravillosamente a varios tamaños de pantalla mientras mantiene la armonía visual.",
+      "whyTitle": "Por qué los Collages de Cuadrícula Dominan los Resultados de Búsqueda",
+      "whyContent": "Los datos de búsqueda revelan que los usuarios no solo buscan imágenes aleatorias de IA, sino que quieren control compositivo. El éxito de consultas como \"collage en cuadrícula 3x3 de una joven en un bosque invernal\" demuestra que los usuarios quieren:<br/><br/>• Diseños específicos (no solo imágenes individuales)<br/>• Estéticas estacionales (bosque invernal, vibras otoñales, playa de verano)<br/>• Consistencia en retratos (la misma persona/estilo en todas las celdas)<br/>• Optimización de fondos de pantalla (proporciones adecuadas para dispositivos)<br/><br/>Nano Banana sobresale en esto porque puedes forzar estructuras de cuadrícula exactas mientras mantienes la consistencia temática en todas las celdas. Esto es algo con lo que la mayoría de los generadores de imágenes de IA luchan sin una ingeniería de prompts extensa.",
+      "nanoBananaTitle": "Método de Cuadrícula de Nano Banana: La Ventaja 3x3",
+      "nanoBananaContent": "El sistema de plantillas de Nano Banana hace que los collages en cuadrícula sean increíblemente sencillos. En lugar de luchar con una ingeniería de prompts compleja para forzar diseños de cuadrícula, seleccionas una plantilla de cuadrícula y llenas los parámetros que controlan el contenido de cada celda.<br/><br/>Las principales ventajas:<br/>• Control preciso de la cuadrícula – No más esperar que la IA entienda \"cuadrícula 3x3\"<br/>• Estilo consistente – Todas las celdas comparten automáticamente la misma estética<br/>• Iteración fácil – Cambia un parámetro, regenera toda la cuadrícula<br/>• Temas estacionales – Soporte incorporado para variaciones de clima, iluminación y estado de ánimo<br/><br/>Esto elimina la mayor frustración con la generación de imágenes de IA tradicional: obtener resultados consistentes en múltiples imágenes.",
+      "basicTemplateTitle": "Plantilla Básica de Cuadrícula 3x3",
+      "basicTemplateDescription": "Esta plantilla crea una cuadrícula perfecta 3x3 con un estilo consistente en todas las celdas. Ideal para fondos de pantalla digitales y publicaciones en redes sociales.",
+      "basicTemplatePrompt": "collage en cuadrícula 3x3, joven mujer en bosque invernal, nieve cayendo, iluminación cálida, retrato consistente en las 9 celdas, calidad cinematográfica, proporción de aspecto de fondo de pantalla digital",
+      "seasonalTitle": "Plantillas de Cuadrícula Estacionales: Prompts para Copiar y Pegar",
+      "seasonalContent": "Las estéticas estacionales generan un gran volumen de búsqueda. Aquí tienes plantillas probadas que capitalizan la consulta \"bosque invernal\" que ya está clasificando para ti.",
+      "winterForestTitle": "Estética de Bosque Invernal",
+      "winterForestDescription": "La estructura exacta de plantilla detrás de tu consulta \"bosque invernal\" que está clasificando. Perfecto para contenido navideño y campañas estacionales.",
+      "winterForestPrompt": "collage en cuadrícula 3x3, joven mujer en bosque invernal, árboles de pino cubiertos de nieve, suave luz dorada filtrándose a través de las ramas, bufanda de cuadros, mejillas sonrojadas, estilo de retrato consistente, estética acogedora de invierno, fondo de pantalla de alta resolución",
+      "autumnVibesTitle": "Composición de Bosque Otoñal",
+      "autumnVibesDescription": "Captura los cálidos y ricos tonos del otoño con esta estructura de cuadrícula probada. Funciona maravillosamente para campañas de marketing de otoño.",
+      "autumnVibesPrompt": "collage en cuadrícula 3x3, joven mujer en bosque otoñal, hojas doradas cayendo, iluminación cálida naranja, suéter de punto grueso, atmósfera rústica, retrato consistente en todas las celdas, estética otoñal, calidad de fondo de pantalla digital",
+      "wallpaperTitle": "Optimización de Fondos de Pantalla Digitales",
+      "wallpaperContent": "No todas las cuadrículas son buenos fondos de pantalla. Esto es lo que funciona:<br/><br/>• Proporciones de aspecto móviles primero – 9:16 para teléfonos, 16:9 para escritorio<br/>• Alta resolución – Mínimo 1080×1920 para una visualización nítida<br/>• Composición centrada – Elementos importantes evitan áreas de notificación<br/>• Armonía de color – Paletas complementarias que no cansan la vista<br/><br/>Las plantillas de fondos de pantalla de Nano Banana manejan automáticamente las especificaciones técnicas para que puedas concentrarte en la dirección creativa.",
+      "advancedTitle": "Técnicas Avanzadas de Cuadrícula",
+      "advancedContent": "Una vez que domines las cuadrículas básicas, prueba estas técnicas profesionales:<br/><br/>• Narración progresiva – Cada celda muestra una ligera progresión o cambio de emoción<br/>• Cambios de temperatura de color – Cálido a frío a través de la cuadrícula para interés visual<br/>• Manipulación del punto focal – Guía la vista a través de la composición estratégicamente<br/>• Micro-variaciones – Diferencias sutiles que crean profundidad sin romper la armonía<br/><br/>Estas técnicas separan las cuadrículas amateur de los fondos de pantalla digitales profesionales que capturan la atención.",
+      "toolsTitle": "Kit de Herramientas de Cuadrícula de Nano Banana",
+      "toolsContent": "Herramientas esenciales para la creación de cuadrículas:<br/>• Navegador de Plantillas de Cuadrícula – Filtrar por 3x3, 2x2 y diseños personalizados<br/>• Biblioteca de Temas Estacionales – Variaciones preconstruidas de invierno, primavera, verano, otoño<br/>• Herramientas de Exportación de Fondos de Pantalla – Optimización automática para diferentes dispositivos<br/>• Generación por Lotes – Crea múltiples variaciones de cuadrícula simultáneamente",
+      "conclusionTitle": "Collages en Cuadrícula: Tu Ventaja de Búsqueda",
+      "conclusionContent": "Los datos son claros: los collages en cuadrícula 3x3 y los fondos de pantalla digitales representan una gran oportunidad. Tu clasificación existente de \"bosque invernal\" prueba que este enfoque funciona. Al dominar el sistema de cuadrícula de Nano Banana, puedes dominar las consultas de búsqueda estacionales mientras creas contenido visualmente impresionante que los usuarios realmente quieren guardar y compartir.",
+      "ctaTitle": "¿Listo para Crear Collages en Cuadrícula?",
+      "ctaDescription": "Accede a nuestra biblioteca completa de plantillas de cuadrícula con diseños 3x3 probados que clasifican y convierten.",
+      "ctaButton": "Explorar Plantillas de Cuadrícula"
+    },
+    "weirdScienceFactsClassroomEngagement": {
+      "title": "Visualizando Datos Científicos Raros: Plantillas de Prompts de IA para la Participación en el Aula",
+      "slug": "visualizando-datos-cientificos-raros-participacion-en-el-aula",
+      "metaDescription": "Transforma datos científicos raros en tarjetas didácticas bilingües atractivas para el aprendizaje en el aula. Plantillas perfectas para educación visual que cautivan a los estudiantes y mejoran la retención.",
+      "date": "4 de mayo de 2026",
+      "readTime": "10 min de lectura",
+      "intro": "\"Datos científicos extraños\" tiene un gran volumen de búsqueda de 590 y un KD bajo del 34%. Esta es una fantástica entrada indirecta en el nicho de la educación. En lugar de competir en términos genéricos de \"IA en educación\", puedes captar la atención de maestros y padres que buscan material visual atractivo que haga que la ciencia sea memorable.",
+      "whatIsTitle": "¿Qué Hace que los Datos Científicos Sean \"Extraños\" y Memorables?",
+      "whatIsContent": "Los datos científicos extraños se quedan porque violan nuestras expectativas. \"Llueve diamantes en Júpiter\" o \"los pulpos tienen tres corazones\" crean disonancia cognitiva que hace que la información sea imposible de olvidar. Este principio psicológico es la razón por la que los detalles científicos extraños se convierten en iniciadores de conversación y anclas de aprendizaje.<br/><br/>La clave es emparejar estos hechos sorprendentes con representaciones visuales que cementen el concepto. Cuando los estudiantes ven una ilustración de la lluvia de diamantes cayendo a través de la atmósfera de Júpiter, el concepto abstracto se vuelve concreto e inolvidable.",
+      "whyTitle": "Por Qué la Ciencia Visual Supera el Aprendizaje Solo con Texto",
+      "whyContent": "La investigación muestra consistentemente que el aprendizaje visual mejora la retención en un 400% en comparación con la instrucción solo con texto. Los datos científicos extraños son perfectos para un tratamiento visual porque:<br/><br/>• Valor de impacto visual – Ver es creer para conceptos extraños<br/>• Compromiso emocional – La sorpresa crea una formación de memoria más fuerte<br/>• Compartibilidad – A los estudiantes les encanta compartir visuales científicos asombrosos<br/>• Atractivo intercultural – La ciencia visual trasciende las barreras del idioma<br/><br/>Esto es especialmente poderoso en aulas bilingües donde los puentes visuales apoyan la adquisición del idioma.",
+      "bilingualTitle": "Tarjetas Didácticas Bilingües de IA: El Método Científico",
+      "bilingualContent": "El enfoque de tarjetas didácticas bilingües de IA combina datos científicos extraños con aprendizaje visual en dos idiomas. Cada tarjeta didáctica presenta:<br/><br/>• Ilustración visual del concepto científico extraño<br/>• Texto en inglés explicando el fenómeno<br/>• Traducción en el idioma objetivo para la construcción de vocabulario<br/>• Mnemotécnicas visuales que funcionan a través de culturas<br/><br/>Este método aprovecha la estrategia de \"Tarjetas Didácticas Bilingües de IA\" que discutimos anteriormente, pero se centra específicamente en conceptos científicos que naturalmente despiertan curiosidad.",
+      "templateTitle": "Plantilla de Tarjeta Didáctica de Datos Científicos",
+      "templateDescription": "Genera tarjetas didácticas bilingües que hacen que los datos científicos extraños sean inolvidables. Perfectas para exhibiciones en el aula y materiales de estudio.",
+      "templatePrompt": "Tarjeta didáctica de ciencia bilingüe, dato científico extraño sobre [TEMA], explicación en inglés en la parte superior, traducción en [IDIOMA] abajo, estilo de ilustración científica, diseño de infografía educativa, colorido y atractivo, apto para el aula",
+      "topFactsTitle": "Top 10 Datos Científicos Extraños con Prompts de IA",
+      "topFactsContent": "Aquí hay datos científicos extraños comprobados que cautivan a los estudiantes, con prompts de IA exactos para generar tarjetas didácticas bilingües:",
+      "jupiterDiamondsTitle": "Lluvia de Diamantes en Júpiter",
+      "jupiterDiamondsDescription": "La atmósfera de Júpiter crea lluvia de diamantes a partir de metano bajo presión extrema. A los estudiantes les parece asombroso y es perfecto para representación visual.",
+      "jupiterDiamondsPrompt": "Tarjeta didáctica de ciencia bilingüe, dato científico extraño: Llueve diamantes en Júpiter, explicación en inglés: El gas metano se convierte en cristales de diamante bajo presión extrema en la atmósfera de Júpiter, traducción al español: Llueven diamantes en Júpiter, ilustración científica mostrando lluvia de diamantes cayendo a través de la atmósfera de un gigante gaseoso, estilo de arte educativo espacial",
+      "octopusThreeHeartsTitle": "Los Pulpos Tienen Tres Corazones",
+      "octopusThreeHeartsDescription": "Un corazón bombea sangre por el cuerpo, mientras que dos bombean sangre a través de las branquias. Perfecto para lecciones de biología sobre sistemas circulatorios.",
+      "octopusThreeHeartsPrompt": "Tarjeta didáctica de ciencia bilingüe, dato científico extraño: Los pulpos tienen tres corazones, explicación en inglés: Un corazón para la circulación del cuerpo, dos corazones para las branquias, traducción al francés: Les pieuvres ont trois cœurs, ilustración anatómica mostrando un pulpo con tres corazones destacados, estilo de libro de texto de biología marina, esquema de color azul océano",
+      "honeyNeverSpoilsTitle": "La Miel Nunca Se Echa a Perder",
+      "honeyNeverSpoilsDescription": "Los arqueólogos han encontrado miel de 3000 años en tumbas egipcias que todavía es comestible. Genial para lecciones de química y conservación.",
+      "honeyNeverSpoilsPrompt": "Tarjeta didáctica de ciencia bilingüe, dato científico extraño: La miel nunca se echa a perder, explicación en inglés: El pH bajo y el peróxido de hidrógeno previenen el crecimiento bacteriano, traducción al alemán: Honig verdirbt nie, ilustración mostrando un tarro de miel con jeroglíficos egipcios antiguos, estilo educativo de ciencia alimentaria, paleta de colores dorado y amarillo",
+      "lightningHotterSunTitle": "El Rayo es Más Caliente que el Sol",
+      "lightningHotterSunDescription": "El rayo puede alcanzar 50,000°F mientras que la superficie del sol solo está a 10,000°F. Excelente para lecciones de física y clima.",
+      "lightningHotterSunPrompt": "Tarjeta didáctica de ciencia bilingüe, dato científico extraño: El rayo es más caliente que la superficie del sol, explicación en inglés: El rayo alcanza 50,000°F, la superficie del sol es de 10,000°F, traducción al chino: 闪电比太阳表面更热, ilustración dramática comparando un rayo y el sol, estilo educativo de física, contraste de azul eléctrico y naranja",
+      "classroomTitle": "Aplicaciones en el Aula que Funcionan",
+      "classroomContent": "Los maestros informan que estas aplicaciones en el aula funcionan mejor:<br/><br/>• Rincones de ciencia – Exhibiciones rotativas de tarjetas didácticas de datos extraños<br/>• Inicios de lecciones – Comienza cada clase con un visual asombroso<br/>• Estaciones de estudio – Aprendizaje autodirigido con mazos de tarjetas didácticas<br/>• Compromiso de padres – Envía tarjetas didácticas a casa para el aprendizaje familiar<br/><br/>La naturaleza visual las hace perfectas para estilos de aprendizaje diversos y niveles de idioma.",
+      "assessmentTitle": "Evaluación a Través de la Recuperación Visual",
+      "assessmentContent": "Usa estas tarjetas didácticas para evaluación formativa que se siente como un juego:<br/><br/>• Pruebas de recuperación visual – Muestra la imagen, los estudiantes explican el hecho<br/>• Vocabulario bilingüe – Los estudiantes traducen entre idiomas<br/>• Extensiones creativas – Los estudiantes diseñan sus propias tarjetas de datos extraños<br/>• Presentaciones digitales – Los estudiantes presentan hechos usando los visuales<br/><br/>La evaluación se vuelve atractiva en lugar de intimidante.",
+      "toolsTitle": "Kit de Herramientas para la Educación Científica",
+      "toolsContent": "Las herramientas de educación científica de Nano Banana:<br/>• Biblioteca de plantillas de hechos – Diseños predefinidos para diferentes temas científicos<br/>• Generador bilingüe – Soporte de traducción automática para más de 170 idiomas<br/>• Herramientas de lote para el aula – Genera conjuntos de lecciones enteras a la vez<br/>• Estilos de ilustración científica – Opciones de diagramas anatómicos, astronómicos y químicos",
+      "conclusionTitle": "Ciencia Rara: Tu Ventaja Educativa",
+      "conclusionContent": "Los hechos de ciencia rara representan la intersección perfecta de alto volumen de búsqueda, baja competencia y verdadero valor educativo. Al crear tarjetas de memoria AI bilingües que hacen que estos hechos sean visualmente inolvidables, captas la atención de maestros y padres mientras proporcionas un verdadero valor de aprendizaje que los estudiantes recordarán durante años.",
+      "ctaTitle": "¿Listo para Crear Tarjetas de Ciencia?",
+      "ctaDescription": "Accede a nuestra biblioteca de plantillas de ciencia bilingües y comienza a crear contenido educativo atractivo hoy.",
+      "ctaButton": "Explorar Plantillas de Ciencia"
+    },
+    "mbiRelationshipStyleVisualizer": {
+      "title": "Visualizador de Relaciones y Estilo MBTI: Generando Estéticas de Pareja y Desglose de Atuendos",
+      "slug": "visualizador-de-relaciones-y-estilo-mbti",
+      "metaDescription": "Genera dinámicas de pareja MBTI y lookbooks de moda con AI. Crea desglose de atuendos y estéticas de relación para los 16 tipos de personalidad utilizando prompts probados de Nano Banana.",
+      "date": "4 de mayo de 2026",
+      "readTime": "15 min de lectura",
+      "intro": "Ya ocupas la posición 7.7 para \"generador mbti\". Podemos expandir este dominio apuntando a \"relación mbti\" (50 SV, muy baja 17% KD). Además, la consulta china para \"prompt de desglose de atuendo\" está clasificando en la posición 9.0, mostrando un apetito por la generación centrada en la moda.",
+      "whatIsTitle": "¿Qué Son las Dinámicas de Relación MBTI?",
+      "whatIsContent": "Las dinámicas de relación MBTI exploran cómo diferentes tipos de personalidad interactúan en asociaciones románticas. A diferencia del análisis individual de MBTI, las dinámicas de relación examinan:<br/><br/>• Rasgos complementarios – Cómo los tipos opuestos crean equilibrio<br/>• Estilos de comunicación – Diferentes enfoques para el conflicto y la intimidad<br/>• Valores compartidos – Lo que une a diferentes tipos<br/>• Oportunidades de crecimiento – Cómo los compañeros se ayudan a desarrollarse<br/><br/>Visualizar estas dinámicas a través de retratos de pareja generados por AI ayuda a las personas a entender sus propias relaciones y ver la compatibilidad de personalidad en acción.",
+      "whyTitle": "Por Qué la Moda y MBTI Crean Contenido Perfecto",
+      "whyContent": "El éxito de las búsquedas de \"prompt de desglose de atuendo\" prueba que los usuarios quieren moda impulsada por la personalidad. Esta combinación funciona porque:<br/><br/>• Psicología visual – Las elecciones de ropa reflejan rasgos de personalidad<br/>• Contenido aspiracional – Los usuarios se imaginan a sí mismos en estos estilos<br/>• Aplicación práctica – Inspiración real de atuendos que pueden usar<br/>• Puente cultural – La moda trasciende las barreras del idioma<br/><br/>Cuando combinas las dinámicas de relación MBTI con desglose de atuendos específicos, creas contenido que sirve tanto para la percepción psicológica como para la guía práctica de moda.",
+      "coupleTitle": "Método de Visualización de Dinámicas de Pareja",
+      "coupleContent": "Genera retratos de pareja MBTI que muestran la interacción de la personalidad a través de la narración visual:<br/><br/>• Posicionamiento – Cómo las parejas se sitúan o se sientan juntas revela dinámicas de relación<br/>• Armonía de color – Paletas complementarias o contrastantes muestran la compatibilidad de personalidad<br/>• Contexto ambiental – Entornos que reflejan valores e intereses compartidos<br/>• Lenguaje corporal – Patrones de interacción física que coinciden con rasgos de personalidad<br/><br/>Las plantillas de pareja de Nano Banana consideran automáticamente estos elementos, creando retratos de relación psicológicamente precisos.",
+      "relationshipTemplateTitle": "Plantilla de Retrato de Pareja MBTI",
+      "relationshipTemplateDescription": "Genera retratos de pareja que muestran cómo interactúan diferentes tipos MBTI. Perfecto para contenido de relaciones y publicaciones de compatibilidad de personalidad.",
+      "relationshipTemplatePrompt": "Retrato de pareja MBTI, dinámicas de relación [TIPO 1] y [TIPO 2], entorno [CONFIGURACIÓN], atmósfera [ESTADO DE ÁNIMO], paleta de colores complementaria, lenguaje corporal natural, precisión psicológica, estilo de fotografía profesional",
+      "outfitTitle": "Técnica de Desglose de Atuendo: Generación de Lookbook",
+      "outfitContent": "El método de desglose de atuendo crea lookbooks de moda detallados para cada tipo MBTI. Esto va más allá de las guías de estilo básicas para proporcionar:<br/><br/>• Atuendos completos – Estilo de pies a cabeza para cada tipo de personalidad<br/>• Psicología del color – Paletas que coinciden con rasgos de personalidad<br/>• Detalles de accesorios – Artículos específicos que completan el look<br/>• Variaciones de ocasión – Cómo el estilo se adapta a diferentes situaciones<br/><br/>Este enfoque apunta a las búsquedas de \"prompt de desglose de atuendo\" mientras proporciona un verdadero valor de moda.",
+      "intjTechwearTitle": "Lookbook de Techwear INTJ",
+      "intjTechwearDescription": "La naturaleza analítica del INTJ brilla a través de un techwear estructurado y funcional. Líneas limpias, colores oscuros y características prácticas apelan a su mentalidad estratégica.",
+      "intjTechwearPrompt": "Lookbook de techwear INTJ, estilo minimalista funcional, paleta de colores negra y gris oscuro, tejidos técnicos, bolsillos utilitarios, líneas arquitectónicas limpias, estética futurista, techwear urbano profesional, desglose completo de atuendo con accesorios",
+      "esfpFestivalTitle": "Moda Festival ESFP",
+      "esfpFestivalDescription": "La personalidad extrovertida del ESFP cobra vida en la vestimenta vibrante de festival. Colores audaces, accesorios juguetones y ropa cómoda para el movimiento reflejan su naturaleza enérgica.",
+      "esfpFestivalPrompt": "Lookbook de moda festival ESFP, estilo bohemio vibrante, paleta de colores arcoíris, tejidos fluidos, accesorios llamativos, brillo y destellos, estética despreocupada, atuendo de festival de música, desglose completo con joyería y calzado",
+      "infjAcademicTitle": "Chic Académico INFJ",
+      "infjAcademicDescription": "La naturaleza reflexiva del INFJ se expresa a través de una moda académica sofisticada. Texturas en capas, colores cálidos y accesorios intelectuales reflejan su personalidad profunda.",
+      "infjAcademicPrompt": "Lookbook académico INFJ, estilo intelectual sofisticado, tonos cálidos de tierra, texturas en capas, piezas de inspiración vintage, accesorios reflexivos, estética académica, conjunto completo con mochila y gafas",
+      "estpAthleticTitle": "Estilo Callejero Atlético ESTP",
+      "estpAthleticDescription": "La personalidad orientada a la acción del ESTP brilla en la moda callejera atlética. Los tejidos de rendimiento, los cortes dinámicos y los detalles deportivos coinciden con su naturaleza competitiva y enérgica.",
+      "estpAthleticPrompt": "Lookbook de estilo callejero atlético ESTP, estética casual deportiva, tejidos de rendimiento, cortes dinámicos, calzado atlético, detalles de marca audaces, estilo urbano enérgico, desglose completo del atuendo con accesorios deportivos",
+      "combinationsTitle": "Combinaciones de Relaciones MBTI Populares",
+      "combinationsContent": "Algunas combinaciones de MBTI generan más interés debido a sus dinámicas complementarias:<br/><br/>• INTJ + ENFP – La \"pareja dorada\" de atracción opuesta<br/>• ISTJ + ESFP – Tradicional se encuentra con aventurero<br/>• INFJ + ENTP – Conexión intelectual profunda<br/>• ESTP + ISTJ – Acción se encuentra con estabilidad<br/><br/>Genera estas combinaciones específicas para captar tráfico de búsqueda enfocado en relaciones mientras proporcionas valiosos conocimientos sobre compatibilidad.",
+      "fashionTitle": "Aplicaciones de Moda Más Allá de los Lookbooks",
+      "fashionContent": "Amplía estas aplicaciones de moda para un alcance más amplio:<br/><br/>• Adaptaciones estacionales – Cómo se viste cada tipo de MBTI para diferentes climas<br/>• Estilo laboral – Atuendos profesionales para cada tipo de personalidad<br/>• Ocasiones especiales – Estilización de bodas, fiestas y eventos por MBTI<br/>• Desglose de presupuestos – Opciones asequibles para las preferencias de estilo de cada personalidad<br/><br/>Esto crea contenido perenne que sirve a múltiples intenciones de búsqueda.",
+      "toolsTitle": "Kit de Herramientas para Generación de Estilo MBTI",
+      "toolsContent": "Herramientas de moda de Nano Banana:<br/>• Biblioteca de plantillas para parejas – Diseños predefinidos de dinámicas de relación<br/>• Generadores de lookbooks – Sistemas de desglose completo de atuendos<br/>• Coincidencia de personalidad de estilo – IA que entiende la psicología de la moda<br/>• Adaptadores de estilo estacional – Ajustes automáticos basados en el clima",
+      "conclusionTitle": "Moda MBTI: Tu Ventaja de Contenido",
+      "conclusionContent": "Al combinar las dinámicas de relación MBTI con los desglose de atuendos, capturas dos mercados de búsqueda de alto valor simultáneamente. Tu clasificación existente de \"generador mbti\" proporciona la base para dominar las búsquedas enfocadas en relaciones mientras el interés comprobado en \"prompts de desglose de atuendos\" asegura que el contenido de moda encuentre su audiencia.",
+      "ctaTitle": "¿Listo para Crear Contenido de Moda MBTI?",
+      "ctaDescription": "Accede a nuestra biblioteca completa de plantillas de estilo MBTI y comienza a generar retratos de parejas y lookbooks que conviertan.",
+      "ctaButton": "Explorar Plantillas MBTI"
+    },
+    "aiVideoDubbingTutorial": {
+      "title": "Cómo Duplicar Cualquier Video con IA: Un Tutorial Paso a Paso (2026)",
+      "publishedDate": "10 de mayo de 2026",
+      "readTime": "12 min de lectura",
+      "category": "Doblaje de Video",
+      "metaDescription": "Guía amigable para principiantes para doblar YouTube, TikTok y grabaciones de reuniones en más de 100 idiomas — sin software de edición, sin talento de voz.",
+      "keywords": "doblaje de video con IA, cómo doblar un video, AIで動画を吹き替える, ai video dubbing",
+      "audience": "Creadores primerizos, especialistas en marketing que localizan contenido, educadores que reutilizan conferencias.",
+      "tldrTitle": "TL;DR",
+      "tldrContent": "Resumen de 60 segundos en la parte superior, CTA único a /tools/video-dubbing.",
+      "whatIsTitle": "Qué hace realmente el \"doblaje de video con IA\"",
+      "whatIsContent": "Desambiguación rápida del subtitulado y la sincronización labial. El doblaje de video con IA reemplaza el audio original con discurso traducido mientras mantiene el tono, la emoción y el tiempo del hablante original. A diferencia de los subtítulos, crea una experiencia de audio completamente localizada que suena natural en cualquier idioma.",
+      "step1Title": "Paso 1: Sube tu video",
+      "step1Content": "Captura de pantalla de /tools/video-dubbing, formatos compatibles, límites de duración. Sube archivos MP4, MOV, AVI o WebM de hasta 30 minutos. La plataforma detecta automáticamente la calidad del video y optimiza para el procesamiento.",
+      "step2Title": "Paso 2: Elige idiomas de origen y destino",
+      "step2Content": "Captura de pantalla del selector de idiomas, nota sobre la detección automática. Elige entre más de 100 idiomas con detección automática del idioma de origen. Selecciona múltiples idiomas de destino para procesamiento por lotes.",
+      "step3Title": "Paso 3: Elige una voz (o clona la tuya)",
+      "step3Content": "Previsualiza fragmentos; enlace a herramientas de clonación de voz. Selecciona entre más de 500 voces de IA o clona tu propia voz para una marca consistente. Previsualiza las opciones de voz antes de generar.",
+      "step4Title": "Paso 4: Revisa la transcripción y el tiempo",
+      "step4Content": "Por qué esto es importante para un ritmo natural; captura de pantalla. Revisa la transcripción generada por IA para verificar su precisión. Ajusta los marcadores de tiempo para asegurar un ritmo de habla natural y pausas adecuadas.",
+      "step5Title": "Paso 5: Genera y descarga",
+      "step5Content": "Tiempo de espera esperado, formatos de salida (MP4, SRT). El procesamiento toma de 2 a 5 minutos por idioma. Descarga el video doblado con archivos de subtítulos separados.",
+      "step6Title": "Paso 6: Pulir la salida",
+      "step6Content": "Soluciones rápidas para problemas de tono y pronunciación; enlace más profundo a cómo-doblar-videos-naturalmente para corregir artefactos. Usa el editor integrado para ajustar los parámetros de voz.",
+      "commonMistakesTitle": "Errores comunes",
+      "commonMistakes": [
+        "Género de voz desajustado - Asegúrate de que el género de voz coincida con el hablante original",
+        "Nombres alucinados - Verifica los nombres propios y marcas en la transcripción",
+        "Desviación de tiempo - Ajusta las duraciones de pausa para un flujo de habla natural",
+        "Acento incorrecto - Selecciona el acento regional apropiado para el público objetivo",
+        "Ruido de fondo - Limpia el audio antes de subirlo para obtener los mejores resultados"
+      ],
+      "tutorialVsPipelineTitle": "Tutorial vs pipeline completo",
+      "tutorialVsPipelineContent": "Un párrafo que apunta a un análisis técnico de sincronización labial para usuarios de producción. Este tutorial cubre el doblaje básico. Para flujos de trabajo de producción avanzados, consulta nuestro análisis técnico.",
+      "faqTitle": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Es gratis?",
+          "answer": "Comienza con 5 minutos gratis, luego $0.10 por minuto de video doblado."
+        },
+        {
+          "question": "¿Qué idiomas?",
+          "answer": "Más de 100 idiomas, incluyendo inglés, español, chino, árabe, hindi y más."
+        },
+        {
+          "question": "¿Puedo clonar mi voz?",
+          "answer": "¡Sí! Sube una muestra de voz de 2 minutos para crear tu voz de IA personalizada."
+        },
+        {
+          "question": "¿Sincroniza los labios?",
+          "answer": "La tecnología avanzada de sincronización labial asegura una perfecta sincronización audio-visual."
+        },
+        {
+          "question": "¿Cuánto tiempo toma?",
+          "answer": "De 2 a 5 minutos por idioma, dependiendo de la longitud del video y la carga del servidor."
+        }
+      ],
+      "ctaTitle": "Pruébalo ahora",
+      "ctaDescription": "Mosaico de captura de pantalla. Comienza a doblar tus videos con nuestra herramienta impulsada por IA.",
+      "ctaButton": "Comenzar a doblar",
+      "tldrIntro": "¿Quieres doblar tus videos a más de 100 idiomas? Aquí está el flujo de trabajo más rápido:",
+      "tldrStep1": "Sube tu video a una plataforma de doblaje de IA",
+      "tldrStep2": "Elige idiomas de destino y estilos de voz",
+      "tldrStep3": "Revisa la transcripción de IA para verificar su precisión",
+      "tldrStep4": "Genera audio doblado con sincronización labial",
+      "tldrStep5": "Descarga el video final en múltiples idiomas",
+      "tldrCta": "🚀 Prueba nuestra herramienta de doblaje de video con IA - Comienza con 5 minutos gratis",
+      "whatIsPara1": "El doblaje de video con IA es el proceso de reemplazar el audio original en los videos con discurso traducido utilizando inteligencia artificial. A diferencia del doblaje tradicional que requiere actores de voz y un extenso trabajo manual, el doblaje de IA puede traducir y recrear voces en minutos mientras mantiene el tono, la emoción y el tiempo del hablante original.",
+      "whatIsPara2": "Los sistemas modernos de doblaje de IA utilizan redes neuronales avanzadas para analizar el audio original, transcribir el discurso, traducir el contenido y generar nuevas pistas de voz que se sincronizan perfectamente con el video. Esta tecnología ha revolucionado la creación de contenido, haciendo posible alcanzar audiencias globales sin los altos costos y la inversión de tiempo del doblaje tradicional.",
+      "whyUseTitle": "¿Por qué usar IA para el doblaje de video?",
+      "speedTitle": "Velocidad y Eficiencia",
+      "speedContent": "El doblaje tradicional puede tardar semanas por idioma. El doblaje de IA reduce esto a minutos, permitiéndote localizar contenido rápidamente y responder a las demandas del mercado al instante.",
+      "costTitle": "Solución Rentable",
+      "costContent": "Los estudios de doblaje profesionales cobran entre $100 y $500 por minuto de video. El doblaje de IA cuesta un 90% menos mientras mantiene calidad profesional, haciéndolo accesible para creadores de todos los tamaños.",
+      "voiceTitle": "Consistencia de Voz",
+      "voiceContent": "La IA puede clonar y preservar las características de voz del hablante original en múltiples idiomas, manteniendo la consistencia de la marca y la conexión personal con las audiencias.",
+      "scalabilityTitle": "Escalabilidad",
+      "scalabilityContent": "Doblaje de bibliotecas de videos enteras en docenas de idiomas simultáneamente. Los sistemas de IA manejan el procesamiento por lotes, haciendo posible escalar contenido globalmente sin aumentos de costos lineales.",
+      "tutorialTitle": "Tutorial de Doblaje de IA Paso a Paso",
+      "step1ProTip": "💡 Consejo Profesional",
+      "step1ProTipContent": "Los videos con audio de 48kHz y resolución de 1080p producen los mejores resultados de doblaje. Elimina la música de fondo o redúcela significativamente antes de subir.",
+      "step4Critical": "⚠️ Paso Crítico",
+      "step4CriticalContent": "La precisión de la transcripción impacta directamente en la calidad de la traducción. Dedica tiempo extra aquí para asegurar resultados perfectos. La mayoría de las plataformas muestran puntajes de confianza para cada segmento transcrito.",
+      "step5Para1": "Aquí es donde ocurre la magia. La IA traduce tu transcripción corregida a los idiomas de destino, luego genera nuevo audio utilizando tecnología de clonación de voz. Los sistemas avanzados analizan los movimientos de la boca y crean movimientos labiales perfectamente sincronizados.",
+      "step5Para2": "El proceso generalmente toma de 2 a 5 minutos por idioma, dependiendo de la longitud del video y la carga del servidor. Recibirás notificaciones cuando el procesamiento esté completo.",
+      "bestPracticesTitle": "Mejores Prácticas para Resultados de Calidad",
+      "audioQualityTitle": "La Calidad del Audio Importa",
+      "audioQualityContent": "Comienza con la mejor calidad de audio posible. Usa micrófonos externos, graba en entornos tranquilos y aplica reducción de ruido antes de subir. Un audio limpio produce mejores transcripciones y clonación de voz.",
+      "culturalTitle": "Adaptación Cultural",
+      "culturalContent": "Más allá de la traducción literal, considera las sutilezas culturales. Algunas plataformas ofrecen características de adaptación cultural que ajustan modismos, referencias y humor para los mercados objetivo.",
+      "voiceStyleTitle": "Coincidencia de Estilo de Voz",
+      "voiceStyleContent": "Elige estilos de voz que coincidan con tu tipo de contenido. Los videos corporativos se benefician de tonos profesionales, mientras que el contenido educativo puede funcionar mejor con voces amigables y accesibles.",
+      "challengesTitle": "Desafíos Comunes y Soluciones",
+      "roboticTitle": "Desafío: Calidad de Voz Robótica",
+      "roboticSolution": "Solución: Utiliza plataformas con motores TTS neuronales avanzados. Sube muestras de voz de referencia y ajusta los parámetros emocionales para obtener resultados más naturales.",
+      "lipsyncTitle": "Desafío: Problemas de Sincronización Labial",
+      "lipsyncSolution": "Solución: Elige plataformas con tecnología de sincronización labial dedicada. Algunas herramientas incluso pueden modificar los fotogramas de video para que coincidan perfectamente con el nuevo tiempo de audio.",
+      "speakersTitle": "Desafío: Múltiples Voces",
+      "speakersSolution": "Solución: Utiliza plataformas con diarización de hablantes. Esta función identifica y separa automáticamente a diferentes hablantes, aplicando clonación de voz apropiada a cada uno.",
+      "comparisonTitle": "Comparación de Herramientas y Plataformas",
+      "platformHeader": "Plataforma",
+      "languagesHeader": "Idiomas",
+      "cloningHeader": "Clonación de Voz",
+      "pricingHeader": "Precios",
+      "curifyRow": "Curify AI",
+      "curifyLanguages": "100+",
+      "curifyCloning": "✅ Avanzado",
+      "curifyPricing": "$0.10/min",
+      "elevenlabsRow": "ElevenLabs",
+      "elevenlabsLanguages": "29",
+      "elevenlabsCloning": "✅ Profesional",
+      "elevenlabsPricing": "$0.30/min",
+      "dubverseRow": "Dubverse",
+      "dubverseLanguages": "60+",
+      "dubverseCloning": "⚠️ Básico",
+      "dubversePricing": "$0.20/min",
+      "useCasesTitle": "Casos de Uso y Aplicaciones",
+      "creatorsTitle": "Creadores de Contenido",
+      "creatorsContent": "Los YouTubers y creadores de redes sociales pueden expandir su alcance global al doblar contenido en múltiples idiomas. Esto aumenta el tiempo de visualización, la participación y el potencial de ingresos.",
+      "corporateTitle": "Capacitación Corporativa",
+      "corporateContent": "Las empresas pueden localizar materiales de capacitación para equipos internacionales, asegurando un mensaje consistente en todas las ubicaciones mientras reducen los costos de traducción en un 80%.",
+      "elearningTitle": "Plataformas de E-Learning",
+      "elearningContent": "Las instituciones educativas pueden ofrecer cursos en múltiples idiomas, haciendo que la educación de calidad sea accesible para estudiantes de todo el mundo, independientemente de su lengua materna.",
+      "marketingTitle": "Marketing y Publicidad",
+      "marketingContent": "Las marcas pueden crear versiones localizadas de anuncios en video para diferentes mercados, manteniendo el impacto emocional original mientras se dirigen directamente a las audiencias locales.",
+      "futureTitle": "Futuro del Doblaje de Video con IA",
+      "futurePara1": "El campo está evolucionando rápidamente. Las tecnologías emergentes incluyen el doblaje en tiempo real para transmisiones en vivo, síntesis de voz consciente de emociones que se adapta al contexto del contenido, y adaptación cultural impulsada por IA que va más allá de la traducción para verdaderamente localizar el contenido.",
+      "futurePara2": "También estamos viendo avances en la generación de video donde la IA puede crear nuevo material de video para coincidir con el audio doblado, eliminando por completo los problemas de sincronización labial. El futuro promete una localización de video instantánea y sin costuras que mantiene la intención original del creador mientras llega a audiencias globales de manera efectiva.",
+      "gettingStartedTitle": "Comenzando Hoy",
+      "gettingStartedPara1": "¿Listo para comenzar a doblar tus videos? El proceso es más simple que nunca. La mayoría de las plataformas ofrecen pruebas gratuitas o planes iniciales que te permiten probar la tecnología antes de comprometerte.",
+      "gettingStartedPara2": "Comienza con un video corto (1-2 minutos) para entender el flujo de trabajo y la calidad. Experimenta con diferentes idiomas y configuraciones de voz. Una vez que te sientas cómodo con el proceso, puedes escalar a contenido más largo y múltiples idiomas.",
+      "gettingStartedCtaTitle": "🚀 ¿Listo para Comenzar?",
+      "gettingStartedCtaContent": "Prueba nuestra herramienta de Doblaje de Video con IA con 5 minutos gratis. No se requiere tarjeta de crédito.",
+      "gettingStartedCtaButton": "Comienza a Doblaje Ahora",
+      "conclusionTitle": "Conclusión",
+      "conclusionPara1": "El doblaje de video con IA ha transformado la localización de contenido de un proceso que consume tiempo y es costoso a un flujo de trabajo accesible y eficiente. Ya seas un creador individual o una empresa global, estas herramientas te permiten alcanzar audiencias en todo el mundo mientras mantienes la calidad y el impacto emocional de tu contenido original.",
+      "conclusionPara2": "A medida que la tecnología continúa avanzando, veremos síntesis de voz aún más natural, mejor adaptación cultural e integración sin costuras con flujos de trabajo de creación de contenido. El futuro de la comunicación global está aquí, y habla todos los idiomas."
+    },
+    "gridCollageAiPrompts": {
+      "title": "Prompts de Collage Fotográfico AI 3x3: Looks Editoriales de Bosque, Playa y Ciudad",
+      "publishedDate": "10 de mayo de 2026",
+      "readTime": "8 min de lectura",
+      "category": "Nano Template",
+      "metaDescription": "Copia y pega prompts de collage 3x3 para generadores de imágenes AI: bosque invernal, playa de verano, editorial urbano, estética de café y más.",
+      "keywords": "collage 3x3, prompts de grid fotográfico, collage fotográfico ai, prompts estéticos de instagram, ai estético de pinterest",
+      "audience": "Creadores de Pinterest, cuentas estéticas de Instagram, bloggers de moda, creadores de contenido de estilo de vida.",
+      "heroTitle": "Imagen principal",
+      "heroContent": "Un 3x3 terminado + 1 párrafo TL;DR. Crea impresionantes collages de grid 3x3 con IA que mantienen una perfecta consistencia en los nueve paneles.",
+      "whatIsTitle": "Cómo es un prompt de collage 3x3",
+      "whatIsContent": "Estructura: sujeto + escenario + estación + 9 micro-poses + nota de consistencia de iluminación. Cada prompt define el tema general mientras asegura armonía visual en todos los paneles.",
+      "winterForestTitle": "Editorial de bosque invernal",
+      "winterForestDescription": "Coincide directamente con GSC de cola larga. Bosques de pinos cubiertos de nieve místicos con suave iluminación azul y atmósfera mágica.",
+      "winterForestPrompt": "Cuadrícula 3x3 de escenas de bosques invernales. Panel 1: Amplia entrada del bosque. Panel 2: Ramas heladas. Panel 3: Camino de nieve. Panel 4: Arroyo congelado. Panel 5: Luz del sol a través de los árboles. Panel 6: Huellas de animales. Panel 7: Piña helada. Panel 8: Niebla en ascenso. Panel 9: Vista de montaña a través de los árboles. Paleta suave de azules y blancos, iluminación mágica, estilo de fotografía de naturaleza.",
+      "summerBeachTitle": "Hora dorada en la playa de verano",
+      "summerBeachDescription": "Escenas cálidas de playa tropical al atardecer con iluminación de hora dorada y vibras de vacaciones relajadas.",
+      "summerBeachPrompt": "Cuadrícula 3x3 de escenas de playa de verano. Panel 1: Silueta de palmera. Panel 2: Olas del océano. Panel 3: Sillas de playa. Panel 4: Conchas en la arena. Panel 5: Bebida tropical. Panel 6: Huellas hacia el agua. Panel 7: Toalla de playa. Panel 8: Horizonte del océano. Panel 9: Voleibol de playa. Paleta cálida de naranjas y rosas, iluminación de hora dorada.",
+      "autumnCafeTitle": "Café urbano de otoño",
+      "autumnCafeDescription": "Escenas acogedoras de café urbano con colores otoñales y una atmósfera cálida y acogedora.",
+      "autumnCafePrompt": "Cuadrícula 3x3 de escenas de café de otoño. Panel 1: Vapor de taza de café. Panel 2: Gotas de lluvia en la ventana. Panel 3: Iluminación cálida. Panel 4: Hojas de otoño afuera. Panel 5: Interior acogedor. Panel 6: Barista preparando café. Panel 7: Libro en la mesa. Panel 8: Vista de la calle. Panel 9: Ambiente nocturno. Paleta cálida de marrones y naranjas, iluminación suave.",
+      "springGardenTitle": "Jardín primaveral cottagecore",
+      "springGardenDescription": "Escenas románticas de jardín cottagecore con flores frescas de primavera y elementos naturales y pastorales.",
+      "springGardenPrompt": "Cuadrícula 3x3 de escenas de jardín de primavera. Panel 1: Flores de cerezo. Panel 2: Lluvia primaveral. Panel 3: Nuevas hojas verdes. Panel 4: Mariposa en flor. Panel 5: Camino del jardín. Panel 6: Herramientas de jardinería. Panel 7: Botas de lluvia. Panel 8: Nido de pájaros. Panel 9: Picnic en el jardín. Paleta suave de pasteles, fresca y aireada.",
+      "neonUrbanTitle": "Urbano neon noir",
+      "neonUrbanDescription": "Escenas dramáticas de la ciudad por la noche con luces de neón, sombras y una atmósfera de misterio urbano.",
+      "neonUrbanPrompt": "Cuadrícula 3x3 de escenas urbanas de neón. Panel 1: Reflejo de letrero de neón. Panel 2: Luces de la ciudad desde el techo. Panel 3: Estelas de luces de tráfico. Panel 4: Ventana de restaurante. Panel 5: Artista callejero. Panel 6: Exhibiciones en escaparates. Panel 7: Luces de taxi en la lluvia. Panel 8: Iluminación del puente. Panel 9: Entrada del bar. Azules profundos con toques de neón.",
+      "minimalistStudioTitle": "Estudio minimalista (fondo blanco)",
+      "minimalistStudioDescription": "Tomas limpias y minimalistas de estudio con fondos blancos y enfoque en la simplicidad del sujeto.",
+      "minimalistStudioPrompt": "Cuadrícula 3x3 de escenas de estudio minimalista. Panel 1: Objeto único. Panel 2: Líneas limpias. Panel 3: Espacio negativo. Panel 4: Sombras simples. Panel 5: Fondo blanco puro. Panel 6: Composición mínima. Panel 7: Textura sutil. Panel 8: Formas geométricas. Panel 9: Iluminación limpia. Blanco y gris monocromáticos.",
+      "templateTitle": "La plantilla de prompt reutilizable",
+      "templateContent": "Anota qué campos son intercambiables; incrusta el enlace de la página de plantilla-3x3-grid-photo-collage con una captura de pantalla. Estructura de la plantilla: [Tema] + [Configuración] + [Temporada] + [9 Descripciones de Paneles] + [Iluminación] + [Estilo].",
+      "consistencyTipsTitle": "Consejos para mantener la consistencia facial / de atuendo en 9 paneles",
+      "consistencyTips": [
+        "Usa el mismo modelo de IA y configuraciones para todos los paneles",
+        "Mantén descripciones de iluminación consistentes en los prompts",
+        "Especifica paletas de colores exactas para la armonía visual",
+        "Enlaza a preserve-facial-features-ai-generation para la consistencia del personaje",
+        "Mantén ángulos y distancias de cámara consistentes"
+      ],
+      "moreDirectionsTitle": "Más direcciones estéticas para probar",
+      "moreDirections": [
+        "Atardecer en el desierto + estilo bohemio",
+        "Ropa urbana + fondo de graffiti",
+        "Biblioteca vintage + estética académica",
+        "Paraíso tropical + ropa de resort",
+        "Loft industrial + diseño minimalista",
+        "Cabaña en la montaña + ropa de invierno acogedora",
+        "Casa de playa + estilo de abuela costera",
+        "Azotea de la ciudad + glamour nocturno",
+        "Claro del bosque + estética fairycore",
+        "Oficina moderna + vestimenta profesional",
+        "Galería de arte + vestimenta de noche sofisticada",
+        "Jardín campestre + estilo de picnic romántico"
+      ],
+      "faqTitle": "Preguntas Frecuentes",
+      "faq": [
+        {
+          "question": "¿Por qué 3x3 específicamente?",
+          "answer": "Las cuadrículas 3x3 son perfectas para el formato cuadrado de Instagram y crean composiciones visuales equilibradas que funcionan bien en dispositivos móviles."
+        },
+        {
+          "question": "¿Puedo usar 2x2?",
+          "answer": "Sí, pero 3x3 ofrece más oportunidades de narración y mejor interacción en plataformas visuales."
+        },
+        {
+          "question": "¿Por qué la misma persona se ve diferente?",
+          "answer": "Las variaciones de IA ocurren de forma natural. Usa indicaciones y valores semilla consistentes para una mejor uniformidad."
+        },
+        {
+          "question": "¿Puedo exportar como paneles separados?",
+          "answer": "Sí, la mayoría de las plataformas permiten la exportación de paneles individuales para su uso separado en publicaciones en redes sociales."
+        }
+      ],
+      "ctaTitle": "Abrir plantilla",
+      "ctaDescription": "Prueba nuestra plantilla de cuadrícula 3x3 con temas y estilos personalizables.",
+      "ctaButton": "Explorar Plantillas de Cuadrícula",
+      "winterForestGridTitle": "🌲 Indicación de Cuadrícula de Bosque Invernal",
+      "minimalistWinterTitle": "❄️ Cuadrícula Invernal Minimalista",
+      "tropicalBeachTitle": "🏖️ Cuadrícula de Playa Tropical",
+      "nauticalBeachTitle": "🌊 Cuadrícula de Playa Náutica",
+      "streetFashionTitle": "🏙️ Cuadrícula de Moda Urbana",
+      "nightCityTitle": "🌃 Cuadrícula de Ciudad Nocturna",
+      "cohesiveColorPalettesTitle": "Usa Paletas de Colores Cohesivas",
+      "cohesiveColorPalettesContent": "Define tu esquema de colores explícitamente en la indicación. Menciona colores o estados de ánimo específicos para asegurar que las nueve imágenes trabajen juntas de manera armoniosa.",
+      "planCompositionTitle": "Planifica Tu Composición",
+      "planCompositionContent": "Piensa en cómo fluirán juntos los nueve paneles. Considera crear caminos visuales o temas que conecten a través de la cuadrícula para un impacto máximo.",
+      "testIndividualPanelsTitle": "Prueba Paneles Individuales",
+      "testIndividualPanelsContent": "Genera paneles individuales primero para probar la estructura de tu prompt antes de comprometerte con la cuadrícula completa. Esto ahorra tiempo y ayuda a refinar tu enfoque.",
+      "platformTableHeader": "Plataforma",
+      "gridSupportHeader": "Soporte de Cuadrícula",
+      "bestForHeader": "Mejor Para",
+      "midjourneyName": "Midjourney",
+      "midjourneySupport": "⚠️ Limitado",
+      "midjourneyBest": "Cuadrículas artísticas",
+      "dalleName": "DALL-E 3",
+      "dalleSupport": "✅ Excelente",
+      "dalleBest": "Diseños precisos",
+      "stableDiffusionName": "Stable Diffusion",
+      "stableDiffusionSupport": "✅ Bueno",
+      "stableDiffusionBest": "Flujos de trabajo personalizados",
+      "conclusionTitle": "Comienza a Crear Tus Collages de Cuadrícula 3x3",
+      "conclusionContent1": "Los collages de cuadrícula 3x3 ofrecen infinitas posibilidades creativas para la narración visual. Ya sea que estés construyendo una estética cohesiva para Instagram o creando composiciones artísticas para arte digital, estos prompts proporcionan la base para resultados impresionantes.",
+      "conclusionContent2": "La clave del éxito radica en la consistencia: mantener la misma iluminación, paleta de colores y estilo visual en los nueve paneles crea un aspecto profesional y pulido que capta la atención.",
+      "conclusionContent3": "Experimenta con diferentes temas y enfoques para descubrir qué funciona mejor para tu visión creativa. Las plantillas y técnicas compartidas aquí son solo puntos de partida para tu único viaje artístico.",
+      "conclusionContent4": "¿Listo para comenzar a crear? Navega por nuestras plantillas de cuadrícula y comienza tu aventura de collage impulsada por IA hoy.",
+      "whyAiTitle": "¿Por Qué Usar IA para Collages de Cuadrícula 3x3?",
+      "consistencyTitle": "Consistencia Visual Perfecta",
+      "consistencyContent": "La IA asegura que cada panel mantenga la misma iluminación, paleta de colores y estilo, creando cuadrículas de aspecto profesional que se sienten cohesivas e intencionales.",
+      "timeEfficiencyTitle": "Proceso de Creación Rápido",
+      "timeEfficiencyContent": "Genera cuadrículas completas 3x3 en minutos en lugar de horas de trabajo manual de edición y composición de fotos.",
+      "creativeFreedomTitle": "Posibilidades Creativas Infinita",
+      "creativeFreedomContent": "Explora temas, estilos y conceptos que serían difíciles o imposibles de crear con fotografía tradicional.",
+      "costEffectiveTitle": "Solución Económica",
+      "costEffectiveContent": "No necesitas sesiones de fotos costosas, modelos o locaciones: la IA crea visuales impresionantes a una fracción del costo.",
+      "seasonalTitle": "Variaciones Estacionales y Temáticas",
+      "seasonalDescription": "Adapta tus collages de cuadrícula a diferentes estaciones y temas para contenido durante todo el año que se mantenga fresco y relevante.",
+      "platformTitle": "Optimización Específica de Plataforma",
+      "instagramTitle": "Optimización de Instagram",
+      "instagramContent": "Las cuadrículas 3x3 se adaptan perfectamente al formato cuadrado de Instagram y a las publicaciones en carrusel, maximizando el compromiso y el impacto visual en la plataforma.",
+      "pinterestTitle": "Estrategia de Pinterest",
+      "pinterestContent": "Las disposiciones de cuadrícula vertical funcionan excepcionalmente bien para el formato alto de Pinterest, impulsando tasas de clics y guardados más altos.",
+      "websiteTitle": "Integración en el Sitio Web",
+      "websiteContent": "Utiliza collages de cuadrícula como imágenes principales, secciones de galería o encabezados de blog para crear contenido web visualmente impactante.",
+      "advancedTitle": "Técnicas Avanzadas",
+      "narrativeTitle": "Crea Narrativas Visuales",
+      "narrativeContent": "Organiza paneles para contar una historia a través de la cuadrícula, con cada panel construyendo sobre el anterior para crear un arco narrativo cohesivo.",
+      "colorProgressionTitle": "Técnicas de Progresión de Color",
+      "colorProgressionContent": "Experimenta con cambios de color graduales a través de los paneles, de tonos fríos a cálidos, o de claros a oscuros, para efectos visuales dinámicos.",
+      "thematicTitle": "Conexiones Temáticas",
+      "thematicContent": "Vincula paneles a través de temas o motivos sutiles que se repiten en la cuadrícula, creando capas más profundas de significado visual."
+    },
+    "redCarpetAiLooks": {
+      "title": "Recrea Estilos Icónicos de Alfombra Roja con Nano Banana AI",
+      "publishedDate": "10 de mayo de 2026",
+      "readTime": "Lectura de 10 min",
+      "category": "Plantilla Nano",
+      "metaDescription": "Guía anual de estilo de alfombra roja con IA: recrea arquetipos de moda icónicos de alfombra roja con recetas de prompts impulsadas por Nano Banana.",
+      "keywords": "alfombra roja ia, moda ia, estilos de moda ia, moda nano banana, generador de atuendos de alfombra roja",
+      "intro": {
+        "title": "La Revolución de la Alfombra Roja",
+        "content1": "La moda de alfombra roja representa la cúspide de la innovación en estilo, donde diseños que rompen barreras se encuentran con momentos culturales. Desde los temas teatrales de la Met Gala hasta la elegancia clásica de los Oscars, estos eventos muestran las creaciones más atrevidas de la moda.",
+        "content2": "Con Nano Banana AI, ahora puedes recrear estos momentos icónicos de moda sin enfocarte en celebridades específicas. En su lugar, exploraremos los arquetipos de estilo que definen el glamour de la alfombra roja, centrándonos en la ropa, siluetas y visiones artísticas que hacen que estos looks sean legendarios."
+      },
+      "corePromptRecipe": {
+        "title": "La Receta de Prompt Principal: Sujeto + Evento + Estética + Estilo de Cámara",
+        "content": "Crear moda deslumbrante de alfombra roja con IA sigue una fórmula simple. Comienza con un sujeto de moda (modelo, maniquí o figura), especifica el contexto del evento, describe la estética y los detalles de la ropa, y termina con especificaciones de cámara y iluminación. Esta estructura de cuatro partes asegura resultados consistentes y profesionales cada vez."
+      },
+      "styleArchetypes": {
+        "title": "5 Arquetipos de Estilo de Alta Moda",
+        "intro": "Estos cinco arquetipos de moda representan los estilos de alfombra roja más influyentes. Cada uno captura una estética distinta que ha definido momentos memorables de moda.",
+        "list": [
+          {
+            "id": "sci-fi-method",
+            "title": "El Look 'Method Dressing' de Ciencia Ficción",
+            "description": "Un vestido de exoesqueleto metálico impreso en 3D que combina la anatomía humana con la maquinaria, inspirado en giras de prensa futuristas.",
+            "prompt": "Modelo de alta moda en un estreno de película con temática desértica, vistiendo un vestido de exoesqueleto arquitectónico de ciencia ficción, con revestimiento de cromo iridiscente, corsé moldeado, estructura esquelética impresa en 3D, iluminación cinematográfica dramática, fondo de dunas de arena, resolución 8K, estilo editorial de alta moda."
+          },
+          {
+            "id": "vintage-glamour",
+            "title": "Renacimiento del Glamour de Hollywood Vintage",
+            "description": "Elegancia atemporal que recuerda la era dorada de los años 50 con sastrería moderna y seda hasta el suelo.",
+            "prompt": "Look sofisticado de alfombra roja, glamour vintage de Hollywood, vestido de charmeuse de seda hasta el suelo en azul medianoche, abrigo de terciopelo voluminoso, guantes hasta el codo, peinado de ondas clásicas, iluminación de flash de paparazzi, escalones de la alfombra roja de Cannes, fotografía de alto contraste."
+          },
+          {
+            "id": "avant-garde-floral",
+            "title": "La Fantasía Floral de Vanguardia",
+            "description": "La estética 'Jardín del Tiempo': vestido etéreo, botánico y ligeramente surrealista hecho de musgo vivo y pétalos.",
+            "prompt": "Look de vanguardia en la Met Gala, tema 'Jardín del Tiempo', vestido construido a partir de pétalos de flores de seda translúcida y musgo preservado, silueta etérea y fluida, intrincado bordado botánico, iluminación suave y brumosa, presentación teatral de moda, textura de tela hiperrealista en 8K."
+          },
+          {
+            "id": "crystal-couture",
+            "title": "El 'Vestido Desnudo' de Crystal Couture",
+            "description": "El arte del vestido 'ilusión', equilibrando la transparencia atrevida con intrincados bordados de cuentas y micro-cristales.",
+            "prompt": "Vestido 'ilusión' de alfombra roja de celebridad, malla nude transparente incrustada con miles de cristales y perlas de Swarovski, patrones geométricos intrincados, silueta ceñida al cuerpo, iluminación dramática, acabado brillante, resolución 8K, fotografía de moda de lujo."
+          },
+          {
+            "id": "gender-fluid-suit",
+            "title": "El Traje de Declaración de Género Fluido",
+            "description": "Desafiando la moda masculina tradicional con sastrería suave, blazers oversized y pesadas piezas de perlas.",
+            "prompt": "Declaración de alfombra roja de género fluido, blazer de seda pastel oversized, pantalones de pierna ancha, larga cola de encaje delicado unida a la cintura, arnés de perlas pesadas, fondo desenfocado, iluminación teatral, moda contemporánea audaz, fotografía de alta costura."
+          }
+        ]
+      },
+      "promptAnatomy": {
+        "title": "Anatomía del Prompt: Por Qué Funciona",
+        "content": "Desglosando la Fantasía Floral: 'Met Gala de Vanguardia' establece la vibra arriesgada; 'Seda translúcida' obliga a la IA a calcular la luz que pasa a través de la tela; 'Presentación teatral' asegura sombras dramáticas sobre iluminación plana."
+      },
+      "pitfallsAndSafety": {
+        "title": "Errores Comunes y Seguridad de IA",
+        "intro": "Al crear moda de alfombra roja con IA, pueden surgir varios desafíos. Entender estos problemas te ayuda a generar mejores resultados y evitar contratiempos frustrantes.",
+        "table": [
+          {
+            "issue": "Desviación Facial",
+            "fix": "Evita nombres de celebridades específicas; describe características como 'pómulos altos' para prevenir el promedio borroso de rasgos."
+          },
+          {
+            "issue": "Pérdida de Textura de Tela",
+            "fix": "Sé específico con términos de material como 'charmeuse de seda' o 'lamé líquido' en lugar de genérico 'brillante'."
+          },
+          {
+            "issue": "Look Flotante",
+            "fix": "Ancla al modelo especificando elementos del entorno como 'de pie sobre la alfombra roja con cuerdas de terciopelo'."
+          },
+          {
+            "issue": "Filtros de Seguridad",
+            "fix": "Enfócate en estéticas 'inspiradas en diseñadores' (por ejemplo, estilo Schiaparelli) en lugar de similitudes específicas del mundo real."
+          }
+        ]
+      },
+      "annualRefresh": {
+        "title": "Nota de Actualización Anual",
+        "content": "¡Marca esta página! Actualizamos esta guía de estilo cada mayo y febrero después de la Met Gala y los Oscars para asegurarnos de que tus recetas coincidan con las últimas actualizaciones del modelo Nano Banana."
+      },
+      "cta": {
+        "text": "Genera Looks de Moda con Nano Banana",
+        "url": "https://www.curify-ai.com/tools"
+      }
     }
   },
   "aeVsComfyUi": {

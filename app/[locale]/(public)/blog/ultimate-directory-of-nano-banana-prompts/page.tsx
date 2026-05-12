@@ -85,12 +85,14 @@ function PromptExample({
 function getRealTemplates(locale: string) {
   const templates = nanoTemplatesData as any[];
   
-  // Define category mappings based on template topics
+  // Define category mappings based on template topics and IDs
   const categoryMappings = {
-    character: ['character', 'mbti', 'film', 'psychology'],
-    lifestyle: ['lifestyle', 'travel', 'food', 'fashion'],
-    learning: ['learning', 'science', 'education', 'history'],
-    design: ['design', 'architecture', 'product', 'commerce']
+    character: ['character', 'mbti', 'film', 'psychology', 'battle'],
+    poster: ['posters', 'movie-poster', 'theme-overview-poster', 'world-landmark-vintage-info-poster'],
+    travel: ['travel', 'city', 'itinerary', 'whimsical-travel-map', 'series-travel'],
+    fashion: ['fashion', 'clothing', 'hairstyle', 'outfit', 'costume'],
+    infographic: ['infographic', 'series-infographic', 'cultural-relic-retro-infographic', 'dog-breed-retro-infographic'],
+    lifestyle: ['lifestyle', 'food', 'design', 'architecture', 'product']
   };
 
   // Function to determine style from template
@@ -99,9 +101,10 @@ function getRealTemplates(locale: string) {
     const id = template.id || '';
     
     if (topics.includes('film') || id.includes('film') || id.includes('character')) return 'Film';
-    if (topics.includes('design') || id.includes('product') || id.includes('fashion')) return 'Product';
+    if (topics.includes('design') || id.includes('product') || id.includes('fashion') || id.includes('poster')) return 'Product';
     if (topics.includes('learning') || topics.includes('education') || id.includes('evolution') || id.includes('education-card')) return 'Isometric';
-    if (topics.includes('history') || id.includes('heritage') || id.includes('costume')) return 'Ink';
+    if (topics.includes('history') || id.includes('heritage') || id.includes('costume') || id.includes('cultural')) return 'Ink';
+    if (topics.includes('travel') && id.includes('3d-region-landmark-map')) return 'Photorealistic';
     return 'Anime'; // Default style
   }
 
@@ -120,6 +123,10 @@ function getRealTemplates(locale: string) {
     // Add topic-based tags
     if (topics.includes('mbti')) tags.push('MBTI', 'Personality');
     if (topics.includes('character')) tags.push('Character-Design');
+    if (topics.includes('posters')) tags.push('Poster-Design');
+    if (topics.includes('travel')) tags.push('Travel');
+    if (topics.includes('fashion')) tags.push('Fashion');
+    if (topics.includes('infographic')) tags.push('Infographic');
     if (topics.includes('learning')) tags.push('Education');
     if (topics.includes('history')) tags.push('Historical');
     if (topics.includes('design')) tags.push('Design');
@@ -158,78 +165,122 @@ function getRealTemplates(locale: string) {
   const categories = [
     {
       id: 'character' as const,
-      name: 'Character & Persona (High Engagement)',
-      description: 'Characters drive massive emotional connection and shareability. Start directory here to grab attention immediately.',
+      name: 'Character Prompts (High Engagement)',
+      description: 'Character design prompts that drive massive emotional connection and shareability. Perfect for social media and storytelling.',
       examples: templates
         .filter(template => 
           categoryMappings.character.some(topic => 
             template.topics?.includes(topic) || template.id?.includes(topic)
           )
         )
-        .slice(0, 8)
+        .slice(0, 6)
         .map(template => ({
           title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Character Template',
           prompt: extractExamplePrompt(template),
           style: determineStyle(template),
           tier: determineTier(template),
-          tags: generateTags(template)
+          tags: generateTags(template),
+          templateId: template.id
+        }))
+    },
+    {
+      id: 'poster' as const,
+      name: 'Poster Prompts (Visual Impact)',
+      description: 'Eye-catching poster designs for movies, events, and marketing. High-conversion visual content.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.poster.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 6)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Poster Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template),
+          templateId: template.id
+        }))
+    },
+    {
+      id: 'travel' as const,
+      name: 'Travel Map Prompts (Adventure & Discovery)',
+      description: 'Travel itineraries, maps, and destination guides. Perfect for travel bloggers and adventure content.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.travel.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 6)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Travel Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template),
+          templateId: template.id
+        }))
+    },
+    {
+      id: 'fashion' as const,
+      name: 'Fashion Prompts (Style & Trends)',
+      description: 'Fashion designs, outfit combinations, and style guides. Ideal for fashion influencers and e-commerce.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.fashion.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 6)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Fashion Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template),
+          templateId: template.id
+        }))
+    },
+    {
+      id: 'infographic' as const,
+      name: 'Infographic Prompts (Educational Content)',
+      description: 'Data visualization and educational infographics. Perfect for teachers, marketers, and content creators.',
+      examples: templates
+        .filter(template => 
+          categoryMappings.infographic.some(topic => 
+            template.topics?.includes(topic) || template.id?.includes(topic)
+          )
+        )
+        .slice(0, 6)
+        .map(template => ({
+          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Infographic Template',
+          prompt: extractExamplePrompt(template),
+          style: determineStyle(template),
+          tier: determineTier(template),
+          tags: generateTags(template),
+          templateId: template.id
         }))
     },
     {
       id: 'lifestyle' as const,
-      name: 'Lifestyle & Global Aesthetics (The "Pinterest" Scroll)',
-      description: 'This taps directly into aspiration and nostalgia markets. It demonstrates Nano Banana\'s ability to handle highly specific cultural and geographical nuances.',
+      name: 'Lifestyle & Design (Creative Living)',
+      description: 'Lifestyle content, home design, and creative projects. Great for lifestyle bloggers and creators.',
       examples: templates
         .filter(template => 
           categoryMappings.lifestyle.some(topic => 
             template.topics?.includes(topic) || template.id?.includes(topic)
           )
         )
-        .slice(0, 8)
+        .slice(0, 6)
         .map(template => ({
           title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Lifestyle Template',
           prompt: extractExamplePrompt(template),
           style: determineStyle(template),
           tier: determineTier(template),
-          tags: generateTags(template)
-        }))
-    },
-    {
-      id: 'learning' as const,
-      name: 'Learning & Language (The Viral Utility)',
-      description: 'Transition from pure aesthetics to practical, viral content creation. This proves to educators and creators that Curify is a serious production engine.',
-      examples: templates
-        .filter(template => 
-          categoryMappings.learning.some(topic => 
-            template.topics?.includes(topic) || template.id?.includes(topic)
-          )
-        )
-        .slice(0, 8)
-        .map(template => ({
-          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Learning Template',
-          prompt: extractExamplePrompt(template),
-          style: determineStyle(template),
-          tier: determineTier(template),
-          tags: generateTags(template)
-        }))
-    },
-    {
-      id: 'design' as const,
-      name: 'Design & Product (The Professional Edge)',
-      description: 'Close the directory with high-intent professional use cases. This attracts industrial designers, marketers, and product managers.',
-      examples: templates
-        .filter(template => 
-          categoryMappings.design.some(topic => 
-            template.topics?.includes(topic) || template.id?.includes(topic)
-          )
-        )
-        .slice(0, 8)
-        .map(template => ({
-          title: template.id?.replace('template-', '').replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()) || 'Design Template',
-          prompt: extractExamplePrompt(template),
-          style: determineStyle(template),
-          tier: determineTier(template),
-          tags: generateTags(template)
+          tags: generateTags(template),
+          templateId: template.id
         }))
     }
   ];
@@ -239,7 +290,7 @@ function getRealTemplates(locale: string) {
 
 // Main component
 export default function UltimateDirectoryOfNanoBananaPromptsPage() {
-  const [activeCategory, setActiveCategory] = useState<'character' | 'lifestyle' | 'learning' | 'design'>('character');
+  const [activeCategory, setActiveCategory] = useState<'character' | 'poster' | 'travel' | 'fashion' | 'infographic' | 'lifestyle'>('character');
   const t = useTranslations('blog.UltimateDirectoryOfNanoBananaPrompts');
   const locale = useLocale();
 
@@ -349,21 +400,58 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
               style={example.style}
               tags={example.tags}
             >
-              <div className="space-y-4">
-                <p className="text-sm text-gray-600 mb-2">
-                  {t('examples.description')} <strong>{example.title}</strong>
-                </p>
-                <div className="bg-gray-50 border-l-4 border-gray-200 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-2">{t('examples.promptTitle')}</h4>
-                  <p className="text-gray-700 mb-4">{t('examples.promptDescription')}</p>
+              <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-600 mb-2">
+                      {t('examples.description')} <strong>{example.title}</strong>
+                    </p>
+                    <div className="bg-gray-50 border-l-4 border-gray-200 p-4 rounded-lg">
+                      <h4 className="font-semibold text-gray-900 mb-2">{t('examples.promptTitle')}</h4>
+                      <p className="text-gray-700 mb-4">{t('examples.promptDescription')}</p>
+                    </div>
+                    <PromptBox 
+                      title={t('examples.promptBoxTitle')}
+                      promptText={example.prompt}
+                    >
+                      <div className="text-sm text-gray-600 mb-2">{t('examples.promptBoxDescription')}</div>
+                      <div className="p-3 bg-gray-50 rounded font-mono text-xs max-h-32 overflow-y-auto">{example.prompt}</div>
+                    </PromptBox>
+                    {example.templateId && (
+                      <div className="mt-4">
+                        <Link
+                          href={`/nano-template/${example.templateId}`}
+                          className="inline-flex items-center px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors text-sm"
+                        >
+                          Try This Template →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="relative w-full max-w-sm">
+                      <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center">
+                        <div className="text-center p-6">
+                          <div className="text-4xl mb-3">🎨</div>
+                          <h5 className="font-semibold text-gray-800 mb-2">{example.title}</h5>
+                          <p className="text-sm text-gray-600 mb-3">Style: {example.style}</p>
+                          <div className="flex justify-center gap-2 mb-3">
+                            {example.tags.map((tag, tagIndex) => (
+                              <span key={tagIndex} className="px-2 py-1 text-xs bg-white rounded-full text-gray-700">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <div className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
+                            example.tier === 'Tier 2' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700'
+                          }`}>
+                            {example.tier}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <PromptBox 
-                  title={t('examples.promptBoxTitle')}
-                  promptText={example.prompt}
-                >
-                  <div className="text-sm text-gray-600 mb-2">{t('examples.promptBoxDescription')}</div>
-                  <div className="p-3 bg-gray-50 rounded font-mono text-xs">{example.prompt}</div>
-                </PromptBox>
               </div>
             </PromptExample>
           ))}

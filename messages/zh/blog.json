@@ -516,7 +516,13 @@
         "date": "April 16, 2026",
         "readTime": "10 min read",
         "tag": "Content Automation",
-        "image": "/images/jay.webp"
+        "image": "/images/jay.webp",
+        "category": "纳米模板",
+        "relatedLinks": [
+          "纳米香蕉提示的终极目录",
+          "10个纳米香蕉提示技巧",
+          "纳米香蕉提示生态系统"
+        ]
       },
       {
         "slug": "ai-content-distribution-system",
@@ -524,7 +530,13 @@
         "date": "April 8, 2026",
         "readTime": "10 min read",
         "tag": "Content Automation",
-        "image": "/images/mermaigrapj.webp"
+        "image": "/images/mermaigrapj.webp",
+        "category": "学习教育",
+        "relatedLinks": [
+          "视觉学习工具",
+          "双语AI闪卡-早期儿童教育",
+          "病毒式学习内容"
+        ]
       },
       {
         "slug": "ai-content-production-system",
@@ -532,7 +544,13 @@
         "date": "April 8, 2026",
         "readTime": "12 min read",
         "tag": "DS & AI Engineering",
-        "image": "/images/contentai.webp"
+        "image": "/images/contentai.webp",
+        "category": "纳米模板",
+        "relatedLinks": [
+          "纳米香蕉提示的终极目录",
+          "MBTI角色生成器",
+          "10个纳米香蕉提示技巧"
+        ]
       },
       {
         "slug": "content-multiplication-system",
@@ -540,7 +558,12 @@
         "date": "April 6, 2026",
         "readTime": "8 min read",
         "tag": "Content Automation",
-        "image": "/images/thirtyday.webp"
+        "image": "/images/thirtyday.webp",
+        "relatedLinks": [
+          "如何自然配音视频",
+          "什么是声音克隆",
+          "翻译YouTube视频"
+        ]
       },
       {
         "slug": "viral-learning-content",
@@ -548,7 +571,25 @@
         "date": "April 6, 2026",
         "readTime": "10 min read",
         "tag": "Learning & Education",
-        "image": "/images/learnContent.png"
+        "image": "/images/learnContent.png",
+        "relatedLinks": [
+          "纳米香蕉提示的终极目录",
+          "纳米香蕉提示生态系统",
+          "创意AI工具网站"
+        ]
+      },
+      {
+        "slug": "红毯AI造型",
+        "title": "使用纳米香蕉AI重现Met Gala、奥斯卡和戛纳红毯造型",
+        "date": "2026年5月10日",
+        "readTime": "10分钟阅读",
+        "tag": "纳米模板",
+        "image": "/images/2b234839e1161a6d57af43e828efd3ec_thumb_1764263264241.jpg",
+        "relatedLinks": [
+          "纳米香蕉提示的终极目录",
+          "纳米香蕉提示生态系统",
+          "角色提示生成器"
+        ]
       }
     ],
     "voiceCloningTools": {
@@ -5557,6 +5598,483 @@
         "content": "def compliance_check_hook(state):\n    user_input = state[\"messages\"][-1].content.lower()\n    if \"password\" in user_input or \"api_key\" in user_input:\n        return {\"error\": \"检测到安全违规\"}\n    return agent_node(state)\n\n参考: https://langchain-ai.github.io/langgraph/"
       },
       "finalThought": "如果您的代理仅回答问题，那它就是一个聊天机器人。如果它可靠地执行工作，那它就是一个任务代理。"
+    },
+    "aiCollageDigitalWallpaperGuide": {
+      "title": "如何生成美学AI拼贴画和数字壁纸：网格提示指南",
+      "slug": "ai-collage-digital-wallpaper-guide",
+      "metaDescription": "了解如何使用纳米香蕉提示创建惊艳的3x3网格拼贴画和数字壁纸。掌握网格布局、季节美学和纵横比，以获得完美的数字壁纸。",
+      "date": "2026年5月4日",
+      "readTime": "阅读时间：12分钟",
+      "intro": "您的搜索控制台显示，特定查询“冬季森林中的年轻女性3x3网格拼贴”在短短7天内获得了229次展示，排名为5.7。此外，“数字壁纸”的搜索量为480，KD为36%，非常可实现。本指南将向您展示如何利用Nano Banana的基于网格的提示系统来利用这些确切的搜索模式。",
+      "whatIsTitle": "什么是3x3网格拼贴？",
+      "whatIsContent": "3x3网格拼贴正如其名——九张图像排列成完美的正方形网格（3行×3列）。这种格式在数字壁纸中变得极为流行，因为它创造了一个连贯的视觉故事，同时最大化了屏幕空间。与单张图像不同，网格拼贴允许您在一个统一的构图中展示多个视角、颜色变化或渐进式叙事。<br/><br/>网格布局的美在于其数学精确性和视觉平衡。每个单元格都成为微表情的画布，创造出丰富的挂毯，吸引观众更深入地进入构图。对于移动壁纸而言，3x3格式在保持视觉和谐的同时，能够很好地适应各种屏幕尺寸。",
+      "whyTitle": "为什么网格拼贴主导搜索结果",
+      "whyContent": "搜索数据显示，用户不仅仅在寻找随机的AI图像——他们想要构图控制。像“冬季森林中的年轻女性3x3网格拼贴”这样的查询的成功证明了用户想要：<br/><br/>• 特定布局（不仅仅是单张图像）<br/>• 季节美学（冬季森林、秋季氛围、夏季海滩）<br/>• 肖像一致性（所有单元格中的同一人/风格）<br/>• 壁纸优化（适合设备的正确纵横比）<br/><br/>Nano Banana在这方面表现出色，因为您可以强制精确的网格结构，同时在所有单元格中保持主题一致性。这是大多数AI图像生成器在没有广泛提示工程的情况下难以做到的。",
+      "nanoBananaTitle": "Nano Banana网格方法：3x3的优势",
+      "nanoBananaContent": "Nano Banana的模板系统使网格拼贴变得极为简单。您无需与复杂的提示工程作斗争来强制网格布局，只需选择一个网格模板并填写控制每个单元格内容的参数。<br/><br/>主要优势：<br/>• 精确的网格控制——不再希望AI理解“3x3网格”<br/>• 一致的风格——所有单元格自动共享相同的美学<br/>• 轻松迭代——更改一个参数，重新生成整个网格<br/>• 季节主题——内置支持天气、光线和情绪变化<br/><br/>这消除了传统AI图像生成中最大的挫折：在多张图像中获得一致的结果。",
+      "basicTemplateTitle": "基本3x3网格模板",
+      "basicTemplateDescription": "该模板创建一个完美的3x3网格，所有单元格具有一致的风格。非常适合数字壁纸和社交媒体帖子。",
+      "basicTemplatePrompt": "3x3网格拼贴，冬季森林中的年轻女性，雪花飘落，温暖的光线，所有9个单元格中的一致肖像，电影质量，数字壁纸纵横比",
+      "seasonalTitle": "季节性网格模板：复制粘贴提示",
+      "seasonalContent": "季节美学驱动着巨大的搜索量。以下是经过验证的模板，利用已经为您排名的“冬季森林”查询。",
+      "winterForestTitle": "冬季森林美学",
+      "winterForestDescription": "您排名的“冬季森林”查询背后的确切模板结构。非常适合假日内容和季节性活动。",
+      "winterForestPrompt": "3x3网格拼贴，冬季森林中的年轻女性，覆盖雪的松树，柔和的金色时光透过树枝，格子围巾，红润的脸颊，一致的肖像风格，舒适的冬季美学，高分辨率壁纸",
+      "autumnVibesTitle": "秋季森林构图",
+      "autumnVibesDescription": "用这个经过验证的网格结构捕捉秋季的温暖、丰富色调。非常适合秋季营销活动。",
+      "autumnVibesPrompt": "3x3网格拼贴，秋季森林中的年轻女性，金色树叶飘落，温暖的橙色光线，粗针织毛衣，乡村氛围，所有单元格中的一致肖像，秋季美学，数字壁纸质量",
+      "wallpaperTitle": "数字壁纸优化",
+      "wallpaperContent": "并非所有网格都适合做壁纸。以下是有效的要素：<br/><br/>• 移动优先的纵横比——手机为9:16，桌面为16:9<br/>• 高分辨率——最低1080×1920以获得清晰显示<br/>• 中心聚焦的构图——重要元素避免通知区域<br/>• 颜色和谐——互补调色板，不刺眼<br/><br/>Nano Banana的壁纸模板自动处理技术规格，让您可以专注于创意方向。",
+      "advancedTitle": "高级网格技术",
+      "advancedContent": "一旦掌握基本网格，尝试这些专业技术：<br/><br/>• 渐进式叙事——每个单元格展示轻微的进展或情感变化<br/>• 色温变化——网格中从暖到冷的视觉趣味<br/>• 焦点操控——战略性地引导视线穿过构图<br/>• 微变化——细微差异创造深度而不打破和谐<br/><br/>这些技术将业余网格与引人注目的专业数字壁纸区分开来。",
+      "toolsTitle": "Nano Banana网格工具包",
+      "toolsContent": "网格创建的基本工具：<br/>• 网格模板浏览器——按3x3、2x2和自定义布局筛选<br/>• 季节主题库——预构建的冬季、春季、夏季、秋季变化<br/>• 壁纸导出工具——不同设备的自动优化<br/>• 批量生成——同时创建多个网格变体",
+      "conclusionTitle": "网格拼贴：您的搜索优势",
+      "conclusionContent": "数据清晰：3x3网格拼贴和数字壁纸代表了巨大的机会。您现有的“冬季森林”排名证明了这种方法的有效性。通过掌握Nano Banana的网格系统，您可以主导季节性搜索查询，同时创造用户真正想要保存和分享的视觉惊艳内容。",
+      "ctaTitle": "准备创建网格拼贴吗？",
+      "ctaDescription": "访问我们的完整网格模板库，获取经过验证的3x3布局，排名并转化。",
+      "ctaButton": "浏览网格模板"
+    },
+    "weirdScienceFactsClassroomEngagement": {
+      "title": "可视化奇怪的科学事实：用于课堂参与的AI提示模板",
+      "slug": "weird-science-facts-classroom-engagement",
+      "metaDescription": "将奇怪的科学事实转化为引人入胜的双语AI闪卡，用于课堂学习。完美的视觉教育模板，吸引学生并提高记忆力。",
+      "date": "2026年5月4日",
+      "readTime": "10分钟阅读",
+      "intro": "\"奇怪的科学事实\"的搜索量高达590，KD仅为34%。这是进入教育领域的绝佳切入点。与其在通用的\"教育中的AI\"术语上竞争，不如吸引那些寻找引人入胜的视觉材料的教师和家长，使科学变得难以忘怀。",
+      "whatIsTitle": "什么使科学事实变得\"奇怪\"和难忘？",
+      "whatIsContent": "奇怪的科学事实之所以令人印象深刻，是因为它们违反了我们的期望。\"木星上下雨是钻石\"或\"章鱼有三颗心\"创造了认知失调，使信息难以忘记。这一心理原则解释了为什么奇特的科学细节成为谈话的开场白和学习的支点。<br/><br/>关键在于将这些震惊的事实与视觉表现结合起来，以巩固概念。当学生看到木星大气中钻石雨的插图时，抽象的概念变得具体且难以忘怀。",
+      "whyTitle": "为什么视觉科学胜过仅文本学习",
+      "whyContent": "研究表明，与仅文本教学相比，视觉学习的记忆保持率提高了400%。奇怪的科学事实非常适合视觉处理，因为：<br/><br/>• 视觉冲击力 – 看到就是相信奇特的概念<br/>• 情感参与 – 惊讶创造更强的记忆形成<br/>• 可分享性 – 学生喜欢分享惊人的科学视觉<br/>• 跨文化吸引力 – 视觉科学超越语言障碍<br/><br/>这在双语课堂中尤其强大，视觉桥梁支持语言习得。",
+      "bilingualTitle": "双语AI闪卡：科学方法",
+      "bilingualContent": "双语AI闪卡方法将奇怪的科学事实与双语视觉学习相结合。每张闪卡包含：<br/><br/>• 奇怪科学概念的视觉插图<br/>• 解释现象的英文文本<br/>• 目标语言翻译以构建词汇<br/>• 跨文化有效的视觉记忆法<br/><br/>这种方法利用了我们之前讨论的\"双语AI闪卡\"策略，但专注于自然激发好奇心的科学概念。",
+      "templateTitle": "科学事实闪卡模板",
+      "templateDescription": "生成让奇怪的科学事实难以忘怀的双语闪卡。非常适合课堂展示和学习材料。",
+      "templatePrompt": "双语科学闪卡，关于[TOPIC]的奇怪科学事实，英文解释在上方，[LANGUAGE]翻译在下方，科学插图风格，教育信息图设计，色彩丰富且引人入胜，适合课堂使用",
+      "topFactsTitle": "十大奇怪科学事实与AI提示",
+      "topFactsContent": "以下是经过验证的奇怪科学事实，能够吸引学生，并附有生成双语闪卡的确切AI提示：",
+      "jupiterDiamondsTitle": "木星上的钻石雨",
+      "jupiterDiamondsDescription": "木星的大气在极端压力下产生钻石雨。学生们对此感到震惊，非常适合视觉表现。",
+      "jupiterDiamondsPrompt": "双语科学闪卡，奇怪的科学事实：木星上下雨是钻石，英文解释：甲烷气体在木星大气的极端压力下转化为钻石晶体，西班牙语翻译：Llueven diamantes en Júpiter，科学插图展示钻石雨穿过气体巨星大气，教育空间艺术风格",
+      "octopusThreeHeartsTitle": "章鱼有三颗心",
+      "octopusThreeHeartsDescription": "一颗心脏将血液泵送到身体，另外两颗则将血液泵送到鳃。非常适合关于循环系统的生物课。",
+      "octopusThreeHeartsPrompt": "双语科学闪卡，奇怪的科学事实：章鱼有三颗心，英文解释：一颗心用于身体循环，两颗心用于鳃，法语翻译：Les pieuvres ont trois cœurs，解剖插图展示章鱼的三颗心脏，海洋生物教科书风格，蓝色海洋色调",
+      "honeyNeverSpoilsTitle": "蜂蜜永不变质",
+      "honeyNeverSpoilsDescription": "考古学家在埃及墓穴中发现了3000年前的蜂蜜，仍然可以食用。非常适合化学和保存课程。",
+      "honeyNeverSpoilsPrompt": "双语科学闪卡，奇怪的科学事实：蜂蜜永不变质，英文解释：低pH值和过氧化氢防止细菌生长，德语翻译：Honig verdirbt nie，插图展示带有古埃及象形文字的蜂蜜罐，食品科学教育风格，金黄色调",
+      "lightningHotterSunTitle": "闪电比太阳更热",
+      "lightningHotterSunDescription": "闪电可达到50,000°F，而太阳表面仅为10,000°F。非常适合物理和天气课程。",
+      "lightningHotterSunPrompt": "双语科学闪卡，奇怪的科学事实：闪电比太阳表面更热，英文解释：闪电可达到50,000°F，太阳表面为10,000°F，中文翻译：闪电比太阳表面更热，戏剧性插图比较闪电和太阳，物理教育风格，电蓝和橙色对比",
+      "classroomTitle": "有效的课堂应用",
+      "classroomContent": "教师报告这些课堂应用效果最佳：<br/><br/>• 科学角落 – 轮换展示奇怪事实的闪卡<br/>• 课程启动 – 每节课以令人震惊的视觉开始<br/>• 学习站 – 自主学习的闪卡组<br/>• 家长参与 – 将闪卡带回家进行家庭学习<br/><br/>这种视觉特性使其非常适合不同的学习风格和语言水平。",
+      "assessmentTitle": "通过视觉回忆进行评估",
+      "assessmentContent": "使用这些闪卡进行感觉像游戏的形成性评估：<br/><br/>• 视觉回忆测试 – 显示图像，学生解释事实<br/>• 双语词汇 – 学生在语言之间翻译<br/>• 创意扩展 – 学生设计自己的奇怪事实卡<br/>• 数字演示 – 学生使用视觉展示事实<br/><br/>评估变得引人入胜而非令人畏惧。",
+      "toolsTitle": "科学教育工具包",
+      "toolsContent": "Nano Banana的科学教育工具：<br/>• 事实模板库 – 针对不同科学主题的预设计布局<br/>• 双语生成器 – 支持170多种语言的自动翻译<br/>• 课堂批量工具 – 一次生成整个课程集<br/>• 科学插图风格 – 解剖学、天文学、化学图表选项",
+      "conclusionTitle": "奇怪的科学：你的教育优势",
+      "conclusionContent": "奇怪的科学事实代表了高搜索量、低竞争和真正教育价值的完美交集。通过创建双语AI闪卡，使这些事实在视觉上难以忘怀，你吸引了教师和家长的注意，同时提供了学生多年难以忘记的真实学习价值。",
+      "ctaTitle": "准备创建科学闪卡吗？",
+      "ctaDescription": "访问我们的双语科学模板库，今天就开始创建引人入胜的教育内容。",
+      "ctaButton": "浏览科学模板"
+    },
+    "mbiRelationshipStyleVisualizer": {
+      "title": "MBTI关系与风格可视化工具：生成情侣美学和服装解析",
+      "slug": "mbti-relationship-style-visualizer",
+      "metaDescription": "使用AI生成MBTI情侣动态和时尚画册。为所有16种人格类型创建服装解析和关系美学，使用经过验证的Nano Banana提示。",
+      "date": "2026年5月4日",
+      "readTime": "15分钟阅读",
+      "intro": "你已经在“mbti generator”中占据了7.7的位置。我们可以通过针对“mbti relationship”（50 SV，极低的17% KD）来扩展这种主导地位。此外，中文查询“outfit breakdown prompt”排名在9.0的位置，显示出对时尚聚焦生成的需求。",
+      "whatIsTitle": "什么是MBTI关系动态？",
+      "whatIsContent": "MBTI关系动态探讨不同人格类型在浪漫伴侣中的互动。与个体MBTI分析不同，关系动态考察：<br/><br/>• 互补特征 – 相反类型如何创造平衡<br/>• 沟通风格 – 处理冲突和亲密关系的不同方法<br/>• 共同价值观 – 不同类型聚集的原因<br/>• 成长机会 – 伴侣如何帮助彼此发展<br/><br/>通过AI生成的情侣肖像可视化这些动态，帮助人们理解自己的关系，并看到人格兼容性在行动。",
+      "whyTitle": "为什么时尚和MBTI创造完美内容",
+      "whyContent": "“outfit breakdown prompt”搜索的成功证明用户想要以人格为驱动的时尚。这种组合有效，因为：<br/><br/>• 视觉心理学 – 服装选择反映人格特征<br/>• 理想内容 – 用户想象自己穿着这些风格<br/>• 实用应用 – 他们可以使用的真实服装灵感<br/>• 文化桥梁 – 时尚超越语言障碍<br/><br/>当你将MBTI关系动态与特定的服装解析结合时，你创造的内容既提供心理洞察又提供实用的时尚指导。",
+      "coupleTitle": "情侣动态可视化方法",
+      "coupleContent": "生成MBTI情侣肖像，通过视觉叙事展示人格互动：<br/><br/>• 定位 – 情侣的站立或坐姿揭示关系动态<br/>• 色彩和谐 – 互补或对比的调色板展示人格兼容性<br/>• 环境背景 – 反映共同价值观和兴趣的场景<br/>• 肢体语言 – 与人格特征相匹配的身体互动模式<br/><br/>Nano Banana的情侣模板自动考虑这些元素，创建心理上准确的关系肖像。",
+      "relationshipTemplateTitle": "MBTI情侣肖像模板",
+      "relationshipTemplateDescription": "生成展示不同MBTI类型互动的情侣肖像。非常适合关系内容和人格兼容性帖子。",
+      "relationshipTemplatePrompt": "MBTI情侣肖像，[TYPE 1]和[TYPE 2]关系动态，[SETTING]环境，[MOOD]氛围，互补色调，自然肢体语言，心理准确性，专业摄影风格",
+      "outfitTitle": "服装解析技术：画册生成",
+      "outfitContent": "服装解析方法为每种MBTI类型创建详细的时尚画册。这超越了基本的风格指南，提供：<br/><br/>• 完整服装 – 每种人格类型的从头到脚造型<br/>• 色彩心理学 – 与人格特征相匹配的调色板<br/>• 配件细节 – 完成造型的特定物品<br/>• 场合变化 – 风格如何适应不同情况<br/><br/>这种方法针对“outfit breakdown prompt”搜索，同时提供真实的时尚价值。",
+      "intjTechwearTitle": "INTJ科技服装画册",
+      "intjTechwearDescription": "INTJ的分析性格在结构化、功能性科技服装中熠熠生辉。干净的线条、深色和实用特征吸引他们的战略思维。",
+      "intjTechwearPrompt": "INTJ科技穿搭画册，功能性极简风格，黑色和深灰色调，技术面料，实用口袋，干净的建筑线条，未来主义美学，专业都市科技穿搭，配饰的完整搭配解析",
+      "esfpFestivalTitle": "ESFP节日时尚",
+      "esfpFestivalDescription": "ESFP外向的个性在充满活力的节日服装中展现。大胆的颜色、俏皮的配饰和适合活动的服装反映了他们充满活力的特性。",
+      "esfpFestivalPrompt": "ESFP节日时尚画册，充满活力的波西米亚风格，彩虹色调，飘逸的面料，亮眼的配饰，闪光和光彩，无忧无虑的美学，音乐节服装，配饰和鞋子的完整解析",
+      "infjAcademicTitle": "INFJ学术时尚",
+      "infjAcademicDescription": "INFJ深思熟虑的个性通过精致的学术时尚表达出来。层次感的质地、温暖的色调和知识性的配饰反映了他们深邃的思维个性。",
+      "infjAcademicPrompt": "INFJ学术时尚画册，精致的知识分子风格，温暖的土色调，层次感的质地，复古灵感的单品，深思熟虑的配饰，学术美学，配有书包和眼镜的完整搭配",
+      "estpAthleticTitle": "ESTP运动街头风格",
+      "estpAthleticDescription": "ESTP以行动为导向的个性在运动街头服装中闪耀。性能面料、动态剪裁和运动细节与他们竞争性、充满活力的特性相匹配。",
+      "estpAthleticPrompt": "ESTP运动街头风格画册，运动休闲美学，性能面料，动态剪裁，运动鞋，醒目的品牌细节，充满活力的都市风格，配有运动配饰的完整搭配解析",
+      "combinationsTitle": "流行的MBTI关系组合",
+      "combinationsContent": "一些MBTI配对因其互补的动态而引起更多兴趣：<br/><br/>• INTJ + ENFP – 对立吸引的“黄金组合”<br/>• ISTJ + ESFP – 传统与冒险的结合<br/>• INFJ + ENTP – 深刻的智力连接<br/>• ESTP + ISTJ – 行动与稳定的结合<br/><br/>生成这些特定组合以捕捉以关系为中心的搜索流量，同时提供有价值的兼容性见解。",
+      "fashionTitle": "超越画册的时尚应用",
+      "fashionContent": "扩展到这些时尚应用以获得更广泛的覆盖：<br/><br/>• 季节性适应 – 每种MBTI类型如何根据不同天气着装<br/>• 职场风格 – 每种个性类型的专业服装<br/>• 特殊场合 – 按MBTI进行婚礼、派对和活动造型<br/>• 预算分析 – 每种个性风格偏好的实惠选择<br/><br/>这创造了可以满足多种搜索意图的常青内容。",
+      "toolsTitle": "MBTI风格生成工具包",
+      "toolsContent": "Nano Banana的个性时尚工具：<br/>• 情侣模板库 – 预设计的关系动态布局<br/>• 画册生成器 – 完整的服装解析系统<br/>• 风格个性匹配器 – 理解时尚心理学的AI<br/>• 季节性风格适配器 – 基于天气的自动调整",
+      "conclusionTitle": "MBTI时尚：你的内容优势",
+      "conclusionContent": "通过将MBTI关系动态与服装解析结合，你同时捕捉两个高价值的搜索市场。你现有的“mbti生成器”排名为主导以关系为中心的搜索提供了基础，而对“服装解析提示”的 proven interest 确保时尚内容找到其受众。",
+      "ctaTitle": "准备创建MBTI时尚内容吗？",
+      "ctaDescription": "访问我们的完整MBTI风格模板库，开始生成能够转化的情侣肖像和画册。",
+      "ctaButton": "浏览MBTI模板"
+    },
+    "aiVideoDubbingTutorial": {
+      "title": "如何用AI为任何视频配音：逐步教程（2026）",
+      "publishedDate": "2026年5月10日",
+      "readTime": "12分钟阅读",
+      "category": "视频配音",
+      "metaDescription": "适合初学者的AI配音YouTube、TikTok和会议录音的操作指南，支持100多种语言——无需编辑软件，无需配音演员。",
+      "keywords": "ai视频配音，如何为视频配音，AIで動画を吹き替える，doblaje de video con IA",
+      "audience": "首次创作者、本地化内容的营销人员、重新利用讲座的教育工作者。",
+      "tldrTitle": "TL;DR",
+      "tldrContent": "顶部的60秒摘要框，单一的CTA指向/tools/video-dubbing。",
+      "whatIsTitle": "什么是“AI视频配音”",
+      "whatIsContent": "快速区分字幕和口型同步。AI视频配音用翻译后的语音替换原始音频，同时保持原说话者的语调、情感和时机。与字幕不同，它创造了一个在任何语言中听起来都很自然的完全本地化音频体验。",
+      "step1Title": "步骤1：上传视频",
+      "step1Content": "工具/视频配音的截图，支持的格式，时长限制。上传最长30分钟的MP4、MOV、AVI或WebM文件。平台会自动检测视频质量并优化处理。",
+      "step2Title": "步骤2：选择源语言和目标语言",
+      "step2Content": "语言选择器的截图，注意自动检测。从100多种语言中选择，支持自动源语言检测。选择多个目标语言进行批处理。",
+      "step3Title": "步骤3：选择声音（或克隆您的声音）",
+      "step3Content": "预览片段；链接到声音克隆工具。从500多种AI声音中选择或克隆自己的声音以保持品牌一致性。在生成之前预览声音选项。",
+      "step4Title": "步骤4：审核转录和时机",
+      "step4Content": "为什么这对自然节奏很重要；截图。审核AI生成的转录以确保准确性。调整时间标记以确保自然的语音节奏和适当的停顿。",
+      "step5Title": "步骤5：生成并下载",
+      "step5Content": "预计等待时间，输出格式（MP4，SRT）。每种语言的处理时间为2-5分钟。下载配音视频及单独的字幕文件。",
+      "step6Title": "步骤6：润色输出",
+      "step6Content": "快速修复语调、发音问题；更深入的链接到如何自然配音视频以修复伪影。使用内置编辑器微调声音参数。",
+      "commonMistakesTitle": "常见错误",
+      "commonMistakes": [
+        "声音性别不匹配 - 确保声音性别与原说话者匹配",
+        "虚构的名字 - 仔细检查转录中的专有名词和品牌名称",
+        "时机漂移 - 调整停顿时长以确保自然的语音流",
+        "错误的口音 - 为目标受众选择合适的地区口音",
+        "背景噪音 - 上传前清理音频以获得最佳效果"
+      ],
+      "tutorialVsPipelineTitle": "教程与完整流程",
+      "tutorialVsPipelineContent": "一段指向口型同步技术深入探讨的段落，适用于生产用户。此教程涵盖基本配音。有关高级生产工作流程，请参见我们的技术深入探讨。",
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "是免费的吗？",
+          "answer": "开始时提供5分钟免费，然后每分钟$0.10。"
+        },
+        {
+          "question": "支持哪些语言？",
+          "answer": "包括英语、西班牙语、中文、阿拉伯语、印地语等100多种语言。"
+        },
+        {
+          "question": "我可以克隆我的声音吗？",
+          "answer": "可以！上传2分钟的声音样本以创建您的自定义AI声音。"
+        },
+        {
+          "question": "它能同步口型吗？",
+          "answer": "先进的同步技术确保完美的音视频同步。"
+        },
+        {
+          "question": "需要多长时间？",
+          "answer": "每种语言需要2-5分钟，具体取决于视频长度和服务器负载。"
+        }
+      ],
+      "ctaTitle": "立即试用",
+      "ctaDescription": "截图马赛克。使用我们的AI驱动工具开始为您的视频配音。",
+      "ctaButton": "开始配音",
+      "tldrIntro": "想要将视频配音成100多种语言？这是最快的工作流程：",
+      "tldrStep1": "将视频上传到AI配音平台",
+      "tldrStep2": "选择目标语言和声音风格",
+      "tldrStep3": "检查AI转录的准确性",
+      "tldrStep4": "生成带有同步的配音音频",
+      "tldrStep5": "下载多语言的最终视频",
+      "tldrCta": "🚀 试用我们的AI视频配音工具 - 开始享受5分钟免费体验",
+      "whatIsPara1": "AI视频配音是使用人工智能将视频中的原始音频替换为翻译后的语音的过程。与传统配音需要配音演员和大量手动工作不同，AI配音可以在几分钟内翻译和重现声音，同时保持原始说话者的语调、情感和时机。",
+      "whatIsPara2": "现代AI配音系统使用先进的神经网络分析原始音频，转录语音，翻译内容，并生成与视频完美同步的新音轨。这项技术彻底改变了内容创作，使得在不需要高成本和时间投入的情况下接触全球受众成为可能。",
+      "whyUseTitle": "为什么使用AI进行视频配音？",
+      "speedTitle": "速度与效率",
+      "speedContent": "传统配音每种语言可能需要数周时间。AI配音将其缩短至几分钟，使您能够快速本地化内容并即时响应市场需求。",
+      "costTitle": "成本效益解决方案",
+      "costContent": "专业配音工作室每分钟收取100-500美元。AI配音的成本降低90%，同时保持专业质量，使所有规模的创作者都能使用。",
+      "voiceTitle": "声音一致性",
+      "voiceContent": "AI可以克隆并保留原始说话者的声音特征，跨多种语言保持品牌一致性和与受众的个人联系。",
+      "scalabilityTitle": "可扩展性",
+      "scalabilityContent": "同时将整个视频库配音成数十种语言。AI系统处理批量处理，使得在全球范围内扩展内容成为可能，而不会线性增加成本。",
+      "tutorialTitle": "逐步AI配音教程",
+      "step1ProTip": "💡 专业提示",
+      "step1ProTipContent": "具有48kHz音频和1080p分辨率的视频产生最佳配音效果。上传前请移除背景音乐或显著降低其音量。",
+      "step4Critical": "⚠️ 关键步骤",
+      "step4CriticalContent": "转录的准确性直接影响翻译质量。在这里花额外的时间以确保完美的结果。大多数平台会显示每个转录段落的置信度分数。",
+      "step5Para1": "这里是魔法发生的地方。AI将您修正后的转录翻译成目标语言，然后使用声音克隆技术生成新音频。先进的系统分析口型运动，并创建完美同步的唇部动作。",
+      "step5Para2": "该过程通常每种语言需要2-5分钟，具体取决于视频长度和服务器负载。处理完成后，您将收到通知。",
+      "bestPracticesTitle": "高质量结果的最佳实践",
+      "audioQualityTitle": "音频质量很重要",
+      "audioQualityContent": "从最佳音频质量开始。使用外部麦克风，在安静的环境中录音，并在上传前应用降噪。清晰的音频可以产生更好的转录和语音克隆。",
+      "culturalTitle": "文化适应",
+      "culturalContent": "除了字面翻译外，还要考虑文化细微差别。一些平台提供文化适应功能，可以根据目标市场调整习语、引用和幽默。",
+      "voiceStyleTitle": "声音风格匹配",
+      "voiceStyleContent": "选择与您的内容类型匹配的声音风格。企业视频受益于专业音调，而教育内容可能更适合友好、平易近人的声音。",
+      "challengesTitle": "常见挑战与解决方案",
+      "roboticTitle": "挑战：机器人声音质量",
+      "roboticSolution": "解决方案：使用具有先进神经TTS引擎的平台。上传参考声音样本并调整情感参数，以获得更自然的效果。",
+      "lipsyncTitle": "挑战：口型同步问题",
+      "lipsyncSolution": "解决方案：选择具有专用口型同步技术的平台。一些工具甚至可以修改视频帧，以完美匹配新的音频时机。",
+      "speakersTitle": "挑战：多个发言者",
+      "speakersSolution": "解决方案：使用具有发言者分离功能的平台。该功能可以自动识别和分离不同的发言者，并对每个发言者应用适当的声音克隆。",
+      "comparisonTitle": "工具和平台比较",
+      "platformHeader": "平台",
+      "languagesHeader": "语言",
+      "cloningHeader": "声音克隆",
+      "pricingHeader": "定价",
+      "curifyRow": "Curify AI",
+      "curifyLanguages": "100+",
+      "curifyCloning": "✅ 高级",
+      "curifyPricing": "$0.10/分钟",
+      "elevenlabsRow": "ElevenLabs",
+      "elevenlabsLanguages": "29",
+      "elevenlabsCloning": "✅ 专业",
+      "elevenlabsPricing": "$0.30/分钟",
+      "dubverseRow": "Dubverse",
+      "dubverseLanguages": "60+",
+      "dubverseCloning": "⚠️ 基础",
+      "dubversePricing": "$0.20/分钟",
+      "useCasesTitle": "使用案例和应用",
+      "creatorsTitle": "内容创作者",
+      "creatorsContent": "YouTuber 和社交媒体创作者可以通过将内容配音成多种语言来扩展他们的全球影响力。这增加了观看时间、参与度和收入潜力。",
+      "corporateTitle": "企业培训",
+      "corporateContent": "公司可以为国际团队本地化培训材料，确保所有地点的信息一致，同时将翻译成本降低 80%。",
+      "elearningTitle": "电子学习平台",
+      "elearningContent": "教育机构可以提供多种语言的课程，使优质教育对全球学生可及，无论他们的母语是什么。",
+      "marketingTitle": "市场营销和广告",
+      "marketingContent": "品牌可以为不同市场创建本地化的视频广告版本，保持原始情感影响，同时直接与当地观众对话。",
+      "futureTitle": "AI 视频配音的未来",
+      "futurePara1": "该领域正在迅速发展。新兴技术包括实时配音用于直播、情感感知语音合成能够适应内容上下文，以及超越翻译的 AI 驱动文化适应，真正本地化内容。",
+      "futurePara2": "我们还看到视频生成的进步，AI 可以创建新的视频镜头以匹配配音音频，完全消除口型同步问题。未来承诺无缝、即时的视频本地化，保持创作者的原始意图，同时有效地接触全球观众。",
+      "gettingStartedTitle": "今天开始",
+      "gettingStartedPara1": "准备开始配音您的视频吗？这个过程比以往任何时候都简单。大多数平台提供免费试用或入门计划，让您在承诺之前测试技术。",
+      "gettingStartedPara2": "从一段短视频（1-2分钟）开始，以了解工作流程和质量。尝试不同的语言和语音设置。一旦您对这个过程感到舒适，您可以扩展到更长的内容和多种语言。",
+      "gettingStartedCtaTitle": "🚀 准备开始吗？",
+      "gettingStartedCtaContent": "试用我们的 AI 视频配音工具，享受 5 分钟的免费体验。无需信用卡。",
+      "gettingStartedCtaButton": "立即开始配音",
+      "conclusionTitle": "结论",
+      "conclusionPara1": "AI 视频配音已将内容本地化从一个耗时、昂贵的过程转变为一个可访问、高效的工作流程。无论您是独立创作者还是全球企业，这些工具使您能够在保持原始内容质量和情感影响的同时，接触全球观众。",
+      "conclusionPara2": "随着技术的不断进步，我们将看到更自然的语音合成、更好的文化适应和与内容创作工作流程的无缝集成。全球沟通的未来已经到来，它会说每一种语言。"
+    },
+    "gridCollageAiPrompts": {
+      "title": "3x3 网格照片拼贴 AI 提示：森林、海滩和城市编辑外观",
+      "publishedDate": "2026年5月10日",
+      "readTime": "8分钟阅读",
+      "category": "Nano 模板",
+      "metaDescription": "复制粘贴 3x3 网格拼贴提示，用于 AI 图像生成器——冬季森林、夏季海滩、城市编辑、咖啡馆美学等。",
+      "keywords": "3x3 网格拼贴，照片网格提示，AI 照片拼贴，Instagram 美学提示，Pinterest 美学 AI",
+      "audience": "Pinterest 创作者，Instagram 美学账户，时尚博主，生活方式内容创作者。",
+      "heroTitle": "英雄图像",
+      "heroContent": "一个完成的3x3 + 1段TL;DR。使用AI创建惊艳的3x3网格拼贴，确保九个面板之间的完美一致性。",
+      "whatIsTitle": "3x3网格拼贴提示的样子",
+      "whatIsContent": "结构：主题 + 背景 + 季节 + 9个微姿势 + 照明一致性说明。每个提示定义整体主题，同时确保所有面板之间的视觉和谐。",
+      "winterForestTitle": "冬季森林编辑",
+      "winterForestDescription": "直接匹配GSC长尾。神秘的雪覆盖的松树林，柔和的蓝色光线和魔幻的氛围。",
+      "winterForestPrompt": "冬季森林场景的3x3网格。面板1：宽阔的森林入口。面板2：结霜的树枝。面板3：雪路。面板4：冰冻的小溪。面板5：阳光透过树木。面板6：动物足迹。面板7：结霜的松果。面板8：升起的雾气。面板9：透过树木的山景。柔和的蓝白色调，魔幻的光线，自然摄影风格。",
+      "summerBeachTitle": "夏季海滩黄金时刻",
+      "summerBeachDescription": "温暖的热带海滩场景，日落时分的黄金时刻光线和轻松的度假氛围。",
+      "summerBeachPrompt": "夏季海滩场景的3x3网格。面板1：棕榈树剪影。面板2：海浪。面板3：沙滩椅。面板4：沙中的贝壳。面板5：热带饮料。面板6：通往水边的足迹。面板7：沙滩毛巾。面板8：海洋地平线。面板9：沙滩排球。温暖的橙色和粉色调，黄金时刻光线。",
+      "autumnCafeTitle": "秋季城市咖啡馆",
+      "autumnCafeDescription": "温馨的城市咖啡馆场景，秋季色彩和温暖、宜人的氛围。",
+      "autumnCafePrompt": "秋季咖啡馆场景的3x3网格。面板1：咖啡杯蒸汽。面板2：窗户上的雨滴。面板3：温暖的光线。面板4：外面的秋叶。面板5：舒适的室内。面板6：咖啡师制作咖啡。面板7：桌上的书。面板8：街景。面板9：黄昏氛围。温暖的棕色和橙色调，柔和的光线。",
+      "springGardenTitle": "春季花园乡村风",
+      "springGardenDescription": "浪漫的乡村花园场景，鲜花盛开，自然的田园元素。",
+      "springGardenPrompt": "春季花园场景的3x3网格。面板1：樱花。面板2：春雨。面板3：新绿叶。面板4：花上的蝴蝶。面板5：花园小径。面板6：园艺工具。面板7：雨靴。面板8：鸟巢。面板9：花园野餐。柔和的粉彩调，清新而通透。",
+      "neonUrbanTitle": "霓虹黑色城市",
+      "neonUrbanDescription": "戏剧性的城市夜景，霓虹灯、阴影和城市神秘氛围。",
+      "neonUrbanPrompt": "霓虹城市场景的3x3网格。面板1：霓虹标志反射。面板2：屋顶的城市灯光。面板3：交通灯轨迹。面板4：餐厅窗户。面板5：街头表演者。面板6：店面展示。面板7：雨中的出租车灯光。面板8：桥的照明。面板9：酒吧入口。深蓝色与霓虹色彩的碰撞。",
+      "minimalistStudioTitle": "极简工作室（白色背景）",
+      "minimalistStudioDescription": "干净的极简工作室拍摄，白色背景，专注于主题的简单性。",
+      "minimalistStudioPrompt": "极简工作室场景的3x3网格。面板1：单一物体。面板2：干净的线条。面板3：负空间。面板4：简单的阴影。面板5：纯白背景。面板6：极简构图。面板7：细腻的纹理。面板8：几何形状。面板9：干净的光线。单色白色和灰色。",
+      "templateTitle": "可重用的提示模板",
+      "templateContent": "注释哪些字段是可交换的；嵌入模板-3x3-网格-照片-拼贴模板页面链接和截图。模板结构：[主题] + [背景] + [季节] + [9个面板描述] + [照明] + [风格]。",
+      "consistencyTipsTitle": "保持9个面板之间面部/服装一致性的提示",
+      "consistencyTips": [
+        "对所有面板使用相同的AI模型和设置",
+        "在提示中保持一致的照明描述",
+        "指定确切的色彩调色板以确保视觉和谐",
+        "链接到preserve-facial-features-ai-generation以保持角色一致性",
+        "保持相机角度和距离一致"
+      ],
+      "moreDirectionsTitle": "更多美学方向可尝试",
+      "moreDirections": [
+        "沙漠日落 + 波希米亚风格",
+        "城市街头服饰 + 涂鸦背景",
+        "复古图书馆 + 学术美学",
+        "热带天堂 + 度假服",
+        "工业阁楼 + 极简设计",
+        "山间小屋 + 舒适冬装",
+        "海滨别墅 + 海岸奶奶风格",
+        "城市屋顶 + 晚间魅力",
+        "森林空地 + 精灵核心美学",
+        "现代办公室 + 职业装",
+        "艺术画廊 + 精致晚礼服",
+        "乡村花园 + 浪漫野餐风格"
+      ],
+      "faqTitle": "常见问题",
+      "faq": [
+        {
+          "question": "为什么特别是3x3？",
+          "answer": "3x3网格非常适合Instagram的方形格式，并创建在移动设备上效果良好的平衡视觉构图。"
+        },
+        {
+          "question": "我可以使用2x2吗？",
+          "answer": "可以，但3x3提供更多讲故事的机会，并在视觉平台上获得更好的互动。"
+        },
+        {
+          "question": "为什么同一个人看起来不同？",
+          "answer": "AI变体是自然发生的。使用一致的提示和种子值以获得更好的统一性。"
+        },
+        {
+          "question": "我可以导出为单独的帧吗？",
+          "answer": "可以，大多数平台允许单独面板导出，以便在社交媒体帖子中单独使用。"
+        }
+      ],
+      "ctaTitle": "打开模板",
+      "ctaDescription": "尝试我们的3x3网格模板，具有可自定义的主题和风格。",
+      "ctaButton": "浏览网格模板",
+      "winterForestGridTitle": "🌲 冬季森林网格提示",
+      "minimalistWinterTitle": "❄️ 极简冬季网格",
+      "tropicalBeachTitle": "🏖️ 热带海滩网格",
+      "nauticalBeachTitle": "🌊 航海海滩网格",
+      "streetFashionTitle": "🏙️ 街头时尚网格",
+      "nightCityTitle": "🌃 夜城网格",
+      "cohesiveColorPalettesTitle": "使用统一的色彩调色板",
+      "cohesiveColorPalettesContent": "在提示中明确定义您的色彩方案。提及特定的颜色或情绪，以确保所有九张图像和谐地协同工作。",
+      "planCompositionTitle": "规划您的构图",
+      "planCompositionContent": "考虑九个面板如何相互衔接。考虑创建视觉路径或主题，以在网格中连接，达到最大效果。",
+      "testIndividualPanelsTitle": "测试单个面板",
+      "testIndividualPanelsContent": "首先生成单个面板，以测试您的提示结构，然后再提交完整的网格。这可以节省时间并帮助您完善方法。",
+      "platformTableHeader": "平台",
+      "gridSupportHeader": "网格支持",
+      "bestForHeader": "最佳适用",
+      "midjourneyName": "Midjourney",
+      "midjourneySupport": "⚠️ 有限",
+      "midjourneyBest": "艺术网格",
+      "dalleName": "DALL-E 3",
+      "dalleSupport": "✅ 优秀",
+      "dalleBest": "精确布局",
+      "stableDiffusionName": "Stable Diffusion",
+      "stableDiffusionSupport": "✅ 良好",
+      "stableDiffusionBest": "自定义工作流程",
+      "conclusionTitle": "开始创建您的3x3网格拼贴",
+      "conclusionContent1": "3x3网格拼贴为视觉叙事提供了无尽的创意可能性。无论您是在为Instagram构建统一的美学，还是为数字艺术创作艺术构图，这些提示都为惊人的结果提供了基础。",
+      "conclusionContent2": "成功的关键在于一致性——在所有九个面板中保持相同的光线、色彩调色板和视觉风格，创造出专业、精致的外观，吸引注意。",
+      "conclusionContent3": "尝试不同的主题和方法，以发现最适合您创意愿景的内容。这里分享的模板和技术只是您独特艺术旅程的起点。",
+      "conclusionContent4": "准备开始创作了吗？浏览我们的网格模板，今天就开始您的AI驱动拼贴冒险。",
+      "whyAiTitle": "为什么使用AI进行3x3网格拼贴？",
+      "consistencyTitle": "完美的视觉一致性",
+      "consistencyContent": "AI确保每个面板保持相同的光线、色彩调色板和风格，创造出看起来专业且感觉统一和有意的网格。",
+      "timeEfficiencyTitle": "快速创建过程",
+      "timeEfficiencyContent": "在几分钟内生成完整的3x3网格，而不是数小时的手动照片编辑和构图工作。",
+      "creativeFreedomTitle": "无尽的创意可能性",
+      "creativeFreedomContent": "探索传统摄影难以或不可能创造的主题、风格和概念。",
+      "costEffectiveTitle": "经济实惠的解决方案",
+      "costEffectiveContent": "无需昂贵的拍摄、模特或场地——AI以极低的成本创造惊艳的视觉效果。",
+      "seasonalTitle": "季节性和主题变换",
+      "seasonalDescription": "根据不同的季节和主题调整您的网格拼贴，创造全年保持新鲜和相关的内容。",
+      "platformTitle": "平台特定优化",
+      "instagramTitle": "Instagram优化",
+      "instagramContent": "3x3网格完美适应Instagram的方形格式和轮播帖子，最大化平台上的参与度和视觉冲击力。",
+      "pinterestTitle": "Pinterest策略",
+      "pinterestContent": "垂直网格排列在Pinterest的高格式中表现极佳，提高点击率和保存率。",
+      "websiteTitle": "网站集成",
+      "websiteContent": "将网格拼贴用作主图像、画廊部分或博客标题，以创建视觉上引人注目的网页内容。",
+      "advancedTitle": "高级技术",
+      "narrativeTitle": "创建视觉叙事",
+      "narrativeContent": "排列面板以在网格中讲述一个故事，每个面板在前一个面板的基础上构建，形成一个连贯的叙事弧。",
+      "colorProgressionTitle": "颜色渐变技术",
+      "colorProgressionContent": "在面板之间实验渐变色彩变化——从冷色调到暖色调，或从浅色到深色——以获得动态视觉效果。",
+      "thematicTitle": "主题连接",
+      "thematicContent": "通过在网格中重复的微妙主题或动机连接面板，创造更深层次的视觉意义。"
+    },
+    "redCarpetAiLooks": {
+      "title": "用Nano Banana AI重现标志性的红毯风格",
+      "publishedDate": "2026年5月10日",
+      "readTime": "10分钟阅读",
+      "category": "Nano模板",
+      "metaDescription": "年度AI红毯风格指南——用Nano Banana提供的提示配方重现标志性的红毯时尚原型。",
+      "keywords": "红毯ai, 时尚ai, ai时尚风格, nano banana时尚, 红毯服装生成器",
+      "intro": {
+        "title": "红毯革命",
+        "content1": "红毯时尚代表了风格创新的巅峰，突破界限的设计与文化时刻相遇。从Met Gala的戏剧主题到奥斯卡的经典优雅，这些活动展示了时尚中最大胆的创作。",
+        "content2": "有了Nano Banana AI，您现在可以重现这些标志性的时尚时刻，而无需关注特定的名人。相反，我们将探索定义红毯魅力的风格原型——专注于服装、轮廓和使这些造型传奇的艺术愿景。"
+      },
+      "corePromptRecipe": {
+        "title": "核心提示配方：主题 + 事件 + 美学 + 摄影风格",
+        "content": "用AI创造惊艳的红毯时尚遵循一个简单的公式。首先选择一个时尚主题（模特、人体模型或人物），指定事件背景，描述美学和服装细节，最后添加摄影和照明规格。这种四部分结构确保每次都能获得一致的专业结果。"
+      },
+      "styleArchetypes": {
+        "title": "5种高端时尚风格原型",
+        "intro": "这五种时尚原型代表了最具影响力的红毯风格。每一种都捕捉了定义难忘时尚时刻的独特美学。",
+        "list": [
+          {
+            "id": "sci-fi-method",
+            "title": "科幻‘方法穿搭’造型",
+            "description": "一款金属质感的3D打印外骨骼礼服，将人体解剖与机械融合，灵感来自未来主义的新闻发布会。",
+            "prompt": "在沙漠主题电影首映会上，高端时尚模特穿着建筑风格的科幻外骨骼礼服，闪烁的铬合金外观，塑形胸衣，3D打印的骨架结构，戏剧性的电影灯光，沙丘背景，8K分辨率，高端时尚编辑风格。"
+          },
+          {
+            "id": "vintage-glamour",
+            "title": "复古好莱坞魅力复兴",
+            "description": "永恒的优雅，唤起1950年代的黄金时代，结合现代剪裁和拖地丝绸。",
+            "prompt": "精致的红毯造型，复古好莱坞魅力，午夜海军色拖地丝绸香槟礼服，蓬松的天鹅绒歌剧外套，肘长手套，经典波浪发型，狗仔闪光灯，戛纳红毯台阶，高对比度摄影。"
+          },
+          {
+            "id": "avant-garde-floral",
+            "title": "先锋花卉幻想",
+            "description": "‘时间花园’美学——由活苔藓和花瓣制成的空灵、植物性且略显超现实的礼服。",
+            "prompt": "先锋的Met Gala造型，‘时间花园’主题，礼服由半透明丝绸花瓣和保存的苔藓构成，空灵流畅的轮廓，复杂的植物刺绣，柔和的雾状灯光，戏剧性的时尚展示，8K超现实面料质感。"
+          },
+          {
+            "id": "crystal-couture",
+            "title": "水晶高定‘裸露礼服’",
+            "description": "‘幻影’礼服的艺术，平衡大胆的透明度与复杂的珠饰和微晶体。",
+            "prompt": "名人红毯‘幻影’礼服，透明的裸色网布镶嵌着数千颗施华洛世奇水晶和珍珠，复杂的几何图案，紧身轮廓，戏剧性的聚光灯，高光泽度，8K分辨率，奢华时尚摄影。"
+          },
+          {
+            "id": "gender-fluid-suit",
+            "title": "性别流动声明西装",
+            "description": "用柔和的剪裁、超大号西装外套和重型珍珠配件挑战传统男装。",
+            "prompt": "性别流动的红毯声明，超大号粉色丝绸西装外套，宽腿裤，腰部附带长款精致蕾丝拖尾，重型珍珠吊带，柔焦背景，戏剧性灯光，大胆的当代时尚，高端时尚摄影。"
+          }
+        ]
+      },
+      "promptAnatomy": {
+        "title": "提示解剖：为何有效",
+        "content": "解析花卉幻想：‘先锋Met Gala’设定了冒险的氛围；‘半透明丝绸’迫使AI计算光线穿透面料；‘戏剧性展示’确保高戏剧性的阴影而非平面灯光。"
+      },
+      "pitfallsAndSafety": {
+        "title": "常见陷阱与AI安全",
+        "intro": "在使用AI创建红毯时尚时，可能会出现几个挑战。理解这些问题有助于您生成更好的结果，避免令人沮丧的挫折。",
+        "table": [
+          {
+            "issue": "面部漂移",
+            "fix": "避免使用特定名人的名字；描述特征如‘高颧骨’以防止模糊特征平均。"
+          },
+          {
+            "issue": "面料质感丢失",
+            "fix": "使用具体的材料术语，如‘丝绸香槟’或‘液态拉梅’而不是通用的‘闪亮’。"
+          },
+          {
+            "issue": "漂浮外观",
+            "fix": "通过指定环境元素来固定模型，例如“站在有天鹅绒绳索的红地毯上”。"
+          },
+          {
+            "issue": "安全过滤器",
+            "fix": "关注“设计师灵感”美学（例如，Schiaparelli风格），而不是特定的现实世界相似性。"
+          }
+        ]
+      },
+      "annualRefresh": {
+        "title": "年度更新说明",
+        "content": "收藏此页面！我们在每年5月和2月更新此风格指南，以跟随Met Gala和奥斯卡，确保您的配方与最新的Nano Banana模型更新相匹配。"
+      },
+      "cta": {
+        "text": "使用Nano Banana生成时尚外观",
+        "url": "https://www.curify-ai.com/tools"
+      }
     }
   },
   "imageGenerationModelComparison": {
