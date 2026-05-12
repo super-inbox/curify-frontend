@@ -44639,5 +44639,137 @@
     "topics": [
       "casual"
     ]
+  },
+  {
+    "id": "template-series-travel-7",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-7.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-7-prev.jpg"
+    },
+    "params": {
+      "trip_duration": "7",
+      "destination_name": "台湾"
+    },
+    "locales": {
+      "en": {
+        "title": "7"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-4",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-4.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-4-prev.jpg"
+    },
+    "params": {
+      "trip_duration": "4",
+      "destination_name": "香港"
+    },
+    "locales": {
+      "en": {
+        "title": "4"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-switzerland-cuisine",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-switzerland-cuisine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-switzerland-cuisine-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "Switzerland Cuisine"
+    },
+    "locales": {
+      "en": {
+        "title": "Switzerland Cuisine"
+      }
+    }
+  },
+  {
+    "id": "template-friends-character-mbti-matt-leblanc",
+    "template_id": "template-friends-character-mbti",
+    "asset": {
+      "image_url": "/images/nano_insp/template-friends-character-mbti-matt-leblanc.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-friends-character-mbti-matt-leblanc-prev.jpg"
+    },
+    "params": {
+      "character_name": "Matt LeBlanc"
+    },
+    "locales": {
+      "en": {
+        "title": "Matt LeBlanc"
+      }
+    }
+  },
+  {
+    "id": "template-cuisine-food-vocab-poster-iceland-cuisine",
+    "template_id": "template-cuisine-food-vocab-poster",
+    "asset": {
+      "image_url": "/images/nano_insp/template-cuisine-food-vocab-poster-iceland-cuisine.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-cuisine-food-vocab-poster-iceland-cuisine-prev.jpg"
+    },
+    "params": {
+      "cuisine_theme": "Iceland Cuisine"
+    },
+    "locales": {
+      "en": {
+        "title": "Iceland Cuisine"
+      }
+    }
+  },
+  {
+    "id": "template-3d-region-landmark-map-vi-t-nam",
+    "template_id": "template-3d-region-landmark-map",
+    "asset": {
+      "image_url": "/images/nano_insp/template-3d-region-landmark-map-vi-t-nam.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-3d-region-landmark-map-vi-t-nam-prev.jpg"
+    },
+    "params": {
+      "region_name": "Việt Nam"
+    },
+    "locales": {
+      "en": {
+        "title": "Việt Nam"
+      }
+    }
+  },
+  {
+    "id": "template-travel-guangzhou-1-19-1-25",
+    "template_id": "template-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-travel-guangzhou-1-19-1-25-zh.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-travel-guangzhou-1-19-1-25-zh-prev.jpg"
+    },
+    "params": {
+      "date_range": "1/19-1/25",
+      "destination": "guangzhou"
+    },
+    "locales": {
+      "zh": {
+        "title": "1/19-1/25"
+      }
+    }
+  },
+  {
+    "id": "template-series-travel-3",
+    "template_id": "template-series-travel",
+    "asset": {
+      "image_url": "/images/nano_insp/template-series-travel-3.jpg",
+      "preview_image_url": "/images/nano_insp_preview/template-series-travel-3-prev.jpg"
+    },
+    "params": {
+      "trip_duration": "3",
+      "destination_name": "澳门"
+    },
+    "locales": {
+      "en": {
+        "title": "3"
+      }
+    }
   }
 ]
