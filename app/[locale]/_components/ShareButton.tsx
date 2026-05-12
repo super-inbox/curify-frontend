@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useMemo, useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Share2, Link2, Check } from "lucide-react";
+import { isMobileLikeDevice } from "@/lib/device";
 
 type ShareButtonProps = {
   url: string;
@@ -9,16 +11,19 @@ type ShareButtonProps = {
   text?: string;
   className?: string;
   onShared?: () => void;
+  /**
+   * Compact mode: pill-style button with a click-toggled floating panel
+   * of social icons + copy below the button. Use inside small containers
+   * like grid cards.
+   */
+  compact?: boolean;
+  /**
+   * Fires whenever the burst panel opens or closes. Useful for the parent
+   * to bump its own z-index while the panel is visible — without that, the
+   * panel can be painted under sibling cards from the next grid row.
+   */
+  onOpenChange?: (open: boolean) => void;
 };
-
-function isMobileLikeDevice() {
-  if (typeof window === "undefined") return false;
-  const ua = navigator.userAgent || "";
-  const coarsePointer =
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(pointer: coarse)").matches;
-  return /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || coarsePointer;
-}
 
 const FacebookIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -97,12 +102,19 @@ export default function ShareButton({
   text,
   className = "",
   onShared,
+  compact = false,
+  onOpenChange,
 }: ShareButtonProps) {
   const [status, setStatus] = useState<"idle" | "shared" | "copied">("idle");
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const mainButtonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // For compact mode: anchor coords (viewport-relative, fixed positioning)
+  // computed from the main button's bounding rect so the portal-rendered
+  // panel stays glued to the button.
+  const [panelAnchor, setPanelAnchor] = useState<{ top: number; right: number } | null>(null);
 
   const prefersNativeShare = useMemo(() => {
     if (typeof window === "undefined") return false;
@@ -112,13 +124,45 @@ export default function ShareButton({
   useEffect(() => {
     if (!isOpen) return;
     const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const insideContainer = containerRef.current?.contains(target);
+      const insidePanel = panelRef.current?.contains(target);
+      if (!insideContainer && !insidePanel) {
         setIsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
+
+  useEffect(() => {
+    onOpenChange?.(isOpen);
+  }, [isOpen, onOpenChange]);
+
+  // Compact mode only: compute the panel's viewport-anchored position
+  // from the main button. Refresh on scroll/resize so it stays glued.
+  useEffect(() => {
+    if (!compact || !isOpen) {
+      setPanelAnchor(null);
+      return;
+    }
+    const update = () => {
+      const btn = mainButtonRef.current;
+      if (!btn) return;
+      const rect = btn.getBoundingClientRect();
+      setPanelAnchor({
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+      });
+    };
+    update();
+    window.addEventListener("scroll", update, true);
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update, true);
+      window.removeEventListener("resize", update);
+    };
+  }, [compact, isOpen]);
 
   const resetStatusLater = () => {
     window.setTimeout(() => setStatus("idle"), 2500);
@@ -165,13 +209,18 @@ export default function ShareButton({
   return (
     <div
       ref={containerRef}
+      // Compact mode is click-toggled (no hover). Default mode also opens
+      // on hover for desktop discoverability.
       className={`relative inline-flex items-center ${className}`}
+      style={isOpen ? { zIndex: 30 } : undefined}
       onMouseEnter={() => {
+        if (compact) return;
         if (prefersNativeShare) return;
         if (closeTimer.current) clearTimeout(closeTimer.current);
         setIsOpen(true);
       }}
       onMouseLeave={() => {
+        if (compact) return;
         closeTimer.current = setTimeout(() => setIsOpen(false), 1500);
       }}
     >
@@ -181,21 +230,75 @@ export default function ShareButton({
         type="button"
         onClick={handleMainClick}
         style={{ position: "relative", zIndex: 20 }}
-        className={`inline-flex cursor-pointer items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-50 ${
-          isOpen ? "border-neutral-400 bg-neutral-50" : ""
-        }`}
+        className={
+          compact
+            ? `inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold transition-colors ${
+                isOpen
+                  ? "bg-neutral-200 text-neutral-800"
+                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+              }`
+            : `inline-flex cursor-pointer items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 transition-colors hover:bg-neutral-50 ${
+                isOpen ? "border-neutral-400 bg-neutral-50" : ""
+              }`
+        }
         aria-label="Share"
         aria-expanded={isOpen}
       >
         <Share2
-          className="h-4 w-4 transition-transform duration-300"
+          className={compact ? "h-3.5 w-3.5" : "h-4 w-4 transition-transform duration-300"}
           style={{ transform: isOpen ? "rotate(20deg)" : "rotate(0deg)" }}
         />
         {label}
       </button>
 
-      {/* Social platform buttons — burst out to the right */}
-      {PLATFORMS.map((platform, index) => {
+      {/* Compact mode: floating panel rendered via portal so it escapes
+          the parent card's stacking context and isn't painted under
+          sibling cards from the next grid row. */}
+      {compact && isOpen && panelAnchor && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              ref={panelRef}
+              role="dialog"
+              aria-label="Share"
+              style={{
+                position: "fixed",
+                top: panelAnchor.top,
+                right: panelAnchor.right,
+                zIndex: 1000,
+              }}
+              className="flex items-center gap-1.5 rounded-full bg-white p-1.5 shadow-lg ring-1 ring-neutral-200"
+            >
+              {PLATFORMS.map((platform) => (
+                <button
+                  key={platform.id}
+                  type="button"
+                  aria-label={`Share on ${platform.label}`}
+                  onClick={() => handleSocialClick(platform)}
+                  style={{ backgroundColor: platform.bg }}
+                  className="inline-flex h-[30px] w-[30px] items-center justify-center rounded-full text-white shadow hover:brightness-110 active:scale-95"
+                >
+                  <platform.Icon />
+                </button>
+              ))}
+              <button
+                type="button"
+                aria-label="Copy link"
+                onClick={handleCopyClick}
+                className="inline-flex h-[30px] w-[30px] items-center justify-center rounded-full bg-neutral-700 text-white shadow hover:brightness-110 active:scale-95"
+              >
+                {status === "copied" ? (
+                  <Check className="h-4 w-4" />
+                ) : (
+                  <Link2 className="h-4 w-4" />
+                )}
+              </button>
+            </div>,
+            document.body
+          )
+        : null}
+
+      {/* Default mode: social platform buttons burst out to the right */}
+      {!compact && PLATFORMS.map((platform, index) => {
         const baseX = (mainButtonRef.current?.offsetWidth ?? 100) + 8;
         const offset = baseX + index * BUTTON_GAP;
         const delay = index * 50;
@@ -228,8 +331,8 @@ export default function ShareButton({
         );
       })}
 
-      {/* Copy link button */}
-      {(() => {
+      {/* Default mode: copy link button at end of burst */}
+      {!compact && (() => {
         const baseX = (mainButtonRef.current?.offsetWidth ?? 100) + 8;
         const offset = baseX + PLATFORMS.length * BUTTON_GAP;
         const delay = PLATFORMS.length * 50;

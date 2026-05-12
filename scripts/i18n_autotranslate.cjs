@@ -301,7 +301,7 @@ if (!apiKey) {
   process.exit(1);
 }
 
-const client = new OpenAI({ apiKey });
+const client = new OpenAI({ apiKey, timeout: 180000, maxRetries: 0 });
 
 function chunkEntries(obj, chunkSize) {
   const entries = Object.entries(obj);
@@ -339,14 +339,32 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
     JSON.stringify(items, null, 2),
   ].join("\n");
 
-  let resp = await client.chat.completions.create({
+  // Retry transient network/API errors (connection resets, 5xx, 429) before giving up.
+  async function callWithNetRetry(opts, label) {
+    const max = 5;
+    for (let attempt = 1; attempt <= max; attempt++) {
+      try {
+        return await client.chat.completions.create(opts);
+      } catch (e) {
+        const msg = e?.message || String(e);
+        const isTransient =
+          /Connection error|ECONNRESET|ETIMEDOUT|ENOTFOUND|fetch failed|socket hang up|timed? ?out|timeout|429|5\d\d/i.test(msg);
+        if (!isTransient || attempt === max) throw e;
+        const wait = Math.min(60000, 2000 * 2 ** (attempt - 1));
+        console.log(`[WARN] ${label} attempt ${attempt}/${max} failed: ${msg}. Retrying in ${wait}ms...`);
+        await new Promise((r) => setTimeout(r, wait));
+      }
+    }
+  }
+
+  let resp = await callWithNetRetry({
     model: args.model,
     temperature: 0.2,
     messages: [
       { role: "system", content: system },
       { role: "user", content: user },
     ],
-  });
+  }, "translateBatch");
 
   let parsed;
   let retryCount = 0;
@@ -371,17 +389,17 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
       await new Promise(resolve => setTimeout(resolve, 2000 * retryCount));
       
       // Make a new API call with stricter instructions
-      resp = await client.chat.completions.create({
+      resp = await callWithNetRetry({
         model: args.model,
         temperature: 0.1, // Lower temperature for more deterministic output
         messages: [
-          { 
-            role: "system", 
+          {
+            role: "system",
             content: system + "\n\nCRITICAL: Your previous response had JSON syntax errors. Please ensure PERFECT JSON formatting this time. Double-check all commas and quotes."
           },
           { role: "user", content: user },
         ],
-      });
+      }, "translateBatch retry");
     }
   }
 
@@ -501,6 +519,15 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
         });
 
         Object.assign(translatedAll, translated);
+
+        // Checkpoint after each chunk: merge into target file and write.
+        // This way a connection error mid-way doesn't lose all prior chunks,
+        // and a re-run picks up exactly where it left off (since missingKeys
+        // is recomputed against what's already in the target file).
+        if (args.write && !args.dryRun) {
+          mergeMissing(targetObj, translated);
+          writeJson(targetPath, targetObj);
+        }
       }
 
       if (args.dryRun || !args.write) {
@@ -512,8 +539,6 @@ async function translateBatch({ baseLocale, targetLocale, fileBase, items }) {
       }
 
       if (args.write && !args.dryRun) {
-        mergeMissing(targetObj, translatedAll);
-        writeJson(targetPath, targetObj);
         console.log(`✅ wrote ${Object.keys(translatedAll).length} keys to ${loc}/${fileBase}.json`);
       } else {
         console.log("ℹ️ not written (use --write to save).");

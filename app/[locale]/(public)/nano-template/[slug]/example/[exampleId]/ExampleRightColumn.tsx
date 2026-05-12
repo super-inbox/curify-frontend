@@ -12,6 +12,7 @@ import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { fillPrompt } from "@/lib/nano_utils";
+import { normalizePrefills } from "@/lib/nano_prompt_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
@@ -25,6 +26,7 @@ type Props = {
   chipExampleTopics?: string[];
   chipCategory?: string;
   title: string;
+  description?: string;
   templateId: string;
   slug: string;
   locale: string;
@@ -43,6 +45,7 @@ export default function ExampleRightColumn({
   chipExampleTopics,
   chipCategory,
   title,
+  description,
   templateId,
   slug,
   locale,
@@ -134,40 +137,72 @@ export default function ExampleRightColumn({
         {title}
       </h1>
 
+      {/* Localized description kept in DOM (sr-only) for SEO + screen
+          readers but invisible visually — matches the topic page pattern.
+          Removes the bulky paragraph from the right column without losing
+          the per-locale text Google needs to differentiate the 10
+          allow_i18n locale pages. */}
+      {description ? <p className="sr-only whitespace-pre-line">{description}</p> : null}
+
       {/* Generate your own — param inputs */}
       {parameters.length > 0 && (
-        <div className="flex flex-col gap-2 rounded-xl border border-purple-100 bg-purple-50/50 px-3 py-2.5">
+        <div className="flex flex-col gap-3 rounded-xl border border-purple-100 bg-purple-50/50 px-3 py-2.5">
           <p className="text-xs font-semibold text-purple-700">Generate your own</p>
-          {parameters.map((p) => (
-            <div key={p.name} className="flex items-center gap-2">
-              <span className="w-20 shrink-0 text-xs font-medium text-neutral-500">
-                {p.label || p.name}
-              </span>
-              {p.type === "select" ? (
-                <select
-                  value={form[p.name] ?? ""}
-                  onChange={(e) => onFormChange(p.name, e.target.value)}
-                  className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
-                >
-                  {(p.options ?? []).map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-              ) : p.type === "language_pair" ? (
-                <LanguagePairSelector
-                  value={form[p.name]}
-                  onChange={(v) => onFormChange(p.name, v)}
-                  className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
-                />
-              ) : (
-                <input
-                  value={form[p.name] ?? ""}
-                  onChange={(e) => onFormChange(p.name, e.target.value)}
-                  className="flex-1 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200"
-                />
-              )}
-            </div>
-          ))}
+          {parameters.map((p) => {
+            const value = form[p.name] ?? "";
+            const { displayPlaceholder, candidates } = normalizePrefills(p.placeholder);
+            const inputClass =
+              "w-full rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-purple-200";
+
+            return (
+              <div key={p.name}>
+                <div className="mb-1 flex items-start justify-between gap-2">
+                  <div className="text-xs font-semibold text-neutral-700">
+                    {p.label || p.name}
+                  </div>
+                  {candidates.length > 0 && (
+                    <div className="flex flex-wrap justify-end gap-1">
+                      {candidates.slice(0, 4).map((cand) => (
+                        <button
+                          key={`${p.name}-${cand}`}
+                          type="button"
+                          onClick={() => onFormChange(p.name, cand)}
+                          className="cursor-pointer rounded-full border border-neutral-200 bg-white px-2 py-0.5 text-[10px] font-semibold text-neutral-700 hover:bg-neutral-50"
+                        >
+                          {cand}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {p.type === "select" ? (
+                  <select
+                    value={value}
+                    onChange={(e) => onFormChange(p.name, e.target.value)}
+                    className={inputClass}
+                  >
+                    {(p.options ?? []).map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                  </select>
+                ) : p.type === "language_pair" ? (
+                  <LanguagePairSelector
+                    value={value}
+                    onChange={(v) => onFormChange(p.name, v)}
+                    className={inputClass}
+                  />
+                ) : (
+                  <input
+                    value={value}
+                    onChange={(e) => onFormChange(p.name, e.target.value)}
+                    placeholder={displayPlaceholder}
+                    className={inputClass}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
 

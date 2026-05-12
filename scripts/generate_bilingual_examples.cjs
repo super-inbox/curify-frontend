@@ -24,6 +24,7 @@ const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
 const { execSync } = require("child_process");
+const { applyTiledWatermark } = require("./lib/watermark.cjs");
 
 let sharp;
 try {
@@ -51,7 +52,9 @@ const IMAGE_URL_PREFIX   = "/images/nano_insp/";
 const PREVIEW_URL_PREFIX = "/images/nano_insp_preview/";
 
 const GEMINI_TEXT_MODEL  = "gemini-2.5-flash";
-const GEMINI_IMAGE_MODEL = "gemini-2.5-flash-image";
+// "Nano Banana Pro" — higher fidelity for per-template image generation
+// (matches generate_template_examples.cjs default).
+const GEMINI_IMAGE_MODEL = "gemini-3-pro-image-preview";
 
 const MAX_PREVIEW_SIZE = 512;
 const MAX_PREVIEW_KB   = 250;
@@ -73,13 +76,20 @@ const LANGUAGE_PAIR_CONFIG = {
     nativeLabel: "日本語",
     topic: "english-japanese",
   },
+  "english-french": {
+    label: "English-French",
+    nativeLabel: "Français",
+    topic: "english-french",
+  },
 };
 
-// Templates suitable for bilingual pair generation (have language_pair param or theme-based)
+// Templates suitable for bilingual pair generation (have language_pair param)
 const BILINGUAL_TEMPLATES = [
   "template-vocabulary",
   "template-word-scene",
   "template-english-dialogue-scene",
+  "template-english-top5-phrases",
+  "template-english-error-correction",
 ];
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
@@ -326,7 +336,12 @@ async function main() {
             const imageBuffer = await geminiGenerateImage(filledPrompt);
             await fsp.writeFile(imagePath, imageBuffer);
 
-            // Generate preview
+            // Watermark the image in place (tiled). Doing this before the
+            // preview is generated means the preview inherits the watermark
+            // at proportional size — no second magick op needed for preview.
+            applyTiledWatermark(imagePath, imagePath);
+
+            // Generate preview from the watermarked image
             await generatePreview(imagePath, previewPath);
 
             console.log("✓");

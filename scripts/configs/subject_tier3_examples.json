@@ -1,0 +1,50 @@
+[
+  {
+    "template_id": "template-education",
+    "params": { "topic": "Coral Reef Ecosystems" },
+    "topics": ["nature"],
+    "id_suffix": "nature-coral-reef"
+  },
+  {
+    "template_id": "template-education-card",
+    "params": { "topic": "Volcanoes" },
+    "topics": ["nature", "science"],
+    "id_suffix": "nature-volcanoes"
+  },
+  {
+    "template_id": "template-education",
+    "params": { "topic": "Solar System Planets" },
+    "topics": ["space", "science"],
+    "id_suffix": "space-solar-system"
+  },
+  {
+    "template_id": "template-education-card",
+    "params": { "topic": "Black Holes Explained" },
+    "topics": ["space", "science"],
+    "id_suffix": "space-black-holes"
+  },
+  {
+    "template_id": "template-education",
+    "params": { "topic": "Types of Clouds" },
+    "topics": ["weather"],
+    "id_suffix": "weather-clouds"
+  },
+  {
+    "template_id": "template-education-card",
+    "params": { "topic": "The Five Senses" },
+    "topics": ["body"],
+    "id_suffix": "body-five-senses"
+  },
+  {
+    "template_id": "template-education",
+    "params": { "topic": "Skeletal System" },
+    "topics": ["body", "science"],
+    "id_suffix": "body-skeletal-system"
+  },
+  {
+    "template_id": "template-education-card",
+    "params": { "topic": "Galápagos Finches and Natural Selection" },
+    "topics": ["evolution", "science"],
+    "id_suffix": "evolution-galapagos-finches"
+  }
+]

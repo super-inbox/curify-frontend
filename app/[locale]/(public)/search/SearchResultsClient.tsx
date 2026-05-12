@@ -1,19 +1,31 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import CdnImage from "@/app/[locale]/_components/CdnImage";
+
+import ExampleImagesGrid from "@/app/[locale]/(public)/nano-template/[slug]/ExampleImagesGrid";
+import NanoTemplateDetailClient from "@/app/[locale]/(public)/nano-template/[slug]/NanoTemplateDetailClient";
+import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCard";
+import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import type { SuggestionEntry } from "@/lib/searchIndex";
+import type { NanoPromptBase } from "@/types/nanoPrompts";
+import { useTracking } from "@/services/useTracking";
 
 type InspRecord = {
   id: string;
   template_id: string;
-  asset: { preview_image_url: string; image_url: string };
+  asset: {
+    preview_image_url: string;
+    image_url: string;
+    video_url?: string;
+  };
+  params?: Record<string, unknown>;
   topics?: string[];
   tags?: string[];
+  locales?: Record<string, { title?: string }>;
 };
 
 type Props = {
@@ -21,15 +33,29 @@ type Props = {
   locale: string;
   inspirations: InspRecord[];
   relatedTopics: SuggestionEntry[];
+  matchedTemplates: NanoInspirationCardType[];
+  galleryPrompts: NanoPromptBase[];
 };
 
-const CDN_BASE = process.env.NEXT_PUBLIC_CDN_BASE ?? "https://cdn.curify-ai.com";
+// Compute the href for a SuggestionEntry chip — honors `href` overrides
+// for non-topic destinations and routes `searchFallback` entries (nano-tag
+// suggestions) through /search?q= so they re-render this same page.
+function chipHref(s: SuggestionEntry, locale: string): string {
+  if (s.href) return `/${locale}${s.href}`;
+  if (s.searchFallback) {
+    const q = s.aliases?.[0] ?? s.slug;
+    return `/${locale}/search?q=${encodeURIComponent(q)}`;
+  }
+  return `/${locale}/topics/${s.slug}`;
+}
 
 export default function SearchResultsClient({
   query,
   locale,
   inspirations,
   relatedTopics,
+  matchedTemplates,
+  galleryPrompts,
 }: Props) {
   const [input, setInput] = useState(query);
   const router = useRouter();
@@ -45,15 +71,31 @@ export default function SearchResultsClient({
 
   // Cap at 3 examples per template_id — keeps results diverse without
   // crowding the grid with near-duplicate variants of the same template.
-  const cards = useMemo(() => {
+  // Then map to the shape ExampleImagesGrid expects.
+  const gridItems = useMemo(() => {
     const counts = new Map<string, number>();
-    return inspirations.filter((r) => {
-      const n = counts.get(r.template_id) ?? 0;
-      if (n >= 3) return false;
-      counts.set(r.template_id, n + 1);
-      return true;
-    });
-  }, [inspirations]);
+    return inspirations
+      .filter((r) => {
+        const n = counts.get(r.template_id) ?? 0;
+        if (n >= 3) return false;
+        counts.set(r.template_id, n + 1);
+        return true;
+      })
+      .map((r) => ({
+        id: r.id,
+        title:
+          r.locales?.[locale]?.title ||
+          r.locales?.en?.title ||
+          r.locales?.zh?.title ||
+          "",
+        preview: r.asset.preview_image_url,
+        templateId: r.template_id,
+        params: Object.fromEntries(
+          Object.entries(r.params ?? {}).map(([k, v]) => [k, String(v ?? "")])
+        ) as Record<string, string>,
+        videoUrl: r.asset.video_url,
+      }));
+  }, [inspirations, locale]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,9 +104,24 @@ export default function SearchResultsClient({
     router.push(`/${locale}/search?q=${encodeURIComponent(q.toLowerCase())}`);
   };
 
+  const hasResults =
+    gridItems.length > 0 || matchedTemplates.length > 0 || galleryPrompts.length > 0;
+
+  const { track } = useTracking();
+  useEffect(() => {
+    const q = query.trim();
+    if (q && !hasResults) {
+      track({
+        contentId: q,
+        contentType: "topic_capsule",
+        actionType: "search_noresult",
+      });
+    }
+  }, [query, hasResults, track]);
+
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-      {/* Search input — hidden on desktop where SiteTopBar's SearchBar handles it */}
+    <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8">
+      {/* Mobile-only search input — desktop uses SiteTopBar's SearchBar */}
       <form onSubmit={handleSearch} className="lg:hidden mb-8 flex gap-2">
         <div className="relative flex-1">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
@@ -90,7 +147,7 @@ export default function SearchResultsClient({
           {relatedTopics.map((s) => (
             <Link
               key={s.slug}
-              href={`/${locale}/topics/${s.slug}`}
+              href={chipHref(s, locale)}
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
             >
               {s.emoji && <span>{s.emoji}</span>}
@@ -100,21 +157,20 @@ export default function SearchResultsClient({
         </div>
       )}
 
-      {/* Results heading */}
       <p className="mb-5 text-sm text-neutral-500">
-        {cards.length > 0
-          ? `${cards.length} template${cards.length !== 1 ? "s" : ""} for "${query}"`
+        {hasResults
+          ? `Results for "${query}"`
           : `No results for "${query}"`}
       </p>
 
-      {cards.length === 0 ? (
+      {!hasResults ? (
         <div className="py-16 text-center">
           <p className="text-neutral-400 mb-4">Try browsing a topic instead:</p>
           <div className="flex flex-wrap justify-center gap-2">
             {relatedTopics.map((s) => (
               <Link
                 key={s.slug}
-                href={`/${locale}/topics/${s.slug}`}
+                href={chipHref(s, locale)}
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm text-neutral-700 hover:border-blue-300 hover:text-blue-700 transition-colors"
               >
                 {s.emoji} {renderLabel(s.slug, s.label)}
@@ -123,25 +179,64 @@ export default function SearchResultsClient({
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {cards.map((card) => (
-            <Link
-              key={card.id}
-              href={`/${locale}/nano-template/${card.template_id}/example/${card.id}`}
-              className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm hover:border-blue-300 hover:shadow-md transition-all"
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-neutral-100">
-                <CdnImage
-                  src={card.asset.preview_image_url}
-                  alt={card.template_id}
-                  width={280}
-                  height={373}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                />
+        <>
+          {/* Examples grid (top): same UI used on /topics, /nano-template
+              detail, /inspiration-hub. Tracking, share, remix all carry over
+              for free. */}
+          {gridItems.length > 0 && (
+            <section className="mb-10">
+              <h2 className="mb-3 text-lg font-bold text-neutral-900">
+                Examples
+              </h2>
+              <ExampleImagesGrid
+                items={gridItems}
+                locale={locale}
+                maxRows={3}
+              />
+            </section>
+          )}
+
+          {/* Templates rail (middle): renders the matched template cards
+              with the same component the topic page uses. */}
+          {matchedTemplates.length > 0 && (
+            <section className="mt-12">
+              <h2 className="mb-3 text-lg font-bold text-neutral-900">
+                Templates
+              </h2>
+              <NanoTemplateDetailClient
+                locale={locale}
+                otherNanoCards={matchedTemplates}
+                showReproduce={false}
+                showOtherTemplates={true}
+                showOtherTemplateTitle={false}
+              />
+            </section>
+          )}
+
+          {/* Gallery prompts (bottom): Redis-backed nano-banana prompts
+              matching the query as an exact tag. Renders with the same
+              PromptCard used on /nano-banana-pro-prompts/tag/[slug]. */}
+          {galleryPrompts.length > 0 && (
+            <section className="mt-12">
+              <div className="mb-3 flex items-end justify-between gap-2">
+                <h2 className="text-lg font-bold text-neutral-900">
+                  Gallery Prompts
+                </h2>
+                <Link
+                  href={`/${locale}/nano-banana-pro-prompts/tag/${encodeURIComponent(query)}`}
+                  className="text-sm font-semibold text-blue-600 hover:text-blue-700"
+                >
+                  Browse all →
+                </Link>
               </div>
-            </Link>
-          ))}
-        </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {galleryPrompts.slice(0, 12).map((p) => (
+                  <PromptCard key={p.id} prompt={p} />
+                ))}
+              </div>
+            </section>
+          )}
+        </>
       )}
     </div>
   );

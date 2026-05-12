@@ -4,11 +4,13 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import ExampleVideoPlayer from "../../example/[exampleId]/ExampleVideoPlayer";
 import ExampleRightColumn from "../../example/[exampleId]/ExampleRightColumn";
 import { useTracking } from "@/services/useTracking";
 import { cdn } from "@/lib/cdn";
+import { useIsMobileLikeDevice } from "@/lib/device";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
 
@@ -20,19 +22,28 @@ function ProgressiveSlideImage({
   previewSrc,
   fullSrc,
   alt,
+  onFullLoaded,
 }: {
   previewSrc?: string;
   fullSrc: string;
   alt: string;
+  onFullLoaded?: () => void;
 }) {
   const [src, setSrc] = useState<string>(previewSrc || fullSrc);
   useEffect(() => {
     setSrc(previewSrc || fullSrc);
-    if (!fullSrc || fullSrc === previewSrc) return;
+    if (!fullSrc) return;
+    if (fullSrc === previewSrc) {
+      onFullLoaded?.();
+      return;
+    }
     const img = new window.Image();
     img.src = cdn(fullSrc);
-    img.onload = () => setSrc(fullSrc);
-  }, [previewSrc, fullSrc]);
+    img.onload = () => {
+      setSrc(fullSrc);
+      onFullLoaded?.();
+    };
+  }, [previewSrc, fullSrc, onFullLoaded]);
 
   return (
     <img
@@ -41,6 +52,72 @@ function ProgressiveSlideImage({
       draggable={false}
       className="max-h-full max-w-full select-none"
     />
+  );
+}
+
+// Pinch-to-zoom + double-tap-to-zoom wrapper for slide images. Reports
+// scale changes up so the parent can suppress horizontal slide-swipe
+// while the user is zoomed in (otherwise a 1-finger pan would steal the
+// gesture and flip slides).
+function ZoomableSlideImage({
+  previewSrc,
+  fullSrc,
+  alt,
+  onScaleChange,
+}: {
+  previewSrc?: string;
+  fullSrc: string;
+  alt: string;
+  onScaleChange: (scale: number) => void;
+}) {
+  // Gate zoom on full-resolution image being loaded — pinching during the
+  // brief preview window would otherwise zoom an upscaled thumbnail.
+  const [fullLoaded, setFullLoaded] = useState(false);
+  const handleFullLoaded = useCallback(() => setFullLoaded(true), []);
+
+  // Track scale locally so we can keep panning disabled at scale=1.
+  // Without this, the library swallows 1-finger drags as no-op panning
+  // and the parent's slide-swipe handler never sees the gesture, making
+  // it hard to flip slides on mobile.
+  const [scale, setScale] = useState(1);
+
+  const handleTransform = useCallback(
+    (_ref: unknown, state: { scale: number }) => {
+      setScale(state.scale);
+      onScaleChange(state.scale);
+    },
+    [onScaleChange]
+  );
+
+  const isZoomed = scale > 1.001;
+
+  return (
+    <TransformWrapper
+      initialScale={1}
+      minScale={1}
+      maxScale={5}
+      disabled={!fullLoaded}
+      doubleClick={{ mode: "toggle", step: 1.5, disabled: !fullLoaded }}
+      pinch={{ disabled: !fullLoaded }}
+      wheel={{ step: 0.2, disabled: !fullLoaded }}
+      onTransform={handleTransform}
+      // Panning is what consumes 1-finger drags. Keep it off at scale=1 so
+      // horizontal swipes flow through to the parent slide-swipe handler;
+      // re-enable once the user has actually zoomed in.
+      panning={{ disabled: !fullLoaded || !isZoomed, velocityDisabled: true }}
+    >
+      <TransformComponent
+        wrapperClass="!h-full !w-full !flex !items-center !justify-center"
+        contentClass="!flex !items-center !justify-center"
+      >
+        <ProgressiveSlideImage
+          previewSrc={previewSrc}
+          fullSrc={fullSrc}
+          alt={alt}
+          onFullLoaded={handleFullLoaded}
+        />
+      </TransformComponent>
+    </TransformWrapper>
   );
 }
 
@@ -86,6 +163,7 @@ export default function CarouselClient({
   siteUrl,
 }: Props) {
   const router = useRouter();
+  const isMobileDevice = useIsMobileLikeDevice();
   const [index, setIndex] = useState(initialIndex);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -93,6 +171,10 @@ export default function CarouselClient({
   // when wrapping around so the carousel doesn't visibly fly across every
   // slide between the edges.
   const [animate, setAnimate] = useState(true);
+  // Active slide's zoom scale (from ZoomableSlideImage). When >1, the
+  // user is panning a zoomed image, so we suppress horizontal slide-swipe
+  // and let the zoom library own the gesture.
+  const [zoomScale, setZoomScale] = useState(1);
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const dragStartX = useRef(0);
@@ -111,6 +193,10 @@ export default function CarouselClient({
       if (isWrap) setAnimate(false);
       setIndex(wrapped);
       setDragX(0);
+      // Reset zoom — each TransformWrapper is keyed by slide id and will
+      // re-mount on slide change anyway, but keep the swipe-suppression
+      // state in sync immediately.
+      setZoomScale(1);
     },
     [slides.length, index]
   );
@@ -183,8 +269,16 @@ export default function CarouselClient({
     return () => window.removeEventListener("keydown", onKey);
   }, [index, close, goTo]);
 
-  // Touch swipe (ported from the previous in-grid Lightbox)
+  // Touch swipe (ported from the previous in-grid Lightbox).
+  // Suppressed when the active image is zoomed in or when more than one
+  // finger is on the surface — those gestures belong to the zoom library
+  // (panning and pinching).
   const onTouchStart = (e: React.TouchEvent) => {
+    if (zoomScale > 1 || e.touches.length > 1) {
+      isHorizontalSwipe.current = false;
+      setIsDragging(false);
+      return;
+    }
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
     dragStartX.current = e.touches[0].clientX;
@@ -193,6 +287,7 @@ export default function CarouselClient({
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
+    if (zoomScale > 1 || e.touches.length > 1) return;
     const dx = e.touches[0].clientX - touchStartX.current;
     const dy = e.touches[0].clientY - touchStartY.current;
     if (
@@ -221,7 +316,6 @@ export default function CarouselClient({
 
   if (!slide) return null;
 
-  const exampleHref = `/${locale}/nano-template/${slug}/example/${encodeURIComponent(slide.id)}`;
   const stopPropagation = (e: React.MouseEvent) => e.stopPropagation();
   const trackBrowse = (suffix: "prev" | "next" | "dot") => {
     track({
@@ -320,6 +414,14 @@ export default function CarouselClient({
                         active={isActive}
                         autoPlay
                       />
+                    ) : isActive && isMobileDevice ? (
+                      <ZoomableSlideImage
+                        key={s.id}
+                        previewSrc={s.previewImageUrl}
+                        fullSrc={s.imageUrl}
+                        alt={s.title || s.id}
+                        onScaleChange={setZoomScale}
+                      />
                     ) : (
                       <ProgressiveSlideImage
                         previewSrc={s.previewImageUrl}
@@ -387,14 +489,14 @@ export default function CarouselClient({
           </div>
         )}
         <Link
-          href={exampleHref}
+          href={`/${locale}/nano-template/${slug}`}
           onClick={(e) => {
             e.stopPropagation();
             trackViewPrompt();
           }}
-          className="rounded-full bg-white/90 px-5 py-2 text-sm font-bold text-neutral-900 shadow backdrop-blur-sm hover:bg-white"
+          className="rounded-full border-2 border-purple-500 bg-white/90 px-5 py-2 text-sm font-bold text-purple-700 shadow backdrop-blur-sm hover:bg-white hover:border-purple-600"
         >
-          View prompt →
+          Visit template →
         </Link>
       </div>
       </div>

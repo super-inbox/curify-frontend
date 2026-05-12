@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
-import { MBTI_META, MBTI_TYPES } from "@/lib/mbti-meta";
+import { MBTI_TYPES, getMbtiMeta } from "@/lib/mbti-meta";
+import type { MBTIType } from "@/lib/mbti-meta";
 import mbtiCharacters from "@/public/data/mbti_characters.json";
 import { readFile } from "fs/promises";
 import path from "path";
@@ -77,12 +78,13 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const type = (searchParams.get("type") ?? "INTJ").toUpperCase();
   const name = (searchParams.get("name") ?? "").trim().slice(0, 30);
+  const locale = (searchParams.get("locale") ?? "en").trim();
 
   if (!(MBTI_TYPES as readonly string[]).includes(type)) {
     return new Response("Invalid type", { status: 400 });
   }
 
-  const meta   = MBTI_META[type as keyof typeof MBTI_META];
+  const meta   = getMbtiMeta(type as MBTIType, locale);
   const chars  = (mbtiCharacters as Record<string, Array<{name:string;img:string;ip:string}>>)[type] ?? [];
   const shown  = chars.slice(0, 3);
   const pct    = RARITY[type] ?? 4;

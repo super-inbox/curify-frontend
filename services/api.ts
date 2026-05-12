@@ -70,6 +70,21 @@ class ApiClient {
           status: response.status,
           body: text,
         });
+        // Centralized 401 handling — JWT expired / invalid / signed
+        // with a rotated key. Clear persisted auth state and notify
+        // listeners (authProvider) so the UI re-prompts sign-in instead
+        // of repeating 401s while the user appears logged in.
+        // Skip when the request didn't carry a token (login/OTP/etc.):
+        // those 401s are validation failures, not session-expiry.
+        if (response.status === 401 && !isServer) {
+          const stillHadToken = localStorage.getItem("access_token");
+          if (stillHadToken) {
+            localStorage.removeItem("access_token");
+            localStorage.removeItem("refresh_token");
+            localStorage.removeItem("curifyUser");
+            window.dispatchEvent(new CustomEvent("auth:expired"));
+          }
+        }
         throw new Error(`API Error ${response.status}: ${text}`);
       }
 

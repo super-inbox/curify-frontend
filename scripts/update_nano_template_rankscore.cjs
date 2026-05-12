@@ -1,7 +1,17 @@
 #!/usr/bin/env node
 
 /**
- * Update public/data/nano_templates.json with rank_score from Postgres.
+ * Update public/data/nano_templates.json with the canonical rank_score:
+ *
+ *   rank_score = base_rank_score + freshness_bonus + engagement_bonus
+ *
+ *   freshness_bonus  = max(0, round(20 × (1 − days_old / 14)))   // 0–20
+ *   engagement_bonus = min(35, 0.15 × engagement_signal)         // 0–35
+ *
+ * where days_old comes from each template's creation_date (backfilled
+ * here at ~4 templates/day from the end of the file if missing) and
+ * engagement_signal is the weighted sum of CLICK/COPY/REMIX/GENERATE
+ * events over the last 3 days, pulled from Postgres.
  *
  * Behavior:
  * - Runs only on Tuesday / Thursday in America/Los_Angeles by default
@@ -11,12 +21,12 @@
  * - Loads DATABASE_URL from:
  *    1) process.env (e.g. GitHub Actions secrets on server)
  *    2) .env.local locally if DATABASE_URL is not already set
- * - Defaults rank_score to 1 for templates with no matching data
  * - Verifies template count before/after write so templates are not dropped
  *
  * Usage:
  *   node scripts/update_nano_template_rankscore.cjs
  *   node scripts/update_nano_template_rankscore.cjs --force
+ *   node scripts/update_nano_template_rankscore.cjs --dry-run
  *   SKIP_WEEKDAY_CHECK=true node scripts/update_nano_template_rankscore.cjs
  *   DATABASE_URL=... node scripts/update_nano_template_rankscore.cjs
  */
@@ -133,49 +143,116 @@ function getUniqueTemplateIdCount(templates) {
   return ids.size;
 }
 
+// Engagement query — mirrors `get_interaction_analytics` in
+// curify-studio/curify_background/app/crud/admin.py so the two stay
+// consistent. Differences vs. admin.py:
+//   - SHARE is added with weight 5 (admin.py drops it since it doesn't
+//     count as replication; for ranking we want it as a popularity signal).
+// Weights: CLICK=1, COPY=5, REMIX=8, GENERATE=10, SHARE=5.
+//
+// Example-level events are rolled up to their parent template via the
+// 'template-%:...' content_id convention (split_part on ':').
 async function fetchRankScores(client) {
   const sql = `
     SELECT
-      content_id,
-      SUM(
-        CASE
-          WHEN action_type = 'CLICK' THEN 1
-          WHEN action_type = 'COPY' THEN 2
-          WHEN action_type = 'REMIX' THEN 3
-          WHEN action_type = 'GENERATE' THEN 4
-          ELSE 0
-        END
-      ) AS rank_score
+      CASE
+        WHEN content_type = 'MBTI_QUIZ' THEN 'mbti_quiz'
+        WHEN content_id LIKE 'template-%'
+          THEN split_part(content_id, ':', 1)
+        ELSE content_id
+      END AS template_id,
+      (
+        SUM(CASE WHEN action_type = 'CLICK'    THEN 1 ELSE 0 END) +
+        5  * SUM(CASE WHEN action_type = 'COPY'     THEN 1 ELSE 0 END) +
+        8  * SUM(CASE WHEN action_type = 'REMIX'    THEN 1 ELSE 0 END) +
+        10 * SUM(CASE WHEN action_type = 'GENERATE' THEN 1 ELSE 0 END) +
+        5  * SUM(CASE WHEN action_type = 'SHARE'    THEN 1 ELSE 0 END)
+      ) AS score
     FROM user_interactions
-    WHERE created_at >= NOW() - INTERVAL '3 days'
-    GROUP BY content_id
+    WHERE created_at >= NOW() - INTERVAL '14 days'
+      AND content_type NOT IN ('MENU_LINK', 'TOPIC_CAPSULE')
+    GROUP BY template_id
     HAVING SUM(
       CASE
-        WHEN action_type IN ('CLICK', 'COPY', 'REMIX', 'GENERATE') THEN 1
+        WHEN action_type IN ('CLICK', 'COPY', 'REMIX', 'GENERATE', 'SHARE') THEN 1
         ELSE 0
       END
     ) > 0
-    ORDER BY rank_score DESC;
+    ORDER BY score DESC;
   `;
 
   const res = await client.query(sql);
 
-  // content_id may appear more than once across content_type
-  // collapse to a single template-level score
   const scoreMap = new Map();
-
   for (const row of res.rows) {
-    const templateId = row.content_id;
-    const score = Number(row.rank_score || 0);
-
+    const templateId = row.template_id;
+    const score = Number(row.score || 0);
     if (!templateId) continue;
+    // Multiple rows can in theory map to the same template_id (e.g. if
+    // future rollup rules collapse content_types differently); add to be
+    // safe even though the GROUP BY today produces one row per template.
     scoreMap.set(templateId, (scoreMap.get(templateId) || 0) + score);
   }
-
   return scoreMap;
 }
 
-const USER_SIGNAL_WEIGHT = 0.2;
+// Final rank_score = base_rank_score + freshness_bonus + engagement_bonus,
+// where each bonus is capped at 40 so neither component dominates.
+const FRESHNESS_BONUS_MAX = 20;
+const FRESHNESS_WINDOW_DAYS = 14;
+const ENGAGEMENT_WEIGHT = 0.15;
+const ENGAGEMENT_BONUS_MAX = 35;
+
+// Used when backfilling creation_date for templates that don't have one.
+// Walks from the end of the file, ~4 templates per day = today, today-1, etc.
+const TEMPLATES_PER_DAY = 4;
+
+function isoDate(d) {
+  return d.toISOString().slice(0, 10);
+}
+
+function todayIsoUtc() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function daysOldUtc(creationDateStr) {
+  if (!creationDateStr) return FRESHNESS_WINDOW_DAYS; // treat as fully decayed
+  const created = new Date(`${creationDateStr}T00:00:00.000Z`).getTime();
+  const today = new Date(`${todayIsoUtc()}T00:00:00.000Z`).getTime();
+  return Math.max(0, Math.floor((today - created) / 86400000));
+}
+
+function freshnessBonus(daysOld) {
+  if (daysOld >= FRESHNESS_WINDOW_DAYS) return 0;
+  return Math.round(FRESHNESS_BONUS_MAX * (1 - daysOld / FRESHNESS_WINDOW_DAYS));
+}
+
+function engagementBonus(signal) {
+  return Math.min(ENGAGEMENT_BONUS_MAX, ENGAGEMENT_WEIGHT * signal);
+}
+
+// Stamp creation_date on any templates that don't have one. Walks the
+// missing entries from end of file, grouping every TEMPLATES_PER_DAY into
+// one calendar day, with the most recent group = today. Existing
+// creation_date values are preserved.
+function backfillCreationDates(templates) {
+  const missingIdxs = [];
+  for (let i = 0; i < templates.length; i++) {
+    if (!templates[i].creation_date) missingIdxs.push(i);
+  }
+  if (missingIdxs.length === 0) return 0;
+
+  const today = new Date(`${todayIsoUtc()}T00:00:00.000Z`);
+  const reversedMissing = [...missingIdxs].reverse();
+  for (let n = 0; n < reversedMissing.length; n++) {
+    const idx = reversedMissing[n];
+    const groupAgeDays = Math.floor(n / TEMPLATES_PER_DAY);
+    const d = new Date(today);
+    d.setUTCDate(d.getUTCDate() - groupAgeDays);
+    templates[idx].creation_date = isoDate(d);
+  }
+  return missingIdxs.length;
+}
 
 function mergeRankScoresIntoTemplates(templates, scoreMap) {
   let changedCount = 0;
@@ -185,7 +262,10 @@ function mergeRankScoresIntoTemplates(templates, scoreMap) {
     const baseScore = Number(template.base_rank_score ?? template.rank_score ?? 1);
     const hasScore = scoreMap.has(template.id);
     const userSignal = hasScore ? scoreMap.get(template.id) : 0;
-    const nextScore = baseScore + USER_SIGNAL_WEIGHT * userSignal;
+
+    const fresh = freshnessBonus(daysOldUtc(template.creation_date));
+    const engagement = engagementBonus(userSignal);
+    const nextScore = baseScore + fresh + engagement;
     const prevScore = Number(template.rank_score ?? 1);
 
     if (!hasScore) {
@@ -249,6 +329,11 @@ async function main() {
     `[rankscore] Loaded ${beforeCount} templates from JSON (${beforeUniqueIdCount} unique ids).`
   );
 
+  const stamped = backfillCreationDates(templates);
+  if (stamped > 0) {
+    console.log(`[rankscore] Backfilled creation_date on ${stamped} templates.`);
+  }
+
   const client = new Client({
     connectionString: databaseUrl,
     ssl: databaseUrl.includes("supabase.co")
@@ -299,7 +384,7 @@ async function main() {
     }
 
     console.log(
-      `[rankscore] Updated rank_score on ${changedCount} templates. Defaulted ${defaultedCount} templates to rank_score=1.`
+      `[rankscore] Updated rank_score on ${changedCount} templates. ${defaultedCount} had no engagement signal (engagement_bonus=0).`
     );
   } finally {
     await client.end().catch(() => {});

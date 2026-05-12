@@ -381,406 +381,132 @@
       "subtitle": "Diğer kategorileri ve ön ayarları keşfedin."
     }
   },
-  "topics": {
-    "learning": {
-      "displayName": "Bilgi",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Öğrenme",
-      "description": "Bilgi paylaşımı, açıklayıcı içerikler, çalışma materyalleri ve görsel özetler için öğrenme odaklı AI görselleri, eğitim şablonları ve ilham kartlarını keşfedin."
-    },
-    "history": {
-      "displayName": "Tarih",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Tarih",
-      "description": "Tarih temalı AI görselleri, şablonlar ve tarihi figürler, zaman çizelgeleri, olası senaryolar ve eğitimsel hikaye anlatımı için ilham arayın."
-    },
-    "career": {
-      "displayName": "Kariyer",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Kariyer",
-      "description": "Özgeçmişler, işyeri fikirleri, profesyonel gelişim ve iş ile ilgili hikaye anlatımı için kariyer odaklı AI görselleri, şablonlar ve ilham bulun."
-    },
-    "design": {
-      "displayName": "Tasarım",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Tasarım",
-      "description": "Markalaşma, düzenler, görsel kavramlar ve estetik keşifler için tasarım ile ilgili AI görselleri, yaratıcı şablonlar ve ilham keşfedin."
-    },
-    "nature": {
-      "displayName": "Doğa",
-      "title": "Doğa Görsel Şablonları | Curify AI",
-      "description": "Doğadan ilham alan AI görsel şablonlarını keşfedin — manzaralar, bitkiler, ekosistemler ve hava olayları."
-    },
-    "travel": {
-      "displayName": "Seyahat",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Seyahat",
-      "description": "Anıtlar, şehir rehberleri, kültürel hikaye anlatımı ve seyahat ile ilgili içerikler için seyahat temalı AI görselleri, destinasyon şablonları ve ilham keşfedin."
-    },
-    "lifestyle": {
-      "displayName": "Yaşam Tarzı",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Yaşam Tarzı",
-      "description": "Günlük yaşam, alışkanlıklar, estetikler, kişisel ilgi alanları ve paylaşılabilir sosyal içerikler için yaşam tarzı AI görselleri, şablonlar ve ilham bulun."
-    },
-    "film": {
-      "displayName": "Pop Kültür",
-      "title": "Pop Kültür Görsel Şablonlar ve İstemler — Nano Banana",
-      "description": "Marvel, Breaking Bad, Yellowstone, Friends ve daha fazlasından pop kültür AI karakter şablonlarını keşfedin."
-    },
-    "ai": {
-      "displayName": "AI",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile AI",
-      "description": "Teknoloji açıklamaları, kurucu içerikler, sektör yorumları ve yaratıcı konsept tasarımı için AI odaklı görseller, şablonlar ve ilham keşfedin."
-    },
-    "gaming": {
-      "displayName": "Oyun",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Oyun",
-      "description": "Oyun dünyaları, karakterler, oyuncu kültürü, hayran içerikleri ve etkileşimli hikaye anlatımı için oyun temalı AI görselleri, şablonlar ve ilham arayın."
-    },
-    "trending": {
-      "displayName": "Trend Olanlar",
-      "title": "Trend Olan Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Zamansal konular, hızlı hareket eden tartışmalar, viral fikirler ve ortaya çıkan temalar etrafında trend olan yapay zeka görsellerini, şablonları ve ilhamı keşfedin."
-    },
-    "character": {
-      "displayName": "Karakter",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Psikoloji",
-      "description": "MBTI, karakter analizi, duygular ve öz değerlendirme içerikleri için psikoloji ile ilgili AI görselleri, kişilik şablonları ve yaratıcı ilham keşfedin."
-    },
-    "product": {
-      "displayName": "Ticaret",
-      "title": "Görsel İpuçları, Şablonlar ve İlham ile Ticaret",
-      "description": "E-ticaret, pazarlama yaratıcıları, ürün hikaye anlatımı ve satıcı içeriği için ticaret odaklı AI görselleri, ürün şablonları ve ilham keşfedin."
-    },
-    "language": {
-      "displayName": "Dil",
-      "title": "Dil Öğrenme Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Yeni dilleri ve iletişim becerilerini öğrenmek için dil öğrenme görselleri, kelime kartları, diyalog şablonları ve AI tarafından üretilen içerikleri keşfedin."
-    },
-    "science": {
-      "displayName": "Bilim",
-      "title": "Bilimsel Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Doğa, biyoloji, uzay, hava durumu ve eğitim bilgisi hikaye anlatımı için bilim odaklı AI görselleri, şablonlar ve ilham keşfedin."
-    },
-    "culture": {
-      "displayName": "Kültür",
-      "title": "Kültürel Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Gelenekler, miras, tarihi eserler ve kültürlerarası hikaye anlatımı için kültür temalı AI görselleri, şablonlar ve ilham tarayın."
-    },
-    "mbti": {
-      "displayName": "MBTI & Kişilik",
-      "title": "MBTI ve Kişilik Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Kişilik türleri, karşılaştırmalar ve hayran odaklı hikaye anlatımı için MBTI kişilik görselleri, karakter tabanlı şablonlar ve ilham keşfedin."
-    },
-    "architecture": {
-      "displayName": "Mimarlık",
-      "title": "Mimari Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Binalar, şehir manzaraları, yapısal tasarım ve mekanların görsel hikaye anlatımı için mimarlık odaklı AI görselleri, simge şablonlar ve ilham keşfedin."
-    },
-    "food": {
-      "displayName": "Yemek",
-      "title": "Yemek Görsel İpuçları, Tarifler ve Mutfak İlhamı",
-      "description": "Pişirme, malzemeler ve görsel olarak etkileyici yemek hikaye anlatımı için yemek odaklı AI görselleri, tarif şablonları ve mutfak ilhamı keşfedin."
-    },
-    "fitness": {
-      "displayName": "Fitness",
-      "title": "Fitness Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Sağlık, egzersiz rutinleri ve aktif yaşam tarzı içeriği için fitness odaklı AI görselleri, antrenman şablonları ve ilham keşfedin."
-    },
-    "sports": {
-      "displayName": "Spor",
-      "title": "Spor Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Müsabakalar, takımlar, performans hikaye anlatımı ve hayran odaklı içerik için spor temalı AI görselleri, sporcu şablonları ve ilham tarayın."
-    },
-    "weather": {
-      "displayName": "Hava Durumu",
-      "title": "Hava Durumu Görsel Şablonları | Curify AI",
-      "description": "Hava durumu hakkında AI görsel şablonları — şimşek, gökkuşağı, kar, fırtına ve atmosfer bilimi."
-    },
-    "interior": {
-      "displayName": "Ev Dekorasyonu",
-      "title": "Ev Dekorasyonu & İç Mekan Tasarımı Görsel İpuçları, Şablonlar ve İlham",
-      "description": "Oda fikirleri, estetik alanlar, mobilya stilizasyonu ve modern yaşam için ev dekorasyonu ve iç mekan tasarımı yapay zeka görselleri, şablonlar ve ilham keşfedin."
-    },
-    "english-chinese": {
-      "displayName": "İngilizce-Çince",
-      "title": "İngilizce-Çince Görsel Öğrenme Şablonları",
-      "description": "İngilizce-Çince iki dilli öğrenme için AI şablonları."
-    },
-    "english-spanish": {
-      "displayName": "İngilizce-İspanyolca",
-      "title": "İngilizce-İspanyolca Görsel Öğrenme Şablonları",
-      "description": "İngilizce-İspanyolca iki dilli öğrenenler için AI şablonları."
-    },
-    "english-japanese": {
-      "displayName": "İngilizce-Japonca",
-      "title": "İngilizce-Japonca Görsel Öğrenme Şablonları",
-      "description": "İngilizce-Japonca iki dilli eğitim için AI şablonları."
-    },
-    "english-korean": {
-      "displayName": "İngilizce-Korece",
-      "title": "İngilizce-Korece Görsel Öğrenme Şablonları",
-      "description": "İngilizce-Korece dil öğrenimi için AI şablonları."
-    },
-    "english": {
-      "displayName": "İngilizce",
-      "title": "İngilizce Dil Öğrenme Şablonları",
-      "description": "İngilizce öğrenimi ve kelime bilgisi için AI şablonları."
-    },
-    "japan": {
-      "displayName": "Japonya",
-      "title": "Japonya Görsel Şablonları",
-      "description": "Japonya'dan ilham alan yapay zeka görsel şablonlarını keşfedin — Tokyo'dan Osaka'ya seyahat, mutfak, moda ve kültür."
-    },
-    "korea": {
-      "displayName": "Kore",
-      "title": "Kore Görsel Şablonları",
-      "description": "Kore'den ilham alan yapay zeka görsel şablonlarını keşfedin — Seul'den Busan'a seyahat, mutfak, hanbok modası ve kültür."
-    },
-    "thailand": {
-      "displayName": "Tayland",
-      "title": "Tayland Görsel Şablonları",
-      "description": "Tayland'dan ilham alan yapay zeka görsel şablonlarını keşfedin — Bangkok'tan Phuket'e seyahat, mutfak, ipek moda ve kültür."
-    },
-    "india": {
-      "displayName": "Hindistan",
-      "title": "Hindistan Görsel Şablonları",
-      "description": "Hindistan'dan ilham alan yapay zeka görsel şablonlarını keşfedin — Mumbai'den Jaipur'a seyahat, mutfak, sari moda ve kültür."
-    },
-    "mexico": {
-      "displayName": "Meksika",
-      "title": "Meksika Görsel Şablonları",
-      "description": "Meksika'dan ilham alan yapay zeka görsel şablonlarını keşfedin — Meksika City'den Oaxaca'ya seyahat, mutfak, geleneksel kıyafetler ve kültür."
-    },
-    "france": {
-      "displayName": "Fransa",
-      "title": "Fransa Görsel Şablonları",
-      "description": "Fransa'dan ilham alan yapay zeka görsel şablonlarını keşfedin — Paris'ten Fransız kırsalına mutfak, moda tarihi ve kültür."
-    },
-    "uk": {
-      "displayName": "Birleşik Krallık",
-      "title": "Birleşik Krallık Görsel Şablonlar & Promptlar",
-      "description": "Birleşik Krallık'tan ilham alan AI görsel şablonları keşfedin — Londra'dan İngiliz kırsalına seyahat, mutfak, moda tarihi ve kültür."
-    },
-    "brazil": {
-      "displayName": "Brezilya",
-      "title": "Brezilya Görsel Şablonlar & Promptlar",
-      "description": "Brezilya'dan ilham alan AI görsel şablonları keşfedin — Rio de Janeiro'dan São Paulo'ya mutfak, canlı kültür ve yaşam tarzı."
-    },
-    "vietnam": {
-      "displayName": "Vietnam",
-      "title": "Vietnam Görsel Şablonlar & Promptlar",
-      "description": "Vietnam'dan ilham alan AI görsel şablonları keşfedin — Hanoi'den Ho Chi Minh Şehri'ne mutfak, seyahat ve kültür."
-    },
-    "singapore": {
-      "displayName": "Singapur",
-      "title": "Singapur Görsel Şablonlar & Promptlar",
-      "description": "Singapur'dan ilham alan AI görsel şablonları keşfedin — Aslan Şehri'nin seyahat, mutfak ve kültürü."
-    },
-    "egypt": {
-      "displayName": "Mısır",
-      "title": "Mısır Görsel Şablonlar & Promptlar",
-      "description": "Mısır'dan ilham alan AI görsel şablonları keşfedin — Kahire'den Nil'e antik tarih, seyahat, moda ve kültür."
-    },
-    "nostalgia": {
-      "displayName": "Nostalji",
-      "title": "Nostalji Görsel Şablonları",
-      "description": "Nostalji temalı yapay zeka görsel şablonlarını keşfedin — retro cihazlar, çocukluk oyuncakları, ikonik ilk deneyimler ve bir nesli tanımlayan nesneler."
-    },
-    "finance": {
-      "displayName": "Finans",
-      "title": "Finans Görsel Şablonları ve İlham | Nano Banana",
-      "description": "Finansal alışkanlıklar, para yönetimi, yatırım kavramları ve kişisel finans eğitimi konularında yapay zeka görsel şablonlarını keşfedin."
-    },
-    "comparison": {
-      "displayName": "Karşılaştırma",
-      "title": "Karakter Karşılaştırma Görsel Şablonları | Curify AI",
-      "description": "Karakter karşılaştırmaları, kişilik zıtlıkları ve versus infografikleri için AI şablonlarını keşfedin."
-    },
-    "groups": {
-      "displayName": "Gruplar",
-      "title": "Grup Karakter Görsel Şablonları | Curify AI",
-      "description": "Topluluk kadroları, grup portreleri ve kişilik dağılımları için AI şablonlarını keşfedin."
-    },
-    "city": {
-      "displayName": "Şehir",
-      "title": "Şehir Görsel Şablonları | Curify AI",
-      "description": "Şehirler, kentsel manzaralar, minyatür şehir sanatı ve seyahat destinasyonları için AI şablonlarını keşfedin."
-    },
-    "vocabulary": {
-      "displayName": "Kelime Dağarcığı",
-      "title": "Kelime Öğrenme Görsel Şablonları | Curify AI",
-      "description": "Kelime kartları, iki dilli kelime posterleri ve dil öğrenme için AI şablonlarını keşfedin."
-    },
-    "dialogue": {
-      "displayName": "Diyalog",
-      "title": "Diyalog Sahnesi Görsel Şablonları | Curify AI",
-      "description": "İki dilli diyalog sahneleri ve konuşma pratiği kartları için AI şablonlarını keşfedin."
-    },
-    "expressions": {
-      "displayName": "İfadeler",
-      "title": "İngilizce İfadeler & Deyimler Görsel Şablonları | Curify AI",
-      "description": "Anadili İngilizce ifadeler, deyimsel cümleler ve günlük dil posterleri için AI şablonlarını keşfedin."
-    },
-    "language-english": {
-      "displayName": "İngilizce",
-      "title": "İngilizce Öğrenme Görsel Şablonları | Curify AI",
-      "description": "İngilizce öğrenenler için AI şablonlarını keşfedin — ifadeler, kelime grupları ve çubuk figür posterleri."
-    },
-    "spain": {
-      "displayName": "İspanya",
-      "title": "İspanya Seyahat Görsel Şablonları | Curify AI",
-      "description": "İspanya'dan ilham alan AI şablonlarını keşfedin — seyahat rehberleri, kültürel posterler ve destinasyon içerikleri."
-    },
-    "fashion": {
-      "displayName": "Moda",
-      "title": "Moda Görsel Şablonları ve İlham",
-      "description": "Kıyafet stillemesi, önce/sonra görünümler, e-ticaret kartları ve trend içerik için AI moda şablonlarını keşfedin."
-    },
-    "anime": {
-      "displayName": "Anime",
-      "title": "Anime Görsel Şablonlar ve İstemler — Nano Banana",
-      "description": "Naruto, Ghibli, Dedektif Conan ve daha fazlasıyla anime temalı yapay zeka görsel şablonlarını keşfedin."
-    },
-    "australia": {
-      "displayName": "Avustralya",
-      "title": "Avustralya AI Şablonları — Nano Banana",
-      "description": "Avustralya temalı AI görsel şablonlarını keşfedin."
-    },
-    "italy": {
-      "displayName": "İtalya",
-      "title": "İtalya AI Şablonları — Nano Banana",
-      "description": "İtalya temalı AI görsel şablonlarını keşfedin."
-    },
-    "middle-east": {
-      "displayName": "Orta Doğu",
-      "title": "Orta Doğu AI Şablonları — Nano Banana",
-      "description": "Orta Doğu temalı AI görsel şablonlarını keşfedin."
-    },
-    "cartoon": {
-      "displayName": "Çizgi Film",
-      "title": "Amerikan Çizgi Film Stili Görsel Şablonlar | Curify AI",
-      "description": "Batı animasyonundan ilham alan kalın çizgiler, düz renkler ve etkileyici karakter tasarımıyla Amerikan çizgi film stili AI görsel şablonlarını keşfedin."
-    },
-    "kawaii": {
-      "displayName": "Kawaii",
-      "title": "Kawaii Stili AI Görsel Şablonları",
-      "description": "Sevimli karakterler, pastel estetik ve şirin sahneler içeren kawaii AI görsel şablonlarını keşfedin."
-    },
-    "ink": {
-      "displayName": "Mürekkep Stili",
-      "title": "Mürekkep Stili AI Görsel Şablonları",
-      "description": "Geleneksel Çin resim tekniklerinden ilham alan mürekkep AI görsel şablonlarını keşfedin."
-    },
-    "isometric": {
-      "displayName": "İzometrik",
-      "title": "İzometrik AI Görsel Şablonları",
-      "description": "Mimari diyagramlar, şehir düzenleri ve yapılandırılmış infografikler için izometrik AI şablonlarını keşfedin."
-    },
-    "photorealistic": {
-      "displayName": "Fotorealistik",
-      "title": "Fotorealistik AI Görsel Şablonları",
-      "description": "İç tasarım, yemek, seyahat ve ürünler için fotorealistik AI görsel şablonlarını keşfedin."
-    },
-    "reading": {
-      "displayName": "Okuma",
-      "title": "Okuma ve Kitap için AI Şablonları ve Promptları",
-      "description": "Kitap tavsiyeleri, ünlü figür ilkeleri ve eğitici infografikler için AI şablonlarını keşfedin."
-    },
-    "guides": {
-      "displayName": "DIY & Rehberler",
-      "title": "Nasıl Yapılır Rehberleri ve Görsel Şablonlar | Curify AI",
-      "description": "Fitness, güzellik, yemek ve yaşam tarzı konularında AI destekli rehberler ve adım adım görsel şablonlar keşfedin."
-    },
-    "portrait": {
-      "displayName": "Portre",
-      "title": "Portre Görsel Şablonları ve AI Promptları | Curify AI",
-      "description": "Karakter portreleri, profil kartları, MBTI kimlik kartları ve stilize kişisel portreler için AI görsel şablonlarını keşfedin."
-    },
-    "monochrome": {
-      "displayName": "Monokrom",
-      "title": "Monokrom AI Görsel Şablonları ve Promptları",
-      "description": "Mürekkep illüstrasyonlarından yüksek kontrastlı portrelere ve minimalist infografiklere kadar siyah-beyaz ve tek tonlu AI görsel şablonlarını keşfedin."
-    },
-    "watercolor": {
-      "displayName": "Suluboya",
-      "title": "Suluboya AI Görsel Şablonları",
-      "description": "Yumuşak, aydınlık suluboya AI şablonlarını keşfedin — adım adım resim eğitimlerinden doğa çizimlerine ve sanatsal portrelere kadar."
-    },
-    "animal": {
-      "displayName": "Hayvanlar",
-      "title": "Hayvan Görsel Şablonları ve AI İpuçları",
-      "description": "Yaban hayatı, evcil hayvanlar, köpek ırkları ve türler bilimi için AI görsel şablonlarını keşfedin."
-    },
-    "itinerary": {
-      "displayName": "Güzergah & Planlama",
-      "title": "Seyahat Güzergahı ve Planlama Görsel Şablonları",
-      "description": "Seyahat güzergahı planlama, günlük programlar, destinasyon haritaları ve seyahat rehberi oluşturma için AI şablonlarını keşfedin."
-    },
-    "china": {
-      "displayName": "Çin",
-      "title": "Çin Görsel Şablonları",
-      "description": "Çin temalı yapay zeka görsel şablonları — seyahat haritaları, kültürel posterler, tarih ve turistik yerler."
-    },
-    "germany": {
-      "displayName": "Almanya",
-      "title": "Almanya Görsel Şablonları",
-      "description": "Almanya temalı yapay zeka görsel şablonları — seyahat haritaları, kültürel posterler, tarih ve turistik yerler."
-    },
-    "greece": {
-      "displayName": "Yunanistan",
-      "title": "Yunanistan Görsel Şablonları",
-      "description": "Yunanistan temalı yapay zeka görsel şablonları — antik tarih, seyahat haritaları, mitoloji ve turistik yerler."
-    },
-    "russia": {
-      "displayName": "Rusya",
-      "title": "Rusya Görsel Şablonları",
-      "description": "Rusya temalı yapay zeka görsel şablonları — seyahat haritaları, kültürel posterler, tarih ve turistik yerler."
-    },
-    "united-states": {
-      "displayName": "Amerika Birleşik Devletleri",
-      "title": "ABD Görsel Şablonları",
-      "description": "ABD temalı yapay zeka görsel şablonları — seyahat haritaları, kültürel posterler, tarih ve turistik yerler."
-    },
-    "beauty": {
-      "displayName": "Güzellik & Bakım",
-      "title": "Güzellik & Bakım Görsel Şablonları ve İlham",
-      "description": "Makyaj eğitimleri, cilt bakım rutinleri ve güzellik içerikleri için AI görsel şablonlarını keşfedin."
-    },
-    "posters": {
-      "displayName": "Afişler & El İlanları",
-      "title": "Afişler & El İlanları Görsel Şablonları ve İlham",
-      "description": "AI ile oluşturulmuş etkileyici afiş ve el ilanları tasarlayın — film afişleri, etkinlik duyuruları, alıntı posterleri ve tanıtım tasarımları."
-    },
-    "digital-canvas": {
-      "displayName": "Dijital Tuval",
-      "title": "Dijital Tuval & Duvar Kağıtları Görsel Şablonları ve İlham",
-      "description": "AI ile dijital duvar kağıtları, sosyal medya banner'ları, telefon arka planları ve masaüstü arka planları tasarlayın."
-    },
-    "mockups": {
-      "displayName": "Taslaklar & UI",
-      "title": "Taslaklar & UI Görsel Şablonları ve İlham",
-      "description": "AI ile profesyonel taslaklar ve UI konseptleri oluşturun — telefon taslakları, web sitesi şemaları, uygulama ekranları ve ürün sunumları."
-    },
-    "iran": {
-      "displayName": "İran",
-      "title": "İran Görsel Şablonları ve İlham",
-      "description": "İran odaklı AI görsellerini keşfedin — Fars kültürü, tarihi yerler, tarih, geleneksel kostümler ve seyahat içerikleri."
-    },
-    "portugal": {
-      "displayName": "Portekiz",
-      "title": "Portekiz Seyahat Görsel Şablonları | Curify AI",
-      "description": "Portekiz'den ilham alan AI görsel şablonlarını keşfedin — seyahat haritaları, Pastel de Nata, Lizbon simgeleri ve Cristiano Ronaldo."
-    },
-    "animals": {
-      "displayName": "Hayvanlar",
-      "title": "Hayvan Görsel Şablonları | Curify AI",
-      "description": "Hayvan temalı AI görsel şablonlarını keşfedin — yaban hayatı çizimleri, evcil hayvan portreleri ve eğitim kartları."
-    },
-    "biology": {
-      "displayName": "Biyoloji",
-      "title": "Biyoloji Görsel Şablonları | Curify AI",
-      "description": "Biyoloji için AI görsel şablonları — hücre diyagramları, insan anatomisi, ekosistemler ve eğitim kartları."
-    },
-    "space": {
-      "displayName": "Uzay",
-      "title": "Uzay & Astronomi Görsel Şablonları | Curify AI",
-      "description": "Uzay hakkında AI görsel şablonları — gezegenler, galaksiler, güneş sistemleri ve astronomik olaylar."
+  "topicPage": {
+    "exampleImagesHeading": "Örnek Görseller",
+    "templatesHeading": "Şablonlar",
+    "subTopicsHeading": "Kategoriye göre gözat",
+    "exploreMoreHeading": "Daha fazla keşfet"
+  },
+  "videoTranscriptGenerator": {
+    "metadata": {
+      "title": "AI Video Transkript Üretici | Curify AI",
+      "description": "Herhangi bir videodan dakikalar içinde doğru transkriptler oluşturun. Curify'nin AI transkript aracı 170'ten fazla dili destekler ve SRT ve TXT formatlarına aktarır."
+    },
+    "title": "AI Video Transkript Üretici",
+    "description": "Bir video yükleyin veya bir YouTube bağlantısı yapıştırın ve saniyeler içinde tam, doğru bir transkript alın. SRT veya düz metin olarak dışa aktarın — altyazılar, yeniden kullanım veya arama dizinleme için hazır.",
+    "example": "Örnek: 10 dakikalık bir dersin konuşmacıya uygun metin ve zaman damgaları ile transkripti.",
+    "cta": "Transkripti Oluştur",
+    "why": {
+      "title": "Video Transkripsiyonu İçin Neden Curify Kullanmalısınız?",
+      "point1": "Gelişmiş konuşma tanıma modelleri ile desteklenen yüksek doğrulukta transkripsiyon.",
+      "point2": "Otomatik dil tespiti ile 170'ten fazla dili destekler.",
+      "point3": "Tam transkriptleri SRT (zaman damgaları ile) veya düz TXT olarak dışa aktarın.",
+      "point4": "Yüklenen videolar ve YouTube bağlantıları ile çalışır — ek yazılım gerekmez."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Transkript üretici hangi video formatlarını destekliyor?",
+      "a1": "Curify, MP4, MOV ve AVI dahil olmak üzere tüm yaygın video formatlarını ve doğrudan YouTube URL'lerini destekler. Sadece yükleyin veya yapıştırın ve transkripsiyon otomatik olarak başlar.",
+      "q2": "Transkript oluşturulduktan sonra düzenleyebilir miyim?",
+      "a2": "Evet. Oluşturduktan sonra transkripti gözden geçirebilir ve indirebilirsiniz. SRT dosyaları, video editörleri veya altyazı araçları için kullanılmak üzere zaman damgalarını içerir."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Transkripti Nedir?",
+        "p1": "Bir video transkripti, bir videoda konuşulan her şeyin — konuşmacı diyalogları, anlatım ve önemli ses ipuçları dahil — metin versiyonudur. Transkriptler, altyazılar, aranabilir içerik, yeniden kullanılan makaleler ve erişilebilirlik uyumu için temeldir.",
+        "p2": "AI transkript üreticileri, birçok dilde milyonlarca saatlik ses üzerinde eğitilmiş konuşma tanıma modellerini kullanarak bu süreci otomatikleştirir. Çıktı, zamanla hizalanmış bir metin belgesidir — manuel transkripsiyondan çok daha hızlı ve ölçeklenebilir.",
+        "p3": "Curify'nin transkript aracı hız ve doğruluk için tasarlanmıştır: bir kez yükleyin, temiz, düzenlenebilir bir transkripti dışa aktarmaya veya içerik iş akışınızda kullanmaya hazır hale getirin."
+      },
+      "how": {
+        "title": "Curify Doğru Transkriptleri Nasıl Oluşturur",
+        "p1": "Curify'nin transkript hattı, arka plan gürültüsü, birden fazla konuşmacı ve aksanlı konuşma dahil olmak üzere gerçek dünya video sesine göre ayarlanmış üretim kalitesinde konuşma tanıma üzerine kuruludur.",
+        "p2": "Adım 1: Ses, videonuzdan çıkarılır ve ses seviyelerini normalleştirmek ve arka plan müdahalesini azaltmak için ön işleme tabi tutulur.",
+        "p3": "Adım 2: Konuşma tanıma modelimiz, sesi konuşmacı dönüşlerine böler ve her segmenti yüksek doğrulukla metne dönüştürür.",
+        "p4": "Adım 3: Son işlem, noktalama işaretleri ekler, özel isimleri büyük harfle başlatır ve her cümleyi orijinal videodaki zaman damgası ile hizalar.",
+        "p5": "Adım 4: Temiz bir transkript dosyası alırsınız — zaman damgalı altyazılar için SRT veya belgelerde, makalelerde veya arama dizinlemede kullanılmak üzere TXT."
+      },
+      "usecases": {
+        "title": "Video Transkripsiyonunu Kim Kullanır?",
+        "creatorsTitle": "İçerik Üreticileri İçin",
+        "creatorsBody": "Üreticiler, videoları blog yazılarına, sosyal medya paylaşımlarına, bültenlere ve senaryolara dönüştürmek için transkriptleri kullanır. Tek bir uzun video, transkribe edildikten sonra bir haftalık içerik sağlayabilir.",
+        "educationTitle": "Eğitmenler ve Eğitmenler İçin",
+        "educationBody": "Transkriptler, dersleri, web seminerlerini ve eğitim oturumlarını erişilebilir ve aranabilir hale getirir. Öğrenciler, materyali metin formatında gözden geçirebilir ve tam videoyu yeniden izlemeye gerek kalmadan önemli anları bulabilir.",
+        "businessTitle": "İşletmeler ve Medya Ekipleri İçin",
+        "businessBody": "Hukuk, uyum ve medya ekipleri, toplantı kayıtlarını, röportaj görüntülerini ve müşteri çağrılarını arşivlemek için transkriptleri kullanır. Aranabilir transkriptler, manuel inceleme süresinden saatler kazandırır."
+      }
+    }
+  },
+  "videoSummarizer": {
+    "metadata": {
+      "title": "AI Video Özeti | Curify AI",
+      "description": "Herhangi bir videonun anlık AI tarafından oluşturulmuş özetini alın. Curify, ana noktaları çıkarır ve size saatlerce izleme süresinden tasarruf ettirir."
+    },
+    "title": "AI Video Özeti",
+    "description": "Bir video yükleyin veya bir YouTube bağlantısı yapıştırın ve ana noktaların kısa, yapılandırılmış bir özetini - saniyeler içinde - alın. Toplantılar, dersler, röportajlar ve uzun içerikler için mükemmel.",
+    "example": "Örnek: 45 dakikalık bir podcast bölümü 5 ana noktaya özetlenmiştir.",
+    "cta": "Videoyu Özelle",
+    "why": {
+      "title": "Videoları Özellemek İçin Neden Curify Kullanmalısınız?",
+      "point1": "Ana noktaları yakalayan AI tarafından oluşturulmuş özetler, sadece bir transkript değil.",
+      "point2": "Yüklenen videolar ve YouTube bağlantıları ile çalışır.",
+      "point3": "Özeti paylaşmaya hazır düz metin belgesi olarak dışa aktarın.",
+      "point4": "Otomatik kaynak dil tespiti ile 170'den fazla dili destekler."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Özelleştirme ne kadar sürer?",
+      "a1": "Çoğu video, uzunluğuna bağlı olarak birkaç dakika içinde özetlenir. Curify videonuzu işlerken bir ilerleme göstergesi göreceksiniz.",
+      "q2": "Özetler ne kadar doğru?",
+      "a2": "Curify, gerçek konuşulan içeriğe dayanarak özetler, meta veriler veya açıklamalar değil. Doğruluk, ses netliğine bağlıdır. Özeti bir TXT dosyası olarak indirebilir ve gerektiğinde düzenleyebilirsiniz."
+    },
+    "deep": {
+      "what": {
+        "title": "AI Video Özeti Nedir?",
+        "p1": "AI video özeti, bir videodan ana fikirleri, argümanları veya çıkarımları kısa, okunabilir bir formata sıkıştırır - tam içeriği izlemenizi gerektirmeden. Bu, konuşulan seslerden üretilir, video başlıkları veya açıklamalardan değil.",
+        "p2": "Bir transkriptten (kelime kelime kayıt) farklı olarak, bir özet en önemli noktaları belirler, gereksiz kısımları filtreler ve bunları yapılandırılmış, taranabilir bir formatta sunar. Bu, ana noktaların saatlerce içerik arasında yayıldığı uzun kayıtlar için özellikle faydalıdır.",
+        "p3": "Curify, özetleri doğrudan konuşmadan üretir, böylece bunlar, söylenenleri yansıtmayabilecek meta verilere dayanmak yerine gerçek içeriğe doğru olur."
+      },
+      "how": {
+        "title": "Curify Videoları Nasıl Özelleştirir",
+        "p1": "Curify'nin özetleme süreci önce tam konuşulan sesi transkribe eder, ardından en önemli içeriği çıkarmak ve yapılandırmak için dil modelleri uygular.",
+        "p2": "Adım 1: Tam transkripsiyon, videoda konuşulan her şeyi, konuşmacı dönüşlerini ve segment zamanlamasını yakalar.",
+        "p3": "Adım 2: Transkript, ana temaları, argümanları ve sonuçları belirleyen bir özetleme modeline geçirilir.",
+        "p4": "Adım 3: Çıktı, ana noktalar, ilgili yerlerde bölüm başlıkları ve özlü bir sonuç ile okunabilir bir özet haline getirilir.",
+        "p5": "Adım 4: Özet, dağıtım, not alma veya sonraki içerik üretimi için hazır bir düz metin dosyası olarak dışa aktarılır."
+      },
+      "usecases": {
+        "title": "AI Video Özeti Kimler Kullanır?",
+        "creatorsTitle": "Araştırmacılar ve Öğrenciler İçin",
+        "creatorsBody": "Araştırmacılar, bir dersin, röportajın veya konferans konuşmasının ilgili materyal içerip içermediğini hızlıca değerlendirmek için özetleri kullanır.",
+        "educationTitle": "Profesyoneller ve Takımlar İçin",
+        "educationBody": "Toplantı kayıtları, satış görüşmeleri ve web semineri tekrarları uzundur. AI özetleri, ekip üyelerinin tam kaydı izlemeye gerek kalmadan önemli kararları ve eylem maddelerini takip etmelerini sağlar.",
+        "businessTitle": "İçerik Üreticileri İçin",
+        "businessBody": "Video özetleri, bültenler, makaleler, program notları ve sosyal medya paylaşımları için anında kaynak materyal sağlar — bir uzun videoyu yayınlamaya hazır bir metin varlığına dönüştürür."
+      }
+    }
+  },
+  "speechTranslator": {
+    "metadata": {
+      "title": "AI Konuşma Çevirmeni — Sesli İçeriği Herhangi Bir Dile Çevir | Curify AI",
+      "description": "Konuşulan sesi 170'ten fazla dile doğal bir AI sesiyle çevirin. Curify'nin konuşma çevirmeni, çevrilmiş ses parçasıyla dublajlı bir video üretir."
+    },
+    "title": "AI Konuşma Çevirmeni",
+    "description": "Bir video veya ses dosyası yükleyin ve konuşulan içeriği doğal bir AI sesiyle başka bir dile çevirin. Yayınlamaya hazır tamamen dublajlı bir video alın — kayıt stüdyosuna gerek yok.",
+    "example": "Örnek: İngilizce kaydedilmiş bir ürün tanıtımı, İspanyolca ve Japonca'ya çevrilip dublajlanmıştır.",
+    "cta": "Konuşmayı Çevir",
+    "why": {
+      "title": "Neden Curify'yi Konuşma Çevirisi İçin Kullanmalısınız?",
+      "point1": "Konuşulan sesi 170'ten fazla dile doğal AI ses sentezi ile çevirir.",
+      "point2": "Tamamen dublajlı bir video üretir — sadece altyazılar değil — çevrilmiş ses parçasıyla.",
+      "point3": "Hedef dilde konuşmacının tonu, temposu ve duygusal ifadesini korur.",
+      "point4": "Yüklenen videolar ve YouTube bağlantıları ile çalışır."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Konuşma çevirisi ile video dublajı arasındaki fark nedir?",
+      "a1": "Konuşma çevirisi, bir videonun ses parçasını çevirmeye odaklanır ve bunu hedef dilde doğal bir AI sesi ile değiştirir. Video dublajı ayrıca dudak senkronizasyonu ayarlamayı da içerebilir. Curify'nin konuşma çevirmeni, çevrilmiş ses parçasıyla dublajlı bir video üretir.",
+      "q2": "Hangi diller destekleniyor?",
+      "a2": "Curify, İngilizce, İspanyolca, Fransızca, Almanca, Çince, Japonca, Korece, Arapça, Hintçe ve daha birçok dili içeren 170'ten fazla dili destekler. Dil tespiti otomatik olarak yapılır."
     },
     "personality": {
       "displayName": "Kişilik",
@@ -873,152 +599,5 @@
     "templatesHeading": "Şablonlar",
     "subTopicsHeading": "Kategoriye göre gözat",
     "exploreMoreHeading": "Daha fazla keşfet"
-  },
-  "videoTranscriptGenerator": {
-    "metadata": {
-      "title": "AI Video Transkript Üretici | Curify AI",
-      "description": "Herhangi bir videodan dakikalar içinde doğru transkriptler oluşturun. Curify'nin AI transkript aracı 170'den fazla dili destekler ve SRT ve TXT formatlarına aktarır."
-    },
-    "title": "AI Video Transkript Üretici",
-    "description": "Bir video yükleyin veya bir YouTube bağlantısı yapıştırın ve saniyeler içinde tam, doğru bir transkript alın. SRT veya düz metin olarak dışa aktarın — altyazılar, yeniden kullanım veya arama dizinleme için hazır.",
-    "example": "Örnek: 10 dakikalık bir ders, konuşmacıya uygun metin ve zaman damgaları ile transkribe edilmiştir.",
-    "cta": "Transkripti Oluştur",
-    "why": {
-      "title": "Video Transkripsiyonu İçin Neden Curify Kullanmalısınız?",
-      "point1": "Gelişmiş konuşma tanıma modelleri ile desteklenen yüksek doğrulukta transkripsiyon.",
-      "point2": "Otomatik dil tespiti ile 170'den fazla dili destekler.",
-      "point3": "Tam transkriptleri SRT (zaman damgaları ile) veya düz TXT olarak dışa aktarın.",
-      "point4": "Yüklenen videolar ve YouTube bağlantıları ile çalışır — ek yazılım gerekmez."
-    },
-    "faq": {
-      "title": "Sıkça Sorulan Sorular",
-      "q1": "Transkript üretici hangi video formatlarını destekliyor?",
-      "a1": "Curify, MP4, MOV ve AVI dahil olmak üzere tüm yaygın video formatlarını ve doğrudan YouTube URL'lerini destekler. Sadece yükleyin veya yapıştırın ve transkripsiyon otomatik olarak başlar.",
-      "q2": "Transkript oluşturulduktan sonra düzenleyebilir miyim?",
-      "a2": "Evet. Oluşturduktan sonra transkripti gözden geçirebilir ve indirebilirsiniz. SRT dosyaları, video editörleri veya altyazı araçları için kullanılmak üzere zaman damgaları içerir."
-    },
-    "deep": {
-      "what": {
-        "title": "AI Video Transkripti Nedir?",
-        "p1": "Bir video transkripti, bir videoda konuşulan her şeyin metin versiyonudur — konuşmacı diyalogları, anlatım ve önemli ses ipuçları dahil. Transkriptler, altyazılar, aranabilir içerik, yeniden kullanılabilir makaleler ve erişilebilirlik uyumu için temeldir.",
-        "p2": "AI transkript üreticileri, birçok dilde milyonlarca saatlik ses üzerinde eğitilmiş konuşma tanıma modellerini kullanarak bu süreci otomatikleştirir. Çıktı, zamanla hizalanmış bir metin belgesidir — manuel transkripsiyondan çok daha hızlı ve ölçeklenebilir.",
-        "p3": "Curify'nin transkript aracı hız ve doğruluk için tasarlanmıştır: bir kez yükleyin, temiz, düzenlenebilir bir transkripti dışa aktarmaya veya içerik iş akışınızda kullanmaya hazır hale getirin."
-      },
-      "how": {
-        "title": "Curify Doğru Transkriptleri Nasıl Üretiyor",
-        "p1": "Curify'nin transkript hattı, arka plan gürültüsü, birden fazla konuşmacı ve aksanlı konuşma dahil olmak üzere gerçek dünya video sesine göre ayarlanmış son işlem ile üretim kalitesinde konuşma tanıma üzerine inşa edilmiştir.",
-        "p2": "Adım 1: Ses, videonuzdan çıkarılır ve ses seviyelerini normalize etmek ve arka plan parazitini azaltmak için ön işleme tabi tutulur.",
-        "p3": "Adım 2: Konuşma tanıma modelimiz, sesi konuşmacı dönüşlerine böler ve her segmenti yüksek doğrulukla metne dönüştürür.",
-        "p4": "Adım 3: Son işlem, noktalama işaretleri ekler, özel isimleri büyük harfle başlatır ve her cümleyi orijinal videodaki zaman damgası ile hizalar.",
-        "p5": "Adım 4: Temiz bir transkript dosyası alırsınız — zaman damgalı altyazılar için SRT veya belgelerde, makalelerde veya arama dizinlemede kullanılmak üzere TXT."
-      },
-      "usecases": {
-        "title": "Video Transkripsiyonunu Kim Kullanır?",
-        "creatorsTitle": "İçerik Üreticileri İçin",
-        "creatorsBody": "Üreticiler, transkriptleri video içeriğini blog yazılarına, sosyal altyazılara, bültenlere ve senaryolara dönüştürmek için kullanır. Tek bir uzun biçimli video, transkribe edildikten sonra bir haftalık içerik sağlayabilir.",
-        "educationTitle": "Eğitmenler ve Eğitmenler İçin",
-        "educationBody": "Transkriptler, dersleri, web seminerlerini ve eğitim oturumlarını erişilebilir ve aranabilir hale getirir. Öğrenciler, materyali metin biçiminde gözden geçirebilir ve tam videoyu yeniden izlemeye gerek kalmadan önemli anları bulabilir.",
-        "businessTitle": "İşletmeler ve Medya Ekipleri İçin",
-        "businessBody": "Hukuk, uyum ve medya ekipleri, toplantı kayıtlarını, röportaj görüntülerini ve müşteri çağrılarını arşivlemek için transkriptleri kullanır. Aranabilir transkriptler, manuel gözden geçirme süresinden saatler kazandırır."
-      }
-    }
-  },
-  "videoSummarizer": {
-    "metadata": {
-      "title": "AI Video Özeti | Curify AI",
-      "description": "Herhangi bir videonun anında AI tarafından üretilen özetini alın. Curify, ana noktaları çıkarır ve size saatlerce izleme süresinden tasarruf ettirir."
-    },
-    "title": "AI Video Özeti",
-    "description": "Bir video yükleyin veya bir YouTube bağlantısı yapıştırın ve ana noktaların kısa, yapılandırılmış bir özetini - saniyeler içinde - alın. Toplantılar, dersler, röportajlar ve uzun içerikler için mükemmel.",
-    "example": "Örnek: 45 dakikalık bir podcast bölümü 5 ana çıkarıma özetlendi.",
-    "cta": "Videoyu Özetle",
-    "why": {
-      "title": "Videoları Özetlemek İçin Neden Curify Kullanmalısınız?",
-      "point1": "Ana noktaları yakalayan AI tarafından üretilen özetler, sadece bir transkript değil.",
-      "point2": "Yüklenen videolar ve YouTube bağlantıları ile çalışır.",
-      "point3": "Özeti paylaşmaya hazır düz metin belgesi olarak dışa aktarın.",
-      "point4": "Otomatik kaynak dil tespiti ile 170'den fazla dili destekler."
-    },
-    "faq": {
-      "title": "Sıkça Sorulan Sorular",
-      "q1": "Özetleme ne kadar sürer?",
-      "a1": "Çoğu video, uzunluğuna bağlı olarak birkaç dakika içinde özetlenir. Curify videonuzu işlerken bir ilerleme göstergesi göreceksiniz.",
-      "q2": "Özetler ne kadar doğru?",
-      "a2": "Curify, gerçek konuşulan içeriğe dayanarak özetler, meta veriler veya tanımlamalar değil. Doğruluk, ses netliğine bağlıdır. Özeti bir TXT dosyası olarak indirebilir ve gerektiğinde düzenleyebilirsiniz."
-    },
-    "deep": {
-      "what": {
-        "title": "AI Video Özeti Nedir?",
-        "p1": "AI video özeti, bir videodaki ana fikirleri, argümanları veya çıkarımları kısa, okunabilir bir biçime yoğunlaştırır - tam içeriği izlemenizi gerektirmeden. Konuşulan seslerden üretilir, video başlıkları veya tanımlamalarından değil.",
-        "p2": "Bir transkriptten (kelime kelime kayıt) farklı olarak, bir özet en önemli noktaları belirler, gereksiz kısımları filtreler ve bunları yapılandırılmış, taranabilir bir formatta sunar. Bu, ana noktaların saatlerce içerik arasında yayıldığı uzun kayıtlar için özellikle faydalıdır.",
-        "p3": "Curify, özetleri doğrudan konuşmadan üreterek, bunları söylenenleri yansıtmayan meta verilere güvenmek yerine gerçek içeriğe doğru hale getirir."
-      },
-      "how": {
-        "title": "Curify Videoyu Nasıl Özetler",
-        "p1": "Curify'nin özetleme süreci önce tam konuşulan sesi transkribe eder, ardından en önemli içeriği çıkarmak ve yapılandırmak için dil modelleri uygular.",
-        "p2": "Adım 1: Tam transkripsiyon, videoda söylenen her şeyi, konuşmacı dönüşlerini ve bölüm zamanlamasını yakalar.",
-        "p3": "Adım 2: Transkript, ana temaları, argümanları ve sonuçları belirleyen bir özetleme modeline geçirilir.",
-        "p4": "Adım 3: Çıktı, ana noktalar, ilgili bölüm başlıkları ve kısa bir sonuç ile okunabilir bir özet haline getirilir.",
-        "p5": "Adım 4: Özet, dağıtım, not alma veya sonraki içerik üretimi için hazır düz metin dosyası olarak dışa aktarılır."
-      },
-      "usecases": {
-        "title": "AI Video Özelleştirmesini Kim Kullanır?",
-        "creatorsTitle": "Araştırmacılar ve Öğrenciler için",
-        "creatorsBody": "Araştırmacılar, bir dersin, röportajın veya konferans konuşmasının ilgili materyal içerip içermediğini hızlıca değerlendirmek için özetleri kullanır.",
-        "educationTitle": "Profesyoneller ve Takımlar için",
-        "educationBody": "Toplantı kayıtları, satış görüşmeleri ve web semineri tekrarları uzundur. AI özetleri, ekip üyelerinin tam kaydı izlemeye gerek kalmadan önemli kararları ve eylem maddelerini takip etmelerini sağlar.",
-        "businessTitle": "İçerik Üreticileri için",
-        "businessBody": "Video özetleri, bültenler, makaleler, program notları ve sosyal medya paylaşımları için anında kaynak materyal sağlar - bir uzun videoyu yayımlanmaya hazır bir metin varlığına dönüştürür."
-      }
-    }
-  },
-  "speechTranslator": {
-    "metadata": {
-      "title": "AI Konuşma Çevirmeni — Sesleri Herhangi Bir Dile Çevirin | Curify AI",
-      "description": "Konuşulan sesi 170'den fazla dile doğal bir AI sesiyle çevirin. Curify'nin konuşma çevirmeni, çevrilmiş ses parçasıyla dublajlı bir video üretir."
-    },
-    "title": "AI Konuşma Çevirmeni",
-    "description": "Bir video veya ses dosyası yükleyin ve konuşulan içeriği doğal bir AI sesiyle başka bir dile çevirin. Tamamen dublajlı, yayımlamaya hazır bir video alın - kayıt stüdyosuna ihtiyaç yok.",
-    "example": "Örnek: İngilizce kaydedilmiş bir ürün demosu, İspanyolca ve Japonca'ya çevrilip dublaj yapılmış.",
-    "cta": "Konuşmayı Çevir",
-    "why": {
-      "title": "Neden Curify'yi Konuşma Çevirisi için Kullanmalısınız?",
-      "point1": "Konuşulan sesi 170'den fazla dile doğal AI ses sentezi ile çevirir.",
-      "point2": "Çevrilmiş ses parçasıyla tamamen dublajlı bir video üretir - sadece altyazılar değil.",
-      "point3": "Hedef dilde konuşmacının tonu, hızı ve duygusal ifadesini korur.",
-      "point4": "Yüklenen videolar ve YouTube bağlantıları ile çalışır."
-    },
-    "faq": {
-      "title": "Sıkça Sorulan Sorular",
-      "q1": "Konuşma çevirisi ile video dublajı arasındaki fark nedir?",
-      "a1": "Konuşma çevirisi, bir videonun ses parçasını çevirip hedef dilde doğal bir AI sesiyle değiştirmeye odaklanır. Video dublajı ayrıca dudak senkronizasyonunu da içerebilir. Curify'nin konuşma çevirmeni, çevrilmiş ses parçasıyla dublajlı bir video üretir.",
-      "q2": "Hangi diller destekleniyor?",
-      "a2": "Curify, İngilizce, İspanyolca, Fransızca, Almanca, Çince, Japonca, Korece, Arapça, Hintçe ve daha birçok dili içeren 170'den fazla dili destekler. Dil tespiti otomatik olarak yapılır."
-    },
-    "deep": {
-      "what": {
-        "title": "AI Konuşma Çevirisi Nedir?",
-        "p1": "AI konuşma çevirisi, bir kaynak dildeki konuşulan kelimeleri hedef dilde doğal konuşulan kelimelere dönüştürür - metin altyazıları göstermek yerine çevrilmiş dilde yeni bir ses parçası oluşturur.",
-        "p2": "Çıktı, orijinal videonun sesinin çevrilmiş, AI sentezli sesiyle değiştirildiği dublajlı bir videodur. Bu, video içeriğini uluslararası izleyicilere yerel olarak erişilebilir hale getirmenin en hızlı yoludur, kayıt stüdyosuna ihtiyaç duymadan.",
-        "p3": "Curify'nin konuşma çevirmeni, arka plan gürültüsü, birden fazla konuşmacı, teknik kelime dağarcığı ve doğal konuşma hızı gibi gerçek dünya video içeriğini işlemek için tasarlanmıştır ve 170'den fazla dili destekler."
-      },
-      "how": {
-        "title": "Curify Konuşmayı Nasıl Çevirir",
-        "p1": "Curify'nin konuşma çevirisi süreci, yüksek doğrulukta transkripsiyon, bağlama duyarlı çeviri ve doğal ses sentezini tek bir otomatik iş akışında birleştirir.",
-        "p2": "Adım 1: Konuşma, aksanları, alan kelime dağarcığını ve çoklu konuşmacı diyaloglarını işleyen üretim kalitesinde ses tanıma kullanılarak kaynak ses dosyasından transkribe edilir.",
-        "p3": "Adım 2: Transkript, anlamı, tonu ve niyeti koruyan bağlama duyarlı modeller kullanılarak çevrilir - sadece kelime değişimi değil.",
-        "p4": "Adım 3: Doğal bir AI sesi, mümkün olduğunca orijinal tempoya ve duygusal iletimi eşleştirerek, hedef dildeki çevrilmiş metni sentezler.",
-        "p5": "Adım 4: Sentezlenmiş ses kaydı, videodaki orijinal sesi değiştirir ve yayınlamaya hazır tamamen dublajlı bir video dosyası alırsınız."
-      },
-      "usecases": {
-        "title": "AI Ses Çevirisini Kim Kullanıyor?",
-        "creatorsTitle": "Küresel İçerik Üreticileri İçin",
-        "creatorsBody": "Üreticiler, içeriklerini yeniden kaydetmeden yeni dil pazarlarında kitlelere ulaşmak için ses çevirisini kullanır. Tek bir yükleme, farklı bölgesel kanallar için hazır çok dilli dublajlı versiyonlar üretir.",
-        "educationTitle": "Kurumsal Eğitim ve E-Öğrenme İçin",
-        "educationBody": "Eğitim departmanları, oryantasyon videolarını, güvenlik brifinglerini ve ürün eğitimlerini yerel dillere çevirir. Doğal bir ses kaydı, yalnızca altyazılara kıyasla bilgi tutma ve katılımı artırır.",
-        "businessTitle": "Uluslararası Pazarlama Ekipleri İçin",
-        "businessBody": "Pazarlama ekipleri, demo videolarını, müşteri referanslarını ve etkinlik kayıtlarını hedef pazar dillerine çevirir - bu da bölgeler arasında tutarlı mesajlaşmayı sağlar ve pazar başına üretim maliyetlerini ortadan kaldırır."
-      }
-    }
   }
 }

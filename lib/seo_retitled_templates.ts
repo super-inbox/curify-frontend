@@ -9,6 +9,12 @@
 
 export const SEO_RETITLED_LASTMOD = "2026-05-05T00:00:00.000Z";
 
+// Bump lastmod for the 260 allow_i18n example pages whose per-locale
+// SEO copy (title / description / metaDescription) shipped on 2026-05-07.
+// These pages also gained 8 new locale URL variants in the sitemap, so
+// signaling Google to re-fetch is worthwhile.
+export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-07T00:00:00.000Z";
+
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-gardening-how-to-infographic",
   "template-pet-care-guide",
@@ -33,4 +39,8 @@ export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-architecture",
   "template-recipe",
   "template-herbal",
+  "template-vintage-ultimate-guide-infographic",
+  "template-weird-science-facts-infographic",
+  "template-artist-biography-infographic",
+  "template-celebrity-filmography-infographic",
 ]);

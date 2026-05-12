@@ -2856,5 +2856,499 @@
     },
     "description": "Kelimelerin köken ülkeleriyle bağlantılarını, etimolojileri ve anlamlarıyla birlikte gösteren dünya haritası görsel rehberi. Kendi etimoloji haritası posterinizi oluşturmak için AI istemini kullanın.",
     "title": "Dünyada Kelime Kökenleri: Etimoloji Haritası Infografiği"
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Vintage Nihai Rehber İnfografiği",
+    "description": "Kahve, peynir, iç mekan bitkileri, biftek gibi herhangi bir konu için detaylı vintage tarzı görsel rehber — retro tipografi, el çizimi illüstrasyonlar ve zamansız düzenlerle. Kendi nihai rehber posterinizi oluşturmak için AI istemini kullanın.",
+    "title": "Vintage Nihai Rehber Posterleri: Herhangi Bir Konu için Retro Görsel İnfografikler",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 'THE ULTIMATE [topic] GUIDE' başlıklı detaylı bir vintage tarzı infografik oluşturur. Üstte cesur bir retro-serif başlık yer alır; gövde, etiketli alt başlıklarla yapılandırılmış bölümlere (Türler, Yöntemler, İpuçları, Gerçekler) ayrılmıştır; el çizimi vintage tarzı illüstrasyonlar, dönüşüm şeritleri, karşılaştırma grafikler ve eşleştirme sistemleri içerir. Sıcak bej dokulu kağıt, kahverengi ve krem tonlarında sepya/toprak paleti ile kapanış anahtar noktaları şeridi.",
+        "who": "Yiyecek blog yazarları, yaşam tarzı yaratıcıları, vintage estetik Pinterest hesapları, hobi içerik kanalları, mutfak ve ev markaları ve nostaljik 'nihai rehber' tarzı posterler yapan herkes için uygundur.",
+        "how": [
+          "Bir rehber konusu girin (örn. 'Kahve', 'Peynir', 'İç Mekan Bitkileri Bakımı', 'Şarap Tadımı').",
+          "Poster, retro-serif başlık ve yapılandırılmış Türler/Yöntemler/İpuçları/Gerçekler bölümlerini otomatik olarak düzenler.",
+          "Her bölüm, etiketler ve açıklamalarla el çizimi vintage illüstrasyonlar kullanır.",
+          "Dikey 4K vintage tarzı nihai rehber posteri oluşturun."
+        ],
+        "prompts": [
+          "'Nihai Kahve Rehberi' vintage infografiğini demleme yöntemleri ile oluşturun.",
+          "'Nihai Peynir Rehberi' retro tarzı posterini türler ve eşleşmeler ile oluşturun.",
+          "'Nihai İç Mekan Bitkileri Bakım Rehberi' vintage infografiğini oluşturun."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Garip Bilim Gerçekleri İnfografiği",
+    "description": "Herhangi bir tema üzerine garip bilim gerçeklerinin sevimli, renkli eğitimsel görsel rehberi — hayvanlar, bitkiler, uzay, hava durumu. Kendi tuhaf bilim gerçekleri posterinizi oluşturmak için AI istemini kullanın.",
+    "title": "Garip Bilim Gerçekleri Görsel Rehberi: Herhangi Bir Tema için Sevimli Eğitimsel İnfografikler",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, 'GARİP BİLİM GERÇEKLERİ: [theme]!' başlıklı sevimli, renkli eğitimsel bir infografik oluşturur. Gövde, seçilen tema üzerine tuhaf illüstrasyonlarla dolu bilim gerçekleri ile doldurulur; her biri dostça bir karikatür tarzı illüstrasyon ve kısa sürpriz bir açıklama ile eşleştirilmiştir, çocuk dostu bir estetikte parlak bir renk paleti ve net sans-serif tipografi ile.",
+        "who": "Bilim öğretmenleri, çocukların bilim kulüpleri, eğitim eğlence yaratıcıları, okul bülteni editörleri, evde bilim eğitimi veren ebeveynler ve paylaşılabilir eğitimsel gerçekler posterleri yapan içerik yaratıcıları için uygundur.",
+        "how": [
+          "Bir bilim teması girin (örn. 'Hayvanlar', 'Bitkiler', 'Uzay', 'İnsan Vücudu').",
+          "Poster, o tema üzerindeki garip gerçeklerin sevimli illüstrasyon kartlarını otomatik olarak düzenler.",
+          "Her gerçek, kısa, sürpriz bir açıklama ile karikatür illüstrasyonunu eşleştirir.",
+          "Dikey 4K çocuk dostu garip bilim gerçekleri infografiğini oluşturun."
+        ],
+        "prompts": [
+          "'Garip Bilim Gerçekleri: Hayvanlar!' sevimli illüstrasyonlarla infografiğini oluşturun.",
+          "'Garip Bilim Gerçekleri: Uzay!' renkli çocukların bilim posterini oluşturun.",
+          "'Garip Bilim Gerçekleri: Bitkiler!' eğitimsel infografiğini oluşturun."
+        ]
+      }
+    }
+  },
+  "template-artist-biography-infographic": {
+    "category": "Sanatçı Biyografisi İnfografiği",
+    "description": "Herhangi bir ünlü sanatçının temalı görsel biyografisi; arka planda ikonik tarzı, yaşam yolculuğu zaman çizelgesi, eğlenceli bilgiler ve alıntılar — Monet, Picasso, Van Gogh, da Vinci ve daha fazlası.",
+    "title": "Ünlü Sanatçı Biyografisi Görsel Rehberi: Herhangi Bir Ressam İçin Temalı İnfografikler",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir sanatçı hakkında görsel olarak uyumlu dikey bir biyografi infografiği oluşturur. Arka plan, sanatçının ikonik resim tarzını (Monet'in su zambakları, Van Gogh'un yıldızlı gecesi vb.) kullanarak stilize edilmiş bir portre ile kaplanır; düzen, stilize edilmiş bir isim + doğum tarihi, hareketleri ve mirası hakkında kısa bir tanıtım paragrafı, önemli olaylar ve yılların 'Hayat Yolculuğu' zaman çizelgesi, bir 'Eğlenceli Bilgi' kutusu ve ünlü bir alıntı içerir — hepsi sanatçının estetiğiyle uyumlu tam temalı bir renk paletinde.",
+        "who": "Sanat öğretmenleri, müze eğitmenleri, sanat tarihi blog yazarları, sınıf poster tasarımcıları, sanat tarihi podcast hesapları ve ünlü ressamların paylaşılabilir görsel biyografilerini oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir sanatçı adı girin (örn. Claude Monet, Pablo Picasso, Andy Warhol, Leonardo da Vinci, Vincent van Gogh, Frida Kahlo).",
+          "Poster, arka planı ve paleti sanatçının ikonik tarzına uyacak şekilde otomatik olarak temalandırır.",
+          "Düzen, yaşam olaylarının zaman çizelgesini, eğlenceli bilgi kutusunu ve ünlü bir alıntıyı içerir.",
+          "Sanatçının imza görsel estetiğinde dikey 4K sanatçı biyografisi infografiği oluşturun."
+        ],
+        "prompts": [
+          "Su zambakları temalı arka plan ile bir Claude Monet biyografisi infografiği oluşturun.",
+          "Yıldızlı gece stilinde bir Vincent van Gogh görsel biyografi posteri oluşturun.",
+          "Meksika halk sanatı paleti ile temalı bir Frida Kahlo biyografi infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-celebrity-filmography-infographic": {
+    "category": "Ünlü Filmografi İnfografiği",
+    "description": "Herhangi bir ünlü için temiz profesyonel bir görsel filmografi — portre, en iyi 6 ikonik film ile posterler ve ödüller ile başarılar için bir banner.",
+    "title": "Ünlü Filmografi Görsel Rehberi: İkonik Filmler ve Başarılar Posterleri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, '<ünlü>: Filmografi & Başarılar' başlıklı temiz profesyonel bir dikey infografik oluşturur. Üst bölüm, temalı bir çerçevede yüksek kaliteli bir portreyi ünlünün adı, doğum yılı ve rol simgeleri (Aktör, Yapımcı, Yönetmen) ile eşleştirir. Ortada, poster resmi, başlık, çıkış yılı ve yönetmen ile birlikte 6 ikonik filmin bir ızgarası vardır. Alt kısımda, basit simgelerle birlikte önemli başarıların — Oscarlar, ödüller, ünlü iş birlikleri, lakaplar — yatay bir banner'ı bulunmaktadır.",
+        "who": "Film blog yazarları, film posteri dekor markaları, hayran hesapları, sinema tarihi kanalları, ödül sezonu içerik üreticileri ve paylaşılabilir ünlü filmografi posterleri oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir ünlü adı girin (örn. Brad Pitt, Johnny Depp, Leonardo DiCaprio, Meryl Streep).",
+          "Poster, üstte bir portre, rol simgeleri ve doğum yılı otomatik olarak yerleştirir.",
+          "Altı ikonik film, poster, başlık, yıl ve yönetmen ile birlikte bir ızgara olarak sunulur.",
+          "Temalı vurgularla temiz modern bir dikey 4K filmografi infografiği oluşturun."
+        ],
+        "prompts": [
+          "İkonik filmler ve Oscar belirtileri ile bir Brad Pitt filmografi infografiği oluşturun.",
+          "Yönetmen iş birlikleri ile bir Leonardo DiCaprio görsel filmografi posteri oluşturun.",
+          "Ödül banner'ı ile bir Meryl Streep filmografi infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Harry Potter MBTI Infografiği",
+    "description": "Büyülü Hogwarts temalı MBTI karakter kartları — tip, temel özellikler, güçlü yönler, zorluklar, ünlü alıntılar ve ideal büyücülük dünyası rolleri.",
+    "title": "Harry Potter MBTI Kartları: Hogwarts Karakterleri için Kişilik Profilleri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir Harry Potter karakterini MBTI perspektifinden profilleyen canlı, hayalperest bir infografik oluşturur. Düzen, karakterin MBTI tipini ve unvanını (örneğin, 'ENTP — Tartışmacı') gösteren üst bir afişle başlar, ardından Hogwarts cübbeleri içinde karakterin bir illüstrasyonu ve ikonik nesneler ve yaratıklarla çevrili bir merkez illüstrasyon gelir, ardından Temel Özellikler, Güçlü Yönler, Zorluklar, Ünlü Alıntılar ve Büyücülük Dünyasındaki İdeal Roller için bölümler gelir.",
+        "who": "Harry Potter hayran hesabı yaratıcıları, MBTI kişilik blog yazarları, fandom ürün tasarımcıları, BookTok yaratıcıları ve kişilik çerçevelerini öğretmek için kurguyu kullanan eğitimciler için uygundur.",
+        "how": [
+          "Bir Harry Potter karakteri girin (örneğin, Harry, Hermione, Snape, Luna, Fred & George).",
+          "İnfografik otomatik olarak bir MBTI afişi, temalı Hogwarts illüstrasyonu ve madde bölümleri oluşturur.",
+          "Karakterin ev rengiyle 4K hayalperest bir fantastik infografik oluşturun."
+        ],
+        "prompts": [
+          "Büyülü asa efektleri ile bir ENFJ Harry Potter MBTI infografiği oluşturun.",
+          "Kütüphane ve çalışma unsurları ile bir Hermione Granger ESTJ MBTI kartı oluşturun.",
+          "Hayalperest büyülü yaratıklarla bir Luna Lovegood INFP MBTI infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Eğitim Konusu Infografiği",
+    "description": "Çocuk dostu dört panelli infografikler — herhangi bir eğitim konusunu seçin (uzay, okyanuslar, medeniyetler, yaban hayat) ve temalı illüstrasyonlar ve bilgi kutuları ile renkli bir açıklayıcı poster alın.",
+    "title": "Eğitim Konusu Infografiği Oluşturucu: Çocuklar için Dört Panelli Açıklayıcılar",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, canlı çocuk dostu bir eğitim infografiği oluşturur. Düzen, üstte cesur bir kırmızı gradyan başlık ile başlar, ardından her biri bir alt konu başlığı, merkezi bilgi kutusu, her iki tarafta temalı illüstrasyonlar (hayvanlar, gezegenler, tarihi sahneler) ve görsel oklar veya diyagramlar içeren 4 yatay dikdörtgen panel gelir. Stil, konuya uygun yumuşak bir paletle hayalperest bir karikatür tarzındadır.",
+        "who": "İlkokul öğretmenleri, evde eğitim yapan ebeveynler, çocuk içerikli YouTuberlar, müze eğitimcileri ve bilim / tarih / doğa konuları için paylaşılabilir açıklayıcı posterler oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir eğitim konusu girin (örneğin, Antik Medeniyetler, Uzay Gerçekleri, Okyanus Gizemleri, Yaban Hayatı Harikaları).",
+          "İnfografik otomatik olarak alt konu başlıkları ve temalı illüstrasyonlarla 4 panel oluşturur.",
+          "Temiz metin kutuları ile 4K hayalperest bir karikatür eğitim posteri oluşturun."
+        ],
+        "prompts": [
+          "Çocuklar için deniz canlıları illüstrasyonları ile bir Okyanus Gizemleri eğitim infografiği oluşturun.",
+          "Gezegenler, yıldızlar ve roketlerle bir Harika Uzay Gerçekleri infografiği oluşturun.",
+          "Safari hayvanları ve habitat panelleri ile bir Yaban Hayatı Harikaları çocuk infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Moda Tasarım Sayfası",
+    "description": "Couture tarzı tasarım sayfası — bir doğa konusu seçin (orkide, kelebek kanadı, okyanus dalgası) ve teknik çizim ve el yazısı tasarım notları ile bir moda elbisesi illüstrasyonu alın.",
+    "title": "Doğa İlhamlı Couture Elbise Tasarım Sayfası Oluşturucu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir konuya ilham veren bir couture elbise içeren profesyonel bir moda tasarım sayfası oluşturur. Düzen, elbise içinde tam boy bir model illüstrasyonu ile merkezlenir, ilham kaynağı (yapraklar, taç yaprakları, kelebek kanatları) sol üstte çizilir, sağda el yazısı tarzında tasarım notları ile siyah-beyaz teknik bir siluet ve temiz beyaz bir arka planda hafif karalamalar bulunur — yumuşak bir suluboya / dijital illüstrasyon hibidi.",
+        "who": "Moda tasarım öğrencileri, kostüm tasarımcıları, atölye markaları, tasarım eğitimcileri, moda illüstratör portföyleri ve couture konseptleri için ilham panoları oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir ilham kaynağı girin (örneğin, Mor Orkide, Gökkuşağı Kelebeği, Kiraz Çiçeği, Tavus Kuşu Tüyü, Okyanus Dalgaları).",
+          "Sayfa otomatik olarak tam boy bir elbise illüstrasyonu, ilham skeci, teknik siluet ve tasarım notları oluşturur.",
+          "El yazısı notları ile 4K suluboya ve dijital moda tasarım sayfası oluşturun."
+        ],
+        "prompts": [
+          "Pembe katmanlı tül ile bir Kiraz Çiçeği haute couture elbise tasarım sayfası oluşturun.",
+          "Iridesan teknik çizimlerle bir Tavus Kuşu Tüyü moda tasarım sayfası oluşturun.",
+          "Akışkan mavi organza paneller ile bir Okyanus Dalgaları elbise tasarım sayfası oluşturun."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Tarihsel Figür VS Bilgi Grafiği",
+    "description": "İki tarihsel figür için yan yana karşılaştırma kartları — doğum yılları, başarılar, özellikler, miras ve dönemlerine ait tarzda bir meme tarzı kapanış alıntısı.",
+    "title": "Tarihsel Figür VS: Yan Yana Karşılaştırma Bilgi Grafiği Oluşturucu",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, iki tarihsel figürün yan yana karşılaştırma bilgi grafiğini oluşturur. Her taraf bir tema rengi, bir isim ve yaşam tarihleri başlığı, ikonik kıyafetlerle bir karikatür tarzı portre ve dönem temalı arka plan unsurları (Tesla için yıldırımlar, Kleopatra için piramitler), madde işaretli başarılar ve özellikler ile bir meme tarzı wojak ve ironik bir kapanış alıntısı içerir. Ortada bir rozet karşılaştırma tema başlığını taşır.",
+        "who": "Tarih öğretmenleri, eğlenceli eğitim YouTuber'ları, tarih meme yaratıcıları, müze içerik üreticileri ve iki tarihsel figür için paylaşılabilir VS posterleri oluşturan meraklı öğreniciler için uygundur.",
+        "how": [
+          "Karşılaştırmak için iki tarihsel figür seçin (örneğin, Tesla vs Edison, Napolyon vs İskender, Kleopatra vs Himiko).",
+          "Bilgi grafiği, portreler, tarihler, özellikler ve bir meme tarzı kapanış ile bölünmüş renkli yan yana paneller oluşturur.",
+          "Her figürün dönem temasına sahip 4K kalın karikatür karşılaştırma bilgi grafiği oluşturun."
+        ],
+        "prompts": [
+          "Yıldırım ve ampul temaları ile bir Tesla vs Edison karşılaştırma bilgi grafiği oluşturun.",
+          "İmparatorluk rengi bölünmüş paneller ile bir Napolyon vs Büyük İskender VS bilgi grafiği oluşturun.",
+          "Antik medeniyet motifleri ile bir Kleopatra vs Kraliçe Himiko karşılaştırma posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-relationship-advice-infographic": {
+    "category": "İlişki Tavsiyesi İnfografiği",
+    "description": "Pratik ilişki ipuçlarıyla sıcak pastel infografikler — bir ilişki türü ve odak seçin, temalı simgelerle altı ipucu ve kapanış alıntısı alın.",
+    "title": "İlişki Tavsiyesi İnfografiği Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, yumuşak pastel ilişki tavsiyesi infografiği oluşturur. Düzen, 'X İLKE Y İÇİN' kalp simgeli başlıkla başlar, solda ilişki türünün sıcak bir fotoğrafı, bir dairesel alıntı, temalı simgelerle altı ipucu kartı ve kapanış alt alıntısı bulunur. Tasarım dili lacivert + pembe + altın ile minimalist bitkisel unsurlardır.",
+        "who": "İlişki koçları, ebeveyn blog yazarları, İK / takım oluşturma içerik üreticileri, sınıf öğretmenleri için uygun, ilişki posterleri oluşturan ve paylaşılabilir çiftler veya işyeri tavsiye kartları yapan yaratıcılar.",
+        "how": [
+          "Bir ilişki türü seçin (Evlilik, Mentorluk, Meslektaş, Ebeveynlik, Arkadaşlık, vb.).",
+          "Bir odak açısı seçin (Yeni Evliler, Kariyer Gelişimi, Eğitimsel Gelişim, Sağlıklı Bağlar…).",
+          "Fotoğraf, altı ipucu ve alt alıntı ile 4K sıcak pastel ilişki tavsiyesi infografiği oluşturun."
+        ],
+        "prompts": [
+          "Yeni evliler için pastel pembe ve altın detaylarla bir Evlilik tavsiyesi infografiği oluşturun.",
+          "Eğitimsel büyümeye odaklanan bir Öğretmen-Öğrenci tavsiyesi infografiği oluşturun.",
+          "Kariyer gelişimi için sıcak fotoğraf çerçevesi ile bir Mentorluk tavsiyesi infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-fashion-nail-art-design": {
+    "category": "Temalı Oje Sanatı",
+    "description": "Herhangi bir temada manikürlü tırnakların fotogerçekçi yakın çekimi — ayçiçeği, kiraz çiçeği, okyanus dalgaları — parlak jel bitiş ve yumuşak doğal aydınlatma ile.",
+    "title": "Temalı Oje Sanatı Tasarım Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, parlak jel bitişli fotogerçekçi tırnak sanatı yakın çekimi oluşturur. Her tırnak, el yapımı tematik motif ve simli veya folyo uçlu düz renk arasında değişir. Yumuşak doğal ışık, tırnak detaylarını öne çıkarırken; hafif bulanık arka plan tema ile bağlantılıdır.",
+        "who": "Oje sanat stüdyoları, güzellik blog yazarları, e-ticaret oje markaları, moodboard oluşturan tırnak teknolojisi eğitmenleri ve mevsimsel tırnak trendlerini sergileyen TikTok/Reels yaratıcıları için uygundur.",
+        "how": [
+          "Bir tema seçin (Ayçiçeği, Kiraz Çiçeği, Okyanus Dalgaları, Lavanta Tarlaları, Vintage Güller, Kelebek Kanatları…).",
+          "Parlak jel bitişli, motif + düz alternatif tasarımlar ve hafif tematik arka plan bulanıklığı ile fotogerçekçi bir yakın çekim oluşturun."
+        ],
+        "prompts": [
+          "Pembe ombre taban ve altın folyo uçlarla bir Kiraz Çiçeği temalı oje sanatı oluşturun.",
+          "İrisan mavi jel ve beyaz dalga detayları ile bir Okyanus Dalgaları oje sanatı tasarımı oluşturun.",
+          "Yumuşak mor gradyan ve sim detayları ile bir Lavanta Tarlaları oje sanatı tasarımı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-room-vocabulary-infographic": {
+    "category": "Oda Kelime Dağarcığı İnfografiği",
+    "description": "Herhangi bir odadaki nesneleri etiketleyen sevimli siyah-beyaz çizgi sanatı kelime dağarcığı posterleri — mutfak, yatak odası, banyo, sınıf — pastel detaylarla.",
+    "title": "Oda Kelime Dağarcığı İnfografiği Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, herhangi bir oda için minimalist çizgi sanatı kelime dağarcığı infografiği oluşturur. Düzen, tema doodle'ları ile el yazısı başlık, odanın ana eşyalarının etiketlendiği merkezi detaylı çizim ve alt kısımda ilgili daha küçük doodle'ların etiketlendiği bir şerit içerir. Aksi takdirde siyah-beyaz çizgilerde hafif pastel detaylar.",
+        "who": "ESL öğretmenleri, kelime kartı oluşturucuları, çocuk dil öğrenme markaları, genç öğrenicileri evde eğiten ebeveynler ve estetik çalışma posterleri oluşturan Pinterest yaratıcıları için uygundur.",
+        "how": [
+          "Bir oda veya sahne seçin (Mutfak, Banyo, Yatak Odası, Ofis, Sınıf, Bahçe, Restoran…).",
+          "Etiketlenmiş nesneler ve bir doodle şeridi ile 4K sevimli çizgi sanatı kelime dağarcığı infografiği oluşturun."
+        ],
+        "prompts": [
+          "Etiketlenmiş aletler ve malzemelerle bir Mutfak kelime dağarcığı infografiği oluşturun.",
+          "Etiketlenmiş masalar, kitaplar ve malzemelerle bir Sınıf kelime dağarcığı infografiği oluşturun.",
+          "Bitkiler, aletler ve dış mekan eşyaları ile bir Bahçe kelime bilgisi infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-english-word-difference-infographic": {
+    "category": "İngilizce Kelime Farkı İnfografiği",
+    "description": "'Fark Nedir?' eğitici posteri, sıkça karıştırılan İngilizce kelime çiftlerini tanımlar ve örnek cümleler ile karşılaştırır.",
+    "title": "İngilizce Kelime Farkı İnfografiği Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, sıkça karıştırılan İngilizce kelimeleri net bir şekilde açıklayan eğitici bir infografik oluşturur. Düzen, açık mavi bir banner başlık ile başlar, ardından kelime çiftlerinin bir ızgarası gelir — her hücre iki yeşil vurgulu kelime, aralarındaki farkı açıklayan alıntı tarzı bir açıklama ve bir örnek cümle gösterir. Beyaz arka plan, siyah metin, açık yeşil/kırmızı vurgular.",
+        "who": "ESL öğretmenleri, İngilizce öğrenme içerik üreticileri, dil öğrenme uygulaması pazarlamacıları, kelime bilgisi blog yazarları ve çocuklara karışık İngilizce çiftleri konusunda yardımcı olan ebeveynler için uygundur.",
+        "how": [
+          "Bir konu seçin (Sıkça Karıştırılan İngilizce, Homofonlar ve Eşanlamlılar, Duygu Kelime Bilgisi, Teknoloji Terimleri, İş Jargonu…).",
+          "Kelime çifti ızgaraları ile 4K minimalist 'Fark Nedir?' infografiği oluşturun."
+        ],
+        "prompts": [
+          "Etkileşim/etki, sonra/than, sen/benim ile karşılaştıran bir Sıkça Karıştırılan İngilizce infografiği oluşturun.",
+          "Kaygılı ve sinirli, üzgün ve depresif arasındaki farkı açıklayan bir Duygu Kelime Bilgisi fark infografiği oluşturun.",
+          "Onlar/orada/onlar ile ilgili bir Homofonlar ve Eşanlamlılar infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-personal-fashion-outfit-style-variations": {
+    "category": "Kıyafet Tarzı Varyasyonları Lookbook",
+    "description": "Moda lookbook bileşeni — sol tarafta referans fotoğrafınız, sağ tarafta farklı kıyafetlerle stillenmiş dört tam boy fotoğraf.",
+    "title": "Kişisel Kıyafet Tarzı Varyasyonları Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, moda lookbook tarzında bir bileşen oluşturur. Sol yarıda, kişinin nötr bir pozda orijinal referans fotoğrafı gösterilir. Sağ yarıda, aynı kişinin her biri farklı bir kıyafetle stillenmiş dört tam boy fotoğrafı gösterilir, altında stil adı ile etiketlenmiştir. Temiz beyaz arka plan, doğal aydınlatma, dört varyasyonda aynı yüz/saç/vücut.",
+        "who": "Kişisel stilistler, moda blog yazarları, kıyafet oluşturma sürecini görselleştiren e-ticaret alıcıları, randevu profili fotoğrafçıları ve 'farklı şekillerde stillenmiş X' Reels'i yapan yaratıcılar için uygundur.",
+        "how": [
+          "Kişinin referans fotoğrafını sağlayın (girdi olarak kullanılır).",
+          "Karşılaştırmak için dört kıyafet stili seçin (Sokak Modası, Eski Para, Kırsal Tarz, Y2K, Ofis Şıklığı, Spor Giyim, vb.).",
+          "Referans + dört etiketli stil varyasyonu ile 4K lookbook bileşeni oluşturun."
+        ],
+        "prompts": [
+          "Sokak Modası, Eski Para, Kırsal Tarz, Y2K ile bir kıyafet tarzı varyasyonları lookbook oluşturun.",
+          "Ofis Şıklığı, Spor Giyim, Randevu Gecesi, Tatil ile bir moda lookbook varyasyonu oluşturun.",
+          "Dört tarz kıyafet varyasyonu oluşturun: Boho, Minimalist, Preppy, Edgy."
+        ]
+      }
+    }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Çin Deyimi Kartı",
+    "description": "Çin deyimleri için sevimli el çizimi kartlar (成语) — pinyin, karakterler, İngilizce tanım ve her kart için bir örnek cümle.",
+    "title": "Çin Deyimi Öğrenme Kartı Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, herhangi bir Çin deyimi (chengyu) için temiz bir eğitim kartı oluşturur. Düzen, deyimin hikayesinin sevimli bir karikatür illüstrasyonunu solda, pinyin, büyük kalın Çin karakterleri ve sağda basit bir İngilizce tanım ile eşleştirir. Alt kısımda '例句' bölümü, İngilizce çevirisi ile bir örnek cümle ekler.",
+        "who": "Çin öğrenicileri (CSL), HSK hazırlık öğrencileri, dil öğretmenleri, çocuk dil içerik üreticileri ve iki dilli eğitim markaları için uygundur.",
+        "how": [
+          "Bir Çin deyimi seçin (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴, vb.).",
+          "Pinyin + karakterler + tanım + örnek cümle ile 4K minimalist karikatür kartı oluşturun."
+        ],
+        "prompts": [
+          "Yılan illüstrasyonu ve İngilizce tanım ile bir 画蛇添足 deyimi kartı oluşturun.",
+          "Tavşan ve ağaç kütüğü hikayesini gösteren bir 守株待兔 kartı oluşturun.",
+          "Kuyu kurbağası karikatürü ve bir cümle örneği ile bir 井底之蛙 kartı oluşturun."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Çocuklar için Hava Bilgisi İnfografiği",
+    "description": "Herhangi bir hava türü hakkında neşeli suluboya eğitim posteri — oluşum, nedenler, etkiler ve ölçüm, 4 çocuk dostu panelde.",
+    "title": "Çocuklar için Hava Eğitimi İnfografiği Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir hava türü hakkında neşeli, çocuk dostu bir eğitim posteri oluşturur. Düzen, kalın bir başlık, ikonlar ve basit madde işaretleri ile dört panel (Oluşum, Nedenler, Etkiler, Ölçüm), altta yumuşak bir suluboya hava illüstrasyonu ve dikkat çekici bir slogan içerir. Hava türüne uygun pastel palet.",
+        "who": "İlkokul öğretmenleri, evde eğitim yapan ebeveynler, çocuk içerikli YouTuber'lar, hava temalı Pinterest yaratıcıları ve mevsimlik posterler yapan müze eğitmenleri için uygundur.",
+        "how": [
+          "Bir hava türü seçin (Kar, Yağmur, Rüzgarlı, Güneşli, Bulutlu, Sisli).",
+          "4 panel ve bir slogan ile 4K suluboya çocuk-hava infografiği oluşturun."
+        ],
+        "prompts": [
+          "Kar tanesi illüstrasyonları ile çocuklar için bir Kar hava infografiği oluşturun.",
+          "Bulut oluşum panelleri ile bir Bulutlu hava posteri oluşturun.",
+          "Sisli hava çocuk infografiği ile sis suluboya sahneleri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Sıcak Ürün Posteri",
+    "description": "Sıcak, rahat yaşam tarzı ürün reklamı — ev aletinizin stilize edilmiş bir sahnede el yazısı sloganı ve özellik rozetleri ile.",
+    "title": "Rahat Ev Aleti Ürün Posteri Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, sıcak ışıkta bir yaşam tarzı ürün posteri oluşturur. Düzen, üstte kalın bir başlık + el yazısı sloganı, aletin rahat bir stilize edilmiş ortamda (çiçekler, mumlar, aksesuarlar) ortalanması, dairesel bir özellik rozeti ve 4-5 özellik simgesi ile birlikte ürün etiketini altta içerir. Ürüne uygun pastel palet.",
+        "who": "E-ticaret satıcıları, ev aleti markaları, Etsy/Shopify mağaza sahipleri, ürün fotoğrafçıları prototip çekimleri için ve yaşam tarzı yaratıcıları için uygundur.",
+        "how": [
+          "Bir ev aleti girin (Kahve Makinesi, Masa Lambası, Bluetooth Hoparlör, Aroma Difüzörü, Taşınabilir Karıştırıcı).",
+          "Yaşam tarzı ortamı + özellik rozetleri ile 4K rahat ürün posteri oluşturun."
+        ],
+        "prompts": [
+          "El yazısı sloganı ve çiçek stilizasyonu ile bir Kahve Makinesi için rahat bir ürün posteri oluşturun.",
+          "Özellik rozetleri ve pastel paleti ile sıcak bir Masa Lambası ürün posteri oluşturun.",
+          "Dairesel rozet ve simge listesi ile bir Taşınabilir Karıştırıcı yaşam tarzı posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "MBTI Stereotipi vs Gerçeklik",
+    "description": "Herhangi bir MBTI türü için yan yana stereotip-gerçeklik karşılaştırma kartları — düşük poli çizimler ve madde listeleri.",
+    "title": "MBTI Stereotipi vs Gerçeklik İnfografik Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, her MBTI türü için yan yana karşılaştırma infografiği oluşturur. Düzen, üst ortada kesilmiş gazete tarzı bir başlık, solda düşük poli stereotip illüstrasyonu + madde listesi ve sağda düşük poli gerçeklik illüstrasyonu + madde listesi içerir. Düz düşük poli sanat tarzı, beyaz arka plan.",
+        "who": "MBTI içerik üreticileri, kişilik blog yazarları, sosyal medya meme hesapları, fandom MBTI hayranları ve kişilik çerçevelerini öğreten eğitimciler için uygundur.",
+        "how": [
+          "Bir MBTI türü seçin (INTJ, ENTP, INFJ, ESFP, vb.).",
+          "4K düşük poli stereotip-gerçeklik karşılaştırma infografiği oluşturun."
+        ],
+        "prompts": [
+          "Düşük poli illüstrasyonlarla bir INTJ stereotipi vs gerçeklik MBTI infografiği oluşturun.",
+          "Kesilmiş gazete tarzı başlıkla bir ENFP stereotipi vs gerçeklik karşılaştırması oluşturun.",
+          "Bir ESTP stereotipi vs gerçeklik MBTI posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Gezegen Gerçekleri İnfografiği",
+    "description": "Sinema tarzı gezegen gerçekleri posteri — foto-gerçekçi gezegen görüntüsü, parlayan başlık ve atmosfer, yüzey, uydular, dönüşü kapsayan etiketli bölümler.",
+    "title": "Uzay Gezegen Gerçekleri İnfografik Üretici",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir gezegen hakkında sinematik eğitim infografiği oluşturur. Düzen, parlayan başlık + yıldız alanı karşısında foto-gerçekçi gezegen görüntüsü, ardından etiketli gerçekler bölümleri (genel istatistikler, atmosfer, yüzey özellikleri, uydular, dönüş) ve eksenel eğim, fırtınalar, halka sistemleri için küçük diyagramlar içerir. Gezegenle eşleşen canlı renklerle bilim kurgu estetiği.",
+        "who": "Astronomi eğitimcileri, uzay temalı Pinterest içerik üreticileri, çocuk bilim içerik üreticileri, müze sergi tasarımcıları ve uzay haber blog yazarları için uygundur.",
+        "how": [
+          "Bir gezegen girin (Satürn, Mars, Jüpiter, Neptün, Venüs, Uranüs, Ay).",
+          "4K sinematik bilim kurgu gezegen gerçekleri infografiği oluşturun."
+        ],
+        "prompts": [
+          "Halka sistemi diyagramları ve atmosfer istatistikleri ile bir Satürn gezegen gerçekleri infografiği oluşturun.",
+          "Yüzey özellikleri ve uydu vurguları ile bir Mars gezegen gerçekleri posteri oluşturun.",
+          "Büyük Kırmızı Leke ve atmosfer paneli ile bir Jüpiter gezegen gerçekleri infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Duygu vs Duygu İnfografiği",
+    "description": "İki karıştırılabilir duygu için yan yana karşılaştırma posteri — düz çizgi film illüstrasyonları ve sarı vurgulu tanımlar.",
+    "title": "Duygu vs Duygu Karşılaştırma İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, iki duygu veya davranışı karşılaştıran temiz bir eğitim posteri oluşturur. Düzen, üstte 'X vs Y' başlığı, solda her duygunun beden dilini gösteren iki basit düz çizgi film illüstrasyonu ve sağda sarı vurgulu iki etiketli tanım kutusu içerir. Minimalist beyaz arka plan, dostça çizgi film tarzı.",
+        "who": "Duygu kelime dağarcığı kartları oluşturan ESL öğretmenleri, okul danışmanları, çocuk sosyal-duygusal öğrenme markaları ve dil içerik üreticileri için uygundur.",
+        "how": [
+          "Karşılaştırmak için iki duygu girin (Kaygılı vs Heyecanlı, Üzgün vs Depresif, Çekingen vs İçe Dönük).",
+          "Düz çizgi film illüstrasyonları ile 4K minimalist karşılaştırma infografiği oluşturun."
+        ],
+        "prompts": [
+          "Kaygılı vs Heyecanlı duygu karşılaştırma infografiği oluşturun.",
+          "Çizgi film illüstrasyonları ile Çekingen vs İçe Dönük karşılaştırma posteri oluşturun.",
+          "Kızgın vs Hayal Kırıklığına Uğramış duygu vs duygu infografiği oluşturun."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "IELTS Kelime Dağıtımı",
+    "description": "IELTS hazırlığı için iki sütunlu temel-ileri kelime dağıtım posteri - konuya göre düzenlenmiş eş anlamlı çiftleri ile sevimli bir kapanış illüstrasyonu.",
+    "title": "IELTS 3.0 → 9.0 Kelime Dağıtımı Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, temel ve ileri İngilizce kelimeleri karşılaştıran eğlenceli bir eğitim posteri oluşturur. Düzen, üstte 'IELTS 3.0' ve 'IELTS 9.0' mor yuvarlak etiketler, temel kelimeleri ileri eş anlamlılarla eşleştiren iki sütunlu bir liste ve konuyla eşleşen sevimli bir karikatür içerir.",
+        "who": "IELTS hazırlık öğrencileri, İngilizce öğretmenleri, ESL blog yazarları, dil öğrenme uygulama pazarlamacıları ve akademik yazım eğitmenleri için uygundur.",
+        "how": [
+          "Bir kelime konusu seçin (Fiiller, Sıfatlar, Zarflar & Bağlayıcılar, Yaygın Fiiller).",
+          "4K minimalist bir IELTS kelime dağıtımı posteri oluşturun."
+        ],
+        "prompts": [
+          "Bir IELTS Fiiller kelime dağıtımı posteri oluşturun (temel → ileri).",
+          "Sevimli bir illüstrasyon ile bir IELTS Sıfatları 3.0 vs 9.0 kelime posteri oluşturun.",
+          "Bir IELTS Zarflar & Bağlayıcılar kelime dağıtımı posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-kids-opposite-concept-education": {
+    "category": "Çocuk Eğitim Posterleri",
+    "description": "Neşeli çocuk öğrenme posteri, zıtlıklar, karşılaştırmalar ve temel fiiller gibi kavramları öğretmek için basit çizgi film illüstrasyonlarını bir araya getirir.",
+    "title": "Çocuk Eğitim Kavram Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen bir kavram konusuna yönelik çocuk dostu bir eğitim posteri oluşturur. Düzen, kalın bir banner başlığı ve oklarla bağlanmış, karşılık gelen kelimelerle etiketlenmiş çift çizgi film illüstrasyonları ızgarası içerir. Parlak dostane renkler, basit sans-serif yazı tipi ve temiz beyaz arka plan, erken öğrenenlerin okumalarını kolaylaştırır.",
+        "who": "Anaokulu öğretmenleri, anaokulu müfredat tasarımcıları, ebeveyn blog yazarları, ESL eğitmenleri ve görsel öğrenme materyalleri oluşturan eğitim yayıncıları için uygundur.",
+        "how": [
+          "Bir öğrenme konusu seçin (Zıtlıklar, Karşılaştırma Kavramları, Önce ve Sonra, Fiiller, Hayvanlar).",
+          "Seçilen konu için 4K çizgi film eğitim posteri oluşturun."
+        ],
+        "prompts": [
+          "Sevimli çift çizgi film illüstrasyonları ile Zıtlıklar hakkında bir çocuk eğitim posteri oluşturun.",
+          "Çizgi film tarzında Önce ve Sonra çocuk öğrenme posteri oluşturun.",
+          "Basit çift illüstrasyonlarla çocuk karşılaştırma kavramları posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-celebrity-movie-group-poster": {
+    "category": "Ünlü & Film Grubu Posterleri",
+    "description": "Birden fazla ikonik figürü sinematik aydınlatma, yumuşak gradyan arka planlar ve lüks minimalist tipografi ile içeren yüksek kaliteli resmi tarzda karakter posteri kolajı.",
+    "title": "Ünlü & Film Grubu Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir grup ünlü veya film karakterini içeren modern bir ticari film posteri oluşturur. Düzen, bağımsız portrelerin hafif örtüşme ile dinamik bir kompozisyonunu, dramatik sinematik aydınlatmayı, yumuşak gradyan arka planı, hafif parlamaları ve yıldız parçacıklarını ve grup adını lüks minimalist bir yazı tipi ile kullanır.",
+        "who": "Hayran hesapları oluşturucuları, K-pop ve film toplulukları, eğlence pazarlamacıları, hayran sanatı tasarımcıları ve paylaşılabilir sosyal medya kolajları için uygundur.",
+        "how": [
+          "Bir grup adı girin (Marvel Avengers, Blackpink, Harry Potter Cast, vb.).",
+          "4K fotogerçekçi grup karakter posteri oluşturun."
+        ],
+        "prompts": [
+          "Sinematik tarzda bir Marvel Avengers resmi grup karakter posteri oluşturun.",
+          "Lüks minimalist tipografi ile bir Blackpink karakter posteri kolajı oluşturun.",
+          "Sinematik renk derecelendirmesi ile bir Harry Potter cast grup posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-english-vocabulary-upgrade": {
+    "category": "İngilizce Kelime Geliştirme",
+    "description": "Temel İngilizce kelimeleri gelişmiş eş anlamlılarla eşleştiren temiz iki sütunlu kelime posteri — akademik yazım hazırlığı ve ESL öğrenimi için idealdir.",
+    "title": "İngilizce Kelime Geliştirme Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir kelime teması üzerine düzenli bir akademik poster oluşturur. Düzen, dekoratif bir başlık bandı, solda temel kelimeler sütunu, sağda gelişmiş eş anlamlılar sütunu, düzenli satır satır karşılaştırma, yumuşak gradyan arka plan ve taze bir akademik görünüm için minimalist çizgi dekorasyonu içerir.",
+        "who": "ESL öğrencileri, İngilizce öğretmenleri, IELTS/TOEFL eğitmenleri, akademik yazım eğitmenleri ve dil öğrenme içerik oluşturucuları için uygundur.",
+        "how": [
+          "Bir kelime teması seçin (Sıfat Geliştirme, Fiil Geliştirme, Very Yerine Geçen Kelimeler, Resmi Olmaktan Resmiye, Günlük Kelime Geliştirme).",
+          "4K minimalist iki sütunlu kelime geliştirme posteri oluşturun."
+        ],
+        "prompts": [
+          "Temel ile gelişmiş arasında İngilizce sıfatlar geliştirme posteri oluşturun.",
+          "Very yerine geçen kelimeler için bir kelime geliştirme posteri oluşturun.",
+          "Resmi olmayan ile resmi İngilizce kelime karşılaştırma posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-photo-grid": {
+    "category": "Yaşam Tarzı Fotoğraf Kafesleri",
+    "description": "Tutarlı bir palet ve altın saat aydınlatması ile fotogerçekçi 3×3 yaşam tarzı fotoğraf kolajı — yakın planlar, tam vücut çekimleri, doğal anlar ve detay çekimleri tek bir estetikte.",
+    "title": "Mevsimsel Yaşam Tarzı Fotoğraf Kafesi",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir mevsim veya ortam etrafında temalandırılmış 3×3 yaşam tarzı fotoğraflarının kafesini oluşturur. 9 kare görüntü, yakın plan portreler, tam vücut çekimleri, doğal anlar ve nesnelerin veya arka planların detay çekimlerini içerir; hepsi tutarlı sıcak bir renk paleti ve doğal altın saat aydınlatması ile uyumlu bir editoryal estetik için paylaşılır.",
+        "who": "Yaşam tarzı fotoğrafçıları, Instagram yaratıcıları, moda bloggerları, marka fotoğraf çekimi planlayıcıları ve uyumlu mevsimsel estetik panoları oluşturan yaratıcılar için uygundur.",
+        "how": [
+          "Bir tema veya mevsim seçin (Yaz Plajı, Sonbahar Parkı, İlkbahar Çayırı, Şehir, Kış Kar).",
+          "4K fotogerçekçi 3×3 yaşam tarzı fotoğraf kafesi oluşturun."
+        ],
+        "prompts": [
+          "Altın saat ışığında bir Yaz Plajı yaşam tarzı 3×3 fotoğraf kafesi oluşturun.",
+          "Sıcak palet ile bir Sonbahar Parkı yaşam tarzı fotoğraf kolajı oluşturun.",
+          "Tutarlı sinematik bir ruh hali ile bir Kış Kar yaşam tarzı 3×3 kafesi oluşturun."
+        ]
+      }
+    }
   }
 }

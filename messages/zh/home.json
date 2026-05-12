@@ -381,493 +381,6 @@
       "subtitle": "探索其他类别和预设。"
     }
   },
-  "topics": {
-    "learning": {
-      "displayName": "知识",
-      "title": "学习视觉提示、模板和灵感",
-      "description": "探索以学习为中心的AI视觉、教育模板和灵感卡片，用于知识分享、解释、学习内容和视觉摘要。"
-    },
-    "history": {
-      "displayName": "历史",
-      "title": "历史视觉提示、模板和灵感",
-      "description": "浏览以历史为主题的AI视觉、模板和灵感，涵盖历史人物、时间线、假设场景和教育故事讲述。"
-    },
-    "career": {
-      "displayName": "职业",
-      "title": "职业视觉提示、模板和灵感",
-      "description": "找到以职业为导向的AI视觉、模板和灵感，用于简历、职场创意、职业成长和与工作相关的故事讲述。"
-    },
-    "design": {
-      "displayName": "设计",
-      "title": "设计视觉提示、模板和灵感",
-      "description": "发现与设计相关的AI视觉、创意模板和灵感，用于品牌、布局、视觉概念和美学探索。"
-    },
-    "nature": {
-      "displayName": "自然",
-      "title": "自然视觉模板与提示词 | Curify AI",
-      "description": "探索以自然为灵感的AI视觉模板——风景、植物、生态系统、气象现象与环境科学。"
-    },
-    "travel": {
-      "displayName": "旅行",
-      "title": "旅行视觉提示、模板和灵感",
-      "description": "探索以旅行为主题的AI视觉、目的地模板和灵感，用于地标、城市指南、文化故事讲述和旅行相关内容。"
-    },
-    "lifestyle": {
-      "displayName": "生活方式",
-      "title": "生活方式视觉提示、模板和灵感",
-      "description": "找到生活方式AI视觉、模板和灵感，用于日常生活、习惯、美学、个人兴趣和可分享的社交内容。"
-    },
-    "film": {
-      "displayName": "流行文化",
-      "title": "流行文化视觉模板与提示词 — Nano Banana",
-      "description": "探索流行文化 AI 视觉模板，涵盖漫威、绝命毒师、黄石、老友记等经典影视角色。"
-    },
-    "ai": {
-      "displayName": "AI",
-      "title": "AI视觉提示、模板和灵感",
-      "description": "探索以AI为中心的视觉、模板和灵感，用于技术解释、创始人内容、行业评论和创意概念设计。"
-    },
-    "gaming": {
-      "displayName": "游戏",
-      "title": "游戏视觉提示、模板和灵感",
-      "description": "浏览以游戏为主题的AI视觉、模板和灵感，涵盖游戏世界、角色、玩家文化、粉丝内容和互动叙事。"
-    },
-    "trending": {
-      "displayName": "热门",
-      "title": "热门视觉提示、模板和灵感",
-      "description": "发现与时事话题、快速发展的对话、病毒式创意和新兴主题相关的热门AI视觉、模板和灵感。"
-    },
-    "character": {
-      "displayName": "角色",
-      "title": "心理学视觉提示、模板和灵感",
-      "description": "发现与心理学相关的AI视觉、个性模板和MBTI、角色分析、情感和自我反思内容的创意灵感。"
-    },
-    "product": {
-      "displayName": "商业",
-      "title": "商业视觉提示、模板和灵感",
-      "description": "探索以商业为中心的AI视觉、产品模板和灵感，用于电子商务、市场创意、产品故事讲述和卖家内容。"
-    },
-    "language": {
-      "displayName": "语言",
-      "title": "语言学习视觉提示、模板和灵感",
-      "description": "发现语言学习视觉、词汇卡片、对话模板和AI生成的内容，以掌握新语言和沟通技巧。"
-    },
-    "science": {
-      "displayName": "科学",
-      "title": "科学视觉提示、模板和灵感",
-      "description": "探索以科学为主题的AI视觉、模板和灵感，涵盖自然、生物、太空、天气和教育知识叙事。"
-    },
-    "culture": {
-      "displayName": "文化",
-      "title": "文化视觉提示、模板和灵感",
-      "description": "浏览以文化为主题的AI视觉、模板和灵感，涵盖传统、遗产、历史文物和跨文化叙事。"
-    },
-    "mbti": {
-      "displayName": "MBTI与个性",
-      "title": "MBTI和个性视觉提示、模板和灵感",
-      "description": "探索MBTI个性视觉、基于角色的模板和灵感，涵盖个性类型、比较和粉丝驱动的叙事。"
-    },
-    "architecture": {
-      "displayName": "建筑",
-      "title": "建筑视觉提示、模板和灵感",
-      "description": "探索以建筑为主题的AI视觉、地标模板和灵感，涵盖建筑、城市景观、结构设计和空间的视觉叙事。"
-    },
-    "food": {
-      "displayName": "食物",
-      "title": "食物视觉提示、食谱和烹饪灵感",
-      "description": "发现以食物为主题的AI视觉、食谱模板和烹饪灵感，涵盖烹饪、食材和视觉吸引的食物叙事。"
-    },
-    "fitness": {
-      "displayName": "健身",
-      "title": "健身视觉提示、模板和灵感",
-      "description": "探索以健身为主题的AI视觉、锻炼模板和灵感，涵盖健康、锻炼计划和积极生活方式内容。"
-    },
-    "sports": {
-      "displayName": "体育",
-      "title": "体育视觉提示、模板和灵感",
-      "description": "浏览以体育为主题的AI视觉、运动员模板和灵感，涵盖比赛、团队、表现叙事和粉丝驱动的内容。"
-    },
-    "weather": {
-      "displayName": "天气",
-      "title": "天气视觉模板与提示词 | Curify AI",
-      "description": "探索关于天气的AI视觉模板——闪电、彩虹、降雪、风暴、云层与大气科学科普卡片。"
-    },
-    "interior": {
-      "displayName": "家居装饰",
-      "title": "家居装饰与室内设计视觉提示、模板和灵感",
-      "description": "探索家居装饰和室内设计的AI视觉、模板和灵感，获取房间创意、美学空间、家具造型和现代生活的灵感。"
-    },
-    "english-chinese": {
-      "displayName": "英中双语",
-      "title": "英中双语视觉学习模板",
-      "description": "探索专为英中双语学习设计的AI视觉模板和提示词。"
-    },
-    "english-spanish": {
-      "displayName": "英西双语",
-      "title": "英西双语视觉学习模板",
-      "description": "发现适合英西双语学习者的AI视觉模板和提示词。"
-    },
-    "english-japanese": {
-      "displayName": "英日双语",
-      "title": "英日双语视觉学习模板",
-      "description": "浏览英日双语教育AI视觉模板和提示词。"
-    },
-    "english-korean": {
-      "displayName": "英韩双语",
-      "title": "英韩双语视觉学习模板",
-      "description": "探索英韩双语学习AI视觉模板和提示词。"
-    },
-    "english": {
-      "displayName": "英语",
-      "title": "英语视觉学习模板",
-      "description": "发现为英语学习设计的AI视觉模板和词汇提示词。"
-    },
-    "japan": {
-      "displayName": "日本",
-      "title": "日本视觉模板与提示词",
-      "description": "探索以日本为主题的 AI 视觉模板——涵盖旅行、美食、服饰与文化，从东京到大阪。"
-    },
-    "korea": {
-      "displayName": "韩国",
-      "title": "韩国视觉模板与提示词",
-      "description": "探索以韩国为主题的 AI 视觉模板——涵盖旅行、美食、韩服时尚与文化，从首尔到釜山。"
-    },
-    "thailand": {
-      "displayName": "泰国",
-      "title": "泰国视觉模板与提示词",
-      "description": "探索以泰国为主题的 AI 视觉模板——涵盖旅行、美食、丝绸服饰与文化，从曼谷到普吉岛。"
-    },
-    "india": {
-      "displayName": "印度",
-      "title": "印度视觉模板与提示词",
-      "description": "探索以印度为主题的 AI 视觉模板——涵盖旅行、美食、纱丽服饰与文化，从孟买到斋浦尔。"
-    },
-    "mexico": {
-      "displayName": "墨西哥",
-      "title": "墨西哥视觉模板与提示词",
-      "description": "探索以墨西哥为主题的 AI 视觉模板——涵盖旅行、美食、传统服饰与文化，从墨西哥城到瓦哈卡。"
-    },
-    "france": {
-      "displayName": "法国",
-      "title": "法国视觉模板与提示词",
-      "description": "探索以法国为主题的 AI 视觉模板——涵盖美食、时装历史与文化，从巴黎到法国乡村。"
-    },
-    "uk": {
-      "displayName": "英国",
-      "title": "英国视觉模板与提示词",
-      "description": "探索以英国为主题的 AI 视觉模板——涵盖旅行、美食、时装历史与文化，从伦敦到英国乡村。"
-    },
-    "brazil": {
-      "displayName": "巴西",
-      "title": "巴西视觉模板与提示词",
-      "description": "探索以巴西为主题的 AI 视觉模板——涵盖美食、鲜活文化与生活方式，从里约热内卢到圣保罗。"
-    },
-    "vietnam": {
-      "displayName": "越南",
-      "title": "越南视觉模板与提示词",
-      "description": "探索以越南为主题的 AI 视觉模板——涵盖美食、旅行与文化，从河内到胡志明市。"
-    },
-    "singapore": {
-      "displayName": "新加坡",
-      "title": "新加坡视觉模板与提示词",
-      "description": "探索以新加坡为主题的 AI 视觉模板——涵盖旅行、美食与文化，感受这座狮城的魅力。"
-    },
-    "egypt": {
-      "displayName": "埃及",
-      "title": "埃及视觉模板与提示词",
-      "description": "探索以埃及为主题的 AI 视觉模板——涵盖古代历史、旅行、服饰与文化，从开罗到尼罗河。"
-    },
-    "nostalgia": {
-      "displayName": "怀旧",
-      "title": "怀旧视觉模板与提示词",
-      "description": "探索以怀旧为主题的 AI 视觉模板——复古科技、儿时玩具、标志性初代物品，以及定义一个时代的经典事物。"
-    },
-    "finance": {
-      "displayName": "财经",
-      "title": "财经可视化模板与灵感 | Nano Banana",
-      "description": "探索财经主题的AI可视化模板，涵盖理财习惯、资产管理、投资概念与个人财务教育。"
-    },
-    "comparison": {
-      "displayName": "对比",
-      "title": "角色对比视觉模板 | Curify AI",
-      "description": "探索AI视觉模板，用于角色并排对比、人格对比、对决卡片和VS风格信息图。"
-    },
-    "groups": {
-      "displayName": "群像",
-      "title": "群像角色视觉模板 | Curify AI",
-      "description": "发现以多角色群像、集体画像和MBTI全员性格分布为主题的AI视觉模板。"
-    },
-    "city": {
-      "displayName": "城市",
-      "title": "城市视觉模板与AI提示词 | Curify AI",
-      "description": "探索城市、城市景观、微缩城市艺术和旅行目的地内容的AI视觉模板。"
-    },
-    "vocabulary": {
-      "displayName": "词汇",
-      "title": "词汇学习视觉模板 | Curify AI",
-      "description": "探索词汇卡片、双语单词海报和语言学习视觉内容的AI模板。"
-    },
-    "dialogue": {
-      "displayName": "对话",
-      "title": "对话场景视觉模板 | Curify AI",
-      "description": "探索双语对话场景、对话练习卡片和情境语言学习的AI视觉模板。"
-    },
-    "expressions": {
-      "displayName": "表达",
-      "title": "英语表达与短语视觉模板 | Curify AI",
-      "description": "发现地道英语表达、惯用短语和日常语言海报的AI视觉模板。"
-    },
-    "language-english": {
-      "displayName": "英语",
-      "title": "英语学习视觉模板 | Curify AI",
-      "description": "探索专为英语学习者设计的AI视觉模板——表达、词汇分组和简笔画词汇海报。"
-    },
-    "spain": {
-      "displayName": "西班牙",
-      "title": "西班牙旅行视觉模板 | Curify AI",
-      "description": "探索以西班牙为灵感的AI视觉模板——旅行指南、文化海报和目的地内容。"
-    },
-    "fashion": {
-      "displayName": "时尚穿搭",
-      "title": "时尚穿搭视觉模板与灵感",
-      "description": "探索时尚穿搭AI视觉模板，包括造型对比、电商产品图和潮流内容。"
-    },
-    "anime": {
-      "displayName": "动漫",
-      "title": "动漫视觉模板与提示词 — Nano Banana",
-      "description": "探索以火影忍者、宫崎骏吉卜力、名侦探柯南等为主题的动漫 AI 视觉模板。"
-    },
-    "australia": {
-      "displayName": "澳大利亚",
-      "title": "澳大利亚 AI 视觉模板 — Nano Banana",
-      "description": "探索以澳大利亚为主题的 AI 视觉模板，包括旅行地图、地标等。"
-    },
-    "italy": {
-      "displayName": "意大利",
-      "title": "意大利 AI 视觉模板 — Nano Banana",
-      "description": "探索以意大利为主题的 AI 视觉模板，包括旅行地图、美食、地标等。"
-    },
-    "middle-east": {
-      "displayName": "中东",
-      "title": "中东 AI 视觉模板 — Nano Banana",
-      "description": "探索以中东为主题的 AI 视觉模板，涵盖美食、旅行、文化与时事。"
-    },
-    "cartoon": {
-      "displayName": "卡通",
-      "title": "美式卡通风格视觉模板 | Curify AI",
-      "description": "浏览美式卡通风格的AI视觉模板——粗线条、平面色彩与充满表现力的角色设计，灵感来源于西方动画。"
-    },
-    "kawaii": {
-      "displayName": "可爱风格",
-      "title": "可爱风格 AI 视觉模板与提示词",
-      "description": "发现以萌系角色、粉彩美学和可爱场景为特色的 AI 视觉模板，适合生活方式和学习内容。"
-    },
-    "ink": {
-      "displayName": "水墨风格",
-      "title": "水墨风格 AI 视觉模板与提示词",
-      "description": "探索以传统中国水墨画技法和笔墨美学为灵感的水墨 AI 视觉模板。"
-    },
-    "isometric": {
-      "displayName": "等距视图",
-      "title": "等距视图 AI 视觉模板与提示词",
-      "description": "发现等距视图风格的 AI 视觉模板，适用于建筑图、城市布局、MBTI 图表和结构化信息图。"
-    },
-    "photorealistic": {
-      "displayName": "写实摄影风",
-      "title": "写实摄影风 AI 视觉模板与提示词",
-      "description": "探索写实风格的 AI 视觉模板，涵盖室内设计、美食、旅行和产品展示，细节逼真。"
-    },
-    "reading": {
-      "displayName": "阅读",
-      "title": "阅读与书单AI模板和提示词",
-      "description": "探索书单推荐、名人原则、阅读清单和教育信息图的AI模板。"
-    },
-    "guides": {
-      "displayName": "DIY 与教程",
-      "title": "操作指南与教程视觉模板 | Curify AI",
-      "description": "探索健身、美妆、美食及生活方式的AI操作指南与步骤化视觉模板。"
-    },
-    "portrait": {
-      "displayName": "人像",
-      "title": "人像视觉模板与AI提示词 | Curify AI",
-      "description": "探索AI人像视觉模板，涵盖角色肖像、档案卡、MBTI身份卡及风格化个人人像。"
-    },
-    "monochrome": {
-      "displayName": "黑白单色",
-      "title": "黑白单色AI视觉模板与提示词",
-      "description": "探索黑白与单色调AI视觉模板，涵盖水墨插画、高对比度人像及极简风格信息图。"
-    },
-    "watercolor": {
-      "displayName": "水彩",
-      "title": "水彩风格 AI 视觉模板与提示词",
-      "description": "探索柔和、发光的水彩风格 AI 模板——从分步绘画教程到自然插图和艺术人像。"
-    },
-    "animal": {
-      "displayName": "动物",
-      "title": "动物视觉模板与灵感",
-      "description": "探索以动物为主题的 AI 视觉模板，涵盖野生动物、宠物、犬种科普和物种百科，适合自然爱好者和教育工作者。"
-    },
-    "itinerary": {
-      "displayName": "行程规划",
-      "title": "旅行行程规划视觉模板",
-      "description": "探索旅行行程规划的 AI 视觉模板，包括每日计划、目的地地图和旅行指南生成。"
-    },
-    "china": {
-      "displayName": "中国",
-      "title": "中国视觉提示词与模板",
-      "description": "探索以中国为主题的AI视觉模板——旅行地图、文化海报、历史与地标，从北京到上海。"
-    },
-    "germany": {
-      "displayName": "德国",
-      "title": "德国视觉提示词与模板",
-      "description": "探索以德国为主题的AI视觉模板——旅行地图、文化海报、历史与地标，从柏林到巴伐利亚。"
-    },
-    "greece": {
-      "displayName": "希腊",
-      "title": "希腊视觉提示词与模板",
-      "description": "探索以希腊为主题的AI视觉模板——古代历史、旅行地图、神话与地标，从雅典到圣托里尼。"
-    },
-    "russia": {
-      "displayName": "俄罗斯",
-      "title": "俄罗斯视觉提示词与模板",
-      "description": "探索以俄罗斯为主题的AI视觉模板——旅行地图、文化海报、历史与地标，从莫斯科到圣彼得堡。"
-    },
-    "united-states": {
-      "displayName": "美国",
-      "title": "美国视觉提示词与模板",
-      "description": "探索以美国为主题的AI视觉模板——旅行地图、文化海报、历史与地标，从纽约到加利福尼亚。"
-    },
-    "beauty": {
-      "displayName": "美妆护肤",
-      "title": "美妆护肤视觉提示词、模板与灵感",
-      "description": "探索美妆、护肤步骤图解、妆容教程等 AI 视觉模板，打造精致生活方式内容。"
-    },
-    "posters": {
-      "displayName": "海报与传单",
-      "title": "海报与传单视觉提示词、模板与灵感",
-      "description": "探索 AI 生成的海报与传单，包括电影海报、活动宣传、名言金句海报等视觉设计模板。"
-    },
-    "digital-canvas": {
-      "displayName": "数字壁纸与封面",
-      "title": "数字壁纸与封面视觉提示词、模板与灵感",
-      "description": "探索 AI 生成的手机壁纸、电脑桌面、社交媒体 Banner 等数字画布模板，轻松打造个性化视觉内容。"
-    },
-    "mockups": {
-      "displayName": "样机与界面",
-      "title": "样机与界面视觉提示词、模板与灵感",
-      "description": "探索 AI 生成的样机与 UI 概念图，包括手机样机、网页线框图、应用界面和产品展示视觉模板。"
-    },
-    "iran": {
-      "displayName": "伊朗",
-      "title": "伊朗视觉提示词、模板与灵感",
-      "description": "探索以伊朗为主题的 AI 视觉内容，包括波斯文化、地标建筑、历史故事、传统服饰与旅行内容。"
-    },
-    "portugal": {
-      "displayName": "葡萄牙",
-      "title": "葡萄牙旅行视觉模板 | Curify AI",
-      "description": "探索以葡萄牙为灵感的AI视觉模板——旅行地图、葡式蛋挞、里斯本地标与C罗。"
-    },
-    "animals": {
-      "displayName": "动物",
-      "title": "动物视觉模板与提示词 | Curify AI",
-      "description": "探索以动物为主题的AI视觉模板——野生动物插画、宠物肖像、自然场景与动物科普卡片。"
-    },
-    "biology": {
-      "displayName": "生物学",
-      "title": "生物学视觉模板与提示词 | Curify AI",
-      "description": "探索生物学主题的AI视觉模板——细胞图解、人体解剖、生态系统、遗传学与生命科学教育卡片。"
-    },
-    "space": {
-      "displayName": "太空",
-      "title": "太空与天文视觉模板 | Curify AI",
-      "description": "探索关于太空的AI视觉模板——行星、星系、太阳系、天文现象与宇宙科普卡片。"
-    },
-    "personality": {
-      "displayName": "个性",
-      "title": "MBTI个性类型 - 可视化模板和角色卡片",
-      "description": "通过AI生成的角色卡片，探索Ghibli、Marvel、Breaking Bad、Friends和体育宇宙中的所有16种MBTI个性类型。"
-    },
-    "mbti-intj": {
-      "displayName": "INTJ",
-      "title": "INTJ - 孤独的战略家 | MBTI角色卡片",
-      "description": "罕见的远见者，将长期计划变为现实。探索Ghibli、Marvel、Breaking Bad等中的INTJ角色。"
-    },
-    "mbti-intp": {
-      "displayName": "INTP",
-      "title": "INTP - 安静的思想建筑师 | MBTI角色卡片",
-      "description": "无尽好奇的思考者，喜欢剖析复杂系统。探索Ghibli、Marvel等中的INTP角色。"
-    },
-    "mbti-entj": {
-      "displayName": "ENTJ",
-      "title": "ENTJ - 不可阻挡的指挥官 | MBTI角色卡片",
-      "description": "天生的领导者，能够识别并解决低效问题。探索Marvel、Breaking Bad和体育宇宙中的ENTJ角色。"
-    },
-    "mbti-entp": {
-      "displayName": "ENTP",
-      "title": "ENTP - 魔鬼的代言人 | MBTI角色卡片",
-      "description": "富有创造力的辩论者，热衷于挑战每一个假设。探索Ghibli、Marvel、Friends等中的ENTP角色。"
-    },
-    "mbti-infj": {
-      "displayName": "INFJ",
-      "title": "INFJ - 有远见的治愈者 | MBTI角色卡片",
-      "description": "深具同理心的理想主义者，具有罕见的清晰目的感。探索Ghibli、Marvel、Friends和体育宇宙中的INFJ角色。"
-    },
-    "mbti-infp": {
-      "displayName": "INFP",
-      "title": "INFP - 改变世界的梦想家 | MBTI角色卡片",
-      "description": "安静热情的灵魂，以丰富的内在道德指南为指引。探索Ghibli、Marvel、Friends等中的INFP角色。"
-    },
-    "mbti-enfj": {
-      "displayName": "ENFJ",
-      "title": "ENFJ - 磁性的讲故事者 | MBTI角色卡片",
-      "description": "有魅力且富有同理心的领导者，只需在场就能激励他人。探索Breaking Bad、Marvel和体育中的ENFJ角色。"
-    },
-    "mbti-enfp": {
-      "displayName": "ENFP",
-      "title": "ENFP - 不会停止的阳光 | MBTI角色卡片",
-      "description": "极度热情和无尽好奇。探索Ghibli、Marvel、Breaking Bad等中的ENFP角色。"
-    },
-    "mbti-istj": {
-      "displayName": "ISTJ",
-      "title": "ISTJ - 坚定不移的岩石 | MBTI角色卡片",
-      "description": "可靠而有条理，构建持久的事物。探索Breaking Bad、Marvel和体育宇宙中的ISTJ角色。"
-    },
-    "mbti-isfj": {
-      "displayName": "ISFJ",
-      "title": "ISFJ - 安静的守护者 | MBTI角色卡片",
-      "description": "用行动表达爱的温暖守护者。探索Ghibli、Marvel、Breaking Bad和Friends中的ISFJ角色。"
-    },
-    "mbti-estj": {
-      "displayName": "ESTJ",
-      "title": "ESTJ - 秩序的建筑师 | MBTI角色卡片",
-      "description": "实用的组织者，依赖明确的规则和清晰的角色。探索Ghibli、Breaking Bad和Friends中的ESTJ角色。"
-    },
-    "mbti-esfj": {
-      "displayName": "ESFJ",
-      "title": "ESFJ - 每个人需要的温暖 | MBTI角色卡片",
-      "description": "建设社区的人，记住生日，注意情绪，保持大家团结。探索Breaking Bad、Friends和体育中的ESFJ角色。"
-    },
-    "mbti-istp": {
-      "displayName": "ISTP",
-      "title": "ISTP - 冷静的特立独行者 | MBTI角色卡片",
-      "description": "在任何危机中冷静，动手能力强且高效。探索Ghibli、Marvel和体育宇宙中的ISTP角色。"
-    },
-    "mbti-isfp": {
-      "displayName": "ISFP",
-      "title": "ISFP - 秘密的艺术家 | MBTI角色卡片",
-      "description": "温柔且极具创造力，通过他们所做的表达情感的世界。探索Ghibli、Marvel、Breaking Bad和体育中的ISFP角色。"
-    },
-    "mbti-estp": {
-      "displayName": "ESTP",
-      "title": "ESTP - 冒险家 | MBTI角色卡片",
-      "description": "大胆、思维敏捷，优先行动。探索Breaking Bad、Marvel和体育宇宙中的ESTP角色。"
-    },
-    "mbti-esfp": {
-      "displayName": "ESFP",
-      "title": "ESFP - 每个房间的灵魂 | MBTI角色卡片",
-      "description": "自发的娱乐者，带来能量，无论去哪里。探索Ghibli、Breaking Bad、Friends和体育中的ESFP角色。"
-    }
-  },
   "topicPage": {
     "exampleImagesHeading": "示例图片",
     "templatesHeading": "模板",
@@ -880,6 +393,7 @@
       "description": "在几分钟内从任何视频生成准确的转录。Curify的AI转录工具支持170多种语言，并导出为SRT和TXT。"
     },
     "title": "AI视频转录生成器",
+<<<<<<< HEAD
     "description": "上传视频或粘贴YouTube链接，几秒钟内获得完整、准确的转录。导出为SRT或纯文本——准备好用于字幕、再利用或搜索索引。",
     "example": "示例：一段10分钟的讲座转录，包含说话者准确的文本和时间戳。",
     "cta": "生成转录",
@@ -889,6 +403,17 @@
       "point2": "支持170多种语言，并自动检测语言。",
       "point3": "将完整转录导出为SRT（带时间戳）或纯TXT。",
       "point4": "支持上传的视频和YouTube链接——无需额外软件。"
+=======
+    "description": "上传视频或粘贴YouTube链接，几秒钟内获取完整、准确的转录。导出为SRT或纯文本——准备好用于字幕、再利用或搜索索引。",
+    "example": "示例：一段10分钟的讲座转录，包含发言者准确的文本和时间戳。",
+    "cta": "生成转录",
+    "why": {
+      "title": "为什么选择Curify进行视频转录？",
+      "point1": "由先进的语音识别模型提供高准确度的转录。",
+      "point2": "支持170多种语言，并具有自动语言检测功能。",
+      "point3": "将完整转录导出为SRT（带时间戳）或纯TXT。",
+      "point4": "支持上传视频和YouTube链接——无需额外软件。"
+>>>>>>> main
     },
     "faq": {
       "title": "常见问题",
@@ -900,6 +425,7 @@
     "deep": {
       "what": {
         "title": "什么是AI视频转录？",
+<<<<<<< HEAD
         "p1": "视频转录是视频中所有发言内容的文本版本——包括说话者对话、旁白和关键音频提示。转录是字幕、可搜索内容、再利用文章和无障碍合规的基础。",
         "p2": "AI转录生成器使用经过数百万小时音频训练的语音识别模型自动化此过程，涵盖数十种语言。输出是一个时间对齐的文本文件——比手动转录快得多且更具可扩展性。",
         "p3": "Curify的转录工具旨在实现速度和准确性：上传一次，获得干净、可编辑的转录，准备导出或在您的内容工作流程中使用。"
@@ -909,22 +435,43 @@
         "p1": "Curify的转录流程建立在生产级语音识别基础上，后处理经过调优以适应真实世界的视频音频——包括背景噪音、多说话者和口音语音。",
         "p2": "步骤1：从您的视频中提取音频，并进行预处理以标准化音量水平并减少背景干扰。",
         "p3": "步骤2：我们的语音识别模型将音频分段为说话者轮次，并以高准确率将每个段落转换为文本。",
+=======
+        "p1": "视频转录是视频中所有发言内容的文本版本——包括发言者对话、旁白和关键音频提示。转录是字幕、可搜索内容、再利用文章和无障碍合规的基础。",
+        "p2": "AI转录生成器使用在数百万小时音频上训练的语音识别模型自动化此过程，覆盖多种语言。输出是一个时间对齐的文本文件——比手动转录快得多且更具可扩展性。",
+        "p3": "Curify的转录工具旨在快速和准确：上传一次，获取干净、可编辑的转录，准备导出或在您的内容工作流程中使用。"
+      },
+      "how": {
+        "title": "Curify如何生成准确的转录",
+        "p1": "Curify的转录管道建立在生产级语音识别基础上，后处理经过调整以适应真实世界的视频音频——包括背景噪音、多位发言者和口音发言。",
+        "p2": "步骤1：从您的视频中提取音频，并进行预处理以规范音量水平并减少背景干扰。",
+        "p3": "步骤2：我们的语音识别模型将音频分段为发言者轮次，并以高准确度将每个段落转换为文本。",
+>>>>>>> main
         "p4": "步骤3：后处理添加标点符号，首字母大写，并将每个句子与原始视频中的时间戳对齐。",
         "p5": "步骤4：您将收到一个干净的转录文件——SRT用于带时间戳的字幕，或TXT用于文档、文章或搜索索引中的纯文本使用。"
       },
       "usecases": {
         "title": "谁在使用视频转录？",
+<<<<<<< HEAD
         "creatorsTitle": "为内容创作者",
         "creatorsBody": "创作者使用转录将视频内容再利用为博客文章、社交媒体标题、新闻通讯和脚本。一段长格式视频在转录后可以为一周的内容提供素材。",
         "educationTitle": "为教育工作者和培训师",
         "educationBody": "成绩单使讲座、网络研讨会和培训课程变得可访问和可搜索。学生可以以文本形式回顾材料，并找到关键时刻，而无需重新观看完整视频。",
         "businessTitle": "适用于企业和媒体团队",
         "businessBody": "法律、合规和媒体团队使用成绩单来归档会议录音、采访视频和客户通话。可搜索的成绩单节省了数小时的手动审核时间。"
+=======
+        "creatorsTitle": "内容创作者",
+        "creatorsBody": "创作者使用转录文本将视频内容重新利用为博客文章、社交媒体标题、新闻通讯和脚本。单个长视频在转录后可以为一周的内容提供支持。",
+        "educationTitle": "教育工作者和培训师",
+        "educationBody": "转录文本使讲座、网络研讨会和培训课程可访问且可搜索。学生可以以文本形式复习材料，并找到关键时刻，而无需重新观看完整视频。",
+        "businessTitle": "企业和媒体团队",
+        "businessBody": "法律、合规和媒体团队使用转录文本来归档会议录音、采访视频和客户电话。可搜索的转录文本节省了数小时的人工审核时间。"
+>>>>>>> main
       }
     }
   },
   "videoSummarizer": {
     "metadata": {
+<<<<<<< HEAD
       "title": "AI视频摘要生成器 | Curify AI",
       "description": "获取任何视频的即时AI生成摘要。Curify提取关键点，节省您数小时的观看时间。"
     },
@@ -938,10 +485,26 @@
       "point2": "适用于上传的视频和YouTube链接。",
       "point3": "将摘要导出为准备分享的纯文本文件。",
       "point4": "支持170多种语言，并自动检测源语言。"
+=======
+      "title": "AI 视频摘要生成器 | Curify AI",
+      "description": "获取任何视频的即时 AI 生成摘要。Curify 提取关键点，节省您数小时的观看时间。"
+    },
+    "title": "AI 视频摘要生成器",
+    "description": "上传视频或粘贴 YouTube 链接，几秒钟内即可获得简洁、结构化的关键点摘要。非常适合会议、讲座、采访和长篇内容。",
+    "example": "示例：将 45 分钟的播客集总结为 5 个关键要点。",
+    "cta": "总结视频",
+    "why": {
+      "title": "为什么使用 Curify 来总结视频？",
+      "point1": "AI 生成的摘要捕捉关键点，而不仅仅是转录文本。",
+      "point2": "适用于上传的视频和 YouTube 链接。",
+      "point3": "将摘要导出为准备分享的纯文本文件。",
+      "point4": "支持 170 多种语言，并自动检测源语言。"
+>>>>>>> main
     },
     "faq": {
       "title": "常见问题",
       "q1": "总结需要多长时间？",
+<<<<<<< HEAD
       "a1": "大多数视频在几分钟内完成总结，具体取决于长度。在Curify处理您的视频时，您会看到进度指示器。",
       "q2": "摘要的准确性如何？",
       "a2": "Curify根据实际的口语内容进行总结，而不是元数据或描述。准确性取决于音频清晰度。您可以将摘要下载为TXT文件，并根据需要进行编辑。"
@@ -969,11 +532,41 @@
         "educationBody": "会议录音、销售电话和网络研讨会重播时间较长。AI摘要让团队成员在不观看完整录音的情况下，了解关键决策和行动项。",
         "businessTitle": "为内容创作者",
         "businessBody": "视频摘要为新闻通讯、文章、节目笔记和社交帖子提供即时素材——将一个长视频转化为可发布的文本资产。"
+=======
+      "a1": "大多数视频在几分钟内完成总结，具体取决于长度。在 Curify 处理您的视频时，您将看到进度指示器。",
+      "q2": "摘要的准确性如何？",
+      "a2": "Curify 根据实际的口语内容进行总结，而不是元数据或描述。准确性取决于音频清晰度。您可以将摘要下载为 TXT 文件并根据需要进行编辑。"
+    },
+    "deep": {
+      "what": {
+        "title": "什么是 AI 视频摘要？",
+        "p1": "AI 视频摘要将视频中的关键思想、论点或要点浓缩为简短、可读的格式——无需观看完整内容。它是从口语音频生成的，而不是从视频标题或描述中生成。",
+        "p2": "与逐字记录的转录文本不同，摘要识别最重要的点，过滤掉填充内容，并以结构化、易于浏览的格式呈现。这对于关键时刻分散在数小时内容中的长录音尤其有用。",
+        "p3": "Curify 直接从语音生成摘要，使其准确反映实际内容，而不是依赖可能不反映所说内容的元数据。"
+      },
+      "how": {
+        "title": "Curify 如何总结视频内容",
+        "p1": "Curify 的摘要生成流程首先转录完整的口语音频，然后应用语言模型提取和结构化最重要的内容。",
+        "p2": "步骤 1：完整转录捕捉视频中所有的口语内容，包括发言者的轮换和段落时间。",
+        "p3": "步骤 2：转录文本通过摘要模型，识别关键主题、论点和结论。",
+        "p4": "步骤 3：输出被结构化为可读的摘要——包含关键点、相关的章节标题和简明的结论。",
+        "p5": "步骤 4：摘要被导出为可供分发、记笔记或后续内容制作的纯文本文件。"
+      },
+      "usecases": {
+        "title": "谁在使用 AI 视频摘要？",
+        "creatorsTitle": "针对研究人员和学生",
+        "creatorsBody": "研究人员使用摘要快速评估讲座、访谈或会议演讲是否包含相关材料，然后决定是否观看完整视频。",
+        "educationTitle": "针对专业人士和团队",
+        "educationBody": "会议录音、销售电话和网络研讨会重播时间较长。AI 摘要让团队成员在不观看完整录音的情况下，快速了解关键决策和行动事项。",
+        "businessTitle": "针对内容创作者",
+        "businessBody": "视频摘要为新闻通讯、文章、节目说明和社交帖子提供即时素材——将一个长视频转化为可发布的文本资产。"
+>>>>>>> main
       }
     }
   },
   "speechTranslator": {
     "metadata": {
+<<<<<<< HEAD
       "title": "AI语音翻译器 — 将音频翻译成任何语言 | Curify AI",
       "description": "将口语音频翻译成170多种语言，使用自然的AI语音。Curify的语音翻译器生成带有翻译语音轨道的配音视频。"
     },
@@ -987,10 +580,26 @@
       "point2": "生成一个完全配音的视频——不仅仅是字幕——带有翻译语音轨道。",
       "point3": "在目标语言中保留说话者的语调、节奏和情感表达。",
       "point4": "支持上传的视频和YouTube链接。"
+=======
+      "title": "AI 语音翻译器 — 将音频翻译成任何语言 | Curify AI",
+      "description": "将口语音频翻译成 170 多种语言，使用自然的 AI 语音。Curify 的语音翻译器生成带有翻译语音轨道的配音视频。"
+    },
+    "title": "AI 语音翻译器",
+    "description": "上传视频或音频文件，将口语内容翻译成另一种语言，使用自然的 AI 语音。接收一个完全配音的视频，准备发布——无需录音室。",
+    "example": "示例：用英语录制的产品演示，翻译并配音成西班牙语和日语。",
+    "cta": "翻译语音",
+    "why": {
+      "title": "为什么选择 Curify 进行语音翻译？",
+      "point1": "将口语音频翻译成 170 多种语言，使用自然的 AI 语音合成。",
+      "point2": "生成一个完全配音的视频——不仅仅是字幕——带有翻译的语音轨道。",
+      "point3": "在目标语言中保留说话者的语调、节奏和情感表达。",
+      "point4": "支持上传的视频和 YouTube 链接。"
+>>>>>>> main
     },
     "faq": {
       "title": "常见问题",
       "q1": "语音翻译和视频配音有什么区别？",
+<<<<<<< HEAD
       "a1": "语音翻译专注于翻译视频的音轨，并用目标语言的自然AI语音替换它。视频配音可能还包括口型同步对齐。Curify的语音翻译器生成带有翻译语音轨道的配音视频。",
       "q2": "支持哪些语言？",
       "a2": "Curify支持170多种语言，包括英语、西班牙语、法语、德语、中文、日语、韩语、阿拉伯语、印地语等。语言检测是自动的。"
@@ -1017,6 +626,34 @@
         "educationTitle": "面向企业培训和在线学习",
         "educationBody": "培训部门将入职视频、安全简报和产品教育翻译成当地语言。与仅使用字幕相比，自然的语音轨道提高了记忆和参与度。",
         "businessTitle": "面向国际营销团队",
+=======
+      "a1": "语音翻译专注于翻译视频的音轨，并用目标语言的自然 AI 语音替换它。视频配音可能还包括口型同步对齐。Curify 的语音翻译器生成带有翻译语音轨道的配音视频。",
+      "q2": "支持哪些语言？",
+      "a2": "Curify 支持 170 多种语言，包括英语、西班牙语、法语、德语、中文、日语、韩语、阿拉伯语、印地语等。语言检测是自动的。"
+    },
+    "deep": {
+      "what": {
+        "title": "什么是 AI 语音翻译？",
+        "p1": "AI 语音翻译将源语言中的口语转换为目标语言中的自然口语——生成翻译语言的新音轨，而不是显示文本字幕。",
+        "p2": "输出是一个配音视频：原始视频的音频被翻译的 AI 合成语音替换。这是使视频内容本地化地可供国际观众访问的最快方式，无需录音室。",
+        "p3": "Curify 的语音翻译器专为现实世界的视频内容设计——处理背景噪音、多位说话者、技术词汇和自然对话节奏，支持 170 多种语言。"
+      },
+      "how": {
+        "title": "Curify 如何翻译语音",
+        "p1": "Curify的语音翻译流程结合了高精度转录、上下文感知翻译和自然语音合成，形成一个自动化工作流程。",
+        "p2": "步骤 1：使用生产级语音识别技术将源音频中的语音转录，能够处理口音、领域词汇和多说话者对话。",
+        "p3": "步骤 2：使用上下文感知模型翻译转录文本，保留意义、语气和意图，而不仅仅是字面上的单词替换。",
+        "p4": "步骤 3：自然的AI语音在目标语言中合成翻译文本，尽可能匹配原始的节奏和情感表达。",
+        "p5": "步骤 4：合成的语音轨道替换视频中的原始音频，您将收到一个完全配音的视频文件，准备发布。"
+      },
+      "usecases": {
+        "title": "谁在使用AI语音翻译？",
+        "creatorsTitle": "针对全球内容创作者",
+        "creatorsBody": "创作者使用语音翻译来接触新的语言市场的受众，而无需重新录制他们的内容。一次上传生成多语言配音版本，适用于不同的区域频道。",
+        "educationTitle": "针对企业培训和在线学习",
+        "educationBody": "培训部门将入职视频、安全简报和产品教育翻译成当地语言。与仅使用字幕相比，自然语音轨道提高了记忆和参与度。",
+        "businessTitle": "针对国际营销团队",
+>>>>>>> main
         "businessBody": "营销团队将演示视频、客户推荐和活动录音翻译成目标市场语言——在不同地区实现一致的信息传递，而无需每个市场的制作成本。"
       }
     }

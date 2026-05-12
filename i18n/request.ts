@@ -10,6 +10,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   const common = (await import(`../messages/${locale}/common.json`)).default;
   const home = (await import(`../messages/${locale}/home.json`)).default;
+  const topics = (await import(`../messages/${locale}/topics.json`)).default;
   const pricing = (await import(`../messages/${locale}/pricing.json`)).default;
   const nano = (await import(`../messages/${locale}/nano.json`)).default;
   const blog = (await import(`../messages/${locale}/blog.json`)).default;
@@ -26,6 +27,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     messages: {
       ...common,
       ...home,
+      ...topics,
       ...pricing,
       ...blog,
       // Nested under "nano" so useTranslations("nano") resolves correctly.

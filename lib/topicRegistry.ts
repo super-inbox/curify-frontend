@@ -1,5 +1,6 @@
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
+import topicTagMappings from "./topic_tag_mappings.json";
 
 export type Topic = {
   id: string;
@@ -48,39 +49,24 @@ function normalizeTopicValues(value: unknown): string[] {
   return [];
 }
 
-// Explicit sibling groups for tag-style topics (geo, language pairs, visual styles, subjects, personality).
-// These appear at the bottom of topic pages as related tags.
+// Source-of-truth data lives in lib/topic_tag_mappings.json so .cjs
+// scripts (e.g. scripts/sync_nano_inspiration.cjs auto-tagger) can
+// require the same mappings without duplicating them.
+const MBTI_TYPE_TAGS = topicTagMappings.MBTI_TYPE_TAGS;
+const TIER1_TAG_CHILDREN: Record<string, string[]> = topicTagMappings.TIER1_TAG_CHILDREN;
+const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = topicTagMappings.EXPLICIT_CHILD_TOPICS;
+
+// Sibling groups for tag-style topics (shown as related tag chips at
+// the bottom of topic pages). Mirrors the per-Tier-1 tag lists since
+// Tier 3 tags share scope with their Tier 1 ancestor.
 const EXPLICIT_SIBLING_GROUPS: string[][] = [
-  ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  ["animals", "nature", "biology", "space", "weather"],
-  ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
+  TIER1_TAG_CHILDREN.travel,
+  ["english-chinese", "english-spanish", "english-korean", "english-japanese", "english-french"],
+  TIER1_TAG_CHILDREN.design,
+  ["animals", "nature", "space", "weather"],
+  MBTI_TYPE_TAGS,
+  TIER1_TAG_CHILDREN.lifestyle,
 ];
-
-// Tier 1 → Tier 3 tag children mapping.
-// These tags appear at the bottom of the Tier 1 topic page.
-const TIER1_TAG_CHILDREN: Record<string, string[]> = {
-  personality: ["mbti-intj","mbti-intp","mbti-entj","mbti-entp","mbti-infj","mbti-infp","mbti-enfj","mbti-enfp","mbti-istj","mbti-isfj","mbti-estj","mbti-esfj","mbti-istp","mbti-isfp","mbti-estp","mbti-esfp"],
-  travel:      ["spain", "france", "india", "japan", "korea", "thailand", "mexico", "uk", "brazil", "vietnam", "singapore", "egypt", "australia", "italy", "middle-east", "china", "germany", "greece", "russia", "united-states", "iran", "portugal"],
-  language:    ["english-chinese", "english-spanish", "english-korean", "english-japanese"],
-  design:      ["cartoon", "kawaii", "ink", "isometric", "photorealistic", "monochrome", "watercolor"],
-  learning:    ["animals", "nature", "biology", "space", "weather"],
-};
-
-// Full explicit parent→children hierarchy.
-// Tier 1 (entry bar): character, language, travel, lifestyle, learning, product
-// Tier 2 (navigational subtopics, shown at top of parent page)
-const EXPLICIT_CHILD_TOPICS: Record<string, string[]> = {
-  character:   ["mbti", "anime", "sports", "film", "portrait", "comparison", "groups"],
-  personality: [],
-  language:  ["vocabulary", "dialogue", "expressions", "language-english"],
-  travel:    ["culture", "food", "city", "itinerary"],
-  lifestyle: ["fashion", "interior", "beauty", "animal", "fitness", "finance", "nostalgia", "guides"],
-  learning:  ["science", "trending", "architecture", "history", "ai", "reading"],
-  product:   [],
-  design:    ["posters", "digital-canvas", "mockups"],
-};
 
 // Reverse map: Tier 3 tag → Tier 1 parent
 const TIER3_TAG_PARENT = new Map<string, string>();
@@ -111,6 +97,17 @@ const TOPIC_GALLERY_TAG: Record<string, string> = {
   ai:             "futuristic",
   posters:        "vintage",
   "digital-canvas": "artistic",
+  relationship:   "couple",
+  // Fashion-style Tier 3 tags under lifestyle
+  minimalist:     "minimalist",
+  "soft-girl":    "soft",
+  edgy:           "edgy",
+  athleisure:     "athletic",
+  chic:           "chic",
+  "vintage-retro": "vintage",
+  elegant:        "elegant",
+  casual:         "casual",
+  "high-fashion": "high fashion",
 };
 
 // Blog tag to pull posts for a topic page.
@@ -168,18 +165,42 @@ function buildTopicRegistry(): TopicRegistry {
     templateToTopics.set(t.id, normalizeTopicValues(t.topics));
   }
 
-  // Build enriched topic list (parentTopic from explicit map)
-  const allTopicIds = Array.from(topicToTemplateIds.keys());
-  const enrichedTopics: TopicWithTemplates[] = allTopicIds.map((id) => {
-    const topicTemplates = topicToTemplates.get(id) ?? [];
-    return {
-      id,
-      templates: topicTemplates,
-      templateCount: topicTemplates.length,
-      isEnabled: topicTemplates.length > 0,
-      parentTopic: EXPLICIT_PARENT_TOPIC.get(id),
-    };
-  });
+  // Collect every explicitly-declared topic id (Tier 1 keys, Tier 2
+  // navigational children, and Tier 3 tag children). Topics declared in
+  // these constants must surface in the registry — and be navigable —
+  // even before any template / inspiration has been tagged with them, so
+  // newly-added tags (e.g. food-and-drink, evolution) appear as
+  // discoverable chips on parent pages while content gets curated.
+  const declaredTopicIds = new Set<string>();
+  for (const [tier1, children] of Object.entries(EXPLICIT_CHILD_TOPICS)) {
+    declaredTopicIds.add(tier1);
+    for (const child of children) declaredTopicIds.add(child);
+  }
+  for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
+    declaredTopicIds.add(tier1);
+    for (const tag of tags) declaredTopicIds.add(tag);
+  }
+
+  // Build enriched topic list — union of data-derived + declared topics.
+  const allTopicIds = new Set<string>([
+    ...topicToTemplateIds.keys(),
+    ...declaredTopicIds,
+  ]);
+  const enrichedTopics: TopicWithTemplates[] = Array.from(allTopicIds).map(
+    (id) => {
+      const topicTemplates = topicToTemplates.get(id) ?? [];
+      return {
+        id,
+        templates: topicTemplates,
+        templateCount: topicTemplates.length,
+        // Declared topics are clickable even when empty — the destination
+        // page can still surface gallery prompts via TOPIC_GALLERY_TAG and
+        // sibling chips, and SEO-wise we want the chip discoverable.
+        isEnabled: topicTemplates.length > 0 || declaredTopicIds.has(id),
+        parentTopic: EXPLICIT_PARENT_TOPIC.get(id),
+      };
+    }
+  );
 
   const topicById = new Map<string, TopicWithTemplates>(
     enrichedTopics.map((t) => [t.id, t])

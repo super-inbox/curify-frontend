@@ -47,6 +47,14 @@ export type RawNanoImageRecord = {
   locales?: Partial<Record<PageLocale, { category?: string; title?: string }>>;
   topics?: string[];
   tags?: string[];
+  /**
+   * When true, this example renders with locale-specific
+   * title/description/metaDescription from messages/<locale>/example.json
+   * for all 10 locales, and gets a full 10-locale entry in the sitemap.
+   * When false / absent, the example uses template-level i18n fallback and
+   * non-en/zh locale renders are noindex'd to avoid thin-content penalties.
+   */
+  allow_i18n?: boolean;
 };
 
 export type TemplateView = {
@@ -112,18 +120,44 @@ export function toSlug(templateId: string) {
   return templateId.replace(/^template-/, "");
 }
 
+/** Deterministic djb2 hash → 7-char base36. Used as a uniqueness suffix
+ *  for non-ASCII param values that the slug step would otherwise drop.
+ */
+function shortHash(s: string): string {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) {
+    h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+  }
+  return (h >>> 0).toString(36).padStart(7, "0").slice(0, 7);
+}
+
 /** Builds a deterministic example ID from template_id + params.
  *  Used for duplicate detection and as the example_id sent to the backend.
- *  e.g. template-travel + {destination:"Kyoto", date_range:"4/16"} → "template-travel-kyoto-4-16"
+ *
+ *  Pure-ASCII values produce a clean human-readable slug (unchanged):
+ *    {destination:"Kyoto", date_range:"4/16"} → "template-travel-kyoto-4-16"
+ *
+ *  Values containing any non-ASCII characters (CJK, Cyrillic, Arabic,
+ *  etc.) also append a deterministic short hash of the raw value, so
+ *  inputs that the slug would otherwise strip to nothing still get
+ *  unique IDs:
+ *    {idiom:"没完没了"}  → "template-...-a3kj92x"
+ *    {idiom:"画蛇添足"}  → "template-...-b1f4p9q"   (different hash)
+ *    {trip_duration:"7", destination_name:"台湾"}
+ *                       → "template-series-travel-7-d9j3w8b"
  */
 export function buildExampleId(templateId: string, params: Record<string, string>): string {
-  const suffix = Object.values(params)
-    .filter((v) => typeof v === "string" && v.trim())
-    .map((v) =>
-      v.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")
-    )
-    .filter(Boolean)
-    .join("-");
+  const pieces = Object.values(params)
+    .filter((v): v is string => typeof v === "string" && v.trim().length > 0)
+    .map((v) => {
+      const raw = v.trim();
+      const slug = raw.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      const hasNonAscii = /[^\x00-\x7F]/.test(raw);
+      if (!hasNonAscii) return slug;
+      return slug ? `${slug}-${shortHash(raw)}` : shortHash(raw);
+    })
+    .filter(Boolean);
+  const suffix = pieces.join("-");
   return suffix ? `${templateId}-${suffix}` : templateId;
 }
 

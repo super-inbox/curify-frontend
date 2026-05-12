@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.curify-ai.com/sitemap.xml',
+    sitemap: 'https://www.curify-ai.com/sitemap-index.xml',
     host: 'https://www.curify-ai.com',
   }
 }

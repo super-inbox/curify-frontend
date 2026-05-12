@@ -16,7 +16,8 @@ export type ContentType =
   | "menu_link"
   | "breadcrumb"
   | "prev_next"
-  | "mbti_quiz";
+  | "mbti_quiz"
+  | "page";
 
 export type ActionType =
   | "view"
@@ -28,6 +29,7 @@ export type ActionType =
   | "remix"
   | "download"
   | "search"
+  | "search_noresult"
   | "video_click"
   | "video_play";
 
@@ -282,6 +284,29 @@ export function useSaveTracking(
   return useCallback(() => {
     trackAction({ contentId, contentType, viewMode }, "favorite");
   }, [contentId, contentType, viewMode, trackAction]);
+}
+
+// Once-per-session "page view" event so growth analytics can see the
+// entry route + referrer + UTM for sessions that bounce without
+// triggering any explicit interaction. Mounted in the public layout
+// via SessionStartTracker. Bots are filtered out so they don't pollute
+// real-user funnels.
+const SESSION_VIEW_FLAG = "_curify_session_view_fired";
+const BOT_UA_RE_TRACK = /bot|spider|crawl|slurp|screenshot/i;
+
+export function useSessionStartTracker() {
+  const { track } = useTracking();
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (BOT_UA_RE_TRACK.test(navigator.userAgent || "")) return;
+    if (sessionStorage.getItem(SESSION_VIEW_FLAG)) return;
+    sessionStorage.setItem(SESSION_VIEW_FLAG, "1");
+    track({
+      contentId: window.location.pathname,
+      contentType: "page",
+      actionType: "view",
+    });
+  }, [track]);
 }
 
 export function useVideoTracking(

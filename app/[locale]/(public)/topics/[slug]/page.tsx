@@ -20,7 +20,7 @@ import {
 } from "@/lib/locale_utils";
 import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
-import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, isTopicEnabled, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
+import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
 
 // Cache topic listing pages for 4 hours with ISR — keeps the
 // gallery / prompt fetches off the hot path on every request.
@@ -46,10 +46,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const t = await getTranslations({ locale });
   const safeT = (key: string) => { try { return t(key as never) ?? ""; } catch { return ""; } };
+  const safeRaw = <T,>(key: string): T | null => {
+    try { return (t as { raw: (k: string) => T }).raw(key) ?? null; } catch { return null; }
+  };
 
   const displayName = safeT(`topics.${slug}.displayName`) || titleCaseFromSlug(slug);
   const title = safeT(`topics.${slug}.title`) || `${displayName} — Nano Banana AI Templates`;
   const description = safeT(`topics.${slug}.description`) || `Explore ${displayName} AI visual templates and prompts on Nano Banana.`;
+  const keywordsRaw = safeRaw<string[]>(`topics.${slug}.keywords`);
+  const keywords = Array.isArray(keywordsRaw) && keywordsRaw.length > 0 ? keywordsRaw : undefined;
 
   const canonical = getCanonicalUrl(locale, `/topics/${slug}`);
   const languages = getLanguagesMap(`/topics/${slug}`);
@@ -57,6 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords,
     alternates: { canonical, languages },
     openGraph: {
       title: `${displayName} | Nano Banana`,
@@ -106,7 +112,12 @@ export default async function Page({ params }: Props) {
   // Union of both sources
   const allFilteredIds = new Set([...templateTaggedIds, ...inspirationTaggedIds]);
 
-  if (!allFilteredIds.size) notFound();
+  // 404 only for completely unknown slugs. If the slug is a declared topic
+  // in the registry (Tier 1, Tier 2, or Tier 3 tag) but currently has no
+  // tagged content, render the page anyway — it will still surface
+  // navigation, gallery, and Tier 3 chips while content gets curated.
+  const isDeclaredTopic = !!getTopicById(slug);
+  if (!allFilteredIds.size && !isDeclaredTopic) notFound();
 
   const filteredTemplates = allTemplates.filter((t: any) => allFilteredIds.has(t.id));
 
@@ -146,7 +157,7 @@ export default async function Page({ params }: Props) {
     translate: translateNano,
   });
 
-  if (!nanoCards.length) {
+  if (!nanoCards.length && !isDeclaredTopic) {
     notFound();
   }
 
@@ -175,6 +186,11 @@ export default async function Page({ params }: Props) {
   const topicDescription =
     translateTopics(`topics.${slug}.description`) || "";
 
+  // Longer 3-4 sentence intro paragraph rendered under the title — gives
+  // each locale enough unique localized prose for Google to treat it as
+  // its own page rather than a duplicate of the en version.
+  const topicIntro = translateTopics(`topics.${slug}.intro`) || "";
+
   const exampleImagesHeading =
     translateTopics("topicPage.exampleImagesHeading") || "Example Images";
   const templatesHeading =
@@ -190,9 +206,14 @@ export default async function Page({ params }: Props) {
   // Tier 2 navigational subtopics — shown at top on all tiers
   const navSubTopics = tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [];
 
-  // Tier 3 tag subtopics — shown at bottom on all tiers
+  // Tier 3 tag subtopics — shown at bottom on all tiers.
+  // Don't filter by isTopicEnabled: subject Tier 3 tags (animals, evolution,
+  // food-and-drink, family, etc.) are intentionally surfaced even before they
+  // have tagged content so the navigation is discoverable while content gets
+  // curated. The destination topic page falls back to the gallery section
+  // (TOPIC_GALLERY_TAG) when there's no template grid yet.
   const tagSubTopics = tier1Ancestor
-    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug && isTopicEnabled(id))
+    ? getTagChildren(tier1Ancestor).filter((id) => id !== slug)
     : [];
 
   const subTopicsHeading = !!parentTopicId
@@ -204,10 +225,16 @@ export default async function Page({ params }: Props) {
       <section className="mx-auto max-w-[1400px] px-4 pt-2 pb-4 sm:px-6 lg:px-8">
 
         <div>
+          {/* Localized description + intro are kept in the DOM (so Google
+              and screen readers see them) but visually hidden via sr-only.
+              They're our main per-locale prose used to differentiate
+              topic pages across the 10 supported languages. */}
           {topicDescription ? (
-            <p className="mt-3 text-base leading-7 text-neutral-600">
-              {topicDescription}
-            </p>
+            <p className="sr-only">{topicDescription}</p>
+          ) : null}
+
+          {topicIntro ? (
+            <p className="sr-only whitespace-pre-line">{topicIntro}</p>
           ) : null}
 
           {relatedTopicIds.length > 0 && (

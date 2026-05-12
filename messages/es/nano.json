@@ -2856,5 +2856,499 @@
     },
     "description": "Una guía visual de mapa mundial que muestra palabras conectadas a sus países de origen con etimologías y significados. Usa el aviso de IA para generar tu propio cartel de mapa etimológico.",
     "title": "Orígenes de Palabras en Todo el Mundo: Infografía de Mapa Etimológico"
+  },
+  "template-vintage-ultimate-guide-infographic": {
+    "category": "Infografía de la Guía Definitiva Vintage",
+    "description": "Una guía visual detallada de estilo vintage para cualquier tema — café, queso, plantas de interior, carne — con tipografía retro, ilustraciones dibujadas a mano y diseños atemporales. Usa el aviso de IA para generar tu propio póster de guía definitiva.",
+    "title": "Pósters de la Guía Definitiva Vintage: Infografías Visuales Retro para Cualquier Tema",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía detallada de estilo vintage titulada 'LA GUÍA DEFINITIVA DE [tema]'. Un título en negrita con serifas retro se sitúa en la parte superior; el cuerpo se divide en secciones estructuradas (Tipos, Métodos, Consejos, Hechos) con subtítulos etiquetados, ilustraciones de estilo vintage dibujadas a mano, tiras de transformación, gráficos de comparación y sistemas de coincidencia. Papel texturizado beige cálido, paleta sepia/terrosa en marrones y cremas, con una tira de conclusiones clave al final.",
+        "who": "Adecuado para bloggers de comida, creadores de estilo de vida, cuentas de Pinterest de estética vintage, canales de contenido de aficionados, marcas de cocina y hogar, y cualquier persona que haga pósters de estilo 'guía definitiva' nostálgicos.",
+        "how": [
+          "Ingresa un tema de guía (por ejemplo, 'Café', 'Queso', 'Cuidado de Plantas de Interior', 'Cata de Vinos').",
+          "El póster organiza automáticamente un título con serifas retro y secciones estructuradas de Tipos/Métodos/Consejos/Hechos.",
+          "Cada sección utiliza ilustraciones vintage dibujadas a mano con etiquetas y llamadas.",
+          "Genera un póster vertical de guía definitiva de estilo vintage en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía vintage 'La Guía Definitiva del Café' con métodos de preparación.",
+          "Crea un póster de estilo retro 'La Guía Definitiva del Queso' con tipos y maridajes.",
+          "Genera una infografía vintage 'La Guía Definitiva del Cuidado de Plantas de Interior'."
+        ]
+      }
+    }
+  },
+  "template-weird-science-facts-infographic": {
+    "category": "Infografía de Hechos Científicos Raros",
+    "description": "Una guía visual educativa colorida y divertida de hechos científicos raros sobre cualquier tema — animales, plantas, espacio, clima. Usa el aviso de IA para generar tu propio póster de hechos científicos peculiares.",
+    "title": "Guía Visual de Hechos Científicos Raros: Infografías Educativas Divertidas para Cualquier Tema",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa colorida y divertida titulada 'HECHOS CIENTÍFICOS RAROS: [tema]!'. El cuerpo está lleno de hechos científicos ilustrados peculiares sobre el tema elegido, cada uno emparejado con una ilustración de estilo caricatura amigable y una breve explicación sorprendente, en una estética amigable para niños con una paleta de colores brillante y tipografía clara sin serifas.",
+        "who": "Adecuado para profesores de ciencias, clubes de ciencia para niños, creadores de edutainment, editores de boletines escolares, padres que educan en casa ciencias, y creadores de contenido que hacen pósters educativos compartibles.",
+        "how": [
+          "Ingresa un tema científico (por ejemplo, 'Animales', 'Plantas', 'Espacio', 'Cuerpo Humano').",
+          "El póster organiza automáticamente tarjetas ilustradas de hechos raros sobre ese tema.",
+          "Cada hecho empareja una ilustración de caricatura con una breve explicación sorprendente.",
+          "Genera una infografía vertical de hechos científicos raros amigable para niños en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía 'Hechos Científicos Raros: ¡Animales!' con ilustraciones divertidas.",
+          "Crea un póster colorido de ciencia para niños 'Hechos Científicos Raros: ¡Espacio!'.",
+          "Genera una infografía educativa 'Hechos Científicos Raros: ¡Plantas!'."
+        ]
+      }
+    }
+  },
+  "template-artist-biography-infographic": {
+    "category": "Infografía de Biografía de Artista",
+    "description": "Una biografía visual temática de cualquier artista famoso con su estilo icónico como fondo, línea de tiempo de su vida, datos curiosos y citas — Monet, Picasso, Van Gogh, da Vinci y más.",
+    "title": "Guía Visual de Biografía de Artista Famoso: Infografías Temáticas para Cualquier Pintor",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de biografía vertical visualmente cohesiva sobre un artista elegido. El fondo utiliza el estilo de pintura icónico del artista (lirios de agua de Monet, noche estrellada de Van Gogh, etc.) con un retrato estilizado superpuesto; el diseño incluye un nombre estilizado + fecha de nacimiento, un breve párrafo introductorio sobre su movimiento y legado, una línea de tiempo de 'Viaje de Vida' con eventos y años clave, una caja de 'Dato Curioso' y una cita famosa — todo en una paleta de colores completamente temática que coincide con la estética del artista.",
+        "who": "Adecuado para profesores de arte, educadores de museos, bloggers de historia del arte, diseñadores de carteles para aulas, cuentas de podcasts de historia del arte y creadores que hacen biografías visuales compartibles de pintores famosos.",
+        "how": [
+          "Ingresa el nombre de un artista (por ejemplo, Claude Monet, Pablo Picasso, Andy Warhol, Leonardo da Vinci, Vincent van Gogh, Frida Kahlo).",
+          "El cartel auto-tematiza el fondo y la paleta para coincidir con el estilo icónico del artista.",
+          "El diseño incluye una línea de tiempo de eventos de vida, caja de dato curioso y una cita famosa.",
+          "Genera una infografía de biografía de artista vertical en 4K con la estética visual característica del artista."
+        ],
+        "prompts": [
+          "Genera una infografía de biografía de Claude Monet con fondo temático de lirios de agua.",
+          "Crea un cartel de biografía visual de Vincent van Gogh con estilo de noche estrellada.",
+          "Genera una infografía de biografía temática de Frida Kahlo con paleta de arte popular mexicano."
+        ]
+      }
+    }
+  },
+  "template-celebrity-filmography-infographic": {
+    "category": "Infografía de Filmografía de Celebridades",
+    "description": "Una filmografía visual profesional y limpia para cualquier celebridad — retrato, 6 películas icónicas con carteles y un banner de premios y logros.",
+    "title": "Guía Visual de Filmografía de Celebridades: Carteles de Películas Icónicas y Logros",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía vertical profesional y limpia titulada '<celebrity>: Filmografía y Logros'. La sección superior empareja un retrato de alta calidad en un marco temático con el nombre de la celebridad en negrita, año de nacimiento e íconos de rol (Actor, Productor, Director). El medio es una cuadrícula de 6 películas icónicas con imagen de cartel, título, año de estreno y director. La parte inferior es un banner horizontal de logros clave — Oscars, premios, colaboraciones famosas, apodos — con íconos simples.",
+        "who": "Adecuado para bloggers de cine, marcas de decoración de carteles de películas, creadores de cuentas de fans, canales de historia del cine, creadores de contenido de temporada de premios y creadores que hacen carteles de filmografía de celebridades compartibles.",
+        "how": [
+          "Ingresa el nombre de una celebridad (por ejemplo, Brad Pitt, Johnny Depp, Leonardo DiCaprio, Meryl Streep).",
+          "El cartel auto-organiza un retrato, íconos de rol y año de nacimiento en la parte superior.",
+          "Se presentan seis películas icónicas como una cuadrícula con cartel, título, año y director.",
+          "Genera una infografía de filmografía moderna y limpia vertical en 4K con acentos temáticos."
+        ],
+        "prompts": [
+          "Genera una infografía de filmografía de Brad Pitt con películas icónicas y menciones de Oscar.",
+          "Crea un cartel de filmografía visual de Leonardo DiCaprio con colaboraciones de directores.",
+          "Genera una infografía de filmografía de Meryl Streep con banner de premios."
+        ]
+      }
+    }
+  },
+  "template-harry-potter-mbti-infographic": {
+    "category": "Infografía MBTI de Harry Potter",
+    "description": "Tarjetas de personajes MBTI con temática mágica de Hogwarts: tipo, rasgos principales, fortalezas, desafíos, citas famosas y roles ideales en el mundo mágico.",
+    "title": "Tarjetas MBTI de Harry Potter: Perfiles de Personalidad para Personajes de Hogwarts",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía vibrante y caprichosa que perfila a un personaje de Harry Potter a través del lente MBTI. El diseño comienza con un banner superior que muestra el tipo MBTI y el título del personaje (por ejemplo, 'ENTP — El Debatidor'), una ilustración central del personaje en sus túnicas de Hogwarts rodeado de objetos y criaturas icónicas, y luego secciones para Rasgos Principales, Fortalezas, Desafíos, Citas Famosas y Roles Ideales en el Mundo Mágico.",
+        "who": "Adecuado para creadores de cuentas de fans de Harry Potter, bloggers de personalidad MBTI, diseñadores de merchandising de fandom, creadores de BookTok y educadores que utilizan la ficción para enseñar marcos de personalidad.",
+        "how": [
+          "Ingresa un personaje de Harry Potter (por ejemplo, Harry, Hermione, Snape, Luna, Fred y George).",
+          "La infografía se organiza automáticamente con un banner MBTI, una ilustración temática de Hogwarts y secciones en viñetas.",
+          "Genera una infografía caprichosa de fantasía en 4K con los colores de la casa del personaje."
+        ],
+        "prompts": [
+          "Genera una infografía MBTI de Harry Potter ENFJ con efectos de varita mágica.",
+          "Crea una tarjeta MBTI ESTJ de Hermione Granger con elementos de biblioteca y estudio.",
+          "Genera una infografía MBTI de Luna Lovegood INFP con criaturas mágicas soñadoras."
+        ]
+      }
+    }
+  },
+  "template-educational-topic-infographic": {
+    "category": "Infografía de Tema Educativo",
+    "description": "Infografías de cuatro paneles amigables para niños: elige cualquier tema educativo (espacio, océanos, civilizaciones, vida salvaje) y obtén un cartel explicativo colorido con ilustraciones temáticas y cajas de hechos.",
+    "title": "Creador de Infografías de Temas Educativos: Explicaciones de Cuatro Paneles para Niños",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa vibrante y amigable para niños. El diseño tiene un título en degradado rojo en la parte superior, seguido de 4 paneles rectangulares horizontales, cada uno con un encabezado de subtema, una caja de hechos central, ilustraciones temáticas a ambos lados (animales, planetas, escenas históricas) y flechas visuales o diagramas. El estilo es un cartoon caprichoso con una paleta suave temática al tema.",
+        "who": "Adecuado para maestros de primaria, padres de educación en casa, YouTubers de contenido para niños, educadores de museos y creadores que hacen carteles explicativos compartibles sobre temas de ciencia / historia / naturaleza.",
+        "how": [
+          "Ingresa un tema educativo (por ejemplo, Civilizaciones Antiguas, Hechos del Espacio, Misterios del Océano, Maravillas de la Vida Salvaje).",
+          "La infografía se construye automáticamente con 4 paneles con encabezados de subtemas e ilustraciones temáticas.",
+          "Genera un cartel educativo de cartoon caprichoso en 4K con cajas de texto limpias."
+        ],
+        "prompts": [
+          "Genera una infografía educativa sobre Misterios del Océano para niños con ilustraciones de criaturas marinas.",
+          "Crea una infografía de Hechos Asombrosos del Espacio con planetas, estrellas y cohetes.",
+          "Genera una infografía para niños sobre Maravillas de la Vida Salvaje con animales de safari y paneles de hábitat."
+        ]
+      }
+    }
+  },
+  "template-fashion-inspired-gown-design-sheet": {
+    "category": "Hoja de Diseño de Moda",
+    "description": "Hoja de diseño estilo alta costura: elige un tema de la naturaleza (orquídea, ala de mariposa, ola del océano) y obtén una ilustración de vestido de moda con boceto técnico y notas de diseño escritas a mano.",
+    "title": "Generador de Hoja de Diseño de Vestido de Alta Costura Inspirado en la Naturaleza",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una hoja de diseño de moda profesional que presenta un vestido de alta costura inspirado en un tema elegido. El diseño centra una ilustración de modelo de cuerpo completo en el vestido, con el tema de inspiración (hojas, pétalos, alas de mariposa) esbozado en la parte superior izquierda, una silueta técnica en blanco y negro a la derecha con notas de diseño estilo manuscrito, y garabatos sutiles sobre un fondo blanco limpio: una hibridación de ilustración digital y acuarela suave.",
+        "who": "Adecuado para estudiantes de diseño de moda, diseñadores de vestuario, marcas de taller, educadores de diseño, portafolios de ilustradores de moda y creadores que construyen tableros de inspiración para conceptos de alta costura.",
+        "how": [
+          "Ingresa un tema de inspiración (por ejemplo, Orquídea Púrpura, Mariposa Arcoíris, Flor de Cerezo, Pluma de Pavo Real, Olas del Océano).",
+          "La hoja organiza automáticamente una ilustración de vestido de cuerpo completo, boceto de inspiración, silueta técnica y notas de diseño.",
+          "Genera una hoja de diseño de moda en 4K con acuarela y digital con anotaciones escritas a mano."
+        ],
+        "prompts": [
+          "Genera una hoja de diseño de vestido de alta costura Cherry Blossom con tul rosa en capas.",
+          "Crea una hoja de diseño de moda de plumas de pavo real con bocetos técnicos iridiscentes.",
+          "Genera una hoja de diseño de vestido Ocean Waves con paneles de organza azul fluido."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-vs-infographic": {
+    "category": "Figura Histórica VS Infografía",
+    "description": "Tarjetas de comparación lado a lado para dos figuras históricas: años de nacimiento, logros, rasgos, legado y una cita de cierre estilo meme en el estilo de su época.",
+    "title": "Figura Histórica VS: Creador de Infografías de Comparación Lado a Lado",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación lado a lado de dos figuras históricas. Cada lado recibe un color temático, un encabezado con nombre y fechas de vida, un retrato estilo caricatura en vestimenta icónica con elementos de fondo temáticos de la época (rayos para Tesla, pirámides para Cleopatra), logros y rasgos en viñetas, y un wojak estilo meme con una cita irónica de cierre. Una insignia central sostiene el título del tema de comparación.",
+        "who": "Adecuado para profesores de historia, YouTubers de edutainment, creadores de memes históricos, creadores de contenido para museos y aprendices curiosos que construyen carteles VS compartibles para cualquier par de figuras históricas.",
+        "how": [
+          "Elige dos figuras históricas para comparar (por ejemplo, Tesla vs Edison, Napoleón vs Alejandro, Cleopatra vs Himiko).",
+          "La infografía se construye automáticamente con paneles de colores divididos lado a lado con retratos, fechas, rasgos y un cierre estilo meme.",
+          "Genera una infografía de comparación en 4K con un estilo de caricatura audaz y el tema de la época de cada figura."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación Tesla vs Edison con temas de rayos y bombillas.",
+          "Crea una infografía VS de Napoleón vs Alejandro Magno con paneles divididos en colores de imperio.",
+          "Genera un cartel de comparación Cleopatra vs Reina Himiko con motivos de civilizaciones antiguas."
+        ]
+      }
+    }
+  },
+  "template-relationship-advice-infographic": {
+    "category": "Infografía de Consejos de Relación",
+    "description": "Infografías en tonos pastel cálidos con consejos prácticos sobre relaciones: elige un tipo de relación y un enfoque, obtén seis consejos con íconos temáticos y una cita final.",
+    "title": "Generador de Infografía de Consejos de Relación",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de consejos de relación en tonos pastel suaves. El diseño comienza con un título icono-corazón 'X CONSEJOS PARA Y', una foto cálida del tipo de relación a la izquierda en un marco rosa y dorado, una cita circular, seis tarjetas de consejos con íconos temáticos y una cita final en el pie de página. El lenguaje de diseño es azul marino + rosa + dorado con botánicos minimalistas.",
+        "who": "Adecuado para coaches de relaciones, bloggers de crianza, creadores de contenido de RRHH / trabajo en equipo, maestros de aula creando carteles de rapport, y creadores que hacen tarjetas de consejos para parejas o lugares de trabajo que se pueden compartir.",
+        "how": [
+          "Elige un tipo de relación (Matrimonio, Mentoría, Colega, Crianza, Amistad, etc.).",
+          "Elige un ángulo de enfoque (Nuevos Casados, Crecimiento Profesional, Crecimiento Educativo, Vínculos Saludables…).",
+          "Genera una infografía de consejos de relación en 4K con tonos pastel cálidos, foto, seis consejos y cita en el pie de página."
+        ],
+        "prompts": [
+          "Genera una infografía de consejos de Matrimonio para nuevos casados con acentos en rosa pastel y dorado.",
+          "Crea una infografía de consejos de Maestro-Estudiante centrada en el crecimiento educativo.",
+          "Genera una infografía de consejos de Mentoría para el crecimiento profesional con un marco de foto cálido."
+        ]
+      }
+    }
+  },
+  "template-fashion-nail-art-design": {
+    "category": "Arte de Uñas Temático",
+    "description": "Primer plano fotorealista de uñas manicuras en cualquier tema: girasol, flor de cerezo, olas del océano, con acabado de gel brillante y suave iluminación natural.",
+    "title": "Generador de Diseño de Arte de Uñas Temático",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un primer plano fotorealista de arte de uñas con acabado de gel brillante. Cada uña alterna entre un motivo temático pintado a mano y un color sólido con punta de purpurina o foil. La suave luz natural con poca profundidad de campo resalta el detalle de las uñas; un fondo sutilmente desenfocado se relaciona con el tema.",
+        "who": "Adecuado para estudios de arte de uñas, bloggers de belleza, marcas de esmalte de uñas de comercio electrónico, educadores de técnica de uñas que crean moodboards, y creadores de TikTok/Reels que muestran tendencias de uñas de temporada.",
+        "how": [
+          "Elige un tema (Girasol, Flor de Cerezo, Olas del Océano, Campos de Lavanda, Rosas Vintage, Alas de Mariposa…).",
+          "Genera un primer plano fotorealista con acabado de gel brillante, diseño alternante de motivo + sólido, y un sutil desenfoque de fondo temático."
+        ],
+        "prompts": [
+          "Genera un arte de uñas temático de Flor de Cerezo con base en ombré rosa y puntas de foil dorado.",
+          "Crea un diseño de arte de uñas de Olas del Océano con gel azul iridiscente y detalles de olas blancas.",
+          "Genera un diseño de arte de uñas de Campos de Lavanda con degradado suave de púrpura y acentos de purpurina."
+        ]
+      }
+    }
+  },
+  "template-room-vocabulary-infographic": {
+    "category": "Infografía de Vocabulario de Habitaciones",
+    "description": "Lindos carteles de vocabulario en blanco y negro etiquetando objetos en cualquier habitación: cocina, dormitorio, baño, aula, con acentos en pastel.",
+    "title": "Creador de Infografía de Vocabulario de Habitaciones",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de vocabulario de arte lineal minimalista para cualquier habitación. El diseño tiene un título dibujado a mano con garabatos temáticos, una ilustración central detallada de la habitación con los elementos clave etiquetados, y una franja inferior de garabatos más pequeños también etiquetados. Acentos sutiles en pastel sobre líneas en blanco y negro.",
+        "who": "Adecuado para maestros de ESL, creadores de tarjetas de vocabulario, marcas de aprendizaje de idiomas para niños, padres que educan en casa a jóvenes aprendices, y creadores de Pinterest que hacen carteles de estudio estéticos.",
+        "how": [
+          "Elige una habitación o escena (Cocina, Baño, Dormitorio, Oficina, Aula, Jardín, Restaurante…).",
+          "Genera una infografía de vocabulario lineal linda en 4K con objetos etiquetados y una franja de garabatos."
+        ],
+        "prompts": [
+          "Genera una infografía de vocabulario de Cocina con electrodomésticos e ingredientes etiquetados.",
+          "Crea una infografía de vocabulario de Aula con escritorios, libros y suministros etiquetados.",
+          "Genera una infografía de vocabulario de Jardín con plantas, herramientas y artículos de exterior."
+        ]
+      }
+    }
+  },
+  "template-english-word-difference-infographic": {
+    "category": "Infografía de Diferencias de Palabras en Inglés",
+    "description": "Póster educativo '¿Cuál es la Diferencia?' que compara pares de palabras en inglés comúnmente confundidos con definiciones y oraciones de ejemplo.",
+    "title": "Generador de Infografía de Diferencias de Palabras en Inglés",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa clara que aclara palabras en inglés comúnmente confundidas. El diseño comienza con un encabezado de banner azul claro, luego una cuadrícula de pares de palabras: cada celda muestra dos palabras resaltadas en verde, una explicación estilo cita de su diferencia y una oración de ejemplo. Fondo blanco, texto negro, acentos en verde claro/rojo.",
+        "who": "Adecuado para profesores de ESL, creadores de contenido para el aprendizaje del inglés, comercializadores de aplicaciones de aprendizaje de idiomas, escritores de blogs de vocabulario y padres que ayudan a los niños con pares de palabras en inglés confusas.",
+        "how": [
+          "Elige un tema (Confusiones Comunes en Inglés, Homófonos y Homónimos, Vocabulario Emocional, Términos Técnicos, Jerga Empresarial…).",
+          "Genera una infografía minimalista en 4K '¿Cuál es la Diferencia?' con cuadrículas de pares de palabras."
+        ],
+        "prompts": [
+          "Genera una infografía de Confusiones Comunes en Inglés comparando afectar/efecto, entonces/que, tu/eres.",
+          "Crea una infografía de diferencias de Vocabulario Emocional explicando ansioso vs nervioso, triste vs deprimido.",
+          "Genera una infografía de Homófonos y Homónimos con su/ahí/son."
+        ]
+      }
+    }
+  },
+  "template-personal-fashion-outfit-style-variations": {
+    "category": "Lookbook de Variaciones de Estilo de Atuendo",
+    "description": "Composición de lookbook de moda: tu foto de referencia a la izquierda, cuatro fotos de cuerpo completo a la derecha estilizadas en diferentes atuendos.",
+    "title": "Generador de Variaciones de Estilo de Atuendo Personal",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una composición estilo lookbook de moda. La mitad izquierda muestra la foto de referencia original de la persona en una pose neutral. La mitad derecha muestra cuatro fotos de cuerpo completo de la misma persona, cada una estilizada en un atuendo diferente, etiquetadas abajo con el nombre del estilo. Fondo blanco limpio, iluminación natural, cara/cabello/cuerpo idénticos en las cuatro variaciones.",
+        "who": "Adecuado para estilistas personales, bloggers de moda, compradores de ecommerce visualizando construcciones de guardarropa, fotógrafos de perfiles de citas y creadores que hacen Reels de 'estilizado X de diferentes maneras'.",
+        "how": [
+          "Proporciona una foto de referencia de la persona (usada como entrada).",
+          "Elige cuatro estilos de atuendo para comparar (Streetwear, Old Money, Cottagecore, Y2K, Office Chic, Athleisure, etc.).",
+          "Genera una composición de lookbook en 4K con la referencia + cuatro variaciones de estilo etiquetadas."
+        ],
+        "prompts": [
+          "Genera un lookbook de variaciones de estilo de atuendo con Streetwear, Old Money, Cottagecore, Y2K.",
+          "Crea una variación de lookbook de moda con Office Chic, Athleisure, Noche de Cita, Vacaciones.",
+          "Genera variaciones de atuendo de cuatro estilos: Boho, Minimalista, Preppy, Edgy."
+        ]
+      }
+    }
+  },
+  "template-chinese-idiom-learning-card": {
+    "category": "Tarjeta de Memoria de Modismos Chinos",
+    "description": "Tarjetas de memoria dibujadas a mano para modismos chinos (成语) — pinyin, caracteres, definición en inglés y una frase de ejemplo por tarjeta.",
+    "title": "Generador de Tarjetas de Memoria de Modismos Chinos",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una tarjeta educativa limpia para cualquier modismo chino (chengyu). El diseño empareja una ilustración de caricatura linda de la historia del modismo a la izquierda con pinyin, caracteres chinos grandes y en negrita, y una definición simple en inglés a la derecha. Una sección inferior '例句' añade una frase de ejemplo con traducción al inglés.",
+        "who": "Adecuado para estudiantes de chino (CSL), estudiantes de preparación para HSK, profesores de idiomas, creadores de contenido para niños y marcas de educación bilingüe.",
+        "how": [
+          "Elige un modismo chino (画蛇添足, 守株待兔, 井底之蛙, 对牛弹琴, etc.).",
+          "Genera una tarjeta de memoria de caricatura minimalista en 4K con pinyin + caracteres + definición + frase de ejemplo."
+        ],
+        "prompts": [
+          "Genera una tarjeta de memoria del modismo 画蛇添足 con ilustración de serpiente y definición en inglés.",
+          "Crea una tarjeta de memoria 守株待兔 mostrando la historia del conejo y el tocón de árbol.",
+          "Genera una tarjeta de memoria 井底之蛙 con la caricatura de la rana del pozo y un ejemplo de frase."
+        ]
+      }
+    }
+  },
+  "template-weather-education-infographic": {
+    "category": "Infografía Educativa sobre el Clima para Niños",
+    "description": "Cartel educativo alegre en acuarela sobre cualquier tipo de clima — formación, causas, efectos y medición, en 4 paneles amigables para niños.",
+    "title": "Generador de Infografía Educativa sobre el Clima para Niños",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel educativo alegre y amigable para niños sobre un tipo de clima. El diseño tiene un título en negrita, cuatro paneles (Formación, Causas, Efectos, Medición) con íconos y viñetas simples, una suave ilustración en acuarela del clima en la parte inferior y un eslogan atractivo. Paleta de colores pastel temática según el clima.",
+        "who": "Adecuado para profesores de primaria, padres de educación en casa, YouTubers de contenido para niños, creadores de Pinterest sobre clima y educadores de museos que hacen carteles estacionales.",
+        "how": [
+          "Elige un tipo de clima (Nieve, Lluvia, Ventoso, Soleado, Nublado, Nebuloso).",
+          "Genera una infografía sobre el clima para niños en acuarela en 4K con 4 paneles y un eslogan."
+        ],
+        "prompts": [
+          "Genera una infografía sobre el clima de Nieve para niños con ilustraciones de copos de nieve.",
+          "Crea un cartel sobre el clima Nublado con paneles de formación de nubes.",
+          "Genera una infografía sobre el clima Nebuloso para niños con escenas en acuarela de niebla."
+        ]
+      }
+    }
+  },
+  "template-product-poster": {
+    "category": "Cartel de Producto Acogedor",
+    "description": "Anuncio de producto de estilo de vida cálido y acogedor — tu electrodoméstico en una escena estilizada con eslogan manuscrito y distintivos de características.",
+    "title": "Generador de Cartel de Producto de Electrodoméstico Acogedor",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un cartel de producto de estilo de vida iluminado cálidamente. El diseño tiene un titular en negrita + eslogan manuscrito en la parte superior, el electrodoméstico centrado en un entorno acogedor (flores, velas, accesorios), un distintivo circular de características más 4-5 íconos de características, y la etiqueta del producto en la parte inferior. Paleta de colores pastel combinada con el producto.",
+        "who": "Adecuado para vendedores de comercio electrónico, marcas de electrodomésticos, propietarios de tiendas en Etsy/Shopify, fotógrafos de productos prototipando tomas y creadores de estilo de vida.",
+        "how": [
+          "Ingresa un electrodoméstico (Cafetera, Lámpara de Escritorio, Altavoz Bluetooth, Difusor de Aromas, Licuadora Portátil).",
+          "Genera un cartel de producto acogedor en 4K con entorno de estilo de vida + distintivos de características."
+        ],
+        "prompts": [
+          "Genera un cartel de producto acogedor para una Cafetera con eslogan manuscrito y estilo floral.",
+          "Crea un cálido cartel de producto de Lámpara de Escritorio con distintivos de características y paleta pastel.",
+          "Genera un cartel de estilo de vida para una Licuadora Portátil con distintivo circular y lista de íconos."
+        ]
+      }
+    }
+  },
+  "template-mbti-stereotype-vs-reality-infographic": {
+    "category": "Estereotipo MBTI vs Realidad",
+    "description": "Tarjetas de comparación estereotipo vs realidad lado a lado para cualquier tipo MBTI — ilustraciones de bajo polígono y listas con viñetas.",
+    "title": "Generador de Infografía Estereotipo MBTI vs Realidad",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía de comparación lado a lado por tipo MBTI. El diseño tiene un título estilo periódico recortado en la parte superior central, una ilustración de estereotipo de bajo polígono + lista con viñetas a la izquierda, y una ilustración de realidad de bajo polígono + lista con viñetas a la derecha. Estilo artístico de bajo polígono plano, fondo blanco.",
+        "who": "Adecuado para creadores de contenido MBTI, bloggers de personalidad, cuentas de memes en redes sociales, fans de MBTI y educadores que enseñan marcos de personalidad.",
+        "how": [
+          "Elige un tipo MBTI (INTJ, ENTP, INFJ, ESFP, etc.).",
+          "Genera una infografía de comparación estereotipo vs realidad en 4K de bajo polígono."
+        ],
+        "prompts": [
+          "Genera una infografía MBTI de estereotipo vs realidad INTJ con ilustraciones de bajo polígono.",
+          "Crea una comparación de estereotipo vs realidad ENFP con título estilo periódico recortado.",
+          "Genera un póster MBTI de estereotipo vs realidad ESTP."
+        ]
+      }
+    }
+  },
+  "template-space-planet-fact-infographic": {
+    "category": "Infografía de Datos del Planeta",
+    "description": "Póster cinematográfico de datos del planeta — imagen fotorealista del planeta, título brillante y secciones etiquetadas que cubren atmósfera, superficie, lunas, rotación.",
+    "title": "Generador de Infografía de Datos del Planeta Espacial",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una infografía educativa cinematográfica sobre un planeta. El diseño tiene un título brillante + imagen fotorealista del planeta contra un campo estelar, luego secciones de datos etiquetadas (estadísticas generales, atmósfera, características de la superficie, lunas, rotación) más pequeños diagramas para inclinación axial, tormentas, sistemas de anillos. Estética de ciencia ficción con colores vibrantes que coinciden con el planeta.",
+        "who": "Adecuado para educadores de astronomía, creadores de Pinterest con temática espacial, creadores de contenido de ciencia para niños, diseñadores de exhibiciones de museos y bloggers de noticias espaciales.",
+        "how": [
+          "Ingresa un planeta (Saturno, Marte, Júpiter, Neptuno, Venus, Urano, La Luna).",
+          "Genera una infografía de datos del planeta cinematográfica en 4K."
+        ],
+        "prompts": [
+          "Genera una infografía de datos del planeta Saturno con diagramas del sistema de anillos y estadísticas atmosféricas.",
+          "Crea un póster de datos del planeta Marte con características de la superficie y llamadas a lunas.",
+          "Genera una infografía de datos del planeta Júpiter con la Gran Mancha Roja y panel de atmósfera."
+        ]
+      }
+    }
+  },
+  "template-emotion-vs-emotion-illustration": {
+    "category": "Infografía Emoción vs Emoción",
+    "description": "Póster de comparación lado a lado para dos emociones confusas — ilustraciones de dibujos animados planas y definiciones resaltadas en amarillo.",
+    "title": "Infografía de Comparación Emoción vs Emoción",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo limpio que compara dos emociones o comportamientos. El diseño tiene un título 'X vs Y' en la parte superior, dos ilustraciones de dibujos animados planas simples a la izquierda mostrando el lenguaje corporal de cada emoción, y dos cajas de definición etiquetadas con resaltados amarillos a la derecha. Fondo blanco minimalista, estilo de dibujos animados amigable.",
+        "who": "Adecuado para profesores de ESL que construyen tarjetas de vocabulario emocional, consejeros escolares, marcas de aprendizaje social-emocional para niños y creadores de contenido de idiomas.",
+        "how": [
+          "Ingresa dos emociones para comparar (Ansioso vs Emocionado, Triste vs Deprimido, Tímido vs Introvertido).",
+          "Genera una infografía de comparación minimalista en 4K con ilustraciones de dibujos animados planas."
+        ],
+        "prompts": [
+          "Genera una infografía de comparación de emociones Ansioso vs Emocionado.",
+          "Crea un póster de comparación Tímido vs Introvertido con ilustraciones de dibujos animados.",
+          "Genera una infografía de emoción vs emoción Enojado vs Frustrado."
+        ]
+      }
+    }
+  },
+  "template-ielts-3-to-9-vocabulary-poster": {
+    "category": "Mejora de Vocabulario IELTS",
+    "description": "Póster de vocabulario básico vs avanzado en dos columnas para la preparación del IELTS: pares de sinónimos organizados por tema con una linda ilustración de cierre.",
+    "title": "Póster de Mejora de Vocabulario IELTS 3.0 → 9.0",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo humorístico que compara el vocabulario básico con el avanzado en inglés. El diseño tiene etiquetas redondeadas moradas 'IELTS 3.0' y 'IELTS 9.0' en la parte superior, una lista en dos columnas que empareja palabras básicas con sinónimos avanzados, y un lindo dibujo animado en la parte inferior que coincide con el tema.",
+        "who": "Adecuado para estudiantes que se preparan para el IELTS, profesores de inglés, bloggers de ESL, comercializadores de aplicaciones de aprendizaje de idiomas y tutores de redacción académica.",
+        "how": [
+          "Elige un tema de vocabulario (Verbos, Adjetivos, Adverbios y Conectores, Verbos Comunes).",
+          "Genera un póster de mejora de vocabulario IELTS minimalista en 4K."
+        ],
+        "prompts": [
+          "Genera un póster de mejora de vocabulario de Verbos IELTS (básico → avanzado).",
+          "Crea un póster de vocabulario de Adjetivos IELTS 3.0 vs 9.0 con una linda ilustración.",
+          "Genera un póster de mejora de vocabulario de Adverbios y Conectores IELTS."
+        ]
+      }
+    }
+  },
+  "template-kids-opposite-concept-education": {
+    "category": "Pósteres Educativos para Niños",
+    "description": "Póster alegre de aprendizaje infantil que combina ilustraciones de dibujos animados simples para enseñar conceptos como opuestos, comparaciones y verbos básicos.",
+    "title": "Póster Educativo de Conceptos para Niños",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster educativo amigable para niños sobre un tema de concepto elegido. El diseño presenta un título en un banner audaz y una cuadrícula de ilustraciones de dibujos animados emparejadas conectadas por flechas, etiquetadas con las palabras correspondientes. Colores brillantes y amigables, fuente sans-serif simple y fondo blanco limpio facilitan la lectura para los aprendices tempranos.",
+        "who": "Adecuado para maestros de preescolar, diseñadores de currículos de jardín de infantes, bloggers padres, educadores de ESL y editores educativos que crean materiales de aprendizaje visual.",
+        "how": [
+          "Elige un tema de aprendizaje (Opuestos, Conceptos de Comparación, Antes y Después, Verbos, Animales).",
+          "Genera un póster educativo de dibujos animados en 4K para el tema elegido."
+        ],
+        "prompts": [
+          "Genera un póster educativo para niños sobre Opuestos con lindas ilustraciones de dibujos animados emparejadas.",
+          "Crea un póster de aprendizaje infantil de Antes y Después en estilo de dibujos animados.",
+          "Genera un póster de conceptos de comparación para niños con ilustraciones emparejadas simples."
+        ]
+      }
+    }
+  },
+  "template-celebrity-movie-group-poster": {
+    "category": "Pósteres de Celebridades y Grupos de Películas",
+    "description": "Collage de póster de personajes de estilo oficial de alta gama que presenta múltiples figuras icónicas con iluminación cinematográfica, fondos de degradado suave y tipografía minimalista de lujo.",
+    "title": "Póster de Celebridades y Grupos de Películas",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster de película comercial moderno que presenta un grupo de celebridades o personajes de películas. El diseño utiliza una composición dinámica elegante de retratos independientes con superposiciones sutiles, iluminación cinematográfica dramática, fondo de degradado suave, destellos de luz y partículas de estrellas, y el nombre del grupo en una fuente minimalista de lujo.",
+        "who": "Adecuado para creadores de cuentas de fans, comunidades de K-pop y películas, comercializadores de entretenimiento, diseñadores de fan-art y collages compartibles en redes sociales.",
+        "how": [
+          "Ingresa un nombre de grupo (Marvel Avengers, Blackpink, Harry Potter Cast, etc.).",
+          "Genera un póster de personaje de grupo fotorealista en 4K."
+        ],
+        "prompts": [
+          "Genera un póster oficial de grupo de personajes de Marvel Avengers en estilo cinematográfico.",
+          "Crea un collage de póster de personajes de Blackpink con tipografía minimalista de lujo.",
+          "Genera un póster de grupo del elenco de Harry Potter con gradación de color cinematográfica."
+        ]
+      }
+    }
+  },
+  "template-english-vocabulary-upgrade": {
+    "category": "Mejora de Vocabulario en Inglés",
+    "description": "Póster limpio de vocabulario en dos columnas que empareja palabras básicas en inglés con sinónimos avanzados mejorados, ideal para la preparación de escritura académica y aprendizaje de ESL.",
+    "title": "Póster de Mejora de Vocabulario en Inglés",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera un póster académico ordenado sobre un tema de vocabulario. El diseño presenta un banner decorativo en el título, una columna de palabras básicas a la izquierda, una columna de sinónimos avanzados a la derecha, comparación ordenada fila por fila, un fondo de degradado suave y decoración de línea minimalista para un aspecto académico fresco.",
+        "who": "Adecuado para estudiantes de ESL, profesores de inglés, tutores de IELTS/TOEFL, instructores de escritura académica y creadores de contenido de aprendizaje de idiomas.",
+        "how": [
+          "Elige un tema de vocabulario (Mejora de Adjetivos, Mejora de Verbos, Palabras de Reemplazo para Very, Informal a Formal, Mejora de Palabras Diarias).",
+          "Genera un póster de mejora de vocabulario minimalista en dos columnas en 4K."
+        ],
+        "prompts": [
+          "Genera un póster de mejora de adjetivos en inglés de básico a avanzado.",
+          "Crea un póster de mejora de vocabulario de palabras de reemplazo para Very.",
+          "Genera un póster de comparación de vocabulario en inglés de informal a formal."
+        ]
+      }
+    }
+  },
+  "template-lifestyle-photo-grid": {
+    "category": "Rejillas de Fotos de Estilo de Vida",
+    "description": "Collage fotográfico de estilo de vida fotorealista 3×3 con paleta consistente y luz de hora dorada: primeros planos, tomas de cuerpo completo, momentos espontáneos y tomas de detalles en una estética.",
+    "title": "Rejilla de Fotos de Estilo de Vida Estacional",
+    "content": {
+      "sections": {
+        "what": "Esta plantilla genera una rejilla 3×3 de fotografías de estilo de vida temáticas alrededor de una temporada o entorno. Las 9 imágenes cuadradas incluyen retratos en primer plano, tomas de cuerpo completo, momentos espontáneos y tomas de detalles de accesorios o fondos, todos compartiendo una paleta de colores cálidos consistente y luz natural de hora dorada para una estética editorial cohesiva.",
+        "who": "Adecuado para fotógrafos de estilo de vida, creadores de Instagram, bloggers de moda, planificadores de sesiones fotográficas de marca y creadores que construyen tableros estéticos estacionales cohesivos.",
+        "how": [
+          "Elige un tema o temporada (Playa de Verano, Parque de Otoño, Pradera de Primavera, Ciudad Urbana, Nieve de Invierno).",
+          "Genera una rejilla fotorealista de estilo de vida 3×3 en 4K."
+        ],
+        "prompts": [
+          "Genera una rejilla de fotos de estilo de vida de Playa de Verano 3×3 en luz de hora dorada.",
+          "Crea un collage de fotos de estilo de vida de Parque de Otoño con paleta cálida.",
+          "Genera una rejilla de estilo de vida de Nieve de Invierno 3×3 con un estado de ánimo cinematográfico consistente."
+        ]
+      }
+    }
   }
 }
