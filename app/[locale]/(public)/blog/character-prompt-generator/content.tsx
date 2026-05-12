@@ -27,10 +27,12 @@ export default function BlogContent() {
             <span>•</span>
             <span>{t('category')}</span>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 max-w-xs">
             <CdnImage
               src="/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"
-              className="w-full rounded-lg shadow-lg"
+              width={320}
+              height={400}
+              className="w-full rounded-lg shadow-md"
               alt={t('heroImageAlt')}
             />
           </div>

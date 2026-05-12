@@ -104,5 +104,45 @@
     "description": "Friends TV show MBTI character card — personality breakdown of each cast member with sitcom-styled illustration.",
     "image_urls": ["/images/nano_insp/template-friends-character-mbti-chandler-bing.jpg"],
     "preview_image_urls": ["/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg"]
+  },
+  "10-prompting-tips-nano-banana-mbti": {
+    "template_id": "template-mbti-marvel",
+    "sample_parameters": { "character_name": "Hulk" },
+    "category": "Marvel MBTI",
+    "description": "MBTI character card with a Marvel-styled isometric room scene. One parameter: a character name like Hulk, Iron Man, Doctor Strange.",
+    "image_urls": ["/images/nano_insp/template-mbti-marvel-en-marvel-hulk.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"]
+  },
+  "10-prompting-tips-nano-banana-recipe": {
+    "template_id": "template-premium-recipe-card-infographic",
+    "sample_parameters": { "recipe_name": "cheesy bacon burger bites" },
+    "category": "Premium Recipe Card",
+    "description": "Editorial-style recipe card infographic. Concrete recipe names (with ingredients implied) produce much better results than category words.",
+    "image_urls": ["/images/nano_insp/template-premium-recipe-card-infographic-cheesy-bacon-burger-bites.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-premium-recipe-card-infographic-cheesy-bacon-burger-bites-prev.jpg"]
+  },
+  "10-prompting-tips-nano-banana-vocab": {
+    "template_id": "template-group-vocab-category",
+    "sample_parameters": { "theme": "Group Names of Animals" },
+    "category": "Group Vocabulary Poster",
+    "description": "Vocabulary cluster poster grouping related words by theme — works well for language-learning content. Try themes like 'animals', 'kitchen tools', 'weather phenomena'.",
+    "image_urls": ["/images/nano_insp/template-group-vocab-category-animals.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-group-vocab-category-animals-prev.jpg"]
+  },
+  "10-prompting-tips-nano-banana-watercolor": {
+    "template_id": "template-watercolor-painting-tutorial-guide",
+    "sample_parameters": { "subject": "butterfly" },
+    "category": "Watercolor Tutorial Guide",
+    "description": "Watercolor painting tutorial poster with stepwise guidance. Specific subjects (butterfly, magnolia, koi fish) produce better results than abstract ones (nature, flower).",
+    "image_urls": ["/images/nano_insp/template-watercolor-painting-tutorial-guide-butterfly.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-watercolor-painting-tutorial-guide-butterfly-prev.jpg"]
+  },
+  "10-prompting-tips-nano-banana-fandom": {
+    "template_id": "template-fandom-character-grid-poster",
+    "sample_parameters": { "theme": "anime protagonists" },
+    "category": "Fandom Character Grid",
+    "description": "Multi-character poster organized around a fandom theme. Strong themes ('K-pop boy group', 'NBA legends') outperform weak ones ('characters').",
+    "image_urls": ["/images/nano_insp/template-fandom-character-grid-poster-anime-protagonists.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"]
   }
 }
