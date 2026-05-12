@@ -48,5 +48,61 @@
     "description": "Multi-cell fandom poster pulling together iconic characters from a single universe in a unified grid layout — anime protagonists, superheroes, K-pop lineups, and more.",
     "image_urls": ["/images/nano_insp/template-fandom-character-grid-poster-anime-protagonists.jpg"],
     "preview_image_urls": ["/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"]
+  },
+  "character-prompt-generator-custom-card": {
+    "template_id": "template-custom-character-card",
+    "sample_parameters": {},
+    "category": "Custom Character Card",
+    "description": "Build a fully custom character card from scratch — enter personality (MBTI, traits), name, gender, archetype, and get a polished profile card with portrait and stat panel.",
+    "image_urls": ["/images/nano_insp/template-custom-character-card-enfp-fiery-little-sun-male.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-custom-character-card-enfp-fiery-little-sun-male-prev.jpg"]
+  },
+  "character-prompt-generator-kawaii-profile": {
+    "template_id": "template-cartoon-character-profile-card-kawaii-style",
+    "sample_parameters": {},
+    "category": "Kawaii Character Profile Card",
+    "description": "Cartoon-style character profile card in kawaii aesthetic — enter name, age, gender, archetype to generate a cute illustrated profile sheet.",
+    "image_urls": ["/images/nano_insp/template-cartoon-character-profile-card-kawaii-style-adventurer-max.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-cartoon-character-profile-card-kawaii-style-adventurer-max-prev.jpg"]
+  },
+  "character-prompt-generator-fandom-grid": {
+    "template_id": "template-fandom-character-grid-poster",
+    "sample_parameters": { "theme": "anime protagonists" },
+    "category": "Fandom Character Grid",
+    "description": "Multi-character grid poster organized around a fandom — anime protagonists, superheroes, K-pop groups, classic TV casts — with consistent lighting and pose direction.",
+    "image_urls": ["/images/nano_insp/template-fandom-character-grid-poster-anime-protagonists.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"]
+  },
+  "character-prompt-generator-marvel-mbti": {
+    "template_id": "template-mbti-marvel",
+    "sample_parameters": { "character_name": "Hulk" },
+    "category": "Marvel MBTI Character Card",
+    "description": "Generate an MBTI character analysis card for any Marvel hero or villain — personality type, strengths, weaknesses, and a hand-drawn isometric room scene that fits the character.",
+    "image_urls": ["/images/nano_insp/template-mbti-marvel-en-marvel-hulk.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"]
+  },
+  "character-prompt-generator-breakingbad-mbti": {
+    "template_id": "template-mbti-breakingbad",
+    "sample_parameters": { "character_name": "Chuck McGill" },
+    "category": "Breaking Bad MBTI Character Card",
+    "description": "Breaking Bad / Better Call Saul character MBTI card — personality breakdown plus an isometric scene styled to the show's visual language.",
+    "image_urls": ["/images/nano_insp/template-mbti-breakingbad-en-chuck-mcgill.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-breakingbad-en-chuck-mcgill-prev.jpg"]
+  },
+  "character-prompt-generator-harry-potter-mbti": {
+    "template_id": "template-harry-potter-mbti-infographic",
+    "sample_parameters": { "character_name": "enfj harry potter" },
+    "category": "Harry Potter MBTI Infographic",
+    "description": "Harry Potter universe MBTI character infographic — wizard-aesthetic personality card with type, traits, and signature scene.",
+    "image_urls": ["/images/nano_insp/template-harry-potter-mbti-infographic-enfj-harry-potter.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-harry-potter-mbti-infographic-enfj-harry-potter-prev.jpg"]
+  },
+  "character-prompt-generator-friends-mbti": {
+    "template_id": "template-friends-character-mbti",
+    "sample_parameters": { "character_name": "Chandler Bing" },
+    "category": "Friends MBTI Character Card",
+    "description": "Friends TV show MBTI character card — personality breakdown of each cast member with sitcom-styled illustration.",
+    "image_urls": ["/images/nano_insp/template-friends-character-mbti-chandler-bing.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg"]
   }
 }

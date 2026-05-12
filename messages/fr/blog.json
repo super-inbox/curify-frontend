@@ -1475,235 +1475,6 @@
       "seoKeywords": "pipeline de synchronisation labiale ai, tutoriel musetalk, api sync.co, architecture de doublage vidéo, animation faciale ai, réseau neuronal de synchronisation labiale, pipeline de traitement vidéo, gans synchronisation labiale, modèles de diffusion vidéo",
       "metaDescription": "Plongée technique dans l'architecture du pipeline de synchronisation labiale AI. Guide complet sur MuseTalk, Sync.co, animation faciale et conception de systèmes de production pour développeurs et ingénieurs AI."
     },
-    "characterPromptGenerator": {
-      "title": "Générateur de prompts de personnage : Créez des personnages IA avec psychologie et personnalité",
-      "publishedDate": "",
-      "readTime": "8 min",
-      "category": "outils-pour-créateurs",
-      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
-      "whatWeHave": {
-        "title": "Ce que nous avons",
-        "description": "Une suite complète d'outils de génération de personnages avec une profondeur psychologique et une cohérence visuelle.",
-        "characterDesign": {
-          "title": "Outils de conception de personnages",
-          "items": [
-            "Système de personnalité MBTI - 16 types de personnalité avec des fonctions cognitives détaillées",
-            "Moteur de cohérence visuelle - Maintenez l'apparence des personnages à travers différents scénarios",
-            "Intégration psychologique - Cadres psychologiques intégrés pour des personnages authentiques",
-            "Support multi-style - Anime, réaliste, cartoon, aquarelle et styles artistiques personnalisés"
-          ]
-        },
-        "interactiveScenarios": {
-          "title": "Scénarios interactifs",
-          "items": [
-            "Modèles de médias sociaux - Formats verticaux optimisés pour Instagram et TikTok",
-            "Scènes de narration - Interactions contextuelles des personnages et états émotionnels",
-            "Profils professionnels - Conceptions de personnages et attributs axés sur la carrière",
-            "Adaptations culturelles - Personnages adaptés à des contextes culturels spécifiques"
-          ]
-        }
-      },
-      "whoCanBenefit": {
-        "title": "Qui peut bénéficier de la génération de personnages ?",
-        "writers": {
-          "title": "Écrivains et conteurs",
-          "description": "Créez des personnages psychologiquement cohérents qui maintiennent leur personnalité à travers différentes scènes narratives et états émotionnels.",
-          "perfectFor": "Parfait pour :",
-          "items": [
-            "Écriture de romans et développement de personnages",
-            "Écriture de scénarios et création de dialogues",
-            "Fiction interactive et récits de jeux",
-            "Narration de marque et marketing de contenu"
-          ]
-        },
-        "artists": {
-          "title": "Artistes numériques et illustrateurs",
-          "description": "Générez des concepts de personnages avec des traits de personnalité intégrés qui informent le design visuel, les choix de couleurs et la direction artistique.",
-          "perfectFor": "Parfait pour :",
-          "items": [
-            "Art et design de concepts de personnages",
-            "Travail de commande et projets clients",
-            "Développement de portfolio et exploration de style",
-            "Art et création de contenu pour les médias sociaux"
-          ]
-        },
-        "gameDevelopers": {
-          "title": "Développeurs de jeux",
-          "description": "Créez des concepts de personnages avec une profondeur psychologique qui informent les mécaniques de jeu, les éléments narratifs et les interactions des joueurs.",
-          "perfectFor": "Parfait pour :",
-          "items": [
-            "Systèmes de création de personnages RPG",
-            "Conception de jeux axée sur la narration",
-            "Animation et expression des personnages",
-            "Personnalisation des avatars des joueurs"
-          ]
-        },
-        "creators": {
-          "title": "Créateurs de contenu",
-          "description": "Développez des séries de personnages cohérentes qui résonnent avec le public grce à un contenu et une narration authentiques axés sur la personnalité.",
-          "perfectFor": "Parfait pour :",
-          "items": [
-            "Séries de personnages sur les réseaux sociaux",
-            "Contenu éducatif et tutoriels",
-            "Développement de mascottes de marque",
-            "Expériences interactives et quiz"
-          ]
-        }
-      },
-      "howToUse": {
-        "title": "Comment utiliser le générateur de personnages",
-        "step1": {
-          "title": "Étape 1 : Choisissez votre modèle",
-          "description": "Sélectionnez parmi notre bibliothèque complète de modèles de génération de personnages conçus pour différents cas d'utilisation et styles.",
-          "templates": {
-            "character": {
-              "name": "Profil de personnage",
-              "description": "Fiches de personnage complètes avec personnalité, apparence et détails de fond.",
-              "parameters": "Type MBTI, ge, apparence, vêtements, histoire de fond"
-            },
-            "analysis": {
-              "name": "Analyse Psychologique",
-              "description": "Plongée dans la psychologie des personnages avec des fonctions cognitives et des schémas comportementaux.",
-              "parameters": "Traits de personnalité, schémas émotionnels, fonctions cognitives, motivations"
-            },
-            "comparison": {
-              "name": "Comparaison de Personnages",
-              "description": "Comparaisons de personnages côte à côte montrant les différences de personnalité et les interactions.",
-              "parameters": "Plusieurs personnages, dynamiques relationnelles, traits contrastés"
-            },
-            "mbti": {
-              "name": "Cartes de Personnalité MBTI",
-              "description": "Cartes verticales pour les réseaux sociaux présentant des types de personnalité MBTI avec des représentations visuelles.",
-              "parameters": "16 types de personnalité, style visuel, format pour les réseaux sociaux"
-            }
-          }
-        },
-        "step2": {
-          "title": "Étape 2 : Personnalisez la personnalité",
-          "description": "Définissez le profil psychologique, les traits visuels et l'histoire de fond de votre personnage à l'aide de notre interface intuitive.",
-          "options": [
-            {
-              "icon": "🧠",
-              "title": "Cadre de Personnalité",
-              "description": "Choisissez le type MBTI, le tempérament et les fonctions cognitives"
-            },
-            {
-              "icon": "🎨",
-              "title": "Design Visuel",
-              "description": "Personnalisez l'apparence, les vêtements et le style artistique"
-            },
-            {
-              "icon": "📚",
-              "title": "Histoire de Fond",
-              "description": "Ajoutez une histoire personnelle, des relations et des expériences de vie"
-            },
-            {
-              "icon": "🎭",
-              "title": "Plage Émotionnelle",
-              "description": "Définissez les schémas émotionnels et les styles d'expression"
-            }
-          ]
-        },
-        "step3": {
-          "title": "Étape 3 : Générer et Affiner",
-          "description": "Générez votre personnage avec l'IA et affinez les résultats pour obtenir une parfaite cohérence psychologique et visuelle.",
-          "features": [
-            "Génération IA - Créez des images à l'aide de modèles IA avancés",
-            "Vérifications de Cohérence - Assurez-vous que la personnalité correspond à la représentation visuelle",
-            "Outils de Variation - Générez plusieurs versions et expressions",
-            "Options d'Exportation - Téléchargez dans divers formats pour différentes utilisations"
-          ]
-        }
-      },
-      "advancedFeatures": {
-        "title": "Fonctionnalités Avancées",
-        "proTips": {
-          "title": "Conseils Pro",
-          "tips": [
-            "Utilisez des palettes de couleurs cohérentes basées sur les traits de personnalité",
-            "Incluez des états émotionnels spécifiques dans vos prompts",
-            "Référez-vous à la psychologie du monde réel pour un comportement de personnage authentique",
-            "Créez des familles de personnages avec des personnalités complémentaires",
-            "Utilisez le contexte culturel pour ajouter de la profondeur et de l'authenticité"
-          ]
-        },
-        "integration": {
-          "title": "Possibilités d'Intégration",
-          "possibilities": [
-            "Connectez-vous avec des générateurs d'art IA comme Midjourney et Stable Diffusion",
-            "Exportez vers des moteurs de développement de jeux et des logiciels d'animation",
-            "Intégrez-vous avec des outils de gestion des réseaux sociaux",
-            "Utilisez dans des plateformes éducatives et des systèmes de gestion de l'apprentissage",
-            "Combinez avec des logiciels d'écriture pour le développement de personnages"
-          ]
-        }
-      },
-      "realWorldApplications": {
-        "title": "Applications dans le Monde Réel",
-        "novelWriting": {
-          "title": "Écriture de Roman",
-          "quote": "Le générateur de personnages m'a aidé à maintenir des personnalités cohérentes sur plus de 500 pages. Mes personnages semblaient réels car leurs actions correspondaient toujours à leurs profils psychologiques.",
-          "attribution": "Sarah J., Auteur de Fantasy"
-        },
-        "gameDevelopment": {
-          "title": "Développement de Jeux",
-          "quote": "Nous avons utilisé le générateur de personnages pour créer l'ensemble de notre distribution. La profondeur psychologique a fait que les PNJ semblaient être de vraies personnes, pas juste des distributeurs de quêtes.",
-          "attribution": "Mike R., Studio de Jeux Indépendant"
-        },
-        "cosplay": {
-          "title": "Conception de Cosplay",
-          "quote": "En tant que cosplayeur, j'ai besoin de comprendre les personnages en profondeur. Cet outil m'aide à analyser les traits de personnalité qui influencent les choix de costumes et de poses.",
-          "attribution": "Alex T., Cosplayeur Professionnel"
-        }
-      },
-      "callToAction": {
-        "title": "Commencez à Créer Vos Personnages Aujourd'hui",
-        "description": "Rejoignez des milliers de créateurs utilisant le générateur de prompts de personnages de Curify pour donner vie à des personnages psychologiquement riches.",
-        "readyTitle": "Prêt à Créer des Personnages Incroyables ?",
-        "readyDescription": "Commencez avec nos modèles gratuits et débloquez le plein potentiel de la conception de personnages assistée par IA.",
-        "buttonText": "Commencer Maintenant"
-      },
-      "footer": {
-        "tags": [
-          "Conception de Personnages IA",
-          "Personnalité MBTI",
-          "Psychologie des Personnages",
-          "Génération d'Art IA",
-          "Écriture Créative",
-          "Développement de Jeux",
-          "Contenu pour les Réseaux Sociaux",
-          "Narration Visuelle"
-        ],
-        "questions": "Vous avez des questions sur la génération de personnages ? Contactez notre équipe de support pour une assistance personnalisée."
-      },
-      "description": "Découvrez comment créer des personnages IA captivants en utilisant le générateur de prompts de personnages de Curify. Des types de personnalité MBTI aux profils de personnages détaillés, apprenez l'art de la conception de personnages pour l'art IA et la narration.",
-      "intro": "La conception de personnages a évolué des descriptions simples aux profils psychologiques sophistiqués qui donnent vie aux personnages générés par IA. Le générateur de prompts de personnages de Curify offre une suite complète d'outils pour créer des personnages avec profondeur, personnalité et cohérence visuelle. Ce guide explore comment vous pouvez tirer parti de ces modèles pour créer des personnages captivants pour la narration, le contenu des réseaux sociaux et des projets créatifs.",
-      "whatIsTitle": "Qu'est-ce que le Générateur de Prompts de Personnages ?",
-      "whatIsContent": "Le générateur de prompts de personnages est un outil IA spécialisé qui crée des descriptions de personnages détaillées avec une profondeur psychologique, des traits visuels et des profils de personnalité. Contrairement aux créateurs de personnages génériques, il intègre des cadres psychologiques établis comme le MBTI (Indicateur de Type Myers-Briggs) avec une direction artistique pour produire des personnages qui semblent authentiques et visuellement captivants.\n\nLe générateur produit des prompts qui incluent l'analyse de personnalité, les fonctions cognitives, les états émotionnels et les caractéristiques visuelles, le tout formaté pour une génération d'images IA optimale. Cette approche garantit que vos personnages non seulement ont une bonne apparence mais se comportent également de manière cohérente dans différents scénarios et contextes.",
-      "whyTitle": "Pourquoi la Psychologie des Personnages Est-Elle Importante dans l'Art IA",
-      "whyContent": "**Cohérence Visuelle** : Les personnages avec des traits psychologiques définis maintiennent une cohérence visuelle à travers différentes poses, expressions et scénarios. Lorsque vous connaissez la personnalité fondamentale d'un personnage, ses expressions faciales, son langage corporel et même ses choix de couleurs deviennent plus cohérents.\n\n**Profondeur Narration** : Les personnages guidés par la psychologie permettent une narration plus riche. Un personnage INFP s'exprimera naturellement différemment d'un personnage ESTJ, créant des interactions narratives authentiques et des arcs émotionnels.\n\n**Connexion avec le Public** : Les spectateurs se connectent plus profondément avec des personnages qui semblent psychologiquement réels. Des traits de personnalité bien définis rendent les personnages relatables et mémorables, essentiels pour le contenu des réseaux sociaux et la narration de marque.\n\n**Direction Créative** : La psychologie fournit un cadre pour les décisions créatives. Des palettes de couleurs aux choix vestimentaires, les traits de personnalité guident chaque aspect de la conception de personnages, garantissant une esthétique unifiée et intentionnelle.",
-      "howTitle": "Comment Utiliser les Modèles du Générateur de Personnages",
-      "step1Title": "Étape 1 : Choisissez Votre Cadre de Personnage",
-      "step1Content": "Commencez par sélectionner le cadre psychologique qui convient le mieux à votre projet :\n\n**Cartes de Personnalité MBTI** : Parfaites pour un contenu axé sur la personnalité, ces modèles créent des cartes de personnages verticales en 4K avec une analyse de personnalité détaillée, des fonctions cognitives et un design visuel. Idéal pour le contenu des réseaux sociaux et la narration basée sur la personnalité.\n\n**Dossiers de Personnages** : Profils de personnages complets avec des sections configurables pour les relations, les objets clés et les histoires de fond. Idéal pour le développement détaillé de personnages et les projets de construction de mondes.\n\n**Infographies de Personnages Super-héros** : Cartographiez les types de personnalité sur des archétypes de super-héros emblématiques. Excellent pour le contenu de style bande dessinée et la création de personnages de marque.\n\n**Personnages de Style Culturel** : Créez des personnages inspirés par des esthétiques culturelles spécifiques comme Studio Ghibli, Naruto ou Yellowstone. Parfait pour un contenu à thème culturel et un engagement ciblé du public.",
-      "step2Title": "Étape 2 : Définir les Traits de Personnalité et Visuels",
-      "step2Content": "Utilisez le générateur pour spécifier :\n\n**Personnalité Fondamentale** : Type MBTI, tempérament, fonctions cognitives, schémas émotionnels\n**Caractéristiques Visuelles** : ge, apparence, style vestimentaire, préférences de couleur\n**Éléments de Contexte** : Contexte culturel, profession, histoire personnelle\n**Style Artistique** : Anime, réaliste, cartoon, aquarelle ou influences d'artistes spécifiques\n\nLe générateur traduit automatiquement ces entrées en prompts détaillés qui guident les outils de génération d'images IA comme Stable Diffusion, Midjourney ou DALL-E.",
-      "step3Title": "Étape 3 : Générer et Affiner",
-      "step3Content": "Générez vos images de personnages en utilisant les prompts détaillés, puis affinez en fonction des résultats :\n\n**Vérifier la Cohérence** : Vérifiez que les traits de personnalité sont reflétés dans les éléments visuels\n**Ajuster les Détails** : Affinez les expressions, les poses et les éléments environnementaux\n**Créer des Variations** : Générez plusieurs versions pour capturer différents aspects de la personnalité du personnage\n**Construire des Collections** : Créez des familles ou des groupes de personnages avec des personnalités complémentaires",
-      "templatesTitle": "Modèles Populaires du Générateur de Personnages",
-      "templatesContent": "**Mème de Voyage du Printemps MBTI** : Crée des mèmes de comparaison verticaux avec des personnages d'animaux mignons représentant différents types MBTI dans des scénarios de voyage. Parfait pour un contenu viral sur les réseaux sociaux.\n\n**Tableau de Décomposition de Concept de Personnage** : Fiches de personnages détaillées avec des couches de vêtements, des expressions, des accessoires et des annotations. Idéal pour la conception de personnages professionnelle et les projets d'animation.\n\n**Cartes de Duel de Style Traditionnel** : Profils de personnages en écran partagé avec des compositions maximisées pour la tension. Excellent pour le contenu compétitif et les projets liés aux jeux.\n\n**Illustrations de Groupe de Guérison** : 16 types MBTI en tant qu'animaux dans des interactions quotidiennes. Parfait pour le contenu éducatif et l'exploration de la personnalité.\n\n**Cartes de Personnages de Style NBA** : Designs de personnages sur le thème du sport combinant types de personnalité avec des esthétiques athlétiques. Excellent pour le contenu sportif et la création de personnages de marque.",
-      "whoCanBenefitTitle": "Qui Peut Bénéficier de la Génération de Personnages ?",
-      "whoCanBenefitContent": "**Créateurs de Contenu** : Les gestionnaires de réseaux sociaux, YouTubers et influenceurs peuvent créer des séries de personnages cohérentes qui résonnent avec leur public. Les personnages guidés par la psychologie fonctionnent exceptionnellement bien dans le contenu éducatif, la narration et le message de marque.\n\n**Développeurs de Jeux** : Créez des concepts de personnages avec des traits de personnalité intégrés qui informent les mécaniques de jeu et les éléments d'histoire. La profondeur psychologique garantit que les personnages semblent authentiques et engageants.\n\n**Professionnels du Marketing** : Développez des mascottes de marque et des personnages porte-parole avec des personnalités qui s'alignent sur les valeurs de la marque. Une psychologie de personnage cohérente renforce la reconnaissance de la marque et la connexion émotionnelle.\n\n**Éducateurs et Thérapeutes** : Utilisez la génération de personnages pour créer des exemples relatables pour enseigner des concepts psychologiques ou des scénarios thérapeutiques. Les représentations visuelles de personnages rendent les concepts abstraits plus accessibles.\n\n**Écrivains et Narrateurs** : Visualisez des personnages d'histoires avec précision psychologique. Le générateur aide à maintenir la cohérence des personnages à travers différentes scènes narratives et états émotionnels.",
-      "useCasesTitle": "Applications et Exemples du Monde Réel",
-      "useCasesContent": "**Séries sur les Réseaux Sociaux** : Créez des séries de personnages continues où chaque épisode explore différentes situations à travers le prisme de la psychologie des personnages. Le contenu basé sur le MBTI atteint systématiquement des taux d'engagement élevés sur des plateformes comme Instagram, TikTok et YouTube.\n\n**Contenu Éducatif** : Utilisez des comparaisons de personnages pour expliquer des concepts psychologiques, des différences de personnalité et des dynamiques sociales. Des exemples de personnages visuels rendent les théories psychologiques complexes accessibles et engageantes.\n\n**Narration de Marque** : Développez des récits de marque axés sur des personnages qui se connectent avec les publics cibles. Des personnages informés par la psychologie créent des liens émotionnels plus forts et une fidélité à la marque.\n\n**Contenu Interactif** : Créez des quiz de personnalité et des expériences interactives où les utilisateurs découvrent quel personnage correspond à leur type de personnalité. Cela stimule l'engagement et le partage.\n\n**Outils Thérapeutiques** : Générez des personnages pour des scénarios thérapeutiques, aidant les clients à visualiser et à comprendre différents états émotionnels et dynamiques interpersonnelles.",
-      "curifyTitle": "Système Avancé de Génération de Personnages de Curify",
-      "curifyContent": "Le générateur de personnages de Curify représente l'avant-garde de la conception de personnages assistée par IA, combinant expertise psychologique et ingénierie de prompts avancée. Notre système va au-delà de la simple création de personnages pour livrer des personnages psychologiquement cohérents avec une cohérence visuelle et une profondeur narrative.\n\n**Caractéristiques Techniques :**\n- **Intégration Psychologique** : Cadres MBTI intégrés, analyse des fonctions cognitives et cartographie des traits de personnalité\n- **Moteur de Cohérence Visuelle** : Garantit que les personnages maintiennent leur apparence et leur personnalité à travers différents scénarios\n- **Support Multi-Style** : Générez des personnages en anime, réaliste, cartoon, aquarelle et styles artistiques personnalisés\n- **Adaptation Culturelle** : Modèles conçus pour différents contextes culturels et préférences esthétiques\n- **Génération par Lots** : Créez des familles et des groupes de personnages avec des personnalités complémentaires\n\n**Assurance Qualité :**\nNotre système comprend une validation intégrée pour la cohérence psychologique, la cohérence visuelle et la compatibilité narrative. Chaque personnage généré subit des contrôles de qualité pour garantir que les traits de personnalité sont correctement reflétés dans les éléments visuels et que les personnages restent cohérents à travers différents contextes et scénarios.",
-      "ctaText": "Prêt à créer des personnages IA psychologiquement riches ?",
-      "ctaLink": "Explorez le Générateur de Personnages de Curify",
-      "conclusionTitle": "L'Avenir de la Conception de Personnages",
-      "conclusionContent": "La génération de personnages a évolué des descriptions visuelles simples aux profils psychologiques sophistiqués qui donnent vie aux personnages IA. L'intégration de cadres psychologiques établis avec une ingénierie de prompts IA avancée permet aux créateurs de construire des personnages avec une profondeur et une cohérence sans précédent.\n\nÀ mesure que les outils IA continuent d'évoluer, la capacité de créer des personnages psychologiquement cohérents deviendra de plus en plus précieuse pour les créateurs de contenu, les marketeurs, les éducateurs et les narrateurs. Les personnages qui semblent réels à la fois sur les plans visuel et psychologique créent des connexions plus fortes avec le public et un contenu plus engageant.\n\nLe générateur de prompts de personnages représente plus qu'un simple outil : c'est une nouvelle approche de la conception de personnages qui relie psychologie, art et technologie. En comprenant et en tirant parti de ces outils, les créateurs peuvent construire des personnages qui non seulement ont une apparence incroyable mais semblent également authentiques, relatables et psychologiquement cohérents.",
-      "seoKeywords": "générateur de prompts de personnages, conception de personnages IA, créateur de personnages MBTI, art IA de personnalité, psychologie des personnages, prompts de personnages IA, outils de conception de personnages, générateur IA MBTI, art conceptuel de personnages, générateur de personnalité IA",
-      "metaDescription": "Guide complet du générateur de prompts de personnages de Curify. Apprenez à créer des personnages IA avec la psychologie MBTI, des traits de personnalité et une cohérence visuelle pour les réseaux sociaux, la narration et des projets créatifs."
-    },
     "visualLearningTools": {
       "title": "Outils d'Apprentissage Visuels : Comment les Étudiants, Parents et Enseignants Peuvent Transformer l'Éducation",
       "publishedDate": "1 avril 2026",
@@ -6093,6 +5864,191 @@
       "cta": {
         "text": "Générez des looks de mode avec Nano Banana",
         "url": "https://www.curify-ai.com/tools"
+      }
+    },
+    "characterPromptGenerator": {
+      "title": "Générateur de prompts de personnage : 12+ cartes MBTI Univers + Personnages personnalisés",
+      "metaDescription": "Créez des personnages de toutes pièces avec personnalité, nom, âge, sexe — ou réimaginez un personnage connu en tant que carte de personnalité MBTI dans votre univers préféré (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends, et plus).",
+      "publishedDate": "2026-05-12",
+      "readTime": "6 min de lecture",
+      "category": "Nano Template",
+      "heroImageAlt": "Aperçu du générateur de prompts de personnage",
+      "intro": "Que vous souhaitiez concevoir un tout nouveau personnage de toutes pièces ou réimaginer quelqu'un de votre émission préférée en tant que carte de personnalité MBTI, Curify propose un ensemble ciblé de modèles de personnages — chacun avec un formulaire de paramètres spécifique afin que vous sachiez exactement quoi remplir.",
+      "whatWeShip": {
+        "title": "Ce que nous proposons",
+        "intro": "Tous les modèles ci-dessous sont en direct sur Curify avec des exemples sélectionnés. Choisissez en fonction du type de personnage que vous souhaitez créer :",
+        "buildFromScratch": {
+          "title": "Créer de toutes pièces",
+          "description": "Entrez personnalité, nom, âge, sexe, archétype. Obtenez un personnage poli avec portrait et identité visuelle.",
+          "templates": [
+            {
+              "name": "Carte de personnage personnalisée",
+              "slug": "custom-character-card",
+              "params": "personnalité (MBTI), nom, sexe, archétype"
+            },
+            {
+              "name": "Carte de profil Kawaii",
+              "slug": "cartoon-character-profile-card-kawaii-style",
+              "params": "nom, âge, sexe, archétype"
+            }
+          ]
+        },
+        "reimagineKnown": {
+          "title": "Réimaginez un personnage connu",
+          "description": "Tapez un nom de personnage de votre univers préféré. Obtenez une carte d'analyse MBTI stylisée selon cette émission.",
+          "templates": [
+            {
+              "name": "Marvel",
+              "slug": "mbti-marvel",
+              "params": "character_name (Hulk, Iron Man, …)"
+            },
+            {
+              "name": "Breaking Bad",
+              "slug": "mbti-breakingbad",
+              "params": "character_name (Walt, Saul, …)"
+            },
+            {
+              "name": "Harry Potter",
+              "slug": "harry-potter-mbti-infographic",
+              "params": "character_name"
+            },
+            {
+              "name": "Friends",
+              "slug": "friends-character-mbti",
+              "params": "nom_personnage (Chandler, Ross, …)"
+            },
+            {
+              "name": "Naruto",
+              "slug": "mbti-naruto",
+              "params": "nom_personnage"
+            },
+            {
+              "name": "Studio Ghibli",
+              "slug": "mbti-ghibli",
+              "params": "nom_personnage"
+            },
+            {
+              "name": "NBA",
+              "slug": "mbti-nba",
+              "params": "nom_joueur (Curry, KD, …)"
+            },
+            {
+              "name": "Yellowstone",
+              "slug": "mbti-yellowstone",
+              "params": "nom_personnage"
+            },
+            {
+              "name": "Silicon Valley",
+              "slug": "mbti-siliconvalley",
+              "params": "nom_personnage"
+            },
+            {
+              "name": "Classique Chinois",
+              "slug": "chinese-classic-character-mbti",
+              "params": "nom_personnage (曹操, 林黛玉, …)"
+            },
+            {
+              "name": "Drame Zhenhuan",
+              "slug": "zhenhuan-mbti-character-analysis",
+              "params": ""
+            },
+            {
+              "name": "Princesse Perle",
+              "slug": "princess-pearl-mbti-character-card",
+              "params": ""
+            }
+          ]
+        },
+        "multiCharacter": {
+          "title": "Affiches Multi-Personnages",
+          "description": "Créez un collage de fandom avec plusieurs personnages d'un même univers.",
+          "templates": [
+            {
+              "name": "Affiche Grille de Personnages de Fandom",
+              "slug": "fandom-character-grid-poster",
+              "params": "thème (par exemple, protagonistes d'anime, groupe de garçons K-pop, légendes de la NBA)"
+            },
+            {
+              "name": "Carte de contraste MBTI",
+              "slug": "mbti-contrast",
+              "params": "persona_a, persona_b, scene_title"
+            },
+            {
+              "name": "Royaume Animal MBTI",
+              "slug": "mbti-animal",
+              "params": "scene"
+            }
+          ]
+        }
+      },
+      "howToUse": {
+        "title": "Comment utiliser",
+        "recipe1": {
+          "title": "Recette 1 — Créer un personnage de zéro",
+          "steps": [
+            "Ouvrez le modèle de Carte de personnage personnalisé ou de Carte de profil Kawaii.",
+            "Remplissez la personnalité (MBTI), le nom, le genre, l'archétype (et l'âge pour la carte kawaii).",
+            "Cliquez sur Générer. Affinez le portrait ou régénérez des variations jusqu'à ce que l'apparence corresponde à la personnalité."
+          ]
+        },
+        "recipe2": {
+          "title": "Recette 2 — Réinventer un personnage connu",
+          "steps": [
+            "Choisissez l'univers — Marvel, Breaking Bad, Harry Potter, Friends, Naruto, Ghibli, NBA, Yellowstone, Silicon Valley, classique chinois, Zhenhuan, Princesse Perle, ou la variante royaume animal.",
+            "Tapez le nom du personnage (par exemple, Hulk, Chuck McGill, Hermione, Chandler Bing, 曹操, Naruto).",
+            "Cliquez sur Générer. Vous obtenez une carte de personnalité MBTI avec type, traits et un visuel stylisé pour cet univers."
+          ]
+        },
+        "recipe3": {
+          "title": "Recette 3 — Créer une affiche multi-personnages",
+          "steps": [
+            "Ouvrez l'Affiche de grille de personnages Fandom.",
+            "Tapez un thème — 'protagonistes d'anime', 'groupe de garçons K-pop', 'légendes classiques de la NBA'.",
+            "Générez une affiche unifiée avec un éclairage et une direction de pose cohérents pour tous les personnages."
+          ]
+        }
+      },
+      "whoCanBenefit": {
+        "title": "Qui peut en bénéficier",
+        "writers": {
+          "title": "Écrivains & Narrateurs",
+          "description": "Utilisez la Carte de personnage personnalisé pour concevoir des membres de casting récurrents avec une personnalité cohérente avant de rédiger. Utilisez la Carte de contraste MBTI pour planifier des rivalités et des dynamiques de dialogue."
+        },
+        "artists": {
+          "title": "Artistes numériques & Illustrateurs",
+          "description": "Créez des fiches de référence dans la Carte de profil Kawaii, ou générez des grilles de personnages complètes avec l'Affiche de grille Fandom pour l'inspiration de commissions."
+        },
+        "gameDevelopers": {
+          "title": "Développeurs de jeux",
+          "description": "La Carte de contraste MBTI et la Carte de personnage personnalisé fournissent toutes deux des archétypes de PNJ avec une lecture visuelle et comportementale cohérente en un seul coup."
+        },
+        "creators": {
+          "title": "Créateurs de contenu",
+          "description": "Les cartes MBTI de l'univers (Marvel / Friends / NBA / Ghibli / Classique chinois) sont conçues pour les réseaux sociaux verticaux — insérez un nom de personnage et publiez."
+        }
+      },
+      "proTips": {
+        "title": "Conseils Pro",
+        "tips": [
+          "Associez la personnalité à la palette de couleurs — les personnages colériques fonctionnent dans des rouges chauds, les mélancoliques dans des bleus profonds.",
+          "Pour les cartes de personnage personnalisées, écrivez la personnalité comme 'MBTI + 1-2 traits' (par exemple, 'ENFP, optimiste, agité'). Des invites vagues produisent des portraits vagues.",
+          "Les modèles MBTI de l'univers fonctionnent mieux avec des noms de personnages bien connus. Les noms obscurs ont tendance à dériver.",
+          "Si le type MBTI généré est en désaccord avec la lecture canonique des fans, la carte est toujours utile — elle produit une interprétation alternative qui mérite d'être discutée.",
+          "Utilisez le Fandom Grid Poster pour du contenu social partageable — les grilles thématiques surpassent les publications de personnages uniques."
+        ]
+      },
+      "footer": {
+        "tags": [
+          "Conception de Personnage IA",
+          "Carte de Personnage MBTI",
+          "Générateur de Personnage Personnalisé",
+          "Test de Personnalité Marvel",
+          "MBTI de Breaking Bad",
+          "MBTI de Harry Potter",
+          "Fandom Grid Poster",
+          "Profil de Personnage Kawaii"
+        ],
+        "questions": "Vous avez un univers que vous aimeriez ajouter à la liste MBTI ? Contactez-nous et nous l'examinerons pour le prochain contenu."
       }
     }
   },

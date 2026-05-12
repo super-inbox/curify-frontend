@@ -1451,235 +1451,6 @@
       "seoKeywords": "ai lip sync pipeline, musetalk tutorial, sync.co api, video dubbing architecture, facial animation ai, lip sync neural network, video processing pipeline, gans lip sync, diffusion models video",
       "metaDescription": "Technischer Deep-Dive in die Architektur der KI-Lip-Sync-Pipeline. Vollständiger Leitfaden zu MuseTalk, Sync.co, Gesichtsanimation und Systemdesign für Entwickler und KI-Ingenieure."
     },
-    "characterPromptGenerator": {
-      "title": "Charakter-Prompt-Generator: Erstelle AI-Charaktere mit Psychologie & Persönlichkeit",
-      "publishedDate": "",
-      "readTime": "8 Min.",
-      "category": "creator-tools",
-      "heroImageAlt": "/images/nano_insp_preview/template-character-analysis-zh-sha-wujing-prev.jpg",
-      "whatWeHave": {
-        "title": "Was Wir Haben",
-        "description": "Eine umfassende Suite von Charaktergenerierungswerkzeugen mit psychologischer Tiefe und visueller Konsistenz.",
-        "characterDesign": {
-          "title": "Charakterdesign-Werkzeuge",
-          "items": [
-            "MBTI-Persönlichkeitssystem - 16 Persönlichkeitstypen mit detaillierten kognitiven Funktionen",
-            "Visuelle Konsistenz-Engine - Behalte das Erscheinungsbild von Charakteren in verschiedenen Szenarien bei",
-            "Psychologie-Integration - Eingebaute psychologische Rahmen für authentische Charaktere",
-            "Multi-Style-Unterstützung - Anime, realistisch, Cartoon, Aquarell und benutzerdefinierte Kunststile"
-          ]
-        },
-        "interactiveScenarios": {
-          "title": "Interaktive Szenarien",
-          "items": [
-            "Social Media-Vorlagen - Vertikale Formate optimiert für Instagram und TikTok",
-            "Erzähl-Szenen - Kontextuelle Charakterinteraktionen und emotionale Zustände",
-            "Professionelle Profile - Karriereorientierte Charakterdesigns und Attribute",
-            "Kulturelle Anpassungen - Charaktere, die auf spezifische kulturelle Kontexte zugeschnitten sind"
-          ]
-        }
-      },
-      "whoCanBenefit": {
-        "title": "Wer kann von der Charaktergenerierung profitieren?",
-        "writers": {
-          "title": "Schriftsteller & Geschichtenerzähler",
-          "description": "Erstelle psychologisch konsistente Charaktere, die Persönlichkeit in verschiedenen narrativen Szenen und emotionalen Zuständen bewahren.",
-          "perfectFor": "Perfekt für:",
-          "items": [
-            "Roman schreiben und Charakterentwicklung",
-            "Drehbuch schreiben und Dialoge erstellen",
-            "Interaktive Fiktion und Spielnarrative",
-            "Markenerzählung und Content-Marketing"
-          ]
-        },
-        "artists": {
-          "title": "Digitale Künstler & Illustratoren",
-          "description": "Generiere Charakterkonzepte mit eingebauten Persönlichkeitsmerkmalen, die das visuelle Design, Farbwahl und künstlerische Richtung informieren.",
-          "perfectFor": "Perfekt für:",
-          "items": [
-            "Charakterkonzeptkunst und -design",
-            "Auftragsarbeiten und Kundenprojekte",
-            "Portfolioentwicklung und Stil-Exploration",
-            "Kunst und Content-Erstellung für soziale Medien"
-          ]
-        },
-        "gameDevelopers": {
-          "title": "Spieleentwickler",
-          "description": "Erstelle Charakterkonzepte mit psychologischer Tiefe, die Gameplay-Mechaniken, Story-Elemente und Spielerinteraktionen informieren.",
-          "perfectFor": "Perfekt für:",
-          "items": [
-            "RPG-Charaktererstellungssysteme",
-            "Narrativ getriebenes Spieldesign",
-            "Charakteranimation und -ausdruck",
-            "Anpassung von Spieler-Avataren"
-          ]
-        },
-        "creators": {
-          "title": "Content-Ersteller",
-          "description": "Entwickle konsistente Charakterserien, die durch authentische, persönlichkeitsgetriebene Inhalte und Erzählungen bei den Zuschauern Resonanz finden.",
-          "perfectFor": "Perfekt für:",
-          "items": [
-            "Soziale Medien Charakterserien",
-            "Bildungsinhalte und Tutorials",
-            "Entwicklung von Markenmaskottchen",
-            "Interaktive Erlebnisse und Quizze"
-          ]
-        }
-      },
-      "howToUse": {
-        "title": "So verwenden Sie den Charaktergenerator",
-        "step1": {
-          "title": "Schritt 1: Wählen Sie Ihre Vorlage",
-          "description": "Wählen Sie aus unserer umfassenden Bibliothek von Charaktergenerierungs-Vorlagen, die für verschiedene Anwendungsfälle und Stile entworfen wurden.",
-          "templates": {
-            "character": {
-              "name": "Charakterprofil",
-              "description": "Vollständige Charakterblätter mit Persönlichkeit, Aussehen und Hintergrunddetails.",
-              "parameters": "MBTI-Typ, Alter, Aussehen, Kleidung, Hintergrundgeschichte"
-            },
-            "analysis": {
-              "name": "Psychologische Analyse",
-              "description": "Tiefenpsychologische Analyse von Charakteren mit kognitiven Funktionen und Verhaltensmustern.",
-              "parameters": "Persönlichkeitsmerkmale, emotionale Muster, kognitive Funktionen, Motivationen"
-            },
-            "comparison": {
-              "name": "Charaktervergleich",
-              "description": "Nebeneinander stehende Charaktervergleiche, die Persönlichkeitsunterschiede und Interaktionen zeigen.",
-              "parameters": "Mehrere Charaktere, Beziehungsdynamiken, kontrastierende Merkmale"
-            },
-            "mbti": {
-              "name": "MBTI Charakterkarten",
-              "description": "Vertikale Social-Media-Karten mit MBTI-Persönlichkeitstypen und visuellen Darstellungen.",
-              "parameters": "16 Persönlichkeitstypen, visueller Stil, Social-Media-Format"
-            }
-          }
-        },
-        "step2": {
-          "title": "Schritt 2: Persönlichkeit anpassen",
-          "description": "Definieren Sie das psychologische Profil, die visuellen Merkmale und die Hintergrundgeschichte Ihres Charakters mit unserer intuitiven Benutzeroberfläche.",
-          "options": [
-            {
-              "icon": "🧠",
-              "title": "Persönlichkeitsrahmen",
-              "description": "Wählen Sie MBTI-Typ, Temperament und kognitive Funktionen"
-            },
-            {
-              "icon": "🎨",
-              "title": "Visuelles Design",
-              "description": "Passen Sie Aussehen, Kleidung und künstlerischen Stil an"
-            },
-            {
-              "icon": "📚",
-              "title": "Hintergrundgeschichte",
-              "description": "Fügen Sie persönliche Geschichte, Beziehungen und Lebenserfahrungen hinzu"
-            },
-            {
-              "icon": "🎭",
-              "title": "Emotionale Bandbreite",
-              "description": "Definieren Sie emotionale Muster und Ausdrucksformen"
-            }
-          ]
-        },
-        "step3": {
-          "title": "Schritt 3: Generieren & Verfeinern",
-          "description": "Generieren Sie Ihren Charakter mit KI und verfeinern Sie die Ergebnisse, um perfekte psychologische und visuelle Konsistenz zu erreichen.",
-          "features": [
-            "KI-Generierung - Erstellen Sie Bilder mit fortschrittlichen KI-Modellen",
-            "Konsistenzprüfungen - Stellen Sie sicher, dass die Persönlichkeit mit der visuellen Darstellung übereinstimmt",
-            "Variationswerkzeuge - Generieren Sie mehrere Versionen und Ausdrücke",
-            "Exportoptionen - Herunterladen in verschiedenen Formaten für unterschiedliche Verwendungen"
-          ]
-        }
-      },
-      "advancedFeatures": {
-        "title": "Erweiterte Funktionen",
-        "proTips": {
-          "title": "Profi-Tipps",
-          "tips": [
-            "Verwenden Sie konsistente Farbpaletten basierend auf Persönlichkeitsmerkmalen",
-            "Fügen Sie spezifische emotionale Zustände in Ihre Eingabeaufforderungen ein",
-            "Beziehen Sie sich auf reale Psychologie für authentisches Charakterverhalten",
-            "Erstellen Sie Charakterfamilien mit komplementären Persönlichkeiten",
-            "Verwenden Sie kulturellen Kontext, um Tiefe und Authentizität hinzuzufügen"
-          ]
-        },
-        "integration": {
-          "title": "Integrationsmöglichkeiten",
-          "possibilities": [
-            "Verbinden Sie sich mit KI-Kunstgeneratoren wie Midjourney und Stable Diffusion",
-            "Exportieren Sie in Spielentwicklungs-Engines und Animationssoftware",
-            "Integrieren Sie mit Social-Media-Management-Tools",
-            "Verwenden Sie in Bildungsplattformen und Lernmanagementsystemen",
-            "Kombinieren Sie mit Schreibsoftware für die Charakterentwicklung"
-          ]
-        }
-      },
-      "realWorldApplications": {
-        "title": "Anwendungen in der realen Welt",
-        "novelWriting": {
-          "title": "Roman Schreiben",
-          "quote": "Der Charaktergenerator hat mir geholfen, konsistente Persönlichkeiten über 500+ Seiten hinweg aufrechtzuerhalten. Meine Charaktere fühlten sich real an, weil ihre Handlungen immer mit ihren psychologischen Profilen übereinstimmten.",
-          "attribution": "Sarah J., Fantasy-Autorin"
-        },
-        "gameDevelopment": {
-          "title": "Spieleentwicklung",
-          "quote": "Wir haben den Charaktergenerator verwendet, um unsere gesamte Besetzung zu erstellen. Die psychologische Tiefe ließ NPCs wie echte Menschen erscheinen, nicht nur wie Questgeber.",
-          "attribution": "Mike R., Indie-Game-Studio"
-        },
-        "cosplay": {
-          "title": "Cosplay-Design",
-          "quote": "Als Cosplayer muss ich Charaktere tiefgehend verstehen. Dieses Tool hilft mir, Persönlichkeitsmerkmale zu analysieren, die Kostümwahlen und Posen beeinflussen.",
-          "attribution": "Alex T., Professioneller Cosplayer"
-        }
-      },
-      "callToAction": {
-        "title": "Beginne noch heute mit der Erstellung deiner Charaktere",
-        "description": "Schließe dich Tausenden von Kreativen an, die den Charakter-Prompt-Generator von Curify nutzen, um psychologisch reichhaltige Charaktere zum Leben zu erwecken.",
-        "readyTitle": "Bereit, erstaunliche Charaktere zu erstellen?",
-        "readyDescription": "Beginne mit unseren kostenlosen Vorlagen und entfessle das volle Potenzial des KI-unterstützten Charakterdesigns.",
-        "buttonText": "Jetzt starten"
-      },
-      "footer": {
-        "tags": [
-          "KI Charakterdesign",
-          "MBTI Persönlichkeit",
-          "Charakterpsychologie",
-          "KI Kunstgenerierung",
-          "Kreatives Schreiben",
-          "Spieleentwicklung",
-          "Inhalte für soziale Medien",
-          "Visuelles Geschichtenerzählen"
-        ],
-        "questions": "Hast du Fragen zur Charaktergenerierung? Kontaktiere unser Support-Team für persönliche Unterstützung."
-      },
-      "description": "Entdecke, wie du überzeugende KI-Charaktere mit dem Charakter-Prompt-Generator von Curify erstellen kannst. Von MBTI-Persönlichkeitstypen bis hin zu detaillierten Charakterprofilen, lerne die Kunst des Charakterdesigns für KI-Kunst und Geschichtenerzählen.",
-      "intro": "Das Charakterdesign hat sich von einfachen Beschreibungen zu anspruchsvollen psychologischen Profilen entwickelt, die KI-generierte Charaktere zum Leben erwecken. Der Charakter-Prompt-Generator von Curify bietet eine umfassende Suite von Werkzeugen zur Erstellung von Charakteren mit Tiefe, Persönlichkeit und visueller Konsistenz. Dieser Leitfaden untersucht, wie du diese Vorlagen nutzen kannst, um überzeugende Charaktere für Geschichtenerzählen, Inhalte für soziale Medien und kreative Projekte zu erstellen.",
-      "whatIsTitle": "Was ist der Charakter-Prompt-Generator?",
-      "whatIsContent": "Der Charakter-Prompt-Generator ist ein spezialisiertes KI-Tool, das detaillierte Charakterbeschreibungen mit psychologischer Tiefe, visuellen Merkmalen und Persönlichkeitsprofilen erstellt. Im Gegensatz zu generischen Charaktererstellern integriert es etablierte psychologische Rahmenwerke wie MBTI (Myers-Briggs Type Indicator) mit künstlerischer Richtung, um Charaktere zu produzieren, die authentisch und visuell ansprechend wirken.\n\nDer Generator produziert Prompts, die Persönlichkeitsanalysen, kognitive Funktionen, emotionale Zustände und visuelle Merkmale enthalten – alles formatiert für eine optimale KI-Bilderzeugung. Dieser Ansatz stellt sicher, dass deine Charaktere nicht nur gut aussehen, sondern auch in verschiedenen Szenarien und Kontexten konsistent agieren.",
-      "whyTitle": "Warum Charakterpsychologie in KI-Kunst wichtig ist",
-      "whyContent": "**Visuelle Konsistenz**: Charaktere mit definierten psychologischen Merkmalen behalten visuelle Konsistenz in verschiedenen Posen, Ausdrücken und Szenarien. Wenn du die Kernpersönlichkeit eines Charakters kennst, werden ihre Gesichtsausdrücke, Körpersprache und sogar Farbwahl kohärenter.\n\n**Geschichtenerzählungstiefe**: Psychologiegetriebene Charaktere ermöglichen reichhaltigere Erzählungen. Ein INFP-Charakter wird sich natürlich anders ausdrücken als ein ESTJ-Charakter, was authentische narrative Interaktionen und emotionale Bögen schafft.\n\n**Publikumsverbindung**: Zuschauer verbinden sich tiefer mit Charakteren, die psychologisch realistisch wirken. Gut definierte Persönlichkeitsmerkmale machen Charaktere nachvollziehbar und einprägsam, was für Inhalte in sozialen Medien und Markenerzählungen entscheidend ist.\n\n**Kreative Richtung**: Psychologie bietet einen Rahmen für kreative Entscheidungen. Von Farbpaletten bis hin zu Kleidungswahl leiten Persönlichkeitsmerkmale jeden Aspekt des Charakterdesigns und sorgen für einheitliche und absichtliche Ästhetik.",
-      "howTitle": "Wie man die Charaktergenerator-Vorlagen verwendet",
-      "step1Title": "Schritt 1: Wähle dein Charakterrahmenwerk",
-      "step1Content": "Beginne damit, das psychologische Rahmenwerk auszuwählen, das am besten zu deinem Projekt passt:\n\n**MBTI Charakterkarten**: Perfekt für persönlichkeitsgetriebenen Inhalt, erstellen diese Vorlagen 4K vertikale Charakterkarten mit detaillierter Persönlichkeitsanalyse, kognitiven Funktionen und visuellem Design. Ideal für Inhalte in sozialen Medien und persönlichkeitsbasierte Erzählungen.\n\n**Charakterdossiers**: Umfassende Charakterprofile mit konfigurierbaren Abschnitten für Beziehungen, wichtige Gegenstände und Hintergrundgeschichten. Großartig für detaillierte Charakterentwicklung und Weltaufbauprojekte.\n\n**Superhelden-Charakter-Infografiken**: Ordne Persönlichkeitstypen ikonischen Superhelden-Archetypen zu. Ausgezeichnet für Inhalte im Comic-Stil und die Erstellung von Markencharakteren.\n\n**Kulturelle Stilcharaktere**: Erstelle Charaktere, die von spezifischen kulturellen Ästhetiken wie Studio Ghibli, Naruto oder Yellowstone-Stilen inspiriert sind. Perfekt für kulturell thematisierte Inhalte und gezielte Publikumsansprache.",
-      "step2Title": "Schritt 2: Definiere Persönlichkeits- und visuelle Merkmale",
-      "step2Content": "Nutze den Generator, um Folgendes zu spezifizieren:\n\n**Kernpersönlichkeit**: MBTI-Typ, Temperament, kognitive Funktionen, emotionale Muster\n**Visuelle Merkmale**: Alter, Aussehen, Kleidungsstil, Farbvorlieben\n**Hintergrundelemente**: Kultureller Kontext, Beruf, persönliche Geschichte\n**Kunststil**: Anime, realistisch, Cartoon, Aquarell oder spezifische Künstler-Einflüsse\n\nDer Generator übersetzt diese Eingaben automatisch in detaillierte Prompts, die KI-Bilderzeugungswerkzeuge wie Stable Diffusion, Midjourney oder DALL-E leiten.",
-      "step3Title": "Schritt 3: Generieren und Verfeinern",
-      "step3Content": "Generiere deine Charakterbilder mit den detaillierten Prompts und verfeinere sie basierend auf den Ergebnissen:\n\n**Überprüfe die Konsistenz**: Stelle sicher, dass Persönlichkeitsmerkmale in visuellen Elementen reflektiert werden\n**Details anpassen**: Feineinstellungen von Ausdrücken, Posen und Umgebungsmerkmalen\n**Variationen erstellen**: Generiere mehrere Versionen, um verschiedene Aspekte der Persönlichkeit des Charakters einzufangen\n**Sammlungen aufbauen**: Erstelle Charakterfamilien oder Gruppen mit komplementären Persönlichkeiten",
-      "templatesTitle": "Beliebte Charaktergenerator-Vorlagen",
-      "templatesContent": "**MBTI Frühlingsfest-Reise-Meme**: Erstellt vertikale Vergleichs-Memes mit niedlichen Tiercharakteren, die verschiedene MBTI-Typen in Reiseszenarien darstellen. Perfekt für virale Inhalte in sozialen Medien.\n\n**Charakterkonzept-Zusammenbruch-Board**: Detaillierte Charakterblätter mit Outfit-Schichten, Ausdrücken, Requisiten und Anmerkungen. Ideal für professionelles Charakterdesign und Animationsprojekte.\n\n**Traditionelle Stil-Duellkarten**: Split-Screen-Charakterprofile mit spannungsmaximierenden Kompositionen. Großartig für wettbewerbsorientierte Inhalte und spielebezogene Projekte.\n\n**Heilungsgruppen-Illustrationen**: 16 MBTI-Typen als Tiere in alltäglichen Interaktionen. Perfekt für Bildungsinhalte und Inhalte zur Persönlichkeitsforschung.\n\n**NBA-Stil-Charakterkarten**: Sportlich gestaltete Charakterdesigns, die Persönlichkeitstypen mit athletischer Ästhetik kombinieren. Ausgezeichnet für Sportinhalte und die Erstellung von Markencharakteren.",
-      "whoCanBenefitTitle": "Wer kann von der Charaktergenerierung profitieren?",
-      "whoCanBenefitContent": "**Inhaltsproduzenten**: Social Media Manager, YouTuber und Influencer können konsistente Charakterserien erstellen, die bei ihrem Publikum Anklang finden. Psychologiegetriebene Charaktere erzielen in Bildungsinhalten, Geschichtenerzählungen und Markenbotschaften außergewöhnlich gute Leistungen.\n\n**Spieleentwickler**: Erstelle Charakterkonzepte mit eingebauten Persönlichkeitsmerkmalen, die Gameplay-Mechaniken und Story-Elemente informieren. Die psychologische Tiefe sorgt dafür, dass Charaktere authentisch und ansprechend wirken.\n\n**Marketing-Profis**: Entwickle Markenmaskottchen und Sprechercharaktere mit Persönlichkeiten, die mit den Werten der Marke übereinstimmen. Konsistente Charakterpsychologie stärkt die Markenwiedererkennung und emotionale Verbindung.\n\n**Bildungs- und Therapiefachkräfte**: Nutze die Charaktergenerierung, um nachvollziehbare Beispiele für das Lehren psychologischer Konzepte oder therapeutischer Szenarien zu erstellen. Visuelle Charakterdarstellungen machen abstrakte Konzepte zugänglicher.\n\n**Schriftsteller und Geschichtenerzähler**: Visualisiere Charaktere aus Geschichten mit psychologischer Genauigkeit. Der Generator hilft, die Konsistenz der Charaktere über verschiedene narrative Szenen und emotionale Zustände hinweg aufrechtzuerhalten.",
-      "useCasesTitle": "Anwendungen und Beispiele aus der realen Welt",
-      "useCasesContent": "**Serien in sozialen Medien**: Erstelle fortlaufende Charakterserien, in denen jede Episode verschiedene Situationen durch die Linse der Charakterpsychologie erkundet. MBTI-basierte Inhalte erzielen konstant hohe Engagement-Raten auf Plattformen wie Instagram, TikTok und YouTube.\n\n**Bildungsinhalte**: Nutze Charaktervergleiche, um psychologische Konzepte, Persönlichkeitsunterschiede und soziale Dynamiken zu erklären. Visuelle Charakterbeispiele machen komplexe psychologische Theorien zugänglich und ansprechend.\n\n**Markenerzählung**: Entwickle charaktergetriebene Markennarrative, die mit Zielgruppen in Verbindung treten. Psychologieinformierte Charaktere schaffen stärkere emotionale Bindungen und Markenloyalität.\n\n**Interaktive Inhalte**: Erstelle Persönlichkeitstests und interaktive Erlebnisse, bei denen Nutzer entdecken, welcher Charakter ihrem Persönlichkeitstyp entspricht. Dies fördert Engagement und Teilbarkeit.\n\n**Therapeutische Werkzeuge**: Generiere Charaktere für therapeutische Szenarien, die Klienten helfen, verschiedene emotionale Zustände und zwischenmenschliche Dynamiken zu visualisieren und zu verstehen.",
-      "curifyTitle": "Curifys fortschrittliches Charaktergenerierungssystem",
-      "curifyContent": "Der Charaktergenerator von Curify repräsentiert die Spitze des KI-unterstützten Charakterdesigns, indem er psychologische Expertise mit fortschrittlicher Prompt-Engineering kombiniert. Unser System geht über die einfache Charaktererstellung hinaus und liefert psychologisch kohärente Charaktere mit visueller Konsistenz und narrativer Tiefe.\n\n**Technische Merkmale:**\n- **Psychologie-Integration**: Eingebaute MBTI-Rahmenwerke, Analyse kognitiver Funktionen und Zuordnung von Persönlichkeitsmerkmalen\n- **Visuelle Konsistenz-Engine**: Stellt sicher, dass Charaktere ihr Aussehen und ihre Persönlichkeit in verschiedenen Szenarien beibehalten\n- **Multi-Stil-Unterstützung**: Generiere Charaktere in Anime, realistisch, Cartoon, Aquarell und benutzerdefinierten Kunststilen\n- **Kulturelle Anpassung**: Vorlagen, die für verschiedene kulturelle Kontexte und ästhetische Präferenzen entworfen wurden\n- **Batch-Generierung**: Erstelle Charakterfamilien und Gruppen mit komplementären Persönlichkeiten\n\n**Qualitätssicherung:**\nUnser System umfasst eingebaute Validierungen für psychologische Konsistenz, visuelle Kohärenz und narrative Kompatibilität. Jeder generierte Charakter unterliegt Qualitätsprüfungen, um sicherzustellen, dass Persönlichkeitsmerkmale korrekt in visuellen Elementen reflektiert werden und dass Charaktere in verschiedenen Kontexten und Szenarien konsistent bleiben.",
-      "ctaText": "Bereit, psychologisch reichhaltige KI-Charaktere zu erstellen?",
-      "ctaLink": "Erkunde Curifys Charaktergenerator",
-      "conclusionTitle": "Die Zukunft des Charakterdesigns",
-      "conclusionContent": "Die Charaktergenerierung hat sich von einfachen visuellen Beschreibungen zu anspruchsvollen psychologischen Profilen entwickelt, die KI-Charaktere zum Leben erwecken. Die Integration etablierter psychologischer Rahmenwerke mit fortschrittlicher KI-Prompt-Engineering ermöglicht es Kreativen, Charaktere mit beispielloser Tiefe und Konsistenz zu erstellen.\n\nDa KI-Tools weiterhin fortschreiten, wird die Fähigkeit, psychologisch kohärente Charaktere zu erstellen, für Inhaltsproduzenten, Vermarkter, Pädagogen und Geschichtenerzähler zunehmend wertvoll. Charaktere, die sowohl auf visueller als auch auf psychologischer Ebene realistisch wirken, schaffen stärkere Verbindungen zum Publikum und ansprechendere Inhalte.\n\nDer Charakter-Prompt-Generator stellt mehr als nur ein Werkzeug dar – es ist ein neuer Ansatz für das Charakterdesign, der Psychologie, Kunst und Technologie verbindet. Durch das Verständnis und die Nutzung dieser Werkzeuge können Kreative Charaktere erschaffen, die nicht nur großartig aussehen, sondern auch authentisch, nachvollziehbar und psychologisch konsistent sind.",
-      "seoKeywords": "charakter-prompt-generator, ki-charakterdesign, mbti-charakterersteller, persönlichkeits-ki-kunst, charakterpsychologie, ki-charakter-prompt, charakterdesign-werkzeuge, mbti-ki-generator, charakterkonzeptkunst, ki-persönlichkeitsgenerator",
-      "metaDescription": "Vollständiger Leitfaden zum Charakter-Prompt-Generator von Curify. Lerne, KI-Charaktere mit MBTI-Psychologie, Persönlichkeitsmerkmalen und visueller Konsistenz für soziale Medien, Geschichtenerzählen und kreative Projekte zu erstellen."
-    },
     "visualLearningTools": {
       "title": "Visuelle Lernwerkzeuge: Wie Schüler, Eltern und Lehrer die Bildung transformieren können",
       "publishedDate": "1. April 2026",
@@ -6069,6 +5840,191 @@
       "cta": {
         "text": "Mode-Looks mit Nano Banana generieren",
         "url": "https://www.curify-ai.com/tools"
+      }
+    },
+    "characterPromptGenerator": {
+      "title": "Charakter-Prompt-Generator: 12+ Universum MBTI-Karten + Benutzerdefinierte Charaktere",
+      "metaDescription": "Erstelle Charaktere von Grund auf mit Persönlichkeit, Namen, Alter, Geschlecht – oder stelle einen bekannten Charakter als MBTI-Persönlichkeitskarte in deinem Lieblingsuniversum (Marvel, Breaking Bad, Naruto, Ghibli, Harry Potter, Friends und mehr) neu vor.",
+      "publishedDate": "2026-05-12",
+      "readTime": "6 Minuten Lesezeit",
+      "category": "Nano-Vorlage",
+      "heroImageAlt": "Vorschau des Charakter-Prompt-Generators",
+      "intro": "Ob du einen brandneuen Charakter von Grund auf gestalten oder jemanden aus deiner Lieblingssendung als MBTI-Persönlichkeitskarte neu interpretieren möchtest, Curify bietet eine fokussierte Auswahl an Charaktervorlagen – jede mit einem spezifischen Parameterformular, damit du genau weißt, was du ausfüllen musst.",
+      "whatWeShip": {
+        "title": "Was Wir Anbieten",
+        "intro": "Alle untenstehenden Vorlagen sind live auf Curify mit kuratierten Beispielen. Wähle nach der Art des Charakters, den du erstellen möchtest:",
+        "buildFromScratch": {
+          "title": "Von Grund auf neu erstellen",
+          "description": "Gib Persönlichkeit, Namen, Alter, Geschlecht, Archetyp ein. Erhalte einen ausgefeilten Charakter mit Porträt und visueller Identität.",
+          "templates": [
+            {
+              "name": "Benutzerdefinierte Charakterkarte",
+              "slug": "benutzerdefinierte-charakterkarte",
+              "params": "persönlichkeit (MBTI), name, geschlecht, archetyp"
+            },
+            {
+              "name": "Kawaii-Profilkarte",
+              "slug": "cartoon-charakter-profilkarte-kawaii-stil",
+              "params": "name, alter, geschlecht, archetyp"
+            }
+          ]
+        },
+        "reimagineKnown": {
+          "title": "Einen Bekannten Charakter Neu Interpretieren",
+          "description": "Gib einen Charakternamen aus deinem Lieblingsuniversum ein. Erhalte eine MBTI-Analysekarte, die im Stil dieser Show gestaltet ist.",
+          "templates": [
+            {
+              "name": "Marvel",
+              "slug": "mbti-marvel",
+              "params": "charakter_name (Hulk, Iron Man, …)"
+            },
+            {
+              "name": "Breaking Bad",
+              "slug": "mbti-breakingbad",
+              "params": "charakter_name (Walt, Saul, …)"
+            },
+            {
+              "name": "Harry Potter",
+              "slug": "harry-potter-mbti-infografik",
+              "params": "charakter_name"
+            },
+            {
+              "name": "Friends",
+              "slug": "friends-charakter-mbti",
+              "params": "charakter_name (Chandler, Ross, …)"
+            },
+            {
+              "name": "Naruto",
+              "slug": "mbti-naruto",
+              "params": "charakter_name"
+            },
+            {
+              "name": "Studio Ghibli",
+              "slug": "mbti-ghibli",
+              "params": "charakter_name"
+            },
+            {
+              "name": "NBA",
+              "slug": "mbti-nba",
+              "params": "spieler_name (Curry, KD, …)"
+            },
+            {
+              "name": "Yellowstone",
+              "slug": "mbti-yellowstone",
+              "params": "charakter_name"
+            },
+            {
+              "name": "Silicon Valley",
+              "slug": "mbti-siliconvalley",
+              "params": "charakter_name"
+            },
+            {
+              "name": "Chinesischer Klassiker",
+              "slug": "chinese-classic-character-mbti",
+              "params": "charakter_name (曹操, 林黛玉, …)"
+            },
+            {
+              "name": "Zhenhuan Drama",
+              "slug": "zhenhuan-mbti-character-analysis",
+              "params": ""
+            },
+            {
+              "name": "Prinzessin Perle",
+              "slug": "princess-pearl-mbti-character-card",
+              "params": ""
+            }
+          ]
+        },
+        "multiCharacter": {
+          "title": "Multi-Character Poster",
+          "description": "Erstelle eine Fandom-Collage mit mehreren Charakteren aus einem Universum.",
+          "templates": [
+            {
+              "name": "Fandom Charakter Raster Poster",
+              "slug": "fandom-character-grid-poster",
+              "params": "thema (z.B. Anime-Protagonisten, K-Pop-Jungen-Gruppe, NBA-Legenden)"
+            },
+            {
+              "name": "MBTI-Kontrastkarte",
+              "slug": "mbti-contrast",
+              "params": "persona_a, persona_b, scene_title"
+            },
+            {
+              "name": "MBTI Tierreich",
+              "slug": "mbti-animal",
+              "params": "scene"
+            }
+          ]
+        }
+      },
+      "howToUse": {
+        "title": "So benutzt man es",
+        "recipe1": {
+          "title": "Rezept 1 — Erstelle einen Charakter von Grund auf",
+          "steps": [
+            "Öffne die Vorlage für die benutzerdefinierte Charakterkarte oder die Kawaii-Profilkarte.",
+            "Fülle Persönlichkeit (MBTI), Namen, Geschlecht, Archetyp (und Alter für die Kawaii-Karte) aus.",
+            "Klicke auf Generieren. Verfeinere das Porträt oder regeneriere Variationen, bis das Aussehen zur Persönlichkeit passt."
+          ]
+        },
+        "recipe2": {
+          "title": "Rezept 2 — Stelle einen bekannten Charakter neu vor",
+          "steps": [
+            "Wähle das Universum — Marvel, Breaking Bad, Harry Potter, Friends, Naruto, Ghibli, NBA, Yellowstone, Silicon Valley, chinesische Klassiker, Zhenhuan, Prinzessin Pearl oder die Tierreich-Variante.",
+            "Gib den Charakternamen ein (z.B. Hulk, Chuck McGill, Hermione, Chandler Bing, 曹操, Naruto).",
+            "Klicke auf Generieren. Du erhältst eine MBTI-Persönlichkeitskarte mit Typ, Eigenschaften und einem visuellen Stil, der zu diesem Universum passt."
+          ]
+        },
+        "recipe3": {
+          "title": "Rezept 3 — Erstelle ein Multi-Charakter-Poster",
+          "steps": [
+            "Öffne das Fandom-Charaktergitter-Poster.",
+            "Gib ein Thema ein — 'Anime-Protagonisten', 'K-Pop-Jungen-Gruppe', 'klassische NBA-Legenden'.",
+            "Generiere ein einheitliches Poster mit konsistenter Beleuchtung und Pose-Richtung für alle Charaktere."
+          ]
+        }
+      },
+      "whoCanBenefit": {
+        "title": "Wer kann profitieren",
+        "writers": {
+          "title": "Schriftsteller & Geschichtenerzähler",
+          "description": "Nutze die benutzerdefinierte Charakterkarte, um wiederkehrende Figuren mit konsistenter Persönlichkeit vor dem Entwurf zu gestalten. Verwende die MBTI-Kontrastkarte, um Rivalitäten und Dialogdynamiken zu planen."
+        },
+        "artists": {
+          "title": "Digitale Künstler & Illustratoren",
+          "description": "Erstelle Referenzblätter in der Kawaii-Profilkarte oder generiere vollständige Charaktergitter mit dem Fandom-Gitter-Poster für Inspirationsaufträge."
+        },
+        "gameDevelopers": {
+          "title": "Spieleentwickler",
+          "description": "Die MBTI-Kontrastkarte und die benutzerdefinierte Charakterkarte bieten beide NPC-Archetypen mit einem kohärenten visuellen und verhaltensmäßigen Eindruck auf einen Blick."
+        },
+        "creators": {
+          "title": "Inhaltsanbieter",
+          "description": "Universum-MBTI-Karten (Marvel / Friends / NBA / Ghibli / chinesischer Klassiker) sind für vertikale soziale Medien konzipiert — gib einen Charakternamen ein und poste."
+        }
+      },
+      "proTips": {
+        "title": "Profi-Tipps",
+        "tips": [
+          "Passe die Persönlichkeit an die Farbpalette an — cholerische Charaktere funktionieren in warmen Rottönen, melancholische in tiefen Blautönen.",
+          "Für benutzerdefinierte Charakterkarten schreibe die Persönlichkeit als 'MBTI + 1–2 Eigenschaften' (z.B. 'ENFP, optimistisch, unruhig'). Vage Eingaben führen zu vagen Porträts.",
+          "MBTI-Vorlagen für Universen funktionieren am besten mit bekannten Charakternamen. Obskure Namen neigen dazu, abzudriften.",
+          "Wenn der generierte MBTI-Typ nicht mit der kanonischen Fanlesung übereinstimmt, ist die Karte trotzdem nützlich – sie liefert eine alternative Interpretation, die es wert ist, diskutiert zu werden.",
+          "Verwende das Fandom Grid Poster für teilbare soziale Inhalte – thematische Gitter übertreffen Einzelcharakter-Posts."
+        ]
+      },
+      "footer": {
+        "tags": [
+          "AI Charakterdesign",
+          "MBTI Charakterkarte",
+          "Benutzerdefinierter Charaktergenerator",
+          "Marvel Persönlichkeitstest",
+          "Breaking Bad MBTI",
+          "Harry Potter MBTI",
+          "Fandom Grid Poster",
+          "Kawaii Charakterprofil"
+        ],
+        "questions": "Hast du ein Universum, das du zur MBTI-Reihe hinzufügen möchtest? Kontaktiere uns und wir werden es für den nächsten Content-Drop in Betracht ziehen."
       }
     }
   },
