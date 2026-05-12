@@ -148,7 +148,7 @@ function parseArgs(argv) {
     dryRun: false,
     supabase: false,
     pgUrl: defaultPgUrl,
-    supabaseStatus: "COMPLETED",
+    supabaseStatus: "APPROVED",
     autoTag: false,
     autoTagModel: "gpt-4o-mini",
   };
@@ -627,7 +627,19 @@ async function main() {
 
     for (const job of jobs) {
       const cfg = job.runtime_config;
-      if (cfg?.example_id && existingIds.has(cfg.example_id)) continue;
+      if (!cfg?.example_id) {
+        console.warn(`  ⚠️ Skipping project ${job.project_id}: missing example_id`);
+        continue;
+      }
+
+      // Explicit dedup against nano_inspiration.json so an already-published
+      // example is never re-processed. The pipeline already watermarks the
+      // full image and uploads both full + preview to CDN at generation
+      // time — no extra image work is needed here, just register the record.
+      if (existingIds.has(cfg.example_id)) {
+        console.log(`  ⏩ Skipping ${cfg.example_id}: already in nano_inspiration.json`);
+        continue;
+      }
 
       const record = buildSupabaseRecord(job, templatesById);
       if (record) {

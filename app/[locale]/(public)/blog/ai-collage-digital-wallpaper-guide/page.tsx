@@ -8,6 +8,7 @@ import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/Tabl
 import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
+import NanoBananaExamples from "@/app/[locale]/(public)/blog/[slug]/NanoBananaExamples";
 
 export default function AICollageWallpaperGuide() {
   const t = useTranslations('blog.aiCollageDigitalWallpaperGuide');
@@ -124,6 +125,10 @@ export default function AICollageWallpaperGuide() {
         <section id="advanced-techniques" className="mb-8">
           <h2 className="text-2xl font-bold mb-4">{t('advancedTitle')}</h2>
           <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: t('advancedContent') }} />
+        </section>
+
+        <section className="mb-8">
+          <NanoBananaExamples locale={locale} blogSlug="ai-collage-digital-wallpaper-guide" />
         </section>
 
         <section className="mb-8">

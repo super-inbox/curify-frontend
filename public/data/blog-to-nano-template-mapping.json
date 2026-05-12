@@ -24,5 +24,29 @@
     "description": "Draw a cute hand-drawn travel map with daily route blocks, landmarks, food, lodging, and transport labeled in Simplified Chinese.",
     "image_urls": ["/images/nano_insp/template-travel-zh-beijing.jpg"],
     "preview_image_urls": ["/images/nano_insp_preview/template-travel-zh-beijing-prev.jpg"]
+  },
+  "ai-collage-digital-wallpaper-guide-lifestyle": {
+    "template_id": "template-lifestyle-photo-grid",
+    "sample_parameters": { "theme": "autumn park" },
+    "category": "Lifestyle Photo Grid",
+    "description": "Photorealistic 3x3 lifestyle photo collage with consistent palette and golden-hour lighting — close-ups, full-body shots, candid moments, and detail shots in one aesthetic.",
+    "image_urls": ["/images/nano_insp/template-lifestyle-photo-grid-autumn-park.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-lifestyle-photo-grid-autumn-park-prev.jpg"]
+  },
+  "ai-collage-digital-wallpaper-guide-9traits": {
+    "template_id": "template-9-traits-info-grid",
+    "sample_parameters": { "topic_title": "natural elegance" },
+    "category": "9 Traits Info Grid",
+    "description": "3x3 personality / trait infographic showing nine visual variations of a single theme with consistent style and color palette across cells.",
+    "image_urls": ["/images/nano_insp/template-9-traits-info-grid-natural-elegance.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-9-traits-info-grid-natural-elegance-prev.jpg"]
+  },
+  "ai-collage-digital-wallpaper-guide-fandom": {
+    "template_id": "template-fandom-character-grid-poster",
+    "sample_parameters": { "theme": "anime protagonists" },
+    "category": "Fandom Character Grid Poster",
+    "description": "Multi-cell fandom poster pulling together iconic characters from a single universe in a unified grid layout — anime protagonists, superheroes, K-pop lineups, and more.",
+    "image_urls": ["/images/nano_insp/template-fandom-character-grid-poster-anime-protagonists.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"]
   }
 }
