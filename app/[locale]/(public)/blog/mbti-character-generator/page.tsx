@@ -23,7 +23,6 @@ import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
-import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import FAQSection from "@/app/[locale]/(public)/blog/[slug]/components/FAQSection";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
@@ -106,14 +105,6 @@ export default function MBTICharacterGeneratorPage() {
   return (
     <div className="pt-10 pb-8">
       {/* Breadcrumb Navigation */}
-      <BreadcrumbNavigation 
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Blog", href: "/blog" },
-          { name: t('hero.title'), href: `/blog/mbti-character-generator` }
-        ]}
-      />
-      
       <article className="prose prose-base md:prose-lg">
         {/* Hero Section */}
         <div className="relative mb-8">

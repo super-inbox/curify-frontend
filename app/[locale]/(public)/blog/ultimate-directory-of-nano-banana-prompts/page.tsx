@@ -22,7 +22,6 @@ import { useState, useMemo } from 'react';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
-import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 import nanoTemplatesData from '../../../../../public/data/nano_templates.json';
@@ -302,14 +301,6 @@ export default function UltimateDirectoryOfNanoBananaPromptsPage() {
   return (
     <div className="pt-10 pb-8">
       {/* Breadcrumb Navigation */}
-      <BreadcrumbNavigation 
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Blog", href: "/blog" },
-          { name: t('hero.title'), href: `/blog/ultimate-directory-of-nano-banana-prompts` }
-        ]}
-      />
-
       <article className="prose prose-base md:prose-lg max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="relative mb-12">
