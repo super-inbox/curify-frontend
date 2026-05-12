@@ -508,30 +508,96 @@
       "q2": "Hangi diller destekleniyor?",
       "a2": "Curify, İngilizce, İspanyolca, Fransızca, Almanca, Çince, Japonca, Korece, Arapça, Hintçe ve daha birçok dili içeren 170'ten fazla dili destekler. Dil tespiti otomatik olarak yapılır."
     },
-    "deep": {
-      "what": {
-        "title": "AI Konuşma Çevirisi Nedir?",
-        "p1": "AI konuşma çevirisi, bir kaynak dildeki konuşulan kelimeleri hedef dilde doğal konuşulan kelimelere dönüştürür — çevrilen dilde yeni bir ses parçası oluşturarak metin altyazıları göstermeden.",
-        "p2": "Çıktı, dublajlı bir videodur: orijinal video, sesi çevrilmiş, AI sentezli bir sesle değiştirilmiş olarak. Bu, video içeriğini uluslararası izleyicilere yerel olarak erişilebilir hale getirmenin en hızlı yoludur, kayıt stüdyosuna ihtiyaç duymadan.",
-        "p3": "Curify'nin konuşma çevirmeni, gerçek dünya video içeriği için tasarlanmıştır — arka plan gürültüsü, birden fazla konuşmacı, teknik kelime dağarcığı ve doğal konuşma temposunu 170'ten fazla dilde yönetir."
-      },
-      "how": {
-        "title": "Curify Konuşmayı Nasıl Çevirir",
-        "p1": "Curify'nin konuşma çeviri süreci, yüksek doğrulukta transkripsiyon, bağlama duyarlı çeviri ve doğal ses sentezini tek bir otomatik iş akışında birleştirir.",
-        "p2": "Adım 1: Konuşma, aksanları, alan kelime dağarcığını ve çoklu konuşmacı diyaloglarını yönetebilen üretim kalitesinde konuşma tanıma kullanılarak kaynak ses kaydından transkribe edilir.",
-        "p3": "Adım 2: Transkript, anlamı, tonu ve niyeti koruyan bağlama duyarlı modeller kullanılarak çevrilir - sadece kelime değiştirme değil.",
-        "p4": "Adım 3: Doğal bir AI sesi, çevrilen metni hedef dilde sentezler, mümkün olduğunda orijinal tempoyu ve duygusal aktarımı eşleştirir.",
-        "p5": "Adım 4: Sentezlenmiş ses parçası, videodaki orijinal sesi değiştirir ve yayınlamaya hazır tamamen dublajlı bir video dosyası alırsınız."
-      },
-      "usecases": {
-        "title": "AI Konuşma Çevirisini Kim Kullanıyor?",
-        "creatorsTitle": "Küresel İçerik Üreticileri İçin",
-        "creatorsBody": "Üreticiler, içeriklerini yeniden kaydetmeden yeni dil pazarlarında kitlelere ulaşmak için konuşma çevirisini kullanır. Tek bir yükleme, farklı bölgesel kanallar için hazır çok dilli dublajlı versiyonlar üretir.",
-        "educationTitle": "Kurumsal Eğitim ve E-Öğrenme İçin",
-        "educationBody": "Eğitim departmanları, oryantasyon videolarını, güvenlik brifinglerini ve ürün eğitimini yerel dillere çevirir. Doğal bir ses parçası, yalnızca altyazılara kıyasla bilgi tutma ve katılımı artırır.",
-        "businessTitle": "Uluslararası Pazarlama Ekipleri İçin",
-        "businessBody": "Pazarlama ekipleri, demo videolarını, müşteri referanslarını ve etkinlik kayıtlarını hedef pazar dillerine çevirir - bu da bölgeler arasında tutarlı mesajlaşmayı sağlar ve pazar başına üretim maliyetlerini ortadan kaldırır."
-      }
+    "personality": {
+      "displayName": "Kişilik",
+      "title": "MBTI Kişilik Tipleri — Görsel Şablonlar ve Karakter Kartları",
+      "description": "Ghibli, Marvel, Breaking Bad, Friends ve spor evrenlerinde AI tarafından üretilen karakter kartları aracılığıyla 16 MBTI kişilik tipini keşfedin."
+    },
+    "mbti-intj": {
+      "displayName": "INTJ",
+      "title": "INTJ — Yalnız Stratejist | MBTI Karakter Kartları",
+      "description": "Uzun vadeli planları gerçeğe dönüştüren nadir vizyonerler. Ghibli, Marvel, Breaking Bad ve daha fazlasındaki INTJ karakterlerini keşfedin."
+    },
+    "mbti-intp": {
+      "displayName": "INTP",
+      "title": "INTP — Fikirlerin Sessiz Mimar | MBTI Karakter Kartları",
+      "description": "Karmaşık sistemleri analiz etmeyi seven sonsuz meraklı düşünürler. Ghibli, Marvel ve daha fazlasındaki INTP karakterlerini keşfedin."
+    },
+    "mbti-entj": {
+      "displayName": "ENTJ",
+      "title": "ENTJ — Durdurulamaz Komutan | MBTI Karakter Kartları",
+      "description": "Verimsizliği gören ve onu düzelten doğal liderler. Marvel, Breaking Bad ve spor evrenlerindeki ENTJ karakterlerini keşfedin."
+    },
+    "mbti-entp": {
+      "displayName": "ENTP",
+      "title": "ENTP — Şeytanın Avukatı | MBTI Karakter Kartları",
+      "description": "Her varsayımı sorgulamayı seven yaratıcı tartışmacılar. Ghibli, Marvel, Friends ve daha fazlasındaki ENTP karakterlerini keşfedin."
+    },
+    "mbti-infj": {
+      "displayName": "INFJ",
+      "title": "INFJ — Vizyoner Şifacı | MBTI Karakter Kartları",
+      "description": "Nadir bir amaç netliğine sahip, derin empatik idealistler. Ghibli, Marvel, Friends ve spor evrenlerindeki INFJ karakterlerini keşfedin."
+    },
+    "mbti-infp": {
+      "displayName": "INFP",
+      "title": "INFP — Dünyaları Değiştiren Rüya Gören | MBTI Karakter Kartları",
+      "description": "Zengin içsel bir ahlaki pusula tarafından yönlendirilen sessiz tutkulu ruhlar. Ghibli, Marvel, Friends ve daha fazlasındaki INFP karakterlerini keşfedin."
+    },
+    "mbti-enfj": {
+      "displayName": "ENFJ",
+      "title": "ENFJ — Manyetik Hikaye Anlatıcı | MBTI Karakter Kartları",
+      "description": "Odanın içinde sadece bulunarak diğerlerine ilham veren karizmatik ve empatik liderler. Breaking Bad, Marvel ve spor dünyalarındaki ENFJ karakterlerini keşfedin."
+    },
+    "mbti-enfp": {
+      "displayName": "ENFP",
+      "title": "ENFP — Durmaksızın Güneş Işığı | MBTI Karakter Kartları",
+      "description": "Son derece hevesli ve sonsuz meraklı. Ghibli, Marvel, Breaking Bad ve daha fazlasındaki ENFP karakterlerini keşfedin."
+    },
+    "mbti-istj": {
+      "displayName": "ISTJ",
+      "title": "ISTJ — Sarsılmaz Kaya | MBTI Karakter Kartları",
+      "description": "Güvenilir ve metodik, kalıcı olan şeyler inşa ederler. Breaking Bad, Marvel ve spor evrenlerindeki ISTJ karakterlerini keşfedin."
+    },
+    "mbti-isfj": {
+      "displayName": "ISFJ",
+      "title": "ISFJ — Sessiz Koruyucu | MBTI Karakter Kartları",
+      "description": "Eylemlerle sevgi gösteren sıcak koruyucular. Ghibli, Marvel, Breaking Bad ve Friends'teki ISFJ karakterlerini keşfedin."
+    },
+    "mbti-estj": {
+      "displayName": "ESTJ",
+      "title": "ESTJ — Düzenin Mimar | MBTI Karakter Kartları",
+      "description": "Net kurallar ve iyi tanımlı rollerle büyüyen pratik organizatörler. Ghibli, Breaking Bad ve Friends'teki ESTJ karakterlerini keşfedin."
+    },
+    "mbti-esfj": {
+      "displayName": "ESFJ",
+      "title": "ESFJ — Herkesin İhtiyaç Duyduğu Sıcaklık | MBTI Karakter Kartları",
+      "description": "Doğum günlerini hatırlayan, ruh hallerini fark eden ve herkesi bir arada tutan topluluk kurucuları. Breaking Bad, Friends ve spor dünyalarındaki ESFJ karakterlerini keşfedin."
+    },
+    "mbti-istp": {
+      "displayName": "ISTP",
+      "title": "ISTP — Soğukkanlı Bağımsız | MBTI Karakter Kartları",
+      "description": "Herhangi bir kriz anında sakin, pratik ve etkili. Ghibli, Marvel ve spor evrenlerindeki ISTP karakterlerini keşfedin."
+    },
+    "mbti-isfp": {
+      "displayName": "ISFP",
+      "title": "ISFP — Gizli Sanatçı | MBTI Karakter Kartları",
+      "description": "Nazik ve son derece yaratıcı, ürettikleriyle duyguların dünyasını ifade ederler. Ghibli, Marvel, Breaking Bad ve spordaki ISFP karakterlerini keşfedin."
+    },
+    "mbti-estp": {
+      "displayName": "ESTP",
+      "title": "ESTP — Heyecan Arayan | MBTI Karakter Kartları",
+      "description": "Cesur, hızlı düşünen ve aksiyon odaklı. Breaking Bad, Marvel ve spor evrenlerindeki ESTP karakterlerini keşfedin."
+    },
+    "mbti-esfp": {
+      "displayName": "ESFP",
+      "title": "ESFP — Her Ortamın Canıdır | MBTI Karakter Kartları",
+      "description": "Gittikleri her yere enerji getiren spontane eğlenceliler. Ghibli, Breaking Bad, Friends ve spor dünyalarındaki ESFP karakterlerini keşfedin."
     }
+  },
+  "topicPage": {
+    "exampleImagesHeading": "Örnek Görseller",
+    "templatesHeading": "Şablonlar",
+    "subTopicsHeading": "Kategoriye göre gözat",
+    "exploreMoreHeading": "Daha fazla keşfet"
   }
 }

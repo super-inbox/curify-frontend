@@ -16,7 +16,11 @@
     "i18n:verify": "node scripts/verify_consistency.cjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "redis:sync:nanoprompts": "node scripts/sync_nanoprompts_to_redis.cjs"
+    "redis:sync:nanoprompts": "node scripts/sync_nanoprompts_to_redis.cjs",
+    "blog:create": "node scripts/generate-blog.js",
+    "blog:content": "node scripts/generate-blog-content.js",
+    "blog:new": "npm run blog:create && npm run blog:content",
+    "blog:validate": "node scripts/validate-blog.js"
   },
   "dependencies": {
     "@azure/storage-blob": "^12.31.0",

@@ -22,7 +22,7 @@ export default function BlogContent() {
         </div>
         <div className="mt-6">
           <CdnImage 
-            src="/images/face3.webp" 
+            src="/image_text_layout/4214_3_city-story-haunting-gaze.png" 
             className="w-full rounded-lg shadow-lg"
             alt={t('altText')}
           />
@@ -187,25 +187,31 @@ export default function BlogContent() {
         
         <div className="grid md:grid-cols-3 gap-4 my-8">
           <div className="text-center">
-            <div className="bg-gray-200 dark:bg-gray-700 h-48 rounded-lg mb-2 flex items-center justify-center">
-              <span className="text-gray-500">{t('characterBasePortrait')}</span>
-            </div>
+            <CdnImage 
+              src="/image_text_layout/4214_1_urban-stillness-calm-in-chaos.png" 
+              className="w-full h-48 object-cover rounded-lg mb-2"
+              alt={t('characterBasePortrait')}
+            />
             <p className="text-sm font-medium">{t('referenceImage')}</p>
             <p className="text-xs text-gray-600">{t('referenceImageDesc')}</p>
           </div>
           
           <div className="text-center">
-            <div className="bg-gray-200 dark:bg-gray-700 h-48 rounded-lg mb-2 flex items-center justify-center">
-              <span className="text-gray-500">{t('characterInCoffeeShop')}</span>
-            </div>
+            <CdnImage 
+              src="/image_text_layout/4158_1_cosmic-coffee-serenity.png" 
+              className="w-full h-48 object-cover rounded-lg mb-2"
+              alt={t('characterInCoffeeShop')}
+            />
             <p className="text-sm font-medium">{t('environmentScene')}</p>
             <p className="text-xs text-gray-600">{t('environmentSceneDesc')}</p>
           </div>
           
           <div className="text-center">
-            <div className="bg-gray-200 dark:bg-gray-700 h-48 rounded-lg mb-2 flex items-center justify-center">
-              <span className="text-gray-500">{t('characterActionScene')}</span>
-            </div>
+            <CdnImage 
+              src="/image_text_layout/4208_3_urban-strength-ride-alone.png" 
+              className="w-full h-48 object-cover rounded-lg mb-2"
+              alt={t('characterActionScene')}
+            />
             <p className="text-sm font-medium">{t('dynamicPose')}</p>
             <p className="text-xs text-gray-600">{t('dynamicPoseDesc')}</p>
           </div>

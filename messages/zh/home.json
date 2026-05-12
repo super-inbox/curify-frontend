@@ -508,30 +508,131 @@
       "q2": "支持哪些语言？",
       "a2": "Curify 支持 170 多种语言，包括英语、西班牙语、法语、德语、中文、日语、韩语、阿拉伯语、印地语等。语言检测是自动的。"
     },
-    "deep": {
-      "what": {
-        "title": "什么是 AI 语音翻译？",
-        "p1": "AI 语音翻译将源语言中的口语转换为目标语言中的自然口语——生成翻译语言的新音轨，而不是显示文本字幕。",
-        "p2": "输出是一个配音视频：原始视频的音频被翻译的 AI 合成语音替换。这是使视频内容本地化地可供国际观众访问的最快方式，无需录音室。",
-        "p3": "Curify 的语音翻译器专为现实世界的视频内容设计——处理背景噪音、多位说话者、技术词汇和自然对话节奏，支持 170 多种语言。"
-      },
-      "how": {
-        "title": "Curify 如何翻译语音",
-        "p1": "Curify的语音翻译流程结合了高精度转录、上下文感知翻译和自然语音合成，形成一个自动化工作流程。",
-        "p2": "步骤 1：使用生产级语音识别技术将源音频中的语音转录，能够处理口音、领域词汇和多说话者对话。",
-        "p3": "步骤 2：使用上下文感知模型翻译转录文本，保留意义、语气和意图，而不仅仅是字面上的单词替换。",
-        "p4": "步骤 3：自然的AI语音在目标语言中合成翻译文本，尽可能匹配原始的节奏和情感表达。",
-        "p5": "步骤 4：合成的语音轨道替换视频中的原始音频，您将收到一个完全配音的视频文件，准备发布。"
-      },
-      "usecases": {
-        "title": "谁在使用AI语音翻译？",
-        "creatorsTitle": "针对全球内容创作者",
-        "creatorsBody": "创作者使用语音翻译来接触新的语言市场的受众，而无需重新录制他们的内容。一次上传生成多语言配音版本，适用于不同的区域频道。",
-        "educationTitle": "针对企业培训和在线学习",
-        "educationBody": "培训部门将入职视频、安全简报和产品教育翻译成当地语言。与仅使用字幕相比，自然语音轨道提高了记忆和参与度。",
-        "businessTitle": "针对国际营销团队",
-        "businessBody": "营销团队将演示视频、客户推荐和活动录音翻译成目标市场语言——在不同地区实现一致的信息传递，而无需每个市场的制作成本。"
-      }
+    "digital-canvas": {
+      "displayName": "数字壁纸与封面",
+      "title": "数字壁纸与封面视觉提示词、模板与灵感",
+      "description": "探索 AI 生成的手机壁纸、电脑桌面、社交媒体 Banner 等数字画布模板，轻松打造个性化视觉内容。"
+    },
+    "mockups": {
+      "displayName": "样机与界面",
+      "title": "样机与界面视觉提示词、模板与灵感",
+      "description": "探索 AI 生成的样机与 UI 概念图，包括手机样机、网页线框图、应用界面和产品展示视觉模板。"
+    },
+    "iran": {
+      "displayName": "伊朗",
+      "title": "伊朗视觉提示词、模板与灵感",
+      "description": "探索以伊朗为主题的 AI 视觉内容，包括波斯文化、地标建筑、历史故事、传统服饰与旅行内容。"
+    },
+    "portugal": {
+      "displayName": "葡萄牙",
+      "title": "葡萄牙旅行视觉模板 | Curify AI",
+      "description": "探索以葡萄牙为灵感的AI视觉模板——旅行地图、葡式蛋挞、里斯本地标与C罗。"
+    },
+    "animals": {
+      "displayName": "动物",
+      "title": "动物视觉模板与提示词 | Curify AI",
+      "description": "探索以动物为主题的AI视觉模板——野生动物插画、宠物肖像、自然场景与动物科普卡片。"
+    },
+    "biology": {
+      "displayName": "生物学",
+      "title": "生物学视觉模板与提示词 | Curify AI",
+      "description": "探索生物学主题的AI视觉模板——细胞图解、人体解剖、生态系统、遗传学与生命科学教育卡片。"
+    },
+    "space": {
+      "displayName": "太空",
+      "title": "太空与天文视觉模板 | Curify AI",
+      "description": "探索关于太空的AI视觉模板——行星、星系、太阳系、天文现象与宇宙科普卡片。"
+    },
+    "personality": {
+      "displayName": "个性",
+      "title": "MBTI个性类型 - 可视化模板和角色卡片",
+      "description": "通过AI生成的角色卡片，探索Ghibli、Marvel、Breaking Bad、Friends和体育宇宙中的所有16种MBTI个性类型。"
+    },
+    "mbti-intj": {
+      "displayName": "INTJ",
+      "title": "INTJ - 孤独的战略家 | MBTI角色卡片",
+      "description": "罕见的远见者，将长期计划变为现实。探索Ghibli、Marvel、Breaking Bad等中的INTJ角色。"
+    },
+    "mbti-intp": {
+      "displayName": "INTP",
+      "title": "INTP - 安静的思想建筑师 | MBTI角色卡片",
+      "description": "无尽好奇的思考者，喜欢剖析复杂系统。探索Ghibli、Marvel等中的INTP角色。"
+    },
+    "mbti-entj": {
+      "displayName": "ENTJ",
+      "title": "ENTJ - 不可阻挡的指挥官 | MBTI角色卡片",
+      "description": "天生的领导者，能够识别并解决低效问题。探索Marvel、Breaking Bad和体育宇宙中的ENTJ角色。"
+    },
+    "mbti-entp": {
+      "displayName": "ENTP",
+      "title": "ENTP - 魔鬼的代言人 | MBTI角色卡片",
+      "description": "富有创造力的辩论者，热衷于挑战每一个假设。探索Ghibli、Marvel、Friends等中的ENTP角色。"
+    },
+    "mbti-infj": {
+      "displayName": "INFJ",
+      "title": "INFJ - 有远见的治愈者 | MBTI角色卡片",
+      "description": "深具同理心的理想主义者，具有罕见的清晰目的感。探索Ghibli、Marvel、Friends和体育宇宙中的INFJ角色。"
+    },
+    "mbti-infp": {
+      "displayName": "INFP",
+      "title": "INFP - 改变世界的梦想家 | MBTI角色卡片",
+      "description": "安静热情的灵魂，以丰富的内在道德指南为指引。探索Ghibli、Marvel、Friends等中的INFP角色。"
+    },
+    "mbti-enfj": {
+      "displayName": "ENFJ",
+      "title": "ENFJ - 磁性的讲故事者 | MBTI角色卡片",
+      "description": "有魅力且富有同理心的领导者，只需在场就能激励他人。探索Breaking Bad、Marvel和体育中的ENFJ角色。"
+    },
+    "mbti-enfp": {
+      "displayName": "ENFP",
+      "title": "ENFP - 不会停止的阳光 | MBTI角色卡片",
+      "description": "极度热情和无尽好奇。探索Ghibli、Marvel、Breaking Bad等中的ENFP角色。"
+    },
+    "mbti-istj": {
+      "displayName": "ISTJ",
+      "title": "ISTJ - 坚定不移的岩石 | MBTI角色卡片",
+      "description": "可靠而有条理，构建持久的事物。探索Breaking Bad、Marvel和体育宇宙中的ISTJ角色。"
+    },
+    "mbti-isfj": {
+      "displayName": "ISFJ",
+      "title": "ISFJ - 安静的守护者 | MBTI角色卡片",
+      "description": "用行动表达爱的温暖守护者。探索Ghibli、Marvel、Breaking Bad和Friends中的ISFJ角色。"
+    },
+    "mbti-estj": {
+      "displayName": "ESTJ",
+      "title": "ESTJ - 秩序的建筑师 | MBTI角色卡片",
+      "description": "实用的组织者，依赖明确的规则和清晰的角色。探索Ghibli、Breaking Bad和Friends中的ESTJ角色。"
+    },
+    "mbti-esfj": {
+      "displayName": "ESFJ",
+      "title": "ESFJ - 每个人需要的温暖 | MBTI角色卡片",
+      "description": "建设社区的人，记住生日，注意情绪，保持大家团结。探索Breaking Bad、Friends和体育中的ESFJ角色。"
+    },
+    "mbti-istp": {
+      "displayName": "ISTP",
+      "title": "ISTP - 冷静的特立独行者 | MBTI角色卡片",
+      "description": "在任何危机中冷静，动手能力强且高效。探索Ghibli、Marvel和体育宇宙中的ISTP角色。"
+    },
+    "mbti-isfp": {
+      "displayName": "ISFP",
+      "title": "ISFP - 秘密的艺术家 | MBTI角色卡片",
+      "description": "温柔且极具创造力，通过他们所做的表达情感的世界。探索Ghibli、Marvel、Breaking Bad和体育中的ISFP角色。"
+    },
+    "mbti-estp": {
+      "displayName": "ESTP",
+      "title": "ESTP - 冒险家 | MBTI角色卡片",
+      "description": "大胆、思维敏捷，优先行动。探索Breaking Bad、Marvel和体育宇宙中的ESTP角色。"
+    },
+    "mbti-esfp": {
+      "displayName": "ESFP",
+      "title": "ESFP - 每个房间的灵魂 | MBTI角色卡片",
+      "description": "自发的娱乐者，带来能量，无论去哪里。探索Ghibli、Breaking Bad、Friends和体育中的ESFP角色。"
     }
+  },
+  "topicPage": {
+    "exampleImagesHeading": "示例图片",
+    "templatesHeading": "模板",
+    "subTopicsHeading": "按分类浏览",
+    "exploreMoreHeading": "探索更多"
   }
 }
