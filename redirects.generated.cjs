@@ -7,18 +7,25 @@
 // the generator script.
 const SUPPORTED_LOCALES = ["de","en","es","fr","hi","ja","ko","ru","tr","zh"];
 
-const toolRedirects = SUPPORTED_LOCALES.flatMap(l => [
-  {
-    source: `/${l}/creator`,
-    destination: `/${l}/tools`,
-    permanent: true
-  },
-  {
-    source: `/${l}/lip-sync`,
-    destination: `/${l}/tools`,
-    permanent: true
-  }
-]);
+// /creator (bare) -> /use-cases/for-creators is in the module.exports
+// literal below. This array only adds the per-locale variants and the
+// /lip-sync placeholder.
+const toolRedirects = SUPPORTED_LOCALES
+  .filter(l => l !== "en")
+  .flatMap(l => [
+    {
+      source: `/${l}/creator`,
+      destination: `/${l}/use-cases/for-creators`,
+      permanent: true,
+    },
+    // /lip-sync placeholder — collapses to /tools for now. When the
+    // dedicated localized lip-sync page ships, remove this rule.
+    {
+      source: `/${l}/lip-sync`,
+      destination: `/${l}/tools`,
+      permanent: true,
+    },
+  ]);
 
 module.exports = [
   {
@@ -1713,7 +1720,7 @@ module.exports = [
   },
     {
       source: "/creator",
-      destination: "/tools",
+      destination: "/use-cases/for-creators",
       permanent: true
     },
     {
