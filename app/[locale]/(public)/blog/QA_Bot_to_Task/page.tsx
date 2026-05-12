@@ -11,7 +11,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "qaBotToTaskAgent" });
+  const t = await getTranslations({ locale, namespace: "blog.qaBotToTaskAgent" });
 
   return {
     title: t("heading"),
@@ -33,7 +33,7 @@ export default async function QABotToTaskAgent({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "qaBotToTaskAgent" });
+  const t = await getTranslations({ locale, namespace: "blog.qaBotToTaskAgent" });
   
   return (
     <div className="pt-10 pb-8">
