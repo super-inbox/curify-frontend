@@ -1,8 +1,6 @@
 {
   "template-herbal": {
     "category": "Herbes médicinales",
-    "description": "Générez une affiche infographique verticale 4K « Herb Exploded Sheet » pour une seule herbe chinoise avec parties étiquetées, propriétés et formes modernes.",
-    "title": "Nano Banana Prompts : Générateur de diagrammes panoramiques de plantes médicinales｜Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle transforme les \"plantes médicinales simples\" en un diagramme panoramique collectionnable grce aux prompts optimisés de Nano Banana : incluant des détails d'apparence/coupe, des étiquettes de saveur et d'efficacité, avec une mise en page scientifique claire.",
@@ -19,12 +17,12 @@
           "Générez une 'vue décomposée de l'orange séchée' : points de différence selon la région et l'année, gros plan de l'apparence et de la texture, saveur et méridien, scénarios d'utilisation quotidienne (infusion / cuisine), mise en page d'infographie en chinois rétro mais rafraîchissante, 3:4."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel scientifique pour toute herbe chinoise traditionnelle avec anatomie, propriétés et usages modernes. Utilisez l'invite AI pour générer votre propre affiche de médecine à base de plantes.",
+    "title": "Guide Visuel de Médecine à Base de Plantes : Affiches d'Herbes Traditionnelles"
   },
   "template-evolution": {
     "category": "Chronologie de l'évolution",
-    "description": "Créez une scène de chronologie de musée d'évolution en pixel art isométrique qui associe la progression temporelle à la progression spatiale avec des titres bilingues.",
-    "title": "Nano Banana Prompts : Générateur de musée d'évolution isométrique｜Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle utilise des prompts personnalisés de Nano Banana pour construire une chronologie de \"musée isométrique\" : transformant les étapes historiques en espaces d'exposition navigables, chaque zone correspondant à une époque, avec des panneaux de points clés.",
@@ -41,7 +39,9 @@
           "Générez un 'musée pixelisé de l'évolution des frameworks de développement Web' : jQuery → Backbone → Angular → React → Next.js → RSC (concept), une phrase clé + icône pour chaque étape, marquage clair des nœuds, 3:4."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel isométrique en pixel-art cartographiant l'évolution de n'importe quel sujet à travers le temps sous forme de chronologie de musée navigable. Utilisez l'invite AI pour générer votre propre affiche d'évolution.",
+    "title": "Guide Visuel d'Évolution : Affiches de Chronologie en Pixel-Art pour Tout Sujet"
   },
   "template-travel": {
     "category": "Planification de voyage",
@@ -67,8 +67,6 @@
   },
   "template-architecture": {
     "category": "Analyse architecturale",
-    "description": "Produisez un overlay infographique de style HUD d'architecture emblématique avec mesures, matériaux, plans/sections et annotations techniques.",
-    "title": "Nano Banana Prompts : Générateur de diagrammes d'analyse HUD de btiments emblématiques｜Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle utilise des prompts professionnels de Nano Banana pour améliorer les photos de btiments en \"tableaux d'analyse technique HUD\" : superposant des annotations en ligne blanche, des données de dimensions et des points structurels, offrant un effet visuel semblable à un manuel d'ingénierie de science-fiction.",
@@ -85,7 +83,9 @@
           "Générez un 'panneau d'analyse architecturale du Musée d'Art Contemporain de Zagreb (exemple)' : mettez en avant la lumière naturelle, le flux, la structure et les matériaux, superposez des annotations HUD sur la photo, et donnez 3 points forts de conception en bas, 3:4."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel architectural détaillé pour tout bâtiment ou monument emblématique avec des dessins techniques et un contexte historique. Utilisez l'invite AI pour générer votre propre affiche d'architecture.",
+    "title": "Guide Visuel d'Architecture : Affiches de Bâtiments et Monuments Iconiques"
   },
   "template-species": {
     "category": "Protection des espèces",
@@ -133,8 +133,6 @@
   },
   "template-recipe": {
     "category": "Recette",
-    "description": "Concevez une affiche de recette pour le Nouvel An chinois avec ingrédients, visuels étape par étape, symbolisme et notes manuscrites en chinois.",
-    "title": "Nano Banana Prompts : Générateur d'affiches de recettes visuelles｜Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle utilise les prompts de Nano Banana pour transformer des recettes en \"affiches visuelles\" : présentant le processus de cuisson à travers des illustrations étape par étape et des photos de produits finis, mettant l'accent non seulement sur le processus de cuisson mais aussi sur l'esthétique de la diffusion sociale.",
@@ -151,7 +149,9 @@
           "Générez une 'affiche de recette de paella espagnole' : liste des ingrédients, illustration des étapes, points d'échec courants et suggestions de correction, format portrait 3:4."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel de photographie culinaire soigné avec ingrédients, étapes et touches finales pour toute recette. Utilisez l'invite AI pour générer votre propre affiche de recette au style livre de cuisine.",
+    "title": "Guide Visuel de Recettes : Affiches de Photographie Culinaire Simplifiées"
   },
   "template-character-analysis": {
     "category": "Analyse de personnage",
@@ -976,8 +976,6 @@
   },
   "template-vocabulary": {
     "category": "Catégorie de cartes de vocabulaire pour l'apprentissage des langues",
-    "description": "Créez des cartes de vocabulaire bilingues visuellement engageantes qui combinent des mots anglais, des significations chinoises et une prononciation dans un format éducatif clair.",
-    "title": "Nano Banana Prompt : Générateur de cartes de vocabulaire bilingues | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle utilise des invites structurées de Nano Banana pour générer des cartes de vocabulaire bilingues de haute qualité. Chaque carte présente des mots anglais accompagnés de traductions chinoises et de pinyin, associés à des illustrations mignonnes et intuitives. La mise en page est conçue pour la clarté, la mémorabilité et l'attrait visuel, ce qui la rend idéale pour l'apprentissage des langues et le contenu éducatif.",
@@ -995,7 +993,9 @@
           "Créez une carte de vocabulaire sur la Météo : Soleil (太阳, tài yáng), Pluie (雨, yǔ), Neige (雪, xuě), Vent (风, fēng), Nuage (云, yún), Tempête (暴风雨, bào fēng yǔ), Brouillard (雾, wù), Arc-en-ciel (彩虹, cǎi hóng)."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel de cartes de vocabulaire bilingue propre pour tout sujet et paire de langues (en-zh, en-es, en-ko, en-ja). Utilisez l'invite AI pour générer votre propre affiche d'apprentissage des langues.",
+    "title": "Guide Visuel de Vocabulaire Bilingue : Apprenez des Mots en Plusieurs Langues"
   },
   "template-series-infographic": {
     "category": "Catégorie d'infographie de série",
@@ -1901,8 +1901,6 @@
   },
   "template-figure-principles-infographic": {
     "category": "Infographie des Principes de Personnages Célèbres",
-    "description": "Générez une affiche infographique éducative sur les principes fondamentaux d'une figure célèbre, avec portrait aquarelle et mise en page en grille structurée.",
-    "title": "Prompt Nano Banana : Générateur d'Infographies de Principes | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle crée une affiche infographique structurée : titre en gras, portrait aquarelle de la figure célèbre et grille de principes clés avec icône, titre, description et points, fond blanc, format vertical 4K.",
@@ -1920,7 +1918,9 @@
           "Conçois une affiche Sun Tzu — portrait aquarelle avec parchemin, 6 stratégies de l'Art de la Guerre, layout minimaliste, 4K vertical."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel éducatif sur les principes de vie et les habitudes de figures célèbres — Einstein, da Vinci, Marie Curie. Utilisez l'invite AI pour générer votre propre infographie sur des figures célèbres.",
+    "title": "Guide Visuel de Figures Célèbres : Principes de Vie des Grands Esprits"
   },
   "template-book-recommendation-grid-poster": {
     "category": "Affiche de Recommandations de Livres",
@@ -2397,8 +2397,6 @@
   },
   "template-verb-action-learning-cards": {
     "category": "Cartes d'Apprentissage de Verbes d'Action",
-    "description": "Creez une grille 3x3 de cartes d'apprentissage de verbes d'action avec illustrations amicales et typographie en gras.",
-    "title": "Nano Banana Prompt: Generateur de Cartes de Verbes d'Action | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modele genere une grille 3x3 de 9 cartes d'apprentissage individuelles sur fond blanc. Chaque carte montre un personnage cartoon executant une action avec le verbe en gras.",
@@ -2415,7 +2413,9 @@
           "Cartes de mouvements: lancer, attraper, grimper, monter, etirer."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel amical en grille 3x3 de 9 cartes d'apprentissage de verbes d'action pour tout thème de vocabulaire. Utilisez l'invite AI pour générer votre propre affiche de flashcards ESL.",
+    "title": "Guide Visuel de Verbes d'Action : Cartes d'Apprentissage de Vocabulaire ESL"
   },
   "template-pet-care-guide": {
     "category": "Infographie de Soins pour Animaux",
@@ -2441,8 +2441,6 @@
   },
   "template-9-traits-info-grid": {
     "category": "Infographie 9 Traits",
-    "description": "Creez une infographie 3x3 de traits sur n'importe quel theme avec illustrations, titres et sous-titres.",
-    "title": "Nano Banana Prompt: Generateur d'Infographie 9 Traits | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modele genere une affiche carree '9 Traits de [Theme]' avec 9 illustrations minimalistes en grille 3x3.",
@@ -2459,12 +2457,12 @@
           "Infographie '9 Traits de l'Amelioration Personnelle'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel propre en 3x3 de 9 traits définissants pour tout sujet — qualités de partenaire, leadership, auto-amélioration. Utilisez l'invite AI pour créer votre propre infographie en quelques secondes.",
+    "title": "Guide Visuel des 9 Traits : Affiches de Personnalité, Leadership et Auto-Amélioration"
   },
   "template-english-phrasal-verb": {
     "category": "Affiche de Verbes a Particule Anglais",
-    "description": "Generez une affiche d'apprentissage de 8 expressions de verbes a particule autour d'un verbe principal.",
-    "title": "Nano Banana Prompt: Generateur d'Affiche de Verbes a Particule Anglais | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modele cree une affiche verticale '8 Phrases avec [Verbe]' sur fond creme avec icones plats et phrases d'exemple.",
@@ -2481,7 +2479,9 @@
           "Affiche '8 Phrases avec PUT'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel ESL montrant 8 verbes à particule autour de n'importe quel verbe principal (BREAK, TAKE, GO) avec des phrases exemples et des icônes. Utilisez l'invite AI pour générer votre propre affiche d'apprentissage de l'anglais.",
+    "title": "Guide Visuel des Verbes à Particule Anglais : Apprenez 8 Phrases par Verbe"
   },
   "template-hairstyle-color-recommendation": {
     "category": "Infographie de Recommandation Coiffure et Couleur",
@@ -2507,8 +2507,6 @@
   },
   "template-country-souvenirs-watercolor": {
     "category": "Affiche Aquarelle de Souvenirs",
-    "description": "Genere une affiche infographique de voyage a l'aquarelle, chaleureuse et nostalgique, presentant les 10 plus beaux souvenirs d'un pays, avec monuments iconiques et conseils cadeaux.",
-    "title": "Nano Banana Prompt: Generateur d'Affiche Aquarelle de Souvenirs de Pays | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modele genere une affiche verticale 4K a l'aquarelle intitulee 'Top 10 Beautiful Souvenirs from {country_name}'. Le haut presente les monuments iconiques, le drapeau et un sous-titre; une grille numerotee a 2 colonnes presente 10 souvenirs avec illustrations a l'aquarelle et descriptions; un bandeau inferieur donne des conseils cadeaux. Couleurs douces et fond papier texture pour un look d'affiche de voyage vintage.",
@@ -2525,12 +2523,12 @@
           "Infographie aquarelle 'Top 10 Souvenirs d'Italie'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel aquarelle chaleureux des 10 meilleurs souvenirs de n'importe quel pays, avec des monuments emblématiques et des conseils cadeaux. Utilisez l'invite AI pour générer votre propre affiche de souvenirs de voyage.",
+    "title": "Guides Visuels de Souvenirs de Pays : Top 10 des Cadeaux Culturels par Destination"
   },
   "template-pet-safe-human-food-infographic": {
     "category": "Infographie d'Aliments Surs pour Animaux",
-    "description": "Cree une infographie photo-realiste indiquant quels aliments humains sont surs et lesquels sont toxiques pour un animal, sur fond de marbre blanc.",
-    "title": "Nano Banana Prompt: Generateur d'Infographie d'Aliments Humains Surs pour Animaux | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modele genere une affiche pedagogique verticale 4K intitulee 'Human Foods {pet_name} Can Safely Eat'. Une photo de l'animal est placee dans le coin superieur; une grille de photos d'aliments realistes etiquette fruits, legumes, viandes et cereales surs; une section rouge en bas alerte sur les aliments toxiques. Le fond de marbre blanc donne un rendu pro et rassurant.",
@@ -2547,12 +2545,12 @@
           "Infographie 'Aliments humains surs pour lapins' photo-realiste."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel photo-réaliste montrant quels aliments humains sont sûrs et lesquels sont toxiques pour tout animal de compagnie. Utilisez l'invite AI pour générer votre propre infographie sur la sécurité alimentaire des animaux de compagnie.",
+    "title": "Quels Aliments les Animaux de Compagnie Peuvent-Ils Manger ? Guide Visuel de Sécurité pour Propriétaires"
   },
   "template-phonics-consonant-blend": {
     "category": "Affiche Phonics",
-    "description": "Genere une affiche de phonics ludique pour toute combinaison consonantique, avec 6-8 mots d'exemple, illustrations cartoon et fond bleu ciel.",
-    "title": "Nano Banana Prompt: Generateur d'Affiche Phonics de Combinaisons Consonantiques | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modele genere une affiche verticale 4K de phonics pour la combinaison {phonics_blend}. Un grand titre en gras coiffe l'affiche; dans un cadre blanc, 6 a 8 mots d'exemple s'accompagnent d'illustrations cartoon, la combinaison en rouge et le reste en bleu. Fond bleu ciel avec nuages et herbe verte pour une ambiance accueillante.",
@@ -2569,7 +2567,9 @@
           "Affiche combinaison 'tr' pour jeunes lecteurs."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel cartoon vibrant de tout mélange de consonnes (gr, bl, ch, sh) avec des mots exemples et des illustrations. Utilisez l'invite AI pour générer votre propre affiche d'apprentissage de la phonétique.",
+    "title": "Guide Visuel de Mélange de Consonnes Phonétiques : Affiches d'Apprentissage pour Enfants"
   },
   "template-media-theme-wallpaper-poster": {
     "category": "Affiche Fond d'Ecran Thematique",
@@ -2617,8 +2617,6 @@
   },
   "template-chinese-character-learning-poster": {
     "category": "Affiche d'apprentissage des caractères chinois",
-    "description": "Générez une affiche d'apprentissage de caractère quotidien (每日一字) pour n'importe quel caractère chinois avec pinyin et 5-6 branches de mots composés radiaux avec des illustrations de dessins animés mignonnes.",
-    "title": "Nano Banana Prompt : Générateur d'affiche d'apprentissage des caractères chinois | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle génère une affiche éducative verticale 'Caractère quotidien' (每日一字) pour un seul caractère chinois. Le centre montre le grand caractère avec son pinyin ; 5-6 branches radiales autour du centre associent des mots composés courants avec des illustrations de dessins animés mignonnes et des étiquettes pinyin — fond blanc propre, style artistique aquarelle douce ou dessins animés, esthétique éducative adaptée aux enfants.",
@@ -2635,12 +2633,12 @@
           "Générez une affiche de caractère quotidien 水 (shuǐ) avec des branches sur le thème de l'eau."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel amical pour enfants sur le Caractère Quotidien (每日一字) avec pinyin et 5-6 mots composés radiaux. Utilisez l'invite AI pour générer votre propre affiche d'apprentissage du chinois.",
+    "title": "Guide Visuel de Caractères Chinois Quotidiens : Apprenez des Caractères avec Pinyin"
   },
   "template-chinese-verb-opposite-infographic": {
     "category": "Infographie des verbes opposés chinois",
-    "description": "Générez une affiche infographique éducative de paires de verbes chinois opposés avec pinyin, traductions en anglais, et illustrations de dessins animés contrastées en rangées horizontales.",
-    "title": "Nano Banana Prompt : Générateur d'infographie des verbes opposés chinois | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle crée une affiche infographique éducative horizontale de verbes chinois opposés. Chaque rangée associe deux verbes opposés côte à côte : à gauche et à droite, le verbe avec pinyin et traduction anglaise, au centre une illustration de dessins animés des actions contrastées, et une flèche colorée ou une forme hexagonale relie la paire — fond clair, illustrations de dessins animés amicales, couleurs pastel douces.",
@@ -2657,7 +2655,9 @@
           "Générez une infographie des opposés 'Mots d'action chinois quotidiens'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel éducatif associant des verbes chinois opposés avec pinyin, glosses anglaises et illustrations contrastées. Utilisez l'invite AI pour générer votre propre tableau d'apprentissage du mandarin.",
+    "title": "Guide Visuel des Opposés de Verbes Chinois : Apprenez des Paires d'Antonymes"
   },
   "template-mbti-relationship-infographic": {
     "category": "Infographie des relations MBTI",
@@ -2683,8 +2683,6 @@
   },
   "template-ethnic-costume-deconstruction-board": {
     "category": "Tableau de Déconstruction de Costume Ethnique",
-    "description": "Générez un tableau à plat de style déconstruction haute couture pour le costume traditionnel de n'importe quel groupe ethnique, avec un portrait en pied et des étiquettes des composants de chaque côté.",
-    "title": "Nano Banana Prompt : Générateur de Tableau de Déconstruction de Costume Ethnique | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle utilise Nano Banana pour générer un tableau à plat professionnel sur le patrimoine culturel pour le costume traditionnel d'un groupe ethnique choisi. Le centre présente un portrait en pied d'un modèle portant le costume complet sur un fond en bois sombre ; les rails gauche et droit décomposent le look en bijoux en argent, textiles brodés, accessoires et artefacts culturels, chacun étiqueté avec des caractères chinois. Esthétique de photographie de studio haute couture avec un éclairage dramatique chaud, des détails nets et des textures riches.",
@@ -2701,7 +2699,9 @@
           "Générez un tableau de déconstruction de costume mongole avec des accessoires culturels mis en avant."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel de style déconstruction haute couture montrant le costume traditionnel de tout groupe ethnique avec des bijoux, textiles et accessoires étiquetés. Utilisez l'invite AI pour générer votre propre affiche de patrimoine culturel.",
+    "title": "Guide Visuel de Costumes Ethniques Traditionnels : Tableaux de Déconstruction du Patrimoine"
   },
   "template-gardening-how-to-infographic": {
     "category": "Infographie Comment Faire en Jardinage",
@@ -2727,8 +2727,6 @@
   },
   "template-lifestyle-watercolor-infographic": {
     "category": "Infographie Aquarelle de Style de Vie",
-    "description": "Générez une infographie de style de vie aquarelle chaleureuse et fantaisiste sur n'importe quel sujet avec un titre numéroté, une illustration centrale douce et des icônes de conseils sur un fond en papier texturé.",
-    "title": "Nano Banana Prompt : Générateur d'Infographie Aquarelle de Style de Vie | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle construit une affiche d'infographie aquarelle verticale aux tons chauds autour d'un sujet de style de vie choisi. Le haut présente une bannière en ruban avec une citation douce au-dessus d'un grand titre numéroté (par exemple, '10 Idées de Prendre Soin de Soi') ; une douce illustration aquarelle centrale ancre la composition, entourée de petites icônes aquarelles chacune associée à un court label de conseil. Fond en papier texturé beige clair avec des cœurs, des étoiles et des accents de confettis dans une esthétique de soin de soi confortable.",
@@ -2745,12 +2743,12 @@
           "Générez une infographie aquarelle chaude '12 Pratiques de Pleine Conscience'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel aquarelle chaleureux et fantaisiste sur tout sujet de style de vie — auto-soin, pleine conscience, routines matinales. Utilisez l'invite AI pour générer votre propre infographie de style de vie confortable.",
+    "title": "Guides Visuels d'Auto-Soin et de Style de Vie : Affiches Aquarelle Confortables"
   },
   "template-animation-studio-comparison-infographic": {
     "category": "Infographie de comparaison des studios d'animation",
-    "description": "Générez une affiche vibrante 'AFFRONTEMENT DES STUDIOS ANIMÉS' comparant deux studios d'animation côte à côte, avec logos, année de création, style artistique, œuvres notables et héritage.",
-    "title": "Nano Banana Prompt : Générateur d'infographie de comparaison des studios d'animation | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle génère une infographie vibrante intitulée 'COMPARAISON DES STUDIOS ANIMÉS'. Une bannière de titre se trouve en haut ; le corps se divise à gauche/droite entre les deux studios choisis, chaque côté couvrant le logo du studio, l'année de création, le style artistique avec des exemples d'art, les œuvres notables avec des images, et l'héritage/l'impact avec des icônes. L'arrière-plan utilise une texture de bureau en bois avec des gribouillis et figurines sur le thème de l'anime pour une esthétique de fandom chaleureuse, avec des palettes de couleurs distinctes par studio.",
@@ -2767,12 +2765,12 @@
           "Générez une infographie d'affrontement entre Kyoto Animation et Ufotable."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel vibrant comparant les studios — logos, année de fondation, style artistique, œuvres notables et héritage. Utilisez l'invite AI pour générer votre propre affiche de comparaison de studios d'anime.",
+    "title": "Studios d'Anime Comparés : Guide Visuel de Confrontation pour Fans"
   },
   "template-history-timeline-infographic": {
     "category": "Infographie de chronologie historique",
-    "description": "Générez une affiche de chronologie d'évolution visuellement époustouflante sur n'importe quel sujet historique avec une chronologie centrale fluide, des événements marquants, des dates, des descriptions et des illustrations thématiques.",
-    "title": "Nano Banana Prompt : Générateur d'infographie de chronologie historique | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle génère une infographie verticale visuellement époustouflante intitulée '[sujet] : Évolution à travers le temps'. Une chronologie centrale fluide avec des jalons annuels numérotés court sur toute la longueur de l'affiche ; chaque jalon présente un événement clé, une date, une courte description et une illustration pertinente. La palette de couleurs, les icônes et le design de fond s'adaptent au thème choisi (rétro, futuriste, vintage, etc.) pour un langage de design cohérent.",
@@ -2789,12 +2787,12 @@
           "Générez une infographie de chronologie d'évolution 'Exploration spatiale' avec des événements marquants."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel de chronologie fluide de l'évolution de n'importe quel sujet à travers le temps, avec des événements marquants et des illustrations thématiques. Utilisez l'invite AI pour générer votre propre affiche de chronologie historique.",
+    "title": "Créateur de Chronologie Historique : Affiches Visuelles d'Évolution pour Tout Sujet"
   },
   "template-then-vs-now-comparison-infographic": {
     "category": "Infographie de comparaison Avant vs Maintenant",
-    "description": "Générez une affiche de comparaison claire AVANT-VS-MAINTENANT sur n'importe quel sujet, avec un tableau à trois colonnes contrastant les équivalents vintage et modernes à l'aide de photos réalistes.",
-    "title": "Nano Banana Prompt : Générateur d'infographie de comparaison Avant vs Maintenant | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle génère une infographie de comparaison verticale claire intitulée '[sujet] AVANT VS MAINTENANT'. Un titre de thème se trouve en haut ; le corps est un tableau à trois colonnes avec des lignes Catégorie / Avant / Maintenant, chacune montrant un produit vintage à gauche et son équivalent moderne à droite à l'aide de photos réalistes. L'arrière-plan et les icônes correspondent au sujet pour une esthétique nostalgique mais moderne.",
@@ -2811,12 +2809,12 @@
           "Générez une infographie de comparaison 'Fournitures scolaires Avant vs Maintenant'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel clair en trois colonnes contrastant les équivalents vintage et modernes — collations d'enfance, divertissement, fournitures scolaires, produits technologiques. Utilisez l'invite AI pour générer votre propre affiche de comparaison alors-maintenant.",
+    "title": "Alors vs Maintenant : Guide Visuel de Comparaison de Génération Nostalgique"
   },
   "template-travel-packing-guide-infographic": {
     "category": "Infographie de guide de préparation de voyage",
-    "description": "Générez une affiche de guide de préparation vibrante pour n'importe quelle destination, durée de séjour et sexe avec contenus de bagages à main, essentiels, idées de tenues, indispensables et conseils d'experts.",
-    "title": "Nano Banana Prompt : Générateur d'infographie de guide de préparation de voyage | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle génère une affiche de guide de préparation vibrante adaptée à une destination, à la durée du voyage et au sexe. La bannière de titre indique '[N]-JOUR [destination] Guide de préparation' sur des graphiques sur le thème du voyage ; le corps couvre 'Ce que vous pouvez emporter dans un bagage à main', 'Essentiels de préparation', '[N]-Idées de tenues', 'Indispensables', et 'Conseils d'experts' — chaque section utilise des photos de produits réalistes avec des étiquettes claires dans une palette de thème coordonnée.",
@@ -2833,12 +2831,12 @@
           "Générez une infographie de guide de préparation unisexe pour un week-end de 3 jours."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel vibrant de préparation pour n'importe quelle destination, nombre de jours et sexe — essentiels de cabine, idées de tenues et conseils de pro. Utilisez l'invite AI pour générer votre propre affiche de préparation de voyage.",
+    "title": "Guide Visuel de Préparation de Voyage : Que Prendre pour Tout Voyage"
   },
   "template-word-origins-map-infographic": {
     "category": "Infographie de carte des origines des mots",
-    "description": "Générez une infographie éducative de carte du monde sur n'importe quel sujet montrant des mots connectés par des lignes colorées à leurs pays d'origine avec étymologies et icônes thématiques.",
-    "title": "Nano Banana Prompt : Générateur d'infographie de carte des origines des mots | Curify AI",
     "content": {
       "sections": {
         "what": "Ce modèle génère une infographie éducative horizontale intitulée 'ORIGINES DES MOTS : [sujet]'. Une carte du monde simplifiée se trouve au centre ; les mots sont placés sur la carte et connectés par des lignes colorées à leurs pays d'origine, chacun marqué par le drapeau du pays. Chaque mot est annoté avec son étymologie et une brève signification accompagnée d'une petite icône thématique, dans un design moderne coloré et pastel.",
@@ -2855,6 +2853,8 @@
           "Générez une infographie de carte des origines des mots 'Science & Technologie'."
         ]
       }
-    }
+    },
+    "description": "Un guide visuel de carte du monde montrant les mots liés à leurs pays d'origine avec étymologies et significations. Utilisez l'invite AI pour générer votre propre affiche de carte étymologique.",
+    "title": "Origines des Mots à Travers le Monde : Infographie de Carte Étymologique"
   }
 }

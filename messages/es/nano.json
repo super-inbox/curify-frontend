@@ -1,8 +1,6 @@
 {
   "template-herbal": {
     "category": "Categoría de hierbas chinas",
-    "description": "Genera un póster infográfico vertical en 4K de “Hoja Explosiva de Hierbas” para una sola hierba china con partes etiquetadas, propiedades y formas modernas.",
-    "title": "Nano Banana Prompts: Generador de gráficos panorámicos de hierbas chinas｜Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla convierte 'hierbas chinas simples' en un gráfico panorámico coleccionable utilizando los prompts optimizados de Nano Banana: incluye detalles de apariencia/corte, propiedades y efectos clave, con un diseño claro y educativo.",
@@ -19,12 +17,12 @@
           "Genera un diagrama desglosado de 'Chenpi': puntos clave sobre diferencias de origen y año, primer plano de apariencia y textura, propiedades y meridianos, escenarios de uso diario (infusiones/ingredientes), diseño gráfico retro pero fresco en chino, 3:4."
         ]
       }
-    }
+    },
+    "description": "Una guía visual científica para cualquier hierba china tradicional con anatomía, propiedades y usos modernos. Usa el aviso de IA para generar tu propio cartel de medicina herbal.",
+    "title": "Guía Visual de Medicina Herbal: Carteles de Hierbas Tradicionales"
   },
   "template-evolution": {
     "category": "Categoría de evolución",
-    "description": "Crea una escena de línea de tiempo de “museo de evolución” en arte pixelado isométrico que mapea la progresión temporal a la progresión espacial con títulos bilingües.",
-    "title": "Nano Banana Prompts: Generador de museos de evolución isométrica｜Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza prompts personalizados de Nano Banana para construir una línea de tiempo de 'museo de píxeles isométricos': transforma etapas históricas en espacios de exhibición navegables, con cada área correspondiente a una era, equipada con señales de hitos clave.",
@@ -41,7 +39,9 @@
           "Genera un 'Museo de Evolución de Frameworks de Desarrollo Web': jQuery → Backbone → Angular → React → Next.js → RSC (concepto), una frase clave + icono por etapa, marcadores de nodos claros, 3:4."
         ]
       }
-    }
+    },
+    "description": "Una guía visual isométrica de pixel-art que mapea la evolución de cualquier tema a través del tiempo como una línea de tiempo de museo navegable. Usa el aviso de IA para generar tu propio cartel de evolución.",
+    "title": "Guía Visual de Evolución: Carteles de Línea de Tiempo de Pixel-Art para Cualquier Tema"
   },
   "template-travel": {
     "category": "Mapa de planificación de viajes",
@@ -67,8 +67,6 @@
   },
   "template-architecture": {
     "category": "Gráfico de análisis arquitectónico",
-    "description": "Produce una superposición infográfica estilo HUD de arquitectura emblemática con medidas, materiales, planos/secciones y anotaciones técnicas.",
-    "title": "Nano Banana Prompts: Generador de gráficos de análisis HUD de edificios emblemáticos｜Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza prompts profesionales de Nano Banana para actualizar fotos de edificios a un 'panel de análisis técnico HUD': superpone líneas blancas, datos de dimensiones y puntos clave de estructura, presentando un efecto visual similar a un manual de ingeniería de ciencia ficción.",
@@ -85,7 +83,9 @@
           "Genera un panel de análisis arquitectónico del 'Museo de Arte Contemporáneo de Zagreb (ejemplo)': enfatiza la iluminación, el flujo, la estructura y los materiales, superponiendo anotaciones HUD sobre la foto, y proporciona 3 resúmenes de aspectos destacados del diseño en la parte inferior, 3:4."
         ]
       }
-    }
+    },
+    "description": "Una guía visual arquitectónica detallada para cualquier edificio icónico o monumento con dibujos técnicos y contexto histórico. Usa el aviso de IA para generar tu propio cartel de arquitectura.",
+    "title": "Guía Visual de Arquitectura: Carteles de Edificios y Monumentos Icónicos"
   },
   "template-species": {
     "category": "Protección de flora y fauna",
@@ -133,8 +133,6 @@
   },
   "template-recipe": {
     "category": "Receta",
-    "description": "Diseña un póster de receta para el Año Nuevo Chino con ingredientes, visuales paso a paso, simbolismo y notas en chino a mano.",
-    "title": "Nano Banana Prompts: Generador de carteles de recetas visuales｜Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza los prompts de Nano Banana para convertir recetas en un 'cartel visual': muestra el proceso de cocción a través de ilustraciones paso a paso y fotos del producto final, no solo explica el proceso de cocinar, sino que también enfatiza la estética para la difusión social.",
@@ -151,7 +149,9 @@
           "Genera un cartel de receta de 'Paella Española': lista de ingredientes, desglose de pasos, puntos comunes de fallo y sugerencias de corrección, formato vertical 3:4."
         ]
       }
-    }
+    },
+    "description": "Una guía visual pulida de fotografía de alimentos con ingredientes, pasos y toques finales para cualquier receta. Usa el aviso de IA para generar tu propio cartel de receta estilo libro de cocina.",
+    "title": "Guía Visual de Recetas: Carteles de Fotografía de Alimentos Hechos Sencillos"
   },
   "template-character-analysis": {
     "category": "Gráfico de análisis de personajes",
@@ -976,8 +976,6 @@
   },
   "template-vocabulary": {
     "category": "Categoría de Tarjetas de Aprendizaje de Idiomas",
-    "description": "Crea tarjetas de vocabulario bilingües visualmente atractivas que combinan palabras en inglés, significados en chino y pronunciación en un formato limpio y educativo.",
-    "title": "Nano Banana Prompt: Generador de Tarjetas de Vocabulario Bilingüe | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza prompts estructurados de Nano Banana para generar tarjetas de vocabulario bilingües de alta calidad. Cada tarjeta presenta palabras en inglés junto a traducciones en chino y pinyin, acompañadas de ilustraciones lindas e intuitivas. El diseño está pensado para la claridad, la memorización y el atractivo visual, lo que la hace ideal para el aprendizaje de idiomas y contenido educativo.",
@@ -995,7 +993,9 @@
           "Crea una tarjeta de vocabulario de Clima: Sol (太阳, tài yáng), Lluvia (雨, yǔ), Nieve (雪, xuě), Viento (风, fēng), Nube (云, yún), Tormenta (暴风雨, bào fēng yǔ), Niebla (雾, wù), Arcoíris (彩虹, cǎi hóng)."
         ]
       }
-    }
+    },
+    "description": "Una guía visual de tarjetas de vocabulario bilingüe limpia para cualquier tema y par de idiomas (en-zh, en-es, en-ko, en-ja). Usa el aviso de IA para generar tu propio cartel de aprendizaje de idiomas.",
+    "title": "Guía Visual de Vocabulario Bilingüe: Aprende Palabras en Múltiples Idiomas"
   },
   "template-series-infographic": {
     "category": "Categoría de Infografía de Series",
@@ -1901,8 +1901,6 @@
   },
   "template-figure-principles-infographic": {
     "category": "Infografía de Principios de Figuras Famosas",
-    "description": "Genera un póster infográfico educativo sobre los principios fundamentales de una figura famosa, con retrato en acuarela y diseño de cuadrícula estructurado.",
-    "title": "Prompt Nano Banana: Generador de Infografías de Principios | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla crea un póster infográfico estructurado: título en negrita, retrato estilo acuarela de la figura famosa y cuadrícula de principios clave con ícono, título, descripción y puntos clave, fondo blanco, formato vertical 4K.",
@@ -1920,7 +1918,9 @@
           "Diseña un póster de Sun Tzu — retrato acuarela con pergamino, 6 estrategias del Arte de la Guerra, layout minimalista, 4K vertical."
         ]
       }
-    }
+    },
+    "description": "Una guía visual educativa sobre los principios de vida y hábitos de figuras famosas — Einstein, da Vinci, Marie Curie. Usa el aviso de IA para generar tu propia infografía de figuras famosas.",
+    "title": "Guía Visual de Figuras Famosas: Principios de Vida de Grandes Mentes"
   },
   "template-book-recommendation-grid-poster": {
     "category": "Póster de Recomendaciones de Libros",
@@ -2397,8 +2397,6 @@
   },
   "template-verb-action-learning-cards": {
     "category": "Tarjetas de Aprendizaje de Verbos de Accion",
-    "description": "Crea una cuadricula 3x3 de tarjetas de aprendizaje de verbos de accion con ilustraciones amigables y tipografia en negrita para cualquier tema de vocabulario.",
-    "title": "Nano Banana Prompt: Generador de Tarjetas de Verbos de Accion | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera una cuadricula limpia 3x3 de 9 tarjetas individuales sobre fondo blanco. Cada tarjeta muestra un personaje de dibujos animados realizando una accion con el verbo en negrita.",
@@ -2415,7 +2413,9 @@
           "Tarjetas de movimiento: patear, lanzar, trepar, montar, estirar."
         ]
       }
-    }
+    },
+    "description": "Una guía visual amigable en cuadrícula 3x3 de 9 tarjetas de aprendizaje de verbos de acción para cualquier tema de vocabulario. Usa el aviso de IA para generar tu propio cartel de tarjetas didácticas de ESL.",
+    "title": "Guía Visual de Verbos de Acción: Tarjetas de Aprendizaje de Vocabulario de ESL"
   },
   "template-pet-care-guide": {
     "category": "Infografia de Cuidado de Mascotas",
@@ -2441,8 +2441,6 @@
   },
   "template-9-traits-info-grid": {
     "category": "Infografia de 9 Rasgos",
-    "description": "Crea una infografia de cuadricula 3x3 sobre cualquier tema, cada celda con ilustracion, titulo y subtitulo.",
-    "title": "Nano Banana Prompt: Generador de Infografia de 9 Rasgos | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un poster cuadrado '9 Rasgos de [Tema]' con 9 ilustraciones minimalistas en cuadricula 3x3.",
@@ -2459,12 +2457,12 @@
           "Infografia '9 Rasgos de la Mejora Personal'."
         ]
       }
-    }
+    },
+    "description": "Una guía visual limpia 3x3 de 9 rasgos definitorios para cualquier tema — cualidades de pareja, liderazgo, superación personal. Usa el aviso de IA para crear tu propia infografía en segundos.",
+    "title": "Guía Visual de 9 Rasgos: Carteles de Personalidad, Liderazgo y Superación Personal"
   },
   "template-english-phrasal-verb": {
     "category": "Poster de Verbos Compuestos en Ingles",
-    "description": "Genera un poster de aprendizaje de 8 frases de verbos compuestos en torno a cualquier verbo principal con frases de ejemplo.",
-    "title": "Nano Banana Prompt: Generador de Poster de Verbos Compuestos en Ingles | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla crea un poster vertical '8 Frases con [Verbo]' sobre fondo crema con iconos planos y frases de ejemplo.",
@@ -2481,7 +2479,9 @@
           "Poster '8 Frases con PUT' para aulas de ESL."
         ]
       }
-    }
+    },
+    "description": "Una guía visual de ESL que muestra 8 verbos frasales alrededor de cualquier verbo central (BREAK, TAKE, GO) con oraciones de ejemplo e íconos. Usa el aviso de IA para generar tu propio cartel de aprendizaje de inglés.",
+    "title": "Guía Visual de Verbos Frasales en Inglés: Aprende 8 Frases por Verbo"
   },
   "template-hairstyle-color-recommendation": {
     "category": "Infografia de Recomendacion de Peinado y Color",
@@ -2507,8 +2507,6 @@
   },
   "template-country-souvenirs-watercolor": {
     "category": "Poster Acuarela de Souvenirs",
-    "description": "Genera un poster infografico de viaje en acuarela calido y nostalgico con los 10 souvenirs mas hermosos de cualquier pais, incluyendo monumentos y consejos de regalo.",
-    "title": "Nano Banana Prompt: Generador de Poster Acuarela de Souvenirs por Pais | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un poster vertical 4K de acuarela titulado 'Top 10 Beautiful Souvenirs from {country_name}'. La parte superior muestra monumentos iconicos, la bandera y un subtitulo; una cuadricula numerada de 2 columnas presenta 10 souvenirs con ilustraciones en acuarela y descripciones cortas; una banda inferior ofrece consejos de regalo. Colores suaves y fondo de papel texturizado dan el aire vintage de poster de viaje.",
@@ -2525,12 +2523,12 @@
           "Generar infografia acuarela 'Top 10 Souvenirs de Italia'."
         ]
       }
-    }
+    },
+    "description": "Una cálida guía visual en acuarela de los 10 mejores souvenirs de cualquier país, con monumentos icónicos y consejos de regalos. Usa el aviso de IA para generar tu propio cartel de souvenirs de viaje.",
+    "title": "Guías Visuales de Souvenirs de País: Los 10 Mejores Regalos Culturales por Destino"
   },
   "template-pet-safe-human-food-infographic": {
     "category": "Infografia de Comida Segura para Mascotas",
-    "description": "Crea una infografia clara y foto-realista que muestra que alimentos humanos son seguros y cuales toxicos para una mascota, sobre fondo de marmol blanco.",
-    "title": "Nano Banana Prompt: Generador de Infografia de Comida Segura para Mascotas | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un poster educativo vertical 4K titulado 'Human Foods {pet_name} Can Safely Eat'. Una foto de la mascota va en la esquina superior; una cuadricula de fotos realistas etiqueta frutas, verduras, carnes y granos seguros; una seccion roja inferior advierte sobre alimentos toxicos. El fondo de marmol blanco aporta un aire de guia profesional confiable.",
@@ -2547,12 +2545,12 @@
           "Infografia 'Alimentos Humanos Seguros para Conejos' foto-realista."
         ]
       }
-    }
+    },
+    "description": "Una guía visual fotorrealista que muestra qué alimentos humanos son seguros y cuáles son tóxicos para cualquier mascota. Usa el aviso de IA para generar tu propia infografía de seguridad alimentaria para mascotas imprimible.",
+    "title": "¿Qué Alimentos Pueden Comer las Mascotas? Guía Visual de Seguridad para Dueños"
   },
   "template-phonics-consonant-blend": {
     "category": "Poster de Fonetica",
-    "description": "Genera un poster de fonetica amigable para ninos sobre cualquier combinacion consonantica, con 6-8 palabras de ejemplo, ilustraciones y fondo azul cielo.",
-    "title": "Nano Banana Prompt: Generador de Poster de Fonetica de Combinaciones Consonanticas | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un poster vertical 4K para la combinacion consonantica {phonics_blend}. Un titular grande y en negrita encabeza el poster; dentro de un marco blanco, 6-8 palabras de ejemplo se acompanan de ilustraciones de dibujos animados, con la combinacion en rojo y el resto de las letras en azul. El fondo azul cielo con nubes y cesped verde lo hace acogedor para lectores principiantes.",
@@ -2569,7 +2567,9 @@
           "Poster de combinacion 'tr' para lectores principiantes."
         ]
       }
-    }
+    },
+    "description": "Una guía visual vibrante de dibujos animados de cualquier combinación de consonantes (gr, bl, ch, sh) con palabras de ejemplo e ilustraciones. Usa el aviso de IA para generar tu propio cartel de aprendizaje de fonética.",
+    "title": "Guía Visual de Combinaciones de Consonantes en Fonética: Carteles de Aprendizaje para Niños"
   },
   "template-media-theme-wallpaper-poster": {
     "category": "Poster Wallpaper Tematico",
@@ -2617,8 +2617,6 @@
   },
   "template-chinese-character-learning-poster": {
     "category": "Póster de Aprendizaje de Caracteres Chinos",
-    "description": "Genera un póster de aprendizaje de Caracteres Diarios (每日一字) para cualquier carácter chino con pinyin y 5-6 ramas de palabras compuestas radiales con ilustraciones de dibujos animados adorables.",
-    "title": "Nano Banana Prompt: Generador de Póster de Aprendizaje de Caracteres Chinos | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un póster educativo vertical 'Caracter Diario' (每日一字) para un solo carácter chino. El centro muestra el carácter grande con su pinyin; 5-6 ramas radiales alrededor del centro emparejan palabras compuestas comunes con ilustraciones de dibujos animados adorables y etiquetas de pinyin — fondo blanco limpio, estilo artístico de acuarela suave o dibujos animados, estética educativa amigable para niños.",
@@ -2635,12 +2633,12 @@
           "Genera un póster de Caracter Diario para 水 (shuǐ) con ramas relacionadas con el agua."
         ]
       }
-    }
+    },
+    "description": "Una guía visual amigable para niños del Carácter Diario (每日一字) con pinyin y 5-6 palabras compuestas radiales. Usa el aviso de IA para generar tu propio cartel de aprendizaje de chino.",
+    "title": "Guía Visual del Carácter Chino Diario: Aprende Caracteres con Pinyin"
   },
   "template-chinese-verb-opposite-infographic": {
     "category": "Infografía de Verbos Opuestos Chinos",
-    "description": "Genera un póster infográfico educativo de pares de verbos chinos opuestos con pinyin, traducciones al inglés e ilustraciones de dibujos animados contrastantes en filas horizontales.",
-    "title": "Nano Banana Prompt: Generador de Infografía de Verbos Opuestos Chinos | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla crea un póster infográfico educativo horizontal de verbos chinos opuestos. Cada fila empareja dos verbos opuestos uno al lado del otro: la izquierda y la derecha muestran el verbo con pinyin y traducción al inglés, el centro muestra una ilustración de dibujos animados de las acciones contrastantes, y una flecha de color o forma hexagonal une el par — fondo claro limpio, ilustraciones de dibujos animados amigables, colores pastel suaves.",
@@ -2657,7 +2655,9 @@
           "Genera una infografía de opuestos de 'Palabras de Acción Cotidianas en Chino'."
         ]
       }
-    }
+    },
+    "description": "Una guía visual educativa que empareja verbos chinos opuestos con pinyin, traducciones al inglés e ilustraciones contrastantes. Usa el aviso de IA para generar tu propio gráfico de aprendizaje de mandarín.",
+    "title": "Guía Visual de Verbos Opuestos en Chino: Aprende Pares de Antónimos"
   },
   "template-mbti-relationship-infographic": {
     "category": "Infografía de Relaciones MBTI",
@@ -2683,8 +2683,6 @@
   },
   "template-ethnic-costume-deconstruction-board": {
     "category": "Tablero de Deconstrucción de Trajes Étnicos",
-    "description": "Genera un tablero plano de estilo deconstrucción de alta moda para el traje tradicional de cualquier grupo étnico, con un retrato de cuerpo completo y etiquetas de componentes a cada lado.",
-    "title": "Nano Banana Prompt: Generador de Tablero de Deconstrucción de Trajes Étnicos | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla utiliza Nano Banana para generar un tablero plano profesional de patrimonio cultural para el traje tradicional de un grupo étnico elegido. El centro presenta un retrato de cuerpo completo de un modelo vistiendo el traje completo contra un fondo de madera oscura; los rieles izquierdo y derecho deconstruyen el look en joyería de plata, textiles bordados, accesorios y artefactos culturales, cada uno etiquetado con caracteres chinos. Estética de fotografía de estudio de alta moda con iluminación dramática cálida, detalles nítidos y texturas ricas.",
@@ -2701,7 +2699,9 @@
           "Genera un tablero de deconstrucción de traje mongol con accesorios culturales destacados."
         ]
       }
-    }
+    },
+    "description": "Una guía visual de estilo deconstrucción de alta moda que muestra el traje tradicional de cualquier grupo étnico con joyería, textiles y accesorios etiquetados. Usa el aviso de IA para generar tu propio cartel de patrimonio cultural.",
+    "title": "Guía Visual de Trajes Étnicos Tradicionales: Tableros de Deconstrucción del Patrimonio"
   },
   "template-gardening-how-to-infographic": {
     "category": "Infografía de Cómo Hacer Jardinería",
@@ -2727,8 +2727,6 @@
   },
   "template-lifestyle-watercolor-infographic": {
     "category": "Infografía Acuarela de Estilo de Vida",
-    "description": "Genera una infografía de estilo de vida en acuarela cálida y caprichosa sobre cualquier tema con un título numerado, una suave ilustración central y íconos de consejos sobre un fondo de papel texturizado.",
-    "title": "Nano Banana Prompt: Generador de Infografía Acuarela de Estilo de Vida | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla construye un cartel infográfico vertical en acuarela de tonos cálidos alrededor de un tema de estilo de vida elegido. La parte superior presenta una pancarta con una cita suave sobre un gran título numerado (por ejemplo, '10 Ideas de Cuidado Personal'); una suave ilustración central en acuarela ancla la composición, rodeada de íconos más pequeños en acuarela, cada uno emparejado con una breve etiqueta de consejo. Fondo de papel texturizado beige claro con corazones, estrellas y acentos de confeti en una estética acogedora de cuidado personal.",
@@ -2745,12 +2743,12 @@
           "Genera una infografía cálida en acuarela '12 Prácticas de Mindfulness'."
         ]
       }
-    }
+    },
+    "description": "Una cálida y caprichosa guía visual en acuarela sobre cualquier tema de estilo de vida — autocuidado, atención plena, rutinas matutinas. Usa el aviso de IA para generar tu propia infografía de estilo de vida acogedora.",
+    "title": "Guías Visuales de Autocuidado y Estilo de Vida: Carteles Acuarelados Acogedores"
   },
   "template-animation-studio-comparison-infographic": {
     "category": "Infografía de Comparación de Estudios de Animación",
-    "description": "Genera un vibrante cartel de 'ENFRENTAMIENTO DE ESTUDIOS DE ANIMACIÓN' comparando dos estudios de animación uno al lado del otro, con logotipos, año de fundación, estilo artístico, obras notables y legado.",
-    "title": "Nano Banana Prompt: Generador de Infografía de Comparación de Estudios de Animación | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un vibrante cartel infográfico de 'COMPARACIÓN DE ESTUDIOS DE ANIMACIÓN'. Un banner de título se sitúa en la parte superior; el cuerpo se divide izquierda/derecha entre los dos estudios elegidos, cada lado cubriendo el logotipo del estudio, año de fundación, estilo artístico con arte de ejemplo, obras notables con imágenes y legado/impacto con íconos. El fondo utiliza una textura de escritorio de madera con garabatos y figuritas temáticas de anime para una estética acogedora de fandom, con paletas de colores distintas por estudio.",
@@ -2767,12 +2765,12 @@
           "Genera una infografía de enfrentamiento entre Kyoto Animation y Ufotable."
         ]
       }
-    }
+    },
+    "description": "Una guía visual vibrante de estudio contra estudio que cubre logotipos, año de fundación, estilo artístico, obras notables y legado. Usa el aviso de IA para generar tu propio cartel de comparación de estudios de anime.",
+    "title": "Estudios de Anime Comparados: Guía Visual de Enfrentamiento para Fans"
   },
   "template-history-timeline-infographic": {
     "category": "Infografía de Línea de Tiempo Histórica",
-    "description": "Genera un cartel de línea de tiempo de evolución visualmente impresionante sobre cualquier tema histórico con una línea de tiempo central fluida, eventos clave, fechas, descripciones e ilustraciones temáticas.",
-    "title": "Nano Banana Prompt: Generador de Infografía de Línea de Tiempo Histórica | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera una infografía vertical visualmente impresionante titulada '[tema]: Evolución a Través del Tiempo'. Una línea de tiempo central fluida con hitos anuales numerados recorre la longitud del cartel; cada hito presenta un evento clave, fecha, breve descripción e ilustración relevante. La paleta de colores, íconos y diseño de fondo se adaptan al tema elegido (retro, futurista, vintage, etc.) para un lenguaje de diseño consistente.",
@@ -2789,12 +2787,12 @@
           "Genera una infografía de línea de tiempo de 'Exploración Espacial' con eventos clave."
         ]
       }
-    }
+    },
+    "description": "Una guía visual de línea de tiempo fluida de la evolución de cualquier tema a través del tiempo, con eventos clave e ilustraciones temáticas. Usa el aviso de IA para generar tu propio cartel de línea de tiempo histórica.",
+    "title": "Creador de Línea de Tiempo Histórica: Carteles de Evolución Visual para Cualquier Tema"
   },
   "template-then-vs-now-comparison-infographic": {
     "category": "Infografía de Comparación Entonces vs Ahora",
-    "description": "Genera un cartel limpio de comparación ENTONCES-VS-AHORA sobre cualquier tema, con una tabla de tres columnas que contrasta equivalentes vintage y modernos utilizando fotos realistas.",
-    "title": "Nano Banana Prompt: Generador de Infografía de Comparación Entonces vs Ahora | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera una infografía de comparación vertical clara titulada '[tema] ENTONCES VS AHORA'. Un título temático se sitúa en la parte superior; el cuerpo es una tabla de tres columnas con filas de Categoría / Entonces / Ahora, cada una mostrando un producto vintage a la izquierda y su equivalente moderno a la derecha utilizando fotos realistas. El fondo y los íconos coinciden con el tema para una estética nostálgica pero moderna.",
@@ -2811,12 +2809,12 @@
           "Genera una infografía de comparación 'Útiles Escolares Entonces vs Ahora'."
         ]
       }
-    }
+    },
+    "description": "Una guía visual clara de tres columnas que contrasta equivalentes vintage y modernos — bocadillos de la infancia, entretenimiento, útiles escolares, productos tecnológicos. Usa el aviso de IA para generar tu propio cartel de comparación de entonces y ahora.",
+    "title": "Entonces vs Ahora: Guía Visual de Comparación Generacional Nostálgica"
   },
   "template-travel-packing-guide-infographic": {
     "category": "Infografía de Guía de Empaque para Viajes",
-    "description": "Genera un vibrante cartel de guía de empaque para cualquier destino, cantidad de días y enfoque de género con contenidos de equipaje de mano, esenciales, ideas de atuendos, imprescindibles y consejos de expertos.",
-    "title": "Nano Banana Prompt: Generador de Infografía de Guía de Empaque para Viajes | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera un vibrante cartel de guía de empaque adaptado a un destino, duración del viaje y enfoque de género. El banner de título dice '[N]-DÍA Guía de Empaque para [destino]' sobre gráficos temáticos de viaje; el cuerpo cubre 'Lo que puedes llevar en un equipaje de mano', 'Esenciales de Empaque', 'Ideas de Atuendos para [N] Días', 'Imprescindibles', y 'Consejos de Expertos' — cada sección utiliza fotos realistas de productos con etiquetas claras en una paleta de tema coordinada.",
@@ -2833,12 +2831,12 @@
           "Genera una infografía de guía de empaque para escapada de fin de semana de 3 días unisex."
         ]
       }
-    }
+    },
+    "description": "Una guía visual vibrante de empaque para cualquier destino, número de días y género — elementos esenciales de equipaje de mano, ideas de atuendos y consejos profesionales. Usa el aviso de IA para generar tu propio cartel de empaque de viaje.",
+    "title": "Guía Visual de Empaque para Viajes: Qué Llevar para Cualquier Viaje"
   },
   "template-word-origins-map-infographic": {
     "category": "Infografía de Mapa de Orígenes de Palabras",
-    "description": "Genera una infografía educativa de mapa mundial sobre cualquier tema mostrando palabras conectadas por líneas de colores a sus países de origen con etimologías e íconos temáticos.",
-    "title": "Nano Banana Prompt: Generador de Infografía de Mapa de Orígenes de Palabras | Curify AI",
     "content": {
       "sections": {
         "what": "Esta plantilla genera una infografía horizontal educativa titulada 'ORÍGENES DE PALABRAS: [tema]'. Un mapa mundial simplificado se sitúa en el centro; las palabras se colocan a través del mapa y se conectan por líneas de colores a sus países de origen, cada uno marcado con la bandera del país. Cada palabra está anotada con su etimología y breve significado junto a un pequeño ícono temático, en un diseño moderno limpio y colorido en tonos pastel.",
@@ -2855,6 +2853,8 @@
           "Genera una infografía de mapa de orígenes de palabras sobre 'Ciencia y Tecnología'."
         ]
       }
-    }
+    },
+    "description": "Una guía visual de mapa mundial que muestra palabras conectadas a sus países de origen con etimologías y significados. Usa el aviso de IA para generar tu propio cartel de mapa etimológico.",
+    "title": "Orígenes de Palabras en Todo el Mundo: Infografía de Mapa Etimológico"
   }
 }

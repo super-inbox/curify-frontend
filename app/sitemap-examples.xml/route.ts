@@ -3,6 +3,10 @@ import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
 import { toSlug } from "@/lib/nano_utils";
+import {
+  SEO_RETITLED_LASTMOD,
+  SEO_RETITLED_TEMPLATE_IDS,
+} from "@/lib/seo_retitled_templates";
 
 export const runtime = "nodejs";
 
@@ -112,7 +116,12 @@ export async function GET() {
       toSlug(templateId)
     )}/example/${encodeURIComponent(exampleId)}`;
 
-    const lastmod = pickLastmod(ex) ?? STABLE_LASTMOD;
+    // If the parent template was retitled in the SEO pass, bump the
+    // lastmod for every one of its examples so Google recrawls the
+    // example pages too (they render the same i18n title as the h1).
+    const lastmod = SEO_RETITLED_TEMPLATE_IDS.has(templateId)
+      ? SEO_RETITLED_LASTMOD
+      : pickLastmod(ex) ?? STABLE_LASTMOD;
 
     for (const locale of availableLocales) {
       urls += generateUrlEntry(locale, route, {
