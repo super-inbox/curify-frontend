@@ -5,7 +5,6 @@ import Link from 'next/link';
 import CdnImage from '@/app/[locale]/_components/CdnImage';
 import RelatedBlogs from "../../../_components/RelatedBlogs";
 import TableOfContents from "@/app/[locale]/(public)/blog/[slug]/components/TableOfContents";
-import BreadcrumbNavigation from "@/app/[locale]/(public)/blog/[slug]/components/BreadcrumbNavigation";
 import StructuredData from "@/app/[locale]/(public)/blog/[slug]/components/StructuredData";
 import PromptBox from "@/app/[locale]/(public)/blog/[slug]/components/PromptBox";
 
@@ -24,10 +23,6 @@ export default function WeirdScienceFactsClassroomEngagement() {
 
   return (
     <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
-      <BreadcrumbNavigation items={[
-        { name: 'Blog', href: '/blog' },
-        { name: t('title'), href: '/blog/weird-science-facts-classroom-engagement' }
-      ]} />
       <StructuredData 
         title={t('title')}
         description={t('metaDescription')}

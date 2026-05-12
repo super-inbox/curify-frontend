@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import BreadcrumbNavigation from "./BreadcrumbNavigation";
 import StructuredData from "./StructuredData";
 import TableOfContents from "./TableOfContents";
 import PromptBox from "./PromptBox";
@@ -46,7 +45,6 @@ export default async function StandardBlogPost({
 
   return (
     <article className="pt-20 pb-12 text-[18px] leading-8 lg:pr-12 lg:pl-8 pl-4 pr-4 md:pl-8 md:pr-8">
-      <BreadcrumbNavigation items={[{ name: "Blog", href: "/blog" }, { name: safeT("title"), href: `/blog/${slug}` }]} />
       <StructuredData 
         title={safeT("title")}
         description={safeT("metaDescription")}
