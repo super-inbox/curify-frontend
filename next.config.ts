@@ -106,6 +106,20 @@ const nextConfig: NextConfig = {
         destination: "/:locale/nano-template/world-travel-map-illustration",
         permanent: true,
       },
+
+      // Legacy marketing routes that surfaced in the GSC 404 report.
+      // Each maps to the closest current equivalent so the SEO signal
+      // moves forward instead of dead-ending or soft-404'ing.
+      { source: "/gallery", destination: "/nano-banana-pro-prompts", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/gallery`, destination: "/:locale/nano-banana-pro-prompts", permanent: true },
+      { source: "/generate", destination: "/nano-banana-pro-prompts", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/generate`, destination: "/:locale/nano-banana-pro-prompts", permanent: true },
+      { source: "/templates", destination: "/nano-banana-pro-prompts", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/templates`, destination: "/:locale/nano-banana-pro-prompts", permanent: true },
+      { source: "/subtitle-generator", destination: "/tools/bilingual-subtitles", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/subtitle-generator`, destination: "/:locale/tools/bilingual-subtitles", permanent: true },
+      { source: "/video-translator", destination: "/tools/video-dubbing", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/video-translator`, destination: "/:locale/tools/video-dubbing", permanent: true },
     ];
 
     const isValid = (r: unknown): r is RedirectRule =>
