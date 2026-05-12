@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import CarouselClient from "./CarouselClient";
@@ -18,6 +19,27 @@ type PageParams = {
 type SearchParams = {
   media?: string;
 };
+
+// The carousel is a fullscreen viewer for the same example shown at
+// /nano-template/<slug>/example/<exampleId>. Canonical the carousel
+// page to the example detail page so Google consolidates the two
+// presentations of the same content. All locale variants (since they
+// share the same images) canonical to the EN example page and are
+// noindex'd to avoid 10x duplicate inflation per example.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { slug, exampleId: rawExampleId } = await params;
+  const canonicalPath = `/nano-template/${slug}/example/${rawExampleId}`;
+  return {
+    alternates: {
+      canonical: canonicalPath,
+    },
+    robots: { index: false, follow: true },
+  };
+}
 
 export default async function NanoCarouselPage({
   params,

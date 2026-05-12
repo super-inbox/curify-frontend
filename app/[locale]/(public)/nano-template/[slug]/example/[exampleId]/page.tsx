@@ -197,6 +197,14 @@ export async function generateMetadata({
   // fallbacks (thin) — noindex them to avoid SEO penalties for thin content.
   const noindex = !allowI18n && rawLocale !== "en" && rawLocale !== "zh";
 
+  // When noindex'd, point canonical at the EN version (the page Google
+  // should actually index) instead of self. A noindex page that
+  // canonicals to itself sends conflicting signals — Google ends up
+  // classifying it as "Duplicate without user-selected canonical".
+  // EN uses no locale prefix (localePrefix: as-needed).
+  const canonicalLocale = noindex ? "en" : rawLocale;
+  const canonicalPath = canonicalLocale === "en" ? route : `/${canonicalLocale}${route}`;
+
   return {
     title: `${title} — Nano Banana Prompt Generator`,
     description,
@@ -206,7 +214,7 @@ export async function generateMetadata({
       images: ogImage ? [{ url: ogImage }] : undefined,
     },
     alternates: {
-      canonical: `/${rawLocale}${route}`,
+      canonical: canonicalPath,
       languages,
     },
     robots: noindex ? { index: false, follow: true } : undefined,
