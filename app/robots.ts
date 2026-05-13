@@ -9,11 +9,23 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/auth/', '/public/data/'],
       },
       {
-        // Amazonbot is low SEO value (used for Alexa/Amazon shopping
-        // integrations). The two crawl-heavy surfaces below back into
-        // the Azure prompts/templates API on each render, so disallow
-        // them across every locale via a wildcard.
-        userAgent: 'Amazonbot',
+        // These crawlers consume Vercel Fast Data Transfer with little
+        // SEO upside. The two routes below back into the Azure prompts /
+        // templates API and the static-but-heavy template JSON on each
+        // render, so disallow them across every locale via a wildcard.
+        //
+        // Kept allowed: Googlebot, Bingbot, DuckDuckBot, AhrefsBot,
+        // SEMrushBot (the last two are SEO-research crawlers we still
+        // want signal from).
+        userAgent: [
+          'Amazonbot',
+          'VelenPublicWebCrawler',
+          'Bytespider',
+          'GPTBot',
+          'ClaudeBot',
+          'Claude-Web',
+          'PerplexityBot',
+        ],
         disallow: [
           '/*/nano-banana-pro-prompts/',
           '/*/nano-template/',

@@ -22,9 +22,13 @@ import { getCanonicalUrl, getLanguagesMap } from "@/lib/canonical";
 
 import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, getNavigationalChildren, getTagChildren, getTier1Ancestor, getGalleryTag, getBlogTag } from "@/lib/topicRegistry";
 
-// Cache topic listing pages for 4 hours with ISR — keeps the
-// gallery / prompt fetches off the hot path on every request.
-export const revalidate = 14400;
+// Topic data is bundled (nano_templates.json + nano_inspiration.json +
+// blogs.json) plus a single fetch for related prompts. Bundled data
+// only changes on redeploy; the prompts fetch is itself cached via
+// nanoPromptsService (next: { revalidate, tags }). So cache the page
+// forever until the next deploy. Do NOT add force-dynamic here — it
+// silently overrides this revalidate and kills the cache.
+export const revalidate = false;
 
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoImages from "@/public/data/nano_inspiration.json";
@@ -35,7 +39,6 @@ import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCa
 import MBTIQuizCapsule from "@/app/[locale]/_components/MBTIQuizCapsule";
 import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
 
-export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;

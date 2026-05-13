@@ -10,6 +10,11 @@ import nanoMetadata from '@/lib/generated/nanobanana_prompts_metadata.json';
 
 export const runtime = 'nodejs';
 
+// Cache the prompts listing for 4 hours with ISR. Bots hammer this
+// page when iterating numbered prompt detail pages; without ISR each
+// hit forces a server render that ships through Fast Origin Transfer.
+export const revalidate = 14400;
+
 
 export async function generateMetadata({
   params,

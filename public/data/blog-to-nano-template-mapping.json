@@ -144,5 +144,141 @@
     "description": "Multi-character poster organized around a fandom theme. Strong themes ('K-pop boy group', 'NBA legends') outperform weak ones ('characters').",
     "image_urls": ["/images/nano_insp/template-fandom-character-grid-poster-anime-protagonists.jpg"],
     "preview_image_urls": ["/images/nano_insp_preview/template-fandom-character-grid-poster-anime-protagonists-prev.jpg"]
+  },
+  "mbti-character-generator-universe-marvel": {
+    "template_id": "template-mbti-marvel",
+    "sample_parameters": { "character_name": "Hulk" },
+    "category": "Marvel",
+    "description": "Marvel hero or villain as an MBTI personality card with isometric room scene.",
+    "image_urls": ["/images/nano_insp/template-mbti-marvel-en-marvel-hulk.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-marvel-en-marvel-hulk-prev.jpg"]
+  },
+  "mbti-character-generator-universe-breakingbad": {
+    "template_id": "template-mbti-breakingbad",
+    "sample_parameters": { "character_name": "Chuck McGill" },
+    "category": "Breaking Bad",
+    "description": "Breaking Bad / Better Call Saul character MBTI card styled to the show's visual language.",
+    "image_urls": ["/images/nano_insp/template-mbti-breakingbad-en-chuck-mcgill.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-breakingbad-en-chuck-mcgill-prev.jpg"]
+  },
+  "mbti-character-generator-universe-nba": {
+    "template_id": "template-mbti-nba",
+    "sample_parameters": { "player_name": "Kevin Durant" },
+    "category": "NBA",
+    "description": "NBA player MBTI card with on-court vibes — Curry, KD, Kobe, Tim Duncan, etc.",
+    "image_urls": ["/images/nano_insp/template-mbti-nba-en-kevendurant.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-nba-en-kevendurant-prev.jpg"]
+  },
+  "mbti-character-generator-universe-naruto": {
+    "template_id": "template-mbti-naruto",
+    "sample_parameters": { "character_name": "Gaara" },
+    "category": "Naruto",
+    "description": "Naruto-universe character MBTI card with anime-styled illustration.",
+    "image_urls": ["/images/nano_insp/template-mbti-naruto-gaara.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-naruto-gaara-prev.jpg"]
+  },
+  "mbti-character-generator-universe-ghibli": {
+    "template_id": "template-mbti-ghibli",
+    "sample_parameters": { "character_name": "Ashitaka" },
+    "category": "Studio Ghibli",
+    "description": "Studio Ghibli protagonist as an MBTI personality card in Ghibli's painterly style.",
+    "image_urls": ["/images/nano_insp/template-mbti-ghibli-ashitaka.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-ghibli-ashitaka-prev.jpg"]
+  },
+  "mbti-character-generator-universe-yellowstone": {
+    "template_id": "template-mbti-yellowstone",
+    "sample_parameters": { "character_name": "Beth Dutton" },
+    "category": "Yellowstone",
+    "description": "Yellowstone character MBTI card — Beth, Rip, Kayce, John — with rugged Montana visual language.",
+    "image_urls": ["/images/nano_insp/template-mbti-yellowstone-bethdutton.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-yellowstone-bethdutton-prev.jpg"]
+  },
+  "mbti-character-generator-universe-siliconvalley": {
+    "template_id": "template-mbti-siliconvalley",
+    "sample_parameters": { "character_name": "ChatGPT" },
+    "category": "AI Assistant MBTI",
+    "description": "AI assistant or Silicon Valley tech character as an MBTI personality — ChatGPT, Claude, Copilot, etc.",
+    "image_urls": ["/images/nano_insp/template-mbti-generic-ai-en-chatgpt-enfp.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-generic-ai-en-chatgpt-enfp-prev.jpg"]
+  },
+  "mbti-character-generator-universe-harry-potter": {
+    "template_id": "template-harry-potter-mbti-infographic",
+    "sample_parameters": { "character_name": "enfj harry potter" },
+    "category": "Harry Potter",
+    "description": "Harry Potter character MBTI infographic with wizarding-world visual cues.",
+    "image_urls": ["/images/nano_insp/template-harry-potter-mbti-infographic-enfj-harry-potter.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-harry-potter-mbti-infographic-enfj-harry-potter-prev.jpg"]
+  },
+  "mbti-character-generator-universe-friends": {
+    "template_id": "template-friends-character-mbti",
+    "sample_parameters": { "character_name": "Chandler Bing" },
+    "category": "Friends (Sitcom)",
+    "description": "Friends sitcom cast MBTI card — Chandler, Ross, Rachel, Monica, Joey, Phoebe.",
+    "image_urls": ["/images/nano_insp/template-friends-character-mbti-chandler-bing.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-friends-character-mbti-chandler-bing-prev.jpg"]
+  },
+  "mbti-character-generator-universe-chinese-classic": {
+    "template_id": "template-chinese-classic-character-mbti",
+    "sample_parameters": { "character_name": "曹操" },
+    "category": "Chinese Classic Literature",
+    "description": "Chinese classic literature character (Three Kingdoms, Dream of the Red Chamber, Journey to the West) as MBTI.",
+    "image_urls": ["/images/nano_insp/template-chinese-classic-character-mbti-cao-cao.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-chinese-classic-character-mbti-cao-cao-prev.jpg"]
+  },
+  "mbti-character-generator-universe-zhenhuan": {
+    "template_id": "template-zhenhuan-mbti-character-analysis",
+    "sample_parameters": {},
+    "category": "Zhenhuan (Chinese Palace Drama)",
+    "description": "Empresses in the Palace (Zhenhuan) character MBTI analysis with Qing dynasty palace visuals.",
+    "image_urls": ["/images/nano_insp/template-zhenhuan-mbti-character-analysis-infp-wenshichu.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-zhenhuan-mbti-character-analysis-infp-wenshichu-prev.jpg"]
+  },
+  "mbti-character-generator-universe-princess-pearl": {
+    "template_id": "template-princess-pearl-mbti-character-card",
+    "sample_parameters": {},
+    "category": "Princess Pearl (Huan Zhu Ge Ge)",
+    "description": "Princess Pearl (Huan Zhu Ge Ge) character MBTI card with classic C-drama palette.",
+    "image_urls": ["/images/nano_insp/template-princess-pearl-mbti-character-card-enfj-yongqi.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-princess-pearl-mbti-character-card-enfj-yongqi-prev.jpg"]
+  },
+  "mbti-character-generator-beyond-stereotype": {
+    "template_id": "template-mbti-stereotype-vs-reality-infographic",
+    "sample_parameters": { "mbti_type": "enfp" },
+    "category": "Stereotype vs Reality",
+    "description": "Bust the common stereotypes for any MBTI type with a side-by-side 'what people think' vs 'what it actually is' infographic.",
+    "image_urls": ["/images/nano_insp/template-mbti-stereotype-vs-reality-infographic-enfp.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-stereotype-vs-reality-infographic-enfp-prev.jpg"]
+  },
+  "mbti-character-generator-beyond-relationship": {
+    "template_id": "template-mbti-relationship-infographic",
+    "sample_parameters": { "mbti_type_a": "ENTJ", "mbti_type_b": "INFP" },
+    "category": "MBTI × MBTI Relationship",
+    "description": "Compatibility infographic for any two MBTI types — strengths, friction points, and how they show up together.",
+    "image_urls": ["/images/nano_insp/template-mbti-relationship-infographic-entj-infp.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-relationship-infographic-entj-infp-prev.jpg"]
+  },
+  "mbti-character-generator-beyond-contrast": {
+    "template_id": "template-mbti-contrast",
+    "sample_parameters": { "persona_a": "ESTJ", "persona_b": "INTP", "scene_title": "high-speed rail" },
+    "category": "MBTI Contrast Card",
+    "description": "Side-by-side scene contrasting how two MBTI personas behave in the same situation — perfect for comedic 'them vs us' content.",
+    "image_urls": ["/images/nano_insp/template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-spring-festival-zh--ESTJ-vs-INTP-high-speed-rail-prev.jpg"]
+  },
+  "mbti-character-generator-beyond-generic-grid": {
+    "template_id": "template-mbti-generic",
+    "sample_parameters": { "mbti_topic": "Basketball", "character_set": "Kobe Bryant, Stephen Curry, Kevin Durant, Tim Duncan" },
+    "category": "MBTI Generic Grid",
+    "description": "Multi-character MBTI grid for any theme — basketball legends, anime protagonists, classic novelists. Pick the theme and the cast.",
+    "image_urls": ["/images/nano_insp/template-mbti-generic-Basketball-en-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-generic-Basketball-en-Kobe-Bryant-Stephen-Curry-Kevin-Durant-Tim-Duncan-prev.jpg"]
+  },
+  "mbti-character-generator-beyond-animal": {
+    "template_id": "template-mbti-animal",
+    "sample_parameters": { "scene": "amusement park" },
+    "category": "MBTI Animal Kingdom",
+    "description": "16 MBTI types as animals in a shared scene — amusement park, office, school. Whimsical and very shareable.",
+    "image_urls": ["/images/nano_insp/template-mbti-animal-zh-amusement-park 1.jpg"],
+    "preview_image_urls": ["/images/nano_insp_preview/template-mbti-animal-zh-amusement-park 1-prev.jpg"]
   }
 }
