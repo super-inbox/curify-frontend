@@ -24,6 +24,9 @@ import { getTemplatesForTopic, getRelatedTopics, getParentTopic, getTopicById, g
 
 // Cache topic listing pages for 4 hours with ISR — keeps the
 // gallery / prompt fetches off the hot path on every request.
+// Do NOT add `export const dynamic = "force-dynamic"` here — it
+// silently overrides revalidate and kills the cache, which is what
+// was driving Vercel Fast Data Transfer cost.
 export const revalidate = 14400;
 
 import nanoTemplates from "@/public/data/nano_templates.json";
@@ -35,7 +38,6 @@ import PromptCard from "@/app/[locale]/(public)/nano-banana-pro-prompts/PromptCa
 import MBTIQuizCapsule from "@/app/[locale]/_components/MBTIQuizCapsule";
 import RelatedBlogCard from "@/app/[locale]/_components/RelatedBlogCard";
 
-export const dynamic = "force-dynamic";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;

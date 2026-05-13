@@ -2,6 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
+// Cache the template detail page for 4 hours with ISR. Bot crawls hit
+// these pages hard and the per-template payload (template metadata +
+// example grid + other templates) is heavy; ISR keeps Fast Origin
+// Transfer (function → CDN) and Azure backend load near zero on hits.
+export const revalidate = 14400;
+
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
 
