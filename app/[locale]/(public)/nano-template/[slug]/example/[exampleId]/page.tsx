@@ -63,14 +63,14 @@ async function getPageData(localeStr: string, slug: string, rawExampleId: string
   );
   const category = fallbackCopy.category;
 
-  // allow_i18n entries get example-specific localized SEO copy from
-  // messages/<locale>/example.json. Other entries use the template-level
-  // i18n fallback (which renders the template's title for every example
-  // and is fine for non-indexed locales).
+  // Always read example.json regardless of allow_i18n. We've backfilled
+  // unique descriptions for ~1,275 non-allow_i18n examples; rendering
+  // them improves the visible page even for locales we don't index.
+  // The allow_i18n flag still gates *indexing* below (hreflang +
+  // noindex), so non-allow_i18n examples on non-en/zh stay noindex'd
+  // — they just look better to the visitors who do reach them.
   const allowI18n = !!example.allow_i18n;
-  const exampleI18n = allowI18n
-    ? await getExampleI18n(example.id, ctx.contentLocale)
-    : null;
+  const exampleI18n = await getExampleI18n(example.id, ctx.contentLocale);
   const title = exampleI18n?.title || fallbackCopy.title;
   const bodyDescription = exampleI18n?.description || null;
   const metaDescription = exampleI18n?.metaDescription || null;

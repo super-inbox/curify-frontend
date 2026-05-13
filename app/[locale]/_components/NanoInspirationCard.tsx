@@ -308,7 +308,7 @@ export function NanoInspirationRow({
   onViewClick,
   getRelatedScore,
   rankScoreRelatedShift = 80,
-  maxRows = 12,
+  maxRows = 5,
 }: NanoInspirationRowProps) {
   const cols = useGridCols();
   const [expanded, setExpanded] = useState(false);
