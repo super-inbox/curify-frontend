@@ -235,17 +235,105 @@ export function getTopicIdsForTemplate(templateId: string): string[] {
   return registry.templateToTopics.get(templateId) ?? [];
 }
 
-// Reverse index of TOPIC_GALLERY_TAG (topic → tag). Built once at module
-// load so the tag page can ask "what topics pull from this gallery tag?"
-// without scanning the map per request. Multiple topics can share a tag
-// (e.g. posters + vintage-retro both pull from "vintage"), so values are
-// arrays.
+// Extra reverse-only enrichment: gallery tags that should surface
+// templates from a related topic, even though no topic page pulls from
+// that tag. Used solely by getTopicsForTag (tag page / prompt detail
+// page "related templates" section). Does NOT affect the topic page,
+// which still uses TOPIC_GALLERY_TAG one-way for its gallery row.
+//
+// Curated to cover the high-traffic gallery tags that TOPIC_GALLERY_TAG
+// missed. Add tags here when you want a Templates section without
+// pulling a new gallery list onto a topic page.
+const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
+  // → portrait
+  woman:             ["portrait"],
+  man:               ["portrait"],
+  girl:              ["portrait"],
+  "human portrait":  ["portrait"],
+  selfie:            ["portrait"],
+  "mirror selfie":   ["portrait"],
+  model:             ["portrait"],
+  closeup:           ["portrait"],
+  silhouette:        ["portrait"],
+  // → photorealistic
+  hyperrealistic:    ["photorealistic"],
+  "ultra realistic": ["photorealistic"],
+  macro:             ["photorealistic"],
+  bokeh:             ["photorealistic"],
+  "natural-light":   ["photorealistic"],
+  "soft-light":      ["photorealistic"],
+  // → digital-canvas (artistic)
+  illustration:      ["digital-canvas"],
+  whimsical:         ["digital-canvas"],
+  surreal:           ["digital-canvas"],
+  abstract:          ["digital-canvas"],
+  ethereal:          ["digital-canvas"],
+  dreamy:            ["digital-canvas"],
+  fairy:             ["digital-canvas"],
+  // → film (cinematic)
+  dramatic:          ["film"],
+  moody:             ["film"],
+  mysterious:        ["film"],
+  intense:           ["film"],
+  eerie:             ["film"],
+  editorial:         ["film"],
+  documentary:       ["film"],
+  // → ai (futuristic)
+  neon:              ["ai"],
+  "neon lights":     ["ai"],
+  // → posters
+  collage:           ["posters"],
+  poster:            ["posters"],
+  infographic:       ["posters"],
+  informative:       ["posters"],
+  grid:              ["posters"],
+  // → nature
+  forest:            ["nature"],
+  nature:            ["nature"],
+  ocean:             ["nature"],
+  garden:            ["nature"],
+  beach:             ["nature"],
+  "snowy landscape": ["nature"],
+  // → weather (atmospheric + time-of-day)
+  winter:            ["weather"],
+  snowy:             ["weather"],
+  summer:            ["weather"],
+  autumn:            ["weather"],
+  rainy:             ["weather"],
+  sunset:            ["weather"],
+  morning:           ["weather"],
+  twilight:          ["weather"],
+  "golden hour":     ["weather"],
+  night:             ["weather"],
+  // → celebration
+  christmas:         ["celebration"],
+  festive:           ["celebration"],
+  // → transportation, animal, country topics
+  car:               ["transportation"],
+  cat:               ["animal"],
+  japanese:          ["japan"],
+  kpop:              ["korea"],
+};
+
+// Reverse index of TOPIC_GALLERY_TAG (topic → tag), merged with
+// EXTRA_TAG_TO_TOPICS. Built once at module load so the tag page can ask
+// "what topics pull from this gallery tag?" without scanning per request.
+// Multiple topics can share a tag (e.g. posters + vintage-retro both
+// pull from "vintage"), so values are arrays.
 const GALLERY_TAG_TO_TOPICS: Map<string, string[]> = (() => {
   const out = new Map<string, string[]>();
   for (const [topic, tag] of Object.entries(TOPIC_GALLERY_TAG)) {
     const arr = out.get(tag);
     if (arr) arr.push(topic);
     else out.set(tag, [topic]);
+  }
+  for (const [tag, topics] of Object.entries(EXTRA_TAG_TO_TOPICS)) {
+    const arr = out.get(tag);
+    if (arr) {
+      for (const t of topics) if (!arr.includes(t)) arr.push(t);
+    } else {
+      out.set(tag, [...topics]);
+    }
   }
   return out;
 })();
