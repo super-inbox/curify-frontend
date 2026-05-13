@@ -42,8 +42,10 @@ export default function PromptCard({ prompt, openInCarousel = false }: PromptCar
   const normalizedUrl = normalizeCdnImageUrl(prompt.imageURL);
   const trackingId = `nano_banana_prompts:${prompt.id}`;
 
-  const trackCopy = useCopyTracking(trackingId, 'nano_gallery');
-  const trackClick = useClickTracking(trackingId, 'nano_gallery');
+  // viewMode 'cards' matches what ExampleImagesGrid emits, so the gallery
+  // funnel rolls up with the template example funnel in admin analytics.
+  const trackCopy = useCopyTracking(trackingId, 'nano_gallery', 'cards');
+  const trackClick = useClickTracking(trackingId, 'nano_gallery', 'cards');
 
   const copyToClipboard = async (e: React.MouseEvent) => {
     e.preventDefault();

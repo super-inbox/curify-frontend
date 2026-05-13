@@ -25,6 +25,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import ExampleVideoPlayer from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleVideoPlayer";
 import ExampleRightColumn from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleRightColumn";
+import PromptRightColumn from "./PromptRightColumn";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { useTracking } from "@/services/useTracking";
 import { useIsMobileLikeDevice } from "@/lib/device";
@@ -155,6 +156,7 @@ export type PromptGallerySlide = {
   imageUrl: string;
   prompt: string;
   tags: string[];
+  description?: string;
 };
 
 type Slide = TemplateExampleSlide | PromptGallerySlide;
@@ -644,7 +646,9 @@ export default function CarouselClient(props: Props) {
               Visit template →
             </Link>
           ) : (
-            <div className="flex items-center gap-2" onClick={stopPropagation}>
+            // Desktop has the rich PromptRightColumn sidebar with Copy +
+            // View affordances; hide the duplicate buttons here on lg+.
+            <div className="flex items-center gap-2 lg:hidden" onClick={stopPropagation}>
               {slide.kind === "prompt-gallery" && slide.prompt && (
                 <button
                   type="button"
@@ -678,7 +682,7 @@ export default function CarouselClient(props: Props) {
         </div>
       </div>
 
-      {/* Right: reproduce sidebar — desktop only, template-example mode only */}
+      {/* Right: info sidebar — desktop only. Per-mode content. */}
       {mode === "template-example" && slide.kind === "template-example" && (
         <aside
           className="hidden lg:flex lg:w-80 xl:w-96 shrink-0 flex-col overflow-y-auto bg-white text-neutral-900"
@@ -702,6 +706,25 @@ export default function CarouselClient(props: Props) {
               batchEnabled={(props as TemplateExampleProps).templateBatch}
               examplePageUrl={detailPageUrl}
               existingExamples={(props as TemplateExampleProps).existingExamples}
+            />
+          </div>
+        </aside>
+      )}
+
+      {mode === "prompt-gallery" && slide.kind === "prompt-gallery" && (
+        <aside
+          className="hidden lg:flex lg:w-80 xl:w-96 shrink-0 flex-col overflow-y-auto bg-white text-neutral-900"
+          onClick={stopPropagation}
+        >
+          <div className="px-4 py-4">
+            <PromptRightColumn
+              key={slide.id}
+              promptId={slide.id}
+              locale={locale}
+              title={slide.title}
+              description={slide.description}
+              prompt={slide.prompt}
+              tags={slide.tags}
             />
           </div>
         </aside>

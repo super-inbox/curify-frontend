@@ -70,6 +70,7 @@ export default async function PromptGalleryCarouselPage({
     imageUrl: p.imageURL,
     prompt: p.prompt,
     tags: p.tags ?? [],
+    description: (p as { description?: string }).description ?? "",
   }));
 
   return (
