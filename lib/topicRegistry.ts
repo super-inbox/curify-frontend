@@ -235,30 +235,30 @@ export function getTopicIdsForTemplate(templateId: string): string[] {
   return registry.templateToTopics.get(templateId) ?? [];
 }
 
-// Reverse index of TIER1_TAG_CHILDREN (topic → tags). Built once at module
-// load so the tag page can ask "what Tier-1 topics does this gallery tag
-// roll up to?" without scanning the map per request.
-const TAG_TO_TIER1_TOPICS: Map<string, string[]> = (() => {
+// Reverse index of TOPIC_GALLERY_TAG (topic → tag). Built once at module
+// load so the tag page can ask "what topics pull from this gallery tag?"
+// without scanning the map per request. Multiple topics can share a tag
+// (e.g. posters + vintage-retro both pull from "vintage"), so values are
+// arrays.
+const GALLERY_TAG_TO_TOPICS: Map<string, string[]> = (() => {
   const out = new Map<string, string[]>();
-  for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
-    for (const tag of tags) {
-      const arr = out.get(tag);
-      if (arr) arr.push(tier1);
-      else out.set(tag, [tier1]);
-    }
+  for (const [topic, tag] of Object.entries(TOPIC_GALLERY_TAG)) {
+    const arr = out.get(tag);
+    if (arr) arr.push(topic);
+    else out.set(tag, [topic]);
   }
   return out;
 })();
 
 /**
- * Return the Tier-1 topic ids that a gallery tag rolls up to. Used on the
- * /nano-banana-pro-prompts/tag/[slug] page to surface templates touching
- * those topics alongside the prompt grid. Empty array if the tag is not
- * in the mapping yet — only ~60-80 of the 151 gallery tags are mapped
- * today; the rest fall through with no templates section.
+ * Return the topic ids whose topic page pulls from this gallery tag. Used
+ * on the /nano-banana-pro-prompts/tag/[slug] page to surface templates
+ * under those topics alongside the prompt grid. This is the strict reverse
+ * of TOPIC_GALLERY_TAG, so if topic page X surfaces gallery tag Y, then
+ * tag page Y surfaces topic X's templates (round-trip consistent).
  */
 export function getTopicsForTag(tag: string): string[] {
-  return TAG_TO_TIER1_TOPICS.get(tag) ?? [];
+  return GALLERY_TAG_TO_TOPICS.get(tag) ?? [];
 }
 
 export function getRelatedTopics(topicId: string): string[] {
