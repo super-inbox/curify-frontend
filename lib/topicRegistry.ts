@@ -255,13 +255,6 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
   model:             ["portrait"],
   closeup:           ["portrait"],
   silhouette:        ["portrait"],
-  // → photorealistic
-  hyperrealistic:    ["photorealistic"],
-  "ultra realistic": ["photorealistic"],
-  macro:             ["photorealistic"],
-  bokeh:             ["photorealistic"],
-  "natural-light":   ["photorealistic"],
-  "soft-light":      ["photorealistic"],
   // → digital-canvas (artistic)
   illustration:      ["digital-canvas"],
   whimsical:         ["digital-canvas"],
@@ -287,33 +280,21 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
   infographic:       ["posters"],
   informative:       ["posters"],
   grid:              ["posters"],
-  // → nature
-  forest:            ["nature"],
-  nature:            ["nature"],
-  ocean:             ["nature"],
-  garden:            ["nature"],
-  beach:             ["nature"],
-  "snowy landscape": ["nature"],
-  // → weather (atmospheric + time-of-day)
-  winter:            ["weather"],
-  snowy:             ["weather"],
-  summer:            ["weather"],
-  autumn:            ["weather"],
-  rainy:             ["weather"],
-  sunset:            ["weather"],
-  morning:           ["weather"],
-  twilight:          ["weather"],
-  "golden hour":     ["weather"],
-  night:             ["weather"],
-  // → celebration
-  christmas:         ["celebration"],
-  festive:           ["celebration"],
-  // → transportation, animal, country topics
-  car:               ["transportation"],
-  cat:               ["animal"],
+  // → country topics
   japanese:          ["japan"],
   kpop:              ["korea"],
 };
+
+// Topics excluded from the reverse map only — their topic page still
+// pulls a gallery row via TOPIC_GALLERY_TAG, but the tag page does NOT
+// surface their templates. Use this when a topic's template set is too
+// heterogeneous to make a coherent "Templates exploring [tag]" section.
+const REVERSE_MAP_EXCLUDED_TOPICS = new Set<string>([
+  // Templates under photorealistic span food posters, home before/after,
+  // 3D maps, bilingual labeling — no shared aesthetic with the
+  // photorealistic gallery tag's portrait/scene photography.
+  "photorealistic",
+]);
 
 // Reverse index of TOPIC_GALLERY_TAG (topic → tag), merged with
 // EXTRA_TAG_TO_TOPICS. Built once at module load so the tag page can ask
@@ -323,16 +304,19 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
 const GALLERY_TAG_TO_TOPICS: Map<string, string[]> = (() => {
   const out = new Map<string, string[]>();
   for (const [topic, tag] of Object.entries(TOPIC_GALLERY_TAG)) {
+    if (REVERSE_MAP_EXCLUDED_TOPICS.has(topic)) continue;
     const arr = out.get(tag);
     if (arr) arr.push(topic);
     else out.set(tag, [topic]);
   }
   for (const [tag, topics] of Object.entries(EXTRA_TAG_TO_TOPICS)) {
+    const filtered = topics.filter((t) => !REVERSE_MAP_EXCLUDED_TOPICS.has(t));
+    if (filtered.length === 0) continue;
     const arr = out.get(tag);
     if (arr) {
-      for (const t of topics) if (!arr.includes(t)) arr.push(t);
+      for (const t of filtered) if (!arr.includes(t)) arr.push(t);
     } else {
-      out.set(tag, [...topics]);
+      out.set(tag, [...filtered]);
     }
   }
   return out;
