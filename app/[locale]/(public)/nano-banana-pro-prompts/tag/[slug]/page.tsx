@@ -125,13 +125,12 @@ export default async function TagPage({ params }: Props) {
 
   let prompts: NanoPromptBase[] = [];
   try {
-    prompts = await nanoPromptsService.getNanoPromptsByTag(tag);
+    prompts = await nanoPromptsService.getNanoPromptsByTag(tag, {
+      limit: PROMPTS_VISIBLE_CAP,
+    });
   } catch (err) {
     console.error('Error fetching prompts for tag:', tag, err);
   }
-  // Cap visible prompt cards so the page has room for the template
-  // section below without scrolling 100+ images first.
-  const visiblePrompts = prompts.slice(0, PROMPTS_VISIBLE_CAP);
 
   // Reverse-map: which Tier-1 topics roll up from this gallery tag? If
   // any, surface a "Templates exploring [tag]" row below the prompt grid
@@ -165,6 +164,10 @@ export default async function TagPage({ params }: Props) {
     category: t.tag,
     count: t.count,
   }));
+  // True per-tag count from the bundled metadata, not from the (capped)
+  // API response.
+  const totalForTag =
+    nanoMetadata.metadata.tags.find((t) => t.tag === tag)?.count ?? prompts.length;
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -196,7 +199,7 @@ export default async function TagPage({ params }: Props) {
             )}
 
             <p className="mt-2 text-sm text-gray-400">
-              {prompts.length} prompt{prompts.length !== 1 ? 's' : ''}
+              {totalForTag} prompt{totalForTag !== 1 ? 's' : ''}
             </p>
           </header>
 
@@ -210,7 +213,7 @@ export default async function TagPage({ params }: Props) {
             </div>
           ) : (
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-              {visiblePrompts.map((prompt, i) => (
+              {prompts.map((prompt, i) => (
                 <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} openInCarousel />
               ))}
             </div>

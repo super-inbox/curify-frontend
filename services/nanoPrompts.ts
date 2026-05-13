@@ -43,9 +43,13 @@ export const nanoPromptsService = {
     return response.data;
   },
 
-  async getNanoPromptsByTag(tag: string): Promise<NanoPromptBase[]> {
+  async getNanoPromptsByTag(
+    tag: string,
+    options?: { limit?: number }
+  ): Promise<NanoPromptBase[]> {
+    const qs = options?.limit ? `?limit=${options.limit}` : "";
     const response = await apiClient.request<NanoPromptListResponse>(
-      `/nano_prompts/tag/${encodeURIComponent(tag)}`,
+      `/nano_prompts/tag/${encodeURIComponent(tag)}${qs}`,
       {
         next: {
           revalidate: REVALIDATE_LIST_SEC,
