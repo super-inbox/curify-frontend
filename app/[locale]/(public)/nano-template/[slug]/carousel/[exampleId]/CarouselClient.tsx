@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Share2, Check } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import ExampleVideoPlayer from "../../example/[exampleId]/ExampleVideoPlayer";
@@ -175,6 +175,7 @@ export default function CarouselClient({
   // user is panning a zoomed image, so we suppress horizontal slide-swipe
   // and let the zoom library own the gesture.
   const [zoomScale, setZoomScale] = useState(1);
+  const [shareStatus, setShareStatus] = useState<"idle" | "shared" | "copied">("idle");
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const dragStartX = useRef(0);
@@ -341,6 +342,41 @@ export default function CarouselClient({
 
   const examplePageUrl = `${siteUrl}/${locale}/nano-template/${slug}/example/${encodeURIComponent(slide.id)}`;
 
+  // Share the active example page. On mobile this hits the OS share sheet
+  // (which can route to WhatsApp, Messages, etc. with a link preview that
+  // pulls in the example image via og:image). On desktop the share API is
+  // typically absent, so fall back to copying the URL to the clipboard.
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    track({
+      contentId: `${slide.templateId}:${slide.id}`,
+      contentType: "nano_inspiration_example_grid",
+      actionType: "share",
+      viewMode: "cards",
+    });
+    const shareData = {
+      title: slide.title || "Curify AI",
+      url: examplePageUrl,
+    };
+    if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
+      try {
+        await navigator.share(shareData);
+        setShareStatus("shared");
+        setTimeout(() => setShareStatus("idle"), 2000);
+        return;
+      } catch {
+        // user canceled or share rejected — fall through to clipboard fallback
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(examplePageUrl);
+      setShareStatus("copied");
+      setTimeout(() => setShareStatus("idle"), 2000);
+    } catch {
+      // ignore — nothing actionable
+    }
+  };
+
   return (
     // Click anywhere outside an interactive element or media → go to prompt page.
     // Internal media + buttons stop propagation so they keep their own behavior.
@@ -351,18 +387,33 @@ export default function CarouselClient({
         <span className="text-sm text-white/60">
           {index + 1} / {slides.length}
         </span>
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            trackViewPrompt();
-            close();
-          }}
-          className="rounded-full p-2 text-white/80 hover:bg-white/10 hover:text-white"
-          aria-label="Close"
-        >
-          <X className="h-5 w-5" />
-        </button>
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={handleShare}
+            className="rounded-full p-2 text-white/80 hover:bg-white/10 hover:text-white"
+            aria-label={shareStatus === "copied" ? "Link copied" : "Share"}
+            title={shareStatus === "copied" ? "Link copied" : "Share"}
+          >
+            {shareStatus === "copied" ? (
+              <Check className="h-5 w-5 text-green-400" />
+            ) : (
+              <Share2 className="h-5 w-5" />
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              trackViewPrompt();
+              close();
+            }}
+            className="rounded-full p-2 text-white/80 hover:bg-white/10 hover:text-white"
+            aria-label="Close"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
       </div>
 
       {/* Slide track */}
