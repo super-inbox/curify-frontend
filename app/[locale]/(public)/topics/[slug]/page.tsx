@@ -173,7 +173,9 @@ export default async function Page({ params }: Props) {
   let galleryPrompts: NanoPromptBase[] = [];
   if (galleryTag) {
     try {
-      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(galleryTag);
+      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(galleryTag, {
+        limit: 10,
+      });
     } catch {
       // gallery is non-critical; fail silently
     }
@@ -288,7 +290,7 @@ export default async function Page({ params }: Props) {
             Gallery
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {galleryPrompts.slice(0, 10).map((prompt, i) => (
+            {galleryPrompts.map((prompt, i) => (
               <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
             ))}
           </div>

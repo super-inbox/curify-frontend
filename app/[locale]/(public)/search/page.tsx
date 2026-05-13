@@ -374,7 +374,9 @@ export default async function SearchPage({ params, searchParams }: Props) {
   let galleryPrompts: NanoPromptBase[] = [];
   if (NANO_PROMPT_TAG_SET.has(query)) {
     try {
-      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(query);
+      galleryPrompts = await nanoPromptsService.getNanoPromptsByTag(query, {
+        limit: 12,
+      });
     } catch (err) {
       console.error("Failed to fetch gallery prompts for tag", query, err);
     }
