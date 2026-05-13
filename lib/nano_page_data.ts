@@ -1,5 +1,3 @@
-import nanoTemplates from "@/public/data/nano_templates.json";
-import nanoImages from "@/public/data/nano_inspiration.json";
 import { getTranslations } from "next-intl/server";
 
 import {
@@ -11,6 +9,7 @@ import {
   getTemplateView,
   getTemplateViewWithTranslations,
   nanoTemplateI18nKey,
+  nanoRegistry,
 } from "@/lib/nano_utils";
 
 import {
@@ -48,9 +47,11 @@ export async function buildNanoPageContext(localeStr: string, slug: string) {
   const contentLocale: PageLocale = resolveContentLocale(localeStr);
   const templateId = slugToTemplateId(slug);
 
-  const templates = nanoTemplates as unknown as RawTemplate[];
-  const images = nanoImages as unknown as RawNanoImageRecord[];
-  const reg = buildNanoRegistry(templates, images);
+  // Reuse the module-level nanoRegistry built once when nano_utils.ts is
+  // imported, instead of rebuilding from the 1.5MB JSON on every page
+  // render. nano_templates.json and nano_inspiration.json are bundled
+  // and only change on redeploy, so the singleton is always correct.
+  const reg = nanoRegistry;
 
   const nanoMessagesRaw = await loadNanoMessages(localeStr);
   const localizedRawEntry = nanoMessagesRaw?.[templateId];
