@@ -158,6 +158,10 @@ export default async function Page({ params }: Props) {
     perTemplateMaxImages: 2,
     strictLocale: false,
     translate: translateNano,
+    // Matches NanoInspirationRow visible default (5×5 = 25) + safety
+    // buffer. Was unlimited, shipping ~150-200 cards into the SSR HTML
+    // when the row only renders 25.
+    limit: 30,
   });
 
   if (!nanoCards.length && !isDeclaredTopic) {
