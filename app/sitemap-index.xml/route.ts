@@ -12,7 +12,9 @@ const CHILD_SITEMAPS: Array<{ path: string; lastmod: string }> = [
   // pages to localized locales only (fixes "Duplicate without
   // user-selected canonical" reports for non-en/zh URLs).
   { path: "/sitemap.xml",          lastmod: "2026-05-08T00:00:00.000Z" },
-  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-04T00:00:00.000Z" },
+  // Bumped 2026-05-14 — multiple blog posts got per-post lastmod bumps
+  // in public/data/blogs.json (SEO retitle pass + content tweaks).
+  { path: "/sitemap-blogs.xml",    lastmod: "2026-05-14T00:00:00.000Z" },
   // Bumped 2026-05-14 — 1,275 additional non-MBTI example pages gained
   // per-locale SEO copy in messages/<locale>/example.json (commit
   // 2f43a2e). The child sitemap's per-URL lastmods now flag ~1,540
