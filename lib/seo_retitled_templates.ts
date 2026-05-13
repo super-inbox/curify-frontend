@@ -9,11 +9,14 @@
 
 export const SEO_RETITLED_LASTMOD = "2026-05-05T00:00:00.000Z";
 
-// Bump lastmod for the 260 allow_i18n example pages whose per-locale
-// SEO copy (title / description / metaDescription) shipped on 2026-05-07.
-// These pages also gained 8 new locale URL variants in the sitemap, so
-// signaling Google to re-fetch is worthwhile.
-export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-07T00:00:00.000Z";
+// Bump lastmod for example pages whose per-locale SEO copy
+// (title / description / metaDescription) lives in
+// messages/<locale>/example.json. Originally shipped for the 260
+// allow_i18n examples on 2026-05-07; expanded on 2026-05-14 to also
+// cover the 1,275 non-MBTI examples backfilled in commit 2f43a2e
+// (gated by EXAMPLE_I18N_IDS, computed at module load from
+// messages/en/example.json keys — see sitemap-examples.xml/route.ts).
+export const I18N_DESCRIPTIONS_LASTMOD = "2026-05-14T00:00:00.000Z";
 
 export const SEO_RETITLED_TEMPLATE_IDS: ReadonlySet<string> = new Set([
   "template-gardening-how-to-infographic",

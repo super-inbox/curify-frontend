@@ -2,12 +2,22 @@ import { NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 import nanoTemplates from "@/public/data/nano_templates.json";
 import nanoInspiration from "@/public/data/nano_inspiration.json";
+import exampleI18nEn from "@/messages/en/example.json";
 import { toSlug } from "@/lib/nano_utils";
 import {
   SEO_RETITLED_LASTMOD,
   SEO_RETITLED_TEMPLATE_IDS,
   I18N_DESCRIPTIONS_LASTMOD,
 } from "@/lib/seo_retitled_templates";
+
+// Example IDs that have per-locale SEO copy in messages/<locale>/example.json.
+// Computed once at module load. Used to flag URLs whose lastmod should bump
+// to I18N_DESCRIPTIONS_LASTMOD so Google re-fetches and picks up the new
+// title / description / metaDescription. Broader than allow_i18n=true since
+// we backfilled non-allow_i18n examples on 2026-05-14.
+const EXAMPLE_I18N_IDS: ReadonlySet<string> = new Set(
+  Object.keys(exampleI18nEn as Record<string, unknown>)
+);
 
 export const runtime = "nodejs";
 
@@ -124,13 +134,15 @@ export async function GET() {
     )}/example/${encodeURIComponent(exampleId)}`;
 
     // Lastmod priority:
-    //  1. allow_i18n examples — bumped to the i18n descriptions ship date
-    //     so Google re-crawls and picks up the new per-locale copy + the
-    //     8 added locale URL variants.
+    //  1. Examples with i18n SEO copy in messages/<loc>/example.json —
+    //     bumped to the i18n descriptions ship date so Google re-fetches
+    //     and picks up the per-locale title / description / metaDescription.
+    //     Covers the original 260 allow_i18n=true entries AND the 1,275
+    //     non-MBTI entries backfilled on 2026-05-14.
     //  2. Examples whose parent template was retitled in the SEO pass —
     //     bumped to that pass's date so the new h1 is recrawled.
     //  3. Fallback to the example's own updated_at / lastmod, or STABLE.
-    const lastmod = ex.allow_i18n
+    const lastmod = EXAMPLE_I18N_IDS.has(exampleId)
       ? I18N_DESCRIPTIONS_LASTMOD
       : SEO_RETITLED_TEMPLATE_IDS.has(templateId)
       ? SEO_RETITLED_LASTMOD

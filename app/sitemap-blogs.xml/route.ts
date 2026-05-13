@@ -11,18 +11,33 @@ type BlogRecord = {
   slug: string;
   title?: string;
   date?: string;
+  // Set this in blogs.json when a post's title/meta/content is
+  // updated, so the sitemap reports a real last-modified to Google
+  // and triggers a re-crawl for just the affected URLs. Falls back
+  // to date (publish) if absent. Either ISO-8601 (preferred) or the
+  // human "Month D, YYYY" form used by date — both are normalized.
+  lastmod?: string;
   readTime?: string;
   tag?: string;
   image?: string;
 };
 
-// Blog routes
-function getBlogRoutes(): string[] {
+function normalizeDate(s: string | undefined): string {
+  if (!s) return new Date().toISOString();
+  const d = new Date(s);
+  return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+}
+
+// Blog routes — emit (path, lastmod) per record.
+function getBlogEntries(): { route: string; lastmod: string }[] {
   const records = blogs as BlogRecord[];
 
   return records
     .filter((b) => b?.slug)
-    .map((b) => `/blog/${encodeURIComponent(b.slug)}`);
+    .map((b) => ({
+      route: `/blog/${encodeURIComponent(b.slug)}`,
+      lastmod: normalizeDate(b.lastmod ?? b.date),
+    }));
 }
 
 // hreflang block
@@ -39,14 +54,14 @@ function generateHreflangLinks(route: string) {
 }
 
 // URL entry
-function generateUrlEntry(locale: string, route: string) {
+function generateUrlEntry(locale: string, route: string, lastmod: string) {
   const pathPrefix = locale === "en" ? "" : `/${locale}`;
   const loc = `${BASE_URL}${pathPrefix}${route}`;
 
   return `
     <url>
       <loc>${loc}</loc>
-      <lastmod>${new Date().toISOString()}</lastmod>
+      <lastmod>${lastmod}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
       ${generateHreflangLinks(route)}
@@ -55,13 +70,13 @@ function generateUrlEntry(locale: string, route: string) {
 }
 
 export async function GET() {
-  const blogRoutes = getBlogRoutes();
+  const entries = getBlogEntries();
 
   let urls = "";
 
-  blogRoutes.forEach((route) => {
+  entries.forEach(({ route, lastmod }) => {
     LOCALES.forEach((locale) => {
-      urls += generateUrlEntry(locale, route);
+      urls += generateUrlEntry(locale, route, lastmod);
     });
   });
 

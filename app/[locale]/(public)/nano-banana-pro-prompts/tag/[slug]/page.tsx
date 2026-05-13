@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { getCanonicalUrl, getLanguagesMap } from '@/lib/canonical';
 import { SITE_URL } from '@/lib/constants';
@@ -15,6 +16,13 @@ import NanoTemplateDetailClient from '@/app/[locale]/(public)/nano-template/[slu
 
 const PROMPTS_VISIBLE_CAP = 30;
 const TEMPLATE_CARDS_CAP = 30;
+
+// Canonical tag set from the bundled metadata. Stale/removed tags
+// (e.g. "east asian" pre-restore) used to render as soft-404s and
+// burn impressions in Search Console — now we 404 on unknown tags.
+const CANONICAL_TAGS = new Set<string>(
+  nanoMetadata.metadata.tags.map((t) => t.tag)
+);
 
 // Cache tag listing pages for 4 hours with ISR — listings rarely
 // change and bot crawls hit these often.
@@ -41,6 +49,12 @@ async function getTagEntry(tag: string): Promise<TagEntry> {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const tag = decodeURIComponent(slug);
+  if (!CANONICAL_TAGS.has(tag)) {
+    return {
+      title: 'Tag Not Found',
+      robots: { index: false, follow: false },
+    };
+  }
   const entry = await getTagEntry(tag);
 
   const title = entry.title ?? tag;
@@ -117,6 +131,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TagPage({ params }: Props) {
   const { locale, slug } = await params;
   const tag = decodeURIComponent(slug);
+  if (!CANONICAL_TAGS.has(tag)) notFound();
   const entry = await getTagEntry(tag);
 
   const title = entry.title ?? tag;
