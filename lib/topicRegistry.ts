@@ -235,6 +235,32 @@ export function getTopicIdsForTemplate(templateId: string): string[] {
   return registry.templateToTopics.get(templateId) ?? [];
 }
 
+// Reverse index of TIER1_TAG_CHILDREN (topic → tags). Built once at module
+// load so the tag page can ask "what Tier-1 topics does this gallery tag
+// roll up to?" without scanning the map per request.
+const TAG_TO_TIER1_TOPICS: Map<string, string[]> = (() => {
+  const out = new Map<string, string[]>();
+  for (const [tier1, tags] of Object.entries(TIER1_TAG_CHILDREN)) {
+    for (const tag of tags) {
+      const arr = out.get(tag);
+      if (arr) arr.push(tier1);
+      else out.set(tag, [tier1]);
+    }
+  }
+  return out;
+})();
+
+/**
+ * Return the Tier-1 topic ids that a gallery tag rolls up to. Used on the
+ * /nano-banana-pro-prompts/tag/[slug] page to surface templates touching
+ * those topics alongside the prompt grid. Empty array if the tag is not
+ * in the mapping yet — only ~60-80 of the 151 gallery tags are mapped
+ * today; the rest fall through with no templates section.
+ */
+export function getTopicsForTag(tag: string): string[] {
+  return TAG_TO_TIER1_TOPICS.get(tag) ?? [];
+}
+
 export function getRelatedTopics(topicId: string): string[] {
   return registry.relatedTopics.get(topicId) ?? [];
 }
