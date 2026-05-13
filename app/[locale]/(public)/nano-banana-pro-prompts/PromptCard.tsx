@@ -9,6 +9,13 @@ import { useCopyTracking, useClickTracking } from "@/services/useTracking";
 
 interface PromptCardProps {
   prompt: NanoPromptBase;
+  /**
+   * When true, clicking the card opens the prompt in the modal carousel
+   * (/carousel/prompt-gallery/<id>) instead of routing to the detail
+   * page. The gallery grid sets this; other usages (related rail on the
+   * detail page, search results) keep the detail-page link.
+   */
+  openInCarousel?: boolean;
 }
 
 const PLACEHOLDER_IMAGE =
@@ -28,7 +35,7 @@ const normalizeCdnImageUrl = (imageUrl: string | null | undefined): string => {
   return imageUrl;
 };
 
-export default function PromptCard({ prompt }: PromptCardProps) {
+export default function PromptCard({ prompt, openInCarousel = false }: PromptCardProps) {
   const [copied, setCopied] = useState(false);
   const [hasImgError, setHasImgError] = useState(false);
 
@@ -52,9 +59,13 @@ export default function PromptCard({ prompt }: PromptCardProps) {
     }
   };
 
+  const targetHref = openInCarousel
+    ? `/carousel/prompt-gallery/${prompt.id}`
+    : `/nano-banana-pro-prompts/${prompt.id}`;
+
   return (
     <Link
-      href={`/nano-banana-pro-prompts/${prompt.id}`}
+      href={targetHref}
       onClick={trackClick}
       className="group block overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
       aria-label={`View details for ${prompt.title}`}

@@ -78,7 +78,7 @@ function ExampleImageCard({
     return `/${locale}/nano-template/${toSlug(item.templateId)}${qs}#reproduce`;
   })();
 
-  const carouselHref = `/${locale}/nano-template/${toSlug(item.templateId)}/carousel/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}`;
+  const carouselHref = `/${locale}/carousel/template-example/${toSlug(item.templateId)}/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}`;
 
   const shareUrl = `${SITE_URL}/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`;
 
