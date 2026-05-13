@@ -48,11 +48,18 @@ class ApiClient {
 
     try {
 
-      const response = await fetch(url, {
+      // credentials: "include" forces Next.js to bypass the Data Cache
+      // (since cookies imply per-user content). Only send it when we
+      // actually have a token to attach — server-side public reads
+      // (no localStorage token) get to participate in the cache.
+      const fetchOptions: RequestInit = {
         ...options,
-        credentials: "include",
         headers,
-      });
+      };
+      if (token) {
+        fetchOptions.credentials = "include";
+      }
+      const response = await fetch(url, fetchOptions);
 
       const durationMs = Date.now() - start;
 

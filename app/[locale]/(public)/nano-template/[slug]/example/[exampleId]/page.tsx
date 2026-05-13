@@ -30,10 +30,12 @@ import {
   resolveLocalizedExampleCopy,
 } from "@/lib/nano_page_data";
 
-// Cache example detail pages for 4 hours with ISR — example data
-// rarely changes after publication and the page builds a heavy data
-// graph (template view, prevNext, similar items, etc.) per render.
-export const revalidate = 14400;
+// Example data is entirely bundled (nano_inspiration.json) and only
+// changes on redeploy. generateStaticParams (below) pre-builds every
+// example at deploy, and revalidate=false keeps the Full Route Cache
+// pinned until the next deploy. Avoids pointless 4h rebuilds with
+// byte-identical output.
+export const revalidate = false;
 
 type PageParams = {
   locale: string;

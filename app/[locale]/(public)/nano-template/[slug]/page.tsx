@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { toSlug } from "@/lib/nano_utils";
 
-// Cache the template detail page for 4 hours with ISR. Bot crawls hit
-// these pages hard and the per-template payload (template metadata +
-// example grid + other templates) is heavy; ISR keeps Fast Origin
-// Transfer (function → CDN) and Azure backend load near zero on hits.
-export const revalidate = 14400;
+// Template metadata is fully bundled (nano_templates.json + nano_inspiration.json)
+// and only changes on redeploy, so cache the rendered page forever — the next
+// deploy invalidates the Full Route Cache automatically. Avoids pointless ISR
+// rebuilds every 4h with byte-identical output.
+export const revalidate = false;
 
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
@@ -87,6 +88,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     fallbackTitle: `${fallbackTitle} | Nano Template`,
     fallbackDescription,
   });
+}
+
+export async function generateStaticParams() {
+  // Pre-render every known template at deploy time (en + zh) so bot
+  // crawlers land on pre-baked HTML with no function exec.
+  const mod = (await import("@/public/data/nano_templates.json")) as unknown as {
+    default: Array<{ id: string }>;
+  };
+  const locales = ["en", "zh"];
+  return locales.flatMap((locale) =>
+    mod.default.map((t) => ({
+      locale,
+      slug: toSlug(t.id),
+    }))
+  );
 }
 
 export default async function NanoTemplatePage({ params }: Props) {
