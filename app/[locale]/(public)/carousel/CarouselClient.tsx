@@ -25,8 +25,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import ExampleVideoPlayer from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleVideoPlayer";
 import ExampleRightColumn from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleRightColumn";
+import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { useTracking } from "@/services/useTracking";
-import { cdn } from "@/lib/cdn";
 import { useIsMobileLikeDevice } from "@/lib/device";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
@@ -64,7 +64,7 @@ function ProgressiveSlideImage({
       return;
     }
     const img = new window.Image();
-    img.src = cdn(fullSrc);
+    img.src = toCdnUrl(fullSrc);
     img.onload = () => {
       setSrc(fullSrc);
       onFullLoaded?.();
@@ -73,7 +73,7 @@ function ProgressiveSlideImage({
 
   return (
     <img
-      src={cdn(src)}
+      src={toCdnUrl(src)}
       alt={alt}
       draggable={false}
       className="max-h-full max-w-full select-none"
