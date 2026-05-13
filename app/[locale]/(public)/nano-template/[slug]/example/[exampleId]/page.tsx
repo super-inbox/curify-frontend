@@ -280,7 +280,7 @@ export default async function NanoExampleDetailPage({
             />
           ) : (
             <Link
-              href={`/${rawLocale}/nano-template/${slug}/carousel/${rawExampleId}?media=image`}
+              href={`/${rawLocale}/carousel/template-example/${slug}/${rawExampleId}?media=image`}
               className="block h-full w-full cursor-zoom-in"
               aria-label="Open image in carousel"
             >

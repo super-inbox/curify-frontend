@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import CarouselClient from "./CarouselClient";
+import CarouselClient from "../../../CarouselClient";
 import {
   buildNanoPageContext,
   resolveLocalizedExampleCopy,
@@ -20,28 +20,23 @@ type SearchParams = {
   media?: string;
 };
 
-// The carousel is a fullscreen viewer for the same example shown at
-// /nano-template/<slug>/example/<exampleId>. Canonical the carousel
-// page to the example detail page so Google consolidates the two
-// presentations of the same content. All locale variants (since they
-// share the same images) canonical to the EN example page and are
-// noindex'd to avoid 10x duplicate inflation per example.
+// noindex + canonical to the example detail page — the carousel is a UX
+// surface for the same content, not a separate SEO target.
 export async function generateMetadata({
   params,
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { slug, exampleId: rawExampleId } = await params;
-  const canonicalPath = `/nano-template/${slug}/example/${rawExampleId}`;
   return {
     alternates: {
-      canonical: canonicalPath,
+      canonical: `/nano-template/${slug}/example/${rawExampleId}`,
     },
     robots: { index: false, follow: true },
   };
 }
 
-export default async function NanoCarouselPage({
+export default async function TemplateExampleCarouselPage({
   params,
   searchParams,
 }: {
@@ -77,7 +72,6 @@ export default async function NanoCarouselPage({
       ? fallbackIdx
       : 0;
 
-  // Per-slide data (title, category, params, topics)
   const slides = slidesSource.map((img) => {
     const example = getNanoExampleById(
       ctx.templateId,
@@ -93,6 +87,7 @@ export default async function NanoCarouselPage({
     );
 
     return {
+      kind: "template-example" as const,
       id: img.id,
       title,
       category,
@@ -105,7 +100,6 @@ export default async function NanoCarouselPage({
     };
   });
 
-  // Template-level data (constant across slides in this carousel)
   const templateView = getTemplateView(ctx.reg, ctx.templateId, ctx.contentLocale);
   const templateTopics = templateView?.topics ?? [];
   const templateParameters = templateView?.parameters ?? [];
@@ -120,9 +114,11 @@ export default async function NanoCarouselPage({
 
   return (
     <CarouselClient
+      mode="template-example"
       slides={slides}
       initialIndex={initialIndex}
       locale={locale}
+      siteUrl={SITE_URL}
       slug={slug}
       media={isVideo ? "video" : "image"}
       templateTopics={templateTopics}
@@ -131,7 +127,6 @@ export default async function NanoCarouselPage({
       templateBatch={templateBatch}
       basePrompt={basePrompt}
       existingExamples={existingExamples}
-      siteUrl={SITE_URL}
     />
   );
 }
