@@ -242,7 +242,7 @@ ${urls}
   return new NextResponse(xml, {
     headers: {
       "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600",
+      "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600",
     },
   });
 }
