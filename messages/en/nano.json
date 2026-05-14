@@ -3349,5 +3349,125 @@
         ]
       }
     }
+  },
+  "template-chinese-radical-learning": {
+    "category": "Chinese Radical Learning",
+    "description": "Kid-friendly Chinese radical poster showing the radical's meaning plus 8 example characters with Pinyin and English — perfect for beginner Mandarin learners and ESL teachers.",
+    "title": "Chinese Radical Learning Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a watercolor-paper Chinese radical learning poster. The layout features a 'Common Chinese radicals' label at the top-left, a large orange radical character with a matching cartoon icon, an explanation of the radical's meaning, and a right-side column of 8 example characters that contain the radical, each with Pinyin and an English translation.",
+        "who": "Suitable for Mandarin teachers, ESL/CSL tutors, homeschooling parents, Chinese-language learners, and educational content creators on TikTok or Xiaohongshu.",
+        "how": [
+          "Pick a radical (纟 silk, 口 mouth, 雨 rain, 艹 plant, 亻 person, 火 fire, 女 woman).",
+          "Generate a 4K watercolor-style Chinese radical learning poster."
+        ],
+        "prompts": [
+          "Generate a kid-friendly Chinese radical poster for 火 (fire) with 8 example characters.",
+          "Create a watercolor 女 (woman) radical learning chart with Pinyin and English.",
+          "Generate a Chinese radical poster for 纟 (silk) with cartoon icon and examples."
+        ]
+      }
+    }
+  },
+  "template-houseplant-care-guide-infographic": {
+    "category": "Houseplant Care Guides",
+    "description": "Clean modern care-guide infographic for a houseplant — watering, soil, and light at a glance, plus health tips and a recommended toolkit. Great for plant-parent content.",
+    "title": "Houseplant Care Guide Infographic",
+    "content": {
+      "sections": {
+        "what": "This template generates a minimalist flat-illustration care guide for a specific houseplant. The layout features a 'YOUR [PLANT] CARE GUIDE' title, a central cartoon illustration of the plant in a pot, and three labeled sections: Core Survival Guide (watering, soil, light), Health & Wellness Tips, and Recommended Toolkit — each with simple icons and short text.",
+        "who": "Suitable for plant shops, indoor-gardening creators, plant-parent influencers, home-decor bloggers, and brands selling potting supplies or grow kits.",
+        "how": [
+          "Pick a houseplant (Monstera, Snake Plant, Pothos, Peace Lily, Fiddle Leaf Fig, ZZ Plant).",
+          "Generate a 4K minimalist houseplant care-guide infographic."
+        ],
+        "prompts": [
+          "Generate a Monstera care guide infographic with watering, soil, and light tips.",
+          "Create a Pothos houseplant care poster in minimalist flat-illustration style.",
+          "Generate a Snake Plant care guide with toolkit recommendations."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-educational": {
+    "category": "Historical Figure Educational Posters",
+    "description": "Vintage textbook-style poster of great scientists, composers, artists, writers, or philosophers — illustrated portraits, names, and key contributions in one cohesive sepia layout.",
+    "title": "Historical Figure Educational Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a vintage educational poster about a chosen field of historical figures. The layout features a grid of illustrated portraits, each with the figure's name and a short summary of their major contributions, surrounded by themed background elements (inventions, artworks, books) and decorative scroll labels — all in a sepia, aged-paper textbook aesthetic.",
+        "who": "Suitable for history teachers, museum educators, homeschooling parents, librarians, and creators producing study aids, classroom decor, or educational social content.",
+        "how": [
+          "Pick a theme or field (Scientists, Composers, Artists, Writers, Philosophers).",
+          "Generate a 4K vintage textbook-style educational poster of historical figures."
+        ],
+        "prompts": [
+          "Generate a vintage poster of great Scientists with illustrated portraits and contributions.",
+          "Create a sepia-tone educational poster of famous Composers and their works.",
+          "Generate a textbook-style Philosophers poster with portraits and key ideas."
+        ]
+      }
+    }
+  },
+  "template-cultural-festival-poster": {
+    "category": "Cultural Festival Posters",
+    "description": "Vintage folk-art poster for a traditional festival — illustrated key activities, a Key Highlights box, decorative borders, and cultural symbols in warm sepia tones.",
+    "title": "Cultural Festival Educational Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a vintage-style educational poster for a traditional festival. The layout features a bold festival title, two illustrated panels showing key activities, a 'Key Highlights' box with bullet-point facts, and decorative borders with themed cultural symbols — all rendered in warm sepia tones and detailed folk-art linework.",
+        "who": "Suitable for culture and travel creators, language teachers, history educators, museum exhibitions, festival event organizers, and travel-blog and tourism brands.",
+        "how": [
+          "Pick a festival (Dragon Boat Festival, Hanami Festival, Day of the Dead, Diwali, Songkran Festival).",
+          "Generate a 4K vintage folk-art cultural festival poster."
+        ],
+        "prompts": [
+          "Generate a Day of the Dead vintage educational poster with illustrated activities.",
+          "Create a Diwali festival poster in folk-art sepia style with key highlights.",
+          "Generate a Dragon Boat Festival poster with traditional decorative borders."
+        ]
+      }
+    }
+  },
+  "template-nutrition-food-guide-poster": {
+    "category": "Nutrition Food Guides",
+    "description": "Clean realistic food infographic poster on a nutrition theme — labeled photos of nutrient-rich foods plus color-coded categories. Ideal for health, wellness, and food-blog content.",
+    "title": "Nutrition Food Guide Poster",
+    "content": {
+      "sections": {
+        "what": "This template generates a minimalist nutrition food guide poster. The layout features a large theme title with a short health-benefits description, realistic food photography of various nutrient-rich foods labeled with their names on a light neutral background, and color-coded categories at the bottom (fruits, vegetables, proteins) for easy scanning.",
+        "who": "Suitable for nutritionists, dietitians, fitness and wellness creators, health-food brands, meal-prep coaches, and educators building healthy-eating curriculum.",
+        "how": [
+          "Pick a nutrition theme (Blood Building Foods, Foods for Eye Health, High Protein Foods, Antioxidant Rich Foods, Vitamin C Powerhouses).",
+          "Generate a 4K realistic nutrition food guide poster."
+        ],
+        "prompts": [
+          "Generate an Antioxidant Rich Foods infographic poster with labeled food photography.",
+          "Create a High Protein Foods nutrition guide poster with category color-coding.",
+          "Generate a Foods for Eye Health educational poster in minimalist style."
+        ]
+      }
+    }
+  },
+  "template-sports-technique-guide": {
+    "category": "Sports Technique Guides",
+    "description": "Retro vintage-style sports technique poster — illustrated panels with labeled body parts and red motion arrows. Perfect for sports coaches, PE teachers, and training-content creators.",
+    "title": "Vintage Sports Technique Guide",
+    "content": {
+      "sections": {
+        "what": "This template generates a retro educational poster on a sports technique. The layout features a bold '[SPORT] Knowledge' title and a grid of illustrated technique panels, each with labeled body parts and red motion arrows showing form — all on an aged paper texture in clean grid composition.",
+        "who": "Suitable for sports coaches, PE teachers, fitness creators, dojo and martial-arts schools, training-program designers, and athletic-brand content marketers.",
+        "how": [
+          "Pick a sport (Basketball, Karate, Tennis, Judo, Swimming, Soccer).",
+          "Generate a 4K vintage retro sports technique guide poster."
+        ],
+        "prompts": [
+          "Generate a Karate technique guide poster with labeled body parts and motion arrows.",
+          "Create a vintage Tennis skill poster in aged-paper textbook style.",
+          "Generate a Swimming technique guide poster with red motion arrows and labels."
+        ]
+      }
+    }
   }
 }

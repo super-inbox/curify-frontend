@@ -3350,5 +3350,125 @@
         ]
       }
     }
+  },
+  "template-chinese-radical-learning": {
+    "category": "Çin Radikal Öğrenimi",
+    "description": "Çocuk dostu Çin radikal posteri, radikalin anlamını ve Pinyin ile İngilizce ile birlikte 8 örnek karakteri gösterir - başlangıç seviyesindeki Mandarin öğrenicileri ve ESL öğretmenleri için mükemmel.",
+    "title": "Çin Radikal Öğrenimi Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, suluboya kağıdı tarzında bir Çin radikal öğrenim posteri oluşturur. Düzen, sol üstte 'Yaygın Çin Radikalleri' etiketi, büyük bir turuncu radikal karakteri ve eşleşen bir karikatür simgesi, radikalin anlamının açıklaması ve sağ tarafta radikali içeren 8 örnek karakterin yer aldığı bir sütun içerir; her biri Pinyin ve İngilizce çeviri ile birlikte.",
+        "who": "Mandarin öğretmenleri, ESL/CSL eğitmenleri, evde eğitim veren ebeveynler, Çince öğrenenler ve TikTok veya Xiaohongshu'da eğitim içerikleri üretenler için uygundur.",
+        "how": [
+          "Bir radikal seçin (纟 ipek, 口 ağız, 雨 yağmur, 艹 bitki, 亻 insan, 火 ateş, 女 kadın).",
+          "4K suluboya tarzında bir Çin radikal öğrenim posteri oluşturun."
+        ],
+        "prompts": [
+          "火 (ateş) için 8 örnek karakter ile çocuk dostu bir Çin radikal posteri oluşturun.",
+          "Pinyin ve İngilizce ile suluboya 女 (kadın) radikal öğrenim grafiği oluşturun.",
+          "Karikatür simgesi ve örneklerle 纟 (ipek) için bir Çin radikal posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-houseplant-care-guide-infographic": {
+    "category": "Saksı Bitkisi Bakım Kılavuzları",
+    "description": "Bir saksı bitkisi için temiz modern bir bakım kılavuzu infografiği - sulama, toprak ve ışık bir bakışta, artı sağlık ipuçları ve önerilen bir araç seti. Bitki ebeveynleri için harika.",
+    "title": "Saksı Bitkisi Bakım Kılavuzu İnfografiği",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, belirli bir saksı bitkisi için minimalist düz illüstrasyon tarzında bir bakım kılavuzu oluşturur. Düzen, 'SENİN [BITKİ] BAKIM KILAVUZUN' başlığını, bir saksıda bitkinin merkezi karikatür illüstrasyonunu ve üç etiketli bölümü içerir: Temel Hayatta Kalma Kılavuzu (sulama, toprak, ışık), Sağlık ve Refah İpuçları ve Önerilen Araç Seti - her biri basit simgeler ve kısa metinlerle.",
+        "who": "Bitki dükkanları, iç mekan bahçeciliği yaratıcıları, bitki ebeveyni etkileyicileri, ev dekoru blog yazarları ve saksı malzemeleri veya büyüme kitleri satan markalar için uygundur.",
+        "how": [
+          "Bir saksı bitkisi seçin (Monstera, Yılan Bitkisi, Pothos, Barış Zambağı, Çalgı Yaprağı İğdesi, ZZ Bitkisi).",
+          "4K minimalist saksı bitkisi bakım kılavuzu infografiği oluşturun."
+        ],
+        "prompts": [
+          "Sulama, toprak ve ışık ipuçları ile bir Monstera bakım kılavuzu infografiği oluşturun.",
+          "Minimalist düz illüstrasyon tarzında bir Pothos saksı bitkisi bakım posteri oluşturun.",
+          "Araç seti önerileri ile bir Yılan Bitkisi bakım kılavuzu oluşturun."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-educational": {
+    "category": "Tarihsel Figür Eğitim Posterleri",
+    "description": "Büyük bilim insanları, besteciler, sanatçılar, yazarlar veya filozofların vintage ders kitabı tarzında posteri - illüstrasyon portreleri, isimler ve ana katkılar tek bir uyumlu sepya düzeninde.",
+    "title": "Tarihsel Figür Eğitim Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, seçilen tarihsel figürler alanında vintage bir eğitim posteri oluşturur. Düzen, her bir figürün ismi ve ana katkılarının kısa bir özeti ile birlikte illüstrasyon portrelerinin bir ızgarasını içerir; bu portreler, temalı arka plan unsurları (icatlar, sanat eserleri, kitaplar) ve dekoratif kaydırma etiketleri ile çevrilidir - hepsi sepya, eski kağıt ders kitabı estetiğinde.",
+        "who": "Tarih öğretmenleri, müze eğitmenleri, evde eğitim veren ebeveynler, kütüphaneciler ve çalışma yardımları, sınıf dekoru veya eğitim sosyal içerik üreten yaratıcılar için uygundur.",
+        "how": [
+          "Bir tema veya alan seçin (Bilim İnsanları, Besteciler, Sanatçılar, Yazarlar, Filozoflar).",
+          "Tarihsel figürlerin 4K vintage ders kitabı tarzında eğitim posteri oluşturun."
+        ],
+        "prompts": [
+          "İllüstrasyon portreleri ve katkılar ile büyük Bilim İnsanları için vintage bir poster oluşturun.",
+          "Ünlü Bestecilerin eserleri ile sepya tonunda bir eğitim posteri oluşturun.",
+          "Portreler ve ana fikirlerle bir ders kitabı tarzında Filozoflar posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-cultural-festival-poster": {
+    "category": "Kültürel Festival Posterleri",
+    "description": "Geleneksel bir festival için vintage halk sanatı posteri — anahtar etkinlikleri gösteren illüstrasyonlar, bir Anahtar Noktalar kutusu, dekoratif kenarlıklar ve sıcak sepya tonlarında kültürel semboller.",
+    "title": "Kültürel Festival Eğitim Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, geleneksel bir festival için vintage tarzda bir eğitim posteri oluşturur. Düzen, cesur bir festival başlığı, anahtar etkinlikleri gösteren iki illüstrasyon paneli, madde işaretli gerçekler içeren bir 'Anahtar Noktalar' kutusu ve temalı kültürel sembollerle dekoratif kenarlıklar içerir — hepsi sıcak sepya tonlarında ve detaylı halk sanatı çizgileriyle tasarlanmıştır.",
+        "who": "Kültür ve seyahat yaratıcıları, dil öğretmenleri, tarih eğitmenleri, müze sergileri, festival etkinlik organizatörleri ve seyahat blogu ile turizm markaları için uygundur.",
+        "how": [
+          "Bir festival seçin (Ejderha Botu Festivali, Hanami Festivali, Ölüler Günü, Diwali, Songkran Festivali).",
+          "4K vintage halk sanatı kültürel festival posteri oluşturun."
+        ],
+        "prompts": [
+          "İllüstrasyonlu etkinliklerle bir Ölüler Günü vintage eğitim posteri oluşturun.",
+          "Anahtar noktalarla birlikte halk sanatı sepya tarzında bir Diwali festivali posteri oluşturun.",
+          "Geleneksel dekoratif kenarlıklarla bir Ejderha Botu Festivali posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-nutrition-food-guide-poster": {
+    "category": "Beslenme Gıda Rehberleri",
+    "description": "Beslenme temalı temiz gerçekçi gıda infografik posteri — besin açısından zengin gıdaların etiketli fotoğrafları ve renk kodlu kategoriler. Sağlık, wellness ve gıda blogu içeriği için idealdir.",
+    "title": "Beslenme Gıda Rehberi Posteri",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, minimalist bir beslenme gıda rehberi posteri oluşturur. Düzen, kısa bir sağlık faydaları açıklamasıyla büyük bir tema başlığı, çeşitli besin açısından zengin gıdaların gerçekçi fotoğrafları ve adlarıyla etiketlenmiş, açık nötr bir arka planda yer alır ve kolay tarama için altta renk kodlu kategoriler (meyveler, sebzeler, proteinler) içerir.",
+        "who": "Beslenme uzmanları, diyetisyenler, fitness ve wellness yaratıcıları, sağlık gıda markaları, yemek hazırlama koçları ve sağlıklı beslenme müfredatı oluşturan eğitimciler için uygundur.",
+        "how": [
+          "Bir beslenme teması seçin (Kan Oluşturucu Gıdalar, Göz Sağlığı için Gıdalar, Yüksek Proteinli Gıdalar, Antioksidan Zengin Gıdalar, C Vitamini Güç Merkezleri).",
+          "4K gerçekçi beslenme gıda rehberi posteri oluşturun."
+        ],
+        "prompts": [
+          "Etiketli gıda fotoğraflarıyla bir Antioksidan Zengin Gıdalar infografik posteri oluşturun.",
+          "Kategori renk kodlamasıyla birlikte bir Yüksek Proteinli Gıdalar beslenme rehberi posteri oluşturun.",
+          "Minimalist tarzda Göz Sağlığı için Gıdalar eğitim posteri oluşturun."
+        ]
+      }
+    }
+  },
+  "template-sports-technique-guide": {
+    "category": "Spor Teknik Rehberleri",
+    "description": "Retro vintage tarzda spor teknik posteri — etiketli vücut parçaları ve kırmızı hareket okları ile illüstrasyonlu paneller. Spor koçları, beden eğitimi öğretmenleri ve eğitim içeriği yaratıcıları için mükemmel.",
+    "title": "Vintage Spor Teknik Rehberi",
+    "content": {
+      "sections": {
+        "what": "Bu şablon, bir spor tekniği üzerine retro bir eğitim posteri oluşturur. Düzen, cesur bir '[SPOR] Bilgisi' başlığı ve her biri etiketli vücut parçaları ve formu gösteren kırmızı hareket okları içeren illüstrasyon teknik panellerinin bir ızgarasını içerir — hepsi temiz bir ızgara kompozisyonunda yaşlı kağıt dokusunda.",
+        "who": "Spor koçları, beden eğitimi öğretmenleri, fitness yaratıcıları, dojo ve dövüş sanatları okulları, eğitim programı tasarımcıları ve atletik marka içerik pazarlamacıları için uygundur.",
+        "how": [
+          "Bir spor seçin (Basketbol, Karate, Tenis, Judo, Yüzme, Futbol).",
+          "4K vintage retro spor teknik rehberi posteri oluşturun."
+        ],
+        "prompts": [
+          "Etiketli vücut parçaları ve hareket oklarıyla bir Karate teknik rehberi posteri oluşturun.",
+          "Yaşlı kağıt ders kitabı tarzında bir vintage Tenis beceri posteri oluşturun.",
+          "Kırmızı hareket okları ve etiketlerle bir Yüzme teknik rehberi posteri oluşturun."
+        ]
+      }
+    }
   }
 }
