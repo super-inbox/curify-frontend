@@ -290,6 +290,11 @@ export default async function SearchPage({ params, searchParams }: Props) {
     params?: Record<string, unknown>;
     locales?: Record<string, { title?: string; category?: string }>;
     tags?: string[];
+    // Hidden synonyms list — fed into the search blob, never user-visible.
+    // Populated by scripts/enrich_search_aliases.cjs (gpt-4o-mini) for
+    // cross-language terms users type that don't appear in title/params
+    // (e.g. zh "鲜花" on a herbal-lily record).
+    search_aliases?: string[];
   };
 
   // Free-text match across id, template_id, tags, params (e.g. character_name,
@@ -324,6 +329,7 @@ export default async function SearchPage({ params, searchParams }: Props) {
         r.id,
         r.template_id,
         ...(r.tags ?? []),
+        ...(r.search_aliases ?? []),
         ...Object.values(r.params ?? {}),
         ...localeFields,
       ]
