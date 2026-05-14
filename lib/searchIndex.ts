@@ -124,7 +124,11 @@ export const TIER3_SUBJECT: SuggestionEntry[] = [
   { slug: "family",          label: "Family",          emoji: "👨‍👩‍👧‍👦", tier: 3, aliases: ["parents", "siblings", "relatives"] },
   { slug: "school",          label: "School",          emoji: "🏫", tier: 3, aliases: ["classroom", "student", "education", "library"] },
   { slug: "transportation",  label: "Transportation",  emoji: "🚆", tier: 3, aliases: ["transport", "vehicle", "vehicles", "transit"] },
-  { slug: "celebration",     label: "Celebration",     emoji: "🎉", tier: 3, aliases: ["festival", "party", "holiday"] },
+  // NB: do NOT alias "festival" here — celebration is the kid-vocabulary
+  // tier-3 topic (party scenes, birthdays) and has no cultural-festival
+  // templates. Letting "festival" fall through to free-text lets the
+  // cultural-festival-poster template's i18n blob match instead.
+  { slug: "celebration",     label: "Celebration",     emoji: "🎉", tier: 3, aliases: ["party", "holiday"] },
   { slug: "body",            label: "Body",            emoji: "🧍", tier: 3, aliases: ["body parts", "anatomy", "health"] },
   { slug: "emotions",        label: "Emotions",        emoji: "😊", tier: 3, aliases: ["feelings", "mood", "emotional"] },
 ];
