@@ -14,7 +14,12 @@
 "use strict";
 
 const path = require("path");
+const https = require("https");
+const http = require("http");
 const topicTagMappings = require(path.join(__dirname, "..", "..", "lib", "topic_tag_mappings.json"));
+
+let sharp;
+try { sharp = require("sharp"); } catch { sharp = null; }
 
 const TIER1_TAG_CHILDREN = topicTagMappings.TIER1_TAG_CHILDREN;
 const EXPLICIT_CHILD_TOPICS = topicTagMappings.EXPLICIT_CHILD_TOPICS || {};
@@ -130,6 +135,146 @@ function tryBuildOpenAIClient() {
   return { client: new OpenAI({ apiKey: process.env.OPENAI_API_KEY, timeout: 60000 }), reason: null };
 }
 
+// ── Vision-based tagging ────────────────────────────────────────────────────
+//
+// Unlike autoTagInspirations (text signals → closed Tier-3 vocabulary),
+// these helpers read actual image pixels via gpt-4o vision and return
+// short open-vocabulary descriptors ("vintage", "moody", "portrait"…).
+// Used by scripts/tag-inspirations-with-gpt.cjs for batch corpus retag.
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function pickUpTo(arr, n) {
+  return arr.length <= n ? arr : shuffle([...arr]).slice(0, n);
+}
+
+function fetchBuffer(url) {
+  return new Promise((resolve, reject) => {
+    const mod = url.startsWith("https") ? https : http;
+    mod
+      .get(url, (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          return fetchBuffer(res.headers.location).then(resolve).catch(reject);
+        }
+        const chunks = [];
+        res.on("data", (c) => chunks.push(c));
+        res.on("end", () => resolve(Buffer.concat(chunks)));
+        res.on("error", reject);
+      })
+      .on("error", reject);
+  });
+}
+
+/** Resize image to max 512px and return data: base64 JPEG URL. */
+async function resizeImageToBase64(url) {
+  const buf = await fetchBuffer(url);
+  if (sharp) {
+    const resized = await sharp(buf)
+      .resize({ width: 512, height: 512, fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 80 })
+      .toBuffer();
+    return `data:image/jpeg;base64,${resized.toString("base64")}`;
+  }
+  return `data:image/jpeg;base64,${buf.toString("base64")}`;
+}
+
+/**
+ * Ask gpt-4o vision to assign up to 5 short descriptive tags from one or
+ * two source images. Returns string[] (lowercase, free-form).
+ */
+async function tagFromImagesVision({ imageUrls, openai, model = "gpt-4o", maxTokens = 100, maxTags = 5 }) {
+  const imageContent = await Promise.all(
+    imageUrls.map(async (url) => {
+      let src = url;
+      try { src = await resizeImageToBase64(url); } catch { /* fall back to URL */ }
+      return { type: "image_url", image_url: { url: src, detail: "low" } };
+    })
+  );
+
+  const res = await openai.chat.completions.create({
+    model,
+    max_tokens: maxTokens,
+    messages: [
+      {
+        role: "user",
+        content: [
+          ...imageContent,
+          {
+            type: "text",
+            text:
+              `Look at the image(s) and assign up to ${maxTags} short descriptive tags that capture the visual style, mood, subject, or theme. ` +
+              `Return ONLY a JSON array of lowercase strings, no explanation. Example: ["vintage","portrait","moody","urban"]`,
+          },
+        ],
+      },
+    ],
+  });
+
+  const text = res.choices?.[0]?.message?.content?.trim() || "[]";
+  const match = text.match(/\[[\s\S]*\]/);
+  const tags = match ? JSON.parse(match[0]) : [];
+  return Array.isArray(tags) ? tags.slice(0, maxTags) : [];
+}
+
+/**
+ * Batch retag inspirations from their images. Does NOT mutate the
+ * inspiration records — returns a separate annotation array suitable
+ * for writing to scripts/inspiration_tags_output.json.
+ *
+ * @param {object} args
+ * @param {Array}  args.records      nano_inspiration entries (with asset.image_url, asset.preview_image_url)
+ * @param {object} args.openai       OpenAI client
+ * @param {string} args.cdnBase      base URL prefix for /images/... paths
+ * @param {number} [args.concurrency=5]
+ * @param {Set}    [args.doneIds]    example_ids to skip (resume support)
+ * @param {string} [args.model='gpt-4o']
+ * @param {function} [args.onBatch]  ({results, processed, total}) after each batch
+ * @returns {Promise<Array>}  [{ template_id, example_id, tags, error? }, ...]
+ */
+async function tagInspirationsVision({ records, openai, cdnBase, concurrency = 5, doneIds = new Set(), model = "gpt-4o", onBatch }) {
+  const toAbs = (u) => {
+    if (!u) return null;
+    if (u.startsWith("http")) return u;
+    return `${cdnBase}${u}`;
+  };
+
+  const todo = records.filter((e) => e.asset?.image_url && !doneIds.has(e.id));
+  const results = [];
+  let processed = 0;
+
+  for (let i = 0; i < todo.length; i += concurrency) {
+    const batch = todo.slice(i, i + concurrency);
+    const settled = await Promise.allSettled(
+      batch.map(async (entry) => {
+        const candidates = [toAbs(entry.asset?.preview_image_url), toAbs(entry.asset?.image_url)].filter(Boolean);
+        const imageUrls = pickUpTo(candidates, 2);
+        if (imageUrls.length === 0) return null;
+        const tags = await tagFromImagesVision({ imageUrls, openai, model });
+        return { template_id: entry.template_id, example_id: entry.id, tags };
+      })
+    );
+    for (let j = 0; j < settled.length; j++) {
+      const s = settled[j];
+      const entry = batch[j];
+      if (s.status === "fulfilled" && s.value) {
+        results.push(s.value);
+      } else {
+        results.push({ template_id: entry.template_id, example_id: entry.id, tags: [], error: s.reason?.message || "unknown" });
+      }
+    }
+    processed += batch.length;
+    if (onBatch) onBatch({ results: [...results], processed, total: todo.length });
+  }
+
+  return results;
+}
+
 module.exports = {
   TIER1_TAG_CHILDREN,
   EXPLICIT_CHILD_TOPICS,
@@ -137,4 +282,9 @@ module.exports = {
   findTier1WithTagChildren,
   autoTagInspirations,
   tryBuildOpenAIClient,
+  // Vision-based open-vocabulary tagging:
+  fetchBuffer,
+  resizeImageToBase64,
+  tagFromImagesVision,
+  tagInspirationsVision,
 };
