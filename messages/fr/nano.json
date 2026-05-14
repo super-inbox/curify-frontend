@@ -3350,5 +3350,125 @@
         ]
       }
     }
+  },
+  "template-chinese-radical-learning": {
+    "category": "Apprentissage des radicaux chinois",
+    "description": "Affiche de radicaux chinois adaptée aux enfants montrant la signification du radical ainsi que 8 caractères exemples avec Pinyin et anglais — parfaite pour les débutants en mandarin et les enseignants d'ESL.",
+    "title": "Affiche d'apprentissage des radicaux chinois",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche d'apprentissage des radicaux chinois sur papier aquarelle. La mise en page présente un label 'Radicaux chinois courants' en haut à gauche, un grand caractère radical orange avec une icône de dessin animée correspondante, une explication de la signification du radical, et une colonne à droite de 8 caractères exemples contenant le radical, chacun avec Pinyin et une traduction en anglais.",
+        "who": "Convient aux enseignants de mandarin, aux tuteurs ESL/CSL, aux parents d'élèves à domicile, aux apprenants de la langue chinoise, et aux créateurs de contenu éducatif sur TikTok ou Xiaohongshu.",
+        "how": [
+          "Choisissez un radical (纟 soie, 口 bouche, 雨 pluie, 艹 plante, 亻 personne, 火 feu, 女 femme).",
+          "Générez une affiche d'apprentissage des radicaux chinois au style aquarelle en 4K."
+        ],
+        "prompts": [
+          "Générez une affiche de radical chinois adaptée aux enfants pour 火 (feu) avec 8 caractères exemples.",
+          "Créez un tableau d'apprentissage du radical 女 (femme) au style aquarelle avec Pinyin et anglais.",
+          "Générez une affiche de radical chinois pour 纟 (soie) avec icône de dessin animé et exemples."
+        ]
+      }
+    }
+  },
+  "template-houseplant-care-guide-infographic": {
+    "category": "Guides d'entretien des plantes d'intérieur",
+    "description": "Infographie moderne et épurée sur l'entretien d'une plante d'intérieur — arrosage, sol et lumière en un coup d'œil, plus des conseils de santé et une boîte à outils recommandée. Idéal pour le contenu des parents de plantes.",
+    "title": "Infographie du guide d'entretien des plantes d'intérieur",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère un guide d'entretien minimaliste en illustration plate pour une plante d'intérieur spécifique. La mise en page présente un titre 'VOTRE GUIDE D'ENTRETIEN [PLANTE]', une illustration centrale de la plante dans un pot, et trois sections étiquetées : Guide de survie essentiel (arrosage, sol, lumière), Conseils de santé et de bien-être, et Boîte à outils recommandée — chacune avec des icônes simples et un texte court.",
+        "who": "Convient aux magasins de plantes, aux créateurs de jardinage d'intérieur, aux influenceurs de parents de plantes, aux blogueurs de décoration intérieure, et aux marques vendant des fournitures de rempotage ou des kits de culture.",
+        "how": [
+          "Choisissez une plante d'intérieur (Monstera, Plante serpent, Pothos, Lys de la paix, Figuier à feuilles de violon, Plante ZZ).",
+          "Générez une infographie du guide d'entretien des plantes d'intérieur minimaliste en 4K."
+        ],
+        "prompts": [
+          "Générez une infographie du guide d'entretien de Monstera avec des conseils sur l'arrosage, le sol et la lumière.",
+          "Créez une affiche d'entretien de plante d'intérieur Pothos au style d'illustration plate minimaliste.",
+          "Générez un guide d'entretien de Plante serpent avec des recommandations d'outils."
+        ]
+      }
+    }
+  },
+  "template-historical-figure-educational": {
+    "category": "Affiches éducatives de figures historiques",
+    "description": "Affiche de style manuel vintage de grands scientifiques, compositeurs, artistes, écrivains ou philosophes — portraits illustrés, noms et contributions clés dans une mise en page sépia cohérente.",
+    "title": "Affiche éducative de figures historiques",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative vintage sur un domaine choisi de figures historiques. La mise en page présente une grille de portraits illustrés, chacun avec le nom de la figure et un court résumé de ses principales contributions, entouré d'éléments de fond thématiques (inventions, œuvres d'art, livres) et d'étiquettes décoratives enroulées — le tout dans une esthétique de manuel sépia et papier vieilli.",
+        "who": "Convient aux enseignants d'histoire, aux éducateurs de musées, aux parents d'élèves à domicile, aux bibliothécaires, et aux créateurs produisant des aides à l'étude, de la décoration de classe ou du contenu éducatif sur les réseaux sociaux.",
+        "how": [
+          "Choisissez un thème ou un domaine (Scientifiques, Compositeurs, Artistes, Écrivains, Philosophes).",
+          "Générez une affiche éducative de figures historiques de style manuel vintage en 4K."
+        ],
+        "prompts": [
+          "Générez une affiche vintage de grands scientifiques avec portraits illustrés et contributions.",
+          "Créez une affiche éducative en ton sépia de compositeurs célèbres et de leurs œuvres.",
+          "Générez une affiche de philosophes de style manuel avec portraits et idées clés."
+        ]
+      }
+    }
+  },
+  "template-cultural-festival-poster": {
+    "category": "Affiches de Festivals Culturels",
+    "description": "Affiche vintage d'art populaire pour un festival traditionnel — activités clés illustrées, une boîte 'Points Forts', bordures décoratives et symboles culturels dans des tons sépia chauds.",
+    "title": "Affiche Éducative de Festival Culturel",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative de style vintage pour un festival traditionnel. La mise en page présente un titre de festival audacieux, deux panneaux illustrés montrant les activités clés, une boîte 'Points Forts' avec des faits en bullet points, et des bordures décoratives avec des symboles culturels thématiques — le tout rendu dans des tons sépia chauds et un travail de ligne d'art populaire détaillé.",
+        "who": "Convient aux créateurs de culture et de voyage, enseignants de langues, éducateurs en histoire, expositions de musées, organisateurs d'événements de festivals, et marques de blogs de voyage et de tourisme.",
+        "how": [
+          "Choisissez un festival (Festival de Bateaux Dragons, Festival de Hanami, Jour des Morts, Diwali, Festival de Songkran).",
+          "Générez une affiche de festival culturel d'art populaire en 4K."
+        ],
+        "prompts": [
+          "Générez une affiche éducative vintage du Jour des Morts avec des activités illustrées.",
+          "Créez une affiche de festival Diwali dans un style sépia d'art populaire avec des points forts.",
+          "Générez une affiche du Festival de Bateaux Dragons avec des bordures décoratives traditionnelles."
+        ]
+      }
+    }
+  },
+  "template-nutrition-food-guide-poster": {
+    "category": "Guides Alimentaires Nutritionnels",
+    "description": "Affiche infographique alimentaire réaliste sur le thème de la nutrition — photos étiquetées d'aliments riches en nutriments plus catégories codées par couleur. Idéal pour le contenu sur la santé, le bien-être et les blogs alimentaires.",
+    "title": "Affiche du Guide Alimentaire Nutritionnel",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche de guide alimentaire nutritionnel minimaliste. La mise en page présente un grand titre thématique avec une brève description des bienfaits pour la santé, des photographies réalistes d'aliments riches en nutriments étiquetés avec leurs noms sur un fond neutre clair, et des catégories codées par couleur en bas (fruits, légumes, protéines) pour une lecture facile.",
+        "who": "Convient aux nutritionnistes, diététiciens, créateurs de fitness et de bien-être, marques d'aliments sains, coachs de préparation de repas, et éducateurs construisant un programme d'alimentation saine.",
+        "how": [
+          "Choisissez un thème nutritionnel (Aliments pour la Construction Sanguine, Aliments pour la Santé des Yeux, Aliments Riches en Protéines, Aliments Riches en Antioxydants, Puissances de la Vitamine C).",
+          "Générez une affiche de guide alimentaire nutritionnel réaliste en 4K."
+        ],
+        "prompts": [
+          "Générez une affiche infographique d'Aliments Riches en Antioxydants avec des photographies alimentaires étiquetées.",
+          "Créez une affiche de guide nutritionnel d'Aliments Riches en Protéines avec codage couleur des catégories.",
+          "Générez une affiche éducative d'Aliments pour la Santé des Yeux dans un style minimaliste."
+        ]
+      }
+    }
+  },
+  "template-sports-technique-guide": {
+    "category": "Guides de Techniques Sportives",
+    "description": "Affiche de technique sportive de style vintage rétro — panneaux illustrés avec parties du corps étiquetées et flèches de mouvement rouges. Parfait pour les entraîneurs sportifs, enseignants d'EPS, et créateurs de contenu d'entraînement.",
+    "title": "Guide de Technique Sportive Vintage",
+    "content": {
+      "sections": {
+        "what": "Ce modèle génère une affiche éducative rétro sur une technique sportive. La mise en page présente un titre audacieux '[SPORT] Connaissances' et une grille de panneaux de technique illustrés, chacun avec des parties du corps étiquetées et des flèches de mouvement rouges montrant la forme — le tout sur un fond de papier vieilli dans une composition de grille propre.",
+        "who": "Convient aux entraîneurs sportifs, enseignants d'EPS, créateurs de fitness, écoles de dojo et d'arts martiaux, concepteurs de programmes d'entraînement, et spécialistes du marketing de contenu de marques sportives.",
+        "how": [
+          "Choisissez un sport (Basketball, Karaté, Tennis, Judo, Natation, Football).",
+          "Générez une affiche de guide de technique sportive rétro en 4K."
+        ],
+        "prompts": [
+          "Générez une affiche de guide de technique de Karaté avec des parties du corps étiquetées et des flèches de mouvement.",
+          "Créez une affiche de compétence de Tennis vintage dans un style de manuel en papier vieilli.",
+          "Générez une affiche de guide de technique de Natation avec des flèches de mouvement rouges et des étiquettes."
+        ]
+      }
+    }
   }
 }
