@@ -23,11 +23,23 @@
 //   node scripts/generate_template_examples.cjs --config=... --topics=animals,nature
 //   node scripts/generate_template_examples.cjs --config=... --dry-run
 //   node scripts/generate_template_examples.cjs --config=... --sync
+//   node scripts/generate_template_examples.cjs --config=... --auto-tag
+//   node scripts/generate_template_examples.cjs --config=... --no-watermark
 //   node scripts/generate_template_examples.cjs --config=... --model=gemini-2.5-flash-image
 //
 // Requires GEMINI_API_KEY in .env.local. Default model is "Nano Banana
 // Pro" (gemini-3-pro-image-preview) for higher quality on the
 // long-running per-template generation use case.
+//
+// Watermark: every generated full image is stamped with the tilted
+// curify logo (applyTiledWatermark) before preview generation, so the
+// preview inherits the watermark. Pass --no-watermark to skip (for
+// internal testing).
+//
+// Auto-tag: --auto-tag picks one Tier-3 topic tag per record via
+// gpt-4o-mini, using the parent template's Tier-1 ancestor. Same
+// implementation as sync_nano_inspiration.cjs (scripts/lib/auto_tag.cjs).
+// Requires OPENAI_API_KEY.
 
 "use strict";
 
@@ -48,6 +60,8 @@ try {
 try { require("dotenv").config({ path: ".env.local" }); } catch {}
 
 const { GoogleGenAI, Modality } = require("@google/genai");
+const { applyTiledWatermark } = require("./lib/watermark.cjs");
+const { autoTagInspirations, tryBuildOpenAIClient } = require("./lib/auto_tag.cjs");
 
 // ── Paths ────────────────────────────────────────────────────────────────────
 
@@ -79,10 +93,21 @@ function parseArgs() {
     sync: false,
     dryRun: false,
     model: DEFAULT_MODEL,
+    // Watermark every generated full image with the tilted curify logo
+    // (the preview is derived from the watermarked file). Default ON
+    // so config-driven batches match the gallery ingest behavior in
+    // sync_nano_inspiration.cjs. Opt out with --no-watermark.
+    watermark: true,
+    // Auto-tag opt-in (parallels sync_nano_inspiration.cjs --auto-tag).
+    autoTag: false,
+    autoTagModel: "gpt-4o-mini",
   };
   for (const a of args) {
     if (a === "--sync")          out.sync   = true;
     else if (a === "--dry-run")  out.dryRun = true;
+    else if (a === "--no-watermark") out.watermark = false;
+    else if (a === "--auto-tag") out.autoTag = true;
+    else if (a.startsWith("--auto-tag-model=")) out.autoTagModel = a.split("=").slice(1).join("=");
     else if (a.startsWith("--config=")) out.config = path.resolve(a.split("=").slice(1).join("="));
     else if (a.startsWith("--topics=") || a.startsWith("--tags="))
       out.topicsFilter = a.split("=")[1].split(",").map((s) => s.trim()).filter(Boolean);
@@ -222,6 +247,8 @@ async function main() {
   console.log("entries:   ", configEntries.length);
   if (args.topicsFilter) console.log("filter:    ", args.topicsFilter.join(", "));
   console.log("model:     ", args.model);
+  console.log("watermark: ", args.watermark);
+  console.log("auto-tag:  ", args.autoTag, args.autoTag ? `(model=${args.autoTagModel})` : "");
   console.log("dry-run:   ", args.dryRun, "| sync:", args.sync);
   console.log("");
 
@@ -311,6 +338,9 @@ async function main() {
         try {
           const imageBuffer = await geminiImage(filledPrompt, args.model);
           await fsp.writeFile(imagePath, imageBuffer);
+          // Tilted watermark goes on the full image first; the preview
+          // is derived from this file so it inherits the watermark too.
+          if (args.watermark) applyTiledWatermark(imagePath, imagePath);
           await generatePreview(imagePath, previewPath);
           console.log("✓");
         } catch (e) {
@@ -368,6 +398,24 @@ async function main() {
       );
     }
     console.log(`Copied ${copied} full + ${copied} preview images.`);
+
+    // Auto-tag mutates record.topics in place before we write JSON, so
+    // the persisted records carry the gpt-picked Tier-3 tag.
+    if (args.autoTag) {
+      const { client: openai, reason } = tryBuildOpenAIClient();
+      if (!openai) {
+        console.warn(`⚠️  --auto-tag requested but ${reason}; skipping.`);
+      } else {
+        console.log(`\n🏷️  Auto-tagging ${addedRecords.length} new records (model=${args.autoTagModel}) ...`);
+        const stats = await autoTagInspirations(
+          addedRecords,
+          templatesById,
+          openai,
+          args.autoTagModel
+        );
+        console.log(`Tagged: ${stats.tagged} | Skipped: ${stats.skipped} | Failed: ${stats.failed}`);
+      }
+    }
 
     const updated = [...inspirations, ...addedRecords];
     writeJson(INSP_JSON, updated);
