@@ -116,6 +116,12 @@ const nextConfig: NextConfig = {
       { source: `/:locale(${LOCALE_RE})/generate`, destination: "/:locale/nano-banana-pro-prompts", permanent: true },
       { source: "/templates", destination: "/nano-banana-pro-prompts", permanent: true },
       { source: `/:locale(${LOCALE_RE})/templates`, destination: "/:locale/nano-banana-pro-prompts", permanent: true },
+
+      // Tag merges — preserve SEO equity from the deprecated tag slugs.
+      // women → woman: data-quality merge (11 prompts had 'women' tag
+      // duplicate alongside the canonical 'woman' tag with 1716 prompts).
+      { source: "/nano-banana-pro-prompts/tag/women", destination: "/nano-banana-pro-prompts/tag/woman", permanent: true },
+      { source: `/:locale(${LOCALE_RE})/nano-banana-pro-prompts/tag/women`, destination: "/:locale/nano-banana-pro-prompts/tag/woman", permanent: true },
       { source: "/subtitle-generator", destination: "/tools/bilingual-subtitles", permanent: true },
       { source: `/:locale(${LOCALE_RE})/subtitle-generator`, destination: "/:locale/tools/bilingual-subtitles", permanent: true },
       { source: "/video-translator", destination: "/tools/video-dubbing", permanent: true },

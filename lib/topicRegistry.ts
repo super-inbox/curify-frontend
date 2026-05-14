@@ -283,6 +283,8 @@ const EXTRA_TAG_TO_TOPICS: Record<string, string[]> = {
   // → country topics
   japanese:          ["japan"],
   kpop:              ["korea"],
+  // → multi-country (east asian gallery tag spans japanese + kpop content)
+  "east asian":      ["japan", "korea"],
 };
 
 // Topics excluded from the reverse map only — their topic page still
