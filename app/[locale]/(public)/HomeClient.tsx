@@ -68,6 +68,7 @@ export default function HomeClient({
           cards={nanoCards}
           requireAuth={requireAuth}
           onViewClick={handleOpenModal}
+          maxRows={8}
         />
       </div>
 
