@@ -5,11 +5,10 @@ import { getActivePack } from "@/lib/etsy_packs";
 import DownloadButton from "./DownloadButton";
 
 // These are paid landing pages for Etsy buyers, not organic content —
-// keep them out of Google's index entirely. Also disable Next.js ISR
-// caching of generated pages since the registry can rotate at any time
-// and we want kill-switch changes (active: false) to take effect on
-// next deploy without stale ISR copies.
-export const dynamic = "force-static";
+// keep them out of Google's index entirely (see generateMetadata
+// below). Dynamic routes with no generateStaticParams render on-
+// demand; that is what we want here since the registry can rotate at
+// any time and we need active=false to take effect immediately.
 
 type Props = {
   params: Promise<{ locale: string; sku: string }>;
