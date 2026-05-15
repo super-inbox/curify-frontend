@@ -10,6 +10,7 @@ const {
   TIER1_TAG_CHILDREN,
   findTier1WithTagChildren,
   autoTagInspirations,
+  enrichSearchAliases,
   tryBuildOpenAIClient,
 } = require("./lib/auto_tag.cjs");
 
@@ -577,6 +578,18 @@ async function main() {
         args.autoTagModel
       );
       console.log(`Tagged: ${stats.tagged} | Skipped: ${stats.skipped} | Failed: ${stats.failed}`);
+
+      // Same flag also enriches search_aliases — hidden Chinese/English
+      // synonyms that feed the search blob. Keeps daily content drops
+      // searchable in zh without manual data work.
+      console.log(`\n🔎 Enriching search aliases for ${allNewRecords.length} new records ...`);
+      const aliasStats = await enrichSearchAliases(
+        allNewRecords,
+        templatesById,
+        openai,
+        args.autoTagModel
+      );
+      console.log(`Aliases: enriched=${aliasStats.enriched} skipped=${aliasStats.skipped} failed=${aliasStats.failed}`);
     }
   }
 

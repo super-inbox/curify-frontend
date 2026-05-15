@@ -61,7 +61,11 @@ try { require("dotenv").config({ path: ".env.local" }); } catch {}
 
 const { GoogleGenAI, Modality } = require("@google/genai");
 const { applyTiledWatermark } = require("./lib/watermark.cjs");
-const { autoTagInspirations, tryBuildOpenAIClient } = require("./lib/auto_tag.cjs");
+const {
+  autoTagInspirations,
+  enrichSearchAliases,
+  tryBuildOpenAIClient,
+} = require("./lib/auto_tag.cjs");
 
 // ── Paths ────────────────────────────────────────────────────────────────────
 
@@ -414,6 +418,17 @@ async function main() {
           args.autoTagModel
         );
         console.log(`Tagged: ${stats.tagged} | Skipped: ${stats.skipped} | Failed: ${stats.failed}`);
+
+        // Same --auto-tag flag also enriches search_aliases so new
+        // records ship with Chinese/English synonyms in the search blob.
+        console.log(`\n🔎 Enriching search aliases for ${addedRecords.length} new records ...`);
+        const aliasStats = await enrichSearchAliases(
+          addedRecords,
+          templatesById,
+          openai,
+          args.autoTagModel
+        );
+        console.log(`Aliases: enriched=${aliasStats.enriched} skipped=${aliasStats.skipped} failed=${aliasStats.failed}`);
       }
     }
 
