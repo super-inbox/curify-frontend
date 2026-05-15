@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Download, Loader2, AlertCircle } from "lucide-react";
 import { etsyPacksService } from "@/services/etsyPacks";
+import { useTracking } from "@/services/useTracking";
 
 type Props = {
   sku: string;
@@ -17,10 +18,24 @@ type Props = {
 export default function DownloadButton({ sku, code, token }: Props) {
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const { track } = useTracking();
 
   async function handleClick() {
     setState("loading");
     setErrorMsg("");
+
+    // Fire analytics before the network call so we capture intent even
+    // if the backend errors. Encoding the Etsy listing code into
+    // content_id is how per-listing attribution rolls up in the admin
+    // business-metrics dashboard without a backend schema change. The
+    // existing 'download' ActionType is reused.
+    const trackedContentId = code ? `etsy_pack:${sku}:${code}` : `etsy_pack:${sku}`;
+    track({
+      contentId: trackedContentId,
+      contentType: "page",
+      actionType: "download",
+    });
+
     try {
       const res = await etsyPacksService.getDownloadUrl(sku, { code, token });
       // Navigate directly — Azure serves the zip with
