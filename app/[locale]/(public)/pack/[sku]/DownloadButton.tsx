@@ -25,14 +25,14 @@ export default function DownloadButton({ sku, code, token }: Props) {
     setErrorMsg("");
 
     // Fire analytics before the network call so we capture intent even
-    // if the backend errors. Encoding the Etsy listing code into
-    // content_id is how per-listing attribution rolls up in the admin
-    // business-metrics dashboard without a backend schema change. The
-    // existing 'download' ActionType is reused.
-    const trackedContentId = code ? `etsy_pack:${sku}:${code}` : `etsy_pack:${sku}`;
+    // if the backend errors. content_type 'etsy_pack' is a dedicated
+    // enum value so the admin dashboard can filter the Etsy funnel
+    // cleanly. The Etsy listing code rides in content_id so per-listing
+    // attribution falls out of the existing group-by-content_id reports.
+    const trackedContentId = code ? `${sku}:${code}` : sku;
     track({
       contentId: trackedContentId,
-      contentType: "page",
+      contentType: "etsy_pack",
       actionType: "download",
     });
 

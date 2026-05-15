@@ -17,7 +17,8 @@ export type ContentType =
   | "breadcrumb"
   | "prev_next"
   | "mbti_quiz"
-  | "page";
+  | "page"
+  | "etsy_pack";
 
 export type ActionType =
   | "view"
