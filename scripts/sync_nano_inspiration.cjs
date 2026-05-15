@@ -128,7 +128,10 @@ function parseArgs(argv) {
     supabase: false,
     pgUrl: defaultPgUrl,
     supabaseStatus: "APPROVED",
-    autoTag: false,
+    // Default ON — every daily content drop should produce records that are
+    // tier-3-tagged AND search-alias-enriched. Pass --no-auto-tag to skip
+    // (e.g. when re-running a sync against records you already enriched).
+    autoTag: true,
     autoTagModel: "gpt-4o-mini",
   };
 
@@ -144,7 +147,8 @@ function parseArgs(argv) {
     else if (a === "--supabase") out.supabase = true;
     else if (a.startsWith("--pg-url=")) out.pgUrl = a.split("=").slice(1).join("=");
     else if (a.startsWith("--supabase-status=")) out.supabaseStatus = a.split("=").slice(1).join("=");
-    else if (a === "--auto-tag") out.autoTag = true;
+    else if (a === "--auto-tag") out.autoTag = true;            // explicit ON (default)
+    else if (a === "--no-auto-tag") out.autoTag = false;        // opt out
     else if (a.startsWith("--auto-tag-model=")) out.autoTagModel = a.split("=").slice(1).join("=");
   }
   return out;
