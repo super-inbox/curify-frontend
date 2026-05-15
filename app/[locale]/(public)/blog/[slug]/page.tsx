@@ -293,6 +293,9 @@ export default async function BlogPostPage({
         {slug === '10-prompting-tips-nano-banana' && (
           <TenPromptingTipsNanoBananaContent slug={slug} t={safeT} locale={locale} />
         )}
+        {slug === 'curify-nano-banana-template-tips' && (
+          <TenPromptingTipsNanoBananaContent slug={slug} t={safeT} locale={locale} />
+        )}
         {slug === '10-prompting-tips-video-generation' && (
           <TenPromptingTipsVideoGenerationContent slug={slug} t={safeT} arrayData={arrayData} locale={locale} />
         )}

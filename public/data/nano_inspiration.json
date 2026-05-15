@@ -994,7 +994,17 @@
       "cultural",
       "educational"
     ],
-    "allow_i18n": true
+    "allow_i18n": true,
+    "search_aliases": [
+      "landmark",
+      "建筑",
+      "唐代建筑",
+      "cultural site",
+      "architectural design",
+      "historical landmark",
+      "pagoda",
+      "城市地标"
+    ]
   },
   {
     "id": "template-architecture-national-stadium-bird-nest",
@@ -2340,6 +2350,16 @@
       "educational",
       "chinese",
       "cultural heritage"
+    ],
+    "search_aliases": [
+      "artifact",
+      "文物",
+      "ceremonial vessel",
+      "古代器物",
+      "cultural significance",
+      "历史遗物",
+      "中国艺术",
+      "traditional craftsmanship"
     ]
   },
   {
@@ -6371,6 +6391,16 @@
       "chinese",
       "traditional chinese medicine",
       "food science"
+    ],
+    "search_aliases": [
+      "herb",
+      "草药",
+      "medicinal plant",
+      "自然疗法",
+      "植物学",
+      "健康益处",
+      "中药材",
+      "traditional remedies"
     ]
   },
   {
@@ -7137,6 +7167,15 @@
     ],
     "topics": [
       "china"
+    ],
+    "search_aliases": [
+      "北京烤鸭",
+      "美食",
+      "中式料理",
+      "传统食物",
+      "中国文化",
+      "美味",
+      "烹饪技巧"
     ]
   },
   {
@@ -7541,6 +7580,15 @@
       "chinese",
       "fantasy",
       "ink wash"
+    ],
+    "search_aliases": [
+      "西游记",
+      "经典文学",
+      "中国神话",
+      "角色分析",
+      "文化背景",
+      "故事情节",
+      "古典小说"
     ]
   },
   {
@@ -15901,6 +15949,15 @@
       "fantasy",
       "portrait",
       "character"
+    ],
+    "search_aliases": [
+      "权力的游戏",
+      "性格测试",
+      "角色扮演",
+      "个性分析",
+      "中世纪",
+      "虚构角色",
+      "心理类型"
     ]
   },
   {
@@ -17316,6 +17373,15 @@
       "personality",
       "mbti",
       "fantasy"
+    ],
+    "search_aliases": [
+      "大爆炸理论",
+      "性格类型",
+      "心理测试",
+      "角色分析",
+      "幽默",
+      "社交行为",
+      "情境反应"
     ]
   },
   {
@@ -23371,6 +23437,15 @@
     ],
     "topics": [
       "mbti-istp"
+    ],
+    "search_aliases": [
+      "猪猪侠",
+      "角色卡",
+      "吉卜力",
+      "动画角色",
+      "个性分析",
+      "水彩设计",
+      "电影故事书"
     ]
   },
   {
@@ -25109,6 +25184,14 @@
       "fitness",
       "science",
       "illustration"
+    ],
+    "search_aliases": [
+      "健身知识",
+      "运动科学",
+      "健康指南",
+      "教育信息图",
+      "卡通风格",
+      "科学插图"
     ]
   },
   {
@@ -27847,6 +27930,16 @@
       "vintage",
       "traditional chinese medicine",
       "food science"
+    ],
+    "search_aliases": [
+      "中药",
+      "草药",
+      "药用植物",
+      "herb guide",
+      "traditional remedies",
+      "medicinal properties",
+      "herbal benefits",
+      "natural medicine"
     ]
   },
   {
@@ -36049,6 +36142,15 @@
     ],
     "topics": [
       "china"
+    ],
+    "search_aliases": [
+      "北京",
+      "城市性格",
+      "MBTI类型",
+      "可爱风格",
+      "地方特色",
+      "文化符号",
+      "个性海报"
     ]
   },
   {
@@ -45145,6 +45247,16 @@
       "traditional",
       "bilingual",
       "early childhood"
+    ],
+    "search_aliases": [
+      "服装",
+      "衣服",
+      "时尚",
+      "儿童学习",
+      "单词卡片",
+      "图画书",
+      "双语学习",
+      "衣物"
     ]
   },
   {
@@ -50759,6 +50871,16 @@
     },
     "topics": [
       "france"
+    ],
+    "search_aliases": [
+      "巴黎",
+      "法国旅游",
+      "文化遗产",
+      "美食之旅",
+      "风景名胜",
+      "历史景点",
+      "浪漫之旅",
+      "艺术之都"
     ]
   },
   {
@@ -50984,7 +51106,17 @@
       "space",
       "nature"
     ],
-    "allow_i18n": true
+    "allow_i18n": true,
+    "search_aliases": [
+      "地球自转",
+      "科学知识",
+      "天文学",
+      "物理现象",
+      "自然奇观",
+      "宇宙探索",
+      "地球科学",
+      "旋转运动"
+    ]
   },
   {
     "id": "template-weird-cold-knowledge-popular-science-card-lightning",
@@ -51033,6 +51165,16 @@
     "topics": [
       "animals",
       "nature"
+    ],
+    "search_aliases": [
+      "章鱼",
+      "海洋生物",
+      "水下世界",
+      "软体动物",
+      "海洋生态",
+      "奇特生物",
+      "智力动物",
+      "海洋探索"
     ]
   },
   {
@@ -54436,7 +54578,17 @@
       }
     },
     "topics": [],
-    "allow_i18n": true
+    "allow_i18n": true,
+    "search_aliases": [
+      "苹果公司历史",
+      "科技公司发展",
+      "时间线图表",
+      "商业演变",
+      "创新历程",
+      "企业里程碑",
+      "苹果产品",
+      "科技历史"
+    ]
   },
   {
     "id": "template-history-timeline-infographic-coffee-history",
@@ -57273,7 +57425,16 @@
       "en": {
         "title": "phoenix"
       }
-    }
+    },
+    "search_aliases": [
+      "火鸟",
+      "时尚礼服",
+      "自然主题",
+      "设计草图",
+      "创意服装",
+      "高定时装",
+      "灵感来源"
+    ]
   },
   {
     "id": "template-fashion-inspired-gown-design-sheet-purple-flower",
@@ -59681,6 +59842,14 @@
     },
     "topics": [
       "weather"
+    ],
+    "search_aliases": [
+      "雨水",
+      "气象",
+      "儿童教育",
+      "天气图表",
+      "自然现象",
+      "水循环"
     ]
   },
   {
@@ -60808,6 +60977,14 @@
       "photorealistic",
       "portugal",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "美食",
+      "葡萄牙菜",
+      "食物摄影",
+      "双语学习",
+      "厨艺",
+      "传统菜肴"
     ]
   },
   {
@@ -62386,6 +62563,14 @@
       "vocabulary",
       "kawaii",
       "evolution"
+    ],
+    "search_aliases": [
+      "人类发展",
+      "生活阶段",
+      "教育卡片",
+      "双语学习",
+      "成长",
+      "生命周期"
     ]
   },
   {
@@ -62409,6 +62594,15 @@
       "vocabulary",
       "kawaii",
       "evolution"
+    ],
+    "search_aliases": [
+      "恐龙时代",
+      "史前生物",
+      "化石",
+      "dinosaurs",
+      "prehistoric",
+      "ancient creatures",
+      "地质年代"
     ]
   },
   {
@@ -62432,6 +62626,15 @@
       "vocabulary",
       "kawaii",
       "evolution"
+    ],
+    "search_aliases": [
+      "毛毛虫",
+      "蝴蝶变身",
+      "昆虫",
+      "metamorphosis",
+      "life cycle",
+      "虫子",
+      "自然"
     ]
   },
   {
@@ -62455,6 +62658,15 @@
       "vocabulary",
       "kawaii",
       "evolution"
+    ],
+    "search_aliases": [
+      "青蛙",
+      "蛙类",
+      "水生生物",
+      "life stages",
+      "两栖动物",
+      "生态",
+      "frogspawn"
     ]
   },
   {
@@ -62478,6 +62690,13 @@
       "vocabulary",
       "kawaii",
       "evolution"
+    ],
+    "search_aliases": [
+      "种子",
+      "树木",
+      "植物生长",
+      "自然",
+      "生态系统"
     ]
   },
   {
@@ -62501,6 +62720,13 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "森林",
+      "野生动物",
+      "哺乳动物",
+      "栖息地",
+      "生态"
     ]
   },
   {
@@ -62524,6 +62750,13 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "海洋",
+      "水生生物",
+      "鱼类",
+      "珊瑚礁",
+      "海洋生态"
     ]
   },
   {
@@ -62547,6 +62780,15 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "农场动物",
+      "小动物",
+      "家禽",
+      "petting zoo",
+      "livestock",
+      "farm life",
+      "动物名称"
     ]
   },
   {
@@ -62570,6 +62812,15 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "动物园",
+      "野生动物",
+      "猛兽",
+      "exotic animals",
+      "动物种类",
+      "动物卡片",
+      "动物学习"
     ]
   },
   {
@@ -62593,6 +62844,15 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "昆虫",
+      "小虫子",
+      "害虫",
+      "蝴蝶",
+      "蜜蜂",
+      "虫子",
+      "生态"
     ]
   },
   {
@@ -62616,6 +62876,16 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "宠物",
+      "家养动物",
+      "狗",
+      "猫",
+      "小动物",
+      "宠物用品",
+      "养宠物",
+      "动物朋友"
     ]
   },
   {
@@ -62639,6 +62909,16 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "鸟类",
+      "飞鸟",
+      "野生鸟",
+      "羽毛",
+      "鸟巢",
+      "鸟类观察",
+      "鸟类图鉴",
+      "小鸟"
     ]
   },
   {
@@ -62662,6 +62942,16 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "爬行动物",
+      "两栖动物",
+      "蛇",
+      "青蛙",
+      "蜥蜴",
+      "爬虫",
+      "生态",
+      "动物分类"
     ]
   },
   {
@@ -62685,6 +62975,16 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "恐龙",
+      "化石",
+      "史前生物",
+      "Jurassic",
+      "T-Rex",
+      "恐龙名称",
+      "恐龙图鉴",
+      "动物学习卡"
     ]
   },
   {
@@ -62754,6 +63054,13 @@
       "vocabulary",
       "kawaii",
       "animals"
+    ],
+    "search_aliases": [
+      "幼兽",
+      "小动物",
+      "动物名称",
+      "可爱生物",
+      "动物图鉴"
     ]
   },
   {
@@ -62777,6 +63084,13 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "树木",
+      "叶子",
+      "森林",
+      "植物",
+      "自然景观"
     ]
   },
   {
@@ -62800,6 +63114,13 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "花卉",
+      "花园",
+      "植物",
+      "花朵名称",
+      "园艺"
     ]
   },
   {
@@ -62823,6 +63144,13 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "山脉",
+      "高峰",
+      "丘陵",
+      "登山",
+      "自然景观"
     ]
   },
   {
@@ -62846,6 +63174,13 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "河流",
+      "湖泊",
+      "水域",
+      "湿地",
+      "自然环境"
     ]
   },
   {
@@ -62869,6 +63204,13 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "沙滩",
+      "海岸",
+      "海洋",
+      "阳光",
+      "度假"
     ]
   },
   {
@@ -62892,6 +63234,16 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "植物",
+      "种子",
+      "花卉",
+      "园艺",
+      "生态系统",
+      "绿色植物",
+      "植物学",
+      "自然学习"
     ]
   },
   {
@@ -62915,6 +63267,16 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "蘑菇",
+      "真菌",
+      "食用菌",
+      "野生菌",
+      "菌类",
+      "生态",
+      "自然界",
+      "生物多样性"
     ]
   },
   {
@@ -62938,6 +63300,16 @@
       "vocabulary",
       "kawaii",
       "nature"
+    ],
+    "search_aliases": [
+      "四季",
+      "春夏秋冬",
+      "气候变化",
+      "季节变化",
+      "自然现象",
+      "节气",
+      "天气",
+      "季节性"
     ]
   },
   {
@@ -62961,6 +63333,16 @@
       "vocabulary",
       "kawaii",
       "space"
+    ],
+    "search_aliases": [
+      "行星",
+      "太阳系",
+      "宇宙",
+      "planet names",
+      "space exploration",
+      "天文学",
+      "solar system",
+      "星球"
     ]
   },
   {
@@ -63030,6 +63412,14 @@
       "vocabulary",
       "kawaii",
       "space"
+    ],
+    "search_aliases": [
+      "星座",
+      "天文学",
+      "天体",
+      "constellation names",
+      "night sky",
+      "astrology"
     ]
   },
   {
@@ -63053,6 +63443,14 @@
       "vocabulary",
       "kawaii",
       "space"
+    ],
+    "search_aliases": [
+      "月亮",
+      "月相",
+      "新月",
+      "满月",
+      "lunar cycle",
+      "天文现象"
     ]
   },
   {
@@ -63076,6 +63474,14 @@
       "vocabulary",
       "kawaii",
       "space"
+    ],
+    "search_aliases": [
+      "星系",
+      "宇宙",
+      "星星",
+      "black holes",
+      "interstellar",
+      "天体物理"
     ]
   },
   {
@@ -63099,6 +63505,15 @@
       "vocabulary",
       "kawaii",
       "weather"
+    ],
+    "search_aliases": [
+      "气候",
+      "晴天",
+      "雨天",
+      "风暴",
+      "天气现象",
+      "气象",
+      "温度变化"
     ]
   },
   {
@@ -63122,6 +63537,15 @@
       "vocabulary",
       "kawaii",
       "weather"
+    ],
+    "search_aliases": [
+      "云彩",
+      "蓝天",
+      "白云",
+      "阴天",
+      "天气图",
+      "气象学",
+      "云层"
     ]
   },
   {
@@ -63145,6 +63569,15 @@
       "vocabulary",
       "kawaii",
       "weather"
+    ],
+    "search_aliases": [
+      "暴风雨",
+      "雷电",
+      "狂风",
+      "气象灾害",
+      "天气预报",
+      "强风",
+      "降雨量"
     ]
   },
   {
@@ -63168,6 +63601,16 @@
       "vocabulary",
       "kawaii",
       "weather"
+    ],
+    "search_aliases": [
+      "彩虹",
+      "颜色",
+      "色彩",
+      "rainbow colors",
+      "色卡",
+      "学习工具",
+      "视觉指南",
+      "多语言学习"
     ]
   },
   {
@@ -63237,6 +63680,16 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "水果",
+      "果物",
+      "apple",
+      "香蕉",
+      "橙子",
+      "健康食品",
+      "营养",
+      "甜食"
     ]
   },
   {
@@ -63260,6 +63713,16 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "蔬菜",
+      "vegetable",
+      "胡萝卜",
+      "西红柿",
+      "菠菜",
+      "健康饮食",
+      "绿色食品",
+      "营养"
     ]
   },
   {
@@ -63283,6 +63746,16 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "早餐",
+      "早饭",
+      "面包",
+      "鸡蛋",
+      "燕麦",
+      "饮料",
+      "咖啡",
+      "茶"
     ]
   },
   {
@@ -63306,6 +63779,16 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "甜点",
+      "蛋糕",
+      "冰淇淋",
+      "甜品",
+      "糖果",
+      "dessert recipes",
+      "baking",
+      "sweets"
     ]
   },
   {
@@ -63329,6 +63812,16 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "饮料",
+      "果汁",
+      "茶",
+      "咖啡",
+      "cocktails",
+      "beverages",
+      "soft drinks",
+      "饮品"
     ]
   },
   {
@@ -63352,6 +63845,16 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "零食",
+      "饼干",
+      "坚果",
+      "小吃",
+      "snack ideas",
+      "chips",
+      "快餐",
+      "snack recipes"
     ]
   },
   {
@@ -63375,6 +63878,15 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "厨房用具",
+      "烹饪工具",
+      "厨具",
+      "kitchen gadgets",
+      "cooking utensils",
+      "家居用品",
+      "食材准备工具"
     ]
   },
   {
@@ -63444,6 +63956,15 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "面包",
+      "烘焙",
+      "糕点",
+      "甜点",
+      "早餐",
+      "面包店",
+      "小吃"
     ]
   },
   {
@@ -63467,6 +63988,15 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "意大利面",
+      "米粉",
+      "面条",
+      "汤面",
+      "意面",
+      "小吃",
+      "亚洲美食"
     ]
   },
   {
@@ -63490,6 +64020,15 @@
       "vocabulary",
       "kawaii",
       "food-and-drink"
+    ],
+    "search_aliases": [
+      "国际美食",
+      "菜系",
+      "文化",
+      "传统食物",
+      "地方特色",
+      "美食地图",
+      "全球美食"
     ]
   },
   {
@@ -63513,6 +64052,16 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "亲戚",
+      "父母",
+      "兄弟姐妹",
+      "家庭树",
+      "家庭关系",
+      "家庭成员",
+      "家人",
+      "家庭词汇"
     ]
   },
   {
@@ -63536,6 +64085,16 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "职业",
+      "工作",
+      "职位",
+      "行业",
+      "雇主",
+      "求职",
+      "工作场所",
+      "职业词汇"
     ]
   },
   {
@@ -63559,6 +64118,16 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "日常活动",
+      "生活习惯",
+      "时间表",
+      "日常生活",
+      "早晨",
+      "晚上",
+      "习惯",
+      "日常词汇"
     ]
   },
   {
@@ -63582,6 +64151,15 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "家居用品",
+      "家电",
+      "厨房用具",
+      "cleaning supplies",
+      "家务",
+      "家庭生活",
+      "日常用品"
     ]
   },
   {
@@ -63605,6 +64183,15 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "房间",
+      "卧室",
+      "客厅",
+      "厨房",
+      "卫生间",
+      "家居布局",
+      "室内设计"
     ]
   },
   {
@@ -63628,6 +64215,15 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "家具",
+      "沙发",
+      "桌子",
+      "椅子",
+      "书柜",
+      "家居装饰",
+      "室内家具"
     ]
   },
   {
@@ -63651,6 +64247,16 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "厨房用具",
+      "烹饪工具",
+      "食材",
+      "厨房设备",
+      "厨房用品",
+      "菜刀",
+      "锅具",
+      "餐具"
     ]
   },
   {
@@ -63674,6 +64280,16 @@
       "vocabulary",
       "kawaii",
       "family"
+    ],
+    "search_aliases": [
+      "浴室用品",
+      "洗漱工具",
+      "卫生间",
+      "沐浴产品",
+      "浴巾",
+      "洗手液",
+      "浴缸",
+      "马桶"
     ]
   },
   {
@@ -63697,6 +64313,16 @@
       "vocabulary",
       "kawaii",
       "school"
+    ],
+    "search_aliases": [
+      "教室用品",
+      "学习工具",
+      "书本",
+      "文具",
+      "黑板",
+      "桌椅",
+      "学生",
+      "老师"
     ]
   },
   {
@@ -63720,6 +64346,16 @@
       "vocabulary",
       "kawaii",
       "school"
+    ],
+    "search_aliases": [
+      "学校课程",
+      "学科",
+      "教育",
+      "课堂",
+      "学习材料",
+      "学生",
+      "教师",
+      "知识"
     ]
   },
   {
@@ -63789,6 +64425,16 @@
       "vocabulary",
       "kawaii",
       "school"
+    ],
+    "search_aliases": [
+      "乐器",
+      "音乐",
+      "钢琴",
+      "吉他",
+      "小号",
+      "打击乐器",
+      "音符",
+      "旋律"
     ]
   },
   {
@@ -63812,6 +64458,16 @@
       "vocabulary",
       "kawaii",
       "school"
+    ],
+    "search_aliases": [
+      "形状",
+      "颜色",
+      "圆形",
+      "方形",
+      "红色",
+      "蓝色",
+      "彩虹",
+      "图案"
     ]
   },
   {
@@ -63835,6 +64491,16 @@
       "vocabulary",
       "kawaii",
       "school"
+    ],
+    "search_aliases": [
+      "数字",
+      "计数",
+      "一到十",
+      "数学",
+      "加法",
+      "减法",
+      "序列",
+      "统计"
     ]
   },
   {
@@ -63858,6 +64524,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "汽车",
+      "卡车",
+      "车辆",
+      "交通工具",
+      "驾驶",
+      "车轮",
+      "引擎"
     ]
   },
   {
@@ -63881,6 +64556,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "公共交通",
+      "地铁",
+      "巴士",
+      "出租车",
+      "通勤",
+      "车站",
+      "票务"
     ]
   },
   {
@@ -63904,6 +64588,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "船只",
+      "航海",
+      "海洋",
+      "港口",
+      "帆船",
+      "渔船",
+      "水上交通"
     ]
   },
   {
@@ -63927,6 +64620,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "飞机",
+      "直升机",
+      "航空",
+      "飞行",
+      "空中交通",
+      "飞行器",
+      "航空公司"
     ]
   },
   {
@@ -63950,6 +64652,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "自行车",
+      "轮子",
+      "单车",
+      "骑行",
+      "交通工具",
+      "运动",
+      "山地车"
     ]
   },
   {
@@ -63973,6 +64684,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "救护车",
+      "消防车",
+      "警车",
+      "紧急服务",
+      "救援车辆",
+      "急救",
+      "交通安全"
     ]
   },
   {
@@ -63996,6 +64716,15 @@
       "vocabulary",
       "kawaii",
       "transportation"
+    ],
+    "search_aliases": [
+      "交通标志",
+      "路标",
+      "安全标志",
+      "指示牌",
+      "行车规则",
+      "驾驶",
+      "道路安全"
     ]
   },
   {
@@ -64065,6 +64794,15 @@
       "vocabulary",
       "kawaii",
       "celebration"
+    ],
+    "search_aliases": [
+      "圣诞节",
+      "Christmas tree",
+      "礼物",
+      "节日",
+      "雪花",
+      "冬季",
+      "装饰品"
     ]
   },
   {
@@ -64134,6 +64872,15 @@
       "vocabulary",
       "kawaii",
       "celebration"
+    ],
+    "search_aliases": [
+      "春节",
+      "红包",
+      "年夜饭",
+      "dragon dance",
+      "fireworks",
+      "lion dance",
+      "新年习俗"
     ]
   },
   {
@@ -64157,6 +64904,15 @@
       "vocabulary",
       "kawaii",
       "celebration"
+    ],
+    "search_aliases": [
+      "婚礼",
+      "新娘",
+      "伴郎",
+      "结婚誓言",
+      "婚纱",
+      "婚宴",
+      "喜糖"
     ]
   },
   {
@@ -64180,6 +64936,15 @@
       "vocabulary",
       "kawaii",
       "celebration"
+    ],
+    "search_aliases": [
+      "感恩节",
+      "火鸡",
+      "南瓜派",
+      "家庭聚会",
+      "感恩",
+      "丰收",
+      "节日传统"
     ]
   },
   {
@@ -64203,6 +64968,16 @@
       "vocabulary",
       "kawaii",
       "celebration"
+    ],
+    "search_aliases": [
+      "中秋节",
+      "月饼",
+      "团圆",
+      "秋天",
+      "节日",
+      "庆祝活动",
+      "灯笼",
+      "传统习俗"
     ]
   },
   {
@@ -64226,6 +65001,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "身体",
+      "手",
+      "脚",
+      "头",
+      "器官",
+      "解剖",
+      "健康",
+      "生物"
     ]
   },
   {
@@ -64249,6 +65034,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "面部",
+      "眼睛",
+      "鼻子",
+      "嘴巴",
+      "表情",
+      "皮肤",
+      "五官",
+      "特征"
     ]
   },
   {
@@ -64272,6 +65067,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "感官",
+      "视觉",
+      "听觉",
+      "嗅觉",
+      "味觉",
+      "触觉",
+      "五感",
+      "学习工具"
     ]
   },
   {
@@ -64295,6 +65100,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "手部",
+      "手指",
+      "手掌",
+      "握手",
+      "动作",
+      "手势",
+      "手工",
+      "学习材料"
     ]
   },
   {
@@ -64318,6 +65133,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "医生",
+      "健康",
+      "医疗",
+      "诊所",
+      "病人",
+      "检查",
+      "症状",
+      "就医"
     ]
   },
   {
@@ -64341,6 +65166,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "健康习惯",
+      "健康生活",
+      "饮食",
+      "锻炼",
+      "健康小贴士",
+      "wellness",
+      "nutrition",
+      "exercise"
     ]
   },
   {
@@ -64364,6 +65199,16 @@
       "vocabulary",
       "kawaii",
       "body"
+    ],
+    "search_aliases": [
+      "身体动作",
+      "运动",
+      "舞蹈",
+      "姿势",
+      "身体语言",
+      "动作词汇",
+      "flexibility",
+      "coordination"
     ]
   },
   {
@@ -64387,6 +65232,16 @@
       "vocabulary",
       "kawaii",
       "emotions"
+    ],
+    "search_aliases": [
+      "基本情感",
+      "快乐",
+      "悲伤",
+      "愤怒",
+      "情绪词汇",
+      "感受",
+      "心情",
+      "心理状态"
     ]
   },
   {
@@ -64410,6 +65265,14 @@
       "vocabulary",
       "kawaii",
       "emotions"
+    ],
+    "search_aliases": [
+      "面部表情",
+      "表情词汇",
+      "情感表达",
+      "情绪词汇",
+      "面部动作",
+      "面部特征"
     ]
   },
   {
@@ -64433,6 +65296,14 @@
       "vocabulary",
       "kawaii",
       "emotions"
+    ],
+    "search_aliases": [
+      "情感",
+      "心情",
+      "心理状态",
+      "情绪变化",
+      "感受",
+      "情绪词汇"
     ]
   },
   {
@@ -64456,6 +65327,14 @@
       "vocabulary",
       "kawaii",
       "emotions"
+    ],
+    "search_aliases": [
+      "快乐",
+      "悲伤",
+      "情绪对比",
+      "积极情绪",
+      "消极情绪",
+      "情感词汇"
     ]
   },
   {
@@ -64479,6 +65358,16 @@
       "vocabulary",
       "kawaii",
       "emotions"
+    ],
+    "search_aliases": [
+      "平静",
+      "兴奋",
+      "情绪词汇",
+      "语言学习",
+      "双语卡片",
+      "学习工具",
+      "情感表达",
+      "词汇表"
     ]
   }
 ]

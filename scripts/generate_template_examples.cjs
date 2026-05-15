@@ -23,7 +23,7 @@
 //   node scripts/generate_template_examples.cjs --config=... --topics=animals,nature
 //   node scripts/generate_template_examples.cjs --config=... --dry-run
 //   node scripts/generate_template_examples.cjs --config=... --sync
-//   node scripts/generate_template_examples.cjs --config=... --auto-tag
+//   node scripts/generate_template_examples.cjs --config=... --no-auto-tag
 //   node scripts/generate_template_examples.cjs --config=... --no-watermark
 //   node scripts/generate_template_examples.cjs --config=... --model=gemini-2.5-flash-image
 //
@@ -42,10 +42,11 @@
 // (clean). The pack folder is gitignored; use build_template_packs.cjs
 // --mode=sku to zip + upload to Azure once enough images accumulate.
 //
-// Auto-tag: --auto-tag picks one Tier-3 topic tag per record via
-// gpt-4o-mini, using the parent template's Tier-1 ancestor. Same
-// implementation as sync_nano_inspiration.cjs (scripts/lib/auto_tag.cjs).
-// Requires OPENAI_API_KEY.
+// Auto-tag (default ON): picks one Tier-3 topic tag per record AND
+// enriches search_aliases via gpt-4o-mini, using the parent template's
+// Tier-1 ancestor. Same implementation as sync_nano_inspiration.cjs
+// (scripts/lib/auto_tag.cjs). Requires OPENAI_API_KEY. Pass
+// --no-auto-tag to skip (offline reruns / OpenAI outage).
 
 "use strict";
 
@@ -108,8 +109,10 @@ function parseArgs() {
     // so config-driven batches match the gallery ingest behavior in
     // sync_nano_inspiration.cjs. Opt out with --no-watermark.
     watermark: true,
-    // Auto-tag opt-in (parallels sync_nano_inspiration.cjs --auto-tag).
-    autoTag: false,
+    // Default ON — parallels sync_nano_inspiration.cjs. Runs Tier-3 auto-
+    // tagging AND search_aliases enrichment on the new records before write.
+    // Pass --no-auto-tag to skip (offline / OpenAI-down rerun).
+    autoTag: true,
     autoTagModel: "gpt-4o-mini",
     // --pack=<sku> ALSO writes the pre-watermark image to packs/<sku>/
     // so we can ship clean (unwatermarked) bytes to Etsy SKU buyers while
@@ -120,7 +123,8 @@ function parseArgs() {
     if (a === "--sync")          out.sync   = true;
     else if (a === "--dry-run")  out.dryRun = true;
     else if (a === "--no-watermark") out.watermark = false;
-    else if (a === "--auto-tag") out.autoTag = true;
+    else if (a === "--auto-tag") out.autoTag = true;            // explicit ON (default)
+    else if (a === "--no-auto-tag") out.autoTag = false;        // opt out
     else if (a.startsWith("--auto-tag-model=")) out.autoTagModel = a.split("=").slice(1).join("=");
     else if (a.startsWith("--config=")) out.config = path.resolve(a.split("=").slice(1).join("="));
     else if (a.startsWith("--topics=") || a.startsWith("--tags="))
