@@ -1,4 +1,27 @@
 // scripts/build_template_packs.cjs
+//
+// Two modes:
+//
+//   --mode=template (default — backwards compatible)
+//     For each template with batch=true (or filtered via --only=id,id):
+//     picks 5 random inspirations, downloads from CDN, zips to
+//     packs/<template_id>/pack.zip, uploads to Azure at the same path.
+//
+//   --mode=sku
+//     For each SKU folder named via --sku=name,name (or all subfolders
+//     under packs/ that are not legacy template-* prefixed): zips ALL
+//     local images in packs/<sku>/ flat, uploads to Azure at
+//     packs/sku/<sku>/pack-v<N>.zip. Source images are expected to
+//     already be curated and present locally. No CDN download, no
+//     random sampling.
+//
+// Examples:
+//   node scripts/build_template_packs.cjs
+//   node scripts/build_template_packs.cjs --only=template-foo --skip-build
+//   node scripts/build_template_packs.cjs --mode=sku --sku=mbti-character
+//   node scripts/build_template_packs.cjs --mode=sku --sku=mbti-character,vocabulary --version=2
+//   node scripts/build_template_packs.cjs --mode=sku --sku=mbti-character --skip-build
+
 require("dotenv").config({ path: ".env.local" });
 
 const fs = require("fs");
@@ -29,22 +52,86 @@ const TMP_DIR = path.join(ROOT, ".tmp_packs");
 
 function parseArgs(argv) {
   const args = {
+    mode: "template",
     skipBuild: false,
     only: null,
+    skus: null,
+    version: 1,
   };
 
   for (const arg of argv) {
     if (arg === "--skip-build") {
       args.skipBuild = true;
+    } else if (arg.startsWith("--mode=")) {
+      args.mode = arg.slice("--mode=".length).trim();
     } else if (arg.startsWith("--only=")) {
       const raw = arg.slice("--only=".length).trim();
       args.only = raw
         ? raw.split(",").map((s) => s.trim()).filter(Boolean)
         : [];
+    } else if (arg.startsWith("--sku=")) {
+      const raw = arg.slice("--sku=".length).trim();
+      args.skus = raw
+        ? raw.split(",").map((s) => s.trim()).filter(Boolean)
+        : [];
+    } else if (arg.startsWith("--version=")) {
+      args.version = parseInt(arg.slice("--version=".length), 10);
     }
   }
 
+  if (!["template", "sku"].includes(args.mode)) {
+    throw new Error(`--mode must be 'template' or 'sku', got '${args.mode}'`);
+  }
+  if (args.mode === "sku" && (!Number.isFinite(args.version) || args.version < 1)) {
+    throw new Error("--version must be a positive integer");
+  }
+
   return args;
+}
+
+const SKU_IMG_EXTS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+
+function listLocalImages(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((e) => e.isFile() && SKU_IMG_EXTS.has(path.extname(e.name).toLowerCase()))
+    .map((e) => path.join(dir, e.name))
+    .sort();
+}
+
+function localSkuZipPath(sku) {
+  return path.join(PACKS_DIR, sku, "pack.zip");
+}
+
+function blobSkuPath(sku, version) {
+  return `packs/sku/${sku}/pack-v${version}.zip`;
+}
+
+function buildSkuPack(sku) {
+  const srcDir = path.join(PACKS_DIR, sku);
+  const files = listLocalImages(srcDir);
+  if (files.length === 0) {
+    console.warn(`Skip ${sku}: no images in ${path.relative(ROOT, srcDir)}/`);
+    return null;
+  }
+
+  const zipPath = localSkuZipPath(sku);
+  console.log(`\nBuilding sku pack: ${sku}`);
+  console.log(`Zipping ${files.length} images from ${path.relative(ROOT, srcDir)}/`);
+  buildZip(zipPath, files);
+  console.log(`Saved: ${path.relative(ROOT, zipPath)}`);
+  return zipPath;
+}
+
+async function uploadSkuPack(sku, version) {
+  const zipPath = localSkuZipPath(sku);
+  ensureFileExists(zipPath, `Pack zip not found for sku '${sku}': ${path.relative(ROOT, zipPath)}`);
+  const blobPath = blobSkuPath(sku, version);
+  console.log(`Uploading: ${path.relative(ROOT, zipPath)} -> ${blobPath}`);
+  const blobUrl = await uploadFileToAzure(zipPath, blobPath);
+  console.log(`Uploaded: ${blobUrl}`);
+  return { zipPath, blobPath, blobUrl };
 }
 
 function readJson(filePath) {
@@ -203,9 +290,7 @@ async function uploadPackForTemplate(templateId) {
   return { zipPath, blobPath, blobUrl };
 }
 
-async function main() {
-  const args = parseArgs(process.argv.slice(2));
-
+async function runTemplateMode(args) {
   const templates = readJson(TEMPLATES_JSON);
   const inspirations = readJson(INSPIRATION_JSON);
 
@@ -226,9 +311,8 @@ async function main() {
   }
 
   console.log(`Found ${batchTemplateIds.length} batch templates`);
-  console.log(`Mode: ${args.skipBuild ? "upload-only (--skip-build)" : "build+upload"}`);
+  console.log(`Action: ${args.skipBuild ? "upload-only (--skip-build)" : "build+upload"}`);
 
-  mkdirp(PACKS_DIR);
   mkdirp(TMP_DIR);
 
   const summary = [];
@@ -251,7 +335,7 @@ async function main() {
 
       const uploaded = await uploadPackForTemplate(templateId);
       summary.push({
-        templateId,
+        id: templateId,
         zipPath: path.relative(ROOT, uploaded.zipPath),
         blobPath: uploaded.blobPath,
         blobUrl: uploaded.blobUrl,
@@ -261,9 +345,69 @@ async function main() {
     }
   }
 
+  return summary;
+}
+
+async function runSkuMode(args) {
+  let skus = args.skus;
+  if (!skus) {
+    // Default: every subfolder under packs/ that is NOT a legacy
+    // template-* folder. Skips any folder whose name starts with
+    // "template-" since those are handled by template mode.
+    skus = fs
+      .readdirSync(PACKS_DIR, { withFileTypes: true })
+      .filter((e) => e.isDirectory() && !e.name.startsWith("template-"))
+      .map((e) => e.name)
+      .sort();
+  }
+
+  console.log(`SKU packs: ${skus.length ? skus.join(", ") : "(none)"}`);
+  console.log(`Version: v${args.version}`);
+  console.log(`Action: ${args.skipBuild ? "upload-only (--skip-build)" : "build+upload"}`);
+
+  const summary = [];
+
+  for (const sku of skus) {
+    try {
+      if (!args.skipBuild) {
+        const builtZip = buildSkuPack(sku);
+        if (!builtZip) continue;
+      } else {
+        const zipPath = localSkuZipPath(sku);
+        if (!fs.existsSync(zipPath)) {
+          console.warn(`Skip ${sku}: pack zip does not exist at ${path.relative(ROOT, zipPath)}`);
+          continue;
+        }
+        console.log(`\nSkip build for ${sku}, using existing zip`);
+      }
+
+      const uploaded = await uploadSkuPack(sku, args.version);
+      summary.push({
+        id: sku,
+        zipPath: path.relative(ROOT, uploaded.zipPath),
+        blobPath: uploaded.blobPath,
+        blobUrl: uploaded.blobUrl,
+      });
+    } catch (err) {
+      console.error(`Failed for ${sku}:`, err.message || err);
+    }
+  }
+
+  return summary;
+}
+
+async function main() {
+  const args = parseArgs(process.argv.slice(2));
+
+  console.log(`Mode: ${args.mode}`);
+  mkdirp(PACKS_DIR);
+
+  const summary =
+    args.mode === "template" ? await runTemplateMode(args) : await runSkuMode(args);
+
   console.log("\nSummary:");
   for (const row of summary) {
-    console.log(`- ${row.templateId}`);
+    console.log(`- ${row.id}`);
     console.log(`  zip:  ${row.zipPath}`);
     console.log(`  blob: ${row.blobPath}`);
     console.log(`  url:  ${row.blobUrl}`);
