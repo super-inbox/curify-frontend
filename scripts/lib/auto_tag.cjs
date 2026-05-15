@@ -275,12 +275,186 @@ async function tagInspirationsVision({ records, openai, cdnBase, concurrency = 5
   return results;
 }
 
+// ── search-alias enrichment ─────────────────────────────────────────────────
+//
+// Generates 5–8 hidden search synonyms per inspiration record (Chinese +
+// English) so users typing terms like "鲜花" / "重庆" find the right
+// content even when params/locales are English-only. Fed into the search
+// blob in app/[locale]/(public)/search/page.tsx via record.search_aliases.
+//
+// Same shared module as autoTagInspirations so both content-ingestion
+// scripts pick this up automatically:
+//   - scripts/sync_nano_inspiration.cjs
+//   - scripts/generate_template_examples.cjs
+//
+// Also called by scripts/enrich_search_aliases.cjs for catalog backfill.
+
+let _enNanoByIdCache = null;
+function getEnNanoById() {
+  if (_enNanoByIdCache) return _enNanoByIdCache;
+  try {
+    const fs = require("fs");
+    const enNanoPath = path.join(__dirname, "..", "..", "messages", "en", "nano.json");
+    const data = JSON.parse(fs.readFileSync(enNanoPath, "utf-8"));
+    _enNanoByIdCache = new Map(Object.entries(data));
+  } catch {
+    _enNanoByIdCache = new Map();
+  }
+  return _enNanoByIdCache;
+}
+
+function buildAliasContext(record, templatesById, enNanoById) {
+  const tpl = templatesById.get(record.template_id) ?? {};
+  const tplI18n = enNanoById.get(record.template_id) ?? {};
+  return {
+    id: record.id,
+    template_id: record.template_id,
+    template_title: tplI18n.title || "",
+    template_category: tplI18n.category || "",
+    template_description: (tplI18n.description || "").slice(0, 200),
+    params: record.params || {},
+    locales: {
+      en: record.locales?.en?.title ?? "",
+      zh: record.locales?.zh?.title ?? "",
+    },
+    existing_tags: record.topics || record.tags || [],
+  };
+}
+
+const ALIAS_SYSTEM_PROMPT = `\
+You generate hidden search synonyms for image records in a creative-AI catalog.
+
+For each record you receive (template + params + existing tags), output 5–8
+terms a user might TYPE into search to find that image. Mix Chinese and
+English. Prefer concrete nouns the user might search for that are NOT
+already in the record (subject, theme, related concept, common synonyms,
+alternate phrasings). Skip the literal id/template_id/param values that are
+already searchable.
+
+Output strict JSON: an object keyed by record id, value is an array of
+strings. No prose, no markdown fences. Example:
+
+{"template-herbal-lily":["鲜花","花朵","百合花","white flower","wedding flower"]}`;
+
+async function _enrichBatch(openai, model, contexts) {
+  const userPrompt = `Records (one per line):\n${contexts
+    .map((c) => JSON.stringify(c, null, 0))
+    .join("\n")}\n\nReturn the JSON object now.`;
+  const resp = await openai.chat.completions.create({
+    model,
+    response_format: { type: "json_object" },
+    temperature: 0.3,
+    max_tokens: 2500,
+    messages: [
+      { role: "system", content: ALIAS_SYSTEM_PROMPT },
+      { role: "user", content: userPrompt },
+    ],
+  });
+  const raw = (resp.choices?.[0]?.message?.content || "{}").trim();
+  const parsed = JSON.parse(raw);
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    throw new Error(`expected JSON object keyed by id, got ${typeof parsed}`);
+  }
+  return parsed;
+}
+
+/**
+ * For each record, asks the model for 5–8 hidden search synonyms and
+ * writes them to record.search_aliases. Mutates in place. Skips records
+ * that already have a non-empty search_aliases unless force=true.
+ *
+ * @param {Array}  records         inspiration records to enrich
+ * @param {Map}    templatesById   template-id → template object
+ * @param {object} openai          OpenAI client (from tryBuildOpenAIClient)
+ * @param {string} model           model id, e.g. "gpt-4o-mini"
+ * @param {object} [opts]
+ * @param {Map}    [opts.enNanoById] override for messages/en/nano.json map (auto-loaded if omitted)
+ * @param {number} [opts.batchSize=5]    records per LLM call
+ * @param {number} [opts.concurrency=4]  parallel LLM calls
+ * @param {boolean}[opts.force=false]    re-enrich records that already have aliases
+ * @returns {Promise<{enriched: number, skipped: number, failed: number}>}
+ */
+async function enrichSearchAliases(records, templatesById, openai, model, opts = {}) {
+  if (!records || records.length === 0) {
+    return { enriched: 0, skipped: 0, failed: 0 };
+  }
+  const enNanoById = opts.enNanoById || getEnNanoById();
+  const batchSize = opts.batchSize ?? 5;
+  const concurrency = opts.concurrency ?? 4;
+  const force = !!opts.force;
+
+  const targets = records.filter(
+    (r) => force || !Array.isArray(r.search_aliases) || r.search_aliases.length === 0
+  );
+  const preSkipped = records.length - targets.length;
+  if (targets.length === 0) {
+    return { enriched: 0, skipped: preSkipped, failed: 0 };
+  }
+
+  const recordsById = new Map(records.map((r) => [r.id, r]));
+  const batches = [];
+  for (let i = 0; i < targets.length; i += batchSize) {
+    batches.push(targets.slice(i, i + batchSize));
+  }
+
+  let enriched = 0;
+  let failed = 0;
+  let batchesDone = 0;
+
+  // Simple bounded-concurrency executor.
+  let cursor = 0;
+  async function runOne() {
+    while (true) {
+      const idx = cursor++;
+      if (idx >= batches.length) return;
+      const batch = batches[idx];
+      const contexts = batch.map((r) => buildAliasContext(r, templatesById, enNanoById));
+      try {
+        const result = await _enrichBatch(openai, model, contexts);
+        for (const rec of batch) {
+          const aliases = result[rec.id];
+          if (!Array.isArray(aliases) || aliases.length === 0) {
+            failed++;
+            continue;
+          }
+          const cleaned = Array.from(
+            new Set(
+              aliases
+                .filter((x) => typeof x === "string")
+                .map((x) => x.trim())
+                .filter((x) => x.length > 0 && x.length <= 60)
+            )
+          );
+          if (cleaned.length === 0) {
+            failed++;
+            continue;
+          }
+          const target = recordsById.get(rec.id);
+          if (target) {
+            target.search_aliases = cleaned;
+            enriched++;
+          }
+        }
+      } catch (err) {
+        for (const _ of batch) failed++;
+        process.stderr.write(`[search_aliases] batch failed: ${err.message}\n`);
+      }
+      batchesDone++;
+      process.stdout.write(`[search_aliases] batch ${batchesDone}/${batches.length} done (enriched=${enriched} failed=${failed})\n`);
+    }
+  }
+  await Promise.all(Array.from({ length: concurrency }, runOne));
+
+  return { enriched, skipped: preSkipped, failed };
+}
+
 module.exports = {
   TIER1_TAG_CHILDREN,
   EXPLICIT_CHILD_TOPICS,
   TIER2_TO_TIER1,
   findTier1WithTagChildren,
   autoTagInspirations,
+  enrichSearchAliases,
   tryBuildOpenAIClient,
   // Vision-based open-vocabulary tagging:
   fetchBuffer,

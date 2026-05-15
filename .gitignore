@@ -54,3 +54,11 @@ scripts/sync_large_assets_temp.sh
 scripts/sync_large_assets_temp.sh
 scripts/test_redis.cjs
 .tmp_packs/
+
+# Raw pack images live on Azure, not git. Existing packs/<template>/pack.zip
+# files stay tracked (small, 3-12MB each); only loose source images are
+# ignored. Pattern catches packs/mbti-character/, packs/vocabulary/, etc.
+packs/**/*.jpg
+packs/**/*.jpeg
+packs/**/*.png
+packs/**/*.webp

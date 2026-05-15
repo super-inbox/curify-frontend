@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, Copy, Share2 } from "lucide-react";
+import { Star, Copy, Share } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
@@ -70,7 +70,7 @@ export function ActionButtons({
         className={classNames(baseBtn, shared && "text-blue-700")}
         aria-label={t("share")}
       >
-        <Share2 className={classNames(baseIcon, "stroke-[1.4]")} />
+        <Share className={classNames(baseIcon, "stroke-[1.4]")} />
         <span className={baseCount}>{shareCount}</span>
       </button>
     </div>

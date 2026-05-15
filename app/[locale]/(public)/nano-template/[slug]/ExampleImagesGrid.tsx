@@ -158,7 +158,7 @@ function ExampleImageCard({
             className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            Remix this
+            {t("remixThis")}
           </Link>
         )}
         <ShareButton

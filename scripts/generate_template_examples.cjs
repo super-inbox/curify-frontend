@@ -36,6 +36,12 @@
 // preview inherits the watermark. Pass --no-watermark to skip (for
 // internal testing).
 //
+// Pack: --pack=<sku> also saves the PRE-watermark image to
+// packs/<sku>/<recordId>.jpg so the same generation run can populate
+// both the public gallery (watermarked) AND a curated Etsy SKU pack
+// (clean). The pack folder is gitignored; use build_template_packs.cjs
+// --mode=sku to zip + upload to Azure once enough images accumulate.
+//
 // Auto-tag: --auto-tag picks one Tier-3 topic tag per record via
 // gpt-4o-mini, using the parent template's Tier-1 ancestor. Same
 // implementation as sync_nano_inspiration.cjs (scripts/lib/auto_tag.cjs).
@@ -61,7 +67,11 @@ try { require("dotenv").config({ path: ".env.local" }); } catch {}
 
 const { GoogleGenAI, Modality } = require("@google/genai");
 const { applyTiledWatermark } = require("./lib/watermark.cjs");
-const { autoTagInspirations, tryBuildOpenAIClient } = require("./lib/auto_tag.cjs");
+const {
+  autoTagInspirations,
+  enrichSearchAliases,
+  tryBuildOpenAIClient,
+} = require("./lib/auto_tag.cjs");
 
 // ── Paths ────────────────────────────────────────────────────────────────────
 
@@ -101,6 +111,10 @@ function parseArgs() {
     // Auto-tag opt-in (parallels sync_nano_inspiration.cjs --auto-tag).
     autoTag: false,
     autoTagModel: "gpt-4o-mini",
+    // --pack=<sku> ALSO writes the pre-watermark image to packs/<sku>/
+    // so we can ship clean (unwatermarked) bytes to Etsy SKU buyers while
+    // the public gallery keeps the watermarked copy. Off by default.
+    pack: null,
   };
   for (const a of args) {
     if (a === "--sync")          out.sync   = true;
@@ -112,6 +126,7 @@ function parseArgs() {
     else if (a.startsWith("--topics=") || a.startsWith("--tags="))
       out.topicsFilter = a.split("=")[1].split(",").map((s) => s.trim()).filter(Boolean);
     else if (a.startsWith("--model=")) out.model = a.split("=")[1];
+    else if (a.startsWith("--pack=")) out.pack = a.split("=").slice(1).join("=").trim() || null;
   }
   if (!out.config) {
     console.error("❌ --config=path/to/config.json is required");
@@ -248,6 +263,7 @@ async function main() {
   if (args.topicsFilter) console.log("filter:    ", args.topicsFilter.join(", "));
   console.log("model:     ", args.model);
   console.log("watermark: ", args.watermark);
+  console.log("pack:      ", args.pack ? `packs/${args.pack}/ (unwatermarked copy)` : "(none)");
   console.log("auto-tag:  ", args.autoTag, args.autoTag ? `(model=${args.autoTagModel})` : "");
   console.log("dry-run:   ", args.dryRun, "| sync:", args.sync);
   console.log("");
@@ -262,8 +278,10 @@ async function main() {
   );
   const stagingImageDir = path.join(stagingRoot, "nano_insp");
   const stagingPreviewDir = path.join(stagingRoot, "nano_insp_preview");
+  const stagingPackDir = args.pack ? path.join(stagingRoot, "pack") : null;
   fs.mkdirSync(stagingImageDir, { recursive: true });
   fs.mkdirSync(stagingPreviewDir, { recursive: true });
+  if (stagingPackDir) fs.mkdirSync(stagingPackDir, { recursive: true });
   console.log(`staging:   ${stagingRoot}\n`);
 
   fs.mkdirSync(IMAGE_DIR,   { recursive: true });
@@ -338,6 +356,12 @@ async function main() {
         try {
           const imageBuffer = await geminiImage(filledPrompt, args.model);
           await fsp.writeFile(imagePath, imageBuffer);
+          // Save the unwatermarked copy for the pack BEFORE watermarking
+          // the gallery copy in place. Same filename so the pack zip
+          // entries line up with the inspiration record IDs.
+          if (stagingPackDir) {
+            await fsp.writeFile(path.join(stagingPackDir, imageFileName), imageBuffer);
+          }
           // Tilted watermark goes on the full image first; the preview
           // is derived from this file so it inherits the watermark too.
           if (args.watermark) applyTiledWatermark(imagePath, imagePath);
@@ -399,6 +423,22 @@ async function main() {
     }
     console.log(`Copied ${copied} full + ${copied} preview images.`);
 
+    // Promote unwatermarked copies to packs/<sku>/ for the Etsy SKU
+    // pipeline. Skips silently if --pack was not passed.
+    if (stagingPackDir) {
+      const packDir = path.join(ROOT, "packs", args.pack);
+      fs.mkdirSync(packDir, { recursive: true });
+      let packCopied = 0;
+      for (const fname of fs.readdirSync(stagingPackDir)) {
+        fs.copyFileSync(
+          path.join(stagingPackDir, fname),
+          path.join(packDir, fname)
+        );
+        packCopied++;
+      }
+      console.log(`📦 Copied ${packCopied} unwatermarked → packs/${args.pack}/`);
+    }
+
     // Auto-tag mutates record.topics in place before we write JSON, so
     // the persisted records carry the gpt-picked Tier-3 tag.
     if (args.autoTag) {
@@ -414,6 +454,17 @@ async function main() {
           args.autoTagModel
         );
         console.log(`Tagged: ${stats.tagged} | Skipped: ${stats.skipped} | Failed: ${stats.failed}`);
+
+        // Same --auto-tag flag also enriches search_aliases so new
+        // records ship with Chinese/English synonyms in the search blob.
+        console.log(`\n🔎 Enriching search aliases for ${addedRecords.length} new records ...`);
+        const aliasStats = await enrichSearchAliases(
+          addedRecords,
+          templatesById,
+          openai,
+          args.autoTagModel
+        );
+        console.log(`Aliases: enriched=${aliasStats.enriched} skipped=${aliasStats.skipped} failed=${aliasStats.failed}`);
       }
     }
 

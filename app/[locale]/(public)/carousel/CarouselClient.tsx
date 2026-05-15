@@ -20,7 +20,7 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Check, ChevronLeft, ChevronRight, Copy, Share2, X } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Copy, Share, X } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import ExampleVideoPlayer from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleVideoPlayer";
@@ -487,7 +487,7 @@ export default function CarouselClient(props: Props) {
               {shareStatus === "copied" ? (
                 <Check className="h-5 w-5 text-green-400" />
               ) : (
-                <Share2 className="h-5 w-5" />
+                <Share className="h-5 w-5" />
               )}
             </button>
             <button

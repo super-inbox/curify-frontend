@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Share2, Link2, Check } from "lucide-react";
+import { Share, Link2, Check } from "lucide-react";
 import { isMobileLikeDevice } from "@/lib/device";
 
 type ShareButtonProps = {
@@ -244,7 +244,7 @@ export default function ShareButton({
         aria-label="Share"
         aria-expanded={isOpen}
       >
-        <Share2
+        <Share
           className={compact ? "h-3.5 w-3.5" : "h-4 w-4 transition-transform duration-300"}
           style={{ transform: isOpen ? "rotate(20deg)" : "rotate(0deg)" }}
         />
