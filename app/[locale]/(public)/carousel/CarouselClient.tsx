@@ -29,6 +29,7 @@ import PromptRightColumn from "./PromptRightColumn";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { useTracking } from "@/services/useTracking";
 import { useIsMobileLikeDevice } from "@/lib/device";
+import { toSlug } from "@/lib/nano_utils";
 import type { TemplateParameter } from "@/lib/nano_utils";
 import type { ExistingExampleRef } from "@/lib/editDistance";
 
@@ -177,6 +178,12 @@ type TemplateExampleProps = {
   templateBatch: boolean;
   basePrompt: string;
   existingExamples: ExistingExampleRef[];
+  // If set (the grid passes its own page URL via ?from=…), close
+  // returns the user there instead of the per-example detail page.
+  closeHref?: string;
+  // Raw comma-separated id list as it arrived in the URL. Persisted on
+  // every URL sync so refresh / share keeps the grid sequence intact.
+  gridIds?: string;
 };
 
 type PromptGalleryProps = {
@@ -232,9 +239,19 @@ export default function CarouselClient(props: Props) {
     return () => cancelAnimationFrame(raf);
   }, [animate]);
 
-  // Close handler — go back to the underlying detail page of the active
-  // slide (or the parent listing if no slide for some reason).
+  // Close handler — if the entry-point grid handed us its own URL via
+  // ?from=, navigate back there (so a /topics or /search user lands
+  // back on the page they were browsing). Otherwise fall back to the
+  // underlying detail page of the active slide, or the parent listing
+  // if no slide for some reason.
   const close = useCallback(() => {
+    if (mode === "template-example") {
+      const tProps = props as TemplateExampleProps;
+      if (tProps.closeHref) {
+        router.push(tProps.closeHref);
+        return;
+      }
+    }
     if (!slide) {
       const fallback =
         mode === "template-example"
@@ -263,13 +280,25 @@ export default function CarouselClient(props: Props) {
   }, []);
 
   // Sync URL to the active slide (replaceState so back-button exits the
-  // carousel rather than walking through every slide).
+  // carousel rather than walking through every slide). Slides can span
+  // templates (grid-context mode), so derive the slug from the current
+  // slide's templateId rather than the entry-point slug. Preserve ids
+  // and from so refresh / share keeps both the sequence and close target.
   useEffect(() => {
     if (!slide) return;
     let url: string;
     if (mode === "template-example") {
       const tProps = props as TemplateExampleProps;
-      url = `/${locale}/carousel/template-example/${tProps.slug}/${encodeURIComponent(slide.id as string)}?media=${tProps.media}`;
+      const slideSlug = toSlug((slide as TemplateExampleSlide).templateId);
+      const params = new URLSearchParams();
+      params.set("media", tProps.media);
+      if (tProps.closeHref) {
+        params.set("from", tProps.closeHref);
+      }
+      if (tProps.gridIds) {
+        params.set("ids", tProps.gridIds);
+      }
+      url = `/${locale}/carousel/template-example/${slideSlug}/${encodeURIComponent(slide.id as string)}?${params.toString()}`;
     } else {
       url = `/${locale}/carousel/prompt-gallery/${slide.id}`;
     }

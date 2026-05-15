@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Download, Play, Sparkles } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -48,12 +49,19 @@ function useCols() {
 
 // ── Card ────────────────────────────────────────────────────────────────────
 
+// Cap how many ids ride the URL. 40 covers the typical visible window
+// without busting browser URL limits (~8KB). Slides beyond #40 fall
+// back to the template-scoped order inside the carousel page.
+const CAROUSEL_IDS_CAP = 40;
+
 function ExampleImageCard({
   item,
   locale,
+  carouselContext,
 }: {
   item: Item;
   locale: string;
+  carouselContext: string; // pre-encoded "&from=...&ids=..."
 }) {
   const trackClick = useClickTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
   const { trackVideoClick } = useVideoTracking(`${item.templateId}:${item.id}`, "nano_inspiration_example_grid", "cards");
@@ -78,7 +86,12 @@ function ExampleImageCard({
     return `/${locale}/nano-template/${toSlug(item.templateId)}${qs}#reproduce`;
   })();
 
-  const carouselHref = `/${locale}/carousel/template-example/${toSlug(item.templateId)}/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}`;
+  // Append &from=<grid pathname> and &ids=<grid order> so the carousel
+  // (a) sequences slides in the same order the user saw on the grid,
+  // (b) closes back to the originating page rather than the template-
+  //     scoped example detail. carouselContext is computed once in the
+  //     parent so every card on this grid shares the same slice.
+  const carouselHref = `/${locale}/carousel/template-example/${toSlug(item.templateId)}/${encodeURIComponent(item.id)}?media=${hasVideo ? "video" : "image"}${carouselContext}`;
 
   const shareUrl = `${SITE_URL}/${locale}/nano-template/${toSlug(item.templateId)}/example/${encodeURIComponent(item.id)}`;
 
@@ -193,6 +206,18 @@ export default function ExampleImagesGrid({
 
   const visible = expanded ? items : items.slice(0, limit);
 
+  // Pre-compute the carousel context string (from + ids) once per render
+  // so every card on this grid shares the same slice. usePathname /
+  // useSearchParams give us the current page URL to return to on close.
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const carouselContext = useMemo(() => {
+    const qs = searchParams?.toString();
+    const from = `${pathname}${qs ? `?${qs}` : ""}`;
+    const ids = items.slice(0, CAROUSEL_IDS_CAP).map((it) => it.id).join(",");
+    return `&from=${encodeURIComponent(from)}&ids=${encodeURIComponent(ids)}`;
+  }, [pathname, searchParams, items]);
+
   return (
     <div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -201,6 +226,7 @@ export default function ExampleImagesGrid({
             key={it.id}
             item={{ ...it, batch }}
             locale={locale}
+            carouselContext={carouselContext}
           />
         ))}
       </div>
