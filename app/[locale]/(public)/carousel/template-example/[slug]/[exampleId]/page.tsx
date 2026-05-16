@@ -18,6 +18,14 @@ type PageParams = {
 
 type SearchParams = {
   media?: string;
+  // Optional context handed in by ExampleImagesGrid so the carousel
+  // can mirror the grid the user clicked from:
+  //   ids: comma-separated example IDs in the grid's display order
+  //        (slides may span multiple templates)
+  //   from: encoded pathname (+search) of the grid page; carousel
+  //        close navigates here instead of the example detail page
+  ids?: string;
+  from?: string;
 };
 
 // noindex + canonical to the example detail page — the carousel is a UX
@@ -44,27 +52,54 @@ export default async function TemplateExampleCarouselPage({
   searchParams: Promise<SearchParams>;
 }) {
   const { locale, slug, exampleId: rawExampleId } = await params;
-  const { media } = await searchParams;
+  const { media, ids: idsParam, from } = await searchParams;
 
   const isVideo = media === "video";
   const exampleId = decodeURIComponent(rawExampleId);
 
   const ctx = await buildNanoPageContext(locale, slug);
-  const rawImages = ctx.reg.imagesByTemplateId.get(ctx.templateId) ?? [];
+  const templateImages = ctx.reg.imagesByTemplateId.get(ctx.templateId) ?? [];
+
+  // Default ordering: every image of the entry template.
+  // Grid-context ordering (when ?ids= is present): the exact IDs the
+  // user just saw on the grid, in their order — even when the grid
+  // spans multiple templates (search, /topics, blog embeds). Build a
+  // cross-template lookup once and resolve each id against it.
+  let slidesSource: typeof templateImages;
+  if (idsParam) {
+    const orderedIds = idsParam
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const allImages: typeof templateImages = [];
+    for (const arr of ctx.reg.imagesByTemplateId.values()) {
+      for (const img of arr) allImages.push(img);
+    }
+    const byId = new Map(allImages.map((img) => [img.id, img]));
+    const resolved = orderedIds
+      .map((id) => byId.get(id))
+      .filter((img): img is (typeof templateImages)[number] => Boolean(img));
+    // If somehow none of the ids resolved (stale URL?), fall back to
+    // the template's own images.
+    slidesSource = resolved.length > 0 ? resolved : templateImages;
+  } else {
+    slidesSource = templateImages;
+  }
 
   const filtered = isVideo
-    ? rawImages.filter((x) => Boolean(x.asset.video_url))
-    : rawImages.filter((x) => !x.asset.video_url);
+    ? slidesSource.filter((x) => Boolean(x.asset.video_url))
+    : slidesSource.filter((x) => !x.asset.video_url);
 
   if (filtered.length === 0) notFound();
 
   const idxInFiltered = filtered.findIndex((x) => x.id === exampleId);
-  const fallbackIdx = rawImages.findIndex((x) => x.id === exampleId);
+  const fallbackIdx = slidesSource.findIndex((x) => x.id === exampleId);
 
-  // If the entry exampleId isn't in the filtered set, fall back to the unfiltered list
-  // so the user lands on the example they clicked.
-  const slidesSource =
-    idxInFiltered === -1 && fallbackIdx !== -1 ? rawImages : filtered;
+  // If the entry exampleId isn't in the filtered set (e.g. media=image
+  // but the clicked card had a video), fall back to the unfiltered list
+  // so the user still lands on what they clicked.
+  const finalSource =
+    idxInFiltered === -1 && fallbackIdx !== -1 ? slidesSource : filtered;
   const initialIndex =
     idxInFiltered !== -1
       ? idxInFiltered
@@ -72,9 +107,9 @@ export default async function TemplateExampleCarouselPage({
       ? fallbackIdx
       : 0;
 
-  const slides = slidesSource.map((img) => {
+  const slides = finalSource.map((img) => {
     const example = getNanoExampleById(
-      ctx.templateId,
+      img.template_id,
       img.id,
       ctx.contentLocale
     );
@@ -107,7 +142,7 @@ export default async function TemplateExampleCarouselPage({
   const templateBatch = templateView?.batch ?? false;
   const basePrompt = templateView?.base_prompt ?? "";
 
-  const existingExamples = rawImages.map((img) => ({
+  const existingExamples = templateImages.map((img) => ({
     id: img.id,
     params: img.params ?? {},
   }));
@@ -127,6 +162,8 @@ export default async function TemplateExampleCarouselPage({
       templateBatch={templateBatch}
       basePrompt={basePrompt}
       existingExamples={existingExamples}
+      closeHref={from ? decodeURIComponent(from) : undefined}
+      gridIds={idsParam}
     />
   );
 }
