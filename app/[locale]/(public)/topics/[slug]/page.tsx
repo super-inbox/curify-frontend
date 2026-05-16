@@ -220,10 +220,10 @@ export default async function Page({ params }: Props) {
   // Resolve the Tier 1 ancestor for this page (itself if Tier 1, parent if Tier 2, Tier 1 root if Tier 3 tag)
   const tier1Ancestor = getTier1Ancestor(slug);
 
-  // Tier 2 navigational subtopics — shown at top on all tiers
+  // Tier 2 navigational subtopics.
   const navSubTopics = tier1Ancestor ? getNavigationalChildren(tier1Ancestor) : [];
 
-  // Tier 3 tag subtopics — shown at bottom on all tiers.
+  // Tier 3 tag subtopics.
   // Don't filter by isTopicEnabled: subject Tier 3 tags (animals, evolution,
   // food-and-drink, family, etc.) are intentionally surfaced even before they
   // have tagged content so the navigation is discoverable while content gets
@@ -236,6 +236,55 @@ export default async function Page({ params }: Props) {
   const subTopicsHeading = !!parentTopicId
     ? translateTopics("topicPage.exploreMoreHeading") || "Explore More"
     : translateTopics("topicPage.subTopicsHeading") || "Browse by Category";
+
+  // For subject-driven tier-1 trees (travel, language, learning) the
+  // tier-3 tag children (e.g. animals / weather / italy / vocabulary
+  // sub-subjects) are the more useful navigation aid than the tier-2
+  // categories. Flip the layout so the "Browse by Category" / tag chips
+  // surface above the example grid and the tier-2 nav drops to the
+  // bottom. Other tier-1 trees (character, lifestyle, product, design)
+  // keep the original order where tier-2 leads.
+  const flipSubTopicOrder =
+    !!tier1Ancestor &&
+    ["travel", "language", "learning"].includes(tier1Ancestor);
+
+  // Top strip — the prominent chips above the example grid.
+  // Bottom strip — the secondary chips after the grid.
+  const renderTagChipsBlock = (placement: "top" | "bottom") =>
+    tagSubTopics.length === 0 ? null : (
+      <section className="mx-auto max-w-[1400px] px-4 pb-4 sm:px-6 lg:px-8">
+        {placement === "top" && (
+          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
+            {subTopicsHeading}
+          </h2>
+        )}
+        <TopicNavRow
+          locale={localeStr}
+          topics={tagSubTopics}
+          showDisabled={false}
+          size={placement === "top" ? "default" : "small"}
+        />
+      </section>
+    );
+
+  const renderNavChipsBlock = (placement: "top" | "bottom") =>
+    navSubTopics.length === 0 ? null : (
+      <section
+        className={
+          placement === "top"
+            ? "mx-auto max-w-[1400px] px-4 pb-2 sm:px-6 lg:px-8"
+            : "mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8"
+        }
+      >
+        <TopicNavRow
+          locale={localeStr}
+          topics={navSubTopics}
+          activeTopic={slug}
+          showDisabled={false}
+          size="small"
+        />
+      </section>
+    );
 
   return (
     <main className="min-h-screen">
@@ -266,19 +315,13 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          {navSubTopics.length > 0 && (
-            <div className="mt-4">
-              <TopicNavRow
-                locale={localeStr}
-                topics={navSubTopics}
-                activeTopic={slug}
-                showDisabled={false}
-                size="small"
-              />
-            </div>
-          )}
         </div>
       </section>
+
+      {/* Top sub-topic strip. For subject-driven trees (travel / language /
+          learning) the tag chips ("Browse by Category") lead; for the rest
+          the tier-2 nav chips lead. */}
+      {flipSubTopicOrder ? renderTagChipsBlock("top") : renderNavChipsBlock("top")}
 
       {tier1Ancestor === 'character' && (
         <section className="mx-auto max-w-[1400px] px-4 pb-6 sm:px-6 lg:px-8">
@@ -331,19 +374,8 @@ export default async function Page({ params }: Props) {
         />
       </section>
 
-      {tagSubTopics.length > 0 && (
-        <section className="mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900 mb-3">
-            {subTopicsHeading}
-          </h2>
-          <TopicNavRow
-            locale={localeStr}
-            topics={tagSubTopics}
-            showDisabled={false}
-            size="default"
-          />
-        </section>
-      )}
+      {/* Bottom sub-topic strip — the counterpart of the top strip. */}
+      {flipSubTopicOrder ? renderNavChipsBlock("bottom") : renderTagChipsBlock("bottom")}
 
     </main>
   );
