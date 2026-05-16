@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ExampleRightColumn from "./ExampleRightColumn";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
@@ -317,13 +318,18 @@ export default async function NanoExampleDetailPage({
         }
       />
 
+      {/* Mobile-only use-case chips — desktop sees them in the top SiteTopBar. */}
+      <section className="mt-4 lg:hidden">
+        <UseCaseChipsRow />
+      </section>
+
       <section className="mt-8">
         {similarItems.length > 0 && (
           <>
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More like this
             </h2>
-            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} />
+            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} desktopOpensExample />
           </>
         )}
         {similarItems.length === 0 && gridItems.length > 0 && (
@@ -331,7 +337,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample />
           </>
         )}
 
