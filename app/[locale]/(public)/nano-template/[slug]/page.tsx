@@ -202,6 +202,7 @@ export default async function NanoTemplatePage({ params }: Props) {
           locale={pageLocale}
           maxRows={2}
           batch={!!template.batch}
+          desktopOpensExample
         />
 </section>
 

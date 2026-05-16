@@ -329,7 +329,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More like this
             </h2>
-            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} />
+            <ExampleImagesGrid items={similarItems} locale={pageLocale} maxRows={2} desktopOpensExample />
           </>
         )}
         {similarItems.length === 0 && gridItems.length > 0 && (
@@ -337,7 +337,7 @@ export default async function NanoExampleDetailPage({
             <h2 className="mb-4 text-lg font-bold text-neutral-900">
               More from this template
             </h2>
-            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} />
+            <ExampleImagesGrid items={gridItems} locale={pageLocale} maxRows={2} desktopOpensExample />
           </>
         )}
 
