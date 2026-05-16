@@ -50,10 +50,14 @@ function UseCaseChip({ slug }: { slug: string }) {
 
 export default function UseCaseChipsRow({
   className,
-  showQuestion = true,
+  showQuestion = false,
 }: {
   className?: string;
-  /** Hide the "I am a..." label, e.g. inside the carousel where space is tight. */
+  /**
+   * Show the "Explore by Use Case:" prefix label. Default off — the
+   * chips now stand on their own (matches the EntryBar treatment).
+   * Callers can still opt back in if they want the lead-in label.
+   */
   showQuestion?: boolean;
 }) {
   const t = useTranslations("entryBar");

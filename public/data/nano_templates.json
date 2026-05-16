@@ -94,7 +94,8 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "use_cases": [
-      "for-parents"
+      "for-parents",
+      "for-publishers"
     ],
     "intro_video_url": "/video/template_intro/template-evolution.mp4",
     "creation_date": "2026-04-03"
@@ -162,7 +163,10 @@
     "base_rank_score": 120,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-travel.mp4",
-    "creation_date": "2026-04-03"
+    "creation_date": "2026-04-03",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-architecture",
@@ -204,7 +208,10 @@
     "rank_score": 80.45,
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-03"
+    "creation_date": "2026-04-03",
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-species",
@@ -353,7 +360,10 @@
     "rank_score": 82.1,
     "base_rank_score": 80,
     "allow_generation": true,
-    "creation_date": "2026-04-04"
+    "creation_date": "2026-04-04",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-character-analysis",
@@ -856,7 +866,8 @@
     "rank_score": 89.9,
     "use_cases": [
       "for-parents",
-      "for-esl-learners"
+      "for-esl-learners",
+      "for-publishers"
     ],
     "base_rank_score": 80,
     "allow_generation": true,
@@ -2013,7 +2024,11 @@
     "base_rank_score": 80,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-marvel.mp4",
-    "creation_date": "2026-04-11"
+    "creation_date": "2026-04-11",
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-mbti-nba",
@@ -2045,7 +2060,10 @@
     "base_rank_score": 100,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-mbti-nba.mp4",
-    "creation_date": "2026-04-11"
+    "creation_date": "2026-04-11",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-mbti-siliconvalley",
@@ -2262,7 +2280,9 @@
     "rank_score": 109.3,
     "use_cases": [
       "for-marketers",
-      "for-creators"
+      "for-creators",
+      "for-designers",
+      "for-publishers"
     ],
     "base_rank_score": 100,
     "allow_generation": true,
@@ -2339,7 +2359,8 @@
     "rank_score": 104.9,
     "use_cases": [
       "for-parents",
-      "for-esl-learners"
+      "for-esl-learners",
+      "for-publishers"
     ],
     "base_rank_score": 80,
     "allow_generation": true,
@@ -2928,7 +2949,8 @@
     ],
     "use_cases": [
       "for-parents",
-      "for-esl-learners"
+      "for-esl-learners",
+      "for-publishers"
     ],
     "base_rank_score": 80,
     "allow_generation": true,
@@ -3232,7 +3254,9 @@
     "base_rank_score": 100,
     "allow_generation": true,
     "use_cases": [
-      "for-parents"
+      "for-parents",
+      "for-designers",
+      "for-publishers"
     ],
     "intro_video_url": "/video/template_intro/template-cuisine-food-vocab-poster.mp4",
     "creation_date": "2026-04-17",
@@ -3488,7 +3512,10 @@
       "photorealistic"
     ],
     "requires_image_upload": true,
-    "creation_date": "2026-04-19"
+    "creation_date": "2026-04-19",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-home-organization-before-after",
@@ -3523,7 +3550,10 @@
     ],
     "requires_image_upload": true,
     "allow_generation": true,
-    "creation_date": "2026-04-19"
+    "creation_date": "2026-04-19",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-stick-figure-vocab",
@@ -3800,7 +3830,10 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-bilingual-object-structure-labeling.mp4",
     "creation_date": "2026-04-21",
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-interior-design-mood-board-generator",
@@ -3835,7 +3868,10 @@
     "base_rank_score": 90,
     "requires_image_upload": true,
     "allow_generation": true,
-    "creation_date": "2026-04-21"
+    "creation_date": "2026-04-21",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-fashion-before-after-outfit-annotation-card",
@@ -3935,7 +3971,10 @@
       "guides"
     ],
     "allow_generation": true,
-    "creation_date": "2026-04-22"
+    "creation_date": "2026-04-22",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-kids-vocabulary-poster",
@@ -3969,7 +4008,8 @@
     ],
     "allow_generation": true,
     "use_cases": [
-      "for-parents"
+      "for-parents",
+      "for-publishers"
     ],
     "intro_video_url": "/video/template_intro/template-kids-vocabulary-poster.mp4",
     "creation_date": "2026-04-22",
@@ -4617,7 +4657,11 @@
     "base_rank_score": 80,
     "intro_video_url": "/video/template_intro/template-language-word-comparison-educational-poster.mp4",
     "creation_date": "2026-04-26",
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-world-travel-map-illustration",
@@ -4816,7 +4860,10 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-multilingual-vocabulary-poster-watercolor.mp4",
     "creation_date": "2026-04-28",
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-premium-recipe-card-infographic",
@@ -4849,7 +4896,10 @@
     "base_rank_score": 90,
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-premium-recipe-card-infographic.mp4",
-    "creation_date": "2026-04-28"
+    "creation_date": "2026-04-28",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-zhenhuan-mbti-character-analysis",
@@ -5227,7 +5277,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 92.7,
-    "creation_date": "2026-05-01"
+    "creation_date": "2026-05-01",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-9-traits-info-grid",
@@ -5299,7 +5352,10 @@
     "allow_generation": true,
     "intro_video_url": "/video/template_intro/template-english-phrasal-verb.mp4",
     "creation_date": "2026-05-01",
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-hairstyle-color-recommendation",
@@ -5391,7 +5447,10 @@
     "rank_score": 94.8,
     "intro_video_url": "/video/template_intro/template-pet-safe-human-food-infographic.mp4",
     "creation_date": "2026-05-02",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-phonics-consonant-blend",
@@ -5499,7 +5558,10 @@
     "creation_date": "2026-05-03",
     "intro_video_url": "/video/template_intro/template-chinese-character-learning-poster.mp4",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-mbti-relationship-infographic",
@@ -5600,7 +5662,10 @@
     "base_rank_score": 90,
     "rank_score": 93.4,
     "intro_video_url": "/video/template_intro/template-ai-outfit-try-on-poster.mp4",
-    "creation_date": "2026-05-03"
+    "creation_date": "2026-05-03",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-lifestyle-watercolor-infographic",
@@ -5716,7 +5781,10 @@
     "rank_score": 113.1,
     "intro_video_url": "/video/template_intro/template-ethnic-costume-deconstruction-board.mp4",
     "creation_date": "2026-05-04",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-animation-studio-comparison-infographic",
@@ -6077,7 +6145,11 @@
     "base_rank_score": 90,
     "rank_score": 98.95,
     "creation_date": "2026-05-07",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-educational-topic-infographic",
@@ -6142,7 +6214,10 @@
     "base_rank_score": 90,
     "rank_score": 105.25,
     "creation_date": "2026-05-07",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-historical-figure-vs-infographic",
@@ -6187,7 +6262,11 @@
     ],
     "base_rank_score": 90,
     "rank_score": 98.8,
-    "creation_date": "2026-05-07"
+    "creation_date": "2026-05-07",
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-relationship-advice-infographic",
@@ -6269,7 +6348,10 @@
     "base_rank_score": 90,
     "rank_score": 103.6,
     "creation_date": "2026-05-09",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-room-vocabulary-infographic",
@@ -6304,7 +6386,10 @@
     "rank_score": 104.65,
     "creation_date": "2026-05-09",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-english-word-difference-infographic",
@@ -6337,7 +6422,10 @@
     "rank_score": 101.2,
     "creation_date": "2026-05-09",
     "allow_generation": true,
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-personal-fashion-outfit-style-variations",
@@ -6407,7 +6495,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 100.6,
-    "creation_date": "2026-05-09"
+    "creation_date": "2026-05-09",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-chinese-idiom-learning-card",
@@ -6472,7 +6563,10 @@
     "base_rank_score": 90,
     "rank_score": 101.15,
     "creation_date": "2026-05-10",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-product-poster",
@@ -6504,7 +6598,10 @@
     "base_rank_score": 90,
     "rank_score": 106.4,
     "creation_date": "2026-05-10",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-mbti-stereotype-vs-reality-infographic",
@@ -6537,7 +6634,11 @@
     "base_rank_score": 90,
     "rank_score": 108.8,
     "creation_date": "2026-05-10",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-space-planet-fact-infographic",
@@ -6571,7 +6672,10 @@
     "base_rank_score": 90,
     "rank_score": 102.35,
     "creation_date": "2026-05-10",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-emotion-vs-emotion-illustration",
@@ -6752,7 +6856,10 @@
     "base_rank_score": 90,
     "rank_score": 104.05,
     "creation_date": "2026-05-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-lifestyle-photo-grid",
@@ -6783,7 +6890,10 @@
     "base_rank_score": 90,
     "rank_score": 103.75,
     "creation_date": "2026-05-11",
-    "allow_generation": true
+    "allow_generation": true,
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-chinese-radical-learning",
@@ -6816,7 +6926,10 @@
     "base_rank_score": 90,
     "rank_score": 109.1,
     "creation_date": "2026-05-14",
-    "batch": true
+    "batch": true,
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-houseplant-care-guide-infographic",
@@ -6880,7 +6993,11 @@
     ],
     "base_rank_score": 90,
     "rank_score": 108.8,
-    "creation_date": "2026-05-14"
+    "creation_date": "2026-05-14",
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-cultural-festival-poster",
@@ -7008,7 +7125,11 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   },
   {
     "id": "template-home-lifestyle-guide-infographic",
@@ -7070,7 +7191,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-national-culture-history-infographic",
@@ -7102,7 +7226,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-publishers"
+    ]
   },
   {
     "id": "template-watercolor-world-map-illustration",
@@ -7134,7 +7261,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-watercolor-theme-collage-illustration",
@@ -7165,7 +7295,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-vintage-stamp-collection-illustration",
@@ -7196,7 +7329,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-watercolor-travel-journal-collage",
@@ -7227,7 +7363,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers"
+    ]
   },
   {
     "id": "template-manga-artist-infographic-poster",
@@ -7259,6 +7398,10 @@
     ],
     "base_rank_score": 90,
     "rank_score": 110,
-    "creation_date": "2026-05-16"
+    "creation_date": "2026-05-16",
+    "use_cases": [
+      "for-designers",
+      "for-publishers"
+    ]
   }
 ]

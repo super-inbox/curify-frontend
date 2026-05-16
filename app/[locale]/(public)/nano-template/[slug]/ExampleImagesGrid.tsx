@@ -207,7 +207,7 @@ function ExampleImageCard({
             type="button"
             onClick={handleDownload}
             disabled={isDownloading}
-            className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-200 disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded-full bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-700 transition-colors hover:bg-purple-100 hover:text-purple-900 disabled:opacity-60"
           >
             <Download className="h-3.5 w-3.5" />
             {isDownloading ? t("downloadingPack") : t("downloadPack")}
