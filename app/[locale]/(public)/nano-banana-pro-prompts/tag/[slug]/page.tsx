@@ -229,7 +229,7 @@ export default async function TagPage({ params }: Props) {
           ) : (
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {prompts.map((prompt, i) => (
-                <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} openInCarousel />
+                <PromptCard key={`${prompt.id}-${i}`} prompt={prompt} />
               ))}
             </div>
           )}
