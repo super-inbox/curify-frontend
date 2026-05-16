@@ -100,9 +100,6 @@ export default function EntryBar({ locale, className }: Props) {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-neutral-800">
-            {t("useCasesQuestion")}
-          </span>
           {USE_CASES.map((uc) => (
             <UseCaseBarItem key={uc.slug} slug={uc.slug} />
           ))}
