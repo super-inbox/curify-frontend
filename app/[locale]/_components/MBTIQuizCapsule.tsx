@@ -1,16 +1,17 @@
 "use client";
 
 // "What's your MBTI?" capsule on /topics/character, /topics/mbti, and the
-// 16 mbti-<type> pages. Two paths:
+// 16 mbti-<type> pages. Two parallel paths shown as two rows; no reveal
+// gating, both always visible:
 //
-//   1. "I know my MBTI" → expands an inline 4-letter picker (E/I · N/S ·
-//      T/F · J/P). When the user picks all four, the button becomes
-//      "Go to ENFP →" and navigates to /topics/mbti-enfp.
+//   Row 1: "I know my type" + inline 4-letter picker (E/I · N/S · T/F · J/P)
+//          When all four letters are selected the trailing action becomes
+//          "Go to ENFP →" and routes to /topics/mbti-enfp.
 //
-//   2. "Take the quiz"  → opens the existing modal MBTI quiz (atom-driven).
+//   Row 2: "Take the quiz" → opens the existing modal MBTI quiz (atom-driven).
 //
-// Tracks two distinct content_ids so the admin funnel can tell stated-type
-// users apart from quiz-takers.
+// Tracks distinct content_ids so the admin funnel can tell stated-type
+// users (mbti_capsule_iknow + mbti-<type>) apart from quiz-takers (mbti_quiz).
 
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
@@ -32,20 +33,30 @@ export default function MBTIQuizCapsule() {
   const params = useParams<{ locale?: string }>();
   const locale = params?.locale ?? "en";
   const { track } = useTracking();
-  const [picking, setPicking] = useState(false);
   const [picked, setPicked] = useState<(string | null)[]>([null, null, null, null]);
 
   const isComplete = picked.every((x): x is string => Boolean(x));
   const typeString = picked.filter(Boolean).join("");
+  const hasAnyPick = picked.some(Boolean);
 
   const handleQuiz = () => {
     setOpen(true);
     track({ contentId: "mbti_quiz", contentType: "mbti_quiz", actionType: "click" });
   };
 
-  const handleIKnow = () => {
-    setPicking(true);
-    track({ contentId: "mbti_capsule_iknow", contentType: "mbti_quiz", actionType: "click" });
+  const handlePick = (rowIdx: number, letter: string) => {
+    // Track once per session — first letter the user touches signals
+    // "this user is in the stated-type cohort, not the quiz cohort".
+    if (!hasAnyPick) {
+      track({
+        contentId: "mbti_capsule_iknow",
+        contentType: "mbti_quiz",
+        actionType: "click",
+      });
+    }
+    const next = [...picked];
+    next[rowIdx] = letter;
+    setPicked(next);
   };
 
   const handleGo = () => {
@@ -55,17 +66,54 @@ export default function MBTIQuizCapsule() {
     router.push(`/${locale}/topics/${slug}`);
   };
 
-  if (!picking) {
-    return (
+  return (
+    <div className="flex flex-col gap-3">
+      {/* Row 1 — stated type: label + 4 letter pickers + Go button */}
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-sm font-semibold text-neutral-800">What's your MBTI?</span>
+        <span className="text-sm font-semibold text-neutral-800">
+          I know my type
+        </span>
+        {LETTER_PAIRS.map(([a, b], i) => (
+          <div
+            key={i}
+            className="inline-flex overflow-hidden rounded-full border-2 border-purple-300 bg-white"
+          >
+            {[a, b].map((letter) => (
+              <button
+                key={letter}
+                type="button"
+                onClick={() => handlePick(i, letter)}
+                className={
+                  picked[i] === letter
+                    ? "bg-purple-600 px-3 py-1.5 text-sm font-bold text-white"
+                    : "px-3 py-1.5 text-sm font-semibold text-purple-700 hover:bg-purple-50"
+                }
+                aria-pressed={picked[i] === letter}
+              >
+                {letter}
+              </button>
+            ))}
+          </div>
+        ))}
         <button
           type="button"
-          onClick={handleIKnow}
-          className="flex cursor-pointer items-center gap-2 rounded-full border-2 border-purple-500 bg-white px-4 py-2 text-sm font-bold text-purple-700 transition-transform hover:scale-105 hover:bg-purple-50"
+          disabled={!isComplete}
+          onClick={handleGo}
+          className={
+            isComplete
+              ? "flex cursor-pointer items-center gap-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-2 text-sm font-bold text-white shadow-md shadow-purple-200 transition-transform hover:scale-105"
+              : "rounded-full bg-neutral-200 px-4 py-2 text-sm font-bold text-neutral-400 cursor-not-allowed"
+          }
         >
-          I know my type
+          {isComplete ? `Go to ${typeString} →` : "Pick all 4 letters"}
         </button>
+      </div>
+
+      {/* Row 2 — quiz path, parallel option */}
+      <div className="flex flex-wrap items-center gap-3">
+        <span className="text-sm font-semibold text-neutral-800">
+          Don&apos;t know your type?
+        </span>
         <button
           type="button"
           onClick={handleQuiz}
@@ -75,60 +123,6 @@ export default function MBTIQuizCapsule() {
           Take the quiz
         </button>
       </div>
-    );
-  }
-
-  return (
-    <div className="flex flex-wrap items-center gap-3">
-      <span className="text-sm font-semibold text-neutral-800">Pick your type:</span>
-      {LETTER_PAIRS.map(([a, b], i) => (
-        <div
-          key={i}
-          className="inline-flex overflow-hidden rounded-full border-2 border-purple-300 bg-white"
-        >
-          {[a, b].map((letter) => (
-            <button
-              key={letter}
-              type="button"
-              onClick={() => {
-                const next = [...picked];
-                next[i] = letter;
-                setPicked(next);
-              }}
-              className={
-                picked[i] === letter
-                  ? "bg-purple-600 px-3 py-1.5 text-sm font-bold text-white"
-                  : "px-3 py-1.5 text-sm font-semibold text-purple-700 hover:bg-purple-50"
-              }
-              aria-pressed={picked[i] === letter}
-            >
-              {letter}
-            </button>
-          ))}
-        </div>
-      ))}
-      <button
-        type="button"
-        disabled={!isComplete}
-        onClick={handleGo}
-        className={
-          isComplete
-            ? "flex cursor-pointer items-center gap-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-2 text-sm font-bold text-white shadow-md shadow-purple-200 transition-transform hover:scale-105"
-            : "rounded-full bg-neutral-200 px-4 py-2 text-sm font-bold text-neutral-400 cursor-not-allowed"
-        }
-      >
-        {isComplete ? `Go to ${typeString} →` : "Pick all 4 letters"}
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          setPicking(false);
-          setPicked([null, null, null, null]);
-        }}
-        className="cursor-pointer text-sm text-neutral-500 underline hover:text-neutral-700"
-      >
-        Back
-      </button>
     </div>
   );
 }
