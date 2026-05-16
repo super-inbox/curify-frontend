@@ -224,7 +224,10 @@ export default function ExampleImagesGrid({
         {visible.map((it) => (
           <ExampleImageCard
             key={it.id}
-            item={{ ...it, batch }}
+            // Per-item batch wins (topic-page mixed-template grids stamp
+            // each item with its parent template's flag); grid-level
+            // batch is the fallback for single-template surfaces.
+            item={{ ...it, batch: it.batch ?? batch }}
             locale={locale}
             carouselContext={carouselContext}
           />

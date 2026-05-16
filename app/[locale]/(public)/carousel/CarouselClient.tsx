@@ -25,6 +25,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import ExampleVideoPlayer from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleVideoPlayer";
 import ExampleRightColumn from "@/app/[locale]/(public)/nano-template/[slug]/example/[exampleId]/ExampleRightColumn";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import PromptRightColumn from "./PromptRightColumn";
 import { toCdnUrl } from "@/app/[locale]/_components/CdnImage";
 import { useTracking } from "@/services/useTracking";
@@ -736,6 +737,12 @@ export default function CarouselClient(props: Props) {
               examplePageUrl={detailPageUrl}
               existingExamples={(props as TemplateExampleProps).existingExamples}
             />
+            {/* Use-case chips — visible inside the carousel overlay (which
+                covers SiteTopBar / EntryBar entirely). Drops the leading
+                "I am a..." label since the sidebar is space-constrained. */}
+            <div className="mt-4 border-t border-neutral-200 pt-4">
+              <UseCaseChipsRow showQuestion={false} />
+            </div>
           </div>
         </aside>
       )}

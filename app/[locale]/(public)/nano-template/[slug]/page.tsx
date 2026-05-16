@@ -11,6 +11,7 @@ export const revalidate = false;
 
 import ExampleImagesGrid from "./ExampleImagesGrid";
 import NanoTemplateDetailClient from "./NanoTemplateDetailClient";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
 
@@ -188,6 +189,12 @@ export default async function NanoTemplatePage({ params }: Props) {
         </div>
       </div>
 
+
+      {/* Use-case chips — mobile only; desktop already gets them via the
+          top SiteTopBar / EntryBar. */}
+      <section className="mt-4 lg:hidden">
+        <UseCaseChipsRow />
+      </section>
 
       <section className="mt-8">
 <ExampleImagesGrid
