@@ -50,3 +50,16 @@ export function getPersonasForTool(toolSlug: string): string[] {
     .filter((uc) => uc.toolSlugs.includes(toolSlug))
     .map((uc) => uc.slug);
 }
+
+// Persona → blog categories to surface as "Related reading" on each
+// use-case landing page. Source of truth: docs/interconnection.md
+// (Persona → Blog categories table). Keep in sync when adding a new
+// persona or rebalancing a category's audience fit.
+export const PERSONA_BLOG_CATEGORIES: Record<string, string[]> = {
+  "for-marketers":    ["content-automation", "creator-tools"],
+  "for-parents":      ["learning-education"],
+  "for-esl-learners": ["video-translation-dubbing", "learning-education"],
+  "for-creators":     ["creator-tools", "nano-template"],
+  "for-designers":    ["nano-template"],
+  "for-publishers":   ["nano-template", "learning-education"],
+};

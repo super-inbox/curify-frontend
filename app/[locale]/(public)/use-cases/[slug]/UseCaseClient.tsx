@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useAtomValue, useSetAtom } from "jotai";
 import { Download } from "lucide-react";
 import { NanoInspirationRow } from "@/app/[locale]/_components/NanoInspirationCard";
@@ -11,8 +11,9 @@ import { templatePacksService } from "@/services/templatePacks";
 import { useTracking } from "@/services/useTracking";
 import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
 import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import RelatedBlogsByCategory from "@/app/[locale]/_components/RelatedBlogsByCategory";
 import type { ToolDef } from "@/lib/tools-registry";
-import { USE_CASES } from "@/lib/use-cases";
+import { USE_CASES, PERSONA_BLOG_CATEGORIES } from "@/lib/use-cases";
 
 type LearningMaterial = {
   templateId: string;
@@ -83,7 +84,12 @@ export default function UseCaseClient({
   learningMaterials?: LearningMaterial[];
 }) {
   const t = useTranslations("useCasePage");
+  const tGlobal = useTranslations();
+  const locale = useLocale();
   const title = t(`${slug}.title` as never);
+  // P0 #3 — blog categories that match this persona. Drives the
+  // "Related reading" block at the bottom. See docs/interconnection.md.
+  const relatedBlogCategories = PERSONA_BLOG_CATEGORIES[slug] ?? [];
   const user = useAtomValue(userAtom);
   const setDrawerState = useSetAtom(drawerAtom);
   const requireAuth = useCallback(() => {
@@ -152,6 +158,21 @@ export default function UseCaseClient({
             onViewClick={() => {}}
           />
         </section>
+      )}
+
+      {/* P0 #3 — Related reading from the blog categories that match
+          this persona. Sits between the templates grid and the sibling
+          persona chips so the page closes with content depth, then a
+          cross-link back into other personas. */}
+      {relatedBlogCategories.length > 0 && (
+        <RelatedBlogsByCategory
+          categories={relatedBlogCategories}
+          locale={locale}
+          max={6}
+          heading={tGlobal("interconnection.relatedReading", {
+            defaultValue: "Related reading",
+          })}
+        />
       )}
 
       {/* Explore other use cases — cross-link to the five sibling

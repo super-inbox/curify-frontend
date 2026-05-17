@@ -62,7 +62,7 @@ Source: GSC export `Pages.csv` at the repo root (1,022 URLs total — 1,194 clic
 | **Blog post** (`/blog/[slug]`) | RelatedBlogs widget | `BlogCTACard` ✓ | `BlogCTACard` ✓ (nano-template / learning-education) | embedded grids on a few posts | `BlogCTACard` ✓ |
 | **Tools index** (`/tools`) | — | tool cards (grouped video / image / audio) | — | — | — |
 | **Tool detail** (`/tools/[slug]`) | **`RelatedBlogsByCategory` ✓ (P0 #1a)** | **`ToolsGrid` of siblings ✓ (P0 #1c)** | **`UseCaseChipsRow` + linked "Who Uses" headers ✓ (P0 #1b)** | — | — |
-| **Use case** (`/use-cases/[slug]`) | **— gap (P0 #3)** | `ToolsGrid` ✓ (now persona-tailored after P0 #2) | sibling persona chips at the bottom ✓ | nano-template feed cards ✓ | — |
+| **Use case** (`/use-cases/[slug]`) | **`RelatedBlogsByCategory` ✓ (P0 #3)** | `ToolsGrid` ✓ (now persona-tailored after P0 #2) | sibling persona chips at the bottom ✓ | nano-template feed cards ✓ | — |
 
 **Three-line summary:**
 - Blogs already fan out to tools / use-cases / contact / mentor via `BlogCTACard`. Good.
@@ -80,7 +80,8 @@ Plus a data-side gap: `lib/use-cases.ts` currently has every persona mapped to t
 | 2026-05-17 | `ac14131` | `BlogCTACard.tsx` — per-category fan-out from blog posts to tool / contact / mentor. |
 | 2026-05-17 | `d6ca86a` | Expanded `BlogCTACard` mapping to cover nano-template + learning-education; introduced `ToolsGrid.tsx` so `/use-cases/[slug]` reuses the `/tools` card style. Plus 4 blog category reassignments. |
 | 2026-05-17 | `cb5a074` | Earlier blog metaDescription / lastmod sweep — not interconnection per se, but shipped the categorization that the BlogCTACard map keys off. |
-| 2026-05-17 | _(pending push)_ | **P0 #1 + #2 shipped.** Per-persona tool ordering in `lib/use-cases.ts` (designers now an empty list — honest; publishers single tool). Tool detail page gains three outbound sections — "Who it’s for" persona chips, "Related tools" sibling-group grid, "Related reading" blog cards. Each "deep.usecases" subsection header on the tool page is now a Link to its persona use-case page so the in-prose "Who Uses X?" section gains the same fan-out. New helpers: `getPersonasForTool` in `lib/use-cases.ts`, `getSiblingTools` + `TOOL_BLOG_CATEGORIES` in `lib/tools-registry.ts`. New component: `RelatedBlogsByCategory.tsx` (sibling of `RelatedBlogs` that takes a categories list instead of a current-slug). 3 new i18n keys under `interconnection.*` fanned out to all 9 non-en locales. |
+| 2026-05-17 | `4d2dbeb` | **P0 #1 + #2 shipped.** Per-persona tool ordering in `lib/use-cases.ts` (designers now an empty list — honest; publishers single tool). Tool detail page gains three outbound sections — "Who it’s for" persona chips, "Related tools" sibling-group grid, "Related reading" blog cards. Each "deep.usecases" subsection header on the tool page is now a Link to its persona use-case page so the in-prose "Who Uses X?" section gains the same fan-out. New helpers: `getPersonasForTool` in `lib/use-cases.ts`, `getSiblingTools` + `TOOL_BLOG_CATEGORIES` in `lib/tools-registry.ts`. New component: `RelatedBlogsByCategory.tsx` (sibling of `RelatedBlogs` that takes a categories list instead of a current-slug). 3 new i18n keys under `interconnection.*` fanned out to all 9 non-en locales. |
+| 2026-05-18 | _(pending push)_ | **P0 #3 shipped.** `/use-cases/[slug]` now renders a "Related reading" block between the templates grid and the sibling persona chips, pulling from `PERSONA_BLOG_CATEGORIES` in `lib/use-cases.ts` (per `docs/interconnection.md` Persona → Blog categories table). Max 6 cards, sorted by `lastmod` desc. Reuses the `RelatedBlogsByCategory` component shipped with P0 #1. |
 
 ---
 
@@ -174,7 +175,7 @@ After this lands:
 - The inverse-lookup on the tool detail page (#1b) becomes meaningful.
 - 5 minutes of edit time.
 
-### P0 #3 — Use case pages surface "Related reading"
+### ~~P0 #3 — Use case pages surface "Related reading"~~ ✓ shipped 2026-05-18
 Edit `app/[locale]/(public)/use-cases/[slug]/UseCaseClient.tsx`. Insert a "Related reading" block between the templates grid and the sibling persona chips at the bottom. 3-6 cards. Mapping from [Persona → Blog categories table](#persona--blog-categories-new--needed-by-p0-3).
 
 **Lower than #1 because use-case traffic is currently 1 click / 30 days** — this is "build for future demand," not "harvest current funnel." Worth shipping in the same week since it's quick and the symmetry matters once GSC starts indexing the persona pages.
