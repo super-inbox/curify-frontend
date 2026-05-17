@@ -312,14 +312,15 @@ export default async function NanoExampleDetailPage({
           ) : (
             <Link
               href={`/${rawLocale}/carousel/template-example/${slug}/${rawExampleId}?media=image`}
-              className="block h-full w-full cursor-zoom-in"
+              className="relative block h-full w-full cursor-zoom-in"
               aria-label="Open image in carousel"
             >
               <ProgressiveCdnImage
                 previewSrc={example.asset.preview_image_url}
                 fullSrc={example.asset.image_url}
                 alt={title}
-                className="h-full w-full object-contain"
+                className="object-contain"
+                fill
                 priority
                 noZoom
               />

@@ -5,7 +5,6 @@ import { Wand2 } from "lucide-react";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
-import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
@@ -74,6 +73,7 @@ export default function ExampleRightColumn({
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
   const [generatedExampleId, setGeneratedExampleId] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [showFullPrompt, setShowFullPrompt] = useState(false);
 
   const [user] = useAtom(userAtom);
   const [clientMounted] = useAtom(clientMountedAtom);
@@ -221,7 +221,10 @@ export default function ExampleRightColumn({
         </div>
       )}
 
-      {/* Reactive prompt preview */}
+      {/* Reactive prompt preview — same format as ReproduceTemplateSection
+          on the template page: a single neutral-50 card with the filled
+          prompt clamped to one line and a Read more / Show less toggle.
+          No inline param-chips, no parameter table below. */}
       <section aria-labelledby="prompt-heading" className="flex flex-col">
         <h2
           id="prompt-heading"
@@ -229,11 +232,34 @@ export default function ExampleRightColumn({
         >
           Prompt
         </h2>
-        <PromptBreakdown
-          prompt={basePrompt}
-          params={form}
-          collapsedMaxHeight={30}
-        />
+        {(() => {
+          const promptText = (filledPrompt.trim() || basePrompt || "");
+          const promptLines = promptText ? promptText.split("\n") : [];
+          const shouldFold = promptLines.length > 1 || promptText.length > 150;
+          return (
+            <div className="rounded-xl bg-neutral-50 p-4">
+              <pre
+                className={`whitespace-pre-wrap text-sm leading-relaxed text-neutral-800 overflow-hidden${
+                  !showFullPrompt ? " line-clamp-1" : ""
+                }`}
+              >
+                {promptText}
+              </pre>
+              {shouldFold && (
+                <div className="mt-2 flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowFullPrompt((v) => !v)}
+                    className="cursor-pointer text-sm font-semibold text-purple-600 hover:text-purple-700"
+                    aria-expanded={showFullPrompt}
+                  >
+                    {showFullPrompt ? "Show less" : "Read more"}
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })()}
       </section>
 
       {/* Duplicate warning */}

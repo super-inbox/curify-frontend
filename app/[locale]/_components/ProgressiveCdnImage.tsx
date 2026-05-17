@@ -10,6 +10,7 @@ export default function ProgressiveCdnImage({
   className = "",
   priority = false,
   noZoom = false,
+  fill = false,
 }: {
   previewSrc?: string;
   fullSrc: string;
@@ -17,6 +18,12 @@ export default function ProgressiveCdnImage({
   className?: string;
   priority?: boolean;
   noZoom?: boolean;
+  /** Forward Next/Image's `fill` mode to CdnImage. When true, the image is
+   *  absolutely positioned to fill its nearest positioned ancestor — caller
+   *  must wrap in a `relative` parent and not provide width/height. Used to
+   *  match the gallery prompt page's image rendering so the example page
+   *  doesn't drift to intrinsic 512x512 sizing. */
+  fill?: boolean;
 }) {
   const [src, setSrc] = useState(previewSrc || fullSrc);
   const [open, setOpen] = useState(false);
@@ -37,11 +44,16 @@ export default function ProgressiveCdnImage({
       alt={alt}
       className={className}
       priority={priority}
+      {...(fill ? { fill: true } : {})}
     />
   );
 
   if (noZoom) {
-    return <div className="block h-full w-full">{inner}</div>;
+    // In fill mode the image is absolute-positioned to its nearest
+    // positioned ancestor — caller owns the `relative` wrapper, so the
+    // extra `block h-full w-full` div would only obstruct that. Render
+    // the image directly instead.
+    return fill ? inner : <div className="block h-full w-full">{inner}</div>;
   }
 
   return (

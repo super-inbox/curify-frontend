@@ -200,18 +200,19 @@ export default function ExamplePromptHero({
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
         {/* Image card sized at 85% of the prior hero width (1.05fr →
-            0.89fr). Both columns stretch to match (lg:items-stretch).
-            Floor of 440 px matches the travel-beijing example layout
-            (2 param rows + 1-line prompt + action bar + use-case chips,
-            with mt-auto pushing the action bar down), so the gallery
-            prompt page — which has a shorter natural column — gets the
-            same hero height as the example page rather than collapsing. */}
+            0.89fr) and pinned to a fixed 440 px height on lg+ so the
+            example page and the gallery prompt page render the image at
+            the same size regardless of right-column content or image
+            aspect ratio. Items-stretch still aligns the right column to
+            match for the typical case (right col < 440); for the rare
+            heavy-params template the row grows past 440, the image card
+            stays 440 and aligns to the top of its grid cell. */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-full lg:min-h-[440px]">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[440px] lg:self-start">
             {image}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 lg:justify-center">
             {rightColumnContent ? rightColumnContent : (
               <>
                 {description ? (
@@ -243,6 +244,8 @@ export default function ExamplePromptHero({
                   )}
                 </section>
 
+                {actionBar}
+
                 {useCaseFilter && useCaseFilter.length > 0 && (
                   <div className="border-t border-neutral-100 pt-3">
                     <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
@@ -251,8 +254,6 @@ export default function ExamplePromptHero({
                     <UseCaseChipsRow filterTo={useCaseFilter} />
                   </div>
                 )}
-
-                <div className="mt-auto">{actionBar}</div>
               </>
             )}
           </div>
