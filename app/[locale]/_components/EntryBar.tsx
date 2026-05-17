@@ -3,10 +3,8 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { Link as IntlLink } from "@/i18n/navigation";
 
 import { ENTRY_BAR_ITEMS } from "@/lib/entry_bar";
-import { USE_CASES } from "@/lib/use-cases";
 import { getCanonicalPath } from "@/lib/canonical";
 import { useClickTracking } from "@/services/useTracking";
 
@@ -53,34 +51,6 @@ function EntryBarItem({ item, locale }: ItemProps) {
   );
 }
 
-function UseCaseBarItem({ slug }: { slug: string }) {
-  const t = useTranslations("entryBar");
-  const pathname = usePathname();
-  const trackClick = useClickTracking(
-    `use-case:${slug}`,
-    "topic_capsule",
-    "cards"
-  );
-
-  const isActive =
-    pathname === `/use-cases/${slug}` ||
-    pathname.endsWith(`/use-cases/${slug}`);
-
-  return (
-    <IntlLink
-      href={`/use-cases/${slug}`}
-      onClick={trackClick}
-      className={
-        isActive
-          ? "inline-flex items-center rounded-full border border-purple-500 bg-purple-200 px-4 py-2 text-sm font-semibold text-purple-900 transition"
-          : "inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-sm text-purple-800 transition hover:border-purple-400 hover:bg-purple-100"
-      }
-    >
-      {t(`useCases.${slug}`)}
-    </IntlLink>
-  );
-}
-
 export default function EntryBar({ locale, className }: Props) {
   const t = useTranslations("entryBar");
 
@@ -92,18 +62,10 @@ export default function EntryBar({ locale, className }: Props) {
       ].join(" ")}
       aria-label={t("question")}
     >
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-wrap gap-2">
-          {ENTRY_BAR_ITEMS.map((item) => (
-            <EntryBarItem key={item.id} item={item} locale={locale} />
-          ))}
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
-          {USE_CASES.map((uc) => (
-            <UseCaseBarItem key={uc.slug} slug={uc.slug} />
-          ))}
-        </div>
+      <div className="flex flex-wrap gap-2">
+        {ENTRY_BAR_ITEMS.map((item) => (
+          <EntryBarItem key={item.id} item={item} locale={locale} />
+        ))}
       </div>
     </section>
   );
