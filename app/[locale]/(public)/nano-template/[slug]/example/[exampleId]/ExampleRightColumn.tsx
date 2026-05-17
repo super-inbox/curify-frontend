@@ -10,6 +10,7 @@ import CopyPromptButton from "@/app/[locale]/_components/CopyPromptButton";
 import ShareButton from "@/app/[locale]/_components/ShareButton";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
 import TopicNavRow from "@/app/[locale]/_components/TopicNavRow";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { fillPrompt } from "@/lib/nano_utils";
 import { normalizePrefills } from "@/lib/nano_prompt_utils";
@@ -220,6 +221,16 @@ export default function ExampleRightColumn({
           collapsedMaxHeight={30}
         />
       </section>
+
+      {/* Use-case chips — let users pivot to a relevant persona landing
+          if the example fits a different audience than the template
+          page they came from. */}
+      <div className="border-t border-neutral-100 pt-3">
+        <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+          Use this example for
+        </div>
+        <UseCaseChipsRow />
+      </div>
 
       {/* Duplicate warning */}
       {duplicateWarning && (

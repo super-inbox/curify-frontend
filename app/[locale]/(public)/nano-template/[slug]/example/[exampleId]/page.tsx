@@ -6,7 +6,6 @@ import { notFound } from "next/navigation";
 
 import ExampleImagesGrid from "../../ExampleImagesGrid";
 import NanoTemplateDetailClient from "../../NanoTemplateDetailClient";
-import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import ExampleRightColumn from "./ExampleRightColumn";
 import ExampleVideoPlayer from "./ExampleVideoPlayer";
 import ProgressiveCdnImage from "@/app/[locale]/_components/ProgressiveCdnImage";
@@ -317,11 +316,6 @@ export default async function NanoExampleDetailPage({
           />
         }
       />
-
-      {/* Mobile-only use-case chips — desktop sees them in the top SiteTopBar. */}
-      <section className="mt-4 lg:hidden">
-        <UseCaseChipsRow />
-      </section>
 
       <section className="mt-8">
         {similarItems.length > 0 && (

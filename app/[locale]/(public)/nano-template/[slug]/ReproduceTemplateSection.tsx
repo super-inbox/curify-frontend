@@ -8,6 +8,7 @@ import Link from "next/link";
 import type { NanoTemplateForDetail } from "@/lib/nano_prompt_utils";
 import CdnImage from "@/app/[locale]/_components/CdnImage";
 import UnifiedActionBar from "@/app/[locale]/_components/UnifiedActionBar";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import LanguagePairSelector from "@/app/[locale]/_components/LanguagePairSelector";
 import { toSlug } from "@/lib/nano_utils";
 import { useDirectGenerate } from "@/services/useDirectGenerate";
@@ -353,6 +354,16 @@ export default function ReproduceTemplateSection(props: {
                       </button>
                     </div>
                   )}
+                </div>
+
+                {/* Use-case chips — surface relevant personas next to
+                    the action bar so users can pivot to a use-case
+                    landing if the template fits. */}
+                <div className="border-t border-neutral-100 pt-3">
+                  <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                    Use this template for
+                  </div>
+                  <UseCaseChipsRow />
                 </div>
 
                 <UnifiedActionBar

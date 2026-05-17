@@ -200,6 +200,10 @@ export default async function PromptDetailPage({
           prompt={promptText}
           trackingId={String(prompt.id)}
           promptVariant="preview"
+          // Prompt-gallery audience is overwhelmingly creator + designer
+          // per the catalog audit — narrow the chip set so the affordance
+          // feels relevant instead of generic.
+          useCaseFilter={["for-creators", "for-designers"]}
           description={prompt.description || undefined}
           prevNext={prevNext}
           breadcrumbs={[

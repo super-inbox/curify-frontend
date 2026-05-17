@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import DescriptionClamp from "@/app/[locale]/_components/DescriptionClamp";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import { useClickTracking } from "@/services/useTracking";
 
 type PrevNextLink = {
@@ -41,6 +42,14 @@ type ExamplePromptHeroProps = {
   promptCollapsedMaxHeight?: number;
   prevNext?: PrevNextNav | null;
   className?: string;
+  /**
+   * If set, render a `UseCaseChipsRow` below the prompt block, scoped to
+   * these use-case slugs. Only fires on the default right-column path
+   * (when `rightColumnContent` is not provided) — so on /nano-banana-pro-
+   * prompts/[id] but not on the example page (which renders its own
+   * right column via ExampleRightColumn).
+   */
+  useCaseFilter?: readonly string[];
 };
 
 function DesktopPrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
@@ -168,6 +177,7 @@ export default function ExamplePromptHero({
   promptCollapsedMaxHeight,
   prevNext,
   className,
+  useCaseFilter,
 }: ExamplePromptHeroProps) {
   return (
     <>
@@ -176,12 +186,15 @@ export default function ExamplePromptHero({
       <section className={["relative", className].filter(Boolean).join(" ")}>
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
-        {/* Image card sized at 85% of the prior hero — both height (520 →
-            442 px) and width (1.05fr → 0.89fr of the grid). The right
-            column mirrors the same min-height so the prompt / description
-            section bottoms out at the same line as the image card. */}
+        {/* Image card sized at 85% of the prior hero width (1.05fr →
+            0.89fr). Height is a minimum of 442 px but stretches to match
+            the right column's natural height (lg:items-stretch + h-full),
+            so on the example page — where the right column is taller —
+            the image card grows to align all the way down to the action
+            bar. On the prompt-detail page the right column is shorter,
+            so the min-h-442 floor kicks in for both columns. */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[442px]">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-full lg:min-h-[442px]">
             {image}
           </div>
 
@@ -224,6 +237,16 @@ export default function ExamplePromptHero({
                     />
                   )}
                 </section>
+
+                {useCaseFilter && useCaseFilter.length > 0 && (
+                  <div className="border-t border-neutral-100 pt-3">
+                    <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                      Use this prompt for
+                    </div>
+                    <UseCaseChipsRow filterTo={useCaseFilter} />
+                  </div>
+                )}
+
                 <div className="mt-auto">{actionBar}</div>
               </>
             )}
