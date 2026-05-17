@@ -62,10 +62,20 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 //      解提 / 提示 / 示词 that we can match against template blobs).
 // Stopwords filtered out before matching so they don't inflate the
 // token-count denominator. Conservative — keeps content words like "is".
+//
+// The second group below is structural meta-words about query shape
+// rather than content: queries the search-quality analyst flagged as
+// recall failures ("global influence topics", "remote destination
+// highlights topics", "China expat lifestyle insights topics:
+// english-chinese") all carried these as literal tokens that survived
+// strict-AND and dropped recall to zero. Stripping them lets the actual
+// content tokens drive the match.
 const STOPWORDS = new Set([
   "the", "a", "an", "of", "in", "on", "is", "are", "and", "or",
   "to", "for", "with", "by", "at", "as", "be", "this", "that",
   "的", "了", "和", "及",
+  "topic", "topics", "theme", "themes", "category", "categories",
+  "insights", "highlights", "guide", "guides",
 ]);
 
 // Normalize for substring matching:
@@ -82,7 +92,14 @@ function buildSearchTokens(query: string): {
   bigrams: string[];
 } {
   const primary = normalizeForSearch(query)
-    .split(/[\s,，、。.]+/)
+    // Split on whitespace + structural punctuation. Beyond the original
+    // whitespace + sentence-end characters, we also break on `: = · / | ( ) [ ]
+    // + *` and full-width colon — these show up in analyst-style structured
+    // query labels (e.g. `topics: english-chinese`, `word1=theory · word2`)
+    // and otherwise become literal one-blob-shaped tokens that never match.
+    // Hyphens are deliberately NOT included so `english-chinese` stays a
+    // single content token and matches templates tagged that way.
+    .split(/[\s,，、。.:：=·\/|()\[\]+*]+/)
     .map((w) => w.trim())
     .filter((w) => w && !STOPWORDS.has(w));
 
