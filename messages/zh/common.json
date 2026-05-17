@@ -213,7 +213,9 @@
       "for-marketers": "营销人员",
       "for-parents": "家长",
       "for-esl-learners": "ESL学习者",
-      "for-creators": "创作者"
+      "for-creators": "创作者",
+      "for-designers": "为设计师",
+      "for-publishers": "为出版商"
     }
   },
   "useCasePage": {
@@ -255,6 +257,30 @@
       "bullet2": "将图片配音配字幕转为视频",
       "bullet3": "批量下载并复用内容"
     },
-    "learningMaterialsHeading": "学习资料"
+    "learningMaterialsHeading": "学习资料",
+    "exploreOtherHeading": "探索其他用例",
+    "for-designers": {
+      "title": "为设计师",
+      "subtitle": "Etsy / Pinterest 可打印包，生产速度",
+      "description": "适合自由插画师和可打印包销售者——而非品牌/标志/UI设计师。我们专注于高容量的美学驱动类别：水彩地图和剪贴簿、复古邮票系列、流行文化MBTI粉丝艺术、课堂装饰海报集、时尚情绪板。一个下午生成50件系列；当晚作为付费包发货。",
+      "bullet0": "水彩地图、复古剪贴簿、邮票系列——Etsy美学",
+      "bullet1": "流行文化MBTI粉丝艺术（漫威 · 吉卜力 · NBA · 哈利·波特 · 漫画）",
+      "bullet2": "课堂装饰可打印材料——词汇卡、解剖指南、历史海报",
+      "bullet3": "带水印的预览用于SEO + 干净的原件用于付费下载"
+    },
+    "for-publishers": {
+      "title": "为出版商和教育科技",
+      "subtitle": "从一个标题扩展到十个表面",
+      "description": "适合儿童书籍出版商和K-5教育科技平台——将一个标题转变为双语词汇包、角色阵容MBTI变体、课堂海报和社交卡。或者为您的平台的应用内生成授权语言词汇引擎。相同角色，10倍表面；相同引擎，两种集成形状。",
+      "bullet0": "格式扩展：一个标题 → 卡片 · 海报 · 社交 · 课堂",
+      "bullet1": "K-5词汇引擎，涵盖动物 · 自然 · 太空 · 家庭 · 交通",
+      "bullet2": "流行文化MBTI框架，准备好IP嵌入（漫威/吉卜力风格）",
+      "bullet3": "双语版本（en-zh / en-es / en-ja / en-ko），无需翻译团队"
+    }
+  },
+  "interconnection": {
+    "whoItsFor": "适合谁",
+    "relatedTools": "相关工具",
+    "relatedReading": "相关阅读"
   }
 }

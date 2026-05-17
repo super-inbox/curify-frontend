@@ -1,6 +1,6 @@
 # Blog ⇄ Use Case ⇄ Tool — Interconnection Audit & Plan
 
-_Last updated: 2026-05-17 (added Google traffic data + tool-to-tool layer; reprioritized). Owner: jay. Update after every push that touches `BlogCTACard.tsx`, `ToolsGrid.tsx`, `UseCaseClient.tsx`, `tool-generic-client.tsx`, or the registry files (`lib/use-cases.ts`, `lib/tools-registry.ts`)._
+_Last updated: 2026-05-17 (P0 #1 + #2 shipped — tool detail outbound sections + persona→tools mapping fix). Owner: jay. Update after every push that touches `BlogCTACard.tsx`, `ToolsGrid.tsx`, `UseCaseClient.tsx`, `tool-generic-client.tsx`, or the registry files (`lib/use-cases.ts`, `lib/tools-registry.ts`)._
 
 ## Why this doc exists
 
@@ -61,8 +61,8 @@ Source: GSC export `Pages.csv` at the repo root (1,022 URLs total — 1,194 clic
 | --- | --- | --- | --- | --- | --- |
 | **Blog post** (`/blog/[slug]`) | RelatedBlogs widget | `BlogCTACard` ✓ | `BlogCTACard` ✓ (nano-template / learning-education) | embedded grids on a few posts | `BlogCTACard` ✓ |
 | **Tools index** (`/tools`) | — | tool cards (grouped video / image / audio) | — | — | — |
-| **Tool detail** (`/tools/[slug]`) | **— gap (P0 #1a)** | **— sibling-tool gap (P0 #1c)** — index only | **— gap (P0 #1b)** | — | — |
-| **Use case** (`/use-cases/[slug]`) | **— gap (P0 #3)** | `ToolsGrid` ✓ | sibling persona chips at the bottom ✓ | nano-template feed cards ✓ | — |
+| **Tool detail** (`/tools/[slug]`) | **`RelatedBlogsByCategory` ✓ (P0 #1a)** | **`ToolsGrid` of siblings ✓ (P0 #1c)** | **`UseCaseChipsRow` + linked "Who Uses" headers ✓ (P0 #1b)** | — | — |
+| **Use case** (`/use-cases/[slug]`) | **— gap (P0 #3)** | `ToolsGrid` ✓ (now persona-tailored after P0 #2) | sibling persona chips at the bottom ✓ | nano-template feed cards ✓ | — |
 
 **Three-line summary:**
 - Blogs already fan out to tools / use-cases / contact / mentor via `BlogCTACard`. Good.
@@ -80,6 +80,7 @@ Plus a data-side gap: `lib/use-cases.ts` currently has every persona mapped to t
 | 2026-05-17 | `ac14131` | `BlogCTACard.tsx` — per-category fan-out from blog posts to tool / contact / mentor. |
 | 2026-05-17 | `d6ca86a` | Expanded `BlogCTACard` mapping to cover nano-template + learning-education; introduced `ToolsGrid.tsx` so `/use-cases/[slug]` reuses the `/tools` card style. Plus 4 blog category reassignments. |
 | 2026-05-17 | `cb5a074` | Earlier blog metaDescription / lastmod sweep — not interconnection per se, but shipped the categorization that the BlogCTACard map keys off. |
+| 2026-05-17 | _(pending push)_ | **P0 #1 + #2 shipped.** Per-persona tool ordering in `lib/use-cases.ts` (designers now an empty list — honest; publishers single tool). Tool detail page gains three outbound sections — "Who it’s for" persona chips, "Related tools" sibling-group grid, "Related reading" blog cards. Each "deep.usecases" subsection header on the tool page is now a Link to its persona use-case page so the in-prose "Who Uses X?" section gains the same fan-out. New helpers: `getPersonasForTool` in `lib/use-cases.ts`, `getSiblingTools` + `TOOL_BLOG_CATEGORIES` in `lib/tools-registry.ts`. New component: `RelatedBlogsByCategory.tsx` (sibling of `RelatedBlogs` that takes a categories list instead of a current-slug). 3 new i18n keys under `interconnection.*` fanned out to all 9 non-en locales. |
 
 ---
 
@@ -154,7 +155,7 @@ Top N (likely 3-6) by `lastmod` desc within those categories, rendered with the 
 
 **Prioritization read of the GSC data:** Blog is the biggest acquisition surface (52% of impressions) and routes via `BlogCTACard` ✓. The next highest-leverage gaps are **tool detail outbound** (small surface but every visitor is at the bottom of the funnel, and today they hit a dead-end) and **fixing the persona→tools mapping data** (unblocks both tool-detail "Who it's for" and use-case `ToolsGrid` differentiation). Use-case → blog is real interconnection but ranks lower since use-case traffic is currently 1 click / 30 days.
 
-### P0 #1 — Tool detail pages get three outbound sections
+### ~~P0 #1 — Tool detail pages get three outbound sections~~ ✓ shipped 2026-05-17
 Edit `app/[locale]/(public)/tools/[slug]/tool-generic-client.tsx`. Add three sections above the existing "Why" / "FAQ" / "deep" blocks. **Biggest leverage point in this plan** — every tool visitor is at the bottom of the conversion funnel, today's tools surface gets 45 clicks / 1,859 impressions in 30 days, and every dead-end tool page wastes the intent.
 
 **#1a — Related reading.** Pull blog posts whose `category` is in the tool's category list (from the [Tool slug → Blog categories table](#tool-slug--blog-categories-new--needed-by-p0-1) above). Top 3 by `lastmod` desc. Reuse the `RelatedBlogs` component from `app/[locale]/(public)/blog/[slug]/page.tsx:397`. Lift the filter from the current-blog's category into a prop so the tool detail page can pass its own list.
@@ -163,7 +164,7 @@ Edit `app/[locale]/(public)/tools/[slug]/tool-generic-client.tsx`. Add three sec
 
 **#1c — Related tools.** Same-group sibling tools (3 max) from the [Tool slug → Sibling tools table](#tool-slug--sibling-tools-new--needed-by-p0-1c). Reuse the existing `ToolsGrid` component with a 3-column layout. Directly addresses the **tool-use-depth** gap — keeps users in the tool funnel instead of bouncing back to `/tools` index or leaving.
 
-### P0 #2 — Fix the flat persona→tools mapping in `lib/use-cases.ts`
+### ~~P0 #2 — Fix the flat persona→tools mapping in `lib/use-cases.ts`~~ ✓ shipped 2026-05-17
 **Pure data change. Prerequisite for P0 #1b** — the inverse-lookup on the tool detail page can't produce meaningful persona chips while every persona maps to the same two tools.
 
 Replace the current uniform `["video-dubbing", "bilingual-subtitles"]` per persona with the [Persona → Tool slugs table](#persona--tool-slugs-replacement-for-the-current-flat-mapping-in-libuse-casests) below.
