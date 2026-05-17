@@ -6,6 +6,7 @@ import CdnImage from '@/app/[locale]/_components/CdnImage'
 
 export default function BlogContent() {
   const t = useTranslations('blog.contentTaggingSystem')
+  const locale = 'en' // Standardized locale for consistency
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8 prose prose-lg dark:prose-invert">
@@ -371,7 +372,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="content-tagging-system" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="content-tagging-system" locale={locale} maxRelated={2} />
     </article>
   )
 }

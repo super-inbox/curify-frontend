@@ -122,7 +122,7 @@ export default function BlogContent() {
         </div>
       </section>
 
-      <RelatedBlogs currentSlug="red-carpet-ai-looks" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="red-carpet-ai-looks" locale={locale} maxRelated={2} />
       
     </article>
   )

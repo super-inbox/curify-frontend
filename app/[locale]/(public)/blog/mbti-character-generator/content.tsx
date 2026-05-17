@@ -350,7 +350,7 @@ export default function BlogContent() {
         </div>
       </footer>
 
-      <RelatedBlogs currentSlug="mbti-character-generator" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="mbti-character-generator" locale={locale} maxRelated={2} />
     </article>
   )
 }

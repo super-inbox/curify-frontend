@@ -6,6 +6,7 @@ import CdnImage from '@/app/[locale]/_components/CdnImage'
 
 export default function BlogContent() {
   const t = useTranslations('blog.f5TtsVsElevenlabs')
+  const locale = 'en' // Standardized locale for consistency
 
   return (
     <>
@@ -275,7 +276,7 @@ export default function BlogContent() {
         </footer>
       </article>
       
-      <RelatedBlogs currentSlug="f5-tts-vs-elevenlabs" locale="en" maxRelated={2} />
+      <RelatedBlogs currentSlug="f5-tts-vs-elevenlabs" locale={locale} maxRelated={2} />
     </>
   )
 }
