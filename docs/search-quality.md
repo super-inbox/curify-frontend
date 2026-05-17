@@ -1,6 +1,6 @@
 # Search Quality Improvement — Status & Audit
 
-_Last updated: 2026-05-18 (added two CJK no-result reports + low-result logging + LLM rewrite as new work items). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `scripts/enrich_search_aliases.cjs`, or `scripts/lib/auto_tag.cjs`._
+_Last updated: 2026-05-18 (item 2 — low-result logging — shipped). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `scripts/enrich_search_aliases.cjs`, or `scripts/lib/auto_tag.cjs`._
 
 ## Framing
 
@@ -24,6 +24,7 @@ Tracks are interleaved but distinct. Recall fixes ship in `search/page.tsx` (tok
 | 2026-05-15 | `a203ce6` | Catch-up `search_aliases` enrichment for 97 newly-added inspirations | Same script, re-run after a content drop. |
 | 2026-05-15 | `ee1e5cc` | Share the enricher with the daily auto-tag pipeline (`scripts/lib/auto_tag.cjs`) | Future content drops auto-enrich; no separate maintenance step. |
 | 2026-05-17 | `7df4425` | **Strip structured-syntax noise from query tokenizer** (P0 fix #1) | Tokenizer was preserving meta-words (`topics`, `theme`, `insights`, `highlights`) and punctuation (`: = ·`) as literal tokens. Strict-AND failed; relaxed-OR inflated past threshold. Identified by the Reddit-search-comparison eval. |
+| 2026-05-18 | _(pending push)_ | **Low-result query logging** (shortlist item 2) | New `search_low_result` action type fires from `SearchResultsClient` when total results across grid + matched templates + gallery prompts is 1-2 (threshold = 3). `contentId` carries the query + result count so admin can rank queries by how close they are to the threshold. Existing `search_noresult` event continues to fire for zero-result queries unchanged. Backend SQL panel extension still needed (`curify-studio`) to surface "Low-result queries (last 14 days)" in admin. |
 
 ---
 
@@ -98,15 +99,14 @@ The tokenizer change is necessary but not sufficient for themes 5, 9. Audit and 
 
 Re-run `scripts/enrich_search_aliases.cjs` with targeted slug filter if it supports one; otherwise hand-edit the affected slugs in `nano_inspiration.json` and `nano_templates.json`.
 
-### 2. NEW — Low-result query logging (observability prerequisite)
-**Owner / priority TBD — pending your call.** Today the only way we discover a zero-result query like `唯美春天` is when someone manually reports it. We need to log queries that return 0 or fewer-than-N results (suggest N = 3) so we can find them in aggregate.
+### ~~2. Low-result query logging~~ ✓ shipped 2026-05-18 (frontend side)
+Frontend instrumentation landed. `SearchResultsClient` now fires:
+- `search_noresult` when total results = 0 (existing event, backward compat).
+- **NEW** `search_low_result` when total results is 1-2 (threshold = 3). `contentId` is `<query>|n=<count>` so admin can rank queries by how close they are to the threshold without joining against the results table.
 
-Sketch:
-- In `app/[locale]/(public)/search/page.tsx`, after the inspirations array is built, pass an `isThinResult` boolean (e.g. `inspirations.length < 3`) to `SearchResultsClient`.
-- `SearchResultsClient` fires `useClickTracking("search:low_result:" + query, "search", "thin")` (or a dedicated event type) on mount when the flag is set. Uses the existing tracking infra — no new pipeline.
-- Admin SQL extension: add a "Low-result queries (last 14 days)" panel to `curify-studio/curify_background/app/crud/admin.py` showing query + count + sample-date, sorted by frequency. Drives a regular "alias top-up backlog" review.
+Total result count = `gridItems.length + matchedTemplates.length + galleryPrompts.length` (covers all three result surfaces, not just inspirations).
 
-**Why this is upstream of every other recall fix:** the `search_aliases` top-up table above only catches what the analyst (or user reports) noticed. Logging would have surfaced both 2026-05-18 reports automatically.
+**Backend follow-up (still open):** add a "Low-result queries (last 14 days)" panel to `curify-studio/curify_background/app/crud/admin.py` that surfaces both `search_noresult` and `search_low_result` events, grouped by query, sorted by frequency. Once that lands, the alias top-up audit (item 1) becomes data-driven rather than analyst-driven.
 
 ### 3. NEW — LLM query rewrite on no/low-result queries
 **Owner / priority TBD — pending your call.** Recall floor: when a query returns 0 or thin results, call `gpt-4o-mini` server-side to rewrite the query into 1-3 alternate phrasings, then re-match against the catalog. Returns the union of original + best-scoring rewrite.

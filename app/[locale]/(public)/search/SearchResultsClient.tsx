@@ -104,20 +104,36 @@ export default function SearchResultsClient({
     router.push(`/${locale}/search?q=${encodeURIComponent(q.toLowerCase())}`);
   };
 
-  const hasResults =
-    gridItems.length > 0 || matchedTemplates.length > 0 || galleryPrompts.length > 0;
+  const totalResults =
+    gridItems.length + matchedTemplates.length + galleryPrompts.length;
+  const hasResults = totalResults > 0;
+  // Threshold below which a query is "thin" enough to flag for an alias
+  // top-up or content review. 3 catches queries that returned 1-2 items —
+  // a single accidental match isn't a useful result page. See
+  // docs/search-quality.md (item 2, low-result query logging).
+  const LOW_RESULT_THRESHOLD = 3;
 
   const { track } = useTracking();
   useEffect(() => {
     const q = query.trim();
-    if (q && !hasResults) {
+    if (!q) return;
+    if (totalResults === 0) {
       track({
         contentId: q,
         contentType: "topic_capsule",
         actionType: "search_noresult",
       });
+    } else if (totalResults < LOW_RESULT_THRESHOLD) {
+      // Encode the count in contentId so admin can rank queries by how
+      // close they are to the threshold without joining against another
+      // table. Format: "<query>|n=<count>".
+      track({
+        contentId: `${q}|n=${totalResults}`,
+        contentType: "topic_capsule",
+        actionType: "search_low_result",
+      });
     }
-  }, [query, hasResults, track]);
+  }, [query, totalResults, track]);
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 lg:px-8">
