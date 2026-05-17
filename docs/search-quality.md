@@ -1,0 +1,133 @@
+# Search Quality Improvement — Status & Audit
+
+_Last updated: 2026-05-17 (after P0 fix #1, structured-token stripping). Owner: jay. Update after every push that touches `app/[locale]/(public)/search/page.tsx`, `lib/searchIndex.ts`, `scripts/enrich_search_aliases.cjs`, or `scripts/lib/auto_tag.cjs`._
+
+## Framing
+
+Three parallel tracks:
+
+1. **Recall** — when content exists but search returns zero or thin results. Diagnosed by qualitative competitive analysis (analyst-driven, e.g. the Reddit-search-comparison doc at the repo root) and by zero-CTR queries in production Search Console / admin logs.
+2. **Intent** — when content exists and is returned, but the wrong _kind_ of content is surfaced for the query intent (`character_name` returning character infographics instead of name references; `city escapes` returning 3D landmark models instead of itineraries).
+3. **CTR / ranking** — once recall and intent are sane, the remaining lever is which results appear above the fold and whether the on-page UX gets the user to click. Driven by `/search` click-attribution analysis (cron on/after 2026-05-22).
+
+Tracks are interleaved but distinct. Recall fixes ship in `search/page.tsx` (tokenizer, matcher) or in `search_aliases` data. Intent fixes need query-shape parsing or tag-routing logic. CTR fixes need analytics first, code second.
+
+---
+
+## What's already shipped
+
+| Date | Commit | What | Why |
+| --- | --- | --- | --- |
+| 2026-05-14 | `f9e0e5d` | Word-boundary token matching + strict-only template auto-elevation | Stop `met` from matching `metropolitan` / `metallic`; stop relaxed-template matches from auto-promoting every child inspiration to score 100. |
+| 2026-05-14 | `f9e0e5d` | Drop `festival` from celebration aliases in `lib/searchIndex.ts` | Was conflating festival-style content with celebration-tier topic. |
+| 2026-05-15 | `000da63` | LLM enrichment of `search_aliases` on 1,932 of 1,967 inspirations | Cross-language synonyms users type that don't appear in title/params (e.g. zh "鲜花" on a herbal-lily record). gpt-4o-mini batches via `scripts/enrich_search_aliases.cjs`. |
+| 2026-05-15 | `a203ce6` | Catch-up `search_aliases` enrichment for 97 newly-added inspirations | Same script, re-run after a content drop. |
+| 2026-05-15 | `ee1e5cc` | Share the enricher with the daily auto-tag pipeline (`scripts/lib/auto_tag.cjs`) | Future content drops auto-enrich; no separate maintenance step. |
+| 2026-05-17 | `7df4425` | **Strip structured-syntax noise from query tokenizer** (P0 fix #1) | Tokenizer was preserving meta-words (`topics`, `theme`, `insights`, `highlights`) and punctuation (`: = ·`) as literal tokens. Strict-AND failed; relaxed-OR inflated past threshold. Identified by the Reddit-search-comparison eval. |
+
+---
+
+## Diagnostics — Reddit search comparison eval (2026-05-17)
+
+`reddit搜索对比.docx` at the repo root is a 13-query qualitative comparison of Curify search vs Pinterest. The analyst noted, recurringly: _"之前有做过 ... 但搜索结果未显示"_ — content exists, search doesn't surface it. **The full doc reflects post-2026-05-15-fix behavior** — i.e. these failures persist after the word-boundary + `search_aliases` enrichment.
+
+Three failure buckets:
+
+### Bucket A — Recall (4 themes, content exists)
+| Theme | Query | What should match |
+| --- | --- | --- |
+| 5 | `word1=theory · word2` | advanced-synonym / one-word-many-meanings templates |
+| 8 | `China expat lifestyle insights topics: english-chinese` | English-Chinese travel / food / culture cards |
+| 9 | `global influence topics` | per-country culture cards, MBTI series, animal personality cards |
+| 10 | `remote destination highlights topics` | travel destination / map templates |
+
+**Status (after P0 fix #1):** themes 4, 8, 10 should resolve based on token-strip simulation; **needs production verification**. Themes 9 and 5 likely still thin because the per-country MBTI and synonym templates don't yet carry the matching content nouns in their `search_aliases`.
+
+### Bucket B — Intent mismatch (2 themes)
+| Theme | Query | What Curify returned | What query meant |
+| --- | --- | --- | --- |
+| 1 | `historical · character_name` | character-themed infographics | name lists / naming references |
+| 12 | `short city escapes topics` | 3D city-landmark decorative models | travel itineraries + planning |
+
+### Bucket C — Single-result thinness (3 themes)
+| Theme | Query | Curify result count |
+| --- | --- | --- |
+| 2 | `culture-inspired characters · art_style` | 1 (Harry Potter MBTI) |
+| 7 | `language learning struggles topics: expressions` | 1 (basic expression card) |
+| 10 | `remote destination highlights topics` | 1 (unrelated finance template) |
+
+### Genuine content gap (1 theme)
+Theme 4 (`homophones / homonyms`) is the only entry the analyst flagged with no _"we made this before"_ note. Real authoring gap, not a search bug.
+
+---
+
+## Baseline metrics (2026-05-15, 30-day window)
+
+From the `/search` click-attribution analysis in `curify-studio/curify_background/app/crud/admin.py` (section "Search queries (last 14 days)"):
+
+- **36 searches → 2 result-tile clicks**. Overall result CTR = **5.5%**.
+- **Zero-CTR queries that the fixes should have addressed:** `广州`, `guangzhou`, `shanghai`, `met gala`, `festivals`, `dragon boat`, `mood board`, `vocabulary`, `woman`, `健身`, `减脂`, `反义词中英`, `the psychology of self discipline`.
+- **Matched-templates rail got zero clicks** in 30 days.
+- **10 of 17 clicks were header-escape** (`header_home`, `header_gallery`, `header_tools`) — users gave up.
+
+Re-pull on/after 2026-05-22 (see `project_search_ctr_followup.md`).
+
+---
+
+## Next-up shortlist
+
+### 1. P0 fix #2 — `search_aliases` top-up audit
+The tokenizer change is necessary but not sufficient for themes 5, 9. Audit and extend `search_aliases` on the template families the analyst expected to surface:
+
+- **Per-country MBTI / culture cards** — add `global`, `world`, `international`, `cross-cultural`, `country`.
+- **Synonym / advanced-expression templates** — add `theory`, `linguistics`, `synonym theory`, `advanced expressions`, `one-word-many-meanings`.
+- **Travel destination / map templates** — add `remote`, `destination`, `off-the-beaten-path`, `hidden gems`.
+- **Expat / lifestyle culture cards** — add `expat`, `expatriate`, `living abroad`, `cross-cultural living`.
+
+Re-run `scripts/enrich_search_aliases.cjs` with targeted slug filter if it supports one; otherwise hand-edit the affected slugs in `nano_inspiration.json` and `nano_templates.json`.
+
+### 2. P1 — Travel-intent ranker weighting (theme 12)
+Queries containing `city escapes`, `escapes`, `destinations`, `itinerary`, `travel`, `trip`, `weekend getaway` should weight toward templates tagged `travel` / `city` / `itinerary` and away from `architecture` (where 3D decorative landmark models live). Ranker tweak in `search/page.tsx`, not a content change.
+
+### 3. P1 — `character_name` query mode (theme 1)
+The `_name` suffix is a structured signal. Two options:
+- **Option A** (smaller): treat queries ending in `_name` or `name` as a routing hint — boost templates that have `name`, `naming`, `names` in title/aliases.
+- **Option B** (larger): introduce a "name-list / naming-reference" content type. Likely a content authoring task if the catalog doesn't have these.
+
+Verify Option A first; if the catalog has no name-list templates, escalate to Option B as a content drop.
+
+### 4. P2 — Single-result thinness (themes 2, 7)
+After P0 fix #2 (alias top-up) and re-running the eval, if 2 / 7 still return 1 result each:
+- **Theme 2** (culture-inspired characters): check if there are multiple `art_style`-tagged character templates. If yes → relax ranker precision on this tag combination. If no → content debt.
+- **Theme 7** (language-learning expressions): same triage.
+
+### 5. P3 — Author homophones / homonyms templates
+Real content gap. Add to the daily-content-drop backlog if homophones is a topic worth covering.
+
+### 6. CTR follow-up (cron on/after 2026-05-22)
+Re-run the click-attribution SQL. Compare result_ctr_pct against the 5.5% baseline. Call out:
+- Queries that flipped from 0% to positive CTR (success).
+- Queries still at 0% (escalate).
+- Whether the matched-templates rail received any clicks (if still zero, drop it or reorder sections).
+
+---
+
+## Where things live
+
+| Surface | Path |
+| --- | --- |
+| Search page (tokenizer, matcher, redirect rules) | `app/[locale]/(public)/search/page.tsx` |
+| Search results client | `app/[locale]/(public)/search/SearchResultsClient.tsx` |
+| Suggestion entries (tier-1/2/3, aliases) | `lib/searchIndex.ts` |
+| `search_aliases` enrichment script | `scripts/enrich_search_aliases.cjs` |
+| Auto-tag pipeline (shared enricher) | `scripts/lib/auto_tag.cjs` |
+| Inspiration records (carry `search_aliases`) | `public/data/nano_inspiration.json` |
+| Template records | `public/data/nano_templates.json` |
+| Topic registry | `lib/topicRegistry.ts`, `lib/topic_tag_mappings.json` |
+| Click-attribution SQL | `curify-studio/curify_background/app/crud/admin.py` ("Search queries" section) |
+| CTR follow-up reminder | `project_search_ctr_followup.md` (memory) |
+| Latest eval | `reddit搜索对比.docx` (repo root) |
+
+---
+
+_This doc is the source of truth for search quality work. Update after each push that touches the surfaces above._
