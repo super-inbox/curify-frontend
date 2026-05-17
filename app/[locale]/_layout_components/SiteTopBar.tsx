@@ -98,8 +98,14 @@ export default function SiteTopBar({ locale }: { locale: string }) {
         </div>
         <LocaleSwitcher />
       </div>
+      {/* EntryBar is absolutely positioned just below the SearchBar row
+          rather than living in the sticky bar's flow. Toggling its
+          visibility no longer changes the sticky bar's height, so the
+          page content below never reflows — which was the source of the
+          scroll-up flash. Pure conditional render with no transition:
+          the bar snaps in/out, no slide, no dissolve. */}
       {!hideEntryBar && !entryBarFolded && (
-        <div className="mt-3">
+        <div className="absolute left-0 right-0 top-full px-4 pb-3 bg-[#FDFDFD]/95 backdrop-blur">
           <EntryBar locale={locale} />
         </div>
       )}
