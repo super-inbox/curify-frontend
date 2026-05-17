@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
 import {
-  type RawTemplate,
   type RawNanoImageRecord,
   type NanoInspirationCardType,
   type TranslateFn,
@@ -190,13 +189,12 @@ export function buildNanoFeedCards(
   for (const raw of sortedTemplates) {
     if (limit !== undefined && out.length >= limit) break;
 
-    if (useCaseSlugs?.length) {
-      const rawUseCases: string[] = (raw as RawTemplate & { use_cases?: string[] }).use_cases ?? [];
-      if (!useCaseSlugs.some((uc) => rawUseCases.includes(uc))) continue;
-    }
-
     const tv = getTemplateView(reg, raw.id, locale);
     if (!tv) continue;
+
+    if (useCaseSlugs?.length) {
+      if (!useCaseSlugs.some((uc) => tv.use_cases.includes(uc))) continue;
+    }
 
     if (strictLocale && tv.locale !== locale) continue;
 

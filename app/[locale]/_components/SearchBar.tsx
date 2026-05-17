@@ -115,13 +115,13 @@ export default function SearchBar({ locale }: Props) {
               {query.trim() ? "Suggestions" : "Popular topics"}
             </p>
           </div>
-          <div className="flex flex-wrap gap-1.5 px-3 pb-3 pt-1.5">
+          <div className="flex flex-wrap gap-2 px-3 pb-3 pt-1.5">
             {suggestions.map((s) => (
               <button
                 key={s.slug}
                 type="button"
                 onClick={() => navigate(s.slug, renderLabel(s.slug, s.label), s.href, s.searchFallback, s.aliases?.[0])}
-                className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-base text-neutral-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors cursor-pointer"
               >
                 {s.emoji && <span aria-hidden="true">{s.emoji}</span>}
                 {renderLabel(s.slug, s.label)}

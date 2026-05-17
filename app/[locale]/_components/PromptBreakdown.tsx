@@ -22,18 +22,18 @@ export default function PromptBreakdown({
 
   if (!prompt) {
     return (
-      <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+      <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-2">
         <p className="text-sm text-neutral-500">No prompt data available.</p>
       </div>
     );
   }
 
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
-<div className="flex-1 min-h-0">
+    <div className="flex h-full flex-col">
+      <div className="flex-1 min-h-0">
         <div
           className={[
-            "rounded-2xl border border-neutral-100 bg-white p-4 font-mono text-sm leading-7 transition-all",
+            "rounded-2xl border border-neutral-200 bg-white px-3 py-2 font-mono text-sm leading-6 transition-all",
             expanded ? "h-auto" : "h-full overflow-hidden",
           ].join(" ")}
           style={expanded ? undefined : { maxHeight: collapsedMaxHeight }}
@@ -58,7 +58,7 @@ export default function PromptBreakdown({
         </div>
       </div>
 
-      <div className="mt-3 flex items-center justify-end">
+      <div className="mt-1 flex items-center justify-end">
         <button
           type="button"
           onClick={() => setExpanded((v) => !v)}

@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import DescriptionClamp from "@/app/[locale]/_components/DescriptionClamp";
 import PromptBreakdown from "@/app/[locale]/_components/PromptBreakdown";
 import PromptPreviewBlock from "@/app/[locale]/_components/PromptPreviewBlock";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
 import { useClickTracking } from "@/services/useTracking";
 
 type PrevNextLink = {
@@ -41,6 +42,14 @@ type ExamplePromptHeroProps = {
   promptCollapsedMaxHeight?: number;
   prevNext?: PrevNextNav | null;
   className?: string;
+  /**
+   * If set, render a `UseCaseChipsRow` below the prompt block, scoped to
+   * these use-case slugs. Only fires on the default right-column path
+   * (when `rightColumnContent` is not provided) — so on /nano-banana-pro-
+   * prompts/[id] but not on the example page (which renders its own
+   * right column via ExampleRightColumn).
+   */
+  useCaseFilter?: readonly string[];
 };
 
 function DesktopPrevNext({ prevNext, trackingId }: { prevNext?: PrevNextNav | null; trackingId?: string }) {
@@ -168,30 +177,44 @@ export default function ExamplePromptHero({
   promptCollapsedMaxHeight,
   prevNext,
   className,
+  useCaseFilter,
 }: ExamplePromptHeroProps) {
   return (
     <>
       <Breadcrumbs items={breadcrumbs} />
 
+      {/* Page header — H1 and topic capsules sit on the same row so the
+          hoisted header is a single horizontal band above the hero,
+          letting the image card / right-column collapse to their content
+          height. Wraps on narrow viewports. */}
+      <header className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+        <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
+          {title}
+        </h1>
+        {metaChips ? (
+          <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
+        ) : null}
+      </header>
+
       <section className={["relative", className].filter(Boolean).join(" ")}>
         <DesktopPrevNext prevNext={prevNext} trackingId={trackingId} />
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:items-stretch">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[520px]">
+        {/* Image card sized at 85% of the prior hero width (1.05fr →
+            0.89fr) and pinned to a fixed 440 px height on lg+ so the
+            example page and the gallery prompt page render the image at
+            the same size regardless of right-column content or image
+            aspect ratio. Items-stretch still aligns the right column to
+            match for the typical case (right col < 440); for the rare
+            heavy-params template the row grows past 440, the image card
+            stays 440 and aligns to the top of its grid cell. */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.89fr)_minmax(0,1.2fr)] lg:items-stretch">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-3 shadow-sm lg:h-[440px] lg:self-start">
             {image}
           </div>
 
-          <div className="flex flex-col gap-4 lg:min-h-[520px]">
+          <div className="flex flex-col gap-4 lg:justify-center">
             {rightColumnContent ? rightColumnContent : (
               <>
-                {metaChips ? (
-                  <div className="flex flex-wrap items-center gap-2">{metaChips}</div>
-                ) : null}
-
-                <h1 className="text-xl font-bold leading-snug text-neutral-900 sm:text-2xl">
-                  {title}
-                </h1>
-
                 {description ? (
                   <DescriptionClamp text={description} lines={2} />
                 ) : null}
@@ -211,7 +234,7 @@ export default function ExamplePromptHero({
                   ) : (
                     <PromptPreviewBlock
                       text={prompt}
-                      collapsedRows={3}
+                      collapsedRows={1}
                       expandable={true}
                       containerClassName="rounded-2xl border border-neutral-200 bg-neutral-50"
                       preClassName="text-neutral-800"
@@ -220,7 +243,17 @@ export default function ExamplePromptHero({
                     />
                   )}
                 </section>
-                <div className="mt-auto">{actionBar}</div>
+
+                {actionBar}
+
+                {useCaseFilter && useCaseFilter.length > 0 && (
+                  <div className="border-t border-neutral-100 pt-3">
+                    <div className="mb-2 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                      Use this prompt for
+                    </div>
+                    <UseCaseChipsRow filterTo={useCaseFilter} />
+                  </div>
+                )}
               </>
             )}
           </div>

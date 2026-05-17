@@ -386,11 +386,16 @@ export default async function BlogPostPage({
       </div>
 
       {/* Unified CTA — picks the right tool / coaching / contact target based
-          on the post's category. Renders nothing if the category has no CTA
-          configured (e.g. nano-template / learning-education, which already
-          embed their own template grids). */}
+          on the post's category, with a per-slug override for creator-tools
+          posts that map to a specific tool. Single source of truth for the
+          bottom-of-post CTA; the duplicate in-body strips that used to sit
+          right above this have been stripped from the content components. */}
       {blogConfig.category && (
-        <BlogCTACard category={blogConfig.category} locale={locale} />
+        <BlogCTACard
+          category={blogConfig.category}
+          slug={slug}
+          locale={locale}
+        />
       )}
 
       {/* Related Blogs */}

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useAtomValue, useSetAtom } from "jotai";
@@ -10,13 +9,10 @@ import type { NanoInspirationCardType } from "@/lib/nano_utils";
 import { userAtom, drawerAtom } from "@/app/atoms/atoms";
 import { templatePacksService } from "@/services/templatePacks";
 import { useTracking } from "@/services/useTracking";
-
-type ToolCard = {
-  slug: string;
-  title: string;
-  description: string;
-  href: string;
-};
+import ToolsGrid from "@/app/[locale]/_components/ToolsGrid";
+import UseCaseChipsRow from "@/app/[locale]/_components/UseCaseChipsRow";
+import type { ToolDef } from "@/lib/tools-registry";
+import { USE_CASES } from "@/lib/use-cases";
 
 type LearningMaterial = {
   templateId: string;
@@ -78,12 +74,12 @@ function LearningMaterialCard({ material }: { material: LearningMaterial }) {
 export default function UseCaseClient({
   slug,
   nanoCards,
-  toolCards,
+  tools,
   learningMaterials,
 }: {
   slug: string;
   nanoCards: NanoInspirationCardType[];
-  toolCards: ToolCard[];
+  tools: ToolDef[];
   learningMaterials?: LearningMaterial[];
 }) {
   const t = useTranslations("useCasePage");
@@ -132,25 +128,15 @@ export default function UseCaseClient({
             ))}
           </div>
         </section>
-      ) : toolCards.length > 0 && (
+      ) : tools.length > 0 && (
         <section className="mb-10">
           <h2 className="mb-4 text-xl font-bold text-neutral-900">
             {t("toolsHeading")}
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {toolCards.map((tool) => (
-              <Link
-                key={tool.slug}
-                href={tool.href}
-                className="group flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-200 hover:shadow-md"
-              >
-                <div className="text-base font-bold text-neutral-900 transition-colors group-hover:text-purple-700">
-                  {tool.title}
-                </div>
-                <div className="text-sm text-neutral-500">{tool.description}</div>
-              </Link>
-            ))}
-          </div>
+          <ToolsGrid
+            tools={tools}
+            gridClassName="grid grid-cols-1 gap-6 sm:grid-cols-2"
+          />
         </section>
       )}
 
@@ -167,6 +153,18 @@ export default function UseCaseClient({
           />
         </section>
       )}
+
+      {/* Explore other use cases — cross-link to the five sibling
+          persona pages. UseCaseChipsRow filters its source list to the
+          slugs we pass, in order, and renders nothing if empty. */}
+      <section className="mt-12 border-t border-neutral-200 pt-8">
+        <h2 className="mb-4 text-xl font-bold text-neutral-900">
+          {t("exploreOtherHeading")}
+        </h2>
+        <UseCaseChipsRow
+          filterTo={USE_CASES.filter((uc) => uc.slug !== slug).map((uc) => uc.slug)}
+        />
+      </section>
     </main>
   );
 }
