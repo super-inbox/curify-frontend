@@ -1,6 +1,6 @@
 # Blog ⇄ Use Case ⇄ Tool — Interconnection Audit & Plan
 
-_Last updated: 2026-05-17 (P0 #1 + #2 shipped — tool detail outbound sections + persona→tools mapping fix). Owner: jay. Update after every push that touches `BlogCTACard.tsx`, `ToolsGrid.tsx`, `UseCaseClient.tsx`, `tool-generic-client.tsx`, or the registry files (`lib/use-cases.ts`, `lib/tools-registry.ts`)._
+_Last updated: 2026-05-18 (all P0 shipped + P1 top-traffic CTA audit). Owner: jay. Update after every push that touches `BlogCTACard.tsx`, `ToolsGrid.tsx`, `UseCaseClient.tsx`, `tool-generic-client.tsx`, or the registry files (`lib/use-cases.ts`, `lib/tools-registry.ts`)._
 
 ## Why this doc exists
 
@@ -81,7 +81,8 @@ Plus a data-side gap: `lib/use-cases.ts` currently has every persona mapped to t
 | 2026-05-17 | `d6ca86a` | Expanded `BlogCTACard` mapping to cover nano-template + learning-education; introduced `ToolsGrid.tsx` so `/use-cases/[slug]` reuses the `/tools` card style. Plus 4 blog category reassignments. |
 | 2026-05-17 | `cb5a074` | Earlier blog metaDescription / lastmod sweep — not interconnection per se, but shipped the categorization that the BlogCTACard map keys off. |
 | 2026-05-17 | `4d2dbeb` | **P0 #1 + #2 shipped.** Per-persona tool ordering in `lib/use-cases.ts` (designers now an empty list — honest; publishers single tool). Tool detail page gains three outbound sections — "Who it’s for" persona chips, "Related tools" sibling-group grid, "Related reading" blog cards. Each "deep.usecases" subsection header on the tool page is now a Link to its persona use-case page so the in-prose "Who Uses X?" section gains the same fan-out. New helpers: `getPersonasForTool` in `lib/use-cases.ts`, `getSiblingTools` + `TOOL_BLOG_CATEGORIES` in `lib/tools-registry.ts`. New component: `RelatedBlogsByCategory.tsx` (sibling of `RelatedBlogs` that takes a categories list instead of a current-slug). 3 new i18n keys under `interconnection.*` fanned out to all 9 non-en locales. |
-| 2026-05-18 | _(pending push)_ | **P0 #3 shipped.** `/use-cases/[slug]` now renders a "Related reading" block between the templates grid and the sibling persona chips, pulling from `PERSONA_BLOG_CATEGORIES` in `lib/use-cases.ts` (per `docs/interconnection.md` Persona → Blog categories table). Max 6 cards, sorted by `lastmod` desc. Reuses the `RelatedBlogsByCategory` component shipped with P0 #1. |
+| 2026-05-18 | `e07be2c` | **P0 #3 shipped.** `/use-cases/[slug]` now renders a "Related reading" block between the templates grid and the sibling persona chips, pulling from `PERSONA_BLOG_CATEGORIES` in `lib/use-cases.ts` (per `docs/interconnection.md` Persona → Blog categories table). Max 6 cards, sorted by `lastmod` desc. Reuses the `RelatedBlogsByCategory` component shipped with P0 #1. |
+| 2026-05-18 | _(pending push)_ | **P1 top-traffic CTA audit shipped.** `BlogCTACard.tsx` gains a per-post full-override mechanism (`BLOG_POST_OVERRIDES`). Four top-traffic posts now bypass their category default and route to higher-intent destinations: `character-prompt-generator` and `mbti-character-generator` → `/topics/character` + `/use-cases/for-creators`; `10-prompting-tips-nano-banana` → `/topics/character` + `/tools`; `ai-collage-digital-wallpaper-guide` → `/topics/design` + `/use-cases/for-designers`. `asl-video-translator` and `f5-tts-voice-cloning` already route well via category default and need no override. |
 
 ---
 
@@ -100,6 +101,17 @@ These are the load-bearing data shapes. Whenever the catalog changes, these tabl
 | `learning-education` | `/contact` | `/tools` |
 
 Per-post creator-tools overrides table is `CREATOR_TOOL_OVERRIDES` in `BlogCTACard.tsx`. Two entries today: `video-transcription-business-guide → /tools/video-transcription`, `10-prompting-tips-video-generation → /tools/video-dubbing`. Grow it as new posts ship.
+
+**Per-post full-override table** is `BLOG_POST_OVERRIDES` in `BlogCTACard.tsx` — used when a high-traffic post deserves a fundamentally different CTA than its category default, not just a different tool URL. Current entries (driven by the GSC top-traffic audit):
+
+| Slug | Default (would-be) | Override primary | Override secondary |
+| --- | --- | --- | --- |
+| `character-prompt-generator` | `/tools` (creator-tools) | `/topics/character` | `/use-cases/for-creators` |
+| `mbti-character-generator` | `/contact` (nano-template) | `/topics/character` | `/use-cases/for-creators` |
+| `10-prompting-tips-nano-banana` | `/contact` (nano-template) | `/topics/character` | `/tools` |
+| `ai-collage-digital-wallpaper-guide` | `/contact` (nano-template) | `/topics/design` | `/use-cases/for-designers` |
+
+Add an entry when a top-clicked post's category default sends readers somewhere noticeably off-intent.
 
 ### Tool slug → Blog categories (new — needed by P0 #1)
 For the "Related reading" block on tool detail pages. Filters `public/data/blogs.json` server-side.
@@ -180,8 +192,10 @@ Edit `app/[locale]/(public)/use-cases/[slug]/UseCaseClient.tsx`. Insert a "Relat
 
 **Lower than #1 because use-case traffic is currently 1 click / 30 days** — this is "build for future demand," not "harvest current funnel." Worth shipping in the same week since it's quick and the symmetry matters once GSC starts indexing the persona pages.
 
-### P1 — Internal-link strength from high-traffic blog posts
-The five posts in [Top 5 single-page traffic sources](#google-traffic-context-may-2026-30-day-window) (especially `mbti-character-generator`, `character-prompt-generator`, `asl-video-translator`) deserve stronger-than-default cross-links — they're the actual entry points where GSC traffic compounds. Audit each top-clicked post's `BlogCTACard` resolution and make sure its category maps to the most relevant tool / use-case (not the generic `/contact` default). E.g. an MBTI post in `nano-template` category currently routes to `/contact + /tools`; for high-traffic MBTI posts a per-post override pointing at the actual MBTI templates would convert better than `/contact`.
+### ~~P1 — Internal-link strength from high-traffic blog posts~~ ✓ shipped 2026-05-18
+First-pass audit complete. The four worst-routed top-traffic posts (`character-prompt-generator`, `mbti-character-generator`, `10-prompting-tips-nano-banana`, `ai-collage-digital-wallpaper-guide`) now route via `BLOG_POST_OVERRIDES` to `/topics/character` or `/topics/design` plus a persona use-case — the actual destinations readers came for. `asl-video-translator` and `f5-tts-voice-cloning` already routed well via the `video-translation-dubbing` category default and got no override.
+
+Re-audit after the next GSC re-pull (4-week cadence) — if a freshly-trending post deserves the override treatment, add an entry to `BLOG_POST_OVERRIDES` in `BlogCTACard.tsx`.
 
 ### P1 — Tools index surfaces persona chips per tool card
 On `/tools`, each tool card grows a small "for X / for Y" persona row at the bottom (deriving from `lib/use-cases.ts` reverse lookup). Visual polish; weaker ROI than fixing the dead-ends. Pairs naturally with P0 #2.
